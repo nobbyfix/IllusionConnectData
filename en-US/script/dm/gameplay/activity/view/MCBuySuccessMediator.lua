@@ -1,0 +1,88 @@
+MCBuySuccessMediator = class("MCBuySuccessMediator", DmPopupViewMediator, _M)
+local kBtnHandlers = {}
+
+function MCBuySuccessMediator:initialize()
+	super.initialize(self)
+end
+
+function MCBuySuccessMediator:dispose()
+	super.dispose(self)
+end
+
+function MCBuySuccessMediator:mapEventListeners()
+end
+
+function MCBuySuccessMediator:dispose()
+	super.dispose(self)
+end
+
+function MCBuySuccessMediator:enterWithData(data)
+	self._data = data.reward or {}
+	self._diamondNum = 0
+
+	self:initData()
+	self:initView()
+	self:updateViews()
+end
+
+function MCBuySuccessMediator:onRegister()
+	super.onRegister(self)
+	self:mapButtonHandlersClick(kBtnHandlers)
+	self:mapEventListeners()
+
+	local touchLayer = self:getView():getChildByName("touch_layer")
+
+	touchLayer:addClickEventListener(function ()
+		self:onClickOk()
+	end)
+end
+
+function MCBuySuccessMediator:initData()
+	for k, v in pairs(self._data) do
+		if v.code == "IR_Diamond" then
+			self._diamondNum = self._diamondNum + v.amount
+		end
+	end
+end
+
+function MCBuySuccessMediator:initView()
+	local animNode = self:getView():getChildByFullName("main.animNode")
+
+	animNode:setScale(1.2)
+
+	local anim = cc.MovieClip:create("huodetishi_huodetishi")
+
+	anim:addTo(animNode, 1)
+	anim:addCallbackAtFrame(39, function ()
+		anim:stop()
+	end)
+
+	local cnText = anim:getChildByFullName("cnText")
+	local enText = anim:getChildByFullName("enText")
+	local title1 = cc.Label:createWithTTF(Strings:get("RewardTitle_Purchased"), CUSTOM_TTF_FONT_1, 50)
+
+	title1:enableOutline(cc.c4b(0, 0, 0, 255), 1)
+	title1:addTo(cnText):offset(0, -3)
+
+	local title2 = cc.Label:createWithTTF(Strings:get("UITitle_EN_Goumaichenggong"), TTF_FONT_FZYH_M, 18)
+
+	title2:setColor(cc.c3b(150, 160, 255))
+	title2:addTo(enText)
+
+	self._itemNode = self:getView():getChildByFullName("main.itemNode")
+
+	self._itemNode:setScaleY(0)
+	anim:addCallbackAtFrame(9, function ()
+		self._itemNode:runAction(cc.ScaleTo:create(0.2, 1))
+	end)
+end
+
+function MCBuySuccessMediator:updateViews()
+	local text_num = self._itemNode:getChildByFullName("Text_num")
+
+	text_num:setString("+" .. self._diamondNum)
+end
+
+function MCBuySuccessMediator:onClickOk()
+	self:close()
+end

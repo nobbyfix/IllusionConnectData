@@ -1,0 +1,192 @@
+{
+    "Surface_200": {
+        "Surface": "Surface_YLMGZhu_2",
+        "BackGroundImg": "sd_pf_bg",
+        "Cost": [
+            {
+                "amount": 0,
+                "code": "IR_Surface"
+            }
+        ],
+        "Sort": 4,
+        "TimeType": {
+            "type": "unlimit"
+        },
+        "ServerCondition": "",
+        "ClientCondition": "",
+        "Hide": 1,
+        "DrawCard_Id": ""
+    },
+    "Surface_13": {
+        "Surface": "Surface_YSLBin_2",
+        "BackGroundImg": "sd_pf_bg",
+        "Cost": [
+            {
+                "amount": 118,
+                "code": "IR_Surface"
+            }
+        ],
+        "Sort": 5,
+        "TimeType": {
+            "start": "2020-10-31 05:00:00",
+            "end": "2020-11-14 05:00:00",
+            "type": "limit"
+        },
+        "ServerCondition": "",
+        "ClientCondition": "",
+        "Hide": 1,
+        "DrawCard_Id": ""
+    },
+    "Surface_12": {
+        "Surface": "Surface_YLMGZhu_2",
+        "BackGroundImg": "sd_pf_bg",
+        "Cost": [
+            {
+                "amount": 118,
+                "code": "IR_Surface"
+            }
+        ],
+        "Sort": 4,
+        "TimeType": {
+            "start": "2020-10-31 05:00:00",
+            "end": "2020-11-14 05:00:00",
+            "type": "limit"
+        },
+        "ServerCondition": "",
+        "ClientCondition": "",
+        "Hide": 1,
+        "DrawCard_Id": ""
+    },
+    "Surface_5": {
+        "Surface": "Surface_DDing_2",
+        "BackGroundImg": "sd_pf_bg",
+        "Cost": [
+            {
+                "amount": 98,
+                "code": "IR_Surface"
+            }
+        ],
+        "Sort": 3,
+        "TimeType": {
+            "start": "2020-04-21 05:00:00",
+            "end": "2020-05-07 05:00:00",
+            "type": "limit"
+        },
+        "ServerCondition": "",
+        "ClientCondition": "",
+        "Hide": 1,
+        "DrawCard_Id": 10012
+    },
+    "Surface_4": {
+        "Surface": "Surface_BEr_2",
+        "BackGroundImg": "sd_pf_bg",
+        "Cost": [
+            {
+                "amount": 68,
+                "code": "IR_Surface"
+            }
+        ],
+        "Sort": 2,
+        "TimeType": {
+            "start": "2020-04-21 05:00:00",
+            "end": "2020-05-07 05:00:00",
+            "type": "limit"
+        },
+        "ServerCondition": "",
+        "ClientCondition": "",
+        "Hide": 1,
+        "DrawCard_Id": 10011
+    },
+    "Surface_400": {
+        "Surface": "Surface_YSLBin_2",
+        "BackGroundImg": "sd_pf_bg",
+        "Cost": [
+            {
+                "amount": 0,
+                "code": "IR_Surface"
+            }
+        ],
+        "Sort": 4,
+        "TimeType": {
+            "type": "unlimit"
+        },
+        "ServerCondition": "",
+        "ClientCondition": "",
+        "Hide": 1,
+        "DrawCard_Id": ""
+    },
+    "Surface_1": {
+        "Surface": "Surface_ALPo_2",
+        "BackGroundImg": "sd_pf_bg",
+        "Cost": [
+            {
+                "amount": 0,
+                "code": "IR_Surface"
+            }
+        ],
+        "Sort": 1001,
+        "TimeType": {
+            "type": "unlimit"
+        },
+        "ServerCondition": "",
+        "ClientCondition": "",
+        "Hide": 1,
+        "DrawCard_Id": 10008
+    },
+    "Surface_3": {
+        "Surface": "Surface_ALSi_2",
+        "BackGroundImg": "sd_pf_bg",
+        "Cost": [
+            {
+                "amount": 68,
+                "code": "IR_Surface"
+            }
+        ],
+        "Sort": 1,
+        "TimeType": {
+            "start": "2020-04-21 05:00:00",
+            "end": "2020-05-07 05:00:00",
+            "type": "limit"
+        },
+        "ServerCondition": "",
+        "ClientCondition": "",
+        "Hide": 1,
+        "DrawCard_Id": 10010
+    },
+    "Surface_2": {
+        "Surface": "Surface_ZZBBWei_2",
+        "BackGroundImg": "sd_pf_bg",
+        "Cost": [
+            {
+                "amount": 128,
+                "code": "IR_Surface"
+            }
+        ],
+        "Sort": 1002,
+        "TimeType": {
+            "type": "unlimit"
+        },
+        "ServerCondition": "",
+        "ClientCondition": "",
+        "Hide": 1,
+        "DrawCard_Id": 10009
+    },
+    "Surface_300": {
+        "Surface": "Surface_ALPo_3",
+        "BackGroundImg": "sd_pf_bg",
+        "Cost": [
+            {
+                "amount": 0,
+                "code": "IR_Surface"
+            }
+        ],
+        "Sort": 4,
+        "TimeType": {
+            "type": "unlimit"
+        },
+        "ServerCondition": "",
+        "ClientCondition": "",
+        "Hide": 1,
+        "DrawCard_Id": ""
+    }
+}

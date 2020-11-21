@@ -1,0 +1,791 @@
+require("dm.gameplay.develop.model.Player")
+require("dm.gameplay.develop.controller.BagSystem")
+require("dm.gameplay.develop.controller.HeroSystem")
+require("dm.gameplay.develop.controller.MasterSystem")
+require("dm.gameplay.develop.controller.EquipSystem")
+require("dm.gameplay.activity.controller.ActivitySystem")
+require("dm.gameplay.develop.controller.KernelSystem")
+
+DevelopSystem = class("DevelopSystem", legs.Actor)
+
+DevelopSystem:has("_developService", {
+	is = "r"
+}):injectWith("DevelopService")
+DevelopSystem:has("_serverOpenTime", {
+	is = "rw"
+})
+DevelopSystem:has("_timeZone", {
+	is = "rw"
+})
+DevelopSystem:has("_bagSystem", {
+	is = "r"
+})
+DevelopSystem:has("_kerenlSystem", {
+	is = "r"
+})
+DevelopSystem:has("_heroSystem", {
+	is = "r"
+})
+DevelopSystem:has("_player", {
+	is = "r"
+})
+DevelopSystem:has("_masterSystem", {
+	is = "r"
+})
+DevelopSystem:has("_equipSystem", {
+	is = "r"
+})
+DevelopSystem:has("_gallerySystem", {
+	is = "r"
+}):injectWith("GallerySystem")
+DevelopSystem:has("_mazeSystem", {
+	is = "r"
+}):injectWith("MazeSystem")
+DevelopSystem:has("_exploreSystem", {
+	is = "r"
+}):injectWith("ExploreSystem")
+DevelopSystem:has("_taskSystem", {
+	is = "r"
+}):injectWith("TaskSystem")
+DevelopSystem:has("_shopSystem", {
+	is = "r"
+}):injectWith("ShopSystem")
+DevelopSystem:has("_stageSystem", {
+	is = "r"
+}):injectWith("StageSystem")
+DevelopSystem:has("_surfaceSystem", {
+	is = "r"
+}):injectWith("SurfaceSystem")
+DevelopSystem:has("_buildingSystem", {
+	is = "r"
+}):injectWith("BuildingSystem")
+DevelopSystem:has("_arenaSystem", {
+	is = "r"
+}):injectWith("ArenaSystem")
+DevelopSystem:has("_towerSystem", {
+	is = "r"
+}):injectWith("TowerSystem")
+DevelopSystem:has("_crusadeSystem", {
+	is = "r"
+}):injectWith("CrusadeSystem")
+DevelopSystem:has("_rankSystem", {
+	is = "r"
+}):injectWith("RankSystem")
+DevelopSystem:has("_dreamSystem", {
+	is = "r"
+}):injectWith("DreamChallengeSystem")
+
+function DevelopSystem:initialize()
+	super.initialize(self)
+
+	self._player = Player:new()
+	self._playerLevelUpData = {}
+	self._serverOpenTime = 0
+	self._serverIp = ""
+	self._serverPort = 0
+
+	self:initSystem()
+end
+
+function DevelopSystem:initSystem()
+	self._bagSystem = BagSystem:new(self)
+	self._heroSystem = HeroSystem:new(self)
+	self._masterSystem = MasterSystem:new(self)
+	self._equipSystem = EquipSystem:new(self)
+	self._kerenlSystem = KernelSystem:new(self)
+end
+
+function DevelopSystem:userInject(injector)
+	injector:injectInto(self._player)
+	injector:injectInto(self._bagSystem)
+	injector:injectInto(self._heroSystem)
+	injector:injectInto(self._masterSystem)
+	injector:injectInto(self._equipSystem)
+	injector:injectInto(self._kerenlSystem)
+end
+
+function DevelopSystem:syncPlayer(data, isDiff)
+	if not data then
+		return
+	end
+
+	local playerLevelUpData = self:getPlayerLevelUpData()
+
+	self._player:synchronizeInfoDiff(data)
+
+	if data.effectCenter then
+		self:getPlayer()._effectCenter:syncData(data.effectCenter)
+		self._buildingSystem:checkBuildingEffect(data.effectCenter, isDiff)
+	end
+
+	if data.bag and data.bag.items then
+		self._bagSystem:showTips(data.bag.items)
+		self:getBag():synchronize(data.bag.items, isDiff)
+		self._heroSystem:syncHeroShowIds()
+		self._bagSystem:synchronize(data.bag.items)
+	end
+
+	if data.bag and data.bag.del then
+		self._bagSystem:delItems(data.bag.del)
+	end
+
+	if data.shops then
+		self._shopSystem:sync(data.shops)
+	end
+
+	if data.packShopItems then
+		self._shopSystem:syncPackage(data.packShopItems)
+	end
+
+	if data.surfaceShop then
+		self._shopSystem:syncSurface(data.surfaceShop)
+	end
+
+	if data.equips then
+		self:getPlayer():getEquipList():synchronize(data.equips)
+	end
+
+	if data.cultivation or data.level then
+		self:synCultivation(data)
+	end
+
+	if data.clubId then
+		local clubId = data.clubId
+		local clubInfo = self:getPlayer():getClub():getInfo()
+
+		clubInfo:setClubId(clubId)
+	end
+
+	if data.playerClub then
+		local clubData = data.playerClub
+		local clubInfo = self:getPlayer():getClub():getInfo()
+
+		if clubData.sendClubMailCount then
+			clubInfo:setSendMailCount(clubData.sendClubMailCount.value)
+		end
+
+		if clubData.welcomeMsg then
+			clubInfo:setWelcomeMsg(clubData.welcomeMsg)
+		end
+
+		if clubData.selfEditWelMsg then
+			clubInfo:setSelfEditWelMsg(clubData.selfEditWelMsg or "")
+		end
+
+		if clubData.welcomeIndex then
+			clubInfo:setWelcomeIndex(clubData.welcomeIndex)
+		end
+
+		if clubData.donateCount and clubData.donateCount.value then
+			self:getPlayer():getClub():setCurDonateCount(clubData.donateCount.value)
+		end
+
+		if clubData.lastJoinTime then
+			clubInfo:setLastJoinTime(clubData.lastJoinTime)
+		end
+
+		self:getPlayer():getClub():syncClubBossBasicInfo(clubData)
+	end
+
+	if data.timeRecord then
+		self:getPlayer():getBag():synTimeRecords(data.timeRecord)
+	end
+
+	if data.todayOnlineTime then
+		self:getPlayer():setTodayOnlineTime(data.todayOnlineTime)
+	end
+
+	if data.friendInfo then
+		local friendSystem = self:getInjector():getInstance(FriendSystem)
+
+		friendSystem:getFriendModel():syncFriendInfo(data.friendInfo)
+	end
+
+	if data.vipLevel then
+		local rechargeAndVipSystem = self:getInjector():getInstance(RechargeAndVipSystem)
+
+		rechargeAndVipSystem:syncVipCanGetRewards()
+	end
+
+	if data.mallInfo then
+		local rechargeAndVipSystem = self:getInjector():getInstance(RechargeAndVipSystem)
+
+		rechargeAndVipSystem:synchronizeRechargeAndVipInfo(data.mallInfo)
+	end
+
+	if data.privilegeInfo then
+		local rechargeAndVipSystem = self:getInjector():getInstance(RechargeAndVipSystem)
+
+		rechargeAndVipSystem:synchronizeRechargeAndVipInfo(data.privilegeInfo)
+	end
+
+	if data.drawInfo then
+		local recruitSystem = self:getInjector():getInstance(RecruitSystem)
+
+		recruitSystem:sync(data.drawInfo, self._player)
+	end
+
+	if data.checkin then
+		local monthSignInSystem = self:getInjector():getInstance(MonthSignInSystem)
+
+		monthSignInSystem:getMonthSignModel():synchronize(data.checkin)
+	end
+
+	if data.activities and data.activities.activityMap then
+		local activitySystem = self:getInjector():getInstance(ActivitySystem)
+
+		activitySystem:getActivityList():synchronize(data.activities.activityMap)
+		activitySystem:checkActivityState()
+		activitySystem:checkPassActivityData()
+		activitySystem:checkClubBossSummerActivityData()
+	end
+
+	if data.spStages then
+		local spStageSystem = self:getInjector():getInstance(SpStageSystem)
+
+		spStageSystem:synchronize(data.spStages)
+	end
+
+	if data.practice and data.practice.stageMaps then
+		local stagePracticeSystem = self:getInjector():getInstance(StagePracticeSystem)
+
+		stagePracticeSystem:synchronize(data.practice.stageMaps)
+	end
+
+	if data.kernels then
+		self._kerenlSystem:synchronize(data.kernels)
+	end
+
+	if data.galleryPartyReward then
+		self._gallerySystem:getPartyManage():syncRewardData(data.galleryPartyReward)
+	end
+
+	if data.galleryMemoryMap then
+		self._gallerySystem:getPartyManage():syncMemoryData(data.galleryMemoryMap)
+	end
+
+	if data.galleryPhotos then
+		self._gallerySystem:getPartyManage():syncAlbumData(data.galleryPhotos)
+	end
+
+	if data.galleryData then
+		self._gallerySystem:getPartyManage():syncGalleryData(data.galleryData)
+	end
+
+	if data.pansLab then
+		self._mazeSystem:syncMazeData(data.pansLab)
+	end
+
+	if data.taskCenter then
+		self._taskSystem:synchronizeTask(data.taskCenter)
+	end
+
+	if data.achievementCenter then
+		self._taskSystem:synchronizeAchieveTask(data.achievementCenter)
+	end
+
+	if data.worldMap then
+		if data.worldMap.bag and data.worldMap.bag.items then
+			self._exploreSystem:showTips(data.worldMap.bag.items)
+		end
+
+		if data.worldMap.equipsReward then
+			self._exploreSystem:showEquipTips(data.worldMap.equipsReward)
+		end
+
+		self._player:getExplore():synchronize(data.worldMap, self:getLevel())
+	end
+
+	if data.storyPoints then
+		self:getPlayer():syncStoryPoint(data.storyPoints)
+	end
+
+	if data.stagePractice then
+		self:getPlayer():syncStagePractice(data.stagePractice)
+	end
+
+	if data.stagePresents then
+		self._stageSystem:syncStagePresents(data.stagePresents)
+	end
+
+	if data.heroStoryMaps then
+		self._stageSystem:syncHeroStory(data.heroStoryMaps)
+	end
+
+	if data.villageData then
+		self._buildingSystem:synchronize(data.villageData)
+	end
+
+	if data.unlockSurfaces then
+		self._surfaceSystem:synchronize(data.unlockSurfaces)
+	end
+
+	if data.playerArena and data.playerArena.battleReports then
+		self._arenaSystem:getArena():synchronizeReportData(data.playerArena.battleReports)
+	end
+
+	if data.towerStages then
+		self._towerSystem:synchronize(data.towerStages)
+	end
+
+	if data.playerCrusade then
+		self._crusadeSystem:synchronize(data.playerCrusade)
+	end
+
+	if data.rankRewards then
+		self._rankSystem:synchronizeRankRewards(data.rankRewards)
+	end
+
+	if data.dreamChallenge then
+		self._dreamSystem:synchronize(data.dreamChallenge)
+	end
+
+	self:dispatch(Event:new(EVT_PLAYER_SYNCHRONIZED))
+	self:checkPlayerLevelUp(playerLevelUpData)
+end
+
+function DevelopSystem:syncDeleteData(data)
+	data = data.player
+
+	if data and data.effectCenter then
+		self:getPlayer()._effectCenter:delete(data.effectCenter)
+	end
+
+	if data and data.bag then
+		self._bagSystem:deleteItems(data.bag)
+	end
+
+	if data and data.checkin then
+		local monthSignInSystem = self:getInjector():getInstance(MonthSignInSystem)
+
+		monthSignInSystem:getMonthSignModel():syncDelateData(data.checkin)
+	end
+
+	if data and data.activities and data.activities.activityMap then
+		local activitySystem = self:getInjector():getInstance("ActivitySystem")
+
+		activitySystem:deleteActivity(data.activities.activityMap)
+		self:dispatch(Event:new(EVT_ACTIVITY_RESET))
+	end
+
+	if data and data.mallInfo and data.mallInfo.monthCards then
+		local rechargeAndVipSystem = self:getInjector():getInstance(RechargeAndVipSystem)
+
+		rechargeAndVipSystem:delMonthCards(data.mallInfo.monthCards)
+	end
+
+	if data and data.cultivation then
+		self:getPlayer():getMasterList():synchronizeDelEquipKernel(data.cultivation.masters)
+	end
+
+	if data and data.kernels then
+		self._kerenlSystem:synchronizeDel(data.kernels)
+	end
+
+	if data and data.pansLab then
+		self._mazeSystem:syncMazeDelfData(data.pansLab)
+	end
+
+	if data and data.worldMap then
+		self._player:getExplore():synchronizeDel(data.worldMap)
+	end
+
+	if data and data.galleryData then
+		self._gallerySystem:getPartyManage():syncGalleryDelData(data.galleryData)
+	end
+
+	if data and data.cultivation and data.cultivation.heroes then
+		self:getPlayer():getHeroList():synchronizeDelEquip(data.cultivation.heroes)
+	end
+
+	if data and data.equips then
+		self:getPlayer():getEquipList():deleteEquip(data.equips)
+	end
+
+	if data and data.towerStages then
+		self._towerSystem:deleteTower(data.towerStages)
+	end
+
+	if data and data.playerCrusade then
+		self._crusadeSystem:delete(data.playerCrusade)
+	end
+
+	if data and data.dreamChallenge then
+		dump(data.dreamChallenge, "data.dreamChallenge del >>>>>>>>>> ")
+		self._dreamSystem:delete(data.dreamChallenge)
+	end
+
+	if data then
+		self._taskSystem:getTaskListModel():updateDelTasks(data)
+	end
+end
+
+function DevelopSystem:synCultivation(data)
+	local cultivation = data.cultivation
+
+	if not cultivation then
+		return
+	end
+
+	if not cultivation then
+		return
+	end
+
+	if cultivation.heroes then
+		self:getPlayer():getHeroList():synchronize(cultivation.heroes)
+		self._heroSystem:syncHeroShowIds()
+	end
+
+	if cultivation.masters or data.level then
+		self:getPlayer():getMasterList():synchronize(cultivation.masters)
+	end
+
+	if cultivation.masterAura then
+		self:getPlayer():getMasterAura():synchronize(cultivation)
+	end
+
+	if cultivation.emblems then
+		self:getPlayer():getMasterEmblemList():synchronize(cultivation.emblems, self)
+	end
+
+	if cultivation.teams then
+		self:getPlayer():getTeamList():synchronize(cultivation.teams)
+	end
+
+	if cultivation.spTeams then
+		self:getPlayer():getTeamList():synchronizeSpTeams(cultivation.spTeams)
+	end
+
+	if cultivation.teamTypes then
+		self:getPlayer():getTeamList():synchronizeTeamTypes(cultivation.teamTypes)
+	end
+end
+
+function DevelopSystem:getTeamByType(stageType)
+	local teamId = self:getStageTeamIds()[stageType]
+
+	return self:getPlayer():getTeamList():getTeam(teamId)
+end
+
+function DevelopSystem:getStageTeamById(index)
+	return self:getPlayer():getTeamList():getTeam(index)
+end
+
+function DevelopSystem:getAllTeams()
+	return self:getPlayer():getTeamList():getAllTeams()
+end
+
+function DevelopSystem:getSpTeamByType(stageType)
+	return self:getPlayer():getTeamList():getSpTeam(stageType)
+end
+
+function DevelopSystem:getAllUnlockTeams()
+	local teamList = self:getAllTeams()
+	local teamsShow = {}
+	local teamUnlockConfig = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Stage_Team_Unlock", "content")
+	local playerLevel = self:getLevel()
+
+	for i, v in ipairs(teamList) do
+		if teamUnlockConfig[i] <= playerLevel then
+			teamsShow[i] = v
+		else
+			break
+		end
+	end
+
+	return teamsShow
+end
+
+function DevelopSystem:getStageTeamIds()
+	return self:getPlayer():getTeamList():getStageTeamIds()
+end
+
+function DevelopSystem:getTeamBook()
+	return self:getPlayer():getTeamList()
+end
+
+function DevelopSystem:getCurServerTime()
+	local gameServerAgent = self:getInjector():getInstance("GameServerAgent")
+
+	return gameServerAgent:remoteTimestamp()
+end
+
+function DevelopSystem:checkPlayerLevelUp(preData)
+	local curData = self:getPlayerLevelUpData()
+	local oldData = self._playerLevelUpData.curData
+
+	if oldData and self._playerLevelUpData.preData then
+		self._playerLevelUpData.preData.enery = oldData.enery
+		self._playerLevelUpData.preData.criRate = oldData.criRate
+		self._playerLevelUpData.preData.suckBoodRate = oldData.suckBoodRate
+	end
+
+	self._playerLevelUpData.curData = curData
+
+	if not self._playerLevelUpData.preData then
+		self._playerLevelUpData.preData = preData
+	else
+		local preLevel = self._playerLevelUpData.preData.level
+
+		if preLevel < 1 then
+			self._playerLevelUpData.preData = preData
+		end
+	end
+
+	if self:getLevelupBackup() then
+		self:dispatch(Event:new(EVT_SYSTEM_LEVELUP))
+	end
+end
+
+function DevelopSystem:getPlayerLevelUpData()
+	local curTabType = 1
+	local teamList = self:getAllUnlockTeams()
+	local masterId = nil
+
+	if teamList and next(teamList) and teamList[curTabType] then
+		local curTeam = teamList[curTabType]
+		masterId = curTeam:getMasterId()
+	end
+
+	if not masterId then
+		return nil
+	end
+
+	return {
+		level = self:getLevel(),
+		enery = self:getEnergy(),
+		eneryLimt = self:getEnergyLimit(),
+		criRate = self:getMonsterProperty(masterId, "Hero_SkillAttrName_CRITRATE"),
+		suckBoodRate = self:getMonsterProperty(masterId, "Hero_SkillAttrName_ABSORPTION")
+	}
+end
+
+local showLvUpCache = {}
+
+function DevelopSystem:popPlayerLvlUpView(info)
+	for i = table.nums(showLvUpCache), 1, -1 do
+		if showLvUpCache[i].mediator then
+			showLvUpCache[i].mediator:close()
+			table.remove(showLvUpCache, i)
+		end
+	end
+
+	local preData = self._playerLevelUpData.preData
+	local curData = self._playerLevelUpData.curData
+
+	if not preData then
+		return
+	end
+
+	local preLevel = preData.level
+	local curLevel = curData.level
+
+	if preLevel < 1 or curLevel <= preLevel then
+		return
+	end
+
+	local delegate = nil
+
+	if info and info.callBack then
+		delegate = {
+			willClose = function (self)
+				info.callBack()
+			end
+		}
+	end
+
+	local view = self:getInjector():getInstance("PlayerLevelUpTipView")
+
+	table.insert(showLvUpCache, view)
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {}, self._playerLevelUpData, delegate))
+
+	self._playerLevelUpData.preData = nil
+	self._playerLevelUpTipViewShowSta = true
+
+	if SDKHelper and SDKHelper:isEnableSdk() then
+		local player = self:getPlayer()
+
+		SDKHelper:reportUpLevel({
+			roleName = tostring(player:getNickName()),
+			roleId = tostring(player:getRid()),
+			roleLevel = tostring(player:getLevel()),
+			roleCombat = checkint(player:getCombat()),
+			ip = tostring(self._serverIp),
+			port = tostring(self._serverPort),
+			serverId = tostring(self._serverId)
+		})
+	end
+
+	return true
+end
+
+function DevelopSystem:getLevelupBackup()
+	local preData = self._playerLevelUpData.preData
+	local curData = self._playerLevelUpData.curData
+
+	if not preData then
+		return false
+	end
+
+	local preLevel = preData.level
+	local curLevel = curData.level
+
+	if preLevel < 1 or curLevel <= preLevel then
+		return false
+	end
+
+	return true
+end
+
+function DevelopSystem:getPlayerLvUpViewShowSta()
+	return self._playerLevelUpTipViewShowSta
+end
+
+function DevelopSystem:getBag()
+	return self:getPlayer():getBag()
+end
+
+function DevelopSystem:getEquipList()
+	return self:getPlayer():getEquipList()
+end
+
+function DevelopSystem:getHeroList()
+	return self:getPlayer():getHeroList()
+end
+
+function DevelopSystem:getUid()
+	return self:getPlayer():getUid()
+end
+
+function DevelopSystem:getRid()
+	return self:getPlayer():getRid()
+end
+
+function DevelopSystem:getLevel()
+	return self:getPlayer():getLevel()
+end
+
+function DevelopSystem:getVipLevel()
+	return self:getPlayer():getVipLevel()
+end
+
+function DevelopSystem:getheadId()
+	return self:getPlayer():getHeadId()
+end
+
+function DevelopSystem:getNickName()
+	return self:getPlayer():getNickName()
+end
+
+function DevelopSystem:getGolds()
+	return self._bagSystem:getItemCount(CurrencyIdKind.kGold)
+end
+
+function DevelopSystem:getDiamonds()
+	return self._bagSystem:getDiamond()
+end
+
+function DevelopSystem:getCrystal()
+	return self._bagSystem:getItemCount(CurrencyIdKind.kCrystal)
+end
+
+function DevelopSystem:getHonor()
+	return self._bagSystem:getItemCount(CurrencyIdKind.kHonor)
+end
+
+function DevelopSystem:getTrial()
+	return self._bagSystem:getItemCount(CurrencyIdKind.kTrial)
+end
+
+function DevelopSystem:getMasterCultivate()
+	return self:getPlayer():getMasterCultivate()
+end
+
+function DevelopSystem:getBuildingCostEffValue()
+	return self._buildingSystem:getBuildingCostBuf()
+end
+
+function DevelopSystem:getBuildingCardEffValue()
+	return self._buildingSystem:getBuildingCardBuf()
+end
+
+function DevelopSystem:getExplore()
+	return self:getPlayer():getExplore()
+end
+
+function DevelopSystem:getEnergy()
+	return self._bagSystem:getItemCount(CurrencyIdKind.kPower)
+end
+
+function DevelopSystem:getEnergyLimit()
+	local config = ConfigReader:getRecordById("LevelConfig", tostring(self:getLevel()))
+
+	if config then
+		return config.ActionPointLimit
+	end
+
+	return 0
+end
+
+function DevelopSystem:getMonsterProperty(monsterId, propertyName)
+	local monsterInfo = self._masterSystem:getMasterProperty(monsterId)
+	local monsterProperty = monsterInfo[propertyName]
+	local numInfo = monsterProperty.attrNum
+
+	return numInfo
+end
+
+function DevelopSystem:getMonsterProperty1(monsterId, propertyName)
+	local monsterInfo = self._masterSystem:getMasterProperty(monsterId)
+
+	return monsterInfo[propertyName].attrNum
+end
+
+function DevelopSystem:getCombat()
+	return self:getPlayer():getCombat()
+end
+
+function DevelopSystem:setRid(rid)
+	self:getPlayer():setRid(rid)
+end
+
+function DevelopSystem:setServerInfo(id, ip, port)
+	self._serverId = id
+	self._serverIp = ip
+	self._serverPort = port
+end
+
+function DevelopSystem:getServerId()
+	return self._serverId
+end
+
+function DevelopSystem:getServerIp()
+	return self._serverIp
+end
+
+function DevelopSystem:getServerPort()
+	return self._serverPort
+end
+
+function DevelopSystem:getServerOpenDay()
+	local curServerTime = self:getCurServerTime()
+	local openDate = os.date("*t", self._serverOpenTime)
+	local openTime = os.time({
+		hour = 5,
+		min = 0,
+		sec = 0,
+		year = openDate.year,
+		month = openDate.month,
+		day = openDate.day
+	})
+
+	return math.ceil((curServerTime - openTime) / 86400)
+end
+
+function DevelopSystem:enterType(params, blockUI, callback)
+	self._developService:enterType(params, blockUI, callback)
+end
+
+function DevelopSystem:guideLog(params, blockUI, callback)
+	self._developService:guideLog(params, blockUI, callback)
+end

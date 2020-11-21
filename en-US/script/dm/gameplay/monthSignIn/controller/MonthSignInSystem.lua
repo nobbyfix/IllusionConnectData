@@ -1,0 +1,182 @@
+EVT_MONTHSIGNIN_RESET_DONE = "EVT_MONTHSIGNIN_RESET_DONE"
+
+require("dm.gameplay.monthSignIn.model.MonthSignIn")
+require("dm.gameplay.monthSignIn.controller.ResetUtils")
+
+MonthSignInSystem = class("MonthSignInSystem", legs.Actor)
+
+MonthSignInSystem:has("_monthSignInService", {
+	is = "r"
+}):injectWith("MonthSignInService")
+MonthSignInSystem:has("_monthSignModel", {
+	is = "r"
+})
+
+function MonthSignInSystem:initialize()
+	super.initialize(self)
+
+	self._monthSignModel = MonthSignIn:new()
+	self._totalRewardTab = {}
+	local _rawTab = ConfigReader:getDataByNameIdAndKey("ConfigValue", "CheckInRewardTotal", "content")
+
+	for k, v in pairs(_rawTab) do
+		local makePair = {
+			day = tonumber(k),
+			rewardId = v
+		}
+		self._totalRewardTab[#self._totalRewardTab + 1] = makePair
+	end
+
+	table.sort(self._totalRewardTab, function (a, b)
+		local aCompFactor = a.day
+		local bCompFactor = b.day
+
+		return aCompFactor < bCompFactor
+	end)
+end
+
+function MonthSignInSystem:syncTodayReward()
+	local customDataSystem = self:getInjector():getInstance(CustomDataSystem)
+	local cjson = require("cjson.safe")
+	local rewardStr = customDataSystem:getValue(PrefixType.kGlobal, "todayReward")
+
+	if not rewardStr then
+		local playerId = self:getInjector():getInstance("DevelopSystem"):getPlayer():getRid()
+		rewardStr = cc.UserDefault:getInstance():getStringForKey(tostring(playerId) .. "todayReward")
+	end
+
+	self._monthSignModel:setTodayReward(cjson.decode(rewardStr))
+end
+
+function MonthSignInSystem:tryEnter(succcallback, failcallback)
+	local view = self:getInjector():getInstance("MonthSignInView")
+
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+		maskOpacity = 0
+	}))
+end
+
+function MonthSignInSystem:getTodayLuck()
+	return self._monthSignModel:getTodayLuck()
+end
+
+function MonthSignInSystem:getCheckinSum()
+	return self._monthSignModel:getCheckinSum()
+end
+
+function MonthSignInSystem:getGotRewards()
+	return self._monthSignModel:getGotRewards()
+end
+
+function MonthSignInSystem:getTodaySignTime()
+	local dailyReset = self._monthSignModel:getDailyReset()
+
+	return dailyReset.updateTime
+end
+
+function MonthSignInSystem:isTodaySign()
+	local curUpdateTime = self:getTodaySignTime()
+	local curDayTime = TimeUtil:getTimeByDateForTargetTimeInToday({
+		sec = 0,
+		min = 0,
+		hour = 5
+	})
+	local gameServerAgent = self:getInjector():getInstance("GameServerAgent")
+	local curTime = gameServerAgent:remoteTimestamp()
+
+	if curTime < curDayTime then
+		return curUpdateTime > curDayTime - 86400
+	else
+		return curDayTime < curUpdateTime
+	end
+end
+
+function MonthSignInSystem:showSignView(callback)
+	if not self:isTodaySign() then
+		local viewName = "MonthSignInView"
+
+		if self:checkActivity() then
+			viewName = "MonthSignInWsjView"
+		end
+
+		local view = self:getInjector():getInstance(viewName)
+
+		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+			maskOpacity = 0
+		}, nil, callback))
+	end
+end
+
+function MonthSignInSystem:checkActivity()
+	local activitySystem = self:getInjector():getInstance(ActivitySystem)
+	local activity = activitySystem:getActivityByComplexUI(ActivityType_UI.kActivityBlockWsj)
+
+	if activity then
+		return true
+	end
+
+	return false
+end
+
+function MonthSignInSystem:doReset(resetId, value)
+	if resetId == ResetId.kMonthSignIn then
+		-- Nothing
+	end
+end
+
+function MonthSignInSystem:getTodayReward()
+	return self._monthSignModel:getTodayReward()
+end
+
+function MonthSignInSystem:setTodayReward(reward)
+	local cjson = require("cjson.safe")
+	local rewardStr = cjson.encode(reward)
+	local customDataSystem = self:getInjector():getInstance(CustomDataSystem)
+
+	customDataSystem:setValue(PrefixType.kGlobal, "todayReward", rewardStr)
+end
+
+function MonthSignInSystem:setTodayRandomNum()
+	local playerId = self:getInjector():getInstance("DevelopSystem"):getPlayer():getRid()
+	local todayLuck = self:getTodayLuck()
+	local content = ConfigReader:getDataByNameIdAndKey("ConfigValue", "CheckInDesc", "content")
+	local tab = content[tostring(todayLuck)]
+	local randomNum = math.random(1, #tab)
+
+	cc.UserDefault:getInstance():setIntegerForKey(tostring(playerId) .. "todayRandomNum", randomNum)
+end
+
+function MonthSignInSystem:getTodayRandomNum()
+	local playerId = self:getInjector():getInstance("DevelopSystem"):getPlayer():getRid()
+	local randomNum = cc.UserDefault:getInstance():getIntegerForKey(tostring(playerId) .. "todayRandomNum", 1)
+
+	return randomNum
+end
+
+function MonthSignInSystem:getTodayLuckDesc()
+	local todayLuck = self:getTodayLuck()
+	local content = ConfigReader:getDataByNameIdAndKey("ConfigValue", "CheckInDesc", "content")
+	local tab = content[tostring(todayLuck)]
+	local todayNum = self:getTodayRandomNum()
+
+	return tab[todayNum]
+end
+
+function MonthSignInSystem:requestGetDailyReward(callback)
+	local params = {}
+
+	self._monthSignInService:requestGetDailyReward(params, true, function (response)
+		if response.resCode == GS_SUCCESS then
+			if response.data.reward then
+				self._monthSignModel:setTodayReward(response.data.reward)
+				self:setTodayReward(response.data.reward)
+			end
+
+			self:setTodayRandomNum()
+
+			if callback then
+				callback(response)
+			end
+		end
+	end)
+end

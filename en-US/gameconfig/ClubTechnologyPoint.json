@@ -1,0 +1,89 @@
+{
+    "Club_Contribute_2": {
+        "Unlock": {
+            "ClubLevel": 2,
+            "LEVEL": 20
+        },
+        "MaxLevel": 7,
+        "Icon": "Club_Contribute_2.png",
+        "Name": "Club_Contribute_2_Name",
+        "Exp": [
+            5000,
+            10000,
+            20000,
+            30000,
+            40000,
+            60000,
+            80000
+        ],
+        "Value1": [
+            2,
+            2,
+            3,
+            3,
+            4,
+            4,
+            5,
+            5
+        ],
+        "Value2": [],
+        "Value3": [],
+        "Desc1": "Club_Contribute_2_Effect1",
+        "Desc2": "",
+        "Desc3": ""
+    },
+    "Club_Contribute_1": {
+        "Unlock": {
+            "ClubLevel": 1,
+            "LEVEL": 15
+        },
+        "MaxLevel": 12,
+        "Icon": "Club_Contribute_1.png",
+        "Name": "Club_Contribute_1_Name",
+        "Exp": [
+            2500,
+            7000,
+            14000,
+            28000,
+            45000,
+            70000,
+            100000,
+            140000,
+            180000,
+            240000,
+            300000
+        ],
+        "Value1": [
+            10,
+            10,
+            11,
+            11,
+            12,
+            12,
+            13,
+            13,
+            14,
+            14,
+            15,
+            15
+        ],
+        "Value2": [
+            5000,
+            5000,
+            5500,
+            5500,
+            6000,
+            6000,
+            6500,
+            6500,
+            7000,
+            7000,
+            7500,
+            7500
+        ],
+        "Value3": [],
+        "Desc1": "Club_Contribute_1_Effect1",
+        "Desc2": "Club_Contribute_1_Effect2",
+        "Desc3": ""
+    }
+}

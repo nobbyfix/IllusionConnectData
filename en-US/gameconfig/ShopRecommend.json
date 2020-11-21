@@ -1,0 +1,97 @@
+{
+    "ShopRecommend_TL_CZheng": {
+        "TabName": "ShopRecommend_TL_CZheng_Name",
+        "BackGroundImg": "sd_tj_bg_ydyw",
+        "Sort": 2,
+        "Vanish": 1,
+        "TimeType": {
+            "type": "unlimit"
+        },
+        "ServerCondition": "",
+        "ClientCondition": "",
+        "Hide": 1,
+        "Prepose": "",
+        "PackageId": [
+            "PackageShop_TL_CZheng_1",
+            "PackageShop_TL_CZheng_2",
+            "PackageShop_TL_CZheng_3",
+            "PackageShop_TL_CZheng_4",
+            "PackageShop_TL_CZheng_5",
+            "PackageShop_TL_CZheng_6"
+        ],
+        "Link": "view://shopView&viewType=push&shopId=Shop_TimeLimit"
+    },
+    "ShopRecommend_TL_LLan": {
+        "TabName": "ShopRecommend_TL_LLan_Name",
+        "BackGroundImg": "sd_tj_bg_xdzg",
+        "Sort": 2,
+        "Vanish": 1,
+        "TimeType": {
+            "type": "unlimit"
+        },
+        "ServerCondition": "",
+        "ClientCondition": "",
+        "Hide": 1,
+        "Prepose": "",
+        "PackageId": [
+            "PackageShop_TL_LLan_1",
+            "PackageShop_TL_LLan_2",
+            "PackageShop_TL_LLan_3",
+            "PackageShop_TL_LLan_4",
+            "PackageShop_TL_LLan_5",
+            "PackageShop_TL_LLan_6"
+        ],
+        "Link": "view://shopView&viewType=push&shopId=Shop_TimeLimit"
+    },
+    "ShopRecommend_1": {
+        "TabName": "ShopRecommend_1_Name",
+        "BackGroundImg": "sd_tj_bg_shouchong",
+        "Sort": 1,
+        "Vanish": 1,
+        "TimeType": {
+            "type": "unlimit"
+        },
+        "ServerCondition": "",
+        "ClientCondition": "",
+        "Hide": 1,
+        "Prepose": "",
+        "PackageId": [
+            "PackageShop_1"
+        ],
+        "Link": "view://shopView&viewType=push&shopId=Shop_Package&packageId=PackageShop_1"
+    },
+    "ShopRecommend_2": {
+        "TabName": "ShopRecommend_2_Name",
+        "BackGroundImg": "sd_tj_bg_yueka",
+        "Sort": 1002,
+        "Vanish": 0,
+        "TimeType": {
+            "type": "unlimit"
+        },
+        "ServerCondition": "",
+        "ClientCondition": "",
+        "Hide": 1,
+        "Prepose": "",
+        "PackageId": [
+            "MonthCard_1"
+        ],
+        "Link": "view://shopView&viewType=push&shopId=Shop_Monthcard&packageId=MonthCard_1"
+    },
+    "ShopRecommend_3": {
+        "TabName": "ShopRecommend_3_Name",
+        "BackGroundImg": "sd_tj_bg_yongjiuka",
+        "Sort": 1001,
+        "Vanish": 0,
+        "TimeType": {
+            "type": "unlimit"
+        },
+        "ServerCondition": "",
+        "ClientCondition": "",
+        "Hide": 1,
+        "Prepose": "",
+        "PackageId": [
+            "monthCardF"
+        ],
+        "Link": "view://shopView&viewType=push&shopId=Shop_Monthcard&packageId=monthCardF"
+    }
+}
