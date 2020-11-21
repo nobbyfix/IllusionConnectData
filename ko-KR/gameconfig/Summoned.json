@@ -1,0 +1,572 @@
+{
+    "SummonedYYing": {
+        "Type": "Summoned",
+        "RoleModel": "Model_YYing_jiangshi",
+        "Cost": 2,
+        "NormalSkill": "Hero_Normal_YYingjiangshi",
+        "ProudSkill": "",
+        "UniqueSkill": "",
+        "DoubleSkill": "",
+        "CounterSkill": "",
+        "DeathSkill": "",
+        "PassiveSkill": [],
+        "SkillRate": 0.0,
+        "RageRules": {
+            "a1": [
+                0,
+                0
+            ],
+            "a3": 0,
+            "a2": 0,
+            "a4": 0
+        },
+        "RageBase": 0,
+        "KillRage": 0,
+        "MasterRage": 0,
+        "Flags": [
+            "SUMMONED"
+        ]
+    },
+    "SummonedSGHQShou_Vanessa": {
+        "Type": "Summoned",
+        "RoleModel": "Model_SGHQShou_Vanessa",
+        "Cost": 2,
+        "NormalSkill": "Skill_Summoned_SGHQShou_Vanessa_Normal",
+        "ProudSkill": "Skill_Summoned_SGHQShou_Vanessa_Proud",
+        "UniqueSkill": "",
+        "DoubleSkill": "",
+        "CounterSkill": "",
+        "DeathSkill": "",
+        "PassiveSkill": [
+            "Skill_Summoned_SGHQShou_Vanessa_Passive"
+        ],
+        "SkillRate": 0.5,
+        "RageRules": {
+            "a1": [
+                0,
+                0
+            ],
+            "a3": 0,
+            "a2": 0,
+            "a4": 0
+        },
+        "RageBase": 0,
+        "KillRage": 150,
+        "MasterRage": 10,
+        "Flags": [
+            "SUMMONED"
+        ]
+    },
+    "SummonedYBYa": {
+        "Type": "Summoned",
+        "RoleModel": "Model_YBYa_Redfox",
+        "Cost": 2,
+        "NormalSkill": "Skill_Summoned_YBYa_Redfox_Normal",
+        "ProudSkill": "",
+        "UniqueSkill": "",
+        "DoubleSkill": "",
+        "CounterSkill": "",
+        "DeathSkill": "Skill_Summoned_YBYa_Redfox_Passive_Death",
+        "PassiveSkill": [],
+        "SkillRate": 0.0,
+        "RageRules": {
+            "a1": [
+                0,
+                0
+            ],
+            "a3": 0,
+            "a2": 0,
+            "a4": 0
+        },
+        "RageBase": 0,
+        "KillRage": 0,
+        "MasterRage": 10,
+        "Flags": [
+            "SUMMONED"
+        ]
+    },
+    "SummonedPNCao_NuoNuo": {
+        "Type": "Summoned",
+        "RoleModel": "Model_PNCao_NuoNuo",
+        "Cost": 2,
+        "NormalSkill": "Skill_Summoned_PNCao_NuoNuo_Normal",
+        "ProudSkill": "",
+        "UniqueSkill": "",
+        "DoubleSkill": "",
+        "CounterSkill": "",
+        "DeathSkill": "Skill_Summoned_PNCao_NuoNuo_Passive_Death",
+        "PassiveSkill": [],
+        "SkillRate": 0.0,
+        "RageRules": {
+            "a1": [
+                0,
+                0
+            ],
+            "a3": 0,
+            "a2": 0,
+            "a4": 0
+        },
+        "RageBase": 0,
+        "KillRage": 150,
+        "MasterRage": 10,
+        "Flags": [
+            "SUMMONED"
+        ]
+    },
+    "SummonedGYCZi": {
+        "Type": "Summoned",
+        "RoleModel": "Model_GYCZi_jiangshi",
+        "Cost": 2,
+        "NormalSkill": "Hero_Normal_GYCZijiangshi",
+        "ProudSkill": "",
+        "UniqueSkill": "",
+        "DoubleSkill": "",
+        "CounterSkill": "",
+        "DeathSkill": "",
+        "PassiveSkill": [],
+        "SkillRate": 0.0,
+        "RageRules": {
+            "a1": [
+                0,
+                0
+            ],
+            "a3": 0,
+            "a2": 0,
+            "a4": 0
+        },
+        "RageBase": 0,
+        "KillRage": 0,
+        "MasterRage": 0,
+        "Flags": [
+            "SUMMONED"
+        ]
+    },
+    "SummonedLDu": {
+        "Type": "Summoned",
+        "RoleModel": "Model_LDu_Saba",
+        "Cost": 2,
+        "NormalSkill": "Skill_Summoned_LDu_Saba_Normal",
+        "ProudSkill": "",
+        "UniqueSkill": "",
+        "DoubleSkill": "",
+        "CounterSkill": "",
+        "DeathSkill": "Skill_Summoned_LDu_Saba_Passive_Death",
+        "PassiveSkill": [],
+        "SkillRate": 0.0,
+        "RageRules": {
+            "a1": [
+                0,
+                0
+            ],
+            "a3": 0,
+            "a2": 0,
+            "a4": 0
+        },
+        "RageBase": 0,
+        "KillRage": 0,
+        "MasterRage": 10,
+        "Flags": [
+            "SUMMONED"
+        ]
+    },
+    "SummonedSGHQShou_Lucy": {
+        "Type": "Summoned",
+        "RoleModel": "Model_SGHQShou_Lucy",
+        "Cost": 2,
+        "NormalSkill": "Skill_Summoned_SGHQShou_Lucy_Normal",
+        "ProudSkill": "Skill_Summoned_SGHQShou_Lucy_Proud",
+        "UniqueSkill": "",
+        "DoubleSkill": "",
+        "CounterSkill": "",
+        "DeathSkill": "",
+        "PassiveSkill": [
+            "Skill_Summoned_SGHQShou_Lucy_Passive"
+        ],
+        "SkillRate": 0.5,
+        "RageRules": {
+            "a1": [
+                0,
+                0
+            ],
+            "a3": 0,
+            "a2": 0,
+            "a4": 0
+        },
+        "RageBase": 0,
+        "KillRage": 150,
+        "MasterRage": 10,
+        "Flags": [
+            "SUMMONED"
+        ]
+    },
+    "SummonedSYAi": {
+        "Type": "Summoned",
+        "RoleModel": "Model_SYAi_jiangshi",
+        "Cost": 2,
+        "NormalSkill": "Hero_Normal_SYAijiangshi",
+        "ProudSkill": "",
+        "UniqueSkill": "",
+        "DoubleSkill": "",
+        "CounterSkill": "",
+        "DeathSkill": "",
+        "PassiveSkill": [],
+        "SkillRate": 0.0,
+        "RageRules": {
+            "a1": [
+                0,
+                0
+            ],
+            "a3": 0,
+            "a2": 0,
+            "a4": 0
+        },
+        "RageBase": 0,
+        "KillRage": 0,
+        "MasterRage": 0,
+        "Flags": [
+            "SUMMONED"
+        ]
+    },
+    "SummonedATSheng_Mermaid": {
+        "Type": "Summoned",
+        "RoleModel": "Model_ATSheng_Mermaid",
+        "Cost": 2,
+        "NormalSkill": "Skill_Summoned_ATSheng_Mermaid_Normal",
+        "ProudSkill": "",
+        "UniqueSkill": "",
+        "DoubleSkill": "",
+        "CounterSkill": "",
+        "DeathSkill": "",
+        "PassiveSkill": [
+            "Skill_Summoned_ATSheng_Mermaid_Passive"
+        ],
+        "SkillRate": 0.0,
+        "RageRules": {
+            "a1": [
+                0,
+                0
+            ],
+            "a3": 0,
+            "a2": 0,
+            "a4": 0
+        },
+        "RageBase": 0,
+        "KillRage": 100,
+        "MasterRage": 10,
+        "Flags": [
+            "SUMMONED"
+        ]
+    },
+    "SummonedJNLong": {
+        "Type": "Summon",
+        "RoleModel": "Model_JNLong_Phantom",
+        "Cost": 2,
+        "NormalSkill": "Skill_Summoned_JNLong_Phantom_Normal",
+        "ProudSkill": "Skill_Summoned_JNLong_Phantom_Proud",
+        "UniqueSkill": "",
+        "DoubleSkill": "",
+        "CounterSkill": "",
+        "DeathSkill": "",
+        "PassiveSkill": [
+            "Skill_Summoned_JNLong_Phantom_Passive"
+        ],
+        "SkillRate": 0.5,
+        "RageRules": {
+            "a1": [
+                0,
+                0
+            ],
+            "a3": 0,
+            "a2": 0,
+            "a4": 0
+        },
+        "RageBase": 0,
+        "KillRage": 150,
+        "MasterRage": 10,
+        "Flags": [
+            "SUMMONED"
+        ]
+    },
+    "SummonedLYSi": {
+        "Type": "Summoned",
+        "RoleModel": "Model_LYSi_Hat",
+        "Cost": 2,
+        "NormalSkill": "Skill_Normal_LYSi_Hat",
+        "ProudSkill": "",
+        "UniqueSkill": "",
+        "DoubleSkill": "",
+        "CounterSkill": "",
+        "DeathSkill": "Skill_LYSi_Hat_Passive_Death",
+        "PassiveSkill": [],
+        "SkillRate": 0.0,
+        "RageRules": {
+            "a1": [
+                0,
+                0
+            ],
+            "a3": 0,
+            "a2": 0,
+            "a4": 0
+        },
+        "RageBase": 0,
+        "KillRage": 100,
+        "MasterRage": 10,
+        "Flags": [
+            "SUMMONED"
+        ]
+    },
+    "SummonedATSheng_Queen": {
+        "Type": "Summoned",
+        "RoleModel": "Model_ATSheng_Queen",
+        "Cost": 2,
+        "NormalSkill": "Skill_Summoned_ATSheng_Queen_Normal",
+        "ProudSkill": "",
+        "UniqueSkill": "",
+        "DoubleSkill": "",
+        "CounterSkill": "",
+        "DeathSkill": "",
+        "PassiveSkill": [
+            "Skill_Summoned_ATSheng_Queen_Passive"
+        ],
+        "SkillRate": 0.0,
+        "RageRules": {
+            "a1": [
+                0,
+                0
+            ],
+            "a3": 0,
+            "a2": 0,
+            "a4": 0
+        },
+        "RageBase": 0,
+        "KillRage": 100,
+        "MasterRage": 10,
+        "Flags": [
+            "SUMMONED"
+        ]
+    },
+    "SummonTest": {
+        "Type": "Summoned",
+        "RoleModel": "Model_WEDe",
+        "Cost": 2,
+        "NormalSkill": "Hero_Normal_WEDe",
+        "ProudSkill": "Hero_Normal_WEDe",
+        "UniqueSkill": "",
+        "DoubleSkill": "",
+        "CounterSkill": "",
+        "DeathSkill": "",
+        "PassiveSkill": [],
+        "SkillRate": 0.0,
+        "RageRules": {
+            "a1": [
+                0,
+                0
+            ],
+            "a3": 0,
+            "a2": 0,
+            "a4": 0
+        },
+        "RageBase": 0,
+        "KillRage": 100,
+        "MasterRage": 10,
+        "Flags": [
+            "SUMMONED"
+        ]
+    },
+    "GoldGlin2": {
+        "Type": "Summoned",
+        "RoleModel": "Model_GLin",
+        "Cost": 4,
+        "NormalSkill": "Hero_Normal_GLin",
+        "ProudSkill": "Hero_Normal_GLin",
+        "UniqueSkill": "",
+        "DoubleSkill": "",
+        "CounterSkill": "",
+        "DeathSkill": "",
+        "PassiveSkill": [],
+        "SkillRate": 0.0,
+        "RageRules": {
+            "a1": [
+                0,
+                0
+            ],
+            "a3": 0,
+            "a2": 0,
+            "a4": 0
+        },
+        "RageBase": 0,
+        "KillRage": 100,
+        "MasterRage": 10,
+        "Flags": [
+            "SUMMONED"
+        ]
+    },
+    "GoldGlin1": {
+        "Type": "Summoned",
+        "RoleModel": "Model_GLin",
+        "Cost": 3,
+        "NormalSkill": "Hero_Normal_GLin",
+        "ProudSkill": "Hero_Normal_GLin",
+        "UniqueSkill": "",
+        "DoubleSkill": "",
+        "CounterSkill": "",
+        "DeathSkill": "",
+        "PassiveSkill": [],
+        "SkillRate": 0.0,
+        "RageRules": {
+            "a1": [
+                0,
+                0
+            ],
+            "a3": 0,
+            "a2": 0,
+            "a4": 0
+        },
+        "RageBase": 0,
+        "KillRage": 100,
+        "MasterRage": 10,
+        "Flags": [
+            "SUMMONED"
+        ]
+    },
+    "SummonedPNCao_HuaHaiJi": {
+        "Type": "Summoned",
+        "RoleModel": "Model_PNCao_HuaHaiJi",
+        "Cost": 2,
+        "NormalSkill": "Skill_Summoned_PNCao_HuaHaiJi_Normal",
+        "ProudSkill": "Skill_Summoned_PNCao_HuaHaiJi_Proud",
+        "UniqueSkill": "",
+        "DoubleSkill": "",
+        "CounterSkill": "",
+        "DeathSkill": "",
+        "PassiveSkill": [],
+        "SkillRate": 0.5,
+        "RageRules": {
+            "a1": [
+                0,
+                0
+            ],
+            "a3": 0,
+            "a2": 0,
+            "a4": 0
+        },
+        "RageBase": 0,
+        "KillRage": 150,
+        "MasterRage": 10,
+        "Flags": [
+            "SUMMONED"
+        ]
+    },
+    "SummonedYLJSi_AOE": {
+        "Type": "Summoned",
+        "RoleModel": "Model_Enemy_YLJSi_Enemy02",
+        "Cost": 2,
+        "NormalSkill": "Skill_Enemy_YLJSi_Unique_AOE",
+        "ProudSkill": "Skill_Enemy_YLJSi_Proud",
+        "UniqueSkill": "",
+        "DoubleSkill": "",
+        "CounterSkill": "",
+        "DeathSkill": "",
+        "PassiveSkill": [],
+        "SkillRate": 0.5,
+        "RageRules": {
+            "a1": [
+                0,
+                0
+            ],
+            "a3": 0,
+            "a2": 0,
+            "a4": 0
+        },
+        "RageBase": 0,
+        "KillRage": 100,
+        "MasterRage": 10,
+        "Flags": [
+            "SUMMONED"
+        ]
+    },
+    "SummonedTacticsCard_TombStone": {
+        "Type": "Summoned",
+        "RoleModel": "Model_Enemy_Tombstone_Small",
+        "Cost": 1,
+        "NormalSkill": "Skill_Enemy_Tombstone_Normal",
+        "ProudSkill": "",
+        "UniqueSkill": "",
+        "DoubleSkill": "",
+        "CounterSkill": "",
+        "DeathSkill": "",
+        "PassiveSkill": [],
+        "SkillRate": 0.0,
+        "RageRules": {
+            "a1": [
+                0,
+                0
+            ],
+            "a3": 0,
+            "a2": 0,
+            "a4": 0
+        },
+        "RageBase": 0,
+        "KillRage": 0,
+        "MasterRage": 0,
+        "Flags": [
+            "SUMMONED"
+        ]
+    },
+    "SummonedYLJSi_Heal": {
+        "Type": "Summoned",
+        "RoleModel": "Model_Enemy_YLJSi_Enemy01",
+        "Cost": 2,
+        "NormalSkill": "Skill_Enemy_YLJSi_Unique_Heal",
+        "ProudSkill": "Skill_Enemy_YLJSi_Proud",
+        "UniqueSkill": "",
+        "DoubleSkill": "",
+        "CounterSkill": "",
+        "DeathSkill": "",
+        "PassiveSkill": [],
+        "SkillRate": 0.5,
+        "RageRules": {
+            "a1": [
+                0,
+                0
+            ],
+            "a3": 0,
+            "a2": 0,
+            "a4": 0
+        },
+        "RageBase": 0,
+        "KillRage": 100,
+        "MasterRage": 10,
+        "Flags": [
+            "SUMMONED"
+        ]
+    },
+    "SummonedLDu_1_4": {
+        "Type": "Summoned",
+        "RoleModel": "Model_LDu_Saba",
+        "Cost": 2,
+        "NormalSkill": "Skill_Summoned_LDu_Saba_Normal",
+        "ProudSkill": "",
+        "UniqueSkill": "",
+        "DoubleSkill": "",
+        "CounterSkill": "",
+        "DeathSkill": "Skill_Summoned_LDu_Saba_Passive_Death",
+        "PassiveSkill": [],
+        "SkillRate": 0.0,
+        "RageRules": {
+            "a1": [
+                0,
+                0
+            ],
+            "a3": 0,
+            "a2": 0,
+            "a4": 0
+        },
+        "RageBase": 0,
+        "KillRage": 0,
+        "MasterRage": 0,
+        "Flags": [
+            "SUMMONED"
+        ]
+    }
+}

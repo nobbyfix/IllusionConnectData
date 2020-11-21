@@ -1,0 +1,90 @@
+{
+    "DreamChallenge_T03": {
+        "Name": "DreamChallenge_3_Name",
+        "Story": "",
+        "Background": "",
+        "ShowCondition": {
+            "LEVEL": 32
+        },
+        "UnlockCondition": {
+            "Pass": "DreamChallenge_T02",
+            "LEVEL": 52
+        },
+        "TimeFactor": {
+            "type": "Forever"
+        },
+        "BlockPoint": [
+            "DreamChallengePoint_T03N01",
+            "DreamChallengePoint_T03N02",
+            "DreamChallengePoint_T03N03"
+        ],
+        "Tag": "",
+        "TabPic": "mjt_z_mjjc_zix",
+        "LimitTimeTxt": "",
+        "BGM": [
+            "Mus_Story_Undead_Bird",
+            "",
+            ""
+        ],
+        "Control": 2
+    },
+    "DreamChallenge_T02": {
+        "Name": "DreamChallenge_2_Name",
+        "Story": "",
+        "Background": "",
+        "ShowCondition": {
+            "LEVEL": 32
+        },
+        "UnlockCondition": {
+            "Pass": "DreamChallenge_T01",
+            "LEVEL": 44
+        },
+        "TimeFactor": {
+            "type": "Forever"
+        },
+        "BlockPoint": [
+            "DreamChallengePoint_T02N01",
+            "DreamChallengePoint_T02N02",
+            "DreamChallengePoint_T02N03",
+            "DreamChallengePoint_T02N04"
+        ],
+        "Tag": "",
+        "TabPic": "mjt_z_mjjc_zix",
+        "LimitTimeTxt": "",
+        "BGM": [
+            "Mus_Story_Danger",
+            "",
+            ""
+        ],
+        "Control": 1
+    },
+    "DreamChallenge_T01": {
+        "Name": "DreamChallenge_1_Name",
+        "Story": "",
+        "Background": "",
+        "ShowCondition": {
+            "LEVEL": 32
+        },
+        "UnlockCondition": {
+            "LEVEL": 32
+        },
+        "TimeFactor": {
+            "type": "Forever"
+        },
+        "BlockPoint": [
+            "DreamChallengePoint_T01N01",
+            "DreamChallengePoint_T01N02",
+            "DreamChallengePoint_T01N03",
+            "DreamChallengePoint_T01N04"
+        ],
+        "Tag": "",
+        "TabPic": "mjt_z_mjjc_zis",
+        "LimitTimeTxt": "",
+        "BGM": [
+            "Mus_Story_Mystery",
+            "",
+            ""
+        ],
+        "Control": 1
+    }
+}

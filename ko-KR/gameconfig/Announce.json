@@ -1,0 +1,583 @@
+{
+    "Announce_Club_Join1": {
+        "Type": "CLUB_JOIN",
+        "ReachType": "",
+        "Condition": [],
+        "Channel": [
+            "BASE-SELF",
+            "CHAT-UNION"
+        ],
+        "Label": 4,
+        "NotifyGroup": 4,
+        "Times": 1,
+        "Words": [
+            "Announce_Club_Join1A"
+        ],
+        "Priority": "",
+        "ExpireTime": "",
+        "Link": ""
+    },
+    "Announce_Arena_1": {
+        "Type": "ARENA_REPORT",
+        "ReachType": "",
+        "Condition": [
+            10
+        ],
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Label": 2,
+        "NotifyGroup": 1,
+        "Times": 1,
+        "Words": [
+            "Announce_Arena_1A"
+        ],
+        "Priority": 1,
+        "ExpireTime": 600,
+        "Link": "view://chatMainView&viewType=popup&tabType=1"
+    },
+    "Announce_Arena_2": {
+        "Type": "ARENA_PLAYER",
+        "ReachType": "",
+        "Condition": [],
+        "Channel": [
+            "BASE-SELF"
+        ],
+        "Label": 2,
+        "NotifyGroup": 4,
+        "Times": 1,
+        "Words": [
+            "Announce_Arena_2A"
+        ],
+        "Priority": "",
+        "ExpireTime": "",
+        "Link": ""
+    },
+    "Announce_Club_Join": {
+        "Type": "CLUB_JOIN",
+        "ReachType": "",
+        "Condition": [],
+        "Channel": [
+            "CHAT-UNION",
+            "FLOW-UNION"
+        ],
+        "Label": 4,
+        "NotifyGroup": 2,
+        "Times": 1,
+        "Words": [
+            "Announce_Club_JoinA"
+        ],
+        "Priority": 2,
+        "ExpireTime": 600,
+        "Link": "view://chatMainView&viewType=popup&tabType=3"
+    },
+    "Announce_KOF_JoinAlertt": {
+        "Type": "KOF_JOINALERTT",
+        "ReachType": "",
+        "Condition": [],
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Label": 1,
+        "NotifyGroup": 1,
+        "Times": 1,
+        "Words": [
+            "Announce_KOF_Word2"
+        ],
+        "Priority": 1,
+        "ExpireTime": 600,
+        "Link": ""
+    },
+    "HeroAwaken": {
+        "Type": "HERO_AWAKEN",
+        "ReachType": "",
+        "Condition": "",
+        "Channel": [
+            "CHAT-WORLD",
+            "CHAT-UNION"
+        ],
+        "Label": 1,
+        "NotifyGroup": 1,
+        "Times": 1,
+        "Words": [
+            "Hero_Awaken"
+        ],
+        "Priority": 1,
+        "ExpireTime": 600,
+        "Link": ""
+    },
+    "Announce_Chapter_NormalPass": {
+        "Type": "STAGE_FINISH",
+        "ReachType": "",
+        "Condition": [
+            "NORMAL"
+        ],
+        "Channel": [
+            "BASE-SELF"
+        ],
+        "Label": 2,
+        "NotifyGroup": 4,
+        "Times": 1,
+        "Words": [
+            "Announce_Chapter_NormalPassA"
+        ],
+        "Priority": "",
+        "ExpireTime": "",
+        "Link": ""
+    },
+    "Announce_GetHero1": {
+        "Type": "HERO_RARE",
+        "ReachType": "",
+        "Condition": [
+            14
+        ],
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Label": 1,
+        "NotifyGroup": 1,
+        "Times": 1,
+        "Words": [
+            "Announce_GetHero1A"
+        ],
+        "Priority": 1,
+        "ExpireTime": 600,
+        "Link": "view://chatMainView&viewType=popup&tabType=1"
+    },
+    "Announce_Club_ChangeName": {
+        "Type": "CLUB_NAME",
+        "ReachType": "",
+        "Condition": [],
+        "Channel": [
+            "CHAT-UNION",
+            "FLOW-UNION"
+        ],
+        "Label": 4,
+        "NotifyGroup": 2,
+        "Times": 1,
+        "Words": [
+            "Announce_Club_ChangeNameA"
+        ],
+        "Priority": 1,
+        "ExpireTime": 600,
+        "Link": "view://chatMainView&viewType=popup&tabType=3"
+    },
+    "Announce_Club_JobChange1": {
+        "Type": "CLUB_CHENGE",
+        "ReachType": "",
+        "Condition": [],
+        "Channel": [
+            "CHAT-UNION",
+            "FLOW-UNION"
+        ],
+        "Label": 4,
+        "NotifyGroup": 2,
+        "Times": 1,
+        "Words": [
+            "Announce_Club_JobChange1A"
+        ],
+        "Priority": 1,
+        "ExpireTime": 600,
+        "Link": "view://chatMainView&viewType=popup&tabType=3"
+    },
+    "Announce_Club_JobChange2": {
+        "Type": "CLUB_CHENGE",
+        "ReachType": "",
+        "Condition": [],
+        "Channel": [
+            "BASE-SELF"
+        ],
+        "Label": 4,
+        "NotifyGroup": 4,
+        "Times": 1,
+        "Words": [
+            "Announce_Club_JobChange2A"
+        ],
+        "Priority": "",
+        "ExpireTime": "",
+        "Link": ""
+    },
+    "Announce_WeaponGot": {
+        "Type": "WEAPON_GET",
+        "ReachType": "",
+        "Condition": [
+            14
+        ],
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Label": 1,
+        "NotifyGroup": 1,
+        "Times": 1,
+        "Words": [
+            "Announce_WeaponGotA"
+        ],
+        "Priority": 1,
+        "ExpireTime": 600,
+        "Link": "view://chatMainView&viewType=popup&tabType=1"
+    },
+    "Announce_Club_Kill": {
+        "Type": "CLUB_BOSS_KILL",
+        "ReachType": "",
+        "Condition": "",
+        "Channel": [
+            "CHAT-UNION",
+            "FLOW-BATTLE"
+        ],
+        "Label": 3,
+        "NotifyGroup": 2,
+        "Times": 1,
+        "Words": [
+            "Announce_Club_Kill"
+        ],
+        "Priority": 1,
+        "ExpireTime": 600,
+        "Link": ""
+    },
+    "Announce_GetHero2": {
+        "Type": "HERO_FIRSTGET",
+        "ReachType": "",
+        "Condition": [
+            11,
+            12,
+            13,
+            14
+        ],
+        "Channel": [
+            "BASE-SELF"
+        ],
+        "Label": 2,
+        "NotifyGroup": 4,
+        "Times": 1,
+        "Words": [
+            "Announce_GetHero2A"
+        ],
+        "Priority": "",
+        "ExpireTime": "",
+        "Link": ""
+    },
+    "Announce_Club_LvUp": {
+        "Type": "CLUB_LEVELUP",
+        "ReachType": "",
+        "Condition": [],
+        "Channel": [
+            "CHAT-UNION",
+            "FLOW-UNION"
+        ],
+        "Label": 4,
+        "NotifyGroup": 2,
+        "Times": 1,
+        "Words": [
+            "Announce_Club_LvUpA"
+        ],
+        "Priority": 1,
+        "ExpireTime": 600,
+        "Link": "view://chatMainView&viewType=popup&tabType=3"
+    },
+    "Announce_WeaponGot1": {
+        "Type": "WEAPON_GET",
+        "ReachType": "",
+        "Condition": [
+            11,
+            12,
+            13,
+            14
+        ],
+        "Channel": [
+            "BASE-SELF"
+        ],
+        "Label": 2,
+        "NotifyGroup": 4,
+        "Times": 1,
+        "Words": [
+            "Announce_WeaponGot1A"
+        ],
+        "Priority": "",
+        "ExpireTime": "",
+        "Link": ""
+    },
+    "Announce_KOF_Final": {
+        "Type": "KOF_FINAL",
+        "ReachType": "",
+        "Condition": [],
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Label": 1,
+        "NotifyGroup": 1,
+        "Times": 1,
+        "Words": [
+            "Announce_KOF_Word4"
+        ],
+        "Priority": 1,
+        "ExpireTime": 600,
+        "Link": ""
+    },
+    "Announce_Club_Hurt": {
+        "Type": "CLUB_BOSS_HURT",
+        "ReachType": "",
+        "Condition": "",
+        "Channel": [
+            "CHAT-UNION",
+            "FLOW-BATTLE"
+        ],
+        "Label": 3,
+        "NotifyGroup": 2,
+        "Times": 1,
+        "Words": [
+            "Announce_Club_Hurt"
+        ],
+        "Priority": 1,
+        "ExpireTime": 600,
+        "Link": ""
+    },
+    "Announce_Chapter_HardPass": {
+        "Type": "STAGE_FINISH",
+        "ReachType": "",
+        "Condition": [
+            "ELITE"
+        ],
+        "Channel": [
+            "BASE-SELF"
+        ],
+        "Label": 2,
+        "NotifyGroup": 4,
+        "Times": 1,
+        "Words": [
+            "Announce_Chapter_HardPassA"
+        ],
+        "Priority": "",
+        "ExpireTime": "",
+        "Link": ""
+    },
+    "Announce_GM": {
+        "Type": "GM_TEXT",
+        "ReachType": "",
+        "Condition": [],
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Label": 1,
+        "NotifyGroup": 1,
+        "Times": 3,
+        "Words": [
+            "Announce_GM"
+        ],
+        "Priority": 1,
+        "ExpireTime": 1500,
+        "Link": ""
+    },
+    "Announce_Club_SSR": {
+        "Type": "CLUB_BOSS_SSR",
+        "ReachType": "",
+        "Condition": "",
+        "Channel": [
+            "CHAT-WORLD",
+            "CHAT-UNION",
+            "FLOW-BATTLE"
+        ],
+        "Label": 3,
+        "NotifyGroup": 2,
+        "Times": 1,
+        "Words": [
+            "Announce_Club_SSR"
+        ],
+        "Priority": 1,
+        "ExpireTime": 600,
+        "Link": ""
+    },
+    "Announce_KOF_Start": {
+        "Type": "KOF_START",
+        "ReachType": "",
+        "Condition": [],
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Label": 1,
+        "NotifyGroup": 1,
+        "Times": 1,
+        "Words": [
+            "Announce_KOF_Word3"
+        ],
+        "Priority": 1,
+        "ExpireTime": 600,
+        "Link": ""
+    },
+    "Announce_Club_Leave": {
+        "Type": "CLUB_OUT",
+        "ReachType": "",
+        "Condition": [],
+        "Channel": [
+            "CHAT-UNION",
+            "FLOW-UNION"
+        ],
+        "Label": 4,
+        "NotifyGroup": 2,
+        "Times": 1,
+        "Words": [
+            "Announce_Club_LeaveA"
+        ],
+        "Priority": 2,
+        "ExpireTime": 600,
+        "Link": "view://chatMainView&viewType=popup&tabType=3"
+    },
+    "Announce_Player_Rankup": {
+        "Type": "PLAYER_LEVELUP",
+        "ReachType": "",
+        "Condition": [],
+        "Channel": [
+            "BASE-SELF"
+        ],
+        "Label": 2,
+        "NotifyGroup": 4,
+        "Times": 1,
+        "Words": [
+            "Announce_Player_RankupA"
+        ],
+        "Priority": "",
+        "ExpireTime": "",
+        "Link": ""
+    },
+    "Announce_KOF_End": {
+        "Type": "KOF_END",
+        "ReachType": "",
+        "Condition": [],
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Label": 1,
+        "NotifyGroup": 1,
+        "Times": 1,
+        "Words": [
+            "Announce_KOF_Word6"
+        ],
+        "Priority": 1,
+        "ExpireTime": 600,
+        "Link": ""
+    },
+    "Announce_Club_Create": {
+        "Type": "CLUB_SETUP",
+        "ReachType": "",
+        "Condition": [],
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Label": 1,
+        "NotifyGroup": 1,
+        "Times": 1,
+        "Words": [
+            "Announce_Club_CreateA"
+        ],
+        "Priority": 1,
+        "ExpireTime": 600,
+        "Link": "view://chatMainView&viewType=popup&tabType=3"
+    },
+    "Announce_StarUp1": {
+        "Type": "HERO_STAR",
+        "ReachType": "",
+        "Condition": [
+            5,
+            6,
+            7
+        ],
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Label": 1,
+        "NotifyGroup": 1,
+        "Times": 1,
+        "Words": [
+            "Announce_StarUp1A"
+        ],
+        "Priority": 2,
+        "ExpireTime": 600,
+        "Link": ""
+    },
+    "Announce_KOF_JoinAlert": {
+        "Type": "KOF_JOINALERT",
+        "ReachType": "",
+        "Condition": [],
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Label": 1,
+        "NotifyGroup": 1,
+        "Times": 1,
+        "Words": [
+            "Announce_KOF_Word1"
+        ],
+        "Priority": 1,
+        "ExpireTime": 600,
+        "Link": ""
+    },
+    "Announce_StarUp2": {
+        "Type": "HERO_STAR",
+        "ReachType": "",
+        "Condition": [
+            3,
+            4,
+            5,
+            6,
+            7
+        ],
+        "Channel": [
+            "BASE-SELF"
+        ],
+        "Label": 2,
+        "NotifyGroup": 4,
+        "Times": 1,
+        "Words": [
+            "Announce_StarUp2A"
+        ],
+        "Priority": "",
+        "ExpireTime": "",
+        "Link": ""
+    },
+    "Announce_Club_Leave1": {
+        "Type": "CLUB_OUT",
+        "ReachType": "",
+        "Condition": [],
+        "Channel": [
+            "BASE-SELF",
+            "CHAT-UNION"
+        ],
+        "Label": 4,
+        "NotifyGroup": 4,
+        "Times": 1,
+        "Words": [
+            "Announce_Club_Leave1A"
+        ],
+        "Priority": "",
+        "ExpireTime": "",
+        "Link": ""
+    },
+    "Announce_Relation_Achieve": {
+        "Type": "HERO_RELATION",
+        "ReachType": "",
+        "Condition": [],
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Label": 1,
+        "NotifyGroup": 1,
+        "Times": 1,
+        "Words": [
+            "Announce_Relation_AchieveA"
+        ],
+        "Priority": 2,
+        "ExpireTime": 600,
+        "Link": "view://chatMainView&viewType=popup&tabType=1"
+    }
+}
