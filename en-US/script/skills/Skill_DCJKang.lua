@@ -663,10 +663,11 @@ all.Skill_DCJKang_Passive = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			local count = global.SelectBuffCount(_env, global.FriendUnits(_env), global.BUFF_MARKED(_env, "REFLECT1"))
 
-			if count > 1 then
-				global.DispelBuff(_env, global.FriendUnits(_env), global.BUFF_MARKED(_env, "REFLECT1"), 1)
+			for _, unit in global.__iter__(global.FriendUnits(_env)) do
+				if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "REFLECT1")) > 0 then
+					global.DispelBuff(_env, unit, global.BUFF_MARKED(_env, "REFLECT1"), 1)
+				end
 			end
 		end)
 
@@ -825,10 +826,11 @@ all.Skill_DCJKang_Passive_EX = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			local count = global.SelectBuffCount(_env, global.FriendUnits(_env), global.BUFF_MARKED(_env, "REFLECT1"))
 
-			if count > 1 then
-				global.DispelBuff(_env, global.FriendUnits(_env), global.BUFF_MARKED(_env, "REFLECT1"), 1)
+			for _, unit in global.__iter__(global.FriendUnits(_env)) do
+				if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "REFLECT1")) > 0 then
+					global.DispelBuff(_env, unit, global.BUFF_MARKED(_env, "REFLECT1"), 1)
+				end
 			end
 		end)
 

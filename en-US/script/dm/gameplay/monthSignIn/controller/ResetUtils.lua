@@ -130,6 +130,16 @@ function ResetUtils:getWeek(time)
 	return tonumber(week)
 end
 
+function ResetUtils:getRemoteWeek(time)
+	local week = TimeUtil:remoteDate("%w", time)
+
+	if tonumber(week) == 0 then
+		return 7
+	end
+
+	return tonumber(week)
+end
+
 function ResetUtils:toTime(timeString)
 	local result = string.split(timeString, ":")
 	local h = tonumber(result[1])

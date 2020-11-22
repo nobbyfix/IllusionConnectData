@@ -142,7 +142,9 @@ function ShopBuyPackageMediator:refreshView()
 	node:getVirtualRenderer():setDimensions(self._descListView:getContentSize().width, 0)
 	self._descListView:pushBackCustomItem(node)
 
-	if string.len(descString) < 80 then
+	local content = node:getContentSize()
+
+	if node:getContentSize().height < self._descListView:getContentSize().height then
 		self._descListView:setEnabled(false)
 	else
 		self._descListView:setEnabled(true)

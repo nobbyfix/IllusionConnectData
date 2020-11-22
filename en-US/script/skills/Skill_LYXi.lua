@@ -504,8 +504,10 @@ all.Skill_LYXi_Unique_EX = {
 
 				global.ApplyBuff(_env, friendunit, {
 					timing = 0,
-					duration = 99,
 					display = "DefUp",
+					group = "Skill_LYXi_Unique",
+					duration = 99,
+					limit = 1,
 					tags = {
 						"BUFF",
 						"DEFRATE",

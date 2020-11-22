@@ -83,6 +83,10 @@ function LoginMediator:animOver()
 
 	if not GameConfigs.disabledSDKLogin then
 		local function callback()
+			if DisposableObject:isDisposed(self) then
+				return
+			end
+
 			self._loginBtn:setTouchEnabled(true)
 
 			if SDKHelper:isEnableSdk() then

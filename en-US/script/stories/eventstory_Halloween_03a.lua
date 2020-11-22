@@ -102,7 +102,7 @@ function scene_eventstory_Halloween_03a:stage(args)
 						name = "bg2",
 						pathType = "SCENE",
 						type = "Image",
-						image = "Main_Halloween_Event_00.jpg",
+						image = "wsj_zhujiemian_bg.jpg",
 						layoutMode = 1,
 						zorder = 3,
 						id = "bg2",

@@ -170,26 +170,28 @@ function StageLosePopMediator:initSvpRole()
 		local mvpPoint = 0
 		model = ConfigReader:getDataByNameIdAndKey("MasterBase", team:getMasterId(), "RoleModel")
 
-		for k, v in pairs(playerBattleData.unitSummary) do
-			local roleType = ConfigReader:getDataByNameIdAndKey("RoleModel", v.model, "Type")
+		if playerBattleData then
+			for k, v in pairs(playerBattleData.unitSummary) do
+				local roleType = ConfigReader:getDataByNameIdAndKey("RoleModel", v.model, "Type")
 
-			if roleType == RoleModelType.kHero then
-				local unitMvpPoint = 0
-				local _unitDmg = v.damage
+				if roleType == RoleModelType.kHero then
+					local unitMvpPoint = 0
+					local _unitDmg = v.damage
 
-				if _unitDmg then
-					unitMvpPoint = unitMvpPoint + _unitDmg
-				end
+					if _unitDmg then
+						unitMvpPoint = unitMvpPoint + _unitDmg
+					end
 
-				local _unitCure = v.cure
+					local _unitCure = v.cure
 
-				if _unitCure then
-					unitMvpPoint = unitMvpPoint + _unitCure
-				end
+					if _unitCure then
+						unitMvpPoint = unitMvpPoint + _unitCure
+					end
 
-				if mvpPoint < unitMvpPoint then
-					mvpPoint = unitMvpPoint
-					model = v.model
+					if mvpPoint < unitMvpPoint then
+						mvpPoint = unitMvpPoint
+						model = v.model
+					end
 				end
 			end
 		end

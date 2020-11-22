@@ -1070,6 +1070,27 @@ function ShopSystem:requestDebrisSell(params, callback)
 end
 
 function ShopSystem:checkPurchaseCD(goodsId)
+	local curTime = self._gameServerAgent:remoteTimestamp()
+	local cd = CommonUtils.GetPurchaseCD()
+
+	if cd > 0 then
+		if self._itemPurchaseStamp[goodsId] then
+			local remainTime = math.ceil(self._itemPurchaseStamp[goodsId] + cd - curTime)
+
+			if remainTime > 0 then
+				self:dispatch(ShowTipEvent({
+					tip = Strings:get("ShopPurchaseCDTip", {
+						num = remainTime
+					})
+				}))
+
+				return false
+			end
+		end
+
+		self._itemPurchaseStamp[goodsId] = curTime
+	end
+
 	return true
 end
 

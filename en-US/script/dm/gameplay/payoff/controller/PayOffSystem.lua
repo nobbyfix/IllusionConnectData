@@ -134,7 +134,7 @@ function PayOffSystem:onPayOffToSdk(event)
 				self:setOrderState(message.orderId, KOrderState.kPayToSDKFinish)
 			end
 		elseif errorCode == "payFailure" then
-			if message and message.orderId then
+			if message and type(message) == "table" and message.orderId then
 				self:setOrderState(message.orderId, KOrderState.kFinish)
 			end
 		elseif errorCode == "payInitSuccess" then

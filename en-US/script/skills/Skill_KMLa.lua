@@ -209,6 +209,7 @@ all.Skill_KMLa_Unique = {
 
 		_env.count1 = 0
 		_env.count = 0
+		_env.dam = 0
 
 		exec["@time"]({
 			0
@@ -239,13 +240,20 @@ all.Skill_KMLa_Unique = {
 			local this = _env.this
 			local global = _env.global
 			local hp = global.UnitPropGetter(_env, "hp")(_env, _env.TARGET)
+			local atk = global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR)
+
+			if hp * 0.12 > atk * 3 then
+				_env.dam = atk * 3
+			else
+				_env.dam = hp * 0.12
+			end
 
 			global.ApplyStatusEffect(_env, _env.ACTOR, _env.TARGET)
 			global.ApplyRPEffect(_env, _env.ACTOR, _env.TARGET)
 
 			local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, this.dmgFactor)
 
-			global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage + hp * 0.12)
+			global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage + _env.dam)
 		end)
 		exec["@time"]({
 			3200
@@ -472,6 +480,7 @@ all.Skill_KMLa_Unique_EX = {
 
 		_env.count1 = 0
 		_env.count = 0
+		_env.dam = 0
 
 		exec["@time"]({
 			0
@@ -502,13 +511,20 @@ all.Skill_KMLa_Unique_EX = {
 			local this = _env.this
 			local global = _env.global
 			local hp = global.UnitPropGetter(_env, "hp")(_env, _env.TARGET)
+			local atk = global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR)
+
+			if hp * 0.17 > atk * 4 then
+				_env.dam = atk * 4
+			else
+				_env.dam = hp * 0.17
+			end
 
 			global.ApplyStatusEffect(_env, _env.ACTOR, _env.TARGET)
 			global.ApplyRPEffect(_env, _env.ACTOR, _env.TARGET)
 
 			local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, this.dmgFactor)
 
-			global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage + hp * 0.17)
+			global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage + _env.dam)
 		end)
 		exec["@time"]({
 			3200

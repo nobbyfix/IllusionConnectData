@@ -80,9 +80,22 @@ end
 function BagSystem:initConfigSystem(tableName, configId)
 	local srcCfg = ConfigReader:getRecordById(tableName, configId)
 
+	if srcCfg == nil and configId == "AcitvityHalloweenStamina_Reset" then
+		srcCfg = {
+			ResetSystem = {
+				addValue = 1,
+				storage = 5000,
+				cd = 540,
+				initial = 200,
+				resetMode = "CD",
+				limit = 400
+			}
+		}
+	end
+
 	assert(srcCfg ~= nil, "表" .. tableName .. "没有id为" .. configId .. "的数据")
 
-	return srcCfg.ResetSystem
+	return srcCfg and srcCfg.ResetSystem or nil
 end
 
 function BagSystem:userInject(injector)

@@ -7072,253 +7072,6 @@
         "MaxStar": 5,
         "AwakePic": ""
     },
-    "BQDShe": {
-        "RoleModel": "Model_BQDShe",
-        "Name": "HeroBase_Name_BQDShe",
-        "IfHidden": 0,
-        "ShortDesc": "HeroBase_ShortDesc_BQDShe",
-        "Desc": "HeroBase_Desc_BQDShe",
-        "Position": "HeroBase_Position_BQDShe",
-        "BasicPower": 1600,
-        "Sex": 0,
-        "Speed": 50,
-        "Rareity": 14,
-        "Type": "Aoe",
-        "BaseStar": 3,
-        "StarId": "BQDShe_1",
-        "Cost": 16,
-        "MasterRage": 144,
-        "LevelUpFactor": 1.0,
-        "RelationList": [],
-        "ItemId": "IHF_BQDShe",
-        "BlockAI": "AIBQDShe",
-        "NormalSkill": "Hero_Normal_BQDShe",
-        "ProudSkill": "Hero_Proud_BQDShe",
-        "UniqueSkill": "Hero_Unique_BQDShe",
-        "BattlePassiveSkill": "Hero_PBattle_BQDShe",
-        "BattlePassiveType": "PBuff",
-        "KeyPassiveSkill": "Hero_PBattle_BQDShe_Key",
-        "PassiveCondition": [
-            [
-                {
-                    "scope": [
-                        1,
-                        1
-                    ],
-                    "range": "group",
-                    "type": "tag",
-                    "param": [
-                        [
-                            "BQDShe"
-                        ]
-                    ]
-                }
-            ]
-        ],
-        "EnterCD": 1.0,
-        "BaseAttack": 222.0,
-        "BaseDefence": 60.0,
-        "BaseHp": 738.0,
-        "AttackFactor": 1.14,
-        "DefenceFactor": 1.0,
-        "HpFactor": 0.82,
-        "AtkRate": 1.0,
-        "DefRate": 1.0,
-        "DefWeaken": 0.0,
-        "AtkWeaken": 0.0,
-        "CritRate": 0.0,
-        "UncritRate": 0.0,
-        "CritStrg": 0.0,
-        "BlockRate": 0.0,
-        "UnblockRate": 0.0,
-        "BlockStrg": 0.0,
-        "HurtRate": 0.0,
-        "UnhurtRate": 0.0,
-        "Absorption": 0.0,
-        "Reflection": 0.0,
-        "EffectRate": 0.0,
-        "UneffectRate": 0.0,
-        "EffectStrg": 0.0,
-        "BeCuredRate": 0.0,
-        "UndeadRate": 0.0,
-        "DoubleRate": 0.0,
-        "CounterRate": 0.0,
-        "SkillRate": 0.15,
-        "AngerBase": 1000.0,
-        "AngerMax": 1000.0,
-        "AngerRate": 0.0,
-        "Anger": {
-            "a1": [
-                10,
-                750
-            ],
-            "a3": 150,
-            "a2": 320
-        },
-        "Flags": [
-            "BQDShe",
-            "fanwei"
-        ],
-        "BaseQualityAttr": "SSR_10_Aoe",
-        "Soul": [],
-        "Party": "DWH",
-        "InnerAttr": [],
-        "CVName": "BQDShe_CVName",
-        "MVPText": "MVPText_BQDShe",
-        "SVPText": "SVPText_BQDShe",
-        "SoundList": [
-            "Voice_BQDShe_01",
-            "Voice_BQDShe_35",
-            "Voice_BQDShe_40_1",
-            "Voice_BQDShe_40_2",
-            "Voice_BQDShe_40_3",
-            "Voice_BQDShe_37",
-            "Voice_BQDShe_38",
-            "Voice_BQDShe_39",
-            "Voice_BQDShe_47",
-            "Voice_BQDShe_48",
-            "Voice_BQDShe_50",
-            "Voice_BQDShe_51",
-            "Voice_BQDShe_52",
-            "Voice_BQDShe_53",
-            "Voice_BQDShe_54",
-            "Voice_BQDShe_55",
-            "Voice_BQDShe_56",
-            "Voice_BQDShe_57",
-            "Voice_BQDShe_60",
-            "Voice_BQDShe_07",
-            "Voice_BQDShe_08",
-            "Voice_BQDShe_09",
-            "Voice_BQDShe_58",
-            "Voice_BQDShe_59",
-            "Voice_BQDShe_10",
-            "Voice_BQDShe_11",
-            "Voice_BQDShe_14",
-            "Voice_BQDShe_15",
-            "Voice_BQDShe_16",
-            "Voice_BQDShe_21",
-            "Voice_BQDShe_17",
-            "Voice_BQDShe_18",
-            "Voice_BQDShe_34",
-            "Voice_BQDShe_19",
-            "Voice_BQDShe_63",
-            "Voice_BQDShe_61",
-            "Voice_BQDShe_25",
-            "Voice_BQDShe_26",
-            "Voice_BQDShe_27",
-            "Voice_BQDShe_28",
-            "Voice_BQDShe_29",
-            "Voice_BQDShe_30",
-            "Voice_BQDShe_31",
-            "Voice_BQDShe_32"
-        ],
-        "HeadTouchDeviation": [
-            0,
-            0
-        ],
-        "TeamSpecialVoice": {},
-        "HeroStoryMap": "",
-        "GainAnim": "",
-        "SkillCost": {
-            "ProudSkill": {
-                "amount": [
-                    6,
-                    12,
-                    18,
-                    24,
-                    30,
-                    36,
-                    42,
-                    48,
-                    54,
-                    60
-                ],
-                "code": "ISU_Defense"
-            },
-            "NormalSkill": {
-                "amount": [
-                    4,
-                    8,
-                    12,
-                    16,
-                    20,
-                    24,
-                    28,
-                    32,
-                    36,
-                    40
-                ],
-                "code": "ISU_Defense"
-            },
-            "UniqueSkill": {
-                "amount": [
-                    8,
-                    16,
-                    24,
-                    32,
-                    40,
-                    48,
-                    56,
-                    64,
-                    72,
-                    80
-                ],
-                "code": "ISU_Defense"
-            },
-            "PassiveSkill2": {
-                "amount": [
-                    4,
-                    10,
-                    15,
-                    20,
-                    24,
-                    28,
-                    33,
-                    38,
-                    43,
-                    48
-                ],
-                "code": "ISU_Defense"
-            },
-            "PassiveSkill1": {
-                "amount": [
-                    4,
-                    10,
-                    15,
-                    20,
-                    24,
-                    28,
-                    33,
-                    38,
-                    43,
-                    48
-                ],
-                "code": "ISU_Defense"
-            },
-            "BattlePassiveSkill": {
-                "amount": [
-                    4,
-                    10,
-                    15,
-                    20,
-                    24,
-                    28,
-                    33,
-                    38,
-                    43,
-                    48
-                ],
-                "code": "ISU_Defense"
-            }
-        },
-        "SurfaceList": [
-            "Surface_BQDShe_1"
-        ],
-        "Transform": "",
-        "HeroShowIntro": "HeroBase_Intro_BQDShe",
-        "MaxStar": 6,
-        "AwakePic": ""
-    },
     "WEDe": {
         "RoleModel": "Model_WEDe",
         "Name": "HeroBase_Name_WEDe",
@@ -18887,6 +18640,253 @@
         ],
         "Transform": "",
         "HeroShowIntro": "HeroBase_Intro_SGHQShou",
+        "MaxStar": 6,
+        "AwakePic": ""
+    },
+    "BQDShe": {
+        "RoleModel": "Model_BQDShe",
+        "Name": "HeroBase_Name_BQDShe",
+        "IfHidden": 1,
+        "ShortDesc": "HeroBase_ShortDesc_BQDShe",
+        "Desc": "HeroBase_Desc_BQDShe",
+        "Position": "HeroBase_Position_BQDShe",
+        "BasicPower": 1600,
+        "Sex": 0,
+        "Speed": 50,
+        "Rareity": 14,
+        "Type": "Aoe",
+        "BaseStar": 3,
+        "StarId": "BQDShe_1",
+        "Cost": 16,
+        "MasterRage": 144,
+        "LevelUpFactor": 1.0,
+        "RelationList": [],
+        "ItemId": "IHF_BQDShe",
+        "BlockAI": "AIBQDShe",
+        "NormalSkill": "Hero_Normal_BQDShe",
+        "ProudSkill": "Hero_Proud_BQDShe",
+        "UniqueSkill": "Hero_Unique_BQDShe",
+        "BattlePassiveSkill": "Hero_PBattle_BQDShe",
+        "BattlePassiveType": "PBuff",
+        "KeyPassiveSkill": "Hero_PBattle_BQDShe_Key",
+        "PassiveCondition": [
+            [
+                {
+                    "scope": [
+                        1,
+                        1
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "BQDShe"
+                        ]
+                    ]
+                }
+            ]
+        ],
+        "EnterCD": 1.0,
+        "BaseAttack": 222.0,
+        "BaseDefence": 60.0,
+        "BaseHp": 738.0,
+        "AttackFactor": 1.14,
+        "DefenceFactor": 1.0,
+        "HpFactor": 0.82,
+        "AtkRate": 1.0,
+        "DefRate": 1.0,
+        "DefWeaken": 0.0,
+        "AtkWeaken": 0.0,
+        "CritRate": 0.0,
+        "UncritRate": 0.0,
+        "CritStrg": 0.0,
+        "BlockRate": 0.0,
+        "UnblockRate": 0.0,
+        "BlockStrg": 0.0,
+        "HurtRate": 0.0,
+        "UnhurtRate": 0.0,
+        "Absorption": 0.0,
+        "Reflection": 0.0,
+        "EffectRate": 0.0,
+        "UneffectRate": 0.0,
+        "EffectStrg": 0.0,
+        "BeCuredRate": 0.0,
+        "UndeadRate": 0.0,
+        "DoubleRate": 0.0,
+        "CounterRate": 0.0,
+        "SkillRate": 0.15,
+        "AngerBase": 1000.0,
+        "AngerMax": 1000.0,
+        "AngerRate": 0.0,
+        "Anger": {
+            "a1": [
+                10,
+                750
+            ],
+            "a3": 150,
+            "a2": 320
+        },
+        "Flags": [
+            "BQDShe",
+            "fanwei"
+        ],
+        "BaseQualityAttr": "SSR_10_Aoe",
+        "Soul": [],
+        "Party": "DWH",
+        "InnerAttr": [],
+        "CVName": "BQDShe_CVName",
+        "MVPText": "MVPText_BQDShe",
+        "SVPText": "SVPText_BQDShe",
+        "SoundList": [
+            "Voice_BQDShe_01",
+            "Voice_BQDShe_35",
+            "Voice_BQDShe_40_1",
+            "Voice_BQDShe_40_2",
+            "Voice_BQDShe_40_3",
+            "Voice_BQDShe_37",
+            "Voice_BQDShe_38",
+            "Voice_BQDShe_39",
+            "Voice_BQDShe_47",
+            "Voice_BQDShe_48",
+            "Voice_BQDShe_50",
+            "Voice_BQDShe_51",
+            "Voice_BQDShe_52",
+            "Voice_BQDShe_53",
+            "Voice_BQDShe_54",
+            "Voice_BQDShe_55",
+            "Voice_BQDShe_56",
+            "Voice_BQDShe_57",
+            "Voice_BQDShe_60",
+            "Voice_BQDShe_07",
+            "Voice_BQDShe_08",
+            "Voice_BQDShe_09",
+            "Voice_BQDShe_58",
+            "Voice_BQDShe_59",
+            "Voice_BQDShe_10",
+            "Voice_BQDShe_11",
+            "Voice_BQDShe_14",
+            "Voice_BQDShe_15",
+            "Voice_BQDShe_16",
+            "Voice_BQDShe_21",
+            "Voice_BQDShe_17",
+            "Voice_BQDShe_18",
+            "Voice_BQDShe_34",
+            "Voice_BQDShe_19",
+            "Voice_BQDShe_63",
+            "Voice_BQDShe_61",
+            "Voice_BQDShe_25",
+            "Voice_BQDShe_26",
+            "Voice_BQDShe_27",
+            "Voice_BQDShe_28",
+            "Voice_BQDShe_29",
+            "Voice_BQDShe_30",
+            "Voice_BQDShe_31",
+            "Voice_BQDShe_32"
+        ],
+        "HeadTouchDeviation": [
+            0,
+            0
+        ],
+        "TeamSpecialVoice": {},
+        "HeroStoryMap": "",
+        "GainAnim": "",
+        "SkillCost": {
+            "ProudSkill": {
+                "amount": [
+                    6,
+                    12,
+                    18,
+                    24,
+                    30,
+                    36,
+                    42,
+                    48,
+                    54,
+                    60
+                ],
+                "code": "ISU_Defense"
+            },
+            "NormalSkill": {
+                "amount": [
+                    4,
+                    8,
+                    12,
+                    16,
+                    20,
+                    24,
+                    28,
+                    32,
+                    36,
+                    40
+                ],
+                "code": "ISU_Defense"
+            },
+            "UniqueSkill": {
+                "amount": [
+                    8,
+                    16,
+                    24,
+                    32,
+                    40,
+                    48,
+                    56,
+                    64,
+                    72,
+                    80
+                ],
+                "code": "ISU_Defense"
+            },
+            "PassiveSkill2": {
+                "amount": [
+                    4,
+                    10,
+                    15,
+                    20,
+                    24,
+                    28,
+                    33,
+                    38,
+                    43,
+                    48
+                ],
+                "code": "ISU_Defense"
+            },
+            "PassiveSkill1": {
+                "amount": [
+                    4,
+                    10,
+                    15,
+                    20,
+                    24,
+                    28,
+                    33,
+                    38,
+                    43,
+                    48
+                ],
+                "code": "ISU_Defense"
+            },
+            "BattlePassiveSkill": {
+                "amount": [
+                    4,
+                    10,
+                    15,
+                    20,
+                    24,
+                    28,
+                    33,
+                    38,
+                    43,
+                    48
+                ],
+                "code": "ISU_Defense"
+            }
+        },
+        "SurfaceList": [
+            "Surface_BQDShe_1"
+        ],
+        "Transform": "",
+        "HeroShowIntro": "HeroBase_Intro_BQDShe",
         "MaxStar": 6,
         "AwakePic": ""
     }

@@ -133,29 +133,33 @@ all.Skill_YSLBin_Proud = {
 			local this = _env.this
 			local global = _env.global
 
-			if #global.SelectBuffs(_env, _env.TARGET, global.BUFF_MARKED_ALL(_env, "BUFF")) > 0 then
-				local buffeft1 = global.NumericEffect(_env, "+critrate", {
-					"+Normal",
-					"+Normal"
-				}, 0.08)
+			if not global.MARKED(_env, "Master_XueZhan")(_env, _env.TARGET) and not global.MARKED(_env, "MASTER_LieSha")(_env, _env.TARGET) and not global.MARKED(_env, "MASTER_BiLei")(_env, _env.TARGET) and not global.MARKED(_env, "MASTER_FuHun")(_env, _env.TARGET) and not global.MARKED(_env, "MASTER_SenLing")(_env, _env.TARGET) and not global.MARKED(_env, "MASTER_WuShi")(_env, _env.TARGET) and not global.MARKED(_env, "MASTER_JiangJun")(_env, _env.TARGET) then
+				if not global.MARKED(_env, "MASTER_ZhaoHuan")(_env, _env.TARGET) then
+					if #global.SelectBuffs(_env, _env.TARGET, global.BUFF_MARKED_ALL(_env, "BUFF", "DISPELLABLE", "STEALABLE")) > 0 then
+						local buffeft1 = global.NumericEffect(_env, "+critrate", {
+							"+Normal",
+							"+Normal"
+						}, 0.08)
 
-				global.ApplyBuff(_env, _env.ACTOR, {
-					duration = 99,
-					group = "Skill_YSLBin_Proud",
-					timing = 0,
-					limit = 1,
-					tags = {
-						"NUMERIC",
-						"BUFF",
-						"CRITRATE"
-					}
-				}, {
-					buffeft1
-				})
-				global.print(_env, "deyiji")
+						global.ApplyBuff(_env, _env.ACTOR, {
+							duration = 99,
+							group = "Skill_YSLBin_Proud",
+							timing = 0,
+							limit = 1,
+							tags = {
+								"NUMERIC",
+								"BUFF",
+								"CRITRATE"
+							}
+						}, {
+							buffeft1
+						})
+					end
+
+					global.StealBuff(_env, _env.TARGET, global.BUFF_MARKED_ALL(_env, "BUFF", "DISPELLABLE", "STEALABLE"), 1)
+				end
 			end
 
-			global.StealBuff(_env, _env.TARGET, global.BUFF_MARKED_ALL(_env, "BUFF"), 1)
 			global.ApplyStatusEffect(_env, _env.ACTOR, _env.TARGET)
 			global.ApplyRPEffect(_env, _env.ACTOR, _env.TARGET)
 
@@ -240,30 +244,38 @@ all.Skill_YSLBin_Unique = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			_env.count = #global.SelectBuffs(_env, _env.TARGET, global.BUFF_MARKED_ALL(_env, "BUFF"))
 
-			for count1 = 0, _env.count do
-				local buffeft1 = global.NumericEffect(_env, "+critrate", {
-					"+Normal",
-					"+Normal"
-				}, 0.06)
+			if not global.MARKED(_env, "Master_XueZhan")(_env, _env.TARGET) and not global.MARKED(_env, "MASTER_LieSha")(_env, _env.TARGET) and not global.MARKED(_env, "MASTER_BiLei")(_env, _env.TARGET) and not global.MARKED(_env, "MASTER_FuHun")(_env, _env.TARGET) and not global.MARKED(_env, "MASTER_SenLing")(_env, _env.TARGET) and not global.MARKED(_env, "MASTER_WuShi")(_env, _env.TARGET) and not global.MARKED(_env, "MASTER_JiangJun")(_env, _env.TARGET) then
+				if not global.MARKED(_env, "MASTER_ZhaoHuan")(_env, _env.TARGET) then
+					_env.count = #global.SelectBuffs(_env, _env.TARGET, global.BUFF_MARKED_ALL(_env, "BUFF", "DISPELLABLE", "STEALABLE"))
 
-				global.ApplyBuff(_env, _env.ACTOR, {
-					duration = 99,
-					group = "Skill_YSLBin_Unique",
-					timing = 0,
-					limit = 5,
-					tags = {
-						"NUMERIC",
-						"BUFF",
-						"CRITRATE"
-					}
-				}, {
-					buffeft1
-				})
+					for count1 = 0, _env.count do
+						local buffeft1 = global.NumericEffect(_env, "+critrate", {
+							"+Normal",
+							"+Normal"
+						}, 0.06)
+
+						global.ApplyBuff(_env, _env.ACTOR, {
+							duration = 99,
+							group = "Skill_YSLBin_Unique",
+							timing = 0,
+							limit = 5,
+							tags = {
+								"NUMERIC",
+								"BUFF",
+								"CRITRATE",
+								"DISPELLABLE",
+								"STEALABLE"
+							}
+						}, {
+							buffeft1
+						})
+					end
+
+					global.StealBuff(_env, _env.TARGET, global.BUFF_MARKED_ALL(_env, "BUFF", "DISPELLABLE", "STEALABLE"), _env.count)
+				end
 			end
 
-			global.StealBuff(_env, _env.TARGET, global.BUFF_MARKED_ALL(_env, "BUFF"), _env.count)
 			global.ApplyStatusEffect(_env, _env.ACTOR, _env.TARGET)
 			global.ApplyRPEffect(_env, _env.ACTOR, _env.TARGET)
 
@@ -322,7 +334,9 @@ all.Skill_YSLBin_Passive = {
 			local global = _env.global
 
 			for _, unit1 in global.__iter__(global.EnemyUnits(_env)) do
-				if _env.max < global.UnitPropGetter(_env, "rp")(_env, unit1) then
+				if global.MARKED(_env, "MASTER")(_env, unit1) then
+					-- Nothing
+				elseif _env.max < global.UnitPropGetter(_env, "rp")(_env, unit1) then
 					_env.max = global.UnitPropGetter(_env, "rp")(_env, unit1)
 					_env.unit = unit1
 				end
@@ -412,28 +426,33 @@ all.Skill_YSLBin_Proud_EX = {
 			local this = _env.this
 			local global = _env.global
 
-			if #global.SelectBuffs(_env, _env.TARGET, global.BUFF_MARKED_ALL(_env, "BUFF")) > 0 then
-				local buffeft1 = global.NumericEffect(_env, "+critrate", {
-					"+Normal",
-					"+Normal"
-				}, 0.12)
+			if not global.MARKED(_env, "Master_XueZhan")(_env, _env.TARGET) and not global.MARKED(_env, "MASTER_LieSha")(_env, _env.TARGET) and not global.MARKED(_env, "MASTER_BiLei")(_env, _env.TARGET) and not global.MARKED(_env, "MASTER_FuHun")(_env, _env.TARGET) and not global.MARKED(_env, "MASTER_SenLing")(_env, _env.TARGET) and not global.MARKED(_env, "MASTER_WuShi")(_env, _env.TARGET) and not global.MARKED(_env, "MASTER_JiangJun")(_env, _env.TARGET) then
+				if not global.MARKED(_env, "MASTER_ZhaoHuan")(_env, _env.TARGET) then
+					if #global.SelectBuffs(_env, _env.TARGET, global.BUFF_MARKED_ALL(_env, "BUFF", "DISPELLABLE", "STEALABLE")) > 0 then
+						local buffeft1 = global.NumericEffect(_env, "+critrate", {
+							"+Normal",
+							"+Normal"
+						}, 0.12)
 
-				global.ApplyBuff(_env, _env.ACTOR, {
-					duration = 99,
-					group = "Skill_YSLBin_Proud_EX",
-					timing = 0,
-					limit = 1,
-					tags = {
-						"NUMERIC",
-						"BUFF",
-						"CRITRATE"
-					}
-				}, {
-					buffeft1
-				})
+						global.ApplyBuff(_env, _env.ACTOR, {
+							duration = 99,
+							group = "Skill_YSLBin_Proud_EX",
+							timing = 0,
+							limit = 1,
+							tags = {
+								"NUMERIC",
+								"BUFF",
+								"CRITRATE"
+							}
+						}, {
+							buffeft1
+						})
+					end
+
+					global.StealBuff(_env, _env.TARGET, global.BUFF_MARKED_ALL(_env, "BUFF", "DISPELLABLE", "STEALABLE"), 1)
+				end
 			end
 
-			global.StealBuff(_env, _env.TARGET, global.BUFF_MARKED_ALL(_env, "BUFF"), 1)
 			global.ApplyStatusEffect(_env, _env.ACTOR, _env.TARGET)
 			global.ApplyRPEffect(_env, _env.ACTOR, _env.TARGET)
 
@@ -518,30 +537,38 @@ all.Skill_YSLBin_Unique_EX = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			_env.count = #global.SelectBuffs(_env, _env.TARGET, global.BUFF_MARKED_ALL(_env, "BUFF"))
 
-			for count1 = 0, _env.count do
-				local buffeft1 = global.NumericEffect(_env, "+critrate", {
-					"+Normal",
-					"+Normal"
-				}, 0.08)
+			if not global.MARKED(_env, "Master_XueZhan")(_env, _env.TARGET) and not global.MARKED(_env, "MASTER_LieSha")(_env, _env.TARGET) and not global.MARKED(_env, "MASTER_BiLei")(_env, _env.TARGET) and not global.MARKED(_env, "MASTER_FuHun")(_env, _env.TARGET) and not global.MARKED(_env, "MASTER_SenLing")(_env, _env.TARGET) and not global.MARKED(_env, "MASTER_WuShi")(_env, _env.TARGET) and not global.MARKED(_env, "MASTER_JiangJun")(_env, _env.TARGET) then
+				if not global.MARKED(_env, "MASTER_ZhaoHuan")(_env, _env.TARGET) then
+					_env.count = #global.SelectBuffs(_env, _env.TARGET, global.BUFF_MARKED_ALL(_env, "BUFF", "DISPELLABLE", "STEALABLE"))
 
-				global.ApplyBuff(_env, _env.ACTOR, {
-					duration = 99,
-					group = "Skill_YSLBin_Unique_EX",
-					timing = 0,
-					limit = 5,
-					tags = {
-						"NUMERIC",
-						"BUFF",
-						"CRITRATE"
-					}
-				}, {
-					buffeft1
-				})
+					for count1 = 0, _env.count do
+						local buffeft1 = global.NumericEffect(_env, "+critrate", {
+							"+Normal",
+							"+Normal"
+						}, 0.08)
+
+						global.ApplyBuff(_env, _env.ACTOR, {
+							duration = 99,
+							group = "Skill_YSLBin_Unique_EX",
+							timing = 0,
+							limit = 5,
+							tags = {
+								"NUMERIC",
+								"BUFF",
+								"CRITRATE",
+								"DISPELLABLE",
+								"STEALABLE"
+							}
+						}, {
+							buffeft1
+						})
+					end
+
+					global.StealBuff(_env, _env.TARGET, global.BUFF_MARKED_ALL(_env, "BUFF", "DISPELLABLE", "STEALABLE"), _env.count)
+				end
 			end
 
-			global.StealBuff(_env, _env.TARGET, global.BUFF_MARKED_ALL(_env, "BUFF"), _env.count)
 			global.ApplyStatusEffect(_env, _env.ACTOR, _env.TARGET)
 			global.ApplyRPEffect(_env, _env.ACTOR, _env.TARGET)
 
@@ -600,7 +627,9 @@ all.Skill_YSLBin_Passive_EX = {
 			local global = _env.global
 
 			for _, unit1 in global.__iter__(global.EnemyUnits(_env)) do
-				if _env.max < global.UnitPropGetter(_env, "rp")(_env, unit1) then
+				if global.MARKED(_env, "MASTER")(_env, unit1) then
+					-- Nothing
+				elseif _env.max < global.UnitPropGetter(_env, "rp")(_env, unit1) then
 					_env.max = global.UnitPropGetter(_env, "rp")(_env, unit1)
 					_env.unit = unit1
 				end

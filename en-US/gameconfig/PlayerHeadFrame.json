@@ -19,16 +19,6 @@
         "ResourceDesc": "Frame_Actitity_JGTou_Resource",
         "Reward": ""
     },
-    "Frame_Actitity_BQZMeng": {
-        "Type": "ACTIVITY",
-        "Picture": "Frame_Actitity_BQZMeng",
-        "Order": 5,
-        "Unlook": 0,
-        "Name": "Frame_Actitity_BQZMeng_Name",
-        "Desc": "Frame_Actitity_BQZMeng_Desc",
-        "ResourceDesc": "Frame_Actitity_BQZMeng_Resource",
-        "Reward": ""
-    },
     "Frame_Actitity_Halloween": {
         "Type": "ACTIVITY",
         "Picture": "Frame_Activity_Halloween",
@@ -99,16 +89,6 @@
         "ResourceDesc": "Frame_Actitity_Moren_Resource",
         "Reward": ""
     },
-    "Frame_Actitity_SMZShe": {
-        "Type": "ACTIVITY",
-        "Picture": "Frame_Actitity_SMZShe",
-        "Order": 6,
-        "Unlook": 0,
-        "Name": "Frame_Actitity_SMZShe_Name",
-        "Desc": "Frame_Actitity_SMZShe_Desc",
-        "ResourceDesc": "Frame_Actitity_SMZShe_Resource",
-        "Reward": ""
-    },
     "Frame_Actitity_Guanwang": {
         "Type": "ACTIVITY",
         "Picture": "Frame_Actitity_Guanwang",
@@ -117,6 +97,26 @@
         "Name": "Frame_Actitity_Guanwang_Name",
         "Desc": "Frame_Actitity_Guanwang_Desc",
         "ResourceDesc": "Frame_Actitity_Guanwang_Resource",
+        "Reward": ""
+    },
+    "Frame_Actitity_BQZMeng": {
+        "Type": "ACTIVITY",
+        "Picture": "Frame_Actitity_BQZMeng",
+        "Order": 5,
+        "Unlook": 1,
+        "Name": "Frame_Actitity_BQZMeng_Name",
+        "Desc": "Frame_Actitity_BQZMeng_Desc",
+        "ResourceDesc": "Frame_Actitity_BQZMeng_Resource",
+        "Reward": ""
+    },
+    "Frame_Actitity_SMZShe": {
+        "Type": "ACTIVITY",
+        "Picture": "Frame_Actitity_SMZShe",
+        "Order": 6,
+        "Unlook": 1,
+        "Name": "Frame_Actitity_SMZShe_Name",
+        "Desc": "Frame_Actitity_SMZShe_Desc",
+        "ResourceDesc": "Frame_Actitity_SMZShe_Resource",
         "Reward": ""
     }
 }

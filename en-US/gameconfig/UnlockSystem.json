@@ -857,24 +857,6 @@
         "ResourcesBanner": "",
         "IsPlay": 0
     },
-    "ClubStage_SkipBattle": {
-        "Condition": {
-            "LEVEL": 999
-        },
-        "ShowCondition": {
-            "LEVEL": 999
-        },
-        "Tip": "ClubStage_SkipBattleDesc",
-        "Name": "",
-        "LongDesc": "",
-        "OutputDesc": "",
-        "Icon": "",
-        "Link": "",
-        "UnlockAnima": "",
-        "UnlockDesc": "",
-        "ResourcesBanner": "",
-        "IsPlay": ""
-    },
     "Equip_LevelUp": {
         "Condition": {
             "STAGE": "M05S23"
@@ -1581,24 +1563,6 @@
         ],
         "IsPlay": 0
     },
-    "DreamChallenge": {
-        "Condition": {
-            "LEVEL": 32
-        },
-        "ShowCondition": {
-            "LEVEL": 32
-        },
-        "Tip": "DreamChallenge_Unlock_Tips",
-        "Name": "DreamChallenge_Unlock_Name",
-        "LongDesc": "DreamChallenge_Unlock_Name",
-        "OutputDesc": "",
-        "Icon": "",
-        "Link": "",
-        "UnlockAnima": "",
-        "UnlockDesc": "",
-        "ResourcesBanner": "",
-        "IsPlay": ""
-    },
     "Shop_Arena": {
         "Condition": {
             "LEVEL": 999
@@ -1674,29 +1638,6 @@
         "UnlockAnima": "",
         "UnlockDesc": "Hero_Sound_UnlockDesc",
         "ResourcesBanner": "",
-        "IsPlay": 0
-    },
-    "KOF": {
-        "Condition": {
-            "LEVEL": 999
-        },
-        "ShowCondition": {
-            "LEVEL": 999
-        },
-        "Tip": "Unlock_Joking_Tips",
-        "Name": "Unlock_KOF",
-        "LongDesc": "Unlock_KOF_Desc",
-        "OutputDesc": "Unlock_KOF_OpDesc",
-        "Icon": "new_system_club.png",
-        "Link": "",
-        "UnlockAnima": "HOME",
-        "UnlockDesc": "KOF_UnlockDesc",
-        "ResourcesBanner": [
-            "IR_Gold",
-            "IR_Crystal",
-            "IR_Diamond",
-            "IR_Arena"
-        ],
         "IsPlay": 0
     },
     "PansLab_Shop": {
@@ -1858,24 +1799,6 @@
         "Link": "",
         "UnlockAnima": "",
         "UnlockDesc": "Hero_Gallery_UnlockDesc",
-        "ResourcesBanner": "",
-        "IsPlay": 0
-    },
-    "BattlePass": {
-        "Condition": {
-            "LEVEL": 999
-        },
-        "ShowCondition": {
-            "LEVEL": 999
-        },
-        "Tip": "Unlock_Joking_Tips",
-        "Name": "Unlock_BattlePass",
-        "LongDesc": "Unlock_Team_Chat_Desc",
-        "OutputDesc": "",
-        "Icon": "",
-        "Link": "",
-        "UnlockAnima": "",
-        "UnlockDesc": "BattlePass_UnlockDesc",
         "ResourcesBanner": "",
         "IsPlay": 0
     },
@@ -2171,24 +2094,6 @@
         "ResourcesBanner": "",
         "IsPlay": 0
     },
-    "ClubStage": {
-        "Condition": {
-            "LEVEL": 999
-        },
-        "ShowCondition": {
-            "LEVEL": 999
-        },
-        "Tip": "Unlock_Joking_Tips",
-        "Name": "",
-        "LongDesc": "",
-        "OutputDesc": "",
-        "Icon": "",
-        "Link": "",
-        "UnlockAnima": "",
-        "UnlockDesc": "",
-        "ResourcesBanner": "",
-        "IsPlay": ""
-    },
     "Friend_PK": {
         "Condition": {
             "STAGE": "M04S01"
@@ -2206,5 +2111,100 @@
         "UnlockDesc": "Friend_PK_UnlockDesc",
         "ResourcesBanner": "",
         "IsPlay": 0
+    },
+    "ClubStage_SkipBattle": {
+        "Condition": {
+            "CLUBLEVEL": 2
+        },
+        "ShowCondition": {
+            "CLUBLEVEL": 2
+        },
+        "Tip": "ClubStage_SkipBattleDesc",
+        "Name": "",
+        "LongDesc": "",
+        "OutputDesc": "",
+        "Icon": "",
+        "Link": "",
+        "UnlockAnima": "",
+        "UnlockDesc": "",
+        "ResourcesBanner": "",
+        "IsPlay": ""
+    },
+    "DreamChallenge": {
+        "Condition": {
+            "LEVEL": 999
+        },
+        "ShowCondition": {
+            "LEVEL": 999
+        },
+        "Tip": "DreamChallenge_Unlock_Tips",
+        "Name": "DreamChallenge_Unlock_Name",
+        "LongDesc": "DreamChallenge_Unlock_Name",
+        "OutputDesc": "",
+        "Icon": "",
+        "Link": "",
+        "UnlockAnima": "",
+        "UnlockDesc": "",
+        "ResourcesBanner": "",
+        "IsPlay": ""
+    },
+    "KOF": {
+        "Condition": {
+            "STAGE": "M08S38"
+        },
+        "ShowCondition": {
+            "LEVEL": 1
+        },
+        "Tip": "Unlock_Stage_Tips",
+        "Name": "Unlock_KOF",
+        "LongDesc": "Unlock_KOF_Desc",
+        "OutputDesc": "Unlock_KOF_OpDesc",
+        "Icon": "new_system_club.png",
+        "Link": "",
+        "UnlockAnima": "HOME",
+        "UnlockDesc": "KOF_UnlockDesc",
+        "ResourcesBanner": [
+            "IR_Gold",
+            "IR_Crystal",
+            "IR_Diamond",
+            "IR_Arena"
+        ],
+        "IsPlay": 0
+    },
+    "BattlePass": {
+        "Condition": {
+            "LEVEL": 1
+        },
+        "ShowCondition": {
+            "LEVEL": 1
+        },
+        "Tip": "Unlock_Begin_Tips",
+        "Name": "Unlock_BattlePass",
+        "LongDesc": "Unlock_Team_Chat_Desc",
+        "OutputDesc": "",
+        "Icon": "",
+        "Link": "",
+        "UnlockAnima": "",
+        "UnlockDesc": "BattlePass_UnlockDesc",
+        "ResourcesBanner": "",
+        "IsPlay": 0
+    },
+    "ClubStage": {
+        "Condition": {
+            "CLUBLEVEL": 2
+        },
+        "ShowCondition": {
+            "CLUBLEVEL": 2
+        },
+        "Tip": "Unlock_Joking_Tips",
+        "Name": "",
+        "LongDesc": "",
+        "OutputDesc": "",
+        "Icon": "",
+        "Link": "",
+        "UnlockAnima": "",
+        "UnlockDesc": "",
+        "ResourcesBanner": "",
+        "IsPlay": ""
     }
 }

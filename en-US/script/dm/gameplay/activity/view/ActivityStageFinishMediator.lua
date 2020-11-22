@@ -397,6 +397,11 @@ function ActivityStageFinishMediator:showHeroPanelAnim()
 
 	lvName:setVisible(false)
 
+	local developSystem = self:getInjector():getInstance(DevelopSystem)
+	local curLevel = developSystem:getPlayer():getLevel()
+
+	lvName:setString(curLevel)
+
 	local anim = nil
 
 	if self._point:isBoss() then

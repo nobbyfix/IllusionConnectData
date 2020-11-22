@@ -397,7 +397,7 @@ all.Skill_BQDShe_Unique = {
 
 				global.ApplyBuff_Debuff(_env, _env.ACTOR, _env.ACTOR, {
 					timing = 2,
-					duration = 2,
+					duration = 1,
 					display = "Daze",
 					tags = {
 						"STATUS",
@@ -583,7 +583,7 @@ all.Skill_BQDShe_Unique_EX = {
 
 				global.ApplyBuff_Debuff(_env, _env.ACTOR, _env.ACTOR, {
 					timing = 2,
-					duration = 2,
+					duration = 1,
 					display = "Daze",
 					tags = {
 						"STATUS",

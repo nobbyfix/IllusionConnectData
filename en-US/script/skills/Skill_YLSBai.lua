@@ -385,7 +385,8 @@ all.Skill_YLSBai_Passive_Key = {
 						"BUFF",
 						"DISPELLABLE",
 						"STEALABLE",
-						"Skill_YLSBai_Passive_Key"
+						"Skill_YLSBai_Passive_Key",
+						"SHIELD"
 					}
 				}, {
 					buffeft1

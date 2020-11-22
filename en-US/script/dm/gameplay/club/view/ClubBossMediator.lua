@@ -497,8 +497,9 @@ function ClubBossMediator:addBottomAnimation()
 			Text_63:setString(Strings:get("Club_ActivityBoss_15"))
 		end
 
+		Text_64:setPositionX(Text_63:getPositionX() + Text_63:getContentSize().width)
 		desPanel:addTo(desTextNode)
-		desPanel:setPosition(cc.p(0, 0))
+		desPanel:setPosition(cc.p(-110, 0))
 	end)
 	anim:addCallbackAtFrame(3, function ()
 		local heroNode2 = anim:getChildByName("heroNode2")
@@ -609,7 +610,7 @@ function ClubBossMediator:addBottomAnimation()
 		local infoImage = ccui.ImageView:create("asset/common/common_btn_xq.png", ccui.TextureResType.localType)
 
 		infoImage:setScale(0.45)
-		infoImage:setPosition(cc.p(-10, 3))
+		infoImage:setPosition(cc.p(-300, 3))
 		infoImage:addTo(infoNode)
 
 		self._showInfoNode = true
@@ -818,6 +819,19 @@ function ClubBossMediator:addBottomAnimation()
 
 		tiaoImage:setGray(true)
 		zhanImage:setGray(true)
+
+		local curLanage = getCurrentLanguage()
+
+		if curLanage ~= GameLanguageType.CN then
+			tiaoImage:setVisible(false)
+			zhanImage:setVisible(false)
+
+			local tiaoImage_other = ccui.ImageView:create("tiao_zhuxianguanka_UIjiaohudongxiaoimage.png", 1)
+
+			tiaoImage_other:setPosition(cc.p(142.5, 85))
+			self._challengeCanNotBg:addChild(tiaoImage_other)
+			tiaoImage_other:setGray(true)
+		end
 
 		self._challengeRemainText = self._btnPanel:getChildByName("RemainText")
 

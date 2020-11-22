@@ -755,7 +755,7 @@ function ActivityPointDetailMediator:reachBattleCondition()
 			containPower = self._bagSystem:getItemCount(itemId)
 		end
 
-		tips = Strings:get(config[tips])
+		tips = Strings:get(config.tips)
 	end
 
 	if containPower < cost then

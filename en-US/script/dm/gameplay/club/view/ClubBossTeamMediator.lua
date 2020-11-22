@@ -378,7 +378,9 @@ function ClubBossTeamMediator:initWidgetInfo()
 	self._masterImage = self._bg:getChildByName("role")
 	self._teamBg = self._bg:getChildByName("team_bg")
 	self._labelCombat = self._main:getChildByFullName("info_bg.combatLabel")
+	self._costAverageTitleLabel = self._main:getChildByFullName("info_bg.text_prior")
 	self._costAverageLabel = self._main:getChildByFullName("info_bg.averageLabel")
+	self._costTotalLabel = self._main:getChildByFullName("info_bg.text")
 	self._costTotalLabel1 = self._main:getChildByFullName("info_bg.cost1")
 	self._costTotalLabel2 = self._main:getChildByFullName("info_bg.cost2")
 	self._movingPet = self._main:getChildByFullName("moving_pet")
@@ -1127,12 +1129,14 @@ function ClubBossTeamMediator:refreshCombatAndCost()
 
 	self._labelCombat:setString(totalCombat)
 	self._costAverageLabel:setString(averageCost)
+	self._costAverageLabel:setPositionX(self._costAverageTitleLabel:getPositionX() + self._costAverageTitleLabel:getContentSize().width)
 	self._costTotalLabel1:setString(self._costTotal)
 	self._costTotalLabel2:setString("/" .. self._costMaxNum)
 
 	local color = self._costTotal <= self._costMaxNum and cc.c3b(255, 255, 255) or cc.c3b(255, 65, 51)
 
 	self._costTotalLabel1:setTextColor(color)
+	self._costTotalLabel1:setPositionX(self._costTotalLabel:getPositionX() + self._costTotalLabel:getContentSize().width)
 	self._costTotalLabel2:setPositionX(self._costTotalLabel1:getPositionX() + self._costTotalLabel1:getContentSize().width)
 end
 

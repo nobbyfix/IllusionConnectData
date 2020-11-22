@@ -713,8 +713,8 @@ function ExploreSystem:isRecommendPoint(targetWeek)
 	local isRecommend = false
 	local resetHour = 5
 	local curTime = gameServerAgent:remoteTimestamp()
-	local hour = TimeUtil:getHMSByTimestamp(curTime).hour
-	local curWeekDay = ResetUtils:getWeek(curTime)
+	local hour = TimeUtil:remoteDate(nil, curTime).hour
+	local curWeekDay = ResetUtils:getRemoteWeek(curTime)
 
 	for i = 1, #targetWeek do
 		if curWeekDay - targetWeek[i] == 0 then

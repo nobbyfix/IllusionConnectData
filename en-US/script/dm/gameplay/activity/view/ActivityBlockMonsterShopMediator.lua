@@ -523,9 +523,18 @@ function ActivityBlockMonsterShopMediator:initRightView()
 				})
 
 				if rateList[discountCur].rate < 1 then
-					costText:setString(Strings:get("Activity_Monster_Shop_UI7", {
-						num = rateList[discountCur].rate * 10
-					}))
+					local localLanguage = getCurrentLanguage()
+
+					if localLanguage == GameLanguageType.CN then
+						costText:setString(Strings:get("Activity_Monster_Shop_UI7", {
+							num = rateList[discountCur].rate * 10
+						}))
+					else
+						costText:setString(Strings:get("Activity_Monster_Shop_UI7", {
+							num = (1 - rateList[discountCur].rate) * 100
+						}))
+					end
+
 					oldPrice:setString(Strings:get("Activity_Monster_Shop_UI6", {
 						num = costList[1].price
 					}))
@@ -727,9 +736,18 @@ function ActivityBlockMonsterShopMediator:createCell(cell, index)
 			})
 
 			if rateList[discountCur].rate < 1 then
-				costText:setString(Strings:get("Activity_Monster_Shop_UI7", {
-					num = rateList[discountCur].rate * 10
-				}))
+				local localLanguage = getCurrentLanguage()
+
+				if localLanguage == GameLanguageType.CN then
+					costText:setString(Strings:get("Activity_Monster_Shop_UI7", {
+						num = rateList[discountCur].rate * 10
+					}))
+				else
+					costText:setString(Strings:get("Activity_Monster_Shop_UI7", {
+						num = (1 - rateList[discountCur].rate) * 100
+					}))
+				end
+
 				oldPrice:setString(Strings:get("Activity_Monster_Shop_UI6", {
 					num = costList[i].price
 				}))
@@ -873,20 +891,23 @@ function ActivityBlockMonsterShopMediator:refreshOffcostRemainTime(remoteTime, s
 		local config = infoData.config
 		local unlockDay = config.Day - 1
 		local costoffDays = config.Rate[1].day[2] or 0
-		local dateStart = os.date("*t", startTime)
-		dateStart.hour = 5
-		dateStart.day = dateStart.day + unlockDay + costoffDays
-		local time = TimeUtil:getTimeByDate(dateStart) - remoteTime
-		local remainTime = endTime - remoteTime
+
+		print("refreshOffcostRemainTime_startTime" .. startTime)
+
+		local unLockSec = unlockDay > 0 and unlockDay * 86400 or 0
+		local trueStartTime_Cell = startTime + unLockSec
+		local trueEndTime_Cell = trueStartTime_Cell + costoffDays * 86400
+		local trueRemainTime_Cell = trueEndTime_Cell - remoteTime
+		local activityRemoteTime = endTime - remoteTime
 		local str = ""
 
-		if remainTime > 0 and time > 0 and costoffDays > 0 then
-			if remainTime < time then
-				time = remainTime
+		if startTime < remoteTime and activityRemoteTime > 0 and trueRemainTime_Cell > 0 and costoffDays > 0 then
+			if activityRemoteTime < trueRemainTime_Cell then
+				trueRemainTime_Cell = activityRemoteTime
 			end
 
 			local fmtStr = "${d}:${H}:${M}:${S}"
-			local timeStr = TimeUtil:formatTime(fmtStr, time)
+			local timeStr = TimeUtil:formatTime(fmtStr, trueRemainTime_Cell)
 			local parts = string.split(timeStr, ":", nil, true)
 			local timeTab = {
 				day = tonumber(parts[1]),
@@ -899,8 +920,10 @@ function ActivityBlockMonsterShopMediator:refreshOffcostRemainTime(remoteTime, s
 				str = timeTab.day .. Strings:get("TimeUtil_Day") .. timeTab.hour .. Strings:get("TimeUtil_Hour")
 			elseif timeTab.hour > 0 then
 				str = timeTab.hour .. Strings:get("TimeUtil_Hour") .. timeTab.min .. Strings:get("TimeUtil_Min")
-			else
+			elseif timeTab.min > 0 then
 				str = timeTab.min .. Strings:get("TimeUtil_Min") .. timeTab.sec .. Strings:get("TimeUtil_Sec")
+			else
+				str = timeTab.sec .. Strings:get("TimeUtil_Sec")
 			end
 		end
 

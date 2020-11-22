@@ -139,20 +139,6 @@
         "Symbol": "$",
         "Pay_Id": 10006
     },
-    "Pay_BattlePass_20200914_60": {
-        "ProductId": "com.superprism.illusion.gift041",
-        "SDKSource": [
-            "wanmeiGlobal_android",
-            "wanmeiGlobal_ios"
-        ],
-        "Price": 8.99,
-        "VIPExp": 3300,
-        "Name": "Pay_BattlePass_200728_60_Name",
-        "IsContinue": 0,
-        "MapId": "",
-        "Symbol": "$",
-        "Pay_Id": 10110
-    },
     "Pay_amountlimit2_6": {
         "ProductId": "com.superprism.illusion.gift002",
         "SDKSource": [
@@ -167,20 +153,6 @@
         "Symbol": "$",
         "Pay_Id": 10052
     },
-    "Pay_BattlePass_20200914_68": {
-        "ProductId": "com.superprism.illusion.gift039",
-        "SDKSource": [
-            "wanmeiGlobal_android",
-            "wanmeiGlobal_ios"
-        ],
-        "Price": 9.99,
-        "VIPExp": 3300,
-        "Name": "Pay_BattlePass_200728_68_Name",
-        "IsContinue": 0,
-        "MapId": "",
-        "Symbol": "$",
-        "Pay_Id": 10108
-    },
     "Pay_MonthCard_30": {
         "ProductId": "com.superprism.illusion.monthcard1",
         "SDKSource": [
@@ -194,20 +166,6 @@
         "MapId": "",
         "Symbol": "$",
         "Pay_Id": 10008
-    },
-    "Pay_BattlePass_20200914_128": {
-        "ProductId": "com.superprism.illusion.gift040",
-        "SDKSource": [
-            "wanmeiGlobal_android",
-            "wanmeiGlobal_ios"
-        ],
-        "Price": 19.99,
-        "VIPExp": 6700,
-        "Name": "Pay_BattlePass_200728_128_Name",
-        "IsContinue": 0,
-        "MapId": "",
-        "Symbol": "$",
-        "Pay_Id": 10109
     },
     "Pay_PackageShop_TL_LLan_3": {
         "ProductId": "com.superprism.illusion.gift030",
@@ -1300,5 +1258,47 @@
         "MapId": "",
         "Symbol": "$",
         "Pay_Id": 10126
+    },
+    "Pay_BattlePass_20200914_60": {
+        "ProductId": "com.superprism.illusion.gift041",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios"
+        ],
+        "Price": 8.99,
+        "VIPExp": 60,
+        "Name": "Pay_BattlePass_200728_60_Name",
+        "IsContinue": 0,
+        "MapId": "",
+        "Symbol": "$",
+        "Pay_Id": 10110
+    },
+    "Pay_BattlePass_20200914_68": {
+        "ProductId": "com.superprism.illusion.gift039",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios"
+        ],
+        "Price": 9.99,
+        "VIPExp": 68,
+        "Name": "Pay_BattlePass_200728_68_Name",
+        "IsContinue": 0,
+        "MapId": "",
+        "Symbol": "$",
+        "Pay_Id": 10108
+    },
+    "Pay_BattlePass_20200914_128": {
+        "ProductId": "com.superprism.illusion.gift040",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios"
+        ],
+        "Price": 18.99,
+        "VIPExp": 128,
+        "Name": "Pay_BattlePass_200728_128_Name",
+        "IsContinue": 0,
+        "MapId": "",
+        "Symbol": "$",
+        "Pay_Id": 10109
     }
 }

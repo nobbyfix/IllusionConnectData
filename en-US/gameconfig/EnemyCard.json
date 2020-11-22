@@ -81,59 +81,6 @@
         "CardLibrary": "",
         "CardCollection": ""
     },
-    "CardM16S47": {
-        "FirstFormation": {},
-        "DrawCard": {
-            "1": [
-                "library",
-                "1"
-            ],
-            "8": [
-                "library",
-                "4"
-            ],
-            "3": [
-                "library",
-                "2"
-            ],
-            "5": [
-                "library",
-                "3"
-            ]
-        },
-        "CardLibrary": {
-            "1": [
-                1,
-                1,
-                1
-            ],
-            "3": [
-                4,
-                5,
-                1
-            ],
-            "2": [
-                2,
-                3,
-                1
-            ],
-            "4": [
-                6,
-                8,
-                1
-            ]
-        },
-        "CardCollection": [
-            "M16P47U02N02",
-            "M16P47U02N05",
-            "M16P47U03N02",
-            "M16P47U03N05",
-            "M16P47U04N02",
-            "M16P47U04N04",
-            "M16P47U04N05",
-            "M16P47U04N06"
-        ]
-    },
     "CardM16S46": {
         "FirstFormation": {},
         "DrawCard": {
@@ -1999,69 +1946,6 @@
             ]
         },
         "CardCollection": []
-    },
-    "CardM16S37": {
-        "FirstFormation": {
-            "2": [
-                "fixed",
-                "M16P37U01N02"
-            ],
-            "5": [
-                "fixed",
-                "M16P37U01N05"
-            ]
-        },
-        "DrawCard": {
-            "1": [
-                "library",
-                "1"
-            ],
-            "8": [
-                "library",
-                "3"
-            ],
-            "9": [
-                "library",
-                "4"
-            ],
-            "5": [
-                "library",
-                "2"
-            ]
-        },
-        "CardLibrary": {
-            "1": [
-                1,
-                1,
-                1
-            ],
-            "3": [
-                6,
-                8,
-                1
-            ],
-            "2": [
-                2,
-                5,
-                1
-            ],
-            "4": [
-                9,
-                9,
-                1
-            ]
-        },
-        "CardCollection": [
-            "M16P37U02N01",
-            "M16P37U02N02",
-            "M16P37U02N03",
-            "M16P37U02N05",
-            "M16P37U03N01",
-            "M16P37U03N03",
-            "M16P37U03N05",
-            "M16P37U04N02",
-            "M16P37U04N05"
-        ]
     },
     "CardM07S29": {
         "FirstFormation": {},
@@ -11328,66 +11212,6 @@
             "M16P24U02N02",
             "M16P24U02N05",
             "M16P24U03N05"
-        ]
-    },
-    "CardM16S27": {
-        "FirstFormation": {
-            "5": [
-                "fixed",
-                "M16P27U01N05"
-            ]
-        },
-        "DrawCard": {
-            "1": [
-                "library",
-                "1"
-            ],
-            "10": [
-                "library",
-                "4"
-            ],
-            "5": [
-                "library",
-                "2"
-            ],
-            "7": [
-                "library",
-                "3"
-            ]
-        },
-        "CardLibrary": {
-            "1": [
-                1,
-                1,
-                1
-            ],
-            "3": [
-                6,
-                7,
-                1
-            ],
-            "2": [
-                2,
-                5,
-                1
-            ],
-            "4": [
-                8,
-                10,
-                1
-            ]
-        },
-        "CardCollection": [
-            "M16P27U02N01",
-            "M16P27U02N02",
-            "M16P27U02N03",
-            "M16P27U02N05",
-            "M16P27U03N02",
-            "M16P27U03N05",
-            "M16P27U04N02",
-            "M16P27U04N05",
-            "M16P27U04N07",
-            "M16P27U04N09"
         ]
     },
     "CardM16S26": {
@@ -20716,93 +20540,6 @@
         },
         "CardCollection": []
     },
-    "CardM16S17": {
-        "FirstFormation": {
-            "1": [
-                "fixed",
-                "M16P17U01N01"
-            ],
-            "9": [
-                "fixed",
-                "M16P17U01N09"
-            ],
-            "3": [
-                "fixed",
-                "M16P17U01N03"
-            ],
-            "2": [
-                "fixed",
-                "M16P17U01N02"
-            ],
-            "7": [
-                "fixed",
-                "M16P17U01N07"
-            ]
-        },
-        "DrawCard": {
-            "1": [
-                "library",
-                "1"
-            ]
-        },
-        "CardLibrary": {
-            "1": [
-                1,
-                1,
-                1
-            ]
-        },
-        "CardCollection": []
-    },
-    "CardM16S10": {
-        "FirstFormation": {
-            "1": [
-                "fixed",
-                "M16P10U01N01"
-            ],
-            "5": [
-                "fixed",
-                "M16P10U01N05"
-            ],
-            "4": [
-                "fixed",
-                "M16P10U01N04"
-            ]
-        },
-        "DrawCard": {
-            "1": [
-                "library",
-                "1"
-            ],
-            "4": [
-                "library",
-                "2"
-            ]
-        },
-        "CardLibrary": {
-            "1": [
-                1,
-                1,
-                1
-            ],
-            "2": [
-                2,
-                4,
-                1
-            ]
-        },
-        "CardCollection": [
-            "M16P10U02N01",
-            "M16P10U02N04",
-            "M16P10U02N05",
-            "M16P10U03N02",
-            "M16P10U03N04",
-            "M16P10U03N04",
-            "M16P10U03N05",
-            "M16P10U03N07",
-            "M16P10U03N09"
-        ]
-    },
     "CardM16S11": {
         "FirstFormation": {
             "2": [
@@ -25479,60 +25216,6 @@
             "M16P56U03N09"
         ]
     },
-    "CardM16S57": {
-        "FirstFormation": {},
-        "DrawCard": {
-            "1": [
-                "library",
-                "1"
-            ],
-            "8": [
-                "library",
-                "3"
-            ],
-            "9": [
-                "library",
-                "4"
-            ],
-            "4": [
-                "library",
-                "2"
-            ]
-        },
-        "CardLibrary": {
-            "1": [
-                1,
-                1,
-                1
-            ],
-            "3": [
-                5,
-                8,
-                1
-            ],
-            "2": [
-                2,
-                4,
-                1
-            ],
-            "4": [
-                9,
-                9,
-                1
-            ]
-        },
-        "CardCollection": [
-            "M16P57U02N01",
-            "M16P57U02N03",
-            "M16P57U02N05",
-            "M16P57U03N01",
-            "M16P57U03N04",
-            "M16P57U03N04",
-            "M16P57U03N05",
-            "M16P57U04N07",
-            "M16P57U04N09"
-        ]
-    },
     "CardM16S58": {
         "FirstFormation": {},
         "DrawCard": {
@@ -25927,56 +25610,6 @@
             "M14P33U03N04",
             "M14P33U03N04",
             "M14P33U03N05"
-        ]
-    },
-    "CardM14S34": {
-        "FirstFormation": {
-            "2": [
-                "fixed",
-                "M14P34U01N02"
-            ],
-            "5": [
-                "fixed",
-                "M14P34U01N05"
-            ],
-            "4": [
-                "fixed",
-                "M14P34U01N04"
-            ],
-            "6": [
-                "fixed",
-                "M14P34U01N06"
-            ]
-        },
-        "DrawCard": {
-            "1": [
-                "library",
-                "1"
-            ],
-            "4": [
-                "library",
-                "2"
-            ]
-        },
-        "CardLibrary": {
-            "1": [
-                1,
-                1,
-                1
-            ],
-            "2": [
-                2,
-                4,
-                1
-            ]
-        },
-        "CardCollection": [
-            "M14P34U02N03",
-            "M14P34U02N04",
-            "M14P34U02N05",
-            "M14P34U03N05",
-            "M14P34U03N07",
-            "M14P34U03N09"
         ]
     },
     "CardM14S35": {
@@ -31202,67 +30835,6 @@
             "M16P09U03N06"
         ]
     },
-    "CardM16S08": {
-        "FirstFormation": {
-            "2": [
-                "fixed",
-                "M16P08U01N02"
-            ],
-            "5": [
-                "fixed",
-                "M16P08U01N05"
-            ]
-        },
-        "DrawCard": {
-            "1": [
-                "library",
-                "1"
-            ],
-            "3": [
-                "library",
-                "2"
-            ],
-            "5": [
-                "library",
-                "3"
-            ],
-            "7": [
-                "library",
-                "4"
-            ]
-        },
-        "CardLibrary": {
-            "1": [
-                1,
-                1,
-                1
-            ],
-            "3": [
-                4,
-                5,
-                1
-            ],
-            "2": [
-                2,
-                3,
-                1
-            ],
-            "4": [
-                6,
-                7,
-                1
-            ]
-        },
-        "CardCollection": [
-            "M16P08U02N01",
-            "M16P08U02N04",
-            "M16P08U03N02",
-            "M16P08U03N03",
-            "M16P08U04N04",
-            "M16P08U04N05",
-            "M16P08U04N06"
-        ]
-    },
     "CardM17S26": {
         "FirstFormation": {},
         "DrawCard": {
@@ -31700,64 +31272,6 @@
             "M17P29U02N06",
             "M17P29U03N01",
             "M17P29U03N02"
-        ]
-    },
-    "CardM16S07": {
-        "FirstFormation": {
-            "5": [
-                "fixed",
-                "M16P07U01N05"
-            ]
-        },
-        "DrawCard": {
-            "1": [
-                "library",
-                "1"
-            ],
-            "8": [
-                "library",
-                "4"
-            ],
-            "5": [
-                "library",
-                "2"
-            ],
-            "7": [
-                "library",
-                "3"
-            ]
-        },
-        "CardLibrary": {
-            "1": [
-                1,
-                1,
-                1
-            ],
-            "3": [
-                6,
-                7,
-                1
-            ],
-            "2": [
-                2,
-                5,
-                1
-            ],
-            "4": [
-                8,
-                8,
-                1
-            ]
-        },
-        "CardCollection": [
-            "M16P07U02N01",
-            "M16P07U02N03",
-            "M16P07U02N07",
-            "M16P07U02N09",
-            "M16P07U03N02",
-            "M16P07U03N05",
-            "M16P07U04N07",
-            "M16P07U04N09"
         ]
     },
     "CardM16S06": {
@@ -92187,6 +91701,519 @@
             "AE04P01U03N04",
             "AE04P01U03N04",
             "AE04P01U03N05"
+        ]
+    },
+    "CardM16S47": {
+        "FirstFormation": {
+            "9": [
+                "fixed",
+                "M16P47U01N09"
+            ],
+            "2": [
+                "fixed",
+                "M16P47U01N02"
+            ],
+            "7": [
+                "fixed",
+                "M16P47U01N07"
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "8": [
+                "library",
+                "3"
+            ],
+            "5": [
+                "library",
+                "2"
+            ]
+        },
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "3": [
+                6,
+                8,
+                1
+            ],
+            "2": [
+                2,
+                5,
+                1
+            ]
+        },
+        "CardCollection": [
+            "M16P47U02N02",
+            "M16P47U02N04",
+            "M16P47U02N05",
+            "M16P47U02N06",
+            "M16P47U03N01",
+            "M16P47U03N02",
+            "M16P47U03N03",
+            "M16P47U03N05"
+        ]
+    },
+    "CardM16S37": {
+        "FirstFormation": {
+            "1": [
+                "fixed",
+                "M16P37U01N01"
+            ],
+            "3": [
+                "fixed",
+                "M16P37U01N03"
+            ],
+            "5": [
+                "fixed",
+                "M16P37U01N05"
+            ],
+            "7": [
+                "fixed",
+                "M16P37U01N07"
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "3": [
+                "library",
+                "2"
+            ],
+            "5": [
+                "library",
+                "3"
+            ]
+        },
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "3": [
+                4,
+                5,
+                1
+            ],
+            "2": [
+                2,
+                3,
+                1
+            ]
+        },
+        "CardCollection": [
+            "M16P37U02N02",
+            "M16P37U02N05",
+            "M16P37U03N04",
+            "M16P37U03N05",
+            "M16P37U03N06"
+        ]
+    },
+    "CardM16S27": {
+        "FirstFormation": {
+            "9": [
+                "fixed",
+                "M16P27U01N09"
+            ],
+            "2": [
+                "fixed",
+                "M16P27U01N02"
+            ],
+            "7": [
+                "fixed",
+                "M16P27U01N07"
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "8": [
+                "library",
+                "3"
+            ],
+            "5": [
+                "library",
+                "2"
+            ]
+        },
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "3": [
+                6,
+                8,
+                1
+            ],
+            "2": [
+                2,
+                5,
+                1
+            ]
+        },
+        "CardCollection": [
+            "M16P27U02N02",
+            "M16P27U02N04",
+            "M16P27U02N05",
+            "M16P27U02N06",
+            "M16P27U03N01",
+            "M16P27U03N02",
+            "M16P27U03N03",
+            "M16P27U03N05"
+        ]
+    },
+    "CardM16S17": {
+        "FirstFormation": {
+            "9": [
+                "fixed",
+                "M16P17U01N09"
+            ],
+            "2": [
+                "fixed",
+                "M16P17U01N02"
+            ],
+            "7": [
+                "fixed",
+                "M16P17U01N07"
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "8": [
+                "library",
+                "3"
+            ],
+            "5": [
+                "library",
+                "2"
+            ]
+        },
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "3": [
+                6,
+                8,
+                1
+            ],
+            "2": [
+                2,
+                5,
+                1
+            ]
+        },
+        "CardCollection": [
+            "M16P17U02N02",
+            "M16P17U02N04",
+            "M16P17U02N05",
+            "M16P17U02N06",
+            "M16P17U03N01",
+            "M16P17U03N02",
+            "M16P17U03N03",
+            "M16P17U03N05"
+        ]
+    },
+    "CardM16S10": {
+        "FirstFormation": {
+            "1": [
+                "fixed",
+                "M16P10U01N01"
+            ],
+            "5": [
+                "fixed",
+                "M16P10U01N05"
+            ],
+            "4": [
+                "fixed",
+                "M16P10U01N04"
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "8": [
+                "library",
+                "3"
+            ],
+            "4": [
+                "library",
+                "2"
+            ]
+        },
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "3": [
+                5,
+                8,
+                1
+            ],
+            "2": [
+                2,
+                4,
+                1
+            ]
+        },
+        "CardCollection": [
+            "M16P10U02N01",
+            "M16P10U02N04",
+            "M16P10U02N05",
+            "M16P10U03N02",
+            "M16P10U03N04",
+            "M16P10U03N05",
+            "M16P10U03N07",
+            "M16P10U03N09"
+        ]
+    },
+    "CardM14S34": {
+        "FirstFormation": {
+            "2": [
+                "fixed",
+                "M14P34U01N04"
+            ],
+            "5": [
+                "fixed",
+                "M14P34U01N05"
+            ],
+            "4": [
+                "fixed",
+                "M14P34U01N04"
+            ],
+            "6": [
+                "fixed",
+                "M14P34U01N06"
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "4": [
+                "library",
+                "2"
+            ]
+        },
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                4,
+                1
+            ]
+        },
+        "CardCollection": [
+            "M14P34U02N03",
+            "M14P34U02N04",
+            "M14P34U02N05",
+            "M14P34U03N05",
+            "M14P34U03N07",
+            "M14P34U03N09"
+        ]
+    },
+    "CardM16S08": {
+        "FirstFormation": {
+            "2": [
+                "fixed",
+                "M16P08U01N02"
+            ],
+            "5": [
+                "fixed",
+                "M16P08U01N05"
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "8": [
+                "library",
+                "4"
+            ],
+            "4": [
+                "library",
+                "2"
+            ],
+            "6": [
+                "library",
+                "3"
+            ]
+        },
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "3": [
+                5,
+                6,
+                1
+            ],
+            "2": [
+                2,
+                4,
+                1
+            ],
+            "4": [
+                7,
+                8,
+                1
+            ]
+        },
+        "CardCollection": [
+            "M16P08U02N01",
+            "M16P08U02N04",
+            "M16P08U02N07",
+            "M16P08U03N02",
+            "M16P08U03N03",
+            "M16P08U04N04",
+            "M16P08U04N05",
+            "M16P08U04N06"
+        ]
+    },
+    "CardM16S07": {
+        "FirstFormation": {
+            "1": [
+                "fixed",
+                "M16P07U01N01"
+            ],
+            "3": [
+                "fixed",
+                "M16P07U01N03"
+            ],
+            "5": [
+                "fixed",
+                "M16P07U01N05"
+            ],
+            "7": [
+                "fixed",
+                "M16P07U01N07"
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "3": [
+                "library",
+                "2"
+            ],
+            "5": [
+                "library",
+                "3"
+            ]
+        },
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "3": [
+                4,
+                5,
+                1
+            ],
+            "2": [
+                2,
+                3,
+                1
+            ]
+        },
+        "CardCollection": [
+            "M16P07U02N02",
+            "M16P07U02N05",
+            "M16P07U03N04",
+            "M16P07U03N05",
+            "M16P07U03N06"
+        ]
+    },
+    "CardM16S57": {
+        "FirstFormation": {
+            "9": [
+                "fixed",
+                "M16P57U01N09"
+            ],
+            "2": [
+                "fixed",
+                "M16P57U01N02"
+            ],
+            "7": [
+                "fixed",
+                "M16P57U01N07"
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "8": [
+                "library",
+                "3"
+            ],
+            "5": [
+                "library",
+                "2"
+            ]
+        },
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "3": [
+                6,
+                8,
+                1
+            ],
+            "2": [
+                2,
+                5,
+                1
+            ]
+        },
+        "CardCollection": [
+            "M16P57U02N02",
+            "M16P57U02N04",
+            "M16P57U02N05",
+            "M16P57U02N06",
+            "M16P57U03N01",
+            "M16P57U03N02",
+            "M16P57U03N03",
+            "M16P57U03N05"
         ]
     }
 }

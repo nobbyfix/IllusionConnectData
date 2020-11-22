@@ -334,23 +334,23 @@ all.Skill_SRen_Unique = {
 
 			if _env.num == 2 then
 				for _, unit2 in global.__iter__(_env.units) do
-					global.DispelBuff(_env, unit2, global.BUFF_MARKED_ALL(_env, "UNDEAD"), 1)
+					global.DispelBuff(_env, unit2, global.BUFF_MARKED_ALL(_env, "UNDEAD", "DISPELLABLE"), 2)
 				end
 			end
 
 			if _env.num == 1 then
 				for _, unit3 in global.__iter__(_env.units) do
-					global.DispelBuff(_env, unit3, global.BUFF_MARKED_ALL(_env, "UNDEAD"), 1)
+					global.DispelBuff(_env, unit3, global.BUFF_MARKED_ALL(_env, "UNDEAD", "DISPELLABLE"), 1)
 				end
 
 				for _, unit4 in global.__iter__(_env.units) do
-					global.DispelBuff(_env, unit4, global.BUFF_MARKED_ALL(_env, "BUFF"), 1)
+					global.DispelBuff(_env, unit4, global.BUFF_MARKED_ALL(_env, "BUFF", "DISPELLABLE"), 1)
 				end
 			end
 
 			if _env.num == 0 then
 				for _, unit5 in global.__iter__(_env.units) do
-					global.DispelBuff(_env, unit5, global.BUFF_MARKED_ALL(_env, "BUFF"), 1)
+					global.DispelBuff(_env, unit5, global.BUFF_MARKED_ALL(_env, "BUFF", "DISPELLABLE"), 2)
 				end
 			end
 		end)
@@ -457,28 +457,28 @@ all.Skill_SRen_Unique_EX = {
 
 			if _env.num == 2 then
 				for _, unit2 in global.__iter__(_env.units) do
-					global.DispelBuff(_env, unit2, global.BUFF_MARKED_ALL(_env, "UNDEAD"), 1)
+					global.DispelBuff(_env, unit2, global.BUFF_MARKED_ALL(_env, "UNDEAD", "DISPELLABLE"), 2)
 				end
 			end
 
 			if _env.num == 1 then
 				for _, unit3 in global.__iter__(_env.units) do
-					global.DispelBuff(_env, unit3, global.BUFF_MARKED_ALL(_env, "UNDEAD"), 1)
+					global.DispelBuff(_env, unit3, global.BUFF_MARKED_ALL(_env, "UNDEAD", "DISPELLABLE"), 1)
 				end
 
 				for _, unit4 in global.__iter__(_env.units) do
-					global.DispelBuff(_env, unit4, global.BUFF_MARKED_ALL(_env, "BUFF"), 1)
+					global.DispelBuff(_env, unit4, global.BUFF_MARKED_ALL(_env, "BUFF", "DISPELLABLE"), 1)
 				end
 			end
 
 			if _env.num == 0 then
 				for _, unit5 in global.__iter__(_env.units) do
-					global.DispelBuff(_env, unit5, global.BUFF_MARKED_ALL(_env, "BUFF"), 1)
+					global.DispelBuff(_env, unit5, global.BUFF_MARKED_ALL(_env, "BUFF", "DISPELLABLE"), 2)
 				end
 			end
 
 			for _, unit6 in global.__iter__(global.FriendUnits(_env)) do
-				global.DispelBuff(_env, unit6, global.BUFF_MARKED_ALL(_env, "DEBUFF"), 1)
+				global.DispelBuff(_env, unit6, global.BUFF_MARKED_ALL(_env, "DEBUFF", "DISPELLABLE"), 2)
 			end
 		end)
 		exec["@time"]({

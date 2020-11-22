@@ -1239,26 +1239,6 @@
         },
         "clz": "dict"
     },
-    "BattlePass_RuleDesc": {
-        "content": {
-            "RuleDesc": [
-                "BattlePass_RuleDesc_1",
-                "BattlePass_RuleDesc_2",
-                "BattlePass_RuleDesc_3",
-                "BattlePass_RuleDesc_4",
-                "BattlePass_RuleDesc_5",
-                "BattlePass_RuleDesc_6",
-                "BattlePass_RuleDesc_7",
-                "BattlePass_RuleDesc_8",
-                "BattlePass_RuleDesc_9",
-                "BattlePass_RuleDesc_10",
-                "BattlePass_RuleDesc_11",
-                "BattlePass_RuleDesc_12",
-                "BattlePass_RuleDesc_13"
-            ]
-        },
-        "clz": "string"
-    },
     "BattlePass_BuyLevelCount": {
         "content": -1,
         "clz": "int"
@@ -2463,10 +2443,6 @@
     "Box_Enlarge": {
         "content": 1.2,
         "clz": "string"
-    },
-    "ClubBoss_Standard": {
-        "content": 110,
-        "clz": "int"
     },
     "Damage_reward_1": {
         "content": 0.8,
@@ -4013,12 +3989,6 @@
         "content": 3,
         "clz": "int"
     },
-    "KOF_MatchNumber": {
-        "content": [
-            "19:00:00"
-        ],
-        "clz": "string[]"
-    },
     "KOF_MaxCost": {
         "content": 45,
         "clz": "int"
@@ -4046,10 +4016,6 @@
     "KOF_NiceReportReward": {
         "content": "R_KOF_NiceReport",
         "clz": "string"
-    },
-    "KOF_AutoSwitch": {
-        "content": 1,
-        "clz": "int"
     },
     "KOF_AutoNumber": {
         "content": 1,
@@ -6824,25 +6790,6 @@
         "content": 1,
         "clz": "int"
     },
-    "EliteBlock_MapList": {
-        "content": [
-            "E01",
-            "E02",
-            "E03",
-            "E04",
-            "E05",
-            "E06",
-            "E07",
-            "E08",
-            "E09",
-            "E10",
-            "E11",
-            "E12",
-            "E13",
-            "E14"
-        ],
-        "clz": "string[]"
-    },
     "Stage_Sweep10_Level": {
         "content": 1,
         "clz": "int"
@@ -6941,25 +6888,6 @@
             ]
         },
         "clz": "dict"
-    },
-    "Block_MapList": {
-        "content": [
-            "M01",
-            "M02",
-            "M03",
-            "M04",
-            "M05",
-            "M06",
-            "M07",
-            "M08",
-            "M09",
-            "M10",
-            "M11",
-            "M12",
-            "M13",
-            "M14"
-        ],
-        "clz": "string[]"
     },
     "Main_TaskList": {
         "content": {
@@ -7191,5 +7119,81 @@
     "Friend_Gift_MaxGetTimes": {
         "content": "Friend_Gift_MaxGetTimes",
         "clz": "string"
+    },
+    "KOF_AutoSwitch": {
+        "content": 0,
+        "clz": "int"
+    },
+    "EliteBlock_MapList": {
+        "content": [
+            "E01",
+            "E02",
+            "E03",
+            "E04",
+            "E05",
+            "E06",
+            "E07",
+            "E08",
+            "E09",
+            "E10",
+            "E11",
+            "E12",
+            "E13",
+            "E14",
+            "E15",
+            "E16"
+        ],
+        "clz": "string[]"
+    },
+    "ClubBoss_Standard": {
+        "content": 135,
+        "clz": "int"
+    },
+    "BattlePass_RuleDesc": {
+        "content": {
+            "RuleDesc": [
+                "BattlePass_RuleDesc_1",
+                "BattlePass_RuleDesc_2",
+                "BattlePass_RuleDesc_3",
+                "BattlePass_RuleDesc_4",
+                "BattlePass_RuleDesc_5",
+                "BattlePass_RuleDesc_6",
+                "BattlePass_RuleDesc_7",
+                "BattlePass_RuleDesc_8",
+                "BattlePass_RuleDesc_9",
+                "BattlePass_RuleDesc_10",
+                "BattlePass_RuleDesc_11",
+                "BattlePass_RuleDesc_12"
+            ]
+        },
+        "clz": "string"
+    },
+    "KOF_MatchNumber": {
+        "content": [
+            "17:00:00",
+            "19:00:00"
+        ],
+        "clz": "string[]"
+    },
+    "Block_MapList": {
+        "content": [
+            "M01",
+            "M02",
+            "M03",
+            "M04",
+            "M05",
+            "M06",
+            "M07",
+            "M08",
+            "M09",
+            "M10",
+            "M11",
+            "M12",
+            "M13",
+            "M14",
+            "M15",
+            "M16"
+        ],
+        "clz": "string[]"
     }
 }
