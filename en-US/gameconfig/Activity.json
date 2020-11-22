@@ -839,45 +839,6 @@
         "Tag": "",
         "Version": ""
     },
-    "ActivityBlock_WuXiuHui_ExtraSorce": {
-        "Type": "ExtraReward",
-        "UI": "ExtraRewardBoard",
-        "LeftBanner": "",
-        "Title": "",
-        "Desc": "",
-        "Time": "RANGE_CONTINUE",
-        "TimeFactor": {
-            "start": [
-                "2020-06-30 05:00:00",
-                "2020-7-14 05:00:00"
-            ],
-            "end": "2020-7-14 05:00:00"
-        },
-        "Loop": "",
-        "LoopFactor": "",
-        "ServerCondition": "",
-        "ClientCondition": {
-            "LEVEL": 3
-        },
-        "ActivityConfig": {
-            "Reward": "ActivityBlock_WuXiuHui_ExtraSource_R",
-            "block": [
-                "GOLD",
-                "EXP",
-                "CRYSTAL"
-            ]
-        },
-        "Mail": 0,
-        "MailId": "",
-        "Reset": 0,
-        "Enable": 1,
-        "Primary": 1,
-        "ShowTab": 0,
-        "ShowIndex": 2007,
-        "Icon": "",
-        "Tag": "",
-        "Version": ""
-    },
     "ActivityBlock_ZuoHe_ExtraNormal": {
         "Type": "ExtraReward",
         "UI": "ExtraRewardBoard",
@@ -1109,43 +1070,6 @@
         "Primary": 0,
         "ShowTab": 1,
         "ShowIndex": 2,
-        "Icon": "",
-        "Tag": "",
-        "Version": ""
-    },
-    "ActivityBlock_WuXiuHui_ExtraMap": {
-        "Type": "ExtraReward",
-        "UI": "ExtraRewardBoard",
-        "LeftBanner": "",
-        "Title": "",
-        "Desc": "",
-        "Time": "RANGE_CONTINUE",
-        "TimeFactor": {
-            "start": [
-                "2020-06-30 05:00:00",
-                "2020-7-14 05:00:00"
-            ],
-            "end": "2020-7-14 05:00:00"
-        },
-        "Loop": "",
-        "LoopFactor": "",
-        "ServerCondition": "",
-        "ClientCondition": {
-            "LEVEL": 3
-        },
-        "ActivityConfig": {
-            "Reward": "ActivityBlock_WuXiuHui_ExtraMap_R",
-            "block": [
-                "Map"
-            ]
-        },
-        "Mail": 0,
-        "MailId": "",
-        "Reset": 0,
-        "Enable": 1,
-        "Primary": 1,
-        "ShowTab": 0,
-        "ShowIndex": 2006,
         "Icon": "",
         "Tag": "",
         "Version": ""
@@ -1540,204 +1464,6 @@
         "Tag": "",
         "Version": ""
     },
-    "ActivityBlock_WuXiuHui_Support": {
-        "Type": "ActivitySupport",
-        "UI": "ACTIVITYWUXIUHUI",
-        "LeftBanner": "",
-        "Title": "ActivityBlock_WuXiuHui_Support_Name",
-        "Desc": "",
-        "Time": "RANGE_CONTINUE",
-        "TimeFactor": {
-            "start": [
-                "2020-06-30 05:00:00",
-                "2020-7-16 05:00:00"
-            ],
-            "end": "2020-7-16 05:00:00"
-        },
-        "Loop": "",
-        "LoopFactor": "",
-        "ServerCondition": "",
-        "ClientCondition": {
-            "LEVEL": 3
-        },
-        "ActivityConfig": {
-            "Bmg": "zhldgf_z_zwzf_bj",
-            "ScoreItem": {
-                "IM_WuXiuHuiSoreItem_1": [
-                    100
-                ],
-                "IM_WuXiuHuiSoreItem_2": [
-                    300
-                ],
-                "IM_WuXiuHuiClubAttrItem_2": [
-                    2500
-                ]
-            },
-            "ClubAttrItem": {
-                "IM_WuXiuHuiClubAttrItem_1": [
-                    {
-                        "Score": 1200,
-                        "Attr": 0.02
-                    },
-                    {
-                        "Score": 1200,
-                        "Attr": 0.04
-                    },
-                    {
-                        "Score": 1200,
-                        "Attr": 0.06
-                    },
-                    {
-                        "Score": 1200,
-                        "Attr": 0.08
-                    },
-                    {
-                        "Score": 1200,
-                        "Attr": 0.1
-                    },
-                    {
-                        "Score": 1200,
-                        "Attr": 0.12
-                    },
-                    {
-                        "Score": 1200,
-                        "Attr": 0.14
-                    },
-                    {
-                        "Score": 1200,
-                        "Attr": 0.16
-                    },
-                    {
-                        "Score": 1200,
-                        "Attr": 0.18
-                    },
-                    {
-                        "Score": 1200,
-                        "Attr": 0.2
-                    }
-                ]
-            },
-            "ButtonIcon": "zh_zy_btn_big",
-            "bgm": "Mus_Active_Daochang",
-            "ActivityStaminaId": "IR_WuXiuHuiAcitvityStamina",
-            "SubActivityEndTip": "SubActivity_WuXiuHui_EndTip_AB_1st",
-            "Activity": [
-                "ActivityBlock_WuXiuHui_Map",
-                "ActivityBlock_WuXiuHui_DailyTask",
-                "ActivityBlock_WuXiuHui_AchieveMentTask"
-            ],
-            "BonusHero": [
-                "BHTZi",
-                "LYXi",
-                "TPGZhu"
-            ],
-            "Logo": "zhldgf_logo",
-            "ResourcesBanner": [
-                "IR_Diamond",
-                "IR_WuXiuHuiAcitvityStamina",
-                "IR_Crystal",
-                "IR_Gold"
-            ],
-            "Buygift": {
-                "IM_WuXiuHuiClubAttrItem_2": "shopView&amp;viewType=push&amp;shopId=Shop_TimeLimit"
-            },
-            "RuleDesc": [
-                "ActivityTotal_WuXiuHui_RuleDesc_1",
-                "ActivityTotal_WuXiuHui_RuleDesc_2",
-                "ActivityTotal_WuXiuHui_RuleDesc_3",
-                "ActivityTotal_WuXiuHui_RuleDesc_4",
-                "ActivityTotal_WuXiuHui_RuleDesc_5",
-                "ActivityTotal_WuXiuHui_RuleDesc_6",
-                "ActivityTotal_WuXiuHui_RuleDesc_7"
-            ],
-            "ActivitySupportId": [
-                "ABS_WuXiuHui_1_1",
-                "ABS_WuXiuHui_1_2",
-                "ABS_WuXiuHui_1_3",
-                "ABS_WuXiuHui_1_4",
-                "ABS_WuXiuHui_2_1",
-                "ABS_WuXiuHui_2_2",
-                "ABS_WuXiuHui_3_1"
-            ],
-            "ModelId": [
-                {
-                    "model": "LYXi",
-                    "type": "Hero",
-                    "desc": "AB_WuXiuHui_Model_Desc1"
-                },
-                {
-                    "model": "BHTZi",
-                    "type": "Hero",
-                    "desc": "AB_WuXiuHui_Model_Desc2"
-                },
-                {
-                    "url": "view://shopView&viewType=push&shopId=Shop_Surface",
-                    "model": "Surface_TPGZhu_2",
-                    "type": "Surface",
-                    "desc": "AB_WuXiuHui_Model_Desc3"
-                },
-                {
-                    "model": "Surface_KTSJKe_2",
-                    "type": "Surface",
-                    "desc": "AB_WuXiuHui_Model_Desc4"
-                },
-                {
-                    "url": "view://shopView&viewType=push&shopId=Shop_Surface",
-                    "model": "Surface_LYXi_2",
-                    "type": "Surface",
-                    "desc": "AB_WuXiuHui_Model_Desc5"
-                }
-            ]
-        },
-        "Mail": 0,
-        "MailId": "",
-        "Reset": 0,
-        "Enable": 1,
-        "Primary": 1,
-        "ShowTab": 2,
-        "ShowIndex": 2001,
-        "Icon": "",
-        "Tag": "",
-        "Version": ""
-    },
-    "ActivityBlock_WuXiuHui_ExtraNormal": {
-        "Type": "ExtraReward",
-        "UI": "ExtraRewardBoard",
-        "LeftBanner": "",
-        "Title": "",
-        "Desc": "",
-        "Time": "RANGE_CONTINUE",
-        "TimeFactor": {
-            "start": [
-                "2020-06-30 05:00:00",
-                "2020-7-14 05:00:00"
-            ],
-            "end": "2020-7-14 05:00:00"
-        },
-        "Loop": "",
-        "LoopFactor": "",
-        "ServerCondition": "",
-        "ClientCondition": {
-            "LEVEL": 3
-        },
-        "ActivityConfig": {
-            "Reward": "ActivityBlock_WuXiuHui_ExtraNormal_R",
-            "block": [
-                "Normal",
-                "Elite"
-            ]
-        },
-        "Mail": 0,
-        "MailId": "",
-        "Reset": 0,
-        "Enable": 1,
-        "Primary": 1,
-        "ShowTab": 0,
-        "ShowIndex": 2005,
-        "Icon": "",
-        "Tag": "",
-        "Version": ""
-    },
     "ActivityBlock_ZuoHe_ExtraSorce": {
         "Type": "ExtraReward",
         "UI": "ExtraRewardBoard",
@@ -1773,72 +1499,6 @@
         "Primary": 1,
         "ShowTab": 0,
         "ShowIndex": 95,
-        "Icon": "",
-        "Tag": "",
-        "Version": ""
-    },
-    "ActivityBlock_WuXiuHui_Map": {
-        "Type": "ActivityBlockMap",
-        "UI": "ACTIVITYBLOCKMAP",
-        "LeftBanner": "",
-        "Title": "ActivityBlock_WuXiuHui_Map_Name",
-        "Desc": "",
-        "Time": "RANGE_CONTINUE",
-        "TimeFactor": {
-            "start": [
-                "2020-06-30 05:00:00",
-                "2020-7-14 05:00:00"
-            ],
-            "end": "2020-7-14 05:00:00"
-        },
-        "Loop": "",
-        "LoopFactor": "",
-        "ServerCondition": "",
-        "ClientCondition": {
-            "LEVEL": 3
-        },
-        "ActivityConfig": {
-            "ButtonIcon": "zh_zy_btn_fb",
-            "ShowReward": "ShowReward_ABR",
-            "BonusHeroDesc": [
-                "ABMap_WuXiuHui_RuleDesc_1",
-                "ABMap_WuXiuHui_RuleDesc_2",
-                "ABMap_WuXiuHui_RuleDesc_3",
-                "ABMap_WuXiuHui_RuleDesc_4"
-            ],
-            "BonusHero": [
-                "BHTZi",
-                "LYXi",
-                "TPGZhu"
-            ],
-            "ResourcesBanner": [
-                "IR_Gold",
-                "IR_Crystal",
-                "IM_WuXiuHuiBossStamina",
-                "IR_WuXiuHuiAcitvityStamina",
-                "IR_Diamond"
-            ],
-            "ActivityBlockMap": {
-                "Elite": [
-                    "AWuXiuHuiE01"
-                ],
-                "Normal": [
-                    "AWuXiuHuiM01"
-                ]
-            },
-            "RuleDesc": [
-                "ActivityBlock_WuXiuHui_RuleDesc_1",
-                "ActivityBlock_WuXiuHui_RuleDesc_2",
-                "ActivityBlock_WuXiuHui_RuleDesc_3"
-            ]
-        },
-        "Mail": 0,
-        "MailId": "",
-        "Reset": 0,
-        "Enable": 1,
-        "Primary": 0,
-        "ShowTab": 0,
-        "ShowIndex": 2002,
         "Icon": "",
         "Tag": "",
         "Version": ""
@@ -2108,70 +1768,6 @@
         "Primary": 1,
         "ShowTab": 0,
         "ShowIndex": 95,
-        "Icon": "",
-        "Tag": "",
-        "Version": ""
-    },
-    "ActivityBlock_WuXiuHui_AchieveMentTask": {
-        "Type": "TASK",
-        "UI": "ABACHIEVEMENTTASK",
-        "LeftBanner": "",
-        "Title": "ActivityBlock_WuXiuHui_AchieveMentTask_Name",
-        "Desc": "",
-        "Time": "RANGE_CONTINUE",
-        "TimeFactor": {
-            "start": [
-                "2020-06-30 05:00:00",
-                "2020-7-14 05:00:00"
-            ],
-            "end": "2020-7-14 05:00:00"
-        },
-        "Loop": "",
-        "LoopFactor": "",
-        "ServerCondition": "",
-        "ClientCondition": {
-            "LEVEL": 3
-        },
-        "ActivityConfig": {
-            "progressItem": "IM_WuXiuHuiChengjiuDian",
-            "task": [
-                "ActivityBlock_WuXiuHui_AchieveMentTask_1",
-                "ActivityBlock_WuXiuHui_AchieveMentTask_2",
-                "ActivityBlock_WuXiuHui_AchieveMentTask_3",
-                "ActivityBlock_WuXiuHui_AchieveMentTask_4",
-                "ActivityBlock_WuXiuHui_AchieveMentTask_5",
-                "ActivityBlock_WuXiuHui_AchieveMentTask_6",
-                "ActivityBlock_WuXiuHui_AchieveMentTask_7",
-                "ActivityBlock_WuXiuHui_AchieveMentTask_8",
-                "ActivityBlock_WuXiuHui_AchieveMentTask_9",
-                "ActivityBlock_WuXiuHui_AchieveMentTask_10",
-                "ActivityBlock_WuXiuHui_AchieveMentTask_11",
-                "ActivityBlock_WuXiuHui_AchieveMentTask_12",
-                "ActivityBlock_WuXiuHui_AchieveMentTask_13",
-                "ActivityBlock_WuXiuHui_AchieveMentTask_14",
-                "ActivityBlock_WuXiuHui_AchieveMentTask_15",
-                "ActivityBlock_WuXiuHui_AchieveMentTask_16",
-                "ActivityBlock_WuXiuHui_AchieveMentTask_17",
-                "ActivityBlock_WuXiuHui_AchieveMentTask_18",
-                "ActivityBlock_WuXiuHui_AchieveMentTask_19",
-                "ActivityBlock_WuXiuHui_AchieveMentTask_20",
-                "ActivityBlock_WuXiuHui_AchieveMentTask_21",
-                "ActivityBlock_WuXiuHui_AchieveMentTask_22",
-                "ActivityBlock_WuXiuHui_AchieveMentTask_23",
-                "ActivityBlock_WuXiuHui_AchieveMentTask_24"
-            ],
-            "Bmg": "renwu_bd_bj",
-            "titleImg": "hd_bg_wxh_2",
-            "progressDesc": "ABATask_Desc",
-            "entitle": "ABAchieveMentTask_entitle"
-        },
-        "Mail": 1,
-        "MailId": "Mail_WuXiuHui_AchieveMentTask_Activity",
-        "Reset": 0,
-        "Enable": 1,
-        "Primary": 0,
-        "ShowTab": 0,
-        "ShowIndex": 2004,
         "Icon": "",
         "Tag": "",
         "Version": ""
@@ -3050,50 +2646,6 @@
         "Primary": 1,
         "ShowTab": 0,
         "ShowIndex": 95,
-        "Icon": "",
-        "Tag": "",
-        "Version": ""
-    },
-    "ActivityBlock_WuXiuHui_DailyTask": {
-        "Type": "TASK",
-        "UI": "ABDAILYTASK",
-        "LeftBanner": "",
-        "Title": "ActivityBlock_WuXiuHui_DailyTask_Name",
-        "Desc": "",
-        "Time": "RANGE_CONTINUE",
-        "TimeFactor": {
-            "start": [
-                "2020-06-30 05:00:00",
-                "2020-7-14 05:00:00"
-            ],
-            "end": "2020-7-14 05:00:00"
-        },
-        "Loop": "",
-        "LoopFactor": "",
-        "ServerCondition": "",
-        "ClientCondition": {
-            "LEVEL": 3
-        },
-        "ActivityConfig": {
-            "task": [
-                "ActivityBlock_WuXiuHui_DailyTask_1",
-                "ActivityBlock_WuXiuHui_DailyTask_2",
-                "ActivityBlock_WuXiuHui_DailyTask_3",
-                "ActivityBlock_WuXiuHui_DailyTask_4",
-                "ActivityBlock_WuXiuHui_DailyTask_5",
-                "ActivityBlock_WuXiuHui_DailyTask_6"
-            ],
-            "Bmg": "renwu_bd_bj",
-            "entitle": "ABDailyTask_entitle",
-            "titleImg": "hd_bg_wxh_1"
-        },
-        "Mail": 1,
-        "MailId": "Mail_WuXiuHui_DailyTask_Activity",
-        "Reset": 1,
-        "Enable": 1,
-        "Primary": 0,
-        "ShowTab": 0,
-        "ShowIndex": 2003,
         "Icon": "",
         "Tag": "",
         "Version": ""
@@ -6189,6 +5741,589 @@
         "Primary": 1,
         "ShowTab": 1,
         "ShowIndex": 99999,
+        "Icon": "",
+        "Tag": "",
+        "Version": ""
+    },
+    "DrawCard_WEDeYLSBai_Activity": {
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "LeftBanner": "",
+        "Title": "",
+        "Desc": "",
+        "Time": "PLAYER_REGISTER",
+        "TimeFactor": {
+            "start": 31,
+            "end": 37
+        },
+        "Loop": "",
+        "LoopFactor": "",
+        "ServerCondition": "",
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "ActivityConfig": {
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_WEDeYLSBai",
+            "DRAW": "DrawCard_WEDeYLSBai",
+            "VANISH": 0
+        },
+        "Mail": 0,
+        "MailId": "",
+        "Reset": 0,
+        "Enable": 1,
+        "Primary": 1,
+        "ShowTab": 0,
+        "ShowIndex": 205,
+        "Icon": "",
+        "Tag": "",
+        "Version": ""
+    },
+    "DrawCard_YLMGZhuKTSJKe_Activity": {
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "LeftBanner": "",
+        "Title": "",
+        "Desc": "",
+        "Time": "PLAYER_REGISTER",
+        "TimeFactor": {
+            "start": 31,
+            "end": 37
+        },
+        "Loop": "",
+        "LoopFactor": "",
+        "ServerCondition": "",
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "ActivityConfig": {
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_YLMGZhuKTSJKe",
+            "DRAW": "DrawCard_YLMGZhuKTSJKe",
+            "VANISH": 0
+        },
+        "Mail": 0,
+        "MailId": "",
+        "Reset": 0,
+        "Enable": 1,
+        "Primary": 1,
+        "ShowTab": 0,
+        "ShowIndex": 205,
+        "Icon": "",
+        "Tag": "",
+        "Version": ""
+    },
+    "ActivityBlock_WuXiuHui_ExtraMap": {
+        "Type": "ExtraReward",
+        "UI": "ExtraRewardBoard",
+        "LeftBanner": "",
+        "Title": "",
+        "Desc": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "start": [
+                "2020-11-21 05:00:00",
+                "2020-12-05 05:00:00"
+            ],
+            "end": "2020-12-05 05:00:00"
+        },
+        "Loop": "",
+        "LoopFactor": "",
+        "ServerCondition": "",
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "ActivityConfig": {
+            "Reward": "ActivityBlock_WuXiuHui_ExtraMap_R",
+            "block": [
+                "Map"
+            ]
+        },
+        "Mail": 0,
+        "MailId": "",
+        "Reset": 0,
+        "Enable": 1,
+        "Primary": 1,
+        "ShowTab": 0,
+        "ShowIndex": 2006,
+        "Icon": "",
+        "Tag": "",
+        "Version": ""
+    },
+    "DrawCard_1UP_11_Activity": {
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "LeftBanner": "",
+        "Title": "",
+        "Desc": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "start": [
+                "2020-11-21 05:00:00",
+                "2020-11-28 05:00:00"
+            ],
+            "end": "2020-11-28 05:00:00"
+        },
+        "Loop": "",
+        "LoopFactor": "",
+        "ServerCondition": "",
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "ActivityConfig": {
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_11",
+            "DRAW": "DrawCard_1UP_11",
+            "VANISH": 0
+        },
+        "Mail": 0,
+        "MailId": "",
+        "Reset": 0,
+        "Enable": 1,
+        "Primary": 1,
+        "ShowTab": 0,
+        "ShowIndex": 209,
+        "Icon": "",
+        "Tag": "",
+        "Version": ""
+    },
+    "ActivityBlock_WuXiuHui_DailyTask": {
+        "Type": "TASK",
+        "UI": "ABDAILYTASK",
+        "LeftBanner": "",
+        "Title": "ActivityBlock_WuXiuHui_DailyTask_Name",
+        "Desc": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "start": [
+                "2020-11-21 05:00:00",
+                "2020-12-05 05:00:00"
+            ],
+            "end": "2020-12-05 05:00:00"
+        },
+        "Loop": "",
+        "LoopFactor": "",
+        "ServerCondition": "",
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "ActivityConfig": {
+            "task": [
+                "ActivityBlock_WuXiuHui_DailyTask_1",
+                "ActivityBlock_WuXiuHui_DailyTask_2",
+                "ActivityBlock_WuXiuHui_DailyTask_3",
+                "ActivityBlock_WuXiuHui_DailyTask_4",
+                "ActivityBlock_WuXiuHui_DailyTask_5",
+                "ActivityBlock_WuXiuHui_DailyTask_6"
+            ],
+            "Bmg": "renwu_bd_bj",
+            "entitle": "ABDailyTask_entitle",
+            "titleImg": "hd_bg_wxh_1"
+        },
+        "Mail": 1,
+        "MailId": "Mail_WuXiuHui_DailyTask_Activity",
+        "Reset": 1,
+        "Enable": 1,
+        "Primary": 0,
+        "ShowTab": 0,
+        "ShowIndex": 2003,
+        "Icon": "",
+        "Tag": "",
+        "Version": ""
+    },
+    "ActivityBlock_WuXiuHui_ExtraSorce": {
+        "Type": "ExtraReward",
+        "UI": "ExtraRewardBoard",
+        "LeftBanner": "",
+        "Title": "",
+        "Desc": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "start": [
+                "2020-11-21 05:00:00",
+                "2020-12-05 05:00:00"
+            ],
+            "end": "2020-12-05 05:00:00"
+        },
+        "Loop": "",
+        "LoopFactor": "",
+        "ServerCondition": "",
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "ActivityConfig": {
+            "Reward": "ActivityBlock_WuXiuHui_ExtraSource_R",
+            "block": [
+                "GOLD",
+                "EXP",
+                "CRYSTAL"
+            ]
+        },
+        "Mail": 0,
+        "MailId": "",
+        "Reset": 0,
+        "Enable": 1,
+        "Primary": 1,
+        "ShowTab": 0,
+        "ShowIndex": 2007,
+        "Icon": "",
+        "Tag": "",
+        "Version": ""
+    },
+    "ActivityBlock_WuXiuHui_ExtraNormal": {
+        "Type": "ExtraReward",
+        "UI": "ExtraRewardBoard",
+        "LeftBanner": "",
+        "Title": "",
+        "Desc": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "start": [
+                "2020-11-21 05:00:00",
+                "2020-12-05 05:00:00"
+            ],
+            "end": "2020-12-05 05:00:00"
+        },
+        "Loop": "",
+        "LoopFactor": "",
+        "ServerCondition": "",
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "ActivityConfig": {
+            "Reward": "ActivityBlock_WuXiuHui_ExtraNormal_R",
+            "block": [
+                "Normal",
+                "Elite"
+            ]
+        },
+        "Mail": 0,
+        "MailId": "",
+        "Reset": 0,
+        "Enable": 1,
+        "Primary": 1,
+        "ShowTab": 0,
+        "ShowIndex": 2005,
+        "Icon": "",
+        "Tag": "",
+        "Version": ""
+    },
+    "ActivityBlock_WuXiuHui_Map": {
+        "Type": "ActivityBlockMap",
+        "UI": "ACTIVITYBLOCKMAP",
+        "LeftBanner": "",
+        "Title": "ActivityBlock_WuXiuHui_Map_Name",
+        "Desc": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "start": [
+                "2020-11-21 05:00:00",
+                "2020-12-05 05:00:00"
+            ],
+            "end": "2020-12-05 05:00:00"
+        },
+        "Loop": "",
+        "LoopFactor": "",
+        "ServerCondition": "",
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "ActivityConfig": {
+            "ButtonIcon": "zh_zy_btn_fb",
+            "ShowReward": "ShowReward_ABR",
+            "BonusHeroDesc": [
+                "ABMap_WuXiuHui_RuleDesc_1",
+                "ABMap_WuXiuHui_RuleDesc_2",
+                "ABMap_WuXiuHui_RuleDesc_3",
+                "ABMap_WuXiuHui_RuleDesc_4"
+            ],
+            "BonusHero": [
+                "BHTZi",
+                "LYXi",
+                "TPGZhu"
+            ],
+            "ResourcesBanner": [
+                "IR_Gold",
+                "IR_Crystal",
+                "IM_WuXiuHuiBossStamina",
+                "IR_WuXiuHuiAcitvityStamina",
+                "IR_Diamond"
+            ],
+            "ActivityBlockMap": {
+                "Elite": [
+                    "AWuXiuHuiE01"
+                ],
+                "Normal": [
+                    "AWuXiuHuiM01"
+                ]
+            },
+            "RuleDesc": [
+                "ActivityBlock_WuXiuHui_RuleDesc_1",
+                "ActivityBlock_WuXiuHui_RuleDesc_2",
+                "ActivityBlock_WuXiuHui_RuleDesc_3"
+            ]
+        },
+        "Mail": 0,
+        "MailId": "",
+        "Reset": 0,
+        "Enable": 1,
+        "Primary": 0,
+        "ShowTab": 0,
+        "ShowIndex": 2002,
+        "Icon": "",
+        "Tag": "",
+        "Version": ""
+    },
+    "ActivityBlock_WuXiuHui_Support": {
+        "Type": "ActivitySupport",
+        "UI": "ACTIVITYWUXIUHUI",
+        "LeftBanner": "",
+        "Title": "ActivityBlock_WuXiuHui_Support_Name",
+        "Desc": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "start": [
+                "2020-11-21 05:00:00",
+                "2020-12-06 04:59:00"
+            ],
+            "end": "2020-12-06 04:59:00"
+        },
+        "Loop": "",
+        "LoopFactor": "",
+        "ServerCondition": "",
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "ActivityConfig": {
+            "Bmg": "zhldgf_z_zwzf_bj",
+            "ScoreItem": {
+                "IM_WuXiuHuiSoreItem_1": [
+                    100
+                ],
+                "IM_WuXiuHuiSoreItem_2": [
+                    300
+                ],
+                "IM_WuXiuHuiClubAttrItem_2": [
+                    2500
+                ]
+            },
+            "ClubAttrItem": {
+                "IM_WuXiuHuiClubAttrItem_1": [
+                    {
+                        "Score": 1200,
+                        "Attr": 0.02
+                    },
+                    {
+                        "Score": 1200,
+                        "Attr": 0.04
+                    },
+                    {
+                        "Score": 1200,
+                        "Attr": 0.06
+                    },
+                    {
+                        "Score": 1200,
+                        "Attr": 0.08
+                    },
+                    {
+                        "Score": 1200,
+                        "Attr": 0.1
+                    },
+                    {
+                        "Score": 1200,
+                        "Attr": 0.12
+                    },
+                    {
+                        "Score": 1200,
+                        "Attr": 0.14
+                    },
+                    {
+                        "Score": 1200,
+                        "Attr": 0.16
+                    },
+                    {
+                        "Score": 1200,
+                        "Attr": 0.18
+                    },
+                    {
+                        "Score": 1200,
+                        "Attr": 0.2
+                    }
+                ]
+            },
+            "ButtonIcon": "zh_zy_btn_big",
+            "bgm": "Mus_Active_Daochang",
+            "ActivityStaminaId": "IR_WuXiuHuiAcitvityStamina",
+            "SubActivityEndTip": "SubActivity_WuXiuHui_EndTip_AB_1st",
+            "Activity": [
+                "ActivityBlock_WuXiuHui_Map",
+                "ActivityBlock_WuXiuHui_DailyTask",
+                "ActivityBlock_WuXiuHui_AchieveMentTask"
+            ],
+            "BonusHero": [
+                "BHTZi",
+                "LYXi",
+                "TPGZhu"
+            ],
+            "Logo": "zhldgf_logo",
+            "ResourcesBanner": [
+                "IR_Diamond",
+                "IR_WuXiuHuiAcitvityStamina",
+                "IR_Crystal",
+                "IR_Gold"
+            ],
+            "Buygift": {
+                "IM_WuXiuHuiClubAttrItem_2": "shopView&amp;viewType=push&amp;shopId=Shop_TimeLimit"
+            },
+            "RuleDesc": [
+                "ActivityTotal_WuXiuHui_RuleDesc_1",
+                "ActivityTotal_WuXiuHui_RuleDesc_2",
+                "ActivityTotal_WuXiuHui_RuleDesc_3",
+                "ActivityTotal_WuXiuHui_RuleDesc_4",
+                "ActivityTotal_WuXiuHui_RuleDesc_5",
+                "ActivityTotal_WuXiuHui_RuleDesc_6",
+                "ActivityTotal_WuXiuHui_RuleDesc_7"
+            ],
+            "ActivitySupportId": [
+                "ABS_WuXiuHui_1_1",
+                "ABS_WuXiuHui_1_2",
+                "ABS_WuXiuHui_1_3",
+                "ABS_WuXiuHui_1_4",
+                "ABS_WuXiuHui_2_1",
+                "ABS_WuXiuHui_2_2",
+                "ABS_WuXiuHui_3_1"
+            ],
+            "ModelId": [
+                {
+                    "model": "LYXi",
+                    "type": "Hero",
+                    "desc": "AB_WuXiuHui_Model_Desc1"
+                },
+                {
+                    "model": "BHTZi",
+                    "type": "Hero",
+                    "desc": "AB_WuXiuHui_Model_Desc2"
+                },
+                {
+                    "url": "view://shopView&viewType=push&shopId=Shop_Surface",
+                    "model": "Surface_TPGZhu_2",
+                    "type": "Surface",
+                    "desc": "AB_WuXiuHui_Model_Desc3"
+                },
+                {
+                    "model": "Surface_KTSJKe_2",
+                    "type": "Surface",
+                    "desc": "AB_WuXiuHui_Model_Desc4"
+                },
+                {
+                    "url": "view://shopView&viewType=push&shopId=Shop_Surface",
+                    "model": "Surface_LYXi_2",
+                    "type": "Surface",
+                    "desc": "AB_WuXiuHui_Model_Desc5"
+                }
+            ]
+        },
+        "Mail": 0,
+        "MailId": "",
+        "Reset": 0,
+        "Enable": 1,
+        "Primary": 1,
+        "ShowTab": 2,
+        "ShowIndex": 2001,
+        "Icon": "",
+        "Tag": "",
+        "Version": ""
+    },
+    "DrawCard_1UP_8_Activity": {
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "LeftBanner": "",
+        "Title": "",
+        "Desc": "",
+        "Time": "PLAYER_REGISTER",
+        "TimeFactor": {
+            "start": 32,
+            "end": 38
+        },
+        "Loop": "",
+        "LoopFactor": "",
+        "ServerCondition": "",
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "ActivityConfig": {
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_8",
+            "DRAW": "DrawCard_1UP_8",
+            "VANISH": 0
+        },
+        "Mail": 0,
+        "MailId": "",
+        "Reset": 0,
+        "Enable": 0,
+        "Primary": 1,
+        "ShowTab": 0,
+        "ShowIndex": 103,
+        "Icon": "",
+        "Tag": "",
+        "Version": ""
+    },
+    "ActivityBlock_WuXiuHui_AchieveMentTask": {
+        "Type": "TASK",
+        "UI": "ABACHIEVEMENTTASK",
+        "LeftBanner": "",
+        "Title": "ActivityBlock_WuXiuHui_AchieveMentTask_Name",
+        "Desc": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "start": [
+                "2020-11-21 05:00:00",
+                "2020-12-05 05:00:00"
+            ],
+            "end": "2020-12-05 05:00:00"
+        },
+        "Loop": "",
+        "LoopFactor": "",
+        "ServerCondition": "",
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "ActivityConfig": {
+            "progressItem": "IM_WuXiuHuiChengjiuDian",
+            "task": [
+                "ActivityBlock_WuXiuHui_AchieveMentTask_1",
+                "ActivityBlock_WuXiuHui_AchieveMentTask_2",
+                "ActivityBlock_WuXiuHui_AchieveMentTask_3",
+                "ActivityBlock_WuXiuHui_AchieveMentTask_4",
+                "ActivityBlock_WuXiuHui_AchieveMentTask_5",
+                "ActivityBlock_WuXiuHui_AchieveMentTask_6",
+                "ActivityBlock_WuXiuHui_AchieveMentTask_7",
+                "ActivityBlock_WuXiuHui_AchieveMentTask_8",
+                "ActivityBlock_WuXiuHui_AchieveMentTask_9",
+                "ActivityBlock_WuXiuHui_AchieveMentTask_10",
+                "ActivityBlock_WuXiuHui_AchieveMentTask_11",
+                "ActivityBlock_WuXiuHui_AchieveMentTask_12",
+                "ActivityBlock_WuXiuHui_AchieveMentTask_13",
+                "ActivityBlock_WuXiuHui_AchieveMentTask_14",
+                "ActivityBlock_WuXiuHui_AchieveMentTask_15",
+                "ActivityBlock_WuXiuHui_AchieveMentTask_16",
+                "ActivityBlock_WuXiuHui_AchieveMentTask_17",
+                "ActivityBlock_WuXiuHui_AchieveMentTask_18",
+                "ActivityBlock_WuXiuHui_AchieveMentTask_19",
+                "ActivityBlock_WuXiuHui_AchieveMentTask_20",
+                "ActivityBlock_WuXiuHui_AchieveMentTask_21",
+                "ActivityBlock_WuXiuHui_AchieveMentTask_22",
+                "ActivityBlock_WuXiuHui_AchieveMentTask_23",
+                "ActivityBlock_WuXiuHui_AchieveMentTask_24"
+            ],
+            "Bmg": "renwu_bd_bj",
+            "titleImg": "hd_bg_wxh_2",
+            "progressDesc": "ABATask_Desc",
+            "entitle": "ABAchieveMentTask_entitle"
+        },
+        "Mail": 1,
+        "MailId": "Mail_WuXiuHui_AchieveMentTask_Activity",
+        "Reset": 0,
+        "Enable": 1,
+        "Primary": 0,
+        "ShowTab": 0,
+        "ShowIndex": 2004,
         "Icon": "",
         "Tag": "",
         "Version": ""

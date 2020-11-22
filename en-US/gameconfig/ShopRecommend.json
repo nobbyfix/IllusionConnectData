@@ -93,5 +93,29 @@
             "monthCardF"
         ],
         "Link": "view://shopView&viewType=push&shopId=Shop_Monthcard&packageId=monthCardF"
+    },
+    "ShopRecommend_TimeLimit": {
+        "TabName": "ShopRecommend_TimeLimit_Name",
+        "BackGroundImg": "sd_tj_bg_zfzxd",
+        "Sort": 1,
+        "Vanish": 1,
+        "TimeType": {
+            "start": "2020-11-14 05:00:00",
+            "end": "2020-11-20 05:00:00",
+            "type": "limit"
+        },
+        "ServerCondition": "",
+        "ClientCondition": "",
+        "Hide": 1,
+        "Prepose": "",
+        "PackageId": [
+            "PackageShop_TimeLimit_1",
+            "PackageShop_TimeLimit_2",
+            "PackageShop_TimeLimit_3",
+            "PackageShop_TimeLimit_4",
+            "PackageShop_TimeLimit_5",
+            "PackageShop_TimeLimit_6"
+        ],
+        "Link": "view://shopView&viewType=push&shopId=Shop_TimeLimit"
     }
 }

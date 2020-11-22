@@ -5017,27 +5017,6 @@
         "content": "Battle_Scene_17",
         "clz": "string"
     },
-    "FAC_CheckType": {
-        "content": [
-            "normal_stage",
-            "elite_stage",
-            "gold",
-            "exp",
-            "crystal",
-            "equipment",
-            "skill_1",
-            "skill_2",
-            "skill_3",
-            "maze_battle",
-            "explore_battle",
-            "herostory_battle",
-            "arena_challenge",
-            "tower",
-            "crusade",
-            "dream_challenge"
-        ],
-        "clz": "string[]"
-    },
     "BattleStatementDelay_Special": {
         "content": {
             "crystal": 1.7,
@@ -7120,10 +7099,6 @@
         "content": "Friend_Gift_MaxGetTimes",
         "clz": "string"
     },
-    "KOF_AutoSwitch": {
-        "content": 0,
-        "clz": "int"
-    },
     "EliteBlock_MapList": {
         "content": [
             "E01",
@@ -7193,6 +7168,32 @@
             "M14",
             "M15",
             "M16"
+        ],
+        "clz": "string[]"
+    },
+    "KOF_AutoSwitch": {
+        "content": 1,
+        "clz": "int"
+    },
+    "FAC_CheckType": {
+        "content": [
+            "normal_stage",
+            "elite_stage",
+            "gold",
+            "exp",
+            "crystal",
+            "equipment",
+            "skill_1",
+            "skill_2",
+            "skill_3",
+            "maze_battle",
+            "explore_battle",
+            "herostory_battle",
+            "arena_challenge",
+            "tower",
+            "crusade",
+            "dream_challenge",
+            "clubboss"
         ],
         "clz": "string[]"
     }

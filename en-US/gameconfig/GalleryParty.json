@@ -1,37 +1,4 @@
 {
-    "BSNCT": {
-        "Party": "BSNCT",
-        "IncludeHero": [
-            "SDTZi",
-            "TPGZhu",
-            "YLSBai",
-            "ZZBBWei",
-            "YBYa",
-            "LFEr",
-            "MKLJLuo",
-            "DNTLuo",
-            "ADHWShi",
-            "GLin"
-        ],
-        "ShowRank": 3,
-        "PartyReward": [
-            "BSNCT_Love1",
-            "BSNCT_Love2",
-            "BSNCT_Love3",
-            "BSNCT_Love4",
-            "BSNCT_Love5",
-            "BSNCT_Love6",
-            "BSNCT_Num1",
-            "BSNCT_Num2",
-            "BSNCT_Num3",
-            "BSNCT_Star1",
-            "BSNCT_Star2",
-            "BSNCT_Star3",
-            "BSNCT_Star4",
-            "BSNCT_Star5"
-        ],
-        "PartyDesc": "PartyDesc_BSNCT"
-    },
     "WNSXJ": {
         "Party": "WNSXJ",
         "IncludeHero": [
@@ -189,5 +156,39 @@
             "MNJH_Star5"
         ],
         "PartyDesc": "PartyDesc_MNJH"
+    },
+    "BSNCT": {
+        "Party": "BSNCT",
+        "IncludeHero": [
+            "SDTZi",
+            "TPGZhu",
+            "YLSBai",
+            "ZZBBWei",
+            "YBYa",
+            "BHTZi",
+            "LFEr",
+            "MKLJLuo",
+            "DNTLuo",
+            "ADHWShi",
+            "GLin"
+        ],
+        "ShowRank": 3,
+        "PartyReward": [
+            "BSNCT_Love1",
+            "BSNCT_Love2",
+            "BSNCT_Love3",
+            "BSNCT_Love4",
+            "BSNCT_Love5",
+            "BSNCT_Love6",
+            "BSNCT_Num1",
+            "BSNCT_Num2",
+            "BSNCT_Num3",
+            "BSNCT_Star1",
+            "BSNCT_Star2",
+            "BSNCT_Star3",
+            "BSNCT_Star4",
+            "BSNCT_Star5"
+        ],
+        "PartyDesc": "PartyDesc_BSNCT"
     }
 }

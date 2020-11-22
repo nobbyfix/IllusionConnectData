@@ -287,6 +287,31 @@ function ActivitySagaSupportMapMediator:initWidget()
 	self._stageAdditionPanel:addClickEventListener(function ()
 		self:onClickAditionButton()
 	end)
+
+	local emBattleText29 = self:getView():getChildByFullName("main.actionNode.btn_emBattle.Text_2")
+	local emBattleText5 = self:getView():getChildByFullName("main.actionNode.btn_emBattle.Text_3")
+	local emBattleText2 = self:getView():getChildByFullName("main.actionNode.btn_heroSystem.Text_29")
+	local emBattleText3 = self:getView():getChildByFullName("main.actionNode.btn_heroSystem.Text_5")
+	local stagetext1 = self:getView():getChildByFullName("main.actionNode.btn_stage.Text1")
+	local stagetext3 = self:getView():getChildByFullName("main.actionNode.btn_stage.Text3")
+	local stagetext2 = self:getView():getChildByFullName("main.actionNode.btn_stage.Text2")
+
+	if getCurrentLanguage() ~= GameLanguageType.CN then
+		stagetext2:setVisible(false)
+		emBattleText3:setVisible(false)
+		emBattleText5:setVisible(false)
+		emBattleText2:setPosition(cc.p(62, 37.71))
+		emBattleText29:setPosition(cc.p(62, 37.71))
+		stagetext1:setPosition(cc.p(62, 37.71))
+		stagetext3:setPosition(cc.p(62, 16.71))
+		stagetext1:setFontSize(22)
+		stagetext3:setFontSize(22)
+		emBattleText29:setFontSize(24)
+		emBattleText2:setFontSize(24)
+		self:getView():getChildByFullName("main.actionNode.btn_heroSystem.Text_6"):setVisible(false)
+		self:getView():getChildByFullName("main.actionNode.btn_emBattle.Text_4"):setVisible(false)
+		self:getView():getChildByFullName("main.actionNode.btn_stage.Text_En"):setVisible(false)
+	end
 end
 
 function ActivitySagaSupportMapMediator:updataStageBtnImg()

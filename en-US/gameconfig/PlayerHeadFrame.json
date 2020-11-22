@@ -59,16 +59,6 @@
         "ResourceDesc": "Frame_Actitity_YLSBai_Resource",
         "Reward": ""
     },
-    "Frame_Actitity_WXHui": {
-        "Type": "ACTIVITY",
-        "Picture": "Frame_Actitity_WXHui",
-        "Order": 7,
-        "Unlook": 0,
-        "Name": "Frame_Actitity_WXHui_Name",
-        "Desc": "Frame_Actitity_WXHui_Desc",
-        "ResourceDesc": "Frame_Actitity_WXHui_Resource",
-        "Reward": ""
-    },
     "Frame_Actitity_YGHM": {
         "Type": "ACTIVITY",
         "Picture": "Frame_Actitity_YGHM",
@@ -117,6 +107,16 @@
         "Name": "Frame_Actitity_SMZShe_Name",
         "Desc": "Frame_Actitity_SMZShe_Desc",
         "ResourceDesc": "Frame_Actitity_SMZShe_Resource",
+        "Reward": ""
+    },
+    "Frame_Actitity_WXHui": {
+        "Type": "ACTIVITY",
+        "Picture": "Frame_Actitity_WXHui",
+        "Order": 7,
+        "Unlook": 1,
+        "Name": "Frame_Actitity_WXHui_Name",
+        "Desc": "Frame_Actitity_WXHui_Desc",
+        "ResourceDesc": "Frame_Actitity_WXHui_Resource",
         "Reward": ""
     }
 }

@@ -134,5 +134,45 @@
         "ClientCondition": "",
         "Hide": 1,
         "DrawCard_Id": 10013
+    },
+    "Surface_10": {
+        "Surface": "Surface_KTSJKe_2",
+        "BackGroundImg": "sd_pf_bg",
+        "Cost": [
+            {
+                "amount": 68,
+                "code": "IR_Surface"
+            }
+        ],
+        "Sort": 7,
+        "TimeType": {
+            "start": "2020-01-01 05:00:00",
+            "end": "2020-01-02 05:00:00",
+            "type": "limit"
+        },
+        "ServerCondition": "",
+        "ClientCondition": "",
+        "Hide": 1,
+        "DrawCard_Id": 10016
+    },
+    "Surface_9": {
+        "Surface": "Surface_TPGZhu_2",
+        "BackGroundImg": "sd_pf_bg",
+        "Cost": [
+            {
+                "amount": 118,
+                "code": "IR_Surface"
+            }
+        ],
+        "Sort": 6,
+        "TimeType": {
+            "start": "2020-11-21 05:00:00",
+            "end": "2020-11-28 05:00:00",
+            "type": "limit"
+        },
+        "ServerCondition": "",
+        "ClientCondition": "",
+        "Hide": 1,
+        "DrawCard_Id": 10015
     }
 }

@@ -52883,24 +52883,6 @@
         "UnlockDesc": "Sound_Unlock_HeroLove",
         "Show": 1
     },
-    "Voice_BHTZi_40_4": {
-        "IncludeMusic": "",
-        "PkgName": "CV/BHTZi",
-        "CueName": "Voice_BHTZi_40_4",
-        "Param": "",
-        "IsMenu": "",
-        "ShowName": "",
-        "ShowSourse": "",
-        "SoundDesc": "Voice_BHTZi_40_4_SoundDesc",
-        "Text": "Sound_Text_40_4",
-        "Unlock": [
-            {
-                "HeroLove": 1
-            }
-        ],
-        "UnlockDesc": "",
-        "Show": 0
-    },
     "Voice_SYAi_Zombie_26": {
         "IncludeMusic": "",
         "PkgName": "CV/SYAi",
@@ -115256,5 +115238,23 @@
         "Unlock": "",
         "UnlockDesc": "",
         "Show": ""
+    },
+    "Voice_BHTZi_40_4": {
+        "IncludeMusic": "",
+        "PkgName": "CV/BHTZi",
+        "CueName": "Voice_BHTZi_40_4",
+        "Param": "",
+        "IsMenu": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_BHTZi_40_4_SoundDesc",
+        "Text": "Sound_Text_40_4",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "",
+        "Show": 1
     }
 }

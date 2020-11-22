@@ -336,339 +336,6 @@
         "HiddenStory": "",
         "Location": ""
     },
-    "AWuXiuHuiE01S12": {
-        "Name": "BlockPoint_AWuXiuHuiE01S12_Name",
-        "BlockDesc": "BlockPoint_AWuXiuHuiE01S12_BlockDesc",
-        "CombatValue": 756000,
-        "CombatNeed": 700000,
-        "Map": "AWuXiuHuiE01",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "AWuXiuHuiE01S11"
-        ],
-        "NextPoint": [],
-        "Type": "ELITE",
-        "PointType": "BOSS",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Activity_Wait1_2",
-        "EnemyMaster": "AE03P12U01N08",
-        "EnemyCard": "CardAE03S12",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 50
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 0,
-        "CrystalReward": 0,
-        "FirstKillReward": "AWuXiuHuiE01S12_FirstReward",
-        "PointReward": "AWuXiuHuiE01S12_PointReward",
-        "HeroExpReward": "",
-        "MainShowItem": "",
-        "ShowItem": "AWuXiuHuiE01S12_ShowReward",
-        "Element": "",
-        "WipeExtraReward": "",
-        "StaminaCost": {
-            "IM_WuXiuHuiBossStamina": 5
-        },
-        "StaminaBack": {
-            "IM_WuXiuHuiBossStamina": 5
-        },
-        "StageEffect": "",
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Daochang",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_BHTZi",
-        "Background": "Battle_Event_3",
-        "Banner": "pic_guanqia2_01_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": [],
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 1,
-        "OpenFAC": 0,
-        "HeroAttrExtra": {
-            "LYXi": "Hero_ABlock_LYXi_Extra",
-            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
-            "BHTZi": "Hero_ABlock_BHTZi_Extra"
-        },
-        "HeroAttrExtraLua": "",
-        "HeroItemExtra": {
-            "LYXi": {
-                "IM_WuXiuHuiSoreItem_2": 2
-            },
-            "TPGZhu": {
-                "IM_WuXiuHuiSoreItem_2": 2
-            },
-            "BHTZi": {
-                "IM_WuXiuHuiSoreItem_2": 2
-            }
-        },
-        "PointTime": {
-            "start": "2020-10-04 05:00:00"
-        },
-        "IsSweep": 0,
-        "Combat_Adjust_Rate": "",
-        "HiddenStory": "",
-        "Location": ""
-    },
-    "AWuXiuHuiE01S10": {
-        "Name": "BlockPoint_AWuXiuHuiE01S10_Name",
-        "BlockDesc": "BlockPoint_AWuXiuHuiE01S10_BlockDesc",
-        "CombatValue": 298200,
-        "CombatNeed": 276144,
-        "Map": "AWuXiuHuiE01",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "AWuXiuHuiE01S09"
-        ],
-        "NextPoint": [
-            "AWuXiuHuiE01S11"
-        ],
-        "Type": "ELITE",
-        "PointType": "NORMAL",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Activity_Wait1_1",
-        "EnemyMaster": "AE03P10U01N08",
-        "EnemyCard": "CardAE03S10",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 50
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 0,
-        "CrystalReward": 0,
-        "FirstKillReward": "AWuXiuHuiE01S10_FirstReward",
-        "PointReward": "AWuXiuHuiE01S10_PointReward",
-        "HeroExpReward": "",
-        "MainShowItem": "",
-        "ShowItem": "AWuXiuHuiE01S10_ShowReward",
-        "Element": "",
-        "WipeExtraReward": "",
-        "StaminaCost": {
-            "IR_WuXiuHuiAcitvityStamina": 6
-        },
-        "StaminaBack": {
-            "IR_WuXiuHuiAcitvityStamina": 6
-        },
-        "StageEffect": "",
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Daochang",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_YLSBai",
-        "Background": "Battle_Event_3",
-        "Banner": "pic_guanqia2_01_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": [],
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 1,
-        "OpenFAC": 0,
-        "HeroAttrExtra": {
-            "LYXi": "Hero_ABlock_LYXi_Extra",
-            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
-            "BHTZi": "Hero_ABlock_BHTZi_Extra"
-        },
-        "HeroAttrExtraLua": "",
-        "HeroItemExtra": "",
-        "PointTime": {
-            "start": "2020-10-04 05:00:00"
-        },
-        "IsSweep": 1,
-        "Combat_Adjust_Rate": "",
-        "HiddenStory": "",
-        "Location": ""
-    },
-    "AWuXiuHuiE01S11": {
-        "Name": "BlockPoint_AWuXiuHuiE01S11_Name",
-        "BlockDesc": "BlockPoint_AWuXiuHuiE01S11_BlockDesc",
-        "CombatValue": 464400,
-        "CombatNeed": 430000,
-        "Map": "AWuXiuHuiE01",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "AWuXiuHuiE01S10"
-        ],
-        "NextPoint": [
-            "AWuXiuHuiE01S12"
-        ],
-        "Type": "ELITE",
-        "PointType": "BOSS",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Activity_Wait1_2",
-        "EnemyMaster": "AE03P11U01N08",
-        "EnemyCard": "CardAE03S11",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 50
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 0,
-        "CrystalReward": 0,
-        "FirstKillReward": "AWuXiuHuiE01S11_FirstReward",
-        "PointReward": "AWuXiuHuiE01S11_PointReward",
-        "HeroExpReward": "",
-        "MainShowItem": "",
-        "ShowItem": "AWuXiuHuiE01S11_ShowReward",
-        "Element": "",
-        "WipeExtraReward": "",
-        "StaminaCost": {
-            "IM_WuXiuHuiBossStamina": 5
-        },
-        "StaminaBack": {
-            "IM_WuXiuHuiBossStamina": 5
-        },
-        "StageEffect": "",
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Daochang",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_LYXi",
-        "Background": "Battle_Event_3",
-        "Banner": "pic_guanqia2_01_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": [],
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 1,
-        "OpenFAC": 0,
-        "HeroAttrExtra": {
-            "LYXi": "Hero_ABlock_LYXi_Extra",
-            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
-            "BHTZi": "Hero_ABlock_BHTZi_Extra"
-        },
-        "HeroAttrExtraLua": "",
-        "HeroItemExtra": {
-            "LYXi": {
-                "IM_WuXiuHuiSoreItem_2": 2
-            },
-            "TPGZhu": {
-                "IM_WuXiuHuiSoreItem_2": 2
-            },
-            "BHTZi": {
-                "IM_WuXiuHuiSoreItem_2": 2
-            }
-        },
-        "PointTime": {
-            "start": "2020-10-04 05:00:00"
-        },
-        "IsSweep": 0,
-        "Combat_Adjust_Rate": "",
-        "HiddenStory": "",
-        "Location": ""
-    },
     "AE01S01": {
         "Name": "BlockPoint_AE01S01_Name",
         "BlockDesc": "BlockPoint_AE01S01_BlockDesc",
@@ -3538,957 +3205,6 @@
         "HiddenStory": "",
         "Location": ""
     },
-    "AWuXiuHuiE01S01": {
-        "Name": "BlockPoint_AWuXiuHuiE01S01_Name",
-        "BlockDesc": "BlockPoint_AWuXiuHuiE01S01_BlockDesc",
-        "CombatValue": 55600,
-        "CombatNeed": 51499,
-        "Map": "AWuXiuHuiE01",
-        "OpenLevel": 1,
-        "OpenPoint": [],
-        "NextPoint": [
-            "AWuXiuHuiE01S02"
-        ],
-        "Type": "ELITE",
-        "PointType": "NORMAL",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Activity_Wait1_1",
-        "EnemyMaster": "AE03P01U01N08",
-        "EnemyCard": "CardAE03S01",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 50
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 0,
-        "CrystalReward": 0,
-        "FirstKillReward": "AWuXiuHuiE01S01_FirstReward",
-        "PointReward": "AWuXiuHuiE01S01_PointReward",
-        "HeroExpReward": "",
-        "MainShowItem": "",
-        "ShowItem": "AWuXiuHuiE01S01_ShowReward",
-        "Element": "",
-        "WipeExtraReward": "",
-        "StaminaCost": {
-            "IR_WuXiuHuiAcitvityStamina": 6
-        },
-        "StaminaBack": {
-            "IR_WuXiuHuiAcitvityStamina": 6
-        },
-        "StageEffect": "",
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Daochang",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_SDTZi",
-        "Background": "Battle_Event_3",
-        "Banner": "pic_guanqia2_01_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [
-            "AWuXiuHuiS01E01"
-        ],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": [],
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 1,
-        "OpenFAC": 0,
-        "HeroAttrExtra": {
-            "LYXi": "Hero_ABlock_LYXi_Extra",
-            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
-            "BHTZi": "Hero_ABlock_BHTZi_Extra"
-        },
-        "HeroAttrExtraLua": "",
-        "HeroItemExtra": "",
-        "PointTime": {
-            "start": "2020-10-04 05:00:00"
-        },
-        "IsSweep": 1,
-        "Combat_Adjust_Rate": "",
-        "HiddenStory": "",
-        "Location": ""
-    },
-    "AWuXiuHuiE01S03": {
-        "Name": "BlockPoint_AWuXiuHuiE01S03_Name",
-        "BlockDesc": "BlockPoint_AWuXiuHuiE01S03_BlockDesc",
-        "CombatValue": 98700,
-        "CombatNeed": 91420,
-        "Map": "AWuXiuHuiE01",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "AWuXiuHuiE01S02"
-        ],
-        "NextPoint": [
-            "AWuXiuHuiE01S04"
-        ],
-        "Type": "ELITE",
-        "PointType": "NORMAL",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Activity_Wait1_1",
-        "EnemyMaster": "AE03P03U01N08",
-        "EnemyCard": "CardAE03S03",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 50
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 0,
-        "CrystalReward": 0,
-        "FirstKillReward": "AWuXiuHuiE01S03_FirstReward",
-        "PointReward": "AWuXiuHuiE01S03_PointReward",
-        "HeroExpReward": "",
-        "MainShowItem": "",
-        "ShowItem": "AWuXiuHuiE01S03_ShowReward",
-        "Element": "",
-        "WipeExtraReward": "",
-        "StaminaCost": {
-            "IR_WuXiuHuiAcitvityStamina": 6
-        },
-        "StaminaBack": {
-            "IR_WuXiuHuiAcitvityStamina": 6
-        },
-        "StageEffect": "",
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Daochang",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_SSQXin",
-        "Background": "Battle_Event_3",
-        "Banner": "pic_guanqia2_01_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [
-            "AWuXiuHuiS01E02"
-        ],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": [],
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 1,
-        "OpenFAC": 0,
-        "HeroAttrExtra": {
-            "LYXi": "Hero_ABlock_LYXi_Extra",
-            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
-            "BHTZi": "Hero_ABlock_BHTZi_Extra"
-        },
-        "HeroAttrExtraLua": "",
-        "HeroItemExtra": "",
-        "PointTime": {
-            "start": "2020-10-04 05:00:00"
-        },
-        "IsSweep": 1,
-        "Combat_Adjust_Rate": "",
-        "HiddenStory": "",
-        "Location": ""
-    },
-    "AWuXiuHuiE01S02": {
-        "Name": "BlockPoint_AWuXiuHuiE01S02_Name",
-        "BlockDesc": "BlockPoint_AWuXiuHuiE01S02_BlockDesc",
-        "CombatValue": 71800,
-        "CombatNeed": 66459,
-        "Map": "AWuXiuHuiE01",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "AWuXiuHuiE01S01"
-        ],
-        "NextPoint": [
-            "AWuXiuHuiE01S03"
-        ],
-        "Type": "ELITE",
-        "PointType": "NORMAL",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Activity_Wait1_1",
-        "EnemyMaster": "AE03P02U01N08",
-        "EnemyCard": "CardAE03S02",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 50
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 0,
-        "CrystalReward": 0,
-        "FirstKillReward": "AWuXiuHuiE01S02_FirstReward",
-        "PointReward": "AWuXiuHuiE01S02_PointReward",
-        "HeroExpReward": "",
-        "MainShowItem": "",
-        "ShowItem": "AWuXiuHuiE01S02_ShowReward",
-        "Element": "",
-        "WipeExtraReward": "",
-        "StaminaCost": {
-            "IR_WuXiuHuiAcitvityStamina": 6
-        },
-        "StaminaBack": {
-            "IR_WuXiuHuiAcitvityStamina": 6
-        },
-        "StageEffect": "",
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Daochang",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_MGNa",
-        "Background": "Battle_Event_3",
-        "Banner": "pic_guanqia2_02_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": [],
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 1,
-        "OpenFAC": 0,
-        "HeroAttrExtra": {
-            "LYXi": "Hero_ABlock_LYXi_Extra",
-            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
-            "BHTZi": "Hero_ABlock_BHTZi_Extra"
-        },
-        "HeroAttrExtraLua": "",
-        "HeroItemExtra": "",
-        "PointTime": {
-            "start": "2020-10-04 05:00:00"
-        },
-        "IsSweep": 1,
-        "Combat_Adjust_Rate": "",
-        "HiddenStory": "",
-        "Location": ""
-    },
-    "AWuXiuHuiE01S05": {
-        "Name": "BlockPoint_AWuXiuHuiE01S05_Name",
-        "BlockDesc": "BlockPoint_AWuXiuHuiE01S05_BlockDesc",
-        "CombatValue": 141800,
-        "CombatNeed": 131341,
-        "Map": "AWuXiuHuiE01",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "AWuXiuHuiE01S04"
-        ],
-        "NextPoint": [
-            "AWuXiuHuiE01S06"
-        ],
-        "Type": "ELITE",
-        "PointType": "NORMAL",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Activity_Wait1_1",
-        "EnemyMaster": "AE03P05U01N08",
-        "EnemyCard": "CardAE03S05",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 50
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 0,
-        "CrystalReward": 0,
-        "FirstKillReward": "AWuXiuHuiE01S05_FirstReward",
-        "PointReward": "AWuXiuHuiE01S05_PointReward",
-        "HeroExpReward": "",
-        "MainShowItem": "",
-        "ShowItem": "AWuXiuHuiE01S05_ShowReward",
-        "Element": "",
-        "WipeExtraReward": "",
-        "StaminaCost": {
-            "IR_WuXiuHuiAcitvityStamina": 6
-        },
-        "StaminaBack": {
-            "IR_WuXiuHuiAcitvityStamina": 6
-        },
-        "StageEffect": "",
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Daochang",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_CZheng",
-        "Background": "Battle_Event_3",
-        "Banner": "pic_guanqia2_01_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": [],
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 1,
-        "OpenFAC": 0,
-        "HeroAttrExtra": {
-            "LYXi": "Hero_ABlock_LYXi_Extra",
-            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
-            "BHTZi": "Hero_ABlock_BHTZi_Extra"
-        },
-        "HeroAttrExtraLua": "",
-        "HeroItemExtra": "",
-        "PointTime": {
-            "start": "2020-10-04 05:00:00"
-        },
-        "IsSweep": 1,
-        "Combat_Adjust_Rate": "",
-        "HiddenStory": "",
-        "Location": ""
-    },
-    "AWuXiuHuiE01S04": {
-        "Name": "BlockPoint_AWuXiuHuiE01S04_Name",
-        "BlockDesc": "BlockPoint_AWuXiuHuiE01S04_BlockDesc",
-        "CombatValue": 114900,
-        "CombatNeed": 106380,
-        "Map": "AWuXiuHuiE01",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "AWuXiuHuiE01S03"
-        ],
-        "NextPoint": [
-            "AWuXiuHuiE01S05"
-        ],
-        "Type": "ELITE",
-        "PointType": "NORMAL",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Activity_Wait1_1",
-        "EnemyMaster": "AE03P04U01N08",
-        "EnemyCard": "CardAE03S04",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 50
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 0,
-        "CrystalReward": 0,
-        "FirstKillReward": "AWuXiuHuiE01S04_FirstReward",
-        "PointReward": "AWuXiuHuiE01S04_PointReward",
-        "HeroExpReward": "",
-        "MainShowItem": "",
-        "ShowItem": "AWuXiuHuiE01S04_ShowReward",
-        "Element": "",
-        "WipeExtraReward": "",
-        "StaminaCost": {
-            "IR_WuXiuHuiAcitvityStamina": 6
-        },
-        "StaminaBack": {
-            "IR_WuXiuHuiAcitvityStamina": 6
-        },
-        "StageEffect": "",
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Daochang",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_WEDe",
-        "Background": "Battle_Event_3",
-        "Banner": "pic_guanqia2_02_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": [],
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 1,
-        "OpenFAC": 0,
-        "HeroAttrExtra": {
-            "LYXi": "Hero_ABlock_LYXi_Extra",
-            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
-            "BHTZi": "Hero_ABlock_BHTZi_Extra"
-        },
-        "HeroAttrExtraLua": "",
-        "HeroItemExtra": "",
-        "PointTime": {
-            "start": "2020-10-04 05:00:00"
-        },
-        "IsSweep": 1,
-        "Combat_Adjust_Rate": "",
-        "HiddenStory": "",
-        "Location": ""
-    },
-    "AWuXiuHuiE01S07": {
-        "Name": "BlockPoint_AWuXiuHuiE01S07_Name",
-        "BlockDesc": "BlockPoint_AWuXiuHuiE01S07_BlockDesc",
-        "CombatValue": 199000,
-        "CombatNeed": 184262,
-        "Map": "AWuXiuHuiE01",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "AWuXiuHuiE01S06"
-        ],
-        "NextPoint": [
-            "AWuXiuHuiE01S08"
-        ],
-        "Type": "ELITE",
-        "PointType": "NORMAL",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Activity_Wait1_1",
-        "EnemyMaster": "AE03P07U01N08",
-        "EnemyCard": "CardAE03S07",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 50
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 0,
-        "CrystalReward": 0,
-        "FirstKillReward": "AWuXiuHuiE01S07_FirstReward",
-        "PointReward": "AWuXiuHuiE01S07_PointReward",
-        "HeroExpReward": "",
-        "MainShowItem": "",
-        "ShowItem": "AWuXiuHuiE01S07_ShowReward",
-        "Element": "",
-        "WipeExtraReward": "",
-        "StaminaCost": {
-            "IR_WuXiuHuiAcitvityStamina": 6
-        },
-        "StaminaBack": {
-            "IR_WuXiuHuiAcitvityStamina": 6
-        },
-        "StageEffect": "",
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Daochang",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_SDTZi",
-        "Background": "Battle_Event_3",
-        "Banner": "pic_guanqia2_01_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": [],
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 1,
-        "OpenFAC": 0,
-        "HeroAttrExtra": {
-            "LYXi": "Hero_ABlock_LYXi_Extra",
-            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
-            "BHTZi": "Hero_ABlock_BHTZi_Extra"
-        },
-        "HeroAttrExtraLua": "",
-        "HeroItemExtra": "",
-        "PointTime": {
-            "start": "2020-10-04 05:00:00"
-        },
-        "IsSweep": 1,
-        "Combat_Adjust_Rate": "",
-        "HiddenStory": "",
-        "Location": ""
-    },
-    "AWuXiuHuiE01S06": {
-        "Name": "BlockPoint_AWuXiuHuiE01S06_Name",
-        "BlockDesc": "BlockPoint_AWuXiuHuiE01S06_BlockDesc",
-        "CombatValue": 163400,
-        "CombatNeed": 151301,
-        "Map": "AWuXiuHuiE01",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "AWuXiuHuiE01S05"
-        ],
-        "NextPoint": [
-            "AWuXiuHuiE01S07"
-        ],
-        "Type": "ELITE",
-        "PointType": "NORMAL",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Activity_Wait1_1",
-        "EnemyMaster": "AE03P06U01N08",
-        "EnemyCard": "CardAE03S06",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 50
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 0,
-        "CrystalReward": 0,
-        "FirstKillReward": "AWuXiuHuiE01S06_FirstReward",
-        "PointReward": "AWuXiuHuiE01S06_PointReward",
-        "HeroExpReward": "",
-        "MainShowItem": "",
-        "ShowItem": "AWuXiuHuiE01S06_ShowReward",
-        "Element": "",
-        "WipeExtraReward": "",
-        "StaminaCost": {
-            "IR_WuXiuHuiAcitvityStamina": 6
-        },
-        "StaminaBack": {
-            "IR_WuXiuHuiAcitvityStamina": 6
-        },
-        "StageEffect": "",
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Daochang",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_ZZBBWei",
-        "Background": "Battle_Event_3",
-        "Banner": "pic_guanqia2_01_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [
-            "AWuXiuHuiS01E03"
-        ],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": [],
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 1,
-        "OpenFAC": 0,
-        "HeroAttrExtra": {
-            "LYXi": "Hero_ABlock_LYXi_Extra",
-            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
-            "BHTZi": "Hero_ABlock_BHTZi_Extra"
-        },
-        "HeroAttrExtraLua": "",
-        "HeroItemExtra": "",
-        "PointTime": {
-            "start": "2020-10-04 05:00:00"
-        },
-        "IsSweep": 1,
-        "Combat_Adjust_Rate": "",
-        "HiddenStory": "",
-        "Location": ""
-    },
-    "AWuXiuHuiE01S09": {
-        "Name": "BlockPoint_AWuXiuHuiE01S09_Name",
-        "BlockDesc": "BlockPoint_AWuXiuHuiE01S09_BlockDesc",
-        "CombatValue": 247500,
-        "CombatNeed": 229183,
-        "Map": "AWuXiuHuiE01",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "AWuXiuHuiE01S08"
-        ],
-        "NextPoint": [
-            "AWuXiuHuiE01S10"
-        ],
-        "Type": "ELITE",
-        "PointType": "NORMAL",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Activity_Wait1_1",
-        "EnemyMaster": "AE03P09U01N08",
-        "EnemyCard": "CardAE03S09",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 50
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 0,
-        "CrystalReward": 0,
-        "FirstKillReward": "AWuXiuHuiE01S09_FirstReward",
-        "PointReward": "AWuXiuHuiE01S09_PointReward",
-        "HeroExpReward": "",
-        "MainShowItem": "",
-        "ShowItem": "AWuXiuHuiE01S09_ShowReward",
-        "Element": "",
-        "WipeExtraReward": "",
-        "StaminaCost": {
-            "IR_WuXiuHuiAcitvityStamina": 6
-        },
-        "StaminaBack": {
-            "IR_WuXiuHuiAcitvityStamina": 6
-        },
-        "StageEffect": "",
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Daochang",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_YLMGZhu",
-        "Background": "Battle_Event_3",
-        "Banner": "pic_guanqia2_01_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [
-            "AWuXiuHuiS01E04"
-        ],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": [],
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 1,
-        "OpenFAC": 0,
-        "HeroAttrExtra": {
-            "LYXi": "Hero_ABlock_LYXi_Extra",
-            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
-            "BHTZi": "Hero_ABlock_BHTZi_Extra"
-        },
-        "HeroAttrExtraLua": "",
-        "HeroItemExtra": "",
-        "PointTime": {
-            "start": "2020-10-04 05:00:00"
-        },
-        "IsSweep": 1,
-        "Combat_Adjust_Rate": "",
-        "HiddenStory": "",
-        "Location": ""
-    },
-    "AWuXiuHuiE01S08": {
-        "Name": "BlockPoint_AWuXiuHuiE01S08_Name",
-        "BlockDesc": "BlockPoint_AWuXiuHuiE01S08_BlockDesc",
-        "CombatValue": 226000,
-        "CombatNeed": 209222,
-        "Map": "AWuXiuHuiE01",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "AWuXiuHuiE01S07"
-        ],
-        "NextPoint": [
-            "AWuXiuHuiE01S09"
-        ],
-        "Type": "ELITE",
-        "PointType": "NORMAL",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Activity_Wait1_1",
-        "EnemyMaster": "AE03P08U01N08",
-        "EnemyCard": "CardAE03S08",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 50
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 0,
-        "CrystalReward": 0,
-        "FirstKillReward": "AWuXiuHuiE01S08_FirstReward",
-        "PointReward": "AWuXiuHuiE01S08_PointReward",
-        "HeroExpReward": "",
-        "MainShowItem": "",
-        "ShowItem": "AWuXiuHuiE01S08_ShowReward",
-        "Element": "",
-        "WipeExtraReward": "",
-        "StaminaCost": {
-            "IR_WuXiuHuiAcitvityStamina": 6
-        },
-        "StaminaBack": {
-            "IR_WuXiuHuiAcitvityStamina": 6
-        },
-        "StageEffect": "",
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Daochang",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_SDTZi",
-        "Background": "Battle_Event_3",
-        "Banner": "pic_guanqia2_01_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": [],
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 1,
-        "OpenFAC": 0,
-        "HeroAttrExtra": {
-            "LYXi": "Hero_ABlock_LYXi_Extra",
-            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
-            "BHTZi": "Hero_ABlock_BHTZi_Extra"
-        },
-        "HeroAttrExtraLua": "",
-        "HeroItemExtra": "",
-        "PointTime": {
-            "start": "2020-10-04 05:00:00"
-        },
-        "IsSweep": 1,
-        "Combat_Adjust_Rate": "",
-        "HiddenStory": "",
-        "Location": ""
-    },
     "AE01S12": {
         "Name": "BlockPoint_AE01S12_Name",
         "BlockDesc": "BlockPoint_AE01S12_BlockDesc",
@@ -6344,222 +5060,6 @@
                 "AJTa"
             ]
         },
-        "Location": ""
-    },
-    "AWuXiuHuiM01S10": {
-        "Name": "BlockPoint_AWuXiuHuiM01S10_Name",
-        "BlockDesc": "BlockPoint_AWuXiuHuiM01S10_BlockDesc",
-        "CombatValue": 81400,
-        "CombatNeed": 74000,
-        "Map": "AWuXiuHuiM01",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "AWuXiuHuiM01S09"
-        ],
-        "NextPoint": [
-            "AWuXiuHuiM01S11"
-        ],
-        "Type": "NORMAL",
-        "PointType": "NORMAL",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Activity_Wait1_1",
-        "EnemyMaster": "AM03P10U01N08",
-        "EnemyCard": "CardAM03S10",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 10
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 0,
-        "CrystalReward": 0,
-        "FirstKillReward": "AWuXiuHuiM01S10_FirstReward",
-        "PointReward": "AWuXiuHuiM01S10_PointReward",
-        "HeroExpReward": "",
-        "MainShowItem": "",
-        "ShowItem": "AWuXiuHuiM01S10_ShowReward",
-        "Element": "",
-        "WipeExtraReward": "",
-        "StaminaCost": {
-            "IR_WuXiuHuiAcitvityStamina": 6
-        },
-        "StaminaBack": {
-            "IR_WuXiuHuiAcitvityStamina": 6
-        },
-        "StageEffect": "",
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Daochang",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_YLMGZhu",
-        "Background": "Battle_Event_3",
-        "Banner": "pic_guanqia2_01_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": "",
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 1,
-        "OpenFAC": 0,
-        "HeroAttrExtra": {
-            "LYXi": "Hero_ABlock_LYXi_Extra",
-            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
-            "BHTZi": "Hero_ABlock_BHTZi_Extra"
-        },
-        "HeroAttrExtraLua": "",
-        "HeroItemExtra": "",
-        "PointTime": "",
-        "IsSweep": 1,
-        "Combat_Adjust_Rate": "",
-        "HiddenStory": "",
-        "Location": ""
-    },
-    "AWuXiuHuiM01S11": {
-        "Name": "BlockPoint_AWuXiuHuiM01S11_Name",
-        "BlockDesc": "BlockPoint_AWuXiuHuiM01S11_BlockDesc",
-        "CombatValue": 88000,
-        "CombatNeed": 80000,
-        "Map": "AWuXiuHuiM01",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "AWuXiuHuiM01S10"
-        ],
-        "NextPoint": [
-            "AWuXiuHuiM01S12"
-        ],
-        "Type": "NORMAL",
-        "PointType": "BOSS",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Activity_Wait1_2",
-        "EnemyMaster": "AM03P11U01N08",
-        "EnemyCard": "CardAM03S11",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 10
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 0,
-        "CrystalReward": 0,
-        "FirstKillReward": "AWuXiuHuiM01S11_FirstReward",
-        "PointReward": "AWuXiuHuiM01S11_PointReward",
-        "HeroExpReward": "",
-        "MainShowItem": "",
-        "ShowItem": "AWuXiuHuiM01S11_ShowReward",
-        "Element": "",
-        "WipeExtraReward": "",
-        "StaminaCost": {
-            "IM_WuXiuHuiBossStamina": 5
-        },
-        "StaminaBack": {
-            "IM_WuXiuHuiBossStamina": 5
-        },
-        "StageEffect": "",
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Daochang",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_BHTZi",
-        "Background": "Battle_Event_3",
-        "Banner": "pic_guanqia2_01_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": "",
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 1,
-        "OpenFAC": 0,
-        "HeroAttrExtra": {
-            "LYXi": "Hero_ABlock_LYXi_Extra",
-            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
-            "BHTZi": "Hero_ABlock_BHTZi_Extra"
-        },
-        "HeroAttrExtraLua": "",
-        "HeroItemExtra": {
-            "LYXi": {
-                "IM_WuXiuHuiSoreItem_2": 2
-            },
-            "TPGZhu": {
-                "IM_WuXiuHuiSoreItem_2": 2
-            },
-            "BHTZi": {
-                "IM_WuXiuHuiSoreItem_2": 2
-            }
-        },
-        "PointTime": "",
-        "IsSweep": 0,
-        "Combat_Adjust_Rate": "",
-        "HiddenStory": "",
         "Location": ""
     },
     "ASummerM01S04": {
@@ -8554,1052 +7054,6 @@
         "PointTime": "",
         "IsSweep": 0,
         "Combat_Adjust_Rate": 1.0,
-        "HiddenStory": "",
-        "Location": ""
-    },
-    "AWuXiuHuiM01S12": {
-        "Name": "BlockPoint_AWuXiuHuiM01S12_Name",
-        "BlockDesc": "BlockPoint_AWuXiuHuiM01S12_BlockDesc",
-        "CombatValue": 195300,
-        "CombatNeed": 177500,
-        "Map": "AWuXiuHuiM01",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "AWuXiuHuiM01S11"
-        ],
-        "NextPoint": [],
-        "Type": "NORMAL",
-        "PointType": "BOSS",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Activity_Wait1_2",
-        "EnemyMaster": "AM03P12U01N08",
-        "EnemyCard": "CardAM03S12",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 10
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 0,
-        "CrystalReward": 0,
-        "FirstKillReward": "AWuXiuHuiM01S12_FirstReward",
-        "PointReward": "AWuXiuHuiM01S12_PointReward",
-        "HeroExpReward": "",
-        "MainShowItem": "",
-        "ShowItem": "AWuXiuHuiM01S12_ShowReward",
-        "Element": "",
-        "WipeExtraReward": "",
-        "StaminaCost": {
-            "IM_WuXiuHuiBossStamina": 5
-        },
-        "StaminaBack": {
-            "IM_WuXiuHuiBossStamina": 5
-        },
-        "StageEffect": "",
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Daochang",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_BHTZi",
-        "Background": "Battle_Event_3",
-        "Banner": "pic_guanqia2_01_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": "",
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 1,
-        "OpenFAC": 0,
-        "HeroAttrExtra": {
-            "LYXi": "Hero_ABlock_LYXi_Extra",
-            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
-            "BHTZi": "Hero_ABlock_BHTZi_Extra"
-        },
-        "HeroAttrExtraLua": "",
-        "HeroItemExtra": {
-            "LYXi": {
-                "IM_WuXiuHuiSoreItem_2": 2
-            },
-            "TPGZhu": {
-                "IM_WuXiuHuiSoreItem_2": 2
-            },
-            "BHTZi": {
-                "IM_WuXiuHuiSoreItem_2": 2
-            }
-        },
-        "PointTime": "",
-        "IsSweep": 0,
-        "Combat_Adjust_Rate": "",
-        "HiddenStory": "",
-        "Location": ""
-    },
-    "AWuXiuHuiM01S09": {
-        "Name": "BlockPoint_AWuXiuHuiM01S09_Name",
-        "BlockDesc": "BlockPoint_AWuXiuHuiM01S09_BlockDesc",
-        "CombatValue": 70400,
-        "CombatNeed": 63988,
-        "Map": "AWuXiuHuiM01",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "AWuXiuHuiM01S08"
-        ],
-        "NextPoint": [
-            "AWuXiuHuiM01S10"
-        ],
-        "Type": "NORMAL",
-        "PointType": "NORMAL",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Activity_Wait1_1",
-        "EnemyMaster": "AM03P09U01N08",
-        "EnemyCard": "CardAM03S09",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 10
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 0,
-        "CrystalReward": 0,
-        "FirstKillReward": "AWuXiuHuiM01S09_FirstReward",
-        "PointReward": "AWuXiuHuiM01S09_PointReward",
-        "HeroExpReward": "",
-        "MainShowItem": "",
-        "ShowItem": "AWuXiuHuiM01S09_ShowReward",
-        "Element": "",
-        "WipeExtraReward": "",
-        "StaminaCost": {
-            "IR_WuXiuHuiAcitvityStamina": 6
-        },
-        "StaminaBack": {
-            "IR_WuXiuHuiAcitvityStamina": 6
-        },
-        "StageEffect": "",
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Daochang",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_MGNa",
-        "Background": "Battle_Event_3",
-        "Banner": "pic_guanqia2_01_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [
-            "AWuXiuHuiS01S05"
-        ],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": "",
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 1,
-        "OpenFAC": 0,
-        "HeroAttrExtra": {
-            "LYXi": "Hero_ABlock_LYXi_Extra",
-            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
-            "BHTZi": "Hero_ABlock_BHTZi_Extra"
-        },
-        "HeroAttrExtraLua": "",
-        "HeroItemExtra": "",
-        "PointTime": "",
-        "IsSweep": 1,
-        "Combat_Adjust_Rate": "",
-        "HiddenStory": "",
-        "Location": ""
-    },
-    "AWuXiuHuiM01S08": {
-        "Name": "BlockPoint_AWuXiuHuiM01S08_Name",
-        "BlockDesc": "BlockPoint_AWuXiuHuiM01S08_BlockDesc",
-        "CombatValue": 62300,
-        "CombatNeed": 56677,
-        "Map": "AWuXiuHuiM01",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "AWuXiuHuiM01S07"
-        ],
-        "NextPoint": [
-            "AWuXiuHuiM01S09"
-        ],
-        "Type": "NORMAL",
-        "PointType": "NORMAL",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Activity_Wait1_1",
-        "EnemyMaster": "AM03P08U01N08",
-        "EnemyCard": "CardAM03S08",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 10
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 0,
-        "CrystalReward": 0,
-        "FirstKillReward": "AWuXiuHuiM01S08_FirstReward",
-        "PointReward": "AWuXiuHuiM01S08_PointReward",
-        "HeroExpReward": "",
-        "MainShowItem": "",
-        "ShowItem": "AWuXiuHuiM01S08_ShowReward",
-        "Element": "",
-        "WipeExtraReward": "",
-        "StaminaCost": {
-            "IR_WuXiuHuiAcitvityStamina": 6
-        },
-        "StaminaBack": {
-            "IR_WuXiuHuiAcitvityStamina": 6
-        },
-        "StageEffect": "",
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Daochang",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_MGNa",
-        "Background": "Battle_Event_3",
-        "Banner": "pic_guanqia2_01_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": "",
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 1,
-        "OpenFAC": 0,
-        "HeroAttrExtra": {
-            "LYXi": "Hero_ABlock_LYXi_Extra",
-            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
-            "BHTZi": "Hero_ABlock_BHTZi_Extra"
-        },
-        "HeroAttrExtraLua": "",
-        "HeroItemExtra": "",
-        "PointTime": "",
-        "IsSweep": 1,
-        "Combat_Adjust_Rate": "",
-        "HiddenStory": "",
-        "Location": ""
-    },
-    "AWuXiuHuiM01S01": {
-        "Name": "BlockPoint_AWuXiuHuiM01S01_Name",
-        "BlockDesc": "BlockPoint_AWuXiuHuiM01S01_BlockDesc",
-        "CombatValue": 4100,
-        "CombatNeed": 3700,
-        "Map": "AWuXiuHuiM01",
-        "OpenLevel": 1,
-        "OpenPoint": [],
-        "NextPoint": [
-            "AWuXiuHuiM01S02"
-        ],
-        "Type": "NORMAL",
-        "PointType": "NORMAL",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Activity_Wait1_1",
-        "EnemyMaster": "AM03P01U01N08",
-        "EnemyCard": "CardAM03S01",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 10
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 0,
-        "CrystalReward": 0,
-        "FirstKillReward": "AWuXiuHuiM01S01_FirstReward",
-        "PointReward": "AWuXiuHuiM01S01_PointReward",
-        "HeroExpReward": "",
-        "MainShowItem": "",
-        "ShowItem": "AWuXiuHuiM01S01_ShowReward",
-        "Element": "",
-        "WipeExtraReward": "",
-        "StaminaCost": {
-            "IR_WuXiuHuiAcitvityStamina": 6
-        },
-        "StaminaBack": {
-            "IR_WuXiuHuiAcitvityStamina": 6
-        },
-        "StageEffect": "",
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Daochang",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_BBLMa",
-        "Background": "Battle_Event_3",
-        "Banner": "pic_guanqia2_01_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [
-            "AWuXiuHuiS01S01"
-        ],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": "",
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 1,
-        "OpenFAC": 0,
-        "HeroAttrExtra": {
-            "LYXi": "Hero_ABlock_LYXi_Extra",
-            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
-            "BHTZi": "Hero_ABlock_BHTZi_Extra"
-        },
-        "HeroAttrExtraLua": "",
-        "HeroItemExtra": "",
-        "PointTime": "",
-        "IsSweep": 1,
-        "Combat_Adjust_Rate": "",
-        "HiddenStory": "",
-        "Location": ""
-    },
-    "AWuXiuHuiM01S03": {
-        "Name": "BlockPoint_AWuXiuHuiM01S03_Name",
-        "BlockDesc": "BlockPoint_AWuXiuHuiM01S03_BlockDesc",
-        "CombatValue": 20200,
-        "CombatNeed": 18322,
-        "Map": "AWuXiuHuiM01",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "AWuXiuHuiM01S02"
-        ],
-        "NextPoint": [
-            "AWuXiuHuiM01S04"
-        ],
-        "Type": "NORMAL",
-        "PointType": "NORMAL",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Activity_Wait1_1",
-        "EnemyMaster": "AM03P03U01N08",
-        "EnemyCard": "CardAM03S03",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 10
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 0,
-        "CrystalReward": 0,
-        "FirstKillReward": "AWuXiuHuiM01S03_FirstReward",
-        "PointReward": "AWuXiuHuiM01S03_PointReward",
-        "HeroExpReward": "",
-        "MainShowItem": "",
-        "ShowItem": "AWuXiuHuiM01S03_ShowReward",
-        "Element": "",
-        "WipeExtraReward": "",
-        "StaminaCost": {
-            "IR_WuXiuHuiAcitvityStamina": 6
-        },
-        "StaminaBack": {
-            "IR_WuXiuHuiAcitvityStamina": 6
-        },
-        "StageEffect": "",
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Daochang",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_CZheng",
-        "Background": "Battle_Event_3",
-        "Banner": "pic_guanqia2_01_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [
-            "AWuXiuHuiS01S02"
-        ],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": "",
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 1,
-        "OpenFAC": 0,
-        "HeroAttrExtra": {
-            "LYXi": "Hero_ABlock_LYXi_Extra",
-            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
-            "BHTZi": "Hero_ABlock_BHTZi_Extra"
-        },
-        "HeroAttrExtraLua": "",
-        "HeroItemExtra": "",
-        "PointTime": "",
-        "IsSweep": 1,
-        "Combat_Adjust_Rate": "",
-        "HiddenStory": "",
-        "Location": ""
-    },
-    "AWuXiuHuiM01S02": {
-        "Name": "BlockPoint_AWuXiuHuiM01S02_Name",
-        "BlockDesc": "BlockPoint_AWuXiuHuiM01S02_BlockDesc",
-        "CombatValue": 11600,
-        "CombatNeed": 10511,
-        "Map": "AWuXiuHuiM01",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "AWuXiuHuiM01S01"
-        ],
-        "NextPoint": [
-            "AWuXiuHuiM01S03"
-        ],
-        "Type": "NORMAL",
-        "PointType": "NORMAL",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Activity_Wait1_1",
-        "EnemyMaster": "AM03P02U01N08",
-        "EnemyCard": "CardAM03S02",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 10
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 0,
-        "CrystalReward": 0,
-        "FirstKillReward": "AWuXiuHuiM01S02_FirstReward",
-        "PointReward": "AWuXiuHuiM01S02_PointReward",
-        "HeroExpReward": "",
-        "MainShowItem": "",
-        "ShowItem": "AWuXiuHuiM01S02_ShowReward",
-        "Element": "",
-        "WipeExtraReward": "",
-        "StaminaCost": {
-            "IR_WuXiuHuiAcitvityStamina": 6
-        },
-        "StaminaBack": {
-            "IR_WuXiuHuiAcitvityStamina": 6
-        },
-        "StageEffect": "",
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Daochang",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_TPGZhu",
-        "Background": "Battle_Event_3",
-        "Banner": "pic_guanqia2_01_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": "",
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 1,
-        "OpenFAC": 0,
-        "HeroAttrExtra": {
-            "LYXi": "Hero_ABlock_LYXi_Extra",
-            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
-            "BHTZi": "Hero_ABlock_BHTZi_Extra"
-        },
-        "HeroAttrExtraLua": "",
-        "HeroItemExtra": "",
-        "PointTime": "",
-        "IsSweep": 1,
-        "Combat_Adjust_Rate": "",
-        "HiddenStory": "",
-        "Location": ""
-    },
-    "AWuXiuHuiM01S05": {
-        "Name": "BlockPoint_AWuXiuHuiM01S05_Name",
-        "BlockDesc": "BlockPoint_AWuXiuHuiM01S05_BlockDesc",
-        "CombatValue": 36200,
-        "CombatNeed": 32944,
-        "Map": "AWuXiuHuiM01",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "AWuXiuHuiM01S04"
-        ],
-        "NextPoint": [
-            "AWuXiuHuiM01S06"
-        ],
-        "Type": "NORMAL",
-        "PointType": "NORMAL",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Activity_Wait1_1",
-        "EnemyMaster": "AM03P05U01N08",
-        "EnemyCard": "CardAM03S05",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 10
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 0,
-        "CrystalReward": 0,
-        "FirstKillReward": "AWuXiuHuiM01S05_FirstReward",
-        "PointReward": "AWuXiuHuiM01S05_PointReward",
-        "HeroExpReward": "",
-        "MainShowItem": "",
-        "ShowItem": "AWuXiuHuiM01S05_ShowReward",
-        "Element": "",
-        "WipeExtraReward": "",
-        "StaminaCost": {
-            "IR_WuXiuHuiAcitvityStamina": 6
-        },
-        "StaminaBack": {
-            "IR_WuXiuHuiAcitvityStamina": 6
-        },
-        "StageEffect": "",
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Daochang",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_YLMGZhu",
-        "Background": "Battle_Event_3",
-        "Banner": "pic_guanqia2_01_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [
-            "AWuXiuHuiS01S03"
-        ],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": "",
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 1,
-        "OpenFAC": 0,
-        "HeroAttrExtra": {
-            "LYXi": "Hero_ABlock_LYXi_Extra",
-            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
-            "BHTZi": "Hero_ABlock_BHTZi_Extra"
-        },
-        "HeroAttrExtraLua": "",
-        "HeroItemExtra": "",
-        "PointTime": "",
-        "IsSweep": 1,
-        "Combat_Adjust_Rate": "",
-        "HiddenStory": "",
-        "Location": ""
-    },
-    "AWuXiuHuiM01S04": {
-        "Name": "BlockPoint_AWuXiuHuiM01S04_Name",
-        "BlockDesc": "BlockPoint_AWuXiuHuiM01S04_BlockDesc",
-        "CombatValue": 27600,
-        "CombatNeed": 25133,
-        "Map": "AWuXiuHuiM01",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "AWuXiuHuiM01S03"
-        ],
-        "NextPoint": [
-            "AWuXiuHuiM01S05"
-        ],
-        "Type": "NORMAL",
-        "PointType": "NORMAL",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Activity_Wait1_1",
-        "EnemyMaster": "AM03P04U01N08",
-        "EnemyCard": "CardAM03S04",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 10
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 0,
-        "CrystalReward": 0,
-        "FirstKillReward": "AWuXiuHuiM01S04_FirstReward",
-        "PointReward": "AWuXiuHuiM01S04_PointReward",
-        "HeroExpReward": "",
-        "MainShowItem": "",
-        "ShowItem": "AWuXiuHuiM01S04_ShowReward",
-        "Element": "",
-        "WipeExtraReward": "",
-        "StaminaCost": {
-            "IR_WuXiuHuiAcitvityStamina": 6
-        },
-        "StaminaBack": {
-            "IR_WuXiuHuiAcitvityStamina": 6
-        },
-        "StageEffect": "",
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Daochang",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_MGNa",
-        "Background": "Battle_Event_3",
-        "Banner": "pic_guanqia2_01_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": "",
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 1,
-        "OpenFAC": 0,
-        "HeroAttrExtra": {
-            "LYXi": "Hero_ABlock_LYXi_Extra",
-            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
-            "BHTZi": "Hero_ABlock_BHTZi_Extra"
-        },
-        "HeroAttrExtraLua": "",
-        "HeroItemExtra": "",
-        "PointTime": "",
-        "IsSweep": 1,
-        "Combat_Adjust_Rate": "",
-        "HiddenStory": "",
-        "Location": ""
-    },
-    "AWuXiuHuiM01S07": {
-        "Name": "BlockPoint_AWuXiuHuiM01S07_Name",
-        "BlockDesc": "BlockPoint_AWuXiuHuiM01S07_BlockDesc",
-        "CombatValue": 53800,
-        "CombatNeed": 48866,
-        "Map": "AWuXiuHuiM01",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "AWuXiuHuiM01S06"
-        ],
-        "NextPoint": [
-            "AWuXiuHuiM01S08"
-        ],
-        "Type": "NORMAL",
-        "PointType": "NORMAL",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Activity_Wait1_1",
-        "EnemyMaster": "AM03P07U01N08",
-        "EnemyCard": "CardAM03S07",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 10
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 0,
-        "CrystalReward": 0,
-        "FirstKillReward": "AWuXiuHuiM01S07_FirstReward",
-        "PointReward": "AWuXiuHuiM01S07_PointReward",
-        "HeroExpReward": "",
-        "MainShowItem": "",
-        "ShowItem": "AWuXiuHuiM01S07_ShowReward",
-        "Element": "",
-        "WipeExtraReward": "",
-        "StaminaCost": {
-            "IR_WuXiuHuiAcitvityStamina": 6
-        },
-        "StaminaBack": {
-            "IR_WuXiuHuiAcitvityStamina": 6
-        },
-        "StageEffect": "",
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Daochang",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_ZZBBWei",
-        "Background": "Battle_Event_3",
-        "Banner": "pic_guanqia2_01_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [
-            "AWuXiuHuiS01S04"
-        ],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": "",
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 1,
-        "OpenFAC": 0,
-        "HeroAttrExtra": {
-            "LYXi": "Hero_ABlock_LYXi_Extra",
-            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
-            "BHTZi": "Hero_ABlock_BHTZi_Extra"
-        },
-        "HeroAttrExtraLua": "",
-        "HeroItemExtra": "",
-        "PointTime": "",
-        "IsSweep": 1,
-        "Combat_Adjust_Rate": "",
-        "HiddenStory": "",
-        "Location": ""
-    },
-    "AWuXiuHuiM01S06": {
-        "Name": "BlockPoint_AWuXiuHuiM01S06_Name",
-        "BlockDesc": "BlockPoint_AWuXiuHuiM01S06_BlockDesc",
-        "CombatValue": 44300,
-        "CombatNeed": 40255,
-        "Map": "AWuXiuHuiM01",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "AWuXiuHuiM01S05"
-        ],
-        "NextPoint": [
-            "AWuXiuHuiM01S07"
-        ],
-        "Type": "NORMAL",
-        "PointType": "NORMAL",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Activity_Wait1_1",
-        "EnemyMaster": "AM03P06U01N08",
-        "EnemyCard": "CardAM03S06",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 10
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 0,
-        "CrystalReward": 0,
-        "FirstKillReward": "AWuXiuHuiM01S06_FirstReward",
-        "PointReward": "AWuXiuHuiM01S06_PointReward",
-        "HeroExpReward": "",
-        "MainShowItem": "",
-        "ShowItem": "AWuXiuHuiM01S06_ShowReward",
-        "Element": "",
-        "WipeExtraReward": "",
-        "StaminaCost": {
-            "IR_WuXiuHuiAcitvityStamina": 6
-        },
-        "StaminaBack": {
-            "IR_WuXiuHuiAcitvityStamina": 6
-        },
-        "StageEffect": "",
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Daochang",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_SDTZi",
-        "Background": "Battle_Event_3",
-        "Banner": "pic_guanqia2_01_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": "",
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 1,
-        "OpenFAC": 0,
-        "HeroAttrExtra": {
-            "LYXi": "Hero_ABlock_LYXi_Extra",
-            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
-            "BHTZi": "Hero_ABlock_BHTZi_Extra"
-        },
-        "HeroAttrExtraLua": "",
-        "HeroItemExtra": "",
-        "PointTime": "",
-        "IsSweep": 1,
-        "Combat_Adjust_Rate": "",
         "HiddenStory": "",
         "Location": ""
     },
@@ -12530,5 +9984,2551 @@
             200,
             -196
         ]
+    },
+    "AWuXiuHuiE01S12": {
+        "Name": "BlockPoint_AWuXiuHuiE01S12_Name",
+        "BlockDesc": "BlockPoint_AWuXiuHuiE01S12_BlockDesc",
+        "CombatValue": 283500,
+        "CombatNeed": 262512,
+        "Map": "AWuXiuHuiE01",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "AWuXiuHuiE01S11"
+        ],
+        "NextPoint": [],
+        "Type": "ELITE",
+        "PointType": "BOSS",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_2",
+        "EnemyMaster": "AE03P12U01N08",
+        "EnemyCard": "CardAE03S12",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "AWuXiuHuiE01S12_FirstReward",
+        "PointReward": "AWuXiuHuiE01S12_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "AWuXiuHuiE01S12_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "",
+        "StaminaCost": {
+            "IM_WuXiuHuiBossStamina": 5
+        },
+        "StaminaBack": {
+            "IM_WuXiuHuiBossStamina": 5
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Daochang",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_BHTZi",
+        "Background": "Battle_Event_3",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "HeroAttrExtra": {
+            "LYXi": "Hero_ABlock_LYXi_Extra",
+            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
+            "BHTZi": "Hero_ABlock_BHTZi_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": {
+            "LYXi": {
+                "IM_WuXiuHuiSoreItem_2": 2
+            },
+            "TPGZhu": {
+                "IM_WuXiuHuiSoreItem_2": 2
+            },
+            "BHTZi": {
+                "IM_WuXiuHuiSoreItem_2": 2
+            }
+        },
+        "PointTime": {
+            "start": "2020-11-25 05:00:00"
+        },
+        "IsSweep": 0,
+        "Combat_Adjust_Rate": "",
+        "HiddenStory": "",
+        "Location": ""
+    },
+    "AWuXiuHuiE01S10": {
+        "Name": "BlockPoint_AWuXiuHuiE01S10_Name",
+        "BlockDesc": "BlockPoint_AWuXiuHuiE01S10_BlockDesc",
+        "CombatValue": 189008,
+        "CombatNeed": 204100,
+        "Map": "AWuXiuHuiE01",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "AWuXiuHuiE01S09"
+        ],
+        "NextPoint": [
+            "AWuXiuHuiE01S11"
+        ],
+        "Type": "ELITE",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "EnemyMaster": "AE03P10U01N08",
+        "EnemyCard": "CardAE03S10",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "AWuXiuHuiE01S10_FirstReward",
+        "PointReward": "AWuXiuHuiE01S10_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "AWuXiuHuiE01S10_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "",
+        "StaminaCost": {
+            "IR_WuXiuHuiAcitvityStamina": 6
+        },
+        "StaminaBack": {
+            "IR_WuXiuHuiAcitvityStamina": 6
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Daochang",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_YLSBai",
+        "Background": "Battle_Event_3",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "HeroAttrExtra": {
+            "LYXi": "Hero_ABlock_LYXi_Extra",
+            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
+            "BHTZi": "Hero_ABlock_BHTZi_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": "",
+        "PointTime": {
+            "start": "2020-11-25 05:00:00"
+        },
+        "IsSweep": 1,
+        "Combat_Adjust_Rate": "",
+        "HiddenStory": "",
+        "Location": ""
+    },
+    "AWuXiuHuiE01S11": {
+        "Name": "BlockPoint_AWuXiuHuiE01S11_Name",
+        "BlockDesc": "BlockPoint_AWuXiuHuiE01S11_BlockDesc",
+        "CombatValue": 255200,
+        "CombatNeed": 236260,
+        "Map": "AWuXiuHuiE01",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "AWuXiuHuiE01S10"
+        ],
+        "NextPoint": [
+            "AWuXiuHuiE01S12"
+        ],
+        "Type": "ELITE",
+        "PointType": "BOSS",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_2",
+        "EnemyMaster": "AE03P11U01N08",
+        "EnemyCard": "CardAE03S11",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "AWuXiuHuiE01S11_FirstReward",
+        "PointReward": "AWuXiuHuiE01S11_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "AWuXiuHuiE01S11_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "",
+        "StaminaCost": {
+            "IM_WuXiuHuiBossStamina": 5
+        },
+        "StaminaBack": {
+            "IM_WuXiuHuiBossStamina": 5
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Daochang",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_LYXi",
+        "Background": "Battle_Event_3",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "HeroAttrExtra": {
+            "LYXi": "Hero_ABlock_LYXi_Extra",
+            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
+            "BHTZi": "Hero_ABlock_BHTZi_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": {
+            "LYXi": {
+                "IM_WuXiuHuiSoreItem_2": 2
+            },
+            "TPGZhu": {
+                "IM_WuXiuHuiSoreItem_2": 2
+            },
+            "BHTZi": {
+                "IM_WuXiuHuiSoreItem_2": 2
+            }
+        },
+        "PointTime": {
+            "start": "2020-11-25 05:00:00"
+        },
+        "IsSweep": 0,
+        "Combat_Adjust_Rate": "",
+        "HiddenStory": "",
+        "Location": ""
+    },
+    "AWuXiuHuiM01S09": {
+        "Name": "BlockPoint_AWuXiuHuiM01S09_Name",
+        "BlockDesc": "BlockPoint_AWuXiuHuiM01S09_BlockDesc",
+        "CombatValue": 46300,
+        "CombatNeed": 42076,
+        "Map": "AWuXiuHuiM01",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "AWuXiuHuiM01S08"
+        ],
+        "NextPoint": [
+            "AWuXiuHuiM01S10"
+        ],
+        "Type": "NORMAL",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "EnemyMaster": "AM03P09U01N08",
+        "EnemyCard": "CardAM03S09",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "AWuXiuHuiM01S09_FirstReward",
+        "PointReward": "AWuXiuHuiM01S09_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "AWuXiuHuiM01S09_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "",
+        "StaminaCost": {
+            "IR_WuXiuHuiAcitvityStamina": 6
+        },
+        "StaminaBack": {
+            "IR_WuXiuHuiAcitvityStamina": 6
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Daochang",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_MGNa",
+        "Background": "Battle_Event_3",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [
+            "AWuXiuHuiS01S05"
+        ],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": "",
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "HeroAttrExtra": {
+            "LYXi": "Hero_ABlock_LYXi_Extra",
+            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
+            "BHTZi": "Hero_ABlock_BHTZi_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": "",
+        "PointTime": "",
+        "IsSweep": 1,
+        "Combat_Adjust_Rate": "",
+        "HiddenStory": "",
+        "Location": ""
+    },
+    "AWuXiuHuiM01S01": {
+        "Name": "BlockPoint_AWuXiuHuiM01S01_Name",
+        "BlockDesc": "BlockPoint_AWuXiuHuiM01S01_BlockDesc",
+        "CombatValue": 4600,
+        "CombatNeed": 4150,
+        "Map": "AWuXiuHuiM01",
+        "OpenLevel": 1,
+        "OpenPoint": [],
+        "NextPoint": [
+            "AWuXiuHuiM01S02"
+        ],
+        "Type": "NORMAL",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "EnemyMaster": "AM03P01U01N08",
+        "EnemyCard": "CardAM03S01",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "AWuXiuHuiM01S01_FirstReward",
+        "PointReward": "AWuXiuHuiM01S01_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "AWuXiuHuiM01S01_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "",
+        "StaminaCost": {
+            "IR_WuXiuHuiAcitvityStamina": 6
+        },
+        "StaminaBack": {
+            "IR_WuXiuHuiAcitvityStamina": 6
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Daochang",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_BBLMa",
+        "Background": "Battle_Event_3",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [
+            "AWuXiuHuiS01S01"
+        ],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": "",
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "HeroAttrExtra": {
+            "LYXi": "Hero_ABlock_LYXi_Extra",
+            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
+            "BHTZi": "Hero_ABlock_BHTZi_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": "",
+        "PointTime": "",
+        "IsSweep": 1,
+        "Combat_Adjust_Rate": "",
+        "HiddenStory": "",
+        "Location": ""
+    },
+    "AWuXiuHuiM01S03": {
+        "Name": "BlockPoint_AWuXiuHuiM01S03_Name",
+        "BlockDesc": "BlockPoint_AWuXiuHuiM01S03_BlockDesc",
+        "CombatValue": 9800,
+        "CombatNeed": 8921,
+        "Map": "AWuXiuHuiM01",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "AWuXiuHuiM01S02"
+        ],
+        "NextPoint": [
+            "AWuXiuHuiM01S04"
+        ],
+        "Type": "NORMAL",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "EnemyMaster": "AM03P03U01N08",
+        "EnemyCard": "CardAM03S03",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "AWuXiuHuiM01S03_FirstReward",
+        "PointReward": "AWuXiuHuiM01S03_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "AWuXiuHuiM01S03_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "",
+        "StaminaCost": {
+            "IR_WuXiuHuiAcitvityStamina": 6
+        },
+        "StaminaBack": {
+            "IR_WuXiuHuiAcitvityStamina": 6
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Daochang",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_CZheng",
+        "Background": "Battle_Event_3",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [
+            "AWuXiuHuiS01S02"
+        ],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": "",
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "HeroAttrExtra": {
+            "LYXi": "Hero_ABlock_LYXi_Extra",
+            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
+            "BHTZi": "Hero_ABlock_BHTZi_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": "",
+        "PointTime": "",
+        "IsSweep": 1,
+        "Combat_Adjust_Rate": "",
+        "HiddenStory": "",
+        "Location": ""
+    },
+    "AWuXiuHuiM01S02": {
+        "Name": "BlockPoint_AWuXiuHuiM01S02_Name",
+        "BlockDesc": "BlockPoint_AWuXiuHuiM01S02_BlockDesc",
+        "CombatValue": 7200,
+        "CombatNeed": 6535,
+        "Map": "AWuXiuHuiM01",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "AWuXiuHuiM01S01"
+        ],
+        "NextPoint": [
+            "AWuXiuHuiM01S03"
+        ],
+        "Type": "NORMAL",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "EnemyMaster": "AM03P02U01N08",
+        "EnemyCard": "CardAM03S02",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "AWuXiuHuiM01S02_FirstReward",
+        "PointReward": "AWuXiuHuiM01S02_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "AWuXiuHuiM01S02_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "",
+        "StaminaCost": {
+            "IR_WuXiuHuiAcitvityStamina": 6
+        },
+        "StaminaBack": {
+            "IR_WuXiuHuiAcitvityStamina": 6
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Daochang",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_TPGZhu",
+        "Background": "Battle_Event_3",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": "",
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "HeroAttrExtra": {
+            "LYXi": "Hero_ABlock_LYXi_Extra",
+            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
+            "BHTZi": "Hero_ABlock_BHTZi_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": "",
+        "PointTime": "",
+        "IsSweep": 1,
+        "Combat_Adjust_Rate": "",
+        "HiddenStory": "",
+        "Location": ""
+    },
+    "AWuXiuHuiM01S05": {
+        "Name": "BlockPoint_AWuXiuHuiM01S05_Name",
+        "BlockDesc": "BlockPoint_AWuXiuHuiM01S05_BlockDesc",
+        "CombatValue": 18400,
+        "CombatNeed": 16693,
+        "Map": "AWuXiuHuiM01",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "AWuXiuHuiM01S04"
+        ],
+        "NextPoint": [
+            "AWuXiuHuiM01S06"
+        ],
+        "Type": "NORMAL",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "EnemyMaster": "AM03P05U01N08",
+        "EnemyCard": "CardAM03S05",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "AWuXiuHuiM01S05_FirstReward",
+        "PointReward": "AWuXiuHuiM01S05_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "AWuXiuHuiM01S05_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "",
+        "StaminaCost": {
+            "IR_WuXiuHuiAcitvityStamina": 6
+        },
+        "StaminaBack": {
+            "IR_WuXiuHuiAcitvityStamina": 6
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Daochang",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_YLMGZhu",
+        "Background": "Battle_Event_3",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [
+            "AWuXiuHuiS01S03"
+        ],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": "",
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "HeroAttrExtra": {
+            "LYXi": "Hero_ABlock_LYXi_Extra",
+            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
+            "BHTZi": "Hero_ABlock_BHTZi_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": "",
+        "PointTime": "",
+        "IsSweep": 1,
+        "Combat_Adjust_Rate": "",
+        "HiddenStory": "",
+        "Location": ""
+    },
+    "AWuXiuHuiM01S04": {
+        "Name": "BlockPoint_AWuXiuHuiM01S04_Name",
+        "BlockDesc": "BlockPoint_AWuXiuHuiM01S04_BlockDesc",
+        "CombatValue": 13500,
+        "CombatNeed": 12289,
+        "Map": "AWuXiuHuiM01",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "AWuXiuHuiM01S03"
+        ],
+        "NextPoint": [
+            "AWuXiuHuiM01S05"
+        ],
+        "Type": "NORMAL",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "EnemyMaster": "AM03P04U01N08",
+        "EnemyCard": "CardAM03S04",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "AWuXiuHuiM01S04_FirstReward",
+        "PointReward": "AWuXiuHuiM01S04_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "AWuXiuHuiM01S04_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "",
+        "StaminaCost": {
+            "IR_WuXiuHuiAcitvityStamina": 6
+        },
+        "StaminaBack": {
+            "IR_WuXiuHuiAcitvityStamina": 6
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Daochang",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_MGNa",
+        "Background": "Battle_Event_3",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": "",
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "HeroAttrExtra": {
+            "LYXi": "Hero_ABlock_LYXi_Extra",
+            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
+            "BHTZi": "Hero_ABlock_BHTZi_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": "",
+        "PointTime": "",
+        "IsSweep": 1,
+        "Combat_Adjust_Rate": "",
+        "HiddenStory": "",
+        "Location": ""
+    },
+    "AWuXiuHuiM01S07": {
+        "Name": "BlockPoint_AWuXiuHuiM01S07_Name",
+        "BlockDesc": "BlockPoint_AWuXiuHuiM01S07_BlockDesc",
+        "CombatValue": 29900,
+        "CombatNeed": 27189,
+        "Map": "AWuXiuHuiM01",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "AWuXiuHuiM01S06"
+        ],
+        "NextPoint": [
+            "AWuXiuHuiM01S08"
+        ],
+        "Type": "NORMAL",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "EnemyMaster": "AM03P07U01N08",
+        "EnemyCard": "CardAM03S07",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "AWuXiuHuiM01S07_FirstReward",
+        "PointReward": "AWuXiuHuiM01S07_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "AWuXiuHuiM01S07_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "",
+        "StaminaCost": {
+            "IR_WuXiuHuiAcitvityStamina": 6
+        },
+        "StaminaBack": {
+            "IR_WuXiuHuiAcitvityStamina": 6
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Daochang",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_ZZBBWei",
+        "Background": "Battle_Event_3",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [
+            "AWuXiuHuiS01S04"
+        ],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": "",
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "HeroAttrExtra": {
+            "LYXi": "Hero_ABlock_LYXi_Extra",
+            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
+            "BHTZi": "Hero_ABlock_BHTZi_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": "",
+        "PointTime": "",
+        "IsSweep": 1,
+        "Combat_Adjust_Rate": "",
+        "HiddenStory": "",
+        "Location": ""
+    },
+    "AWuXiuHuiM01S06": {
+        "Name": "BlockPoint_AWuXiuHuiM01S06_Name",
+        "BlockDesc": "BlockPoint_AWuXiuHuiM01S06_BlockDesc",
+        "CombatValue": 23600,
+        "CombatNeed": 21464,
+        "Map": "AWuXiuHuiM01",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "AWuXiuHuiM01S05"
+        ],
+        "NextPoint": [
+            "AWuXiuHuiM01S07"
+        ],
+        "Type": "NORMAL",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "EnemyMaster": "AM03P06U01N08",
+        "EnemyCard": "CardAM03S06",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "AWuXiuHuiM01S06_FirstReward",
+        "PointReward": "AWuXiuHuiM01S06_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "AWuXiuHuiM01S06_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "",
+        "StaminaCost": {
+            "IR_WuXiuHuiAcitvityStamina": 6
+        },
+        "StaminaBack": {
+            "IR_WuXiuHuiAcitvityStamina": 6
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Daochang",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_SDTZi",
+        "Background": "Battle_Event_3",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": "",
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "HeroAttrExtra": {
+            "LYXi": "Hero_ABlock_LYXi_Extra",
+            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
+            "BHTZi": "Hero_ABlock_BHTZi_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": "",
+        "PointTime": "",
+        "IsSweep": 1,
+        "Combat_Adjust_Rate": "",
+        "HiddenStory": "",
+        "Location": ""
+    },
+    "AWuXiuHuiM01S12": {
+        "Name": "BlockPoint_AWuXiuHuiM01S12_Name",
+        "BlockDesc": "BlockPoint_AWuXiuHuiM01S12_BlockDesc",
+        "CombatValue": 75200,
+        "CombatNeed": 68330,
+        "Map": "AWuXiuHuiM01",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "AWuXiuHuiM01S11"
+        ],
+        "NextPoint": [],
+        "Type": "NORMAL",
+        "PointType": "BOSS",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_2",
+        "EnemyMaster": "AM03P12U01N08",
+        "EnemyCard": "CardAM03S12",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "AWuXiuHuiM01S12_FirstReward",
+        "PointReward": "AWuXiuHuiM01S12_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "AWuXiuHuiM01S12_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "",
+        "StaminaCost": {
+            "IM_WuXiuHuiBossStamina": 5
+        },
+        "StaminaBack": {
+            "IM_WuXiuHuiBossStamina": 5
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Daochang",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_BHTZi",
+        "Background": "Battle_Event_3",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": "",
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "HeroAttrExtra": {
+            "LYXi": "Hero_ABlock_LYXi_Extra",
+            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
+            "BHTZi": "Hero_ABlock_BHTZi_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": {
+            "LYXi": {
+                "IM_WuXiuHuiSoreItem_2": 2
+            },
+            "TPGZhu": {
+                "IM_WuXiuHuiSoreItem_2": 2
+            },
+            "BHTZi": {
+                "IM_WuXiuHuiSoreItem_2": 2
+            }
+        },
+        "PointTime": "",
+        "IsSweep": 0,
+        "Combat_Adjust_Rate": "",
+        "HiddenStory": "",
+        "Location": ""
+    },
+    "AWuXiuHuiM01S10": {
+        "Name": "BlockPoint_AWuXiuHuiM01S10_Name",
+        "BlockDesc": "BlockPoint_AWuXiuHuiM01S10_BlockDesc",
+        "CombatValue": 61200,
+        "CombatNeed": 55679,
+        "Map": "AWuXiuHuiM01",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "AWuXiuHuiM01S09"
+        ],
+        "NextPoint": [
+            "AWuXiuHuiM01S11"
+        ],
+        "Type": "NORMAL",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "EnemyMaster": "AM03P10U01N08",
+        "EnemyCard": "CardAM03S10",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "AWuXiuHuiM01S10_FirstReward",
+        "PointReward": "AWuXiuHuiM01S10_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "AWuXiuHuiM01S10_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "",
+        "StaminaCost": {
+            "IR_WuXiuHuiAcitvityStamina": 6
+        },
+        "StaminaBack": {
+            "IR_WuXiuHuiAcitvityStamina": 6
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Daochang",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_YLMGZhu",
+        "Background": "Battle_Event_3",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": "",
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "HeroAttrExtra": {
+            "LYXi": "Hero_ABlock_LYXi_Extra",
+            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
+            "BHTZi": "Hero_ABlock_BHTZi_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": "",
+        "PointTime": "",
+        "IsSweep": 1,
+        "Combat_Adjust_Rate": "",
+        "HiddenStory": "",
+        "Location": ""
+    },
+    "AWuXiuHuiM01S11": {
+        "Name": "BlockPoint_AWuXiuHuiM01S11_Name",
+        "BlockDesc": "BlockPoint_AWuXiuHuiM01S11_BlockDesc",
+        "CombatValue": 68100,
+        "CombatNeed": 61865,
+        "Map": "AWuXiuHuiM01",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "AWuXiuHuiM01S10"
+        ],
+        "NextPoint": [
+            "AWuXiuHuiM01S12"
+        ],
+        "Type": "NORMAL",
+        "PointType": "BOSS",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_2",
+        "EnemyMaster": "AM03P11U01N08",
+        "EnemyCard": "CardAM03S11",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "AWuXiuHuiM01S11_FirstReward",
+        "PointReward": "AWuXiuHuiM01S11_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "AWuXiuHuiM01S11_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "",
+        "StaminaCost": {
+            "IM_WuXiuHuiBossStamina": 5
+        },
+        "StaminaBack": {
+            "IM_WuXiuHuiBossStamina": 5
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Daochang",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_BHTZi",
+        "Background": "Battle_Event_3",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": "",
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "HeroAttrExtra": {
+            "LYXi": "Hero_ABlock_LYXi_Extra",
+            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
+            "BHTZi": "Hero_ABlock_BHTZi_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": {
+            "LYXi": {
+                "IM_WuXiuHuiSoreItem_2": 2
+            },
+            "TPGZhu": {
+                "IM_WuXiuHuiSoreItem_2": 2
+            },
+            "BHTZi": {
+                "IM_WuXiuHuiSoreItem_2": 2
+            }
+        },
+        "PointTime": "",
+        "IsSweep": 0,
+        "Combat_Adjust_Rate": "",
+        "HiddenStory": "",
+        "Location": ""
+    },
+    "AWuXiuHuiM01S08": {
+        "Name": "BlockPoint_AWuXiuHuiM01S08_Name",
+        "BlockDesc": "BlockPoint_AWuXiuHuiM01S08_BlockDesc",
+        "CombatValue": 37500,
+        "CombatNeed": 34060,
+        "Map": "AWuXiuHuiM01",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "AWuXiuHuiM01S07"
+        ],
+        "NextPoint": [
+            "AWuXiuHuiM01S09"
+        ],
+        "Type": "NORMAL",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "EnemyMaster": "AM03P08U01N08",
+        "EnemyCard": "CardAM03S08",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "AWuXiuHuiM01S08_FirstReward",
+        "PointReward": "AWuXiuHuiM01S08_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "AWuXiuHuiM01S08_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "",
+        "StaminaCost": {
+            "IR_WuXiuHuiAcitvityStamina": 6
+        },
+        "StaminaBack": {
+            "IR_WuXiuHuiAcitvityStamina": 6
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Daochang",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_MGNa",
+        "Background": "Battle_Event_3",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": "",
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "HeroAttrExtra": {
+            "LYXi": "Hero_ABlock_LYXi_Extra",
+            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
+            "BHTZi": "Hero_ABlock_BHTZi_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": "",
+        "PointTime": "",
+        "IsSweep": 1,
+        "Combat_Adjust_Rate": "",
+        "HiddenStory": "",
+        "Location": ""
+    },
+    "AWuXiuHuiE01S01": {
+        "Name": "BlockPoint_AWuXiuHuiE01S01_Name",
+        "BlockDesc": "BlockPoint_AWuXiuHuiE01S01_BlockDesc",
+        "CombatValue": 54664,
+        "CombatNeed": 59000,
+        "Map": "AWuXiuHuiE01",
+        "OpenLevel": 1,
+        "OpenPoint": [],
+        "NextPoint": [
+            "AWuXiuHuiE01S02"
+        ],
+        "Type": "ELITE",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "EnemyMaster": "AE03P01U01N08",
+        "EnemyCard": "CardAE03S01",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "AWuXiuHuiE01S01_FirstReward",
+        "PointReward": "AWuXiuHuiE01S01_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "AWuXiuHuiE01S01_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "",
+        "StaminaCost": {
+            "IR_WuXiuHuiAcitvityStamina": 6
+        },
+        "StaminaBack": {
+            "IR_WuXiuHuiAcitvityStamina": 6
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Daochang",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_SDTZi",
+        "Background": "Battle_Event_3",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [
+            "AWuXiuHuiS01E01"
+        ],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "HeroAttrExtra": {
+            "LYXi": "Hero_ABlock_LYXi_Extra",
+            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
+            "BHTZi": "Hero_ABlock_BHTZi_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": "",
+        "PointTime": {
+            "start": "2020-11-25 05:00:00"
+        },
+        "IsSweep": 1,
+        "Combat_Adjust_Rate": "",
+        "HiddenStory": "",
+        "Location": ""
+    },
+    "AWuXiuHuiE01S03": {
+        "Name": "BlockPoint_AWuXiuHuiE01S03_Name",
+        "BlockDesc": "BlockPoint_AWuXiuHuiE01S03_BlockDesc",
+        "CombatValue": 61109,
+        "CombatNeed": 66000,
+        "Map": "AWuXiuHuiE01",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "AWuXiuHuiE01S02"
+        ],
+        "NextPoint": [
+            "AWuXiuHuiE01S04"
+        ],
+        "Type": "ELITE",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "EnemyMaster": "AE03P03U01N08",
+        "EnemyCard": "CardAE03S03",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "AWuXiuHuiE01S03_FirstReward",
+        "PointReward": "AWuXiuHuiE01S03_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "AWuXiuHuiE01S03_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "",
+        "StaminaCost": {
+            "IR_WuXiuHuiAcitvityStamina": 6
+        },
+        "StaminaBack": {
+            "IR_WuXiuHuiAcitvityStamina": 6
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Daochang",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_SSQXin",
+        "Background": "Battle_Event_3",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [
+            "AWuXiuHuiS01E02"
+        ],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "HeroAttrExtra": {
+            "LYXi": "Hero_ABlock_LYXi_Extra",
+            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
+            "BHTZi": "Hero_ABlock_BHTZi_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": "",
+        "PointTime": {
+            "start": "2020-11-25 05:00:00"
+        },
+        "IsSweep": 1,
+        "Combat_Adjust_Rate": "",
+        "HiddenStory": "",
+        "Location": ""
+    },
+    "AWuXiuHuiE01S02": {
+        "Name": "BlockPoint_AWuXiuHuiE01S02_Name",
+        "BlockDesc": "BlockPoint_AWuXiuHuiE01S02_BlockDesc",
+        "CombatValue": 57378,
+        "CombatNeed": 62000,
+        "Map": "AWuXiuHuiE01",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "AWuXiuHuiE01S01"
+        ],
+        "NextPoint": [
+            "AWuXiuHuiE01S03"
+        ],
+        "Type": "ELITE",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "EnemyMaster": "AE03P02U01N08",
+        "EnemyCard": "CardAE03S02",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "AWuXiuHuiE01S02_FirstReward",
+        "PointReward": "AWuXiuHuiE01S02_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "AWuXiuHuiE01S02_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "",
+        "StaminaCost": {
+            "IR_WuXiuHuiAcitvityStamina": 6
+        },
+        "StaminaBack": {
+            "IR_WuXiuHuiAcitvityStamina": 6
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Daochang",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_MGNa",
+        "Background": "Battle_Event_3",
+        "Banner": "pic_guanqia2_02_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "HeroAttrExtra": {
+            "LYXi": "Hero_ABlock_LYXi_Extra",
+            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
+            "BHTZi": "Hero_ABlock_BHTZi_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": "",
+        "PointTime": {
+            "start": "2020-11-25 05:00:00"
+        },
+        "IsSweep": 1,
+        "Combat_Adjust_Rate": "",
+        "HiddenStory": "",
+        "Location": ""
+    },
+    "AWuXiuHuiE01S05": {
+        "Name": "BlockPoint_AWuXiuHuiE01S05_Name",
+        "BlockDesc": "BlockPoint_AWuXiuHuiE01S05_BlockDesc",
+        "CombatValue": 73549,
+        "CombatNeed": 79400,
+        "Map": "AWuXiuHuiE01",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "AWuXiuHuiE01S04"
+        ],
+        "NextPoint": [
+            "AWuXiuHuiE01S06"
+        ],
+        "Type": "ELITE",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "EnemyMaster": "AE03P05U01N08",
+        "EnemyCard": "CardAE03S05",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "AWuXiuHuiE01S05_FirstReward",
+        "PointReward": "AWuXiuHuiE01S05_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "AWuXiuHuiE01S05_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "",
+        "StaminaCost": {
+            "IR_WuXiuHuiAcitvityStamina": 6
+        },
+        "StaminaBack": {
+            "IR_WuXiuHuiAcitvityStamina": 6
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Daochang",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_CZheng",
+        "Background": "Battle_Event_3",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "HeroAttrExtra": {
+            "LYXi": "Hero_ABlock_LYXi_Extra",
+            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
+            "BHTZi": "Hero_ABlock_BHTZi_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": "",
+        "PointTime": {
+            "start": "2020-11-25 05:00:00"
+        },
+        "IsSweep": 1,
+        "Combat_Adjust_Rate": "",
+        "HiddenStory": "",
+        "Location": ""
+    },
+    "AWuXiuHuiE01S04": {
+        "Name": "BlockPoint_AWuXiuHuiE01S04_Name",
+        "BlockDesc": "BlockPoint_AWuXiuHuiE01S04_BlockDesc",
+        "CombatValue": 66085,
+        "CombatNeed": 71400,
+        "Map": "AWuXiuHuiE01",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "AWuXiuHuiE01S03"
+        ],
+        "NextPoint": [
+            "AWuXiuHuiE01S05"
+        ],
+        "Type": "ELITE",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "EnemyMaster": "AE03P04U01N08",
+        "EnemyCard": "CardAE03S04",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "AWuXiuHuiE01S04_FirstReward",
+        "PointReward": "AWuXiuHuiE01S04_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "AWuXiuHuiE01S04_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "",
+        "StaminaCost": {
+            "IR_WuXiuHuiAcitvityStamina": 6
+        },
+        "StaminaBack": {
+            "IR_WuXiuHuiAcitvityStamina": 6
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Daochang",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_WEDe",
+        "Background": "Battle_Event_3",
+        "Banner": "pic_guanqia2_02_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "HeroAttrExtra": {
+            "LYXi": "Hero_ABlock_LYXi_Extra",
+            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
+            "BHTZi": "Hero_ABlock_BHTZi_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": "",
+        "PointTime": {
+            "start": "2020-11-25 05:00:00"
+        },
+        "IsSweep": 1,
+        "Combat_Adjust_Rate": "",
+        "HiddenStory": "",
+        "Location": ""
+    },
+    "AWuXiuHuiE01S07": {
+        "Name": "BlockPoint_AWuXiuHuiE01S07_Name",
+        "BlockDesc": "BlockPoint_AWuXiuHuiE01S07_BlockDesc",
+        "CombatValue": 96934,
+        "CombatNeed": 104700,
+        "Map": "AWuXiuHuiE01",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "AWuXiuHuiE01S06"
+        ],
+        "NextPoint": [
+            "AWuXiuHuiE01S08"
+        ],
+        "Type": "ELITE",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "EnemyMaster": "AE03P07U01N08",
+        "EnemyCard": "CardAE03S07",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "AWuXiuHuiE01S07_FirstReward",
+        "PointReward": "AWuXiuHuiE01S07_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "AWuXiuHuiE01S07_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "",
+        "StaminaCost": {
+            "IR_WuXiuHuiAcitvityStamina": 6
+        },
+        "StaminaBack": {
+            "IR_WuXiuHuiAcitvityStamina": 6
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Daochang",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_SDTZi",
+        "Background": "Battle_Event_3",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "HeroAttrExtra": {
+            "LYXi": "Hero_ABlock_LYXi_Extra",
+            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
+            "BHTZi": "Hero_ABlock_BHTZi_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": "",
+        "PointTime": {
+            "start": "2020-11-25 05:00:00"
+        },
+        "IsSweep": 1,
+        "Combat_Adjust_Rate": "",
+        "HiddenStory": "",
+        "Location": ""
+    },
+    "AWuXiuHuiE01S06": {
+        "Name": "BlockPoint_AWuXiuHuiE01S06_Name",
+        "BlockDesc": "BlockPoint_AWuXiuHuiE01S06_BlockDesc",
+        "CombatValue": 83500,
+        "CombatNeed": 90200,
+        "Map": "AWuXiuHuiE01",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "AWuXiuHuiE01S05"
+        ],
+        "NextPoint": [
+            "AWuXiuHuiE01S07"
+        ],
+        "Type": "ELITE",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "EnemyMaster": "AE03P06U01N08",
+        "EnemyCard": "CardAE03S06",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "AWuXiuHuiE01S06_FirstReward",
+        "PointReward": "AWuXiuHuiE01S06_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "AWuXiuHuiE01S06_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "",
+        "StaminaCost": {
+            "IR_WuXiuHuiAcitvityStamina": 6
+        },
+        "StaminaBack": {
+            "IR_WuXiuHuiAcitvityStamina": 6
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Daochang",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_ZZBBWei",
+        "Background": "Battle_Event_3",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [
+            "AWuXiuHuiS01E03"
+        ],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "HeroAttrExtra": {
+            "LYXi": "Hero_ABlock_LYXi_Extra",
+            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
+            "BHTZi": "Hero_ABlock_BHTZi_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": "",
+        "PointTime": {
+            "start": "2020-11-25 05:00:00"
+        },
+        "IsSweep": 1,
+        "Combat_Adjust_Rate": "",
+        "HiddenStory": "",
+        "Location": ""
+    },
+    "AWuXiuHuiE01S09": {
+        "Name": "BlockPoint_AWuXiuHuiE01S09_Name",
+        "BlockDesc": "BlockPoint_AWuXiuHuiE01S09_BlockDesc",
+        "CombatValue": 144701,
+        "CombatNeed": 156300,
+        "Map": "AWuXiuHuiE01",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "AWuXiuHuiE01S08"
+        ],
+        "NextPoint": [
+            "AWuXiuHuiE01S10"
+        ],
+        "Type": "ELITE",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "EnemyMaster": "AE03P09U01N08",
+        "EnemyCard": "CardAE03S09",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "AWuXiuHuiE01S09_FirstReward",
+        "PointReward": "AWuXiuHuiE01S09_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "AWuXiuHuiE01S09_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "",
+        "StaminaCost": {
+            "IR_WuXiuHuiAcitvityStamina": 6
+        },
+        "StaminaBack": {
+            "IR_WuXiuHuiAcitvityStamina": 6
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Daochang",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_YLMGZhu",
+        "Background": "Battle_Event_3",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [
+            "AWuXiuHuiS01E04"
+        ],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "HeroAttrExtra": {
+            "LYXi": "Hero_ABlock_LYXi_Extra",
+            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
+            "BHTZi": "Hero_ABlock_BHTZi_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": "",
+        "PointTime": {
+            "start": "2020-11-25 05:00:00"
+        },
+        "IsSweep": 1,
+        "Combat_Adjust_Rate": "",
+        "HiddenStory": "",
+        "Location": ""
+    },
+    "AWuXiuHuiE01S08": {
+        "Name": "BlockPoint_AWuXiuHuiE01S08_Name",
+        "BlockDesc": "BlockPoint_AWuXiuHuiE01S08_BlockDesc",
+        "CombatValue": 114847,
+        "CombatNeed": 124000,
+        "Map": "AWuXiuHuiE01",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "AWuXiuHuiE01S07"
+        ],
+        "NextPoint": [
+            "AWuXiuHuiE01S09"
+        ],
+        "Type": "ELITE",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "EnemyMaster": "AE03P08U01N08",
+        "EnemyCard": "CardAE03S08",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "AWuXiuHuiE01S08_FirstReward",
+        "PointReward": "AWuXiuHuiE01S08_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "AWuXiuHuiE01S08_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "",
+        "StaminaCost": {
+            "IR_WuXiuHuiAcitvityStamina": 6
+        },
+        "StaminaBack": {
+            "IR_WuXiuHuiAcitvityStamina": 6
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Daochang",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_SDTZi",
+        "Background": "Battle_Event_3",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "HeroAttrExtra": {
+            "LYXi": "Hero_ABlock_LYXi_Extra",
+            "TPGZhu": "Hero_ABlock_TPGZhu_Extra",
+            "BHTZi": "Hero_ABlock_BHTZi_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": "",
+        "PointTime": {
+            "start": "2020-11-25 05:00:00"
+        },
+        "IsSweep": 1,
+        "Combat_Adjust_Rate": "",
+        "HiddenStory": "",
+        "Location": ""
     }
 }

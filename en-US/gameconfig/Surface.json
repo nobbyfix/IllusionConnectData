@@ -1645,60 +1645,6 @@
         ],
         "NotGetUnlook": 1
     },
-    "Surface_TPGZhu_2": {
-        "Hero": "TPGZhu",
-        "Name": "Surface_TPGZhu_2_Name",
-        "Desc": "Surface_TPGZhu_2_Desc",
-        "GainShortDesc": "Surface_QPao_GainShort",
-        "GainDesc": "Surface_TPGZhu_QPao_GainDesc",
-        "Type": 2,
-        "GoodsId": "",
-        "ShopID": "",
-        "ActivityId": "",
-        "Link": "",
-        "Quality": 5,
-        "Model": "Model_TPGZhu_QPao",
-        "Unlook": 1,
-        "Sort": 2,
-        "ClickAction": [
-            {
-                "action": "touch2",
-                "range": [
-                    128,
-                    128
-                ],
-                "part": "head",
-                "point": [
-                    50,
-                    661
-                ]
-            },
-            {
-                "action": "touch1",
-                "range": [
-                    128,
-                    95
-                ],
-                "part": "body",
-                "point": [
-                    37,
-                    571
-                ]
-            },
-            {
-                "action": "touch3",
-                "range": [
-                    0,
-                    0
-                ],
-                "part": "all",
-                "point": [
-                    "all"
-                ]
-            }
-        ],
-        "NotGetUnlook": ""
-    },
     "Surface_SYAi_1": {
         "Hero": "SYAi",
         "Name": "Surface_SYAi_1_Name",
@@ -2929,60 +2875,6 @@
             },
             {
                 "action": "touch2",
-                "range": [
-                    0,
-                    0
-                ],
-                "part": "all",
-                "point": [
-                    "all"
-                ]
-            }
-        ],
-        "NotGetUnlook": ""
-    },
-    "Surface_BHTZi_1": {
-        "Hero": "BHTZi",
-        "Name": "Surface_BHTZi_1_Name",
-        "Desc": "Surface_BHTZi_1_Desc",
-        "GainShortDesc": "",
-        "GainDesc": "",
-        "Type": 1,
-        "GoodsId": "",
-        "ShopID": "",
-        "ActivityId": "",
-        "Link": "",
-        "Quality": 2,
-        "Model": "Model_BHTZi",
-        "Unlook": 1,
-        "Sort": 1,
-        "ClickAction": [
-            {
-                "action": "touch1",
-                "range": [
-                    128,
-                    128
-                ],
-                "part": "head",
-                "point": [
-                    50,
-                    820
-                ]
-            },
-            {
-                "action": "touch1",
-                "range": [
-                    128,
-                    95
-                ],
-                "part": "body",
-                "point": [
-                    40,
-                    681
-                ]
-            },
-            {
-                "action": "touch1",
                 "range": [
                     0,
                     0
@@ -5798,6 +5690,132 @@
                     0
                 ],
                 "part": "all",
+                "point": [
+                    "all"
+                ]
+            }
+        ],
+        "NotGetUnlook": ""
+    },
+    "Surface_TPGZhu_2": {
+        "Hero": "TPGZhu",
+        "Name": "Surface_TPGZhu_2_Name",
+        "Desc": "Surface_TPGZhu_2_Desc",
+        "GainShortDesc": "Surface_QPao_GainShort",
+        "GainDesc": "Surface_TPGZhu_QPao_GainDesc",
+        "Type": 2,
+        "GoodsId": "Surface_9",
+        "ShopID": "Shop_Surface",
+        "ActivityId": "",
+        "Link": "",
+        "Quality": 5,
+        "Model": "Model_TPGZhu_QPao",
+        "Unlook": 1,
+        "Sort": 2,
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "range": [
+                    128,
+                    128
+                ],
+                "part": "head",
+                "point": [
+                    50,
+                    661
+                ]
+            },
+            {
+                "action": "touch1",
+                "range": [
+                    128,
+                    95
+                ],
+                "part": "body",
+                "point": [
+                    37,
+                    571
+                ]
+            },
+            {
+                "action": "touch3",
+                "range": [
+                    0,
+                    0
+                ],
+                "part": "all",
+                "point": [
+                    "all"
+                ]
+            }
+        ],
+        "NotGetUnlook": ""
+    },
+    "Surface_BHTZi_1": {
+        "Hero": "BHTZi",
+        "Name": "Surface_BHTZi_1_Name",
+        "Desc": "Surface_BHTZi_1_Desc",
+        "GainShortDesc": "",
+        "GainDesc": "",
+        "Type": 1,
+        "GoodsId": "",
+        "ShopID": "",
+        "ActivityId": "",
+        "Link": "",
+        "Quality": 2,
+        "Model": "Model_BHTZi",
+        "Unlook": 1,
+        "Sort": 1,
+        "ClickAction": [
+            {
+                "action": "touch1",
+                "range": [
+                    128,
+                    128
+                ],
+                "voice": [
+                    "Voice_BHTZi_41",
+                    "Voice_BHTZi_42",
+                    "Voice_BHTZi_43",
+                    "Voice_BHTZi_39"
+                ],
+                "point": [
+                    50,
+                    820
+                ]
+            },
+            {
+                "action": "touch1",
+                "range": [
+                    128,
+                    95
+                ],
+                "voice": [
+                    "Voice_BHTZi_44",
+                    "Voice_BHTZi_45",
+                    "Voice_BHTZi_46",
+                    "Voice_BHTZi_39"
+                ],
+                "point": [
+                    40,
+                    681
+                ]
+            },
+            {
+                "action": "touch1",
+                "range": [
+                    0,
+                    0
+                ],
+                "voice": [
+                    "Voice_BHTZi_47",
+                    "Voice_BHTZi_48",
+                    "Voice_BHTZi_07",
+                    "Voice_BHTZi_08",
+                    "Voice_BHTZi_09",
+                    "Voice_BHTZi_37",
+                    "Voice_BHTZi_39"
+                ],
                 "point": [
                     "all"
                 ]

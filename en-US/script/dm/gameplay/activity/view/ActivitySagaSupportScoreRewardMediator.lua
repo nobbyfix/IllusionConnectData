@@ -74,7 +74,11 @@ function ActivitySagaSupportScoreRewardMediator:initView()
 end
 
 function ActivitySagaSupportScoreRewardMediator:initContent()
-	self:getView():getChildByFullName("main.scoreValue"):setString(self._score)
+	local scoreValue1 = self:getView():getChildByFullName("main.scoreValue1")
+	local scoreValue = self:getView():getChildByFullName("main.scoreValue")
+
+	scoreValue:setPositionX(scoreValue1:getPositionX() + scoreValue1:getContentSize().width + 10)
+	scoreValue:setString(self._score)
 	self._listView:removeAllChildren(true)
 
 	for i = 1, #self._data do

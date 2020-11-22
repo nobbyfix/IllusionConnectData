@@ -643,86 +643,108 @@ all.Skill_WTXXuan_Passive_EX = {
 
 		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
 
-		_env.count = 0
+		_env.count = 1
 
 		exec["@time"]({
 			0
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-
-			if global.FriendMaster(_env) then
-				local buffeft1 = global.NumericEffect(_env, "+hurtrate", {
-					"+Normal",
-					"+Normal"
-				}, this.HurtRateFactor)
-
-				global.ApplyBuff_Buff(_env, _env.ACTOR, global.FriendMaster(_env), {
-					timing = 2,
-					duration = 3,
-					display = "HurtRateUp",
-					tags = {
-						"NUMERIC",
-						"BUFF",
-						"HURTRATEUP",
-						"Skill_WTXXuan_Passive",
-						"DISPELLABLE",
-						"STEALABLE"
-					}
-				}, {
-					buffeft1
-				}, 1, 0)
-			end
-
 			local cards = global.CardsOfPlayer(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "MAGE"))
 
 			for _, card in global.__iter__(cards) do
 				_env.count = _env.count + 1
 			end
 
-			for _, card in global.__iter__(cards) do
+			if global.FriendMaster(_env) then
 				if _env.count > 4 then
-					local buffeft2 = global.NumericEffect(_env, "+hurtrate", {
+					local buffeft1 = global.NumericEffect(_env, "+hurtrate", {
 						"+Normal",
 						"+Normal"
 					}, this.MageHurtRateFactor)
 
-					global.ApplyHeroCardBuff(_env, global.GetOwner(_env, _env.ACTOR), card, {
-						duration = 3,
-						group = "Skill_WTXXuan_Passive",
+					global.ApplyBuff_Buff(_env, _env.ACTOR, global.FriendMaster(_env), {
 						timing = 2,
-						limit = 1,
+						duration = 3,
+						display = "HurtRateUp",
 						tags = {
-							"CARDBUFF",
-							"Skill_WTXXuan_Passive",
+							"NUMERIC",
+							"BUFF",
 							"HURTRATEUP",
-							"UNDISPELLABLE",
-							"UNSTEALABLE"
+							"Skill_WTXXuan_Passive",
+							"DISPELLABLE",
+							"STEALABLE"
 						}
 					}, {
-						buffeft2
-					})
+						buffeft1
+					}, 1, 0)
 				else
-					local buffeft3 = global.NumericEffect(_env, "+hurtrate", {
+					local buffeft1 = global.NumericEffect(_env, "+hurtrate", {
 						"+Normal",
 						"+Normal"
 					}, this.HurtRateFactor)
 
-					global.ApplyHeroCardBuff(_env, global.GetOwner(_env, _env.ACTOR), card, {
-						duration = 3,
-						group = "Skill_WTXXuan_Passive",
+					global.ApplyBuff_Buff(_env, _env.ACTOR, global.FriendMaster(_env), {
 						timing = 2,
-						limit = 1,
+						duration = 3,
+						display = "HurtRateUp",
 						tags = {
-							"CARDBUFF",
-							"Skill_WTXXuan_Passive",
+							"NUMERIC",
+							"BUFF",
 							"HURTRATEUP",
-							"UNDISPELLABLE",
-							"UNSTEALABLE"
+							"Skill_WTXXuan_Passive",
+							"DISPELLABLE",
+							"STEALABLE"
 						}
 					}, {
-						buffeft3
-					})
+						buffeft1
+					}, 1, 0)
+				end
+
+				for _, card in global.__iter__(cards) do
+					if _env.count > 4 then
+						local buffeft2 = global.NumericEffect(_env, "+hurtrate", {
+							"+Normal",
+							"+Normal"
+						}, this.MageHurtRateFactor)
+
+						global.ApplyHeroCardBuff(_env, global.GetOwner(_env, _env.ACTOR), card, {
+							duration = 3,
+							group = "Skill_WTXXuan_Passive",
+							timing = 2,
+							limit = 1,
+							tags = {
+								"CARDBUFF",
+								"Skill_WTXXuan_Passive",
+								"HURTRATEUP",
+								"UNDISPELLABLE",
+								"UNSTEALABLE"
+							}
+						}, {
+							buffeft2
+						})
+					else
+						local buffeft3 = global.NumericEffect(_env, "+hurtrate", {
+							"+Normal",
+							"+Normal"
+						}, this.HurtRateFactor)
+
+						global.ApplyHeroCardBuff(_env, global.GetOwner(_env, _env.ACTOR), card, {
+							duration = 3,
+							group = "Skill_WTXXuan_Passive",
+							timing = 2,
+							limit = 1,
+							tags = {
+								"CARDBUFF",
+								"Skill_WTXXuan_Passive",
+								"HURTRATEUP",
+								"UNDISPELLABLE",
+								"UNSTEALABLE"
+							}
+						}, {
+							buffeft3
+						})
+					end
 				end
 			end
 		end)

@@ -22,7 +22,7 @@ function ActivityTaskAchievementMediator:onRegister()
 	self._numNode = self._main:getChildByFullName("numNode")
 
 	if getCurrentLanguage() ~= GameLanguageType.CN then
-		self._numNode:setPositionY(477)
+		-- Nothing
 	end
 
 	self._cloneNode = self._main:getChildByFullName("cloneNode")

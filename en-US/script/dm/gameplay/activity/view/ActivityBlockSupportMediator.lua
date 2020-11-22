@@ -234,6 +234,14 @@ function ActivityBlockSupportMediator:initInfo()
 
 		blockAnim:addTo(anim):posite(0, -150)
 		blockAnim:setName("blockAnim")
+		blockAnim:addCallbackAtFrame(1, function ()
+			local fuBenNode = blockAnim:getChildByName("fuBenNode")
+			local localLanguage = getCurrentLanguage()
+
+			if localLanguage ~= GameLanguageType.CN then
+				fuBenNode:setPosition(cc.p(-33, 170))
+			end
+		end)
 
 		self._endTip.blockEndTip = Strings:get("Activity_Saga_UI_endtip_block_wxh")
 	else

@@ -705,9 +705,6 @@ all.Skill_DCJKang_Passive_EX = {
 		passive2 = global["[trigger_by]"](this, {
 			"UNIT_KICK"
 		}, passive2)
-		passive2 = global["[trigger_by]"](this, {
-			"UNIT_DIE"
-		}, passive2)
 		this.passive2 = global["[trigger_by]"](this, {
 			"UNIT_ENTER"
 		}, passive2)

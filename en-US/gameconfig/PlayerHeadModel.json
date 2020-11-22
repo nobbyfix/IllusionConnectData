@@ -779,16 +779,6 @@
         "Zoom": 1.0,
         "HeadDesc": "SpecialHead_Halloween_Desc"
     },
-    "Head_BHTZi": {
-        "Type": 1,
-        "HeadName": "BHTZi_HeadName",
-        "UnlockDesc": "BHTZi_HeadUnlock",
-        "IsHiddenHead": 1,
-        "HeroMasterId": "BHTZi",
-        "IconPath": "asset/heros/BHTZi/battlepic_BHTZi.png",
-        "Zoom": 0.5,
-        "HeadDesc": "HeroBase_Desc_BHTZi"
-    },
     "Head_HSheng": {
         "Type": 1,
         "HeadName": "HSheng_HeadName",
@@ -868,5 +858,15 @@
         "IconPath": "asset/heros/BBLMa/battlepic_BBLMa_JXing.png",
         "Zoom": 1.0,
         "HeadDesc": "HeroAwaken_BBLMa_Desc"
+    },
+    "Head_BHTZi": {
+        "Type": 1,
+        "HeadName": "BHTZi_HeadName",
+        "UnlockDesc": "BHTZi_HeadUnlock",
+        "IsHiddenHead": 0,
+        "HeroMasterId": "BHTZi",
+        "IconPath": "asset/heros/BHTZi/battlepic_BHTZi.png",
+        "Zoom": 0.5,
+        "HeadDesc": "HeroBase_Desc_BHTZi"
     }
 }

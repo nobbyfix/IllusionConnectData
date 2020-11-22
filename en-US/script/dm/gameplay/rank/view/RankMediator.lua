@@ -239,6 +239,10 @@ function RankMediator:setTopThreeInfo()
 				end
 			end
 
+			if type == RankType.kPetRace or type == RankType.kSubPetRace then
+				rankNumText = data:getScore()
+			end
+
 			rankNum:setString(rankNumText)
 		else
 			name:setString(Strings:get("RankRuleUI_4"))
