@@ -1,0 +1,852 @@
+{
+    "ClubBlockBattle_1": {
+        "BlockBattleConfig": "ClubBoss_Stage",
+        "EnemyMaster": "CBS01_Master",
+        "EnemyCard": "CardCBS01",
+        "Background": "Battle_scene_32",
+        "PointHead": "Model_MGNa",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Bubble": [
+            "Voice_MGNa_28_1_SoundDesc"
+        ],
+        "DeathBubble": [
+            "Voice_MGNa_32_SoundDesc"
+        ],
+        "BGM": [
+            "Mus_Battle_Ship",
+            "",
+            ""
+        ],
+        "Name": "HeroBase_Name_MGNa"
+    },
+    "ClubBlockBattle_3": {
+        "BlockBattleConfig": "ClubBoss_Stage",
+        "EnemyMaster": "CBS03_Master",
+        "EnemyCard": "CardCBS03",
+        "Background": "Battle_scene_32",
+        "PointHead": "Model_YSuo",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Bubble": [
+            "Voice_YSuo_28_SoundDesc"
+        ],
+        "DeathBubble": [
+            "Voice_YSuo_32_SoundDesc"
+        ],
+        "BGM": [
+            "Mus_Battle_Ship",
+            "",
+            ""
+        ],
+        "Name": "HeroBase_Name_YSuo"
+    },
+    "ClubBlockBattle_2": {
+        "BlockBattleConfig": "ClubBoss_Stage",
+        "EnemyMaster": "CBS02_Master",
+        "EnemyCard": "CardCBS02",
+        "Background": "Battle_scene_32",
+        "PointHead": "Model_MKLJLuo",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Bubble": [
+            "Voice_MKLJLuo_28_SoundDesc"
+        ],
+        "DeathBubble": [
+            "Voice_MKLJLuo_32_SoundDesc"
+        ],
+        "BGM": [
+            "Mus_Battle_Ship",
+            "",
+            ""
+        ],
+        "Name": "HeroBase_Name_MKLJLuo"
+    },
+    "ClubBlockBattle_5": {
+        "BlockBattleConfig": "ClubBoss_Stage",
+        "EnemyMaster": "CBS05_Master",
+        "EnemyCard": "CardCBS05",
+        "Background": "Battle_scene_32",
+        "PointHead": "Model_ZZBBWei",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Bubble": [
+            "Voice_ZZBBWei_28_SoundDesc"
+        ],
+        "DeathBubble": [
+            "Voice_ZZBBWei_32_SoundDesc"
+        ],
+        "BGM": [
+            "Mus_Battle_Ship",
+            "",
+            ""
+        ],
+        "Name": "HeroBase_Name_ZZBBWei"
+    },
+    "ClubBlockBattle_4": {
+        "BlockBattleConfig": "ClubBoss_Stage",
+        "EnemyMaster": "CBS04_Master",
+        "EnemyCard": "CardCBS04",
+        "Background": "Battle_scene_32",
+        "PointHead": "Model_LDu",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Bubble": [
+            "Voice_LDu_28_SoundDesc"
+        ],
+        "DeathBubble": [
+            "Voice_LDu_32_SoundDesc"
+        ],
+        "BGM": [
+            "Mus_Battle_Ship",
+            "",
+            ""
+        ],
+        "Name": "HeroBase_Name_LDu"
+    },
+    "ClubBlockBattle_6": {
+        "BlockBattleConfig": "ClubBoss_Stage",
+        "EnemyMaster": "CBS06_Master",
+        "EnemyCard": "CardCBS06",
+        "Background": "Battle_scene_32",
+        "PointHead": "Model_MGNa",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Bubble": [
+            "Voice_MGNa_28_1_SoundDesc"
+        ],
+        "DeathBubble": [
+            "Voice_MGNa_32_SoundDesc"
+        ],
+        "BGM": [
+            "Mus_Battle_Ship",
+            "",
+            ""
+        ],
+        "Name": "HeroBase_Name_MGNa"
+    },
+    "ClubBlockNormalBattle_18": {
+        "BlockBattleConfig": "ClubBoss_Stage",
+        "EnemyMaster": "ClubBoss_Master_18",
+        "EnemyCard": "ClubBlockNormalBattle_18",
+        "Background": "Battle_scene_32",
+        "PointHead": "Model_ALSi",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Bubble": [
+            "Voice_ALSi_28_SoundDesc"
+        ],
+        "DeathBubble": [
+            "Voice_ALSi_32_SoundDesc"
+        ],
+        "BGM": [
+            "Mus_Battle_Ship",
+            "",
+            ""
+        ],
+        "Name": "HeroBase_Name_ALSi"
+    },
+    "ClubBlockNormalBattle_19": {
+        "BlockBattleConfig": "ClubBoss_Stage",
+        "EnemyMaster": "ClubBoss_Master_19",
+        "EnemyCard": "ClubBlockNormalBattle_19",
+        "Background": "Battle_scene_32",
+        "PointHead": "Model_TTKMeng",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Bubble": [
+            "Voice_TTKMeng_28_SoundDesc"
+        ],
+        "DeathBubble": [
+            "Voice_TTKMeng_32_SoundDesc"
+        ],
+        "BGM": [
+            "Mus_Battle_Ship",
+            "",
+            ""
+        ],
+        "Name": "HeroBase_Name_TTKMeng"
+    },
+    "ClubBlockNormalBattle_14": {
+        "BlockBattleConfig": "ClubBoss_Stage",
+        "EnemyMaster": "ClubBoss_Master_14",
+        "EnemyCard": "ClubBlockNormalBattle_14",
+        "Background": "Battle_scene_32",
+        "PointHead": "Model_YLSBai",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Bubble": [
+            "Voice_YLSBai_28_SoundDesc"
+        ],
+        "DeathBubble": [
+            "Voice_YLSBai_32_SoundDesc"
+        ],
+        "BGM": [
+            "Mus_Battle_Ship",
+            "",
+            ""
+        ],
+        "Name": "HeroBase_Name_YLSBai"
+    },
+    "ClubBlockNormalBattle_15": {
+        "BlockBattleConfig": "ClubBoss_Stage",
+        "EnemyMaster": "ClubBoss_Master_15",
+        "EnemyCard": "ClubBlockNormalBattle_15",
+        "Background": "Battle_scene_32",
+        "PointHead": "Model_ZTXCun",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Bubble": [
+            "Voice_ZTXCun_28_SoundDesc"
+        ],
+        "DeathBubble": [
+            "Voice_ZTXCun_32_SoundDesc"
+        ],
+        "BGM": [
+            "Mus_Battle_Ship",
+            "",
+            ""
+        ],
+        "Name": "HeroBase_Name_ZTXCun"
+    },
+    "ClubBlockNormalBattle_16": {
+        "BlockBattleConfig": "ClubBoss_Stage",
+        "EnemyMaster": "ClubBoss_Master_16",
+        "EnemyCard": "ClubBlockNormalBattle_16",
+        "Background": "Battle_scene_32",
+        "PointHead": "Model_FTLEShi",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Bubble": [
+            "Voice_FTLEShi_28_SoundDesc"
+        ],
+        "DeathBubble": [
+            "Voice_FTLEShi_32_SoundDesc"
+        ],
+        "BGM": [
+            "Mus_Battle_Ship",
+            "",
+            ""
+        ],
+        "Name": "HeroBase_Name_FTLEShi"
+    },
+    "ClubBlockNormalBattle_17": {
+        "BlockBattleConfig": "ClubBoss_Stage",
+        "EnemyMaster": "ClubBoss_Master_15",
+        "EnemyCard": "ClubBlockNormalBattle_15",
+        "Background": "Battle_Scene_27",
+        "PointHead": "Model_ZTXCun",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Bubble": [
+            "Voice_ZTXCun_28_SoundDesc"
+        ],
+        "DeathBubble": [
+            "Voice_ZTXCun_32_SoundDesc"
+        ],
+        "BGM": [
+            "Mus_Battle_Research_Boss",
+            "",
+            ""
+        ],
+        "Name": "HeroBase_Name_ZTXCun"
+    },
+    "ClubBlockNormalBattle_10": {
+        "BlockBattleConfig": "ClubBoss_Stage",
+        "EnemyMaster": "ClubBoss_Master_10",
+        "EnemyCard": "ClubBlockNormalBattle_10",
+        "Background": "Battle_scene_32",
+        "PointHead": "Model_BBLMa",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Bubble": [
+            "Voice_BBLMa_28_SoundDesc"
+        ],
+        "DeathBubble": [
+            "Voice_BBLMa_32_SoundDesc"
+        ],
+        "BGM": [
+            "Mus_Battle_Ship",
+            "",
+            ""
+        ],
+        "Name": "HeroBase_Name_BBLMa"
+    },
+    "ClubBlockNormalBattle_11": {
+        "BlockBattleConfig": "ClubBoss_Stage",
+        "EnemyMaster": "ClubBoss_Master_11",
+        "EnemyCard": "ClubBlockNormalBattle_11",
+        "Background": "Battle_scene_32",
+        "PointHead": "Model_BEr",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Bubble": [
+            "Voice_BEr_28_SoundDesc"
+        ],
+        "DeathBubble": [
+            "Voice_BEr_32_SoundDesc"
+        ],
+        "BGM": [
+            "Mus_Battle_Ship",
+            "",
+            ""
+        ],
+        "Name": "HeroBase_Name_BEr"
+    },
+    "ClubBlockNormalBattle_12": {
+        "BlockBattleConfig": "ClubBoss_Stage",
+        "EnemyMaster": "ClubBoss_Master_12",
+        "EnemyCard": "ClubBlockNormalBattle_12",
+        "Background": "Battle_scene_32",
+        "PointHead": "Model_LCYShi",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Bubble": [
+            "Voice_LCYShi_28_SoundDesc"
+        ],
+        "DeathBubble": [
+            "Voice_LCYShi_32_SoundDesc"
+        ],
+        "BGM": [
+            "Mus_Battle_Ship",
+            "",
+            ""
+        ],
+        "Name": "HeroBase_Name_LCYShi"
+    },
+    "ClubBlockNormalBattle_13": {
+        "BlockBattleConfig": "ClubBoss_Stage",
+        "EnemyMaster": "ClubBoss_Master_13",
+        "EnemyCard": "ClubBlockNormalBattle_13",
+        "Background": "Battle_scene_32",
+        "PointHead": "Model_WEDe",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Bubble": [
+            "Voice_WEDe_28_SoundDesc"
+        ],
+        "DeathBubble": [
+            "Voice_WEDe_32_SoundDesc"
+        ],
+        "BGM": [
+            "Mus_Battle_Ship",
+            "",
+            ""
+        ],
+        "Name": "HeroBase_Name_WEDe"
+    },
+    "ClubBlockNormalBattle_8": {
+        "BlockBattleConfig": "ClubBoss_Stage",
+        "EnemyMaster": "ClubBoss_Master_8",
+        "EnemyCard": "ClubBlockNormalBattle_8",
+        "Background": "Battle_scene_32",
+        "PointHead": "Model_YFZZhu",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Bubble": [
+            "Voice_YFZZhu_28_SoundDesc"
+        ],
+        "DeathBubble": [
+            "Voice_YFZZhu_32_SoundDesc"
+        ],
+        "BGM": [
+            "Mus_Battle_Ship",
+            "",
+            ""
+        ],
+        "Name": "HeroBase_Name_YFZZhu"
+    },
+    "ClubBlockNormalBattle_9": {
+        "BlockBattleConfig": "ClubBoss_Stage",
+        "EnemyMaster": "ClubBoss_Master_9",
+        "EnemyCard": "ClubBlockNormalBattle_9",
+        "Background": "Battle_scene_32",
+        "PointHead": "Model_KTSJKe",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Bubble": [
+            "Voice_KTSJKe_28_SoundDesc"
+        ],
+        "DeathBubble": [
+            "Voice_KTSJKe_32_SoundDesc"
+        ],
+        "BGM": [
+            "Mus_Battle_Ship",
+            "",
+            ""
+        ],
+        "Name": "HeroBase_Name_KTSJKe"
+    },
+    "ClubBlockNormalBattle_2": {
+        "BlockBattleConfig": "ClubBoss_Stage",
+        "EnemyMaster": "ClubBoss_Master_2",
+        "EnemyCard": "ClubBlockNormalBattle_2",
+        "Background": "Battle_scene_32",
+        "PointHead": "Model_SDTZi",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Bubble": [
+            "Voice_SDTZi_28_SoundDesc"
+        ],
+        "DeathBubble": [
+            "Voice_SDTZi_32_SoundDesc"
+        ],
+        "BGM": [
+            "Mus_Battle_Ship",
+            "",
+            ""
+        ],
+        "Name": "HeroBase_Name_SDTZi"
+    },
+    "ClubBlockNormalBattle_3": {
+        "BlockBattleConfig": "ClubBoss_Stage",
+        "EnemyMaster": "ClubBoss_Master_3",
+        "EnemyCard": "ClubBlockNormalBattle_3",
+        "Background": "Battle_scene_32",
+        "PointHead": "Model_YLMGZhu",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Bubble": [
+            "Voice_YLMGZhu_28_SoundDesc"
+        ],
+        "DeathBubble": [
+            "Voice_YLMGZhu_32_SoundDesc"
+        ],
+        "BGM": [
+            "Mus_Battle_Ship",
+            "",
+            ""
+        ],
+        "Name": "HeroBase_Name_YLMGZhu"
+    },
+    "ClubBlockNormalBattle_1": {
+        "BlockBattleConfig": "ClubBoss_Stage",
+        "EnemyMaster": "ClubBoss_Master_1",
+        "EnemyCard": "ClubBlockNormalBattle_1",
+        "Background": "Battle_scene_32",
+        "PointHead": "Model_SLMen",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Bubble": [
+            "Voice_SLMen_28_SoundDesc"
+        ],
+        "DeathBubble": [
+            "Voice_SLMen_32_SoundDesc"
+        ],
+        "BGM": [
+            "Mus_Battle_Ship",
+            "",
+            ""
+        ],
+        "Name": "HeroBase_Name_SLMen"
+    },
+    "ClubBlockNormalBattle_6": {
+        "BlockBattleConfig": "ClubBoss_Stage",
+        "EnemyMaster": "ClubBoss_Master_6",
+        "EnemyCard": "ClubBlockNormalBattle_6",
+        "Background": "Battle_scene_32",
+        "PointHead": "Model_MKLJLuo",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Bubble": [
+            "Voice_MKLJLuo_28_SoundDesc"
+        ],
+        "DeathBubble": [
+            "Voice_MKLJLuo_32_SoundDesc"
+        ],
+        "BGM": [
+            "Mus_Battle_Ship",
+            "",
+            ""
+        ],
+        "Name": "HeroBase_Name_MKLJLuo"
+    },
+    "ClubBlockNormalBattle_7": {
+        "BlockBattleConfig": "ClubBoss_Stage",
+        "EnemyMaster": "ClubBoss_Master_7",
+        "EnemyCard": "ClubBlockNormalBattle_7",
+        "Background": "Battle_scene_32",
+        "PointHead": "Model_ZTXChang",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Bubble": [
+            "Voice_ZTXChang_28_SoundDesc"
+        ],
+        "DeathBubble": [
+            "Voice_ZTXChang_32_SoundDesc"
+        ],
+        "BGM": [
+            "Mus_Battle_Ship",
+            "",
+            ""
+        ],
+        "Name": "HeroBase_Name_ZTXChang"
+    },
+    "ClubBlockNormalBattle_4": {
+        "BlockBattleConfig": "ClubBoss_Stage",
+        "EnemyMaster": "ClubBoss_Master_4",
+        "EnemyCard": "ClubBlockNormalBattle_4",
+        "Background": "Battle_scene_32",
+        "PointHead": "Model_NFDDi",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Bubble": [
+            "Voice_NFDDi_28_SoundDesc"
+        ],
+        "DeathBubble": [
+            "Voice_NFDDi_32_SoundDesc"
+        ],
+        "BGM": [
+            "Mus_Battle_Ship",
+            "",
+            ""
+        ],
+        "Name": "HeroBase_Name_NFDDi"
+    },
+    "ClubBlockNormalBattle_5": {
+        "BlockBattleConfig": "ClubBoss_Stage",
+        "EnemyMaster": "ClubBoss_Master_5",
+        "EnemyCard": "ClubBlockNormalBattle_5",
+        "Background": "Battle_scene_32",
+        "PointHead": "Model_ALPo",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Bubble": [
+            "Voice_ALPo_28_SoundDesc"
+        ],
+        "DeathBubble": [
+            "Voice_ALPo_32_SoundDesc"
+        ],
+        "BGM": [
+            "Mus_Battle_Ship",
+            "",
+            ""
+        ],
+        "Name": "HeroBase_Name_ALPo"
+    },
+    "ClubBlockNormalBattle_21": {
+        "BlockBattleConfig": "ClubBoss_Stage",
+        "EnemyMaster": "ClubBoss_Master_21",
+        "EnemyCard": "ClubBlockNormalBattle_21",
+        "Background": "Battle_scene_32",
+        "PointHead": "Model_TPGZhu",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Bubble": [
+            "Voice_TPGZhu_28_SoundDesc"
+        ],
+        "DeathBubble": [
+            "Voice_TPGZhu_32_SoundDesc"
+        ],
+        "BGM": [
+            "Mus_Battle_Ship",
+            "",
+            ""
+        ],
+        "Name": "HeroBase_Name_TPGZhu"
+    },
+    "ClubBlockNormalBattle_20": {
+        "BlockBattleConfig": "ClubBoss_Stage",
+        "EnemyMaster": "ClubBoss_Master_20",
+        "EnemyCard": "ClubBlockNormalBattle_20",
+        "Background": "Battle_scene_32",
+        "PointHead": "Model_NFDDi",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Bubble": [
+            "Voice_NFDDi_28_SoundDesc"
+        ],
+        "DeathBubble": [
+            "Voice_NFDDi_32_SoundDesc"
+        ],
+        "BGM": [
+            "Mus_Battle_Ship",
+            "",
+            ""
+        ],
+        "Name": "HeroBase_Name_NFDDi"
+    },
+    "ClubBlockNormalBattle_22": {
+        "BlockBattleConfig": "ClubBoss_Stage",
+        "EnemyMaster": "ClubBoss_Master_22",
+        "EnemyCard": "ClubBlockNormalBattle_22",
+        "Background": "Battle_scene_32",
+        "PointHead": "Model_MTZMEShi",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Bubble": [
+            "Voice_MTZMEShi_28_SoundDesc"
+        ],
+        "DeathBubble": [
+            "Voice_MTZMEShi_32_SoundDesc"
+        ],
+        "BGM": [
+            "Mus_Battle_Ship",
+            "",
+            ""
+        ],
+        "Name": "HeroBase_Name_MTZMEShi"
+    },
+    "ClubBlockEliteBattle_5": {
+        "BlockBattleConfig": "ClubBoss_Stage",
+        "EnemyMaster": "CB1P05U01N08",
+        "EnemyCard": "CardCB1P05",
+        "Background": "Battle_scene_32",
+        "PointHead": "Model_YLMGZhu",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Bubble": [
+            "Voice_YLMGZhu_28_SoundDesc"
+        ],
+        "DeathBubble": [
+            "Voice_YLMGZhu_32_SoundDesc"
+        ],
+        "BGM": [
+            "Mus_Battle_Ship",
+            "",
+            ""
+        ],
+        "Name": "HeroBase_Name_YLMGZhu"
+    },
+    "ClubBlockEliteBattle_4": {
+        "BlockBattleConfig": "ClubBoss_Stage",
+        "EnemyMaster": "CB1P04U01N08",
+        "EnemyCard": "CardCB1P04",
+        "Background": "Battle_scene_32",
+        "PointHead": "Model_MGNa",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Bubble": [
+            "Voice_MGNa_28_1_SoundDesc"
+        ],
+        "DeathBubble": [
+            "Voice_MGNa_32_SoundDesc"
+        ],
+        "BGM": [
+            "Mus_Battle_Ship",
+            "",
+            ""
+        ],
+        "Name": "HeroBase_Name_MGNa"
+    },
+    "ClubBlockEliteBattle_6": {
+        "BlockBattleConfig": "ClubBoss_Stage",
+        "EnemyMaster": "CB1P06U01N08",
+        "EnemyCard": "CardCB1P06",
+        "Background": "Battle_scene_32",
+        "PointHead": "Model_XSMLi",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Bubble": [
+            "Voice_XSMLi_28_SoundDesc"
+        ],
+        "DeathBubble": [
+            "Voice_XSMLi_32_SoundDesc"
+        ],
+        "BGM": [
+            "Mus_Battle_Ship",
+            "",
+            ""
+        ],
+        "Name": "HeroBase_Name_XSMLi"
+    },
+    "ClubBlockEliteBattle_1": {
+        "BlockBattleConfig": "ClubBoss_Stage",
+        "EnemyMaster": "CB1P01U01N08",
+        "EnemyCard": "CardCB1P01",
+        "Background": "Battle_scene_32",
+        "PointHead": "Model_CZheng",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Bubble": [
+            "Voice_CZheng_28_SoundDesc"
+        ],
+        "DeathBubble": [
+            "Voice_CZheng_32_SoundDesc"
+        ],
+        "BGM": [
+            "Mus_Battle_Ship",
+            "",
+            ""
+        ],
+        "Name": "HeroBase_Name_CZheng"
+    },
+    "ClubBlockEliteBattle_3": {
+        "BlockBattleConfig": "ClubBoss_Stage",
+        "EnemyMaster": "CB1P03U01N08",
+        "EnemyCard": "CardCB1P03",
+        "Background": "Battle_scene_32",
+        "PointHead": "Model_SDTZi",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Bubble": [
+            "Voice_SDTZi_28_SoundDesc"
+        ],
+        "DeathBubble": [
+            "Voice_SDTZi_32_SoundDesc"
+        ],
+        "BGM": [
+            "Mus_Battle_Ship",
+            "",
+            ""
+        ],
+        "Name": "HeroBase_Name_SDTZi"
+    },
+    "ClubBlockEliteBattle_2": {
+        "BlockBattleConfig": "ClubBoss_Stage",
+        "EnemyMaster": "CB1P02U01N08",
+        "EnemyCard": "CardCB1P02",
+        "Background": "Battle_scene_32",
+        "PointHead": "Model_ZZBBWei",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Bubble": [
+            "Voice_ZZBBWei_28_SoundDesc"
+        ],
+        "DeathBubble": [
+            "Voice_ZZBBWei_32_SoundDesc"
+        ],
+        "BGM": [
+            "Mus_Battle_Ship",
+            "",
+            ""
+        ],
+        "Name": "HeroBase_Name_ZZBBWei"
+    }
+}

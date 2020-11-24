@@ -1,0 +1,264 @@
+{
+    "AE01": {
+        "MapName": "BlockMap_AE01_Name",
+        "Type": "ELITE",
+        "Background": "Main_Event_02",
+        "BackgroundLength": 2272,
+        "BGM": "Mus_Story_Festival",
+        "SubPoint": [
+            "AE01S01",
+            "AE01S02",
+            "AE01S03",
+            "AE01S04",
+            "AE01S05",
+            "AE01S06",
+            "AE01S07",
+            "AE01S08",
+            "AE01S09",
+            "AE01S10",
+            "AE01S11",
+            "AE01S12"
+        ],
+        "SubStoryPoint": [
+            "AS01E01",
+            "AS01E02",
+            "AS01E03",
+            "AS01E04",
+            "AS01E05"
+        ],
+        "StarBoxReward": {
+            "10": "AE01BOX01",
+            "30": "AE01BOX03",
+            "20": "AE01BOX02"
+        }
+    },
+    "AM01": {
+        "MapName": "BlockMap_AM01_Name",
+        "Type": "NORMAL",
+        "Background": "Main_Event_01",
+        "BackgroundLength": 960,
+        "BGM": "Mus_Story_Festival",
+        "SubPoint": [
+            "AM01S01",
+            "AM01S02",
+            "AM01S03",
+            "AM01S04",
+            "AM01S05",
+            "AM01S06",
+            "AM01S07",
+            "AM01S08",
+            "AM01S09",
+            "AM01S10",
+            "AM01S11",
+            "AM01S12"
+        ],
+        "SubStoryPoint": [
+            "AS01S01",
+            "AS01S02",
+            "AS01S03",
+            "AS01S04",
+            "AS01S05"
+        ],
+        "StarBoxReward": {
+            "10": "AM01BOX01",
+            "30": "AM01BOX03",
+            "20": "AM01BOX02"
+        }
+    },
+    "AWuXiuHuiE01": {
+        "MapName": "BlockMap_AWuXiuHuiE01_Name",
+        "Type": "ELITE",
+        "Background": "Main_Event_05",
+        "BackgroundLength": 960,
+        "BGM": "Mus_Active_Daochang",
+        "SubPoint": [
+            "AWuXiuHuiE01S01",
+            "AWuXiuHuiE01S02",
+            "AWuXiuHuiE01S03",
+            "AWuXiuHuiE01S04",
+            "AWuXiuHuiE01S05",
+            "AWuXiuHuiE01S06",
+            "AWuXiuHuiE01S07",
+            "AWuXiuHuiE01S08",
+            "AWuXiuHuiE01S09",
+            "AWuXiuHuiE01S10",
+            "AWuXiuHuiE01S11",
+            "AWuXiuHuiE01S12"
+        ],
+        "SubStoryPoint": [
+            "AWuXiuHuiS01E01",
+            "AWuXiuHuiS01E02",
+            "AWuXiuHuiS01E03",
+            "AWuXiuHuiS01E04"
+        ],
+        "StarBoxReward": {
+            "10": "AWuXiuHuiE01BOX01",
+            "30": "AWuXiuHuiE01BOX03",
+            "20": "AWuXiuHuiE01BOX02"
+        }
+    },
+    "AWuXiuHuiM01": {
+        "MapName": "BlockMap_AWuXiuHuiM01_Name",
+        "Type": "NORMAL",
+        "Background": "Main_Event_05",
+        "BackgroundLength": 960,
+        "BGM": "Mus_Active_Daochang",
+        "SubPoint": [
+            "AWuXiuHuiM01S01",
+            "AWuXiuHuiM01S02",
+            "AWuXiuHuiM01S03",
+            "AWuXiuHuiM01S04",
+            "AWuXiuHuiM01S05",
+            "AWuXiuHuiM01S06",
+            "AWuXiuHuiM01S07",
+            "AWuXiuHuiM01S08",
+            "AWuXiuHuiM01S09",
+            "AWuXiuHuiM01S10",
+            "AWuXiuHuiM01S11",
+            "AWuXiuHuiM01S12"
+        ],
+        "SubStoryPoint": [
+            "AWuXiuHuiS01S01",
+            "AWuXiuHuiS01S02",
+            "AWuXiuHuiS01S03",
+            "AWuXiuHuiS01S04",
+            "AWuXiuHuiS01S05"
+        ],
+        "StarBoxReward": {
+            "10": "AWuXiuHuiM01BOX01",
+            "30": "AWuXiuHuiM01BOX03",
+            "20": "AWuXiuHuiM01BOX02"
+        }
+    },
+    "AZuoHeM01": {
+        "MapName": "BlockMap_AM02_Name",
+        "Type": "NORMAL",
+        "Background": "Main_Event_03",
+        "BackgroundLength": 960,
+        "BGM": "Mus_Zuohe_1",
+        "SubPoint": [
+            "AM02S01",
+            "AM02S02",
+            "AM02S03",
+            "AM02S04",
+            "AM02S05",
+            "AM02S06",
+            "AM02S07",
+            "AM02S08",
+            "AM02S09",
+            "AM02S10",
+            "AM02S11",
+            "AM02S12"
+        ],
+        "SubStoryPoint": [
+            "AZuoHeS01S01",
+            "AZuoHeS01S02",
+            "AZuoHeS01S03",
+            "AZuoHeS01S04",
+            "AZuoHeS01S05"
+        ],
+        "StarBoxReward": {
+            "10": "AZuoHeM01BOX01",
+            "30": "AZuoHeM01BOX03",
+            "20": "AZuoHeM01BOX02"
+        }
+    },
+    "AZuoHeE01": {
+        "MapName": "BlockMap_AE02_Name",
+        "Type": "ELITE",
+        "Background": "Main_Event_03",
+        "BackgroundLength": 960,
+        "BGM": "Mus_Zuohe_1",
+        "SubPoint": [
+            "AE02S01",
+            "AE02S02",
+            "AE02S03",
+            "AE02S04",
+            "AE02S05",
+            "AE02S06",
+            "AE02S07",
+            "AE02S08",
+            "AE02S09",
+            "AE02S10",
+            "AE02S11",
+            "AE02S12"
+        ],
+        "SubStoryPoint": [
+            "AZuoHeS01E01",
+            "AZuoHeS01E02",
+            "AZuoHeS01E03",
+            "AZuoHeS01E04",
+            "AZuoHeS01E05"
+        ],
+        "StarBoxReward": {
+            "10": "AZuoHeE01BOX01",
+            "30": "AZuoHeE01BOX03",
+            "20": "AZuoHeE01BOX02"
+        }
+    },
+    "ASummerE01": {
+        "MapName": "BlockMap_ASummerE01_Name",
+        "Type": "ELITE",
+        "Background": "Bg_story_scene_13_2",
+        "BackgroundLength": 960,
+        "BGM": "Mus_Story_Summer",
+        "SubPoint": [
+            "ASummerE01S01",
+            "ASummerE01S02",
+            "ASummerE01S03",
+            "ASummerE01S04",
+            "ASummerE01S05",
+            "ASummerE01S06",
+            "ASummerE01S07",
+            "ASummerE01S08",
+            "ASummerE01S09",
+            "ASummerE01S10",
+            "ASummerE01S11",
+            "ASummerE01S12"
+        ],
+        "SubStoryPoint": [
+            "ASummerS01E01",
+            "ASummerS01E02",
+            "ASummerS01E03",
+            "ASummerS01E04"
+        ],
+        "StarBoxReward": {
+            "10": "ASummerE01BOX01",
+            "30": "ASummerE01BOX03",
+            "20": "ASummerE01BOX02"
+        }
+    },
+    "ASummerM01": {
+        "MapName": "BlockMap_ASummerM01_Name",
+        "Type": "NORMAL",
+        "Background": "Bg_story_scene_13_1",
+        "BackgroundLength": 960,
+        "BGM": "Mus_Story_Summer",
+        "SubPoint": [
+            "ASummerM01S01",
+            "ASummerM01S02",
+            "ASummerM01S03",
+            "ASummerM01S04",
+            "ASummerM01S05",
+            "ASummerM01S06",
+            "ASummerM01S07",
+            "ASummerM01S08",
+            "ASummerM01S09",
+            "ASummerM01S10",
+            "ASummerM01S11",
+            "ASummerM01S12"
+        ],
+        "SubStoryPoint": [
+            "ASummerS01S01",
+            "ASummerS01S02",
+            "ASummerS01S03",
+            "ASummerS01S04",
+            "ASummerS01S05"
+        ],
+        "StarBoxReward": {
+            "10": "ASummerM01BOX01",
+            "30": "ASummerM01BOX03",
+            "20": "ASummerM01BOX02"
+        }
+    }
+}

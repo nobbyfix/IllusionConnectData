@@ -1,0 +1,5 @@
+CUSTOM_TTF_FONT_1 = "asset/font/CustomFont_1.ttf"
+CUSTOM_TTF_FONT_2 = "asset/font/CustomFont_2.ttf"
+TTF_FONT_FZYH_R = "asset/font/CustomFont_FZYH_R.TTF"
+TTF_FONT_FZYH_M = "asset/font/CustomFont_FZYH_M.TTF"
+TTF_FONT_STORY = "asset/font/CustomFont_FZY3JW.TTF"

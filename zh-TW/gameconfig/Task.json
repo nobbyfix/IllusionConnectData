@@ -1,0 +1,4979 @@
+{
+    "Br_M12_01": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_EliteStage",
+                "params": [
+                    "E07",
+                    "E07S01"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "Br_M12_01_Reward",
+        "Name": "Br_M12_01_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 33,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&stageType=ELITE&chapterId=E07&pointId=E07S01",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M12_01",
+            "Br_M11_03"
+        ]
+    },
+    "Br_M15_01": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_EliteStage",
+                "params": [
+                    "E10",
+                    "E10S01"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "Br_M15_01_Reward",
+        "Name": "Br_M15_01_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 44,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&stageType=ELITE&chapterId=E07&pointId=E10S01",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M15_01",
+            "Br_M14_02"
+        ]
+    },
+    "Br_M15_02": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_EliteStage",
+                "params": [
+                    "E10",
+                    "E10S06"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "Br_M15_02_Reward",
+        "Name": "Br_M15_02_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 45,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&stageType=ELITE&chapterId=E07&pointId=E10S06",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M15_01",
+            "Br_M15_01"
+        ]
+    },
+    "Br_M15_03": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_EliteStage",
+                "params": [
+                    "E10",
+                    "E10S12"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "Br_M15_03_Reward",
+        "Name": "Br_M15_03_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 46,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&stageType=ELITE&chapterId=E07&pointId=E10S10",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M15_01",
+            "Br_M15_02"
+        ]
+    },
+    "Br_M15_04": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_MasterEmblemUp",
+                "factor1": [
+                    360
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "STAGE": "M04S06"
+        },
+        "Reward": "Br_M15_04_Reward",
+        "Name": "Br_M15_04_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 47,
+        "TaskIcon": "",
+        "Destination": "view://MasterMainView&viewType=push&tabType=3",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M15_01",
+            "Br_M14_04"
+        ]
+    },
+    "Br_M11_03": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_EliteStage",
+                "params": [
+                    "E06",
+                    "E06S08"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "Br_M11_03_Reward",
+        "Name": "Br_M11_03_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 31,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&stageType=ELITE&chapterId=E06&pointId=E06S08",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M11_01",
+            "Br_M11_02"
+        ]
+    },
+    "Br_M10_03": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_MasterStarUp",
+                "factor1": [
+                    5
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "STAGE": "M02S03"
+        },
+        "Reward": "Br_M10_03_Reward",
+        "Name": "Br_M10_03_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 27,
+        "TaskIcon": "",
+        "Destination": "view://MasterMainView&viewType=push&tabType=2",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M10_01",
+            "Br_M03_02"
+        ]
+    },
+    "Br_M10_01": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_EliteStage",
+                "params": [
+                    "E05",
+                    "E05S01"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "Br_M10_01_Reward",
+        "Name": "Br_M10_01_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 25,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&stageType=ELITE&chapterId=E05&pointId=E05S01",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M10_01",
+            "Br_M09_03"
+        ]
+    },
+    "Br_M07_01": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_EliteStage",
+                "params": [
+                    "E02",
+                    "E02S05"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "Br_M07_01_Reward",
+        "Name": "Br_M07_01_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 13,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&stageType=ELITE&chapterId=E02&pointId=E02S05",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M07_01",
+            "Br_M06_02"
+        ]
+    },
+    "Br_M09_01": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_EliteStage",
+                "params": [
+                    "E04",
+                    "E04S01"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "Br_M09_01_Reward",
+        "Name": "Br_M09_01_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 21,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&stageType=ELITE&chapterId=E04&pointId=E04S01",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M09_01",
+            "Br_M08_02"
+        ]
+    },
+    "Br_M10_02": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_EliteStage",
+                "params": [
+                    "E05",
+                    "E05S08"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "Br_M10_02_Reward",
+        "Name": "Br_M10_02_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 26,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&stageType=ELITE&chapterId=E05&pointId=E05S07",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M10_01",
+            "Br_M10_01"
+        ]
+    },
+    "Br_M09_03": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_EliteStage",
+                "params": [
+                    "E04",
+                    "E04S06"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "Br_M09_03_Reward",
+        "Name": "Br_M09_03_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 23,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&stageType=ELITE&chapterId=E04&pointId=E04S07",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M09_01",
+            "Br_M09_02"
+        ]
+    },
+    "Br_M09_02": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_EliteStage",
+                "params": [
+                    "E04",
+                    "E04S03"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "Br_M09_02_Reward",
+        "Name": "Br_M09_02_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 22,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&stageType=ELITE&chapterId=E04&pointId=E04S03",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M09_01",
+            "Br_M09_01"
+        ]
+    },
+    "Br_M09_04": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_GoldReduce",
+                "factor1": [
+                    1000000
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "Br_M09_04_Reward",
+        "Name": "Br_M09_04_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 24,
+        "TaskIcon": "",
+        "Destination": "",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M09_01",
+            "Br_M01_01"
+        ]
+    },
+    "Br_M10_04": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_MasterEmblemUp",
+                "factor1": [
+                    110
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "STAGE": "M04S06"
+        },
+        "Reward": "Br_M10_04_Reward",
+        "Name": "Br_M10_04_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 28,
+        "TaskIcon": "",
+        "Destination": "view://MasterMainView&viewType=push&tabType=3",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M10_01",
+            "Br_M08_05"
+        ]
+    },
+    "Br_M08_02": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_EliteStage",
+                "params": [
+                    "E03",
+                    "E03S06"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "Br_M08_02_Reward",
+        "Name": "Br_M08_02_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 17,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&stageType=ELITE&chapterId=E03&pointId=E03S06",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M08_01",
+            "Br_M08_01"
+        ]
+    },
+    "Br_M08_03": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_Gift",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "Br_M08_03_Reward",
+        "Name": "Br_M08_03_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 18,
+        "TaskIcon": "",
+        "Destination": "view://FriendMainView&viewType=popup&tabType=1",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M08_01"
+        ]
+    },
+    "Br_M12_03": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_EliteStage",
+                "params": [
+                    "E07",
+                    "E07S12"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "Br_M12_03_Reward",
+        "Name": "Br_M12_03_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 35,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&stageType=ELITE&chapterId=E07&pointId=E07S08",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M12_01",
+            "Br_M12_02"
+        ]
+    },
+    "Br_M08_01": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_EliteStage",
+                "params": [
+                    "E03",
+                    "E03S02"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "Br_M08_01_Reward",
+        "Name": "Br_M08_01_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 16,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&stageType=ELITE&chapterId=E03&pointId=E03S02",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M08_01",
+            "Br_M07_01"
+        ]
+    },
+    "Br_M11_01": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_EliteStage",
+                "params": [
+                    "E06",
+                    "E06S02"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "Br_M11_01_Reward",
+        "Name": "Br_M11_01_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 29,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&stageType=ELITE&chapterId=E06&pointId=E06S02",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M11_01",
+            "Br_M10_02"
+        ]
+    },
+    "Br_M08_04": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_QualityCollect",
+                "factor1": [
+                    40,
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "Br_M08_04_Reward",
+        "Name": "Br_M08_04_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 19,
+        "TaskIcon": "",
+        "Destination": "view://HeroStrengthQualityView&viewType=popup",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M08_01"
+        ]
+    },
+    "Br_M08_05": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_MasterEmblemUp",
+                "factor1": [
+                    50
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "STAGE": "M04S06"
+        },
+        "Reward": "Br_M08_05_Reward",
+        "Name": "Br_M08_05_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 20,
+        "TaskIcon": "",
+        "Destination": "view://MasterMainView&viewType=push&tabType=3",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M08_01",
+            "Br_M06_03"
+        ]
+    },
+    "Br_M06_01": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_EliteStage",
+                "params": [
+                    "E02",
+                    "E02S01"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "Br_M06_01_Reward",
+        "Name": "Br_M06_01_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 9,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&stageType=ELITE&chapterId=E02&pointId=E02S01",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M06_01",
+            "Br_M05_01"
+        ]
+    },
+    "Br_M06_02": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_EliteStage",
+                "params": [
+                    "E02",
+                    "E02S03"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "Br_M06_02_Reward",
+        "Name": "Br_M06_02_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 10,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&stageType=ELITE&chapterId=E02&pointId=E02S03",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M06_01",
+            "Br_M06_01"
+        ]
+    },
+    "Br_M06_03": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_MasterEmblemUp",
+                "factor1": [
+                    30
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "STAGE": "M04S06"
+        },
+        "Reward": "Br_M06_03_Reward",
+        "Name": "Br_M06_03_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 11,
+        "TaskIcon": "",
+        "Destination": "view://MasterMainView&viewType=push&tabType=3",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M06_01",
+            "Br_M05_03"
+        ]
+    },
+    "Br_M06_04": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_QualityCollect",
+                "factor1": [
+                    30,
+                    2
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "Br_M06_04_Reward",
+        "Name": "Br_M06_04_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 12,
+        "TaskIcon": "",
+        "Destination": "view://HeroStrengthQualityView&viewType=popup",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M06_01"
+        ]
+    },
+    "Br_M11_04": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_MasterEmblemUp",
+                "factor1": [
+                    130
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "STAGE": "M04S06"
+        },
+        "Reward": "Br_M11_04_Reward",
+        "Name": "Br_M11_04_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 32,
+        "TaskIcon": "",
+        "Destination": "view://MasterMainView&viewType=push&tabType=3",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M11_01",
+            "Br_M10_04"
+        ]
+    },
+    "Br_M13_01": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_EliteStage",
+                "params": [
+                    "E08",
+                    "E08S01"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "Br_M13_01_Reward",
+        "Name": "Br_M13_01_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 37,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&stageType=ELITE&chapterId=E08&pointId=E08S01",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M13_01",
+            "Br_M12_03"
+        ]
+    },
+    "Br_M05_01": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_DiamondDrawTen",
+                "factor1": [
+                    2
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "Br_M05_01_Reward",
+        "Name": "Br_M05_01_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 10,
+        "TaskIcon": "",
+        "Destination": "view://RecruitView&viewType=push&recruitType=DrawCard_Diamond_1",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M04_04"
+        ]
+    },
+    "Br_M05_03": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroRarity",
+                "factor1": [
+                    14,
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "Br_M05_03_Reward",
+        "Name": "Br_M05_03_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 12,
+        "TaskIcon": "",
+        "Destination": "view://RecruitView&viewType=push&recruitType=DrawCard_Diamond_1",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M05_02"
+        ]
+    },
+    "Br_M05_02": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_QualityCollect",
+                "factor1": [
+                    20,
+                    2
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "Br_M05_02_Reward",
+        "Name": "Br_M05_02_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 11,
+        "TaskIcon": "",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M05_01"
+        ]
+    },
+    "Br_M13_02": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_EliteStage",
+                "params": [
+                    "E08",
+                    "E08S12"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "Br_M13_02_Reward",
+        "Name": "Br_M13_02_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 38,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&stageType=ELITE&chapterId=E08&pointId=E08S08",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M13_01",
+            "Br_M13_01"
+        ]
+    },
+    "Br_M13_03": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_MasterEmblemUp",
+                "factor1": [
+                    200
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "STAGE": "M04S06"
+        },
+        "Reward": "Br_M13_03_Reward",
+        "Name": "Br_M13_03_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 39,
+        "TaskIcon": "",
+        "Destination": "view://MasterMainView&viewType=push&tabType=3",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M13_01",
+            "Br_M12_04"
+        ]
+    },
+    "Br_M12_02": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_EliteStage",
+                "params": [
+                    "E07",
+                    "E07S06"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "Br_M12_02_Reward",
+        "Name": "Br_M12_02_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 34,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&stageType=ELITE&chapterId=E07&pointId=E07S03",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M12_01",
+            "Br_M12_01"
+        ]
+    },
+    "Br_M14_03": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_MasterEmblemUp",
+                "factor1": [
+                    240
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "STAGE": "M04S06"
+        },
+        "Reward": "Br_M14_03_Reward",
+        "Name": "Br_M14_03_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 43,
+        "TaskIcon": "",
+        "Destination": "view://MasterMainView&viewType=push&tabType=3",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M14_01",
+            "Br_M13_04"
+        ]
+    },
+    "Br_M14_02": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_EliteStage",
+                "params": [
+                    "E09",
+                    "E09S12"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "Br_M14_02_Reward",
+        "Name": "Br_M14_02_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 42,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&stageType=ELITE&chapterId=E09&pointId=E09S10",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M14_01",
+            "Br_M14_01"
+        ]
+    },
+    "Br_M14_01": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_EliteStage",
+                "params": [
+                    "E09",
+                    "E09S05"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "Br_M14_01_Reward",
+        "Name": "Br_M14_01_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 41,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&stageType=ELITE&chapterId=E09&pointId=E09S03",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M14_01",
+            "Br_M13_02"
+        ]
+    },
+    "Br_M12_04": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_MasterEmblemUp",
+                "factor1": [
+                    150
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "STAGE": "M04S06"
+        },
+        "Reward": "Br_M12_04_Reward",
+        "Name": "Br_M12_04_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 36,
+        "TaskIcon": "",
+        "Destination": "view://MasterMainView&viewType=push&tabType=3",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M12_01",
+            "Br_M11_04"
+        ]
+    },
+    "Br_M03_01": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_UseExp",
+                "factor1": [
+                    20
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "Br_M03_01_Reward",
+        "Name": "Br_M03_01_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 6,
+        "TaskIcon": "",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M02_05"
+        ]
+    },
+    "Br_M11_02": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_EliteStage",
+                "params": [
+                    "E06",
+                    "E06S04"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "Br_M11_02_Reward",
+        "Name": "Br_M11_02_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 30,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&stageType=ELITE&chapterId=E06&pointId=E06S04",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M11_01",
+            "Br_M11_01"
+        ]
+    },
+    "Br_M01_01": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_DiamondDraw",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "Br_M01_01_Reward",
+        "Name": "Br_M01_01_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 1,
+        "TaskIcon": "",
+        "Destination": "view://RecruitView&viewType=push&recruitType=DrawCard_Diamond_1",
+        "AccumulateTimes": 1,
+        "Prepose": []
+    },
+    "Br_M01_02": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_DiamondDrawTen",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "Br_M01_02_Reward",
+        "Name": "Br_M01_02_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 2,
+        "TaskIcon": "",
+        "Destination": "view://RecruitView&viewType=push&recruitType=DrawCard_Diamond_1",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M01_01"
+        ]
+    },
+    "Br_M04_02": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_winArenaChallenge",
+                "factor1": [
+                    3
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "Br_M04_02_Reward",
+        "Name": "Br_M04_02_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 9,
+        "TaskIcon": "",
+        "Destination": "view://arenaView&viewType=push",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M04_01"
+        ]
+    },
+    "Br_M02_01": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_BuildingResource",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "Br_M02_01_Reward",
+        "Name": "Br_M02_01_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 3,
+        "TaskIcon": "",
+        "Destination": "view://BuildingView&viewType=push",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M01_03"
+        ]
+    },
+    "Br_M02_02": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_GoldReduce",
+                "factor1": [
+                    30000
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "Br_M02_02_Reward",
+        "Name": "Br_M02_02_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 5,
+        "TaskIcon": "",
+        "Destination": "",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M02_04"
+        ]
+    },
+    "Br_M04_01": {
+        "TaskType": 4,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_EliteStageTimes",
+                "params": [
+                    "E01",
+                    "E01S04"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "Br_M04_01_Reward",
+        "Name": "Br_M04_01_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 8,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=E01&stageType=ELITE",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M03_03"
+        ]
+    },
+    "St_M10_01": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M10",
+                    "M10S08"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M10_01_Reward",
+        "Name": "St_M10_01_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 26,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M10&pointId=M10S05&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M09_04"
+        ]
+    },
+    "St_M10_02": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M10",
+                    "M10S16"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M10_02_Reward",
+        "Name": "St_M10_02_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 27,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M10&pointId=M10S10&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M10_01"
+        ]
+    },
+    "St_M10_03": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_BuildingMainCity",
+                "params": [
+                    "MainCity"
+                ],
+                "factor1": [
+                    6
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M10_03_Reward",
+        "Name": "St_M10_03_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 28,
+        "TaskIcon": "",
+        "Destination": "view://BuildingView&viewType=push",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M10_02"
+        ]
+    },
+    "St_M10_04": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M10",
+                    "M10S24"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M10_04_Reward",
+        "Name": "St_M10_04_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 29,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M10&pointId=M10S14&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M10_03"
+        ]
+    },
+    "St_M06_02": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M06",
+                    "M06S16"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M06_02_Reward",
+        "Name": "St_M06_02_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 14,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M06&pointId=M06S08&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M06_01"
+        ]
+    },
+    "St_M06_01": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M06",
+                    "M06S08"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M06_01_Reward",
+        "Name": "St_M06_01_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 13,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M06&pointId=M06S04&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M05_03"
+        ]
+    },
+    "St_M09_03": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_BuildingMainCity",
+                "params": [
+                    "MainCity"
+                ],
+                "factor1": [
+                    5
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M09_03_Reward",
+        "Name": "St_M09_03_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 24,
+        "TaskIcon": "",
+        "Destination": "view://BuildingView&viewType=push",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M09_02"
+        ]
+    },
+    "St_M14_04": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_BuildingMainCity",
+                "params": [
+                    "MainCity"
+                ],
+                "factor1": [
+                    9
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M14_04_Reward",
+        "Name": "St_M14_04_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 44,
+        "TaskIcon": "",
+        "Destination": "view://BuildingView&viewType=push",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M14_03"
+        ]
+    },
+    "St_M14_05": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M14",
+                    "M14S32"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M14_05_Reward",
+        "Name": "St_M14_05_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 45,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M14&pointId=M14S16&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M14_04"
+        ]
+    },
+    "St_M09_01": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M09",
+                    "M09S08"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M09_01_Reward",
+        "Name": "St_M09_01_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 22,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M09&pointId=M09S04&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M08_04"
+        ]
+    },
+    "St_M13_03": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M13",
+                    "M13S18"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M13_03_Reward",
+        "Name": "St_M13_03_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 39,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M13&pointId=M13S10&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M13_02"
+        ]
+    },
+    "St_M14_02": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M14",
+                    "M14S16"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M14_02_Reward",
+        "Name": "St_M14_02_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 42,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M14&pointId=M14S08&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M14_01"
+        ]
+    },
+    "St_M14_03": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M14",
+                    "M14S24"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M14_03_Reward",
+        "Name": "St_M14_03_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 43,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M14&pointId=M14S12&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M14_02"
+        ]
+    },
+    "St_M08_01": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M08",
+                    "M08S06"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M08_01_Reward",
+        "Name": "St_M08_01_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 18,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M08&pointId=M08S03&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M07_03"
+        ]
+    },
+    "St_M16_03": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M16",
+                    "M16S24"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 80
+        },
+        "Reward": "St_M16_03_Reward",
+        "Name": "St_M16_03_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 53,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M16&pointId=M16S12&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M16_02"
+        ]
+    },
+    "St_M08_03": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M08",
+                    "M08S18"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M08_03_Reward",
+        "Name": "St_M08_03_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 20,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M08&pointId=M08S08&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M08_02"
+        ]
+    },
+    "St_M08_02": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M08",
+                    "M08S12"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M08_02_Reward",
+        "Name": "St_M08_02_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 19,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M08&pointId=M08S06&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M08_01"
+        ]
+    },
+    "St_M08_04": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M08",
+                    "M08S24"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M08_04_Reward",
+        "Name": "St_M08_04_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 21,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M08&pointId=M08S12&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M08_03"
+        ]
+    },
+    "St_M16_04": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_BuildingMainCity",
+                "params": [
+                    "MainCity"
+                ],
+                "factor1": [
+                    11
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 80
+        },
+        "Reward": "St_M16_04_Reward",
+        "Name": "St_M16_04_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 54,
+        "TaskIcon": "",
+        "Destination": "view://BuildingView&viewType=push",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M16_03"
+        ]
+    },
+    "St_M16_05": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M16",
+                    "M16S32"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 80
+        },
+        "Reward": "St_M16_05_Reward",
+        "Name": "St_M16_05_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 55,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M16&pointId=M16S16&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M16_04"
+        ]
+    },
+    "St_M16_01": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M16",
+                    "M16S08"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 80
+        },
+        "Reward": "St_M16_01_Reward",
+        "Name": "St_M16_01_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 51,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M16&pointId=M16S04&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M16_05"
+        ]
+    },
+    "St_M11_01": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M11",
+                    "M11S08"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M11_01_Reward",
+        "Name": "St_M11_01_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 30,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M11&pointId=M11S05&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M10_04"
+        ]
+    },
+    "St_M02_03": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M02",
+                    "M02S04"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M02_03_Reward",
+        "Name": "St_M02_03_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 6,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M02&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M02_02"
+        ]
+    },
+    "St_M02_02": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_UseExp",
+                "factor1": [
+                    3
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M02_02_Reward",
+        "Name": "St_M02_02_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 5,
+        "TaskIcon": "",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M02_01"
+        ]
+    },
+    "St_M02_01": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M02",
+                    "M02S02"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M02_01_Reward",
+        "Name": "St_M02_01_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 4,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M02&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M01_03"
+        ]
+    },
+    "St_M13_01": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M13",
+                    "M13S09"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M13_01_Reward",
+        "Name": "St_M13_01_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 37,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M13&pointId=M13S05&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M12_04"
+        ]
+    },
+    "St_M02_05": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M02",
+                    "M02S06"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M02_05_Reward",
+        "Name": "St_M02_05_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 8,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M02&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M02_04"
+        ]
+    },
+    "St_M02_04": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_Getheroeslevel",
+                "factor1": [
+                    5,
+                    3
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M02_04_Reward",
+        "Name": "St_M02_04_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 7,
+        "TaskIcon": "",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M02_03"
+        ]
+    },
+    "St_M12_04": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M12",
+                    "M12S24"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M12_04_Reward",
+        "Name": "St_M12_04_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 36,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M12&pointId=M12S14&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M12_03"
+        ]
+    },
+    "St_M12_02": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M12",
+                    "M12S08"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M12_02_Reward",
+        "Name": "St_M12_02_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 34,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M12&pointId=M12S05&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M12_01"
+        ]
+    },
+    "St_M12_03": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M12",
+                    "M12S16"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M12_03_Reward",
+        "Name": "St_M12_03_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 35,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M12&pointId=M12S10&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M12_02"
+        ]
+    },
+    "St_M16_02": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M16",
+                    "M16S16"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 80
+        },
+        "Reward": "St_M16_02_Reward",
+        "Name": "St_M16_02_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 52,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M16&pointId=M16S08&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M16_01"
+        ]
+    },
+    "St_M12_01": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_BuildingMainCity",
+                "params": [
+                    "MainCity"
+                ],
+                "factor1": [
+                    7
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M12_01_Reward",
+        "Name": "St_M12_01_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 33,
+        "TaskIcon": "",
+        "Destination": "view://BuildingView&viewType=push",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M11_03"
+        ]
+    },
+    "St_M15_02": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M15",
+                    "M15S16"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M15_02_Reward",
+        "Name": "St_M15_02_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 47,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M15&pointId=M15S08&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M15_01"
+        ]
+    },
+    "St_M09_02": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M09",
+                    "M09S16"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M09_02_Reward",
+        "Name": "St_M09_02_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 23,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M09&pointId=M09S08&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M09_01"
+        ]
+    },
+    "St_M07_01": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M07",
+                    "M07S10"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M07_01_Reward",
+        "Name": "St_M07_01_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 15,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M07&pointId=M07S05&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M06_02"
+        ]
+    },
+    "St_M07_02": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_BuildingMainCity",
+                "params": [
+                    "MainCity"
+                ],
+                "factor1": [
+                    4
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M07_02_Reward",
+        "Name": "St_M07_02_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 16,
+        "TaskIcon": "",
+        "Destination": "view://BuildingView&viewType=push",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M07_01"
+        ]
+    },
+    "St_M07_03": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M07",
+                    "M07S20"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M07_03_Reward",
+        "Name": "St_M07_03_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 17,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M07&pointId=M07S10&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M07_02"
+        ]
+    },
+    "St_M11_03": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M11",
+                    "M11S24"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M11_03_Reward",
+        "Name": "St_M11_03_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 32,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M11&pointId=M11S14&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M11_02"
+        ]
+    },
+    "St_M11_02": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M11",
+                    "M11S16"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M11_02_Reward",
+        "Name": "St_M11_02_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 31,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M11&pointId=M11S10&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M11_01"
+        ]
+    },
+    "St_M09_04": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M09",
+                    "M09S24"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M09_04_Reward",
+        "Name": "St_M09_04_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 25,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M09&pointId=M09S12&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M09_03"
+        ]
+    },
+    "St_M13_02": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_BuildingMainCity",
+                "params": [
+                    "MainCity"
+                ],
+                "factor1": [
+                    8
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M13_02_Reward",
+        "Name": "St_M13_02_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 38,
+        "TaskIcon": "",
+        "Destination": "view://BuildingView&viewType=push",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M13_01"
+        ]
+    },
+    "St_M15_05": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M15",
+                    "M15S32"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M15_05_Reward",
+        "Name": "St_M15_05_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 50,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M15&pointId=M15S16&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M15_04"
+        ]
+    },
+    "St_M13_04": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M13",
+                    "M13S28"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M13_04_Reward",
+        "Name": "St_M13_04_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 40,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M13&pointId=M13S14&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M13_03"
+        ]
+    },
+    "St_M03_01": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M03",
+                    "M03S04"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M03_01_Reward",
+        "Name": "St_M03_01_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 9,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M03&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M02_05"
+        ]
+    },
+    "St_M03_02": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_Getheroeslevel",
+                "factor1": [
+                    15,
+                    3
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M03_02_Reward",
+        "Name": "St_M03_02_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 10,
+        "TaskIcon": "",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M03_01"
+        ]
+    },
+    "St_M03_03": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M03",
+                    "M03S08"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M03_03_Reward",
+        "Name": "St_M03_03_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 11,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M03&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M03_02"
+        ]
+    },
+    "St_M01_02": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M01",
+                    "M01S04"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M01_02_Reward",
+        "Name": "St_M01_02_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 2,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M01&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M01_01"
+        ]
+    },
+    "St_M01_03": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_BuildingMainCity",
+                "params": [
+                    "MainCity"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M01_03_Reward",
+        "Name": "St_M01_03_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 3,
+        "TaskIcon": "",
+        "Destination": "view://BuildingView&viewType=push",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M01_02"
+        ]
+    },
+    "St_M01_01": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M01",
+                    "M01S02"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M01_01_Reward",
+        "Name": "St_M01_01_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 1,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M01&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": []
+    },
+    "St_M15_03": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M15",
+                    "M15S24"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M15_03_Reward",
+        "Name": "St_M15_03_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 48,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M15&pointId=M15S12&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M15_02"
+        ]
+    },
+    "St_M04_04": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M04",
+                    "M04S12"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M04_04_Reward",
+        "Name": "St_M04_04_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 15,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M04&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M04_03"
+        ]
+    },
+    "St_M15_01": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M15",
+                    "M15S08"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M15_01_Reward",
+        "Name": "St_M15_01_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 46,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M15&pointId=M15S04&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M14_05"
+        ]
+    },
+    "St_M15_04": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_BuildingMainCity",
+                "params": [
+                    "MainCity"
+                ],
+                "factor1": [
+                    10
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M15_04_Reward",
+        "Name": "St_M15_04_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 49,
+        "TaskIcon": "",
+        "Destination": "view://BuildingView&viewType=push",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M15_03"
+        ]
+    },
+    "St_M04_01": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_QualityCollect",
+                "factor1": [
+                    20,
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M04_01_Reward",
+        "Name": "St_M04_01_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 12,
+        "TaskIcon": "",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M03_03"
+        ]
+    },
+    "St_M04_03": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_Getheroeslevel",
+                "factor1": [
+                    20,
+                    6
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M04_03_Reward",
+        "Name": "St_M04_03_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 14,
+        "TaskIcon": "",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M04_02"
+        ]
+    },
+    "St_M04_02": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M04",
+                    "M04S06"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M04_02_Reward",
+        "Name": "St_M04_02_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 13,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M04&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M04_01"
+        ]
+    },
+    "St_M05_02": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M05",
+                    "M05S08"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M05_02_Reward",
+        "Name": "St_M05_02_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 17,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M05&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M05_01"
+        ]
+    },
+    "St_M05_03": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M05",
+                    "M05S16"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M05_03_Reward",
+        "Name": "St_M05_03_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 18,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M05&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M05_02"
+        ]
+    },
+    "St_M05_01": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_attendTargetResStage",
+                "params": [
+                    "EXP"
+                ],
+                "factor1": [
+                    2
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M05_01_Reward",
+        "Name": "St_M05_01_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 16,
+        "TaskIcon": "",
+        "Destination": "view://SpStageMainView&viewType=push",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M04_04"
+        ]
+    },
+    "St_M14_01": {
+        "TaskType": 5,
+        "IsDailyRestart": 0,
+        "AfterFinish": 1,
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "params": [
+                    "M14",
+                    "M14S08"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "Reward": "St_M14_01_Reward",
+        "Name": "St_M14_01_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 41,
+        "TaskIcon": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M14&pointId=M14S04&stageType=NORMAL",
+        "AccumulateTimes": 1,
+        "Prepose": [
+            "St_M13_04"
+        ]
+    },
+    "Daily_Task_4": {
+        "TaskType": 1,
+        "IsDailyRestart": 1,
+        "AfterFinish": 0,
+        "Condition": [
+            {
+                "conditionType": "Condi_ResourceStage",
+                "factor1": [
+                    2
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "STAGE": "M04S02"
+        },
+        "Reward": "Daily_Task_4_Reward",
+        "Name": "Daily_Task_4_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 4,
+        "TaskIcon": "201201",
+        "Destination": "view://SpStageMainView&viewType=push&spType=exp",
+        "AccumulateTimes": 0,
+        "Prepose": ""
+    },
+    "Daily_Task_5": {
+        "TaskType": 1,
+        "IsDailyRestart": 1,
+        "AfterFinish": 0,
+        "Condition": [
+            {
+                "conditionType": "Condi_WinEliteStage",
+                "factor1": [
+                    3
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "STAGE": "M04S02"
+        },
+        "Reward": "Daily_Task_5_Reward",
+        "Name": "Daily_Task_5_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 5,
+        "TaskIcon": "201201",
+        "Destination": "view://CommonStageMainView&viewType=push&stageType=ELITE",
+        "AccumulateTimes": 0,
+        "Prepose": ""
+    },
+    "Daily_Task_6": {
+        "TaskType": 1,
+        "IsDailyRestart": 1,
+        "AfterFinish": 0,
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroGift",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "STAGE": "M04S02"
+        },
+        "Reward": "Daily_Task_6_Reward",
+        "Name": "Daily_Task_6_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 6,
+        "TaskIcon": "201201",
+        "Destination": "view://GalleryMainView&viewType=push&tabType=1",
+        "AccumulateTimes": 0,
+        "Prepose": ""
+    },
+    "Daily_Task_7": {
+        "TaskType": 1,
+        "IsDailyRestart": 1,
+        "AfterFinish": 0,
+        "Condition": [
+            {
+                "conditionType": "Condi_MapFightWin",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "STAGE": "M04S02"
+        },
+        "Reward": "Daily_Task_7_Reward",
+        "Name": "Daily_Task_7_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 7,
+        "TaskIcon": "201201",
+        "Destination": "view://ExploreView&viewType=push",
+        "AccumulateTimes": 0,
+        "Prepose": ""
+    },
+    "Daily_Task_1": {
+        "TaskType": 1,
+        "IsDailyRestart": 1,
+        "AfterFinish": 0,
+        "Condition": [
+            {
+                "conditionType": "Condi_Login",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "STAGE": "M04S02"
+        },
+        "Reward": "Daily_Task_1_Reward",
+        "Name": "Daily_Task_1_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 1,
+        "TaskIcon": "201201",
+        "Destination": "",
+        "AccumulateTimes": 0,
+        "Prepose": ""
+    },
+    "Daily_Task_2": {
+        "TaskType": 1,
+        "IsDailyRestart": 1,
+        "AfterFinish": 0,
+        "Condition": [
+            {
+                "conditionType": "Condi_BuildingResource",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "STAGE": "M04S02"
+        },
+        "Reward": "Daily_Task_2_Reward",
+        "Name": "Daily_Task_2_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 2,
+        "TaskIcon": "201201",
+        "Destination": "view://BuildingView&viewType=push",
+        "AccumulateTimes": 0,
+        "Prepose": ""
+    },
+    "Daily_Task_3": {
+        "TaskType": 1,
+        "IsDailyRestart": 1,
+        "AfterFinish": 0,
+        "Condition": [
+            {
+                "conditionType": "Condi_Gift",
+                "factor1": [
+                    3
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "STAGE": "M04S02"
+        },
+        "Reward": "Daily_Task_3_Reward",
+        "Name": "Daily_Task_3_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 3,
+        "TaskIcon": "201201",
+        "Destination": "view://FriendMainView&viewType=popup&tabType=1",
+        "AccumulateTimes": 0,
+        "Prepose": ""
+    },
+    "Daily_Task_8": {
+        "TaskType": 1,
+        "IsDailyRestart": 1,
+        "AfterFinish": 0,
+        "Condition": [
+            {
+                "conditionType": "Condi_winArenaChallenge",
+                "factor1": [
+                    2
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "STAGE": "M04S02"
+        },
+        "Reward": "Daily_Task_8_Reward",
+        "Name": "Daily_Task_8_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 8,
+        "TaskIcon": "201201",
+        "Destination": "view://arenaView&viewType=push",
+        "AccumulateTimes": 0,
+        "Prepose": ""
+    },
+    "Daily_Task_9": {
+        "TaskType": 1,
+        "IsDailyRestart": 1,
+        "AfterFinish": 0,
+        "Condition": [
+            {
+                "conditionType": "Condi_UseExp",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "STAGE": "M04S02"
+        },
+        "Reward": "Daily_Task_9_Reward",
+        "Name": "Daily_Task_9_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 9,
+        "TaskIcon": "201201",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "AccumulateTimes": 0,
+        "Prepose": ""
+    },
+    "Daily_Task_10": {
+        "TaskType": 1,
+        "IsDailyRestart": 1,
+        "AfterFinish": 0,
+        "Condition": [
+            {
+                "conditionType": "Condi_EquipIntensify",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "VIP": 0,
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "STAGE": "M04S02"
+        },
+        "Reward": "Daily_Task_10_Reward",
+        "Name": "Daily_Task_10_Name",
+        "Desc": "",
+        "IsStartTask": 1,
+        "OrderNum": 10,
+        "TaskIcon": "201201",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "AccumulateTimes": 0,
+        "Prepose": ""
+    },
+    "Map_FirstTask_Egypt_4": {
+        "TaskType": 7,
+        "IsDailyRestart": 0,
+        "AfterFinish": 0,
+        "Condition": [
+            {
+                "conditionType": "Condi_ExploreMap",
+                "params": [
+                    "Egypt_4"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Reward": "Egypt_4_First_Reward",
+        "Name": "",
+        "Desc": "Map_FirstTask_Egypt_4_Desc",
+        "IsStartTask": 1,
+        "OrderNum": 1,
+        "TaskIcon": "",
+        "Destination": "",
+        "AccumulateTimes": 0,
+        "Prepose": ""
+    },
+    "Map_FirstTask_Egypt_2": {
+        "TaskType": 7,
+        "IsDailyRestart": 0,
+        "AfterFinish": 0,
+        "Condition": [
+            {
+                "conditionType": "Condi_ExploreMap",
+                "params": [
+                    "Egypt_2"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Reward": "Egypt_2_First_Reward",
+        "Name": "",
+        "Desc": "Map_FirstTask_Egypt_2_Desc",
+        "IsStartTask": 1,
+        "OrderNum": 1,
+        "TaskIcon": "",
+        "Destination": "",
+        "AccumulateTimes": 0,
+        "Prepose": ""
+    },
+    "Map_FirstTask_Egypt_3": {
+        "TaskType": 7,
+        "IsDailyRestart": 0,
+        "AfterFinish": 0,
+        "Condition": [
+            {
+                "conditionType": "Condi_ExploreMap",
+                "params": [
+                    "Egypt_3"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Reward": "Egypt_3_First_Reward",
+        "Name": "",
+        "Desc": "Map_FirstTask_Egypt_3_Desc",
+        "IsStartTask": 1,
+        "OrderNum": 1,
+        "TaskIcon": "",
+        "Destination": "",
+        "AccumulateTimes": 0,
+        "Prepose": ""
+    },
+    "Map_FirstTask_Egypt_1": {
+        "TaskType": 7,
+        "IsDailyRestart": 0,
+        "AfterFinish": 0,
+        "Condition": [
+            {
+                "conditionType": "Condi_ExploreMap",
+                "params": [
+                    "Egypt_1"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Reward": "Egypt_1_First_Reward",
+        "Name": "",
+        "Desc": "Map_FirstTask_Egypt_1_Desc",
+        "IsStartTask": 1,
+        "OrderNum": 1,
+        "TaskIcon": "",
+        "Destination": "",
+        "AccumulateTimes": 0,
+        "Prepose": ""
+    },
+    "Map_FirstTask_Japan_3": {
+        "TaskType": 7,
+        "IsDailyRestart": 0,
+        "AfterFinish": 0,
+        "Condition": [
+            {
+                "conditionType": "Condi_ExploreMap",
+                "params": [
+                    "Japan_3"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Reward": "Japan_3_First_Reward",
+        "Name": "",
+        "Desc": "Map_FirstTask_Japan_3_Desc",
+        "IsStartTask": 1,
+        "OrderNum": 1,
+        "TaskIcon": "",
+        "Destination": "",
+        "AccumulateTimes": 0,
+        "Prepose": ""
+    },
+    "Map_FirstTask_Japan_2": {
+        "TaskType": 7,
+        "IsDailyRestart": 0,
+        "AfterFinish": 0,
+        "Condition": [
+            {
+                "conditionType": "Condi_ExploreMap",
+                "params": [
+                    "Japan_2"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Reward": "Japan_2_First_Reward",
+        "Name": "",
+        "Desc": "Map_FirstTask_Japan_2_Desc",
+        "IsStartTask": 1,
+        "OrderNum": 1,
+        "TaskIcon": "",
+        "Destination": "",
+        "AccumulateTimes": 0,
+        "Prepose": ""
+    },
+    "Map_FirstTask_Japan_1": {
+        "TaskType": 7,
+        "IsDailyRestart": 0,
+        "AfterFinish": 0,
+        "Condition": [
+            {
+                "conditionType": "Condi_ExploreMap",
+                "params": [
+                    "Japan_1"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Reward": "Japan_1_First_Reward",
+        "Name": "",
+        "Desc": "Map_FirstTask_Japan_1_Desc",
+        "IsStartTask": 1,
+        "OrderNum": 1,
+        "TaskIcon": "",
+        "Destination": "",
+        "AccumulateTimes": 0,
+        "Prepose": ""
+    },
+    "Map_FirstTask_Japan_4": {
+        "TaskType": 7,
+        "IsDailyRestart": 0,
+        "AfterFinish": 0,
+        "Condition": [
+            {
+                "conditionType": "Condi_ExploreMap",
+                "params": [
+                    "Japan_4"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Reward": "Japan_4_First_Reward",
+        "Name": "",
+        "Desc": "Map_FirstTask_Japan_4_Desc",
+        "IsStartTask": 1,
+        "OrderNum": 1,
+        "TaskIcon": "",
+        "Destination": "",
+        "AccumulateTimes": 0,
+        "Prepose": ""
+    },
+    "Map_PoinMainTask_Alice_3": {
+        "TaskType": 6,
+        "IsDailyRestart": 0,
+        "AfterFinish": 0,
+        "Condition": [
+            {
+                "conditionType": "Condi_ExploreMapCase",
+                "params": [
+                    "Alice_3",
+                    "Alice_3_StoryBoss3",
+                    "Alice_3_StoryBoss3_Case1"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Reward": "Alice_3_Reward",
+        "Name": "",
+        "Desc": "Map_PoinMainTask_Alice_3_Desc",
+        "IsStartTask": 1,
+        "OrderNum": 1,
+        "TaskIcon": "",
+        "Destination": "",
+        "AccumulateTimes": 0,
+        "Prepose": ""
+    },
+    "Map_PoinMainTask_Alice_2": {
+        "TaskType": 6,
+        "IsDailyRestart": 0,
+        "AfterFinish": 0,
+        "Condition": [
+            {
+                "conditionType": "Condi_ExploreMapCase",
+                "params": [
+                    "Alice_2",
+                    "Alice_2_StoryBoss2",
+                    "Alice_2_StoryBoss2_Case1"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Reward": "Alice_2_Reward",
+        "Name": "",
+        "Desc": "Map_PoinMainTask_Alice_2_Desc",
+        "IsStartTask": 1,
+        "OrderNum": 1,
+        "TaskIcon": "",
+        "Destination": "",
+        "AccumulateTimes": 0,
+        "Prepose": ""
+    },
+    "Map_PoinMainTask_Alice_1": {
+        "TaskType": 6,
+        "IsDailyRestart": 0,
+        "AfterFinish": 0,
+        "Condition": [
+            {
+                "conditionType": "Condi_ExploreMapCase",
+                "params": [
+                    "Alice_1",
+                    "Alice_1_StoryBoss2",
+                    "Alice_1_StoryBoss2_Case1"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Reward": "Alice_1_Reward",
+        "Name": "",
+        "Desc": "Map_PoinMainTask_Alice_1_Desc",
+        "IsStartTask": 1,
+        "OrderNum": 1,
+        "TaskIcon": "",
+        "Destination": "",
+        "AccumulateTimes": 0,
+        "Prepose": ""
+    },
+    "Map_PoinMainTask_Alice_4": {
+        "TaskType": 6,
+        "IsDailyRestart": 0,
+        "AfterFinish": 0,
+        "Condition": [
+            {
+                "conditionType": "Condi_ExploreMapCase",
+                "params": [
+                    "Alice_4",
+                    "Alice_4_StoryBoss2",
+                    "Alice_4_StoryBoss2_Case1"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Reward": "Alice_4_Reward",
+        "Name": "",
+        "Desc": "Map_PoinMainTask_Alice_4_Desc",
+        "IsStartTask": 1,
+        "OrderNum": 1,
+        "TaskIcon": "",
+        "Destination": "",
+        "AccumulateTimes": 0,
+        "Prepose": ""
+    },
+    "Map_FirstTask_China_2": {
+        "TaskType": 7,
+        "IsDailyRestart": 0,
+        "AfterFinish": 0,
+        "Condition": [
+            {
+                "conditionType": "Condi_ExploreMap",
+                "params": [
+                    "China_2"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Reward": "",
+        "Name": "",
+        "Desc": "Map_FirstTask_China_2_Desc",
+        "IsStartTask": 1,
+        "OrderNum": 1,
+        "TaskIcon": "",
+        "Destination": "",
+        "AccumulateTimes": 0,
+        "Prepose": ""
+    },
+    "Map_FirstTask_China_3": {
+        "TaskType": 7,
+        "IsDailyRestart": 0,
+        "AfterFinish": 0,
+        "Condition": [
+            {
+                "conditionType": "Condi_ExploreMap",
+                "params": [
+                    "China_3"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Reward": "",
+        "Name": "",
+        "Desc": "Map_FirstTask_China_3_Desc",
+        "IsStartTask": 1,
+        "OrderNum": 1,
+        "TaskIcon": "",
+        "Destination": "",
+        "AccumulateTimes": 0,
+        "Prepose": ""
+    },
+    "Map_PoinMainTask_Egypt_4": {
+        "TaskType": 6,
+        "IsDailyRestart": 0,
+        "AfterFinish": 0,
+        "Condition": [
+            {
+                "conditionType": "Condi_ExploreMapCase",
+                "params": [
+                    "Egypt_4",
+                    "Egypt_4_StoryBoss2",
+                    "Egypt_4_StoryBoss2_Case1"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Reward": "Egypt_4_Reward",
+        "Name": "",
+        "Desc": "Map_PoinMainTask_Egypt_4_Desc",
+        "IsStartTask": 1,
+        "OrderNum": 1,
+        "TaskIcon": "",
+        "Destination": "",
+        "AccumulateTimes": 0,
+        "Prepose": ""
+    },
+    "Map_FirstTask_China_1": {
+        "TaskType": 7,
+        "IsDailyRestart": 0,
+        "AfterFinish": 0,
+        "Condition": [
+            {
+                "conditionType": "Condi_ExploreMap",
+                "params": [
+                    "China_1"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Reward": "",
+        "Name": "",
+        "Desc": "Map_FirstTask_China_1_Desc",
+        "IsStartTask": 1,
+        "OrderNum": 1,
+        "TaskIcon": "",
+        "Destination": "",
+        "AccumulateTimes": 0,
+        "Prepose": ""
+    },
+    "Map_PoinMainTask_Egypt_2": {
+        "TaskType": 6,
+        "IsDailyRestart": 0,
+        "AfterFinish": 0,
+        "Condition": [
+            {
+                "conditionType": "Condi_ExploreMapCase",
+                "params": [
+                    "Egypt_2",
+                    "Egypt_2_Boss1",
+                    "Egypt_2_Boss1_Case1"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Reward": "Egypt_2_Reward",
+        "Name": "",
+        "Desc": "Map_PoinMainTask_Egypt_2_Desc",
+        "IsStartTask": 1,
+        "OrderNum": 1,
+        "TaskIcon": "",
+        "Destination": "",
+        "AccumulateTimes": 0,
+        "Prepose": ""
+    },
+    "Map_PoinMainTask_Egypt_3": {
+        "TaskType": 6,
+        "IsDailyRestart": 0,
+        "AfterFinish": 0,
+        "Condition": [
+            {
+                "conditionType": "Condi_ExploreMapCase",
+                "params": [
+                    "Egypt_3",
+                    "Egypt_3_StoryBoss1",
+                    "Egypt_3_StoryBoss1_Case1"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Reward": "Egypt_3_Reward",
+        "Name": "",
+        "Desc": "Map_PoinMainTask_Egypt_3_Desc",
+        "IsStartTask": 1,
+        "OrderNum": 1,
+        "TaskIcon": "",
+        "Destination": "",
+        "AccumulateTimes": 0,
+        "Prepose": ""
+    },
+    "Map_FirstTask_China_4": {
+        "TaskType": 7,
+        "IsDailyRestart": 0,
+        "AfterFinish": 0,
+        "Condition": [
+            {
+                "conditionType": "Condi_ExploreMap",
+                "params": [
+                    "China_4"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Reward": "",
+        "Name": "",
+        "Desc": "Map_FirstTask_China_4_Desc",
+        "IsStartTask": 1,
+        "OrderNum": 1,
+        "TaskIcon": "",
+        "Destination": "",
+        "AccumulateTimes": 0,
+        "Prepose": ""
+    },
+    "Map_PoinMainTask_Egypt_1": {
+        "TaskType": 6,
+        "IsDailyRestart": 0,
+        "AfterFinish": 0,
+        "Condition": [
+            {
+                "conditionType": "Condi_ExploreMapCase",
+                "params": [
+                    "Egypt_1",
+                    "Egypt_1_HaTuo1",
+                    "Egypt_1_HaTuo1_Case1"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Reward": "Egypt_1_Reward",
+        "Name": "",
+        "Desc": "Map_PoinMainTask_Egypt_1_Desc",
+        "IsStartTask": 1,
+        "OrderNum": 1,
+        "TaskIcon": "",
+        "Destination": "",
+        "AccumulateTimes": 0,
+        "Prepose": ""
+    },
+    "Map_FirstTask_Alice_3": {
+        "TaskType": 7,
+        "IsDailyRestart": 0,
+        "AfterFinish": 0,
+        "Condition": [
+            {
+                "conditionType": "Condi_ExploreMap",
+                "params": [
+                    "Alice_3"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Reward": "Alice_3_First_Reward",
+        "Name": "",
+        "Desc": "Map_FirstTask_Alice_3_Desc",
+        "IsStartTask": 1,
+        "OrderNum": 1,
+        "TaskIcon": "",
+        "Destination": "",
+        "AccumulateTimes": 0,
+        "Prepose": ""
+    },
+    "Map_FirstTask_Alice_2": {
+        "TaskType": 7,
+        "IsDailyRestart": 0,
+        "AfterFinish": 0,
+        "Condition": [
+            {
+                "conditionType": "Condi_ExploreMap",
+                "params": [
+                    "Alice_2"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Reward": "Alice_2_First_Reward",
+        "Name": "",
+        "Desc": "Map_FirstTask_Alice_2_Desc",
+        "IsStartTask": 1,
+        "OrderNum": 1,
+        "TaskIcon": "",
+        "Destination": "",
+        "AccumulateTimes": 0,
+        "Prepose": ""
+    },
+    "Map_FirstTask_Alice_1": {
+        "TaskType": 7,
+        "IsDailyRestart": 0,
+        "AfterFinish": 0,
+        "Condition": [
+            {
+                "conditionType": "Condi_ExploreMap",
+                "params": [
+                    "Alice_1"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Reward": "Alice_1_First_Reward",
+        "Name": "",
+        "Desc": "Map_FirstTask_Alice_1_Desc",
+        "IsStartTask": 1,
+        "OrderNum": 1,
+        "TaskIcon": "",
+        "Destination": "",
+        "AccumulateTimes": 0,
+        "Prepose": ""
+    },
+    "Map_FirstTask_Alice_4": {
+        "TaskType": 7,
+        "IsDailyRestart": 0,
+        "AfterFinish": 0,
+        "Condition": [
+            {
+                "conditionType": "Condi_ExploreMap",
+                "params": [
+                    "Alice_4"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Reward": "Alice_4_First_Reward",
+        "Name": "",
+        "Desc": "Map_FirstTask_Alice_4_Desc",
+        "IsStartTask": 1,
+        "OrderNum": 1,
+        "TaskIcon": "",
+        "Destination": "",
+        "AccumulateTimes": 0,
+        "Prepose": ""
+    },
+    "Map_PoinMainTask_Japan_3": {
+        "TaskType": 6,
+        "IsDailyRestart": 0,
+        "AfterFinish": 0,
+        "Condition": [
+            {
+                "conditionType": "Condi_ExploreMapCase",
+                "params": [
+                    "Japan_3",
+                    "Japan_3_StoryBoss4",
+                    "Japan_3_StoryBoss4_Case1"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Reward": "Japan_3_Reward",
+        "Name": "",
+        "Desc": "Map_PoinMainTask_Japan_3_Desc",
+        "IsStartTask": 1,
+        "OrderNum": 1,
+        "TaskIcon": "",
+        "Destination": "",
+        "AccumulateTimes": 0,
+        "Prepose": ""
+    },
+    "Map_PoinMainTask_Japan_2": {
+        "TaskType": 6,
+        "IsDailyRestart": 0,
+        "AfterFinish": 0,
+        "Condition": [
+            {
+                "conditionType": "Condi_ExploreMapCase",
+                "params": [
+                    "Japan_2",
+                    "Japan_2_StoryBoss2",
+                    "Japan_2_StoryBoss2_Case1"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Reward": "Japan_2_Reward",
+        "Name": "",
+        "Desc": "Map_PoinMainTask_Japan_2_Desc",
+        "IsStartTask": 1,
+        "OrderNum": 1,
+        "TaskIcon": "",
+        "Destination": "",
+        "AccumulateTimes": 0,
+        "Prepose": ""
+    },
+    "Map_PoinMainTask_Japan_1": {
+        "TaskType": 6,
+        "IsDailyRestart": 0,
+        "AfterFinish": 0,
+        "Condition": [
+            {
+                "conditionType": "Condi_ExploreMapCase",
+                "params": [
+                    "Japan_1",
+                    "Japan_1_BossA1",
+                    "Japan_1_BossA1_Case2"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Reward": "Japan_1_Reward",
+        "Name": "",
+        "Desc": "Map_PoinMainTask_Japan_1_Desc",
+        "IsStartTask": 1,
+        "OrderNum": 1,
+        "TaskIcon": "",
+        "Destination": "",
+        "AccumulateTimes": 0,
+        "Prepose": ""
+    },
+    "Map_PoinMainTask_China_1": {
+        "TaskType": 6,
+        "IsDailyRestart": 0,
+        "AfterFinish": 0,
+        "Condition": [
+            {
+                "conditionType": "Condi_ExploreMapCase",
+                "params": [
+                    "China_1",
+                    "China_1_BossA1",
+                    "China_1_BossA1_Case1"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Reward": "",
+        "Name": "",
+        "Desc": "Map_PoinMainTask_China_1_Desc",
+        "IsStartTask": 1,
+        "OrderNum": 1,
+        "TaskIcon": "",
+        "Destination": "",
+        "AccumulateTimes": 0,
+        "Prepose": ""
+    },
+    "Map_PoinMainTask_Japan_4": {
+        "TaskType": 6,
+        "IsDailyRestart": 0,
+        "AfterFinish": 0,
+        "Condition": [
+            {
+                "conditionType": "Condi_ExploreMapCase",
+                "params": [
+                    "Japan_4",
+                    "Japan_4_StoryBossA3",
+                    "Japan_4_StoryBossA3_Case1"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Reward": "Japan_4_Reward",
+        "Name": "",
+        "Desc": "Map_PoinMainTask_Japan_4_Desc",
+        "IsStartTask": 1,
+        "OrderNum": 1,
+        "TaskIcon": "",
+        "Destination": "",
+        "AccumulateTimes": 0,
+        "Prepose": ""
+    }
+}

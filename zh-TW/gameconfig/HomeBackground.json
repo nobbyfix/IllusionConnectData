@@ -1,0 +1,263 @@
+{
+    "HomeBackground_8": {
+        "Name": "HomeBackground_8_Name",
+        "Loop": {
+            "01:00:00": {
+                "BG": "HomeBackground_HFXY"
+            }
+        },
+        "Cost": "",
+        "Price": "",
+        "Sort": 8,
+        "Unlook": 1,
+        "Item": "HomeBackground_1_Item",
+        "Condition": {
+            "LEVEL": 1
+        },
+        "BGPContraction": "zc_bd_bj_07",
+        "Tips": "Unlock_BG_Stage",
+        "BGM": "Mus_Story_Dongwenhui"
+    },
+    "HomeBackground_9": {
+        "Name": "HomeBackground_9_Name",
+        "Loop": {
+            "01:00:00": {
+                "BG": "HomeBackground_XZSH"
+            }
+        },
+        "Cost": "",
+        "Price": "",
+        "Sort": 9,
+        "Unlook": 1,
+        "Item": "HomeBackground_1_Item",
+        "Condition": {
+            "LEVEL": 1
+        },
+        "BGPContraction": "zc_bd_bj_09",
+        "Tips": "Unlock_BG_Level",
+        "BGM": "Mus_Story_Home"
+    },
+    "HomeBackground_4": {
+        "Name": "HomeBackground_4_Name",
+        "Loop": {
+            "17:00:00": {
+                "BG": "HomeBackground_XH_Day",
+                "Snow": "xiaxue_xiaxue"
+            },
+            "22:00:00": {
+                "BG": "HomeBackground_XH_Day",
+                "Snow": "xiaxue_xiaxue"
+            },
+            "12:00:00": {
+                "BG": "HomeBackground_XH_Day",
+                "Snow": "xiaxues_xiaxue"
+            },
+            "00:00:00": {
+                "BG": "HomeBackground_XH_Day",
+                "Snow": "xiaxues_xiaxue"
+            },
+            "19:00:00": {
+                "BG": "HomeBackground_XH_Day",
+                "Snow": "xiaxue_xiaxue"
+            },
+            "18:00:00": {
+                "BG": "HomeBackground_XH_Day",
+                "Snow": "xiaxues_xiaxue"
+            },
+            "20:00:00": {
+                "BG": "HomeBackground_XH_Day",
+                "Snow": "xiaxues_xiaxue"
+            },
+            "05:00:00": {
+                "BG": "HomeBackground_XH_Day",
+                "Snow": "xiaxue_xiaxue"
+            }
+        },
+        "Cost": "",
+        "Price": "",
+        "Sort": 2,
+        "Unlook": 1,
+        "Item": "HomeBackground_1_Item",
+        "Condition": {
+            "STAGE": "M03S03"
+        },
+        "BGPContraction": "zc_bd_bj_04",
+        "Tips": "Unlock_BG_Stage",
+        "BGM": "Mus_Main_Scene"
+    },
+    "HomeBackground_5": {
+        "Name": "HomeBackground_5_Name",
+        "Loop": {
+            "01:00:00": {
+                "BG": "HomeBackground_LYXZ"
+            }
+        },
+        "Cost": "",
+        "Price": "",
+        "Sort": 5,
+        "Unlook": 1,
+        "Item": "HomeBackground_1_Item",
+        "Condition": {
+            "STAGE": "M03S04"
+        },
+        "BGPContraction": "zc_bd_bj_08",
+        "Tips": "Unlock_BG_Stage",
+        "BGM": "Mus_Story_Memory"
+    },
+    "HomeBackground_6": {
+        "Name": "HomeBackground_6_Name",
+        "Loop": {
+            "01:00:00": {
+                "BG": "HomeBackground_QENBL"
+            }
+        },
+        "Cost": "",
+        "Price": "",
+        "Sort": 6,
+        "Unlook": 1,
+        "Item": "HomeBackground_1_Item",
+        "Condition": {
+            "STAGE": "M04S02"
+        },
+        "BGPContraction": "zc_bd_bj_05",
+        "Tips": "Unlock_BG_Stage",
+        "BGM": "Mus_Main_Scene_Destory"
+    },
+    "HomeBackground_7": {
+        "Name": "HomeBackground_7_Name",
+        "Loop": {
+            "01:00:00": {
+                "BG": "HomeBackground_JLWY"
+            }
+        },
+        "Cost": "",
+        "Price": "",
+        "Sort": 7,
+        "Unlook": 1,
+        "Item": "HomeBackground_1_Item",
+        "Condition": {
+            "STAGE": "M04S03"
+        },
+        "BGPContraction": "zc_bd_bj_06",
+        "Tips": "Unlock_BG_Stage",
+        "BGM": "Mus_Story_Memory"
+    },
+    "HomeBackground_1": {
+        "Name": "HomeBackground_1_Name",
+        "Loop": {
+            "17:00:00": {
+                "BG": "HomeBackground_XH_Dusk"
+            },
+            "22:00:00": {
+                "BG": "HomeBackground_BH",
+                "Rain": "xiayu_xiayu"
+            },
+            "12:00:00": {
+                "Flash": "shandian_shandian",
+                "BG": "HomeBackground_XH_Day",
+                "Rain": "xiayu_xiayu"
+            },
+            "00:00:00": {
+                "Flash": "shandian_shandian",
+                "Light": "jiguangtu_jiguang",
+                "BG": "HomeBackground_BH",
+                "Rain": "xiayu_xiayu"
+            },
+            "19:30:00": {
+                "Flash": "shandian_shandian",
+                "BG": "HomeBackground_XH_Sunset",
+                "Rain": "xiayu_xiayu"
+            },
+            "19:00:00": {
+                "BG": "HomeBackground_XH_Sunset"
+            },
+            "18:00:00": {
+                "Flash": "shandian_shandian",
+                "BG": "HomeBackground_XH_Dusk",
+                "Rain": "xiayu_xiayu"
+            },
+            "02:00:00": {
+                "Light": "jiguangtu_jiguang",
+                "BG": "HomeBackground_XH_PolarLight"
+            },
+            "20:00:00": {
+                "BG": "HomeBackground_XH_Night"
+            },
+            "05:00:00": {
+                "BG": "HomeBackground_XH_Day"
+            }
+        },
+        "Cost": "",
+        "Price": "",
+        "Sort": 1,
+        "Unlook": 1,
+        "Item": "HomeBackground_1_Item",
+        "Condition": {
+            "LEVEL": 1
+        },
+        "BGPContraction": "zc_bd_bj_02",
+        "Tips": "Unlock_BG_Level",
+        "BGM": "Mus_Main_Scene"
+    },
+    "HomeBackground_2": {
+        "Name": "HomeBackground_2_Name",
+        "Loop": {
+            "17:00:00": {
+                "BG": "HomeBackground_1_Night"
+            },
+            "07:00:00": {
+                "BG": "HomeBackground_1_Morning"
+            }
+        },
+        "Cost": "",
+        "Price": "",
+        "Sort": 4,
+        "Unlook": 1,
+        "Item": "HomeBackground_1_Item",
+        "Condition": {
+            "LEVEL": 5
+        },
+        "BGPContraction": "zc_bd_bj_01",
+        "Tips": "Unlock_BG_Level",
+        "BGM": "Mus_Main_Scene_Destory"
+    },
+    "HomeBackground_3": {
+        "Name": "HomeBackground_3_Name",
+        "Loop": {
+            "12:00:00": {
+                "Flash": "shandian_shandian",
+                "BG": "HomeBackground_BH",
+                "Rain": "xiayu_xiayu"
+            },
+            "18:00:00": {
+                "Flash": "shandian_shandian",
+                "BG": "HomeBackground_BH",
+                "Rain": "xiayu_xiayu"
+            },
+            "00:00:00": {
+                "Flash": "shandian_shandian",
+                "Light": "jiguangtu_jiguang",
+                "BG": "HomeBackground_BH",
+                "Rain": "xiayu_xiayu"
+            },
+            "05:00:00": {
+                "BG": "HomeBackground_BH"
+            },
+            "02:00:00": {
+                "Light": "jiguangtu_jiguang",
+                "BG": "HomeBackground_BH"
+            }
+        },
+        "Cost": "",
+        "Price": "",
+        "Sort": 3,
+        "Unlook": 1,
+        "Item": "HomeBackground_1_Item",
+        "Condition": {
+            "STAGE": "M02S05"
+        },
+        "BGPContraction": "zc_bd_bj_03",
+        "Tips": "Unlock_BG_Stage",
+        "BGM": "Mus_Main_Scene_Destory"
+    }
+}
