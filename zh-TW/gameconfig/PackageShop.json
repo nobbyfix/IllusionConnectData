@@ -6506,42 +6506,6 @@
             "type": "IR_Diamond"
         }
     },
-    "PackageShop_TL_WYLHua_2": {
-        "Name": "PackageShop_TL_WYLHua_1_Name",
-        "Platform": "ios",
-        "ItemShow": "PackageShop_TL_WYLHua_1_Reward",
-        "Item": "PackageShop_TL_WYLHua_1_Reward",
-        "Sort": 1,
-        "IsFree": 0,
-        "Price": "",
-        "Desc": "PackageShop_TL_WYLHua_1_Desc",
-        "Icon": "sd_DWH_WYLHua",
-        "Quality": 5,
-        "Tag": "",
-        "CostOffTag": "",
-        "TimeTag": 1,
-        "TimeType": {
-            "start": "2020-11-18 05:00:00",
-            "amount": 5,
-            "end": "2020-11-25 05:00:00",
-            "type": "limit"
-        },
-        "CoolDown": "",
-        "ServerCondition": "",
-        "ClientCondition": [
-            {
-                "LEVEL": 5
-            }
-        ],
-        "Hide": "",
-        "Prepose": "",
-        "Vanish": 1,
-        "Pay": "Pay_PackageShop_TL_WYLHua_2",
-        "Version": "",
-        "ShopSort": "TimeLimitShop",
-        "WindowIcon": "",
-        "GameCoin": ""
-    },
     "PackageShop_TL_WYLHua_1": {
         "Name": "PackageShop_TL_WYLHua_1_Name",
         "Platform": "ios",

@@ -253,9 +253,8 @@ function ShopSystem:tryEnter(data)
 		return
 	end
 
-	if self:checkMainShopIdForSubNormalShopId(data) then
-		self:enterShop(data)
-	end
+	self:checkMainShopIdForSubNormalShopId(data)
+	self:enterShop(data)
 end
 
 function ShopSystem:checkMainShopIdForSubNormalShopId(data)
@@ -268,10 +267,6 @@ function ShopSystem:checkMainShopIdForSubNormalShopId(data)
 		if idx then
 			data.rightTabIndex = idx
 			data.shopId = ShopSpecialId.kShopNormal
-
-			return true
-		else
-			return false
 		end
 	end
 end
