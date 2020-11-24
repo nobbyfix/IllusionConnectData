@@ -91,6 +91,33 @@ function MonthSignInSystem:isTodaySign()
 	end
 end
 
+function MonthSignInSystem:showSignView(callback)
+	if not self:isTodaySign() then
+		local viewName = "MonthSignInView"
+
+		if self:checkActivity() then
+			viewName = "MonthSignInWsjView"
+		end
+
+		local view = self:getInjector():getInstance(viewName)
+
+		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+			maskOpacity = 0
+		}, nil, callback))
+	end
+end
+
+function MonthSignInSystem:checkActivity()
+	local activitySystem = self:getInjector():getInstance(ActivitySystem)
+	local activity = activitySystem:getActivityByComplexUI(ActivityType_UI.kActivityBlockWsj)
+
+	if activity then
+		return true
+	end
+
+	return false
+end
+
 function MonthSignInSystem:doReset(resetId, value)
 	if resetId == ResetId.kMonthSignIn then
 		-- Nothing

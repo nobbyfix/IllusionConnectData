@@ -131,11 +131,17 @@ function ShopPackage:getDesc()
 end
 
 function ShopPackage:getIcon()
-	return self._config.Icon .. ".png"
+	return "asset/ui/shop/" .. self._config.Icon .. ".png"
 end
 
 function ShopPackage:getBuyIcon()
-	return "asset/ui/shop/" .. self._config.Icon .. ".png"
+	local path = self._config.WindowIcon
+
+	if path and path ~= "" then
+		return "asset/ui/shop/" .. path .. ".png"
+	end
+
+	return self:getIcon()
 end
 
 function ShopPackage:getQuality()

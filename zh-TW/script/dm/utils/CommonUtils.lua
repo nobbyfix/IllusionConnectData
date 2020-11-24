@@ -539,6 +539,34 @@ function GetSwitch(switchKey)
 	return GameConfigs[switchKey] ~= false
 end
 
+function GetSwitchString(switchKey)
+	if GameConfigs[switchKey] ~= nil then
+		return tostring(GameConfigs[switchKey])
+	else
+		return ""
+	end
+end
+
+function GetPurchaseCD()
+	local cd = tonumber(GameConfigs.shop_purchase_cd)
+
+	if not cd then
+		return 0
+	end
+
+	return cd
+end
+
+function GetDeliverCD()
+	local cd = tonumber(GameConfigs.shop_deliver_cd)
+
+	if not cd then
+		return 0
+	end
+
+	return cd
+end
+
 function randomByWeight(weightList, dataList)
 	local list = {}
 

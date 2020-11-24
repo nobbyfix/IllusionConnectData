@@ -78,7 +78,7 @@ function HeroEatItemView:refreshView(heroId, ignoreCleanCache)
 
 	self:refreshProgrView(self._curExp, nextExp)
 
-	if self._heroSystem:isHeroLevelMax(self._heroId) then
+	if self._heroSystem:isHeroExpMax(self._heroId) then
 		self._progrLabel:setString("--/--")
 		self:refreshExpBg()
 	end
@@ -276,7 +276,7 @@ function HeroEatItemView:createItemPanel()
 
 	self:refreshProgrView(self._heroData:getExp(), nextExp)
 
-	if self._heroSystem:isHeroLevelMax(self._heroId) then
+	if self._heroSystem:isHeroExpMax(self._heroId) then
 		self._progrLabel:setString("--/--")
 		self:refreshExpBg()
 	end
@@ -413,7 +413,7 @@ function HeroEatItemView:refreshEatData()
 end
 
 function HeroEatItemView:checkBeginEatCount(sender, isAdd)
-	if self._heroSystem:isHeroLevelMax(self._heroId) then
+	if self._heroSystem:isHeroExpMax(self._heroId) then
 		if isAdd then
 			local tip = Strings:get("Heros_Tips_ExpFull")
 
@@ -822,7 +822,7 @@ function HeroEatItemView:refreshLevelAndProgress(nextExp)
 	self:refreshProgrView(self._curExp, nextExp)
 	self:refreshLvlLabel(self._curLevel)
 
-	if self._heroSystem:isHeroLevelMax(self._heroId, self._curLevel, self._curExp) then
+	if self._heroSystem:isHeroExpMax(self._heroId, self._curLevel, self._curExp) then
 		self._progrLabel:setString("--/--")
 		self:refreshExpBg()
 	end
@@ -932,7 +932,7 @@ function HeroEatItemView:progrNormalMinusShow(closeCheck, sender)
 		self:refreshProgrView(self._curExp, nextExp)
 		self:refreshLvlLabel(self._curLevel)
 
-		if self._heroSystem:isHeroLevelMax(self._heroId, self._curLevel, self._curExp) then
+		if self._heroSystem:isHeroExpMax(self._heroId, self._curLevel, self._curExp) then
 			self._progrLabel:setString("--/--")
 			self:refreshExpBg()
 		end
@@ -984,7 +984,7 @@ function HeroEatItemView:progrPreviewShow()
 		self:refreshProgrView(self._curExp, nextExp)
 		self:refreshLvlLabel(self._curLevel)
 
-		if self._heroSystem:isHeroLevelMax(self._heroId, self._curLevel, self._curExp) then
+		if self._heroSystem:isHeroExpMax(self._heroId, self._curLevel, self._curExp) then
 			self._progrLabel:setString("--/--")
 			self:refreshExpBg()
 		end
@@ -1028,7 +1028,7 @@ function HeroEatItemView:progrPreviewMinusShow()
 		self:refreshProgrView(self._curExp, nextExp)
 		self:refreshLvlLabel(self._curLevel)
 
-		if self._heroSystem:isHeroLevelMax(self._heroId, self._curLevel, self._curExp) then
+		if self._heroSystem:isHeroExpMax(self._heroId, self._curLevel, self._curExp) then
 			self._progrLabel:setString("--/--")
 			self:refreshExpBg()
 		end
@@ -1366,7 +1366,7 @@ function HeroEatItemView:refreshGoldCost(cancelAnim, ignoreCleanCache)
 		self:refreshLvlLabel(self._curShowLevel)
 		self:refreshProgrView(self._curShowExp, endExp)
 
-		if self._heroSystem:isHeroLevelMax(self._heroId, self._curShowLevel, self._curShowExp) then
+		if self._heroSystem:isHeroExpMax(self._heroId, self._curShowLevel, self._curShowExp) then
 			self._progrLabel:setString("--/--")
 			self:refreshExpBg()
 		end
@@ -1378,7 +1378,7 @@ function HeroEatItemView:refreshGoldCost(cancelAnim, ignoreCleanCache)
 
 	local tip = Strings:get("Hero_LvUp_Tips")
 
-	if self._heroSystem:isHeroLevelMax(self._heroId) then
+	if self._heroSystem:isHeroExpMax(self._heroId) then
 		tip = Strings:get("Heros_Tips_ExpFull")
 
 		if self._heroData:getNextQualityId() == "" then
@@ -1398,7 +1398,7 @@ function HeroEatItemView:onClickLevelUp()
 		return
 	end
 
-	if self._heroSystem:isHeroLevelMax(self._heroId) then
+	if self._heroSystem:isHeroExpMax(self._heroId) then
 		local tip = Strings:get("Heros_Tips_ExpFull")
 
 		if self._heroData:getNextQualityId() == "" then
@@ -1500,7 +1500,7 @@ function HeroEatItemView:showLevelUpCombatAnim()
 		end)
 	end
 
-	if self._heroSystem:isHeroLevelMax(self._heroId) then
+	if self._heroSystem:isHeroExpMax(self._heroId) then
 		self._progrLabel:setString("--/--")
 		self:refreshExpBg()
 	end

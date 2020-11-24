@@ -36,12 +36,8 @@ local btnTextMap = {
 		"ELITE"
 	}
 }
-local litTypeMap = {
-	NORMAL = "Normal",
-	ELITE = "Elite"
-}
 local stageBtnImg = {
-	[ActivityType_UI.kActivitySupport] = {
+	[ActivityType_UI.kActivityBlockZuoHe] = {
 		[StageType.kNormal] = "zx_btn_fhj_ndqh.png",
 		[StageType.kElite] = "zx_btn_fhj_ndqh.png"
 	},
@@ -81,8 +77,13 @@ function ActivitySagaSupportMapMediator:setupTopInfoWidget()
 end
 
 function ActivitySagaSupportMapMediator:enterWithData(data)
-	self._activityId = data.activityId or ActivityId.kActivityBlockZuoHe
+	self._activityId = data.activityId
 	self._activity = self._activitySystem:getActivityById(self._activityId)
+
+	if not self._activity then
+		return
+	end
+
 	self._uiId = self._activity:getUI()
 	self._model = self._activity:getBlockMapActivity()
 
@@ -910,7 +911,7 @@ function ActivitySagaSupportMapMediator:onClickPlayStory(pointId, isCheck)
 				}, {
 					rewards = reward
 				}, delegate))
-			end, true)
+			end)
 		end
 	end
 

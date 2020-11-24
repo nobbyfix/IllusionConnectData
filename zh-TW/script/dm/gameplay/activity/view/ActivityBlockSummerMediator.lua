@@ -171,6 +171,13 @@ end
 
 function ActivityBlockSummerMediator:enterWithData(data)
 	self._resumeName = data and data.resumeName or nil
+	self._activityId = data.activityId
+	self._summerActivity = self._activitySystem:getActivityById(self._activityId)
+
+	if not self._summerActivity then
+		return
+	end
+
 	self._canChangeHero = true
 
 	self:initData()
@@ -199,7 +206,7 @@ function ActivityBlockSummerMediator:resumeWithData()
 end
 
 function ActivityBlockSummerMediator:initData()
-	self._summerActivity = self._activitySystem:getActivityByType(ActivityType.KActivityBlock)
+	self._summerActivity = self._activitySystem:getActivityById(self._activityId)
 	self._activityId = self._summerActivity:getActivityId()
 	self._blockActivity = nil
 	self._taskActivities = {}
@@ -477,7 +484,7 @@ function ActivityBlockSummerMediator:onClickStage()
 	end
 
 	AudioEngine:getInstance():playEffect("Se_Click_Story_Dream", false)
-	self._activitySystem:enterSupportStage(self._blockActivity, self._activityId)
+	self._activitySystem:enterSupportStage(self._activityId)
 end
 
 function ActivityBlockSummerMediator:onClickRule()
@@ -527,7 +534,7 @@ function ActivityBlockSummerMediator:onClickTask()
 	end
 
 	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
-	self._activitySystem:enterSupportTask(self._activityId)
+	self._activitySystem:enterSupportTaskView(self._activityId)
 end
 
 function ActivityBlockSummerMediator:onClickHomeExchange()

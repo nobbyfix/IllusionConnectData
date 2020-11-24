@@ -1161,7 +1161,7 @@ function ActivityStageFinishMediator:onPlayHiddenStory(pointId, storyId, isCheck
 				}, {
 					rewards = reward
 				}, delegate))
-			end, true)
+			end)
 		else
 			storyEndCall()
 		end

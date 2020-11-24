@@ -353,8 +353,7 @@ function ShopPackageMainMediator:setInfo(panel, data, index)
 	iconLayout:removeAllChildren()
 	iconLayout:setAnchorPoint(cc.p(0.5, 0.5))
 
-	local iconPath = data:getIcon()
-	local icon = ccui.ImageView:create(iconPath, 1)
+	local icon = ccui.ImageView:create(data:getIcon(), ccui.TextureResType.localType)
 
 	iconLayout:addChild(icon)
 	icon:setAnchorPoint(cc.p(0.5, 0.5))
@@ -472,7 +471,6 @@ end
 
 function ShopPackageMainMediator:refreshPackageTime(panel, data)
 	local infoPanel = panel:getChildByFullName("info_panel")
-	local iconLayout = panel:getChildByFullName("icon_layout")
 	local _times = panel:getChildByFullName("info_panel.times")
 	local _times1 = panel:getChildByFullName("info_panel.times1")
 	local _duihuanText = panel:getChildByFullName("info_panel.duihuan_text")

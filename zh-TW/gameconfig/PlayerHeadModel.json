@@ -69,16 +69,6 @@
         "Zoom": 0.5,
         "HeadDesc": "HeroBase_Desc_YDZZong"
     },
-    "Head_KMLa": {
-        "Type": 1,
-        "HeadName": "KMLa_HeadName",
-        "UnlockDesc": "KMLa_HeadUnlock",
-        "IsHiddenHead": 1,
-        "HeroMasterId": "KMLa",
-        "IconPath": "asset/heros/KMLa/battlepic_KMLa.png",
-        "Zoom": 0.5,
-        "HeadDesc": "HeroBase_Desc_KMLa"
-    },
     "Head_ATSheng": {
         "Type": 1,
         "HeadName": "ATSheng_HeadName",
@@ -878,5 +868,35 @@
         "IconPath": "asset/heros/KTSJKe/battlepic_KTSJKe_JXing.png",
         "Zoom": 1.0,
         "HeadDesc": "HeroAwaken_KTSJKe_Desc"
+    },
+    "Head_YSLBin": {
+        "Type": 1,
+        "HeadName": "YSLBin_HeadName",
+        "UnlockDesc": "YSLBin_HeadUnlock",
+        "IsHiddenHead": 0,
+        "HeroMasterId": "YSLBin",
+        "IconPath": "asset/heros/YSLBin/battlepic_YSLBin.png",
+        "Zoom": 0.5,
+        "HeadDesc": "HeroBase_Desc_YSLBin"
+    },
+    "Head_KMLa": {
+        "Type": 1,
+        "HeadName": "KMLa_HeadName",
+        "UnlockDesc": "KMLa_HeadUnlock",
+        "IsHiddenHead": 0,
+        "HeroMasterId": "KMLa",
+        "IconPath": "asset/heros/KMLa/battlepic_KMLa.png",
+        "Zoom": 0.5,
+        "HeadDesc": "HeroBase_Desc_KMLa"
+    },
+    "SpecialHead_Halloween": {
+        "Type": 3,
+        "HeadName": "SpecialHead_Halloween_Name",
+        "UnlockDesc": "PlayerHead_UnHave",
+        "IsHiddenHead": 1,
+        "HeroMasterId": "PlayerHead_Halloween",
+        "IconPath": "asset/items/Activity_PlayerHead_Halloween.png",
+        "Zoom": 1.0,
+        "HeadDesc": "SpecialHead_Halloween_Desc"
     }
 }

@@ -139,11 +139,11 @@ function ArenaSystem:requestQuickBattle(rivalIndex, callback, blockUI)
 				numReward = response.data.numReward or {},
 				rankRewards = response.data.rankRewards or {}
 			}
-
-			self:dispatch(Event:new(EVT_ARENAQUICKBATTLE_SUCC, {
-				resetData = response
-			}))
 		end
+
+		self:dispatch(Event:new(EVT_ARENAQUICKBATTLE_SUCC, {
+			resetData = response
+		}))
 	end, blockUI)
 end
 

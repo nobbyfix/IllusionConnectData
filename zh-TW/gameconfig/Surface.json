@@ -3015,77 +3015,6 @@
             }
         ]
     },
-    "Surface_KMLa_1": {
-        "Hero": "KMLa",
-        "Name": "Surface_KMLa_1_Name",
-        "Desc": "Surface_KMLa_1_Desc",
-        "GainShortDesc": "",
-        "GainDesc": "",
-        "Type": 1,
-        "GoodsId": "",
-        "ShopID": "",
-        "ActivityId": "",
-        "Link": "",
-        "Quality": 2,
-        "Model": "Model_KMLa",
-        "Unlook": 1,
-        "Sort": 1,
-        "ClickAction": [
-            {
-                "action": "touch3",
-                "range": [
-                    128,
-                    128
-                ],
-                "voice": [
-                    "Voice_KMLa_41",
-                    "Voice_KMLa_42",
-                    "Voice_KMLa_43",
-                    "Voice_KMLa_39"
-                ],
-                "point": [
-                    0,
-                    0
-                ]
-            },
-            {
-                "action": "touch2",
-                "range": [
-                    128,
-                    95
-                ],
-                "voice": [
-                    "Voice_KMLa_44",
-                    "Voice_KMLa_45",
-                    "Voice_KMLa_46",
-                    "Voice_KMLa_39"
-                ],
-                "point": [
-                    0,
-                    0
-                ]
-            },
-            {
-                "action": "touch2",
-                "range": [
-                    0,
-                    0
-                ],
-                "voice": [
-                    "Voice_KMLa_47",
-                    "Voice_KMLa_48",
-                    "Voice_KMLa_07",
-                    "Voice_KMLa_08",
-                    "Voice_KMLa_09",
-                    "Voice_KMLa_37",
-                    "Voice_KMLa_39"
-                ],
-                "point": [
-                    "all"
-                ]
-            }
-        ]
-    },
     "Surface_SDTZi_1": {
         "Hero": "SDTZi",
         "Name": "Surface_SDTZi_1_Name",
@@ -7197,6 +7126,358 @@
                     "Voice_GYCZi_09",
                     "Voice_GYCZi_37",
                     "Voice_GYCZi_39"
+                ],
+                "point": [
+                    "all"
+                ]
+            }
+        ]
+    },
+    "Surface_ALPo_3": {
+        "Hero": "ALPo",
+        "Name": "Surface_ALPo_3_Name",
+        "Desc": "Surface_ALPo_3_Desc",
+        "GainShortDesc": "Surface_WSJie_GainShort",
+        "GainDesc": "Surface_ALPo_WSJie_GainDesc",
+        "Type": 3,
+        "GoodsId": "",
+        "ShopID": "",
+        "ActivityId": "",
+        "Link": "",
+        "Quality": 5,
+        "Model": "Model_ALPo_WSJie",
+        "Unlook": 1,
+        "Sort": 3,
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "range": [
+                    138,
+                    138
+                ],
+                "voice": [
+                    "Voice_ALPo_41",
+                    "Voice_ALPo_43",
+                    "Voice_ALPo_43",
+                    "Voice_ALPo_39"
+                ],
+                "point": [
+                    117,
+                    824
+                ]
+            },
+            {
+                "action": "touch2",
+                "range": [
+                    138,
+                    95
+                ],
+                "voice": [
+                    "Voice_ALPo_44",
+                    "Voice_ALPo_45",
+                    "Voice_ALPo_46",
+                    "Voice_ALPo_39"
+                ],
+                "point": [
+                    97,
+                    668
+                ]
+            },
+            {
+                "action": "touch1",
+                "range": [
+                    0,
+                    0
+                ],
+                "voice": [
+                    "Voice_ALPo_47",
+                    "Voice_ALPo_48",
+                    "Voice_ALPo_07",
+                    "Voice_ALPo_08",
+                    "Voice_ALPo_09",
+                    "Voice_ALPo_37",
+                    "Voice_ALPo_39"
+                ],
+                "point": [
+                    "all"
+                ]
+            }
+        ]
+    },
+    "Surface_YLMGZhu_2": {
+        "Hero": "YLMGZhu",
+        "Name": "Surface_YLMGZhu_2_Name",
+        "Desc": "Surface_YLMGZhu_2_Desc",
+        "GainShortDesc": "Surface_WSJie_GainShort",
+        "GainDesc": "Surface_YLMGZhu_WSJie_GainDesc",
+        "Type": 2,
+        "GoodsId": "",
+        "ShopID": "",
+        "ActivityId": "",
+        "Link": "",
+        "Quality": 5,
+        "Model": "Model_YLMGZhu_WSJie",
+        "Unlook": 1,
+        "Sort": 2,
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "range": [
+                    128,
+                    128
+                ],
+                "voice": [
+                    "Voice_YLMGZhu_41",
+                    "Voice_YLMGZhu_42",
+                    "Voice_YLMGZhu_43",
+                    "Voice_YLMGZhu_39"
+                ],
+                "point": [
+                    -21,
+                    740
+                ]
+            },
+            {
+                "action": "touch1",
+                "range": [
+                    128,
+                    95
+                ],
+                "voice": [
+                    "Voice_YLMGZhu_44",
+                    "Voice_YLMGZhu_45",
+                    "Voice_YLMGZhu_46",
+                    "Voice_YLMGZhu_39"
+                ],
+                "point": [
+                    3,
+                    586
+                ]
+            },
+            {
+                "action": "touch1",
+                "range": [
+                    0,
+                    0
+                ],
+                "voice": [
+                    "Voice_YLMGZhu_47",
+                    "Voice_YLMGZhu_48",
+                    "Voice_YLMGZhu_07",
+                    "Voice_YLMGZhu_08",
+                    "Voice_YLMGZhu_09",
+                    "Voice_YLMGZhu_37",
+                    "Voice_YLMGZhu_39"
+                ],
+                "point": [
+                    "all"
+                ]
+            }
+        ]
+    },
+    "Surface_YSLBin_2": {
+        "Hero": "YSLBin",
+        "Name": "Surface_YSLBin_2_Name",
+        "Desc": "Surface_YSLBin_2_Desc",
+        "GainShortDesc": "Surface_WSJie_GainShort",
+        "GainDesc": "Surface_YSLBin_WSJie_GainDesc",
+        "Type": 2,
+        "GoodsId": "",
+        "ShopID": "",
+        "ActivityId": "",
+        "Link": "",
+        "Quality": 5,
+        "Model": "Model_YSLBin_WSJie",
+        "Unlook": 1,
+        "Sort": 2,
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "range": [
+                    128,
+                    128
+                ],
+                "voice": [
+                    "Voice_YSLBin_41",
+                    "Voice_YSLBin_42",
+                    "Voice_YSLBin_43",
+                    "Voice_YSLBin_39"
+                ],
+                "point": [
+                    -4,
+                    688
+                ]
+            },
+            {
+                "action": "touch1",
+                "range": [
+                    128,
+                    95
+                ],
+                "voice": [
+                    "Voice_YSLBin_44",
+                    "Voice_YSLBin_45",
+                    "Voice_YSLBin_46",
+                    "Voice_YSLBin_39"
+                ],
+                "point": [
+                    16,
+                    588
+                ]
+            },
+            {
+                "action": "touch1",
+                "range": [
+                    0,
+                    0
+                ],
+                "voice": [
+                    "Voice_YSLBin_47",
+                    "Voice_YSLBin_48",
+                    "Voice_YSLBin_07",
+                    "Voice_YSLBin_08",
+                    "Voice_YSLBin_09",
+                    "Voice_YSLBin_37",
+                    "Voice_YSLBin_39"
+                ],
+                "point": [
+                    "all"
+                ]
+            }
+        ]
+    },
+    "Surface_YSLBin_1": {
+        "Hero": "YSLBin",
+        "Name": "Surface_YSLBin_1_Name",
+        "Desc": "Surface_YSLBin_1_Desc",
+        "GainShortDesc": "",
+        "GainDesc": "",
+        "Type": 1,
+        "GoodsId": "",
+        "ShopID": "",
+        "ActivityId": "",
+        "Link": "",
+        "Quality": 2,
+        "Model": "Model_YSLBin",
+        "Unlook": 1,
+        "Sort": 1,
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "range": [
+                    128,
+                    128
+                ],
+                "voice": [
+                    "Voice_YSLBin_41",
+                    "Voice_YSLBin_42",
+                    "Voice_YSLBin_43",
+                    "Voice_YSLBin_39"
+                ],
+                "point": [
+                    5,
+                    874
+                ]
+            },
+            {
+                "action": "touch1",
+                "range": [
+                    128,
+                    95
+                ],
+                "voice": [
+                    "Voice_YSLBin_44",
+                    "Voice_YSLBin_45",
+                    "Voice_YSLBin_46",
+                    "Voice_YSLBin_39"
+                ],
+                "point": [
+                    -14,
+                    725
+                ]
+            },
+            {
+                "action": "touch1",
+                "range": [
+                    0,
+                    0
+                ],
+                "voice": [
+                    "Voice_YSLBin_47",
+                    "Voice_YSLBin_48",
+                    "Voice_YSLBin_07",
+                    "Voice_YSLBin_08",
+                    "Voice_YSLBin_37",
+                    "Voice_YSLBin_39"
+                ],
+                "point": [
+                    "all"
+                ]
+            }
+        ]
+    },
+    "Surface_KMLa_1": {
+        "Hero": "KMLa",
+        "Name": "Surface_KMLa_1_Name",
+        "Desc": "Surface_KMLa_1_Desc",
+        "GainShortDesc": "",
+        "GainDesc": "",
+        "Type": 1,
+        "GoodsId": "",
+        "ShopID": "",
+        "ActivityId": "",
+        "Link": "",
+        "Quality": 2,
+        "Model": "Model_KMLa",
+        "Unlook": 1,
+        "Sort": 1,
+        "ClickAction": [
+            {
+                "action": "touch1",
+                "range": [
+                    128,
+                    128
+                ],
+                "voice": [
+                    "Voice_KMLa_41",
+                    "Voice_KMLa_42",
+                    "Voice_KMLa_43",
+                    "Voice_KMLa_39"
+                ],
+                "point": [
+                    51,
+                    685
+                ]
+            },
+            {
+                "action": "touch1",
+                "range": [
+                    128,
+                    95
+                ],
+                "voice": [
+                    "Voice_KMLa_44",
+                    "Voice_KMLa_45",
+                    "Voice_KMLa_46",
+                    "Voice_KMLa_39"
+                ],
+                "point": [
+                    56,
+                    550
+                ]
+            },
+            {
+                "action": "touch1",
+                "range": [
+                    0,
+                    0
+                ],
+                "voice": [
+                    "Voice_KMLa_47",
+                    "Voice_KMLa_48",
+                    "Voice_KMLa_07",
+                    "Voice_KMLa_37",
+                    "Voice_KMLa_39"
                 ],
                 "point": [
                     "all"

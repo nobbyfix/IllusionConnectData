@@ -222,6 +222,8 @@ function BuildingMediator:addMainComponent()
 	self._mainComponent:setBuildingMediator(self)
 	self._mainComponent:setupTopInfoWidget()
 	self._mainComponent:enterWithData()
+
+	self._mainComponentView = self._mainComponent:getView()
 end
 
 function BuildingMediator:addTouchComponent()
@@ -429,6 +431,10 @@ function BuildingMediator:enterShowAll()
 		self._decorateComponent:refreshBuildResourceSacle()
 		self._lockComponent:refreshRoomLock()
 		self._mapComponent:getView():setVisible(false)
+
+		local storyDirector = self:getInjector():getInstance(story.StoryDirector)
+
+		storyDirector:notifyWaiting("enter_building_main_view")
 	end
 
 	local roomId = self._buildingSystem:getShowRoomId()
@@ -1030,18 +1036,63 @@ function BuildingMediator:getLoopWordPos(loopType)
 			local node = topInfoWidget:getView():getChildByFullName("currency_bar_4")
 			local worldPos = node:convertToWorldSpace(cc.p(0, 0))
 
-			return cc.p(worldPos.x - 95, worldPos.y - 35)
+			return cc.p(worldPos.x - 163, worldPos.y - 24)
 		elseif loopType == KBuildingType.kCrystalOre then
 			local node = topInfoWidget:getView():getChildByFullName("currency_bar_3")
 			local worldPos = node:convertToWorldSpace(cc.p(0, 0))
 
-			return cc.p(worldPos.x - 95, worldPos.y - 35)
+			return cc.p(worldPos.x - 163, worldPos.y - 24)
 		elseif loopType == KBuildingType.kExpOre then
 			local worldPos = self._buildingSystem:getBagWorldPos() or cc.p(0, 0)
 
 			return cc.p(worldPos.x, worldPos.y)
 		end
 	end
+end
+
+function BuildingMediator:onEventGetResAnim(event)
+	local loopType = event:getData().loopType
+
+	if not loopType then
+		return
+	end
+
+	local ___scale = 1.8
+	local ___time = 0.03
+	local topInfoWidget = self._mainComponent._topInfoWidget
+
+	if loopType == KBuildingType.kGoldOre then
+		local node = topInfoWidget:getView():getChildByFullName("currency_bar_4.icon_node")
+		self.__kGoldOreNodeScale = self.__kGoldOreNodeScale or node:getScale()
+
+		node:stopActionByTag(909090)
+		node:setScale(self.__kGoldOreNodeScale)
+
+		local action = cc.Sequence:create(cc.ScaleTo:create(___time, self.__kGoldOreNodeScale * ___scale), cc.ScaleTo:create(___time, self.__kGoldOreNodeScale))
+
+		node:runAction(action)
+		action:setTag(909090)
+	elseif loopType == KBuildingType.kCrystalOre then
+		local node = topInfoWidget:getView():getChildByFullName("currency_bar_3.icon_node")
+		self.__kCrystalOreScale = self.__kCrystalOreScale or node:getScale()
+
+		node:stopActionByTag(909090)
+		node:setScale(self.__kCrystalOreScale)
+
+		local action = cc.Sequence:create(cc.ScaleTo:create(___time, self.__kCrystalOreScale * ___scale), cc.ScaleTo:create(___time, self.__kCrystalOreScale))
+
+		node:runAction(action)
+		action:setTag(909090)
+	end
+end
+
+function BuildingMediator:_showSubView(viewName, param)
+	local view = self:getInjector():getInstance(viewName)
+	local event = ViewEvent:new(EVT_SHOW_POPUP, view, {
+		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+	}, param)
+
+	self:dispatch(event)
 end
 
 function BuildingMediator:showAfterLoading()
@@ -1056,20 +1107,21 @@ function BuildingMediator:showAfterLoading()
 		return
 	end
 
-	if t == "buyDecorate" then
+	if t == "buyDecorate" or t == "overview" then
 		local openState, str = self._buildingSystem:getRoomOpenSta(roomId)
 
 		if openState then
 			self:enterRoom(roomId, 0.2)
 
-			local view = self:getInjector():getInstance("BuildingBuildView")
-			local event = ViewEvent:new(EVT_SHOW_POPUP, view, {
-				transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-			}, {
-				roomId = roomId
-			})
-
-			self:dispatch(event)
+			if t == "buyDecorate" then
+				self:_showSubView("BuildingBuildView", {
+					roomId = roomId
+				})
+			elseif t == "overview" then
+				self:_showSubView("BuildingOverviewView", {
+					roomId = roomId
+				})
+			end
 		elseif self._buildingSystem:canUnlockRoom(roomId) then
 			AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
 			self:showUnlockRoom(roomId)

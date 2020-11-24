@@ -26,10 +26,12 @@ function LoginActivityMediator:enterWithData(data)
 	self._main = self:getView():getChildByName("main")
 
 	self:setupView()
-	self:refreshLoverView()
+	self:refreshRightView()
 end
 
 function LoginActivityMediator:setupView()
+	self._title = self._main:getChildByName("Text_12")
+	self._desc = self._main:getChildByName("Text_24")
 	self._loginDayList = self._actModel._taskList
 
 	table.sort(self._loginDayList, function (a, b)
@@ -40,7 +42,11 @@ function LoginActivityMediator:setupView()
 	end)
 
 	self._activityConfig = self._actModel:getActivityConfig()
+	local title = self._activityConfig.Title and Strings:get(self._activityConfig.Title) or Strings:get("Extra_Login_Day")
+	local desc = self._activityConfig.ActivityDesc and Strings:get(self._activityConfig.ActivityDesc) or Strings:get("Extra_Login_Description")
 
+	self._title:setString(title)
+	self._desc:setString(desc)
 	self:getLastRewardDay()
 	self:createTableView()
 
@@ -296,37 +302,7 @@ function LoginActivityMediator:requsetGetReward(activityId, taskId)
 	end)
 end
 
-function LoginActivityMediator:refreshLoverView()
-	if self._actModel:getId() == "Login14" then
-		return
-	end
-
-	local resFile = "asset/ui/ActivityLoginLover.csb"
-	local node = cc.CSLoader:createNode(resFile)
-
-	node:addTo(self._main, 10):setName("loverView")
-
-	local activityConfig = self._actModel:getActivityConfig()
-
-	if activityConfig and activityConfig.TaskTopUI then
-		node:getChildByFullName("main.Image_2"):loadTexture(activityConfig.TaskTopUI .. ".png", ccui.TextureResType.plistType)
-	end
-
-	if activityConfig and activityConfig.TaskBgUI then
-		self._main:getChildByName("Image_18"):loadTexture("asset/scene/" .. activityConfig.TaskBgUI .. ".jpg")
-	end
-
-	self._main:getChildByName("Text_12"):setString("")
-	self._main:getChildByName("Text_24"):setString("")
-	self._main:getChildByName("Image_2"):setVisible(false)
-
-	self._refreshPanel = node:getChildByFullName("main.refreshPanel")
-	self._refreshTime = self._refreshPanel:getChildByName("times")
-	self._descPanel = node:getChildByFullName("main.desc")
-
-	self._descPanel:setString(Strings:get(self._actModel:getDesc()))
-	self._descPanel:getVirtualRenderer():setLineSpacing(2)
-
+function LoginActivityMediator:refreshRightView()
 	local activityConfig = self._actModel:getActivityConfig()
 
 	self._main:getChildByFullName("heroPanel.Image_33"):setVisible(not activityConfig.showHero)
@@ -344,7 +320,34 @@ function LoginActivityMediator:refreshLoverView()
 		heroSprite:setPosition(cc.p(345, 140))
 	end
 
-	self:setTimer()
+	if self._actModel:getUI() == ActivityType.KLOGINTIME then
+		local resFile = "asset/ui/ActivityLoginLover.csb"
+		local node = cc.CSLoader:createNode(resFile)
+
+		node:addTo(self._main, 10):setName("loverView")
+
+		if activityConfig and activityConfig.TaskTopUI then
+			node:getChildByFullName("main.Image_2"):loadTexture(activityConfig.TaskTopUI .. ".png", ccui.TextureResType.plistType)
+		end
+
+		self._main:getChildByName("Text_12"):setString("")
+		self._main:getChildByName("Text_24"):setString("")
+		self._main:getChildByName("Image_2"):setVisible(false)
+
+		self._refreshPanel = node:getChildByFullName("main.refreshPanel")
+		self._refreshTime = self._refreshPanel:getChildByName("times")
+		self._descPanel = node:getChildByFullName("main.desc")
+
+		self._descPanel:setString(Strings:get(self._actModel:getDesc()))
+		self._descPanel:getVirtualRenderer():setLineSpacing(2)
+		self:setTimer()
+
+		return
+	end
+
+	if activityConfig and activityConfig.TaskBgUI then
+		self._main:getChildByName("Image_18"):loadTexture("asset/scene/" .. activityConfig.TaskBgUI .. ".jpg")
+	end
 end
 
 function LoginActivityMediator:stopTimer()

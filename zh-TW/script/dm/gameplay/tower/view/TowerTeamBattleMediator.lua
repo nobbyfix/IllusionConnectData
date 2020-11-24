@@ -280,7 +280,9 @@ function TowerTeamBattleMediator:initWidgetInfo()
 	self._myPetPanel = self._main:getChildByFullName("my_pet_bg")
 	self._heroPanel = self._myPetPanel:getChildByFullName("heroPanel")
 	self._sortType = self._myPetPanel:getChildByFullName("sortPanel.sortBtn.text")
-	self._sortOrder = self._myPetPanel:getChildByFullName("sortPanel.sortTypeBtn.text")
+
+	self._myPetPanel:getChildByFullName("sortPanel.screenBtn"):setVisible(false)
+
 	self._teamBg = self._main:getChildByName("team_bg")
 	self._labelCombat = self._main:getChildByFullName("info_bg.combatLabel")
 	self._costAverageLabel = self._main:getChildByFullName("info_bg.averageLabel")
@@ -849,14 +851,15 @@ function TowerTeamBattleMediator:updateChallengeNum()
 	local isFight = not self._towerSystem:checkTowerBuffChoose(false) and not self._towerSystem:checkTowerCardsChoose(false)
 
 	self._fightBtn:setVisible(isFight)
+	self._btnPanel:setVisible(isFight)
 	lifeText:setVisible(isFight)
 end
 
 function TowerTeamBattleMediator:refreshListView(ignoreReloadData)
-	self._petListAll = self._petList
+	self._petListAll = self._stageSystem:getSortExtendIds(self._petList)
+	local sortType = self._stageSystem:getTowerCardSortType()
 
-	self:sortOnTeamPets(self._petListAll)
-	self:sortOnTeamPets(self._petList)
+	self._towerSystem:sortHeroes(self._petListAll, sortType, nil, true)
 
 	if not ignoreReloadData then
 		self:reloadListView()
@@ -1364,10 +1367,38 @@ function TowerTeamBattleMediator:initLockIcons()
 end
 
 function TowerTeamBattleMediator:createSortView()
-	self._sortType:setString(Strings:get("HEROS_UI49"))
+	local sortType = self._stageSystem:getTowerCardSortType()
+
+	local function callBack(data)
+		local sortStr = self._stageSystem:getSortTypeStr(data.sortType)
+
+		self._sortType:setString(sortStr)
+		self._stageSystem:setTowerCardSortType(data.sortType)
+		self._teamView:stopScroll()
+		self:refreshListView(false)
+	end
+
+	self._sortComponent = SortHeroListComponent:new({
+		isHide = true,
+		sortType = sortType,
+		mediator = self,
+		callBack = callBack
+	})
+	local sortStr = self._stageSystem:getSortTypeStr(sortType)
+
+	self._sortType:setString(sortStr)
+	self._sortComponent:getRootNode():addTo(self._myPetPanel:getChildByFullName("sortPanel"))
 end
 
 function TowerTeamBattleMediator:onClickSort()
+	self._stageSystem:setSortExtand(0)
+	self._sortComponent:getRootNode():setVisible(true)
+	self._sortComponent:refreshView()
+	self._teamView:stopScroll()
+	self:refreshListView(true)
+end
+
+function TowerTeamBattleMediator:onClickScreen()
 end
 
 function TowerTeamBattleMediator:onClickSortType()

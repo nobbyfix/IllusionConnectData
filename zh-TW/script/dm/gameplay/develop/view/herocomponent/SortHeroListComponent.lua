@@ -12,10 +12,10 @@ SortHeroListComponent:has("_mediator", {
 
 local SortHeroListComponentPath = "asset/ui/SortTip.csb"
 local PosY = {
-	227,
-	168,
-	110,
-	0
+	447,
+	388,
+	330,
+	220
 }
 
 function SortHeroListComponent:initialize(info)
@@ -27,7 +27,6 @@ function SortHeroListComponent:initialize(info)
 	self._stageSystem = self._mediator:getInjector():getInstance(StageSystem)
 	self._sortNum = self._stageSystem:getSortNum()
 	self._sortExtendNum = self._stageSystem:getSortExtendNum()
-	self._isHide = info.isHide
 
 	self:createView(info)
 end
@@ -51,7 +50,6 @@ function SortHeroListComponent:createView(info)
 	self._extandPanel = self._view:getChildByFullName("extandPanel")
 
 	self._extandPanel:setVisible(false)
-	self:initShowHideBtn()
 
 	self._btnClone = self._view:getChildByFullName("nodepanel")
 
@@ -74,8 +72,9 @@ function SortHeroListComponent:createView(info)
 		newBtn:setVisible(true)
 
 		self._btnCache[#self._btnCache + 1] = newBtn
+		local btnIndex = i - 1
 
-		newBtn:setPosition(cc.p(136.5, 11 + 51 * (self._sortNum - i)))
+		newBtn:setPosition(cc.p(100 + btnIndex % 4 * 106, 285 - math.floor(btnIndex / 4) * 52))
 		self._mainPanel:addChild(newBtn, 1)
 
 		local nameStr = self._stageSystem:getSortTypeStr(i)
@@ -126,12 +125,12 @@ function SortHeroListComponent:createView(info)
 
 				newBtn1.index = i
 				self._btnCache1[#self._btnCache1 + 1] = newBtn1
-				local posX = 303 + 80 * (j - 1)
+				local posX = 153 + 80 * (j - 1)
 				local posY = PosY[i]
 
 				if j > 7 then
 					posY = posY - 43
-					posX = 303 + 80 * (j - 8)
+					posX = 153 + 80 * (j - 8)
 				end
 
 				newBtn1:setPosition(cc.p(posX, posY))
@@ -145,25 +144,6 @@ function SortHeroListComponent:createView(info)
 			end
 		end
 	end
-
-	self:initShowHideBtn()
-end
-
-function SortHeroListComponent:initShowHideBtn()
-	self._showBtn = self._mainPanel:getChildByFullName("showExtand")
-
-	self._showBtn:setVisible(self._isHide)
-	self._showBtn:setTouchEnabled(true)
-	self._showBtn:addClickEventListener(function ()
-		self:onClickExtand(true)
-	end)
-
-	local hideBtn = self._extandPanel:getChildByFullName("hideExtand")
-
-	hideBtn:setTouchEnabled(true)
-	hideBtn:addClickEventListener(function ()
-		self:onClickExtand(false)
-	end)
 end
 
 function SortHeroListComponent:refreshView()
@@ -194,7 +174,6 @@ function SortHeroListComponent:refreshView()
 	end
 
 	self._extandPanel:setVisible(false)
-	self._showBtn:setVisible(self._isHide)
 end
 
 function SortHeroListComponent:getRootNode()
@@ -220,11 +199,8 @@ function SortHeroListComponent:onClickSortIcon(i)
 
 	self._sortType = i
 
-	self._view:setVisible(not self._isHide)
-
-	if not self._isHide then
-		self:refreshView()
-	end
+	self._view:setVisible(true)
+	self:refreshView()
 end
 
 function SortHeroListComponent:onClickSortExtend(sortType, sortExtangType, selectimg)
@@ -244,14 +220,21 @@ function SortHeroListComponent:onClickSortExtend(sortType, sortExtangType, selec
 	self._mediator:dispatch(Event:new(EVT_TEAM_REFRESH_PETS, {}))
 end
 
-function SortHeroListComponent:onClickExtand(isShow)
+function SortHeroListComponent:showExtand()
 	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
-	self._extandPanel:setVisible(isShow)
-	self._showBtn:setVisible(not isShow)
+	self:refreshView()
+	self._extandPanel:setVisible(true)
+	self._mainPanel:setVisible(false)
+end
+
+function SortHeroListComponent:showNormal()
+	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
+	self:refreshView()
+	self._extandPanel:setVisible(false)
+	self._mainPanel:setVisible(true)
 end
 
 function SortHeroListComponent:onTouchCloseView()
 	AudioEngine:getInstance():playEffect("Se_Click_Fold_2", false)
-	self._showBtn:setVisible(true)
 	self:getRootNode():setVisible(false)
 end

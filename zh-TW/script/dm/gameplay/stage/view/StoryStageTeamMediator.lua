@@ -12,16 +12,7 @@ StoryStageTeamMediator:has("_systemKeeper", {
 	is = "r"
 }):injectWith("SystemKeeper")
 
-local kBtnHandlers = {
-	["main.my_pet_bg.sortPanel.sortBtn"] = {
-		clickAudio = "Se_Click_Fold_1",
-		func = "onClickSort"
-	},
-	["main.my_pet_bg.sortPanel.sortTypeBtn"] = {
-		clickAudio = "Se_Click_Tab_1",
-		func = "onClickSortType"
-	}
-}
+local kBtnHandlers = {}
 local kHeroRarityBgAnim = {
 	[15.0] = "ssrzong_yingxiongxuanze",
 	[13.0] = "srzong_yingxiongxuanze",
@@ -192,7 +183,6 @@ function StoryStageTeamMediator:initWidgetInfo()
 	self._myPetPanel = self._main:getChildByFullName("my_pet_bg")
 	self._heroPanel = self._myPetPanel:getChildByFullName("heroPanel")
 	self._sortType = self._myPetPanel:getChildByFullName("sortPanel.sortBtn.text")
-	self._sortOrder = self._myPetPanel:getChildByFullName("sortPanel.sortTypeBtn.text")
 	self._masterImage = self._bg:getChildByName("role")
 	self._teamBg = self._bg:getChildByName("team_bg")
 	self._costAverageLabel = self._main:getChildByFullName("info_bg.averageLabel")
@@ -567,10 +557,9 @@ end
 
 function StoryStageTeamMediator:refreshListView(ignoreAdjustOffset)
 	self._petListAll = self._stageSystem:getSortExtendIds(self._petList)
-	local sortOrder = self._stageSystem:getCardSortOrder()
 	local sortType = self._stageSystem:getCardSortType()
 
-	self._heroSystem:sortHeroes(self._petListAll, sortType, sortOrder)
+	self._heroSystem:sortHeroes(self._petListAll, sortType)
 
 	if table.nums(self._cardsExcept) > 0 then
 		local heros1 = {}

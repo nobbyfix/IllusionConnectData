@@ -88,6 +88,17 @@ function HeroSystem:initialize(developSystem)
 			self._selectData[keys[1]] = keys[2]
 		end
 	end
+
+	self:initCombatToCostRate()
+end
+
+function HeroSystem:initCombatToCostRate()
+	self._combatToCostRate = {}
+	local rate = ConfigReader:getDataTable("HeroCostAttr")
+
+	for k, v in pairs(rate) do
+		self._combatToCostRate[tonumber(v.Id)] = v.COSTPOWER
+	end
 end
 
 function HeroSystem:resetHeroQuickSelect()
@@ -409,6 +420,15 @@ function HeroSystem:isHeroLevelMax(heroId, level, exp)
 	local maxLevel = hero:getCurMaxLevel()
 
 	return level == maxLevel
+end
+
+function HeroSystem:isHeroExpMax(heroId, level, exp)
+	local hero = self:getHeroById(heroId)
+	level = level or hero:getLevel()
+	exp = exp or hero:getExp()
+	local maxLevel = hero:getCurMaxLevel()
+
+	return level == maxLevel and exp == self:getNextLvlAddExp(heroId, maxLevel)
 end
 
 function HeroSystem:getHeroDebrisCount(heroId)
@@ -1345,10 +1365,9 @@ HeroShowType = {
 }
 
 function HeroSystem:sortHeroList(list)
-	local sortOrder = self._stageSystem:getSortOrder()
 	local sortType = self._stageSystem:getSortType()
 
-	self:sortHeroes(list, sortType, sortOrder, nil, true)
+	self:sortHeroes(list, sortType, nil, true)
 end
 
 function HeroSystem:getOwnHeroIds(ignoreSort)
@@ -1416,6 +1435,10 @@ function HeroSystem:getHeroShowIdsCache()
 	for id, hero in pairs(ownHeros) do
 		list[#list + 1] = {
 			combat = hero:getSceneCombatByType(SceneCombatsType.kAll),
+			hp = hero:getHp(),
+			def = hero:getDefense(),
+			atk = hero:getAttack(),
+			speed = hero:getSpeed(),
 			id = id,
 			star = hero:getStar(),
 			quality = hero:getQuality(),
@@ -1433,7 +1456,8 @@ function HeroSystem:getHeroShowIdsCache()
 			littleStar = hero:getLittleStar(),
 			maxStar = hero:getMaxStar(),
 			fragId = hero._config and hero._config.ItemId,
-			awakenLevel = hero:getAwakenStar()
+			awakenLevel = hero:getAwakenStar(),
+			flags = hero._config.Flags
 		}
 		local index = #list
 		self._heroIdToIndex[id] = index
@@ -1454,6 +1478,10 @@ function HeroSystem:getHeroShowIdsCache()
 				awakenLevel = 0,
 				level = 1,
 				combat = heroConfig.BasicPower,
+				hp = heroConfig.BaseHp,
+				def = heroConfig.BaseDefence,
+				atk = heroConfig.BaseAttack,
+				speed = heroConfig.Speed,
 				id = id,
 				star = heroConfig.BaseStar,
 				quality = self:getConfigByEvolution(heroConfig.BaseQualityAttr).Quality,
@@ -1466,7 +1494,8 @@ function HeroSystem:getHeroShowIdsCache()
 				type = heroConfig.Type,
 				party = heroConfig.Party,
 				fragId = heroConfig.ItemId,
-				maxStar = heroConfig.MaxStar
+				maxStar = heroConfig.MaxStar,
+				flags = heroConfig.Flags
 			}
 
 			if self:checkHeroCanComp(id) then
@@ -1500,15 +1529,9 @@ end
 
 function HeroSystem:getTeamPrepared(teamPetIds, ownPetIds, recommendIds)
 	recommendIds = recommendIds or {}
-	local num = 0
 	local ids = teamPetIds
 	local ownHeros = ownPetIds
 	local costTypes = {
-		{},
-		{},
-		{},
-		{},
-		{},
 		{},
 		{}
 	}
@@ -1527,53 +1550,33 @@ function HeroSystem:getTeamPrepared(teamPetIds, ownPetIds, recommendIds)
 		local id = hero.id
 
 		if not self:checkHeroContain(recommendIds, id) then
-			local cost = hero.cost
-
-			if cost == 4 then
-				costTypes[2][#costTypes[2] + 1] = hero
-				num = math.max(num, #costTypes[2])
-			elseif cost == 5 then
-				costTypes[3][#costTypes[3] + 1] = hero
-				num = math.max(num, #costTypes[3])
-			elseif cost == 3 then
-				costTypes[4][#costTypes[4] + 1] = hero
-				num = math.max(num, #costTypes[4])
-			elseif cost == 6 then
-				costTypes[5][#costTypes[5] + 1] = hero
-				num = math.max(num, #costTypes[5])
-			elseif cost == 1 or cost == 2 then
-				costTypes[6][#costTypes[6] + 1] = hero
-				num = math.max(num, #costTypes[6])
-			else
-				costTypes[7][#costTypes[7] + 1] = hero
-				num = math.max(num, #costTypes[7])
-			end
+			costTypes[2][#costTypes[2] + 1] = hero
 		end
 	end
 
 	local function heroSort(a, b)
-		if a.combat == b.combat then
+		local sortA = a.combat * self._combatToCostRate[a.cost]
+		local sortB = b.combat * self._combatToCostRate[b.cost]
+
+		if sortA == sortB then
 			return b.id < a.id
 		end
 
-		return b.combat < a.combat
+		return sortB < sortA
 	end
 
-	for i = 1, 7 do
-		table.sort(costTypes[i], heroSort)
-	end
+	table.sort(costTypes[1], heroSort)
+	table.sort(costTypes[2], heroSort)
 
 	for i = 1, #costTypes[1] do
 		ids[#ids + 1] = costTypes[1][i].id
 	end
 
-	for i = 1, num do
-		for j = 2, 7 do
-			if #costTypes[j] > 0 then
-				ids[#ids + 1] = costTypes[j][1].id
+	for i = 1, #costTypes[2] do
+		if #costTypes[2] > 0 then
+			ids[#ids + 1] = costTypes[2][1].id
 
-				table.remove(costTypes[j], 1)
-			end
+			table.remove(costTypes[2], 1)
 		end
 	end
 
@@ -1597,13 +1600,8 @@ function HeroSystem:sortOnTeamPets(idList)
 	end)
 end
 
-function HeroSystem:sortHeroes(list, type, order, recommendIds, checkInTeam, tiredIds)
-	if type == 6 then
-		type = 7
-	end
-
-	local func = order == 1 and HeroSortFuncs.SortFunc1[type] or HeroSortFuncs.SortFunc[type]
-	local funcDefault = order == 1 and HeroSortFuncs.SortFunc1[1] or HeroSortFuncs.SortFunc[1]
+function HeroSystem:sortHeroes(list, type, recommendIds, checkInTeam, tiredIds, teamType)
+	local func = type and HeroSortFuncs.SortFunc[type] or HeroSortFuncs.SortFunc[9]
 
 	if not checkInTeam then
 		table.sort(list, function (a, b)
@@ -1635,11 +1633,16 @@ function HeroSystem:sortHeroes(list, type, order, recommendIds, checkInTeam, tir
 				end
 			end
 
-			if func then
-				return func(aInfo, bInfo)
+			if teamType and teamType == StageTeamType.CRUSADE then
+				local valueA = self._crusadeSystem:checkIsRecommend(a.id or a, aInfo).attrAddNum
+				local valueB = self._crusadeSystem:checkIsRecommend(b.id or b, bInfo).attrAddNum
+
+				if valueA ~= valueB then
+					return valueB < valueA
+				end
 			end
 
-			return funcDefault(aInfo, bInfo)
+			return func(aInfo, bInfo)
 		end)
 
 		return
@@ -1670,11 +1673,7 @@ function HeroSystem:sortHeroes(list, type, order, recommendIds, checkInTeam, tir
 		local bInTeam = not not self._teamHeroes[bInfo.id]
 
 		if aInTeam == bInTeam then
-			if func then
-				return func(aInfo, bInfo)
-			end
-
-			return funcDefault(aInfo, bInfo)
+			return func(aInfo, bInfo)
 		end
 
 		return aInTeam and not bInTeam

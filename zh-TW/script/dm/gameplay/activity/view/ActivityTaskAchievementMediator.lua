@@ -85,6 +85,13 @@ end
 function ActivityTaskAchievementMediator:refreshInfo()
 	local text = self._numNode:getChildByName("text")
 	self._itemId = self._activity:getActivityConfig().progressItem
+
+	if not self._itemId then
+		self._numNode:setVisible(false)
+
+		return
+	end
+
 	local numStr = self._numNode:getChildByName("num")
 	local num = self._bagSystem:getItemCount(self._itemId)
 
@@ -162,15 +169,37 @@ function ActivityTaskAchievementMediator:createCell(cell, index)
 		local config = taskData:getConfig()
 		local taskId = config.Id
 		local iconNode = panel:getChildByName("icon")
-		local icon = IconFactory:createItemPic({
-			id = self._itemId
-		})
-
-		icon:addTo(iconNode):center(iconNode:getContentSize()):setScale(0.7)
-
 		local descText = panel:getChildByName("desc")
+		local processNode = panel:getChildByName("process")
+
+		if self._itemId then
+			local icon = IconFactory:createItemPic({
+				id = self._itemId
+			})
+
+			icon:addTo(iconNode):center(iconNode:getContentSize()):setScale(0.7)
+		else
+			iconNode:setVisible(false)
+			descText:setPositionX(iconNode:getPositionX() - 20)
+		end
 
 		descText:setString(Strings:get(taskData:getDesc()))
+
+		if self._activityId == "ActivityBlock_Halloween_AchieveMentTask" then
+			processNode:setVisible(true)
+
+			local bar = processNode:getChildByFullName("loadingBar")
+			local process = processNode:getChildByFullName("progress")
+			local taskValues = taskData._taskValueList[1]
+
+			if taskValues then
+				bar:setPercent(taskValues.currentValue / taskValues.targetValue * 100)
+				process:setString(taskValues.currentValue .. "/" .. taskValues.targetValue)
+				processNode:setPositionX(descText:getPositionX() - 5)
+				descText:setPositionY(70)
+			end
+		end
+
 		panel:removeChildByName("TodoMark")
 
 		if taskStatus == TaskStatus.kGet then

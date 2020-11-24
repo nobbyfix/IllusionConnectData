@@ -1181,5 +1181,15 @@
             "limit": 400,
             "addValue": 1
         }
+    },
+    "AcitvityHalloweenStamina_Reset": {
+        "ResetSystem": {
+            "initial": 200,
+            "storage": 5000,
+            "cd": 540,
+            "resetMode": "CD",
+            "limit": 400,
+            "addValue": 1
+        }
     }
 }

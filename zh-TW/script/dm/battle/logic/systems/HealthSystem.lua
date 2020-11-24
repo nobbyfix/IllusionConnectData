@@ -290,6 +290,15 @@ function HealthSystem:performHealthReduce(target, damage, workId)
 
 	local curHpRatio = targetHpComp:getHpRatio()
 
+	if floor(prevHpRatio * 100) ~= floor(curHpRatio * 100) then
+		self._skillSystem:activateGlobalTrigger("UNIT_HPCHANGE", {
+			how = "Reduce",
+			unit = target,
+			prevHpPercent = floor(prevHpRatio * 100),
+			curHpPercent = floor(curHpRatio * 100)
+		})
+	end
+
 	return result
 end
 

@@ -763,11 +763,10 @@ function BuildingPutHeroMediator:setupClickEnvs()
 end
 
 function BuildingPutHeroMediator:refreshListView()
-	local sortOrder = self._sortOrder
 	local sortType = self._sortType
 
-	self._buildingSystem:sortHeroes(self._heroList, sortType, sortOrder, nil, self._roomId)
-	self._buildingSystem:sortHeroes(self._roomheroList, sortType, sortOrder, nil, self._roomId)
+	self._buildingSystem:sortHeroes(self._heroList, sortType, nil, self._roomId)
+	self._buildingSystem:sortHeroes(self._roomheroList, sortType, nil, self._roomId)
 
 	for __, id in ipairs(self._roomheroList) do
 		self._heroList[#self._heroList + 1] = id
@@ -947,6 +946,7 @@ function BuildingPutHeroMediator:refreshBuffShow()
 
 	local node_addBuff = self:getView():getChildByFullName("Node_AddInfo.Node_addBuff")
 	local text_buff = node_addBuff:getChildByFullName("Text_num")
+	local rommPartyImg = node_addBuff:getChildByFullName("roomPartyImg")
 	local room = self._buildingSystem:getRoom(self._roomId)
 	local heroList = room:getHeroList()
 	local buffAddNum, buffAddDesc = self._buildingSystem:getBuildPutHeroAddBuff(self._roomId, heroList)
@@ -966,6 +966,12 @@ function BuildingPutHeroMediator:refreshBuffShow()
 	self._buffAddNum = buffAddNum
 
 	text_buff:setString("+" .. buffAddDesc)
+
+	local roomParty = self._buildingSystem:getRoomParty(self._roomId)
+
+	if roomParty then
+		rommPartyImg:loadTexture(IconFactory:getPartyPath(roomParty, "building"))
+	end
 
 	local buff_text_1 = node_addBuff:getChildByFullName("Text_1")
 	local buff_text_2 = node_addBuff:getChildByFullName("Text_2")

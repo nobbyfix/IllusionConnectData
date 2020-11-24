@@ -78,20 +78,21 @@ function MonthSignInMediator:enterWithData(data)
 	self._closeBtn:setLocalZOrder(101)
 
 	for i = 1, 3 do
-		local node = self._textNode:getChildByName("accReward_state" .. i)
+		local node = self._textNode:getChildByFullName("accReward_state" .. i .. ".anim")
 		local mc = cc.MovieClip:create(movieClipName[i])
 
-		mc:addTo(node, -1, 1593):center(node:getContentSize())
+		mc:addTo(node):center(node:getContentSize())
 		mc:setScale(0.6)
 
 		local function callFunc(sender)
 			self:onClickNextReward(sender, i)
 		end
 
-		mapButtonHandlerClick(nil, node, {
+		mapButtonHandlerClick(nil, self._textNode:getChildByFullName("accReward_state" .. i), {
 			ignoreClickAudio = true,
 			func = callFunc
 		})
+		node:setTouchEnabled(false)
 	end
 
 	local isTodaySign = self._monthSignInSystem:isTodaySign()
@@ -139,7 +140,7 @@ function MonthSignInMediator:setupView()
 	}))
 
 	local todayLuck = self._monthSignInSystem:getTodayLuck()
-	local imageName = dailyLuckImagePart .. todayLuck .. ".png"
+	local imageName = self._monthSignInSystem:checkActivity() and "wsj_" .. dailyLuckImagePart .. todayLuck .. ".png" or dailyLuckImagePart .. todayLuck .. ".png"
 
 	self._commonNode:getChildByFullName("todayLuck"):loadTexture(imageName, 1)
 
@@ -206,8 +207,7 @@ function MonthSignInMediator:setupView()
 		self._contentNode:changeParent(childView)
 		self._contentNode:setPosition(coordinate)
 	end)
-	self._mc:addCallbackAtFrame(91, function ()
-		anim:stop()
+	self._mc:addCallbackAtFrame(45, function ()
 		self._closeBtn:runAction(cc.FadeIn:create(0.25))
 		self._actionText:runAction(cc.FadeIn:create(0.25))
 		actionBtn:setVisible(true)
@@ -215,13 +215,17 @@ function MonthSignInMediator:setupView()
 
 		self._mc = nil
 	end)
-	self._mc:gotoAndPlay(1)
+	self._mc:addCallbackAtFrame(91, function ()
+		anim:stop()
+	end)
+	self._mc:gotoAndPlay(21)
 
 	self._mc = -1
 end
 
 function MonthSignInMediator:initView(surfaceReward)
-	local anim = cc.MovieClip:create("dhb_xinriqiandao")
+	local n = self._monthSignInSystem:checkActivity() and "dhb_xinriqiandaowansheng" or "dhb_xinriqiandao"
+	local anim = cc.MovieClip:create(n)
 
 	anim:addTo(self:getView())
 	anim:setPosition(cc.p(568, 320))
@@ -253,7 +257,8 @@ function MonthSignInMediator:initAnim(surfaceReward)
 
 	self._bindTotalRewardClick = true
 	self._mc = -1
-	local anim = cc.MovieClip:create("dha_xinriqiandao")
+	local n = self._monthSignInSystem:checkActivity() and "dha_xinriqiandaowansheng" or "dha_xinriqiandao"
+	local anim = cc.MovieClip:create(n)
 
 	anim:addTo(self:getView())
 	anim:setPosition(cc.p(568, 320))
@@ -272,14 +277,16 @@ function MonthSignInMediator:initAnim(surfaceReward)
 	text:addTo(animSurface):setPosition(cc.p(-1, -168))
 
 	local insertNode = anim:getChildByName("insertNode")
-	local image = ccui.ImageView:create("qd_img_1.png", 1)
+	local imageName = self._monthSignInSystem:checkActivity() and "wsj_qd_img_1.png" or "qd_img_1.png"
+	local image = ccui.ImageView:create(imageName, 1)
 
 	image:addTo(insertNode)
 	image:setPosition(cc.p(89, 136))
-	anim:addCallbackAtFrame(17, function ()
+	anim:addCallbackAtFrame(10, function ()
 		anim:stop()
 
-		local constMc = cc.MovieClip:create("dhb_xinriqiandao")
+		local n = self._monthSignInSystem:checkActivity() and "dhb_xinriqiandaowansheng" or "dhb_xinriqiandao"
+		local constMc = cc.MovieClip:create(n)
 
 		constMc:addTo(self:getView())
 		constMc:setPosition(cc.p(568, 320))
@@ -385,22 +392,26 @@ function MonthSignInMediator:onTouchMainView(sender, eventType)
 			self._onRequestCheckIn = true
 
 			self._monthSignInSystem:requestGetDailyReward(function (response)
-				self:setupView()
+				if checkDependInstance(self) then
+					self:setupView()
 
-				self._onRequestCheckIn = false
+					self._onRequestCheckIn = false
 
-				self:dealReward(response.data)
+					self:dealReward(response.data)
+				end
 			end)
 		end
 	elseif eventType == ccui.TouchEventType.ended and not self._onRequestCheckIn then
 		self._onRequestCheckIn = true
 
 		self._monthSignInSystem:requestGetDailyReward(function (response)
-			self:setupView()
+			if checkDependInstance(self) then
+				self:setupView()
 
-			self._onRequestCheckIn = false
+				self._onRequestCheckIn = false
 
-			self:dealReward(response.data)
+				self:dealReward(response.data)
+			end
 		end)
 	end
 end
@@ -420,24 +431,24 @@ function MonthSignInMediator:dealReward(data)
 
 	if data.totalReward then
 		performWithDelay(self:getView(), function ()
-			local firstNode = self._textNode:getChildByName("accReward_state1")
+			local firstNode = self._textNode:getChildByFullName("accReward_state1.anim")
 
-			firstNode:removeChildByTag(1593)
+			firstNode:removeAllChildren()
 
 			local mc = cc.MovieClip:create("zba_baoxiang")
 
-			mc:addTo(firstNode, -1, 1593):center(firstNode:getContentSize())
+			mc:addTo(firstNode):center(firstNode:getContentSize())
 			mc:setScale(0.6)
 
 			local delegate = __associated_delegate__(self)({
 				willClose = function (self, popUpMediator, data)
-					local firstNode = self._textNode:getChildByName("accReward_state1")
+					local firstNode = self._textNode:getChildByFullName("accReward_state1.anim")
 
-					firstNode:removeChildByTag(1593)
+					firstNode:removeAllChildren()
 
 					local mc = cc.MovieClip:create("zbc_baoxiang")
 
-					mc:addTo(firstNode, -1, 1593):center(firstNode:getContentSize())
+					mc:addTo(firstNode):center(firstNode:getContentSize())
 					mc:setScale(0.6)
 				end
 			})

@@ -54,16 +54,13 @@ function BattlePassiveSkillTip:show(passiveSkill, isLeft)
 
 		local text_name = cell:getChildByName("Text_name")
 		local panel_skill = cell:getChildByName("Panel_skill")
-		local heroImg = cell:getChildByName("Image_hero")
-		local Image_line = cell:getChildByName("Image_line")
 
 		if skillId then
+			local lineCount = 0
 			local icon = ConfigReader:getDataByNameIdAndKey("Skill", skillId, "Icon")
 			local image = ccui.ImageView:create("asset/skillIcon/" .. icon .. ".png")
 
 			image:addTo(panel_skill):center(panel_skill:getContentSize())
-
-			local textHeight = 18
 
 			if info.lock then
 				image:setGray(true)
@@ -79,7 +76,7 @@ function BattlePassiveSkillTip:show(passiveSkill, isLeft)
 				richText:renderContent(descLabel:getContentSize().width, 0, true)
 				text_name:setString(Strings:get("BATTLE_SectSkill_Unactivated"))
 
-				textHeight = richText:getContentSize().height
+				lineCount = richText:getLineCount()
 			else
 				local descKey = ConfigReader:getDataByNameIdAndKey("Skill", skillId, "Desc_short")
 				local name = ConfigReader:getDataByNameIdAndKey("Skill", skillId, "Name")
@@ -96,33 +93,42 @@ function BattlePassiveSkillTip:show(passiveSkill, isLeft)
 				richText:renderContent(descLabel:getContentSize().width, 0, true)
 				text_name:setString(Strings:get(name))
 
-				textHeight = richText:getContentSize().height
+				lineCount = richText:getLineCount()
 			end
 
-			if heroImg then
-				if not info.master then
-					heroImg:setVisible(true)
-					heroImg:setContentSize(cc.size(heroImg:getChildByName("Text_1"):getContentSize().width + 10, heroImg:getContentSize().height))
+			if lineCount > 2 then
+				cell:setContentSize(cell:getContentSize().width, cell:getContentSize().height + 10)
 
-					if text_name:getContentSize().width > 80 then
-						heroImg:setPositionX(text_name:getPositionX() + text_name:getContentSize().width + 6)
-					end
-				else
-					heroImg:setVisible(false)
+				local children = cell:getChildren()
+
+				for k, v in pairs(children) do
+					v:setPositionY(v:getPositionY() + 10)
 				end
 			end
 
-			if not info.master then
-				Image_line:setPositionY(15 - (textHeight > 32 and textHeight - 32 or 0))
+			if info.master then
+				local tagImg = cell:getChildByName("Image_master")
+
+				tagImg:setVisible(true)
+				tagImg:setPositionX(text_name:getPositionX() + text_name:getContentSize().width + 4)
 			else
-				Image_line:setPositionY(10 - (textHeight > 32 and textHeight - 32 or 0))
+				local tempTagImg = cell:getChildByName("Image_temp")
+				local heroTagImg = cell:getChildByName("Image_hero")
+
+				tempTagImg:setPositionX(text_name:getPositionX() + text_name:getContentSize().width + 4)
+				heroTagImg:setPositionX(text_name:getPositionX() + text_name:getContentSize().width + 4)
+
+				if info.temp then
+					tempTagImg:setVisible(true)
+					heroTagImg:setVisible(false)
+				end
 			end
 
-			return image, textHeight
+			return image, lineCount
 		end
 	end
 
-	local posY = 0
+	local listview = self:createListView(baseShowNode)
 	local height = 0
 
 	for index = 1, #passiveSkill do
@@ -132,52 +138,49 @@ function BattlePassiveSkillTip:show(passiveSkill, isLeft)
 			local panelClone = self._panel_1:clone()
 
 			panelClone:setVisible(true)
-			baseShowNode:addChild(panelClone)
-			panelClone:setPosition(cc.p(0, posY))
 
 			if #passiveSkill == 1 then
 				panelClone:getChildByName("Image_line"):setVisible(false)
 			end
 
-			local icon, textH = refreshSkillCell(panelClone, skillInfo)
+			local icon = refreshSkillCell(panelClone, skillInfo)
 
 			if icon then
 				icon:setScale(0.33)
 			end
 
-			local h = math.max(78, textH + 50)
-			posY = posY - h
-			height = height + h
+			height = height + panelClone:getContentSize().height
+
+			listview:pushBackCustomItem(panelClone)
 		else
 			local panelClone = self._panel_2:clone()
 
 			panelClone:setVisible(true)
-			baseShowNode:addChild(panelClone)
-			panelClone:setPosition(cc.p(0, posY))
 
 			if #passiveSkill == index then
 				panelClone:getChildByName("Image_line"):setVisible(false)
 			end
 
-			local icon, textH = refreshSkillCell(panelClone, skillInfo)
+			local icon = refreshSkillCell(panelClone, skillInfo)
 
 			if icon then
 				icon:setScale(0.33)
 			end
 
-			print("textH", textH)
+			height = height + panelClone:getContentSize().height
 
-			local h = math.max(75, textH + 47)
-			posY = posY - h
-			height = height + h
+			listview:pushBackCustomItem(panelClone)
 		end
 	end
 
+	local viewHeight = #passiveSkill > 3 and 300 or height
 	local image_bg1 = self._panelBase:getChildByName("Image_bg1")
 	local image_bg = self._panelBase:getChildByName("Image_bg")
 
-	image_bg1:setContentSize(cc.size(image_bg1:getContentSize().width, height + 3))
-	image_bg:setContentSize(cc.size(image_bg:getContentSize().width, height + 20))
+	image_bg1:setContentSize(cc.size(image_bg1:getContentSize().width, viewHeight + 3))
+	image_bg:setContentSize(cc.size(image_bg:getContentSize().width, viewHeight + 18))
+	listview:setContentSize(cc.size(image_bg:getContentSize().width - 10, viewHeight))
+	listview:setPosition(cc.p(-3, -viewHeight))
 end
 
 function BattlePassiveSkillTip:hide()
@@ -186,4 +189,16 @@ end
 
 function BattlePassiveSkillTip:onClickHide()
 	self._listener:hidePassiveSkillTip()
+end
+
+function BattlePassiveSkillTip:createListView(parent)
+	local listview = ccui.ListView:create()
+
+	parent:addChild(listview)
+	listview:setAnchorPoint(cc.p(0, 0))
+	listview:setScrollBarEnabled(false)
+	listview:setItemsMargin(0)
+	listview:setDirection(ccui.ListViewDirection.vertical)
+
+	return listview
 end

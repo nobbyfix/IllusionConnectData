@@ -69,12 +69,22 @@ end
 
 function ActivitySystem:tryEnter(data)
 	local unlock, tips = self:checkEnabled()
+	local outself = self
 
 	if unlock then
 		self:requestAllActicities(true, function ()
-			local view = self:getInjector():getInstance("ActivityView")
+			local _1, _2, actIds = outself:getActivitiesInActivity()
 
-			self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, data))
+			if actIds and #actIds > 0 then
+				local view = self:getInjector():getInstance("ActivityView")
+
+				self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, data))
+			else
+				self:dispatch(ShowTipEvent({
+					duration = 0.35,
+					tip = Strings:get("Activity_Not_Found")
+				}))
+			end
 		end)
 	else
 		self:dispatch(ShowTipEvent({
@@ -363,10 +373,23 @@ function ActivitySystem:requestFinishActstage(activityId, subActivityId, params)
 			else
 				finishCallBack()
 			end
+
+			return
+		end
+
+		print("requestFinishActstage error .activityId:" .. tostring(activityId))
+		BattleLoader:popBattleView(self, {})
+
+		if self:checkComplexActivity(activityId) then
+			self:complexActivityTryEnter({
+				activityId = activityId
+			})
+		else
+			self:dispatch(SceneEvent:new(EVT_SWITCH_SCENE, "mainScene", nil, ))
 		end
 	end
 
-	self:requestDoChildActivity(activityId, subActivityId, params, callback)
+	self:requestDoChildActivity(activityId, subActivityId, params, callback, true)
 end
 
 function ActivitySystem:requestLeaveActstage(activityId, subActivityId, params)
@@ -379,10 +402,21 @@ function ActivitySystem:requestLeaveActstage(activityId, subActivityId, params)
 			data.activeLeave = true
 
 			self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, self:getInjector():getInstance("ActivityStageUnFinishView"), {}, data))
+		else
+			print("requestLeaveActstage error .activityId:" .. tostring(activityId))
+			BattleLoader:popBattleView(self, {})
+
+			if self:checkComplexActivity(activityId) then
+				self:complexActivityTryEnter({
+					activityId = activityId
+				})
+			else
+				self:dispatch(SceneEvent:new(EVT_SWITCH_SCENE, "mainScene", nil, ))
+			end
 		end
 	end
 
-	self:requestDoChildActivity(activityId, subActivityId, params, callback)
+	self:requestDoChildActivity(activityId, subActivityId, params, callback, true)
 end
 
 function ActivitySystem:getActivityOpenStatusById(activityId)
@@ -450,6 +484,21 @@ function ActivitySystem:createTimeSchedule()
 	end
 end
 
+function ActivitySystem:checkSpecialActivityOpen()
+	local function checkFunc()
+		local activity = self:getActivityByType("Carnival")
+
+		if activity and activity:getIsCanShow() == "false" and self:checkConditionWithId("Carnival") then
+			activity:setIsCanShow("true")
+			self:dispatch(Event:new(EVT_CHARGETASK_FIN))
+		end
+	end
+
+	if not self._spCheckSchedule then
+		self._spCheckSchedule = LuaScheduler:getInstance():schedule(checkFunc, 2, true)
+	end
+end
+
 function ActivitySystem:shutSchedule()
 	if self._timeSchel then
 		LuaScheduler:getInstance():unschedule(self._timeSchel)
@@ -477,25 +526,6 @@ function ActivitySystem:tryEnterCarnival()
 	if self:checkCarnival() then
 		self:requestAllActicities(true, function ()
 			local view = self:getInjector():getInstance("CarnivalView")
-
-			self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {}))
-		end)
-	end
-end
-
-function ActivitySystem:checkEaster()
-	local isOpen = self:isActivityOpen(ActivityId.kActivityBlock)
-	local isOver = self:isActivityOver(ActivityId.kActivityBlock)
-	local openCondition = self:checkConditionWithId(ActivityId.kActivityBlock)
-
-	return isOpen and not isOver and openCondition
-end
-
-function ActivitySystem:tryEnterEaster()
-	if self:checkEaster() then
-		AudioEngine:getInstance():playEffect("Se_Click_Open_1", false)
-		self:requestAllActicities(true, function ()
-			local view = self:getInjector():getInstance("ActivityBlockView")
 
 			self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {}))
 		end)
@@ -593,33 +623,6 @@ function ActivitySystem:showActivityRules(rules)
 	self:dispatch(event)
 end
 
-function ActivitySystem:tryEnterSummer()
-	local activity = self:getActivityByType(ActivityType.KActivityBlock)
-
-	if activity and self:checkSummer(activity:getActivityId()) then
-		AudioEngine:getInstance():playEffect("Se_Click_Open_1", false)
-		self:requestAllActicities(true, function ()
-			local view = self:getInjector():getInstance("ActivityBlockSummerView")
-
-			self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {}))
-		end)
-	end
-end
-
-function ActivitySystem:checkSummer(activityId)
-	local activity = self:getActivityByType(ActivityType.KActivityBlock)
-
-	if not activityId and activity then
-		activityId = activity:getActivityId()
-	end
-
-	local isOpen = self:isActivityOpen(activityId)
-	local isOver = self:isActivityOver(activityId)
-	local openCondition = self:checkConditionWithId(activityId)
-
-	return isOpen and not isOver and openCondition
-end
-
 function ActivitySystem:enterSummerExchange(activityId)
 	local view = self:getInjector():getInstance("ActivityBlockSummerExchangeView")
 	local event = ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
@@ -629,139 +632,143 @@ function ActivitySystem:enterSummerExchange(activityId)
 	self:dispatch(event)
 end
 
-local tryEnterSupportView = {
-	[ActivityId.kActivityWxh] = "ActivityBlockSupportWxhView",
-	[ActivityId.kActivityBlockZuoHe] = "ActivityBlockSupportView"
-}
-local enterSupportStageView = {
-	[ActivityId.kActivityWxh] = "ActivitySagaSupportMapView",
-	[ActivityId.kActivityBlockZuoHe] = "ActivitySagaSupportMapView"
-}
-local enterSagaSupportStageView = {
-	[ActivityId.kActivityWxh] = "ActivitySagaSupportStageWxhView",
-	[ActivityId.kActivityBlockZuoHe] = "ActivitySagaSupportStageView"
-}
-local enterSagaSupportScheduleView = {
-	[ActivityId.kActivityWxh] = "ActivitySagaSupportScheduleWxhView",
-	[ActivityId.kActivityBlockZuoHe] = "ActivitySagaSupportScheduleView"
-}
-local enterSupportTaskView = {
-	[ActivityId.kActivityWxh] = "ActivityBlockTaskView",
-	[ActivityId.kActivityBlockZuoHe] = "ActivityBlockTaskView"
-}
-local enterSagaSupportRankRewardView = {
-	[ActivityId.kActivityWxh] = "ActivitySagaSupportRankRewardWxhView",
-	[ActivityId.kActivityBlockZuoHe] = "ActivitySagaSupportRankRewardView"
-}
-local enterSagaWinView = {
-	[ActivityId.kActivityWxh] = "ActivitySagaWinWxhView",
-	[ActivityId.kActivityBlockZuoHe] = "ActivitySagaWinView"
-}
+function ActivitySystem:monsterShopGoodsExchange(activityId, subActivityId, data, callback)
+	local params = {
+		doActivityType = 101,
+		exchangeId = data.goodsId,
+		index = data.index or 1,
+		exchangeAmount = data.goodsNum or 1
+	}
+	local activityId = activityId
 
-function ActivitySystem:checkSupport(activityId)
-	local activityId = activityId or ActivityId.kActivityBlockZuoHe
-	local isOpen = self:isActivityOpen(activityId)
-	local isOver = self:isActivityOver(activityId)
-	local openCondition = self:checkConditionWithId(activityId)
+	local function callbackFunc(response)
+		if response.resCode == GS_SUCCESS then
+			if callback then
+				callback(response)
+			end
 
-	return isOpen and not isOver and openCondition
-end
+			local data = response.data.rewards
 
-function ActivitySystem:urlTryEnter(data)
-	local activityId = data.activityId or ActivityId.kActivityBlockZuoHe
-
-	self:tryEnterSupport(activityId)
-end
-
-function ActivitySystem:tryEnterSupport(activityId)
-	if self:checkSupport(activityId) then
-		AudioEngine:getInstance():playEffect("Se_Click_Open_1", false)
-		self:requestAllActicities(true, function ()
-			local view = self:getInjector():getInstance(tryEnterSupportView[activityId])
-
-			self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
+			self:dispatch(Event:new(EVT_MONSTERSHOP_REFRESH, {
 				activityId = activityId
 			}))
-		end)
+
+			if data and next(data) then
+				local view = self:getInjector():getInstance("getRewardView")
+
+				self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+					maskOpacity = 0
+				}, {
+					rewards = data
+				}))
+			end
+		end
+	end
+
+	if subActivityId then
+		self:requestDoChildActivity(activityId, subActivityId, params, callbackFunc)
+	else
+		self:requestDoActivity(activityId, params, callbackFunc)
 	end
 end
 
-function ActivitySystem:enterSupportStage(activity, activityId)
-	local activityId = activityId or ActivityId.kActivityBlockZuoHe
+function ActivitySystem:monsterShopCandyExchange(activityId, subActivityId, callback)
+	local params = {
+		doActivityType = 102
+	}
+	local activityId = activityId
 
-	if activity then
-		local view = self:getInjector():getInstance(enterSupportStageView[activityId])
-		local event = ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
-			activityId = activityId,
-			activity = activity
-		})
+	local function callbackFunc(response)
+		if response.resCode == GS_SUCCESS then
+			if callback then
+				callback(response)
+			end
 
-		self:dispatch(event)
+			local data = response.data.rewards
+
+			self:dispatch(Event:new(EVT_MONSTERSHOP_REFRESH, {
+				activityId = activityId
+			}))
+
+			if data and next(data) then
+				local view = self:getInjector():getInstance("getRewardView")
+
+				self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+					maskOpacity = 0
+				}, {
+					rewards = data
+				}))
+			end
+		end
+	end
+
+	if subActivityId then
+		self:requestDoChildActivity(activityId, subActivityId, params, callbackFunc)
+	else
+		self:requestDoActivity(activityId, params, callbackFunc)
 	end
 end
 
-function ActivitySystem:enterSagaSupportStage(activityId)
+function ActivitySystem:monsterShopGetMoneyRates(activityId, subActivityId, callback)
+	local params = {
+		doActivityType = 103
+	}
+	local activityId = activityId
+
+	local function callbackFunc(response)
+		if response.resCode == GS_SUCCESS and callback then
+			callback(response)
+		end
+	end
+
+	if subActivityId then
+		self:requestDoChildActivity(activityId, subActivityId, params, callbackFunc)
+	else
+		self:requestDoActivity(activityId, params, callbackFunc)
+	end
+end
+
+function ActivitySystem:colourEggGetAll(activityId, subActivityId, callback)
 	local params = {
 		doActivityType = 101
 	}
-	local activityId = activityId or ActivityId.kActivityBlockZuoHe
+	local activityId = activityId
 
-	self:requestDoActivity(activityId, params, function (response)
-		self:getActivityById(activityId):synchronizePeriodsInfo(response.data)
+	local function callbackFunc(response)
+		if response.resCode == GS_SUCCESS then
+			if callback then
+				callback(response.data)
+			end
 
-		local view = self:getInjector():getInstance(enterSagaSupportStageView[activityId])
+			self:dispatch(Event:new(EVT_COLOUR_EGG_REFRESH, response.data))
+		end
+	end
 
-		self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
-			activityId = activityId
-		}))
-	end)
+	if subActivityId then
+		self:requestDoChildActivity(activityId, subActivityId, params, callbackFunc)
+	else
+		self:requestDoActivity(activityId, params, callbackFunc)
+	end
 end
 
-function ActivitySystem:enterSagaSupportSchedule(activityId)
+function ActivitySystem:colourEggGetTarget(activityId, subActivityId, eggId, callback)
 	local params = {
-		doActivityType = 101
+		doActivityType = 102,
+		eggId = eggId
 	}
-	local activityId = activityId or ActivityId.kActivityBlockZuoHe
+	local activityId = activityId
 
-	self:requestDoActivity(activityId, params, function (response)
-		self:getActivityById(activityId):synchronizePeriodsInfo(response.data)
+	local function callbackFunc(response)
+		if response.resCode == GS_SUCCESS and callback then
+			callback(response.data)
+		end
+	end
 
-		local view = self:getInjector():getInstance(enterSagaSupportScheduleView[activityId])
-
-		self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
-			activityId = activityId
-		}))
-	end)
-end
-
-function ActivitySystem:enterSupportTask(activityId)
-	local activityId = activityId or ActivityId.kActivityBlockZuoHe
-	local view = self:getInjector():getInstance(enterSupportTaskView[activityId])
-
-	self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
-		activityId = activityId
-	}))
-end
-
-function ActivitySystem:enterSagaSupportRankRewardView(activityId, periodId)
-	local activityId = activityId or ActivityId.kActivityBlockZuoHe
-	local view = self:getInjector():getInstance(enterSagaSupportRankRewardView[activityId])
-
-	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
-		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-	}, {
-		periodId = periodId,
-		activityId = activityId
-	}))
-end
-
-function ActivitySystem:enterSagaWinView(activityId)
-	local activityId = activityId or ActivityId.kActivityBlockZuoHe
-	local view = self:getInjector():getInstance(enterSagaWinView[activityId])
-
-	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {}, {
-		activityId = activityId
-	}))
+	if subActivityId then
+		self:requestDoChildActivity(activityId, subActivityId, params, callbackFunc)
+	else
+		self:requestDoActivity(activityId, params, callbackFunc)
+	end
 end
 
 function ActivitySystem:getCurrentTime()
@@ -776,24 +783,16 @@ function ActivitySystem:getActivityByType(actType)
 	return self:getActivityList():getActivityByType(actType)
 end
 
-function ActivitySystem:getActivitiesByType(type)
-	return self:getActivityList():getActivitiesByType(type)
+function ActivitySystem:getActivityByComplexId(complexId)
+	return self:getActivityList():getActivityByComplexId(complexId)
 end
 
-function ActivitySystem:getExtraMarkByType(type)
-	local activities = self:getActivitiesByType(ActivityType.kBLOCKSPEXTRA)
+function ActivitySystem:getActivityByComplexUI(ui)
+	return self:getActivityList():getActivityByComplexUI(ui)
+end
 
-	for id, activity in pairs(activities) do
-		local config = activity:getActivityConfig()
-
-		if config[type] then
-			local path = string.format("asset/commonLang/%s.png", config[type])
-
-			return path
-		end
-	end
-
-	return nil
+function ActivitySystem:getActivitiesByType(type)
+	return self:getActivityList():getActivitiesByType(type)
 end
 
 function ActivitySystem:getActivitiesByShowTab(showTab)
@@ -820,6 +819,7 @@ end
 function ActivitySystem:getActivitiesInActivity()
 	local activitiesForIndex = {}
 	local activitiesForId = {}
+	local activityList = {}
 	local allActivities = self:getActivityList():getAllActivities()
 	local index = 1
 
@@ -827,6 +827,7 @@ function ActivitySystem:getActivitiesInActivity()
 		if (activity:getShowTab() == ActivityShowTab.kInActivity or activity:getShowTab() == ActivityShowTab.kInAll) and self:isActivityOpen(id) and not self:isActivityOver(id) and self:checkConditionWithId(id) then
 			activitiesForIndex[index] = activity
 			activitiesForId[id] = activity
+			activityList[index] = id
 			index = index + 1
 		end
 	end
@@ -835,7 +836,23 @@ function ActivitySystem:getActivitiesInActivity()
 		return a:getShowIndex() < b:getShowIndex()
 	end)
 
-	return activitiesForIndex, activitiesForId
+	return activitiesForIndex, activitiesForId, activityList
+end
+
+function ActivitySystem:getExtraMarkByType(type)
+	local activities = self:getActivitiesByType(ActivityType.kBLOCKSPEXTRA)
+
+	for id, activity in pairs(activities) do
+		local config = activity:getActivityConfig()
+
+		if config[type] then
+			local path = string.format("asset/commonLang/%s.png", config[type])
+
+			return path
+		end
+	end
+
+	return nil
 end
 
 function ActivitySystem:checkConditionWithId(activityId)
@@ -910,6 +927,27 @@ function ActivitySystem:hasRedPointForActivity(activityId)
 	end
 
 	return false
+end
+
+function ActivitySystem:hasRedPointForActivityWsj(activityId)
+	if not self:hasRedPointForActivity(activityId) then
+		return self:hasRedPointForActivity(self:getActivityById(activityId):getActivityConfig().LoginActivity)
+	end
+
+	return true
+end
+
+function ActivitySystem:hasRedPointForActivitySummer(activityId)
+	if not self:hasRedPointForActivity(activityId) then
+		local limit = ConfigReader:getRecordById("Reset", "AcitvitySummerStamina_Reset").ResetSystem.limit
+		local bagSystem = self:getInjector():getInstance(BagSystem)
+		local num = bagSystem:getAcitvitySummerPower()
+		local isHave, tips = self:getActivityById(activityId):getActivityClubBossActivity()
+
+		return isHave and limit <= num
+	end
+
+	return true
 end
 
 function ActivitySystem:isActivityOpen(activityId)
@@ -1151,7 +1189,7 @@ function ActivitySystem:requestDoActivity(activityId, param, callback)
 	end)
 end
 
-function ActivitySystem:requestDoChildActivity(activityId, subActivityId, param, callback)
+function ActivitySystem:requestDoChildActivity(activityId, subActivityId, param, callback, forceCallback)
 	if not self:getVersionCanBuy(activityId) then
 		return
 	end
@@ -1169,6 +1207,8 @@ function ActivitySystem:requestDoChildActivity(activityId, subActivityId, param,
 			end
 
 			self:dispatch(Event:new(EVT_ACTIVITY_REDPOINT_REFRESH, {}))
+		elseif forceCallback and callback then
+			callback(response)
 		end
 	end)
 end
@@ -1272,4 +1312,170 @@ function ActivitySystem:getBlockSummerActivity()
 	end
 
 	return resultActivity
+end
+
+function ActivitySystem:checkComplexActivity(activityId)
+	local isOpen = self:isActivityOpen(activityId)
+	local isOver = self:isActivityOver(activityId)
+	local openCondition = self:checkConditionWithId(activityId)
+
+	return isOpen and not isOver and openCondition
+end
+
+function ActivitySystem:complexActivityTryEnter(data)
+	local activityId = data.activityId
+	local activity = self:getActivityById(activityId)
+
+	if activity then
+		local ui = activity:getActivityComplexUI()
+
+		self:tryEnterComplexMainView(ui)
+	end
+end
+
+function ActivitySystem:tryEnterComplexMainView(ui)
+	local activity = self:getActivityByComplexUI(ui)
+
+	if activity and self:checkComplexActivity(activity:getId()) then
+		AudioEngine:getInstance():playEffect("Se_Click_Open_1", false)
+		self:requestAllActicities(true, function ()
+			local view = self:getInjector():getInstance(ActivityComplexUI.tryEnterComplexMainView[ui])
+
+			self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
+				activityId = activity:getId()
+			}))
+		end)
+	end
+end
+
+function ActivitySystem:tryEnterBlockMonsterShopView(data)
+	local activityId = data.activityId
+
+	self:enterBlockMonsterShopView(activityId)
+end
+
+function ActivitySystem:enterSupportStage(activityId)
+	local activity = self:getActivityById(activityId)
+
+	if activity then
+		local ui = activity:getActivityComplexUI()
+		local view = self:getInjector():getInstance(ActivityComplexUI.enterSupportStageView[ui])
+		local event = ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
+			activityId = activity:getId()
+		})
+
+		self:dispatch(event)
+	end
+end
+
+function ActivitySystem:enterSagaSupportStage(activityId)
+	local params = {
+		doActivityType = 101
+	}
+
+	self:requestDoActivity(activityId, params, function (response)
+		self:getActivityById(activityId):synchronizePeriodsInfo(response.data)
+
+		local activity = self:getActivityById(activityId)
+
+		if activity then
+			local ui = activity:getActivityComplexUI()
+			local view = self:getInjector():getInstance(ActivityComplexUI.enterSagaSupportStageView[ui])
+
+			self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
+				activityId = activityId
+			}))
+		end
+	end)
+end
+
+function ActivitySystem:enterSagaSupportSchedule(activityId)
+	local params = {
+		doActivityType = 101
+	}
+
+	self:requestDoActivity(activityId, params, function (response)
+		self:getActivityById(activityId):synchronizePeriodsInfo(response.data)
+
+		local activity = self:getActivityById(activityId)
+
+		if activity then
+			local ui = activity:getActivityComplexUI()
+			local view = self:getInjector():getInstance(ActivityComplexUI.enterSagaSupportScheduleView[ui])
+
+			self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
+				activityId = activityId
+			}))
+		end
+	end)
+end
+
+function ActivitySystem:enterSupportTaskView(activityId)
+	local activity = self:getActivityById(activityId)
+
+	if activity then
+		local ui = activity:getActivityComplexUI()
+		local view = self:getInjector():getInstance(ActivityComplexUI.enterSupportTaskView[ui])
+
+		self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
+			activityId = activityId
+		}))
+	end
+end
+
+function ActivitySystem:enterSagaSupportRankRewardView(activityId, periodId)
+	local activity = self:getActivityById(activityId)
+
+	if activity then
+		local ui = activity:getActivityComplexUI()
+		local view = self:getInjector():getInstance(ActivityComplexUI.enterSagaSupportRankRewardView[ui])
+
+		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+		}, {
+			periodId = periodId,
+			activityId = activityId
+		}))
+	end
+end
+
+function ActivitySystem:enterSagaWinView(activityId)
+	local activity = self:getActivityById(activityId)
+
+	if activity then
+		local ui = activity:getActivityComplexUI()
+		local view = self:getInjector():getInstance(ActivityComplexUI.enterSagaWinView[ui])
+
+		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {}, {
+			activityId = activityId
+		}))
+	end
+end
+
+function ActivitySystem:enterBlockMap(activityId)
+	local activity = self:getActivityById(activityId)
+
+	if activity then
+		local ui = activity:getActivityComplexUI()
+		local view = self:getInjector():getInstance(ActivityComplexUI.enterSupportStageView[ui])
+		local event = ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
+			activityId = activityId
+		})
+
+		self:dispatch(event)
+	end
+end
+
+function ActivitySystem:enterBlockMonsterShopView(activityId)
+	local activity = self:getActivityById(activityId)
+
+	if activity then
+		local ui = activity:getActivityComplexUI()
+		local view = self:getInjector():getInstance(ActivityComplexUI.enterBlockMonsterShopView[ui])
+		local event = ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
+			activityId = activityId
+		})
+
+		self:dispatch(event)
+	end
 end

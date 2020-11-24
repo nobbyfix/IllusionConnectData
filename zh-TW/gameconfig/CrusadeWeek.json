@@ -1,26 +1,4 @@
 {
-    "CrusadeWeek_W10": {
-        "NextWeek": "CrusadeWeek_W10",
-        "WeekDuration": 1,
-        "SubPoint": [
-            "CrusadeFloor_F1",
-            "CrusadeFloor_F2",
-            "CrusadeFloor_F3",
-            "CrusadeFloor_F4",
-            "CrusadeFloor_F5",
-            "CrusadeFloor_F6",
-            "CrusadeFloor_F7",
-            "CrusadeFloor_F8",
-            "CrusadeFloor_F9",
-            "CrusadeFloor_F10",
-            "CrusadeFloor_F11_8",
-            "CrusadeFloor_F12_8",
-            "CrusadeFloor_F13_8",
-            "CrusadeFloor_F14_8",
-            "CrusadeFloor_F15_8"
-        ],
-        "EffectiveTime": ""
-    },
     "CrusadeWeek_W3": {
         "NextWeek": "CrusadeWeek_W4",
         "WeekDuration": 1,
@@ -222,5 +200,102 @@
             "2020-09-21 05:00:00",
             "2020-09-28 05:00:00"
         ]
+    },
+    "CrusadeWeek_W12": {
+        "NextWeek": "CrusadeWeek_W13",
+        "WeekDuration": 1,
+        "SubPoint": [
+            "CrusadeFloor_F1",
+            "CrusadeFloor_F2",
+            "CrusadeFloor_F3",
+            "CrusadeFloor_F4",
+            "CrusadeFloor_F5",
+            "CrusadeFloor_F6",
+            "CrusadeFloor_F7",
+            "CrusadeFloor_F8",
+            "CrusadeFloor_F9",
+            "CrusadeFloor_F10",
+            "CrusadeFloor_F11_8",
+            "CrusadeFloor_F12_8",
+            "CrusadeFloor_F13_8",
+            "CrusadeFloor_F14_8",
+            "CrusadeFloor_F15_8"
+        ],
+        "EffectiveTime": [
+            "2020-11-16 05:00:00",
+            "2020-11-23 05:00:00"
+        ]
+    },
+    "CrusadeWeek_W11": {
+        "NextWeek": "CrusadeWeek_W12",
+        "WeekDuration": 1,
+        "SubPoint": [
+            "CrusadeFloor_F1",
+            "CrusadeFloor_F2",
+            "CrusadeFloor_F3",
+            "CrusadeFloor_F4",
+            "CrusadeFloor_F5",
+            "CrusadeFloor_F6",
+            "CrusadeFloor_F7",
+            "CrusadeFloor_F8",
+            "CrusadeFloor_F9",
+            "CrusadeFloor_F10",
+            "CrusadeFloor_F11_8",
+            "CrusadeFloor_F12_8",
+            "CrusadeFloor_F13_8",
+            "CrusadeFloor_F14_8",
+            "CrusadeFloor_F15_8"
+        ],
+        "EffectiveTime": [
+            "2020-11-09 05:00:00",
+            "2020-11-16 05:00:00"
+        ]
+    },
+    "CrusadeWeek_W10": {
+        "NextWeek": "CrusadeWeek_W11",
+        "WeekDuration": 1,
+        "SubPoint": [
+            "CrusadeFloor_F1",
+            "CrusadeFloor_F2",
+            "CrusadeFloor_F3",
+            "CrusadeFloor_F4",
+            "CrusadeFloor_F5",
+            "CrusadeFloor_F6",
+            "CrusadeFloor_F7",
+            "CrusadeFloor_F8",
+            "CrusadeFloor_F9",
+            "CrusadeFloor_F10",
+            "CrusadeFloor_F11_8",
+            "CrusadeFloor_F12_8",
+            "CrusadeFloor_F13_8",
+            "CrusadeFloor_F14_8",
+            "CrusadeFloor_F15_8"
+        ],
+        "EffectiveTime": [
+            "2020-11-02 05:00:00",
+            "2020-11-09 05:00:00"
+        ]
+    },
+    "CrusadeWeek_W13": {
+        "NextWeek": "CrusadeWeek_W13",
+        "WeekDuration": 1,
+        "SubPoint": [
+            "CrusadeFloor_F1",
+            "CrusadeFloor_F2",
+            "CrusadeFloor_F3",
+            "CrusadeFloor_F4",
+            "CrusadeFloor_F5",
+            "CrusadeFloor_F6",
+            "CrusadeFloor_F7",
+            "CrusadeFloor_F8",
+            "CrusadeFloor_F9",
+            "CrusadeFloor_F10",
+            "CrusadeFloor_F11_8",
+            "CrusadeFloor_F12_8",
+            "CrusadeFloor_F13_8",
+            "CrusadeFloor_F14_8",
+            "CrusadeFloor_F15_8"
+        ],
+        "EffectiveTime": ""
     }
 }

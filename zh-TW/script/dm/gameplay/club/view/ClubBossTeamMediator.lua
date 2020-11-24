@@ -23,10 +23,6 @@ local kBtnHandlers = {
 	["main.my_pet_bg.sortPanel.sortBtn"] = {
 		clickAudio = "Se_Click_Fold_1",
 		func = "onClickSort"
-	},
-	["main.my_pet_bg.sortPanel.sortTypeBtn"] = {
-		clickAudio = "Se_Click_Tab_1",
-		func = "onClickSortType"
 	}
 }
 local kHeroRarityBgAnim = {
@@ -346,10 +342,9 @@ function ClubBossTeamMediator:showOneKeyHeros()
 		end
 	end
 
-	local sortOrder = self._stageSystem:getCardSortOrder()
 	local sortType = self._stageSystem:getCardSortType()
 
-	self._heroSystem:sortHeroes(self._orderPets, sortType, sortOrder, tbRecommandIds, false, nil)
+	self._heroSystem:sortHeroes(self._petListAll, sortType, tbRecommandIds, false)
 end
 
 function ClubBossTeamMediator:setupView()
@@ -457,7 +452,11 @@ function ClubBossTeamMediator:createTeamCell(cell, index)
 	local detailBtn = node:getChildByFullName("detailBtn")
 
 	detailBtn:addClickEventListener(function ()
-		self:onClickHeroDetail(id)
+		local attrAdds = {}
+		local recommendData = self._clubSystem:checkIsRecommend(id, heroInfo, self._viewType)
+		attrAdds = recommendData.attrAdds
+
+		self:onClickHeroDetail(id, attrAdds)
 	end)
 end
 
@@ -802,7 +801,6 @@ end
 
 function ClubBossTeamMediator:refreshListView(ignoreAdjustOffset)
 	self._petListAll = self._stageSystem:getSortExtendIds(self._petList)
-	local sortOrder = self._stageSystem:getCardSortOrder()
 	local sortType = self._stageSystem:getCardSortType()
 	local tbRecommandIds = {}
 	local tbTiredIds = {}
@@ -817,7 +815,7 @@ function ClubBossTeamMediator:refreshListView(ignoreAdjustOffset)
 		end
 	end
 
-	self._heroSystem:sortHeroes(self._petListAll, sortType, sortOrder, tbRecommandIds, false, tbTiredIds)
+	self._heroSystem:sortHeroes(self._petListAll, sortType, tbRecommandIds, false, tbTiredIds)
 
 	if not self._ignoreReloadData then
 		local offsetX = self._teamView:getContentOffset().x + self._petSize.width
@@ -857,11 +855,13 @@ function ClubBossTeamMediator:initHero(node, info)
 		textNum:setVisible(isShow and effectNum > 0)
 		textNum:setVisible(false)
 		text:setString(Strings:get("clubBoss_46"))
+		text:setColor(cc.c3b(255, 203, 63))
 	end
 
 	if textNumEffect then
 		textNumEffect:setVisible(not isShow and effectNum > 0)
 		textNumEffect:setString(Strings:get("LOGIN_UI13"))
+		textNumEffect:setColor(cc.c3b(255, 255, 255))
 	end
 
 	if node:getChildByName("fatigueBg") then
@@ -1012,19 +1012,23 @@ function ClubBossTeamMediator:initTeamHero(node, info)
 
 	local isShow = self._clubSystem:getIsRecommend(heroId, self._viewType)
 	local effectNum = tonumber(self._clubSystem:getHeroEffectNum(heroId, self._viewType))
+	local exceptBg = node:getChildByName("except_bg")
 	local textNumEffect = node:getChildByName("textNumEffect")
-	local except_0 = node:getChildByName("except_0")
 
 	textNumEffect:setVisible(effectNum > 0)
-	except_0:setVisible(effectNum > 0)
+	exceptBg:setVisible(effectNum > 0)
 
 	if textNumEffect then
 		if isShow then
 			textNumEffect:setString(Strings:get("clubBoss_46"))
+			textNumEffect:setColor(cc.c3b(255, 203, 63))
 		else
 			textNumEffect:setString(Strings:get("LOGIN_UI13"))
+			textNumEffect:setColor(cc.c3b(255, 255, 255))
 		end
 	end
+
+	exceptBg:setContentSize(textNumEffect:getContentSize())
 
 	local cost = node:getChildByFullName("costBg.cost")
 

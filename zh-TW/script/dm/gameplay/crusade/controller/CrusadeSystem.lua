@@ -213,17 +213,19 @@ end
 function CrusadeSystem:getCurFloorStarBuffDesc()
 	local buffId = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Crusade_5_Star_buff", "content")
 	local desc = ConfigReader:getDataByNameIdAndKey("SkillAttrEffect", buffId, "EffectDesc")
+	local value = ConfigReader:getDataByNameIdAndKey("SkillAttrEffect", buffId, "Value")
 	local str = Strings:get(desc)
 
-	return str
+	return str, value[1]
 end
 
 function CrusadeSystem:getCurFloorAweakenBuffDesc()
 	local buffId = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Crusade_Aweaken_buff", "content")
 	local desc = ConfigReader:getDataByNameIdAndKey("SkillAttrEffect", buffId, "EffectDesc")
+	local value = ConfigReader:getDataByNameIdAndKey("SkillAttrEffect", buffId, "Value")
 	local str = Strings:get(desc)
 
-	return str
+	return str, value[1]
 end
 
 function CrusadeSystem:getRewardDataByFloorNum(floorNum)
@@ -636,6 +638,67 @@ function CrusadeSystem:showCrusadeTeamView(isFrist)
 		stageType = StageTeamType.CRUSADE,
 		data = data
 	}))
+end
+
+function CrusadeSystem:checkIsRecommend(checkId, heroInfo)
+	local StarBuffNum = ConfigReader:getRecordById("ConfigValue", "Tower_1_Star_Buff_Minimum_Star").content
+	local attrAdds = {}
+	local attrAddNum = 0
+	local recommendDesc = ""
+	local isMaxRecommend = false
+	local recommendHero = self:getCurFloorRecommendHero()
+
+	for k, rData in pairs(recommendHero) do
+		if rData.Hero then
+			for index, heroId in pairs(rData.Hero) do
+				if heroId == checkId then
+					attrAdds[#attrAdds + 1] = {}
+					attrAdds[#attrAdds].title = Strings:get("Team_Hero_Type_Title")
+					local effectConfig = ConfigReader:getRecordById("SkillAttrEffect", rData.Effect)
+					attrAdds[#attrAdds].desc = ""
+					recommendDesc = Strings:get("clubBoss_46")
+					isMaxRecommend = true
+
+					if effectConfig then
+						attrAddNum = attrAddNum + effectConfig.Value[1]
+						attrAdds[#attrAdds].desc = Strings:get(effectConfig.EffectDesc)
+					end
+
+					attrAdds[#attrAdds].type = StageAttrAddType.HERO_TYPE
+				end
+			end
+		end
+	end
+
+	if heroInfo.awakenLevel > 0 then
+		local aweakenBuff, value = self:getCurFloorAweakenBuffDesc()
+		attrAdds[#attrAdds + 1] = {}
+		attrAdds[#attrAdds].title = Strings:get("Tower_Main_awakenBuff")
+		attrAdds[#attrAdds].desc = aweakenBuff
+		attrAdds[#attrAdds].type = StageAttrAddType.HERO_AWAKE
+		attrAddNum = attrAddNum + value
+		recommendDesc = isMaxRecommend and Strings:get("clubBoss_46") or Strings:get("EXPLORE_UI22")
+		isMaxRecommend = isMaxRecommend or false
+	elseif StarBuffNum <= heroInfo.star then
+		local starBuff, value = self:getCurFloorStarBuffDesc()
+		attrAdds[#attrAdds + 1] = {}
+		attrAdds[#attrAdds].title = Strings:get("Tower_Main_starBuff")
+		attrAdds[#attrAdds].desc = starBuff
+		attrAdds[#attrAdds].type = StageAttrAddType.HERO_FULL_STAR
+		attrAddNum = attrAddNum + value
+		recommendDesc = isMaxRecommend and Strings:get("clubBoss_46") or Strings:get("EXPLORE_UI22")
+		isMaxRecommend = isMaxRecommend or false
+	end
+
+	local recommendData = {
+		isRecommend = #attrAdds > 0,
+		attrAddNum = attrAddNum,
+		recommendDesc = recommendDesc,
+		attrAdds = attrAdds,
+		isMaxRecommend = isMaxRecommend
+	}
+
+	return recommendData
 end
 
 function CrusadeSystem:enterBattleView(data)

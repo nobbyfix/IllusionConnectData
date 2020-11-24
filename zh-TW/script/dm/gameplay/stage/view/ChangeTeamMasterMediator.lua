@@ -42,6 +42,7 @@ end
 function ChangeTeamMasterMediator:enterWithData(data)
 	self._curMasterId = data.masterId
 	self._masterList = data.masterList
+	self._recomand = data.recomandList or {}
 
 	self:initView()
 end
@@ -94,15 +95,28 @@ function ChangeTeamMasterMediator:initView()
 	tableView:reloadData()
 end
 
+function ChangeTeamMasterMediator:checkInReconamd(masterId)
+	for i = 1, #self._recomand do
+		if self._recomand[i] == masterId then
+			return true
+		end
+	end
+
+	return false
+end
+
 function ChangeTeamMasterMediator:createMaster(cell, index)
 	cell:removeAllChildren()
 
 	local data = self._masterList[index]
 	local layer = self._masterClone:clone()
+
+	cell:setGray(data:getIsLock())
+
 	local recommendPanel = layer:getChildByName("recommendPanel")
 
 	recommendPanel:setLocalZOrder(10)
-	recommendPanel:setVisible(false)
+	recommendPanel:setVisible(self:checkInReconamd(data:getId()))
 	layer:setVisible(true)
 	layer:addTo(cell)
 	layer:setPosition(cc.p(0, 0))
@@ -124,7 +138,6 @@ function ChangeTeamMasterMediator:createMaster(cell, index)
 	if rolePic then
 		rolePic:addTo(layer)
 		rolePic:setPosition(layer:getChildByName("bg"):getPosition())
-		layer:getChildByName("touchLayer"):setTouchEnabled(not data:getIsLock())
 		layer:getChildByName("touchLayer"):setSwallowTouches(false)
 		layer:getChildByName("touchLayer"):addClickEventListener(function ()
 			self:onTouchChooseView(data)
@@ -146,12 +159,13 @@ function ChangeTeamMasterMediator:onTouchChooseView(data)
 		return
 	end
 
+	if self._curMasterId == data:getId() then
+		return
+	end
+
 	self._curMasterId = data:getId()
 
 	AudioEngine:getInstance():playEffect("Se_Click_Tab_1", false)
-	self:dispatch(ShowTipEvent({
-		tip = Strings:get("Stage_Team_UI19")
-	}))
 
 	local offsetX = self._masterView:getContentOffset().x
 

@@ -123,6 +123,45 @@ function PassClubBoss:onClick(data)
 	end)
 end
 
+ClubResourcesBattleStart = class("ClubResourcesBattleStart", DebugViewTemplate, _M)
+
+function ClubResourcesBattleStart:initialize()
+	self._opType = 401
+	self._viewConfig = {
+		{
+			default = "",
+			name = "code",
+			_selectBoxShow = true,
+			type = "SelectBox",
+			title = "选择社团打榜活动",
+			_selectBoxAutoHide = true,
+			selectHandler = function (selectStr)
+				local ret = {}
+
+				if not GameConfigs.useLuaCfg then
+					local dataTable = DataReader:getDBTable("HitCharts")
+
+					if string.len(selectStr) > 0 and dataTable then
+						local datas = dataTable.table:getRowsByConditionStr(" where Id like \"%" .. selectStr .. "%\";")
+
+						for k, v in pairs(datas) do
+							table.insert(ret, v[1])
+						end
+					elseif dataTable then
+						local datas = dataTable.table:getRowsByConditionStr(" limit 50;")
+
+						for k, v in pairs(datas) do
+							table.insert(ret, v[1])
+						end
+					end
+				end
+
+				return ret
+			end
+		}
+	}
+end
+
 StartClubBoss = class("StartClubBoss", DebugViewTemplate, _M)
 
 function StartClubBoss:initialize()

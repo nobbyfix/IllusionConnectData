@@ -16,14 +16,6 @@ ExploreTeamMediator:has("_exploreSystem", {
 }):injectWith("ExploreSystem")
 
 local kBtnHandlers = {
-	["main.my_pet_bg.sortPanel.sortBtn"] = {
-		clickAudio = "Se_Click_Fold_1",
-		func = "onClickSort"
-	},
-	["main.my_pet_bg.sortPanel.sortTypeBtn"] = {
-		clickAudio = "Se_Click_Tab_1",
-		func = "onClickSortType"
-	},
 	tipBtn = {
 		clickAudio = "Se_Click_Common_2",
 		func = "onClickTip"
@@ -267,7 +259,6 @@ function ExploreTeamMediator:initWigetInfo()
 	self._myPetPanel = self._main:getChildByFullName("my_pet_bg")
 	self._heroPanel = self._myPetPanel:getChildByFullName("heroPanel")
 	self._sortType = self._myPetPanel:getChildByFullName("sortPanel.sortBtn.text")
-	self._sortOrder = self._myPetPanel:getChildByFullName("sortPanel.sortTypeBtn.text")
 	self._masterImage = self._bg:getChildByName("role")
 	self._teamBg = self._bg:getChildByName("team_bg")
 	self._teamListPanel = self._main:getChildByFullName("info_bg")
@@ -282,6 +273,10 @@ function ExploreTeamMediator:initWigetInfo()
 
 	self._teamPetClone:setVisible(false)
 	self._teamPetClone:setScale(0.64)
+
+	self._infoText = self._main:getChildByFullName("rulePanel.text1")
+
+	self._infoText:setString(Strings:get("EXPLORE_UI15"))
 	self:setLabelEffect()
 	self:ignoreSafeArea()
 end
@@ -676,10 +671,9 @@ end
 
 function ExploreTeamMediator:refreshListView(ignoreAdjustOffset)
 	self._petListAll = self._stageSystem:getSortExtendIds(self._petList)
-	local sortOrder = self._stageSystem:getCardSortOrder()
 	local sortType = self._stageSystem:getCardSortType()
 
-	self._heroSystem:sortHeroes(self._petListAll, sortType, sortOrder, self._cardsRecommend)
+	self._heroSystem:sortHeroes(self._petListAll, sortType, self._cardsRecommend)
 
 	self._cardsOneKeyExcept = {}
 
@@ -775,7 +769,6 @@ function ExploreTeamMediator:refreshPetNode()
 	for i = 1, self._maxTeamPetNum do
 		local iconBg = self._teamBg:getChildByName("pet_" .. i)
 
-		iconBg:setScale(self._moveSpriteScale.TeamPetScale)
 		iconBg:removeAllChildren()
 		iconBg:setTag(i)
 		iconBg:addTouchEventListener(function (sender, eventType)
@@ -887,6 +880,7 @@ function ExploreTeamMediator:initTeamHero(node, info)
 
 	local skillPanel = node:getChildByName("skillPanel")
 	local skill, condition = self._heroSystem:checkHasKeySkill(heroId)
+	local dicengEff, shangcengEff = nil
 
 	skillPanel:setVisible(not not skill)
 
@@ -901,14 +895,34 @@ function ExploreTeamMediator:initTeamHero(node, info)
 			local skillType = skill:getType()
 			local icon1, icon2 = self._heroSystem:getSkillTypeIcon(skillType)
 			local image = ccui.ImageView:create(icon1)
+			dicengEff = cc.MovieClip:create("diceng_jinengjihuo")
 
+			dicengEff:setAnchorPoint(0.5, 0.5)
+			dicengEff:setScale(0.38)
+			dicengEff:setVisible(false)
+
+			shangcengEff = cc.MovieClip:create("shangceng_jinengjihuo")
+
+			shangcengEff:setAnchorPoint(0.5, 0.5)
+			shangcengEff:setScale(0.38)
+			shangcengEff:setVisible(false)
+			dicengEff:addTo(skillPanel):center(skillPanel:getContentSize()):offset(-1.5, -2)
 			image:addTo(skillPanel):center(skillPanel:getContentSize())
+			shangcengEff:addTo(skillPanel):center(skillPanel:getContentSize()):offset(-1.5, -2)
 			image:setName("KeyMark")
 			image:setScale(0.85)
 			image:offset(0, -5)
 		end
 
 		local isActive = self._stageSystem:checkIsKeySkillActive(condition, self._teamPets)
+
+		if dicengEff then
+			dicengEff:setVisible(isActive)
+		end
+
+		if shangcengEff then
+			shangcengEff:setVisible(isActive)
+		end
 
 		skillPanel:setGray(not isActive)
 	end

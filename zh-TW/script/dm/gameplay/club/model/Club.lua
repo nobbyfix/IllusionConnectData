@@ -13,6 +13,7 @@ ClubRecordType = {
 	kLog = 5
 }
 
+require("dm.gameplay.club.model.ClubResourcesBattle")
 require("dm.gameplay.club.model.ClubRecordList")
 require("dm.gameplay.club.model.ClubRecord")
 require("dm.gameplay.club.model.ClubBasisInfo")
@@ -66,6 +67,7 @@ function Club:initialize(player)
 	self._clubTechList = ClubTechnologyList:new(self)
 	self._clubBossInfo = ClubBoss:new()
 	self._activityClubBossInfo = ClubBoss:new()
+	self._clubResourcesBattleInfo = ClubResourcesBattle:new()
 	self._curDonateCount = 0
 end
 
@@ -101,4 +103,14 @@ function Club:getClubBossInfo(type)
 	end
 
 	return self._clubBossInfo
+end
+
+function Club:synchronizeClubResourcesBattleData(data)
+	if data then
+		self._clubResourcesBattleInfo:sync(data)
+	end
+end
+
+function Club:getClubResourcesBattleInfo()
+	return self._clubResourcesBattleInfo
 end

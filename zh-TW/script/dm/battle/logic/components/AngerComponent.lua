@@ -25,6 +25,14 @@ function AngerComponent:initWithRawData(data)
 	self:setupAngerRules(data.angerRules)
 end
 
+function AngerComponent:pauseRecovery()
+	self._pause = true
+end
+
+function AngerComponent:resumeRecovery()
+	self._pause = false
+end
+
 function AngerComponent:setAnger(val)
 	if val < 0 then
 		self._anger = 0
@@ -134,6 +142,10 @@ function AngerComponent:setupAngerRules(rules)
 end
 
 function AngerComponent:applyAngerRule(ruleName, a)
+	if self._pause then
+		return nil
+	end
+
 	local angerRules = self._angerRules
 	local factors = angerRules and angerRules[ruleName]
 

@@ -1,0 +1,613 @@
+{
+    "DreamChallengePoint_T03N01": {
+        "Num": 1,
+        "Name": "DreamChallengePoint_T03N01_Name",
+        "Type": 1,
+        "BlockPoint": [
+            "DreamChallengeBattle_T03N01M01",
+            "DreamChallengeBattle_T03N01M02",
+            "DreamChallengeBattle_T03N01M03",
+            "DreamChallengeBattle_T03N01M04",
+            "DreamChallengeBattle_T03N01M05",
+            "DreamChallengeBattle_T03N01M06",
+            "DreamChallengeBattle_T03N01M07",
+            "DreamChallengeBattle_T03N01M08",
+            "DreamChallengeBattle_T03N01M09",
+            "DreamChallengeBattle_T03N01M10",
+            "DreamChallengeBattle_T03N01M11",
+            "DreamChallengeBattle_T03N01M12"
+        ],
+        "ShowCondition": {
+            "LEVEL": 52
+        },
+        "UnlockCondition": {
+            "LEVEL": 52
+        },
+        "Desc": "DreamChallengePoint_T03N01_decs",
+        "Pic": "banner_guiangagotu",
+        "Master": [
+            "Master_XueZhan",
+            "Master_BiLei"
+        ],
+        "Excellent": [
+            {
+                "job": [
+                    "Defense"
+                ],
+                "Skill": "DC_T01_Tank_Buff"
+            },
+            {
+                "Party": [
+                    "WNSXJ"
+                ],
+                "Skill": "DC_T02_WNSXJ_Buff"
+            }
+        ],
+        "screen": {
+            "Up": [
+                {
+                    "type": "Party",
+                    "value": "WNSXJ"
+                },
+                {
+                    "type": "Party",
+                    "value": "BSNCT"
+                }
+            ]
+        },
+        "Show": "DreamChallenge_T01N01",
+        "StarsAttrEffect": "DC_5star_buff",
+        "AwakenAttrEffect": "DC_7star_buff",
+        "fatigue": 4,
+        "shifting": [
+            110,
+            100
+        ],
+        "ShortDesc": "DC_ShortDesc_T03N01",
+        "TabPic": "mjt_z_butten_x1",
+        "StoryLink": {
+            "end": [
+                "eventstory_dreamtower_09a"
+            ],
+            "enter": [
+                "eventstory_dreamtower_05a"
+            ]
+        },
+        "EndDesc": "DC_EndDesc_T03N01"
+    },
+    "DreamChallengePoint_T03N02": {
+        "Num": 2,
+        "Name": "DreamChallengePoint_T03N02_Name",
+        "Type": 1,
+        "BlockPoint": [
+            "DreamChallengeBattle_T03N02M01",
+            "DreamChallengeBattle_T03N02M02",
+            "DreamChallengeBattle_T03N02M03",
+            "DreamChallengeBattle_T03N02M04",
+            "DreamChallengeBattle_T03N02M05",
+            "DreamChallengeBattle_T03N02M06",
+            "DreamChallengeBattle_T03N02M07",
+            "DreamChallengeBattle_T03N02M08",
+            "DreamChallengeBattle_T03N02M09",
+            "DreamChallengeBattle_T03N02M10",
+            "DreamChallengeBattle_T03N02M11",
+            "DreamChallengeBattle_T03N02M12"
+        ],
+        "ShowCondition": {
+            "LEVEL": 52
+        },
+        "UnlockCondition": {
+            "Pass": "DreamChallengeBattle_T03N01M06",
+            "LEVEL": 52
+        },
+        "Desc": "DreamChallengePoint_T03N02_decs",
+        "Pic": "banner_guiangagotu",
+        "Master": [
+            "Master_XueZhan",
+            "Master_BiLei",
+            "Master_LieSha"
+        ],
+        "Excellent": [
+            {
+                "job": [
+                    "Defense"
+                ],
+                "Skill": "DC_T01_Tank_Buff"
+            },
+            {
+                "Party": [
+                    "WNSXJ"
+                ],
+                "Skill": "DC_T02_WNSXJ_Buff"
+            }
+        ],
+        "screen": {
+            "Up": [
+                {
+                    "type": "Party",
+                    "value": "WNSXJ"
+                },
+                {
+                    "type": "Party",
+                    "value": "BSNCT"
+                }
+            ]
+        },
+        "Show": "DreamChallenge_T01N02",
+        "StarsAttrEffect": "DC_5star_buff",
+        "AwakenAttrEffect": "DC_7star_buff",
+        "fatigue": 4,
+        "shifting": [
+            110,
+            100
+        ],
+        "ShortDesc": "DC_ShortDesc_T03N02",
+        "TabPic": "mjt_z_butten_x2",
+        "StoryLink": "",
+        "EndDesc": "DC_EndDesc_T03N02"
+    },
+    "DreamChallengePoint_T03N03": {
+        "Num": 3,
+        "Name": "DreamChallengePoint_T03N03_Name",
+        "Type": 1,
+        "BlockPoint": [
+            "DreamChallengeBattle_T03N03M01",
+            "DreamChallengeBattle_T03N03M02",
+            "DreamChallengeBattle_T03N03M03",
+            "DreamChallengeBattle_T03N03M04",
+            "DreamChallengeBattle_T03N03M05",
+            "DreamChallengeBattle_T03N03M06",
+            "DreamChallengeBattle_T03N03M07",
+            "DreamChallengeBattle_T03N03M08",
+            "DreamChallengeBattle_T03N03M09",
+            "DreamChallengeBattle_T03N03M10",
+            "DreamChallengeBattle_T03N03M11",
+            "DreamChallengeBattle_T03N03M12"
+        ],
+        "ShowCondition": {
+            "LEVEL": 52
+        },
+        "UnlockCondition": {
+            "Pass": "DreamChallengeBattle_T03N02M09",
+            "LEVEL": 52
+        },
+        "Desc": "DreamChallengePoint_T03N03_decs",
+        "Pic": "banner_guiangagotu",
+        "Master": [
+            "Master_XueZhan",
+            "Master_BiLei",
+            "Master_LieSha"
+        ],
+        "Excellent": [
+            {
+                "job": [
+                    "Defense"
+                ],
+                "Skill": "DC_T01_Tank_Buff"
+            },
+            {
+                "Party": [
+                    "WNSXJ"
+                ],
+                "Skill": "DC_T02_WNSXJ_Buff"
+            }
+        ],
+        "screen": {
+            "Up": [
+                {
+                    "type": "Party",
+                    "value": "WNSXJ"
+                },
+                {
+                    "type": "Party",
+                    "value": "BSNCT"
+                }
+            ]
+        },
+        "Show": "DreamChallenge_T01N03",
+        "StarsAttrEffect": "DC_5star_buff",
+        "AwakenAttrEffect": "DC_7star_buff",
+        "fatigue": 4,
+        "shifting": [
+            110,
+            100
+        ],
+        "ShortDesc": "DC_ShortDesc_T03N03",
+        "TabPic": "mjt_z_butten_x3",
+        "StoryLink": "",
+        "EndDesc": "DC_EndDesc_T03N03"
+    },
+    "DreamChallengePoint_T02N03": {
+        "Num": 3,
+        "Name": "DreamChallengePoint_T02N03_Name",
+        "Type": 1,
+        "BlockPoint": [
+            "DreamChallengeBattle_T02N03M01",
+            "DreamChallengeBattle_T02N03M02",
+            "DreamChallengeBattle_T02N03M03",
+            "DreamChallengeBattle_T02N03M04",
+            "DreamChallengeBattle_T02N03M05",
+            "DreamChallengeBattle_T02N03M06",
+            "DreamChallengeBattle_T02N03M07",
+            "DreamChallengeBattle_T02N03M08",
+            "DreamChallengeBattle_T02N03M09",
+            "DreamChallengeBattle_T02N03M10",
+            "DreamChallengeBattle_T02N03M11",
+            "DreamChallengeBattle_T02N03M12"
+        ],
+        "ShowCondition": {
+            "LEVEL": 32
+        },
+        "UnlockCondition": {
+            "Pass": "DreamChallengeBattle_T02N02M09",
+            "LEVEL": 44
+        },
+        "Desc": "DreamChallengePoint_T02N03_decs",
+        "Pic": "mjt_z_mjjcx_bg",
+        "Master": [
+            "Master_XueZhan",
+            "Master_BiLei"
+        ],
+        "Excellent": [
+            {
+                "job": [
+                    "Defense"
+                ],
+                "Skill": "DC_T01_Tank_Buff"
+            },
+            {
+                "Party": [
+                    "WNSXJ"
+                ],
+                "Skill": "DC_T02_WNSXJ_Buff"
+            }
+        ],
+        "screen": {
+            "Up": [
+                {
+                    "type": "Party",
+                    "value": "WNSXJ"
+                },
+                {
+                    "type": "Party",
+                    "value": "BSNCT"
+                }
+            ]
+        },
+        "Show": "DreamChallenge_T02N03",
+        "StarsAttrEffect": "DC_5star_buff",
+        "AwakenAttrEffect": "DC_7star_buff",
+        "fatigue": 4,
+        "shifting": [
+            110,
+            100
+        ],
+        "ShortDesc": "DC_ShortDesc_T02N03",
+        "TabPic": "mjt_z_butten_x3",
+        "StoryLink": "",
+        "EndDesc": "DC_EndDesc_T02N03"
+    },
+    "DreamChallengePoint_T02N02": {
+        "Num": 2,
+        "Name": "DreamChallengePoint_T02N02_Name",
+        "Type": 1,
+        "BlockPoint": [
+            "DreamChallengeBattle_T02N02M01",
+            "DreamChallengeBattle_T02N02M02",
+            "DreamChallengeBattle_T02N02M03",
+            "DreamChallengeBattle_T02N02M04",
+            "DreamChallengeBattle_T02N02M05",
+            "DreamChallengeBattle_T02N02M06",
+            "DreamChallengeBattle_T02N02M07",
+            "DreamChallengeBattle_T02N02M08",
+            "DreamChallengeBattle_T02N02M09"
+        ],
+        "ShowCondition": {
+            "LEVEL": 32
+        },
+        "UnlockCondition": {
+            "Pass": "DreamChallengeBattle_T02N01M06",
+            "LEVEL": 44
+        },
+        "Desc": "DreamChallengePoint_T02N02_decs",
+        "Pic": "mjt_z_mjjcx_bg",
+        "Master": [
+            "Master_XueZhan",
+            "Master_BiLei"
+        ],
+        "Excellent": [
+            {
+                "job": [
+                    "Defense"
+                ],
+                "Skill": "DC_T01_Tank_Buff"
+            },
+            {
+                "Party": [
+                    "WNSXJ"
+                ],
+                "Skill": "DC_T02_WNSXJ_Buff"
+            }
+        ],
+        "screen": {
+            "Up": [
+                {
+                    "type": "Party",
+                    "value": "WNSXJ"
+                },
+                {
+                    "type": "Party",
+                    "value": "BSNCT"
+                }
+            ]
+        },
+        "Show": "DreamChallenge_T02N02",
+        "StarsAttrEffect": "DC_5star_buff",
+        "AwakenAttrEffect": "DC_7star_buff",
+        "fatigue": 4,
+        "shifting": [
+            110,
+            100
+        ],
+        "ShortDesc": "DC_ShortDesc_T02N02",
+        "TabPic": "mjt_z_butten_x2",
+        "StoryLink": "",
+        "EndDesc": "DC_EndDesc_T02N02"
+    },
+    "DreamChallengePoint_T02N01": {
+        "Num": 1,
+        "Name": "DreamChallengePoint_T02N01_Name",
+        "Type": 1,
+        "BlockPoint": [
+            "DreamChallengeBattle_T02N01M01",
+            "DreamChallengeBattle_T02N01M02",
+            "DreamChallengeBattle_T02N01M03",
+            "DreamChallengeBattle_T02N01M04",
+            "DreamChallengeBattle_T02N01M05",
+            "DreamChallengeBattle_T02N01M06"
+        ],
+        "ShowCondition": {
+            "LEVEL": 32
+        },
+        "UnlockCondition": {
+            "LEVEL": 44
+        },
+        "Desc": "DreamChallengePoint_T02N01_decs",
+        "Pic": "mjt_z_mjjcx_bg",
+        "Master": [
+            "Master_XueZhan",
+            "Master_BiLei"
+        ],
+        "Excellent": [
+            {
+                "job": [
+                    "Defense"
+                ],
+                "Skill": "DC_T01_Tank_Buff"
+            },
+            {
+                "Party": [
+                    "WNSXJ"
+                ],
+                "Skill": "DC_T02_WNSXJ_Buff"
+            }
+        ],
+        "screen": {
+            "Up": [
+                {
+                    "type": "Party",
+                    "value": "WNSXJ"
+                },
+                {
+                    "type": "Party",
+                    "value": "BSNCT"
+                }
+            ]
+        },
+        "Show": "DreamChallenge_T02N01",
+        "StarsAttrEffect": "DC_5star_buff",
+        "AwakenAttrEffect": "DC_7star_buff",
+        "fatigue": 4,
+        "shifting": [
+            110,
+            100
+        ],
+        "ShortDesc": "DC_ShortDesc_T02N01",
+        "TabPic": "mjt_z_butten_x1",
+        "StoryLink": {
+            "end": [
+                "eventstory_dreamtower_09a"
+            ],
+            "enter": [
+                "eventstory_dreamtower_05a"
+            ]
+        },
+        "EndDesc": "DC_EndDesc_T02N01"
+    },
+    "DreamChallengePoint_T01N02": {
+        "Num": 2,
+        "Name": "DreamChallengePoint_T01N02_Name",
+        "Type": 1,
+        "BlockPoint": [
+            "DreamChallengeBattle_T01N02M01",
+            "DreamChallengeBattle_T01N02M02",
+            "DreamChallengeBattle_T01N02M03",
+            "DreamChallengeBattle_T01N02M04",
+            "DreamChallengeBattle_T01N02M05",
+            "DreamChallengeBattle_T01N02M06",
+            "DreamChallengeBattle_T01N02M07",
+            "DreamChallengeBattle_T01N02M08",
+            "DreamChallengeBattle_T01N02M09"
+        ],
+        "ShowCondition": {
+            "LEVEL": 32
+        },
+        "UnlockCondition": {
+            "Pass": "DreamChallengeBattle_T01N01M04",
+            "LEVEL": 32
+        },
+        "Desc": "DreamChallengePoint_T01N02_decs",
+        "Pic": "mjt_z_mjjcs_bg",
+        "Master": [
+            "Master_XueZhan",
+            "Master_LieSha"
+        ],
+        "Excellent": [
+            {
+                "job": [
+                    "Defense"
+                ],
+                "Skill": "DC_T01_Tank_Buff"
+            }
+        ],
+        "screen": {
+            "Up": [
+                {
+                    "type": "Party",
+                    "value": "WNSXJ"
+                },
+                {
+                    "type": "Party",
+                    "value": "BSNCT"
+                }
+            ]
+        },
+        "Show": "DreamChallenge_T01N02",
+        "StarsAttrEffect": "DC_5star_buff",
+        "AwakenAttrEffect": "DC_7star_buff",
+        "fatigue": 4,
+        "shifting": [
+            110,
+            100
+        ],
+        "ShortDesc": "DC_ShortDesc_T01N02",
+        "TabPic": "mjt_z_butten_x2",
+        "StoryLink": "",
+        "EndDesc": "DC_EndDesc_T01N02"
+    },
+    "DreamChallengePoint_T01N03": {
+        "Num": 3,
+        "Name": "DreamChallengePoint_T01N03_Name",
+        "Type": 1,
+        "BlockPoint": [
+            "DreamChallengeBattle_T01N03M01",
+            "DreamChallengeBattle_T01N03M02",
+            "DreamChallengeBattle_T01N03M03",
+            "DreamChallengeBattle_T01N03M04",
+            "DreamChallengeBattle_T01N03M05",
+            "DreamChallengeBattle_T01N03M06",
+            "DreamChallengeBattle_T01N03M07",
+            "DreamChallengeBattle_T01N03M08",
+            "DreamChallengeBattle_T01N03M09",
+            "DreamChallengeBattle_T01N03M10",
+            "DreamChallengeBattle_T01N03M11",
+            "DreamChallengeBattle_T01N03M12"
+        ],
+        "ShowCondition": {
+            "LEVEL": 32
+        },
+        "UnlockCondition": {
+            "Pass": "DreamChallengeBattle_T01N02M06",
+            "LEVEL": 32
+        },
+        "Desc": "DreamChallengePoint_T01N03_decs",
+        "Pic": "mjt_z_mjjcs_bg",
+        "Master": [
+            "Master_XueZhan",
+            "Master_LieSha"
+        ],
+        "Excellent": [
+            {
+                "job": [
+                    "Defense"
+                ],
+                "Skill": "DC_T01_Tank_Buff"
+            }
+        ],
+        "screen": {
+            "Up": [
+                {
+                    "type": "Party",
+                    "value": "WNSXJ"
+                },
+                {
+                    "type": "Party",
+                    "value": "BSNCT"
+                }
+            ]
+        },
+        "Show": "DreamChallenge_T01N03",
+        "StarsAttrEffect": "DC_5star_buff",
+        "AwakenAttrEffect": "DC_7star_buff",
+        "fatigue": 4,
+        "shifting": [
+            110,
+            100
+        ],
+        "ShortDesc": "DC_ShortDesc_T01N03",
+        "TabPic": "mjt_z_butten_x3",
+        "StoryLink": "",
+        "EndDesc": "DC_EndDesc_T01N03"
+    },
+    "DreamChallengePoint_T01N01": {
+        "Num": 1,
+        "Name": "DreamChallengePoint_T01N01_Name",
+        "Type": 1,
+        "BlockPoint": [
+            "DreamChallengeBattle_T01N01M01",
+            "DreamChallengeBattle_T01N01M02",
+            "DreamChallengeBattle_T01N01M03",
+            "DreamChallengeBattle_T01N01M04",
+            "DreamChallengeBattle_T01N01M05",
+            "DreamChallengeBattle_T01N01M06"
+        ],
+        "ShowCondition": {
+            "LEVEL": 32
+        },
+        "UnlockCondition": {
+            "LEVEL": 32
+        },
+        "Desc": "DreamChallengePoint_T01N01_decs",
+        "Pic": "mjt_z_mjjcs_bg",
+        "Master": [
+            "Master_XueZhan",
+            "Master_LieSha"
+        ],
+        "Excellent": [
+            {
+                "job": [
+                    "Defense"
+                ],
+                "Skill": "DC_T01_Tank_Buff"
+            }
+        ],
+        "screen": {
+            "Up": [
+                {
+                    "type": "Party",
+                    "value": "WNSXJ"
+                },
+                {
+                    "type": "Party",
+                    "value": "BSNCT"
+                }
+            ]
+        },
+        "Show": "DreamChallenge_T01N01",
+        "StarsAttrEffect": "DC_5star_buff",
+        "AwakenAttrEffect": "DC_7star_buff",
+        "fatigue": 4,
+        "shifting": [
+            110,
+            100
+        ],
+        "ShortDesc": "DC_ShortDesc_T01N01",
+        "TabPic": "mjt_z_butten_x1",
+        "StoryLink": {
+            "enter": [
+                "eventstory_dreamtower_01a"
+            ]
+        },
+        "EndDesc": "DC_EndDesc_T01N01"
+    }
+}

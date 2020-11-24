@@ -13,9 +13,47 @@ local kBtnHandlers = {
 		func = "onClickChallenge"
 	}
 }
-local litTypeMap = {
-	NORMAL = "Normal",
-	ELITE = "Elite"
+local ActivityPointCostConfig = {
+	IM_HalloweenBossStamina = {
+		tips = "ACTIVITY_Halloween_NOT_ENOUGH_1",
+		func = "getItemCount"
+	},
+	IM_SummerBossStamina = {
+		tips = "ACTIVITY_ENERGY_NOT_ENOUGH2_Summer",
+		func = "getItemCount"
+	},
+	IM_WuXiuHuiBossStamina = {
+		tips = "ACTIVITY_ENERGY_NOT_ENOUGH2_WXH",
+		func = "getItemCount"
+	},
+	IM_ZuoHeBossStamina = {
+		tips = "ACTIVITY_ENERGY_NOT_ENOUGH2_ZUOHE",
+		func = "getItemCount"
+	},
+	IM_BossJindan = {
+		tips = "ACTIVITY_ENERGY_NOT_ENOUGH2",
+		func = "getItemCount"
+	},
+	[CurrencyIdKind.kAcitvityStaminaPower] = {
+		tips = "ACTIVITY_ENERGY_NOT_ENOUGH",
+		func = "getAcitvityStaminaPower"
+	},
+	[CurrencyIdKind.kAcitvityZuoHePower] = {
+		tips = "ACTIVITY_ENERGY_NOT_ENOUGH3_ZUOHE",
+		func = "getAcitvitySagaSupportPower"
+	},
+	[CurrencyIdKind.kAcitvityWxhPower] = {
+		tips = "ACTIVITY_ENERGY_NOT_ENOUGH3_WXH",
+		func = "getAcitvityWxhSupportPower"
+	},
+	[CurrencyIdKind.kAcitvitySummerPower] = {
+		tips = "ACTIVITY_ENERGY_NOT_ENOUGH2_Summer",
+		func = "getAcitvitySummerPower"
+	},
+	[CurrencyIdKind.kAcitvityHalloweenPower] = {
+		tips = "ACTIVITY_Halloween_NOT_ENOUGH_2",
+		func = "getAcitvityHalloweenPower"
+	}
 }
 
 function ActivityPointDetailMediator:dispose()
@@ -683,7 +721,10 @@ function ActivityPointDetailMediator:onChallenge()
 		pointId = pointId
 	}, function (rsdata)
 		self:close()
-		self._activitySystem:enterActstageBattle(rsdata.data, activityId, subActivityId)
+
+		if rsdata.resCode == GS_SUCCESS then
+			self._activitySystem:enterActstageBattle(rsdata.data, activityId, subActivityId)
+		end
 	end, true)
 end
 
@@ -699,30 +740,17 @@ function ActivityPointDetailMediator:reachBattleCondition()
 		break
 	end
 
-	if itemId == CurrencyIdKind.kAcitvityStaminaPower then
-		containPower = self._bagSystem:getAcitvityStaminaPower()
-		tips = Strings:get("ACTIVITY_ENERGY_NOT_ENOUGH")
-	elseif itemId == CurrencyIdKind.kAcitvityZuoHePower then
-		containPower = self._bagSystem:getAcitvitySagaSupportPower()
-		tips = Strings:get("ACTIVITY_ENERGY_NOT_ENOUGH3_ZUOHE")
-	elseif itemId == CurrencyIdKind.kAcitvityWxhPower then
-		containPower = self._bagSystem:getAcitvityWxhSupportPower()
-		tips = Strings:get("ACTIVITY_ENERGY_NOT_ENOUGH3_WXH")
-	elseif itemId == "IM_BossJindan" then
-		containPower = self._bagSystem:getItemCount("IM_BossJindan")
-		tips = Strings:get("ACTIVITY_ENERGY_NOT_ENOUGH2")
-	elseif itemId == "IM_ZuoHeBossStamina" then
-		containPower = self._bagSystem:getItemCount("IM_ZuoHeBossStamina")
-		tips = Strings:get("ACTIVITY_ENERGY_NOT_ENOUGH2_ZUOHE")
-	elseif itemId == "IM_WuXiuHuiBossStamina" then
-		containPower = self._bagSystem:getItemCount("IM_WuXiuHuiBossStamina")
-		tips = Strings:get("ACTIVITY_ENERGY_NOT_ENOUGH2_WXH")
-	elseif itemId == "IM_SummerBossStamina" then
-		containPower = self._bagSystem:getItemCount("IM_SummerBossStamina")
-		tips = Strings:get("ACTIVITY_ENERGY_NOT_ENOUGH2_Summer")
-	elseif itemId == "IR_SummerAcitvityStamina" then
-		containPower = self._bagSystem:getItemCount("IR_SummerAcitvityStamina")
-		tips = Strings:get("ACTIVITY_ENERGY_NOT_ENOUGH2_Summer")
+	if ActivityPointCostConfig[itemId] then
+		local config = ActivityPointCostConfig[itemId]
+		local func = config.func
+
+		if func ~= "getItemCount" then
+			containPower = self._bagSystem[func](self._bagSystem)
+		else
+			containPower = self._bagSystem:getItemCount(itemId)
+		end
+
+		tips = Strings:get(config[tips])
 	end
 
 	if containPower < cost then
@@ -744,18 +772,15 @@ function ActivityPointDetailMediator:getMaxSwipCount()
 		break
 	end
 
-	if itemId == CurrencyIdKind.kAcitvityStaminaPower then
-		containPower = self._bagSystem:getAcitvityStaminaPower()
-	elseif itemId == CurrencyIdKind.kAcitvityZuoHePower then
-		containPower = self._bagSystem:getAcitvitySagaSupportPower()
-	elseif itemId == CurrencyIdKind.kAcitvityWxhPower then
-		containPower = self._bagSystem:getAcitvityWxhSupportPower()
-	elseif itemId == "IM_BossJindan" then
-		containPower = self._bagSystem:getItemCount("IM_BossJindan")
-	elseif itemId == "IM_SummerBossStamina" then
-		containPower = self._bagSystem:getItemCount("IM_SummerBossStamina")
-	elseif itemId == "IR_SummerAcitvityStamina" then
-		containPower = self._bagSystem:getItemCount("IR_SummerAcitvityStamina")
+	if ActivityPointCostConfig[itemId] then
+		local config = ActivityPointCostConfig[itemId]
+		local func = config.func
+
+		if func ~= "getItemCount" then
+			containPower = self._bagSystem[func](self._bagSystem)
+		else
+			containPower = self._bagSystem:getItemCount(itemId)
+		end
 	end
 
 	return math.modf(containPower / cost)

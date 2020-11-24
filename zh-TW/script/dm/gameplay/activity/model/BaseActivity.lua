@@ -29,6 +29,9 @@ BaseActivity:has("_developSystem", {
 BaseActivity:has("_foreverGot", {
 	is = "rw"
 })
+BaseActivity:has("_extraGot", {
+	is = "rw"
+})
 
 function BaseActivity:initialize()
 	super.initialize(self)
@@ -40,6 +43,7 @@ function BaseActivity:initialize()
 	self._isTodayOpen = false
 	self._dailyReset = false
 	self._foreverGot = {}
+	self._extraGot = {}
 end
 
 function BaseActivity:dispose()
@@ -77,6 +81,12 @@ function BaseActivity:synchronize(data)
 	if data.foreverGot then
 		self._foreverGot = data.foreverGot
 	end
+
+	if data.extraGot then
+		for key, value in pairs(data.extraGot) do
+			self._extraGot[key] = value
+		end
+	end
 end
 
 function BaseActivity:reset()
@@ -87,6 +97,7 @@ function BaseActivity:reset()
 	self._isTodayOpen = false
 	self._dailyReset = false
 	self._foreverGot = {}
+	self._extraGot = {}
 end
 
 function BaseActivity:hasRewardToGet()
@@ -151,4 +162,12 @@ end
 
 function BaseActivity:getBgm()
 	return self._config.ActivityConfig.bgm
+end
+
+function BaseActivity:getActivityComplexId()
+	return self._config.ActivityConfig.ActivityComplexId
+end
+
+function BaseActivity:getActivityComplexUI()
+	return self._config.UI
 end

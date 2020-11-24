@@ -19,6 +19,16 @@ local kHeroRarityBgAnim = {
 	[13.0] = "srzong_yingxiongxuanze",
 	[14.0] = "ssrzong_yingxiongxuanze"
 }
+local kSortBtnHandlers = {
+	["main.my_pet_bg.sortPanel.sortBtn"] = {
+		clickAudio = "Se_Click_Fold_1",
+		func = "onClickSort"
+	},
+	["main.my_pet_bg.sortPanel.screenBtn"] = {
+		clickAudio = "Se_Click_Fold_1",
+		func = "onClickScreen"
+	}
+}
 
 function CommonTeamMediator:initialize()
 	super.initialize(self)
@@ -33,10 +43,7 @@ function CommonTeamMediator:dispose()
 end
 
 function CommonTeamMediator:onRegister()
-	self._moveSpriteScale = {
-		OwnPetScale = 1,
-		TeamPetScale = 1
-	}
+	self:mapButtonHandlersClick(kSortBtnHandlers)
 end
 
 function CommonTeamMediator:resumeWithData()
@@ -239,66 +246,27 @@ function CommonTeamMediator:getLockTip(conditions)
 end
 
 function CommonTeamMediator:onClickUnlockDeck(showAnim, type, unlockLevel)
-	local data, func = nil
 	local unlock, tips = self._buildingSystem:checkEnabled()
 
 	if not unlock then
-		data = {
-			title = Strings:get("SHOP_REFRESH_DESC_TEXT1"),
-			content = tips,
-			sureBtn = {
-				text = Strings:get("SOURCE_DESC2"),
-				text1 = Strings:get("UITitle_EN_Qianwang")
-			}
-		}
+		local url = ConfigReader:getDataByNameIdAndKey("UnlockSystem", "Village_Building", "Link")
 
-		function func()
-			local url = ConfigReader:getDataByNameIdAndKey("UnlockSystem", "Village_Building", "Link")
+		if url then
+			local context = self:getInjector():instantiate(URLContext)
+			local entry, params = UrlEntryManage.resolveUrlWithUserData(url)
 
-			if url then
-				local context = self:getInjector():instantiate(URLContext)
-				local entry, params = UrlEntryManage.resolveUrlWithUserData(url)
-
-				if not entry then
-					self:dispatch(ShowTipEvent({
-						tip = Strings:get("Function_Not_Open")
-					}))
-				else
-					entry:response(context, params)
-				end
+			if not entry then
+				self:dispatch(ShowTipEvent({
+					tip = Strings:get("Function_Not_Open")
+				}))
+			else
+				entry:response(context, params)
 			end
 		end
 	else
-		data = {
-			title = Strings:get("SHOP_REFRESH_DESC_TEXT1"),
-			content = Strings:get("Team_BuildText2", {
-				num = unlockLevel or ""
-			}),
-			sureBtn = {
-				text = Strings:get("SOURCE_DESC2"),
-				text1 = Strings:get("UITitle_EN_Qianwang")
-			}
-		}
-
-		function func()
-			self._buildingSystem:tryEnter()
-		end
-	end
-
-	if data then
-		local outSelf = self
-		local delegate = {
-			willClose = function (self, popupMediator, data)
-				if data.response == "ok" and func then
-					func()
-				end
-			end
-		}
-		local view = self:getInjector():getInstance("AlertView")
-
-		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
-			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-		}, data, delegate))
+		self._buildingSystem:tryEnterOverview({
+			roomId = "Room5"
+		})
 	end
 end
 
@@ -322,10 +290,6 @@ function CommonTeamMediator:onClickCost()
 		sureBtn = {
 			text = Strings:get("Stage_Team_Goto"),
 			text1 = Strings:get("UITitle_EN_Lijiqianwang")
-		},
-		cancelBtn = {
-			text = Strings:get("Stage_Team_Later"),
-			text1 = Strings:get("UITitle_EN_Shaohouzaishuo")
 		}
 	}
 	local outSelf = self
@@ -740,7 +704,8 @@ function CommonTeamMediator:onClickChangeMaster()
 		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
 	}, {
 		masterId = self._curMasterId,
-		masterList = self._masterList
+		masterList = self._masterList,
+		recomandList = self._recomandMasterList or {}
 	}, nil))
 end
 
@@ -767,7 +732,7 @@ function CommonTeamMediator:onClickOneKeyEmbattle()
 	end
 end
 
-function CommonTeamMediator:onClickHeroDetail(id)
+function CommonTeamMediator:onClickHeroDetail(id, attrAdds)
 	AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
 
 	local view = self:getInjector():getInstance("HeroShowNotOwnView")
@@ -776,7 +741,8 @@ function CommonTeamMediator:onClickHeroDetail(id)
 		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
 	}, {
 		showType = 2,
-		id = id
+		id = id,
+		attrAdds = attrAdds
 	}))
 end
 
@@ -793,7 +759,6 @@ function CommonTeamMediator:createSortView()
 	end
 
 	self._sortComponent = SortHeroListComponent:new({
-		isHide = true,
 		sortType = sortType,
 		mediator = self,
 		callBack = callBack
@@ -801,24 +766,21 @@ function CommonTeamMediator:createSortView()
 	local sortStr = self._stageSystem:getSortTypeStr(sortType)
 
 	self._sortType:setString(sortStr)
-	self._sortOrder:setString(self._stageSystem:getCardSortOrderStr())
 	self._sortComponent:getRootNode():addTo(self._myPetPanel:getChildByFullName("sortPanel"))
 end
 
 function CommonTeamMediator:onClickSort()
 	self._stageSystem:setSortExtand(0)
 	self._sortComponent:getRootNode():setVisible(true)
-	self._sortComponent:refreshView()
+	self._sortComponent:showNormal()
 	self._teamView:stopScroll()
 	self:refreshListView(true)
 end
 
-function CommonTeamMediator:onClickSortType()
-	local sortOrder = self._stageSystem:getCardSortOrder()
-	sortOrder = sortOrder == 1 and 2 or 1
-
-	self._stageSystem:setCardSortOrder(sortOrder)
-	self._sortOrder:setString(self._stageSystem:getCardSortOrderStr())
+function CommonTeamMediator:onClickScreen()
+	self._stageSystem:setSortExtand(0)
+	self._sortComponent:getRootNode():setVisible(true)
+	self._sortComponent:showExtand()
 	self._teamView:stopScroll()
 	self:refreshListView(true)
 end
@@ -991,9 +953,6 @@ function CommonTeamMediator:runRemoveAction(id)
 	end
 
 	index = index + 1
-
-	print(" runRemoveAction index_______ " .. index)
-
 	local length = #children
 
 	self._touchPanel:setVisible(index <= length)

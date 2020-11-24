@@ -60,8 +60,6 @@ function StoryDirector:setClickEnv(id, targetNode, onClick)
 		self._clickEnvs[id].targetNode = targetNode
 
 		targetNode:atExit(function (node)
-			print("atExit:" .. id)
-
 			self._clickEnvs[id] = nil
 		end)
 	end

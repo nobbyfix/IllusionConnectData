@@ -268,3 +268,15 @@ function ClubService:requestClubBossBlockPointRewardByPonitID(params, blockUI, c
 
 	self:sendRequest(request, blockUI)
 end
+
+function ClubService:requestClubBattleData(params, blockUI, callback)
+	local request = self:newRequest(14101, params, callback)
+
+	self:sendRequest(request, blockUI)
+end
+
+function ClubService:requestClubBattleReward(params, blockUI, callback)
+	local request = self:newRequest(14102, params, callback)
+
+	self:sendRequest(request, blockUI)
+end

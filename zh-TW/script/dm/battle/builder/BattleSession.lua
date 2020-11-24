@@ -13,7 +13,8 @@ function CreateBattleSession(args)
 		practice = StagePracticeBattleSession,
 		crusade = CrusadeBattleSession,
 		actstage = ActstageBattleSession,
-		clubboss = ClubBattleSession
+		clubboss = ClubBattleSession,
+		dream = DreamBattleSession
 	}
 	local sessionClass = SessionMap[args.battleType]
 

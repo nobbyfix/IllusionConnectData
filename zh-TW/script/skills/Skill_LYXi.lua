@@ -403,9 +403,8 @@ all.Skill_LYXi_Proud_EX = {
 			local this = _env.this
 			local global = _env.global
 
-			for _, unit in global.__iter__(global.RandomN(_env, 1, global.FriendUnits(_env))) do
+			for _, unit in global.__iter__(global.RandomN(_env, 1, global.FriendUnits(_env, global.PETS))) do
 				global.DispelBuff(_env, unit, global.BUFF_MARKED_ALL(_env, "DEBUFF", "DISPELLABLE"), 1)
-				global.print(_env, 1111111111111.0)
 			end
 
 			for _, unit in global.__iter__(_env.units) do

@@ -170,6 +170,42 @@ function ActivityBlockActivity:getExchangeActivity()
 	return nil
 end
 
+function ActivityBlockActivity:getLoginActivities()
+	local activityId = self:getActivityConfig().LoginActivity
+
+	return self._activitySystem:getActivityById(activityId)
+end
+
+function ActivityBlockActivity:getColourEggActivity()
+	local activityIds = self:getActivity()
+
+	for i = 1, #activityIds do
+		local id = activityIds[i]
+		local activity = self:getSubActivityById(id)
+
+		if activity and self:subActivityOpen(id) and activity:getType() == ActivityType.KColourEgg then
+			return activity
+		end
+	end
+
+	return nil
+end
+
+function ActivityBlockActivity:getMonsterShopActivity()
+	local activityIds = self:getActivity()
+
+	for i = 1, #activityIds do
+		local id = activityIds[i]
+		local activity = self:getSubActivityById(id)
+
+		if activity and self:subActivityOpen(id) and activity:getType() == ActivityType.KMonsterShop then
+			return activity
+		end
+	end
+
+	return nil
+end
+
 function ActivityBlockActivity:getTaskActivities()
 	local taskActivities = {}
 	local activityIds = self:getActivity()

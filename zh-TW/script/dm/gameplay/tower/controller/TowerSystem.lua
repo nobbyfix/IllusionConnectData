@@ -135,6 +135,17 @@ function TowerSystem:tryEnter()
 	self:showTowerMainView()
 end
 
+function TowerSystem:sortHeroes(list, type)
+	local func = type and HeroSortFuncs.TowerSortFunc[type] or HeroSortFuncs.TowerSortFunc[9]
+
+	table.sort(list, function (a, b)
+		local aInfo = self:getHeroById(a)
+		local bInfo = self:getHeroById(b)
+
+		return func(aInfo, bInfo)
+	end)
+end
+
 function TowerSystem:getTeamPrepared(teamPetIds, ownPetIds)
 	local heroSystem = self._developSystem:getHeroSystem()
 	local ids = teamPetIds

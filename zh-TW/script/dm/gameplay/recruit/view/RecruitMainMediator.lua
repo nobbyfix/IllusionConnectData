@@ -333,8 +333,8 @@ function RecruitMainMediator:initTabController()
 				fontName = TTF_FONT_FZYH_R,
 				fontColor = cc.c3b(255, 255, 255),
 				tabImage = {
-					btnImage .. "1.png",
-					btnImage .. "2.png"
+					"asset/ui/recruit/" .. btnImage .. "1.png",
+					"asset/ui/recruit/" .. btnImage .. "2.png"
 				}
 			}
 		else
@@ -342,8 +342,8 @@ function RecruitMainMediator:initTabController()
 				tabText = "",
 				tabTextTranslate = "",
 				tabImage = {
-					btnImage .. "1.png",
-					btnImage .. "2.png"
+					"asset/ui/recruit/" .. btnImage .. "1.png",
+					"asset/ui/recruit/" .. btnImage .. "2.png"
 				}
 			}
 		end
@@ -358,7 +358,8 @@ function RecruitMainMediator:initTabController()
 	self._tabBtnWidget:initTabBtn(config, {
 		noCenterBtn = true,
 		ignoreSound = true,
-		hideBtnAnim = true
+		hideBtnAnim = true,
+		imageType = ccui.TextureResType.localType
 	})
 	self._tabBtnWidget:selectTabByTag(self._curTabType)
 
@@ -447,6 +448,12 @@ function RecruitMainMediator:initViewData()
 	table.sort(self._recruitData, function (a, b)
 		return b:getRank() < a:getRank()
 	end)
+
+	self._recruitDataTemp = {}
+
+	for i = 1, #self._recruitData do
+		table.insert(self._recruitDataTemp, self._recruitData[i]:getId())
+	end
 
 	self._recruitDataShow = self._recruitData[self._curTabType]
 end
@@ -873,6 +880,13 @@ function RecruitMainMediator:refreshLeftTime()
 		if nodeShow then
 			local text = self._leftTimeNode:getChildByFullName("text")
 			local unlock, activityId = self._recruitSystem:getActivityIsOpen(id)
+
+			if not unlock then
+				self._recruitSystem:tryEnter()
+
+				return
+			end
+
 			local activity = self._activitySystem:getActivityById(activityId)
 			local endTime = activity:getEndTime()
 			local remoteTimestamp = self:getInjector():getInstance("GameServerAgent"):remoteTimeMillis()

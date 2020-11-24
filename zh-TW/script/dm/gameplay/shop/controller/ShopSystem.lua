@@ -253,8 +253,9 @@ function ShopSystem:tryEnter(data)
 		return
 	end
 
-	self:checkMainShopIdForSubNormalShopId(data)
-	self:enterShop(data)
+	if self:checkMainShopIdForSubNormalShopId(data) then
+		self:enterShop(data)
+	end
 end
 
 function ShopSystem:checkMainShopIdForSubNormalShopId(data)
@@ -262,22 +263,43 @@ function ShopSystem:checkMainShopIdForSubNormalShopId(data)
 
 	if config then
 		self._fresh = true
-		local shopTabIds = ConfigReader:getRecordById("ConfigValue", "Shop_ShowSequence").content
-		local index = 1
+		local idx = self:getShopGroupIdx(data.shopId)
 
-		for i = 1, #shopTabIds do
-			local shopId = shopTabIds[i]
+		if idx then
+			data.rightTabIndex = idx
+			data.shopId = ShopSpecialId.kShopNormal
 
-			if shopId == data.shopId then
-				index = i
+			return true
+		else
+			return false
+		end
+	end
+end
 
-				break
+function ShopSystem:getShopGroupIdx(shopId)
+	local shopTabIds = ConfigReader:getRecordById("ConfigValue", "Shop_ShowSequence").content
+	local list = {}
+
+	for i = 1, #shopTabIds do
+		local shopId = shopTabIds[i]
+		local shopGroup = self:getShopGroupById(shopId)
+
+		if shopGroup then
+			local config = ConfigReader:getRecordById("Shop", shopId)
+			local unlock, tips = self._systemKeeper:isUnlock(config.UnlockSystem)
+			local canShow = self._systemKeeper:canShow(config.UnlockSystem)
+
+			if canShow and unlock then
+				list[#list + 1] = shopId
 			end
 		end
-
-		data.rightTabIndex = index
-		data.shopId = ShopSpecialId.kShopNormal
 	end
+
+	if #list > 0 then
+		return table.indexof(list, shopId) or 1
+	end
+
+	return nil
 end
 
 function ShopSystem:enterShop(data)

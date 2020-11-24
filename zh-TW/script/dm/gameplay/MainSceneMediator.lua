@@ -35,6 +35,15 @@ local muiscCfg = {
 	ActivityBlockSummerView = {
 		noAutoPlay = true
 	},
+	ActivityBlockWsjView = {
+		noAutoPlay = true
+	},
+	ActivityBlockMapWsjView = {
+		noAutoPlay = true
+	},
+	ActivityBlockMonsterShopView = {
+		noAutoPlay = true
+	},
 	ActivityBlockTaskView = {
 		noAutoPlay = true
 	},
@@ -90,6 +99,9 @@ local muiscCfg = {
 		noAutoPlay = true
 	},
 	DailyGiftView = {
+		noAutoPlay = true
+	},
+	DreamBattleView = {
 		noAutoPlay = true
 	},
 	ClubBossBattleView = {

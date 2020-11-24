@@ -1063,8 +1063,6 @@ all.CrusadeNewBuffs_CritHurtrateUp = {
 			local this = _env.this
 			local global = _env.global
 
-			global.print(_env, 2222222222222.0)
-
 			if not global.MASTER(_env, _env.unit) then
 				local buffeft3 = global.NumericEffect(_env, "+hurtrate", {
 					"+Normal",
@@ -1083,7 +1081,6 @@ all.CrusadeNewBuffs_CritHurtrateUp = {
 				}, {
 					buffeft3
 				})
-				global.print(_env, 1111111111111.0)
 			end
 		end)
 

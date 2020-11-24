@@ -21,14 +21,6 @@ local kBtnHandlers = {
 		clickAudio = "Se_Click_Common_2",
 		func = "onClickCost"
 	},
-	["main.my_pet_bg.sortPanel.sortBtn"] = {
-		clickAudio = "Se_Click_Fold_1",
-		func = "onClickSort"
-	},
-	["main.my_pet_bg.sortPanel.sortTypeBtn"] = {
-		clickAudio = "Se_Click_Tab_1",
-		func = "onClickSortType"
-	},
 	["main.left.button"] = {
 		clickAudio = "Se_Click_Common_2",
 		func = "onClickCardsTurnLeft"
@@ -292,7 +284,6 @@ function StageTeamMediator:initWidgetInfo()
 	self._myPetPanel = self._main:getChildByFullName("my_pet_bg")
 	self._heroPanel = self._myPetPanel:getChildByFullName("heroPanel")
 	self._sortType = self._myPetPanel:getChildByFullName("sortPanel.sortBtn.text")
-	self._sortOrder = self._myPetPanel:getChildByFullName("sortPanel.sortTypeBtn.text")
 	self._masterImage = self._bg:getChildByName("role")
 	self._teamBg = self._bg:getChildByName("team_bg")
 	self._labelCombat = self._main:getChildByFullName("info_bg.combatLabel")
@@ -327,18 +318,61 @@ function StageTeamMediator:initWidgetInfo()
 	self._pageTipPanel = self._main:getChildByFullName("pageTipPanel")
 
 	self._pageTipPanel:removeAllChildren()
+	self._pageTipPanel:setTouchEnabled(true)
 
 	local width = 0
 
 	for i = 1, #self._teamList do
+		local layout = ccui.Layout:create()
 		local img = ccui.ImageView:create("kazu_bg_dian_1.png", 1)
 
-		img:setAnchorPoint(cc.p(0, 0.5))
-		img:setTag(i)
-		img:addTo(self._pageTipPanel)
-		img:setPosition(cc.p((img:getContentSize().width + 25) * (i - 1), self._pageTipPanel:getContentSize().height / 2))
+		layout:setAnchorPoint(cc.p(0, 0.5))
+		layout:setContentSize(img:getContentSize())
+		img:addTo(layout):center(layout:getContentSize())
+		img:setName("img")
+		layout:setTag(i)
+		layout:addTo(self._pageTipPanel)
+		layout:setPosition(cc.p((img:getContentSize().width + 25) * (i - 1), self._pageTipPanel:getContentSize().height / 2))
+		layout:setTouchEnabled(true)
+		layout:addTouchEventListener(function (sender, eventType)
+			if eventType == ccui.TouchEventType.ended then
+				local tag = sender:getTag()
 
-		width = (img:getContentSize().width + 25) * i
+				if not self._canChange then
+					return
+				end
+
+				self._canChange = false
+
+				performWithDelay(self:getView(), function ()
+					self._canChange = true
+				end, 0.3)
+
+				local function func()
+					local currentType = self._curTabType
+					local teamId = self._curTeamId
+					currentType = tonumber(tag)
+
+					if currentType <= 1 then
+						currentType = 1
+					end
+
+					if currentType >= #self._teamList then
+						currentType = #self._teamList
+					end
+
+					teamId = self._teamList[currentType]:getId()
+
+					self:checkTeamIsEmpty(teamId, currentType)
+				end
+
+				if self:checkToExit(func, true, "Stage_Team_UI12") then
+					func()
+				end
+			end
+		end)
+
+		width = (layout:getContentSize().width + 25) * i
 	end
 
 	self._pageTipPanel:setContentSize(cc.size(width, 50))
@@ -911,10 +945,9 @@ end
 
 function StageTeamMediator:refreshListView(ignoreAdjustOffset)
 	self._petListAll = self._stageSystem:getSortExtendIds(self._petList)
-	local sortOrder = self._stageSystem:getCardSortOrder()
 	local sortType = self._stageSystem:getCardSortType()
 
-	self._heroSystem:sortHeroes(self._petListAll, sortType, sortOrder)
+	self._heroSystem:sortHeroes(self._petListAll, sortType)
 
 	if table.nums(self._cardsExcept) > 0 then
 		local heros1 = {}
@@ -1112,6 +1145,7 @@ function StageTeamMediator:initTeamHero(node, info)
 
 	local skillPanel = node:getChildByName("skillPanel")
 	local skill, condition = self._heroSystem:checkHasKeySkill(heroId)
+	local dicengEff, shangcengEff = nil
 
 	skillPanel:setVisible(not not skill)
 
@@ -1126,14 +1160,34 @@ function StageTeamMediator:initTeamHero(node, info)
 			local skillType = skill:getType()
 			local icon1, icon2 = self._heroSystem:getSkillTypeIcon(skillType)
 			local image = ccui.ImageView:create(icon1)
+			dicengEff = cc.MovieClip:create("diceng_jinengjihuo")
 
+			dicengEff:setAnchorPoint(0.5, 0.5)
+			dicengEff:setScale(0.38)
+			dicengEff:setVisible(false)
+
+			shangcengEff = cc.MovieClip:create("shangceng_jinengjihuo")
+
+			shangcengEff:setAnchorPoint(0.5, 0.5)
+			shangcengEff:setScale(0.38)
+			shangcengEff:setVisible(false)
+			dicengEff:addTo(skillPanel):center(skillPanel:getContentSize()):offset(-1.5, -2)
 			image:addTo(skillPanel):center(skillPanel:getContentSize())
+			shangcengEff:addTo(skillPanel):center(skillPanel:getContentSize()):offset(-1.5, -2)
 			image:setName("KeyMark")
 			image:setScale(0.85)
 			image:offset(0, -5)
 		end
 
 		local isActive = self._stageSystem:checkIsKeySkillActive(condition, self._teamPets)
+
+		if dicengEff then
+			dicengEff:setVisible(isActive)
+		end
+
+		if shangcengEff then
+			shangcengEff:setVisible(isActive)
+		end
 
 		skillPanel:setGray(not isActive)
 	end
@@ -1306,7 +1360,7 @@ function StageTeamMediator:checkCardsTurnBtn()
 	for i = 1, #self._teamList do
 		local image = i == self._curTabType and "kazu_bg_dian_2.png" or "kazu_bg_dian_1.png"
 
-		self._pageTipPanel:getChildByTag(i):loadTexture(image, ccui.TextureResType.plistType)
+		self._pageTipPanel:getChildByTag(i):getChildByName("img"):loadTexture(image, ccui.TextureResType.plistType)
 
 		local posY = i == self._curTabType and self._pageTipPanel:getContentSize().height / 2 - 2 or self._pageTipPanel:getContentSize().height / 2
 

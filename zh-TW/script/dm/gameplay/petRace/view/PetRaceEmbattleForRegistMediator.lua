@@ -9,6 +9,9 @@ PetRaceEmbattleForRegistMediator:has("_gameServerAgent", {
 PetRaceEmbattleForRegistMediator:has("_petRaceSystem", {
 	is = "r"
 }):injectWith("PetRaceSystem")
+PetRaceEmbattleForRegistMediator:has("_stageSystem", {
+	is = "r"
+}):injectWith("StageSystem")
 
 local kCellWidth = 350
 local kCellHeight = 148
@@ -146,16 +149,17 @@ function PetRaceEmbattleForRegistMediator:updateData()
 	end
 
 	self._restHeros = self._petRaceSystem:getRestHeros()
+	self._restHeros = self._stageSystem:getSortExtendIds(self._restHeros)
 end
 
 function PetRaceEmbattleForRegistMediator:mapEventListeners()
+	self:mapEventListener(self:getEventDispatcher(), EVT_TEAM_REFRESH_PETS, self, self.refreshViewBySort)
 end
 
 function PetRaceEmbattleForRegistMediator:enterWithData(data)
 	self._cardsExcept = {}
 	self._cardsRecommend = {}
 	self._sortType = 1
-	self._sortOrder = 2
 	self._endTime = self._petRaceSystem:getRoundEndTime() or 0
 
 	self:setupView()
@@ -673,9 +677,10 @@ function PetRaceEmbattleForRegistMediator:setupView()
 	self._myPetClone:setVisible(false)
 
 	self._text_sortType = self:getView():getChildByFullName("Panel_bottom.Image_ButtonBg.sortBtn.text")
-	self._text_sortOrder = self:getView():getChildByFullName("Panel_bottom.Image_ButtonBg.sortTypeBtn.text")
 	self._sortPanel = self:getView():getChildByFullName("Panel_bottom.Image_ButtonBg.sortnode")
+	local sortOrder = self:getView():getChildByFullName("Panel_bottom.Image_ButtonBg.sortTypeBtn.text")
 
+	sortOrder:setString(Strings:get("Team_Screen"))
 	self:registerTouchEvent()
 	self:createSortView()
 end
@@ -898,26 +903,38 @@ function PetRaceEmbattleForRegistMediator:createSortView()
 	local sortStr = stageSystem:getSortTypeStr(sortType)
 
 	self._text_sortType:setString(sortStr)
-	self._text_sortOrder:setString(SortOrder[self._sortOrder])
 end
 
 function PetRaceEmbattleForRegistMediator:onClickSort()
+	local stageSystem = self:getInjector():getInstance(StageSystem)
+
+	stageSystem:setSortExtand(0)
 	self._sortComponent:getRootNode():setVisible(true)
+	self._sortComponent:showNormal()
 	self._sortComponent:refreshView()
 end
 
 function PetRaceEmbattleForRegistMediator:onClickSortType()
-	self._sortOrder = self._sortOrder == 1 and 2 or 1
+	local stageSystem = self:getInjector():getInstance(StageSystem)
 
-	self._text_sortOrder:setString(SortOrder[self._sortOrder])
+	stageSystem:setSortExtand(0)
+	self._sortComponent:getRootNode():setVisible(true)
+	self._sortComponent:showExtand()
+
+	self._restHeros = self._petRaceSystem:getRestHeros()
+
+	self:refreshListView()
+end
+
+function PetRaceEmbattleForRegistMediator:refreshViewBySort()
+	self:updateData()
 	self:refreshListView()
 end
 
 function PetRaceEmbattleForRegistMediator:refreshListView()
-	local sortOrder = self._sortOrder
 	local sortType = self._sortType
 
-	self._heroSystem:sortHeroes(self._restHeros, sortType, sortOrder, self._cardsRecommend)
+	self._heroSystem:sortHeroes(self._restHeros, sortType, self._cardsRecommend)
 
 	local offsetX = self._tableView2:getContentOffset().x + self._myPetClone:getContentSize().width
 

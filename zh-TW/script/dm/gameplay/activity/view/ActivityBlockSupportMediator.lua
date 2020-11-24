@@ -136,7 +136,13 @@ end
 
 function ActivityBlockSupportMediator:enterWithData(data)
 	self._resumeName = data and data.resumeName or nil
-	self._activityId = data.activityId or ActivityId.kActivityBlockZuoHe
+	self._activityId = data.activityId
+	self._supportActivity = self._activitySystem:getActivityById(self._activityId)
+
+	if not self._supportActivity then
+		return
+	end
+
 	self._canChangeHero = true
 
 	self:initData()
@@ -461,7 +467,7 @@ function ActivityBlockSupportMediator:onClickStage()
 	end
 
 	AudioEngine:getInstance():playEffect("Se_Click_Daochang", false)
-	self._activitySystem:enterSupportStage(self._blockActivity, self._activityId)
+	self._activitySystem:enterSupportStage(self._activityId)
 end
 
 function ActivityBlockSupportMediator:onClickRule()
@@ -481,7 +487,7 @@ function ActivityBlockSupportMediator:onClickTask()
 	end
 
 	AudioEngine:getInstance():playEffect("Se_Click_Open_1", false)
-	self._activitySystem:enterSupportTask(self._activityId)
+	self._activitySystem:enterSupportTaskView(self._activityId)
 end
 
 function ActivityBlockSupportMediator:onClickTeam()

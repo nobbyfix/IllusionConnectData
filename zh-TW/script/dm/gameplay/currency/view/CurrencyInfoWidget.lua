@@ -56,14 +56,18 @@ kAddBtnFuncMap[CurrencyIdKind.kCrystal] = function (self)
 	}, self))
 end
 
-kAddBtnFuncMap[CurrencyIdKind.kGoldDrawItem] = function (self)
-	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
-	self._shopSystem:tryEnterByRecruit()
-end
-
 kAddBtnFuncMap[CurrencyIdKind.kDiamondDrawItem] = function (self)
 	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
-	self._shopSystem:tryEnterByRecruit()
+	self._shopSystem:tryEnter({
+		shopId = "Shop_Diamond"
+	})
+end
+
+kAddBtnFuncMap[CurrencyIdKind.kDiamondDrawExItem] = function (self)
+	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
+	self._shopSystem:tryEnter({
+		shopId = ShopSpecialId.kShopTimeLimit
+	})
 end
 
 kAddBtnFuncMap[CurrencyIdKind.kAcitvityStaminaPower] = function (self)
@@ -78,16 +82,61 @@ kAddBtnFuncMap[CurrencyIdKind.kAcitvityZuoHePower] = function (self)
 	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
 end
 
-kAddBtnFuncMap[CurrencyIdKind.IM_JinChui] = function (self)
-	self._shopSystem:tryEnter({
-		shopId = "Shop_TimeLimit",
-		viewType = push
-	})
-end
-
 kAddBtnFuncMap[CurrencyIdKind.kAcitvityWxhPower] = function (self)
 	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
 end
+
+kAddBtnFuncMap[CurrencyIdKind.kAcitvityHalloweenPower] = function (self)
+	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
+end
+
+local kAddImgMap = {
+	[CurrencyIdKind.kGold] = true,
+	[CurrencyIdKind.kPower] = true,
+	[CurrencyIdKind.kCrystal] = true,
+	[CurrencyIdKind.kDiamond] = true,
+	[CurrencyIdKind.kDiamondDrawItem] = true,
+	[CurrencyIdKind.kDiamondDrawExItem] = true,
+	[CurrencyIdKind.IM_JinChui] = true
+}
+local PowerConfigMap = {
+	[CurrencyIdKind.kPower] = {
+		all = "Power_RecAll",
+		configFunc = "getPowerResetByCurrencyId",
+		next = "Power_RecNext",
+		func = "getPowerByCurrencyId"
+	},
+	[CurrencyIdKind.kAcitvityStaminaPower] = {
+		all = "Act_Power_RecAll",
+		configFunc = "getPowerResetByCurrencyId",
+		next = "Act_Power_RecNext",
+		func = "getPowerByCurrencyId"
+	},
+	[CurrencyIdKind.kAcitvityZuoHePower] = {
+		all = "Act_ZuoHe_Power_RecAll",
+		configFunc = "getPowerResetByCurrencyId",
+		next = "Act_ZuoHe_Power_RecNext",
+		func = "getPowerByCurrencyId"
+	},
+	[CurrencyIdKind.kAcitvityWxhPower] = {
+		all = "Act_Wxh_Power_RecAll",
+		configFunc = "getPowerResetByCurrencyId",
+		next = "Act_Wxh_Power_RecNext",
+		func = "getPowerByCurrencyId"
+	},
+	[CurrencyIdKind.kAcitvitySummerPower] = {
+		all = "Act_Summer_Power_RecAll",
+		configFunc = "getPowerResetByCurrencyId",
+		next = "Act_Summer_Power_RecNext",
+		func = "getPowerByCurrencyId"
+	},
+	[CurrencyIdKind.kAcitvityHalloweenPower] = {
+		all = "Act_Halloween_Power_RecAll",
+		configFunc = "getPowerResetByCurrencyId",
+		next = "Act_Halloween_Power_RecNext",
+		func = "getPowerByCurrencyId"
+	}
+}
 
 function CurrencyBar.class:createWidgetNode()
 	local resFile = "asset/ui/CurrencyBar.csb"
@@ -159,30 +208,15 @@ function CurrencyBar:setCurrencyId(currencyId, addBtnDisable)
 
 		local plusImage = view:getChildByName("Image_1")
 
-		if currencyId == CurrencyIdKind.kGold or currencyId == CurrencyIdKind.kPower or currencyId == CurrencyIdKind.kCrystal or currencyId == CurrencyIdKind.kDiamond or currencyId == CurrencyIdKind.IM_JinChui then
+		if kAddImgMap[currencyId] then
 			plusImage:setVisible(true)
 		else
 			plusImage:setVisible(false)
 		end
 
-		if currencyId == CurrencyIdKind.kPower then
-			view:getChildByFullName("tips.Text_25"):setString(Strings:get("Power_RecNext"))
-			view:getChildByFullName("tips.Text_27"):setString(Strings:get("Power_RecAll"))
-		elseif currencyId == CurrencyIdKind.kAcitvityStaminaPower then
-			view:getChildByFullName("tips.Text_25"):setString(Strings:get("Act_Power_RecNext"))
-			view:getChildByFullName("tips.Text_27"):setString(Strings:get("Act_Power_RecAll"))
-		elseif currencyId == CurrencyIdKind.kAcitvityZuoHePower then
-			view:getChildByFullName("tips.Text_25"):setString(Strings:get("Act_ZuoHe_Power_RecNext"))
-			view:getChildByFullName("tips.Text_27"):setString(Strings:get("Act_ZuoHe_Power_RecAll"))
-		elseif currencyId == CurrencyIdKind.kAcitvityWxhPower then
-			view:getChildByFullName("tips.Text_25"):setString(Strings:get("Act_Wxh_Power_RecNext"))
-			view:getChildByFullName("tips.Text_27"):setString(Strings:get("Act_Wxh_Power_RecAll"))
-		elseif currencyId == CurrencyIdKind.kAcitvitySummerPower then
-			view:getChildByFullName("tips.Text_25"):setString(Strings:get("Act_Summer_Power_RecNext"))
-			view:getChildByFullName("tips.Text_27"):setString(Strings:get("Act_Summer_Power_RecAll"))
-		end
-
-		if currencyId == CurrencyIdKind.kPower or currencyId == CurrencyIdKind.kAcitvityStaminaPower or currencyId == CurrencyIdKind.kAcitvityZuoHePower or currencyId == CurrencyIdKind.kAcitvityWxhPower or currencyId == CurrencyIdKind.kAcitvitySummerPower then
+		if PowerConfigMap[currencyId] then
+			view:getChildByFullName("tips.Text_25"):setString(Strings:get(PowerConfigMap[currencyId].next))
+			view:getChildByFullName("tips.Text_27"):setString(Strings:get(PowerConfigMap[currencyId].all))
 			self._bagSystem:bindSchedulerOnView(self)
 
 			local tipsTouchPanel = addBtn:getChildByName("tipsTouchPanel")
@@ -219,6 +253,10 @@ function CurrencyBar:setCurrencyId(currencyId, addBtnDisable)
 end
 
 function CurrencyBar:updateText()
+	if DisposableObject:isDisposed(self) then
+		return
+	end
+
 	local view = self:getView()
 	local currencyId = self._currencyId
 
@@ -265,23 +303,14 @@ function CurrencyBar:updateText()
 
 			str2:setString(allDoneTimeStr)
 		end
-	elseif currencyId == CurrencyIdKind.kAcitvityStaminaPower or currencyId == CurrencyIdKind.kAcitvityZuoHePower or currencyId == CurrencyIdKind.kAcitvityWxhPower or currencyId == CurrencyIdKind.kAcitvitySummerPower then
-		local curPower, lastRecoverTime, powerLimit = nil
-
-		if currencyId == CurrencyIdKind.kAcitvityStaminaPower then
-			curPower, lastRecoverTime = self._bagSystem:getAcitvityStaminaPower()
-			powerLimit = ConfigReader:getRecordById("Reset", "AcitvityStamina_Reset").ResetSystem.limit
-		elseif currencyId == CurrencyIdKind.kAcitvityZuoHePower then
-			curPower, lastRecoverTime = self._bagSystem:getAcitvitySagaSupportPower()
-			powerLimit = ConfigReader:getRecordById("Reset", "AcitvityZuoHeStamina_Reset").ResetSystem.limit
-		elseif currencyId == CurrencyIdKind.kAcitvityWxhPower then
-			curPower, lastRecoverTime = self._bagSystem:getAcitvityWxhSupportPower()
-			powerLimit = ConfigReader:getRecordById("Reset", "AcitvityWuXiuHuiStamina_Reset").ResetSystem.limit
-		elseif currencyId == CurrencyIdKind.kAcitvitySummerPower then
-			curPower, lastRecoverTime = self._bagSystem:getAcitvitySummerPower()
-			powerLimit = ConfigReader:getRecordById("Reset", "AcitvitySummerStamina_Reset").ResetSystem.limit
-		end
-
+	elseif PowerConfigMap[currencyId] then
+		local curPower, lastRecoverTime, powerLimit, powerRecoverCd = nil
+		local func = PowerConfigMap[currencyId].func or "getPowerByCurrencyId"
+		local configFunc = PowerConfigMap[currencyId].configFunc or "getPowerResetByCurrencyId"
+		curPower, lastRecoverTime = self._bagSystem[func](self._bagSystem, currencyId)
+		local resetConfig = self._bagSystem[configFunc](self._bagSystem, currencyId)
+		powerLimit = resetConfig.limit or 3000
+		powerRecoverCd = resetConfig.limit or 100
 		text = curPower .. "/" .. powerLimit
 		local tipPanel = view:getChildByFullName("tips")
 		local str1 = tipPanel:getChildByName("oneTimes")
@@ -292,13 +321,13 @@ function CurrencyBar:updateText()
 			str2:setString("00:00:00")
 		else
 			local curTime = self._gameServerAgent:remoteTimestamp()
-			local a, b = math.modf((curTime - lastRecoverTime) / self._recoverCd)
-			local remainTime = (1 - b) * self._recoverCd
+			local a, b = math.modf((curTime - lastRecoverTime) / powerRecoverCd)
+			local remainTime = (1 - b) * powerRecoverCd
 			local remainTimeStr = TimeUtil:formatTime("${HH}:${MM}:${SS}", remainTime)
 
 			str1:setString(remainTimeStr)
 
-			local allDoneTime = (powerLimit - curPower - 1) * self._recoverCd + remainTime
+			local allDoneTime = (powerLimit - curPower - 1) * powerRecoverCd + remainTime
 			local allDoneTimeStr = TimeUtil:formatTime("${HH}:${MM}:${SS}", allDoneTime)
 
 			str2:setString(allDoneTimeStr)
@@ -328,7 +357,7 @@ function CurrencyBar:updateText()
 	end
 
 	local width = textNode:getContentSize().width + strNode:getContentSize().width
-	local addImgShow = currencyId == CurrencyIdKind.kGold or currencyId == CurrencyIdKind.kPower or currencyId == CurrencyIdKind.kCrystal or currencyId == CurrencyIdKind.kDiamond
+	local addImgShow = kAddImgMap[currencyId]
 
 	if addImgShow then
 		if width < 93 then
@@ -424,7 +453,7 @@ function CurrencyInfoWidget:updateCurrencyInfo(config)
 
 				self._currencyBars[pos] = currencyBar
 
-				if currencyId == CurrencyIdKind.kPower or currencyId == CurrencyIdKind.kAcitvityStaminaPower or currencyId == CurrencyIdKind.kAcitvityZuoHePower or currencyId == CurrencyIdKind.kAcitvityWxhPower or currencyId == CurrencyIdKind.kAcitvitySummerPower then
+				if PowerConfigMap[currencyId] then
 					local rootView = view:getParent()
 
 					if rootView and not rootView:getChildByName(currencyId) then
@@ -585,7 +614,7 @@ function TopInfoWidget:updateView(config)
 				currencyBarNode:setVisible(true)
 				self._currencyBars[pos]:updateView(currencyId, nil)
 
-				if currencyId == CurrencyIdKind.kPower or currencyId == CurrencyIdKind.kAcitvityStaminaPower or currencyId == CurrencyIdKind.kAcitvityZuoHePower or currencyId == CurrencyIdKind.kAcitvityWxhPower or currencyId == CurrencyIdKind.kAcitvitySummerPower then
+				if PowerConfigMap[currencyId] then
 					local rootView = view:getParent()
 
 					if rootView and not rootView:getChildByName(currencyId) then
@@ -703,15 +732,6 @@ function TopInfoWidget:startAnim(style, stopAnim)
 end
 
 function TopInfoWidget:refreshView()
-	if not self._currencyBars[1] then
-		return
-	end
-
-	local bar1Id = self._currencyBars[1]:getCurrencyId()
-
-	if bar1Id ~= CurrencyIdKind.kDiamond then
-		return
-	end
 end
 
 function TopInfoWidget:updateTitle(title)

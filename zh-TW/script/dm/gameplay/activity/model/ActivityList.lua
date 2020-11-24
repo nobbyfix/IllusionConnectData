@@ -9,6 +9,14 @@ function ActivityList:initialize()
 	self._activityMap = {}
 	self._activityIds = {}
 	self._activityTypeMap = {}
+	local temp = CommonUtils.GetSwitchString("fn_activity_list")
+	local list = {}
+
+	if temp and temp ~= "" then
+		list = string.split(temp, ",")
+	end
+
+	self._disableActivityList = list
 end
 
 function ActivityList:synchronize(data)
@@ -33,7 +41,7 @@ function ActivityList:syncAloneActivity(id, data)
 	else
 		local config = ConfigReader:getRecordById("Activity", id)
 
-		if config and ActivityModel[config.Type] then
+		if config and ActivityModel[config.Type] and not table.find(self._disableActivityList, id) then
 			activity = ActivityModel[config.Type]:new()
 			data.activityId = id
 
@@ -73,6 +81,28 @@ function ActivityList:getActivityByType(actType)
 			return activity
 		end
 	end
+
+	return nil
+end
+
+function ActivityList:getActivityByComplexId(complexId)
+	for id, activity in pairs(self._activityMap) do
+		if activity:getActivityComplexId() == complexId then
+			return activity
+		end
+	end
+
+	return nil
+end
+
+function ActivityList:getActivityByComplexUI(ui)
+	for id, activity in pairs(self._activityMap) do
+		if activity:getActivityComplexUI() == ui then
+			return activity
+		end
+	end
+
+	return nil
 end
 
 function ActivityList:getActivitiesByType(type)

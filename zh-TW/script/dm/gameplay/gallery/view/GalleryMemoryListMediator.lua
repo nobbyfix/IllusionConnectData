@@ -587,15 +587,12 @@ function GalleryMemoryListMediator:refreshRedPoint(panel, data, value)
 end
 
 function GalleryMemoryListMediator:refreshAllRedPoint()
-	if self._heroView then
-		for i = 1, #self._tableViewCell do
-			local cellPanel = self._tableViewCell[i]:getChildByFullName("cellPanel")
-
-			for index = 1, ShowLineNum do
-				local panel = cellPanel:getChildByFullName("image"):getChildByFullName("panel_" .. index)
-
-				self:refreshRedPoint(panel, nil, false)
-			end
-		end
+	if not self._heroView or DisposableObject:isDisposed(self._heroView) then
+		return
 	end
+
+	local offset = self._heroView:getContentOffset()
+
+	self._heroView:reloadData()
+	self._heroView:setContentOffset(cc.p(offset.x, offset.y))
 end

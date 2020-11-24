@@ -397,7 +397,7 @@ all.Skill_BQDShe_Unique = {
 
 				global.ApplyBuff_Debuff(_env, _env.ACTOR, _env.ACTOR, {
 					timing = 2,
-					duration = 2,
+					duration = 1,
 					display = "Daze",
 					tags = {
 						"STATUS",
@@ -583,7 +583,7 @@ all.Skill_BQDShe_Unique_EX = {
 
 				global.ApplyBuff_Debuff(_env, _env.ACTOR, _env.ACTOR, {
 					timing = 2,
-					duration = 2,
+					duration = 1,
 					display = "Daze",
 					tags = {
 						"STATUS",
@@ -655,11 +655,7 @@ all.Skill_BQDShe_Passive = {
 			local global = _env.global
 			local count = global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED_ANY(_env, "DAZE"))
 
-			global.print(_env, 11111111)
-
 			if count ~= 0 and global.ProbTest(_env, 1) then
-				global.print(_env, 22222222)
-
 				local buffeft1 = global.NumericEffect(_env, "+unhurtrate", {
 					"+Normal",
 					"+Normal"
@@ -702,7 +698,6 @@ all.Skill_BQDShe_Passive = {
 			local count2 = global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "Skill_BQDShe_Passive"))
 
 			if count == 0 and count2 ~= 0 and global.ProbTest(_env, 1) then
-				global.print(_env, 333333333)
 				global.DispelBuff(_env, _env.ACTOR, global.BUFF_MARKED_ALL(_env, "Skill_BQDShe_Passive"))
 			end
 		end)
@@ -763,11 +758,7 @@ all.Skill_BQDShe_Passive_EX = {
 			local global = _env.global
 			local count = global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED_ANY(_env, "DAZE"))
 
-			global.print(_env, 11111111)
-
 			if count ~= 0 and global.ProbTest(_env, 1) then
-				global.print(_env, 22222222)
-
 				local buffeft1 = global.NumericEffect(_env, "+unhurtrate", {
 					"+Normal",
 					"+Normal"
@@ -810,7 +801,6 @@ all.Skill_BQDShe_Passive_EX = {
 			local count2 = global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "Skill_BQDShe_Passive_EX"))
 
 			if count == 0 and count2 ~= 0 and global.ProbTest(_env, 1) then
-				global.print(_env, 333333333)
 				global.DispelBuff(_env, _env.ACTOR, global.BUFF_MARKED_ALL(_env, "Skill_BQDShe_Passive_EX"))
 			end
 		end)

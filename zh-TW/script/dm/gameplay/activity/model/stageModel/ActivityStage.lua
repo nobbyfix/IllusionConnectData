@@ -1,4 +1,5 @@
 require("dm.gameplay.activity.model.stageModel.ActivityStagePoint")
+require("dm.gameplay.activity.model.ActivityColorEgg")
 
 ActivityStage = class("ActivityStage")
 
@@ -24,28 +25,26 @@ local StageBoxState = {
 	kCanReceive = 0
 }
 
-function ActivityStage:initialize(stageType)
+function ActivityStage:initialize(stageType, id)
 	self._mapCount = 0
 	self._type = stageType
+	self._mapId = id
 	self._index2Points = nil
 	self._id2Points = nil
 	self._mapBoxData = nil
 end
 
 function ActivityStage:sync(data)
-	local stageMaps = data.stageMaps
-
-	for k, _data in pairs(stageMaps) do
-		self._mapId = k
-		self._config = ConfigReader:getRecordById("ActivityBlockMap", self._mapId)
-
-		self:syncPointInfo(_data.points)
-		self:syncStarInfo(_data.starRewards)
-
-		break
+	if data.mapId then
+		self._mapId = data.mapId
 	end
 
+	self._config = ConfigReader:getRecordById("ActivityBlockMap", self._mapId)
+
+	self:syncPointInfo(data.points)
+	self:syncStarInfo(data.starRewards)
 	self:initStoryPointMap()
+	self:initColorEggMap()
 end
 
 function ActivityStage:syncStarInfo(data)
@@ -183,7 +182,7 @@ function ActivityStage:initStoryPointMap()
 	if self._index2StoryPoint == nil then
 		self._index2StoryPoint = {}
 		self._id2StoryPoint = {}
-		local storyPointIds = self._config.SubStoryPoint
+		local storyPointIds = self._config.SubStoryPoint or {}
 
 		for index = 1, #storyPointIds do
 			local storyPointId = storyPointIds[index]
@@ -196,14 +195,14 @@ function ActivityStage:initStoryPointMap()
 			self._id2StoryPoint[storyPointId] = storyPoint
 		end
 
-		local subPointIds = self._config.SubPoint
+		local subPointIds = self._config.SubPoint or {}
 
 		for index = 1, #subPointIds do
 			local subPointId = subPointIds[index]
-			self._config = ConfigReader:getRecordById("ActivityBlockPoint", subPointId)
+			local config = ConfigReader:getRecordById("ActivityBlockPoint", subPointId)
 
-			if self._config.HiddenStory then
-				for sPointId, v in pairs(self._config.HiddenStory) do
+			if config.HiddenStory then
+				for sPointId, v in pairs(config.HiddenStory) do
 					local storyPoint = StoryPoint:new(sPointId, "ActivityStoryPoint")
 
 					storyPoint:setIndex(#self._index2StoryPoint + 1)
@@ -256,6 +255,21 @@ function ActivityStage:getStoryPointById(pointId)
 	return self._id2StoryPoint[pointId]
 end
 
+function ActivityStage:initColorEggMap()
+	if self._colorEggsMap == nil then
+		self._colorEggsMap = {}
+		local colorEggs = self._config.ColourEgg
+
+		if colorEggs then
+			for index = 1, #colorEggs do
+				local eggId = colorEggs[index]
+				local egg = ActivityColorEgg:new(eggId)
+				self._colorEggsMap[eggId] = egg
+			end
+		end
+	end
+end
+
 function ActivityStage:isUnlock()
 	if self._type == StageType.kNormal then
 		return true
@@ -268,15 +282,20 @@ end
 
 function ActivityStage:isPass()
 	local lastBattlePoint = self._index2Points[#self._index2Points]
-	local lastStoryPoint = self._index2StoryPoint[#self._index2StoryPoint]
 
-	for i = #self._index2StoryPoint, 0, -1 do
-		if not self._index2StoryPoint[i]:getIsHidden() then
-			lastStoryPoint = self._index2StoryPoint[i]
+	if self._index2StoryPoint and next(self._index2StoryPoint) then
+		local lastStoryPoint = self._index2StoryPoint[#self._index2StoryPoint]
 
-			break
+		for i = #self._index2StoryPoint, 0, -1 do
+			if not self._index2StoryPoint[i]:getIsHidden() then
+				lastStoryPoint = self._index2StoryPoint[i]
+
+				break
+			end
 		end
-	end
 
-	return lastBattlePoint:isPass() and lastStoryPoint:isPass()
+		return lastBattlePoint:isPass() and lastStoryPoint:isPass()
+	else
+		return lastBattlePoint:isPass()
+	end
 end

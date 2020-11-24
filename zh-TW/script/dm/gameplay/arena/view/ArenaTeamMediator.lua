@@ -19,14 +19,6 @@ local kBtnHandlers = {
 	["main.info_bg.costBtn"] = {
 		clickAudio = "Se_Click_Common_2",
 		func = "onClickCost"
-	},
-	["main.my_pet_bg.sortPanel.sortBtn"] = {
-		clickAudio = "Se_Click_Fold_1",
-		func = "onClickSort"
-	},
-	["main.my_pet_bg.sortPanel.sortTypeBtn"] = {
-		clickAudio = "Se_Click_Tab_1",
-		func = "onClickSortType"
 	}
 }
 local kHeroRarityBgAnim = {
@@ -246,7 +238,6 @@ function ArenaTeamMediator:initWidgetInfo()
 	self._myPetPanel = self._main:getChildByFullName("my_pet_bg")
 	self._heroPanel = self._myPetPanel:getChildByFullName("heroPanel")
 	self._sortType = self._myPetPanel:getChildByFullName("sortPanel.sortBtn.text")
-	self._sortOrder = self._myPetPanel:getChildByFullName("sortPanel.sortTypeBtn.text")
 	self._masterImage = self._bg:getChildByName("role")
 	self._teamBg = self._bg:getChildByName("team_bg")
 	self._labelCombat = self._main:getChildByFullName("info_bg.combatLabel")
@@ -338,7 +329,23 @@ function ArenaTeamMediator:createTeamCell(cell, index)
 	local detailBtn = node:getChildByFullName("detailBtn")
 
 	detailBtn:addClickEventListener(function ()
-		self:onClickHeroDetail(id)
+		local attrAdds = {}
+		local seasonData = self._arenaSystem:getSeasonData()
+		local seasonSkillData = self._arenaSystem:getCurSeasonSkillData()
+		local arenaSeasonData = self._arenaSystem:getCurSeasonData()
+		local text = Strings:get(seasonSkillData.Desc, {
+			fontSize = 18,
+			fontName = TTF_FONT_FZYH_R
+		})
+		local skillIcon = "asset/skillIcon/" .. seasonSkillData.Icon .. ".png"
+		attrAdds[#attrAdds + 1] = {}
+		attrAdds[#attrAdds].title = Strings:get(arenaSeasonData.SeasonTitle)
+		attrAdds[#attrAdds].desc = text
+		attrAdds[#attrAdds].icon = skillIcon
+		attrAdds[#attrAdds].type = StageAttrAddType.HERO_BUFF
+		attrAdds[#attrAdds].richTextType = true
+
+		self:onClickHeroDetail(id, attrAdds)
 	end)
 end
 
@@ -766,10 +773,9 @@ end
 
 function ArenaTeamMediator:refreshListView(ignoreAdjustOffset)
 	self._petListAll = self._stageSystem:getSortExtendIds(self._petList)
-	local sortOrder = self._stageSystem:getCardSortOrder()
 	local sortType = self._stageSystem:getCardSortType()
 
-	self._heroSystem:sortHeroes(self._petListAll, sortType, sortOrder)
+	self._heroSystem:sortHeroes(self._petListAll, sortType)
 
 	if not self._ignoreReloadData then
 		local offsetX = self._teamView:getContentOffset().x + self._petSize.width
@@ -958,6 +964,7 @@ function ArenaTeamMediator:initTeamHero(node, info)
 
 	local skillPanel = node:getChildByName("skillPanel")
 	local skill, condition = self._heroSystem:checkHasKeySkill(heroId)
+	local dicengEff, shangcengEff = nil
 
 	skillPanel:setVisible(not not skill)
 
@@ -972,14 +979,34 @@ function ArenaTeamMediator:initTeamHero(node, info)
 			local skillType = skill:getType()
 			local icon1, icon2 = self._heroSystem:getSkillTypeIcon(skillType)
 			local image = ccui.ImageView:create(icon1)
+			dicengEff = cc.MovieClip:create("diceng_jinengjihuo")
 
+			dicengEff:setAnchorPoint(0.5, 0.5)
+			dicengEff:setScale(0.38)
+			dicengEff:setVisible(false)
+
+			shangcengEff = cc.MovieClip:create("shangceng_jinengjihuo")
+
+			shangcengEff:setAnchorPoint(0.5, 0.5)
+			shangcengEff:setScale(0.38)
+			shangcengEff:setVisible(false)
+			dicengEff:addTo(skillPanel):center(skillPanel:getContentSize()):offset(-1.5, -2)
 			image:addTo(skillPanel):center(skillPanel:getContentSize())
+			shangcengEff:addTo(skillPanel):center(skillPanel:getContentSize()):offset(-1.5, -2)
 			image:setName("KeyMark")
 			image:setScale(0.85)
 			image:offset(0, -5)
 		end
 
 		local isActive = self._stageSystem:checkIsKeySkillActive(condition, self._teamPets)
+
+		if dicengEff then
+			dicengEff:setVisible(isActive)
+		end
+
+		if shangcengEff then
+			shangcengEff:setVisible(isActive)
+		end
 
 		skillPanel:setGray(not isActive)
 	end

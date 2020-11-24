@@ -872,16 +872,12 @@ all.Skill_NXYYi_Passive_EX = {
 			local this = _env.this
 			local global = _env.global
 
-			global.print(_env, 11111111)
-
 			for _, unit in global.__iter__(global.EnemyUnits(_env)) do
 				global.DispelBuff(_env, unit, global.BUFF_MARKED(_env, "Skill_NXYYi_Passive_EX_1"))
-				global.print(_env, 22222222)
 			end
 
 			for _, unit2 in global.__iter__(global.FriendUnits(_env)) do
 				global.DispelBuff(_env, unit2, global.BUFF_MARKED(_env, "Skill_NXYYi_Passive_EX"))
-				global.print(_env, 33333333)
 			end
 		end)
 

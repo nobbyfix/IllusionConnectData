@@ -143,12 +143,9 @@ all.Skill_DCJKang_Proud = {
 
 			local units = global.Slice(_env, global.SortBy(_env, global.EnemyUnits(_env, global.PETS), "<", global.UnitPropGetter(_env, "hpRatio")), 1, 1)
 
-			global.print(_env, 22222222222222.0)
-
 			if units[1] ~= nil then
 				for _, unit in global.__iter__(units) do
 					global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage * this.DmgMinHp)
-					global.print(_env, 111111111111.0)
 				end
 			end
 		end)
@@ -225,14 +222,12 @@ all.Skill_DCJKang_Proud_EX = {
 			local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, this.dmgFactor)
 
 			global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage)
-			global.print(_env, 22222222222.0)
 
 			local units = global.Slice(_env, global.SortBy(_env, global.EnemyUnits(_env, global.PETS), "<", global.UnitPropGetter(_env, "hpRatio")), 1, 1)
 
 			if units[1] ~= nil then
 				for _, unit in global.__iter__(units) do
 					global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage * this.DmgMinHp)
-					global.print(_env, 111111111)
 				end
 			end
 		end)
@@ -668,10 +663,11 @@ all.Skill_DCJKang_Passive = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			local count = global.SelectBuffCount(_env, global.FriendUnits(_env), global.BUFF_MARKED(_env, "REFLECT1"))
 
-			if count > 1 then
-				global.DispelBuff(_env, global.FriendUnits(_env), global.BUFF_MARKED(_env, "REFLECT1"), 1)
+			for _, unit in global.__iter__(global.FriendUnits(_env)) do
+				if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "REFLECT1")) > 0 then
+					global.DispelBuff(_env, unit, global.BUFF_MARKED(_env, "REFLECT1"), 1)
+				end
 			end
 		end)
 
@@ -708,9 +704,6 @@ all.Skill_DCJKang_Passive_EX = {
 		}, passive2)
 		passive2 = global["[trigger_by]"](this, {
 			"UNIT_KICK"
-		}, passive2)
-		passive2 = global["[trigger_by]"](this, {
-			"UNIT_DIE"
 		}, passive2)
 		this.passive2 = global["[trigger_by]"](this, {
 			"UNIT_ENTER"
@@ -830,10 +823,11 @@ all.Skill_DCJKang_Passive_EX = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			local count = global.SelectBuffCount(_env, global.FriendUnits(_env), global.BUFF_MARKED(_env, "REFLECT1"))
 
-			if count > 1 then
-				global.DispelBuff(_env, global.FriendUnits(_env), global.BUFF_MARKED(_env, "REFLECT1"), 1)
+			for _, unit in global.__iter__(global.FriendUnits(_env)) do
+				if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "REFLECT1")) > 0 then
+					global.DispelBuff(_env, unit, global.BUFF_MARKED(_env, "REFLECT1"), 1)
+				end
 			end
 		end)
 

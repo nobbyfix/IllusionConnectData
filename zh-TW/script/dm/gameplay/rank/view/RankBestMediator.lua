@@ -236,6 +236,11 @@ function RankBestMediator:updataCell(cell, data, index)
 			name_bg:setVisible(true)
 			name_lbl:setString(lb[1].nickname)
 			power_num:setString(lb[1].value)
+
+			if rankType == RankType.kPetRace then
+				power_num:setString(lb[1].score)
+			end
+
 			power_lbl:setString(rankPowerType[rankType])
 
 			if rankType == RankType.kClub or rankType == RankType.kClubBoss then

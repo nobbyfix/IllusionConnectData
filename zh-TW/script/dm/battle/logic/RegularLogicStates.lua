@@ -672,6 +672,7 @@ function RegularLogicState_DiligentRound:initialize(name, duration1, duration2)
 
 	self._duration1 = duration1
 	self._duration2 = duration2
+	self._diligentUnits = {}
 end
 
 function RegularLogicState_DiligentRound:setupContext(battleContext)
@@ -687,6 +688,7 @@ function RegularLogicState_DiligentRound:enter(battleLogic, battleContext, args)
 	super.enter(self, battleLogic, battleContext)
 	battleLogic:pauseTiming()
 	battleLogic:pauseProcess()
+	self:_pauseAngerRecovery()
 
 	local units = self._battleField:crossCollectDiligentUnits()
 
@@ -695,12 +697,17 @@ function RegularLogicState_DiligentRound:enter(battleLogic, battleContext, args)
 	self._updateAction = true
 	self._waiting = true
 	self._lessThanLeastTime = true
+	local allCrossUnits = self._battleField:crossCollectDiligentUnits()
 
-	self:startTimer(self._duration1, function ()
-		self._lessThanLeastTime = false
+	if next(allCrossUnits) then
+		self:startTimer(self._duration1, function ()
+			self._lessThanLeastTime = false
 
-		self:finish(battleLogic)
-	end)
+			self:finish(battleLogic)
+		end)
+	else
+		self:finishImmediate(battleLogic)
+	end
 end
 
 function RegularLogicState_DiligentRound:update(battleLogic, battleContext, dt)
@@ -727,6 +734,14 @@ function RegularLogicState_DiligentRound:update(battleLogic, battleContext, dt)
 	end
 
 	return super.update(self, battleLogic, battleContext, dt)
+end
+
+function RegularLogicState_DiligentRound:finishImmediate(battleLogic)
+	self._waiting = false
+
+	self:onMessage(battleLogic, {
+		type = "COMPLETED"
+	})
 end
 
 function RegularLogicState_DiligentRound:finish(battleLogic)
@@ -763,5 +778,27 @@ function RegularLogicState_DiligentRound:onMessage(battleLogic, message)
 end
 
 function RegularLogicState_DiligentRound:exit(battleLogic, battleContext)
+	self:_resumeAngerRecovery()
+
 	return super.exit(self, battleLogic, battleContext)
+end
+
+function RegularLogicState_DiligentRound:_pauseAngerRecovery()
+	self._diligentUnits = self._battleField:crossCollectDiligentUnits()
+
+	for k, unit in pairs(self._diligentUnits) do
+		local angerComp = unit:getComponent("Anger")
+
+		angerComp:pauseRecovery()
+	end
+end
+
+function RegularLogicState_DiligentRound:_resumeAngerRecovery()
+	for k, unit in pairs(self._diligentUnits) do
+		local angerComp = unit:getComponent("Anger")
+
+		if angerComp then
+			angerComp:resumeRecovery()
+		end
+	end
 end

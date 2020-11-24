@@ -56973,622 +56973,6 @@
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 1.0
     },
-    "E05S05": {
-        "Name": "BlockPoint_E05S05_Name",
-        "BlockDesc": "BlockPoint_E05S05_BlockDesc",
-        "CombatValue": 16630,
-        "CombatNeed": 15000,
-        "Map": "E05",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "E05S04"
-        ],
-        "NextPoint": [
-            "E05S06"
-        ],
-        "Type": "ELITE",
-        "PointType": "NORMAL",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "M05S13",
-        "EnemyMaster": "E05P05U01N08",
-        "EnemyCard": "CardE05S05",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 50
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 230,
-        "CrystalReward": 0,
-        "FirstKillReward": "E05S05_FirstReward",
-        "PointReward": "E05S05",
-        "HeroExpReward": "E05_HeroExpReward",
-        "MainShowItem": "IM_ExpUp1",
-        "ShowItem": "E05S05_Show",
-        "Element": "",
-        "WipeExtraReward": "E05_WipeExtraReward",
-        "StaminaCost": 6,
-        "StageEffect": "",
-        "StaminaBack": 5,
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_NFDDi",
-        "Background": "Battle_Scene_9",
-        "Banner": "pic_guanqia2_01_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": "",
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 1,
-        "OpenFAC": 0,
-        "Combat_Adjust_Rate": 1.0
-    },
-    "E05S04": {
-        "Name": "BlockPoint_E05S04_Name",
-        "BlockDesc": "BlockPoint_E05S04_BlockDesc",
-        "CombatValue": 15890,
-        "CombatNeed": 15500,
-        "Map": "E05",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "E05S03"
-        ],
-        "NextPoint": [
-            "E05S05"
-        ],
-        "Type": "ELITE",
-        "PointType": "NORMAL",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Normal_Stage_2_Wait1",
-        "EnemyMaster": "E05P04U01N08",
-        "EnemyCard": "CardE05S04",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 50
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 230,
-        "CrystalReward": 0,
-        "FirstKillReward": "E05S04_FirstReward",
-        "PointReward": "E05S04",
-        "HeroExpReward": "E05_HeroExpReward",
-        "MainShowItem": "IM_ExpUp1",
-        "ShowItem": "E05S04_Show",
-        "Element": "",
-        "WipeExtraReward": "E05_WipeExtraReward",
-        "StaminaCost": 6,
-        "StageEffect": "",
-        "StaminaBack": 5,
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_YLMGZhu",
-        "Background": "Battle_Scene_9",
-        "Banner": "pic_guanqia2_02_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": "",
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 4,
-        "OpenFAC": 1,
-        "Combat_Adjust_Rate": 1.0
-    },
-    "E05S07": {
-        "Name": "BlockPoint_E05S07_Name",
-        "BlockDesc": "BlockPoint_E05S07_BlockDesc",
-        "CombatValue": 18120,
-        "CombatNeed": 16800,
-        "Map": "E05",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "E05S06"
-        ],
-        "NextPoint": [
-            "E05S08"
-        ],
-        "Type": "ELITE",
-        "PointType": "NORMAL",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Normal_Stage_2_Wait1",
-        "EnemyMaster": "E05P07U01N08",
-        "EnemyCard": "CardE05S07",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 50
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 230,
-        "CrystalReward": 0,
-        "FirstKillReward": "E05S07_FirstReward",
-        "PointReward": "E05S07",
-        "HeroExpReward": "E05_HeroExpReward",
-        "MainShowItem": "IM_ExpUp1",
-        "ShowItem": "E05S07_Show",
-        "Element": "",
-        "WipeExtraReward": "E05_WipeExtraReward",
-        "StaminaCost": 6,
-        "StageEffect": "",
-        "StaminaBack": 5,
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_BBLMa",
-        "Background": "Battle_Scene_9",
-        "Banner": "pic_guanqia2_01_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": "",
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 2,
-        "OpenFAC": 0,
-        "Combat_Adjust_Rate": 1.0
-    },
-    "E05S06": {
-        "Name": "BlockPoint_E05S06_Name",
-        "BlockDesc": "BlockPoint_E05S06_BlockDesc",
-        "CombatValue": 17380,
-        "CombatNeed": 15900,
-        "Map": "E05",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "E05S05"
-        ],
-        "NextPoint": [
-            "E05S07"
-        ],
-        "Type": "ELITE",
-        "PointType": "NORMAL",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Normal_Stage_2_Wait1",
-        "EnemyMaster": "E05P06U01N08",
-        "EnemyCard": "CardE05S06",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 50
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 230,
-        "CrystalReward": 0,
-        "FirstKillReward": "E05S06_FirstReward",
-        "PointReward": "E05S06",
-        "HeroExpReward": "E05_HeroExpReward",
-        "MainShowItem": "IM_ExpUp1",
-        "ShowItem": "E05S06_Show",
-        "Element": "",
-        "WipeExtraReward": "E05_WipeExtraReward",
-        "StaminaCost": 6,
-        "StageEffect": "",
-        "StaminaBack": 5,
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_TPGZhu",
-        "Background": "Battle_Scene_9",
-        "Banner": "pic_guanqia2_02_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": "",
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 1,
-        "OpenFAC": 1,
-        "Combat_Adjust_Rate": 1.0
-    },
-    "E05S01": {
-        "Name": "BlockPoint_E05S01_Name",
-        "BlockDesc": "BlockPoint_E05S01_BlockDesc",
-        "CombatValue": 13750,
-        "CombatNeed": 12100,
-        "Map": "E05",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "E04S06"
-        ],
-        "NextPoint": [
-            "E05S02"
-        ],
-        "Type": "ELITE",
-        "PointType": "NORMAL",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "M05S13",
-        "EnemyMaster": "E05P01U01N08",
-        "EnemyCard": "CardE05S01",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 50
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 230,
-        "CrystalReward": 0,
-        "FirstKillReward": "E05S01_FirstReward",
-        "PointReward": "E05S01",
-        "HeroExpReward": "E05_HeroExpReward",
-        "MainShowItem": "IM_ExpUp1",
-        "ShowItem": "E05S01_Show",
-        "Element": "",
-        "WipeExtraReward": "E05_WipeExtraReward",
-        "StaminaCost": 6,
-        "StageEffect": "",
-        "StaminaBack": 5,
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_YMHTPu",
-        "Background": "Battle_Scene_9",
-        "Banner": "pic_guanqia2_01_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": "",
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 1,
-        "OpenFAC": 0,
-        "Combat_Adjust_Rate": 1.0
-    },
-    "E05S03": {
-        "Name": "BlockPoint_E05S03_Name",
-        "BlockDesc": "BlockPoint_E05S03_BlockDesc",
-        "CombatValue": 15140,
-        "CombatNeed": 14000,
-        "Map": "E05",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "E05S02"
-        ],
-        "NextPoint": [
-            "E05S04"
-        ],
-        "Type": "ELITE",
-        "PointType": "NORMAL",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Normal_Stage_2_Wait1",
-        "EnemyMaster": "E05P03U01N08",
-        "EnemyCard": "CardE05S03",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 50
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 230,
-        "CrystalReward": 0,
-        "FirstKillReward": "E05S03_FirstReward",
-        "PointReward": "E05S03",
-        "HeroExpReward": "E05_HeroExpReward",
-        "MainShowItem": "IM_ExpUp1",
-        "ShowItem": "E05S03_Show",
-        "Element": "",
-        "WipeExtraReward": "E05_WipeExtraReward",
-        "StaminaCost": 6,
-        "StageEffect": "",
-        "StaminaBack": 5,
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_BBLMa",
-        "Background": "Battle_Scene_9",
-        "Banner": "pic_guanqia2_01_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": "",
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 2,
-        "OpenFAC": 0,
-        "Combat_Adjust_Rate": 1.0
-    },
-    "E05S02": {
-        "Name": "BlockPoint_E05S02_Name",
-        "BlockDesc": "BlockPoint_E05S02_BlockDesc",
-        "CombatValue": 14400,
-        "CombatNeed": 12700,
-        "Map": "E05",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "E05S01"
-        ],
-        "NextPoint": [
-            "E05S03"
-        ],
-        "Type": "ELITE",
-        "PointType": "NORMAL",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Normal_Stage_2_Wait1",
-        "EnemyMaster": "E05P02U01N08",
-        "EnemyCard": "CardE05S02",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 50
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 230,
-        "CrystalReward": 0,
-        "FirstKillReward": "E05S02_FirstReward",
-        "PointReward": "E05S02",
-        "HeroExpReward": "E05_HeroExpReward",
-        "MainShowItem": "IM_ExpUp1",
-        "ShowItem": "E05S02_Show",
-        "Element": "",
-        "WipeExtraReward": "E05_WipeExtraReward",
-        "StaminaCost": 6,
-        "StageEffect": "",
-        "StaminaBack": 5,
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_WEDe",
-        "Background": "Battle_Scene_9",
-        "Banner": "pic_guanqia2_02_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": "",
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 1,
-        "OpenFAC": 1,
-        "Combat_Adjust_Rate": 1.0
-    },
     "E01S01": {
         "Name": "BlockPoint_E01S01_Name",
         "BlockDesc": "BlockPoint_E01S01_BlockDesc",
@@ -57853,94 +57237,6 @@
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 1.0
     },
-    "E04S02": {
-        "Name": "BlockPoint_E04S02_Name",
-        "BlockDesc": "BlockPoint_E04S02_BlockDesc",
-        "CombatValue": 11130,
-        "CombatNeed": 10450,
-        "Map": "E04",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "E04S01"
-        ],
-        "NextPoint": [
-            "E04S03"
-        ],
-        "Type": "ELITE",
-        "PointType": "NORMAL",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Normal_Stage_2_Wait1",
-        "EnemyMaster": "E04P02U01N08",
-        "EnemyCard": "CardE04S02",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 50
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 210,
-        "CrystalReward": 0,
-        "FirstKillReward": "E04S02_FirstReward",
-        "PointReward": "E04S02",
-        "HeroExpReward": "E04_HeroExpReward",
-        "MainShowItem": "IM_ExpUp1",
-        "ShowItem": "E04S02_Show",
-        "Element": "",
-        "WipeExtraReward": "E04_WipeExtraReward",
-        "StaminaCost": 6,
-        "StageEffect": "",
-        "StaminaBack": 5,
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_SLMen",
-        "Background": "Battle_Scene_7",
-        "Banner": "pic_guanqia2_02_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": "",
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 2,
-        "OpenFAC": 1,
-        "Combat_Adjust_Rate": 1.0
-    },
     "E01S04": {
         "Name": "BlockPoint_E01S04_Name",
         "BlockDesc": "BlockPoint_E01S04_BlockDesc",
@@ -58011,1596 +57307,6 @@
         ],
         "PointHead": "Model_YLSBai",
         "Background": "Battle_Scene_2",
-        "Banner": "pic_guanqia2_02_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": "",
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 1,
-        "OpenFAC": 1,
-        "Combat_Adjust_Rate": 1.0
-    },
-    "E04S01": {
-        "Name": "BlockPoint_E04S01_Name",
-        "BlockDesc": "BlockPoint_E04S01_BlockDesc",
-        "CombatValue": 10600,
-        "CombatNeed": 9300,
-        "Map": "E04",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "E03S06"
-        ],
-        "NextPoint": [
-            "E04S02"
-        ],
-        "Type": "ELITE",
-        "PointType": "NORMAL",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "M05S13",
-        "EnemyMaster": "E04P01U01N08",
-        "EnemyCard": "CardE04S01",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 50
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 210,
-        "CrystalReward": 0,
-        "FirstKillReward": "E04S01_FirstReward",
-        "PointReward": "E04S01",
-        "HeroExpReward": "E04_HeroExpReward",
-        "MainShowItem": "IM_ExpUp1",
-        "ShowItem": "E04S01_Show",
-        "Element": "",
-        "WipeExtraReward": "E04_WipeExtraReward",
-        "StaminaCost": 6,
-        "StageEffect": "",
-        "StaminaBack": 5,
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_MKLJLuo",
-        "Background": "Battle_Scene_7",
-        "Banner": "pic_guanqia2_01_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [
-            "S04E01"
-        ],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": "",
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 1,
-        "OpenFAC": 0,
-        "Combat_Adjust_Rate": 1.0
-    },
-    "E04S06": {
-        "Name": "BlockPoint_E04S06_Name",
-        "BlockDesc": "BlockPoint_E04S06_BlockDesc",
-        "CombatValue": 13650,
-        "CombatNeed": 13000,
-        "Map": "E04",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "E04S05"
-        ],
-        "NextPoint": [
-            "E05S01"
-        ],
-        "Type": "ELITE",
-        "PointType": "BOSS",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Normal_Stage_2_Wait1",
-        "EnemyMaster": "E04P06U01N08",
-        "EnemyCard": "CardE04S06",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 50
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 210,
-        "CrystalReward": 0,
-        "FirstKillReward": "E04S06_FirstReward",
-        "PointReward": "E04S06",
-        "HeroExpReward": "E04_HeroExpReward",
-        "MainShowItem": "IM_ExpUp1",
-        "ShowItem": "E04S06_Show",
-        "Element": "",
-        "WipeExtraReward": "E04_WipeExtraReward",
-        "StaminaCost": 6,
-        "StageEffect": "",
-        "StaminaBack": 5,
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Whale_Boss",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_KTSJKe",
-        "Background": "Battle_Scene_8",
-        "Banner": "pic_guanqia2_02_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": "",
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 2,
-        "OpenFAC": 1,
-        "Combat_Adjust_Rate": 1.0
-    },
-    "E04S04": {
-        "Name": "BlockPoint_E04S04_Name",
-        "BlockDesc": "BlockPoint_E04S04_BlockDesc",
-        "CombatValue": 12390,
-        "CombatNeed": 11050,
-        "Map": "E04",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "E04S03"
-        ],
-        "NextPoint": [
-            "E04S05"
-        ],
-        "Type": "ELITE",
-        "PointType": "NORMAL",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Normal_Stage_2_Wait1",
-        "EnemyMaster": "E04P04U01N08",
-        "EnemyCard": "CardE04S04",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 50
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 210,
-        "CrystalReward": 0,
-        "FirstKillReward": "E04S04_FirstReward",
-        "PointReward": "E04S04",
-        "HeroExpReward": "E04_HeroExpReward",
-        "MainShowItem": "IM_ExpUp1",
-        "ShowItem": "E04S04_Show",
-        "Element": "",
-        "WipeExtraReward": "E04_WipeExtraReward",
-        "StaminaCost": 6,
-        "StageEffect": "",
-        "StaminaBack": 5,
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_SLMen",
-        "Background": "Battle_Scene_7",
-        "Banner": "pic_guanqia2_02_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": "",
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 4,
-        "OpenFAC": 1,
-        "Combat_Adjust_Rate": 1.0
-    },
-    "E04S05": {
-        "Name": "BlockPoint_E04S05_Name",
-        "BlockDesc": "BlockPoint_E04S05_BlockDesc",
-        "CombatValue": 13020,
-        "CombatNeed": 12025,
-        "Map": "E04",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "E04S04"
-        ],
-        "NextPoint": [
-            "E04S06"
-        ],
-        "Type": "ELITE",
-        "PointType": "NORMAL",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "M05S13",
-        "EnemyMaster": "E04P05U01N08",
-        "EnemyCard": "CardE04S05",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 50
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 210,
-        "CrystalReward": 0,
-        "FirstKillReward": "E04S05_FirstReward",
-        "PointReward": "E04S05",
-        "HeroExpReward": "E04_HeroExpReward",
-        "MainShowItem": "IM_ExpUp1",
-        "ShowItem": "E04S05_Show",
-        "Element": "",
-        "WipeExtraReward": "E04_WipeExtraReward",
-        "StaminaCost": 6,
-        "StageEffect": "",
-        "StaminaBack": 5,
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_DNTLuo",
-        "Background": "Battle_Scene_7",
-        "Banner": "pic_guanqia2_01_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": "",
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 1,
-        "OpenFAC": 0,
-        "Combat_Adjust_Rate": 1.0
-    },
-    "E04S03": {
-        "Name": "BlockPoint_E04S03_Name",
-        "BlockDesc": "BlockPoint_E04S03_BlockDesc",
-        "CombatValue": 11760,
-        "CombatNeed": 9700,
-        "Map": "E04",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "E04S02"
-        ],
-        "NextPoint": [
-            "E04S04"
-        ],
-        "Type": "ELITE",
-        "PointType": "NORMAL",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Normal_Stage_2_Wait1",
-        "EnemyMaster": "E04P03U01N08",
-        "EnemyCard": "CardE04S03",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 50
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 210,
-        "CrystalReward": 0,
-        "FirstKillReward": "E04S03_FirstReward",
-        "PointReward": "E04S03",
-        "HeroExpReward": "E04_HeroExpReward",
-        "MainShowItem": "IM_ExpUp1",
-        "ShowItem": "E04S03_Show",
-        "Element": "",
-        "WipeExtraReward": "E04_WipeExtraReward",
-        "StaminaCost": 6,
-        "StageEffect": "",
-        "StaminaBack": 5,
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_BBLMa",
-        "Background": "Battle_Scene_7",
-        "Banner": "pic_guanqia2_01_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": "",
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 2,
-        "OpenFAC": 0,
-        "Combat_Adjust_Rate": 1.0
-    },
-    "E03S06": {
-        "Name": "BlockPoint_E03S06_Name",
-        "BlockDesc": "BlockPoint_E03S06_BlockDesc",
-        "CombatValue": 10500,
-        "CombatNeed": 10000,
-        "Map": "E03",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "E03S05"
-        ],
-        "NextPoint": [
-            "E04S01"
-        ],
-        "Type": "ELITE",
-        "PointType": "BOSS",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Normal_Stage_2_Wait1",
-        "EnemyMaster": "E03P06U01N08",
-        "EnemyCard": "CardE03S06",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 50
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 190,
-        "CrystalReward": 0,
-        "FirstKillReward": "E03S06_FirstReward",
-        "PointReward": "E03S06",
-        "HeroExpReward": "E03_HeroExpReward",
-        "MainShowItem": "IM_ExpUp1",
-        "ShowItem": "E03S06_Show",
-        "Element": "",
-        "WipeExtraReward": "E03_WipeExtraReward",
-        "StaminaCost": 6,
-        "StageEffect": "",
-        "StaminaBack": 5,
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Playground_Boss",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_MGNa",
-        "Background": "Battle_Scene_6",
-        "Banner": "pic_guanqia2_02_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": "",
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 2,
-        "OpenFAC": 1,
-        "Combat_Adjust_Rate": 1.0
-    },
-    "E03S05": {
-        "Name": "BlockPoint_E03S05_Name",
-        "BlockDesc": "BlockPoint_E03S05_BlockDesc",
-        "CombatValue": 10080,
-        "CombatNeed": 9350,
-        "Map": "E03",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "E03S04"
-        ],
-        "NextPoint": [
-            "E03S06"
-        ],
-        "Type": "ELITE",
-        "PointType": "NORMAL",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "M05S13",
-        "EnemyMaster": "E03P05U01N08",
-        "EnemyCard": "CardE03S05",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 50
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 190,
-        "CrystalReward": 0,
-        "FirstKillReward": "E03S05_FirstReward",
-        "PointReward": "E03S05",
-        "HeroExpReward": "E03_HeroExpReward",
-        "MainShowItem": "IM_ExpUp1",
-        "ShowItem": "E03S05_Show",
-        "Element": "",
-        "WipeExtraReward": "E03_WipeExtraReward",
-        "StaminaCost": 6,
-        "StageEffect": "",
-        "StaminaBack": 5,
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Playground",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_TLMi",
-        "Background": "Battle_Scene_5",
-        "Banner": "pic_guanqia2_01_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": "",
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 1,
-        "OpenFAC": 0,
-        "Combat_Adjust_Rate": 1.0
-    },
-    "E03S04": {
-        "Name": "BlockPoint_E03S04_Name",
-        "BlockDesc": "BlockPoint_E03S04_BlockDesc",
-        "CombatValue": 9660,
-        "CombatNeed": 8700,
-        "Map": "E03",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "E03S03"
-        ],
-        "NextPoint": [
-            "E03S05"
-        ],
-        "Type": "ELITE",
-        "PointType": "NORMAL",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Normal_Stage_2_Wait1",
-        "EnemyMaster": "E03P04U01N08",
-        "EnemyCard": "CardE03S04",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 50
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 190,
-        "CrystalReward": 0,
-        "FirstKillReward": "E03S04_FirstReward",
-        "PointReward": "E03S04",
-        "HeroExpReward": "E03_HeroExpReward",
-        "MainShowItem": "IM_ExpUp1",
-        "ShowItem": "E03S04_Show",
-        "Element": "",
-        "WipeExtraReward": "E03_WipeExtraReward",
-        "StaminaCost": 6,
-        "StageEffect": "",
-        "StaminaBack": 5,
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Playground",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_SDTZi",
-        "Background": "Battle_Scene_5",
-        "Banner": "pic_guanqia2_02_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": "",
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 4,
-        "OpenFAC": 1,
-        "Combat_Adjust_Rate": 1.0
-    },
-    "E03S03": {
-        "Name": "BlockPoint_E03S03_Name",
-        "BlockDesc": "BlockPoint_E03S03_BlockDesc",
-        "CombatValue": 9240,
-        "CombatNeed": 7700,
-        "Map": "E03",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "E03S02"
-        ],
-        "NextPoint": [
-            "E03S04"
-        ],
-        "Type": "ELITE",
-        "PointType": "NORMAL",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Normal_Stage_2_Wait1",
-        "EnemyMaster": "E03P03U01N08",
-        "EnemyCard": "CardE03S03",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 50
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 190,
-        "CrystalReward": 0,
-        "FirstKillReward": "E03S03_FirstReward",
-        "PointReward": "E03S03",
-        "HeroExpReward": "E03_HeroExpReward",
-        "MainShowItem": "IM_ExpUp1",
-        "ShowItem": "E03S03_Show",
-        "Element": "",
-        "WipeExtraReward": "E03_WipeExtraReward",
-        "StaminaCost": 6,
-        "StageEffect": "",
-        "StaminaBack": 5,
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Playground",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_XSMLi",
-        "Background": "Battle_Scene_5",
-        "Banner": "pic_guanqia2_01_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": "",
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 2,
-        "OpenFAC": 0,
-        "Combat_Adjust_Rate": 1.0
-    },
-    "E03S02": {
-        "Name": "BlockPoint_E03S02_Name",
-        "BlockDesc": "BlockPoint_E03S02_BlockDesc",
-        "CombatValue": 8820,
-        "CombatNeed": 8300,
-        "Map": "E03",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "E03S01"
-        ],
-        "NextPoint": [
-            "E03S03"
-        ],
-        "Type": "ELITE",
-        "PointType": "NORMAL",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Normal_Stage_2_Wait1",
-        "EnemyMaster": "E03P02U01N08",
-        "EnemyCard": "CardE03S02",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 50
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 190,
-        "CrystalReward": 0,
-        "FirstKillReward": "E03S02_FirstReward",
-        "PointReward": "E03S02",
-        "HeroExpReward": "E03_HeroExpReward",
-        "MainShowItem": "IM_ExpUp1",
-        "ShowItem": "E03S02_Show",
-        "Element": "",
-        "WipeExtraReward": "E03_WipeExtraReward",
-        "StaminaCost": 6,
-        "StageEffect": "",
-        "StaminaBack": 5,
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Playground",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_BBLMa",
-        "Background": "Battle_Scene_5",
-        "Banner": "pic_guanqia2_02_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": "",
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 2,
-        "OpenFAC": 1,
-        "Combat_Adjust_Rate": 1.0
-    },
-    "E03S01": {
-        "Name": "BlockPoint_E03S01_Name",
-        "BlockDesc": "BlockPoint_E03S01_BlockDesc",
-        "CombatValue": 8500,
-        "CombatNeed": 7400,
-        "Map": "E03",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "E02S06"
-        ],
-        "NextPoint": [
-            "E03S02"
-        ],
-        "Type": "ELITE",
-        "PointType": "NORMAL",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "M05S13",
-        "EnemyMaster": "E03P01U01N08",
-        "EnemyCard": "CardE03S01",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 50
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 190,
-        "CrystalReward": 0,
-        "FirstKillReward": "E03S01_FirstReward",
-        "PointReward": "E03S01",
-        "HeroExpReward": "E03_HeroExpReward",
-        "MainShowItem": "IM_ExpUp1",
-        "ShowItem": "E03S01_Show",
-        "Element": "",
-        "WipeExtraReward": "E03_WipeExtraReward",
-        "StaminaCost": 6,
-        "StageEffect": "",
-        "StaminaBack": 5,
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Playground",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_YDZZong",
-        "Background": "Battle_Scene_5",
-        "Banner": "pic_guanqia2_01_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [
-            "S03E01"
-        ],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": "",
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 1,
-        "OpenFAC": 0,
-        "Combat_Adjust_Rate": 1.0
-    },
-    "E05S08": {
-        "Name": "BlockPoint_E05S08_Name",
-        "BlockDesc": "BlockPoint_E05S08_BlockDesc",
-        "CombatValue": 18900,
-        "CombatNeed": 18000,
-        "Map": "E05",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "E05S07"
-        ],
-        "NextPoint": [
-            "E06S01"
-        ],
-        "Type": "ELITE",
-        "PointType": "BOSS",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Normal_Stage_2_Wait1",
-        "EnemyMaster": "E05P08U01N08",
-        "EnemyCard": "CardE05S08",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 50
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 230,
-        "CrystalReward": 0,
-        "FirstKillReward": "E05S08_FirstReward",
-        "PointReward": "E05S08",
-        "HeroExpReward": "E05_HeroExpReward",
-        "MainShowItem": "IM_ExpUp1",
-        "ShowItem": "E05S08_Show",
-        "Element": "",
-        "WipeExtraReward": "E05_WipeExtraReward",
-        "StaminaCost": 6,
-        "StageEffect": "",
-        "StaminaBack": 5,
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Whale_Boss",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_SLMen",
-        "Background": "Battle_Scene_10",
-        "Banner": "pic_guanqia2_02_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": "",
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 1,
-        "OpenFAC": 1,
-        "Combat_Adjust_Rate": 1.0
-    },
-    "E02S01": {
-        "Name": "BlockPoint_E02S01_Name",
-        "BlockDesc": "BlockPoint_E02S01_BlockDesc",
-        "CombatValue": 4300,
-        "CombatNeed": 3700,
-        "Map": "E02",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "E01S04"
-        ],
-        "NextPoint": [
-            "E02S02"
-        ],
-        "Type": "ELITE",
-        "PointType": "NORMAL",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Normal_Stage_2_Wait1",
-        "EnemyMaster": "E02S01_Master",
-        "EnemyCard": "CardE02S01",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 50
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 170,
-        "CrystalReward": 0,
-        "FirstKillReward": "E02S01_FirstReward",
-        "PointReward": "E02S01",
-        "HeroExpReward": "E02_HeroExpReward",
-        "MainShowItem": "IM_ExpUp1",
-        "ShowItem": "E02S01_Show",
-        "Element": "",
-        "WipeExtraReward": "E02_WipeExtraReward",
-        "StaminaCost": 6,
-        "StageEffect": "",
-        "StaminaBack": 5,
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Playground",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_MGNa",
-        "Background": "Battle_Scene_3",
-        "Banner": "pic_guanqia2_01_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [
-            "S02E01"
-        ],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": "",
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 1,
-        "OpenFAC": 0,
-        "Combat_Adjust_Rate": 1.0
-    },
-    "E02S02": {
-        "Name": "BlockPoint_E02S02_Name",
-        "BlockDesc": "BlockPoint_E02S02_BlockDesc",
-        "CombatValue": 5040,
-        "CombatNeed": 4300,
-        "Map": "E02",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "E02S01"
-        ],
-        "NextPoint": [
-            "E02S03"
-        ],
-        "Type": "ELITE",
-        "PointType": "NORMAL",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Normal_Stage_2_Wait1",
-        "EnemyMaster": "E02S02_Master",
-        "EnemyCard": "CardE02S02",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 50
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 170,
-        "CrystalReward": 0,
-        "FirstKillReward": "E02S02_FirstReward",
-        "PointReward": "E02S02",
-        "HeroExpReward": "E02_HeroExpReward",
-        "MainShowItem": "IM_ExpUp1",
-        "ShowItem": "E02S02_Show",
-        "Element": "",
-        "WipeExtraReward": "E02_WipeExtraReward",
-        "StaminaCost": 6,
-        "StageEffect": "",
-        "StaminaBack": 5,
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Playground",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_YLMGZhu",
-        "Background": "Battle_Scene_3",
-        "Banner": "pic_guanqia2_02_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": "",
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 2,
-        "OpenFAC": 1,
-        "Combat_Adjust_Rate": 1.0
-    },
-    "E02S03": {
-        "Name": "BlockPoint_E02S03_Name",
-        "BlockDesc": "BlockPoint_E02S03_BlockDesc",
-        "CombatValue": 5880,
-        "CombatNeed": 4900,
-        "Map": "E02",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "E02S02"
-        ],
-        "NextPoint": [
-            "E02S04"
-        ],
-        "Type": "ELITE",
-        "PointType": "NORMAL",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Normal_Stage_2_Wait1",
-        "EnemyMaster": "E02S03_Master",
-        "EnemyCard": "CardE02S03",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 50
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 170,
-        "CrystalReward": 0,
-        "FirstKillReward": "E02S03_FirstReward",
-        "PointReward": "E02S03",
-        "HeroExpReward": "E02_HeroExpReward",
-        "MainShowItem": "IM_ExpUp1",
-        "ShowItem": "E02S03_Show",
-        "Element": "",
-        "WipeExtraReward": "E02_WipeExtraReward",
-        "StaminaCost": 6,
-        "StageEffect": "",
-        "StaminaBack": 5,
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Playground",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_BBLMa",
-        "Background": "Battle_Scene_3",
-        "Banner": "pic_guanqia2_01_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": "",
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 2,
-        "OpenFAC": 0,
-        "Combat_Adjust_Rate": 1.0
-    },
-    "E02S04": {
-        "Name": "BlockPoint_E02S04_Name",
-        "BlockDesc": "BlockPoint_E02S04_BlockDesc",
-        "CombatValue": 6720,
-        "CombatNeed": 5500,
-        "Map": "E02",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "E02S03"
-        ],
-        "NextPoint": [
-            "E02S05"
-        ],
-        "Type": "ELITE",
-        "PointType": "NORMAL",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Normal_Stage_2_Wait1",
-        "EnemyMaster": "E02S04_Master",
-        "EnemyCard": "CardE02S04",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 50
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 170,
-        "CrystalReward": 0,
-        "FirstKillReward": "E02S04_FirstReward",
-        "PointReward": "E02S04",
-        "HeroExpReward": "E02_HeroExpReward",
-        "MainShowItem": "IM_ExpUp1",
-        "ShowItem": "E02S04_Show",
-        "Element": "",
-        "WipeExtraReward": "E02_WipeExtraReward",
-        "StaminaCost": 6,
-        "StageEffect": "",
-        "StaminaBack": 5,
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Playground",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_LDu",
-        "Background": "Battle_Scene_3",
-        "Banner": "pic_guanqia2_02_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": "",
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 1,
-        "OpenFAC": 1,
-        "Combat_Adjust_Rate": 1.0
-    },
-    "E02S05": {
-        "Name": "BlockPoint_E02S05_Name",
-        "BlockDesc": "BlockPoint_E02S05_BlockDesc",
-        "CombatValue": 7560,
-        "CombatNeed": 6100,
-        "Map": "E02",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "E02S04"
-        ],
-        "NextPoint": [
-            "E02S06"
-        ],
-        "Type": "ELITE",
-        "PointType": "NORMAL",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Normal_Stage_2_Wait1",
-        "EnemyMaster": "E02S05_Master",
-        "EnemyCard": "CardE02S05",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 50
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 170,
-        "CrystalReward": 0,
-        "FirstKillReward": "E02S05_FirstReward",
-        "PointReward": "E02S05",
-        "HeroExpReward": "E02_HeroExpReward",
-        "MainShowItem": "IM_ExpUp1",
-        "ShowItem": "E02S05_Show",
-        "Element": "",
-        "WipeExtraReward": "E02_WipeExtraReward",
-        "StaminaCost": 6,
-        "StageEffect": "",
-        "StaminaBack": 5,
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Playground",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_TPGZhu",
-        "Background": "Battle_Scene_3",
-        "Banner": "pic_guanqia2_01_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": "",
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 1,
-        "OpenFAC": 0,
-        "Combat_Adjust_Rate": 1.0
-    },
-    "E02S06": {
-        "Name": "BlockPoint_E02S06_Name",
-        "BlockDesc": "BlockPoint_E02S06_BlockDesc",
-        "CombatValue": 8400,
-        "CombatNeed": 8000,
-        "Map": "E02",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "E02S05"
-        ],
-        "NextPoint": [
-            "E03S01"
-        ],
-        "Type": "ELITE",
-        "PointType": "BOSS",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Normal_Stage_2_Wait1",
-        "EnemyMaster": "E02S06_Master",
-        "EnemyCard": "CardE02S06",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 50
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 170,
-        "CrystalReward": 0,
-        "FirstKillReward": "E02S06_FirstReward",
-        "PointReward": "E02S06",
-        "HeroExpReward": "E02_HeroExpReward",
-        "MainShowItem": "IM_ExpUp1",
-        "ShowItem": "E02S06_Show",
-        "Element": "",
-        "WipeExtraReward": "E02_WipeExtraReward",
-        "StaminaCost": 6,
-        "StageEffect": "",
-        "StaminaBack": 5,
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Playground_Boss",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_MGNa",
-        "Background": "Battle_Scene_4",
         "Banner": "pic_guanqia2_02_tx",
         "StoryLink": "",
         "AiRules": "",
@@ -97284,5 +94990,2299 @@
         "BossRound": 2,
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 1.0
+    },
+    "E05S05": {
+        "Name": "BlockPoint_E05S05_Name",
+        "BlockDesc": "BlockPoint_E05S05_BlockDesc",
+        "CombatValue": 15000,
+        "CombatNeed": 16683,
+        "Map": "E05",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "E05S04"
+        ],
+        "NextPoint": [
+            "E05S06"
+        ],
+        "Type": "ELITE",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Normal_Stage_7_Wait1",
+        "EnemyMaster": "E05P05U01N08",
+        "EnemyCard": "CardE05S05",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 230,
+        "CrystalReward": 0,
+        "FirstKillReward": "E05S05_FirstReward",
+        "PointReward": "E05S05",
+        "HeroExpReward": "E05_HeroExpReward",
+        "MainShowItem": "IM_ExpUp1",
+        "ShowItem": "E05S05_Show",
+        "Element": "",
+        "WipeExtraReward": "E05_WipeExtraReward",
+        "StaminaCost": 6,
+        "StageEffect": "",
+        "StaminaBack": 5,
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Whale",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_YBYa",
+        "Background": "Battle_Scene_9",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": "",
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "Combat_Adjust_Rate": 0.5
+    },
+    "E05S04": {
+        "Name": "BlockPoint_E05S04_Name",
+        "BlockDesc": "BlockPoint_E05S04_BlockDesc",
+        "CombatValue": 17000,
+        "CombatNeed": 16225,
+        "Map": "E05",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "E05S03"
+        ],
+        "NextPoint": [
+            "E05S05"
+        ],
+        "Type": "ELITE",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Normal_Stage_7_Wait1",
+        "EnemyMaster": "E05P04U01N08",
+        "EnemyCard": "CardE05S04",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 230,
+        "CrystalReward": 0,
+        "FirstKillReward": "E05S04_FirstReward",
+        "PointReward": "E05S04",
+        "HeroExpReward": "E05_HeroExpReward",
+        "MainShowItem": "IM_ExpUp1",
+        "ShowItem": "E05S04_Show",
+        "Element": "",
+        "WipeExtraReward": "E05_WipeExtraReward",
+        "StaminaCost": 6,
+        "StageEffect": "",
+        "StaminaBack": 5,
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Whale",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_YLMGZhu",
+        "Background": "Battle_Scene_9",
+        "Banner": "pic_guanqia2_02_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": "",
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 3,
+        "OpenFAC": 1,
+        "Combat_Adjust_Rate": 0.5
+    },
+    "E05S07": {
+        "Name": "BlockPoint_E05S07_Name",
+        "BlockDesc": "BlockPoint_E05S07_BlockDesc",
+        "CombatValue": 17000,
+        "CombatNeed": 17600,
+        "Map": "E05",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "E05S06"
+        ],
+        "NextPoint": [
+            "E05S08"
+        ],
+        "Type": "ELITE",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Normal_Stage_7_Wait1",
+        "EnemyMaster": "E05P07U01N08",
+        "EnemyCard": "CardE05S07",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 230,
+        "CrystalReward": 0,
+        "FirstKillReward": "E05S07_FirstReward",
+        "PointReward": "E05S07",
+        "HeroExpReward": "E05_HeroExpReward",
+        "MainShowItem": "IM_ExpUp1",
+        "ShowItem": "E05S07_Show",
+        "Element": "",
+        "WipeExtraReward": "E05_WipeExtraReward",
+        "StaminaCost": 6,
+        "StageEffect": "",
+        "StaminaBack": 5,
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Whale",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_YLMGZhu",
+        "Background": "Battle_Scene_9",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": "",
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "Combat_Adjust_Rate": 0.5
+    },
+    "E05S06": {
+        "Name": "BlockPoint_E05S06_Name",
+        "BlockDesc": "BlockPoint_E05S06_BlockDesc",
+        "CombatValue": 16000,
+        "CombatNeed": 17141,
+        "Map": "E05",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "E05S05"
+        ],
+        "NextPoint": [
+            "E05S07"
+        ],
+        "Type": "ELITE",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Normal_Stage_7_Wait1",
+        "EnemyMaster": "E05P06U01N08",
+        "EnemyCard": "CardE05S06",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 230,
+        "CrystalReward": 0,
+        "FirstKillReward": "E05S06_FirstReward",
+        "PointReward": "E05S06",
+        "HeroExpReward": "E05_HeroExpReward",
+        "MainShowItem": "IM_ExpUp1",
+        "ShowItem": "E05S06_Show",
+        "Element": "",
+        "WipeExtraReward": "E05_WipeExtraReward",
+        "StaminaCost": 6,
+        "StageEffect": "",
+        "StaminaBack": 5,
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Whale",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_MGNa",
+        "Background": "Battle_Scene_9",
+        "Banner": "pic_guanqia2_02_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": "",
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 1,
+        "Combat_Adjust_Rate": 0.5
+    },
+    "E05S01": {
+        "Name": "BlockPoint_E05S01_Name",
+        "BlockDesc": "BlockPoint_E05S01_BlockDesc",
+        "CombatValue": 13800,
+        "CombatNeed": 13750,
+        "Map": "E05",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "E04S06"
+        ],
+        "NextPoint": [
+            "E05S02"
+        ],
+        "Type": "ELITE",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Normal_Stage_7_Wait1",
+        "EnemyMaster": "E05P01U01N08",
+        "EnemyCard": "CardE05S01",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 230,
+        "CrystalReward": 0,
+        "FirstKillReward": "E05S01_FirstReward",
+        "PointReward": "E05S01",
+        "HeroExpReward": "E05_HeroExpReward",
+        "MainShowItem": "IM_ExpUp1",
+        "ShowItem": "E05S01_Show",
+        "Element": "",
+        "WipeExtraReward": "E05_WipeExtraReward",
+        "StaminaCost": 6,
+        "StageEffect": "",
+        "StaminaBack": 5,
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Whale",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_YMHTPu",
+        "Background": "Battle_Scene_9",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": "",
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "Combat_Adjust_Rate": 0.5
+    },
+    "E05S03": {
+        "Name": "BlockPoint_E05S03_Name",
+        "BlockDesc": "BlockPoint_E05S03_BlockDesc",
+        "CombatValue": 15000,
+        "CombatNeed": 14866,
+        "Map": "E05",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "E05S02"
+        ],
+        "NextPoint": [
+            "E05S04"
+        ],
+        "Type": "ELITE",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Normal_Stage_7_Wait1",
+        "EnemyMaster": "E05P03U01N08",
+        "EnemyCard": "CardE05S03",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 230,
+        "CrystalReward": 0,
+        "FirstKillReward": "E05S03_FirstReward",
+        "PointReward": "E05S03",
+        "HeroExpReward": "E05_HeroExpReward",
+        "MainShowItem": "IM_ExpUp1",
+        "ShowItem": "E05S03_Show",
+        "Element": "",
+        "WipeExtraReward": "E05_WipeExtraReward",
+        "StaminaCost": 6,
+        "StageEffect": "",
+        "StaminaBack": 5,
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Whale",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_BBLMa",
+        "Background": "Battle_Scene_9",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": "",
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 2,
+        "OpenFAC": 0,
+        "Combat_Adjust_Rate": 0.5
+    },
+    "E05S02": {
+        "Name": "BlockPoint_E05S02_Name",
+        "BlockDesc": "BlockPoint_E05S02_BlockDesc",
+        "CombatValue": 14400,
+        "CombatNeed": 14308,
+        "Map": "E05",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "E05S01"
+        ],
+        "NextPoint": [
+            "E05S03"
+        ],
+        "Type": "ELITE",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Normal_Stage_7_Wait1",
+        "EnemyMaster": "E05P02U01N08",
+        "EnemyCard": "CardE05S02",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 230,
+        "CrystalReward": 0,
+        "FirstKillReward": "E05S02_FirstReward",
+        "PointReward": "E05S02",
+        "HeroExpReward": "E05_HeroExpReward",
+        "MainShowItem": "IM_ExpUp1",
+        "ShowItem": "E05S02_Show",
+        "Element": "",
+        "WipeExtraReward": "E05_WipeExtraReward",
+        "StaminaCost": 6,
+        "StageEffect": "",
+        "StaminaBack": 5,
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Whale",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_WEDe",
+        "Background": "Battle_Scene_9",
+        "Banner": "pic_guanqia2_02_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": "",
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 1,
+        "Combat_Adjust_Rate": 0.5
+    },
+    "E05S08": {
+        "Name": "BlockPoint_E05S08_Name",
+        "BlockDesc": "BlockPoint_E05S08_BlockDesc",
+        "CombatValue": 19000,
+        "CombatNeed": 18900,
+        "Map": "E05",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "E05S07"
+        ],
+        "NextPoint": [
+            "E06S01"
+        ],
+        "Type": "ELITE",
+        "PointType": "BOSS",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Normal_Stage_7_Wait1",
+        "EnemyMaster": "E05P08U01N08",
+        "EnemyCard": "CardE05S08",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 230,
+        "CrystalReward": 0,
+        "FirstKillReward": "E05S08_FirstReward",
+        "PointReward": "E05S08",
+        "HeroExpReward": "E05_HeroExpReward",
+        "MainShowItem": "IM_ExpUp1",
+        "ShowItem": "E05S08_Show",
+        "Element": "",
+        "WipeExtraReward": "E05_WipeExtraReward",
+        "StaminaCost": 6,
+        "StageEffect": "",
+        "StaminaBack": 5,
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_SDTZi",
+        "Background": "Battle_Scene_10",
+        "Banner": "pic_guanqia2_02_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": "",
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 1,
+        "Combat_Adjust_Rate": 0.5
+    },
+    "E03S06": {
+        "Name": "BlockPoint_E03S06_Name",
+        "BlockDesc": "BlockPoint_E03S06_BlockDesc",
+        "CombatValue": 10500,
+        "CombatNeed": 10500,
+        "Map": "E03",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "E03S05"
+        ],
+        "NextPoint": [
+            "E04S01"
+        ],
+        "Type": "ELITE",
+        "PointType": "BOSS",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Normal_Stage_2_Wait1",
+        "EnemyMaster": "E03P06U01N08",
+        "EnemyCard": "CardE03S06",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 190,
+        "CrystalReward": 0,
+        "FirstKillReward": "E03S06_FirstReward",
+        "PointReward": "E03S06",
+        "HeroExpReward": "E03_HeroExpReward",
+        "MainShowItem": "IM_ExpUp1",
+        "ShowItem": "E03S06_Show",
+        "Element": "",
+        "WipeExtraReward": "E03_WipeExtraReward",
+        "StaminaCost": 6,
+        "StageEffect": "",
+        "StaminaBack": 5,
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Playground_Boss",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_MGNa",
+        "Background": "Battle_Scene_6",
+        "Banner": "pic_guanqia2_02_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": "",
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 2,
+        "OpenFAC": 1,
+        "Combat_Adjust_Rate": 0.5
+    },
+    "E03S05": {
+        "Name": "BlockPoint_E03S05_Name",
+        "BlockDesc": "BlockPoint_E03S05_BlockDesc",
+        "CombatValue": 9300,
+        "CombatNeed": 9300,
+        "Map": "E03",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "E03S04"
+        ],
+        "NextPoint": [
+            "E03S06"
+        ],
+        "Type": "ELITE",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Normal_Stage_2_Wait1",
+        "EnemyMaster": "E03P05U01N08",
+        "EnemyCard": "CardE03S05",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 190,
+        "CrystalReward": 0,
+        "FirstKillReward": "E03S05_FirstReward",
+        "PointReward": "E03S05",
+        "HeroExpReward": "E03_HeroExpReward",
+        "MainShowItem": "IM_ExpUp1",
+        "ShowItem": "E03S05_Show",
+        "Element": "",
+        "WipeExtraReward": "E03_WipeExtraReward",
+        "StaminaCost": 6,
+        "StageEffect": "",
+        "StaminaBack": 5,
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Playground",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_MLYTLSha",
+        "Background": "Battle_Scene_5",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": "",
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "Combat_Adjust_Rate": 0.48
+    },
+    "E03S03": {
+        "Name": "BlockPoint_E03S03_Name",
+        "BlockDesc": "BlockPoint_E03S03_BlockDesc",
+        "CombatValue": 8900,
+        "CombatNeed": 8900,
+        "Map": "E03",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "E03S02"
+        ],
+        "NextPoint": [
+            "E03S04"
+        ],
+        "Type": "ELITE",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Normal_Stage_2_Wait1",
+        "EnemyMaster": "E03P03U01N08",
+        "EnemyCard": "CardE03S03",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 190,
+        "CrystalReward": 0,
+        "FirstKillReward": "E03S03_FirstReward",
+        "PointReward": "E03S03",
+        "HeroExpReward": "E03_HeroExpReward",
+        "MainShowItem": "IM_ExpUp1",
+        "ShowItem": "E03S03_Show",
+        "Element": "",
+        "WipeExtraReward": "E03_WipeExtraReward",
+        "StaminaCost": 6,
+        "StageEffect": "",
+        "StaminaBack": 5,
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Playground",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_XLai",
+        "Background": "Battle_Scene_5",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": "",
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "Combat_Adjust_Rate": 0.45
+    },
+    "E03S02": {
+        "Name": "BlockPoint_E03S02_Name",
+        "BlockDesc": "BlockPoint_E03S02_BlockDesc",
+        "CombatValue": 8700,
+        "CombatNeed": 8700,
+        "Map": "E03",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "E03S01"
+        ],
+        "NextPoint": [
+            "E03S03"
+        ],
+        "Type": "ELITE",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Normal_Stage_2_Wait1",
+        "EnemyMaster": "E03P02U01N08",
+        "EnemyCard": "CardE03S02",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 190,
+        "CrystalReward": 0,
+        "FirstKillReward": "E03S02_FirstReward",
+        "PointReward": "E03S02",
+        "HeroExpReward": "E03_HeroExpReward",
+        "MainShowItem": "IM_ExpUp1",
+        "ShowItem": "E03S02_Show",
+        "Element": "",
+        "WipeExtraReward": "E03_WipeExtraReward",
+        "StaminaCost": 6,
+        "StageEffect": "",
+        "StaminaBack": 5,
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Playground",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_BBLMa",
+        "Background": "Battle_Scene_5",
+        "Banner": "pic_guanqia2_02_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": "",
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 2,
+        "OpenFAC": 1,
+        "Combat_Adjust_Rate": 0.43
+    },
+    "E03S01": {
+        "Name": "BlockPoint_E03S01_Name",
+        "BlockDesc": "BlockPoint_E03S01_BlockDesc",
+        "CombatValue": 8500,
+        "CombatNeed": 8500,
+        "Map": "E03",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "E02S06"
+        ],
+        "NextPoint": [
+            "E03S02"
+        ],
+        "Type": "ELITE",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Normal_Stage_7_Wait1",
+        "EnemyMaster": "E03P01U01N08",
+        "EnemyCard": "CardE03S01",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 190,
+        "CrystalReward": 0,
+        "FirstKillReward": "E03S01_FirstReward",
+        "PointReward": "E03S01",
+        "HeroExpReward": "E03_HeroExpReward",
+        "MainShowItem": "IM_ExpUp1",
+        "ShowItem": "E03S01_Show",
+        "Element": "",
+        "WipeExtraReward": "E03_WipeExtraReward",
+        "StaminaCost": 6,
+        "StageEffect": "",
+        "StaminaBack": 5,
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Playground",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_XSMLi",
+        "Background": "Battle_Scene_5",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [
+            "S03E01"
+        ],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": "",
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 2,
+        "OpenFAC": 0,
+        "Combat_Adjust_Rate": 0.42
+    },
+    "E04S06": {
+        "Name": "BlockPoint_E04S06_Name",
+        "BlockDesc": "BlockPoint_E04S06_BlockDesc",
+        "CombatValue": 13700,
+        "CombatNeed": 13650,
+        "Map": "E04",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "E04S05"
+        ],
+        "NextPoint": [
+            "E05S01"
+        ],
+        "Type": "ELITE",
+        "PointType": "BOSS",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Normal_Stage_7_Wait1",
+        "EnemyMaster": "E04P06U01N08",
+        "EnemyCard": "CardE04S06",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 210,
+        "CrystalReward": 0,
+        "FirstKillReward": "E04S06_FirstReward",
+        "PointReward": "E04S06",
+        "HeroExpReward": "E04_HeroExpReward",
+        "MainShowItem": "IM_ExpUp1",
+        "ShowItem": "E04S06_Show",
+        "Element": "",
+        "WipeExtraReward": "E04_WipeExtraReward",
+        "StaminaCost": 6,
+        "StageEffect": "",
+        "StaminaBack": 5,
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_KTSJKe",
+        "Background": "Battle_Scene_8",
+        "Banner": "pic_guanqia2_02_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": "",
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 2,
+        "OpenFAC": 1,
+        "Combat_Adjust_Rate": 0.5
+    },
+    "E04S04": {
+        "Name": "BlockPoint_E04S04_Name",
+        "BlockDesc": "BlockPoint_E04S04_BlockDesc",
+        "CombatValue": 12200,
+        "CombatNeed": 12125,
+        "Map": "E04",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "E04S03"
+        ],
+        "NextPoint": [
+            "E04S05"
+        ],
+        "Type": "ELITE",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Normal_Stage_7_Wait1",
+        "EnemyMaster": "E04P04U01N08",
+        "EnemyCard": "CardE04S04",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 210,
+        "CrystalReward": 0,
+        "FirstKillReward": "E04S04_FirstReward",
+        "PointReward": "E04S04",
+        "HeroExpReward": "E04_HeroExpReward",
+        "MainShowItem": "IM_ExpUp1",
+        "ShowItem": "E04S04_Show",
+        "Element": "",
+        "WipeExtraReward": "E04_WipeExtraReward",
+        "StaminaCost": 6,
+        "StageEffect": "",
+        "StaminaBack": 5,
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Whale",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_SDTZi",
+        "Background": "Battle_Scene_7",
+        "Banner": "pic_guanqia2_02_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": "",
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 1,
+        "Combat_Adjust_Rate": 0.5
+    },
+    "E04S05": {
+        "Name": "BlockPoint_E04S05_Name",
+        "BlockDesc": "BlockPoint_E04S05_BlockDesc",
+        "CombatValue": 12500,
+        "CombatNeed": 12425,
+        "Map": "E04",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "E04S04"
+        ],
+        "NextPoint": [
+            "E04S06"
+        ],
+        "Type": "ELITE",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Normal_Stage_7_Wait1",
+        "EnemyMaster": "E04P05U01N08",
+        "EnemyCard": "CardE04S05",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 210,
+        "CrystalReward": 0,
+        "FirstKillReward": "E04S05_FirstReward",
+        "PointReward": "E04S05",
+        "HeroExpReward": "E04_HeroExpReward",
+        "MainShowItem": "IM_ExpUp1",
+        "ShowItem": "E04S05_Show",
+        "Element": "",
+        "WipeExtraReward": "E04_WipeExtraReward",
+        "StaminaCost": 6,
+        "StageEffect": "",
+        "StaminaBack": 5,
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Whale",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_MGNa",
+        "Background": "Battle_Scene_7",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": "",
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "Combat_Adjust_Rate": 0.5
+    },
+    "E04S02": {
+        "Name": "BlockPoint_E04S02_Name",
+        "BlockDesc": "BlockPoint_E04S02_BlockDesc",
+        "CombatValue": 11000,
+        "CombatNeed": 11062,
+        "Map": "E04",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "E04S01"
+        ],
+        "NextPoint": [
+            "E04S03"
+        ],
+        "Type": "ELITE",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Normal_Stage_7_Wait1",
+        "EnemyMaster": "E04P02U01N08",
+        "EnemyCard": "CardE04S02",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 210,
+        "CrystalReward": 0,
+        "FirstKillReward": "E04S02_FirstReward",
+        "PointReward": "E04S02",
+        "HeroExpReward": "E04_HeroExpReward",
+        "MainShowItem": "IM_ExpUp1",
+        "ShowItem": "E04S02_Show",
+        "Element": "",
+        "WipeExtraReward": "E04_WipeExtraReward",
+        "StaminaCost": 6,
+        "StageEffect": "",
+        "StaminaBack": 5,
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Whale",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_SLMen",
+        "Background": "Battle_Scene_7",
+        "Banner": "pic_guanqia2_02_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": "",
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 2,
+        "OpenFAC": 1,
+        "Combat_Adjust_Rate": 0.5
+    },
+    "E04S03": {
+        "Name": "BlockPoint_E04S03_Name",
+        "BlockDesc": "BlockPoint_E04S03_BlockDesc",
+        "CombatValue": 11900,
+        "CombatNeed": 11825,
+        "Map": "E04",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "E04S02"
+        ],
+        "NextPoint": [
+            "E04S04"
+        ],
+        "Type": "ELITE",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Normal_Stage_7_Wait1",
+        "EnemyMaster": "E04P03U01N08",
+        "EnemyCard": "CardE04S03",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 210,
+        "CrystalReward": 0,
+        "FirstKillReward": "E04S03_FirstReward",
+        "PointReward": "E04S03",
+        "HeroExpReward": "E04_HeroExpReward",
+        "MainShowItem": "IM_ExpUp1",
+        "ShowItem": "E04S03_Show",
+        "Element": "",
+        "WipeExtraReward": "E04_WipeExtraReward",
+        "StaminaCost": 6,
+        "StageEffect": "",
+        "StaminaBack": 5,
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Whale",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_KTSJKe",
+        "Background": "Battle_Scene_7",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": "",
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "Combat_Adjust_Rate": 0.5
+    },
+    "E04S01": {
+        "Name": "BlockPoint_E04S01_Name",
+        "BlockDesc": "BlockPoint_E04S01_BlockDesc",
+        "CombatValue": 10600,
+        "CombatNeed": 10600,
+        "Map": "E04",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "E03S06"
+        ],
+        "NextPoint": [
+            "E04S02"
+        ],
+        "Type": "ELITE",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Normal_Stage_7_Wait1",
+        "EnemyMaster": "E04P01U01N08",
+        "EnemyCard": "CardE04S01",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 210,
+        "CrystalReward": 0,
+        "FirstKillReward": "E04S01_FirstReward",
+        "PointReward": "E04S01",
+        "HeroExpReward": "E04_HeroExpReward",
+        "MainShowItem": "IM_ExpUp1",
+        "ShowItem": "E04S01_Show",
+        "Element": "",
+        "WipeExtraReward": "E04_WipeExtraReward",
+        "StaminaCost": 6,
+        "StageEffect": "",
+        "StaminaBack": 5,
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Whale",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_MKLJLuo",
+        "Background": "Battle_Scene_7",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [
+            "S04E01"
+        ],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": "",
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "Combat_Adjust_Rate": 0.5
+    },
+    "E03S04": {
+        "Name": "BlockPoint_E03S04_Name",
+        "BlockDesc": "BlockPoint_E03S04_BlockDesc",
+        "CombatValue": 9100,
+        "CombatNeed": 9100,
+        "Map": "E03",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "E03S03"
+        ],
+        "NextPoint": [
+            "E03S05"
+        ],
+        "Type": "ELITE",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Normal_Stage_2_Wait1",
+        "EnemyMaster": "E03P04U01N08",
+        "EnemyCard": "CardE03S04",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 190,
+        "CrystalReward": 0,
+        "FirstKillReward": "E03S04_FirstReward",
+        "PointReward": "E03S04",
+        "HeroExpReward": "E03_HeroExpReward",
+        "MainShowItem": "IM_ExpUp1",
+        "ShowItem": "E03S04_Show",
+        "Element": "",
+        "WipeExtraReward": "E03_WipeExtraReward",
+        "StaminaCost": 6,
+        "StageEffect": "",
+        "StaminaBack": 5,
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Playground",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_YLMGZhu",
+        "Background": "Battle_Scene_5",
+        "Banner": "pic_guanqia2_02_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": "",
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 1,
+        "Combat_Adjust_Rate": 0.47
+    },
+    "E02S01": {
+        "Name": "BlockPoint_E02S01_Name",
+        "BlockDesc": "BlockPoint_E02S01_BlockDesc",
+        "CombatValue": 4300,
+        "CombatNeed": 4300,
+        "Map": "E02",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "E01S04"
+        ],
+        "NextPoint": [
+            "E02S02"
+        ],
+        "Type": "ELITE",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Normal_Stage_2_Wait1",
+        "EnemyMaster": "E02P01U01N08",
+        "EnemyCard": "CardE02S01",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 170,
+        "CrystalReward": 0,
+        "FirstKillReward": "E02S01_FirstReward",
+        "PointReward": "E02S01",
+        "HeroExpReward": "E02_HeroExpReward",
+        "MainShowItem": "IM_ExpUp1",
+        "ShowItem": "E02S01_Show",
+        "Element": "",
+        "WipeExtraReward": "E02_WipeExtraReward",
+        "StaminaCost": 6,
+        "StageEffect": "",
+        "StaminaBack": 5,
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Playground",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_MGNa",
+        "Background": "Battle_Scene_3",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [
+            "S02E01"
+        ],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": "",
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "Combat_Adjust_Rate": 0.32
+    },
+    "E02S02": {
+        "Name": "BlockPoint_E02S02_Name",
+        "BlockDesc": "BlockPoint_E02S02_BlockDesc",
+        "CombatValue": 5000,
+        "CombatNeed": 5025,
+        "Map": "E02",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "E02S01"
+        ],
+        "NextPoint": [
+            "E02S03"
+        ],
+        "Type": "ELITE",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Normal_Stage_2_Wait1",
+        "EnemyMaster": "E02P02U01N08",
+        "EnemyCard": "CardE02S02",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 170,
+        "CrystalReward": 0,
+        "FirstKillReward": "E02S02_FirstReward",
+        "PointReward": "E02S02",
+        "HeroExpReward": "E02_HeroExpReward",
+        "MainShowItem": "IM_ExpUp1",
+        "ShowItem": "E02S02_Show",
+        "Element": "",
+        "WipeExtraReward": "E02_WipeExtraReward",
+        "StaminaCost": 6,
+        "StageEffect": "",
+        "StaminaBack": 5,
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Playground",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_YLMGZhu",
+        "Background": "Battle_Scene_3",
+        "Banner": "pic_guanqia2_02_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": "",
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 2,
+        "OpenFAC": 1,
+        "Combat_Adjust_Rate": 0.33
+    },
+    "E02S03": {
+        "Name": "BlockPoint_E02S03_Name",
+        "BlockDesc": "BlockPoint_E02S03_BlockDesc",
+        "CombatValue": 6700,
+        "CombatNeed": 6625,
+        "Map": "E02",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "E02S02"
+        ],
+        "NextPoint": [
+            "E02S04"
+        ],
+        "Type": "ELITE",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Normal_Stage_2_Wait1",
+        "EnemyMaster": "E02P03U01N08",
+        "EnemyCard": "CardE02S03",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 170,
+        "CrystalReward": 0,
+        "FirstKillReward": "E02S03_FirstReward",
+        "PointReward": "E02S03",
+        "HeroExpReward": "E02_HeroExpReward",
+        "MainShowItem": "IM_ExpUp1",
+        "ShowItem": "E02S03_Show",
+        "Element": "",
+        "WipeExtraReward": "E02_WipeExtraReward",
+        "StaminaCost": 6,
+        "StageEffect": "",
+        "StaminaBack": 5,
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Playground",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_ALPo",
+        "Background": "Battle_Scene_3",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": "",
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "Combat_Adjust_Rate": 0.35
+    },
+    "E02S04": {
+        "Name": "BlockPoint_E02S04_Name",
+        "BlockDesc": "BlockPoint_E02S04_BlockDesc",
+        "CombatValue": 7200,
+        "CombatNeed": 7150,
+        "Map": "E02",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "E02S03"
+        ],
+        "NextPoint": [
+            "E02S05"
+        ],
+        "Type": "ELITE",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Normal_Stage_2_Wait1",
+        "EnemyMaster": "E02P04U01N08",
+        "EnemyCard": "CardE02S04",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 170,
+        "CrystalReward": 0,
+        "FirstKillReward": "E02S04_FirstReward",
+        "PointReward": "E02S04",
+        "HeroExpReward": "E02_HeroExpReward",
+        "MainShowItem": "IM_ExpUp1",
+        "ShowItem": "E02S04_Show",
+        "Element": "",
+        "WipeExtraReward": "E02_WipeExtraReward",
+        "StaminaCost": 6,
+        "StageEffect": "",
+        "StaminaBack": 5,
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Playground",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_YLMGZhu",
+        "Background": "Battle_Scene_3",
+        "Banner": "pic_guanqia2_02_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": "",
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 1,
+        "Combat_Adjust_Rate": 0.37
+    },
+    "E02S05": {
+        "Name": "BlockPoint_E02S05_Name",
+        "BlockDesc": "BlockPoint_E02S05_BlockDesc",
+        "CombatValue": 7700,
+        "CombatNeed": 7675,
+        "Map": "E02",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "E02S04"
+        ],
+        "NextPoint": [
+            "E02S06"
+        ],
+        "Type": "ELITE",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Normal_Stage_2_Wait1",
+        "EnemyMaster": "E02P05U01N08",
+        "EnemyCard": "CardE02S05",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 170,
+        "CrystalReward": 0,
+        "FirstKillReward": "E02S05_FirstReward",
+        "PointReward": "E02S05",
+        "HeroExpReward": "E02_HeroExpReward",
+        "MainShowItem": "IM_ExpUp1",
+        "ShowItem": "E02S05_Show",
+        "Element": "",
+        "WipeExtraReward": "E02_WipeExtraReward",
+        "StaminaCost": 6,
+        "StageEffect": "",
+        "StaminaBack": 5,
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Playground",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_ALPo",
+        "Background": "Battle_Scene_3",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": "",
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "Combat_Adjust_Rate": 0.38
+    },
+    "E02S06": {
+        "Name": "BlockPoint_E02S06_Name",
+        "BlockDesc": "BlockPoint_E02S06_BlockDesc",
+        "CombatValue": 8400,
+        "CombatNeed": 8400,
+        "Map": "E02",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "E02S05"
+        ],
+        "NextPoint": [
+            "E03S01"
+        ],
+        "Type": "ELITE",
+        "PointType": "BOSS",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Normal_Stage_2_Wait1",
+        "EnemyMaster": "E02P06U01N08",
+        "EnemyCard": "CardE02S06",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 170,
+        "CrystalReward": 0,
+        "FirstKillReward": "E02S06_FirstReward",
+        "PointReward": "E02S06",
+        "HeroExpReward": "E02_HeroExpReward",
+        "MainShowItem": "IM_ExpUp1",
+        "ShowItem": "E02S06_Show",
+        "Element": "",
+        "WipeExtraReward": "E02_WipeExtraReward",
+        "StaminaCost": 6,
+        "StageEffect": "",
+        "StaminaBack": 5,
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Playground_Boss",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_MGNa",
+        "Background": "Battle_Scene_4",
+        "Banner": "pic_guanqia2_02_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": "",
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 1,
+        "Combat_Adjust_Rate": 0.4
     }
 }

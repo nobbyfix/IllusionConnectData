@@ -5529,9 +5529,9 @@ all.EquipSkill_Accesory_14006 = {
 			}, this.AtkRateFactor)
 
 			global.ApplyBuff(_env, _env.ACTOR, {
-				duration = 2,
+				duration = 99,
 				group = "EquipSkill_Accesory_14006",
-				timing = 2,
+				timing = 0,
 				limit = 1,
 				tags = {
 					"NUMERIC",

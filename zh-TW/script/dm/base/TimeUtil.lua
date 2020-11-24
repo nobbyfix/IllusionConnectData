@@ -179,3 +179,17 @@ function TimeUtil:getHMSByTimestamp(time)
 		sec = tb.sec
 	}
 end
+
+function TimeUtil:formatStrToTImestamp(str)
+	local _, _, y, m, d, hour, min, sec = string.find(str, "(%d+)-(%d+)-(%d+)%s*(%d+):(%d+):(%d+)")
+	local timestamp = os.time({
+		year = y,
+		month = m,
+		day = d,
+		hour = hour,
+		min = min,
+		sec = sec
+	})
+
+	return timestamp
+end

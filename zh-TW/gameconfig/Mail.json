@@ -1012,5 +1012,83 @@
         "SubType": 1,
         "QuickGet": 1,
         "Icon": ""
+    },
+    "Mail_HitCharts": {
+        "Type": "USER",
+        "Title": "Mail_HitCharts_Title",
+        "Content": "Mail_HitCharts_Content",
+        "ExpireAfterRead": 72000,
+        "Name": "Mail_Sender",
+        "ExpireTime": 0,
+        "Reward": "",
+        "TopStatus": 0,
+        "SubType": 1,
+        "QuickGet": 1,
+        "Icon": ""
+    },
+    "Mail_DreamChallenge": {
+        "Type": "USER",
+        "Title": "Mail_DreamChallenge_Title",
+        "Content": "Mail_MonthCard_Content",
+        "ExpireAfterRead": 72000,
+        "Name": "Mail_DreamChallenge_Name",
+        "ExpireTime": 0,
+        "Reward": "",
+        "TopStatus": 0,
+        "SubType": 1,
+        "QuickGet": 1,
+        "Icon": ""
+    },
+    "Mail_Halloween_DailyTask_Activity": {
+        "Type": "USER",
+        "Title": "Mail_Halloween_DailyTask_Activity_Title",
+        "Content": "Mail_Halloween_DailyTask_Activity_Content",
+        "ExpireAfterRead": 72000,
+        "Name": "Mail_Activity_Halloween_Name",
+        "ExpireTime": 0,
+        "Reward": "",
+        "TopStatus": 0,
+        "SubType": 1,
+        "QuickGet": 1,
+        "Icon": ""
+    },
+    "Mail_Halloween_Activity": {
+        "Type": "USER",
+        "Title": "Mail_HalloweenActivity_Title",
+        "Content": "Mail_HalloweenActivity_Content",
+        "ExpireAfterRead": 72000,
+        "Name": "Mail_Activity_Halloween_Name",
+        "ExpireTime": 0,
+        "Reward": "",
+        "TopStatus": 0,
+        "SubType": 1,
+        "QuickGet": 1,
+        "Icon": ""
+    },
+    "Mail_Halloween_Activity_Login14": {
+        "Type": "USER",
+        "Title": "Mail_HalloweenActivity__Login14_Title",
+        "Content": "Mail_HalloweenActivity__Login14_Content",
+        "ExpireAfterRead": 72000,
+        "Name": "Mail_Activity_Halloween_Name",
+        "ExpireTime": 0,
+        "Reward": "",
+        "TopStatus": 0,
+        "SubType": 1,
+        "QuickGet": 1,
+        "Icon": ""
+    },
+    "Mail_Halloween_AchieveMentTask_Activity": {
+        "Type": "USER",
+        "Title": "Mail_Halloween_AchieveMentTask_Activity_Title",
+        "Content": "Mail_Halloween_AchieveMentTask_Activity_Content",
+        "ExpireAfterRead": 72000,
+        "Name": "Mail_Activity_Halloween_Name",
+        "ExpireTime": 0,
+        "Reward": "",
+        "TopStatus": 0,
+        "SubType": 1,
+        "QuickGet": 1,
+        "Icon": ""
     }
 }

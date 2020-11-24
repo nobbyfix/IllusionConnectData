@@ -800,10 +800,13 @@ local rarityTextColorMap = {
 	}
 }
 
-function GameStyle:setRarityText(text, rarity)
+function GameStyle:setRarityText(text, rarity, ignoreOutline)
 	local data = rarityTextColorMap[tonumber(rarity)]
 
-	text:enableOutline(data.outline, 1)
+	if not ignoreOutline then
+		text:enableOutline(data.outline, 1)
+	end
+
 	text:setColor(data.color)
 end
 
@@ -974,7 +977,7 @@ function GameStyle:getHeroAwakenBg(heroInfo)
 end
 
 function GameStyle:getHeroPartyByHeroInfo(heroInfo)
-	if heroInfo:getAwakenStar() > 0 then
+	if heroInfo and heroInfo:getAwakenStar() > 0 then
 		return self:getHeroAwakenBg(heroInfo)
 	end
 

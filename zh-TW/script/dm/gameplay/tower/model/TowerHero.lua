@@ -42,6 +42,9 @@ TowerHero:has("_rate", {
 TowerHero:has("_combat", {
 	is = "rw"
 })
+TowerHero:has("_party", {
+	is = "rw"
+})
 TowerHero:has("_config", {
 	is = "rw"
 })
@@ -93,6 +96,7 @@ function TowerHero:initialize(id, player)
 	self._player = player
 	self._allCompseHeros = 0
 	self._awakenStar = 0
+	self._party = 0
 end
 
 function TowerHero:synchronize(data)
@@ -108,6 +112,7 @@ function TowerHero:synchronize(data)
 
 	if data.rarity then
 		self._rarity = data.rarity
+		self.rareity = data.rarity
 	end
 
 	if data.exp then
@@ -183,12 +188,20 @@ function TowerHero:getCost()
 	return self._config.Cost
 end
 
+function TowerHero:getParty()
+	return self._config.Party
+end
+
 function TowerHero:getLevel()
 	return 1
 end
 
 function TowerHero:getQuality()
 	return self._qualityConfig.Quality
+end
+
+function TowerHero:getLoveLevel()
+	return 1
 end
 
 function TowerHero:getRarity()

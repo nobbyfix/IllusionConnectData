@@ -46,26 +46,35 @@ function ArenaRuleMediator:initContent(data)
 
 	local rule = data and data.rule or Arena_RuleTranslate
 
-	for i = 1, #rule do
-		if i == 1 then
+	if data and data.useParam then
+		for i = 1, #rule do
 			self:addContent(Strings:get(rule[i], {
-				topic = self._data.topic
+				param1 = data.param1,
+				param2 = data.param2
 			}), i)
-		elseif i == 2 then
-			self:addContent(Strings:get(rule[i], {
-				starttime = self._data.starttime,
-				endtime = self._data.endtime
-			}), i)
-		elseif i == 3 then
-			self:addContent(Strings:get(rule[i], {
-				buff = self._data.buff
-			}), i)
-		elseif i == 4 then
-			self:addContent(Strings:get(rule[i], {
-				level = self._data.level
-			}), i)
-		else
-			self:addContent(Strings:get(rule[i]), i)
+		end
+	else
+		for i = 1, #rule do
+			if i == 1 then
+				self:addContent(Strings:get(rule[i], {
+					topic = self._data.topic
+				}), i)
+			elseif i == 2 then
+				self:addContent(Strings:get(rule[i], {
+					starttime = self._data.starttime,
+					endtime = self._data.endtime
+				}), i)
+			elseif i == 3 then
+				self:addContent(Strings:get(rule[i], {
+					buff = self._data.buff
+				}), i)
+			elseif i == 4 then
+				self:addContent(Strings:get(rule[i], {
+					level = self._data.level
+				}), i)
+			else
+				self:addContent(Strings:get(rule[i]), i)
+			end
 		end
 	end
 end

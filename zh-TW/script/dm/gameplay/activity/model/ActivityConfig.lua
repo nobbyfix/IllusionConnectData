@@ -16,6 +16,8 @@ require("dm.gameplay.activity.model.ActivitySupport")
 require("dm.gameplay.activity.model.ActivityClubBoss")
 require("dm.gameplay.activity.model.PassActivity")
 require("dm.gameplay.activity.model.RecheargeActivity")
+require("dm.gameplay.activity.model.MonsterShopActivity")
+require("dm.gameplay.activity.model.ActivityColorEggActivity")
 
 ActivityShowTab = {
 	kInAll = 3,
@@ -66,7 +68,9 @@ ActivityModel = {
 	[ActivityType.kActivityBlockEgg] = ActivityEggActivity,
 	[ActivityType.KActivityClubBoss] = ActivityClubBoss,
 	[ActivityType.KActivitySupport] = ActivitySupport,
-	[ActivityType.KRechargeActivity] = RecheargeActivity
+	[ActivityType.KRechargeActivity] = RecheargeActivity,
+	[ActivityType.KColourEgg] = ActivityColorEggActivity,
+	[ActivityType.KMonsterShop] = MonsterShopActivity
 }
 ActivityUI = {
 	ContinueLogin = "eightDayLoginView",
@@ -83,7 +87,9 @@ ActivityUI = {
 	ABDAILYTASK = "ActivityTaskDailyView",
 	ACTIVITYBLOCKEGG = "ActivityBlockEggView",
 	ExtraRewardBoard = "ExtraRewardActivityView",
+	Login_Halloween = "LoginActivityWsjView",
 	Carnival = "CarnivalView",
+	[ActivityType.KEightLogin] = "eightDayLoginView",
 	[ActivityType.KEightLoginCommon] = "commonEightDayLoginView",
 	[ActivityType.KTASKMONTHCARD] = "ActivityTaskMonthCardView",
 	[ActivityType.KTASKCOMMON] = "ActivityTaskReachedView",
@@ -93,7 +99,9 @@ ActivityUI = {
 	[ActivityType.KExchange] = "ActivityExchangeView",
 	[ActivityType.KTASKHEROCOLLECT] = "ActivityHeroCollectView",
 	[ActivityType.KTASKCHOICE] = "ActivityFateEncountersView",
-	[ActivityType.KRechargeActivity] = "RechargeActivityView"
+	[ActivityType.KRechargeActivity] = "RechargeActivityView",
+	[ActivityType.KColourEgg] = "TaskActivityView",
+	[ActivityType.KMonsterShop] = "ActivityBlockMonsterShopView"
 }
 ActivityMark = {
 	kWonderful2 = "WONDERFUL2",
@@ -106,4 +114,44 @@ ActivityMarkImg = {
 	[ActivityMark.kMonday] = "icon_energy_small.png",
 	[ActivityMark.kWonderful2] = "icon_energy_small.png",
 	[ActivityMark.kRecommend] = "icon_energy_small.png"
+}
+ActivityComplexUI = {
+	tryEnterComplexMainView = {
+		[ActivityType_UI.kActivityBlockWsj] = "ActivityBlockWsjView",
+		[ActivityType_UI.kActivityWxh] = "ActivityBlockSupportWxhView",
+		[ActivityType_UI.kActivityBlockZuoHe] = "ActivityBlockSupportView",
+		[ActivityType_UI.kActivityBlockSummer] = "ActivityBlockSummerView",
+		[ActivityType_UI.kActivityBlock] = "ActivityBlockView"
+	},
+	enterBlockMonsterShopView = {
+		[ActivityType_UI.kActivityBlockWsj] = "ActivityBlockMonsterShopView"
+	},
+	enterSupportStageView = {
+		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportMapView",
+		[ActivityType_UI.kActivityBlockZuoHe] = "ActivitySagaSupportMapView",
+		[ActivityType_UI.kActivityBlockSummer] = "ActivitySagaSupportMapView",
+		[ActivityType_UI.kActivityBlockWsj] = "ActivityBlockMapWsjView"
+	},
+	enterSagaSupportStageView = {
+		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportStageWxhView",
+		[ActivityType_UI.kActivityBlockZuoHe] = "ActivitySagaSupportStageView"
+	},
+	enterSagaSupportScheduleView = {
+		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportScheduleWxhView",
+		[ActivityType_UI.kActivityBlockZuoHe] = "ActivitySagaSupportScheduleView"
+	},
+	enterSupportTaskView = {
+		[ActivityType_UI.kActivityWxh] = "ActivityBlockTaskView",
+		[ActivityType_UI.kActivityBlockZuoHe] = "ActivityBlockTaskView",
+		[ActivityType_UI.kActivityBlockSummer] = "ActivityBlockTaskView",
+		[ActivityType_UI.kActivityBlockWsj] = "ActivityBlockTaskView"
+	},
+	enterSagaSupportRankRewardView = {
+		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportRankRewardWxhView",
+		[ActivityType_UI.kActivityBlockZuoHe] = "ActivitySagaSupportRankRewardView"
+	},
+	enterSagaWinView = {
+		[ActivityType_UI.kActivityWxh] = "ActivitySagaWinWxhView",
+		[ActivityType_UI.kActivityBlockZuoHe] = "ActivitySagaWinView"
+	}
 }

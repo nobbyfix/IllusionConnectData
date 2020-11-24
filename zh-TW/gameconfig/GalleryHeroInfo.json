@@ -8281,124 +8281,6 @@
         "HistoryHero": "HistoryName_AJYHou",
         "HeroReward": "GalleryHeroReward_SSR"
     },
-    "KMLa": {
-        "InfoDesc1": {
-            "KMLa_InfoDesc1": [
-                1,
-                50
-            ]
-        },
-        "InfoDesc2": {
-            "KMLa_InfoDesc2": [
-                3,
-                125
-            ]
-        },
-        "InfoDesc3": {
-            "KMLa_InfoDesc3": [
-                4,
-                200
-            ]
-        },
-        "InfoDesc4": {
-            "KMLa_InfoDesc4": [
-                1,
-                50
-            ]
-        },
-        "InfoDesc5": {
-            "KMLa_InfoDesc5": [
-                3,
-                125
-            ]
-        },
-        "InfoDesc6": {
-            "KMLa_InfoDesc6": [
-                4,
-                200
-            ]
-        },
-        "InfoDesc7": {
-            "KMLa_InfoDesc7": [
-                1,
-                50
-            ]
-        },
-        "InfoDesc8": {
-            "KMLa_InfoDesc8": [
-                3,
-                125
-            ]
-        },
-        "InfoDesc9": {
-            "KMLa_InfoDesc9": [
-                4,
-                200
-            ]
-        },
-        "GossipDesc": {
-            "KMLa_GossipDesc_1": [
-                195,
-                213,
-                "album_bg_tag03"
-            ],
-            "KMLa_GossipDesc_2": [
-                277,
-                377,
-                "album_bg_tag02"
-            ],
-            "KMLa_GossipDesc_3": [
-                30,
-                72,
-                "album_bg_tag03"
-            ]
-        },
-        "BGPic": "album_bg_dryl_txd",
-        "HeroStory": [
-            {
-                "need": [
-                    1,
-                    0
-                ],
-                "desc": "KMLa_StoryDesc1",
-                "title": "KMLa_StoryTitle1"
-            },
-            {
-                "need": [
-                    2,
-                    150
-                ],
-                "desc": "KMLa_StoryDesc2",
-                "title": "KMLa_StoryTitle2"
-            },
-            {
-                "need": [
-                    4,
-                    400
-                ],
-                "desc": "KMLa_StoryDesc3",
-                "title": "KMLa_StoryTitle3"
-            },
-            {
-                "need": [
-                    5,
-                    600
-                ],
-                "desc": "KMLa_StoryDesc4",
-                "title": "KMLa_StoryTitle4"
-            },
-            {
-                "need": [
-                    6,
-                    800
-                ],
-                "desc": "KMLa_StoryDesc5",
-                "title": "KMLa_StoryTitle5"
-            }
-        ],
-        "HistoryHero": "HistoryName_KMLa",
-        "HeroReward": "GalleryHeroReward_SR"
-    },
     "SGHQShou": {
         "InfoDesc1": {
             "SGHQShou_InfoDesc1": [
@@ -8515,6 +8397,242 @@
             }
         ],
         "HistoryHero": "HistoryName_SGHQShou",
+        "HeroReward": "GalleryHeroReward_SSR"
+    },
+    "YSLBin": {
+        "InfoDesc1": {
+            "YSLBin_InfoDesc1": [
+                1,
+                50
+            ]
+        },
+        "InfoDesc2": {
+            "YSLBin_InfoDesc2": [
+                3,
+                125
+            ]
+        },
+        "InfoDesc3": {
+            "YSLBin_InfoDesc3": [
+                4,
+                200
+            ]
+        },
+        "InfoDesc4": {
+            "YSLBin_InfoDesc4": [
+                1,
+                50
+            ]
+        },
+        "InfoDesc5": {
+            "YSLBin_InfoDesc5": [
+                3,
+                125
+            ]
+        },
+        "InfoDesc6": {
+            "YSLBin_InfoDesc6": [
+                4,
+                200
+            ]
+        },
+        "InfoDesc7": {
+            "YSLBin_InfoDesc7": [
+                1,
+                50
+            ]
+        },
+        "InfoDesc8": {
+            "YSLBin_InfoDesc8": [
+                3,
+                125
+            ]
+        },
+        "InfoDesc9": {
+            "YSLBin_InfoDesc9": [
+                4,
+                200
+            ]
+        },
+        "GossipDesc": {
+            "YSLBin_GossipDesc_1": [
+                303,
+                97,
+                "album_bg_tag03"
+            ],
+            "YSLBin_GossipDesc_2": [
+                323,
+                237,
+                "album_bg_tag02"
+            ],
+            "YSLBin_GossipDesc_3": [
+                33,
+                36,
+                "album_bg_tag03"
+            ]
+        },
+        "BGPic": "album_bg_dryl_txd",
+        "HeroStory": [
+            {
+                "need": [
+                    1,
+                    0
+                ],
+                "desc": "YSLBin_StoryDesc1",
+                "title": "YSLBin_StoryTitle1"
+            },
+            {
+                "need": [
+                    2,
+                    150
+                ],
+                "desc": "YSLBin_StoryDesc2",
+                "title": "YSLBin_StoryTitle2"
+            },
+            {
+                "need": [
+                    4,
+                    400
+                ],
+                "desc": "YSLBin_StoryDesc3",
+                "title": "YSLBin_StoryTitle3"
+            },
+            {
+                "need": [
+                    5,
+                    600
+                ],
+                "desc": "YSLBin_StoryDesc4",
+                "title": "YSLBin_StoryTitle4"
+            },
+            {
+                "need": [
+                    6,
+                    800
+                ],
+                "desc": "YSLBin_StoryDesc5",
+                "title": "YSLBin_StoryTitle5"
+            }
+        ],
+        "HistoryHero": "HistoryName_YSLBin",
+        "HeroReward": "GalleryHeroReward_SSR"
+    },
+    "KMLa": {
+        "InfoDesc1": {
+            "KMLa_InfoDesc1": [
+                1,
+                50
+            ]
+        },
+        "InfoDesc2": {
+            "KMLa_InfoDesc2": [
+                3,
+                125
+            ]
+        },
+        "InfoDesc3": {
+            "KMLa_InfoDesc3": [
+                4,
+                200
+            ]
+        },
+        "InfoDesc4": {
+            "KMLa_InfoDesc4": [
+                1,
+                50
+            ]
+        },
+        "InfoDesc5": {
+            "KMLa_InfoDesc5": [
+                3,
+                125
+            ]
+        },
+        "InfoDesc6": {
+            "KMLa_InfoDesc6": [
+                4,
+                200
+            ]
+        },
+        "InfoDesc7": {
+            "KMLa_InfoDesc7": [
+                1,
+                50
+            ]
+        },
+        "InfoDesc8": {
+            "KMLa_InfoDesc8": [
+                3,
+                125
+            ]
+        },
+        "InfoDesc9": {
+            "KMLa_InfoDesc9": [
+                4,
+                200
+            ]
+        },
+        "GossipDesc": {
+            "KMLa_GossipDesc_1": [
+                303,
+                97,
+                "album_bg_tag03"
+            ],
+            "KMLa_GossipDesc_2": [
+                323,
+                237,
+                "album_bg_tag02"
+            ],
+            "KMLa_GossipDesc_3": [
+                33,
+                36,
+                "album_bg_tag03"
+            ]
+        },
+        "BGPic": "album_bg_dryl_txd",
+        "HeroStory": [
+            {
+                "need": [
+                    1,
+                    0
+                ],
+                "desc": "KMLa_StoryDesc1",
+                "title": "KMLa_StoryTitle1"
+            },
+            {
+                "need": [
+                    2,
+                    150
+                ],
+                "desc": "KMLa_StoryDesc2",
+                "title": "KMLa_StoryTitle2"
+            },
+            {
+                "need": [
+                    4,
+                    400
+                ],
+                "desc": "KMLa_StoryDesc3",
+                "title": "KMLa_StoryTitle3"
+            },
+            {
+                "need": [
+                    5,
+                    600
+                ],
+                "desc": "KMLa_StoryDesc4",
+                "title": "KMLa_StoryTitle4"
+            },
+            {
+                "need": [
+                    6,
+                    800
+                ],
+                "desc": "KMLa_StoryDesc5",
+                "title": "KMLa_StoryTitle5"
+            }
+        ],
+        "HistoryHero": "HistoryName_KMLa",
         "HeroReward": "GalleryHeroReward_SSR"
     }
 }

@@ -31,6 +31,8 @@ function TeamList:synchronize(data)
 end
 
 function TeamList:synchronizeTeamTypes(data)
+	dump(data, " _stageTeamIds__________ ")
+
 	for stageType, teamId in pairs(data) do
 		self._stageTeamIds[stageType] = teamId
 	end

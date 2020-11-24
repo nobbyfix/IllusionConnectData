@@ -135,40 +135,6 @@
             }
         }
     },
-    "ABS_WuXiuHui_1": {
-        "ModelId": "Model_BHTZi",
-        "RankIcon": "",
-        "Bubble": {
-            "ScoreItem": [
-                {
-                    "sound": "Voice_GYCZi_68",
-                    "tip": "Voice_GYCZi_68_SoundDesc"
-                },
-                {
-                    "sound": "Voice_GYCZi_69",
-                    "tip": "Voice_GYCZi_69_SoundDesc"
-                }
-            ],
-            "Winner": {
-                "sound": "Voice_GYCZi_31",
-                "tip": "Voice_GYCZi_31_SoundDesc"
-            },
-            "ClubAttrItem": [
-                {
-                    "sound": "Voice_GYCZi_68",
-                    "tip": "Voice_GYCZi_68_SoundDesc"
-                },
-                {
-                    "sound": "Voice_GYCZi_69",
-                    "tip": "Voice_GYCZi_69_SoundDesc"
-                }
-            ],
-            "Stand": {
-                "sound": "Voice_GYCZi_66",
-                "tip": "Voice_GYCZi_66_SoundDesc"
-            }
-        }
-    },
     "ABS_WuXiuHui_2": {
         "ModelId": "Model_SSQXin",
         "RankIcon": "",
@@ -475,40 +441,6 @@
             }
         }
     },
-    "ABS_WuXiuHui_8": {
-        "ModelId": "Model_TPGZhu",
-        "RankIcon": "",
-        "Bubble": {
-            "ScoreItem": [
-                {
-                    "sound": "Voice_TPGZhu_20",
-                    "tip": "Voice_TPGZhu_20_SoundDesc"
-                },
-                {
-                    "sound": "Voice_TPGZhu_69",
-                    "tip": "Voice_TPGZhu_69_SoundDesc"
-                }
-            ],
-            "Winner": {
-                "sound": "Voice_TPGZhu_31",
-                "tip": "Voice_TPGZhu_31_SoundDesc"
-            },
-            "ClubAttrItem": [
-                {
-                    "sound": "Voice_TPGZhu_20",
-                    "tip": "Voice_TPGZhu_20_SoundDesc"
-                },
-                {
-                    "sound": "Voice_TPGZhu_69",
-                    "tip": "Voice_TPGZhu_69_SoundDesc"
-                }
-            ],
-            "Stand": {
-                "sound": "Voice_TPGZhu_67",
-                "tip": "Voice_TPGZhu_67_SoundDesc"
-            }
-        }
-    },
     "ABS_WuXiuHui_6": {
         "ModelId": "Model_ZTXCun",
         "RankIcon": "",
@@ -540,6 +472,74 @@
             "Stand": {
                 "sound": "Voice_ZTXCun_67",
                 "tip": "Voice_ZTXCun_67_SoundDesc"
+            }
+        }
+    },
+    "ABS_WuXiuHui_1": {
+        "ModelId": "Model_BHTZi",
+        "RankIcon": "",
+        "Bubble": {
+            "ScoreItem": [
+                {
+                    "sound": "Voice_BHTZi_20",
+                    "tip": "Voice_BHTZi_20_SoundDesc"
+                },
+                {
+                    "sound": "Voice_BHTZi_69",
+                    "tip": "Voice_BHTZi_69_SoundDesc"
+                }
+            ],
+            "Winner": {
+                "sound": "Voice_BHTZi_31",
+                "tip": "Voice_BHTZi_31_SoundDesc"
+            },
+            "ClubAttrItem": [
+                {
+                    "sound": "Voice_BHTZi_20",
+                    "tip": "Voice_BHTZi_20_SoundDesc"
+                },
+                {
+                    "sound": "Voice_BHTZi_69",
+                    "tip": "Voice_BHTZi_69_SoundDesc"
+                }
+            ],
+            "Stand": {
+                "sound": "Voice_BHTZi_66",
+                "tip": "Voice_BHTZi_66_SoundDesc"
+            }
+        }
+    },
+    "ABS_WuXiuHui_8": {
+        "ModelId": "Model_TPGZhu",
+        "RankIcon": "",
+        "Bubble": {
+            "ScoreItem": [
+                {
+                    "sound": "Voice_TPGZhu_20",
+                    "tip": "Voice_TPGZhu_20_SoundDesc"
+                },
+                {
+                    "sound": "Voice_TPGZhu_69",
+                    "tip": "Voice_TPGZhu_69_SoundDesc"
+                }
+            ],
+            "Winner": {
+                "sound": "Voice_TPGZhu_31_1",
+                "tip": "Voice_TPGZhu_31_1_SoundDesc"
+            },
+            "ClubAttrItem": [
+                {
+                    "sound": "Voice_TPGZhu_20",
+                    "tip": "Voice_TPGZhu_20_SoundDesc"
+                },
+                {
+                    "sound": "Voice_TPGZhu_69",
+                    "tip": "Voice_TPGZhu_69_SoundDesc"
+                }
+            ],
+            "Stand": {
+                "sound": "Voice_TPGZhu_67",
+                "tip": "Voice_TPGZhu_67_SoundDesc"
             }
         }
     }

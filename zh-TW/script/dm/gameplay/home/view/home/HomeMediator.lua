@@ -3,6 +3,9 @@ require("dm.gameplay.home.view.home.AudioTimerSystem")
 
 HomeMediator = class("HomeMediator", DmAreaViewMediator, _M)
 
+HomeMediator:has("_loginSystem", {
+	is = "r"
+}):injectWith("LoginSystem")
 HomeMediator:has("_developSystem", {
 	is = "r"
 }):injectWith("DevelopSystem")
@@ -52,21 +55,9 @@ local kBtnHandlers = {
 		ignoreClickAudio = true,
 		func = "onCarnivalBtn"
 	},
-	["mRightFuncLayout.extraActBtn.btn_3"] = {
+	["extraActBtn.btn_3"] = {
 		ignoreClickAudio = true,
-		func = "onEasterBtn"
-	},
-	["mRightFuncLayout.extraActBtn.btn_4"] = {
-		ignoreClickAudio = true,
-		func = "onSupportBtn"
-	},
-	["mRightFuncLayout.extraActBtn.btn_5"] = {
-		ignoreClickAudio = true,
-		func = "onSummerBtn"
-	},
-	["mRightFuncLayout.extraActBtn.btn_6"] = {
-		ignoreClickAudio = true,
-		func = "onWxhBtn"
+		func = "onClubResourcesBattleBtn"
 	},
 	["unfoldMenuBtn.fastGetResourceBtn"] = {
 		ignoreClickAudio = true,
@@ -75,10 +66,6 @@ local kBtnHandlers = {
 	["unfoldMenuBtn.fastGetResourceExBtn"] = {
 		ignoreClickAudio = true,
 		func = "fastGetRes"
-	},
-	["mRightFuncLayout.goldEggsPanel.goldEggsBtn"] = {
-		ignoreClickAudio = true,
-		func = "onGoldEggsBtn"
 	}
 }
 local spineTouchEventTag = false
@@ -176,6 +163,12 @@ function HomeMediator:dispose()
 		self._webPayTimer:stop()
 
 		self._webPayTimer = nil
+	end
+
+	if self._clubResourcesBattleTimer then
+		self._clubResourcesBattleTimer:stop()
+
+		self._clubResourcesBattleTimer = nil
 	end
 
 	if self._currencyInfoWidget then
@@ -367,9 +360,9 @@ end
 function HomeMediator:createMapListener()
 	self:mapEventListener(self:getEventDispatcher(), EVT_HOMEVIEW_REDPOINT_REF, self, self.passiveRefreshRedPoint)
 	self:mapEventListener(self:getEventDispatcher(), EVT_HOME_SET_SHOWHERO, self, self.setShowHero)
-	self:mapEventListener(self:getEventDispatcher(), EVT_CHARGETASK_FIN, self, self.reloadPageView)
+	self:mapEventListener(self:getEventDispatcher(), EVT_CHARGETASK_FIN, self, self.reloadView)
 	self:mapEventListener(self:getEventDispatcher(), EVT_HOME_SET_VIEWBG, self, self.changeHomeViewBg)
-	self:mapEventListener(self:getEventDispatcher(), EVT_ACTIVITY_CLOSE, self, self.reloadPageView)
+	self:mapEventListener(self:getEventDispatcher(), EVT_ACTIVITY_CLOSE, self, self.reloadView)
 	self:mapEventListener(self:getEventDispatcher(), EVT_HOME_SET_CLIMATE, self, self.setClimateScene)
 	self:mapEventListener(self:getEventDispatcher(), EVT_FRIENDPVP_RECEIVEINVITATION, self, self.onReceiveFriendPvpInviteCallback)
 	self:mapEventListener(self:getEventDispatcher(), EVT_SURFACE_SELECT_SUCC, self, self.setBoardHeroSprite)
@@ -484,6 +477,12 @@ function HomeMediator:refreshDownloadSoundLabel(event)
 	end
 end
 
+function HomeMediator:reloadView()
+	self:reloadPageView()
+	self:checkClubRedPoint()
+	self:checkExtraRedPoint()
+end
+
 function HomeMediator:initHomeView()
 	self._homePanel:setVisible(true)
 
@@ -526,6 +525,7 @@ function HomeMediator:initHomeView()
 	self:checkExtraRedPoint()
 	self:enableBuildingResourceTimer()
 	self:enableWebPayListTimer()
+	self:checkClubResourcesBattleTimerLogic()
 end
 
 function HomeMediator:enableBuildingResourceTimer()
@@ -555,11 +555,17 @@ function HomeMediator:enableBuildingResourceTimer()
 			local curAnim = self._menuStateBtn:getChildByTag(10025)
 
 			if tag == 0 or tag == 1 then
-				self._menuStateBtn:removeChildByTag(10025)
+				if curAnim then
+					self._menuStateBtn:removeChildByTag(10025)
+				end
+
 				self._menuStateBtn:getChildByTag(10026):stop()
 			elseif not curAnim or curAnim:getName() ~= animName then
 				self._menuStateBtn:getChildByTag(10026):play()
-				self._menuStateBtn:removeChildByTag(10025)
+
+				if curAnim then
+					self._menuStateBtn:removeChildByTag(10025)
+				end
 
 				local mc = cc.MovieClip:create(animName)
 
@@ -620,10 +626,13 @@ function HomeMediator:fastGetRes()
 		end
 
 		if tag == 0 then
+			AudioEngine:getInstance():playEffect("Se_Alert_Error", false)
 			self:dispatch(ShowTipEvent({
 				tip = Strings:get("Build_ResourceBuilding_Unlock")
 			}))
 		else
+			AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
+
 			local mc = self._menuStateBtn:getChildByTag(10026)
 
 			mc:stop()
@@ -942,15 +951,15 @@ function HomeMediator:initWidget()
 	self._fastGetResourceExBtn = self._menuStateBtn:getChildByName("fastGetResourceExBtn")
 	self._urlFuncLayout = self:getView():getChildByFullName("URLAdjustNode.URLLayout")
 	self._homeBgPanel = self:getView():getChildByFullName("homeBgPanel")
-	local extraActBtn = self._rightFuncLayout:getChildByFullName("extraActBtn.btn_3")
-	local supportActBtn = self._rightFuncLayout:getChildByFullName("extraActBtn.btn_4")
 	local goldEggsBtn = self._rightFuncLayout:getChildByFullName("goldEggsPanel.goldEggsBtn")
-	local wxhActBtn = self._rightFuncLayout:getChildByFullName("extraActBtn.btn_6")
+	local extraActBtn = self._rightFuncLayout:getChildByFullName("extraActBtn")
 
 	AdjustUtils.adjustLayoutByType(extraActBtn, AdjustUtils.kAdjustType.Right)
-	AdjustUtils.adjustLayoutByType(supportActBtn, AdjustUtils.kAdjustType.Right)
 	AdjustUtils.adjustLayoutByType(goldEggsBtn, AdjustUtils.kAdjustType.Right)
-	AdjustUtils.adjustLayoutByType(wxhActBtn, AdjustUtils.kAdjustType.Right)
+
+	local mChallengeNode = self._rightFuncLayout:getChildByFullName("mChallengeNode")
+
+	extraActBtn:setPosition(cc.p(mChallengeNode:getPositionX() - 80, mChallengeNode:getPositionY() - 90))
 
 	local iconMc = cc.MovieClip:create("baoxiang_jiayuanshouqu")
 
@@ -979,7 +988,7 @@ function HomeMediator:initWidget()
 	giftPanel:setLocalZOrder(5557)
 
 	local function callFunc()
-		giftPanel:setTouchEnabled(false)
+		giftPanel:setVisible(false)
 
 		local activity = self._activitySystem:getActivityById("FreeStamina")
 		local curList = activity:getActivityConfig().FreeStamina
@@ -1471,7 +1480,7 @@ function HomeMediator:openBoardHeroButton(times)
 		afkBtn:setVisible(false)
 	end, 5)
 
-	if times == 2 then
+	if times == 1 then
 		self._showHeroPanel:stopAllActions()
 		performWithDelay(self._showHeroPanel, function ()
 			self._touchTimes = 0
@@ -1622,6 +1631,11 @@ end
 
 function HomeMediator:getPageByIndex(index)
 	local animData = self._animName[index]
+
+	if not animData then
+		return
+	end
+
 	local image = animData.bannerInfo.Img
 	local pageView = self._urlFuncLayout:getChildByName("pageView")
 	local pageTipPanel = self._urlFuncLayout:getChildByName("pageTipPanel")
@@ -1632,7 +1646,7 @@ function HomeMediator:getPageByIndex(index)
 	layout:setPosition(cc.p(0, 0))
 	layout:setContentSize(pageView:getContentSize())
 
-	local image = ccui.ImageView:create(image, ccui.TextureResType.plistType)
+	local image = ccui.ImageView:create("asset/ui/mainScene/" .. image, ccui.TextureResType.localType)
 
 	image:addTo(layout):center(layout:getContentSize())
 
@@ -1669,6 +1683,8 @@ function HomeMediator:viewTouchEvent(index)
 			item = model
 		}))
 	elseif bannerType == ActivityBannerType.kActivity then
+		AudioEngine:getInstance():playEffect("Se_Click_Open_1", false)
+
 		local url = bannerInfo.Link
 		local param = {}
 
@@ -1766,27 +1782,18 @@ function HomeMediator:onMenuStateChange(sender, eventType)
 end
 
 function HomeMediator:onCarnivalBtn(sender, eventType)
+	AudioEngine:getInstance():playEffect("Se_Click_Open_1", false)
 	self._activitySystem:tryEnterCarnival()
 end
 
-function HomeMediator:onEasterBtn(sender, eventType)
-	self._activitySystem:tryEnterEaster()
+function HomeMediator:onClubResourcesBattleBtn(sender, eventType)
+	AudioEngine:getInstance():playEffect("Se_Click_Open_1", false)
+	self._clubSystem:tryEnterClubResourcesBattle()
 end
 
-function HomeMediator:onGoldEggsBtn(sender, eventType)
-	self._activitySystem:tryEnterGoldEgg()
-end
-
-function HomeMediator:onSupportBtn(sender, eventType)
-	self._activitySystem:tryEnterSupport()
-end
-
-function HomeMediator:onWxhBtn(sender, eventType)
-	self._activitySystem:tryEnterSupport(ActivityId.kActivityWxh)
-end
-
-function HomeMediator:onSummerBtn(sender, eventType)
-	self._activitySystem:tryEnterSummer()
+function HomeMediator:onClickComplexBtn(ui)
+	AudioEngine:getInstance():playEffect("Se_Click_Open_1", false)
+	self._activitySystem:tryEnterComplexMainView(ui)
 end
 
 function HomeMediator:onFriendBtn(sender, type)
@@ -1794,7 +1801,7 @@ function HomeMediator:onFriendBtn(sender, type)
 		return
 	end
 
-	AudioEngine:getInstance():playEffect("Se_Click_Open_2", false)
+	AudioEngine:getInstance():playEffect("Se_Click_Open_1", false)
 
 	local friendSystem = self:getInjector():getInstance(FriendSystem)
 
@@ -1806,7 +1813,7 @@ function HomeMediator:onRankBtn(sender, type)
 		return
 	end
 
-	AudioEngine:getInstance():playEffect("Se_Click_Open_2", false)
+	AudioEngine:getInstance():playEffect("Se_Click_Open_1", false)
 
 	local rankSystem = self:getInjector():getInstance(RankSystem)
 
@@ -1818,7 +1825,7 @@ function HomeMediator:onDownloadBtn(sender, type)
 		return
 	end
 
-	AudioEngine:getInstance():playEffect("Se_Click_Open_2", false)
+	AudioEngine:getInstance():playEffect("Se_Click_Open_1", false)
 
 	if self._settingSystem:canDownloadPortrait() then
 		self._settingSystem:downloadPortrait()
@@ -1832,7 +1839,7 @@ function HomeMediator:onMailBtn(sender, type)
 		return
 	end
 
-	AudioEngine:getInstance():playEffect("Se_Click_Open_2", false)
+	AudioEngine:getInstance():playEffect("Se_Click_Open_1", false)
 
 	local function getDataSucc()
 		local view = self:getInjector():getInstance("MailView")
@@ -3054,13 +3061,14 @@ function HomeMediator:checkExtraRedPoint()
 		chargeBtn:setPosition(cc.p(carnBtn:getPositionX() - 112, carnBtn:getPositionY()))
 	end
 
-	local easterBtn = self._rightFuncLayout:getChildByFullName("extraActBtn.btn_3")
+	self._clubResourcesBattleBtn = self:getView():getChildByFullName("extraActBtn.btn_3")
+	self._clubResourcesBattleTimeText = self._clubResourcesBattleBtn:getChildByName("Text_2")
 
-	easterBtn:setVisible(self._activitySystem:checkConditionWithId(ActivityId.kActivityBlock))
+	self._clubResourcesBattleBtn:setVisible(false)
 
-	local redPoint = easterBtn:getChildByName("redPoint")
-
-	redPoint:setVisible(self._activitySystem:hasRedPointForActivity(ActivityId.kActivityBlock))
+	if self._clubSystem:isClubResourcesBattleOpen() == true then
+		self._clubResourcesBattleBtn:setVisible(true)
+	end
 
 	local goldEggsBtn = self._rightFuncLayout:getChildByFullName("goldEggsPanel.goldEggsBtn")
 
@@ -3069,86 +3077,6 @@ function HomeMediator:checkExtraRedPoint()
 	local redPoint = goldEggsBtn:getChildByName("redPoint")
 
 	redPoint:setVisible(self._activitySystem:hasRedPointForActivity(ActivityId.kActivityEgg))
-
-	local supportBtn = self._rightFuncLayout:getChildByFullName("extraActBtn.btn_4")
-
-	if not supportBtn:getChildByName("anniu_rukouyemian") then
-		local anim = cc.MovieClip:create("anniu_rukouyemian")
-
-		anim:gotoAndPlay(1)
-		anim:addTo(supportBtn):offset(64, 72)
-		anim:setName("anniu_rukouyemian")
-	end
-
-	supportBtn:setVisible(self._activitySystem:checkConditionWithId(ActivityId.kActivityBlockZuoHe))
-
-	local redPoint = supportBtn:getChildByName("redPoint")
-
-	redPoint:setVisible(self._activitySystem:hasRedPointForActivity(ActivityId.kActivityBlockZuoHe))
-	redPoint:setLocalZOrder(999)
-
-	local easterBtnPosX = easterBtn:getPositionX()
-	local easterBtnPosY = easterBtn:getPositionY()
-
-	if easterBtn:isVisible() then
-		supportBtn:setPosition(cc.p(easterBtnPosX - 30, easterBtnPosY - 126))
-	else
-		supportBtn:setPosition(cc.p(easterBtnPosX, easterBtnPosY))
-	end
-
-	local wxhBtn = self._rightFuncLayout:getChildByFullName("extraActBtn.btn_6")
-
-	if not wxhBtn:getChildByName("anniu_rukouyemianWxh1") then
-		local anim = cc.MovieClip:create("wuxiurukou_wuxiurukou")
-
-		anim:addTo(wxhBtn):offset(-24, 150)
-		anim:setName("anniu_rukouyemianWxh1")
-	end
-
-	wxhBtn:setVisible(self._activitySystem:checkConditionWithId(ActivityId.kActivityWxh))
-
-	local redPoint = wxhBtn:getChildByName("redPoint")
-
-	redPoint:setVisible(self._activitySystem:hasRedPointForActivity(ActivityId.kActivityWxh))
-	redPoint:setLocalZOrder(999)
-
-	local summerBtn = self._rightFuncLayout:getChildByFullName("extraActBtn.btn_5")
-	local redPoint = summerBtn:getChildByName("redPoint")
-
-	if not summerBtn:getChildByName("rukou_xiarihuodong") then
-		local anim = cc.MovieClip:create("rukou_xiarihuodong")
-
-		anim:gotoAndPlay(1)
-		anim:addTo(summerBtn):offset(55, 65)
-		anim:setName("rukou_xiarihuodong")
-	end
-
-	local limit = ConfigReader:getRecordById("Reset", "AcitvitySummerStamina_Reset").ResetSystem.limit
-	local bagSystem = self:getInjector():getInstance(BagSystem)
-	local num = bagSystem:getAcitvitySummerPower()
-	local activity = self._activitySystem:getActivityByType(ActivityType.KActivityBlock)
-
-	summerBtn:setVisible(false)
-	redPoint:setVisible(false)
-
-	if activity and activity:getUI() == ActivityType_UI.kActivityBlockSummer then
-		summerBtn:setVisible(self._activitySystem:checkConditionWithId(activity:getActivityId()))
-
-		local isHave, tips = activity:getActivityClubBossActivity()
-
-		redPoint:setVisible(isHave and limit <= num or self._activitySystem:hasRedPointForActivity(activity:getActivityId()))
-	end
-
-	redPoint:setLocalZOrder(999)
-
-	local easterBtnPosX = easterBtn:getPositionX()
-	local easterBtnPosY = easterBtn:getPositionY()
-
-	if easterBtn:isVisible() then
-		summerBtn:setPosition(cc.p(easterBtnPosX - 30, easterBtnPosY - 126))
-	else
-		summerBtn:setPosition(cc.p(easterBtnPosX, easterBtnPosY))
-	end
 
 	local unlock, unlockTips = self._systemKeeper:isUnlock("Shop_Unlock")
 
@@ -3193,11 +3121,23 @@ function HomeMediator:checkExtraRedPoint()
 		else
 			chargeBtn:setVisible(false)
 		end
-
-		return
+	else
+		chargeBtn:setVisible(false)
 	end
 
-	chargeBtn:setVisible(false)
+	if not carnBtn:isVisible() then
+		if not chargeBtn:isVisible() then
+			self._clubResourcesBattleBtn:setPosition(cc.p(carnBtn:getPositionX(), carnBtn:getPositionY()))
+		else
+			self._clubResourcesBattleBtn:setPosition(cc.p(carnBtn:getPositionX() - 122, carnBtn:getPositionY()))
+		end
+	elseif not chargeBtn:isVisible() then
+		self._clubResourcesBattleBtn:setPosition(cc.p(chargeBtn:getPositionX(), carnBtn:getPositionY()))
+	else
+		self._clubResourcesBattleBtn:setPosition(cc.p(chargeBtn:getPositionX() - 122, carnBtn:getPositionY()))
+	end
+
+	self:setComplexActivityEntry()
 end
 
 function HomeMediator:onReceiveFriendPvpInviteCallback(event)
@@ -3290,4 +3230,189 @@ function HomeMediator:playVedioSprite(showStr)
 	videoSprite:setScale(winSize.height / videoSize.height)
 	videoSprite:setPosition(cc.p(568, 320))
 	videoSprite:setLocalZOrder(9999)
+end
+
+function HomeMediator:checkClubResourcesBattleTimerLogic()
+	if CommonUtils.GetSwitch("fn_club_resource_battle") == false then
+		return
+	end
+
+	if self._clubResourcesBattleTimer == nil then
+		local function refreshTimer()
+			local hasJoinClub = self._clubSystem:getHasJoinClub()
+
+			if hasJoinClub == false then
+				return
+			end
+
+			if self._clubSystem:isClubResourcesBattleOpen() == false then
+				self._clubResourcesBattleBtn:setVisible(false)
+
+				return
+			end
+
+			self._clubResourcesBattleBtn:setVisible(true)
+
+			local ClubResourcesBattleData = self._clubSystem:getClub():getClubResourcesBattleInfo()
+			local remoteTimestamp = self._gameServerAgent:remoteTimestamp()
+			local refreshTiem = ClubResourcesBattleData:getNextMillis() / 1000
+			local remainTime = refreshTiem - remoteTimestamp
+
+			if remainTime <= 0 then
+				if ClubResourcesBattleData:getNextMillis() == -1 and ClubResourcesBattleData:getStatus() == "END" then
+					self._clubResourcesBattleTimer:stop()
+
+					self._clubResourcesBattleTimer = nil
+
+					self._clubResourcesBattleBtn:setVisible(false)
+				else
+					self._clubSystem:requestClubBattleData(nil, false)
+				end
+			end
+
+			self:refreshRemainTime(remainTime)
+		end
+
+		self._clubResourcesBattleTimer = LuaScheduler:getInstance():schedule(refreshTimer, 1, false)
+	end
+end
+
+function HomeMediator:refreshRemainTime(remainTime)
+	local str = self._clubSystem:getRemainTime(remainTime)
+	local ClubResourcesBattleData = self._clubSystem:getClub():getClubResourcesBattleInfo()
+
+	if ClubResourcesBattleData:getStatus() == "NOTOPEN" or ClubResourcesBattleData:getStatus() == "MATCHING" then
+		local timeStr = Strings:get("Club_ResourceBattle_8")
+
+		self._clubResourcesBattleTimeText:setString(timeStr)
+	end
+
+	if ClubResourcesBattleData:getStatus() == "OPEN" then
+		if remainTime < 0 then
+			str = Strings:get("Club_ResourceBattle_14")
+		end
+
+		self._clubResourcesBattleTimeText:setString(str)
+	end
+
+	if ClubResourcesBattleData:getStatus() == "END" then
+		local timeStr = Strings:get("Club_ResourceBattle_14")
+
+		self._clubResourcesBattleTimeText:setString(timeStr)
+	end
+end
+
+function HomeMediator:setComplexActivityEntry()
+	local complexActivityEntryAnim = {
+		[ActivityType_UI.kActivityBlockWsj] = {
+			anim = "rukou_wanshengjierukou",
+			aimpos = cc.p(48, 40),
+			redPointFuncx = self._activitySystem.hasRedPointForActivityWsj
+		},
+		[ActivityType_UI.kActivityBlockSummer] = {
+			anim = "rukou_xiarihuodong",
+			aimpos = cc.p(40, 40),
+			redPointFuncx = self._activitySystem.hasRedPointForActivitySummer
+		},
+		[ActivityType_UI.kActivityWxh] = {
+			anim = "wuxiurukou_wuxiurukou",
+			aimpos = cc.p(-34, 125),
+			redPointFuncx = self._activitySystem.hasRedPointForActivity
+		},
+		[ActivityType_UI.kActivityBlockZuoHe] = {
+			anim = "anniu_rukouyemian",
+			aimpos = cc.p(51, 40),
+			redPointFuncx = self._activitySystem.hasRedPointForActivity
+		},
+		[ActivityType_UI.kActivityBlock] = {
+			img = "hd_rk_fhj.png",
+			aimpos = cc.p(50, 43),
+			redPointFuncx = self._activitySystem.hasRedPointForActivity
+		}
+	}
+	local extraActBtn = self._rightFuncLayout:getChildByFullName("extraActBtn")
+
+	extraActBtn:setVisible(false)
+
+	local blockBtn = extraActBtn:getChildByFullName("btn_block")
+
+	blockBtn:setVisible(false)
+
+	local redPoint = blockBtn:getChildByName("redPoint")
+
+	redPoint:setLocalZOrder(999)
+
+	local bs = blockBtn:getContentSize()
+	local count = 0
+	self._btns = self._btns or {}
+
+	local function del()
+		for k, v in pairs(self._btns) do
+			v:removeFromParent()
+		end
+
+		self._btns = {}
+	end
+
+	local function create(ui, cfg)
+		self._btns[ui] = blockBtn:clone()
+
+		self._btns[ui]:setVisible(true)
+		self._btns[ui]:setTouchEnabled(true)
+		self._btns[ui]:setSwallowTouches(true)
+		self._btns[ui]:addTo(extraActBtn):center(bs)
+		mapButtonHandlerClick(nil, self._btns[ui], {
+			func = function (sender, eventType)
+				self:onClickComplexBtn(ui)
+			end
+		})
+
+		local show = nil
+
+		if cfg.anim then
+			show = cc.MovieClip:create(cfg.anim)
+
+			show:gotoAndPlay(1)
+		elseif cfg.img then
+			show = ccui.ImageView:create(cfg.img, ccui.TextureResType.plistType)
+		end
+
+		if show then
+			show:addTo(self._btns[ui])
+			show:setPosition(cfg.aimpos)
+		end
+	end
+
+	local test = false
+
+	if test then
+		del()
+	end
+
+	for ui, cfg in pairs(complexActivityEntryAnim) do
+		local activity = self._activitySystem:getActivityByComplexUI(ui)
+
+		if activity then
+			if not self._btns[ui] then
+				create(ui, cfg)
+			end
+
+			local activityId = activity:getId()
+
+			self._btns[ui]:setVisible(self._activitySystem:checkConditionWithId(activityId))
+
+			if self._btns[ui]:isVisible() then
+				self._btns[ui]:getChildByName("redPoint"):setVisible(cfg.redPointFuncx(self._activitySystem, activityId))
+				extraActBtn:setVisible(true)
+			end
+
+			self._btns[ui]:setPositionX(blockBtn:getPositionX() - count * (bs.width + 20))
+
+			count = count + 1
+		elseif self._btns[ui] then
+			self._btns[ui]:removeFromParent()
+
+			self._btns[ui] = nil
+		end
+	end
 end

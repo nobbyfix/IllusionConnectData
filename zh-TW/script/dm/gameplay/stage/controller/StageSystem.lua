@@ -1108,11 +1108,12 @@ end
 local TargetOccupation = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Hero_TypeList", "content")
 local heroShowSortList = {
 	Strings:get("HEROS_UI49"),
-	Strings:get("HEROS_UI31"),
 	Strings:get("HEROS_UI30"),
-	Strings:get("HEROS_UI29"),
 	Strings:get("HEROS_UI5"),
-	Strings:get("Force_Screen")
+	Strings:get("Force_Vocation"),
+	Strings:get("HEROS_UI29"),
+	Strings:get("Force_Screen"),
+	Strings:get("HEROS_UI31")
 }
 local SortOrder = {
 	Strings:get("HEROS_UI32"),

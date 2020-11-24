@@ -949,6 +949,38 @@ function IconFactory:createMasterIcon(info, style)
 	return node
 end
 
+function IconFactory:createMasterIcon(info, style)
+	local id = info.id and info.id or "Master_XueZhan"
+	local node = self:createBaseNode(style and style.isWidget)
+
+	node:setContentSize(cc.size(81, 81))
+
+	local scale = info.scale or 1
+	local roleModel = IconFactory:getRoleModelByKey("MasterBase", id)
+	info.id = roleModel
+	local heroImg = self:createRoleIconSprite(info)
+
+	assert(heroImg ~= nil, "主角没有头像。")
+
+	if info.clipType then
+		heroImg = self:addStencilForIcon(heroImg, info.clipType, info.size)
+	end
+
+	local bottomImg = ccui.Scale9Sprite:createWithSpriteFrameName("sz_bg_xzd.png")
+	local capInsets = cc.rect(4, 4, 4, 4)
+
+	bottomImg:setCapInsets(capInsets)
+
+	local size = heroImg:getContentSize()
+
+	bottomImg:setContentSize(cc.size(size.width + 20, size.height + 20))
+	node:setScale(scale)
+	IconFactory:centerAddNode(node, bottomImg)
+	IconFactory:centerAddNode(node, heroImg)
+
+	return node
+end
+
 function IconFactory:getRoleModelByKey(tableName, id)
 	local roleModel = nil
 
@@ -2864,19 +2896,19 @@ function IconFactory:createItemPic(info, style)
 	elseif config.Icon ~= "" then
 		icon = self:createSprite(path)
 
-		assert(icon ~= nil, "createItemPic icon is nil " .. path)
-	end
+		if icon == nil then
+			local ResourcesIconConfig = ConfigReader:getRecordById("ResourcesIcon", tostring(info.id))
 
-	if icon == nil then
-		local ResourcesIconConfig = ConfigReader:getRecordById("ResourcesIcon", tostring(info.id))
-
-		if ResourcesIconConfig then
-			icon = self:createResourcePic(config, {
-				ignoreScaleSize = true,
-				largeIcon = true
-			})
+			if ResourcesIconConfig then
+				icon = self:createResourcePic(config, {
+					ignoreScaleSize = true,
+					largeIcon = true
+				})
+			end
 		end
 	end
+
+	assert(icon ~= nil, "createItemPic icon is nil " .. path)
 
 	local scale = 0.6
 

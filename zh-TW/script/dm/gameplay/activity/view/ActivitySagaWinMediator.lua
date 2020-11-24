@@ -126,7 +126,7 @@ end
 
 function ActivitySagaWinMediator:onClickShowScheduleBtn()
 	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
-	self._activitySystem:enterSagaSupportSchedule()
+	self._activitySystem:enterSagaSupportSchedule(self._activityId)
 end
 
 function ActivitySagaWinMediator:showBeginAnimation()

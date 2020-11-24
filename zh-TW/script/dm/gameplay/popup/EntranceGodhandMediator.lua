@@ -27,14 +27,18 @@ EntranceGodhandMediator:has("_crusadeSystem", {
 EntranceGodhandMediator:has("_activitySystem", {
 	is = "r"
 }):injectWith("ActivitySystem")
+EntranceGodhandMediator:has("_dreamChallengeSystem", {
+	is = "r"
+}):injectWith("DreamChallengeSystem")
 
 local configValueKey = ConfigReader:getDataByNameIdAndKey("ConfigValue", "TrialSwitch", "content")
 local kCells = {
-	kPractice = "practice",
+	kDreamChallenge = "dreamchallenge",
 	kSpStage = "spstage",
 	kExplore = "explore",
 	kCrusade = "crusade",
-	kTower = "tower"
+	kTower = "tower",
+	kPractice = "practice"
 }
 local kFunctionData = {
 	[kCells.kPractice] = {
@@ -61,6 +65,12 @@ local kFunctionData = {
 		animName = "crusadeCell_shilianrukou",
 		des = Strings:get("Crusade_UI16"),
 		titleStr = Strings:get("TrialTitle_MJYZ")
+	},
+	[kCells.kDreamChallenge] = {
+		animName = "dreamCell_shilianrukou",
+		switchKey = "fn_dream_tower",
+		des = Strings:get("DreamChallenge_Desc"),
+		titleStr = Strings:get("DreamChallenge_Title")
 	}
 }
 
@@ -266,6 +276,8 @@ function EntranceGodhandMediator:clickPanel(index)
 		self:enterTowerView()
 	elseif index == kCells.kCrusade then
 		self:enterCrusadeView()
+	elseif index == kCells.kDreamChallenge then
+		self:enterDreamChallenge()
 	end
 end
 
@@ -312,6 +324,9 @@ function EntranceGodhandMediator:checkHasRed(key)
 		end,
 		[kCells.kCrusade] = function ()
 			return self._crusadeSystem:canCrusadeSweep() or self._crusadeSystem:crusadeRedPointState()
+		end,
+		[kCells.kDreamChallenge] = function ()
+			return self._dreamChallengeSystem:checkIsShowRedPoint()
 		end
 	}
 
@@ -398,6 +413,10 @@ function EntranceGodhandMediator:enterCrusadeView()
 		AudioEngine:getInstance():playEffect("Se_Click_Open_1", false)
 		self._crusadeSystem:tryEnter()
 	end
+end
+
+function EntranceGodhandMediator:enterDreamChallenge()
+	self._dreamChallengeSystem:tryEnter()
 end
 
 function EntranceGodhandMediator:onClickBack()

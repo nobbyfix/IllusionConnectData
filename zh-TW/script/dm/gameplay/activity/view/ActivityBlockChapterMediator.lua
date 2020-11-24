@@ -36,10 +36,6 @@ local btnTextMap = {
 		"ELITE"
 	}
 }
-local litTypeMap = {
-	NORMAL = "Normal",
-	ELITE = "Elite"
-}
 
 function ActivityBlockChapterMediator:onRegister()
 	super.onRegister(self)
@@ -717,7 +713,8 @@ end
 function ActivityBlockChapterMediator:enterCommonPoint(pointId)
 	local data = {
 		parent = self,
-		pointId = pointId
+		pointId = pointId,
+		activityId = self._activityId
 	}
 	local view = self:getInjector():getInstance("ActivityPointDetailView")
 
@@ -761,7 +758,7 @@ function ActivityBlockChapterMediator:onClickPlayStory(pointId)
 				}, {
 					rewards = reward
 				}, delegate))
-			end, true)
+			end)
 		end
 
 		AudioEngine:getInstance():playBackgroundMusic(chapterConfig.BGM)

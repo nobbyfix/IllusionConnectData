@@ -7,7 +7,51 @@ BagSystem:has("_developSystem", {
 	is = "r"
 }):injectWith("DevelopSystem")
 
-local powerReset, staminaReset, zuoHeStaminaReset, crusadeEnergyReset, summerStaminaReset, wxhStaminaReset = nil
+local PowerConfigMap = {
+	[CurrencyIdKind.kPower] = {
+		all = "Power_RecAll",
+		perMin = "Power_RecPerMin",
+		next = "Power_RecNext",
+		configId = "3",
+		tableName = "Reset"
+	},
+	[CurrencyIdKind.kAcitvityStaminaPower] = {
+		all = "Act_Power_RecAll",
+		perMin = "Act_Power_RecPerMin",
+		next = "Act_Power_RecNext",
+		configId = "AcitvityStamina_Reset",
+		tableName = "Reset"
+	},
+	[CurrencyIdKind.kAcitvityZuoHePower] = {
+		all = "Act_ZuoHe_Power_RecAll",
+		perMin = "Act_ZuoHe_Power_RecPerMin",
+		next = "Act_ZuoHe_Power_RecNext",
+		configId = "AcitvityZuoHeStamina_Reset",
+		tableName = "Reset"
+	},
+	[CurrencyIdKind.kAcitvityWxhPower] = {
+		all = "Act_Wxh_Power_RecAll",
+		perMin = "Act_Wxh_Power_RecPerMin",
+		next = "Act_Wxh_Power_RecNext",
+		configId = "AcitvityWuXiuHuiStamina_Reset",
+		tableName = "Reset"
+	},
+	[CurrencyIdKind.kAcitvitySummerPower] = {
+		all = "Act_Summer_Power_RecAll",
+		perMin = "Act_Summer_Power_RecPerMin",
+		next = "Act_Summer_Power_RecNext",
+		configId = "AcitvitySummerStamina_Reset",
+		tableName = "Reset"
+	},
+	[CurrencyIdKind.kAcitvityHalloweenPower] = {
+		all = "Act_Halloween_Power_RecAll",
+		perMin = "Act_Halloween_Power_RecPerMin",
+		next = "Act_Halloween_Power_RecNext",
+		configId = "AcitvityHalloweenStamina_Reset",
+		tableName = "Reset"
+	}
+}
+local crusadeEnergyReset = nil
 
 function BagSystem:initialize()
 	super.initialize(self)
@@ -18,12 +62,19 @@ function BagSystem:initialize()
 	}
 	self._viewVector = {}
 	self._sharedScheduler = nil
-	powerReset = self:initConfigSystem("Reset", "3")
-	staminaReset = self:initConfigSystem("Reset", "AcitvityStamina_Reset")
-	zuoHeStaminaReset = self:initConfigSystem("Reset", "AcitvityZuoHeStamina_Reset")
+	self._powerResetMap = {}
+
+	self:initPowerReset()
+
 	crusadeEnergyReset = self:initConfigSystem("Reset", "Crusade_Energy_Recovery")
-	summerStaminaReset = self:initConfigSystem("Reset", "AcitvitySummerStamina_Reset")
-	wxhStaminaReset = self:initConfigSystem("Reset", "AcitvityWuXiuHuiStamina_Reset")
+end
+
+function BagSystem:initPowerReset()
+	for k, v in pairs(PowerConfigMap) do
+		self._powerResetMap[k] = self:initConfigSystem(v.tableName, v.configId)
+	end
+
+	dump(self._powerResetMap, "initPowerReset")
 end
 
 function BagSystem:initConfigSystem(tableName, configId)
@@ -82,10 +133,45 @@ function BagSystem:clearBagTabRedPointByType(type)
 	self:getBag():clearBagTabRedByType(type)
 end
 
+function BagSystem:getPowerResetByCurrencyId(currencyId)
+	if not self._powerResetMap[currencyId] then
+		self:initPowerReset()
+	end
+
+	assert(self._powerResetMap[currencyId], "not find resetConfig in local _powerResetMap, id " .. currencyId)
+
+	return self._powerResetMap[currencyId]
+end
+
+function BagSystem:getPowerByCurrencyId(currencyId)
+	local resetConfig = PowerConfigMap[currencyId]
+
+	assert(resetConfig, "not find config in local PowerConfigMap, id " .. currencyId)
+
+	local resetSystem = self._powerResetMap[currencyId]
+	local entry = self:getEntryById(currencyId)
+	local count = 0
+	local lastRecoverTime = 0
+
+	if entry then
+		lastRecoverTime = entry.item:getLastRecoverTime()
+		count = entry.count
+
+		if count < resetSystem.limit then
+			local curTime = self._gameServerAgent:remoteTimestamp()
+			local changeCount = math.max(0, math.floor((curTime - lastRecoverTime) / resetSystem.cd))
+			count = math.min(count + changeCount, resetSystem.limit)
+		end
+	end
+
+	return count, lastRecoverTime
+end
+
 function BagSystem:getPower()
 	local entry = self:getEntryById(CurrencyIdKind.kPower)
 	local count = 0
 	local lastRecoverTime = 0
+	local resetSystem = self._powerResetMap[CurrencyIdKind.kPower]
 
 	if entry then
 		lastRecoverTime = entry.item:getLastRecoverTime()
@@ -94,7 +180,7 @@ function BagSystem:getPower()
 
 		if count < self:getRecoveryPowerLimit(level) then
 			local curTime = self._gameServerAgent:remoteTimestamp()
-			local changeCount = math.max(0, math.floor((curTime - lastRecoverTime) / powerReset.cd))
+			local changeCount = math.max(0, math.floor((curTime - lastRecoverTime) / resetSystem.cd))
 			count = math.min(count + changeCount, self:getRecoveryPowerLimit(level))
 		end
 	end
@@ -123,83 +209,23 @@ function BagSystem:getCrusadeEnergy()
 end
 
 function BagSystem:getAcitvityStaminaPower()
-	local entry = self:getEntryById(CurrencyIdKind.kAcitvityStaminaPower)
-	local count = 0
-	local lastRecoverTime = 0
-
-	if entry then
-		lastRecoverTime = entry.item:getLastRecoverTime()
-		count = entry.count
-		local resetSystem = staminaReset
-
-		if count < resetSystem.limit then
-			local curTime = self._gameServerAgent:remoteTimestamp()
-			local changeCount = math.max(0, math.floor((curTime - lastRecoverTime) / resetSystem.cd))
-			count = math.min(count + changeCount, resetSystem.limit)
-		end
-	end
-
-	return count, lastRecoverTime
+	return self:getPowerByCurrencyId(CurrencyIdKind.kAcitvityStaminaPower)
 end
 
 function BagSystem:getAcitvitySagaSupportPower()
-	local entry = self:getEntryById(CurrencyIdKind.kAcitvityZuoHePower)
-	local count = 0
-	local lastRecoverTime = 0
-
-	if entry then
-		lastRecoverTime = entry.item:getLastRecoverTime()
-		count = entry.count
-		local resetSystem = zuoHeStaminaReset
-
-		if count < resetSystem.limit then
-			local curTime = self._gameServerAgent:remoteTimestamp()
-			local changeCount = math.max(0, math.floor((curTime - lastRecoverTime) / resetSystem.cd))
-			count = math.min(count + changeCount, resetSystem.limit)
-		end
-	end
-
-	return count, lastRecoverTime
+	return self:getPowerByCurrencyId(CurrencyIdKind.kAcitvityZuoHePower)
 end
 
 function BagSystem:getAcitvityWxhSupportPower()
-	local entry = self:getEntryById(CurrencyIdKind.kAcitvityWxhPower)
-	local count = 0
-	local lastRecoverTime = 0
-
-	if entry then
-		lastRecoverTime = entry.item:getLastRecoverTime()
-		count = entry.count
-		local resetSystem = wxhStaminaReset
-
-		if count < resetSystem.limit then
-			local curTime = self._gameServerAgent:remoteTimestamp()
-			local changeCount = math.max(0, math.floor((curTime - lastRecoverTime) / resetSystem.cd))
-			count = math.min(count + changeCount, resetSystem.limit)
-		end
-	end
-
-	return count, lastRecoverTime
+	return self:getPowerByCurrencyId(CurrencyIdKind.kAcitvityWxhPower)
 end
 
 function BagSystem:getAcitvitySummerPower()
-	local entry = self:getEntryById(CurrencyIdKind.kAcitvitySummerPower)
-	local count = 0
-	local lastRecoverTime = 0
+	return self:getPowerByCurrencyId(CurrencyIdKind.kAcitvitySummerPower)
+end
 
-	if entry then
-		lastRecoverTime = entry.item:getLastRecoverTime()
-		count = entry.count
-		local resetSystem = summerStaminaReset
-
-		if count < resetSystem.limit then
-			local curTime = self._gameServerAgent:remoteTimestamp()
-			local changeCount = math.max(0, math.floor((curTime - lastRecoverTime) / resetSystem.cd))
-			count = math.min(count + changeCount, resetSystem.limit)
-		end
-	end
-
-	return count, lastRecoverTime
+function BagSystem:getAcitvityHalloweenPower()
+	return self:getPowerByCurrencyId(CurrencyIdKind.kAcitvityHalloweenPower)
 end
 
 function BagSystem:getDiamond()
@@ -948,33 +974,33 @@ local CostNotEnoughDetalMap = {
 		tip = "Tips_3010010",
 		popup = function (parent)
 		end
-	},
-	[CurrencyIdKind.kDiamond] = {
-		tip = "Error_10005",
-		popup = function (parent)
-			parent._shopSystem:tryEnter({
-				shopId = "Shop_Mall"
-			})
-		end,
-		alert = function (parent)
-			local delegate = {
-				willClose = function (self, popupMediator, data)
-					if data.response == AlertResponse.kOK then
-						parent._shopSystem:tryEnter({
-							shopId = "Shop_Mall"
-						})
-					end
-				end
-			}
-
-			self:_showAlertView(Strings:get("DiamondNotEngouh_Text"), Strings:get("DiamondNotEngouh_Content"), delegate)
-		end
-	},
-	[CurrencyIdKind.kPower] = {
-		tip = "Tips_3010015",
-		popup = function (parent)
-		end
 	}
+}
+CostNotEnoughDetalMap[CurrencyIdKind.kDiamond] = {
+	tip = "Error_10005",
+	popup = function (parent)
+		parent._shopSystem:tryEnter({
+			shopId = "Shop_Mall"
+		})
+	end,
+	alert = function (parent)
+		local delegate = {
+			willClose = function (self, popupMediator, data)
+				if data.response == AlertResponse.kOK then
+					parent._shopSystem:tryEnter({
+						shopId = "Shop_Mall"
+					})
+				end
+			end
+		}
+
+		self:_showAlertView(Strings:get("DiamondNotEngouh_Text"), Strings:get("DiamondNotEngouh_Content"), delegate)
+	end
+}
+CostNotEnoughDetalMap[CurrencyIdKind.kPower] = {
+	tip = "Tips_3010015",
+	popup = function (parent)
+	end
 }
 
 function BagSystem:checkCostEnough(costId, needCost, style)
@@ -1191,7 +1217,7 @@ function BagSystem:updateView()
 	else
 		local currencyId = obj._currencyId
 
-		if currencyId ~= CurrencyIdKind.kPower and currencyId ~= CurrencyIdKind.kAcitvityStaminaPower and currencyId ~= CurrencyIdKind.kAcitvityZuoHePower and currencyId ~= CurrencyIdKind.kAcitvityWxhPower and currencyId ~= CurrencyIdKind.kCrusadeEnergy and currencyId ~= CurrencyIdKind.kAcitvitySummerPower then
+		if not PowerConfigMap[currencyId] and currencyId ~= CurrencyIdKind.kCrusadeEnergy then
 			table.remove(self._viewVector)
 
 			return
@@ -1224,18 +1250,20 @@ function BagSystem:updateView()
 
 			textNode:setString(text)
 
+			local resetSystem = self._powerResetMap[currencyId]
+
 			if powerLimit <= curPower then
 				str1:setString("00:00:00")
 				str2:setString("00:00:00")
 			else
 				local curTime = self._gameServerAgent:remoteTimestamp()
-				local a, b = math.modf((curTime - lastRecoverTime) / powerReset.cd)
-				local remainTime = (1 - b) * powerReset.cd
+				local a, b = math.modf((curTime - lastRecoverTime) / resetSystem.cd)
+				local remainTime = (1 - b) * resetSystem.cd
 				local remainTimeStr = TimeUtil:formatTime("${HH}:${MM}:${SS}", remainTime)
 
 				str1:setString(remainTimeStr)
 
-				local allDoneTime = (powerLimit - curPower - 1) * powerReset.cd + remainTime
+				local allDoneTime = (powerLimit - curPower - 1) * resetSystem.cd + remainTime
 				local allDoneTimeStr = TimeUtil:formatTime("${HH}:${MM}:${SS}", allDoneTime)
 
 				str2:setString(allDoneTimeStr)
@@ -1244,31 +1272,14 @@ function BagSystem:updateView()
 			local recoverText = tipPanel:getChildByName("recoverText")
 
 			recoverText:setString(Strings:get("Power_RecPerMin", {
-				num = powerReset.cd / 60
+				num = resetSystem.cd / 60
 			}))
-		elseif currencyId == CurrencyIdKind.kAcitvityStaminaPower or currencyId == CurrencyIdKind.kAcitvityZuoHePower or currencyId == CurrencyIdKind.kAcitvityWxhPower or currencyId == CurrencyIdKind.kAcitvitySummerPower then
-			if currencyId == CurrencyIdKind.kAcitvityStaminaPower then
-				curPower, lastRecoverTime = self:getAcitvityStaminaPower()
-				powerLimit = staminaReset.limit
-				actRecoverCd = staminaReset.cd
-				recoverStr = "Act_Power_RecPerMin"
-			elseif currencyId == CurrencyIdKind.kAcitvityZuoHePower then
-				curPower, lastRecoverTime = self:getAcitvitySagaSupportPower()
-				powerLimit = zuoHeStaminaReset.limit
-				actRecoverCd = zuoHeStaminaReset.cd
-				recoverStr = "Act_ZuoHe_Power_RecPerMin"
-			elseif currencyId == CurrencyIdKind.kAcitvityWxhPower then
-				curPower, lastRecoverTime = self:getAcitvityWxhSupportPower()
-				powerLimit = wxhStaminaReset.limit
-				actRecoverCd = wxhStaminaReset.cd
-				recoverStr = "Act_Wxh_Power_RecPerMin"
-			elseif currencyId == CurrencyIdKind.kAcitvitySummerPower then
-				curPower, lastRecoverTime = self:getAcitvitySummerPower()
-				powerLimit = summerStaminaReset.limit
-				actRecoverCd = summerStaminaReset.cd
-				recoverStr = "Act_Summer_Power_RecPerMin"
-			end
-
+		elseif PowerConfigMap[currencyId] then
+			local resetSystem = self._powerResetMap[currencyId]
+			curPower, lastRecoverTime = self:getPowerByCurrencyId(currencyId)
+			powerLimit = resetSystem.limit
+			actRecoverCd = resetSystem.cd
+			recoverStr = PowerConfigMap[currencyId].perMin
 			text = curPower .. "/" .. powerLimit
 
 			textNode:setString(text)

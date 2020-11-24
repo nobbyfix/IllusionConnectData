@@ -217,16 +217,7 @@ end
 function ShopBuyPackageMediator:refreshIcon()
 	self._iconLayout:removeAllChildren()
 
-	local buyIconPath = self._data:getBuyIcon()
-	local iconPath = self._data:getIcon()
-	local icon = nil
-
-	if self._data._id == "PackageShop_1" then
-		iconPath = "asset/ui/shop/sd_zg_tianyandefenghuang1.png"
-		icon = ccui.ImageView:create(iconPath)
-	else
-		icon = ccui.ImageView:create(iconPath, 1)
-	end
+	local icon = ccui.ImageView:create(self._data:getBuyIcon(), ccui.TextureResType.localType)
 
 	if icon then
 		self._iconLayout:addChild(icon)

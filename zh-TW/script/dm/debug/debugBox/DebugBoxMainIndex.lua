@@ -63,7 +63,8 @@ DebugBoxMainIndex = {
 				"dev",
 				{
 					"打开测试面板",
-					"修改服务器时间"
+					"修改服务器时间",
+					"调cross和游戏服时间"
 				}
 			},
 			{
@@ -244,7 +245,8 @@ DebugBoxMainIndex = {
 					"增加boss挑战次数",
 					"挑战boss",
 					"社团Boss通关到",
-					"清空单日疲劳英雄"
+					"清空单日疲劳英雄",
+					"开启社团打榜活动"
 				}
 			},
 			{
@@ -282,6 +284,10 @@ DebugBoxMainIndex = {
 			{
 				"修改服务器时间",
 				"changeServerTime"
+			},
+			{
+				"调cross和游戏服时间",
+				"changeTagetServerTime"
 			},
 			{
 				"加核心",
@@ -450,6 +456,10 @@ DebugBoxMainIndex = {
 			{
 				"增加挑战次数",
 				"BlockSpAddTimes"
+			},
+			{
+				"开启社团打榜活动",
+				"ClubResourcesBattleStart"
 			},
 			{
 				"一键跳过关卡",

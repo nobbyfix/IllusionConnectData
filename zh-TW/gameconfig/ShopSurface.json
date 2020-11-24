@@ -183,5 +183,25 @@
         "ServerCondition": "",
         "ClientCondition": "",
         "Hide": 1
+    },
+    "Surface_100": {
+        "Surface": "Surface_MGNa_2",
+        "BackGroundImg": "sd_pf_bg",
+        "Cost": [
+            {
+                "amount": 68,
+                "code": "IR_Surface"
+            }
+        ],
+        "Sort": 4,
+        "TimeType": {
+            "start": "2020-11-18 05:00:00",
+            "amount": 1,
+            "end": "2020-11-25 05:00:00",
+            "type": "limit"
+        },
+        "ServerCondition": "",
+        "ClientCondition": "",
+        "Hide": 0
     }
 }

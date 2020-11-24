@@ -9403,5 +9403,77 @@
             "StageSp_Crystal": 1
         },
         "Desc": ""
+    },
+    "StarSE_KMLa_6": {
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Name": "",
+        "Icon": "",
+        "Parameter": {
+            "slot": "Hero_Proud_KMLa",
+            "after": "Hero_Proud_KMLa_EX",
+            "before": "Hero_Proud_KMLa"
+        },
+        "Desc": "StarSE_KMLa_6_Desc"
+    },
+    "StarSE_YSLBin_6": {
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Name": "",
+        "Icon": "",
+        "Parameter": {
+            "slot": "Hero_Proud_YSLBin",
+            "after": "Hero_Proud_YSLBin_EX",
+            "before": "Hero_Proud_YSLBin"
+        },
+        "Desc": "StarSE_YSLBin_6_Desc"
+    },
+    "StarSE_YSLBin_4": {
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Name": "",
+        "Icon": "",
+        "Parameter": {
+            "slot": "Hero_Unique_YSLBin",
+            "after": "Hero_Unique_YSLBin_EX",
+            "before": "Hero_Unique_YSLBin"
+        },
+        "Desc": "StarSE_YSLBin_4_Desc"
+    },
+    "StarSE_KMLa_4": {
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Name": "",
+        "Icon": "",
+        "Parameter": {
+            "slot": "Hero_Unique_KMLa",
+            "after": "Hero_Unique_KMLa_EX",
+            "before": "Hero_Unique_KMLa"
+        },
+        "Desc": "StarSE_KMLa_4_Desc"
+    },
+    "StarSE_KMLa_5": {
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Name": "",
+        "Icon": "",
+        "Parameter": {
+            "slot": "Hero_PBattle_KMLa",
+            "after": "Hero_PBattle_KMLa_EX",
+            "before": "Hero_PBattle_KMLa"
+        },
+        "Desc": "StarSE_KMLa_5_Desc"
+    },
+    "StarSE_YSLBin_5": {
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Name": "",
+        "Icon": "",
+        "Parameter": {
+            "slot": "Hero_PBattle_YSLBin",
+            "after": "Hero_PBattle_YSLBin_EX",
+            "before": "Hero_PBattle_YSLBin"
+        },
+        "Desc": "StarSE_YSLBin_5_Desc"
     }
 }

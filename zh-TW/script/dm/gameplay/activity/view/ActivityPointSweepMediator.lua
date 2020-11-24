@@ -26,10 +26,6 @@ local kTextColor = {
 	Green = cc.c3b(205, 250, 100),
 	Red = cc.c3b(255, 135, 135)
 }
-local litTypeMap = {
-	NORMAL = "Normal",
-	ELITE = "Elite"
-}
 
 function ActivityPointSweepMediator:initialize()
 	super.initialize(self)
@@ -196,7 +192,7 @@ function ActivityPointSweepMediator:refreshView()
 
 	local text = endView:getChildByFullName("content.content.Text")
 
-	if count < self._sweepData.param.wipeTimes and self._needNum <= hasItemNum then
+	if count < self._sweepData.param.wipeTimes and self._needNum <= hasItemNum and self._needNum ~= 0 then
 		text:setString(Strings:get("Sweep_Target_AllDone"))
 	end
 
@@ -541,7 +537,7 @@ function ActivityPointSweepMediator:onSweepBtn(sender, type)
 
 			self:refreshView()
 		end
-	end, true)
+	end)
 end
 
 function ActivityPointSweepMediator:onBackBtn(sender, type)

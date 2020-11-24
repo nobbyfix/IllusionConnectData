@@ -2036,26 +2036,12 @@
         "ResourceText": "Resource_TPGZhu_3",
         "Text": "Source_HeroStory"
     },
-    "IHF_DCJKang_1": {
-        "URL": "",
-        "ResourceType": 0,
-        "Isturn": 0,
-        "ResourceText": "Source_Activity",
-        "Text": "Source_Activity"
-    },
     "IHF_SDTZi_4": {
         "URL": "view://HeroStoryEnterView&viewType=push&heroId=SDTZi&index=3",
         "ResourceType": 4,
         "Isturn": 1,
         "ResourceText": "Resource_SDTZi_4",
         "Text": "Source_HeroStory"
-    },
-    "IHF_KMLa_1": {
-        "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_Diamond_1",
-        "ResourceType": 1,
-        "Isturn": 1,
-        "ResourceText": "Resource_DrawCard",
-        "Text": "Source_Gamble"
     },
     "IHF_KMLa_2": {
         "URL": "view://HeroStoryEnterView&viewType=push&heroId=KMLa",
@@ -8251,5 +8237,54 @@
         "Isturn": 1,
         "ResourceText": "Resource_BengHuai",
         "Text": "Source_Block"
+    },
+    "IHF_KMLa_1": {
+        "URL": "",
+        "ResourceType": "",
+        "Isturn": "",
+        "ResourceText": "Source_Activity",
+        "Text": "Source_Activity"
+    },
+    "IHF_DCJKang_1": {
+        "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_Diamond_1",
+        "ResourceType": 1,
+        "Isturn": 1,
+        "ResourceText": "Resource_DrawCard",
+        "Text": "Source_Gamble"
+    },
+    "IHF_YSLBin_1": {
+        "URL": "",
+        "ResourceType": "",
+        "Isturn": "",
+        "ResourceText": "Source_Activity",
+        "Text": "Source_Activity"
+    },
+    "IM_HalloweenBox": {
+        "URL": "",
+        "ResourceType": 0,
+        "Isturn": 0,
+        "ResourceText": "Source_IM_HalloweenBox",
+        "Text": "Source_IM_HalloweenBox_Desc"
+    },
+    "IM_HalloweenExchange_2": {
+        "URL": "",
+        "ResourceType": 0,
+        "Isturn": 0,
+        "ResourceText": "Source_IM_HalloweenExchange_2",
+        "Text": "Source_IM_HalloweenExchange_2_Desc"
+    },
+    "IM_HalloweenExchange_3": {
+        "URL": "",
+        "ResourceType": 0,
+        "Isturn": 0,
+        "ResourceText": "Source_IM_HalloweenExchange_3",
+        "Text": "Source_IM_HalloweenExchange_3_Desc"
+    },
+    "IM_HalloweenExchange_1": {
+        "URL": "",
+        "ResourceType": 0,
+        "Isturn": 0,
+        "ResourceText": "Source_IM_HalloweenExchange_1",
+        "Text": "Source_IM_HalloweenExchange_1_Desc"
     }
 }

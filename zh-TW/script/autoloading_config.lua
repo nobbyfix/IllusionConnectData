@@ -96,9 +96,19 @@ local mappings = {
 		name = "ClubChangeNameTipMediator",
 		type = "@C"
 	},
+	ClubResourcesBattleGainRewardMediator = {
+		url = "dm.gameplay.club.view.ClubResourcesBattleGainRewardMediator",
+		name = "ClubResourcesBattleGainRewardMediator",
+		type = "@C"
+	},
 	ClubBossShowAllBossMediator = {
 		url = "dm.gameplay.club.view.ClubBossShowAllBossMediator",
 		name = "ClubBossShowAllBossMediator",
+		type = "@C"
+	},
+	ClubResourcesBattleMediator = {
+		url = "dm.gameplay.club.view.ClubResourcesBattleMediator",
+		name = "ClubResourcesBattleMediator",
 		type = "@C"
 	},
 	ClubInfoTipMediator = {
@@ -971,6 +981,11 @@ local mappings = {
 		name = "AccumulatedLoginMediator",
 		type = "@C"
 	},
+	MonsterShopPopupMediator = {
+		url = "dm.gameplay.activity.view.MonsterShopPopupMediator",
+		name = "MonsterShopPopupMediator",
+		type = "@C"
+	},
 	ActivityExchangeTipMediator = {
 		url = "dm.gameplay.activity.view.ActivityExchangeTipMediator",
 		name = "ActivityExchangeTipMediator",
@@ -1031,6 +1046,11 @@ local mappings = {
 		name = "BannerActivityMediator",
 		type = "@C"
 	},
+	ActivityBlockWsjMediator = {
+		url = "dm.gameplay.activity.view.ActivityBlockWsjMediator",
+		name = "ActivityBlockWsjMediator",
+		type = "@C"
+	},
 	ActivitySagaSupportRankRewardWxhMediator = {
 		url = "dm.gameplay.activity.view.ActivitySagaSupportRankRewardWxhMediator",
 		name = "ActivitySagaSupportRankRewardWxhMediator",
@@ -1079,6 +1099,11 @@ local mappings = {
 	ActivitySagaSupportStageMediator = {
 		url = "dm.gameplay.activity.view.ActivitySagaSupportStageMediator",
 		name = "ActivitySagaSupportStageMediator",
+		type = "@C"
+	},
+	ActivityBlockMonsterShopMediator = {
+		url = "dm.gameplay.activity.view.ActivityBlockMonsterShopMediator",
+		name = "ActivityBlockMonsterShopMediator",
 		type = "@C"
 	},
 	ActivityStageUnFinishMediator = {
@@ -1161,6 +1186,11 @@ local mappings = {
 		name = "ActivityEggSuccMediator",
 		type = "@C"
 	},
+	ActivityColorEggMediator = {
+		url = "dm.gameplay.activity.view.ActivityColorEggMediator",
+		name = "ActivityColorEggMediator",
+		type = "@C"
+	},
 	LoginActivityMediator = {
 		url = "dm.gameplay.activity.view.LoginActivityMediator",
 		name = "LoginActivityMediator",
@@ -1174,6 +1204,11 @@ local mappings = {
 	FreeStaminaActivityMediator = {
 		url = "dm.gameplay.activity.view.FreeStaminaActivityMediator",
 		name = "FreeStaminaActivityMediator",
+		type = "@C"
+	},
+	ActivityBlockMonsterShopBuyItemMediator = {
+		url = "dm.gameplay.activity.view.ActivityBlockMonsterShopBuyItemMediator",
+		name = "ActivityBlockMonsterShopBuyItemMediator",
 		type = "@C"
 	},
 	ActivityHeroCollectMediator = {
@@ -1221,6 +1256,11 @@ local mappings = {
 		name = "ActivitySagaBatchUseSellMediator",
 		type = "@C"
 	},
+	LoginActivityWsjMediator = {
+		url = "dm.gameplay.activity.view.LoginActivityWsjMediator",
+		name = "LoginActivityWsjMediator",
+		type = "@C"
+	},
 	EightDayLoginMediator = {
 		url = "dm.gameplay.activity.view.EightDayLoginMediator",
 		name = "EightDayLoginMediator",
@@ -1249,6 +1289,11 @@ local mappings = {
 	ActivitySagaSupportScheduleMediator = {
 		url = "dm.gameplay.activity.view.ActivitySagaSupportScheduleMediator",
 		name = "ActivitySagaSupportScheduleMediator",
+		type = "@C"
+	},
+	ActivityBlockMapWsjMediator = {
+		url = "dm.gameplay.activity.view.ActivityBlockMapWsjMediator",
+		name = "ActivityBlockMapWsjMediator",
 		type = "@C"
 	},
 	ActivityTaskDailyMediator = {
@@ -1414,6 +1459,46 @@ local mappings = {
 	StoryEditorMediator = {
 		url = "dm.gameplay.storyeditor.StoryEditorMediator",
 		name = "StoryEditorMediator",
+		type = "@C"
+	},
+	DreamChallengeSystem = {
+		url = "dm.gameplay.dreamChallenge.controller.DreamChallengeSystem",
+		name = "DreamChallengeSystem",
+		type = "@C"
+	},
+	DreamChallengePointMediator = {
+		url = "dm.gameplay.dreamChallenge.view.DreamChallengePointMediator",
+		name = "DreamChallengePointMediator",
+		type = "@C"
+	},
+	DreamChallengeBuffDetailMediator = {
+		url = "dm.gameplay.dreamChallenge.view.DreamChallengeBuffDetailMediator",
+		name = "DreamChallengeBuffDetailMediator",
+		type = "@C"
+	},
+	DreamChallengeDetailMediator = {
+		url = "dm.gameplay.dreamChallenge.view.DreamChallengeDetailMediator",
+		name = "DreamChallengeDetailMediator",
+		type = "@C"
+	},
+	DreamChallengePassMediator = {
+		url = "dm.gameplay.dreamChallenge.view.DreamChallengePassMediator",
+		name = "DreamChallengePassMediator",
+		type = "@C"
+	},
+	DreamChallengeBattleEndMediator = {
+		url = "dm.gameplay.dreamChallenge.view.DreamChallengeBattleEndMediator",
+		name = "DreamChallengeBattleEndMediator",
+		type = "@C"
+	},
+	DreamChallengeMainMediator = {
+		url = "dm.gameplay.dreamChallenge.view.DreamChallengeMainMediator",
+		name = "DreamChallengeMainMediator",
+		type = "@C"
+	},
+	DreamChallengeTeamMediator = {
+		url = "dm.gameplay.dreamChallenge.view.DreamChallengeTeamMediator",
+		name = "DreamChallengeTeamMediator",
 		type = "@C"
 	},
 	ShopPackageMediator = {
@@ -1854,6 +1939,11 @@ local mappings = {
 	RedPointRefreshCommond = {
 		url = "dm.gameplay.redpoint.RedPointRefreshCommond",
 		name = "RedPointRefreshCommond",
+		type = "@C"
+	},
+	MainTeamMediator = {
+		url = "dm.gameplay.team.view.MainTeamMediator",
+		name = "MainTeamMediator",
 		type = "@C"
 	},
 	StagePracticePointMediator = {

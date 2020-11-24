@@ -731,7 +731,11 @@ function ShopMainMediator:resetView()
 				self._shopSystem:requestGetPackageShop()
 			else
 				view:setVisible(true)
-				view.mediator:mapEventListeners()
+
+				if view.mediator.unmapEventListeners then
+					view.mediator:mapEventListeners()
+				end
+
 				view.mediator:refreshData({
 					shopId = self._shopId,
 					enterData = self._enterData,
@@ -780,7 +784,11 @@ function ShopMainMediator:showSurfaceShop()
 	end
 
 	self._viewCache[shopId]:setVisible(true)
-	self._viewCache[shopId].mediator:mapEventListeners()
+
+	if self._viewCache[shopId].mediator.unmapEventListeners then
+		self._viewCache[shopId].mediator:mapEventListeners()
+	end
+
 	self._viewCache[shopId].mediator:refreshData()
 	self._viewCache[shopId].mediator:refreshView()
 end
@@ -809,7 +817,11 @@ function ShopMainMediator:showPackageShop()
 	end
 
 	self._viewCache[shopId]:setVisible(true)
-	self._viewCache[shopId].mediator:mapEventListeners()
+
+	if self._viewCache[shopId].mediator.unmapEventListeners then
+		self._viewCache[shopId].mediator:mapEventListeners()
+	end
+
 	self._viewCache[shopId].mediator:refreshData({
 		shopId = self._shopId,
 		enterData = self._enterData,

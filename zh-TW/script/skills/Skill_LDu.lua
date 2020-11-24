@@ -645,7 +645,8 @@ all.Skill_LDu_Saba_Normal = {
 			local attacker = global.LoadUnit(_env, _env.ACTOR, "ATTACKER")
 			local defender = global.LoadUnit(_env, _env.TARGET, "DEFENDER")
 			local damage = global.EvalDamage(_env, attacker, defender, this.dmgFactor)
-			local result = global.ApplyHPDamage(_env, _env.TARGET, damage)
+
+			global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage)
 		end)
 
 		return _env

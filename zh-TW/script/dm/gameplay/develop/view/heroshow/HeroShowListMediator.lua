@@ -26,10 +26,6 @@ local kBtnHandlers = {
 		clickAudio = "Se_Click_Tab_1",
 		func = "onClickSort"
 	},
-	["main.leftNode.sortTypeBtn"] = {
-		clickAudio = "Se_Click_Tab_1",
-		func = "onClickSortType"
-	},
 	["main.heroNode.nameBg.strengthenNode.button"] = {
 		clickAudio = "Se_Click_Common_1",
 		func = "onClickEquip"
@@ -118,7 +114,6 @@ function HeroShowListMediator:initWidgetInfo()
 	self._listNode = self._main:getChildByFullName("heroList")
 	self._buttonTip = self._heroNode:getChildByFullName("nameBg.buttonTip")
 	self._sortType = self._main:getChildByFullName("leftNode.sortBtn.text")
-	self._sortOrder = self._main:getChildByFullName("leftNode.sortTypeBtn.text")
 
 	self._heroNode:setTouchEnabled(true)
 	self._heroNode:addClickEventListener(function ()
@@ -913,9 +908,8 @@ function HeroShowListMediator:createSortView()
 	local sortStr = self._stageSystem:getSortTypeStr(sortType)
 
 	self._sortType:setString(sortStr)
-	self._sortOrder:setString(self._stageSystem:getSortOrderStr())
 	self._sortComponent:getRootNode():setVisible(false)
-	self._sortComponent:getRootNode():addTo(self._main):posite(587, 235)
+	self._sortComponent:getRootNode():addTo(self._main):posite(637, 205)
 	self._sortComponent:getRootNode():setName("SortPanel")
 end
 
@@ -1007,15 +1001,6 @@ function HeroShowListMediator:onClickSort()
 	self._stageSystem:setSortExtand(0)
 	self._sortComponent:getRootNode():setVisible(true)
 	self._sortComponent:refreshView()
-	self:refreshSortView()
-end
-
-function HeroShowListMediator:onClickSortType()
-	local sortOrder = self._stageSystem:getSortOrder()
-	sortOrder = sortOrder == 1 and 2 or 1
-
-	self._stageSystem:setSortOrder(sortOrder)
-	self._sortOrder:setString(self._stageSystem:getSortOrderStr())
 	self:refreshSortView()
 end
 

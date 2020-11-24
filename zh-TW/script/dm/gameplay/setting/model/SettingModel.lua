@@ -141,6 +141,7 @@ SettingBattleTypes = {
 	kSpStage_skill_3 = "sp_stage_skill_3",
 	kCrusade = "crusade_battle",
 	kClubStage = "club_battle",
+	kDreamStage = "dream_battle",
 	kExplore = "explore_battle",
 	kNormalStage = "normal_stage",
 	kPetRace = "hegemony_battle",
@@ -173,7 +174,8 @@ local BattleSettingSpeedKeys = {
 	[SettingBattleTypes.kSpStage_skill_3] = "sp_stage_skill_3_setting_speed",
 	[SettingBattleTypes.kCrusade] = "crusade_challenge_setting_speed",
 	[SettingBattleTypes.kActstage] = "actstage_battle_setting_speed",
-	[SettingBattleTypes.kClubStage] = "clubstage_battle_setting_speed"
+	[SettingBattleTypes.kClubStage] = "clubstage_battle_setting_speed",
+	[SettingBattleTypes.kDreamStage] = "dreamstage_battle_setting_speed"
 }
 local BattleSettingIsAutoKeys = {
 	[SettingBattleTypes.kNormalStage] = "normal_stage_setting_auto",
@@ -196,7 +198,8 @@ local BattleSettingIsAutoKeys = {
 	[SettingBattleTypes.kSpStage_skill_3] = "sp_stage_skill_3_setting_auto",
 	[SettingBattleTypes.kCrusade] = "crusade_challenge_setting_auto",
 	[SettingBattleTypes.kActstage] = "actstage_battle_setting_auto",
-	[SettingBattleTypes.kClubStage] = "clubstage_battle_setting_auto"
+	[SettingBattleTypes.kClubStage] = "clubstage_battle_setting_auto",
+	[SettingBattleTypes.kDreamStage] = "dreamstage_battle_setting_auto"
 }
 
 function SettingModel:setHpShowSetting(hpshow)

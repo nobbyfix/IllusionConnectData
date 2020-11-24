@@ -9048,5 +9048,793 @@
         "TaskIcon": "201201",
         "Destination": "view://GalleryMainView&viewType=push&tabType=1",
         "ExtraReward": ""
+    },
+    "AHalloween_AchieveMentTask_TodayLogin_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    3
+                ]
+            }
+        ],
+        "Reward": "AHalloween_AchieveMentTask_TodayLogin_1_Reward",
+        "Name": "",
+        "Desc": "AHalloween_AchieveMentTask_TodayLogin_1_Desc",
+        "OrderNum": 21,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "AHalloween_AchieveMentTask_TodayLogin_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    5
+                ]
+            }
+        ],
+        "Reward": "AHalloween_AchieveMentTask_TodayLogin_2_Reward",
+        "Name": "",
+        "Desc": "AHalloween_AchieveMentTask_TodayLogin_2_Desc",
+        "OrderNum": 22,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "AHalloween_AchieveMentTask_TodayLogin_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    7
+                ]
+            }
+        ],
+        "Reward": "AHalloween_AchieveMentTask_TodayLogin_3_Reward",
+        "Name": "",
+        "Desc": "AHalloween_AchieveMentTask_TodayLogin_3_Desc",
+        "OrderNum": 23,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "AHalloween_AchieveMentTask_TodayLogin_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    9
+                ]
+            }
+        ],
+        "Reward": "AHalloween_AchieveMentTask_TodayLogin_4_Reward",
+        "Name": "",
+        "Desc": "AHalloween_AchieveMentTask_TodayLogin_4_Desc",
+        "OrderNum": 24,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "AHalloween_AchieveMentTask_winActStage_5": {
+        "Condition": [
+            {
+                "conditionType": "Condi_winActStage",
+                "params": [
+                    "ActivityBlock_Halloween_Map"
+                ],
+                "factor1": [
+                    500
+                ]
+            }
+        ],
+        "Reward": "AHalloween_AchieveMentTask_winActStage_5_Reward",
+        "Name": "",
+        "Desc": "AHalloween_AchieveMentTask_winActStage_5_Desc",
+        "OrderNum": 10,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "AHalloween_AchieveMentTask_winActStage_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_winActStage",
+                "params": [
+                    "ActivityBlock_Halloween_Map"
+                ],
+                "factor1": [
+                    400
+                ]
+            }
+        ],
+        "Reward": "AHalloween_AchieveMentTask_winActStage_4_Reward",
+        "Name": "",
+        "Desc": "AHalloween_AchieveMentTask_winActStage_4_Desc",
+        "OrderNum": 9,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "AHalloween_AchieveMentTask_winActStage_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_winActStage",
+                "params": [
+                    "ActivityBlock_Halloween_Map"
+                ],
+                "factor1": [
+                    100
+                ]
+            }
+        ],
+        "Reward": "AHalloween_AchieveMentTask_winActStage_1_Reward",
+        "Name": "",
+        "Desc": "AHalloween_AchieveMentTask_winActStage_1_Desc",
+        "OrderNum": 6,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "AHalloween_AchieveMentTask_winActStage_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_winActStage",
+                "params": [
+                    "ActivityBlock_Halloween_Map"
+                ],
+                "factor1": [
+                    300
+                ]
+            }
+        ],
+        "Reward": "AHalloween_AchieveMentTask_winActStage_3_Reward",
+        "Name": "",
+        "Desc": "AHalloween_AchieveMentTask_winActStage_3_Desc",
+        "OrderNum": 8,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "AHalloween_AchieveMentTask_winActStage_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_winActStage",
+                "params": [
+                    "ActivityBlock_Halloween_Map"
+                ],
+                "factor1": [
+                    200
+                ]
+            }
+        ],
+        "Reward": "AHalloween_AchieveMentTask_winActStage_2_Reward",
+        "Name": "",
+        "Desc": "AHalloween_AchieveMentTask_winActStage_2_Desc",
+        "OrderNum": 7,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "AHalloween_Login14_10": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    10
+                ]
+            }
+        ],
+        "Reward": "AHalloween_Login14_10_Reward",
+        "Name": "AHalloween_Login14_10_Name",
+        "Desc": "",
+        "OrderNum": 10,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "AHalloween_Login14_11": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    11
+                ]
+            }
+        ],
+        "Reward": "AHalloween_Login14_11_Reward",
+        "Name": "AHalloween_Login14_11_Name",
+        "Desc": "",
+        "OrderNum": 11,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "AHalloween_Login14_12": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    12
+                ]
+            }
+        ],
+        "Reward": "AHalloween_Login14_12_Reward",
+        "Name": "AHalloween_Login14_12_Name",
+        "Desc": "",
+        "OrderNum": 12,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "AHalloween_Login14_13": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    13
+                ]
+            }
+        ],
+        "Reward": "AHalloween_Login14_13_Reward",
+        "Name": "AHalloween_Login14_13_Name",
+        "Desc": "",
+        "OrderNum": 13,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "AHalloween_Login14_14": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    14
+                ]
+            }
+        ],
+        "Reward": "AHalloween_Login14_14_Reward",
+        "Name": "AHalloween_Login14_14_Name",
+        "Desc": "",
+        "OrderNum": 14,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "AHalloween_Login14_8": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    8
+                ]
+            }
+        ],
+        "Reward": "AHalloween_Login14_8_Reward",
+        "Name": "AHalloween_Login14_8_Name",
+        "Desc": "",
+        "OrderNum": 8,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "AHalloween_Login14_9": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    9
+                ]
+            }
+        ],
+        "Reward": "AHalloween_Login14_9_Reward",
+        "Name": "AHalloween_Login14_9_Name",
+        "Desc": "",
+        "OrderNum": 9,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "AHalloween_Login14_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    2
+                ]
+            }
+        ],
+        "Reward": "AHalloween_Login14_2_Reward",
+        "Name": "AHalloween_Login14_2_Name",
+        "Desc": "",
+        "OrderNum": 2,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "AHalloween_Login14_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    3
+                ]
+            }
+        ],
+        "Reward": "AHalloween_Login14_3_Reward",
+        "Name": "AHalloween_Login14_3_Name",
+        "Desc": "",
+        "OrderNum": 3,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "AHalloween_Login14_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Reward": "AHalloween_Login14_1_Reward",
+        "Name": "AHalloween_Login14_1_Name",
+        "Desc": "",
+        "OrderNum": 1,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "AHalloween_Login14_6": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    6
+                ]
+            }
+        ],
+        "Reward": "AHalloween_Login14_6_Reward",
+        "Name": "AHalloween_Login14_6_Name",
+        "Desc": "",
+        "OrderNum": 6,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "AHalloween_Login14_7": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    7
+                ]
+            }
+        ],
+        "Reward": "AHalloween_Login14_7_Reward",
+        "Name": "AHalloween_Login14_7_Name",
+        "Desc": "",
+        "OrderNum": 7,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "AHalloween_Login14_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    4
+                ]
+            }
+        ],
+        "Reward": "AHalloween_Login14_4_Reward",
+        "Name": "AHalloween_Login14_4_Name",
+        "Desc": "",
+        "OrderNum": 4,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "AHalloween_Login14_5": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    5
+                ]
+            }
+        ],
+        "Reward": "AHalloween_Login14_5_Reward",
+        "Name": "AHalloween_Login14_5_Name",
+        "Desc": "",
+        "OrderNum": 5,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "AHalloween_DailyTask_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_winActBossStage",
+                "params": [
+                    "ActivityBlock_Halloween_Map"
+                ],
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Reward": "AHalloween_DailyTask_2_Reward",
+        "Name": "AHalloween_DailyTask_2_Name",
+        "Desc": "AHalloween_DailyTask_2_Desc",
+        "OrderNum": 2,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "AHalloween_DailyTask_5": {
+        "Condition": [
+            {
+                "factorStr1": [
+                    "AHalloween_DailyTask_1",
+                    "AHalloween_DailyTask_2",
+                    "AHalloween_DailyTask_3",
+                    "AHalloween_DailyTask_4"
+                ],
+                "conditionType": "Condi_FinishTask",
+                "factor1": [
+                    0
+                ]
+            }
+        ],
+        "Reward": "AHalloween_DailyTask_5_Reward",
+        "Name": "AHalloween_DailyTask_5_Name",
+        "Desc": "AHalloween_DailyTask_5_Desc",
+        "OrderNum": 5,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "AHalloween_AchieveMentTask_winActBossStage_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_winActBossStage",
+                "params": [
+                    "ActivityBlock_Halloween_Map"
+                ],
+                "factor1": [
+                    15
+                ]
+            }
+        ],
+        "Reward": "AHalloween_AchieveMentTask_winActBossStage_1_Reward",
+        "Name": "",
+        "Desc": "AHalloween_AchieveMentTask_winActBossStage_1_Desc",
+        "OrderNum": 11,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "AHalloween_AchieveMentTask_winActBossStage_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_winActBossStage",
+                "params": [
+                    "ActivityBlock_Halloween_Map"
+                ],
+                "factor1": [
+                    30
+                ]
+            }
+        ],
+        "Reward": "AHalloween_AchieveMentTask_winActBossStage_2_Reward",
+        "Name": "",
+        "Desc": "AHalloween_AchieveMentTask_winActBossStage_2_Desc",
+        "OrderNum": 12,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "AHalloween_AchieveMentTask_winActBossStage_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_winActBossStage",
+                "params": [
+                    "ActivityBlock_Halloween_Map"
+                ],
+                "factor1": [
+                    45
+                ]
+            }
+        ],
+        "Reward": "AHalloween_AchieveMentTask_winActBossStage_3_Reward",
+        "Name": "",
+        "Desc": "AHalloween_AchieveMentTask_winActBossStage_3_Desc",
+        "OrderNum": 13,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "AHalloween_AchieveMentTask_winActBossStage_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_winActBossStage",
+                "params": [
+                    "ActivityBlock_Halloween_Map"
+                ],
+                "factor1": [
+                    60
+                ]
+            }
+        ],
+        "Reward": "AHalloween_AchieveMentTask_winActBossStage_4_Reward",
+        "Name": "",
+        "Desc": "AHalloween_AchieveMentTask_winActBossStage_4_Desc",
+        "OrderNum": 14,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "AHalloween_AchieveMentTask_winActBossStage_5": {
+        "Condition": [
+            {
+                "conditionType": "Condi_winActBossStage",
+                "params": [
+                    "ActivityBlock_Halloween_Map"
+                ],
+                "factor1": [
+                    75
+                ]
+            }
+        ],
+        "Reward": "AHalloween_AchieveMentTask_winActBossStage_5_Reward",
+        "Name": "",
+        "Desc": "AHalloween_AchieveMentTask_winActBossStage_5_Desc",
+        "OrderNum": 15,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "AHalloween_AchieveMentTask_StageStarSum_5": {
+        "Condition": [
+            {
+                "conditionType": "Condi_AhalloweenStageStarSum",
+                "params": [
+                    "ActivityBlock_Halloween_Map"
+                ],
+                "factor1": [
+                    50
+                ]
+            }
+        ],
+        "Reward": "AHalloween_AchieveMentTask_StageStarSum_5_Reward",
+        "Name": "",
+        "Desc": "AHalloween_AchieveMentTask_StageStarSum_5_Desc",
+        "OrderNum": 5,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "AHalloween_AchieveMentTask_StageStarSum_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_AhalloweenStageStarSum",
+                "params": [
+                    "ActivityBlock_Halloween_Map"
+                ],
+                "factor1": [
+                    40
+                ]
+            }
+        ],
+        "Reward": "AHalloween_AchieveMentTask_StageStarSum_4_Reward",
+        "Name": "",
+        "Desc": "AHalloween_AchieveMentTask_StageStarSum_4_Desc",
+        "OrderNum": 4,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "AHalloween_AchieveMentTask_StageStarSum_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_AhalloweenStageStarSum",
+                "params": [
+                    "ActivityBlock_Halloween_Map"
+                ],
+                "factor1": [
+                    30
+                ]
+            }
+        ],
+        "Reward": "AHalloween_AchieveMentTask_StageStarSum_3_Reward",
+        "Name": "",
+        "Desc": "AHalloween_AchieveMentTask_StageStarSum_3_Desc",
+        "OrderNum": 3,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "AHalloween_AchieveMentTask_StageStarSum_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_AhalloweenStageStarSum",
+                "params": [
+                    "ActivityBlock_Halloween_Map"
+                ],
+                "factor1": [
+                    20
+                ]
+            }
+        ],
+        "Reward": "AHalloween_AchieveMentTask_StageStarSum_2_Reward",
+        "Name": "",
+        "Desc": "AHalloween_AchieveMentTask_StageStarSum_2_Desc",
+        "OrderNum": 2,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "AHalloween_AchieveMentTask_StageStarSum_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_AhalloweenStageStarSum",
+                "params": [
+                    "ActivityBlock_Halloween_Map"
+                ],
+                "factor1": [
+                    10
+                ]
+            }
+        ],
+        "Reward": "AHalloween_AchieveMentTask_StageStarSum_1_Reward",
+        "Name": "",
+        "Desc": "AHalloween_AchieveMentTask_StageStarSum_1_Desc",
+        "OrderNum": 1,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "AHalloween_AchieveMentTask_ExchangeAchieve_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_AhalloweenExchangeAchieve",
+                "factor1": [
+                    5000
+                ]
+            }
+        ],
+        "Reward": "AHalloween_AchieveMentTask_ExchangeAchieve_1_Reward",
+        "Name": "",
+        "Desc": "AHalloween_AchieveMentTask_ExchangeAchieve_1_Desc",
+        "OrderNum": 16,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "AHalloween_AchieveMentTask_ExchangeAchieve_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_AhalloweenExchangeAchieve",
+                "factor1": [
+                    15000
+                ]
+            }
+        ],
+        "Reward": "AHalloween_AchieveMentTask_ExchangeAchieve_3_Reward",
+        "Name": "",
+        "Desc": "AHalloween_AchieveMentTask_ExchangeAchieve_3_Desc",
+        "OrderNum": 18,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "AHalloween_AchieveMentTask_ExchangeAchieve_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_AhalloweenExchangeAchieve",
+                "factor1": [
+                    10000
+                ]
+            }
+        ],
+        "Reward": "AHalloween_AchieveMentTask_ExchangeAchieve_2_Reward",
+        "Name": "",
+        "Desc": "AHalloween_AchieveMentTask_ExchangeAchieve_2_Desc",
+        "OrderNum": 17,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "AHalloween_AchieveMentTask_ExchangeAchieve_5": {
+        "Condition": [
+            {
+                "conditionType": "Condi_AhalloweenExchangeAchieve",
+                "factor1": [
+                    30000
+                ]
+            }
+        ],
+        "Reward": "AHalloween_AchieveMentTask_ExchangeAchieve_5_Reward",
+        "Name": "",
+        "Desc": "AHalloween_AchieveMentTask_ExchangeAchieve_5_Desc",
+        "OrderNum": 20,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "AHalloween_AchieveMentTask_ExchangeAchieve_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_AhalloweenExchangeAchieve",
+                "factor1": [
+                    20000
+                ]
+            }
+        ],
+        "Reward": "AHalloween_AchieveMentTask_ExchangeAchieve_4_Reward",
+        "Name": "",
+        "Desc": "AHalloween_AchieveMentTask_ExchangeAchieve_4_Desc",
+        "OrderNum": 19,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "AHalloween_DailyTask_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_winActStage",
+                "params": [
+                    "ActivityBlock_Halloween_Map"
+                ],
+                "factor1": [
+                    10
+                ]
+            }
+        ],
+        "Reward": "AHalloween_DailyTask_1_Reward",
+        "Name": "AHalloween_DailyTask_1_Name",
+        "Desc": "AHalloween_DailyTask_1_Desc",
+        "OrderNum": 1,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "AHalloween_DailyTask_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TowerEnter",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Reward": "AHalloween_DailyTask_3_Reward",
+        "Name": "AHalloween_DailyTask_3_Name",
+        "Desc": "AHalloween_DailyTask_3_Desc",
+        "OrderNum": 3,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "AHalloween_DailyTask_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroDate",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Reward": "AHalloween_DailyTask_4_Reward",
+        "Name": "AHalloween_DailyTask_4_Name",
+        "Desc": "AHalloween_DailyTask_4_Desc",
+        "OrderNum": 4,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
     }
 }

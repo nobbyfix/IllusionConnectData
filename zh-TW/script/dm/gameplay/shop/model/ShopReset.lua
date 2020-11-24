@@ -130,11 +130,17 @@ function ShopReset:getDesc()
 end
 
 function ShopReset:getIcon()
-	return self._config.Icon .. ".png"
+	return "asset/ui/shop/" .. self._config.Icon .. ".png"
 end
 
 function ShopReset:getBuyIcon()
-	return "asset/ui/shop/" .. self._config.Icon .. ".png"
+	local path = self._config.WindowIcon
+
+	if path and path ~= "" then
+		return "asset/ui/shop/" .. path .. ".png"
+	end
+
+	return self:getIcon()
 end
 
 function ShopReset:getQuality()

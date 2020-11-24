@@ -121,21 +121,33 @@ local kExtResponseMap = {
 		entry = ViewAreaEntry:new("CarnivalView")
 	},
 	ActivityBlockView = {
-		funcName = "tryEnterEaster",
+		funcName = "complexActivityTryEnter",
 		instanceName = "ActivitySystem",
-		funcCheck = "checkEaster",
+		funcCheck = "checkComplexActivity",
 		entry = ViewAreaEntry:new("ActivityBlockView")
 	},
 	ActivityBlockSupportView = {
-		funcName = "urlTryEnter",
+		funcName = "complexActivityTryEnter",
 		instanceName = "ActivitySystem",
-		funcCheck = "checkSupport",
+		funcCheck = "checkComplexActivity",
 		entry = ViewAreaEntry:new("ActivityBlockSupportView")
 	},
-	ActivityBlockSummerView = {
-		funcName = "tryEnterSummer",
+	ActivityBlockHalloweenView = {
+		funcName = "complexActivityTryEnter",
 		instanceName = "ActivitySystem",
-		funcCheck = "checkSummer",
+		funcCheck = "checkComplexActivity",
+		entry = ViewAreaEntry:new("ActivityBlockHalloweenView")
+	},
+	ActivityBlockMonsterShopView = {
+		funcName = "tryEnterBlockMonsterShopView",
+		instanceName = "ActivitySystem",
+		funcCheck = "checkComplexActivity",
+		entry = ViewAreaEntry:new("ActivityBlockMonsterShopView")
+	},
+	ActivityBlockSummerView = {
+		funcName = "complexActivityTryEnter",
+		instanceName = "ActivitySystem",
+		funcCheck = "checkComplexActivity",
 		entry = ViewAreaEntry:new("ActivityBlockSummerView")
 	},
 	ExploreView = {
@@ -205,6 +217,11 @@ local kExtResponseMap = {
 		instanceName = "BuildingSystem",
 		funcName = "tryEnterBuyDecorate",
 		entry = ViewAreaEntry:new("BuildingBuyDecorateView")
+	},
+	BuildingOverviewView = {
+		instanceName = "BuildingSystem",
+		funcName = "tryEnterOverview",
+		entry = ViewAreaEntry:new("BuildingOverviewView")
 	},
 	CrusadeView = {
 		instanceName = "CrusadeSystem",
@@ -403,7 +420,7 @@ function UrlEntryManage.checkEnabledWithUserData(urlString)
 	if config then
 		local instance = DmGame:getInstance()._injector:getInstance(config.instanceName)
 
-		if instance and config.funcCheck then
+		if instance then
 			if config.targetInstance then
 				local name = "get" .. config.targetInstance
 				instance = instance[name](instance)
@@ -422,4 +439,52 @@ function UrlEntryManage.checkEnabledWithUserData(urlString)
 	end
 
 	return true
+end
+
+function UrlEntryManage.checkLeftTimesWithUserData(urlString)
+	if urlString == nil then
+		return nil
+	end
+
+	local pattern = "^(view://([%w_-%./]+))(.*)$"
+	urlString = string.gsub(urlString, "^%s*(.-)%s*$", "%1")
+	local matchResult = {
+		string.find(urlString, pattern)
+	}
+
+	if #matchResult < 2 then
+		return nil
+	end
+
+	local page = matchResult[3]
+	local urlParams = {}
+	local paramString = matchResult[5]
+
+	while paramString ~= nil do
+		paramString = UrlEntryManage.processNextParam(urlParams, paramString)
+	end
+
+	local viewName = string.gsub(page, "view://", "")
+	local config = kExtResponseMap[viewName]
+
+	if config then
+		local instance = DmGame:getInstance()._injector:getInstance(config.instanceName)
+
+		if instance then
+			if config.targetInstance then
+				local name = "get" .. config.targetInstance
+				instance = instance[name](instance)
+			end
+
+			local funcCheck = config.funcCheckleftTime or "checkLeftCount"
+
+			if instance[funcCheck] then
+				local leftCount, tip = instance[funcCheck](instance, urlParams)
+
+				return leftCount, tip
+			end
+		end
+	end
+
+	return nil, viewName
 end

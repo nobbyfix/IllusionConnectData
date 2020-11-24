@@ -1349,5 +1349,19 @@
         "AchieveType1": "CUSTOM",
         "ConditionType2": "",
         "AchieveType2": ""
+    },
+    "Condi_AhalloweenStageStarSum": {
+        "EffectDesc": "Condi_AhalloweenStageStarSum_Desc",
+        "ConditionType1": "starCount.?1",
+        "AchieveType1": "CUSTOM",
+        "ConditionType2": "",
+        "AchieveType2": ""
+    },
+    "Condi_AhalloweenExchangeAchieve": {
+        "EffectDesc": "Condi_AhalloweenExchangeAchieve_Desc",
+        "ConditionType1": "player.bag.items.IM_HalloweenExchange_4.count",
+        "AchieveType1": "INCREASE",
+        "ConditionType2": "",
+        "AchieveType2": ""
     }
 }

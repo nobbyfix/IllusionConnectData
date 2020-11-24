@@ -68,6 +68,9 @@ DevelopSystem:has("_crusadeSystem", {
 DevelopSystem:has("_rankSystem", {
 	is = "r"
 }):injectWith("RankSystem")
+DevelopSystem:has("_dreamSystem", {
+	is = "r"
+}):injectWith("DreamChallengeSystem")
 
 function DevelopSystem:initialize()
 	super.initialize(self)
@@ -85,7 +88,6 @@ function DevelopSystem:initSystem()
 	self._masterSystem = MasterSystem:new(self)
 	self._equipSystem = EquipSystem:new(self)
 	self._kerenlSystem = KernelSystem:new(self)
-	self._mazeSystem = MazeSystem:new(self)
 end
 
 function DevelopSystem:userInject(injector)
@@ -325,6 +327,10 @@ function DevelopSystem:syncPlayer(data, isDiff)
 		self._rankSystem:synchronizeRankRewards(data.rankRewards)
 	end
 
+	if data.dreamChallenge then
+		self._dreamSystem:synchronize(data.dreamChallenge)
+	end
+
 	self:dispatch(Event:new(EVT_PLAYER_SYNCHRONIZED))
 	self:checkPlayerLevelUp(playerLevelUpData)
 end
@@ -393,6 +399,10 @@ function DevelopSystem:syncDeleteData(data)
 
 	if data and data.playerCrusade then
 		self._crusadeSystem:delete(data.playerCrusade)
+	end
+
+	if data and data.dreamChallenge then
+		self._dreamSystem:delete(data.dreamChallenge)
 	end
 
 	if data then

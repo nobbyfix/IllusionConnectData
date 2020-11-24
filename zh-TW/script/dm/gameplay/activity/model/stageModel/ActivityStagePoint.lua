@@ -189,6 +189,10 @@ function ActivityStagePoint:getGuideDesc()
 	return self._config.SpecialRuleShow
 end
 
+function ActivityStagePoint:getLocation()
+	return self._config.Location
+end
+
 function ActivityStagePoint:getShowRewards()
 	local rewardId = self._config.ShowItem
 	local rewards = ConfigReader:getDataByNameIdAndKey("Reward", rewardId, "Content")

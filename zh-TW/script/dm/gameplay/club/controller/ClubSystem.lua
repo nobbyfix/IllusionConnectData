@@ -52,6 +52,7 @@ function ClubSystem:userInject(injector)
 		self:requestClubBossInfo(nil)
 	end)
 	self:refreshClubBossSummerActivityData()
+	self:requestClubBattleData(nil, false)
 end
 
 function ClubSystem:getClub()
@@ -63,8 +64,6 @@ function ClubSystem:getClubInfoOj()
 end
 
 function ClubSystem:getHasJoinClub()
-	print("是否加入社团--->", self:getClubId())
-
 	return self:getClubId() ~= ""
 end
 
@@ -618,6 +617,7 @@ function ClubSystem:createClub(clubName, headImg, func)
 	clubService:createClub(data, true, function (response)
 		if response.resCode == GS_SUCCESS then
 			self:syncClubInfo(response.data)
+			self:requestClubBattleData(nil, false)
 
 			if func then
 				func()
@@ -865,6 +865,7 @@ function ClubSystem:requestApplyEnterClub(clubId, rank, callback, enterClub)
 	clubService:requestApplyEnterClub(data, true, function (response)
 		if response.resCode == GS_SUCCESS then
 			self:syncClubInfo(response.data)
+			self:requestClubBattleData(nil, false)
 
 			if self:getHasJoinClub() then
 				self:agreeEnterClubTip(self:getName(), enterClub)
@@ -1108,6 +1109,67 @@ function ClubSystem:changeClubAnnounce(changeAnnounce, callback)
 			callback()
 		end
 	end)
+end
+
+function ClubSystem:checkIsRecommend(checkId, heroInfo, viewType)
+	self.starBuffNum = self.starBuffNum or ConfigReader:getRecordById("ConfigValue", "Tower_1_Star_Buff_Minimum_Star").content
+	local attrAdds = {}
+	local attrAddNum = 0
+	local recommendDesc = ""
+	local isMaxRecommend = false
+	local seasonInfo = self:getCurSeasonInfo(viewType)
+
+	for k, rData in pairs(seasonInfo.ExcellentHero) do
+		if isMaxRecommend then
+			break
+		end
+
+		if rData.Hero then
+			for index, heroId in pairs(rData.Hero) do
+				if heroId == checkId then
+					attrAdds[#attrAdds + 1] = {}
+					attrAdds[#attrAdds].title = Strings:get("Team_Hero_Type_Title")
+					local effectConfig = ConfigReader:getRecordById("SkillAttrEffect", rData.Effect)
+					attrAdds[#attrAdds].desc = ""
+					recommendDesc = Strings:get("EXPLORE_UI22")
+
+					if effectConfig then
+						attrAdds[#attrAdds].desc = Strings:get(effectConfig.EffectDesc)
+					end
+
+					attrAdds[#attrAdds].type = StageAttrAddType.HERO_TYPE
+					isMaxRecommend = true
+
+					break
+				end
+			end
+		end
+	end
+
+	if heroInfo.awakenLevel > 0 then
+		self.awakenLevelEffectDesc = self.awakenLevelEffectDesc or ConfigReader:getRecordById("SkillAttrEffect", "ExcellentHero_Awaken").EffectDesc
+		attrAdds[#attrAdds + 1] = {}
+		attrAdds[#attrAdds].title = Strings:get("Tower_Main_awakenBuff")
+		attrAdds[#attrAdds].desc = Strings:get(self.awakenLevelEffectDesc)
+		attrAdds[#attrAdds].type = StageAttrAddType.HERO_AWAKE
+		recommendDesc = Strings:get("clubBoss_46")
+	elseif self.starBuffNum <= heroInfo.star then
+		self.starEffectDesc = self.starEffectDesc or ConfigReader:getRecordById("SkillAttrEffect", "ExcellentHero_Stars").EffectDesc
+		attrAdds[#attrAdds + 1] = {}
+		attrAdds[#attrAdds].title = Strings:get("Tower_Main_starBuff")
+		attrAdds[#attrAdds].desc = Strings:get(self.starEffectDesc)
+		attrAdds[#attrAdds].type = StageAttrAddType.HERO_FULL_STAR
+		recommendDesc = Strings:get("clubBoss_46")
+	end
+
+	local recommendData = {
+		isRecommend = #attrAdds > 0,
+		attrAddNum = attrAddNum,
+		recommendDesc = recommendDesc,
+		attrAdds = attrAdds
+	}
+
+	return recommendData
 end
 
 function ClubSystem:requestJoinClub(data, extraData)
@@ -2168,7 +2230,8 @@ function ClubSystem:enterBattle(params, viewType)
 					lock = not self:getInjector():getInstance(SystemKeeper):isUnlock("Button_CombateDominating")
 				}
 			}
-		}
+		},
+		loadingType = LoadingType.KClubBoss
 	}
 
 	BattleLoader:pushBattleView(self, data)
@@ -2639,4 +2702,169 @@ function ClubSystem:requestClubBossSetTipReadTime(time, viewType)
 			-- Nothing
 		end
 	end)
+end
+
+function ClubSystem:tryEnterClubResourcesBattle()
+	local ClubResourcesBattleData = self:getClub():getClubResourcesBattleInfo()
+
+	if ClubResourcesBattleData:getStatus() == "NOTOPEN" or ClubResourcesBattleData:getStatus() == "MATCHING" then
+		self:dispatch(ShowTipEvent({
+			duration = 0.35,
+			tip = Strings:get("Club_ResourceBattle_9")
+		}))
+
+		return
+	end
+
+	if ClubResourcesBattleData:getCanJoin() == false then
+		self:dispatch(ShowTipEvent({
+			duration = 0.35,
+			tip = Strings:get("Club_ResourceBattle_16")
+		}))
+		self:requestClubBattleData(nil, false)
+
+		return
+	end
+
+	local view = self:getInjector():getInstance("ClubResourcesBattleView")
+
+	self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {}))
+end
+
+function ClubSystem:requestClubBattleData(func, refresh)
+	if CommonUtils.GetSwitch("fn_club_resource_battle") == false then
+		return
+	end
+
+	local hasJoinClub = self:getHasJoinClub()
+
+	if hasJoinClub == false then
+		return
+	end
+
+	if self._requestClubBattleDataMark then
+		return
+	end
+
+	self._requestClubBattleDataMark = true
+	local data = {}
+	local clubService = self:getInjector():getInstance(ClubService)
+
+	clubService:requestClubBattleData(data, true, function (response)
+		self._requestClubBattleDataMark = false
+
+		if response.resCode == GS_SUCCESS then
+			local data = response.data
+
+			self:synchronizeClubResourcesBattleData(data)
+
+			if func then
+				func()
+			end
+
+			if refresh then
+				self:dispatch(Event:new(EVT_CLUBBATTLE_REFRESH))
+			end
+		end
+	end)
+end
+
+function ClubSystem:isClubResourcesBattleOpen()
+	local result = false
+	local hasJoinClub = self:getHasJoinClub()
+
+	if hasJoinClub == false then
+		return false
+	end
+
+	local clubResourcesBattleInfo = self:getClub():getClubResourcesBattleInfo()
+
+	if clubResourcesBattleInfo:getIsLoadedData() then
+		local gameServerAgent = self:getInjector():getInstance("GameServerAgent")
+		local remoteTimestamp = gameServerAgent:remoteTimestamp()
+		local timeData = clubResourcesBattleInfo:getStartTimeAndEndTime()
+
+		if timeData and timeData.startTime and timeData.endTime and timeData.startTime <= remoteTimestamp and remoteTimestamp < timeData.endTime then
+			result = true
+		end
+	end
+
+	if CommonUtils.GetSwitch("fn_club_resource_battle") == false then
+		result = false
+	end
+
+	return result
+end
+
+function ClubSystem:synchronizeClubResourcesBattleData(data)
+	self:getClub():synchronizeClubResourcesBattleData(data)
+end
+
+function ClubSystem:requestClubBattleReward(index, isWin)
+	local data = {
+		index = index,
+		isWin = isWin
+	}
+	local clubService = self:getInjector():getInstance(ClubService)
+
+	clubService:requestClubBattleReward(data, true, function (response)
+		if response.resCode == GS_SUCCESS then
+			local rewards = response.data
+
+			if rewards then
+				local view = self:getInjector():getInstance("getRewardView")
+
+				self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+					maskOpacity = 0
+				}, {
+					needClick = true,
+					rewards = rewards
+				}))
+				self:dispatch(Event:new(EVT_CLUBBATTLE_AFTER_GET_REWARD))
+			end
+		end
+	end)
+end
+
+function ClubSystem:getRemainTime(remainTime, useNotZero)
+	local str = ""
+	local fmtStr = "${d}:${H}:${M}:${S}"
+	local timeStr = TimeUtil:formatTime(fmtStr, remainTime)
+	local parts = string.split(timeStr, ":", nil, true)
+	local timeTab = {
+		day = tonumber(parts[1]),
+		hour = tonumber(parts[2]),
+		min = tonumber(parts[3]),
+		sec = tonumber(parts[4])
+	}
+
+	if timeTab.day > 0 then
+		str = timeTab.day .. Strings:get("TimeUtil_Day") .. timeTab.hour .. Strings:get("TimeUtil_Hour") .. timeTab.min .. Strings:get("TimeUtil_Min") .. timeTab.sec .. Strings:get("TimeUtil_Sec")
+	elseif timeTab.hour > 0 then
+		str = timeTab.hour .. Strings:get("TimeUtil_Hour") .. timeTab.min .. Strings:get("TimeUtil_Min") .. timeTab.sec .. Strings:get("TimeUtil_Sec")
+	else
+		str = timeTab.min .. Strings:get("TimeUtil_Min") .. timeTab.sec .. Strings:get("TimeUtil_Sec")
+	end
+
+	if useNotZero then
+		str = ""
+
+		if timeTab.day > 0 then
+			str = str .. timeTab.day .. Strings:get("TimeUtil_Day")
+		end
+
+		if timeTab.hour > 0 then
+			str = str .. timeTab.hour .. Strings:get("TimeUtil_Hour_1")
+		end
+
+		if timeTab.min > 0 then
+			str = str .. timeTab.min .. Strings:get("TimeUtil_Min")
+		end
+
+		if timeTab.sec > 0 then
+			str = str .. timeTab.sec .. Strings:get("TimeUtil_Sec")
+		end
+	end
+
+	return str
 end

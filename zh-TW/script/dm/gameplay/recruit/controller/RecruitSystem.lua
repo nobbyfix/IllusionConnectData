@@ -34,6 +34,9 @@ function RecruitSystem:checkEnabled(data)
 	if data then
 		if data.recruitId then
 			local recruitObj = self._manager:getRecruitPoolById(data.recruitId)
+
+			assert(recruitObj, "unknown drawcardId...." .. data.recruitId)
+
 			local unlockKey = recruitObj:getCondition()
 
 			if unlockKey ~= "" then

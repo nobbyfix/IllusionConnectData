@@ -16,14 +16,6 @@ TowerTeamMediator:has("_towerSystem", {
 }):injectWith("TowerSystem")
 
 local kBtnHandlers = {
-	["main.my_pet_bg.sortPanel.sortBtn"] = {
-		clickAudio = "Se_Click_Fold_1",
-		func = "onClickSort"
-	},
-	["main.my_pet_bg.sortPanel.sortTypeBtn"] = {
-		clickAudio = "Se_Click_Tab_1",
-		func = "onClickSortType"
-	},
 	["main.button_rule"] = {
 		clickAudio = "Se_Click_Common_1",
 		func = "onClickRule"
@@ -237,7 +229,6 @@ function TowerTeamMediator:initWidgetInfo()
 	self._myPetPanel = self._main:getChildByFullName("my_pet_bg")
 	self._heroPanel = self._myPetPanel:getChildByFullName("heroPanel")
 	self._sortType = self._myPetPanel:getChildByFullName("sortPanel.sortBtn.text")
-	self._sortOrder = self._myPetPanel:getChildByFullName("sortPanel.sortTypeBtn.text")
 	self._teamBg = self._main:getChildByName("team_bg")
 	self._labelCombat = self._main:getChildByFullName("info_bg.combatLabel")
 	self._costAverageLabel = self._main:getChildByFullName("info_bg.averageLabel")
@@ -600,10 +591,9 @@ end
 
 function TowerTeamMediator:refreshListView(ignoreAdjustOffset)
 	self._petListAll = self._stageSystem:getSortExtendIds(self._petList)
-	local sortOrder = self._stageSystem:getTowerCardSortOrder()
 	local sortType = self._stageSystem:getTowerCardSortType()
 
-	self._heroSystem:sortHeroes(self._petListAll, sortType, sortOrder)
+	self._heroSystem:sortHeroes(self._petListAll, sortType)
 
 	local offsetX = self._teamView:getContentOffset().x + self._petSize.width
 
@@ -1026,7 +1016,6 @@ function TowerTeamMediator:createSortView()
 	local sortStr = self._stageSystem:getSortTypeStr(sortType)
 
 	self._sortType:setString(sortStr)
-	self._sortOrder:setString(self._stageSystem:getCardSortOrderStr())
 	self._sortComponent:getRootNode():addTo(self._myPetPanel:getChildByFullName("sortPanel"))
 end
 
@@ -1043,7 +1032,6 @@ function TowerTeamMediator:onClickSortType()
 	sortOrder = sortOrder == 1 and 2 or 1
 
 	self._stageSystem:setCardSortOrder(sortOrder)
-	self._sortOrder:setString(self._stageSystem:getCardSortOrderStr())
 	self._teamView:stopScroll()
 	self:refreshListView(true)
 end

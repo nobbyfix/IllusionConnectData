@@ -156,6 +156,7 @@ function ActivityTaskDailyMediator:createCell(cell, index)
 			local titleText1 = panel:getChildByName("title_1")
 
 			titleText1:setString(Strings:get(name))
+			titleText1:getVirtualRenderer():setOverflow(cc.LabelOverflow.SHRINK)
 
 			local taskValueList = taskData:getTaskValueList()
 			local descText = panel:getChildByName("desc")

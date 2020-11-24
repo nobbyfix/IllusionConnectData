@@ -250,9 +250,9 @@ all.Skill_DFQi_Unique = {
 				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
 				global.ApplyRPEffect(_env, _env.ACTOR, unit)
 
-				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
+				local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
 
-				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
+				global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
 			end
 		end)
 		exec["@time"]({
@@ -280,9 +280,9 @@ all.Skill_DFQi_Unique = {
 				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
 				global.ApplyRPEffect(_env, _env.ACTOR, unit)
 
-				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
+				local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
 
-				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
+				global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
 			end
 		end)
 		exec["@time"]({
@@ -310,9 +310,9 @@ all.Skill_DFQi_Unique = {
 				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
 				global.ApplyRPEffect(_env, _env.ACTOR, unit)
 
-				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
+				local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
 
-				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
+				global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
 			end
 		end)
 		exec["@time"]({
@@ -340,9 +340,9 @@ all.Skill_DFQi_Unique = {
 				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
 				global.ApplyRPEffect(_env, _env.ACTOR, unit)
 
-				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
+				local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
 
-				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
+				global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
 			end
 		end)
 		exec["@time"]({
@@ -370,9 +370,9 @@ all.Skill_DFQi_Unique = {
 				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
 				global.ApplyRPEffect(_env, _env.ACTOR, unit)
 
-				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
+				local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
 
-				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
+				global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
 			end
 		end)
 		exec["@time"]({
@@ -400,9 +400,9 @@ all.Skill_DFQi_Unique = {
 				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
 				global.ApplyRPEffect(_env, _env.ACTOR, unit)
 
-				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
+				local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
 
-				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
+				global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
 			end
 		end)
 		exec["@time"]({

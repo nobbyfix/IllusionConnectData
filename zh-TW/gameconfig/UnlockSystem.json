@@ -2099,5 +2099,41 @@
         "UnlockDesc": "Friend_PK_UnlockDesc",
         "ResourcesBanner": "",
         "IsPlay": 0
+    },
+    "DreamChallenge": {
+        "Condition": {
+            "LEVEL": 32
+        },
+        "ShowCondition": {
+            "LEVEL": 32
+        },
+        "Tip": "DreamChallenge_Unlock_Tips",
+        "Name": "DreamChallenge_Unlock_Name",
+        "LongDesc": "DreamChallenge_Unlock_Name",
+        "OutputDesc": "",
+        "Icon": "",
+        "Link": "",
+        "UnlockAnima": "",
+        "UnlockDesc": "",
+        "ResourcesBanner": "",
+        "IsPlay": ""
+    },
+    "HitCharts": {
+        "Condition": {
+            "CLUBLEVEL": "3"
+        },
+        "ShowCondition": {
+            "CLUBLEVEL": "3"
+        },
+        "Tip": "",
+        "Name": "",
+        "LongDesc": "",
+        "OutputDesc": "",
+        "Icon": "",
+        "Link": "",
+        "UnlockAnima": "",
+        "UnlockDesc": "",
+        "ResourcesBanner": "",
+        "IsPlay": ""
     }
 }

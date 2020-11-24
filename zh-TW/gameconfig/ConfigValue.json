@@ -3126,16 +3126,6 @@
         ],
         "clz": "string[]"
     },
-    "TrialSwitch": {
-        "content": [
-            "spstage",
-            "explore",
-            "tower",
-            "crusade",
-            "practice"
-        ],
-        "clz": "string[]"
-    },
     "Rank_Weekly_List": {
         "content": [
             1,
@@ -4452,33 +4442,6 @@
         },
         "clz": "dict"
     },
-    "HeroStar_StarRewardOut": {
-        "content": [
-            "ZTXChang",
-            "CLMan",
-            "FTLEShi",
-            "SLMen",
-            "MLYTLSha",
-            "LLan",
-            "ZZBBWei",
-            "SDTZi",
-            "JNLong",
-            "TPGZhu",
-            "YYing",
-            "GYCZi",
-            "SYAi",
-            "DFQi",
-            "DCJKang",
-            "BQDShe",
-            "NXYYi",
-            "YXNMei",
-            "AJTa",
-            "SRen",
-            "BHTZi",
-            "LYXi"
-        ],
-        "clz": "string[]"
-    },
     "Hero_ExpItem": {
         "content": [
             "IM_ExpUp1",
@@ -4852,27 +4815,6 @@
         "content": "Battle_Scene_17",
         "clz": "string"
     },
-    "FAC_CheckType": {
-        "content": [
-            "normal_stage",
-            "elite_stage",
-            "gold",
-            "exp",
-            "crystal",
-            "equipment",
-            "skill_1",
-            "skill_2",
-            "skill_3",
-            "maze_battle",
-            "explore_battle",
-            "herostory_battle",
-            "arena_challenge",
-            "tower",
-            "crusade",
-            "actstage"
-        ],
-        "clz": "string[]"
-    },
     "BattleStatementDelay_Special": {
         "content": {
             "crystal": 1.7,
@@ -5138,23 +5080,6 @@
             "CLMan": 14
         },
         "clz": "dict"
-    },
-    "Tower_1_Exception": {
-        "content": [
-            "SYAi",
-            "YYing",
-            "GYCZi",
-            "DFQi",
-            "DCJKang",
-            "NXYYi",
-            "BQDShe",
-            "YXNMei",
-            "AJTa",
-            "SRen",
-            "BHTZi",
-            "LYXi"
-        ],
-        "clz": "string[]"
     },
     "Tower_1_Star_Buff_Minimum_Star": {
         "content": 5,
@@ -6926,5 +6851,170 @@
     "Friend_Gift_MaxGetTimes": {
         "content": "Friend_Gift_MaxGetTimes",
         "clz": "string"
+    },
+    "Dream_Challenge_Rule": {
+        "content": [
+            {
+                "Desc": [
+                    "DreamChallenge_Rule_Info_1",
+                    "DreamChallenge_Rule_Info_6",
+                    "DreamChallenge_Rule_Info_7",
+                    "DreamChallenge_Rule_Info_8",
+                    "DreamChallenge_Rule_Info_9",
+                    "DreamChallenge_Rule_Info_10"
+                ],
+                "Title": "DreamChallenge_Rule_Info_0"
+            }
+        ],
+        "clz": "string[]"
+    },
+    "HitCharts_K": {
+        "content": 1,
+        "clz": "double"
+    },
+    "HitCharts_K_Win": {
+        "content": 0.03,
+        "clz": "double"
+    },
+    "HitCharts_VIP": {
+        "content": [
+            [
+                0,
+                4000000
+            ]
+        ],
+        "clz": "array"
+    },
+    "HitCharts_Rule": {
+        "content": {
+            "Desc": [
+                "HitCharts_Rule_Content_1",
+                "HitCharts_Rule_Content_2",
+                "HitCharts_Rule_Content_3",
+                "HitCharts_Rule_Content_4",
+                "HitCharts_Rule_Content_5",
+                "HitCharts_Rule_Content_6",
+                "HitCharts_Rule_Content_7",
+                "HitCharts_Rule_Content_8"
+            ]
+        },
+        "clz": "string[]"
+    },
+    "HitCharts_End": {
+        "content": 21600,
+        "clz": "int"
+    },
+    "HitCharts_Start": {
+        "content": 61200,
+        "clz": "int"
+    },
+    "HeroStar_StarRewardOut": {
+        "content": [
+            "ZTXChang",
+            "CLMan",
+            "FTLEShi",
+            "SLMen",
+            "MLYTLSha",
+            "LLan",
+            "ZZBBWei",
+            "SDTZi",
+            "JNLong",
+            "TPGZhu",
+            "YYing",
+            "GYCZi",
+            "SYAi",
+            "DFQi",
+            "DCJKang",
+            "BQDShe",
+            "NXYYi",
+            "YXNMei",
+            "AJTa",
+            "SRen",
+            "BHTZi",
+            "LYXi",
+            "YSLBin",
+            "KMLa"
+        ],
+        "clz": "string[]"
+    },
+    "HitCharts_K_Region": {
+        "content": 3,
+        "clz": "double"
+    },
+    "Tower_1_Exception": {
+        "content": [
+            "SYAi",
+            "YYing",
+            "GYCZi",
+            "DFQi",
+            "DCJKang",
+            "NXYYi",
+            "BQDShe",
+            "YXNMei",
+            "AJTa",
+            "SRen",
+            "BHTZi",
+            "LYXi",
+            "YSLBin",
+            "KMLa"
+        ],
+        "clz": "string[]"
+    },
+    "TrialSwitch": {
+        "content": [
+            "spstage",
+            "explore",
+            "tower",
+            "dreamchallenge",
+            "crusade",
+            "practice"
+        ],
+        "clz": "string[]"
+    },
+    "FAC_CheckType": {
+        "content": [
+            "normal_stage",
+            "elite_stage",
+            "gold",
+            "exp",
+            "crystal",
+            "equipment",
+            "skill_1",
+            "skill_2",
+            "skill_3",
+            "maze_battle",
+            "explore_battle",
+            "herostory_battle",
+            "arena_challenge",
+            "tower",
+            "crusade",
+            "dream_challenge",
+            "clubboss"
+        ],
+        "clz": "string[]"
+    },
+    "HitCharts_K_Lose": {
+        "content": -0.06,
+        "clz": "double"
+    },
+    "Team_TypeOrder": {
+        "content": [
+            "Attack",
+            "Aoe",
+            "Defense",
+            "Cure",
+            "Summon",
+            "Support",
+            "Curse"
+        ],
+        "clz": "string"
+    },
+    "HitCharts_Top": {
+        "content": 10,
+        "clz": "int"
+    },
+    "HitCharts_Mun": {
+        "content": 10,
+        "clz": "int"
     }
 }

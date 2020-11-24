@@ -333,8 +333,6 @@ all.Skill_YYing_Unique = {
 
 			for _, unit in global.__iter__(_env.units) do
 				if global.ProbTest(_env, 0.25) then
-					global.print(_env, 1111111111)
-
 					local buffeft1 = global.Mute(_env)
 
 					global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
@@ -351,8 +349,6 @@ all.Skill_YYing_Unique = {
 						buffeft1
 					}, 1, 0)
 				elseif global.ProbTest(_env, 0.33) then
-					global.print(_env, 2222222222.0)
-
 					local buffeft2 = global.Daze(_env)
 
 					global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
@@ -369,8 +365,6 @@ all.Skill_YYing_Unique = {
 						buffeft2
 					}, 1, 0)
 				elseif global.ProbTest(_env, 0.5) then
-					global.print(_env, 3333333333.0)
-
 					local buffeft3 = global.NumericEffect(_env, "-atkrate", {
 						"+Normal",
 						"+Normal"
@@ -390,8 +384,6 @@ all.Skill_YYing_Unique = {
 						buffeft3
 					}, 1, 0)
 				else
-					global.print(_env, 4444444444.0)
-
 					local buffeft4 = global.NumericEffect(_env, "-defrate", {
 						"+Normal",
 						"+Normal"
@@ -523,8 +515,6 @@ all.Skill_YYing_Unique_EX = {
 
 			for _, unit in global.__iter__(_env.units) do
 				if global.ProbTest(_env, 0.25) then
-					global.print(_env, 1111111111)
-
 					local buffeft1 = global.Mute(_env)
 
 					global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
@@ -541,8 +531,6 @@ all.Skill_YYing_Unique_EX = {
 						buffeft1
 					}, 1, 0)
 				elseif global.ProbTest(_env, 0.33) then
-					global.print(_env, 2222222222.0)
-
 					local buffeft2 = global.Daze(_env)
 
 					global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
@@ -559,8 +547,6 @@ all.Skill_YYing_Unique_EX = {
 						buffeft2
 					}, 1, 0)
 				elseif global.ProbTest(_env, 0.5) then
-					global.print(_env, 333333333)
-
 					local buffeft3 = global.NumericEffect(_env, "-atkrate", {
 						"+Normal",
 						"+Normal"
@@ -580,8 +566,6 @@ all.Skill_YYing_Unique_EX = {
 						buffeft3
 					}, 1, 0)
 				else
-					global.print(_env, 444444444)
-
 					local buffeft4 = global.NumericEffect(_env, "-defrate", {
 						"+Normal",
 						"+Normal"
@@ -740,11 +724,7 @@ all.Skill_YYing_Passive_Key = {
 
 				if num >= 2 then
 					for _, friend in global.__iter__(global.FriendUnits(_env, global.MARKED(_env, "idol") - global.ONESELF(_env, _env.ACTOR))) do
-						local buffeft1 = global.RageGainEffect(_env, "-", {
-							"+Normal",
-							"+Normal"
-						}, 1)
-						local buffeft2 = global.Diligent(_env)
+						local buffeft1 = global.Diligent(_env)
 
 						global.ApplyBuff_Buff(_env, _env.ACTOR, friend, {
 							timing = 2,
@@ -757,8 +737,7 @@ all.Skill_YYing_Passive_Key = {
 								"UNSTEALABLE"
 							}
 						}, {
-							buffeft1,
-							buffeft2
+							buffeft1
 						}, 1)
 					end
 

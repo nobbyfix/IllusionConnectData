@@ -644,11 +644,7 @@ all.Skill_SYAi_Passive_Key = {
 
 				if num >= 2 then
 					for _, friend in global.__iter__(global.FriendUnits(_env, global.MARKED(_env, "idol") - global.ONESELF(_env, _env.ACTOR))) do
-						local buffeft1 = global.RageGainEffect(_env, "-", {
-							"+Normal",
-							"+Normal"
-						}, 1)
-						local buffeft2 = global.Diligent(_env)
+						local buffeft1 = global.Diligent(_env)
 
 						global.ApplyBuff_Buff(_env, _env.ACTOR, friend, {
 							timing = 2,
@@ -661,8 +657,7 @@ all.Skill_SYAi_Passive_Key = {
 								"UNSTEALABLE"
 							}
 						}, {
-							buffeft1,
-							buffeft2
+							buffeft1
 						}, 1)
 					end
 

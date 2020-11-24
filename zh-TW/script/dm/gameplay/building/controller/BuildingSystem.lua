@@ -168,6 +168,10 @@ function BuildingSystem:tryEnter(data)
 	end
 end
 
+function BuildingSystem:tryEnterOverview(data)
+	self:_tryEnterSubView("overview", data)
+end
+
 function BuildingSystem:tryEnterBuyDecorate(data)
 	local unlock, tips = self._systemKeeper:isUnlock("VillageShopDecorate")
 
@@ -180,6 +184,10 @@ function BuildingSystem:tryEnterBuyDecorate(data)
 		return
 	end
 
+	self:_tryEnterSubView("buyDecorate", data)
+end
+
+function BuildingSystem:_tryEnterSubView(type, data)
 	local roomId = data.roomId
 
 	if not roomId then
@@ -207,7 +215,7 @@ function BuildingSystem:tryEnterBuyDecorate(data)
 
 		local view = self:getInjector():getInstance("BuildingView")
 		local event = ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
-			t = "buyDecorate",
+			t = type,
 			roomId = roomId
 		})
 
@@ -1617,7 +1625,7 @@ function BuildingSystem:getSortExtandStr(index)
 	return str[index]
 end
 
-function BuildingSystem:sortHeroes(list, type, order, recommendIds, roomId)
+function BuildingSystem:sortHeroes(list, type, recommendIds, roomId)
 	local heroSystem = self._developSystem:getHeroSystem()
 
 	if type == 1 then
@@ -1672,7 +1680,7 @@ function BuildingSystem:sortHeroes(list, type, order, recommendIds, roomId)
 			typeNew = 6
 		end
 
-		heroSystem:sortHeroes(list, typeNew, order)
+		heroSystem:sortHeroes(list, typeNew)
 	end
 end
 
@@ -1911,6 +1919,16 @@ function BuildingSystem:getRoomMaxBuffLv(roomId)
 	end
 
 	return buffLv
+end
+
+function BuildingSystem:getRoomParty(roomId)
+	local putEffectValue = ConfigReader:getDataByNameIdAndKey("VillageRoom", roomId, "PutEffectValue") or {}
+
+	if putEffectValue and putEffectValue.party then
+		return putEffectValue.party.id
+	end
+
+	return nil
 end
 
 function BuildingSystem:getBuyResGetNum(configId)

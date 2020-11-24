@@ -15,8 +15,6 @@ function ResetSystem:requestResetPushSucc(resetIds, callback)
 	}
 
 	self:getService():requestResetPushSucc(params, function (response)
-		dump(response, "requestResetPushSucc_wnt____")
-
 		if response.resCode == GS_SUCCESS and callback then
 			callback()
 		end
@@ -25,8 +23,6 @@ end
 
 function ResetSystem:listenResetPush(callback)
 	self:getService():listenResetPush(function (response)
-		dump(response, "listenResetPush_wnt____")
-
 		if response and #response > 0 then
 			local resetList = response
 			local delay = math.random(1, 15) * 1000

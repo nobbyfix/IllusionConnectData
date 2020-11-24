@@ -108,7 +108,7 @@ function BaseViewMediator:bindWidget(nodeOrName, widgetClass, ...)
 	return bindWidget(self, nodeOrName, widgetClass, ...)
 end
 
-function mapButtonHandlerClick(mediator, buttonNameOrObj, handler, view)
+function mapButtonHandlerClick(mediator, buttonNameOrObj, handler, view, addLayout)
 	local rootView = view or mediator and mediator:getView()
 	local button = nil
 
@@ -123,6 +123,28 @@ function mapButtonHandlerClick(mediator, buttonNameOrObj, handler, view)
 	end
 
 	if button then
+		if addLayout then
+			local child = button:getChildByFullName(tostring(addLayout))
+
+			if child then
+				child:removeFromParent()
+			end
+
+			local touchPanel = ccui.Layout:create()
+			local size = button:getContentSize()
+
+			touchPanel:setContentSize(size)
+			touchPanel:setTouchEnabled(true)
+			touchPanel:setSwallowTouches(false)
+			touchPanel:setAnchorPoint(0.5, 0.5)
+			touchPanel:setPosition(cc.p(size.width * 0.5, size.height * 0.5))
+			touchPanel:addTo(button):setName(tostring(addLayout))
+
+			button = touchPanel
+
+			assert(button ~= nil, string.format("Button '%s' add Layout failed!", tostring(buttonNameOrObj)))
+		end
+
 		local method = nil
 		local options = {
 			eventType = ccui.TouchEventType.ended,
@@ -164,6 +186,10 @@ function mapButtonHandlerClick(mediator, buttonNameOrObj, handler, view)
 
 				if not options.ignoreClickAudio then
 					AudioEngine:getInstance():playEffect(options.clickAudio, false)
+				end
+
+				if addLayout then
+					sender = sender:getParent()
 				end
 
 				if not isInstance then
