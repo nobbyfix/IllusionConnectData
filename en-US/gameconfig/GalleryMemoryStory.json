@@ -336,5 +336,32 @@
             }
         ],
         "Num": 3
+    },
+    "Memory_ACTIVILIST_5": {
+        "Type": "ACTIVILIST",
+        "Condition": "",
+        "ActiviType": "",
+        "UnlockStory": "",
+        "UnlockDesc": "",
+        "Name": "ActivityBlock_Halloween_Name",
+        "Listpicture": "Main_Halloween_Event_Story",
+        "Story": [
+            {
+                "type": "NORMAL",
+                "id": [
+                    "Memory_STORY_ACTIVI_40",
+                    "Memory_STORY_ACTIVI_41",
+                    "Memory_STORY_ACTIVI_42",
+                    "Memory_STORY_ACTIVI_43",
+                    "Memory_STORY_ACTIVI_44",
+                    "Memory_STORY_ACTIVI_45",
+                    "Memory_STORY_ACTIVI_46",
+                    "Memory_STORY_ACTIVI_47",
+                    "Memory_STORY_ACTIVI_48",
+                    "Memory_STORY_ACTIVI_49"
+                ]
+            }
+        ],
+        "Num": 5
     }
 }

@@ -2140,394 +2140,6 @@
         },
         "OpenType": 1
     },
-    "Japan_2": {
-        "UnlockCondition": {
-            "LEVEL": 100,
-            "PREPOINT": {
-                "Japan_1": 1
-            }
-        },
-        "UnlockAuto": {
-            "MapGuide": 90
-        },
-        "NeedPower": 30,
-        "Name": "Map_Japan_2_Name",
-        "Img": "map_stage_2_2",
-        "Desc": "Map_Japan_2_Desc",
-        "StrategyDesc": "Map_Japan_2_StrategyDesc",
-        "RecommendLv": 33073,
-        "PointHead": "BBLMa",
-        "ShowReward": [
-            {
-                "itemId": "IM_TopsShowBox3",
-                "text": "EXPLORE_RewardShow_Type3",
-                "image": "ts_bg_fl_3"
-            },
-            {
-                "itemId": "IM_TopsShowBox2",
-                "text": "EXPLORE_RewardShow_Type2",
-                "image": "ts_bg_fl_2"
-            },
-            {
-                "itemId": "IM_TopsShowBox1",
-                "text": "EXPLORE_RewardShow_Type1",
-                "image": "ts_bg_fl_1"
-            }
-        ],
-        "DailyRewardShow": [
-            {
-                "itemId": "IM_TopsShowBox3",
-                "text": "EXPLORE_RewardShow_Type1",
-                "image": "ts_bg_fl_1"
-            },
-            {
-                "itemId": "IES_StarUpDogFood_SR",
-                "text": "EXPLORE_RewardShow_Type2",
-                "image": "ts_bg_fl_1"
-            },
-            {
-                "itemId": "IR_Equip14",
-                "text": "EXPLORE_RewardShow_Type1",
-                "image": "ts_bg_fl_1"
-            },
-            {
-                "itemId": "IR_Equip13",
-                "text": "EXPLORE_RewardShow_Type1",
-                "image": "ts_bg_fl_1"
-            }
-        ],
-        "WeekRecommend": [
-            1,
-            4,
-            5,
-            7
-        ],
-        "DailyReward": "Japan_2_EveryDay_Reward",
-        "HeroEffect": {
-            "ZTXCun": "MapExplore_HeroEffect01",
-            "ZTXChang": "MapExplore_HeroEffect01",
-            "YFZZhu": "MapExplore_HeroEffect01"
-        },
-        "HeroSpecialEffect": "",
-        "FirstRewardPosition": [
-            -39,
-            98
-        ],
-        "MapSystemFirstTask": [
-            "Map_FirstTask_Japan_2"
-        ],
-        "MapMainTask": "Map_PoinMainTask_Japan_2",
-        "MapGuideDesc": {
-            "1": {
-                "Value": 1,
-                "Desc": "Japan_2_GuideDesc_1"
-            },
-            "3": {
-                "Value": 1,
-                "Desc": "Japan_2_GuideDesc_3"
-            },
-            "2": {
-                "Value": 1,
-                "Desc": "Japan_2_GuideDesc_2"
-            },
-            "5": {
-                "Value": 1,
-                "Desc": "Japan_2_GuideDesc_5"
-            },
-            "4": {
-                "Value": 1,
-                "Desc": "Japan_2_GuideDesc_4"
-            }
-        },
-        "MapGuideReward": {
-            "1": "Japan_2_MapGuide3_Reward",
-            "0.5": "Japan_2_MapGuide1_Reward",
-            "0.75": "Japan_2_MapGuide2_Reward"
-        },
-        "MapResource": [
-            "Ground2_2",
-            "Decorate2_2"
-        ],
-        "MapBlock": "Decorate2_2_Block",
-        "PlayerPos": {
-            "1": {
-                "Direction": "Left",
-                "Pos": [
-                    256,
-                    145
-                ],
-                "Face": "Right"
-            }
-        },
-        "Object": [
-            "Japan_2_JinBiA1",
-            "Japan_2_JinBiA2",
-            "Japan_2_JinBiA3",
-            "Japan_2_JinBiA4",
-            "Japan_2_JinBiA5",
-            "Japan_2_JinBiA6",
-            "Japan_2_JinBiA7",
-            "Japan_2_JinBiA8",
-            "Japan_2_JinBiA9",
-            "Japan_2_JinBiA10",
-            "Japan_2_JinBiA11",
-            "Japan_2_JinBiA12",
-            "Japan_2_JinBiA13",
-            "Japan_2_JinBiA14",
-            "Japan_2_JinBiA15",
-            "Japan_2_JinBiA16",
-            "Japan_2_JinBiA17",
-            "Japan_2_JinBiA18",
-            "Japan_2_JinBiB1",
-            "Japan_2_JinBiB2",
-            "Japan_2_JinBiB3",
-            "Japan_2_JinBiB4",
-            "Japan_2_JinBiB5",
-            "Japan_2_JinBiB6",
-            "Japan_2_JinBiB7",
-            "Japan_2_JinBiB8",
-            "Japan_2_JinBiB9",
-            "Japan_2_JinBiB10",
-            "Japan_2_JinBiB11",
-            "Japan_2_JinBiB12",
-            "Japan_2_JinBiB13",
-            "Japan_2_JinBiB14",
-            "Japan_2_JinBiB15",
-            "Japan_2_JinBiB16",
-            "Japan_2_JinBiB17",
-            "Japan_2_JinBiB18",
-            "Japan_2_BaoXiangA1",
-            "Japan_2_BaoXiangB1",
-            "Japan_2_BaoXiangA1GuangXiao",
-            "Japan_2_BaoXiangB1GuangXiao",
-            "Japan_2_BuffA1",
-            "Japan_2_BuffB1",
-            "Japan_2_XiaoGuaiBaoXiangA1",
-            "Japan_2_XiaoGuaiBaoXiangB1",
-            "Japan_2_XiaoGuaiBuffA1",
-            "Japan_2_XiaoGuaiBuffB1",
-            "Japan_2_XiaoGuaiA1",
-            "Japan_2_XiaoGuaiA2",
-            "Japan_2_XiaoGuaiA3",
-            "Japan_2_XiaoGuaiA4",
-            "Japan_2_XiaoGuaiA5",
-            "Japan_2_XiaoGuaiA6",
-            "Japan_2_XiaoGuaiA7",
-            "Japan_2_XiaoGuaiA8",
-            "Japan_2_XiaoGuaiA9",
-            "Japan_2_XiaoGuaiB1",
-            "Japan_2_XiaoGuaiB2",
-            "Japan_2_XiaoGuaiB3",
-            "Japan_2_JingYingA1",
-            "Japan_2_JingYingB1",
-            "Japan_2_BossA1",
-            "Japan_2_YDZZong1",
-            "Japan_2_YBYa1",
-            "Japan_2_XiaoGuaiC1",
-            "Japan_2_XiaoGuaiC2",
-            "Japan_2_XiaoGuaiC3",
-            "Japan_2_XiaoGuaiC4",
-            "Japan_2_Zudang1",
-            "Japan_2_StoryStar1",
-            "Japan_2_StoryBoss1",
-            "Japan_2_StoryClue1",
-            "Japan_2_CaiDanYaoDao",
-            "Japan_2_CaiDanMuXiang",
-            "Japan_2_CaiDanMuXiangGeGe1",
-            "Japan_2_CaiDanFanTuan1",
-            "Japan_2_CaiDanFanTuan2",
-            "Japan_2_CaiDanFanTuan3",
-            "Japan_2_CaiDanMengPo",
-            "Japan_2_CaiDanZhenFa1",
-            "Japan_2_CaiDanGouYu1",
-            "Japan_2_CaiDanGouYu2",
-            "Japan_2_CaiDanGouYu3",
-            "Japan_2_CaiDanGouYuHong",
-            "Japan_2_CaiDanGouYuHuang",
-            "Japan_2_CaiDanGouYuQing"
-        ],
-        "RandomObject": "",
-        "TeamObject": {
-            "Japan_2_CaiDanHunYu": [
-                {
-                    "Object": [
-                        "Japan_2_CaiDanHunYu1",
-                        "Japan_2_CaiDanHunYu2",
-                        "Japan_2_CaiDanHunYu3",
-                        "Japan_2_CaiDanHunYu4"
-                    ],
-                    "Rnd": 0.5
-                },
-                {
-                    "Object": [
-                        "Japan_2_CaiDanHunYu1",
-                        "Japan_2_CaiDanHunYu2",
-                        "Japan_2_CaiDanHunYu3"
-                    ],
-                    "Rnd": 0.15
-                },
-                {
-                    "Object": [
-                        "Japan_2_CaiDanHunYu2",
-                        "Japan_2_CaiDanHunYu3",
-                        "Japan_2_CaiDanHunYu4"
-                    ],
-                    "Rnd": 0.15
-                },
-                {
-                    "Object": [
-                        "Japan_2_CaiDanHunYu1",
-                        "Japan_2_CaiDanHunYu3",
-                        "Japan_2_CaiDanHunYu4"
-                    ],
-                    "Rnd": 0.15
-                },
-                {
-                    "Object": [
-                        "Japan_2_CaiDanHunYu1",
-                        "Japan_2_CaiDanHunYu2"
-                    ],
-                    "Rnd": 0.05
-                },
-                {
-                    "Object": [
-                        "Japan_2_CaiDanHunYu2",
-                        "Japan_2_CaiDanHunYu3"
-                    ],
-                    "Rnd": 0.05
-                },
-                {
-                    "Object": [
-                        "Japan_2_CaiDanHunYu3",
-                        "Japan_2_CaiDanHunYu4"
-                    ],
-                    "Rnd": 0.05
-                }
-            ]
-        },
-        "OnceObject": {
-            "Japan_2_CaiDanBaoXiang": "Japan_2_CaiDanBaoXiang_Case1",
-            "Japan_2_CaiDanMiJi1": "Japan_2_CaiDanMiJi1_Case1",
-            "Japan_2_CaiDanMiJi2": "Japan_2_CaiDanMiJi2_Case1",
-            "Japan_2_CaiDanMiJi3": "Japan_2_CaiDanMiJi3_Case1",
-            "Japan_2_CaiDanMiJi4": "Japan_2_CaiDanMiJi4_Case1",
-            "Japan_2_CaiDanBoss": "Japan_2_CaiDanBoss_Case1"
-        },
-        "MapAuto": [
-            "Japan_2_01",
-            "Japan_2_02",
-            "Japan_2_03",
-            "Japan_2_04",
-            "Japan_2_05",
-            "Japan_2_06",
-            "Japan_2_07",
-            "Japan_2_08",
-            "Japan_2_09",
-            "Japan_2_10",
-            "Japan_2_11",
-            "Japan_2_12",
-            "Japan_2_13",
-            "Japan_2_14",
-            "Japan_2_15",
-            "Japan_2_16",
-            "Japan_2_17",
-            "Japan_2_18",
-            "Japan_2_19",
-            "Japan_2_20",
-            "Japan_2_21",
-            "Japan_2_22",
-            "Japan_2_23",
-            "Japan_2_24",
-            "Japan_2_25",
-            "Japan_2_26",
-            "Japan_2_27",
-            "Japan_2_28",
-            "Japan_2_29",
-            "Japan_2_30",
-            "Japan_2_31",
-            "Japan_2_32",
-            "Japan_2_33",
-            "Japan_2_34",
-            "Japan_2_35",
-            "Japan_2_36",
-            "Japan_2_37",
-            "Japan_2_38",
-            "Japan_2_39",
-            "Japan_2_40",
-            "Japan_2_41",
-            "Japan_2_42",
-            "Japan_2_43",
-            "Japan_2_44",
-            "Japan_2_45",
-            "Japan_2_46",
-            "Japan_2_47",
-            "Japan_2_48",
-            "Japan_2_49",
-            "Japan_2_50",
-            "Japan_2_51",
-            "Japan_2_52",
-            "Japan_2_53",
-            "Japan_2_54",
-            "Japan_2_55",
-            "Japan_2_56",
-            "Japan_2_57",
-            "Japan_2_58",
-            "Japan_2_59",
-            "Japan_2_60",
-            "Japan_2_61",
-            "Japan_2_62",
-            "Japan_2_63",
-            "Japan_2_64",
-            "Japan_2_65"
-        ],
-        "BGM": [
-            "Mus_Explore_Japan",
-            "Action_9"
-        ],
-        "BGMAction": "",
-        "BGMAisac": {
-            "Action_11": "Mus_Explore_Japan_Asiac_4",
-            "Action_10": "Mus_Explore_Japan_Asiac_3",
-            "Action_9": "Mus_Explore_Japan_Asiac_2",
-            "Action_8": "Mus_Explore_Japan_Asiac_1"
-        },
-        "MapPic": "map_decorate2_2",
-        "MapPicAction": {
-            "map_decorate2_2": [
-                [
-                    150,
-                    429
-                ],
-                [
-                    729,
-                    80
-                ]
-            ]
-        },
-        "TeamNum": 1,
-        "InitBread": 2,
-        "PointLevel": {
-            "maxLevel": 120,
-            "degree": 0,
-            "minLevel": 100,
-            "playerType": "NormalPlayer"
-        },
-        "MechanismInfo": {
-            "open": "-1",
-            "translate": "Alice_1_Btn",
-            "type": "Zombies",
-            "icon": "ts_btn_munaiyi"
-        },
-        "MechanismValue": {
-            "ZombiesIteam": "ZombiesIteam_Egypt_1",
-            "ZombiesInit": "ZombiesInit_Egypt_1",
-            "ZombiesSkill": "ZombiesSkill_Egypt_1",
-            "ZombiesSkillNum": "ZombiesSkillNum_Egypt_1",
-            "ZombiesLevelExp": "ZombiesLevelExp_Egypt_1",
-            "ZombiesValue": "ZombiesValue_Egypt_1"
-        },
-        "OpenType": 1
-    },
     "Japan_3": {
         "UnlockCondition": {
             "LEVEL": 100,
@@ -7247,6 +6859,394 @@
                 [
                     419,
                     110
+                ]
+            ]
+        },
+        "TeamNum": 1,
+        "InitBread": 2,
+        "PointLevel": {
+            "maxLevel": 120,
+            "degree": 0,
+            "minLevel": 100,
+            "playerType": "NormalPlayer"
+        },
+        "MechanismInfo": {
+            "open": "-1",
+            "translate": "Alice_1_Btn",
+            "type": "Zombies",
+            "icon": "ts_btn_munaiyi"
+        },
+        "MechanismValue": {
+            "ZombiesIteam": "ZombiesIteam_Egypt_1",
+            "ZombiesInit": "ZombiesInit_Egypt_1",
+            "ZombiesSkill": "ZombiesSkill_Egypt_1",
+            "ZombiesSkillNum": "ZombiesSkillNum_Egypt_1",
+            "ZombiesLevelExp": "ZombiesLevelExp_Egypt_1",
+            "ZombiesValue": "ZombiesValue_Egypt_1"
+        },
+        "OpenType": ""
+    },
+    "Japan_2": {
+        "UnlockCondition": {
+            "LEVEL": 36,
+            "PREPOINT": {
+                "Japan_1": 1
+            }
+        },
+        "UnlockAuto": {
+            "MapGuide": 90
+        },
+        "NeedPower": 30,
+        "Name": "Map_Japan_2_Name",
+        "Img": "map_stage_2_2",
+        "Desc": "Map_Japan_2_Desc",
+        "StrategyDesc": "Map_Japan_2_StrategyDesc",
+        "RecommendLv": 33073,
+        "PointHead": "BBLMa",
+        "ShowReward": [
+            {
+                "itemId": "IM_TopsShowBox3",
+                "text": "EXPLORE_RewardShow_Type3",
+                "image": "ts_bg_fl_3"
+            },
+            {
+                "itemId": "IM_TopsShowBox2",
+                "text": "EXPLORE_RewardShow_Type2",
+                "image": "ts_bg_fl_2"
+            },
+            {
+                "itemId": "IM_TopsShowBox1",
+                "text": "EXPLORE_RewardShow_Type1",
+                "image": "ts_bg_fl_1"
+            }
+        ],
+        "DailyRewardShow": [
+            {
+                "itemId": "IM_TopsShowBox3",
+                "text": "EXPLORE_RewardShow_Type1",
+                "image": "ts_bg_fl_1"
+            },
+            {
+                "itemId": "IES_StarUpDogFood_SR",
+                "text": "EXPLORE_RewardShow_Type2",
+                "image": "ts_bg_fl_1"
+            },
+            {
+                "itemId": "IR_Equip14",
+                "text": "EXPLORE_RewardShow_Type1",
+                "image": "ts_bg_fl_1"
+            },
+            {
+                "itemId": "IR_Equip13",
+                "text": "EXPLORE_RewardShow_Type1",
+                "image": "ts_bg_fl_1"
+            }
+        ],
+        "WeekRecommend": [
+            1,
+            4,
+            5,
+            7
+        ],
+        "DailyReward": "Japan_2_EveryDay_Reward",
+        "HeroEffect": {
+            "ZTXCun": "MapExplore_HeroEffect01",
+            "ZTXChang": "MapExplore_HeroEffect01",
+            "YFZZhu": "MapExplore_HeroEffect01"
+        },
+        "HeroSpecialEffect": "",
+        "FirstRewardPosition": [
+            -39,
+            98
+        ],
+        "MapSystemFirstTask": [
+            "Map_FirstTask_Japan_2"
+        ],
+        "MapMainTask": "Map_PoinMainTask_Japan_2",
+        "MapGuideDesc": {
+            "1": {
+                "Value": 1,
+                "Desc": "Japan_2_GuideDesc_1"
+            },
+            "3": {
+                "Value": 1,
+                "Desc": "Japan_2_GuideDesc_3"
+            },
+            "2": {
+                "Value": 1,
+                "Desc": "Japan_2_GuideDesc_2"
+            },
+            "5": {
+                "Value": 1,
+                "Desc": "Japan_2_GuideDesc_5"
+            },
+            "4": {
+                "Value": 1,
+                "Desc": "Japan_2_GuideDesc_4"
+            }
+        },
+        "MapGuideReward": {
+            "1": "Japan_2_MapGuide3_Reward",
+            "0.5": "Japan_2_MapGuide1_Reward",
+            "0.75": "Japan_2_MapGuide2_Reward"
+        },
+        "MapResource": [
+            "Ground2_2",
+            "Decorate2_2"
+        ],
+        "MapBlock": "Decorate2_2_Block",
+        "PlayerPos": {
+            "1": {
+                "Direction": "Left",
+                "Pos": [
+                    256,
+                    145
+                ],
+                "Face": "Right"
+            }
+        },
+        "Object": [
+            "Japan_2_JinBiA1",
+            "Japan_2_JinBiA2",
+            "Japan_2_JinBiA3",
+            "Japan_2_JinBiA4",
+            "Japan_2_JinBiA5",
+            "Japan_2_JinBiA6",
+            "Japan_2_JinBiA7",
+            "Japan_2_JinBiA8",
+            "Japan_2_JinBiA9",
+            "Japan_2_JinBiA10",
+            "Japan_2_JinBiA11",
+            "Japan_2_JinBiA12",
+            "Japan_2_JinBiA13",
+            "Japan_2_JinBiA14",
+            "Japan_2_JinBiA15",
+            "Japan_2_JinBiA16",
+            "Japan_2_JinBiA17",
+            "Japan_2_JinBiA18",
+            "Japan_2_JinBiB1",
+            "Japan_2_JinBiB2",
+            "Japan_2_JinBiB3",
+            "Japan_2_JinBiB4",
+            "Japan_2_JinBiB5",
+            "Japan_2_JinBiB6",
+            "Japan_2_JinBiB7",
+            "Japan_2_JinBiB8",
+            "Japan_2_JinBiB9",
+            "Japan_2_JinBiB10",
+            "Japan_2_JinBiB11",
+            "Japan_2_JinBiB12",
+            "Japan_2_JinBiB13",
+            "Japan_2_JinBiB14",
+            "Japan_2_JinBiB15",
+            "Japan_2_JinBiB16",
+            "Japan_2_JinBiB17",
+            "Japan_2_JinBiB18",
+            "Japan_2_BaoXiangA1",
+            "Japan_2_BaoXiangB1",
+            "Japan_2_BaoXiangA1GuangXiao",
+            "Japan_2_BaoXiangB1GuangXiao",
+            "Japan_2_BuffA1",
+            "Japan_2_BuffB1",
+            "Japan_2_XiaoGuaiBaoXiangA1",
+            "Japan_2_XiaoGuaiBaoXiangB1",
+            "Japan_2_XiaoGuaiBuffA1",
+            "Japan_2_XiaoGuaiBuffB1",
+            "Japan_2_XiaoGuaiA1",
+            "Japan_2_XiaoGuaiA2",
+            "Japan_2_XiaoGuaiA3",
+            "Japan_2_XiaoGuaiA4",
+            "Japan_2_XiaoGuaiA5",
+            "Japan_2_XiaoGuaiA6",
+            "Japan_2_XiaoGuaiA7",
+            "Japan_2_XiaoGuaiA8",
+            "Japan_2_XiaoGuaiA9",
+            "Japan_2_XiaoGuaiB1",
+            "Japan_2_XiaoGuaiB2",
+            "Japan_2_XiaoGuaiB3",
+            "Japan_2_JingYingA1",
+            "Japan_2_JingYingB1",
+            "Japan_2_BossA1",
+            "Japan_2_YDZZong1",
+            "Japan_2_YBYa1",
+            "Japan_2_XiaoGuaiC1",
+            "Japan_2_XiaoGuaiC2",
+            "Japan_2_XiaoGuaiC3",
+            "Japan_2_XiaoGuaiC4",
+            "Japan_2_Zudang1",
+            "Japan_2_StoryStar1",
+            "Japan_2_StoryBoss1",
+            "Japan_2_StoryClue1",
+            "Japan_2_CaiDanYaoDao",
+            "Japan_2_CaiDanMuXiang",
+            "Japan_2_CaiDanMuXiangGeGe1",
+            "Japan_2_CaiDanFanTuan1",
+            "Japan_2_CaiDanFanTuan2",
+            "Japan_2_CaiDanFanTuan3",
+            "Japan_2_CaiDanMengPo",
+            "Japan_2_CaiDanZhenFa1",
+            "Japan_2_CaiDanGouYu1",
+            "Japan_2_CaiDanGouYu2",
+            "Japan_2_CaiDanGouYu3",
+            "Japan_2_CaiDanGouYuHong",
+            "Japan_2_CaiDanGouYuHuang",
+            "Japan_2_CaiDanGouYuQing"
+        ],
+        "RandomObject": "",
+        "TeamObject": {
+            "Japan_2_CaiDanHunYu": [
+                {
+                    "Object": [
+                        "Japan_2_CaiDanHunYu1",
+                        "Japan_2_CaiDanHunYu2",
+                        "Japan_2_CaiDanHunYu3",
+                        "Japan_2_CaiDanHunYu4"
+                    ],
+                    "Rnd": 0.5
+                },
+                {
+                    "Object": [
+                        "Japan_2_CaiDanHunYu1",
+                        "Japan_2_CaiDanHunYu2",
+                        "Japan_2_CaiDanHunYu3"
+                    ],
+                    "Rnd": 0.15
+                },
+                {
+                    "Object": [
+                        "Japan_2_CaiDanHunYu2",
+                        "Japan_2_CaiDanHunYu3",
+                        "Japan_2_CaiDanHunYu4"
+                    ],
+                    "Rnd": 0.15
+                },
+                {
+                    "Object": [
+                        "Japan_2_CaiDanHunYu1",
+                        "Japan_2_CaiDanHunYu3",
+                        "Japan_2_CaiDanHunYu4"
+                    ],
+                    "Rnd": 0.15
+                },
+                {
+                    "Object": [
+                        "Japan_2_CaiDanHunYu1",
+                        "Japan_2_CaiDanHunYu2"
+                    ],
+                    "Rnd": 0.05
+                },
+                {
+                    "Object": [
+                        "Japan_2_CaiDanHunYu2",
+                        "Japan_2_CaiDanHunYu3"
+                    ],
+                    "Rnd": 0.05
+                },
+                {
+                    "Object": [
+                        "Japan_2_CaiDanHunYu3",
+                        "Japan_2_CaiDanHunYu4"
+                    ],
+                    "Rnd": 0.05
+                }
+            ]
+        },
+        "OnceObject": {
+            "Japan_2_CaiDanBaoXiang": "Japan_2_CaiDanBaoXiang_Case1",
+            "Japan_2_CaiDanMiJi1": "Japan_2_CaiDanMiJi1_Case1",
+            "Japan_2_CaiDanMiJi2": "Japan_2_CaiDanMiJi2_Case1",
+            "Japan_2_CaiDanMiJi3": "Japan_2_CaiDanMiJi3_Case1",
+            "Japan_2_CaiDanMiJi4": "Japan_2_CaiDanMiJi4_Case1",
+            "Japan_2_CaiDanBoss": "Japan_2_CaiDanBoss_Case1"
+        },
+        "MapAuto": [
+            "Japan_2_01",
+            "Japan_2_02",
+            "Japan_2_03",
+            "Japan_2_04",
+            "Japan_2_05",
+            "Japan_2_06",
+            "Japan_2_07",
+            "Japan_2_08",
+            "Japan_2_09",
+            "Japan_2_10",
+            "Japan_2_11",
+            "Japan_2_12",
+            "Japan_2_13",
+            "Japan_2_14",
+            "Japan_2_15",
+            "Japan_2_16",
+            "Japan_2_17",
+            "Japan_2_18",
+            "Japan_2_19",
+            "Japan_2_20",
+            "Japan_2_21",
+            "Japan_2_22",
+            "Japan_2_23",
+            "Japan_2_24",
+            "Japan_2_25",
+            "Japan_2_26",
+            "Japan_2_27",
+            "Japan_2_28",
+            "Japan_2_29",
+            "Japan_2_30",
+            "Japan_2_31",
+            "Japan_2_32",
+            "Japan_2_33",
+            "Japan_2_34",
+            "Japan_2_35",
+            "Japan_2_36",
+            "Japan_2_37",
+            "Japan_2_38",
+            "Japan_2_39",
+            "Japan_2_40",
+            "Japan_2_41",
+            "Japan_2_42",
+            "Japan_2_43",
+            "Japan_2_44",
+            "Japan_2_45",
+            "Japan_2_46",
+            "Japan_2_47",
+            "Japan_2_48",
+            "Japan_2_49",
+            "Japan_2_50",
+            "Japan_2_51",
+            "Japan_2_52",
+            "Japan_2_53",
+            "Japan_2_54",
+            "Japan_2_55",
+            "Japan_2_56",
+            "Japan_2_57",
+            "Japan_2_58",
+            "Japan_2_59",
+            "Japan_2_60",
+            "Japan_2_61",
+            "Japan_2_62",
+            "Japan_2_63",
+            "Japan_2_64",
+            "Japan_2_65"
+        ],
+        "BGM": [
+            "Mus_Explore_Japan",
+            "Action_9"
+        ],
+        "BGMAction": "",
+        "BGMAisac": {
+            "Action_11": "Mus_Explore_Japan_Asiac_4",
+            "Action_10": "Mus_Explore_Japan_Asiac_3",
+            "Action_9": "Mus_Explore_Japan_Asiac_2",
+            "Action_8": "Mus_Explore_Japan_Asiac_1"
+        },
+        "MapPic": "map_decorate2_2",
+        "MapPicAction": {
+            "map_decorate2_2": [
+                [
+                    150,
+                    429
+                ],
+                [
+                    729,
+                    80
                 ]
             ]
         },

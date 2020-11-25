@@ -53,60 +53,6 @@
         ],
         "NotGetUnlook": ""
     },
-    "Surface_SDTZi_Awake": {
-        "Hero": "",
-        "Name": "",
-        "Desc": "",
-        "GainShortDesc": "",
-        "GainDesc": "",
-        "Type": "",
-        "GoodsId": "",
-        "ShopID": "",
-        "ActivityId": "",
-        "Link": "",
-        "Quality": "",
-        "Model": "",
-        "Unlook": "",
-        "Sort": "",
-        "ClickAction": [
-            {
-                "action": "touch3",
-                "range": [
-                    128,
-                    128
-                ],
-                "part": "head",
-                "point": [
-                    3,
-                    538
-                ]
-            },
-            {
-                "action": "touch2",
-                "range": [
-                    128,
-                    95
-                ],
-                "part": "body",
-                "point": [
-                    -49,
-                    413
-                ]
-            },
-            {
-                "action": "touch2",
-                "range": [
-                    0,
-                    0
-                ],
-                "part": "all",
-                "point": [
-                    "all"
-                ]
-            }
-        ],
-        "NotGetUnlook": ""
-    },
     "Surface_KTSJKe_Awake": {
         "Hero": "",
         "Name": "",
@@ -281,60 +227,6 @@
             },
             {
                 "action": "touch1",
-                "range": [
-                    0,
-                    0
-                ],
-                "part": "all",
-                "point": [
-                    "all"
-                ]
-            }
-        ],
-        "NotGetUnlook": ""
-    },
-    "Surface_LYXi_2": {
-        "Hero": "LYXi",
-        "Name": "Surface_LYXi_2_Name",
-        "Desc": "Surface_LYXi_2_Desc",
-        "GainShortDesc": "Surface_QPao_GainShort",
-        "GainDesc": "Surface_LYXi_QPao_GainDesc",
-        "Type": 2,
-        "GoodsId": "",
-        "ShopID": "",
-        "ActivityId": "",
-        "Link": "",
-        "Quality": 5,
-        "Model": "Model_LYXi_QPao",
-        "Unlook": 1,
-        "Sort": 2,
-        "ClickAction": [
-            {
-                "action": "touch1",
-                "range": [
-                    128,
-                    128
-                ],
-                "part": "head",
-                "point": [
-                    -30,
-                    872
-                ]
-            },
-            {
-                "action": "touch3",
-                "range": [
-                    128,
-                    95
-                ],
-                "part": "body",
-                "point": [
-                    -57,
-                    756
-                ]
-            },
-            {
-                "action": "touch2",
                 "range": [
                     0,
                     0
@@ -1251,60 +1143,6 @@
                 "point": [
                     -81,
                     519
-                ]
-            },
-            {
-                "action": "touch1",
-                "range": [
-                    0,
-                    0
-                ],
-                "part": "all",
-                "point": [
-                    "all"
-                ]
-            }
-        ],
-        "NotGetUnlook": ""
-    },
-    "Surface_MGNa_2": {
-        "Hero": "MGNa",
-        "Name": "Surface_MGNa_2_Name",
-        "Desc": "Surface_MGNa_2_Desc",
-        "GainShortDesc": "Surface_QPao_GainShort",
-        "GainDesc": "Surface_MGNa_QPao_GainDesc",
-        "Type": 2,
-        "GoodsId": "",
-        "ShopID": "",
-        "ActivityId": "",
-        "Link": "",
-        "Quality": 5,
-        "Model": "Model_MGNa_QPao",
-        "Unlook": 1,
-        "Sort": 2,
-        "ClickAction": [
-            {
-                "action": "touch3",
-                "range": [
-                    128,
-                    128
-                ],
-                "part": "head",
-                "point": [
-                    -7.6,
-                    765
-                ]
-            },
-            {
-                "action": "touch2",
-                "range": [
-                    128,
-                    95
-                ],
-                "part": "body",
-                "point": [
-                    47,
-                    662
                 ]
             },
             {
@@ -5816,6 +5654,114 @@
                     "Voice_BHTZi_37",
                     "Voice_BHTZi_39"
                 ],
+                "point": [
+                    "all"
+                ]
+            }
+        ],
+        "NotGetUnlook": ""
+    },
+    "Surface_LYXi_2": {
+        "Hero": "LYXi",
+        "Name": "Surface_LYXi_2_Name",
+        "Desc": "Surface_LYXi_2_Desc",
+        "GainShortDesc": "Surface_QPao_GainShort",
+        "GainDesc": "Surface_LYXi_QPao_GainDesc",
+        "Type": 2,
+        "GoodsId": "Surface_11",
+        "ShopID": "Shop_Surface",
+        "ActivityId": "",
+        "Link": "",
+        "Quality": 5,
+        "Model": "Model_LYXi_QPao",
+        "Unlook": 1,
+        "Sort": 2,
+        "ClickAction": [
+            {
+                "action": "touch1",
+                "range": [
+                    128,
+                    128
+                ],
+                "part": "head",
+                "point": [
+                    -30,
+                    872
+                ]
+            },
+            {
+                "action": "touch3",
+                "range": [
+                    128,
+                    95
+                ],
+                "part": "body",
+                "point": [
+                    -57,
+                    756
+                ]
+            },
+            {
+                "action": "touch2",
+                "range": [
+                    0,
+                    0
+                ],
+                "part": "all",
+                "point": [
+                    "all"
+                ]
+            }
+        ],
+        "NotGetUnlook": ""
+    },
+    "Surface_MGNa_2": {
+        "Hero": "MGNa",
+        "Name": "Surface_MGNa_2_Name",
+        "Desc": "Surface_MGNa_2_Desc",
+        "GainShortDesc": "Surface_QPao_GainShort",
+        "GainDesc": "Surface_MGNa_QPao_GainDesc",
+        "Type": 2,
+        "GoodsId": "Surface_100",
+        "ShopID": "Shop_Surface",
+        "ActivityId": "",
+        "Link": "",
+        "Quality": 5,
+        "Model": "Model_MGNa_QPao",
+        "Unlook": 1,
+        "Sort": 2,
+        "ClickAction": [
+            {
+                "action": "touch3",
+                "range": [
+                    128,
+                    128
+                ],
+                "part": "head",
+                "point": [
+                    -7.6,
+                    765
+                ]
+            },
+            {
+                "action": "touch2",
+                "range": [
+                    128,
+                    95
+                ],
+                "part": "body",
+                "point": [
+                    47,
+                    662
+                ]
+            },
+            {
+                "action": "touch1",
+                "range": [
+                    0,
+                    0
+                ],
+                "part": "all",
                 "point": [
                     "all"
                 ]

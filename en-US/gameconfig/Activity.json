@@ -6231,39 +6231,6 @@
         "Tag": "",
         "Version": ""
     },
-    "DrawCard_1UP_8_Activity": {
-        "Type": "DRAWCARDOPEN",
-        "UI": "",
-        "LeftBanner": "",
-        "Title": "",
-        "Desc": "",
-        "Time": "PLAYER_REGISTER",
-        "TimeFactor": {
-            "start": 32,
-            "end": 38
-        },
-        "Loop": "",
-        "LoopFactor": "",
-        "ServerCondition": "",
-        "ClientCondition": {
-            "LEVEL": 1
-        },
-        "ActivityConfig": {
-            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_8",
-            "DRAW": "DrawCard_1UP_8",
-            "VANISH": 0
-        },
-        "Mail": 0,
-        "MailId": "",
-        "Reset": 0,
-        "Enable": 0,
-        "Primary": 1,
-        "ShowTab": 0,
-        "ShowIndex": 103,
-        "Icon": "",
-        "Tag": "",
-        "Version": ""
-    },
     "ActivityBlock_WuXiuHui_AchieveMentTask": {
         "Type": "TASK",
         "UI": "ABACHIEVEMENTTASK",
@@ -6324,6 +6291,322 @@
         "Primary": 0,
         "ShowTab": 0,
         "ShowIndex": 2004,
+        "Icon": "",
+        "Tag": "",
+        "Version": ""
+    },
+    "DrawCard_MGNaYBYa_Activity": {
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "LeftBanner": "",
+        "Title": "",
+        "Desc": "",
+        "Time": "PLAYER_REGISTER",
+        "TimeFactor": {
+            "start": 38,
+            "end": 44
+        },
+        "Loop": "",
+        "LoopFactor": "",
+        "ServerCondition": "",
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "ActivityConfig": {
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_MGNaYBYa",
+            "DRAW": "DrawCard_MGNaYBYa",
+            "VANISH": 0
+        },
+        "Mail": 0,
+        "MailId": "",
+        "Reset": 0,
+        "Enable": 1,
+        "Primary": 1,
+        "ShowTab": 0,
+        "ShowIndex": 205,
+        "Icon": "",
+        "Tag": "",
+        "Version": ""
+    },
+    "ActivityBattlePassShop_20201206": {
+        "Type": "EXCHANGE",
+        "UI": "BattlePassShop",
+        "LeftBanner": "",
+        "Title": "",
+        "Desc": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "start": [
+                "2020-12-06 05:00:00",
+                "2021-01-05 05:00:00"
+            ],
+            "end": "2021-01-05 05:00:00"
+        },
+        "Loop": "",
+        "LoopFactor": "",
+        "ServerCondition": "",
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "ActivityConfig": {
+            "buy": [
+                "Voice_SDTZi_71_4"
+            ],
+            "exchange": [
+                "HighPointGood_20201206_1",
+                "HighPointGood_20201206_2",
+                "HighPointGood_20201206_3",
+                "HighPointGood_20201206_4",
+                "HighPointGood_20201206_5"
+            ],
+            "zoom": [
+                0.41
+            ],
+            "sold_out": [
+                "Voice_SDTZi_71_2"
+            ],
+            "in": [
+                "Voice_SDTZi_71_1"
+            ],
+            "position": [
+                10,
+                -300
+            ],
+            "ResourcesBanner": [
+                "IGM_BP_HighPoint"
+            ],
+            "ModelId": "Model_SDTZ_Shop"
+        },
+        "Mail": 0,
+        "MailId": "",
+        "Reset": 0,
+        "Enable": 1,
+        "Primary": 1,
+        "ShowTab": 2,
+        "ShowIndex": 93004,
+        "Icon": "",
+        "Tag": "",
+        "Version": ""
+    },
+    "DrawCard_KTSJKeMTZMEShi_Activity": {
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "LeftBanner": "",
+        "Title": "",
+        "Desc": "",
+        "Time": "PLAYER_REGISTER",
+        "TimeFactor": {
+            "start": 45,
+            "end": 51
+        },
+        "Loop": "",
+        "LoopFactor": "",
+        "ServerCondition": "",
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "ActivityConfig": {
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_KTSJKeMTZMEShi",
+            "DRAW": "DrawCard_KTSJKeMTZMEShi",
+            "VANISH": 0
+        },
+        "Mail": 0,
+        "MailId": "",
+        "Reset": 0,
+        "Enable": 1,
+        "Primary": 1,
+        "ShowTab": 0,
+        "ShowIndex": 205,
+        "Icon": "",
+        "Tag": "",
+        "Version": ""
+    },
+    "DrawCard_1UP_12_Activity": {
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "LeftBanner": "",
+        "Title": "",
+        "Desc": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "start": [
+                "2020-11-28 05:00:00",
+                "2020-12-05 05:00:00"
+            ],
+            "end": "2020-12-05 05:00:00"
+        },
+        "Loop": "",
+        "LoopFactor": "",
+        "ServerCondition": "",
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "ActivityConfig": {
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_12",
+            "DRAW": "DrawCard_1UP_12",
+            "VANISH": 0
+        },
+        "Mail": 0,
+        "MailId": "",
+        "Reset": 0,
+        "Enable": 1,
+        "Primary": 1,
+        "ShowTab": 0,
+        "ShowIndex": 209,
+        "Icon": "",
+        "Tag": "",
+        "Version": ""
+    },
+    "ActivityBattlePass_20201206": {
+        "Type": "BattlePass",
+        "UI": "BattlePass",
+        "LeftBanner": "",
+        "Title": "ActivityBattlePass_20200914_Name",
+        "Desc": "ActivityBattlePass_20200914_Desc",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "start": [
+                "2020-12-06 05:00:00",
+                "2021-01-03 05:00:00"
+            ],
+            "end": "2021-01-03 05:00:00"
+        },
+        "Loop": "",
+        "LoopFactor": "",
+        "ServerCondition": "",
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "ActivityConfig": {
+            "ActivityBattlePass": "ActivityBattlePass_20201206",
+            "Activity": [
+                "ActivityBattlePass_20201206_Exchange"
+            ]
+        },
+        "Mail": 1,
+        "MailId": "ActivityBattlePass_Mail",
+        "Reset": 1,
+        "Enable": 1,
+        "Primary": 1,
+        "ShowTab": 2,
+        "ShowIndex": 93003,
+        "Icon": "",
+        "Tag": "",
+        "Version": ""
+    },
+    "DrawCard_LFErLCYShi_Activity": {
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "LeftBanner": "",
+        "Title": "",
+        "Desc": "",
+        "Time": "PLAYER_REGISTER",
+        "TimeFactor": {
+            "start": 38,
+            "end": 44
+        },
+        "Loop": "",
+        "LoopFactor": "",
+        "ServerCondition": "",
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "ActivityConfig": {
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_LFErLCYShi",
+            "DRAW": "DrawCard_LFErLCYShi",
+            "VANISH": 0
+        },
+        "Mail": 0,
+        "MailId": "",
+        "Reset": 0,
+        "Enable": 1,
+        "Primary": 1,
+        "ShowTab": 0,
+        "ShowIndex": 205,
+        "Icon": "",
+        "Tag": "",
+        "Version": ""
+    },
+    "DrawCard_1UP_8_Activity": {
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "LeftBanner": "",
+        "Title": "",
+        "Desc": "",
+        "Time": "PLAYER_REGISTER",
+        "TimeFactor": {
+            "start": 45,
+            "end": 51
+        },
+        "Loop": "",
+        "LoopFactor": "",
+        "ServerCondition": "",
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "ActivityConfig": {
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_8",
+            "DRAW": "DrawCard_1UP_8",
+            "VANISH": 0
+        },
+        "Mail": 0,
+        "MailId": "",
+        "Reset": 0,
+        "Enable": 1,
+        "Primary": 1,
+        "ShowTab": 0,
+        "ShowIndex": 103,
+        "Icon": "",
+        "Tag": "",
+        "Version": ""
+    },
+    "ActivityBattlePass_20201206_Exchange": {
+        "Type": "EXCHANGE",
+        "UI": "BattlePassPointShop",
+        "LeftBanner": "",
+        "Title": "",
+        "Desc": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "start": [
+                "2020-12-06 05:00:00",
+                "2021-01-03 05:00:00"
+            ],
+            "end": "2021-01-03 05:00:00"
+        },
+        "Loop": "",
+        "LoopFactor": "",
+        "ServerCondition": "",
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "ActivityConfig": {
+            "ResourcesBanner": [
+                "IGM_BP_Point"
+            ],
+            "exchange": [
+                "PointGood_2020201206_1",
+                "PointGood_2020201206_2",
+                "PointGood_2020201206_3",
+                "PointGood_2020201206_4",
+                "PointGood_2020201206_5",
+                "PointGood_2020201206_6",
+                "PointGood_2020201206_7",
+                "PointGood_2020201206_8",
+                "PointGood_2020201206_9",
+                "PointGood_2020201206_10",
+                "PointGood_2020201206_11",
+                "PointGood_2020201206_12",
+                "PointGood_2020201206_13"
+            ]
+        },
+        "Mail": 0,
+        "MailId": "",
+        "Reset": 0,
+        "Enable": 1,
+        "Primary": 0,
+        "ShowTab": 2,
+        "ShowIndex": 93004,
         "Icon": "",
         "Tag": "",
         "Version": ""

@@ -4,12 +4,12 @@
         "Pic": "mjt_pannel_T01N02M09",
         "UnlockCondition": {
             "Pass": "DreamChallengeBattle_T01N02M08",
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "BattleFactor": [
-            48000,
-            48000,
-            48000
+            8835,
+            8835,
+            8835
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -39,19 +39,23 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.15,
-        "CombatNeed": 480000
+        "CombatNeed": 93000,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T01N02M08": {
         "Name": "DreamChallengeBattle_Name_T01N02M08",
         "Pic": "mjt_pannel_T01N02M08",
         "UnlockCondition": {
             "Pass": "DreamChallengeBattle_T01N02M07",
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "BattleFactor": [
-            47136,
-            47136,
-            47136
+            8493,
+            8493,
+            8493
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -81,7 +85,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.0,
-        "CombatNeed": 471360
+        "CombatNeed": 89400,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T03N03M12": {
         "Name": "DreamChallengeBattle_Name_DreamChallengeBattle_T03N03M12",
@@ -122,7 +130,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.75,
-        "CombatNeed": 587990
+        "CombatNeed": 587990,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T03N03M11": {
         "Name": "DreamChallengeBattle_Name_DreamChallengeBattle_T03N03M11",
@@ -163,7 +175,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.75,
-        "CombatNeed": 579830
+        "CombatNeed": 579830,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T03N03M10": {
         "Name": "DreamChallengeBattle_Name_DreamChallengeBattle_T03N03M10",
@@ -204,19 +220,23 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.75,
-        "CombatNeed": 578270
+        "CombatNeed": 578270,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T01N02M01": {
         "Name": "DreamChallengeBattle_Name_T01N02M01",
         "Pic": "mjt_pannel_T01N02M01",
         "UnlockCondition": {
             "Pass": "DreamChallengeBattle_T01N01M04",
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "BattleFactor": [
-            43680,
-            43680,
-            43680
+            7695,
+            7695,
+            7695
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -246,19 +266,23 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.0,
-        "CombatNeed": 436800
+        "CombatNeed": 81000,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T01N02M03": {
         "Name": "DreamChallengeBattle_Name_T01N02M03",
         "Pic": "mjt_pannel_T01N02M03",
         "UnlockCondition": {
             "Pass": "DreamChallengeBattle_T01N02M02",
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "BattleFactor": [
-            44846,
-            44846,
-            44846
+            7934,
+            7934,
+            7934
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -288,19 +312,23 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.15,
-        "CombatNeed": 448460
+        "CombatNeed": 83520,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T01N02M02": {
         "Name": "DreamChallengeBattle_Name_T01N02M02",
         "Pic": "mjt_pannel_T01N02M02",
         "UnlockCondition": {
             "Pass": "DreamChallengeBattle_T01N02M01",
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "BattleFactor": [
-            43982,
-            43982,
-            43982
+            7763,
+            7763,
+            7763
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -330,19 +358,23 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.0,
-        "CombatNeed": 439820
+        "CombatNeed": 81720,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T01N02M05": {
         "Name": "DreamChallengeBattle_Name_T01N02M05",
         "Pic": "mjt_pannel_T01N02M05",
         "UnlockCondition": {
             "Pass": "DreamChallengeBattle_T01N02M04",
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "BattleFactor": [
-            45451,
-            45451,
-            45451
+            8071,
+            8071,
+            8071
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -372,19 +404,23 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.0,
-        "CombatNeed": 454510
+        "CombatNeed": 84960,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T01N02M04": {
         "Name": "DreamChallengeBattle_Name_T01N02M04",
         "Pic": "mjt_pannel_T01N02M04",
         "UnlockCondition": {
             "Pass": "DreamChallengeBattle_T01N02M03",
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "BattleFactor": [
-            45148,
-            45148,
-            45148
+            8002,
+            8002,
+            8002
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -414,19 +450,23 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.0,
-        "CombatNeed": 451480
+        "CombatNeed": 84240,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T01N02M07": {
         "Name": "DreamChallengeBattle_Name_T01N02M07",
         "Pic": "mjt_pannel_T01N02M07",
         "UnlockCondition": {
             "Pass": "DreamChallengeBattle_T01N02M06",
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "BattleFactor": [
-            46833,
-            46833,
-            46833
+            8424,
+            8424,
+            8424
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -456,19 +496,23 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.0,
-        "CombatNeed": 468330
+        "CombatNeed": 88680,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T01N02M06": {
         "Name": "DreamChallengeBattle_Name_T01N02M06",
         "Pic": "mjt_pannel_T01N02M06",
         "UnlockCondition": {
             "Pass": "DreamChallengeBattle_T01N02M05",
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "BattleFactor": [
-            46531,
-            46531,
-            46531
+            8356,
+            8356,
+            8356
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -498,7 +542,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.15,
-        "CombatNeed": 465310
+        "CombatNeed": 87960,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T03N02M03": {
         "Name": "DreamChallengeBattle_Name_DreamChallengeBattle_T03N02M03",
@@ -539,7 +587,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.75,
-        "CombatNeed": 470710
+        "CombatNeed": 470710,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T03N02M02": {
         "Name": "DreamChallengeBattle_Name_DreamChallengeBattle_T03N02M02",
@@ -580,7 +632,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.75,
-        "CombatNeed": 465690
+        "CombatNeed": 465690,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T03N02M01": {
         "Name": "DreamChallengeBattle_Name_DreamChallengeBattle_T03N02M01",
@@ -621,7 +677,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.75,
-        "CombatNeed": 464360
+        "CombatNeed": 464360,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T03N02M07": {
         "Name": "DreamChallengeBattle_Name_DreamChallengeBattle_T03N02M07",
@@ -662,7 +722,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.75,
-        "CombatNeed": 481410
+        "CombatNeed": 481410,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T03N02M06": {
         "Name": "DreamChallengeBattle_Name_DreamChallengeBattle_T03N02M06",
@@ -703,7 +767,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.75,
-        "CombatNeed": 480070
+        "CombatNeed": 480070,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T03N02M05": {
         "Name": "DreamChallengeBattle_Name_DreamChallengeBattle_T03N02M05",
@@ -744,7 +812,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.75,
-        "CombatNeed": 473380
+        "CombatNeed": 473380,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T03N02M04": {
         "Name": "DreamChallengeBattle_Name_DreamChallengeBattle_T03N02M04",
@@ -785,7 +857,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.75,
-        "CombatNeed": 472050
+        "CombatNeed": 472050,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T03N02M09": {
         "Name": "DreamChallengeBattle_Name_DreamChallengeBattle_T03N02M09",
@@ -826,7 +902,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.75,
-        "CombatNeed": 492780
+        "CombatNeed": 492780,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T03N02M08": {
         "Name": "DreamChallengeBattle_Name_DreamChallengeBattle_T03N02M08",
@@ -867,19 +947,23 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.75,
-        "CombatNeed": 482750
+        "CombatNeed": 482750,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T01N01M04": {
         "Name": "DreamChallengeBattle_Name_T01N01M04",
         "Pic": "mjt_pannel_T01N01M04",
         "UnlockCondition": {
             "Pass": "DreamChallengeBattle_T01N01M03",
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "BattleFactor": [
-            37747,
-            37747,
-            37747
+            7807,
+            7807,
+            7807
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -909,19 +993,23 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.15,
-        "CombatNeed": 377470
+        "CombatNeed": 86750,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T01N01M06": {
         "Name": "DreamChallengeBattle_Name_T01N01M06",
         "Pic": "mjt_pannel_T01N01M06",
         "UnlockCondition": {
             "Pass": "DreamChallengeBattle_T01N01M05",
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "BattleFactor": [
-            38850,
-            38850,
-            38850
+            8190,
+            8190,
+            8190
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -955,19 +1043,161 @@
         },
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.15,
-        "CombatNeed": 388500
+        "CombatNeed": 91000,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
+    },
+    "DreamChallengeBattle_T01N04M10": {
+        "Name": "DreamChallengeBattle_Name_T01N03M10",
+        "Pic": "mjt_pannel_T01N03M10",
+        "UnlockCondition": {
+            "Pass": "DreamChallengeBattle_T01N04M09",
+            "LEVEL": 32
+        },
+        "BattleFactor": [
+            31600,
+            31600,
+            31600
+        ],
+        "NPC": "",
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "EnemyMaster": "T01N03M10W01_Master_01",
+        "EnemyCard": "CardT01N03M10",
+        "Background": "Battle_Scene_20",
+        "PointHead": "Model_NXYYi",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Showreward": "DreamChallengeBattle_T01N04M10_reward",
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T01N04M10_reward"
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Danger_Boss",
+            "",
+            ""
+        ],
+        "BossRound": 1,
+        "StoryLink": "",
+        "OpenFAC": 1,
+        "Combat_Adjust_Rate": 0.0,
+        "CombatNeed": 284000,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
+    },
+    "DreamChallengeBattle_T01N04M11": {
+        "Name": "DreamChallengeBattle_Name_T01N03M11",
+        "Pic": "mjt_pannel_T01N03M11",
+        "UnlockCondition": {
+            "Pass": "DreamChallengeBattle_T01N04M10",
+            "LEVEL": 32
+        },
+        "BattleFactor": [
+            32750,
+            32750,
+            32750
+        ],
+        "NPC": "",
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "EnemyMaster": "T01N03M11W01_Master_01",
+        "EnemyCard": "CardT01N03M11",
+        "Background": "Battle_Scene_20",
+        "PointHead": "Model_NXYYi",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Showreward": "DreamChallengeBattle_T01N04M11_reward",
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T01N04M11_reward"
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Danger_Boss",
+            "",
+            ""
+        ],
+        "BossRound": 1,
+        "StoryLink": "",
+        "OpenFAC": 1,
+        "Combat_Adjust_Rate": 0.0,
+        "CombatNeed": 292000,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
+    },
+    "DreamChallengeBattle_T01N04M12": {
+        "Name": "DreamChallengeBattle_Name_T01N03M12",
+        "Pic": "mjt_pannel_T01N03M12",
+        "UnlockCondition": {
+            "Pass": "DreamChallengeBattle_T01N04M11",
+            "LEVEL": 32
+        },
+        "BattleFactor": [
+            33850,
+            33850,
+            33850
+        ],
+        "NPC": "",
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "EnemyMaster": "T01N03M12W01_Master_01",
+        "EnemyCard": "CardT01N03M12",
+        "Background": "Battle_Scene_20",
+        "PointHead": "Model_NXYYi",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Showreward": "DreamChallengeBattle_T01N04M12_reward",
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T01N04M12_reward"
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Danger_Boss",
+            "",
+            ""
+        ],
+        "BossRound": 1,
+        "StoryLink": "",
+        "OpenFAC": 1,
+        "Combat_Adjust_Rate": 0.15,
+        "CombatNeed": 300000,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T01N03M10": {
         "Name": "DreamChallengeBattle_Name_T01N03M10",
         "Pic": "mjt_pannel_T01N03M10",
         "UnlockCondition": {
             "Pass": "DreamChallengeBattle_T01N03M09",
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "BattleFactor": [
-            55797,
-            55797,
-            55797
+            11881,
+            11881,
+            11881
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -997,7 +1227,839 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.0,
-        "CombatNeed": 557970
+        "CombatNeed": 118816,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
+    },
+    "DreamChallengeBattle_T01N04M09": {
+        "Name": "DreamChallengeBattle_Name_T01N03M09",
+        "Pic": "mjt_pannel_T01N03M09",
+        "UnlockCondition": {
+            "Pass": "DreamChallengeBattle_T01N04M08",
+            "LEVEL": 32
+        },
+        "BattleFactor": [
+            30400,
+            30400,
+            30400
+        ],
+        "NPC": "",
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "EnemyMaster": "T01N03M09W01_Master_01",
+        "EnemyCard": "CardT01N03M09",
+        "Background": "Battle_Scene_20",
+        "PointHead": "Model_NXYYi",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Showreward": "DreamChallengeBattle_T01N04M09_reward",
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T01N04M09_reward"
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Danger_Boss",
+            "",
+            ""
+        ],
+        "BossRound": 1,
+        "StoryLink": "",
+        "OpenFAC": 1,
+        "Combat_Adjust_Rate": 0.0,
+        "CombatNeed": 276000,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
+    },
+    "DreamChallengeBattle_T01N04M08": {
+        "Name": "DreamChallengeBattle_Name_T01N03M08",
+        "Pic": "mjt_pannel_T01N03M08",
+        "UnlockCondition": {
+            "Pass": "DreamChallengeBattle_T01N04M07",
+            "LEVEL": 32
+        },
+        "BattleFactor": [
+            29100,
+            29100,
+            29100
+        ],
+        "NPC": "",
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "EnemyMaster": "T01N03M08W01_Master_01",
+        "EnemyCard": "CardT01N03M08",
+        "Background": "Battle_Scene_20",
+        "PointHead": "Model_NXYYi",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Showreward": "DreamChallengeBattle_T01N04M08_reward",
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T01N04M08_reward"
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Danger_Boss",
+            "",
+            ""
+        ],
+        "BossRound": 1,
+        "StoryLink": "",
+        "OpenFAC": 1,
+        "Combat_Adjust_Rate": 0.15,
+        "CombatNeed": 268000,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
+    },
+    "DreamChallengeBattle_T01N04M03": {
+        "Name": "DreamChallengeBattle_Name_T01N03M03",
+        "Pic": "mjt_pannel_T01N03M03",
+        "UnlockCondition": {
+            "Pass": "DreamChallengeBattle_T01N04M02",
+            "LEVEL": 32
+        },
+        "BattleFactor": [
+            21550,
+            21550,
+            21550
+        ],
+        "NPC": "",
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "EnemyMaster": "T01N03M03W01_Master_01",
+        "EnemyCard": "CardT01N03M03",
+        "Background": "Battle_Scene_20",
+        "PointHead": "Model_NXYYi",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Showreward": "DreamChallengeBattle_T01N04M03_reward",
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T01N04M03_reward"
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Danger_Boss",
+            "",
+            ""
+        ],
+        "BossRound": 1,
+        "StoryLink": "",
+        "OpenFAC": 1,
+        "Combat_Adjust_Rate": 0.0,
+        "CombatNeed": 228000,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
+    },
+    "DreamChallengeBattle_T01N04M02": {
+        "Name": "DreamChallengeBattle_Name_T01N03M02",
+        "Pic": "mjt_pannel_T01N03M02",
+        "UnlockCondition": {
+            "Pass": "DreamChallengeBattle_T01N04M01",
+            "LEVEL": 32
+        },
+        "BattleFactor": [
+            19800,
+            19800,
+            19800
+        ],
+        "NPC": "",
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "EnemyMaster": "T01N03M02W01_Master_01",
+        "EnemyCard": "CardT01N03M02",
+        "Background": "Battle_Scene_20",
+        "PointHead": "Model_NXYYi",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Showreward": "DreamChallengeBattle_T01N04M02_reward",
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T01N04M02_reward"
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Danger_Boss",
+            "",
+            ""
+        ],
+        "BossRound": 1,
+        "StoryLink": "",
+        "OpenFAC": 1,
+        "Combat_Adjust_Rate": 0.0,
+        "CombatNeed": 220000,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
+    },
+    "DreamChallengeBattle_T01N04M01": {
+        "Name": "DreamChallengeBattle_Name_T01N03M01",
+        "Pic": "mjt_pannel_T01N03M01",
+        "UnlockCondition": {
+            "Pass": "DreamChallengeBattle_T01N03M12",
+            "LEVEL": 32
+        },
+        "BattleFactor": [
+            18000,
+            18000,
+            18000
+        ],
+        "NPC": "",
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "EnemyMaster": "T01N03M01W01_Master_01",
+        "EnemyCard": "CardT01N03M01",
+        "Background": "Battle_Scene_20",
+        "PointHead": "Model_NXYYi",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Showreward": "DreamChallengeBattle_T01N04M01_reward",
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T01N04M01_reward"
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Danger_Boss",
+            "",
+            ""
+        ],
+        "BossRound": 1,
+        "StoryLink": "",
+        "OpenFAC": 1,
+        "Combat_Adjust_Rate": 0.0,
+        "CombatNeed": 212000,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
+    },
+    "DreamChallengeBattle_T01N04M07": {
+        "Name": "DreamChallengeBattle_Name_T01N03M07",
+        "Pic": "mjt_pannel_T01N03M07",
+        "UnlockCondition": {
+            "Pass": "DreamChallengeBattle_T01N04M06",
+            "LEVEL": 32
+        },
+        "BattleFactor": [
+            27700,
+            27700,
+            27700
+        ],
+        "NPC": "",
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "EnemyMaster": "T01N03M07W01_Master_01",
+        "EnemyCard": "CardT01N03M07",
+        "Background": "Battle_Scene_20",
+        "PointHead": "Model_NXYYi",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Showreward": "DreamChallengeBattle_T01N04M07_reward",
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T01N04M07_reward"
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Danger_Boss",
+            "",
+            ""
+        ],
+        "BossRound": 1,
+        "StoryLink": "",
+        "OpenFAC": 1,
+        "Combat_Adjust_Rate": 0.0,
+        "CombatNeed": 260000,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
+    },
+    "DreamChallengeBattle_T01N04M06": {
+        "Name": "DreamChallengeBattle_Name_T01N03M06",
+        "Pic": "mjt_pannel_T01N03M06",
+        "UnlockCondition": {
+            "Pass": "DreamChallengeBattle_T01N04M05",
+            "LEVEL": 32
+        },
+        "BattleFactor": [
+            26300,
+            26300,
+            26300
+        ],
+        "NPC": "",
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "EnemyMaster": "T01N03M06W01_Master_01",
+        "EnemyCard": "CardT01N03M06",
+        "Background": "Battle_Scene_20",
+        "PointHead": "Model_NXYYi",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Showreward": "DreamChallengeBattle_T01N04M06_reward",
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T01N04M06_reward"
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Danger_Boss",
+            "",
+            ""
+        ],
+        "BossRound": 1,
+        "StoryLink": "",
+        "OpenFAC": 1,
+        "Combat_Adjust_Rate": 0.0,
+        "CombatNeed": 252000,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
+    },
+    "DreamChallengeBattle_T01N04M05": {
+        "Name": "DreamChallengeBattle_Name_T01N03M05",
+        "Pic": "mjt_pannel_T01N03M05",
+        "UnlockCondition": {
+            "Pass": "DreamChallengeBattle_T01N04M04",
+            "LEVEL": 32
+        },
+        "BattleFactor": [
+            24750,
+            24750,
+            24750
+        ],
+        "NPC": "",
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "EnemyMaster": "T01N03M05W01_Master_01",
+        "EnemyCard": "CardT01N03M05",
+        "Background": "Battle_Scene_20",
+        "PointHead": "Model_NXYYi",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Showreward": "DreamChallengeBattle_T01N04M05_reward",
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T01N04M05_reward"
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Danger_Boss",
+            "",
+            ""
+        ],
+        "BossRound": 1,
+        "StoryLink": "",
+        "OpenFAC": 1,
+        "Combat_Adjust_Rate": 0.0,
+        "CombatNeed": 244000,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
+    },
+    "DreamChallengeBattle_T01N04M04": {
+        "Name": "DreamChallengeBattle_Name_T01N03M04",
+        "Pic": "mjt_pannel_T01N03M04",
+        "UnlockCondition": {
+            "Pass": "DreamChallengeBattle_T01N04M03",
+            "LEVEL": 32
+        },
+        "BattleFactor": [
+            23200,
+            23200,
+            23200
+        ],
+        "NPC": "",
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "EnemyMaster": "T01N03M04W01_Master_01",
+        "EnemyCard": "CardT01N03M04",
+        "Background": "Battle_Scene_20",
+        "PointHead": "Model_NXYYi",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Showreward": "DreamChallengeBattle_T01N04M04_reward",
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T01N04M04_reward"
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Danger_Boss",
+            "",
+            ""
+        ],
+        "BossRound": 1,
+        "StoryLink": "",
+        "OpenFAC": 1,
+        "Combat_Adjust_Rate": 0.15,
+        "CombatNeed": 236000,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
+    },
+    "DreamChallengeBattle_T02N04M08": {
+        "Name": "DreamChallengeBattle_Name_T02N03M08",
+        "Pic": "mjt_pannel_T02N03M08",
+        "UnlockCondition": {
+            "Pass": "DreamChallengeBattle_T02N04M07",
+            "LEVEL": 44
+        },
+        "BattleFactor": [
+            39900,
+            39900,
+            39900
+        ],
+        "NPC": "",
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "EnemyMaster": "T02N03M08W01_Master_01",
+        "EnemyCard": "CardT02N03M08",
+        "Background": "Battle_Scene_20",
+        "PointHead": "Model_NXYYi",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Showreward": "DreamChallengeBattle_T02N04M08_reward",
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T02N04M08_reward"
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Undead_Bird_Boss",
+            "",
+            ""
+        ],
+        "BossRound": 1,
+        "StoryLink": "",
+        "OpenFAC": 1,
+        "Combat_Adjust_Rate": 0.15,
+        "CombatNeed": 380000,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
+    },
+    "DreamChallengeBattle_T02N04M09": {
+        "Name": "DreamChallengeBattle_Name_T02N03M09",
+        "Pic": "mjt_pannel_T02N03M09",
+        "UnlockCondition": {
+            "Pass": "DreamChallengeBattle_T02N04M08",
+            "LEVEL": 44
+        },
+        "BattleFactor": [
+            40300,
+            40300,
+            40300
+        ],
+        "NPC": "",
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "EnemyMaster": "T02N03M09W01_Master_01",
+        "EnemyCard": "CardT02N03M09",
+        "Background": "Battle_Scene_20",
+        "PointHead": "Model_NXYYi",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Showreward": "DreamChallengeBattle_T02N04M09_reward",
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T02N04M09_reward"
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Undead_Bird_Boss",
+            "",
+            ""
+        ],
+        "BossRound": 1,
+        "StoryLink": "",
+        "OpenFAC": 1,
+        "Combat_Adjust_Rate": 0.0,
+        "CombatNeed": 390000,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
+    },
+    "DreamChallengeBattle_T02N04M04": {
+        "Name": "DreamChallengeBattle_Name_T02N03M04",
+        "Pic": "mjt_pannel_T02N03M04",
+        "UnlockCondition": {
+            "Pass": "DreamChallengeBattle_T02N04M03",
+            "LEVEL": 44
+        },
+        "BattleFactor": [
+            37450,
+            37450,
+            37450
+        ],
+        "NPC": "",
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "EnemyMaster": "T02N03M04W01_Master_01",
+        "EnemyCard": "CardT02N03M04",
+        "Background": "Battle_Scene_20",
+        "PointHead": "Model_NXYYi",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Showreward": "DreamChallengeBattle_T02N04M04_reward",
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T02N04M04_reward"
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Undead_Bird_Boss",
+            "",
+            ""
+        ],
+        "BossRound": 1,
+        "StoryLink": "",
+        "OpenFAC": 1,
+        "Combat_Adjust_Rate": 0.15,
+        "CombatNeed": 340000,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
+    },
+    "DreamChallengeBattle_T02N04M05": {
+        "Name": "DreamChallengeBattle_Name_T02N03M05",
+        "Pic": "mjt_pannel_T02N03M05",
+        "UnlockCondition": {
+            "Pass": "DreamChallengeBattle_T02N04M04",
+            "LEVEL": 44
+        },
+        "BattleFactor": [
+            38150,
+            38150,
+            38150
+        ],
+        "NPC": "",
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "EnemyMaster": "T02N03M05W01_Master_01",
+        "EnemyCard": "CardT02N03M05",
+        "Background": "Battle_Scene_20",
+        "PointHead": "Model_NXYYi",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Showreward": "DreamChallengeBattle_T02N04M05_reward",
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T02N04M05_reward"
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Undead_Bird_Boss",
+            "",
+            ""
+        ],
+        "BossRound": 1,
+        "StoryLink": "",
+        "OpenFAC": 1,
+        "Combat_Adjust_Rate": 0.0,
+        "CombatNeed": 350000,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
+    },
+    "DreamChallengeBattle_T02N04M06": {
+        "Name": "DreamChallengeBattle_Name_T02N03M06",
+        "Pic": "mjt_pannel_T02N03M06",
+        "UnlockCondition": {
+            "Pass": "DreamChallengeBattle_T02N04M05",
+            "LEVEL": 44
+        },
+        "BattleFactor": [
+            38800,
+            38800,
+            38800
+        ],
+        "NPC": "",
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "EnemyMaster": "T02N03M06W01_Master_01",
+        "EnemyCard": "CardT02N03M06",
+        "Background": "Battle_Scene_20",
+        "PointHead": "Model_NXYYi",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Showreward": "DreamChallengeBattle_T02N04M06_reward",
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T02N04M06_reward"
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Undead_Bird_Boss",
+            "",
+            ""
+        ],
+        "BossRound": 1,
+        "StoryLink": "",
+        "OpenFAC": 1,
+        "Combat_Adjust_Rate": 0.0,
+        "CombatNeed": 360000,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
+    },
+    "DreamChallengeBattle_T02N04M07": {
+        "Name": "DreamChallengeBattle_Name_T02N03M07",
+        "Pic": "mjt_pannel_T02N03M07",
+        "UnlockCondition": {
+            "Pass": "DreamChallengeBattle_T02N04M06",
+            "LEVEL": 44
+        },
+        "BattleFactor": [
+            39400,
+            39400,
+            39400
+        ],
+        "NPC": "",
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "EnemyMaster": "T02N03M07W01_Master_01",
+        "EnemyCard": "CardT02N03M07",
+        "Background": "Battle_Scene_20",
+        "PointHead": "Model_NXYYi",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Showreward": "DreamChallengeBattle_T02N04M07_reward",
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T02N04M07_reward"
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Undead_Bird_Boss",
+            "",
+            ""
+        ],
+        "BossRound": 1,
+        "StoryLink": "",
+        "OpenFAC": 1,
+        "Combat_Adjust_Rate": 0.0,
+        "CombatNeed": 370000,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
+    },
+    "DreamChallengeBattle_T02N04M01": {
+        "Name": "DreamChallengeBattle_Name_T02N03M01",
+        "Pic": "mjt_pannel_T02N03M01",
+        "UnlockCondition": {
+            "Pass": "DreamChallengeBattle_T02N03M12",
+            "LEVEL": 44
+        },
+        "BattleFactor": [
+            34850,
+            34850,
+            34850
+        ],
+        "NPC": "",
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "EnemyMaster": "T02N03M01W01_Master_01",
+        "EnemyCard": "CardT02N03M01",
+        "Background": "Battle_Scene_20",
+        "PointHead": "Model_NXYYi",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Showreward": "DreamChallengeBattle_T02N04M01_reward",
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T02N04M01_reward"
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Undead_Bird_Boss",
+            "",
+            ""
+        ],
+        "BossRound": 1,
+        "StoryLink": "",
+        "OpenFAC": 1,
+        "Combat_Adjust_Rate": 0.0,
+        "CombatNeed": 310000,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
+    },
+    "DreamChallengeBattle_T02N04M02": {
+        "Name": "DreamChallengeBattle_Name_T02N03M02",
+        "Pic": "mjt_pannel_T02N03M02",
+        "UnlockCondition": {
+            "Pass": "DreamChallengeBattle_T02N04M01",
+            "LEVEL": 44
+        },
+        "BattleFactor": [
+            35800,
+            35800,
+            35800
+        ],
+        "NPC": "",
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "EnemyMaster": "T02N03M02W01_Master_01",
+        "EnemyCard": "CardT02N03M02",
+        "Background": "Battle_Scene_20",
+        "PointHead": "Model_NXYYi",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Showreward": "DreamChallengeBattle_T02N04M02_reward",
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T02N04M02_reward"
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Undead_Bird_Boss",
+            "",
+            ""
+        ],
+        "BossRound": 1,
+        "StoryLink": "",
+        "OpenFAC": 1,
+        "Combat_Adjust_Rate": 0.0,
+        "CombatNeed": 320000,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
+    },
+    "DreamChallengeBattle_T02N04M03": {
+        "Name": "DreamChallengeBattle_Name_T02N03M03",
+        "Pic": "mjt_pannel_T02N03M03",
+        "UnlockCondition": {
+            "Pass": "DreamChallengeBattle_T02N04M02",
+            "LEVEL": 44
+        },
+        "BattleFactor": [
+            36650,
+            36650,
+            36650
+        ],
+        "NPC": "",
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "EnemyMaster": "T02N03M03W01_Master_01",
+        "EnemyCard": "CardT02N03M03",
+        "Background": "Battle_Scene_20",
+        "PointHead": "Model_NXYYi",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Showreward": "DreamChallengeBattle_T02N04M03_reward",
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T02N04M03_reward"
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Undead_Bird_Boss",
+            "",
+            ""
+        ],
+        "BossRound": 1,
+        "StoryLink": "",
+        "OpenFAC": 1,
+        "Combat_Adjust_Rate": 0.0,
+        "CombatNeed": 330000,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T02N03M12": {
         "Name": "DreamChallengeBattle_Name_T02N03M12",
@@ -1007,9 +2069,9 @@
             "LEVEL": 44
         },
         "BattleFactor": [
-            52499,
-            52499,
-            52499
+            18600,
+            18600,
+            18600
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -1039,7 +2101,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.15,
-        "CombatNeed": 524990
+        "CombatNeed": 186002,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T02N03M10": {
         "Name": "DreamChallengeBattle_Name_T02N03M10",
@@ -1049,9 +2115,9 @@
             "LEVEL": 44
         },
         "BattleFactor": [
-            51578,
-            51578,
-            51578
+            16806,
+            16806,
+            16806
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -1081,7 +2147,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.0,
-        "CombatNeed": 515780
+        "CombatNeed": 168066,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T02N03M11": {
         "Name": "DreamChallengeBattle_Name_T02N03M11",
@@ -1091,9 +2161,9 @@
             "LEVEL": 44
         },
         "BattleFactor": [
-            51693,
-            51693,
-            51693
+            16980,
+            16980,
+            16980
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -1123,7 +2193,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.0,
-        "CombatNeed": 516930
+        "CombatNeed": 169802,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T03N03M08": {
         "Name": "DreamChallengeBattle_Name_DreamChallengeBattle_T03N03M08",
@@ -1164,7 +2238,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.75,
-        "CombatNeed": 560390
+        "CombatNeed": 560390,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T03N03M09": {
         "Name": "DreamChallengeBattle_Name_DreamChallengeBattle_T03N03M09",
@@ -1205,7 +2283,149 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.75,
-        "CombatNeed": 576720
+        "CombatNeed": 576720,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
+    },
+    "DreamChallengeBattle_T02N04M12": {
+        "Name": "DreamChallengeBattle_Name_T02N03M12",
+        "Pic": "mjt_pannel_T02N03M12",
+        "UnlockCondition": {
+            "Pass": "DreamChallengeBattle_T02N04M11",
+            "LEVEL": 44
+        },
+        "BattleFactor": [
+            41200,
+            41200,
+            41200
+        ],
+        "NPC": "",
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "EnemyMaster": "T02N03M12W01_Master_01",
+        "EnemyCard": "CardT02N03M12",
+        "Background": "Battle_Scene_20",
+        "PointHead": "Model_NXYYi",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Showreward": "DreamChallengeBattle_T02N04M12_reward",
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T02N04M12_reward"
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Undead_Bird_Boss",
+            "",
+            ""
+        ],
+        "BossRound": 1,
+        "StoryLink": "",
+        "OpenFAC": 1,
+        "Combat_Adjust_Rate": 0.15,
+        "CombatNeed": 420000,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
+    },
+    "DreamChallengeBattle_T02N04M11": {
+        "Name": "DreamChallengeBattle_Name_T02N03M11",
+        "Pic": "mjt_pannel_T02N03M11",
+        "UnlockCondition": {
+            "Pass": "DreamChallengeBattle_T02N04M10",
+            "LEVEL": 44
+        },
+        "BattleFactor": [
+            40950,
+            40950,
+            40950
+        ],
+        "NPC": "",
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "EnemyMaster": "T02N03M11W01_Master_01",
+        "EnemyCard": "CardT02N03M11",
+        "Background": "Battle_Scene_20",
+        "PointHead": "Model_NXYYi",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Showreward": "DreamChallengeBattle_T02N04M11_reward",
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T02N04M11_reward"
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Undead_Bird_Boss",
+            "",
+            ""
+        ],
+        "BossRound": 1,
+        "StoryLink": "",
+        "OpenFAC": 1,
+        "Combat_Adjust_Rate": 0.0,
+        "CombatNeed": 410000,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
+    },
+    "DreamChallengeBattle_T02N04M10": {
+        "Name": "DreamChallengeBattle_Name_T02N03M10",
+        "Pic": "mjt_pannel_T02N03M10",
+        "UnlockCondition": {
+            "Pass": "DreamChallengeBattle_T02N04M09",
+            "LEVEL": 44
+        },
+        "BattleFactor": [
+            40700,
+            40700,
+            40700
+        ],
+        "NPC": "",
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "EnemyMaster": "T02N03M10W01_Master_01",
+        "EnemyCard": "CardT02N03M10",
+        "Background": "Battle_Scene_20",
+        "PointHead": "Model_NXYYi",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "Showreward": "DreamChallengeBattle_T02N04M10_reward",
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T02N04M10_reward"
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Undead_Bird_Boss",
+            "",
+            ""
+        ],
+        "BossRound": 1,
+        "StoryLink": "",
+        "OpenFAC": 1,
+        "Combat_Adjust_Rate": 0.0,
+        "CombatNeed": 400000,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T02N03M09": {
         "Name": "DreamChallengeBattle_Name_T02N03M09",
@@ -1215,9 +2435,9 @@
             "LEVEL": 44
         },
         "BattleFactor": [
-            51463,
-            51463,
-            51463
+            16633,
+            16633,
+            16633
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -1247,7 +2467,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.0,
-        "CombatNeed": 514630
+        "CombatNeed": 166330,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T02N03M08": {
         "Name": "DreamChallengeBattle_Name_T02N03M08",
@@ -1257,9 +2481,9 @@
             "LEVEL": 44
         },
         "BattleFactor": [
-            50455,
-            50455,
-            50455
+            14608,
+            14608,
+            14608
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -1289,7 +2513,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.15,
-        "CombatNeed": 504550
+        "CombatNeed": 146080,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T02N03M05": {
         "Name": "DreamChallengeBattle_Name_T02N03M05",
@@ -1299,9 +2527,9 @@
             "LEVEL": 44
         },
         "BattleFactor": [
-            49418,
-            49418,
-            49418
+            12640,
+            12640,
+            12640
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -1331,7 +2559,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.0,
-        "CombatNeed": 494180
+        "CombatNeed": 126408,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T02N03M04": {
         "Name": "DreamChallengeBattle_Name_T02N03M04",
@@ -1341,9 +2573,9 @@
             "LEVEL": 44
         },
         "BattleFactor": [
-            49303,
-            49303,
-            49303
+            12467,
+            12467,
+            12467
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -1373,7 +2605,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.15,
-        "CombatNeed": 493030
+        "CombatNeed": 124672,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T02N03M07": {
         "Name": "DreamChallengeBattle_Name_T02N03M07",
@@ -1383,9 +2619,9 @@
             "LEVEL": 44
         },
         "BattleFactor": [
-            50339,
-            50339,
-            50339
+            14434,
+            14434,
+            14434
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -1415,7 +2651,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.0,
-        "CombatNeed": 503390
+        "CombatNeed": 144344,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T02N03M06": {
         "Name": "DreamChallengeBattle_Name_T02N03M06",
@@ -1425,9 +2665,9 @@
             "LEVEL": 44
         },
         "BattleFactor": [
-            50224,
-            50224,
-            50224
+            14260,
+            14260,
+            14260
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -1457,7 +2697,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.0,
-        "CombatNeed": 502240
+        "CombatNeed": 142608,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T02N03M01": {
         "Name": "DreamChallengeBattle_Name_T02N03M01",
@@ -1467,9 +2711,9 @@
             "LEVEL": 44
         },
         "BattleFactor": [
-            48468,
-            48468,
-            48468
+            10500,
+            10500,
+            10500
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -1499,18 +2743,22 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.0,
-        "CombatNeed": 484680
+        "CombatNeed": 105000,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T01N01M01": {
         "Name": "DreamChallengeBattle_Name_T01N01M01",
         "Pic": "mjt_pannel_T01N01M01",
         "UnlockCondition": {
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "BattleFactor": [
-            35700,
-            35700,
-            35700
+            7290,
+            7290,
+            7290
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -1544,7 +2792,11 @@
         },
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.0,
-        "CombatNeed": 357000
+        "CombatNeed": 81000,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T02N03M03": {
         "Name": "DreamChallengeBattle_Name_T02N03M03",
@@ -1554,9 +2806,9 @@
             "LEVEL": 44
         },
         "BattleFactor": [
-            49187,
-            49187,
-            49187
+            12293,
+            12293,
+            12293
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -1586,7 +2838,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.0,
-        "CombatNeed": 491870
+        "CombatNeed": 122936,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T02N03M02": {
         "Name": "DreamChallengeBattle_Name_T02N03M02",
@@ -1596,9 +2852,9 @@
             "LEVEL": 44
         },
         "BattleFactor": [
-            48583,
-            48583,
-            48583
+            10673,
+            10673,
+            10673
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -1628,19 +2884,23 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.0,
-        "CombatNeed": 485830
+        "CombatNeed": 106736,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T01N03M04": {
         "Name": "DreamChallengeBattle_Name_T01N03M04",
         "Pic": "mjt_pannel_T01N03M04",
         "UnlockCondition": {
             "Pass": "DreamChallengeBattle_T01N03M03",
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "BattleFactor": [
-            52335,
-            52335,
-            52335
+            9417,
+            9417,
+            9417
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -1670,19 +2930,23 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.15,
-        "CombatNeed": 523350
+        "CombatNeed": 94172,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T01N03M06": {
         "Name": "DreamChallengeBattle_Name_T01N03M06",
         "Pic": "mjt_pannel_T01N03M06",
         "UnlockCondition": {
             "Pass": "DreamChallengeBattle_T01N03M05",
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "BattleFactor": [
-            53737,
-            53737,
-            53737
+            10435,
+            10435,
+            10435
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -1712,19 +2976,23 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.0,
-        "CombatNeed": 537370
+        "CombatNeed": 104358,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T01N03M07": {
         "Name": "DreamChallengeBattle_Name_T01N03M07",
         "Pic": "mjt_pannel_T01N03M07",
         "UnlockCondition": {
             "Pass": "DreamChallengeBattle_T01N03M06",
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "BattleFactor": [
-            53913,
-            53913,
-            53913
+            10534,
+            10534,
+            10534
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -1754,7 +3022,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.0,
-        "CombatNeed": 539130
+        "CombatNeed": 105344,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T02N02M08": {
         "Name": "DreamChallengeBattle_Name_T02N02M08",
@@ -1764,9 +3036,9 @@
             "LEVEL": 44
         },
         "BattleFactor": [
-            43852,
-            43852,
-            43852
+            10146,
+            10146,
+            10146
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -1796,19 +3068,23 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.0,
-        "CombatNeed": 438520
+        "CombatNeed": 106800,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T01N03M05": {
         "Name": "DreamChallengeBattle_Name_T01N03M05",
         "Pic": "mjt_pannel_T01N03M05",
         "UnlockCondition": {
             "Pass": "DreamChallengeBattle_T01N03M04",
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "BattleFactor": [
-            52510,
-            52510,
-            52510
+            9515,
+            9515,
+            9515
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -1838,19 +3114,23 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.0,
-        "CombatNeed": 525100
+        "CombatNeed": 95158,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T01N03M02": {
         "Name": "DreamChallengeBattle_Name_T01N03M02",
         "Pic": "mjt_pannel_T01N03M02",
         "UnlockCondition": {
             "Pass": "DreamChallengeBattle_T01N03M01",
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "BattleFactor": [
-            51239,
-            51239,
-            51239
+            8398,
+            8398,
+            8398
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -1880,19 +3160,23 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.0,
-        "CombatNeed": 512390
+        "CombatNeed": 83986,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T01N03M03": {
         "Name": "DreamChallengeBattle_Name_T01N03M03",
         "Pic": "mjt_pannel_T01N03M03",
         "UnlockCondition": {
             "Pass": "DreamChallengeBattle_T01N03M02",
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "BattleFactor": [
-            52159,
-            52159,
-            52159
+            9318,
+            9318,
+            9318
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -1922,19 +3206,23 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.0,
-        "CombatNeed": 521590
+        "CombatNeed": 93186,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T01N03M01": {
         "Name": "DreamChallengeBattle_Name_T01N03M01",
         "Pic": "mjt_pannel_T01N03M01",
         "UnlockCondition": {
             "Pass": "DreamChallengeBattle_T01N02M06",
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "BattleFactor": [
-            51064,
-            51064,
-            51064
+            8300,
+            8300,
+            8300
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -1964,7 +3252,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.0,
-        "CombatNeed": 510640
+        "CombatNeed": 83000,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T02N02M02": {
         "Name": "DreamChallengeBattle_Name_T02N02M02",
@@ -1974,9 +3266,9 @@
             "LEVEL": 44
         },
         "BattleFactor": [
-            41632,
-            41632,
-            41632
+            8046,
+            8046,
+            8046
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -2006,7 +3298,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.0,
-        "CombatNeed": 416320
+        "CombatNeed": 84700,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T02N02M03": {
         "Name": "DreamChallengeBattle_Name_T02N02M03",
@@ -2016,9 +3312,9 @@
             "LEVEL": 44
         },
         "BattleFactor": [
-            42240,
-            42240,
-            42240
+            8692,
+            8692,
+            8692
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -2048,7 +3344,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.15,
-        "CombatNeed": 422400
+        "CombatNeed": 91500,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T02N02M01": {
         "Name": "DreamChallengeBattle_Name_T02N02M01",
@@ -2058,9 +3358,9 @@
             "LEVEL": 44
         },
         "BattleFactor": [
-            41420,
-            41420,
-            41420
+            7885,
+            7885,
+            7885
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -2090,7 +3390,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.0,
-        "CombatNeed": 414200
+        "CombatNeed": 83000,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T02N02M06": {
         "Name": "DreamChallengeBattle_Name_T02N02M06",
@@ -2100,9 +3404,9 @@
             "LEVEL": 44
         },
         "BattleFactor": [
-            43426,
-            43426,
-            43426
+            9823,
+            9823,
+            9823
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -2132,7 +3436,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.15,
-        "CombatNeed": 434260
+        "CombatNeed": 103400,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T02N02M07": {
         "Name": "DreamChallengeBattle_Name_T02N02M07",
@@ -2142,9 +3450,9 @@
             "LEVEL": 44
         },
         "BattleFactor": [
-            43639,
-            43639,
-            43639
+            9984,
+            9984,
+            9984
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -2174,19 +3482,23 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.0,
-        "CombatNeed": 436390
+        "CombatNeed": 105100,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T01N03M08": {
         "Name": "DreamChallengeBattle_Name_T01N03M08",
         "Pic": "mjt_pannel_T01N03M08",
         "UnlockCondition": {
             "Pass": "DreamChallengeBattle_T01N03M07",
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "BattleFactor": [
-            54088,
-            54088,
-            54088
+            10633,
+            10633,
+            10633
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -2216,19 +3528,23 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.15,
-        "CombatNeed": 540880
+        "CombatNeed": 106330,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T01N03M09": {
         "Name": "DreamChallengeBattle_Name_T01N03M09",
         "Pic": "mjt_pannel_T01N03M09",
         "UnlockCondition": {
             "Pass": "DreamChallengeBattle_T01N03M08",
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "BattleFactor": [
-            55622,
-            55622,
-            55622
+            11783,
+            11783,
+            11783
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -2258,7 +3574,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.0,
-        "CombatNeed": 556220
+        "CombatNeed": 117830,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T02N01M03": {
         "Name": "DreamChallengeBattle_Name_T02N01M03",
@@ -2268,9 +3588,9 @@
             "LEVEL": 44
         },
         "BattleFactor": [
-            38430,
-            38430,
-            38430
+            7762,
+            7762,
+            7762
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -2300,7 +3620,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.0,
-        "CombatNeed": 384300
+        "CombatNeed": 86250,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T02N01M02": {
         "Name": "DreamChallengeBattle_Name_T02N01M02",
@@ -2310,9 +3634,9 @@
             "LEVEL": 44
         },
         "BattleFactor": [
-            38160,
-            38160,
-            38160
+            7605,
+            7605,
+            7605
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -2346,7 +3670,11 @@
         },
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.15,
-        "CombatNeed": 381600
+        "CombatNeed": 84500,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T02N01M01": {
         "Name": "DreamChallengeBattle_Name_T02N01M01",
@@ -2355,9 +3683,9 @@
             "LEVEL": 44
         },
         "BattleFactor": [
-            37800,
-            37800,
-            37800
+            7470,
+            7470,
+            7470
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -2387,7 +3715,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.0,
-        "CombatNeed": 378000
+        "CombatNeed": 83000,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T02N01M06": {
         "Name": "DreamChallengeBattle_Name_T02N01M06",
@@ -2397,9 +3729,9 @@
             "LEVEL": 44
         },
         "BattleFactor": [
-            39600,
-            39600,
-            39600
+            8370,
+            8370,
+            8370
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -2433,7 +3765,11 @@
         },
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.15,
-        "CombatNeed": 396000
+        "CombatNeed": 93000,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T02N01M05": {
         "Name": "DreamChallengeBattle_Name_T02N01M05",
@@ -2443,9 +3779,9 @@
             "LEVEL": 44
         },
         "BattleFactor": [
-            39240,
-            39240,
-            39240
+            8145,
+            8145,
+            8145
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -2475,7 +3811,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.0,
-        "CombatNeed": 392400
+        "CombatNeed": 90500,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T02N01M04": {
         "Name": "DreamChallengeBattle_Name_T02N01M04",
@@ -2485,9 +3825,9 @@
             "LEVEL": 44
         },
         "BattleFactor": [
-            38970,
-            38970,
-            38970
+            7987,
+            7987,
+            7987
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -2521,19 +3861,23 @@
         },
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.15,
-        "CombatNeed": 389700
+        "CombatNeed": 88750,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T01N03M11": {
         "Name": "DreamChallengeBattle_Name_T01N03M11",
         "Pic": "mjt_pannel_T01N03M11",
         "UnlockCondition": {
             "Pass": "DreamChallengeBattle_T01N03M10",
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "BattleFactor": [
-            55973,
-            55973,
-            55973
+            11980,
+            11980,
+            11980
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -2563,7 +3907,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.0,
-        "CombatNeed": 559730
+        "CombatNeed": 119802,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T02N02M04": {
         "Name": "DreamChallengeBattle_Name_T02N02M04",
@@ -2573,9 +3921,9 @@
             "LEVEL": 44
         },
         "BattleFactor": [
-            42453,
-            42453,
-            42453
+            8854,
+            8854,
+            8854
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -2605,19 +3953,23 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.0,
-        "CombatNeed": 424530
+        "CombatNeed": 93200,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T01N03M12": {
         "Name": "DreamChallengeBattle_Name_T01N03M12",
         "Pic": "mjt_pannel_T01N03M12",
         "UnlockCondition": {
             "Pass": "DreamChallengeBattle_T01N03M11",
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "BattleFactor": [
-            57200,
-            57200,
-            57200
+            12900,
+            12900,
+            12900
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -2647,7 +3999,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.15,
-        "CombatNeed": 572000
+        "CombatNeed": 129002,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T02N02M05": {
         "Name": "DreamChallengeBattle_Name_T02N02M05",
@@ -2657,9 +4013,9 @@
             "LEVEL": 44
         },
         "BattleFactor": [
-            42666,
-            42666,
-            42666
+            9015,
+            9015,
+            9015
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -2689,7 +4045,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.0,
-        "CombatNeed": 426660
+        "CombatNeed": 94900,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T03N01M02": {
         "Name": "DreamChallengeBattle_Name_DreamChallengeBattle_T03N01M02",
@@ -2730,7 +4090,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.75,
-        "CombatNeed": 434160
+        "CombatNeed": 434160,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T03N01M03": {
         "Name": "DreamChallengeBattle_Name_DreamChallengeBattle_T03N01M03",
@@ -2771,7 +4135,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.75,
-        "CombatNeed": 435600
+        "CombatNeed": 435600,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T03N01M01": {
         "Name": "DreamChallengeBattle_Name_DreamChallengeBattle_T03N01M01",
@@ -2812,7 +4180,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.75,
-        "CombatNeed": 432000
+        "CombatNeed": 432000,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T03N01M06": {
         "Name": "DreamChallengeBattle_Name_DreamChallengeBattle_T03N01M06",
@@ -2853,7 +4225,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.75,
-        "CombatNeed": 442800
+        "CombatNeed": 442800,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T03N01M07": {
         "Name": "DreamChallengeBattle_Name_T03N01M07",
@@ -2894,7 +4270,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.75,
-        "CombatNeed": 464360
+        "CombatNeed": 464360,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T03N01M04": {
         "Name": "DreamChallengeBattle_Name_DreamChallengeBattle_T03N01M04",
@@ -2935,7 +4315,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.75,
-        "CombatNeed": 438480
+        "CombatNeed": 438480,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T03N01M05": {
         "Name": "DreamChallengeBattle_Name_DreamChallengeBattle_T03N01M05",
@@ -2976,7 +4360,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.75,
-        "CombatNeed": 439920
+        "CombatNeed": 439920,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T03N01M08": {
         "Name": "DreamChallengeBattle_Name_T03N01M08",
@@ -3017,7 +4405,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.75,
-        "CombatNeed": 465690
+        "CombatNeed": 465690,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T03N01M09": {
         "Name": "DreamChallengeBattle_Name_T03N01M09",
@@ -3058,7 +4450,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.75,
-        "CombatNeed": 470710
+        "CombatNeed": 470710,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T03N01M11": {
         "Name": "DreamChallengeBattle_Name_T03N01M11",
@@ -3099,7 +4495,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.75,
-        "CombatNeed": 473380
+        "CombatNeed": 473380,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T03N01M10": {
         "Name": "DreamChallengeBattle_Name_T03N01M10",
@@ -3140,7 +4540,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.75,
-        "CombatNeed": 472050
+        "CombatNeed": 472050,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T03N01M12": {
         "Name": "DreamChallengeBattle_Name_T03N01M12",
@@ -3181,19 +4585,23 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.75,
-        "CombatNeed": 480070
+        "CombatNeed": 480070,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T01N01M05": {
         "Name": "DreamChallengeBattle_Name_T01N01M05",
         "Pic": "mjt_pannel_T01N01M05",
         "UnlockCondition": {
             "Pass": "DreamChallengeBattle_T01N01M04",
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "BattleFactor": [
-            38220,
-            38220,
-            38220
+            7920,
+            7920,
+            7920
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -3223,7 +4631,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.0,
-        "CombatNeed": 382200
+        "CombatNeed": 88000,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T03N03M01": {
         "Name": "DreamChallengeBattle_Name_DreamChallengeBattle_T03N03M01",
@@ -3264,7 +4676,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.75,
-        "CombatNeed": 533560
+        "CombatNeed": 533560,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T03N03M02": {
         "Name": "DreamChallengeBattle_Name_DreamChallengeBattle_T03N03M02",
@@ -3305,7 +4721,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.75,
-        "CombatNeed": 535120
+        "CombatNeed": 535120,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T03N03M03": {
         "Name": "DreamChallengeBattle_Name_DreamChallengeBattle_T03N03M03",
@@ -3346,7 +4766,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.75,
-        "CombatNeed": 543280
+        "CombatNeed": 543280,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T03N03M04": {
         "Name": "DreamChallengeBattle_Name_DreamChallengeBattle_T03N03M04",
@@ -3387,7 +4811,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.75,
-        "CombatNeed": 544840
+        "CombatNeed": 544840,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T03N03M05": {
         "Name": "DreamChallengeBattle_Name_DreamChallengeBattle_T03N03M05",
@@ -3428,7 +4856,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.75,
-        "CombatNeed": 546390
+        "CombatNeed": 546390,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T03N03M06": {
         "Name": "DreamChallengeBattle_Name_DreamChallengeBattle_T03N03M06",
@@ -3469,7 +4901,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.75,
-        "CombatNeed": 557280
+        "CombatNeed": 557280,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T03N03M07": {
         "Name": "DreamChallengeBattle_Name_DreamChallengeBattle_T03N03M07",
@@ -3510,7 +4946,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.75,
-        "CombatNeed": 558830
+        "CombatNeed": 558830,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T03N02M10": {
         "Name": "DreamChallengeBattle_Name_T03N02M10",
@@ -3551,7 +4991,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.75,
-        "CombatNeed": 558830
+        "CombatNeed": 558830,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T03N02M11": {
         "Name": "DreamChallengeBattle_Name_T03N02M11",
@@ -3592,7 +5036,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.75,
-        "CombatNeed": 560390
+        "CombatNeed": 560390,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T03N02M12": {
         "Name": "DreamChallengeBattle_Name_T03N02M12",
@@ -3633,7 +5081,11 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.75,
-        "CombatNeed": 576720
+        "CombatNeed": 576720,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T02N02M09": {
         "Name": "DreamChallengeBattle_Name_T02N02M09",
@@ -3643,9 +5095,9 @@
             "LEVEL": 44
         },
         "BattleFactor": [
-            44460,
-            44460,
-            44460
+            11115,
+            11115,
+            11115
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -3675,19 +5127,23 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.15,
-        "CombatNeed": 444600
+        "CombatNeed": 117000,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T01N01M02": {
         "Name": "DreamChallengeBattle_Name_T01N01M02",
         "Pic": "mjt_pannel_T01N01M02",
         "UnlockCondition": {
             "Pass": "DreamChallengeBattle_T01N01M01",
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "BattleFactor": [
-            36330,
-            36330,
-            36330
+            7425,
+            7425,
+            7425
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -3717,19 +5173,23 @@
         "StoryLink": "",
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.15,
-        "CombatNeed": 363300
+        "CombatNeed": 82500,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     },
     "DreamChallengeBattle_T01N01M03": {
         "Name": "DreamChallengeBattle_Name_T01N01M03",
         "Pic": "mjt_pannel_T01N01M03",
         "UnlockCondition": {
             "Pass": "DreamChallengeBattle_T01N01M02",
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "BattleFactor": [
-            36802,
-            36802,
-            36802
+            7537,
+            7537,
+            7537
         ],
         "NPC": "",
         "BlockBattleConfig": "DreamChallengeBattle_N1",
@@ -3763,6 +5223,10 @@
         },
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.0,
-        "CombatNeed": 368020
+        "CombatNeed": 83750,
+        "PositionLimit": "",
+        "BattleMumLimit": "",
+        "BattleDesc": "",
+        "ConfigLevelLimitID": ""
     }
 }

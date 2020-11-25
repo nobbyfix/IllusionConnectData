@@ -73,7 +73,10 @@
                 "eventstory_dreamtower_05a"
             ]
         },
-        "EndDesc": "DC_EndDesc_T03N01"
+        "EndDesc": "DC_EndDesc_T03N01",
+        "PointBackground": "",
+        "MissionPicType": "",
+        "PointDesc": ""
     },
     "DreamChallengePoint_T03N02": {
         "Num": 2,
@@ -144,7 +147,10 @@
         "ShortDesc": "DC_ShortDesc_T03N02",
         "TabPic": "mjt_z_butten_x2",
         "StoryLink": "",
-        "EndDesc": "DC_EndDesc_T03N02"
+        "EndDesc": "DC_EndDesc_T03N02",
+        "PointBackground": "",
+        "MissionPicType": "",
+        "PointDesc": ""
     },
     "DreamChallengePoint_T03N03": {
         "Num": 3,
@@ -215,7 +221,83 @@
         "ShortDesc": "DC_ShortDesc_T03N03",
         "TabPic": "mjt_z_butten_x3",
         "StoryLink": "",
-        "EndDesc": "DC_EndDesc_T03N03"
+        "EndDesc": "DC_EndDesc_T03N03",
+        "PointBackground": "",
+        "MissionPicType": "",
+        "PointDesc": ""
+    },
+    "DreamChallengePoint_T02N04": {
+        "Num": 4,
+        "Name": "DreamChallengePoint_T02N04_Name",
+        "Type": 1,
+        "BlockPoint": [
+            "DreamChallengeBattle_T02N04M01",
+            "DreamChallengeBattle_T02N04M02",
+            "DreamChallengeBattle_T02N04M03",
+            "DreamChallengeBattle_T02N04M04",
+            "DreamChallengeBattle_T02N04M05",
+            "DreamChallengeBattle_T02N04M06",
+            "DreamChallengeBattle_T02N04M07",
+            "DreamChallengeBattle_T02N04M08",
+            "DreamChallengeBattle_T02N04M09",
+            "DreamChallengeBattle_T02N04M10",
+            "DreamChallengeBattle_T02N04M11",
+            "DreamChallengeBattle_T02N04M12"
+        ],
+        "ShowCondition": {
+            "LEVEL": 43
+        },
+        "UnlockCondition": {
+            "Pass": "DreamChallengeBattle_T02N03M12",
+            "LEVEL": 44
+        },
+        "Desc": "DreamChallengePoint_T02N04_decs",
+        "Pic": "mjt_z_mjjcx_bg",
+        "Master": [
+            "Master_XueZhan",
+            "Master_BiLei"
+        ],
+        "Excellent": [
+            {
+                "job": [
+                    "Defense"
+                ],
+                "Skill": "DC_T01_Tank_Buff"
+            },
+            {
+                "Party": [
+                    "WNSXJ"
+                ],
+                "Skill": "DC_T02_WNSXJ_Buff"
+            }
+        ],
+        "screen": {
+            "Up": [
+                {
+                    "type": "Party",
+                    "value": "WNSXJ"
+                },
+                {
+                    "type": "Party",
+                    "value": "BSNCT"
+                }
+            ]
+        },
+        "Show": "DreamChallenge_T02N04",
+        "StarsAttrEffect": "DC_5star_buff",
+        "AwakenAttrEffect": "DC_7star_buff",
+        "fatigue": 4,
+        "shifting": [
+            110,
+            100
+        ],
+        "ShortDesc": "DC_ShortDesc_T02N04",
+        "TabPic": "mjt_z_butten_x4",
+        "StoryLink": "",
+        "EndDesc": "DC_EndDesc_T02N04",
+        "PointBackground": "mjt_z_yhzx1_bg",
+        "MissionPicType": 2,
+        "PointDesc": "DreamChallengePoint_T01_PointDesc"
     },
     "DreamChallengePoint_T02N03": {
         "Num": 3,
@@ -236,7 +318,7 @@
             "DreamChallengeBattle_T02N03M12"
         ],
         "ShowCondition": {
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "UnlockCondition": {
             "Pass": "DreamChallengeBattle_T02N02M09",
@@ -285,7 +367,10 @@
         "ShortDesc": "DC_ShortDesc_T02N03",
         "TabPic": "mjt_z_butten_x3",
         "StoryLink": "",
-        "EndDesc": "DC_EndDesc_T02N03"
+        "EndDesc": "DC_EndDesc_T02N03",
+        "PointBackground": "mjt_z_yhzx2_bg",
+        "MissionPicType": 2,
+        "PointDesc": "DreamChallengePoint_T01_PointDesc"
     },
     "DreamChallengePoint_T02N02": {
         "Num": 2,
@@ -303,7 +388,7 @@
             "DreamChallengeBattle_T02N02M09"
         ],
         "ShowCondition": {
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "UnlockCondition": {
             "Pass": "DreamChallengeBattle_T02N01M06",
@@ -352,7 +437,10 @@
         "ShortDesc": "DC_ShortDesc_T02N02",
         "TabPic": "mjt_z_butten_x2",
         "StoryLink": "",
-        "EndDesc": "DC_EndDesc_T02N02"
+        "EndDesc": "DC_EndDesc_T02N02",
+        "PointBackground": "mjt_z_yhzx2_bg",
+        "MissionPicType": 2,
+        "PointDesc": "DreamChallengePoint_T01_PointDesc"
     },
     "DreamChallengePoint_T02N01": {
         "Num": 1,
@@ -367,7 +455,7 @@
             "DreamChallengeBattle_T02N01M06"
         ],
         "ShowCondition": {
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "UnlockCondition": {
             "LEVEL": 44
@@ -422,7 +510,10 @@
                 "eventstory_dreamtower_05a"
             ]
         },
-        "EndDesc": "DC_EndDesc_T02N01"
+        "EndDesc": "DC_EndDesc_T02N01",
+        "PointBackground": "mjt_z_yhzx2_bg",
+        "MissionPicType": 2,
+        "PointDesc": "DreamChallengePoint_T01_PointDesc"
     },
     "DreamChallengePoint_T01N02": {
         "Num": 2,
@@ -440,11 +531,11 @@
             "DreamChallengeBattle_T01N02M09"
         ],
         "ShowCondition": {
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "UnlockCondition": {
             "Pass": "DreamChallengeBattle_T01N01M04",
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "Desc": "DreamChallengePoint_T01N02_decs",
         "Pic": "mjt_z_mjjcs_bg",
@@ -483,7 +574,10 @@
         "ShortDesc": "DC_ShortDesc_T01N02",
         "TabPic": "mjt_z_butten_x2",
         "StoryLink": "",
-        "EndDesc": "DC_EndDesc_T01N02"
+        "EndDesc": "DC_EndDesc_T01N02",
+        "PointBackground": "mjt_z_yhzx1_bg",
+        "MissionPicType": 1,
+        "PointDesc": "DreamChallengePoint_T01_PointDesc"
     },
     "DreamChallengePoint_T01N03": {
         "Num": 3,
@@ -504,11 +598,11 @@
             "DreamChallengeBattle_T01N03M12"
         ],
         "ShowCondition": {
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "UnlockCondition": {
             "Pass": "DreamChallengeBattle_T01N02M06",
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "Desc": "DreamChallengePoint_T01N03_decs",
         "Pic": "mjt_z_mjjcs_bg",
@@ -547,7 +641,10 @@
         "ShortDesc": "DC_ShortDesc_T01N03",
         "TabPic": "mjt_z_butten_x3",
         "StoryLink": "",
-        "EndDesc": "DC_EndDesc_T01N03"
+        "EndDesc": "DC_EndDesc_T01N03",
+        "PointBackground": "mjt_z_yhzx1_bg",
+        "MissionPicType": 1,
+        "PointDesc": "DreamChallengePoint_T01_PointDesc"
     },
     "DreamChallengePoint_T01N01": {
         "Num": 1,
@@ -562,10 +659,10 @@
             "DreamChallengeBattle_T01N01M06"
         ],
         "ShowCondition": {
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "UnlockCondition": {
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "Desc": "DreamChallengePoint_T01N01_decs",
         "Pic": "mjt_z_mjjcs_bg",
@@ -608,6 +705,76 @@
                 "eventstory_dreamtower_01a"
             ]
         },
-        "EndDesc": "DC_EndDesc_T01N01"
+        "EndDesc": "DC_EndDesc_T01N01",
+        "PointBackground": "mjt_z_yhzx1_bg",
+        "MissionPicType": 1,
+        "PointDesc": "DreamChallengePoint_T01_PointDesc"
+    },
+    "DreamChallengePoint_T01N04": {
+        "Num": 4,
+        "Name": "DreamChallengePoint_T01N04_Name",
+        "Type": 1,
+        "BlockPoint": [
+            "DreamChallengeBattle_T01N04M01",
+            "DreamChallengeBattle_T01N04M02",
+            "DreamChallengeBattle_T01N04M03",
+            "DreamChallengeBattle_T01N04M04",
+            "DreamChallengeBattle_T01N04M05",
+            "DreamChallengeBattle_T01N04M06",
+            "DreamChallengeBattle_T01N04M07",
+            "DreamChallengeBattle_T01N04M08",
+            "DreamChallengeBattle_T01N04M09",
+            "DreamChallengeBattle_T01N04M10",
+            "DreamChallengeBattle_T01N04M11",
+            "DreamChallengeBattle_T01N04M12"
+        ],
+        "ShowCondition": {
+            "LEVEL": 43
+        },
+        "UnlockCondition": {
+            "Pass": "DreamChallengeBattle_T01N03M12",
+            "LEVEL": 43
+        },
+        "Desc": "DreamChallengePoint_T01N04_decs",
+        "Pic": "mjt_z_mjjcs_bg",
+        "Master": [
+            "Master_XueZhan",
+            "Master_LieSha"
+        ],
+        "Excellent": [
+            {
+                "job": [
+                    "Defense"
+                ],
+                "Skill": "DC_T01_Tank_Buff"
+            }
+        ],
+        "screen": {
+            "Up": [
+                {
+                    "type": "Party",
+                    "value": "WNSXJ"
+                },
+                {
+                    "type": "Party",
+                    "value": "BSNCT"
+                }
+            ]
+        },
+        "Show": "DreamChallenge_T01N04",
+        "StarsAttrEffect": "DC_5star_buff",
+        "AwakenAttrEffect": "DC_7star_buff",
+        "fatigue": 4,
+        "shifting": [
+            110,
+            100
+        ],
+        "ShortDesc": "DC_ShortDesc_T01N04",
+        "TabPic": "mjt_z_butten_x4",
+        "StoryLink": "",
+        "EndDesc": "DC_EndDesc_T01N04",
+        "PointBackground": "mjt_z_yhzx1_bg",
+        "MissionPicType": 1,
+        "PointDesc": "DreamChallengePoint_T01_PointDesc"
     }
 }

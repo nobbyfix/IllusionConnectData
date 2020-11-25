@@ -2130,24 +2130,6 @@
         "ResourcesBanner": "",
         "IsPlay": ""
     },
-    "DreamChallenge": {
-        "Condition": {
-            "LEVEL": 999
-        },
-        "ShowCondition": {
-            "LEVEL": 999
-        },
-        "Tip": "DreamChallenge_Unlock_Tips",
-        "Name": "DreamChallenge_Unlock_Name",
-        "LongDesc": "DreamChallenge_Unlock_Name",
-        "OutputDesc": "",
-        "Icon": "",
-        "Link": "",
-        "UnlockAnima": "",
-        "UnlockDesc": "",
-        "ResourcesBanner": "",
-        "IsPlay": ""
-    },
     "KOF": {
         "Condition": {
             "STAGE": "M08S38"
@@ -2199,6 +2181,24 @@
         "Tip": "Unlock_Joking_Tips",
         "Name": "",
         "LongDesc": "",
+        "OutputDesc": "",
+        "Icon": "",
+        "Link": "",
+        "UnlockAnima": "",
+        "UnlockDesc": "",
+        "ResourcesBanner": "",
+        "IsPlay": ""
+    },
+    "DreamChallenge": {
+        "Condition": {
+            "LEVEL": 43
+        },
+        "ShowCondition": {
+            "LEVEL": 43
+        },
+        "Tip": "DreamChallenge_Unlock_Tips",
+        "Name": "DreamChallenge_Unlock_Name",
+        "LongDesc": "DreamChallenge_Unlock_Name",
         "OutputDesc": "",
         "Icon": "",
         "Link": "",

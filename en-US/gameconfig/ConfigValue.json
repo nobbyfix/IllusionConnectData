@@ -3240,16 +3240,6 @@
         ],
         "clz": "string[]"
     },
-    "TrialSwitch": {
-        "content": [
-            "spstage",
-            "explore",
-            "tower",
-            "crusade",
-            "practice"
-        ],
-        "clz": "string[]"
-    },
     "Rank_Weekly_List": {
         "content": [
             1,
@@ -7175,6 +7165,17 @@
         "content": 1,
         "clz": "int"
     },
+    "TrialSwitch": {
+        "content": [
+            "spstage",
+            "explore",
+            "tower",
+            "dreamchallenge",
+            "crusade",
+            "practice"
+        ],
+        "clz": "string[]"
+    },
     "FAC_CheckType": {
         "content": [
             "normal_stage",
@@ -7192,8 +7193,7 @@
             "arena_challenge",
             "tower",
             "crusade",
-            "dream_challenge",
-            "clubboss"
+            "dream_challenge"
         ],
         "clz": "string[]"
     }

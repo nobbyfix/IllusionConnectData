@@ -117,5 +117,34 @@
             "PackageShop_TimeLimit_6"
         ],
         "Link": "view://shopView&viewType=push&shopId=Shop_TimeLimit"
+    },
+    "ShopRecommend_TL_SGHQShou": {
+        "TabName": "ShopRecommend_TL_SGHQShou_Name",
+        "BackGroundImg": "sd_tj_bg_zfzxd",
+        "Sort": 1,
+        "Vanish": 1,
+        "TimeType": {
+            "start": "2020-12-05 05:00:00",
+            "end": "2020-12-12 05:00:00",
+            "type": "limit"
+        },
+        "ServerCondition": "",
+        "ClientCondition": {
+            "PLEYERREG": [
+                45,
+                51
+            ]
+        },
+        "Hide": 1,
+        "Prepose": "",
+        "PackageId": [
+            "PackageShop_TL_SGHQShou_1",
+            "PackageShop_TL_SGHQShou_2",
+            "PackageShop_TL_SGHQShou_3",
+            "PackageShop_TL_SGHQShou_4",
+            "PackageShop_TL_SGHQShou_5",
+            "PackageShop_TL_SGHQShou_6"
+        ],
+        "Link": "view://shopView&viewType=push&shopId=Shop_TimeLimit"
     }
 }
