@@ -7233,5 +7233,729 @@
         "TaskIcon": "201201",
         "Destination": "view://GalleryMainView&viewType=push&tabType=1",
         "ExtraReward": ""
+    },
+    "Snowflake_Login_08": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    8
+                ]
+            }
+        ],
+        "Reward": "Snowflake_Login_08_Reward",
+        "Name": "ActivityBlock_Snowflake_Login_8_Name",
+        "Desc": "",
+        "OrderNum": 8,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Snowflake_Login_03": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    3
+                ]
+            }
+        ],
+        "Reward": "Snowflake_Login_03_Reward",
+        "Name": "ActivityBlock_Snowflake_Login_3_Name",
+        "Desc": "",
+        "OrderNum": 3,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Snowflake_Login_02": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    2
+                ]
+            }
+        ],
+        "Reward": "Snowflake_Login_02_Reward",
+        "Name": "ActivityBlock_Snowflake_Login_2_Name",
+        "Desc": "",
+        "OrderNum": 2,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Snowflake_Login_01": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Reward": "Snowflake_Login_01_Reward",
+        "Name": "ActivityBlock_Snowflake_Login_1_Name",
+        "Desc": "",
+        "OrderNum": 1,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Snowflake_Login_07": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    7
+                ]
+            }
+        ],
+        "Reward": "Snowflake_Login_07_Reward",
+        "Name": "ActivityBlock_Snowflake_Login_7_Name",
+        "Desc": "",
+        "OrderNum": 7,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Snowflake_Login_06": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    6
+                ]
+            }
+        ],
+        "Reward": "Snowflake_Login_06_Reward",
+        "Name": "ActivityBlock_Snowflake_Login_6_Name",
+        "Desc": "",
+        "OrderNum": 6,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Snowflake_Login_05": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    5
+                ]
+            }
+        ],
+        "Reward": "Snowflake_Login_05_Reward",
+        "Name": "ActivityBlock_Snowflake_Login_5_Name",
+        "Desc": "",
+        "OrderNum": 5,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Snowflake_Login_04": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    4
+                ]
+            }
+        ],
+        "Reward": "Snowflake_Login_04_Reward",
+        "Name": "ActivityBlock_Snowflake_Login_4_Name",
+        "Desc": "",
+        "OrderNum": 4,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Snowflake_AchieveMentTask_018": {
+        "Condition": [
+            {
+                "conditionType": "Condi_SnowflakeChengjiuDian",
+                "factor1": [
+                    7000
+                ]
+            }
+        ],
+        "Reward": "Snowflake_AchieveMentTask_018_Reward",
+        "Name": "ActivityBlock_Snowflake_AchieveMentTask_18_Name",
+        "Desc": "ActivityBlock_Snowflake_AchieveMentTask_18_Desc",
+        "OrderNum": 18,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Snowflake_AchieveMentTask_019": {
+        "Condition": [
+            {
+                "conditionType": "Condi_SnowflakeChengjiuDian",
+                "factor1": [
+                    7500
+                ]
+            }
+        ],
+        "Reward": "Snowflake_AchieveMentTask_019_Reward",
+        "Name": "ActivityBlock_Snowflake_AchieveMentTask_19_Name",
+        "Desc": "ActivityBlock_Snowflake_AchieveMentTask_19_Desc",
+        "OrderNum": 19,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Snowflake_AchieveMentTask_010": {
+        "Condition": [
+            {
+                "conditionType": "Condi_SnowflakeChengjiuDian",
+                "factor1": [
+                    3200
+                ]
+            }
+        ],
+        "Reward": "Snowflake_AchieveMentTask_010_Reward",
+        "Name": "ActivityBlock_Snowflake_AchieveMentTask_10_Name",
+        "Desc": "ActivityBlock_Snowflake_AchieveMentTask_10_Desc",
+        "OrderNum": 10,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Snowflake_AchieveMentTask_011": {
+        "Condition": [
+            {
+                "conditionType": "Condi_SnowflakeChengjiuDian",
+                "factor1": [
+                    3600
+                ]
+            }
+        ],
+        "Reward": "Snowflake_AchieveMentTask_011_Reward",
+        "Name": "ActivityBlock_Snowflake_AchieveMentTask_11_Name",
+        "Desc": "ActivityBlock_Snowflake_AchieveMentTask_11_Desc",
+        "OrderNum": 11,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Snowflake_AchieveMentTask_012": {
+        "Condition": [
+            {
+                "conditionType": "Condi_SnowflakeChengjiuDian",
+                "factor1": [
+                    4000
+                ]
+            }
+        ],
+        "Reward": "Snowflake_AchieveMentTask_012_Reward",
+        "Name": "ActivityBlock_Snowflake_AchieveMentTask_12_Name",
+        "Desc": "ActivityBlock_Snowflake_AchieveMentTask_12_Desc",
+        "OrderNum": 12,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Snowflake_AchieveMentTask_013": {
+        "Condition": [
+            {
+                "conditionType": "Condi_SnowflakeChengjiuDian",
+                "factor1": [
+                    4500
+                ]
+            }
+        ],
+        "Reward": "Snowflake_AchieveMentTask_013_Reward",
+        "Name": "ActivityBlock_Snowflake_AchieveMentTask_13_Name",
+        "Desc": "ActivityBlock_Snowflake_AchieveMentTask_13_Desc",
+        "OrderNum": 13,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Snowflake_AchieveMentTask_014": {
+        "Condition": [
+            {
+                "conditionType": "Condi_SnowflakeChengjiuDian",
+                "factor1": [
+                    5000
+                ]
+            }
+        ],
+        "Reward": "Snowflake_AchieveMentTask_014_Reward",
+        "Name": "ActivityBlock_Snowflake_AchieveMentTask_14_Name",
+        "Desc": "ActivityBlock_Snowflake_AchieveMentTask_14_Desc",
+        "OrderNum": 14,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Snowflake_AchieveMentTask_015": {
+        "Condition": [
+            {
+                "conditionType": "Condi_SnowflakeChengjiuDian",
+                "factor1": [
+                    5500
+                ]
+            }
+        ],
+        "Reward": "Snowflake_AchieveMentTask_015_Reward",
+        "Name": "ActivityBlock_Snowflake_AchieveMentTask_15_Name",
+        "Desc": "ActivityBlock_Snowflake_AchieveMentTask_15_Desc",
+        "OrderNum": 15,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Snowflake_AchieveMentTask_016": {
+        "Condition": [
+            {
+                "conditionType": "Condi_SnowflakeChengjiuDian",
+                "factor1": [
+                    6000
+                ]
+            }
+        ],
+        "Reward": "Snowflake_AchieveMentTask_016_Reward",
+        "Name": "ActivityBlock_Snowflake_AchieveMentTask_16_Name",
+        "Desc": "ActivityBlock_Snowflake_AchieveMentTask_16_Desc",
+        "OrderNum": 16,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Snowflake_AchieveMentTask_017": {
+        "Condition": [
+            {
+                "conditionType": "Condi_SnowflakeChengjiuDian",
+                "factor1": [
+                    6500
+                ]
+            }
+        ],
+        "Reward": "Snowflake_AchieveMentTask_017_Reward",
+        "Name": "ActivityBlock_Snowflake_AchieveMentTask_17_Name",
+        "Desc": "ActivityBlock_Snowflake_AchieveMentTask_17_Desc",
+        "OrderNum": 17,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Snowflake_AchieveMentTask_021": {
+        "Condition": [
+            {
+                "conditionType": "Condi_SnowflakeChengjiuDian",
+                "factor1": [
+                    8500
+                ]
+            }
+        ],
+        "Reward": "Snowflake_AchieveMentTask_021_Reward",
+        "Name": "ActivityBlock_Snowflake_AchieveMentTask_21_Name",
+        "Desc": "ActivityBlock_Snowflake_AchieveMentTask_21_Desc",
+        "OrderNum": 21,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Snowflake_AchieveMentTask_020": {
+        "Condition": [
+            {
+                "conditionType": "Condi_SnowflakeChengjiuDian",
+                "factor1": [
+                    8000
+                ]
+            }
+        ],
+        "Reward": "Snowflake_AchieveMentTask_020_Reward",
+        "Name": "ActivityBlock_Snowflake_AchieveMentTask_20_Name",
+        "Desc": "ActivityBlock_Snowflake_AchieveMentTask_20_Desc",
+        "OrderNum": 20,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Snowflake_AchieveMentTask_023": {
+        "Condition": [
+            {
+                "conditionType": "Condi_SnowflakeChengjiuDian",
+                "factor1": [
+                    9500
+                ]
+            }
+        ],
+        "Reward": "Snowflake_AchieveMentTask_023_Reward",
+        "Name": "ActivityBlock_Snowflake_AchieveMentTask_23_Name",
+        "Desc": "ActivityBlock_Snowflake_AchieveMentTask_23_Desc",
+        "OrderNum": 23,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Snowflake_AchieveMentTask_022": {
+        "Condition": [
+            {
+                "conditionType": "Condi_SnowflakeChengjiuDian",
+                "factor1": [
+                    9000
+                ]
+            }
+        ],
+        "Reward": "Snowflake_AchieveMentTask_022_Reward",
+        "Name": "ActivityBlock_Snowflake_AchieveMentTask_22_Name",
+        "Desc": "ActivityBlock_Snowflake_AchieveMentTask_22_Desc",
+        "OrderNum": 22,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Snowflake_AchieveMentTask_025": {
+        "Condition": [
+            {
+                "conditionType": "Condi_SnowflakeChengjiuDian",
+                "factor1": [
+                    10500
+                ]
+            }
+        ],
+        "Reward": "Snowflake_AchieveMentTask_025_Reward",
+        "Name": "ActivityBlock_Snowflake_AchieveMentTask_25_Name",
+        "Desc": "ActivityBlock_Snowflake_AchieveMentTask_25_Desc",
+        "OrderNum": 25,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Snowflake_AchieveMentTask_024": {
+        "Condition": [
+            {
+                "conditionType": "Condi_SnowflakeChengjiuDian",
+                "factor1": [
+                    10000
+                ]
+            }
+        ],
+        "Reward": "Snowflake_AchieveMentTask_024_Reward",
+        "Name": "ActivityBlock_Snowflake_AchieveMentTask_24_Name",
+        "Desc": "ActivityBlock_Snowflake_AchieveMentTask_24_Desc",
+        "OrderNum": 24,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Snowflake_AchieveMentTask_027": {
+        "Condition": [
+            {
+                "conditionType": "Condi_SnowflakeChengjiuDian",
+                "factor1": [
+                    11500
+                ]
+            }
+        ],
+        "Reward": "Snowflake_AchieveMentTask_027_Reward",
+        "Name": "ActivityBlock_Snowflake_AchieveMentTask_27_Name",
+        "Desc": "ActivityBlock_Snowflake_AchieveMentTask_27_Desc",
+        "OrderNum": 27,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Snowflake_AchieveMentTask_026": {
+        "Condition": [
+            {
+                "conditionType": "Condi_SnowflakeChengjiuDian",
+                "factor1": [
+                    11000
+                ]
+            }
+        ],
+        "Reward": "Snowflake_AchieveMentTask_026_Reward",
+        "Name": "ActivityBlock_Snowflake_AchieveMentTask_26_Name",
+        "Desc": "ActivityBlock_Snowflake_AchieveMentTask_26_Desc",
+        "OrderNum": 26,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Snowflake_AchieveMentTask_028": {
+        "Condition": [
+            {
+                "conditionType": "Condi_SnowflakeChengjiuDian",
+                "factor1": [
+                    12000
+                ]
+            }
+        ],
+        "Reward": "Snowflake_AchieveMentTask_028_Reward",
+        "Name": "ActivityBlock_Snowflake_AchieveMentTask_28_Name",
+        "Desc": "ActivityBlock_Snowflake_AchieveMentTask_28_Desc",
+        "OrderNum": 28,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Snowflack_DailyTask_04": {
+        "Condition": [
+            {
+                "conditionType": "Condi_BuyStamina",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Reward": "Snowflack_DailyTask_04_Reward",
+        "Name": "ActivityBlock_Snowflake_DailyTask_4_Name",
+        "Desc": "ActivityBlock_Snowflake_DailyTask_4_Desc",
+        "OrderNum": 4,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Snowflack_DailyTask_05": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroGift",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Reward": "Snowflack_DailyTask_05_Reward",
+        "Name": "ActivityBlock_Snowflake_DailyTask_5_Name",
+        "Desc": "ActivityBlock_Snowflake_DailyTask_5_Desc",
+        "OrderNum": 5,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Snowflack_DailyTask_06": {
+        "Condition": [
+            {
+                "factorStr1": [
+                    "Snowflack_DailyTask_01",
+                    "Snowflack_DailyTask_02",
+                    "Snowflack_DailyTask_03",
+                    "Snowflack_DailyTask_04",
+                    "Snowflack_DailyTask_05"
+                ],
+                "conditionType": "Condi_FinishTask",
+                "factor1": [
+                    0
+                ]
+            }
+        ],
+        "Reward": "Snowflack_DailyTask_06_Reward",
+        "Name": "ActivityBlock_Snowflake_DailyTask_6_Name",
+        "Desc": "ActivityBlock_Snowflake_DailyTask_6_Desc",
+        "OrderNum": 6,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Snowflack_DailyTask_01": {
+        "Condition": [
+            {
+                "conditionType": "Condi_winActStage",
+                "params": [
+                    "ActivityBlock_Snowflake_Map"
+                ],
+                "factor1": [
+                    10
+                ]
+            }
+        ],
+        "Reward": "Snowflack_DailyTask_01_Reward",
+        "Name": "ActivityBlock_Snowflake_DailyTask_1_Name",
+        "Desc": "ActivityBlock_Snowflake_DailyTask_1_Desc",
+        "OrderNum": 1,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Snowflack_DailyTask_02": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Login",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Reward": "Snowflack_DailyTask_02_Reward",
+        "Name": "ActivityBlock_Snowflake_DailyTask_2_Name",
+        "Desc": "ActivityBlock_Snowflake_DailyTask_2_Desc",
+        "OrderNum": 2,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Snowflack_DailyTask_03": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TowerEnter",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Reward": "Snowflack_DailyTask_03_Reward",
+        "Name": "ActivityBlock_Snowflake_DailyTask_3_Name",
+        "Desc": "ActivityBlock_Snowflake_DailyTask_3_Desc",
+        "OrderNum": 3,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Snowflake_AchieveMentTask_009": {
+        "Condition": [
+            {
+                "conditionType": "Condi_SnowflakeChengjiuDian",
+                "factor1": [
+                    2800
+                ]
+            }
+        ],
+        "Reward": "Snowflake_AchieveMentTask_009_Reward",
+        "Name": "ActivityBlock_Snowflake_AchieveMentTask_9_Name",
+        "Desc": "ActivityBlock_Snowflake_AchieveMentTask_9_Desc",
+        "OrderNum": 9,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Snowflake_AchieveMentTask_008": {
+        "Condition": [
+            {
+                "conditionType": "Condi_SnowflakeChengjiuDian",
+                "factor1": [
+                    2400
+                ]
+            }
+        ],
+        "Reward": "Snowflake_AchieveMentTask_008_Reward",
+        "Name": "ActivityBlock_Snowflake_AchieveMentTask_8_Name",
+        "Desc": "ActivityBlock_Snowflake_AchieveMentTask_8_Desc",
+        "OrderNum": 8,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Snowflake_AchieveMentTask_007": {
+        "Condition": [
+            {
+                "conditionType": "Condi_SnowflakeChengjiuDian",
+                "factor1": [
+                    2000
+                ]
+            }
+        ],
+        "Reward": "Snowflake_AchieveMentTask_007_Reward",
+        "Name": "ActivityBlock_Snowflake_AchieveMentTask_7_Name",
+        "Desc": "ActivityBlock_Snowflake_AchieveMentTask_7_Desc",
+        "OrderNum": 7,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Snowflake_AchieveMentTask_006": {
+        "Condition": [
+            {
+                "conditionType": "Condi_SnowflakeChengjiuDian",
+                "factor1": [
+                    1600
+                ]
+            }
+        ],
+        "Reward": "Snowflake_AchieveMentTask_006_Reward",
+        "Name": "ActivityBlock_Snowflake_AchieveMentTask_6_Name",
+        "Desc": "ActivityBlock_Snowflake_AchieveMentTask_6_Desc",
+        "OrderNum": 6,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Snowflake_AchieveMentTask_005": {
+        "Condition": [
+            {
+                "conditionType": "Condi_SnowflakeChengjiuDian",
+                "factor1": [
+                    1200
+                ]
+            }
+        ],
+        "Reward": "Snowflake_AchieveMentTask_005_Reward",
+        "Name": "ActivityBlock_Snowflake_AchieveMentTask_5_Name",
+        "Desc": "ActivityBlock_Snowflake_AchieveMentTask_5_Desc",
+        "OrderNum": 5,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Snowflake_AchieveMentTask_004": {
+        "Condition": [
+            {
+                "conditionType": "Condi_SnowflakeChengjiuDian",
+                "factor1": [
+                    800
+                ]
+            }
+        ],
+        "Reward": "Snowflake_AchieveMentTask_004_Reward",
+        "Name": "ActivityBlock_Snowflake_AchieveMentTask_4_Name",
+        "Desc": "ActivityBlock_Snowflake_AchieveMentTask_4_Desc",
+        "OrderNum": 4,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Snowflake_AchieveMentTask_003": {
+        "Condition": [
+            {
+                "conditionType": "Condi_SnowflakeChengjiuDian",
+                "factor1": [
+                    500
+                ]
+            }
+        ],
+        "Reward": "Snowflake_AchieveMentTask_003_Reward",
+        "Name": "ActivityBlock_Snowflake_AchieveMentTask_3_Name",
+        "Desc": "ActivityBlock_Snowflake_AchieveMentTask_3_Desc",
+        "OrderNum": 3,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Snowflake_AchieveMentTask_002": {
+        "Condition": [
+            {
+                "conditionType": "Condi_SnowflakeChengjiuDian",
+                "factor1": [
+                    200
+                ]
+            }
+        ],
+        "Reward": "Snowflake_AchieveMentTask_002_Reward",
+        "Name": "ActivityBlock_Snowflake_AchieveMentTask_2_Name",
+        "Desc": "ActivityBlock_Snowflake_AchieveMentTask_2_Desc",
+        "OrderNum": 2,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Snowflake_AchieveMentTask_001": {
+        "Condition": [
+            {
+                "conditionType": "Condi_SnowflakeChengjiuDian",
+                "factor1": [
+                    100
+                ]
+            }
+        ],
+        "Reward": "Snowflake_AchieveMentTask_001_Reward",
+        "Name": "ActivityBlock_Snowflake_AchieveMentTask_1_Name",
+        "Desc": "ActivityBlock_Snowflake_AchieveMentTask_1_Desc",
+        "OrderNum": 1,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
     }
 }

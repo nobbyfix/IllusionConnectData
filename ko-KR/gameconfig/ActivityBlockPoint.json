@@ -12530,5 +12530,2113 @@
         "Combat_Adjust_Rate": 1.0,
         "HiddenStory": "",
         "Location": ""
+    },
+    "SnowflackM09": {
+        "Name": "BlockPoint_ASnowflakeM01S09_Name",
+        "BlockDesc": "BlockPoint_ASnowflakeM01S09_BlockDesc",
+        "CombatValue": 72500,
+        "CombatNeed": 72500,
+        "Map": "Snowflack_Map_M01",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "SnowflackM08"
+        ],
+        "NextPoint": [
+            "SnowflackM10"
+        ],
+        "Type": "NORMAL",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "EnemyMaster": "SnowflackM09W01_Master_01",
+        "EnemyCard": "CardSnowflackM09",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "SnowflackM09_FirstReward",
+        "PointReward": "SnowflackM09_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "SnowflackE09_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "Snowflack_Bonus_Reward",
+        "StaminaCost": {
+            "IR_SnowflakeStamina": 1
+        },
+        "StaminaBack": {
+            "IR_SnowflakeStamina": 1
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Resource_Jingsha",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_BBLMa",
+        "Background": "Bg_Copy_Snowflake_3",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "HeroAttrExtra": {
+            "LLan": "Snowflack_Hero_Extra_001",
+            "SLMen": "Snowflack_Hero_Extra_003",
+            "JNLong": "Snowflack_Hero_Extra_002"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": "",
+        "PointTime": {
+            "start": "2020-05-03 05:00:00"
+        },
+        "IsSweep": 1,
+        "Combat_Adjust_Rate": "",
+        "HiddenStory": "",
+        "Location": ""
+    },
+    "SnowflackM08": {
+        "Name": "BlockPoint_ASnowflakeM01S08_Name",
+        "BlockDesc": "BlockPoint_ASnowflakeM01S08_BlockDesc",
+        "CombatValue": 68000,
+        "CombatNeed": 68000,
+        "Map": "Snowflack_Map_M01",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "SnowflackM07"
+        ],
+        "NextPoint": [
+            "SnowflackM09"
+        ],
+        "Type": "NORMAL",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "EnemyMaster": "SnowflackM08W01_Master_01",
+        "EnemyCard": "CardSnowflackM08",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "SnowflackM08_FirstReward",
+        "PointReward": "SnowflackM08_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "SnowflackE08_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "Snowflack_Bonus_Reward",
+        "StaminaCost": {
+            "IR_SnowflakeStamina": 1
+        },
+        "StaminaBack": {
+            "IR_SnowflakeStamina": 1
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Resource_Jingsha",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_LDu",
+        "Background": "Bg_Copy_Snowflake_3",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "HeroAttrExtra": {
+            "LLan": "Snowflack_Hero_Extra_001",
+            "SLMen": "Snowflack_Hero_Extra_003",
+            "JNLong": "Snowflack_Hero_Extra_002"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": "",
+        "PointTime": {
+            "start": "2020-05-03 05:00:00"
+        },
+        "IsSweep": 1,
+        "Combat_Adjust_Rate": "",
+        "HiddenStory": "",
+        "Location": ""
+    },
+    "SnowflackM07": {
+        "Name": "BlockPoint_ASnowflakeM01S07_Name",
+        "BlockDesc": "BlockPoint_ASnowflakeM01S07_BlockDesc",
+        "CombatValue": 63500,
+        "CombatNeed": 63500,
+        "Map": "Snowflack_Map_M01",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "SnowflackM06"
+        ],
+        "NextPoint": [
+            "SnowflackM08"
+        ],
+        "Type": "NORMAL",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "EnemyMaster": "SnowflackM07W01_Master_01",
+        "EnemyCard": "CardSnowflackM07",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "SnowflackM07_FirstReward",
+        "PointReward": "SnowflackM07_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "SnowflackE07_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "Snowflack_Bonus_Reward",
+        "StaminaCost": {
+            "IR_SnowflakeStamina": 1
+        },
+        "StaminaBack": {
+            "IR_SnowflakeStamina": 1
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Resource_Jingsha",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_CZheng",
+        "Background": "Bg_Copy_Snowflake_3",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [
+            "ASnowflakeS01S03"
+        ],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "HeroAttrExtra": {
+            "LLan": "Snowflack_Hero_Extra_001",
+            "SLMen": "Snowflack_Hero_Extra_003",
+            "JNLong": "Snowflack_Hero_Extra_002"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": "",
+        "PointTime": {
+            "start": "2020-05-03 05:00:00"
+        },
+        "IsSweep": 1,
+        "Combat_Adjust_Rate": "",
+        "HiddenStory": "",
+        "Location": ""
+    },
+    "SnowflackM06": {
+        "Name": "BlockPoint_ASnowflakeM01S06_Name",
+        "BlockDesc": "BlockPoint_ASnowflakeM01S06_BlockDesc",
+        "CombatValue": 59000,
+        "CombatNeed": 59000,
+        "Map": "Snowflack_Map_M01",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "SnowflackM05"
+        ],
+        "NextPoint": [
+            "SnowflackM07"
+        ],
+        "Type": "NORMAL",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "EnemyMaster": "SnowflackM06W01_Master_01",
+        "EnemyCard": "CardSnowflackM06",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "SnowflackM06_FirstReward",
+        "PointReward": "SnowflackM06_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "SnowflackE06_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "Snowflack_Bonus_Reward",
+        "StaminaCost": {
+            "IR_SnowflakeStamina": 1
+        },
+        "StaminaBack": {
+            "IR_SnowflakeStamina": 1
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Resource_Jingsha",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_SRen",
+        "Background": "Bg_Copy_Snowflake_3",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "HeroAttrExtra": {
+            "LLan": "Snowflack_Hero_Extra_001",
+            "SLMen": "Snowflack_Hero_Extra_003",
+            "JNLong": "Snowflack_Hero_Extra_002"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": "",
+        "PointTime": {
+            "start": "2020-05-03 05:00:00"
+        },
+        "IsSweep": 1,
+        "Combat_Adjust_Rate": "",
+        "HiddenStory": "",
+        "Location": ""
+    },
+    "SnowflackM05": {
+        "Name": "BlockPoint_ASnowflakeM01S05_Name",
+        "BlockDesc": "BlockPoint_ASnowflakeM01S05_BlockDesc",
+        "CombatValue": 54500,
+        "CombatNeed": 54500,
+        "Map": "Snowflack_Map_M01",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "SnowflackM04"
+        ],
+        "NextPoint": [
+            "SnowflackM06"
+        ],
+        "Type": "NORMAL",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "EnemyMaster": "SnowflackM05W01_Master_01",
+        "EnemyCard": "CardSnowflackM05",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "SnowflackM05_FirstReward",
+        "PointReward": "SnowflackM05_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "SnowflackE05_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "Snowflack_Bonus_Reward",
+        "StaminaCost": {
+            "IR_SnowflakeStamina": 1
+        },
+        "StaminaBack": {
+            "IR_SnowflakeStamina": 1
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Resource_Jingsha",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_YLSBai",
+        "Background": "Bg_Copy_Snowflake_3",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "HeroAttrExtra": {
+            "LLan": "Snowflack_Hero_Extra_001",
+            "SLMen": "Snowflack_Hero_Extra_003",
+            "JNLong": "Snowflack_Hero_Extra_002"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": "",
+        "PointTime": {
+            "start": "2020-05-03 05:00:00"
+        },
+        "IsSweep": 1,
+        "Combat_Adjust_Rate": "",
+        "HiddenStory": "",
+        "Location": ""
+    },
+    "SnowflackM04": {
+        "Name": "BlockPoint_ASnowflakeM01S04_Name",
+        "BlockDesc": "BlockPoint_ASnowflakeM01S04_BlockDesc",
+        "CombatValue": 50000,
+        "CombatNeed": 50000,
+        "Map": "Snowflack_Map_M01",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "SnowflackM03"
+        ],
+        "NextPoint": [
+            "SnowflackM05"
+        ],
+        "Type": "NORMAL",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "EnemyMaster": "SnowflackM04W01_Master_01",
+        "EnemyCard": "CardSnowflackM04",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "SnowflackM04_FirstReward",
+        "PointReward": "SnowflackM04_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "SnowflackE04_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "Snowflack_Bonus_Reward",
+        "StaminaCost": {
+            "IR_SnowflakeStamina": 1
+        },
+        "StaminaBack": {
+            "IR_SnowflakeStamina": 1
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Resource_Jingsha",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_PNCao",
+        "Background": "Bg_Copy_Snowflake_3",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [
+            "ASnowflakeS01S02"
+        ],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "HeroAttrExtra": {
+            "LLan": "Snowflack_Hero_Extra_001",
+            "SLMen": "Snowflack_Hero_Extra_003",
+            "JNLong": "Snowflack_Hero_Extra_002"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": "",
+        "PointTime": {
+            "start": "2020-05-03 05:00:00"
+        },
+        "IsSweep": 1,
+        "Combat_Adjust_Rate": "",
+        "HiddenStory": "",
+        "Location": ""
+    },
+    "SnowflackM03": {
+        "Name": "BlockPoint_ASnowflakeM01S03_Name",
+        "BlockDesc": "BlockPoint_ASnowflakeM01S03_BlockDesc",
+        "CombatValue": 45500,
+        "CombatNeed": 45500,
+        "Map": "Snowflack_Map_M01",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "SnowflackM02"
+        ],
+        "NextPoint": [
+            "SnowflackM04"
+        ],
+        "Type": "NORMAL",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_2",
+        "EnemyMaster": "SnowflackM03W01_Master_01",
+        "EnemyCard": "CardSnowflackM03",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "SnowflackM03_FirstReward",
+        "PointReward": "SnowflackM03_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "SnowflackE03_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "Snowflack_Bonus_Reward",
+        "StaminaCost": {
+            "IR_SnowflakeStamina": 1
+        },
+        "StaminaBack": {
+            "IR_SnowflakeStamina": 1
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Resource_Jingsha",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_MGNa",
+        "Background": "Bg_Copy_Snowflake_3",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "HeroAttrExtra": {
+            "LLan": "Snowflack_Hero_Extra_001",
+            "SLMen": "Snowflack_Hero_Extra_003",
+            "JNLong": "Snowflack_Hero_Extra_002"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": "",
+        "PointTime": {
+            "start": "2020-05-03 05:00:00"
+        },
+        "IsSweep": 1,
+        "Combat_Adjust_Rate": "",
+        "HiddenStory": "",
+        "Location": ""
+    },
+    "SnowflackM02": {
+        "Name": "BlockPoint_ASnowflakeM01S02_Name",
+        "BlockDesc": "BlockPoint_ASnowflakeM01S02_BlockDesc",
+        "CombatValue": 41000,
+        "CombatNeed": 41000,
+        "Map": "Snowflack_Map_M01",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "SnowflackM01"
+        ],
+        "NextPoint": [
+            "SnowflackM03"
+        ],
+        "Type": "NORMAL",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "EnemyMaster": "SnowflackM02W01_Master_01",
+        "EnemyCard": "CardSnowflackM02",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "SnowflackM02_FirstReward",
+        "PointReward": "SnowflackM02_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "SnowflackE02_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "Snowflack_Bonus_Reward",
+        "StaminaCost": {
+            "IR_SnowflakeStamina": 1
+        },
+        "StaminaBack": {
+            "IR_SnowflakeStamina": 1
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Resource_Jingsha",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_ATSheng",
+        "Background": "Bg_Copy_Snowflake_3",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "HeroAttrExtra": {
+            "LLan": "Snowflack_Hero_Extra_001",
+            "SLMen": "Snowflack_Hero_Extra_003",
+            "JNLong": "Snowflack_Hero_Extra_002"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": "",
+        "PointTime": {
+            "start": "2020-05-03 05:00:00"
+        },
+        "IsSweep": 1,
+        "Combat_Adjust_Rate": "",
+        "HiddenStory": "",
+        "Location": ""
+    },
+    "SnowflackM01": {
+        "Name": "BlockPoint_ASnowflakeM01S01_Name",
+        "BlockDesc": "BlockPoint_ASnowflakeM01S01_BlockDesc",
+        "CombatValue": 36500,
+        "CombatNeed": 36500,
+        "Map": "Snowflack_Map_M01",
+        "OpenLevel": 1,
+        "OpenPoint": [],
+        "NextPoint": [
+            "SnowflackM02"
+        ],
+        "Type": "NORMAL",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "EnemyMaster": "SnowflackM01W01_Master_01",
+        "EnemyCard": "CardSnowflackM01",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "SnowflackM01_FirstReward",
+        "PointReward": "SnowflackM01_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "SnowflackE01_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "Snowflack_Bonus_Reward",
+        "StaminaCost": {
+            "IR_SnowflakeStamina": 1
+        },
+        "StaminaBack": {
+            "IR_SnowflakeStamina": 1
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Resource_Jingsha",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_SDTZi",
+        "Background": "Bg_Copy_Snowflake_3",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [
+            "ASnowflakeS01S01"
+        ],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "HeroAttrExtra": {
+            "LLan": "Snowflack_Hero_Extra_001",
+            "SLMen": "Snowflack_Hero_Extra_003",
+            "JNLong": "Snowflack_Hero_Extra_002"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": "",
+        "PointTime": {
+            "start": "2020-05-03 05:00:00"
+        },
+        "IsSweep": 1,
+        "Combat_Adjust_Rate": "",
+        "HiddenStory": "",
+        "Location": ""
+    },
+    "SnowflackM10": {
+        "Name": "BlockPoint_ASnowflakeM01S10_Name",
+        "BlockDesc": "BlockPoint_ASnowflakeM01S10_BlockDesc",
+        "CombatValue": 77000,
+        "CombatNeed": 77000,
+        "Map": "Snowflack_Map_M01",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "SnowflackM09"
+        ],
+        "NextPoint": [],
+        "Type": "NORMAL",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "EnemyMaster": "SnowflackM10W01_Master_01",
+        "EnemyCard": "CardSnowflackM10",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "SnowflackM10_FirstReward",
+        "PointReward": "SnowflackM10_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "SnowflackE10_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "Snowflack_Bonus_Reward",
+        "StaminaCost": {
+            "IR_SnowflakeStamina": 1
+        },
+        "StaminaBack": {
+            "IR_SnowflakeStamina": 1
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Resource_Jingsha",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_JNLong_Winter",
+        "Background": "Bg_Copy_Snowflake_3",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [
+            "ASnowflakeS01S04"
+        ],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "HeroAttrExtra": {
+            "LLan": "Snowflack_Hero_Extra_001",
+            "SLMen": "Snowflack_Hero_Extra_003",
+            "JNLong": "Snowflack_Hero_Extra_002"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": "",
+        "PointTime": {
+            "start": "2020-05-03 05:00:00"
+        },
+        "IsSweep": 1,
+        "Combat_Adjust_Rate": "",
+        "HiddenStory": "",
+        "Location": ""
+    },
+    "SnowflackE10": {
+        "Name": "BlockPoint_ASnowflakeE01S10_Name",
+        "BlockDesc": "BlockPoint_ASnowflakeE01S10_BlockDesc",
+        "CombatValue": 265000,
+        "CombatNeed": 265000,
+        "Map": "Snowflack_Map_E01",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "SnowflackE09"
+        ],
+        "NextPoint": [],
+        "Type": "ELITE",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "EnemyMaster": "SnowflackE10W01_Master_01",
+        "EnemyCard": "CardSnowflackE10",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "SnowflackE10_FirstReward",
+        "PointReward": "SnowflackE10_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "SnowflackM10_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "Snowflack_Bonus_Reward",
+        "StaminaCost": {
+            "IR_SnowflakeStamina": 1
+        },
+        "StaminaBack": {
+            "IR_SnowflakeStamina": 1
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Resource_Jingsha",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_JNLong_Winter",
+        "Background": "Bg_Copy_Snowflake_3",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [
+            "ASnowflakeS01E04"
+        ],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "HeroAttrExtra": {
+            "LLan": "Snowflack_Hero_Extra_001",
+            "SLMen": "Snowflack_Hero_Extra_003",
+            "JNLong": "Snowflack_Hero_Extra_002"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": "",
+        "PointTime": {
+            "start": "2020-05-03 05:00:00"
+        },
+        "IsSweep": 1,
+        "Combat_Adjust_Rate": "",
+        "HiddenStory": "",
+        "Location": ""
+    },
+    "SnowflackE07": {
+        "Name": "BlockPoint_ASnowflakeE01S07_Name",
+        "BlockDesc": "BlockPoint_ASnowflakeE01S07_BlockDesc",
+        "CombatValue": 147700,
+        "CombatNeed": 147700,
+        "Map": "Snowflack_Map_E01",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "SnowflackE06"
+        ],
+        "NextPoint": [
+            "SnowflackE08"
+        ],
+        "Type": "ELITE",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "EnemyMaster": "SnowflackE07W01_Master_01",
+        "EnemyCard": "CardSnowflackE07",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "SnowflackE07_FirstReward",
+        "PointReward": "SnowflackE07_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "SnowflackM07_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "Snowflack_Bonus_Reward",
+        "StaminaCost": {
+            "IR_SnowflakeStamina": 1
+        },
+        "StaminaBack": {
+            "IR_SnowflakeStamina": 1
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Resource_Jingsha",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_YLMGZhu",
+        "Background": "Bg_Copy_Snowflake_3",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [
+            "ASnowflakeS01E03"
+        ],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "HeroAttrExtra": {
+            "LLan": "Snowflack_Hero_Extra_001",
+            "SLMen": "Snowflack_Hero_Extra_003",
+            "JNLong": "Snowflack_Hero_Extra_002"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": "",
+        "PointTime": {
+            "start": "2020-05-03 05:00:00"
+        },
+        "IsSweep": 1,
+        "Combat_Adjust_Rate": "",
+        "HiddenStory": "",
+        "Location": ""
+    },
+    "SnowflackE06": {
+        "Name": "BlockPoint_ASnowflakeE01S06_Name",
+        "BlockDesc": "BlockPoint_ASnowflakeE01S06_BlockDesc",
+        "CombatValue": 125600,
+        "CombatNeed": 125600,
+        "Map": "Snowflack_Map_E01",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "SnowflackE05"
+        ],
+        "NextPoint": [
+            "SnowflackE07"
+        ],
+        "Type": "ELITE",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_2",
+        "EnemyMaster": "SnowflackE06W01_Master_01",
+        "EnemyCard": "CardSnowflackE06",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "SnowflackE06_FirstReward",
+        "PointReward": "SnowflackE06_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "SnowflackM06_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "Snowflack_Bonus_Reward",
+        "StaminaCost": {
+            "IR_SnowflakeStamina": 1
+        },
+        "StaminaBack": {
+            "IR_SnowflakeStamina": 1
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Resource_Jingsha",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_ZZBBWei",
+        "Background": "Bg_Copy_Snowflake_3",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "HeroAttrExtra": {
+            "LLan": "Snowflack_Hero_Extra_001",
+            "SLMen": "Snowflack_Hero_Extra_003",
+            "JNLong": "Snowflack_Hero_Extra_002"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": "",
+        "PointTime": {
+            "start": "2020-05-03 05:00:00"
+        },
+        "IsSweep": 1,
+        "Combat_Adjust_Rate": "",
+        "HiddenStory": "",
+        "Location": ""
+    },
+    "SnowflackE05": {
+        "Name": "BlockPoint_ASnowflakeE01S05_Name",
+        "BlockDesc": "BlockPoint_ASnowflakeE01S05_BlockDesc",
+        "CombatValue": 106900,
+        "CombatNeed": 106900,
+        "Map": "Snowflack_Map_E01",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "SnowflackE04"
+        ],
+        "NextPoint": [
+            "SnowflackE06"
+        ],
+        "Type": "ELITE",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "EnemyMaster": "SnowflackE05W01_Master_01",
+        "EnemyCard": "CardSnowflackE05",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "SnowflackE05_FirstReward",
+        "PointReward": "SnowflackE05_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "SnowflackM05_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "Snowflack_Bonus_Reward",
+        "StaminaCost": {
+            "IR_SnowflakeStamina": 1
+        },
+        "StaminaBack": {
+            "IR_SnowflakeStamina": 1
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Resource_Jingsha",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_JNLong_Winter",
+        "Background": "Bg_Copy_Snowflake_3",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "HeroAttrExtra": {
+            "LLan": "Snowflack_Hero_Extra_001",
+            "SLMen": "Snowflack_Hero_Extra_003",
+            "JNLong": "Snowflack_Hero_Extra_002"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": "",
+        "PointTime": {
+            "start": "2020-05-03 05:00:00"
+        },
+        "IsSweep": 1,
+        "Combat_Adjust_Rate": "",
+        "HiddenStory": "",
+        "Location": ""
+    },
+    "SnowflackE04": {
+        "Name": "BlockPoint_ASnowflakeE01S04_Name",
+        "BlockDesc": "BlockPoint_ASnowflakeE01S04_BlockDesc",
+        "CombatValue": 95000,
+        "CombatNeed": 95000,
+        "Map": "Snowflack_Map_E01",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "SnowflackE03"
+        ],
+        "NextPoint": [
+            "SnowflackE05"
+        ],
+        "Type": "ELITE",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "EnemyMaster": "SnowflackE04W01_Master_01",
+        "EnemyCard": "CardSnowflackE04",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "SnowflackE04_FirstReward",
+        "PointReward": "SnowflackE04_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "SnowflackM04_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "Snowflack_Bonus_Reward",
+        "StaminaCost": {
+            "IR_SnowflakeStamina": 1
+        },
+        "StaminaBack": {
+            "IR_SnowflakeStamina": 1
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Resource_Jingsha",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_NXYYi",
+        "Background": "Bg_Copy_Snowflake_3",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [
+            "ASnowflakeS01E02"
+        ],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "HeroAttrExtra": {
+            "LLan": "Snowflack_Hero_Extra_001",
+            "SLMen": "Snowflack_Hero_Extra_003",
+            "JNLong": "Snowflack_Hero_Extra_002"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": "",
+        "PointTime": {
+            "start": "2020-05-03 05:00:00"
+        },
+        "IsSweep": 1,
+        "Combat_Adjust_Rate": "",
+        "HiddenStory": "",
+        "Location": ""
+    },
+    "SnowflackE03": {
+        "Name": "BlockPoint_ASnowflakeE01S03_Name",
+        "BlockDesc": "BlockPoint_ASnowflakeE01S03_BlockDesc",
+        "CombatValue": 90500,
+        "CombatNeed": 90500,
+        "Map": "Snowflack_Map_E01",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "SnowflackE02"
+        ],
+        "NextPoint": [
+            "SnowflackE04"
+        ],
+        "Type": "ELITE",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "EnemyMaster": "SnowflackE03W01_Master_01",
+        "EnemyCard": "CardSnowflackE03",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "SnowflackE03_FirstReward",
+        "PointReward": "SnowflackE03_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "SnowflackM03_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "Snowflack_Bonus_Reward",
+        "StaminaCost": {
+            "IR_SnowflakeStamina": 1
+        },
+        "StaminaBack": {
+            "IR_SnowflakeStamina": 1
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Resource_Jingsha",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_SSQXin",
+        "Background": "Bg_Copy_Snowflake_3",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "HeroAttrExtra": {
+            "LLan": "Snowflack_Hero_Extra_001",
+            "SLMen": "Snowflack_Hero_Extra_003",
+            "JNLong": "Snowflack_Hero_Extra_002"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": "",
+        "PointTime": {
+            "start": "2020-05-03 05:00:00"
+        },
+        "IsSweep": 1,
+        "Combat_Adjust_Rate": "",
+        "HiddenStory": "",
+        "Location": ""
+    },
+    "SnowflackE02": {
+        "Name": "BlockPoint_ASnowflakeE01S02_Name",
+        "BlockDesc": "BlockPoint_ASnowflakeE01S02_BlockDesc",
+        "CombatValue": 86000,
+        "CombatNeed": 86000,
+        "Map": "Snowflack_Map_E01",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "SnowflackE01"
+        ],
+        "NextPoint": [
+            "SnowflackE03"
+        ],
+        "Type": "ELITE",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "EnemyMaster": "SnowflackE02W01_Master_01",
+        "EnemyCard": "CardSnowflackE02",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "SnowflackE02_FirstReward",
+        "PointReward": "SnowflackE02_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "SnowflackM02_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "Snowflack_Bonus_Reward",
+        "StaminaCost": {
+            "IR_SnowflakeStamina": 1
+        },
+        "StaminaBack": {
+            "IR_SnowflakeStamina": 1
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Resource_Jingsha",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_MTZMEShi",
+        "Background": "Bg_Copy_Snowflake_3",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "HeroAttrExtra": {
+            "LLan": "Snowflack_Hero_Extra_001",
+            "SLMen": "Snowflack_Hero_Extra_003",
+            "JNLong": "Snowflack_Hero_Extra_002"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": "",
+        "PointTime": {
+            "start": "2020-05-03 05:00:00"
+        },
+        "IsSweep": 1,
+        "Combat_Adjust_Rate": "",
+        "HiddenStory": "",
+        "Location": ""
+    },
+    "SnowflackE01": {
+        "Name": "BlockPoint_ASnowflakeE01S01_Name",
+        "BlockDesc": "BlockPoint_ASnowflakeE01S01_BlockDesc",
+        "CombatValue": 81500,
+        "CombatNeed": 81500,
+        "Map": "Snowflack_Map_E01",
+        "OpenLevel": 1,
+        "OpenPoint": [],
+        "NextPoint": [
+            "SnowflackE02"
+        ],
+        "Type": "ELITE",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "EnemyMaster": "SnowflackE01W01_Master_01",
+        "EnemyCard": "CardSnowflackE01",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "SnowflackE01_FirstReward",
+        "PointReward": "SnowflackE01_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "SnowflackM01_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "Snowflack_Bonus_Reward",
+        "StaminaCost": {
+            "IR_SnowflakeStamina": 1
+        },
+        "StaminaBack": {
+            "IR_SnowflakeStamina": 1
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Resource_Jingsha",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_SLMen",
+        "Background": "Bg_Copy_Snowflake_3",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [
+            "ASnowflakeS01E01"
+        ],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "HeroAttrExtra": {
+            "LLan": "Snowflack_Hero_Extra_001",
+            "SLMen": "Snowflack_Hero_Extra_003",
+            "JNLong": "Snowflack_Hero_Extra_002"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": "",
+        "PointTime": {
+            "start": "2020-05-03 05:00:00"
+        },
+        "IsSweep": 1,
+        "Combat_Adjust_Rate": "",
+        "HiddenStory": "",
+        "Location": ""
+    },
+    "SnowflackE09": {
+        "Name": "BlockPoint_ASnowflakeE01S09_Name",
+        "BlockDesc": "BlockPoint_ASnowflakeE01S09_BlockDesc",
+        "CombatValue": 214000,
+        "CombatNeed": 214000,
+        "Map": "Snowflack_Map_E01",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "SnowflackE08"
+        ],
+        "NextPoint": [
+            "SnowflackE10"
+        ],
+        "Type": "ELITE",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "EnemyMaster": "SnowflackE09W01_Master_01",
+        "EnemyCard": "CardSnowflackE09",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "SnowflackE09_FirstReward",
+        "PointReward": "SnowflackE09_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "SnowflackM09_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "Snowflack_Bonus_Reward",
+        "StaminaCost": {
+            "IR_SnowflakeStamina": 1
+        },
+        "StaminaBack": {
+            "IR_SnowflakeStamina": 1
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Resource_Jingsha",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_BEr",
+        "Background": "Bg_Copy_Snowflake_3",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "HeroAttrExtra": {
+            "LLan": "Snowflack_Hero_Extra_001",
+            "SLMen": "Snowflack_Hero_Extra_003",
+            "JNLong": "Snowflack_Hero_Extra_002"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": "",
+        "PointTime": {
+            "start": "2020-05-03 05:00:00"
+        },
+        "IsSweep": 1,
+        "Combat_Adjust_Rate": "",
+        "HiddenStory": "",
+        "Location": ""
+    },
+    "SnowflackE08": {
+        "Name": "BlockPoint_ASnowflakeE01S08_Name",
+        "BlockDesc": "BlockPoint_ASnowflakeE01S08_BlockDesc",
+        "CombatValue": 176600,
+        "CombatNeed": 176600,
+        "Map": "Snowflack_Map_E01",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "SnowflackE07"
+        ],
+        "NextPoint": [
+            "SnowflackE09"
+        ],
+        "Type": "ELITE",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "EnemyMaster": "SnowflackE08W01_Master_01",
+        "EnemyCard": "CardSnowflackE08",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "SnowflackE08_FirstReward",
+        "PointReward": "SnowflackE08_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "SnowflackM08_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "Snowflack_Bonus_Reward",
+        "StaminaCost": {
+            "IR_SnowflakeStamina": 1
+        },
+        "StaminaBack": {
+            "IR_SnowflakeStamina": 1
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Resource_Jingsha",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_SGHQShou",
+        "Background": "Bg_Copy_Snowflake_3",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 0,
+        "HeroAttrExtra": {
+            "LLan": "Snowflack_Hero_Extra_001",
+            "SLMen": "Snowflack_Hero_Extra_003",
+            "JNLong": "Snowflack_Hero_Extra_002"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": "",
+        "PointTime": {
+            "start": "2020-05-03 05:00:00"
+        },
+        "IsSweep": 1,
+        "Combat_Adjust_Rate": "",
+        "HiddenStory": "",
+        "Location": ""
     }
 }

@@ -1228,5 +1228,33 @@
             "limit": 400,
             "addValue": 1
         }
+    },
+    "AcitvitySnowflakeStamina_Reset": {
+        "ResetSystem": {
+            "initial": 5,
+            "storage": 5000,
+            "cd": 28800,
+            "resetMode": "CD",
+            "limit": 50,
+            "addValue": 1
+        }
+    },
+    "Club_HomeChange": {
+        "ResetSystem": {
+            "resetDate": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+            ],
+            "resetMode": "DAY",
+            "resetTime": [
+                "05:00:00"
+            ],
+            "setValue": 3
+        }
     }
 }

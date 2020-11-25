@@ -27316,5 +27316,317 @@
                 "f": 1
             }
         ]
+    },
+    "LLan_BXJie_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "e": "sound",
+                        "d": {
+                            "rate": 1,
+                            "file": "Se_Skill_LLan_DongRi_Whoosh_1"
+                        }
+                    }
+                ],
+                "f": 6
+            },
+            {
+                "evts": [
+                    {
+                        "e": "sound",
+                        "d": {
+                            "rate": 1,
+                            "file": "Se_Skill_LLan_DongRi_Hit_1"
+                        }
+                    }
+                ],
+                "f": 10
+            },
+            {
+                "evts": [
+                    {
+                        "e": "sound",
+                        "d": {
+                            "rate": 1,
+                            "file": "Voice_LLan_26"
+                        }
+                    }
+                ],
+                "f": 11
+            },
+            {
+                "evts": [
+                    {
+                        "e": "hit",
+                        "d": {
+                            "final": 0,
+                            "act": "hurt1"
+                        }
+                    }
+                ],
+                "f": 11
+            }
+        ]
+    },
+    "JNLong_BXJie_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "e": "sound",
+                        "d": {
+                            "rate": 1,
+                            "file": "Se_Skill_JNLong_DongRi_Whoosh_2"
+                        }
+                    }
+                ],
+                "f": 4
+            },
+            {
+                "evts": [
+                    {
+                        "e": "sound",
+                        "d": {
+                            "rate": 1,
+                            "file": "Voice_JNLong_DongRi_27"
+                        }
+                    }
+                ],
+                "f": 5
+            },
+            {
+                "evts": [
+                    {
+                        "e": "sound",
+                        "d": {
+                            "rate": 1,
+                            "file": "Se_Skill_JNLong_DongRi_Hit_2"
+                        }
+                    }
+                ],
+                "f": 11
+            },
+            {
+                "evts": [
+                    {
+                        "e": "hit",
+                        "d": {
+                            "final": 0,
+                            "act": "hurt1"
+                        }
+                    }
+                ],
+                "f": 11
+            }
+        ]
+    },
+    "JNLong_BXJie_skill3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "e": "sound",
+                        "d": {
+                            "rate": 1,
+                            "file": "Se_Skill_JNLong_DongRi_Whoosh_3"
+                        }
+                    }
+                ],
+                "f": 5
+            },
+            {
+                "evts": [
+                    {
+                        "e": "sound",
+                        "d": {
+                            "rate": 1,
+                            "file": "Voice_JNLong_28"
+                        }
+                    }
+                ],
+                "f": 15
+            },
+            {
+                "evts": [
+                    {
+                        "e": "hit",
+                        "d": {
+                            "final": 0,
+                            "act": "hurt1"
+                        }
+                    }
+                ],
+                "f": 34
+            },
+            {
+                "evts": [
+                    {
+                        "e": "sound",
+                        "d": {
+                            "rate": 1,
+                            "file": "Se_Skill_JNLong_DongRi_Hit_3"
+                        }
+                    }
+                ],
+                "f": 35
+            }
+        ]
+    },
+    "JNLong_BXJie_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "e": "sound",
+                        "d": {
+                            "rate": 1,
+                            "file": "Voice_JNLong_DongRi_26"
+                        }
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "e": "sound",
+                        "d": {
+                            "rate": 1,
+                            "file": "Se_Skill_JNLong_DongRi_Whoosh_1"
+                        }
+                    }
+                ],
+                "f": 2
+            },
+            {
+                "evts": [
+                    {
+                        "e": "sound",
+                        "d": {
+                            "rate": 1,
+                            "file": "Se_Skill_JNLong_DongRi_Hit_1"
+                        }
+                    }
+                ],
+                "f": 5
+            },
+            {
+                "evts": [
+                    {
+                        "e": "hit",
+                        "d": {
+                            "final": 0,
+                            "act": "hurt1"
+                        }
+                    }
+                ],
+                "f": 6
+            }
+        ]
+    },
+    "LLan_BXJie_skill3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "e": "sound",
+                        "d": {
+                            "rate": 1,
+                            "file": "Se_Skill_LLan_DongRi_Whoosh_3"
+                        }
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "e": "sound",
+                        "d": {
+                            "rate": 1,
+                            "file": "Voice_LLan_DongRi_28"
+                        }
+                    }
+                ],
+                "f": 5
+            },
+            {
+                "evts": [
+                    {
+                        "e": "sound",
+                        "d": {
+                            "rate": 1,
+                            "file": "Se_Skill_LLan_DongRi_Whoosh_4"
+                        }
+                    }
+                ],
+                "f": 27
+            },
+            {
+                "evts": [
+                    {
+                        "e": "sound",
+                        "d": {
+                            "rate": 1,
+                            "file": "Se_Skill_LLan_DongRi_Hit_3"
+                        }
+                    }
+                ],
+                "f": 60
+            }
+        ]
+    },
+    "LLan_BXJie_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "e": "sound",
+                        "d": {
+                            "rate": 1,
+                            "file": "Se_Skill_LLan_DongRi_Hit_2"
+                        }
+                    }
+                ],
+                "f": 8
+            },
+            {
+                "evts": [
+                    {
+                        "e": "sound",
+                        "d": {
+                            "rate": 1,
+                            "file": "Se_Skill_LLan_DongRi_Whoosh_2"
+                        }
+                    }
+                ],
+                "f": 9
+            },
+            {
+                "evts": [
+                    {
+                        "e": "sound",
+                        "d": {
+                            "rate": 1,
+                            "file": "Voice_LLan_27"
+                        }
+                    }
+                ],
+                "f": 9
+            },
+            {
+                "evts": [
+                    {
+                        "e": "hit",
+                        "d": {
+                            "final": 0,
+                            "act": "hurt1"
+                        }
+                    }
+                ],
+                "f": 24
+            }
+        ]
     }
 }

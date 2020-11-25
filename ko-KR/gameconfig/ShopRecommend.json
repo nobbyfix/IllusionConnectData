@@ -199,5 +199,53 @@
             "PackageShop_TL_DCJKang_6"
         ],
         "Link": "view://shopView&viewType=push&shopId=Shop_TimeLimit"
+    },
+    "ShopRecommend_TL_SLMen": {
+        "TabName": "ShopRecommend_TL_SLMen_Name",
+        "BackGroundImg": "sd_tj_bg_miwu",
+        "Sort": 1,
+        "Vanish": 1,
+        "TimeType": {
+            "start": "2020-11-28 05:00:00",
+            "end": "2020-12-05 05:00:00",
+            "type": "limit"
+        },
+        "ServerCondition": "",
+        "ClientCondition": "",
+        "Hide": 1,
+        "Prepose": "",
+        "PackageId": [
+            "PackageShop_TL_SLMen_1",
+            "PackageShop_TL_SLMen_2",
+            "PackageShop_TL_SLMen_3",
+            "PackageShop_TL_SLMen_4",
+            "PackageShop_TL_SLMen_5",
+            "PackageShop_TL_SLMen_6"
+        ],
+        "Link": "view://shopView&viewType=push&shopId=Shop_TimeLimit"
+    },
+    "ShopRecommend_TL_CZheng2": {
+        "TabName": "ShopRecommend_TL_CZheng_Name",
+        "BackGroundImg": "sd_tj_bg_ydyw",
+        "Sort": 2,
+        "Vanish": 1,
+        "TimeType": {
+            "start": "2020-12-05 05:00:00",
+            "end": "2020-12-12 05:00:00",
+            "type": "limit"
+        },
+        "ServerCondition": "",
+        "ClientCondition": "",
+        "Hide": 1,
+        "Prepose": "",
+        "PackageId": [
+            "PackageShop_TL_CZheng2_1",
+            "PackageShop_TL_CZheng2_2",
+            "PackageShop_TL_CZheng2_3",
+            "PackageShop_TL_CZheng2_4",
+            "PackageShop_TL_CZheng2_5",
+            "PackageShop_TL_CZheng2_6"
+        ],
+        "Link": "view://shopView&viewType=push&shopId=Shop_TimeLimit"
     }
 }

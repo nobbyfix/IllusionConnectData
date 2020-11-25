@@ -1285,5 +1285,44 @@
         "SubType": 1,
         "QuickGet": 1,
         "Icon": ""
+    },
+    "Mail_Snowflake_DailyTask_Activity": {
+        "Type": "USER",
+        "Title": "Mail_Snowflake_DailyTask_Activity_Title",
+        "Content": "Mail_Snowflake_DailyTask_Activity_Content",
+        "ExpireAfterRead": 72000,
+        "Name": "Mail_Send_Snowflake_Name",
+        "ExpireTime": 0,
+        "Reward": "",
+        "TopStatus": 0,
+        "SubType": 1,
+        "QuickGet": 1,
+        "Icon": ""
+    },
+    "Mail_Snowflake_AchieveMentTask_Activity": {
+        "Type": "USER",
+        "Title": "Mail_Snowflake_AchieveMentTask_Activity_Title",
+        "Content": "Mail_Snowflake_AchieveMentTask_Activity_Content",
+        "ExpireAfterRead": 72000,
+        "Name": "Mail_Send_Snowflake_Name",
+        "ExpireTime": 0,
+        "Reward": "",
+        "TopStatus": 0,
+        "SubType": 1,
+        "QuickGet": 1,
+        "Icon": ""
+    },
+    "Mail_EightDays_Snowflake": {
+        "Type": "USER",
+        "Title": "Mail_EightDays_Snowflake_Title",
+        "Content": "Mail_EightDays_Snowflake_Content",
+        "ExpireAfterRead": 72000,
+        "Name": "Mail_Send_Snowflake_Name",
+        "ExpireTime": 0,
+        "Reward": "",
+        "TopStatus": 0,
+        "SubType": 1,
+        "QuickGet": 1,
+        "Icon": ""
     }
 }

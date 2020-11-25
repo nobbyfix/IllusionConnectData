@@ -240,6 +240,14 @@ function ClubBoss:syncBasicInfo(data)
 	if data.lastFightTime then
 		self._lastFightTime = data.lastFightTime
 	end
+
+	if data.lastJoinTime then
+		self._lastJoinTime = data.lastJoinTime
+	end
+
+	if data.joinedClubCount then
+		self._joinedClubCount = data.joinedClubCount
+	end
 end
 
 function ClubBoss:getShowAllBossList()
@@ -313,7 +321,7 @@ end
 function ClubBoss:checkDelayHurtRewardMark()
 	local result = false
 
-	if self._hurtTarget <= self._hurt and self._hasGetHurtAward == false then
+	if self._hurtTarget <= self._hurt and self._hasGetHurtAward == false and self._hurtTarget > 0 then
 		result = true
 	end
 

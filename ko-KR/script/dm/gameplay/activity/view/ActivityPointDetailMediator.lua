@@ -53,6 +53,10 @@ local ActivityPointCostConfig = {
 	[CurrencyIdKind.kAcitvityHalloweenPower] = {
 		tips = "ACTIVITY_Halloween_NOT_ENOUGH_2",
 		func = "getAcitvityHalloweenPower"
+	},
+	[CurrencyIdKind.kAcitvitySnowPower] = {
+		tips = "ACTIVITY_Snowflake_NOT_ENOUGH_1",
+		func = "getAcitvitySnowPower"
 	}
 }
 
@@ -751,7 +755,7 @@ function ActivityPointDetailMediator:reachBattleCondition()
 			containPower = self._bagSystem:getItemCount(itemId)
 		end
 
-		tips = Strings:get(config[tips])
+		tips = Strings:get(config.tips)
 	end
 
 	if containPower < cost then

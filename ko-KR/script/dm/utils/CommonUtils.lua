@@ -651,6 +651,16 @@ function GetPurchaseCD()
 	return cd
 end
 
+function GetDeliverCD()
+	local cd = tonumber(GameConfigs.shop_deliver_cd)
+
+	if not cd then
+		return 0
+	end
+
+	return cd
+end
+
 function randomByWeight(weightList, dataList)
 	local list = {}
 

@@ -129,3 +129,19 @@ function PushService:listenCommonTipsCode(callback)
 		end
 	end)
 end
+
+function PushService:listenClubHouseChange(callback)
+	self:addPushHandler(1800, function (op, response)
+		if callback then
+			callback(response)
+		end
+	end)
+end
+
+function PushService:listenClubApplyAgreeEnd(callback)
+	self:addPushHandler(1305, function (op, response)
+		if callback then
+			callback(response)
+		end
+	end)
+end

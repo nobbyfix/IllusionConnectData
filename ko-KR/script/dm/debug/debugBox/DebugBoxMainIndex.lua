@@ -92,7 +92,8 @@ DebugBoxMainIndex = {
 					"一键变强",
 					"主角养成",
 					"增加英魂",
-					"一键无敌"
+					"一键无敌",
+					"添加皮肤"
 				}
 			},
 			{
@@ -200,7 +201,8 @@ DebugBoxMainIndex = {
 				{
 					"加道具",
 					"加所有道具",
-					"清空背包"
+					"清空背包",
+					"加某款皮肤"
 				}
 			},
 			{
@@ -291,6 +293,10 @@ DebugBoxMainIndex = {
 				"AddAllItems"
 			},
 			{
+				"加某款皮肤",
+				"AddSkin"
+			},
+			{
 				"钻石",
 				"DiamondDV"
 			},
@@ -357,6 +363,10 @@ DebugBoxMainIndex = {
 			{
 				"主角养成",
 				"OnekeyMaster"
+			},
+			{
+				"添加皮肤",
+				"AddSurface"
 			},
 			{
 				"进入剧情编辑",
@@ -766,6 +776,7 @@ DebugBoxMainIndex = {
 			"SkipMazeChapter",
 			"AddMazeDp",
 			"OnekeyMaster",
+			"AddSurface",
 			"StoryEditor",
 			"BattleRecordBox",
 			"BattleDumpBox",

@@ -489,6 +489,8 @@ function ActivityPointSweepMediator:getMaxSwipCount()
 		containPower = self._bagSystem:getAcitvityStaminaPower()
 	elseif itemId == CurrencyIdKind.kAcitvityZuoHePower then
 		containPower = self._bagSystem:getAcitvitySagaSupportPower()
+	elseif itemId == CurrencyIdKind.kAcitvitySnowPower then
+		containPower = self._bagSystem:getAcitvitySnowPower()
 	elseif itemId == CurrencyIdKind.kAcitvityWxhPower then
 		containPower = self._bagSystem:getAcitvityWxhSupportPower()
 	elseif itemId == "IM_BossJindan" then

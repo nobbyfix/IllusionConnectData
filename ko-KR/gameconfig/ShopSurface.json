@@ -222,5 +222,24 @@
         "ServerCondition": "",
         "ClientCondition": "",
         "Hide": 1
+    },
+    "Surface_20": {
+        "Surface": "Surface_JNLong_2",
+        "BackGroundImg": "sd_pf_bg",
+        "Cost": [
+            {
+                "amount": 118,
+                "code": "IR_Surface"
+            }
+        ],
+        "Sort": 4,
+        "TimeType": {
+            "start": "2020-11-28 05:00:00",
+            "end": "2020-12-06 05:00:00",
+            "type": "limit"
+        },
+        "ServerCondition": "",
+        "ClientCondition": "",
+        "Hide": 1
     }
 }

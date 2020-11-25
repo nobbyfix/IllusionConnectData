@@ -25,7 +25,8 @@
         "MasterRage": 0,
         "Flags": [
             "SUMMONED"
-        ]
+        ],
+        "SummonSurface": []
     },
     "SummonedSGHQShou_Vanessa": {
         "Type": "Summoned",
@@ -55,7 +56,8 @@
         "MasterRage": 10,
         "Flags": [
             "SUMMONED"
-        ]
+        ],
+        "SummonSurface": []
     },
     "SummonedYBYa": {
         "Type": "Summoned",
@@ -83,7 +85,8 @@
         "MasterRage": 10,
         "Flags": [
             "SUMMONED"
-        ]
+        ],
+        "SummonSurface": []
     },
     "SummonedPNCao_NuoNuo": {
         "Type": "Summoned",
@@ -111,7 +114,8 @@
         "MasterRage": 10,
         "Flags": [
             "SUMMONED"
-        ]
+        ],
+        "SummonSurface": []
     },
     "SummonedGYCZi": {
         "Type": "Summoned",
@@ -139,7 +143,8 @@
         "MasterRage": 0,
         "Flags": [
             "SUMMONED"
-        ]
+        ],
+        "SummonSurface": []
     },
     "SummonedLDu": {
         "Type": "Summoned",
@@ -150,7 +155,7 @@
         "UniqueSkill": "",
         "DoubleSkill": "",
         "CounterSkill": "",
-        "DeathSkill": "Skill_Summoned_LDu_Saba_Passive_Death",
+        "DeathSkill": "",
         "PassiveSkill": [],
         "SkillRate": 0.0,
         "RageRules": {
@@ -167,7 +172,8 @@
         "MasterRage": 10,
         "Flags": [
             "SUMMONED"
-        ]
+        ],
+        "SummonSurface": []
     },
     "SummonedSGHQShou_Lucy": {
         "Type": "Summoned",
@@ -197,7 +203,8 @@
         "MasterRage": 10,
         "Flags": [
             "SUMMONED"
-        ]
+        ],
+        "SummonSurface": []
     },
     "SummonedSYAi": {
         "Type": "Summoned",
@@ -225,7 +232,8 @@
         "MasterRage": 0,
         "Flags": [
             "SUMMONED"
-        ]
+        ],
+        "SummonSurface": []
     },
     "SummonedATSheng_Mermaid": {
         "Type": "Summoned",
@@ -255,7 +263,8 @@
         "MasterRage": 10,
         "Flags": [
             "SUMMONED"
-        ]
+        ],
+        "SummonSurface": []
     },
     "SummonedJNLong": {
         "Type": "Summon",
@@ -285,6 +294,9 @@
         "MasterRage": 10,
         "Flags": [
             "SUMMONED"
+        ],
+        "SummonSurface": [
+            "Model_JNLong_Phantom_Winter"
         ]
     },
     "SummonedLYSi": {
@@ -313,7 +325,8 @@
         "MasterRage": 10,
         "Flags": [
             "SUMMONED"
-        ]
+        ],
+        "SummonSurface": []
     },
     "SummonedATSheng_Queen": {
         "Type": "Summoned",
@@ -343,7 +356,8 @@
         "MasterRage": 10,
         "Flags": [
             "SUMMONED"
-        ]
+        ],
+        "SummonSurface": []
     },
     "SummonTest": {
         "Type": "Summoned",
@@ -371,7 +385,8 @@
         "MasterRage": 10,
         "Flags": [
             "SUMMONED"
-        ]
+        ],
+        "SummonSurface": []
     },
     "GoldGlin2": {
         "Type": "Summoned",
@@ -399,7 +414,8 @@
         "MasterRage": 10,
         "Flags": [
             "SUMMONED"
-        ]
+        ],
+        "SummonSurface": []
     },
     "GoldGlin1": {
         "Type": "Summoned",
@@ -427,7 +443,8 @@
         "MasterRage": 10,
         "Flags": [
             "SUMMONED"
-        ]
+        ],
+        "SummonSurface": []
     },
     "SummonedPNCao_HuaHaiJi": {
         "Type": "Summoned",
@@ -455,7 +472,8 @@
         "MasterRage": 10,
         "Flags": [
             "SUMMONED"
-        ]
+        ],
+        "SummonSurface": []
     },
     "SummonedYLJSi_AOE": {
         "Type": "Summoned",
@@ -483,7 +501,8 @@
         "MasterRage": 10,
         "Flags": [
             "SUMMONED"
-        ]
+        ],
+        "SummonSurface": ""
     },
     "SummonedTacticsCard_TombStone": {
         "Type": "Summoned",
@@ -511,7 +530,8 @@
         "MasterRage": 0,
         "Flags": [
             "SUMMONED"
-        ]
+        ],
+        "SummonSurface": ""
     },
     "SummonedYLJSi_Heal": {
         "Type": "Summoned",
@@ -539,7 +559,8 @@
         "MasterRage": 10,
         "Flags": [
             "SUMMONED"
-        ]
+        ],
+        "SummonSurface": ""
     },
     "SummonedLDu_1_4": {
         "Type": "Summoned",
@@ -567,6 +588,7 @@
         "MasterRage": 0,
         "Flags": [
             "SUMMONED"
-        ]
+        ],
+        "SummonSurface": ""
     }
 }

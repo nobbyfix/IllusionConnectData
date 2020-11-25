@@ -50,11 +50,16 @@ function ClubSystem:initialize()
 end
 
 function ClubSystem:userInject(injector)
+	self:refreshClubBossSummerActivityData()
 	self:requestClubInfo(function ()
 		self:requestClubBossInfo(nil)
+		self:requestOpenClubVillageData(nil, false)
+
+		if self:checkHaveActivityBoss() == true then
+			self:requestClubBossInfo(nil, false, ClubHallType.kActivityBoss)
+		end
 	end)
 	self:requestClubBattleData(nil, false)
-	self:refreshClubBossSummerActivityData()
 end
 
 function ClubSystem:getClub()
@@ -526,6 +531,26 @@ function ClubSystem:syncClubInfo(data)
 	end
 end
 
+function ClubSystem:requestClubVillageInfo(callback)
+	local clubService = self:getInjector():getInstance(ClubService)
+
+	clubService:requestClubVillageInfo({}, true, function (response)
+		if callback then
+			callback(response)
+		end
+	end)
+end
+
+function ClubSystem:requestClubVillageDetail(param, callback)
+	local clubService = self:getInjector():getInstance(ClubService)
+
+	clubService:requestClubVillageDetail(param, true, function (response)
+		if callback then
+			callback(response)
+		end
+	end)
+end
+
 function ClubSystem:requestApplyList(startNum, endNum, clearData, callback)
 	local data = {
 		start = startNum,
@@ -620,6 +645,7 @@ function ClubSystem:createClub(clubName, headImg, func)
 		if response.resCode == GS_SUCCESS then
 			self:syncClubInfo(response.data)
 			self:requestClubBattleData(nil, false)
+			self:requestOpenClubVillageData(nil, false)
 
 			if func then
 				func()
@@ -932,7 +958,7 @@ function ClubSystem:requestApplyEnterClub(clubId, rank, callback, enterClub)
 			if self:getHasJoinClub() then
 				self:agreeEnterClubTip(self:getName(), enterClub)
 				self:dispatch(Event:new(EVT_CLUB_ENTER_SUCC))
-			else
+			elseif rank then
 				local record = self:getApplyRecordListOj():getRecordByRank(rank)
 
 				if record then
@@ -2369,8 +2395,9 @@ end
 function ClubSystem:resetClubBossTabRed()
 	local gameServerAgent = self:getInjector():getInstance("GameServerAgent")
 	local currentTime = gameServerAgent:remoteTimestamp()
+	local customDataSystem = self:getInjector():getInstance(CustomDataSystem)
 
-	cc.UserDefault:getInstance():setIntegerForKey(UserDefaultKey.kClubBossRedKey, currentTime)
+	customDataSystem:setValue(PrefixType.kGlobal, UserDefaultKey.kClubBossRedKey, currentTime)
 end
 
 function ClubSystem:hasHomeRedPoint()
@@ -2390,33 +2417,55 @@ function ClubSystem:hasHomeRedPoint()
 		return false
 	end
 
-	local value = cc.UserDefault:getInstance():getIntegerForKey(UserDefaultKey.kClubBossRedKey)
+	local customDataSystem = self:getInjector():getInstance(CustomDataSystem)
+	local data = customDataSystem:getValue(PrefixType.kGlobal, UserDefaultKey.kClubBossRedKey, "0")
+	local value = tonumber(data)
 
 	if not value or value == 0 then
-		cc.UserDefault:getInstance():setBoolForKey("ClubBoss_UserDefaultKey", true)
-
-		local gameServerAgent = self:getInjector():getInstance("GameServerAgent")
-		local currentTime = gameServerAgent:remoteTimestamp()
-
-		cc.UserDefault:getInstance():setIntegerForKey(UserDefaultKey.kClubBossRedKey, currentTime)
-
 		return true
 	end
 
 	local gameServerAgent = self:getInjector():getInstance("GameServerAgent")
-	local lastLoginTime = gameServerAgent:remoteTimestamp()
+	local currentTime = gameServerAgent:remoteTimestamp()
 	local clock5Time = TimeUtil:getTimeByDateForTargetTimeInToday({
 		sec = 0,
 		min = 0,
 		hour = 5
 	})
 
-	if clock5Time < lastLoginTime and value <= clock5Time then
+	if clock5Time < currentTime and value <= clock5Time then
 		return true
 	end
 
 	local result = false
-	result = self:getClub():getClubBossInfo(ClubHallType.kBoss):checkDelayHurtRewardMark() or self:getClub():getClubBossInfo(ClubHallType.kBoss):checkHasRewardCanGet()
+	result = self:checkBossDelayHurtRewardMark(ClubHallType.kBoss) or self:getClub():getClubBossInfo(ClubHallType.kBoss):checkHasRewardCanGet()
+
+	return result
+end
+
+function ClubSystem:checkBossDelayHurtRewardMark(viewType)
+	local result = false
+	local bossInfo = self:getClub():getClubBossInfo(viewType)
+
+	if bossInfo:checkDelayHurtRewardMark() then
+		result = true
+
+		if self:getClubInfoOj():getJoinedClubCount() > 1 then
+			local lastJoinTime = self:getClubInfoOj():getLastJoinTime()
+			local gameServerAgent = self:getInjector():getInstance("GameServerAgent")
+			local curTime = gameServerAgent:remoteTimeMillis()
+			local baseTime = {
+				sec = 0,
+				min = 0,
+				hour = 5
+			}
+			local isSameDay = TimeUtil:isSameDay(lastJoinTime, curTime / 1000, baseTime)
+
+			if isSameDay then
+				result = false
+			end
+		end
+	end
 
 	return result
 end
@@ -2439,7 +2488,7 @@ function ClubSystem:hasHomeActivityRedPoint()
 	end
 
 	local result = false
-	result = self:getClub():getClubBossInfo(ClubHallType.kActivityBoss):checkDelayHurtRewardMark() or self:getClub():getClubBossInfo(ClubHallType.kActivityBoss):checkHasRewardCanGet()
+	result = self:checkBossDelayHurtRewardMark(ClubHallType.kActivityBoss) or self:getClub():getClubBossInfo(ClubHallType.kActivityBoss):checkHasRewardCanGet()
 
 	return result
 end
@@ -2791,4 +2840,143 @@ function ClubSystem:getClubBossBattleConunt(viewType, pointId)
 	end
 
 	return result
+end
+
+function ClubSystem:requestOpenClubVillageData(func, refresh)
+	local hasJoinClub = self:getHasJoinClub()
+
+	if hasJoinClub == false then
+		return
+	end
+
+	local data = {}
+	local clubService = self:getInjector():getInstance(ClubService)
+
+	clubService:requestOpenClubVillageData(data, true, function (response)
+		if response.resCode == GS_SUCCESS then
+			local data = response.data
+
+			self:synchronizeClubMapPositionListData(data)
+
+			if func then
+				func()
+			end
+
+			if refresh then
+				self:dispatch(Event:new(EVT_CLUBMAPHOUSE_REFRESH))
+			end
+		end
+	end)
+end
+
+function ClubSystem:synchronizeClubMapPositionListData(data)
+	return self:getClub():synchronizeClubMapPositionListData(data)
+end
+
+function ClubSystem:requestClubVillageChangeData(newPos, func, refresh)
+	local hasJoinClub = self:getHasJoinClub()
+
+	if hasJoinClub == false then
+		return
+	end
+
+	local data = {
+		newPos = newPos
+	}
+	local clubService = self:getInjector():getInstance(ClubService)
+
+	clubService:requestClubVillageChangeData(data, true, function (response)
+		if response.resCode == GS_SUCCESS then
+			local data = response.data
+
+			self:synchronizeClubMapPositionListData(data)
+
+			if func then
+				func()
+			end
+
+			if refresh then
+				self:dispatch(Event:new(EVT_CLUBMAPHOUSE_REFRESH))
+			end
+		end
+	end)
+end
+
+function ClubSystem:requestClubDetailInfoData(cludId, popStyle)
+	local data = {
+		cludId = cludId
+	}
+	local clubService = self:getInjector():getInstance(ClubService)
+
+	clubService:requestClubDetailInfoData(data, true, function (response)
+		if response.resCode == GS_SUCCESS then
+			local data = response.data
+			local view = self:getInjector():getInstance("ClubNewInfoView")
+
+			self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, popStyle, data, nil))
+		end
+	end)
+end
+
+function ClubSystem:showClubInfoView(clubId, isSelf)
+	local requestClubId = clubId
+
+	if isSelf then
+		requestClubId = self:getClubInfoOj():getClubId()
+		local hasJoinClub = self:getHasJoinClub()
+
+		if hasJoinClub == false then
+			return
+		end
+	end
+
+	self:requestClubDetailInfoData(requestClubId)
+end
+
+function ClubSystem:listenClubHouseChange(data)
+	if self:synchronizeClubMapPositionListData(data) then
+		self:requestClubInfo(function ()
+			self:dispatch(Event:new(EVT_CLUBMAPHOUSE_REFRESH))
+		end)
+	else
+		self:dispatch(Event:new(EVT_CLUBMAPHOUSE_REFRESH))
+	end
+end
+
+function ClubSystem:tryEnterSomebodyHouse(Rid)
+	local developSystem = self:getInjector():getInstance("DevelopSystem")
+	local buildingSystem = developSystem:getBuildingSystem()
+	local selfRid = self._developSystem:getRid()
+
+	if selfRid == Rid then
+		buildingSystem:tryEnter()
+	else
+		local cjson = require("cjson.safe")
+		local memberData = self:getMemberRecordByRid(Rid)
+
+		self:requestClubVillageDetail({
+			rid = Rid
+		}, function (response)
+			local villagesInfo = cjson.decode(response.data.villages)
+
+			buildingSystem:tryEnterClubBuilding(villagesInfo, {
+				level = memberData:getLevel(),
+				nickname = memberData:getName(),
+				combat = memberData:getCombat(),
+				headId = memberData:getHeadId(),
+				headFrame = memberData:getHeadFrame(),
+				rid = Rid
+			})
+		end)
+	end
+end
+
+function ClubSystem:hasAuditRecord()
+	return self:getAuditRecordListOj():getRecordCount() > 0
+end
+
+function ClubSystem:listenClubApplyAgreeEnd(response)
+	local developSystem = self:getInjector():getInstance(DevelopSystem)
+
+	developSystem:syncPlayer(response.player)
 end

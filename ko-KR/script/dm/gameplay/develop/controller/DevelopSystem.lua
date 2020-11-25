@@ -182,6 +182,10 @@ function DevelopSystem:syncPlayer(data, isDiff)
 			clubInfo:setLastJoinTime(clubData.lastJoinTime)
 		end
 
+		if clubData.joinedClubCount then
+			clubInfo:setJoinedClubCount(clubData.joinedClubCount)
+		end
+
 		self:getPlayer():getClub():syncClubBossBasicInfo(clubData)
 	end
 
@@ -197,6 +201,10 @@ function DevelopSystem:syncPlayer(data, isDiff)
 		local friendSystem = self:getInjector():getInstance(FriendSystem)
 
 		friendSystem:getFriendModel():syncFriendInfo(data.friendInfo)
+	end
+
+	if data.clubVillageChange then
+		self:getPlayer():getClub():setClubVillageChangeCount(data.clubVillageChange)
 	end
 
 	if data.vipLevel then

@@ -39,6 +39,10 @@ function ResourceBuilding:synchronize(data)
 end
 
 function ResourceBuilding:getResouseNum()
+	if not self._buildingSystem:isSelfBuilding() then
+		return 0
+	end
+
 	local stageSystem = self._buildingSystem:getStageSystem()
 	local gameServerAgent = self._buildingSystem._gameServerAgent
 	local timeNow = gameServerAgent:remoteTimestamp()

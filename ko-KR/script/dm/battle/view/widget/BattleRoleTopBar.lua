@@ -190,10 +190,17 @@ function BattleRoleTopBar:setHp(value)
 			if count <= 99999 then
 				return tostring(math.floor(count)), false
 			else
-				count = count - count % 1000
-				count = string.format("%.1f", count / 10000)
+				local curLanage = getCurrentLanguage()
 
-				return count .. Strings:get("HERO_HP_UNIT"), true
+				if curLanage == GameLanguageType.CN then
+					count = count - count % 1000
+					count = string.format("%.1f", count / 10000) .. Strings:get("HERO_HP_UNIT")
+				else
+					count = count - count % 100
+					count = string.format("%.1f", count / 1000) .. "k"
+				end
+
+				return count, true
 			end
 		end
 

@@ -5876,5 +5876,113 @@
             }
         ],
         "NotGetUnlook": ""
+    },
+    "Surface_JNLong_2": {
+        "Hero": "JNLong",
+        "Name": "Surface_JNLong_2_Name",
+        "Desc": "Surface_JNLong_2_Desc",
+        "GainShortDesc": "Surface_Winter_GainShort",
+        "GainDesc": "Surface_JNLong_Winter_GainDesc",
+        "Type": 2,
+        "GoodsId": "Surface_20",
+        "ShopID": "Shop_Surface",
+        "ActivityId": "",
+        "Link": "",
+        "Quality": 5,
+        "Model": "Model_JNLong_Winter",
+        "Unlook": 1,
+        "Sort": 2,
+        "ClickAction": [
+            {
+                "action": "touch3",
+                "range": [
+                    128,
+                    128
+                ],
+                "part": "head",
+                "point": [
+                    29,
+                    586
+                ]
+            },
+            {
+                "action": "touch2",
+                "range": [
+                    128,
+                    95
+                ],
+                "part": "body",
+                "point": [
+                    61,
+                    508
+                ]
+            },
+            {
+                "action": "touch2",
+                "range": [
+                    0,
+                    0
+                ],
+                "part": "all",
+                "point": [
+                    "all"
+                ]
+            }
+        ],
+        "NotGetUnlook": ""
+    },
+    "Surface_LLan_2": {
+        "Hero": "LLan",
+        "Name": "Surface_LLan_2_Name",
+        "Desc": "Surface_LLan_2_Desc",
+        "GainShortDesc": "Surface_Winter_GainShort",
+        "GainDesc": "Surface_LLan_Winter_GainDesc",
+        "Type": 3,
+        "GoodsId": "",
+        "ShopID": "Shop_Surface",
+        "ActivityId": "",
+        "Link": "",
+        "Quality": 5,
+        "Model": "Model_LLan_Winter",
+        "Unlook": 1,
+        "Sort": 2,
+        "ClickAction": [
+            {
+                "action": "touch3",
+                "range": [
+                    128,
+                    128
+                ],
+                "part": "head",
+                "point": [
+                    49,
+                    536
+                ]
+            },
+            {
+                "action": "touch2",
+                "range": [
+                    128,
+                    95
+                ],
+                "part": "body",
+                "point": [
+                    121,
+                    156
+                ]
+            },
+            {
+                "action": "touch2",
+                "range": [
+                    0,
+                    0
+                ],
+                "part": "all",
+                "point": [
+                    "all"
+                ]
+            }
+        ],
+        "NotGetUnlook": ""
     }
 }

@@ -76,10 +76,13 @@ ClubBasisInfo:has("_auditRedPoint", {
 ClubBasisInfo:has("_todayDonation", {
 	is = "rw"
 })
-ClubBasisInfo:has("_snsInfo", {
+ClubBasisInfo:has("_lastJoinTime", {
 	is = "rw"
 })
-ClubBasisInfo:has("_lastJoinTime", {
+ClubBasisInfo:has("_battleRank", {
+	is = "rw"
+})
+ClubBasisInfo:has("_joinedClubCount", {
 	is = "rw"
 })
 
@@ -108,11 +111,9 @@ function ClubBasisInfo:initialize(player)
 	self._auditCondition = ClubAuditCondiRecord:new()
 	self._recruitTime = 0
 	self._todayDonation = 0
-	self._snsInfo = {
-		key = "",
-		url = ""
-	}
 	self._lastJoinTime = 0
+	self._battleRank = 0
+	self._joinedClubCount = 0
 end
 
 function ClubBasisInfo:canAuditMember()
@@ -184,7 +185,7 @@ function ClubBasisInfo:sync(data)
 		self._todayDonation = data.clubDonation.todayDonation
 	end
 
-	if data.snsInfo then
-		self._snsInfo = data.snsInfo
+	if data.battleRank then
+		self._battleRank = data.battleRank
 	end
 end

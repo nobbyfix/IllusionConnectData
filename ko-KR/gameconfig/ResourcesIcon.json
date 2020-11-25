@@ -972,5 +972,56 @@
         ],
         "Shine": "",
         "Resource": []
+    },
+    "IM_Snowflake_Achieve": {
+        "Name": "IM_Snowflake_Achieve_Name",
+        "Segmentation": [
+            1
+        ],
+        "LargeIcons": [
+            "IR_HD_Snowflake_Achieve"
+        ],
+        "Licon": "IR_HD_Snowflake_Achieve",
+        "Sicon": "IR_HD_Snowflake_Achieve_small",
+        "Desc": "IM_Snowflake_Achieve_FunctionDesc",
+        "Quality": [
+            5
+        ],
+        "Shine": "",
+        "Resource": []
+    },
+    "IM_Snowflake_Egg": {
+        "Name": "IM_Snowflake_Egg_Name",
+        "Segmentation": [
+            1
+        ],
+        "LargeIcons": [
+            "IR_HD_Snowflake_Ice_Egg"
+        ],
+        "Licon": "IR_HD_Snowflake_Ice_Egg",
+        "Sicon": "IR_HD_Snowflake_Ice_Egg_small",
+        "Desc": "IM_Snowflake_Egg_FunctionDesc",
+        "Quality": [
+            5
+        ],
+        "Shine": "",
+        "Resource": []
+    },
+    "IR_SnowflakeStamina": {
+        "Name": "IR_SnowflakeStamina_Name",
+        "Segmentation": [
+            1
+        ],
+        "LargeIcons": [
+            "IR_HD_SnowflakeStamina"
+        ],
+        "Licon": "IR_HD_SnowflakeStamina",
+        "Sicon": "IR_HD_SnowflakeStamina_small",
+        "Desc": "IR_SnowflakeStamina_FunctionDesc",
+        "Quality": [
+            5
+        ],
+        "Shine": "",
+        "Resource": []
     }
 }
