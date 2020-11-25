@@ -45,39 +45,7 @@ function PayOffSystem:dispose()
 end
 
 function PayOffSystem:payInit()
-	local channelID = SDKHelper:getChannelID()
-
-	if channelID == "dpstorm_ios" or channelID == "tw_mamba_ios" or channelID == "tw_mamba_android" then
-		local function hasId(value, key)
-			for _, __ in pairs(value) do
-				if __ == key then
-					return true
-				end
-			end
-
-			return false
-		end
-
-		local payTable = ConfigReader:getDataTable("Pay") or {}
-		local productList = {}
-		local index = 0
-
-		for k, v in pairs(payTable) do
-			local productId = v.ProductId
-			local sDKSource = v.SDKSource
-
-			if hasId(sDKSource, channelID) then
-				productList["s" .. index] = productId
-				index = index + 1
-			end
-		end
-
-		if index > 0 then
-			SDKHelper:payInit(productList)
-		end
-	elseif channelID == "changyou_android" then
-		SDKHelper:payInit({})
-	end
+	SDKHelper:payInit({})
 end
 
 function PayOffSystem:listenPayOffDiff()
@@ -88,6 +56,20 @@ function PayOffSystem:listenPayOffDiff()
 				self:removeWaitingAnim()
 				self:setOrderState(response.orderId, KOrderState.kFinish)
 				self:showPayReward(response)
+
+				if SDKHelper and SDKHelper:isEnableSdk() and response.payId and response.orderId then
+					local adjust, price = self:getPayAdjust(response.payId)
+
+					SDKHelper:postAfData({
+						eventKey = "Purchase",
+						eventMap = {
+							af_currency = adjust,
+							af_revenue = price,
+							af_content_type = price,
+							af_content_id = response.payId
+						}
+					})
+				end
 			elseif message == "webSuccess" then
 				self:pushWebPay(response)
 			else
@@ -129,7 +111,7 @@ function PayOffSystem:onPayOffToSdk(event)
 			-- Nothing
 		elseif errorCode == "payNoIncomplete" then
 			-- Nothing
-		elseif errorCode == "payIncComplete" then
+		elseif errorCode == "payIncComplete" and PlatformHelper:isIOS() then
 			self:createPayIncomplete()
 		end
 	end
@@ -172,17 +154,48 @@ function PayOffSystem:removeWaitingAnim()
 end
 
 function PayOffSystem:createPayIncomplete()
-	if device.platform == "ios" then
-		local storyDirector = self:getInjector():getInstance(story.StoryDirector)
-		local guideAgent = storyDirector:getGuideAgent()
+	local storyDirector = self:getInjector():getInstance(story.StoryDirector)
+	local guideAgent = storyDirector:getGuideAgent()
 
-		if not guideAgent:isGuiding() then
-			SDKHelper:payIncomplete()
-		end
+	if not guideAgent:isGuiding() then
+		SDKHelper:payIncomplete()
 	end
 end
 
 function PayOffSystem:payOffToSdk(payInfo, type)
+	if SDKHelper and SDKHelper:isEnableSdk() and SDKHelper:isGuestAccount() then
+		local outSelf = self
+		local delegate = {
+			willClose = function (self, popupMediator, data)
+				if data.response == "ok" then
+					outSelf:paySDK(payInfo, type)
+				elseif data.response == "cancel" then
+					-- Nothing
+				elseif data.response == "close" then
+					-- Nothing
+				end
+			end
+		}
+		local data = {
+			title = Strings:get("GUEST_ACCOUNT_PAY_WARNING_Title"),
+			title1 = Strings:get("GUEST_ACCOUNT_PAY_WARNING_Title1"),
+			content = Strings:get("GUEST_ACCOUNT_PAY_WARNING"),
+			sureBtn = {},
+			cancelBtn = {}
+		}
+		local view = self:getInjector():getInstance("AlertView")
+
+		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+		}, data, delegate))
+
+		return
+	end
+
+	self:paySDK(payInfo, type)
+end
+
+function PayOffSystem:paySDK(payInfo, ptype)
 	local payData = {
 		uid = SDKHelper:readCacheValue("uid"),
 		productId = payInfo.productId,
@@ -195,14 +208,13 @@ function PayOffSystem:payOffToSdk(payInfo, type)
 		roleLevel = tostring(payInfo.roleLevel),
 		serverId = payInfo.serverId,
 		serverName = payInfo.serverName,
-		extensionInfo = "",
 		appId = payInfo.appId,
 		merchantId = payInfo.merchantId,
 		notifyUrl = payInfo.notifyUrl,
 		sign = payInfo.sign,
 		productName = self:getPayName(payInfo.productId),
 		productDesc = self:getPayName(payInfo.productId),
-		isSubscription = type or KPayToSdkType.KNormal
+		isSubscription = ptype or KPayToSdkType.KNormal
 	}
 
 	if not self._productId2OrderIds[payInfo.productId] then
