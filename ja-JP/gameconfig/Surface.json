@@ -1049,60 +1049,6 @@
         ],
         "NotGetUnlook": ""
     },
-    "Surface_CZheng_2": {
-        "Hero": "CZheng",
-        "Name": "Surface_CZheng_2_Name",
-        "Desc": "Surface_CZheng_2_Desc",
-        "GainShortDesc": "Surface_Summer_GainShort",
-        "GainDesc": "Surface_Summer_GainDesc",
-        "Type": 2,
-        "GoodsId": "",
-        "ShopID": "",
-        "ActivityId": "",
-        "Link": "",
-        "Quality": 5,
-        "Model": "Model_CZheng_YZhuang",
-        "Unlook": 1,
-        "Sort": 2,
-        "ClickAction": [
-            {
-                "action": "touch1",
-                "range": [
-                    128,
-                    128
-                ],
-                "part": "head",
-                "point": [
-                    12,
-                    803
-                ]
-            },
-            {
-                "action": "touch2",
-                "range": [
-                    128,
-                    95
-                ],
-                "part": "body",
-                "point": [
-                    -14,
-                    692
-                ]
-            },
-            {
-                "action": "touch3",
-                "range": [
-                    0,
-                    0
-                ],
-                "part": "all",
-                "point": [
-                    "all"
-                ]
-            }
-        ],
-        "NotGetUnlook": ""
-    },
     "Surface_DFQi_2": {
         "Hero": "DFQi",
         "Name": "Surface_DFQi_2_Name",
@@ -5967,6 +5913,60 @@
                     "Voice_SDTZi_37",
                     "Voice_SDTZi_39"
                 ],
+                "point": [
+                    "all"
+                ]
+            }
+        ],
+        "NotGetUnlook": ""
+    },
+    "Surface_CZheng_2": {
+        "Hero": "CZheng",
+        "Name": "Surface_CZheng_2_Name",
+        "Desc": "Surface_CZheng_2_Desc",
+        "GainShortDesc": "Surface_Summer_GainShort",
+        "GainDesc": "Surface_Summer_GainDesc",
+        "Type": 3,
+        "GoodsId": "",
+        "ShopID": "",
+        "ActivityId": "",
+        "Link": "",
+        "Quality": 5,
+        "Model": "Model_CZheng_YZhuang",
+        "Unlook": 1,
+        "Sort": 2,
+        "ClickAction": [
+            {
+                "action": "touch1",
+                "range": [
+                    128,
+                    128
+                ],
+                "part": "head",
+                "point": [
+                    12,
+                    803
+                ]
+            },
+            {
+                "action": "touch2",
+                "range": [
+                    128,
+                    95
+                ],
+                "part": "body",
+                "point": [
+                    -14,
+                    692
+                ]
+            },
+            {
+                "action": "touch3",
+                "range": [
+                    0,
+                    0
+                ],
+                "part": "all",
                 "point": [
                     "all"
                 ]
