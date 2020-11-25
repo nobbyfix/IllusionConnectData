@@ -5876,5 +5876,102 @@
             }
         ],
         "NotGetUnlook": ""
+    },
+    "Surface_KTSJKe_Japan": {
+        "Hero": "KTSJKe",
+        "Name": "Surface_KTSJKe_Japan_Name",
+        "Desc": "Surface_KTSJKe_Japan_Desc",
+        "GainShortDesc": "Surface_Japan_GainShort",
+        "GainDesc": "Surface_KTSJKe_Japan_GainDesc",
+        "Type": 4,
+        "GoodsId": "",
+        "ShopID": "",
+        "ActivityId": "",
+        "Link": "",
+        "Quality": 4,
+        "Model": "Model_KTSJKe_Japan",
+        "Unlook": 1,
+        "Sort": 4,
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "range": [
+                    128,
+                    95
+                ],
+                "part": "body",
+                "point": [
+                    -22,
+                    118
+                ]
+            },
+            {
+                "action": "touch1",
+                "range": [
+                    0,
+                    0
+                ],
+                "part": "all",
+                "point": [
+                    "all"
+                ]
+            }
+        ],
+        "NotGetUnlook": ""
+    },
+    "Surface_SDTZi_Japan": {
+        "Hero": "SDTZi",
+        "Name": "Surface_SDTZi_Japan_Name",
+        "Desc": "Surface_SDTZi_Japan_Desc",
+        "GainShortDesc": "Surface_Japan_GainShort",
+        "GainDesc": "Surface_SDTZi_Japan_GainDesc",
+        "Type": 4,
+        "GoodsId": "",
+        "ShopID": "",
+        "ActivityId": "",
+        "Link": "",
+        "Quality": 4,
+        "Model": "Model_SDTZi_Japan",
+        "Unlook": 1,
+        "Sort": 3,
+        "ClickAction": [
+            {
+                "action": "touch1",
+                "range": [
+                    128,
+                    95
+                ],
+                "voice": [
+                    "Voice_SDTZi_44",
+                    "Voice_SDTZi_45",
+                    "Voice_SDTZi_46",
+                    "Voice_SDTZi_39"
+                ],
+                "point": [
+                    -110,
+                    762
+                ]
+            },
+            {
+                "action": "touch1",
+                "range": [
+                    0,
+                    0
+                ],
+                "voice": [
+                    "Voice_SDTZi_47",
+                    "Voice_SDTZi_48",
+                    "Voice_SDTZi_07",
+                    "Voice_SDTZi_08",
+                    "Voice_SDTZi_09",
+                    "Voice_SDTZi_37",
+                    "Voice_SDTZi_39"
+                ],
+                "point": [
+                    "all"
+                ]
+            }
+        ],
+        "NotGetUnlook": ""
     }
 }

@@ -130,21 +130,23 @@ function StageProgressPopMediator:setRewardPanel()
 
 		if i == #rewardList then
 			_cell:setPosition(cc.p(460, 102))
-			curStage:setAnchorPoint(0.5, 0.5)
-			curStage:setPositionX(_cell:getContentSize().width / 2)
-			_cell:getChildByName("Text_1"):setPositionX(_cell:getContentSize().width / 2 - curStage:getContentSize().width / 2 - 3)
-			_cell:getChildByName("extText"):setPositionX(_cell:getContentSize().width / 2 + curStage:getContentSize().width / 2 + 3)
+			_cell:getChildByName("Text_1"):setAnchorPoint(0.5, 0.5)
+			_cell:getChildByName("Text_1"):setPositionX(_cell:getContentSize().width / 2)
+			curStage:setAnchorPoint(1, 0.5)
+			curStage:setPositionX(_cell:getContentSize().width / 2 - _cell:getChildByName("Text_1"):getContentSize().width / 2 - 3)
+			_cell:getChildByName("extText"):setPositionX(_cell:getContentSize().width / 2 + _cell:getChildByName("Text_1"):getContentSize().width / 2 + 3)
 		else
-			local persent = rewardList[i].count / rewardList[#rewardList].count
+			local persent = math.min(rewardList[i].count / rewardList[#rewardList].count, 0.7)
 
 			iconFrame:setScale(0.76)
 			redPoint:setScale(1.316)
 			_cell:setPosition(cc.p(460 * persent, 102))
 			_cell:getChildByName("extImage"):setVisible(false)
 			_cell:getChildByName("extText"):setVisible(false)
-			_cell:getChildByName("Text_1"):setPositionX(_cell:getContentSize().width / 2 - 2)
-			curStage:setAnchorPoint(0, 0.5)
-			curStage:setPositionX(_cell:getContentSize().width / 2)
+			_cell:getChildByName("Text_1"):setAnchorPoint(0, 0.5)
+			_cell:getChildByName("Text_1"):setPositionX(_cell:getContentSize().width / 2 - 8)
+			curStage:setAnchorPoint(1, 0.5)
+			curStage:setPositionX(_cell:getContentSize().width / 2 - 10)
 		end
 
 		_cell.kCount = rewardList[i].count

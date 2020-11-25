@@ -1,84 +1,4 @@
 {
-    "Decorate_GameWith3": {
-        "Name": "Decorate_GameWith3_Name",
-        "Desc": "IM_Decorate_GameWith3_Desc",
-        "Room": "Room2",
-        "BuildingLevel": "Decorate_GameWith3_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_Decorate_GameWith3",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                2,
-                8
-            ]
-        ],
-        "Sort": 84,
-        "SurfaceList": [
-            "VillageSurface_Decorate_GameWith3_1"
-        ],
-        "DefaultSurface": "VillageSurface_Decorate_GameWith3_1",
-        "UseType": "",
-        "Space": [
-            1,
-            1
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 1,
-        "ProspectShow": 0,
-        "Turn": 0,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
-        "Sell": [
-            {
-                "amount": 1,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "Decorate_Niconico1": {
-        "Name": "Decorate_Niconico1_Name",
-        "Desc": "Decorate_Niconico1_Desc",
-        "Room": "Room2",
-        "BuildingLevel": "Decorate_Niconico1_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_Decorate_Niconico1",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                2,
-                8
-            ]
-        ],
-        "Sort": 81,
-        "SurfaceList": [
-            "VillageSurface_Decorate_Niconico1_1"
-        ],
-        "DefaultSurface": "VillageSurface_Decorate_Niconico1_1",
-        "UseType": "",
-        "Space": [
-            1,
-            1
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 1,
-        "ProspectShow": 0,
-        "Turn": 0,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
-        "Sell": [
-            {
-                "amount": 1,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
     "yijia1": {
         "Name": "Name_yijia1",
         "Desc": "yijia1_ShortDesc",
@@ -115,46 +35,6 @@
         "Sell": [
             {
                 "amount": 9,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "Decorate5": {
-        "Name": "Decorate5_Name",
-        "Desc": "Decorate5_Desc",
-        "Room": "Room2",
-        "BuildingLevel": "Decorate5_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_Decorate5",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                2,
-                8
-            ]
-        ],
-        "Sort": 74,
-        "SurfaceList": [
-            "VillageSurface_Decorate5_1"
-        ],
-        "DefaultSurface": "VillageSurface_Decorate5_1",
-        "UseType": "",
-        "Space": [
-            1,
-            1
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "IM_Decorate5",
-        "Sell": [
-            {
-                "amount": 1,
                 "type": "IR_DecorateCoin"
             }
         ]
@@ -235,86 +115,6 @@
         "Sell": [
             {
                 "amount": 18,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "Decorate_Tuwo": {
-        "Name": "Decorate_Tuwo_Name",
-        "Desc": "Decorate_Tuwo_Desc",
-        "Room": "Room2",
-        "BuildingLevel": "Decorate_Tuwo_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_Decorate_Tuwo",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                2,
-                8
-            ]
-        ],
-        "Sort": 70,
-        "SurfaceList": [
-            "VillageSurface_Decorate_Tuwo_1"
-        ],
-        "DefaultSurface": "VillageSurface_Decorate_Tuwo_1",
-        "UseType": "",
-        "Space": [
-            2,
-            2
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
-        "Sell": [
-            {
-                "amount": 1,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "Decorate3": {
-        "Name": "Decorate3_Name",
-        "Desc": "Decorate3_Desc",
-        "Room": "Room2",
-        "BuildingLevel": "Decorate3_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_Decorate3",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                2,
-                8
-            ]
-        ],
-        "Sort": 72,
-        "SurfaceList": [
-            "VillageSurface_Decorate3_1"
-        ],
-        "DefaultSurface": "VillageSurface_Decorate3_1",
-        "UseType": "",
-        "Space": [
-            2,
-            3
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "IM_Decorate3",
-        "Sell": [
-            {
-                "amount": 1,
                 "type": "IR_DecorateCoin"
             }
         ]
@@ -590,46 +390,6 @@
         "Unlook": 1,
         "ProspectShow": 0,
         "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
-        "Sell": [
-            {
-                "amount": 1,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "Decorate_GameWith2": {
-        "Name": "Decorate_GameWith2_Name",
-        "Desc": "IM_Decorate_GameWith2_Desc",
-        "Room": "Room2",
-        "BuildingLevel": "Decorate_GameWith2_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_Decorate_GameWith2",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                2,
-                8
-            ]
-        ],
-        "Sort": 83,
-        "SurfaceList": [
-            "VillageSurface_Decorate_GameWith2_1"
-        ],
-        "DefaultSurface": "VillageSurface_Decorate_GameWith2_1",
-        "UseType": "",
-        "Space": [
-            2,
-            1
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 1,
-        "ProspectShow": 0,
-        "Turn": 0,
         "BuildDesc": "Build_Decorate_Text",
         "UnlookItem": "",
         "Sell": [
@@ -1203,46 +963,6 @@
             }
         ]
     },
-    "Decorate2": {
-        "Name": "Decorate2_Name",
-        "Desc": "Decorate2_Desc",
-        "Room": "Room2",
-        "BuildingLevel": "Decorate2_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_Decorate2",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                2,
-                8
-            ]
-        ],
-        "Sort": 71,
-        "SurfaceList": [
-            "VillageSurface_Decorate2_1"
-        ],
-        "DefaultSurface": "VillageSurface_Decorate2_1",
-        "UseType": "",
-        "Space": [
-            1,
-            1
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "IM_Decorate2",
-        "Sell": [
-            {
-                "amount": 1,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
     "ZhanBuZhuo": {
         "Name": "Name_ZhanBuZhuo",
         "Desc": "ZhanBuZhuo_ShortDesc",
@@ -1399,46 +1119,6 @@
         "Sell": [
             {
                 "amount": 27,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "Decorate_GameWith1": {
-        "Name": "Decorate_GameWith1_Name",
-        "Desc": "IM_Decorate_GameWith1_Desc",
-        "Room": "Room2",
-        "BuildingLevel": "Decorate_GameWith1_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_Decorate_GameWith1",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                2,
-                8
-            ]
-        ],
-        "Sort": 82,
-        "SurfaceList": [
-            "VillageSurface_Decorate_GameWith1_1"
-        ],
-        "DefaultSurface": "VillageSurface_Decorate_GameWith1_1",
-        "UseType": "",
-        "Space": [
-            1,
-            2
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 1,
-        "ProspectShow": 0,
-        "Turn": 0,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
-        "Sell": [
-            {
-                "amount": 1,
                 "type": "IR_DecorateCoin"
             }
         ]
@@ -1643,46 +1323,6 @@
             }
         ]
     },
-    "Decorate8": {
-        "Name": "Decorate8_Name",
-        "Desc": "Decorate8_Desc",
-        "Room": "Room2",
-        "BuildingLevel": "Decorate8_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_Decorate8",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                2,
-                8
-            ]
-        ],
-        "Sort": 77,
-        "SurfaceList": [
-            "VillageSurface_Decorate8_1"
-        ],
-        "DefaultSurface": "VillageSurface_Decorate8_1",
-        "UseType": "",
-        "Space": [
-            1,
-            1
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "IM_Decorate8",
-        "Sell": [
-            {
-                "amount": 1,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
     "xiangxunyigui": {
         "Name": "Name_xiangxunyigui",
         "Desc": "xiangxunyigui_ShortDesc",
@@ -1723,166 +1363,6 @@
         "Sell": [
             {
                 "amount": 15,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "Decorate9": {
-        "Name": "Decorate9_Name",
-        "Desc": "Decorate9_Desc",
-        "Room": "Room2",
-        "BuildingLevel": "Decorate9_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_Decorate9",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                2,
-                8
-            ]
-        ],
-        "Sort": 78,
-        "SurfaceList": [
-            "VillageSurface_Decorate9_1"
-        ],
-        "DefaultSurface": "VillageSurface_Decorate9_1",
-        "UseType": "",
-        "Space": [
-            2,
-            3
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "IM_Decorate9",
-        "Sell": [
-            {
-                "amount": 1,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "Decorate6": {
-        "Name": "Decorate6_Name",
-        "Desc": "Decorate6_Desc",
-        "Room": "Room2",
-        "BuildingLevel": "Decorate6_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_Decorate6",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                2,
-                8
-            ]
-        ],
-        "Sort": 75,
-        "SurfaceList": [
-            "VillageSurface_Decorate6_1"
-        ],
-        "DefaultSurface": "VillageSurface_Decorate6_1",
-        "UseType": "",
-        "Space": [
-            1,
-            1
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "IM_Decorate6",
-        "Sell": [
-            {
-                "amount": 1,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "Decorate7": {
-        "Name": "Decorate7_Name",
-        "Desc": "Decorate7_Desc",
-        "Room": "Room2",
-        "BuildingLevel": "Decorate7_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_Decorate7",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                2,
-                8
-            ]
-        ],
-        "Sort": 76,
-        "SurfaceList": [
-            "VillageSurface_Decorate7_1"
-        ],
-        "DefaultSurface": "VillageSurface_Decorate7_1",
-        "UseType": "",
-        "Space": [
-            3,
-            3
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "IM_Decorate7",
-        "Sell": [
-            {
-                "amount": 1,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "Decorate4": {
-        "Name": "Decorate4_Name",
-        "Desc": "Decorate4_Desc",
-        "Room": "Room2",
-        "BuildingLevel": "Decorate4_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_Decorate4",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                2,
-                8
-            ]
-        ],
-        "Sort": 73,
-        "SurfaceList": [
-            "VillageSurface_Decorate4_1"
-        ],
-        "DefaultSurface": "VillageSurface_Decorate4_1",
-        "UseType": "",
-        "Space": [
-            2,
-            1
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "IM_Decorate4",
-        "Sell": [
-            {
-                "amount": 1,
                 "type": "IR_DecorateCoin"
             }
         ]
@@ -2043,46 +1523,6 @@
         "Sell": [
             {
                 "amount": 6,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "Decorate1": {
-        "Name": "Decorate1_Name",
-        "Desc": "Decorate1_Desc",
-        "Room": "Room2",
-        "BuildingLevel": "Decorate1_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_Decorate1",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                2,
-                8
-            ]
-        ],
-        "Sort": 70,
-        "SurfaceList": [
-            "VillageSurface_Decorate1_1"
-        ],
-        "DefaultSurface": "VillageSurface_Decorate1_1",
-        "UseType": "",
-        "Space": [
-            1,
-            1
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "IM_Decorate1",
-        "Sell": [
-            {
-                "amount": 1,
                 "type": "IR_DecorateCoin"
             }
         ]
@@ -2451,6 +1891,566 @@
         "Sell": [
             {
                 "amount": 12,
+                "type": "IR_DecorateCoin"
+            }
+        ]
+    },
+    "Decorate5": {
+        "Name": "Decorate5_Name",
+        "Desc": "Decorate5_Desc",
+        "Room": "Room2",
+        "BuildingLevel": "Decorate5_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "UnlockDesc": "Unlock_Decorate5",
+        "IsMoved": 1,
+        "InitialPosition": [
+            [
+                2,
+                8
+            ]
+        ],
+        "Sort": 74,
+        "SurfaceList": [
+            "VillageSurface_Decorate5_1"
+        ],
+        "DefaultSurface": "VillageSurface_Decorate5_1",
+        "UseType": "",
+        "Space": [
+            1,
+            1
+        ],
+        "Amount": 1,
+        "Quality": 3,
+        "Unlook": 1,
+        "ProspectShow": 0,
+        "Turn": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "UnlookItem": "IM_Decorate5",
+        "Sell": [
+            {
+                "amount": 1,
+                "type": "IR_DecorateCoin"
+            }
+        ]
+    },
+    "Decorate_GameWith2": {
+        "Name": "Decorate_GameWith2_Name",
+        "Desc": "Decorate_GameWith2_Desc",
+        "Room": "Room2",
+        "BuildingLevel": "Decorate_GameWith2_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "UnlockDesc": "Unlock_Decorate_GameWith2",
+        "IsMoved": 1,
+        "InitialPosition": [
+            [
+                2,
+                8
+            ]
+        ],
+        "Sort": 83,
+        "SurfaceList": [
+            "VillageSurface_Decorate_GameWith2_1"
+        ],
+        "DefaultSurface": "VillageSurface_Decorate_GameWith2_1",
+        "UseType": "",
+        "Space": [
+            2,
+            1
+        ],
+        "Amount": 1,
+        "Quality": 3,
+        "Unlook": 0,
+        "ProspectShow": 0,
+        "Turn": 0,
+        "BuildDesc": "Build_Decorate_Text",
+        "UnlookItem": "IM_Decorate_GameWith2",
+        "Sell": [
+            {
+                "amount": 1,
+                "type": "IR_DecorateCoin"
+            }
+        ]
+    },
+    "Decorate_GameWith3": {
+        "Name": "Decorate_GameWith3_Name",
+        "Desc": "Decorate_Niconico4_Desc",
+        "Room": "Room2",
+        "BuildingLevel": "Decorate_GameWith3_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "UnlockDesc": "Unlock_Decorate_GameWith3",
+        "IsMoved": 1,
+        "InitialPosition": [
+            [
+                2,
+                8
+            ]
+        ],
+        "Sort": 84,
+        "SurfaceList": [
+            "VillageSurface_Decorate_GameWith3_1"
+        ],
+        "DefaultSurface": "VillageSurface_Decorate_GameWith3_1",
+        "UseType": "",
+        "Space": [
+            1,
+            1
+        ],
+        "Amount": 1,
+        "Quality": 3,
+        "Unlook": 0,
+        "ProspectShow": 0,
+        "Turn": 0,
+        "BuildDesc": "Build_Decorate_Text",
+        "UnlookItem": "IM_Decorate_GameWith3",
+        "Sell": [
+            {
+                "amount": 1,
+                "type": "IR_DecorateCoin"
+            }
+        ]
+    },
+    "Decorate_GameWith1": {
+        "Name": "Decorate_GameWith1_Name",
+        "Desc": "Decorate_GameWith1_Desc",
+        "Room": "Room2",
+        "BuildingLevel": "Decorate_GameWith1_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "UnlockDesc": "Unlock_Decorate_GameWith1",
+        "IsMoved": 1,
+        "InitialPosition": [
+            [
+                2,
+                8
+            ]
+        ],
+        "Sort": 82,
+        "SurfaceList": [
+            "VillageSurface_Decorate_GameWith1_1"
+        ],
+        "DefaultSurface": "VillageSurface_Decorate_GameWith1_1",
+        "UseType": "",
+        "Space": [
+            1,
+            2
+        ],
+        "Amount": 1,
+        "Quality": 3,
+        "Unlook": 0,
+        "ProspectShow": 0,
+        "Turn": 0,
+        "BuildDesc": "Build_Decorate_Text",
+        "UnlookItem": "IM_Decorate_GameWith1",
+        "Sell": [
+            {
+                "amount": 1,
+                "type": "IR_DecorateCoin"
+            }
+        ]
+    },
+    "Decorate8": {
+        "Name": "Decorate8_Name",
+        "Desc": "Decorate8_Desc",
+        "Room": "Room2",
+        "BuildingLevel": "Decorate8_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "UnlockDesc": "Unlock_Decorate8",
+        "IsMoved": 1,
+        "InitialPosition": [
+            [
+                2,
+                8
+            ]
+        ],
+        "Sort": 77,
+        "SurfaceList": [
+            "VillageSurface_Decorate8_1"
+        ],
+        "DefaultSurface": "VillageSurface_Decorate8_1",
+        "UseType": "",
+        "Space": [
+            1,
+            1
+        ],
+        "Amount": 1,
+        "Quality": 3,
+        "Unlook": 1,
+        "ProspectShow": 0,
+        "Turn": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "UnlookItem": "IM_Decorate8",
+        "Sell": [
+            {
+                "amount": 1,
+                "type": "IR_DecorateCoin"
+            }
+        ]
+    },
+    "Decorate9": {
+        "Name": "Decorate9_Name",
+        "Desc": "Decorate9_Desc",
+        "Room": "Room2",
+        "BuildingLevel": "Decorate9_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "UnlockDesc": "Unlock_Decorate9",
+        "IsMoved": 1,
+        "InitialPosition": [
+            [
+                2,
+                8
+            ]
+        ],
+        "Sort": 78,
+        "SurfaceList": [
+            "VillageSurface_Decorate9_1"
+        ],
+        "DefaultSurface": "VillageSurface_Decorate9_1",
+        "UseType": "",
+        "Space": [
+            2,
+            3
+        ],
+        "Amount": 1,
+        "Quality": 3,
+        "Unlook": 1,
+        "ProspectShow": 0,
+        "Turn": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "UnlookItem": "IM_Decorate9",
+        "Sell": [
+            {
+                "amount": 1,
+                "type": "IR_DecorateCoin"
+            }
+        ]
+    },
+    "Decorate7": {
+        "Name": "Decorate7_Name",
+        "Desc": "Decorate7_Desc",
+        "Room": "Room2",
+        "BuildingLevel": "Decorate7_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "UnlockDesc": "Unlock_Decorate7",
+        "IsMoved": 1,
+        "InitialPosition": [
+            [
+                2,
+                8
+            ]
+        ],
+        "Sort": 76,
+        "SurfaceList": [
+            "VillageSurface_Decorate7_1"
+        ],
+        "DefaultSurface": "VillageSurface_Decorate7_1",
+        "UseType": "",
+        "Space": [
+            3,
+            3
+        ],
+        "Amount": 1,
+        "Quality": 3,
+        "Unlook": 1,
+        "ProspectShow": 0,
+        "Turn": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "UnlookItem": "IM_Decorate7",
+        "Sell": [
+            {
+                "amount": 1,
+                "type": "IR_DecorateCoin"
+            }
+        ]
+    },
+    "Decorate4": {
+        "Name": "Decorate4_Name",
+        "Desc": "Decorate4_Desc",
+        "Room": "Room2",
+        "BuildingLevel": "Decorate4_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "UnlockDesc": "Unlock_Decorate4",
+        "IsMoved": 1,
+        "InitialPosition": [
+            [
+                2,
+                8
+            ]
+        ],
+        "Sort": 73,
+        "SurfaceList": [
+            "VillageSurface_Decorate4_1"
+        ],
+        "DefaultSurface": "VillageSurface_Decorate4_1",
+        "UseType": "",
+        "Space": [
+            2,
+            1
+        ],
+        "Amount": 1,
+        "Quality": 3,
+        "Unlook": 1,
+        "ProspectShow": 0,
+        "Turn": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "UnlookItem": "IM_Decorate4",
+        "Sell": [
+            {
+                "amount": 1,
+                "type": "IR_DecorateCoin"
+            }
+        ]
+    },
+    "Decorate_Niconico1": {
+        "Name": "Decorate_Niconico1_Name",
+        "Desc": "Decorate_Niconico1_Desc",
+        "Room": "Room2",
+        "BuildingLevel": "Decorate_Niconico1_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "UnlockDesc": "Unlock_Decorate_Niconico1",
+        "IsMoved": 1,
+        "InitialPosition": [
+            [
+                2,
+                8
+            ]
+        ],
+        "Sort": 81,
+        "SurfaceList": [
+            "VillageSurface_Decorate_Niconico1_1"
+        ],
+        "DefaultSurface": "VillageSurface_Decorate_Niconico1_1",
+        "UseType": "",
+        "Space": [
+            1,
+            1
+        ],
+        "Amount": 1,
+        "Quality": 3,
+        "Unlook": 0,
+        "ProspectShow": 0,
+        "Turn": 0,
+        "BuildDesc": "Build_Decorate_Text",
+        "UnlookItem": "IM_Decorate_Niconico1",
+        "Sell": [
+            {
+                "amount": 1,
+                "type": "IR_DecorateCoin"
+            }
+        ]
+    },
+    "Decorate2": {
+        "Name": "Decorate2_Name",
+        "Desc": "Decorate2_Desc",
+        "Room": "Room2",
+        "BuildingLevel": "Decorate2_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "UnlockDesc": "Unlock_Decorate2",
+        "IsMoved": 1,
+        "InitialPosition": [
+            [
+                2,
+                8
+            ]
+        ],
+        "Sort": 71,
+        "SurfaceList": [
+            "VillageSurface_Decorate2_1"
+        ],
+        "DefaultSurface": "VillageSurface_Decorate2_1",
+        "UseType": "",
+        "Space": [
+            1,
+            1
+        ],
+        "Amount": 1,
+        "Quality": 3,
+        "Unlook": 1,
+        "ProspectShow": 0,
+        "Turn": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "UnlookItem": "IM_Decorate2",
+        "Sell": [
+            {
+                "amount": 1,
+                "type": "IR_DecorateCoin"
+            }
+        ]
+    },
+    "Decorate3": {
+        "Name": "Decorate3_Name",
+        "Desc": "Decorate3_Desc",
+        "Room": "Room2",
+        "BuildingLevel": "Decorate3_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "UnlockDesc": "Unlock_Decorate3",
+        "IsMoved": 1,
+        "InitialPosition": [
+            [
+                2,
+                8
+            ]
+        ],
+        "Sort": 72,
+        "SurfaceList": [
+            "VillageSurface_Decorate3_1"
+        ],
+        "DefaultSurface": "VillageSurface_Decorate3_1",
+        "UseType": "",
+        "Space": [
+            2,
+            3
+        ],
+        "Amount": 1,
+        "Quality": 3,
+        "Unlook": 1,
+        "ProspectShow": 0,
+        "Turn": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "UnlookItem": "IM_Decorate3",
+        "Sell": [
+            {
+                "amount": 1,
+                "type": "IR_DecorateCoin"
+            }
+        ]
+    },
+    "Decorate_Tuwo": {
+        "Name": "Decorate_Tuwo_Name",
+        "Desc": "Decorate_Tuwo_Desc",
+        "Room": "Room2",
+        "BuildingLevel": "Decorate_Tuwo_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "UnlockDesc": "Unlock_Decorate_Tuwo",
+        "IsMoved": 1,
+        "InitialPosition": [
+            [
+                2,
+                8
+            ]
+        ],
+        "Sort": 70,
+        "SurfaceList": [
+            "VillageSurface_Decorate_Tuwo_1"
+        ],
+        "DefaultSurface": "VillageSurface_Decorate_Tuwo_1",
+        "UseType": "",
+        "Space": [
+            2,
+            2
+        ],
+        "Amount": 1,
+        "Quality": 3,
+        "Unlook": 1,
+        "ProspectShow": 0,
+        "Turn": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "UnlookItem": "",
+        "Sell": [
+            {
+                "amount": 1,
+                "type": "IR_DecorateCoin"
+            }
+        ]
+    },
+    "Decorate1": {
+        "Name": "Decorate1_Name",
+        "Desc": "Decorate1_Desc",
+        "Room": "Room2",
+        "BuildingLevel": "Decorate1_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "UnlockDesc": "Unlock_Decorate1",
+        "IsMoved": 1,
+        "InitialPosition": [
+            [
+                2,
+                8
+            ]
+        ],
+        "Sort": 70,
+        "SurfaceList": [
+            "VillageSurface_Decorate1_1"
+        ],
+        "DefaultSurface": "VillageSurface_Decorate1_1",
+        "UseType": "",
+        "Space": [
+            1,
+            1
+        ],
+        "Amount": 1,
+        "Quality": 3,
+        "Unlook": 1,
+        "ProspectShow": 0,
+        "Turn": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "UnlookItem": "IM_Decorate1",
+        "Sell": [
+            {
+                "amount": 1,
+                "type": "IR_DecorateCoin"
+            }
+        ]
+    },
+    "Decorate6": {
+        "Name": "Decorate6_Name",
+        "Desc": "Decorate6_Desc",
+        "Room": "Room2",
+        "BuildingLevel": "Decorate6_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "UnlockDesc": "Unlock_Decorate6",
+        "IsMoved": 1,
+        "InitialPosition": [
+            [
+                2,
+                8
+            ]
+        ],
+        "Sort": 75,
+        "SurfaceList": [
+            "VillageSurface_Decorate6_1"
+        ],
+        "DefaultSurface": "VillageSurface_Decorate6_1",
+        "UseType": "",
+        "Space": [
+            1,
+            1
+        ],
+        "Amount": 1,
+        "Quality": 3,
+        "Unlook": 1,
+        "ProspectShow": 0,
+        "Turn": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "UnlookItem": "IM_Decorate6",
+        "Sell": [
+            {
+                "amount": 1,
                 "type": "IR_DecorateCoin"
             }
         ]

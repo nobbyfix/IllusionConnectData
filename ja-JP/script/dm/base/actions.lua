@@ -419,3 +419,33 @@ NewTypeWriterAction = cclass("NewTypeWriterAction", function (target, intervals,
 		return cc.Repeat:create(showNextCharacterAction, count)
 	end
 end)
+CascadeFadeToImpl = class("CascadeFadeToImpl", objectlua.Object)
+CascadeFadeTo = ccAction("CascadeFadeTo", CascadeFadeToImpl)
+
+function CascadeFadeToImpl:initialize(duration, val)
+	super.initialize(self)
+
+	self._duration = duration
+	self._finalAlpha = val
+end
+
+function CascadeFadeToImpl:clone()
+	return CascadeFadeToImpl:new(self._duration, self._finalAlpha)
+end
+
+function CascadeFadeToImpl:reverse()
+	return nil
+end
+
+function CascadeFadeToImpl:startWithTarget(target)
+	self._target = target
+	local color = self._target:getColorTransform()
+	self._delta = self._finalAlpha - color.mults.w
+end
+
+function CascadeFadeToImpl:update(time)
+	local color = self._target:getColorTransform()
+	color.mults.w = self._finalAlpha - self._delta * (1 - time)
+
+	self._target:setColorTransform(color)
+end

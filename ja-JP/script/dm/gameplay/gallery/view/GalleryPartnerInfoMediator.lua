@@ -605,6 +605,7 @@ function GalleryPartnerInfoMediator:refreshInnerAttrPanel(data, title)
 					text:setString(str[1])
 					attr:setVisible(true)
 					attr:setString(str[2])
+					attr:setPositionX(text:getPositionX() + text:getContentSize().width + 8)
 
 					local image = text:getChildByFullName("image")
 
@@ -661,6 +662,7 @@ function GalleryPartnerInfoMediator:refreshInnerAttrPanel(data, title)
 						text:setString(str[1])
 						attr:setVisible(true)
 						attr:setString(str[2])
+						attr:setPositionX(text:getPositionX() + text:getContentSize().width + 8)
 
 						local image = text:getChildByFullName("image")
 

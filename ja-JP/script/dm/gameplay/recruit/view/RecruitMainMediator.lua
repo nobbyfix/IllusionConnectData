@@ -49,12 +49,8 @@ local kBtnHandlers = {
 		func = "onClickActivity"
 	}
 }
-local kTipBtnPosX = {
-	[RecruitPoolType.kDiamond] = 480
-}
-local kLeftTopNodePosX = {
-	[RecruitPoolType.kDiamond] = 360
-}
+local kTipBtnPosX = {}
+local kLeftTopNodePosX = {}
 local kLeftTopNodeText = {
 	[RecruitPoolType.kActivity] = "Recruit_Time_Left1",
 	[RecruitPoolType.kDiamond] = "Recruit_UI24",
@@ -683,13 +679,13 @@ function RecruitMainMediator:refreshHeroInfo()
 				local common_text = ccui.RichText:createWithXML(str, {})
 
 				common_text:setFontColor("#a9adb5")
-				common_text:setFontSize(28)
+				common_text:setFontSize(25)
 				common_text:ignoreContentAdaptWithSize(true)
 				common_text:rebuildElements()
 				common_text:formatText()
 				common_text:setAnchorPoint(cc.p(0.5, 1))
 				common_text:renderContent()
-				common_text:setPosition(145, 280)
+				common_text:setPosition(145, 360)
 				common_text:addTo(common_text_node)
 
 				local heroPrototype = PrototypeFactory:getInstance():getHeroPrototype(heroId)
@@ -1020,7 +1016,7 @@ function RecruitMainMediator:refreshLeftTopNode()
 
 	self._leftTimeNode:setPositionX(kLeftTopNodePosX[type] or tabPanel:getPositionX() + 220)
 
-	if type == RecruitPoolType.kEquip then
+	if type == RecruitPoolType.kEquip or type == RecruitPoolType.kDiamond then
 		self._tipBtn:setPositionX(tabPanel:getPositionX() + 340)
 	else
 		self._tipBtn:setPositionX(kTipBtnPosX[type] or tabPanel:getPositionX() + 629)

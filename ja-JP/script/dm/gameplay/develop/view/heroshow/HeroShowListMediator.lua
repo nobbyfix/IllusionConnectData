@@ -659,6 +659,11 @@ function HeroShowListMediator:createTeamCell(cell, index)
 			name:setPositionX(0)
 			qualityLevel:setPositionX(name:getContentSize().width)
 			namePanel:setContentSize(cc.size(name:getContentSize().width + qualityLevel:getContentSize().width, 30))
+
+			if namePanel:getContentSize().width > 104 then
+				nameBg:setScaleX((namePanel:getContentSize().width + 20) / 104)
+			end
+
 			heroIcon:setVisible(true)
 
 			if heroData.id == self._chooseHeroId then

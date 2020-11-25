@@ -115,7 +115,6 @@ function PlayerMessageWidget:decorateView(message, senderInfo, parent)
 		local nameText = self._main:getChildByFullName("Text_panel.name_text")
 
 		nameText:setString(senderInfo.nickname or "")
-		nameText:setPositionY(setBubbleSizeY)
 		nameText:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
 
 		local vipNode = self._main:getChildByFullName("Text_panel.vipnode")

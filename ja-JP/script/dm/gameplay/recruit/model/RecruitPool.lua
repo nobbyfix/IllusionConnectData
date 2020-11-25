@@ -100,6 +100,10 @@ function RecruitPool:getDescList()
 	return self._config.ReviewText
 end
 
+function RecruitPool:getSpecialDescList()
+	return self._config.ReviewTextSpecial
+end
+
 function RecruitPool:getRecruitTimes()
 	return self._config.Number
 end

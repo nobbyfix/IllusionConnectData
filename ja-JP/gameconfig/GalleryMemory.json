@@ -3169,32 +3169,6 @@
         "Time": "",
         "Screen": ""
     },
-    "Memory_Hero_14": {
-        "Type": "HERO",
-        "Condition": [
-            {
-                "conditionType": "Condi_HeroLoveNeed",
-                "factorSt1": [],
-                "factor1": [
-                    8
-                ],
-                "factor2": [],
-                "factorSt2": [],
-                "params": [
-                    "KTSJKe"
-                ]
-            }
-        ],
-        "Name": "Memory_Hero_14_Name",
-        "Englishname": "Memory_Hero_14_Englishname",
-        "Desc": "Memory_Hero_14_Desc",
-        "Listpicture": "s_album_photo_9",
-        "Picture": "album_photo_9",
-        "StoryLink": "",
-        "Num": 14,
-        "Time": "",
-        "Screen": ""
-    },
     "Memory_Hero_15": {
         "Type": "HERO",
         "Condition": [
@@ -3745,5 +3719,31 @@
         "Num": 20,
         "Time": "",
         "Screen": ""
+    },
+    "Memory_Hero_14": {
+        "Type": "HERO",
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroLoveNeed",
+                "factorSt1": [],
+                "factor1": [
+                    8
+                ],
+                "factor2": [],
+                "factorSt2": [],
+                "params": [
+                    "KTSJKe"
+                ]
+            }
+        ],
+        "Name": "Memory_Hero_14_Name",
+        "Englishname": "Memory_Hero_14_Englishname",
+        "Desc": "Memory_Hero_14_Desc",
+        "Listpicture": "s_album_photo_9",
+        "Picture": "album_photo_9",
+        "StoryLink": "",
+        "Num": 14,
+        "Time": "",
+        "Screen": 1
     }
 }

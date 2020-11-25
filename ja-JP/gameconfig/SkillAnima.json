@@ -27316,5 +27316,305 @@
                 "f": 1
             }
         ]
+    },
+    "SDTZi_Japan_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "e": "sound",
+                        "d": {
+                            "rate": 1,
+                            "file": "Voice_SDTZi_27"
+                        }
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "e": "sound",
+                        "d": {
+                            "rate": 1,
+                            "file": "Se_Skill_SDTZi_LianDong_Whoosh_1"
+                        }
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "e": "sound",
+                        "d": {
+                            "rate": 1,
+                            "file": "Se_Skill_SDTZi_LianDong_Hit_2"
+                        }
+                    }
+                ],
+                "f": 12
+            },
+            {
+                "evts": [
+                    {
+                        "e": "hit",
+                        "d": {
+                            "final": 0,
+                            "act": "hurt1"
+                        }
+                    }
+                ],
+                "f": 14
+            }
+        ]
+    },
+    "KTSJKe_Japan_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "e": "sound",
+                        "d": {
+                            "rate": 1,
+                            "file": "Voice_KTSJKe_26"
+                        }
+                    }
+                ],
+                "f": 8
+            },
+            {
+                "evts": [
+                    {
+                        "e": "sound",
+                        "d": {
+                            "rate": 1,
+                            "file": "Se_Skill_KTSJKe_LianDong_Hit_1"
+                        }
+                    }
+                ],
+                "f": 10
+            },
+            {
+                "evts": [
+                    {
+                        "e": "hit",
+                        "d": {
+                            "final": 0,
+                            "act": "hurt1"
+                        }
+                    }
+                ],
+                "f": 12
+            }
+        ]
+    },
+    "KTSJKe_Japan_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "e": "sound",
+                        "d": {
+                            "rate": 1,
+                            "file": "Se_Skill_KTSJKe_LianDong_Hit_2"
+                        }
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "e": "sound",
+                        "d": {
+                            "rate": 1,
+                            "file": "Se_Skill_KTSJKe_LianDong_Whoosh_1"
+                        }
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "e": "hit",
+                        "d": {
+                            "final": 0,
+                            "act": "hurt1"
+                        }
+                    }
+                ],
+                "f": 3
+            },
+            {
+                "evts": [
+                    {
+                        "e": "sound",
+                        "d": {
+                            "rate": 1,
+                            "file": "Voice_KTSJKe_27"
+                        }
+                    }
+                ],
+                "f": 4
+            },
+            {
+                "evts": [
+                    {
+                        "e": "sound",
+                        "d": {
+                            "rate": 1,
+                            "file": "Se_Skill_KTSJKe_LianDong_Hit_2+"
+                        }
+                    }
+                ],
+                "f": 24
+            }
+        ]
+    },
+    "KTSJKe_Japan_skill3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "e": "sound",
+                        "d": {
+                            "rate": 1,
+                            "file": "Se_Skill_KTSJKe_LianDong_Whoosh_2"
+                        }
+                    }
+                ],
+                "f": 3
+            },
+            {
+                "evts": [
+                    {
+                        "e": "sound",
+                        "d": {
+                            "rate": 1,
+                            "file": "Voice_KTSJKe_28"
+                        }
+                    }
+                ],
+                "f": 3
+            },
+            {
+                "evts": [
+                    {
+                        "e": "sound",
+                        "d": {
+                            "rate": 1,
+                            "file": "Se_Skill_KTSJKe_LianDong_Hit_3"
+                        }
+                    }
+                ],
+                "f": 19
+            }
+        ]
+    },
+    "SDTZi_Japan_skill3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "e": "sound",
+                        "d": {
+                            "rate": 1,
+                            "file": "Se_Skill_SDTZi_LianDong_Whoosh_2"
+                        }
+                    }
+                ],
+                "f": 6
+            },
+            {
+                "evts": [
+                    {
+                        "e": "sound",
+                        "d": {
+                            "rate": 1,
+                            "file": "Voice_SDTZi_28"
+                        }
+                    }
+                ],
+                "f": 11
+            },
+            {
+                "evts": [
+                    {
+                        "e": "sound",
+                        "d": {
+                            "rate": 1,
+                            "file": "Se_Skill_SDTZi_LianDong_Hit_3"
+                        }
+                    }
+                ],
+                "f": 35
+            },
+            {
+                "evts": [
+                    {
+                        "e": "hit",
+                        "d": {
+                            "final": 0,
+                            "act": "hurt1"
+                        }
+                    }
+                ],
+                "f": 38
+            }
+        ]
+    },
+    "SDTZi_Japan_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "e": "sound",
+                        "d": {
+                            "rate": 1,
+                            "file": "Voice_SDTZi_26"
+                        }
+                    }
+                ],
+                "f": 3
+            },
+            {
+                "evts": [
+                    {
+                        "e": "sound",
+                        "d": {
+                            "rate": 1,
+                            "file": "Se_Skill_SDTZi_LianDong_Hit_1"
+                        }
+                    }
+                ],
+                "f": 7
+            },
+            {
+                "evts": [
+                    {
+                        "e": "hit",
+                        "d": {
+                            "final": 0,
+                            "act": "hurt1"
+                        }
+                    }
+                ],
+                "f": 7
+            },
+            {
+                "evts": [
+                    {
+                        "e": "sound",
+                        "d": {
+                            "rate": 1,
+                            "file": "Se_Skill_SDTZi_LianDong_Hit_2"
+                        }
+                    }
+                ],
+                "f": 12
+            }
+        ]
     }
 }

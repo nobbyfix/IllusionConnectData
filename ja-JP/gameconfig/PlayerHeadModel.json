@@ -59,16 +59,6 @@
         "Zoom": 0.5,
         "HeadDesc": "HeroBase_Desc_NXYYi"
     },
-    "Head_Master_FuHun": {
-        "Type": 2,
-        "HeadName": "Master_FuHun_HeadName",
-        "UnlockDesc": "Master_FuHun_HeadUnlock",
-        "IsHiddenHead": 0,
-        "HeroMasterId": "Master_FuHun",
-        "IconPath": "asset/master/Master_FuHun",
-        "Zoom": 1.0,
-        "HeadDesc": "MasterBase_Desc_4"
-    },
     "Head_LYXi": {
         "Type": 1,
         "HeadName": "LYXi_HeadName",
@@ -278,16 +268,6 @@
         "IconPath": "asset/heros/SLMen/battlepic_SLMen.png",
         "Zoom": 0.5,
         "HeadDesc": "HeroBase_Desc_SLMen"
-    },
-    "Head_Master_SenLing": {
-        "Type": 2,
-        "HeadName": "Master_SenLing_HeadName",
-        "UnlockDesc": "Master_SenLing_HeadUnlock",
-        "IsHiddenHead": 0,
-        "HeroMasterId": "Master_SenLing",
-        "IconPath": "asset/master/Master_SenLing",
-        "Zoom": 1.0,
-        "HeadDesc": "MasterBase_Desc_5"
     },
     "Head_WEDe": {
         "Type": 1,
@@ -859,16 +839,6 @@
         "Zoom": 0.5,
         "HeadDesc": "HeroBase_Desc_ALSi"
     },
-    "Head_ONiTan": {
-        "Type": 3,
-        "HeadName": "Head_ONiTan_Name",
-        "UnlockDesc": "Head_ONiTan_UnlockDesc",
-        "IsHiddenHead": 0,
-        "HeroMasterId": "Head_ONiTan",
-        "IconPath": "asset/head/Head_ONiTan.png",
-        "Zoom": 1.0,
-        "HeadDesc": "Head_ONiTan_Desc"
-    },
     "HeroAwaken_SDTZi": {
         "Type": 4,
         "HeadName": "HeroAwaken_SDTZi_1_Name",
@@ -879,16 +849,6 @@
         "Zoom": 1.0,
         "HeadDesc": "HeroAwaken_SDTZi_Desc"
     },
-    "HeroAwaken_BBLMa": {
-        "Type": 4,
-        "HeadName": "HeroAwaken_BBLMa_1_Name",
-        "UnlockDesc": "HeroAwaken_BBLMa",
-        "IsHiddenHead": 0,
-        "HeroMasterId": "BBLMa",
-        "IconPath": "asset/heros/BBLMa/battlepic_BBLMa_JXing.png",
-        "Zoom": 1.0,
-        "HeadDesc": "HeroAwaken_BBLMa_Desc"
-    },
     "HeroAwaken_KTSJKe": {
         "Type": 4,
         "HeadName": "HeroAwaken_KTSJKe_1_Name",
@@ -898,5 +858,45 @@
         "IconPath": "asset/heros/KTSJKe/battlepic_KTSJKe_JXing.png",
         "Zoom": 1.0,
         "HeadDesc": "HeroAwaken_KTSJKe_Desc"
+    },
+    "Head_Master_FuHun": {
+        "Type": 2,
+        "HeadName": "Master_FuHun_HeadName",
+        "UnlockDesc": "Master_FuHun_HeadUnlock",
+        "IsHiddenHead": 1,
+        "HeroMasterId": "Master_FuHun",
+        "IconPath": "asset/master/Master_FuHun",
+        "Zoom": 1.0,
+        "HeadDesc": "MasterBase_Desc_4"
+    },
+    "Head_Master_SenLing": {
+        "Type": 2,
+        "HeadName": "Master_SenLing_HeadName",
+        "UnlockDesc": "Master_SenLing_HeadUnlock",
+        "IsHiddenHead": 1,
+        "HeroMasterId": "Master_SenLing",
+        "IconPath": "asset/master/Master_SenLing",
+        "Zoom": 1.0,
+        "HeadDesc": "MasterBase_Desc_5"
+    },
+    "HeroAwaken_BBLMa": {
+        "Type": 4,
+        "HeadName": "HeroAwaken_BBLMa_1_Name",
+        "UnlockDesc": "HeroAwaken_BBLMa",
+        "IsHiddenHead": 1,
+        "HeroMasterId": "BBLMa",
+        "IconPath": "asset/heros/BBLMa/battlepic_BBLMa_JXing.png",
+        "Zoom": 1.0,
+        "HeadDesc": "HeroAwaken_BBLMa_Desc"
+    },
+    "Head_ONiTan": {
+        "Type": 3,
+        "HeadName": "Head_ONiTan_Name",
+        "UnlockDesc": "Head_ONiTan_UnlockDesc",
+        "IsHiddenHead": 0,
+        "HeroMasterId": "Head_ONiTan",
+        "IconPath": "asset/items/Head_ONiTan.png",
+        "Zoom": 1.0,
+        "HeadDesc": "Head_ONiTan_Desc"
     }
 }

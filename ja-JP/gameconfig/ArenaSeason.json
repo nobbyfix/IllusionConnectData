@@ -4,8 +4,8 @@
         "TimeFactor": {
             "type": "Day",
             "value": [
-                "2020-11-16",
-                "2020-11-23"
+                "2021-01-25",
+                "2021-02-01"
             ]
         },
         "NextSeason": "AS_12",
@@ -22,8 +22,8 @@
         "TimeFactor": {
             "type": "Day",
             "value": [
-                "2020-11-09",
-                "2020-11-16"
+                "2021-01-18",
+                "2021-01-25"
             ]
         },
         "NextSeason": "AS_11",
@@ -40,8 +40,8 @@
         "TimeFactor": {
             "type": "Day",
             "value": [
-                "2020-11-30",
-                "2020-12-07"
+                "2021-02-08",
+                "2021-02-15"
             ]
         },
         "NextSeason": "AS_14",
@@ -58,8 +58,8 @@
         "TimeFactor": {
             "type": "Day",
             "value": [
-                "2020-11-23",
-                "2020-11-30"
+                "2021-02-01",
+                "2021-02-08"
             ]
         },
         "NextSeason": "AS_13",
@@ -71,13 +71,31 @@
         ],
         "SeasonTitle": "AS_12_Name"
     },
+    "AS_4": {
+        "SeasonNumber": 4,
+        "TimeFactor": {
+            "type": "Day",
+            "value": [
+                "2020-11-30",
+                "2020-12-07"
+            ]
+        },
+        "NextSeason": "AS_5",
+        "SeasonSkill": "ArenaFixed_4",
+        "SeasonSkillCondition": [
+            {
+                "type": "ALL"
+            }
+        ],
+        "SeasonTitle": "AS_4_Name"
+    },
     "AS_9": {
         "SeasonNumber": 9,
         "TimeFactor": {
             "type": "Day",
             "value": [
-                "2020-11-02",
-                "2020-11-09"
+                "2021-01-11",
+                "2021-01-18"
             ]
         },
         "NextSeason": "AS_10",
@@ -94,8 +112,8 @@
         "TimeFactor": {
             "type": "Day",
             "value": [
-                "2020-10-26",
-                "2020-11-02"
+                "2021-01-04",
+                "2021-01-11"
             ]
         },
         "NextSeason": "AS_9",
@@ -112,8 +130,8 @@
         "TimeFactor": {
             "type": "Day",
             "value": [
-                "2020-09-07",
-                "2020-09-14"
+                "2020-11-09",
+                "2020-11-16"
             ]
         },
         "NextSeason": "AS_2",
@@ -130,8 +148,8 @@
         "TimeFactor": {
             "type": "Day",
             "value": [
-                "2020-09-21",
-                "2020-09-28"
+                "2020-11-23",
+                "2020-11-30"
             ]
         },
         "NextSeason": "AS_4",
@@ -148,8 +166,8 @@
         "TimeFactor": {
             "type": "Day",
             "value": [
-                "2020-09-14",
-                "2020-09-21"
+                "2020-11-16",
+                "2020-11-23"
             ]
         },
         "NextSeason": "AS_3",
@@ -166,8 +184,8 @@
         "TimeFactor": {
             "type": "Day",
             "value": [
-                "2020-10-05",
-                "2020-10-12"
+                "2020-12-07",
+                "2020-12-14"
             ]
         },
         "NextSeason": "AS_6",
@@ -179,31 +197,13 @@
         ],
         "SeasonTitle": "AS_5_Name"
     },
-    "AS_4": {
-        "SeasonNumber": 4,
-        "TimeFactor": {
-            "type": "Day",
-            "value": [
-                "2020-09-28",
-                "2020-10-05"
-            ]
-        },
-        "NextSeason": "AS_5",
-        "SeasonSkill": "ArenaFixed_4",
-        "SeasonSkillCondition": [
-            {
-                "type": "ALL"
-            }
-        ],
-        "SeasonTitle": "AS_4_Name"
-    },
     "AS_7": {
         "SeasonNumber": 7,
         "TimeFactor": {
             "type": "Day",
             "value": [
-                "2020-10-19",
-                "2020-10-26"
+                "2020-12-28",
+                "2021-01-04"
             ]
         },
         "NextSeason": "AS_8",
@@ -220,8 +220,8 @@
         "TimeFactor": {
             "type": "Day",
             "value": [
-                "2020-10-12",
-                "2020-10-19"
+                "2020-12-14",
+                "2020-12-21"
             ]
         },
         "NextSeason": "AS_7",

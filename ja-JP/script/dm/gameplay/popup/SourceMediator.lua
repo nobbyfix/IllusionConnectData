@@ -515,7 +515,7 @@ function SourceMediator:createCell(cell, index)
 
 				regionText:enableOutline(cc.c4b(0, 0, 0, 255), 1)
 				regionText:addTo(cell):setName("text")
-				regionText:setPositionX(goBtn:getPositionX())
+				regionText:setPositionX(goBtn:getPositionX() - 20)
 				regionText:setPositionY(goBtn:getPositionY() + 10)
 				regionText:setString(tip)
 			end

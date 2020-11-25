@@ -1599,24 +1599,6 @@
         ],
         "IsPlay": 0
     },
-    "DreamChallenge": {
-        "Condition": {
-            "LEVEL": 32
-        },
-        "ShowCondition": {
-            "LEVEL": 32
-        },
-        "Tip": "DreamChallenge_Unlock_Tips",
-        "Name": "DreamChallenge_Unlock_Name",
-        "LongDesc": "DreamChallenge_Unlock_Name",
-        "OutputDesc": "",
-        "Icon": "",
-        "Link": "",
-        "UnlockAnima": "",
-        "UnlockDesc": "",
-        "ResourcesBanner": "",
-        "IsPlay": ""
-    },
     "Shop_Arena": {
         "Condition": {
             "LEVEL": 999
@@ -1692,29 +1674,6 @@
         "UnlockAnima": "",
         "UnlockDesc": "Hero_Sound_UnlockDesc",
         "ResourcesBanner": "",
-        "IsPlay": 0
-    },
-    "KOF": {
-        "Condition": {
-            "LEVEL": 100
-        },
-        "ShowCondition": {
-            "LEVEL": 100
-        },
-        "Tip": "Unlock_Stage_Tips",
-        "Name": "Unlock_KOF",
-        "LongDesc": "Unlock_KOF_Desc",
-        "OutputDesc": "Unlock_KOF_OpDesc",
-        "Icon": "new_system_club.png",
-        "Link": "",
-        "UnlockAnima": "HOME",
-        "UnlockDesc": "KOF_UnlockDesc",
-        "ResourcesBanner": [
-            "IR_Gold",
-            "IR_Crystal",
-            "IR_Diamond",
-            "IR_Arena"
-        ],
         "IsPlay": 0
     },
     "PansLab_Shop": {
@@ -2241,6 +2200,47 @@
         "UnlockAnima": "",
         "UnlockDesc": "Friend_PK_UnlockDesc",
         "ResourcesBanner": "",
+        "IsPlay": 0
+    },
+    "DreamChallenge": {
+        "Condition": {
+            "LEVEL": 100
+        },
+        "ShowCondition": {
+            "LEVEL": 100
+        },
+        "Tip": "DreamChallenge_Unlock_Tips",
+        "Name": "DreamChallenge_Unlock_Name",
+        "LongDesc": "DreamChallenge_Unlock_Name",
+        "OutputDesc": "",
+        "Icon": "",
+        "Link": "",
+        "UnlockAnima": "",
+        "UnlockDesc": "",
+        "ResourcesBanner": "",
+        "IsPlay": ""
+    },
+    "KOF": {
+        "Condition": {
+            "LEVEL": 100
+        },
+        "ShowCondition": {
+            "LEVEL": 100
+        },
+        "Tip": "Unlock_Joking_Tips",
+        "Name": "Unlock_KOF",
+        "LongDesc": "Unlock_KOF_Desc",
+        "OutputDesc": "Unlock_KOF_OpDesc",
+        "Icon": "new_system_club.png",
+        "Link": "",
+        "UnlockAnima": "HOME",
+        "UnlockDesc": "KOF_UnlockDesc",
+        "ResourcesBanner": [
+            "IR_Gold",
+            "IR_Crystal",
+            "IR_Diamond",
+            "IR_Arena"
+        ],
         "IsPlay": 0
     }
 }

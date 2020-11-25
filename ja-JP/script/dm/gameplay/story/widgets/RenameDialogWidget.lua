@@ -157,6 +157,14 @@ function RenameDialogWidget:onClickOk()
 		point = "guide_main_rename_2",
 		type = "loginpoint"
 	})
+
+	if SDKHelper and SDKHelper:isEnableSdk() then
+		local data = developSystem:getStatsInfo()
+		data.eventName = "createdRole"
+
+		SDKHelper:reportStatsData(data)
+	end
+
 	settingSystem:requestChangePlayerName(nameStr, true, endCallback)
 end
 

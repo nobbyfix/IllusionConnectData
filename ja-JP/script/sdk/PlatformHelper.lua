@@ -24,7 +24,37 @@ local PlatformHelper = {
 	isAndroid = function (self)
 		return isPlatformAndroid
 	end,
+	getChannelID = function (self)
+		if self:isAndroid() then
+			local success, channel = luaj.callStaticMethod(PlatformClassPath, "getChannelID", {}, "()Ljava/lang/String;")
+
+			if not success then
+				channel = "test"
+			end
+
+			return channel
+		elseif self:isIOS() then
+			return "efun_ios"
+		end
+
+		return nil
+	end,
 	thirdUpdate = function (self)
+		local channelID = self:getChannelID()
+		local channel2url = {
+			efun_android = "https://play.google.com/store/apps/details?id=com.efun.mjlj",
+			efun_ios = "https://apps.apple.com/jp/app/id1512893932"
+		}
+
+		if channel2url[channelID] then
+			cc.Application:getInstance():openURL(channel2url[channelID])
+
+			return
+		end
+
+		if channelID == "dpstorm_android" then
+			self:callSDKFunction("thirdUpdate", {})
+		end
 	end,
 	isInstallApp = function (self, packageName)
 		local success = false

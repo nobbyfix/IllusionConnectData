@@ -251,13 +251,6 @@
         "Img": "drawcard_banner_KTSJKe_MTZMEShi.png",
         "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_Party2Up"
     },
-    "ActivityBanner7": {
-        "Sort": 7,
-        "Type": "Activity",
-        "TypeId": "DrawCard_1UP_1_Activity",
-        "Img": "drawcard_banner_BBLMa.png",
-        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_1"
-    },
     "ActivityBanner94": {
         "Sort": 94,
         "Type": "Activity",
@@ -418,5 +411,12 @@
         "TypeId": "DrawCard_1UP_6_Activity",
         "Img": "drawcard_banner_YSTLu.png",
         "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_6"
+    },
+    "ActivityBanner7": {
+        "Sort": 7,
+        "Type": "Activity",
+        "TypeId": "DrawCard_1UP_1_Activity",
+        "Img": "drawcard_banner_BBLMa.png",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_1New"
     }
 }

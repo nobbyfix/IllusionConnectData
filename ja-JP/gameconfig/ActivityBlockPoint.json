@@ -4489,119 +4489,6 @@
         "HiddenStory": "",
         "Location": ""
     },
-    "AE01S12": {
-        "Name": "BlockPoint_AE01S12_Name",
-        "BlockDesc": "BlockPoint_AE01S12_BlockDesc",
-        "CombatValue": 183600,
-        "CombatNeed": 170000,
-        "Map": "AE01",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "AE01S11"
-        ],
-        "NextPoint": [],
-        "Type": "ELITE",
-        "PointType": "BOSS",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Activity_Wait1_2",
-        "EnemyMaster": "AE01P12U01N08",
-        "EnemyCard": "CardAE01S12",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 50
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 0,
-        "CrystalReward": 0,
-        "FirstKillReward": "AE01S12_FirstReward",
-        "PointReward": "AE01S12_PointReward",
-        "HeroExpReward": "",
-        "MainShowItem": "",
-        "ShowItem": "AE01S12_ShowReward",
-        "Element": "",
-        "WipeExtraReward": "",
-        "StaminaCost": {
-            "IM_BossJindan": 1
-        },
-        "StaminaBack": {
-            "IM_BossJindan": 1
-        },
-        "StageEffect": "",
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Festival",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_BEr_WZi",
-        "Background": "Battle_Event_1",
-        "Banner": "pic_guanqia2_01_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": [],
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 1,
-        "OpenFAC": 1,
-        "HeroAttrExtra": {
-            "YSTLu": "Hero_ABlock_YSTLu_Extra",
-            "BEr": "Hero_ABlock_BEr_Extra",
-            "LYSi": "Hero_ABlock_LYSi_Extra"
-        },
-        "HeroAttrExtraLua": "",
-        "HeroItemExtra": {
-            "YSTLu": {
-                "IM_Jindan": 2
-            },
-            "BEr": {
-                "IM_ChengjiuDian": 35
-            },
-            "LYSi": {
-                "IM_Jindan": 1
-            }
-        },
-        "PointTime": {
-            "start": "2020-09-18 05:00:00"
-        },
-        "IsSweep": 0,
-        "Combat_Adjust_Rate": 1.0,
-        "HiddenStory": "",
-        "Location": ""
-    },
     "AE01S10": {
         "Name": "BlockPoint_AE01S10_Name",
         "BlockDesc": "BlockPoint_AE01S10_BlockDesc",
@@ -4709,123 +4596,6 @@
             "start": "2020-09-18 05:00:00"
         },
         "IsSweep": 1,
-        "Combat_Adjust_Rate": 1.0,
-        "HiddenStory": "",
-        "Location": ""
-    },
-    "AE01S11": {
-        "Name": "BlockPoint_AE01S11_Name",
-        "BlockDesc": "BlockPoint_AE01S11_BlockDesc",
-        "CombatValue": 110200,
-        "CombatNeed": 101999,
-        "Map": "AE01",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "AE01S10"
-        ],
-        "NextPoint": [
-            "AE01S12"
-        ],
-        "Type": "ELITE",
-        "PointType": "BOSS",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Activity_Wait1_2",
-        "EnemyMaster": "AE01P11U01N08",
-        "EnemyCard": "CardAE01S11",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 50
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 0,
-        "CrystalReward": 0,
-        "FirstKillReward": "AE01S11_FirstReward",
-        "PointReward": "AE01S11_PointReward",
-        "HeroExpReward": "",
-        "MainShowItem": "",
-        "ShowItem": "AE01S11_ShowReward",
-        "Element": "",
-        "WipeExtraReward": "",
-        "StaminaCost": {
-            "IM_BossJindan": 1
-        },
-        "StaminaBack": {
-            "IM_BossJindan": 1
-        },
-        "StageEffect": "",
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Festival",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_BEr_WZi",
-        "Background": "Battle_Event_1",
-        "Banner": "pic_guanqia2_01_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [
-            "AS01E05"
-        ],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": [],
-        "SpecialSkillShow": [],
-        "UnlockBubble": "",
-        "BlockDetailAuto": "",
-        "BossRound": 1,
-        "OpenFAC": 1,
-        "HeroAttrExtra": {
-            "YSTLu": "Hero_ABlock_YSTLu_Extra",
-            "BEr": "Hero_ABlock_BEr_Extra",
-            "LYSi": "Hero_ABlock_LYSi_Extra"
-        },
-        "HeroAttrExtraLua": "",
-        "HeroItemExtra": {
-            "YSTLu": {
-                "IM_Jindan": 2
-            },
-            "BEr": {
-                "IM_ChengjiuDian": 28
-            },
-            "LYSi": {
-                "IM_Jindan": 1
-            }
-        },
-        "PointTime": {
-            "start": "2020-09-18 05:00:00"
-        },
-        "IsSweep": 0,
         "Combat_Adjust_Rate": 1.0,
         "HiddenStory": "",
         "Location": ""
@@ -12527,6 +12297,236 @@
         "HeroItemExtra": "",
         "PointTime": "",
         "IsSweep": 1,
+        "Combat_Adjust_Rate": 1.0,
+        "HiddenStory": "",
+        "Location": ""
+    },
+    "AE01S12": {
+        "Name": "BlockPoint_AE01S12_Name",
+        "BlockDesc": "BlockPoint_AE01S12_BlockDesc",
+        "CombatValue": 137700,
+        "CombatNeed": 127500,
+        "Map": "AE01",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "AE01S11"
+        ],
+        "NextPoint": [],
+        "Type": "ELITE",
+        "PointType": "BOSS",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_2",
+        "EnemyMaster": "AE01P12U01N08",
+        "EnemyCard": "CardAE01S12",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "AE01S12_FirstReward",
+        "PointReward": "AE01S12_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "AE01S12_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "",
+        "StaminaCost": {
+            "IM_BossJindan": 1
+        },
+        "StaminaBack": {
+            "IM_BossJindan": 1
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Festival",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_BEr_WZi",
+        "Background": "Battle_Event_1",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 1,
+        "HeroAttrExtra": {
+            "YSTLu": "Hero_ABlock_YSTLu_Extra",
+            "BEr": "Hero_ABlock_BEr_Extra",
+            "LYSi": "Hero_ABlock_LYSi_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": {
+            "YSTLu": {
+                "IM_Jindan": 2
+            },
+            "BEr": {
+                "IM_ChengjiuDian": 35
+            },
+            "LYSi": {
+                "IM_Jindan": 1
+            }
+        },
+        "PointTime": {
+            "start": "2020-09-18 05:00:00"
+        },
+        "IsSweep": 0,
+        "Combat_Adjust_Rate": 1.0,
+        "HiddenStory": "",
+        "Location": ""
+    },
+    "AE01S11": {
+        "Name": "BlockPoint_AE01S11_Name",
+        "BlockDesc": "BlockPoint_AE01S11_BlockDesc",
+        "CombatValue": 104700,
+        "CombatNeed": 96899,
+        "Map": "AE01",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "AE01S10"
+        ],
+        "NextPoint": [
+            "AE01S12"
+        ],
+        "Type": "ELITE",
+        "PointType": "BOSS",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Activity_Wait1_2",
+        "EnemyMaster": "AE01P11U01N08",
+        "EnemyCard": "CardAE01S11",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 0,
+        "CrystalReward": 0,
+        "FirstKillReward": "AE01S11_FirstReward",
+        "PointReward": "AE01S11_PointReward",
+        "HeroExpReward": "",
+        "MainShowItem": "",
+        "ShowItem": "AE01S11_ShowReward",
+        "Element": "",
+        "WipeExtraReward": "",
+        "StaminaCost": {
+            "IM_BossJindan": 1
+        },
+        "StaminaBack": {
+            "IM_BossJindan": 1
+        },
+        "StageEffect": "",
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Festival",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_BEr_WZi",
+        "Background": "Battle_Event_1",
+        "Banner": "pic_guanqia2_01_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [
+            "AS01E05"
+        ],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 1,
+        "HeroAttrExtra": {
+            "YSTLu": "Hero_ABlock_YSTLu_Extra",
+            "BEr": "Hero_ABlock_BEr_Extra",
+            "LYSi": "Hero_ABlock_LYSi_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroItemExtra": {
+            "YSTLu": {
+                "IM_Jindan": 2
+            },
+            "BEr": {
+                "IM_ChengjiuDian": 28
+            },
+            "LYSi": {
+                "IM_Jindan": 1
+            }
+        },
+        "PointTime": {
+            "start": "2020-09-18 05:00:00"
+        },
+        "IsSweep": 0,
         "Combat_Adjust_Rate": 1.0,
         "HiddenStory": "",
         "Location": ""

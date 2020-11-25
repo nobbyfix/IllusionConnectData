@@ -551,10 +551,52 @@ function LoginMediator:beforeLoading()
 	actionPanel:setLocalZOrder(100)
 	actionPanel:getChildByFullName("LoginBtnAnim"):setVisible(false)
 	actionPanel:getChildByFullName("LoginLogoAnim"):setVisible(false)
-	self._whaleAnim:gotoAndPlay(0)
-	self._bgAnim:gotoAndPlay(91)
-	self._bgAnim:addCallbackAtFrame(113, function ()
-		self:launchLoading()
+	self._bgAnim:setVisible(true)
+
+	local posArr = {
+		{
+			x = 550,
+			y = 50
+		},
+		{
+			x = 100,
+			y = 30
+		},
+		{
+			x = 850,
+			y = 30
+		}
+	}
+
+	for i = 1, 3 do
+		local sanAnim = cc.MovieClip:create("san" .. i .. "_xiaoshirenwu")
+
+		sanAnim:addTo(actionPanel, 10):posite(posArr[i].x, posArr[i].y)
+		sanAnim:addEndCallback(function ()
+			sanAnim:stop()
+			sanAnim:removeFromParent()
+		end)
+	end
+
+	local function fadeout(node, time, callback)
+		local fade = CascadeFadeTo:create(time, 0)
+		local callback = cc.CallFunc:create(function ()
+			if callback then
+				callback()
+			end
+		end)
+
+		node:runAction(cc.Sequence:create(fade, callback))
+	end
+
+	fadeout(self._hero, 0.6, function ()
+		fadeout(self._newBGAnim, 2, function ()
+			self._whaleAnim:gotoAndPlay(0)
+			self._bgAnim:gotoAndPlay(112)
+			self._bgAnim:addCallbackAtFrame(113, function ()
+				self:launchLoading()
+			end)
+		end)
 	end)
 	self._bgAnim:addEndCallback(function ()
 		self._bgAnim:stop()
@@ -785,9 +827,7 @@ function LoginMediator:initAnim(callback)
 
 	self._bgAnim:addTo(actionPanel)
 	self._bgAnim:setPosition(cc.p(568, 320))
-	self._bgAnim:addCallbackAtFrame(90, function ()
-		self._bgAnim:gotoAndPlay(0)
-	end)
+	self._bgAnim:setVisible(false)
 
 	local anim1 = self._bgAnim:getChildByName("donghua")
 	local anim2 = anim1:getChildByName("niao")
@@ -824,6 +864,100 @@ function LoginMediator:initAnim(callback)
 		spineNode:setPosition(cc.p(0, -180))
 	end
 
+	self._bgAnim:gotoAndStop(113)
+
+	local curTime = self:getInjector():getInstance(GameServerAgent):remoteTimestamp()
+	local xsStartT = TimeUtil:getTimeByDateForTargetTimeInToday({
+		sec = 0,
+		min = 0,
+		hour = 6
+	})
+	local xsEndT = xsStartT + 43200
+
+	if xsStartT <= curTime and curTime <= xsEndT then
+		local anim = cc.MovieClip:create("bmian_baoshifudong")
+
+		anim:addTo(actionPanel)
+		anim:setPosition(cc.p(568, 320))
+
+		self._newBGAnim = anim
+		local hero = sp.SkeletonAnimation:create("asset/anim/dljm_xs.skel")
+
+		hero:addTo(actionPanel):posite(558, 35):setScale(0.53)
+		hero:playAnimation(0, "animation", true)
+
+		self._hero = hero
+		local posArr = {
+			{
+				scale = 0.92,
+				rolate = 6,
+				x = -60,
+				y = -520
+			},
+			{
+				scale = 0.95,
+				rolate = -2,
+				x = -905,
+				y = -330
+			},
+			{
+				scale = 0.93,
+				rolate = 0,
+				x = 780,
+				y = -438
+			}
+		}
+
+		for i = 1, 3 do
+			local shadow = ccui.ImageView:create("img_login_mj_role" .. i .. ".png", 1)
+
+			shadow:setScale(1.8867924528301885 * posArr[i].scale)
+			shadow:addTo(self._hero, -1):posite(posArr[i].x, posArr[i].y)
+			shadow:setRotation(posArr[i].rolate)
+		end
+	else
+		local anim = cc.MovieClip:create("amian_baoshifudong")
+
+		anim:addTo(actionPanel)
+		anim:setPosition(cc.p(568, 320))
+
+		self._newBGAnim = anim
+		local hero = sp.SkeletonAnimation:create("asset/anim/dljm_mj.skel")
+
+		hero:addTo(actionPanel):posite(558, -115)
+		hero:playAnimation(0, "animation", true)
+
+		self._hero = hero
+		local posArr = {
+			{
+				scale = 0.88,
+				rolate = 4,
+				x = 44,
+				y = -130
+			},
+			{
+				scale = 0.95,
+				rolate = -2,
+				x = -335,
+				y = -70
+			},
+			{
+				scale = 0.97,
+				rolate = 1,
+				x = 440,
+				y = 20
+			}
+		}
+
+		for i = 1, 3 do
+			local shadow = ccui.ImageView:create("img_login_xs_role" .. i .. ".png", 1)
+
+			shadow:setScale(posArr[i].scale)
+			shadow:addTo(self._hero, -1):posite(posArr[i].x, posArr[i].y)
+			shadow:setRotation(posArr[i].rolate)
+		end
+	end
+
 	local mc = cc.MovieClip:create("UI_denglu")
 
 	mc:addCallbackAtFrame(10, function ()
@@ -846,10 +980,9 @@ function LoginMediator:initAnim(callback)
 
 	local video = ccui.ImageView:create("asset/lang_common/dream_memory_logo.png")
 
-	video:setScale(0.7)
 	video:addTo(actionPanel)
 	video:setLocalZOrder(1000)
 	video:setContentSize(videoSize)
-	video:setPosition(videoPos)
+	video:setPosition(videoPos):offset(0, -50)
 	video:setName("LoginLogoAnim")
 end

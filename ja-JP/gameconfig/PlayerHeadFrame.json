@@ -79,16 +79,6 @@
         "ResourceDesc": "Frame_Actitity_YLSBai_Resource",
         "Reward": ""
     },
-    "Frame_Actitity_FSHDong": {
-        "Type": "ACTIVITY",
-        "Picture": "Frame_Actitity_FSHDong",
-        "Order": 7,
-        "Unlook": 1,
-        "Name": "Frame_Actitity_FSHDong_Name",
-        "Desc": "Frame_Actitity_FSHDong_Desc",
-        "ResourceDesc": "Frame_Actitity_FSHDong_Resource",
-        "Reward": ""
-    },
     "Frame_Actitity_WXHui": {
         "Type": "ACTIVITY",
         "Picture": "Frame_Actitity_WXHui",
@@ -137,6 +127,146 @@
         "Name": "Frame_Actitity_Guanwang_Name",
         "Desc": "Frame_Actitity_Guanwang_Desc",
         "ResourceDesc": "Frame_Actitity_Guanwang_Resource",
+        "Reward": ""
+    },
+    "Frame_Gemini": {
+        "Type": "ZODIAC",
+        "Picture": "Frame_Gemini",
+        "Order": 11,
+        "Unlook": 1,
+        "Name": "Frame_Gemini_Name",
+        "Desc": "Frame_Gemini_Desc",
+        "ResourceDesc": "Frame_Gemini_Resource",
+        "Reward": ""
+    },
+    "Frame_Activity_TVCM": {
+        "Type": "ACTIVITY",
+        "Picture": "Frame_Activity_TVCM",
+        "Order": 8,
+        "Unlook": 1,
+        "Name": "Frame_Activity_TVCM_Name",
+        "Desc": "Frame_Activity_TVCM_Resource",
+        "ResourceDesc": "Frame_Activity_TVCM_Desc",
+        "Reward": ""
+    },
+    "Frame_Sagittarius": {
+        "Type": "ZODIAC",
+        "Picture": "Frame_Sagittarius",
+        "Order": 17,
+        "Unlook": 1,
+        "Name": "Frame_Sagittarius_Name",
+        "Desc": "Frame_Sagittarius_Desc",
+        "ResourceDesc": "Frame_Sagittarius_Resource",
+        "Reward": ""
+    },
+    "Frame_Cancer": {
+        "Type": "ZODIAC",
+        "Picture": "Frame_Cancer",
+        "Order": 12,
+        "Unlook": 1,
+        "Name": "Frame_Cancer_Name",
+        "Desc": "Frame_Cancer_Desc",
+        "ResourceDesc": "Frame_Cancer_Resource",
+        "Reward": ""
+    },
+    "Frame_Libra": {
+        "Type": "ZODIAC",
+        "Picture": "Frame_Libra",
+        "Order": 15,
+        "Unlook": 1,
+        "Name": "Frame_Libra_Name",
+        "Desc": "Frame_Libra_Desc",
+        "ResourceDesc": "Frame_Libra_Resource",
+        "Reward": ""
+    },
+    "Frame_Deluxe": {
+        "Type": "ZODIAC",
+        "Picture": "Frame_Deluxe",
+        "Order": 21,
+        "Unlook": 1,
+        "Name": "Frame_Deluxes_Name",
+        "Desc": "Frame_Deluxe_Desc",
+        "ResourceDesc": "Frame_Deluxe_Resource",
+        "Reward": ""
+    },
+    "Frame_Pisces": {
+        "Type": "ZODIAC",
+        "Picture": "Frame_Pisces",
+        "Order": 20,
+        "Unlook": 1,
+        "Name": "Frame_Pisces_Name",
+        "Desc": "Frame_Pisces_Desc",
+        "ResourceDesc": "Frame_Pisces_Resource",
+        "Reward": ""
+    },
+    "Frame_Leo": {
+        "Type": "ZODIAC",
+        "Picture": "Frame_Leo",
+        "Order": 13,
+        "Unlook": 1,
+        "Name": "Frame_Leo_Name",
+        "Desc": "Frame_Leo_Desc",
+        "ResourceDesc": "Frame_Leo_Resource",
+        "Reward": ""
+    },
+    "Frame_Capricorn": {
+        "Type": "ZODIAC",
+        "Picture": "Frame_Capricorn",
+        "Order": 18,
+        "Unlook": 1,
+        "Name": "Frame_Capricorn_Name",
+        "Desc": "Frame_Capricorn_Desc",
+        "ResourceDesc": "Frame_Capricorn_Resource",
+        "Reward": ""
+    },
+    "Frame_Aries": {
+        "Type": "ZODIAC",
+        "Picture": "Frame_Aries",
+        "Order": 9,
+        "Unlook": 1,
+        "Name": "Frame_Aries_Name",
+        "Desc": "Frame_Aries_Desc",
+        "ResourceDesc": "Frame_Aries_Resource",
+        "Reward": ""
+    },
+    "Frame_Virgo": {
+        "Type": "ZODIAC",
+        "Picture": "Frame_Virgo",
+        "Order": 14,
+        "Unlook": 1,
+        "Name": "Frame_Virgo_Name",
+        "Desc": "Frame_Virgo_Desc",
+        "ResourceDesc": "Frame_Virgo_Resource",
+        "Reward": ""
+    },
+    "Frame_Scorpio": {
+        "Type": "ZODIAC",
+        "Picture": "Frame_Scorpio",
+        "Order": 16,
+        "Unlook": 1,
+        "Name": "Frame_Scorpio_Name",
+        "Desc": "Frame_Scorpio_Desc",
+        "ResourceDesc": "Frame_Scorpio_Resource",
+        "Reward": ""
+    },
+    "Frame_Taurus": {
+        "Type": "ZODIAC",
+        "Picture": "Frame_Taurus",
+        "Order": 10,
+        "Unlook": 1,
+        "Name": "Frame_Taurus_Name",
+        "Desc": "Frame_Taurus_Desc",
+        "ResourceDesc": "Frame_Taurus_Resource",
+        "Reward": ""
+    },
+    "Frame_Aquarius": {
+        "Type": "ZODIAC",
+        "Picture": "Frame_Aquarius",
+        "Order": 19,
+        "Unlook": 1,
+        "Name": "Frame_Aquarius_Name",
+        "Desc": "Frame_Aquarius_Desc",
+        "ResourceDesc": "Frame_Aquarius_Resource",
         "Reward": ""
     }
 }

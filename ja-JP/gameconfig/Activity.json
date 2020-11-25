@@ -957,70 +957,6 @@
         "Tag": "",
         "Version": ""
     },
-    "ActivityBlock_AchieveMentTask": {
-        "Type": "TASK",
-        "UI": "ABACHIEVEMENTTASK",
-        "LeftBanner": "",
-        "Title": "ActivityBlock_AchieveMentTask_Name",
-        "Desc": "",
-        "Time": "RANGE_CONTINUE",
-        "TimeFactor": {
-            "start": [
-                "2020-12-01 05:00:00",
-                "2020-12-09 05:00:00"
-            ],
-            "end": "2020-12-09 05:00:00"
-        },
-        "Loop": "",
-        "LoopFactor": "",
-        "ServerCondition": "",
-        "ClientCondition": {
-            "LEVEL": 3
-        },
-        "ActivityConfig": {
-            "progressItem": "IM_ChengjiuDian",
-            "task": [
-                "ActivityBlock_AchieveMentTask_1",
-                "ActivityBlock_AchieveMentTask_2",
-                "ActivityBlock_AchieveMentTask_3",
-                "ActivityBlock_AchieveMentTask_4",
-                "ActivityBlock_AchieveMentTask_5",
-                "ActivityBlock_AchieveMentTask_6",
-                "ActivityBlock_AchieveMentTask_7",
-                "ActivityBlock_AchieveMentTask_8",
-                "ActivityBlock_AchieveMentTask_9",
-                "ActivityBlock_AchieveMentTask_10",
-                "ActivityBlock_AchieveMentTask_11",
-                "ActivityBlock_AchieveMentTask_12",
-                "ActivityBlock_AchieveMentTask_13",
-                "ActivityBlock_AchieveMentTask_14",
-                "ActivityBlock_AchieveMentTask_15",
-                "ActivityBlock_AchieveMentTask_16",
-                "ActivityBlock_AchieveMentTask_17",
-                "ActivityBlock_AchieveMentTask_18",
-                "ActivityBlock_AchieveMentTask_19",
-                "ActivityBlock_AchieveMentTask_20",
-                "ActivityBlock_AchieveMentTask_21",
-                "ActivityBlock_AchieveMentTask_22",
-                "ActivityBlock_AchieveMentTask_23",
-                "ActivityBlock_AchieveMentTask_24"
-            ],
-            "Bmg": "renwu_bd_bj",
-            "titleImg": "hd_bg_fhj_2",
-            "progressDesc": "ABATask_Desc",
-            "entitle": "ABAchieveMentTask_entitle"
-        },
-        "Mail": 1,
-        "MailId": "Mail_Activity",
-        "Reset": 0,
-        "Enable": 1,
-        "Primary": 0,
-        "ShowTab": 1,
-        "ShowIndex": 2,
-        "Icon": "",
-        "Tag": "",
-        "Version": ""
-    },
     "ActivityBlock_WuXiuHui_ExtraMap": {
         "Type": "ExtraReward",
         "UI": "ExtraRewardBoard",
@@ -2317,102 +2253,6 @@
         "Tag": "",
         "Version": ""
     },
-    "ActivityBlock": {
-        "Type": "ActivityBlock",
-        "UI": "",
-        "LeftBanner": "",
-        "Title": "ActivityBlock_Name",
-        "Desc": "",
-        "Time": "RANGE_CONTINUE",
-        "TimeFactor": {
-            "start": [
-                "2020-12-01 05:00:00",
-                "2020-12-09 05:00:00"
-            ],
-            "end": "2020-12-09 05:00:00"
-        },
-        "Loop": "",
-        "LoopFactor": "",
-        "ServerCondition": "",
-        "ClientCondition": {
-            "LEVEL": 3
-        },
-        "ActivityConfig": {
-            "Bmg": "fhj_rk_bg",
-            "ActivityStaminaId": "IR_AcitvityStamina",
-            "SubActivityEndTip": "SubActivityEndTip_AB_1st",
-            "Activity": [
-                "ActivityBlock_Map",
-                "ActivityBlock_DailyTask",
-                "ActivityBlock_AchieveMentTask",
-                "ActivityBlock_Egg"
-            ],
-            "BonusHero": [
-                "YSTLu",
-                "LYSi",
-                "BEr"
-            ],
-            "Logo": "fhj_logo",
-            "ResourcesBanner": [
-                "IR_Gold",
-                "IR_Crystal",
-                "IR_AcitvityStamina",
-                "IR_Diamond"
-            ],
-            "RuleDesc": [
-                "ActivityTotal_RuleDesc_1",
-                "ActivityTotal_RuleDesc_2",
-                "ActivityTotal_RuleDesc_3",
-                "ActivityTotal_RuleDesc_4",
-                "ActivityTotal_RuleDesc_5"
-            ],
-            "ModelId": [
-                {
-                    "model": "LYSi",
-                    "type": "Hero",
-                    "desc": "ABModel_Desc1"
-                },
-                {
-                    "model": "YSTLu",
-                    "type": "Hero",
-                    "desc": "ABModel_Desc2"
-                },
-                {
-                    "model": "Surface_LYSi_2",
-                    "type": "Surface",
-                    "desc": "ABModel_Desc3"
-                },
-                {
-                    "url": "view://shopView&viewType=push&shopId=Shop_Surface",
-                    "model": "Surface_BEr_2",
-                    "type": "Surface",
-                    "desc": "ABModel_Desc4"
-                },
-                {
-                    "url": "view://shopView&viewType=push&shopId=Shop_Surface",
-                    "model": "Surface_ALSi_2",
-                    "type": "Surface",
-                    "desc": "ABModel_Desc5"
-                },
-                {
-                    "url": "view://shopView&viewType=push&shopId=Shop_Surface",
-                    "model": "Surface_DDing_2",
-                    "type": "Surface",
-                    "desc": "ABModel_Desc6"
-                }
-            ]
-        },
-        "Mail": 0,
-        "MailId": "",
-        "Reset": 0,
-        "Enable": 1,
-        "Primary": 1,
-        "ShowTab": 2,
-        "ShowIndex": 91,
-        "Icon": "",
-        "Tag": "",
-        "Version": ""
-    },
     "ActivityBlock_Egg": {
         "Type": "ActivityBlockEgg",
         "UI": "ACTIVITYBLOCKEGG",
@@ -2966,38 +2806,6 @@
         "Primary": 1,
         "ShowTab": 1,
         "ShowIndex": 99999,
-        "Icon": "",
-        "Tag": "",
-        "Version": ""
-    },
-    "Activity_Gashapon_20200727": {
-        "Type": "Gashapon",
-        "UI": "Gashapon",
-        "LeftBanner": "hd_btn_mhzb_bg",
-        "Title": "Activity_Gashapon_20200727_Name",
-        "Desc": "",
-        "Time": "PLAYER_REGISTER",
-        "TimeFactor": {
-            "start": 9,
-            "end": 29
-        },
-        "Loop": "",
-        "LoopFactor": "",
-        "ServerCondition": "",
-        "ClientCondition": {
-            "LEVEL": 1
-        },
-        "ActivityConfig": {
-            "ReFlash": 1,
-            "Gashapon": "Gashapon_1st_01"
-        },
-        "Mail": "",
-        "MailId": "",
-        "Reset": 1,
-        "Enable": 0,
-        "Primary": 1,
-        "ShowTab": 1,
-        "ShowIndex": 93003,
         "Icon": "",
         "Tag": "",
         "Version": ""
@@ -3869,42 +3677,6 @@
         "Tag": "",
         "Version": ""
     },
-    "DrawCard_1UP_6_Activity": {
-        "Type": "DRAWCARDOPEN",
-        "UI": "",
-        "LeftBanner": "",
-        "Title": "",
-        "Desc": "",
-        "Time": "RANGE_CONTINUE",
-        "TimeFactor": {
-            "start": [
-                "2020-09-18 05:00:00",
-                "2020-09-25 05:00:00"
-            ],
-            "end": "2020-09-25 05:00:00"
-        },
-        "Loop": "",
-        "LoopFactor": "",
-        "ServerCondition": "",
-        "ClientCondition": {
-            "LEVEL": 1
-        },
-        "ActivityConfig": {
-            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_6",
-            "DRAW": "DrawCard_1UP_6",
-            "VANISH": 0
-        },
-        "Mail": 0,
-        "MailId": "",
-        "Reset": 0,
-        "Enable": 0,
-        "Primary": 1,
-        "ShowTab": 0,
-        "ShowIndex": 101,
-        "Icon": "",
-        "Tag": "",
-        "Version": ""
-    },
     "DrawCard_2UP_2_Activity": {
         "Type": "DRAWCARDOPEN",
         "UI": "",
@@ -3989,49 +3761,6 @@
         "Icon": "",
         "Tag": "WONDERFUL",
         "Version": ""
-    },
-    "PeriodMail_1": {
-        "Type": "PERIODMAIL",
-        "UI": "",
-        "LeftBanner": "",
-        "Title": "",
-        "Desc": "",
-        "Time": "RANGE_RESTART",
-        "TimeFactor": {
-            "duration": 4000,
-            "start": [
-                "2018-03-05 05:00:00",
-                "2030-04-01 05:00:00"
-            ]
-        },
-        "Loop": "",
-        "LoopFactor": "",
-        "ServerCondition": "",
-        "ClientCondition": {
-            "REGPERIOD": [
-                "1586448000",
-                "10390885200"
-            ],
-            "REGISTER": 3
-        },
-        "ActivityConfig": {
-            "MailId": "Mail_PeriodMail"
-        },
-        "Mail": 0,
-        "MailId": "",
-        "Reset": 0,
-        "Enable": 0,
-        "Primary": 1,
-        "ShowTab": 1,
-        "ShowIndex": 99999,
-        "Icon": "",
-        "Tag": "",
-        "Version": {
-            "SDK": [
-                "dpstorm_android",
-                "dpstorm_ios"
-            ]
-        }
     },
     "DrawCard_2UP_5_Activity": {
         "Type": "DRAWCARDOPEN",
@@ -4928,6 +4657,209 @@
         "Tag": "",
         "Version": ""
     },
+    "DrawCard_1UP_6_Activity": {
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "LeftBanner": "",
+        "Title": "",
+        "Desc": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "start": [
+                "2020-12-01 05:00:00",
+                "2020-12-09 05:00:00"
+            ],
+            "end": "2020-12-09 05:00:00"
+        },
+        "Loop": "",
+        "LoopFactor": "",
+        "ServerCondition": "",
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "ActivityConfig": {
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_6",
+            "DRAW": "DrawCard_1UP_6",
+            "VANISH": 0
+        },
+        "Mail": 0,
+        "MailId": "",
+        "Reset": 0,
+        "Enable": 1,
+        "Primary": 1,
+        "ShowTab": 0,
+        "ShowIndex": 101,
+        "Icon": "",
+        "Tag": "",
+        "Version": ""
+    },
+    "Activity_Gashapon_20200727": {
+        "Type": "Gashapon",
+        "UI": "Gashapon",
+        "LeftBanner": "hd_btn_mhzb_bg",
+        "Title": "Activity_Gashapon_20200727_Name",
+        "Desc": "",
+        "Time": "PLAYER_REGISTER",
+        "TimeFactor": {
+            "start": 9,
+            "end": 29
+        },
+        "Loop": "",
+        "LoopFactor": "",
+        "ServerCondition": "",
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "ActivityConfig": {
+            "ReFlash": 1,
+            "Gashapon": "Gashapon_1st_01"
+        },
+        "Mail": "",
+        "MailId": "",
+        "Reset": 1,
+        "Enable": 1,
+        "Primary": 1,
+        "ShowTab": 1,
+        "ShowIndex": 93003,
+        "Icon": "",
+        "Tag": "",
+        "Version": ""
+    },
+    "ActivityBlock": {
+        "Type": "ActivityBlock",
+        "UI": "ACTIVITYBLOCKGOLDEGG",
+        "LeftBanner": "",
+        "Title": "ActivityBlock_Name",
+        "Desc": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "start": [
+                "2020-12-01 05:00:00",
+                "2020-12-09 05:00:00"
+            ],
+            "end": "2020-12-09 05:00:00"
+        },
+        "Loop": "",
+        "LoopFactor": "",
+        "ServerCondition": "",
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "ActivityConfig": {
+            "Bmg": "fhj_rk_bg",
+            "ActivityStaminaId": "IR_AcitvityStamina",
+            "SubActivityEndTip": "SubActivityEndTip_AB_1st",
+            "Activity": [
+                "ActivityBlock_Map",
+                "ActivityBlock_DailyTask",
+                "ActivityBlock_AchieveMentTask",
+                "ActivityBlock_Egg"
+            ],
+            "BonusHero": [
+                "YSTLu",
+                "LYSi",
+                "BEr"
+            ],
+            "Logo": "fhj_logo",
+            "ResourcesBanner": [
+                "IR_Gold",
+                "IR_Crystal",
+                "IR_AcitvityStamina",
+                "IR_Diamond"
+            ],
+            "RuleDesc": [
+                "ActivityTotal_RuleDesc_1",
+                "ActivityTotal_RuleDesc_2",
+                "ActivityTotal_RuleDesc_3",
+                "ActivityTotal_RuleDesc_4",
+                "ActivityTotal_RuleDesc_5"
+            ],
+            "ModelId": [
+                {
+                    "model": "LYSi",
+                    "type": "Hero",
+                    "desc": "ABModel_Desc1"
+                },
+                {
+                    "model": "YSTLu",
+                    "type": "Hero",
+                    "desc": "ABModel_Desc2"
+                },
+                {
+                    "model": "Surface_LYSi_2",
+                    "type": "Surface",
+                    "desc": "ABModel_Desc3"
+                },
+                {
+                    "url": "view://shopView&viewType=push&shopId=Shop_Surface",
+                    "model": "Surface_BEr_2",
+                    "type": "Surface",
+                    "desc": "ABModel_Desc4"
+                },
+                {
+                    "url": "view://shopView&viewType=push&shopId=Shop_Surface",
+                    "model": "Surface_ALSi_2",
+                    "type": "Surface",
+                    "desc": "ABModel_Desc5"
+                },
+                {
+                    "url": "view://shopView&viewType=push&shopId=Shop_Surface",
+                    "model": "Surface_DDing_2",
+                    "type": "Surface",
+                    "desc": "ABModel_Desc6"
+                }
+            ]
+        },
+        "Mail": 0,
+        "MailId": "",
+        "Reset": 0,
+        "Enable": 1,
+        "Primary": 1,
+        "ShowTab": 2,
+        "ShowIndex": 91,
+        "Icon": "",
+        "Tag": "",
+        "Version": ""
+    },
+    "PeriodMail_1": {
+        "Type": "PERIODMAIL",
+        "UI": "",
+        "LeftBanner": "",
+        "Title": "",
+        "Desc": "",
+        "Time": "RANGE_RESTART",
+        "TimeFactor": {
+            "duration": 4000,
+            "start": [
+                "2018-03-05 05:00:00",
+                "2030-04-01 05:00:00"
+            ]
+        },
+        "Loop": "",
+        "LoopFactor": "",
+        "ServerCondition": "",
+        "ClientCondition": {
+            "REGISTER": 3
+        },
+        "ActivityConfig": {
+            "MailId": "Mail_PeriodMail"
+        },
+        "Mail": 0,
+        "MailId": "",
+        "Reset": 0,
+        "Enable": 1,
+        "Primary": 1,
+        "ShowTab": 1,
+        "ShowIndex": 99999,
+        "Icon": "",
+        "Tag": "",
+        "Version": {
+            "SDK": [
+                "dpstorm_android",
+                "dpstorm_ios"
+            ]
+        }
+    },
     "DrawCard_Club_1_Activity": {
         "Type": "DRAWCARDOPEN",
         "UI": "",
@@ -4940,13 +4872,13 @@
                 "2020-10-12 05:00:00",
                 "2020-12-31 05:00:00"
             ],
-            "end": "2020-12-31 05:00:00"
+            "end": "2021-12-31 05:00:00"
         },
         "Loop": "",
         "LoopFactor": "",
         "ServerCondition": "",
         "ClientCondition": {
-            "LEVEL": 1
+            "STAGE": "M05S09"
         },
         "ActivityConfig": {
             "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_Club_1_Activity",
@@ -4976,13 +4908,13 @@
                 "2020-10-12 05:00:00",
                 "2020-12-31 05:00:00"
             ],
-            "end": "2020-12-31 05:00:00"
+            "end": "2021-12-31 05:00:00"
         },
         "Loop": "",
         "LoopFactor": "",
         "ServerCondition": "",
         "ClientCondition": {
-            "LEVEL": 1
+            "STAGE": "M05S15"
         },
         "ActivityConfig": {
             "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_Pvp_1_Activity",
@@ -5000,6 +4932,64 @@
         "Tag": "",
         "Version": ""
     },
+    "ActivityBlock_AchieveMentTask": {
+        "Type": "TASK",
+        "UI": "ABACHIEVEMENTTASK",
+        "LeftBanner": "",
+        "Title": "ActivityBlock_AchieveMentTask_Name",
+        "Desc": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "start": [
+                "2020-12-01 05:00:00",
+                "2020-12-09 05:00:00"
+            ],
+            "end": "2020-12-09 05:00:00"
+        },
+        "Loop": "",
+        "LoopFactor": "",
+        "ServerCondition": "",
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "ActivityConfig": {
+            "progressItem": "IM_ChengjiuDian",
+            "task": [
+                "ActivityBlock_AchieveMentTask_1",
+                "ActivityBlock_AchieveMentTask_2",
+                "ActivityBlock_AchieveMentTask_3",
+                "ActivityBlock_AchieveMentTask_4",
+                "ActivityBlock_AchieveMentTask_5",
+                "ActivityBlock_AchieveMentTask_6",
+                "ActivityBlock_AchieveMentTask_7",
+                "ActivityBlock_AchieveMentTask_8",
+                "ActivityBlock_AchieveMentTask_9",
+                "ActivityBlock_AchieveMentTask_10",
+                "ActivityBlock_AchieveMentTask_11",
+                "ActivityBlock_AchieveMentTask_12",
+                "ActivityBlock_AchieveMentTask_13",
+                "ActivityBlock_AchieveMentTask_14",
+                "ActivityBlock_AchieveMentTask_15",
+                "ActivityBlock_AchieveMentTask_16",
+                "ActivityBlock_AchieveMentTask_17",
+                "ActivityBlock_AchieveMentTask_18"
+            ],
+            "Bmg": "renwu_bd_bj",
+            "titleImg": "hd_bg_fhj_1",
+            "progressDesc": "ABATask_Desc",
+            "entitle": "ABAchieveMentTask_entitle"
+        },
+        "Mail": 1,
+        "MailId": "Mail_Activity",
+        "Reset": 0,
+        "Enable": 1,
+        "Primary": 0,
+        "ShowTab": 1,
+        "ShowIndex": 2,
+        "Icon": "",
+        "Tag": "",
+        "Version": ""
+    },
     "DrawCard_Pve_1_Activity": {
         "Type": "DRAWCARDOPEN",
         "UI": "",
@@ -5012,13 +5002,13 @@
                 "2020-10-12 05:00:00",
                 "2020-12-31 05:00:00"
             ],
-            "end": "2020-12-31 05:00:00"
+            "end": "2021-12-31 05:00:00"
         },
         "Loop": "",
         "LoopFactor": "",
         "ServerCondition": "",
         "ClientCondition": {
-            "LEVEL": 1
+            "STAGE": "M06S19"
         },
         "ActivityConfig": {
             "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_Pve_1_Activity",

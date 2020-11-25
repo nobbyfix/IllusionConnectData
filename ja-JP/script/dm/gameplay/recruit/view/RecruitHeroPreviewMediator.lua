@@ -521,7 +521,29 @@ function RecruitHeroPreviewMediator:setDescView()
 	local id = self._recruitPool:getId()
 	local cardType = self._recruitPool:getType()
 	local descList = self._recruitPool:getDescList()
-	local text1 = self._descPanel:getChildByName("text1")
+	local listView = self._descPanel:getChildByName("ListView_desc")
+
+	listView:setScrollBarEnabled(false)
+
+	if not listView.descLayout then
+		local layout = ccui.Layout:create()
+
+		listView:pushBackCustomItem(layout)
+
+		local text1 = self._descPanel:getChildByName("text1")
+
+		text1:changeParent(layout):posite(0, 0):setName("text")
+		text1:getVirtualRenderer():setDimensions(747, 0)
+
+		local richText = ccui.RichText:createWithXML("", {})
+
+		richText:setAnchorPoint(cc.p(0, 0))
+		richText:addTo(layout):posite(0, 0):setName("special_text")
+
+		listView.descLayout = layout
+	end
+
+	local text1 = listView.descLayout:getChildByName("text")
 
 	self._descPanel:getChildByName("text2"):setString("")
 
@@ -538,6 +560,29 @@ function RecruitHeroPreviewMediator:setDescView()
 	else
 		text1:setString(Strings:get("Recruit_UI14") .. "\n" .. Strings:get("Recruit_UI15"))
 	end
+
+	local specialText = listView.descLayout:getChildByName("special_text")
+	local specialList = self._recruitPool:getSpecialDescList()
+
+	if specialList and #specialList > 0 then
+		local string = Strings:get(specialList[1], {
+			fontName = TTF_FONT_FZYH_M
+		})
+
+		for i = 2, #specialList do
+			string = string .. "<br/>" .. Strings:get(specialList[i], {
+				fontName = TTF_FONT_FZYH_M
+			})
+		end
+
+		specialText:setString(string)
+		specialText:renderContent(747, 0)
+	end
+
+	local specialSize = specialText:getContentSize()
+
+	listView.descLayout:setContentSize(cc.size(748, text1:getContentSize().height + specialSize.height))
+	text1:setPositionY(specialSize.height)
 
 	local descData = self._previewData[TabType.kDesc]
 	local data = {}

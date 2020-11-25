@@ -201,6 +201,7 @@ function TowerMainMediator:setRewardView(...)
 	awakenBuff:setString(Strings:get(awakeData.EffectDesc, {
 		Value = awakeData.Value
 	}))
+	buffPanel:getChildByFullName("awakenBuff"):setVisible(false)
 end
 
 function TowerMainMediator:addBeginMovieClipPanel()

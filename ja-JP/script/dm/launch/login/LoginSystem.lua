@@ -269,27 +269,6 @@ function LoginSystem:requestPlayerInfo(callback)
 
 			developSystem:syncPlayer(response.data.player)
 
-			if SDKHelper and SDKHelper:isEnableSdk() then
-				local isnew = response.data.is_new
-
-				if isnew == 1 then
-					local developSystem = self:getInjector():getInstance(DevelopSystem)
-					local player = developSystem:getPlayer()
-
-					SDKHelper:reportCreate({
-						roleName = tostring(player:getNickName()),
-						roleId = tostring(player:getRid()),
-						roleLevel = tostring(player:getLevel()),
-						roleCombat = checkint(developSystem:getCombat()),
-						serverId = serverInfo:getSecId(),
-						serverName = serverInfo:getName(),
-						createTime = tostring(player:getCreateTime()),
-						ip = tostring(serverInfo:getIp()),
-						port = tostring(serverInfo:getPort())
-					})
-				end
-			end
-
 			local pushSystem = self:getInjector():getInstance(PushSystem)
 
 			pushSystem:listen()

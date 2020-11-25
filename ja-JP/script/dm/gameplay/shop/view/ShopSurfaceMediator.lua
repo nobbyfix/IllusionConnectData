@@ -105,7 +105,6 @@ function ShopSurfaceMediator:initMember()
 	self._limitPanel = self._rolePanel0:getChildByFullName("limitPanel")
 
 	self._limitPanel:setVisible(false)
-	self._limitPanel:getChildByFullName("text"):setLineSpacing(-9)
 
 	self._surfaceName = self._rolePanel0:getChildByFullName("surfaceName")
 	self._infoPanel = self._rolePanel1:getChildByFullName("infoPanel")

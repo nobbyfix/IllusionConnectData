@@ -3743,124 +3743,6 @@
         "HistoryHero": "HistoryName_PNCao",
         "HeroReward": "GalleryHeroReward_SR"
     },
-    "SDTZi": {
-        "InfoDesc1": {
-            "SDTZi_InfoDesc1": [
-                1,
-                50
-            ]
-        },
-        "InfoDesc2": {
-            "SDTZi_InfoDesc2": [
-                3,
-                125
-            ]
-        },
-        "InfoDesc3": {
-            "SDTZi_InfoDesc3": [
-                4,
-                200
-            ]
-        },
-        "InfoDesc4": {
-            "SDTZi_InfoDesc4": [
-                1,
-                50
-            ]
-        },
-        "InfoDesc5": {
-            "SDTZi_InfoDesc5": [
-                3,
-                125
-            ]
-        },
-        "InfoDesc6": {
-            "SDTZi_InfoDesc6": [
-                4,
-                200
-            ]
-        },
-        "InfoDesc7": {
-            "SDTZi_InfoDesc7": [
-                1,
-                50
-            ]
-        },
-        "InfoDesc8": {
-            "SDTZi_InfoDesc8": [
-                3,
-                125
-            ]
-        },
-        "InfoDesc9": {
-            "SDTZi_InfoDesc9": [
-                4,
-                200
-            ]
-        },
-        "GossipDesc": {
-            "SDTZi_GossipDesc_1": [
-                32,
-                37,
-                "album_bg_tag03"
-            ],
-            "SDTZi_GossipDesc_2": [
-                24,
-                247,
-                "album_bg_tag02"
-            ],
-            "SDTZi_GossipDesc_3": [
-                329,
-                266,
-                "album_bg_tag03"
-            ]
-        },
-        "BGPic": "album_bg_dryl_txd",
-        "HeroStory": [
-            {
-                "need": [
-                    1,
-                    0
-                ],
-                "desc": "SDTZi_StoryDesc1",
-                "title": "SDTZi_StoryTitle1"
-            },
-            {
-                "need": [
-                    2,
-                    150
-                ],
-                "desc": "SDTZi_StoryDesc2",
-                "title": "SDTZi_StoryTitle2"
-            },
-            {
-                "need": [
-                    4,
-                    400
-                ],
-                "desc": "SDTZi_StoryDesc3",
-                "title": "SDTZi_StoryTitle3"
-            },
-            {
-                "need": [
-                    5,
-                    600
-                ],
-                "desc": "SDTZi_StoryDesc4",
-                "title": "SDTZi_StoryTitle4"
-            },
-            {
-                "need": [
-                    6,
-                    800
-                ],
-                "desc": "SDTZi_StoryDesc5",
-                "title": "SDTZi_StoryTitle5"
-            }
-        ],
-        "HistoryHero": "HistoryName_SDTZi",
-        "HeroReward": "GalleryHeroReward_SSR"
-    },
     "DNTLuo": {
         "InfoDesc1": {
             "DNTLuo_InfoDesc1": [
@@ -8515,6 +8397,124 @@
             }
         ],
         "HistoryHero": "HistoryName_SGHQShou",
+        "HeroReward": "GalleryHeroReward_SSR"
+    },
+    "SDTZi": {
+        "InfoDesc1": {
+            "SDTZi_InfoDesc1": [
+                1,
+                50
+            ]
+        },
+        "InfoDesc2": {
+            "SDTZi_InfoDesc2": [
+                3,
+                125
+            ]
+        },
+        "InfoDesc3": {
+            "SDTZi_InfoDesc3": [
+                4,
+                200
+            ]
+        },
+        "InfoDesc4": {
+            "SDTZi_InfoDesc4": [
+                1,
+                50
+            ]
+        },
+        "InfoDesc5": {
+            "SDTZi_InfoDesc5": [
+                3,
+                125
+            ]
+        },
+        "InfoDesc6": {
+            "SDTZi_InfoDesc6": [
+                4,
+                200
+            ]
+        },
+        "InfoDesc7": {
+            "SDTZi_InfoDesc7": [
+                1,
+                50
+            ]
+        },
+        "InfoDesc8": {
+            "SDTZi_InfoDesc8": [
+                3,
+                125
+            ]
+        },
+        "InfoDesc9": {
+            "SDTZi_InfoDesc9": [
+                4,
+                200
+            ]
+        },
+        "GossipDesc": {
+            "SDTZi_GossipDesc_1": [
+                32,
+                37,
+                "album_bg_tag03"
+            ],
+            "SDTZi_GossipDesc_2": [
+                24,
+                397,
+                "album_bg_tag02"
+            ],
+            "SDTZi_GossipDesc_3": [
+                329,
+                266,
+                "album_bg_tag03"
+            ]
+        },
+        "BGPic": "album_bg_dryl_txd",
+        "HeroStory": [
+            {
+                "need": [
+                    1,
+                    0
+                ],
+                "desc": "SDTZi_StoryDesc1",
+                "title": "SDTZi_StoryTitle1"
+            },
+            {
+                "need": [
+                    2,
+                    150
+                ],
+                "desc": "SDTZi_StoryDesc2",
+                "title": "SDTZi_StoryTitle2"
+            },
+            {
+                "need": [
+                    4,
+                    400
+                ],
+                "desc": "SDTZi_StoryDesc3",
+                "title": "SDTZi_StoryTitle3"
+            },
+            {
+                "need": [
+                    5,
+                    600
+                ],
+                "desc": "SDTZi_StoryDesc4",
+                "title": "SDTZi_StoryTitle4"
+            },
+            {
+                "need": [
+                    6,
+                    800
+                ],
+                "desc": "SDTZi_StoryDesc5",
+                "title": "SDTZi_StoryTitle5"
+            }
+        ],
+        "HistoryHero": "HistoryName_SDTZi",
         "HeroReward": "GalleryHeroReward_SSR"
     }
 }

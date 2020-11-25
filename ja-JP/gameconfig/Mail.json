@@ -1298,5 +1298,18 @@
         "SubType": 1,
         "QuickGet": 1,
         "Icon": ""
+    },
+    "Mail_First_Reserve_JP": {
+        "Type": "USER",
+        "Title": "Mail_First_Reserve_JP_Title",
+        "Content": "Mail_First_Reserve_JP_Content",
+        "ExpireAfterRead": 72000,
+        "Name": "Mail_First_Reserve_JP_Name",
+        "ExpireTime": 0,
+        "Reward": "Mail_First_Reserve_JP_Reward",
+        "TopStatus": 0,
+        "SubType": 1,
+        "QuickGet": 1,
+        "Icon": ""
     }
 }

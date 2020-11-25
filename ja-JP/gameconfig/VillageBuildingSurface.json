@@ -263,39 +263,6 @@
         "BuildInteractionType": "",
         "SpecialEffectsPosition": ""
     },
-    "VillageSurface_Decorate_GameWith1_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "Decorate_GameWith1",
-        "Name": "VillageSurface_Decorate_GameWith1_1_Desc",
-        "Desc": "VillageSurface_Decorate_GameWith1_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_Decorate_GameWith1_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_niconicozhuozi_smc",
-        "Response": "VillageBuild91",
-        "PicScale": [
-            0.85,
-            0.8,
-            0.4
-        ],
-        "BuildDeviation": [
-            -19.7,
-            7.1
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 102,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
     "VillageSurface_Dianshi_1": {
         "SystemBuilding": "",
         "DecorateBuilding": "Dianshi",
@@ -608,39 +575,6 @@
         "VillageEffect": "",
         "Unlook": 0,
         "Sort": 31,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_Decorate_GameWith3_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "Decorate_GameWith3",
-        "Name": "VillageSurface_Decorate_GameWith1_3_Desc",
-        "Desc": "VillageSurface_Decorate_GameWith1_3_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_Decorate_GameWith1_3_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_niconicoyizi_smc",
-        "Response": "VillageBuild93",
-        "PicScale": [
-            1.1,
-            1,
-            0.6
-        ],
-        "BuildDeviation": [
-            0.5,
-            20
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 104,
         "Comfort": 0,
         "BuildInteractionType": "",
         "SpecialEffectsPosition": ""
@@ -1593,39 +1527,6 @@
         "BuildInteractionType": "",
         "SpecialEffectsPosition": ""
     },
-    "VillageSurface_Decorate_GameWith2_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "Decorate_GameWith2",
-        "Name": "VillageSurface_Decorate_GameWith1_2_Desc",
-        "Desc": "VillageSurface_Decorate_GameWith1_2_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_Decorate_GameWith1_2_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_niconicoguizi_smc",
-        "Response": "VillageBuild92",
-        "PicScale": [
-            0.6,
-            0.6,
-            0.4
-        ],
-        "BuildDeviation": [
-            36.7,
-            7
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 103,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
     "VillageSurface_luoditaideng_1": {
         "SystemBuilding": "",
         "DecorateBuilding": "luoditaideng",
@@ -2322,6 +2223,105 @@
         "Sort": 72,
         "Comfort": 0,
         "BuildInteractionType": "Yizi",
+        "SpecialEffectsPosition": ""
+    },
+    "VillageSurface_Decorate_GameWith3_1": {
+        "SystemBuilding": "",
+        "DecorateBuilding": "Decorate_GameWith3",
+        "Name": "VillageSurface_Decorate_GameWith1_3_Name",
+        "Desc": "VillageSurface_Decorate_GameWith1_3_Desc",
+        "Condition": {
+            "Level": 1
+        },
+        "UnlockDesc": "VillageSurface_Decorate_GameWith1_3_UnlockDesc",
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_niconicoyizi_smc",
+        "Response": "VillageBuild93",
+        "PicScale": [
+            1.1,
+            1,
+            0.6
+        ],
+        "BuildDeviation": [
+            0.5,
+            20
+        ],
+        "VillageEffect": "",
+        "Unlook": 0,
+        "Sort": 104,
+        "Comfort": 0,
+        "BuildInteractionType": "",
+        "SpecialEffectsPosition": ""
+    },
+    "VillageSurface_Decorate_GameWith1_1": {
+        "SystemBuilding": "",
+        "DecorateBuilding": "Decorate_GameWith1",
+        "Name": "VillageSurface_Decorate_GameWith1_1_Name",
+        "Desc": "VillageSurface_Decorate_GameWith1_1_Desc",
+        "Condition": {
+            "Level": 1
+        },
+        "UnlockDesc": "VillageSurface_Decorate_GameWith1_1_UnlockDesc",
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_niconicozhuozi_smc",
+        "Response": "VillageBuild91",
+        "PicScale": [
+            0.85,
+            0.8,
+            0.4
+        ],
+        "BuildDeviation": [
+            -19.7,
+            7.1
+        ],
+        "VillageEffect": "",
+        "Unlook": 0,
+        "Sort": 102,
+        "Comfort": 0,
+        "BuildInteractionType": "",
+        "SpecialEffectsPosition": ""
+    },
+    "VillageSurface_Decorate_GameWith2_1": {
+        "SystemBuilding": "",
+        "DecorateBuilding": "Decorate_GameWith2",
+        "Name": "VillageSurface_Decorate_GameWith1_2_Name",
+        "Desc": "VillageSurface_Decorate_GameWith1_2_Desc",
+        "Condition": {
+            "Level": 1
+        },
+        "UnlockDesc": "VillageSurface_Decorate_GameWith1_2_UnlockDesc",
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_niconicoguizi_smc",
+        "Response": "VillageBuild92",
+        "PicScale": [
+            0.6,
+            0.6,
+            0.4
+        ],
+        "BuildDeviation": [
+            36.7,
+            7
+        ],
+        "VillageEffect": "",
+        "Unlook": 0,
+        "Sort": 103,
+        "Comfort": 0,
+        "BuildInteractionType": "",
         "SpecialEffectsPosition": ""
     }
 }

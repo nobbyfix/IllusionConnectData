@@ -1583,3 +1583,27 @@ function ShopSystem:getVersionCanBuy(data, tips)
 
 	return true
 end
+
+function ShopSystem:getMonthCardHeadFrame()
+	local data = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Test_RealTime", "content")
+	local curTime = self._gameServerAgent:remoteTimestamp()
+
+	if data then
+		for i, v in pairs(data.normal) do
+			local startDate = TimeUtil:parseDateTime({}, v.start)
+			local endDate = TimeUtil:parseDateTime({}, v["end"])
+			local startT = TimeUtil:getTimeByDateForTargetTime(startDate)
+			local endT = TimeUtil:getTimeByDateForTargetTime(endDate)
+
+			if startT <= curTime and curTime <= endT then
+				local rewards = ConfigReader:getDataByNameIdAndKey("Reward", v.reward, "Content")
+
+				for _, reward in pairs(rewards) do
+					if reward.type == 14 then
+						return reward
+					end
+				end
+			end
+		end
+	end
+end

@@ -1138,5 +1138,113 @@
         "ShopSort": "TimeLimitShop",
         "WindowIcon": "",
         "GameCoin": ""
+    },
+    "PackageShop_TL_HuanMeng_3": {
+        "Name": "PackageShop_TL_HuanMeng_3_Name",
+        "Platform": "ios",
+        "ItemShow": "PackageShop_TL_HuanMeng_3_Reward",
+        "Item": "PackageShop_TL_HuanMeng_3_Reward",
+        "Sort": 10,
+        "IsFree": 0,
+        "Price": "",
+        "Desc": "PackageShop_TL_HuanMeng_3_Desc",
+        "Icon": "sd_YGHM_lianjiezhimixin",
+        "Quality": 5,
+        "Tag": "",
+        "CostOffTag": 9.0,
+        "TimeTag": 1,
+        "TimeType": {
+            "start": "2020-12-01 05:00:00",
+            "amount": 3,
+            "end": "2020-12-09 05:00:00",
+            "type": "limit"
+        },
+        "CoolDown": "",
+        "ServerCondition": "",
+        "ClientCondition": [
+            {
+                "LEVEL": 5
+            }
+        ],
+        "Hide": 1,
+        "Prepose": "",
+        "Vanish": "",
+        "Pay": "Pay_PackageShop_TL_HuanMeng_3",
+        "Version": "",
+        "ShopSort": "PackageShop",
+        "WindowIcon": "",
+        "GameCoin": ""
+    },
+    "PackageShop_TL_HuanMeng_5": {
+        "Name": "PackageShop_TL_HuanMeng_5_Name",
+        "Platform": "ios",
+        "ItemShow": "PackageShop_TL_HuanMeng_5_Reward",
+        "Item": "PackageShop_TL_HuanMeng_5_Reward",
+        "Sort": 12,
+        "IsFree": 0,
+        "Price": "",
+        "Desc": "PackageShop_TL_HuanMeng_5_Desc",
+        "Icon": "sd_YGHM_huanmengdejingjie",
+        "Quality": 5,
+        "Tag": "",
+        "CostOffTag": 9.0,
+        "TimeTag": 1,
+        "TimeType": {
+            "start": "2020-12-01 05:00:00",
+            "amount": 1,
+            "end": "2020-12-09 05:00:00",
+            "type": "limit"
+        },
+        "CoolDown": "",
+        "ServerCondition": "",
+        "ClientCondition": [
+            {
+                "LEVEL": 5
+            }
+        ],
+        "Hide": 1,
+        "Prepose": "",
+        "Vanish": "",
+        "Pay": "Pay_PackageShop_TL_HuanMeng_5",
+        "Version": "",
+        "ShopSort": "PackageShop",
+        "WindowIcon": "",
+        "GameCoin": ""
+    },
+    "PackageShop_TL_HuanMeng_4": {
+        "Name": "PackageShop_TL_HuanMeng_4_Name",
+        "Platform": "ios",
+        "ItemShow": "PackageShop_TL_HuanMeng_4_Reward",
+        "Item": "PackageShop_TL_HuanMeng_4_Reward",
+        "Sort": 11,
+        "IsFree": 0,
+        "Price": "",
+        "Desc": "PackageShop_TL_HuanMeng_4_Desc",
+        "Icon": "sd_YGHM_maojiangdeshouyihe",
+        "Quality": 5,
+        "Tag": "",
+        "CostOffTag": 1.0,
+        "TimeTag": 1,
+        "TimeType": {
+            "start": "2020-12-01 05:00:00",
+            "amount": 1,
+            "end": "2020-12-09 05:00:00",
+            "type": "limit"
+        },
+        "CoolDown": "",
+        "ServerCondition": "",
+        "ClientCondition": [
+            {
+                "LEVEL": 5
+            }
+        ],
+        "Hide": 1,
+        "Prepose": "",
+        "Vanish": "",
+        "Pay": "Pay_PackageShop_TL_HuanMeng_4",
+        "Version": "",
+        "ShopSort": "PackageShop",
+        "WindowIcon": "",
+        "GameCoin": ""
     }
 }

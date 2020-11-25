@@ -1,4 +1,61 @@
 {
+    "LoadingTips_PVE009": {
+        "Type": "PVE",
+        "Background": {
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg",
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
+            ]
+        },
+        "Content": {
+            "quanzhong": [
+                1000,
+                1000,
+                1000,
+                1000,
+                1000,
+                1000
+            ],
+            "img": [
+                "LoadingTips_PVE001",
+                "LoadingTips_PVE002",
+                "LoadingTips_PVE003",
+                "LoadingTips_PVE004",
+                "LoadingTips_PVE005",
+                "LoadingTips_PVE006"
+            ]
+        },
+        "WaitingTime": 1000,
+        "FirstLoading": ""
+    },
     "Loading_Maze001": {
         "Type": "Maze",
         "Background": {
@@ -20,8 +77,8 @@
             ],
             "img": [
                 "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
                 "bg_pve_cg_04.jpg",
                 "bg_pve_cg_05.jpg",
                 "bg_pve_cg_06.jpg",
@@ -30,9 +87,9 @@
                 "bg_pve_cg_09.jpg",
                 "bg_pve_cg_10.jpg",
                 "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
             ]
         },
         "Content": {
@@ -77,8 +134,8 @@
             ],
             "img": [
                 "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
                 "bg_pve_cg_04.jpg",
                 "bg_pve_cg_05.jpg",
                 "bg_pve_cg_06.jpg",
@@ -87,9 +144,9 @@
                 "bg_pve_cg_09.jpg",
                 "bg_pve_cg_10.jpg",
                 "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
             ]
         },
         "Content": {
@@ -126,8 +183,8 @@
             ],
             "img": [
                 "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
                 "bg_pve_cg_04.jpg",
                 "bg_pve_cg_05.jpg",
                 "bg_pve_cg_06.jpg",
@@ -136,9 +193,9 @@
                 "bg_pve_cg_09.jpg",
                 "bg_pve_cg_10.jpg",
                 "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
             ]
         },
         "Content": {
@@ -173,8 +230,8 @@
             ],
             "img": [
                 "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
                 "bg_pve_cg_04.jpg",
                 "bg_pve_cg_05.jpg",
                 "bg_pve_cg_06.jpg",
@@ -183,9 +240,9 @@
                 "bg_pve_cg_09.jpg",
                 "bg_pve_cg_10.jpg",
                 "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
             ]
         },
         "Content": {
@@ -209,8 +266,8 @@
         "WaitingTime": 1000,
         "FirstLoading": 0
     },
-    "Loading_StageCrystal001": {
-        "Type": "StageCrystal",
+    "Loading_MapExplore001": {
+        "Type": "MapExplore",
         "Background": {
             "quanzhong": [
                 1,
@@ -230,8 +287,8 @@
             ],
             "img": [
                 "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
                 "bg_pve_cg_04.jpg",
                 "bg_pve_cg_05.jpg",
                 "bg_pve_cg_06.jpg",
@@ -240,9 +297,9 @@
                 "bg_pve_cg_09.jpg",
                 "bg_pve_cg_10.jpg",
                 "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
             ]
         },
         "Content": {
@@ -250,7 +307,7 @@
                 1000
             ],
             "img": [
-                "LoadingTips_StageCrystal002"
+                "LoadingTips_MapExplore001"
             ]
         },
         "WaitingTime": 1000,
@@ -277,8 +334,8 @@
             ],
             "img": [
                 "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
                 "bg_pve_cg_04.jpg",
                 "bg_pve_cg_05.jpg",
                 "bg_pve_cg_06.jpg",
@@ -287,9 +344,9 @@
                 "bg_pve_cg_09.jpg",
                 "bg_pve_cg_10.jpg",
                 "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
             ]
         },
         "Content": {
@@ -324,8 +381,8 @@
             ],
             "img": [
                 "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
                 "bg_pve_cg_04.jpg",
                 "bg_pve_cg_05.jpg",
                 "bg_pve_cg_06.jpg",
@@ -334,9 +391,9 @@
                 "bg_pve_cg_09.jpg",
                 "bg_pve_cg_10.jpg",
                 "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
             ]
         },
         "Content": {
@@ -354,8 +411,8 @@
         "WaitingTime": 1000,
         "FirstLoading": 0
     },
-    "Loading_StageNormal001": {
-        "Type": "StageNormal",
+    "LoadingTips_Buildfirst": {
+        "Type": "None",
         "Background": {
             "quanzhong": [
                 1,
@@ -375,8 +432,8 @@
             ],
             "img": [
                 "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
                 "bg_pve_cg_04.jpg",
                 "bg_pve_cg_05.jpg",
                 "bg_pve_cg_06.jpg",
@@ -385,9 +442,56 @@
                 "bg_pve_cg_09.jpg",
                 "bg_pve_cg_10.jpg",
                 "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
+            ]
+        },
+        "Content": {
+            "quanzhong": [
+                1000
+            ],
+            "img": [
+                "LoadingTips_Build003"
+            ]
+        },
+        "WaitingTime": 1000,
+        "FirstLoading": ""
+    },
+    "LoadingTips_PVP011": {
+        "Type": "PVP",
+        "Background": {
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg",
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
             ]
         },
         "Content": {
@@ -409,7 +513,7 @@
             ]
         },
         "WaitingTime": 1000,
-        "FirstLoading": 1
+        "FirstLoading": ""
     },
     "Loading_Crusade002": {
         "Type": "Crusade",
@@ -432,8 +536,8 @@
             ],
             "img": [
                 "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
                 "bg_pve_cg_04.jpg",
                 "bg_pve_cg_05.jpg",
                 "bg_pve_cg_06.jpg",
@@ -442,9 +546,9 @@
                 "bg_pve_cg_09.jpg",
                 "bg_pve_cg_10.jpg",
                 "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
             ]
         },
         "Content": {
@@ -481,8 +585,8 @@
             ],
             "img": [
                 "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
                 "bg_pve_cg_04.jpg",
                 "bg_pve_cg_05.jpg",
                 "bg_pve_cg_06.jpg",
@@ -491,9 +595,9 @@
                 "bg_pve_cg_09.jpg",
                 "bg_pve_cg_10.jpg",
                 "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
             ]
         },
         "Content": {
@@ -528,8 +632,8 @@
             ],
             "img": [
                 "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
                 "bg_pve_cg_04.jpg",
                 "bg_pve_cg_05.jpg",
                 "bg_pve_cg_06.jpg",
@@ -538,9 +642,9 @@
                 "bg_pve_cg_09.jpg",
                 "bg_pve_cg_10.jpg",
                 "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
             ]
         },
         "Content": {
@@ -585,8 +689,8 @@
             ],
             "img": [
                 "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
                 "bg_pve_cg_04.jpg",
                 "bg_pve_cg_05.jpg",
                 "bg_pve_cg_06.jpg",
@@ -595,9 +699,9 @@
                 "bg_pve_cg_09.jpg",
                 "bg_pve_cg_10.jpg",
                 "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
             ]
         },
         "Content": {
@@ -642,8 +746,8 @@
             ],
             "img": [
                 "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
                 "bg_pve_cg_04.jpg",
                 "bg_pve_cg_05.jpg",
                 "bg_pve_cg_06.jpg",
@@ -652,9 +756,9 @@
                 "bg_pve_cg_09.jpg",
                 "bg_pve_cg_10.jpg",
                 "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
             ]
         },
         "Content": {
@@ -691,8 +795,8 @@
             ],
             "img": [
                 "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
                 "bg_pve_cg_04.jpg",
                 "bg_pve_cg_05.jpg",
                 "bg_pve_cg_06.jpg",
@@ -701,9 +805,9 @@
                 "bg_pve_cg_09.jpg",
                 "bg_pve_cg_10.jpg",
                 "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
             ]
         },
         "Content": {
@@ -748,8 +852,8 @@
             ],
             "img": [
                 "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
                 "bg_pve_cg_04.jpg",
                 "bg_pve_cg_05.jpg",
                 "bg_pve_cg_06.jpg",
@@ -758,9 +862,9 @@
                 "bg_pve_cg_09.jpg",
                 "bg_pve_cg_10.jpg",
                 "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
             ]
         },
         "Content": {
@@ -805,8 +909,8 @@
             ],
             "img": [
                 "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
                 "bg_pve_cg_04.jpg",
                 "bg_pve_cg_05.jpg",
                 "bg_pve_cg_06.jpg",
@@ -815,9 +919,9 @@
                 "bg_pve_cg_09.jpg",
                 "bg_pve_cg_10.jpg",
                 "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
             ]
         },
         "Content": {
@@ -852,8 +956,8 @@
             ],
             "img": [
                 "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
                 "bg_pve_cg_04.jpg",
                 "bg_pve_cg_05.jpg",
                 "bg_pve_cg_06.jpg",
@@ -862,9 +966,9 @@
                 "bg_pve_cg_09.jpg",
                 "bg_pve_cg_10.jpg",
                 "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
             ]
         },
         "Content": {
@@ -909,8 +1013,8 @@
             ],
             "img": [
                 "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
                 "bg_pve_cg_04.jpg",
                 "bg_pve_cg_05.jpg",
                 "bg_pve_cg_06.jpg",
@@ -919,2378 +1023,9 @@
                 "bg_pve_cg_09.jpg",
                 "bg_pve_cg_10.jpg",
                 "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
-            ]
-        },
-        "Content": {
-            "quanzhong": [
-                1000,
-                1000,
-                1000,
-                1000,
-                1000,
-                1000
-            ],
-            "img": [
-                "LoadingTips_PVE001",
-                "LoadingTips_PVE002",
-                "LoadingTips_PVE003",
-                "LoadingTips_PVE004",
-                "LoadingTips_PVE005",
-                "LoadingTips_PVE006"
-            ]
-        },
-        "WaitingTime": 1000,
-        "FirstLoading": ""
-    },
-    "LoadingTips_PVP003": {
-        "Type": "PVP",
-        "Background": {
-            "quanzhong": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "img": [
-                "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
-                "bg_pve_cg_04.jpg",
-                "bg_pve_cg_05.jpg",
-                "bg_pve_cg_06.jpg",
-                "bg_pve_cg_07.jpg",
-                "bg_pve_cg_08.jpg",
-                "bg_pve_cg_09.jpg",
-                "bg_pve_cg_10.jpg",
-                "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
-            ]
-        },
-        "Content": {
-            "quanzhong": [
-                1000,
-                1000,
-                1000,
-                1000,
-                1000,
-                1000
-            ],
-            "img": [
-                "LoadingTips_PVE001",
-                "LoadingTips_PVE002",
-                "LoadingTips_PVE003",
-                "LoadingTips_PVE004",
-                "LoadingTips_PVE005",
-                "LoadingTips_PVE006"
-            ]
-        },
-        "WaitingTime": 1000,
-        "FirstLoading": ""
-    },
-    "LoadingTips_PVP002": {
-        "Type": "PVP",
-        "Background": {
-            "quanzhong": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "img": [
-                "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
-                "bg_pve_cg_04.jpg",
-                "bg_pve_cg_05.jpg",
-                "bg_pve_cg_06.jpg",
-                "bg_pve_cg_07.jpg",
-                "bg_pve_cg_08.jpg",
-                "bg_pve_cg_09.jpg",
-                "bg_pve_cg_10.jpg",
-                "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
-            ]
-        },
-        "Content": {
-            "quanzhong": [
-                1000,
-                1000,
-                1000,
-                1000,
-                1000,
-                1000
-            ],
-            "img": [
-                "LoadingTips_PVE001",
-                "LoadingTips_PVE002",
-                "LoadingTips_PVE003",
-                "LoadingTips_PVE004",
-                "LoadingTips_PVE005",
-                "LoadingTips_PVE006"
-            ]
-        },
-        "WaitingTime": 1000,
-        "FirstLoading": ""
-    },
-    "Loading_StageCrystal002": {
-        "Type": "StageCrystal",
-        "Background": {
-            "quanzhong": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "img": [
-                "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
-                "bg_pve_cg_04.jpg",
-                "bg_pve_cg_05.jpg",
-                "bg_pve_cg_06.jpg",
-                "bg_pve_cg_07.jpg",
-                "bg_pve_cg_08.jpg",
-                "bg_pve_cg_09.jpg",
-                "bg_pve_cg_10.jpg",
-                "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
-            ]
-        },
-        "Content": {
-            "quanzhong": [
-                1000,
-                1000
-            ],
-            "img": [
-                "LoadingTips_StageCrystal001",
-                "LoadingTips_StageCrystal002"
-            ]
-        },
-        "WaitingTime": 1000,
-        "FirstLoading": 0
-    },
-    "LoadingTips_PVE008": {
-        "Type": "PVE",
-        "Background": {
-            "quanzhong": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "img": [
-                "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
-                "bg_pve_cg_04.jpg",
-                "bg_pve_cg_05.jpg",
-                "bg_pve_cg_06.jpg",
-                "bg_pve_cg_07.jpg",
-                "bg_pve_cg_08.jpg",
-                "bg_pve_cg_09.jpg",
-                "bg_pve_cg_10.jpg",
-                "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
-            ]
-        },
-        "Content": {
-            "quanzhong": [
-                1000,
-                1000,
-                1000,
-                1000,
-                1000,
-                1000
-            ],
-            "img": [
-                "LoadingTips_PVE001",
-                "LoadingTips_PVE002",
-                "LoadingTips_PVE003",
-                "LoadingTips_PVE004",
-                "LoadingTips_PVE005",
-                "LoadingTips_PVE006"
-            ]
-        },
-        "WaitingTime": 1000,
-        "FirstLoading": ""
-    },
-    "LoadingTips_PVE009": {
-        "Type": "PVE",
-        "Background": {
-            "quanzhong": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "img": [
-                "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
-                "bg_pve_cg_04.jpg",
-                "bg_pve_cg_05.jpg",
-                "bg_pve_cg_06.jpg",
-                "bg_pve_cg_07.jpg",
-                "bg_pve_cg_08.jpg",
-                "bg_pve_cg_09.jpg",
-                "bg_pve_cg_10.jpg",
-                "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
-            ]
-        },
-        "Content": {
-            "quanzhong": [
-                1000,
-                1000,
-                1000,
-                1000,
-                1000,
-                1000
-            ],
-            "img": [
-                "LoadingTips_PVE001",
-                "LoadingTips_PVE002",
-                "LoadingTips_PVE003",
-                "LoadingTips_PVE004",
-                "LoadingTips_PVE005",
-                "LoadingTips_PVE006"
-            ]
-        },
-        "WaitingTime": 1000,
-        "FirstLoading": ""
-    },
-    "LoadingTips_Build003": {
-        "Type": "Build",
-        "Background": {
-            "quanzhong": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "img": [
-                "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
-                "bg_pve_cg_04.jpg",
-                "bg_pve_cg_05.jpg",
-                "bg_pve_cg_06.jpg",
-                "bg_pve_cg_07.jpg",
-                "bg_pve_cg_08.jpg",
-                "bg_pve_cg_09.jpg",
-                "bg_pve_cg_10.jpg",
-                "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
-            ]
-        },
-        "Content": {
-            "quanzhong": [
-                1000,
-                1000
-            ],
-            "img": [
-                "LoadingTips_Build001",
-                "LoadingTips_Build002"
-            ]
-        },
-        "WaitingTime": 1000,
-        "FirstLoading": ""
-    },
-    "LoadingTips_Build002": {
-        "Type": "Build",
-        "Background": {
-            "quanzhong": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "img": [
-                "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
-                "bg_pve_cg_04.jpg",
-                "bg_pve_cg_05.jpg",
-                "bg_pve_cg_06.jpg",
-                "bg_pve_cg_07.jpg",
-                "bg_pve_cg_08.jpg",
-                "bg_pve_cg_09.jpg",
-                "bg_pve_cg_10.jpg",
-                "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
-            ]
-        },
-        "Content": {
-            "quanzhong": [
-                1000,
-                1000
-            ],
-            "img": [
-                "LoadingTips_Build001",
-                "LoadingTips_Build002"
-            ]
-        },
-        "WaitingTime": 1000,
-        "FirstLoading": ""
-    },
-    "LoadingTips_PVE002": {
-        "Type": "PVE",
-        "Background": {
-            "quanzhong": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "img": [
-                "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
-                "bg_pve_cg_04.jpg",
-                "bg_pve_cg_05.jpg",
-                "bg_pve_cg_06.jpg",
-                "bg_pve_cg_07.jpg",
-                "bg_pve_cg_08.jpg",
-                "bg_pve_cg_09.jpg",
-                "bg_pve_cg_10.jpg",
-                "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
-            ]
-        },
-        "Content": {
-            "quanzhong": [
-                1000,
-                1000,
-                1000,
-                1000,
-                1000,
-                1000
-            ],
-            "img": [
-                "LoadingTips_PVE001",
-                "LoadingTips_PVE002",
-                "LoadingTips_PVE003",
-                "LoadingTips_PVE004",
-                "LoadingTips_PVE005",
-                "LoadingTips_PVE006"
-            ]
-        },
-        "WaitingTime": 1000,
-        "FirstLoading": ""
-    },
-    "LoadingTips_PVE003": {
-        "Type": "PVE",
-        "Background": {
-            "quanzhong": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "img": [
-                "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
-                "bg_pve_cg_04.jpg",
-                "bg_pve_cg_05.jpg",
-                "bg_pve_cg_06.jpg",
-                "bg_pve_cg_07.jpg",
-                "bg_pve_cg_08.jpg",
-                "bg_pve_cg_09.jpg",
-                "bg_pve_cg_10.jpg",
-                "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
-            ]
-        },
-        "Content": {
-            "quanzhong": [
-                1000,
-                1000,
-                1000,
-                1000,
-                1000,
-                1000
-            ],
-            "img": [
-                "LoadingTips_PVE001",
-                "LoadingTips_PVE002",
-                "LoadingTips_PVE003",
-                "LoadingTips_PVE004",
-                "LoadingTips_PVE005",
-                "LoadingTips_PVE006"
-            ]
-        },
-        "WaitingTime": 1000,
-        "FirstLoading": ""
-    },
-    "LoadingTips_PVE001": {
-        "Type": "PVE",
-        "Background": {
-            "quanzhong": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "img": [
-                "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
-                "bg_pve_cg_04.jpg",
-                "bg_pve_cg_05.jpg",
-                "bg_pve_cg_06.jpg",
-                "bg_pve_cg_07.jpg",
-                "bg_pve_cg_08.jpg",
-                "bg_pve_cg_09.jpg",
-                "bg_pve_cg_10.jpg",
-                "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
-            ]
-        },
-        "Content": {
-            "quanzhong": [
-                1000,
-                1000,
-                1000,
-                1000,
-                1000,
-                1000
-            ],
-            "img": [
-                "LoadingTips_PVE001",
-                "LoadingTips_PVE002",
-                "LoadingTips_PVE003",
-                "LoadingTips_PVE004",
-                "LoadingTips_PVE005",
-                "LoadingTips_PVE006"
-            ]
-        },
-        "WaitingTime": 1000,
-        "FirstLoading": ""
-    },
-    "LoadingTips_PVE006": {
-        "Type": "PVE",
-        "Background": {
-            "quanzhong": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "img": [
-                "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
-                "bg_pve_cg_04.jpg",
-                "bg_pve_cg_05.jpg",
-                "bg_pve_cg_06.jpg",
-                "bg_pve_cg_07.jpg",
-                "bg_pve_cg_08.jpg",
-                "bg_pve_cg_09.jpg",
-                "bg_pve_cg_10.jpg",
-                "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
-            ]
-        },
-        "Content": {
-            "quanzhong": [
-                1000,
-                1000,
-                1000,
-                1000,
-                1000,
-                1000
-            ],
-            "img": [
-                "LoadingTips_PVE001",
-                "LoadingTips_PVE002",
-                "LoadingTips_PVE003",
-                "LoadingTips_PVE004",
-                "LoadingTips_PVE005",
-                "LoadingTips_PVE006"
-            ]
-        },
-        "WaitingTime": 1000,
-        "FirstLoading": ""
-    },
-    "LoadingTips_PVE007": {
-        "Type": "PVE",
-        "Background": {
-            "quanzhong": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "img": [
-                "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
-                "bg_pve_cg_04.jpg",
-                "bg_pve_cg_05.jpg",
-                "bg_pve_cg_06.jpg",
-                "bg_pve_cg_07.jpg",
-                "bg_pve_cg_08.jpg",
-                "bg_pve_cg_09.jpg",
-                "bg_pve_cg_10.jpg",
-                "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
-            ]
-        },
-        "Content": {
-            "quanzhong": [
-                1000,
-                1000,
-                1000,
-                1000,
-                1000,
-                1000
-            ],
-            "img": [
-                "LoadingTips_PVE001",
-                "LoadingTips_PVE002",
-                "LoadingTips_PVE003",
-                "LoadingTips_PVE004",
-                "LoadingTips_PVE005",
-                "LoadingTips_PVE006"
-            ]
-        },
-        "WaitingTime": 1000,
-        "FirstLoading": ""
-    },
-    "LoadingTips_PVE004": {
-        "Type": "PVE",
-        "Background": {
-            "quanzhong": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "img": [
-                "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
-                "bg_pve_cg_04.jpg",
-                "bg_pve_cg_05.jpg",
-                "bg_pve_cg_06.jpg",
-                "bg_pve_cg_07.jpg",
-                "bg_pve_cg_08.jpg",
-                "bg_pve_cg_09.jpg",
-                "bg_pve_cg_10.jpg",
-                "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
-            ]
-        },
-        "Content": {
-            "quanzhong": [
-                1000,
-                1000,
-                1000,
-                1000,
-                1000,
-                1000
-            ],
-            "img": [
-                "LoadingTips_PVE001",
-                "LoadingTips_PVE002",
-                "LoadingTips_PVE003",
-                "LoadingTips_PVE004",
-                "LoadingTips_PVE005",
-                "LoadingTips_PVE006"
-            ]
-        },
-        "WaitingTime": 1000,
-        "FirstLoading": ""
-    },
-    "LoadingTips_PVE005": {
-        "Type": "PVE",
-        "Background": {
-            "quanzhong": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "img": [
-                "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
-                "bg_pve_cg_04.jpg",
-                "bg_pve_cg_05.jpg",
-                "bg_pve_cg_06.jpg",
-                "bg_pve_cg_07.jpg",
-                "bg_pve_cg_08.jpg",
-                "bg_pve_cg_09.jpg",
-                "bg_pve_cg_10.jpg",
-                "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
-            ]
-        },
-        "Content": {
-            "quanzhong": [
-                1000,
-                1000,
-                1000,
-                1000,
-                1000,
-                1000
-            ],
-            "img": [
-                "LoadingTips_PVE001",
-                "LoadingTips_PVE002",
-                "LoadingTips_PVE003",
-                "LoadingTips_PVE004",
-                "LoadingTips_PVE005",
-                "LoadingTips_PVE006"
-            ]
-        },
-        "WaitingTime": 1000,
-        "FirstLoading": ""
-    },
-    "Loading_StagePractice001": {
-        "Type": "StagePractice",
-        "Background": {
-            "quanzhong": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "img": [
-                "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
-                "bg_pve_cg_04.jpg",
-                "bg_pve_cg_05.jpg",
-                "bg_pve_cg_06.jpg",
-                "bg_pve_cg_07.jpg",
-                "bg_pve_cg_08.jpg",
-                "bg_pve_cg_09.jpg",
-                "bg_pve_cg_10.jpg",
-                "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
-            ]
-        },
-        "Content": {
-            "quanzhong": [
-                1000
-            ],
-            "img": [
-                "LoadingTips_StagePractice001"
-            ]
-        },
-        "WaitingTime": 1000,
-        "FirstLoading": 1
-    },
-    "Loading_StagePractice002": {
-        "Type": "StagePractice",
-        "Background": {
-            "quanzhong": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "img": [
-                "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
-                "bg_pve_cg_04.jpg",
-                "bg_pve_cg_05.jpg",
-                "bg_pve_cg_06.jpg",
-                "bg_pve_cg_07.jpg",
-                "bg_pve_cg_08.jpg",
-                "bg_pve_cg_09.jpg",
-                "bg_pve_cg_10.jpg",
-                "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
-            ]
-        },
-        "Content": {
-            "quanzhong": [
-                1000,
-                1000
-            ],
-            "img": [
-                "LoadingTips_StagePractice001",
-                "LoadingTips_StagePractice002"
-            ]
-        },
-        "WaitingTime": 1000,
-        "FirstLoading": 0
-    },
-    "LoadingTips_PVEM01S02": {
-        "Type": "None",
-        "Background": {
-            "quanzhong": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "img": [
-                "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
-                "bg_pve_cg_04.jpg",
-                "bg_pve_cg_05.jpg",
-                "bg_pve_cg_06.jpg",
-                "bg_pve_cg_07.jpg",
-                "bg_pve_cg_08.jpg",
-                "bg_pve_cg_09.jpg",
-                "bg_pve_cg_10.jpg",
-                "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
-            ]
-        },
-        "Content": {
-            "quanzhong": [
-                1000
-            ],
-            "img": [
-                "LoadingTips_PVE008"
-            ]
-        },
-        "WaitingTime": 1000,
-        "FirstLoading": ""
-    },
-    "LoadingTips_PVEM01S03": {
-        "Type": "None",
-        "Background": {
-            "quanzhong": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "img": [
-                "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
-                "bg_pve_cg_04.jpg",
-                "bg_pve_cg_05.jpg",
-                "bg_pve_cg_06.jpg",
-                "bg_pve_cg_07.jpg",
-                "bg_pve_cg_08.jpg",
-                "bg_pve_cg_09.jpg",
-                "bg_pve_cg_10.jpg",
-                "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
-            ]
-        },
-        "Content": {
-            "quanzhong": [
-                1000
-            ],
-            "img": [
-                "LoadingTips_PVE003"
-            ]
-        },
-        "WaitingTime": 1000,
-        "FirstLoading": ""
-    },
-    "LoadingTips_PVEM01S01": {
-        "Type": "None",
-        "Background": {
-            "quanzhong": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "img": [
-                "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
-                "bg_pve_cg_04.jpg",
-                "bg_pve_cg_05.jpg",
-                "bg_pve_cg_06.jpg",
-                "bg_pve_cg_07.jpg",
-                "bg_pve_cg_08.jpg",
-                "bg_pve_cg_09.jpg",
-                "bg_pve_cg_10.jpg",
-                "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
-            ]
-        },
-        "Content": {
-            "quanzhong": [
-                1000
-            ],
-            "img": [
-                "LoadingTips_PVE007"
-            ]
-        },
-        "WaitingTime": 1000,
-        "FirstLoading": ""
-    },
-    "LoadingTips_PVEM01S04": {
-        "Type": "None",
-        "Background": {
-            "quanzhong": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "img": [
-                "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
-                "bg_pve_cg_04.jpg",
-                "bg_pve_cg_05.jpg",
-                "bg_pve_cg_06.jpg",
-                "bg_pve_cg_07.jpg",
-                "bg_pve_cg_08.jpg",
-                "bg_pve_cg_09.jpg",
-                "bg_pve_cg_10.jpg",
-                "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
-            ]
-        },
-        "Content": {
-            "quanzhong": [
-                1000
-            ],
-            "img": [
-                "LoadingTips_PVE004"
-            ]
-        },
-        "WaitingTime": 1000,
-        "FirstLoading": ""
-    },
-    "Loading_StageGold002": {
-        "Type": "StageGold",
-        "Background": {
-            "quanzhong": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "img": [
-                "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
-                "bg_pve_cg_04.jpg",
-                "bg_pve_cg_05.jpg",
-                "bg_pve_cg_06.jpg",
-                "bg_pve_cg_07.jpg",
-                "bg_pve_cg_08.jpg",
-                "bg_pve_cg_09.jpg",
-                "bg_pve_cg_10.jpg",
-                "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
-            ]
-        },
-        "Content": {
-            "quanzhong": [
-                1000,
-                1000
-            ],
-            "img": [
-                "LoadingTips_StageGold002",
-                "LoadingTips_StageGold001"
-            ]
-        },
-        "WaitingTime": 1000,
-        "FirstLoading": 0
-    },
-    "Loading_StageGold001": {
-        "Type": "StageGold",
-        "Background": {
-            "quanzhong": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "img": [
-                "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
-                "bg_pve_cg_04.jpg",
-                "bg_pve_cg_05.jpg",
-                "bg_pve_cg_06.jpg",
-                "bg_pve_cg_07.jpg",
-                "bg_pve_cg_08.jpg",
-                "bg_pve_cg_09.jpg",
-                "bg_pve_cg_10.jpg",
-                "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
-            ]
-        },
-        "Content": {
-            "quanzhong": [
-                1000
-            ],
-            "img": [
-                "LoadingTips_StageGold002"
-            ]
-        },
-        "WaitingTime": 1000,
-        "FirstLoading": 1
-    },
-    "Loading_ClubBoss_2": {
-        "Type": "ClubBoss",
-        "Background": {
-            "quanzhong": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "img": [
-                "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
-                "bg_pve_cg_04.jpg",
-                "bg_pve_cg_05.jpg",
-                "bg_pve_cg_06.jpg",
-                "bg_pve_cg_07.jpg",
-                "bg_pve_cg_08.jpg",
-                "bg_pve_cg_09.jpg",
-                "bg_pve_cg_10.jpg",
-                "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
-            ]
-        },
-        "Content": {
-            "quanzhong": [
-                1000,
-                1000,
-                1000,
-                500,
-                500,
-                100
-            ],
-            "img": [
-                "LoadingTips_PVE001",
-                "LoadingTips_PVE002",
-                "LoadingTips_PVE003",
-                "LoadingTips_PVE004",
-                "LoadingTips_PVE005",
-                "LoadingTips_PVE006"
-            ]
-        },
-        "WaitingTime": 1000,
-        "FirstLoading": 0
-    },
-    "Loading_FriendPK002": {
-        "Type": "FriendPK",
-        "Background": {
-            "quanzhong": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "img": [
-                "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
-                "bg_pve_cg_04.jpg",
-                "bg_pve_cg_05.jpg",
-                "bg_pve_cg_06.jpg",
-                "bg_pve_cg_07.jpg",
-                "bg_pve_cg_08.jpg",
-                "bg_pve_cg_09.jpg",
-                "bg_pve_cg_10.jpg",
-                "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
-            ]
-        },
-        "Content": {
-            "quanzhong": [
-                1000,
-                1000
-            ],
-            "img": [
-                "LoadingTips_FriendPK001",
-                "LoadingTips_FriendPK002"
-            ]
-        },
-        "WaitingTime": 1000,
-        "FirstLoading": 0
-    },
-    "Loading_DreamChallenge_2": {
-        "Type": "DreamChallenge",
-        "Background": {
-            "quanzhong": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "img": [
-                "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
-                "bg_pve_cg_04.jpg",
-                "bg_pve_cg_05.jpg",
-                "bg_pve_cg_06.jpg",
-                "bg_pve_cg_07.jpg",
-                "bg_pve_cg_08.jpg",
-                "bg_pve_cg_09.jpg",
-                "bg_pve_cg_10.jpg",
-                "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
-            ]
-        },
-        "Content": {
-            "quanzhong": [
-                1000,
-                1000,
-                1000,
-                1000,
-                1000,
-                1000
-            ],
-            "img": [
-                "LoadingTips_PVE001",
-                "LoadingTips_PVE002",
-                "LoadingTips_PVE003",
-                "LoadingTips_PVE004",
-                "LoadingTips_PVE005",
-                "LoadingTips_PVE006"
-            ]
-        },
-        "WaitingTime": 1000,
-        "FirstLoading": 0
-    },
-    "LoadingTips_Buildfirst": {
-        "Type": "None",
-        "Background": {
-            "quanzhong": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "img": [
-                "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
-                "bg_pve_cg_04.jpg",
-                "bg_pve_cg_05.jpg",
-                "bg_pve_cg_06.jpg",
-                "bg_pve_cg_07.jpg",
-                "bg_pve_cg_08.jpg",
-                "bg_pve_cg_09.jpg",
-                "bg_pve_cg_10.jpg",
-                "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
-            ]
-        },
-        "Content": {
-            "quanzhong": [
-                1000
-            ],
-            "img": [
-                "LoadingTips_Build003"
-            ]
-        },
-        "WaitingTime": 1000,
-        "FirstLoading": ""
-    },
-    "Loading_StageNormal002": {
-        "Type": "StageNormal",
-        "Background": {
-            "quanzhong": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "img": [
-                "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
-                "bg_pve_cg_04.jpg",
-                "bg_pve_cg_05.jpg",
-                "bg_pve_cg_06.jpg",
-                "bg_pve_cg_07.jpg",
-                "bg_pve_cg_08.jpg",
-                "bg_pve_cg_09.jpg",
-                "bg_pve_cg_10.jpg",
-                "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
-            ]
-        },
-        "Content": {
-            "quanzhong": [
-                1000,
-                1000,
-                1000,
-                1000,
-                1000,
-                1000
-            ],
-            "img": [
-                "LoadingTips_PVE001",
-                "LoadingTips_PVE002",
-                "LoadingTips_PVE003",
-                "LoadingTips_PVE004",
-                "LoadingTips_PVE005",
-                "LoadingTips_PVE006"
-            ]
-        },
-        "WaitingTime": 1000,
-        "FirstLoading": 0
-    },
-    "Loading_DreamChallenge_1": {
-        "Type": "DreamChallenge",
-        "Background": {
-            "quanzhong": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "img": [
-                "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
-                "bg_pve_cg_04.jpg",
-                "bg_pve_cg_05.jpg",
-                "bg_pve_cg_06.jpg",
-                "bg_pve_cg_07.jpg",
-                "bg_pve_cg_08.jpg",
-                "bg_pve_cg_09.jpg",
-                "bg_pve_cg_10.jpg",
-                "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
-            ]
-        },
-        "Content": {
-            "quanzhong": [
-                1000,
-                1000,
-                1000,
-                1000,
-                1000,
-                1000
-            ],
-            "img": [
-                "LoadingTips_PVE001",
-                "LoadingTips_PVE002",
-                "LoadingTips_PVE003",
-                "LoadingTips_PVE004",
-                "LoadingTips_PVE005",
-                "LoadingTips_PVE006"
-            ]
-        },
-        "WaitingTime": 1000,
-        "FirstLoading": 1
-    },
-    "Loading_StageElite001": {
-        "Type": "StageElite",
-        "Background": {
-            "quanzhong": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "img": [
-                "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
-                "bg_pve_cg_04.jpg",
-                "bg_pve_cg_05.jpg",
-                "bg_pve_cg_06.jpg",
-                "bg_pve_cg_07.jpg",
-                "bg_pve_cg_08.jpg",
-                "bg_pve_cg_09.jpg",
-                "bg_pve_cg_10.jpg",
-                "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
-            ]
-        },
-        "Content": {
-            "quanzhong": [
-                1000
-            ],
-            "img": [
-                "LoadingTips_StageElite001"
-            ]
-        },
-        "WaitingTime": 1000,
-        "FirstLoading": 1
-    },
-    "Loading_StageExp002": {
-        "Type": "StageExp",
-        "Background": {
-            "quanzhong": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "img": [
-                "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
-                "bg_pve_cg_04.jpg",
-                "bg_pve_cg_05.jpg",
-                "bg_pve_cg_06.jpg",
-                "bg_pve_cg_07.jpg",
-                "bg_pve_cg_08.jpg",
-                "bg_pve_cg_09.jpg",
-                "bg_pve_cg_10.jpg",
-                "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
-            ]
-        },
-        "Content": {
-            "quanzhong": [
-                1000,
-                1000
-            ],
-            "img": [
-                "LoadingTips_StageExp002",
-                "LoadingTips_StageExp001"
-            ]
-        },
-        "WaitingTime": 1000,
-        "FirstLoading": 0
-    },
-    "Loading_Arena001": {
-        "Type": "Arena",
-        "Background": {
-            "quanzhong": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "img": [
-                "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
-                "bg_pve_cg_04.jpg",
-                "bg_pve_cg_05.jpg",
-                "bg_pve_cg_06.jpg",
-                "bg_pve_cg_07.jpg",
-                "bg_pve_cg_08.jpg",
-                "bg_pve_cg_09.jpg",
-                "bg_pve_cg_10.jpg",
-                "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
-            ]
-        },
-        "Content": {
-            "quanzhong": [
-                1000
-            ],
-            "img": [
-                "LoadingTips_Arena001"
-            ]
-        },
-        "WaitingTime": 1000,
-        "FirstLoading": 1
-    },
-    "Loading_KOF001": {
-        "Type": "KOF",
-        "Background": {
-            "quanzhong": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "img": [
-                "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
-                "bg_pve_cg_04.jpg",
-                "bg_pve_cg_05.jpg",
-                "bg_pve_cg_06.jpg",
-                "bg_pve_cg_07.jpg",
-                "bg_pve_cg_08.jpg",
-                "bg_pve_cg_09.jpg",
-                "bg_pve_cg_10.jpg",
-                "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
-            ]
-        },
-        "Content": {
-            "quanzhong": [
-                1000
-            ],
-            "img": [
-                "LoadingTips_KOF001"
-            ]
-        },
-        "WaitingTime": 1000,
-        "FirstLoading": 1
-    },
-    "Loading_KOF002": {
-        "Type": "KOF",
-        "Background": {
-            "quanzhong": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "img": [
-                "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
-                "bg_pve_cg_04.jpg",
-                "bg_pve_cg_05.jpg",
-                "bg_pve_cg_06.jpg",
-                "bg_pve_cg_07.jpg",
-                "bg_pve_cg_08.jpg",
-                "bg_pve_cg_09.jpg",
-                "bg_pve_cg_10.jpg",
-                "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
-            ]
-        },
-        "Content": {
-            "quanzhong": [
-                1000,
-                1000,
-                1000
-            ],
-            "img": [
-                "LoadingTips_KOF001",
-                "LoadingTips_KOF002",
-                "LoadingTips_KOF003"
-            ]
-        },
-        "WaitingTime": 1000,
-        "FirstLoading": 0
-    },
-    "Loading_StageExp001": {
-        "Type": "StageExp",
-        "Background": {
-            "quanzhong": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "img": [
-                "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
-                "bg_pve_cg_04.jpg",
-                "bg_pve_cg_05.jpg",
-                "bg_pve_cg_06.jpg",
-                "bg_pve_cg_07.jpg",
-                "bg_pve_cg_08.jpg",
-                "bg_pve_cg_09.jpg",
-                "bg_pve_cg_10.jpg",
-                "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
-            ]
-        },
-        "Content": {
-            "quanzhong": [
-                1000
-            ],
-            "img": [
-                "LoadingTips_StageExp002"
-            ]
-        },
-        "WaitingTime": 1000,
-        "FirstLoading": 1
-    },
-    "Loading_MapExplore001": {
-        "Type": "MapExplore",
-        "Background": {
-            "quanzhong": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "img": [
-                "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
-                "bg_pve_cg_04.jpg",
-                "bg_pve_cg_05.jpg",
-                "bg_pve_cg_06.jpg",
-                "bg_pve_cg_07.jpg",
-                "bg_pve_cg_08.jpg",
-                "bg_pve_cg_09.jpg",
-                "bg_pve_cg_10.jpg",
-                "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
-            ]
-        },
-        "Content": {
-            "quanzhong": [
-                1000
-            ],
-            "img": [
-                "LoadingTips_MapExplore001"
-            ]
-        },
-        "WaitingTime": 1000,
-        "FirstLoading": 1
-    },
-    "Loading_MapExplore002": {
-        "Type": "MapExplore",
-        "Background": {
-            "quanzhong": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "img": [
-                "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
-                "bg_pve_cg_04.jpg",
-                "bg_pve_cg_05.jpg",
-                "bg_pve_cg_06.jpg",
-                "bg_pve_cg_07.jpg",
-                "bg_pve_cg_08.jpg",
-                "bg_pve_cg_09.jpg",
-                "bg_pve_cg_10.jpg",
-                "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
-            ]
-        },
-        "Content": {
-            "quanzhong": [
-                1000,
-                1000,
-                1000,
-                1000
-            ],
-            "img": [
-                "LoadingTips_MapExplore001",
-                "LoadingTips_MapExplore002",
-                "LoadingTips_MapExplore003",
-                "LoadingTips_MapExplore004"
-            ]
-        },
-        "WaitingTime": 1000,
-        "FirstLoading": 0
-    },
-    "LoadingTips_PVP012": {
-        "Type": "None",
-        "Background": {
-            "quanzhong": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "img": [
-                "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
-                "bg_pve_cg_04.jpg",
-                "bg_pve_cg_05.jpg",
-                "bg_pve_cg_06.jpg",
-                "bg_pve_cg_07.jpg",
-                "bg_pve_cg_08.jpg",
-                "bg_pve_cg_09.jpg",
-                "bg_pve_cg_10.jpg",
-                "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
-            ]
-        },
-        "Content": {
-            "quanzhong": [
-                1000,
-                1000,
-                1000,
-                1000,
-                1000,
-                1000
-            ],
-            "img": [
-                "LoadingTips_PVE001",
-                "LoadingTips_PVE002",
-                "LoadingTips_PVE003",
-                "LoadingTips_PVE004",
-                "LoadingTips_PVE005",
-                "LoadingTips_PVE006"
-            ]
-        },
-        "WaitingTime": 1000,
-        "FirstLoading": ""
-    },
-    "LoadingTips_PVP010": {
-        "Type": "PVP",
-        "Background": {
-            "quanzhong": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "img": [
-                "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
-                "bg_pve_cg_04.jpg",
-                "bg_pve_cg_05.jpg",
-                "bg_pve_cg_06.jpg",
-                "bg_pve_cg_07.jpg",
-                "bg_pve_cg_08.jpg",
-                "bg_pve_cg_09.jpg",
-                "bg_pve_cg_10.jpg",
-                "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
-            ]
-        },
-        "Content": {
-            "quanzhong": [
-                1000,
-                1000,
-                1000,
-                1000,
-                1000,
-                1000
-            ],
-            "img": [
-                "LoadingTips_PVE001",
-                "LoadingTips_PVE002",
-                "LoadingTips_PVE003",
-                "LoadingTips_PVE004",
-                "LoadingTips_PVE005",
-                "LoadingTips_PVE006"
-            ]
-        },
-        "WaitingTime": 1000,
-        "FirstLoading": ""
-    },
-    "LoadingTips_PVP011": {
-        "Type": "PVP",
-        "Background": {
-            "quanzhong": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "img": [
-                "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
-                "bg_pve_cg_04.jpg",
-                "bg_pve_cg_05.jpg",
-                "bg_pve_cg_06.jpg",
-                "bg_pve_cg_07.jpg",
-                "bg_pve_cg_08.jpg",
-                "bg_pve_cg_09.jpg",
-                "bg_pve_cg_10.jpg",
-                "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
-            ]
-        },
-        "Content": {
-            "quanzhong": [
-                1000,
-                1000,
-                1000,
-                1000,
-                1000,
-                1000
-            ],
-            "img": [
-                "LoadingTips_PVE001",
-                "LoadingTips_PVE002",
-                "LoadingTips_PVE003",
-                "LoadingTips_PVE004",
-                "LoadingTips_PVE005",
-                "LoadingTips_PVE006"
-            ]
-        },
-        "WaitingTime": 1000,
-        "FirstLoading": ""
-    },
-    "Loading_ClubBoss_1": {
-        "Type": "ClubBoss",
-        "Background": {
-            "quanzhong": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "img": [
-                "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
-                "bg_pve_cg_04.jpg",
-                "bg_pve_cg_05.jpg",
-                "bg_pve_cg_06.jpg",
-                "bg_pve_cg_07.jpg",
-                "bg_pve_cg_08.jpg",
-                "bg_pve_cg_09.jpg",
-                "bg_pve_cg_10.jpg",
-                "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
-            ]
-        },
-        "Content": {
-            "quanzhong": [
-                1000,
-                1000,
-                1000,
-                500,
-                500,
-                100
-            ],
-            "img": [
-                "LoadingTips_PVE001",
-                "LoadingTips_PVE002",
-                "LoadingTips_PVE003",
-                "LoadingTips_PVE004",
-                "LoadingTips_PVE005",
-                "LoadingTips_PVE006"
-            ]
-        },
-        "WaitingTime": 1000,
-        "FirstLoading": 1
-    },
-    "LoadingTips_PVE011": {
-        "Type": "PVE",
-        "Background": {
-            "quanzhong": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "img": [
-                "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
-                "bg_pve_cg_04.jpg",
-                "bg_pve_cg_05.jpg",
-                "bg_pve_cg_06.jpg",
-                "bg_pve_cg_07.jpg",
-                "bg_pve_cg_08.jpg",
-                "bg_pve_cg_09.jpg",
-                "bg_pve_cg_10.jpg",
-                "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
-            ]
-        },
-        "Content": {
-            "quanzhong": [
-                1000,
-                1000,
-                1000,
-                1000,
-                1000,
-                1000
-            ],
-            "img": [
-                "LoadingTips_PVE001",
-                "LoadingTips_PVE002",
-                "LoadingTips_PVE003",
-                "LoadingTips_PVE004",
-                "LoadingTips_PVE005",
-                "LoadingTips_PVE006"
-            ]
-        },
-        "WaitingTime": 1000,
-        "FirstLoading": ""
-    },
-    "LoadingTips_PVE010": {
-        "Type": "PVE",
-        "Background": {
-            "quanzhong": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "img": [
-                "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
-                "bg_pve_cg_04.jpg",
-                "bg_pve_cg_05.jpg",
-                "bg_pve_cg_06.jpg",
-                "bg_pve_cg_07.jpg",
-                "bg_pve_cg_08.jpg",
-                "bg_pve_cg_09.jpg",
-                "bg_pve_cg_10.jpg",
-                "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
-            ]
-        },
-        "Content": {
-            "quanzhong": [
-                1000,
-                1000,
-                1000,
-                1000,
-                1000,
-                1000
-            ],
-            "img": [
-                "LoadingTips_PVE001",
-                "LoadingTips_PVE002",
-                "LoadingTips_PVE003",
-                "LoadingTips_PVE004",
-                "LoadingTips_PVE005",
-                "LoadingTips_PVE006"
-            ]
-        },
-        "WaitingTime": 1000,
-        "FirstLoading": ""
-    },
-    "Loading_FriendPK001": {
-        "Type": "FriendPK",
-        "Background": {
-            "quanzhong": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "img": [
-                "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
-                "bg_pve_cg_04.jpg",
-                "bg_pve_cg_05.jpg",
-                "bg_pve_cg_06.jpg",
-                "bg_pve_cg_07.jpg",
-                "bg_pve_cg_08.jpg",
-                "bg_pve_cg_09.jpg",
-                "bg_pve_cg_10.jpg",
-                "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
-            ]
-        },
-        "Content": {
-            "quanzhong": [
-                1000
-            ],
-            "img": [
-                "LoadingTips_FriendPK001"
-            ]
-        },
-        "WaitingTime": 1000,
-        "FirstLoading": 1
-    },
-    "LoadingTips_PVE012": {
-        "Type": "PVE",
-        "Background": {
-            "quanzhong": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "img": [
-                "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
-                "bg_pve_cg_04.jpg",
-                "bg_pve_cg_05.jpg",
-                "bg_pve_cg_06.jpg",
-                "bg_pve_cg_07.jpg",
-                "bg_pve_cg_08.jpg",
-                "bg_pve_cg_09.jpg",
-                "bg_pve_cg_10.jpg",
-                "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
-            ]
-        },
-        "Content": {
-            "quanzhong": [
-                1000,
-                1000,
-                1000,
-                1000,
-                1000,
-                1000
-            ],
-            "img": [
-                "LoadingTips_PVE001",
-                "LoadingTips_PVE002",
-                "LoadingTips_PVE003",
-                "LoadingTips_PVE004",
-                "LoadingTips_PVE005",
-                "LoadingTips_PVE006"
-            ]
-        },
-        "WaitingTime": 1000,
-        "FirstLoading": ""
-    },
-    "LoadingTips_PVP007": {
-        "Type": "PVP",
-        "Background": {
-            "quanzhong": [
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1
-            ],
-            "img": [
-                "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
-                "bg_pve_cg_04.jpg",
-                "bg_pve_cg_05.jpg",
-                "bg_pve_cg_06.jpg",
-                "bg_pve_cg_07.jpg",
-                "bg_pve_cg_08.jpg",
-                "bg_pve_cg_09.jpg",
-                "bg_pve_cg_10.jpg",
-                "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
             ]
         },
         "Content": {
@@ -3335,8 +1070,8 @@
             ],
             "img": [
                 "bg_pve_cg_01.jpg",
-                "bg_pve_cg_02_old.jpg",
-                "bg_pve_cg_03_old.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
                 "bg_pve_cg_04.jpg",
                 "bg_pve_cg_05.jpg",
                 "bg_pve_cg_06.jpg",
@@ -3345,9 +1080,9 @@
                 "bg_pve_cg_09.jpg",
                 "bg_pve_cg_10.jpg",
                 "bg_pve_cg_11.jpg",
-                "bg_pve_cg_12_old.jpg",
-                "bg_build_cg_02_old",
-                "bg_build_cg_03_old"
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
             ]
         },
         "Content": {
@@ -3362,5 +1097,2270 @@
         },
         "WaitingTime": 1000,
         "FirstLoading": 0
+    },
+    "LoadingTips_PVP003": {
+        "Type": "PVP",
+        "Background": {
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg",
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
+            ]
+        },
+        "Content": {
+            "quanzhong": [
+                1000,
+                1000,
+                1000,
+                1000,
+                1000,
+                1000
+            ],
+            "img": [
+                "LoadingTips_PVE001",
+                "LoadingTips_PVE002",
+                "LoadingTips_PVE003",
+                "LoadingTips_PVE004",
+                "LoadingTips_PVE005",
+                "LoadingTips_PVE006"
+            ]
+        },
+        "WaitingTime": 1000,
+        "FirstLoading": ""
+    },
+    "LoadingTips_PVP002": {
+        "Type": "PVP",
+        "Background": {
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg",
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
+            ]
+        },
+        "Content": {
+            "quanzhong": [
+                1000,
+                1000,
+                1000,
+                1000,
+                1000,
+                1000
+            ],
+            "img": [
+                "LoadingTips_PVE001",
+                "LoadingTips_PVE002",
+                "LoadingTips_PVE003",
+                "LoadingTips_PVE004",
+                "LoadingTips_PVE005",
+                "LoadingTips_PVE006"
+            ]
+        },
+        "WaitingTime": 1000,
+        "FirstLoading": ""
+    },
+    "Loading_StageCrystal002": {
+        "Type": "StageCrystal",
+        "Background": {
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg",
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
+            ]
+        },
+        "Content": {
+            "quanzhong": [
+                1000,
+                1000
+            ],
+            "img": [
+                "LoadingTips_StageCrystal001",
+                "LoadingTips_StageCrystal002"
+            ]
+        },
+        "WaitingTime": 1000,
+        "FirstLoading": 0
+    },
+    "LoadingTips_PVE008": {
+        "Type": "PVE",
+        "Background": {
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg",
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
+            ]
+        },
+        "Content": {
+            "quanzhong": [
+                1000,
+                1000,
+                1000,
+                1000,
+                1000,
+                1000
+            ],
+            "img": [
+                "LoadingTips_PVE001",
+                "LoadingTips_PVE002",
+                "LoadingTips_PVE003",
+                "LoadingTips_PVE004",
+                "LoadingTips_PVE005",
+                "LoadingTips_PVE006"
+            ]
+        },
+        "WaitingTime": 1000,
+        "FirstLoading": ""
+    },
+    "Loading_StageCrystal001": {
+        "Type": "StageCrystal",
+        "Background": {
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg",
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
+            ]
+        },
+        "Content": {
+            "quanzhong": [
+                1000
+            ],
+            "img": [
+                "LoadingTips_StageCrystal002"
+            ]
+        },
+        "WaitingTime": 1000,
+        "FirstLoading": 1
+    },
+    "LoadingTips_Build003": {
+        "Type": "Build",
+        "Background": {
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg",
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
+            ]
+        },
+        "Content": {
+            "quanzhong": [
+                1000,
+                1000
+            ],
+            "img": [
+                "LoadingTips_Build001",
+                "LoadingTips_Build002"
+            ]
+        },
+        "WaitingTime": 1000,
+        "FirstLoading": ""
+    },
+    "LoadingTips_Build002": {
+        "Type": "Build",
+        "Background": {
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg",
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
+            ]
+        },
+        "Content": {
+            "quanzhong": [
+                1000,
+                1000
+            ],
+            "img": [
+                "LoadingTips_Build001",
+                "LoadingTips_Build002"
+            ]
+        },
+        "WaitingTime": 1000,
+        "FirstLoading": ""
+    },
+    "LoadingTips_PVE002": {
+        "Type": "PVE",
+        "Background": {
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg",
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
+            ]
+        },
+        "Content": {
+            "quanzhong": [
+                1000,
+                1000,
+                1000,
+                1000,
+                1000,
+                1000
+            ],
+            "img": [
+                "LoadingTips_PVE001",
+                "LoadingTips_PVE002",
+                "LoadingTips_PVE003",
+                "LoadingTips_PVE004",
+                "LoadingTips_PVE005",
+                "LoadingTips_PVE006"
+            ]
+        },
+        "WaitingTime": 1000,
+        "FirstLoading": ""
+    },
+    "LoadingTips_PVE003": {
+        "Type": "PVE",
+        "Background": {
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg",
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
+            ]
+        },
+        "Content": {
+            "quanzhong": [
+                1000,
+                1000,
+                1000,
+                1000,
+                1000,
+                1000
+            ],
+            "img": [
+                "LoadingTips_PVE001",
+                "LoadingTips_PVE002",
+                "LoadingTips_PVE003",
+                "LoadingTips_PVE004",
+                "LoadingTips_PVE005",
+                "LoadingTips_PVE006"
+            ]
+        },
+        "WaitingTime": 1000,
+        "FirstLoading": ""
+    },
+    "LoadingTips_PVE001": {
+        "Type": "PVE",
+        "Background": {
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg",
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
+            ]
+        },
+        "Content": {
+            "quanzhong": [
+                1000,
+                1000,
+                1000,
+                1000,
+                1000,
+                1000
+            ],
+            "img": [
+                "LoadingTips_PVE001",
+                "LoadingTips_PVE002",
+                "LoadingTips_PVE003",
+                "LoadingTips_PVE004",
+                "LoadingTips_PVE005",
+                "LoadingTips_PVE006"
+            ]
+        },
+        "WaitingTime": 1000,
+        "FirstLoading": ""
+    },
+    "LoadingTips_PVE006": {
+        "Type": "PVE",
+        "Background": {
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg",
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
+            ]
+        },
+        "Content": {
+            "quanzhong": [
+                1000,
+                1000,
+                1000,
+                1000,
+                1000,
+                1000
+            ],
+            "img": [
+                "LoadingTips_PVE001",
+                "LoadingTips_PVE002",
+                "LoadingTips_PVE003",
+                "LoadingTips_PVE004",
+                "LoadingTips_PVE005",
+                "LoadingTips_PVE006"
+            ]
+        },
+        "WaitingTime": 1000,
+        "FirstLoading": ""
+    },
+    "LoadingTips_PVE007": {
+        "Type": "PVE",
+        "Background": {
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg",
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
+            ]
+        },
+        "Content": {
+            "quanzhong": [
+                1000,
+                1000,
+                1000,
+                1000,
+                1000,
+                1000
+            ],
+            "img": [
+                "LoadingTips_PVE001",
+                "LoadingTips_PVE002",
+                "LoadingTips_PVE003",
+                "LoadingTips_PVE004",
+                "LoadingTips_PVE005",
+                "LoadingTips_PVE006"
+            ]
+        },
+        "WaitingTime": 1000,
+        "FirstLoading": ""
+    },
+    "LoadingTips_PVE004": {
+        "Type": "PVE",
+        "Background": {
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg",
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
+            ]
+        },
+        "Content": {
+            "quanzhong": [
+                1000,
+                1000,
+                1000,
+                1000,
+                1000,
+                1000
+            ],
+            "img": [
+                "LoadingTips_PVE001",
+                "LoadingTips_PVE002",
+                "LoadingTips_PVE003",
+                "LoadingTips_PVE004",
+                "LoadingTips_PVE005",
+                "LoadingTips_PVE006"
+            ]
+        },
+        "WaitingTime": 1000,
+        "FirstLoading": ""
+    },
+    "LoadingTips_PVE005": {
+        "Type": "PVE",
+        "Background": {
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg",
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
+            ]
+        },
+        "Content": {
+            "quanzhong": [
+                1000,
+                1000,
+                1000,
+                1000,
+                1000,
+                1000
+            ],
+            "img": [
+                "LoadingTips_PVE001",
+                "LoadingTips_PVE002",
+                "LoadingTips_PVE003",
+                "LoadingTips_PVE004",
+                "LoadingTips_PVE005",
+                "LoadingTips_PVE006"
+            ]
+        },
+        "WaitingTime": 1000,
+        "FirstLoading": ""
+    },
+    "LoadingTips_PVP007": {
+        "Type": "PVP",
+        "Background": {
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg",
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
+            ]
+        },
+        "Content": {
+            "quanzhong": [
+                1000,
+                1000,
+                1000,
+                1000,
+                1000,
+                1000
+            ],
+            "img": [
+                "LoadingTips_PVE001",
+                "LoadingTips_PVE002",
+                "LoadingTips_PVE003",
+                "LoadingTips_PVE004",
+                "LoadingTips_PVE005",
+                "LoadingTips_PVE006"
+            ]
+        },
+        "WaitingTime": 1000,
+        "FirstLoading": ""
+    },
+    "Loading_StagePractice001": {
+        "Type": "StagePractice",
+        "Background": {
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg",
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
+            ]
+        },
+        "Content": {
+            "quanzhong": [
+                1000
+            ],
+            "img": [
+                "LoadingTips_StagePractice001"
+            ]
+        },
+        "WaitingTime": 1000,
+        "FirstLoading": 1
+    },
+    "Loading_StagePractice002": {
+        "Type": "StagePractice",
+        "Background": {
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg",
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
+            ]
+        },
+        "Content": {
+            "quanzhong": [
+                1000,
+                1000
+            ],
+            "img": [
+                "LoadingTips_StagePractice001",
+                "LoadingTips_StagePractice002"
+            ]
+        },
+        "WaitingTime": 1000,
+        "FirstLoading": 0
+    },
+    "LoadingTips_PVEM01S02": {
+        "Type": "None",
+        "Background": {
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg",
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
+            ]
+        },
+        "Content": {
+            "quanzhong": [
+                1000
+            ],
+            "img": [
+                "LoadingTips_PVE008"
+            ]
+        },
+        "WaitingTime": 1000,
+        "FirstLoading": ""
+    },
+    "LoadingTips_PVEM01S03": {
+        "Type": "None",
+        "Background": {
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg",
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
+            ]
+        },
+        "Content": {
+            "quanzhong": [
+                1000
+            ],
+            "img": [
+                "LoadingTips_PVE003"
+            ]
+        },
+        "WaitingTime": 1000,
+        "FirstLoading": ""
+    },
+    "LoadingTips_PVEM01S01": {
+        "Type": "None",
+        "Background": {
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg",
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
+            ]
+        },
+        "Content": {
+            "quanzhong": [
+                1000
+            ],
+            "img": [
+                "LoadingTips_PVE007"
+            ]
+        },
+        "WaitingTime": 1000,
+        "FirstLoading": ""
+    },
+    "LoadingTips_PVEM01S04": {
+        "Type": "None",
+        "Background": {
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg",
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
+            ]
+        },
+        "Content": {
+            "quanzhong": [
+                1000
+            ],
+            "img": [
+                "LoadingTips_PVE004"
+            ]
+        },
+        "WaitingTime": 1000,
+        "FirstLoading": ""
+    },
+    "Loading_StageGold002": {
+        "Type": "StageGold",
+        "Background": {
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg",
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
+            ]
+        },
+        "Content": {
+            "quanzhong": [
+                1000,
+                1000
+            ],
+            "img": [
+                "LoadingTips_StageGold002",
+                "LoadingTips_StageGold001"
+            ]
+        },
+        "WaitingTime": 1000,
+        "FirstLoading": 0
+    },
+    "Loading_StageGold001": {
+        "Type": "StageGold",
+        "Background": {
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg",
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
+            ]
+        },
+        "Content": {
+            "quanzhong": [
+                1000
+            ],
+            "img": [
+                "LoadingTips_StageGold002"
+            ]
+        },
+        "WaitingTime": 1000,
+        "FirstLoading": 1
+    },
+    "LoadingTips_PVE010": {
+        "Type": "PVE",
+        "Background": {
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg",
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
+            ]
+        },
+        "Content": {
+            "quanzhong": [
+                1000,
+                1000,
+                1000,
+                1000,
+                1000,
+                1000
+            ],
+            "img": [
+                "LoadingTips_PVE001",
+                "LoadingTips_PVE002",
+                "LoadingTips_PVE003",
+                "LoadingTips_PVE004",
+                "LoadingTips_PVE005",
+                "LoadingTips_PVE006"
+            ]
+        },
+        "WaitingTime": 1000,
+        "FirstLoading": ""
+    },
+    "Loading_DreamChallenge_2": {
+        "Type": "DreamChallenge",
+        "Background": {
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg",
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
+            ]
+        },
+        "Content": {
+            "quanzhong": [
+                1000,
+                1000,
+                1000,
+                1000,
+                1000,
+                1000
+            ],
+            "img": [
+                "LoadingTips_PVE001",
+                "LoadingTips_PVE002",
+                "LoadingTips_PVE003",
+                "LoadingTips_PVE004",
+                "LoadingTips_PVE005",
+                "LoadingTips_PVE006"
+            ]
+        },
+        "WaitingTime": 1000,
+        "FirstLoading": 0
+    },
+    "Loading_StageNormal001": {
+        "Type": "StageNormal",
+        "Background": {
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg",
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
+            ]
+        },
+        "Content": {
+            "quanzhong": [
+                1000,
+                1000,
+                1000,
+                1000,
+                1000,
+                1000
+            ],
+            "img": [
+                "LoadingTips_PVE001",
+                "LoadingTips_PVE002",
+                "LoadingTips_PVE003",
+                "LoadingTips_PVE004",
+                "LoadingTips_PVE005",
+                "LoadingTips_PVE006"
+            ]
+        },
+        "WaitingTime": 1000,
+        "FirstLoading": 1
+    },
+    "Loading_StageNormal002": {
+        "Type": "StageNormal",
+        "Background": {
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg",
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
+            ]
+        },
+        "Content": {
+            "quanzhong": [
+                1000,
+                1000,
+                1000,
+                1000,
+                1000,
+                1000
+            ],
+            "img": [
+                "LoadingTips_PVE001",
+                "LoadingTips_PVE002",
+                "LoadingTips_PVE003",
+                "LoadingTips_PVE004",
+                "LoadingTips_PVE005",
+                "LoadingTips_PVE006"
+            ]
+        },
+        "WaitingTime": 1000,
+        "FirstLoading": 0
+    },
+    "Loading_DreamChallenge_1": {
+        "Type": "DreamChallenge",
+        "Background": {
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg",
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
+            ]
+        },
+        "Content": {
+            "quanzhong": [
+                1000,
+                1000,
+                1000,
+                1000,
+                1000,
+                1000
+            ],
+            "img": [
+                "LoadingTips_PVE001",
+                "LoadingTips_PVE002",
+                "LoadingTips_PVE003",
+                "LoadingTips_PVE004",
+                "LoadingTips_PVE005",
+                "LoadingTips_PVE006"
+            ]
+        },
+        "WaitingTime": 1000,
+        "FirstLoading": 1
+    },
+    "Loading_StageElite001": {
+        "Type": "StageElite",
+        "Background": {
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg",
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
+            ]
+        },
+        "Content": {
+            "quanzhong": [
+                1000
+            ],
+            "img": [
+                "LoadingTips_StageElite001"
+            ]
+        },
+        "WaitingTime": 1000,
+        "FirstLoading": 1
+    },
+    "Loading_StageExp002": {
+        "Type": "StageExp",
+        "Background": {
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg",
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
+            ]
+        },
+        "Content": {
+            "quanzhong": [
+                1000,
+                1000
+            ],
+            "img": [
+                "LoadingTips_StageExp002",
+                "LoadingTips_StageExp001"
+            ]
+        },
+        "WaitingTime": 1000,
+        "FirstLoading": 0
+    },
+    "Loading_KOF001": {
+        "Type": "KOF",
+        "Background": {
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg",
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
+            ]
+        },
+        "Content": {
+            "quanzhong": [
+                1000
+            ],
+            "img": [
+                "LoadingTips_KOF001"
+            ]
+        },
+        "WaitingTime": 1000,
+        "FirstLoading": 1
+    },
+    "Loading_KOF002": {
+        "Type": "KOF",
+        "Background": {
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg",
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
+            ]
+        },
+        "Content": {
+            "quanzhong": [
+                1000,
+                1000,
+                1000
+            ],
+            "img": [
+                "LoadingTips_KOF001",
+                "LoadingTips_KOF002",
+                "LoadingTips_KOF003"
+            ]
+        },
+        "WaitingTime": 1000,
+        "FirstLoading": 0
+    },
+    "Loading_StageExp001": {
+        "Type": "StageExp",
+        "Background": {
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg",
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
+            ]
+        },
+        "Content": {
+            "quanzhong": [
+                1000
+            ],
+            "img": [
+                "LoadingTips_StageExp002"
+            ]
+        },
+        "WaitingTime": 1000,
+        "FirstLoading": 1
+    },
+    "Loading_MapExplore002": {
+        "Type": "MapExplore",
+        "Background": {
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg",
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
+            ]
+        },
+        "Content": {
+            "quanzhong": [
+                1000,
+                1000,
+                1000,
+                1000
+            ],
+            "img": [
+                "LoadingTips_MapExplore001",
+                "LoadingTips_MapExplore002",
+                "LoadingTips_MapExplore003",
+                "LoadingTips_MapExplore004"
+            ]
+        },
+        "WaitingTime": 1000,
+        "FirstLoading": 0
+    },
+    "LoadingTips_PVP012": {
+        "Type": "None",
+        "Background": {
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg",
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
+            ]
+        },
+        "Content": {
+            "quanzhong": [
+                1000,
+                1000,
+                1000,
+                1000,
+                1000,
+                1000
+            ],
+            "img": [
+                "LoadingTips_PVE001",
+                "LoadingTips_PVE002",
+                "LoadingTips_PVE003",
+                "LoadingTips_PVE004",
+                "LoadingTips_PVE005",
+                "LoadingTips_PVE006"
+            ]
+        },
+        "WaitingTime": 1000,
+        "FirstLoading": ""
+    },
+    "LoadingTips_PVP010": {
+        "Type": "PVP",
+        "Background": {
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg",
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
+            ]
+        },
+        "Content": {
+            "quanzhong": [
+                1000,
+                1000,
+                1000,
+                1000,
+                1000,
+                1000
+            ],
+            "img": [
+                "LoadingTips_PVE001",
+                "LoadingTips_PVE002",
+                "LoadingTips_PVE003",
+                "LoadingTips_PVE004",
+                "LoadingTips_PVE005",
+                "LoadingTips_PVE006"
+            ]
+        },
+        "WaitingTime": 1000,
+        "FirstLoading": ""
+    },
+    "Loading_ClubBoss_2": {
+        "Type": "ClubBoss",
+        "Background": {
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg",
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
+            ]
+        },
+        "Content": {
+            "quanzhong": [
+                1000,
+                1000,
+                1000,
+                500,
+                500,
+                100
+            ],
+            "img": [
+                "LoadingTips_PVE001",
+                "LoadingTips_PVE002",
+                "LoadingTips_PVE003",
+                "LoadingTips_PVE004",
+                "LoadingTips_PVE005",
+                "LoadingTips_PVE006"
+            ]
+        },
+        "WaitingTime": 1000,
+        "FirstLoading": 0
+    },
+    "Loading_Arena001": {
+        "Type": "Arena",
+        "Background": {
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg",
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
+            ]
+        },
+        "Content": {
+            "quanzhong": [
+                1000
+            ],
+            "img": [
+                "LoadingTips_Arena001"
+            ]
+        },
+        "WaitingTime": 1000,
+        "FirstLoading": 1
+    },
+    "LoadingTips_PVE011": {
+        "Type": "PVE",
+        "Background": {
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg",
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
+            ]
+        },
+        "Content": {
+            "quanzhong": [
+                1000,
+                1000,
+                1000,
+                1000,
+                1000,
+                1000
+            ],
+            "img": [
+                "LoadingTips_PVE001",
+                "LoadingTips_PVE002",
+                "LoadingTips_PVE003",
+                "LoadingTips_PVE004",
+                "LoadingTips_PVE005",
+                "LoadingTips_PVE006"
+            ]
+        },
+        "WaitingTime": 1000,
+        "FirstLoading": ""
+    },
+    "Loading_FriendPK002": {
+        "Type": "FriendPK",
+        "Background": {
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg",
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
+            ]
+        },
+        "Content": {
+            "quanzhong": [
+                1000,
+                1000
+            ],
+            "img": [
+                "LoadingTips_FriendPK001",
+                "LoadingTips_FriendPK002"
+            ]
+        },
+        "WaitingTime": 1000,
+        "FirstLoading": 0
+    },
+    "Loading_FriendPK001": {
+        "Type": "FriendPK",
+        "Background": {
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg",
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
+            ]
+        },
+        "Content": {
+            "quanzhong": [
+                1000
+            ],
+            "img": [
+                "LoadingTips_FriendPK001"
+            ]
+        },
+        "WaitingTime": 1000,
+        "FirstLoading": 1
+    },
+    "LoadingTips_PVE012": {
+        "Type": "PVE",
+        "Background": {
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg",
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
+            ]
+        },
+        "Content": {
+            "quanzhong": [
+                1000,
+                1000,
+                1000,
+                1000,
+                1000,
+                1000
+            ],
+            "img": [
+                "LoadingTips_PVE001",
+                "LoadingTips_PVE002",
+                "LoadingTips_PVE003",
+                "LoadingTips_PVE004",
+                "LoadingTips_PVE005",
+                "LoadingTips_PVE006"
+            ]
+        },
+        "WaitingTime": 1000,
+        "FirstLoading": ""
+    },
+    "Loading_ClubBoss_1": {
+        "Type": "ClubBoss",
+        "Background": {
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg",
+                "bg_pve_cg_12.jpg",
+                "bg_build_cg_02.jpg",
+                "bg_build_cg_03.jpg"
+            ]
+        },
+        "Content": {
+            "quanzhong": [
+                1000,
+                1000,
+                1000,
+                500,
+                500,
+                100
+            ],
+            "img": [
+                "LoadingTips_PVE001",
+                "LoadingTips_PVE002",
+                "LoadingTips_PVE003",
+                "LoadingTips_PVE004",
+                "LoadingTips_PVE005",
+                "LoadingTips_PVE006"
+            ]
+        },
+        "WaitingTime": 1000,
+        "FirstLoading": 1
     }
 }

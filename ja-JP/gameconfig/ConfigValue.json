@@ -1172,26 +1172,6 @@
         },
         "clz": "dict"
     },
-    "BattlePass_RuleDesc": {
-        "content": {
-            "RuleDesc": [
-                "BattlePass_RuleDesc_1",
-                "BattlePass_RuleDesc_2",
-                "BattlePass_RuleDesc_3",
-                "BattlePass_RuleDesc_4",
-                "BattlePass_RuleDesc_5",
-                "BattlePass_RuleDesc_6",
-                "BattlePass_RuleDesc_7",
-                "BattlePass_RuleDesc_8",
-                "BattlePass_RuleDesc_9",
-                "BattlePass_RuleDesc_10",
-                "BattlePass_RuleDesc_11",
-                "BattlePass_RuleDesc_12",
-                "BattlePass_RuleDesc_13"
-            ]
-        },
-        "clz": "string"
-    },
     "BattlePass_BuyLevelCount": {
         "content": -1,
         "clz": "int"
@@ -3275,10 +3255,6 @@
         ],
         "clz": "string[]"
     },
-    "First_LogOn": {
-        "content": [],
-        "clz": "string[]"
-    },
     "HeroStone_FragmentCost": {
         "content": {
             "IHF_HeroStone_SSR": 60,
@@ -3346,16 +3322,6 @@
             3000,
             "M09S01",
             "E09S01"
-        ],
-        "clz": "string[]"
-    },
-    "TrialSwitch": {
-        "content": [
-            "spstage",
-            "explore",
-            "tower",
-            "crusade",
-            "practice"
         ],
         "clz": "string[]"
     },
@@ -4734,45 +4700,6 @@
         },
         "clz": "dict"
     },
-    "HeroStar_StarRewardOut": {
-        "content": [
-            "TJHDe",
-            "AJYHou",
-            "FEMSi",
-            "BDPan",
-            "Hsheng",
-            "ZTXChang",
-            "CLMan",
-            "FTLEShi",
-            "SLMen",
-            "MLYTLSha",
-            "LLan",
-            "SDTZi",
-            "TPGZhu",
-            "CZheng",
-            "SGHQShou",
-            "YSTLu",
-            "LYSi",
-            "DCJKang",
-            "GYCZi",
-            "SYAi",
-            "YYing",
-            "BQDShe",
-            "DFQi",
-            "NXYYi",
-            "JNLong",
-            "ZZBBWei",
-            "XSMLi",
-            "YXNMei",
-            "AJTa",
-            "SRen",
-            "BHTZi",
-            "LYXi",
-            "KMLa",
-            "YSLBin"
-        ],
-        "clz": "string[]"
-    },
     "Hero_ExpItem": {
         "content": [
             "IM_ExpUp1",
@@ -4995,17 +4922,6 @@
         "content": 259200,
         "clz": "int"
     },
-    "Club_SNS_Rule": {
-        "content": [
-            {
-                "Desc": [
-                    "ChatRoom_EnterExplain"
-                ],
-                "Title": "ChatRoom_Rule_Title"
-            }
-        ],
-        "clz": "string[]"
-    },
     "Club_Mail_Number": {
         "content": 100,
         "clz": "int"
@@ -5156,27 +5072,6 @@
     "First_Battle_Scene": {
         "content": "Battle_Scene_17",
         "clz": "string"
-    },
-    "FAC_CheckType": {
-        "content": [
-            "normal_stage",
-            "elite_stage",
-            "gold",
-            "exp",
-            "crystal",
-            "equipment",
-            "skill_1",
-            "skill_2",
-            "skill_3",
-            "maze_battle",
-            "explore_battle",
-            "herostory_battle",
-            "arena_challenge",
-            "tower",
-            "crusade",
-            "dream_challenge"
-        ],
-        "clz": "string[]"
     },
     "BattleStatementDelay_Special": {
         "content": {
@@ -5438,16 +5333,6 @@
         "content": 3,
         "clz": "int"
     },
-    "Tower_1_Master": {
-        "content": [
-            "Tower_1_Master1",
-            "Tower_1_Master2",
-            "Tower_1_Master3",
-            "Tower_1_Master4",
-            "Tower_1_Master5"
-        ],
-        "clz": "string[]"
-    },
     "Tower_1_HeroGrowBuff": {
         "content": {
             "Aoe": "Tower_1_HeroBuff",
@@ -5483,23 +5368,6 @@
             "CLMan": 14
         },
         "clz": "dict"
-    },
-    "Tower_1_Exception": {
-        "content": [
-            "SYAi",
-            "YYing",
-            "GYCZi",
-            "DFQi",
-            "DCJKang",
-            "NXYYi",
-            "BQDShe",
-            "YXNMei",
-            "AJTa",
-            "SRen",
-            "BHTZi",
-            "LYXi"
-        ],
-        "clz": "string[]"
     },
     "Tower_1_Star_Buff_Minimum_Star": {
         "content": 5,
@@ -5801,155 +5669,6 @@
         "content": "IR_Activity",
         "clz": "string"
     },
-    "StagePresentOrder": {
-        "content": [
-            {
-                "Button3": "Button1_Text3",
-                "TitleDesc2": "StagePresent1_Title2",
-                "stageName": "StagePresent1",
-                "Button1": "Button1_Text1",
-                "FinalPoint": "M03S08",
-                "Button2": "Button1_Text2",
-                "Unlock": "StagePresent1_Unlock",
-                "HeroInfo1": "StagePresent1_HeroInfo1",
-                "HeroInfo2": "StagePresent1_HeroInfo2",
-                "Model": "Model_XLai",
-                "reward": [
-                    {
-                        "count": 4,
-                        "reward": "StagePresent1_Reward1"
-                    },
-                    {
-                        "count": 10,
-                        "reward": "StagePresent1_Reward2"
-                    },
-                    {
-                        "count": 14,
-                        "reward": "StagePresent1_Reward3"
-                    }
-                ],
-                "TitleDesc1": "StagePresent1_Title1",
-                "Icon": "main_btn_moli"
-            },
-            {
-                "Button3": "Button2_Text3",
-                "TitleDesc2": "StagePresent2_Title2",
-                "stageName": "StagePresent2",
-                "Button1": "Button2_Text1",
-                "FinalPoint": "M05S24",
-                "Button2": "Button2_Text2",
-                "Unlock": "StagePresent2_Unlock",
-                "HeroInfo1": "StagePresent2_HeroInfo1",
-                "HeroInfo2": "StagePresent2_HeroInfo2",
-                "Model": "Model_CLMan",
-                "reward": [
-                    {
-                        "count": 12,
-                        "reward": "StagePresent2_Reward1"
-                    },
-                    {
-                        "count": 24,
-                        "reward": "StagePresent2_Reward2"
-                    },
-                    {
-                        "count": 39,
-                        "reward": "StagePresent2_Reward3"
-                    }
-                ],
-                "TitleDesc1": "StagePresent2_Title1",
-                "Icon": "main_btn_shengqiang"
-            },
-            {
-                "Button3": "Button3_Text3",
-                "TitleDesc2": "StagePresent3_Title2",
-                "stageName": "StagePresent3",
-                "Button1": "Button3_Text1",
-                "FinalPoint": "M07S30",
-                "Button2": "Button3_Text2",
-                "Unlock": "StagePresent3_Unlock",
-                "HeroInfo1": "StagePresent3_HeroInfo1",
-                "HeroInfo2": "StagePresent3_HeroInfo2",
-                "Model": "Model_FTLEShi",
-                "reward": [
-                    {
-                        "count": 20,
-                        "reward": "StagePresent3_Reward1"
-                    },
-                    {
-                        "count": 40,
-                        "reward": "StagePresent3_Reward2"
-                    },
-                    {
-                        "count": 60,
-                        "reward": "StagePresent3_Reward3"
-                    }
-                ],
-                "TitleDesc1": "StagePresent3_Title1",
-                "Icon": "main_btn_shengjia"
-            },
-            {
-                "Button3": "Button4_Text3",
-                "TitleDesc2": "StagePresent4_Title2",
-                "stageName": "StagePresent4",
-                "Button1": "Button4_Text1",
-                "FinalPoint": "M09S40",
-                "Button2": "Button4_Text2",
-                "Unlock": "StagePresent4_Unlock",
-                "HeroInfo1": "StagePresent4_HeroInfo1",
-                "HeroInfo2": "StagePresent4_HeroInfo2",
-                "Model": "Model_ZTXChang",
-                "reward": [
-                    {
-                        "count": 30,
-                        "reward": "StagePresent4_Reward1"
-                    },
-                    {
-                        "count": 60,
-                        "reward": "StagePresent4_Reward2"
-                    },
-                    {
-                        "count": 80,
-                        "reward": "StagePresent4_Reward3"
-                    }
-                ],
-                "TitleDesc1": "StagePresent4_Title1",
-                "Icon": "main_btn_shengshi"
-            },
-            {
-                "Button3": "Button5_Text3",
-                "TitleDesc2": "StagePresent5_Title2",
-                "stageName": "StagePresent5",
-                "Button1": "Button5_Text1",
-                "FinalPoint": "M12S50",
-                "Button2": "Button5_Text2",
-                "Unlock": "StagePresent5_Unlock",
-                "HeroInfo1": "StagePresent5_HeroInfo1",
-                "HeroInfo2": "StagePresent5_HeroInfo2",
-                "Model": "Model_TPGZhu",
-                "reward": [
-                    {
-                        "count": 30,
-                        "reward": "StagePresent5_Reward2"
-                    },
-                    {
-                        "count": 60,
-                        "reward": "StagePresent5_Reward1"
-                    },
-                    {
-                        "count": 90,
-                        "reward": "StagePresent5_Reward3"
-                    },
-                    {
-                        "count": 130,
-                        "reward": "StagePresent5_Reward4"
-                    }
-                ],
-                "TitleDesc1": "StagePresent5_Title1",
-                "Icon": "main_btn_shengqiang"
-            }
-        ],
-        "clz": "array"
-    },
     "Music_PlayList": {
         "content": [
             "Mus_Main_Scene"
@@ -6024,20 +5743,6 @@
             "Charge_Rule2",
             "Charge_Rule3",
             "Charge_Rule4"
-        ],
-        "clz": "string[]"
-    },
-    "Shop_Sort": {
-        "content": [
-            "Shop_Recommend",
-            "Shop_Package",
-            "Shop_Reset",
-            "Shop_Monthcard",
-            "Shop_Mall",
-            "Shop_Normal",
-            "Shop_SurfacePackage",
-            "Shop_Surface",
-            "Shop_TimeLimit"
         ],
         "clz": "string[]"
     },
@@ -7306,5 +7011,378 @@
     "Friend_Gift_MaxGetTimes": {
         "content": "Friend_Gift_MaxGetTimes",
         "clz": "string"
+    },
+    "Test_DeluxeZadiac": {
+        "content": [
+            "Frame_Aries",
+            "Frame_Taurus",
+            "Frame_Gemini",
+            "Frame_Cancer",
+            "Frame_Leo",
+            "Frame_Virgo",
+            "Frame_Libra",
+            "Frame_Scorpio",
+            "Frame_Sagittarius",
+            "Frame_Capricorn",
+            "Frame_Aquarius",
+            "Frame_Pisces"
+        ],
+        "clz": "array"
+    },
+    "Club_SNS_Rule": {
+        "content": [
+            {
+                "Desc": [
+                    "ChatRoom_EnterExplain"
+                ],
+                "Title": "ChatRoom_Title"
+            }
+        ],
+        "clz": "string[]"
+    },
+    "StagePresentOrder": {
+        "content": [
+            {
+                "Button3": "Button1_Text3",
+                "TitleDesc2": "StagePresent1_Title2",
+                "stageName": "StagePresent1",
+                "Button1": "Button1_Text1",
+                "FinalPoint": "M03S08",
+                "Button2": "Button1_Text2",
+                "Unlock": "StagePresent1_Unlock",
+                "HeroInfo1": "StagePresent1_HeroInfo1",
+                "HeroInfo2": "StagePresent1_HeroInfo2",
+                "Model": "Model_XLai",
+                "reward": [
+                    {
+                        "count": 4,
+                        "reward": "StagePresent1_Reward1"
+                    },
+                    {
+                        "count": 10,
+                        "reward": "StagePresent1_Reward2"
+                    },
+                    {
+                        "count": 14,
+                        "reward": "StagePresent1_Reward3"
+                    }
+                ],
+                "TitleDesc1": "StagePresent1_Title1",
+                "Icon": "main_btn_moli"
+            },
+            {
+                "Button3": "Button2_Text3",
+                "TitleDesc2": "StagePresent2_Title2",
+                "stageName": "StagePresent2",
+                "Button1": "Button2_Text1",
+                "FinalPoint": "M05S24",
+                "Button2": "Button2_Text2",
+                "Unlock": "StagePresent2_Unlock",
+                "HeroInfo1": "StagePresent2_HeroInfo1",
+                "HeroInfo2": "StagePresent2_HeroInfo2",
+                "Model": "Model_CLMan",
+                "reward": [
+                    {
+                        "count": 12,
+                        "reward": "StagePresent2_Reward1"
+                    },
+                    {
+                        "count": 24,
+                        "reward": "StagePresent2_Reward2"
+                    },
+                    {
+                        "count": 39,
+                        "reward": "StagePresent2_Reward3"
+                    }
+                ],
+                "TitleDesc1": "StagePresent2_Title1",
+                "Icon": "main_btn_shengqiang"
+            },
+            {
+                "Button3": "Button3_Text3",
+                "TitleDesc2": "StagePresent3_Title2",
+                "stageName": "StagePresent3",
+                "Button1": "Button3_Text1",
+                "FinalPoint": "M07S30",
+                "Button2": "Button3_Text2",
+                "Unlock": "StagePresent3_Unlock",
+                "HeroInfo1": "StagePresent3_HeroInfo1",
+                "HeroInfo2": "StagePresent3_HeroInfo2",
+                "Model": "Model_FTLEShi",
+                "reward": [
+                    {
+                        "count": 20,
+                        "reward": "StagePresent3_Reward1"
+                    },
+                    {
+                        "count": 40,
+                        "reward": "StagePresent3_Reward2"
+                    },
+                    {
+                        "count": 60,
+                        "reward": "StagePresent3_Reward3"
+                    }
+                ],
+                "TitleDesc1": "StagePresent3_Title1",
+                "Icon": "main_btn_shengjia"
+            },
+            {
+                "Button3": "Button4_Text3",
+                "TitleDesc2": "StagePresent4_Title2",
+                "stageName": "StagePresent4",
+                "Button1": "Button4_Text1",
+                "FinalPoint": "M09S40",
+                "Button2": "Button4_Text2",
+                "Unlock": "StagePresent4_Unlock",
+                "HeroInfo1": "StagePresent4_HeroInfo1",
+                "HeroInfo2": "StagePresent4_HeroInfo2",
+                "Model": "Model_ZTXChang",
+                "reward": [
+                    {
+                        "count": 30,
+                        "reward": "StagePresent4_Reward1"
+                    },
+                    {
+                        "count": 60,
+                        "reward": "StagePresent4_Reward2"
+                    },
+                    {
+                        "count": 80,
+                        "reward": "StagePresent4_Reward3"
+                    }
+                ],
+                "TitleDesc1": "StagePresent4_Title1",
+                "Icon": "main_btn_shengshi"
+            }
+        ],
+        "clz": "array"
+    },
+    "First_LogOn": {
+        "content": [
+            "Mail_First_LogOn",
+            "Mail_First_Reserve_JP"
+        ],
+        "clz": "string[]"
+    },
+    "HeroStar_StarRewardOut": {
+        "content": [
+            "TJHDe",
+            "AJYHou",
+            "FEMSi",
+            "BDPan",
+            "Hsheng",
+            "ZTXChang",
+            "CLMan",
+            "FTLEShi",
+            "SLMen",
+            "MLYTLSha",
+            "LLan",
+            "SDTZi",
+            "TPGZhu",
+            "SGHQShou",
+            "YSTLu",
+            "LYSi",
+            "DCJKang",
+            "GYCZi",
+            "SYAi",
+            "YYing",
+            "BQDShe",
+            "DFQi",
+            "NXYYi",
+            "JNLong",
+            "ZZBBWei",
+            "XSMLi",
+            "YXNMei",
+            "AJTa",
+            "SRen",
+            "BHTZi",
+            "LYXi",
+            "KMLa",
+            "YSLBin",
+            "HLDNan"
+        ],
+        "clz": "string[]"
+    },
+    "BattlePass_RuleDesc": {
+        "content": {
+            "RuleDesc": [
+                "BattlePass_RuleDesc_1",
+                "BattlePass_RuleDesc_2",
+                "BattlePass_RuleDesc_3",
+                "BattlePass_RuleDesc_4",
+                "BattlePass_RuleDesc_5",
+                "BattlePass_RuleDesc_6",
+                "BattlePass_RuleDesc_7",
+                "BattlePass_RuleDesc_8",
+                "BattlePass_RuleDesc_9",
+                "BattlePass_RuleDesc_10",
+                "BattlePass_RuleDesc_11",
+                "BattlePass_RuleDesc_12"
+            ]
+        },
+        "clz": "string"
+    },
+    "Test_RealTime": {
+        "content": {
+            "normal": [
+                {
+                    "start": "2020-10-24 00:00:00",
+                    "reward": "MonthCard_ReReward_Scorpio",
+                    "end": "2020-11-22 23:59:59"
+                },
+                {
+                    "start": "2020-11-23 00:00:00",
+                    "reward": "MonthCard_ReReward_Sagittarius",
+                    "end": "2020-12-21 23:59:59"
+                },
+                {
+                    "start": "2020-12-22 00:00:00",
+                    "reward": "MonthCard_ReReward_Capricorn",
+                    "end": "2021-1-19 23:59:59"
+                },
+                {
+                    "start": "2021-1-20 00:00:00",
+                    "reward": "MonthCard_ReReward_Aquarius",
+                    "end": "2021-2-18 23:59:59"
+                },
+                {
+                    "start": "2021-2-19 00:00:00",
+                    "reward": "MonthCard_ReReward_Pisces",
+                    "end": "2021-3-20 23:59:59"
+                },
+                {
+                    "start": "2021-3-21 00:00:00",
+                    "reward": "MonthCard_ReReward_Aries",
+                    "end": "2021-4-19 23:59:59"
+                },
+                {
+                    "start": "2021-4-20 00:00:00",
+                    "reward": "MonthCard_ReReward_Taurus",
+                    "end": "2021-5-20 23:59:59"
+                },
+                {
+                    "start": "2021-5-21 00:00:00",
+                    "reward": "MonthCard_ReReward_Gemini",
+                    "end": "2021-6-21 23:59:59"
+                },
+                {
+                    "start": "2021-6-22 00:00:00",
+                    "reward": "MonthCard_ReReward_Cancer",
+                    "end": "2021-7-22 23:59:59"
+                },
+                {
+                    "start": "2021-7-23 00:00:00",
+                    "reward": "MonthCard_ReReward_Leo",
+                    "end": "2021-8-22 23:59:59"
+                },
+                {
+                    "start": "2021-8-23 00:00:00",
+                    "reward": "MonthCard_ReReward_Virgo",
+                    "end": "2021-9-22 23:59:59"
+                },
+                {
+                    "start": "2021-9-23 00:00:00",
+                    "reward": "MonthCard_ReReward_Libra",
+                    "end": "2021-10-23 23:59:59"
+                },
+                {
+                    "start": "2021-10-24 00:00:00",
+                    "reward": "MonthCard_ReReward_Scorpio",
+                    "end": "2021-11-22 23:59:59"
+                },
+                {
+                    "start": "2021-11-23 00:00:00",
+                    "reward": "MonthCard_ReReward_Sagittarius",
+                    "end": "2021-12-21 23:59:59"
+                },
+                {
+                    "start": "2021-12-22 00:00:00",
+                    "reward": "MonthCard_ReReward_Capricorn",
+                    "end": "2022-1-19 23:59:59"
+                },
+                {
+                    "start": "2022-1-20 00:00:00",
+                    "reward": "MonthCard_ReReward_Aquarius",
+                    "end": "2022-2-18 23:59:59"
+                },
+                {
+                    "start": "2022-2-19 00:00:00",
+                    "reward": "MonthCard_ReReward_Pisces",
+                    "end": "2022-3-20 23:59:59"
+                }
+            ]
+        },
+        "clz": "dict"
+    },
+    "Tower_1_Exception": {
+        "content": [
+            "SYAi",
+            "YYing",
+            "GYCZi",
+            "DFQi",
+            "DCJKang",
+            "NXYYi",
+            "BQDShe",
+            "YXNMei",
+            "AJTa",
+            "SRen",
+            "BHTZi",
+            "LYXi",
+            "CZheng"
+        ],
+        "clz": "string[]"
+    },
+    "TrialSwitch": {
+        "content": [
+            "spstage",
+            "explore",
+            "tower",
+            "practice"
+        ],
+        "clz": "string[]"
+    },
+    "Shop_Sort": {
+        "content": [
+            "Shop_Recommend",
+            "Shop_Package",
+            "Shop_TimeLimit",
+            "Shop_Reset",
+            "Shop_Monthcard",
+            "Shop_Mall",
+            "Shop_Normal",
+            "Shop_SurfacePackage",
+            "Shop_Surface"
+        ],
+        "clz": "string[]"
+    },
+    "FAC_CheckType": {
+        "content": [
+            "normal_stage",
+            "elite_stage",
+            "gold",
+            "exp",
+            "crystal",
+            "equipment",
+            "skill_1",
+            "skill_2",
+            "skill_3",
+            "maze_battle",
+            "explore_battle",
+            "herostory_battle",
+            "arena_challenge",
+            "tower",
+            "crusade",
+            "dream_challenge",
+            "club_boss"
+        ],
+        "clz": "string[]"
+    },
+    "Tower_1_Master": {
+        "content": [
+            "Tower_1_Master1",
+            "Tower_1_Master2",
+            "Tower_1_Master3"
+        ],
+        "clz": "string[]"
     }
 }

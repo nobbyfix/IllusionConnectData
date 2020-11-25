@@ -23,6 +23,7 @@ Mediator:has("_eventMap", {
 
 function Mediator:initialize()
 	super.initialize(self)
+	_G.print("=====className is " .. self:className())
 end
 
 function Mediator:dispose()

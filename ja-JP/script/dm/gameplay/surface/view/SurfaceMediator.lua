@@ -454,7 +454,9 @@ function SurfaceMediator:updateBtnState()
 
 		self._sureBtn:setVisible(showGoto)
 		self._unlockPanel:setVisible(not self._sureBtn:isVisible())
-	elseif self._curSurface:getType() ~= SurfaceType.kOther then
+	elseif self._curSurface:getType() == SurfaceType.kOther then
+		self._sureBtn:setVisible(false)
+	else
 		self._sureBtn:setVisible(false)
 	end
 end

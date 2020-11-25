@@ -944,49 +944,6 @@
         "GameCoin": "",
         "SpecialType": ""
     },
-    "ShopReset_Week7": {
-        "Name": "ShopReset_Week7_Name",
-        "Platform": "ios",
-        "ItemShow": "ShopReset_Week7_Reward",
-        "Item": "ShopReset_Week7_Reward",
-        "Sort": 12,
-        "IsFree": 0,
-        "Price": "",
-        "Desc": "ShopReset_Week7_Desc",
-        "Icon": "sd_dqbj_tehuijingxuanzhaohuan",
-        "Quality": 5,
-        "Tag": "",
-        "CostOffTag": 4.0,
-        "TimeTag": "",
-        "TimeType": {
-            "start": "2018-03-12 19:00:00",
-            "amount": 2,
-            "end": "2030-03-12 19:00:00",
-            "type": "week"
-        },
-        "CoolDown": "",
-        "ServerCondition": "",
-        "ClientCondition": [
-            {
-                "STAGE": "M02S01"
-            },
-            {
-                "VIPEXP": [
-                    500,
-                    9999
-                ]
-            }
-        ],
-        "Hide": 1,
-        "Prepose": "",
-        "Vanish": 0,
-        "Pay": "Pay_ShopReset_Week7",
-        "ShopSort": "Week",
-        "Version": "",
-        "WindowIcon": "",
-        "GameCoin": "",
-        "SpecialType": ""
-    },
     "ShopReset_Week4D": {
         "Name": "ShopReset_Week4D_Name",
         "Platform": "ios",
@@ -1146,5 +1103,54 @@
         "WindowIcon": "",
         "GameCoin": "",
         "SpecialType": "DayExp"
+    },
+    "ShopReset_Week7": {
+        "Name": "ShopReset_Week7_Name",
+        "Platform": "ios",
+        "ItemShow": "ShopReset_Week7_Reward",
+        "Item": "ShopReset_Week7_Reward",
+        "Sort": 12,
+        "IsFree": 0,
+        "Price": "",
+        "Desc": "ShopReset_Week7_Desc",
+        "Icon": "sd_dqbj_tehuijingxuanzhaohuan",
+        "Quality": 5,
+        "Tag": "",
+        "CostOffTag": 4.0,
+        "TimeTag": "",
+        "TimeType": {
+            "start": "2018-03-12 19:00:00",
+            "amount": 2,
+            "end": "2030-03-12 19:00:00",
+            "type": "week"
+        },
+        "CoolDown": "",
+        "ServerCondition": "",
+        "ClientCondition": [
+            {
+                "STAGE": "M02S01"
+            },
+            {
+                "VIPEXP": [
+                    500,
+                    9999
+                ]
+            },
+            {
+                "PLEYERREG": [
+                    4,
+                    10000
+                ]
+            }
+        ],
+        "Hide": 1,
+        "Prepose": "",
+        "Vanish": 0,
+        "Pay": "Pay_ShopReset_Week7",
+        "ShopSort": "Week",
+        "Version": "",
+        "WindowIcon": "",
+        "GameCoin": "",
+        "SpecialType": ""
     }
 }

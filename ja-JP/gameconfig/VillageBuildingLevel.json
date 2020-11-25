@@ -2950,54 +2950,8 @@
         "UnlockBuildingDesc": "MainCity_UnlockFunction_Desc",
         "UpgradeCostAnother": ""
     },
-    "Decorate_GameWith3_Lv1": {
-        "DecorateBuilding": "Decorate_GameWith3",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 1,
-                "type": "IM_Decorate_Niconico4"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 10,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
-    },
     "Decorate_Niconico3_Lv1": {
         "DecorateBuilding": "Decorate_Niconico3",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 1,
-                "type": "IM_Decorate_Niconico3"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 10,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
-    },
-    "Decorate_GameWith2_Lv1": {
-        "DecorateBuilding": "Decorate_GameWith2",
         "Level": 1,
         "PreBuilding": [],
         "BuildCondition": "",
@@ -3077,29 +3031,6 @@
             {
                 "amount": 1,
                 "type": "IM_Decorate_Tuwo"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 10,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
-    },
-    "Decorate_GameWith1_Lv1": {
-        "DecorateBuilding": "Decorate_GameWith1",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 1,
-                "type": "IM_Decorate_Niconico2"
             }
         ],
         "ReturnFactor": 0.5,
@@ -3490,6 +3421,75 @@
         ],
         "Comfort": 12,
         "FunctionText": "ExpOre_FunctionText",
+        "UpSurface": "",
+        "UnlockBuildingDesc": "",
+        "UpgradeCostAnother": ""
+    },
+    "Decorate_GameWith1_Lv1": {
+        "DecorateBuilding": "Decorate_GameWith1",
+        "Level": 1,
+        "PreBuilding": [],
+        "BuildCondition": "",
+        "UpDesc": "",
+        "NextBuilding": "",
+        "OtherCost": "",
+        "UpgradeCost": [
+            {
+                "amount": 1,
+                "type": "IM_Decorate_GameWith1"
+            }
+        ],
+        "ReturnFactor": 0.5,
+        "UpgradeTime": 0.0,
+        "Factor1": [],
+        "Comfort": 10,
+        "FunctionText": "",
+        "UpSurface": "",
+        "UnlockBuildingDesc": "",
+        "UpgradeCostAnother": ""
+    },
+    "Decorate_GameWith3_Lv1": {
+        "DecorateBuilding": "Decorate_GameWith3",
+        "Level": 1,
+        "PreBuilding": [],
+        "BuildCondition": "",
+        "UpDesc": "",
+        "NextBuilding": "",
+        "OtherCost": "",
+        "UpgradeCost": [
+            {
+                "amount": 1,
+                "type": "IM_Decorate_GameWith3"
+            }
+        ],
+        "ReturnFactor": 0.5,
+        "UpgradeTime": 0.0,
+        "Factor1": [],
+        "Comfort": 10,
+        "FunctionText": "",
+        "UpSurface": "",
+        "UnlockBuildingDesc": "",
+        "UpgradeCostAnother": ""
+    },
+    "Decorate_GameWith2_Lv1": {
+        "DecorateBuilding": "Decorate_GameWith2",
+        "Level": 1,
+        "PreBuilding": [],
+        "BuildCondition": "",
+        "UpDesc": "",
+        "NextBuilding": "",
+        "OtherCost": "",
+        "UpgradeCost": [
+            {
+                "amount": 1,
+                "type": "IM_Decorate_GameWith2"
+            }
+        ],
+        "ReturnFactor": 0.5,
+        "UpgradeTime": 0.0,
+        "Factor1": [],
+        "Comfort": 10,
+        "FunctionText": "",
         "UpSurface": "",
         "UnlockBuildingDesc": "",
         "UpgradeCostAnother": ""

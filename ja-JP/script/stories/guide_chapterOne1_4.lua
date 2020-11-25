@@ -2326,7 +2326,11 @@ function scene_guideChapterOne1_4.actions.guide_chapterOne1_4_action(_root, args
 								wait({
 									args = function (_ctx)
 										return {
-											type = "enter_commonStageMain_view"
+											type = "enter_commonStageMain_view",
+											mask = {
+												touchMask = true,
+												opacity = 0
+											}
 										}
 									end
 								}),

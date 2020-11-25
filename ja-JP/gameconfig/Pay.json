@@ -964,5 +964,47 @@
         "MapId": "",
         "Symbol": "¥",
         "Pay_Id": 10054
+    },
+    "Pay_PackageShop_TL_HuanMeng_4": {
+        "ProductId": "jpmjlj.17usd.2080pick2",
+        "SDKSource": [
+            "efun_android",
+            "efun_ios"
+        ],
+        "Price": 2080.0,
+        "VIPExp": 113,
+        "Name": "Pay_PackageShop_TL_HuanMeng_4_Name",
+        "IsContinue": 0,
+        "MapId": "",
+        "Symbol": "¥",
+        "Pay_Id": 10110
+    },
+    "Pay_PackageShop_TL_HuanMeng_5": {
+        "ProductId": "jpmjlj.28usd.3420pick2",
+        "SDKSource": [
+            "efun_android",
+            "efun_ios"
+        ],
+        "Price": 3420.0,
+        "VIPExp": 188,
+        "Name": "Pay_PackageShop_TL_HuanMeng_5_Name",
+        "IsContinue": 0,
+        "MapId": "",
+        "Symbol": "¥",
+        "Pay_Id": 10111
+    },
+    "Pay_PackageShop_TL_HuanMeng_3": {
+        "ProductId": "jpmjlj.5usd.610pick2",
+        "SDKSource": [
+            "efun_android",
+            "efun_ios"
+        ],
+        "Price": 610.0,
+        "VIPExp": 30,
+        "Name": "Pay_PackageShop_TL_HuanMeng_3_Name",
+        "IsContinue": 0,
+        "MapId": "",
+        "Symbol": "¥",
+        "Pay_Id": 10109
     }
 }

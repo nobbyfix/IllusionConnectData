@@ -200,8 +200,13 @@ function PassListModel:sortActivityTask()
 		return b:getOrderStatusNum() < a:getOrderStatusNum()
 	end
 
-	table.sort(self._passTaskList[PassTaskType.kDailyTask], sortFun)
-	table.sort(self._passTaskList[PassTaskType.kWeekTask], sortFun)
+	if self._passTaskList[PassTaskType.kDailyTask] ~= nil then
+		table.sort(self._passTaskList[PassTaskType.kDailyTask], sortFun)
+	end
+
+	if self._passTaskList[PassTaskType.kWeekTask] ~= nil then
+		table.sort(self._passTaskList[PassTaskType.kWeekTask], sortFun)
+	end
 
 	if self._passTaskList[PassTaskType.kMonthTask] ~= nil then
 		table.sort(self._passTaskList[PassTaskType.kMonthTask], sortFun)
