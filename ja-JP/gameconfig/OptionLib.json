@@ -1,0 +1,80 @@
+{
+    "OptionLib_Test2": {
+        "Must": [
+            "Option_Gold_1",
+            "Option_Gold_2"
+        ],
+        "Random": [
+            "Option_Gold_5",
+            "Option_Gold_6"
+        ],
+        "Amount": 1,
+        "Hidden": "Option_Gold_4",
+        "HiddenTime": 10
+    },
+    "OptionLib_Test1": {
+        "Must": [
+            "Option_Gold_1",
+            "Option_Gold_2",
+            "Option_Gold_3"
+        ],
+        "Random": [],
+        "Amount": 0,
+        "Hidden": "",
+        "HiddenTime": 10
+    },
+    "Option_story2_3a": {
+        "Must": [
+            "Option_story2_3a_A",
+            "Option_story2_3a_B"
+        ],
+        "Random": [],
+        "Amount": 0,
+        "Hidden": "",
+        "HiddenTime": ""
+    },
+    "Option_story2": {
+        "Must": [
+            "Option_story1_2a1",
+            "Option_story1_2a2",
+            "Option_story1_2a3"
+        ],
+        "Random": [],
+        "Amount": "",
+        "Hidden": "",
+        "HiddenTime": ""
+    },
+    "Option_story3": {
+        "Must": [
+            "Option_story1_4a1",
+            "Option_story1_4a2",
+            "Option_story1_4a3"
+        ],
+        "Random": [],
+        "Amount": 0,
+        "Hidden": "",
+        "HiddenTime": ""
+    },
+    "Option_story1": {
+        "Must": [
+            "Option_story1_1a1",
+            "Option_story1_1a2",
+            "Option_story1_1a3"
+        ],
+        "Random": [],
+        "Amount": 0,
+        "Hidden": "",
+        "HiddenTime": ""
+    },
+    "Option_surprise_1": {
+        "Must": [
+            "Option_surprise_1_1",
+            "Option_surprise_1_2",
+            "Option_surprise_1_3"
+        ],
+        "Random": [],
+        "Amount": 0,
+        "Hidden": "",
+        "HiddenTime": ""
+    }
+}

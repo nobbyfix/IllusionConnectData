@@ -1,0 +1,382 @@
+{
+    "ACE_STORY_5": {
+        "Condition": [
+            {
+                "IR_HalloweenStaminaConsumed": "1200"
+            }
+        ],
+        "Map": "AHalloweenM02",
+        "Enable": 1,
+        "StoryLink": "eventstory_Halloween_05a",
+        "Reward": "AHalloween_Story",
+        "Coordinates": [
+            -55,
+            -5
+        ],
+        "Show": 0,
+        "Icon": "",
+        "Name": "Story_Name_5",
+        "Content": "",
+        "Model": ""
+    },
+    "ACE_STORY_6": {
+        "Condition": [
+            {
+                "IR_HalloweenStaminaConsumed": "1400"
+            }
+        ],
+        "Map": "AHalloweenM02",
+        "Enable": 1,
+        "StoryLink": "eventstory_Halloween_06a",
+        "Reward": "AHalloween_Story",
+        "Coordinates": [
+            52,
+            85
+        ],
+        "Show": 0,
+        "Icon": "",
+        "Name": "Story_Name_6",
+        "Content": "",
+        "Model": ""
+    },
+    "ACE_STORY_3": {
+        "Condition": [
+            {
+                "IR_HalloweenStaminaConsumed": "800"
+            }
+        ],
+        "Map": "AHalloweenM01",
+        "Enable": 1,
+        "StoryLink": "eventstory_Halloween_03a",
+        "Reward": "AHalloween_Story",
+        "Coordinates": [
+            52,
+            60
+        ],
+        "Show": 0,
+        "Icon": "",
+        "Name": "Story_Name_3",
+        "Content": "",
+        "Model": ""
+    },
+    "ACE_STORY_4": {
+        "Condition": [
+            {
+                "IR_HalloweenStaminaConsumed": "1000"
+            }
+        ],
+        "Map": "AHalloweenM02",
+        "Enable": 1,
+        "StoryLink": "eventstory_Halloween_04a",
+        "Reward": "AHalloween_Story",
+        "Coordinates": [
+            -360,
+            -144
+        ],
+        "Show": 0,
+        "Icon": "",
+        "Name": "Story_Name_4",
+        "Content": "",
+        "Model": ""
+    },
+    "ACE_STORY_9": {
+        "Condition": [
+            {
+                "IR_HalloweenStaminaConsumed": "2000"
+            }
+        ],
+        "Map": "AHalloweenM03",
+        "Enable": 1,
+        "StoryLink": "eventstory_Halloween_09a",
+        "Reward": "AHalloween_Story",
+        "Coordinates": [
+            52,
+            90
+        ],
+        "Show": 0,
+        "Icon": "",
+        "Name": "Story_Name_9",
+        "Content": "",
+        "Model": ""
+    },
+    "ACE_STORY_2": {
+        "Condition": [
+            {
+                "IR_HalloweenStaminaConsumed": "600"
+            }
+        ],
+        "Map": "AHalloweenM01",
+        "Enable": 1,
+        "StoryLink": "eventstory_Halloween_02a",
+        "Reward": "AHalloween_Story",
+        "Coordinates": [
+            -55,
+            -5
+        ],
+        "Show": 0,
+        "Icon": "",
+        "Name": "Story_Name_2",
+        "Content": " ",
+        "Model": ""
+    },
+    "ACE_STORY_7": {
+        "Condition": [
+            {
+                "IR_HalloweenStaminaConsumed": "1600"
+            }
+        ],
+        "Map": "AHalloweenM03",
+        "Enable": 1,
+        "StoryLink": "eventstory_Halloween_07a",
+        "Reward": "AHalloween_Story",
+        "Coordinates": [
+            -360,
+            -224
+        ],
+        "Show": 0,
+        "Icon": "",
+        "Name": "Story_Name_7",
+        "Content": "",
+        "Model": ""
+    },
+    "ACE_STORY_8": {
+        "Condition": [
+            {
+                "IR_HalloweenStaminaConsumed": "1800"
+            }
+        ],
+        "Map": "AHalloweenM03",
+        "Enable": 1,
+        "StoryLink": "eventstory_Halloween_08a",
+        "Reward": "AHalloween_Story",
+        "Coordinates": [
+            -55,
+            -225
+        ],
+        "Show": 0,
+        "Icon": "",
+        "Name": "Story_Name_8",
+        "Content": "",
+        "Model": ""
+    },
+    "ACE_Reward_4": {
+        "Condition": [],
+        "Map": "AHalloweenM02",
+        "Enable": 0,
+        "StoryLink": "",
+        "Reward": "AHalloween_EE",
+        "Coordinates": [
+            5,
+            -230
+        ],
+        "Show": 1,
+        "Icon": "b1_wanshengjiechangjing",
+        "Name": "ColourEgg_Name_4",
+        "Content": "ColourEgg_Content_4",
+        "Model": {
+            "Scale": 0.6,
+            "Type": "Bust4",
+            "Id": "Model_YLMGZhu_WSJie"
+        }
+    },
+    "ACE_Reward_5": {
+        "Condition": [],
+        "Map": "AHalloweenM02",
+        "Enable": 0,
+        "StoryLink": "",
+        "Reward": "AHalloween_EE",
+        "Coordinates": [
+            -270,
+            -34
+        ],
+        "Show": 1,
+        "Icon": "b2_wanshengjiechangjing",
+        "Name": "ColourEgg_Name_5",
+        "Content": "ColourEgg_Content_5",
+        "Model": {
+            "Scale": 0.6,
+            "Type": "Bust4",
+            "Id": "Model_YLMGZhu_WSJie"
+        }
+    },
+    "ACE_Reward_6": {
+        "Condition": [],
+        "Map": "AHalloweenM02",
+        "Enable": 0,
+        "StoryLink": "",
+        "Reward": "AHalloween_EE",
+        "Coordinates": [
+            10,
+            -60
+        ],
+        "Show": 0,
+        "Icon": "b3_wanshengjiechangjing",
+        "Name": "ColourEgg_Name_6",
+        "Content": "ColourEgg_Content_6",
+        "Model": {
+            "Scale": 0.6,
+            "Type": "Bust4",
+            "Id": "Model_YLMGZhu_WSJie"
+        }
+    },
+    "ACE_Reward_7": {
+        "Condition": [],
+        "Map": "AHalloweenM03",
+        "Enable": 0,
+        "StoryLink": "",
+        "Reward": "AHalloween_EE",
+        "Coordinates": [
+            30,
+            -14
+        ],
+        "Show": 0,
+        "Icon": "c1_wanshengjiechangjing",
+        "Name": "ColourEgg_Name_7",
+        "Content": "ColourEgg_Content_7",
+        "Model": {
+            "Scale": 0.6,
+            "Type": "Bust4",
+            "Id": "Model_YSLBin_WSJie"
+        }
+    },
+    "ACE_STORY_1": {
+        "Condition": [
+            {
+                "IR_HalloweenStaminaConsumed": "400"
+            }
+        ],
+        "Map": "AHalloweenM01",
+        "Enable": 1,
+        "StoryLink": "eventstory_Halloween_01a",
+        "Reward": "AHalloween_Story",
+        "Coordinates": [
+            -360,
+            -144
+        ],
+        "Show": 0,
+        "Icon": "",
+        "Name": "Story_Name_1",
+        "Content": "",
+        "Model": ""
+    },
+    "ACE_Reward_1": {
+        "Condition": [],
+        "Map": "AHalloweenM01",
+        "Enable": 0,
+        "StoryLink": "",
+        "Reward": "AHalloween_EE",
+        "Coordinates": [
+            -250,
+            -42
+        ],
+        "Show": 1,
+        "Icon": "a1_wanshengjiechangjing",
+        "Name": "ColourEgg_Name_1",
+        "Content": "ColourEgg_Content_1",
+        "Model": {
+            "Scale": 0.5,
+            "Type": "Portrait",
+            "Id": "Model_Enemy_MYKSi_Big"
+        }
+    },
+    "ACE_Reward_2": {
+        "Condition": [],
+        "Map": "AHalloweenM01",
+        "Enable": 0,
+        "StoryLink": "",
+        "Reward": "AHalloween_EE",
+        "Coordinates": [
+            130,
+            14
+        ],
+        "Show": 1,
+        "Icon": "a2_wanshengjiechangjing",
+        "Name": "ColourEgg_Name_2",
+        "Content": "ColourEgg_Content_2",
+        "Model": {
+            "Scale": 0.9,
+            "Type": "Bust4",
+            "Id": "Model_ALPo_WSJie"
+        }
+    },
+    "ACE_Reward_3": {
+        "Condition": [],
+        "Map": "AHalloweenM01",
+        "Enable": 0,
+        "StoryLink": "",
+        "Reward": "AHalloween_EE",
+        "Coordinates": [
+            20,
+            -39
+        ],
+        "Show": 1,
+        "Icon": "a3_wanshengjiechangjing",
+        "Name": "ColourEgg_Name_3",
+        "Content": "ColourEgg_Content_3",
+        "Model": {
+            "Scale": 0.9,
+            "Type": "Bust4",
+            "Id": "Model_ALPo_WSJie"
+        }
+    },
+    "ACE_Reward_8": {
+        "Condition": [],
+        "Map": "AHalloweenM03",
+        "Enable": 0,
+        "StoryLink": "",
+        "Reward": "AHalloween_EE",
+        "Coordinates": [
+            -237,
+            134
+        ],
+        "Show": 0,
+        "Icon": "c2_wanshengjiechangjing",
+        "Name": "ColourEgg_Name_8",
+        "Content": "ColourEgg_Content_8",
+        "Model": {
+            "Scale": 0.6,
+            "Type": "Bust4",
+            "Id": "Model_YSLBin_WSJie"
+        }
+    },
+    "ACE_Reward_9": {
+        "Condition": [],
+        "Map": "AHalloweenM03",
+        "Enable": 0,
+        "StoryLink": "",
+        "Reward": "AHalloween_EE",
+        "Coordinates": [
+            -197,
+            -123
+        ],
+        "Show": 0,
+        "Icon": "c3_wanshengjiechangjing",
+        "Name": "ColourEgg_Name_9",
+        "Content": "ColourEgg_Content_9",
+        "Model": {
+            "Scale": 0.6,
+            "Type": "Bust4",
+            "Id": "Model_YSLBin_WSJie"
+        }
+    },
+    "ACE_STORY_10": {
+        "Condition": [
+            {
+                "IR_HalloweenStaminaConsumed": "2200"
+            }
+        ],
+        "Map": "AHalloweenM03",
+        "Enable": 1,
+        "StoryLink": "eventstory_Halloween_10a",
+        "Reward": "AHalloween_Story",
+        "Coordinates": [
+            243,
+            7
+        ],
+        "Show": 0,
+        "Icon": "",
+        "Name": "Story_Name_10",
+        "Content": "",
+        "Model": ""
+    }
+}

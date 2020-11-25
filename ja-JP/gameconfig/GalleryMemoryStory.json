@@ -1,0 +1,490 @@
+{
+    "Memory_ACTIVILIST_1": {
+        "Type": "ACTIVILIST",
+        "Condition": "",
+        "ActiviType": "TASK",
+        "UnlockStory": {
+            "Task": [
+                "Day1ActivityTask1",
+                "Day1ActivityTask2",
+                "Day1ActivityTask3",
+                "Day1ActivityTask4",
+                "Day1ActivityTask5",
+                "Day1ActivityTask6"
+            ]
+        },
+        "UnlockDesc": "Day1Activity_Desc",
+        "Name": "Banner_Text4",
+        "Listpicture": "s_album_active_15",
+        "Story": [
+            {
+                "type": "NORMAL",
+                "id": [
+                    "Memory_STORY_ACTIVI_1",
+                    "Memory_STORY_ACTIVI_2",
+                    "Memory_STORY_ACTIVI_3",
+                    "Memory_STORY_ACTIVI_4",
+                    "Memory_STORY_ACTIVI_5",
+                    "Memory_STORY_ACTIVI_6",
+                    "Memory_STORY_ACTIVI_7"
+                ]
+            }
+        ],
+        "Num": 1
+    },
+    "Memory_ACTIVILIST_2": {
+        "Type": "ACTIVILIST",
+        "Condition": "",
+        "ActiviType": "",
+        "UnlockStory": "",
+        "UnlockDesc": "",
+        "Name": "ActivityBlock_Map_TitleName",
+        "Listpicture": "s_main_event_01",
+        "Story": [
+            {
+                "type": "NORMAL",
+                "id": [
+                    "Memory_STORY_ACTIVI_8",
+                    "Memory_STORY_ACTIVI_9",
+                    "Memory_STORY_ACTIVI_10",
+                    "Memory_STORY_ACTIVI_11",
+                    "Memory_STORY_ACTIVI_12"
+                ]
+            },
+            {
+                "type": "ELITE",
+                "id": [
+                    "Memory_STORY_ACTIVI_13",
+                    "Memory_STORY_ACTIVI_14",
+                    "Memory_STORY_ACTIVI_15",
+                    "Memory_STORY_ACTIVI_16",
+                    "Memory_STORY_ACTIVI_17"
+                ]
+            }
+        ],
+        "Num": 2
+    },
+    "Memory_ACTIVILIST_4": {
+        "Type": "ACTIVILIST",
+        "Condition": "",
+        "ActiviType": "",
+        "UnlockStory": "",
+        "UnlockDesc": "",
+        "Name": "ActivityBlock_Summer",
+        "Listpicture": "s_main_event_05",
+        "Story": [
+            {
+                "type": "NORMAL",
+                "id": [
+                    "Memory_STORY_ACTIVI_28",
+                    "Memory_STORY_ACTIVI_29",
+                    "Memory_STORY_ACTIVI_30",
+                    "Memory_STORY_ACTIVI_31",
+                    "Memory_STORY_ACTIVI_32"
+                ]
+            },
+            {
+                "type": "ELITE",
+                "id": [
+                    "Memory_STORY_ACTIVI_33",
+                    "Memory_STORY_ACTIVI_34",
+                    "Memory_STORY_ACTIVI_35",
+                    "Memory_STORY_ACTIVI_36",
+                    "Memory_STORY_ACTIVI_37",
+                    "Memory_STORY_ACTIVI_38",
+                    "Memory_STORY_ACTIVI_39"
+                ]
+            }
+        ],
+        "Num": 4
+    },
+    "Memory_STORYLIST_4": {
+        "Type": "STORYLIST",
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "factorSt1": [],
+                "factor1": [
+                    1
+                ],
+                "factor2": [],
+                "factorSt2": [],
+                "params": [
+                    "M06",
+                    "M06S01"
+                ]
+            }
+        ],
+        "ActiviType": "",
+        "UnlockStory": "",
+        "UnlockDesc": "BlockPoint_S06S01_Name",
+        "Name": "Chapter_LongWord39",
+        "Listpicture": "s_main_img_06",
+        "Story": [
+            {
+                "type": "NORMAL",
+                "id": [
+                    "Memory_STORY_15",
+                    "Memory_STORY_16",
+                    "Memory_STORY_17",
+                    "Memory_STORY_18",
+                    "Memory_STORY_19",
+                    "Memory_STORY_20"
+                ]
+            },
+            {
+                "type": "ELITE",
+                "id": [
+                    "Memory_STORY_HARD_8",
+                    "Memory_STORY_HARD_9"
+                ]
+            }
+        ],
+        "Num": 4
+    },
+    "Memory_STORYLIST_5": {
+        "Type": "STORYLIST",
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "factorSt1": [],
+                "factor1": [
+                    1
+                ],
+                "factor2": [],
+                "factorSt2": [],
+                "params": [
+                    "M08",
+                    "M08S02"
+                ]
+            }
+        ],
+        "ActiviType": "",
+        "UnlockStory": "",
+        "UnlockDesc": "BlockPoint_S08S01_Name",
+        "Name": "Chapter_LongWord40",
+        "Listpicture": "s_main_img_08",
+        "Story": [
+            {
+                "type": "NORMAL",
+                "id": [
+                    "Memory_STORY_21",
+                    "Memory_STORY_22",
+                    "Memory_STORY_23",
+                    "Memory_STORY_24",
+                    "Memory_STORY_25",
+                    "Memory_STORY_26"
+                ]
+            },
+            {
+                "type": "ELITE",
+                "id": [
+                    "Memory_STORY_HARD_10",
+                    "Memory_STORY_HARD_11"
+                ]
+            }
+        ],
+        "Num": 5
+    },
+    "Memory_STORYLIST_6": {
+        "Type": "STORYLIST",
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "factorSt1": [],
+                "factor1": [
+                    1
+                ],
+                "factor2": [],
+                "factorSt2": [],
+                "params": [
+                    "M10",
+                    "M10S04"
+                ]
+            }
+        ],
+        "ActiviType": "",
+        "UnlockStory": "",
+        "UnlockDesc": "BlockPoint_S10S01_Name",
+        "Name": "Chapter_LongWord41",
+        "Listpicture": "s_main_img_10",
+        "Story": [
+            {
+                "type": "NORMAL",
+                "id": [
+                    "Memory_STORY_27",
+                    "Memory_STORY_28",
+                    "Memory_STORY_29",
+                    "Memory_STORY_30",
+                    "Memory_STORY_31",
+                    "Memory_STORY_32"
+                ]
+            },
+            {
+                "type": "ELITE",
+                "id": [
+                    "Memory_STORY_HARD_12",
+                    "Memory_STORY_HARD_13"
+                ]
+            }
+        ],
+        "Num": 6
+    },
+    "Memory_STORYLIST_7": {
+        "Type": "STORYLIST",
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "factorSt1": [],
+                "factor1": [
+                    1
+                ],
+                "factor2": [],
+                "factorSt2": [],
+                "params": [
+                    "M12",
+                    "M12S09"
+                ]
+            }
+        ],
+        "ActiviType": "",
+        "UnlockStory": "",
+        "UnlockDesc": "BlockPoint_S12S01_Name",
+        "Name": "Chapter_LongWord42",
+        "Listpicture": "s_main_img_12",
+        "Story": [
+            {
+                "type": "NORMAL",
+                "id": [
+                    "Memory_STORY_33",
+                    "Memory_STORY_34",
+                    "Memory_STORY_35",
+                    "Memory_STORY_36",
+                    "Memory_STORY_37",
+                    "Memory_STORY_38"
+                ]
+            },
+            {
+                "type": "ELITE",
+                "id": [
+                    "Memory_STORY_HARD_14",
+                    "Memory_STORY_HARD_15"
+                ]
+            }
+        ],
+        "Num": 7
+    },
+    "Memory_STORYLIST_1": {
+        "Type": "STORYLIST",
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "factorSt1": [],
+                "factor1": [
+                    1
+                ],
+                "factor2": [],
+                "factorSt2": [],
+                "params": [
+                    "M01",
+                    "M01S01"
+                ]
+            }
+        ],
+        "ActiviType": "",
+        "UnlockStory": "",
+        "UnlockDesc": "BlockPoint_S01S01_Name",
+        "Name": "Chapter_LongWord37",
+        "Listpicture": "s_main_img_01",
+        "Story": [
+            {
+                "type": "NORMAL",
+                "id": [
+                    "Memory_STORY_1",
+                    "Memory_STORY_2"
+                ]
+            },
+            {
+                "type": "ELITE",
+                "id": [
+                    "Memory_STORY_HARD_1",
+                    "Memory_STORY_HARD_2"
+                ]
+            }
+        ],
+        "Num": 1
+    },
+    "Memory_STORYLIST_2": {
+        "Type": "STORYLIST",
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "factorSt1": [],
+                "factor1": [
+                    1
+                ],
+                "factor2": [],
+                "factorSt2": [],
+                "params": [
+                    "M02",
+                    "M02S01"
+                ]
+            }
+        ],
+        "ActiviType": "",
+        "UnlockStory": "",
+        "UnlockDesc": "BlockPoint_S02S01_Name",
+        "Name": "Chapter_LongWord43",
+        "Listpicture": "s_main_img_02",
+        "Story": [
+            {
+                "type": "NORMAL",
+                "id": [
+                    "Memory_STORY_3",
+                    "Memory_STORY_4",
+                    "Memory_STORY_5",
+                    "Memory_STORY_6",
+                    "Memory_STORY_7",
+                    "Memory_STORY_8"
+                ]
+            },
+            {
+                "type": "ELITE",
+                "id": [
+                    "Memory_STORY_HARD_3",
+                    "Memory_STORY_HARD_4",
+                    "Memory_STORY_HARD_5"
+                ]
+            }
+        ],
+        "Num": 2
+    },
+    "Memory_STORYLIST_3": {
+        "Type": "STORYLIST",
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "factorSt1": [],
+                "factor1": [
+                    1
+                ],
+                "factor2": [],
+                "factorSt2": [],
+                "params": [
+                    "M04",
+                    "M04S01"
+                ]
+            }
+        ],
+        "ActiviType": "",
+        "UnlockStory": "",
+        "UnlockDesc": "BlockPoint_S04S01_Name",
+        "Name": "Chapter_LongWord38",
+        "Listpicture": "s_main_img_04",
+        "Story": [
+            {
+                "type": "NORMAL",
+                "id": [
+                    "Memory_STORY_9",
+                    "Memory_STORY_10",
+                    "Memory_STORY_11",
+                    "Memory_STORY_12",
+                    "Memory_STORY_13",
+                    "Memory_STORY_14"
+                ]
+            },
+            {
+                "type": "ELITE",
+                "id": [
+                    "Memory_STORY_HARD_6",
+                    "Memory_STORY_HARD_7"
+                ]
+            }
+        ],
+        "Num": 3
+    },
+    "Memory_STORYLIST_8": {
+        "Type": "STORYLIST",
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "factorSt1": [],
+                "factor1": [
+                    1
+                ],
+                "factor2": [],
+                "factorSt2": [],
+                "params": [
+                    "M14",
+                    "M14S10"
+                ]
+            }
+        ],
+        "ActiviType": "",
+        "UnlockStory": "",
+        "UnlockDesc": "BlockPoint_S14S01_Name",
+        "Name": "Chapter_LongWord61",
+        "Listpicture": "s_main_img_14",
+        "Story": [
+            {
+                "type": "NORMAL",
+                "id": [
+                    "Memory_STORY_39",
+                    "Memory_STORY_40",
+                    "Memory_STORY_41",
+                    "Memory_STORY_42",
+                    "Memory_STORY_43",
+                    "Memory_STORY_44"
+                ]
+            },
+            {
+                "type": "ELITE",
+                "id": [
+                    "Memory_STORY_HARD_16",
+                    "Memory_STORY_HARD_17"
+                ]
+            }
+        ],
+        "Num": 8
+    },
+    "Memory_STORYLIST_9": {
+        "Type": "STORYLIST",
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "factorSt1": [],
+                "factor1": [
+                    1
+                ],
+                "factor2": [],
+                "factorSt2": [],
+                "params": [
+                    "M16",
+                    "M16S10"
+                ]
+            }
+        ],
+        "ActiviType": "",
+        "UnlockStory": "",
+        "UnlockDesc": "BlockPoint_S16S01_Name",
+        "Name": "Chapter_LongWord60",
+        "Listpicture": "s_main_img_16",
+        "Story": [
+            {
+                "type": "NORMAL",
+                "id": [
+                    "Memory_STORY_45",
+                    "Memory_STORY_46",
+                    "Memory_STORY_47"
+                ]
+            },
+            {
+                "type": "ELITE",
+                "id": [
+                    "Memory_STORY_HARD_18"
+                ]
+            }
+        ],
+        "Num": 9
+    }
+}

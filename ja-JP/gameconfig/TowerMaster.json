@@ -1,0 +1,1255 @@
+{
+    "Tower_1_Master3": {
+        "Master": "Tower_1_PlayerMaster_3",
+        "AttackSkill": "Sk_Attack_Master_BiLei",
+        "ActionSkill1": "Sk_Action1_Master_BiLei",
+        "ActionSkill2": "Sk_Action2_Master_BiLei",
+        "ActionSkill3": "Sk_Action3_Master_BiLei",
+        "TeamSkillCondition": [
+            {
+                "Scope": [
+                    0,
+                    3
+                ],
+                "Tag": [
+                    [
+                        "Cost14Down"
+                    ]
+                ]
+            }
+        ],
+        "Point": [
+            "Tower_1_Point1",
+            "Tower_1_Point2",
+            "Tower_1_Point3",
+            "Tower_1_Point4",
+            "Tower_1_Point5",
+            "Tower_1_Point6",
+            "Tower_1_Point7",
+            "Tower_1_Point8",
+            "Tower_1_Point9"
+        ],
+        "Factor": [
+            1,
+            1.1,
+            1.3,
+            1.5,
+            1.9,
+            2.2,
+            2.7,
+            3.3,
+            4
+        ],
+        "MinAttack": [
+            1200,
+            1300,
+            1500,
+            1800,
+            2100,
+            2500,
+            3000,
+            3500,
+            4000
+        ],
+        "Buff": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            7
+        ],
+        "TeamSkill1": "SectSkill_Master_BiLei_1",
+        "TeamSkillCondition1": [
+            [
+                {
+                    "scope": [
+                        [
+                            14,
+                            1
+                        ],
+                        [
+                            99,
+                            1
+                        ]
+                    ],
+                    "range": "group",
+                    "type": "avgcost",
+                    "param": []
+                }
+            ]
+        ],
+        "TeamSkill2": "SectSkill_Master_BiLei_2",
+        "TeamSkillCondition2": [
+            [
+                {
+                    "scope": [
+                        1,
+                        2
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "YLSBai"
+                        ],
+                        [
+                            "WEDe"
+                        ]
+                    ]
+                }
+            ]
+        ],
+        "TeamSkill3": "SectSkill_Master_BiLei_3",
+        "TeamSkillCondition3": [
+            [
+                {
+                    "scope": [
+                        6,
+                        100
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "Cost14Up"
+                        ]
+                    ]
+                },
+                {
+                    "scope": [
+                        0,
+                        4
+                    ],
+                    "range": "group",
+                    "type": "typevalue",
+                    "param": [
+                        []
+                    ]
+                }
+            ]
+        ],
+        "TeamSkill4": "SectSkill_Master_BiLei_4",
+        "TeamSkillCondition4": [
+            [
+                {
+                    "scope": [
+                        6,
+                        100
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "Cost14Up"
+                        ]
+                    ]
+                },
+                {
+                    "scope": [
+                        6,
+                        100
+                    ],
+                    "range": "group",
+                    "type": "typevalue",
+                    "param": [
+                        []
+                    ]
+                }
+            ]
+        ],
+        "TeamSkill5": "SectSkill_Master_BiLei_5",
+        "TeamSkillCondition5": [
+            [
+                {
+                    "scope": [
+                        [
+                            80,
+                            1
+                        ],
+                        [
+                            100,
+                            1
+                        ]
+                    ],
+                    "range": "hold",
+                    "type": "percent",
+                    "param": [
+                        [
+                            "Cost14Up"
+                        ]
+                    ]
+                }
+            ]
+        ],
+        "TeamSkill6": "SectSkill_Master_BiLei_6",
+        "TeamSkillCondition6": [
+            [
+                {
+                    "scope": [
+                        5,
+                        100
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "Rarity14"
+                        ]
+                    ]
+                }
+            ]
+        ],
+        "Feature": "Tower_1_MasterBase_Feature_3"
+    },
+    "Tower_1_Master2": {
+        "Master": "Tower_1_PlayerMaster_2",
+        "AttackSkill": "Sk_Attack_Master_LieSha",
+        "ActionSkill1": "Sk_Action1_Master_LieSha",
+        "ActionSkill2": "Sk_Action2_Master_LieSha",
+        "ActionSkill3": "Sk_Action3_Master_LieSha",
+        "TeamSkillCondition": [
+            {
+                "Scope": [
+                    0,
+                    3
+                ],
+                "Tag": [
+                    [
+                        "Cost14Up"
+                    ]
+                ]
+            }
+        ],
+        "Point": [
+            "Tower_1_Point1",
+            "Tower_1_Point2",
+            "Tower_1_Point3",
+            "Tower_1_Point4",
+            "Tower_1_Point5",
+            "Tower_1_Point6",
+            "Tower_1_Point7",
+            "Tower_1_Point8",
+            "Tower_1_Point9"
+        ],
+        "Factor": [
+            1,
+            1.1,
+            1.3,
+            1.5,
+            1.9,
+            2.2,
+            2.7,
+            3.3,
+            4
+        ],
+        "MinAttack": [
+            1200,
+            1300,
+            1500,
+            1800,
+            2100,
+            2500,
+            3000,
+            3500,
+            4000
+        ],
+        "Buff": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            7
+        ],
+        "TeamSkill1": "SectSkill_Master_LieSha_1",
+        "TeamSkillCondition1": [
+            [
+                {
+                    "scope": [
+                        [
+                            0,
+                            1
+                        ],
+                        [
+                            14,
+                            1
+                        ]
+                    ],
+                    "range": "group",
+                    "type": "avgcost",
+                    "param": []
+                }
+            ]
+        ],
+        "TeamSkill2": "SectSkill_Master_LieSha_2",
+        "TeamSkillCondition2": [
+            [
+                {
+                    "scope": [
+                        1,
+                        2
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "BBLMa"
+                        ],
+                        [
+                            "MKLJLuo"
+                        ]
+                    ]
+                }
+            ]
+        ],
+        "TeamSkill3": "SectSkill_Master_LieSha_3",
+        "TeamSkillCondition3": [
+            [
+                {
+                    "scope": [
+                        6,
+                        100
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "Attack"
+                        ],
+                        [
+                            "Aoe"
+                        ]
+                    ]
+                }
+            ]
+        ],
+        "TeamSkill4": "SectSkill_Master_LieSha_4",
+        "TeamSkillCondition4": [
+            [
+                {
+                    "scope": [
+                        6,
+                        100
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "Summon"
+                        ],
+                        [
+                            "Curse"
+                        ]
+                    ]
+                }
+            ]
+        ],
+        "TeamSkill5": "SectSkill_Master_LieSha_5",
+        "TeamSkillCondition5": [
+            [
+                {
+                    "scope": [
+                        [
+                            80,
+                            1
+                        ],
+                        [
+                            100,
+                            1
+                        ]
+                    ],
+                    "range": "hold",
+                    "type": "percent",
+                    "param": [
+                        [
+                            "Cost15Down"
+                        ]
+                    ]
+                }
+            ]
+        ],
+        "TeamSkill6": "SectSkill_Master_LieSha_6",
+        "TeamSkillCondition6": [
+            [
+                {
+                    "scope": [
+                        5,
+                        100
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "Rarity14"
+                        ]
+                    ]
+                }
+            ]
+        ],
+        "Feature": "Tower_1_MasterBase_Feature_2"
+    },
+    "Tower_1_Master1": {
+        "Master": "Tower_1_PlayerMaster_1",
+        "AttackSkill": "Sk_Attack_Master_XueZhan",
+        "ActionSkill1": "Sk_Action1_Master_XueZhan",
+        "ActionSkill2": "Sk_Action2_Master_XueZhan",
+        "ActionSkill3": "Sk_Action3_Master_XueZhan",
+        "TeamSkillCondition": [
+            {
+                "Scope": [
+                    3,
+                    3
+                ],
+                "Tag": [
+                    [
+                        "ZTXChang"
+                    ],
+                    [
+                        "FTLEShi"
+                    ],
+                    [
+                        "CLMan"
+                    ]
+                ]
+            }
+        ],
+        "Point": [
+            "Tower_1_Point1",
+            "Tower_1_Point2",
+            "Tower_1_Point3",
+            "Tower_1_Point4",
+            "Tower_1_Point5",
+            "Tower_1_Point6",
+            "Tower_1_Point7",
+            "Tower_1_Point8",
+            "Tower_1_Point9"
+        ],
+        "Factor": [
+            1,
+            1.1,
+            1.3,
+            1.5,
+            1.9,
+            2.2,
+            2.7,
+            3.3,
+            4
+        ],
+        "MinAttack": [
+            1200,
+            1300,
+            1500,
+            1800,
+            2100,
+            2500,
+            3000,
+            3500,
+            4000
+        ],
+        "Buff": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            7
+        ],
+        "TeamSkill1": "SectSkill_Master_XueZhan_1",
+        "TeamSkillCondition1": [
+            [
+                {
+                    "scope": [
+                        0,
+                        2
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "Cost8"
+                        ]
+                    ]
+                },
+                {
+                    "scope": [
+                        0,
+                        2
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "Cost9"
+                        ]
+                    ]
+                },
+                {
+                    "scope": [
+                        0,
+                        2
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "Cost10"
+                        ]
+                    ]
+                },
+                {
+                    "scope": [
+                        0,
+                        2
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "Cost11"
+                        ]
+                    ]
+                },
+                {
+                    "scope": [
+                        0,
+                        2
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "Cost12"
+                        ]
+                    ]
+                },
+                {
+                    "scope": [
+                        0,
+                        2
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "Cost13"
+                        ]
+                    ]
+                },
+                {
+                    "scope": [
+                        0,
+                        2
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "Cost14"
+                        ]
+                    ]
+                },
+                {
+                    "scope": [
+                        0,
+                        2
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "Cost15"
+                        ]
+                    ]
+                },
+                {
+                    "scope": [
+                        0,
+                        2
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "Cost16"
+                        ]
+                    ]
+                },
+                {
+                    "scope": [
+                        0,
+                        2
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "Cost17"
+                        ]
+                    ]
+                },
+                {
+                    "scope": [
+                        0,
+                        2
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "Cost18"
+                        ]
+                    ]
+                },
+                {
+                    "scope": [
+                        0,
+                        2
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "Cost19"
+                        ]
+                    ]
+                },
+                {
+                    "scope": [
+                        0,
+                        2
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "Cost20"
+                        ]
+                    ]
+                }
+            ]
+        ],
+        "TeamSkill2": "SectSkill_Master_XueZhan_2",
+        "TeamSkillCondition2": [
+            [
+                {
+                    "scope": [
+                        2,
+                        10
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "ZTXChang"
+                        ],
+                        [
+                            "FTLEShi"
+                        ],
+                        [
+                            "CLMan"
+                        ],
+                        [
+                            "ATSheng"
+                        ],
+                        [
+                            "XLai"
+                        ]
+                    ]
+                }
+            ]
+        ],
+        "TeamSkill3": "SectSkill_Master_XueZhan_3",
+        "TeamSkillCondition3": [
+            [
+                {
+                    "scope": [
+                        1,
+                        99
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "Attack"
+                        ]
+                    ]
+                },
+                {
+                    "scope": [
+                        1,
+                        99
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "Defense"
+                        ]
+                    ]
+                },
+                {
+                    "scope": [
+                        1,
+                        99
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "Cure"
+                        ]
+                    ]
+                },
+                {
+                    "scope": [
+                        1,
+                        99
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "Aoe"
+                        ]
+                    ]
+                },
+                {
+                    "scope": [
+                        1,
+                        99
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "Summon"
+                        ]
+                    ]
+                },
+                {
+                    "scope": [
+                        1,
+                        99
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "Support"
+                        ]
+                    ]
+                },
+                {
+                    "scope": [
+                        1,
+                        99
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "Curse"
+                        ]
+                    ]
+                }
+            ]
+        ],
+        "TeamSkill4": "SectSkill_Master_XueZhan_4",
+        "TeamSkillCondition4": [
+            [
+                {
+                    "scope": [
+                        7,
+                        100
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "Attack"
+                        ],
+                        [
+                            "Defense"
+                        ],
+                        [
+                            "Aoe"
+                        ]
+                    ]
+                }
+            ]
+        ],
+        "TeamSkill5": "SectSkill_Master_XueZhan_5",
+        "TeamSkillCondition5": [
+            [
+                {
+                    "scope": [
+                        1,
+                        10
+                    ],
+                    "range": "hold",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "TPGZhu"
+                        ]
+                    ]
+                }
+            ]
+        ],
+        "TeamSkill6": "SectSkill_Master_XueZhan_6",
+        "TeamSkillCondition6": [
+            [
+                {
+                    "scope": [
+                        5,
+                        100
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "Rarity14"
+                        ]
+                    ]
+                }
+            ]
+        ],
+        "Feature": "Tower_1_MasterBase_Feature_1"
+    },
+    "Tower_1_Master5": {
+        "Master": "Tower_1_PlayerMaster_5",
+        "AttackSkill": "Sk_Attack_Master_SenLing",
+        "ActionSkill1": "Sk_Action1_Master_SenLing",
+        "ActionSkill2": "Sk_Action2_Master_SenLing",
+        "ActionSkill3": "Sk_Action3_Master_SenLing",
+        "TeamSkillCondition": [
+            {
+                "Scope": [
+                    6,
+                    15
+                ],
+                "Tag": [
+                    [
+                        "Cure"
+                    ],
+                    [
+                        "Support"
+                    ]
+                ]
+            }
+        ],
+        "Point": [
+            "Tower_1_Point1",
+            "Tower_1_Point2",
+            "Tower_1_Point3",
+            "Tower_1_Point4",
+            "Tower_1_Point5",
+            "Tower_1_Point6",
+            "Tower_1_Point7",
+            "Tower_1_Point8",
+            "Tower_1_Point9"
+        ],
+        "Factor": [
+            1,
+            1.1,
+            1.3,
+            1.5,
+            1.9,
+            2.2,
+            2.7,
+            3.3,
+            4
+        ],
+        "MinAttack": [
+            1200,
+            1300,
+            1500,
+            1800,
+            2100,
+            2500,
+            3000,
+            3500,
+            4000
+        ],
+        "Buff": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            7
+        ],
+        "TeamSkill1": "SectSkill_Master_SenLing_1",
+        "TeamSkillCondition1": [
+            [
+                {
+                    "scope": [
+                        5,
+                        100
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "Cure"
+                        ],
+                        [
+                            "Support"
+                        ]
+                    ]
+                }
+            ]
+        ],
+        "TeamSkill2": "SectSkill_Master_SenLing_2",
+        "TeamSkillCondition2": [
+            [
+                {
+                    "scope": [
+                        1,
+                        2
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "TPGZhu"
+                        ],
+                        [
+                            "LCYShi"
+                        ]
+                    ]
+                }
+            ]
+        ],
+        "TeamSkill3": "SectSkill_Master_SenLing_3",
+        "TeamSkillCondition3": [
+            [
+                {
+                    "scope": [
+                        3,
+                        100
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "Defense"
+                        ]
+                    ]
+                }
+            ]
+        ],
+        "TeamSkill4": "SectSkill_Master_SenLing_4",
+        "TeamSkillCondition4": [
+            [
+                {
+                    "scope": [
+                        3,
+                        100
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "Summon"
+                        ]
+                    ]
+                }
+            ]
+        ],
+        "TeamSkill5": "SectSkill_Master_SenLing_5",
+        "TeamSkillCondition5": [
+            [
+                {
+                    "scope": [
+                        [
+                            80,
+                            1
+                        ],
+                        [
+                            100,
+                            1
+                        ]
+                    ],
+                    "range": "hold",
+                    "type": "percent",
+                    "param": [
+                        [
+                            "Support"
+                        ],
+                        [
+                            "Cure"
+                        ]
+                    ]
+                }
+            ]
+        ],
+        "TeamSkill6": "SectSkill_Master_SenLing_6",
+        "TeamSkillCondition6": [
+            [
+                {
+                    "scope": [
+                        5,
+                        100
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "Rarity14"
+                        ]
+                    ]
+                }
+            ]
+        ],
+        "Feature": "Tower_1_MasterBase_Feature_5"
+    },
+    "Tower_1_Master4": {
+        "Master": "Tower_1_PlayerMaster_4",
+        "AttackSkill": "Sk_Attack_Master_FuHun",
+        "ActionSkill1": "Sk_Action1_Master_FuHun",
+        "ActionSkill2": "Sk_Action2_Master_FuHun",
+        "ActionSkill3": "Sk_Action3_Master_FuHun",
+        "TeamSkillCondition": [
+            {
+                "Scope": [
+                    6,
+                    15
+                ],
+                "Tag": [
+                    [
+                        "Aoe"
+                    ]
+                ]
+            }
+        ],
+        "Point": [
+            "Tower_1_Point1",
+            "Tower_1_Point2",
+            "Tower_1_Point3",
+            "Tower_1_Point4",
+            "Tower_1_Point5",
+            "Tower_1_Point6",
+            "Tower_1_Point7",
+            "Tower_1_Point8",
+            "Tower_1_Point9"
+        ],
+        "Factor": [
+            1,
+            1.1,
+            1.3,
+            1.5,
+            1.9,
+            2.2,
+            2.7,
+            3.3,
+            4
+        ],
+        "MinAttack": [
+            1200,
+            1300,
+            1500,
+            1800,
+            2100,
+            2500,
+            3000,
+            3500,
+            4000
+        ],
+        "Buff": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            7
+        ],
+        "TeamSkill1": "SectSkill_Master_FuHun_1",
+        "TeamSkillCondition1": [
+            [
+                {
+                    "scope": [
+                        5,
+                        100
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "Aoe"
+                        ]
+                    ]
+                }
+            ]
+        ],
+        "TeamSkill2": "SectSkill_Master_FuHun_2",
+        "TeamSkillCondition2": [
+            [
+                {
+                    "scope": [
+                        1,
+                        2
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "MGNa"
+                        ],
+                        [
+                            "JDCZhang"
+                        ]
+                    ]
+                }
+            ]
+        ],
+        "TeamSkill3": "SectSkill_Master_FuHun_3",
+        "TeamSkillCondition3": [
+            [
+                {
+                    "scope": [
+                        0,
+                        1
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "Attack"
+                        ]
+                    ]
+                },
+                {
+                    "scope": [
+                        0,
+                        1
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "Defense"
+                        ]
+                    ]
+                },
+                {
+                    "scope": [
+                        0,
+                        1
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "Cure"
+                        ]
+                    ]
+                },
+                {
+                    "scope": [
+                        0,
+                        1
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "Summon"
+                        ]
+                    ]
+                },
+                {
+                    "scope": [
+                        0,
+                        1
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "Support"
+                        ]
+                    ]
+                },
+                {
+                    "scope": [
+                        0,
+                        1
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "Curse"
+                        ]
+                    ]
+                }
+            ]
+        ],
+        "TeamSkill4": "SectSkill_Master_FuHun_4",
+        "TeamSkillCondition4": [
+            [
+                {
+                    "scope": [
+                        3,
+                        100
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "Support"
+                        ],
+                        [
+                            "Curse"
+                        ]
+                    ]
+                }
+            ]
+        ],
+        "TeamSkill5": "SectSkill_Master_FuHun_5",
+        "TeamSkillCondition5": [
+            [
+                {
+                    "scope": [
+                        [
+                            80,
+                            1
+                        ],
+                        [
+                            100,
+                            1
+                        ]
+                    ],
+                    "range": "hold",
+                    "type": "percent",
+                    "param": [
+                        [
+                            "Aoe"
+                        ]
+                    ]
+                }
+            ]
+        ],
+        "TeamSkill6": "SectSkill_Master_FuHun_6",
+        "TeamSkillCondition6": [
+            [
+                {
+                    "scope": [
+                        5,
+                        100
+                    ],
+                    "range": "group",
+                    "type": "tag",
+                    "param": [
+                        [
+                            "Rarity14"
+                        ]
+                    ]
+                }
+            ]
+        ],
+        "Feature": "Tower_1_MasterBase_Feature_4"
+    }
+}

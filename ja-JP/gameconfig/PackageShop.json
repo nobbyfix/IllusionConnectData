@@ -1,0 +1,1142 @@
+{
+    "PackageShop_5": {
+        "Name": "PackageShop_5_Name",
+        "Platform": "ios",
+        "ItemShow": "PackageShop_5_Reward",
+        "Item": "PackageShop_5_Reward",
+        "Sort": 8,
+        "IsFree": 0,
+        "Price": "",
+        "Desc": "PackageShop_5_Desc",
+        "Icon": "sd_zg_shizhuangtehuilibao",
+        "Quality": 5,
+        "Tag": "",
+        "CostOffTag": "",
+        "TimeTag": "",
+        "TimeType": {
+            "amount": 1,
+            "type": "unlimit"
+        },
+        "CoolDown": "",
+        "ServerCondition": "",
+        "ClientCondition": "",
+        "Hide": 1,
+        "Prepose": "",
+        "Vanish": 1,
+        "Pay": "Pay_PackageShop_5",
+        "Version": "",
+        "ShopSort": "SurfacePackageShop",
+        "WindowIcon": "",
+        "GameCoin": ""
+    },
+    "PackageShop_7": {
+        "Name": "PackageShop_7_Name",
+        "Platform": "ios",
+        "ItemShow": "PackageShop_7_Reward",
+        "Item": "PackageShop_7_Reward",
+        "Sort": 9,
+        "IsFree": 0,
+        "Price": "",
+        "Desc": "PackageShop_7_Desc",
+        "Icon": "sd_zg_shizhuangquanlibao",
+        "Quality": 5,
+        "Tag": "",
+        "CostOffTag": "",
+        "TimeTag": "",
+        "TimeType": {
+            "amount": -1,
+            "type": "unlimit"
+        },
+        "CoolDown": "",
+        "ServerCondition": "",
+        "ClientCondition": "",
+        "Hide": 1,
+        "Prepose": "",
+        "Vanish": 0,
+        "Pay": "Pay_PackageShop_7",
+        "Version": "",
+        "ShopSort": "SurfacePackageShop",
+        "WindowIcon": "",
+        "GameCoin": ""
+    },
+    "PackageShop_TL_CZheng_3": {
+        "Name": "PackageShop_TL_CZheng_3_Name",
+        "Platform": "ios",
+        "ItemShow": "PackageShop_TL_CZheng_3_Reward",
+        "Item": "PackageShop_TL_CZheng_3_Reward",
+        "Sort": 4,
+        "IsFree": 0,
+        "Price": "",
+        "Desc": "PackageShop_TL_CZheng_3_Desc",
+        "Icon": "sd_DWH_yaodaojiangshi",
+        "Quality": 5,
+        "Tag": "",
+        "CostOffTag": 6.0,
+        "TimeTag": 1,
+        "TimeType": {
+            "start": "2020-07-17 05:00:00",
+            "amount": 1,
+            "end": "2029-07-24 05:00:00",
+            "type": "limit"
+        },
+        "CoolDown": "",
+        "ServerCondition": "",
+        "ClientCondition": [
+            {
+                "PLEYERREG": [
+                    18,
+                    24
+                ]
+            }
+        ],
+        "Hide": 1,
+        "Prepose": "",
+        "Vanish": "",
+        "Pay": "Pay_PackageShop_TL_CZheng_3",
+        "Version": "",
+        "ShopSort": "TimeLimitShop",
+        "WindowIcon": "",
+        "GameCoin": ""
+    },
+    "PackageShop_TL_CZheng_2": {
+        "Name": "PackageShop_TL_CZheng_2_Name",
+        "Platform": "ios",
+        "ItemShow": "PackageShop_TL_CZheng_2_Reward",
+        "Item": "PackageShop_TL_CZheng_2_Reward",
+        "Sort": 3,
+        "IsFree": 0,
+        "Price": "",
+        "Desc": "PackageShop_TL_CZheng_2_Desc",
+        "Icon": "sd_DWH_duandaozhezhiwu",
+        "Quality": 5,
+        "Tag": "",
+        "CostOffTag": 10.0,
+        "TimeTag": 1,
+        "TimeType": {
+            "start": "2020-07-17 05:00:00",
+            "amount": 1,
+            "end": "2029-07-24 05:00:00",
+            "type": "limit"
+        },
+        "CoolDown": "",
+        "ServerCondition": "",
+        "ClientCondition": [
+            {
+                "PLEYERREG": [
+                    18,
+                    24
+                ]
+            }
+        ],
+        "Hide": 1,
+        "Prepose": "",
+        "Vanish": "",
+        "Pay": "Pay_PackageShop_TL_CZheng_2",
+        "Version": "",
+        "ShopSort": "TimeLimitShop",
+        "WindowIcon": "",
+        "GameCoin": ""
+    },
+    "PackageShop_TL_CZheng_1": {
+        "Name": "PackageShop_TL_CZheng_1_Name",
+        "Platform": "ios",
+        "ItemShow": "PackageShop_TL_CZheng_1_Reward",
+        "Item": "PackageShop_TL_CZheng_1_Reward",
+        "Sort": 1,
+        "IsFree": 1,
+        "Price": "",
+        "Desc": "PackageShop_TL_CZheng_1_Desc",
+        "Icon": "sd_DWH_fengmangchuxian",
+        "Quality": 5,
+        "Tag": "",
+        "CostOffTag": "",
+        "TimeTag": 1,
+        "TimeType": {
+            "start": "2020-07-17 05:00:00",
+            "amount": 1,
+            "end": "2029-07-24 05:00:00",
+            "type": "limit"
+        },
+        "CoolDown": "",
+        "ServerCondition": "",
+        "ClientCondition": [
+            {
+                "PLEYERREG": [
+                    18,
+                    24
+                ]
+            }
+        ],
+        "Hide": 1,
+        "Prepose": "",
+        "Vanish": "",
+        "Pay": "",
+        "Version": "",
+        "ShopSort": "TimeLimitShop",
+        "WindowIcon": "",
+        "GameCoin": ""
+    },
+    "PackageShop_TL_CZheng_7": {
+        "Name": "PackageShop_TL_CZheng_7_Name",
+        "Platform": "ios",
+        "ItemShow": "PackageShop_TL_CZheng_7_Reward",
+        "Item": "PackageShop_TL_CZheng_7_Reward",
+        "Sort": 2,
+        "IsFree": 2,
+        "Price": "",
+        "Desc": "PackageShop_TL_CZheng_7_Desc",
+        "Icon": "sd_DWH_duandaozhedelilian",
+        "Quality": 5,
+        "Tag": "",
+        "CostOffTag": "",
+        "TimeTag": 1,
+        "TimeType": {
+            "start": "2020-07-17 05:00:00",
+            "amount": -1,
+            "end": "2029-07-24 05:00:00",
+            "type": "limit"
+        },
+        "CoolDown": "",
+        "ServerCondition": "",
+        "ClientCondition": [
+            {
+                "PLEYERREG": [
+                    18,
+                    24
+                ]
+            }
+        ],
+        "Hide": 1,
+        "Prepose": "",
+        "Vanish": "",
+        "Pay": "",
+        "Version": "",
+        "ShopSort": "TimeLimitShop",
+        "WindowIcon": "",
+        "GameCoin": {
+            "amount": 400,
+            "type": "IR_Diamond"
+        }
+    },
+    "PackageShop_TL_CZheng_6": {
+        "Name": "PackageShop_TL_CZheng_6_Name",
+        "Platform": "ios",
+        "ItemShow": "PackageShop_TL_CZheng_6_Reward",
+        "Item": "PackageShop_TL_CZheng_6_Reward",
+        "Sort": 7,
+        "IsFree": 0,
+        "Price": "",
+        "Desc": "PackageShop_TL_CZheng_6_Desc",
+        "Icon": "sd_DWH_zhongfudeshouhu",
+        "Quality": 5,
+        "Tag": "",
+        "CostOffTag": 5.0,
+        "TimeTag": 1,
+        "TimeType": {
+            "start": "2020-07-17 05:00:00",
+            "amount": 2,
+            "end": "2029-07-24 05:00:00",
+            "type": "limit"
+        },
+        "CoolDown": "",
+        "ServerCondition": "",
+        "ClientCondition": [
+            {
+                "PLEYERREG": [
+                    18,
+                    24
+                ]
+            }
+        ],
+        "Hide": 1,
+        "Prepose": "",
+        "Vanish": "",
+        "Pay": "Pay_PackageShop_TL_CZheng_6",
+        "Version": "",
+        "ShopSort": "TimeLimitShop",
+        "WindowIcon": "",
+        "GameCoin": ""
+    },
+    "PackageShop_TL_CZheng_5": {
+        "Name": "PackageShop_TL_CZheng_5_Name",
+        "Platform": "ios",
+        "ItemShow": "PackageShop_TL_CZheng_5_Reward",
+        "Item": "PackageShop_TL_CZheng_5_Reward",
+        "Sort": 6,
+        "IsFree": 0,
+        "Price": "",
+        "Desc": "PackageShop_TL_CZheng_5_Desc",
+        "Icon": "sd_DWH_cunzhengzhifu",
+        "Quality": 5,
+        "Tag": "",
+        "CostOffTag": 5.0,
+        "TimeTag": 1,
+        "TimeType": {
+            "start": "2020-07-17 05:00:00",
+            "amount": 2,
+            "end": "2029-07-24 05:00:00",
+            "type": "limit"
+        },
+        "CoolDown": "",
+        "ServerCondition": "",
+        "ClientCondition": [
+            {
+                "PLEYERREG": [
+                    18,
+                    24
+                ]
+            }
+        ],
+        "Hide": 1,
+        "Prepose": "",
+        "Vanish": "",
+        "Pay": "Pay_PackageShop_TL_CZheng_5",
+        "Version": "",
+        "ShopSort": "TimeLimitShop",
+        "WindowIcon": "",
+        "GameCoin": ""
+    },
+    "PackageShop_TL_CZheng_4": {
+        "Name": "PackageShop_TL_CZheng_4_Name",
+        "Platform": "ios",
+        "ItemShow": "PackageShop_TL_CZheng_4_Reward",
+        "Item": "PackageShop_TL_CZheng_4_Reward",
+        "Sort": 5,
+        "IsFree": 0,
+        "Price": "",
+        "Desc": "PackageShop_TL_CZheng_4_Desc",
+        "Icon": "sd_DWH_zhangangduanyan",
+        "Quality": 5,
+        "Tag": "",
+        "CostOffTag": 6.0,
+        "TimeTag": 1,
+        "TimeType": {
+            "start": "2020-07-17 05:00:00",
+            "amount": 1,
+            "end": "2029-07-24 05:00:00",
+            "type": "limit"
+        },
+        "CoolDown": "",
+        "ServerCondition": "",
+        "ClientCondition": [
+            {
+                "PLEYERREG": [
+                    18,
+                    24
+                ]
+            }
+        ],
+        "Hide": 1,
+        "Prepose": "",
+        "Vanish": "",
+        "Pay": "Pay_PackageShop_TL_CZheng_4",
+        "Version": "",
+        "ShopSort": "TimeLimitShop",
+        "WindowIcon": "",
+        "GameCoin": ""
+    },
+    "PackageShop_WuXiuHuiGift": {
+        "Name": "PackageShop_WuXiuHuiGift_Name",
+        "Platform": "ios",
+        "ItemShow": "PackageShop_WuXiuHuiGift_Reward",
+        "Item": "PackageShop_WuXiuHuiGift_Reward",
+        "Sort": 2,
+        "IsFree": 2,
+        "Price": "",
+        "Desc": "PackageShop_WuXiuHuiGift_Desc",
+        "Icon": "IM_HD_WuXiuHuiClubAttrItem_2",
+        "Quality": 5,
+        "Tag": "",
+        "CostOffTag": "",
+        "TimeTag": 1,
+        "TimeType": {
+            "start": "2020-09-30 05:00:00",
+            "amount": 50,
+            "end": "2020-10-13 21:00:00",
+            "type": "day"
+        },
+        "CoolDown": "",
+        "ServerCondition": "",
+        "ClientCondition": "",
+        "Hide": 0,
+        "Prepose": "",
+        "Vanish": 0,
+        "Pay": "",
+        "Version": "",
+        "ShopSort": "TimeLimitShop",
+        "WindowIcon": "",
+        "GameCoin": {
+            "amount": 188,
+            "type": "IR_Diamond"
+        }
+    },
+    "PackageShop_4": {
+        "Name": "PackageShop_4_Name",
+        "Platform": "ios",
+        "ItemShow": "PackageShop_4_Reward",
+        "Item": "PackageShop_4_Reward",
+        "Sort": 1004,
+        "IsFree": 0,
+        "Price": "",
+        "Desc": "PackageShop_4_Desc",
+        "Icon": "sd_zg_xinrentupolibao",
+        "Quality": 5,
+        "Tag": "",
+        "CostOffTag": 9.0,
+        "TimeTag": "",
+        "TimeType": {
+            "amount": 1,
+            "type": "unlimit"
+        },
+        "CoolDown": "",
+        "ServerCondition": "",
+        "ClientCondition": "",
+        "Hide": 1,
+        "Prepose": "",
+        "Vanish": 1,
+        "Pay": "Pay_PackageShop_4",
+        "Version": "",
+        "ShopSort": "PackageShop",
+        "WindowIcon": "sd_zg_xinrentupolibao1",
+        "GameCoin": ""
+    },
+    "PackageShop_6": {
+        "Name": "PackageShop_6_Name",
+        "Platform": "ios",
+        "ItemShow": "PackageShop_6_Reward",
+        "Item": "PackageShop_6_Reward",
+        "Sort": 1005,
+        "IsFree": 0,
+        "Price": "",
+        "Desc": "PackageShop_6_Desc",
+        "Icon": "sd_zg_nirenchuqiaolibao",
+        "Quality": 5,
+        "Tag": "",
+        "CostOffTag": 8.0,
+        "TimeTag": "",
+        "TimeType": {
+            "amount": 1,
+            "type": "unlimit"
+        },
+        "CoolDown": "",
+        "ServerCondition": "",
+        "ClientCondition": "",
+        "Hide": 1,
+        "Prepose": "",
+        "Vanish": 1,
+        "Pay": "Pay_PackageShop_6",
+        "Version": "",
+        "ShopSort": "PackageShop",
+        "WindowIcon": "sd_zg_nirenchuqiaolibao1",
+        "GameCoin": ""
+    },
+    "PackageShop_1": {
+        "Name": "PackageShop_1_Name",
+        "Platform": "ios",
+        "ItemShow": "PackageShop_1_Reward",
+        "Item": "PackageShop_1_Reward",
+        "Sort": 1001,
+        "IsFree": 0,
+        "Price": "",
+        "Desc": "PackageShop_1_Desc",
+        "Icon": "sd_zg_tianyandefenghuang",
+        "Quality": 5,
+        "Tag": "",
+        "CostOffTag": "",
+        "TimeTag": "",
+        "TimeType": {
+            "amount": 1,
+            "type": "unlimit"
+        },
+        "CoolDown": "",
+        "ServerCondition": "",
+        "ClientCondition": "",
+        "Hide": 1,
+        "Prepose": "",
+        "Vanish": 1,
+        "Pay": "Pay_PackageShop_1",
+        "Version": "",
+        "ShopSort": "PackageShop",
+        "WindowIcon": "sd_zg_tianyandefenghuang1",
+        "GameCoin": ""
+    },
+    "PackageShop_2": {
+        "Name": "PackageShop_2_Name",
+        "Platform": "ios",
+        "ItemShow": "PackageShop_2_Reward",
+        "Item": "PackageShop_2_Reward",
+        "Sort": 1002,
+        "IsFree": 0,
+        "Price": "",
+        "Desc": "PackageShop_2_Desc",
+        "Icon": "sd_zg_xinrenyingyuanlibao",
+        "Quality": 5,
+        "Tag": "",
+        "CostOffTag": 15.0,
+        "TimeTag": "",
+        "TimeType": {
+            "amount": 1,
+            "type": "unlimit"
+        },
+        "CoolDown": "",
+        "ServerCondition": "",
+        "ClientCondition": "",
+        "Hide": 1,
+        "Prepose": "",
+        "Vanish": 1,
+        "Pay": "Pay_PackageShop_2",
+        "Version": "",
+        "ShopSort": "PackageShop",
+        "WindowIcon": "sd_zg_xinrenyingyuanlibao1",
+        "GameCoin": ""
+    },
+    "PackageShop_3": {
+        "Name": "PackageShop_3_Name",
+        "Platform": "ios",
+        "ItemShow": "PackageShop_3_Reward",
+        "Item": "PackageShop_3_Reward",
+        "Sort": 1003,
+        "IsFree": 0,
+        "Price": "",
+        "Desc": "PackageShop_3_Desc",
+        "Icon": "sd_zg_xinrenzhaohuanlibao",
+        "Quality": 5,
+        "Tag": "",
+        "CostOffTag": 7.0,
+        "TimeTag": "",
+        "TimeType": {
+            "amount": 1,
+            "type": "unlimit"
+        },
+        "CoolDown": "",
+        "ServerCondition": "",
+        "ClientCondition": "",
+        "Hide": 1,
+        "Prepose": "",
+        "Vanish": 1,
+        "Pay": "Pay_PackageShop_3",
+        "Version": "",
+        "ShopSort": "PackageShop",
+        "WindowIcon": "sd_zg_xinrenzhaohuanlibao1",
+        "GameCoin": ""
+    },
+    "PackageShop_8": {
+        "Name": "PackageShop_8_Name",
+        "Platform": "ios",
+        "ItemShow": "PackageShop_8_Reward",
+        "Item": "PackageShop_8_Reward",
+        "Sort": 1006,
+        "IsFree": 0,
+        "Price": "",
+        "Desc": "PackageShop_8_Desc",
+        "Icon": "sd_zg_niepandefenghuang",
+        "Quality": 5,
+        "Tag": "",
+        "CostOffTag": 7.0,
+        "TimeTag": "",
+        "TimeType": {
+            "amount": 1,
+            "type": "unlimit"
+        },
+        "CoolDown": "",
+        "ServerCondition": "",
+        "ClientCondition": "",
+        "Hide": 1,
+        "Prepose": "",
+        "Vanish": 1,
+        "Pay": "Pay_PackageShop_8",
+        "Version": "",
+        "ShopSort": "PackageShop",
+        "WindowIcon": "sd_zg_niepandefenghuang1",
+        "GameCoin": ""
+    },
+    "PackageShop_9": {
+        "Name": "PackageShop_9_Name",
+        "Platform": "ios",
+        "ItemShow": "PackageShop_9_Reward",
+        "Item": "PackageShop_9_Reward",
+        "Sort": 1007,
+        "IsFree": 0,
+        "Price": "",
+        "Desc": "PackageShop_9_Desc",
+        "Icon": "sd_zg_gexindeliren",
+        "Quality": 5,
+        "Tag": "",
+        "CostOffTag": 5.0,
+        "TimeTag": "",
+        "TimeType": {
+            "amount": 1,
+            "type": "unlimit"
+        },
+        "CoolDown": "",
+        "ServerCondition": "",
+        "ClientCondition": [
+            {
+                "VIPEXP": [
+                    500,
+                    9999
+                ]
+            }
+        ],
+        "Hide": 1,
+        "Prepose": "",
+        "Vanish": 1,
+        "Pay": "Pay_PackageShop_9",
+        "Version": "",
+        "ShopSort": "PackageShop",
+        "WindowIcon": "sd_zg_gexindeliren1",
+        "GameCoin": ""
+    },
+    "PackageShop_TL_LLan_3": {
+        "Name": "PackageShop_TL_LLan_3_Name",
+        "Platform": "ios",
+        "ItemShow": "PackageShop_TL_LLan_3_Reward",
+        "Item": "PackageShop_TL_LLan_3_Reward",
+        "Sort": 4,
+        "IsFree": 0,
+        "Price": "",
+        "Desc": "PackageShop_TL_LLan_3_Desc",
+        "Icon": "sd_XD_qishijiamianzhili",
+        "Quality": 5,
+        "Tag": "",
+        "CostOffTag": 6.0,
+        "TimeTag": 1,
+        "TimeType": {
+            "start": "2020-07-17 05:00:00",
+            "amount": 1,
+            "end": "2029-07-24 05:00:00",
+            "type": "limit"
+        },
+        "CoolDown": "",
+        "ServerCondition": "",
+        "ClientCondition": [
+            {
+                "PLEYERREG": [
+                    11,
+                    17
+                ]
+            }
+        ],
+        "Hide": 1,
+        "Prepose": "",
+        "Vanish": "",
+        "Pay": "Pay_PackageShop_TL_LLan_3",
+        "Version": "",
+        "ShopSort": "TimeLimitShop",
+        "WindowIcon": "",
+        "GameCoin": ""
+    },
+    "PackageShop_TL_LLan_2": {
+        "Name": "PackageShop_TL_LLan_2_Name",
+        "Platform": "ios",
+        "ItemShow": "PackageShop_TL_LLan_2_Reward",
+        "Item": "PackageShop_TL_LLan_2_Reward",
+        "Sort": 3,
+        "IsFree": 0,
+        "Price": "",
+        "Desc": "PackageShop_TL_LLan_2_Desc",
+        "Icon": "sd_XD_xidedeyuanhu",
+        "Quality": 5,
+        "Tag": "",
+        "CostOffTag": 10.0,
+        "TimeTag": 1,
+        "TimeType": {
+            "start": "2020-07-17 05:00:00",
+            "amount": 1,
+            "end": "2029-07-24 05:00:00",
+            "type": "limit"
+        },
+        "CoolDown": "",
+        "ServerCondition": "",
+        "ClientCondition": [
+            {
+                "PLEYERREG": [
+                    11,
+                    17
+                ]
+            }
+        ],
+        "Hide": 1,
+        "Prepose": "",
+        "Vanish": "",
+        "Pay": "Pay_PackageShop_TL_LLan_2",
+        "Version": "",
+        "ShopSort": "TimeLimitShop",
+        "WindowIcon": "",
+        "GameCoin": ""
+    },
+    "PackageShop_TL_LLan_1": {
+        "Name": "PackageShop_TL_LLan_1_Name",
+        "Platform": "ios",
+        "ItemShow": "PackageShop_TL_LLan_1_Reward",
+        "Item": "PackageShop_TL_LLan_1_Reward",
+        "Sort": 1,
+        "IsFree": 1,
+        "Price": "",
+        "Desc": "PackageShop_TL_LLan_1_Desc",
+        "Icon": "sd_XD_ningjudeweiguang",
+        "Quality": 5,
+        "Tag": "",
+        "CostOffTag": "",
+        "TimeTag": 1,
+        "TimeType": {
+            "start": "2020-07-17 05:00:00",
+            "amount": 1,
+            "end": "2029-07-24 05:00:00",
+            "type": "limit"
+        },
+        "CoolDown": "",
+        "ServerCondition": "",
+        "ClientCondition": [
+            {
+                "PLEYERREG": [
+                    11,
+                    17
+                ]
+            }
+        ],
+        "Hide": 1,
+        "Prepose": "",
+        "Vanish": "",
+        "Pay": "",
+        "Version": "",
+        "ShopSort": "TimeLimitShop",
+        "WindowIcon": "",
+        "GameCoin": ""
+    },
+    "PackageShop_TL_LLan_7": {
+        "Name": "PackageShop_TL_LLan_7_Name",
+        "Platform": "ios",
+        "ItemShow": "PackageShop_TL_LLan_7_Reward",
+        "Item": "PackageShop_TL_LLan_7_Reward",
+        "Sort": 2,
+        "IsFree": 2,
+        "Price": "",
+        "Desc": "PackageShop_TL_LLan_7_Desc",
+        "Icon": "sd_XD_xinhuochuran",
+        "Quality": 5,
+        "Tag": "",
+        "CostOffTag": "",
+        "TimeTag": 1,
+        "TimeType": {
+            "start": "2020-07-17 05:00:00",
+            "amount": -1,
+            "end": "2029-07-24 05:00:00",
+            "type": "limit"
+        },
+        "CoolDown": "",
+        "ServerCondition": "",
+        "ClientCondition": [
+            {
+                "PLEYERREG": [
+                    11,
+                    17
+                ]
+            }
+        ],
+        "Hide": 1,
+        "Prepose": "",
+        "Vanish": "",
+        "Pay": "",
+        "Version": "",
+        "ShopSort": "TimeLimitShop",
+        "WindowIcon": "",
+        "GameCoin": {
+            "amount": 400,
+            "type": "IR_Diamond"
+        }
+    },
+    "PackageShop_TL_LLan_6": {
+        "Name": "PackageShop_TL_LLan_6_Name",
+        "Platform": "ios",
+        "ItemShow": "PackageShop_TL_LLan_6_Reward",
+        "Item": "PackageShop_TL_LLan_6_Reward",
+        "Sort": 7,
+        "IsFree": 0,
+        "Price": "",
+        "Desc": "PackageShop_TL_LLan_6_Desc",
+        "Icon": "sd_XD_shengshizhiweiyan",
+        "Quality": 5,
+        "Tag": "",
+        "CostOffTag": 5.0,
+        "TimeTag": 1,
+        "TimeType": {
+            "start": "2020-07-17 05:00:00",
+            "amount": 2,
+            "end": "2029-07-24 05:00:00",
+            "type": "limit"
+        },
+        "CoolDown": "",
+        "ServerCondition": "",
+        "ClientCondition": [
+            {
+                "PLEYERREG": [
+                    11,
+                    17
+                ]
+            }
+        ],
+        "Hide": 1,
+        "Prepose": "",
+        "Vanish": "",
+        "Pay": "Pay_PackageShop_TL_LLan_6",
+        "Version": "",
+        "ShopSort": "TimeLimitShop",
+        "WindowIcon": "",
+        "GameCoin": ""
+    },
+    "PackageShop_TL_LLan_5": {
+        "Name": "PackageShop_TL_LLan_5_Name",
+        "Platform": "ios",
+        "ItemShow": "PackageShop_TL_LLan_5_Reward",
+        "Item": "PackageShop_TL_LLan_5_Reward",
+        "Sort": 6,
+        "IsFree": 0,
+        "Price": "",
+        "Desc": "PackageShop_TL_LLan_5_Desc",
+        "Icon": "sd_XD_anjiladejianshou",
+        "Quality": 5,
+        "Tag": "",
+        "CostOffTag": 5.0,
+        "TimeTag": 1,
+        "TimeType": {
+            "start": "2020-07-17 05:00:00",
+            "amount": 2,
+            "end": "2029-07-24 05:00:00",
+            "type": "limit"
+        },
+        "CoolDown": "",
+        "ServerCondition": "",
+        "ClientCondition": [
+            {
+                "PLEYERREG": [
+                    11,
+                    17
+                ]
+            }
+        ],
+        "Hide": 1,
+        "Prepose": "",
+        "Vanish": "",
+        "Pay": "Pay_PackageShop_TL_LLan_5",
+        "Version": "",
+        "ShopSort": "TimeLimitShop",
+        "WindowIcon": "",
+        "GameCoin": ""
+    },
+    "PackageShop_TL_LLan_4": {
+        "Name": "PackageShop_TL_LLan_4_Name",
+        "Platform": "ios",
+        "ItemShow": "PackageShop_TL_LLan_4_Reward",
+        "Item": "PackageShop_TL_LLan_4_Reward",
+        "Sort": 5,
+        "IsFree": 0,
+        "Price": "",
+        "Desc": "PackageShop_TL_LLan_4_Desc",
+        "Icon": "sd_XD_dulandeerzhiwu",
+        "Quality": 5,
+        "Tag": "",
+        "CostOffTag": 6.0,
+        "TimeTag": 1,
+        "TimeType": {
+            "start": "2020-07-17 05:00:00",
+            "amount": 1,
+            "end": "2029-07-24 05:00:00",
+            "type": "limit"
+        },
+        "CoolDown": "",
+        "ServerCondition": "",
+        "ClientCondition": [
+            {
+                "PLEYERREG": [
+                    11,
+                    17
+                ]
+            }
+        ],
+        "Hide": 1,
+        "Prepose": "",
+        "Vanish": "",
+        "Pay": "Pay_PackageShop_TL_LLan_4",
+        "Version": "",
+        "ShopSort": "TimeLimitShop",
+        "WindowIcon": "",
+        "GameCoin": ""
+    },
+    "PackageShop_TL_2": {
+        "Name": "PackageShop_TL_2_Name",
+        "Platform": "ios",
+        "ItemShow": "PackageShop_TL_2_Reward",
+        "Item": "PackageShop_TL_2_Reward",
+        "Sort": 3,
+        "IsFree": 0,
+        "Price": "",
+        "Desc": "PackageShop_TL_2_Desc",
+        "Icon": "sd_zg_chuyuzhili",
+        "Quality": 5,
+        "Tag": "",
+        "CostOffTag": 10.0,
+        "TimeTag": 1,
+        "TimeType": {
+            "start": "2020-07-17 05:00:00",
+            "amount": 1,
+            "end": "2029-07-24 05:00:00",
+            "type": "limit"
+        },
+        "CoolDown": "",
+        "ServerCondition": "",
+        "ClientCondition": [
+            {
+                "PLEYERREG": [
+                    4,
+                    10
+                ]
+            }
+        ],
+        "Hide": 1,
+        "Prepose": "",
+        "Vanish": "",
+        "Pay": "Pay_PackageShop_TL_2",
+        "Version": "",
+        "ShopSort": "TimeLimitShop",
+        "WindowIcon": "",
+        "GameCoin": ""
+    },
+    "PackageShop_TL_3": {
+        "Name": "PackageShop_TL_3_Name",
+        "Platform": "ios",
+        "ItemShow": "PackageShop_TL_3_Reward",
+        "Item": "PackageShop_TL_3_Reward",
+        "Sort": 4,
+        "IsFree": 0,
+        "Price": "",
+        "Desc": "PackageShop_TL_3_Desc",
+        "Icon": "sd_zg_zhenxidechengzhang",
+        "Quality": 5,
+        "Tag": "",
+        "CostOffTag": 6.0,
+        "TimeTag": 1,
+        "TimeType": {
+            "start": "2020-07-17 05:00:00",
+            "amount": 1,
+            "end": "2029-07-24 05:00:00",
+            "type": "limit"
+        },
+        "CoolDown": "",
+        "ServerCondition": "",
+        "ClientCondition": [
+            {
+                "PLEYERREG": [
+                    4,
+                    10
+                ]
+            }
+        ],
+        "Hide": 1,
+        "Prepose": "",
+        "Vanish": "",
+        "Pay": "Pay_PackageShop_TL_3",
+        "Version": "",
+        "ShopSort": "TimeLimitShop",
+        "WindowIcon": "",
+        "GameCoin": ""
+    },
+    "PackageShop_TL_1": {
+        "Name": "PackageShop_TL_1_Name",
+        "Platform": "ios",
+        "ItemShow": "PackageShop_TL_1_Reward",
+        "Item": "PackageShop_TL_1_Reward",
+        "Sort": 1,
+        "IsFree": 1,
+        "Price": "",
+        "Desc": "PackageShop_TL_1_Desc",
+        "Icon": "sd_zg_zhenxidexinyi",
+        "Quality": 5,
+        "Tag": "",
+        "CostOffTag": "",
+        "TimeTag": 1,
+        "TimeType": {
+            "start": "2020-07-17 05:00:00",
+            "amount": 1,
+            "end": "2029-07-24 05:00:00",
+            "type": "limit"
+        },
+        "CoolDown": "",
+        "ServerCondition": "",
+        "ClientCondition": [
+            {
+                "PLEYERREG": [
+                    4,
+                    10
+                ]
+            }
+        ],
+        "Hide": 1,
+        "Prepose": "",
+        "Vanish": "",
+        "Pay": "",
+        "Version": "",
+        "ShopSort": "TimeLimitShop",
+        "WindowIcon": "",
+        "GameCoin": ""
+    },
+    "PackageShop_TL_6": {
+        "Name": "PackageShop_TL_6_Name",
+        "Platform": "ios",
+        "ItemShow": "PackageShop_TL_6_Reward",
+        "Item": "PackageShop_TL_6_Reward",
+        "Sort": 7,
+        "IsFree": 0,
+        "Price": "",
+        "Desc": "PackageShop_TL_6_Desc",
+        "Icon": "sd_zg_dongwenhuizhibian",
+        "Quality": 5,
+        "Tag": "",
+        "CostOffTag": 5.0,
+        "TimeTag": 1,
+        "TimeType": {
+            "start": "2020-07-17 05:00:00",
+            "amount": 2,
+            "end": "2029-07-24 05:00:00",
+            "type": "limit"
+        },
+        "CoolDown": "",
+        "ServerCondition": "",
+        "ClientCondition": [
+            {
+                "PLEYERREG": [
+                    4,
+                    10
+                ]
+            }
+        ],
+        "Hide": 1,
+        "Prepose": "",
+        "Vanish": "",
+        "Pay": "Pay_PackageShop_TL_6",
+        "Version": "",
+        "ShopSort": "TimeLimitShop",
+        "WindowIcon": "",
+        "GameCoin": ""
+    },
+    "PackageShop_TL_7": {
+        "Name": "PackageShop_TL_7_Name",
+        "Platform": "ios",
+        "ItemShow": "PackageShop_TL_7_Reward",
+        "Item": "PackageShop_TL_7_Reward",
+        "Sort": 2,
+        "IsFree": 2,
+        "Price": "",
+        "Desc": "PackageShop_TL_7_Desc",
+        "Icon": "sd_XD_xinhuochuran",
+        "Quality": 5,
+        "Tag": "",
+        "CostOffTag": "",
+        "TimeTag": 1,
+        "TimeType": {
+            "start": "2018-03-12 19:00:00",
+            "amount": -1,
+            "end": "2029-03-12 19:00:00",
+            "type": "limit"
+        },
+        "CoolDown": "",
+        "ServerCondition": "",
+        "ClientCondition": [
+            {
+                "PLEYERREG": [
+                    4,
+                    10
+                ]
+            }
+        ],
+        "Hide": 1,
+        "Prepose": "",
+        "Vanish": "",
+        "Pay": "",
+        "Version": "",
+        "ShopSort": "TimeLimitShop",
+        "WindowIcon": "",
+        "GameCoin": {
+            "amount": 400,
+            "type": "IR_Diamond"
+        }
+    },
+    "PackageShop_TL_4": {
+        "Name": "PackageShop_TL_4_Name",
+        "Platform": "ios",
+        "ItemShow": "PackageShop_TL_4_Reward",
+        "Item": "PackageShop_TL_4_Reward",
+        "Sort": 5,
+        "IsFree": 0,
+        "Price": "",
+        "Desc": "PackageShop_TL_4_Desc",
+        "Icon": "sd_zg_zhenxidezhuli",
+        "Quality": 5,
+        "Tag": "",
+        "CostOffTag": 6.0,
+        "TimeTag": 1,
+        "TimeType": {
+            "start": "2020-07-17 05:00:00",
+            "amount": 1,
+            "end": "2029-07-24 05:00:00",
+            "type": "limit"
+        },
+        "CoolDown": "",
+        "ServerCondition": "",
+        "ClientCondition": [
+            {
+                "PLEYERREG": [
+                    4,
+                    10
+                ]
+            }
+        ],
+        "Hide": 1,
+        "Prepose": "",
+        "Vanish": "",
+        "Pay": "Pay_PackageShop_TL_4",
+        "Version": "",
+        "ShopSort": "TimeLimitShop",
+        "WindowIcon": "",
+        "GameCoin": ""
+    },
+    "PackageShop_TL_5": {
+        "Name": "PackageShop_TL_5_Name",
+        "Platform": "ios",
+        "ItemShow": "PackageShop_TL_5_Reward",
+        "Item": "PackageShop_TL_5_Reward",
+        "Sort": 6,
+        "IsFree": 0,
+        "Price": "",
+        "Desc": "PackageShop_TL_5_Desc",
+        "Icon": "sd_zg_zhenxidejueyi",
+        "Quality": 5,
+        "Tag": "",
+        "CostOffTag": 5.0,
+        "TimeTag": 1,
+        "TimeType": {
+            "start": "2020-07-17 05:00:00",
+            "amount": 2,
+            "end": "2029-07-24 05:00:00",
+            "type": "limit"
+        },
+        "CoolDown": "",
+        "ServerCondition": "",
+        "ClientCondition": [
+            {
+                "PLEYERREG": [
+                    4,
+                    10
+                ]
+            }
+        ],
+        "Hide": 1,
+        "Prepose": "",
+        "Vanish": "",
+        "Pay": "Pay_PackageShop_TL_5",
+        "Version": "",
+        "ShopSort": "TimeLimitShop",
+        "WindowIcon": "",
+        "GameCoin": ""
+    }
+}

@@ -1,0 +1,53 @@
+{
+    "Shuangrenchuang": {
+        "InteractionFactor": [
+            {
+                "deviation": [
+                    10,
+                    80
+                ],
+                "direction": 0
+            },
+            {
+                "deviation": [
+                    80,
+                    120
+                ],
+                "direction": 0
+            }
+        ]
+    },
+    "Yizi": {
+        "InteractionFactor": [
+            {
+                "deviation": [
+                    0,
+                    0
+                ],
+                "direction": 0
+            }
+        ]
+    },
+    "Danrenchuang": {
+        "InteractionFactor": [
+            {
+                "deviation": [
+                    50,
+                    15
+                ],
+                "direction": 0
+            }
+        ]
+    },
+    "Wenquan": {
+        "InteractionFactor": [
+            {
+                "deviation": [
+                    20,
+                    160
+                ],
+                "direction": 0
+            }
+        ]
+    }
+}
