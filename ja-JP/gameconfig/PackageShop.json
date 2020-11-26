@@ -550,43 +550,6 @@
         "WindowIcon": "sd_zg_niepandefenghuang1",
         "GameCoin": ""
     },
-    "PackageShop_9": {
-        "Name": "PackageShop_9_Name",
-        "Platform": "ios",
-        "ItemShow": "PackageShop_9_Reward",
-        "Item": "PackageShop_9_Reward",
-        "Sort": 1007,
-        "IsFree": 0,
-        "Price": "",
-        "Desc": "PackageShop_9_Desc",
-        "Icon": "sd_zg_gexindeliren",
-        "Quality": 5,
-        "Tag": "",
-        "CostOffTag": 5.0,
-        "TimeTag": "",
-        "TimeType": {
-            "amount": 1,
-            "type": "unlimit"
-        },
-        "CoolDown": "",
-        "ServerCondition": "",
-        "ClientCondition": [
-            {
-                "VIPEXP": [
-                    500,
-                    9999
-                ]
-            }
-        ],
-        "Hide": 1,
-        "Prepose": "",
-        "Vanish": 1,
-        "Pay": "Pay_PackageShop_9",
-        "Version": "",
-        "ShopSort": "PackageShop",
-        "WindowIcon": "sd_zg_gexindeliren1",
-        "GameCoin": ""
-    },
     "PackageShop_TL_LLan_3": {
         "Name": "PackageShop_TL_LLan_3_Name",
         "Platform": "ios",
@@ -1245,6 +1208,36 @@
         "Version": "",
         "ShopSort": "PackageShop",
         "WindowIcon": "",
+        "GameCoin": ""
+    },
+    "PackageShop_9": {
+        "Name": "PackageShop_9_Name",
+        "Platform": "ios",
+        "ItemShow": "PackageShop_9_Reward",
+        "Item": "PackageShop_9_Reward",
+        "Sort": 1007,
+        "IsFree": 0,
+        "Price": "",
+        "Desc": "PackageShop_9_Desc",
+        "Icon": "sd_zg_gexindeliren",
+        "Quality": 5,
+        "Tag": "",
+        "CostOffTag": 5.0,
+        "TimeTag": "",
+        "TimeType": {
+            "amount": 1,
+            "type": "unlimit"
+        },
+        "CoolDown": "",
+        "ServerCondition": "",
+        "ClientCondition": "",
+        "Hide": 1,
+        "Prepose": "",
+        "Vanish": 1,
+        "Pay": "Pay_PackageShop_9",
+        "Version": "",
+        "ShopSort": "PackageShop",
+        "WindowIcon": "sd_zg_gexindeliren1",
         "GameCoin": ""
     }
 }

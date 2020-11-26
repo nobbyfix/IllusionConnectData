@@ -343,6 +343,10 @@ function BuyEatItemTipMediator:createGiftDataSource(resourceConfig)
 		end
 
 		self._giftNode:setVisible(true)
+		prePriceText:setVisible(false)
+		self._giftNode:getChildByFullName("Node_gift.Button_price.Image_17"):setVisible(false)
+		discountText:setVisible(false)
+		discountDescText:posite(128, 126)
 	else
 		self._giftNode:setVisible(false)
 	end

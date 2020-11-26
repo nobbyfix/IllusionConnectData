@@ -857,24 +857,6 @@
         "ResourcesBanner": "",
         "IsPlay": 0
     },
-    "ClubStage_SkipBattle": {
-        "Condition": {
-            "CLUBLEVEL": 2
-        },
-        "ShowCondition": {
-            "CLUBLEVEL": 2
-        },
-        "Tip": "ClubStage_SkipBattleDesc",
-        "Name": "",
-        "LongDesc": "",
-        "OutputDesc": "",
-        "Icon": "",
-        "Link": "",
-        "UnlockAnima": "",
-        "UnlockDesc": "",
-        "ResourcesBanner": "",
-        "IsPlay": ""
-    },
     "Equip_LevelUp": {
         "Condition": {
             "STAGE": "M05S23"
@@ -1478,29 +1460,6 @@
         "ResourcesBanner": "",
         "IsPlay": 1
     },
-    "Crusade": {
-        "Condition": {
-            "LEVEL": 100
-        },
-        "ShowCondition": {
-            "LEVEL": 100
-        },
-        "Tip": "Unlock_Stage_Tips",
-        "Name": "Unlock_Crusade_Name",
-        "LongDesc": "Unlock_Crusade_Desc",
-        "OutputDesc": "Unlock_Crusade_OpDesc",
-        "Icon": "",
-        "Link": "",
-        "UnlockAnima": "HOME",
-        "UnlockDesc": "Crusade_UnlockDesc",
-        "ResourcesBanner": [
-            "IR_Gold",
-            "IR_Crystal",
-            "IR_Diamond",
-            "IR_Pve"
-        ],
-        "IsPlay": 1
-    },
     "Shop_Groceries": {
         "Condition": {
             "LEVEL": 1
@@ -1838,24 +1797,6 @@
         "ResourcesBanner": "",
         "IsPlay": 0
     },
-    "HitCharts": {
-        "Condition": {
-            "CLUBLEVEL": "3"
-        },
-        "ShowCondition": {
-            "CLUBLEVEL": "3"
-        },
-        "Tip": "",
-        "Name": "",
-        "LongDesc": "",
-        "OutputDesc": "",
-        "Icon": "",
-        "Link": "",
-        "UnlockAnima": "",
-        "UnlockDesc": "",
-        "ResourcesBanner": "",
-        "IsPlay": ""
-    },
     "BattlePass": {
         "Condition": {
             "LEVEL": 1
@@ -2089,24 +2030,6 @@
         ],
         "IsPlay": 0
     },
-    "Activity_ClubStage": {
-        "Condition": {
-            "CLUBLEVEL": 3
-        },
-        "ShowCondition": {
-            "CLUBLEVEL": 3
-        },
-        "Tip": "ClubStage_UnlockDesc",
-        "Name": "",
-        "LongDesc": "",
-        "OutputDesc": "",
-        "Icon": "",
-        "Link": "",
-        "UnlockAnima": "",
-        "UnlockDesc": "",
-        "ResourcesBanner": "",
-        "IsPlay": ""
-    },
     "Draw_Equip": {
         "Condition": {
             "STAGE": "M07S19"
@@ -2166,24 +2089,6 @@
         "ResourcesBanner": "",
         "IsPlay": 0
     },
-    "ClubStage": {
-        "Condition": {
-            "CLUBLEVEL": 2
-        },
-        "ShowCondition": {
-            "CLUBLEVEL": 2
-        },
-        "Tip": "ClubStage_UnlockDesc",
-        "Name": "",
-        "LongDesc": "",
-        "OutputDesc": "",
-        "Icon": "",
-        "Link": "",
-        "UnlockAnima": "",
-        "UnlockDesc": "",
-        "ResourcesBanner": "",
-        "IsPlay": ""
-    },
     "Friend_PK": {
         "Condition": {
             "STAGE": "M04S01"
@@ -2242,5 +2147,100 @@
             "IR_Arena"
         ],
         "IsPlay": 0
+    },
+    "ClubStage_SkipBattle": {
+        "Condition": {
+            "LEVEL": 100
+        },
+        "ShowCondition": {
+            "LEVEL": 100
+        },
+        "Tip": "Unlock_Joking_Tips",
+        "Name": "",
+        "LongDesc": "",
+        "OutputDesc": "",
+        "Icon": "",
+        "Link": "",
+        "UnlockAnima": "",
+        "UnlockDesc": "",
+        "ResourcesBanner": "",
+        "IsPlay": ""
+    },
+    "Crusade": {
+        "Condition": {
+            "LEVEL": 100
+        },
+        "ShowCondition": {
+            "LEVEL": 100
+        },
+        "Tip": "Unlock_Joking_Tips",
+        "Name": "Unlock_Crusade_Name",
+        "LongDesc": "Unlock_Crusade_Desc",
+        "OutputDesc": "Unlock_Crusade_OpDesc",
+        "Icon": "",
+        "Link": "",
+        "UnlockAnima": "HOME",
+        "UnlockDesc": "Crusade_UnlockDesc",
+        "ResourcesBanner": [
+            "IR_Gold",
+            "IR_Crystal",
+            "IR_Diamond",
+            "IR_Pve"
+        ],
+        "IsPlay": 1
+    },
+    "HitCharts": {
+        "Condition": {
+            "LEVEL": 100
+        },
+        "ShowCondition": {
+            "LEVEL": 100
+        },
+        "Tip": "Unlock_Joking_Tips",
+        "Name": "",
+        "LongDesc": "",
+        "OutputDesc": "",
+        "Icon": "",
+        "Link": "",
+        "UnlockAnima": "",
+        "UnlockDesc": "",
+        "ResourcesBanner": "",
+        "IsPlay": ""
+    },
+    "Activity_ClubStage": {
+        "Condition": {
+            "LEVEL": 100
+        },
+        "ShowCondition": {
+            "LEVEL": 100
+        },
+        "Tip": "Unlock_Joking_Tips",
+        "Name": "",
+        "LongDesc": "",
+        "OutputDesc": "",
+        "Icon": "",
+        "Link": "",
+        "UnlockAnima": "",
+        "UnlockDesc": "",
+        "ResourcesBanner": "",
+        "IsPlay": ""
+    },
+    "ClubStage": {
+        "Condition": {
+            "LEVEL": 100
+        },
+        "ShowCondition": {
+            "LEVEL": 100
+        },
+        "Tip": "Unlock_Joking_Tips",
+        "Name": "",
+        "LongDesc": "",
+        "OutputDesc": "",
+        "Icon": "",
+        "Link": "",
+        "UnlockAnima": "",
+        "UnlockDesc": "",
+        "ResourcesBanner": "",
+        "IsPlay": ""
     }
 }
