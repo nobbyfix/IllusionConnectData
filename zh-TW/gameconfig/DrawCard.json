@@ -6229,5 +6229,78 @@
             }
         ],
         "Link": "view://shopView&viewType=push&shopId=Shop_TimeLimit"
+    },
+    "DrawCard_2UP_41_New": {
+        "DrawCardName": "",
+        "DrawCardENName": "",
+        "DrawCardDescTitle": "",
+        "DrawCardDesc": "",
+        "DrawCardType": "ACTIVITYDRAW",
+        "Number": [
+            1,
+            10
+        ],
+        "Coupon": "IM_DiamondDraw",
+        "CouponCost": [
+            1,
+            10
+        ],
+        "FreeReset": "DrawCard_TimeUp",
+        "Times": [],
+        "Reward": [
+            "DrawCard_2UP_41_New_1",
+            "DrawCard_2UP_41_New_10"
+        ],
+        "SpecialReward": "",
+        "NormalReward": "DrawCard_Diamond_1_normal",
+        "ShowReward": {},
+        "ShortDesc": [
+            "DrawCard_Diamond_1_ShortDesc",
+            "DrawCard_Diamond_10_ShortDesc"
+        ],
+        "ShortENDesc": [
+            "UILINK_EN_Zhaohuan1ci",
+            "UILINK_EN_Zhaohuan10ci"
+        ],
+        "Preview": {
+            "main": "drawcard_bg_BBLMaLFEr",
+            "btn": "drawcard_tab_BBLMaLFEr_"
+        },
+        "Condition": "",
+        "Rank": 80,
+        "DrawLimit": -1,
+        "OffCount": [],
+        "DrawCardUPDesc": [
+            [
+                "DrawCard_2UP_41_Title1",
+                "DrawCard_2UP_41_Text1"
+            ],
+            [
+                "DrawCard_2UP_41_Title2",
+                "DrawCard_2UP_41_Text2"
+            ],
+            [
+                "DrawCard_2UP_41_Title3",
+                "DrawCard_2UP_41_Text3"
+            ]
+        ],
+        "ExtraReward": "",
+        "RoleDetail": [
+            {
+                "position": [
+                    330,
+                    265
+                ],
+                "hero": "BBLMa"
+            },
+            {
+                "position": [
+                    825,
+                    290
+                ],
+                "hero": "LFEr"
+            }
+        ],
+        "Link": ""
     }
 }

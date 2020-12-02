@@ -9746,5 +9746,41 @@
         "Icon": "",
         "Tag": "",
         "Version": ""
+    },
+    "DrawCard_2UP_41_New_Activity": {
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "LeftBanner": "",
+        "Title": "",
+        "Desc": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "start": [
+                "2020-12-02 05:00:00",
+                "2020-12-03 05:00:00"
+            ],
+            "end": "2020-12-03 05:00:00"
+        },
+        "Loop": "",
+        "LoopFactor": "",
+        "ServerCondition": "",
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "ActivityConfig": {
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_2UP_41_New",
+            "DRAW": "DrawCard_2UP_41_New",
+            "VANISH": 0
+        },
+        "Mail": 0,
+        "MailId": "",
+        "Reset": 0,
+        "Enable": 1,
+        "Primary": 1,
+        "ShowTab": 0,
+        "ShowIndex": 106,
+        "Icon": "",
+        "Tag": "",
+        "Version": ""
     }
 }
