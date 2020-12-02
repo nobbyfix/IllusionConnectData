@@ -1371,86 +1371,6 @@
         ],
         "UnlockBubble": ""
     },
-    "S18S01": {
-        "Name": "BlockPoint_S18S01_Name",
-        "Map": "M18",
-        "Location": [
-            -448,
-            14
-        ],
-        "PreBattlePoint": [],
-        "PreStoryPoint": [
-            "S18S03"
-        ],
-        "NextStoryPoint": [
-            "S18S02"
-        ],
-        "FirstReward": "S18S01_Reward",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "story18_1a",
-        "Icon": "s_album_story_1",
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ],
-        "UnlockBubble": ""
-    },
-    "S18S03": {
-        "Name": "BlockPoint_S18S03_Name",
-        "Map": "M18",
-        "Location": [
-            -100,
-            -120
-        ],
-        "PreBattlePoint": [
-            "M18S27"
-        ],
-        "PreStoryPoint": [
-            "S18S02"
-        ],
-        "NextStoryPoint": [],
-        "FirstReward": "S18S03_Reward",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "story18_3a",
-        "Icon": "s_album_story_1",
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ],
-        "UnlockBubble": ""
-    },
-    "S18S02": {
-        "Name": "BlockPoint_S18S02_Name",
-        "Map": "M18",
-        "Location": [
-            -225,
-            106
-        ],
-        "PreBattlePoint": [
-            "M18S13"
-        ],
-        "PreStoryPoint": [
-            "S18S01"
-        ],
-        "NextStoryPoint": [
-            "S18S03"
-        ],
-        "FirstReward": "S18S02_Reward",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "story18_2a",
-        "Icon": "s_album_story_1",
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ],
-        "UnlockBubble": ""
-    },
     "S06S02": {
         "Name": "BlockPoint_S06S02_Name",
         "Map": "M06",
@@ -2022,6 +1942,88 @@
         "IsAuto": "",
         "PointPicture": "",
         "StoryLink": "story09_1a",
+        "Icon": "s_album_story_1",
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "UnlockBubble": ""
+    },
+    "S18S01": {
+        "Name": "BlockPoint_S18S01_Name",
+        "Map": "M18",
+        "Location": [
+            -448,
+            14
+        ],
+        "PreBattlePoint": [
+            "M18S15"
+        ],
+        "PreStoryPoint": [
+            "S17S03"
+        ],
+        "NextStoryPoint": [
+            "S18S02"
+        ],
+        "FirstReward": "S18S01_Reward",
+        "IsHide": "",
+        "IsAuto": "",
+        "PointPicture": "",
+        "StoryLink": "story18_1a",
+        "Icon": "s_album_story_1",
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "UnlockBubble": ""
+    },
+    "S18S03": {
+        "Name": "BlockPoint_S18S03_Name",
+        "Map": "M18",
+        "Location": [
+            -100,
+            -120
+        ],
+        "PreBattlePoint": [
+            "M18S55"
+        ],
+        "PreStoryPoint": [
+            "S18S02"
+        ],
+        "NextStoryPoint": [],
+        "FirstReward": "S18S03_Reward",
+        "IsHide": "",
+        "IsAuto": "",
+        "PointPicture": "",
+        "StoryLink": "story18_3a",
+        "Icon": "s_album_story_1",
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "UnlockBubble": ""
+    },
+    "S18S02": {
+        "Name": "BlockPoint_S18S02_Name",
+        "Map": "M18",
+        "Location": [
+            -225,
+            106
+        ],
+        "PreBattlePoint": [
+            "M18S35"
+        ],
+        "PreStoryPoint": [
+            "S18S01"
+        ],
+        "NextStoryPoint": [
+            "S18S03"
+        ],
+        "FirstReward": "S18S02_Reward",
+        "IsHide": "",
+        "IsAuto": "",
+        "PointPicture": "",
+        "StoryLink": "story18_2a",
         "Icon": "s_album_story_1",
         "PointIcon": [
             "main_bg_xq_jqicon01.png",

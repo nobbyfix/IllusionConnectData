@@ -146,35 +146,6 @@
         ],
         "SummonSurface": []
     },
-    "SummonedLDu": {
-        "Type": "Summoned",
-        "RoleModel": "Model_LDu_Saba",
-        "Cost": 2,
-        "NormalSkill": "Skill_Summoned_LDu_Saba_Normal",
-        "ProudSkill": "",
-        "UniqueSkill": "",
-        "DoubleSkill": "",
-        "CounterSkill": "",
-        "DeathSkill": "",
-        "PassiveSkill": [],
-        "SkillRate": 0.0,
-        "RageRules": {
-            "a1": [
-                0,
-                0
-            ],
-            "a3": 0,
-            "a2": 0,
-            "a4": 0
-        },
-        "RageBase": 0,
-        "KillRage": 0,
-        "MasterRage": 10,
-        "Flags": [
-            "SUMMONED"
-        ],
-        "SummonSurface": []
-    },
     "SummonedSGHQShou_Lucy": {
         "Type": "Summoned",
         "RoleModel": "Model_SGHQShou_Lucy",
@@ -590,5 +561,34 @@
             "SUMMONED"
         ],
         "SummonSurface": ""
+    },
+    "SummonedLDu": {
+        "Type": "Summoned",
+        "RoleModel": "Model_LDu_Saba",
+        "Cost": 2,
+        "NormalSkill": "Skill_Summoned_LDu_Saba_Normal",
+        "ProudSkill": "",
+        "UniqueSkill": "",
+        "DoubleSkill": "",
+        "CounterSkill": "",
+        "DeathSkill": "Skill_Summoned_LDu_Saba_Passive_Death",
+        "PassiveSkill": [],
+        "SkillRate": 0.0,
+        "RageRules": {
+            "a1": [
+                0,
+                0
+            ],
+            "a3": 0,
+            "a2": 0,
+            "a4": 0
+        },
+        "RageBase": 0,
+        "KillRage": 0,
+        "MasterRage": 10,
+        "Flags": [
+            "SUMMONED"
+        ],
+        "SummonSurface": []
     }
 }
