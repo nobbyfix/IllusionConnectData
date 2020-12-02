@@ -982,48 +982,6 @@
         "WindowIcon": "",
         "GameCoin": ""
     },
-    "PackageShop_TL_7": {
-        "Name": "PackageShop_TL_7_Name",
-        "Platform": "ios",
-        "ItemShow": "PackageShop_TL_7_Reward",
-        "Item": "PackageShop_TL_7_Reward",
-        "Sort": 2,
-        "IsFree": 2,
-        "Price": "",
-        "Desc": "PackageShop_TL_7_Desc",
-        "Icon": "sd_XD_xinhuochuran",
-        "Quality": 5,
-        "Tag": "",
-        "CostOffTag": "",
-        "TimeTag": 1,
-        "TimeType": {
-            "start": "2018-03-12 19:00:00",
-            "amount": -1,
-            "end": "2029-03-12 19:00:00",
-            "type": "limit"
-        },
-        "CoolDown": "",
-        "ServerCondition": "",
-        "ClientCondition": [
-            {
-                "PLEYERREG": [
-                    4,
-                    10
-                ]
-            }
-        ],
-        "Hide": 1,
-        "Prepose": "",
-        "Vanish": "",
-        "Pay": "",
-        "Version": "",
-        "ShopSort": "TimeLimitShop",
-        "WindowIcon": "",
-        "GameCoin": {
-            "amount": 400,
-            "type": "IR_Diamond"
-        }
-    },
     "PackageShop_TL_4": {
         "Name": "PackageShop_TL_4_Name",
         "Platform": "ios",
@@ -1239,5 +1197,47 @@
         "ShopSort": "PackageShop",
         "WindowIcon": "sd_zg_gexindeliren1",
         "GameCoin": ""
+    },
+    "PackageShop_TL_7": {
+        "Name": "PackageShop_TL_7_Name",
+        "Platform": "ios",
+        "ItemShow": "PackageShop_TL_7_Reward",
+        "Item": "PackageShop_TL_7_Reward",
+        "Sort": 2,
+        "IsFree": 2,
+        "Price": "",
+        "Desc": "PackageShop_TL_7_Desc",
+        "Icon": "sd_XD_xinhuochuran",
+        "Quality": 5,
+        "Tag": "",
+        "CostOffTag": "",
+        "TimeTag": 1,
+        "TimeType": {
+            "start": "2018-03-12 19:00:00",
+            "amount": -1,
+            "end": "2029-03-12 19:00:00",
+            "type": "limit"
+        },
+        "CoolDown": "",
+        "ServerCondition": "",
+        "ClientCondition": [
+            {
+                "PLEYERREG": [
+                    1,
+                    10
+                ]
+            }
+        ],
+        "Hide": 1,
+        "Prepose": "",
+        "Vanish": "",
+        "Pay": "",
+        "Version": "",
+        "ShopSort": "TimeLimitShop",
+        "WindowIcon": "",
+        "GameCoin": {
+            "amount": 400,
+            "type": "IR_Diamond"
+        }
     }
 }
