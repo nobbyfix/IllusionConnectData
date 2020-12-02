@@ -4290,409 +4290,6 @@
         },
         "OpenType": 1
     },
-    "Alice_2": {
-        "UnlockCondition": {
-            "LEVEL": 99,
-            "PREPOINT": {
-                "Alice_1": 1
-            }
-        },
-        "UnlockAuto": {
-            "MapGuide": 90
-        },
-        "NeedPower": 30,
-        "Name": "Map_Alice_2_Name",
-        "Img": "map_stage_1_2",
-        "Desc": "Map_Alice_2_Desc",
-        "StrategyDesc": "Map_Alice_2_StrategyDesc",
-        "RecommendLv": 10596,
-        "PointHead": "ALSi",
-        "ShowReward": [
-            {
-                "itemId": "IM_TopsShowBox3",
-                "text": "EXPLORE_RewardShow_Type3",
-                "image": "ts_bg_fl_3"
-            },
-            {
-                "itemId": "IM_TopsShowBox2",
-                "text": "EXPLORE_RewardShow_Type2",
-                "image": "ts_bg_fl_2"
-            },
-            {
-                "itemId": "IM_TopsShowBox1",
-                "text": "EXPLORE_RewardShow_Type1",
-                "image": "ts_bg_fl_1"
-            }
-        ],
-        "DailyRewardShow": [
-            {
-                "itemId": "IM_TopsShowBox3",
-                "text": "EXPLORE_RewardShow_Type1",
-                "image": "ts_bg_fl_1"
-            },
-            {
-                "itemId": "IES_StarUpDogFood_SR",
-                "text": "EXPLORE_RewardShow_Type2",
-                "image": "ts_bg_fl_1"
-            },
-            {
-                "itemId": "IR_Equip14",
-                "text": "EXPLORE_RewardShow_Type1",
-                "image": "ts_bg_fl_1"
-            },
-            {
-                "itemId": "IR_Equip13",
-                "text": "EXPLORE_RewardShow_Type1",
-                "image": "ts_bg_fl_1"
-            }
-        ],
-        "WeekRecommend": [
-            1,
-            4,
-            5,
-            7
-        ],
-        "DailyReward": "Alice_2_EveryDay_Reward",
-        "HeroEffect": {
-            "XLai": "MapExplore_HeroEffect01",
-            "ATSheng": "MapExplore_HeroEffect01",
-            "CLMan": "MapExplore_HeroEffect01"
-        },
-        "HeroSpecialEffect": "",
-        "FirstRewardPosition": [
-            60,
-            -64
-        ],
-        "MapSystemFirstTask": [
-            "Map_FirstTask_Alice_2"
-        ],
-        "MapMainTask": "Map_PoinMainTask_Alice_2",
-        "MapGuideDesc": {
-            "1": {
-                "Value": 1,
-                "Desc": "Alice_2_GuideDesc_1"
-            },
-            "3": {
-                "Value": 1,
-                "Desc": "Alice_2_GuideDesc_3"
-            },
-            "2": {
-                "Value": 1,
-                "Desc": "Alice_2_GuideDesc_2"
-            },
-            "5": {
-                "Value": 1,
-                "Desc": "Alice_2_GuideDesc_5"
-            },
-            "4": {
-                "Value": 1,
-                "Desc": "Alice_2_GuideDesc_4"
-            },
-            "7": {
-                "Value": 1,
-                "Desc": "Alice_2_GuideDesc_7"
-            },
-            "6": {
-                "Value": 1,
-                "Desc": "Alice_2_GuideDesc_6"
-            },
-            "9": {
-                "Value": 1,
-                "Desc": "Alice_2_GuideDesc_9"
-            },
-            "8": {
-                "Value": 1,
-                "Desc": "Alice_2_GuideDesc_8"
-            }
-        },
-        "MapGuideReward": {
-            "1": "Alice_2_MapGuide3_Reward",
-            "0.5": "Alice_2_MapGuide1_Reward",
-            "0.75": "Alice_2_MapGuide2_Reward"
-        },
-        "MapResource": [
-            "Ground1_2",
-            "Decorate1_2"
-        ],
-        "MapBlock": "Decorate1_2_Block",
-        "PlayerPos": {
-            "1": {
-                "Direction": "Right",
-                "Pos": [
-                    472,
-                    301
-                ],
-                "Face": "Left"
-            }
-        },
-        "Object": [
-            "Alice_2_JinBiA1",
-            "Alice_2_JinBiA2",
-            "Alice_2_JinBiA3",
-            "Alice_2_JinBiA4",
-            "Alice_2_JinBiA5",
-            "Alice_2_JinBiA6",
-            "Alice_2_JinBiA7",
-            "Alice_2_JinBiA8",
-            "Alice_2_JinBiA9",
-            "Alice_2_JinBiA10",
-            "Alice_2_JinBiA11",
-            "Alice_2_JinBiA12",
-            "Alice_2_JinBiA13",
-            "Alice_2_JinBiA14",
-            "Alice_2_JinBiA15",
-            "Alice_2_JinBiA16",
-            "Alice_2_JinBiA17",
-            "Alice_2_JinBiB1",
-            "Alice_2_JinBiB2",
-            "Alice_2_JinBiB3",
-            "Alice_2_JinBiB4",
-            "Alice_2_JinBiB5",
-            "Alice_2_JinBiB6",
-            "Alice_2_JinBiB7",
-            "Alice_2_JinBiB8",
-            "Alice_2_JinBiB9",
-            "Alice_2_JinBiB10",
-            "Alice_2_JinBiB11",
-            "Alice_2_JinBiB12",
-            "Alice_2_JinBiB13",
-            "Alice_2_JinBiB14",
-            "Alice_2_JinBiB15",
-            "Alice_2_JinBiB16",
-            "Alice_2_JinBiB17",
-            "Alice_2_BaoXiangA1",
-            "Alice_2_BaoXiangB1",
-            "Alice_2_BaoXiangA1GuangXiao",
-            "Alice_2_BaoXiangB1GuangXiao",
-            "Alice_2_BuffA1",
-            "Alice_2_BuffB1",
-            "Alice_2_XiaoGuaiBaoXiangA1",
-            "Alice_2_XiaoGuaiBaoXiangB1",
-            "Alice_2_XiaoGuaiBuffA1",
-            "Alice_2_XiaoGuaiBuffB1",
-            "Alice_2_XiaoGuaiA1",
-            "Alice_2_XiaoGuaiA2",
-            "Alice_2_XiaoGuaiA3",
-            "Alice_2_XiaoGuaiA4",
-            "Alice_2_XiaoGuaiA5",
-            "Alice_2_XiaoGuaiA6",
-            "Alice_2_XiaoGuaiA7",
-            "Alice_2_XiaoGuaiA8",
-            "Alice_2_XiaoGuaiB1",
-            "Alice_2_XiaoGuaiB2",
-            "Alice_2_XiaoGuaiB3",
-            "Alice_2_JingYingA1",
-            "Alice_2_JingYingB1",
-            "Alice_2_BossA1",
-            "Alice_2_Alice1",
-            "Alice_2_ZhuBanZhe1",
-            "Alice_2_MoGuWuZhu1",
-            "Alice_2_StoryStar1",
-            "Alice_2_StoryPoint1",
-            "Alice_2_StoryJingYingA1",
-            "Alice_2_StoryJingYingB1",
-            "Alice_2_StoryBoss1",
-            "Alice_2_BossShouWeiA1",
-            "Alice_2_BossShouWeiA2",
-            "Alice_2_ZaCao1",
-            "Alice_2_ZaCao2",
-            "Alice_2_ZaCao3",
-            "Alice_2_Wu1",
-            "Alice_2_Wu2",
-            "Alice_2_Wu3",
-            "Alice_2_Wu4",
-            "Alice_2_Wu5",
-            "Alice_2_LanMeiDanGao1",
-            "Alice_2_ZuDangTips1",
-            "Alice_2_ZuDangTips2",
-            "Alice_2_ZuDangTips3",
-            "Alice_2_XiaoGongZhu",
-            "Alice_2_CaiDanHua",
-            "Alice_2_ChouXiaoYa",
-            "Alice_2_XiaoHongMao1",
-            "Alice_2_WaiPo",
-            "Alice_2_DaHuiLang"
-        ],
-        "RandomObject": "",
-        "TeamObject": {
-            "Alice_2_MoGuA1": [
-                {
-                    "Object": [
-                        "Alice_2_Mogu1",
-                        "Alice_2_Mogu2",
-                        "Alice_2_Mogu3",
-                        "Alice_2_Mogu4",
-                        "Alice_2_Mogu5"
-                    ],
-                    "Rnd": 0.4
-                },
-                {
-                    "Object": [
-                        "Alice_2_Mogu1",
-                        "Alice_2_Mogu2",
-                        "Alice_2_Mogu3",
-                        "Alice_2_Mogu4"
-                    ],
-                    "Rnd": 0.15
-                },
-                {
-                    "Object": [
-                        "Alice_2_Mogu2",
-                        "Alice_2_Mogu3",
-                        "Alice_2_Mogu4"
-                    ],
-                    "Rnd": 0.15
-                },
-                {
-                    "Object": [
-                        "Alice_2_Mogu1",
-                        "Alice_2_Mogu3",
-                        "Alice_2_Mogu4"
-                    ],
-                    "Rnd": 0.15
-                },
-                {
-                    "Object": [
-                        "Alice_2_Mogu1",
-                        "Alice_2_Mogu3",
-                        "Alice_2_Mogu4",
-                        "Alice_2_Mogu5"
-                    ],
-                    "Rnd": 0.15
-                }
-            ]
-        },
-        "OnceObject": {
-            "Alice_2_CaiDanTang3": "Alice_2_Tang3_Case2",
-            "Alice_2_CaiDanTang2": "Alice_2_Tang2_Case2",
-            "Alice_2_CaiDanTang1": "Alice_2_Tang1_Case2",
-            "Alice_2_CaiDanTang4": "Alice_2_Tang4_Case2",
-            "Alice_2_CaiDanBoss": "Alice_2_CaiDanBoss_Case1_2",
-            "Alice_2_CaiDanMuBei1": "Alice_2_CaiDanMuBei1_Case2"
-        },
-        "MapAuto": [
-            "Alice_2_01",
-            "Alice_2_02",
-            "Alice_2_03",
-            "Alice_2_04",
-            "Alice_2_05",
-            "Alice_2_06",
-            "Alice_2_07",
-            "Alice_2_08",
-            "Alice_2_09",
-            "Alice_2_10",
-            "Alice_2_11",
-            "Alice_2_12",
-            "Alice_2_13",
-            "Alice_2_14",
-            "Alice_2_15",
-            "Alice_2_16",
-            "Alice_2_17",
-            "Alice_2_18",
-            "Alice_2_19",
-            "Alice_2_20",
-            "Alice_2_21",
-            "Alice_2_22",
-            "Alice_2_23",
-            "Alice_2_24",
-            "Alice_2_25",
-            "Alice_2_26",
-            "Alice_2_27",
-            "Alice_2_28",
-            "Alice_2_29",
-            "Alice_2_30",
-            "Alice_2_31",
-            "Alice_2_32",
-            "Alice_2_33",
-            "Alice_2_34",
-            "Alice_2_35",
-            "Alice_2_36",
-            "Alice_2_37",
-            "Alice_2_38",
-            "Alice_2_39",
-            "Alice_2_40",
-            "Alice_2_41",
-            "Alice_2_42",
-            "Alice_2_43",
-            "Alice_2_44",
-            "Alice_2_45",
-            "Alice_2_46",
-            "Alice_2_47",
-            "Alice_2_48",
-            "Alice_2_49",
-            "Alice_2_50",
-            "Alice_2_51",
-            "Alice_2_52",
-            "Alice_2_53",
-            "Alice_2_54",
-            "Alice_2_55",
-            "Alice_2_56",
-            "Alice_2_57",
-            "Alice_2_58",
-            "Alice_2_59",
-            "Alice_2_60",
-            "Alice_2_61",
-            "Alice_2_62",
-            "Alice_2_63",
-            "Alice_2_64",
-            "Alice_2_65",
-            "Alice_2_66",
-            "Alice_2_67",
-            "Alice_2_68",
-            "Alice_2_69",
-            "Alice_2_70",
-            "Alice_2_71",
-            "Alice_2_72",
-            "Alice_2_73"
-        ],
-        "BGM": [
-            "Mus_Explore_Fairytale",
-            "Action_14"
-        ],
-        "BGMAction": "",
-        "BGMAisac": {
-            "Action_13": "Mus_Explore_Fairytale_Asiac_2",
-            "Action_12": "Mus_Explore_Fairytale_Asiac_1",
-            "Action_15": "Mus_Explore_Fairytale_Asiac_4",
-            "Action_14": "Mus_Explore_Fairytale_Asiac_3"
-        },
-        "MapPic": "map_decorate1_2",
-        "MapPicAction": {
-            "map_decorate1_2": [
-                [
-                    100,
-                    355
-                ],
-                [
-                    659,
-                    36
-                ]
-            ]
-        },
-        "TeamNum": 1,
-        "InitBread": 2,
-        "PointLevel": {
-            "maxLevel": 120,
-            "degree": 0,
-            "minLevel": 100,
-            "playerType": "NormalPlayer"
-        },
-        "MechanismInfo": {
-            "open": "-1",
-            "translate": "Alice_1_Btn",
-            "type": "Zombies",
-            "icon": "ts_btn_munaiyi"
-        },
-        "MechanismValue": {
-            "ZombiesIteam": "ZombiesIteam_Egypt_1",
-            "ZombiesInit": "ZombiesInit_Egypt_1",
-            "ZombiesSkill": "ZombiesSkill_Egypt_1",
-            "ZombiesSkillNum": "ZombiesSkillNum_Egypt_1",
-            "ZombiesLevelExp": "ZombiesLevelExp_Egypt_1",
-            "ZombiesValue": "ZombiesValue_Egypt_1"
-        },
-        "OpenType": 1
-    },
     "Alice_3": {
         "UnlockCondition": {
             "LEVEL": 99,
@@ -7275,5 +6872,408 @@
             "ZombiesValue": "ZombiesValue_Egypt_1"
         },
         "OpenType": 1
+    },
+    "Alice_2": {
+        "UnlockCondition": {
+            "LEVEL": 20,
+            "PREPOINT": {
+                "Alice_1": 1
+            }
+        },
+        "UnlockAuto": {
+            "MapGuide": 90
+        },
+        "NeedPower": 30,
+        "Name": "Map_Alice_2_Name",
+        "Img": "map_stage_1_2",
+        "Desc": "Map_Alice_2_Desc",
+        "StrategyDesc": "Map_Alice_2_StrategyDesc",
+        "RecommendLv": 10596,
+        "PointHead": "ALSi",
+        "ShowReward": [
+            {
+                "itemId": "IM_TopsShowBox3",
+                "text": "EXPLORE_RewardShow_Type3",
+                "image": "ts_bg_fl_3"
+            },
+            {
+                "itemId": "IM_TopsShowBox2",
+                "text": "EXPLORE_RewardShow_Type2",
+                "image": "ts_bg_fl_2"
+            },
+            {
+                "itemId": "IM_TopsShowBox1",
+                "text": "EXPLORE_RewardShow_Type1",
+                "image": "ts_bg_fl_1"
+            }
+        ],
+        "DailyRewardShow": [
+            {
+                "itemId": "IM_TopsShowBox3",
+                "text": "EXPLORE_RewardShow_Type1",
+                "image": "ts_bg_fl_1"
+            },
+            {
+                "itemId": "IES_StarUpDogFood_SR",
+                "text": "EXPLORE_RewardShow_Type2",
+                "image": "ts_bg_fl_1"
+            },
+            {
+                "itemId": "IR_Equip14",
+                "text": "EXPLORE_RewardShow_Type1",
+                "image": "ts_bg_fl_1"
+            },
+            {
+                "itemId": "IR_Equip13",
+                "text": "EXPLORE_RewardShow_Type1",
+                "image": "ts_bg_fl_1"
+            }
+        ],
+        "WeekRecommend": [
+            1,
+            4,
+            5,
+            7
+        ],
+        "DailyReward": "Alice_2_EveryDay_Reward",
+        "HeroEffect": {
+            "XLai": "MapExplore_HeroEffect01",
+            "ATSheng": "MapExplore_HeroEffect01",
+            "CLMan": "MapExplore_HeroEffect01"
+        },
+        "HeroSpecialEffect": "",
+        "FirstRewardPosition": [
+            60,
+            -64
+        ],
+        "MapSystemFirstTask": [
+            "Map_FirstTask_Alice_2"
+        ],
+        "MapMainTask": "Map_PoinMainTask_Alice_2",
+        "MapGuideDesc": {
+            "1": {
+                "Value": 1,
+                "Desc": "Alice_2_GuideDesc_1"
+            },
+            "3": {
+                "Value": 1,
+                "Desc": "Alice_2_GuideDesc_3"
+            },
+            "2": {
+                "Value": 1,
+                "Desc": "Alice_2_GuideDesc_2"
+            },
+            "5": {
+                "Value": 1,
+                "Desc": "Alice_2_GuideDesc_5"
+            },
+            "4": {
+                "Value": 1,
+                "Desc": "Alice_2_GuideDesc_4"
+            },
+            "7": {
+                "Value": 1,
+                "Desc": "Alice_2_GuideDesc_7"
+            },
+            "6": {
+                "Value": 1,
+                "Desc": "Alice_2_GuideDesc_6"
+            },
+            "9": {
+                "Value": 1,
+                "Desc": "Alice_2_GuideDesc_9"
+            },
+            "8": {
+                "Value": 1,
+                "Desc": "Alice_2_GuideDesc_8"
+            }
+        },
+        "MapGuideReward": {
+            "1": "Alice_2_MapGuide3_Reward",
+            "0.5": "Alice_2_MapGuide1_Reward",
+            "0.75": "Alice_2_MapGuide2_Reward"
+        },
+        "MapResource": [
+            "Ground1_2",
+            "Decorate1_2"
+        ],
+        "MapBlock": "Decorate1_2_Block",
+        "PlayerPos": {
+            "1": {
+                "Direction": "Right",
+                "Pos": [
+                    472,
+                    301
+                ],
+                "Face": "Left"
+            }
+        },
+        "Object": [
+            "Alice_2_JinBiA1",
+            "Alice_2_JinBiA2",
+            "Alice_2_JinBiA3",
+            "Alice_2_JinBiA4",
+            "Alice_2_JinBiA5",
+            "Alice_2_JinBiA6",
+            "Alice_2_JinBiA7",
+            "Alice_2_JinBiA8",
+            "Alice_2_JinBiA9",
+            "Alice_2_JinBiA10",
+            "Alice_2_JinBiA11",
+            "Alice_2_JinBiA12",
+            "Alice_2_JinBiA13",
+            "Alice_2_JinBiA14",
+            "Alice_2_JinBiA15",
+            "Alice_2_JinBiA16",
+            "Alice_2_JinBiA17",
+            "Alice_2_JinBiB1",
+            "Alice_2_JinBiB2",
+            "Alice_2_JinBiB3",
+            "Alice_2_JinBiB4",
+            "Alice_2_JinBiB5",
+            "Alice_2_JinBiB6",
+            "Alice_2_JinBiB7",
+            "Alice_2_JinBiB8",
+            "Alice_2_JinBiB9",
+            "Alice_2_JinBiB10",
+            "Alice_2_JinBiB11",
+            "Alice_2_JinBiB12",
+            "Alice_2_JinBiB13",
+            "Alice_2_JinBiB14",
+            "Alice_2_JinBiB15",
+            "Alice_2_JinBiB16",
+            "Alice_2_JinBiB17",
+            "Alice_2_BaoXiangA1",
+            "Alice_2_BaoXiangB1",
+            "Alice_2_BaoXiangA1GuangXiao",
+            "Alice_2_BaoXiangB1GuangXiao",
+            "Alice_2_BuffA1",
+            "Alice_2_BuffB1",
+            "Alice_2_XiaoGuaiBaoXiangA1",
+            "Alice_2_XiaoGuaiBaoXiangB1",
+            "Alice_2_XiaoGuaiBuffA1",
+            "Alice_2_XiaoGuaiBuffB1",
+            "Alice_2_XiaoGuaiA1",
+            "Alice_2_XiaoGuaiA2",
+            "Alice_2_XiaoGuaiA3",
+            "Alice_2_XiaoGuaiA4",
+            "Alice_2_XiaoGuaiA5",
+            "Alice_2_XiaoGuaiA6",
+            "Alice_2_XiaoGuaiA7",
+            "Alice_2_XiaoGuaiA8",
+            "Alice_2_XiaoGuaiB1",
+            "Alice_2_XiaoGuaiB2",
+            "Alice_2_XiaoGuaiB3",
+            "Alice_2_JingYingA1",
+            "Alice_2_JingYingB1",
+            "Alice_2_BossA1",
+            "Alice_2_Alice1",
+            "Alice_2_ZhuBanZhe1",
+            "Alice_2_MoGuWuZhu1",
+            "Alice_2_StoryStar1",
+            "Alice_2_StoryPoint1",
+            "Alice_2_StoryJingYingA1",
+            "Alice_2_StoryJingYingB1",
+            "Alice_2_StoryBoss1",
+            "Alice_2_BossShouWeiA1",
+            "Alice_2_BossShouWeiA2",
+            "Alice_2_ZaCao1",
+            "Alice_2_ZaCao2",
+            "Alice_2_ZaCao3",
+            "Alice_2_Wu1",
+            "Alice_2_Wu2",
+            "Alice_2_Wu3",
+            "Alice_2_Wu4",
+            "Alice_2_Wu5",
+            "Alice_2_LanMeiDanGao1",
+            "Alice_2_ZuDangTips1",
+            "Alice_2_ZuDangTips2",
+            "Alice_2_ZuDangTips3",
+            "Alice_2_XiaoGongZhu",
+            "Alice_2_CaiDanHua",
+            "Alice_2_ChouXiaoYa",
+            "Alice_2_XiaoHongMao1",
+            "Alice_2_WaiPo",
+            "Alice_2_DaHuiLang"
+        ],
+        "RandomObject": "",
+        "TeamObject": {
+            "Alice_2_MoGuA1": [
+                {
+                    "Object": [
+                        "Alice_2_Mogu1",
+                        "Alice_2_Mogu2",
+                        "Alice_2_Mogu3",
+                        "Alice_2_Mogu4",
+                        "Alice_2_Mogu5"
+                    ],
+                    "Rnd": 0.4
+                },
+                {
+                    "Object": [
+                        "Alice_2_Mogu1",
+                        "Alice_2_Mogu2",
+                        "Alice_2_Mogu3",
+                        "Alice_2_Mogu4"
+                    ],
+                    "Rnd": 0.15
+                },
+                {
+                    "Object": [
+                        "Alice_2_Mogu2",
+                        "Alice_2_Mogu3",
+                        "Alice_2_Mogu4"
+                    ],
+                    "Rnd": 0.15
+                },
+                {
+                    "Object": [
+                        "Alice_2_Mogu1",
+                        "Alice_2_Mogu3",
+                        "Alice_2_Mogu4"
+                    ],
+                    "Rnd": 0.15
+                },
+                {
+                    "Object": [
+                        "Alice_2_Mogu1",
+                        "Alice_2_Mogu3",
+                        "Alice_2_Mogu4",
+                        "Alice_2_Mogu5"
+                    ],
+                    "Rnd": 0.15
+                }
+            ]
+        },
+        "OnceObject": {
+            "Alice_2_CaiDanTang3": "Alice_2_Tang3_Case2",
+            "Alice_2_CaiDanTang2": "Alice_2_Tang2_Case2",
+            "Alice_2_CaiDanTang1": "Alice_2_Tang1_Case2",
+            "Alice_2_CaiDanTang4": "Alice_2_Tang4_Case2",
+            "Alice_2_CaiDanBoss": "Alice_2_CaiDanBoss_Case1_2",
+            "Alice_2_CaiDanMuBei1": "Alice_2_CaiDanMuBei1_Case2"
+        },
+        "MapAuto": [
+            "Alice_2_01",
+            "Alice_2_02",
+            "Alice_2_03",
+            "Alice_2_04",
+            "Alice_2_05",
+            "Alice_2_06",
+            "Alice_2_07",
+            "Alice_2_08",
+            "Alice_2_09",
+            "Alice_2_10",
+            "Alice_2_11",
+            "Alice_2_12",
+            "Alice_2_13",
+            "Alice_2_14",
+            "Alice_2_15",
+            "Alice_2_16",
+            "Alice_2_17",
+            "Alice_2_18",
+            "Alice_2_19",
+            "Alice_2_20",
+            "Alice_2_21",
+            "Alice_2_22",
+            "Alice_2_23",
+            "Alice_2_24",
+            "Alice_2_25",
+            "Alice_2_26",
+            "Alice_2_27",
+            "Alice_2_28",
+            "Alice_2_29",
+            "Alice_2_30",
+            "Alice_2_31",
+            "Alice_2_32",
+            "Alice_2_33",
+            "Alice_2_34",
+            "Alice_2_35",
+            "Alice_2_36",
+            "Alice_2_37",
+            "Alice_2_38",
+            "Alice_2_39",
+            "Alice_2_40",
+            "Alice_2_41",
+            "Alice_2_42",
+            "Alice_2_43",
+            "Alice_2_44",
+            "Alice_2_45",
+            "Alice_2_46",
+            "Alice_2_47",
+            "Alice_2_48",
+            "Alice_2_49",
+            "Alice_2_50",
+            "Alice_2_51",
+            "Alice_2_52",
+            "Alice_2_53",
+            "Alice_2_54",
+            "Alice_2_55",
+            "Alice_2_56",
+            "Alice_2_57",
+            "Alice_2_58",
+            "Alice_2_59",
+            "Alice_2_60",
+            "Alice_2_61",
+            "Alice_2_62",
+            "Alice_2_63",
+            "Alice_2_64",
+            "Alice_2_65",
+            "Alice_2_66",
+            "Alice_2_67",
+            "Alice_2_68",
+            "Alice_2_69",
+            "Alice_2_70",
+            "Alice_2_71",
+            "Alice_2_72",
+            "Alice_2_73"
+        ],
+        "BGM": [
+            "Mus_Explore_Fairytale",
+            "Action_14"
+        ],
+        "BGMAction": "",
+        "BGMAisac": {
+            "Action_13": "Mus_Explore_Fairytale_Asiac_2",
+            "Action_12": "Mus_Explore_Fairytale_Asiac_1",
+            "Action_15": "Mus_Explore_Fairytale_Asiac_4",
+            "Action_14": "Mus_Explore_Fairytale_Asiac_3"
+        },
+        "MapPic": "map_decorate1_2",
+        "MapPicAction": {
+            "map_decorate1_2": [
+                [
+                    100,
+                    355
+                ],
+                [
+                    659,
+                    36
+                ]
+            ]
+        },
+        "TeamNum": 1,
+        "InitBread": 2,
+        "PointLevel": {
+            "maxLevel": 120,
+            "degree": 0,
+            "minLevel": 100,
+            "playerType": "NormalPlayer"
+        },
+        "MechanismInfo": {
+            "open": "-1",
+            "translate": "Alice_1_Btn",
+            "type": "Zombies",
+            "icon": "ts_btn_munaiyi"
+        },
+        "MechanismValue": {
+            "ZombiesIteam": "ZombiesIteam_Egypt_1",
+            "ZombiesInit": "ZombiesInit_Egypt_1",
+            "ZombiesSkill": "ZombiesSkill_Egypt_1",
+            "ZombiesSkillNum": "ZombiesSkillNum_Egypt_1",
+            "ZombiesLevelExp": "ZombiesLevelExp_Egypt_1",
+            "ZombiesValue": "ZombiesValue_Egypt_1"
+        },
+        "OpenType": ""
     }
 }

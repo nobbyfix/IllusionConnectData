@@ -2168,12 +2168,12 @@
     },
     "Crusade": {
         "Condition": {
-            "LEVEL": 100
+            "STAGE": "M08S19"
         },
         "ShowCondition": {
-            "LEVEL": 100
+            "STAGE": "M08S19"
         },
-        "Tip": "Unlock_Joking_Tips",
+        "Tip": "Unlock_Stage_Tips",
         "Name": "Unlock_Crusade_Name",
         "LongDesc": "Unlock_Crusade_Desc",
         "OutputDesc": "Unlock_Crusade_OpDesc",

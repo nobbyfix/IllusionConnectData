@@ -70561,94 +70561,6 @@
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 0.5
     },
-    "M08S38": {
-        "Name": "BlockPoint_M08S38_Name",
-        "BlockDesc": "BlockPoint_M08S38_BlockDesc",
-        "CombatValue": 36100,
-        "CombatNeed": 36074,
-        "Map": "M08",
-        "OpenLevel": 1,
-        "OpenPoint": [
-            "M08S37"
-        ],
-        "NextPoint": [
-            "M08S39"
-        ],
-        "Type": "NORMAL",
-        "PointType": "NORMAL",
-        "TeamMode": "",
-        "Assist": [],
-        "SpRuleBubble": "",
-        "CardsExcept": "",
-        "BlockBattleConfig": "Normal_Stage_7_Wait1",
-        "EnemyMaster": "M08P38U01N08",
-        "EnemyCard": "CardM08S38",
-        "StarCondition": [
-            {
-                "type": "Pass"
-            },
-            {
-                "type": "MyHpRatio",
-                "value": 30
-            },
-            {
-                "type": "Time",
-                "value": 120
-            }
-        ],
-        "GoldReward": 240,
-        "CrystalReward": 0,
-        "FirstKillReward": "M08S38_FirstReward",
-        "PointReward": "M08S38",
-        "HeroExpReward": "M08_HeroExpReward",
-        "MainShowItem": "IM_ExpUp1",
-        "ShowItem": "M08S38_Show",
-        "Element": "",
-        "WipeExtraReward": "M08_WipeExtraReward",
-        "StaminaCost": 6,
-        "StageEffect": "",
-        "StaminaBack": 5,
-        "EnemyName": "",
-        "BlockBubble": "",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "PointPicture": "",
-        "BGM": [
-            "Mus_Battle_Yehuo",
-            "",
-            ""
-        ],
-        "BossHeadPic": "",
-        "BlockPrompt": "",
-        "StrongerGuide": [
-            "LEVEL",
-            "STAR",
-            "SKILL"
-        ],
-        "PointHead": "Model_SGHQShou",
-        "Background": "Battle_Scene_18",
-        "Banner": "pic_guanqia2_02_tx",
-        "StoryLink": "",
-        "AiRules": "",
-        "ReslutBoard": "",
-        "PointBoard": "",
-        "LoadingBorad": "",
-        "StageGuide": "",
-        "PreStoryPoint": [],
-        "Challenge": [],
-        "PlayerCard": "",
-        "SpecialRuleShow": "",
-        "SpecialSkillShow": [],
-        "UnlockBubble": "Unlock_Bubble_KOF",
-        "BlockDetailAuto": "",
-        "BossRound": 1,
-        "OpenFAC": 1,
-        "Combat_Adjust_Rate": 0.5
-    },
     "M09S30": {
         "Name": "BlockPoint_M09S30_Name",
         "BlockDesc": "BlockPoint_M09S30_BlockDesc",
@@ -139830,5 +139742,93 @@
         "BossRound": 2,
         "OpenFAC": 1,
         "Combat_Adjust_Rate": 1.0
+    },
+    "M08S38": {
+        "Name": "BlockPoint_M08S38_Name",
+        "BlockDesc": "BlockPoint_M08S38_BlockDesc",
+        "CombatValue": 36100,
+        "CombatNeed": 36074,
+        "Map": "M08",
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "M08S37"
+        ],
+        "NextPoint": [
+            "M08S39"
+        ],
+        "Type": "NORMAL",
+        "PointType": "NORMAL",
+        "TeamMode": "",
+        "Assist": [],
+        "SpRuleBubble": "",
+        "CardsExcept": "",
+        "BlockBattleConfig": "Normal_Stage_7_Wait1",
+        "EnemyMaster": "M08P38U01N08",
+        "EnemyCard": "CardM08S38",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 30
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "GoldReward": 240,
+        "CrystalReward": 0,
+        "FirstKillReward": "M08S38_FirstReward",
+        "PointReward": "M08S38",
+        "HeroExpReward": "M08_HeroExpReward",
+        "MainShowItem": "IM_ExpUp1",
+        "ShowItem": "M08S38_Show",
+        "Element": "",
+        "WipeExtraReward": "M08_WipeExtraReward",
+        "StaminaCost": 6,
+        "StageEffect": "",
+        "StaminaBack": 5,
+        "EnemyName": "",
+        "BlockBubble": "",
+        "VictoryConditions": [
+            {
+                "winner": "SideB",
+                "type": "TimeOut"
+            }
+        ],
+        "PointPicture": "",
+        "BGM": [
+            "Mus_Battle_Yehuo",
+            "",
+            ""
+        ],
+        "BossHeadPic": "",
+        "BlockPrompt": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "PointHead": "Model_SGHQShou",
+        "Background": "Battle_Scene_18",
+        "Banner": "pic_guanqia2_02_tx",
+        "StoryLink": "",
+        "AiRules": "",
+        "ReslutBoard": "",
+        "PointBoard": "",
+        "LoadingBorad": "",
+        "StageGuide": "",
+        "PreStoryPoint": [],
+        "Challenge": [],
+        "PlayerCard": "",
+        "SpecialRuleShow": "",
+        "SpecialSkillShow": [],
+        "UnlockBubble": "",
+        "BlockDetailAuto": "",
+        "BossRound": 1,
+        "OpenFAC": 1,
+        "Combat_Adjust_Rate": 0.5
     }
 }

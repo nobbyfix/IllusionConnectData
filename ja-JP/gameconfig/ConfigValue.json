@@ -7332,15 +7332,6 @@
         ],
         "clz": "string[]"
     },
-    "TrialSwitch": {
-        "content": [
-            "spstage",
-            "explore",
-            "tower",
-            "practice"
-        ],
-        "clz": "string[]"
-    },
     "Shop_Sort": {
         "content": [
             "Shop_Recommend",
@@ -7382,6 +7373,16 @@
             "Tower_1_Master1",
             "Tower_1_Master2",
             "Tower_1_Master3"
+        ],
+        "clz": "string[]"
+    },
+    "TrialSwitch": {
+        "content": [
+            "spstage",
+            "explore",
+            "tower",
+            "crusade",
+            "practice"
         ],
         "clz": "string[]"
     }
