@@ -2994,6 +2994,70 @@
             "type": "IR_Diamond"
         }
     },
+    "PackageShop_TL_SGHQShou_10": {
+        "Name": "PackageShop_TL_SGHQShou_10_Name",
+        "Platform": "ios",
+        "ItemShow": "PackageShop_TL_SGHQShou_10_Reward",
+        "Item": "PackageShop_TL_SGHQShou_10_Reward",
+        "Sort": 10,
+        "IsFree": 0,
+        "Price": "",
+        "Desc": "PackageShop_TL_SGHQShou_10_Desc",
+        "Icon": "sd_ZUOHE_1",
+        "Quality": 5,
+        "Tag": "",
+        "CostOffTag": 8.0,
+        "TimeTag": 1,
+        "TimeType": {
+            "start": "2020-12-05 05:00:00",
+            "amount": 1,
+            "end": "2020-12-12 05:00:00",
+            "type": "limit"
+        },
+        "CoolDown": "",
+        "ServerCondition": "",
+        "ClientCondition": "",
+        "Hide": "",
+        "Prepose": "",
+        "Vanish": 1,
+        "Pay": "Pay_PackageShop_TL_SGHQShou_10",
+        "Version": "",
+        "ShopSort": "TimeLimitShop",
+        "WindowIcon": "",
+        "GameCoin": ""
+    },
+    "PackageShop_TL_SGHQShou_9": {
+        "Name": "PackageShop_TL_SGHQShou_9_Name",
+        "Platform": "ios",
+        "ItemShow": "PackageShop_TL_SGHQShou_9_Reward",
+        "Item": "PackageShop_TL_SGHQShou_9_Reward",
+        "Sort": 9,
+        "IsFree": 0,
+        "Price": "",
+        "Desc": "PackageShop_TL_SGHQShou_9_Desc",
+        "Icon": "sd_XD_ningjudeweiguang",
+        "Quality": 5,
+        "Tag": "",
+        "CostOffTag": 8.0,
+        "TimeTag": 1,
+        "TimeType": {
+            "start": "2020-12-05 05:00:00",
+            "amount": 2,
+            "end": "2020-12-12 05:00:00",
+            "type": "limit"
+        },
+        "CoolDown": "",
+        "ServerCondition": "",
+        "ClientCondition": "",
+        "Hide": "",
+        "Prepose": "",
+        "Vanish": 1,
+        "Pay": "Pay_PackageShop_TL_SGHQShou_9",
+        "Version": "",
+        "ShopSort": "TimeLimitShop",
+        "WindowIcon": "",
+        "GameCoin": ""
+    },
     "PackageShop_TL_SGHQShou_1": {
         "Name": "PackageShop_TL_SGHQShou_1_Name",
         "Platform": "ios",
@@ -3009,10 +3073,8 @@
         "CostOffTag": "",
         "TimeTag": 1,
         "TimeType": {
-            "start": "2020-12-05 05:00:00",
             "amount": 1,
-            "end": "2020-12-12 05:00:00",
-            "type": "limit"
+            "type": "unlimit"
         },
         "CoolDown": "",
         "ServerCondition": "",
@@ -3048,10 +3110,8 @@
         "CostOffTag": 10.0,
         "TimeTag": 1,
         "TimeType": {
-            "start": "2020-12-05 05:00:00",
             "amount": 1,
-            "end": "2020-12-12 05:00:00",
-            "type": "limit"
+            "type": "unlimit"
         },
         "CoolDown": "",
         "ServerCondition": "",
@@ -3087,10 +3147,8 @@
         "CostOffTag": 6.0,
         "TimeTag": 1,
         "TimeType": {
-            "start": "2020-12-05 05:00:00",
             "amount": 1,
-            "end": "2020-12-12 05:00:00",
-            "type": "limit"
+            "type": "unlimit"
         },
         "CoolDown": "",
         "ServerCondition": "",
@@ -3126,10 +3184,8 @@
         "CostOffTag": 6.0,
         "TimeTag": 1,
         "TimeType": {
-            "start": "2020-12-05 05:00:00",
             "amount": 1,
-            "end": "2020-12-12 05:00:00",
-            "type": "limit"
+            "type": "unlimit"
         },
         "CoolDown": "",
         "ServerCondition": "",
@@ -3165,10 +3221,8 @@
         "CostOffTag": 5.0,
         "TimeTag": 1,
         "TimeType": {
-            "start": "2020-12-05 05:00:00",
             "amount": 2,
-            "end": "2020-12-12 05:00:00",
-            "type": "limit"
+            "type": "unlimit"
         },
         "CoolDown": "",
         "ServerCondition": "",
@@ -3204,10 +3258,8 @@
         "CostOffTag": 5.0,
         "TimeTag": 1,
         "TimeType": {
-            "start": "2020-12-05 05:00:00",
             "amount": 2,
-            "end": "2020-12-12 05:00:00",
-            "type": "limit"
+            "type": "unlimit"
         },
         "CoolDown": "",
         "ServerCondition": "",
@@ -3243,10 +3295,8 @@
         "CostOffTag": "",
         "TimeTag": 1,
         "TimeType": {
-            "start": "2020-12-05 05:00:00",
             "amount": -1,
-            "end": "2020-12-12 05:00:00",
-            "type": "limit"
+            "type": "unlimit"
         },
         "CoolDown": "",
         "ServerCondition": "",
@@ -3269,5 +3319,37 @@
             "amount": 400,
             "type": "IR_Diamond"
         }
+    },
+    "PackageShop_TL_SGHQShou_8": {
+        "Name": "PackageShop_TL_SGHQShou_8_Name",
+        "Platform": "ios",
+        "ItemShow": "PackageShop_TL_SGHQShou_8_Reward",
+        "Item": "PackageShop_TL_SGHQShou_8_Reward",
+        "Sort": 8,
+        "IsFree": 0,
+        "Price": "",
+        "Desc": "PackageShop_TL_SGHQShou_8_Desc",
+        "Icon": "sd_MLYTLSha_jingxuanzhizheng",
+        "Quality": 5,
+        "Tag": "",
+        "CostOffTag": 10.0,
+        "TimeTag": 1,
+        "TimeType": {
+            "start": "2020-12-05 05:00:00",
+            "amount": 1,
+            "end": "2020-12-12 05:00:00",
+            "type": "day"
+        },
+        "CoolDown": "",
+        "ServerCondition": "",
+        "ClientCondition": "",
+        "Hide": "",
+        "Prepose": "",
+        "Vanish": 1,
+        "Pay": "Pay_PackageShop_TL_SGHQShou_8",
+        "Version": "",
+        "ShopSort": "TimeLimitShop",
+        "WindowIcon": "",
+        "GameCoin": ""
     }
 }

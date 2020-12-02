@@ -7216,5 +7216,124 @@
         "TaskIcon": "201201",
         "Destination": "view://GalleryMainView&viewType=push&tabType=1",
         "ExtraReward": ""
+    },
+    "Login7_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    3
+                ]
+            }
+        ],
+        "Reward": "Login7_3_Reward",
+        "Name": "Login14_3_Name",
+        "Desc": "",
+        "OrderNum": 3,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Login7_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    2
+                ]
+            }
+        ],
+        "Reward": "Login7_2_Reward",
+        "Name": "Login14_2_Name",
+        "Desc": "",
+        "OrderNum": 2,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Login7_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Reward": "Login7_1_Reward",
+        "Name": "Login14_1_Name",
+        "Desc": "",
+        "OrderNum": 1,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Login7_7": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    7
+                ]
+            }
+        ],
+        "Reward": "Login7_7_Reward",
+        "Name": "Login14_7_Name",
+        "Desc": "",
+        "OrderNum": 7,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Login7_6": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    6
+                ]
+            }
+        ],
+        "Reward": "Login7_6_Reward",
+        "Name": "Login14_6_Name",
+        "Desc": "",
+        "OrderNum": 6,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Login7_5": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    5
+                ]
+            }
+        ],
+        "Reward": "Login7_5_Reward",
+        "Name": "Login14_5_Name",
+        "Desc": "",
+        "OrderNum": 5,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
+    },
+    "Login7_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    4
+                ]
+            }
+        ],
+        "Reward": "Login7_4_Reward",
+        "Name": "Login14_4_Name",
+        "Desc": "",
+        "OrderNum": 4,
+        "TaskIcon": "",
+        "Destination": "",
+        "ExtraReward": ""
     }
 }

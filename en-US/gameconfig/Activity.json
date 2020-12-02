@@ -6328,66 +6328,6 @@
         "Tag": "",
         "Version": ""
     },
-    "ActivityBattlePassShop_20201206": {
-        "Type": "EXCHANGE",
-        "UI": "BattlePassShop",
-        "LeftBanner": "",
-        "Title": "",
-        "Desc": "",
-        "Time": "RANGE_CONTINUE",
-        "TimeFactor": {
-            "start": [
-                "2020-12-06 05:00:00",
-                "2021-01-05 05:00:00"
-            ],
-            "end": "2021-01-05 05:00:00"
-        },
-        "Loop": "",
-        "LoopFactor": "",
-        "ServerCondition": "",
-        "ClientCondition": {
-            "LEVEL": 1
-        },
-        "ActivityConfig": {
-            "buy": [
-                "Voice_SDTZi_71_4"
-            ],
-            "exchange": [
-                "HighPointGood_20201206_1",
-                "HighPointGood_20201206_2",
-                "HighPointGood_20201206_3",
-                "HighPointGood_20201206_4",
-                "HighPointGood_20201206_5"
-            ],
-            "zoom": [
-                0.41
-            ],
-            "sold_out": [
-                "Voice_SDTZi_71_2"
-            ],
-            "in": [
-                "Voice_SDTZi_71_1"
-            ],
-            "position": [
-                10,
-                -300
-            ],
-            "ResourcesBanner": [
-                "IGM_BP_HighPoint"
-            ],
-            "ModelId": "Model_SDTZ_Shop"
-        },
-        "Mail": 0,
-        "MailId": "",
-        "Reset": 0,
-        "Enable": 1,
-        "Primary": 1,
-        "ShowTab": 2,
-        "ShowIndex": 93004,
-        "Icon": "",
-        "Tag": "",
-        "Version": ""
-    },
     "DrawCard_KTSJKeMTZMEShi_Activity": {
         "Type": "DRAWCARDOPEN",
         "UI": "",
@@ -6453,43 +6393,6 @@
         "Primary": 1,
         "ShowTab": 0,
         "ShowIndex": 209,
-        "Icon": "",
-        "Tag": "",
-        "Version": ""
-    },
-    "ActivityBattlePass_20201206": {
-        "Type": "BattlePass",
-        "UI": "BattlePass",
-        "LeftBanner": "",
-        "Title": "ActivityBattlePass_20200914_Name",
-        "Desc": "ActivityBattlePass_20200914_Desc",
-        "Time": "RANGE_CONTINUE",
-        "TimeFactor": {
-            "start": [
-                "2020-12-06 05:00:00",
-                "2021-01-03 05:00:00"
-            ],
-            "end": "2021-01-03 05:00:00"
-        },
-        "Loop": "",
-        "LoopFactor": "",
-        "ServerCondition": "",
-        "ClientCondition": {
-            "LEVEL": 1
-        },
-        "ActivityConfig": {
-            "ActivityBattlePass": "ActivityBattlePass_20201206",
-            "Activity": [
-                "ActivityBattlePass_20201206_Exchange"
-            ]
-        },
-        "Mail": 1,
-        "MailId": "ActivityBattlePass_Mail",
-        "Reset": 1,
-        "Enable": 1,
-        "Primary": 1,
-        "ShowTab": 2,
-        "ShowIndex": 93003,
         "Icon": "",
         "Tag": "",
         "Version": ""
@@ -6560,6 +6463,152 @@
         "Tag": "",
         "Version": ""
     },
+    "ActivityBattlePassShop_20201206": {
+        "Type": "EXCHANGE",
+        "UI": "BattlePassShop",
+        "LeftBanner": "",
+        "Title": "",
+        "Desc": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "start": [
+                "2020-12-12 05:00:00",
+                "2021-01-03 05:00:00"
+            ],
+            "end": "2021-01-03 05:00:00"
+        },
+        "Loop": "",
+        "LoopFactor": "",
+        "ServerCondition": "",
+        "ClientCondition": {
+            "REGISTER": 22
+        },
+        "ActivityConfig": {
+            "buy": [
+                "Voice_SDTZi_71_4"
+            ],
+            "exchange": [
+                "HighPointGood_20201206_1",
+                "HighPointGood_20201206_2",
+                "HighPointGood_20201206_3",
+                "HighPointGood_20201206_4",
+                "HighPointGood_20201206_5"
+            ],
+            "zoom": [
+                0.41
+            ],
+            "sold_out": [
+                "Voice_SDTZi_71_2"
+            ],
+            "in": [
+                "Voice_SDTZi_71_1"
+            ],
+            "position": [
+                10,
+                -300
+            ],
+            "ResourcesBanner": [
+                "IGM_BP_HighPoint"
+            ],
+            "ModelId": "Model_SDTZ_Shop"
+        },
+        "Mail": 0,
+        "MailId": "",
+        "Reset": 0,
+        "Enable": 1,
+        "Primary": 1,
+        "ShowTab": 2,
+        "ShowIndex": 93004,
+        "Icon": "",
+        "Tag": "",
+        "Version": ""
+    },
+    "ActivityBattlePass_20201206": {
+        "Type": "BattlePass",
+        "UI": "BattlePass",
+        "LeftBanner": "",
+        "Title": "ActivityBattlePass_20200914_Name",
+        "Desc": "ActivityBattlePass_20200914_Desc",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "start": [
+                "2020-12-12 05:00:00",
+                "2021-01-01 05:00:00"
+            ],
+            "end": "2021-01-01 05:00:00"
+        },
+        "Loop": "",
+        "LoopFactor": "",
+        "ServerCondition": "",
+        "ClientCondition": {
+            "REGISTER": 22
+        },
+        "ActivityConfig": {
+            "ActivityBattlePass": "ActivityBattlePass_20201206",
+            "Activity": [
+                "ActivityBattlePass_20201206_Exchange"
+            ]
+        },
+        "Mail": 1,
+        "MailId": "ActivityBattlePass_Mail",
+        "Reset": 1,
+        "Enable": 1,
+        "Primary": 1,
+        "ShowTab": 2,
+        "ShowIndex": 93003,
+        "Icon": "",
+        "Tag": "",
+        "Version": ""
+    },
+    "Login7_1205": {
+        "Type": "TASK",
+        "UI": "Login",
+        "LeftBanner": "hd_btn_ljdl_bg",
+        "Title": "Login14_Title",
+        "Desc": "Login14_Desc",
+        "Time": "RANGE_RESTART",
+        "TimeFactor": {
+            "duration": 7,
+            "start": [
+                "2020-12-05 05:00:00",
+                "2020-12-12 05:00:00"
+            ]
+        },
+        "Loop": "",
+        "LoopFactor": "",
+        "ServerCondition": "",
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "ActivityConfig": {
+            "showHero": "ATSheng",
+            "task": [
+                "Login7_1",
+                "Login7_2",
+                "Login7_3",
+                "Login7_4",
+                "Login7_5",
+                "Login7_6",
+                "Login7_7"
+            ],
+            "GetRewardClose": 1,
+            "IsTimeClose": 1,
+            "specailDay": [
+                3,
+                7
+            ]
+        },
+        "Mail": 0,
+        "MailId": "",
+        "Reset": 0,
+        "Enable": 1,
+        "Primary": 1,
+        "ShowTab": 1,
+        "ShowIndex": 2,
+        "Icon": "",
+        "Tag": "WONDERFUL",
+        "Version": ""
+    },
     "ActivityBattlePass_20201206_Exchange": {
         "Type": "EXCHANGE",
         "UI": "BattlePassPointShop",
@@ -6569,16 +6618,16 @@
         "Time": "RANGE_CONTINUE",
         "TimeFactor": {
             "start": [
-                "2020-12-06 05:00:00",
-                "2021-01-03 05:00:00"
+                "2020-12-12 05:00:00",
+                "2021-01-01 05:00:00"
             ],
-            "end": "2021-01-03 05:00:00"
+            "end": "2021-01-01 05:00:00"
         },
         "Loop": "",
         "LoopFactor": "",
         "ServerCondition": "",
         "ClientCondition": {
-            "LEVEL": 1
+            "REGISTER": 22
         },
         "ActivityConfig": {
             "ResourcesBanner": [
