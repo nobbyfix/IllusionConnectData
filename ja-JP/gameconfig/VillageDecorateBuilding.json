@@ -2335,46 +2335,6 @@
             }
         ]
     },
-    "Decorate_Tuwo": {
-        "Name": "Decorate_Tuwo_Name",
-        "Desc": "Decorate_Tuwo_Desc",
-        "Room": "Room2",
-        "BuildingLevel": "Decorate_Tuwo_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_Decorate_Tuwo",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                2,
-                8
-            ]
-        ],
-        "Sort": 70,
-        "SurfaceList": [
-            "VillageSurface_Decorate_Tuwo_1"
-        ],
-        "DefaultSurface": "VillageSurface_Decorate_Tuwo_1",
-        "UseType": "",
-        "Space": [
-            2,
-            2
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 1,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
-        "Sell": [
-            {
-                "amount": 1,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
     "Decorate1": {
         "Name": "Decorate1_Name",
         "Desc": "Decorate1_Desc",
@@ -2448,6 +2408,46 @@
         "Turn": 1,
         "BuildDesc": "Build_Decorate_Text",
         "UnlookItem": "IM_Decorate6",
+        "Sell": [
+            {
+                "amount": 1,
+                "type": "IR_DecorateCoin"
+            }
+        ]
+    },
+    "Decorate_Tuwo": {
+        "Name": "Decorate_Tuwo_Name",
+        "Desc": "Decorate_Tuwo_Desc",
+        "Room": "Room2",
+        "BuildingLevel": "Decorate_Tuwo_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "UnlockDesc": "Unlock_Decorate_Tuwo",
+        "IsMoved": 1,
+        "InitialPosition": [
+            [
+                2,
+                8
+            ]
+        ],
+        "Sort": 70,
+        "SurfaceList": [
+            "VillageSurface_Decorate_Tuwo_1"
+        ],
+        "DefaultSurface": "VillageSurface_Decorate_Tuwo_1",
+        "UseType": "",
+        "Space": [
+            2,
+            2
+        ],
+        "Amount": 1,
+        "Quality": 3,
+        "Unlook": 0,
+        "ProspectShow": 0,
+        "Turn": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "UnlookItem": "",
         "Sell": [
             {
                 "amount": 1,
