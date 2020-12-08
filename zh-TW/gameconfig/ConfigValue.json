@@ -6971,28 +6971,6 @@
         ],
         "clz": "string[]"
     },
-    "FAC_CheckType": {
-        "content": [
-            "normal_stage",
-            "elite_stage",
-            "gold",
-            "exp",
-            "crystal",
-            "equipment",
-            "skill_1",
-            "skill_2",
-            "skill_3",
-            "maze_battle",
-            "explore_battle",
-            "herostory_battle",
-            "arena_challenge",
-            "tower",
-            "crusade",
-            "dream_challenge",
-            "clubboss"
-        ],
-        "clz": "string[]"
-    },
     "HitCharts_K_Lose": {
         "content": -0.06,
         "clz": "double"
@@ -7016,5 +6994,28 @@
     "HitCharts_Mun": {
         "content": 10,
         "clz": "int"
+    },
+    "FAC_CheckType": {
+        "content": [
+            "normal_stage",
+            "elite_stage",
+            "gold",
+            "exp",
+            "crystal",
+            "equipment",
+            "skill_1",
+            "skill_2",
+            "skill_3",
+            "maze_battle",
+            "explore_battle",
+            "herostory_battle",
+            "arena_challenge",
+            "tower",
+            "crusade",
+            "dream_challenge",
+            "clubboss",
+            "actstage"
+        ],
+        "clz": "string[]"
     }
 }

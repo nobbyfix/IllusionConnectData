@@ -145338,5 +145338,59 @@
         ],
         "EffectDesc": "Star_YSLBin_4_1_Desc",
         "LevelUpDesc": ""
+    },
+    "Snowflack_Hero_Extra_003": {
+        "Name": "",
+        "Icon": "",
+        "EffectType": "ATTR",
+        "EffectRange": [
+            "ALL"
+        ],
+        "Target": "SELF",
+        "AttrType": [
+            "ATK_RATE"
+        ],
+        "GrowType": "FIXED",
+        "Value": [
+            0.5
+        ],
+        "EffectDesc": "",
+        "LevelUpDesc": ""
+    },
+    "Snowflack_Hero_Extra_002": {
+        "Name": "",
+        "Icon": "",
+        "EffectType": "ATTR",
+        "EffectRange": [
+            "ALL"
+        ],
+        "Target": "SELF",
+        "AttrType": [
+            "HURTRATE"
+        ],
+        "GrowType": "FIXED",
+        "Value": [
+            0.5
+        ],
+        "EffectDesc": "",
+        "LevelUpDesc": ""
+    },
+    "Snowflack_Hero_Extra_001": {
+        "Name": "",
+        "Icon": "",
+        "EffectType": "ATTR",
+        "EffectRange": [
+            "ALL"
+        ],
+        "Target": "SELF",
+        "AttrType": [
+            "HP_RATE"
+        ],
+        "GrowType": "FIXED",
+        "Value": [
+            1
+        ],
+        "EffectDesc": "",
+        "LevelUpDesc": ""
     }
 }

@@ -7484,5 +7484,147 @@
                 ]
             }
         ]
+    },
+    "Surface_JNLong_2": {
+        "Hero": "JNLong",
+        "Name": "Surface_JNLong_2_Name",
+        "Desc": "Surface_JNLong_2_Desc",
+        "GainShortDesc": "Surface_Winter_GainShort",
+        "GainDesc": "Surface_JNLong_Winter_GainDesc",
+        "Type": 2,
+        "GoodsId": "Surface_13",
+        "ShopID": "Shop_Surface",
+        "ActivityId": "",
+        "Link": "",
+        "Quality": 5,
+        "Model": "Model_JNLong_Winter",
+        "Unlook": 1,
+        "Sort": 2,
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "range": [
+                    128,
+                    128
+                ],
+                "voice": [
+                    "Voice_JNLong_41",
+                    "Voice_JNLong_43",
+                    "Voice_JNLong_43",
+                    "Voice_JNLong_39"
+                ],
+                "point": [
+                    29,
+                    586
+                ]
+            },
+            {
+                "action": "touch2",
+                "range": [
+                    128,
+                    95
+                ],
+                "voice": [
+                    "Voice_JNLong_44",
+                    "Voice_JNLong_45",
+                    "Voice_JNLong_46",
+                    "Voice_JNLong_39"
+                ],
+                "point": [
+                    61,
+                    508
+                ]
+            },
+            {
+                "action": "touch1",
+                "range": [
+                    0,
+                    0
+                ],
+                "voice": [
+                    "Voice_JNLong_47",
+                    "Voice_JNLong_48",
+                    "Voice_JNLong_07",
+                    "Voice_JNLong_08",
+                    "Voice_JNLong_09",
+                    "Voice_JNLong_37",
+                    "Voice_JNLong_39"
+                ],
+                "point": [
+                    "all"
+                ]
+            }
+        ]
+    },
+    "Surface_LLan_2": {
+        "Hero": "LLan",
+        "Name": "Surface_LLan_2_Name",
+        "Desc": "Surface_LLan_2_Desc",
+        "GainShortDesc": "Surface_Winter_GainShort",
+        "GainDesc": "Surface_LLan_Winter_GainDesc",
+        "Type": 3,
+        "GoodsId": "",
+        "ShopID": "Shop_Surface",
+        "ActivityId": "",
+        "Link": "",
+        "Quality": 5,
+        "Model": "Model_LLan_Winter",
+        "Unlook": 1,
+        "Sort": 2,
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "range": [
+                    128,
+                    128
+                ],
+                "voice": [
+                    "Voice_LLan_41",
+                    "Voice_LLan_43",
+                    "Voice_LLan_43",
+                    "Voice_LLan_39"
+                ],
+                "point": [
+                    49,
+                    536
+                ]
+            },
+            {
+                "action": "touch2",
+                "range": [
+                    128,
+                    95
+                ],
+                "voice": [
+                    "Voice_LLan_44",
+                    "Voice_LLan_45",
+                    "Voice_LLan_46",
+                    "Voice_LLan_39"
+                ],
+                "point": [
+                    121,
+                    156
+                ]
+            },
+            {
+                "action": "touch1",
+                "range": [
+                    0,
+                    0
+                ],
+                "voice": [
+                    "Voice_LLan_47",
+                    "Voice_LLan_48",
+                    "Voice_LLan_07",
+                    "Voice_LLan_08",
+                    "Voice_LLan_09",
+                    "Voice_LLan_37",
+                    "Voice_LLan_39"
+                ],
+                "point": [
+                    "all"
+                ]
+            }
+        ]
     }
 }

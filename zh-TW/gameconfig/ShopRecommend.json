@@ -905,5 +905,51 @@
             "PackageShop_TL_AnN_6"
         ],
         "Link": "view://shopView&viewType=push&shopId=Shop_TimeLimit"
+    },
+    "ShopRecommend_TL_KMLa": {
+        "TabName": "ShopRecommend_TL_KMLa_Name",
+        "BackGroundImg": "sd_tj_bg_wy",
+        "Sort": 1,
+        "Vanish": 1,
+        "TimeType": {
+            "start": "2020-12-17 05:00:00",
+            "end": "2020-12-24 05:00:00",
+            "type": "limit"
+        },
+        "ServerCondition": "",
+        "ClientCondition": "",
+        "Hide": 1,
+        "Prepose": "",
+        "PackageId": [
+            "PackageShop_TL_KMLa_1",
+            "PackageShop_TL_KMLa_2",
+            "PackageShop_TL_KMLa_3",
+            "PackageShop_TL_KMLa_4",
+            "PackageShop_TL_KMLa_5"
+        ],
+        "Link": "view://shopView&viewType=push&shopId=Shop_TimeLimit"
+    },
+    "ShopRecommend_TL_1210": {
+        "TabName": "ShopRecommend_TL_SLMen_solo_Name",
+        "BackGroundImg": "sd_tj_bg_ah",
+        "Sort": 1,
+        "Vanish": 1,
+        "TimeType": {
+            "start": "2020-12-10 05:00:00",
+            "end": "2020-12-17 05:00:00",
+            "type": "limit"
+        },
+        "ServerCondition": "",
+        "ClientCondition": "",
+        "Hide": 1,
+        "Prepose": "",
+        "PackageId": [
+            "PackageShop_TL_SLMen_solo_1",
+            "PackageShop_TL_SLMen_solo_2",
+            "PackageShop_TL_SLMen_solo_3",
+            "PackageShop_TL_SLMen_solo_4",
+            "PackageShop_TL_SLMen_solo_5"
+        ],
+        "Link": "view://shopView&viewType=push&shopId=Shop_TimeLimit"
     }
 }

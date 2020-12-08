@@ -1363,5 +1363,12 @@
         "AchieveType1": "INCREASE",
         "ConditionType2": "",
         "AchieveType2": ""
+    },
+    "Condi_SnowflakeChengjiuDian": {
+        "EffectDesc": "Condi_SnowflakeChengjiuDian_Desc",
+        "ConditionType1": "player.bag.items.IM_Snowflake_Achieve.count",
+        "AchieveType1": "INCREASE",
+        "ConditionType2": "",
+        "AchieveType2": ""
     }
 }

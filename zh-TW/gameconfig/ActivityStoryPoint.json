@@ -1039,5 +1039,209 @@
             "main_bg_xq_jqicon01.png",
             "main_bg_xq_jqxw01.png"
         ]
+    },
+    "ASnowflakeS01S04": {
+        "Name": "ASnowflakeS01S04_Name",
+        "Map": "Snowflack_Map_M01",
+        "Location": [
+            -200,
+            -250
+        ],
+        "PreBattlePoint": [
+            "SnowflackM09"
+        ],
+        "PreStoryPoint": [
+            "ASnowflakeS01S03"
+        ],
+        "NextStoryPoint": [],
+        "FirstReward": "Snowflack_Story_Reward04",
+        "IsHide": "",
+        "IsAuto": "",
+        "PointPicture": "",
+        "StoryLink": "eventstory_BXJie_04a",
+        "Icon": "s_album_story_1",
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ]
+    },
+    "ASnowflakeS01E04": {
+        "Name": "ASnowflakeS01E04_Name",
+        "Map": "Snowflack_Map_E01",
+        "Location": [
+            -250,
+            -100
+        ],
+        "PreBattlePoint": [
+            "SnowflackE09"
+        ],
+        "PreStoryPoint": [
+            "ASnowflakeS01E03"
+        ],
+        "NextStoryPoint": [],
+        "FirstReward": "Snowflack_Story_Reward08",
+        "IsHide": "",
+        "IsAuto": "",
+        "PointPicture": "",
+        "StoryLink": "eventstory_BXJie_08a",
+        "Icon": "s_album_story_1",
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ]
+    },
+    "ASnowflakeS01E02": {
+        "Name": "ASnowflakeS01E02_Name",
+        "Map": "Snowflack_Map_E01",
+        "Location": [
+            -350,
+            0
+        ],
+        "PreBattlePoint": [
+            "SnowflackE03"
+        ],
+        "PreStoryPoint": [
+            "ASnowflakeS01E01"
+        ],
+        "NextStoryPoint": [
+            "ASnowflakeS01E03"
+        ],
+        "FirstReward": "Snowflack_Story_Reward06",
+        "IsHide": "",
+        "IsAuto": "",
+        "PointPicture": "",
+        "StoryLink": "eventstory_BXJie_06a",
+        "Icon": "s_album_story_1",
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ]
+    },
+    "ASnowflakeS01E01": {
+        "Name": "ASnowflakeS01E01_Name",
+        "Map": "Snowflack_Map_E01",
+        "Location": [
+            -400,
+            50
+        ],
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "NextStoryPoint": [
+            "ASnowflakeS01E02"
+        ],
+        "FirstReward": "Snowflack_Story_Reward05",
+        "IsHide": "",
+        "IsAuto": "",
+        "PointPicture": "",
+        "StoryLink": "eventstory_BXJie_05a",
+        "Icon": "s_album_story_1",
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ]
+    },
+    "ASnowflakeS01E03": {
+        "Name": "ASnowflakeS01E03_Name",
+        "Map": "Snowflack_Map_E01",
+        "Location": [
+            -300,
+            -50
+        ],
+        "PreBattlePoint": [
+            "SnowflackE06"
+        ],
+        "PreStoryPoint": [
+            "ASnowflakeS01E02"
+        ],
+        "NextStoryPoint": [
+            "ASnowflakeS01E04"
+        ],
+        "FirstReward": "Snowflack_Story_Reward07",
+        "IsHide": "",
+        "IsAuto": "",
+        "PointPicture": "",
+        "StoryLink": "eventstory_BXJie_07a",
+        "Icon": "s_album_story_1",
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ]
+    },
+    "ASnowflakeS01S02": {
+        "Name": "ASnowflakeS01S02_Name",
+        "Map": "Snowflack_Map_M01",
+        "Location": [
+            -200,
+            -150
+        ],
+        "PreBattlePoint": [
+            "SnowflackM03"
+        ],
+        "PreStoryPoint": [
+            "ASnowflakeS01S01"
+        ],
+        "NextStoryPoint": [
+            "ASnowflakeS01S03"
+        ],
+        "FirstReward": "Snowflack_Story_Reward02",
+        "IsHide": "",
+        "IsAuto": "",
+        "PointPicture": "",
+        "StoryLink": "eventstory_BXJie_02a",
+        "Icon": "s_album_story_1",
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ]
+    },
+    "ASnowflakeS01S03": {
+        "Name": "ASnowflakeS01S03_Name",
+        "Map": "Snowflack_Map_M01",
+        "Location": [
+            -200,
+            -200
+        ],
+        "PreBattlePoint": [
+            "SnowflackM06"
+        ],
+        "PreStoryPoint": [
+            "ASnowflakeS01S02"
+        ],
+        "NextStoryPoint": [
+            "ASnowflakeS01S04"
+        ],
+        "FirstReward": "Snowflack_Story_Reward03",
+        "IsHide": "",
+        "IsAuto": "",
+        "PointPicture": "",
+        "StoryLink": "eventstory_BXJie_03a",
+        "Icon": "s_album_story_1",
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ]
+    },
+    "ASnowflakeS01S01": {
+        "Name": "ASnowflakeS01S01_Name",
+        "Map": "Snowflack_Map_M01",
+        "Location": [
+            -200,
+            -100
+        ],
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "NextStoryPoint": [
+            "ASnowflakeS01S02"
+        ],
+        "FirstReward": "Snowflack_Story_Reward01",
+        "IsHide": "",
+        "IsAuto": "",
+        "PointPicture": "",
+        "StoryLink": "eventstory_BXJie_01a",
+        "Icon": "s_album_story_1",
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ]
     }
 }
