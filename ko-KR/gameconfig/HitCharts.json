@@ -1,74 +1,74 @@
 {
-    "ActivityHitCharts_3": {
+    "ActivityHitCharts_1": {
+        "Desc_1": "HitCharts_Power_Desc_1",
+        "Desc_2": "HitCharts_Power_Desc_2",
+        "HitChartsConfig": "HitChartsRank_1",
+        "Icon": "js_bd_img_j_mb",
+        "Name": "HitCharts_Power",
         "TimeFactor": {
-            "start": "2030-10-19 12:00:00",
-            "end": "2030-10-22 11:00:00"
+            "end": "2030-10-16 11:00:00",
+            "start": "2030-10-13 12:00:00"
         },
-        "UI": "CRUSADE",
-        "HitChartsConfig": "HitChartsRank_3",
-        "Name": "HitCharts_Crusade",
-        "Icon": "",
-        "Desc_1": "HitCharts_Crusade_Desc_1",
-        "Desc_2": "HitCharts_Crusade_Desc_2"
+        "UI": "POWER"
     },
     "ActivityHitCharts_2": {
-        "TimeFactor": {
-            "start": "2030-10-16 12:00:00",
-            "end": "2030-10-19 11:00:00"
-        },
-        "UI": "GOLD",
-        "HitChartsConfig": "HitChartsRank_2",
-        "Name": "HitCharts_Gold",
-        "Icon": "js_bd_img_jbicon",
         "Desc_1": "HitCharts_Gold_Desc_1",
-        "Desc_2": "HitCharts_Gold_Desc_2"
-    },
-    "ActivityHitCharts_1": {
+        "Desc_2": "HitCharts_Gold_Desc_2",
+        "HitChartsConfig": "HitChartsRank_2",
+        "Icon": "js_bd_img_jbicon",
+        "Name": "HitCharts_Gold",
         "TimeFactor": {
-            "start": "2030-10-13 12:00:00",
-            "end": "2030-10-16 11:00:00"
+            "end": "2030-10-19 11:00:00",
+            "start": "2030-10-16 12:00:00"
         },
-        "UI": "POWER",
-        "HitChartsConfig": "HitChartsRank_1",
-        "Name": "HitCharts_Power",
-        "Icon": "js_bd_img_j_mb",
-        "Desc_1": "HitCharts_Power_Desc_1",
-        "Desc_2": "HitCharts_Power_Desc_2"
+        "UI": "GOLD"
     },
-    "ActivityHitCharts_6": {
-        "TimeFactor": {
-            "start": "2030-10-30 12:00:00",
-            "end": "2030-11-02 11:00:00"
-        },
-        "UI": "DIAMOND",
-        "HitChartsConfig": "HitChartsRank_6",
-        "Name": "HitCharts_Diamond",
-        "Icon": "js_bd_img_j_zs",
-        "Desc_1": "HitCharts_Diamond_Desc_1",
-        "Desc_2": "HitCharts_Diamond_Desc_2"
-    },
-    "ActivityHitCharts_5": {
-        "TimeFactor": {
-            "start": "2030-10-26 12:00:00",
-            "end": "2030-10-29 11:00:00"
-        },
-        "UI": "TOWER",
-        "HitChartsConfig": "HitChartsRank_5",
-        "Name": "HitCharts_Tower",
+    "ActivityHitCharts_3": {
+        "Desc_1": "HitCharts_Crusade_Desc_1",
+        "Desc_2": "HitCharts_Crusade_Desc_2",
+        "HitChartsConfig": "HitChartsRank_3",
         "Icon": "",
-        "Desc_1": "HitCharts_Tower_Desc_1",
-        "Desc_2": "HitCharts_Tower_Desc_2"
+        "Name": "HitCharts_Crusade",
+        "TimeFactor": {
+            "end": "2030-10-22 11:00:00",
+            "start": "2030-10-19 12:00:00"
+        },
+        "UI": "CRUSADE"
     },
     "ActivityHitCharts_4": {
-        "TimeFactor": {
-            "start": "2030-10-23 12:00:00",
-            "end": "2030-10-26 11:00:00"
-        },
-        "UI": "DIAMOND",
-        "HitChartsConfig": "HitChartsRank_4",
-        "Name": "HitCharts_Diamond",
-        "Icon": "js_bd_img_j_zs",
         "Desc_1": "HitCharts_Diamond_Desc_1",
-        "Desc_2": "HitCharts_Diamond_Desc_2"
+        "Desc_2": "HitCharts_Diamond_Desc_2",
+        "HitChartsConfig": "HitChartsRank_4",
+        "Icon": "js_bd_img_j_zs",
+        "Name": "HitCharts_Diamond",
+        "TimeFactor": {
+            "end": "2030-10-26 11:00:00",
+            "start": "2030-10-23 12:00:00"
+        },
+        "UI": "DIAMOND"
+    },
+    "ActivityHitCharts_5": {
+        "Desc_1": "HitCharts_Tower_Desc_1",
+        "Desc_2": "HitCharts_Tower_Desc_2",
+        "HitChartsConfig": "HitChartsRank_5",
+        "Icon": "",
+        "Name": "HitCharts_Tower",
+        "TimeFactor": {
+            "end": "2030-10-29 11:00:00",
+            "start": "2030-10-26 12:00:00"
+        },
+        "UI": "TOWER"
+    },
+    "ActivityHitCharts_6": {
+        "Desc_1": "HitCharts_Diamond_Desc_1",
+        "Desc_2": "HitCharts_Diamond_Desc_2",
+        "HitChartsConfig": "HitChartsRank_6",
+        "Icon": "js_bd_img_j_zs",
+        "Name": "HitCharts_Diamond",
+        "TimeFactor": {
+            "end": "2030-11-02 11:00:00",
+            "start": "2030-10-30 12:00:00"
+        },
+        "UI": "DIAMOND"
     }
 }

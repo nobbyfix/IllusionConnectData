@@ -1,326 +1,326 @@
 {
-    "AS_11": {
-        "SeasonNumber": 4,
-        "TimeFactor": {
-            "type": "Day",
-            "value": [
-                "2020-11-09",
-                "2020-11-16"
-            ]
-        },
-        "NextSeason": "AS_12",
-        "SeasonSkill": "ArenaFixed_4",
-        "SeasonSkillCondition": [
-            {
-                "type": "ALL"
-            }
-        ],
-        "SeasonTitle": "AS_4_Name"
-    },
-    "AS_10": {
-        "SeasonNumber": 3,
-        "TimeFactor": {
-            "type": "Day",
-            "value": [
-                "2020-11-02",
-                "2020-11-09"
-            ]
-        },
-        "NextSeason": "AS_11",
-        "SeasonSkill": "ArenaFixed_3",
-        "SeasonSkillCondition": [
-            {
-                "type": "ALL"
-            }
-        ],
-        "SeasonTitle": "AS_3_Name"
-    },
-    "AS_12": {
-        "SeasonNumber": 5,
-        "TimeFactor": {
-            "type": "Day",
-            "value": [
-                "2020-11-16",
-                "2020-11-23"
-            ]
-        },
-        "NextSeason": "AS_13",
-        "SeasonSkill": "ArenaFixed_5",
-        "SeasonSkillCondition": [
-            {
-                "type": "ALL"
-            }
-        ],
-        "SeasonTitle": "AS_5_Name"
-    },
-    "AS_9": {
-        "SeasonNumber": 2,
-        "TimeFactor": {
-            "type": "Day",
-            "value": [
-                "2020-10-26",
-                "2020-11-02"
-            ]
-        },
-        "NextSeason": "AS_10",
-        "SeasonSkill": "ArenaFixed_2",
-        "SeasonSkillCondition": [
-            {
-                "type": "ALL"
-            }
-        ],
-        "SeasonTitle": "AS_2_Name"
-    },
-    "AS_8": {
+    "AS_1": {
+        "NextSeason": "AS_2",
         "SeasonNumber": 1,
-        "TimeFactor": {
-            "type": "Day",
-            "value": [
-                "2020-10-19",
-                "2020-10-26"
-            ]
-        },
-        "NextSeason": "AS_9",
         "SeasonSkill": "ArenaFixed_1",
         "SeasonSkillCondition": [
             {
                 "type": "ALL"
             }
         ],
-        "SeasonTitle": "AS_1_Name"
-    },
-    "AS_1": {
-        "SeasonNumber": 1,
+        "SeasonTitle": "AS_1_Name",
         "TimeFactor": {
             "type": "Day",
             "value": [
                 "2020-06-06",
                 "2020-07-13"
             ]
-        },
-        "NextSeason": "AS_2",
-        "SeasonSkill": "ArenaFixed_1",
-        "SeasonSkillCondition": [
-            {
-                "type": "ALL"
-            }
-        ],
-        "SeasonTitle": "AS_1_Name"
+        }
     },
-    "AS_3": {
+    "AS_10": {
+        "NextSeason": "AS_11",
         "SeasonNumber": 3,
-        "TimeFactor": {
-            "type": "Day",
-            "value": [
-                "2020-07-20",
-                "2020-07-27"
-            ]
-        },
-        "NextSeason": "AS_4",
         "SeasonSkill": "ArenaFixed_3",
         "SeasonSkillCondition": [
             {
                 "type": "ALL"
             }
         ],
-        "SeasonTitle": "AS_3_Name"
-    },
-    "AS_2": {
-        "SeasonNumber": 2,
+        "SeasonTitle": "AS_3_Name",
         "TimeFactor": {
             "type": "Day",
             "value": [
-                "2020-07-13",
-                "2020-07-20"
+                "2020-11-02",
+                "2020-11-09"
             ]
-        },
-        "NextSeason": "AS_3",
-        "SeasonSkill": "ArenaFixed_2",
-        "SeasonSkillCondition": [
-            {
-                "type": "ALL"
-            }
-        ],
-        "SeasonTitle": "AS_2_Name"
+        }
     },
-    "AS_5": {
-        "SeasonNumber": 5,
-        "TimeFactor": {
-            "type": "Day",
-            "value": [
-                "2020-08-03",
-                "2020-08-10"
-            ]
-        },
-        "NextSeason": "AS_6",
-        "SeasonSkill": "ArenaFixed_5",
-        "SeasonSkillCondition": [
-            {
-                "type": "ALL"
-            }
-        ],
-        "SeasonTitle": "AS_5_Name"
-    },
-    "AS_4": {
+    "AS_11": {
+        "NextSeason": "AS_12",
         "SeasonNumber": 4,
-        "TimeFactor": {
-            "type": "Day",
-            "value": [
-                "2020-07-27",
-                "2020-08-03"
-            ]
-        },
-        "NextSeason": "AS_5",
         "SeasonSkill": "ArenaFixed_4",
         "SeasonSkillCondition": [
             {
                 "type": "ALL"
             }
         ],
-        "SeasonTitle": "AS_4_Name"
-    },
-    "AS_7": {
-        "SeasonNumber": 7,
+        "SeasonTitle": "AS_4_Name",
         "TimeFactor": {
             "type": "Day",
             "value": [
-                "2020-10-10",
-                "2020-10-19"
+                "2020-11-09",
+                "2020-11-16"
             ]
-        },
-        "NextSeason": "AS_8",
+        }
+    },
+    "AS_12": {
+        "NextSeason": "AS_13",
+        "SeasonNumber": 5,
         "SeasonSkill": "ArenaFixed_5",
         "SeasonSkillCondition": [
             {
                 "type": "ALL"
             }
         ],
-        "SeasonTitle": "AS_5_Name"
-    },
-    "AS_6": {
-        "SeasonNumber": 6,
+        "SeasonTitle": "AS_5_Name",
         "TimeFactor": {
             "type": "Day",
             "value": [
-                "2020-08-10",
-                "2020-10-10"
+                "2020-11-16",
+                "2020-11-23"
             ]
-        },
-        "NextSeason": "AS_7",
-        "SeasonSkill": "ArenaFixed_5",
-        "SeasonSkillCondition": [
-            {
-                "type": "ALL"
-            }
-        ],
-        "SeasonTitle": "AS_5_Name"
+        }
     },
     "AS_13": {
+        "NextSeason": "AS_14",
         "SeasonNumber": 6,
+        "SeasonSkill": "ArenaFixed_5",
+        "SeasonSkillCondition": [
+            {
+                "type": "ALL"
+            }
+        ],
+        "SeasonTitle": "AS_5_Name",
         "TimeFactor": {
             "type": "Day",
             "value": [
                 "2020-11-23",
                 "2020-11-30"
             ]
-        },
-        "NextSeason": "AS_14",
+        }
+    },
+    "AS_14": {
+        "NextSeason": "AS_15",
+        "SeasonNumber": 7,
         "SeasonSkill": "ArenaFixed_5",
         "SeasonSkillCondition": [
             {
                 "type": "ALL"
             }
         ],
-        "SeasonTitle": "AS_5_Name"
-    },
-    "AS_15": {
-        "SeasonNumber": 1,
-        "TimeFactor": {
-            "type": "Day",
-            "value": [
-                "2020-12-07",
-                "2020-12-14"
-            ]
-        },
-        "NextSeason": "AS_16",
-        "SeasonSkill": "ArenaFixed_1",
-        "SeasonSkillCondition": [
-            {
-                "type": "ALL"
-            }
-        ],
-        "SeasonTitle": "AS_1_Name"
-    },
-    "AS_14": {
-        "SeasonNumber": 7,
+        "SeasonTitle": "AS_5_Name",
         "TimeFactor": {
             "type": "Day",
             "value": [
                 "2020-11-30",
                 "2020-12-07"
             ]
-        },
-        "NextSeason": "AS_15",
-        "SeasonSkill": "ArenaFixed_5",
+        }
+    },
+    "AS_15": {
+        "NextSeason": "AS_16",
+        "SeasonNumber": 1,
+        "SeasonSkill": "ArenaFixed_1",
         "SeasonSkillCondition": [
             {
                 "type": "ALL"
             }
         ],
-        "SeasonTitle": "AS_5_Name"
-    },
-    "AS_17": {
-        "SeasonNumber": 3,
+        "SeasonTitle": "AS_1_Name",
         "TimeFactor": {
             "type": "Day",
             "value": [
-                "2020-12-21",
-                "2020-12-28"
+                "2020-12-07",
+                "2020-12-14"
             ]
-        },
-        "NextSeason": "AS_18",
-        "SeasonSkill": "ArenaFixed_3",
-        "SeasonSkillCondition": [
-            {
-                "type": "ALL"
-            }
-        ],
-        "SeasonTitle": "AS_3_Name"
+        }
     },
     "AS_16": {
-        "SeasonNumber": 2,
-        "TimeFactor": {
-            "type": "Day",
-            "value": [
-                "2020-12-14",
-                "2020-12-21"
-            ]
-        },
         "NextSeason": "AS_17",
+        "SeasonNumber": 2,
         "SeasonSkill": "ArenaFixed_2",
         "SeasonSkillCondition": [
             {
                 "type": "ALL"
             }
         ],
-        "SeasonTitle": "AS_2_Name"
-    },
-    "AS_18": {
-        "SeasonNumber": 4,
+        "SeasonTitle": "AS_2_Name",
         "TimeFactor": {
             "type": "Day",
             "value": [
-                "2020-12-28",
-                "2021-01-04"
+                "2020-12-14",
+                "2020-12-21"
             ]
-        },
+        }
+    },
+    "AS_17": {
+        "NextSeason": "AS_18",
+        "SeasonNumber": 3,
+        "SeasonSkill": "ArenaFixed_3",
+        "SeasonSkillCondition": [
+            {
+                "type": "ALL"
+            }
+        ],
+        "SeasonTitle": "AS_3_Name",
+        "TimeFactor": {
+            "type": "Day",
+            "value": [
+                "2020-12-21",
+                "2020-12-28"
+            ]
+        }
+    },
+    "AS_18": {
         "NextSeason": "AS_19",
+        "SeasonNumber": 4,
         "SeasonSkill": "ArenaFixed_4",
         "SeasonSkillCondition": [
             {
                 "type": "ALL"
             }
         ],
-        "SeasonTitle": "AS_4_Name"
+        "SeasonTitle": "AS_4_Name",
+        "TimeFactor": {
+            "type": "Day",
+            "value": [
+                "2020-12-28",
+                "2021-01-04"
+            ]
+        }
+    },
+    "AS_2": {
+        "NextSeason": "AS_3",
+        "SeasonNumber": 2,
+        "SeasonSkill": "ArenaFixed_2",
+        "SeasonSkillCondition": [
+            {
+                "type": "ALL"
+            }
+        ],
+        "SeasonTitle": "AS_2_Name",
+        "TimeFactor": {
+            "type": "Day",
+            "value": [
+                "2020-07-13",
+                "2020-07-20"
+            ]
+        }
+    },
+    "AS_3": {
+        "NextSeason": "AS_4",
+        "SeasonNumber": 3,
+        "SeasonSkill": "ArenaFixed_3",
+        "SeasonSkillCondition": [
+            {
+                "type": "ALL"
+            }
+        ],
+        "SeasonTitle": "AS_3_Name",
+        "TimeFactor": {
+            "type": "Day",
+            "value": [
+                "2020-07-20",
+                "2020-07-27"
+            ]
+        }
+    },
+    "AS_4": {
+        "NextSeason": "AS_5",
+        "SeasonNumber": 4,
+        "SeasonSkill": "ArenaFixed_4",
+        "SeasonSkillCondition": [
+            {
+                "type": "ALL"
+            }
+        ],
+        "SeasonTitle": "AS_4_Name",
+        "TimeFactor": {
+            "type": "Day",
+            "value": [
+                "2020-07-27",
+                "2020-08-03"
+            ]
+        }
+    },
+    "AS_5": {
+        "NextSeason": "AS_6",
+        "SeasonNumber": 5,
+        "SeasonSkill": "ArenaFixed_5",
+        "SeasonSkillCondition": [
+            {
+                "type": "ALL"
+            }
+        ],
+        "SeasonTitle": "AS_5_Name",
+        "TimeFactor": {
+            "type": "Day",
+            "value": [
+                "2020-08-03",
+                "2020-08-10"
+            ]
+        }
+    },
+    "AS_6": {
+        "NextSeason": "AS_7",
+        "SeasonNumber": 6,
+        "SeasonSkill": "ArenaFixed_5",
+        "SeasonSkillCondition": [
+            {
+                "type": "ALL"
+            }
+        ],
+        "SeasonTitle": "AS_5_Name",
+        "TimeFactor": {
+            "type": "Day",
+            "value": [
+                "2020-08-10",
+                "2020-10-10"
+            ]
+        }
+    },
+    "AS_7": {
+        "NextSeason": "AS_8",
+        "SeasonNumber": 7,
+        "SeasonSkill": "ArenaFixed_5",
+        "SeasonSkillCondition": [
+            {
+                "type": "ALL"
+            }
+        ],
+        "SeasonTitle": "AS_5_Name",
+        "TimeFactor": {
+            "type": "Day",
+            "value": [
+                "2020-10-10",
+                "2020-10-19"
+            ]
+        }
+    },
+    "AS_8": {
+        "NextSeason": "AS_9",
+        "SeasonNumber": 1,
+        "SeasonSkill": "ArenaFixed_1",
+        "SeasonSkillCondition": [
+            {
+                "type": "ALL"
+            }
+        ],
+        "SeasonTitle": "AS_1_Name",
+        "TimeFactor": {
+            "type": "Day",
+            "value": [
+                "2020-10-19",
+                "2020-10-26"
+            ]
+        }
+    },
+    "AS_9": {
+        "NextSeason": "AS_10",
+        "SeasonNumber": 2,
+        "SeasonSkill": "ArenaFixed_2",
+        "SeasonSkillCondition": [
+            {
+                "type": "ALL"
+            }
+        ],
+        "SeasonTitle": "AS_2_Name",
+        "TimeFactor": {
+            "type": "Day",
+            "value": [
+                "2020-10-26",
+                "2020-11-02"
+            ]
+        }
     }
 }

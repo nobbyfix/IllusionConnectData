@@ -1,17 +1,17 @@
 {
     "BBLMa": {
-        "SurfaceId": "Surface_BBLMa_Awake",
-        "ModelId": "Model_BBLMa_Awake",
-        "Portrait": "Model_BBLMa_UnAwake",
-        "StarId": "BBLMa_Awake",
-        "NeedLove": 10,
-        "StoryLink": "S11S01",
         "Animation": "BBLMa_Awaken",
-        "Reward": "HeroAwaken_BBLMa",
-        "StandVFX": "CounterRateUp",
+        "ModelId": "Model_BBLMa_Awake",
         "Name": "BBLMa_Awake_Name",
         "NameDesc": "BBLMa_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_BBLMa_UnAwake",
+        "Reward": "HeroAwaken_BBLMa",
         "ShowHero": "BBLMa",
-        "Since": "qm_bg_bj"
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "BBLMa_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_BBLMa_Awake"
     }
 }

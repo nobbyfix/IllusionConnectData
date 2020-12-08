@@ -1,182 +1,182 @@
 {
-    "TacticsCard_RageUp_Single": {
-        "Type": "yellow",
-        "SkillPic": "TacticsCard_RageUp_Single",
-        "SkillCost": 12,
-        "Skill": "TacticsCard_RageUp_Single",
-        "Weight": 1,
-        "Condition": {
-            "STAGE": "M03S03"
-        },
-        "TagPic": "TacticsCard_RageUp_Single",
-        "AutoWeight": "50"
-    },
-    "TacticsCard_HurtRateUp_Multi": {
-        "Type": "yellow",
-        "SkillPic": "TacticsCard_HurtRateUp_Multi",
-        "SkillCost": 15,
-        "Skill": "TacticsCard_HurtRateUp_Multi",
-        "Weight": 1,
-        "Condition": {
-            "STAGE": "M03S03"
-        },
-        "TagPic": "TacticsCard_HurtRateUp_Multi",
-        "AutoWeight": "40"
-    },
-    "TacticsCard_Dispel_Single": {
-        "Type": "green",
-        "SkillPic": "TacticsCard_Dispel",
-        "SkillCost": 8,
-        "Skill": "TacticsCard_Dispel_Single",
-        "Weight": 1,
+    "TacticsCard_Cure_Multi": {
+        "AutoWeight": "40",
         "Condition": {
             "STAGE": "M05S08"
         },
-        "TagPic": "TacticsCard_Dispel_Single",
-        "AutoWeight": "10"
-    },
-    "TacticsCard_Dispel_Multi": {
-        "Type": "green",
-        "SkillPic": "TacticsCard_MasterTaunt",
-        "SkillCost": 12,
-        "Skill": "TacticsCard_Dispel_Multi",
-        "Weight": 1,
-        "Condition": {
-            "STAGE": "M05S08"
-        },
-        "TagPic": "TacticsCard_Dispel_Multi",
-        "AutoWeight": "20"
-    },
-    "TacticsCard_Summon": {
-        "Type": "yellow",
-        "SkillPic": "TacticsCard_Summon",
-        "SkillCost": 15,
-        "Skill": "TacticsCard_Summon",
-        "Weight": 1,
-        "Condition": {
-            "STAGE": "M03S03"
-        },
-        "TagPic": "TacticsCard_Summon",
-        "AutoWeight": "110"
-    },
-    "TacticsCard_Undead": {
-        "Type": "yellow",
-        "SkillPic": "TacticsCard_Sacrifice",
+        "Skill": "TacticsCard_Cure_Multi",
         "SkillCost": 18,
-        "Skill": "TacticsCard_Undead",
-        "Weight": 1,
-        "Condition": {
-            "STAGE": "M05S08"
-        },
-        "TagPic": "TacticsCard_Undead",
-        "AutoWeight": "120"
-    },
-    "TacticsCard_HurtRateUp_Single": {
-        "Type": "yellow",
-        "SkillPic": "TacticsCard_HurtRateUp_Single",
-        "SkillCost": 8,
-        "Skill": "TacticsCard_HurtRateUp_Single",
-        "Weight": 1,
-        "Condition": {
-            "STAGE": "M03S03"
-        },
-        "TagPic": "TacticsCard_HurtRateUp_Single",
-        "AutoWeight": "30"
+        "SkillPic": "TacticsCard_Cure_Multi",
+        "TagPic": "TacticsCard_Cure_Multi",
+        "Type": "green",
+        "Weight": 1
     },
     "TacticsCard_Cure_Single": {
-        "Type": "green",
-        "SkillPic": "TacticsCard_Cure_Single",
-        "SkillCost": 10,
-        "Skill": "TacticsCard_Cure_Single",
-        "Weight": 1,
+        "AutoWeight": "30",
         "Condition": {
             "STAGE": "M05S08"
         },
+        "Skill": "TacticsCard_Cure_Single",
+        "SkillCost": 10,
+        "SkillPic": "TacticsCard_Cure_Single",
         "TagPic": "TacticsCard_Cure_Single",
-        "AutoWeight": "30"
+        "Type": "green",
+        "Weight": 1
     },
-    "TacticsCard_Stealth": {
-        "Type": "yellow",
-        "SkillPic": "TacticsCard_Stealth",
-        "SkillCost": 12,
-        "Skill": "TacticsCard_Stealth",
-        "Weight": 1,
+    "TacticsCard_Damage_Multi": {
+        "AutoWeight": "100",
         "Condition": {
             "STAGE": "M04S08"
         },
-        "TagPic": "TacticsCard_Stealth",
-        "AutoWeight": "0"
+        "Skill": "TacticsCard_Damage_Multi",
+        "SkillCost": 20,
+        "SkillPic": "TacticsCard_Damage_Multi",
+        "TagPic": "TacticsCard_Damage_Multi",
+        "Type": "red",
+        "Weight": 1
     },
     "TacticsCard_Damage_Single": {
-        "Type": "red",
-        "SkillPic": "TacticsCard_Damage_Single",
-        "SkillCost": 12,
-        "Skill": "TacticsCard_Damage_Single",
-        "Weight": 1,
+        "AutoWeight": "90",
         "Condition": {
             "STAGE": "M04S08"
         },
+        "Skill": "TacticsCard_Damage_Single",
+        "SkillCost": 12,
+        "SkillPic": "TacticsCard_Damage_Single",
         "TagPic": "TacticsCard_Damage_Single",
-        "AutoWeight": "90"
+        "Type": "red",
+        "Weight": 1
+    },
+    "TacticsCard_Dispel_Multi": {
+        "AutoWeight": "20",
+        "Condition": {
+            "STAGE": "M05S08"
+        },
+        "Skill": "TacticsCard_Dispel_Multi",
+        "SkillCost": 12,
+        "SkillPic": "TacticsCard_MasterTaunt",
+        "TagPic": "TacticsCard_Dispel_Multi",
+        "Type": "green",
+        "Weight": 1
+    },
+    "TacticsCard_Dispel_Single": {
+        "AutoWeight": "10",
+        "Condition": {
+            "STAGE": "M05S08"
+        },
+        "Skill": "TacticsCard_Dispel_Single",
+        "SkillCost": 8,
+        "SkillPic": "TacticsCard_Dispel",
+        "TagPic": "TacticsCard_Dispel_Single",
+        "Type": "green",
+        "Weight": 1
+    },
+    "TacticsCard_Freeze_Multi": {
+        "AutoWeight": "80",
+        "Condition": {
+            "STAGE": "M04S08"
+        },
+        "Skill": "TacticsCard_Freeze_Multi",
+        "SkillCost": 20,
+        "SkillPic": "TacticsCard_Freeze_Multi",
+        "TagPic": "TacticsCard_Freeze_Multi",
+        "Type": "red",
+        "Weight": 1
     },
     "TacticsCard_Freeze_Single": {
-        "Type": "red",
-        "SkillPic": "TacticsCard_Freeze_Single",
-        "SkillCost": 12,
-        "Skill": "TacticsCard_Freeze_Single",
-        "Weight": 1,
+        "AutoWeight": "70",
         "Condition": {
             "STAGE": "M04S08"
         },
+        "Skill": "TacticsCard_Freeze_Single",
+        "SkillCost": 12,
+        "SkillPic": "TacticsCard_Freeze_Single",
         "TagPic": "TacticsCard_Freeze_Single",
-        "AutoWeight": "70"
+        "Type": "red",
+        "Weight": 1
     },
-    "TacticsCard_RageUp_Multi": {
-        "Type": "yellow",
-        "SkillPic": "TacticsCard_RageUp_Multi",
-        "SkillCost": 18,
-        "Skill": "TacticsCard_RageUp_Multi",
-        "Weight": 1,
+    "TacticsCard_HurtRateUp_Multi": {
+        "AutoWeight": "40",
         "Condition": {
             "STAGE": "M03S03"
         },
-        "TagPic": "TacticsCard_RageUp_Multi",
-        "AutoWeight": "60"
+        "Skill": "TacticsCard_HurtRateUp_Multi",
+        "SkillCost": 15,
+        "SkillPic": "TacticsCard_HurtRateUp_Multi",
+        "TagPic": "TacticsCard_HurtRateUp_Multi",
+        "Type": "yellow",
+        "Weight": 1
     },
-    "TacticsCard_Freeze_Multi": {
-        "Type": "red",
-        "SkillPic": "TacticsCard_Freeze_Multi",
-        "SkillCost": 20,
-        "Skill": "TacticsCard_Freeze_Multi",
-        "Weight": 1,
+    "TacticsCard_HurtRateUp_Single": {
+        "AutoWeight": "30",
         "Condition": {
-            "STAGE": "M04S08"
+            "STAGE": "M03S03"
         },
-        "TagPic": "TacticsCard_Freeze_Multi",
-        "AutoWeight": "80"
+        "Skill": "TacticsCard_HurtRateUp_Single",
+        "SkillCost": 8,
+        "SkillPic": "TacticsCard_HurtRateUp_Single",
+        "TagPic": "TacticsCard_HurtRateUp_Single",
+        "Type": "yellow",
+        "Weight": 1
     },
-    "TacticsCard_Damage_Multi": {
-        "Type": "red",
-        "SkillPic": "TacticsCard_Damage_Multi",
-        "SkillCost": 20,
-        "Skill": "TacticsCard_Damage_Multi",
-        "Weight": 1,
+    "TacticsCard_RageUp_Multi": {
+        "AutoWeight": "60",
         "Condition": {
-            "STAGE": "M04S08"
+            "STAGE": "M03S03"
         },
-        "TagPic": "TacticsCard_Damage_Multi",
-        "AutoWeight": "100"
-    },
-    "TacticsCard_Cure_Multi": {
-        "Type": "green",
-        "SkillPic": "TacticsCard_Cure_Multi",
+        "Skill": "TacticsCard_RageUp_Multi",
         "SkillCost": 18,
-        "Skill": "TacticsCard_Cure_Multi",
-        "Weight": 1,
+        "SkillPic": "TacticsCard_RageUp_Multi",
+        "TagPic": "TacticsCard_RageUp_Multi",
+        "Type": "yellow",
+        "Weight": 1
+    },
+    "TacticsCard_RageUp_Single": {
+        "AutoWeight": "50",
+        "Condition": {
+            "STAGE": "M03S03"
+        },
+        "Skill": "TacticsCard_RageUp_Single",
+        "SkillCost": 12,
+        "SkillPic": "TacticsCard_RageUp_Single",
+        "TagPic": "TacticsCard_RageUp_Single",
+        "Type": "yellow",
+        "Weight": 1
+    },
+    "TacticsCard_Stealth": {
+        "AutoWeight": "0",
+        "Condition": {
+            "STAGE": "M04S08"
+        },
+        "Skill": "TacticsCard_Stealth",
+        "SkillCost": 12,
+        "SkillPic": "TacticsCard_Stealth",
+        "TagPic": "TacticsCard_Stealth",
+        "Type": "yellow",
+        "Weight": 1
+    },
+    "TacticsCard_Summon": {
+        "AutoWeight": "110",
+        "Condition": {
+            "STAGE": "M03S03"
+        },
+        "Skill": "TacticsCard_Summon",
+        "SkillCost": 15,
+        "SkillPic": "TacticsCard_Summon",
+        "TagPic": "TacticsCard_Summon",
+        "Type": "yellow",
+        "Weight": 1
+    },
+    "TacticsCard_Undead": {
+        "AutoWeight": "120",
         "Condition": {
             "STAGE": "M05S08"
         },
-        "TagPic": "TacticsCard_Cure_Multi",
-        "AutoWeight": "40"
+        "Skill": "TacticsCard_Undead",
+        "SkillCost": 18,
+        "SkillPic": "TacticsCard_Sacrifice",
+        "TagPic": "TacticsCard_Undead",
+        "Type": "yellow",
+        "Weight": 1
     }
 }

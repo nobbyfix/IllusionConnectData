@@ -1,16 +1,27 @@
 {
+    "GangAo": {
+        "City": [
+            "GangAo01",
+            "GangAo02"
+        ],
+        "FID": [
+            3173,
+            3176
+        ],
+        "Provinces": "GangAo_Desc",
+        "Sort": 2
+    },
     "HaiWai": {
-        "Provinces": "HaiWai_Desc",
         "City": [
             "HaiWai01"
         ],
-        "Sort": 3,
         "FID": [
             3179
-        ]
+        ],
+        "Provinces": "HaiWai_Desc",
+        "Sort": 3
     },
     "TaiWan": {
-        "Provinces": "TaiWan_Desc",
         "City": [
             "TaiWan01",
             "TaiWan02",
@@ -35,7 +46,6 @@
             "TaiWan21",
             "TaiWan22"
         ],
-        "Sort": 1,
         "FID": [
             3179,
             3180,
@@ -59,18 +69,8 @@
             131422,
             131114,
             131135
-        ]
-    },
-    "GangAo": {
-        "Provinces": "GangAo_Desc",
-        "City": [
-            "GangAo01",
-            "GangAo02"
         ],
-        "Sort": 2,
-        "FID": [
-            3173,
-            3176
-        ]
+        "Provinces": "TaiWan_Desc",
+        "Sort": 1
     }
 }

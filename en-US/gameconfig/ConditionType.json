@@ -1,1332 +1,1332 @@
 {
-    "Condi_GoldDrawTen": {
-        "EffectDesc": "Condi_GoldDrawTen_Desc",
-        "ConditionType1": "drawWithGoldTen",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_ArenaMaxStreakWin": {
-        "EffectDesc": "Condi_ArenaMaxStreakWin_Desc",
-        "ConditionType1": "player.playerArena.maxStreakWin",
+    "Condi_AchievementPoint": {
         "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.achievementCenter.points.?1",
         "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_DrawSame": {
-        "EffectDesc": "Condi_DrawSame_Desc",
-        "ConditionType1": "player.drawInfo.maxSameHeroes",
-        "AchieveType1": "REACH",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_EliteStageStar": {
-        "EffectDesc": "Condi_EliteStageStar_Desc",
-        "ConditionType1": "player.stages.ELITE.stageMaps.*.points.*.stars",
-        "AchieveType1": "SIZESUM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_SumArenaScore": {
-        "EffectDesc": "Condi_SumArenaScore_Desc",
-        "ConditionType1": "player.playerArena.dailyScore",
-        "AchieveType1": "INCREASE",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_DrawRarity": {
-        "EffectDesc": "Condi_DrawRarity_Desc",
-        "ConditionType1": "player.drawInfo.heroRarityStat.?1",
-        "AchieveType1": "REACH",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_playerIR_KOFcount": {
-        "EffectDesc": "Condi_playerIR_KOFcount_Desc",
-        "ConditionType1": "player.bag.items.IR_KON.count",
-        "AchieveType1": "INCREASE",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_PracticeWin": {
-        "EffectDesc": "Condi_PracticeWin_Desc",
-        "ConditionType1": "player.practice.stageMaps.?1.stagePoints.*.passed",
-        "AchieveType1": "REACHCOUNT",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_DiamondDrawTen": {
-        "EffectDesc": "Condi_DiamondDrawTen_Desc",
-        "ConditionType1": "drawWithDiamondTen",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_WinCommonStage": {
-        "EffectDesc": "Condi_WinCommonStage_Desc",
-        "ConditionType1": "winCommonStage",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_EliteStageTimes": {
-        "EffectDesc": "Condi_EliteStageTimes_Desc",
-        "ConditionType1": "attendEliteStage",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_BlockStarSum": {
-        "EffectDesc": "Condi_BlockStarSum_Desc",
-        "ConditionType1": "player.stages.?1.stageMaps.*.points.*.stars",
-        "AchieveType1": "SIZESUM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_ArenaCurStreakWin": {
-        "EffectDesc": "Condi_ArenaCurStreakWin_Desc",
-        "ConditionType1": "player.playerArena.curStreakWin",
-        "AchieveType1": "REACH",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_DailyArenaScore": {
-        "EffectDesc": "Condi_DailyArenaScore_Desc",
-        "ConditionType1": "player.playerArena.dailyScore",
-        "AchieveType1": "REACH",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_DrawNoSSR": {
-        "EffectDesc": "Condi_DrawNoSSR_Desc",
-        "ConditionType1": "player.drawInfo.contiNoSSR",
-        "AchieveType1": "REACH",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_GoldDraw": {
-        "EffectDesc": "Condi_GoldDraw_Desc",
-        "ConditionType1": "drawCardWithGold",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_DrawEquip": {
-        "EffectDesc": "Condi_DrawEquip_Desc",
-        "ConditionType1": "drawEquip",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_joinTournament": {
-        "EffectDesc": "Condi_joinTournament_Desc",
-        "ConditionType1": "joinTournament",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_AttendArena": {
-        "EffectDesc": "Condi_AttendArena_Desc",
-        "ConditionType1": "attendArena",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_ResourceStage": {
-        "EffectDesc": "Condi_ResourceStage_Desc",
-        "ConditionType1": "attendResourceStage",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_playerpracticestagestar": {
-        "EffectDesc": "Condi_playerpracticestagestar_Desc",
-        "ConditionType1": "player.practice.stageMaps.*.stagePoints.*.stars",
-        "AchieveType1": "SUM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_winArenaChallenge": {
-        "EffectDesc": "Condi_winArenaChallenge_Desc",
-        "ConditionType1": "winArenaChallenge",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_DiamondDraw": {
-        "EffectDesc": "Condi_DiamondDraw_Desc",
-        "ConditionType1": "drawCardWithDiamond",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_MapChapterBattleCount": {
-        "EffectDesc": "Condi_MapChapterBattleCount_Desc",
-        "ConditionType1": "mapGroupFight.?1",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_drawEquipTen": {
-        "EffectDesc": "Condi_drawEquipTen_Desc",
-        "ConditionType1": "drawEquipTen",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_CommonStageTimes": {
-        "EffectDesc": "Condi_CommonStageTimes_Desc",
-        "ConditionType1": "attendCommonStage",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_playerpracticestage": {
-        "EffectDesc": "Condi_playerpracticestage_Desc",
-        "ConditionType1": "player.practice.stageMaps.*.stagePoints.*.passed",
-        "AchieveType1": "REACHCOUNT",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_playerarenalastRank": {
-        "EffectDesc": "Condi_playerarenalastRank_Desc",
-        "ConditionType1": "player.playerArena.lastRank",
-        "AchieveType1": "MIN",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_playerIR_Arenacount": {
-        "EffectDesc": "Condi_playerIR_Arenacount_Desc",
-        "ConditionType1": "player.bag.items.IR_Arena.count",
-        "AchieveType1": "INCREASE",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_HeroStoryPoint": {
-        "EffectDesc": "Condi_HeroStoryPoint_Desc",
-        "ConditionType1": "winHeroStory",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_DrawTimeReward": {
-        "EffectDesc": "Condi_DrawTimeReward_Desc",
-        "ConditionType1": "drawTimeReward",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_CommonStage": {
-        "EffectDesc": "Condi_CommonStage_Desc",
-        "ConditionType1": "player.stages.NORMAL.stageMaps.?1.points.?2.stars",
-        "AchieveType1": "SIZEREACH",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_WinEliteStage": {
-        "EffectDesc": "Condi_WinEliteStage_Desc",
-        "ConditionType1": "winEliteStage",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_EliteStage": {
-        "EffectDesc": "Condi_EliteStage_Desc",
-        "ConditionType1": "player.stages.ELITE.stageMaps.?1.points.?2.stars",
-        "AchieveType1": "SIZEREACH",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_ExploreMap": {
-        "EffectDesc": "Condi_ExploreMap_Desc",
-        "ConditionType1": "mapFinishPoint.?1",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_MasterEmblemUp": {
-        "EffectDesc": "Condi_MasterEmblemUp_Desc",
-        "ConditionType1": "masterEmblemUp",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_RelationLevelSum": {
-        "EffectDesc": "Condi_RelationLevelSum_Desc",
-        "ConditionType1": "player.cultivation.heroes.*.relations.?1.level",
-        "AchieveType1": "REACHCOUNT",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_MapFinish": {
-        "EffectDesc": "Condi_MapFinish_Desc",
-        "ConditionType1": "player.worldMap.points.*.mapTaskCount",
-        "AchieveType1": "REACHCOUNT",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_transmuteTrip": {
-        "EffectDesc": "Condi_transmuteTrip_Desc",
-        "ConditionType1": "allTask.?1",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_buyPheonixBag": {
-        "EffectDesc": "Condi_buyPheonixBag_Desc",
-        "ConditionType1": "buyProduct.?1",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_MapFight": {
-        "EffectDesc": "Condi_MapFight_Desc",
-        "ConditionType1": "mapAnyFight",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
+        "EffectDesc": "Condi_AchievementPoint_Desc"
     },
     "Condi_ActivityBox": {
-        "EffectDesc": "Condi_ActivityBox_Desc",
-        "ConditionType1": "player.activities.activityMap.?1.obtainedRewardBoxes",
         "AchieveType1": "SIZEREACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.activities.activityMap.?1.obtainedRewardBoxes",
         "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_MasterStarSum": {
-        "EffectDesc": "Condi_MasterStarSum_Desc",
-        "ConditionType1": "player.cultivation.masters.*.star",
-        "AchieveType1": "SUM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_getProgressBox": {
-        "EffectDesc": "Condi_getProgressBox_Desc",
-        "ConditionType1": "getProgressBox.?1",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_MasterStarReach": {
-        "EffectDesc": "Condi_MasterStarReach_Desc",
-        "ConditionType1": "player.cultivation.masters.*.star",
-        "AchieveType1": "REACHCOUNT",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_MapDPCount": {
-        "EffectDesc": "Condi_MapDPCount_Desc",
-        "ConditionType1": "player.worldMap.groups.*.dp",
-        "AchieveType1": "REACHCOUNT",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_shopCost": {
-        "EffectDesc": "Condi_shopCost_Desc",
-        "ConditionType1": "shopCost.?1.?2",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_TargetResStageLevel": {
-        "EffectDesc": "Condi_TargetResStageLevel_Desc",
-        "ConditionType1": "winResourceStage.?1.?2",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_KerneEquip": {
-        "EffectDesc": "Condi_KerneEquip_Desc",
-        "ConditionType1": "kernelSuite.?1",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_MapDPComplete": {
-        "EffectDesc": "Condi_MapDPComplete_Desc",
-        "ConditionType1": "mapDPFinish.?1.?2",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_SpStageAttend": {
-        "EffectDesc": "Condi_SpStageAttend_Desc",
-        "ConditionType1": "attendTargetResStage.?1",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_MapAllDP": {
-        "EffectDesc": "Condi_MapAllDP_Desc",
-        "ConditionType1": "player.worldMap.totalDp",
-        "AchieveType1": "REACH",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_MapBattle": {
-        "EffectDesc": "Condi_MapBattle_Desc",
-        "ConditionType1": "mapFight.?1",
-        "AchieveType1": "REACH",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_MasterCollect": {
-        "EffectDesc": "Condi_MasterCollect_Desc",
-        "ConditionType1": "player.cultivation.masters.*.star",
-        "AchieveType1": "REACHCOUNT",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_RelationUnlock": {
-        "EffectDesc": "Condi_RelationUnlock_Desc",
-        "ConditionType1": "player.cultivation.heroes.*.relations.*.lock",
-        "AchieveType1": "REACHCOUNT",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_attendTargetResStage": {
-        "EffectDesc": "Condi_attendTargetResStage_Desc",
-        "ConditionType1": "attendTargetResStage.?1",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_MapBuy": {
-        "EffectDesc": "Condi_MapBuy_Desc",
-        "ConditionType1": "mapShopBuy.?1",
-        "AchieveType1": "INCREASE",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_SpStagePoint": {
-        "EffectDesc": "Condi_SpStagePoint_Desc",
-        "ConditionType1": "player.spStages.?1.pointInfos.?2.progressInt",
-        "AchieveType1": "REACH",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_MapExploreRate": {
-        "EffectDesc": "Condi_MapExploreRate_Desc",
-        "ConditionType1": "player.worldMap.points.?1.progressPercent",
-        "AchieveType1": "REACH",
-        "ConditionType2": "",
-        "AchieveType2": ""
+        "EffectDesc": "Condi_ActivityBox_Desc"
     },
     "Condi_ActivityTask": {
-        "EffectDesc": "Condi_ActivityTask_Desc",
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
         "ConditionType1": "player.activities.activityMap.?1.rewardCount",
-        "AchieveType1": "REACH",
         "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_MapFightWin": {
-        "EffectDesc": "Condi_MapFightWin_Desc",
-        "ConditionType1": "mapFightWin",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_MapWin": {
-        "EffectDesc": "Condi_MapWin_Desc",
-        "ConditionType1": "player.worldMap.points.*.mapTaskCount",
-        "AchieveType1": "REACHCOUNT",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_ExploreMapCase": {
-        "EffectDesc": "Condi_ExploreMapCase_Desc",
-        "ConditionType1": "mapFinishCase.?1.?2.?3",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_MapDPReach": {
-        "EffectDesc": "Condi_MapDPReach_Desc",
-        "ConditionType1": "player.worldMap.groups.?1.dp",
-        "AchieveType1": "REACH",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_MasterKernelUp": {
-        "EffectDesc": "Condi_MasterKernelUp_Desc",
-        "ConditionType1": "masterKernelUp",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_shopRefresh": {
-        "EffectDesc": "Condi_shopRefresh_Desc",
-        "ConditionType1": "shopRefresh.?1",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_MasterSkillUp": {
-        "EffectDesc": "Condi_MasterSkillUp_Desc",
-        "ConditionType1": "masterSkillUp",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_JoinClub": {
-        "EffectDesc": "Condi_JoinClub_Desc",
-        "ConditionType1": "hasJoinedClub",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_MasterStarUp": {
-        "EffectDesc": "Condi_MasterStarUp_Desc",
-        "ConditionType1": "masterStarUp",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_ClubDonation": {
-        "EffectDesc": "Condi_ClubDonation_Desc",
-        "ConditionType1": "clubDonation",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_AuraUp": {
-        "EffectDesc": "Condi_AuraUp_Desc",
-        "ConditionType1": "masterAuraUp",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_shopBuy": {
-        "EffectDesc": "Condi_shopBuy_Desc",
-        "ConditionType1": "shopBuy.?1",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_EmblemQuality": {
-        "EffectDesc": "Condi_EmblemQuality_Desc",
-        "ConditionType1": "player.cultivation.emblems.*.quality",
-        "AchieveType1": "REACHCOUNT",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_BuildingTotalNum_All": {
-        "EffectDesc": "Condi_BuildingTotalNum_All_Desc",
-        "ConditionType1": "player.villageData.stats.?1.totalNum",
-        "AchieveType1": "REACH",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_PansWInPoint": {
-        "EffectDesc": "Condi_PansWInPoint_Desc",
-        "ConditionType1": "pansLabFightWInPoint,?1.?2",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_BuildingMaxLevel_CrystalOre": {
-        "EffectDesc": "Condi_BuildingMaxLevel_CrystalOre_Desc",
-        "ConditionType1": "player.villageData.stats.?1.maxLevel",
-        "AchieveType1": "REACH",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_BuildingResource": {
-        "EffectDesc": "Condi_BuildingResource_Desc",
-        "ConditionType1": "collectResource",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_BuildingMaxLevel_Camp": {
-        "EffectDesc": "Condi_BuildingMaxLevel_Camp_Desc",
-        "ConditionType1": "player.villageData.stats.?1.maxLevel",
-        "AchieveType1": "REACH",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_BuildingMaxLevel_GoldOre": {
-        "EffectDesc": "Condi_BuildingMaxLevel_GoldOre_Desc",
-        "ConditionType1": "player.villageData.stats.?1.maxLevel",
-        "AchieveType1": "REACH",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_LabFight": {
-        "EffectDesc": "Condi_LabFight_Desc",
-        "ConditionType1": "panslabFight.?1",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_PansRarityHeroNum": {
-        "EffectDesc": "Condi_PansRarityHeroNum_Desc",
-        "ConditionType1": "player.pansLab.points.?1.team.heroes.*.rarity",
-        "AchieveType1": "REACHCOUNT",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_BuildingLevelUp_GoldOre": {
-        "EffectDesc": "Condi_BuildingLevelUp_GoldOre_Desc",
-        "ConditionType1": "buildingLevelUp.?1",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_PansBuyHeroNum": {
-        "EffectDesc": "Condi_PansBuyHeroNum_Desc",
-        "ConditionType1": "pansLabBuyHero.?1",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_UseExp": {
-        "EffectDesc": "Condi_UseExp_Desc",
-        "ConditionType1": "useExpItem",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_BuildingLevelUpCount": {
-        "EffectDesc": "Condi_BuildingLevelUpCount_Desc",
-        "ConditionType1": "finishBuild",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_BuildingTotalNum_Camp": {
-        "EffectDesc": "Condi_BuildingTotalNum_Camp_Desc",
-        "ConditionType1": "player.villageData.stats.?1.totalNum",
-        "AchieveType1": "REACH",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_PansFightWin": {
-        "EffectDesc": "Condi_PansFightWin_Desc",
-        "ConditionType1": "pansLabFightWin.?1",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_BuildingMaxLevel_ExpOre": {
-        "EffectDesc": "Condi_BuildingMaxLevel_ExpOre_Desc",
-        "ConditionType1": "player.villageData.stats.?1.maxLevel",
-        "AchieveType1": "REACH",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_PansHeroLevelReachNum": {
-        "EffectDesc": "Condi_PansHeroLevelReachNum_Desc",
-        "ConditionType1": "player.pansLab.points.?1.team.heroes.*.level",
-        "AchieveType1": "REACHCOUNT",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_PansBuyTreasureNum": {
-        "EffectDesc": "Condi_PansBuyTreasureNum_Desc",
-        "ConditionType1": "pansLabBuyItem.?1",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_BuildingMainCity": {
-        "EffectDesc": "Condi_BuildingMainCity_Desc",
-        "ConditionType1": "player.villageData.baseLevel",
-        "AchieveType1": "REACH",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_BuildingMaxLevel_CardAcademy": {
-        "EffectDesc": "Condi_BuildingMaxLevel_CardAcademy_Desc",
-        "ConditionType1": "player.villageData.stats.?1.maxLevel",
-        "AchieveType1": "REACH",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_BuildingLevelUp_Camp": {
-        "EffectDesc": "Condi_BuildingLevelUp_Camp_Desc",
-        "ConditionType1": "buildingLevelUp.?1",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_ComposeHero": {
-        "EffectDesc": "Condi_ComposeHero_Desc",
-        "ConditionType1": "composeHero",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_PansUseTreasure": {
-        "EffectDesc": "Condi_PansUseTreasure_Desc",
-        "ConditionType1": "pansLabUseTreasure.?1?2",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_BuildingTotalNum_GoldOre": {
-        "EffectDesc": "Condi_BuildingTotalNum_GoldOre_Desc",
-        "ConditionType1": "player.villageData.stats.?1.totalNum",
-        "AchieveType1": "REACH",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_NormalLabEnter": {
-        "EffectDesc": "Condi_NormalLabEnter_Desc",
-        "ConditionType1": "panslabEnter.?1",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_BuildingMaxLevel": {
-        "EffectDesc": "Condi_BuildingMaxLevel_Desc",
-        "ConditionType1": "player.villageBuildings.stats.?1.maxLevel",
-        "AchieveType1": "REACH",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_LabFightWin": {
-        "EffectDesc": "Condi_LabFightWin_Desc",
-        "ConditionType1": "panslabFightWin.?1",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_BuildingCount": {
-        "EffectDesc": "Condi_BuildingCount_Desc",
-        "ConditionType1": "player.villageBuildings.stats.?1.count",
-        "AchieveType1": "REACH",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_BuildingSum": {
-        "EffectDesc": "Condi_BuildingSum_Desc",
-        "ConditionType1": "player.villageBuildings.buildings",
-        "AchieveType1": "SIZEREACH",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_InfinityLabEnter": {
-        "EffectDesc": "Condi_InfinityLabEnter_Desc",
-        "ConditionType1": "panslabEnter.?2",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_KernelSuite": {
-        "EffectDesc": "Condi_KernelSuite_Desc",
-        "ConditionType1": "kernelAnySuite",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_BuildingTotalNum_CrystalOre": {
-        "EffectDesc": "Condi_BuildingTotalNum_CrystalOre_Desc",
-        "ConditionType1": "player.villageData.stats.?1.totalNum",
-        "AchieveType1": "REACH",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_PansOpenTreasureBox": {
-        "EffectDesc": "Condi_PansOpenTreasureBox_Desc",
-        "ConditionType1": "pansLabOpenIBox.?1",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_BuildingComfort": {
-        "EffectDesc": "Condi_BuildingComfort_Desc",
-        "ConditionType1": "player.villageData.totalComfort",
-        "AchieveType1": "REACH",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_PansHeroUpNum": {
-        "EffectDesc": "Condi_PansHeroUpNum_Desc",
-        "ConditionType1": "pansLabHeroUp.?1",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_LabFinish": {
-        "EffectDesc": "Condi_LabFinish_Desc",
-        "ConditionType1": "panslabFinish",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_PansTreasureGet": {
-        "EffectDesc": "Condi_PansTreasureGet_Desc",
-        "ConditionType1": "pansLabTreasure.?1.?2",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_PansMasterCure": {
-        "EffectDesc": "Condi_PansMasterCure_Desc",
-        "ConditionType1": "pansLabCureMaster.?1",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_KernelLevel": {
-        "EffectDesc": "Condi_KernelLevel_Desc",
-        "ConditionType1": "player.kernels.*.level",
-        "AchieveType1": "REACHCOUNT",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_VillageBuildingMaxLevel": {
-        "EffectDesc": "Condi_VillageBuildingMaxLevel_Desc",
-        "ConditionType1": "player.villageData.stats.?1.maxLevel",
-        "AchieveType1": "REACH",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_PansGoldGet": {
-        "EffectDesc": "Condi_PansGoldGet_Desc",
-        "ConditionType1": "player.pansLab.points.?1.gold",
-        "AchieveType1": "INCREASE",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_BuildingLevelUp_CrystalOre": {
-        "EffectDesc": "Condi_BuildingLevelUp_CrystalOre_Desc",
-        "ConditionType1": "buildingLevelUp.?1",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_PansOpenHeroBox": {
-        "EffectDesc": "Condi_PansOpenHeroBox_Desc",
-        "ConditionType1": "pansLabOpenHBox.?1",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_BuildingLevelUp_ExpOre": {
-        "EffectDesc": "Condi_BuildingLevelUp_ExpOre_Desc",
-        "ConditionType1": "buildingLevelUp.?1",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_BuildingTotalNum_ExpOre": {
-        "EffectDesc": "Condi_BuildingTotalNum_ExpOre_Desc",
-        "ConditionType1": "player.villageData.stats.?1.totalNum",
-        "AchieveType1": "REACH",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_HeroGift": {
-        "EffectDesc": "Condi_HeroGift_Desc",
-        "ConditionType1": "heroGift",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_FriendPVP": {
-        "EffectDesc": "Condi_FriendPVP_Desc",
-        "ConditionType1": "friendPVP",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_HeroLoveNeed": {
-        "EffectDesc": "Condi_HeroLoveNeed_Desc",
-        "ConditionType1": "player.cultivation.heroes.?1.loveLevel",
-        "AchieveType1": "REACH",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_BuyGold": {
-        "EffectDesc": "Condi_BuyGold_Desc",
-        "ConditionType1": "buyGold",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_DiamondAchieve": {
-        "EffectDesc": "Condi_DiamondAchieve_Desc",
-        "ConditionType1": "player.bag.items.IR_Diamond.count",
-        "AchieveType1": "INCREASE",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_TowerWin": {
-        "EffectDesc": "Condi_TowerWin_Desc",
-        "ConditionType1": "towerWin",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_GoldReduce": {
-        "EffectDesc": "Condi_GoldReduce_Desc",
-        "ConditionType1": "player.bag.items.IR_Gold.count",
-        "AchieveType1": "REDUCE",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_winActBossStage": {
-        "EffectDesc": "Condi_winActBossStage_Desc",
-        "ConditionType1": "winActBossStage.?1",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_PowerCost": {
-        "EffectDesc": "Condi_PowerCost_Desc",
-        "ConditionType1": "player.bag.items.IR_Power.count",
-        "AchieveType1": "REDUCE",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_FinishTask": {
-        "EffectDesc": "Condi_FinishTask_Desc",
-        "ConditionType1": "finishTask",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_DailyTaskPoint": {
-        "EffectDesc": "Condi_DailyTaskPoint_Desc",
-        "ConditionType1": "player.taskCenter.dailyTaskManager.dailyAcPoint",
-        "AchieveType1": "INCREASE",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_Gift": {
-        "EffectDesc": "Condi_Gift_Desc",
-        "ConditionType1": "sendFriendGift",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_equipStarUp": {
-        "EffectDesc": "Condi_equipStarUp_Desc",
-        "ConditionType1": "equipStarUp",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_AchievementPoint": {
-        "EffectDesc": "Condi_AchievementPoint_Desc",
-        "ConditionType1": "player.achievementCenter.points.?1",
-        "AchieveType1": "REACH",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_CrusadeJoin": {
-        "EffectDesc": "Condi_CrusadeJoin_Desc",
-        "ConditionType1": "joinCrusade",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_ChengjiuDian": {
-        "EffectDesc": "Condi_ChengjiuDian_Desc",
-        "ConditionType1": "player.bag.items.IM_ChengjiuDian.count",
-        "AchieveType1": "INCREASE",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_HeroSoulLvUp": {
-        "EffectDesc": "Condi_HeroSoulLvUp_Desc",
-        "ConditionType1": "heroSoulLvUp",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_SummerChengjiuDian": {
-        "EffectDesc": "Condi_SummerChengjiuDian_Desc",
-        "ConditionType1": "player.bag.items.IM_SummerChengjiuDian.count",
-        "AchieveType1": "INCREASE",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_CheckConti": {
-        "EffectDesc": "Condi_CheckConti_Desc",
-        "ConditionType1": "player.checkin.contiCheckin",
-        "AchieveType1": "REACH",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_heroStarUp": {
-        "EffectDesc": "Condi_heroStarUp_Desc",
-        "ConditionType1": "heroStarUp",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_HeroLoveLevel": {
-        "EffectDesc": "Condi_HeroLoveLevel_Desc",
-        "ConditionType1": "player.cultivation.heroes.*.loveLevel",
-        "AchieveType1": "REACHCOUNT",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_QualityCollect": {
-        "EffectDesc": "Condi_QualityCollect_Desc",
-        "ConditionType1": "player.cultivation.heroes.*.quality",
-        "AchieveType1": "REACHCOUNT",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_playerEquipXcountYlevel": {
-        "EffectDesc": "Condi_playerEquipXcountYlevel_Desc",
-        "ConditionType1": "player.equips.*.level",
-        "AchieveType1": "REACHCOUNT",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_CrusadeWin": {
-        "EffectDesc": "Condi_CrusadeWin_Desc",
-        "ConditionType1": "crusadeWin",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_BuyStamina": {
-        "EffectDesc": "Condi_BuyStamina_Desc",
-        "ConditionType1": "buyStamina",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_playerEquipXcountYstar": {
-        "EffectDesc": "Condi_playerEquipXcountYstar_Desc",
-        "ConditionType1": "player.cultivation.heroes.*.equips.*.star",
-        "AchieveType1": "REACHCOUNT",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_TodayLogin": {
-        "EffectDesc": "Condi_TodayLogin_Desc",
-        "ConditionType1": "todayLogin",
-        "AchieveType1": "TOTALLOGIN",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_Login": {
-        "EffectDesc": "Condi_Login_Desc",
-        "ConditionType1": "todayLogin",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_HeroStar": {
-        "EffectDesc": "Condi_HeroStar_Desc",
-        "ConditionType1": "player.cultivation.heroes.*.star",
-        "AchieveType1": "REACHCOUNT",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_HeroCollectSpecial": {
-        "EffectDesc": "Condi_HeroCollectSpecial_Desc",
-        "ConditionType1": "player.cultivation.heroes.?1.level",
-        "AchieveType1": "REACH",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_HeroDate": {
-        "EffectDesc": "Condi_HeroDate_Desc",
-        "ConditionType1": "heroDate",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_MapJoin": {
-        "EffectDesc": "Condi_MapJoin_Desc",
-        "ConditionType1": "joinMap",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_FriendCount": {
-        "EffectDesc": "Condi_FriendCount_Desc",
-        "ConditionType1": "player.friendCount",
-        "AchieveType1": "REACH",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_EquipQualitySum": {
-        "EffectDesc": "Condi_EquipQualitySum_Desc",
-        "ConditionType1": "player.cultivation.heroes.*.equips.*.quality",
-        "AchieveType1": "REACHCOUNT",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_WuXiuHuiChengjiuDian": {
-        "EffectDesc": "Condi_WuXiuHuiChengjiuDian_Desc",
-        "ConditionType1": "player.bag.items.IM_WuXiuHuiChengjiuDian.count",
-        "AchieveType1": "INCREASE",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_StageStarSum": {
-        "EffectDesc": "Condi_StageStarSum_Desc",
-        "ConditionType1": "player.stages.*.stageMaps.*.points.*.stars",
-        "AchieveType1": "SIZESUM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_DiamondReduce": {
-        "EffectDesc": "Condi_DiamondReduce_Desc",
-        "ConditionType1": "player.bag.items.IR_Diamond.count",
-        "AchieveType1": "REDUCE",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_PlayerLevel": {
-        "EffectDesc": "Condi_PlayerLevel_Desc",
-        "ConditionType1": "player.level",
-        "AchieveType1": "REACH",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_HeroInnerPageLvUp": {
-        "EffectDesc": "Condi_HeroInnerPageLvUp_Desc",
-        "ConditionType1": "heroInnerPageLvUp",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_HeroLikeGift": {
-        "EffectDesc": "Condi_HeroLikeGift_Desc",
-        "ConditionType1": "heroLikeGift",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_ExploreMapTimes": {
-        "EffectDesc": "Condi_ExploreMapTimes_Desc",
-        "ConditionType1": "mapFinish",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_LoginTotal": {
-        "EffectDesc": "Condi_LoginTotal_Desc",
-        "ConditionType1": "player.checkin.totalLogin",
-        "AchieveType1": "REACH",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_ContiLoginTotal": {
-        "EffectDesc": "Condi_ContiLoginTotal_Desc",
-        "ConditionType1": "player.checkin.contiLogin",
-        "AchieveType1": "REACH",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_Getheroeslevel": {
-        "EffectDesc": "Condi_Getheroeslevel_Desc",
-        "ConditionType1": "player.cultivation.heroes.*.level",
-        "AchieveType1": "REACHCOUNT",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_EquipLevelUp": {
-        "EffectDesc": "Condi_EquipLevelUp_Desc",
-        "ConditionType1": "equipLevelUp",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_HeroLevelUp": {
-        "EffectDesc": "Condi_HeroLevelUp_Desc",
-        "ConditionType1": "heroLevelUp",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_HeroRarity": {
-        "EffectDesc": "Condi_HeroRarity_Desc",
-        "ConditionType1": "player.cultivation.heroes.*.rarity",
-        "AchieveType1": "REACHCOUNT",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_TouchDogHead": {
-        "EffectDesc": "Condi_TouchDogHead_Desc",
-        "ConditionType1": "touchDogHead",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_EquipIntensify": {
-        "EffectDesc": "Condi_EquipIntensify_Desc",
-        "ConditionType1": "equipIntensify",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_FinishDailyTask": {
-        "EffectDesc": "Condi_FinishDailyTask_Desc",
-        "ConditionType1": "finishDailyTask",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_YHeroSouXlLvSum": {
-        "EffectDesc": "Condi_YHeroSouXlLvSum_Desc",
-        "ConditionType1": "player.cultivation.heroes.*.soulsLvSum",
-        "AchieveType1": "REACHCOUNT",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_YHeroesXInnerAttrPage": {
-        "EffectDesc": "Condi_YHeroesXInnerAttrPage_Desc",
-        "ConditionType1": "player.cultivation.heroes.*.innerLevel",
-        "AchieveType1": "REACHCOUNT",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_HeroCollectStar": {
-        "EffectDesc": "Condi_HeroCollectStar_Desc",
-        "ConditionType1": "player.cultivation.heroes.?1.star",
-        "AchieveType1": "REACH",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_winActStage": {
-        "EffectDesc": "Condi_winActStage_Desc",
-        "ConditionType1": "winActStage.?1",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_BuyCrystal": {
-        "EffectDesc": "Condi_BuyCrystal_Desc",
-        "ConditionType1": "buyCrystal",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_CrystalAchieve": {
-        "EffectDesc": "Condi_CrystalAchieve_Desc",
-        "ConditionType1": "player.bag.items.IR_Crystal.count",
-        "AchieveType1": "INCREASE",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_dailyTaskBoxReward": {
-        "EffectDesc": "Condi_dailyTaskBoxReward_Desc",
-        "ConditionType1": "dailyTaskBoxReward.?1",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_CrystalReduce": {
-        "EffectDesc": "Condi_CrystalReduce_Desc",
-        "ConditionType1": "player.bag.items.IR_Crystal.count",
-        "AchieveType1": "REDUCE",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_HeroSkillReach": {
-        "EffectDesc": "Condi_HeroSkillReach_Desc",
-        "ConditionType1": "player.cultivation.heroes.*.skills.*.level",
-        "AchieveType1": "REACHCOUNT",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_HeroCollect": {
-        "EffectDesc": "Condi_HeroCollect_Desc",
-        "ConditionType1": "player.cultivation.heroes.*.level",
-        "AchieveType1": "REACHCOUNT",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_GoldAchieve": {
-        "EffectDesc": "Condi_GoldAchieve_Desc",
-        "ConditionType1": "player.bag.items.IR_Gold.count",
-        "AchieveType1": "INCREASE",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_HeroQualityUp": {
-        "EffectDesc": "Condi_HeroQualityUp_Desc",
-        "ConditionType1": "heroQualityUp",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_PlayerCharge": {
-        "EffectDesc": "Condi_PlayerCharge_Desc",
-        "ConditionType1": "player.mallInfo.rechargeDiamond",
-        "AchieveType1": "INCREASE",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_ZuoHeChengjiuDian": {
-        "EffectDesc": "Condi_ZuoHeChengjiuDian_Desc",
-        "ConditionType1": "player.bag.items.IM_ZuoHeChengjiuDian.count",
-        "AchieveType1": "INCREASE",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_AhalloweenStageStarSum": {
-        "EffectDesc": "Condi_AhalloweenStageStarSum_Desc",
-        "ConditionType1": "starCount.?1",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_HeroRarityOver": {
-        "EffectDesc": "Condi_HeroRarityOver_Desc",
-        "ConditionType1": "player.cultivation.heroes.*.rarity",
-        "AchieveType1": "REACHCOUNT",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_LoginTaskRegister": {
-        "EffectDesc": "Condi_LoginTaskRegister_Desc",
-        "ConditionType1": "player.checkin.totalLogin",
-        "AchieveType1": "INCREASE",
-        "ConditionType2": "",
-        "AchieveType2": ""
+        "EffectDesc": "Condi_ActivityTask_Desc"
     },
     "Condi_AddFriend": {
-        "EffectDesc": "Condi_AddFriend_Desc",
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
         "ConditionType1": "addFriend",
-        "AchieveType1": "CUSTOM",
         "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_HeroDislikeGift": {
-        "EffectDesc": "Condi_HeroDislikeGift_Desc",
-        "ConditionType1": "heroDislikeGift",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_CheckinSum": {
-        "EffectDesc": "Condi_CheckinSum_Desc",
-        "ConditionType1": "player.checkin.checkinSum",
-        "AchieveType1": "REACH",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_TowerEnter": {
-        "EffectDesc": "Condi_TowerEnter_Desc",
-        "ConditionType1": "towerEnter",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
-    },
-    "Condi_HeroSkillUp": {
-        "EffectDesc": "Condi_HeroSkillUp_Desc",
-        "ConditionType1": "skillLevelUp",
-        "AchieveType1": "CUSTOM",
-        "ConditionType2": "",
-        "AchieveType2": ""
+        "EffectDesc": "Condi_AddFriend_Desc"
     },
     "Condi_AhalloweenExchangeAchieve": {
-        "EffectDesc": "Condi_AhalloweenExchangeAchieve_Desc",
-        "ConditionType1": "player.bag.items.IM_HalloweenExchange_4.count",
         "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_HalloweenExchange_4.count",
         "ConditionType2": "",
-        "AchieveType2": ""
+        "EffectDesc": "Condi_AhalloweenExchangeAchieve_Desc"
+    },
+    "Condi_AhalloweenStageStarSum": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "starCount.?1",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_AhalloweenStageStarSum_Desc"
+    },
+    "Condi_ArenaCurStreakWin": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.playerArena.curStreakWin",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_ArenaCurStreakWin_Desc"
+    },
+    "Condi_ArenaMaxStreakWin": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.playerArena.maxStreakWin",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_ArenaMaxStreakWin_Desc"
+    },
+    "Condi_AttendArena": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "attendArena",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_AttendArena_Desc"
+    },
+    "Condi_AuraUp": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "masterAuraUp",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_AuraUp_Desc"
+    },
+    "Condi_BlockStarSum": {
+        "AchieveType1": "SIZESUM",
+        "AchieveType2": "",
+        "ConditionType1": "player.stages.?1.stageMaps.*.points.*.stars",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_BlockStarSum_Desc"
+    },
+    "Condi_BuildingComfort": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.villageData.totalComfort",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_BuildingComfort_Desc"
+    },
+    "Condi_BuildingCount": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.villageBuildings.stats.?1.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_BuildingCount_Desc"
+    },
+    "Condi_BuildingLevelUpCount": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "finishBuild",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_BuildingLevelUpCount_Desc"
+    },
+    "Condi_BuildingLevelUp_Camp": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "buildingLevelUp.?1",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_BuildingLevelUp_Camp_Desc"
+    },
+    "Condi_BuildingLevelUp_CrystalOre": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "buildingLevelUp.?1",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_BuildingLevelUp_CrystalOre_Desc"
+    },
+    "Condi_BuildingLevelUp_ExpOre": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "buildingLevelUp.?1",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_BuildingLevelUp_ExpOre_Desc"
+    },
+    "Condi_BuildingLevelUp_GoldOre": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "buildingLevelUp.?1",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_BuildingLevelUp_GoldOre_Desc"
+    },
+    "Condi_BuildingMainCity": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.villageData.baseLevel",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_BuildingMainCity_Desc"
+    },
+    "Condi_BuildingMaxLevel": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.villageBuildings.stats.?1.maxLevel",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_BuildingMaxLevel_Desc"
+    },
+    "Condi_BuildingMaxLevel_Camp": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.villageData.stats.?1.maxLevel",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_BuildingMaxLevel_Camp_Desc"
+    },
+    "Condi_BuildingMaxLevel_CardAcademy": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.villageData.stats.?1.maxLevel",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_BuildingMaxLevel_CardAcademy_Desc"
+    },
+    "Condi_BuildingMaxLevel_CrystalOre": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.villageData.stats.?1.maxLevel",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_BuildingMaxLevel_CrystalOre_Desc"
+    },
+    "Condi_BuildingMaxLevel_ExpOre": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.villageData.stats.?1.maxLevel",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_BuildingMaxLevel_ExpOre_Desc"
+    },
+    "Condi_BuildingMaxLevel_GoldOre": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.villageData.stats.?1.maxLevel",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_BuildingMaxLevel_GoldOre_Desc"
+    },
+    "Condi_BuildingResource": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "collectResource",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_BuildingResource_Desc"
+    },
+    "Condi_BuildingSum": {
+        "AchieveType1": "SIZEREACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.villageBuildings.buildings",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_BuildingSum_Desc"
+    },
+    "Condi_BuildingTotalNum_All": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.villageData.stats.?1.totalNum",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_BuildingTotalNum_All_Desc"
+    },
+    "Condi_BuildingTotalNum_Camp": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.villageData.stats.?1.totalNum",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_BuildingTotalNum_Camp_Desc"
+    },
+    "Condi_BuildingTotalNum_CrystalOre": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.villageData.stats.?1.totalNum",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_BuildingTotalNum_CrystalOre_Desc"
+    },
+    "Condi_BuildingTotalNum_ExpOre": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.villageData.stats.?1.totalNum",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_BuildingTotalNum_ExpOre_Desc"
+    },
+    "Condi_BuildingTotalNum_GoldOre": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.villageData.stats.?1.totalNum",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_BuildingTotalNum_GoldOre_Desc"
+    },
+    "Condi_BuyCrystal": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "buyCrystal",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_BuyCrystal_Desc"
+    },
+    "Condi_BuyGold": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "buyGold",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_BuyGold_Desc"
+    },
+    "Condi_BuyStamina": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "buyStamina",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_BuyStamina_Desc"
+    },
+    "Condi_CheckConti": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.checkin.contiCheckin",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_CheckConti_Desc"
+    },
+    "Condi_CheckinSum": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.checkin.checkinSum",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_CheckinSum_Desc"
+    },
+    "Condi_ChengjiuDian": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_ChengjiuDian.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_ChengjiuDian_Desc"
+    },
+    "Condi_ClubDonation": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "clubDonation",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_ClubDonation_Desc"
+    },
+    "Condi_CommonStage": {
+        "AchieveType1": "SIZEREACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.stages.NORMAL.stageMaps.?1.points.?2.stars",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_CommonStage_Desc"
+    },
+    "Condi_CommonStageTimes": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "attendCommonStage",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_CommonStageTimes_Desc"
+    },
+    "Condi_ComposeHero": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "composeHero",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_ComposeHero_Desc"
+    },
+    "Condi_ContiLoginTotal": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.checkin.contiLogin",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_ContiLoginTotal_Desc"
+    },
+    "Condi_CrusadeJoin": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "joinCrusade",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_CrusadeJoin_Desc"
+    },
+    "Condi_CrusadeWin": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "crusadeWin",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_CrusadeWin_Desc"
+    },
+    "Condi_CrystalAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IR_Crystal.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_CrystalAchieve_Desc"
+    },
+    "Condi_CrystalReduce": {
+        "AchieveType1": "REDUCE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IR_Crystal.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_CrystalReduce_Desc"
+    },
+    "Condi_DailyArenaScore": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.playerArena.dailyScore",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_DailyArenaScore_Desc"
+    },
+    "Condi_DailyTaskPoint": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.taskCenter.dailyTaskManager.dailyAcPoint",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_DailyTaskPoint_Desc"
+    },
+    "Condi_DiamondAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IR_Diamond.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_DiamondAchieve_Desc"
+    },
+    "Condi_DiamondDraw": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "drawCardWithDiamond",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_DiamondDraw_Desc"
+    },
+    "Condi_DiamondDrawTen": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "drawWithDiamondTen",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_DiamondDrawTen_Desc"
+    },
+    "Condi_DiamondReduce": {
+        "AchieveType1": "REDUCE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IR_Diamond.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_DiamondReduce_Desc"
+    },
+    "Condi_DrawEquip": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "drawEquip",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_DrawEquip_Desc"
+    },
+    "Condi_DrawNoSSR": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.drawInfo.contiNoSSR",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_DrawNoSSR_Desc"
+    },
+    "Condi_DrawRarity": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.drawInfo.heroRarityStat.?1",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_DrawRarity_Desc"
+    },
+    "Condi_DrawSame": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.drawInfo.maxSameHeroes",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_DrawSame_Desc"
+    },
+    "Condi_DrawTimeReward": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "drawTimeReward",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_DrawTimeReward_Desc"
+    },
+    "Condi_EliteStage": {
+        "AchieveType1": "SIZEREACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.stages.ELITE.stageMaps.?1.points.?2.stars",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_EliteStage_Desc"
+    },
+    "Condi_EliteStageStar": {
+        "AchieveType1": "SIZESUM",
+        "AchieveType2": "",
+        "ConditionType1": "player.stages.ELITE.stageMaps.*.points.*.stars",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_EliteStageStar_Desc"
+    },
+    "Condi_EliteStageTimes": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "attendEliteStage",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_EliteStageTimes_Desc"
+    },
+    "Condi_EmblemQuality": {
+        "AchieveType1": "REACHCOUNT",
+        "AchieveType2": "",
+        "ConditionType1": "player.cultivation.emblems.*.quality",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_EmblemQuality_Desc"
+    },
+    "Condi_EquipIntensify": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "equipIntensify",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_EquipIntensify_Desc"
+    },
+    "Condi_EquipLevelUp": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "equipLevelUp",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_EquipLevelUp_Desc"
+    },
+    "Condi_EquipQualitySum": {
+        "AchieveType1": "REACHCOUNT",
+        "AchieveType2": "",
+        "ConditionType1": "player.cultivation.heroes.*.equips.*.quality",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_EquipQualitySum_Desc"
+    },
+    "Condi_ExploreMap": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "mapFinishPoint.?1",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_ExploreMap_Desc"
+    },
+    "Condi_ExploreMapCase": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "mapFinishCase.?1.?2.?3",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_ExploreMapCase_Desc"
+    },
+    "Condi_ExploreMapTimes": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "mapFinish",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_ExploreMapTimes_Desc"
+    },
+    "Condi_FinishDailyTask": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "finishDailyTask",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_FinishDailyTask_Desc"
+    },
+    "Condi_FinishTask": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "finishTask",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_FinishTask_Desc"
+    },
+    "Condi_FriendCount": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.friendCount",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_FriendCount_Desc"
+    },
+    "Condi_FriendPVP": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "friendPVP",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_FriendPVP_Desc"
+    },
+    "Condi_Getheroeslevel": {
+        "AchieveType1": "REACHCOUNT",
+        "AchieveType2": "",
+        "ConditionType1": "player.cultivation.heroes.*.level",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_Getheroeslevel_Desc"
+    },
+    "Condi_Gift": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "sendFriendGift",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_Gift_Desc"
+    },
+    "Condi_GoldAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IR_Gold.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_GoldAchieve_Desc"
+    },
+    "Condi_GoldDraw": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "drawCardWithGold",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_GoldDraw_Desc"
+    },
+    "Condi_GoldDrawTen": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "drawWithGoldTen",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_GoldDrawTen_Desc"
+    },
+    "Condi_GoldReduce": {
+        "AchieveType1": "REDUCE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IR_Gold.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_GoldReduce_Desc"
+    },
+    "Condi_HeroCollect": {
+        "AchieveType1": "REACHCOUNT",
+        "AchieveType2": "",
+        "ConditionType1": "player.cultivation.heroes.*.level",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_HeroCollect_Desc"
+    },
+    "Condi_HeroCollectSpecial": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.cultivation.heroes.?1.level",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_HeroCollectSpecial_Desc"
+    },
+    "Condi_HeroCollectStar": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.cultivation.heroes.?1.star",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_HeroCollectStar_Desc"
+    },
+    "Condi_HeroDate": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "heroDate",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_HeroDate_Desc"
+    },
+    "Condi_HeroDislikeGift": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "heroDislikeGift",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_HeroDislikeGift_Desc"
+    },
+    "Condi_HeroGift": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "heroGift",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_HeroGift_Desc"
+    },
+    "Condi_HeroInnerPageLvUp": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "heroInnerPageLvUp",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_HeroInnerPageLvUp_Desc"
+    },
+    "Condi_HeroLevelUp": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "heroLevelUp",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_HeroLevelUp_Desc"
+    },
+    "Condi_HeroLikeGift": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "heroLikeGift",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_HeroLikeGift_Desc"
+    },
+    "Condi_HeroLoveLevel": {
+        "AchieveType1": "REACHCOUNT",
+        "AchieveType2": "",
+        "ConditionType1": "player.cultivation.heroes.*.loveLevel",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_HeroLoveLevel_Desc"
+    },
+    "Condi_HeroLoveNeed": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.cultivation.heroes.?1.loveLevel",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_HeroLoveNeed_Desc"
+    },
+    "Condi_HeroQualityUp": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "heroQualityUp",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_HeroQualityUp_Desc"
+    },
+    "Condi_HeroRarity": {
+        "AchieveType1": "REACHCOUNT",
+        "AchieveType2": "",
+        "ConditionType1": "player.cultivation.heroes.*.rarity",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_HeroRarity_Desc"
+    },
+    "Condi_HeroRarityOver": {
+        "AchieveType1": "REACHCOUNT",
+        "AchieveType2": "",
+        "ConditionType1": "player.cultivation.heroes.*.rarity",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_HeroRarityOver_Desc"
+    },
+    "Condi_HeroSkillReach": {
+        "AchieveType1": "REACHCOUNT",
+        "AchieveType2": "",
+        "ConditionType1": "player.cultivation.heroes.*.skills.*.level",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_HeroSkillReach_Desc"
+    },
+    "Condi_HeroSkillUp": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "skillLevelUp",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_HeroSkillUp_Desc"
+    },
+    "Condi_HeroSoulLvUp": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "heroSoulLvUp",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_HeroSoulLvUp_Desc"
+    },
+    "Condi_HeroStar": {
+        "AchieveType1": "REACHCOUNT",
+        "AchieveType2": "",
+        "ConditionType1": "player.cultivation.heroes.*.star",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_HeroStar_Desc"
+    },
+    "Condi_HeroStoryPoint": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "winHeroStory",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_HeroStoryPoint_Desc"
+    },
+    "Condi_InfinityLabEnter": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "panslabEnter.?2",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_InfinityLabEnter_Desc"
+    },
+    "Condi_JoinClub": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "hasJoinedClub",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_JoinClub_Desc"
+    },
+    "Condi_KerneEquip": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "kernelSuite.?1",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_KerneEquip_Desc"
+    },
+    "Condi_KernelLevel": {
+        "AchieveType1": "REACHCOUNT",
+        "AchieveType2": "",
+        "ConditionType1": "player.kernels.*.level",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_KernelLevel_Desc"
+    },
+    "Condi_KernelSuite": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "kernelAnySuite",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_KernelSuite_Desc"
+    },
+    "Condi_LabFight": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "panslabFight.?1",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_LabFight_Desc"
+    },
+    "Condi_LabFightWin": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "panslabFightWin.?1",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_LabFightWin_Desc"
+    },
+    "Condi_LabFinish": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "panslabFinish",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_LabFinish_Desc"
+    },
+    "Condi_Login": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "todayLogin",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_Login_Desc"
+    },
+    "Condi_LoginTaskRegister": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.checkin.totalLogin",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_LoginTaskRegister_Desc"
+    },
+    "Condi_LoginTotal": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.checkin.totalLogin",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_LoginTotal_Desc"
+    },
+    "Condi_MapAllDP": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.worldMap.totalDp",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_MapAllDP_Desc"
+    },
+    "Condi_MapBattle": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "mapFight.?1",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_MapBattle_Desc"
+    },
+    "Condi_MapBuy": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "mapShopBuy.?1",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_MapBuy_Desc"
+    },
+    "Condi_MapChapterBattleCount": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "mapGroupFight.?1",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_MapChapterBattleCount_Desc"
+    },
+    "Condi_MapDPComplete": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "mapDPFinish.?1.?2",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_MapDPComplete_Desc"
+    },
+    "Condi_MapDPCount": {
+        "AchieveType1": "REACHCOUNT",
+        "AchieveType2": "",
+        "ConditionType1": "player.worldMap.groups.*.dp",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_MapDPCount_Desc"
+    },
+    "Condi_MapDPReach": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.worldMap.groups.?1.dp",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_MapDPReach_Desc"
+    },
+    "Condi_MapExploreRate": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.worldMap.points.?1.progressPercent",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_MapExploreRate_Desc"
+    },
+    "Condi_MapFight": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "mapAnyFight",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_MapFight_Desc"
+    },
+    "Condi_MapFightWin": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "mapFightWin",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_MapFightWin_Desc"
+    },
+    "Condi_MapFinish": {
+        "AchieveType1": "REACHCOUNT",
+        "AchieveType2": "",
+        "ConditionType1": "player.worldMap.points.*.mapTaskCount",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_MapFinish_Desc"
+    },
+    "Condi_MapJoin": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "joinMap",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_MapJoin_Desc"
+    },
+    "Condi_MapWin": {
+        "AchieveType1": "REACHCOUNT",
+        "AchieveType2": "",
+        "ConditionType1": "player.worldMap.points.*.mapTaskCount",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_MapWin_Desc"
+    },
+    "Condi_MasterCollect": {
+        "AchieveType1": "REACHCOUNT",
+        "AchieveType2": "",
+        "ConditionType1": "player.cultivation.masters.*.star",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_MasterCollect_Desc"
+    },
+    "Condi_MasterEmblemUp": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "masterEmblemUp",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_MasterEmblemUp_Desc"
+    },
+    "Condi_MasterKernelUp": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "masterKernelUp",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_MasterKernelUp_Desc"
+    },
+    "Condi_MasterSkillUp": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "masterSkillUp",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_MasterSkillUp_Desc"
+    },
+    "Condi_MasterStarReach": {
+        "AchieveType1": "REACHCOUNT",
+        "AchieveType2": "",
+        "ConditionType1": "player.cultivation.masters.*.star",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_MasterStarReach_Desc"
+    },
+    "Condi_MasterStarSum": {
+        "AchieveType1": "SUM",
+        "AchieveType2": "",
+        "ConditionType1": "player.cultivation.masters.*.star",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_MasterStarSum_Desc"
+    },
+    "Condi_MasterStarUp": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "masterStarUp",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_MasterStarUp_Desc"
+    },
+    "Condi_NormalLabEnter": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "panslabEnter.?1",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_NormalLabEnter_Desc"
+    },
+    "Condi_PansBuyHeroNum": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "pansLabBuyHero.?1",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_PansBuyHeroNum_Desc"
+    },
+    "Condi_PansBuyTreasureNum": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "pansLabBuyItem.?1",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_PansBuyTreasureNum_Desc"
+    },
+    "Condi_PansFightWin": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "pansLabFightWin.?1",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_PansFightWin_Desc"
+    },
+    "Condi_PansGoldGet": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.pansLab.points.?1.gold",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_PansGoldGet_Desc"
+    },
+    "Condi_PansHeroLevelReachNum": {
+        "AchieveType1": "REACHCOUNT",
+        "AchieveType2": "",
+        "ConditionType1": "player.pansLab.points.?1.team.heroes.*.level",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_PansHeroLevelReachNum_Desc"
+    },
+    "Condi_PansHeroUpNum": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "pansLabHeroUp.?1",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_PansHeroUpNum_Desc"
+    },
+    "Condi_PansMasterCure": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "pansLabCureMaster.?1",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_PansMasterCure_Desc"
+    },
+    "Condi_PansOpenHeroBox": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "pansLabOpenHBox.?1",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_PansOpenHeroBox_Desc"
+    },
+    "Condi_PansOpenTreasureBox": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "pansLabOpenIBox.?1",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_PansOpenTreasureBox_Desc"
+    },
+    "Condi_PansRarityHeroNum": {
+        "AchieveType1": "REACHCOUNT",
+        "AchieveType2": "",
+        "ConditionType1": "player.pansLab.points.?1.team.heroes.*.rarity",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_PansRarityHeroNum_Desc"
+    },
+    "Condi_PansTreasureGet": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "pansLabTreasure.?1.?2",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_PansTreasureGet_Desc"
+    },
+    "Condi_PansUseTreasure": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "pansLabUseTreasure.?1?2",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_PansUseTreasure_Desc"
+    },
+    "Condi_PansWInPoint": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "pansLabFightWInPoint,?1.?2",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_PansWInPoint_Desc"
+    },
+    "Condi_PlayerCharge": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.mallInfo.rechargeDiamond",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_PlayerCharge_Desc"
+    },
+    "Condi_PlayerLevel": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.level",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_PlayerLevel_Desc"
+    },
+    "Condi_PowerCost": {
+        "AchieveType1": "REDUCE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IR_Power.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_PowerCost_Desc"
+    },
+    "Condi_PracticeWin": {
+        "AchieveType1": "REACHCOUNT",
+        "AchieveType2": "",
+        "ConditionType1": "player.practice.stageMaps.?1.stagePoints.*.passed",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_PracticeWin_Desc"
+    },
+    "Condi_QualityCollect": {
+        "AchieveType1": "REACHCOUNT",
+        "AchieveType2": "",
+        "ConditionType1": "player.cultivation.heroes.*.quality",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_QualityCollect_Desc"
+    },
+    "Condi_RelationLevelSum": {
+        "AchieveType1": "REACHCOUNT",
+        "AchieveType2": "",
+        "ConditionType1": "player.cultivation.heroes.*.relations.?1.level",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_RelationLevelSum_Desc"
+    },
+    "Condi_RelationUnlock": {
+        "AchieveType1": "REACHCOUNT",
+        "AchieveType2": "",
+        "ConditionType1": "player.cultivation.heroes.*.relations.*.lock",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_RelationUnlock_Desc"
+    },
+    "Condi_ResourceStage": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "attendResourceStage",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_ResourceStage_Desc"
+    },
+    "Condi_SpStageAttend": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "attendTargetResStage.?1",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_SpStageAttend_Desc"
+    },
+    "Condi_SpStagePoint": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.spStages.?1.pointInfos.?2.progressInt",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_SpStagePoint_Desc"
+    },
+    "Condi_StageStarSum": {
+        "AchieveType1": "SIZESUM",
+        "AchieveType2": "",
+        "ConditionType1": "player.stages.*.stageMaps.*.points.*.stars",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_StageStarSum_Desc"
+    },
+    "Condi_SumArenaScore": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.playerArena.dailyScore",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_SumArenaScore_Desc"
+    },
+    "Condi_SummerChengjiuDian": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_SummerChengjiuDian.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_SummerChengjiuDian_Desc"
+    },
+    "Condi_TargetResStageLevel": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "winResourceStage.?1.?2",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_TargetResStageLevel_Desc"
+    },
+    "Condi_TodayLogin": {
+        "AchieveType1": "TOTALLOGIN",
+        "AchieveType2": "",
+        "ConditionType1": "todayLogin",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_TodayLogin_Desc"
+    },
+    "Condi_TouchDogHead": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "touchDogHead",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_TouchDogHead_Desc"
+    },
+    "Condi_TowerEnter": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "towerEnter",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_TowerEnter_Desc"
+    },
+    "Condi_TowerWin": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "towerWin",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_TowerWin_Desc"
+    },
+    "Condi_UseExp": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "useExpItem",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_UseExp_Desc"
+    },
+    "Condi_VillageBuildingMaxLevel": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.villageData.stats.?1.maxLevel",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_VillageBuildingMaxLevel_Desc"
+    },
+    "Condi_WinCommonStage": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "winCommonStage",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_WinCommonStage_Desc"
+    },
+    "Condi_WinEliteStage": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "winEliteStage",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_WinEliteStage_Desc"
+    },
+    "Condi_WuXiuHuiChengjiuDian": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_WuXiuHuiChengjiuDian.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_WuXiuHuiChengjiuDian_Desc"
+    },
+    "Condi_YHeroSouXlLvSum": {
+        "AchieveType1": "REACHCOUNT",
+        "AchieveType2": "",
+        "ConditionType1": "player.cultivation.heroes.*.soulsLvSum",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_YHeroSouXlLvSum_Desc"
+    },
+    "Condi_YHeroesXInnerAttrPage": {
+        "AchieveType1": "REACHCOUNT",
+        "AchieveType2": "",
+        "ConditionType1": "player.cultivation.heroes.*.innerLevel",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_YHeroesXInnerAttrPage_Desc"
+    },
+    "Condi_ZuoHeChengjiuDian": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_ZuoHeChengjiuDian.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_ZuoHeChengjiuDian_Desc"
+    },
+    "Condi_attendTargetResStage": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "attendTargetResStage.?1",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_attendTargetResStage_Desc"
+    },
+    "Condi_buyPheonixBag": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "buyProduct.?1",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_buyPheonixBag_Desc"
+    },
+    "Condi_dailyTaskBoxReward": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "dailyTaskBoxReward.?1",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_dailyTaskBoxReward_Desc"
+    },
+    "Condi_drawEquipTen": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "drawEquipTen",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_drawEquipTen_Desc"
+    },
+    "Condi_equipStarUp": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "equipStarUp",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_equipStarUp_Desc"
+    },
+    "Condi_getProgressBox": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "getProgressBox.?1",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_getProgressBox_Desc"
+    },
+    "Condi_heroStarUp": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "heroStarUp",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_heroStarUp_Desc"
+    },
+    "Condi_joinTournament": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "joinTournament",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_joinTournament_Desc"
+    },
+    "Condi_playerEquipXcountYlevel": {
+        "AchieveType1": "REACHCOUNT",
+        "AchieveType2": "",
+        "ConditionType1": "player.equips.*.level",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_playerEquipXcountYlevel_Desc"
+    },
+    "Condi_playerEquipXcountYstar": {
+        "AchieveType1": "REACHCOUNT",
+        "AchieveType2": "",
+        "ConditionType1": "player.cultivation.heroes.*.equips.*.star",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_playerEquipXcountYstar_Desc"
+    },
+    "Condi_playerIR_Arenacount": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IR_Arena.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_playerIR_Arenacount_Desc"
+    },
+    "Condi_playerIR_KOFcount": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IR_KON.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_playerIR_KOFcount_Desc"
+    },
+    "Condi_playerarenalastRank": {
+        "AchieveType1": "MIN",
+        "AchieveType2": "",
+        "ConditionType1": "player.playerArena.lastRank",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_playerarenalastRank_Desc"
+    },
+    "Condi_playerpracticestage": {
+        "AchieveType1": "REACHCOUNT",
+        "AchieveType2": "",
+        "ConditionType1": "player.practice.stageMaps.*.stagePoints.*.passed",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_playerpracticestage_Desc"
+    },
+    "Condi_playerpracticestagestar": {
+        "AchieveType1": "SUM",
+        "AchieveType2": "",
+        "ConditionType1": "player.practice.stageMaps.*.stagePoints.*.stars",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_playerpracticestagestar_Desc"
+    },
+    "Condi_shopBuy": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "shopBuy.?1",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_shopBuy_Desc"
+    },
+    "Condi_shopCost": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "shopCost.?1.?2",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_shopCost_Desc"
+    },
+    "Condi_shopRefresh": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "shopRefresh.?1",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_shopRefresh_Desc"
+    },
+    "Condi_transmuteTrip": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "allTask.?1",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_transmuteTrip_Desc"
+    },
+    "Condi_winActBossStage": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "winActBossStage.?1",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_winActBossStage_Desc"
+    },
+    "Condi_winActStage": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "winActStage.?1",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_winActStage_Desc"
+    },
+    "Condi_winArenaChallenge": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "winArenaChallenge",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_winArenaChallenge_Desc"
     }
 }

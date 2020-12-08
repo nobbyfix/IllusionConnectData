@@ -1,173 +1,173 @@
 {
-    "TestItem_10": {
-        "Name": "TestItem_10_Name",
+    "TestItem_1": {
         "Icon": "icon_baowu",
-        "ShowRank": 10,
-        "IsUse": 1,
-        "SkillAttrEffect": "",
-        "SkillSpecialEffect": "",
+        "IsUse": 0,
+        "Name": "TestItem_1_Name",
+        "Object": {},
         "PriceAttr": [
-            1.1,
-            5
+            1,
+            0
         ],
+        "ShowRank": 1,
+        "SkillAttrEffect": "PansLab_TestItem_1",
+        "SkillSpecialEffect": "",
+        "SpecialDesc": ""
+    },
+    "TestItem_10": {
+        "Icon": "icon_baowu",
+        "IsUse": 1,
+        "Name": "TestItem_10_Name",
         "Object": {
             "masterHp": [
                 700,
                 400
             ]
         },
+        "PriceAttr": [
+            1.1,
+            5
+        ],
+        "ShowRank": 10,
+        "SkillAttrEffect": "",
+        "SkillSpecialEffect": "",
         "SpecialDesc": "PansLab_TestItem_10_EffectDesc"
     },
-    "TestItem_6": {
-        "Name": "TestItem_6_Name",
-        "Icon": "icon_baowu",
-        "ShowRank": 6,
-        "IsUse": 0,
-        "SkillAttrEffect": "PansLab_TestItem_6",
-        "SkillSpecialEffect": "",
-        "PriceAttr": [
-            1,
-            0
-        ],
-        "Object": {},
-        "SpecialDesc": ""
-    },
-    "TestItem_7": {
-        "Name": "TestItem_7_Name",
-        "Icon": "icon_baowu",
-        "ShowRank": 7,
-        "IsUse": 1,
-        "SkillAttrEffect": "PansLab_TestItem_7",
-        "SkillSpecialEffect": "",
-        "PriceAttr": [
-            0,
-            25
-        ],
-        "Object": {
-            "fightAttr": 1
-        },
-        "SpecialDesc": ""
-    },
-    "TestItem_4": {
-        "Name": "TestItem_4_Name",
-        "Icon": "icon_baowu",
-        "ShowRank": 4,
-        "IsUse": 0,
-        "SkillAttrEffect": "PansLab_TestItem_4",
-        "SkillSpecialEffect": "",
-        "PriceAttr": [
-            0.92,
-            4
-        ],
-        "Object": {},
-        "SpecialDesc": ""
-    },
-    "TestItem_5": {
-        "Name": "TestItem_5_Name",
-        "Icon": "icon_baowu",
-        "ShowRank": 5,
-        "IsUse": 0,
-        "SkillAttrEffect": "PansLab_TestItem_5",
-        "SkillSpecialEffect": "",
-        "PriceAttr": [
-            1,
-            0
-        ],
-        "Object": {},
-        "SpecialDesc": ""
-    },
     "TestItem_2": {
-        "Name": "TestItem_2_Name",
         "Icon": "icon_baowu",
-        "ShowRank": 2,
         "IsUse": 0,
-        "SkillAttrEffect": "PansLab_TestItem_2",
-        "SkillSpecialEffect": "",
+        "Name": "TestItem_2_Name",
+        "Object": {},
         "PriceAttr": [
             1.1,
             2
         ],
-        "Object": {},
+        "ShowRank": 2,
+        "SkillAttrEffect": "PansLab_TestItem_2",
+        "SkillSpecialEffect": "",
         "SpecialDesc": ""
     },
     "TestItem_3": {
-        "Name": "TestItem_3_Name",
         "Icon": "icon_baowu",
-        "ShowRank": 3,
         "IsUse": 0,
-        "SkillAttrEffect": "PansLab_TestItem_3",
-        "SkillSpecialEffect": "",
+        "Name": "TestItem_3_Name",
+        "Object": {},
         "PriceAttr": [
             0.9,
             0
         ],
-        "Object": {},
+        "ShowRank": 3,
+        "SkillAttrEffect": "PansLab_TestItem_3",
+        "SkillSpecialEffect": "",
         "SpecialDesc": ""
     },
-    "TestItem_1": {
-        "Name": "TestItem_1_Name",
+    "TestItem_4": {
         "Icon": "icon_baowu",
-        "ShowRank": 1,
         "IsUse": 0,
-        "SkillAttrEffect": "PansLab_TestItem_1",
+        "Name": "TestItem_4_Name",
+        "Object": {},
+        "PriceAttr": [
+            0.92,
+            4
+        ],
+        "ShowRank": 4,
+        "SkillAttrEffect": "PansLab_TestItem_4",
         "SkillSpecialEffect": "",
+        "SpecialDesc": ""
+    },
+    "TestItem_5": {
+        "Icon": "icon_baowu",
+        "IsUse": 0,
+        "Name": "TestItem_5_Name",
+        "Object": {},
         "PriceAttr": [
             1,
             0
         ],
-        "Object": {},
+        "ShowRank": 5,
+        "SkillAttrEffect": "PansLab_TestItem_5",
+        "SkillSpecialEffect": "",
         "SpecialDesc": ""
     },
-    "TheAnkh": {
-        "Name": "TheAnkh_Name",
+    "TestItem_6": {
         "Icon": "icon_baowu",
-        "ShowRank": 11,
         "IsUse": 0,
-        "SkillAttrEffect": "PansLab_TheAnkh",
+        "Name": "TestItem_6_Name",
+        "Object": {},
+        "PriceAttr": [
+            1,
+            0
+        ],
+        "ShowRank": 6,
+        "SkillAttrEffect": "PansLab_TestItem_6",
         "SkillSpecialEffect": "",
+        "SpecialDesc": ""
+    },
+    "TestItem_7": {
+        "Icon": "icon_baowu",
+        "IsUse": 1,
+        "Name": "TestItem_7_Name",
+        "Object": {
+            "fightAttr": 1
+        },
         "PriceAttr": [
             0,
-            50
+            25
         ],
-        "Object": {},
+        "ShowRank": 7,
+        "SkillAttrEffect": "PansLab_TestItem_7",
+        "SkillSpecialEffect": "",
         "SpecialDesc": ""
     },
     "TestItem_8": {
-        "Name": "TestItem_8_Name",
         "Icon": "icon_baowu",
-        "ShowRank": -1,
         "IsUse": 1,
-        "SkillAttrEffect": "",
-        "SkillSpecialEffect": "",
-        "PriceAttr": [
-            0,
-            18
-        ],
+        "Name": "TestItem_8_Name",
         "Object": {
             "heroShopPrice": [
                 1,
                 0.5
             ]
         },
+        "PriceAttr": [
+            0,
+            18
+        ],
+        "ShowRank": -1,
+        "SkillAttrEffect": "",
+        "SkillSpecialEffect": "",
         "SpecialDesc": "PansLab_TestItem_8_EffectDesc"
     },
     "TestItem_9": {
-        "Name": "TestItem_9_Name",
         "Icon": "icon_baowu",
-        "ShowRank": 9,
         "IsUse": 1,
-        "SkillAttrEffect": "",
-        "SkillSpecialEffect": "",
-        "PriceAttr": [
-            0,
-            8
-        ],
+        "Name": "TestItem_9_Name",
         "Object": {
             "itemShopPrice": [
                 1,
                 0.5
             ]
         },
+        "PriceAttr": [
+            0,
+            8
+        ],
+        "ShowRank": 9,
+        "SkillAttrEffect": "",
+        "SkillSpecialEffect": "",
         "SpecialDesc": "PansLab_TestItem_9_EffectDesc"
+    },
+    "TheAnkh": {
+        "Icon": "icon_baowu",
+        "IsUse": 0,
+        "Name": "TheAnkh_Name",
+        "Object": {},
+        "PriceAttr": [
+            0,
+            50
+        ],
+        "ShowRank": 11,
+        "SkillAttrEffect": "PansLab_TheAnkh",
+        "SkillSpecialEffect": "",
+        "SpecialDesc": ""
     }
 }

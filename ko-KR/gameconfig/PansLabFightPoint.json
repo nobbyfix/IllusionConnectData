@@ -1,3509 +1,3509 @@
 {
-    "SpBoss_40": {
-        "Name": "PansLabSpBoss_40",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_10Card_5",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_4",
+    "BSNCT_01_S1": {
         "BGM": [
             "Mus_Battle_Whale",
             "Mus_Battle_Danger",
             ""
-        ]
-    },
-    "SpBoss_28": {
-        "Name": "PansLabSpBoss_28",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_10Card_3",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
         ],
-        "Time": 180000,
-        "Background": "Battle_Scene_4",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "SpBoss_29": {
-        "Name": "PansLabSpBoss_29",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_10Card_4",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
         "Background": "Battle_Scene_1",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "SpBoss_26": {
-        "Name": "PansLabSpBoss_26",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
         "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_10Card_1",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_2",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "SpBoss_27": {
-        "Name": "PansLabSpBoss_27",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_10Card_2",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_3",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "SpBoss_24": {
-        "Name": "PansLabSpBoss_24",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_10Card_9",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_4",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "SpBoss_25": {
-        "Name": "PansLabSpBoss_25",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_10Card_10",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_1",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "SpBoss_22": {
-        "Name": "PansLabSpBoss_22",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_10Card_7",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_2",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "SpBoss_23": {
-        "Name": "PansLabSpBoss_23",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_10Card_8",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_3",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "SpBoss_20": {
-        "Name": "PansLabSpBoss_20",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_10Card_5",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_4",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "SpBoss_21": {
-        "Name": "PansLabSpBoss_21",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_10Card_6",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_1",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "SpBoss_36": {
-        "Name": "PansLabSpBoss_36",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_10Card_1",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_4",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "SpBoss_7": {
-        "Name": "PansLabSpBoss_7",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_8Card_7",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_3",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "SpBoss_6": {
-        "Name": "PansLabSpBoss_6",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_8Card_6",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_2",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "SpBoss_5": {
-        "Name": "PansLabSpBoss_5",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_8Card_5",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_1",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "SpBoss_4": {
-        "Name": "PansLabSpBoss_4",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_8Card_4",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_4",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "SpBoss_3": {
-        "Name": "PansLabSpBoss_3",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_8Card_3",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_3",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "SpBoss_2": {
-        "Name": "PansLabSpBoss_2",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_8Card_2",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_2",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "SpBoss_1": {
-        "Name": "PansLabSpBoss_1",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_8Card_1",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_1",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "SpBoss_9": {
-        "Name": "PansLabSpBoss_9",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_8Card_9",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_1",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "SpBoss_8": {
-        "Name": "PansLabSpBoss_8",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_8Card_8",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_4",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "SpBoss_13": {
-        "Name": "PansLabSpBoss_13",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_8Card_3",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_1",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "SpBoss_12": {
-        "Name": "PansLabSpBoss_12",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_8Card_2",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_4",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "SpBoss_11": {
-        "Name": "PansLabSpBoss_11",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_8Card_1",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_3",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "SpBoss_10": {
-        "Name": "PansLabSpBoss_10",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_8Card_10",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_2",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "SpBoss_17": {
-        "Name": "PansLabSpBoss_17",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_10Card_2",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_1",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "SpBoss_16": {
-        "Name": "PansLabSpBoss_16",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_10Card_1",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_4",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "SpBoss_15": {
-        "Name": "PansLabSpBoss_15",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_8Card_5",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_3",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "SpBoss_14": {
-        "Name": "PansLabSpBoss_14",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_8Card_4",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_2",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "SpBoss_35": {
-        "Name": "PansLabSpBoss_35",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_10Card_10",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_3",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "SpBoss_34": {
-        "Name": "PansLabSpBoss_34",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_10Card_9",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_2",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "SpBoss_19": {
-        "Name": "PansLabSpBoss_19",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_10Card_4",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_3",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "SpBoss_18": {
-        "Name": "PansLabSpBoss_18",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_10Card_3",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_2",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "SpBoss_31": {
-        "Name": "PansLabSpBoss_31",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_10Card_6",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_3",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "SpBoss_30": {
-        "Name": "PansLabSpBoss_30",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_10Card_5",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_2",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "SpBoss_33": {
-        "Name": "PansLabSpBoss_33",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_10Card_8",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_1",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "SpBoss_32": {
-        "Name": "PansLabSpBoss_32",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_10Card_7",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_4",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "SpBoss_37": {
-        "Name": "PansLabSpBoss_37",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_10Card_2",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_1",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "SpBoss_39": {
-        "Name": "PansLabSpBoss_39",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_10Card_4",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_3",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "SpBoss_38": {
-        "Name": "PansLabSpBoss_38",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_10Card_3",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_2",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "BSNCT_01_S8": {
-        "Name": "BSNCT_01_S8_Name",
-        "Desc": "",
         "BtnName": "",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "BSNCT_01_S8",
-        "EnemyCard": "PansLab_10Card_8",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_4",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "BSNCT_01_S3": {
-        "Name": "BSNCT_01_S3_Name",
         "Desc": "",
-        "BtnName": "",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "BSNCT_01_S3",
-        "EnemyCard": "PansLab_10Card_3",
+        "EnemyCard": "PansLab_10Card_1",
+        "EnemyMaster": "BSNCT_01_S1",
+        "Name": "BSNCT_01_S1_Name",
+        "Time": 180000,
         "VictoryConditions": [
             {
-                "winner": "SideB",
-                "type": "TimeOut"
+                "type": "TimeOut",
+                "winner": "SideB"
             }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_3",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
         ]
     },
     "BSNCT_01_S2": {
-        "Name": "BSNCT_01_S2_Name",
-        "Desc": "",
-        "BtnName": "",
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_2",
         "BlockBattleConfig": "Normal",
-        "EnemyMaster": "BSNCT_01_S2",
+        "BtnName": "",
+        "Desc": "",
         "EnemyCard": "PansLab_10Card_2",
+        "EnemyMaster": "BSNCT_01_S2",
+        "Name": "BSNCT_01_S2_Name",
+        "Time": 180000,
         "VictoryConditions": [
             {
-                "winner": "SideB",
-                "type": "TimeOut"
+                "type": "TimeOut",
+                "winner": "SideB"
             }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_2",
+        ]
+    },
+    "BSNCT_01_S3": {
         "BGM": [
             "Mus_Battle_Whale",
             "Mus_Battle_Danger",
             ""
-        ]
-    },
-    "BSNCT_01_S1": {
-        "Name": "BSNCT_01_S1_Name",
-        "Desc": "",
-        "BtnName": "",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "BSNCT_01_S1",
-        "EnemyCard": "PansLab_10Card_1",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
         ],
-        "Time": 180000,
-        "Background": "Battle_Scene_1",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "BSNCT_01_S7": {
-        "Name": "BSNCT_01_S7_Name",
-        "Desc": "",
-        "BtnName": "",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "BSNCT_01_S7",
-        "EnemyCard": "PansLab_10Card_7",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
         "Background": "Battle_Scene_3",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "BSNCT_01_S6": {
-        "Name": "BSNCT_01_S6_Name",
-        "Desc": "",
-        "BtnName": "",
         "BlockBattleConfig": "Normal",
-        "EnemyMaster": "BSNCT_01_S6",
-        "EnemyCard": "PansLab_10Card_6",
+        "BtnName": "",
+        "Desc": "",
+        "EnemyCard": "PansLab_10Card_3",
+        "EnemyMaster": "BSNCT_01_S3",
+        "Name": "BSNCT_01_S3_Name",
+        "Time": 180000,
         "VictoryConditions": [
             {
-                "winner": "SideB",
-                "type": "TimeOut"
+                "type": "TimeOut",
+                "winner": "SideB"
             }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_2",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "BSNCT_01_S5": {
-        "Name": "BSNCT_01_S5_Name",
-        "Desc": "",
-        "BtnName": "",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "BSNCT_01_S5",
-        "EnemyCard": "PansLab_10Card_5",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_1",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
         ]
     },
     "BSNCT_01_S4": {
-        "Name": "BSNCT_01_S4_Name",
-        "Desc": "",
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_4",
+        "BlockBattleConfig": "Normal",
         "BtnName": "",
-        "BlockBattleConfig": "Normal",
+        "Desc": "",
+        "EnemyCard": "PansLab_10Card_4",
         "EnemyMaster": "BSNCT_01_S4",
-        "EnemyCard": "PansLab_10Card_4",
+        "Name": "BSNCT_01_S4_Name",
+        "Time": 180000,
         "VictoryConditions": [
             {
-                "winner": "SideB",
-                "type": "TimeOut"
+                "type": "TimeOut",
+                "winner": "SideB"
             }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_4",
+        ]
+    },
+    "BSNCT_01_S5": {
         "BGM": [
             "Mus_Battle_Whale",
             "Mus_Battle_Danger",
             ""
-        ]
-    },
-    "Boss_N_A_3": {
-        "Name": "PansLab_Boss_N_A_3_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_BiLei",
-        "EnemyCard": "PansLab_Boss_N_A_3",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
         ],
-        "Time": 180000,
-        "Background": "Battle_Scene_3",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Boss_N_A_2": {
-        "Name": "PansLab_Boss_N_A_2_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_XueZhan",
-        "EnemyCard": "PansLab_Boss_N_A_2",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_2",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Boss_N_A_1": {
-        "Name": "PansLab_Boss_N_A_1_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_Boss_N_A_1",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
         "Background": "Battle_Scene_1",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Boss_10H_17": {
-        "Name": "PansLab_Boss_10H_17_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
         "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_XueZhan",
-        "EnemyCard": "PansLab_10Card_7",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_4",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Boss_N_C_1": {
-        "Name": "PansLab_Boss_N_C_1_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_Boss_N_C_1",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_1",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Boss_N_C_3": {
-        "Name": "PansLab_Boss_N_C_3_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_BiLei",
-        "EnemyCard": "PansLab_Boss_N_C_3",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_3",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Boss_N_C_2": {
-        "Name": "PansLab_Boss_N_C_2_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_XueZhan",
-        "EnemyCard": "PansLab_Boss_N_C_2",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_2",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Boss_10H_23": {
-        "Name": "PansLab_Boss_10H_23_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_XueZhan",
-        "EnemyCard": "PansLab_10Card_3",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_2",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Boss_10H_22": {
-        "Name": "PansLab_Boss_10H_22_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_10Card_2",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_1",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Boss_10H_21": {
-        "Name": "PansLab_Boss_10H_21_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_BiLei",
-        "EnemyCard": "PansLab_10Card_1",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_4",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Boss_10H_20": {
-        "Name": "PansLab_Boss_10H_20_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_XueZhan",
-        "EnemyCard": "PansLab_10Card_10",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_3",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Boss_10H_25": {
-        "Name": "PansLab_Boss_10H_25_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
+        "BtnName": "",
+        "Desc": "",
         "EnemyCard": "PansLab_10Card_5",
+        "EnemyMaster": "BSNCT_01_S5",
+        "Name": "BSNCT_01_S5_Name",
+        "Time": 180000,
         "VictoryConditions": [
             {
-                "winner": "SideB",
-                "type": "TimeOut"
+                "type": "TimeOut",
+                "winner": "SideB"
             }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_4",
+        ]
+    },
+    "BSNCT_01_S6": {
         "BGM": [
             "Mus_Battle_Whale",
             "Mus_Battle_Danger",
             ""
-        ]
-    },
-    "Boss_10H_24": {
-        "Name": "PansLab_Boss_10H_24_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
+        ],
+        "Background": "Battle_Scene_2",
         "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_BiLei",
-        "EnemyCard": "PansLab_10Card_4",
+        "BtnName": "",
+        "Desc": "",
+        "EnemyCard": "PansLab_10Card_6",
+        "EnemyMaster": "BSNCT_01_S6",
+        "Name": "BSNCT_01_S6_Name",
+        "Time": 180000,
         "VictoryConditions": [
             {
-                "winner": "SideB",
-                "type": "TimeOut"
+                "type": "TimeOut",
+                "winner": "SideB"
             }
+        ]
+    },
+    "BSNCT_01_S7": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
         ],
-        "Time": 180000,
         "Background": "Battle_Scene_3",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "",
+        "Desc": "",
+        "EnemyCard": "PansLab_10Card_7",
+        "EnemyMaster": "BSNCT_01_S7",
+        "Name": "BSNCT_01_S7_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "BSNCT_01_S8": {
         "BGM": [
             "Mus_Battle_Whale",
             "Mus_Battle_Danger",
             ""
-        ]
-    },
-    "Boss_8H_6": {
-        "Name": "PansLab_Boss_8H_6_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_BiLei",
-        "EnemyCard": "PansLab_8Card_6",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
         ],
-        "Time": 180000,
-        "Background": "Battle_Scene_2",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Boss_8H_7": {
-        "Name": "PansLab_Boss_8H_7_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_8Card_7",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_3",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Boss_8H_4": {
-        "Name": "PansLab_Boss_8H_4_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_8Card_4",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
         "Background": "Battle_Scene_4",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Boss_8H_5": {
-        "Name": "PansLab_Boss_8H_5_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
         "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_XueZhan",
-        "EnemyCard": "PansLab_8Card_5",
+        "BtnName": "",
+        "Desc": "",
+        "EnemyCard": "PansLab_10Card_8",
+        "EnemyMaster": "BSNCT_01_S8",
+        "Name": "BSNCT_01_S8_Name",
+        "Time": 180000,
         "VictoryConditions": [
             {
-                "winner": "SideB",
-                "type": "TimeOut"
+                "type": "TimeOut",
+                "winner": "SideB"
             }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_1",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Boss_8H_2": {
-        "Name": "PansLab_Boss_8H_2_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_XueZhan",
-        "EnemyCard": "PansLab_8Card_2",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_2",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Boss_8H_3": {
-        "Name": "PansLab_Boss_8H_3_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_BiLei",
-        "EnemyCard": "PansLab_8Card_3",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_3",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Boss_8H_1": {
-        "Name": "PansLab_Boss_8H_1_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_8Card_1",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_1",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Boss_N_B_2": {
-        "Name": "PansLab_Boss_N_B_2_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_XueZhan",
-        "EnemyCard": "PansLab_Boss_N_B_2",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_2",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Boss_8H_8": {
-        "Name": "PansLab_Boss_8H_8_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_XueZhan",
-        "EnemyCard": "PansLab_8Card_8",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_4",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Boss_8H_9": {
-        "Name": "PansLab_Boss_8H_9_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_BiLei",
-        "EnemyCard": "PansLab_8Card_9",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_1",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Boss_8H_10": {
-        "Name": "PansLab_Boss_8H_10_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_8Card_10",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_2",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
         ]
     },
     "Boss_10H_1": {
-        "Name": "PansLab_Boss_10H_1_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_4",
         "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
         "EnemyCard": "PansLab_10Card_1",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_4",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Boss_10H_2": {
-        "Name": "PansLab_Boss_10H_2_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_XueZhan",
-        "EnemyCard": "PansLab_10Card_2",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_1",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Boss_8H_13": {
-        "Name": "PansLab_Boss_8H_13_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
         "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_8Card_3",
+        "Name": "PansLab_Boss_10H_1_Name",
+        "Time": 180000,
         "VictoryConditions": [
             {
-                "winner": "SideB",
-                "type": "TimeOut"
+                "type": "TimeOut",
+                "winner": "SideB"
             }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_1",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Boss_8H_14": {
-        "Name": "PansLab_Boss_8H_14_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_XueZhan",
-        "EnemyCard": "PansLab_8Card_4",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_2",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Boss_8H_15": {
-        "Name": "PansLab_Boss_8H_15_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_BiLei",
-        "EnemyCard": "PansLab_8Card_5",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_3",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Boss_10H_6": {
-        "Name": "PansLab_Boss_10H_6_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_BiLei",
-        "EnemyCard": "PansLab_10Card_6",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_1",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Boss_10H_7": {
-        "Name": "PansLab_Boss_10H_7_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_10Card_7",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_2",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Boss_10H_8": {
-        "Name": "PansLab_Boss_10H_8_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_XueZhan",
-        "EnemyCard": "PansLab_10Card_8",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_3",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Boss_10H_9": {
-        "Name": "PansLab_Boss_10H_9_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_BiLei",
-        "EnemyCard": "PansLab_10Card_9",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_4",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Boss_N_B_3": {
-        "Name": "PansLab_Boss_N_B_3_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_BiLei",
-        "EnemyCard": "PansLab_Boss_N_B_3",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_3",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Boss_N_B_1": {
-        "Name": "PansLab_Boss_N_B_1_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_Boss_N_B_1",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_1",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Boss_10H_18": {
-        "Name": "PansLab_Boss_10H_18_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_BiLei",
-        "EnemyCard": "PansLab_10Card_8",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_1",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Boss_10H_19": {
-        "Name": "PansLab_Boss_10H_19_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_10Card_9",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_2",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Boss_8H_11": {
-        "Name": "PansLab_Boss_8H_11_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_XueZhan",
-        "EnemyCard": "PansLab_8Card_1",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_3",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Boss_10H_12": {
-        "Name": "PansLab_Boss_10H_12_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_BiLei",
-        "EnemyCard": "PansLab_10Card_2",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_3",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Boss_10H_13": {
-        "Name": "PansLab_Boss_10H_13_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_10Card_3",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_4",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
         ]
     },
     "Boss_10H_10": {
-        "Name": "PansLab_Boss_10H_10_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_10Card_10",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_1",
         "BGM": [
             "Mus_Battle_Whale",
             "Mus_Battle_Danger",
             ""
+        ],
+        "Background": "Battle_Scene_1",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_10",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLab_Boss_10H_10_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
         ]
     },
     "Boss_10H_11": {
-        "Name": "PansLab_Boss_10H_11_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_XueZhan",
-        "EnemyCard": "PansLab_10Card_1",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
         ],
-        "Time": 180000,
         "Background": "Battle_Scene_2",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_1",
+        "EnemyMaster": "PansLab_Master_XueZhan",
+        "Name": "PansLab_Boss_10H_11_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Boss_10H_12": {
         "BGM": [
             "Mus_Battle_Whale",
             "Mus_Battle_Danger",
             ""
-        ]
-    },
-    "Boss_10H_16": {
-        "Name": "PansLab_Boss_10H_16_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_10Card_6",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
         ],
-        "Time": 180000,
         "Background": "Battle_Scene_3",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Boss_8H_12": {
-        "Name": "PansLab_Boss_8H_12_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
         "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_2",
         "EnemyMaster": "PansLab_BiLei",
-        "EnemyCard": "PansLab_8Card_2",
+        "Name": "PansLab_Boss_10H_12_Name",
+        "Time": 180000,
         "VictoryConditions": [
             {
-                "winner": "SideB",
-                "type": "TimeOut"
+                "type": "TimeOut",
+                "winner": "SideB"
             }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_4",
+        ]
+    },
+    "Boss_10H_13": {
         "BGM": [
             "Mus_Battle_Whale",
             "Mus_Battle_Danger",
             ""
+        ],
+        "Background": "Battle_Scene_4",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_3",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLab_Boss_10H_13_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
         ]
     },
     "Boss_10H_14": {
-        "Name": "PansLab_Boss_10H_14_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_XueZhan",
-        "EnemyCard": "PansLab_10Card_4",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_1",
         "BGM": [
             "Mus_Battle_Whale",
             "Mus_Battle_Danger",
             ""
+        ],
+        "Background": "Battle_Scene_1",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_4",
+        "EnemyMaster": "PansLab_Master_XueZhan",
+        "Name": "PansLab_Boss_10H_14_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
         ]
     },
     "Boss_10H_15": {
-        "Name": "PansLab_Boss_10H_15_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_BiLei",
-        "EnemyCard": "PansLab_10Card_5",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_2",
         "BGM": [
             "Mus_Battle_Whale",
             "Mus_Battle_Danger",
             ""
+        ],
+        "Background": "Battle_Scene_2",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_5",
+        "EnemyMaster": "PansLab_BiLei",
+        "Name": "PansLab_Boss_10H_15_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Boss_10H_16": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_3",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_6",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLab_Boss_10H_16_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Boss_10H_17": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_4",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_7",
+        "EnemyMaster": "PansLab_Master_XueZhan",
+        "Name": "PansLab_Boss_10H_17_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Boss_10H_18": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_1",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_8",
+        "EnemyMaster": "PansLab_BiLei",
+        "Name": "PansLab_Boss_10H_18_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Boss_10H_19": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_2",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_9",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLab_Boss_10H_19_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Boss_10H_2": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_1",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_2",
+        "EnemyMaster": "PansLab_Master_XueZhan",
+        "Name": "PansLab_Boss_10H_2_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Boss_10H_20": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_3",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_10",
+        "EnemyMaster": "PansLab_Master_XueZhan",
+        "Name": "PansLab_Boss_10H_20_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Boss_10H_21": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_4",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_1",
+        "EnemyMaster": "PansLab_BiLei",
+        "Name": "PansLab_Boss_10H_21_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Boss_10H_22": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_1",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_2",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLab_Boss_10H_22_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Boss_10H_23": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_2",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_3",
+        "EnemyMaster": "PansLab_Master_XueZhan",
+        "Name": "PansLab_Boss_10H_23_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Boss_10H_24": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_3",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_4",
+        "EnemyMaster": "PansLab_BiLei",
+        "Name": "PansLab_Boss_10H_24_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Boss_10H_25": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_4",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_5",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLab_Boss_10H_25_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
         ]
     },
     "Boss_10H_3": {
-        "Name": "PansLab_Boss_10H_3_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_BiLei",
-        "EnemyCard": "PansLab_10Card_3",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_2",
         "BGM": [
             "Mus_Battle_Whale",
             "Mus_Battle_Danger",
             ""
+        ],
+        "Background": "Battle_Scene_2",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_3",
+        "EnemyMaster": "PansLab_BiLei",
+        "Name": "PansLab_Boss_10H_3_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
         ]
     },
     "Boss_10H_4": {
-        "Name": "PansLab_Boss_10H_4_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_10Card_4",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_3",
         "BGM": [
             "Mus_Battle_Whale",
             "Mus_Battle_Danger",
             ""
+        ],
+        "Background": "Battle_Scene_3",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_4",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLab_Boss_10H_4_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
         ]
     },
     "Boss_10H_5": {
-        "Name": "PansLab_Boss_10H_5_Name",
-        "Desc": "PansLabEnemyDesc",
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_4",
+        "BlockBattleConfig": "Normal",
         "BtnName": "Boss_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_XueZhan",
+        "Desc": "PansLabEnemyDesc",
         "EnemyCard": "PansLab_10Card_5",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_4",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_9H_4": {
-        "Name": "PansLab_Enemy_9H_4_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_BiLei",
-        "EnemyCard": "PansLab_9Card_4",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_4",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_9H_7": {
-        "Name": "PansLab_Enemy_9H_7_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_BiLei",
-        "EnemyCard": "PansLab_9Card_7",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_3",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_9H_3": {
-        "Name": "PansLab_Enemy_9H_3_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
         "EnemyMaster": "PansLab_Master_XueZhan",
-        "EnemyCard": "PansLab_9Card_3",
+        "Name": "PansLab_Boss_10H_5_Name",
+        "Time": 180000,
         "VictoryConditions": [
             {
-                "winner": "SideB",
-                "type": "TimeOut"
+                "type": "TimeOut",
+                "winner": "SideB"
             }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_3",
+        ]
+    },
+    "Boss_10H_6": {
         "BGM": [
             "Mus_Battle_Whale",
             "Mus_Battle_Danger",
             ""
-        ]
-    },
-    "Enemy_7H_6": {
-        "Name": "PansLab_Enemy_7H_6_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_7Card_6",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
         ],
-        "Time": 180000,
-        "Background": "Battle_Scene_4",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_7H_3": {
-        "Name": "PansLab_Enemy_7H_3_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_7Card_3",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
         "Background": "Battle_Scene_1",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_9H_2": {
-        "Name": "PansLab_Enemy_9H_2_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
         "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_9Card_2",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_2",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_6H_4": {
-        "Name": "PansLab_Enemy_6H_4_Name",
+        "BtnName": "Boss_BtnName",
         "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_XueZhan",
-        "EnemyCard": "PansLab_6Card_4",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_2",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_6H_10": {
-        "Name": "PansLab_Enemy_6H_10_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_XueZhan",
-        "EnemyCard": "PansLab_6Card_10",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_4",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_8H_4": {
-        "Name": "PansLab_Enemy_8H_4_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_BiLei",
-        "EnemyCard": "PansLab_8Card_4",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_4",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_8H_10": {
-        "Name": "PansLab_Enemy_8H_10_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_BiLei",
-        "EnemyCard": "PansLab_8Card_10",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_2",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_5H_10": {
-        "Name": "PansLab_Enemy_5H_10_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_5Card_10",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_2",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_8H_5": {
-        "Name": "PansLab_Enemy_8H_5_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_8Card_5",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_1",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_6H_8": {
-        "Name": "PansLab_Enemy_6H_8_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_BiLei",
-        "EnemyCard": "PansLab_6Card_8",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_2",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_6H_9": {
-        "Name": "PansLab_Enemy_6H_9_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_6Card_9",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_3",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_9H_9": {
-        "Name": "PansLab_Enemy_9H_9_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_XueZhan",
-        "EnemyCard": "PansLab_9Card_9",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_1",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_9H_8": {
-        "Name": "PansLab_Enemy_9H_8_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_9Card_8",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_4",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_6H_2": {
-        "Name": "PansLab_Enemy_6H_2_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_BiLei",
-        "EnemyCard": "PansLab_6Card_2",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_4",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_6H_3": {
-        "Name": "PansLab_Enemy_6H_3_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_6Card_3",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_1",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_9H_5": {
-        "Name": "PansLab_Enemy_9H_5_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_9Card_5",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_1",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_6H_1": {
-        "Name": "PansLab_Enemy_6H_1_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_XueZhan",
-        "EnemyCard": "PansLab_6Card_1",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_3",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_6H_6": {
-        "Name": "PansLab_Enemy_6H_6_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_6Card_6",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_4",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_6H_7": {
-        "Name": "PansLab_Enemy_6H_7_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_XueZhan",
-        "EnemyCard": "PansLab_6Card_7",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_1",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_4H_10": {
-        "Name": "PansLab_Enemy_4H_10_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_4Card_10",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_2",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_6H_5": {
-        "Name": "PansLab_Enemy_6H_5_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_BiLei",
-        "EnemyCard": "PansLab_6Card_5",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_3",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_8H_8": {
-        "Name": "PansLab_Enemy_8H_8_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_8Card_8",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_4",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_7H_10": {
-        "Name": "PansLab_Enemy_7H_10_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_XueZhan",
-        "EnemyCard": "PansLab_7Card_10",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_4",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_8H_9": {
-        "Name": "PansLab_Enemy_8H_9_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_XueZhan",
-        "EnemyCard": "PansLab_8Card_9",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_1",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_8H_1": {
-        "Name": "PansLab_Enemy_8H_1_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_BiLei",
-        "EnemyCard": "PansLab_8Card_1",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_1",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_8H_2": {
-        "Name": "PansLab_Enemy_8H_2_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_8Card_2",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_2",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_8H_3": {
-        "Name": "PansLab_Enemy_8H_3_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_XueZhan",
-        "EnemyCard": "PansLab_8Card_3",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_3",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_4H_8": {
-        "Name": "PansLab_Enemy_4H_8_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_XueZhan",
-        "EnemyCard": "PansLab_4Card_8",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_4",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_4H_9": {
-        "Name": "PansLab_Enemy_4H_9_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_BiLei",
-        "EnemyCard": "PansLab_4Card_9",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_1",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_8H_6": {
-        "Name": "PansLab_Enemy_8H_6_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_XueZhan",
-        "EnemyCard": "PansLab_8Card_6",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_2",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_8H_7": {
-        "Name": "PansLab_Enemy_8H_7_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_BiLei",
-        "EnemyCard": "PansLab_8Card_7",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_3",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_4H_4": {
-        "Name": "PansLab_Enemy_4H_4_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_4Card_4",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_4",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_4H_5": {
-        "Name": "PansLab_Enemy_4H_5_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_XueZhan",
-        "EnemyCard": "PansLab_4Card_5",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_1",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_4H_6": {
-        "Name": "PansLab_Enemy_4H_6_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_BiLei",
-        "EnemyCard": "PansLab_4Card_6",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_2",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_4H_7": {
-        "Name": "PansLab_Enemy_4H_7_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_4Card_7",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_3",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_4H_1": {
-        "Name": "PansLab_Enemy_4H_1_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_4Card_1",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_1",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_4H_2": {
-        "Name": "PansLab_Enemy_4H_2_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_XueZhan",
-        "EnemyCard": "PansLab_4Card_2",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_2",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_4H_3": {
-        "Name": "PansLab_Enemy_4H_3_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_BiLei",
-        "EnemyCard": "PansLab_4Card_3",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_3",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_10H_6": {
-        "Name": "PansLab_Enemy_10H_6_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_BiLei",
         "EnemyCard": "PansLab_10Card_6",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_4",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_10H_7": {
-        "Name": "PansLab_Enemy_10H_7_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_10Card_7",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_1",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_10H_4": {
-        "Name": "PansLab_Enemy_10H_4_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_10Card_4",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_2",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_10H_5": {
-        "Name": "PansLab_Enemy_10H_5_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_XueZhan",
-        "EnemyCard": "PansLab_10Card_5",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_3",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_10H_2": {
-        "Name": "PansLab_Enemy_10H_2_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_XueZhan",
-        "EnemyCard": "PansLab_10Card_2",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_4",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_10H_3": {
-        "Name": "PansLab_Enemy_10H_3_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
         "EnemyMaster": "PansLab_BiLei",
-        "EnemyCard": "PansLab_10Card_3",
+        "Name": "PansLab_Boss_10H_6_Name",
+        "Time": 180000,
         "VictoryConditions": [
             {
-                "winner": "SideB",
-                "type": "TimeOut"
+                "type": "TimeOut",
+                "winner": "SideB"
             }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_1",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
         ]
     },
-    "Enemy_7H_7": {
-        "Name": "PansLab_Enemy_7H_7_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_XueZhan",
-        "EnemyCard": "PansLab_7Card_7",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_1",
+    "Boss_10H_7": {
         "BGM": [
             "Mus_Battle_Whale",
             "Mus_Battle_Danger",
             ""
+        ],
+        "Background": "Battle_Scene_2",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_7",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLab_Boss_10H_7_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Boss_10H_8": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_3",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_8",
+        "EnemyMaster": "PansLab_Master_XueZhan",
+        "Name": "PansLab_Boss_10H_8_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Boss_10H_9": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_4",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_9",
+        "EnemyMaster": "PansLab_BiLei",
+        "Name": "PansLab_Boss_10H_9_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Boss_8H_1": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_1",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_8Card_1",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLab_Boss_8H_1_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Boss_8H_10": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_2",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_8Card_10",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLab_Boss_8H_10_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Boss_8H_11": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_3",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_8Card_1",
+        "EnemyMaster": "PansLab_Master_XueZhan",
+        "Name": "PansLab_Boss_8H_11_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Boss_8H_12": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_4",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_8Card_2",
+        "EnemyMaster": "PansLab_BiLei",
+        "Name": "PansLab_Boss_8H_12_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Boss_8H_13": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_1",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_8Card_3",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLab_Boss_8H_13_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Boss_8H_14": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_2",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_8Card_4",
+        "EnemyMaster": "PansLab_Master_XueZhan",
+        "Name": "PansLab_Boss_8H_14_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Boss_8H_15": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_3",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_8Card_5",
+        "EnemyMaster": "PansLab_BiLei",
+        "Name": "PansLab_Boss_8H_15_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Boss_8H_2": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_2",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_8Card_2",
+        "EnemyMaster": "PansLab_Master_XueZhan",
+        "Name": "PansLab_Boss_8H_2_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Boss_8H_3": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_3",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_8Card_3",
+        "EnemyMaster": "PansLab_BiLei",
+        "Name": "PansLab_Boss_8H_3_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Boss_8H_4": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_4",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_8Card_4",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLab_Boss_8H_4_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Boss_8H_5": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_1",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_8Card_5",
+        "EnemyMaster": "PansLab_Master_XueZhan",
+        "Name": "PansLab_Boss_8H_5_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Boss_8H_6": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_2",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_8Card_6",
+        "EnemyMaster": "PansLab_BiLei",
+        "Name": "PansLab_Boss_8H_6_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Boss_8H_7": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_3",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_8Card_7",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLab_Boss_8H_7_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Boss_8H_8": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_4",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_8Card_8",
+        "EnemyMaster": "PansLab_Master_XueZhan",
+        "Name": "PansLab_Boss_8H_8_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Boss_8H_9": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_1",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_8Card_9",
+        "EnemyMaster": "PansLab_BiLei",
+        "Name": "PansLab_Boss_8H_9_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Boss_N_A_1": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_1",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_Boss_N_A_1",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLab_Boss_N_A_1_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Boss_N_A_2": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_2",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_Boss_N_A_2",
+        "EnemyMaster": "PansLab_Master_XueZhan",
+        "Name": "PansLab_Boss_N_A_2_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Boss_N_A_3": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_3",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_Boss_N_A_3",
+        "EnemyMaster": "PansLab_BiLei",
+        "Name": "PansLab_Boss_N_A_3_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Boss_N_B_1": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_1",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_Boss_N_B_1",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLab_Boss_N_B_1_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Boss_N_B_2": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_2",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_Boss_N_B_2",
+        "EnemyMaster": "PansLab_Master_XueZhan",
+        "Name": "PansLab_Boss_N_B_2_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Boss_N_B_3": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_3",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_Boss_N_B_3",
+        "EnemyMaster": "PansLab_BiLei",
+        "Name": "PansLab_Boss_N_B_3_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Boss_N_C_1": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_1",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_Boss_N_C_1",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLab_Boss_N_C_1_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Boss_N_C_2": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_2",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_Boss_N_C_2",
+        "EnemyMaster": "PansLab_Master_XueZhan",
+        "Name": "PansLab_Boss_N_C_2_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Boss_N_C_3": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_3",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_Boss_N_C_3",
+        "EnemyMaster": "PansLab_BiLei",
+        "Name": "PansLab_Boss_N_C_3_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
         ]
     },
     "Enemy_10H_1": {
-        "Name": "PansLab_Enemy_10H_1_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_3",
         "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
         "EnemyCard": "PansLab_10Card_1",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_3",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_7H_9": {
-        "Name": "PansLab_Enemy_7H_9_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
         "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_7Card_9",
+        "Name": "PansLab_Enemy_10H_1_Name",
+        "Time": 180000,
         "VictoryConditions": [
             {
-                "winner": "SideB",
-                "type": "TimeOut"
+                "type": "TimeOut",
+                "winner": "SideB"
             }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_3",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_7H_8": {
-        "Name": "PansLab_Enemy_7H_8_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_BiLei",
-        "EnemyCard": "PansLab_7Card_8",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_2",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_10H_8": {
-        "Name": "PansLab_Enemy_10H_8_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_XueZhan",
-        "EnemyCard": "PansLab_10Card_8",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_2",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_10H_9": {
-        "Name": "PansLab_Enemy_10H_9_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_BiLei",
-        "EnemyCard": "PansLab_10Card_9",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_3",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_7H_1": {
-        "Name": "PansLab_Enemy_7H_1_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_XueZhan",
-        "EnemyCard": "PansLab_7Card_1",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_3",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_5H_9": {
-        "Name": "PansLab_Enemy_5H_9_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_BiLei",
-        "EnemyCard": "PansLab_5Card_9",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_1",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_5H_8": {
-        "Name": "PansLab_Enemy_5H_8_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_XueZhan",
-        "EnemyCard": "PansLab_5Card_8",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_4",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_5H_3": {
-        "Name": "PansLab_Enemy_5H_3_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_BiLei",
-        "EnemyCard": "PansLab_5Card_3",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_3",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_5H_2": {
-        "Name": "PansLab_Enemy_5H_2_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_XueZhan",
-        "EnemyCard": "PansLab_5Card_2",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_2",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_5H_1": {
-        "Name": "PansLab_Enemy_5H_1_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_5Card_1",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_1",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_5H_7": {
-        "Name": "PansLab_Enemy_5H_7_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_5Card_7",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_3",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_5H_6": {
-        "Name": "PansLab_Enemy_5H_6_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_BiLei",
-        "EnemyCard": "PansLab_5Card_6",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_2",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_5H_5": {
-        "Name": "PansLab_Enemy_5H_5_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_XueZhan",
-        "EnemyCard": "PansLab_5Card_5",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_1",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_5H_4": {
-        "Name": "PansLab_Enemy_5H_4_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_5Card_4",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_4",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
         ]
     },
     "Enemy_10H_10": {
-        "Name": "PansLab_Enemy_10H_10_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_LieSha",
-        "EnemyCard": "PansLab_10Card_10",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_4",
         "BGM": [
             "Mus_Battle_Whale",
             "Mus_Battle_Danger",
             ""
+        ],
+        "Background": "Battle_Scene_4",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_10",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLab_Enemy_10H_10_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
         ]
     },
-    "Enemy_9H_10": {
-        "Name": "PansLab_Enemy_9H_10_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_BiLei",
-        "EnemyCard": "PansLab_9Card_10",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_2",
+    "Enemy_10H_2": {
         "BGM": [
             "Mus_Battle_Whale",
             "Mus_Battle_Danger",
             ""
+        ],
+        "Background": "Battle_Scene_4",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_2",
+        "EnemyMaster": "PansLab_Master_XueZhan",
+        "Name": "PansLab_Enemy_10H_2_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_10H_3": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_1",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_3",
+        "EnemyMaster": "PansLab_BiLei",
+        "Name": "PansLab_Enemy_10H_3_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_10H_4": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_2",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_4",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLab_Enemy_10H_4_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_10H_5": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_3",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_5",
+        "EnemyMaster": "PansLab_Master_XueZhan",
+        "Name": "PansLab_Enemy_10H_5_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_10H_6": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_4",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_6",
+        "EnemyMaster": "PansLab_BiLei",
+        "Name": "PansLab_Enemy_10H_6_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_10H_7": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_1",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_7",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLab_Enemy_10H_7_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_10H_8": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_2",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_8",
+        "EnemyMaster": "PansLab_Master_XueZhan",
+        "Name": "PansLab_Enemy_10H_8_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_10H_9": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_3",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_9",
+        "EnemyMaster": "PansLab_BiLei",
+        "Name": "PansLab_Enemy_10H_9_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_4H_1": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_1",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_4Card_1",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLab_Enemy_4H_1_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_4H_10": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_2",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_4Card_10",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLab_Enemy_4H_10_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_4H_2": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_2",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_4Card_2",
+        "EnemyMaster": "PansLab_Master_XueZhan",
+        "Name": "PansLab_Enemy_4H_2_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_4H_3": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_3",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_4Card_3",
+        "EnemyMaster": "PansLab_BiLei",
+        "Name": "PansLab_Enemy_4H_3_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_4H_4": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_4",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_4Card_4",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLab_Enemy_4H_4_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_4H_5": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_1",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_4Card_5",
+        "EnemyMaster": "PansLab_Master_XueZhan",
+        "Name": "PansLab_Enemy_4H_5_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_4H_6": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_2",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_4Card_6",
+        "EnemyMaster": "PansLab_BiLei",
+        "Name": "PansLab_Enemy_4H_6_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_4H_7": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_3",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_4Card_7",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLab_Enemy_4H_7_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_4H_8": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_4",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_4Card_8",
+        "EnemyMaster": "PansLab_Master_XueZhan",
+        "Name": "PansLab_Enemy_4H_8_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_4H_9": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_1",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_4Card_9",
+        "EnemyMaster": "PansLab_BiLei",
+        "Name": "PansLab_Enemy_4H_9_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_5H_1": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_1",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_5Card_1",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLab_Enemy_5H_1_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_5H_10": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_2",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_5Card_10",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLab_Enemy_5H_10_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_5H_2": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_2",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_5Card_2",
+        "EnemyMaster": "PansLab_Master_XueZhan",
+        "Name": "PansLab_Enemy_5H_2_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_5H_3": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_3",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_5Card_3",
+        "EnemyMaster": "PansLab_BiLei",
+        "Name": "PansLab_Enemy_5H_3_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_5H_4": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_4",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_5Card_4",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLab_Enemy_5H_4_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_5H_5": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_1",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_5Card_5",
+        "EnemyMaster": "PansLab_Master_XueZhan",
+        "Name": "PansLab_Enemy_5H_5_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_5H_6": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_2",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_5Card_6",
+        "EnemyMaster": "PansLab_BiLei",
+        "Name": "PansLab_Enemy_5H_6_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_5H_7": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_3",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_5Card_7",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLab_Enemy_5H_7_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_5H_8": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_4",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_5Card_8",
+        "EnemyMaster": "PansLab_Master_XueZhan",
+        "Name": "PansLab_Enemy_5H_8_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_5H_9": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_1",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_5Card_9",
+        "EnemyMaster": "PansLab_BiLei",
+        "Name": "PansLab_Enemy_5H_9_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_6H_1": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_3",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_6Card_1",
+        "EnemyMaster": "PansLab_Master_XueZhan",
+        "Name": "PansLab_Enemy_6H_1_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_6H_10": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_4",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_6Card_10",
+        "EnemyMaster": "PansLab_Master_XueZhan",
+        "Name": "PansLab_Enemy_6H_10_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_6H_2": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_4",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_6Card_2",
+        "EnemyMaster": "PansLab_BiLei",
+        "Name": "PansLab_Enemy_6H_2_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_6H_3": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_1",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_6Card_3",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLab_Enemy_6H_3_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_6H_4": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_2",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_6Card_4",
+        "EnemyMaster": "PansLab_Master_XueZhan",
+        "Name": "PansLab_Enemy_6H_4_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_6H_5": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_3",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_6Card_5",
+        "EnemyMaster": "PansLab_BiLei",
+        "Name": "PansLab_Enemy_6H_5_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_6H_6": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_4",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_6Card_6",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLab_Enemy_6H_6_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_6H_7": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_1",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_6Card_7",
+        "EnemyMaster": "PansLab_Master_XueZhan",
+        "Name": "PansLab_Enemy_6H_7_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_6H_8": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_2",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_6Card_8",
+        "EnemyMaster": "PansLab_BiLei",
+        "Name": "PansLab_Enemy_6H_8_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_6H_9": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_3",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_6Card_9",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLab_Enemy_6H_9_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_7H_1": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_3",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_7Card_1",
+        "EnemyMaster": "PansLab_Master_XueZhan",
+        "Name": "PansLab_Enemy_7H_1_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_7H_10": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_4",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_7Card_10",
+        "EnemyMaster": "PansLab_Master_XueZhan",
+        "Name": "PansLab_Enemy_7H_10_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
         ]
     },
     "Enemy_7H_2": {
-        "Name": "PansLab_Enemy_7H_2_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_BiLei",
-        "EnemyCard": "PansLab_7Card_2",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
         ],
-        "Time": 180000,
         "Background": "Battle_Scene_4",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_9H_6": {
-        "Name": "PansLab_Enemy_9H_6_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
         "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_XueZhan",
-        "EnemyCard": "PansLab_9Card_6",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_2",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
-        ]
-    },
-    "Enemy_7H_5": {
-        "Name": "PansLab_Enemy_7H_5_Name",
-        "Desc": "PansLabEnemyDesc",
         "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_7Card_2",
         "EnemyMaster": "PansLab_BiLei",
-        "EnemyCard": "PansLab_7Card_5",
+        "Name": "PansLab_Enemy_7H_2_Name",
+        "Time": 180000,
         "VictoryConditions": [
             {
-                "winner": "SideB",
-                "type": "TimeOut"
+                "type": "TimeOut",
+                "winner": "SideB"
             }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_3",
+        ]
+    },
+    "Enemy_7H_3": {
         "BGM": [
             "Mus_Battle_Whale",
             "Mus_Battle_Danger",
             ""
-        ]
-    },
-    "Enemy_9H_1": {
-        "Name": "PansLab_Enemy_9H_1_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_BiLei",
-        "EnemyCard": "PansLab_9Card_1",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
         ],
-        "Time": 180000,
         "Background": "Battle_Scene_1",
-        "BGM": [
-            "Mus_Battle_Whale",
-            "Mus_Battle_Danger",
-            ""
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_7Card_3",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLab_Enemy_7H_3_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
         ]
     },
     "Enemy_7H_4": {
-        "Name": "PansLab_Enemy_7H_4_Name",
-        "Desc": "PansLabEnemyDesc",
-        "BtnName": "Enemy_BtnName",
-        "BlockBattleConfig": "Normal",
-        "EnemyMaster": "PansLab_Master_XueZhan",
-        "EnemyCard": "PansLab_7Card_4",
-        "VictoryConditions": [
-            {
-                "winner": "SideB",
-                "type": "TimeOut"
-            }
-        ],
-        "Time": 180000,
-        "Background": "Battle_Scene_2",
         "BGM": [
             "Mus_Battle_Whale",
             "Mus_Battle_Danger",
             ""
+        ],
+        "Background": "Battle_Scene_2",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_7Card_4",
+        "EnemyMaster": "PansLab_Master_XueZhan",
+        "Name": "PansLab_Enemy_7H_4_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_7H_5": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_3",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_7Card_5",
+        "EnemyMaster": "PansLab_BiLei",
+        "Name": "PansLab_Enemy_7H_5_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_7H_6": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_4",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_7Card_6",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLab_Enemy_7H_6_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_7H_7": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_1",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_7Card_7",
+        "EnemyMaster": "PansLab_Master_XueZhan",
+        "Name": "PansLab_Enemy_7H_7_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_7H_8": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_2",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_7Card_8",
+        "EnemyMaster": "PansLab_BiLei",
+        "Name": "PansLab_Enemy_7H_8_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_7H_9": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_3",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_7Card_9",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLab_Enemy_7H_9_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_8H_1": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_1",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_8Card_1",
+        "EnemyMaster": "PansLab_BiLei",
+        "Name": "PansLab_Enemy_8H_1_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_8H_10": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_2",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_8Card_10",
+        "EnemyMaster": "PansLab_BiLei",
+        "Name": "PansLab_Enemy_8H_10_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_8H_2": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_2",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_8Card_2",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLab_Enemy_8H_2_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_8H_3": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_3",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_8Card_3",
+        "EnemyMaster": "PansLab_Master_XueZhan",
+        "Name": "PansLab_Enemy_8H_3_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_8H_4": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_4",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_8Card_4",
+        "EnemyMaster": "PansLab_BiLei",
+        "Name": "PansLab_Enemy_8H_4_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_8H_5": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_1",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_8Card_5",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLab_Enemy_8H_5_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_8H_6": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_2",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_8Card_6",
+        "EnemyMaster": "PansLab_Master_XueZhan",
+        "Name": "PansLab_Enemy_8H_6_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_8H_7": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_3",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_8Card_7",
+        "EnemyMaster": "PansLab_BiLei",
+        "Name": "PansLab_Enemy_8H_7_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_8H_8": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_4",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_8Card_8",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLab_Enemy_8H_8_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_8H_9": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_1",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_8Card_9",
+        "EnemyMaster": "PansLab_Master_XueZhan",
+        "Name": "PansLab_Enemy_8H_9_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_9H_1": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_1",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_9Card_1",
+        "EnemyMaster": "PansLab_BiLei",
+        "Name": "PansLab_Enemy_9H_1_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_9H_10": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_2",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_9Card_10",
+        "EnemyMaster": "PansLab_BiLei",
+        "Name": "PansLab_Enemy_9H_10_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_9H_2": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_2",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_9Card_2",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLab_Enemy_9H_2_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_9H_3": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_3",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_9Card_3",
+        "EnemyMaster": "PansLab_Master_XueZhan",
+        "Name": "PansLab_Enemy_9H_3_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_9H_4": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_4",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_9Card_4",
+        "EnemyMaster": "PansLab_BiLei",
+        "Name": "PansLab_Enemy_9H_4_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_9H_5": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_1",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_9Card_5",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLab_Enemy_9H_5_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_9H_6": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_2",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_9Card_6",
+        "EnemyMaster": "PansLab_Master_XueZhan",
+        "Name": "PansLab_Enemy_9H_6_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_9H_7": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_3",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_9Card_7",
+        "EnemyMaster": "PansLab_BiLei",
+        "Name": "PansLab_Enemy_9H_7_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_9H_8": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_4",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_9Card_8",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLab_Enemy_9H_8_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Enemy_9H_9": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_1",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Enemy_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_9Card_9",
+        "EnemyMaster": "PansLab_Master_XueZhan",
+        "Name": "PansLab_Enemy_9H_9_Name",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "SpBoss_1": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_1",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_8Card_1",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLabSpBoss_1",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "SpBoss_10": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_2",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_8Card_10",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLabSpBoss_10",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "SpBoss_11": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_3",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_8Card_1",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLabSpBoss_11",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "SpBoss_12": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_4",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_8Card_2",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLabSpBoss_12",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "SpBoss_13": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_1",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_8Card_3",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLabSpBoss_13",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "SpBoss_14": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_2",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_8Card_4",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLabSpBoss_14",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "SpBoss_15": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_3",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_8Card_5",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLabSpBoss_15",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "SpBoss_16": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_4",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_1",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLabSpBoss_16",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "SpBoss_17": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_1",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_2",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLabSpBoss_17",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "SpBoss_18": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_2",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_3",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLabSpBoss_18",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "SpBoss_19": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_3",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_4",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLabSpBoss_19",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "SpBoss_2": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_2",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_8Card_2",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLabSpBoss_2",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "SpBoss_20": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_4",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_5",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLabSpBoss_20",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "SpBoss_21": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_1",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_6",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLabSpBoss_21",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "SpBoss_22": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_2",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_7",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLabSpBoss_22",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "SpBoss_23": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_3",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_8",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLabSpBoss_23",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "SpBoss_24": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_4",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_9",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLabSpBoss_24",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "SpBoss_25": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_1",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_10",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLabSpBoss_25",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "SpBoss_26": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_2",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_1",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLabSpBoss_26",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "SpBoss_27": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_3",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_2",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLabSpBoss_27",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "SpBoss_28": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_4",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_3",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLabSpBoss_28",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "SpBoss_29": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_1",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_4",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLabSpBoss_29",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "SpBoss_3": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_3",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_8Card_3",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLabSpBoss_3",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "SpBoss_30": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_2",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_5",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLabSpBoss_30",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "SpBoss_31": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_3",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_6",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLabSpBoss_31",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "SpBoss_32": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_4",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_7",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLabSpBoss_32",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "SpBoss_33": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_1",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_8",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLabSpBoss_33",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "SpBoss_34": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_2",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_9",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLabSpBoss_34",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "SpBoss_35": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_3",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_10",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLabSpBoss_35",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "SpBoss_36": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_4",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_1",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLabSpBoss_36",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "SpBoss_37": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_1",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_2",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLabSpBoss_37",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "SpBoss_38": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_2",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_3",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLabSpBoss_38",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "SpBoss_39": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_3",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_4",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLabSpBoss_39",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "SpBoss_4": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_4",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_8Card_4",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLabSpBoss_4",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "SpBoss_40": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_4",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_10Card_5",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLabSpBoss_40",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "SpBoss_5": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_1",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_8Card_5",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLabSpBoss_5",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "SpBoss_6": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_2",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_8Card_6",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLabSpBoss_6",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "SpBoss_7": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_3",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_8Card_7",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLabSpBoss_7",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "SpBoss_8": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_4",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_8Card_8",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLabSpBoss_8",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "SpBoss_9": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "Mus_Battle_Danger",
+            ""
+        ],
+        "Background": "Battle_Scene_1",
+        "BlockBattleConfig": "Normal",
+        "BtnName": "Boss_BtnName",
+        "Desc": "PansLabEnemyDesc",
+        "EnemyCard": "PansLab_8Card_9",
+        "EnemyMaster": "PansLab_Master_LieSha",
+        "Name": "PansLabSpBoss_9",
+        "Time": 180000,
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
         ]
     }
 }

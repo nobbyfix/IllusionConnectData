@@ -1,1822 +1,1421 @@
 {
-    "yijia1": {
-        "Name": "Name_yijia1",
-        "Desc": "yijia1_ShortDesc",
-        "Room": "Room2",
-        "BuildingLevel": "yijia1_Lv1",
+    "Beilu": {
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "Beilu_Lv1",
         "Condition": {
             "Level": 1
         },
-        "UnlockDesc": "Unlock_yijia1",
-        "IsMoved": 1,
+        "DefaultSurface": "VillageSurface_Beilu_1",
+        "Desc": "Beilu_ShortDesc",
         "InitialPosition": [
             [
-                7,
-                0
+                4,
+                4
             ]
         ],
-        "Sort": 62,
-        "SurfaceList": [
-            "VillageSurface_yijia1_1"
-        ],
-        "DefaultSurface": "VillageSurface_yijia1_1",
-        "UseType": "",
-        "Space": [
-            1,
-            1
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
+        "IsMoved": 1,
+        "Name": "Name_Beilu",
         "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
+        "Quality": 3,
+        "Room": "Room1",
         "Sell": [
             {
-                "amount": 9,
+                "amount": 42,
                 "type": "IR_DecorateCoin"
             }
-        ]
+        ],
+        "Sort": 25,
+        "Space": [
+            3,
+            3
+        ],
+        "SurfaceList": [
+            "VillageSurface_Beilu_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_Beilu",
+        "Unlook": 0,
+        "UnlookItem": "",
+        "UseType": ""
     },
-    "Decorate5": {
-        "Name": "Decorate5_Name",
-        "Desc": "Decorate5_Desc",
-        "Room": "Room2",
-        "BuildingLevel": "Decorate5_Lv1",
+    "Decorate1": {
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "Decorate1_Lv1",
         "Condition": {
             "Level": 1
         },
-        "UnlockDesc": "Unlock_Decorate5",
-        "IsMoved": 1,
+        "DefaultSurface": "VillageSurface_Decorate1_1",
+        "Desc": "Decorate1_Desc",
         "InitialPosition": [
             [
                 2,
                 8
             ]
         ],
-        "Sort": 74,
-        "SurfaceList": [
-            "VillageSurface_Decorate5_1"
-        ],
-        "DefaultSurface": "VillageSurface_Decorate5_1",
-        "UseType": "",
-        "Space": [
-            1,
-            1
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
+        "IsMoved": 1,
+        "Name": "Decorate1_Name",
         "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "IM_Decorate5",
+        "Quality": 3,
+        "Room": "Room2",
         "Sell": [
             {
                 "amount": 1,
                 "type": "IR_DecorateCoin"
             }
-        ]
-    },
-    "Yugang": {
-        "Name": "Name_Yugang",
-        "Desc": "Yugang_ShortDesc",
-        "Room": "Room1",
-        "BuildingLevel": "Yugang_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_Yugang",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                7,
-                8
-            ]
-        ],
-        "Sort": 31,
-        "SurfaceList": [
-            "VillageSurface_Yugang_1"
-        ],
-        "DefaultSurface": "VillageSurface_Yugang_1",
-        "UseType": "",
-        "Space": [
-            1,
-            1
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
-        "Sell": [
-            {
-                "amount": 9,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "shuangrentangyi": {
-        "Name": "Name_shuangrentangyi",
-        "Desc": "shuangrentangyi_ShortDesc",
-        "Room": "Room4",
-        "BuildingLevel": "shuangrentangyi_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_shuangrentangyi",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                6,
-                8
-            ]
-        ],
-        "Sort": 52,
-        "SurfaceList": [
-            "VillageSurface_shuangrentangyi_1"
-        ],
-        "DefaultSurface": "VillageSurface_shuangrentangyi_1",
-        "UseType": "",
-        "Space": [
-            2,
-            2
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
-        "Sell": [
-            {
-                "amount": 18,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "Decorate_Tuwo": {
-        "Name": "Decorate_Tuwo_Name",
-        "Desc": "Decorate_Tuwo_Desc",
-        "Room": "Room2",
-        "BuildingLevel": "Decorate_Tuwo_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_Decorate_Tuwo",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                2,
-                8
-            ]
         ],
         "Sort": 70,
-        "SurfaceList": [
-            "VillageSurface_Decorate_Tuwo_1"
-        ],
-        "DefaultSurface": "VillageSurface_Decorate_Tuwo_1",
-        "UseType": "",
         "Space": [
-            2,
-            2
+            1,
+            1
         ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
+        "SurfaceList": [
+            "VillageSurface_Decorate1_1"
+        ],
         "Turn": 1,
+        "UnlockDesc": "Unlock_Decorate1",
+        "Unlook": 0,
+        "UnlookItem": "IM_Decorate1",
+        "UseType": ""
+    },
+    "Decorate2": {
+        "Amount": 1,
         "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
+        "BuildingLevel": "Decorate2_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "DefaultSurface": "VillageSurface_Decorate2_1",
+        "Desc": "Decorate2_Desc",
+        "InitialPosition": [
+            [
+                2,
+                8
+            ]
+        ],
+        "IsMoved": 1,
+        "Name": "Decorate2_Name",
+        "ProspectShow": 0,
+        "Quality": 3,
+        "Room": "Room2",
         "Sell": [
             {
                 "amount": 1,
                 "type": "IR_DecorateCoin"
             }
-        ]
+        ],
+        "Sort": 71,
+        "Space": [
+            1,
+            1
+        ],
+        "SurfaceList": [
+            "VillageSurface_Decorate2_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_Decorate2",
+        "Unlook": 0,
+        "UnlookItem": "IM_Decorate2",
+        "UseType": ""
     },
     "Decorate3": {
-        "Name": "Decorate3_Name",
-        "Desc": "Decorate3_Desc",
-        "Room": "Room2",
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
         "BuildingLevel": "Decorate3_Lv1",
         "Condition": {
             "Level": 1
         },
-        "UnlockDesc": "Unlock_Decorate3",
-        "IsMoved": 1,
+        "DefaultSurface": "VillageSurface_Decorate3_1",
+        "Desc": "Decorate3_Desc",
         "InitialPosition": [
             [
                 2,
                 8
             ]
         ],
-        "Sort": 72,
-        "SurfaceList": [
-            "VillageSurface_Decorate3_1"
-        ],
-        "DefaultSurface": "VillageSurface_Decorate3_1",
-        "UseType": "",
-        "Space": [
-            2,
-            3
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
+        "IsMoved": 1,
+        "Name": "Decorate3_Name",
         "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "IM_Decorate3",
+        "Quality": 3,
+        "Room": "Room2",
         "Sell": [
             {
                 "amount": 1,
                 "type": "IR_DecorateCoin"
             }
-        ]
+        ],
+        "Sort": 72,
+        "Space": [
+            2,
+            3
+        ],
+        "SurfaceList": [
+            "VillageSurface_Decorate3_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_Decorate3",
+        "Unlook": 0,
+        "UnlookItem": "IM_Decorate3",
+        "UseType": ""
     },
-    "yaoyi": {
-        "Name": "Name_yaoyi",
-        "Desc": "yaoyi_ShortDesc",
-        "Room": "Room2",
-        "BuildingLevel": "yaoyi_Lv1",
+    "Decorate4": {
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "Decorate4_Lv1",
         "Condition": {
             "Level": 1
         },
-        "UnlockDesc": "Unlock_yaoyi",
+        "DefaultSurface": "VillageSurface_Decorate4_1",
+        "Desc": "Decorate4_Desc",
+        "InitialPosition": [
+            [
+                2,
+                8
+            ]
+        ],
         "IsMoved": 1,
+        "Name": "Decorate4_Name",
+        "ProspectShow": 0,
+        "Quality": 3,
+        "Room": "Room2",
+        "Sell": [
+            {
+                "amount": 1,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "Sort": 73,
+        "Space": [
+            2,
+            1
+        ],
+        "SurfaceList": [
+            "VillageSurface_Decorate4_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_Decorate4",
+        "Unlook": 0,
+        "UnlookItem": "IM_Decorate4",
+        "UseType": ""
+    },
+    "Decorate5": {
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "Decorate5_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "DefaultSurface": "VillageSurface_Decorate5_1",
+        "Desc": "Decorate5_Desc",
+        "InitialPosition": [
+            [
+                2,
+                8
+            ]
+        ],
+        "IsMoved": 1,
+        "Name": "Decorate5_Name",
+        "ProspectShow": 0,
+        "Quality": 3,
+        "Room": "Room2",
+        "Sell": [
+            {
+                "amount": 1,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "Sort": 74,
+        "Space": [
+            1,
+            1
+        ],
+        "SurfaceList": [
+            "VillageSurface_Decorate5_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_Decorate5",
+        "Unlook": 0,
+        "UnlookItem": "IM_Decorate5",
+        "UseType": ""
+    },
+    "Decorate6": {
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "Decorate6_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "DefaultSurface": "VillageSurface_Decorate6_1",
+        "Desc": "Decorate6_Desc",
+        "InitialPosition": [
+            [
+                2,
+                8
+            ]
+        ],
+        "IsMoved": 1,
+        "Name": "Decorate6_Name",
+        "ProspectShow": 0,
+        "Quality": 3,
+        "Room": "Room2",
+        "Sell": [
+            {
+                "amount": 1,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "Sort": 75,
+        "Space": [
+            1,
+            1
+        ],
+        "SurfaceList": [
+            "VillageSurface_Decorate6_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_Decorate6",
+        "Unlook": 0,
+        "UnlookItem": "IM_Decorate6",
+        "UseType": ""
+    },
+    "Decorate7": {
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "Decorate7_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "DefaultSurface": "VillageSurface_Decorate7_1",
+        "Desc": "Decorate7_Desc",
+        "InitialPosition": [
+            [
+                2,
+                8
+            ]
+        ],
+        "IsMoved": 1,
+        "Name": "Decorate7_Name",
+        "ProspectShow": 0,
+        "Quality": 3,
+        "Room": "Room2",
+        "Sell": [
+            {
+                "amount": 1,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "Sort": 76,
+        "Space": [
+            3,
+            3
+        ],
+        "SurfaceList": [
+            "VillageSurface_Decorate7_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_Decorate7",
+        "Unlook": 0,
+        "UnlookItem": "IM_Decorate7",
+        "UseType": ""
+    },
+    "Decorate8": {
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "Decorate8_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "DefaultSurface": "VillageSurface_Decorate8_1",
+        "Desc": "Decorate8_Desc",
+        "InitialPosition": [
+            [
+                2,
+                8
+            ]
+        ],
+        "IsMoved": 1,
+        "Name": "Decorate8_Name",
+        "ProspectShow": 0,
+        "Quality": 3,
+        "Room": "Room2",
+        "Sell": [
+            {
+                "amount": 1,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "Sort": 77,
+        "Space": [
+            1,
+            1
+        ],
+        "SurfaceList": [
+            "VillageSurface_Decorate8_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_Decorate8",
+        "Unlook": 0,
+        "UnlookItem": "IM_Decorate8",
+        "UseType": ""
+    },
+    "Decorate9": {
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "Decorate9_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "DefaultSurface": "VillageSurface_Decorate9_1",
+        "Desc": "Decorate9_Desc",
+        "InitialPosition": [
+            [
+                2,
+                8
+            ]
+        ],
+        "IsMoved": 1,
+        "Name": "Decorate9_Name",
+        "ProspectShow": 0,
+        "Quality": 3,
+        "Room": "Room2",
+        "Sell": [
+            {
+                "amount": 1,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "Sort": 78,
+        "Space": [
+            2,
+            3
+        ],
+        "SurfaceList": [
+            "VillageSurface_Decorate9_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_Decorate9",
+        "Unlook": 0,
+        "UnlookItem": "IM_Decorate9",
+        "UseType": ""
+    },
+    "Decorate_Tuwo": {
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "Decorate_Tuwo_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "DefaultSurface": "VillageSurface_Decorate_Tuwo_1",
+        "Desc": "Decorate_Tuwo_Desc",
+        "InitialPosition": [
+            [
+                2,
+                8
+            ]
+        ],
+        "IsMoved": 1,
+        "Name": "Decorate_Tuwo_Name",
+        "ProspectShow": 0,
+        "Quality": 3,
+        "Room": "Room2",
+        "Sell": [
+            {
+                "amount": 1,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "Sort": 70,
+        "Space": [
+            2,
+            2
+        ],
+        "SurfaceList": [
+            "VillageSurface_Decorate_Tuwo_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_Decorate_Tuwo",
+        "Unlook": 0,
+        "UnlookItem": "",
+        "UseType": ""
+    },
+    "Dianshi": {
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "Dianshi_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "DefaultSurface": "VillageSurface_Dianshi_1",
+        "Desc": "Dianshi_ShortDesc",
+        "InitialPosition": [
+            [
+                5,
+                9
+            ]
+        ],
+        "IsMoved": 1,
+        "Name": "Name_Dianshi",
+        "ProspectShow": 0,
+        "Quality": 3,
+        "Room": "Room1",
+        "Sell": [
+            {
+                "amount": 9,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "Sort": 26,
+        "Space": [
+            1,
+            1
+        ],
+        "SurfaceList": [
+            "VillageSurface_Dianshi_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_Dianshi",
+        "Unlook": 0,
+        "UnlookItem": "",
+        "UseType": ""
+    },
+    "Dipu": {
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "Dipu_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "DefaultSurface": "VillageSurface_Dipu_1",
+        "Desc": "Dipu_ShortDesc",
         "InitialPosition": [
             [
                 1,
                 7
             ]
         ],
-        "Sort": 60,
-        "SurfaceList": [
-            "VillageSurface_yaoyi_1"
-        ],
-        "DefaultSurface": "VillageSurface_yaoyi_1",
-        "UseType": "sit",
-        "Space": [
-            1,
-            1
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
+        "IsMoved": 1,
+        "Name": "Name_Dipu",
         "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
+        "Quality": 3,
+        "Room": "Room1",
         "Sell": [
             {
-                "amount": 12,
+                "amount": 21,
                 "type": "IR_DecorateCoin"
             }
-        ]
-    },
-    "yushi": {
-        "Name": "Name_yushi",
-        "Desc": "yushi_ShortDesc",
-        "Room": "Room5",
-        "BuildingLevel": "yushi_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_yushi",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                0,
-                0
-            ]
         ],
-        "Sort": 64,
-        "SurfaceList": [
-            "VillageSurface_yushi_1"
-        ],
-        "DefaultSurface": "VillageSurface_yushi_1",
-        "UseType": "",
+        "Sort": 27,
         "Space": [
             2,
             2
         ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
+        "SurfaceList": [
+            "VillageSurface_Dipu_1"
+        ],
         "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
+        "UnlockDesc": "Unlock_Dipu",
+        "Unlook": 0,
         "UnlookItem": "",
+        "UseType": "lie"
+    },
+    "KaiHeiFangZhuo": {
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "KaiHeiFangZhuo_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "DefaultSurface": "VillageSurface_KaiHeiFangZhuo_1",
+        "Desc": "KaiHeiFangZhuo_ShortDesc",
+        "InitialPosition": [
+            [
+                5,
+                5
+            ]
+        ],
+        "IsMoved": 1,
+        "Name": "Name_KaiHeiFangZhuo",
+        "ProspectShow": 0,
+        "Quality": 3,
+        "Room": "Room6",
+        "Sell": [
+            {
+                "amount": 27,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "Sort": 18,
+        "Space": [
+            2,
+            2
+        ],
+        "SurfaceList": [
+            "VillageSurface_KaiHeiFangZhuo_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_KaiHeiFangZhuo",
+        "Unlook": 0,
+        "UnlookItem": "",
+        "UseType": ""
+    },
+    "MaKaLongGui": {
+        "Amount": 2,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "MaKaLongGui_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "DefaultSurface": "VillageSurface_MaKaLongGui_1",
+        "Desc": "MaKaLongGui_ShortDesc",
+        "InitialPosition": [
+            [
+                7,
+                2
+            ],
+            [
+                7,
+                5
+            ]
+        ],
+        "IsMoved": 1,
+        "Name": "Name_MaKaLongGui",
+        "ProspectShow": 0,
+        "Quality": 3,
+        "Room": "Room3",
         "Sell": [
             {
                 "amount": 18,
                 "type": "IR_DecorateCoin"
             }
-        ]
+        ],
+        "Sort": 20,
+        "Space": [
+            1,
+            2
+        ],
+        "SurfaceList": [
+            "VillageSurface_MaKaLongGui_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_MaKaLongGui",
+        "Unlook": 0,
+        "UnlookItem": "",
+        "UseType": ""
     },
-    "shenghuogui": {
-        "Name": "Name_shenghuogui",
-        "Desc": "shenghuogui_ShortDesc",
-        "Room": "Room1",
-        "BuildingLevel": "shenghuogui_Lv1",
+    "PinJianCanZhuo": {
+        "Amount": 2,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "PinJianCanZhuo_Lv1",
         "Condition": {
             "Level": 1
         },
-        "UnlockDesc": "Unlock_shenghuogui",
+        "DefaultSurface": "VillageSurface_PinJianCanZhuo_1",
+        "Desc": "PinJianCanZhuo_ShortDesc",
+        "InitialPosition": [
+            [
+                1,
+                1
+            ],
+            [
+                4,
+                1
+            ]
+        ],
         "IsMoved": 1,
+        "Name": "Name_PinJianCanZhuo",
+        "ProspectShow": 0,
+        "Quality": 3,
+        "Room": "Room3",
+        "Sell": [
+            {
+                "amount": 12,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "Sort": 21,
+        "Space": [
+            1,
+            1
+        ],
+        "SurfaceList": [
+            "VillageSurface_PinJianCanZhuo_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_PinJianCanZhuo",
+        "Unlook": 0,
+        "UnlookItem": "",
+        "UseType": ""
+    },
+    "Pingfeng": {
+        "Amount": 4,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "Pingfeng_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "DefaultSurface": "VillageSurface_Pingfeng_1",
+        "Desc": "Pingfeng_ShortDesc",
         "InitialPosition": [
             [
                 0,
                 0
             ]
         ],
-        "Sort": 48,
-        "SurfaceList": [
-            "VillageSurface_shenghuogui_1"
-        ],
-        "DefaultSurface": "VillageSurface_shenghuogui_1",
-        "UseType": "",
-        "Space": [
-            2,
-            1
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 1,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
-        "Sell": [
-            {
-                "amount": 18,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "luoditaideng": {
-        "Name": "Name_luoditaideng",
-        "Desc": "luoditaideng_ShortDesc",
-        "Room": "Room5",
-        "BuildingLevel": "luoditaideng_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_luoditaideng",
         "IsMoved": 1,
-        "InitialPosition": [
-            [
-                2,
-                9
-            ]
-        ],
-        "Sort": 41,
-        "SurfaceList": [
-            "VillageSurface_luoditaideng_1"
-        ],
-        "DefaultSurface": "VillageSurface_luoditaideng_1",
-        "UseType": "",
-        "Space": [
-            1,
-            1
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
+        "Name": "Name_Pingfeng",
         "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
+        "Quality": 3,
+        "Room": "Room6",
         "Sell": [
             {
                 "amount": 12,
                 "type": "IR_DecorateCoin"
             }
-        ]
+        ],
+        "Sort": 28,
+        "Space": [
+            1,
+            1
+        ],
+        "SurfaceList": [
+            "VillageSurface_Pingfeng_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_Pingfeng",
+        "Unlook": 0,
+        "UnlookItem": "",
+        "UseType": ""
+    },
+    "QiZhuo": {
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "QiZhuo_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "DefaultSurface": "VillageSurface_QiZhuo_1",
+        "Desc": "QiZhuo_ShortDesc",
+        "InitialPosition": [
+            [
+                1,
+                1
+            ]
+        ],
+        "IsMoved": 1,
+        "Name": "Name_QiZhuo",
+        "ProspectShow": 0,
+        "Quality": 3,
+        "Room": "Room6",
+        "Sell": [
+            {
+                "amount": 9,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "Sort": 22,
+        "Space": [
+            1,
+            1
+        ],
+        "SurfaceList": [
+            "VillageSurface_QiZhuo_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_QiZhuo",
+        "Unlook": 0,
+        "UnlookItem": "",
+        "UseType": ""
+    },
+    "SiQiKongJian": {
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "SiQiKongJian_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "DefaultSurface": "VillageSurface_SiQiKongJian_1",
+        "Desc": "SiQiKongJian_ShortDesc",
+        "InitialPosition": [
+            [
+                2,
+                8
+            ]
+        ],
+        "IsMoved": 1,
+        "Name": "Name_SiQiKongJian",
+        "ProspectShow": 0,
+        "Quality": 3,
+        "Room": "Room6",
+        "Sell": [
+            {
+                "amount": 27,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "Sort": 17,
+        "Space": [
+            2,
+            2
+        ],
+        "SurfaceList": [
+            "VillageSurface_SiQiKongJian_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_SiQiKongJian",
+        "Unlook": 0,
+        "UnlookItem": "",
+        "UseType": "sit"
+    },
+    "Suzi": {
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "Suzi_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "DefaultSurface": "VillageSurface_Suzi_1",
+        "Desc": "Suzi_ShortDesc",
+        "InitialPosition": [
+            [
+                8,
+                2
+            ]
+        ],
+        "IsMoved": 1,
+        "Name": "Name_Suzi",
+        "ProspectShow": 0,
+        "Quality": 3,
+        "Room": "Room1",
+        "Sell": [
+            {
+                "amount": 6,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "Sort": 29,
+        "Space": [
+            1,
+            1
+        ],
+        "SurfaceList": [
+            "VillageSurface_Suzi_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_Suzi",
+        "Unlook": 1,
+        "UnlookItem": "",
+        "UseType": ""
+    },
+    "Xiuxianzhuo": {
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "Xiuxianzhuo_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "DefaultSurface": "VillageSurface_Xiuxianzhuo_1",
+        "Desc": "Xiuxianzhuo_ShortDesc",
+        "InitialPosition": [
+            [
+                8,
+                6
+            ]
+        ],
+        "IsMoved": 1,
+        "Name": "Name_Xiuxianzhuo",
+        "ProspectShow": 0,
+        "Quality": 3,
+        "Room": "Room1",
+        "Sell": [
+            {
+                "amount": 18,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "Sort": 30,
+        "Space": [
+            1,
+            2
+        ],
+        "SurfaceList": [
+            "VillageSurface_Xiuxianzhuo_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_Xiuxianzhuo",
+        "Unlook": 0,
+        "UnlookItem": "",
+        "UseType": ""
+    },
+    "Yugang": {
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "Yugang_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "DefaultSurface": "VillageSurface_Yugang_1",
+        "Desc": "Yugang_ShortDesc",
+        "InitialPosition": [
+            [
+                7,
+                8
+            ]
+        ],
+        "IsMoved": 1,
+        "Name": "Name_Yugang",
+        "ProspectShow": 0,
+        "Quality": 3,
+        "Room": "Room1",
+        "Sell": [
+            {
+                "amount": 9,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "Sort": 31,
+        "Space": [
+            1,
+            1
+        ],
+        "SurfaceList": [
+            "VillageSurface_Yugang_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_Yugang",
+        "Unlook": 0,
+        "UnlookItem": "",
+        "UseType": ""
+    },
+    "ZhanBuZhuo": {
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "ZhanBuZhuo_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "DefaultSurface": "VillageSurface_ZhanBuZhuo_1",
+        "Desc": "ZhanBuZhuo_ShortDesc",
+        "InitialPosition": [
+            [
+                0,
+                0
+            ]
+        ],
+        "IsMoved": 1,
+        "Name": "Name_ZhanBuZhuo",
+        "ProspectShow": 0,
+        "Quality": 3,
+        "Room": "Room6",
+        "Sell": [
+            {
+                "amount": 21,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "Sort": 24,
+        "Space": [
+            2,
+            2
+        ],
+        "SurfaceList": [
+            "VillageSurface_ZhanBuZhuo_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_ZhanBuZhuo",
+        "Unlook": 0,
+        "UnlookItem": "",
+        "UseType": ""
+    },
+    "Zhixiang": {
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "Zhixiang_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "DefaultSurface": "VillageSurface_Zhixiang_1",
+        "Desc": "Zhixiang_ShortDesc",
+        "InitialPosition": [
+            [
+                0,
+                0
+            ]
+        ],
+        "IsMoved": 1,
+        "Name": "Name_Zhixiang",
+        "ProspectShow": 0,
+        "Quality": 3,
+        "Room": "Room1",
+        "Sell": [
+            {
+                "amount": 6,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "Sort": 32,
+        "Space": [
+            1,
+            1
+        ],
+        "SurfaceList": [
+            "VillageSurface_Zhixiang_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_Zhixiang",
+        "Unlook": 0,
+        "UnlookItem": "",
+        "UseType": ""
+    },
+    "chazhuo1": {
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "chazhuo1_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "DefaultSurface": "VillageSurface_chazhuo1_1",
+        "Desc": "chazhuo1_ShortDesc",
+        "InitialPosition": [
+            [
+                1,
+                0
+            ]
+        ],
+        "IsMoved": 1,
+        "Name": "Name_chazhuo1",
+        "ProspectShow": 0,
+        "Quality": 3,
+        "Room": "Room2",
+        "Sell": [
+            {
+                "amount": 12,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "Sort": 33,
+        "Space": [
+            1,
+            1
+        ],
+        "SurfaceList": [
+            "VillageSurface_chazhuo1_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_chazhuo1",
+        "Unlook": 0,
+        "UnlookItem": "",
+        "UseType": ""
+    },
+    "chuantouguibai": {
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "chuantouguibai_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "DefaultSurface": "VillageSurface_chuantouguibai_1",
+        "Desc": "chuantouguibai_ShortDesc",
+        "InitialPosition": [
+            [
+                8,
+                9
+            ]
+        ],
+        "IsMoved": 1,
+        "Name": "Name_chuantouguibai",
+        "ProspectShow": 0,
+        "Quality": 3,
+        "Room": "Room5",
+        "Sell": [
+            {
+                "amount": 12,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "Sort": 34,
+        "Space": [
+            1,
+            1
+        ],
+        "SurfaceList": [
+            "VillageSurface_chuantouguibai_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_chuantouguibai",
+        "Unlook": 0,
+        "UnlookItem": "",
+        "UseType": ""
+    },
+    "damaojia": {
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "damaojia_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "DefaultSurface": "VillageSurface_damaojia_1",
+        "Desc": "damaojia_ShortDesc",
+        "InitialPosition": [
+            [
+                9,
+                8
+            ]
+        ],
+        "IsMoved": 1,
+        "Name": "Name_damaojia",
+        "ProspectShow": 0,
+        "Quality": 3,
+        "Room": "Room2",
+        "Sell": [
+            {
+                "amount": 21,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "Sort": 35,
+        "Space": [
+            2,
+            1
+        ],
+        "SurfaceList": [
+            "VillageSurface_damaojia_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_damaojia",
+        "Unlook": 0,
+        "UnlookItem": "",
+        "UseType": ""
     },
     "dashugui": {
-        "Name": "Name_dashugui",
-        "Desc": "dashugui_ShortDesc",
-        "Room": "Room2",
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
         "BuildingLevel": "dashugui_Lv1",
         "Condition": {
             "Level": 1
         },
-        "UnlockDesc": "Unlock_dashugui",
-        "IsMoved": 1,
+        "DefaultSurface": "VillageSurface_dashugui_1",
+        "Desc": "dashugui_ShortDesc",
         "InitialPosition": [
             [
                 0,
                 8
             ]
         ],
-        "Sort": 36,
-        "SurfaceList": [
-            "VillageSurface_dashugui_1"
-        ],
-        "DefaultSurface": "VillageSurface_dashugui_1",
-        "UseType": "",
-        "Space": [
-            2,
-            1
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
+        "IsMoved": 1,
+        "Name": "Name_dashugui",
         "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
+        "Quality": 3,
+        "Room": "Room2",
         "Sell": [
             {
                 "amount": 15,
                 "type": "IR_DecorateCoin"
             }
-        ]
+        ],
+        "Sort": 36,
+        "Space": [
+            2,
+            1
+        ],
+        "SurfaceList": [
+            "VillageSurface_dashugui_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_dashugui",
+        "Unlook": 0,
+        "UnlookItem": "",
+        "UseType": ""
     },
-    "sanjia": {
-        "Name": "Name_sanjia",
-        "Desc": "sanjia_ShortDesc",
-        "Room": "Room2",
-        "BuildingLevel": "sanjia_Lv1",
+    "dazhixiang": {
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "dazhixiang_Lv1",
         "Condition": {
             "Level": 1
         },
-        "UnlockDesc": "Unlock_sanjia",
-        "IsMoved": 1,
+        "DefaultSurface": "VillageSurface_dazhixiang_1",
+        "Desc": "dazhixiang_ShortDesc",
         "InitialPosition": [
             [
-                8,
-                0
+                5,
+                2
             ]
         ],
-        "Sort": 47,
-        "SurfaceList": [
-            "VillageSurface_sanjia_1"
+        "IsMoved": 1,
+        "Name": "Name_dazhixiang",
+        "ProspectShow": 0,
+        "Quality": 3,
+        "Room": "Room1",
+        "Sell": [
+            {
+                "amount": 6,
+                "type": "IR_DecorateCoin"
+            }
         ],
-        "DefaultSurface": "VillageSurface_sanjia_1",
-        "UseType": "",
+        "Sort": 37,
         "Space": [
             1,
             1
         ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
+        "SurfaceList": [
+            "VillageSurface_dazhixiang_1"
+        ],
         "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
+        "UnlockDesc": "Unlock_dazhixiang",
+        "Unlook": 0,
         "UnlookItem": "",
-        "Sell": [
-            {
-                "amount": 9,
-                "type": "IR_DecorateCoin"
-            }
-        ]
+        "UseType": ""
     },
     "dideng": {
-        "Name": "Name_dideng",
-        "Desc": "dideng_ShortDesc",
-        "Room": "Room1",
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
         "BuildingLevel": "dideng_Lv1",
         "Condition": {
             "Level": 1
         },
-        "UnlockDesc": "Unlock_dideng",
-        "IsMoved": 1,
+        "DefaultSurface": "VillageSurface_dideng_1",
+        "Desc": "dideng_ShortDesc",
         "InitialPosition": [
             [
                 5,
                 7
             ]
         ],
-        "Sort": 38,
-        "SurfaceList": [
-            "VillageSurface_dideng_1"
-        ],
-        "DefaultSurface": "VillageSurface_dideng_1",
-        "UseType": "",
-        "Space": [
-            1,
-            1
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
+        "IsMoved": 1,
+        "Name": "Name_dideng",
         "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
+        "Quality": 3,
+        "Room": "Room1",
         "Sell": [
             {
                 "amount": 6,
                 "type": "IR_DecorateCoin"
             }
-        ]
+        ],
+        "Sort": 38,
+        "Space": [
+            1,
+            1
+        ],
+        "SurfaceList": [
+            "VillageSurface_dideng_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_dideng",
+        "Unlook": 0,
+        "UnlookItem": "",
+        "UseType": ""
+    },
+    "guizi": {
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "guizi_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "DefaultSurface": "VillageSurface_guizi_1",
+        "Desc": "guizi_ShortDesc",
+        "InitialPosition": [
+            [
+                2,
+                8
+            ]
+        ],
+        "IsMoved": 1,
+        "Name": "Name_guizi",
+        "ProspectShow": 0,
+        "Quality": 3,
+        "Room": "Room1",
+        "Sell": [
+            {
+                "amount": 15,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "Sort": 39,
+        "Space": [
+            2,
+            1
+        ],
+        "SurfaceList": [
+            "VillageSurface_guizi_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_guizi",
+        "Unlook": 0,
+        "UnlookItem": "",
+        "UseType": ""
+    },
+    "luoditaideng": {
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "luoditaideng_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "DefaultSurface": "VillageSurface_luoditaideng_1",
+        "Desc": "luoditaideng_ShortDesc",
+        "InitialPosition": [
+            [
+                2,
+                9
+            ]
+        ],
+        "IsMoved": 1,
+        "Name": "Name_luoditaideng",
+        "ProspectShow": 0,
+        "Quality": 3,
+        "Room": "Room5",
+        "Sell": [
+            {
+                "amount": 12,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "Sort": 41,
+        "Space": [
+            1,
+            1
+        ],
+        "SurfaceList": [
+            "VillageSurface_luoditaideng_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_luoditaideng",
+        "Unlook": 0,
+        "UnlookItem": "",
+        "UseType": ""
+    },
+    "maojia": {
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "maojia_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "DefaultSurface": "VillageSurface_maojia_1",
+        "Desc": "maojia_ShortDesc",
+        "InitialPosition": [
+            [
+                3,
+                0
+            ]
+        ],
+        "IsMoved": 1,
+        "Name": "Name_maojia",
+        "ProspectShow": 0,
+        "Quality": 3,
+        "Room": "Room2",
+        "Sell": [
+            {
+                "amount": 15,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "Sort": 42,
+        "Space": [
+            1,
+            1
+        ],
+        "SurfaceList": [
+            "VillageSurface_maojia_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_maojia",
+        "Unlook": 0,
+        "UnlookItem": "",
+        "UseType": ""
+    },
+    "maoshapen": {
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "maoshapen_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "DefaultSurface": "VillageSurface_maoshapen_1",
+        "Desc": "maoshapen_ShortDesc",
+        "InitialPosition": [
+            [
+                9,
+                7
+            ]
+        ],
+        "IsMoved": 1,
+        "Name": "Name_maoshapen",
+        "ProspectShow": 0,
+        "Quality": 3,
+        "Room": "Room2",
+        "Sell": [
+            {
+                "amount": 18,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "Sort": 43,
+        "Space": [
+            1,
+            1
+        ],
+        "SurfaceList": [
+            "VillageSurface_maoshapen_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_maoshapen",
+        "Unlook": 0,
+        "UnlookItem": "",
+        "UseType": ""
     },
     "penquanji": {
-        "Name": "Name_penquanji",
-        "Desc": "penquanji_ShortDesc",
-        "Room": "Room3",
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
         "BuildingLevel": "penquanji_Lv1",
         "Condition": {
             "Level": 1
         },
-        "UnlockDesc": "Unlock_penquanji",
-        "IsMoved": 1,
+        "DefaultSurface": "VillageSurface_penquanji_1",
+        "Desc": "penquanji_ShortDesc",
         "InitialPosition": [
             [
                 3,
                 4
             ]
         ],
-        "Sort": 44,
-        "SurfaceList": [
-            "VillageSurface_penquanji_1"
-        ],
-        "DefaultSurface": "VillageSurface_penquanji_1",
-        "UseType": "",
-        "Space": [
-            3,
-            3
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
+        "IsMoved": 1,
+        "Name": "Name_penquanji",
         "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
+        "Quality": 3,
+        "Room": "Room3",
         "Sell": [
             {
                 "amount": 42,
                 "type": "IR_DecorateCoin"
             }
-        ]
-    },
-    "shuangpingdiannaozhuo": {
-        "Name": "Name_shuangpingdiannaozhuo",
-        "Desc": "shuangpingdiannaozhuo_ShortDesc",
-        "Room": "Room1",
-        "BuildingLevel": "shuangpingdiannaozhuo_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_shuangpingdiannaozhuo",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                7,
-                0
-            ]
         ],
-        "Sort": 50,
-        "SurfaceList": [
-            "VillageSurface_shuangpingdiannaozhuo_1"
-        ],
-        "DefaultSurface": "VillageSurface_shuangpingdiannaozhuo_1",
-        "UseType": "",
-        "Space": [
-            2,
-            2
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 1,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
-        "Sell": [
-            {
-                "amount": 27,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "Dipu": {
-        "Name": "Name_Dipu",
-        "Desc": "Dipu_ShortDesc",
-        "Room": "Room1",
-        "BuildingLevel": "Dipu_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_Dipu",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                1,
-                7
-            ]
-        ],
-        "Sort": 27,
-        "SurfaceList": [
-            "VillageSurface_Dipu_1"
-        ],
-        "DefaultSurface": "VillageSurface_Dipu_1",
-        "UseType": "lie",
-        "Space": [
-            2,
-            2
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
-        "Sell": [
-            {
-                "amount": 21,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "yumaowo": {
-        "Name": "Name_yumaowo",
-        "Desc": "yumaowo_ShortDesc",
-        "Room": "Room2",
-        "BuildingLevel": "yumaowo_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_yumaowo",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                7,
-                5
-            ]
-        ],
-        "Sort": 63,
-        "SurfaceList": [
-            "VillageSurface_yumaowo_1"
-        ],
-        "DefaultSurface": "VillageSurface_yumaowo_1",
-        "UseType": "",
-        "Space": [
-            1,
-            1
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
-        "Sell": [
-            {
-                "amount": 6,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "guizi": {
-        "Name": "Name_guizi",
-        "Desc": "guizi_ShortDesc",
-        "Room": "Room1",
-        "BuildingLevel": "guizi_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_guizi",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                2,
-                8
-            ]
-        ],
-        "Sort": 39,
-        "SurfaceList": [
-            "VillageSurface_guizi_1"
-        ],
-        "DefaultSurface": "VillageSurface_guizi_1",
-        "UseType": "",
-        "Space": [
-            2,
-            1
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
-        "Sell": [
-            {
-                "amount": 15,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "chuantouguibai": {
-        "Name": "Name_chuantouguibai",
-        "Desc": "chuantouguibai_ShortDesc",
-        "Room": "Room5",
-        "BuildingLevel": "chuantouguibai_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_chuantouguibai",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                8,
-                9
-            ]
-        ],
-        "Sort": 34,
-        "SurfaceList": [
-            "VillageSurface_chuantouguibai_1"
-        ],
-        "DefaultSurface": "VillageSurface_chuantouguibai_1",
-        "UseType": "",
-        "Space": [
-            1,
-            1
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
-        "Sell": [
-            {
-                "amount": 12,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "shugui": {
-        "Name": "Name_shugui",
-        "Desc": "shugui_ShortDesc",
-        "Room": "Room1",
-        "BuildingLevel": "shugui_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_shugui",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                8,
-                8
-            ]
-        ],
-        "Sort": 54,
-        "SurfaceList": [
-            "VillageSurface_shugui_1"
-        ],
-        "DefaultSurface": "VillageSurface_shugui_1",
-        "UseType": "",
-        "Space": [
-            2,
-            2
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 1,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
-        "Sell": [
-            {
-                "amount": 21,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "Suzi": {
-        "Name": "Name_Suzi",
-        "Desc": "Suzi_ShortDesc",
-        "Room": "Room1",
-        "BuildingLevel": "Suzi_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_Suzi",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                8,
-                2
-            ]
-        ],
-        "Sort": 29,
-        "SurfaceList": [
-            "VillageSurface_Suzi_1"
-        ],
-        "DefaultSurface": "VillageSurface_Suzi_1",
-        "UseType": "",
-        "Space": [
-            1,
-            1
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 1,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
-        "Sell": [
-            {
-                "amount": 6,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "PinJianCanZhuo": {
-        "Name": "Name_PinJianCanZhuo",
-        "Desc": "PinJianCanZhuo_ShortDesc",
-        "Room": "Room3",
-        "BuildingLevel": "PinJianCanZhuo_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_PinJianCanZhuo",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                1,
-                1
-            ],
-            [
-                4,
-                1
-            ]
-        ],
-        "Sort": 21,
-        "SurfaceList": [
-            "VillageSurface_PinJianCanZhuo_1"
-        ],
-        "DefaultSurface": "VillageSurface_PinJianCanZhuo_1",
-        "UseType": "",
-        "Space": [
-            1,
-            1
-        ],
-        "Amount": 2,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
-        "Sell": [
-            {
-                "amount": 12,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "maojia": {
-        "Name": "Name_maojia",
-        "Desc": "maojia_ShortDesc",
-        "Room": "Room2",
-        "BuildingLevel": "maojia_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_maojia",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                3,
-                0
-            ]
-        ],
-        "Sort": 42,
-        "SurfaceList": [
-            "VillageSurface_maojia_1"
-        ],
-        "DefaultSurface": "VillageSurface_maojia_1",
-        "UseType": "",
-        "Space": [
-            1,
-            1
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
-        "Sell": [
-            {
-                "amount": 15,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "zishuruandeng": {
-        "Name": "Name_zishuruandeng",
-        "Desc": "zishuruandeng_ShortDesc",
-        "Room": "Room5",
-        "BuildingLevel": "zishuruandeng_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_zishuruandeng",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                8,
-                7
-            ]
-        ],
-        "Sort": 65,
-        "SurfaceList": [
-            "VillageSurface_zishuruandeng_1"
-        ],
-        "DefaultSurface": "VillageSurface_zishuruandeng_1",
-        "UseType": "",
-        "Space": [
-            1,
-            1
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
-        "Sell": [
-            {
-                "amount": 12,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "yongchi": {
-        "Name": "Name_yongchi",
-        "Desc": "yongchi_ShortDesc",
-        "Room": "Room4",
-        "BuildingLevel": "yongchi_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_yongchi",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                2,
-                2
-            ]
-        ],
-        "Sort": 66,
-        "SurfaceList": [
-            "VillageSurface_yongchi_1"
-        ],
-        "DefaultSurface": "VillageSurface_yongchi_1",
-        "UseType": "bath",
-        "Space": [
-            4,
-            4
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
-        "Sell": [
-            {
-                "amount": 60,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "KaiHeiFangZhuo": {
-        "Name": "Name_KaiHeiFangZhuo",
-        "Desc": "KaiHeiFangZhuo_ShortDesc",
-        "Room": "Room6",
-        "BuildingLevel": "KaiHeiFangZhuo_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_KaiHeiFangZhuo",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                5,
-                5
-            ]
-        ],
-        "Sort": 18,
-        "SurfaceList": [
-            "VillageSurface_KaiHeiFangZhuo_1"
-        ],
-        "DefaultSurface": "VillageSurface_KaiHeiFangZhuo_1",
-        "UseType": "",
-        "Space": [
-            2,
-            2
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
-        "Sell": [
-            {
-                "amount": 27,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "Decorate2": {
-        "Name": "Decorate2_Name",
-        "Desc": "Decorate2_Desc",
-        "Room": "Room2",
-        "BuildingLevel": "Decorate2_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_Decorate2",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                2,
-                8
-            ]
-        ],
-        "Sort": 71,
-        "SurfaceList": [
-            "VillageSurface_Decorate2_1"
-        ],
-        "DefaultSurface": "VillageSurface_Decorate2_1",
-        "UseType": "",
-        "Space": [
-            1,
-            1
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "IM_Decorate2",
-        "Sell": [
-            {
-                "amount": 1,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "ZhanBuZhuo": {
-        "Name": "Name_ZhanBuZhuo",
-        "Desc": "ZhanBuZhuo_ShortDesc",
-        "Room": "Room6",
-        "BuildingLevel": "ZhanBuZhuo_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_ZhanBuZhuo",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                0,
-                0
-            ]
-        ],
-        "Sort": 24,
-        "SurfaceList": [
-            "VillageSurface_ZhanBuZhuo_1"
-        ],
-        "DefaultSurface": "VillageSurface_ZhanBuZhuo_1",
-        "UseType": "",
-        "Space": [
-            2,
-            2
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
-        "Sell": [
-            {
-                "amount": 21,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "Dianshi": {
-        "Name": "Name_Dianshi",
-        "Desc": "Dianshi_ShortDesc",
-        "Room": "Room1",
-        "BuildingLevel": "Dianshi_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_Dianshi",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                5,
-                9
-            ]
-        ],
-        "Sort": 26,
-        "SurfaceList": [
-            "VillageSurface_Dianshi_1"
-        ],
-        "DefaultSurface": "VillageSurface_Dianshi_1",
-        "UseType": "",
-        "Space": [
-            1,
-            1
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
-        "Sell": [
-            {
-                "amount": 9,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "SiQiKongJian": {
-        "Name": "Name_SiQiKongJian",
-        "Desc": "SiQiKongJian_ShortDesc",
-        "Room": "Room6",
-        "BuildingLevel": "SiQiKongJian_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_SiQiKongJian",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                2,
-                8
-            ]
-        ],
-        "Sort": 17,
-        "SurfaceList": [
-            "VillageSurface_SiQiKongJian_1"
-        ],
-        "DefaultSurface": "VillageSurface_SiQiKongJian_1",
-        "UseType": "sit",
-        "Space": [
-            2,
-            2
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
-        "Sell": [
-            {
-                "amount": 27,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "damaojia": {
-        "Name": "Name_damaojia",
-        "Desc": "damaojia_ShortDesc",
-        "Room": "Room2",
-        "BuildingLevel": "damaojia_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_damaojia",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                9,
-                8
-            ]
-        ],
-        "Sort": 35,
-        "SurfaceList": [
-            "VillageSurface_damaojia_1"
-        ],
-        "DefaultSurface": "VillageSurface_damaojia_1",
-        "UseType": "",
-        "Space": [
-            2,
-            1
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
-        "Sell": [
-            {
-                "amount": 21,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "shuzhuangtai": {
-        "Name": "Name_shuzhuangtai",
-        "Desc": "shuzhuangtai_ShortDesc",
-        "Room": "Room5",
-        "BuildingLevel": "shuzhuangtai_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_shuzhuangtai",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                6,
-                8
-            ]
-        ],
-        "Sort": 55,
-        "SurfaceList": [
-            "VillageSurface_shuzhuangtai_1"
-        ],
-        "DefaultSurface": "VillageSurface_shuzhuangtai_1",
-        "UseType": "",
-        "Space": [
-            2,
-            1
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
-        "Sell": [
-            {
-                "amount": 18,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "dazhixiang": {
-        "Name": "Name_dazhixiang",
-        "Desc": "dazhixiang_ShortDesc",
-        "Room": "Room1",
-        "BuildingLevel": "dazhixiang_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_dazhixiang",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                5,
-                2
-            ]
-        ],
-        "Sort": 37,
-        "SurfaceList": [
-            "VillageSurface_dazhixiang_1"
-        ],
-        "DefaultSurface": "VillageSurface_dazhixiang_1",
-        "UseType": "",
-        "Space": [
-            1,
-            1
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
-        "Sell": [
-            {
-                "amount": 6,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "yijia": {
-        "Name": "Name_yijia",
-        "Desc": "yijia_ShortDesc",
-        "Room": "Room1",
-        "BuildingLevel": "yijia_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_yijia",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                0,
-                0
-            ]
-        ],
-        "Sort": 61,
-        "SurfaceList": [
-            "VillageSurface_yijia_1"
-        ],
-        "DefaultSurface": "VillageSurface_yijia_1",
-        "UseType": "",
-        "Space": [
-            1,
-            2
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
-        "Sell": [
-            {
-                "amount": 12,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "Decorate8": {
-        "Name": "Decorate8_Name",
-        "Desc": "Decorate8_Desc",
-        "Room": "Room2",
-        "BuildingLevel": "Decorate8_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_Decorate8",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                2,
-                8
-            ]
-        ],
-        "Sort": 77,
-        "SurfaceList": [
-            "VillageSurface_Decorate8_1"
-        ],
-        "DefaultSurface": "VillageSurface_Decorate8_1",
-        "UseType": "",
-        "Space": [
-            1,
-            1
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "IM_Decorate8",
-        "Sell": [
-            {
-                "amount": 1,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "xiangxunyigui": {
-        "Name": "Name_xiangxunyigui",
-        "Desc": "xiangxunyigui_ShortDesc",
-        "Room": "Room5",
-        "BuildingLevel": "xiangxunyigui_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_xiangxunyigui",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                7,
-                0
-            ],
-            [
-                7,
-                2
-            ]
-        ],
-        "Sort": 59,
-        "SurfaceList": [
-            "VillageSurface_xiangxunyigui_1"
-        ],
-        "DefaultSurface": "VillageSurface_xiangxunyigui_1",
-        "UseType": "",
-        "Space": [
-            1,
-            2
-        ],
-        "Amount": 2,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
-        "Sell": [
-            {
-                "amount": 15,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "Decorate9": {
-        "Name": "Decorate9_Name",
-        "Desc": "Decorate9_Desc",
-        "Room": "Room2",
-        "BuildingLevel": "Decorate9_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_Decorate9",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                2,
-                8
-            ]
-        ],
-        "Sort": 78,
-        "SurfaceList": [
-            "VillageSurface_Decorate9_1"
-        ],
-        "DefaultSurface": "VillageSurface_Decorate9_1",
-        "UseType": "",
-        "Space": [
-            2,
-            3
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "IM_Decorate9",
-        "Sell": [
-            {
-                "amount": 1,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "Decorate6": {
-        "Name": "Decorate6_Name",
-        "Desc": "Decorate6_Desc",
-        "Room": "Room2",
-        "BuildingLevel": "Decorate6_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_Decorate6",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                2,
-                8
-            ]
-        ],
-        "Sort": 75,
-        "SurfaceList": [
-            "VillageSurface_Decorate6_1"
-        ],
-        "DefaultSurface": "VillageSurface_Decorate6_1",
-        "UseType": "",
-        "Space": [
-            1,
-            1
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "IM_Decorate6",
-        "Sell": [
-            {
-                "amount": 1,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "Decorate7": {
-        "Name": "Decorate7_Name",
-        "Desc": "Decorate7_Desc",
-        "Room": "Room2",
-        "BuildingLevel": "Decorate7_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_Decorate7",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                2,
-                8
-            ]
-        ],
-        "Sort": 76,
-        "SurfaceList": [
-            "VillageSurface_Decorate7_1"
-        ],
-        "DefaultSurface": "VillageSurface_Decorate7_1",
-        "UseType": "",
+        "Sort": 44,
         "Space": [
             3,
             3
         ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "IM_Decorate7",
-        "Sell": [
-            {
-                "amount": 1,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "Decorate4": {
-        "Name": "Decorate4_Name",
-        "Desc": "Decorate4_Desc",
-        "Room": "Room2",
-        "BuildingLevel": "Decorate4_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_Decorate4",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                2,
-                8
-            ]
-        ],
-        "Sort": 73,
         "SurfaceList": [
-            "VillageSurface_Decorate4_1"
+            "VillageSurface_penquanji_1"
         ],
-        "DefaultSurface": "VillageSurface_Decorate4_1",
-        "UseType": "",
-        "Space": [
-            2,
-            1
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
         "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "IM_Decorate4",
-        "Sell": [
-            {
-                "amount": 1,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "maoshapen": {
-        "Name": "Name_maoshapen",
-        "Desc": "maoshapen_ShortDesc",
-        "Room": "Room2",
-        "BuildingLevel": "maoshapen_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_maoshapen",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                9,
-                7
-            ]
-        ],
-        "Sort": 43,
-        "SurfaceList": [
-            "VillageSurface_maoshapen_1"
-        ],
-        "DefaultSurface": "VillageSurface_maoshapen_1",
-        "UseType": "",
-        "Space": [
-            1,
-            1
-        ],
-        "Amount": 1,
-        "Quality": 3,
+        "UnlockDesc": "Unlock_penquanji",
         "Unlook": 0,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
         "UnlookItem": "",
-        "Sell": [
-            {
-                "amount": 18,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "tangguohuatan": {
-        "Name": "Name_tangguohuatan",
-        "Desc": "tangguohuatan_ShortDesc",
-        "Room": "Room3",
-        "BuildingLevel": "tangguohuatan_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_tangguohuatan",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                4,
-                8
-            ]
-        ],
-        "Sort": 56,
-        "SurfaceList": [
-            "VillageSurface_tangguohuatan_1"
-        ],
-        "DefaultSurface": "VillageSurface_tangguohuatan_1",
-        "UseType": "",
-        "Space": [
-            1,
-            1
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
-        "Sell": [
-            {
-                "amount": 18,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "tiandiantai": {
-        "Name": "Name_tiandiantai",
-        "Desc": "tiandiantai_ShortDesc",
-        "Room": "Room3",
-        "BuildingLevel": "tiandiantai_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_tiandiantai",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                5,
-                8
-            ]
-        ],
-        "Sort": 58,
-        "SurfaceList": [
-            "VillageSurface_tiandiantai_1"
-        ],
-        "DefaultSurface": "VillageSurface_tiandiantai_1",
-        "UseType": "",
-        "Space": [
-            2,
-            1
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
-        "Sell": [
-            {
-                "amount": 21,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "Zhixiang": {
-        "Name": "Name_Zhixiang",
-        "Desc": "Zhixiang_ShortDesc",
-        "Room": "Room1",
-        "BuildingLevel": "Zhixiang_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_Zhixiang",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                0,
-                0
-            ]
-        ],
-        "Sort": 32,
-        "SurfaceList": [
-            "VillageSurface_Zhixiang_1"
-        ],
-        "DefaultSurface": "VillageSurface_Zhixiang_1",
-        "UseType": "",
-        "Space": [
-            1,
-            1
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
-        "Sell": [
-            {
-                "amount": 6,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "Decorate1": {
-        "Name": "Decorate1_Name",
-        "Desc": "Decorate1_Desc",
-        "Room": "Room2",
-        "BuildingLevel": "Decorate1_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_Decorate1",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                2,
-                8
-            ]
-        ],
-        "Sort": 70,
-        "SurfaceList": [
-            "VillageSurface_Decorate1_1"
-        ],
-        "DefaultSurface": "VillageSurface_Decorate1_1",
-        "UseType": "",
-        "Space": [
-            1,
-            1
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "IM_Decorate1",
-        "Sell": [
-            {
-                "amount": 1,
-                "type": "IR_DecorateCoin"
-            }
-        ]
+        "UseType": ""
     },
     "qiuxingdeng": {
-        "Name": "Name_qiuxingdeng",
-        "Desc": "qiuxingdeng_ShortDesc",
-        "Room": "Room4",
+        "Amount": 2,
+        "BuildDesc": "Build_Decorate_Text",
         "BuildingLevel": "qiuxingdeng_Lv1",
         "Condition": {
             "Level": 1
         },
-        "UnlockDesc": "Unlock_qiuxingdeng",
-        "IsMoved": 1,
+        "DefaultSurface": "VillageSurface_qiuxingdeng_1",
+        "Desc": "qiuxingdeng_ShortDesc",
         "InitialPosition": [
             [
                 7,
@@ -1827,352 +1426,753 @@
                 5
             ]
         ],
-        "Sort": 45,
-        "SurfaceList": [
-            "VillageSurface_qiuxingdeng_1"
-        ],
-        "DefaultSurface": "VillageSurface_qiuxingdeng_1",
-        "UseType": "",
-        "Space": [
-            1,
-            1
-        ],
-        "Amount": 2,
-        "Quality": 3,
-        "Unlook": 0,
+        "IsMoved": 1,
+        "Name": "Name_qiuxingdeng",
         "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
+        "Quality": 3,
+        "Room": "Room4",
         "Sell": [
             {
                 "amount": 12,
                 "type": "IR_DecorateCoin"
             }
-        ]
+        ],
+        "Sort": 45,
+        "Space": [
+            1,
+            1
+        ],
+        "SurfaceList": [
+            "VillageSurface_qiuxingdeng_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_qiuxingdeng",
+        "Unlook": 0,
+        "UnlookItem": "",
+        "UseType": ""
     },
-    "QiZhuo": {
-        "Name": "Name_QiZhuo",
-        "Desc": "QiZhuo_ShortDesc",
-        "Room": "Room6",
-        "BuildingLevel": "QiZhuo_Lv1",
+    "quqikaoyi": {
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "quqikaoyi_Lv1",
         "Condition": {
             "Level": 1
         },
-        "UnlockDesc": "Unlock_QiZhuo",
-        "IsMoved": 1,
+        "DefaultSurface": "VillageSurface_quqikaoyi_1",
+        "Desc": "quqikaoyi_ShortDesc",
         "InitialPosition": [
             [
                 1,
                 1
             ]
         ],
-        "Sort": 22,
-        "SurfaceList": [
-            "VillageSurface_QiZhuo_1"
-        ],
-        "DefaultSurface": "VillageSurface_QiZhuo_1",
-        "UseType": "",
-        "Space": [
-            1,
-            1
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
+        "IsMoved": 1,
+        "Name": "Name_quqikaoyi",
         "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
+        "Quality": 3,
+        "Room": "Room2",
         "Sell": [
             {
                 "amount": 9,
                 "type": "IR_DecorateCoin"
             }
-        ]
+        ],
+        "Sort": 46,
+        "Space": [
+            1,
+            1
+        ],
+        "SurfaceList": [
+            "VillageSurface_quqikaoyi_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_quqikaoyi",
+        "Unlook": 0,
+        "UnlookItem": "",
+        "UseType": ""
     },
-    "Beilu": {
-        "Name": "Name_Beilu",
-        "Desc": "Beilu_ShortDesc",
-        "Room": "Room1",
-        "BuildingLevel": "Beilu_Lv1",
+    "sanjia": {
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "sanjia_Lv1",
         "Condition": {
             "Level": 1
         },
-        "UnlockDesc": "Unlock_Beilu",
-        "IsMoved": 1,
+        "DefaultSurface": "VillageSurface_sanjia_1",
+        "Desc": "sanjia_ShortDesc",
         "InitialPosition": [
             [
-                4,
-                4
+                8,
+                0
             ]
         ],
-        "Sort": 25,
-        "SurfaceList": [
-            "VillageSurface_Beilu_1"
-        ],
-        "DefaultSurface": "VillageSurface_Beilu_1",
-        "UseType": "",
-        "Space": [
-            3,
-            3
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
+        "IsMoved": 1,
+        "Name": "Name_sanjia",
         "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
+        "Quality": 3,
+        "Room": "Room2",
         "Sell": [
             {
-                "amount": 42,
+                "amount": 9,
                 "type": "IR_DecorateCoin"
             }
-        ]
+        ],
+        "Sort": 47,
+        "Space": [
+            1,
+            1
+        ],
+        "SurfaceList": [
+            "VillageSurface_sanjia_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_sanjia",
+        "Unlook": 0,
+        "UnlookItem": "",
+        "UseType": ""
     },
-    "Pingfeng": {
-        "Name": "Name_Pingfeng",
-        "Desc": "Pingfeng_ShortDesc",
-        "Room": "Room6",
-        "BuildingLevel": "Pingfeng_Lv1",
+    "shenghuogui": {
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "shenghuogui_Lv1",
         "Condition": {
             "Level": 1
         },
-        "UnlockDesc": "Unlock_Pingfeng",
-        "IsMoved": 1,
+        "DefaultSurface": "VillageSurface_shenghuogui_1",
+        "Desc": "shenghuogui_ShortDesc",
         "InitialPosition": [
             [
                 0,
                 0
             ]
         ],
-        "Sort": 28,
-        "SurfaceList": [
-            "VillageSurface_Pingfeng_1"
-        ],
-        "DefaultSurface": "VillageSurface_Pingfeng_1",
-        "UseType": "",
-        "Space": [
-            1,
-            1
-        ],
-        "Amount": 4,
-        "Quality": 3,
-        "Unlook": 0,
+        "IsMoved": 1,
+        "Name": "Name_shenghuogui",
         "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
-        "Sell": [
-            {
-                "amount": 12,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "Xiuxianzhuo": {
-        "Name": "Name_Xiuxianzhuo",
-        "Desc": "Xiuxianzhuo_ShortDesc",
+        "Quality": 3,
         "Room": "Room1",
-        "BuildingLevel": "Xiuxianzhuo_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_Xiuxianzhuo",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                8,
-                6
-            ]
-        ],
-        "Sort": 30,
-        "SurfaceList": [
-            "VillageSurface_Xiuxianzhuo_1"
-        ],
-        "DefaultSurface": "VillageSurface_Xiuxianzhuo_1",
-        "UseType": "",
-        "Space": [
-            1,
-            2
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
         "Sell": [
             {
                 "amount": 18,
                 "type": "IR_DecorateCoin"
             }
-        ]
-    },
-    "MaKaLongGui": {
-        "Name": "Name_MaKaLongGui",
-        "Desc": "MaKaLongGui_ShortDesc",
-        "Room": "Room3",
-        "BuildingLevel": "MaKaLongGui_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_MaKaLongGui",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                7,
-                2
-            ],
-            [
-                7,
-                5
-            ]
         ],
-        "Sort": 20,
-        "SurfaceList": [
-            "VillageSurface_MaKaLongGui_1"
-        ],
-        "DefaultSurface": "VillageSurface_MaKaLongGui_1",
-        "UseType": "",
+        "Sort": 48,
         "Space": [
-            1,
-            2
-        ],
-        "Amount": 2,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
-        "Sell": [
-            {
-                "amount": 18,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "quqikaoyi": {
-        "Name": "Name_quqikaoyi",
-        "Desc": "quqikaoyi_ShortDesc",
-        "Room": "Room2",
-        "BuildingLevel": "quqikaoyi_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_quqikaoyi",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                1,
-                1
-            ]
-        ],
-        "Sort": 46,
-        "SurfaceList": [
-            "VillageSurface_quqikaoyi_1"
-        ],
-        "DefaultSurface": "VillageSurface_quqikaoyi_1",
-        "UseType": "",
-        "Space": [
-            1,
+            2,
             1
         ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
-        "Sell": [
-            {
-                "amount": 9,
-                "type": "IR_DecorateCoin"
-            }
-        ]
-    },
-    "chazhuo1": {
-        "Name": "Name_chazhuo1",
-        "Desc": "chazhuo1_ShortDesc",
-        "Room": "Room2",
-        "BuildingLevel": "chazhuo1_Lv1",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "Unlock_chazhuo1",
-        "IsMoved": 1,
-        "InitialPosition": [
-            [
-                1,
-                0
-            ]
-        ],
-        "Sort": 33,
         "SurfaceList": [
-            "VillageSurface_chazhuo1_1"
+            "VillageSurface_shenghuogui_1"
         ],
-        "DefaultSurface": "VillageSurface_chazhuo1_1",
-        "UseType": "",
-        "Space": [
-            1,
-            1
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 0,
-        "ProspectShow": 0,
         "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
+        "UnlockDesc": "Unlock_shenghuogui",
+        "Unlook": 1,
         "UnlookItem": "",
-        "Sell": [
-            {
-                "amount": 12,
-                "type": "IR_DecorateCoin"
-            }
-        ]
+        "UseType": ""
     },
     "shounagui": {
-        "Name": "Name_shounagui",
-        "Desc": "shounagui_ShortDesc",
-        "Room": "Room5",
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
         "BuildingLevel": "shounagui_Lv1",
         "Condition": {
             "Level": 1
         },
-        "UnlockDesc": "Unlock_shounagui",
-        "IsMoved": 1,
+        "DefaultSurface": "VillageSurface_shounagui_1",
+        "Desc": "shounagui_ShortDesc",
         "InitialPosition": [
             [
                 0,
                 8
             ]
         ],
-        "Sort": 49,
-        "SurfaceList": [
-            "VillageSurface_shounagui_1"
-        ],
-        "DefaultSurface": "VillageSurface_shounagui_1",
-        "UseType": "",
-        "Space": [
-            2,
-            1
-        ],
-        "Amount": 1,
-        "Quality": 3,
-        "Unlook": 1,
+        "IsMoved": 1,
+        "Name": "Name_shounagui",
         "ProspectShow": 0,
-        "Turn": 1,
-        "BuildDesc": "Build_Decorate_Text",
-        "UnlookItem": "",
+        "Quality": 3,
+        "Room": "Room5",
         "Sell": [
             {
                 "amount": 12,
                 "type": "IR_DecorateCoin"
             }
-        ]
+        ],
+        "Sort": 49,
+        "Space": [
+            2,
+            1
+        ],
+        "SurfaceList": [
+            "VillageSurface_shounagui_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_shounagui",
+        "Unlook": 1,
+        "UnlookItem": "",
+        "UseType": ""
+    },
+    "shuangpingdiannaozhuo": {
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "shuangpingdiannaozhuo_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "DefaultSurface": "VillageSurface_shuangpingdiannaozhuo_1",
+        "Desc": "shuangpingdiannaozhuo_ShortDesc",
+        "InitialPosition": [
+            [
+                7,
+                0
+            ]
+        ],
+        "IsMoved": 1,
+        "Name": "Name_shuangpingdiannaozhuo",
+        "ProspectShow": 0,
+        "Quality": 3,
+        "Room": "Room1",
+        "Sell": [
+            {
+                "amount": 27,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "Sort": 50,
+        "Space": [
+            2,
+            2
+        ],
+        "SurfaceList": [
+            "VillageSurface_shuangpingdiannaozhuo_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_shuangpingdiannaozhuo",
+        "Unlook": 1,
+        "UnlookItem": "",
+        "UseType": ""
+    },
+    "shuangrentangyi": {
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "shuangrentangyi_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "DefaultSurface": "VillageSurface_shuangrentangyi_1",
+        "Desc": "shuangrentangyi_ShortDesc",
+        "InitialPosition": [
+            [
+                6,
+                8
+            ]
+        ],
+        "IsMoved": 1,
+        "Name": "Name_shuangrentangyi",
+        "ProspectShow": 0,
+        "Quality": 3,
+        "Room": "Room4",
+        "Sell": [
+            {
+                "amount": 18,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "Sort": 52,
+        "Space": [
+            2,
+            2
+        ],
+        "SurfaceList": [
+            "VillageSurface_shuangrentangyi_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_shuangrentangyi",
+        "Unlook": 0,
+        "UnlookItem": "",
+        "UseType": ""
+    },
+    "shugui": {
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "shugui_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "DefaultSurface": "VillageSurface_shugui_1",
+        "Desc": "shugui_ShortDesc",
+        "InitialPosition": [
+            [
+                8,
+                8
+            ]
+        ],
+        "IsMoved": 1,
+        "Name": "Name_shugui",
+        "ProspectShow": 0,
+        "Quality": 3,
+        "Room": "Room1",
+        "Sell": [
+            {
+                "amount": 21,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "Sort": 54,
+        "Space": [
+            2,
+            2
+        ],
+        "SurfaceList": [
+            "VillageSurface_shugui_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_shugui",
+        "Unlook": 1,
+        "UnlookItem": "",
+        "UseType": ""
+    },
+    "shuzhuangtai": {
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "shuzhuangtai_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "DefaultSurface": "VillageSurface_shuzhuangtai_1",
+        "Desc": "shuzhuangtai_ShortDesc",
+        "InitialPosition": [
+            [
+                6,
+                8
+            ]
+        ],
+        "IsMoved": 1,
+        "Name": "Name_shuzhuangtai",
+        "ProspectShow": 0,
+        "Quality": 3,
+        "Room": "Room5",
+        "Sell": [
+            {
+                "amount": 18,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "Sort": 55,
+        "Space": [
+            2,
+            1
+        ],
+        "SurfaceList": [
+            "VillageSurface_shuzhuangtai_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_shuzhuangtai",
+        "Unlook": 0,
+        "UnlookItem": "",
+        "UseType": ""
+    },
+    "tangguohuatan": {
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "tangguohuatan_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "DefaultSurface": "VillageSurface_tangguohuatan_1",
+        "Desc": "tangguohuatan_ShortDesc",
+        "InitialPosition": [
+            [
+                4,
+                8
+            ]
+        ],
+        "IsMoved": 1,
+        "Name": "Name_tangguohuatan",
+        "ProspectShow": 0,
+        "Quality": 3,
+        "Room": "Room3",
+        "Sell": [
+            {
+                "amount": 18,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "Sort": 56,
+        "Space": [
+            1,
+            1
+        ],
+        "SurfaceList": [
+            "VillageSurface_tangguohuatan_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_tangguohuatan",
+        "Unlook": 0,
+        "UnlookItem": "",
+        "UseType": ""
+    },
+    "tiandiantai": {
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "tiandiantai_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "DefaultSurface": "VillageSurface_tiandiantai_1",
+        "Desc": "tiandiantai_ShortDesc",
+        "InitialPosition": [
+            [
+                5,
+                8
+            ]
+        ],
+        "IsMoved": 1,
+        "Name": "Name_tiandiantai",
+        "ProspectShow": 0,
+        "Quality": 3,
+        "Room": "Room3",
+        "Sell": [
+            {
+                "amount": 21,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "Sort": 58,
+        "Space": [
+            2,
+            1
+        ],
+        "SurfaceList": [
+            "VillageSurface_tiandiantai_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_tiandiantai",
+        "Unlook": 0,
+        "UnlookItem": "",
+        "UseType": ""
+    },
+    "xiangxunyigui": {
+        "Amount": 2,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "xiangxunyigui_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "DefaultSurface": "VillageSurface_xiangxunyigui_1",
+        "Desc": "xiangxunyigui_ShortDesc",
+        "InitialPosition": [
+            [
+                7,
+                0
+            ],
+            [
+                7,
+                2
+            ]
+        ],
+        "IsMoved": 1,
+        "Name": "Name_xiangxunyigui",
+        "ProspectShow": 0,
+        "Quality": 3,
+        "Room": "Room5",
+        "Sell": [
+            {
+                "amount": 15,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "Sort": 59,
+        "Space": [
+            1,
+            2
+        ],
+        "SurfaceList": [
+            "VillageSurface_xiangxunyigui_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_xiangxunyigui",
+        "Unlook": 0,
+        "UnlookItem": "",
+        "UseType": ""
+    },
+    "yaoyi": {
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "yaoyi_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "DefaultSurface": "VillageSurface_yaoyi_1",
+        "Desc": "yaoyi_ShortDesc",
+        "InitialPosition": [
+            [
+                1,
+                7
+            ]
+        ],
+        "IsMoved": 1,
+        "Name": "Name_yaoyi",
+        "ProspectShow": 0,
+        "Quality": 3,
+        "Room": "Room2",
+        "Sell": [
+            {
+                "amount": 12,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "Sort": 60,
+        "Space": [
+            1,
+            1
+        ],
+        "SurfaceList": [
+            "VillageSurface_yaoyi_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_yaoyi",
+        "Unlook": 0,
+        "UnlookItem": "",
+        "UseType": "sit"
+    },
+    "yijia": {
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "yijia_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "DefaultSurface": "VillageSurface_yijia_1",
+        "Desc": "yijia_ShortDesc",
+        "InitialPosition": [
+            [
+                0,
+                0
+            ]
+        ],
+        "IsMoved": 1,
+        "Name": "Name_yijia",
+        "ProspectShow": 0,
+        "Quality": 3,
+        "Room": "Room1",
+        "Sell": [
+            {
+                "amount": 12,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "Sort": 61,
+        "Space": [
+            1,
+            2
+        ],
+        "SurfaceList": [
+            "VillageSurface_yijia_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_yijia",
+        "Unlook": 0,
+        "UnlookItem": "",
+        "UseType": ""
+    },
+    "yijia1": {
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "yijia1_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "DefaultSurface": "VillageSurface_yijia1_1",
+        "Desc": "yijia1_ShortDesc",
+        "InitialPosition": [
+            [
+                7,
+                0
+            ]
+        ],
+        "IsMoved": 1,
+        "Name": "Name_yijia1",
+        "ProspectShow": 0,
+        "Quality": 3,
+        "Room": "Room2",
+        "Sell": [
+            {
+                "amount": 9,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "Sort": 62,
+        "Space": [
+            1,
+            1
+        ],
+        "SurfaceList": [
+            "VillageSurface_yijia1_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_yijia1",
+        "Unlook": 0,
+        "UnlookItem": "",
+        "UseType": ""
+    },
+    "yongchi": {
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "yongchi_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "DefaultSurface": "VillageSurface_yongchi_1",
+        "Desc": "yongchi_ShortDesc",
+        "InitialPosition": [
+            [
+                2,
+                2
+            ]
+        ],
+        "IsMoved": 1,
+        "Name": "Name_yongchi",
+        "ProspectShow": 0,
+        "Quality": 3,
+        "Room": "Room4",
+        "Sell": [
+            {
+                "amount": 60,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "Sort": 66,
+        "Space": [
+            4,
+            4
+        ],
+        "SurfaceList": [
+            "VillageSurface_yongchi_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_yongchi",
+        "Unlook": 0,
+        "UnlookItem": "",
+        "UseType": "bath"
+    },
+    "yumaowo": {
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "yumaowo_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "DefaultSurface": "VillageSurface_yumaowo_1",
+        "Desc": "yumaowo_ShortDesc",
+        "InitialPosition": [
+            [
+                7,
+                5
+            ]
+        ],
+        "IsMoved": 1,
+        "Name": "Name_yumaowo",
+        "ProspectShow": 0,
+        "Quality": 3,
+        "Room": "Room2",
+        "Sell": [
+            {
+                "amount": 6,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "Sort": 63,
+        "Space": [
+            1,
+            1
+        ],
+        "SurfaceList": [
+            "VillageSurface_yumaowo_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_yumaowo",
+        "Unlook": 0,
+        "UnlookItem": "",
+        "UseType": ""
+    },
+    "yushi": {
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "yushi_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "DefaultSurface": "VillageSurface_yushi_1",
+        "Desc": "yushi_ShortDesc",
+        "InitialPosition": [
+            [
+                0,
+                0
+            ]
+        ],
+        "IsMoved": 1,
+        "Name": "Name_yushi",
+        "ProspectShow": 0,
+        "Quality": 3,
+        "Room": "Room5",
+        "Sell": [
+            {
+                "amount": 18,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "Sort": 64,
+        "Space": [
+            2,
+            2
+        ],
+        "SurfaceList": [
+            "VillageSurface_yushi_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_yushi",
+        "Unlook": 0,
+        "UnlookItem": "",
+        "UseType": ""
+    },
+    "zishuruandeng": {
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "zishuruandeng_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "DefaultSurface": "VillageSurface_zishuruandeng_1",
+        "Desc": "zishuruandeng_ShortDesc",
+        "InitialPosition": [
+            [
+                8,
+                7
+            ]
+        ],
+        "IsMoved": 1,
+        "Name": "Name_zishuruandeng",
+        "ProspectShow": 0,
+        "Quality": 3,
+        "Room": "Room5",
+        "Sell": [
+            {
+                "amount": 12,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "Sort": 65,
+        "Space": [
+            1,
+            1
+        ],
+        "SurfaceList": [
+            "VillageSurface_zishuruandeng_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_zishuruandeng",
+        "Unlook": 0,
+        "UnlookItem": "",
+        "UseType": ""
     }
 }

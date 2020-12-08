@@ -1,80 +1,52 @@
 {
-    "Shop_Diamond": {
-        "Name": "Shop_Diamond_Name",
-        "ENName": "UITitle_EN_Zhuanshi",
-        "UnlockSystem": "Unlock_Shop_Diamond",
-        "Positions": [
-            {
-                "ShopId": "Shop_Diamond_1",
-                "Condition": {
-                    "LEVEL": 1
-                }
-            },
-            {
-                "ShopId": "Shop_Diamond_2",
-                "Condition": {
-                    "LEVEL": 1
-                }
-            }
-        ],
-        "ResetSystem": {
-            "resetMode": "NONE"
-        },
-        "DefaultCostType": "IR_Diamond",
-        "RefreshMaxTimes": 0,
-        "RefreshCurrency": "IR_Diamond",
-        "RefreshPrice": [
-            20,
-            30,
-            50,
-            50,
-            80,
-            80,
-            100
-        ],
-        "RsShow": "IR_Diamond"
-    },
     "Shop1": {
-        "Name": "Shop1_Name",
+        "DefaultCostType": "IR_Gold",
         "ENName": "UITitle_EN_Zahuo",
-        "UnlockSystem": "Shop_Groceries",
+        "Name": "Shop1_Name",
         "Positions": [
             {
-                "ShopId": "Shop1_1",
                 "Condition": {
                     "LEVEL": 1
-                }
+                },
+                "ShopId": "Shop1_1"
             },
             {
-                "ShopId": "Shop1_2",
                 "Condition": {
                     "LEVEL": 1
-                }
+                },
+                "ShopId": "Shop1_2"
             },
             {
-                "ShopId": "Shop1_3",
                 "Condition": {
                     "LEVEL": 1
-                }
+                },
+                "ShopId": "Shop1_3"
             },
             {
-                "ShopId": "Shop1_4",
                 "Condition": {
                     "LEVEL": 1
-                }
+                },
+                "ShopId": "Shop1_4"
             },
             {
-                "ShopId": "Shop1_5",
                 "Condition": {
                     "LEVEL": 1
-                }
+                },
+                "ShopId": "Shop1_5"
             },
             {
-                "ShopId": "Shop1_6",
                 "Condition": {
                     "LEVEL": 1
-                }
+                },
+                "ShopId": "Shop1_6"
             }
+        ],
+        "RefreshCurrency": "IR_Diamond",
+        "RefreshMaxTimes": 3,
+        "RefreshPrice": [
+            100,
+            200,
+            300
         ],
         "ResetSystem": {
             "resetDate": [
@@ -92,313 +64,341 @@
                 "12:00:00",
                 "20:00:00"
             ],
-            "storage": 1,
-            "setValue": 1
+            "setValue": 1,
+            "storage": 1
         },
-        "DefaultCostType": "IR_Gold",
-        "RefreshMaxTimes": 3,
-        "RefreshCurrency": "IR_Diamond",
-        "RefreshPrice": [
-            100,
-            200,
-            300
-        ],
-        "RsShow": "IR_Gold"
+        "RsShow": "IR_Gold",
+        "UnlockSystem": "Shop_Groceries"
     },
     "Shop3": {
-        "Name": "Shop3_Name",
+        "DefaultCostType": "IR_Arena",
         "ENName": "UITitle_EN_Jingji",
-        "UnlockSystem": "Shop_Arena",
+        "Name": "Shop3_Name",
         "Positions": [
             {
-                "ShopId": "Shop3_1",
                 "Condition": {
                     "LEVEL": 1
-                }
+                },
+                "ShopId": "Shop3_1"
             },
             {
-                "ShopId": "Shop3_2",
                 "Condition": {
                     "LEVEL": 1
-                }
+                },
+                "ShopId": "Shop3_2"
             },
             {
-                "ShopId": "Shop3_3",
                 "Condition": {
                     "LEVEL": 1
-                }
+                },
+                "ShopId": "Shop3_3"
             },
             {
-                "ShopId": "Shop3_4",
                 "Condition": {
                     "LEVEL": 1
-                }
+                },
+                "ShopId": "Shop3_4"
             },
             {
-                "ShopId": "Shop3_5",
                 "Condition": {
                     "LEVEL": 1
-                }
+                },
+                "ShopId": "Shop3_5"
             },
             {
-                "ShopId": "Shop3_6",
                 "Condition": {
                     "LEVEL": 1
-                }
+                },
+                "ShopId": "Shop3_6"
             },
             {
-                "ShopId": "Shop3_7",
                 "Condition": {
                     "LEVEL": 1
-                }
+                },
+                "ShopId": "Shop3_7"
             },
             {
-                "ShopId": "Shop3_8",
                 "Condition": {
                     "LEVEL": 25
-                }
+                },
+                "ShopId": "Shop3_8"
             },
             {
-                "ShopId": "Shop3_9",
                 "Condition": {
                     "ELITESTAGE": "E06S08"
-                }
+                },
+                "ShopId": "Shop3_9"
             },
             {
-                "ShopId": "Shop3_10",
                 "Condition": {
                     "ELITESTAGE": "E08S12"
-                }
+                },
+                "ShopId": "Shop3_10"
             },
             {
-                "ShopId": "Shop3_11",
                 "Condition": {
                     "ELITESTAGE": "E11S16"
-                }
+                },
+                "ShopId": "Shop3_11"
             },
             {
-                "ShopId": "Shop3_12",
                 "Condition": {
                     "ELITESTAGE": "E13S16"
-                }
+                },
+                "ShopId": "Shop3_12"
             }
         ],
-        "ResetSystem": {
-            "resetMode": "NONE"
-        },
-        "DefaultCostType": "IR_Arena",
-        "RefreshMaxTimes": 0,
         "RefreshCurrency": "IR_Diamond",
+        "RefreshMaxTimes": 0,
         "RefreshPrice": [
             100,
             200,
             300
         ],
-        "RsShow": "IR_Arena"
+        "ResetSystem": {
+            "resetMode": "NONE"
+        },
+        "RsShow": "IR_Arena",
+        "UnlockSystem": "Shop_Arena"
     },
     "Shop5": {
-        "Name": "Shop5_Name",
+        "DefaultCostType": "IR_Club",
         "ENName": "UITitle_EN_Jieshe",
-        "UnlockSystem": "Shop_Club",
+        "Name": "Shop5_Name",
         "Positions": [
             {
-                "ShopId": "Shop5_1",
                 "Condition": {
                     "LEVEL": 1
-                }
+                },
+                "ShopId": "Shop5_1"
             },
             {
-                "ShopId": "Shop5_2",
                 "Condition": {
                     "LEVEL": 1
-                }
+                },
+                "ShopId": "Shop5_2"
             },
             {
-                "ShopId": "Shop5_3",
                 "Condition": {
                     "LEVEL": 1
-                }
+                },
+                "ShopId": "Shop5_3"
             },
             {
-                "ShopId": "Shop5_4",
                 "Condition": {
                     "LEVEL": 1
-                }
+                },
+                "ShopId": "Shop5_4"
             },
             {
-                "ShopId": "Shop5_5",
                 "Condition": {
                     "LEVEL": 1
-                }
+                },
+                "ShopId": "Shop5_5"
             },
             {
-                "ShopId": "Shop5_6",
                 "Condition": {
                     "LEVEL": 1
-                }
+                },
+                "ShopId": "Shop5_6"
             },
             {
-                "ShopId": "Shop5_7",
                 "Condition": {
                     "LEVEL": 1
-                }
+                },
+                "ShopId": "Shop5_7"
             },
             {
-                "ShopId": "Shop5_8",
                 "Condition": {
                     "LEVEL": 25
-                }
+                },
+                "ShopId": "Shop5_8"
             }
         ],
-        "ResetSystem": {
-            "resetMode": "NONE"
-        },
-        "DefaultCostType": "IR_Club",
-        "RefreshMaxTimes": 0,
         "RefreshCurrency": "IR_Diamond",
+        "RefreshMaxTimes": 0,
         "RefreshPrice": [
             100,
             200,
             300
         ],
-        "RsShow": "IR_Club"
-    },
-    "Shop7": {
-        "Name": "Shop7_Name",
-        "ENName": "UITitle_EN_Shengshi",
-        "UnlockSystem": "Shop_KOF",
-        "Positions": [
-            {
-                "ShopId": "Shop7_1",
-                "Condition": {
-                    "LEVEL": 1
-                }
-            },
-            {
-                "ShopId": "Shop7_2",
-                "Condition": {
-                    "LEVEL": 1
-                }
-            },
-            {
-                "ShopId": "Shop7_3",
-                "Condition": {
-                    "LEVEL": 1
-                }
-            },
-            {
-                "ShopId": "Shop7_4",
-                "Condition": {
-                    "LEVEL": 1
-                }
-            },
-            {
-                "ShopId": "Shop7_5",
-                "Condition": {
-                    "LEVEL": 1
-                }
-            },
-            {
-                "ShopId": "Shop7_6",
-                "Condition": {
-                    "LEVEL": 1
-                }
-            },
-            {
-                "ShopId": "Shop7_7",
-                "Condition": {
-                    "LEVEL": 1
-                }
-            },
-            {
-                "ShopId": "Shop7_8",
-                "Condition": {
-                    "LEVEL": 1
-                }
-            },
-            {
-                "ShopId": "Shop7_9",
-                "Condition": {
-                    "LEVEL": 1
-                }
-            }
-        ],
         "ResetSystem": {
             "resetMode": "NONE"
         },
-        "DefaultCostType": "IR_KON",
-        "RefreshMaxTimes": 0,
-        "RefreshCurrency": "IR_Diamond",
-        "RefreshPrice": [
-            100,
-            200,
-            300
-        ],
-        "RsShow": "IR_KON"
+        "RsShow": "IR_Club",
+        "UnlockSystem": "Shop_Club"
     },
     "Shop6": {
-        "Name": "Shop6_Name",
+        "DefaultCostType": "IR_Equip13",
         "ENName": "UITitle_EN_Zhuangbei",
-        "UnlockSystem": "Shop_Equip",
+        "Name": "Shop6_Name",
         "Positions": [
             {
-                "ShopId": "Shop_Equip_1",
                 "Condition": {
                     "LEVEL": 1
-                }
+                },
+                "ShopId": "Shop_Equip_1"
             },
             {
-                "ShopId": "Shop_Equip_2",
                 "Condition": {
                     "LEVEL": 1
-                }
+                },
+                "ShopId": "Shop_Equip_2"
             },
             {
-                "ShopId": "Shop_Equip_3",
                 "Condition": {
                     "LEVEL": 1
-                }
+                },
+                "ShopId": "Shop_Equip_3"
             },
             {
-                "ShopId": "Shop_Equip_4",
                 "Condition": {
                     "LEVEL": 1
-                }
+                },
+                "ShopId": "Shop_Equip_4"
             },
             {
-                "ShopId": "Shop_Equip_5",
                 "Condition": {
                     "LEVEL": 1
-                }
+                },
+                "ShopId": "Shop_Equip_5"
             },
             {
-                "ShopId": "Shop_Equip_6",
                 "Condition": {
                     "LEVEL": 1
-                }
+                },
+                "ShopId": "Shop_Equip_6"
             },
             {
-                "ShopId": "Shop_Equip_7",
                 "Condition": {
                     "LEVEL": 1
-                }
+                },
+                "ShopId": "Shop_Equip_7"
             },
             {
-                "ShopId": "Shop_Equip_8",
                 "Condition": {
                     "LEVEL": 1
-                }
+                },
+                "ShopId": "Shop_Equip_8"
             }
         ],
-        "ResetSystem": {
-            "resetMode": "NONE"
-        },
-        "DefaultCostType": "IR_Equip13",
-        "RefreshMaxTimes": 0,
         "RefreshCurrency": "IR_Diamond",
+        "RefreshMaxTimes": 0,
         "RefreshPrice": [
             200
         ],
-        "RsShow": "IR_Equip13"
+        "ResetSystem": {
+            "resetMode": "NONE"
+        },
+        "RsShow": "IR_Equip13",
+        "UnlockSystem": "Shop_Equip"
+    },
+    "Shop7": {
+        "DefaultCostType": "IR_KON",
+        "ENName": "UITitle_EN_Shengshi",
+        "Name": "Shop7_Name",
+        "Positions": [
+            {
+                "Condition": {
+                    "LEVEL": 1
+                },
+                "ShopId": "Shop7_1"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1
+                },
+                "ShopId": "Shop7_2"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1
+                },
+                "ShopId": "Shop7_3"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1
+                },
+                "ShopId": "Shop7_4"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1
+                },
+                "ShopId": "Shop7_5"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1
+                },
+                "ShopId": "Shop7_6"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1
+                },
+                "ShopId": "Shop7_7"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1
+                },
+                "ShopId": "Shop7_8"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1
+                },
+                "ShopId": "Shop7_9"
+            }
+        ],
+        "RefreshCurrency": "IR_Diamond",
+        "RefreshMaxTimes": 0,
+        "RefreshPrice": [
+            100,
+            200,
+            300
+        ],
+        "ResetSystem": {
+            "resetMode": "NONE"
+        },
+        "RsShow": "IR_KON",
+        "UnlockSystem": "Shop_KOF"
+    },
+    "Shop_Diamond": {
+        "DefaultCostType": "IR_Diamond",
+        "ENName": "UITitle_EN_Zhuanshi",
+        "Name": "Shop_Diamond_Name",
+        "Positions": [
+            {
+                "Condition": {
+                    "LEVEL": 1
+                },
+                "ShopId": "Shop_Diamond_1"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1
+                },
+                "ShopId": "Shop_Diamond_2"
+            }
+        ],
+        "RefreshCurrency": "IR_Diamond",
+        "RefreshMaxTimes": 0,
+        "RefreshPrice": [
+            20,
+            30,
+            50,
+            50,
+            80,
+            80,
+            100
+        ],
+        "ResetSystem": {
+            "resetMode": "NONE"
+        },
+        "RsShow": "IR_Diamond",
+        "UnlockSystem": "Unlock_Shop_Diamond"
     }
 }

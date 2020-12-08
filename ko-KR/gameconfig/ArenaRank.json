@@ -1,65 +1,65 @@
 {
-    "Arena_Rank5": {
-        "Name": "Arena_Rank5_Name",
-        "Icon": "jjc_bg_dw_5",
-        "Sort": 5,
-        "RankAmount": -1,
-        "ArenaAmount": 1000,
-        "NormalReward": "Arena_Rank5_NormalReward",
-        "FirstReward": "Arena_Rank5_FirstReward"
-    },
-    "Arena_Rank4": {
-        "Name": "Arena_Rank4_Name",
-        "Icon": "jjc_bg_dw_4",
-        "Sort": 4,
-        "RankAmount": 1000,
-        "ArenaAmount": 1300,
-        "NormalReward": "Arena_Rank4_NormalReward",
-        "FirstReward": "Arena_Rank4_FirstReward"
-    },
-    "Arena_Rank7": {
-        "Name": "Arena_Rank7_Name",
-        "Icon": "jjc_bg_dw_7",
-        "Sort": 7,
-        "RankAmount": -1,
-        "ArenaAmount": 500,
-        "NormalReward": "Arena_Rank7_NormalReward",
-        "FirstReward": "Arena_Rank7_FirstReward"
-    },
-    "Arena_Rank6": {
-        "Name": "Arena_Rank6_Name",
-        "Icon": "jjc_bg_dw_6",
-        "Sort": 6,
-        "RankAmount": -1,
-        "ArenaAmount": 750,
-        "NormalReward": "Arena_Rank6_NormalReward",
-        "FirstReward": "Arena_Rank6_FirstReward"
-    },
     "Arena_Rank1": {
-        "Name": "Arena_Rank1_Name",
-        "Icon": "jjc_bg_dw_1",
-        "Sort": 1,
-        "RankAmount": 100,
         "ArenaAmount": 2500,
+        "FirstReward": "Arena_Rank1_FirstReward",
+        "Icon": "jjc_bg_dw_1",
+        "Name": "Arena_Rank1_Name",
         "NormalReward": "Arena_Rank1_NormalReward",
-        "FirstReward": "Arena_Rank1_FirstReward"
-    },
-    "Arena_Rank3": {
-        "Name": "Arena_Rank3_Name",
-        "Icon": "jjc_bg_dw_3",
-        "Sort": 3,
-        "RankAmount": 500,
-        "ArenaAmount": 1600,
-        "NormalReward": "Arena_Rank3_NormalReward",
-        "FirstReward": "Arena_Rank3_FirstReward"
+        "RankAmount": 100,
+        "Sort": 1
     },
     "Arena_Rank2": {
-        "Name": "Arena_Rank2_Name",
-        "Icon": "jjc_bg_dw_2",
-        "Sort": 2,
-        "RankAmount": 300,
         "ArenaAmount": 2000,
+        "FirstReward": "Arena_Rank2_FirstReward",
+        "Icon": "jjc_bg_dw_2",
+        "Name": "Arena_Rank2_Name",
         "NormalReward": "Arena_Rank2_NormalReward",
-        "FirstReward": "Arena_Rank2_FirstReward"
+        "RankAmount": 300,
+        "Sort": 2
+    },
+    "Arena_Rank3": {
+        "ArenaAmount": 1600,
+        "FirstReward": "Arena_Rank3_FirstReward",
+        "Icon": "jjc_bg_dw_3",
+        "Name": "Arena_Rank3_Name",
+        "NormalReward": "Arena_Rank3_NormalReward",
+        "RankAmount": 500,
+        "Sort": 3
+    },
+    "Arena_Rank4": {
+        "ArenaAmount": 1300,
+        "FirstReward": "Arena_Rank4_FirstReward",
+        "Icon": "jjc_bg_dw_4",
+        "Name": "Arena_Rank4_Name",
+        "NormalReward": "Arena_Rank4_NormalReward",
+        "RankAmount": 1000,
+        "Sort": 4
+    },
+    "Arena_Rank5": {
+        "ArenaAmount": 1000,
+        "FirstReward": "Arena_Rank5_FirstReward",
+        "Icon": "jjc_bg_dw_5",
+        "Name": "Arena_Rank5_Name",
+        "NormalReward": "Arena_Rank5_NormalReward",
+        "RankAmount": -1,
+        "Sort": 5
+    },
+    "Arena_Rank6": {
+        "ArenaAmount": 750,
+        "FirstReward": "Arena_Rank6_FirstReward",
+        "Icon": "jjc_bg_dw_6",
+        "Name": "Arena_Rank6_Name",
+        "NormalReward": "Arena_Rank6_NormalReward",
+        "RankAmount": -1,
+        "Sort": 6
+    },
+    "Arena_Rank7": {
+        "ArenaAmount": 500,
+        "FirstReward": "Arena_Rank7_FirstReward",
+        "Icon": "jjc_bg_dw_7",
+        "Name": "Arena_Rank7_Name",
+        "NormalReward": "Arena_Rank7_NormalReward",
+        "RankAmount": -1,
+        "Sort": 7
     }
 }

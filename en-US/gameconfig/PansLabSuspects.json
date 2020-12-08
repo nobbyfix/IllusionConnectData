@@ -1,82 +1,82 @@
 {
-    "BSNCT_01_S8": {
-        "Model": "Model_YSuo",
-        "Name": "BSNCT_01_S8_Name",
-        "Story": "BSNCT_01",
-        "FightPoint": "BSNCT_01_S8",
-        "Rank": 8,
-        "BossHeroAttr": "NB_Hero_Lv10",
-        "BossMasterAttr": "NB_Master_Lv10",
-        "Reward": "exp_large"
-    },
-    "BSNCT_01_S3": {
-        "Model": "Model_NFDDi",
-        "Name": "BSNCT_01_S3_Name",
-        "Story": "BSNCT_01",
-        "FightPoint": "BSNCT_01_S3",
-        "Rank": 3,
-        "BossHeroAttr": "NB_Hero_Lv10",
-        "BossMasterAttr": "NB_Master_Lv10",
-        "Reward": "exp_large"
-    },
-    "BSNCT_01_S2": {
-        "Model": "Model_SDTZi",
-        "Name": "BSNCT_01_S2_Name",
-        "Story": "BSNCT_01",
-        "FightPoint": "BSNCT_01_S2",
-        "Rank": 2,
-        "BossHeroAttr": "NB_Hero_Lv10",
-        "BossMasterAttr": "NB_Master_Lv10",
-        "Reward": "exp_large"
-    },
     "BSNCT_01_S1": {
+        "BossHeroAttr": "NB_Hero_Lv10",
+        "BossMasterAttr": "NB_Master_Lv10",
+        "FightPoint": "BSNCT_01_S1",
         "Model": "Model_Enemy_MYKSi_Big",
         "Name": "BSNCT_01_S1_Name",
-        "Story": "BSNCT_01",
-        "FightPoint": "BSNCT_01_S1",
         "Rank": 1,
-        "BossHeroAttr": "NB_Hero_Lv10",
-        "BossMasterAttr": "NB_Master_Lv10",
-        "Reward": "exp_large"
+        "Reward": "exp_large",
+        "Story": "BSNCT_01"
     },
-    "BSNCT_01_S7": {
-        "Model": "Model_WEDe",
-        "Name": "BSNCT_01_S7_Name",
-        "Story": "BSNCT_01",
-        "FightPoint": "BSNCT_01_S7",
-        "Rank": 7,
+    "BSNCT_01_S2": {
         "BossHeroAttr": "NB_Hero_Lv10",
         "BossMasterAttr": "NB_Master_Lv10",
-        "Reward": "exp_large"
+        "FightPoint": "BSNCT_01_S2",
+        "Model": "Model_SDTZi",
+        "Name": "BSNCT_01_S2_Name",
+        "Rank": 2,
+        "Reward": "exp_large",
+        "Story": "BSNCT_01"
     },
-    "BSNCT_01_S6": {
-        "Model": "Model_TPGZhu",
-        "Name": "BSNCT_01_S6_Name",
-        "Story": "BSNCT_01",
-        "FightPoint": "BSNCT_01_S6",
-        "Rank": 6,
+    "BSNCT_01_S3": {
         "BossHeroAttr": "NB_Hero_Lv10",
         "BossMasterAttr": "NB_Master_Lv10",
-        "Reward": "exp_large"
-    },
-    "BSNCT_01_S5": {
-        "Model": "Model_DFQi",
-        "Name": "BSNCT_01_S5_Name",
-        "Story": "BSNCT_01",
-        "FightPoint": "BSNCT_01_S5",
-        "Rank": 5,
-        "BossHeroAttr": "NB_Hero_Lv10",
-        "BossMasterAttr": "NB_Master_Lv10",
-        "Reward": "exp_large"
+        "FightPoint": "BSNCT_01_S3",
+        "Model": "Model_NFDDi",
+        "Name": "BSNCT_01_S3_Name",
+        "Rank": 3,
+        "Reward": "exp_large",
+        "Story": "BSNCT_01"
     },
     "BSNCT_01_S4": {
-        "Model": "Model_YFZZhu",
-        "Name": "BSNCT_01_S4_Name",
-        "Story": "BSNCT_01",
-        "FightPoint": "BSNCT_01_S4",
-        "Rank": 4,
         "BossHeroAttr": "NB_Hero_Lv10",
         "BossMasterAttr": "NB_Master_Lv10",
-        "Reward": "exp_large"
+        "FightPoint": "BSNCT_01_S4",
+        "Model": "Model_YFZZhu",
+        "Name": "BSNCT_01_S4_Name",
+        "Rank": 4,
+        "Reward": "exp_large",
+        "Story": "BSNCT_01"
+    },
+    "BSNCT_01_S5": {
+        "BossHeroAttr": "NB_Hero_Lv10",
+        "BossMasterAttr": "NB_Master_Lv10",
+        "FightPoint": "BSNCT_01_S5",
+        "Model": "Model_DFQi",
+        "Name": "BSNCT_01_S5_Name",
+        "Rank": 5,
+        "Reward": "exp_large",
+        "Story": "BSNCT_01"
+    },
+    "BSNCT_01_S6": {
+        "BossHeroAttr": "NB_Hero_Lv10",
+        "BossMasterAttr": "NB_Master_Lv10",
+        "FightPoint": "BSNCT_01_S6",
+        "Model": "Model_TPGZhu",
+        "Name": "BSNCT_01_S6_Name",
+        "Rank": 6,
+        "Reward": "exp_large",
+        "Story": "BSNCT_01"
+    },
+    "BSNCT_01_S7": {
+        "BossHeroAttr": "NB_Hero_Lv10",
+        "BossMasterAttr": "NB_Master_Lv10",
+        "FightPoint": "BSNCT_01_S7",
+        "Model": "Model_WEDe",
+        "Name": "BSNCT_01_S7_Name",
+        "Rank": 7,
+        "Reward": "exp_large",
+        "Story": "BSNCT_01"
+    },
+    "BSNCT_01_S8": {
+        "BossHeroAttr": "NB_Hero_Lv10",
+        "BossMasterAttr": "NB_Master_Lv10",
+        "FightPoint": "BSNCT_01_S8",
+        "Model": "Model_YSuo",
+        "Name": "BSNCT_01_S8_Name",
+        "Rank": 8,
+        "Reward": "exp_large",
+        "Story": "BSNCT_01"
     }
 }

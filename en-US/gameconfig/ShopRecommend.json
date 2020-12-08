@@ -1,16 +1,60 @@
 {
-    "ShopRecommend_TL_CZheng": {
-        "TabName": "ShopRecommend_TL_CZheng_Name",
-        "BackGroundImg": "sd_tj_bg_ydyw",
-        "Sort": 2,
-        "Vanish": 1,
+    "ShopRecommend_1": {
+        "BackGroundImg": "sd_tj_bg_shouchong",
+        "ClientCondition": "",
+        "Hide": 1,
+        "Link": "view://shopView&viewType=push&shopId=Shop_Package&packageId=PackageShop_1",
+        "PackageId": [
+            "PackageShop_1"
+        ],
+        "Prepose": "",
+        "ServerCondition": "",
+        "Sort": 1,
+        "TabName": "ShopRecommend_1_Name",
         "TimeType": {
             "type": "unlimit"
         },
-        "ServerCondition": "",
+        "Vanish": 1
+    },
+    "ShopRecommend_2": {
+        "BackGroundImg": "sd_tj_bg_yueka",
         "ClientCondition": "",
         "Hide": 1,
+        "Link": "view://shopView&viewType=push&shopId=Shop_Monthcard&packageId=MonthCard_1",
+        "PackageId": [
+            "MonthCard_1"
+        ],
         "Prepose": "",
+        "ServerCondition": "",
+        "Sort": 1002,
+        "TabName": "ShopRecommend_2_Name",
+        "TimeType": {
+            "type": "unlimit"
+        },
+        "Vanish": 0
+    },
+    "ShopRecommend_3": {
+        "BackGroundImg": "sd_tj_bg_yongjiuka",
+        "ClientCondition": "",
+        "Hide": 1,
+        "Link": "view://shopView&viewType=push&shopId=Shop_Monthcard&packageId=monthCardF",
+        "PackageId": [
+            "monthCardF"
+        ],
+        "Prepose": "",
+        "ServerCondition": "",
+        "Sort": 1001,
+        "TabName": "ShopRecommend_3_Name",
+        "TimeType": {
+            "type": "unlimit"
+        },
+        "Vanish": 0
+    },
+    "ShopRecommend_TL_CZheng": {
+        "BackGroundImg": "sd_tj_bg_ydyw",
+        "ClientCondition": "",
+        "Hide": 1,
+        "Link": "view://shopView&viewType=push&shopId=Shop_TimeLimit",
         "PackageId": [
             "PackageShop_TL_CZheng_1",
             "PackageShop_TL_CZheng_2",
@@ -19,20 +63,20 @@
             "PackageShop_TL_CZheng_5",
             "PackageShop_TL_CZheng_6"
         ],
-        "Link": "view://shopView&viewType=push&shopId=Shop_TimeLimit"
-    },
-    "ShopRecommend_TL_LLan": {
-        "TabName": "ShopRecommend_TL_LLan_Name",
-        "BackGroundImg": "sd_tj_bg_xdzg",
+        "Prepose": "",
+        "ServerCondition": "",
         "Sort": 2,
-        "Vanish": 1,
+        "TabName": "ShopRecommend_TL_CZheng_Name",
         "TimeType": {
             "type": "unlimit"
         },
-        "ServerCondition": "",
+        "Vanish": 1
+    },
+    "ShopRecommend_TL_LLan": {
+        "BackGroundImg": "sd_tj_bg_xdzg",
         "ClientCondition": "",
         "Hide": 1,
-        "Prepose": "",
+        "Link": "view://shopView&viewType=push&shopId=Shop_TimeLimit",
         "PackageId": [
             "PackageShop_TL_LLan_1",
             "PackageShop_TL_LLan_2",
@@ -41,94 +85,17 @@
             "PackageShop_TL_LLan_5",
             "PackageShop_TL_LLan_6"
         ],
-        "Link": "view://shopView&viewType=push&shopId=Shop_TimeLimit"
-    },
-    "ShopRecommend_1": {
-        "TabName": "ShopRecommend_1_Name",
-        "BackGroundImg": "sd_tj_bg_shouchong",
-        "Sort": 1,
-        "Vanish": 1,
+        "Prepose": "",
+        "ServerCondition": "",
+        "Sort": 2,
+        "TabName": "ShopRecommend_TL_LLan_Name",
         "TimeType": {
             "type": "unlimit"
         },
-        "ServerCondition": "",
-        "ClientCondition": "",
-        "Hide": 1,
-        "Prepose": "",
-        "PackageId": [
-            "PackageShop_1"
-        ],
-        "Link": "view://shopView&viewType=push&shopId=Shop_Package&packageId=PackageShop_1"
-    },
-    "ShopRecommend_2": {
-        "TabName": "ShopRecommend_2_Name",
-        "BackGroundImg": "sd_tj_bg_yueka",
-        "Sort": 1002,
-        "Vanish": 0,
-        "TimeType": {
-            "type": "unlimit"
-        },
-        "ServerCondition": "",
-        "ClientCondition": "",
-        "Hide": 1,
-        "Prepose": "",
-        "PackageId": [
-            "MonthCard_1"
-        ],
-        "Link": "view://shopView&viewType=push&shopId=Shop_Monthcard&packageId=MonthCard_1"
-    },
-    "ShopRecommend_3": {
-        "TabName": "ShopRecommend_3_Name",
-        "BackGroundImg": "sd_tj_bg_yongjiuka",
-        "Sort": 1001,
-        "Vanish": 0,
-        "TimeType": {
-            "type": "unlimit"
-        },
-        "ServerCondition": "",
-        "ClientCondition": "",
-        "Hide": 1,
-        "Prepose": "",
-        "PackageId": [
-            "monthCardF"
-        ],
-        "Link": "view://shopView&viewType=push&shopId=Shop_Monthcard&packageId=monthCardF"
-    },
-    "ShopRecommend_TimeLimit": {
-        "TabName": "ShopRecommend_TimeLimit_Name",
-        "BackGroundImg": "sd_tj_bg_zfzxd",
-        "Sort": 1,
-        "Vanish": 1,
-        "TimeType": {
-            "start": "2020-11-14 05:00:00",
-            "end": "2020-11-20 05:00:00",
-            "type": "limit"
-        },
-        "ServerCondition": "",
-        "ClientCondition": "",
-        "Hide": 1,
-        "Prepose": "",
-        "PackageId": [
-            "PackageShop_TimeLimit_1",
-            "PackageShop_TimeLimit_2",
-            "PackageShop_TimeLimit_3",
-            "PackageShop_TimeLimit_4",
-            "PackageShop_TimeLimit_5",
-            "PackageShop_TimeLimit_6"
-        ],
-        "Link": "view://shopView&viewType=push&shopId=Shop_TimeLimit"
+        "Vanish": 1
     },
     "ShopRecommend_TL_SGHQShou": {
-        "TabName": "ShopRecommend_TL_SGHQShou_Name",
         "BackGroundImg": "sd_tj_bg_zfzxd",
-        "Sort": 1,
-        "Vanish": 1,
-        "TimeType": {
-            "start": "2020-12-05 05:00:00",
-            "end": "2020-12-12 05:00:00",
-            "type": "limit"
-        },
-        "ServerCondition": "",
         "ClientCondition": {
             "PLEYERREG": [
                 45,
@@ -136,7 +103,7 @@
             ]
         },
         "Hide": 1,
-        "Prepose": "",
+        "Link": "view://shopView&viewType=push&shopId=Shop_TimeLimit",
         "PackageId": [
             "PackageShop_TL_SGHQShou_1",
             "PackageShop_TL_SGHQShou_2",
@@ -145,6 +112,39 @@
             "PackageShop_TL_SGHQShou_5",
             "PackageShop_TL_SGHQShou_6"
         ],
-        "Link": "view://shopView&viewType=push&shopId=Shop_TimeLimit"
+        "Prepose": "",
+        "ServerCondition": "",
+        "Sort": 1,
+        "TabName": "ShopRecommend_TL_SGHQShou_Name",
+        "TimeType": {
+            "end": "2020-12-12 05:00:00",
+            "start": "2020-12-05 05:00:00",
+            "type": "limit"
+        },
+        "Vanish": 1
+    },
+    "ShopRecommend_TimeLimit": {
+        "BackGroundImg": "sd_tj_bg_zfzxd",
+        "ClientCondition": "",
+        "Hide": 1,
+        "Link": "view://shopView&viewType=push&shopId=Shop_TimeLimit",
+        "PackageId": [
+            "PackageShop_TimeLimit_1",
+            "PackageShop_TimeLimit_2",
+            "PackageShop_TimeLimit_3",
+            "PackageShop_TimeLimit_4",
+            "PackageShop_TimeLimit_5",
+            "PackageShop_TimeLimit_6"
+        ],
+        "Prepose": "",
+        "ServerCondition": "",
+        "Sort": 1,
+        "TabName": "ShopRecommend_TimeLimit_Name",
+        "TimeType": {
+            "end": "2020-11-20 05:00:00",
+            "start": "2020-11-14 05:00:00",
+            "type": "limit"
+        },
+        "Vanish": 1
     }
 }

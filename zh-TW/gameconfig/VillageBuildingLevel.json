@@ -1,2166 +1,52 @@
 {
-    "luoditaideng_Lv1": {
-        "DecorateBuilding": "luoditaideng",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 120,
-                "type": "IR_DecorateCoin"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 12,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": [
-            {
-                "amount": 90,
-                "type": "IR_Diamond"
-            }
-        ]
-    },
-    "shuzhuangtai_Lv1": {
-        "DecorateBuilding": "shuzhuangtai",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 180,
-                "type": "IR_DecorateCoin"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 18,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": [
-            {
-                "amount": 120,
-                "type": "IR_Diamond"
-            }
-        ]
-    },
-    "guizi_Lv1": {
-        "DecorateBuilding": "guizi",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 150,
-                "type": "IR_DecorateCoin"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 15,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": [
-            {
-                "amount": 90,
-                "type": "IR_Diamond"
-            }
-        ]
-    },
-    "shenghuogui_Lv1": {
-        "DecorateBuilding": "shenghuogui",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 180,
-                "type": "IR_DecorateCoin"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 18,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": [
-            {
-                "amount": 120,
-                "type": "IR_Diamond"
-            }
-        ]
-    },
-    "dashugui_Lv1": {
-        "DecorateBuilding": "dashugui",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 150,
-                "type": "IR_DecorateCoin"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 15,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": [
-            {
-                "amount": 90,
-                "type": "IR_Diamond"
-            }
-        ]
-    },
-    "yongchi_Lv1": {
-        "DecorateBuilding": "yongchi",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 600,
-                "type": "IR_DecorateCoin"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 60,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": [
-            {
-                "amount": 150,
-                "type": "IR_Diamond"
-            }
-        ]
-    },
     "Beilu_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 42,
         "DecorateBuilding": "Beilu",
+        "Factor1": [],
+        "FunctionText": "",
         "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
         "NextBuilding": "",
         "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
         "UpgradeCost": [
             {
                 "amount": 420,
                 "type": "IR_DecorateCoin"
             }
         ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 42,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
         "UpgradeCostAnother": [
             {
                 "amount": 150,
                 "type": "IR_Diamond"
             }
-        ]
-    },
-    "MaKaLongGui_Lv1": {
-        "DecorateBuilding": "MaKaLongGui",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 180,
-                "type": "IR_DecorateCoin"
-            }
         ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 18,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": [
-            {
-                "amount": 120,
-                "type": "IR_Diamond"
-            }
-        ]
-    },
-    "zishuruandeng_Lv1": {
-        "DecorateBuilding": "zishuruandeng",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 120,
-                "type": "IR_DecorateCoin"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 12,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": [
-            {
-                "amount": 90,
-                "type": "IR_Diamond"
-            }
-        ]
-    },
-    "yijia1_Lv1": {
-        "DecorateBuilding": "yijia1",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 90,
-                "type": "IR_DecorateCoin"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 9,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": [
-            {
-                "amount": 60,
-                "type": "IR_Diamond"
-            }
-        ]
-    },
-    "ZhanBuZhuo_Lv1": {
-        "DecorateBuilding": "ZhanBuZhuo",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 210,
-                "type": "IR_DecorateCoin"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 21,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": [
-            {
-                "amount": 120,
-                "type": "IR_Diamond"
-            }
-        ]
-    },
-    "Pingfeng_Lv1": {
-        "DecorateBuilding": "Pingfeng",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 120,
-                "type": "IR_DecorateCoin"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 12,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": [
-            {
-                "amount": 90,
-                "type": "IR_Diamond"
-            }
-        ]
-    },
-    "dideng_Lv1": {
-        "DecorateBuilding": "dideng",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 60,
-                "type": "IR_DecorateCoin"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 6,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": [
-            {
-                "amount": 60,
-                "type": "IR_Diamond"
-            }
-        ]
-    },
-    "penquanji_Lv1": {
-        "DecorateBuilding": "penquanji",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 420,
-                "type": "IR_DecorateCoin"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 42,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": [
-            {
-                "amount": 150,
-                "type": "IR_Diamond"
-            }
-        ]
-    },
-    "maoshapen_Lv1": {
-        "DecorateBuilding": "maoshapen",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 180,
-                "type": "IR_DecorateCoin"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 18,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": [
-            {
-                "amount": 120,
-                "type": "IR_Diamond"
-            }
-        ]
-    },
-    "yaoyi_Lv1": {
-        "DecorateBuilding": "yaoyi",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 120,
-                "type": "IR_DecorateCoin"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 12,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": [
-            {
-                "amount": 90,
-                "type": "IR_Diamond"
-            }
-        ]
-    },
-    "PinJianCanZhuo_Lv1": {
-        "DecorateBuilding": "PinJianCanZhuo",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 120,
-                "type": "IR_DecorateCoin"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 12,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": [
-            {
-                "amount": 90,
-                "type": "IR_Diamond"
-            }
-        ]
-    },
-    "Yugang_Lv1": {
-        "DecorateBuilding": "Yugang",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 90,
-                "type": "IR_DecorateCoin"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 9,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": [
-            {
-                "amount": 60,
-                "type": "IR_Diamond"
-            }
-        ]
-    },
-    "KaiHeiFangZhuo_Lv1": {
-        "DecorateBuilding": "KaiHeiFangZhuo",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 270,
-                "type": "IR_DecorateCoin"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 27,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": [
-            {
-                "amount": 150,
-                "type": "IR_Diamond"
-            }
-        ]
-    },
-    "sanjia_Lv1": {
-        "DecorateBuilding": "sanjia",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 90,
-                "type": "IR_DecorateCoin"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 9,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": [
-            {
-                "amount": 60,
-                "type": "IR_Diamond"
-            }
-        ]
-    },
-    "shugui_Lv1": {
-        "DecorateBuilding": "shugui",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 210,
-                "type": "IR_DecorateCoin"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 21,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": [
-            {
-                "amount": 120,
-                "type": "IR_Diamond"
-            }
-        ]
-    },
-    "damaojia_Lv1": {
-        "DecorateBuilding": "damaojia",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 210,
-                "type": "IR_DecorateCoin"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 21,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": [
-            {
-                "amount": 120,
-                "type": "IR_Diamond"
-            }
-        ]
-    },
-    "shounagui_Lv1": {
-        "DecorateBuilding": "shounagui",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 120,
-                "type": "IR_DecorateCoin"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 12,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": [
-            {
-                "amount": 90,
-                "type": "IR_Diamond"
-            }
-        ]
-    },
-    "quqikaoyi_Lv1": {
-        "DecorateBuilding": "quqikaoyi",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 90,
-                "type": "IR_DecorateCoin"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 9,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": [
-            {
-                "amount": 60,
-                "type": "IR_Diamond"
-            }
-        ]
-    },
-    "chazhuo1_Lv1": {
-        "DecorateBuilding": "chazhuo1",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 120,
-                "type": "IR_DecorateCoin"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 12,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": [
-            {
-                "amount": 90,
-                "type": "IR_Diamond"
-            }
-        ]
-    },
-    "yumaowo_Lv1": {
-        "DecorateBuilding": "yumaowo",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 60,
-                "type": "IR_DecorateCoin"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 6,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": [
-            {
-                "amount": 60,
-                "type": "IR_Diamond"
-            }
-        ]
-    },
-    "Xiuxianzhuo_Lv1": {
-        "DecorateBuilding": "Xiuxianzhuo",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 180,
-                "type": "IR_DecorateCoin"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 18,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": [
-            {
-                "amount": 120,
-                "type": "IR_Diamond"
-            }
-        ]
-    },
-    "Dianshi_Lv1": {
-        "DecorateBuilding": "Dianshi",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 90,
-                "type": "IR_DecorateCoin"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 9,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": [
-            {
-                "amount": 60,
-                "type": "IR_Diamond"
-            }
-        ]
-    },
-    "QiZhuo_Lv1": {
-        "DecorateBuilding": "QiZhuo",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 90,
-                "type": "IR_DecorateCoin"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 9,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": [
-            {
-                "amount": 60,
-                "type": "IR_Diamond"
-            }
-        ]
-    },
-    "shuangrentangyi_Lv1": {
-        "DecorateBuilding": "shuangrentangyi",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 180,
-                "type": "IR_DecorateCoin"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 18,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": [
-            {
-                "amount": 120,
-                "type": "IR_Diamond"
-            }
-        ]
-    },
-    "maojia_Lv1": {
-        "DecorateBuilding": "maojia",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 150,
-                "type": "IR_DecorateCoin"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 15,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": [
-            {
-                "amount": 90,
-                "type": "IR_Diamond"
-            }
-        ]
-    },
-    "SiQiKongJian_Lv1": {
-        "DecorateBuilding": "SiQiKongJian",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 270,
-                "type": "IR_DecorateCoin"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 27,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": [
-            {
-                "amount": 150,
-                "type": "IR_Diamond"
-            }
-        ]
-    },
-    "tangguohuatan_Lv1": {
-        "DecorateBuilding": "tangguohuatan",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 180,
-                "type": "IR_DecorateCoin"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 18,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": [
-            {
-                "amount": 120,
-                "type": "IR_Diamond"
-            }
-        ]
-    },
-    "dazhixiang_Lv1": {
-        "DecorateBuilding": "dazhixiang",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 60,
-                "type": "IR_DecorateCoin"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 6,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": [
-            {
-                "amount": 60,
-                "type": "IR_Diamond"
-            }
-        ]
-    },
-    "yushi_Lv1": {
-        "DecorateBuilding": "yushi",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 180,
-                "type": "IR_DecorateCoin"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 18,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": [
-            {
-                "amount": 120,
-                "type": "IR_Diamond"
-            }
-        ]
-    },
-    "qiuxingdeng_Lv1": {
-        "DecorateBuilding": "qiuxingdeng",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 120,
-                "type": "IR_DecorateCoin"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 12,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": [
-            {
-                "amount": 90,
-                "type": "IR_Diamond"
-            }
-        ]
-    },
-    "Dipu_Lv1": {
-        "DecorateBuilding": "Dipu",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 210,
-                "type": "IR_DecorateCoin"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 21,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": [
-            {
-                "amount": 120,
-                "type": "IR_Diamond"
-            }
-        ]
-    },
-    "yijia_Lv1": {
-        "DecorateBuilding": "yijia",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 120,
-                "type": "IR_DecorateCoin"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 12,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": [
-            {
-                "amount": 90,
-                "type": "IR_Diamond"
-            }
-        ]
-    },
-    "shuangpingdiannaozhuo_Lv1": {
-        "DecorateBuilding": "shuangpingdiannaozhuo",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 270,
-                "type": "IR_DecorateCoin"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 27,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": [
-            {
-                "amount": 150,
-                "type": "IR_Diamond"
-            }
-        ]
-    },
-    "Zhixiang_Lv1": {
-        "DecorateBuilding": "Zhixiang",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 60,
-                "type": "IR_DecorateCoin"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 6,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": [
-            {
-                "amount": 60,
-                "type": "IR_Diamond"
-            }
-        ]
-    },
-    "tiandiantai_Lv1": {
-        "DecorateBuilding": "tiandiantai",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 210,
-                "type": "IR_DecorateCoin"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 21,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": [
-            {
-                "amount": 120,
-                "type": "IR_Diamond"
-            }
-        ]
-    },
-    "xiangxunyigui_Lv1": {
-        "DecorateBuilding": "xiangxunyigui",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 150,
-                "type": "IR_DecorateCoin"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 15,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": [
-            {
-                "amount": 90,
-                "type": "IR_Diamond"
-            }
-        ]
-    },
-    "Suzi_Lv1": {
-        "DecorateBuilding": "Suzi",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 60,
-                "type": "IR_DecorateCoin"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 6,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": [
-            {
-                "amount": 60,
-                "type": "IR_Diamond"
-            }
-        ]
-    },
-    "chuantouguibai_Lv1": {
-        "DecorateBuilding": "chuantouguibai",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 150,
-                "type": "IR_DecorateCoin"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 15,
-        "FunctionText": "",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": [
-            {
-                "amount": 90,
-                "type": "IR_Diamond"
-            }
-        ]
-    },
-    "CrystalOre_Normal_Lv8": {
-        "DecorateBuilding": "",
-        "Level": 8,
-        "PreBuilding": [],
-        "BuildCondition": [
-            {
-                "BaseLevel": 8
-            }
-        ],
-        "UpDesc": "Build_Condition_UpDesc1",
-        "NextBuilding": "CrystalOre_Normal_Lv9",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 230000,
-                "type": "IR_Gold"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 21600.0,
-        "Factor1": [
-            "CrystalOre_Normal",
-            "CrystalStorage_Normal"
-        ],
-        "Comfort": 8,
-        "FunctionText": "CrystalOre_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
-    },
-    "CrystalOre_Normal_Lv9": {
-        "DecorateBuilding": "",
-        "Level": 9,
-        "PreBuilding": [],
-        "BuildCondition": [
-            {
-                "BaseLevel": 9
-            }
-        ],
-        "UpDesc": "Build_Condition_UpDesc1",
-        "NextBuilding": "CrystalOre_Normal_Lv10",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 450000,
-                "type": "IR_Gold"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 32400.0,
-        "Factor1": [
-            "CrystalOre_Normal",
-            "CrystalStorage_Normal"
-        ],
-        "Comfort": 9,
-        "FunctionText": "CrystalOre_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
-    },
-    "CrystalOre_Normal_Lv6": {
-        "DecorateBuilding": "",
-        "Level": 6,
-        "PreBuilding": [],
-        "BuildCondition": [
-            {
-                "BaseLevel": 6
-            }
-        ],
-        "UpDesc": "Build_Condition_UpDesc1",
-        "NextBuilding": "CrystalOre_Normal_Lv7",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 30000,
-                "type": "IR_Gold"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 7200.0,
-        "Factor1": [
-            "CrystalOre_Normal",
-            "CrystalStorage_Normal"
-        ],
-        "Comfort": 6,
-        "FunctionText": "CrystalOre_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
-    },
-    "CrystalOre_Normal_Lv7": {
-        "DecorateBuilding": "",
-        "Level": 7,
-        "PreBuilding": [],
-        "BuildCondition": [
-            {
-                "BaseLevel": 7
-            }
-        ],
-        "UpDesc": "Build_Condition_UpDesc1",
-        "NextBuilding": "CrystalOre_Normal_Lv8",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 50000,
-                "type": "IR_Gold"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 10800.0,
-        "Factor1": [
-            "CrystalOre_Normal",
-            "CrystalStorage_Normal"
-        ],
-        "Comfort": 7,
-        "FunctionText": "CrystalOre_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
-    },
-    "CrystalOre_Normal_Lv4": {
-        "DecorateBuilding": "",
-        "Level": 4,
-        "PreBuilding": [],
-        "BuildCondition": [
-            {
-                "BaseLevel": 4
-            }
-        ],
-        "UpDesc": "Build_Condition_UpDesc1",
-        "NextBuilding": "CrystalOre_Normal_Lv5",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 6000,
-                "type": "IR_Gold"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 900.0,
-        "Factor1": [
-            "CrystalOre_Normal",
-            "CrystalStorage_Normal"
-        ],
-        "Comfort": 4,
-        "FunctionText": "CrystalOre_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
-    },
-    "CrystalOre_Normal_Lv5": {
-        "DecorateBuilding": "",
-        "Level": 5,
-        "PreBuilding": [],
-        "BuildCondition": [
-            {
-                "BaseLevel": 5
-            }
-        ],
-        "UpDesc": "Build_Condition_UpDesc1",
-        "NextBuilding": "CrystalOre_Normal_Lv6",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 12000,
-                "type": "IR_Gold"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 1800.0,
-        "Factor1": [
-            "CrystalOre_Normal",
-            "CrystalStorage_Normal"
-        ],
-        "Comfort": 5,
-        "FunctionText": "CrystalOre_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
-    },
-    "CrystalOre_Normal_Lv2": {
-        "DecorateBuilding": "",
-        "Level": 2,
-        "PreBuilding": [],
-        "BuildCondition": [
-            {
-                "Block": "M04S05"
-            }
-        ],
-        "UpDesc": "Build_Condition_UpDesc3",
-        "NextBuilding": "CrystalOre_Normal_Lv3",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 400,
-                "type": "IR_Gold"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 15.0,
-        "Factor1": [
-            "CrystalOre_Normal",
-            "CrystalStorage_Normal"
-        ],
-        "Comfort": 2,
-        "FunctionText": "CrystalOre_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
-    },
-    "CrystalOre_Normal_Lv3": {
-        "DecorateBuilding": "",
-        "Level": 3,
-        "PreBuilding": [],
-        "BuildCondition": [
-            {
-                "BaseLevel": 2
-            }
-        ],
-        "UpDesc": "Build_Condition_UpDesc1",
-        "NextBuilding": "CrystalOre_Normal_Lv4",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 800,
-                "type": "IR_Gold"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 60.0,
-        "Factor1": [
-            "CrystalOre_Normal",
-            "CrystalStorage_Normal"
-        ],
-        "Comfort": 3,
-        "FunctionText": "CrystalOre_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
-    },
-    "CrystalOre_Normal_Lv1": {
-        "DecorateBuilding": "",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": [
-            {
-                "Block": "M04S05"
-            }
-        ],
-        "UpDesc": "Build_Condition_UpDesc3",
-        "NextBuilding": "CrystalOre_Normal_Lv2",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 200,
-                "type": "IR_Gold"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 10.0,
-        "Factor1": [
-            "CrystalOre_Normal",
-            "CrystalStorage_Normal"
-        ],
-        "Comfort": 1,
-        "FunctionText": "CrystalOre_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
-    },
-    "CrystalOre_Normal_Lv10": {
-        "DecorateBuilding": "",
-        "Level": 10,
-        "PreBuilding": [],
-        "BuildCondition": [
-            {
-                "BaseLevel": 10
-            }
-        ],
-        "UpDesc": "Build_Condition_UpDesc1",
-        "NextBuilding": "CrystalOre_Normal_Lv11",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 600000,
-                "type": "IR_Gold"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 54000.0,
-        "Factor1": [
-            "CrystalOre_Normal",
-            "CrystalStorage_Normal"
-        ],
-        "Comfort": 10,
-        "FunctionText": "CrystalOre_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
-    },
-    "CrystalOre_Normal_Lv11": {
-        "DecorateBuilding": "",
-        "Level": 11,
-        "PreBuilding": [],
-        "BuildCondition": [
-            {
-                "BaseLevel": 11
-            }
-        ],
-        "UpDesc": "Build_Condition_UpDesc1",
-        "NextBuilding": "CrystalOre_Normal_Lv12",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 1500000,
-                "type": "IR_Gold"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 86400.0,
-        "Factor1": [
-            "CrystalOre_Normal",
-            "CrystalStorage_Normal"
-        ],
-        "Comfort": 11,
-        "FunctionText": "CrystalOre_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
-    },
-    "CrystalOre_Normal_Lv12": {
-        "DecorateBuilding": "",
-        "Level": 12,
-        "PreBuilding": [],
-        "BuildCondition": [
-            {
-                "BaseLevel": 12
-            }
-        ],
-        "UpDesc": "Build_Condition_UpDesc1",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 3000000,
-                "type": "IR_Gold"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 115200.0,
-        "Factor1": [
-            "CrystalOre_Normal",
-            "CrystalStorage_Normal"
-        ],
-        "Comfort": 12,
-        "FunctionText": "CrystalOre_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
-    },
-    "GoldOre_Normal_Lv11": {
-        "DecorateBuilding": "",
-        "Level": 11,
-        "PreBuilding": [],
-        "BuildCondition": [
-            {
-                "BaseLevel": 11
-            }
-        ],
-        "UpDesc": "Build_Condition_UpDesc1",
-        "NextBuilding": "GoldOre_Normal_Lv12",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 2000000,
-                "type": "IR_Crystal"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 86400.0,
-        "Factor1": [
-            "GoldOre_Normal",
-            "GoldStorage_Normal"
-        ],
-        "Comfort": 11,
-        "FunctionText": "GoldOre_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
-    },
-    "GoldOre_Normal_Lv12": {
-        "DecorateBuilding": "",
-        "Level": 12,
-        "PreBuilding": [],
-        "BuildCondition": [
-            {
-                "BaseLevel": 12
-            }
-        ],
-        "UpDesc": "Build_Condition_UpDesc1",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 4000000,
-                "type": "IR_Crystal"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 115200.0,
-        "Factor1": [
-            "GoldOre_Normal",
-            "GoldStorage_Normal"
-        ],
-        "Comfort": 12,
-        "FunctionText": "GoldOre_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
-    },
-    "GoldOre_Normal_Lv10": {
-        "DecorateBuilding": "",
-        "Level": 10,
-        "PreBuilding": [],
-        "BuildCondition": [
-            {
-                "BaseLevel": 10
-            }
-        ],
-        "UpDesc": "Build_Condition_UpDesc1",
-        "NextBuilding": "GoldOre_Normal_Lv11",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 800000,
-                "type": "IR_Crystal"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 54000.0,
-        "Factor1": [
-            "GoldOre_Normal",
-            "GoldStorage_Normal"
-        ],
-        "Comfort": 10,
-        "FunctionText": "GoldOre_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
-    },
-    "GoldOre_Normal_Lv5": {
-        "DecorateBuilding": "",
-        "Level": 5,
-        "PreBuilding": [],
-        "BuildCondition": [
-            {
-                "BaseLevel": 5
-            }
-        ],
-        "UpDesc": "Build_Condition_UpDesc1",
-        "NextBuilding": "GoldOre_Normal_Lv6",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 20000,
-                "type": "IR_Crystal"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 1800.0,
-        "Factor1": [
-            "GoldOre_Normal",
-            "GoldStorage_Normal"
-        ],
-        "Comfort": 5,
-        "FunctionText": "GoldOre_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
-    },
-    "GoldOre_Normal_Lv4": {
-        "DecorateBuilding": "",
-        "Level": 4,
-        "PreBuilding": [],
-        "BuildCondition": [
-            {
-                "BaseLevel": 3
-            }
-        ],
-        "UpDesc": "Build_Condition_UpDesc1",
-        "NextBuilding": "GoldOre_Normal_Lv5",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 6000,
-                "type": "IR_Crystal"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 900.0,
-        "Factor1": [
-            "GoldOre_Normal",
-            "GoldStorage_Normal"
-        ],
-        "Comfort": 4,
-        "FunctionText": "GoldOre_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
-    },
-    "GoldOre_Normal_Lv7": {
-        "DecorateBuilding": "",
-        "Level": 7,
-        "PreBuilding": [],
-        "BuildCondition": [
-            {
-                "BaseLevel": 7
-            }
-        ],
-        "UpDesc": "Build_Condition_UpDesc1",
-        "NextBuilding": "GoldOre_Normal_Lv8",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 80000,
-                "type": "IR_Crystal"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 10800.0,
-        "Factor1": [
-            "GoldOre_Normal",
-            "GoldStorage_Normal"
-        ],
-        "Comfort": 7,
-        "FunctionText": "GoldOre_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
-    },
-    "GoldOre_Normal_Lv6": {
-        "DecorateBuilding": "",
-        "Level": 6,
-        "PreBuilding": [],
-        "BuildCondition": [
-            {
-                "BaseLevel": 6
-            }
-        ],
-        "UpDesc": "Build_Condition_UpDesc1",
-        "NextBuilding": "GoldOre_Normal_Lv7",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 50000,
-                "type": "IR_Crystal"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 7200.0,
-        "Factor1": [
-            "GoldOre_Normal",
-            "GoldStorage_Normal"
-        ],
-        "Comfort": 6,
-        "FunctionText": "GoldOre_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
-    },
-    "GoldOre_Normal_Lv1": {
-        "DecorateBuilding": "",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": [
-            {
-                "Block": "M01S04"
-            }
-        ],
-        "UpDesc": "Build_Condition_UpDesc3",
-        "NextBuilding": "GoldOre_Normal_Lv2",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 200,
-                "type": "IR_Crystal"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 10.0,
-        "Factor1": [
-            "GoldOre_Normal",
-            "GoldStorage_Normal"
-        ],
-        "Comfort": 1,
-        "FunctionText": "GoldOre_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
-    },
-    "GoldOre_Normal_Lv3": {
-        "DecorateBuilding": "",
-        "Level": 3,
-        "PreBuilding": [],
-        "BuildCondition": [
-            {
-                "BaseLevel": 1
-            }
-        ],
-        "UpDesc": "Build_Condition_UpDesc1",
-        "NextBuilding": "GoldOre_Normal_Lv4",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 800,
-                "type": "IR_Crystal"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 60.0,
-        "Factor1": [
-            "GoldOre_Normal",
-            "GoldStorage_Normal"
-        ],
-        "Comfort": 3,
-        "FunctionText": "GoldOre_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
-    },
-    "GoldOre_Normal_Lv2": {
-        "DecorateBuilding": "",
-        "Level": 2,
-        "PreBuilding": [],
-        "BuildCondition": [
-            {
-                "Block": "M02S05"
-            }
-        ],
-        "UpDesc": "Build_Condition_UpDesc3",
-        "NextBuilding": "GoldOre_Normal_Lv3",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 400,
-                "type": "IR_Crystal"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 15.0,
-        "Factor1": [
-            "GoldOre_Normal",
-            "GoldStorage_Normal"
-        ],
-        "Comfort": 2,
-        "FunctionText": "GoldOre_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
-    },
-    "GoldOre_Normal_Lv9": {
-        "DecorateBuilding": "",
-        "Level": 9,
-        "PreBuilding": [],
-        "BuildCondition": [
-            {
-                "BaseLevel": 9
-            }
-        ],
-        "UpDesc": "Build_Condition_UpDesc1",
-        "NextBuilding": "GoldOre_Normal_Lv10",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 600000,
-                "type": "IR_Crystal"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 32400.0,
-        "Factor1": [
-            "GoldOre_Normal",
-            "GoldStorage_Normal"
-        ],
-        "Comfort": 9,
-        "FunctionText": "GoldOre_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
-    },
-    "GoldOre_Normal_Lv8": {
-        "DecorateBuilding": "",
-        "Level": 8,
-        "PreBuilding": [],
-        "BuildCondition": [
-            {
-                "BaseLevel": 8
-            }
-        ],
-        "UpDesc": "Build_Condition_UpDesc1",
-        "NextBuilding": "GoldOre_Normal_Lv9",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 400000,
-                "type": "IR_Crystal"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 21600.0,
-        "Factor1": [
-            "GoldOre_Normal",
-            "GoldStorage_Normal"
-        ],
-        "Comfort": 8,
-        "FunctionText": "GoldOre_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
-    },
-    "CardAcademy_Lv1": {
-        "DecorateBuilding": "",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": [
-            {
-                "Block": "M03S02"
-            }
-        ],
-        "UpDesc": "Build_Condition_UpDesc3",
-        "NextBuilding": "CardAcademy_Lv2",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 400,
-                "type": "IR_Crystal"
-            },
-            {
-                "amount": 200,
-                "type": "IR_Gold"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 10.0,
-        "Factor1": [
-            "CardAcademyNum"
-        ],
-        "Comfort": 3,
-        "FunctionText": "CardAcademy_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
-    },
-    "CardAcademy_Lv2": {
-        "DecorateBuilding": "",
-        "Level": 2,
-        "PreBuilding": [],
-        "BuildCondition": [
-            {
-                "Block": "M04S03"
-            }
-        ],
-        "UpDesc": "Build_Condition_UpDesc3",
-        "NextBuilding": "CardAcademy_Lv3",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 2000,
-                "type": "IR_Crystal"
-            },
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 15.0,
-        "Factor1": [
-            "CardAcademyNum"
-        ],
-        "Comfort": 6,
-        "FunctionText": "CardAcademy_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
-    },
-    "CardAcademy_Lv3": {
-        "DecorateBuilding": "",
-        "Level": 3,
-        "PreBuilding": [],
-        "BuildCondition": [
-            {
-                "BaseLevel": 2
-            }
-        ],
-        "UpDesc": "Build_Condition_UpDesc1",
-        "NextBuilding": "CardAcademy_Lv4",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 5000,
-                "type": "IR_Crystal"
-            },
-            {
-                "amount": 2500,
-                "type": "IR_Gold"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 20.0,
-        "Factor1": [
-            "CardAcademyNum"
-        ],
-        "Comfort": 9,
-        "FunctionText": "CardAcademy_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
-    },
-    "CardAcademy_Lv4": {
-        "DecorateBuilding": "",
-        "Level": 4,
-        "PreBuilding": [],
-        "BuildCondition": [
-            {
-                "BaseLevel": 3
-            }
-        ],
-        "UpDesc": "Build_Condition_UpDesc1",
-        "NextBuilding": "CardAcademy_Lv5",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 10000,
-                "type": "IR_Crystal"
-            },
-            {
-                "amount": 4000,
-                "type": "IR_Gold"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 1800.0,
-        "Factor1": [
-            "CardAcademyNum"
-        ],
-        "Comfort": 12,
-        "FunctionText": "CardAcademy_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
-    },
-    "CardAcademy_Lv5": {
-        "DecorateBuilding": "",
-        "Level": 5,
-        "PreBuilding": [],
-        "BuildCondition": [
-            {
-                "BaseLevel": 5
-            }
-        ],
-        "UpDesc": "Build_Condition_UpDesc1",
-        "NextBuilding": "CardAcademy_Lv6",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 55000,
-                "type": "IR_Crystal"
-            },
-            {
-                "amount": 18000,
-                "type": "IR_Gold"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 7200.0,
-        "Factor1": [
-            "CardAcademyNum"
-        ],
-        "Comfort": 15,
-        "FunctionText": "CardAcademy_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
-    },
-    "CardAcademy_Lv6": {
-        "DecorateBuilding": "",
-        "Level": 6,
-        "PreBuilding": [],
-        "BuildCondition": [
-            {
-                "BaseLevel": 7
-            }
-        ],
-        "UpDesc": "Build_Condition_UpDesc1",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 300000,
-                "type": "IR_Crystal"
-            },
-            {
-                "amount": 90000,
-                "type": "IR_Gold"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 21600.0,
-        "Factor1": [
-            "CardAcademyNum"
-        ],
-        "Comfort": 20,
-        "FunctionText": "CardAcademy_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
+        "UpgradeTime": 0.0
     },
     "Camp_Lv1": {
-        "DecorateBuilding": "",
-        "Level": 1,
-        "PreBuilding": [],
         "BuildCondition": [
             {
                 "BaseLevel": 1
             }
         ],
-        "UpDesc": "Build_Condition_UpDesc1",
+        "Comfort": 2,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "CampOre"
+        ],
+        "FunctionText": "Camp1_FunctionText",
+        "Level": 1,
         "NextBuilding": "Camp_Lv2",
         "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc1",
+        "UpSurface": "",
         "UpgradeCost": [
             {
                 "amount": 400,
@@ -2171,29 +57,29 @@
                 "type": "IR_Gold"
             }
         ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 10.0,
-        "Factor1": [
-            "CampOre"
-        ],
-        "Comfort": 2,
-        "FunctionText": "Camp1_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 10.0
     },
     "Camp_Lv2": {
-        "DecorateBuilding": "",
-        "Level": 2,
-        "PreBuilding": [],
         "BuildCondition": [
             {
                 "BaseLevel": 1
             }
         ],
-        "UpDesc": "Build_Condition_UpDesc1",
+        "Comfort": 4,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "CampOre"
+        ],
+        "FunctionText": "Camp1_FunctionText",
+        "Level": 2,
         "NextBuilding": "Camp_Lv3",
         "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc1",
+        "UpSurface": "",
         "UpgradeCost": [
             {
                 "amount": 800,
@@ -2204,29 +90,29 @@
                 "type": "IR_Gold"
             }
         ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 15.0,
-        "Factor1": [
-            "CampOre"
-        ],
-        "Comfort": 4,
-        "FunctionText": "Camp1_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 15.0
     },
     "Camp_Lv3": {
-        "DecorateBuilding": "",
-        "Level": 3,
-        "PreBuilding": [],
         "BuildCondition": [
             {
                 "BaseLevel": 2
             }
         ],
-        "UpDesc": "Build_Condition_UpDesc1",
+        "Comfort": 6,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "CampOre"
+        ],
+        "FunctionText": "Camp1_FunctionText",
+        "Level": 3,
         "NextBuilding": "Camp_Lv4",
         "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc1",
+        "UpSurface": "",
         "UpgradeCost": [
             {
                 "amount": 4000,
@@ -2237,29 +123,29 @@
                 "type": "IR_Gold"
             }
         ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 1200.0,
-        "Factor1": [
-            "CampOre"
-        ],
-        "Comfort": 6,
-        "FunctionText": "Camp1_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 1200.0
     },
     "Camp_Lv4": {
-        "DecorateBuilding": "",
-        "Level": 4,
-        "PreBuilding": [],
         "BuildCondition": [
             {
                 "BaseLevel": 4
             }
         ],
-        "UpDesc": "Build_Condition_UpDesc1",
+        "Comfort": 8,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "CampOre"
+        ],
+        "FunctionText": "Camp1_FunctionText",
+        "Level": 4,
         "NextBuilding": "Camp_Lv5",
         "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc1",
+        "UpSurface": "",
         "UpgradeCost": [
             {
                 "amount": 28000,
@@ -2270,29 +156,29 @@
                 "type": "IR_Gold"
             }
         ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 2400.0,
-        "Factor1": [
-            "CampOre"
-        ],
-        "Comfort": 8,
-        "FunctionText": "Camp1_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 2400.0
     },
     "Camp_Lv5": {
-        "DecorateBuilding": "",
-        "Level": 5,
-        "PreBuilding": [],
         "BuildCondition": [
             {
                 "BaseLevel": 6
             }
         ],
-        "UpDesc": "Build_Condition_UpDesc1",
+        "Comfort": 10,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "CampOre"
+        ],
+        "FunctionText": "Camp1_FunctionText",
+        "Level": 5,
         "NextBuilding": "Camp_Lv6",
         "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc1",
+        "UpSurface": "",
         "UpgradeCost": [
             {
                 "amount": 40000,
@@ -2303,29 +189,29 @@
                 "type": "IR_Gold"
             }
         ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 3600.0,
-        "Factor1": [
-            "CampOre"
-        ],
-        "Comfort": 10,
-        "FunctionText": "Camp1_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 3600.0
     },
     "Camp_Lv6": {
-        "DecorateBuilding": "",
-        "Level": 6,
-        "PreBuilding": [],
         "BuildCondition": [
             {
                 "BaseLevel": 7
             }
         ],
-        "UpDesc": "Build_Condition_UpDesc1",
+        "Comfort": 12,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "CampOre"
+        ],
+        "FunctionText": "Camp1_FunctionText",
+        "Level": 6,
         "NextBuilding": "",
         "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc1",
+        "UpSurface": "",
         "UpgradeCost": [
             {
                 "amount": 100000,
@@ -2336,29 +222,29 @@
                 "type": "IR_Gold"
             }
         ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 7200.0,
-        "Factor1": [
-            "CampOre"
-        ],
-        "Comfort": 12,
-        "FunctionText": "Camp1_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 7200.0
     },
-    "MainCity_Lv1": {
-        "DecorateBuilding": "",
-        "Level": 1,
-        "PreBuilding": [],
+    "CardAcademy_Lv1": {
         "BuildCondition": [
             {
-                "Level": "1"
+                "Block": "M03S02"
             }
         ],
-        "UpDesc": "MainCity_UpDesc",
-        "NextBuilding": "MainCity_Lv2",
+        "Comfort": 3,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "CardAcademyNum"
+        ],
+        "FunctionText": "CardAcademy_FunctionText",
+        "Level": 1,
+        "NextBuilding": "CardAcademy_Lv2",
         "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc3",
+        "UpSurface": "",
         "UpgradeCost": [
             {
                 "amount": 400,
@@ -2369,62 +255,29 @@
                 "type": "IR_Gold"
             }
         ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 10.0,
-        "Factor1": [
-            "CardAcademyCity"
-        ],
-        "Comfort": 10,
-        "FunctionText": "MainCity_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "MainCity_UnlockFunction_Desc",
-        "UpgradeCostAnother": ""
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 10.0
     },
-    "MainCity_Lv3": {
-        "DecorateBuilding": "",
-        "Level": 3,
-        "PreBuilding": [],
+    "CardAcademy_Lv2": {
         "BuildCondition": [
             {
-                "Level": "20"
+                "Block": "M04S03"
             }
         ],
-        "UpDesc": "MainCity_UpDesc",
-        "NextBuilding": "MainCity_Lv4",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 12000,
-                "type": "IR_Crystal"
-            },
-            {
-                "amount": 6000,
-                "type": "IR_Gold"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 20.0,
-        "Factor1": [
-            "CardAcademyCity"
-        ],
-        "Comfort": 30,
-        "FunctionText": "MainCity_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "MainCity_UnlockFunction_Desc",
-        "UpgradeCostAnother": ""
-    },
-    "MainCity_Lv2": {
+        "Comfort": 6,
         "DecorateBuilding": "",
+        "Factor1": [
+            "CardAcademyNum"
+        ],
+        "FunctionText": "CardAcademy_FunctionText",
         "Level": 2,
-        "PreBuilding": [],
-        "BuildCondition": [
-            {
-                "Level": "15"
-            }
-        ],
-        "UpDesc": "MainCity_UpDesc",
-        "NextBuilding": "MainCity_Lv3",
+        "NextBuilding": "CardAcademy_Lv3",
         "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc3",
+        "UpSurface": "",
         "UpgradeCost": [
             {
                 "amount": 2000,
@@ -2435,95 +288,128 @@
                 "type": "IR_Gold"
             }
         ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 15.0,
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 15.0
+    },
+    "CardAcademy_Lv3": {
+        "BuildCondition": [
+            {
+                "BaseLevel": 2
+            }
+        ],
+        "Comfort": 9,
+        "DecorateBuilding": "",
         "Factor1": [
-            "CardAcademyCity"
+            "CardAcademyNum"
+        ],
+        "FunctionText": "CardAcademy_FunctionText",
+        "Level": 3,
+        "NextBuilding": "CardAcademy_Lv4",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc1",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 5000,
+                "type": "IR_Crystal"
+            },
+            {
+                "amount": 2500,
+                "type": "IR_Gold"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 20.0
+    },
+    "CardAcademy_Lv4": {
+        "BuildCondition": [
+            {
+                "BaseLevel": 3
+            }
+        ],
+        "Comfort": 12,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "CardAcademyNum"
+        ],
+        "FunctionText": "CardAcademy_FunctionText",
+        "Level": 4,
+        "NextBuilding": "CardAcademy_Lv5",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc1",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 10000,
+                "type": "IR_Crystal"
+            },
+            {
+                "amount": 4000,
+                "type": "IR_Gold"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 1800.0
+    },
+    "CardAcademy_Lv5": {
+        "BuildCondition": [
+            {
+                "BaseLevel": 5
+            }
+        ],
+        "Comfort": 15,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "CardAcademyNum"
+        ],
+        "FunctionText": "CardAcademy_FunctionText",
+        "Level": 5,
+        "NextBuilding": "CardAcademy_Lv6",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc1",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 55000,
+                "type": "IR_Crystal"
+            },
+            {
+                "amount": 18000,
+                "type": "IR_Gold"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 7200.0
+    },
+    "CardAcademy_Lv6": {
+        "BuildCondition": [
+            {
+                "BaseLevel": 7
+            }
         ],
         "Comfort": 20,
-        "FunctionText": "MainCity_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "MainCity_UnlockFunction_Desc",
-        "UpgradeCostAnother": ""
-    },
-    "MainCity_Lv5": {
         "DecorateBuilding": "",
-        "Level": 5,
-        "PreBuilding": [],
-        "BuildCondition": [
-            {
-                "Level": "30"
-            }
-        ],
-        "UpDesc": "MainCity_UpDesc",
-        "NextBuilding": "MainCity_Lv6",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 50000,
-                "type": "IR_Crystal"
-            },
-            {
-                "amount": 20000,
-                "type": "IR_Gold"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 3600.0,
         "Factor1": [
-            "CardAcademyCity"
+            "CardAcademyNum"
         ],
-        "Comfort": 50,
-        "FunctionText": "MainCity_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "MainCity_UnlockFunction_Desc",
-        "UpgradeCostAnother": ""
-    },
-    "MainCity_Lv4": {
-        "DecorateBuilding": "",
-        "Level": 4,
-        "PreBuilding": [],
-        "BuildCondition": [
-            {
-                "Level": "25"
-            }
-        ],
-        "UpDesc": "MainCity_UpDesc",
-        "NextBuilding": "MainCity_Lv5",
+        "FunctionText": "CardAcademy_FunctionText",
+        "Level": 6,
+        "NextBuilding": "",
         "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 16000,
-                "type": "IR_Crystal"
-            },
-            {
-                "amount": 8000,
-                "type": "IR_Gold"
-            }
-        ],
+        "PreBuilding": [],
         "ReturnFactor": 0.5,
-        "UpgradeTime": 600.0,
-        "Factor1": [
-            "CardAcademyCity"
-        ],
-        "Comfort": 40,
-        "FunctionText": "MainCity_FunctionText",
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc1",
         "UpSurface": "",
-        "UnlockBuildingDesc": "MainCity_UnlockFunction_Desc",
-        "UpgradeCostAnother": ""
-    },
-    "MainCity_Lv7": {
-        "DecorateBuilding": "",
-        "Level": 7,
-        "PreBuilding": [],
-        "BuildCondition": [
-            {
-                "Level": "40"
-            }
-        ],
-        "UpDesc": "MainCity_UpDesc",
-        "NextBuilding": "MainCity_Lv8",
-        "OtherCost": "",
         "UpgradeCost": [
             {
                 "amount": 300000,
@@ -2534,161 +420,1277 @@
                 "type": "IR_Gold"
             }
         ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 21600.0,
-        "Factor1": [
-            "CardAcademyCity"
-        ],
-        "Comfort": 70,
-        "FunctionText": "MainCity_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "MainCity_UnlockFunction_Desc",
-        "UpgradeCostAnother": ""
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 21600.0
     },
-    "MainCity_Lv6": {
-        "DecorateBuilding": "",
-        "Level": 6,
-        "PreBuilding": [],
+    "CrystalOre_Normal_Lv1": {
         "BuildCondition": [
             {
-                "Level": "35"
+                "Block": "M04S05"
             }
         ],
-        "UpDesc": "MainCity_UpDesc",
-        "NextBuilding": "MainCity_Lv7",
+        "Comfort": 1,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "CrystalOre_Normal",
+            "CrystalStorage_Normal"
+        ],
+        "FunctionText": "CrystalOre_FunctionText",
+        "Level": 1,
+        "NextBuilding": "CrystalOre_Normal_Lv2",
         "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc3",
+        "UpSurface": "",
         "UpgradeCost": [
             {
-                "amount": 120000,
-                "type": "IR_Crystal"
-            },
-            {
-                "amount": 40000,
+                "amount": 200,
                 "type": "IR_Gold"
             }
         ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 10800.0,
-        "Factor1": [
-            "CardAcademyCity"
-        ],
-        "Comfort": 60,
-        "FunctionText": "MainCity_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "MainCity_UnlockFunction_Desc",
-        "UpgradeCostAnother": ""
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 10.0
     },
-    "MainCity_Lv9": {
-        "DecorateBuilding": "",
-        "Level": 9,
-        "PreBuilding": [],
+    "CrystalOre_Normal_Lv10": {
         "BuildCondition": [
             {
-                "Level": "50"
+                "BaseLevel": 10
             }
         ],
-        "UpDesc": "MainCity_UpDesc",
-        "NextBuilding": "MainCity_Lv10",
+        "Comfort": 10,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "CrystalOre_Normal",
+            "CrystalStorage_Normal"
+        ],
+        "FunctionText": "CrystalOre_FunctionText",
+        "Level": 10,
+        "NextBuilding": "CrystalOre_Normal_Lv11",
         "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc1",
+        "UpSurface": "",
         "UpgradeCost": [
             {
-                "amount": 1250000,
-                "type": "IR_Crystal"
-            },
-            {
-                "amount": 400000,
+                "amount": 600000,
                 "type": "IR_Gold"
             }
         ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 86400.0,
-        "Factor1": [
-            "CardAcademyCity"
-        ],
-        "Comfort": 90,
-        "FunctionText": "MainCity_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "MainCity_UnlockFunction_Desc",
-        "UpgradeCostAnother": ""
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 54000.0
     },
-    "MainCity_Lv8": {
-        "DecorateBuilding": "",
-        "Level": 8,
-        "PreBuilding": [],
+    "CrystalOre_Normal_Lv11": {
         "BuildCondition": [
             {
-                "Level": "45"
+                "BaseLevel": 11
             }
         ],
-        "UpDesc": "MainCity_UpDesc",
-        "NextBuilding": "MainCity_Lv9",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 680000,
-                "type": "IR_Crystal"
-            },
-            {
-                "amount": 200000,
-                "type": "IR_Gold"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 54000.0,
-        "Factor1": [
-            "CardAcademyCity"
-        ],
-        "Comfort": 80,
-        "FunctionText": "MainCity_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "MainCity_UnlockFunction_Desc",
-        "UpgradeCostAnother": ""
-    },
-    "MainCity_Lv11": {
+        "Comfort": 11,
         "DecorateBuilding": "",
+        "Factor1": [
+            "CrystalOre_Normal",
+            "CrystalStorage_Normal"
+        ],
+        "FunctionText": "CrystalOre_FunctionText",
         "Level": 11,
-        "PreBuilding": [],
-        "BuildCondition": [
-            {
-                "Level": "60"
-            }
-        ],
-        "UpDesc": "MainCity_UpDesc",
-        "NextBuilding": "MainCity_Lv12",
+        "NextBuilding": "CrystalOre_Normal_Lv12",
         "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc1",
+        "UpSurface": "",
         "UpgradeCost": [
-            {
-                "amount": 4000000,
-                "type": "IR_Crystal"
-            },
             {
                 "amount": 1500000,
                 "type": "IR_Gold"
             }
         ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 86400.0
+    },
+    "CrystalOre_Normal_Lv12": {
+        "BuildCondition": [
+            {
+                "BaseLevel": 12
+            }
+        ],
+        "Comfort": 12,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "CrystalOre_Normal",
+            "CrystalStorage_Normal"
+        ],
+        "FunctionText": "CrystalOre_FunctionText",
+        "Level": 12,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
         "ReturnFactor": 0.5,
-        "UpgradeTime": 180000.0,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc1",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 3000000,
+                "type": "IR_Gold"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 115200.0
+    },
+    "CrystalOre_Normal_Lv2": {
+        "BuildCondition": [
+            {
+                "Block": "M04S05"
+            }
+        ],
+        "Comfort": 2,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "CrystalOre_Normal",
+            "CrystalStorage_Normal"
+        ],
+        "FunctionText": "CrystalOre_FunctionText",
+        "Level": 2,
+        "NextBuilding": "CrystalOre_Normal_Lv3",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc3",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 400,
+                "type": "IR_Gold"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 15.0
+    },
+    "CrystalOre_Normal_Lv3": {
+        "BuildCondition": [
+            {
+                "BaseLevel": 2
+            }
+        ],
+        "Comfort": 3,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "CrystalOre_Normal",
+            "CrystalStorage_Normal"
+        ],
+        "FunctionText": "CrystalOre_FunctionText",
+        "Level": 3,
+        "NextBuilding": "CrystalOre_Normal_Lv4",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc1",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 800,
+                "type": "IR_Gold"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 60.0
+    },
+    "CrystalOre_Normal_Lv4": {
+        "BuildCondition": [
+            {
+                "BaseLevel": 4
+            }
+        ],
+        "Comfort": 4,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "CrystalOre_Normal",
+            "CrystalStorage_Normal"
+        ],
+        "FunctionText": "CrystalOre_FunctionText",
+        "Level": 4,
+        "NextBuilding": "CrystalOre_Normal_Lv5",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc1",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 6000,
+                "type": "IR_Gold"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 900.0
+    },
+    "CrystalOre_Normal_Lv5": {
+        "BuildCondition": [
+            {
+                "BaseLevel": 5
+            }
+        ],
+        "Comfort": 5,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "CrystalOre_Normal",
+            "CrystalStorage_Normal"
+        ],
+        "FunctionText": "CrystalOre_FunctionText",
+        "Level": 5,
+        "NextBuilding": "CrystalOre_Normal_Lv6",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc1",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 12000,
+                "type": "IR_Gold"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 1800.0
+    },
+    "CrystalOre_Normal_Lv6": {
+        "BuildCondition": [
+            {
+                "BaseLevel": 6
+            }
+        ],
+        "Comfort": 6,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "CrystalOre_Normal",
+            "CrystalStorage_Normal"
+        ],
+        "FunctionText": "CrystalOre_FunctionText",
+        "Level": 6,
+        "NextBuilding": "CrystalOre_Normal_Lv7",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc1",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 30000,
+                "type": "IR_Gold"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 7200.0
+    },
+    "CrystalOre_Normal_Lv7": {
+        "BuildCondition": [
+            {
+                "BaseLevel": 7
+            }
+        ],
+        "Comfort": 7,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "CrystalOre_Normal",
+            "CrystalStorage_Normal"
+        ],
+        "FunctionText": "CrystalOre_FunctionText",
+        "Level": 7,
+        "NextBuilding": "CrystalOre_Normal_Lv8",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc1",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 50000,
+                "type": "IR_Gold"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 10800.0
+    },
+    "CrystalOre_Normal_Lv8": {
+        "BuildCondition": [
+            {
+                "BaseLevel": 8
+            }
+        ],
+        "Comfort": 8,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "CrystalOre_Normal",
+            "CrystalStorage_Normal"
+        ],
+        "FunctionText": "CrystalOre_FunctionText",
+        "Level": 8,
+        "NextBuilding": "CrystalOre_Normal_Lv9",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc1",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 230000,
+                "type": "IR_Gold"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 21600.0
+    },
+    "CrystalOre_Normal_Lv9": {
+        "BuildCondition": [
+            {
+                "BaseLevel": 9
+            }
+        ],
+        "Comfort": 9,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "CrystalOre_Normal",
+            "CrystalStorage_Normal"
+        ],
+        "FunctionText": "CrystalOre_FunctionText",
+        "Level": 9,
+        "NextBuilding": "CrystalOre_Normal_Lv10",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc1",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 450000,
+                "type": "IR_Gold"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 32400.0
+    },
+    "Decorate_Tuwo_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 10,
+        "DecorateBuilding": "Decorate_Tuwo",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 1,
+                "type": "IM_Decorate_Tuwo"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 0.0
+    },
+    "Dianshi_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 9,
+        "DecorateBuilding": "Dianshi",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 90,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "UpgradeCostAnother": [
+            {
+                "amount": 60,
+                "type": "IR_Diamond"
+            }
+        ],
+        "UpgradeTime": 0.0
+    },
+    "Dipu_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 21,
+        "DecorateBuilding": "Dipu",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 210,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "UpgradeCostAnother": [
+            {
+                "amount": 120,
+                "type": "IR_Diamond"
+            }
+        ],
+        "UpgradeTime": 0.0
+    },
+    "ExpOre_Normal_Lv1": {
+        "BuildCondition": [
+            {
+                "Block": "M02S03"
+            }
+        ],
+        "Comfort": 1,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "ExpOre_Normal",
+            "ExpStorage_Normal"
+        ],
+        "FunctionText": "ExpOre_FunctionText",
+        "Level": 1,
+        "NextBuilding": "ExpOre_Normal_Lv2",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc3",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 200,
+                "type": "IR_Crystal"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 10.0
+    },
+    "ExpOre_Normal_Lv10": {
+        "BuildCondition": [
+            {
+                "BaseLevel": 10
+            }
+        ],
+        "Comfort": 10,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "ExpOre_Normal",
+            "ExpStorage_Normal"
+        ],
+        "FunctionText": "ExpOre_FunctionText",
+        "Level": 10,
+        "NextBuilding": "ExpOre_Normal_Lv11",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc1",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 800000,
+                "type": "IR_Crystal"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 54000.0
+    },
+    "ExpOre_Normal_Lv11": {
+        "BuildCondition": [
+            {
+                "BaseLevel": 11
+            }
+        ],
+        "Comfort": 11,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "ExpOre_Normal",
+            "ExpStorage_Normal"
+        ],
+        "FunctionText": "ExpOre_FunctionText",
+        "Level": 11,
+        "NextBuilding": "ExpOre_Normal_Lv12",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc1",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 2000000,
+                "type": "IR_Crystal"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 86400.0
+    },
+    "ExpOre_Normal_Lv12": {
+        "BuildCondition": [
+            {
+                "BaseLevel": 12
+            }
+        ],
+        "Comfort": 12,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "ExpOre_Normal",
+            "ExpStorage_Normal"
+        ],
+        "FunctionText": "ExpOre_FunctionText",
+        "Level": 12,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc1",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 4000000,
+                "type": "IR_Crystal"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 115200.0
+    },
+    "ExpOre_Normal_Lv2": {
+        "BuildCondition": [
+            {
+                "Block": "M02S03"
+            }
+        ],
+        "Comfort": 2,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "ExpOre_Normal",
+            "ExpStorage_Normal"
+        ],
+        "FunctionText": "ExpOre_FunctionText",
+        "Level": 2,
+        "NextBuilding": "ExpOre_Normal_Lv3",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc3",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 400,
+                "type": "IR_Crystal"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 15.0
+    },
+    "ExpOre_Normal_Lv3": {
+        "BuildCondition": [
+            {
+                "Block": "M02S03"
+            }
+        ],
+        "Comfort": 3,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "ExpOre_Normal",
+            "ExpStorage_Normal"
+        ],
+        "FunctionText": "ExpOre_FunctionText",
+        "Level": 3,
+        "NextBuilding": "ExpOre_Normal_Lv4",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc3",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 800,
+                "type": "IR_Crystal"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 60.0
+    },
+    "ExpOre_Normal_Lv4": {
+        "BuildCondition": [
+            {
+                "BaseLevel": 3
+            }
+        ],
+        "Comfort": 4,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "ExpOre_Normal",
+            "ExpStorage_Normal"
+        ],
+        "FunctionText": "ExpOre_FunctionText",
+        "Level": 4,
+        "NextBuilding": "ExpOre_Normal_Lv5",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc1",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 6000,
+                "type": "IR_Crystal"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 900.0
+    },
+    "ExpOre_Normal_Lv5": {
+        "BuildCondition": [
+            {
+                "BaseLevel": 5
+            }
+        ],
+        "Comfort": 5,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "ExpOre_Normal",
+            "ExpStorage_Normal"
+        ],
+        "FunctionText": "ExpOre_FunctionText",
+        "Level": 5,
+        "NextBuilding": "ExpOre_Normal_Lv6",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc1",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 20000,
+                "type": "IR_Crystal"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 1800.0
+    },
+    "ExpOre_Normal_Lv6": {
+        "BuildCondition": [
+            {
+                "BaseLevel": 6
+            }
+        ],
+        "Comfort": 6,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "ExpOre_Normal",
+            "ExpStorage_Normal"
+        ],
+        "FunctionText": "ExpOre_FunctionText",
+        "Level": 6,
+        "NextBuilding": "ExpOre_Normal_Lv7",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc1",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 50000,
+                "type": "IR_Crystal"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 7200.0
+    },
+    "ExpOre_Normal_Lv7": {
+        "BuildCondition": [
+            {
+                "BaseLevel": 7
+            }
+        ],
+        "Comfort": 7,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "ExpOre_Normal",
+            "ExpStorage_Normal"
+        ],
+        "FunctionText": "ExpOre_FunctionText",
+        "Level": 7,
+        "NextBuilding": "ExpOre_Normal_Lv8",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc1",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 80000,
+                "type": "IR_Crystal"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 10800.0
+    },
+    "ExpOre_Normal_Lv8": {
+        "BuildCondition": [
+            {
+                "BaseLevel": 8
+            }
+        ],
+        "Comfort": 8,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "ExpOre_Normal",
+            "ExpStorage_Normal"
+        ],
+        "FunctionText": "ExpOre_FunctionText",
+        "Level": 8,
+        "NextBuilding": "ExpOre_Normal_Lv9",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc1",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 400000,
+                "type": "IR_Crystal"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 21600.0
+    },
+    "ExpOre_Normal_Lv9": {
+        "BuildCondition": [
+            {
+                "BaseLevel": 9
+            }
+        ],
+        "Comfort": 9,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "ExpOre_Normal",
+            "ExpStorage_Normal"
+        ],
+        "FunctionText": "ExpOre_FunctionText",
+        "Level": 9,
+        "NextBuilding": "ExpOre_Normal_Lv10",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc1",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 600000,
+                "type": "IR_Crystal"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 32400.0
+    },
+    "GoldOre_Normal_Lv1": {
+        "BuildCondition": [
+            {
+                "Block": "M01S04"
+            }
+        ],
+        "Comfort": 1,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "GoldOre_Normal",
+            "GoldStorage_Normal"
+        ],
+        "FunctionText": "GoldOre_FunctionText",
+        "Level": 1,
+        "NextBuilding": "GoldOre_Normal_Lv2",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc3",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 200,
+                "type": "IR_Crystal"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 10.0
+    },
+    "GoldOre_Normal_Lv10": {
+        "BuildCondition": [
+            {
+                "BaseLevel": 10
+            }
+        ],
+        "Comfort": 10,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "GoldOre_Normal",
+            "GoldStorage_Normal"
+        ],
+        "FunctionText": "GoldOre_FunctionText",
+        "Level": 10,
+        "NextBuilding": "GoldOre_Normal_Lv11",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc1",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 800000,
+                "type": "IR_Crystal"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 54000.0
+    },
+    "GoldOre_Normal_Lv11": {
+        "BuildCondition": [
+            {
+                "BaseLevel": 11
+            }
+        ],
+        "Comfort": 11,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "GoldOre_Normal",
+            "GoldStorage_Normal"
+        ],
+        "FunctionText": "GoldOre_FunctionText",
+        "Level": 11,
+        "NextBuilding": "GoldOre_Normal_Lv12",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc1",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 2000000,
+                "type": "IR_Crystal"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 86400.0
+    },
+    "GoldOre_Normal_Lv12": {
+        "BuildCondition": [
+            {
+                "BaseLevel": 12
+            }
+        ],
+        "Comfort": 12,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "GoldOre_Normal",
+            "GoldStorage_Normal"
+        ],
+        "FunctionText": "GoldOre_FunctionText",
+        "Level": 12,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc1",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 4000000,
+                "type": "IR_Crystal"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 115200.0
+    },
+    "GoldOre_Normal_Lv2": {
+        "BuildCondition": [
+            {
+                "Block": "M02S05"
+            }
+        ],
+        "Comfort": 2,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "GoldOre_Normal",
+            "GoldStorage_Normal"
+        ],
+        "FunctionText": "GoldOre_FunctionText",
+        "Level": 2,
+        "NextBuilding": "GoldOre_Normal_Lv3",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc3",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 400,
+                "type": "IR_Crystal"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 15.0
+    },
+    "GoldOre_Normal_Lv3": {
+        "BuildCondition": [
+            {
+                "BaseLevel": 1
+            }
+        ],
+        "Comfort": 3,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "GoldOre_Normal",
+            "GoldStorage_Normal"
+        ],
+        "FunctionText": "GoldOre_FunctionText",
+        "Level": 3,
+        "NextBuilding": "GoldOre_Normal_Lv4",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc1",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 800,
+                "type": "IR_Crystal"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 60.0
+    },
+    "GoldOre_Normal_Lv4": {
+        "BuildCondition": [
+            {
+                "BaseLevel": 3
+            }
+        ],
+        "Comfort": 4,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "GoldOre_Normal",
+            "GoldStorage_Normal"
+        ],
+        "FunctionText": "GoldOre_FunctionText",
+        "Level": 4,
+        "NextBuilding": "GoldOre_Normal_Lv5",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc1",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 6000,
+                "type": "IR_Crystal"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 900.0
+    },
+    "GoldOre_Normal_Lv5": {
+        "BuildCondition": [
+            {
+                "BaseLevel": 5
+            }
+        ],
+        "Comfort": 5,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "GoldOre_Normal",
+            "GoldStorage_Normal"
+        ],
+        "FunctionText": "GoldOre_FunctionText",
+        "Level": 5,
+        "NextBuilding": "GoldOre_Normal_Lv6",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc1",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 20000,
+                "type": "IR_Crystal"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 1800.0
+    },
+    "GoldOre_Normal_Lv6": {
+        "BuildCondition": [
+            {
+                "BaseLevel": 6
+            }
+        ],
+        "Comfort": 6,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "GoldOre_Normal",
+            "GoldStorage_Normal"
+        ],
+        "FunctionText": "GoldOre_FunctionText",
+        "Level": 6,
+        "NextBuilding": "GoldOre_Normal_Lv7",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc1",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 50000,
+                "type": "IR_Crystal"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 7200.0
+    },
+    "GoldOre_Normal_Lv7": {
+        "BuildCondition": [
+            {
+                "BaseLevel": 7
+            }
+        ],
+        "Comfort": 7,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "GoldOre_Normal",
+            "GoldStorage_Normal"
+        ],
+        "FunctionText": "GoldOre_FunctionText",
+        "Level": 7,
+        "NextBuilding": "GoldOre_Normal_Lv8",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc1",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 80000,
+                "type": "IR_Crystal"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 10800.0
+    },
+    "GoldOre_Normal_Lv8": {
+        "BuildCondition": [
+            {
+                "BaseLevel": 8
+            }
+        ],
+        "Comfort": 8,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "GoldOre_Normal",
+            "GoldStorage_Normal"
+        ],
+        "FunctionText": "GoldOre_FunctionText",
+        "Level": 8,
+        "NextBuilding": "GoldOre_Normal_Lv9",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc1",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 400000,
+                "type": "IR_Crystal"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 21600.0
+    },
+    "GoldOre_Normal_Lv9": {
+        "BuildCondition": [
+            {
+                "BaseLevel": 9
+            }
+        ],
+        "Comfort": 9,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "GoldOre_Normal",
+            "GoldStorage_Normal"
+        ],
+        "FunctionText": "GoldOre_FunctionText",
+        "Level": 9,
+        "NextBuilding": "GoldOre_Normal_Lv10",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "Build_Condition_UpDesc1",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 600000,
+                "type": "IR_Crystal"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 32400.0
+    },
+    "KaiHeiFangZhuo_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 27,
+        "DecorateBuilding": "KaiHeiFangZhuo",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 270,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "UpgradeCostAnother": [
+            {
+                "amount": 150,
+                "type": "IR_Diamond"
+            }
+        ],
+        "UpgradeTime": 0.0
+    },
+    "MaKaLongGui_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 18,
+        "DecorateBuilding": "MaKaLongGui",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 180,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "UpgradeCostAnother": [
+            {
+                "amount": 120,
+                "type": "IR_Diamond"
+            }
+        ],
+        "UpgradeTime": 0.0
+    },
+    "MainCity_Lv1": {
+        "BuildCondition": [
+            {
+                "Level": "1"
+            }
+        ],
+        "Comfort": 10,
+        "DecorateBuilding": "",
         "Factor1": [
             "CardAcademyCity"
         ],
-        "Comfort": 110,
         "FunctionText": "MainCity_FunctionText",
-        "UpSurface": "",
+        "Level": 1,
+        "NextBuilding": "MainCity_Lv2",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
         "UnlockBuildingDesc": "MainCity_UnlockFunction_Desc",
-        "UpgradeCostAnother": ""
+        "UpDesc": "MainCity_UpDesc",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 400,
+                "type": "IR_Crystal"
+            },
+            {
+                "amount": 200,
+                "type": "IR_Gold"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 10.0
     },
     "MainCity_Lv10": {
-        "DecorateBuilding": "",
-        "Level": 10,
-        "PreBuilding": [],
         "BuildCondition": [
             {
                 "Level": "55"
             }
         ],
-        "UpDesc": "MainCity_UpDesc",
+        "Comfort": 100,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "CardAcademyCity"
+        ],
+        "FunctionText": "MainCity_FunctionText",
+        "Level": 10,
         "NextBuilding": "MainCity_Lv11",
         "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "MainCity_UnlockFunction_Desc",
+        "UpDesc": "MainCity_UpDesc",
+        "UpSurface": "",
         "UpgradeCost": [
             {
                 "amount": 2000000,
@@ -2699,29 +1701,62 @@
                 "type": "IR_Gold"
             }
         ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 129600.0,
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 129600.0
+    },
+    "MainCity_Lv11": {
+        "BuildCondition": [
+            {
+                "Level": "60"
+            }
+        ],
+        "Comfort": 110,
+        "DecorateBuilding": "",
         "Factor1": [
             "CardAcademyCity"
         ],
-        "Comfort": 100,
         "FunctionText": "MainCity_FunctionText",
-        "UpSurface": "",
+        "Level": 11,
+        "NextBuilding": "MainCity_Lv12",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
         "UnlockBuildingDesc": "MainCity_UnlockFunction_Desc",
-        "UpgradeCostAnother": ""
+        "UpDesc": "MainCity_UpDesc",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 4000000,
+                "type": "IR_Crystal"
+            },
+            {
+                "amount": 1500000,
+                "type": "IR_Gold"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 180000.0
     },
     "MainCity_Lv12": {
-        "DecorateBuilding": "",
-        "Level": 12,
-        "PreBuilding": [],
         "BuildCondition": [
             {
                 "Level": "65"
             }
         ],
-        "UpDesc": "MainCity_UpDesc",
+        "Comfort": 120,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "CardAcademyCity"
+        ],
+        "FunctionText": "MainCity_FunctionText",
+        "Level": 12,
         "NextBuilding": "",
         "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "MainCity_UnlockFunction_Desc",
+        "UpDesc": "MainCity_UpDesc",
+        "UpSurface": "",
         "UpgradeCost": [
             {
                 "amount": 8000000,
@@ -2732,398 +1767,1363 @@
                 "type": "IR_Gold"
             }
         ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 259200.0,
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 259200.0
+    },
+    "MainCity_Lv2": {
+        "BuildCondition": [
+            {
+                "Level": "15"
+            }
+        ],
+        "Comfort": 20,
+        "DecorateBuilding": "",
         "Factor1": [
             "CardAcademyCity"
         ],
-        "Comfort": 120,
         "FunctionText": "MainCity_FunctionText",
-        "UpSurface": "",
+        "Level": 2,
+        "NextBuilding": "MainCity_Lv3",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
         "UnlockBuildingDesc": "MainCity_UnlockFunction_Desc",
-        "UpgradeCostAnother": ""
-    },
-    "Decorate_Tuwo_Lv1": {
-        "DecorateBuilding": "Decorate_Tuwo",
-        "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": "",
-        "UpDesc": "",
-        "NextBuilding": "",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 1,
-                "type": "IM_Decorate_Tuwo"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 0.0,
-        "Factor1": [],
-        "Comfort": 10,
-        "FunctionText": "",
+        "UpDesc": "MainCity_UpDesc",
         "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
-    },
-    "ExpOre_Normal_Lv9": {
-        "DecorateBuilding": "",
-        "Level": 9,
-        "PreBuilding": [],
-        "BuildCondition": [
-            {
-                "BaseLevel": 9
-            }
-        ],
-        "UpDesc": "Build_Condition_UpDesc1",
-        "NextBuilding": "ExpOre_Normal_Lv10",
-        "OtherCost": "",
         "UpgradeCost": [
             {
-                "amount": 600000,
+                "amount": 2000,
                 "type": "IR_Crystal"
+            },
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
             }
         ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 32400.0,
-        "Factor1": [
-            "ExpOre_Normal",
-            "ExpStorage_Normal"
-        ],
-        "Comfort": 9,
-        "FunctionText": "ExpOre_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 15.0
     },
-    "ExpOre_Normal_Lv8": {
-        "DecorateBuilding": "",
-        "Level": 8,
-        "PreBuilding": [],
+    "MainCity_Lv3": {
         "BuildCondition": [
             {
-                "BaseLevel": 8
+                "Level": "20"
             }
         ],
-        "UpDesc": "Build_Condition_UpDesc1",
-        "NextBuilding": "ExpOre_Normal_Lv9",
+        "Comfort": 30,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "CardAcademyCity"
+        ],
+        "FunctionText": "MainCity_FunctionText",
+        "Level": 3,
+        "NextBuilding": "MainCity_Lv4",
         "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "MainCity_UnlockFunction_Desc",
+        "UpDesc": "MainCity_UpDesc",
+        "UpSurface": "",
         "UpgradeCost": [
             {
-                "amount": 400000,
+                "amount": 12000,
                 "type": "IR_Crystal"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 21600.0,
-        "Factor1": [
-            "ExpOre_Normal",
-            "ExpStorage_Normal"
-        ],
-        "Comfort": 8,
-        "FunctionText": "ExpOre_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
-    },
-    "ExpOre_Normal_Lv5": {
-        "DecorateBuilding": "",
-        "Level": 5,
-        "PreBuilding": [],
-        "BuildCondition": [
-            {
-                "BaseLevel": 5
-            }
-        ],
-        "UpDesc": "Build_Condition_UpDesc1",
-        "NextBuilding": "ExpOre_Normal_Lv6",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 20000,
-                "type": "IR_Crystal"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 1800.0,
-        "Factor1": [
-            "ExpOre_Normal",
-            "ExpStorage_Normal"
-        ],
-        "Comfort": 5,
-        "FunctionText": "ExpOre_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
-    },
-    "ExpOre_Normal_Lv4": {
-        "DecorateBuilding": "",
-        "Level": 4,
-        "PreBuilding": [],
-        "BuildCondition": [
-            {
-                "BaseLevel": 3
-            }
-        ],
-        "UpDesc": "Build_Condition_UpDesc1",
-        "NextBuilding": "ExpOre_Normal_Lv5",
-        "OtherCost": "",
-        "UpgradeCost": [
+            },
             {
                 "amount": 6000,
-                "type": "IR_Crystal"
+                "type": "IR_Gold"
             }
         ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 900.0,
-        "Factor1": [
-            "ExpOre_Normal",
-            "ExpStorage_Normal"
-        ],
-        "Comfort": 4,
-        "FunctionText": "ExpOre_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 20.0
     },
-    "ExpOre_Normal_Lv7": {
-        "DecorateBuilding": "",
-        "Level": 7,
-        "PreBuilding": [],
+    "MainCity_Lv4": {
         "BuildCondition": [
             {
-                "BaseLevel": 7
+                "Level": "25"
             }
         ],
-        "UpDesc": "Build_Condition_UpDesc1",
-        "NextBuilding": "ExpOre_Normal_Lv8",
+        "Comfort": 40,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "CardAcademyCity"
+        ],
+        "FunctionText": "MainCity_FunctionText",
+        "Level": 4,
+        "NextBuilding": "MainCity_Lv5",
         "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "MainCity_UnlockFunction_Desc",
+        "UpDesc": "MainCity_UpDesc",
+        "UpSurface": "",
         "UpgradeCost": [
             {
-                "amount": 80000,
+                "amount": 16000,
                 "type": "IR_Crystal"
+            },
+            {
+                "amount": 8000,
+                "type": "IR_Gold"
             }
         ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 10800.0,
-        "Factor1": [
-            "ExpOre_Normal",
-            "ExpStorage_Normal"
-        ],
-        "Comfort": 7,
-        "FunctionText": "ExpOre_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 600.0
     },
-    "ExpOre_Normal_Lv6": {
-        "DecorateBuilding": "",
-        "Level": 6,
-        "PreBuilding": [],
+    "MainCity_Lv5": {
         "BuildCondition": [
             {
-                "BaseLevel": 6
+                "Level": "30"
             }
         ],
-        "UpDesc": "Build_Condition_UpDesc1",
-        "NextBuilding": "ExpOre_Normal_Lv7",
+        "Comfort": 50,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "CardAcademyCity"
+        ],
+        "FunctionText": "MainCity_FunctionText",
+        "Level": 5,
+        "NextBuilding": "MainCity_Lv6",
         "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "MainCity_UnlockFunction_Desc",
+        "UpDesc": "MainCity_UpDesc",
+        "UpSurface": "",
         "UpgradeCost": [
             {
                 "amount": 50000,
                 "type": "IR_Crystal"
+            },
+            {
+                "amount": 20000,
+                "type": "IR_Gold"
             }
         ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 7200.0,
-        "Factor1": [
-            "ExpOre_Normal",
-            "ExpStorage_Normal"
-        ],
-        "Comfort": 6,
-        "FunctionText": "ExpOre_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 3600.0
     },
-    "ExpOre_Normal_Lv1": {
+    "MainCity_Lv6": {
+        "BuildCondition": [
+            {
+                "Level": "35"
+            }
+        ],
+        "Comfort": 60,
         "DecorateBuilding": "",
+        "Factor1": [
+            "CardAcademyCity"
+        ],
+        "FunctionText": "MainCity_FunctionText",
+        "Level": 6,
+        "NextBuilding": "MainCity_Lv7",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "MainCity_UnlockFunction_Desc",
+        "UpDesc": "MainCity_UpDesc",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 120000,
+                "type": "IR_Crystal"
+            },
+            {
+                "amount": 40000,
+                "type": "IR_Gold"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 10800.0
+    },
+    "MainCity_Lv7": {
+        "BuildCondition": [
+            {
+                "Level": "40"
+            }
+        ],
+        "Comfort": 70,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "CardAcademyCity"
+        ],
+        "FunctionText": "MainCity_FunctionText",
+        "Level": 7,
+        "NextBuilding": "MainCity_Lv8",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "MainCity_UnlockFunction_Desc",
+        "UpDesc": "MainCity_UpDesc",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 300000,
+                "type": "IR_Crystal"
+            },
+            {
+                "amount": 90000,
+                "type": "IR_Gold"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 21600.0
+    },
+    "MainCity_Lv8": {
+        "BuildCondition": [
+            {
+                "Level": "45"
+            }
+        ],
+        "Comfort": 80,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "CardAcademyCity"
+        ],
+        "FunctionText": "MainCity_FunctionText",
+        "Level": 8,
+        "NextBuilding": "MainCity_Lv9",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "MainCity_UnlockFunction_Desc",
+        "UpDesc": "MainCity_UpDesc",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 680000,
+                "type": "IR_Crystal"
+            },
+            {
+                "amount": 200000,
+                "type": "IR_Gold"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 54000.0
+    },
+    "MainCity_Lv9": {
+        "BuildCondition": [
+            {
+                "Level": "50"
+            }
+        ],
+        "Comfort": 90,
+        "DecorateBuilding": "",
+        "Factor1": [
+            "CardAcademyCity"
+        ],
+        "FunctionText": "MainCity_FunctionText",
+        "Level": 9,
+        "NextBuilding": "MainCity_Lv10",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "MainCity_UnlockFunction_Desc",
+        "UpDesc": "MainCity_UpDesc",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 1250000,
+                "type": "IR_Crystal"
+            },
+            {
+                "amount": 400000,
+                "type": "IR_Gold"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 86400.0
+    },
+    "PinJianCanZhuo_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 12,
+        "DecorateBuilding": "PinJianCanZhuo",
+        "Factor1": [],
+        "FunctionText": "",
         "Level": 1,
-        "PreBuilding": [],
-        "BuildCondition": [
-            {
-                "Block": "M02S03"
-            }
-        ],
-        "UpDesc": "Build_Condition_UpDesc3",
-        "NextBuilding": "ExpOre_Normal_Lv2",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 200,
-                "type": "IR_Crystal"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 10.0,
-        "Factor1": [
-            "ExpOre_Normal",
-            "ExpStorage_Normal"
-        ],
-        "Comfort": 1,
-        "FunctionText": "ExpOre_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
-    },
-    "ExpOre_Normal_Lv3": {
-        "DecorateBuilding": "",
-        "Level": 3,
-        "PreBuilding": [],
-        "BuildCondition": [
-            {
-                "Block": "M02S03"
-            }
-        ],
-        "UpDesc": "Build_Condition_UpDesc3",
-        "NextBuilding": "ExpOre_Normal_Lv4",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 800,
-                "type": "IR_Crystal"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 60.0,
-        "Factor1": [
-            "ExpOre_Normal",
-            "ExpStorage_Normal"
-        ],
-        "Comfort": 3,
-        "FunctionText": "ExpOre_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
-    },
-    "ExpOre_Normal_Lv2": {
-        "DecorateBuilding": "",
-        "Level": 2,
-        "PreBuilding": [],
-        "BuildCondition": [
-            {
-                "Block": "M02S03"
-            }
-        ],
-        "UpDesc": "Build_Condition_UpDesc3",
-        "NextBuilding": "ExpOre_Normal_Lv3",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 400,
-                "type": "IR_Crystal"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 15.0,
-        "Factor1": [
-            "ExpOre_Normal",
-            "ExpStorage_Normal"
-        ],
-        "Comfort": 2,
-        "FunctionText": "ExpOre_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
-    },
-    "ExpOre_Normal_Lv11": {
-        "DecorateBuilding": "",
-        "Level": 11,
-        "PreBuilding": [],
-        "BuildCondition": [
-            {
-                "BaseLevel": 11
-            }
-        ],
-        "UpDesc": "Build_Condition_UpDesc1",
-        "NextBuilding": "ExpOre_Normal_Lv12",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 2000000,
-                "type": "IR_Crystal"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 86400.0,
-        "Factor1": [
-            "ExpOre_Normal",
-            "ExpStorage_Normal"
-        ],
-        "Comfort": 11,
-        "FunctionText": "ExpOre_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
-    },
-    "ExpOre_Normal_Lv10": {
-        "DecorateBuilding": "",
-        "Level": 10,
-        "PreBuilding": [],
-        "BuildCondition": [
-            {
-                "BaseLevel": 10
-            }
-        ],
-        "UpDesc": "Build_Condition_UpDesc1",
-        "NextBuilding": "ExpOre_Normal_Lv11",
-        "OtherCost": "",
-        "UpgradeCost": [
-            {
-                "amount": 800000,
-                "type": "IR_Crystal"
-            }
-        ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 54000.0,
-        "Factor1": [
-            "ExpOre_Normal",
-            "ExpStorage_Normal"
-        ],
-        "Comfort": 10,
-        "FunctionText": "ExpOre_FunctionText",
-        "UpSurface": "",
-        "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
-    },
-    "ExpOre_Normal_Lv12": {
-        "DecorateBuilding": "",
-        "Level": 12,
-        "PreBuilding": [],
-        "BuildCondition": [
-            {
-                "BaseLevel": 12
-            }
-        ],
-        "UpDesc": "Build_Condition_UpDesc1",
         "NextBuilding": "",
         "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
         "UpgradeCost": [
             {
-                "amount": 4000000,
-                "type": "IR_Crystal"
+                "amount": 120,
+                "type": "IR_DecorateCoin"
             }
         ],
-        "ReturnFactor": 0.5,
-        "UpgradeTime": 115200.0,
-        "Factor1": [
-            "ExpOre_Normal",
-            "ExpStorage_Normal"
+        "UpgradeCostAnother": [
+            {
+                "amount": 90,
+                "type": "IR_Diamond"
+            }
         ],
+        "UpgradeTime": 0.0
+    },
+    "Pingfeng_Lv1": {
+        "BuildCondition": "",
         "Comfort": 12,
-        "FunctionText": "ExpOre_FunctionText",
-        "UpSurface": "",
+        "DecorateBuilding": "Pingfeng",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
         "UnlockBuildingDesc": "",
-        "UpgradeCostAnother": ""
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 120,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "UpgradeCostAnother": [
+            {
+                "amount": 90,
+                "type": "IR_Diamond"
+            }
+        ],
+        "UpgradeTime": 0.0
+    },
+    "QiZhuo_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 9,
+        "DecorateBuilding": "QiZhuo",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 90,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "UpgradeCostAnother": [
+            {
+                "amount": 60,
+                "type": "IR_Diamond"
+            }
+        ],
+        "UpgradeTime": 0.0
+    },
+    "SiQiKongJian_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 27,
+        "DecorateBuilding": "SiQiKongJian",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 270,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "UpgradeCostAnother": [
+            {
+                "amount": 150,
+                "type": "IR_Diamond"
+            }
+        ],
+        "UpgradeTime": 0.0
+    },
+    "Suzi_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 6,
+        "DecorateBuilding": "Suzi",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 60,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "UpgradeCostAnother": [
+            {
+                "amount": 60,
+                "type": "IR_Diamond"
+            }
+        ],
+        "UpgradeTime": 0.0
+    },
+    "Xiuxianzhuo_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 18,
+        "DecorateBuilding": "Xiuxianzhuo",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 180,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "UpgradeCostAnother": [
+            {
+                "amount": 120,
+                "type": "IR_Diamond"
+            }
+        ],
+        "UpgradeTime": 0.0
+    },
+    "Yugang_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 9,
+        "DecorateBuilding": "Yugang",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 90,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "UpgradeCostAnother": [
+            {
+                "amount": 60,
+                "type": "IR_Diamond"
+            }
+        ],
+        "UpgradeTime": 0.0
+    },
+    "ZhanBuZhuo_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 21,
+        "DecorateBuilding": "ZhanBuZhuo",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 210,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "UpgradeCostAnother": [
+            {
+                "amount": 120,
+                "type": "IR_Diamond"
+            }
+        ],
+        "UpgradeTime": 0.0
+    },
+    "Zhixiang_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 6,
+        "DecorateBuilding": "Zhixiang",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 60,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "UpgradeCostAnother": [
+            {
+                "amount": 60,
+                "type": "IR_Diamond"
+            }
+        ],
+        "UpgradeTime": 0.0
+    },
+    "chazhuo1_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 12,
+        "DecorateBuilding": "chazhuo1",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 120,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "UpgradeCostAnother": [
+            {
+                "amount": 90,
+                "type": "IR_Diamond"
+            }
+        ],
+        "UpgradeTime": 0.0
+    },
+    "chuantouguibai_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 15,
+        "DecorateBuilding": "chuantouguibai",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 150,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "UpgradeCostAnother": [
+            {
+                "amount": 90,
+                "type": "IR_Diamond"
+            }
+        ],
+        "UpgradeTime": 0.0
+    },
+    "damaojia_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 21,
+        "DecorateBuilding": "damaojia",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 210,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "UpgradeCostAnother": [
+            {
+                "amount": 120,
+                "type": "IR_Diamond"
+            }
+        ],
+        "UpgradeTime": 0.0
+    },
+    "dashugui_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 15,
+        "DecorateBuilding": "dashugui",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 150,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "UpgradeCostAnother": [
+            {
+                "amount": 90,
+                "type": "IR_Diamond"
+            }
+        ],
+        "UpgradeTime": 0.0
+    },
+    "dazhixiang_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 6,
+        "DecorateBuilding": "dazhixiang",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 60,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "UpgradeCostAnother": [
+            {
+                "amount": 60,
+                "type": "IR_Diamond"
+            }
+        ],
+        "UpgradeTime": 0.0
+    },
+    "dideng_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 6,
+        "DecorateBuilding": "dideng",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 60,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "UpgradeCostAnother": [
+            {
+                "amount": 60,
+                "type": "IR_Diamond"
+            }
+        ],
+        "UpgradeTime": 0.0
+    },
+    "guizi_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 15,
+        "DecorateBuilding": "guizi",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 150,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "UpgradeCostAnother": [
+            {
+                "amount": 90,
+                "type": "IR_Diamond"
+            }
+        ],
+        "UpgradeTime": 0.0
+    },
+    "luoditaideng_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 12,
+        "DecorateBuilding": "luoditaideng",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 120,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "UpgradeCostAnother": [
+            {
+                "amount": 90,
+                "type": "IR_Diamond"
+            }
+        ],
+        "UpgradeTime": 0.0
+    },
+    "maojia_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 15,
+        "DecorateBuilding": "maojia",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 150,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "UpgradeCostAnother": [
+            {
+                "amount": 90,
+                "type": "IR_Diamond"
+            }
+        ],
+        "UpgradeTime": 0.0
+    },
+    "maoshapen_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 18,
+        "DecorateBuilding": "maoshapen",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 180,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "UpgradeCostAnother": [
+            {
+                "amount": 120,
+                "type": "IR_Diamond"
+            }
+        ],
+        "UpgradeTime": 0.0
+    },
+    "penquanji_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 42,
+        "DecorateBuilding": "penquanji",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 420,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "UpgradeCostAnother": [
+            {
+                "amount": 150,
+                "type": "IR_Diamond"
+            }
+        ],
+        "UpgradeTime": 0.0
+    },
+    "qiuxingdeng_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 12,
+        "DecorateBuilding": "qiuxingdeng",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 120,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "UpgradeCostAnother": [
+            {
+                "amount": 90,
+                "type": "IR_Diamond"
+            }
+        ],
+        "UpgradeTime": 0.0
+    },
+    "quqikaoyi_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 9,
+        "DecorateBuilding": "quqikaoyi",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 90,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "UpgradeCostAnother": [
+            {
+                "amount": 60,
+                "type": "IR_Diamond"
+            }
+        ],
+        "UpgradeTime": 0.0
+    },
+    "sanjia_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 9,
+        "DecorateBuilding": "sanjia",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 90,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "UpgradeCostAnother": [
+            {
+                "amount": 60,
+                "type": "IR_Diamond"
+            }
+        ],
+        "UpgradeTime": 0.0
+    },
+    "shenghuogui_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 18,
+        "DecorateBuilding": "shenghuogui",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 180,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "UpgradeCostAnother": [
+            {
+                "amount": 120,
+                "type": "IR_Diamond"
+            }
+        ],
+        "UpgradeTime": 0.0
+    },
+    "shounagui_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 12,
+        "DecorateBuilding": "shounagui",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 120,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "UpgradeCostAnother": [
+            {
+                "amount": 90,
+                "type": "IR_Diamond"
+            }
+        ],
+        "UpgradeTime": 0.0
+    },
+    "shuangpingdiannaozhuo_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 27,
+        "DecorateBuilding": "shuangpingdiannaozhuo",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 270,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "UpgradeCostAnother": [
+            {
+                "amount": 150,
+                "type": "IR_Diamond"
+            }
+        ],
+        "UpgradeTime": 0.0
+    },
+    "shuangrentangyi_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 18,
+        "DecorateBuilding": "shuangrentangyi",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 180,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "UpgradeCostAnother": [
+            {
+                "amount": 120,
+                "type": "IR_Diamond"
+            }
+        ],
+        "UpgradeTime": 0.0
+    },
+    "shugui_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 21,
+        "DecorateBuilding": "shugui",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 210,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "UpgradeCostAnother": [
+            {
+                "amount": 120,
+                "type": "IR_Diamond"
+            }
+        ],
+        "UpgradeTime": 0.0
+    },
+    "shuzhuangtai_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 18,
+        "DecorateBuilding": "shuzhuangtai",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 180,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "UpgradeCostAnother": [
+            {
+                "amount": 120,
+                "type": "IR_Diamond"
+            }
+        ],
+        "UpgradeTime": 0.0
+    },
+    "tangguohuatan_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 18,
+        "DecorateBuilding": "tangguohuatan",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 180,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "UpgradeCostAnother": [
+            {
+                "amount": 120,
+                "type": "IR_Diamond"
+            }
+        ],
+        "UpgradeTime": 0.0
+    },
+    "tiandiantai_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 21,
+        "DecorateBuilding": "tiandiantai",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 210,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "UpgradeCostAnother": [
+            {
+                "amount": 120,
+                "type": "IR_Diamond"
+            }
+        ],
+        "UpgradeTime": 0.0
+    },
+    "xiangxunyigui_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 15,
+        "DecorateBuilding": "xiangxunyigui",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 150,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "UpgradeCostAnother": [
+            {
+                "amount": 90,
+                "type": "IR_Diamond"
+            }
+        ],
+        "UpgradeTime": 0.0
+    },
+    "yaoyi_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 12,
+        "DecorateBuilding": "yaoyi",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 120,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "UpgradeCostAnother": [
+            {
+                "amount": 90,
+                "type": "IR_Diamond"
+            }
+        ],
+        "UpgradeTime": 0.0
+    },
+    "yijia1_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 9,
+        "DecorateBuilding": "yijia1",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 90,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "UpgradeCostAnother": [
+            {
+                "amount": 60,
+                "type": "IR_Diamond"
+            }
+        ],
+        "UpgradeTime": 0.0
+    },
+    "yijia_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 12,
+        "DecorateBuilding": "yijia",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 120,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "UpgradeCostAnother": [
+            {
+                "amount": 90,
+                "type": "IR_Diamond"
+            }
+        ],
+        "UpgradeTime": 0.0
+    },
+    "yongchi_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 60,
+        "DecorateBuilding": "yongchi",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 600,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "UpgradeCostAnother": [
+            {
+                "amount": 150,
+                "type": "IR_Diamond"
+            }
+        ],
+        "UpgradeTime": 0.0
+    },
+    "yumaowo_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 6,
+        "DecorateBuilding": "yumaowo",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 60,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "UpgradeCostAnother": [
+            {
+                "amount": 60,
+                "type": "IR_Diamond"
+            }
+        ],
+        "UpgradeTime": 0.0
+    },
+    "yushi_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 18,
+        "DecorateBuilding": "yushi",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 180,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "UpgradeCostAnother": [
+            {
+                "amount": 120,
+                "type": "IR_Diamond"
+            }
+        ],
+        "UpgradeTime": 0.0
+    },
+    "zishuruandeng_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 12,
+        "DecorateBuilding": "zishuruandeng",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 120,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "UpgradeCostAnother": [
+            {
+                "amount": 90,
+                "type": "IR_Diamond"
+            }
+        ],
+        "UpgradeTime": 0.0
     }
 }

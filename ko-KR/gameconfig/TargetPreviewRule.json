@@ -1,257 +1,257 @@
 {
-    "TargetRow": {
-        "Function": "return GenInfo(EnemyUnits(ROW_OF(TARGET)),Red)"
-    },
-    "MainTarget": {
-        "Function": "return MainTarget()"
-    },
-    "xiejiaocha": {
-        "Function": "return GenInfo(EnemyAll(OBLIQUE_CROSS),Red)"
+    "EnemyHeroHpRatio40less": {
+        "Function": "return GenInfo(EnemyUnits(MAKE_HPRATIO_FILTER(\"<\",40)*PETS),Red)"
     },
     "FriendMinHpRatio": {
         "Function": "return GenInfo(Slice(SortBy(FriendUnits(),\"<\",getHpRatio),1,1),Green)"
     },
-    "HealRandomFriend": {
-        "Function": "return GenInfo(FriendAll(),Green,true)"
+    "FrontRow": {
+        "Function": "return GenInfo(EnemyAll(FRONT_ROW),Red)"
     },
     "HealMaster": {
         "Function": "return GenInfo(FriendUnits(MASTER),Green)"
     },
+    "HealRandomFriend": {
+        "Function": "return GenInfo(FriendAll(),Green,true)"
+    },
+    "MainTarget": {
+        "Function": "return MainTarget()"
+    },
     "Master": {
         "Function": "return GenInfo(EnemyUnits(MASTER),Red)"
-    },
-    "TargetCol": {
-        "Function": "return GenInfo(EnemyUnits(COL_OF(TARGET)),Red)"
-    },
-    "test": {
-        "Function": "return GenInfo(FriendUnits(MASTER),Green)+MainTarget()"
-    },
-    "EnemyHeroHpRatio40less": {
-        "Function": "return GenInfo(EnemyUnits(MAKE_HPRATIO_FILTER(\"<\",40)*PETS),Red)"
     },
     "RandomEnemy": {
         "Function": "return GenInfo(EnemyAll(),Red,true)"
     },
-    "FrontRow": {
-        "Function": "return GenInfo(EnemyAll(FRONT_ROW),Red)"
+    "TargetCol": {
+        "Function": "return GenInfo(EnemyUnits(COL_OF(TARGET)),Red)"
     },
-    "Target_KMLa": {
-        "Function": "return MainTarget()"
-    },
-    "Target_MKLJLuo": {
-        "Function": "return MainTarget()"
-    },
-    "Target_NFDDi": {
-        "Function": "return GenInfo(EnemyAll(),Red)"
-    },
-    "Target_AJTa": {
-        "Function": "return GenInfo(EnemyAll(),Red)"
-    },
-    "Target_YMHTPu": {
-        "Function": "return MainTarget()"
-    },
-    "Target_JNLong": {
-        "Function": "return MainTarget()"
-    },
-    "Target_YBYa": {
-        "Function": "return GenInfo(EnemyAll(COL_OF(TARGET)),Red)"
-    },
-    "Target_MLYTLSha": {
-        "Function": "return GenInfo(FriendAll(),Green)"
-    },
-    "Target_ZTXChang": {
-        "Function": "return MainTarget()"
-    },
-    "Target_YFZZhu": {
-        "Function": "return GenInfo(Slice(SortBy(EnemyUnits(PETS),\"<\",getHp),1,1),Red)"
-    },
-    "Target_WEDe": {
-        "Function": "return MainTarget()"
-    },
-    "Target_DNTLuo": {
-        "Function": "return MainTarget()"
-    },
-    "Target_SGHQShou": {
-        "Function": "return MainTarget()"
-    },
-    "Target_JDCZhang": {
-        "Function": "return MainTarget()"
-    },
-    "Target_DCJKang": {
-        "Function": ""
-    },
-    "Target_FEMSi": {
-        "Function": "return MainTarget()"
+    "TargetRow": {
+        "Function": "return GenInfo(EnemyUnits(ROW_OF(TARGET)),Red)"
     },
     "Target_ADHWShi": {
         "Function": "return GenInfo(EnemyAll(ROW_OF(TARGET)),Red)"
     },
-    "Target_HSheng": {
-        "Function": "return MainTarget()"
-    },
-    "Target_LLan": {
-        "Function": ""
-    },
-    "Target_YKDMLai": {
-        "Function": "return MainTarget()"
-    },
-    "Target_YLSBai": {
-        "Function": "return MainTarget()"
-    },
-    "Target_MTZMEShi": {
-        "Function": "return MainTarget()"
-    },
-    "Target_TPGZhu": {
-        "Function": "return GenInfo(EnemyAll(),Red,true)"
-    },
-    "Target_ZTXCun": {
-        "Function": "return GenInfo(EnemyAll(ROW_OF(TARGET)),Red)"
-    },
-    "Target_DDing": {
-        "Function": "return GenInfo(EnemyAll(MID_CROSS),Red)"
-    },
-    "Target_NDGEr": {
-        "Function": "return GenInfo(FriendAll(),Green)"
-    },
-    "Target_KXuan": {
-        "Function": "return GenInfo(Slice(SortBy(FriendUnits(),\"<\",getHpRatio),1,2),Green)"
-    },
-    "Target_ATSheng": {
-        "Function": "return MainTarget()"
-    },
-    "Target_TLMi": {
-        "Function": "return GenInfo(EnemyAll(ROW_OF(TARGET)),Red)"
-    },
-    "Target_YSLBin": {
-        "Function": "return MainTarget()"
-    },
-    "Target_TJHDe": {
-        "Function": "return MainTarget()"
-    },
-    "Target_HLMGen": {
-        "Function": "return GenInfo(EnemyAll(COL_OF(TARGET)),Red)"
-    },
-    "Target_BEr": {
-        "Function": "return GenInfo(EnemyAll(MID_CROSS),Red)"
-    },
-    "Target_KTSJKe": {
-        "Function": "return MainTarget()"
-    },
-    "Target_MGNa": {
+    "Target_AJTa": {
         "Function": "return GenInfo(EnemyAll(),Red)"
     },
-    "Target_SSQXin": {
-        "Function": "return GenInfo(EnemyAll(),Red,true)"
-    },
-    "Target_SLMen": {
-        "Function": "return GenInfo(EnemyAll(),Red)"
-    },
-    "Target_LCYShi": {
+    "Target_AJYHou": {
         "Function": "return MainTarget()"
-    },
-    "Target_PNCao": {
-        "Function": "return MainTarget()"
-    },
-    "Target_GLin": {
-        "Function": "return MainTarget()"
-    },
-    "Target_BHTZi": {
-        "Function": "return GenInfo(EnemyUnits(ROW_OF(TARGET)),Red)"
-    },
-    "Target_ZZBBWei": {
-        "Function": "return GenInfo(EnemyAll(COL_OF(TARGET)),Red)"
-    },
-    "Target_LYXi": {
-        "Function": "return GenInfo(FriendAll(),Green)"
-    },
-    "Target_SRen": {
-        "Function": "return GenInfo(EnemyAll(),Red)"
-    },
-    "Target_YXNMei": {
-        "Function": "return GenInfo(EnemyAll(),Red)"
-    },
-    "Target_YDZZong": {
-        "Function": "return MainTarget()"
-    },
-    "Target_XLai": {
-        "Function": "return GenInfo(Slice(SortBy(FriendUnits(),\"<\",getHpRatio),1,1),Green)+GenInfo(Slice(SortBy(EnemyUnits(PETS),\"<\",getHp),1,1),Red)"
     },
     "Target_ALPo": {
         "Function": "return GenInfo(EnemyAll(),Red)"
     },
-    "Target_HLDNan": {
-        "Function": "return GenInfo(Slice(SortBy(FriendUnits(),\"<\",getHpRatio),1,2),Green)"
+    "Target_ALSi": {
+        "Function": "return MainTarget()"
+    },
+    "Target_ATSheng": {
+        "Function": "return MainTarget()"
+    },
+    "Target_BBLMa": {
+        "Function": "return MainTarget()"
+    },
+    "Target_BDPan": {
+        "Function": "return MainTarget()"
+    },
+    "Target_BEr": {
+        "Function": "return GenInfo(EnemyAll(MID_CROSS),Red)"
+    },
+    "Target_BHTZi": {
+        "Function": "return GenInfo(EnemyUnits(ROW_OF(TARGET)),Red)"
     },
     "Target_BQDShe": {
-        "Function": "return GenInfo(EnemyAll(),Red,true)"
-    },
-    "Target_GYCZi": {
-        "Function": "return GenInfo(EnemyAll(),Red)"
-    },
-    "Target_YYing": {
-        "Function": "return GenInfo(EnemyAll(),Red)"
-    },
-    "Target_YLMGZhu": {
-        "Function": "return GenInfo(EnemyAll(),Red)"
-    },
-    "Target_YSTLu": {
-        "Function": "return GenInfo(EnemyAll(),Red)"
-    },
-    "Target_SYAi": {
         "Function": "return GenInfo(EnemyAll(),Red,true)"
     },
     "Target_CLMan": {
         "Function": "return GenInfo(EnemyAll(COL_OF(TARGET)),Red)"
     },
-    "Target_XSMLi": {
-        "Function": "return GenInfo(EnemyAll(),Red,true)"
+    "Target_CZheng": {
+        "Function": "return GenInfo(EnemyAll(COL_OF(TARGET)),Red)"
+    },
+    "Target_DCJKang": {
+        "Function": ""
+    },
+    "Target_DDing": {
+        "Function": "return GenInfo(EnemyAll(MID_CROSS),Red)"
     },
     "Target_DFQi": {
         "Function": "return GenInfo(EnemyAll(),Red,true)"
     },
-    "Target_AJYHou": {
+    "Target_DNTLuo": {
         "Function": "return MainTarget()"
     },
-    "Target_WTXXuan": {
-        "Function": "return GenInfo(EnemyAll(ROW_OF(TARGET)),Red)"
-    },
-    "Target_BDPan": {
-        "Function": "return MainTarget()"
-    },
-    "Target_CZheng": {
-        "Function": "return GenInfo(EnemyAll(COL_OF(TARGET)),Red)"
-    },
-    "Target_LDu": {
-        "Function": ""
-    },
-    "Target_ALSi": {
+    "Target_FEMSi": {
         "Function": "return MainTarget()"
     },
     "Target_FTLEShi": {
         "Function": "return MainTarget()"
     },
-    "Target_TTKMeng": {
-        "Function": ""
-    },
-    "Target_BBLMa": {
+    "Target_GLin": {
         "Function": "return MainTarget()"
     },
-    "Target_LFEr": {
-        "Function": "return MainTarget()+GenInfo(Slice(SortBy(FriendUnits(PETS),\"<\",getHpRatio),1,1),Green)"
+    "Target_GYCZi": {
+        "Function": "return GenInfo(EnemyAll(),Red)"
+    },
+    "Target_HLDNan": {
+        "Function": "return GenInfo(Slice(SortBy(FriendUnits(),\"<\",getHpRatio),1,2),Green)"
+    },
+    "Target_HLMGen": {
+        "Function": "return GenInfo(EnemyAll(COL_OF(TARGET)),Red)"
+    },
+    "Target_HSheng": {
+        "Function": "return MainTarget()"
+    },
+    "Target_JDCZhang": {
+        "Function": "return MainTarget()"
+    },
+    "Target_JNLong": {
+        "Function": "return MainTarget()"
     },
     "Target_JSTDing": {
         "Function": "return MainTarget()"
     },
+    "Target_KMLa": {
+        "Function": "return MainTarget()"
+    },
+    "Target_KTSJKe": {
+        "Function": "return MainTarget()"
+    },
+    "Target_KXuan": {
+        "Function": "return GenInfo(Slice(SortBy(FriendUnits(),\"<\",getHpRatio),1,2),Green)"
+    },
+    "Target_LCYShi": {
+        "Function": "return MainTarget()"
+    },
+    "Target_LDu": {
+        "Function": ""
+    },
+    "Target_LFEr": {
+        "Function": "return MainTarget()+GenInfo(Slice(SortBy(FriendUnits(PETS),\"<\",getHpRatio),1,1),Green)"
+    },
+    "Target_LLan": {
+        "Function": ""
+    },
     "Target_LYSi": {
         "Function": ""
     },
-    "Target_YSuo": {
+    "Target_LYXi": {
+        "Function": "return GenInfo(FriendAll(),Green)"
+    },
+    "Target_MGNa": {
+        "Function": "return GenInfo(EnemyAll(),Red)"
+    },
+    "Target_MKLJLuo": {
+        "Function": "return MainTarget()"
+    },
+    "Target_MLYTLSha": {
+        "Function": "return GenInfo(FriendAll(),Green)"
+    },
+    "Target_MTZMEShi": {
+        "Function": "return MainTarget()"
+    },
+    "Target_NDGEr": {
+        "Function": "return GenInfo(FriendAll(),Green)"
+    },
+    "Target_NFDDi": {
+        "Function": "return GenInfo(EnemyAll(),Red)"
+    },
+    "Target_NXYYi": {
+        "Function": "return MainTarget()"
+    },
+    "Target_PNCao": {
         "Function": "return MainTarget()"
     },
     "Target_SDTZi": {
         "Function": "return GenInfo(EnemyAll(),Red)"
     },
-    "Target_NXYYi": {
+    "Target_SGHQShou": {
         "Function": "return MainTarget()"
+    },
+    "Target_SLMen": {
+        "Function": "return GenInfo(EnemyAll(),Red)"
+    },
+    "Target_SRen": {
+        "Function": "return GenInfo(EnemyAll(),Red)"
+    },
+    "Target_SSQXin": {
+        "Function": "return GenInfo(EnemyAll(),Red,true)"
+    },
+    "Target_SYAi": {
+        "Function": "return GenInfo(EnemyAll(),Red,true)"
+    },
+    "Target_TJHDe": {
+        "Function": "return MainTarget()"
+    },
+    "Target_TLMi": {
+        "Function": "return GenInfo(EnemyAll(ROW_OF(TARGET)),Red)"
+    },
+    "Target_TPGZhu": {
+        "Function": "return GenInfo(EnemyAll(),Red,true)"
+    },
+    "Target_TTKMeng": {
+        "Function": ""
+    },
+    "Target_WEDe": {
+        "Function": "return MainTarget()"
+    },
+    "Target_WTXXuan": {
+        "Function": "return GenInfo(EnemyAll(ROW_OF(TARGET)),Red)"
+    },
+    "Target_XLai": {
+        "Function": "return GenInfo(Slice(SortBy(FriendUnits(),\"<\",getHpRatio),1,1),Green)+GenInfo(Slice(SortBy(EnemyUnits(PETS),\"<\",getHp),1,1),Red)"
+    },
+    "Target_XSMLi": {
+        "Function": "return GenInfo(EnemyAll(),Red,true)"
+    },
+    "Target_YBYa": {
+        "Function": "return GenInfo(EnemyAll(COL_OF(TARGET)),Red)"
+    },
+    "Target_YDZZong": {
+        "Function": "return MainTarget()"
+    },
+    "Target_YFZZhu": {
+        "Function": "return GenInfo(Slice(SortBy(EnemyUnits(PETS),\"<\",getHp),1,1),Red)"
+    },
+    "Target_YKDMLai": {
+        "Function": "return MainTarget()"
+    },
+    "Target_YLMGZhu": {
+        "Function": "return GenInfo(EnemyAll(),Red)"
+    },
+    "Target_YLSBai": {
+        "Function": "return MainTarget()"
+    },
+    "Target_YMHTPu": {
+        "Function": "return MainTarget()"
+    },
+    "Target_YSLBin": {
+        "Function": "return MainTarget()"
+    },
+    "Target_YSTLu": {
+        "Function": "return GenInfo(EnemyAll(),Red)"
+    },
+    "Target_YSuo": {
+        "Function": "return MainTarget()"
+    },
+    "Target_YXNMei": {
+        "Function": "return GenInfo(EnemyAll(),Red)"
+    },
+    "Target_YYing": {
+        "Function": "return GenInfo(EnemyAll(),Red)"
+    },
+    "Target_ZTXChang": {
+        "Function": "return MainTarget()"
+    },
+    "Target_ZTXCun": {
+        "Function": "return GenInfo(EnemyAll(ROW_OF(TARGET)),Red)"
+    },
+    "Target_ZZBBWei": {
+        "Function": "return GenInfo(EnemyAll(COL_OF(TARGET)),Red)"
+    },
+    "test": {
+        "Function": "return GenInfo(FriendUnits(MASTER),Green)+MainTarget()"
+    },
+    "xiejiaocha": {
+        "Function": "return GenInfo(EnemyAll(OBLIQUE_CROSS),Red)"
     }
 }

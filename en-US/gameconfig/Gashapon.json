@@ -1,30 +1,18 @@
 {
     "Gashapon_1st_01": {
-        "NextPoint": "Gashapon_1st_01",
-        "Order": 1,
         "Cost": 1,
         "KeyReword": {
             "Gashapon_1st_Core_1": 100
         },
         "MiddleReward": {
-            "Gashapon_1st_Middle_08": 1000,
-            "Gashapon_1st_Middle_05": 500,
-            "Gashapon_1st_Middle_04": 200,
-            "Gashapon_1st_Middle_07": 600,
-            "Gashapon_1st_Middle_06": 500,
             "Gashapon_1st_Middle_01": 200,
+            "Gashapon_1st_Middle_02": 200,
             "Gashapon_1st_Middle_03": 200,
-            "Gashapon_1st_Middle_02": 200
-        },
-        "RewardShow": {
-            "Gashapon_1st_Normal_10": 800,
-            "Gashapon_1st_Normal_11": 600,
-            "Gashapon_1st_Normal_12": 1000,
-            "Gashapon_1st_Normal_13": 800,
-            "Gashapon_1st_Normal_14": 800,
-            "Gashapon_1st_Normal_15": 800,
-            "Gashapon_1st_Normal_09": 800,
-            "Gashapon_1st_Normal_16": 800
+            "Gashapon_1st_Middle_04": 200,
+            "Gashapon_1st_Middle_05": 500,
+            "Gashapon_1st_Middle_06": 500,
+            "Gashapon_1st_Middle_07": 600,
+            "Gashapon_1st_Middle_08": 1000
         },
         "MiddleRewardShow": [
             "Gashapon_1st_Middle_05",
@@ -36,6 +24,7 @@
             "Gashapon_1st_Middle_07",
             "Gashapon_1st_Middle_06"
         ],
+        "NextPoint": "Gashapon_1st_01",
         "NormalRewardShow": [
             "Gashapon_1st_Normal_15",
             "Gashapon_1st_Normal_14",
@@ -45,6 +34,17 @@
             "Gashapon_1st_Normal_10",
             "Gashapon_1st_Normal_09",
             "Gashapon_1st_Normal_16"
-        ]
+        ],
+        "Order": 1,
+        "RewardShow": {
+            "Gashapon_1st_Normal_09": 800,
+            "Gashapon_1st_Normal_10": 800,
+            "Gashapon_1st_Normal_11": 600,
+            "Gashapon_1st_Normal_12": 1000,
+            "Gashapon_1st_Normal_13": 800,
+            "Gashapon_1st_Normal_14": 800,
+            "Gashapon_1st_Normal_15": 800,
+            "Gashapon_1st_Normal_16": 800
+        }
     }
 }

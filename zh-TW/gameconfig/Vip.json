@@ -1,27 +1,29 @@
 {
     "0": {
-        "NeedDiamond": 0,
-        "VipReward": "",
-        "Icon": "img_vip_01.png",
-        "Hero": "ZTXChang",
-        "VipPrice": 0,
-        "EliteBuyNum": 0,
         "BuyPowerNum": 5,
-        "VipDesc": [],
-        "VipContentDesc": "VIP_content0_desc",
-        "VipHightLightCount": 1,
+        "EliteBuyNum": 0,
+        "Hero": "ZTXChang",
+        "Icon": "img_vip_01.png",
+        "NeedDiamond": 0,
         "VipBubble": [
             "VIP0_bubble_desc"
-        ]
+        ],
+        "VipContentDesc": "VIP_content0_desc",
+        "VipDesc": [],
+        "VipHightLightCount": 1,
+        "VipPrice": 0,
+        "VipReward": ""
     },
     "1": {
-        "NeedDiamond": 60,
-        "VipReward": "VIP1",
-        "Icon": "img_vip_02.png",
-        "Hero": "ZTXChang",
-        "VipPrice": 0,
-        "EliteBuyNum": 0,
         "BuyPowerNum": 5,
+        "EliteBuyNum": 0,
+        "Hero": "ZTXChang",
+        "Icon": "img_vip_02.png",
+        "NeedDiamond": 60,
+        "VipBubble": [
+            "VIP1_bubble_desc"
+        ],
+        "VipContentDesc": "VIP_content1_desc",
         "VipDesc": [
             "VIP_desc_Gift_V1",
             "VIP_desc_BuyGold",
@@ -33,220 +35,20 @@
             "VIP_desc_Text1_V1",
             "VIP_desc_Text2_V1"
         ],
-        "VipContentDesc": "VIP_content1_desc",
         "VipHightLightCount": 1,
-        "VipBubble": [
-            "VIP1_bubble_desc"
-        ]
-    },
-    "2": {
-        "NeedDiamond": 300,
-        "VipReward": "VIP2",
-        "Icon": "img_vip_02.png",
-        "Hero": "ZTXChang",
-        "VipPrice": 180,
-        "EliteBuyNum": 0,
-        "BuyPowerNum": 5,
-        "VipDesc": [
-            "VIP_desc_Gift_V2",
-            "VIP_desc_BuyGold",
-            "VIP_desc_BuyPower",
-            "VIP_desc_Text1_V2",
-            "VIP_desc_Text2_V2",
-            "VIP_desc_Text1_V2",
-            "VIP_desc_Text2_V2",
-            "VIP_desc_Text1_V2",
-            "VIP_desc_Text2_V2"
-        ],
-        "VipContentDesc": "VIP_content2_desc",
-        "VipHightLightCount": 1,
-        "VipBubble": [
-            "VIP2_bubble_desc"
-        ]
-    },
-    "3": {
-        "NeedDiamond": 600,
-        "VipReward": "VIP3",
-        "Icon": "img_vip_02.png",
-        "Hero": "ZTXChang",
-        "VipPrice": 280,
-        "EliteBuyNum": 0,
-        "BuyPowerNum": 5,
-        "VipDesc": [
-            "VIP_desc_Gift_V3",
-            "VIP_desc_BuyGold",
-            "VIP_desc_BuyPower",
-            "VIP_desc_Text1_V3",
-            "VIP_desc_Text2_V3",
-            "VIP_desc_Text1_V3",
-            "VIP_desc_Text2_V3",
-            "VIP_desc_Text1_V3",
-            "VIP_desc_Text2_V3"
-        ],
-        "VipContentDesc": "VIP_content3_desc",
-        "VipHightLightCount": 2,
-        "VipBubble": [
-            "VIP3_bubble_desc"
-        ]
-    },
-    "4": {
-        "NeedDiamond": 1000,
-        "VipReward": "VIP4",
-        "Icon": "img_vip_02.png",
-        "Hero": "ZTXChang",
-        "VipPrice": 480,
-        "EliteBuyNum": 0,
-        "BuyPowerNum": 5,
-        "VipDesc": [
-            "VIP_desc_Gift_V4",
-            "VIP_desc_BuyGold",
-            "VIP_desc_BuyPower",
-            "VIP_desc_Text1_V4",
-            "VIP_desc_Text2_V4",
-            "VIP_desc_Text1_V4",
-            "VIP_desc_Text2_V4",
-            "VIP_desc_Text1_V4",
-            "VIP_desc_Text2_V4"
-        ],
-        "VipContentDesc": "VIP_content4_desc",
-        "VipHightLightCount": 2,
-        "VipBubble": [
-            "VIP4_bubble_desc"
-        ]
-    },
-    "5": {
-        "NeedDiamond": 2000,
-        "VipReward": "VIP5",
-        "Icon": "img_vip_02.png",
-        "Hero": "ZTXChang",
-        "VipPrice": 680,
-        "EliteBuyNum": 0,
-        "BuyPowerNum": 5,
-        "VipDesc": [
-            "VIP_desc_Gift_V5",
-            "VIP_desc_BuyGold",
-            "VIP_desc_BuyPower",
-            "VIP_desc_Text1_V5",
-            "VIP_desc_Text2_V5",
-            "VIP_desc_Text1_V5",
-            "VIP_desc_Text2_V5",
-            "VIP_desc_Text1_V5",
-            "VIP_desc_Text2_V5"
-        ],
-        "VipContentDesc": "VIP_content0_desc",
-        "VipHightLightCount": 2,
-        "VipBubble": [
-            "VIP5_bubble_desc"
-        ]
-    },
-    "6": {
-        "NeedDiamond": 3000,
-        "VipReward": "VIP6",
-        "Icon": "img_vip_02.png",
-        "Hero": "ZTXChang",
-        "VipPrice": 880,
-        "EliteBuyNum": 0,
-        "BuyPowerNum": 5,
-        "VipDesc": [
-            "VIP_desc_Gift_V6",
-            "VIP_desc_BuyGold",
-            "VIP_desc_BuyPower",
-            "VIP_desc_Text1_V6",
-            "VIP_desc_Text2_V6",
-            "VIP_desc_Text1_V6",
-            "VIP_desc_Text2_V6",
-            "VIP_desc_Text1_V6",
-            "VIP_desc_Text2_V6"
-        ],
-        "VipContentDesc": "VIP_content1_desc",
-        "VipHightLightCount": 2,
-        "VipBubble": [
-            "VIP6_bubble_desc"
-        ]
-    },
-    "7": {
-        "NeedDiamond": 5000,
-        "VipReward": "VIP7",
-        "Icon": "img_vip_03.png",
-        "Hero": "ZTXChang",
-        "VipPrice": 1280,
-        "EliteBuyNum": 0,
-        "BuyPowerNum": 5,
-        "VipDesc": [
-            "VIP_desc_Gift_V7",
-            "VIP_desc_BuyGold",
-            "VIP_desc_BuyPower",
-            "VIP_desc_Text1_V7",
-            "VIP_desc_Text2_V7",
-            "VIP_desc_Text1_V7",
-            "VIP_desc_Text2_V7",
-            "VIP_desc_Text1_V7",
-            "VIP_desc_Text2_V7"
-        ],
-        "VipContentDesc": "VIP_content2_desc",
-        "VipHightLightCount": 2,
-        "VipBubble": [
-            "VIP7_bubble_desc"
-        ]
-    },
-    "8": {
-        "NeedDiamond": 7000,
-        "VipReward": "VIP8",
-        "Icon": "img_vip_03.png",
-        "Hero": "ZTXChang",
-        "VipPrice": 1680,
-        "EliteBuyNum": 0,
-        "BuyPowerNum": 5,
-        "VipDesc": [
-            "VIP_desc_Gift_V8",
-            "VIP_desc_BuyGold",
-            "VIP_desc_BuyPower",
-            "VIP_desc_Text1_V8",
-            "VIP_desc_Text2_V8",
-            "VIP_desc_Text1_V8",
-            "VIP_desc_Text2_V8",
-            "VIP_desc_Text1_V8",
-            "VIP_desc_Text2_V8"
-        ],
-        "VipContentDesc": "VIP_content3_desc",
-        "VipHightLightCount": 2,
-        "VipBubble": [
-            "VIP8_bubble_desc"
-        ]
-    },
-    "9": {
-        "NeedDiamond": 10000,
-        "VipReward": "VIP9",
-        "Icon": "img_vip_03.png",
-        "Hero": "ZTXChang",
-        "VipPrice": 2280,
-        "EliteBuyNum": 0,
-        "BuyPowerNum": 5,
-        "VipDesc": [
-            "VIP_desc_Gift_V9",
-            "VIP_desc_BuyGold",
-            "VIP_desc_BuyPower",
-            "VIP_desc_Text1_V9",
-            "VIP_desc_Text2_V9",
-            "VIP_desc_Text1_V9",
-            "VIP_desc_Text2_V9",
-            "VIP_desc_Text1_V9",
-            "VIP_desc_Text2_V9"
-        ],
-        "VipContentDesc": "VIP_content4_desc",
-        "VipHightLightCount": 2,
-        "VipBubble": [
-            "VIP9_bubble_desc"
-        ]
+        "VipPrice": 0,
+        "VipReward": "VIP1"
     },
     "10": {
-        "NeedDiamond": 15000,
-        "VipReward": "VIP10",
-        "Icon": "img_vip_03.png",
-        "Hero": "ZTXChang",
-        "VipPrice": 2680,
-        "EliteBuyNum": 0,
         "BuyPowerNum": 5,
+        "EliteBuyNum": 0,
+        "Hero": "ZTXChang",
+        "Icon": "img_vip_03.png",
+        "NeedDiamond": 15000,
+        "VipBubble": [
+            "VIP10_bubble_desc"
+        ],
+        "VipContentDesc": "VIP_content0_desc",
         "VipDesc": [
             "VIP_desc_Gift_V10",
             "VIP_desc_BuyGold",
@@ -258,20 +60,20 @@
             "VIP_desc_Text1_V10",
             "VIP_desc_Text2_V10"
         ],
-        "VipContentDesc": "VIP_content0_desc",
         "VipHightLightCount": 3,
-        "VipBubble": [
-            "VIP10_bubble_desc"
-        ]
+        "VipPrice": 2680,
+        "VipReward": "VIP10"
     },
     "11": {
-        "NeedDiamond": 20000,
-        "VipReward": "VIP11",
-        "Icon": "img_vip_03.png",
-        "Hero": "ZTXChang",
-        "VipPrice": 3380,
-        "EliteBuyNum": 0,
         "BuyPowerNum": 5,
+        "EliteBuyNum": 0,
+        "Hero": "ZTXChang",
+        "Icon": "img_vip_03.png",
+        "NeedDiamond": 20000,
+        "VipBubble": [
+            "VIP11_bubble_desc"
+        ],
+        "VipContentDesc": "VIP_content1_desc",
         "VipDesc": [
             "VIP_desc_Gift_V11",
             "VIP_desc_BuyGold",
@@ -283,20 +85,20 @@
             "VIP_desc_Text1_V11",
             "VIP_desc_Text2_V11"
         ],
-        "VipContentDesc": "VIP_content1_desc",
         "VipHightLightCount": 3,
-        "VipBubble": [
-            "VIP11_bubble_desc"
-        ]
+        "VipPrice": 3380,
+        "VipReward": "VIP11"
     },
     "12": {
-        "NeedDiamond": 30000,
-        "VipReward": "VIP12",
-        "Icon": "img_vip_03.png",
-        "Hero": "ZTXChang",
-        "VipPrice": 4880,
-        "EliteBuyNum": 0,
         "BuyPowerNum": 5,
+        "EliteBuyNum": 0,
+        "Hero": "ZTXChang",
+        "Icon": "img_vip_03.png",
+        "NeedDiamond": 30000,
+        "VipBubble": [
+            "VIP12_bubble_desc"
+        ],
+        "VipContentDesc": "VIP_content2_desc",
         "VipDesc": [
             "VIP_desc_Gift_V12",
             "VIP_desc_BuyGold",
@@ -308,20 +110,20 @@
             "VIP_desc_Text1_V12",
             "VIP_desc_Text2_V12"
         ],
-        "VipContentDesc": "VIP_content2_desc",
         "VipHightLightCount": 3,
-        "VipBubble": [
-            "VIP12_bubble_desc"
-        ]
+        "VipPrice": 4880,
+        "VipReward": "VIP12"
     },
     "13": {
-        "NeedDiamond": 60000,
-        "VipReward": "VIP13",
-        "Icon": "img_vip_04.png",
-        "Hero": "ZTXChang",
-        "VipPrice": 6880,
-        "EliteBuyNum": 0,
         "BuyPowerNum": 5,
+        "EliteBuyNum": 0,
+        "Hero": "ZTXChang",
+        "Icon": "img_vip_04.png",
+        "NeedDiamond": 60000,
+        "VipBubble": [
+            "VIP13_bubble_desc"
+        ],
+        "VipContentDesc": "VIP_content3_desc",
         "VipDesc": [
             "VIP_desc_Gift_V13",
             "VIP_desc_BuyGold",
@@ -333,20 +135,20 @@
             "VIP_desc_Text1_V13",
             "VIP_desc_Text2_V13"
         ],
-        "VipContentDesc": "VIP_content3_desc",
         "VipHightLightCount": 3,
-        "VipBubble": [
-            "VIP13_bubble_desc"
-        ]
+        "VipPrice": 6880,
+        "VipReward": "VIP13"
     },
     "14": {
-        "NeedDiamond": 120000,
-        "VipReward": "VIP14",
-        "Icon": "img_vip_04.png",
-        "Hero": "ZTXChang",
-        "VipPrice": 10880,
-        "EliteBuyNum": 0,
         "BuyPowerNum": 5,
+        "EliteBuyNum": 0,
+        "Hero": "ZTXChang",
+        "Icon": "img_vip_04.png",
+        "NeedDiamond": 120000,
+        "VipBubble": [
+            "VIP14_bubble_desc"
+        ],
+        "VipContentDesc": "VIP_content4_desc",
         "VipDesc": [
             "VIP_desc_Gift_V14",
             "VIP_desc_BuyGold",
@@ -358,20 +160,20 @@
             "VIP_desc_Text1_V14",
             "VIP_desc_Text2_V14"
         ],
-        "VipContentDesc": "VIP_content4_desc",
         "VipHightLightCount": 3,
-        "VipBubble": [
-            "VIP14_bubble_desc"
-        ]
+        "VipPrice": 10880,
+        "VipReward": "VIP14"
     },
     "15": {
-        "NeedDiamond": 200000,
-        "VipReward": "VIP15",
-        "Icon": "img_vip_04.png",
-        "Hero": "ZTXChang",
-        "VipPrice": 20880,
-        "EliteBuyNum": 0,
         "BuyPowerNum": 5,
+        "EliteBuyNum": 0,
+        "Hero": "ZTXChang",
+        "Icon": "img_vip_04.png",
+        "NeedDiamond": 200000,
+        "VipBubble": [
+            "VIP15_bubble_desc"
+        ],
+        "VipContentDesc": "VIP_content4_desc",
         "VipDesc": [
             "VIP_desc_Gift_V15",
             "VIP_desc_BuyGold",
@@ -383,20 +185,20 @@
             "VIP_desc_Text1_V15",
             "VIP_desc_Text2_V15"
         ],
-        "VipContentDesc": "VIP_content4_desc",
         "VipHightLightCount": 3,
-        "VipBubble": [
-            "VIP15_bubble_desc"
-        ]
+        "VipPrice": 20880,
+        "VipReward": "VIP15"
     },
     "16": {
-        "NeedDiamond": 300000,
-        "VipReward": "VIP16",
-        "Icon": "img_vip_04.png",
-        "Hero": "ZTXChang",
-        "VipPrice": 16880,
-        "EliteBuyNum": 0,
         "BuyPowerNum": 5,
+        "EliteBuyNum": 0,
+        "Hero": "ZTXChang",
+        "Icon": "img_vip_04.png",
+        "NeedDiamond": 300000,
+        "VipBubble": [
+            "VIP16_bubble_desc"
+        ],
+        "VipContentDesc": "VIP_content3_desc",
         "VipDesc": [
             "VIP_desc_Gift_V16",
             "VIP_desc_BuyGold",
@@ -408,20 +210,20 @@
             "VIP_desc_Text1_V16",
             "VIP_desc_Text2_V16"
         ],
-        "VipContentDesc": "VIP_content3_desc",
         "VipHightLightCount": 3,
-        "VipBubble": [
-            "VIP16_bubble_desc"
-        ]
+        "VipPrice": 16880,
+        "VipReward": "VIP16"
     },
     "17": {
-        "NeedDiamond": 500000,
-        "VipReward": "VIP17",
-        "Icon": "img_vip_04.png",
-        "Hero": "ZTXChang",
-        "VipPrice": 18880,
-        "EliteBuyNum": 0,
         "BuyPowerNum": 5,
+        "EliteBuyNum": 0,
+        "Hero": "ZTXChang",
+        "Icon": "img_vip_04.png",
+        "NeedDiamond": 500000,
+        "VipBubble": [
+            "VIP17_bubble_desc"
+        ],
+        "VipContentDesc": "VIP_content4_desc",
         "VipDesc": [
             "VIP_desc_Gift_V17",
             "VIP_desc_BuyGold",
@@ -433,20 +235,20 @@
             "VIP_desc_Text1_V17",
             "VIP_desc_Text2_V17"
         ],
-        "VipContentDesc": "VIP_content4_desc",
         "VipHightLightCount": 3,
-        "VipBubble": [
-            "VIP17_bubble_desc"
-        ]
+        "VipPrice": 18880,
+        "VipReward": "VIP17"
     },
     "18": {
-        "NeedDiamond": 800000,
-        "VipReward": "VIP18",
-        "Icon": "img_vip_04.png",
-        "Hero": "ZTXChang",
-        "VipPrice": 20880,
-        "EliteBuyNum": 0,
         "BuyPowerNum": 5,
+        "EliteBuyNum": 0,
+        "Hero": "ZTXChang",
+        "Icon": "img_vip_04.png",
+        "NeedDiamond": 800000,
+        "VipBubble": [
+            "VIP18_bubble_desc"
+        ],
+        "VipContentDesc": "VIP_content4_desc",
         "VipDesc": [
             "VIP_desc_Gift_V18",
             "VIP_desc_BuyGold",
@@ -458,20 +260,20 @@
             "VIP_desc_Text1_V18",
             "VIP_desc_Text2_V18"
         ],
-        "VipContentDesc": "VIP_content4_desc",
         "VipHightLightCount": 3,
-        "VipBubble": [
-            "VIP18_bubble_desc"
-        ]
+        "VipPrice": 20880,
+        "VipReward": "VIP18"
     },
     "19": {
-        "NeedDiamond": 1000000,
-        "VipReward": "VIP18",
-        "Icon": "img_vip_04.png",
-        "Hero": "ZTXChang",
-        "VipPrice": 20880,
-        "EliteBuyNum": 0,
         "BuyPowerNum": 5,
+        "EliteBuyNum": 0,
+        "Hero": "ZTXChang",
+        "Icon": "img_vip_04.png",
+        "NeedDiamond": 1000000,
+        "VipBubble": [
+            "VIP18_bubble_desc"
+        ],
+        "VipContentDesc": "VIP_content4_desc",
         "VipDesc": [
             "VIP_desc_Gift_V18",
             "VIP_desc_BuyGold",
@@ -483,20 +285,45 @@
             "VIP_desc_Text1_V18",
             "VIP_desc_Text2_V18"
         ],
-        "VipContentDesc": "VIP_content4_desc",
         "VipHightLightCount": 3,
+        "VipPrice": 20880,
+        "VipReward": "VIP18"
+    },
+    "2": {
+        "BuyPowerNum": 5,
+        "EliteBuyNum": 0,
+        "Hero": "ZTXChang",
+        "Icon": "img_vip_02.png",
+        "NeedDiamond": 300,
         "VipBubble": [
-            "VIP18_bubble_desc"
-        ]
+            "VIP2_bubble_desc"
+        ],
+        "VipContentDesc": "VIP_content2_desc",
+        "VipDesc": [
+            "VIP_desc_Gift_V2",
+            "VIP_desc_BuyGold",
+            "VIP_desc_BuyPower",
+            "VIP_desc_Text1_V2",
+            "VIP_desc_Text2_V2",
+            "VIP_desc_Text1_V2",
+            "VIP_desc_Text2_V2",
+            "VIP_desc_Text1_V2",
+            "VIP_desc_Text2_V2"
+        ],
+        "VipHightLightCount": 1,
+        "VipPrice": 180,
+        "VipReward": "VIP2"
     },
     "20": {
-        "NeedDiamond": 1500000,
-        "VipReward": "VIP18",
-        "Icon": "img_vip_04.png",
-        "Hero": "ZTXChang",
-        "VipPrice": 20880,
-        "EliteBuyNum": 0,
         "BuyPowerNum": 5,
+        "EliteBuyNum": 0,
+        "Hero": "ZTXChang",
+        "Icon": "img_vip_04.png",
+        "NeedDiamond": 1500000,
+        "VipBubble": [
+            "VIP18_bubble_desc"
+        ],
+        "VipContentDesc": "VIP_content4_desc",
         "VipDesc": [
             "VIP_desc_Gift_V18",
             "VIP_desc_BuyGold",
@@ -508,20 +335,20 @@
             "VIP_desc_Text1_V18",
             "VIP_desc_Text2_V18"
         ],
-        "VipContentDesc": "VIP_content4_desc",
         "VipHightLightCount": 3,
-        "VipBubble": [
-            "VIP18_bubble_desc"
-        ]
+        "VipPrice": 20880,
+        "VipReward": "VIP18"
     },
     "21": {
-        "NeedDiamond": 2500000,
-        "VipReward": "VIP18",
-        "Icon": "img_vip_04.png",
-        "Hero": "ZTXChang",
-        "VipPrice": 20880,
-        "EliteBuyNum": 0,
         "BuyPowerNum": 5,
+        "EliteBuyNum": 0,
+        "Hero": "ZTXChang",
+        "Icon": "img_vip_04.png",
+        "NeedDiamond": 2500000,
+        "VipBubble": [
+            "VIP18_bubble_desc"
+        ],
+        "VipContentDesc": "VIP_content4_desc",
         "VipDesc": [
             "VIP_desc_Gift_V18",
             "VIP_desc_BuyGold",
@@ -533,20 +360,20 @@
             "VIP_desc_Text1_V18",
             "VIP_desc_Text2_V18"
         ],
-        "VipContentDesc": "VIP_content4_desc",
         "VipHightLightCount": 3,
-        "VipBubble": [
-            "VIP18_bubble_desc"
-        ]
+        "VipPrice": 20880,
+        "VipReward": "VIP18"
     },
     "22": {
-        "NeedDiamond": 4000000,
-        "VipReward": "VIP18",
-        "Icon": "img_vip_04.png",
-        "Hero": "ZTXChang",
-        "VipPrice": 20880,
-        "EliteBuyNum": 0,
         "BuyPowerNum": 5,
+        "EliteBuyNum": 0,
+        "Hero": "ZTXChang",
+        "Icon": "img_vip_04.png",
+        "NeedDiamond": 4000000,
+        "VipBubble": [
+            "VIP18_bubble_desc"
+        ],
+        "VipContentDesc": "VIP_content4_desc",
         "VipDesc": [
             "VIP_desc_Gift_V18",
             "VIP_desc_BuyGold",
@@ -558,10 +385,183 @@
             "VIP_desc_Text1_V18",
             "VIP_desc_Text2_V18"
         ],
-        "VipContentDesc": "VIP_content4_desc",
         "VipHightLightCount": 3,
+        "VipPrice": 20880,
+        "VipReward": "VIP18"
+    },
+    "3": {
+        "BuyPowerNum": 5,
+        "EliteBuyNum": 0,
+        "Hero": "ZTXChang",
+        "Icon": "img_vip_02.png",
+        "NeedDiamond": 600,
         "VipBubble": [
-            "VIP18_bubble_desc"
-        ]
+            "VIP3_bubble_desc"
+        ],
+        "VipContentDesc": "VIP_content3_desc",
+        "VipDesc": [
+            "VIP_desc_Gift_V3",
+            "VIP_desc_BuyGold",
+            "VIP_desc_BuyPower",
+            "VIP_desc_Text1_V3",
+            "VIP_desc_Text2_V3",
+            "VIP_desc_Text1_V3",
+            "VIP_desc_Text2_V3",
+            "VIP_desc_Text1_V3",
+            "VIP_desc_Text2_V3"
+        ],
+        "VipHightLightCount": 2,
+        "VipPrice": 280,
+        "VipReward": "VIP3"
+    },
+    "4": {
+        "BuyPowerNum": 5,
+        "EliteBuyNum": 0,
+        "Hero": "ZTXChang",
+        "Icon": "img_vip_02.png",
+        "NeedDiamond": 1000,
+        "VipBubble": [
+            "VIP4_bubble_desc"
+        ],
+        "VipContentDesc": "VIP_content4_desc",
+        "VipDesc": [
+            "VIP_desc_Gift_V4",
+            "VIP_desc_BuyGold",
+            "VIP_desc_BuyPower",
+            "VIP_desc_Text1_V4",
+            "VIP_desc_Text2_V4",
+            "VIP_desc_Text1_V4",
+            "VIP_desc_Text2_V4",
+            "VIP_desc_Text1_V4",
+            "VIP_desc_Text2_V4"
+        ],
+        "VipHightLightCount": 2,
+        "VipPrice": 480,
+        "VipReward": "VIP4"
+    },
+    "5": {
+        "BuyPowerNum": 5,
+        "EliteBuyNum": 0,
+        "Hero": "ZTXChang",
+        "Icon": "img_vip_02.png",
+        "NeedDiamond": 2000,
+        "VipBubble": [
+            "VIP5_bubble_desc"
+        ],
+        "VipContentDesc": "VIP_content0_desc",
+        "VipDesc": [
+            "VIP_desc_Gift_V5",
+            "VIP_desc_BuyGold",
+            "VIP_desc_BuyPower",
+            "VIP_desc_Text1_V5",
+            "VIP_desc_Text2_V5",
+            "VIP_desc_Text1_V5",
+            "VIP_desc_Text2_V5",
+            "VIP_desc_Text1_V5",
+            "VIP_desc_Text2_V5"
+        ],
+        "VipHightLightCount": 2,
+        "VipPrice": 680,
+        "VipReward": "VIP5"
+    },
+    "6": {
+        "BuyPowerNum": 5,
+        "EliteBuyNum": 0,
+        "Hero": "ZTXChang",
+        "Icon": "img_vip_02.png",
+        "NeedDiamond": 3000,
+        "VipBubble": [
+            "VIP6_bubble_desc"
+        ],
+        "VipContentDesc": "VIP_content1_desc",
+        "VipDesc": [
+            "VIP_desc_Gift_V6",
+            "VIP_desc_BuyGold",
+            "VIP_desc_BuyPower",
+            "VIP_desc_Text1_V6",
+            "VIP_desc_Text2_V6",
+            "VIP_desc_Text1_V6",
+            "VIP_desc_Text2_V6",
+            "VIP_desc_Text1_V6",
+            "VIP_desc_Text2_V6"
+        ],
+        "VipHightLightCount": 2,
+        "VipPrice": 880,
+        "VipReward": "VIP6"
+    },
+    "7": {
+        "BuyPowerNum": 5,
+        "EliteBuyNum": 0,
+        "Hero": "ZTXChang",
+        "Icon": "img_vip_03.png",
+        "NeedDiamond": 5000,
+        "VipBubble": [
+            "VIP7_bubble_desc"
+        ],
+        "VipContentDesc": "VIP_content2_desc",
+        "VipDesc": [
+            "VIP_desc_Gift_V7",
+            "VIP_desc_BuyGold",
+            "VIP_desc_BuyPower",
+            "VIP_desc_Text1_V7",
+            "VIP_desc_Text2_V7",
+            "VIP_desc_Text1_V7",
+            "VIP_desc_Text2_V7",
+            "VIP_desc_Text1_V7",
+            "VIP_desc_Text2_V7"
+        ],
+        "VipHightLightCount": 2,
+        "VipPrice": 1280,
+        "VipReward": "VIP7"
+    },
+    "8": {
+        "BuyPowerNum": 5,
+        "EliteBuyNum": 0,
+        "Hero": "ZTXChang",
+        "Icon": "img_vip_03.png",
+        "NeedDiamond": 7000,
+        "VipBubble": [
+            "VIP8_bubble_desc"
+        ],
+        "VipContentDesc": "VIP_content3_desc",
+        "VipDesc": [
+            "VIP_desc_Gift_V8",
+            "VIP_desc_BuyGold",
+            "VIP_desc_BuyPower",
+            "VIP_desc_Text1_V8",
+            "VIP_desc_Text2_V8",
+            "VIP_desc_Text1_V8",
+            "VIP_desc_Text2_V8",
+            "VIP_desc_Text1_V8",
+            "VIP_desc_Text2_V8"
+        ],
+        "VipHightLightCount": 2,
+        "VipPrice": 1680,
+        "VipReward": "VIP8"
+    },
+    "9": {
+        "BuyPowerNum": 5,
+        "EliteBuyNum": 0,
+        "Hero": "ZTXChang",
+        "Icon": "img_vip_03.png",
+        "NeedDiamond": 10000,
+        "VipBubble": [
+            "VIP9_bubble_desc"
+        ],
+        "VipContentDesc": "VIP_content4_desc",
+        "VipDesc": [
+            "VIP_desc_Gift_V9",
+            "VIP_desc_BuyGold",
+            "VIP_desc_BuyPower",
+            "VIP_desc_Text1_V9",
+            "VIP_desc_Text2_V9",
+            "VIP_desc_Text1_V9",
+            "VIP_desc_Text2_V9",
+            "VIP_desc_Text1_V9",
+            "VIP_desc_Text2_V9"
+        ],
+        "VipHightLightCount": 2,
+        "VipPrice": 2280,
+        "VipReward": "VIP9"
     }
 }

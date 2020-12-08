@@ -1,5 +1,35 @@
 {
     "ActivityBattlePass_20200914": {
+        "BoardMan": {
+            "position": [
+                10,
+                -300
+            ],
+            "showhero": "Model_SDTZ_Shop",
+            "zoom": [
+                0.41
+            ]
+        },
+        "DailyTask": [
+            "BattlePass_Daily_Task_1",
+            "BattlePass_Daily_Task_2",
+            "BattlePass_Daily_Task_3",
+            "BattlePass_Daily_Task_4",
+            "BattlePass_Daily_Task_5",
+            "BattlePass_Daily_Task_6"
+        ],
+        "ExpLimit": 5000,
+        "FreeRoad": "ABP_20200914_Show_FreeRoad",
+        "GoodShow": {
+            "hero": "BQDShe",
+            "position": [
+                140,
+                30
+            ],
+            "zoom": [
+                0.62
+            ]
+        },
         "Level": [
             "ABP_20200914_01",
             "ABP_20200914_02",
@@ -122,24 +152,6 @@
             "ABP_20200914_119",
             "ABP_20200914_120"
         ],
-        "DailyTask": [
-            "BattlePass_Daily_Task_1",
-            "BattlePass_Daily_Task_2",
-            "BattlePass_Daily_Task_3",
-            "BattlePass_Daily_Task_4",
-            "BattlePass_Daily_Task_5",
-            "BattlePass_Daily_Task_6"
-        ],
-        "WeekTask": [
-            "BattlePass_Week_Task_1",
-            "BattlePass_Week_Task_2",
-            "BattlePass_Week_Task_3",
-            "BattlePass_Week_Task_4",
-            "BattlePass_Week_Task_5",
-            "BattlePass_Week_Task_6",
-            "BattlePass_Week_Task_7",
-            "BattlePass_Week_Task_8"
-        ],
         "MonthTask": [
             "BattlePass_Month_Task_1",
             "BattlePass_Month_Task_2",
@@ -152,24 +164,28 @@
             "BattlePass_Month_Task_9",
             "BattlePass_Month_Task_10"
         ],
+        "NowPoint": [
+            "IGM_BP_Point"
+        ],
         "PayConfig": [
             {
-                "showValue": 24000,
-                "PayId": "Pay_BattlePass_20200914_68"
+                "PayId": "Pay_BattlePass_20200914_68",
+                "showValue": 24000
             },
             {
-                "showValue": 46000,
-                "reward": "ABP_20200914_HighPayReward",
+                "Exp": 8000,
                 "PayId": "Pay_BattlePass_20200914_128",
-                "Exp": 8000
+                "reward": "ABP_20200914_HighPayReward",
+                "showValue": 46000
             },
             {
-                "showValue": 22000,
-                "reward": "ABP_20200914_HighPayReward",
+                "Exp": 8000,
                 "PayId": "Pay_BattlePass_20200914_60",
-                "Exp": 8000
+                "reward": "ABP_20200914_HighPayReward",
+                "showValue": 22000
             }
         ],
+        "PayRoad": "ABP_20200914_Show_PayRoad",
         "PointShop": [
             "PointGood_2020200914_1",
             "PointGood_2020200914_2",
@@ -183,45 +199,59 @@
             "PointGood_2020200914_10",
             "PointGood_2020200914_11"
         ],
-        "NowPoint": [
-            "IGM_BP_Point"
-        ],
-        "GoodShow": {
-            "position": [
-                140,
-                30
+        "TalkBubble": {
+            "buy": [
+                "Voice_SDTZi_71_4"
             ],
-            "hero": "BQDShe",
-            "zoom": [
-                0.62
+            "in": [
+                "Voice_SDTZi_71_1"
+            ],
+            "sold_out": [
+                "Voice_SDTZi_71_2"
             ]
         },
-        "PayRoad": "ABP_20200914_Show_PayRoad",
-        "FreeRoad": "ABP_20200914_Show_FreeRoad",
-        "ExpLimit": 5000,
+        "WeekTask": [
+            "BattlePass_Week_Task_1",
+            "BattlePass_Week_Task_2",
+            "BattlePass_Week_Task_3",
+            "BattlePass_Week_Task_4",
+            "BattlePass_Week_Task_5",
+            "BattlePass_Week_Task_6",
+            "BattlePass_Week_Task_7",
+            "BattlePass_Week_Task_8"
+        ]
+    },
+    "ActivityBattlePass_20201101": {
         "BoardMan": {
             "position": [
                 10,
                 -300
             ],
+            "showhero": "Model_SDTZ_Shop",
             "zoom": [
                 0.41
-            ],
-            "showhero": "Model_SDTZ_Shop"
-        },
-        "TalkBubble": {
-            "buy": [
-                "Voice_SDTZi_71_4"
-            ],
-            "sold_out": [
-                "Voice_SDTZi_71_2"
-            ],
-            "in": [
-                "Voice_SDTZi_71_1"
             ]
-        }
-    },
-    "ActivityBattlePass_20201101": {
+        },
+        "DailyTask": [
+            "BattlePass_Daily_Task_1",
+            "BattlePass_Daily_Task_2",
+            "BattlePass_Daily_Task_3",
+            "BattlePass_Daily_Task_4",
+            "BattlePass_Daily_Task_5",
+            "BattlePass_Daily_Task_6"
+        ],
+        "ExpLimit": 5000,
+        "FreeRoad": "ABP_20201101_Show_FreeRoad",
+        "GoodShow": {
+            "hero": "NXYYi",
+            "position": [
+                140,
+                30
+            ],
+            "zoom": [
+                0.62
+            ]
+        },
         "Level": [
             "ABP_20201101_01",
             "ABP_20201101_02",
@@ -344,24 +374,6 @@
             "ABP_20201101_119",
             "ABP_20201101_120"
         ],
-        "DailyTask": [
-            "BattlePass_Daily_Task_1",
-            "BattlePass_Daily_Task_2",
-            "BattlePass_Daily_Task_3",
-            "BattlePass_Daily_Task_4",
-            "BattlePass_Daily_Task_5",
-            "BattlePass_Daily_Task_6"
-        ],
-        "WeekTask": [
-            "BattlePass_Week_Task_1",
-            "BattlePass_Week_Task_2",
-            "BattlePass_Week_Task_3",
-            "BattlePass_Week_Task_4",
-            "BattlePass_Week_Task_5",
-            "BattlePass_Week_Task_6",
-            "BattlePass_Week_Task_7",
-            "BattlePass_Week_Task_8"
-        ],
         "MonthTask": [
             "BattlePass_Month_Task_1",
             "BattlePass_Month_Task_2",
@@ -374,24 +386,28 @@
             "BattlePass_Month_Task_9",
             "BattlePass_Month_Task_10"
         ],
+        "NowPoint": [
+            "IGM_BP_Point"
+        ],
         "PayConfig": [
             {
-                "showValue": 24000,
-                "PayId": "Pay_BattlePass_20201101_68"
+                "PayId": "Pay_BattlePass_20201101_68",
+                "showValue": 24000
             },
             {
-                "showValue": 46000,
-                "reward": "ABP_20201101_HighPayReward",
+                "Exp": 8000,
                 "PayId": "Pay_BattlePass_20201101_128",
-                "Exp": 8000
+                "reward": "ABP_20201101_HighPayReward",
+                "showValue": 46000
             },
             {
-                "showValue": 22000,
-                "reward": "ABP_20201101_HighPayReward",
+                "Exp": 8000,
                 "PayId": "Pay_BattlePass_20201101_60",
-                "Exp": 8000
+                "reward": "ABP_20201101_HighPayReward",
+                "showValue": 22000
             }
         ],
+        "PayRoad": "ABP_20201101_Show_PayRoad",
         "PointShop": [
             "PointGood_2020201101_1",
             "PointGood_2020201101_2",
@@ -407,45 +423,59 @@
             "PointGood_2020201101_12",
             "PointGood_2020201101_13"
         ],
-        "NowPoint": [
-            "IGM_BP_Point"
-        ],
-        "GoodShow": {
-            "position": [
-                140,
-                30
+        "TalkBubble": {
+            "buy": [
+                "Voice_SDTZi_71_4"
             ],
-            "hero": "NXYYi",
-            "zoom": [
-                0.62
+            "in": [
+                "Voice_SDTZi_71_1"
+            ],
+            "sold_out": [
+                "Voice_SDTZi_71_2"
             ]
         },
-        "PayRoad": "ABP_20201101_Show_PayRoad",
-        "FreeRoad": "ABP_20201101_Show_FreeRoad",
-        "ExpLimit": 5000,
+        "WeekTask": [
+            "BattlePass_Week_Task_1",
+            "BattlePass_Week_Task_2",
+            "BattlePass_Week_Task_3",
+            "BattlePass_Week_Task_4",
+            "BattlePass_Week_Task_5",
+            "BattlePass_Week_Task_6",
+            "BattlePass_Week_Task_7",
+            "BattlePass_Week_Task_8"
+        ]
+    },
+    "ActivityBattlePass_20201201": {
         "BoardMan": {
             "position": [
                 10,
                 -300
             ],
+            "showhero": "Model_SDTZ_Shop",
             "zoom": [
                 0.41
-            ],
-            "showhero": "Model_SDTZ_Shop"
-        },
-        "TalkBubble": {
-            "buy": [
-                "Voice_SDTZi_71_4"
-            ],
-            "sold_out": [
-                "Voice_SDTZi_71_2"
-            ],
-            "in": [
-                "Voice_SDTZi_71_1"
             ]
-        }
-    },
-    "ActivityBattlePass_20201201": {
+        },
+        "DailyTask": [
+            "BattlePass_Daily_Task_1",
+            "BattlePass_Daily_Task_2",
+            "BattlePass_Daily_Task_3",
+            "BattlePass_Daily_Task_4",
+            "BattlePass_Daily_Task_5",
+            "BattlePass_Daily_Task_6"
+        ],
+        "ExpLimit": 5000,
+        "FreeRoad": "ABP_20201201_Show_FreeRoad",
+        "GoodShow": {
+            "hero": "SRen",
+            "position": [
+                140,
+                30
+            ],
+            "zoom": [
+                0.62
+            ]
+        },
         "Level": [
             "ABP_20201201_01",
             "ABP_20201201_02",
@@ -568,24 +598,6 @@
             "ABP_20201201_119",
             "ABP_20201201_120"
         ],
-        "DailyTask": [
-            "BattlePass_Daily_Task_1",
-            "BattlePass_Daily_Task_2",
-            "BattlePass_Daily_Task_3",
-            "BattlePass_Daily_Task_4",
-            "BattlePass_Daily_Task_5",
-            "BattlePass_Daily_Task_6"
-        ],
-        "WeekTask": [
-            "BattlePass_Week_Task_1",
-            "BattlePass_Week_Task_2",
-            "BattlePass_Week_Task_3",
-            "BattlePass_Week_Task_4",
-            "BattlePass_Week_Task_5",
-            "BattlePass_Week_Task_6",
-            "BattlePass_Week_Task_7",
-            "BattlePass_Week_Task_8"
-        ],
         "MonthTask": [
             "BattlePass_Month_Task_1",
             "BattlePass_Month_Task_2",
@@ -598,24 +610,28 @@
             "BattlePass_Month_Task_9",
             "BattlePass_Month_Task_10"
         ],
+        "NowPoint": [
+            "IGM_BP_Point"
+        ],
         "PayConfig": [
             {
-                "showValue": 24000,
-                "PayId": "Pay_BattlePass_20201201_68"
+                "PayId": "Pay_BattlePass_20201201_68",
+                "showValue": 24000
             },
             {
-                "showValue": 46000,
-                "reward": "ABP_20201201_HighPayReward",
+                "Exp": 8000,
                 "PayId": "Pay_BattlePass_20201201_128",
-                "Exp": 8000
+                "reward": "ABP_20201201_HighPayReward",
+                "showValue": 46000
             },
             {
-                "showValue": 22000,
-                "reward": "ABP_20201201_HighPayReward",
+                "Exp": 8000,
                 "PayId": "Pay_BattlePass_20201201_60",
-                "Exp": 8000
+                "reward": "ABP_20201201_HighPayReward",
+                "showValue": 22000
             }
         ],
+        "PayRoad": "ABP_20201201_Show_PayRoad",
         "PointShop": [
             "PointGood_20201201_1",
             "PointGood_20201201_2",
@@ -631,42 +647,26 @@
             "PointGood_20201201_12",
             "PointGood_20201201_13"
         ],
-        "NowPoint": [
-            "IGM_BP_Point"
-        ],
-        "GoodShow": {
-            "position": [
-                140,
-                30
-            ],
-            "hero": "SRen",
-            "zoom": [
-                0.62
-            ]
-        },
-        "PayRoad": "ABP_20201201_Show_PayRoad",
-        "FreeRoad": "ABP_20201201_Show_FreeRoad",
-        "ExpLimit": 5000,
-        "BoardMan": {
-            "position": [
-                10,
-                -300
-            ],
-            "zoom": [
-                0.41
-            ],
-            "showhero": "Model_SDTZ_Shop"
-        },
         "TalkBubble": {
             "buy": [
                 "Voice_SDTZi_71_4"
             ],
-            "sold_out": [
-                "Voice_SDTZi_71_2"
-            ],
             "in": [
                 "Voice_SDTZi_71_1"
+            ],
+            "sold_out": [
+                "Voice_SDTZi_71_2"
             ]
-        }
+        },
+        "WeekTask": [
+            "BattlePass_Week_Task_1",
+            "BattlePass_Week_Task_2",
+            "BattlePass_Week_Task_3",
+            "BattlePass_Week_Task_4",
+            "BattlePass_Week_Task_5",
+            "BattlePass_Week_Task_6",
+            "BattlePass_Week_Task_7",
+            "BattlePass_Week_Task_8"
+        ]
     }
 }

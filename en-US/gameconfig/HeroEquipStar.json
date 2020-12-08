@@ -1,837 +1,837 @@
 {
-    "Rareity11_4": {
-        "MaxLevel": 40,
-        "NextId": "Rareity11_5",
-        "StarLevel": 4,
-        "WeaponItem": {
-            "IEQ_Weapon_4": 10
-        },
-        "TopsItem": {
-            "IEQ_Top_4": 10
-        },
-        "ShoesItem": {
-            "IEQ_Shoes_4": 10
-        },
-        "DecorationItem": {
-            "IEQ_Decoration_4": 10
-        },
-        "IncludeEquipStarExp": 200,
-        "EquipStarExp": "",
-        "CommonItem": "IES_StarUp_3",
-        "EquipItemNum": 1,
-        "ResolveItem": {
-            "IM_EquipExp1": 4
-        },
-        "GoldNum": 5600
-    },
-    "Rareity11_5": {
-        "MaxLevel": 50,
-        "NextId": "Rareity11_6",
-        "StarLevel": 5,
-        "WeaponItem": {
-            "IEQ_Weapon_5": 16
-        },
-        "TopsItem": {
-            "IEQ_Top_5": 16
-        },
-        "ShoesItem": {
-            "IEQ_Shoes_5": 16
-        },
-        "DecorationItem": {
-            "IEQ_Decoration_5": 16
-        },
-        "IncludeEquipStarExp": 200,
-        "EquipStarExp": 500,
-        "CommonItem": "",
-        "EquipItemNum": 0,
-        "ResolveItem": {
-            "IM_EquipExp1": 5
-        },
-        "GoldNum": 19600
-    },
-    "Rareity11_6": {
-        "MaxLevel": 60,
-        "NextId": "Rareity11_7",
-        "StarLevel": 6,
-        "WeaponItem": {
-            "IEQ_Weapon_6": 30
-        },
-        "TopsItem": {
-            "IEQ_Top_6": 30
-        },
-        "ShoesItem": {
-            "IEQ_Shoes_6": 30
-        },
-        "DecorationItem": {
-            "IEQ_Decoration_6": 30
-        },
-        "IncludeEquipStarExp": 450,
-        "EquipStarExp": "",
-        "CommonItem": "IES_StarUp_3",
-        "EquipItemNum": 1,
-        "ResolveItem": {
-            "IM_EquipExp1": 6
-        },
-        "GoldNum": 77000
-    },
-    "Rareity11_7": {
-        "MaxLevel": 70,
-        "NextId": "",
-        "StarLevel": 7,
-        "WeaponItem": {},
-        "TopsItem": {},
-        "ShoesItem": {},
-        "DecorationItem": {},
-        "IncludeEquipStarExp": 450,
-        "EquipStarExp": "",
-        "CommonItem": "",
-        "EquipItemNum": 0,
-        "ResolveItem": {
-            "IM_EquipExp1": 7
-        },
-        "GoldNum": 0
-    },
     "Rareity11_1": {
+        "CommonItem": "",
+        "DecorationItem": {
+            "IEQ_Decoration_1": 1
+        },
+        "EquipItemNum": 0,
+        "EquipStarExp": 100,
+        "GoldNum": 1400,
+        "IncludeEquipStarExp": 50,
         "MaxLevel": 10,
         "NextId": "Rareity11_2",
-        "StarLevel": 1,
-        "WeaponItem": {
-            "IEQ_Weapon_1": 1
-        },
-        "TopsItem": {
-            "IEQ_Top_1": 1
+        "ResolveItem": {
+            "IM_EquipExp1": 1
         },
         "ShoesItem": {
             "IEQ_Shoes_1": 1
         },
-        "DecorationItem": {
-            "IEQ_Decoration_1": 1
+        "StarLevel": 1,
+        "TopsItem": {
+            "IEQ_Top_1": 1
         },
-        "IncludeEquipStarExp": 50,
-        "EquipStarExp": 100,
-        "CommonItem": "",
-        "EquipItemNum": 0,
-        "ResolveItem": {
-            "IM_EquipExp1": 1
-        },
-        "GoldNum": 1400
+        "WeaponItem": {
+            "IEQ_Weapon_1": 1
+        }
     },
     "Rareity11_2": {
+        "CommonItem": "IES_StarUp_3",
+        "DecorationItem": {
+            "IEQ_Decoration_2": 2
+        },
+        "EquipItemNum": 1,
+        "EquipStarExp": "",
+        "GoldNum": 2800,
+        "IncludeEquipStarExp": 100,
         "MaxLevel": 20,
         "NextId": "Rareity11_3",
-        "StarLevel": 2,
-        "WeaponItem": {
-            "IEQ_Weapon_2": 2
-        },
-        "TopsItem": {
-            "IEQ_Top_2": 2
+        "ResolveItem": {
+            "IM_EquipExp1": 2
         },
         "ShoesItem": {
             "IEQ_Shoes_2": 2
         },
-        "DecorationItem": {
-            "IEQ_Decoration_2": 2
+        "StarLevel": 2,
+        "TopsItem": {
+            "IEQ_Top_2": 2
         },
-        "IncludeEquipStarExp": 100,
-        "EquipStarExp": "",
-        "CommonItem": "IES_StarUp_3",
-        "EquipItemNum": 1,
-        "ResolveItem": {
-            "IM_EquipExp1": 2
-        },
-        "GoldNum": 2800
+        "WeaponItem": {
+            "IEQ_Weapon_2": 2
+        }
     },
     "Rareity11_3": {
+        "CommonItem": "",
+        "DecorationItem": {
+            "IEQ_Decoration_3": 5
+        },
+        "EquipItemNum": 0,
+        "EquipStarExp": 200,
+        "GoldNum": 4200,
+        "IncludeEquipStarExp": 100,
         "MaxLevel": 30,
         "NextId": "Rareity11_4",
-        "StarLevel": 3,
-        "WeaponItem": {
-            "IEQ_Weapon_3": 5
-        },
-        "TopsItem": {
-            "IEQ_Top_3": 5
+        "ResolveItem": {
+            "IM_EquipExp1": 3
         },
         "ShoesItem": {
             "IEQ_Shoes_3": 5
         },
-        "DecorationItem": {
-            "IEQ_Decoration_3": 5
-        },
-        "IncludeEquipStarExp": 100,
-        "EquipStarExp": 200,
-        "CommonItem": "",
-        "EquipItemNum": 0,
-        "ResolveItem": {
-            "IM_EquipExp1": 3
-        },
-        "GoldNum": 4200
-    },
-    "Rareity15_1": {
-        "MaxLevel": 10,
-        "NextId": "Rareity15_2",
-        "StarLevel": 1,
-        "WeaponItem": {
-            "IEQ_Weapon_1": 4
-        },
-        "TopsItem": {
-            "IEQ_Top_1": 4
-        },
-        "ShoesItem": {
-            "IEQ_Shoes_1": 4
-        },
-        "DecorationItem": {
-            "IEQ_Decoration_1": 4
-        },
-        "IncludeEquipStarExp": 1000,
-        "EquipStarExp": 2000,
-        "CommonItem": "",
-        "EquipItemNum": 0,
-        "ResolveItem": {
-            "IR_Equip14": 100
-        },
-        "GoldNum": 2100
-    },
-    "Rareity15_2": {
-        "MaxLevel": 20,
-        "NextId": "Rareity15_3",
-        "StarLevel": 2,
-        "WeaponItem": {
-            "IEQ_Weapon_2": 8
-        },
-        "TopsItem": {
-            "IEQ_Top_2": 8
-        },
-        "ShoesItem": {
-            "IEQ_Shoes_2": 8
-        },
-        "DecorationItem": {
-            "IEQ_Decoration_2": 8
-        },
-        "IncludeEquipStarExp": 2000,
-        "EquipStarExp": "",
-        "CommonItem": "IES_StarUp_4",
-        "EquipItemNum": 1,
-        "ResolveItem": {
-            "IR_Equip14": 200
-        },
-        "GoldNum": 4200
-    },
-    "Rareity15_3": {
-        "MaxLevel": 30,
-        "NextId": "Rareity15_4",
         "StarLevel": 3,
-        "WeaponItem": {
-            "IEQ_Weapon_3": 12
-        },
         "TopsItem": {
-            "IEQ_Top_3": 12
+            "IEQ_Top_3": 5
         },
-        "ShoesItem": {
-            "IEQ_Shoes_3": 12
-        },
-        "DecorationItem": {
-            "IEQ_Decoration_3": 12
-        },
-        "IncludeEquipStarExp": 2000,
-        "EquipStarExp": 4000,
-        "CommonItem": "",
-        "EquipItemNum": 0,
-        "ResolveItem": {
-            "IR_Equip14": 300
-        },
-        "GoldNum": 6300
+        "WeaponItem": {
+            "IEQ_Weapon_3": 5
+        }
     },
-    "Rareity15_4": {
+    "Rareity11_4": {
+        "CommonItem": "IES_StarUp_3",
+        "DecorationItem": {
+            "IEQ_Decoration_4": 10
+        },
+        "EquipItemNum": 1,
+        "EquipStarExp": "",
+        "GoldNum": 5600,
+        "IncludeEquipStarExp": 200,
         "MaxLevel": 40,
-        "NextId": "Rareity15_5",
+        "NextId": "Rareity11_5",
+        "ResolveItem": {
+            "IM_EquipExp1": 4
+        },
+        "ShoesItem": {
+            "IEQ_Shoes_4": 10
+        },
         "StarLevel": 4,
-        "WeaponItem": {
-            "IEQ_Weapon_4": 18
-        },
         "TopsItem": {
-            "IEQ_Top_4": 18
+            "IEQ_Top_4": 10
         },
-        "ShoesItem": {
-            "IEQ_Shoes_4": 18
-        },
-        "DecorationItem": {
-            "IEQ_Decoration_4": 18
-        },
-        "IncludeEquipStarExp": 4000,
-        "EquipStarExp": "",
-        "CommonItem": "IES_StarUp_4",
-        "EquipItemNum": 1,
-        "ResolveItem": {
-            "IR_Equip14": 400
-        },
-        "GoldNum": 8400
+        "WeaponItem": {
+            "IEQ_Weapon_4": 10
+        }
     },
-    "Rareity15_5": {
-        "MaxLevel": 50,
-        "NextId": "Rareity15_6",
-        "StarLevel": 5,
-        "WeaponItem": {
-            "IEQ_Weapon_5": 25
-        },
-        "TopsItem": {
-            "IEQ_Top_5": 25
-        },
-        "ShoesItem": {
-            "IEQ_Shoes_5": 25
-        },
-        "DecorationItem": {
-            "IEQ_Decoration_5": 25
-        },
-        "IncludeEquipStarExp": 4000,
-        "EquipStarExp": 10000,
+    "Rareity11_5": {
         "CommonItem": "",
+        "DecorationItem": {
+            "IEQ_Decoration_5": 16
+        },
         "EquipItemNum": 0,
+        "EquipStarExp": 500,
+        "GoldNum": 19600,
+        "IncludeEquipStarExp": 200,
+        "MaxLevel": 50,
+        "NextId": "Rareity11_6",
         "ResolveItem": {
-            "IR_Equip14": 500
-        },
-        "GoldNum": 29400
-    },
-    "Rareity15_6": {
-        "MaxLevel": 60,
-        "NextId": "Rareity15_7",
-        "StarLevel": 6,
-        "WeaponItem": {
-            "IEQ_Weapon_6": 45
-        },
-        "TopsItem": {
-            "IEQ_Top_6": 45
+            "IM_EquipExp1": 5
         },
         "ShoesItem": {
-            "IEQ_Shoes_6": 45
+            "IEQ_Shoes_5": 16
         },
-        "DecorationItem": {
-            "IEQ_Decoration_6": 45
+        "StarLevel": 5,
+        "TopsItem": {
+            "IEQ_Top_5": 16
         },
-        "IncludeEquipStarExp": 9000,
-        "EquipStarExp": "",
-        "CommonItem": "IES_StarUp_4",
-        "EquipItemNum": 1,
-        "ResolveItem": {
-            "IR_Equip14": 600
-        },
-        "GoldNum": 115500
+        "WeaponItem": {
+            "IEQ_Weapon_5": 16
+        }
     },
-    "Rareity15_7": {
+    "Rareity11_6": {
+        "CommonItem": "IES_StarUp_3",
+        "DecorationItem": {
+            "IEQ_Decoration_6": 30
+        },
+        "EquipItemNum": 1,
+        "EquipStarExp": "",
+        "GoldNum": 77000,
+        "IncludeEquipStarExp": 450,
+        "MaxLevel": 60,
+        "NextId": "Rareity11_7",
+        "ResolveItem": {
+            "IM_EquipExp1": 6
+        },
+        "ShoesItem": {
+            "IEQ_Shoes_6": 30
+        },
+        "StarLevel": 6,
+        "TopsItem": {
+            "IEQ_Top_6": 30
+        },
+        "WeaponItem": {
+            "IEQ_Weapon_6": 30
+        }
+    },
+    "Rareity11_7": {
+        "CommonItem": "",
+        "DecorationItem": {},
+        "EquipItemNum": 0,
+        "EquipStarExp": "",
+        "GoldNum": 0,
+        "IncludeEquipStarExp": 450,
         "MaxLevel": 70,
         "NextId": "",
-        "StarLevel": 7,
-        "WeaponItem": {},
-        "TopsItem": {},
+        "ResolveItem": {
+            "IM_EquipExp1": 7
+        },
         "ShoesItem": {},
-        "DecorationItem": {},
-        "IncludeEquipStarExp": 9000,
-        "EquipStarExp": "",
-        "CommonItem": "",
-        "EquipItemNum": 0,
-        "ResolveItem": {
-            "IR_Equip14": 700
-        },
-        "GoldNum": 0
-    },
-    "Rareity14_1": {
-        "MaxLevel": 10,
-        "NextId": "Rareity14_2",
-        "StarLevel": 1,
-        "WeaponItem": {
-            "IEQ_Weapon_1": 4
-        },
-        "TopsItem": {
-            "IEQ_Top_1": 4
-        },
-        "ShoesItem": {
-            "IEQ_Shoes_1": 4
-        },
-        "DecorationItem": {
-            "IEQ_Decoration_1": 4
-        },
-        "IncludeEquipStarExp": 1000,
-        "EquipStarExp": 2000,
-        "CommonItem": "",
-        "EquipItemNum": 0,
-        "ResolveItem": {
-            "IR_Equip14": 100
-        },
-        "GoldNum": 2100
-    },
-    "Rareity14_3": {
-        "MaxLevel": 30,
-        "NextId": "Rareity14_4",
-        "StarLevel": 3,
-        "WeaponItem": {
-            "IEQ_Weapon_3": 12
-        },
-        "TopsItem": {
-            "IEQ_Top_3": 12
-        },
-        "ShoesItem": {
-            "IEQ_Shoes_3": 12
-        },
-        "DecorationItem": {
-            "IEQ_Decoration_3": 12
-        },
-        "IncludeEquipStarExp": 2000,
-        "EquipStarExp": 4000,
-        "CommonItem": "",
-        "EquipItemNum": 0,
-        "ResolveItem": {
-            "IR_Equip14": 300
-        },
-        "GoldNum": 6300
-    },
-    "Rareity14_2": {
-        "MaxLevel": 20,
-        "NextId": "Rareity14_3",
-        "StarLevel": 2,
-        "WeaponItem": {
-            "IEQ_Weapon_2": 8
-        },
-        "TopsItem": {
-            "IEQ_Top_2": 8
-        },
-        "ShoesItem": {
-            "IEQ_Shoes_2": 8
-        },
-        "DecorationItem": {
-            "IEQ_Decoration_2": 8
-        },
-        "IncludeEquipStarExp": 2000,
-        "EquipStarExp": "",
-        "CommonItem": "IES_StarUp_4",
-        "EquipItemNum": 1,
-        "ResolveItem": {
-            "IR_Equip14": 200
-        },
-        "GoldNum": 4200
-    },
-    "Rareity14_5": {
-        "MaxLevel": 50,
-        "NextId": "Rareity14_6",
-        "StarLevel": 5,
-        "WeaponItem": {
-            "IEQ_Weapon_5": 25
-        },
-        "TopsItem": {
-            "IEQ_Top_5": 25
-        },
-        "ShoesItem": {
-            "IEQ_Shoes_5": 25
-        },
-        "DecorationItem": {
-            "IEQ_Decoration_5": 25
-        },
-        "IncludeEquipStarExp": 4000,
-        "EquipStarExp": 10000,
-        "CommonItem": "",
-        "EquipItemNum": 0,
-        "ResolveItem": {
-            "IR_Equip14": 500
-        },
-        "GoldNum": 29400
-    },
-    "Rareity14_4": {
-        "MaxLevel": 40,
-        "NextId": "Rareity14_5",
-        "StarLevel": 4,
-        "WeaponItem": {
-            "IEQ_Weapon_4": 18
-        },
-        "TopsItem": {
-            "IEQ_Top_4": 18
-        },
-        "ShoesItem": {
-            "IEQ_Shoes_4": 18
-        },
-        "DecorationItem": {
-            "IEQ_Decoration_4": 18
-        },
-        "IncludeEquipStarExp": 4000,
-        "EquipStarExp": "",
-        "CommonItem": "IES_StarUp_4",
-        "EquipItemNum": 1,
-        "ResolveItem": {
-            "IR_Equip14": 400
-        },
-        "GoldNum": 8400
-    },
-    "Rareity14_7": {
-        "MaxLevel": 70,
-        "NextId": "",
         "StarLevel": 7,
-        "WeaponItem": {},
         "TopsItem": {},
-        "ShoesItem": {},
-        "DecorationItem": {},
-        "IncludeEquipStarExp": 9000,
-        "EquipStarExp": "",
-        "CommonItem": "",
-        "EquipItemNum": 0,
-        "ResolveItem": {
-            "IR_Equip14": 700
-        },
-        "GoldNum": 0
-    },
-    "Rareity14_6": {
-        "MaxLevel": 60,
-        "NextId": "Rareity14_7",
-        "StarLevel": 6,
-        "WeaponItem": {
-            "IEQ_Weapon_6": 45
-        },
-        "TopsItem": {
-            "IEQ_Top_6": 45
-        },
-        "ShoesItem": {
-            "IEQ_Shoes_6": 45
-        },
-        "DecorationItem": {
-            "IEQ_Decoration_6": 45
-        },
-        "IncludeEquipStarExp": 9000,
-        "EquipStarExp": "",
-        "CommonItem": "IES_StarUp_4",
-        "EquipItemNum": 1,
-        "ResolveItem": {
-            "IR_Equip14": 600
-        },
-        "GoldNum": 115500
-    },
-    "Rareity13_2": {
-        "MaxLevel": 20,
-        "NextId": "Rareity13_3",
-        "StarLevel": 2,
-        "WeaponItem": {
-            "IEQ_Weapon_2": 6
-        },
-        "TopsItem": {
-            "IEQ_Top_2": 6
-        },
-        "ShoesItem": {
-            "IEQ_Shoes_2": 6
-        },
-        "DecorationItem": {
-            "IEQ_Decoration_2": 6
-        },
-        "IncludeEquipStarExp": 1000,
-        "EquipStarExp": "",
-        "CommonItem": "IES_StarUp_3",
-        "EquipItemNum": 1,
-        "ResolveItem": {
-            "IR_Equip13": 200
-        },
-        "GoldNum": 3800
-    },
-    "Rareity13_3": {
-        "MaxLevel": 30,
-        "NextId": "Rareity13_4",
-        "StarLevel": 3,
-        "WeaponItem": {
-            "IEQ_Weapon_3": 10
-        },
-        "TopsItem": {
-            "IEQ_Top_3": 10
-        },
-        "ShoesItem": {
-            "IEQ_Shoes_3": 10
-        },
-        "DecorationItem": {
-            "IEQ_Decoration_3": 10
-        },
-        "IncludeEquipStarExp": 1000,
-        "EquipStarExp": 2000,
-        "CommonItem": "",
-        "EquipItemNum": 0,
-        "ResolveItem": {
-            "IR_Equip13": 300
-        },
-        "GoldNum": 5700
-    },
-    "Rareity13_1": {
-        "MaxLevel": 10,
-        "NextId": "Rareity13_2",
-        "StarLevel": 1,
-        "WeaponItem": {
-            "IEQ_Weapon_1": 3
-        },
-        "TopsItem": {
-            "IEQ_Top_1": 3
-        },
-        "ShoesItem": {
-            "IEQ_Shoes_1": 3
-        },
-        "DecorationItem": {
-            "IEQ_Decoration_1": 3
-        },
-        "IncludeEquipStarExp": 500,
-        "EquipStarExp": 1000,
-        "CommonItem": "",
-        "EquipItemNum": 0,
-        "ResolveItem": {
-            "IR_Equip13": 100
-        },
-        "GoldNum": 1900
-    },
-    "Rareity13_6": {
-        "MaxLevel": 60,
-        "NextId": "Rareity13_7",
-        "StarLevel": 6,
-        "WeaponItem": {
-            "IEQ_Weapon_6": 40
-        },
-        "TopsItem": {
-            "IEQ_Top_6": 40
-        },
-        "ShoesItem": {
-            "IEQ_Shoes_6": 40
-        },
-        "DecorationItem": {
-            "IEQ_Decoration_6": 40
-        },
-        "IncludeEquipStarExp": 4500,
-        "EquipStarExp": "",
-        "CommonItem": "IES_StarUp_3",
-        "EquipItemNum": 1,
-        "ResolveItem": {
-            "IR_Equip13": 600
-        },
-        "GoldNum": 104500
-    },
-    "Rareity13_7": {
-        "MaxLevel": 70,
-        "NextId": "",
-        "StarLevel": 7,
-        "WeaponItem": {},
-        "TopsItem": {},
-        "ShoesItem": {},
-        "DecorationItem": {},
-        "IncludeEquipStarExp": 4500,
-        "EquipStarExp": "",
-        "CommonItem": "",
-        "EquipItemNum": 0,
-        "ResolveItem": {
-            "IR_Equip13": 700
-        },
-        "GoldNum": 0
-    },
-    "Rareity13_4": {
-        "MaxLevel": 40,
-        "NextId": "Rareity13_5",
-        "StarLevel": 4,
-        "WeaponItem": {
-            "IEQ_Weapon_4": 16
-        },
-        "TopsItem": {
-            "IEQ_Top_4": 16
-        },
-        "ShoesItem": {
-            "IEQ_Shoes_4": 16
-        },
-        "DecorationItem": {
-            "IEQ_Decoration_4": 16
-        },
-        "IncludeEquipStarExp": 2000,
-        "EquipStarExp": "",
-        "CommonItem": "IES_StarUp_3",
-        "EquipItemNum": 1,
-        "ResolveItem": {
-            "IR_Equip13": 400
-        },
-        "GoldNum": 7600
-    },
-    "Rareity13_5": {
-        "MaxLevel": 50,
-        "NextId": "Rareity13_6",
-        "StarLevel": 5,
-        "WeaponItem": {
-            "IEQ_Weapon_5": 22
-        },
-        "TopsItem": {
-            "IEQ_Top_5": 22
-        },
-        "ShoesItem": {
-            "IEQ_Shoes_5": 22
-        },
-        "DecorationItem": {
-            "IEQ_Decoration_5": 22
-        },
-        "IncludeEquipStarExp": 2000,
-        "EquipStarExp": 5000,
-        "CommonItem": "",
-        "EquipItemNum": 0,
-        "ResolveItem": {
-            "IR_Equip13": 500
-        },
-        "GoldNum": 26600
-    },
-    "Rareity12_3": {
-        "MaxLevel": 30,
-        "NextId": "Rareity12_4",
-        "StarLevel": 3,
-        "WeaponItem": {
-            "IEQ_Weapon_3": 7
-        },
-        "TopsItem": {
-            "IEQ_Top_3": 7
-        },
-        "ShoesItem": {
-            "IEQ_Shoes_3": 7
-        },
-        "DecorationItem": {
-            "IEQ_Decoration_3": 7
-        },
-        "IncludeEquipStarExp": 400,
-        "EquipStarExp": 800,
-        "CommonItem": "",
-        "EquipItemNum": 0,
-        "ResolveItem": {
-            "IM_EquipExp1": 15
-        },
-        "GoldNum": 5100
-    },
-    "Rareity12_2": {
-        "MaxLevel": 20,
-        "NextId": "Rareity12_3",
-        "StarLevel": 2,
-        "WeaponItem": {
-            "IEQ_Weapon_2": 4
-        },
-        "TopsItem": {
-            "IEQ_Top_2": 4
-        },
-        "ShoesItem": {
-            "IEQ_Shoes_2": 4
-        },
-        "DecorationItem": {
-            "IEQ_Decoration_2": 4
-        },
-        "IncludeEquipStarExp": 400,
-        "EquipStarExp": "",
-        "CommonItem": "IES_StarUp_3",
-        "EquipItemNum": 1,
-        "ResolveItem": {
-            "IM_EquipExp1": 10
-        },
-        "GoldNum": 3400
+        "WeaponItem": {}
     },
     "Rareity12_1": {
+        "CommonItem": "",
+        "DecorationItem": {
+            "IEQ_Decoration_1": 2
+        },
+        "EquipItemNum": 0,
+        "EquipStarExp": 400,
+        "GoldNum": 1700,
+        "IncludeEquipStarExp": 200,
         "MaxLevel": 10,
         "NextId": "Rareity12_2",
-        "StarLevel": 1,
-        "WeaponItem": {
-            "IEQ_Weapon_1": 2
-        },
-        "TopsItem": {
-            "IEQ_Top_1": 2
+        "ResolveItem": {
+            "IM_EquipExp1": 5
         },
         "ShoesItem": {
             "IEQ_Shoes_1": 2
         },
-        "DecorationItem": {
-            "IEQ_Decoration_1": 2
-        },
-        "IncludeEquipStarExp": 200,
-        "EquipStarExp": 400,
-        "CommonItem": "",
-        "EquipItemNum": 0,
-        "ResolveItem": {
-            "IM_EquipExp1": 5
-        },
-        "GoldNum": 1700
-    },
-    "Rareity12_7": {
-        "MaxLevel": 70,
-        "NextId": "",
-        "StarLevel": 7,
-        "WeaponItem": {},
-        "TopsItem": {},
-        "ShoesItem": {},
-        "DecorationItem": {},
-        "IncludeEquipStarExp": 1800,
-        "EquipStarExp": "",
-        "CommonItem": "",
-        "EquipItemNum": 0,
-        "ResolveItem": {
-            "IM_EquipExp1": 35
-        },
-        "GoldNum": 0
-    },
-    "Rareity12_6": {
-        "MaxLevel": 60,
-        "NextId": "Rareity12_7",
-        "StarLevel": 6,
-        "WeaponItem": {
-            "IEQ_Weapon_6": 35
-        },
+        "StarLevel": 1,
         "TopsItem": {
-            "IEQ_Top_6": 35
+            "IEQ_Top_1": 2
         },
-        "ShoesItem": {
-            "IEQ_Shoes_6": 35
-        },
-        "DecorationItem": {
-            "IEQ_Decoration_6": 35
-        },
-        "IncludeEquipStarExp": 1800,
-        "EquipStarExp": "",
+        "WeaponItem": {
+            "IEQ_Weapon_1": 2
+        }
+    },
+    "Rareity12_2": {
         "CommonItem": "IES_StarUp_3",
+        "DecorationItem": {
+            "IEQ_Decoration_2": 4
+        },
         "EquipItemNum": 1,
+        "EquipStarExp": "",
+        "GoldNum": 3400,
+        "IncludeEquipStarExp": 400,
+        "MaxLevel": 20,
+        "NextId": "Rareity12_3",
         "ResolveItem": {
-            "IM_EquipExp1": 30
-        },
-        "GoldNum": 93500
-    },
-    "Rareity12_5": {
-        "MaxLevel": 50,
-        "NextId": "Rareity12_6",
-        "StarLevel": 5,
-        "WeaponItem": {
-            "IEQ_Weapon_5": 20
-        },
-        "TopsItem": {
-            "IEQ_Top_5": 20
+            "IM_EquipExp1": 10
         },
         "ShoesItem": {
-            "IEQ_Shoes_5": 20
+            "IEQ_Shoes_2": 4
         },
-        "DecorationItem": {
-            "IEQ_Decoration_5": 20
+        "StarLevel": 2,
+        "TopsItem": {
+            "IEQ_Top_2": 4
         },
-        "IncludeEquipStarExp": 800,
-        "EquipStarExp": 2000,
+        "WeaponItem": {
+            "IEQ_Weapon_2": 4
+        }
+    },
+    "Rareity12_3": {
         "CommonItem": "",
-        "EquipItemNum": 0,
-        "ResolveItem": {
-            "IM_EquipExp1": 25
+        "DecorationItem": {
+            "IEQ_Decoration_3": 7
         },
-        "GoldNum": 23800
+        "EquipItemNum": 0,
+        "EquipStarExp": 800,
+        "GoldNum": 5100,
+        "IncludeEquipStarExp": 400,
+        "MaxLevel": 30,
+        "NextId": "Rareity12_4",
+        "ResolveItem": {
+            "IM_EquipExp1": 15
+        },
+        "ShoesItem": {
+            "IEQ_Shoes_3": 7
+        },
+        "StarLevel": 3,
+        "TopsItem": {
+            "IEQ_Top_3": 7
+        },
+        "WeaponItem": {
+            "IEQ_Weapon_3": 7
+        }
     },
     "Rareity12_4": {
+        "CommonItem": "IES_StarUp_3",
+        "DecorationItem": {
+            "IEQ_Decoration_4": 12
+        },
+        "EquipItemNum": 1,
+        "EquipStarExp": "",
+        "GoldNum": 6800,
+        "IncludeEquipStarExp": 800,
         "MaxLevel": 40,
         "NextId": "Rareity12_5",
-        "StarLevel": 4,
-        "WeaponItem": {
-            "IEQ_Weapon_4": 12
-        },
-        "TopsItem": {
-            "IEQ_Top_4": 12
+        "ResolveItem": {
+            "IM_EquipExp1": 20
         },
         "ShoesItem": {
             "IEQ_Shoes_4": 12
         },
+        "StarLevel": 4,
+        "TopsItem": {
+            "IEQ_Top_4": 12
+        },
+        "WeaponItem": {
+            "IEQ_Weapon_4": 12
+        }
+    },
+    "Rareity12_5": {
+        "CommonItem": "",
         "DecorationItem": {
-            "IEQ_Decoration_4": 12
+            "IEQ_Decoration_5": 20
         },
+        "EquipItemNum": 0,
+        "EquipStarExp": 2000,
+        "GoldNum": 23800,
         "IncludeEquipStarExp": 800,
-        "EquipStarExp": "",
-        "CommonItem": "IES_StarUp_3",
-        "EquipItemNum": 1,
+        "MaxLevel": 50,
+        "NextId": "Rareity12_6",
         "ResolveItem": {
-            "IM_EquipExp1": 20
+            "IM_EquipExp1": 25
         },
-        "GoldNum": 6800
+        "ShoesItem": {
+            "IEQ_Shoes_5": 20
+        },
+        "StarLevel": 5,
+        "TopsItem": {
+            "IEQ_Top_5": 20
+        },
+        "WeaponItem": {
+            "IEQ_Weapon_5": 20
+        }
+    },
+    "Rareity12_6": {
+        "CommonItem": "IES_StarUp_3",
+        "DecorationItem": {
+            "IEQ_Decoration_6": 35
+        },
+        "EquipItemNum": 1,
+        "EquipStarExp": "",
+        "GoldNum": 93500,
+        "IncludeEquipStarExp": 1800,
+        "MaxLevel": 60,
+        "NextId": "Rareity12_7",
+        "ResolveItem": {
+            "IM_EquipExp1": 30
+        },
+        "ShoesItem": {
+            "IEQ_Shoes_6": 35
+        },
+        "StarLevel": 6,
+        "TopsItem": {
+            "IEQ_Top_6": 35
+        },
+        "WeaponItem": {
+            "IEQ_Weapon_6": 35
+        }
+    },
+    "Rareity12_7": {
+        "CommonItem": "",
+        "DecorationItem": {},
+        "EquipItemNum": 0,
+        "EquipStarExp": "",
+        "GoldNum": 0,
+        "IncludeEquipStarExp": 1800,
+        "MaxLevel": 70,
+        "NextId": "",
+        "ResolveItem": {
+            "IM_EquipExp1": 35
+        },
+        "ShoesItem": {},
+        "StarLevel": 7,
+        "TopsItem": {},
+        "WeaponItem": {}
+    },
+    "Rareity13_1": {
+        "CommonItem": "",
+        "DecorationItem": {
+            "IEQ_Decoration_1": 3
+        },
+        "EquipItemNum": 0,
+        "EquipStarExp": 1000,
+        "GoldNum": 1900,
+        "IncludeEquipStarExp": 500,
+        "MaxLevel": 10,
+        "NextId": "Rareity13_2",
+        "ResolveItem": {
+            "IR_Equip13": 100
+        },
+        "ShoesItem": {
+            "IEQ_Shoes_1": 3
+        },
+        "StarLevel": 1,
+        "TopsItem": {
+            "IEQ_Top_1": 3
+        },
+        "WeaponItem": {
+            "IEQ_Weapon_1": 3
+        }
+    },
+    "Rareity13_2": {
+        "CommonItem": "IES_StarUp_3",
+        "DecorationItem": {
+            "IEQ_Decoration_2": 6
+        },
+        "EquipItemNum": 1,
+        "EquipStarExp": "",
+        "GoldNum": 3800,
+        "IncludeEquipStarExp": 1000,
+        "MaxLevel": 20,
+        "NextId": "Rareity13_3",
+        "ResolveItem": {
+            "IR_Equip13": 200
+        },
+        "ShoesItem": {
+            "IEQ_Shoes_2": 6
+        },
+        "StarLevel": 2,
+        "TopsItem": {
+            "IEQ_Top_2": 6
+        },
+        "WeaponItem": {
+            "IEQ_Weapon_2": 6
+        }
+    },
+    "Rareity13_3": {
+        "CommonItem": "",
+        "DecorationItem": {
+            "IEQ_Decoration_3": 10
+        },
+        "EquipItemNum": 0,
+        "EquipStarExp": 2000,
+        "GoldNum": 5700,
+        "IncludeEquipStarExp": 1000,
+        "MaxLevel": 30,
+        "NextId": "Rareity13_4",
+        "ResolveItem": {
+            "IR_Equip13": 300
+        },
+        "ShoesItem": {
+            "IEQ_Shoes_3": 10
+        },
+        "StarLevel": 3,
+        "TopsItem": {
+            "IEQ_Top_3": 10
+        },
+        "WeaponItem": {
+            "IEQ_Weapon_3": 10
+        }
+    },
+    "Rareity13_4": {
+        "CommonItem": "IES_StarUp_3",
+        "DecorationItem": {
+            "IEQ_Decoration_4": 16
+        },
+        "EquipItemNum": 1,
+        "EquipStarExp": "",
+        "GoldNum": 7600,
+        "IncludeEquipStarExp": 2000,
+        "MaxLevel": 40,
+        "NextId": "Rareity13_5",
+        "ResolveItem": {
+            "IR_Equip13": 400
+        },
+        "ShoesItem": {
+            "IEQ_Shoes_4": 16
+        },
+        "StarLevel": 4,
+        "TopsItem": {
+            "IEQ_Top_4": 16
+        },
+        "WeaponItem": {
+            "IEQ_Weapon_4": 16
+        }
+    },
+    "Rareity13_5": {
+        "CommonItem": "",
+        "DecorationItem": {
+            "IEQ_Decoration_5": 22
+        },
+        "EquipItemNum": 0,
+        "EquipStarExp": 5000,
+        "GoldNum": 26600,
+        "IncludeEquipStarExp": 2000,
+        "MaxLevel": 50,
+        "NextId": "Rareity13_6",
+        "ResolveItem": {
+            "IR_Equip13": 500
+        },
+        "ShoesItem": {
+            "IEQ_Shoes_5": 22
+        },
+        "StarLevel": 5,
+        "TopsItem": {
+            "IEQ_Top_5": 22
+        },
+        "WeaponItem": {
+            "IEQ_Weapon_5": 22
+        }
+    },
+    "Rareity13_6": {
+        "CommonItem": "IES_StarUp_3",
+        "DecorationItem": {
+            "IEQ_Decoration_6": 40
+        },
+        "EquipItemNum": 1,
+        "EquipStarExp": "",
+        "GoldNum": 104500,
+        "IncludeEquipStarExp": 4500,
+        "MaxLevel": 60,
+        "NextId": "Rareity13_7",
+        "ResolveItem": {
+            "IR_Equip13": 600
+        },
+        "ShoesItem": {
+            "IEQ_Shoes_6": 40
+        },
+        "StarLevel": 6,
+        "TopsItem": {
+            "IEQ_Top_6": 40
+        },
+        "WeaponItem": {
+            "IEQ_Weapon_6": 40
+        }
+    },
+    "Rareity13_7": {
+        "CommonItem": "",
+        "DecorationItem": {},
+        "EquipItemNum": 0,
+        "EquipStarExp": "",
+        "GoldNum": 0,
+        "IncludeEquipStarExp": 4500,
+        "MaxLevel": 70,
+        "NextId": "",
+        "ResolveItem": {
+            "IR_Equip13": 700
+        },
+        "ShoesItem": {},
+        "StarLevel": 7,
+        "TopsItem": {},
+        "WeaponItem": {}
+    },
+    "Rareity14_1": {
+        "CommonItem": "",
+        "DecorationItem": {
+            "IEQ_Decoration_1": 4
+        },
+        "EquipItemNum": 0,
+        "EquipStarExp": 2000,
+        "GoldNum": 2100,
+        "IncludeEquipStarExp": 1000,
+        "MaxLevel": 10,
+        "NextId": "Rareity14_2",
+        "ResolveItem": {
+            "IR_Equip14": 100
+        },
+        "ShoesItem": {
+            "IEQ_Shoes_1": 4
+        },
+        "StarLevel": 1,
+        "TopsItem": {
+            "IEQ_Top_1": 4
+        },
+        "WeaponItem": {
+            "IEQ_Weapon_1": 4
+        }
+    },
+    "Rareity14_2": {
+        "CommonItem": "IES_StarUp_4",
+        "DecorationItem": {
+            "IEQ_Decoration_2": 8
+        },
+        "EquipItemNum": 1,
+        "EquipStarExp": "",
+        "GoldNum": 4200,
+        "IncludeEquipStarExp": 2000,
+        "MaxLevel": 20,
+        "NextId": "Rareity14_3",
+        "ResolveItem": {
+            "IR_Equip14": 200
+        },
+        "ShoesItem": {
+            "IEQ_Shoes_2": 8
+        },
+        "StarLevel": 2,
+        "TopsItem": {
+            "IEQ_Top_2": 8
+        },
+        "WeaponItem": {
+            "IEQ_Weapon_2": 8
+        }
+    },
+    "Rareity14_3": {
+        "CommonItem": "",
+        "DecorationItem": {
+            "IEQ_Decoration_3": 12
+        },
+        "EquipItemNum": 0,
+        "EquipStarExp": 4000,
+        "GoldNum": 6300,
+        "IncludeEquipStarExp": 2000,
+        "MaxLevel": 30,
+        "NextId": "Rareity14_4",
+        "ResolveItem": {
+            "IR_Equip14": 300
+        },
+        "ShoesItem": {
+            "IEQ_Shoes_3": 12
+        },
+        "StarLevel": 3,
+        "TopsItem": {
+            "IEQ_Top_3": 12
+        },
+        "WeaponItem": {
+            "IEQ_Weapon_3": 12
+        }
+    },
+    "Rareity14_4": {
+        "CommonItem": "IES_StarUp_4",
+        "DecorationItem": {
+            "IEQ_Decoration_4": 18
+        },
+        "EquipItemNum": 1,
+        "EquipStarExp": "",
+        "GoldNum": 8400,
+        "IncludeEquipStarExp": 4000,
+        "MaxLevel": 40,
+        "NextId": "Rareity14_5",
+        "ResolveItem": {
+            "IR_Equip14": 400
+        },
+        "ShoesItem": {
+            "IEQ_Shoes_4": 18
+        },
+        "StarLevel": 4,
+        "TopsItem": {
+            "IEQ_Top_4": 18
+        },
+        "WeaponItem": {
+            "IEQ_Weapon_4": 18
+        }
+    },
+    "Rareity14_5": {
+        "CommonItem": "",
+        "DecorationItem": {
+            "IEQ_Decoration_5": 25
+        },
+        "EquipItemNum": 0,
+        "EquipStarExp": 10000,
+        "GoldNum": 29400,
+        "IncludeEquipStarExp": 4000,
+        "MaxLevel": 50,
+        "NextId": "Rareity14_6",
+        "ResolveItem": {
+            "IR_Equip14": 500
+        },
+        "ShoesItem": {
+            "IEQ_Shoes_5": 25
+        },
+        "StarLevel": 5,
+        "TopsItem": {
+            "IEQ_Top_5": 25
+        },
+        "WeaponItem": {
+            "IEQ_Weapon_5": 25
+        }
+    },
+    "Rareity14_6": {
+        "CommonItem": "IES_StarUp_4",
+        "DecorationItem": {
+            "IEQ_Decoration_6": 45
+        },
+        "EquipItemNum": 1,
+        "EquipStarExp": "",
+        "GoldNum": 115500,
+        "IncludeEquipStarExp": 9000,
+        "MaxLevel": 60,
+        "NextId": "Rareity14_7",
+        "ResolveItem": {
+            "IR_Equip14": 600
+        },
+        "ShoesItem": {
+            "IEQ_Shoes_6": 45
+        },
+        "StarLevel": 6,
+        "TopsItem": {
+            "IEQ_Top_6": 45
+        },
+        "WeaponItem": {
+            "IEQ_Weapon_6": 45
+        }
+    },
+    "Rareity14_7": {
+        "CommonItem": "",
+        "DecorationItem": {},
+        "EquipItemNum": 0,
+        "EquipStarExp": "",
+        "GoldNum": 0,
+        "IncludeEquipStarExp": 9000,
+        "MaxLevel": 70,
+        "NextId": "",
+        "ResolveItem": {
+            "IR_Equip14": 700
+        },
+        "ShoesItem": {},
+        "StarLevel": 7,
+        "TopsItem": {},
+        "WeaponItem": {}
+    },
+    "Rareity15_1": {
+        "CommonItem": "",
+        "DecorationItem": {
+            "IEQ_Decoration_1": 4
+        },
+        "EquipItemNum": 0,
+        "EquipStarExp": 2000,
+        "GoldNum": 2100,
+        "IncludeEquipStarExp": 1000,
+        "MaxLevel": 10,
+        "NextId": "Rareity15_2",
+        "ResolveItem": {
+            "IR_Equip14": 100
+        },
+        "ShoesItem": {
+            "IEQ_Shoes_1": 4
+        },
+        "StarLevel": 1,
+        "TopsItem": {
+            "IEQ_Top_1": 4
+        },
+        "WeaponItem": {
+            "IEQ_Weapon_1": 4
+        }
+    },
+    "Rareity15_2": {
+        "CommonItem": "IES_StarUp_4",
+        "DecorationItem": {
+            "IEQ_Decoration_2": 8
+        },
+        "EquipItemNum": 1,
+        "EquipStarExp": "",
+        "GoldNum": 4200,
+        "IncludeEquipStarExp": 2000,
+        "MaxLevel": 20,
+        "NextId": "Rareity15_3",
+        "ResolveItem": {
+            "IR_Equip14": 200
+        },
+        "ShoesItem": {
+            "IEQ_Shoes_2": 8
+        },
+        "StarLevel": 2,
+        "TopsItem": {
+            "IEQ_Top_2": 8
+        },
+        "WeaponItem": {
+            "IEQ_Weapon_2": 8
+        }
+    },
+    "Rareity15_3": {
+        "CommonItem": "",
+        "DecorationItem": {
+            "IEQ_Decoration_3": 12
+        },
+        "EquipItemNum": 0,
+        "EquipStarExp": 4000,
+        "GoldNum": 6300,
+        "IncludeEquipStarExp": 2000,
+        "MaxLevel": 30,
+        "NextId": "Rareity15_4",
+        "ResolveItem": {
+            "IR_Equip14": 300
+        },
+        "ShoesItem": {
+            "IEQ_Shoes_3": 12
+        },
+        "StarLevel": 3,
+        "TopsItem": {
+            "IEQ_Top_3": 12
+        },
+        "WeaponItem": {
+            "IEQ_Weapon_3": 12
+        }
+    },
+    "Rareity15_4": {
+        "CommonItem": "IES_StarUp_4",
+        "DecorationItem": {
+            "IEQ_Decoration_4": 18
+        },
+        "EquipItemNum": 1,
+        "EquipStarExp": "",
+        "GoldNum": 8400,
+        "IncludeEquipStarExp": 4000,
+        "MaxLevel": 40,
+        "NextId": "Rareity15_5",
+        "ResolveItem": {
+            "IR_Equip14": 400
+        },
+        "ShoesItem": {
+            "IEQ_Shoes_4": 18
+        },
+        "StarLevel": 4,
+        "TopsItem": {
+            "IEQ_Top_4": 18
+        },
+        "WeaponItem": {
+            "IEQ_Weapon_4": 18
+        }
+    },
+    "Rareity15_5": {
+        "CommonItem": "",
+        "DecorationItem": {
+            "IEQ_Decoration_5": 25
+        },
+        "EquipItemNum": 0,
+        "EquipStarExp": 10000,
+        "GoldNum": 29400,
+        "IncludeEquipStarExp": 4000,
+        "MaxLevel": 50,
+        "NextId": "Rareity15_6",
+        "ResolveItem": {
+            "IR_Equip14": 500
+        },
+        "ShoesItem": {
+            "IEQ_Shoes_5": 25
+        },
+        "StarLevel": 5,
+        "TopsItem": {
+            "IEQ_Top_5": 25
+        },
+        "WeaponItem": {
+            "IEQ_Weapon_5": 25
+        }
+    },
+    "Rareity15_6": {
+        "CommonItem": "IES_StarUp_4",
+        "DecorationItem": {
+            "IEQ_Decoration_6": 45
+        },
+        "EquipItemNum": 1,
+        "EquipStarExp": "",
+        "GoldNum": 115500,
+        "IncludeEquipStarExp": 9000,
+        "MaxLevel": 60,
+        "NextId": "Rareity15_7",
+        "ResolveItem": {
+            "IR_Equip14": 600
+        },
+        "ShoesItem": {
+            "IEQ_Shoes_6": 45
+        },
+        "StarLevel": 6,
+        "TopsItem": {
+            "IEQ_Top_6": 45
+        },
+        "WeaponItem": {
+            "IEQ_Weapon_6": 45
+        }
+    },
+    "Rareity15_7": {
+        "CommonItem": "",
+        "DecorationItem": {},
+        "EquipItemNum": 0,
+        "EquipStarExp": "",
+        "GoldNum": 0,
+        "IncludeEquipStarExp": 9000,
+        "MaxLevel": 70,
+        "NextId": "",
+        "ResolveItem": {
+            "IR_Equip14": 700
+        },
+        "ShoesItem": {},
+        "StarLevel": 7,
+        "TopsItem": {},
+        "WeaponItem": {}
     }
 }

@@ -1,153 +1,38 @@
 {
-    "CO_Weapon_6_UR": {
-        "Item1": {
-            "Quality": "13",
-            "amount": 1,
-            "type": "Decoration"
-        },
-        "Item2": {
-            "amount": 200,
-            "type": "Item",
-            "id": "IR_Crystal"
-        },
-        "Item3": {
-            "amount": 5,
-            "type": "Item",
-            "id": "IQS_Purple1_Support"
-        },
-        "Item4": {
-            "amount": 5,
-            "type": "Item",
-            "id": "IHG_Quality3_10"
-        },
-        "Currency": {
-            "amount": 10000,
-            "type": "Item",
-            "id": "IR_Gold"
-        },
-        "Show": {
-            "type": "Item",
-            "id": "IB_Equip_SSR"
-        },
-        "Reward": "CO_Weapon_2_UR"
-    },
-    "CO_Weapon_5_UR": {
-        "Item1": {
-            "Quality": "13",
-            "amount": 1,
-            "type": "Shoes"
-        },
-        "Item2": {
-            "amount": 200,
-            "type": "Item",
-            "id": "IR_Crystal"
-        },
-        "Item3": {
-            "amount": 5,
-            "type": "Item",
-            "id": "IQS_Purple1_Support"
-        },
-        "Item4": "",
-        "Currency": {
-            "amount": 10000,
-            "type": "Item",
-            "id": "IR_Gold"
-        },
-        "Show": {
-            "type": "Item",
-            "id": "IB_Equip_SSR"
-        },
-        "Reward": "CO_Weapon_2_UR"
-    },
-    "CO_Weapon_4_UR": {
-        "Item1": {
-            "Quality": "13",
-            "amount": 1,
-            "type": "Tops"
-        },
-        "Item2": {
-            "amount": 200,
-            "type": "Item",
-            "id": "IR_Crystal"
-        },
-        "Item3": {
-            "amount": 5,
-            "type": "Item",
-            "id": "IQS_Purple1_Support"
-        },
-        "Item4": {
-            "amount": 5,
-            "type": "Item",
-            "id": "IHG_Quality3_10"
-        },
-        "Currency": {
-            "amount": 10000,
-            "type": "Item",
-            "id": "IR_Gold"
-        },
-        "Show": {
-            "type": "Item",
-            "id": "IB_Equip_SSR"
-        },
-        "Reward": "CO_Weapon_2_UR"
-    },
-    "CO_Weapon_3_UR": {
-        "Item1": {
-            "Quality": "13",
-            "amount": 1,
-            "type": "Weapon"
-        },
-        "Item2": {
-            "amount": 200,
-            "type": "Item",
-            "id": "IR_Crystal"
-        },
-        "Item3": {
-            "amount": 5,
-            "type": "Item",
-            "id": "IQS_Purple1_Support"
-        },
-        "Item4": "",
-        "Currency": {
-            "amount": 10000,
-            "type": "Item",
-            "id": "IR_Gold"
-        },
-        "Show": {
-            "type": "Equip",
-            "id": "Weapon_13005"
-        },
-        "Reward": "CO_Weapon_1_UR"
-    },
     "CO_Weapon_1_UR": {
+        "Currency": {
+            "amount": 10000,
+            "id": "IR_Gold",
+            "type": "Item"
+        },
         "Item1": {
             "amount": 2,
-            "type": "Equip",
-            "id": "Weapon_14021"
+            "id": "Weapon_14021",
+            "type": "Equip"
         },
         "Item2": {
             "amount": 200,
-            "type": "Item",
-            "id": "IR_Crystal"
+            "id": "IR_Crystal",
+            "type": "Item"
         },
         "Item3": {
             "amount": 5,
-            "type": "Item",
-            "id": "IQS_Purple1_Support"
+            "id": "IQS_Purple1_Support",
+            "type": "Item"
         },
         "Item4": "",
-        "Currency": {
-            "amount": 10000,
-            "type": "Item",
-            "id": "IR_Gold"
-        },
+        "Reward": "CO_Weapon_1_UR",
         "Show": {
-            "type": "Equip",
-            "id": "Weapon_13005"
-        },
-        "Reward": "CO_Weapon_1_UR"
+            "id": "Weapon_13005",
+            "type": "Equip"
+        }
     },
     "CO_Weapon_2_UR": {
+        "Currency": {
+            "amount": 10000,
+            "id": "IR_Gold",
+            "type": "Item"
+        },
         "Item1": {
             "Quality": "13",
             "amount": 1,
@@ -155,28 +40,143 @@
         },
         "Item2": {
             "amount": 200,
-            "type": "Item",
-            "id": "IR_Crystal"
+            "id": "IR_Crystal",
+            "type": "Item"
         },
         "Item3": {
             "amount": 5,
-            "type": "Item",
-            "id": "IQS_Purple1_Support"
+            "id": "IQS_Purple1_Support",
+            "type": "Item"
         },
         "Item4": {
             "amount": 5,
-            "type": "Item",
-            "id": "IHG_Quality3_10"
+            "id": "IHG_Quality3_10",
+            "type": "Item"
         },
+        "Reward": "CO_Weapon_1_UR",
+        "Show": {
+            "id": "Weapon_13005",
+            "type": "Equip"
+        }
+    },
+    "CO_Weapon_3_UR": {
         "Currency": {
             "amount": 10000,
-            "type": "Item",
-            "id": "IR_Gold"
+            "id": "IR_Gold",
+            "type": "Item"
         },
+        "Item1": {
+            "Quality": "13",
+            "amount": 1,
+            "type": "Weapon"
+        },
+        "Item2": {
+            "amount": 200,
+            "id": "IR_Crystal",
+            "type": "Item"
+        },
+        "Item3": {
+            "amount": 5,
+            "id": "IQS_Purple1_Support",
+            "type": "Item"
+        },
+        "Item4": "",
+        "Reward": "CO_Weapon_1_UR",
         "Show": {
-            "type": "Equip",
-            "id": "Weapon_13005"
+            "id": "Weapon_13005",
+            "type": "Equip"
+        }
+    },
+    "CO_Weapon_4_UR": {
+        "Currency": {
+            "amount": 10000,
+            "id": "IR_Gold",
+            "type": "Item"
         },
-        "Reward": "CO_Weapon_1_UR"
+        "Item1": {
+            "Quality": "13",
+            "amount": 1,
+            "type": "Tops"
+        },
+        "Item2": {
+            "amount": 200,
+            "id": "IR_Crystal",
+            "type": "Item"
+        },
+        "Item3": {
+            "amount": 5,
+            "id": "IQS_Purple1_Support",
+            "type": "Item"
+        },
+        "Item4": {
+            "amount": 5,
+            "id": "IHG_Quality3_10",
+            "type": "Item"
+        },
+        "Reward": "CO_Weapon_2_UR",
+        "Show": {
+            "id": "IB_Equip_SSR",
+            "type": "Item"
+        }
+    },
+    "CO_Weapon_5_UR": {
+        "Currency": {
+            "amount": 10000,
+            "id": "IR_Gold",
+            "type": "Item"
+        },
+        "Item1": {
+            "Quality": "13",
+            "amount": 1,
+            "type": "Shoes"
+        },
+        "Item2": {
+            "amount": 200,
+            "id": "IR_Crystal",
+            "type": "Item"
+        },
+        "Item3": {
+            "amount": 5,
+            "id": "IQS_Purple1_Support",
+            "type": "Item"
+        },
+        "Item4": "",
+        "Reward": "CO_Weapon_2_UR",
+        "Show": {
+            "id": "IB_Equip_SSR",
+            "type": "Item"
+        }
+    },
+    "CO_Weapon_6_UR": {
+        "Currency": {
+            "amount": 10000,
+            "id": "IR_Gold",
+            "type": "Item"
+        },
+        "Item1": {
+            "Quality": "13",
+            "amount": 1,
+            "type": "Decoration"
+        },
+        "Item2": {
+            "amount": 200,
+            "id": "IR_Crystal",
+            "type": "Item"
+        },
+        "Item3": {
+            "amount": 5,
+            "id": "IQS_Purple1_Support",
+            "type": "Item"
+        },
+        "Item4": {
+            "amount": 5,
+            "id": "IHG_Quality3_10",
+            "type": "Item"
+        },
+        "Reward": "CO_Weapon_2_UR",
+        "Show": {
+            "id": "IB_Equip_SSR",
+            "type": "Item"
+        }
     }
 }

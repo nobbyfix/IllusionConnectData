@@ -1,77 +1,77 @@
 {
-    "11": {
-        "NeedExp": 260,
-        "GiveExp": 982,
-        "GiveExpFactor": 0.6
+    "1": {
+        "GiveExp": 10,
+        "GiveExpFactor": 1.0,
+        "NeedExp": 10
     },
     "10": {
-        "NeedExp": 220,
         "GiveExp": 826,
-        "GiveExpFactor": 0.8
+        "GiveExpFactor": 0.8,
+        "NeedExp": 220
     },
-    "13": {
-        "NeedExp": 350,
-        "GiveExp": 1372,
-        "GiveExpFactor": 0.6
+    "11": {
+        "GiveExp": 982,
+        "GiveExpFactor": 0.6,
+        "NeedExp": 260
     },
     "12": {
-        "NeedExp": 300,
         "GiveExp": 1162,
-        "GiveExpFactor": 0.6
+        "GiveExpFactor": 0.6,
+        "NeedExp": 300
     },
-    "15": {
-        "NeedExp": 500,
-        "GiveExp": 1912,
-        "GiveExpFactor": 0.6
+    "13": {
+        "GiveExp": 1372,
+        "GiveExpFactor": 0.6,
+        "NeedExp": 350
     },
     "14": {
-        "NeedExp": 400,
         "GiveExp": 1612,
-        "GiveExpFactor": 0.6
+        "GiveExpFactor": 0.6,
+        "NeedExp": 400
     },
-    "1": {
-        "NeedExp": 10,
-        "GiveExp": 10,
-        "GiveExpFactor": 1.0
-    },
-    "3": {
-        "NeedExp": 40,
-        "GiveExp": 70,
-        "GiveExpFactor": 1.0
+    "15": {
+        "GiveExp": 1912,
+        "GiveExpFactor": 0.6,
+        "NeedExp": 500
     },
     "2": {
-        "NeedExp": 20,
         "GiveExp": 30,
-        "GiveExpFactor": 1.0
+        "GiveExpFactor": 1.0,
+        "NeedExp": 20
     },
-    "5": {
-        "NeedExp": 80,
-        "GiveExp": 210,
-        "GiveExpFactor": 1.0
+    "3": {
+        "GiveExp": 70,
+        "GiveExpFactor": 1.0,
+        "NeedExp": 40
     },
     "4": {
-        "NeedExp": 60,
         "GiveExp": 130,
-        "GiveExpFactor": 1.0
+        "GiveExpFactor": 1.0,
+        "NeedExp": 60
     },
-    "7": {
-        "NeedExp": 120,
-        "GiveExp": 386,
-        "GiveExpFactor": 0.8
+    "5": {
+        "GiveExp": 210,
+        "GiveExpFactor": 1.0,
+        "NeedExp": 80
     },
     "6": {
-        "NeedExp": 100,
         "GiveExp": 290,
-        "GiveExpFactor": 0.8
+        "GiveExpFactor": 0.8,
+        "NeedExp": 100
     },
-    "9": {
-        "NeedExp": 180,
-        "GiveExp": 650,
-        "GiveExpFactor": 0.8
+    "7": {
+        "GiveExp": 386,
+        "GiveExpFactor": 0.8,
+        "NeedExp": 120
     },
     "8": {
-        "NeedExp": 150,
         "GiveExp": 506,
-        "GiveExpFactor": 0.8
+        "GiveExpFactor": 0.8,
+        "NeedExp": 150
+    },
+    "9": {
+        "GiveExp": 650,
+        "GiveExpFactor": 0.8,
+        "NeedExp": 180
     }
 }

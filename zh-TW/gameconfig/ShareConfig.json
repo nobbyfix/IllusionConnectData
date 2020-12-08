@@ -1,6 +1,42 @@
 {
+    "Share1": {
+        "Condition": [
+            "M01P03S",
+            "M01P13S"
+        ],
+        "ShareType": "BLOCK"
+    },
+    "Share2": {
+        "Condition": [
+            5000,
+            3000,
+            2000,
+            1000,
+            500,
+            200,
+            50,
+            10,
+            1
+        ],
+        "ShareType": "ARENA"
+    },
+    "Share3": {
+        "Condition": [
+            10,
+            20,
+            30,
+            40,
+            50
+        ],
+        "ShareType": "TOWER"
+    },
+    "Share4": {
+        "Condition": [
+            6
+        ],
+        "ShareType": "BATTLEHERO"
+    },
     "Share5": {
-        "ShareType": "SPECIAL",
         "Condition": [
             100002,
             100006,
@@ -17,43 +53,7 @@
             100039,
             100040,
             100041
-        ]
-    },
-    "Share4": {
-        "ShareType": "BATTLEHERO",
-        "Condition": [
-            6
-        ]
-    },
-    "Share1": {
-        "ShareType": "BLOCK",
-        "Condition": [
-            "M01P03S",
-            "M01P13S"
-        ]
-    },
-    "Share3": {
-        "ShareType": "TOWER",
-        "Condition": [
-            10,
-            20,
-            30,
-            40,
-            50
-        ]
-    },
-    "Share2": {
-        "ShareType": "ARENA",
-        "Condition": [
-            5000,
-            3000,
-            2000,
-            1000,
-            500,
-            200,
-            50,
-            10,
-            1
-        ]
+        ],
+        "ShareType": "SPECIAL"
     }
 }

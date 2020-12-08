@@ -1,113 +1,5 @@
 {
-    "BSNCT_01_DP14": {
-        "Name": "",
-        "Condition": [
-            {
-                "conditionType": "Condi_PansOpenTreasureBox",
-                "params": [
-                    "BSNCT_01"
-                ],
-                "factor1": [
-                    1
-                ]
-            }
-        ],
-        "DP": 10
-    },
-    "BSNCT_01_DP13": {
-        "Name": "",
-        "Condition": [
-            {
-                "conditionType": "Condi_PansOpenHeroBox",
-                "params": [
-                    "BSNCT_01"
-                ],
-                "factor1": [
-                    1
-                ]
-            }
-        ],
-        "DP": 10
-    },
-    "BSNCT_01_DP12": {
-        "Name": "",
-        "Condition": [
-            {
-                "conditionType": "Condi_PansMasterCure",
-                "params": [
-                    "BSNCT_01"
-                ],
-                "factor1": [
-                    1
-                ]
-            }
-        ],
-        "DP": 10
-    },
-    "BSNCT_01_DP11": {
-        "Name": "",
-        "Condition": [
-            {
-                "conditionType": "Condi_PansHeroUpNum",
-                "params": [
-                    "BSNCT_01"
-                ],
-                "factor1": [
-                    1
-                ]
-            }
-        ],
-        "DP": 10
-    },
-    "BSNCT_01_DP10": {
-        "Name": "",
-        "Condition": [
-            {
-                "conditionType": "Condi_PansBuyTreasureNum",
-                "params": [
-                    "BSNCT_01"
-                ],
-                "factor1": [
-                    1
-                ]
-            }
-        ],
-        "DP": 10
-    },
-    "BSNCT_01_DP3": {
-        "Name": "",
-        "Condition": [
-            {
-                "conditionType": "Condi_PansHeroLevelReachNum",
-                "params": [
-                    "BSNCT_01"
-                ],
-                "factor1": [
-                    3,
-                    1
-                ]
-            }
-        ],
-        "DP": 10
-    },
-    "BSNCT_01_DP2": {
-        "Name": "BSNCT_01_DP2_Name",
-        "Condition": [
-            {
-                "conditionType": "Condi_PansRarityHeroNum",
-                "params": [
-                    "BSNCT_01"
-                ],
-                "factor1": [
-                    12,
-                    1
-                ]
-            }
-        ],
-        "DP": 10
-    },
     "BSNCT_01_DP1": {
-        "Name": "BSNCT_01_DP1_Name",
         "Condition": [
             {
                 "conditionType": "Condi_PlayerLevel",
@@ -116,99 +8,207 @@
                 ]
             }
         ],
-        "DP": 120
+        "DP": 120,
+        "Name": "BSNCT_01_DP1_Name"
     },
-    "BSNCT_01_DP7": {
-        "Name": "",
+    "BSNCT_01_DP10": {
         "Condition": [
             {
-                "conditionType": "Condi_PansFightWin",
+                "conditionType": "Condi_PansBuyTreasureNum",
+                "factor1": [
+                    1
+                ],
                 "params": [
                     "BSNCT_01"
-                ],
-                "factor1": [
-                    1
                 ]
             }
         ],
-        "DP": 10
+        "DP": 10,
+        "Name": ""
     },
-    "BSNCT_01_DP6": {
-        "Name": "",
+    "BSNCT_01_DP11": {
         "Condition": [
             {
-                "conditionType": "Condi_PansUseTreasure",
-                "params": [
-                    "BSNCT_01",
-                    "TestItem_1"
-                ],
+                "conditionType": "Condi_PansHeroUpNum",
                 "factor1": [
                     1
+                ],
+                "params": [
+                    "BSNCT_01"
                 ]
             }
         ],
-        "DP": 10
+        "DP": 10,
+        "Name": ""
     },
-    "BSNCT_01_DP5": {
-        "Name": "",
+    "BSNCT_01_DP12": {
         "Condition": [
             {
-                "conditionType": "Condi_PansTreasureGet",
-                "params": [
-                    "BSNCT_01",
-                    "TestItem_1"
-                ],
+                "conditionType": "Condi_PansMasterCure",
                 "factor1": [
                     1
+                ],
+                "params": [
+                    "BSNCT_01"
                 ]
             }
         ],
-        "DP": 10
+        "DP": 10,
+        "Name": ""
+    },
+    "BSNCT_01_DP13": {
+        "Condition": [
+            {
+                "conditionType": "Condi_PansOpenHeroBox",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "BSNCT_01"
+                ]
+            }
+        ],
+        "DP": 10,
+        "Name": ""
+    },
+    "BSNCT_01_DP14": {
+        "Condition": [
+            {
+                "conditionType": "Condi_PansOpenTreasureBox",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "BSNCT_01"
+                ]
+            }
+        ],
+        "DP": 10,
+        "Name": ""
+    },
+    "BSNCT_01_DP2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_PansRarityHeroNum",
+                "factor1": [
+                    12,
+                    1
+                ],
+                "params": [
+                    "BSNCT_01"
+                ]
+            }
+        ],
+        "DP": 10,
+        "Name": "BSNCT_01_DP2_Name"
+    },
+    "BSNCT_01_DP3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_PansHeroLevelReachNum",
+                "factor1": [
+                    3,
+                    1
+                ],
+                "params": [
+                    "BSNCT_01"
+                ]
+            }
+        ],
+        "DP": 10,
+        "Name": ""
     },
     "BSNCT_01_DP4": {
-        "Name": "",
         "Condition": [
             {
                 "conditionType": "Condi_PansGoldGet",
-                "params": [
-                    "BSNCT_01"
-                ],
                 "factor1": [
                     1
+                ],
+                "params": [
+                    "BSNCT_01"
                 ]
             }
         ],
-        "DP": 10
+        "DP": 10,
+        "Name": ""
     },
-    "BSNCT_01_DP9": {
-        "Name": "",
+    "BSNCT_01_DP5": {
         "Condition": [
             {
-                "conditionType": "Condi_PansBuyHeroNum",
-                "params": [
-                    "BSNCT_01"
-                ],
+                "conditionType": "Condi_PansTreasureGet",
                 "factor1": [
                     1
+                ],
+                "params": [
+                    "BSNCT_01",
+                    "TestItem_1"
                 ]
             }
         ],
-        "DP": 10
+        "DP": 10,
+        "Name": ""
+    },
+    "BSNCT_01_DP6": {
+        "Condition": [
+            {
+                "conditionType": "Condi_PansUseTreasure",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "BSNCT_01",
+                    "TestItem_1"
+                ]
+            }
+        ],
+        "DP": 10,
+        "Name": ""
+    },
+    "BSNCT_01_DP7": {
+        "Condition": [
+            {
+                "conditionType": "Condi_PansFightWin",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "BSNCT_01"
+                ]
+            }
+        ],
+        "DP": 10,
+        "Name": ""
     },
     "BSNCT_01_DP8": {
-        "Name": "",
         "Condition": [
             {
                 "conditionType": "Condi_PansWInPoint",
+                "factor1": [
+                    1
+                ],
                 "params": [
                     "BSNCT_01",
                     "BSNCT_01_S1"
-                ],
-                "factor1": [
-                    1
                 ]
             }
         ],
-        "DP": 10
+        "DP": 10,
+        "Name": ""
+    },
+    "BSNCT_01_DP9": {
+        "Condition": [
+            {
+                "conditionType": "Condi_PansBuyHeroNum",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "BSNCT_01"
+                ]
+            }
+        ],
+        "DP": 10,
+        "Name": ""
     }
 }

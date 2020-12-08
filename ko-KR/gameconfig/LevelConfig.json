@@ -1,1122 +1,1122 @@
 {
     "1": {
-        "PlayerExp": 10,
-        "GetActionPoint": 0,
         "ActionPointLimit": 60,
+        "GetActionPoint": 0,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1
         },
         "MasterExtraAttr": {
-            "HP": 0,
             "ATK": 0,
-            "DEF": 0
-        }
-    },
-    "2": {
-        "PlayerExp": 20,
-        "GetActionPoint": 10,
-        "ActionPointLimit": 65,
-        "LevelUpEffect": [],
-        "MasterAttrFactor": {
-            "HP": 1,
-            "ATK": 1,
-            "DEF": 1
+            "DEF": 0,
+            "HP": 0
         },
-        "MasterExtraAttr": {
-            "HP": 0,
-            "ATK": 0,
-            "DEF": 0
-        }
-    },
-    "3": {
-        "PlayerExp": 25,
-        "GetActionPoint": 10,
-        "ActionPointLimit": 70,
-        "LevelUpEffect": [],
-        "MasterAttrFactor": {
-            "HP": 1,
-            "ATK": 1,
-            "DEF": 1
-        },
-        "MasterExtraAttr": {
-            "HP": 200,
-            "ATK": 0,
-            "DEF": 0
-        }
-    },
-    "4": {
-        "PlayerExp": 30,
-        "GetActionPoint": 10,
-        "ActionPointLimit": 75,
-        "LevelUpEffect": [],
-        "MasterAttrFactor": {
-            "HP": 1,
-            "ATK": 1,
-            "DEF": 1
-        },
-        "MasterExtraAttr": {
-            "HP": 200,
-            "ATK": 0,
-            "DEF": 0
-        }
-    },
-    "5": {
-        "PlayerExp": 40,
-        "GetActionPoint": 10,
-        "ActionPointLimit": 80,
-        "LevelUpEffect": [],
-        "MasterAttrFactor": {
-            "HP": 1,
-            "ATK": 1,
-            "DEF": 1
-        },
-        "MasterExtraAttr": {
-            "HP": 200,
-            "ATK": 0,
-            "DEF": 0
-        }
-    },
-    "6": {
-        "PlayerExp": 60,
-        "GetActionPoint": 30,
-        "ActionPointLimit": 84,
-        "LevelUpEffect": [],
-        "MasterAttrFactor": {
-            "HP": 1.1,
-            "ATK": 1,
-            "DEF": 1
-        },
-        "MasterExtraAttr": {
-            "HP": 200,
-            "ATK": 0,
-            "DEF": 10
-        }
-    },
-    "7": {
-        "PlayerExp": 80,
-        "GetActionPoint": 30,
-        "ActionPointLimit": 88,
-        "LevelUpEffect": [],
-        "MasterAttrFactor": {
-            "HP": 1.1,
-            "ATK": 1,
-            "DEF": 1
-        },
-        "MasterExtraAttr": {
-            "HP": 200,
-            "ATK": 0,
-            "DEF": 10
-        }
-    },
-    "8": {
-        "PlayerExp": 100,
-        "GetActionPoint": 30,
-        "ActionPointLimit": 92,
-        "LevelUpEffect": [],
-        "MasterAttrFactor": {
-            "HP": 1.1,
-            "ATK": 1,
-            "DEF": 1
-        },
-        "MasterExtraAttr": {
-            "HP": 200,
-            "ATK": 0,
-            "DEF": 10
-        }
-    },
-    "9": {
-        "PlayerExp": 120,
-        "GetActionPoint": 30,
-        "ActionPointLimit": 96,
-        "LevelUpEffect": [],
-        "MasterAttrFactor": {
-            "HP": 1.1,
-            "ATK": 1,
-            "DEF": 1
-        },
-        "MasterExtraAttr": {
-            "HP": 200,
-            "ATK": 0,
-            "DEF": 10
-        }
+        "PlayerExp": 10
     },
     "10": {
-        "PlayerExp": 150,
-        "GetActionPoint": 30,
         "ActionPointLimit": 100,
+        "GetActionPoint": 30,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.1,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.1
         },
         "MasterExtraAttr": {
-            "HP": 200,
             "ATK": 0,
-            "DEF": 10
-        }
+            "DEF": 10,
+            "HP": 200
+        },
+        "PlayerExp": 150
     },
     "11": {
-        "PlayerExp": 180,
-        "GetActionPoint": 30,
         "ActionPointLimit": 102,
+        "GetActionPoint": 30,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.1,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.1
         },
         "MasterExtraAttr": {
-            "HP": 200,
             "ATK": 0,
-            "DEF": 10
-        }
+            "DEF": 10,
+            "HP": 200
+        },
+        "PlayerExp": 180
     },
     "12": {
-        "PlayerExp": 220,
-        "GetActionPoint": 30,
         "ActionPointLimit": 104,
+        "GetActionPoint": 30,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.1,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.1
         },
         "MasterExtraAttr": {
-            "HP": 200,
             "ATK": 0,
-            "DEF": 20
-        }
+            "DEF": 20,
+            "HP": 200
+        },
+        "PlayerExp": 220
     },
     "13": {
-        "PlayerExp": 280,
-        "GetActionPoint": 30,
         "ActionPointLimit": 106,
+        "GetActionPoint": 30,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.1,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.1
         },
         "MasterExtraAttr": {
-            "HP": 200,
             "ATK": 0,
-            "DEF": 40
-        }
+            "DEF": 40,
+            "HP": 200
+        },
+        "PlayerExp": 280
     },
     "14": {
-        "PlayerExp": 340,
-        "GetActionPoint": 30,
         "ActionPointLimit": 108,
+        "GetActionPoint": 30,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.1,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.1
         },
         "MasterExtraAttr": {
-            "HP": 200,
             "ATK": 0,
-            "DEF": 60
-        }
+            "DEF": 60,
+            "HP": 200
+        },
+        "PlayerExp": 340
     },
     "15": {
-        "PlayerExp": 400,
-        "GetActionPoint": 30,
         "ActionPointLimit": 110,
+        "GetActionPoint": 30,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.21,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.21
         },
         "MasterExtraAttr": {
-            "HP": 500,
             "ATK": 80,
-            "DEF": 80
-        }
+            "DEF": 80,
+            "HP": 500
+        },
+        "PlayerExp": 400
     },
     "16": {
-        "PlayerExp": 460,
-        "GetActionPoint": 30,
         "ActionPointLimit": 112,
+        "GetActionPoint": 30,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.21,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.21
         },
         "MasterExtraAttr": {
-            "HP": 800,
             "ATK": 130,
-            "DEF": 100
-        }
+            "DEF": 100,
+            "HP": 800
+        },
+        "PlayerExp": 460
     },
     "17": {
-        "PlayerExp": 520,
-        "GetActionPoint": 30,
         "ActionPointLimit": 114,
+        "GetActionPoint": 30,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.21,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.21
         },
         "MasterExtraAttr": {
-            "HP": 1200,
             "ATK": 150,
-            "DEF": 130
-        }
+            "DEF": 130,
+            "HP": 1200
+        },
+        "PlayerExp": 520
     },
     "18": {
-        "PlayerExp": 580,
-        "GetActionPoint": 30,
         "ActionPointLimit": 116,
+        "GetActionPoint": 30,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.21,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.21
         },
         "MasterExtraAttr": {
-            "HP": 5200,
             "ATK": 300,
-            "DEF": 150
-        }
+            "DEF": 150,
+            "HP": 5200
+        },
+        "PlayerExp": 580
     },
     "19": {
-        "PlayerExp": 620,
-        "GetActionPoint": 30,
         "ActionPointLimit": 118,
+        "GetActionPoint": 30,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.21,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.21
         },
         "MasterExtraAttr": {
-            "HP": 8000,
             "ATK": 600,
-            "DEF": 180
-        }
+            "DEF": 180,
+            "HP": 8000
+        },
+        "PlayerExp": 620
+    },
+    "2": {
+        "ActionPointLimit": 65,
+        "GetActionPoint": 10,
+        "LevelUpEffect": [],
+        "MasterAttrFactor": {
+            "ATK": 1,
+            "DEF": 1,
+            "HP": 1
+        },
+        "MasterExtraAttr": {
+            "ATK": 0,
+            "DEF": 0,
+            "HP": 0
+        },
+        "PlayerExp": 20
     },
     "20": {
-        "PlayerExp": 650,
-        "GetActionPoint": 30,
         "ActionPointLimit": 120,
+        "GetActionPoint": 30,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.21,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.21
         },
         "MasterExtraAttr": {
-            "HP": 11000,
             "ATK": 850,
-            "DEF": 260
-        }
+            "DEF": 260,
+            "HP": 11000
+        },
+        "PlayerExp": 650
     },
     "21": {
-        "PlayerExp": 680,
-        "GetActionPoint": 40,
         "ActionPointLimit": 121,
+        "GetActionPoint": 40,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.21,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.21
         },
         "MasterExtraAttr": {
-            "HP": 14000,
             "ATK": 1100,
-            "DEF": 340
-        }
+            "DEF": 340,
+            "HP": 14000
+        },
+        "PlayerExp": 680
     },
     "22": {
-        "PlayerExp": 720,
-        "GetActionPoint": 40,
         "ActionPointLimit": 122,
+        "GetActionPoint": 40,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.21,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.21
         },
         "MasterExtraAttr": {
-            "HP": 15000,
             "ATK": 1300,
-            "DEF": 390
-        }
+            "DEF": 390,
+            "HP": 15000
+        },
+        "PlayerExp": 720
     },
     "23": {
-        "PlayerExp": 780,
-        "GetActionPoint": 40,
         "ActionPointLimit": 123,
+        "GetActionPoint": 40,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.21,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.21
         },
         "MasterExtraAttr": {
-            "HP": 16000,
             "ATK": 1500,
-            "DEF": 440
-        }
+            "DEF": 440,
+            "HP": 16000
+        },
+        "PlayerExp": 780
     },
     "24": {
-        "PlayerExp": 800,
-        "GetActionPoint": 40,
         "ActionPointLimit": 124,
+        "GetActionPoint": 40,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.21,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.21
         },
         "MasterExtraAttr": {
-            "HP": 20000,
             "ATK": 1500,
-            "DEF": 550
-        }
+            "DEF": 550,
+            "HP": 20000
+        },
+        "PlayerExp": 800
     },
     "25": {
-        "PlayerExp": 820,
-        "GetActionPoint": 40,
         "ActionPointLimit": 125,
+        "GetActionPoint": 40,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.21,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.21
         },
         "MasterExtraAttr": {
-            "HP": 22000,
             "ATK": 1500,
-            "DEF": 550
-        }
+            "DEF": 550,
+            "HP": 22000
+        },
+        "PlayerExp": 820
     },
     "26": {
-        "PlayerExp": 880,
-        "GetActionPoint": 40,
         "ActionPointLimit": 126,
+        "GetActionPoint": 40,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.31,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.31
         },
         "MasterExtraAttr": {
-            "HP": 22000,
             "ATK": 1500,
-            "DEF": 550
-        }
+            "DEF": 550,
+            "HP": 22000
+        },
+        "PlayerExp": 880
     },
     "27": {
-        "PlayerExp": 880,
-        "GetActionPoint": 40,
         "ActionPointLimit": 127,
+        "GetActionPoint": 40,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.31,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.31
         },
         "MasterExtraAttr": {
-            "HP": 22000,
             "ATK": 1500,
-            "DEF": 550
-        }
+            "DEF": 550,
+            "HP": 22000
+        },
+        "PlayerExp": 880
     },
     "28": {
-        "PlayerExp": 900,
-        "GetActionPoint": 40,
         "ActionPointLimit": 128,
+        "GetActionPoint": 40,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.31,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.31
         },
         "MasterExtraAttr": {
-            "HP": 22000,
             "ATK": 1500,
-            "DEF": 550
-        }
+            "DEF": 550,
+            "HP": 22000
+        },
+        "PlayerExp": 900
     },
     "29": {
-        "PlayerExp": 940,
-        "GetActionPoint": 40,
         "ActionPointLimit": 129,
+        "GetActionPoint": 40,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.31,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.31
         },
         "MasterExtraAttr": {
-            "HP": 22000,
             "ATK": 1500,
-            "DEF": 550
-        }
+            "DEF": 550,
+            "HP": 22000
+        },
+        "PlayerExp": 940
+    },
+    "3": {
+        "ActionPointLimit": 70,
+        "GetActionPoint": 10,
+        "LevelUpEffect": [],
+        "MasterAttrFactor": {
+            "ATK": 1,
+            "DEF": 1,
+            "HP": 1
+        },
+        "MasterExtraAttr": {
+            "ATK": 0,
+            "DEF": 0,
+            "HP": 200
+        },
+        "PlayerExp": 25
     },
     "30": {
-        "PlayerExp": 980,
-        "GetActionPoint": 60,
         "ActionPointLimit": 130,
+        "GetActionPoint": 60,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.31,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.31
         },
         "MasterExtraAttr": {
-            "HP": 22000,
             "ATK": 1500,
-            "DEF": 550
-        }
+            "DEF": 550,
+            "HP": 22000
+        },
+        "PlayerExp": 980
     },
     "31": {
-        "PlayerExp": 1020,
-        "GetActionPoint": 60,
         "ActionPointLimit": 131,
+        "GetActionPoint": 60,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.31,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.31
         },
         "MasterExtraAttr": {
-            "HP": 22000,
             "ATK": 1500,
-            "DEF": 550
-        }
+            "DEF": 550,
+            "HP": 22000
+        },
+        "PlayerExp": 1020
     },
     "32": {
-        "PlayerExp": 1060,
-        "GetActionPoint": 60,
         "ActionPointLimit": 132,
+        "GetActionPoint": 60,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.31,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.31
         },
         "MasterExtraAttr": {
-            "HP": 22000,
             "ATK": 1500,
-            "DEF": 550
-        }
+            "DEF": 550,
+            "HP": 22000
+        },
+        "PlayerExp": 1060
     },
     "33": {
-        "PlayerExp": 1120,
-        "GetActionPoint": 60,
         "ActionPointLimit": 133,
+        "GetActionPoint": 60,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.31,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.31
         },
         "MasterExtraAttr": {
-            "HP": 22000,
             "ATK": 1500,
-            "DEF": 550
-        }
+            "DEF": 550,
+            "HP": 22000
+        },
+        "PlayerExp": 1120
     },
     "34": {
-        "PlayerExp": 1180,
-        "GetActionPoint": 60,
         "ActionPointLimit": 134,
+        "GetActionPoint": 60,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.31,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.31
         },
         "MasterExtraAttr": {
-            "HP": 22000,
             "ATK": 1500,
-            "DEF": 550
-        }
+            "DEF": 550,
+            "HP": 22000
+        },
+        "PlayerExp": 1180
     },
     "35": {
-        "PlayerExp": 1320,
-        "GetActionPoint": 80,
         "ActionPointLimit": 135,
+        "GetActionPoint": 80,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.31,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.31
         },
         "MasterExtraAttr": {
-            "HP": 22000,
             "ATK": 1800,
-            "DEF": 550
-        }
+            "DEF": 550,
+            "HP": 22000
+        },
+        "PlayerExp": 1320
     },
     "36": {
-        "PlayerExp": 1360,
-        "GetActionPoint": 80,
         "ActionPointLimit": 136,
+        "GetActionPoint": 80,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.42,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.42
         },
         "MasterExtraAttr": {
-            "HP": 22000,
             "ATK": 1800,
-            "DEF": 550
-        }
+            "DEF": 550,
+            "HP": 22000
+        },
+        "PlayerExp": 1360
     },
     "37": {
-        "PlayerExp": 1440,
-        "GetActionPoint": 80,
         "ActionPointLimit": 137,
+        "GetActionPoint": 80,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.42,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.42
         },
         "MasterExtraAttr": {
-            "HP": 22000,
             "ATK": 1800,
-            "DEF": 550
-        }
+            "DEF": 550,
+            "HP": 22000
+        },
+        "PlayerExp": 1440
     },
     "38": {
-        "PlayerExp": 1500,
-        "GetActionPoint": 80,
         "ActionPointLimit": 138,
+        "GetActionPoint": 80,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.42,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.42
         },
         "MasterExtraAttr": {
-            "HP": 22000,
             "ATK": 1800,
-            "DEF": 550
-        }
+            "DEF": 550,
+            "HP": 22000
+        },
+        "PlayerExp": 1500
     },
     "39": {
-        "PlayerExp": 1560,
-        "GetActionPoint": 80,
         "ActionPointLimit": 139,
+        "GetActionPoint": 80,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.42,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.42
         },
         "MasterExtraAttr": {
-            "HP": 22000,
             "ATK": 1800,
-            "DEF": 550
-        }
+            "DEF": 550,
+            "HP": 22000
+        },
+        "PlayerExp": 1560
+    },
+    "4": {
+        "ActionPointLimit": 75,
+        "GetActionPoint": 10,
+        "LevelUpEffect": [],
+        "MasterAttrFactor": {
+            "ATK": 1,
+            "DEF": 1,
+            "HP": 1
+        },
+        "MasterExtraAttr": {
+            "ATK": 0,
+            "DEF": 0,
+            "HP": 200
+        },
+        "PlayerExp": 30
     },
     "40": {
-        "PlayerExp": 1700,
-        "GetActionPoint": 100,
         "ActionPointLimit": 140,
+        "GetActionPoint": 100,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.42,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.42
         },
         "MasterExtraAttr": {
-            "HP": 22000,
             "ATK": 1800,
-            "DEF": 550
-        }
+            "DEF": 550,
+            "HP": 22000
+        },
+        "PlayerExp": 1700
     },
     "41": {
-        "PlayerExp": 1840,
-        "GetActionPoint": 100,
         "ActionPointLimit": 141,
+        "GetActionPoint": 100,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.42,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.42
         },
         "MasterExtraAttr": {
-            "HP": 22000,
             "ATK": 1800,
-            "DEF": 550
-        }
+            "DEF": 550,
+            "HP": 22000
+        },
+        "PlayerExp": 1840
     },
     "42": {
-        "PlayerExp": 1940,
-        "GetActionPoint": 100,
         "ActionPointLimit": 142,
+        "GetActionPoint": 100,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.42,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.42
         },
         "MasterExtraAttr": {
-            "HP": 22000,
             "ATK": 1800,
-            "DEF": 550
-        }
+            "DEF": 550,
+            "HP": 22000
+        },
+        "PlayerExp": 1940
     },
     "43": {
-        "PlayerExp": 2040,
-        "GetActionPoint": 100,
         "ActionPointLimit": 143,
+        "GetActionPoint": 100,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.42,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.42
         },
         "MasterExtraAttr": {
-            "HP": 22000,
             "ATK": 1800,
-            "DEF": 550
-        }
+            "DEF": 550,
+            "HP": 22000
+        },
+        "PlayerExp": 2040
     },
     "44": {
-        "PlayerExp": 2220,
-        "GetActionPoint": 100,
         "ActionPointLimit": 144,
+        "GetActionPoint": 100,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.42,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.42
         },
         "MasterExtraAttr": {
-            "HP": 22000,
             "ATK": 1800,
-            "DEF": 550
-        }
+            "DEF": 550,
+            "HP": 22000
+        },
+        "PlayerExp": 2220
     },
     "45": {
-        "PlayerExp": 2320,
-        "GetActionPoint": 100,
         "ActionPointLimit": 145,
+        "GetActionPoint": 100,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.42,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.42
         },
         "MasterExtraAttr": {
-            "HP": 22000,
             "ATK": 1800,
-            "DEF": 550
-        }
+            "DEF": 550,
+            "HP": 22000
+        },
+        "PlayerExp": 2320
     },
     "46": {
-        "PlayerExp": 2420,
-        "GetActionPoint": 100,
         "ActionPointLimit": 146,
+        "GetActionPoint": 100,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.42,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.42
         },
         "MasterExtraAttr": {
-            "HP": 22000,
             "ATK": 1800,
-            "DEF": 550
-        }
+            "DEF": 550,
+            "HP": 22000
+        },
+        "PlayerExp": 2420
     },
     "47": {
-        "PlayerExp": 2520,
-        "GetActionPoint": 100,
         "ActionPointLimit": 147,
+        "GetActionPoint": 100,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.42,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.42
         },
         "MasterExtraAttr": {
-            "HP": 22000,
             "ATK": 1800,
-            "DEF": 550
-        }
+            "DEF": 550,
+            "HP": 22000
+        },
+        "PlayerExp": 2520
     },
     "48": {
-        "PlayerExp": 2620,
-        "GetActionPoint": 100,
         "ActionPointLimit": 148,
+        "GetActionPoint": 100,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.52,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.52
         },
         "MasterExtraAttr": {
-            "HP": 22000,
             "ATK": 1800,
-            "DEF": 550
-        }
+            "DEF": 550,
+            "HP": 22000
+        },
+        "PlayerExp": 2620
     },
     "49": {
-        "PlayerExp": 2860,
-        "GetActionPoint": 100,
         "ActionPointLimit": 149,
+        "GetActionPoint": 100,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.52,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.52
         },
         "MasterExtraAttr": {
-            "HP": 22000,
             "ATK": 1800,
-            "DEF": 550
-        }
+            "DEF": 550,
+            "HP": 22000
+        },
+        "PlayerExp": 2860
+    },
+    "5": {
+        "ActionPointLimit": 80,
+        "GetActionPoint": 10,
+        "LevelUpEffect": [],
+        "MasterAttrFactor": {
+            "ATK": 1,
+            "DEF": 1,
+            "HP": 1
+        },
+        "MasterExtraAttr": {
+            "ATK": 0,
+            "DEF": 0,
+            "HP": 200
+        },
+        "PlayerExp": 40
     },
     "50": {
-        "PlayerExp": 3060,
-        "GetActionPoint": 100,
         "ActionPointLimit": 150,
+        "GetActionPoint": 100,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.52,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.52
         },
         "MasterExtraAttr": {
-            "HP": 22000,
             "ATK": 1800,
-            "DEF": 550
-        }
+            "DEF": 550,
+            "HP": 22000
+        },
+        "PlayerExp": 3060
     },
     "51": {
-        "PlayerExp": 3200,
-        "GetActionPoint": 100,
         "ActionPointLimit": 151,
+        "GetActionPoint": 100,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.52,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.52
         },
         "MasterExtraAttr": {
-            "HP": 22000,
             "ATK": 1800,
-            "DEF": 550
-        }
+            "DEF": 550,
+            "HP": 22000
+        },
+        "PlayerExp": 3200
     },
     "52": {
-        "PlayerExp": 3540,
-        "GetActionPoint": 100,
         "ActionPointLimit": 152,
+        "GetActionPoint": 100,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.52,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.52
         },
         "MasterExtraAttr": {
-            "HP": 22000,
             "ATK": 1800,
-            "DEF": 550
-        }
+            "DEF": 550,
+            "HP": 22000
+        },
+        "PlayerExp": 3540
     },
     "53": {
-        "PlayerExp": 3680,
-        "GetActionPoint": 100,
         "ActionPointLimit": 153,
+        "GetActionPoint": 100,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.52,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.52
         },
         "MasterExtraAttr": {
-            "HP": 22000,
             "ATK": 1800,
-            "DEF": 550
-        }
+            "DEF": 550,
+            "HP": 22000
+        },
+        "PlayerExp": 3680
     },
     "54": {
-        "PlayerExp": 3840,
-        "GetActionPoint": 100,
         "ActionPointLimit": 154,
+        "GetActionPoint": 100,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.52,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.52
         },
         "MasterExtraAttr": {
-            "HP": 22000,
             "ATK": 1800,
-            "DEF": 550
-        }
+            "DEF": 550,
+            "HP": 22000
+        },
+        "PlayerExp": 3840
     },
     "55": {
-        "PlayerExp": 3920,
-        "GetActionPoint": 100,
         "ActionPointLimit": 155,
+        "GetActionPoint": 100,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.63,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.63
         },
         "MasterExtraAttr": {
-            "HP": 22000,
             "ATK": 2000,
-            "DEF": 600
-        }
+            "DEF": 600,
+            "HP": 22000
+        },
+        "PlayerExp": 3920
     },
     "56": {
-        "PlayerExp": 4340,
-        "GetActionPoint": 100,
         "ActionPointLimit": 156,
+        "GetActionPoint": 100,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.63,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.63
         },
         "MasterExtraAttr": {
-            "HP": 22000,
             "ATK": 2000,
-            "DEF": 600
-        }
+            "DEF": 600,
+            "HP": 22000
+        },
+        "PlayerExp": 4340
     },
     "57": {
-        "PlayerExp": 4500,
-        "GetActionPoint": 100,
         "ActionPointLimit": 157,
+        "GetActionPoint": 100,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.63,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.63
         },
         "MasterExtraAttr": {
-            "HP": 22000,
             "ATK": 2000,
-            "DEF": 600
-        }
+            "DEF": 600,
+            "HP": 22000
+        },
+        "PlayerExp": 4500
     },
     "58": {
-        "PlayerExp": 4660,
-        "GetActionPoint": 100,
         "ActionPointLimit": 158,
+        "GetActionPoint": 100,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.63,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.63
         },
         "MasterExtraAttr": {
-            "HP": 22000,
             "ATK": 2000,
-            "DEF": 900
-        }
+            "DEF": 900,
+            "HP": 22000
+        },
+        "PlayerExp": 4660
     },
     "59": {
-        "PlayerExp": 5080,
-        "GetActionPoint": 100,
         "ActionPointLimit": 159,
+        "GetActionPoint": 100,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.63,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.63
         },
         "MasterExtraAttr": {
-            "HP": 22000,
             "ATK": 2000,
-            "DEF": 900
-        }
+            "DEF": 900,
+            "HP": 22000
+        },
+        "PlayerExp": 5080
+    },
+    "6": {
+        "ActionPointLimit": 84,
+        "GetActionPoint": 30,
+        "LevelUpEffect": [],
+        "MasterAttrFactor": {
+            "ATK": 1,
+            "DEF": 1,
+            "HP": 1.1
+        },
+        "MasterExtraAttr": {
+            "ATK": 0,
+            "DEF": 10,
+            "HP": 200
+        },
+        "PlayerExp": 60
     },
     "60": {
-        "PlayerExp": 5300,
-        "GetActionPoint": 100,
         "ActionPointLimit": 160,
+        "GetActionPoint": 100,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.63,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.63
         },
         "MasterExtraAttr": {
-            "HP": 22000,
             "ATK": 2500,
-            "DEF": 900
-        }
+            "DEF": 900,
+            "HP": 22000
+        },
+        "PlayerExp": 5300
     },
     "61": {
-        "PlayerExp": 5600,
-        "GetActionPoint": 100,
         "ActionPointLimit": 161,
+        "GetActionPoint": 100,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.73,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.73
         },
         "MasterExtraAttr": {
-            "HP": 29000,
             "ATK": 2500,
-            "DEF": 900
-        }
+            "DEF": 900,
+            "HP": 29000
+        },
+        "PlayerExp": 5600
     },
     "62": {
-        "PlayerExp": 5900,
-        "GetActionPoint": 100,
         "ActionPointLimit": 162,
-        "LevelUpEffect": [],
-        "MasterAttrFactor": {
-            "HP": 1.73,
-            "ATK": 1,
-            "DEF": 1
-        },
-        "MasterExtraAttr": {
-            "HP": 32000,
-            "ATK": 2500,
-            "DEF": 900
-        }
-    },
-    "64": {
-        "PlayerExp": 6500,
         "GetActionPoint": 100,
-        "ActionPointLimit": 164,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.73,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.73
         },
         "MasterExtraAttr": {
-            "HP": 38000,
             "ATK": 2500,
-            "DEF": 900
-        }
-    },
-    "66": {
-        "PlayerExp": 7100,
-        "GetActionPoint": 100,
-        "ActionPointLimit": 166,
-        "LevelUpEffect": [],
-        "MasterAttrFactor": {
-            "HP": 1.83,
-            "ATK": 1,
-            "DEF": 1
+            "DEF": 900,
+            "HP": 32000
         },
-        "MasterExtraAttr": {
-            "HP": 48000,
-            "ATK": 2500,
-            "DEF": 900
-        }
-    },
-    "67": {
-        "PlayerExp": 7400,
-        "GetActionPoint": 100,
-        "ActionPointLimit": 167,
-        "LevelUpEffect": [],
-        "MasterAttrFactor": {
-            "HP": 1.83,
-            "ATK": 1,
-            "DEF": 1
-        },
-        "MasterExtraAttr": {
-            "HP": 53000,
-            "ATK": 2500,
-            "DEF": 900
-        }
-    },
-    "68": {
-        "PlayerExp": 7700,
-        "GetActionPoint": 100,
-        "ActionPointLimit": 168,
-        "LevelUpEffect": [],
-        "MasterAttrFactor": {
-            "HP": 1.93,
-            "ATK": 1,
-            "DEF": 1
-        },
-        "MasterExtraAttr": {
-            "HP": 60000,
-            "ATK": 2500,
-            "DEF": 900
-        }
-    },
-    "69": {
-        "PlayerExp": 8000,
-        "GetActionPoint": 100,
-        "ActionPointLimit": 169,
-        "LevelUpEffect": [],
-        "MasterAttrFactor": {
-            "HP": 1.93,
-            "ATK": 1,
-            "DEF": 1
-        },
-        "MasterExtraAttr": {
-            "HP": 67000,
-            "ATK": 2500,
-            "DEF": 900
-        }
-    },
-    "65": {
-        "PlayerExp": 6800,
-        "GetActionPoint": 100,
-        "ActionPointLimit": 165,
-        "LevelUpEffect": [],
-        "MasterAttrFactor": {
-            "HP": 1.83,
-            "ATK": 1,
-            "DEF": 1
-        },
-        "MasterExtraAttr": {
-            "HP": 43000,
-            "ATK": 2500,
-            "DEF": 900
-        }
-    },
-    "70": {
-        "PlayerExp": 8300,
-        "GetActionPoint": 100,
-        "ActionPointLimit": 170,
-        "LevelUpEffect": [],
-        "MasterAttrFactor": {
-            "HP": 1.93,
-            "ATK": 1,
-            "DEF": 1
-        },
-        "MasterExtraAttr": {
-            "HP": 74000,
-            "ATK": 2500,
-            "DEF": 900
-        }
+        "PlayerExp": 5900
     },
     "63": {
-        "PlayerExp": 6200,
-        "GetActionPoint": 100,
         "ActionPointLimit": 163,
+        "GetActionPoint": 100,
         "LevelUpEffect": [],
         "MasterAttrFactor": {
-            "HP": 1.73,
             "ATK": 1,
-            "DEF": 1
+            "DEF": 1,
+            "HP": 1.73
         },
         "MasterExtraAttr": {
-            "HP": 35000,
             "ATK": 2500,
-            "DEF": 900
-        }
+            "DEF": 900,
+            "HP": 35000
+        },
+        "PlayerExp": 6200
+    },
+    "64": {
+        "ActionPointLimit": 164,
+        "GetActionPoint": 100,
+        "LevelUpEffect": [],
+        "MasterAttrFactor": {
+            "ATK": 1,
+            "DEF": 1,
+            "HP": 1.73
+        },
+        "MasterExtraAttr": {
+            "ATK": 2500,
+            "DEF": 900,
+            "HP": 38000
+        },
+        "PlayerExp": 6500
+    },
+    "65": {
+        "ActionPointLimit": 165,
+        "GetActionPoint": 100,
+        "LevelUpEffect": [],
+        "MasterAttrFactor": {
+            "ATK": 1,
+            "DEF": 1,
+            "HP": 1.83
+        },
+        "MasterExtraAttr": {
+            "ATK": 2500,
+            "DEF": 900,
+            "HP": 43000
+        },
+        "PlayerExp": 6800
+    },
+    "66": {
+        "ActionPointLimit": 166,
+        "GetActionPoint": 100,
+        "LevelUpEffect": [],
+        "MasterAttrFactor": {
+            "ATK": 1,
+            "DEF": 1,
+            "HP": 1.83
+        },
+        "MasterExtraAttr": {
+            "ATK": 2500,
+            "DEF": 900,
+            "HP": 48000
+        },
+        "PlayerExp": 7100
+    },
+    "67": {
+        "ActionPointLimit": 167,
+        "GetActionPoint": 100,
+        "LevelUpEffect": [],
+        "MasterAttrFactor": {
+            "ATK": 1,
+            "DEF": 1,
+            "HP": 1.83
+        },
+        "MasterExtraAttr": {
+            "ATK": 2500,
+            "DEF": 900,
+            "HP": 53000
+        },
+        "PlayerExp": 7400
+    },
+    "68": {
+        "ActionPointLimit": 168,
+        "GetActionPoint": 100,
+        "LevelUpEffect": [],
+        "MasterAttrFactor": {
+            "ATK": 1,
+            "DEF": 1,
+            "HP": 1.93
+        },
+        "MasterExtraAttr": {
+            "ATK": 2500,
+            "DEF": 900,
+            "HP": 60000
+        },
+        "PlayerExp": 7700
+    },
+    "69": {
+        "ActionPointLimit": 169,
+        "GetActionPoint": 100,
+        "LevelUpEffect": [],
+        "MasterAttrFactor": {
+            "ATK": 1,
+            "DEF": 1,
+            "HP": 1.93
+        },
+        "MasterExtraAttr": {
+            "ATK": 2500,
+            "DEF": 900,
+            "HP": 67000
+        },
+        "PlayerExp": 8000
+    },
+    "7": {
+        "ActionPointLimit": 88,
+        "GetActionPoint": 30,
+        "LevelUpEffect": [],
+        "MasterAttrFactor": {
+            "ATK": 1,
+            "DEF": 1,
+            "HP": 1.1
+        },
+        "MasterExtraAttr": {
+            "ATK": 0,
+            "DEF": 10,
+            "HP": 200
+        },
+        "PlayerExp": 80
+    },
+    "70": {
+        "ActionPointLimit": 170,
+        "GetActionPoint": 100,
+        "LevelUpEffect": [],
+        "MasterAttrFactor": {
+            "ATK": 1,
+            "DEF": 1,
+            "HP": 1.93
+        },
+        "MasterExtraAttr": {
+            "ATK": 2500,
+            "DEF": 900,
+            "HP": 74000
+        },
+        "PlayerExp": 8300
+    },
+    "8": {
+        "ActionPointLimit": 92,
+        "GetActionPoint": 30,
+        "LevelUpEffect": [],
+        "MasterAttrFactor": {
+            "ATK": 1,
+            "DEF": 1,
+            "HP": 1.1
+        },
+        "MasterExtraAttr": {
+            "ATK": 0,
+            "DEF": 10,
+            "HP": 200
+        },
+        "PlayerExp": 100
+    },
+    "9": {
+        "ActionPointLimit": 96,
+        "GetActionPoint": 30,
+        "LevelUpEffect": [],
+        "MasterAttrFactor": {
+            "ATK": 1,
+            "DEF": 1,
+            "HP": 1.1
+        },
+        "MasterExtraAttr": {
+            "ATK": 0,
+            "DEF": 10,
+            "HP": 200
+        },
+        "PlayerExp": 120
     }
 }

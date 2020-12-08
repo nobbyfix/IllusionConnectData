@@ -1,1247 +1,1247 @@
 {
-    "AZuoHeS01S01": {
-        "Name": "BlockPoint_AS02S01_Name",
-        "Map": "AZuoHeM01",
-        "Location": [
-            -200,
-            -250
-        ],
-        "PreBattlePoint": [],
-        "PreStoryPoint": [],
-        "NextStoryPoint": [
-            "AZuoHeS01S02"
-        ],
-        "FirstReward": "AZuoHeS01S01_Reward",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_zuohe_01a",
-        "Icon": "s_album_story_1",
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ]
-    },
-    "AZuoHeS01S03": {
-        "Name": "BlockPoint_AS02S03_Name",
-        "Map": "AZuoHeM01",
-        "Location": [
-            -200,
-            -150
-        ],
-        "PreBattlePoint": [
-            "AM02S04"
-        ],
-        "PreStoryPoint": [
-            "AZuoHeS01S02"
-        ],
-        "NextStoryPoint": [
-            "AZuoHeS01S04"
-        ],
-        "FirstReward": "AZuoHeS01S03_Reward",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_zuohe_03a",
-        "Icon": "s_album_story_1",
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ]
-    },
-    "AZuoHeS01S02": {
-        "Name": "BlockPoint_AS02S02_Name",
-        "Map": "AZuoHeM01",
-        "Location": [
-            -200,
-            -200
-        ],
-        "PreBattlePoint": [
-            "AM02S02"
-        ],
-        "PreStoryPoint": [
-            "AZuoHeS01S01"
-        ],
-        "NextStoryPoint": [
-            "AZuoHeS01S03"
-        ],
-        "FirstReward": "AZuoHeS01S02_Reward",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_zuohe_02a",
-        "Icon": "s_album_story_1",
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ]
-    },
-    "AZuoHeS01S05": {
-        "Name": "BlockPoint_AS02S05_Name",
-        "Map": "AZuoHeM01",
-        "Location": [
-            -200,
-            -50
-        ],
-        "PreBattlePoint": [
-            "AM02S10"
-        ],
-        "PreStoryPoint": [
-            "AZuoHeS01S04"
-        ],
-        "NextStoryPoint": [],
-        "FirstReward": "AZuoHeS01S05_Reward",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_zuohe_05a",
-        "Icon": "s_album_story_1",
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ]
-    },
-    "AZuoHeS01S04": {
-        "Name": "BlockPoint_AS02S04_Name",
-        "Map": "AZuoHeM01",
-        "Location": [
-            -200,
-            -100
-        ],
-        "PreBattlePoint": [
-            "AM02S07"
-        ],
-        "PreStoryPoint": [
-            "AZuoHeS01S03"
-        ],
-        "NextStoryPoint": [
-            "AZuoHeS01S05"
-        ],
-        "FirstReward": "AZuoHeS01S04_Reward",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_zuohe_04a",
-        "Icon": "s_album_story_1",
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ]
-    },
-    "ASummerS01S05": {
-        "Name": "BlockPoint_ASummerS01S05_Name",
-        "Map": "ASummerM01",
-        "Location": [
-            -200,
-            -50
-        ],
-        "PreBattlePoint": [
-            "ASummerM01S10"
-        ],
-        "PreStoryPoint": [
-            "ASummerS01S04"
-        ],
-        "NextStoryPoint": [],
-        "FirstReward": "ASummerS01S05_Reward",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_siren_05a",
-        "Icon": "s_album_story_1",
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ]
-    },
-    "ASummerS01S04": {
-        "Name": "BlockPoint_ASummerS01S04_Name",
-        "Map": "ASummerM01",
-        "Location": [
-            -200,
-            -100
-        ],
-        "PreBattlePoint": [
-            "ASummerM01S08"
-        ],
-        "PreStoryPoint": [
-            "ASummerS01S03"
-        ],
-        "NextStoryPoint": [
-            "ASummerS01S05"
-        ],
-        "FirstReward": "ASummerS01S04_Reward",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_siren_04a",
-        "Icon": "s_album_story_1",
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ]
-    },
-    "ASummerS01E01": {
-        "Name": "BlockPoint_ASummerS01E01_Name",
-        "Map": "ASummerE01",
-        "Location": [
-            -200,
-            -250
-        ],
-        "PreBattlePoint": [],
-        "PreStoryPoint": [],
-        "NextStoryPoint": [
-            "ASummerS01E02"
-        ],
-        "FirstReward": "ASummerS01E01_Reward",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_siren_06a",
-        "Icon": "s_album_story_1",
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ]
-    },
-    "ASummerS01E02": {
-        "Name": "BlockPoint_ASummerS01E02_Name",
-        "Map": "ASummerE01",
-        "Location": [
-            -200,
-            -200
-        ],
-        "PreBattlePoint": [
-            "ASummerE01S04"
-        ],
-        "PreStoryPoint": [
-            "ASummerS01E01"
-        ],
-        "NextStoryPoint": [
-            "ASummerS01E03"
-        ],
-        "FirstReward": "ASummerS01E02_Reward",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_siren_07a",
-        "Icon": "s_album_story_1",
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ]
-    },
-    "ASummerS01E03": {
-        "Name": "BlockPoint_ASummerS01E03_Name",
-        "Map": "ASummerE01",
-        "Location": [
-            -200,
-            -150
-        ],
-        "PreBattlePoint": [
-            "ASummerE01S08"
-        ],
-        "PreStoryPoint": [
-            "ASummerS01E02"
-        ],
-        "NextStoryPoint": [
-            "ASummerS01E04"
-        ],
-        "FirstReward": "ASummerS01E03_Reward",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_siren_08a",
-        "Icon": "s_album_story_1",
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ]
-    },
-    "ASummerS01S02": {
-        "Name": "BlockPoint_ASummerS01S02_Name",
-        "Map": "ASummerM01",
-        "Location": [
-            -200,
-            -200
-        ],
-        "PreBattlePoint": [
-            "ASummerM01S02"
-        ],
-        "PreStoryPoint": [
-            "ASummerS01S01"
-        ],
-        "NextStoryPoint": [
-            "ASummerS01S03"
-        ],
-        "FirstReward": "ASummerS01S02_Reward",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_siren_02a",
-        "Icon": "s_album_story_1",
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ]
-    },
-    "ASummerS01S03": {
-        "Name": "BlockPoint_ASummerS01S03_Name",
-        "Map": "ASummerM01",
-        "Location": [
-            -200,
-            -150
-        ],
-        "PreBattlePoint": [
-            "ASummerM01S05"
-        ],
-        "PreStoryPoint": [
-            "ASummerS01S02"
-        ],
-        "NextStoryPoint": [
-            "ASummerS01S04"
-        ],
-        "FirstReward": "ASummerS01S03_Reward",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_siren_03a",
-        "Icon": "s_album_story_1",
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ]
-    },
-    "ASummerS01S01": {
-        "Name": "BlockPoint_ASummerS01S01_Name",
-        "Map": "ASummerM01",
-        "Location": [
-            -200,
-            -250
-        ],
-        "PreBattlePoint": [],
-        "PreStoryPoint": [],
-        "NextStoryPoint": [
-            "ASummerS01S02"
-        ],
-        "FirstReward": "ASummerS01S01_Reward",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_siren_01a",
-        "Icon": "s_album_story_1",
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ]
-    },
-    "ASummerS01E04": {
-        "Name": "BlockPoint_ASummerS01E04_Name",
-        "Map": "ASummerE01",
-        "Location": [
-            -200,
-            -100
-        ],
-        "PreBattlePoint": [
-            "ASummerE01S10"
-        ],
-        "PreStoryPoint": [
-            "ASummerS01E03"
-        ],
-        "NextStoryPoint": [],
-        "FirstReward": "ASummerS01E04_Reward",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_siren_09a",
-        "Icon": "s_album_story_1",
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ]
-    },
-    "AZuoHeS01E05": {
-        "Name": "BlockPoint_AS02S05_Name",
-        "Map": "AZuoHeE01",
-        "Location": [
-            -200,
-            -150
-        ],
-        "PreBattlePoint": [
-            "AE02S10"
-        ],
-        "PreStoryPoint": [
-            "AZuoHeS01E04"
-        ],
-        "NextStoryPoint": [],
-        "FirstReward": "AZuoHeS01E05_Reward",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_zuohe_10a",
-        "Icon": "s_album_story_1",
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ]
-    },
-    "AZuoHeS01E04": {
-        "Name": "BlockPoint_AS02S04_Name",
-        "Map": "AZuoHeE01",
-        "Location": [
-            -250,
-            -100
-        ],
-        "PreBattlePoint": [
-            "AE02S09"
-        ],
-        "PreStoryPoint": [
-            "AZuoHeS01E03"
-        ],
-        "NextStoryPoint": [
-            "AZuoHeS01E05"
-        ],
-        "FirstReward": "AZuoHeS01E04_Reward",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_zuohe_09a",
-        "Icon": "s_album_story_1",
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ]
-    },
-    "AZuoHeS01E03": {
-        "Name": "BlockPoint_AS02S03_Name",
-        "Map": "AZuoHeE01",
-        "Location": [
-            -300,
-            -50
-        ],
-        "PreBattlePoint": [
-            "AE02S06"
-        ],
-        "PreStoryPoint": [
-            "AZuoHeS01E02"
-        ],
-        "NextStoryPoint": [
-            "AZuoHeS01E04"
-        ],
-        "FirstReward": "AZuoHeS01E03_Reward",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_zuohe_08a",
-        "Icon": "s_album_story_1",
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ]
-    },
-    "AZuoHeS01E02": {
-        "Name": "BlockPoint_AS02S02_Name",
-        "Map": "AZuoHeE01",
-        "Location": [
-            -350,
-            0
-        ],
-        "PreBattlePoint": [
-            "AE02S03"
-        ],
-        "PreStoryPoint": [
-            "AZuoHeS01E01"
-        ],
-        "NextStoryPoint": [
-            "AZuoHeS01E03"
-        ],
-        "FirstReward": "AZuoHeS01E02_Reward",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_zuohe_07a",
-        "Icon": "s_album_story_1",
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ]
-    },
-    "AZuoHeS01E01": {
-        "Name": "BlockPoint_AS02S01_Name",
-        "Map": "AZuoHeE01",
-        "Location": [
-            -400,
-            50
-        ],
-        "PreBattlePoint": [],
-        "PreStoryPoint": [],
-        "NextStoryPoint": [
-            "AZuoHeS01E02"
-        ],
-        "FirstReward": "AZuoHeS01E01_Reward",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_zuohe_06a",
-        "Icon": "s_album_story_1",
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ]
-    },
-    "AWuXiuHuiS01S05": {
-        "Name": "BlockPoint_AWuXiuHuiS01S05_Name",
-        "Map": "AWuXiuHuiM01",
-        "Location": [
-            -200,
-            -50
-        ],
-        "PreBattlePoint": [
-            "AWuXiuHuiM01S08"
-        ],
-        "PreStoryPoint": [
-            "AWuXiuHuiS01S04"
-        ],
-        "NextStoryPoint": [],
-        "FirstReward": "AWuXiuHuiS01S05_Reward",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_MAC_05a",
-        "Icon": "s_album_story_1",
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ]
-    },
-    "AWuXiuHuiS01S04": {
-        "Name": "BlockPoint_AWuXiuHuiS01S04_Name",
-        "Map": "AWuXiuHuiM01",
-        "Location": [
-            -200,
-            -100
-        ],
-        "PreBattlePoint": [
-            "AWuXiuHuiM01S06"
-        ],
-        "PreStoryPoint": [
-            "AWuXiuHuiS01S03"
-        ],
-        "NextStoryPoint": [
-            "AWuXiuHuiS01S05"
-        ],
-        "FirstReward": "AWuXiuHuiS01S04_Reward",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_MAC_04a",
-        "Icon": "s_album_story_1",
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ]
-    },
-    "AWuXiuHuiS01S03": {
-        "Name": "BlockPoint_AWuXiuHuiS01S03_Name",
-        "Map": "AWuXiuHuiM01",
-        "Location": [
-            -200,
-            -150
-        ],
-        "PreBattlePoint": [
-            "AWuXiuHuiM01S04"
-        ],
-        "PreStoryPoint": [
-            "AWuXiuHuiS01S02"
-        ],
-        "NextStoryPoint": [
-            "AWuXiuHuiS01S04"
-        ],
-        "FirstReward": "AWuXiuHuiS01S03_Reward",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_MAC_03a",
-        "Icon": "s_album_story_1",
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ]
-    },
-    "AWuXiuHuiS01S02": {
-        "Name": "BlockPoint_AWuXiuHuiS01S02_Name",
-        "Map": "AWuXiuHuiM01",
-        "Location": [
-            -200,
-            -200
-        ],
-        "PreBattlePoint": [
-            "AWuXiuHuiM01S02"
-        ],
-        "PreStoryPoint": [
-            "AWuXiuHuiS01S01"
-        ],
-        "NextStoryPoint": [
-            "AWuXiuHuiS01S03"
-        ],
-        "FirstReward": "AWuXiuHuiS01S02_Reward",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_MAC_02a",
-        "Icon": "s_album_story_1",
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ]
-    },
-    "AWuXiuHuiS01S01": {
-        "Name": "BlockPoint_AWuXiuHuiS01S01_Name",
-        "Map": "AWuXiuHuiM01",
-        "Location": [
-            -200,
-            -250
-        ],
-        "PreBattlePoint": [],
-        "PreStoryPoint": [],
-        "NextStoryPoint": [
-            "AWuXiuHuiS01S02"
-        ],
-        "FirstReward": "AWuXiuHuiS01S01_Reward",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_MAC_01a",
-        "Icon": "s_album_story_1",
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ]
-    },
-    "AWuXiuHuiS01E01": {
-        "Name": "BlockPoint_AWuXiuHuiS01E01_Name",
-        "Map": "AWuXiuHuiE01",
-        "Location": [
-            -200,
-            -200
-        ],
-        "PreBattlePoint": [],
-        "PreStoryPoint": [],
-        "NextStoryPoint": [
-            "AWuXiuHuiS01E02"
-        ],
-        "FirstReward": "AWuXiuHuiS01E01_Reward",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_MAC_06a",
-        "Icon": "s_album_story_1",
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ]
-    },
-    "AWuXiuHuiS01E03": {
-        "Name": "BlockPoint_AWuXiuHuiS01E03_Name",
-        "Map": "AWuXiuHuiE01",
-        "Location": [
-            -200,
-            -100
-        ],
-        "PreBattlePoint": [
-            "AWuXiuHuiE01S05"
-        ],
-        "PreStoryPoint": [
-            "AWuXiuHuiS01E02"
-        ],
-        "NextStoryPoint": [
-            "AWuXiuHuiS01E04"
-        ],
-        "FirstReward": "AWuXiuHuiS01E03_Reward",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_MAC_08a",
-        "Icon": "s_album_story_1",
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ]
-    },
-    "AWuXiuHuiS01E02": {
-        "Name": "BlockPoint_AWuXiuHuiS01E02_Name",
-        "Map": "AWuXiuHuiE01",
-        "Location": [
-            -200,
-            -150
-        ],
-        "PreBattlePoint": [
-            "AWuXiuHuiE01S02"
-        ],
-        "PreStoryPoint": [
-            "AWuXiuHuiS01E01"
-        ],
-        "NextStoryPoint": [
-            "AWuXiuHuiS01E03"
-        ],
-        "FirstReward": "AWuXiuHuiS01E02_Reward",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_MAC_07a",
-        "Icon": "s_album_story_1",
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ]
-    },
-    "ASummerS01H01": {
-        "Name": "BlockPoint_ASummerS01H01_Name",
-        "Map": "ASummerM01",
-        "Location": [
-            -200,
-            0
-        ],
-        "PreBattlePoint": [],
-        "PreStoryPoint": [],
-        "NextStoryPoint": [],
-        "FirstReward": "ASummerS01H01_Reward",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_siren_001a",
-        "Icon": "s_album_story_1",
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ]
-    },
-    "AWuXiuHuiS01E04": {
-        "Name": "BlockPoint_AWuXiuHuiS01E04_Name",
-        "Map": "AWuXiuHuiE01",
-        "Location": [
-            -200,
-            -50
-        ],
-        "PreBattlePoint": [
-            "AWuXiuHuiE01S08"
-        ],
-        "PreStoryPoint": [
-            "AWuXiuHuiS01E03"
-        ],
-        "NextStoryPoint": [],
-        "FirstReward": "AWuXiuHuiS01E04_Reward",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_MAC_09a",
-        "Icon": "s_album_story_1",
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ]
-    },
-    "ASummerS01H03": {
-        "Name": "BlockPoint_ASummerS01H03_Name",
-        "Map": "ASummerE01",
-        "Location": [
-            -200,
-            -50
-        ],
-        "PreBattlePoint": [],
-        "PreStoryPoint": [],
-        "NextStoryPoint": [],
-        "FirstReward": "ASummerS01H03_Reward",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_siren_003a",
-        "Icon": "s_album_story_1",
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ]
-    },
-    "ASummerS01H02": {
-        "Name": "BlockPoint_ASummerS01H02_Name",
-        "Map": "ASummerM01",
-        "Location": [
-            -200,
-            50
-        ],
-        "PreBattlePoint": [],
-        "PreStoryPoint": [],
-        "NextStoryPoint": [],
-        "FirstReward": "ASummerS01H02_Reward",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_siren_002a",
-        "Icon": "s_album_story_1",
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ]
-    },
     "AS01E01": {
-        "Name": "BlockPoint_AS01E01_Name",
-        "Map": "AE01",
+        "FirstReward": "AS01E01_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
         "Location": [
             -400,
             50
         ],
-        "PreBattlePoint": [],
-        "PreStoryPoint": [],
-        "NextStoryPoint": [
-            "AS01E02"
-        ],
-        "FirstReward": "AS01E01_Reward",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_easterday_06a",
-        "Icon": "s_album_story_1",
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ]
-    },
-    "AS01S05": {
-        "Name": "BlockPoint_AS01S05_Name",
-        "Map": "AM01",
-        "Location": [
-            -200,
-            -50
-        ],
-        "PreBattlePoint": [
-            "AM01S10"
-        ],
-        "PreStoryPoint": [
-            "AS01S04"
-        ],
-        "NextStoryPoint": [],
-        "FirstReward": "AS01S05_Reward",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_easterday_05a",
-        "Icon": "s_album_story_1",
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ]
-    },
-    "AS01S04": {
-        "Name": "BlockPoint_AS01S04_Name",
-        "Map": "AM01",
-        "Location": [
-            -200,
-            -100
-        ],
-        "PreBattlePoint": [
-            "AM01S07"
-        ],
-        "PreStoryPoint": [
-            "AS01S03"
-        ],
-        "NextStoryPoint": [
-            "AS01S05"
-        ],
-        "FirstReward": "AS01S04_Reward",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_easterday_04a",
-        "Icon": "s_album_story_1",
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ]
-    },
-    "AS01S03": {
-        "Name": "BlockPoint_AS01S03_Name",
-        "Map": "AM01",
-        "Location": [
-            -200,
-            -150
-        ],
-        "PreBattlePoint": [
-            "AM01S04"
-        ],
-        "PreStoryPoint": [
-            "AS01S02"
-        ],
-        "NextStoryPoint": [
-            "AS01S04"
-        ],
-        "FirstReward": "AS01S03_Reward",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_easterday_03a",
-        "Icon": "s_album_story_1",
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ]
-    },
-    "AS01S02": {
-        "Name": "BlockPoint_AS01S02_Name",
-        "Map": "AM01",
-        "Location": [
-            -200,
-            -200
-        ],
-        "PreBattlePoint": [
-            "AM01S02"
-        ],
-        "PreStoryPoint": [
-            "AS01S01"
-        ],
-        "NextStoryPoint": [
-            "AS01S03"
-        ],
-        "FirstReward": "AS01S02_Reward",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_easterday_02a",
-        "Icon": "s_album_story_1",
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ]
-    },
-    "AS01S01": {
-        "Name": "BlockPoint_AS01S01_Name",
-        "Map": "AM01",
-        "Location": [
-            -200,
-            -250
-        ],
-        "PreBattlePoint": [],
-        "PreStoryPoint": [],
-        "NextStoryPoint": [
-            "AS01S02"
-        ],
-        "FirstReward": "AS01S01_Reward",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_easterday_01a",
-        "Icon": "s_album_story_1",
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ]
-    },
-    "AS01E03": {
-        "Name": "BlockPoint_AS01E03_Name",
         "Map": "AE01",
-        "Location": [
-            -300,
-            -50
-        ],
-        "PreBattlePoint": [
-            "AE01S06"
-        ],
-        "PreStoryPoint": [
+        "Name": "BlockPoint_AS01E01_Name",
+        "NextStoryPoint": [
             "AS01E02"
         ],
-        "NextStoryPoint": [
-            "AS01E04"
-        ],
-        "FirstReward": "AS01E03_Reward",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_easterday_08a",
-        "Icon": "s_album_story_1",
         "PointIcon": [
             "main_bg_xq_jqicon01.png",
             "main_bg_xq_jqxw01.png"
-        ]
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_easterday_06a"
     },
     "AS01E02": {
-        "Name": "BlockPoint_AS01E02_Name",
-        "Map": "AE01",
+        "FirstReward": "AS01E02_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
         "Location": [
             -350,
             0
         ],
+        "Map": "AE01",
+        "Name": "BlockPoint_AS01E02_Name",
+        "NextStoryPoint": [
+            "AS01E03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
         "PreBattlePoint": [
             "AE01S03"
         ],
         "PreStoryPoint": [
             "AS01E01"
         ],
-        "NextStoryPoint": [
-            "AS01E03"
-        ],
-        "FirstReward": "AS01E02_Reward",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_easterday_07a",
-        "Icon": "s_album_story_1",
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ]
+        "StoryLink": "eventstory_easterday_07a"
     },
-    "AS01E05": {
-        "Name": "BlockPoint_AS01E05_Name",
-        "Map": "AE01",
+    "AS01E03": {
+        "FirstReward": "AS01E03_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
         "Location": [
-            -200,
-            -150
+            -300,
+            -50
         ],
-        "PreBattlePoint": [
-            "AE01S10"
-        ],
-        "PreStoryPoint": [
+        "Map": "AE01",
+        "Name": "BlockPoint_AS01E03_Name",
+        "NextStoryPoint": [
             "AS01E04"
         ],
-        "NextStoryPoint": [],
-        "FirstReward": "AS01E05_Reward",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_easterday_10a",
-        "Icon": "s_album_story_1",
         "PointIcon": [
             "main_bg_xq_jqicon01.png",
             "main_bg_xq_jqxw01.png"
-        ]
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "AE01S06"
+        ],
+        "PreStoryPoint": [
+            "AS01E02"
+        ],
+        "StoryLink": "eventstory_easterday_08a"
     },
     "AS01E04": {
-        "Name": "BlockPoint_AS01E04_Name",
-        "Map": "AE01",
+        "FirstReward": "AS01E04_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
         "Location": [
             -250,
             -100
         ],
+        "Map": "AE01",
+        "Name": "BlockPoint_AS01E04_Name",
+        "NextStoryPoint": [
+            "AS01E05"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
         "PreBattlePoint": [
             "AE01S09"
         ],
         "PreStoryPoint": [
             "AS01E03"
         ],
-        "NextStoryPoint": [
-            "AS01E05"
-        ],
-        "FirstReward": "AS01E04_Reward",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_easterday_09a",
+        "StoryLink": "eventstory_easterday_09a"
+    },
+    "AS01E05": {
+        "FirstReward": "AS01E05_Reward",
         "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "AE01",
+        "Name": "BlockPoint_AS01E05_Name",
+        "NextStoryPoint": [],
         "PointIcon": [
             "main_bg_xq_jqicon01.png",
             "main_bg_xq_jqxw01.png"
-        ]
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "AE01S10"
+        ],
+        "PreStoryPoint": [
+            "AS01E04"
+        ],
+        "StoryLink": "eventstory_easterday_10a"
     },
-    "ASnowflakeS01S04": {
-        "Name": "ASnowflakeS01S04_Name",
-        "Map": "Snowflack_Map_M01",
+    "AS01S01": {
+        "FirstReward": "AS01S01_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
         "Location": [
             -200,
             -250
         ],
-        "PreBattlePoint": [
-            "SnowflackM09"
+        "Map": "AM01",
+        "Name": "BlockPoint_AS01S01_Name",
+        "NextStoryPoint": [
+            "AS01S02"
         ],
-        "PreStoryPoint": [
-            "ASnowflakeS01S03"
-        ],
-        "NextStoryPoint": [],
-        "FirstReward": "Snowflack_Story_Reward04",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_BXJie_04a",
-        "Icon": "s_album_story_1",
         "PointIcon": [
             "main_bg_xq_jqicon01.png",
             "main_bg_xq_jqxw01.png"
-        ]
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_easterday_01a"
     },
-    "ASnowflakeS01E04": {
-        "Name": "ASnowflakeS01E04_Name",
-        "Map": "Snowflack_Map_E01",
+    "AS01S02": {
+        "FirstReward": "AS01S02_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
         "Location": [
-            -250,
+            -200,
+            -200
+        ],
+        "Map": "AM01",
+        "Name": "BlockPoint_AS01S02_Name",
+        "NextStoryPoint": [
+            "AS01S03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "AM01S02"
+        ],
+        "PreStoryPoint": [
+            "AS01S01"
+        ],
+        "StoryLink": "eventstory_easterday_02a"
+    },
+    "AS01S03": {
+        "FirstReward": "AS01S03_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "AM01",
+        "Name": "BlockPoint_AS01S03_Name",
+        "NextStoryPoint": [
+            "AS01S04"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "AM01S04"
+        ],
+        "PreStoryPoint": [
+            "AS01S02"
+        ],
+        "StoryLink": "eventstory_easterday_03a"
+    },
+    "AS01S04": {
+        "FirstReward": "AS01S04_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
             -100
         ],
-        "PreBattlePoint": [
-            "SnowflackE09"
+        "Map": "AM01",
+        "Name": "BlockPoint_AS01S04_Name",
+        "NextStoryPoint": [
+            "AS01S05"
         ],
-        "PreStoryPoint": [
-            "ASnowflakeS01E03"
-        ],
-        "NextStoryPoint": [],
-        "FirstReward": "Snowflack_Story_Reward08",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_BXJie_08a",
-        "Icon": "s_album_story_1",
         "PointIcon": [
             "main_bg_xq_jqicon01.png",
             "main_bg_xq_jqxw01.png"
-        ]
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "AM01S07"
+        ],
+        "PreStoryPoint": [
+            "AS01S03"
+        ],
+        "StoryLink": "eventstory_easterday_04a"
+    },
+    "AS01S05": {
+        "FirstReward": "AS01S05_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -50
+        ],
+        "Map": "AM01",
+        "Name": "BlockPoint_AS01S05_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "AM01S10"
+        ],
+        "PreStoryPoint": [
+            "AS01S04"
+        ],
+        "StoryLink": "eventstory_easterday_05a"
+    },
+    "ASnowflakeS01E01": {
+        "FirstReward": "Snowflack_Story_Reward05",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -400,
+            50
+        ],
+        "Map": "Snowflack_Map_E01",
+        "Name": "ASnowflakeS01E01_Name",
+        "NextStoryPoint": [
+            "ASnowflakeS01E02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_BXJie_05a"
     },
     "ASnowflakeS01E02": {
-        "Name": "ASnowflakeS01E02_Name",
-        "Map": "Snowflack_Map_E01",
+        "FirstReward": "Snowflack_Story_Reward06",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
         "Location": [
             -350,
             0
         ],
+        "Map": "Snowflack_Map_E01",
+        "Name": "ASnowflakeS01E02_Name",
+        "NextStoryPoint": [
+            "ASnowflakeS01E03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
         "PreBattlePoint": [
             "SnowflackE03"
         ],
         "PreStoryPoint": [
             "ASnowflakeS01E01"
         ],
-        "NextStoryPoint": [
-            "ASnowflakeS01E03"
-        ],
-        "FirstReward": "Snowflack_Story_Reward06",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_BXJie_06a",
-        "Icon": "s_album_story_1",
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ]
-    },
-    "ASnowflakeS01E01": {
-        "Name": "ASnowflakeS01E01_Name",
-        "Map": "Snowflack_Map_E01",
-        "Location": [
-            -400,
-            50
-        ],
-        "PreBattlePoint": [],
-        "PreStoryPoint": [],
-        "NextStoryPoint": [
-            "ASnowflakeS01E02"
-        ],
-        "FirstReward": "Snowflack_Story_Reward05",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_BXJie_05a",
-        "Icon": "s_album_story_1",
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ]
+        "StoryLink": "eventstory_BXJie_06a"
     },
     "ASnowflakeS01E03": {
-        "Name": "ASnowflakeS01E03_Name",
-        "Map": "Snowflack_Map_E01",
+        "FirstReward": "Snowflack_Story_Reward07",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
         "Location": [
             -300,
             -50
         ],
+        "Map": "Snowflack_Map_E01",
+        "Name": "ASnowflakeS01E03_Name",
+        "NextStoryPoint": [
+            "ASnowflakeS01E04"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
         "PreBattlePoint": [
             "SnowflackE06"
         ],
         "PreStoryPoint": [
             "ASnowflakeS01E02"
         ],
-        "NextStoryPoint": [
-            "ASnowflakeS01E04"
-        ],
-        "FirstReward": "Snowflack_Story_Reward07",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_BXJie_07a",
+        "StoryLink": "eventstory_BXJie_07a"
+    },
+    "ASnowflakeS01E04": {
+        "FirstReward": "Snowflack_Story_Reward08",
         "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -250,
+            -100
+        ],
+        "Map": "Snowflack_Map_E01",
+        "Name": "ASnowflakeS01E04_Name",
+        "NextStoryPoint": [],
         "PointIcon": [
             "main_bg_xq_jqicon01.png",
             "main_bg_xq_jqxw01.png"
-        ]
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "SnowflackE09"
+        ],
+        "PreStoryPoint": [
+            "ASnowflakeS01E03"
+        ],
+        "StoryLink": "eventstory_BXJie_08a"
+    },
+    "ASnowflakeS01S01": {
+        "FirstReward": "Snowflack_Story_Reward01",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -100
+        ],
+        "Map": "Snowflack_Map_M01",
+        "Name": "ASnowflakeS01S01_Name",
+        "NextStoryPoint": [
+            "ASnowflakeS01S02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_BXJie_01a"
     },
     "ASnowflakeS01S02": {
-        "Name": "ASnowflakeS01S02_Name",
-        "Map": "Snowflack_Map_M01",
+        "FirstReward": "Snowflack_Story_Reward02",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
         "Location": [
             -200,
             -150
         ],
+        "Map": "Snowflack_Map_M01",
+        "Name": "ASnowflakeS01S02_Name",
+        "NextStoryPoint": [
+            "ASnowflakeS01S03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
         "PreBattlePoint": [
             "SnowflackM03"
         ],
         "PreStoryPoint": [
             "ASnowflakeS01S01"
         ],
-        "NextStoryPoint": [
-            "ASnowflakeS01S03"
-        ],
-        "FirstReward": "Snowflack_Story_Reward02",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_BXJie_02a",
-        "Icon": "s_album_story_1",
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ]
+        "StoryLink": "eventstory_BXJie_02a"
     },
     "ASnowflakeS01S03": {
-        "Name": "ASnowflakeS01S03_Name",
-        "Map": "Snowflack_Map_M01",
+        "FirstReward": "Snowflack_Story_Reward03",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
         "Location": [
             -200,
             -200
         ],
+        "Map": "Snowflack_Map_M01",
+        "Name": "ASnowflakeS01S03_Name",
+        "NextStoryPoint": [
+            "ASnowflakeS01S04"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
         "PreBattlePoint": [
             "SnowflackM06"
         ],
         "PreStoryPoint": [
             "ASnowflakeS01S02"
         ],
-        "NextStoryPoint": [
-            "ASnowflakeS01S04"
-        ],
-        "FirstReward": "Snowflack_Story_Reward03",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_BXJie_03a",
+        "StoryLink": "eventstory_BXJie_03a"
+    },
+    "ASnowflakeS01S04": {
+        "FirstReward": "Snowflack_Story_Reward04",
         "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -250
+        ],
+        "Map": "Snowflack_Map_M01",
+        "Name": "ASnowflakeS01S04_Name",
+        "NextStoryPoint": [],
         "PointIcon": [
             "main_bg_xq_jqicon01.png",
             "main_bg_xq_jqxw01.png"
-        ]
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "SnowflackM09"
+        ],
+        "PreStoryPoint": [
+            "ASnowflakeS01S03"
+        ],
+        "StoryLink": "eventstory_BXJie_04a"
     },
-    "ASnowflakeS01S01": {
-        "Name": "ASnowflakeS01S01_Name",
-        "Map": "Snowflack_Map_M01",
+    "ASummerS01E01": {
+        "FirstReward": "ASummerS01E01_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -250
+        ],
+        "Map": "ASummerE01",
+        "Name": "BlockPoint_ASummerS01E01_Name",
+        "NextStoryPoint": [
+            "ASummerS01E02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_siren_06a"
+    },
+    "ASummerS01E02": {
+        "FirstReward": "ASummerS01E02_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "ASummerE01",
+        "Name": "BlockPoint_ASummerS01E02_Name",
+        "NextStoryPoint": [
+            "ASummerS01E03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "ASummerE01S04"
+        ],
+        "PreStoryPoint": [
+            "ASummerS01E01"
+        ],
+        "StoryLink": "eventstory_siren_07a"
+    },
+    "ASummerS01E03": {
+        "FirstReward": "ASummerS01E03_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "ASummerE01",
+        "Name": "BlockPoint_ASummerS01E03_Name",
+        "NextStoryPoint": [
+            "ASummerS01E04"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "ASummerE01S08"
+        ],
+        "PreStoryPoint": [
+            "ASummerS01E02"
+        ],
+        "StoryLink": "eventstory_siren_08a"
+    },
+    "ASummerS01E04": {
+        "FirstReward": "ASummerS01E04_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
         "Location": [
             -200,
             -100
         ],
-        "PreBattlePoint": [],
-        "PreStoryPoint": [],
-        "NextStoryPoint": [
-            "ASnowflakeS01S02"
-        ],
-        "FirstReward": "Snowflack_Story_Reward01",
-        "IsHide": "",
-        "IsAuto": "",
-        "PointPicture": "",
-        "StoryLink": "eventstory_BXJie_01a",
-        "Icon": "s_album_story_1",
+        "Map": "ASummerE01",
+        "Name": "BlockPoint_ASummerS01E04_Name",
+        "NextStoryPoint": [],
         "PointIcon": [
             "main_bg_xq_jqicon01.png",
             "main_bg_xq_jqxw01.png"
-        ]
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "ASummerE01S10"
+        ],
+        "PreStoryPoint": [
+            "ASummerS01E03"
+        ],
+        "StoryLink": "eventstory_siren_09a"
+    },
+    "ASummerS01H01": {
+        "FirstReward": "ASummerS01H01_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            0
+        ],
+        "Map": "ASummerM01",
+        "Name": "BlockPoint_ASummerS01H01_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_siren_001a"
+    },
+    "ASummerS01H02": {
+        "FirstReward": "ASummerS01H02_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            50
+        ],
+        "Map": "ASummerM01",
+        "Name": "BlockPoint_ASummerS01H02_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_siren_002a"
+    },
+    "ASummerS01H03": {
+        "FirstReward": "ASummerS01H03_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -50
+        ],
+        "Map": "ASummerE01",
+        "Name": "BlockPoint_ASummerS01H03_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_siren_003a"
+    },
+    "ASummerS01S01": {
+        "FirstReward": "ASummerS01S01_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -250
+        ],
+        "Map": "ASummerM01",
+        "Name": "BlockPoint_ASummerS01S01_Name",
+        "NextStoryPoint": [
+            "ASummerS01S02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_siren_01a"
+    },
+    "ASummerS01S02": {
+        "FirstReward": "ASummerS01S02_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "ASummerM01",
+        "Name": "BlockPoint_ASummerS01S02_Name",
+        "NextStoryPoint": [
+            "ASummerS01S03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "ASummerM01S02"
+        ],
+        "PreStoryPoint": [
+            "ASummerS01S01"
+        ],
+        "StoryLink": "eventstory_siren_02a"
+    },
+    "ASummerS01S03": {
+        "FirstReward": "ASummerS01S03_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "ASummerM01",
+        "Name": "BlockPoint_ASummerS01S03_Name",
+        "NextStoryPoint": [
+            "ASummerS01S04"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "ASummerM01S05"
+        ],
+        "PreStoryPoint": [
+            "ASummerS01S02"
+        ],
+        "StoryLink": "eventstory_siren_03a"
+    },
+    "ASummerS01S04": {
+        "FirstReward": "ASummerS01S04_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -100
+        ],
+        "Map": "ASummerM01",
+        "Name": "BlockPoint_ASummerS01S04_Name",
+        "NextStoryPoint": [
+            "ASummerS01S05"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "ASummerM01S08"
+        ],
+        "PreStoryPoint": [
+            "ASummerS01S03"
+        ],
+        "StoryLink": "eventstory_siren_04a"
+    },
+    "ASummerS01S05": {
+        "FirstReward": "ASummerS01S05_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -50
+        ],
+        "Map": "ASummerM01",
+        "Name": "BlockPoint_ASummerS01S05_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "ASummerM01S10"
+        ],
+        "PreStoryPoint": [
+            "ASummerS01S04"
+        ],
+        "StoryLink": "eventstory_siren_05a"
+    },
+    "AWuXiuHuiS01E01": {
+        "FirstReward": "AWuXiuHuiS01E01_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "AWuXiuHuiE01",
+        "Name": "BlockPoint_AWuXiuHuiS01E01_Name",
+        "NextStoryPoint": [
+            "AWuXiuHuiS01E02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_MAC_06a"
+    },
+    "AWuXiuHuiS01E02": {
+        "FirstReward": "AWuXiuHuiS01E02_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "AWuXiuHuiE01",
+        "Name": "BlockPoint_AWuXiuHuiS01E02_Name",
+        "NextStoryPoint": [
+            "AWuXiuHuiS01E03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "AWuXiuHuiE01S02"
+        ],
+        "PreStoryPoint": [
+            "AWuXiuHuiS01E01"
+        ],
+        "StoryLink": "eventstory_MAC_07a"
+    },
+    "AWuXiuHuiS01E03": {
+        "FirstReward": "AWuXiuHuiS01E03_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -100
+        ],
+        "Map": "AWuXiuHuiE01",
+        "Name": "BlockPoint_AWuXiuHuiS01E03_Name",
+        "NextStoryPoint": [
+            "AWuXiuHuiS01E04"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "AWuXiuHuiE01S05"
+        ],
+        "PreStoryPoint": [
+            "AWuXiuHuiS01E02"
+        ],
+        "StoryLink": "eventstory_MAC_08a"
+    },
+    "AWuXiuHuiS01E04": {
+        "FirstReward": "AWuXiuHuiS01E04_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -50
+        ],
+        "Map": "AWuXiuHuiE01",
+        "Name": "BlockPoint_AWuXiuHuiS01E04_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "AWuXiuHuiE01S08"
+        ],
+        "PreStoryPoint": [
+            "AWuXiuHuiS01E03"
+        ],
+        "StoryLink": "eventstory_MAC_09a"
+    },
+    "AWuXiuHuiS01S01": {
+        "FirstReward": "AWuXiuHuiS01S01_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -250
+        ],
+        "Map": "AWuXiuHuiM01",
+        "Name": "BlockPoint_AWuXiuHuiS01S01_Name",
+        "NextStoryPoint": [
+            "AWuXiuHuiS01S02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_MAC_01a"
+    },
+    "AWuXiuHuiS01S02": {
+        "FirstReward": "AWuXiuHuiS01S02_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "AWuXiuHuiM01",
+        "Name": "BlockPoint_AWuXiuHuiS01S02_Name",
+        "NextStoryPoint": [
+            "AWuXiuHuiS01S03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "AWuXiuHuiM01S02"
+        ],
+        "PreStoryPoint": [
+            "AWuXiuHuiS01S01"
+        ],
+        "StoryLink": "eventstory_MAC_02a"
+    },
+    "AWuXiuHuiS01S03": {
+        "FirstReward": "AWuXiuHuiS01S03_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "AWuXiuHuiM01",
+        "Name": "BlockPoint_AWuXiuHuiS01S03_Name",
+        "NextStoryPoint": [
+            "AWuXiuHuiS01S04"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "AWuXiuHuiM01S04"
+        ],
+        "PreStoryPoint": [
+            "AWuXiuHuiS01S02"
+        ],
+        "StoryLink": "eventstory_MAC_03a"
+    },
+    "AWuXiuHuiS01S04": {
+        "FirstReward": "AWuXiuHuiS01S04_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -100
+        ],
+        "Map": "AWuXiuHuiM01",
+        "Name": "BlockPoint_AWuXiuHuiS01S04_Name",
+        "NextStoryPoint": [
+            "AWuXiuHuiS01S05"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "AWuXiuHuiM01S06"
+        ],
+        "PreStoryPoint": [
+            "AWuXiuHuiS01S03"
+        ],
+        "StoryLink": "eventstory_MAC_04a"
+    },
+    "AWuXiuHuiS01S05": {
+        "FirstReward": "AWuXiuHuiS01S05_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -50
+        ],
+        "Map": "AWuXiuHuiM01",
+        "Name": "BlockPoint_AWuXiuHuiS01S05_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "AWuXiuHuiM01S08"
+        ],
+        "PreStoryPoint": [
+            "AWuXiuHuiS01S04"
+        ],
+        "StoryLink": "eventstory_MAC_05a"
+    },
+    "AZuoHeS01E01": {
+        "FirstReward": "AZuoHeS01E01_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -400,
+            50
+        ],
+        "Map": "AZuoHeE01",
+        "Name": "BlockPoint_AS02S01_Name",
+        "NextStoryPoint": [
+            "AZuoHeS01E02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_zuohe_06a"
+    },
+    "AZuoHeS01E02": {
+        "FirstReward": "AZuoHeS01E02_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -350,
+            0
+        ],
+        "Map": "AZuoHeE01",
+        "Name": "BlockPoint_AS02S02_Name",
+        "NextStoryPoint": [
+            "AZuoHeS01E03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "AE02S03"
+        ],
+        "PreStoryPoint": [
+            "AZuoHeS01E01"
+        ],
+        "StoryLink": "eventstory_zuohe_07a"
+    },
+    "AZuoHeS01E03": {
+        "FirstReward": "AZuoHeS01E03_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -300,
+            -50
+        ],
+        "Map": "AZuoHeE01",
+        "Name": "BlockPoint_AS02S03_Name",
+        "NextStoryPoint": [
+            "AZuoHeS01E04"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "AE02S06"
+        ],
+        "PreStoryPoint": [
+            "AZuoHeS01E02"
+        ],
+        "StoryLink": "eventstory_zuohe_08a"
+    },
+    "AZuoHeS01E04": {
+        "FirstReward": "AZuoHeS01E04_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -250,
+            -100
+        ],
+        "Map": "AZuoHeE01",
+        "Name": "BlockPoint_AS02S04_Name",
+        "NextStoryPoint": [
+            "AZuoHeS01E05"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "AE02S09"
+        ],
+        "PreStoryPoint": [
+            "AZuoHeS01E03"
+        ],
+        "StoryLink": "eventstory_zuohe_09a"
+    },
+    "AZuoHeS01E05": {
+        "FirstReward": "AZuoHeS01E05_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "AZuoHeE01",
+        "Name": "BlockPoint_AS02S05_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "AE02S10"
+        ],
+        "PreStoryPoint": [
+            "AZuoHeS01E04"
+        ],
+        "StoryLink": "eventstory_zuohe_10a"
+    },
+    "AZuoHeS01S01": {
+        "FirstReward": "AZuoHeS01S01_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -250
+        ],
+        "Map": "AZuoHeM01",
+        "Name": "BlockPoint_AS02S01_Name",
+        "NextStoryPoint": [
+            "AZuoHeS01S02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_zuohe_01a"
+    },
+    "AZuoHeS01S02": {
+        "FirstReward": "AZuoHeS01S02_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "AZuoHeM01",
+        "Name": "BlockPoint_AS02S02_Name",
+        "NextStoryPoint": [
+            "AZuoHeS01S03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "AM02S02"
+        ],
+        "PreStoryPoint": [
+            "AZuoHeS01S01"
+        ],
+        "StoryLink": "eventstory_zuohe_02a"
+    },
+    "AZuoHeS01S03": {
+        "FirstReward": "AZuoHeS01S03_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "AZuoHeM01",
+        "Name": "BlockPoint_AS02S03_Name",
+        "NextStoryPoint": [
+            "AZuoHeS01S04"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "AM02S04"
+        ],
+        "PreStoryPoint": [
+            "AZuoHeS01S02"
+        ],
+        "StoryLink": "eventstory_zuohe_03a"
+    },
+    "AZuoHeS01S04": {
+        "FirstReward": "AZuoHeS01S04_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -100
+        ],
+        "Map": "AZuoHeM01",
+        "Name": "BlockPoint_AS02S04_Name",
+        "NextStoryPoint": [
+            "AZuoHeS01S05"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "AM02S07"
+        ],
+        "PreStoryPoint": [
+            "AZuoHeS01S03"
+        ],
+        "StoryLink": "eventstory_zuohe_04a"
+    },
+    "AZuoHeS01S05": {
+        "FirstReward": "AZuoHeS01S05_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -50
+        ],
+        "Map": "AZuoHeM01",
+        "Name": "BlockPoint_AS02S05_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "AM02S10"
+        ],
+        "PreStoryPoint": [
+            "AZuoHeS01S04"
+        ],
+        "StoryLink": "eventstory_zuohe_05a"
     }
 }

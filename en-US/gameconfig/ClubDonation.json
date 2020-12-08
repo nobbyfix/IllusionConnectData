@@ -1,32 +1,32 @@
 {
-    "GoldDonation": {
-        "Name": "GoldDonationName",
-        "BoardIcon": "st_img_coin",
-        "Order": 1,
-        "Type": "IR_Gold",
-        "Demand": 20000,
-        "ClubExp": 50,
-        "Reward": "ClubDonation01",
-        "Vip_limited": 0
-    },
     "DiamondDonation": {
-        "Name": "DiamondDonationName",
         "BoardIcon": "st_img_diamond",
-        "Order": 2,
-        "Type": "IR_Diamond",
-        "Demand": 30,
         "ClubExp": 100,
+        "Demand": 30,
+        "Name": "DiamondDonationName",
+        "Order": 2,
         "Reward": "ClubDonation02",
+        "Type": "IR_Diamond",
         "Vip_limited": 0
     },
     "EpicDonation": {
-        "Name": "EpicDonationName",
         "BoardIcon": "bg_shetuan_juanxianzi.png",
-        "Order": 3,
-        "Type": "IR_Diamond",
-        "Demand": 200,
         "ClubExp": 200,
+        "Demand": 200,
+        "Name": "EpicDonationName",
+        "Order": 3,
         "Reward": "ClubDonation03",
+        "Type": "IR_Diamond",
         "Vip_limited": 500
+    },
+    "GoldDonation": {
+        "BoardIcon": "st_img_coin",
+        "ClubExp": 50,
+        "Demand": 20000,
+        "Name": "GoldDonationName",
+        "Order": 1,
+        "Reward": "ClubDonation01",
+        "Type": "IR_Gold",
+        "Vip_limited": 0
     }
 }

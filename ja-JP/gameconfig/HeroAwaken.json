@@ -1,17 +1,17 @@
 {
     "Test": {
-        "SurfaceId": "Surface_SDTZi_Awake",
-        "ModelId": "Model_SDTZi_Awake",
-        "Portrait": "Model_SDTZi_UnAwake",
-        "StarId": "SDTZi_Awake",
-        "NeedLove": 10,
-        "StoryLink": "S11S01",
         "Animation": "SDTZi_Awaken",
-        "Reward": "HeroAwaken_SDTZi",
-        "StandVFX": "CounterRateUp",
+        "ModelId": "Model_SDTZi_Awake",
         "Name": "SDTZi_Awake_Name",
         "NameDesc": "SDTZi_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_SDTZi_UnAwake",
+        "Reward": "HeroAwaken_SDTZi",
         "ShowHero": "SDTZi",
-        "Since": "qm_bg_bj"
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "SDTZi_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_SDTZi_Awake"
     }
 }

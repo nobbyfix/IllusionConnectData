@@ -1,1225 +1,55 @@
 {
-    "VillageSurface_Decorate9_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "Decorate9",
-        "Name": "VillageSurface_Decorate9_1_Name",
-        "Desc": "VillageSurface_Decorate9_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_Decorate9_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_tapzhuoyi_smc",
-        "Response": "VillageBuild47",
-        "PicScale": [
-            0.5,
-            0.5,
-            0.33
-        ],
-        "BuildDeviation": [
-            5,
-            1
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 89,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_ZhanBuZhuo_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "ZhanBuZhuo",
-        "Name": "VillageSurface_ZhanBuZhuo_1_Name",
-        "Desc": "VillageSurface_ZhanBuZhuo_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_ZhanBuZhuo_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_zhanbuzhuo_smc",
-        "Response": "VillageBuild41",
-        "PicScale": [
-            0.75,
-            0.75,
-            0.4
-        ],
-        "BuildDeviation": [
-            0,
-            12
-        ],
-        "VillageEffect": "zhanbuzhuo_zhanbuzhuo",
-        "Unlook": 0,
-        "Sort": 34,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_PinJianCanZhuo_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "PinJianCanZhuo",
-        "Name": "VillageSurface_PinJianCanZhuo_1_Name",
-        "Desc": "VillageSurface_PinJianCanZhuo_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_PinJianCanZhuo_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_tianpinzhuo_smc",
-        "Response": "VillageBuild35",
-        "PicScale": [
-            1.1,
-            1.3,
-            0.7
-        ],
-        "BuildDeviation": [
-            2,
-            23
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 30,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_Decorate2_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "Decorate2",
-        "Name": "VillageSurface_Decorate2_1_Name",
-        "Desc": "VillageSurface_Decorate2_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_Decorate2_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_bilidianshi_smc",
-        "Response": "VillageBuild30",
-        "PicScale": [
-            1.2,
-            1.2,
-            0.6
-        ],
-        "BuildDeviation": [
-            -4,
-            12
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 82,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_Decorate1_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "Decorate1",
-        "Name": "VillageSurface_Decorate1_1_Name",
-        "Desc": "VillageSurface_Decorate1_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_Decorate1_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_acb_smc",
-        "Response": "VillageBuild29",
-        "PicScale": [
-            0.9,
-            1,
-            0.4
-        ],
-        "BuildDeviation": [
-            -23,
-            19
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 81,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_sanjia_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "sanjia",
-        "Name": "VillageSurface_sanjia_1_Name",
-        "Desc": "VillageSurface_sanjia_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_sanjia_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_sanjia_smc",
-        "Response": "VillageBuild70",
-        "PicScale": [
-            1.4,
-            1.4,
-            0.8
-        ],
-        "BuildDeviation": [
-            4,
-            33
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 59,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_SiQiKongJian_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "SiQiKongJian",
-        "Name": "VillageSurface_SiQiKongJian_1_Name",
-        "Desc": "VillageSurface_SiQiKongJian_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_SiQiKongJian_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_shuzhuo_smc",
-        "Response": "VillageBuild29",
-        "PicScale": [
-            0.6,
-            0.7,
-            0.35
-        ],
-        "BuildDeviation": [
-            7,
-            9
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 26,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_chuantouguibai_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "chuantouguibai",
-        "Name": "VillageSurface_chuantouguibai_1_Name",
-        "Desc": "VillageSurface_chuantouguibai_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_chuantouguibai_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_chuantouguibai_smc",
-        "Response": "VillageBuild55",
-        "PicScale": [
-            1.3,
-            1.3,
-            0.7
-        ],
+    "VillageSurface_Beilu_1": {
         "BuildDeviation": [
             3,
-            18
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 45,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_Dianshi_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "Dianshi",
-        "Name": "VillageSurface_Dianshi_1_Name",
-        "Desc": "VillageSurface_Dianshi_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_Dianshi_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_dianshi_smc",
-        "Response": "VillageBuild46",
-        "PicScale": [
-            0.7,
-            0.8,
-            0.45
-        ],
-        "BuildDeviation": [
-            -2,
-            9
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 37,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_Decorate5_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "Decorate5",
-        "Name": "VillageSurface_Decorate5_1_Name",
-        "Desc": "VillageSurface_Decorate5_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_Decorate5_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_lj_smc",
-        "Response": "VillageBuild37",
-        "PicScale": [
-            1.1,
-            1.1,
-            0.6
-        ],
-        "BuildDeviation": [
-            6,
-            11
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 85,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_yongchi_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "yongchi",
-        "Name": "VillageSurface_yongchi_1_Name",
-        "Desc": "VillageSurface_yongchi_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_yongchi_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_yongchi_smc",
-        "Response": "VillageBuild89",
-        "PicScale": [
-            0.35,
-            0.5,
-            0.3
-        ],
-        "BuildDeviation": [
-            27,
-            42
-        ],
-        "VillageEffect": "youyongchi_youyongchi",
-        "Unlook": 0,
-        "Sort": 78,
-        "Comfort": 0,
-        "BuildInteractionType": "Wenquan",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_shugui_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "shugui",
-        "Name": "VillageSurface_shugui_1_Name",
-        "Desc": "VillageSurface_shugui_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_shugui_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_shugui_smc",
-        "Response": "VillageBuild77",
-        "PicScale": [
-            0.7,
-            0.7,
-            0.4
-        ],
-        "BuildDeviation": [
-            -16,
-            38
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 66,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_MainCity_1": {
-        "SystemBuilding": "MainCity",
-        "DecorateBuilding": "",
-        "Name": "VillageSurface_MainCity_1_Name",
-        "Desc": "VillageSurface_MainCity_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_MainCity_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_kabala_smc",
-        "Response": "VillageBuild62",
-        "PicScale": [
-            0.5,
-            0.5,
-            0.23
-        ],
-        "BuildDeviation": [
-            16,
-            72
-        ],
-        "VillageEffect": "kabalashu_kabalashu",
-        "Unlook": 0,
-        "Sort": 1,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": [
-            {
-                "buildintgBuildA": [
-                    110,
-                    100
-                ]
-            },
-            {
-                "buildintgBuildB": [
-                    -110,
-                    100
-                ]
-            },
-            {
-                "buildintgBuildC": [
-                    0,
-                    180
-                ]
-            }
-        ]
-    },
-    "VillageSurface_Decorate4_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "Decorate4",
-        "Name": "VillageSurface_Decorate4_1_Name",
-        "Desc": "VillageSurface_Decorate4_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_Decorate4_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_bilizhuozi_smc",
-        "Response": "VillageBuild35",
-        "PicScale": [
-            0.6,
-            0.8,
-            0.5
-        ],
-        "BuildDeviation": [
-            41,
-            3
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 84,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_Decorate3_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "Decorate3",
-        "Name": "VillageSurface_Decorate3_1_Name",
-        "Desc": "VillageSurface_Decorate3_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_Decorate3_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_bilishafa_smc",
-        "Response": "VillageBuild34",
-        "PicScale": [
-            0.5,
-            0.5,
-            0.33
-        ],
-        "BuildDeviation": [
-            -29,
             14
         ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 83,
-        "Comfort": 0,
         "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_shounagui_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "shounagui",
-        "Name": "VillageSurface_shounagui_1_Name",
-        "Desc": "VillageSurface_shounagui_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_shounagui_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_shounagui_smc",
-        "Response": "VillageBuild72",
-        "PicScale": [
-            0.8,
-            0.9,
-            0.6
-        ],
-        "BuildDeviation": [
-            48,
-            10
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 61,
         "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_QiZhuo_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "QiZhuo",
-        "Name": "VillageSurface_QiZhuo_1_Name",
-        "Desc": "VillageSurface_QiZhuo_1_Desc",
         "Condition": {
             "Level": 1
         },
-        "UnlockDesc": "VillageSurface_QiZhuo_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_xiangqi_smc",
-        "Response": "VillageBuild37",
-        "PicScale": [
-            0.8,
-            0.8,
-            0.55
-        ],
-        "BuildDeviation": [
-            0,
-            -7
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 31,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_Zhixiang_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "Zhixiang",
-        "Name": "VillageSurface_Zhixiang_1_Name",
-        "Desc": "VillageSurface_Zhixiang_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_Zhixiang_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_zhixiang_smc",
-        "Response": "VillageBuild52",
-        "PicScale": [
-            0.8,
-            0.9,
-            0.5
-        ],
-        "BuildDeviation": [
-            0,
-            0
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 43,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_yijia_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "yijia",
-        "Name": "VillageSurface_yijia_1_Name",
-        "Desc": "VillageSurface_yijia_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_yijia_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_yijia_smc",
-        "Response": "VillageBuild84",
-        "PicScale": [
-            0.7,
-            0.8,
-            0.4
-        ],
-        "BuildDeviation": [
-            0,
-            0
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 73,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_MaKaLongGui_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "MaKaLongGui",
-        "Name": "VillageSurface_MaKaLongGui_1_Name",
-        "Desc": "VillageSurface_MaKaLongGui_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_MaKaLongGui_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_tianpingui_smc",
-        "Response": "VillageBuild34",
-        "PicScale": [
-            0.8,
-            0.9,
-            0.55
-        ],
-        "BuildDeviation": [
-            -43,
-            8
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 29,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_tiandiantai_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "tiandiantai",
-        "Name": "VillageSurface_tiandiantai_1_Name",
-        "Desc": "VillageSurface_tiandiantai_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_tiandiantai_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_tiandiantai_smc",
-        "Response": "VillageBuild81",
-        "PicScale": [
-            0.75,
-            0.75,
-            0.4
-        ],
-        "BuildDeviation": [
-            45,
-            24
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 70,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_Dipu_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "Dipu",
-        "Name": "VillageSurface_Dipu_1_Name",
-        "Desc": "VillageSurface_Dipu_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_Dipu_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_dipu_smc",
-        "Response": "VillageBuild47",
-        "PicScale": [
-            0.6,
-            1,
-            0.6
-        ],
-        "BuildDeviation": [
-            -5,
-            9
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 38,
-        "Comfort": 0,
-        "BuildInteractionType": "Danrenchuang",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_shuangrentangyi_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "shuangrentangyi",
-        "Name": "VillageSurface_shuangrentangyi_1_Name",
-        "Desc": "VillageSurface_shuangrentangyi_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_shuangrentangyi_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_shuangrentangyi_smc",
-        "Response": "VillageBuild75",
+        "DecorateBuilding": "Beilu",
+        "Desc": "VillageSurface_Beilu_1_Desc",
+        "Name": "VillageSurface_Beilu_1_Name",
         "PicScale": [
             0.5,
-            0.65,
-            0.3
-        ],
-        "BuildDeviation": [
-            -33,
-            23
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 64,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_Yugang_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "Yugang",
-        "Name": "VillageSurface_Yugang_1_Name",
-        "Desc": "VillageSurface_Yugang_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_Yugang_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_yugang_smc",
-        "Response": "VillageBuild51",
-        "PicScale": [
-            1.2,
-            1.2,
-            0.7
-        ],
-        "BuildDeviation": [
-            2,
-            10
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 42,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_shuzhuangtai_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "shuzhuangtai",
-        "Name": "VillageSurface_shuzhuangtai_1_Name",
-        "Desc": "VillageSurface_shuzhuangtai_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_shuzhuangtai_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_shuzhuangtai_smc",
-        "Response": "VillageBuild78",
-        "PicScale": [
-            0.83,
-            0.9,
-            0.6
-        ],
-        "BuildDeviation": [
-            48,
-            15
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 67,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_qiuxingdeng_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "qiuxingdeng",
-        "Name": "VillageSurface_qiuxingdeng_1_Name",
-        "Desc": "VillageSurface_qiuxingdeng_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_qiuxingdeng_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_qiuxingdeng_smc",
-        "Response": "VillageBuild68",
-        "PicScale": [
-            1,
-            1,
-            0.5
-        ],
-        "BuildDeviation": [
-            1,
-            27
-        ],
-        "VillageEffect": "qiuxingdeng_qiuxingdeng",
-        "Unlook": 0,
-        "Sort": 57,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_dideng_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "dideng",
-        "Name": "VillageSurface_dideng_1_Name",
-        "Desc": "VillageSurface_dideng_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_dideng_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_dideng_smc",
-        "Response": "VillageBuild59",
-        "PicScale": [
-            1.7,
-            1.5,
-            1
-        ],
-        "BuildDeviation": [
-            1,
-            30
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 49,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_maojia_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "maojia",
-        "Name": "VillageSurface_maojia_1_Name",
-        "Desc": "VillageSurface_maojia_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_maojia_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_maojia_smc",
-        "Response": "VillageBuild65",
-        "PicScale": [
-            0.8,
-            0.9,
-            0.45
-        ],
-        "BuildDeviation": [
-            -10,
-            17
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 54,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_ExpOre_Normal_1": {
-        "SystemBuilding": "ExpOre",
-        "DecorateBuilding": "",
-        "Name": "VillageSurface_ExpOre_Normal_1_Name",
-        "Desc": "VillageSurface_ExpOre_Normal_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_ExpOre_Normal_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_kuangjiadeng_smc",
-        "Response": "VillageBuild63",
-        "PicScale": [
-            1.2,
-            1.2,
-            0.7
-        ],
-        "BuildDeviation": [
-            1,
-            18
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 4,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": [
-            {
-                "buildintgBuildA": [
-                    110,
-                    0
-                ]
-            },
-            {
-                "buildintgBuildB": [
-                    -110,
-                    0
-                ]
-            },
-            {
-                "buildintgBuildC": [
-                    0,
-                    100
-                ]
-            }
-        ]
-    },
-    "VillageSurface_damaojia_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "damaojia",
-        "Name": "VillageSurface_damaojia_1_Name",
-        "Desc": "VillageSurface_damaojia_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_damaojia_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_damaojia_smc",
-        "Response": "VillageBuild56",
-        "PicScale": [
             0.7,
-            0.7,
-            0.35
-        ],
-        "BuildDeviation": [
-            43,
-            5
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 46,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_chazhuo1_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "chazhuo1",
-        "Name": "VillageSurface_chazhuo1_1_Name",
-        "Desc": "VillageSurface_chazhuo1_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_chazhuo1_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_chazhuo1_smc",
-        "Response": "VillageBuild54",
-        "PicScale": [
-            1.1,
-            1.2,
-            0.8
-        ],
-        "BuildDeviation": [
-            0,
-            23
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 44,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_KaiHeiFangZhuo_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "KaiHeiFangZhuo",
-        "Name": "VillageSurface_KaiHeiFangZhuo_1_Name",
-        "Desc": "VillageSurface_KaiHeiFangZhuo_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_KaiHeiFangZhuo_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_kaiheifangzhuo",
-        "Response": "VillageBuild30",
-        "PicScale": [
-            0.65,
-            0.65,
-            0.35
-        ],
-        "BuildDeviation": [
-            2,
-            -12
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 27,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_yijia1_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "yijia1",
-        "Name": "VillageSurface_yijia1_1_Name",
-        "Desc": "VillageSurface_yijia1_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_yijia1_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_yijia1_smc",
-        "Response": "VillageBuild85",
-        "PicScale": [
-            0.8,
-            0.9,
-            0.5
-        ],
-        "BuildDeviation": [
-            0,
-            10
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 74,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_Decorate8_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "Decorate8",
-        "Name": "VillageSurface_Decorate8_1_Name",
-        "Desc": "VillageSurface_Decorate8_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_Decorate8_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_taptiger_smc",
-        "Response": "VillageBuild46",
-        "PicScale": [
-            1,
-            1,
             0.4
         ],
-        "BuildDeviation": [
-            0,
-            14
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 88,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_GoldOre_Normal_1": {
-        "SystemBuilding": "GoldOre",
-        "DecorateBuilding": "",
-        "Name": "VillageSurface_GoldOre_Normal_1_Name",
-        "Desc": "VillageSurface_GoldOre_Normal_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_GoldOre_Normal_1_UnlockDesc",
         "Price": [
             {
                 "amount": 1000,
                 "type": "IR_Gold"
             }
         ],
-        "Resource": "pic_tianpinche_smc",
-        "Response": "VillageBuild33",
-        "PicScale": [
-            1.2,
-            1.3,
-            0.8
-        ],
-        "BuildDeviation": [
-            1,
-            11
-        ],
-        "VillageEffect": "",
+        "Resource": "pic_beilu_smc",
+        "Response": "VillageBuild45",
+        "Sort": 36,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_Beilu_1_UnlockDesc",
         "Unlook": 0,
-        "Sort": 56,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": [
-            {
-                "buildintgBuildA": [
-                    110,
-                    0
-                ]
-            },
-            {
-                "buildintgBuildB": [
-                    -110,
-                    0
-                ]
-            },
-            {
-                "buildintgBuildC": [
-                    0,
-                    80
-                ]
-            }
-        ]
+        "VillageEffect": ""
     },
     "VillageSurface_Camp_1": {
-        "SystemBuilding": "Camp",
-        "DecorateBuilding": "",
-        "Name": "VillageSurface_Camp_1_Name",
-        "Desc": "VillageSurface_Camp_1_Desc",
+        "BuildDeviation": [
+            -3,
+            19
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
         "Condition": {
             "Level": 1
         },
-        "UnlockDesc": "VillageSurface_Camp_1_UnlockDesc",
+        "DecorateBuilding": "",
+        "Desc": "VillageSurface_Camp_1_Desc",
+        "Name": "VillageSurface_Camp_1_Name",
+        "PicScale": [
+            1,
+            1,
+            1
+        ],
         "Price": [
             {
                 "amount": 1000,
@@ -1228,20 +58,7 @@
         ],
         "Resource": "pic_shudui_smc",
         "Response": "VillageBuild76",
-        "PicScale": [
-            1,
-            1,
-            1
-        ],
-        "BuildDeviation": [
-            -3,
-            19
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
         "Sort": 36,
-        "Comfort": 0,
-        "BuildInteractionType": "",
         "SpecialEffectsPosition": [
             {
                 "buildintgBuildA": [
@@ -1261,762 +78,30 @@
                     40
                 ]
             }
-        ]
-    },
-    "VillageSurface_guizi_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "guizi",
-        "Name": "VillageSurface_guizi_1_Name",
-        "Desc": "VillageSurface_guizi_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_guizi_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
         ],
-        "Resource": "pic_guizi_smc",
-        "Response": "VillageBuild61",
-        "PicScale": [
-            0.7,
-            0.7,
-            0.4
-        ],
-        "BuildDeviation": [
-            87,
-            -2
-        ],
-        "VillageEffect": "",
+        "SystemBuilding": "Camp",
+        "UnlockDesc": "VillageSurface_Camp_1_UnlockDesc",
         "Unlook": 0,
-        "Sort": 51,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_zishuruandeng_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "zishuruandeng",
-        "Name": "VillageSurface_zishuruandeng_1_Name",
-        "Desc": "VillageSurface_zishuruandeng_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_zishuruandeng_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_zishuruandeng_smc",
-        "Response": "VillageBuild88",
-        "PicScale": [
-            1.2,
-            1.2,
-            1.2
-        ],
-        "BuildDeviation": [
-            0,
-            24
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 77,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_Pingfeng_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "Pingfeng",
-        "Name": "VillageSurface_Pingfeng_1_Name",
-        "Desc": "VillageSurface_Pingfeng_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_Pingfeng_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_pingfeng_smc",
-        "Response": "VillageBuild48",
-        "PicScale": [
-            0.9,
-            1.1,
-            0.6
-        ],
-        "BuildDeviation": [
-            -14,
-            12
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 39,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_yushi_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "yushi",
-        "Name": "VillageSurface_yushi_1_Name",
-        "Desc": "VillageSurface_yushi_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_yushi_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_yushi_smc",
-        "Response": "VillageBuild87",
-        "PicScale": [
-            0.5,
-            0.6,
-            0.35
-        ],
-        "BuildDeviation": [
-            1,
-            8
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 76,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_dashugui_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "dashugui",
-        "Name": "VillageSurface_dashugui_1_Name",
-        "Desc": "VillageSurface_dashugui_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_dashugui_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_dashugui_smc",
-        "Response": "VillageBuild57",
-        "PicScale": [
-            0.7,
-            0.7,
-            0.4
-        ],
-        "BuildDeviation": [
-            48,
-            3
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 47,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_Decorate_Tuwo_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "Decorate_Tuwo",
-        "Name": "VillageSurface_Decorate_Tuwo_1_Name",
-        "Desc": "VillageSurface_Decorate_Tuwo_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_Decorate_Tuwo_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_tuwo_smc",
-        "Response": "VillageBuild29",
-        "PicScale": [
-            0.6,
-            0.7,
-            0.35
-        ],
-        "BuildDeviation": [
-            -7,
-            16
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 90,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_luoditaideng_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "luoditaideng",
-        "Name": "VillageSurface_luoditaideng_1_Name",
-        "Desc": "VillageSurface_luoditaideng_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_luoditaideng_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_luoditaideng_smc",
-        "Response": "VillageBuild64",
-        "PicScale": [
-            1.5,
-            1.5,
-            0.85
-        ],
-        "BuildDeviation": [
-            0,
-            35
-        ],
-        "VillageEffect": "taideng_taideng",
-        "Unlook": 0,
-        "Sort": 53,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_shenghuogui_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "shenghuogui",
-        "Name": "VillageSurface_shenghuogui_1_Name",
-        "Desc": "VillageSurface_shenghuogui_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_shenghuogui_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_shenghuogui_smc",
-        "Response": "VillageBuild71",
-        "PicScale": [
-            0.7,
-            0.7,
-            0.5
-        ],
-        "BuildDeviation": [
-            36,
-            6
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 60,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_xiangxunyigui_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "xiangxunyigui",
-        "Name": "VillageSurface_xiangxunyigui_1_Name",
-        "Desc": "VillageSurface_xiangxunyigui_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_xiangxunyigui_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_xiangxunyigui_smc",
-        "Response": "VillageBuild82",
-        "PicScale": [
-            0.7,
-            0.8,
-            0.45
-        ],
-        "BuildDeviation": [
-            -47,
-            9
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 71,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_Suzi_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "Suzi",
-        "Name": "VillageSurface_Suzi_1_Name",
-        "Desc": "VillageSurface_Suzi_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_Suzi_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_suzi_smc",
-        "Response": "VillageBuild49",
-        "PicScale": [
-            1.1,
-            1.1,
-            0.6
-        ],
-        "BuildDeviation": [
-            0,
-            29
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 40,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_Decorate6_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "Decorate6",
-        "Name": "VillageSurface_Decorate6_1_Name",
-        "Desc": "VillageSurface_Decorate6_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_Decorate6_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_ljr_smc",
-        "Response": "VillageBuild41",
-        "PicScale": [
-            0.9,
-            1.3,
-            0.4
-        ],
-        "BuildDeviation": [
-            10,
-            10
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 86,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_Xiuxianzhuo_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "Xiuxianzhuo",
-        "Name": "VillageSurface_Xiuxianzhuo_1_Name",
-        "Desc": "VillageSurface_Xiuxianzhuo_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_Xiuxianzhuo_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_xiuxianzhuo_smc",
-        "Response": "VillageBuild50",
-        "PicScale": [
-            0.85,
-            0.9,
-            0.6
-        ],
-        "BuildDeviation": [
-            -39,
-            16
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 41,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_shuangpingdiannaozhuo_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "shuangpingdiannaozhuo",
-        "Name": "VillageSurface_shuangpingdiannaozhuo_1_Name",
-        "Desc": "VillageSurface_shuangpingdiannaozhuo_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_shuangpingdiannaozhuo_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_shuangpingdiannaozhuo_smc",
-        "Response": "VillageBuild73",
-        "PicScale": [
-            0.55,
-            0.6,
-            0.35
-        ],
-        "BuildDeviation": [
-            2,
-            12
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 62,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_tangguohuatan_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "tangguohuatan",
-        "Name": "VillageSurface_tangguohuatan_1_Name",
-        "Desc": "VillageSurface_tangguohuatan_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_tangguohuatan_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_tangguohuatan_smc",
-        "Response": "VillageBuild79",
-        "PicScale": [
-            1,
-            1,
-            0.6
-        ],
-        "BuildDeviation": [
-            2,
-            11
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 68,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_quqikaoyi_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "quqikaoyi",
-        "Name": "VillageSurface_quqikaoyi_1_Name",
-        "Desc": "VillageSurface_quqikaoyi_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_quqikaoyi_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_quqikaoyi_smc",
-        "Response": "VillageBuild69",
-        "PicScale": [
-            1,
-            1.2,
-            0.8
-        ],
-        "BuildDeviation": [
-            0,
-            24
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 58,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_dazhixiang_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "dazhixiang",
-        "Name": "VillageSurface_dazhixiang_1_Name",
-        "Desc": "VillageSurface_dazhixiang_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_dazhixiang_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_dazhixiang_smc",
-        "Response": "VillageBuild58",
-        "PicScale": [
-            1.1,
-            1.2,
-            0.7
-        ],
-        "BuildDeviation": [
-            -8,
-            19
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 48,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_yumaowo_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "yumaowo",
-        "Name": "VillageSurface_yumaowo_1_Name",
-        "Desc": "VillageSurface_yumaowo_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_yumaowo_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_yumaowo_smc",
-        "Response": "VillageBuild86",
-        "PicScale": [
-            1.2,
-            1.4,
-            0.75
-        ],
-        "BuildDeviation": [
-            10,
-            16
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 75,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_CrystalOre_Normal_1": {
-        "SystemBuilding": "CrystalOre",
-        "DecorateBuilding": "",
-        "Name": "VillageSurface_CrystalOre_Normal_1_Name",
-        "Desc": "VillageSurface_CrystalOre_Normal_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_CrystalOre_Normal_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_tangyi_smc",
-        "Response": "VillageBuild80",
-        "PicScale": [
-            1.1,
-            1.1,
-            0.9
-        ],
-        "BuildDeviation": [
-            -5,
-            2
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 78,
-        "Comfort": 0,
-        "BuildInteractionType": "Wenquan",
-        "SpecialEffectsPosition": [
-            {
-                "buildintgBuildA": [
-                    110,
-                    0
-                ]
-            },
-            {
-                "buildintgBuildB": [
-                    -110,
-                    0
-                ]
-            },
-            {
-                "buildintgBuildC": [
-                    0,
-                    80
-                ]
-            }
-        ]
-    },
-    "VillageSurface_Beilu_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "Beilu",
-        "Name": "VillageSurface_Beilu_1_Name",
-        "Desc": "VillageSurface_Beilu_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_Beilu_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_beilu_smc",
-        "Response": "VillageBuild45",
-        "PicScale": [
-            0.5,
-            0.7,
-            0.4
-        ],
-        "BuildDeviation": [
-            3,
-            14
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 36,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_maoshapen_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "maoshapen",
-        "Name": "VillageSurface_maoshapen_1_Name",
-        "Desc": "VillageSurface_maoshapen_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_maoshapen_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_maoshapen_smc",
-        "Response": "VillageBuild66",
-        "PicScale": [
-            1,
-            1.3,
-            0.75
-        ],
-        "BuildDeviation": [
-            8,
-            22
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 55,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_penquanji_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "penquanji",
-        "Name": "VillageSurface_penquanji_1_Name",
-        "Desc": "VillageSurface_penquanji_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_penquanji_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_penquanji_smc",
-        "Response": "VillageBuild67",
-        "PicScale": [
-            0.5,
-            0.6,
-            0.3
-        ],
-        "BuildDeviation": [
-            -1,
-            14
-        ],
-        "VillageEffect": "penquanji_penquanji",
-        "Unlook": 0,
-        "Sort": 56,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
-    },
-    "VillageSurface_Decorate7_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "Decorate7",
-        "Name": "VillageSurface_Decorate7_1_Name",
-        "Desc": "VillageSurface_Decorate7_1_Desc",
-        "Condition": {
-            "Level": 1
-        },
-        "UnlockDesc": "VillageSurface_Decorate7_1_UnlockDesc",
-        "Price": [
-            {
-                "amount": 1000,
-                "type": "IR_Gold"
-            }
-        ],
-        "Resource": "pic_tapshan_smc",
-        "Response": "VillageBuild45",
-        "PicScale": [
-            0.5,
-            0.5,
-            0.23
-        ],
-        "BuildDeviation": [
-            17,
-            34
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 87,
-        "Comfort": 0,
-        "BuildInteractionType": "",
-        "SpecialEffectsPosition": ""
+        "VillageEffect": ""
     },
     "VillageSurface_CardAcademy_1": {
-        "SystemBuilding": "CardAcademy",
-        "DecorateBuilding": "",
-        "Name": "VillageSurface_CardAcademy_1_Name",
-        "Desc": "VillageSurface_CardAcademy_1_Desc",
+        "BuildDeviation": [
+            1,
+            16
+        ],
+        "BuildInteractionType": "Shuangrenchuang",
+        "Comfort": 0,
         "Condition": {
             "Level": 1
         },
-        "UnlockDesc": "VillageSurface_CardAcademy_1_UnlockDesc",
+        "DecorateBuilding": "",
+        "Desc": "VillageSurface_CardAcademy_1_Desc",
+        "Name": "VillageSurface_CardAcademy_1_Name",
+        "PicScale": [
+            0.5,
+            0.7,
+            0.4
+        ],
         "Price": [
             {
                 "amount": 1000,
@@ -2025,20 +110,7 @@
         ],
         "Resource": "pic_shuangrenchuang_smc",
         "Response": "VillageBuild74",
-        "PicScale": [
-            0.5,
-            0.7,
-            0.4
-        ],
-        "BuildDeviation": [
-            1,
-            16
-        ],
-        "VillageEffect": "",
-        "Unlook": 0,
         "Sort": 63,
-        "Comfort": 0,
-        "BuildInteractionType": "Shuangrenchuang",
         "SpecialEffectsPosition": [
             {
                 "buildintgBuildA": [
@@ -2058,17 +130,1756 @@
                     200
                 ]
             }
-        ]
+        ],
+        "SystemBuilding": "CardAcademy",
+        "UnlockDesc": "VillageSurface_CardAcademy_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
     },
-    "VillageSurface_yaoyi_1": {
-        "SystemBuilding": "",
-        "DecorateBuilding": "yaoyi",
-        "Name": "VillageSurface_yaoyi_1_Name",
-        "Desc": "VillageSurface_yaoyi_1_Desc",
+    "VillageSurface_CrystalOre_Normal_1": {
+        "BuildDeviation": [
+            -5,
+            2
+        ],
+        "BuildInteractionType": "Wenquan",
+        "Comfort": 0,
         "Condition": {
             "Level": 1
         },
-        "UnlockDesc": "VillageSurface_yaoyi_1_UnlockDesc",
+        "DecorateBuilding": "",
+        "Desc": "VillageSurface_CrystalOre_Normal_1_Desc",
+        "Name": "VillageSurface_CrystalOre_Normal_1_Name",
+        "PicScale": [
+            1.1,
+            1.1,
+            0.9
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_tangyi_smc",
+        "Response": "VillageBuild80",
+        "Sort": 78,
+        "SpecialEffectsPosition": [
+            {
+                "buildintgBuildA": [
+                    110,
+                    0
+                ]
+            },
+            {
+                "buildintgBuildB": [
+                    -110,
+                    0
+                ]
+            },
+            {
+                "buildintgBuildC": [
+                    0,
+                    80
+                ]
+            }
+        ],
+        "SystemBuilding": "CrystalOre",
+        "UnlockDesc": "VillageSurface_CrystalOre_Normal_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_Decorate1_1": {
+        "BuildDeviation": [
+            -23,
+            19
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "Decorate1",
+        "Desc": "VillageSurface_Decorate1_1_Desc",
+        "Name": "VillageSurface_Decorate1_1_Name",
+        "PicScale": [
+            0.9,
+            1,
+            0.4
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_acb_smc",
+        "Response": "VillageBuild29",
+        "Sort": 81,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_Decorate1_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_Decorate2_1": {
+        "BuildDeviation": [
+            -4,
+            12
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "Decorate2",
+        "Desc": "VillageSurface_Decorate2_1_Desc",
+        "Name": "VillageSurface_Decorate2_1_Name",
+        "PicScale": [
+            1.2,
+            1.2,
+            0.6
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_bilidianshi_smc",
+        "Response": "VillageBuild30",
+        "Sort": 82,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_Decorate2_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_Decorate3_1": {
+        "BuildDeviation": [
+            -29,
+            14
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "Decorate3",
+        "Desc": "VillageSurface_Decorate3_1_Desc",
+        "Name": "VillageSurface_Decorate3_1_Name",
+        "PicScale": [
+            0.5,
+            0.5,
+            0.33
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_bilishafa_smc",
+        "Response": "VillageBuild34",
+        "Sort": 83,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_Decorate3_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_Decorate4_1": {
+        "BuildDeviation": [
+            41,
+            3
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "Decorate4",
+        "Desc": "VillageSurface_Decorate4_1_Desc",
+        "Name": "VillageSurface_Decorate4_1_Name",
+        "PicScale": [
+            0.6,
+            0.8,
+            0.5
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_bilizhuozi_smc",
+        "Response": "VillageBuild35",
+        "Sort": 84,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_Decorate4_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_Decorate5_1": {
+        "BuildDeviation": [
+            6,
+            11
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "Decorate5",
+        "Desc": "VillageSurface_Decorate5_1_Desc",
+        "Name": "VillageSurface_Decorate5_1_Name",
+        "PicScale": [
+            1.1,
+            1.1,
+            0.6
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_lj_smc",
+        "Response": "VillageBuild37",
+        "Sort": 85,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_Decorate5_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_Decorate6_1": {
+        "BuildDeviation": [
+            10,
+            10
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "Decorate6",
+        "Desc": "VillageSurface_Decorate6_1_Desc",
+        "Name": "VillageSurface_Decorate6_1_Name",
+        "PicScale": [
+            0.9,
+            1.3,
+            0.4
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_ljr_smc",
+        "Response": "VillageBuild41",
+        "Sort": 86,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_Decorate6_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_Decorate7_1": {
+        "BuildDeviation": [
+            17,
+            34
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "Decorate7",
+        "Desc": "VillageSurface_Decorate7_1_Desc",
+        "Name": "VillageSurface_Decorate7_1_Name",
+        "PicScale": [
+            0.5,
+            0.5,
+            0.23
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_tapshan_smc",
+        "Response": "VillageBuild45",
+        "Sort": 87,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_Decorate7_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_Decorate8_1": {
+        "BuildDeviation": [
+            0,
+            14
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "Decorate8",
+        "Desc": "VillageSurface_Decorate8_1_Desc",
+        "Name": "VillageSurface_Decorate8_1_Name",
+        "PicScale": [
+            1,
+            1,
+            0.4
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_taptiger_smc",
+        "Response": "VillageBuild46",
+        "Sort": 88,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_Decorate8_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_Decorate9_1": {
+        "BuildDeviation": [
+            5,
+            1
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "Decorate9",
+        "Desc": "VillageSurface_Decorate9_1_Desc",
+        "Name": "VillageSurface_Decorate9_1_Name",
+        "PicScale": [
+            0.5,
+            0.5,
+            0.33
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_tapzhuoyi_smc",
+        "Response": "VillageBuild47",
+        "Sort": 89,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_Decorate9_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_Decorate_Tuwo_1": {
+        "BuildDeviation": [
+            -7,
+            16
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "Decorate_Tuwo",
+        "Desc": "VillageSurface_Decorate_Tuwo_1_Desc",
+        "Name": "VillageSurface_Decorate_Tuwo_1_Name",
+        "PicScale": [
+            0.6,
+            0.7,
+            0.35
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_tuwo_smc",
+        "Response": "VillageBuild29",
+        "Sort": 90,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_Decorate_Tuwo_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_Dianshi_1": {
+        "BuildDeviation": [
+            -2,
+            9
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "Dianshi",
+        "Desc": "VillageSurface_Dianshi_1_Desc",
+        "Name": "VillageSurface_Dianshi_1_Name",
+        "PicScale": [
+            0.7,
+            0.8,
+            0.45
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_dianshi_smc",
+        "Response": "VillageBuild46",
+        "Sort": 37,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_Dianshi_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_Dipu_1": {
+        "BuildDeviation": [
+            -5,
+            9
+        ],
+        "BuildInteractionType": "Danrenchuang",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "Dipu",
+        "Desc": "VillageSurface_Dipu_1_Desc",
+        "Name": "VillageSurface_Dipu_1_Name",
+        "PicScale": [
+            0.6,
+            1,
+            0.6
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_dipu_smc",
+        "Response": "VillageBuild47",
+        "Sort": 38,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_Dipu_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_ExpOre_Normal_1": {
+        "BuildDeviation": [
+            1,
+            18
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "",
+        "Desc": "VillageSurface_ExpOre_Normal_1_Desc",
+        "Name": "VillageSurface_ExpOre_Normal_1_Name",
+        "PicScale": [
+            1.2,
+            1.2,
+            0.7
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_kuangjiadeng_smc",
+        "Response": "VillageBuild63",
+        "Sort": 4,
+        "SpecialEffectsPosition": [
+            {
+                "buildintgBuildA": [
+                    110,
+                    0
+                ]
+            },
+            {
+                "buildintgBuildB": [
+                    -110,
+                    0
+                ]
+            },
+            {
+                "buildintgBuildC": [
+                    0,
+                    100
+                ]
+            }
+        ],
+        "SystemBuilding": "ExpOre",
+        "UnlockDesc": "VillageSurface_ExpOre_Normal_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_GoldOre_Normal_1": {
+        "BuildDeviation": [
+            1,
+            11
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "",
+        "Desc": "VillageSurface_GoldOre_Normal_1_Desc",
+        "Name": "VillageSurface_GoldOre_Normal_1_Name",
+        "PicScale": [
+            1.2,
+            1.3,
+            0.8
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_tianpinche_smc",
+        "Response": "VillageBuild33",
+        "Sort": 56,
+        "SpecialEffectsPosition": [
+            {
+                "buildintgBuildA": [
+                    110,
+                    0
+                ]
+            },
+            {
+                "buildintgBuildB": [
+                    -110,
+                    0
+                ]
+            },
+            {
+                "buildintgBuildC": [
+                    0,
+                    80
+                ]
+            }
+        ],
+        "SystemBuilding": "GoldOre",
+        "UnlockDesc": "VillageSurface_GoldOre_Normal_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_KaiHeiFangZhuo_1": {
+        "BuildDeviation": [
+            2,
+            -12
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "KaiHeiFangZhuo",
+        "Desc": "VillageSurface_KaiHeiFangZhuo_1_Desc",
+        "Name": "VillageSurface_KaiHeiFangZhuo_1_Name",
+        "PicScale": [
+            0.65,
+            0.65,
+            0.35
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_kaiheifangzhuo",
+        "Response": "VillageBuild30",
+        "Sort": 27,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_KaiHeiFangZhuo_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_MaKaLongGui_1": {
+        "BuildDeviation": [
+            -43,
+            8
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "MaKaLongGui",
+        "Desc": "VillageSurface_MaKaLongGui_1_Desc",
+        "Name": "VillageSurface_MaKaLongGui_1_Name",
+        "PicScale": [
+            0.8,
+            0.9,
+            0.55
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_tianpingui_smc",
+        "Response": "VillageBuild34",
+        "Sort": 29,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_MaKaLongGui_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_MainCity_1": {
+        "BuildDeviation": [
+            16,
+            72
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "",
+        "Desc": "VillageSurface_MainCity_1_Desc",
+        "Name": "VillageSurface_MainCity_1_Name",
+        "PicScale": [
+            0.5,
+            0.5,
+            0.23
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_kabala_smc",
+        "Response": "VillageBuild62",
+        "Sort": 1,
+        "SpecialEffectsPosition": [
+            {
+                "buildintgBuildA": [
+                    110,
+                    100
+                ]
+            },
+            {
+                "buildintgBuildB": [
+                    -110,
+                    100
+                ]
+            },
+            {
+                "buildintgBuildC": [
+                    0,
+                    180
+                ]
+            }
+        ],
+        "SystemBuilding": "MainCity",
+        "UnlockDesc": "VillageSurface_MainCity_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": "kabalashu_kabalashu"
+    },
+    "VillageSurface_PinJianCanZhuo_1": {
+        "BuildDeviation": [
+            2,
+            23
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "PinJianCanZhuo",
+        "Desc": "VillageSurface_PinJianCanZhuo_1_Desc",
+        "Name": "VillageSurface_PinJianCanZhuo_1_Name",
+        "PicScale": [
+            1.1,
+            1.3,
+            0.7
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_tianpinzhuo_smc",
+        "Response": "VillageBuild35",
+        "Sort": 30,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_PinJianCanZhuo_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_Pingfeng_1": {
+        "BuildDeviation": [
+            -14,
+            12
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "Pingfeng",
+        "Desc": "VillageSurface_Pingfeng_1_Desc",
+        "Name": "VillageSurface_Pingfeng_1_Name",
+        "PicScale": [
+            0.9,
+            1.1,
+            0.6
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_pingfeng_smc",
+        "Response": "VillageBuild48",
+        "Sort": 39,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_Pingfeng_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_QiZhuo_1": {
+        "BuildDeviation": [
+            0,
+            -7
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "QiZhuo",
+        "Desc": "VillageSurface_QiZhuo_1_Desc",
+        "Name": "VillageSurface_QiZhuo_1_Name",
+        "PicScale": [
+            0.8,
+            0.8,
+            0.55
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_xiangqi_smc",
+        "Response": "VillageBuild37",
+        "Sort": 31,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_QiZhuo_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_SiQiKongJian_1": {
+        "BuildDeviation": [
+            7,
+            9
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "SiQiKongJian",
+        "Desc": "VillageSurface_SiQiKongJian_1_Desc",
+        "Name": "VillageSurface_SiQiKongJian_1_Name",
+        "PicScale": [
+            0.6,
+            0.7,
+            0.35
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_shuzhuo_smc",
+        "Response": "VillageBuild29",
+        "Sort": 26,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_SiQiKongJian_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_Suzi_1": {
+        "BuildDeviation": [
+            0,
+            29
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "Suzi",
+        "Desc": "VillageSurface_Suzi_1_Desc",
+        "Name": "VillageSurface_Suzi_1_Name",
+        "PicScale": [
+            1.1,
+            1.1,
+            0.6
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_suzi_smc",
+        "Response": "VillageBuild49",
+        "Sort": 40,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_Suzi_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_Xiuxianzhuo_1": {
+        "BuildDeviation": [
+            -39,
+            16
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "Xiuxianzhuo",
+        "Desc": "VillageSurface_Xiuxianzhuo_1_Desc",
+        "Name": "VillageSurface_Xiuxianzhuo_1_Name",
+        "PicScale": [
+            0.85,
+            0.9,
+            0.6
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_xiuxianzhuo_smc",
+        "Response": "VillageBuild50",
+        "Sort": 41,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_Xiuxianzhuo_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_Yugang_1": {
+        "BuildDeviation": [
+            2,
+            10
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "Yugang",
+        "Desc": "VillageSurface_Yugang_1_Desc",
+        "Name": "VillageSurface_Yugang_1_Name",
+        "PicScale": [
+            1.2,
+            1.2,
+            0.7
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_yugang_smc",
+        "Response": "VillageBuild51",
+        "Sort": 42,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_Yugang_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_ZhanBuZhuo_1": {
+        "BuildDeviation": [
+            0,
+            12
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "ZhanBuZhuo",
+        "Desc": "VillageSurface_ZhanBuZhuo_1_Desc",
+        "Name": "VillageSurface_ZhanBuZhuo_1_Name",
+        "PicScale": [
+            0.75,
+            0.75,
+            0.4
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_zhanbuzhuo_smc",
+        "Response": "VillageBuild41",
+        "Sort": 34,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_ZhanBuZhuo_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": "zhanbuzhuo_zhanbuzhuo"
+    },
+    "VillageSurface_Zhixiang_1": {
+        "BuildDeviation": [
+            0,
+            0
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "Zhixiang",
+        "Desc": "VillageSurface_Zhixiang_1_Desc",
+        "Name": "VillageSurface_Zhixiang_1_Name",
+        "PicScale": [
+            0.8,
+            0.9,
+            0.5
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_zhixiang_smc",
+        "Response": "VillageBuild52",
+        "Sort": 43,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_Zhixiang_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_chazhuo1_1": {
+        "BuildDeviation": [
+            0,
+            23
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "chazhuo1",
+        "Desc": "VillageSurface_chazhuo1_1_Desc",
+        "Name": "VillageSurface_chazhuo1_1_Name",
+        "PicScale": [
+            1.1,
+            1.2,
+            0.8
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_chazhuo1_smc",
+        "Response": "VillageBuild54",
+        "Sort": 44,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_chazhuo1_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_chuantouguibai_1": {
+        "BuildDeviation": [
+            3,
+            18
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "chuantouguibai",
+        "Desc": "VillageSurface_chuantouguibai_1_Desc",
+        "Name": "VillageSurface_chuantouguibai_1_Name",
+        "PicScale": [
+            1.3,
+            1.3,
+            0.7
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_chuantouguibai_smc",
+        "Response": "VillageBuild55",
+        "Sort": 45,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_chuantouguibai_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_damaojia_1": {
+        "BuildDeviation": [
+            43,
+            5
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "damaojia",
+        "Desc": "VillageSurface_damaojia_1_Desc",
+        "Name": "VillageSurface_damaojia_1_Name",
+        "PicScale": [
+            0.7,
+            0.7,
+            0.35
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_damaojia_smc",
+        "Response": "VillageBuild56",
+        "Sort": 46,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_damaojia_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_dashugui_1": {
+        "BuildDeviation": [
+            48,
+            3
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "dashugui",
+        "Desc": "VillageSurface_dashugui_1_Desc",
+        "Name": "VillageSurface_dashugui_1_Name",
+        "PicScale": [
+            0.7,
+            0.7,
+            0.4
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_dashugui_smc",
+        "Response": "VillageBuild57",
+        "Sort": 47,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_dashugui_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_dazhixiang_1": {
+        "BuildDeviation": [
+            -8,
+            19
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "dazhixiang",
+        "Desc": "VillageSurface_dazhixiang_1_Desc",
+        "Name": "VillageSurface_dazhixiang_1_Name",
+        "PicScale": [
+            1.1,
+            1.2,
+            0.7
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_dazhixiang_smc",
+        "Response": "VillageBuild58",
+        "Sort": 48,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_dazhixiang_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_dideng_1": {
+        "BuildDeviation": [
+            1,
+            30
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "dideng",
+        "Desc": "VillageSurface_dideng_1_Desc",
+        "Name": "VillageSurface_dideng_1_Name",
+        "PicScale": [
+            1.7,
+            1.5,
+            1
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_dideng_smc",
+        "Response": "VillageBuild59",
+        "Sort": 49,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_dideng_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_guizi_1": {
+        "BuildDeviation": [
+            87,
+            -2
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "guizi",
+        "Desc": "VillageSurface_guizi_1_Desc",
+        "Name": "VillageSurface_guizi_1_Name",
+        "PicScale": [
+            0.7,
+            0.7,
+            0.4
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_guizi_smc",
+        "Response": "VillageBuild61",
+        "Sort": 51,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_guizi_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_luoditaideng_1": {
+        "BuildDeviation": [
+            0,
+            35
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "luoditaideng",
+        "Desc": "VillageSurface_luoditaideng_1_Desc",
+        "Name": "VillageSurface_luoditaideng_1_Name",
+        "PicScale": [
+            1.5,
+            1.5,
+            0.85
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_luoditaideng_smc",
+        "Response": "VillageBuild64",
+        "Sort": 53,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_luoditaideng_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": "taideng_taideng"
+    },
+    "VillageSurface_maojia_1": {
+        "BuildDeviation": [
+            -10,
+            17
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "maojia",
+        "Desc": "VillageSurface_maojia_1_Desc",
+        "Name": "VillageSurface_maojia_1_Name",
+        "PicScale": [
+            0.8,
+            0.9,
+            0.45
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_maojia_smc",
+        "Response": "VillageBuild65",
+        "Sort": 54,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_maojia_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_maoshapen_1": {
+        "BuildDeviation": [
+            8,
+            22
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "maoshapen",
+        "Desc": "VillageSurface_maoshapen_1_Desc",
+        "Name": "VillageSurface_maoshapen_1_Name",
+        "PicScale": [
+            1,
+            1.3,
+            0.75
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_maoshapen_smc",
+        "Response": "VillageBuild66",
+        "Sort": 55,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_maoshapen_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_penquanji_1": {
+        "BuildDeviation": [
+            -1,
+            14
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "penquanji",
+        "Desc": "VillageSurface_penquanji_1_Desc",
+        "Name": "VillageSurface_penquanji_1_Name",
+        "PicScale": [
+            0.5,
+            0.6,
+            0.3
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_penquanji_smc",
+        "Response": "VillageBuild67",
+        "Sort": 56,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_penquanji_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": "penquanji_penquanji"
+    },
+    "VillageSurface_qiuxingdeng_1": {
+        "BuildDeviation": [
+            1,
+            27
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "qiuxingdeng",
+        "Desc": "VillageSurface_qiuxingdeng_1_Desc",
+        "Name": "VillageSurface_qiuxingdeng_1_Name",
+        "PicScale": [
+            1,
+            1,
+            0.5
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_qiuxingdeng_smc",
+        "Response": "VillageBuild68",
+        "Sort": 57,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_qiuxingdeng_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": "qiuxingdeng_qiuxingdeng"
+    },
+    "VillageSurface_quqikaoyi_1": {
+        "BuildDeviation": [
+            0,
+            24
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "quqikaoyi",
+        "Desc": "VillageSurface_quqikaoyi_1_Desc",
+        "Name": "VillageSurface_quqikaoyi_1_Name",
+        "PicScale": [
+            1,
+            1.2,
+            0.8
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_quqikaoyi_smc",
+        "Response": "VillageBuild69",
+        "Sort": 58,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_quqikaoyi_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_sanjia_1": {
+        "BuildDeviation": [
+            4,
+            33
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "sanjia",
+        "Desc": "VillageSurface_sanjia_1_Desc",
+        "Name": "VillageSurface_sanjia_1_Name",
+        "PicScale": [
+            1.4,
+            1.4,
+            0.8
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_sanjia_smc",
+        "Response": "VillageBuild70",
+        "Sort": 59,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_sanjia_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_shenghuogui_1": {
+        "BuildDeviation": [
+            36,
+            6
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "shenghuogui",
+        "Desc": "VillageSurface_shenghuogui_1_Desc",
+        "Name": "VillageSurface_shenghuogui_1_Name",
+        "PicScale": [
+            0.7,
+            0.7,
+            0.5
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_shenghuogui_smc",
+        "Response": "VillageBuild71",
+        "Sort": 60,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_shenghuogui_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_shounagui_1": {
+        "BuildDeviation": [
+            48,
+            10
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "shounagui",
+        "Desc": "VillageSurface_shounagui_1_Desc",
+        "Name": "VillageSurface_shounagui_1_Name",
+        "PicScale": [
+            0.8,
+            0.9,
+            0.6
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_shounagui_smc",
+        "Response": "VillageBuild72",
+        "Sort": 61,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_shounagui_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_shuangpingdiannaozhuo_1": {
+        "BuildDeviation": [
+            2,
+            12
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "shuangpingdiannaozhuo",
+        "Desc": "VillageSurface_shuangpingdiannaozhuo_1_Desc",
+        "Name": "VillageSurface_shuangpingdiannaozhuo_1_Name",
+        "PicScale": [
+            0.55,
+            0.6,
+            0.35
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_shuangpingdiannaozhuo_smc",
+        "Response": "VillageBuild73",
+        "Sort": 62,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_shuangpingdiannaozhuo_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_shuangrentangyi_1": {
+        "BuildDeviation": [
+            -33,
+            23
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "shuangrentangyi",
+        "Desc": "VillageSurface_shuangrentangyi_1_Desc",
+        "Name": "VillageSurface_shuangrentangyi_1_Name",
+        "PicScale": [
+            0.5,
+            0.65,
+            0.3
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_shuangrentangyi_smc",
+        "Response": "VillageBuild75",
+        "Sort": 64,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_shuangrentangyi_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_shugui_1": {
+        "BuildDeviation": [
+            -16,
+            38
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "shugui",
+        "Desc": "VillageSurface_shugui_1_Desc",
+        "Name": "VillageSurface_shugui_1_Name",
+        "PicScale": [
+            0.7,
+            0.7,
+            0.4
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_shugui_smc",
+        "Response": "VillageBuild77",
+        "Sort": 66,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_shugui_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_shuzhuangtai_1": {
+        "BuildDeviation": [
+            48,
+            15
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "shuzhuangtai",
+        "Desc": "VillageSurface_shuzhuangtai_1_Desc",
+        "Name": "VillageSurface_shuzhuangtai_1_Name",
+        "PicScale": [
+            0.83,
+            0.9,
+            0.6
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_shuzhuangtai_smc",
+        "Response": "VillageBuild78",
+        "Sort": 67,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_shuzhuangtai_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_tangguohuatan_1": {
+        "BuildDeviation": [
+            2,
+            11
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "tangguohuatan",
+        "Desc": "VillageSurface_tangguohuatan_1_Desc",
+        "Name": "VillageSurface_tangguohuatan_1_Name",
+        "PicScale": [
+            1,
+            1,
+            0.6
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_tangguohuatan_smc",
+        "Response": "VillageBuild79",
+        "Sort": 68,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_tangguohuatan_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_tiandiantai_1": {
+        "BuildDeviation": [
+            45,
+            24
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "tiandiantai",
+        "Desc": "VillageSurface_tiandiantai_1_Desc",
+        "Name": "VillageSurface_tiandiantai_1_Name",
+        "PicScale": [
+            0.75,
+            0.75,
+            0.4
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_tiandiantai_smc",
+        "Response": "VillageBuild81",
+        "Sort": 70,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_tiandiantai_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_xiangxunyigui_1": {
+        "BuildDeviation": [
+            -47,
+            9
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "xiangxunyigui",
+        "Desc": "VillageSurface_xiangxunyigui_1_Desc",
+        "Name": "VillageSurface_xiangxunyigui_1_Name",
+        "PicScale": [
+            0.7,
+            0.8,
+            0.45
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_xiangxunyigui_smc",
+        "Response": "VillageBuild82",
+        "Sort": 71,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_xiangxunyigui_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_yaoyi_1": {
+        "BuildDeviation": [
+            0,
+            24
+        ],
+        "BuildInteractionType": "Yizi",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "yaoyi",
+        "Desc": "VillageSurface_yaoyi_1_Desc",
+        "Name": "VillageSurface_yaoyi_1_Name",
+        "PicScale": [
+            1,
+            1,
+            0.8
+        ],
         "Price": [
             {
                 "amount": 1000,
@@ -2077,20 +1888,209 @@
         ],
         "Resource": "pic_yaoyi_smc",
         "Response": "VillageBuild83",
-        "PicScale": [
-            1,
-            1,
-            0.8
+        "Sort": 72,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_yaoyi_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_yijia1_1": {
+        "BuildDeviation": [
+            0,
+            10
         ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "yijia1",
+        "Desc": "VillageSurface_yijia1_1_Desc",
+        "Name": "VillageSurface_yijia1_1_Name",
+        "PicScale": [
+            0.8,
+            0.9,
+            0.5
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_yijia1_smc",
+        "Response": "VillageBuild85",
+        "Sort": 74,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_yijia1_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_yijia_1": {
+        "BuildDeviation": [
+            0,
+            0
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "yijia",
+        "Desc": "VillageSurface_yijia_1_Desc",
+        "Name": "VillageSurface_yijia_1_Name",
+        "PicScale": [
+            0.7,
+            0.8,
+            0.4
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_yijia_smc",
+        "Response": "VillageBuild84",
+        "Sort": 73,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_yijia_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_yongchi_1": {
+        "BuildDeviation": [
+            27,
+            42
+        ],
+        "BuildInteractionType": "Wenquan",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "yongchi",
+        "Desc": "VillageSurface_yongchi_1_Desc",
+        "Name": "VillageSurface_yongchi_1_Name",
+        "PicScale": [
+            0.35,
+            0.5,
+            0.3
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_yongchi_smc",
+        "Response": "VillageBuild89",
+        "Sort": 78,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_yongchi_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": "youyongchi_youyongchi"
+    },
+    "VillageSurface_yumaowo_1": {
+        "BuildDeviation": [
+            10,
+            16
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "yumaowo",
+        "Desc": "VillageSurface_yumaowo_1_Desc",
+        "Name": "VillageSurface_yumaowo_1_Name",
+        "PicScale": [
+            1.2,
+            1.4,
+            0.75
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_yumaowo_smc",
+        "Response": "VillageBuild86",
+        "Sort": 75,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_yumaowo_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_yushi_1": {
+        "BuildDeviation": [
+            1,
+            8
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "yushi",
+        "Desc": "VillageSurface_yushi_1_Desc",
+        "Name": "VillageSurface_yushi_1_Name",
+        "PicScale": [
+            0.5,
+            0.6,
+            0.35
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_yushi_smc",
+        "Response": "VillageBuild87",
+        "Sort": 76,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_yushi_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
+    "VillageSurface_zishuruandeng_1": {
         "BuildDeviation": [
             0,
             24
         ],
-        "VillageEffect": "",
-        "Unlook": 0,
-        "Sort": 72,
+        "BuildInteractionType": "",
         "Comfort": 0,
-        "BuildInteractionType": "Yizi",
-        "SpecialEffectsPosition": ""
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "zishuruandeng",
+        "Desc": "VillageSurface_zishuruandeng_1_Desc",
+        "Name": "VillageSurface_zishuruandeng_1_Name",
+        "PicScale": [
+            1.2,
+            1.2,
+            1.2
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_zishuruandeng_smc",
+        "Response": "VillageBuild88",
+        "Sort": 77,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_zishuruandeng_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
     }
 }
