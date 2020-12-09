@@ -1107,7 +1107,7 @@
         },
         "Title": "ActivityBlock_Name",
         "Type": "ActivityBlock",
-        "UI": "",
+        "UI": "ACTIVITYBLOCKGOLDEGG",
         "Version": ""
     },
     "ActivityBlock_AchieveMentTask": {
@@ -1977,6 +1977,44 @@
         "UI": "MONSTERSHOP",
         "Version": ""
     },
+    "ActivityBlock_Holiday_ExtraNormal": {
+        "ActivityConfig": {
+            "Reward": "Holiday_Support_2",
+            "block": [
+                "Normal",
+                "Elite"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 94,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2020-12-24 05:00:00",
+            "start": [
+                "2020-12-17 05:00:00",
+                "2020-12-24 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "ExtraReward",
+        "UI": "ExtraRewardBoard",
+        "Version": ""
+    },
     "ActivityBlock_Login": {
         "ActivityConfig": {
             "Day8BgUI": [
@@ -2098,6 +2136,422 @@
             ]
         },
         "Title": "ActivityBlock_Map_Name",
+        "Type": "ActivityBlockMap",
+        "UI": "ACTIVITYBLOCKMAP",
+        "Version": ""
+    },
+    "ActivityBlock_Snowflake": {
+        "ActivityConfig": {
+            "Activity": [
+                "ActivityBlock_Snowflake_Map",
+                "ActivityBlock_Snowflake_DailyTask",
+                "ActivityBlock_Snowflake_AchieveMentTask",
+                "ActivityBlock_Snowflake_Egg"
+            ],
+            "ActivityStaminaId": "IR_SnowflakeStamina",
+            "Bmg": "ybxrdxh_fb_bg2",
+            "BonusHero": [
+                "JNLong",
+                "LLan",
+                "SLMen"
+            ],
+            "Logo": "ybxrdxh_Snowflake_logo",
+            "ModelId": [
+                {
+                    "desc": "AB_Snowflake_Model_Desc1",
+                    "model": "SLMen",
+                    "type": "Hero"
+                },
+                {
+                    "desc": "AB_Snowflake_Model_Desc3",
+                    "model": "Surface_LLan_2",
+                    "type": "Surface"
+                },
+                {
+                    "desc": "AB_Snowflake_Model_Desc4",
+                    "model": "Surface_JNLong_2",
+                    "type": "Surface",
+                    "url": "view://shopView&viewType=push&shopId=Shop_Surface"
+                }
+            ],
+            "ResourcesBanner": [
+                "IR_Gold",
+                "IR_Crystal",
+                "IR_SnowflakeStamina",
+                "IR_Diamond"
+            ],
+            "RuleDesc": [
+                "ActivityTotal_Snowflake_RuleDesc_1",
+                "ActivityTotal_Snowflake_RuleDesc_2",
+                "ActivityTotal_Snowflake_RuleDesc_3"
+            ],
+            "SubActivityEndTip": "SubActivity_SnowflakeEndTip_AB_1st",
+            "bgm": "Mus_Story_Mystery_2"
+        },
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1112,
+        "ShowTab": 2,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2020-12-18 05:00:00",
+            "start": [
+                "2020-12-10 05:00:00",
+                "2020-12-18 05:00:00"
+            ]
+        },
+        "Title": "ActivityBlock_Snowflake_Name",
+        "Type": "ActivityBlock",
+        "UI": "ACTIVITYSNOWFLAKE",
+        "Version": ""
+    },
+    "ActivityBlock_Snowflake_AchieveMentTask": {
+        "ActivityConfig": {
+            "Bmg": "renwu_bd_bj",
+            "entitle": "HalloweenAchieveMentTask_entitle",
+            "progressDesc": "ABATask_Snowflake_Desc",
+            "progressItem": "IM_Snowflake_Achieve",
+            "task": [
+                "Snowflake_AchieveMentTask_001",
+                "Snowflake_AchieveMentTask_002",
+                "Snowflake_AchieveMentTask_003",
+                "Snowflake_AchieveMentTask_004",
+                "Snowflake_AchieveMentTask_005",
+                "Snowflake_AchieveMentTask_006",
+                "Snowflake_AchieveMentTask_007",
+                "Snowflake_AchieveMentTask_008",
+                "Snowflake_AchieveMentTask_009",
+                "Snowflake_AchieveMentTask_010",
+                "Snowflake_AchieveMentTask_011",
+                "Snowflake_AchieveMentTask_012",
+                "Snowflake_AchieveMentTask_013",
+                "Snowflake_AchieveMentTask_014",
+                "Snowflake_AchieveMentTask_015",
+                "Snowflake_AchieveMentTask_016",
+                "Snowflake_AchieveMentTask_017",
+                "Snowflake_AchieveMentTask_018",
+                "Snowflake_AchieveMentTask_019",
+                "Snowflake_AchieveMentTask_020",
+                "Snowflake_AchieveMentTask_021",
+                "Snowflake_AchieveMentTask_022",
+                "Snowflake_AchieveMentTask_023",
+                "Snowflake_AchieveMentTask_024",
+                "Snowflake_AchieveMentTask_025",
+                "Snowflake_AchieveMentTask_026",
+                "Snowflake_AchieveMentTask_027",
+                "Snowflake_AchieveMentTask_028"
+            ],
+            "titleImg": "hd_bg_fhj_Snowflake_2"
+        },
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 1,
+        "MailId": "Mail_Snowflake_AchieveMentTask_Activity",
+        "Primary": 0,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1115,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2020-12-17 05:00:00",
+            "start": [
+                "2020-12-10 05:00:00",
+                "2020-12-17 05:00:00"
+            ]
+        },
+        "Title": "ActivityBlock_Snowflake_AchieveMentTask_Name",
+        "Type": "TASK",
+        "UI": "ABACHIEVEMENTTASK",
+        "Version": ""
+    },
+    "ActivityBlock_Snowflake_DailyTask": {
+        "ActivityConfig": {
+            "Bmg": "renwu_bd_bj",
+            "entitle": "ABDailyTask_Snowflake_entitle",
+            "task": [
+                "Snowflack_DailyTask_01",
+                "Snowflack_DailyTask_02",
+                "Snowflack_DailyTask_03",
+                "Snowflack_DailyTask_04",
+                "Snowflack_DailyTask_05",
+                "Snowflack_DailyTask_06"
+            ],
+            "titleImg": "hd_bg_fhj_Snowflake_1"
+        },
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 1,
+        "MailId": "Mail_Snowflake_DailyTask_Activity",
+        "Primary": 0,
+        "Reset": 1,
+        "ServerCondition": "",
+        "ShowIndex": 1114,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2020-12-17 05:00:00",
+            "start": [
+                "2020-12-10 05:00:00",
+                "2020-12-17 05:00:00"
+            ]
+        },
+        "Title": "ActivityBlock_Snowflake_DailyTask_Name",
+        "Type": "TASK",
+        "UI": "ABDAILYTASK",
+        "Version": ""
+    },
+    "ActivityBlock_Snowflake_Egg": {
+        "ActivityConfig": {
+            "ActivityBlockEggId": "ABE_Snowflake_01",
+            "Bmg": "ybxrdxh_Egg_Snowflake_bg",
+            "ButtonIcon": "ybxrdxh_zy_btn_Snowflake_zbd",
+            "ResourcesBanner": [
+                "IR_Gold",
+                "IR_Crystal",
+                "IM_Snowflake_Egg",
+                "IR_Diamond"
+            ],
+            "RuleDesc": [
+                "ABEgg_Snowflake_RuleDesc_1",
+                "ABEgg_Snowflake_RuleDesc_2",
+                "ABEgg_Snowflake_RuleDesc_3"
+            ],
+            "TuZiAnim": "tuzi_zabingdan"
+        },
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 0,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1119,
+        "ShowTab": 1,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2020-12-18 05:00:00",
+            "start": [
+                "2020-12-10 05:00:00",
+                "2020-12-18 05:00:00"
+            ]
+        },
+        "Title": "ActivityBlock_Egg_Name",
+        "Type": "ActivityBlockEgg",
+        "UI": "ACTIVITYBLOCKEGG",
+        "Version": ""
+    },
+    "ActivityBlock_Snowflake_ExtraMap": {
+        "ActivityConfig": {
+            "Reward": "Snowflack_Stamina_ExtraMap_R",
+            "block": [
+                "Map"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1117,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2020-12-17 05:00:00",
+            "start": [
+                "2020-12-10 05:00:00",
+                "2020-12-17 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "ExtraReward",
+        "UI": "ExtraRewardBoard",
+        "Version": ""
+    },
+    "ActivityBlock_Snowflake_ExtraNormal": {
+        "ActivityConfig": {
+            "Reward": "Snowflack_Stamina_ExtraNormal_R",
+            "block": [
+                "Normal",
+                "Elite"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1116,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2020-12-17 05:00:00",
+            "start": [
+                "2020-12-10 05:00:00",
+                "2020-12-17 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "ExtraReward",
+        "UI": "ExtraRewardBoard",
+        "Version": ""
+    },
+    "ActivityBlock_Snowflake_ExtraSorce": {
+        "ActivityConfig": {
+            "Reward": "Snowflack_Stamina_ExtraSource_R",
+            "block": [
+                "GOLD",
+                "EXP",
+                "CRYSTAL"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1118,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2020-12-17 05:00:00",
+            "start": [
+                "2020-12-10 05:00:00",
+                "2020-12-17 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "ExtraReward",
+        "UI": "ExtraRewardBoard",
+        "Version": ""
+    },
+    "ActivityBlock_Snowflake_Map": {
+        "ActivityConfig": {
+            "ActivityBlockMap": {
+                "Elite": [
+                    "Snowflack_Map_E01"
+                ],
+                "Normal": [
+                    "Snowflack_Map_M01"
+                ]
+            },
+            "BonusHero": [
+                "JNLong",
+                "LLan",
+                "SLMen"
+            ],
+            "BonusHeroDesc": [
+                "ABMap_Snowflake_RuleDesc_1",
+                "ABMap_Snowflake_RuleDesc_2",
+                "ABMap_Snowflake_RuleDesc_3",
+                "ABMap_Snowflake_RuleDesc_4"
+            ],
+            "ButtonIcon": "ybxrdxh_zy_Snowflake_hdrk",
+            "ChangeBtnImg": {
+                "ELITE": "ybxrdxh_Elite_Snowflake_nd2.png",
+                "NORMAL": "ybxrdxh_Normal_Snowflake_nd1.png"
+            },
+            "ResourcesBanner": [
+                "IR_Gold",
+                "IR_Crystal",
+                "IR_SnowflakeStamina",
+                "IR_Diamond"
+            ],
+            "ShowReward": "ShowReward_Snowflack_ABR"
+        },
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 0,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1113,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2020-12-17 05:00:00",
+            "start": [
+                "2020-12-10 05:00:00",
+                "2020-12-17 05:00:00"
+            ]
+        },
+        "Title": "ActivityBlock_Snowflake_Map_Name",
         "Type": "ActivityBlockMap",
         "UI": "ACTIVITYBLOCKMAP",
         "Version": ""
@@ -3587,6 +4041,38 @@
         "UI": "Gashapon",
         "Version": ""
     },
+    "Activity_Gashapon_20201217": {
+        "ActivityConfig": {
+            "Gashapon": "Gashapon_2nd_01",
+            "ReFlash": 1
+        },
+        "ClientCondition": {
+            "REGISTER": 29
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "hd_btn_mhzb_bg",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": "",
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 1,
+        "ServerCondition": "",
+        "ShowIndex": 93003,
+        "ShowTab": 1,
+        "Tag": "",
+        "Time": "FIXED",
+        "TimeFactor": {
+            "end": "2020-12-24 05:00:00",
+            "start": "2020-12-17 05:00:00"
+        },
+        "Title": "Activity_Gashapon_20200727_Name",
+        "Type": "Gashapon",
+        "UI": "Gashapon",
+        "Version": ""
+    },
     "Carnival": {
         "ActivityConfig": {
             "Activity": [
@@ -4128,6 +4614,42 @@
         "UI": "",
         "Version": ""
     },
+    "DrawCard_1UP_13_NEW_Activity": {
+        "ActivityConfig": {
+            "DRAW": "DrawCard_1UP_13_NEW",
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_13_NEW",
+            "VANISH": 0
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 209,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2020-12-24 05:00:00",
+            "start": [
+                "2020-12-17 05:00:00",
+                "2020-12-24 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "Version": ""
+    },
     "DrawCard_1UP_1New_Activity": {
         "ActivityConfig": {
             "DRAW": "DrawCard_1UP_1New",
@@ -4458,6 +4980,42 @@
         "TimeFactor": {
             "end": 51,
             "start": 45
+        },
+        "Title": "",
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "Version": ""
+    },
+    "DrawCard_1UP_SLMen_Activity": {
+        "ActivityConfig": {
+            "DRAW": "DrawCard_1UP_SLMen",
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_SLMen",
+            "VANISH": 0
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 103,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2020-12-17 05:00:00",
+            "start": [
+                "2020-12-10 05:00:00",
+                "2020-12-17 05:00:00"
+            ]
         },
         "Title": "",
         "Type": "DRAWCARDOPEN",
@@ -5352,6 +5910,42 @@
         "UI": "",
         "Version": ""
     },
+    "DrawCard_WEDeYLMGZhu_Activity": {
+        "ActivityConfig": {
+            "DRAW": "DrawCard_WEDeYLMGZhu",
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_WEDeYLMGZhu",
+            "VANISH": 0
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 205,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2020-12-17 05:00:00",
+            "start": [
+                "2020-12-10 05:00:00",
+                "2020-12-17 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "Version": ""
+    },
     "DrawCard_WEDeYLSBai_Activity": {
         "ActivityConfig": {
             "DRAW": "DrawCard_WEDeYLSBai",
@@ -5445,6 +6039,42 @@
         "TimeFactor": {
             "end": 21,
             "start": 15
+        },
+        "Title": "",
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "Version": ""
+    },
+    "DrawCard_YBYaLDu_New_Activity": {
+        "ActivityConfig": {
+            "DRAW": "DrawCard_YBYaLDu_New",
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_YBYaLDu_New",
+            "VANISH": 0
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 203,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2020-12-24 05:00:00",
+            "start": [
+                "2020-12-17 05:00:00",
+                "2020-12-24 05:00:00"
+            ]
         },
         "Title": "",
         "Type": "DRAWCARDOPEN",
@@ -5639,6 +6269,64 @@
         "UI": "EightLogin",
         "Version": ""
     },
+    "EightDays_Snowflake": {
+        "ActivityConfig": {
+            "Day8BgUI": [
+                "hd_8r_Snowflake_day8",
+                "hd_8r_Snowflake_day8_klq"
+            ],
+            "Time": "limit",
+            "bg": [
+                "hd_bg_8rSnowflake__3"
+            ],
+            "showHero": "JNLong",
+            "specailDay": [
+                8
+            ],
+            "task": [
+                "Snowflake_Login_01",
+                "Snowflake_Login_02",
+                "Snowflake_Login_03",
+                "Snowflake_Login_04",
+                "Snowflake_Login_05",
+                "Snowflake_Login_06",
+                "Snowflake_Login_07",
+                "Snowflake_Login_08"
+            ],
+            "title": [
+                "hd_8r_bt_Snowflake_3"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "Desc": "ActivityBlock_Login_Desc",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "hd_btn_8r_Snowflake_3",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 1,
+        "MailId": "Mail_EightDays_Snowflake",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1120,
+        "ShowTab": 1,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2020-12-18 05:00:00",
+            "start": [
+                "2020-12-10 05:00:00",
+                "2020-12-18 05:00:00"
+            ]
+        },
+        "Title": "EightDays_Snowflake_Name",
+        "Type": "TASK",
+        "UI": "EightLoginCommon",
+        "Version": ""
+    },
     "FreeStamina": {
         "ActivityConfig": {
             "FreeStamina": [
@@ -5801,6 +6489,55 @@
             "start": [
                 "2020-12-05 05:00:00",
                 "2020-12-12 05:00:00"
+            ]
+        },
+        "Title": "Login14_Title",
+        "Type": "TASK",
+        "UI": "Login",
+        "Version": ""
+    },
+    "Login7_1217": {
+        "ActivityConfig": {
+            "GetRewardClose": 1,
+            "IsTimeClose": 1,
+            "showHero": "ATSheng",
+            "specailDay": [
+                3,
+                7
+            ],
+            "task": [
+                "Login7_11",
+                "Login7_12",
+                "Login7_13",
+                "Login7_14",
+                "Login7_15",
+                "Login7_16",
+                "Login7_17"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "Desc": "Login14_Desc",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "hd_btn_ljdl_bg",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 2,
+        "ShowTab": 1,
+        "Tag": "WONDERFUL",
+        "Time": "RANGE_RESTART",
+        "TimeFactor": {
+            "duration": 7,
+            "start": [
+                "2020-12-17 05:00:00",
+                "2020-12-24 05:00:00"
             ]
         },
         "Title": "Login14_Title",

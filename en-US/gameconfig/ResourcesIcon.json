@@ -307,6 +307,40 @@
         "Shine": "",
         "Sicon": "IM_Name_Person_s"
     },
+    "IM_Snowflake_Achieve": {
+        "Desc": "IM_Snowflake_Achieve_FunctionDesc",
+        "LargeIcons": [
+            "IR_HD_Snowflake_Achieve"
+        ],
+        "Licon": "IR_HD_Snowflake_Achieve",
+        "Name": "IM_Snowflake_Achieve_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "IR_HD_Snowflake_Achieve_small"
+    },
+    "IM_Snowflake_Egg": {
+        "Desc": "IM_Snowflake_Egg_FunctionDesc",
+        "LargeIcons": [
+            "IR_HD_Snowflake_Ice_Egg"
+        ],
+        "Licon": "IR_HD_Snowflake_Ice_Egg",
+        "Name": "IM_Snowflake_Egg_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "IR_HD_Snowflake_Ice_Egg_small"
+    },
     "IM_SummerBossStamina": {
         "Desc": "IM_SummerBossStamina_FunctionDesc",
         "LargeIcons": [
@@ -831,6 +865,23 @@
         ],
         "Shine": "",
         "Sicon": "icon_pve"
+    },
+    "IR_SnowflakeStamina": {
+        "Desc": "IR_SnowflakeStamina_FunctionDesc",
+        "LargeIcons": [
+            "IR_HD_SnowflakeStamina"
+        ],
+        "Licon": "IR_HD_SnowflakeStamina",
+        "Name": "IR_SnowflakeStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "IR_HD_SnowflakeStamina_small"
     },
     "IR_SummerAcitvityStamina": {
         "Desc": "IR_SummerAcitvityStamina_FunctionDesc",

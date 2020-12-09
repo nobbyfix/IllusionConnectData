@@ -24,6 +24,7 @@
         },
         "RoleModel": "Model_GLin",
         "SkillRate": 0.0,
+        "SummonSurface": [],
         "Type": "Summoned",
         "UniqueSkill": ""
     },
@@ -52,6 +53,7 @@
         },
         "RoleModel": "Model_GLin",
         "SkillRate": 0.0,
+        "SummonSurface": [],
         "Type": "Summoned",
         "UniqueSkill": ""
     },
@@ -80,6 +82,7 @@
         },
         "RoleModel": "Model_WEDe",
         "SkillRate": 0.0,
+        "SummonSurface": [],
         "Type": "Summoned",
         "UniqueSkill": ""
     },
@@ -110,6 +113,7 @@
         },
         "RoleModel": "Model_ATSheng_Mermaid",
         "SkillRate": 0.0,
+        "SummonSurface": [],
         "Type": "Summoned",
         "UniqueSkill": ""
     },
@@ -140,6 +144,7 @@
         },
         "RoleModel": "Model_ATSheng_Queen",
         "SkillRate": 0.0,
+        "SummonSurface": [],
         "Type": "Summoned",
         "UniqueSkill": ""
     },
@@ -168,6 +173,7 @@
         },
         "RoleModel": "Model_GYCZi_jiangshi",
         "SkillRate": 0.0,
+        "SummonSurface": [],
         "Type": "Summoned",
         "UniqueSkill": ""
     },
@@ -198,6 +204,9 @@
         },
         "RoleModel": "Model_JNLong_Phantom",
         "SkillRate": 0.5,
+        "SummonSurface": [
+            "Model_JNLong_Phantom_Winter"
+        ],
         "Type": "Summon",
         "UniqueSkill": ""
     },
@@ -226,6 +235,7 @@
         },
         "RoleModel": "Model_LDu_Saba",
         "SkillRate": 0.0,
+        "SummonSurface": [],
         "Type": "Summoned",
         "UniqueSkill": ""
     },
@@ -254,6 +264,7 @@
         },
         "RoleModel": "Model_LDu_Saba",
         "SkillRate": 0.0,
+        "SummonSurface": "",
         "Type": "Summoned",
         "UniqueSkill": ""
     },
@@ -282,6 +293,7 @@
         },
         "RoleModel": "Model_LYSi_Hat",
         "SkillRate": 0.0,
+        "SummonSurface": [],
         "Type": "Summoned",
         "UniqueSkill": ""
     },
@@ -310,6 +322,7 @@
         },
         "RoleModel": "Model_PNCao_HuaHaiJi",
         "SkillRate": 0.5,
+        "SummonSurface": [],
         "Type": "Summoned",
         "UniqueSkill": ""
     },
@@ -338,6 +351,7 @@
         },
         "RoleModel": "Model_PNCao_NuoNuo",
         "SkillRate": 0.0,
+        "SummonSurface": [],
         "Type": "Summoned",
         "UniqueSkill": ""
     },
@@ -368,6 +382,7 @@
         },
         "RoleModel": "Model_SGHQShou_Lucy",
         "SkillRate": 0.5,
+        "SummonSurface": [],
         "Type": "Summoned",
         "UniqueSkill": ""
     },
@@ -398,6 +413,7 @@
         },
         "RoleModel": "Model_SGHQShou_Vanessa",
         "SkillRate": 0.5,
+        "SummonSurface": [],
         "Type": "Summoned",
         "UniqueSkill": ""
     },
@@ -426,6 +442,7 @@
         },
         "RoleModel": "Model_SYAi_jiangshi",
         "SkillRate": 0.0,
+        "SummonSurface": [],
         "Type": "Summoned",
         "UniqueSkill": ""
     },
@@ -454,6 +471,7 @@
         },
         "RoleModel": "Model_Enemy_Tombstone_Small",
         "SkillRate": 0.0,
+        "SummonSurface": "",
         "Type": "Summoned",
         "UniqueSkill": ""
     },
@@ -482,6 +500,7 @@
         },
         "RoleModel": "Model_YBYa_Redfox",
         "SkillRate": 0.0,
+        "SummonSurface": [],
         "Type": "Summoned",
         "UniqueSkill": ""
     },
@@ -510,6 +529,7 @@
         },
         "RoleModel": "Model_Enemy_YLJSi_Enemy02",
         "SkillRate": 0.5,
+        "SummonSurface": "",
         "Type": "Summoned",
         "UniqueSkill": ""
     },
@@ -538,6 +558,7 @@
         },
         "RoleModel": "Model_Enemy_YLJSi_Enemy01",
         "SkillRate": 0.5,
+        "SummonSurface": "",
         "Type": "Summoned",
         "UniqueSkill": ""
     },
@@ -566,6 +587,7 @@
         },
         "RoleModel": "Model_YYing_jiangshi",
         "SkillRate": 0.0,
+        "SummonSurface": [],
         "Type": "Summoned",
         "UniqueSkill": ""
     }

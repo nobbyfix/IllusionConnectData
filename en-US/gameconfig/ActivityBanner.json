@@ -6,6 +6,13 @@
         "Type": "Activity",
         "TypeId": "DrawCard_1UP_4_Activity"
     },
+    "ActivityBanner107": {
+        "Img": "drawcard_banner_SLMen.png",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_SLMen",
+        "Sort": 107,
+        "Type": "Activity",
+        "TypeId": "DrawCard_1UP_SLMen_Activity"
+    },
     "ActivityBanner11": {
         "Img": "drawcard_banner_BBLMa.png",
         "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_5",
@@ -125,12 +132,26 @@
         "Type": "Activity",
         "TypeId": "DrawCard_Party2Up_Activity"
     },
+    "ActivityBanner69": {
+        "Img": "drawcard_banner_WEDeYLMGZhu.png",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_WEDeYLMGZhu",
+        "Sort": 69,
+        "Type": "Activity",
+        "TypeId": "DrawCard_WEDeYLMGZhu_Activity"
+    },
     "ActivityBanner7": {
         "Img": "drawcard_banner_BBLMa.png",
         "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_1",
         "Sort": 7,
         "Type": "Activity",
         "TypeId": "DrawCard_1UP_1_Activity"
+    },
+    "ActivityBanner70": {
+        "Img": "drawcard_banner_YBYaLDu.png",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_YBYaLDu_New",
+        "Sort": 70,
+        "Type": "Activity",
+        "TypeId": "DrawCard_YBYaLDu_New_Activity"
     },
     "ActivityBanner74": {
         "Img": "drawcard_banner_SDTZiLCYShi.png",
@@ -265,12 +286,26 @@
         "Type": "Activity",
         "TypeId": "DrawCard_1UP_28_Activity"
     },
+    "ActivityBanner95": {
+        "Img": "drawcard_banner_KMLa.png",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_13_NEW",
+        "Sort": 95,
+        "Type": "Activity",
+        "TypeId": "DrawCard_1UP_13_NEW_Activity"
+    },
     "ActivityBannerHalloween": {
         "Img": "Activity_banner_wsj.png",
         "Link": "view://ActivityBlockHalloweenView&activityId=ActivityBlock_Halloween",
         "Sort": 3000,
         "Type": "Activity",
         "TypeId": "ActivityBlock_Halloween"
+    },
+    "ActivityBannerSnowflake": {
+        "Img": "ybxsdxh_banner.png",
+        "Link": "view://ActivityBlockHalloweenView&activityId=ActivityBlock_Snowflake",
+        "Sort": 3003,
+        "Type": "Activity",
+        "TypeId": "ActivityBlock_Snowflake"
     },
     "ActivityBannerSummer": {
         "Img": "drawcard_banner_summer.png",
