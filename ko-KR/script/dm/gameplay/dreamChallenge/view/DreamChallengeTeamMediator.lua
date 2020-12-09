@@ -597,7 +597,15 @@ function DreamChallengeTeamMediator:changeOwnPet(cell)
 	AudioEngine:getInstance():playEffect("Se_Click_Pickup", false)
 
 	if targetId then
-		self._teamPets[targetIndex] = id
+		if targetIndex <= #self._npc then
+			self:dispatch(ShowTipEvent({
+				tip = Strings:get("DreamChallenge_Team_Helper_Info")
+			}))
+
+			return
+		end
+
+		self._teamPets[targetIndex - #self._npc] = id
 		local index = table.indexof(self._petList, id)
 
 		if index then
