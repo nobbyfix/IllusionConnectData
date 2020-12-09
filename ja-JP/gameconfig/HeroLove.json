@@ -827,7 +827,86 @@
             "IHG_Quality4_6": 8,
             "IHG_Quality5_3": 20
         },
-        "StoryLink": "",
+        "StoryLink": [
+            {
+                "bg": "main_img_00",
+                "option": [
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        12,
+                        3
+                    ]
+                ],
+                "story": "ALSiDate01"
+            },
+            {
+                "bg": "main_img_00",
+                "option": [
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        12,
+                        3
+                    ]
+                ],
+                "story": "ALSiDate02"
+            },
+            {
+                "bg": "main_img_00",
+                "option": [
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        3,
+                        12
+                    ]
+                ],
+                "story": "ALSiDate03"
+            }
+        ],
         "UseEventDesc": {
             "sit": "EventUse_ALSi",
             "sleep": "EventUse_ALSi"
@@ -12334,7 +12413,86 @@
             "IHG_Quality4_5": 8,
             "IHG_Quality5_2": 20
         },
-        "StoryLink": "",
+        "StoryLink": [
+            {
+                "bg": "main_img_00",
+                "option": [
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        12,
+                        3
+                    ]
+                ],
+                "story": "YLMGZhuDate01"
+            },
+            {
+                "bg": "main_img_00",
+                "option": [
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        3,
+                        12
+                    ]
+                ],
+                "story": "YLMGZhuDate02"
+            },
+            {
+                "bg": "main_img_00",
+                "option": [
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        12,
+                        3
+                    ]
+                ],
+                "story": "YLMGZhuDate03"
+            }
+        ],
         "UseEventDesc": {
             "sit": "EventUse_YLMGZhu",
             "sleep": "EventUse_YLMGZhu"

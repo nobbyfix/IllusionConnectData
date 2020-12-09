@@ -185,6 +185,70 @@
             100
         ]
     },
+    "DreamChallengePoint_T01N04": {
+        "AwakenAttrEffect": "DC_7star_buff",
+        "BlockPoint": [
+            "DreamChallengeBattle_T01N04M01",
+            "DreamChallengeBattle_T01N04M02",
+            "DreamChallengeBattle_T01N04M03",
+            "DreamChallengeBattle_T01N04M04",
+            "DreamChallengeBattle_T01N04M05",
+            "DreamChallengeBattle_T01N04M06",
+            "DreamChallengeBattle_T01N04M07",
+            "DreamChallengeBattle_T01N04M08",
+            "DreamChallengeBattle_T01N04M09",
+            "DreamChallengeBattle_T01N04M10",
+            "DreamChallengeBattle_T01N04M11",
+            "DreamChallengeBattle_T01N04M12"
+        ],
+        "Desc": "DreamChallengePoint_T01N04_decs",
+        "EndDesc": "DC_EndDesc_T01N04",
+        "Excellent": [
+            {
+                "Skill": "DC_T01_Tank_Buff",
+                "job": [
+                    "Defense"
+                ]
+            }
+        ],
+        "Master": [
+            "Master_XueZhan",
+            "Master_LieSha"
+        ],
+        "Name": "DreamChallengePoint_T01N04_Name",
+        "Num": 4,
+        "Pic": "mjt_z_mjjcs_bg",
+        "ShortDesc": "DC_ShortDesc_T01N04",
+        "Show": "DreamChallenge_T01N04",
+        "ShowCondition": {
+            "LEVEL": 32
+        },
+        "StarsAttrEffect": "DC_5star_buff",
+        "StoryLink": "",
+        "TabPic": "mjt_z_butten_x4",
+        "Type": 1,
+        "UnlockCondition": {
+            "LEVEL": 32,
+            "Pass": "DreamChallengeBattle_T01N03M012"
+        },
+        "fatigue": 4,
+        "screen": {
+            "Up": [
+                {
+                    "type": "Party",
+                    "value": "WNSXJ"
+                },
+                {
+                    "type": "Party",
+                    "value": "BSNCT"
+                }
+            ]
+        },
+        "shifting": [
+            110,
+            100
+        ]
+    },
     "DreamChallengePoint_T02N01": {
         "AwakenAttrEffect": "DC_7star_buff",
         "BlockPoint": [
@@ -373,6 +437,76 @@
         "UnlockCondition": {
             "LEVEL": 44,
             "Pass": "DreamChallengeBattle_T02N02M09"
+        },
+        "fatigue": 4,
+        "screen": {
+            "Up": [
+                {
+                    "type": "Party",
+                    "value": "WNSXJ"
+                },
+                {
+                    "type": "Party",
+                    "value": "BSNCT"
+                }
+            ]
+        },
+        "shifting": [
+            110,
+            100
+        ]
+    },
+    "DreamChallengePoint_T02N04": {
+        "AwakenAttrEffect": "DC_7star_buff",
+        "BlockPoint": [
+            "DreamChallengeBattle_T02N04M01",
+            "DreamChallengeBattle_T02N04M02",
+            "DreamChallengeBattle_T02N04M03",
+            "DreamChallengeBattle_T02N04M04",
+            "DreamChallengeBattle_T02N04M05",
+            "DreamChallengeBattle_T02N04M06",
+            "DreamChallengeBattle_T02N04M07",
+            "DreamChallengeBattle_T02N04M08",
+            "DreamChallengeBattle_T02N04M09",
+            "DreamChallengeBattle_T02N04M10",
+            "DreamChallengeBattle_T02N04M11",
+            "DreamChallengeBattle_T02N04M12"
+        ],
+        "Desc": "DreamChallengePoint_T02N04_decs",
+        "EndDesc": "DC_EndDesc_T02N04",
+        "Excellent": [
+            {
+                "Skill": "DC_T01_Tank_Buff",
+                "job": [
+                    "Defense"
+                ]
+            },
+            {
+                "Party": [
+                    "WNSXJ"
+                ],
+                "Skill": "DC_T02_WNSXJ_Buff"
+            }
+        ],
+        "Master": [
+            "Master_XueZhan",
+            "Master_BiLei"
+        ],
+        "Name": "DreamChallengePoint_T02N04_Name",
+        "Num": 4,
+        "Pic": "mjt_z_mjjcx_bg",
+        "ShortDesc": "DC_ShortDesc_T02N04",
+        "Show": "DreamChallenge_T02N04",
+        "ShowCondition": {
+            "LEVEL": 32
+        },
+        "StarsAttrEffect": "DC_5star_buff",
+        "StoryLink": "",
+        "TabPic": "mjt_z_butten_x4",
+        "Type": 1,
+        "UnlockCondition": {
+            "LEVEL": 44,
+            "Pass": "DreamChallengeBattle_T02N03M12"
         },
         "fatigue": 4,
         "screen": {

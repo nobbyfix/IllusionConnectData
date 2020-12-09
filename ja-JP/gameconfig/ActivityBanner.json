@@ -48,6 +48,13 @@
         "Type": "Activity",
         "TypeId": "DrawCard_W2_2UP_Activity2"
     },
+    "ActivityBanner106": {
+        "Img": "drawcard_banner_LFErKTSJKe.png",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_LFErKTSJKe",
+        "Sort": 106,
+        "Type": "Activity",
+        "TypeId": "DrawCard_W3_2UP_Activity1"
+    },
     "ActivityBanner11": {
         "Img": "drawcard_banner_BBLMa.png",
         "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_5",
@@ -411,6 +418,13 @@
         "Sort": 3000,
         "Type": "Activity",
         "TypeId": "ActivityBlock_Halloween"
+    },
+    "ActivityBannerSnowflake": {
+        "Img": "ybxsdxh_banner.png",
+        "Link": "view://ActivityBlockHalloweenView&activityId=ActivityBlock_Snowflake",
+        "Sort": 3003,
+        "Type": "Activity",
+        "TypeId": "ActivityBlock_Snowflake"
     },
     "ActivityBannerSummer": {
         "Img": "drawcard_banner_summer.png",

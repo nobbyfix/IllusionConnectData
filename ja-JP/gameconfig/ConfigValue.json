@@ -653,7 +653,9 @@
             "M08",
             "M09",
             "M10",
-            "M11"
+            "M11",
+            "M12",
+            "M13"
         ]
     },
     "Block_StarConditionDesc": {
@@ -1600,6 +1602,26 @@
         "clz": "int",
         "content": 10
     },
+    "Club_PlayerHouse": {
+        "clz": "int[]",
+        "content": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+        ]
+    },
     "Club_Quike_CD_Time": {
         "clz": "int",
         "content": 30
@@ -1618,6 +1640,10 @@
                 "Title": "ChatRoom_Title"
             }
         ]
+    },
+    "Club_ScientificHero": {
+        "clz": "string",
+        "content": "Model_LFEr"
     },
     "Club_Second_Number": {
         "clz": "int",
@@ -2164,7 +2190,9 @@
             "E08",
             "E09",
             "E10",
-            "E11"
+            "E11",
+            "E12",
+            "E13"
         ]
     },
     "EliteStage_RestCost": {

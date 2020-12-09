@@ -140192,6 +140192,60 @@
             ]
         ]
     },
+    "Snowflack_Hero_Extra_001": {
+        "AttrType": [
+            "HP_RATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            1
+        ]
+    },
+    "Snowflack_Hero_Extra_002": {
+        "AttrType": [
+            "HURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.5
+        ]
+    },
+    "Snowflack_Hero_Extra_003": {
+        "AttrType": [
+            "ATK_RATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.5
+        ]
+    },
     "StageSp_Crystal_Skill_1": {
         "AttrType": [
             "HP_RATE"

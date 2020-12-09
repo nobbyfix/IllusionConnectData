@@ -50,6 +50,23 @@
         },
         "Vanish": 0
     },
+    "ShopRecommend_4": {
+        "BackGroundImg": "sd_tj_bg_xrzhlb",
+        "ClientCondition": "",
+        "Hide": 1,
+        "Link": "view://shopView&viewType=push&shopId=Shop_Package&packageId=PackageShop_3",
+        "PackageId": [
+            "PackageShop_3"
+        ],
+        "Prepose": "",
+        "ServerCondition": "",
+        "Sort": 1004,
+        "TabName": "PackageShop_3_Name",
+        "TimeType": {
+            "type": "unlimit"
+        },
+        "Vanish": 1
+    },
     "ShopRecommend_TL_CZheng": {
         "BackGroundImg": "sd_tj_bg_ydyw",
         "ClientCondition": "",

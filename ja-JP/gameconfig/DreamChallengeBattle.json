@@ -1144,6 +1144,510 @@
             }
         ]
     },
+    "DreamChallengeBattle_T01N04M01": {
+        "BGM": [
+            "Mus_Battle_Danger_Boss",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleFactor": [
+            21200,
+            21200,
+            21200
+        ],
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 212000,
+        "Combat_Adjust_Rate": 0.0,
+        "EnemyCard": "CardT01N03M01",
+        "EnemyMaster": "T01N03M01W01_Master_01",
+        "NPC": "",
+        "Name": "DreamChallengeBattle_Name_T01N03M01",
+        "OpenFAC": 1,
+        "Pic": "mjt_pannel_T01N03M01",
+        "PointHead": "Model_NXYYi",
+        "Showreward": "DreamChallengeBattle_T01N04M01_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 32,
+            "Pass": "DreamChallengeBattle_T01N03M12"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T01N04M01_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T01N04M02": {
+        "BGM": [
+            "Mus_Battle_Danger_Boss",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleFactor": [
+            22000,
+            22000,
+            22000
+        ],
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 220000,
+        "Combat_Adjust_Rate": 0.0,
+        "EnemyCard": "CardT01N03M02",
+        "EnemyMaster": "T01N03M02W01_Master_01",
+        "NPC": "",
+        "Name": "DreamChallengeBattle_Name_T01N03M02",
+        "OpenFAC": 1,
+        "Pic": "mjt_pannel_T01N03M02",
+        "PointHead": "Model_NXYYi",
+        "Showreward": "DreamChallengeBattle_T01N04M02_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 32,
+            "Pass": "DreamChallengeBattle_T01N04M01"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T01N04M02_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T01N04M03": {
+        "BGM": [
+            "Mus_Battle_Danger_Boss",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleFactor": [
+            22800,
+            22800,
+            22800
+        ],
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 228000,
+        "Combat_Adjust_Rate": 0.0,
+        "EnemyCard": "CardT01N03M03",
+        "EnemyMaster": "T01N03M03W01_Master_01",
+        "NPC": "",
+        "Name": "DreamChallengeBattle_Name_T01N03M03",
+        "OpenFAC": 1,
+        "Pic": "mjt_pannel_T01N03M03",
+        "PointHead": "Model_NXYYi",
+        "Showreward": "DreamChallengeBattle_T01N04M03_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 32,
+            "Pass": "DreamChallengeBattle_T01N04M02"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T01N04M03_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T01N04M04": {
+        "BGM": [
+            "Mus_Battle_Danger_Boss",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleFactor": [
+            23600,
+            23600,
+            23600
+        ],
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 236000,
+        "Combat_Adjust_Rate": 0.15,
+        "EnemyCard": "CardT01N03M04",
+        "EnemyMaster": "T01N03M04W01_Master_01",
+        "NPC": "",
+        "Name": "DreamChallengeBattle_Name_T01N03M04",
+        "OpenFAC": 1,
+        "Pic": "mjt_pannel_T01N03M04",
+        "PointHead": "Model_NXYYi",
+        "Showreward": "DreamChallengeBattle_T01N04M04_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 32,
+            "Pass": "DreamChallengeBattle_T01N04M03"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T01N04M04_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T01N04M05": {
+        "BGM": [
+            "Mus_Battle_Danger_Boss",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleFactor": [
+            24400,
+            24400,
+            24400
+        ],
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 244000,
+        "Combat_Adjust_Rate": 0.0,
+        "EnemyCard": "CardT01N03M05",
+        "EnemyMaster": "T01N03M05W01_Master_01",
+        "NPC": "",
+        "Name": "DreamChallengeBattle_Name_T01N03M05",
+        "OpenFAC": 1,
+        "Pic": "mjt_pannel_T01N03M05",
+        "PointHead": "Model_NXYYi",
+        "Showreward": "DreamChallengeBattle_T01N04M05_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 32,
+            "Pass": "DreamChallengeBattle_T01N04M04"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T01N04M05_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T01N04M06": {
+        "BGM": [
+            "Mus_Battle_Danger_Boss",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleFactor": [
+            25200,
+            25200,
+            25200
+        ],
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 252000,
+        "Combat_Adjust_Rate": 0.0,
+        "EnemyCard": "CardT01N03M06",
+        "EnemyMaster": "T01N03M06W01_Master_01",
+        "NPC": "",
+        "Name": "DreamChallengeBattle_Name_T01N03M06",
+        "OpenFAC": 1,
+        "Pic": "mjt_pannel_T01N03M06",
+        "PointHead": "Model_NXYYi",
+        "Showreward": "DreamChallengeBattle_T01N04M06_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 32,
+            "Pass": "DreamChallengeBattle_T01N04M05"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T01N04M06_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T01N04M07": {
+        "BGM": [
+            "Mus_Battle_Danger_Boss",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleFactor": [
+            26000,
+            26000,
+            26000
+        ],
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 260000,
+        "Combat_Adjust_Rate": 0.0,
+        "EnemyCard": "CardT01N03M07",
+        "EnemyMaster": "T01N03M07W01_Master_01",
+        "NPC": "",
+        "Name": "DreamChallengeBattle_Name_T01N03M07",
+        "OpenFAC": 1,
+        "Pic": "mjt_pannel_T01N03M07",
+        "PointHead": "Model_NXYYi",
+        "Showreward": "DreamChallengeBattle_T01N04M07_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 32,
+            "Pass": "DreamChallengeBattle_T01N04M06"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T01N04M07_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T01N04M08": {
+        "BGM": [
+            "Mus_Battle_Danger_Boss",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleFactor": [
+            26800,
+            26800,
+            26800
+        ],
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 268000,
+        "Combat_Adjust_Rate": 0.15,
+        "EnemyCard": "CardT01N03M08",
+        "EnemyMaster": "T01N03M08W01_Master_01",
+        "NPC": "",
+        "Name": "DreamChallengeBattle_Name_T01N03M08",
+        "OpenFAC": 1,
+        "Pic": "mjt_pannel_T01N03M08",
+        "PointHead": "Model_NXYYi",
+        "Showreward": "DreamChallengeBattle_T01N04M08_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 32,
+            "Pass": "DreamChallengeBattle_T01N04M07"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T01N04M08_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T01N04M09": {
+        "BGM": [
+            "Mus_Battle_Danger_Boss",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleFactor": [
+            27600,
+            27600,
+            27600
+        ],
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 276000,
+        "Combat_Adjust_Rate": 0.0,
+        "EnemyCard": "CardT01N03M09",
+        "EnemyMaster": "T01N03M09W01_Master_01",
+        "NPC": "",
+        "Name": "DreamChallengeBattle_Name_T01N03M09",
+        "OpenFAC": 1,
+        "Pic": "mjt_pannel_T01N03M09",
+        "PointHead": "Model_NXYYi",
+        "Showreward": "DreamChallengeBattle_T01N04M09_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 32,
+            "Pass": "DreamChallengeBattle_T01N04M08"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T01N04M09_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T01N04M10": {
+        "BGM": [
+            "Mus_Battle_Danger_Boss",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleFactor": [
+            28400,
+            28400,
+            28400
+        ],
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 284000,
+        "Combat_Adjust_Rate": 0.0,
+        "EnemyCard": "CardT01N03M10",
+        "EnemyMaster": "T01N03M10W01_Master_01",
+        "NPC": "",
+        "Name": "DreamChallengeBattle_Name_T01N03M10",
+        "OpenFAC": 1,
+        "Pic": "mjt_pannel_T01N03M10",
+        "PointHead": "Model_NXYYi",
+        "Showreward": "DreamChallengeBattle_T01N04M10_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 32,
+            "Pass": "DreamChallengeBattle_T01N04M09"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T01N04M10_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T01N04M11": {
+        "BGM": [
+            "Mus_Battle_Danger_Boss",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleFactor": [
+            29200,
+            29200,
+            29200
+        ],
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 292000,
+        "Combat_Adjust_Rate": 0.0,
+        "EnemyCard": "CardT01N03M11",
+        "EnemyMaster": "T01N03M11W01_Master_01",
+        "NPC": "",
+        "Name": "DreamChallengeBattle_Name_T01N03M11",
+        "OpenFAC": 1,
+        "Pic": "mjt_pannel_T01N03M11",
+        "PointHead": "Model_NXYYi",
+        "Showreward": "DreamChallengeBattle_T01N04M11_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 32,
+            "Pass": "DreamChallengeBattle_T01N04M10"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T01N04M11_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T01N04M12": {
+        "BGM": [
+            "Mus_Battle_Danger_Boss",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleFactor": [
+            30000,
+            30000,
+            30000
+        ],
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 300000,
+        "Combat_Adjust_Rate": 0.15,
+        "EnemyCard": "CardT01N03M12",
+        "EnemyMaster": "T01N03M12W01_Master_01",
+        "NPC": "",
+        "Name": "DreamChallengeBattle_Name_T01N03M12",
+        "OpenFAC": 1,
+        "Pic": "mjt_pannel_T01N03M12",
+        "PointHead": "Model_NXYYi",
+        "Showreward": "DreamChallengeBattle_T01N04M12_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 32,
+            "Pass": "DreamChallengeBattle_T01N04M11"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T01N04M12_reward"
+            }
+        ]
+    },
     "DreamChallengeBattle_T02N01M01": {
         "BGM": [
             "Mus_Battle_Undead_Bird_Boss",
@@ -2286,6 +2790,510 @@
             {
                 "Type": "Item",
                 "value": "DreamChallengeBattle_T02N03M12_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T02N04M01": {
+        "BGM": [
+            "Mus_Battle_Undead_Bird_Boss",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleFactor": [
+            31000,
+            31000,
+            31000
+        ],
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 310000,
+        "Combat_Adjust_Rate": 0.0,
+        "EnemyCard": "CardT02N03M01",
+        "EnemyMaster": "T02N03M01W01_Master_01",
+        "NPC": "",
+        "Name": "DreamChallengeBattle_Name_T02N03M01",
+        "OpenFAC": 1,
+        "Pic": "mjt_pannel_T02N03M01",
+        "PointHead": "Model_NXYYi",
+        "Showreward": "DreamChallengeBattle_T02N04M01_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 44,
+            "Pass": "DreamChallengeBattle_T02N03M12"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T02N04M01_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T02N04M02": {
+        "BGM": [
+            "Mus_Battle_Undead_Bird_Boss",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleFactor": [
+            32000,
+            32000,
+            32000
+        ],
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 320000,
+        "Combat_Adjust_Rate": 0.0,
+        "EnemyCard": "CardT02N03M02",
+        "EnemyMaster": "T02N03M02W01_Master_01",
+        "NPC": "",
+        "Name": "DreamChallengeBattle_Name_T02N03M02",
+        "OpenFAC": 1,
+        "Pic": "mjt_pannel_T02N03M02",
+        "PointHead": "Model_NXYYi",
+        "Showreward": "DreamChallengeBattle_T02N04M02_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 44,
+            "Pass": "DreamChallengeBattle_T02N04M01"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T02N04M02_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T02N04M03": {
+        "BGM": [
+            "Mus_Battle_Undead_Bird_Boss",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleFactor": [
+            33000,
+            33000,
+            33000
+        ],
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 330000,
+        "Combat_Adjust_Rate": 0.0,
+        "EnemyCard": "CardT02N03M03",
+        "EnemyMaster": "T02N03M03W01_Master_01",
+        "NPC": "",
+        "Name": "DreamChallengeBattle_Name_T02N03M03",
+        "OpenFAC": 1,
+        "Pic": "mjt_pannel_T02N03M03",
+        "PointHead": "Model_NXYYi",
+        "Showreward": "DreamChallengeBattle_T02N04M03_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 44,
+            "Pass": "DreamChallengeBattle_T02N04M02"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T02N04M03_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T02N04M04": {
+        "BGM": [
+            "Mus_Battle_Undead_Bird_Boss",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleFactor": [
+            34000,
+            34000,
+            34000
+        ],
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 340000,
+        "Combat_Adjust_Rate": 0.15,
+        "EnemyCard": "CardT02N03M04",
+        "EnemyMaster": "T02N03M04W01_Master_01",
+        "NPC": "",
+        "Name": "DreamChallengeBattle_Name_T02N03M04",
+        "OpenFAC": 1,
+        "Pic": "mjt_pannel_T02N03M04",
+        "PointHead": "Model_NXYYi",
+        "Showreward": "DreamChallengeBattle_T02N04M04_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 44,
+            "Pass": "DreamChallengeBattle_T02N04M03"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T02N04M04_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T02N04M05": {
+        "BGM": [
+            "Mus_Battle_Undead_Bird_Boss",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleFactor": [
+            35000,
+            35000,
+            35000
+        ],
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 350000,
+        "Combat_Adjust_Rate": 0.0,
+        "EnemyCard": "CardT02N03M05",
+        "EnemyMaster": "T02N03M05W01_Master_01",
+        "NPC": "",
+        "Name": "DreamChallengeBattle_Name_T02N03M05",
+        "OpenFAC": 1,
+        "Pic": "mjt_pannel_T02N03M05",
+        "PointHead": "Model_NXYYi",
+        "Showreward": "DreamChallengeBattle_T02N04M05_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 44,
+            "Pass": "DreamChallengeBattle_T02N04M04"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T02N04M05_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T02N04M06": {
+        "BGM": [
+            "Mus_Battle_Undead_Bird_Boss",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleFactor": [
+            36000,
+            36000,
+            36000
+        ],
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 360000,
+        "Combat_Adjust_Rate": 0.0,
+        "EnemyCard": "CardT02N03M06",
+        "EnemyMaster": "T02N03M06W01_Master_01",
+        "NPC": "",
+        "Name": "DreamChallengeBattle_Name_T02N03M06",
+        "OpenFAC": 1,
+        "Pic": "mjt_pannel_T02N03M06",
+        "PointHead": "Model_NXYYi",
+        "Showreward": "DreamChallengeBattle_T02N04M06_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 44,
+            "Pass": "DreamChallengeBattle_T02N04M05"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T02N04M06_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T02N04M07": {
+        "BGM": [
+            "Mus_Battle_Undead_Bird_Boss",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleFactor": [
+            37000,
+            37000,
+            37000
+        ],
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 370000,
+        "Combat_Adjust_Rate": 0.0,
+        "EnemyCard": "CardT02N03M07",
+        "EnemyMaster": "T02N03M07W01_Master_01",
+        "NPC": "",
+        "Name": "DreamChallengeBattle_Name_T02N03M07",
+        "OpenFAC": 1,
+        "Pic": "mjt_pannel_T02N03M07",
+        "PointHead": "Model_NXYYi",
+        "Showreward": "DreamChallengeBattle_T02N04M07_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 44,
+            "Pass": "DreamChallengeBattle_T02N04M06"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T02N04M07_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T02N04M08": {
+        "BGM": [
+            "Mus_Battle_Undead_Bird_Boss",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleFactor": [
+            38000,
+            38000,
+            38000
+        ],
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 380000,
+        "Combat_Adjust_Rate": 0.15,
+        "EnemyCard": "CardT02N03M08",
+        "EnemyMaster": "T02N03M08W01_Master_01",
+        "NPC": "",
+        "Name": "DreamChallengeBattle_Name_T02N03M08",
+        "OpenFAC": 1,
+        "Pic": "mjt_pannel_T02N03M08",
+        "PointHead": "Model_NXYYi",
+        "Showreward": "DreamChallengeBattle_T02N04M08_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 44,
+            "Pass": "DreamChallengeBattle_T02N04M07"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T02N04M08_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T02N04M09": {
+        "BGM": [
+            "Mus_Battle_Undead_Bird_Boss",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleFactor": [
+            39000,
+            39000,
+            39000
+        ],
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 390000,
+        "Combat_Adjust_Rate": 0.0,
+        "EnemyCard": "CardT02N03M09",
+        "EnemyMaster": "T02N03M09W01_Master_01",
+        "NPC": "",
+        "Name": "DreamChallengeBattle_Name_T02N03M09",
+        "OpenFAC": 1,
+        "Pic": "mjt_pannel_T02N03M09",
+        "PointHead": "Model_NXYYi",
+        "Showreward": "DreamChallengeBattle_T02N04M09_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 44,
+            "Pass": "DreamChallengeBattle_T02N04M08"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T02N04M09_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T02N04M10": {
+        "BGM": [
+            "Mus_Battle_Undead_Bird_Boss",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleFactor": [
+            40000,
+            40000,
+            40000
+        ],
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 400000,
+        "Combat_Adjust_Rate": 0.0,
+        "EnemyCard": "CardT02N03M10",
+        "EnemyMaster": "T02N03M10W01_Master_01",
+        "NPC": "",
+        "Name": "DreamChallengeBattle_Name_T02N03M10",
+        "OpenFAC": 1,
+        "Pic": "mjt_pannel_T02N03M10",
+        "PointHead": "Model_NXYYi",
+        "Showreward": "DreamChallengeBattle_T02N04M10_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 44,
+            "Pass": "DreamChallengeBattle_T02N04M09"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T02N04M10_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T02N04M11": {
+        "BGM": [
+            "Mus_Battle_Undead_Bird_Boss",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleFactor": [
+            41000,
+            41000,
+            41000
+        ],
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 410000,
+        "Combat_Adjust_Rate": 0.0,
+        "EnemyCard": "CardT02N03M11",
+        "EnemyMaster": "T02N03M11W01_Master_01",
+        "NPC": "",
+        "Name": "DreamChallengeBattle_Name_T02N03M11",
+        "OpenFAC": 1,
+        "Pic": "mjt_pannel_T02N03M11",
+        "PointHead": "Model_NXYYi",
+        "Showreward": "DreamChallengeBattle_T02N04M11_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 44,
+            "Pass": "DreamChallengeBattle_T02N04M10"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T02N04M11_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T02N04M12": {
+        "BGM": [
+            "Mus_Battle_Undead_Bird_Boss",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleFactor": [
+            42000,
+            42000,
+            42000
+        ],
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 420000,
+        "Combat_Adjust_Rate": 0.15,
+        "EnemyCard": "CardT02N03M12",
+        "EnemyMaster": "T02N03M12W01_Master_01",
+        "NPC": "",
+        "Name": "DreamChallengeBattle_Name_T02N03M12",
+        "OpenFAC": 1,
+        "Pic": "mjt_pannel_T02N03M12",
+        "PointHead": "Model_NXYYi",
+        "Showreward": "DreamChallengeBattle_T02N04M12_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 44,
+            "Pass": "DreamChallengeBattle_T02N04M11"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T02N04M12_reward"
             }
         ]
     },

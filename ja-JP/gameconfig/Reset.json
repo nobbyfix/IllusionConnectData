@@ -72,6 +72,16 @@
             "storage": 5000
         }
     },
+    "AcitvitySnowflakeStamina_Reset": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 28800,
+            "initial": 5,
+            "limit": 50,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
     "AcitvityStamina_Reset": {
         "ResetSystem": {
             "addValue": 1,
@@ -496,6 +506,24 @@
                 "05:00:00"
             ],
             "setValue": 5
+        }
+    },
+    "Club_HomeChange": {
+        "ResetSystem": {
+            "resetDate": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+            ],
+            "resetMode": "DAY",
+            "resetTime": [
+                "05:00:00"
+            ],
+            "setValue": 3
         }
     },
     "Club_MailTimes": {

@@ -350,5 +350,67 @@
             "AZuoHeS01S05"
         ],
         "Type": "NORMAL"
+    },
+    "Snowflack_Map_E01": {
+        "BGM": "Mus_Story_Mystery_2",
+        "Background": "Bg_Copy_Snowflake_1",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_SnowflakeAE01_Name",
+        "StarBoxReward": {
+            "10": "Snowflack_StarBox04",
+            "20": "Snowflack_StarBox05",
+            "30": "Snowflack_StarBox06"
+        },
+        "SubPoint": [
+            "SnowflackE01",
+            "SnowflackE02",
+            "SnowflackE03",
+            "SnowflackE04",
+            "SnowflackE05",
+            "SnowflackE06",
+            "SnowflackE07",
+            "SnowflackE08",
+            "SnowflackE09",
+            "SnowflackE10"
+        ],
+        "SubStoryPoint": [
+            "ASnowflakeS01E01",
+            "ASnowflakeS01E02",
+            "ASnowflakeS01E03",
+            "ASnowflakeS01E04"
+        ],
+        "Type": "ELITE"
+    },
+    "Snowflack_Map_M01": {
+        "BGM": "Mus_Story_Mystery_2",
+        "Background": "Bg_Copy_Snowflake_2",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_SnowflakeAM01_Name",
+        "StarBoxReward": {
+            "10": "Snowflack_StarBox01",
+            "20": "Snowflack_StarBox02",
+            "30": "Snowflack_StarBox03"
+        },
+        "SubPoint": [
+            "SnowflackM01",
+            "SnowflackM02",
+            "SnowflackM03",
+            "SnowflackM04",
+            "SnowflackM05",
+            "SnowflackM06",
+            "SnowflackM07",
+            "SnowflackM08",
+            "SnowflackM09",
+            "SnowflackM10"
+        ],
+        "SubStoryPoint": [
+            "ASnowflakeS01S01",
+            "ASnowflakeS01S02",
+            "ASnowflakeS01S03",
+            "ASnowflakeS01S04"
+        ],
+        "Type": "NORMAL"
     }
 }

@@ -1349,6 +1349,434 @@
         "UI": "ACTIVITYBLOCKMAP",
         "Version": ""
     },
+    "ActivityBlock_Snowflake": {
+        "ActivityConfig": {
+            "Activity": [
+                "ActivityBlock_Snowflake_Map",
+                "ActivityBlock_Snowflake_DailyTask",
+                "ActivityBlock_Snowflake_AchieveMentTask"
+            ],
+            "ActivityStaminaId": "IR_SnowflakeStamina",
+            "Bmg": "ybxrdxh_fb_bg2",
+            "BonusHero": [
+                "JNLong",
+                "LLan",
+                "KTSJKe"
+            ],
+            "ButtonIcon": "bingxuejie_btm_PT_rukou",
+            "ButtonText": "ActivityBlock_Snowflake_Exchange_Title",
+            "ExchangeUrl": "view://ActivityView&id=ActivityBlock_Snowflake_Exchange",
+            "Logo": "ybxrdxh_Snowflake_logo",
+            "ModelId": [
+                {
+                    "desc": "AB_Snowflake_Model_Desc1",
+                    "model": "KTSJKe",
+                    "type": "Hero"
+                },
+                {
+                    "desc": "AB_Snowflake_Model_Desc3",
+                    "model": "Surface_LLan_2",
+                    "type": "Surface"
+                },
+                {
+                    "desc": "AB_Snowflake_Model_Desc4",
+                    "model": "Surface_JNLong_2",
+                    "type": "Surface",
+                    "url": "view://shopView&viewType=push&shopId=Shop_Surface"
+                }
+            ],
+            "ResourcesBanner": [
+                "IR_Gold",
+                "IR_Crystal",
+                "IR_SnowflakeStamina",
+                "IR_Diamond"
+            ],
+            "RuleDesc": [
+                "ActivityTotal_Snowflake_RuleDesc_1",
+                "ActivityTotal_Snowflake_RuleDesc_2",
+                "ActivityTotal_Snowflake_RuleDesc_3"
+            ],
+            "SubActivityEndTip": "SubActivity_SnowflakeEndTip_AB_1st",
+            "bgm": "Mus_Story_Mystery_2"
+        },
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1112,
+        "ShowTab": 2,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2020-12-17 05:00:00",
+            "start": [
+                "2020-12-10 05:00:00",
+                "2020-12-17 05:00:00"
+            ]
+        },
+        "Title": "ActivityBlock_Snowflake_Name",
+        "Type": "ActivityBlock",
+        "UI": "ACTIVITYSNOWFLAKE",
+        "Version": ""
+    },
+    "ActivityBlock_Snowflake_AchieveMentTask": {
+        "ActivityConfig": {
+            "Bmg": "renwu_bd_bj",
+            "entitle": "ABAchieveMentTask_Snowflake_entitle",
+            "progressDesc": "ABATask_Snowflake_Desc",
+            "progressItem": "IM_Snowflake_Achieve",
+            "task": [
+                "Snowflake_AchieveMentTask_001",
+                "Snowflake_AchieveMentTask_002",
+                "Snowflake_AchieveMentTask_003",
+                "Snowflake_AchieveMentTask_004",
+                "Snowflake_AchieveMentTask_005",
+                "Snowflake_AchieveMentTask_006",
+                "Snowflake_AchieveMentTask_007",
+                "Snowflake_AchieveMentTask_008",
+                "Snowflake_AchieveMentTask_009",
+                "Snowflake_AchieveMentTask_010",
+                "Snowflake_AchieveMentTask_011",
+                "Snowflake_AchieveMentTask_012",
+                "Snowflake_AchieveMentTask_013",
+                "Snowflake_AchieveMentTask_014",
+                "Snowflake_AchieveMentTask_015",
+                "Snowflake_AchieveMentTask_016",
+                "Snowflake_AchieveMentTask_017",
+                "Snowflake_AchieveMentTask_018",
+                "Snowflake_AchieveMentTask_019",
+                "Snowflake_AchieveMentTask_020",
+                "Snowflake_AchieveMentTask_021",
+                "Snowflake_AchieveMentTask_022",
+                "Snowflake_AchieveMentTask_023",
+                "Snowflake_AchieveMentTask_024",
+                "Snowflake_AchieveMentTask_025",
+                "Snowflake_AchieveMentTask_026",
+                "Snowflake_AchieveMentTask_027",
+                "Snowflake_AchieveMentTask_028"
+            ],
+            "titleImg": "hd_bg_fhj_Snowflake_2"
+        },
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 1,
+        "MailId": "Mail_Snowflake_AchieveMentTask_Activity",
+        "Primary": 0,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1115,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2020-12-17 05:00:00",
+            "start": [
+                "2020-12-10 05:00:00",
+                "2020-12-17 05:00:00"
+            ]
+        },
+        "Title": "ActivityBlock_Snowflake_AchieveMentTask_Name",
+        "Type": "TASK",
+        "UI": "ABACHIEVEMENTTASK",
+        "Version": ""
+    },
+    "ActivityBlock_Snowflake_DailyTask": {
+        "ActivityConfig": {
+            "Bmg": "renwu_bd_bj",
+            "entitle": "ABDailyTask_Snowflake_entitle",
+            "task": [
+                "Snowflack_DailyTask_01",
+                "Snowflack_DailyTask_02",
+                "Snowflack_DailyTask_03",
+                "Snowflack_DailyTask_04",
+                "Snowflack_DailyTask_05",
+                "Snowflack_DailyTask_06"
+            ],
+            "titleImg": "hd_bg_fhj_Snowflake_1"
+        },
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 1,
+        "MailId": "Mail_Snowflake_DailyTask_Activity",
+        "Primary": 0,
+        "Reset": 1,
+        "ServerCondition": "",
+        "ShowIndex": 1114,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2020-12-17 05:00:00",
+            "start": [
+                "2020-12-10 05:00:00",
+                "2020-12-17 05:00:00"
+            ]
+        },
+        "Title": "ActivityBlock_Snowflake_DailyTask_Name",
+        "Type": "TASK",
+        "UI": "ABDAILYTASK",
+        "Version": ""
+    },
+    "ActivityBlock_Snowflake_Exchange": {
+        "ActivityConfig": {
+            "BubleDesc": [
+                "ActivityBlock_Snowflake_Buble_1",
+                "ActivityBlock_Snowflake_Buble_2",
+                "ActivityBlock_Snowflake_Buble_3",
+                "ActivityBlock_Snowflake_Buble_4",
+                "ActivityBlock_Snowflake_Buble_5"
+            ],
+            "ModelId": "Model_YLSBai",
+            "TaskBgUI": "bingxuejie_PT_bj",
+            "TaskCellArrow": "bingxuejie_PT_jt",
+            "TaskCellBg": "bingxuejie_PT_di",
+            "TaskTopUI": "bingxuejie_txt_PT_logo",
+            "exchange": [
+                "ActivityBlock_Snowflake_Exchange_1",
+                "ActivityBlock_Snowflake_Exchange_2",
+                "ActivityBlock_Snowflake_Exchange_3",
+                "ActivityBlock_Snowflake_Exchange_4",
+                "ActivityBlock_Snowflake_Exchange_5",
+                "ActivityBlock_Snowflake_Exchange_6",
+                "ActivityBlock_Snowflake_Exchange_7",
+                "ActivityBlock_Snowflake_Exchange_8",
+                "ActivityBlock_Snowflake_Exchange_9",
+                "ActivityBlock_Snowflake_Exchange_10",
+                "ActivityBlock_Snowflake_Exchange_11"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "Desc": "ActivityBlock_Snowflake_Exchange_Desc",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "bingxuejie__btn_PT_moli",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 1,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1121,
+        "ShowTab": 1,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2020-12-18 05:00:00",
+            "start": [
+                "2020-12-10 05:00:00",
+                "2020-12-18 05:00:00"
+            ]
+        },
+        "Title": "ActivityBlock_Snowflake_Exchange_Title",
+        "Type": "EXCHANGE",
+        "UI": "Exchange",
+        "Version": ""
+    },
+    "ActivityBlock_Snowflake_ExtraMap": {
+        "ActivityConfig": {
+            "Reward": "Snowflack_Stamina_ExtraMap_R",
+            "block": [
+                "Map"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1117,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2020-12-17 05:00:00",
+            "start": [
+                "2020-12-10 05:00:00",
+                "2020-12-17 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "ExtraReward",
+        "UI": "ExtraRewardBoard",
+        "Version": ""
+    },
+    "ActivityBlock_Snowflake_ExtraNormal": {
+        "ActivityConfig": {
+            "Reward": "Snowflack_Stamina_ExtraNormal_R",
+            "block": [
+                "Normal",
+                "Elite"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1116,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2020-12-17 05:00:00",
+            "start": [
+                "2020-12-10 05:00:00",
+                "2020-12-17 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "ExtraReward",
+        "UI": "ExtraRewardBoard",
+        "Version": ""
+    },
+    "ActivityBlock_Snowflake_ExtraSorce": {
+        "ActivityConfig": {
+            "Reward": "Snowflack_Stamina_ExtraSource_R",
+            "block": [
+                "GOLD",
+                "EXP",
+                "CRYSTAL"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1118,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2020-12-17 05:00:00",
+            "start": [
+                "2020-12-10 05:00:00",
+                "2020-12-17 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "ExtraReward",
+        "UI": "ExtraRewardBoard",
+        "Version": ""
+    },
+    "ActivityBlock_Snowflake_Map": {
+        "ActivityConfig": {
+            "ActivityBlockMap": {
+                "Elite": [
+                    "Snowflack_Map_E01"
+                ],
+                "Normal": [
+                    "Snowflack_Map_M01"
+                ]
+            },
+            "BonusHero": [
+                "JNLong",
+                "LLan",
+                "KTSJKe"
+            ],
+            "BonusHeroDesc": [
+                "ABMap_Snowflake_RuleDesc_1",
+                "ABMap_Snowflake_RuleDesc_2",
+                "ABMap_Snowflake_RuleDesc_3",
+                "ABMap_Snowflake_RuleDesc_4"
+            ],
+            "ButtonIcon": "ybxrdxh_zy_Snowflake_hdrk",
+            "ChangeBtnImg": {
+                "ELITE": "ybxrdxh_Elite_Snowflake_nd2.png",
+                "NORMAL": "ybxrdxh_Normal_Snowflake_nd1.png"
+            },
+            "ResourcesBanner": [
+                "IR_Gold",
+                "IR_Crystal",
+                "IR_SnowflakeStamina",
+                "IR_Diamond"
+            ],
+            "ShowReward": "ShowReward_Snowflack_ABR"
+        },
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 0,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1113,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2020-12-17 05:00:00",
+            "start": [
+                "2020-12-10 05:00:00",
+                "2020-12-17 05:00:00"
+            ]
+        },
+        "Title": "ActivityBlock_Snowflake_Map_Name",
+        "Type": "ActivityBlockMap",
+        "UI": "ACTIVITYBLOCKMAP",
+        "Version": ""
+    },
     "ActivityBlock_Summer": {
         "ActivityConfig": {
             "Activity": [
@@ -4105,6 +4533,39 @@
         "UI": "",
         "Version": ""
     },
+    "DrawCard_W3_2UP_Activity1": {
+        "ActivityConfig": {
+            "DRAW": "DrawCard_LFErKTSJKe",
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_LFErKTSJKe",
+            "VANISH": 0
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 205,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "PLAYER_REGISTER",
+        "TimeFactor": {
+            "end": 21,
+            "start": 15
+        },
+        "Title": "",
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "Version": ""
+    },
     "DrawCard_YLSBaiUp_Activity": {
         "ActivityConfig": {
             "DRAW": "DrawCard_YLSBaiUp",
@@ -4225,6 +4686,66 @@
         "Title": "EightDaysCheckIn_Name",
         "Type": "TASK",
         "UI": "EightLogin",
+        "Version": ""
+    },
+    "EightDays_Snowflake": {
+        "ActivityConfig": {
+            "Day8BgUI": [
+                "hd_8r_Snowflake_day8",
+                "hd_8r_Snowflake_day8_klq"
+            ],
+            "GetRewardClose": 1,
+            "IsTimeClose": 1,
+            "Time": "limit",
+            "bg": [
+                "hd_bg_8rSnowflake__3"
+            ],
+            "showHero": "JNLong",
+            "specailDay": [
+                8
+            ],
+            "task": [
+                "Snowflake_Login_01",
+                "Snowflake_Login_02",
+                "Snowflake_Login_03",
+                "Snowflake_Login_04",
+                "Snowflake_Login_05",
+                "Snowflake_Login_06",
+                "Snowflake_Login_07",
+                "Snowflake_Login_08"
+            ],
+            "title": [
+                "hd_8r_bt_Snowflake_3"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "Desc": "ActivityBlock_Login_Desc",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "hd_btn_8r_Snowflake_3",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 1,
+        "MailId": "Mail_EightDays_Snowflake",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1120,
+        "ShowTab": 1,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2020-12-30 05:00:00",
+            "start": [
+                "2020-12-10 05:00:00",
+                "2020-12-18 05:00:00"
+            ]
+        },
+        "Title": "EightDays_Snowflake_Name",
+        "Type": "TASK",
+        "UI": "EightLoginCommon",
         "Version": ""
     },
     "FreeStamina": {

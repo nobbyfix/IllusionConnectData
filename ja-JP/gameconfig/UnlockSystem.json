@@ -1139,7 +1139,7 @@
     },
     "KOF": {
         "Condition": {
-            "LEVEL": 100
+            "STAGE": "M08S38"
         },
         "Icon": "new_system_club.png",
         "IsPlay": 0,
@@ -1154,9 +1154,9 @@
             "IR_Arena"
         ],
         "ShowCondition": {
-            "LEVEL": 100
+            "STAGE": "M08S38"
         },
-        "Tip": "Unlock_Joking_Tips",
+        "Tip": "Unlock_Stage_Tips",
         "UnlockAnima": "HOME",
         "UnlockDesc": "KOF_UnlockDesc"
     },

@@ -1049,6 +1049,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_ResourceStage_Desc"
     },
+    "Condi_SnowflakeChengjiuDian": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_Snowflake_Achieve.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_SnowflakeChengjiuDian_Desc"
+    },
     "Condi_SpStageAttend": {
         "AchieveType1": "CUSTOM",
         "AchieveType2": "",
