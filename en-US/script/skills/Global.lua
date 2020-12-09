@@ -2144,9 +2144,9 @@ function all.ApplyHPRecovery_ResultCheck(_env, actor, target, heal)
 
 	if ExtraHP and ExtraHP ~= 0 then
 		for _, friendunit in global.__iter__(global.RandomN(_env, 1, global.FriendUnits(_env))) do
-			local heal1 = global.EvalRecovery_FlagCheck(_env, _env.ACTOR, friendunit, 2, 0)
+			local heal1 = global.EvalRecovery_FlagCheck(_env, _env.ACTOR, friendunit, ExtraHP, 0)
 
-			global.ApplyHPRecovery_ResultCheck(_env, _env.ACTOR, friendunit, heal1)
+			global.ApplyHPRecovery(_env, friendunit, heal1)
 		end
 	end
 

@@ -197,7 +197,7 @@ function scene_ZTXCunDate03.actions.start_ZTXCunDate03(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_33",
+					name = "dialog_speak_name_1703",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -218,7 +218,7 @@ function scene_ZTXCunDate03.actions.start_ZTXCunDate03(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_33",
+					name = "dialog_speak_name_1703",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -239,7 +239,7 @@ function scene_ZTXCunDate03.actions.start_ZTXCunDate03(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_33",
+					name = "dialog_speak_name_1703",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -293,7 +293,7 @@ function scene_ZTXCunDate03.actions.start_ZTXCunDate03b(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_33",
+					name = "dialog_speak_name_1703",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -314,7 +314,7 @@ function scene_ZTXCunDate03.actions.start_ZTXCunDate03b(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_33",
+					name = "dialog_speak_name_1703",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -358,7 +358,7 @@ function scene_ZTXCunDate03.actions.start_ZTXCunDate03c(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_33",
+					name = "dialog_speak_name_1703",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -390,7 +390,7 @@ function scene_ZTXCunDate03.actions.start_ZTXCunDate03c(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_33",
+					name = "dialog_speak_name_1703",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -434,7 +434,7 @@ function scene_ZTXCunDate03.actions.start_ZTXCunDate03d(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_33",
+					name = "dialog_speak_name_1703",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -455,7 +455,7 @@ function scene_ZTXCunDate03.actions.start_ZTXCunDate03d(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_33",
+					name = "dialog_speak_name_1703",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -487,7 +487,7 @@ function scene_ZTXCunDate03.actions.start_ZTXCunDate03d(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_33",
+					name = "dialog_speak_name_1703",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -541,7 +541,7 @@ function scene_ZTXCunDate03.actions.start_ZTXCunDate03e(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_33",
+					name = "dialog_speak_name_1703",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -585,7 +585,7 @@ function scene_ZTXCunDate03.actions.start_ZTXCunDate03f(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_33",
+					name = "dialog_speak_name_1703",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -629,7 +629,7 @@ function scene_ZTXCunDate03.actions.start_ZTXCunDate03g(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_33",
+					name = "dialog_speak_name_1703",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -650,7 +650,7 @@ function scene_ZTXCunDate03.actions.start_ZTXCunDate03g(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_33",
+					name = "dialog_speak_name_1703",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -671,7 +671,7 @@ function scene_ZTXCunDate03.actions.start_ZTXCunDate03g(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_33",
+					name = "dialog_speak_name_1703",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -725,7 +725,7 @@ function scene_ZTXCunDate03.actions.start_ZTXCunDate03h(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_33",
+					name = "dialog_speak_name_1703",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -757,7 +757,7 @@ function scene_ZTXCunDate03.actions.start_ZTXCunDate03h(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_33",
+					name = "dialog_speak_name_1703",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -801,7 +801,7 @@ function scene_ZTXCunDate03.actions.start_ZTXCunDate03i(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_33",
+					name = "dialog_speak_name_1703",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -833,7 +833,7 @@ function scene_ZTXCunDate03.actions.start_ZTXCunDate03i(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_33",
+					name = "dialog_speak_name_1703",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -854,7 +854,7 @@ function scene_ZTXCunDate03.actions.start_ZTXCunDate03i(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_33",
+					name = "dialog_speak_name_1703",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -875,7 +875,7 @@ function scene_ZTXCunDate03.actions.start_ZTXCunDate03i(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_33",
+					name = "dialog_speak_name_1703",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -919,7 +919,7 @@ function scene_ZTXCunDate03.actions.start_ZTXCunDate03j(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_33",
+					name = "dialog_speak_name_1703",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -940,7 +940,7 @@ function scene_ZTXCunDate03.actions.start_ZTXCunDate03j(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_33",
+					name = "dialog_speak_name_1703",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -972,7 +972,7 @@ function scene_ZTXCunDate03.actions.start_ZTXCunDate03j(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_33",
+					name = "dialog_speak_name_1703",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -1026,7 +1026,7 @@ function scene_ZTXCunDate03.actions.start_ZTXCunDate03k(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_33",
+					name = "dialog_speak_name_1703",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -1047,7 +1047,7 @@ function scene_ZTXCunDate03.actions.start_ZTXCunDate03k(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_33",
+					name = "dialog_speak_name_1703",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -1091,7 +1091,7 @@ function scene_ZTXCunDate03.actions.start_ZTXCunDate03l(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_33",
+					name = "dialog_speak_name_1703",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -1123,7 +1123,7 @@ function scene_ZTXCunDate03.actions.start_ZTXCunDate03l(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_33",
+					name = "dialog_speak_name_1703",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -1167,7 +1167,7 @@ function scene_ZTXCunDate03.actions.start_ZTXCunDate03m(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_33",
+					name = "dialog_speak_name_1703",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -1199,7 +1199,7 @@ function scene_ZTXCunDate03.actions.start_ZTXCunDate03m(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_33",
+					name = "dialog_speak_name_1703",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -1231,7 +1231,7 @@ function scene_ZTXCunDate03.actions.start_ZTXCunDate03m(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_33",
+					name = "dialog_speak_name_1703",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -1285,7 +1285,7 @@ function scene_ZTXCunDate03.actions.start_ZTXCunDate03n(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_33",
+					name = "dialog_speak_name_1703",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -1306,7 +1306,7 @@ function scene_ZTXCunDate03.actions.start_ZTXCunDate03n(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_33",
+					name = "dialog_speak_name_1703",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -1350,7 +1350,7 @@ function scene_ZTXCunDate03.actions.start_ZTXCunDate03o(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_33",
+					name = "dialog_speak_name_1703",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -1371,7 +1371,7 @@ function scene_ZTXCunDate03.actions.start_ZTXCunDate03o(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_33",
+					name = "dialog_speak_name_1703",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -1415,7 +1415,7 @@ function scene_ZTXCunDate03.actions.start_ZTXCunDate03p(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_33",
+					name = "dialog_speak_name_1703",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -1436,7 +1436,7 @@ function scene_ZTXCunDate03.actions.start_ZTXCunDate03p(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_33",
+					name = "dialog_speak_name_1703",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -1457,7 +1457,7 @@ function scene_ZTXCunDate03.actions.start_ZTXCunDate03p(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_33",
+					name = "dialog_speak_name_1703",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",

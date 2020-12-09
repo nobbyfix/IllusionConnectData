@@ -260,6 +260,11 @@ end
 function DreamChallenge:checkMapLock(mapId, info, curTime)
 	local tip = Strings:get("DreamChallenge_Map_Locked")
 	local mapData = self:getMapData(mapId)
+
+	if mapData:getOpenByServer() then
+		return true
+	end
+
 	local cond = mapData:getMapLockCondition()
 
 	if mapData:getControl() == 0 then

@@ -46,6 +46,11 @@ local mappings = {
 		name = "ClubBossGainRewardMediator",
 		type = "@C"
 	},
+	ClubNewInfoMediator = {
+		url = "dm.gameplay.club.view.ClubNewInfoMediator",
+		name = "ClubNewInfoMediator",
+		type = "@C"
+	},
 	ClubTechnologyMediator = {
 		url = "dm.gameplay.club.view.ClubTechnologyMediator",
 		name = "ClubTechnologyMediator",
@@ -94,6 +99,11 @@ local mappings = {
 	ClubAuditLimitTipMediator = {
 		url = "dm.gameplay.club.view.ClubAuditLimitTipMediator",
 		name = "ClubAuditLimitTipMediator",
+		type = "@C"
+	},
+	ClubNewHallMediator = {
+		url = "dm.gameplay.club.view.ClubNewHallMediator",
+		name = "ClubNewHallMediator",
 		type = "@C"
 	},
 	ClubAuditMediator = {
@@ -169,6 +179,16 @@ local mappings = {
 	ClubBossRecordMediator = {
 		url = "dm.gameplay.club.view.ClubBossRecordMediator",
 		name = "ClubBossRecordMediator",
+		type = "@C"
+	},
+	ClubNewTechnologyMediator = {
+		url = "dm.gameplay.club.view.ClubNewTechnologyMediator",
+		name = "ClubNewTechnologyMediator",
+		type = "@C"
+	},
+	ClubMapViewMediator = {
+		url = "dm.gameplay.club.view.ClubMapViewMediator",
+		name = "ClubMapViewMediator",
 		type = "@C"
 	},
 	ClubMediator = {
@@ -1099,11 +1119,6 @@ local mappings = {
 	ActivityTaskStageStarMediator = {
 		url = "dm.gameplay.activity.view.ActivityTaskStageStarMediator",
 		name = "ActivityTaskStageStarMediator",
-		type = "@C"
-	},
-	ActivityBlockChapterMediator = {
-		url = "dm.gameplay.activity.view.ActivityBlockChapterMediator",
-		name = "ActivityBlockChapterMediator",
 		type = "@C"
 	},
 	ActivityTaskCollectStarMediator = {
@@ -2594,6 +2609,11 @@ local mappings = {
 	BuildingLvUpSucMediator = {
 		url = "dm.gameplay.building.view.BuildingLvUpSucMediator",
 		name = "BuildingLvUpSucMediator",
+		type = "@C"
+	},
+	ClubBuildingMediator = {
+		url = "dm.gameplay.building.view.club.ClubBuildingMediator",
+		name = "ClubBuildingMediator",
 		type = "@C"
 	},
 	BuildingUnlockRoomMediator = {

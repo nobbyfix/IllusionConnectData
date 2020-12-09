@@ -364,7 +364,7 @@ function HeroEvolutionView:refreshPreView()
 	local level = self._heroData:getLevel()
 	self._levelEnough = self._heroData:getLevelRequest() <= level
 
-	if self._heroSystem:isHeroLevelMax(self._heroId) then
+	if self._heroSystem:isHeroExpMax(self._heroId) then
 		level = level + 1
 	end
 

@@ -22,6 +22,13 @@ local PowerConfigMap = {
 		configId = "AcitvityStamina_Reset",
 		tableName = "Reset"
 	},
+	[CurrencyIdKind.kAcitvitySnowPower] = {
+		all = "Act_Snowflake_Power_RecAll",
+		perMin = "Act_Snowflake_Power_RecPerMin",
+		next = "Act_Snowflake_Power_RecNext",
+		configId = "AcitvitySnowflakeStamina_Reset",
+		tableName = "Reset"
+	},
 	[CurrencyIdKind.kAcitvityZuoHePower] = {
 		all = "Act_ZuoHe_Power_RecAll",
 		perMin = "Act_ZuoHe_Power_RecPerMin",
@@ -312,6 +319,10 @@ end
 
 function BagSystem:getAcitvityStaminaPower()
 	return self:getPowerByCurrencyId(CurrencyIdKind.kAcitvityStaminaPower)
+end
+
+function BagSystem:getAcitvitySnowPower()
+	return self:getPowerByCurrencyId(CurrencyIdKind.kAcitvitySnowPower)
 end
 
 function BagSystem:getAcitvitySagaSupportPower()
@@ -1147,22 +1158,24 @@ function BagSystem:checkCostEnough(costId, needCost, style)
 			end
 		end
 
-		local itemConfig = ConfigReader:getRecordById("ResourcesIcon", costId)
+		if style.notShowTip == nil or style.notShowTip == false then
+			local itemConfig = ConfigReader:getRecordById("ResourcesIcon", costId)
 
-		if not itemConfig then
-			itemConfig = ConfigReader:getRecordById("ItemConfig", costId)
+			if not itemConfig then
+				itemConfig = ConfigReader:getRecordById("ItemConfig", costId)
+			end
+
+			if not itemConfig or not Strings:get(itemConfig.Name) then
+				local name = costId
+			end
+
+			self:dispatch(ShowTipEvent({
+				duration = 0.2,
+				tip = Strings:get("ItemNotEngouh_Text", {
+					item = name
+				})
+			}))
 		end
-
-		if not itemConfig or not Strings:get(itemConfig.Name) then
-			local name = costId
-		end
-
-		self:dispatch(ShowTipEvent({
-			duration = 0.2,
-			tip = Strings:get("ItemNotEngouh_Text", {
-				item = name
-			})
-		}))
 	end
 
 	return isEnough

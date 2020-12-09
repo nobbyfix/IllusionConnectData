@@ -282,14 +282,26 @@ function ShopSystem:checkMainShopIdForSubNormalShopId(data)
 end
 
 function ShopSystem:enterShop(data)
-	self._shopService:requestGetPackageShop(nil, function (response)
-		if response.resCode == GS_SUCCESS then
-			local view = self:getInjector():getInstance("ShopView")
+	local entryData = data or {}
 
-			AudioEngine:getInstance():playEffect("Se_Click_Open_1", false)
-			self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, data))
-		end
-	end)
+	if not data or not data.shopId then
+		entryData.shopId = ShopSpecialId.kShopRecommend
+	end
+
+	local function callback()
+		local view = self:getInjector():getInstance("ShopView")
+
+		AudioEngine:getInstance():playEffect("Se_Click_Open_1", false)
+		self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, entryData))
+	end
+
+	if entryData.shopId == ShopSpecialId.kShopSurface then
+		self:requestGetSurfaceShop(callback)
+	elseif entryData.shopId == ShopSpecialId.kShopPackage or entryData.shopId == ShopSpecialId.kShopSurfacePackage or entryData.shopId == ShopSpecialId.kShopTimeLimit then
+		self:requestGetPackageShop(callback)
+	else
+		callback()
+	end
 end
 
 function ShopSystem:tryEnterByRecruit()
@@ -1127,6 +1139,39 @@ function ShopSystem:checkDeliverCD(packageId, count)
 	return true
 end
 
+function ShopSystem:checkDeliverCD(packageId, count)
+	local curTime = self._gameServerAgent:remoteTimestamp()
+	local cd = CommonUtils.GetDeliverCD()
+
+	if cd > 0 then
+		local package = self._packageList[packageId]
+		local leftCount = package and package:getLeftCount() or 0
+
+		if leftCount > 0 and leftCount <= count then
+			local payKey = ConfigReader:getDataByNameIdAndKey("PackageShop", packageId, "Pay")
+			local productId = ConfigReader:getDataByNameIdAndKey("Pay", payKey, "ProductId")
+			local payOffSystem = self:getInjector():getInstance(PayOffSystem)
+			local notDelivered, timestamp = payOffSystem:haveNotDeliveredOrder(productId)
+
+			if notDelivered then
+				local remainTime = math.ceil(timestamp + cd - curTime)
+
+				if remainTime > 0 then
+					self:dispatch(ShowTipEvent({
+						tip = Strings:get("ShopPurchaseCDTip", {
+							num = remainTime
+						})
+					}))
+
+					return false
+				end
+			end
+		end
+	end
+
+	return true
+end
+
 local perTime = 0
 
 function ShopSystem:requestBuyPackageShop(packageId, callback, isFree)
@@ -1242,9 +1287,13 @@ function ShopSystem:requestBuyPackageShopCount(packageId, count, callback, isFre
 	end)
 end
 
-function ShopSystem:requestGetPackageShop()
+function ShopSystem:requestGetPackageShop(callback)
 	self._shopService:requestGetPackageShop(param, function (response)
 		if response.resCode == GS_SUCCESS then
+			if callback then
+				callback(response.data)
+			end
+
 			self:dispatch(Event:new(EVT_REFRESH_PACKAGE_SUCC))
 		end
 	end)
@@ -1387,7 +1436,7 @@ function ShopSystem:requestGetSurfaceShop(callback)
 	self._shopService:requestGetSurfaceShop(nil, function (response)
 		if response.resCode == GS_SUCCESS then
 			if callback then
-				callback()
+				callback(response.data)
 			end
 
 			self:dispatch(Event:new(EVT_REFRESH_SURFACE_SUCC))

@@ -231,7 +231,7 @@ function HeroStrengthEvolutionMediator:refreshEvolutionData()
 	self._evoUpViewData.attr.speed[1] = self._heroData:getSpeed()
 	local level = self._heroData:getLevel()
 
-	if self._heroSystem:isHeroLevelMax(self._heroId) then
+	if self._heroSystem:isHeroExpMax(self._heroId) then
 		level = level + 1
 	end
 

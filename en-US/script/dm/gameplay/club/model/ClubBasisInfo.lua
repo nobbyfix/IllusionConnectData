@@ -79,6 +79,12 @@ ClubBasisInfo:has("_todayDonation", {
 ClubBasisInfo:has("_lastJoinTime", {
 	is = "rw"
 })
+ClubBasisInfo:has("_battleRank", {
+	is = "rw"
+})
+ClubBasisInfo:has("_joinedClubCount", {
+	is = "rw"
+})
 
 function ClubBasisInfo:initialize(player)
 	super.initialize(self)
@@ -106,6 +112,8 @@ function ClubBasisInfo:initialize(player)
 	self._recruitTime = 0
 	self._todayDonation = 0
 	self._lastJoinTime = 0
+	self._battleRank = 0
+	self._joinedClubCount = 0
 end
 
 function ClubBasisInfo:canAuditMember()
@@ -175,5 +183,9 @@ function ClubBasisInfo:sync(data)
 
 	if data.clubDonation and data.clubDonation.todayDonation then
 		self._todayDonation = data.clubDonation.todayDonation
+	end
+
+	if data.battleRank then
+		self._battleRank = data.battleRank
 	end
 end

@@ -315,10 +315,18 @@ function ActivitySagaSupportMapMediator:initWidget()
 end
 
 function ActivitySagaSupportMapMediator:updataStageBtnImg()
-	if self._activity and stageBtnImg[self._activity:getUI()] then
-		local imgName = stageBtnImg[self._activity:getUI()][self._stageType]
+	if self._activity then
+		local imgName = nil
 
-		self._stageTypeBtn:loadTextures(imgName, imgName, imgName, ccui.TextureResType.plistType)
+		if stageBtnImg[self._activity:getUI()] then
+			imgName = stageBtnImg[self._activity:getUI()][self._stageType]
+		elseif self._model:getActivityConfig().ChangeBtnImg then
+			imgName = self._model:getActivityConfig().ChangeBtnImg[self._stageType]
+		end
+
+		if imgName then
+			self._stageTypeBtn:loadTextures(imgName, imgName, imgName, ccui.TextureResType.plistType)
+		end
 	end
 end
 

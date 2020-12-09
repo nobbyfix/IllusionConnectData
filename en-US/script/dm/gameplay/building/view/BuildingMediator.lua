@@ -27,6 +27,7 @@ function BuildingMediator:dispose()
 		self._schedule_cd = nil
 	end
 
+	self._buildingSystem:switchSelfBuild()
 	super.dispose(self)
 end
 
@@ -373,6 +374,10 @@ function BuildingMediator:enterRoomByPos(worldPos, firstRoomId)
 
 			return
 		elseif self._buildingSystem:canUnlockRoom(roomId) then
+			if not self._buildingSystem:isSelfBuilding() then
+				return
+			end
+
 			AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
 			self:showUnlockRoom(roomId)
 		elseif str and str ~= "" then

@@ -947,18 +947,25 @@ end
 function ExploreMapViewMediator:onEventForCollectionView(sender, eventType)
 end
 
+function ExploreMapViewMediator:getMapConfig(key)
+	self._explormapConfig = self._explormapConfig or {}
+	self._explormapConfig[key] = self._explormapConfig[key] or require("asset.exploreMap.ExploreMap")[key]
+
+	return self._explormapConfig[key]
+end
+
 function ExploreMapViewMediator:getMapByIndex(key, row, col, isGlobalZOrder, isAlias, isFloor)
 	local indexStr = string.format("_%d_%d", row, col)
 	local path = string.format("asset/exploreMap/%s%s.lua", key, indexStr)
 	local headPath = string.format("asset/exploreMap/%s_head.lua", key)
-	self._mapHeads[key] = self._mapHeads[key] or require(headPath)()
+	self._mapHeads[key] = self._mapHeads[key] or self:getMapConfig(key .. "_head")()
 
 	if self._mapHeads[key].cells[indexStr] then
 		local layerData = self._mapCellDatas[path]
 
 		if not layerData then
-			layerData = loadstring(cc.FileUtils:getInstance():getStringFromFile(path))()()
-			self._mapCellDatas[path] = layerData
+			layerData = self:getMapConfig(key .. indexStr)()
+			self._mapCellDatas[path] = self:getMapConfig(key .. indexStr)()
 		end
 
 		local mapMediator = CustomMap:new()

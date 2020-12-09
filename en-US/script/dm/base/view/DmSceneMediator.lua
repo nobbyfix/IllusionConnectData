@@ -52,6 +52,20 @@ function DmSceneMediator:onRegister()
 		end
 	end
 
+	local leftImage = ccui.ImageView:create()
+
+	leftImage:loadTexture("asset/common/common_screen_bar.jpg", ccui.TextureResType.localType)
+	self:getView():addChild(leftImage)
+	leftImage:setPosition(cc.p(AdjustUtils.getFixOffsetX() - leftImage:getContentSize().width / 2, 320))
+
+	local winSize = cc.Director:getInstance():getWinSize()
+	local rightImage = ccui.ImageView:create()
+
+	rightImage:loadTexture("asset/common/common_screen_bar.jpg", ccui.TextureResType.localType)
+	rightImage:setFlippedX(true)
+	self:getView():addChild(rightImage)
+	rightImage:setPosition(cc.p(winSize.width + rightImage:getContentSize().width / 2 - AdjustUtils.getFixOffsetX(), 320))
+
 	local injector = self:getInjector()
 
 	injector:mapValue("BaseSceneMediator", self, "activeScene")

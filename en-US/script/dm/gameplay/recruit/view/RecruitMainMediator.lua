@@ -124,6 +124,7 @@ function RecruitMainMediator:onRegister()
 	self:mapEventListener(self:getEventDispatcher(), EVT_PLAYER_SYNCHRONIZED, self, self.onDiffRefresh)
 	self:mapEventListener(self:getEventDispatcher(), EVT_RESET_DONE, self, self.onResetRefresh)
 	self:mapEventListener(self:getEventDispatcher(), EVT_PLAYER_SYNCHRONIZED, self, self.updateResultView)
+	self:mapEventListener(self:getEventDispatcher(), EVT_CLUB_FORCEDLEVEL, self, self.onForcedLevel)
 
 	self._recruitBtn1 = self:getView():getChildByFullName("main.node1.recruitBtn1")
 	self._recruitBtn2 = self:getView():getChildByFullName("main.node2.recruitBtn2")
@@ -143,6 +144,7 @@ function RecruitMainMediator:enterWithData(data)
 	self:initViewData()
 	self:initView()
 
+	self._isFromClub = data and data.isFromClub or false
 	self._recruitIndex = 0
 	self._recruitId = data and data.recruitId or nil
 	self._curTabType = 1
@@ -1259,6 +1261,12 @@ function RecruitMainMediator:onClickBack()
 	self:dismissWithOptions({
 		transition = ViewTransitionFactory:create(ViewTransitionType.kCommonAreaView)
 	})
+end
+
+function RecruitMainMediator:onForcedLevel(event)
+	if self._isFromClub then
+		self:onClickBack()
+	end
 end
 
 function RecruitMainMediator:checkHasTimesLimit(recruitDataShow, realTimes)

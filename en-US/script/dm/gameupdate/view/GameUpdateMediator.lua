@@ -374,6 +374,10 @@ function GameUpdateMediator:launchLoading(data)
 		updateTips:formatText()
 		updateTips:setAnchorPoint(cc.p(0.5, 0.5))
 		updateTips:renderContent()
+
+		local x, y = changeTips:getPosition()
+		self._yPos = y
+
 		updateTips:addTo(changeTips:getParent()):posite(changeTips:getPosition())
 
 		self._updateTips = updateTips
@@ -384,7 +388,7 @@ function GameUpdateMediator:launchLoading(data)
 		}), {})
 
 		curVersionText:setAnchorPoint(cc.p(1, 0.5))
-		curVersionText:addTo(bottom):posite(1100, 20)
+		curVersionText:addTo(bottom):posite(1100, y - 20)
 
 		self._loadingWidget = loadingWidget
 
@@ -404,7 +408,7 @@ function GameUpdateMediator:launchLoading(data)
 		}), {})
 
 		targetVersionText:setAnchorPoint(cc.p(0, 0.5))
-		targetVersionText:addTo(bottom):posite(36, 20)
+		targetVersionText:addTo(bottom):posite(36, self._yPos - 20)
 		targetVersionText:setName("targetVersion")
 
 		loadingWidget.targetVersion = targetVersion

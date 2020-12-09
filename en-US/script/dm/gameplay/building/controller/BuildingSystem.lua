@@ -89,21 +89,109 @@ function BuildingSystem:initialize()
 	self._costHeroEffectValue = 0
 	self._sortExtand = {}
 	self._secondStore = {}
+	self._rid = nil
+	self._selfData = nil
+	self._otherData = nil
+end
+
+function BuildingSystem:clearVars()
+	self._roomList = {}
+	self._usedWorkers = 0
+	self._buildingCollect = {}
+	self._baseLevel = 0
+	self._usedWorkers = 0
+	self._workers = {}
+	self._secondStore = {}
+end
+
+function BuildingSystem:extendTable(t1, t2)
+	for k, v in pairs(t1) do
+		t2[k] = v
+	end
+end
+
+function BuildingSystem:combin(update, org)
+	for k, v in pairs(update.buildingCollect or {}) do
+		org.buildingCollect[k] = v
+	end
+
+	for k, v in pairs(update.unlockedRooms or {}) do
+		if org.unlockedRooms[k] then
+			for k1, v1 in pairs(v.buildings or {}) do
+				if org.unlockedRooms[k].buildings[k1] then
+					self:extendTable(v1, org.unlockedRooms[k].buildings[k1])
+				else
+					org.unlockedRooms[k].buildings[k1] = v1
+				end
+			end
+
+			if update.unlockedRooms[k].unlockedSurface then
+				self:extendTable(update.unlockedRooms[k].unlockedSurface, org.unlockedRooms[k].unlockedSurface)
+			end
+
+			if update.unlockedRooms[k].heroes then
+				org.unlockedRooms[k].heroes = update.unlockedRooms[k].heroes
+			end
+
+			if update.unlockedRooms[k].comfortValue then
+				org.unlockedRooms[k].comfortValue = update.unlockedRooms[k].comfortValue
+			end
+
+			if update.unlockedRooms[k].lastLoveMillis then
+				org.unlockedRooms[k].lastLoveMillis = update.unlockedRooms[k].lastLoveMillis
+			end
+
+			if update.unlockedRooms[k].lastHeroLove then
+				self:extendTable(update.unlockedRooms[k].lastHeroLove, org.unlockedRooms[k].lastHeroLove)
+			end
+		else
+			org.unlockedRooms[k] = v
+		end
+
+		if v.placedBuildings then
+			org.unlockedRooms[k].placedBuildings = v.placedBuildings
+		end
+	end
+
+	for k, v in pairs(update.workers or {}) do
+		org.workers[k] = v
+	end
+
+	if update.secondStore then
+		org.secondStore = update.secondStore
+	end
+
+	if update.baseLevel then
+		org.baseLevel = update.baseLevel
+	end
+
+	if update.usedWorkers then
+		org.usedWorkers = update.usedWorkers
+	end
 end
 
 function BuildingSystem:synchronize(data)
+	self._selfData = self._selfData or data
+
+	self:combin(data, self._selfData)
+	self:_synchronize(data)
+end
+
+function BuildingSystem:_synchronize(data, playerInfo)
 	if not data then
 		return
+	end
+
+	self._rid = self._developSystem:getRid()
+
+	if playerInfo and playerInfo.rid then
+		self._rid = playerInfo.rid
 	end
 
 	if data.buildingCollect then
 		for k, v in pairs(data.buildingCollect) do
 			self._buildingCollect[v] = true
 		end
-	end
-
-	if data.usedWorkers then
-		-- Nothing
 	end
 
 	if data.baseLevel then
@@ -138,6 +226,10 @@ function BuildingSystem:synchronize(data)
 	if data.secondStore then
 		self._secondStore = data.secondStore
 	end
+end
+
+function BuildingSystem:isSelfBuilding()
+	return self._rid == self._developSystem:getRid()
 end
 
 function BuildingSystem:userInject()
@@ -183,6 +275,9 @@ function BuildingSystem:checkGetExpEnable()
 end
 
 function BuildingSystem:tryEnter(data)
+	self:clearVars()
+	self:_synchronize(self._selfData)
+
 	local unlock, tips = self:checkEnabled()
 
 	if not unlock then
@@ -198,11 +293,21 @@ function BuildingSystem:tryEnter(data)
 	end
 end
 
+function BuildingSystem:switchSelfBuild()
+	self:clearVars()
+	self:_synchronize(self._selfData)
+end
+
 function BuildingSystem:tryEnterOverview(data)
+	self:clearVars()
+	self:_synchronize(self._selfData)
 	self:_tryEnterSubView("overview", data)
 end
 
 function BuildingSystem:tryEnterBuyDecorate(data)
+	self:clearVars()
+	self:_synchronize(self._selfData)
+
 	local unlock, tips = self._systemKeeper:isUnlock("VillageShopDecorate")
 
 	if not unlock then
@@ -254,9 +359,33 @@ function BuildingSystem:_tryEnterSubView(type, data)
 end
 
 function BuildingSystem:tryEnterGetResView()
+	self:clearVars()
+	self:_synchronize(self._selfData)
+
 	local view = self:getInjector():getInstance("BuildingOneKeyGetResView")
 
 	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view))
+end
+
+function BuildingSystem:tryEnterClubBuilding(data, info)
+	self:clearVars()
+	self:_synchronize(data, info)
+
+	local unlock, tips = self:checkEnabled()
+
+	if not unlock then
+		self:dispatch(ShowTipEvent({
+			duration = 0.2,
+			tip = tips
+		}))
+	else
+		local view = self:getInjector():getInstance("ClubBuildingView")
+		local event = ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
+			userInfo = info
+		})
+
+		self:dispatch(event)
+	end
 end
 
 function BuildingSystem:checkByBuildLv(buildLv, buildId)
@@ -1876,6 +2005,10 @@ function BuildingSystem:getBuildQueueCostByTime(sec)
 end
 
 function BuildingSystem:getBuildPutHeroAddBuffLv(roomId, heroList)
+	if not self:isSelfBuilding() then
+		return 0
+	end
+
 	local room = self:getRoom(roomId)
 
 	if room then
@@ -2385,6 +2518,10 @@ function BuildingSystem:sendBuyNPlaceSystemBuilding(params, blockUI, callfun)
 end
 
 function BuildingSystem:sendGetHeroLove(blockUI, callfun)
+	if not self:isSelfBuilding() then
+		return
+	end
+
 	local roomList = {}
 	local sendSta = false
 
@@ -2400,8 +2537,6 @@ function BuildingSystem:sendGetHeroLove(blockUI, callfun)
 
 	for k, v in pairs(self._roomList) do
 		local lastHeroLove = v._lastHeroLove
-
-		dump(lastHeroLove)
 
 		if lastHeroLove and getNumber(lastHeroLove) > 0 then
 			local info = {
@@ -2463,6 +2598,10 @@ function BuildingSystem:getHeroLoveSendSta()
 end
 
 function BuildingSystem:sendOneKeyCollectRes(place, isHomeView, callBack, items)
+	if not isHomeView and not self:isSelfBuilding() then
+		return
+	end
+
 	local rewardIdList = {
 		IR_Gold = self._developSystem:getBagSystem():getItemCount("IR_Gold") or 0,
 		IR_Crystal = self._developSystem:getBagSystem():getItemCount("IR_Crystal") or 0

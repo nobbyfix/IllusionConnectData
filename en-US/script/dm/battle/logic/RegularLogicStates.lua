@@ -697,12 +697,17 @@ function RegularLogicState_DiligentRound:enter(battleLogic, battleContext, args)
 	self._updateAction = true
 	self._waiting = true
 	self._lessThanLeastTime = true
+	local allCrossUnits = self._battleField:crossCollectDiligentUnits()
 
-	self:startTimer(self._duration1, function ()
-		self._lessThanLeastTime = false
+	if next(allCrossUnits) then
+		self:startTimer(self._duration1, function ()
+			self._lessThanLeastTime = false
 
-		self:finish(battleLogic)
-	end)
+			self:finish(battleLogic)
+		end)
+	else
+		self:finishImmediate(battleLogic)
+	end
 end
 
 function RegularLogicState_DiligentRound:update(battleLogic, battleContext, dt)
@@ -729,6 +734,14 @@ function RegularLogicState_DiligentRound:update(battleLogic, battleContext, dt)
 	end
 
 	return super.update(self, battleLogic, battleContext, dt)
+end
+
+function RegularLogicState_DiligentRound:finishImmediate(battleLogic)
+	self._waiting = false
+
+	self:onMessage(battleLogic, {
+		type = "COMPLETED"
+	})
 end
 
 function RegularLogicState_DiligentRound:finish(battleLogic)

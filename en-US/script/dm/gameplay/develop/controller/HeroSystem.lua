@@ -428,6 +428,15 @@ function HeroSystem:isHeroLevelMax(heroId, level, exp)
 	return level == maxLevel
 end
 
+function HeroSystem:isHeroExpMax(heroId, level, exp)
+	local hero = self:getHeroById(heroId)
+	level = level or hero:getLevel()
+	exp = exp or hero:getExp()
+	local maxLevel = hero:getCurMaxLevel()
+
+	return level == maxLevel and exp == self:getNextLvlAddExp(heroId, maxLevel)
+end
+
 function HeroSystem:getHeroDebrisCount(heroId)
 	local heroPrototype = PrototypeFactory:getInstance():getHeroPrototype(heroId)
 	local fragId = heroPrototype:getConfig().ItemId

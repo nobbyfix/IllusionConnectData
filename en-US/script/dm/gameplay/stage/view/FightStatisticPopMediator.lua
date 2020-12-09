@@ -356,27 +356,21 @@ function FightStatisticPopMediator:createSmallIcon(heroId)
 	local heroImg = IconFactory:createRoleIconSprite({
 		id = _rawData.model
 	})
-	heroImg = IconFactory:addStencilForIcon(heroImg, 4, cc.size(102, 104), {
+
+	heroImg:setScale(0.5)
+
+	heroImg = IconFactory:addStencilForIcon(heroImg, 4, cc.size(104, 104), {
 		0,
-		-15
+		0
 	})
 
-	heroImg:setPosition(cc.p(63, 69))
+	heroImg:setPosition(cc.p(63, 68))
 	heroImg:setName("HeroIcon")
 	heroImg:addTo(rootPanel)
 
 	local rarity = _rawData.rarity
 
 	if rarity > 11 and rarity < 15 then
-		local rarityImg = ccui.ImageView:create()
-
-		rarityImg:setRotation(-7)
-		rarityImg:setScale(0.6)
-		rarityImg:setAnchorPoint(cc.p(0, 0.5))
-		rarityImg:setPosition(cc.p(9, 105))
-		rarityImg:addTo(rootPanel)
-		rarityImg:loadTexture(GameStyle:getHeroRarityImage(rarity), 1)
-
 		local quality = nil
 
 		if not _rawData.quality then
@@ -390,19 +384,6 @@ function FightStatisticPopMediator:createSmallIcon(heroId)
 
 		qualityBg:addTo(rootPanel, -1)
 		qualityBg:setPosition(cc.p(63, 69))
-
-		local costImg = ccui.ImageView:create(IconFactory.battleQuaIndexPath, 1)
-
-		costImg:setScale(0.4)
-		costImg:setPosition(cc.p(112, 100))
-		costImg:addTo(rootPanel)
-
-		local costLabel = cc.Label:createWithTTF(_rawData.cost, TTF_FONT_FZYH_M, 24)
-
-		costLabel:setTextColor(GameStyle:getColor(1))
-		costLabel:enableOutline(cc.c4b(20, 20, 20, 204), 2)
-		costLabel:setPosition(cc.p(111, 103))
-		costLabel:addTo(rootPanel)
 	else
 		local qualityBg = ccui.ImageView:create("asset/itemRect/common_pz_huang.png")
 

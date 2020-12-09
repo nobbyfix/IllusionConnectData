@@ -71,6 +71,7 @@ function ActivityBlockEggMediator:onRegister()
 	self._bottomPanel = self:getView():getChildByName("bottomPanel")
 	self._refreshBtn = self._bottomPanel:getChildByName("refresh_btn")
 	self._rewardNode = self._bottomPanel:getChildByName("rewardNode")
+	self._imageBg = self._main:getChildByName("Imagebg")
 	local lineGradiantVec2 = {
 		{
 			ratio = 0.5,
@@ -93,7 +94,7 @@ function ActivityBlockEggMediator:onRegister()
 end
 
 function ActivityBlockEggMediator:doReset()
-	local model = self._activitySystem:getActivityById(ActivityId.kActivityBlock)
+	local model = self._activitySystem:getActivityById(self._activityId)
 
 	if not model then
 		self:dispatch(Event:new(EVT_POP_TO_TARGETVIEW, "homeView"))
@@ -130,7 +131,9 @@ function ActivityBlockEggMediator:setupTopInfoWidget()
 	tipBtn:setPositionX(self._topInfoWidget:getTitleWidth() + 22)
 end
 
-function ActivityBlockEggMediator:enterWithData()
+function ActivityBlockEggMediator:enterWithData(data)
+	self._activityId = data.activityId or ActivityId.kActivityBlock
+
 	self:initData(true)
 	self:setupTopInfoWidget()
 	self:initRewardView()
@@ -148,9 +151,10 @@ end
 function ActivityBlockEggMediator:initData(isInit)
 	if isInit then
 		self._eggRewardIdTemp = {}
+		self._canShowRefresh = true
 	end
 
-	self._activityModel = self._activitySystem:getActivityById(ActivityId.kActivityBlock)
+	self._activityModel = self._activitySystem:getActivityById(self._activityId)
 	self._eggActivity = self._activityModel:getEggActivity()
 	self._eggModel = self._eggActivity:getEgg()
 	self._costData = self._eggModel:getCost()
@@ -181,6 +185,7 @@ function ActivityBlockEggMediator:initData(isInit)
 end
 
 function ActivityBlockEggMediator:initView()
+	self._imageBg:loadTexture(self._eggActivity:getBgPath())
 	self._eggNode:removeAllChildren()
 
 	self._eggNodes = {}
@@ -249,6 +254,14 @@ function ActivityBlockEggMediator:initView()
 
 		table.insert(self._eggNodes, node)
 	end
+
+	self:playBackgroundMusic()
+end
+
+function ActivityBlockEggMediator:playBackgroundMusic()
+	local bgm = self._activityModel:getBgm()
+
+	AudioEngine:getInstance():playBackgroundMusic(bgm)
 end
 
 function ActivityBlockEggMediator:initRewardView()
@@ -667,13 +680,13 @@ function ActivityBlockEggMediator:onGetRewardCallback(eggId, response)
 		AudioEngine:getInstance():playEffect("Se_Alert_Better_Egg", false)
 
 		if autoRefresh then
-			self._activitySystem:showEggSucc(callback)
+			self._activitySystem:showEggSucc(self._activityId, self._eggActivity, callback)
 
 			return
 		end
 
 		performWithDelay(self:getView(), function ()
-			self._activitySystem:showEggSucc(callback)
+			self._activitySystem:showEggSucc(self._activityId, self._eggActivity, callback)
 		end, 0.7)
 	else
 		AudioEngine:getInstance():playEffect("Se_Alert_Normal_Egg", false)
@@ -795,7 +808,9 @@ function ActivityBlockEggMediator:onClickOpen5Eggs()
 end
 
 function ActivityBlockEggMediator:onClickReward()
-	self._activitySystem:showEasterRewards()
+	self._activitySystem:showEasterRewards({
+		activityId = self._activityId
+	})
 end
 
 function ActivityBlockEggMediator:onClickRule()

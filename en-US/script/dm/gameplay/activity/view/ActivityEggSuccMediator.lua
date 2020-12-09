@@ -25,13 +25,16 @@ function ActivityEggSuccMediator:enterWithData(data)
 	AudioEngine:getInstance():playEffect("Se_Alert_Pop_Rabbit", false)
 
 	self._callback = data.callback
+	self._activityId = data.activityId
+	self._eggActivity = data.eggActivity
 
 	self:initView()
 end
 
 function ActivityEggSuccMediator:initView()
 	self._canTouch = 1
-	self._eggAnim = cc.MovieClip:create("tuzi_zacaidan")
+	local animName = self._eggActivity:getActivityConfig().TuZiAnim or "tuzi_zacaidan"
+	self._eggAnim = cc.MovieClip:create(animName)
 
 	self._eggAnim:addTo(self._animNode):posite(-440, -40)
 	self._eggAnim:gotoAndPlay(56)

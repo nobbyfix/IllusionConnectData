@@ -53,6 +53,10 @@ local ActivityPointCostConfig = {
 	[CurrencyIdKind.kAcitvityHalloweenPower] = {
 		tips = "ACTIVITY_Halloween_NOT_ENOUGH_2",
 		func = "getAcitvityHalloweenPower"
+	},
+	[CurrencyIdKind.kAcitvitySnowPower] = {
+		tips = "ACTIVITY_Snowflake_NOT_ENOUGH_1",
+		func = "getAcitvitySnowPower"
 	}
 }
 

@@ -17,6 +17,9 @@ RankMediator:has("_crusadeSystem", {
 RankMediator:has("_gameServerAgent", {
 	is = "r"
 }):injectWith("GameServerAgent")
+RankMediator:has("_clubSystem", {
+	is = "r"
+}):injectWith("ClubSystem")
 
 local kBtnHandlers = {
 	["main.viewPanel.rewardPanel"] = {
@@ -237,6 +240,10 @@ function RankMediator:setTopThreeInfo()
 					heroAnim:addTo(rolePanel):posite(rolePanel:getContentSize().width / 2, 2)
 					heroAnim:setScale(0.6)
 				end
+			end
+
+			if type == RankType.kPetRace or type == RankType.kSubPetRace then
+				rankNumText = data:getScore()
 			end
 
 			if type == RankType.kPetRace or type == RankType.kSubPetRace then
@@ -491,12 +498,12 @@ function RankMediator:onClickRankCell(cell)
 	end
 
 	if type == RankType.kClub or type == RankType.kClubBoss then
-		local view = self:getInjector():getInstance("PlayerInfoView")
+		local clubId = record:getClubId()
 
-		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+		self._clubSystem:requestClubDetailInfoData(clubId, {
 			remainLastView = true,
 			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-		}, record, nil))
+		}, nil)
 	elseif type ~= RankType.kPetRace then
 		local view = self:getInjector():getInstance("PlayerInfoView")
 

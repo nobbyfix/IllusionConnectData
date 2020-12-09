@@ -73,6 +73,11 @@ function scene_NXYYiDate01:stage(args)
 						}
 					}
 				}
+			},
+			{
+				id = "date_music",
+				fileName = "Mus_Story_Common_2",
+				type = "Music"
 			}
 		},
 		__actions__ = self.actions

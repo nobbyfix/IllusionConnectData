@@ -4,6 +4,70 @@ module("pkg")
 
 local all = _M.__all__ or {}
 _M.__all__ = all
+all.EquipSkill_Accesory_15001 = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.ShieldRateFactor = externs.ShieldRateFactor
+
+		if this.ShieldRateFactor == nil then
+			this.ShieldRateFactor = 0.5
+		end
+
+		local passive = __action(this, {
+			name = "passive",
+			entry = prototype.passive
+		})
+		passive = global["[duration]"](this, {
+			0
+		}, passive)
+		this.passive = global["[trigger_by]"](this, {
+			"SELF:ENTER"
+		}, passive)
+
+		return this
+	end,
+	passive = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.ACTOR)
+			local buffeft = global.ShieldEffect(_env, maxHp * this.ShieldRateFactor)
+
+			for _, unit in global.__iter__(global.FriendUnits(_env, global.ONESELF(_env, _env.ACTOR) + global.BACK_OF(_env, _env.ACTOR) * global.COL_OF(_env, _env.ACTOR))) do
+				global.ApplyBuff(_env, unit, {
+					timing = 2,
+					display = "Shield",
+					group = "EquipSkill_Accesory_15001",
+					duration = 2,
+					limit = 1,
+					tags = {
+						"NUMERIC",
+						"BUFF",
+						"SHIELD",
+						"DISPELLABLE",
+						"STEALABLE"
+					}
+				}, {
+					buffeft
+				})
+			end
+		end)
+
+		return _env
+	end
+}
 all.EquipSkill_Weapon_14001 = {
 	__new__ = function (prototype, externs, global)
 		local __function = global.__skill_function__

@@ -513,19 +513,6 @@ all.Skill_LDu_Passive = {
 		this.passive = global["[trigger_by]"](this, {
 			"SELF:ENTER"
 		}, passive)
-		local passive2 = __action(this, {
-			name = "passive2",
-			entry = prototype.passive2
-		})
-		passive2 = global["[duration]"](this, {
-			0
-		}, passive2)
-		passive2 = global["[trigger_by]"](this, {
-			"UNIT_KICK"
-		}, passive2)
-		this.passive2 = global["[trigger_by]"](this, {
-			"UNIT_DIE"
-		}, passive2)
 
 		return this
 	end,
@@ -546,8 +533,10 @@ all.Skill_LDu_Passive = {
 			}, this.DmgRateFactor)
 
 			global.ApplyBuff(_env, _env.ACTOR, {
-				timing = 0,
 				duration = 99,
+				group = "Skill_LDu_Passive",
+				timing = 0,
+				limit = 1,
 				tags = {
 					"STATUS",
 					"NUMERIC",
@@ -558,30 +547,6 @@ all.Skill_LDu_Passive = {
 			}, {
 				buffeft1
 			})
-		end)
-
-		return _env
-	end,
-	passive2 = function (_env, externs)
-		local this = _env.this
-		local global = _env.global
-		local exec = _env["$executor"]
-		_env.ACTOR = externs.ACTOR
-
-		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
-
-		_env.unit = externs.unit
-
-		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
-		exec["@time"]({
-			0
-		}, _env, function (_env)
-			local this = _env.this
-			local global = _env.global
-
-			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.INSTATUS(_env, "SummonedLDu")(_env, _env.unit) then
-				global.DispelBuff(_env, _env.ACTOR, global.BUFF_MARKED_ALL(_env, "Skill_LDu_Passive", "UNDISPELLABLE", "UNSTEALABLE"), 1)
-			end
 		end)
 
 		return _env
@@ -682,18 +647,6 @@ all.Skill_LDu_Saba_Passive_Death = {
 		exec["@time"]({
 			0
 		}, _env, function (_env)
-			local this = _env.this
-			local global = _env.global
-
-			global.Perform(_env, _env.ACTOR, global.Animation(_env, "fakedie"))
-
-			_env.units = global.RandomN(_env, 1, global.EnemyUnits(_env, global.MARKED(_env, "MAGE")))
-
-			if _env.units[1] then
-				for _, unit in global.__iter__(_env.units) do
-					global.AssignRoles(_env, unit, "target")
-				end
-			end
 		end)
 		exec["@time"]({
 			500
@@ -701,28 +654,28 @@ all.Skill_LDu_Saba_Passive_Death = {
 			local this = _env.this
 			local global = _env.global
 
-			if _env.units[1] then
-				for _, unit in global.__iter__(_env.units) do
-					local DmgRateFactor = global.SpecialPropGetter(_env, "Skill_LDu_Passive")(_env, _env.ACTOR)
+			for _, unit in global.__iter__(global.RandomN(_env, 1, global.EnemyUnits(_env, global.MARKED(_env, "MAGE")))) do
+				global.AssignRoles(_env, unit, "target")
 
-					if DmgRateFactor and DmgRateFactor ~= 0 then
-						global.ApplyStatusEffect(_env, _env.ACTOR, unit)
-						global.ApplyRPEffect(_env, _env.ACTOR, unit)
+				local DmgRateFactor = global.SpecialPropGetter(_env, "Skill_LDu_Passive")(_env, _env.ACTOR)
 
-						local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, unit, {
-							1,
-							DmgRateFactor,
-							0
-						})
+				if DmgRateFactor and DmgRateFactor ~= 0 then
+					global.ApplyStatusEffect(_env, _env.ACTOR, unit)
+					global.ApplyRPEffect(_env, _env.ACTOR, unit)
 
-						global.AddAnim(_env, {
-							loop = 1,
-							anim = "cisha_zhanshupai",
-							zOrder = "TopLayer",
-							pos = global.UnitPos(_env, unit)
-						})
-						global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
-					end
+					local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, unit, {
+						1,
+						DmgRateFactor,
+						0
+					})
+
+					global.AddAnim(_env, {
+						loop = 1,
+						anim = "cisha_zhanshupai",
+						zOrder = "TopLayer",
+						pos = global.UnitPos(_env, unit)
+					})
+					global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
 				end
 			end
 		end)
@@ -1221,8 +1174,10 @@ all.Skill_LDu_Passive_EX = {
 			}, this.DmgRateFactor)
 
 			global.ApplyBuff(_env, _env.ACTOR, {
-				timing = 0,
 				duration = 99,
+				group = "Skill_LDu_Passive",
+				timing = 0,
+				limit = 1,
 				tags = {
 					"STATUS",
 					"NUMERIC",
@@ -1255,7 +1210,7 @@ all.Skill_LDu_Passive_EX = {
 			local global = _env.global
 
 			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.INSTATUS(_env, "SummonedLDu")(_env, _env.unit) then
-				local buffeft1 = global.NumericEffect(_env, "+atkrate", {
+				local buffeft2 = global.NumericEffect(_env, "+atkrate", {
 					"+Normal",
 					"+Normal"
 				}, this.AtkRateFactor)
@@ -1273,7 +1228,7 @@ all.Skill_LDu_Passive_EX = {
 						"UNSTEALABLE"
 					}
 				}, {
-					buffeft1
+					buffeft2
 				}, 1)
 			end
 		end)
@@ -1298,7 +1253,7 @@ all.Skill_LDu_Passive_EX = {
 			local global = _env.global
 
 			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.INSTATUS(_env, "SummonedLDu")(_env, _env.unit) then
-				global.DispelBuff(_env, _env.ACTOR, global.BUFF_MARKED_ALL(_env, "Skill_LDu_Passive", "UNDISPELLABLE", "UNSTEALABLE"), 1)
+				global.DispelBuff(_env, _env.ACTOR, global.BUFF_MARKED_ALL(_env, "BUFF", "Skill_LDu_Passive", "UNDISPELLABLE", "UNSTEALABLE"), 1)
 			end
 		end)
 

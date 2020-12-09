@@ -180,12 +180,13 @@ function HeroStrengthAwakenSuccessMediator:refreshAttrLab()
 	local add3 = self._main:getChildByFullName("attrPanel.add3")
 	local add4 = self._main:getChildByFullName("attrPanel.add4")
 	local starId = self._heroData:getStarId()
-	local currEffect = ConfigReader:getRecordById("HeroStarEffect", starId)
-	local oldEffect = ConfigReader:getRecordById("HeroStarEffect", self._oldStarId)
-	local atkAdd = currEffect.AtkStarBaseValue - oldEffect.AtkStarBaseValue
-	local hpAdd = currEffect.HpStarBaseValue - oldEffect.HpStarBaseValue
-	local defAdd = currEffect.DefStarBaseValue - oldEffect.DefStarBaseValue
-	local speedAdd = currEffect.Speed - oldEffect.Speed
+	local a, b, c, d, e = self._heroData:getNextStarEffect({
+		starId = self._oldStarId
+	})
+	local atkAdd = self._heroData:getAttack() - a
+	local hpAdd = self._heroData:getHp() - c
+	local defAdd = self._heroData:getDefense() - b
+	local speedAdd = self._heroData:getSpeed() - d
 
 	attr1:setString(tostring(self._heroData:getAttack() - atkAdd))
 	attr2:setString(tostring(self._heroData:getHp() - hpAdd))

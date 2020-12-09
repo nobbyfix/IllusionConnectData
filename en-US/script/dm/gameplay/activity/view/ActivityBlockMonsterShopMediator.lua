@@ -891,9 +891,6 @@ function ActivityBlockMonsterShopMediator:refreshOffcostRemainTime(remoteTime, s
 		local config = infoData.config
 		local unlockDay = config.Day - 1
 		local costoffDays = config.Rate[1].day[2] or 0
-
-		print("refreshOffcostRemainTime_startTime" .. startTime)
-
 		local unLockSec = unlockDay > 0 and unlockDay * 86400 or 0
 		local trueStartTime_Cell = startTime + unLockSec
 		local trueEndTime_Cell = trueStartTime_Cell + costoffDays * 86400

@@ -267,7 +267,7 @@ function DreamChallengePointMediator:refreshBuffInfo()
 	local node1 = self._infoCellClone:clone()
 	local tiredIcon = node1:getChildByFullName("icon")
 
-	tiredIcon:loadTexture("icon_pilao" .. (tiredNum > 4 and 1 or tiredNum) .. ".png", ccui.TextureResType.plistType)
+	tiredIcon:loadTexture("icon_pilao1.png", ccui.TextureResType.plistType)
 	tiredIcon:setContentSize(cc.size(53, 53))
 
 	local tiredTitle = node1:getChildByFullName("title")
