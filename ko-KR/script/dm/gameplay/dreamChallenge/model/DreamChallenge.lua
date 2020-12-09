@@ -194,6 +194,12 @@ function DreamChallenge:getNpc(mapId, pointId, battleId)
 	return pointData:getNpc(battleId)
 end
 
+function DreamChallenge:getNpcForbidId(mapId, pointId, battleId)
+	local pointData = self:getPointData(mapId, pointId)
+
+	return pointData:getNpcForbidId(battleId)
+end
+
 function DreamChallenge:getBattleBackground(mapId, pointId, battleId)
 	local pointData = self:getPointData(mapId, pointId)
 
@@ -504,6 +510,12 @@ function DreamChallenge:getPointShowImg(mapId, pointId)
 	local pointData = self:getPointData(mapId, pointId)
 
 	return pointData:getPointShowImg()
+end
+
+function DreamChallenge:getPointMapShowImg(mapId, pointId)
+	local pointData = self:getPointData(mapId, pointId)
+
+	return pointData:getPointMapShowImg()
 end
 
 function DreamChallenge:getPointLongDesc(mapId, pointId)

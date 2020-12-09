@@ -1202,6 +1202,16 @@ local modules = {
 							mediator = "BuffTipsMediator"
 						},
 						{
+							res = "asset/ui/ItemBuffTips.csb",
+							name = "ItemBuffTipsView",
+							mediator = "ItemBuffTipsMediator"
+						},
+						{
+							res = "asset/ui/ItemShowTips.csb",
+							name = "ItemShowTipsView",
+							mediator = "ItemShowTipsMediator"
+						},
+						{
 							res = "asset/ui/EquipTips.csb",
 							name = "EquipTipsView",
 							mediator = "EquipTipsMediator"
@@ -3639,6 +3649,49 @@ local modules = {
 							res = "asset/ui/MainTeamLayer.csb",
 							name = "MainTeamView",
 							mediator = "MainTeamMediator"
+						}
+					}
+				}
+			},
+			{
+				name = "miniGame",
+				requires = {
+					"dm.gameplay.miniGame.controller.MiniGameSystem"
+				},
+				injections = {
+					singletons = {
+						"MiniGameSystem"
+					},
+					views = {
+						{
+							res = "asset/ui/Darts.csb",
+							name = "DartsView",
+							mediator = "DartsMediator"
+						},
+						{
+							res = "asset/ui/MiniGameRewards.csb",
+							name = "MiniGameRewardView",
+							mediator = "MiniGameRewardListMediator"
+						},
+						{
+							res = "asset/ui/MiniGameQuitConfirm.csb",
+							name = "MiniGameQuitConfirmView",
+							mediator = "MiniGameQuitConfirmMediator"
+						},
+						{
+							res = "asset/ui/MiniGamePassGame.csb",
+							name = "MiniGamePassGameView",
+							mediator = "MiniGamePassGameMediator"
+						},
+						{
+							res = "asset/ui/MiniGameRank.csb",
+							name = "MiniGameRankView",
+							mediator = "MiniGameRankMediator"
+						},
+						{
+							res = "asset/ui/MiniGameResult.csb",
+							name = "MiniGameResultView",
+							mediator = "MiniGameResultMediator"
 						}
 					}
 				}

@@ -199,6 +199,18 @@ function IconTouchHandler:removeItemTipView()
 	if wordTipView ~= nil then
 		wordTipView:removeFromParent(true)
 	end
+
+	local itemBuffTipView = self._parentViewMediator:getView():getChildByTag(ItemBuffTipsViewTag)
+
+	if itemBuffTipView ~= nil then
+		itemBuffTipView:removeFromParent(true)
+	end
+
+	local itemBuffTipView = self._parentViewMediator:getView():getChildByTag(ItemShowTipsViewTag)
+
+	if itemBuffTipView ~= nil then
+		itemBuffTipView:removeFromParent(true)
+	end
 end
 
 function IconTouchHandler:onBegan(icon)
@@ -227,6 +239,12 @@ function IconTouchHandler:onBegan(icon)
 			itemTipView = mediator:getInjector():getInstance("EquipTipsView")
 			tipsViewTag = EquipTipsViewTag
 		end
+	elseif rewardType == RewardType.kBuff then
+		itemTipView = mediator:getInjector():getInstance("ItemBuffTipsView")
+		tipsViewTag = ItemBuffTipsViewTag
+	elseif rewardType == RewardType.kShow then
+		itemTipView = mediator:getInjector():getInstance("ItemShowTipsView")
+		tipsViewTag = ItemShowTipsViewTag
 	else
 		itemTipView = mediator:getInjector():getInstance("ItemTipsView")
 		tipsViewTag = ItemTipsViewTag
@@ -558,6 +576,12 @@ function IconFactory:createRoleIconSprite(info)
 	local coordinates = picInfo.Coordinates or {}
 	local x = coordinates[1] or 0
 	local y = coordinates[2] or 0
+
+	if info.useAnim and (x ~= 0 or y ~= 0) and picInfo.bustani then
+		x = picInfo.bustani[0] or 0
+		y = picInfo.bustani[1] or 0
+	end
+
 	local clipSzie = info.size
 
 	if not clipSzie and (x ~= 0 or y ~= 0) then
@@ -620,6 +644,12 @@ function IconFactory:createRoleIconSprite(info)
 		size.height = size.height * sprite:getScale()
 		local x = picInfo.Deviation[1] or 0
 		local y = picInfo.Deviation[2] or 0
+
+		if info.useAnim and (x ~= 0 or y ~= 0) and picInfo.bustani then
+			x = picInfo.bustani[0] or 0
+			y = picInfo.bustani[1] or 0
+		end
+
 		local node = self:createBaseNode(true)
 
 		node:setTouchEnabled(false)
@@ -673,6 +703,12 @@ function IconFactory:createIcon(info, style)
 
 			if config and config.Id then
 				return IconFactory:createRewardEquipIcon(info, style)
+			end
+		elseif info.rewardType == RewardType.kBuff then
+			local config = ConfigReader:getRecordById("Skill", tostring(id))
+
+			if config and config.Id then
+				return IconFactory:createBuffIcon(info, style)
 			end
 		end
 	end
@@ -2068,6 +2104,12 @@ function IconFactory:createRewardEquipIcon(info, style)
 		local rarity = ConfigReader:getDataByNameIdAndKey("HeroEquipBase", info.id, "Rareity")
 		local star = ConfigReader:getDataByNameIdAndKey("HeroEquipStar", HeroEquipStar[tostring(rarity)], "StarLevel")
 		local level = ConfigReader:getDataByNameIdAndKey("HeroEquipExp", HeroEquipExp[tostring(rarity)], "ShowLevel")
+		local starId = ConfigReader:getDataByNameIdAndKey("HeroEquipBase", info.id, "StartEquipStarID")
+
+		if starId then
+			star = ConfigReader:getDataByNameIdAndKey("HeroEquipStar", starId, "StarLevel")
+		end
+
 		info = {
 			id = info.id,
 			rarity = rarity,
@@ -2091,8 +2133,6 @@ function IconFactory:createEquipIcon(info, style)
 	local rarity = info.rarity and info.rarity or 11
 	local lock = info.lock or false
 	local amount = info.amount and info.amount or 0
-	local bgFile = GameStyle:getEquipRarityRectFile(rarity)
-	local bgImage = IconFactory:createSprite(bgFile)
 	local size = cc.size(110, 110)
 
 	if style.showAllSprite == true then
@@ -2103,8 +2143,19 @@ function IconFactory:createEquipIcon(info, style)
 
 	node:setContentSize(size)
 
+	local bgFile = GameStyle:getEquipRarityRectFile(rarity)
+	local bgImage = IconFactory:createSprite(bgFile)
+	local bgAnim = nil
+
 	if not style.notShowQulity == true then
 		IconFactory:centerAddNode(node, bgImage)
+
+		if rarity >= 15 then
+			local flashFile = GameStyle:getEquipRarityRectFlashFile(rarity)
+			local bgAnim = cc.MovieClip:create(flashFile)
+
+			IconFactory:positionAddNode(node, bgAnim, cc.p(size.width / 2, size.height / 2))
+		end
 	end
 
 	local equipImg = self:createEquipPic(info)
@@ -2346,6 +2397,64 @@ function IconFactory:createEquipIcon(info, style)
 	node:setRarity(rarity)
 	node:setLock(lock)
 	node:setAmount(amount)
+
+	return node
+end
+
+function IconFactory:createBuffIcon(info, style)
+	style = style or {}
+	local id = info.id and info.id
+	local skillConfig = ConfigReader:getRecordById("Skill", tostring(id))
+	local isLock = info.isLock
+	local isGray = info.isGray
+	local node = self:createBaseNode(style and style.isWidget)
+	local bottomImg = ccui.ImageView:create("yh_bg_jnk_new.png", 1)
+	local size = bottomImg:getContentSize()
+
+	node:setContentSize(cc.size(size.width, size.width))
+	IconFactory:centerAddNode(node, bottomImg)
+
+	if style.hideBg then
+		bottomImg:setVisible(false)
+	end
+
+	local kSkillTag = 65539
+	local skillImg = IconFactory:createSkillPic({
+		id = skillConfig.Icon
+	})
+
+	IconFactory:centerAddNode(node, skillImg)
+	skillImg:setScale(0.64)
+	skillImg:offset(-1.8, 2)
+	skillImg:setTag(kSkillTag)
+
+	local kLevelTag = 65536
+	local kLockTag = 65537
+
+	function node:setNodeGary(isGary)
+	end
+
+	function node:setLock(isLock)
+		local lockImg = self:getChildByTag(kLockTag)
+
+		if not lockImg then
+			lockImg = ccui.ImageView:create("mjt_img_lock.png", 1)
+
+			lockImg:setScale(0.8)
+			lockImg:addTo(node):center(node:getContentSize()):offset(-3, 0)
+		end
+
+		lockImg:setVisible(isLock)
+
+		local skillImage = self:getChildByTag(kSkillTag)
+
+		if skillImage then
+			skillImage:setGray(isGray)
+		end
+	end
+
+	node:setLock(isLock)
+	node:setScale(style.scale or 1)
 
 	return node
 end
@@ -2973,6 +3082,15 @@ function IconFactory:createItemPic(info, style)
 					largeIcon = true
 				})
 			end
+		end
+	elseif config.Icon == "" then
+		local ResourcesIconConfig = ConfigReader:getRecordById("ResourcesIcon", tostring(info.id))
+
+		if ResourcesIconConfig then
+			icon = self:createResourcePic(config, {
+				ignoreScaleSize = true,
+				largeIcon = true
+			})
 		end
 	end
 
@@ -3793,6 +3911,23 @@ function IconFactory:centerAddNode(parent, node, zOrder, tag)
 	end
 
 	node:addTo(parent):center(parent:getContentSize())
+
+	if zOrder then
+		node:setLocalZOrder(zOrder)
+	end
+
+	if tag then
+		node:setTag(tag)
+	end
+end
+
+function IconFactory:positionAddNode(parent, node, position, zOrder, tag)
+	if not node then
+		return
+	end
+
+	node:addTo(parent)
+	node:setPosition(position)
 
 	if zOrder then
 		node:setLocalZOrder(zOrder)

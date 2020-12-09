@@ -207,8 +207,8 @@ end
 
 function ArenaSystem:getSeasonTime()
 	local seasonData = self:getSeasonData()
-	local startTime = os.date("%Y.%m.%d %H:%M", seasonData.start / 1000)
-	local endTime = os.date("%Y.%m.%d %H:%M", seasonData["end"] / 1000)
+	local startTime = TimeUtil:localDate("%Y.%m.%d %H:%M", seasonData.start / 1000)
+	local endTime = TimeUtil:localDate("%Y.%m.%d %H:%M", seasonData["end"] / 1000)
 
 	return startTime, endTime
 end

@@ -572,12 +572,14 @@ function ActivitySystem:showEggSucc(activityId, eggActivity, callback)
 	}))
 end
 
-function ActivitySystem:showActivityRules(rules)
+function ActivitySystem:showActivityRules(rules, param)
 	local view = self:getInjector():getInstance("ArenaRuleView")
 	local event = ViewEvent:new(EVT_SHOW_POPUP, view, {
 		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
 	}, {
-		rule = rules
+		rule = rules,
+		param1 = param,
+		useParam = param ~= nil
 	}, nil)
 
 	self:dispatch(event)
@@ -1013,7 +1015,7 @@ function ActivitySystem:getTimeWillOpen(start)
 		min = m,
 		sec = s
 	}
-	local mills = TimeUtil:getTimeByDate(table)
+	local mills = TimeUtil:timeByRemoteDate(table)
 	local remoteTimestamp = self:getCurrentTime()
 	local remainTime = mills - remoteTimestamp
 	local str = ""

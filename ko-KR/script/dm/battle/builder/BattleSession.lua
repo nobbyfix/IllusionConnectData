@@ -154,6 +154,10 @@ function BaseBattleSession:createBattleLogicWithConfig(config)
 		battleLogic:setResultJudgeRules(judgeRules)
 	end
 
+	if config.groundCellCfg then
+		battleLogic:setupGroundCell(config.groundCellCfg)
+	end
+
 	local skills = require("skills.all")
 
 	battleLogic:setSkillDefinitions(skills.__all__)
@@ -731,7 +735,27 @@ function BaseBattleSession:_buildCardPool(playerData, randomizer, cardRuleId, pl
 			card.hero.cost = card.cost
 		end
 
+		if GameConfigs and GameConfigs.NoAiSetBox == true then
+			return
+		end
+
 		shuffle(randomizer, playerData.cards)
+	end
+
+	if GameConfigs and GameConfigs.NoAiSetBox == true then
+		local noOrderCard = {}
+
+		for k, v in pairs(playerCards or playerData.cards) do
+			for k_, v_ in pairs(playerData.cards) do
+				if v.id == v_.id then
+					noOrderCard[#noOrderCard + 1] = v_
+
+					break
+				end
+			end
+		end
+
+		playerData.cards = noOrderCard
 	end
 end
 
@@ -984,4 +1008,18 @@ function BaseBattleSession:_applyBattleConfig(battleData, battleConfig)
 			self:_adjustPlayerData(enemyData, enemyExtra)
 		end
 	end
+end
+
+function BaseBattleSession:_genGroundCellCfg(cellCfg)
+	local cells = {}
+
+	if cellCfg and type(cellCfg) == "table" then
+		for k, v in pairs(cellCfg) do
+			table.insert(cells, v)
+		end
+	end
+
+	return {
+		blockCells = cells
+	}
 end

@@ -57,6 +57,7 @@ function TabBtnWidget:initTabBtnData(data, style)
 	self._btnDatas = data.btnDatas or {}
 	self._onClickTab = data.onClickTab
 	self._hideBtnAnim = self._style.hideBtnAnim
+	self._tabImageType = style.imageType or ccui.TextureResType.plistType
 
 	if data.addCellHeight then
 		self._cellHeight = self._cellHeight + data.addCellHeight
@@ -307,7 +308,13 @@ function TabBtnWidget:_bindBtnText(btn, config)
 	btnNode.darkNode:addTo(btnNode)
 
 	if self._hideBtnAnim then
-		local lightImg = cc.Sprite:createWithSpriteFrameName(tabImage[2])
+		local lightImg = nil
+
+		if self._tabImageType and self._tabImageType == ccui.TextureResType.localType then
+			lightImg = cc.Sprite:create(tabImage[2])
+		else
+			lightImg = cc.Sprite:createWithSpriteFrameName(tabImage[2])
+		end
 
 		lightImg:setAnchorPoint(0.5, 0.5)
 		lightImg:addTo(btnNode.lightNode):setScale(self._tabImageScale)
@@ -345,7 +352,13 @@ function TabBtnWidget:_bindBtnText(btn, config)
 		btnNode.anim = anim
 	end
 
-	local darkImg = cc.Sprite:createWithSpriteFrameName(tabImage[1])
+	local darkImg = nil
+
+	if self._tabImageType and self._tabImageType == ccui.TextureResType.localType then
+		darkImg = cc.Sprite:create(tabImage[1])
+	else
+		darkImg = cc.Sprite:createWithSpriteFrameName(tabImage[1])
+	end
 
 	darkImg:setAnchorPoint(0.5, 0.5)
 	darkImg:addTo(btnNode.darkNode):setScale(self._tabImageScale)

@@ -433,7 +433,7 @@ function ChatMainMediator:pushTimeText(message)
 
 	node:setAnchorPoint(cc.p(0.5, 0.5))
 
-	local date = os.date("%Y-%m-%d  %H:%M", message:getTime() * 0.001)
+	local date = TimeUtil:localDate("%Y-%m-%d  %H:%M", message:getTime() * 0.001)
 	local timeText = ccui.Text:create(date, fontPath, 16)
 
 	timeText:setAnchorPoint(cc.p(0.5, 0))
@@ -449,7 +449,7 @@ function ChatMainMediator:insertTimeText(message)
 
 	node:setAnchorPoint(cc.p(0.5, 0.5))
 
-	local date = os.date("%Y-%m-%d  %H:%M", message:getTime() * 0.001)
+	local date = TimeUtil:localDate("%Y-%m-%d  %H:%M", message:getTime() * 0.001)
 	local timeText = ccui.Text:create(date, fontPath, 16)
 
 	timeText:setAnchorPoint(cc.p(0.5, 0))

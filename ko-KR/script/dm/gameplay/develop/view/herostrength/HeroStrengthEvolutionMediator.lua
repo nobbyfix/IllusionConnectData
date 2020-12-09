@@ -530,7 +530,7 @@ function HeroStrengthEvolutionMediator:onEvolutionClicked()
 
 	local function callBack()
 		local currentTimeStamp = self:getInjector():getInstance("GameServerAgent"):remoteTimestamp()
-		local curData = os.date("*t", currentTimeStamp)
+		local curData = TimeUtil:localDate("*t", currentTimeStamp)
 		local dateStr = curData.year .. "." .. curData.month .. "." .. curData.day
 		local customDataSystem = self:getInjector():getInstance(CustomDataSystem)
 

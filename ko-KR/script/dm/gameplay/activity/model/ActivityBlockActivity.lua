@@ -137,7 +137,7 @@ function ActivityBlockActivity:getActivityClubBossActivity()
 			min = m,
 			sec = s
 		}
-		local endTime = TimeUtil:getTimeByDate(table)
+		local endTime = TimeUtil:timeByRemoteDate(table)
 		local remoteTimestamp = self._activitySystem:getCurrentTime()
 		local remainTime = endTime - remoteTimestamp
 
@@ -341,7 +341,7 @@ function ActivityBlockActivity:getTimeStr()
 		return self._timeStr
 	end
 
-	local timeStr = self._config.TimeFactor
+	local timeStr = self:getLocalTimeFactor()
 	local start = ""
 	local end_ = ""
 

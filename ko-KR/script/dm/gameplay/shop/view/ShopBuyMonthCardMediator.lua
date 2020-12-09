@@ -135,14 +135,13 @@ end
 function ShopBuyMonthCardMediator:refreshIcon()
 	self._iconLayout:removeAllChildren()
 
-	local buyIconPath = self._data._buyIcon
-	local icon = nil
+	local pic = self._data._buyIcon
 
-	if buyIconPath then
-		icon = ccui.ImageView:create("asset/ui/shop/" .. buyIconPath .. ".png")
-	else
-		icon = ccui.ImageView:create(self._data._icon, 1)
+	if pic == nil or pic == "" then
+		pic = self._data._icon
 	end
+
+	local icon = ccui.ImageView:create("asset/ui/shop/" .. pic .. ".png")
 
 	if icon then
 		self._iconLayout:addChild(icon)

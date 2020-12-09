@@ -45,7 +45,8 @@ DebugBoxMainIndex = {
 				{
 					"开启/关闭战斗开始loading",
 					"设置血量增加倍数",
-					"开启/关闭打印实时属性"
+					"开启/关闭打印实时属性",
+					"开启/关闭顺序出牌"
 				}
 			},
 			{
@@ -276,6 +277,12 @@ DebugBoxMainIndex = {
 				"奖励添加",
 				{
 					"发送指定次数的奖励"
+				}
+			},
+			{
+				"小游戏",
+				{
+					"投飞镖：设置关卡"
 				}
 			}
 		}
@@ -689,6 +696,10 @@ DebugBoxMainIndex = {
 				"CrusadeReset"
 			},
 			{
+				"投飞镖：设置关卡",
+				"ChangeDartsLevel"
+			},
+			{
 				"技能Args检查",
 				"CheckSkillArgsBox"
 			},
@@ -715,6 +726,10 @@ DebugBoxMainIndex = {
 			{
 				"开启/关闭打印实时属性",
 				"DumpUnitPropertiesBox"
+			},
+			{
+				"开启/关闭顺序出牌",
+				"NoAiSetBox"
 			},
 			{
 				"播放主线校验错误",
@@ -839,7 +854,8 @@ DebugBoxMainIndex = {
 			"ClubBoss",
 			"BattleSettingBox",
 			"FreeRecharge",
-			"BattleExtend"
+			"BattleExtend",
+			"ChangeMiniGame"
 		}
 
 		for k, v in pairs(requireNameMap) do

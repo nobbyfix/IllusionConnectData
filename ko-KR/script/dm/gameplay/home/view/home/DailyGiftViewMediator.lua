@@ -142,7 +142,7 @@ function DailyGiftViewMediator:refreshRolesState()
 	dataLabel:setAdditionalKerning(2)
 
 	local timeStemp = self:getInjector():getInstance("GameServerAgent"):remoteTimestamp()
-	local data = os.date("*t", timeStemp)
+	local data = TimeUtil:localDate("*t", timeStemp)
 	local year = data.year
 	local month = data.month
 	local day = data.day

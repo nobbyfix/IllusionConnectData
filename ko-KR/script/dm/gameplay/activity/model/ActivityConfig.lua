@@ -21,6 +21,7 @@ require("dm.gameplay.activity.model.RecheargeActivity")
 require("dm.gameplay.activity.model.ActivityDrawCardFeedback")
 require("dm.gameplay.activity.model.MonsterShopActivity")
 require("dm.gameplay.activity.model.ActivityColorEggActivity")
+require("dm.gameplay.activity.model.MiniGameActivity")
 
 ActivityShowTab = {
 	kInAll = 3,
@@ -73,7 +74,8 @@ ActivityModel = {
 	[ActivityType.KRechargeActivity] = RecheargeActivity,
 	[ActivityType.KDrawCardFeedbackActivity] = ActivityDrawCardFeedback,
 	[ActivityType.KColourEgg] = ActivityColorEggActivity,
-	[ActivityType.KMonsterShop] = MonsterShopActivity
+	[ActivityType.KMonsterShop] = MonsterShopActivity,
+	[ActivityType.KMiniGame] = MiniGameActivity
 }
 ActivityUI = {
 	Login_Halloween = "LoginActivityWsjView",

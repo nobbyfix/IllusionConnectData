@@ -408,6 +408,8 @@ function ClubMapViewMediator:checkClubResourcesBattleTimerLogic()
 		end
 
 		self._clubResourcesBattleTimer = LuaScheduler:getInstance():schedule(refreshTimer, 1, false)
+
+		refreshTimer()
 	end
 end
 

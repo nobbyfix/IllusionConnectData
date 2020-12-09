@@ -84,10 +84,20 @@ end
 function DreamChallengePointMediator:initWidget()
 	self._main = self:getView():getChildByName("main")
 	self._pointView = self._main:getChildByName("point")
-	self._pointCellClone = self:getView():getChildByName("pointCellClone")
-	self._pointCellCloneSmall = self:getView():getChildByName("pointCellCloneSmall")
+	self.pointCellType = DataReader:getDataByNameIdAndKey("DreamChallengePoint", self._pointId, "MissionPicType")
+	local pointCellNameStr = "pointCellClone"
+
+	if kDreamChallengeType.kOne == self.pointCellType then
+		pointCellNameStr = "pointCellClone"
+	elseif kDreamChallengeType.kTwo == self.pointCellType then
+		pointCellNameStr = "pointCell2Clone"
+	end
+
+	self._pointCellClone = self:getView():getChildByName(pointCellNameStr)
+	self._pointCellCloneSmall = self:getView():getChildByName(pointCellNameStr .. "Small")
 	self._infoList = self._main:getChildByName("infoList")
 	self._infoCellClone = self:getView():getChildByName("infoCellClone")
+	self._infoBuffCellClone = self:getView():getChildByName("buffInfoCellClone")
 end
 
 function DreamChallengePointMediator:refreshPointView()
@@ -166,7 +176,7 @@ function DreamChallengePointMediator:setPoint(layout, battleId, index, small)
 	local frontBg = layout:getChildByFullName("frontBg")
 	local img = self._dreamSystem:getBattleBackground(self._mapId, self._pointId, battleId)
 
-	frontBg:loadTexture(img, ccui.TextureResType.plistType)
+	frontBg:loadTexture("asset/ui/dreamChallenge/" .. img, ccui.TextureResType.localType)
 
 	local mask = layout:getChildByFullName("mask")
 	local mask2 = layout:getChildByFullName("mask2")
@@ -198,14 +208,29 @@ function DreamChallengePointMediator:setPoint(layout, battleId, index, small)
 	})
 
 	if small then
-		icon:addTo(rewardPanel):center(rewardPanel:getContentSize()):setScale(0.45):offset(0, 0)
+		if reward and reward.type == RewardType.kBuff then
+			icon:addTo(rewardPanel):center(rewardPanel:getContentSize()):setScale(0.65):offset(2, -1)
+		else
+			icon:addTo(rewardPanel):center(rewardPanel:getContentSize()):setScale(0.55):offset(1, 0)
+		end
+	elseif reward and reward.type == RewardType.kBuff then
+		icon:addTo(rewardPanel):center(rewardPanel:getContentSize()):setScale(0.85):offset(3, -2)
 	else
-		icon:addTo(rewardPanel):center(rewardPanel:getContentSize()):setScale(0.6):offset(1, 0)
+		icon:addTo(rewardPanel):center(rewardPanel:getContentSize()):setScale(0.7):offset(1, 0)
 	end
 
 	local guang = layout:getChildByFullName("guang")
 
-	guang:runAction(cc.RepeatForever:create(cc.Sequence:create(cc.ScaleTo:create(0.5, 0.95), cc.ScaleTo:create(0.5, 1))))
+	if reward and reward.type == RewardType.kBuff then
+		guang:loadTexture("mjt_xuanzhongtai.png", ccui.TextureResType.plistType)
+	end
+
+	if small then
+		guang:runAction(cc.RepeatForever:create(cc.Sequence:create(cc.ScaleTo:create(0.4, 1.12), cc.ScaleTo:create(0.3, 1.2))))
+	else
+		guang:runAction(cc.RepeatForever:create(cc.Sequence:create(cc.ScaleTo:create(0.4, 1.05), cc.ScaleTo:create(0.3, 1.1))))
+	end
+
 	guang:setVisible(isRewardLock and not isReward)
 
 	local lock = layout:getChildByFullName("lock")
@@ -222,7 +247,7 @@ function DreamChallengePointMediator:setPoint(layout, battleId, index, small)
 			needDelay = true
 		})
 	else
-		rewardPanel:setSwallowTouches(false)
+		rewardPanel:setSwallowTouches(true)
 		rewardPanel:addTouchEventListener(function (sender, eventType)
 			if eventType == ccui.TouchEventType.ended then
 				self._dreamSystem:requestReceiveBox(self._mapId, self._pointId, battleId, function (response)
@@ -231,11 +256,26 @@ function DreamChallengePointMediator:setPoint(layout, battleId, index, small)
 						self:refreshBuffInfo()
 
 						local view = self:getInjector():getInstance("getRewardView")
+						local rewards = {}
+
+						for i = 1, #response.data.buffs do
+							local buff = response.data.buffs[i]
+							local buffItem = {
+								code = buff.value,
+								type = RewardType.kBuff,
+								amount = 1
+							}
+							rewards[#rewards + 1] = buffItem
+						end
+
+						for i = 1, #response.data.rewards do
+							rewards[#rewards + 1] = response.data.rewards[i]
+						end
 
 						self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
 							maskOpacity = 0
 						}, {
-							rewards = response.data.rewards
+							rewards = rewards
 						}))
 					end
 				end)
@@ -277,17 +317,36 @@ function DreamChallengePointMediator:refreshBuffInfo()
 	tiredText:setString(Strings:get("DreamChallenge_Point_Tired_Text", {
 		num = tiredNum
 	}))
+
+	local touchInfo = {
+		icon = "asset/common/common_hongxin.png",
+		type = RewardType.kShow,
+		title = Strings:get("DreamChallenge_Point_Tired_Title"),
+		desc = Strings:get("DreamChallenge_Point_Tired_Desc", {
+			fontSize = 18,
+			fontName = TTF_FONT_FZYH_M,
+			num = tiredNum
+		})
+	}
+
+	tiredIcon:setSwallowTouches(false)
+	IconFactory:bindTouchHander(tiredIcon, IconTouchHandler:new(self), touchInfo, {
+		needDelay = true
+	})
 	self._infoList:pushBackCustomItem(node1)
 
 	local teamData = self._dreamSystem:getPointScreen(self._mapId, self._pointId)
 	local teamCond = nil
 	local teamTitleStr = ""
+	local restrictStr = ""
 
 	if teamData.Up then
 		teamTitleStr = Strings:get("DreamChallenge_Point_Reward_Title_1")
+		restrictStr = Strings:get("DreamChallenge_Point_Rrestrict02")
 		teamCond = teamData.Up
 	else
 		teamTitleStr = Strings:get("DreamChallenge_Point_Reward_Title_2")
+		restrictStr = Strings:get("DreamChallenge_Point_Rrestrict01")
 		teamCond = teamData.Down
 	end
 
@@ -298,24 +357,60 @@ function DreamChallengePointMediator:refreshBuffInfo()
 		local text = node2:getChildByFullName("text")
 		local icon = node2:getChildByFullName("icon")
 		local line = node2:getChildByFullName("line2")
+		local iconTexture = kOtherHeroIcon
+		local infoDesc = ""
 
 		if data.type == "job" then
+			iconTexture = kJobIcon[data.value]
+
 			text:setString(Strings:get("TypeName_" .. data.value))
 			icon:loadTexture(kJobIcon[data.value], ccui.TextureResType.localType)
 			icon:setContentSize(cc.size(61, 61))
+
+			infoDesc = Strings:get("DreamChallenge_Point_Team_Desc_" .. data.value, {
+				fontSize = 18,
+				fontName = TTF_FONT_FZYH_M,
+				restrict = restrictStr
+			})
 		elseif data.type == "Party" then
+			iconTexture = kPartyIcon[data.value]
+
 			text:setString(Strings:get("HeroPartyName_" .. data.value))
 			icon:loadTexture(kPartyIcon[data.value], ccui.TextureResType.localType)
 			icon:setContentSize(cc.size(63, 63))
+
+			infoDesc = Strings:get("DreamChallenge_Point_Team_Desc_" .. data.value, {
+				fontSize = 18,
+				fontName = TTF_FONT_FZYH_M,
+				restrict = restrictStr
+			})
 		elseif data.type == "Tag" then
 			text:setString(Strings:get("DC_Map_OtherHero_IconName"))
 			icon:loadTexture(kOtherHeroIcon, ccui.TextureResType.localType)
 			icon:setContentSize(cc.size(63, 63))
+
+			infoDesc = Strings:get("DreamChallenge_Point_Team_Desc_Tag", {
+				fontSize = 18,
+				fontName = TTF_FONT_FZYH_M,
+				restrict = restrictStr
+			})
 		end
 
 		title:setString(teamTitleStr)
 		title:setVisible(i == 1)
 		line:setVisible(i == 1)
+
+		local touchInfo = {
+			icon = iconTexture,
+			type = RewardType.kShow,
+			title = teamTitleStr,
+			desc = infoDesc
+		}
+
+		icon:setSwallowTouches(false)
+		IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), touchInfo, {
+			needDelay = true
+		})
 		self._infoList:pushBackCustomItem(node2)
 	end
 
@@ -342,6 +437,18 @@ function DreamChallengePointMediator:refreshBuffInfo()
 		icon:removeAllChildren()
 		icon:loadTexture("asset/commonRaw/common_bd_ssr01.png", ccui.TextureResType.localType)
 		icon:setContentSize(cc.size(93, 93))
+
+		local touchInfo = {
+			code = skill,
+			type = RewardType.kBuff,
+			amount = 0,
+			buffType = "Buff"
+		}
+
+		icon:setSwallowTouches(false)
+		IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), touchInfo, {
+			needDelay = true
+		})
 
 		local config = ConfigReader:getRecordById("HeroBase", heros[i])
 		local heroImg = IconFactory:createRoleIconSprite({
@@ -379,6 +486,18 @@ function DreamChallengePointMediator:refreshBuffInfo()
 		icon:removeAllChildren()
 		icon:loadTexture(kPartyIcon[partys[i]], ccui.TextureResType.localType)
 		icon:setContentSize(cc.size(63, 63))
+
+		local touchInfo = {
+			code = skill,
+			type = RewardType.kBuff,
+			amount = 0,
+			buffType = "Buff"
+		}
+
+		icon:setSwallowTouches(false)
+		IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), touchInfo, {
+			needDelay = true
+		})
 		title:setString(Strings:get("DreamChallenge_Point_Reward_Title_0"))
 		title:setVisible(addIndex == 1)
 		line:setVisible(addIndex == 1)
@@ -407,38 +526,125 @@ function DreamChallengePointMediator:refreshBuffInfo()
 		icon:removeAllChildren()
 		icon:loadTexture(kJobIcon[jobs[i]], ccui.TextureResType.localType)
 		icon:setContentSize(cc.size(61, 61))
+
+		local touchInfo = {
+			code = skill,
+			type = RewardType.kBuff,
+			amount = 0,
+			buffType = "Buff"
+		}
+
+		icon:setSwallowTouches(false)
+		IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), touchInfo, {
+			needDelay = true
+		})
 		title:setString(Strings:get("DreamChallenge_Point_Reward_Title_0"))
 		title:setVisible(addIndex == 1)
 		line:setVisible(addIndex == 1)
 		self._infoList:pushBackCustomItem(node5)
 	end
 
-	local buffs = self._dreamSystem:getBuffs(self._mapId, self._pointId)
 	local index = 1
+	local battleIds = self._dreamSystem:getBattleIds(self._mapId, self._pointId)
 
-	for k, v in pairs(buffs) do
-		local buffInfo = v
-		local node = self._infoCellClone:clone()
-		local attackText = node:getChildByFullName("text")
-		local icon = node:getChildByFullName("icon")
-		local title = node:getChildByFullName("title")
-		local line = node:getChildByFullName("line")
-		local skillConfig = ConfigReader:getRecordById("Skill", buffInfo.skillId)
+	for i = 1, #battleIds do
+		local buff = self._dreamSystem:getBattleRewardBuff(battleIds[i])
 
-		title:setVisible(index == 1)
-		title:setString("BUFF")
+		if buff then
+			local buffInfo = buff
+			local node = self._infoBuffCellClone:clone()
+			local attackText = node:getChildByFullName("text")
+			local icon = node:getChildByFullName("buff")
+			local title = node:getChildByFullName("title")
+			local line = node:getChildByFullName("line2")
+			local tips = node:getChildByFullName("tips")
+			local skillConfig = ConfigReader:getRecordById("Skill", buffInfo.value)
 
-		if skillConfig then
-			attackText:setString(Strings:get(skillConfig.Desc_short))
-			attackText:setColor(cc.c3b(255, 159, 48))
+			title:setVisible(index == 1)
+			line:setVisible(index == 1)
+			title:setString("BUFF")
+
+			if skillConfig then
+				attackText:setString(Strings:get(skillConfig.Name))
+				attackText:setColor(cc.c3b(255, 159, 48))
+			end
+
+			local isLock = self._dreamSystem:checkBuffLock(self._mapId, self._pointId, buffInfo.value)
+			local isUsed = self._dreamSystem:checkBuffUsed(self._mapId, self._pointId, buffInfo.value)
+			local info = {
+				id = buffInfo.value,
+				isLock = isLock,
+				isGray = isLock or isUsed
+			}
+			local buffIcon = IconFactory:createBuffIcon(info, {
+				scale = 0.65
+			})
+
+			buffIcon:addTo(icon):center(icon:getContentSize())
+			tips:setVisible(isUsed)
+
+			local touchInfo = {
+				code = buffInfo.value,
+				type = RewardType.kBuff,
+				amount = 0,
+				buffType = buffInfo.Type
+			}
+
+			if isLock then
+				local pointName = self._dreamSystem:getPointName(self._pointId)
+				local battleName = self._dreamSystem:getBattleName(battleIds[i])
+				touchInfo.desc = Strings:get("DreamChallenge_Buff_Lock_Desc", {
+					point = pointName,
+					battle = battleName
+				})
+			elseif isUsed then
+				touchInfo.desc = Strings:get("DreamChallenge_Buff_Used")
+			elseif buffInfo.Type == "OneTimeBuff" then
+				local buffs = self._dreamSystem:getBuffs(self._mapId, self._pointId)
+
+				if buffs and buffs[buffInfo.value] then
+					touchInfo.desc = Strings:get("DreamChallenge_Buff_End_Num", {
+						num = buffs[buffInfo.value].duration
+					})
+				end
+			elseif buffInfo.Type == "TimeBuff" then
+				local buffs = self._dreamSystem:getBuffs(self._mapId, self._pointId)
+
+				if buffs and buffs[buffInfo.value] then
+					local str = ""
+					local fmtStr = "${d}:${H}:${M}:${S}"
+					local timeStr = TimeUtil:formatTime(fmtStr, buffs[buffInfo.value].time)
+					local parts = string.split(timeStr, ":", nil, true)
+					local timeTab = {
+						day = tonumber(parts[1]),
+						hour = tonumber(parts[2]),
+						min = tonumber(parts[3]),
+						sec = tonumber(parts[4])
+					}
+
+					if timeTab.day > 0 then
+						str = timeTab.day .. Strings:get("TimeUtil_Day") .. timeTab.hour .. Strings:get("TimeUtil_Hour")
+					elseif timeTab.hour > 0 then
+						str = timeTab.hour .. Strings:get("TimeUtil_Hour") .. timeTab.min .. Strings:get("TimeUtil_Min")
+					else
+						str = timeTab.min .. Strings:get("TimeUtil_Min") .. timeTab.sec .. Strings:get("TimeUtil_Sec")
+					end
+
+					touchInfo.desc = Strings:get("DreamChallenge_Buff_End_Time", {
+						time = str
+					})
+				end
+			end
+
+			icon:setSwallowTouches(false)
+			IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), touchInfo, {
+				needDelay = true
+			})
+
+			index = index + 1
+
+			self._infoList:pushBackCustomItem(node)
 		end
-
-		icon:loadTexture("asset/skillIcon/" .. skillConfig.Icon .. ".png", ccui.TextureResType.localType)
-		icon:setContentSize(cc.size(63, 63))
-
-		index = index + 1
-
-		self._infoList:pushBackCustomItem(node)
 	end
 end
 
@@ -462,6 +668,10 @@ function DreamChallengePointMediator:onClickResetBtn()
 		if data.response == "ok" then
 			outSelf._dreamSystem:requestResetPoint(outSelf._mapId, outSelf._pointId, function (response)
 				if response.resCode == 0 then
+					outSelf:dispatch(Event:new(EVT_DREAMCHALLENGE_POINT_RESET, {
+						mapId = outSelf._mapId,
+						pointId = outSelf._pointId
+					}))
 					outSelf:refreshPointView()
 				end
 			end)

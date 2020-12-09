@@ -292,7 +292,8 @@ function ActivityBlockMonsterShopMediator:initLeftView()
 			self._bubbleIndex = 1 + self._bubbleIndex
 
 			self._bubbleText:setString(Strings:get(str, {
-				Num = rate
+				Num = rate,
+				time = TimeUtil:getSystemResetDate()
 			}))
 
 			local textSizeHeight = self._bubbleText:getContentSize().height
@@ -1054,7 +1055,8 @@ end
 function ActivityBlockMonsterShopMediator:onClickRule()
 	local rules = self._activityShop:getActivityConfig().RuleDesc
 
-	self._activitySystem:showActivityRules(rules)
+	dump(rules)
+	self._activitySystem:showActivityRules(rules, TimeUtil:getSystemResetDate())
 end
 
 function ActivityBlockMonsterShopMediator:onClickItem(sender, eventType, data)

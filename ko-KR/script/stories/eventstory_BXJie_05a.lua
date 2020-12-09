@@ -158,15 +158,6 @@ end
 
 function scene_eventstory_BXJie_05a.actions.start_eventstory_BXJie_05a(_root, args)
 	return sequential({
-		act({
-			action = "fadeOut",
-			actor = __getnode__(_root, "curtain"),
-			args = function (_ctx)
-				return {
-					duration = 1.5
-				}
-			end
-		}),
 		sleep({
 			args = function (_ctx)
 				return {

@@ -332,7 +332,9 @@ all.Skill_YYing_Unique = {
 			local global = _env.global
 
 			for _, unit in global.__iter__(_env.units) do
-				if global.ProbTest(_env, 0.25) then
+				local i = global.Random(_env, 1, 800)
+
+				if i <= 200 then
 					local buffeft1 = global.Mute(_env)
 
 					global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
@@ -348,7 +350,7 @@ all.Skill_YYing_Unique = {
 					}, {
 						buffeft1
 					}, 1, 0)
-				elseif global.ProbTest(_env, 0.33) then
+				elseif i < 401 then
 					local buffeft2 = global.Daze(_env)
 
 					global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
@@ -364,7 +366,7 @@ all.Skill_YYing_Unique = {
 					}, {
 						buffeft2
 					}, 1, 0)
-				elseif global.ProbTest(_env, 0.5) then
+				elseif i < 601 then
 					local buffeft3 = global.NumericEffect(_env, "-atkrate", {
 						"+Normal",
 						"+Normal"
@@ -514,7 +516,9 @@ all.Skill_YYing_Unique_EX = {
 			local global = _env.global
 
 			for _, unit in global.__iter__(_env.units) do
-				if global.ProbTest(_env, 0.25) then
+				local i = global.Random(_env, 1, 800)
+
+				if i <= 200 then
 					local buffeft1 = global.Mute(_env)
 
 					global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
@@ -530,7 +534,7 @@ all.Skill_YYing_Unique_EX = {
 					}, {
 						buffeft1
 					}, 1, 0)
-				elseif global.ProbTest(_env, 0.33) then
+				elseif i < 401 then
 					local buffeft2 = global.Daze(_env)
 
 					global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
@@ -546,7 +550,7 @@ all.Skill_YYing_Unique_EX = {
 					}, {
 						buffeft2
 					}, 1, 0)
-				elseif global.ProbTest(_env, 0.5) then
+				elseif i < 601 then
 					local buffeft3 = global.NumericEffect(_env, "-atkrate", {
 						"+Normal",
 						"+Normal"

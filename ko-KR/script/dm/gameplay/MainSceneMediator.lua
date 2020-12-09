@@ -121,6 +121,9 @@ local muiscCfg = {
 	},
 	RecruitView = {
 		noAutoPlay = true
+	},
+	DartsView = {
+		noAutoPlay = true
 	}
 }
 local UINavigateHistory = {}

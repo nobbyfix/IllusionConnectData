@@ -455,7 +455,7 @@ function ActivitySupport:getTimeStr()
 		return self._timeStr
 	end
 
-	local timeStr = self._config.TimeFactor
+	local timeStr = self:getLocalTimeFactor()
 	local start = ""
 	local end_ = ""
 

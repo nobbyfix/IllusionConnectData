@@ -270,6 +270,7 @@ ActivityType = {
 	kDRAWCARDOPEN = "DRAWCARDOPEN",
 	KMonsterShop = "MONSTERSHOP",
 	KTASKMONTHCARDSTAGE = "TASKMONTHCARDSTAGE",
+	KMiniGame = "MINIGAME",
 	KTASKCOLLECTSTAR = "TASKCOLLECTSTAR",
 	KActivityPass = "BattlePass",
 	KEXCHANGE = "EXCHANGE",
@@ -335,6 +336,7 @@ UserDefaultKey = {
 	kHeroQuickSelectKey = "hero_star_quick_select",
 	kCurSeasonForIsShowView = "kCurSeasonForIsShowView",
 	kSoundCVDownloadStartKey = "sound_cv_download_start",
+	kBag_Compose_Show = "bag_compose_show",
 	kClubBossRedKey = "clubBoss_red",
 	kMusicVolumeKey = "setting_music_volume",
 	kPackageDownloadStartKey = "package_download_start",
@@ -383,4 +385,9 @@ kStoreRoomName = "StoreRoom"
 litTypeMap = {
 	NORMAL = "Normal",
 	ELITE = "Elite"
+}
+kMasterState = {
+	Forbidden = 2,
+	Locked = 1,
+	Normal = 3
 }

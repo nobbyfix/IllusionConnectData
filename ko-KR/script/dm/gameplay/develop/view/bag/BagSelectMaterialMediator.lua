@@ -24,6 +24,7 @@ function BagSelectMaterialMediator:onRegister()
 	self._bagSystem = self._developSystem:getBagSystem()
 	self._heroSystem = self._developSystem:getHeroSystem()
 	self._equipSystem = self._developSystem:getEquipSystem()
+	self._bagSystem = self._developSystem:getBagSystem()
 	self._useBtn = self:bindWidget("main.usebtn", OneLevelViceButton, {
 		handler = {
 			clickAudio = "Se_Click_Common_1",
@@ -46,12 +47,54 @@ function BagSelectMaterialMediator:initData(data)
 	self._callBack = data.callBack
 	self._index = data.index
 	self._equipList = {}
-	self._equipList = {}
 	self._heroData = nil
 
 	if data then
 		self._viewType = EquipsShowType.kCompose
-		self._equipList = self._equipSystem:getEquipList(self._viewType, self._curMaterial)
+		local allEquipList = self._equipSystem:getEquipList(self._viewType, self._curMaterial)
+
+		for i = 1, #allEquipList do
+			local oneEquip = allEquipList[i]
+			local equipId = oneEquip:getEquipId()
+			local uuId = oneEquip:getId()
+
+			if self:checkUsed(equipId, uuId) == false then
+				self._equipList[#self._equipList + 1] = oneEquip
+			end
+		end
+
+		table.sort(self._equipList, function (a, b)
+			local a_lock = a:getUnlock() and 1 or 0
+			local b_lock = b:getUnlock() and 1 or 0
+			local a_used = a:getHeroId() ~= "" and 0 or 1
+			local b_used = b:getHeroId() ~= "" and 0 or 1
+
+			if a_lock + a_used == b_lock + b_used then
+				if a_used == b_used then
+					if a:getRarity() == b:getRarity() then
+						if a:getStar() == b:getStar() then
+							if a:getLevel() == b:getLevel() then
+								if a:getSort() == b:getSort() then
+									return a:getId() < b:getId()
+								end
+
+								return a:getSort() < b:getSort()
+							end
+
+							return a:getLevel() < b:getLevel()
+						end
+
+						return a:getStar() < b:getStar()
+					end
+
+					return a:getRarity() < b:getRarity()
+				end
+
+				return b_used < a_used
+			end
+
+			return a_lock + a_used > b_lock + b_used
+		end)
 
 		if self._equipList[1] and self._equipList[1].item then
 			self._selectEquipId = self._equipList[1].item:getEquipId()
@@ -254,6 +297,10 @@ function BagSelectMaterialMediator:createCell(cell, index)
 					iconPanel:setColor(cc.c3b(150, 150, 150))
 				end
 
+				if self:checkUsed(equipId, uuId) then
+					iconPanel:setColor(cc.c3b(150, 150, 150))
+				end
+
 				local heroId = equipData:getHeroId()
 
 				if heroId ~= "" then
@@ -413,4 +460,20 @@ end
 
 function BagSelectMaterialMediator:onBackCall()
 	self:close()
+end
+
+function BagSelectMaterialMediator:checkUsed(equipId, uuid)
+	local key_equip = equipId .. "_" .. uuid
+	local usedList = self._equipSystem:getComposeUsedEquips()
+	local used = false
+
+	for key, value in pairs(usedList) do
+		if key_equip == value then
+			used = true
+
+			break
+		end
+	end
+
+	return used
 end

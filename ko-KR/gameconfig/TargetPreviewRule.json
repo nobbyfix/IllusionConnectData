@@ -177,7 +177,7 @@
         "Function": "return GenInfo(EnemyAll(),Red,true)"
     },
     "Target_SYAi": {
-        "Function": "return GenInfo(EnemyAll(),Red,true)"
+        "Function": "return GenInfo(EnemyAll(ROW_OF(TARGET)),Red)"
     },
     "Target_TJHDe": {
         "Function": "return MainTarget()"

@@ -223,7 +223,7 @@ function HomeMediator:resumeWithData(data)
 	end
 
 	self._touchTimes = 0
-	local resumeTime = os.time()
+	local resumeTime = TimeUtil:timeByLocalDate()
 
 	if not self._lastResumeTime or resumeTime - self._lastResumeTime > 900 then
 		self:setBoardHeroEffectState(true)
@@ -1739,7 +1739,7 @@ function HomeMediator:getPageByIndex(index)
 	layout:setPosition(cc.p(0, 0))
 	layout:setContentSize(pageView:getContentSize())
 
-	local image = ccui.ImageView:create(image, ccui.TextureResType.plistType)
+	local image = ccui.ImageView:create("asset/ui/mainScene/" .. image, ccui.TextureResType.localType)
 
 	image:addTo(layout):center(layout:getContentSize())
 
@@ -3157,37 +3157,23 @@ function HomeMediator:checkExtraRedPoint()
 		passRedPoint:setVisible(self._passSystem:checkRedPointForHome())
 	end
 
+	local extraBtns = {}
 	local carnBtn = self:getView():getChildByFullName("extraActBtn.btn_1")
 
 	carnBtn:setVisible(self._activitySystem:checkConditionWithId("Carnival") and CommonUtils.GetSwitch("fn_carnival"))
+
+	if carnBtn:isVisible() then
+		extraBtns[#extraBtns + 1] = carnBtn
+	end
 
 	local carnBtnRedPoint = carnBtn:getChildByName("redPoint")
 
 	carnBtnRedPoint:setVisible(self._activitySystem:hasRedPointForActivity("Carnival"))
 
-	local posX = carnBtn:getPositionX()
+	local posX, posY = carnBtn:getPosition()
 	local chargeBtn = self:getView():getChildByFullName("extraActBtn.btn_2")
 
 	chargeBtn:setVisible(CommonUtils.GetSwitch("fn_first_pay"))
-
-	if not carnBtn:isVisible() then
-		chargeBtn:setPosition(cc.p(posX, carnBtn:getPositionY()))
-
-		posX = posX - 122
-	else
-		chargeBtn:setPosition(cc.p(posX - 112, carnBtn:getPositionY()))
-
-		posX = posX - 224
-	end
-
-	self._clubResourcesBattleBtn = self:getView():getChildByFullName("extraActBtn.btn_3")
-	self._clubResourcesBattleTimeText = self._clubResourcesBattleBtn:getChildByName("Text_2")
-
-	self._clubResourcesBattleBtn:setVisible(false)
-
-	if self._clubSystem:isClubResourcesBattleOpen() == true then
-		self._clubResourcesBattleBtn:setVisible(true)
-	end
 
 	local unlock, unlockTips = self._systemKeeper:isUnlock("Shop_Unlock")
 
@@ -3236,20 +3222,53 @@ function HomeMediator:checkExtraRedPoint()
 		chargeBtn:setVisible(false)
 	end
 
-	if not carnBtn:isVisible() then
-		if not chargeBtn:isVisible() then
-			self._clubResourcesBattleBtn:setPosition(cc.p(carnBtn:getPositionX(), carnBtn:getPositionY()))
-		else
-			self._clubResourcesBattleBtn:setPosition(cc.p(posX, carnBtn:getPositionY()))
+	if chargeBtn:isVisible() then
+		extraBtns[#extraBtns + 1] = chargeBtn
+	end
 
-			posX = posX - 122
+	self._clubResourcesBattleBtn = self:getView():getChildByFullName("extraActBtn.btn_3")
+	self._clubResourcesBattleTimeText = self._clubResourcesBattleBtn:getChildByName("Text_2")
+
+	self._clubResourcesBattleBtn:setVisible(false)
+
+	if self._clubSystem:isClubResourcesBattleOpen() == true then
+		self._clubResourcesBattleBtn:setVisible(true)
+	end
+
+	if self._clubResourcesBattleBtn:isVisible() then
+		extraBtns[#extraBtns + 1] = self._clubResourcesBattleBtn
+	end
+
+	local activity = self._activitySystem:getActivityByType(ActivityType.KMiniGame)
+	local miniGameBtn = self:getView():getChildByFullName("extraActBtn.btn_4")
+
+	miniGameBtn:setVisible(false)
+
+	if activity then
+		miniGameBtn:setVisible(self._activitySystem:isActivityOpen(activity:getId()) and self._activitySystem:checkConditionWithId(activity:getId()) and CommonUtils.GetSwitch("fn_MiniGame_Darts"))
+
+		local function callFunc()
+			local miniGameSystem = self:getInjector():getInstance(MiniGameSystem)
+
+			miniGameSystem:tryEnterByActivity(activity:getId())
 		end
-	elseif not chargeBtn:isVisible() then
-		self._clubResourcesBattleBtn:setPosition(cc.p(chargeBtn:getPositionX(), carnBtn:getPositionY()))
-	else
-		self._clubResourcesBattleBtn:setPosition(cc.p(posX, carnBtn:getPositionY()))
 
-		posX = posX - 122
+		mapButtonHandlerClick(nil, miniGameBtn, {
+			clickAudio = "Se_Click_Open_1",
+			func = callFunc
+		})
+
+		local miniGameRedPoint = miniGameBtn:getChildByName("redPoint")
+
+		miniGameRedPoint:setVisible(self._activitySystem:hasRedPointForActivity(activity:getId()))
+
+		if miniGameBtn:isVisible() then
+			extraBtns[#extraBtns + 1] = miniGameBtn
+		end
+	end
+
+	for i, btn in pairs(extraBtns) do
+		btn:setPosition(posX - (i - 1) * 122, posY)
 	end
 
 	self:setComplexActivityEntry()
@@ -3366,7 +3385,10 @@ function HomeMediator:checkClubResourcesBattleTimerLogic()
 				return
 			end
 
-			self._clubResourcesBattleBtn:setVisible(true)
+			if self._clubResourcesBattleBtn:isVisible() == false then
+				self._clubResourcesBattleBtn:setVisible(true)
+				self:checkExtraRedPoint()
+			end
 
 			local ClubResourcesBattleData = self._clubSystem:getClub():getClubResourcesBattleInfo()
 			local remoteTimestamp = self._gameServerAgent:remoteTimestamp()
@@ -3380,6 +3402,7 @@ function HomeMediator:checkClubResourcesBattleTimerLogic()
 					self._clubResourcesBattleTimer = nil
 
 					self._clubResourcesBattleBtn:setVisible(false)
+					self:checkExtraRedPoint()
 				else
 					self._clubSystem:requestClubBattleData(nil, false)
 				end

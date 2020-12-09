@@ -2019,7 +2019,7 @@ function HeroSystem:getSoundUnlock(hero, sound)
 
 			if condition.Time then
 				local remoteTimestamp = self:getInjector():getInstance("GameServerAgent"):remoteTimestamp()
-				local year = os.date("*t", remoteTimestamp).year
+				local year = TimeUtil:remoteDate("*t", remoteTimestamp).year
 				local date = year .. "-" .. condition.Time
 				local duration = condition.duration * 60 * 60
 
@@ -2030,7 +2030,7 @@ function HeroSystem:getSoundUnlock(hero, sound)
 				end
 
 				local dateTemp = string.split(date, "-")
-				local startTime = os.time({
+				local startTime = TimeUtil:timeByRemoteDate({
 					year = tonumber(dateTemp[1]),
 					month = tonumber(dateTemp[2]),
 					day = tonumber(dateTemp[3]),

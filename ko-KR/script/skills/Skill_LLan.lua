@@ -265,7 +265,7 @@ all.Skill_LLan_Unique = {
 				tags = {
 					"STATUS",
 					"DEBUFF",
-					"DAZE",
+					"DAZE_LLan",
 					"UNDISPELLABLE"
 				}
 			}, {
@@ -543,7 +543,7 @@ all.Skill_LLan_Unique_EX = {
 				tags = {
 					"STATUS",
 					"DEBUFF",
-					"DAZE",
+					"DAZE_LLan",
 					"UNDISPELLABLE"
 				}
 			}, {

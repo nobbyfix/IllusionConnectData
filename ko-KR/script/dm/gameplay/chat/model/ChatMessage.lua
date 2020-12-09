@@ -210,7 +210,8 @@ function SystemMessage:getExpireTime()
 end
 
 function SystemMessage:isExpire(currentTime)
-	currentTime = currentTime or os.time() * 1000
+	local serverT = DmGame:getInstance()._injector:getInstance("GameServerAgent"):remoteTimestamp()
+	currentTime = currentTime or serverT * 1000
 	local time = self:getTime()
 	time = time or currentTime
 	local expireTime = self:getExpireTime()

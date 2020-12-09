@@ -44,7 +44,9 @@ function DreamChallengeMap:synchronize(data)
 
 	if data.dreamPoints then
 		for k, v in pairs(data.dreamPoints) do
-			self._dreamPoints[k]:synchronize(v)
+			if self._dreamPoints[k] then
+				self._dreamPoints[k]:synchronize(v)
+			end
 		end
 	end
 

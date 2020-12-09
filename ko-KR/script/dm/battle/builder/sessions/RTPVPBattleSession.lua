@@ -31,7 +31,7 @@ function RTPVPBattleSession:genBattleConfigAndData(battleData, randomSeed)
 	end
 
 	local maxRound = ConfigReader:getRecordById("ConfigValue", "Fight_MaximumRound").content
-	local battleConfig = self:_getBlockBattleConfig(ConfigReader:getRecordById("ConfigValue", "Fight_Arena").content)
+	local battleConfig = self:_getBlockBattleConfig(ConfigReader:getRecordById("ConfigValue", "Fight_Friend").content)
 	local stageEnergy = battleConfig and battleConfig.StageEnergy or self:_getBlockBattleConfig(ConfigReader:getRecordById("ConfigValue", "Fight_StageEnergy").content).StageEnergy
 	local battlePhaseConfig = self:_genBattlePhaseConfig(stageEnergy, {
 		waitMode = battleConfig and battleConfig.WaitMode,

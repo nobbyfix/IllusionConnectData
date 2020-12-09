@@ -98,10 +98,10 @@ end
 
 function RecheargeActivity:getNextGetRewardTime(gameServerAgent)
 	local remoteTimestamp = gameServerAgent:remoteTimestamp()
-	local endDate = os.date("*t", remoteTimestamp)
+	local endDate = TimeUtil:localDate("*t", remoteTimestamp)
 
 	if endDate.hour >= 5 then
-		endDate = os.date("*t", remoteTimestamp + 86400)
+		endDate = TimeUtil:localDate("*t", remoteTimestamp + 86400)
 	end
 
 	local str = string.format("%d-%02d-%02d 05:00:00", endDate.year, endDate.month, endDate.day)

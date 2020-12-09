@@ -124,7 +124,7 @@ function RelationInfoTipMediator:refreshClonePanel(panel, level)
 	local history = self._relation:getHistory()
 
 	if history and history[tostring(level)] then
-		local timeStr = os.date(Strings:get("RelationText2"), history[level])
+		local timeStr = TimeUtil:localDate(Strings:get("RelationText2"), history[level])
 
 		dateLabel:setString(timeStr)
 	end

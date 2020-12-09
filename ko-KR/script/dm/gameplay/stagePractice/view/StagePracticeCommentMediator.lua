@@ -270,11 +270,10 @@ function StagePracticeCommentMediator:setTextField()
 		self._commentInfo:setMaxLengthEnabled(true)
 	end
 
-	self._commentInfo:setText("")
 	self._commentInfo:setPlaceHolder(Strings:get("StagePtc_Comment_WordLimit"))
 	self._commentInfo:onEvent(function (eventName, sender)
 		if eventName == "began" then
-			self._commentInfo:setPlaceHolder("")
+			-- Nothing
 		elseif eventName == "ended" then
 			self._oldStr = self._commentInfo:getText()
 			local state, finalString = StringChecker.checkString(self._oldStr, MaskWordType.CHAT)
@@ -343,8 +342,8 @@ function StagePracticeCommentMediator:onClickSendComment(sender, eventType)
 				duration = 0.2,
 				tip = Strings:get("StagePtc_Comment_Tips_SendSuccess")
 			}))
-			self._commentInfo:setText("")
 			self._commentInfo:setPlaceHolder(Strings:get("StagePtc_Comment_WordLimit"))
+			self._commentInfo:setText("")
 		end)
 	end
 end

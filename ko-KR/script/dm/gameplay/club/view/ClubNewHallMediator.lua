@@ -451,9 +451,8 @@ function ClubNewHallMediator:refreshInfoView()
 	levelLabel:setString(self._clubInfoOj:getLevel())
 
 	local technologys = self._clubSystem:getTechnologyListOj()
-	local technology = technologys:getList()[1]
-	local techPoints = technology:getTechPoints()
-	local pointData = techPoints[2]
+	local technologyList = technologys:getList()
+	local pointData = technologyList[1]:getPointById("Club_Contribute_1")
 	local percent = pointData:getExp() / pointData:getUpgradeExp() * 100
 	local curExp = pointData:getExp()
 	local progressBar = self._leftNode:getChildByName("progressBGImage")
@@ -981,9 +980,17 @@ function ClubNewHallMediator:onClickChangeName(sender, eventType)
 end
 
 function ClubNewHallMediator:onClickWeiXin(sender, eventType)
-	self:dispatch(ShowTipEvent({
-		tip = Strings:get("Item_PleaseWait")
-	}))
+	local delegate = {}
+	local outSelf = self
+
+	function delegate:willClose(popupMediator, data)
+	end
+
+	local view = self:getInjector():getInstance("ClubSNSTipView")
+
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+	}, {}, delegate))
 end
 
 function ClubNewHallMediator:onClickChangeIcon(sender, eventType)

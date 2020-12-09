@@ -993,9 +993,15 @@ function ActivitySagaSupportMapMediator:onClickChangeStageStype()
 		local curTimeStemp = self:getInjector():getInstance("GameServerAgent"):remoteTimestamp()
 
 		if curTimeStemp < timeStemp then
+			local startTime = ConfigReader:getDataByNameIdAndKey("activityblockpoint", "AE01S01", "PointTime")
+			local remoteTime = TimeUtil:formatStrToRemoteTImestamp(startTime.start)
+			local localDate = TimeUtil:localDate("%Y-%m-%d  %H:%M:%S", remoteTime)
+
 			self:dispatch(ShowTipEvent({
 				duration = 0.2,
-				tip = Strings:get("EMap_TimeLimit_Tips")
+				tip = Strings:get("EMap_TimeLimit_Tips", {
+					time = localDate
+				})
 			}))
 
 			return

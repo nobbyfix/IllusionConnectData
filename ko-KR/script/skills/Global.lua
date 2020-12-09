@@ -975,84 +975,80 @@ function all.ApplyBuff_Debuff(_env, actor, target, config, buffEffects, ratefact
 	local global = _env.global
 	local attacker = global.LoadUnit(_env, actor, "ATTACKER")
 	local defender = global.LoadUnit(_env, target, "DEFENDER")
-	local prob = global.EvalProb1(_env, attacker, defender, ratefactor, limitfactor)
+	local result = global.ApplyBuff(_env, target, config, buffEffects)
 
-	if global.ProbTest(_env, prob) then
-		local result = global.ApplyBuff(_env, target, config, buffEffects)
+	if result then
+		global.ActivateSpecificTrigger(_env, target, "BUFFED_DEBUFF")
 
-		if result then
-			global.ActivateSpecificTrigger(_env, target, "BUFFED_DEBUFF")
+		local MainStage_BurningExtra_Check = global.SpecialPropGetter(_env, "MainStage_BurningExtra_Check")(_env, actor)
 
-			local MainStage_BurningExtra_Check = global.SpecialPropGetter(_env, "MainStage_BurningExtra_Check")(_env, actor)
+		if global.BUFF_MARKED_ALL(_env, "BURNING", "DISPELLABLE")(_env, result) and MainStage_BurningExtra_Check == 1 then
+			local buffeft1 = global.HPPeriodDamage(_env, "Burning", attacker.atk * 0.3)
 
-			if global.BUFF_MARKED_ALL(_env, "BURNING", "DISPELLABLE")(_env, result) and MainStage_BurningExtra_Check == 1 then
-				local buffeft1 = global.HPPeriodDamage(_env, "Burning", attacker.atk * 0.3)
-
-				global.ApplyBuff(_env, target, {
-					timing = 1,
-					display = "Burning",
-					group = "Burning",
-					duration = 2,
-					limit = 99,
-					tags = {
-						"STATUS",
-						"DEBUFF",
-						"BURNING",
-						"DISPELLABLE"
-					}
-				}, {
-					buffeft1
-				})
-			end
-
-			local MainStage_PoisionExtra_Check = global.SpecialPropGetter(_env, "MainStage_PoisionExtra_Check")(_env, actor)
-
-			if global.BUFF_MARKED_ALL(_env, "POISON", "DISPELLABLE")(_env, result) and MainStage_PoisionExtra_Check == 1 then
-				local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, target)
-				local buffeft2 = global.HPPeriodDamage(_env, "Poison", maxHp * 0.05)
-
-				global.ApplyBuff(_env, target, {
-					timing = 1,
-					display = "Poison",
-					group = "Poison",
-					duration = 2,
-					limit = 10,
-					tags = {
-						"STATUS",
-						"DEBUFF",
-						"POISON",
-						"DISPELLABLE"
-					}
-				}, {
-					buffeft2
-				})
-			end
-
-			local MainStage_WeakExtra_Check = global.SpecialPropGetter(_env, "MainStage_WeakExtra_Check")(_env, actor)
-
-			if global.BUFF_MARKED_ALL(_env, "WEAK", "DISPELLABLE")(_env, result) and MainStage_WeakExtra_Check == 1 then
-				local buffeft3 = global.NumericEffect(_env, "-unhurtrate", {
-					"+Normal",
-					"+Normal"
-				}, 0.2)
-
-				global.ApplyBuff(_env, target, {
-					timing = 1,
-					duration = 2,
-					display = "UnHurtRateDown",
-					tags = {
-						"STATUS",
-						"DEBUFF",
-						"UNHURTRATEDOWN",
-						"DISPELLABLE"
-					}
-				}, {
-					buffeft3
-				})
-			end
-
-			return result
+			global.ApplyBuff(_env, target, {
+				timing = 1,
+				display = "Burning",
+				group = "Burning",
+				duration = 2,
+				limit = 99,
+				tags = {
+					"STATUS",
+					"DEBUFF",
+					"BURNING",
+					"DISPELLABLE"
+				}
+			}, {
+				buffeft1
+			})
 		end
+
+		local MainStage_PoisionExtra_Check = global.SpecialPropGetter(_env, "MainStage_PoisionExtra_Check")(_env, actor)
+
+		if global.BUFF_MARKED_ALL(_env, "POISON", "DISPELLABLE")(_env, result) and MainStage_PoisionExtra_Check == 1 then
+			local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, target)
+			local buffeft2 = global.HPPeriodDamage(_env, "Poison", maxHp * 0.05)
+
+			global.ApplyBuff(_env, target, {
+				timing = 1,
+				display = "Poison",
+				group = "Poison",
+				duration = 2,
+				limit = 10,
+				tags = {
+					"STATUS",
+					"DEBUFF",
+					"POISON",
+					"DISPELLABLE"
+				}
+			}, {
+				buffeft2
+			})
+		end
+
+		local MainStage_WeakExtra_Check = global.SpecialPropGetter(_env, "MainStage_WeakExtra_Check")(_env, actor)
+
+		if global.BUFF_MARKED_ALL(_env, "WEAK", "DISPELLABLE")(_env, result) and MainStage_WeakExtra_Check == 1 then
+			local buffeft3 = global.NumericEffect(_env, "-unhurtrate", {
+				"+Normal",
+				"+Normal"
+			}, 0.2)
+
+			global.ApplyBuff(_env, target, {
+				timing = 1,
+				duration = 2,
+				display = "UnHurtRateDown",
+				tags = {
+					"STATUS",
+					"DEBUFF",
+					"UNHURTRATEDOWN",
+					"DISPELLABLE"
+				}
+			}, {
+				buffeft3
+			})
+		end
+
+		return result
 	end
 end
 
@@ -2144,9 +2140,9 @@ function all.ApplyHPRecovery_ResultCheck(_env, actor, target, heal)
 
 	if ExtraHP and ExtraHP ~= 0 then
 		for _, friendunit in global.__iter__(global.RandomN(_env, 1, global.FriendUnits(_env))) do
-			local heal1 = global.EvalRecovery_FlagCheck(_env, _env.ACTOR, friendunit, 2, 0)
+			local heal1 = global.EvalRecovery_FlagCheck(_env, _env.ACTOR, friendunit, ExtraHP, 0)
 
-			global.ApplyHPRecovery_ResultCheck(_env, _env.ACTOR, friendunit, heal1)
+			global.ApplyHPRecovery(_env, friendunit, heal1)
 		end
 	end
 

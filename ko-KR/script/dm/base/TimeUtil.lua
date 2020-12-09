@@ -185,6 +185,20 @@ function TimeUtil:formatStrToTImestamp(str)
 	return timestamp
 end
 
+function TimeUtil:formatStrToRemoteTImestamp(str)
+	local _, _, y, m, d, hour, min, sec = string.find(str, "(%d+)-(%d+)-(%d+)%s*(%d+):(%d+):(%d+)")
+	local timestamp = self:timeByRemoteDate({
+		year = y,
+		month = m,
+		day = d,
+		hour = hour,
+		min = min,
+		sec = sec
+	})
+
+	return timestamp
+end
+
 function TimeUtil:getYMDByTimestamp(time)
 	local tb = os.date("*t", time)
 
@@ -226,6 +240,37 @@ function TimeUtil:timeByRemoteDate(date)
 	else
 		return GameServerAgent:getInstance():remoteTimestamp()
 	end
+end
+
+function TimeUtil:getSystemResetDate(format)
+	local todayFiveHour = self:getTimeByDateForTargetTimeInToday({
+		sec = 0,
+		min = 0,
+		hour = 5
+	})
+	local dateFiveHour = self:localDate(format or "%H:%M", todayFiveHour + 86400)
+
+	return dateFiveHour
+end
+
+function TimeUtil:getLocalWeekByRemote(week)
+	local weeklocal = os.date("%w", os.time())
+	weeklocal = weeklocal == 0 and 7 or weeklocal + 1
+	local localUTCDiff = self:calcLocalUTCDiff()
+	local diffTime = localUTCDiff - self:calcRemoteZoneDiff()
+	local weekremote = os.date("%w", os.time() + diffTime)
+	weekremote = weekremote == 0 and 7 or weekremote + 1
+	local trueWeek = week + weekremote - weeklocal
+
+	if trueWeek <= 0 then
+		trueWeek = week + weekremote - weeklocal + 7
+	end
+
+	if trueWeek > 7 then
+		trueWeek = trueWeek - 7
+	end
+
+	return trueWeek
 end
 
 function TimeUtil:timeByLocalDate(date)

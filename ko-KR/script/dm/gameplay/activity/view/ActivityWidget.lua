@@ -189,8 +189,8 @@ function ActivityTimeWidget:initSubviews(view)
 end
 
 function ActivityTimeWidget:setTime(data)
-	local dateStart = os.date("*t", data.startTime * 0.001)
-	local dateEnd = os.date("*t", data.endTime * 0.001)
+	local dateStart = TimeUtil:localDate("*t", data.startTime * 0.001)
+	local dateEnd = TimeUtil:localDate("*t", data.endTime * 0.001)
 
 	self._timeText:setString(dateStart.year .. "." .. dateStart.month .. "." .. dateStart.day .. "-" .. dateEnd.year .. "." .. dateEnd.month .. "." .. dateEnd.day)
 	self._timeText:setAdditionalKerning(2)

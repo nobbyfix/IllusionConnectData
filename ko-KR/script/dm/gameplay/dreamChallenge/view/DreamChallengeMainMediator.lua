@@ -36,6 +36,7 @@ end
 function DreamChallengeMainMediator:onRegister()
 	super.onRegister(self)
 	self:mapButtonHandlersClick(kBtnHandlers)
+	self:mapEventListener(self:getEventDispatcher(), EVT_DREAMCHALLENGE_POINT_RESET, self, self.refreshPointCellByEvent)
 end
 
 function DreamChallengeMainMediator:enterWithData(data)
@@ -55,6 +56,10 @@ function DreamChallengeMainMediator:initWigetInfo()
 	self._firstNode = self._view:getChildByFullName("firstNode")
 	self._secNode = self._view:getChildByFullName("secNode")
 	self._showImg = self._main:getChildByName("bg")
+	self._plist1 = self._main:getChildByName("plist1")
+	self._plist2 = self._main:getChildByName("plist2")
+	self._plist3 = self._main:getChildByName("plist3")
+	self._animNode = self._main:getChildByName("animNode")
 end
 
 function DreamChallengeMainMediator:initData(data)
@@ -317,14 +322,14 @@ function DreamChallengeMainMediator:refreshMapCell(mapId)
 			mapImage = self._dreamSystem:getMapTabImage(key) .. ".png"
 		end
 
-		bgNode:getChildByName("Bg"):loadTexture(mapImage, ccui.TextureResType.plistType)
+		bgNode:getChildByName("Bg"):loadTexture("asset/ui/dreamChallenge/" .. mapImage, ccui.TextureResType.localType)
 	end
 end
 
 function DreamChallengeMainMediator:refreshPointCell(mapId, pointId)
 	local showImg = self._dreamSystem:getPointShowImg(self._mapId, self._pointId)
 
-	self._showImg:loadTexture("asset/lang_scene/" .. showImg, ccui.TextureResType.localType)
+	self._showImg:loadTexture("asset/scene/" .. showImg, ccui.TextureResType.localType)
 
 	for i, v in pairs(self._treeNodes[mapId].child) do
 		local view = v:getView()
@@ -334,10 +339,43 @@ function DreamChallengeMainMediator:refreshPointCell(mapId, pointId)
 
 	local node = self._treeNodes[mapId].child[pointId]:getView()
 	local pointName = self._dreamSystem:getPointName(pointId)
+
+	self._plist1:setVisible(false)
+	self._plist2:setVisible(false)
+	self._plist3:setVisible(false)
+	self._animNode:removeAllChildren()
+
+	local challengeType = DataReader:getDataByNameIdAndKey("DreamChallengePoint", self._pointId, "MissionPicType")
+
+	if kDreamChallengeType.kTwo == challengeType then
+		local anim = cc.MovieClip:create("yinghua_CX_yinghuazhixia")
+
+		anim:addTo(self._animNode, 1)
+	else
+		self._plist1:setVisible(true)
+		self._plist2:setVisible(true)
+		self._plist3:setVisible(true)
+	end
+
 	local pic = self._dreamSystem:getPointTabImage(mapId, pointId)
 
-	node:getChildByName("bg"):loadTexture(pic, ccui.TextureResType.plistType)
+	node:getChildByName("bg"):loadTexture("asset/ui/dreamChallenge/" .. pic, ccui.TextureResType.localType)
 
+	local lock = self._dreamSystem:checkPointLock(mapId, pointId)
+	local lockTag = node:getChildByName("lock")
+
+	lockTag:setVisible(not lock)
+
+	local isPass = self._dreamSystem:checkPointPass(mapId, pointId)
+
+	node:getChildByName("gou"):setVisible(isPass)
+end
+
+function DreamChallengeMainMediator:refreshPointCellByEvent(event)
+	local data = event:getData()
+	local mapId = data.mapId
+	local pointId = data.pointId
+	local node = self._treeNodes[mapId].child[pointId]:getView()
 	local lock = self._dreamSystem:checkPointLock(mapId, pointId)
 	local lockTag = node:getChildByName("lock")
 
@@ -367,7 +405,10 @@ function DreamChallengeMainMediator:onClickInfoBtn()
 	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
 		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
 	}, {
-		rule = Rule
+		rule = Rule,
+		ruleReplaceInfo = {
+			time = TimeUtil:getSystemResetDate()
+		}
 	}))
 end
 
@@ -411,6 +452,9 @@ function DreamChallengeMainMediator:onPointClick(mapId, pointId)
 		local view = self:getInjector():getInstance("DreamChallengePointView")
 
 		if view then
+			local showImg = self._dreamSystem:getPointMapShowImg(self._mapId, self._pointId)
+
+			self._showImg:loadTexture("asset/scene/" .. showImg, ccui.TextureResType.localType)
 			view:addTo(self._pointView):center(self._pointView:getContentSize())
 			AdjustUtils.adjustLayoutUIByRootNode(view)
 			view:setLocalZOrder(2)

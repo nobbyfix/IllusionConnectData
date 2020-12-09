@@ -514,7 +514,7 @@
         "EffectType": "",
         "GrowType": "FIXED",
         "Icon": "",
-        "LevelUpDesc": "",
+        "LevelUpDesc": "LevelUpDesc_Empty",
         "Name": "",
         "Target": "SELF",
         "Value": [
@@ -532,7 +532,7 @@
         "EffectType": "",
         "GrowType": "FIXED",
         "Icon": "",
-        "LevelUpDesc": "",
+        "LevelUpDesc": "LevelUpDesc_Empty",
         "Name": "",
         "Target": "SELF",
         "Value": [
@@ -145118,6 +145118,62 @@
         "GrowType": "FIXED",
         "Icon": "",
         "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.1
+        ]
+    },
+    "T03_Tank_Buff": {
+        "AttrType": [
+            "HP_RATE"
+        ],
+        "EffectDesc": "DC_T03_Tank_Buff_desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "LevelUpDesc_Empty",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.5
+        ]
+    },
+    "T04_Tank_Buff": {
+        "AttrType": [
+            "HP_RATE",
+            "HURTRATE"
+        ],
+        "EffectDesc": "DC_T04_Tank_Buff_desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "LevelUpDesc_Empty",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.5,
+            0.2
+        ]
+    },
+    "T04_WNSXJ_Buff": {
+        "AttrType": [
+            "HURTRATE"
+        ],
+        "EffectDesc": "DC_T04_WNSXJ_Buff_desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "LevelUpDesc_Empty",
         "Name": "",
         "Target": "SELF",
         "Value": [
