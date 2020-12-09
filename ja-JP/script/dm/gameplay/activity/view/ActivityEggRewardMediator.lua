@@ -42,7 +42,9 @@ function ActivityEggRewardMediator:onRegister()
 	})
 end
 
-function ActivityEggRewardMediator:enterWithData()
+function ActivityEggRewardMediator:enterWithData(data)
+	self._activityId = data.activityId or ActivityId.kActivityBlock
+
 	self:initData()
 	self:initTabView()
 
@@ -52,7 +54,7 @@ function ActivityEggRewardMediator:enterWithData()
 end
 
 function ActivityEggRewardMediator:initData()
-	self._activityModel = self._activitySystem:getActivityById(ActivityId.kActivityBlock)
+	self._activityModel = self._activitySystem:getActivityById(self._activityId)
 	self._eggActivity = self._activityModel:getEggActivity()
 	self._round = self._eggActivity:getNum()
 	self._rewards = self._eggActivity:getPreviewRewards()

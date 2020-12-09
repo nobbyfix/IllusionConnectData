@@ -2917,7 +2917,7 @@ function HomeMediator:passiveRefreshRedPoint(event)
 		local customDataSystem = self:getInjector():getInstance(CustomDataSystem)
 		local playerClubId = self._clubSystem:getClubId()
 
-		customDataSystem:setValue(PrefixType.kGlobal, "clubId", playerClubId)
+		customDataSystem:setValue(PrefixType.kGlobal, "clubId", playerClubId, false)
 	elseif data and data == 5 then
 		local btn = self._topBtns.mRankNode
 
@@ -3108,6 +3108,12 @@ function HomeMediator:checkClubRedPoint()
 		local clubRedPoint = self._rightBtns.mGuildNode
 
 		clubRedPoint:getChildByName("mRedSprite"):setVisible(false)
+	end
+
+	if self:onClubRedPoint() then
+		local clubRedPoint = self._rightBtns.mGuildNode
+
+		clubRedPoint:getChildByName("mRedSprite"):setVisible(true)
 	end
 end
 
@@ -3444,6 +3450,11 @@ function HomeMediator:setComplexActivityEntry()
 		},
 		[ActivityType_UI.kActivityBlock] = {
 			img = "hd_rk_fhj.png",
+			aimpos = cc.p(50, 43),
+			redPointFuncx = self._activitySystem.hasRedPointForActivity
+		},
+		[ActivityType_UI.KActivityBlockSnowflake] = {
+			anim = "xuehua-CX_yongbuxiaorongrukou",
 			aimpos = cc.p(50, 43),
 			redPointFuncx = self._activitySystem.hasRedPointForActivity
 		}

@@ -388,7 +388,7 @@ end
 
 function StageTeamMediator:ignoreSafeArea()
 	AdjustUtils.ignorSafeAreaRectForNode(self._heroPanel, AdjustUtils.kAdjustType.Left)
-	AdjustUtils.ignorSafeAreaRectForNode(self._myPetPanel:getChildByName("sortPanel"), AdjustUtils.kAdjustType.Left)
+	AdjustUtils.addSafeAreaRectForNode(self._myPetPanel:getChildByName("sortPanel"), AdjustUtils.kAdjustType.Left)
 	AdjustUtils.ignorSafeAreaRectForNode(self._main:getChildByFullName("btnPanel"), AdjustUtils.kAdjustType.Right)
 	AdjustUtils.ignorSafeAreaRectForNode(self._spPanel:getChildByFullName("combatBg"), AdjustUtils.kAdjustType.Right)
 

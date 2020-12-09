@@ -264,7 +264,9 @@ function ClubDonationMediator:createDonationView()
 			func = callFunc
 		})
 
-		local engoughSta = self._bagSystem:checkCostEnough(donationData:getType(), donationData:getDemand())
+		local engoughSta = self._bagSystem:checkCostEnough(donationData:getType(), donationData:getDemand(), {
+			notShowTip = true
+		})
 		local colorNum = engoughSta and 1 or 6
 
 		cellClone:setPosition(posMap[i].basePosX, 80)

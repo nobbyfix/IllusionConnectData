@@ -15,10 +15,7 @@ local muiscCfg = {
 		id = "Mus_Main_House"
 	},
 	ActivityBlockView = {
-		id = "Mus_Story_Festival"
-	},
-	ActivityBlockChapterView = {
-		id = "Mus_Story_Festival"
+		noAutoPlay = true
 	},
 	ActivitySagaSupportStageView = {
 		id = "Mus_Zuohe_1"
@@ -30,7 +27,7 @@ local muiscCfg = {
 		id = "Mus_Zuohe_1"
 	},
 	ActivityBlockEggView = {
-		id = "Mus_Story_Festival"
+		noAutoPlay = true
 	},
 	ActivityBlockSummerView = {
 		noAutoPlay = true
@@ -105,6 +102,27 @@ local muiscCfg = {
 		noAutoPlay = true
 	},
 	ClubBossBattleView = {
+		noAutoPlay = true
+	},
+	ClubView = {
+		noAutoPlay = true
+	},
+	ClubNewHallView = {
+		noAutoPlay = true
+	},
+	ClubNewTechnologyView = {
+		noAutoPlay = true
+	},
+	ClubResourcesBattleView = {
+		noAutoPlay = true
+	},
+	ClubBossView = {
+		noAutoPlay = true
+	},
+	RecruitView = {
+		noAutoPlay = true
+	},
+	ClubMainMapView = {
 		noAutoPlay = true
 	}
 }

@@ -201,7 +201,8 @@ DebugBoxMainIndex = {
 				{
 					"加道具",
 					"加所有道具",
-					"清空背包"
+					"清空背包",
+					"加某款皮肤"
 				}
 			},
 			{
@@ -290,6 +291,10 @@ DebugBoxMainIndex = {
 			{
 				"加所有道具",
 				"AddAllItems"
+			},
+			{
+				"加某款皮肤",
+				"AddSkin"
 			},
 			{
 				"钻石",

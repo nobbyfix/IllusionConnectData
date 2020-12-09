@@ -161,7 +161,7 @@ function BaseActivity:getBubleDesc()
 end
 
 function BaseActivity:getBgm()
-	return self._config.ActivityConfig.bgm
+	return self._config.ActivityConfig.bgm or "Mus_Story_Festival"
 end
 
 function BaseActivity:getActivityComplexId()

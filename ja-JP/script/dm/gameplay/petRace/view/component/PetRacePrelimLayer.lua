@@ -105,5 +105,5 @@ function PetRacePrelimLayer:updateTime()
 		0,
 		0,
 		255
-	})
+	}, true)
 end

@@ -145,7 +145,9 @@ function StageLosePopMediator:initSvpRole()
 			local player = developSystem:getPlayer()
 			local id = self._data.loseId or player:getRid()
 			playerBattleData = battleStatist[id]
-		else
+		end
+
+		if playerBattleData == nil then
 			playerBattleData = {
 				unitSummary = {}
 			}

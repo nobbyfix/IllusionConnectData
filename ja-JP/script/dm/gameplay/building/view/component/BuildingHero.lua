@@ -80,15 +80,15 @@ function BuildingHero:adjustLayout(targetFrame)
 end
 
 function BuildingHero:initHeroAnim()
-	local heroid = IconFactory:getRoleModelByKey("HeroBase", self._heroId)
-	local modelid = ConfigReader:getDataByNameIdAndKey("RoleModel", heroid, "Model")
+	local modelid = IconFactory:getRoleModelByKey("HeroBase", self._heroId)
 	local hero = self._developSystem._heroSystem:getHeroById(self._heroId)
+	local isAwaken = false
 
 	if hero then
 		modelid = hero:getModel()
+		isAwaken = hero:getAwakenStar() > 0
 	end
 
-	local isAwaken = hero:getAwakenStar() > 0
 	self._animNode = RoleFactory:createHeroAnimation(modelid, isAwaken and "stand1" or "stand")
 
 	self._animNode:setScale(self._scale)
@@ -309,7 +309,7 @@ function BuildingHero:playAnimation(name)
 	self._currentState = name
 	local hero = self._developSystem._heroSystem:getHeroById(self._heroId)
 
-	if hero:getAwakenStar() > 0 and name == KBuildingHeroActionSta.kIdel then
+	if hero and hero:getAwakenStar() > 0 and name == KBuildingHeroActionSta.kIdel then
 		name = "stand1"
 	end
 

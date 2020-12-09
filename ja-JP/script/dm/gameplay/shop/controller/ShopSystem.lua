@@ -282,14 +282,26 @@ function ShopSystem:checkMainShopIdForSubNormalShopId(data)
 end
 
 function ShopSystem:enterShop(data)
-	self._shopService:requestGetPackageShop(nil, function (response)
-		if response.resCode == GS_SUCCESS then
-			local view = self:getInjector():getInstance("ShopView")
+	local entryData = data or {}
 
-			AudioEngine:getInstance():playEffect("Se_Click_Open_1", false)
-			self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, data))
-		end
-	end)
+	if not data or not data.shopId then
+		entryData.shopId = ShopSpecialId.kShopRecommend
+	end
+
+	local function callback()
+		local view = self:getInjector():getInstance("ShopView")
+
+		AudioEngine:getInstance():playEffect("Se_Click_Open_1", false)
+		self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, entryData))
+	end
+
+	if entryData.shopId == ShopSpecialId.kShopSurface then
+		self:requestGetSurfaceShop(callback)
+	elseif entryData.shopId == ShopSpecialId.kShopPackage or entryData.shopId == ShopSpecialId.kShopSurfacePackage or entryData.shopId == ShopSpecialId.kShopTimeLimit then
+		self:requestGetPackageShop(callback)
+	else
+		callback()
+	end
 end
 
 function ShopSystem:tryEnterByRecruit()
@@ -742,7 +754,9 @@ function ShopSystem:getPackageList(packageType)
 		local times1 = a:getLeftCount()
 		local times2 = b:getLeftCount()
 
-		if times1 == 0 or times2 == 0 then
+		if times1 == -1 or times2 == -1 then
+			return a:getSort() < b:getSort()
+		elseif times1 == 0 or times2 == 0 then
 			return times2 < times1
 		else
 			return a:getSort() < b:getSort()
@@ -1239,9 +1253,13 @@ function ShopSystem:requestBuyPackageShopCount(packageId, count, callback, isFre
 	end)
 end
 
-function ShopSystem:requestGetPackageShop()
+function ShopSystem:requestGetPackageShop(callback)
 	self._shopService:requestGetPackageShop(param, function (response)
 		if response.resCode == GS_SUCCESS then
+			if callback then
+				callback(response.data)
+			end
+
 			self:dispatch(Event:new(EVT_REFRESH_PACKAGE_SUCC))
 		end
 	end)
@@ -1384,7 +1402,7 @@ function ShopSystem:requestGetSurfaceShop(callback)
 	self._shopService:requestGetSurfaceShop(nil, function (response)
 		if response.resCode == GS_SUCCESS then
 			if callback then
-				callback()
+				callback(response.data)
 			end
 
 			self:dispatch(Event:new(EVT_REFRESH_SURFACE_SUCC))

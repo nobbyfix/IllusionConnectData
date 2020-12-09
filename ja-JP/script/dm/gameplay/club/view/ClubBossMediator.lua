@@ -12,6 +12,9 @@ ClubBossMediator:has("_heroSystem", {
 ClubBossMediator:has("_gameServerAgent", {
 	is = "r"
 }):injectWith("GameServerAgent")
+ClubBossMediator:has("_systemKeeper", {
+	is = "r"
+}):injectWith("SystemKeeper")
 
 local heroRarityTextArrRGB = {
 	nil,
@@ -58,6 +61,7 @@ end
 
 function ClubBossMediator:dispose()
 	self:stopTimer()
+	self:dispatch(Event:new(EVT_CLUBOSSREDPOINT_REFRESH))
 	super.dispose(self)
 end
 
@@ -84,9 +88,14 @@ function ClubBossMediator:mapEventListeners()
 	self:mapEventListener(self:getEventDispatcher(), EVT_CLUBBOSS_BACKMAINVIEW, self, self.onBackToThisView)
 	self:mapEventListener(self:getEventDispatcher(), EVT_CLUBBOSS_REFRESH_HURTREWARD, self, self.onDoRefrshHurtReward)
 	self:mapEventListener(self:getEventDispatcher(), EVT_RESET_DONE, self, self.doReset)
+	self:mapEventListener(self:getEventDispatcher(), EVT_CLUB_FORCEDLEVEL, self, self.onForcedLevel)
 end
 
 function ClubBossMediator:enterWithData(data)
+	if data and data.viewType then
+		self._viewType = data.viewType
+	end
+
 	self._goToBack = false
 	self._doingKillAnim = false
 	self._enterDoKillAnim = false
@@ -94,6 +103,7 @@ function ClubBossMediator:enterWithData(data)
 
 	self:initData()
 	self:initNodes()
+	self:setupTopInfoWidget()
 	self:doSomeNotChangeUI()
 	self:doSomeChangeUI()
 	self:runStartAction()
@@ -103,8 +113,12 @@ function ClubBossMediator:enterWithData(data)
 		self._enterDoKillAnim = true
 	end
 
-	if self._viewType == ClubHallType.kBoss and self._clubSystem:getClubBossKilled(self._viewType) and data and data.goToBoss == true then
-		self._enterDoKillAnim = true
+	if self._viewType == ClubHallType.kBoss then
+		if self._clubSystem:getClubBossKilled(self._viewType) and data and data.goToBoss == true then
+			self._enterDoKillAnim = true
+		end
+
+		self._clubSystem:resetClubBossTabRed()
 	end
 end
 
@@ -375,6 +389,40 @@ function ClubBossMediator:initNodes()
 	self._newsCellPanel = self._mainPanel:getChildByFullName("newsNode.newsCellPanel")
 
 	self._newsCellPanel:setVisible(false)
+end
+
+function ClubBossMediator:setupTopInfoWidget()
+	local topInfoNode = self:getView():getChildByFullName("topinfo_node")
+
+	topInfoNode:setLocalZOrder(999)
+
+	local currencyInfoWidget = self._systemKeeper:getResourceBannerIds("Club_System")
+	local currencyInfo = {}
+
+	for i = #currencyInfoWidget, 1, -1 do
+		currencyInfo[#currencyInfoWidget - i + 1] = currencyInfoWidget[i]
+	end
+
+	local title = Strings:get("ClubNew_UI_28")
+
+	if self._viewType == ClubHallType.kActivityBoss then
+		title = Strings:get("ClubNew_UI_29")
+	end
+
+	local config = {
+		style = 1,
+		hasAnim = true,
+		currencyInfo = currencyInfo,
+		btnHandler = {
+			clickAudio = "Se_Click_Close_1",
+			func = bind1(self.onClickBack, self)
+		},
+		title = title
+	}
+	local injector = self:getInjector()
+	self._topInfoWidget = self:autoManageObject(injector:injectInto(TopInfoWidget:new(topInfoNode)))
+
+	self._topInfoWidget:updateView(config)
 end
 
 function ClubBossMediator:doSomeNotChangeUI()
@@ -897,6 +945,10 @@ function ClubBossMediator:doSomeChangeUI(isEnter)
 
 			if self._clubBossInfo:getHasGetHurtAward() == false then
 				self._rewardBoxImage2:setVisible(true)
+
+				if self._clubSystem:checkBossDelayHurtRewardMark(self._viewType) == false then
+					self._rewardBoxImage2:getChildByFullName("redPoint"):setVisible(false)
+				end
 			end
 
 			if self._clubBossInfo:getHasGetHurtAward() == true then
@@ -1409,6 +1461,14 @@ function ClubBossMediator:onClickSkill(skillId)
 	AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
 	self._skillTipPanel:setVisible(true)
 	self:updateSkillDesc(skillId)
+end
+
+function ClubBossMediator:onClickBack(sender, eventType)
+	self:dismiss()
+end
+
+function ClubBossMediator:onForcedLevel(event)
+	self:dismiss()
 end
 
 function ClubBossMediator:goToBack()

@@ -86,9 +86,9 @@ function ShopMainMediator:enterWithData(data)
 	self:setupTopInfoWidget()
 	self:initMember()
 	self:initData(data)
+	self:initLeftTabController()
 	self:forceRefreshRemainTime()
 	self:initRightTabController()
-	self:initLeftTabController()
 
 	if not kShopView[self._shopId] then
 		self:refreshView()
@@ -166,6 +166,7 @@ function ShopMainMediator:refreshTopInfo(shopId)
 
 	local config = {
 		style = 1,
+		stopAnim = true,
 		currencyInfo = currencyInfo,
 		title = Strings:get("Shop_Text1")
 	}
@@ -574,10 +575,11 @@ function ShopMainMediator:initLeftTabController(disOnClickTab)
 	self._tabBtnWidget = self:autoManageObject(injector:injectInto(TabBtnWidget:new(widget)))
 
 	self._tabBtnWidget:initTabBtn(config, {
-		noCenterBtn = true,
-		ignoreSound = true,
 		hideBtnAnim = true,
-		ignoreRedSelectState = true
+		ignoreSound = true,
+		ignoreRedSelectState = true,
+		noCenterBtn = true,
+		disMovieClip = true
 	})
 	self._tabBtnWidget:selectTabByTag(self._leftTabIndex, disOnClickTab)
 
@@ -734,9 +736,17 @@ function ShopMainMediator:resetView()
 	for shopId, view in pairs(self._viewCache) do
 		if self._shopId == shopId then
 			if self._shopId == ShopSpecialId.kShopSurface then
-				self._shopSystem:requestGetSurfaceShop()
+				if self._enterData then
+					self:showSurfaceShop()
+				else
+					self._shopSystem:requestGetSurfaceShop()
+				end
 			elseif self._shopId == ShopSpecialId.kShopPackage or self._shopId == ShopSpecialId.kShopSurfacePackage or self._shopId == ShopSpecialId.kShopTimeLimit then
-				self._shopSystem:requestGetPackageShop()
+				if self._enterData then
+					self:showPackageShop()
+				else
+					self._shopSystem:requestGetPackageShop()
+				end
 			else
 				view:setVisible(true)
 				view.mediator:refreshData({
@@ -789,6 +799,8 @@ function ShopMainMediator:showSurfaceShop()
 	self._viewCache[shopId]:setVisible(true)
 	self._viewCache[shopId].mediator:refreshData()
 	self._viewCache[shopId].mediator:refreshView()
+
+	self._enterData = nil
 end
 
 function ShopMainMediator:showPackageShop()

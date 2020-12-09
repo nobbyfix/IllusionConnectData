@@ -82,6 +82,12 @@ ClubBasisInfo:has("_snsInfo", {
 ClubBasisInfo:has("_lastJoinTime", {
 	is = "rw"
 })
+ClubBasisInfo:has("_battleRank", {
+	is = "rw"
+})
+ClubBasisInfo:has("_joinedClubCount", {
+	is = "rw"
+})
 
 function ClubBasisInfo:initialize(player)
 	super.initialize(self)
@@ -113,6 +119,8 @@ function ClubBasisInfo:initialize(player)
 		url = ""
 	}
 	self._lastJoinTime = 0
+	self._battleRank = 0
+	self._joinedClubCount = 0
 end
 
 function ClubBasisInfo:canAuditMember()
@@ -186,5 +194,9 @@ function ClubBasisInfo:sync(data)
 
 	if data.snsInfo then
 		self._snsInfo = data.snsInfo
+	end
+
+	if data.battleRank then
+		self._battleRank = data.battleRank
 	end
 end

@@ -123,7 +123,8 @@ function ActivityBlockMediator:setupTopInfoWidget()
 	self._topInfoWidget:updateView(config)
 end
 
-function ActivityBlockMediator:enterWithData()
+function ActivityBlockMediator:enterWithData(data)
+	self._activityId = data.activityId or ActivityId.kActivityBlock
 	self._canChangeHero = true
 
 	self:initData()
@@ -143,7 +144,6 @@ function ActivityBlockMediator:resumeWithData()
 end
 
 function ActivityBlockMediator:initData()
-	self._activityId = ActivityId.kActivityBlock
 	self._model = self._activitySystem:getActivityById(self._activityId)
 	self._blockActivity = nil
 	self._taskActivities = {}
@@ -164,6 +164,13 @@ function ActivityBlockMediator:initView()
 	self:initTimer()
 	self:initRoleTimer()
 	self:updateRolePanel()
+	self:playBackgroundMusic()
+end
+
+function ActivityBlockMediator:playBackgroundMusic()
+	local bgm = self._model:getBgm()
+
+	AudioEngine:getInstance():playBackgroundMusic(bgm)
 end
 
 function ActivityBlockMediator:initInfo()
@@ -273,7 +280,7 @@ function ActivityBlockMediator:initInfo()
 
 	local text = self._eggBtn:getChildByName("text")
 
-	if btns.eggParams then
+	if btns.eggParams and btns.eggParams.icon then
 		image:loadTexture(btns.eggParams.icon .. ".png", 1)
 
 		local title = btns.eggParams.title
@@ -283,6 +290,14 @@ function ActivityBlockMediator:initInfo()
 		self._endTip.eggEndTip = Strings:get(tipStr, {
 			activityId = title
 		})
+	end
+
+	if self._model:getActivityConfig().ButtonIcon then
+		image:loadTexture(self._model:getActivityConfig().ButtonIcon .. ".png", 1)
+	end
+
+	if self._model:getActivityConfig().ButtonText then
+		text:setString(Strings:get(self._model:getActivityConfig().ButtonText))
 	end
 
 	local redPoint = self._teamBtn:getChildByName("redPoint")
@@ -471,7 +486,7 @@ function ActivityBlockMediator:onClickStage()
 	end
 
 	AudioEngine:getInstance():playEffect("Se_Click_Story_Dream", false)
-	self._activitySystem:enterEasterStage(self._blockActivity)
+	self._activitySystem:enterBlockMap(self._activityId)
 end
 
 function ActivityBlockMediator:onClickAttrAdd()
@@ -502,7 +517,7 @@ function ActivityBlockMediator:onClickTask()
 	end
 
 	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
-	self._activitySystem:enterEasterTask()
+	self._activitySystem:enterSupportTaskView(self._activityId)
 end
 
 function ActivityBlockMediator:onClickTeam()
@@ -519,6 +534,23 @@ function ActivityBlockMediator:onClickTeam()
 end
 
 function ActivityBlockMediator:onClickEgg()
+	local url = self._model:getActivityConfig().ExchangeUrl
+
+	if url then
+		local context = self:getInjector():instantiate(URLContext)
+		local entry, params = UrlEntryManage.resolveUrlWithUserData(url)
+
+		if not entry then
+			self:dispatch(ShowTipEvent({
+				tip = Strings:get("Function_Not_Open")
+			}))
+		else
+			entry:response(context, params)
+		end
+
+		return
+	end
+
 	if not self._eggActivity then
 		self:dispatch(ShowTipEvent({
 			tip = self._endTip.eggEndTip
@@ -528,7 +560,9 @@ function ActivityBlockMediator:onClickEgg()
 	end
 
 	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
-	self._activitySystem:enterEasterEgg()
+	self._activitySystem:enterEasterEgg({
+		activityId = self._activityId
+	})
 end
 
 function ActivityBlockMediator:onClickSurface()

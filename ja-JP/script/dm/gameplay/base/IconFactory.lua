@@ -3687,6 +3687,10 @@ function IconFactory:createClubIcon(info, style)
 
 	backImg:addTo(node):center(node:getContentSize())
 
+	if style and style.isNoBG then
+		backImg:setVisible(false)
+	end
+
 	local clubIconMap = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Club_Icon", "content")
 	local clubIconImage = nil
 

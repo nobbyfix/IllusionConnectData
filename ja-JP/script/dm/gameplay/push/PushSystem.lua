@@ -36,6 +36,8 @@ function PushSystem:listen()
 	self:listenClubBossBattleStartCode()
 	self:listenClubBossBattleEndCode()
 	self:listenCommonTipsCode()
+	self:listenClubHouseChange()
+	self:listenClubApplyAgreeEnd()
 end
 
 function PushSystem:listenLoginByOthers()
@@ -220,7 +222,7 @@ function PushSystem:listenRankingRewardCode()
 	self._pushService:listenRankingRewardCode(function (response)
 		local rankSystem = self:getInjector():getInstance(RankSystem)
 
-		rankSystem:requestGetRewardList()
+		rankSystem:requestGetRewardList(nil, , false)
 	end)
 end
 
@@ -272,5 +274,21 @@ function PushSystem:listenCommonTipsCode()
 				tip = Strings:get(tostring(response.transCode))
 			}))
 		end
+	end)
+end
+
+function PushSystem:listenClubHouseChange()
+	self._pushService:listenClubHouseChange(function (response)
+		local clubSystem = self:getInjector():getInstance(ClubSystem)
+
+		clubSystem:listenClubHouseChange(response)
+	end)
+end
+
+function PushSystem:listenClubApplyAgreeEnd()
+	self._pushService:listenClubApplyAgreeEnd(function (response)
+		local clubSystem = self:getInjector():getInstance(ClubSystem)
+
+		clubSystem:listenClubApplyAgreeEnd(response)
 	end)
 end

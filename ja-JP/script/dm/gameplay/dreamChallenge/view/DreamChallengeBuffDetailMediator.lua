@@ -385,7 +385,7 @@ function DreamChallengeBuffDetailMediator:createTiredInfo()
 
 	local head = self._tiredPanel:clone()
 
-	head:getChildByName("icon"):loadTexture("icon_pilao" .. (tiredNum > 4 and 1 or tiredNum) .. ".png", ccui.TextureResType.plistType)
+	head:getChildByName("icon"):loadTexture("icon_pilao1.png", ccui.TextureResType.plistType)
 	head:getChildByName("info"):setString(Strings:get("DreamChallenge_Point_Tired_Info", {
 		mapName = mapName,
 		pointName = pointName,

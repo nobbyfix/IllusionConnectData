@@ -477,11 +477,16 @@ function BattleMainMediator:enterWithData(data)
 		end
 	end)
 	self:mapEventListener(self:getEventDispatcher(), EVT_ENTER_BACKGROUND, self, function ()
-		local viewCfg = self._battleData.viewConfig
-		local isPauseVisible = viewCfg.btnsShow and viewCfg.btnsShow.pause.visible or false
+		local storyDirector = self:getInjector():getInstance(story.StoryDirector)
+		local guideAgent = storyDirector:getGuideAgent()
 
-		if isPauseVisible and not self._isPaused then
-			self:onPause()
+		if not guideAgent:isGuiding() then
+			local viewCfg = self._battleData.viewConfig
+			local isPauseVisible = viewCfg.btnsShow and viewCfg.btnsShow.pause.visible or false
+
+			if isPauseVisible and not self._isPaused then
+				self:onPause()
+			end
 		end
 	end)
 	self:getInjector():mapValue("Debug_BattleDump", nil)

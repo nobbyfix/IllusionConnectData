@@ -563,7 +563,7 @@ function PetRaceSystem:isRegistAviable()
 	return true
 end
 
-function PetRaceSystem:updateTimeDes(baseNode, round, state, updateTime, color)
+function PetRaceSystem:updateTimeDes(baseNode, round, state, updateTime, color, fixRoundPos)
 	if not baseNode then
 		return
 	end
@@ -598,6 +598,10 @@ function PetRaceSystem:updateTimeDes(baseNode, round, state, updateTime, color)
 	local timeStr = TimeUtil:formatTime(timeformateStr, time)
 
 	labelTime:setString(timeStr)
+
+	if fixRoundPos then
+		labelRound:setPositionX(labelTime:getPositionX() + labelTime:getContentSize().width + 20)
+	end
 end
 
 function PetRaceSystem:getDesRound(round)

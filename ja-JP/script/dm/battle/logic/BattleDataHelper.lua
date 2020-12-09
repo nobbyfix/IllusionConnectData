@@ -55,7 +55,8 @@ function BattleDataHelper:fillSummonData(summon, skillData, protoFactory, summon
 					killAnger = summonData.KillRage,
 					masterRage = summonData.MasterRage,
 					flags = flags,
-					genre = summonData.Type
+					genre = summonData.Type,
+					extraSurFace = summonData.SummonSurface
 				}
 				summon[#summon + 1] = summonInfo
 				summonInfo.skills = {}
@@ -333,7 +334,37 @@ function BattleDataHelper:fillHeroData(hero, rid, waveStr, idx, isEnemy, summon,
 		hero.suppress = ConfigReader:getRecordById("BattleSuppress", hero.genre) or {}
 	end
 
+	hero.surfaceIndex = self:getSufaceIndex("HeroBase", hero)
+
 	return hero
+end
+
+function BattleDataHelper:getSufaceIndex(HeroTag, hero)
+	local surfaceCfg = ConfigReader:getDataByNameIdAndKey(HeroTag, hero.cid, "SurfaceList")
+	local sufaces = {}
+
+	for k, v in pairs(surfaceCfg or {}) do
+		local model = ConfigReader:getDataByNameIdAndKey("Surface", v, "Model")
+		local order = ConfigReader:getDataByNameIdAndKey("Surface", v, "Sort")
+		sufaces[#sufaces + 1] = {
+			model = model,
+			order = order
+		}
+	end
+
+	table.sort(sufaces, function (a, b)
+		return a.order < b.order
+	end)
+
+	local surface_index = 0
+
+	for k, v in pairs(sufaces) do
+		if v.model == hero.modelId then
+			surface_index = k - 1
+		end
+	end
+
+	return surface_index
 end
 
 function BattleDataHelper:fillMasterData(master, playerData, waveStr, isEnemy, summon, summonMap)
@@ -386,6 +417,8 @@ function BattleDataHelper:fillMasterData(master, playerData, waveStr, isEnemy, s
 	if master.genre then
 		master.suppress = ConfigReader:getRecordById("BattleSuppress", master.genre) or {}
 	end
+
+	master.surfaceIndex = self:getSufaceIndex("MasterBase", master)
 end
 
 local function deepCopy(desc, src)

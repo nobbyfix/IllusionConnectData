@@ -52,6 +52,10 @@ function ActivityEggActivity:hasRedPoint()
 	return false
 end
 
+function ActivityEggActivity:getBgPath()
+	return string.format("asset/scene/%s.jpg", self:getActivityConfig().Bmg)
+end
+
 function ActivityEggActivity:getStarEggId()
 	local config = self:getActivityConfig()
 

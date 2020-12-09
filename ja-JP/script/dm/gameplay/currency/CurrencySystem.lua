@@ -341,8 +341,14 @@ function CurrencySystem.class:checkEnoughCurrency(mediator, currencyId, needNum,
 	local currencyId = tostring(currencyId)
 
 	if checkFuncMap[currencyId] then
+		local tipType = style and style.type or checkDefaultTipTypeMap[currencyId]
+
+		if style and style.notShowTip then
+			tipType = style
+		end
+
 		return checkFuncMap[currencyId](self, mediator, needNum, nil, {
-			tipType = style and style.type or checkDefaultTipTypeMap[currencyId]
+			tipType = tipType
 		})
 	else
 		return nil

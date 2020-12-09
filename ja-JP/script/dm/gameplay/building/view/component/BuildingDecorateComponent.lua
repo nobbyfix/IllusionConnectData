@@ -501,6 +501,12 @@ function BuildingDecorateComponent:refreshHeroList(sync)
 	end
 end
 
+function BuildingDecorateComponent:instantiateBuildingHero(node)
+	return self:getInjector():instantiate("BuildingHero", {
+		view = node
+	})
+end
+
 function BuildingDecorateComponent:refreshRoomHeroList(roomId, schedule)
 	self._roomHeroList[roomId] = self._roomHeroList[roomId] or {}
 	local view = self:getView()
@@ -511,9 +517,7 @@ function BuildingDecorateComponent:refreshRoomHeroList(roomId, schedule)
 	for k, v in pairs(heroList) do
 		if not self._roomHeroList[roomId][v] then
 			local node = cc.Node:create():addTo(view)
-			local buildingHero = self:getInjector():instantiate("BuildingHero", {
-				view = node
-			})
+			local buildingHero = self:instantiateBuildingHero(node)
 			node.__mediator = buildingHero
 
 			buildingHero:setHeroInfo(roomId, v, self._buildingMediator)

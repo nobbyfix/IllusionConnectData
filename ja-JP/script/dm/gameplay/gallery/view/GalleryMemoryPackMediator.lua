@@ -519,8 +519,11 @@ function GalleryMemoryPackMediator:setScrollOffset(lineIndex)
 	end
 
 	local offset = self:getTableLinePos(lineIndex)
+	local viewSize = self._tableView:getViewSize()
+	local size = self._tableView:getContentSize()
+	local offsetHeight = viewSize.height - size.height
 
-	if offset.y >= 0 then
+	if offset.y >= 0 and offsetHeight < offset.y then
 		offset.y = 0
 	end
 

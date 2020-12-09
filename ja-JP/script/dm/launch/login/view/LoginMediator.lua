@@ -889,22 +889,22 @@ function LoginMediator:initAnim(callback)
 		self._hero = hero
 		local posArr = {
 			{
-				scale = 0.92,
+				scale = 0.9,
 				rolate = 6,
-				x = -60,
+				x = -55,
 				y = -520
 			},
 			{
-				scale = 0.95,
-				rolate = -2,
-				x = -905,
-				y = -330
+				scale = 0.92,
+				rolate = -3,
+				x = -880,
+				y = -315
 			},
 			{
-				scale = 0.93,
+				scale = 0.9,
 				rolate = 0,
-				x = 780,
-				y = -438
+				x = 775,
+				y = -430
 			}
 		}
 
@@ -939,7 +939,7 @@ function LoginMediator:initAnim(callback)
 				scale = 0.95,
 				rolate = -2,
 				x = -335,
-				y = -70
+				y = -65
 			},
 			{
 				scale = 0.97,

@@ -112,6 +112,7 @@ function PetRaceFinalSquadMediator:initWigetInfo()
 	text_name_l:setString(self._raceData.nameL or "")
 	text_level_l:setString(Strings:get("Common_LV_Text") .. self._raceData.laveL or "")
 	text_level_r:setString(Strings:get("Common_LV_Text") .. self._raceData.levelR or "")
+	text_name_r:setPositionX(text_level_r:getPositionX() - text_level_r:getContentSize().width - 20)
 	self:refreshView()
 end
 

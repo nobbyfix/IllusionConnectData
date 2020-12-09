@@ -1071,7 +1071,9 @@ function ClubResourcesBattleMediator:onClickRewardPanel(sender, baseOrWin, rewar
 end
 
 function ClubResourcesBattleMediator:onForcedLevel(event)
-	if DisposableObject:isDisposed(self) == false then
-		self:dismiss()
+	if DisposableObject:isDisposed(self) then
+		return
 	end
+
+	self:dismiss()
 end

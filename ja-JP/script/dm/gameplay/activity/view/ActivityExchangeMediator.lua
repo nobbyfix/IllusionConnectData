@@ -94,11 +94,22 @@ function ActivityExchangeMediator:setupView()
 	local activityConfig = self._activity:getActivityConfig()
 
 	if activityConfig and activityConfig.TaskTopUI then
-		self._main:getChildByName("Image_9"):loadTexture(activityConfig.TaskTopUI .. ".png", ccui.TextureResType.plistType)
+		local topIcon = self._main:getChildByName("Image_9")
+
+		topIcon:loadTexture(activityConfig.TaskTopUI .. ".png", ccui.TextureResType.plistType)
+		topIcon:ignoreContentAdaptWithSize(true)
 	end
 
 	if activityConfig and activityConfig.TaskBgUI then
 		self._main:getChildByName("Image_18"):loadTexture("asset/scene/" .. activityConfig.TaskBgUI .. ".jpg")
+	end
+
+	if activityConfig and activityConfig.TaskCellBg then
+		self._cloneCell:getChildByName("Image_15"):loadTexture(activityConfig.TaskCellBg .. ".png", ccui.TextureResType.plistType)
+	end
+
+	if activityConfig and activityConfig.TaskCellArrow then
+		self._cloneCell:getChildByName("arrow"):loadTexture(activityConfig.TaskCellArrow .. ".png", ccui.TextureResType.plistType)
 	end
 
 	self:createTableView()

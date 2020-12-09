@@ -18,6 +18,9 @@ DreamChallengeMap:has("_boxs", {
 DreamChallengeMap:has("_endTime", {
 	is = "rw"
 })
+DreamChallengeMap:has("_openByServer", {
+	is = "rw"
+})
 
 function DreamChallengeMap:initialize(mapId)
 	super.initialize(self)
@@ -33,9 +36,12 @@ function DreamChallengeMap:initialize(mapId)
 
 	self._boxs = {}
 	self._endTime = 0
+	self._openByServer = false
 end
 
 function DreamChallengeMap:synchronize(data)
+	self._openByServer = true
+
 	if data.dreamPoints then
 		for k, v in pairs(data.dreamPoints) do
 			self._dreamPoints[k]:synchronize(v)

@@ -18,6 +18,7 @@ require("dm.gameplay.club.model.ClubRecordList")
 require("dm.gameplay.club.model.ClubRecord")
 require("dm.gameplay.club.model.ClubBasisInfo")
 require("dm.gameplay.club.model.ClubBoss")
+require("dm.gameplay.club.model.ClubMapPositionList")
 
 ClubRecordConfig = {
 	record = {
@@ -54,6 +55,9 @@ Club:has("_clubTechList", {
 Club:has("_curDonateCount", {
 	is = "rw"
 })
+Club:has("_clubMapPositionList", {
+	is = "r"
+})
 
 function Club:initialize(player)
 	super.initialize(self)
@@ -69,6 +73,7 @@ function Club:initialize(player)
 	self._activityClubBossInfo = ClubBoss:new()
 	self._clubResourcesBattleInfo = ClubResourcesBattle:new()
 	self._curDonateCount = 0
+	self._clubMapPositionList = ClubMapPositionList:new()
 end
 
 function Club:sync(data)
@@ -113,4 +118,20 @@ end
 
 function Club:getClubResourcesBattleInfo()
 	return self._clubResourcesBattleInfo
+end
+
+function Club:synchronizeClubMapPositionListData(data)
+	if data then
+		self._clubMapPositionList:syncInfo(data)
+
+		return self._clubMapPositionList:isMemberChange()
+	end
+
+	return false
+end
+
+function Club:setClubVillageChangeCount(data)
+	if data then
+		self._clubMapPositionList:setClubVillageChangeCount(data)
+	end
 end

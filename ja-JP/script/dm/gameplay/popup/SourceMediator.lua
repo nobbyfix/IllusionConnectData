@@ -224,18 +224,22 @@ function SourceMediator:setUpView()
 		end)
 		table.sort(lock, function (a, b)
 			if a.sort == b.sort then
-				if a.stageType == b.stageType then
-					if a.mapIndex ~= nil and b.mapIndex ~= nil then
-						if a.mapIndex == b.mapIndex then
-							return a.pointIndex < b.pointIndex
+				if a.stageType ~= nil and b.stageType ~= nil then
+					if a.stageType == b.stageType then
+						if a.mapIndex ~= nil and b.mapIndex ~= nil then
+							if a.mapIndex == b.mapIndex then
+								return a.pointIndex < b.pointIndex
+							else
+								return a.mapIndex < b.mapIndex
+							end
 						else
-							return a.mapIndex < b.mapIndex
+							return a.mapIndex ~= nil
 						end
 					else
-						return a.mapIndex ~= nil
+						return a.stageType < b.stageType
 					end
 				else
-					return a.stageType < b.stageType
+					return a.stageType ~= nil
 				end
 			else
 				return b.sort < a.sort

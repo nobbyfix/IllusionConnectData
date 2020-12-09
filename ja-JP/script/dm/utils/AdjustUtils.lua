@@ -76,7 +76,7 @@ winSize = director:getWinSize()
 local _maxFixedOffestX = 0
 
 if CC_DESIGN_RESOLUTION.maxfixedx < winSize.width / winSize.height then
-	_maxFixedOffestX = 0.5 * (winSize.width - CC_DESIGN_RESOLUTION.maxfixedx * winSize.height)
+	_maxFixedOffestX = 0.5 * (winSize.width - CC_DESIGN_RESOLUTION.maxfixedx * winSize.height) + 3
 end
 
 safeAreaInset = view:getSafeAreaInset()

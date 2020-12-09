@@ -21,6 +21,7 @@ CurrencyIdKind = {
 	kPower = "IR_Power",
 	kFragment = "IR_Fragment",
 	kHonor = "IR_Arena",
+	kAcitvitySnowPower = "IR_SnowflakeStamina",
 	kTrial = "IR_Tower",
 	kDiamond = "IR_Diamond",
 	kEquip13 = "IR_Equip13",
@@ -287,14 +288,15 @@ ActivityComplexId = {
 	kActivityBlockSummer = "ActivityBlock_Summer"
 }
 ActivityType_UI = {
-	kActivityBlock = "ACTIVITYBLOCKGOLDEGG",
+	kActivityWxh = "ACTIVITYWUXIUHUI",
 	kActivityBlockSummer = "ACTIVITYSUMMER",
 	kActivityBlockWsj = "ACTIVITYHALLOWEEN",
-	kActivityPass = "BattlePass",
+	kActivityBlock = "ACTIVITYBLOCKGOLDEGG",
 	kActivityBlockZuoHe = "ACTIVITYSUPPORT",
 	kActivityPassShop = "BattlePassShop",
-	KLOGINTIME = "LOGINTIME",
-	kActivityWxh = "ACTIVITYWUXIUHUI"
+	KActivityBlockSnowflake = "ACTIVITYSNOWFLAKE",
+	kActivityPass = "BattlePass",
+	KLOGINTIME = "LOGINTIME"
 }
 ResetMode = {
 	kMonth1 = "MONTH",

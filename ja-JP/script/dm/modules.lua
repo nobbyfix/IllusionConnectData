@@ -1645,11 +1645,6 @@ local modules = {
 							mediator = "ActivityBlockTeamMediator"
 						},
 						{
-							res = "asset/ui/ActivityBlockMap.csb",
-							name = "ActivityBlockChapterView",
-							mediator = "ActivityBlockChapterMediator"
-						},
-						{
 							res = "asset/ui/ActivityPointDetail.csb",
 							name = "ActivityPointDetailView",
 							mediator = "ActivityPointDetailMediator"
@@ -2078,7 +2073,10 @@ local modules = {
 					"dm.gameplay.building.model.BaseBuilding",
 					"dm.gameplay.building.model.DecorateBuilding",
 					"dm.gameplay.building.model.ResourceBuilding",
-					"dm.gameplay.building.model.Room"
+					"dm.gameplay.building.model.Room",
+					"dm.gameplay.building.view.club.ClubBuildingTouchComponent",
+					"dm.gameplay.building.view.club.ClubBuildingDecorateComponent",
+					"dm.gameplay.building.view.club.ClubBuildingMainComponent"
 				},
 				injections = {
 					singletons = {
@@ -2093,6 +2091,11 @@ local modules = {
 							res = "asset/ui/BuildingView.csb",
 							name = "BuildingView",
 							mediator = "BuildingMediator"
+						},
+						{
+							res = "asset/ui/BuildingView.csb",
+							name = "ClubBuildingView",
+							mediator = "ClubBuildingMediator"
 						},
 						{
 							res = "asset/ui/BuildingOverviewUI.csb",
@@ -2336,7 +2339,9 @@ local modules = {
 				name = "club",
 				requires = {
 					"dm.gameplay.club.controller.ClubSystem",
-					"dm.gameplay.club.service.ClubService"
+					"dm.gameplay.club.service.ClubService",
+					"dm.gameplay.club.view.ClubInfoWidget",
+					"dm.gameplay.club.view.ClubMapButtonWidget"
 				},
 				injections = {
 					singletons = {
@@ -2380,11 +2385,6 @@ local modules = {
 							res = "asset/ui/clubBasicInfo.csb",
 							name = "ClubBasicInfoView",
 							mediator = "ClubBasicInfoMediator"
-						},
-						{
-							res = "asset/ui/clubAudit.csb",
-							name = "ClubAuditView",
-							mediator = "ClubAuditMediator"
 						},
 						{
 							res = "asset/ui/clubLog.csb",
@@ -2495,6 +2495,36 @@ local modules = {
 							res = "asset/ui/ClubBossRecord.csb",
 							name = "ClubBossRecordView",
 							mediator = "ClubBossRecordMediator"
+						},
+						{
+							res = "asset/ui/clubNewHall.csb",
+							name = "ClubNewHallView",
+							mediator = "ClubNewHallMediator"
+						},
+						{
+							res = "asset/ui/clubNewDaily.csb",
+							name = "ClubDailyView",
+							mediator = "ClubLogMediator"
+						},
+						{
+							res = "asset/ui/clubNewAudit.csb",
+							name = "ClubAuditView",
+							mediator = "ClubAuditMediator"
+						},
+						{
+							res = "asset/ui/clubNewInfo.csb",
+							name = "ClubNewInfoView",
+							mediator = "ClubNewInfoMediator"
+						},
+						{
+							res = "asset/ui/clubNewTechnology.csb",
+							name = "ClubNewTechnologyView",
+							mediator = "ClubNewTechnologyMediator"
+						},
+						{
+							res = "asset/ui/ClubMapView.csb",
+							name = "ClubMainMapView",
+							mediator = "ClubMapViewMediator"
 						}
 					}
 				}

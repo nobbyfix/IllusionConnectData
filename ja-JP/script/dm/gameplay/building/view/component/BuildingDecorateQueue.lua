@@ -121,7 +121,7 @@ function BuildingDecorateQueue:update()
 end
 
 function BuildingDecorateQueue:onClickShowQueue()
-	if self._buildingSystem._mapShowType == KBuildingMapShowType.kInRoom and self._buildingSystem:getShowRoomId() == "Room2" then
+	if self._buildingSystem._mapShowType == KBuildingMapShowType.kInRoom and self._buildingSystem:isSelfBuilding() and self._buildingSystem:getShowRoomId() == "Room2" then
 		local view = self._buildingSystem:getInjector():getInstance("BuildingQueueBuyView")
 		local event = ViewEvent:new(EVT_SHOW_POPUP, view, {
 			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)

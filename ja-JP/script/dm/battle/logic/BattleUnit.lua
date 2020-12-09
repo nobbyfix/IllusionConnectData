@@ -154,6 +154,9 @@ BattleUnit:has("_modelScale", {
 BattleUnit:has("_heroCost", {
 	is = "rw"
 })
+BattleUnit:has("_surfaceIndex", {
+	is = "rw"
+})
 
 function BattleUnit:initialize(id)
 	super.initialize(self, id)
@@ -182,6 +185,7 @@ function BattleUnit:initWithRawData(data)
 	self._isProcessingBoss = data.isProcessingBoss
 	self._modelScale = data.modelScale
 	self._heroCost = data.heroCost or -1
+	self._surfaceIndex = data.surfaceIndex or 0
 
 	super.initWithRawData(self, data)
 

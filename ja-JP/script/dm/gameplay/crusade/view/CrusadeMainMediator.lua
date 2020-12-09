@@ -573,8 +573,6 @@ function CrusadeMainMediator:setRecommendHeroView()
 	local recommendHero2 = bgBottom:getChildByFullName("recommendHero2")
 	local recommendHero3 = bgBottom:getChildByFullName("recommendHero3")
 
-	bgBottom:getChildByFullName("Node_recommend.text"):setString(Strings:get("EXPLORE_UI22") .. "\n" .. Strings:get("GALLERY_UI1"))
-
 	for i = 1, 3 do
 		if recommendHero[i] then
 			local iconNode = recommendHero1:getChildByFullName("iconNode" .. i)
@@ -605,6 +603,7 @@ function CrusadeMainMediator:setRecommendHeroView()
 
 	recommendHero2:getChildByFullName("attackText"):setString(starBuff)
 	recommendHero3:getChildByFullName("attackText"):setString(aweakenBuff)
+	recommendHero3:setVisible(false)
 end
 
 function CrusadeMainMediator:refreshProgress()

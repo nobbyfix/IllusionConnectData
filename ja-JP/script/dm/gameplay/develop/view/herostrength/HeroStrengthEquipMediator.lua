@@ -464,10 +464,13 @@ end
 
 function HeroStrengthEquipMediator:onClickEquip()
 	local equips = self._equipSystem:getOneKeyEquips()[self._heroId] or {}
+	local heroEquipIds = self._heroData:getEquipIds()
 	local heroEquips = {}
 
 	for i, equipId in pairs(equips) do
-		table.insert(heroEquips, equipId)
+		if heroEquipIds[i] ~= equipId then
+			table.insert(heroEquips, equipId)
+		end
 	end
 
 	if #heroEquips <= 0 then

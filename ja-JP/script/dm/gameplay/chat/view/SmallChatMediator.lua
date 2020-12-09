@@ -45,10 +45,18 @@ end
 function SmallChatMediator:openMessageBox()
 	AudioEngine:getInstance():playEffect("Se_Click_Fold_1", false)
 
-	local data = nil
+	local data = {}
 	local view = self:getInjector():getInstance("chatMainView")
 
+	if self._messageBoxType then
+		data.tabType = self._messageBoxType
+	end
+
 	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, nil, data))
+end
+
+function SmallChatMediator:setMessageBoxType(tabType)
+	self._messageBoxType = tabType
 end
 
 function SmallChatMediator:refreshAll()

@@ -816,7 +816,7 @@ function DreamChallengeTeamMediator:initHero(node, info)
 			node:addTouchEventListener(function (sender, eventType)
 				if eventType == ccui.TouchEventType.ended then
 					self:dispatch(ShowTipEvent({
-						tip = Strings:get("clubBoss_heroTired")
+						tip = Strings:get("Error_52008")
 					}))
 				end
 			end)

@@ -377,7 +377,7 @@ local function modifyAssetLanguagePath(imgPath)
 
 	if sIdx ~= nil and eIdx ~= nil and not cc.FileUtils:getInstance():isFileExist(imgPath) then
 		local dir = string.split(imgPath, "/")
-		modify_path = string.gsub(modify_path, dir[2], MULTIP_LANGUAGE_PRE .. dir[2])
+		modify_path = string.gsub(modify_path, dir[2], MULTIP_LANGUAGE_PRE .. dir[2], 1)
 		isModify = true
 	end
 

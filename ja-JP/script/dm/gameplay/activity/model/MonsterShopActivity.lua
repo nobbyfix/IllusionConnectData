@@ -201,3 +201,32 @@ function MonsterShopActivity:getExchangeAmount(id)
 
 	return data.amount
 end
+
+function MonsterShopActivity:getStartTime()
+	local timeType = self._config.Time
+	local startTime = self._startTime
+	local timeStr = self._config.TimeFactor
+
+	if timeType == "RANGE_CONTINUE" and timeStr.start then
+		local start = ""
+
+		if type(timeStr.start) == "table" then
+			start = string.split(timeStr.start[1], " ")[1]
+		else
+			start = string.split(timeStr.start, " ")[1]
+		end
+
+		local startTemp = string.split(start, "-")
+		startTime = TimeUtil:timeByRemoteDate({
+			hour = 5,
+			min = 0,
+			sec = 0,
+			year = startTemp[1],
+			month = startTemp[2],
+			day = startTemp[3]
+		})
+		startTime = startTime * 1000
+	end
+
+	return startTime
+end
