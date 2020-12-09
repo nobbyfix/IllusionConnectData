@@ -463,20 +463,22 @@ function ClubApplyMediator:createLimitPanel(cell, data)
 	local limitData = {}
 
 	if auditType ~= ClubAuditType.kClose then
+		local limitStr = ""
+
 		if limitLevel > 0 then
 			limitData[#limitData + 1] = Strings:get("Club_Text110", {
 				level = limitLevel
 			})
-
-			limitNode:setString(limitData[1])
+			limitStr = limitData[1] .. "   "
 		end
 
 		if limitCombat > 0 then
 			limitData[#limitData + 1] = limitCombat
 			local combatStr = Strings:get("ARENA_TEAM_SORT_COMBAT") .. " " .. limitCombat
-
-			limitNode:setString(combatStr)
+			limitStr = limitStr .. combatStr
 		end
+
+		limitNode:setString(limitStr)
 	end
 
 	if auditType == ClubAuditType.kLimitCondition then

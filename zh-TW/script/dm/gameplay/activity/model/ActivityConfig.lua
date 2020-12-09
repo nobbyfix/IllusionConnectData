@@ -121,7 +121,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.kActivityWxh] = "ActivityBlockSupportWxhView",
 		[ActivityType_UI.kActivityBlockZuoHe] = "ActivityBlockSupportView",
 		[ActivityType_UI.kActivityBlockSummer] = "ActivityBlockSummerView",
-		[ActivityType_UI.kActivityBlock] = "ActivityBlockView"
+		[ActivityType_UI.kActivityBlock] = "ActivityBlockView",
+		[ActivityType_UI.KActivityBlockSnowflake] = "ActivityBlockView"
 	},
 	enterBlockMonsterShopView = {
 		[ActivityType_UI.kActivityBlockWsj] = "ActivityBlockMonsterShopView"
@@ -130,7 +131,9 @@ ActivityComplexUI = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportMapView",
 		[ActivityType_UI.kActivityBlockZuoHe] = "ActivitySagaSupportMapView",
 		[ActivityType_UI.kActivityBlockSummer] = "ActivitySagaSupportMapView",
-		[ActivityType_UI.kActivityBlockWsj] = "ActivityBlockMapWsjView"
+		[ActivityType_UI.kActivityBlockWsj] = "ActivityBlockMapWsjView",
+		[ActivityType_UI.KActivityBlockSnowflake] = "ActivitySagaSupportMapView",
+		[ActivityType_UI.kActivityBlock] = "ActivitySagaSupportMapView"
 	},
 	enterSagaSupportStageView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportStageWxhView",
@@ -144,7 +147,9 @@ ActivityComplexUI = {
 		[ActivityType_UI.kActivityWxh] = "ActivityBlockTaskView",
 		[ActivityType_UI.kActivityBlockZuoHe] = "ActivityBlockTaskView",
 		[ActivityType_UI.kActivityBlockSummer] = "ActivityBlockTaskView",
-		[ActivityType_UI.kActivityBlockWsj] = "ActivityBlockTaskView"
+		[ActivityType_UI.kActivityBlockWsj] = "ActivityBlockTaskView",
+		[ActivityType_UI.KActivityBlockSnowflake] = "ActivityBlockTaskView",
+		[ActivityType_UI.kActivityBlock] = "ActivityBlockTaskView"
 	},
 	enterSagaSupportRankRewardView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportRankRewardWxhView",

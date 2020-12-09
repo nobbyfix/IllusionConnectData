@@ -111,8 +111,9 @@ function GalleryPartnerPastMediator:initView()
 	end
 
 	local heroIcon = IconFactory:createRoleIconSprite({
-		stencil = 1,
+		useAnim = true,
 		iconType = "Bust5",
+		stencil = 1,
 		id = roleModel,
 		size = cc.size(368, 446)
 	})

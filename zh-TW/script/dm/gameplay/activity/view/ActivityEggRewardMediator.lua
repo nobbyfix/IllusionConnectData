@@ -43,7 +43,9 @@ function ActivityEggRewardMediator:onRegister()
 end
 
 function ActivityEggRewardMediator:enterWithData(data)
-	self:initData(data.activityId)
+	self._activityId = data.activityId or ActivityId.kActivityBlock
+
+	self:initData()
 	self:initTabView()
 
 	self._text1PosY = self._text1:getPositionY()
@@ -51,15 +53,9 @@ function ActivityEggRewardMediator:enterWithData(data)
 	self:initView()
 end
 
-function ActivityEggRewardMediator:initData(activityId)
-	if activityId == ActivityId.kActivityBlock then
-		self._activityModel = self._activitySystem:getActivityById(ActivityId.kActivityBlock)
-		self._eggActivity = self._activityModel:getEggActivity()
-	else
-		self._activityModel = self._activitySystem:getActivityById(activityId)
-		self._eggActivity = self._activityModel
-	end
-
+function ActivityEggRewardMediator:initData()
+	self._activityModel = self._activitySystem:getActivityById(self._activityId)
+	self._eggActivity = self._activityModel:getEggActivity()
 	self._round = self._eggActivity:getNum()
 	self._rewards = self._eggActivity:getPreviewRewards()
 	self._tabNum = #self._rewards

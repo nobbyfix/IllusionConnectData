@@ -182,8 +182,8 @@ function MonthCardModel:initialize(id)
 	self._endTimes = -1
 	self._lastRewardTimes = -1
 	self._name = Strings:get(self._config.Name)
-	self._icon = self._config.Picture .. ".png"
-	self._buyIcon = "asset/ui/shop/" .. self._config.Title .. ".png"
+	self._icon = self._config.Picture
+	self._buyIcon = self._config.Title
 	self._desc = Strings:get(self._config.Desc)
 	self._sort = self._config.Sort
 	self._time = self._config.Time

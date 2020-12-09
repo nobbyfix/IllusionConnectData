@@ -386,16 +386,19 @@ function GalleryPartnerInfoMediator:refreshInfo()
 	table.sort(self._gossipArr, function (a, b)
 		return b:getPositionY() < a:getPositionY()
 	end)
+
+	local hasHero = self._heroSystem:hasHero(self._heroId)
+
 	self._heroIcon:loadTexture(self._heroInfos.bg)
-	self._debrisBtn:setVisible(not self._heroSystem:hasHero(self._heroId))
-	self._heroIcon:setGray(not self._heroSystem:hasHero(self._heroId))
-	self._gossipPanel:setVisible(self._heroSystem:hasHero(self._heroId))
-	self._tabBg:setVisible(self._heroSystem:hasHero(self._heroId))
-	self._bustbtn:setVisible(self._heroSystem:hasHero(self._heroId))
+	self._debrisBtn:setVisible(not hasHero)
+	self._heroIcon:setGray(not hasHero)
+	self._gossipPanel:setVisible(hasHero)
+	self._tabBg:setVisible(hasHero)
+	self._bustbtn:setVisible(hasHero)
 
 	local roleModel = IconFactory:getRoleModelByKey("HeroBase", self._heroId)
 
-	if self._heroSystem:hasHero(self._heroId) then
+	if hasHero then
 		if self._gallerySystem:isPastOpen(self._heroId) then
 			self._pastRed:setVisible(self._isShowPastRed)
 		end
@@ -409,12 +412,24 @@ function GalleryPartnerInfoMediator:refreshInfo()
 
 	heroPanel:removeAllChildren()
 
-	local heroIcon = IconFactory:createRoleIconSprite({
-		stencil = 1,
-		iconType = "Bust5",
-		id = roleModel,
-		size = cc.size(368, 446)
-	})
+	local heroIcon = nil
+
+	if hasHero then
+		heroIcon = IconFactory:createRoleIconSprite({
+			useAnim = true,
+			iconType = "Bust5",
+			stencil = 1,
+			id = roleModel,
+			size = cc.size(368, 446)
+		})
+	else
+		heroIcon = IconFactory:createRoleIconSprite({
+			stencil = 1,
+			iconType = "Bust5",
+			id = roleModel,
+			size = cc.size(368, 446)
+		})
+	end
 
 	heroIcon:addTo(heroPanel)
 	heroIcon:setPosition(cc.p(heroPanel:getContentSize().width / 2 - 2, heroPanel:getContentSize().height / 2))
@@ -760,6 +775,10 @@ end
 
 function GalleryPartnerInfoMediator:onClickHeroIcon()
 	local heroData = self._heroSystem:getHeroInfoById(self._heroId)
+
+	if not heroData then
+		return
+	end
 
 	if heroData.showType == HeroShowType.kCanComp then
 		AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)

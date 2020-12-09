@@ -36,10 +36,14 @@ function MaskWordSystem:dispose()
 	super.dispose(self)
 end
 
-function MaskWordSystem:requestMaskWord(callback)
+function MaskWordSystem:requestMaskWord(callback, isBlockUI)
+	if isBlockUI == nil then
+		isBlockUI = true
+	end
+
 	local params = {}
 
-	self._maskWordService:requestMaskWord(params, true, function (response)
+	self._maskWordService:requestMaskWord(params, isBlockUI, function (response)
 		if response.resCode == GS_SUCCESS then
 			for key, maskType in pairs(MaskWordType) do
 				self._maskWord[maskType] = {}
@@ -71,7 +75,7 @@ end
 
 function MaskWordSystem:listenMaskWordDiff()
 	self._maskWordService:listenMaskWordDiff(function (message, response)
-		self:requestMaskWord()
+		self:requestMaskWord(nil, false)
 	end)
 end
 

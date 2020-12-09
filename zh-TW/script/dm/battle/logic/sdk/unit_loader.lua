@@ -259,8 +259,31 @@ local function dumpUnitProperties(unit, propNames, dest)
 	end
 
 	if GameConfigs and GameConfigs.DumpUnitProperties then
+		local dumpInfo = {}
+
+		for k, v in pairs(dest) do
+			dumpInfo[k] = v
+		end
+
 		print("dumpUnitProperties______bgein______" .. unit:getId())
-		dump(dest)
+
+		for k, v in pairs(dumpInfo) do
+			local func = __getFunctions__[k]
+
+			if func then
+				local attrComp = unit:getComponent("Numeric")
+
+				if attrComp and attrComp:getAttribute(k) then
+					local real = v
+					dumpInfo[k] = attrComp:getAttribute(k):getBase() .. "|" .. real
+				end
+			end
+		end
+
+		dump({
+			"初始值|计算后的值",
+			dumpInfo
+		})
 		print("dumpUnitProperties______end________" .. unit:getId())
 	end
 

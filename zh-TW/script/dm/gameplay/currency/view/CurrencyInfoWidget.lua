@@ -74,6 +74,10 @@ kAddBtnFuncMap[CurrencyIdKind.kAcitvityStaminaPower] = function (self)
 	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
 end
 
+kAddBtnFuncMap[CurrencyIdKind.kAcitvitySnowPower] = function (self)
+	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
+end
+
 kAddBtnFuncMap[CurrencyIdKind.kAcitvitySummerPower] = function (self)
 	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
 end
@@ -110,6 +114,12 @@ local PowerConfigMap = {
 		all = "Act_Power_RecAll",
 		configFunc = "getPowerResetByCurrencyId",
 		next = "Act_Power_RecNext",
+		func = "getPowerByCurrencyId"
+	},
+	[CurrencyIdKind.kAcitvitySnowPower] = {
+		all = "Act_Snowflake_Power_RecAll",
+		configFunc = "getPowerResetByCurrencyId",
+		next = "Act_Snowflake_Power_RecNext",
 		func = "getPowerByCurrencyId"
 	},
 	[CurrencyIdKind.kAcitvityZuoHePower] = {

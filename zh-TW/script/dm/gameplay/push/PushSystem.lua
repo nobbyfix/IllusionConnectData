@@ -197,7 +197,7 @@ function PushSystem:listenRankingRewardCode()
 	self._pushService:listenRankingRewardCode(function (response)
 		local rankSystem = self:getInjector():getInstance(RankSystem)
 
-		rankSystem:requestGetRewardList()
+		rankSystem:requestGetRewardList(nil, , false)
 	end)
 end
 

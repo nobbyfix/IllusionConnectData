@@ -45,6 +45,7 @@ IconFactory.kIconType = {
 	"Bust13",
 	"Bust14",
 	"Bust15",
+	"Bust16",
 	"MasterHeadWide"
 }
 IconFactory.IconTypeIndex = {
@@ -64,6 +65,7 @@ IconFactory.IconTypeIndex = {
 	Bust7 = 9,
 	Bust2 = 4,
 	Bust5 = 7,
+	Bust16 = 18,
 	Bust3 = 5
 }
 IconFactory.kClikpStencil = {

@@ -123,7 +123,8 @@ function ActivityBlockMediator:setupTopInfoWidget()
 	self._topInfoWidget:updateView(config)
 end
 
-function ActivityBlockMediator:enterWithData()
+function ActivityBlockMediator:enterWithData(data)
+	self._activityId = data.activityId or ActivityId.kActivityBlock
 	self._canChangeHero = true
 
 	self:initData()
@@ -143,7 +144,6 @@ function ActivityBlockMediator:resumeWithData()
 end
 
 function ActivityBlockMediator:initData()
-	self._activityId = ActivityId.kActivityBlock
 	self._model = self._activitySystem:getActivityById(self._activityId)
 	self._blockActivity = nil
 	self._taskActivities = {}
@@ -164,6 +164,13 @@ function ActivityBlockMediator:initView()
 	self:initTimer()
 	self:initRoleTimer()
 	self:updateRolePanel()
+	self:playBackgroundMusic()
+end
+
+function ActivityBlockMediator:playBackgroundMusic()
+	local bgm = self._model:getBgm()
+
+	AudioEngine:getInstance():playBackgroundMusic(bgm)
 end
 
 function ActivityBlockMediator:initInfo()
@@ -462,7 +469,7 @@ function ActivityBlockMediator:onClickStage()
 	end
 
 	AudioEngine:getInstance():playEffect("Se_Click_Story_Dream", false)
-	self._activitySystem:enterEasterStage(self._blockActivity)
+	self._activitySystem:enterBlockMap(self._activityId)
 end
 
 function ActivityBlockMediator:onClickAttrAdd()
@@ -493,7 +500,7 @@ function ActivityBlockMediator:onClickTask()
 	end
 
 	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
-	self._activitySystem:enterEasterTask()
+	self._activitySystem:enterSupportTaskView(self._activityId)
 end
 
 function ActivityBlockMediator:onClickTeam()
@@ -519,7 +526,9 @@ function ActivityBlockMediator:onClickEgg()
 	end
 
 	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
-	self._activitySystem:enterEasterEgg()
+	self._activitySystem:enterEasterEgg({
+		activityId = self._activityId
+	})
 end
 
 function ActivityBlockMediator:onClickSurface()

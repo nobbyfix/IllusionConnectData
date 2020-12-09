@@ -177,6 +177,10 @@ function FormationSystem:summon(actor, source, summonId, summonFactor, location)
 		return false, "NoSummonInfo"
 	end
 
+	if actor:getSurfaceIndex() > 0 and summonInfo.extraSurFace and summonInfo.extraSurFace[actor:getSurfaceIndex()] then
+		summonInfo.modelId = summonInfo.extraSurFace[actor:getSurfaceIndex()]
+	end
+
 	extend(summonFactor, summonInfo)
 
 	local targetId = player:calcSummonIdentify(summonId)

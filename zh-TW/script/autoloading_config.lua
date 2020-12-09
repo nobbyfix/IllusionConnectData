@@ -1031,11 +1031,6 @@ local mappings = {
 		name = "ActivitySagaWinMediator",
 		type = "@C"
 	},
-	ActivityBlockChapterMediator = {
-		url = "dm.gameplay.activity.view.ActivityBlockChapterMediator",
-		name = "ActivityBlockChapterMediator",
-		type = "@C"
-	},
 	ActivityTaskCollectStarMediator = {
 		url = "dm.gameplay.activity.view.ActivityTaskCollectStarMediator",
 		name = "ActivityTaskCollectStarMediator",

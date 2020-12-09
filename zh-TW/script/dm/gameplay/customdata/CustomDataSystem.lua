@@ -70,13 +70,17 @@ function CustomDataSystem:sync(data)
 	self._customData:sync(data)
 end
 
-function CustomDataSystem:setValue(type, key, value, callback)
+function CustomDataSystem:setValue(type, key, value, callback, isBlockUI)
 	type = type or PrefixType.kGlobal
 	local saveData = {
 		[type .. "#" .. key] = value
 	}
 
-	self:requestSaveData(saveData, true, function ()
+	if isBlockUI == nil then
+		isBlockUI = true
+	end
+
+	self:requestSaveData(saveData, isBlockUI, function ()
 		self._customData:setValue(type, key, value)
 
 		if callback then
@@ -85,7 +89,7 @@ function CustomDataSystem:setValue(type, key, value, callback)
 	end)
 end
 
-function CustomDataSystem:setValues(type, data)
+function CustomDataSystem:setValues(type, data, isBlockUI)
 	if data == nil then
 		return
 	end
@@ -98,7 +102,11 @@ function CustomDataSystem:setValues(type, data)
 		saveData[key] = value
 	end
 
-	self:requestSaveData(saveData, true, function ()
+	if isBlockUI == nil then
+		isBlockUI = true
+	end
+
+	self:requestSaveData(saveData, isBlockUI, function ()
 		for key, value in pairs(data) do
 			self._customData:setValue(type, key, value)
 		end
@@ -109,7 +117,7 @@ function CustomDataSystem:getValue(type, key, default)
 	return self._customData:getValue(type, key, default)
 end
 
-function CustomDataSystem:delValues(type, keys, callback)
+function CustomDataSystem:delValues(type, keys, callback, isBlockUI)
 	if keys == nil then
 		return
 	end
@@ -122,7 +130,11 @@ function CustomDataSystem:delValues(type, keys, callback)
 		delData[#delData + 1] = key
 	end
 
-	self:requestDeleteData(delData, true, function ()
+	if isBlockUI == nil then
+		isBlockUI = true
+	end
+
+	self:requestDeleteData(delData, isBlockUI, function ()
 		for _, key in pairs(keys) do
 			self._customData:setValue(type, key, nil)
 		end
@@ -133,7 +145,7 @@ function CustomDataSystem:delValues(type, keys, callback)
 	end)
 end
 
-function CustomDataSystem:clearValuesByType(type)
+function CustomDataSystem:clearValuesByType(type, isBlockUI)
 	local keys = self._customData:getValuesByType(type)
 
 	if keys == nil then
@@ -147,7 +159,11 @@ function CustomDataSystem:clearValuesByType(type)
 		delData[#delData + 1] = key
 	end
 
-	self:requestDeleteData(delData, true, function ()
+	if isBlockUI == nil then
+		isBlockUI = true
+	end
+
+	self:requestDeleteData(delData, isBlockUI, function ()
 		for key, value in pairs(keys) do
 			self._customData:setValue(type, key, nil)
 		end

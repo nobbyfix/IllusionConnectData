@@ -74,7 +74,7 @@ function ShopBuySurfaceMediator:refreshView()
 	local roleModel = self._itemData:getModel()
 	local img, jsonPath = IconFactory:createRoleIconSprite({
 		stencil = 1,
-		iconType = "Bust5",
+		iconType = "Bust16",
 		id = roleModel,
 		size = cc.size(375, 446)
 	})

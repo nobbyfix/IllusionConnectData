@@ -70,6 +70,22 @@ end
 function TabBtnWidget:initTabBtn(data, style)
 	self:initTabBtnData(data, style)
 
+	if style.disMovieClip then
+		local baseNode = cc.Node:create()
+		local bg = cc.Node:create()
+
+		bg:addTo(baseNode)
+		bg:setName("bg")
+
+		local node = self:_createTabBtns()
+
+		node:addTo(bg):center(bg:getContentSize()):offset(-7, -2)
+
+		self._mainNode = baseNode
+
+		return
+	end
+
 	self._mainNode = cc.MovieClip:create("zuobiankuang_paihang")
 
 	self._mainNode:setPlaySpeed(1.8)

@@ -2834,7 +2834,7 @@ function HomeMediator:passiveRefreshRedPoint(event)
 		local customDataSystem = self:getInjector():getInstance(CustomDataSystem)
 		local playerClubId = self._clubSystem:getClubId()
 
-		customDataSystem:setValue(PrefixType.kGlobal, "clubId", playerClubId)
+		customDataSystem:setValue(PrefixType.kGlobal, "clubId", playerClubId, false)
 	elseif data and data == 5 then
 		local btn = self._topBtns.mRankNode
 
@@ -3070,13 +3070,7 @@ function HomeMediator:checkExtraRedPoint()
 		self._clubResourcesBattleBtn:setVisible(true)
 	end
 
-	local goldEggsBtn = self._rightFuncLayout:getChildByFullName("goldEggsPanel.goldEggsBtn")
-
-	goldEggsBtn:setVisible(self._activitySystem:checkGoldEgg())
-
-	local redPoint = goldEggsBtn:getChildByName("redPoint")
-
-	redPoint:setVisible(self._activitySystem:hasRedPointForActivity(ActivityId.kActivityEgg))
+	self._rightFuncLayout:getChildByFullName("goldEggsPanel"):setVisible(false)
 
 	local unlock, unlockTips = self._systemKeeper:isUnlock("Shop_Unlock")
 
@@ -3326,6 +3320,11 @@ function HomeMediator:setComplexActivityEntry()
 		},
 		[ActivityType_UI.kActivityBlock] = {
 			img = "hd_rk_fhj.png",
+			aimpos = cc.p(50, 43),
+			redPointFuncx = self._activitySystem.hasRedPointForActivity
+		},
+		[ActivityType_UI.KActivityBlockSnowflake] = {
+			anim = "xuehua-CX_yongbuxiaorongrukou",
 			aimpos = cc.p(50, 43),
 			redPointFuncx = self._activitySystem.hasRedPointForActivity
 		}

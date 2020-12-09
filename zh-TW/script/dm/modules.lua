@@ -1565,11 +1565,6 @@ local modules = {
 							mediator = "ActivityBlockTeamMediator"
 						},
 						{
-							res = "asset/ui/ActivityBlockMap.csb",
-							name = "ActivityBlockChapterView",
-							mediator = "ActivityBlockChapterMediator"
-						},
-						{
 							res = "asset/ui/ActivityPointDetail.csb",
 							name = "ActivityPointDetailView",
 							mediator = "ActivityPointDetailMediator"

@@ -16,6 +16,26 @@
             "type": "unlimit"
         }
     },
+    "Surface_100": {
+        "BackGroundImg": "sd_pf_bg",
+        "ClientCondition": "",
+        "Cost": [
+            {
+                "amount": 68,
+                "code": "IR_Surface"
+            }
+        ],
+        "Hide": 0,
+        "ServerCondition": "",
+        "Sort": 4,
+        "Surface": "Surface_MGNa_2",
+        "TimeType": {
+            "amount": 1,
+            "end": "2020-11-25 05:00:00",
+            "start": "2020-11-18 05:00:00",
+            "type": "limit"
+        }
+    },
     "Surface_12": {
         "BackGroundImg": "sd_pf_bg",
         "ClientCondition": "",

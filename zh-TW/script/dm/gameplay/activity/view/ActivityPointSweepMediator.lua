@@ -103,7 +103,7 @@ function ActivityPointSweepMediator:initWidget()
 		}))
 	else
 		self._sweepLabel:setString(Strings:get("CUSTOM_SWEEP_AGAIN", {
-			times = 5
+			times = 10
 		}))
 	end
 
@@ -493,6 +493,8 @@ function ActivityPointSweepMediator:getMaxSwipCount()
 		containPower = self._bagSystem:getAcitvityStaminaPower()
 	elseif itemId == CurrencyIdKind.kAcitvityZuoHePower then
 		containPower = self._bagSystem:getAcitvitySagaSupportPower()
+	elseif itemId == CurrencyIdKind.kAcitvitySnowPower then
+		containPower = self._bagSystem:getAcitvitySnowPower()
 	elseif itemId == CurrencyIdKind.kAcitvityWxhPower then
 		containPower = self._bagSystem:getAcitvityWxhSupportPower()
 	elseif itemId == "IM_BossJindan" then

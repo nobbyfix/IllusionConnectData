@@ -83,7 +83,8 @@ DebugBoxMainIndex = {
 					"一键变强",
 					"主角养成",
 					"增加英魂",
-					"一键无敌"
+					"一键无敌",
+					"添加皮肤"
 				}
 			},
 			{
@@ -336,6 +337,10 @@ DebugBoxMainIndex = {
 			{
 				"主角养成",
 				"OnekeyMaster"
+			},
+			{
+				"添加皮肤",
+				"AddSurface"
 			},
 			{
 				"进入剧情编辑",
@@ -720,6 +725,7 @@ DebugBoxMainIndex = {
 			"SkipMazeChapter",
 			"AddMazeDp",
 			"OnekeyMaster",
+			"AddSurface",
 			"StoryEditor",
 			"BattleRecordBox",
 			"BattleDumpBox",

@@ -532,58 +532,21 @@ function ActivitySystem:tryEnterCarnival()
 	end
 end
 
-function ActivitySystem:checkGoldEgg()
-	local isOpen = self:isActivityOpen(ActivityId.kActivityEgg)
-	local isOver = self:isActivityOver(ActivityId.kActivityEgg)
-	local openCondition = self:checkConditionWithId(ActivityId.kActivityEgg)
-
-	return isOpen and not isOver and openCondition
-end
-
-function ActivitySystem:tryEnterGoldEgg()
-	if self:checkGoldEgg() then
-		AudioEngine:getInstance():playEffect("Se_Click_Open_1", false)
-		self:requestAllActicities(true, function ()
-			local view = self:getInjector():getInstance("ActivityBlockGoldEggView")
-
-			self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {}))
-		end)
-	end
-end
-
-function ActivitySystem:enterEasterStage(activity)
-	if activity then
-		local view = self:getInjector():getInstance("ActivityBlockChapterView")
-		local event = ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
-			activityId = ActivityId.kActivityBlock,
-			activity = activity
-		})
-
-		self:dispatch(event)
-	end
-end
-
-function ActivitySystem:enterEasterEgg()
+function ActivitySystem:enterEasterEgg(data)
 	local view = self:getInjector():getInstance("ActivityBlockEggView")
 
-	self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {}))
-end
-
-function ActivitySystem:enterEasterTask()
-	local view = self:getInjector():getInstance("ActivityBlockTaskView")
-
 	self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
-		activityId = ActivityId.kActivityBlock
+		activityId = data.activityId
 	}))
 end
 
-function ActivitySystem:showEasterRewards(activityId)
+function ActivitySystem:showEasterRewards(data)
 	local view = self:getInjector():getInstance("ActivityEggRewardView")
 
 	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
 		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
 	}, {
-		activityId = activityId
+		activityId = data.activityId
 	}))
 end
 
@@ -602,12 +565,14 @@ function ActivitySystem:enterSurface(param)
 	surfaceSystem:tryEnter(param)
 end
 
-function ActivitySystem:showEggSucc(callback)
+function ActivitySystem:showEggSucc(activityId, eggActivity, callback)
 	local view = self:getInjector():getInstance("ActivityEggSuccView")
 
 	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
 		maskOpacity = 0
 	}, {
+		activityId = activityId,
+		eggActivity = eggActivity,
 		callback = callback
 	}))
 end

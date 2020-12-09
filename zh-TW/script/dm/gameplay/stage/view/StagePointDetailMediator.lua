@@ -392,7 +392,8 @@ function StagePointDetailMediator:setupView()
 			})
 
 			IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), reward, {
-				needDelay = true
+				needDelay = true,
+				showAmount = isFirst
 			})
 
 			local iconPanel = ccui.Layout:create()
