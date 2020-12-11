@@ -3963,7 +3963,7 @@
             "LEVEL": 1
         },
         "Desc": "",
-        "Enable": 1,
+        "Enable": 0,
         "Icon": "",
         "LeftBanner": "hd_btn_mhzb_bg",
         "Loop": "",
@@ -4072,7 +4072,7 @@
             "REGISTER": 29
         },
         "Desc": "",
-        "Enable": 1,
+        "Enable": 0,
         "Icon": "",
         "LeftBanner": "hd_btn_mhzb_bg",
         "Loop": "",
@@ -4131,6 +4131,41 @@
         "TimeFactor": {
             "end": "2020-12-31 05:00:00",
             "start": "2020-12-10 05:00:00"
+        },
+        "Title": "Activity_Gashapon_20200727_Name",
+        "Type": "Gashapon",
+        "UI": "Gashapon",
+        "Version": ""
+    },
+    "Activity_Gashapon_20201209_2": {
+        "ActivityConfig": {
+            "Gashapon": "Gashapon_20201209_2",
+            "ReFlash": 1
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "hd_btn_mhzb_bg",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 93003,
+        "ShowTab": 1,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-01-01 05:00:00",
+            "start": [
+                "2020-12-11 05:00:00",
+                "2021-01-01 05:00:00"
+            ]
         },
         "Title": "Activity_Gashapon_20200727_Name",
         "Type": "Gashapon",

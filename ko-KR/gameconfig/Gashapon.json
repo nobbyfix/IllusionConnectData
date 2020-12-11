@@ -96,6 +96,55 @@
             "Gashapon_Normal_8": 700
         }
     },
+    "Gashapon_20201209_2": {
+        "Cost": 1,
+        "KeyReword": {
+            "Gashapon_1st_Core_1": 100
+        },
+        "MiddleReward": {
+            "Gashapon_Middle_1": 200,
+            "Gashapon_Middle_2": 50,
+            "Gashapon_Middle_3": 200,
+            "Gashapon_Middle_4": 50,
+            "Gashapon_Middle_5": 200,
+            "Gashapon_Middle_6": 50,
+            "Gashapon_Middle_7": 200,
+            "Gashapon_Middle_8": 50,
+            "Gashapon_Normal_1": 350
+        },
+        "MiddleRewardShow": [
+            "Gashapon_Middle_1",
+            "Gashapon_Middle_2",
+            "Gashapon_Middle_3",
+            "Gashapon_Middle_4",
+            "Gashapon_Middle_5",
+            "Gashapon_Middle_6",
+            "Gashapon_Middle_7",
+            "Gashapon_Middle_8"
+        ],
+        "NextPoint": "Gashapon_20201209_2",
+        "NormalRewardShow": [
+            "Gashapon_Normal_1",
+            "Gashapon_Normal_2",
+            "Gashapon_Normal_3",
+            "Gashapon_Normal_4",
+            "Gashapon_Normal_5",
+            "Gashapon_Normal_6",
+            "Gashapon_Normal_7",
+            "Gashapon_Normal_8"
+        ],
+        "Order": 3,
+        "RewardShow": {
+            "Gashapon_Normal_1": 350,
+            "Gashapon_Normal_2": 400,
+            "Gashapon_Normal_3": 400,
+            "Gashapon_Normal_4": 350,
+            "Gashapon_Normal_5": 400,
+            "Gashapon_Normal_6": 700,
+            "Gashapon_Normal_7": 700,
+            "Gashapon_Normal_8": 700
+        }
+    },
     "Gashapon_2st_01": {
         "Cost": 1,
         "KeyReword": {
