@@ -6717,7 +6717,86 @@
             "IHG_Quality4_10": 8,
             "IHG_Quality5_7": 20
         },
-        "StoryLink": "",
+        "StoryLink": [
+            {
+                "bg": "main_img_00",
+                "option": [
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        12,
+                        3
+                    ]
+                ],
+                "story": "LYSiDate01"
+            },
+            {
+                "bg": "main_img_00",
+                "option": [
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        12,
+                        3
+                    ]
+                ],
+                "story": "LYSiDate02"
+            },
+            {
+                "bg": "main_img_00",
+                "option": [
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        12,
+                        3
+                    ]
+                ],
+                "story": "LYSiDate03"
+            }
+        ],
         "UseEventDesc": {
             "sit": "EventUse_LYSi",
             "sleep": "EventUse_LYSi"
@@ -13280,7 +13359,86 @@
             "IHG_Quality4_10": 8,
             "IHG_Quality5_7": 20
         },
-        "StoryLink": "",
+        "StoryLink": [
+            {
+                "bg": "main_img_00",
+                "option": [
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        12,
+                        3
+                    ]
+                ],
+                "story": "YSTLuDate01"
+            },
+            {
+                "bg": "main_img_00",
+                "option": [
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        12,
+                        3
+                    ]
+                ],
+                "story": "YSTLuDate02"
+            },
+            {
+                "bg": "main_img_00",
+                "option": [
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        12,
+                        3
+                    ]
+                ],
+                "story": "YSTLuDate03"
+            }
+        ],
         "UseEventDesc": {
             "sit": "EventUse_YSTLu",
             "sleep": "EventUse_YSTLu"

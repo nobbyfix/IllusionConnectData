@@ -4519,14 +4519,14 @@
     "BattlePass_Daily_Task_2": {
         "Condition": [
             {
-                "conditionType": "Condi_ResourceStage",
+                "conditionType": "Condi_TowerEnter",
                 "factor1": [
-                    2
+                    1
                 ]
             }
         ],
         "Desc": "BattlePass_Daily_Task_2_Desc",
-        "Destination": "view://SpStageMainView&viewType=push&spType=exp",
+        "Destination": "view://TowerView&viewType=push",
         "ExtraReward": "",
         "Name": "BattlePass_Daily_Task_2_Name",
         "OrderNum": 2,
@@ -4536,14 +4536,14 @@
     "BattlePass_Daily_Task_3": {
         "Condition": [
             {
-                "conditionType": "Condi_ExploreMapTimes",
+                "conditionType": "Condi_AttendArena",
                 "factor1": [
-                    1
+                    2
                 ]
             }
         ],
         "Desc": "BattlePass_Daily_Task_3_Desc",
-        "Destination": "view://ExploreView&viewType=push",
+        "Destination": "view://arenaView&viewType=push",
         "ExtraReward": "",
         "Name": "BattlePass_Daily_Task_3_Name",
         "OrderNum": 3,
@@ -4553,14 +4553,14 @@
     "BattlePass_Daily_Task_4": {
         "Condition": [
             {
-                "conditionType": "Condi_TowerEnter",
+                "conditionType": "Condi_HeroGift",
                 "factor1": [
                     1
                 ]
             }
         ],
         "Desc": "BattlePass_Daily_Task_4_Desc",
-        "Destination": "view://TowerView&viewType=push",
+        "Destination": "view://GalleryMainView&viewType=push&tabType=1",
         "ExtraReward": "",
         "Name": "BattlePass_Daily_Task_4_Name",
         "OrderNum": 4,
@@ -4570,14 +4570,14 @@
     "BattlePass_Daily_Task_5": {
         "Condition": [
             {
-                "conditionType": "Condi_AttendArena",
+                "conditionType": "Condi_HeroLevelUp",
                 "factor1": [
-                    2
+                    5
                 ]
             }
         ],
         "Desc": "BattlePass_Daily_Task_5_Desc",
-        "Destination": "view://arenaView&viewType=push",
+        "Destination": "view://HeroShowMainView&viewType=push&tabType=1",
         "ExtraReward": "",
         "Name": "BattlePass_Daily_Task_5_Name",
         "OrderNum": 5,
@@ -4587,14 +4587,14 @@
     "BattlePass_Daily_Task_6": {
         "Condition": [
             {
-                "conditionType": "Condi_HeroGift",
+                "conditionType": "Condi_BuyGold",
                 "factor1": [
-                    1
+                    2
                 ]
             }
         ],
         "Desc": "BattlePass_Daily_Task_6_Desc",
-        "Destination": "view://GalleryMainView&viewType=push&tabType=1",
+        "Destination": "view://buyCurrencyView&viewType=popup&_currencyType=1",
         "ExtraReward": "",
         "Name": "BattlePass_Daily_Task_6_Name",
         "OrderNum": 6,
@@ -4606,7 +4606,7 @@
             {
                 "conditionType": "Condi_TodayLogin",
                 "factor1": [
-                    1
+                    10
                 ]
             }
         ],
@@ -4638,14 +4638,14 @@
     "BattlePass_Month_Task_2": {
         "Condition": [
             {
-                "conditionType": "Condi_HeroDate",
+                "conditionType": "Condi_TowerEnter",
                 "factor1": [
-                    1
+                    8
                 ]
             }
         ],
         "Desc": "BattlePass_Month_Task_2_Desc",
-        "Destination": "view://GalleryMainView&viewType=push&tabType=1",
+        "Destination": "view://TowerView&viewType=push",
         "ExtraReward": "",
         "Name": "BattlePass_Month_Task_2_Name",
         "OrderNum": 2,
@@ -4655,14 +4655,14 @@
     "BattlePass_Month_Task_3": {
         "Condition": [
             {
-                "conditionType": "Condi_UseExp",
+                "conditionType": "Condi_HeroGift",
                 "factor1": [
-                    5
+                    20
                 ]
             }
         ],
         "Desc": "BattlePass_Month_Task_3_Desc",
-        "Destination": "view://HeroShowListView&viewType=push",
+        "Destination": "view://GalleryMainView&viewType=push&tabType=1",
         "ExtraReward": "",
         "Name": "BattlePass_Month_Task_3_Name",
         "OrderNum": 3,
@@ -4672,14 +4672,14 @@
     "BattlePass_Month_Task_4": {
         "Condition": [
             {
-                "conditionType": "Condi_EquipIntensify",
+                "conditionType": "Condi_HeroLevelUp",
                 "factor1": [
-                    10
+                    100
                 ]
             }
         ],
         "Desc": "BattlePass_Month_Task_4_Desc",
-        "Destination": "view://HeroShowListView&viewType=push",
+        "Destination": "view://HeroShowMainView&viewType=push&tabType=1",
         "ExtraReward": "",
         "Name": "BattlePass_Month_Task_4_Name",
         "OrderNum": 4,
@@ -4689,14 +4689,14 @@
     "BattlePass_Month_Task_5": {
         "Condition": [
             {
-                "conditionType": "Condi_TodayLogin",
+                "conditionType": "Condi_DiamondDraw",
                 "factor1": [
                     10
                 ]
             }
         ],
         "Desc": "BattlePass_Month_Task_5_Desc",
-        "Destination": "",
+        "Destination": "view://RecruitView&viewType=push&recruitType=DrawCard_Diamond_1",
         "ExtraReward": "",
         "Name": "BattlePass_Month_Task_5_Name",
         "OrderNum": 5,
@@ -4706,14 +4706,14 @@
     "BattlePass_Month_Task_6": {
         "Condition": [
             {
-                "conditionType": "Condi_HeroDate",
+                "conditionType": "Condi_DiamondDraw",
                 "factor1": [
-                    3
+                    30
                 ]
             }
         ],
         "Desc": "BattlePass_Month_Task_6_Desc",
-        "Destination": "view://GalleryMainView&viewType=push&tabType=1",
+        "Destination": "view://RecruitView&viewType=push&recruitType=DrawCard_Diamond_1",
         "ExtraReward": "",
         "Name": "BattlePass_Month_Task_6_Name",
         "OrderNum": 6,
@@ -4774,14 +4774,14 @@
     "BattlePass_Week_Task_1": {
         "Condition": [
             {
-                "conditionType": "Condi_ResourceStage",
+                "conditionType": "Condi_ExploreMapTimes",
                 "factor1": [
-                    10
+                    2
                 ]
             }
         ],
         "Desc": "BattlePass_Week_Task_1_Desc",
-        "Destination": "view://SpStageMainView&viewType=push&spType=exp",
+        "Destination": "view://ExploreView&viewType=push",
         "ExtraReward": "",
         "Name": "BattlePass_Week_Task_1_Name",
         "OrderNum": 1,
@@ -4791,14 +4791,14 @@
     "BattlePass_Week_Task_2": {
         "Condition": [
             {
-                "conditionType": "Condi_ExploreMapTimes",
+                "conditionType": "Condi_ResourceStage",
                 "factor1": [
-                    3
+                    20
                 ]
             }
         ],
         "Desc": "BattlePass_Week_Task_2_Desc",
-        "Destination": "view://ExploreView&viewType=push",
+        "Destination": "view://SpStageMainView&viewType=push&spType=exp",
         "ExtraReward": "",
         "Name": "BattlePass_Week_Task_2_Name",
         "OrderNum": 2,
@@ -4808,14 +4808,14 @@
     "BattlePass_Week_Task_3": {
         "Condition": [
             {
-                "conditionType": "Condi_TowerEnter",
+                "conditionType": "Condi_TodayLogin",
                 "factor1": [
                     3
                 ]
             }
         ],
         "Desc": "BattlePass_Week_Task_3_Desc",
-        "Destination": "view://TowerView&viewType=push",
+        "Destination": "",
         "ExtraReward": "",
         "Name": "BattlePass_Week_Task_3_Name",
         "OrderNum": 3,
@@ -4825,14 +4825,14 @@
     "BattlePass_Week_Task_4": {
         "Condition": [
             {
-                "conditionType": "Condi_ResourceStage",
+                "conditionType": "Condi_ExploreMapTimes",
                 "factor1": [
-                    25
+                    6
                 ]
             }
         ],
         "Desc": "BattlePass_Week_Task_4_Desc",
-        "Destination": "view://SpStageMainView&viewType=push&spType=exp",
+        "Destination": "view://ExploreView&viewType=push",
         "ExtraReward": "",
         "Name": "BattlePass_Week_Task_4_Name",
         "OrderNum": 4,
@@ -4842,14 +4842,14 @@
     "BattlePass_Week_Task_5": {
         "Condition": [
             {
-                "conditionType": "Condi_CrusadeJoin",
+                "conditionType": "Condi_TodayLogin",
                 "factor1": [
-                    5
+                    4
                 ]
             }
         ],
         "Desc": "BattlePass_Week_Task_5_Desc",
-        "Destination": "view://CrusadeView&viewType=push",
+        "Destination": "",
         "ExtraReward": "",
         "Name": "BattlePass_Week_Task_5_Name",
         "OrderNum": 5,
@@ -4859,14 +4859,14 @@
     "BattlePass_Week_Task_6": {
         "Condition": [
             {
-                "conditionType": "Condi_TowerEnter",
+                "conditionType": "Condi_HeroLevelUp",
                 "factor1": [
-                    5
+                    30
                 ]
             }
         ],
         "Desc": "BattlePass_Week_Task_6_Desc",
-        "Destination": "view://TowerView&viewType=push",
+        "Destination": "view://HeroShowMainView&viewType=push&tabType=1",
         "ExtraReward": "",
         "Name": "BattlePass_Week_Task_6_Name",
         "OrderNum": 6,
@@ -4876,14 +4876,14 @@
     "BattlePass_Week_Task_7": {
         "Condition": [
             {
-                "conditionType": "Condi_AttendArena",
+                "conditionType": "Condi_ResourceStage",
                 "factor1": [
-                    15
+                    30
                 ]
             }
         ],
         "Desc": "BattlePass_Week_Task_7_Desc",
-        "Destination": "view://arenaView&viewType=push",
+        "Destination": "view://SpStageMainView&viewType=push&spType=exp",
         "ExtraReward": "",
         "Name": "BattlePass_Week_Task_7_Name",
         "OrderNum": 7,
@@ -4893,14 +4893,14 @@
     "BattlePass_Week_Task_8": {
         "Condition": [
             {
-                "conditionType": "Condi_winArenaChallenge",
+                "conditionType": "Condi_TowerEnter",
                 "factor1": [
-                    5
+                    3
                 ]
             }
         ],
         "Desc": "BattlePass_Week_Task_8_Desc",
-        "Destination": "view://arenaView&viewType=push",
+        "Destination": "view://TowerView&viewType=push",
         "ExtraReward": "",
         "Name": "BattlePass_Week_Task_8_Name",
         "OrderNum": 8,
@@ -6433,6 +6433,125 @@
         "Name": "Login14_9_Name",
         "OrderNum": 9,
         "Reward": "Login14_9_Reward",
+        "TaskIcon": ""
+    },
+    "Login7_11": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "Login14_1_Name",
+        "OrderNum": 1,
+        "Reward": "Login7_1_Reward",
+        "TaskIcon": ""
+    },
+    "Login7_12": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    2
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "Login14_2_Name",
+        "OrderNum": 2,
+        "Reward": "Login7_2_Reward",
+        "TaskIcon": ""
+    },
+    "Login7_13": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    3
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "Login14_3_Name",
+        "OrderNum": 3,
+        "Reward": "Login7_3_Reward",
+        "TaskIcon": ""
+    },
+    "Login7_14": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    4
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "Login14_4_Name",
+        "OrderNum": 4,
+        "Reward": "Login7_4_Reward",
+        "TaskIcon": ""
+    },
+    "Login7_15": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    5
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "Login14_5_Name",
+        "OrderNum": 5,
+        "Reward": "Login7_5_Reward",
+        "TaskIcon": ""
+    },
+    "Login7_16": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    6
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "Login14_6_Name",
+        "OrderNum": 6,
+        "Reward": "Login7_6_Reward",
+        "TaskIcon": ""
+    },
+    "Login7_17": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    7
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "Login14_7_Name",
+        "OrderNum": 7,
+        "Reward": "Login7_7_Reward",
         "TaskIcon": ""
     },
     "Login8_1": {

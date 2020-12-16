@@ -516,7 +516,7 @@
     },
     "ClubStage": {
         "Condition": {
-            "LEVEL": 100
+            "CLUBLEVEL": 2
         },
         "Icon": "",
         "IsPlay": "",
@@ -526,15 +526,15 @@
         "OutputDesc": "",
         "ResourcesBanner": "",
         "ShowCondition": {
-            "LEVEL": 100
+            "CLUBLEVEL": 2
         },
-        "Tip": "Unlock_Joking_Tips",
+        "Tip": "ClubStage_UnlockDesc",
         "UnlockAnima": "",
         "UnlockDesc": ""
     },
     "ClubStage_SkipBattle": {
         "Condition": {
-            "LEVEL": 100
+            "CLUBLEVEL": 2
         },
         "Icon": "",
         "IsPlay": "",
@@ -544,9 +544,9 @@
         "OutputDesc": "",
         "ResourcesBanner": "",
         "ShowCondition": {
-            "LEVEL": 100
+            "CLUBLEVEL": 2
         },
-        "Tip": "Unlock_Joking_Tips",
+        "Tip": "ClubStage_SkipBattleDesc",
         "UnlockAnima": "",
         "UnlockDesc": ""
     },
@@ -713,7 +713,7 @@
     },
     "DreamChallenge": {
         "Condition": {
-            "LEVEL": 100
+            "LEVEL": 43
         },
         "Icon": "",
         "IsPlay": "",
@@ -723,9 +723,9 @@
         "OutputDesc": "",
         "ResourcesBanner": "",
         "ShowCondition": {
-            "LEVEL": 100
+            "LEVEL": 43
         },
-        "Tip": "DreamChallenge_Unlock_Tips",
+        "Tip": "Unlock_Level_Tips",
         "UnlockAnima": "",
         "UnlockDesc": ""
     },

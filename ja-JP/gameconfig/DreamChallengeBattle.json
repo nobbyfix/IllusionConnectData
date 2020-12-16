@@ -6,14 +6,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            4100,
-            4100,
-            4100
+            7290,
+            7290,
+            7290
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 41000,
+        "CombatNeed": 81000,
         "Combat_Adjust_Rate": 0.0,
         "EnemyCard": "CardT01N01M01",
         "EnemyMaster": "T01N01M01W01_Master_01",
@@ -29,7 +30,7 @@
             ]
         },
         "UnlockCondition": {
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "VictoryConditions": [
             {
@@ -51,14 +52,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            4304,
-            4304,
-            4304
+            7425,
+            7425,
+            7425
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 43040,
+        "CombatNeed": 82500,
         "Combat_Adjust_Rate": 0.15,
         "EnemyCard": "CardT01N01M02",
         "EnemyMaster": "T01N01M02W01_Master_01",
@@ -70,7 +72,7 @@
         "Showreward": "DreamChallengeBattle_T01N01M02_reward",
         "StoryLink": "",
         "UnlockCondition": {
-            "LEVEL": 32,
+            "LEVEL": 43,
             "Pass": "DreamChallengeBattle_T01N01M01"
         },
         "VictoryConditions": [
@@ -93,14 +95,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            4457,
-            4457,
-            4457
+            7537,
+            7537,
+            7537
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 44570,
+        "CombatNeed": 83750,
         "Combat_Adjust_Rate": 0.0,
         "EnemyCard": "CardT01N01M03",
         "EnemyMaster": "T01N01M03W01_Master_01",
@@ -116,7 +119,7 @@
             ]
         },
         "UnlockCondition": {
-            "LEVEL": 32,
+            "LEVEL": 43,
             "Pass": "DreamChallengeBattle_T01N01M02"
         },
         "VictoryConditions": [
@@ -139,14 +142,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            4763,
-            4763,
-            4763
+            7807,
+            7807,
+            7807
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 47630,
+        "CombatNeed": 86750,
         "Combat_Adjust_Rate": 0.15,
         "EnemyCard": "CardT01N01M04",
         "EnemyMaster": "T01N01M04W01_Master_01",
@@ -158,7 +162,7 @@
         "Showreward": "DreamChallengeBattle_T01N01M04_reward",
         "StoryLink": "",
         "UnlockCondition": {
-            "LEVEL": 32,
+            "LEVEL": 43,
             "Pass": "DreamChallengeBattle_T01N01M03"
         },
         "VictoryConditions": [
@@ -181,14 +185,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            4916,
-            4916,
-            4916
+            7920,
+            7920,
+            7920
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 49160,
+        "CombatNeed": 88000,
         "Combat_Adjust_Rate": 0.0,
         "EnemyCard": "CardT01N01M05",
         "EnemyMaster": "T01N01M05W01_Master_01",
@@ -200,7 +205,7 @@
         "Showreward": "DreamChallengeBattle_T01N01M05_reward",
         "StoryLink": "",
         "UnlockCondition": {
-            "LEVEL": 32,
+            "LEVEL": 43,
             "Pass": "DreamChallengeBattle_T01N01M04"
         },
         "VictoryConditions": [
@@ -223,14 +228,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            5120,
-            5120,
-            5120
+            8190,
+            8190,
+            8190
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 51200,
+        "CombatNeed": 91000,
         "Combat_Adjust_Rate": 0.15,
         "EnemyCard": "CardT01N01M06",
         "EnemyMaster": "T01N01M06W01_Master_01",
@@ -246,7 +252,7 @@
             ]
         },
         "UnlockCondition": {
-            "LEVEL": 32,
+            "LEVEL": 43,
             "Pass": "DreamChallengeBattle_T01N01M05"
         },
         "VictoryConditions": [
@@ -269,14 +275,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            5161,
-            5161,
-            5161
+            7695,
+            7695,
+            7695
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 51610,
+        "CombatNeed": 81000,
         "Combat_Adjust_Rate": 0.0,
         "EnemyCard": "CardT01N02M01",
         "EnemyMaster": "T01N02M01W01_Master_01",
@@ -288,7 +295,7 @@
         "Showreward": "DreamChallengeBattle_T01N02M01_reward",
         "StoryLink": "",
         "UnlockCondition": {
-            "LEVEL": 32,
+            "LEVEL": 43,
             "Pass": "DreamChallengeBattle_T01N01M04"
         },
         "VictoryConditions": [
@@ -311,14 +318,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            5251,
-            5251,
-            5251
+            7763,
+            7763,
+            7763
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 52510,
+        "CombatNeed": 81720,
         "Combat_Adjust_Rate": 0.0,
         "EnemyCard": "CardT01N02M02",
         "EnemyMaster": "T01N02M02W01_Master_01",
@@ -330,7 +338,7 @@
         "Showreward": "DreamChallengeBattle_T01N02M02_reward",
         "StoryLink": "",
         "UnlockCondition": {
-            "LEVEL": 32,
+            "LEVEL": 43,
             "Pass": "DreamChallengeBattle_T01N02M01"
         },
         "VictoryConditions": [
@@ -353,14 +361,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            5508,
-            5508,
-            5508
+            7934,
+            7934,
+            7934
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 55080,
+        "CombatNeed": 83520,
         "Combat_Adjust_Rate": 0.15,
         "EnemyCard": "CardT01N02M03",
         "EnemyMaster": "T01N02M03W01_Master_01",
@@ -372,7 +381,7 @@
         "Showreward": "DreamChallengeBattle_T01N02M03_reward",
         "StoryLink": "",
         "UnlockCondition": {
-            "LEVEL": 32,
+            "LEVEL": 43,
             "Pass": "DreamChallengeBattle_T01N02M02"
         },
         "VictoryConditions": [
@@ -395,14 +404,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            5598,
-            5598,
-            5598
+            8002,
+            8002,
+            8002
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 55980,
+        "CombatNeed": 84240,
         "Combat_Adjust_Rate": 0.0,
         "EnemyCard": "CardT01N02M04",
         "EnemyMaster": "T01N02M04W01_Master_01",
@@ -414,7 +424,7 @@
         "Showreward": "DreamChallengeBattle_T01N02M04_reward",
         "StoryLink": "",
         "UnlockCondition": {
-            "LEVEL": 32,
+            "LEVEL": 43,
             "Pass": "DreamChallengeBattle_T01N02M03"
         },
         "VictoryConditions": [
@@ -437,14 +447,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            5688,
-            5688,
-            5688
+            8071,
+            8071,
+            8071
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 56880,
+        "CombatNeed": 84960,
         "Combat_Adjust_Rate": 0.0,
         "EnemyCard": "CardT01N02M05",
         "EnemyMaster": "T01N02M05W01_Master_01",
@@ -456,7 +467,7 @@
         "Showreward": "DreamChallengeBattle_T01N02M05_reward",
         "StoryLink": "",
         "UnlockCondition": {
-            "LEVEL": 32,
+            "LEVEL": 43,
             "Pass": "DreamChallengeBattle_T01N02M04"
         },
         "VictoryConditions": [
@@ -479,14 +490,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            6010,
-            6010,
-            6010
+            8356,
+            8356,
+            8356
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 60100,
+        "CombatNeed": 87960,
         "Combat_Adjust_Rate": 0.15,
         "EnemyCard": "CardT01N02M06",
         "EnemyMaster": "T01N02M06W01_Master_01",
@@ -498,7 +510,7 @@
         "Showreward": "DreamChallengeBattle_T01N02M06_reward",
         "StoryLink": "",
         "UnlockCondition": {
-            "LEVEL": 32,
+            "LEVEL": 43,
             "Pass": "DreamChallengeBattle_T01N02M05"
         },
         "VictoryConditions": [
@@ -521,14 +533,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            6100,
-            6100,
-            6100
+            8424,
+            8424,
+            8424
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 61000,
+        "CombatNeed": 88680,
         "Combat_Adjust_Rate": 0.0,
         "EnemyCard": "CardT01N02M07",
         "EnemyMaster": "T01N02M07W01_Master_01",
@@ -540,7 +553,7 @@
         "Showreward": "DreamChallengeBattle_T01N02M07_reward",
         "StoryLink": "",
         "UnlockCondition": {
-            "LEVEL": 32,
+            "LEVEL": 43,
             "Pass": "DreamChallengeBattle_T01N02M06"
         },
         "VictoryConditions": [
@@ -563,14 +576,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            6190,
-            6190,
-            6190
+            8493,
+            8493,
+            8493
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 61900,
+        "CombatNeed": 89400,
         "Combat_Adjust_Rate": 0.0,
         "EnemyCard": "CardT01N02M08",
         "EnemyMaster": "T01N02M08W01_Master_01",
@@ -582,7 +596,7 @@
         "Showreward": "DreamChallengeBattle_T01N02M08_reward",
         "StoryLink": "",
         "UnlockCondition": {
-            "LEVEL": 32,
+            "LEVEL": 43,
             "Pass": "DreamChallengeBattle_T01N02M07"
         },
         "VictoryConditions": [
@@ -605,14 +619,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            6447,
-            6447,
-            6447
+            8835,
+            8835,
+            8835
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 64470,
+        "CombatNeed": 93000,
         "Combat_Adjust_Rate": 0.15,
         "EnemyCard": "CardT01N02M09",
         "EnemyMaster": "T01N02M09W01_Master_01",
@@ -624,7 +639,7 @@
         "Showreward": "DreamChallengeBattle_T01N02M09_reward",
         "StoryLink": "",
         "UnlockCondition": {
-            "LEVEL": 32,
+            "LEVEL": 43,
             "Pass": "DreamChallengeBattle_T01N02M08"
         },
         "VictoryConditions": [
@@ -647,14 +662,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            7074,
-            7074,
-            7074
+            8300,
+            8300,
+            8300
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 70740,
+        "CombatNeed": 83000,
         "Combat_Adjust_Rate": 0.0,
         "EnemyCard": "CardT01N03M01",
         "EnemyMaster": "T01N03M01W01_Master_01",
@@ -666,7 +682,7 @@
         "Showreward": "DreamChallengeBattle_T01N03M01_reward",
         "StoryLink": "",
         "UnlockCondition": {
-            "LEVEL": 32,
+            "LEVEL": 43,
             "Pass": "DreamChallengeBattle_T01N02M06"
         },
         "VictoryConditions": [
@@ -689,14 +705,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            7129,
-            7129,
-            7129
+            8398,
+            8398,
+            8398
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 71290,
+        "CombatNeed": 83986,
         "Combat_Adjust_Rate": 0.0,
         "EnemyCard": "CardT01N03M02",
         "EnemyMaster": "T01N03M02W01_Master_01",
@@ -708,7 +725,7 @@
         "Showreward": "DreamChallengeBattle_T01N03M02_reward",
         "StoryLink": "",
         "UnlockCondition": {
-            "LEVEL": 32,
+            "LEVEL": 43,
             "Pass": "DreamChallengeBattle_T01N03M01"
         },
         "VictoryConditions": [
@@ -731,14 +748,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            7418,
-            7418,
-            7418
+            9318,
+            9318,
+            9318
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 74180,
+        "CombatNeed": 93186,
         "Combat_Adjust_Rate": 0.0,
         "EnemyCard": "CardT01N03M03",
         "EnemyMaster": "T01N03M03W01_Master_01",
@@ -750,7 +768,7 @@
         "Showreward": "DreamChallengeBattle_T01N03M03_reward",
         "StoryLink": "",
         "UnlockCondition": {
-            "LEVEL": 32,
+            "LEVEL": 43,
             "Pass": "DreamChallengeBattle_T01N03M02"
         },
         "VictoryConditions": [
@@ -773,14 +791,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            7473,
-            7473,
-            7473
+            9417,
+            9417,
+            9417
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 74730,
+        "CombatNeed": 94172,
         "Combat_Adjust_Rate": 0.15,
         "EnemyCard": "CardT01N03M04",
         "EnemyMaster": "T01N03M04W01_Master_01",
@@ -792,7 +811,7 @@
         "Showreward": "DreamChallengeBattle_T01N03M04_reward",
         "StoryLink": "",
         "UnlockCondition": {
-            "LEVEL": 32,
+            "LEVEL": 43,
             "Pass": "DreamChallengeBattle_T01N03M03"
         },
         "VictoryConditions": [
@@ -815,14 +834,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            7528,
-            7528,
-            7528
+            9515,
+            9515,
+            9515
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 75280,
+        "CombatNeed": 95158,
         "Combat_Adjust_Rate": 0.0,
         "EnemyCard": "CardT01N03M05",
         "EnemyMaster": "T01N03M05W01_Master_01",
@@ -834,7 +854,7 @@
         "Showreward": "DreamChallengeBattle_T01N03M05_reward",
         "StoryLink": "",
         "UnlockCondition": {
-            "LEVEL": 32,
+            "LEVEL": 43,
             "Pass": "DreamChallengeBattle_T01N03M04"
         },
         "VictoryConditions": [
@@ -857,14 +877,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            7913,
-            7913,
-            7913
+            10435,
+            10435,
+            10435
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 79130,
+        "CombatNeed": 104358,
         "Combat_Adjust_Rate": 0.0,
         "EnemyCard": "CardT01N03M06",
         "EnemyMaster": "T01N03M06W01_Master_01",
@@ -876,7 +897,7 @@
         "Showreward": "DreamChallengeBattle_T01N03M06_reward",
         "StoryLink": "",
         "UnlockCondition": {
-            "LEVEL": 32,
+            "LEVEL": 43,
             "Pass": "DreamChallengeBattle_T01N03M05"
         },
         "VictoryConditions": [
@@ -899,14 +920,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            7968,
-            7968,
-            7968
+            10534,
+            10534,
+            10534
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 79680,
+        "CombatNeed": 105344,
         "Combat_Adjust_Rate": 0.0,
         "EnemyCard": "CardT01N03M07",
         "EnemyMaster": "T01N03M07W01_Master_01",
@@ -918,7 +940,7 @@
         "Showreward": "DreamChallengeBattle_T01N03M07_reward",
         "StoryLink": "",
         "UnlockCondition": {
-            "LEVEL": 32,
+            "LEVEL": 43,
             "Pass": "DreamChallengeBattle_T01N03M06"
         },
         "VictoryConditions": [
@@ -941,14 +963,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            8023,
-            8023,
-            8023
+            10633,
+            10633,
+            10633
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 80230,
+        "CombatNeed": 106330,
         "Combat_Adjust_Rate": 0.15,
         "EnemyCard": "CardT01N03M08",
         "EnemyMaster": "T01N03M08W01_Master_01",
@@ -960,7 +983,7 @@
         "Showreward": "DreamChallengeBattle_T01N03M08_reward",
         "StoryLink": "",
         "UnlockCondition": {
-            "LEVEL": 32,
+            "LEVEL": 43,
             "Pass": "DreamChallengeBattle_T01N03M07"
         },
         "VictoryConditions": [
@@ -983,14 +1006,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            8505,
-            8505,
-            8505
+            11783,
+            11783,
+            11783
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 85050,
+        "CombatNeed": 117830,
         "Combat_Adjust_Rate": 0.0,
         "EnemyCard": "CardT01N03M09",
         "EnemyMaster": "T01N03M09W01_Master_01",
@@ -1002,7 +1026,7 @@
         "Showreward": "DreamChallengeBattle_T01N03M09_reward",
         "StoryLink": "",
         "UnlockCondition": {
-            "LEVEL": 32,
+            "LEVEL": 43,
             "Pass": "DreamChallengeBattle_T01N03M08"
         },
         "VictoryConditions": [
@@ -1025,14 +1049,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            8560,
-            8560,
-            8560
+            11881,
+            11881,
+            11881
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 85600,
+        "CombatNeed": 118816,
         "Combat_Adjust_Rate": 0.0,
         "EnemyCard": "CardT01N03M10",
         "EnemyMaster": "T01N03M10W01_Master_01",
@@ -1044,7 +1069,7 @@
         "Showreward": "DreamChallengeBattle_T01N03M10_reward",
         "StoryLink": "",
         "UnlockCondition": {
-            "LEVEL": 32,
+            "LEVEL": 43,
             "Pass": "DreamChallengeBattle_T01N03M09"
         },
         "VictoryConditions": [
@@ -1067,14 +1092,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            8615,
-            8615,
-            8615
+            11980,
+            11980,
+            11980
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 86150,
+        "CombatNeed": 119802,
         "Combat_Adjust_Rate": 0.0,
         "EnemyCard": "CardT01N03M11",
         "EnemyMaster": "T01N03M11W01_Master_01",
@@ -1086,7 +1112,7 @@
         "Showreward": "DreamChallengeBattle_T01N03M11_reward",
         "StoryLink": "",
         "UnlockCondition": {
-            "LEVEL": 32,
+            "LEVEL": 43,
             "Pass": "DreamChallengeBattle_T01N03M10"
         },
         "VictoryConditions": [
@@ -1109,14 +1135,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            9000,
-            9000,
-            9000
+            12900,
+            12900,
+            12900
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 90000,
+        "CombatNeed": 129002,
         "Combat_Adjust_Rate": 0.15,
         "EnemyCard": "CardT01N03M12",
         "EnemyMaster": "T01N03M12W01_Master_01",
@@ -1128,7 +1155,7 @@
         "Showreward": "DreamChallengeBattle_T01N03M12_reward",
         "StoryLink": "",
         "UnlockCondition": {
-            "LEVEL": 32,
+            "LEVEL": 43,
             "Pass": "DreamChallengeBattle_T01N03M11"
         },
         "VictoryConditions": [
@@ -1151,6 +1178,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             21200,
             21200,
@@ -1193,6 +1221,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             22000,
             22000,
@@ -1235,6 +1264,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             22800,
             22800,
@@ -1277,6 +1307,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             23600,
             23600,
@@ -1319,6 +1350,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             24400,
             24400,
@@ -1361,6 +1393,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             25200,
             25200,
@@ -1403,6 +1436,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             26000,
             26000,
@@ -1445,6 +1479,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             26800,
             26800,
@@ -1487,6 +1522,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             27600,
             27600,
@@ -1529,6 +1565,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             28400,
             28400,
@@ -1571,6 +1608,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             29200,
             29200,
@@ -1613,6 +1651,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             30000,
             30000,
@@ -1655,14 +1694,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            7500,
-            7500,
-            7500
+            7470,
+            7470,
+            7470
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 75000,
+        "CombatNeed": 83000,
         "Combat_Adjust_Rate": 0.0,
         "EnemyCard": "CardT02N01M01",
         "EnemyMaster": "T02N01M01W01_Master_01",
@@ -1696,14 +1736,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            7550,
-            7550,
-            7550
+            7605,
+            7605,
+            7605
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 75500,
+        "CombatNeed": 84500,
         "Combat_Adjust_Rate": 0.15,
         "EnemyCard": "CardT02N01M02",
         "EnemyMaster": "T02N01M02W01_Master_01",
@@ -1742,14 +1783,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            7587,
-            7587,
-            7587
+            7762,
+            7762,
+            7762
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 75870,
+        "CombatNeed": 86250,
         "Combat_Adjust_Rate": 0.0,
         "EnemyCard": "CardT02N01M03",
         "EnemyMaster": "T02N01M03W01_Master_01",
@@ -1784,14 +1826,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            7662,
-            7662,
-            7662
+            7987,
+            7987,
+            7987
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 76620,
+        "CombatNeed": 88750,
         "Combat_Adjust_Rate": 0.15,
         "EnemyCard": "CardT02N01M04",
         "EnemyMaster": "T02N01M04W01_Master_01",
@@ -1830,14 +1873,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            7700,
-            7700,
-            7700
+            8145,
+            8145,
+            8145
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 77000,
+        "CombatNeed": 90500,
         "Combat_Adjust_Rate": 0.0,
         "EnemyCard": "CardT02N01M05",
         "EnemyMaster": "T02N01M05W01_Master_01",
@@ -1872,14 +1916,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            7750,
-            7750,
-            7750
+            8370,
+            8370,
+            8370
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 77500,
+        "CombatNeed": 93000,
         "Combat_Adjust_Rate": 0.15,
         "EnemyCard": "CardT02N01M06",
         "EnemyMaster": "T02N01M06W01_Master_01",
@@ -1918,14 +1963,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            8085,
-            8085,
-            8085
+            7885,
+            7885,
+            7885
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 80850,
+        "CombatNeed": 83000,
         "Combat_Adjust_Rate": 0.0,
         "EnemyCard": "CardT02N02M01",
         "EnemyMaster": "T02N02M01W01_Master_01",
@@ -1960,14 +2006,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            8165,
-            8165,
-            8165
+            8046,
+            8046,
+            8046
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 81650,
+        "CombatNeed": 84700,
         "Combat_Adjust_Rate": 0.0,
         "EnemyCard": "CardT02N02M02",
         "EnemyMaster": "T02N02M02W01_Master_01",
@@ -2002,14 +2049,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            8396,
-            8396,
-            8396
+            8692,
+            8692,
+            8692
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 83960,
+        "CombatNeed": 91500,
         "Combat_Adjust_Rate": 0.15,
         "EnemyCard": "CardT02N02M03",
         "EnemyMaster": "T02N02M03W01_Master_01",
@@ -2044,14 +2092,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            8477,
-            8477,
-            8477
+            8854,
+            8854,
+            8854
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 84770,
+        "CombatNeed": 93200,
         "Combat_Adjust_Rate": 0.0,
         "EnemyCard": "CardT02N02M04",
         "EnemyMaster": "T02N02M04W01_Master_01",
@@ -2086,14 +2135,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            8558,
-            8558,
-            8558
+            9015,
+            9015,
+            9015
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 85580,
+        "CombatNeed": 94900,
         "Combat_Adjust_Rate": 0.0,
         "EnemyCard": "CardT02N02M05",
         "EnemyMaster": "T02N02M05W01_Master_01",
@@ -2128,14 +2178,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            8847,
-            8847,
-            8847
+            9823,
+            9823,
+            9823
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 88470,
+        "CombatNeed": 103400,
         "Combat_Adjust_Rate": 0.15,
         "EnemyCard": "CardT02N02M06",
         "EnemyMaster": "T02N02M06W01_Master_01",
@@ -2170,14 +2221,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            8928,
-            8928,
-            8928
+            9984,
+            9984,
+            9984
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 89280,
+        "CombatNeed": 105100,
         "Combat_Adjust_Rate": 0.0,
         "EnemyCard": "CardT02N02M07",
         "EnemyMaster": "T02N02M07W01_Master_01",
@@ -2212,14 +2264,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            9009,
-            9009,
-            9009
+            10146,
+            10146,
+            10146
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 90090,
+        "CombatNeed": 106800,
         "Combat_Adjust_Rate": 0.0,
         "EnemyCard": "CardT02N02M08",
         "EnemyMaster": "T02N02M08W01_Master_01",
@@ -2254,14 +2307,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            9240,
-            9240,
-            9240
+            11115,
+            11115,
+            11115
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 92400,
+        "CombatNeed": 117000,
         "Combat_Adjust_Rate": 0.15,
         "EnemyCard": "CardT02N02M09",
         "EnemyMaster": "T02N02M09W01_Master_01",
@@ -2296,14 +2350,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            10296,
-            10296,
-            10296
+            10500,
+            10500,
+            10500
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 102960,
+        "CombatNeed": 105000,
         "Combat_Adjust_Rate": 0.0,
         "EnemyCard": "CardT02N03M01",
         "EnemyMaster": "T02N03M01W01_Master_01",
@@ -2338,14 +2393,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            10344,
-            10344,
-            10344
+            10673,
+            10673,
+            10673
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 103440,
+        "CombatNeed": 106736,
         "Combat_Adjust_Rate": 0.0,
         "EnemyCard": "CardT02N03M02",
         "EnemyMaster": "T02N03M02W01_Master_01",
@@ -2380,14 +2436,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            10600,
-            10600,
-            10600
+            12293,
+            12293,
+            12293
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 106000,
+        "CombatNeed": 122936,
         "Combat_Adjust_Rate": 0.0,
         "EnemyCard": "CardT02N03M03",
         "EnemyMaster": "T02N03M03W01_Master_01",
@@ -2422,14 +2479,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            10649,
-            10649,
-            10649
+            12467,
+            12467,
+            12467
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 106490,
+        "CombatNeed": 124672,
         "Combat_Adjust_Rate": 0.15,
         "EnemyCard": "CardT02N03M04",
         "EnemyMaster": "T02N03M04W01_Master_01",
@@ -2464,14 +2522,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            10697,
-            10697,
-            10697
+            12640,
+            12640,
+            12640
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 106970,
+        "CombatNeed": 126408,
         "Combat_Adjust_Rate": 0.0,
         "EnemyCard": "CardT02N03M05",
         "EnemyMaster": "T02N03M05W01_Master_01",
@@ -2506,14 +2565,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            11038,
-            11038,
-            11038
+            14260,
+            14260,
+            14260
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 110380,
+        "CombatNeed": 142608,
         "Combat_Adjust_Rate": 0.0,
         "EnemyCard": "CardT02N03M06",
         "EnemyMaster": "T02N03M06W01_Master_01",
@@ -2548,14 +2608,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            11087,
-            11087,
-            11087
+            14434,
+            14434,
+            14434
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 110870,
+        "CombatNeed": 144344,
         "Combat_Adjust_Rate": 0.0,
         "EnemyCard": "CardT02N03M07",
         "EnemyMaster": "T02N03M07W01_Master_01",
@@ -2590,14 +2651,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            11136,
-            11136,
-            11136
+            14608,
+            14608,
+            14608
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 111360,
+        "CombatNeed": 146080,
         "Combat_Adjust_Rate": 0.15,
         "EnemyCard": "CardT02N03M08",
         "EnemyMaster": "T02N03M08W01_Master_01",
@@ -2632,14 +2694,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            11562,
-            11562,
-            11562
+            16633,
+            16633,
+            16633
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 115620,
+        "CombatNeed": 166330,
         "Combat_Adjust_Rate": 0.0,
         "EnemyCard": "CardT02N03M09",
         "EnemyMaster": "T02N03M09W01_Master_01",
@@ -2674,14 +2737,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            11610,
-            11610,
-            11610
+            16806,
+            16806,
+            16806
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 116100,
+        "CombatNeed": 168066,
         "Combat_Adjust_Rate": 0.0,
         "EnemyCard": "CardT02N03M10",
         "EnemyMaster": "T02N03M10W01_Master_01",
@@ -2716,14 +2780,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            11659,
-            11659,
-            11659
+            16980,
+            16980,
+            16980
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 116590,
+        "CombatNeed": 169802,
         "Combat_Adjust_Rate": 0.0,
         "EnemyCard": "CardT02N03M11",
         "EnemyMaster": "T02N03M11W01_Master_01",
@@ -2758,14 +2823,15 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
-            12000,
-            12000,
-            12000
+            18600,
+            18600,
+            18600
         ],
         "BlockBattleConfig": "DreamChallengeBattle_N1",
         "BossRound": 1,
-        "CombatNeed": 120000,
+        "CombatNeed": 186002,
         "Combat_Adjust_Rate": 0.15,
         "EnemyCard": "CardT02N03M12",
         "EnemyMaster": "T02N03M12W01_Master_01",
@@ -2800,6 +2866,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             31000,
             31000,
@@ -2842,6 +2909,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             32000,
             32000,
@@ -2884,6 +2952,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             33000,
             33000,
@@ -2926,6 +2995,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             34000,
             34000,
@@ -2968,6 +3038,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             35000,
             35000,
@@ -3010,6 +3081,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             36000,
             36000,
@@ -3052,6 +3124,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             37000,
             37000,
@@ -3094,6 +3167,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             38000,
             38000,
@@ -3136,6 +3210,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             39000,
             39000,
@@ -3178,6 +3253,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             40000,
             40000,
@@ -3220,6 +3296,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             41000,
             41000,
@@ -3262,6 +3339,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             42000,
             42000,
@@ -3304,6 +3382,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             43200,
             43200,
@@ -3345,6 +3424,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             43416,
             43416,
@@ -3386,6 +3466,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             43560,
             43560,
@@ -3427,6 +3508,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             43848,
             43848,
@@ -3468,6 +3550,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             43992,
             43992,
@@ -3509,6 +3592,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             44280,
             44280,
@@ -3550,6 +3634,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             46436,
             46436,
@@ -3591,6 +3676,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             46569,
             46569,
@@ -3632,6 +3718,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             47071,
             47071,
@@ -3673,6 +3760,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             47205,
             47205,
@@ -3714,6 +3802,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             47338,
             47338,
@@ -3755,6 +3844,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             48007,
             48007,
@@ -3796,6 +3886,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             46436,
             46436,
@@ -3837,6 +3928,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             46569,
             46569,
@@ -3878,6 +3970,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             47071,
             47071,
@@ -3919,6 +4012,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             47205,
             47205,
@@ -3960,6 +4054,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             47338,
             47338,
@@ -4001,6 +4096,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             48007,
             48007,
@@ -4042,6 +4138,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             48141,
             48141,
@@ -4083,6 +4180,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             48275,
             48275,
@@ -4124,6 +4222,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             49278,
             49278,
@@ -4165,6 +4264,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             55883,
             55883,
@@ -4206,6 +4306,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             56039,
             56039,
@@ -4247,6 +4348,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             57672,
             57672,
@@ -4288,6 +4390,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             53356,
             53356,
@@ -4329,6 +4432,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             53512,
             53512,
@@ -4370,6 +4474,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             54328,
             54328,
@@ -4411,6 +4516,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             54484,
             54484,
@@ -4452,6 +4558,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             54639,
             54639,
@@ -4493,6 +4600,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             55728,
             55728,
@@ -4534,6 +4642,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             55883,
             55883,
@@ -4575,6 +4684,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             56039,
             56039,
@@ -4616,6 +4726,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             57672,
             57672,
@@ -4657,6 +4768,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             57827,
             57827,
@@ -4698,6 +4810,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             57983,
             57983,
@@ -4739,6 +4852,7 @@
             ""
         ],
         "Background": "Battle_Scene_20",
+        "BattleDesc": "",
         "BattleFactor": [
             58799,
             58799,

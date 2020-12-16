@@ -3450,6 +3450,10 @@ function IconFactory:createRactHeadImage(info)
 			-40,
 			10
 		}
+
+		if playerHeadImgConfig.HeadMove then
+			offset = playerHeadImgConfig.HeadMove
+		end
 	end
 
 	local oldIcon = icon

@@ -55,6 +55,13 @@
         "Type": "Activity",
         "TypeId": "DrawCard_W3_2UP_Activity1"
     },
+    "ActivityBanner107": {
+        "Img": "drawcard_banner_BErYLMGZhu.png",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_BErYLMGZhu",
+        "Sort": 107,
+        "Type": "Activity",
+        "TypeId": "DrawCard_W4_2UP_Activity1"
+    },
     "ActivityBanner11": {
         "Img": "drawcard_banner_BBLMa.png",
         "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_5",
@@ -432,5 +439,12 @@
         "Sort": 1000,
         "Type": "Activity",
         "TypeId": "ActivityBlock_Summer"
+    },
+    "ActivityBannerTXZ": {
+        "Img": "Activity_banner_txz.png",
+        "Link": "view://PassMainView",
+        "Sort": 20,
+        "Type": "Activity",
+        "TypeId": "ActivityBattlePass_20201216"
     }
 }

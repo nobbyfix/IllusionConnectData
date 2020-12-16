@@ -676,10 +676,6 @@ function PassSystem:getResourceBannerIds(type)
 	end
 
 	if type == 3 then
-		resourceBanner = ConfigReader:getRecordById("Activity", self._subActivityID).ActivityConfig.ResourcesBanner
-	end
-
-	if type == 4 then
 		resourceBanner = self._currentPassShopActivity:getActivityConfig().ResourcesBanner
 	end
 

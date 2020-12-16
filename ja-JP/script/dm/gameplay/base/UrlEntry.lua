@@ -249,6 +249,11 @@ local kExtResponseMap = {
 		instanceName = "BuildingSystem",
 		funcName = "tryEnterGetResView",
 		entry = ViewAreaEntry:new("BuildingGetResView")
+	},
+	PassMainView = {
+		instanceName = "PassSystem",
+		funcName = "tryEnter",
+		entry = ViewAreaEntry:new("PassMainView")
 	}
 }
 

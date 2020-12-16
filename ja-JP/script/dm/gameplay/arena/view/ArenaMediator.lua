@@ -351,7 +351,7 @@ function ArenaMediator:initWidgetInfo()
 	richText:addTo(seasonInfo:getParent())
 
 	local text = Strings:get(seasonSkillData.Desc, {
-		fontSize = 24,
+		fontSize = 20,
 		fontName = TTF_FONT_FZYH_R
 	})
 

@@ -252,6 +252,15 @@ function DreamChallengeDetailMediator:refreshView()
 
 			node:setVisible(false)
 
+			local condText = node:getChildByName("cond")
+
+			if not node.condRt then
+				node.condRt = ccui.RichText:createWithXML("", {})
+
+				node.condRt:setAnchorPoint(0, 0.5)
+				node.condRt:addTo(node):posite(condText:getPosition())
+			end
+
 			condNodes[i] = node
 		end
 
@@ -262,9 +271,6 @@ function DreamChallengeDetailMediator:refreshView()
 
 			local condText = node:getChildByName("cond")
 			local nameText = node:getChildByName("name")
-
-			condText:setString(Strings:get("DreamChallenge_Point_Cond_Pass"))
-
 			local condSize = condText:getContentSize()
 
 			nameText:setPositionX(condSize.width + condText:getPositionX() + 10)
@@ -292,8 +298,17 @@ function DreamChallengeDetailMediator:refreshView()
 				end
 			end
 
-			nameText:setString("[" .. pointName .. "-" .. battleName .. "]")
+			condText:setString("")
+			nameText:setString("")
 			nameText:setTextColor(isPass and cc.c3b(6, 237, 0) or cc.c3b(255, 120, 0))
+
+			local str = Strings:get("DreamChallenge_Point_Cond_Pass", {
+				fontName = TTF_FONT_FZYH_M,
+				name = "[" .. pointName .. "-" .. battleName .. "]",
+				color = isPass and "#06ed00" or "#ff7800"
+			})
+
+			node.condRt:setString(str)
 
 			condIndex = condIndex + 1
 		end
@@ -308,13 +323,21 @@ function DreamChallengeDetailMediator:refreshView()
 			local playerInfo = self._developSystem:getPlayer()
 			local isPass = pointLockCond.LEVEL <= playerInfo:getLevel()
 
-			condText:setString(Strings:get("DreamChallenge_Point_Cond_Level"))
-			nameText:setString(tostring(pointLockCond.LEVEL))
+			condText:setString("")
+			nameText:setString("")
 
 			local condSize = condText:getContentSize()
 
 			nameText:setPositionX(condSize.width + condText:getPositionX() + 10)
 			nameText:setTextColor(isPass and cc.c3b(6, 237, 0) or cc.c3b(255, 120, 0))
+
+			local str = Strings:get("DreamChallenge_Point_Cond_Level", {
+				fontName = TTF_FONT_FZYH_M,
+				level = pointLockCond.LEVEL,
+				color = isPass and "#06ed00" or "#ff7800"
+			})
+
+			node.condRt:setString(str)
 
 			condIndex = condIndex + 1
 		end
@@ -326,9 +349,6 @@ function DreamChallengeDetailMediator:refreshView()
 
 			local condText = node:getChildByName("cond")
 			local nameText = node:getChildByName("name")
-
-			condText:setString(Strings:get("DreamChallenge_Point_Cond_Hero"))
-
 			local condSize = condText:getContentSize()
 
 			nameText:setPositionX(condSize.width + condText:getPositionX() + 10)
@@ -345,8 +365,17 @@ function DreamChallengeDetailMediator:refreshView()
 				end
 			end
 
-			nameText:setString(nameStr)
+			condText:setString("")
+			nameText:setString("")
 			nameText:setTextColor(isPass and cc.c3b(6, 237, 0) or cc.c3b(255, 120, 0))
+
+			local str = Strings:get("DreamChallenge_Point_Cond_Hero", {
+				fontName = TTF_FONT_FZYH_M,
+				name = nameStr,
+				color = isPass and "#06ed00" or "#ff7800"
+			})
+
+			node.condRt:setString(str)
 
 			condIndex = condIndex + 1
 		end

@@ -23,13 +23,16 @@
             "Master_XueZhan",
             "Master_LieSha"
         ],
+        "MissionPicType": 1,
         "Name": "DreamChallengePoint_T01N01_Name",
         "Num": 1,
         "Pic": "mjt_z_mjjcs_bg",
+        "PointBackground": "mjt_z_yhzx1_bg",
+        "PointDesc": "DreamChallengePoint_T01_PointDesc",
         "ShortDesc": "DC_ShortDesc_T01N01",
         "Show": "DreamChallenge_T01N01",
         "ShowCondition": {
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "StarsAttrEffect": "DC_5star_buff",
         "StoryLink": {
@@ -40,7 +43,7 @@
         "TabPic": "mjt_z_butten_x1",
         "Type": 1,
         "UnlockCondition": {
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "fatigue": 4,
         "screen": {
@@ -87,20 +90,23 @@
             "Master_XueZhan",
             "Master_LieSha"
         ],
+        "MissionPicType": 1,
         "Name": "DreamChallengePoint_T01N02_Name",
         "Num": 2,
         "Pic": "mjt_z_mjjcs_bg",
+        "PointBackground": "mjt_z_yhzx1_bg",
+        "PointDesc": "DreamChallengePoint_T01_PointDesc",
         "ShortDesc": "DC_ShortDesc_T01N02",
         "Show": "DreamChallenge_T01N02",
         "ShowCondition": {
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "StarsAttrEffect": "DC_5star_buff",
         "StoryLink": "",
         "TabPic": "mjt_z_butten_x2",
         "Type": 1,
         "UnlockCondition": {
-            "LEVEL": 32,
+            "LEVEL": 43,
             "Pass": "DreamChallengeBattle_T01N01M04"
         },
         "fatigue": 4,
@@ -151,20 +157,23 @@
             "Master_XueZhan",
             "Master_LieSha"
         ],
+        "MissionPicType": 1,
         "Name": "DreamChallengePoint_T01N03_Name",
         "Num": 3,
         "Pic": "mjt_z_mjjcs_bg",
+        "PointBackground": "mjt_z_yhzx1_bg",
+        "PointDesc": "DreamChallengePoint_T01_PointDesc",
         "ShortDesc": "DC_ShortDesc_T01N03",
         "Show": "DreamChallenge_T01N03",
         "ShowCondition": {
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "StarsAttrEffect": "DC_5star_buff",
         "StoryLink": "",
         "TabPic": "mjt_z_butten_x3",
         "Type": 1,
         "UnlockCondition": {
-            "LEVEL": 32,
+            "LEVEL": 43,
             "Pass": "DreamChallengeBattle_T01N02M06"
         },
         "fatigue": 4,
@@ -215,21 +224,24 @@
             "Master_XueZhan",
             "Master_LieSha"
         ],
+        "MissionPicType": "",
         "Name": "DreamChallengePoint_T01N04_Name",
         "Num": 4,
         "Pic": "mjt_z_mjjcs_bg",
+        "PointBackground": "",
+        "PointDesc": "",
         "ShortDesc": "DC_ShortDesc_T01N04",
         "Show": "DreamChallenge_T01N04",
         "ShowCondition": {
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "StarsAttrEffect": "DC_5star_buff",
         "StoryLink": "",
         "TabPic": "mjt_z_butten_x4",
         "Type": 1,
         "UnlockCondition": {
-            "LEVEL": 32,
-            "Pass": "DreamChallengeBattle_T01N03M012"
+            "LEVEL": 43,
+            "Pass": "DreamChallengeBattle_T01N03M12"
         },
         "fatigue": 4,
         "screen": {
@@ -279,13 +291,16 @@
             "Master_XueZhan",
             "Master_BiLei"
         ],
+        "MissionPicType": 2,
         "Name": "DreamChallengePoint_T02N01_Name",
         "Num": 1,
         "Pic": "mjt_z_mjjcx_bg",
+        "PointBackground": "mjt_z_yhzx2_bg",
+        "PointDesc": "DreamChallengePoint_T01_PointDesc",
         "ShortDesc": "DC_ShortDesc_T02N01",
         "Show": "DreamChallenge_T02N01",
         "ShowCondition": {
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "StarsAttrEffect": "DC_5star_buff",
         "StoryLink": {
@@ -352,13 +367,16 @@
             "Master_XueZhan",
             "Master_BiLei"
         ],
+        "MissionPicType": 2,
         "Name": "DreamChallengePoint_T02N02_Name",
         "Num": 2,
         "Pic": "mjt_z_mjjcx_bg",
+        "PointBackground": "mjt_z_yhzx2_bg",
+        "PointDesc": "DreamChallengePoint_T01_PointDesc",
         "ShortDesc": "DC_ShortDesc_T02N02",
         "Show": "DreamChallenge_T02N02",
         "ShowCondition": {
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "StarsAttrEffect": "DC_5star_buff",
         "StoryLink": "",
@@ -422,13 +440,16 @@
             "Master_XueZhan",
             "Master_BiLei"
         ],
+        "MissionPicType": 2,
         "Name": "DreamChallengePoint_T02N03_Name",
         "Num": 3,
         "Pic": "mjt_z_mjjcx_bg",
+        "PointBackground": "mjt_z_yhzx2_bg",
+        "PointDesc": "DreamChallengePoint_T01_PointDesc",
         "ShortDesc": "DC_ShortDesc_T02N03",
         "Show": "DreamChallenge_T02N03",
         "ShowCondition": {
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "StarsAttrEffect": "DC_5star_buff",
         "StoryLink": "",
@@ -492,13 +513,16 @@
             "Master_XueZhan",
             "Master_BiLei"
         ],
+        "MissionPicType": "",
         "Name": "DreamChallengePoint_T02N04_Name",
         "Num": 4,
         "Pic": "mjt_z_mjjcx_bg",
+        "PointBackground": "",
+        "PointDesc": "",
         "ShortDesc": "DC_ShortDesc_T02N04",
         "Show": "DreamChallenge_T02N04",
         "ShowCondition": {
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "StarsAttrEffect": "DC_5star_buff",
         "StoryLink": "",
@@ -562,9 +586,12 @@
             "Master_XueZhan",
             "Master_BiLei"
         ],
+        "MissionPicType": "",
         "Name": "DreamChallengePoint_T03N01_Name",
         "Num": 1,
         "Pic": "banner_guiangagotu",
+        "PointBackground": "",
+        "PointDesc": "",
         "ShortDesc": "DC_ShortDesc_T03N01",
         "Show": "DreamChallenge_T01N01",
         "ShowCondition": {
@@ -639,9 +666,12 @@
             "Master_BiLei",
             "Master_LieSha"
         ],
+        "MissionPicType": "",
         "Name": "DreamChallengePoint_T03N02_Name",
         "Num": 2,
         "Pic": "banner_guiangagotu",
+        "PointBackground": "",
+        "PointDesc": "",
         "ShortDesc": "DC_ShortDesc_T03N02",
         "Show": "DreamChallenge_T01N02",
         "ShowCondition": {
@@ -710,9 +740,12 @@
             "Master_BiLei",
             "Master_LieSha"
         ],
+        "MissionPicType": "",
         "Name": "DreamChallengePoint_T03N03_Name",
         "Num": 3,
         "Pic": "banner_guiangagotu",
+        "PointBackground": "",
+        "PointDesc": "",
         "ShortDesc": "DC_ShortDesc_T03N03",
         "Show": "DreamChallenge_T01N03",
         "ShowCondition": {
