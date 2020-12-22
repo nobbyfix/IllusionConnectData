@@ -2000,6 +2000,44 @@
     },
     "ActivityBlock_Holiday_ExtraNormal": {
         "ActivityConfig": {
+            "Reward": "Holiday_Support_2",
+            "block": [
+                "Normal",
+                "Elite"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 94,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2020-12-24 05:00:00",
+            "start": [
+                "2020-12-17 05:00:00",
+                "2020-12-24 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "ExtraReward",
+        "UI": "ExtraRewardBoard",
+        "Version": ""
+    },
+    "ActivityBlock_Holiday_ExtraNormal2": {
+        "ActivityConfig": {
             "Reward": "ActivityBlock_Holiday_ExtraNormal_R",
             "block": [
                 "Normal",
