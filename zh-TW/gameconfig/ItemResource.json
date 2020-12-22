@@ -8196,6 +8196,27 @@
         "Text": "Source_ZhaungBeiSuiPian",
         "URL": "view://shopView&viewType=push&shopId=Shop_6"
     },
+    "IR_Exp_1": {
+        "Isturn": 1,
+        "ResourceText": "Resource_DianJingYan",
+        "ResourceType": "",
+        "Text": "Source_Exp_1",
+        "URL": "view://NewCurrencyBuyView&viewType=popup&buyType=BuyExp"
+    },
+    "IR_Exp_ExpPoint": {
+        "Isturn": 1,
+        "ResourceText": "Resource_ExpPoint",
+        "ResourceType": "",
+        "Text": "",
+        "URL": "view://SpStageMainViewWithTimes&viewType=popup&spType=exp&subView=SpStageDftView"
+    },
+    "IR_Exp_Pay": {
+        "Isturn": 1,
+        "ResourceText": "Resource_PayForExp",
+        "ResourceType": "",
+        "Text": "",
+        "URL": "view://shopView&viewType=push&shopId=Shop_Reset&packageId="
+    },
     "IR_Gold_1": {
         "Isturn": 1,
         "ResourceText": "Resource_DianJinShou",

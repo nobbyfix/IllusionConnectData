@@ -8984,6 +8984,39 @@
         "UI": "",
         "Version": ""
     },
+    "DrawCard_YeFeiUp_Activity": {
+        "ActivityConfig": {
+            "DRAW": "DrawCard_YeFeiUp",
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_YeFeiUp",
+            "VANISH": 0
+        },
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 100005,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "PLAYER_REGISTER",
+        "TimeFactor": {
+            "end": 21,
+            "start": 15
+        },
+        "Title": "DrawCard_YeFeiUp_Activity_Name",
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "Version": ""
+    },
     "DrawCard_ZZBBWeiKTSJKe_Activity": {
         "ActivityConfig": {
             "DRAW": "DrawCard_ZZBBWeiKTSJKe",

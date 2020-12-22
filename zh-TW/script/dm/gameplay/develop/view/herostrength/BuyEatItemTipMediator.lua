@@ -405,7 +405,11 @@ function BuyEatItemTipMediator:createCell(cell, index)
 	blockPanel:setVisible(true)
 
 	local titleText = cell:getChildByName("Text_name")
+	local render = titleText:getVirtualRenderer()
 
+	render:setAlignment(cc.TEXT_ALIGNMENT_LEFT, cc.TEXT_ALIGNMENT_CENTER)
+	render:setOverflow(cc.LabelOverflow.SHRINK)
+	render:setDimensions(100, 36)
 	titleText:setVisible(true)
 	titleText:setString(data.title)
 

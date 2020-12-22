@@ -37,6 +37,7 @@ function ActivityBlockFudaiMediator:onRegister()
 	super.onRegister(self)
 	self:mapButtonHandlersClick(kBtnHandlers)
 	self:mapEventListener(self:getEventDispatcher(), EVT_ACTIVITYFUDAI_BUYDONE, self, self.refreshButtonShow)
+	self:mapEventListener(self:getEventDispatcher(), EVT_BUY_PACKAGE_SUCC, self, self.buySucceedDone)
 end
 
 function ActivityBlockFudaiMediator:enterWithData(data)
@@ -52,8 +53,7 @@ function ActivityBlockFudaiMediator:enterWithData(data)
 	assert(self._activityFudai, "getActivityTpurchase not find")
 
 	self._purchaseId = self._activityFudai:getTimePurchaseId()
-	local packageList = self._shopSystem:getPackageList(ShopSpecialId.KLuckyBag)
-	self._packageShop = packageList[1]
+	self._packageShop = self._shopSystem:getPackageById(self._purchaseId)
 	self._packageShopConfig = self._activityFudai:getShopPackageConfig()
 	self._isFree = self._packageShopConfig:getIsFree()
 	self._startTime = self._packageShopConfig:getStartMills()
@@ -227,11 +227,21 @@ function ActivityBlockFudaiMediator:refreshButtonShow()
 			self._buyBtn:setGray(true)
 			self._priceText:setString(Strings:get("NewYear_LuckyBag_UI11"))
 			self._lineImage:setVisible(false)
+		elseif not self._packageShop:getCanBuy() then
+			self._buyBtn:setGray(true)
+			self._priceText:setString(Strings:get("NewYear_LuckyBag_UI11"))
+			self._lineImage:setVisible(false)
 		end
 	else
 		self._buyBtn:setGray(true)
 		self._timeshowText:setString(Strings:get("NewYear_LuckyBag_UI10"))
 	end
+end
+
+function ActivityBlockFudaiMediator:buySucceedDone()
+	self._packageShop = self._shopSystem:getPackageById(self._purchaseId)
+
+	self:refreshButtonShow()
 end
 
 function ActivityBlockFudaiMediator:startAnim()
@@ -335,11 +345,8 @@ function ActivityBlockFudaiMediator:onBuyClicked()
 	}
 
 	self._activitySystem:requestDoChildActivity(self._activity:getId(), activityId, param, function (response)
-		if checkDependInstance(self) then
-			local packageList = self._shopSystem:getPackageList(ShopSpecialId.KLuckyBag)
-			self._packageShop = packageList[1]
+		local payOffSystem = self:getInjector():getInstance(PayOffSystem)
 
-			self:refreshButtonShow()
-		end
+		payOffSystem:payOffToSdk(response.data)
 	end)
 end

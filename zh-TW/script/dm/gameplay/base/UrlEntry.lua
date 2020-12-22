@@ -181,6 +181,12 @@ local kExtResponseMap = {
 		funcName = "tryEnter",
 		entry = ViewAreaEntry:new("SpStageMainView")
 	},
+	SpStageMainViewWithTimes = {
+		funcName = "tryEnter",
+		instanceName = "SpStageSystem",
+		funcCheck = "checkEnabledWithTimes",
+		entry = ViewAreaEntry:new("SpStageMainViewWithTimes")
+	},
 	CommonStageMainView = {
 		instanceName = "StageSystem",
 		funcName = "tryEnter",

@@ -389,7 +389,11 @@ function SourceMediator:createCell(cell, index)
 	goBtn:setVisible(false)
 
 	local titleText = cell:getChildByName("Text_name")
+	local render = titleText:getVirtualRenderer()
 
+	render:setAlignment(cc.TEXT_ALIGNMENT_LEFT, cc.TEXT_ALIGNMENT_CENTER)
+	render:setOverflow(cc.LabelOverflow.SHRINK)
+	render:setDimensions(100, 36)
 	titleText:setString(Strings:get(sourceConfig.ResourceText))
 
 	local url = sourceConfig.URL

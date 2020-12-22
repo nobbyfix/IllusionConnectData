@@ -720,6 +720,10 @@ function ShopSystem:getFreePackage(packageType)
 	return freePackage
 end
 
+function ShopSystem:getPackageById(packageId)
+	return self._packageList[packageId]
+end
+
 function ShopSystem:getPackageList(packageType)
 	local packageType = packageType and packageType or nil
 	local buyPackItems = self._developSystem:getPlayer():getBuyPackItems()

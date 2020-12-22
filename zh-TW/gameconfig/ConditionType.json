@@ -34,6 +34,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_AddFriend_Desc"
     },
+    "Condi_AhalloweenExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_HalloweenExchange_4.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_AhalloweenExchangeAchieve_Desc"
+    },
     "Condi_AhalloweenStageStarSum": {
         "AchieveType1": "CUSTOM",
         "AchieveType2": "",
