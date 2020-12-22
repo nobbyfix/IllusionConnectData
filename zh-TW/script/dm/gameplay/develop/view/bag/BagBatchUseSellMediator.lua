@@ -15,12 +15,14 @@ local kBtnHandlers = {
 		func = "onClickMax"
 	}
 }
+local waitingClose = false
 
 function BagBatchUseSellMediator:initialize()
 	super.initialize(self)
 end
 
 function BagBatchUseSellMediator:dispose()
+	self:closeChangeScheduler()
 	super.dispose(self)
 end
 
@@ -58,6 +60,7 @@ function BagBatchUseSellMediator:enterWithData(data)
 	self._entryId = data.entryId
 	self._entry = self._bagSystem:getEntryById(self._entryId)
 	self._isAdd = true
+	waitingClose = false
 
 	self:setupUseBaseNum()
 	self:setupView(data)
@@ -196,12 +199,16 @@ end
 
 function BagBatchUseSellMediator:onClickSell(sender, eventType)
 	if self._minCount <= self._curCount and self._curCount <= self._maxCount then
+		waitingClose = true
+
 		self._bagSystem:requestSellItem(self._entryId, self._curCount)
 	end
 end
 
 function BagBatchUseSellMediator:onSellSucc(event)
 	if self._selectType == SelectItemType.kForSell then
+		waitingClose = false
+
 		self:closeChangeScheduler()
 		self:close()
 		AudioEngine:getInstance():playEffect("Se_Alert_Sell", false)
@@ -227,7 +234,11 @@ function BagBatchUseSellMediator:onClickUse(sender, eventType)
 	end
 
 	if item:getSubType() == ItemTypes.K_HEROSTONE_F then
+		waitingClose = true
+
 		self._bagSystem:requestHeroStoneCompose(item:getId(), self._curCount, function (data)
+			waitingClose = false
+
 			self._bagSystem:showNewHero(data, 1)
 			self:closeChangeScheduler()
 			self:close()
@@ -252,6 +263,10 @@ function BagBatchUseSellMediator:onBackClicked(sender, eventType)
 end
 
 function BagBatchUseSellMediator:onChangeClicked(sender, eventType)
+	if waitingClose then
+		return
+	end
+
 	if eventType == ccui.TouchEventType.began then
 		self._isAdd = sender == self._addBtn
 
@@ -274,8 +289,6 @@ function BagBatchUseSellMediator:update()
 
 	if self._maxCount <= self._curCount then
 		self._curCount = self._maxCount
-
-		self:closeChangeScheduler()
 	end
 
 	self:updateView()
@@ -287,7 +300,7 @@ function BagBatchUseSellMediator:createChangeScheduler()
 	if self._changeScheduler == nil then
 		self._changeScheduler = LuaScheduler:getInstance():schedule(function ()
 			self:update()
-		end, 0.1, true)
+		end, 0.2, true)
 	end
 end
 

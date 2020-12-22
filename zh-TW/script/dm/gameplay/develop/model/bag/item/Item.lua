@@ -136,7 +136,7 @@ function Item:getIsShine()
 end
 
 function Item:getIsShineInBag()
-	return false
+	return self._prototype:getIsShineInBag()
 end
 
 function Item:getRarity()

@@ -297,6 +297,35 @@
         "Type": "Summoned",
         "UniqueSkill": ""
     },
+    "SummonedPDLa": {
+        "Cost": 2,
+        "CounterSkill": "",
+        "DeathSkill": "Skill_Summoned_PDLa_Box_Passive_Death",
+        "DoubleSkill": "",
+        "Flags": [
+            "SUMMONED"
+        ],
+        "KillRage": 0,
+        "MasterRage": 10,
+        "NormalSkill": "Skill_Summoned_PDLa_Box_Normal",
+        "PassiveSkill": [],
+        "ProudSkill": "",
+        "RageBase": 0,
+        "RageRules": {
+            "a1": [
+                0,
+                0
+            ],
+            "a2": 0,
+            "a3": 0,
+            "a4": 0
+        },
+        "RoleModel": "Model_PDLa_MHe",
+        "SkillRate": 0.0,
+        "SummonSurface": "",
+        "Type": "Summoned",
+        "UniqueSkill": ""
+    },
     "SummonedPNCao_HuaHaiJi": {
         "Cost": 2,
         "CounterSkill": "",
@@ -382,7 +411,9 @@
         },
         "RoleModel": "Model_SGHQShou_Lucy",
         "SkillRate": 0.5,
-        "SummonSurface": [],
+        "SummonSurface": [
+            "Model_SGHQShou_sd_Lucy"
+        ],
         "Type": "Summoned",
         "UniqueSkill": ""
     },
@@ -413,7 +444,9 @@
         },
         "RoleModel": "Model_SGHQShou_Vanessa",
         "SkillRate": 0.5,
-        "SummonSurface": [],
+        "SummonSurface": [
+            "Model_SGHQShou_sd_Vanessa"
+        ],
         "Type": "Summoned",
         "UniqueSkill": ""
     },

@@ -128,6 +128,42 @@ function ShopRecommendMediator:refreshView()
 	local path = "asset/ui/shop/" .. self._data.BackGroundImg .. ".jpg" or "sd_tj_ggt.png"
 
 	self._bgImage:loadTexture(path)
+
+	local pid = self._data.PackageId[1]
+
+	if pid == KMonthCardType.KMonthCard then
+		local frameData = self._shopSystem:getMonthCardHeadFrame()
+
+		if frameData then
+			if self._bgImage.frameData and frameData.code ~= self._bgImage.frameData.code and self._bgImage.frameIcon then
+				self._bgImage.frameIcon:removeFromParent()
+
+				self._bgImage.frameIcon = nil
+			end
+
+			if not self._bgImage.frameIcon then
+				local icon = IconFactory:createRewardIcon(frameData, {
+					isWidget = true,
+					showAmount = false
+				})
+
+				icon:setAnchorPoint(cc.p(0.5, 0.5))
+				icon:addTo(self._bgImage):posite(680, 445):setScale(0.63)
+				IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), frameData, {
+					needDelay = true
+				})
+				icon:setSwallowTouches(true)
+
+				self._bgImage.frameData = frameData
+				self._bgImage.frameIcon = icon
+			end
+
+			self._bgImage.frameIcon:setVisible(true)
+		end
+	elseif self._bgImage.frameIcon then
+		self._bgImage.frameIcon:setVisible(false)
+	end
+
 	self:setTalkView()
 end
 

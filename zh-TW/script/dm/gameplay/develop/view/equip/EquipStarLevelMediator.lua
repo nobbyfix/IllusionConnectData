@@ -135,7 +135,7 @@ function EquipStarLevelMediator:initData(data)
 		items = {},
 		equips = {}
 	}
-	self._curExp = 0
+	self._curExp = self._equipData:getOverflowStarExp()
 	self._eatExp = 0
 	self._addExp = 0
 	self._isAdd = true
@@ -431,8 +431,10 @@ function EquipStarLevelMediator:createTeamCell(cell, index)
 
 					local str = cc.Label:createWithTTF(Strings:get("Equip_UI71"), TTF_FONT_FZYH_R, 16)
 
+					str:setOverflow(cc.LabelOverflow.SHRINK)
+					str:setDimensions(image:getContentSize().width * 0.7, image:getContentSize().height * 0.8)
 					GameStyle:setCommonOutlineEffect(str)
-					str:addTo(itemPanel):posite(27, 90)
+					str:addTo(itemPanel):posite(30, 83)
 					expLabel:setColor(cc.c3b(191, 241, 26))
 				else
 					expLabel:setColor(cc.c3b(255, 255, 255))
@@ -812,7 +814,7 @@ end
 
 function EquipStarLevelMediator:resetTableView()
 	self._eatExp = 0
-	self._curExp = 0
+	self._curExp = self._equipData:getOverflowStarExp()
 
 	for i, value in pairs(self._consumeTemp.items) do
 		self._curExp = self._curExp + value.eatCount * value.exp

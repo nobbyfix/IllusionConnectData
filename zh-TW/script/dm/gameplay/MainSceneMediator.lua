@@ -103,6 +103,15 @@ local muiscCfg = {
 	},
 	ClubBossBattleView = {
 		noAutoPlay = true
+	},
+	DartsView = {
+		noAutoPlay = true
+	},
+	ActivityBlockHolidayView = {
+		id = "Mus_Story_NewYear"
+	},
+	ActivitySupportHolidayView = {
+		id = "Mus_Redwhite"
 	}
 }
 local UINavigateHistory = {}

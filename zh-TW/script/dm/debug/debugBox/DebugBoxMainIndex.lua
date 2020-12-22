@@ -13,7 +13,9 @@ DebugBoxMainIndex = {
 					"上传战斗记录",
 					"上传战斗记录文件",
 					"播放战斗校验客户端Rep",
-					"播放战斗校验服务器Rep"
+					"播放战斗校验服务器Rep",
+					"自定义战斗数据",
+					"自动闯关"
 				}
 			},
 			{
@@ -43,13 +45,15 @@ DebugBoxMainIndex = {
 				{
 					"开启/关闭战斗开始loading",
 					"设置血量增加倍数",
-					"开启/关闭打印实时属性"
+					"开启/关闭打印实时属性",
+					"开启/关闭顺序出牌"
 				}
 			},
 			{
 				"数值表",
 				{
-					"数值表查询"
+					"数值表查询",
+					"Translate表查询"
 				}
 			},
 			{
@@ -65,6 +69,12 @@ DebugBoxMainIndex = {
 					"打开测试面板",
 					"修改服务器时间",
 					"调cross和游戏服时间"
+				}
+			},
+			{
+				"无限充值",
+				{
+					"无限充值开启"
 				}
 			},
 			{
@@ -85,6 +95,15 @@ DebugBoxMainIndex = {
 					"增加英魂",
 					"一键无敌",
 					"添加皮肤"
+				}
+			},
+			{
+				"背包",
+				{
+					"加道具",
+					"加所有道具",
+					"清空背包",
+					"加某款皮肤"
 				}
 			},
 			{
@@ -182,11 +201,9 @@ DebugBoxMainIndex = {
 				}
 			},
 			{
-				"背包",
+				"活动",
 				{
-					"加道具",
-					"加所有道具",
-					"清空背包"
+					"梦幻回馈"
 				}
 			},
 			{
@@ -210,6 +227,7 @@ DebugBoxMainIndex = {
 			{
 				"相册",
 				{
+					"所有英魂好感度",
 					"增加好感度",
 					"增加约会次数",
 					"清除已约会过的英魂数据"
@@ -224,7 +242,8 @@ DebugBoxMainIndex = {
 				{
 					"立刻开启比赛",
 					"链接争霸无敌开启",
-					"输入id，立刻开启比赛"
+					"输入id，立刻开启比赛",
+					"跳至下一个状态"
 				}
 			},
 			{
@@ -259,6 +278,18 @@ DebugBoxMainIndex = {
 				{
 					"发送指定次数的奖励"
 				}
+			},
+			{
+				"小游戏",
+				{
+					"投飞镖：设置关卡"
+				}
+			},
+			{
+				"bust展示",
+				{
+					"设置bust"
+				}
 			}
 		}
 
@@ -275,6 +306,10 @@ DebugBoxMainIndex = {
 				"AddAllItems"
 			},
 			{
+				"加某款皮肤",
+				"AddSkin"
+			},
+			{
 				"钻石",
 				"DiamondDV"
 			},
@@ -289,6 +324,10 @@ DebugBoxMainIndex = {
 			{
 				"调cross和游戏服时间",
 				"changeTagetServerTime"
+			},
+			{
+				"无限充值开启",
+				"FreeRecharge"
 			},
 			{
 				"加核心",
@@ -389,6 +428,10 @@ DebugBoxMainIndex = {
 			{
 				"增加好感度",
 				"AddHeroLove"
+			},
+			{
+				"所有英魂好感度",
+				"AddAllHeroLove"
 			},
 			{
 				"赛季BUFF测试",
@@ -595,6 +638,10 @@ DebugBoxMainIndex = {
 				"ExploreChangeMoveRate"
 			},
 			{
+				"梦幻回馈",
+				"DrawCardFeedback"
+			},
+			{
 				"发送邮件",
 				"SendTestMailDV"
 			},
@@ -609,6 +656,10 @@ DebugBoxMainIndex = {
 			{
 				"输入id，立刻开启比赛",
 				"StartPetRaceWithID"
+			},
+			{
+				"跳至下一个状态",
+				"PetRaceJumpTo"
 			},
 			{
 				"清除队列",
@@ -651,6 +702,14 @@ DebugBoxMainIndex = {
 				"CrusadeReset"
 			},
 			{
+				"投飞镖：设置关卡",
+				"ChangeDartsLevel"
+			},
+			{
+				"设置bust",
+				"DebugShowBustAni"
+			},
+			{
 				"技能Args检查",
 				"CheckSkillArgsBox"
 			},
@@ -679,6 +738,10 @@ DebugBoxMainIndex = {
 				"DumpUnitPropertiesBox"
 			},
 			{
+				"开启/关闭顺序出牌",
+				"NoAiSetBox"
+			},
+			{
 				"播放主线校验错误",
 				"ReplayBattleCheckResultBox"
 			},
@@ -699,8 +762,20 @@ DebugBoxMainIndex = {
 				"CompareDataBattleCheckResultBox"
 			},
 			{
+				"自定义战斗数据",
+				"CustomBattle"
+			},
+			{
+				"自动闯关",
+				"AutoBattle"
+			},
+			{
 				"数值表查询",
 				"CheckConfigBox"
+			},
+			{
+				"Translate表查询",
+				"CheckTranslateConfig"
 			}
 		}
 		local requireNameMap = {
@@ -712,6 +787,7 @@ DebugBoxMainIndex = {
 			"VIPDV",
 			"ChangeLevelDV",
 			"SendTestMailDV",
+			"ActivityDebug",
 			"OnekeyStrengthen",
 			"changeServerTime",
 			"AddKernel",
@@ -732,8 +808,10 @@ DebugBoxMainIndex = {
 			"StartPetRace",
 			"StartPetRaceInvincible",
 			"StartPetRaceWithID",
+			"PetRaceJumpTo",
 			"AddPet",
 			"AddHeroLove",
+			"AddAllHeroLove",
 			"SetSeasonTeamInfo",
 			"AddClub",
 			"ClearAllClub",
@@ -775,6 +853,7 @@ DebugBoxMainIndex = {
 			"GuideEndBattle",
 			"TestPlayStory",
 			"CheckConfigBox",
+			"CheckTranslateConfig",
 			"OnekeyInvincible",
 			"AddTowerRelifeCount",
 			"AddTowerBuffToPlayer",
@@ -783,7 +862,12 @@ DebugBoxMainIndex = {
 			"CrusadeReset",
 			"ClearExploreOrBlockSpTimes",
 			"ClubBoss",
-			"BattleSettingBox"
+			"BattleSettingBox",
+			"ChangeMiniGame",
+			"DebugShowBustAni",
+			"FreeRecharge",
+			"BattleExtend",
+			"ChangeMiniGame"
 		}
 
 		for k, v in pairs(requireNameMap) do

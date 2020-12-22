@@ -159,6 +159,10 @@ function SaveBattleDumpBox:onClick(data)
 	local function defaultCallback(result, data)
 		if result then
 			local cjson = require("cjson.safe")
+			slot5[1] = data
+
+			dump({}, "SaveBattleDumpBox:onClick")
+
 			local dumpString = cjson.encode(data)
 			local fileName = filePre .. os.date("%Y_%m_%d@%H_%M_%S") .. fileExt
 
@@ -237,11 +241,13 @@ function SaveBattleDumpBox:onClick(data)
 
 				local dumpString = cjson.encode(data)
 
-				if app.getDevice and app.getDevice() then
-					app.getDevice():copyStringToClipboard(dumpString)
-					self:dispatch(ShowTipEvent({
-						tip = "dump已复制至剪贴板"
-					}))
+				if app.getDevice then
+					if app.getDevice() then
+						app.getDevice():copyStringToClipboard(dumpString)
+						self:dispatch(ShowTipEvent({
+							tip = "dump已复制至剪贴板"
+						}))
+					end
 				else
 					self:dispatch(ShowTipEvent({
 						tip = "设备不支持复制至剪贴板"
@@ -762,10 +768,12 @@ function CompareDataBattleCheckResultBox:onClick(data)
 end
 
 CustomBattle = class("CustomBattle", DebugViewTemplate, _M)
-
-CustomBattle:has("_stageSystem", {
+slot5 = CustomBattle
+slot5 = slot5:has("_stageSystem", {
 	is = "r"
-}):injectWith("StageSystem")
+})
+
+slot5:injectWith("StageSystem")
 
 function CustomBattle:initialize()
 	slot1[1] = {

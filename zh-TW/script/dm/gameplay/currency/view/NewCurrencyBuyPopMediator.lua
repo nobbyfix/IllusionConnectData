@@ -460,51 +460,43 @@ function NewCurrencyBuyPopMediator:onClickExpTag(sender, eventType)
 end
 
 function NewCurrencyBuyPopMediator:onClickSendBuy(sender, eventType)
-	if self._developSystem:getDiamonds() < self._curPrice then
-		AudioEngine:getInstance():playEffect("Se_Alert_Error", false)
-		self:dispatch(ShowTipEvent({
-			duration = 0.2,
-			tip = Strings:get("RECHARGE_DIAMONDS_NOTENOUGH")
-		}))
+	if CurrencySystem:checkEnoughDiamond(self, self._curPrice) then
+		AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
 
-		return
-	end
+		if self._buyType == CurrencyType.kCrystal then
+			self._currencySystem:requestBuyCrystal({
+				times = 1
+			}, function (response)
+				if DisposableObject:isDisposed(self) then
+					return
+				end
 
-	AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
+				AudioEngine:getInstance():playEffect("Se_Effect_Exchange_Crystal", false)
+				self:runBuyCrystalAnim(response)
+			end)
+		elseif self._buyType == CurrencyType.kExp then
+			self._currencySystem:requestBuyExp({
+				times = 1
+			}, function (response)
+				if DisposableObject:isDisposed(self) then
+					return
+				end
 
-	if self._buyType == CurrencyType.kCrystal then
-		self._currencySystem:requestBuyCrystal({
-			times = 1
-		}, function (response)
-			if DisposableObject:isDisposed(self) then
-				return
-			end
+				AudioEngine:getInstance():playEffect("Se_Effect_Exchange_Crystal", false)
+				self:runBuyExpAnim(response)
+			end)
+		elseif self._buyType == CurrencyType.kGold then
+			self._currencySystem:requestBuyGold({
+				times = 1
+			}, function (response)
+				if DisposableObject:isDisposed(self) then
+					return
+				end
 
-			AudioEngine:getInstance():playEffect("Se_Effect_Exchange_Crystal", false)
-			self:runBuyCrystalAnim(response)
-		end)
-	elseif self._buyType == CurrencyType.kExp then
-		self._currencySystem:requestBuyExp({
-			times = 1
-		}, function (response)
-			if DisposableObject:isDisposed(self) then
-				return
-			end
-
-			AudioEngine:getInstance():playEffect("Se_Effect_Exchange_Crystal", false)
-			self:runBuyExpAnim(response)
-		end)
-	elseif self._buyType == CurrencyType.kGold then
-		self._currencySystem:requestBuyGold({
-			times = 1
-		}, function (response)
-			if DisposableObject:isDisposed(self) then
-				return
-			end
-
-			AudioEngine:getInstance():playEffect("Se_Effect_Exchange_Crystal", false)
-			self:runBuyGoldAnim(response)
-		end)
+				AudioEngine:getInstance():playEffect("Se_Effect_Exchange_Crystal", false)
+				self:runBuyGoldAnim(response)
+			end)
+		end
 	end
 end
 

@@ -335,6 +335,7 @@ function DreamChallengeBattleEndMediator:setHero(node, info)
 	local except = node:getChildByName("except")
 
 	node:getChildByName("help"):setVisible(true)
+	node:getChildByName("help"):loadTexture("asset/commonLang/kazu_bg_yuan.png")
 
 	if not info.isNpc then
 		local isShow = self._dreamSystem:checkHeroRecomand(self._dreamId, self._mapId, info.heroId)
@@ -375,6 +376,8 @@ function DreamChallengeBattleEndMediator:setHero(node, info)
 		tiredLabel:setString(tostring(self._dreamSystem:getPointFatigueByHeroId(self._dreamId, self._mapId, info.heroId)) .. "/" .. tostring(self._dreamSystem:getPointFatigue(self._dreamId, self._mapId)))
 	else
 		except:setVisible(false)
+		levelImage:setVisible(false)
+		level:setVisible(false)
 		node:getChildByName("help"):setVisible(true)
 		node:getChildByName("fatigueBg"):setVisible(false)
 		node:getChildByName("tiredNum"):setVisible(false)

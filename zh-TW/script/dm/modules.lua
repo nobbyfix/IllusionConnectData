@@ -449,9 +449,19 @@ local modules = {
 							mediator = "BagBatchUseSellMediator"
 						},
 						{
+							res = "asset/ui/bagUseScroll.csb",
+							name = "BagUseScrollView",
+							mediator = "BagUseScrollMediator"
+						},
+						{
 							res = "asset/ui/bagGiftChooseOne.csb",
 							name = "BagGiftChooseOneView",
 							mediator = "BagGiftChooseOneMediator"
+						},
+						{
+							res = "asset/ui/bagSelectMaterial.csb",
+							name = "BagSelectMaterialView",
+							mediator = "BagSelectMaterialMediator"
 						}
 					}
 				}
@@ -1106,6 +1116,11 @@ local modules = {
 							res = "asset/ui/EquipStarBreak.csb",
 							name = "EquipStarBreakView",
 							mediator = "EquipStarBreakMediator"
+						},
+						{
+							res = "asset/ui/EquipAllUpdate.csb",
+							name = "EquipAllUpdateView",
+							mediator = "EquipAllUpdateMediator"
 						}
 					}
 				}
@@ -1127,6 +1142,16 @@ local modules = {
 							res = "asset/ui/BuffTips.csb",
 							name = "BuffTipsView",
 							mediator = "BuffTipsMediator"
+						},
+						{
+							res = "asset/ui/ItemBuffTips.csb",
+							name = "ItemBuffTipsView",
+							mediator = "ItemBuffTipsMediator"
+						},
+						{
+							res = "asset/ui/ItemShowTips.csb",
+							name = "ItemShowTipsView",
+							mediator = "ItemShowTipsMediator"
 						},
 						{
 							res = "asset/ui/EquipTips.csb",
@@ -1369,7 +1394,8 @@ local modules = {
 				requires = {
 					"dm.gameplay.activity.controller.ActivitySystem",
 					"dm.gameplay.activity.service.ActivityService",
-					"dm.gameplay.activity.view.ActivityWidget"
+					"dm.gameplay.activity.view.ActivityWidget",
+					"dm.gameplay.activity.view.shuangdan.ActivityHolidayHero"
 				},
 				injections = {
 					singletons = {
@@ -1713,6 +1739,46 @@ local modules = {
 							res = "asset/ui/ActivityColorEggPopup.csb",
 							name = "ActivityColorEggView",
 							mediator = "ActivityColorEggMediator"
+						},
+						{
+							res = "asset/ui/ActivityBlockSD.csb",
+							name = "ActivityBlockHolidayView",
+							mediator = "ActivityBlockHolidayMediator"
+						},
+						{
+							res = "asset/ui/ActivityBlockSupportSd.csb",
+							name = "ActivitySupportHolidayView",
+							mediator = "ActivitySupportHolidayMediator"
+						},
+						{
+							res = "asset/ui/ActivitySupportWinSd.csb",
+							name = "ActivitySupportWinHolidayView",
+							mediator = "ActivitySupportWinHolidayMediator"
+						},
+						{
+							res = "asset/ui/ActivitySupportRewardSd.csb",
+							name = "ActivitySupportRewardHolidayView",
+							mediator = "ActivitySupportRewardHolidayMediator"
+						},
+						{
+							res = "asset/ui/ActivitySupportRankSd.csb",
+							name = "ActivitySupportRankHolidayView",
+							mediator = "ActivitySupportRankHolidayMediator"
+						},
+						{
+							res = "asset/ui/ActivitySupportPailianSd.csb",
+							name = "ActivitySupportPailianHolidayView",
+							mediator = "ActivitySupportPailianHolidayMediator"
+						},
+						{
+							res = "asset/ui/ActivityBlockFudaiSd.csb",
+							name = "ActivityBlockFudaiView",
+							mediator = "ActivityBlockFudaiMediator"
+						},
+						{
+							res = "asset/ui/ActivityFudaiPreview.csb",
+							name = "ActivityBlockFudaiPreview",
+							mediator = "ActivityBlockFudaiPreviewMeditor"
 						}
 					}
 				}
@@ -2775,6 +2841,11 @@ local modules = {
 							res = "asset/ui/MonthSignInWsj.csb",
 							name = "MonthSignInWsjView",
 							mediator = "MonthSignInMediator"
+						},
+						{
+							res = "asset/ui/MonthSignInSd.csb",
+							name = "MonthSignInHolidayView",
+							mediator = "MonthSignInMediator"
 						}
 					}
 				}
@@ -3517,6 +3588,49 @@ local modules = {
 							res = "asset/ui/MainTeamLayer.csb",
 							name = "MainTeamView",
 							mediator = "MainTeamMediator"
+						}
+					}
+				}
+			},
+			{
+				name = "miniGame",
+				requires = {
+					"dm.gameplay.miniGame.controller.MiniGameSystem"
+				},
+				injections = {
+					singletons = {
+						"MiniGameSystem"
+					},
+					views = {
+						{
+							res = "asset/ui/Darts.csb",
+							name = "DartsView",
+							mediator = "DartsMediator"
+						},
+						{
+							res = "asset/ui/MiniGameRewards.csb",
+							name = "MiniGameRewardView",
+							mediator = "MiniGameRewardListMediator"
+						},
+						{
+							res = "asset/ui/MiniGameQuitConfirm.csb",
+							name = "MiniGameQuitConfirmView",
+							mediator = "MiniGameQuitConfirmMediator"
+						},
+						{
+							res = "asset/ui/MiniGamePassGame.csb",
+							name = "MiniGamePassGameView",
+							mediator = "MiniGamePassGameMediator"
+						},
+						{
+							res = "asset/ui/MiniGameRank.csb",
+							name = "MiniGameRankView",
+							mediator = "MiniGameRankMediator"
+						},
+						{
+							res = "asset/ui/MiniGameResult.csb",
+							name = "MiniGameResultView",
+							mediator = "MiniGameResultMediator"
 						}
 					}
 				}

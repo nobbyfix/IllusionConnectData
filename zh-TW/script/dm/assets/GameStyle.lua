@@ -4,6 +4,8 @@ GameStyle = GameStyle or {}
 ItemTipsViewTag = 10009
 EquipTipsViewTag = 10010
 BuffTipsViewTag = 10011
+ItemBuffTipsViewTag = 10013
+ItemShowTipsViewTag = 10014
 GameStyle.touchEffectZorder = 9999
 BuffTypeSet = {
 	NormalBlock = "NormalBlock",
@@ -547,6 +549,14 @@ function GameStyle:getEquipRarityRectFile(rarity)
 	return EquipRarityRect[tonumber(rarity)]
 end
 
+local EquipRarityRectFlash = {
+	[15.0] = "ur_anime_urequipeff"
+}
+
+function GameStyle:getEquipRarityRectFlashFile(rarity)
+	return EquipRarityRectFlash[tonumber(rarity)] or EquipRarityRectFlash[11]
+end
+
 local heroRect = "asset/commonLang/"
 local equipRarityArr = {
 	[11] = heroRect .. "common_img_n.png",
@@ -558,6 +568,14 @@ local equipRarityArr = {
 
 function GameStyle:getEquipRarityImage(rarity)
 	return equipRarityArr[tonumber(rarity)] or equipRarityArr[11]
+end
+
+local equipRarityFlash = {
+	[15.0] = "ur_01_anime_urequipeff"
+}
+
+function GameStyle:getEquipRarityFlash(rarity)
+	return equipRarityFlash[tonumber(rarity)] or equipRarityFlash[15]
 end
 
 local relationPicPath = {
@@ -667,7 +685,9 @@ function GameStyle:createEmptyIcon(isLock)
 	GameStyle:setCommonOutlineEffect(label)
 	label:addTo(node)
 	label:setName("TipText")
-	label:setHorizontalAlignment(1)
+	label:setAlignment(cc.TEXT_ALIGNMENT_CENTER, cc.TEXT_ALIGNMENT_CENTER)
+	label:setOverflow(cc.LabelOverflow.SHRINK)
+	label:setDimensions(100, 80)
 
 	return node
 end

@@ -419,7 +419,8 @@
             "arena_challenge",
             "tower",
             "crusade",
-            "actstage"
+            "actstage",
+            "club_battle"
         ]
     },
     "BattleSpeed_Display": {
@@ -1375,6 +1376,10 @@
         "clz": "int",
         "content": 290000000
     },
+    "ClubBoss_SkipBattle_WaitTime": {
+        "clz": "int",
+        "content": 5
+    },
     "ClubBoss_Standard": {
         "clz": "int",
         "content": 110
@@ -2218,9 +2223,7 @@
             "arena_challenge",
             "tower",
             "crusade",
-            "dream_challenge",
-            "clubboss",
-            "actstage"
+            "dream_challenge"
         ]
     },
     "FAC_HP_Check": {
@@ -3040,6 +3043,7 @@
     "HeroStone_FragmentCost": {
         "clz": "dict",
         "content": {
+            "IHF_HeroStone_ChosenSSR": 60,
             "IHF_HeroStone_SR": 60,
             "IHF_HeroStone_SSR": 60
         }
@@ -5423,6 +5427,617 @@
             "M01S01": "NewPlayer_StageM01S01"
         }
     },
+    "Newyear_AJYHou_Bubble": {
+        "clz": "string[]",
+        "content": [
+            "NewYear_AJYHou_Bubble01",
+            "NewYear_AJYHou_Bubble02",
+            "NewYear_AJYHou_Bubble03",
+            "NewYear_AJYHou_Bubble04",
+            "NewYear_AJYHou_Bubble05",
+            "NewYear_AJYHou_Bubble06",
+            "NewYear_AJYHou_Bubble07"
+        ]
+    },
+    "Newyear_Bubble01": {
+        "clz": "string[]",
+        "content": [
+            "NewYear_Common_Bubble01",
+            "NewYear_Common_Bubble02",
+            "NewYear_Common_Bubble03",
+            "NewYear_Common_Bubble04",
+            "NewYear_Common_Bubble05",
+            "NewYear_Common_Bubble06",
+            "NewYear_Common_Bubble07",
+            "NewYear_Common_Bubble08",
+            "NewYear_Common_Bubble09",
+            "NewYear_Common_Bubble10",
+            "NewYear_Common_Bubble11",
+            "NewYear_Common_Bubble12",
+            "NewYear_Common_Bubble13",
+            "NewYear_Common_Bubble14",
+            "NewYear_Common_Bubble15",
+            "NewYear_Common_Bubble16",
+            "NewYear_Common_Bubble17",
+            "NewYear_Common_Bubble18",
+            "NewYear_Common_Bubble19",
+            "NewYear_Common_Bubble20",
+            "NewYear_Common_Bubble21",
+            "NewYear_Common_Bubble22",
+            "NewYear_Common_Bubble23",
+            "NewYear_Common_Bubble24",
+            "NewYear_Common_Bubble25",
+            "NewYear_Common_Bubble26",
+            "NewYear_Common_Bubble27"
+        ]
+    },
+    "Newyear_Bubble02": {
+        "clz": "string[]",
+        "content": [
+            "NewYear_Common_Bubble01",
+            "NewYear_Common_Bubble02",
+            "NewYear_Common_Bubble03",
+            "NewYear_Common_Bubble04",
+            "NewYear_Common_Bubble05",
+            "NewYear_Common_Bubble06",
+            "NewYear_Common_Bubble07",
+            "NewYear_Common_Bubble08",
+            "NewYear_Common_Bubble09",
+            "NewYear_Common_Bubble10",
+            "NewYear_Common_Bubble11",
+            "NewYear_Common_Bubble12",
+            "NewYear_Common_Bubble13",
+            "NewYear_Common_Bubble14",
+            "NewYear_Common_Bubble15",
+            "NewYear_Common_Bubble16",
+            "NewYear_Common_Bubble17",
+            "NewYear_Common_Bubble18",
+            "NewYear_Common_Bubble19",
+            "NewYear_Common_Bubble20",
+            "NewYear_Common_Bubble21",
+            "NewYear_Common_Bubble22",
+            "NewYear_Common_Bubble23",
+            "NewYear_Common_Bubble24",
+            "NewYear_Common_Bubble25",
+            "NewYear_Common_Bubble26",
+            "NewYear_Common_Bubble27"
+        ]
+    },
+    "Newyear_Bubble03": {
+        "clz": "string[]",
+        "content": [
+            "NewYear_Common_Bubble01",
+            "NewYear_Common_Bubble02",
+            "NewYear_Common_Bubble03",
+            "NewYear_Common_Bubble04",
+            "NewYear_Common_Bubble05",
+            "NewYear_Common_Bubble06",
+            "NewYear_Common_Bubble07",
+            "NewYear_Common_Bubble08",
+            "NewYear_Common_Bubble09",
+            "NewYear_Common_Bubble10",
+            "NewYear_Common_Bubble11",
+            "NewYear_Common_Bubble12",
+            "NewYear_Common_Bubble13",
+            "NewYear_Common_Bubble14",
+            "NewYear_Common_Bubble15",
+            "NewYear_Common_Bubble16",
+            "NewYear_Common_Bubble17",
+            "NewYear_Common_Bubble18",
+            "NewYear_Common_Bubble19",
+            "NewYear_Common_Bubble20",
+            "NewYear_Common_Bubble21",
+            "NewYear_Common_Bubble22",
+            "NewYear_Common_Bubble23",
+            "NewYear_Common_Bubble24",
+            "NewYear_Common_Bubble25",
+            "NewYear_Common_Bubble26",
+            "NewYear_Common_Bubble27"
+        ]
+    },
+    "Newyear_Bubble04": {
+        "clz": "string[]",
+        "content": [
+            "NewYear_Common_Bubble01",
+            "NewYear_Common_Bubble02",
+            "NewYear_Common_Bubble03",
+            "NewYear_Common_Bubble04",
+            "NewYear_Common_Bubble05",
+            "NewYear_Common_Bubble06",
+            "NewYear_Common_Bubble07",
+            "NewYear_Common_Bubble08",
+            "NewYear_Common_Bubble09",
+            "NewYear_Common_Bubble10",
+            "NewYear_Common_Bubble11",
+            "NewYear_Common_Bubble12",
+            "NewYear_Common_Bubble13",
+            "NewYear_Common_Bubble14",
+            "NewYear_Common_Bubble15",
+            "NewYear_Common_Bubble16",
+            "NewYear_Common_Bubble17",
+            "NewYear_Common_Bubble18",
+            "NewYear_Common_Bubble19",
+            "NewYear_Common_Bubble20",
+            "NewYear_Common_Bubble21",
+            "NewYear_Common_Bubble22",
+            "NewYear_Common_Bubble23",
+            "NewYear_Common_Bubble24",
+            "NewYear_Common_Bubble25",
+            "NewYear_Common_Bubble26",
+            "NewYear_Common_Bubble27"
+        ]
+    },
+    "Newyear_Bubble05": {
+        "clz": "string[]",
+        "content": [
+            "NewYear_Common_Bubble01",
+            "NewYear_Common_Bubble02",
+            "NewYear_Common_Bubble03",
+            "NewYear_Common_Bubble04",
+            "NewYear_Common_Bubble05",
+            "NewYear_Common_Bubble06",
+            "NewYear_Common_Bubble07",
+            "NewYear_Common_Bubble08",
+            "NewYear_Common_Bubble09",
+            "NewYear_Common_Bubble10",
+            "NewYear_Common_Bubble11",
+            "NewYear_Common_Bubble12",
+            "NewYear_Common_Bubble13",
+            "NewYear_Common_Bubble14",
+            "NewYear_Common_Bubble15",
+            "NewYear_Common_Bubble16",
+            "NewYear_Common_Bubble17",
+            "NewYear_Common_Bubble18",
+            "NewYear_Common_Bubble19",
+            "NewYear_Common_Bubble20",
+            "NewYear_Common_Bubble21",
+            "NewYear_Common_Bubble22",
+            "NewYear_Common_Bubble23",
+            "NewYear_Common_Bubble24",
+            "NewYear_Common_Bubble25",
+            "NewYear_Common_Bubble26",
+            "NewYear_Common_Bubble27"
+        ]
+    },
+    "Newyear_Danmu_BBLMa": {
+        "clz": "string[]",
+        "content": [
+            "Newyear_Danmu_Bubble01",
+            "Newyear_Danmu_Bubble02",
+            "Newyear_Danmu_Bubble03",
+            "Newyear_Danmu_Bubble07",
+            "Newyear_Danmu_Bubble09",
+            "Newyear_Danmu_Bubble12",
+            "Newyear_Danmu_Bubble13",
+            "Newyear_Danmu_Bubble04",
+            "Newyear_Danmu_Bubble04",
+            "Voice_BBLMa_04_SoundDesc",
+            "Voice_BBLMa_11_SoundDesc",
+            "Voice_BBLMa_25_SoundDesc",
+            "Voice_BBLMa_31_SoundDesc"
+        ]
+    },
+    "Newyear_Danmu_BEr": {
+        "clz": "string[]",
+        "content": [
+            "Newyear_Danmu_Bubble05",
+            "Newyear_Danmu_Bubble08",
+            "Voice_BEr_11_SoundDesc",
+            "Newyear_Danmu_Bubble12",
+            "Newyear_Danmu_Bubble01",
+            "Newyear_Danmu_Bubble10",
+            "Newyear_Danmu_Bubble03"
+        ]
+    },
+    "Newyear_Danmu_JNLong": {
+        "clz": "string[]",
+        "content": [
+            "Newyear_Danmu_Bubble05",
+            "Newyear_Danmu_Bubble08",
+            "Voice_JNLong_12_SoundDesc",
+            "Voice_MLYTLSha_28_SoundDesc",
+            "Newyear_Danmu_Bubble10"
+        ]
+    },
+    "Newyear_Danmu_KTSJKe": {
+        "clz": "string[]",
+        "content": [
+            "Newyear_Danmu_Bubble05",
+            "Newyear_Danmu_Bubble08",
+            "Voice_KTSJKe_03_SoundDesc",
+            "Voice_KTSJKe_12_SoundDesc",
+            "Voice_KTSJKe_10_SoundDesc",
+            "Newyear_Danmu_Bubble01",
+            "Newyear_Danmu_Bubble03"
+        ]
+    },
+    "Newyear_Danmu_LCYShi": {
+        "clz": "string[]",
+        "content": [
+            "Newyear_Danmu_Bubble03",
+            "Newyear_Danmu_Bubble04",
+            "Newyear_Danmu_Bubble06",
+            "Newyear_Danmu_Bubble07",
+            "Newyear_Danmu_Bubble09",
+            "Newyear_Danmu_Bubble12",
+            "Newyear_Danmu_Bubble13",
+            "Newyear_Danmu_Bubble04",
+            "Newyear_Danmu_Bubble04",
+            "Voice_LCYShi_02_SoundDesc",
+            "Voice_LCYShi_02_SoundDesc",
+            "Voice_LCYShi_03_SoundDesc"
+        ]
+    },
+    "Newyear_Danmu_LFEr": {
+        "clz": "string[]",
+        "content": [
+            "Newyear_Danmu_Bubble04",
+            "Newyear_Danmu_Bubble07",
+            "Voice_LFEr_03_SoundDesc",
+            "Voice_LFEr_10_SoundDesc"
+        ]
+    },
+    "Newyear_Danmu_MGNa": {
+        "clz": "string[]",
+        "content": [
+            "Newyear_Danmu_Bubble05",
+            "Newyear_Danmu_Bubble08",
+            "Voice_MGNa_02_SoundDesc",
+            "Voice_MGNa_12_SoundDesc",
+            "Newyear_Danmu_Bubble06"
+        ]
+    },
+    "Newyear_Danmu_MLYTLSha": {
+        "clz": "string[]",
+        "content": [
+            "Newyear_Danmu_Bubble04",
+            "Voice_MLYTLSha_02_SoundDesc",
+            "Voice_MLYTLSha_04_SoundDesc",
+            "Voice_MLYTLSha_10_SoundDesc",
+            "Voice_MLYTLSha_12_SoundDesc",
+            "Voice_MLYTLSha_13_SoundDesc",
+            "Voice_MLYTLSha_22_2_SoundDesc",
+            "Voice_MLYTLSha_22_4_SoundDesc",
+            "Voice_MLYTLSha_27_SoundDesc",
+            "Voice_MLYTLSha_32_SoundDesc"
+        ]
+    },
+    "Newyear_Danmu_MTZMEShi": {
+        "clz": "string[]",
+        "content": [
+            "Newyear_Danmu_Bubble05",
+            "Newyear_Danmu_Bubble08",
+            "Voice_MLYTLSha_32_SoundDesc",
+            "Voice_MTZMEShi_04_SoundDesc",
+            "Voice_MTZMEShi_13_SoundDesc"
+        ]
+    },
+    "Newyear_Danmu_SDTZi": {
+        "clz": "string[]",
+        "content": [
+            "Newyear_Danmu_Bubble01",
+            "Newyear_Danmu_Bubble02",
+            "Newyear_Danmu_Bubble03",
+            "Newyear_Danmu_Bubble05",
+            "Newyear_Danmu_Bubble06",
+            "Newyear_Danmu_Bubble08",
+            "Newyear_Danmu_Bubble09",
+            "Newyear_Danmu_Bubble05",
+            "Newyear_Danmu_Bubble05",
+            "Voice_SDTZi_11_SoundDesc",
+            "Voice_SDTZi_17_SoundDesc",
+            "Voice_SDTZi_20_SoundDesc"
+        ]
+    },
+    "Newyear_Danmu_SLMen": {
+        "clz": "string[]",
+        "content": [
+            "Newyear_Danmu_Bubble05",
+            "Newyear_Danmu_Bubble08"
+        ]
+    },
+    "Newyear_Danmu_SSQXin": {
+        "clz": "string[]",
+        "content": [
+            "Newyear_Danmu_Bubble04",
+            "Newyear_Danmu_Bubble07",
+            "Voice_SSQXin_10_SoundDesc",
+            "Newyear_Danmu_Bubble03",
+            "Newyear_Danmu_Bubble12",
+            "Voice_SSQXin_20_SoundDesc",
+            "Voice_SSQXin_31_SoundDesc",
+            "Voice_MLYTLSha_28_SoundDesc"
+        ]
+    },
+    "Newyear_Danmu_TPGZhu": {
+        "clz": "string[]",
+        "content": [
+            "Newyear_Danmu_Bubble04",
+            "Newyear_Danmu_Bubble07",
+            "Voice_TPGZhu_04_SoundDesc",
+            "Voice_TPGZhu_07_SoundDesc",
+            "Voice_TPGZhu_25_SoundDesc",
+            "Newyear_Danmu_Bubble02"
+        ]
+    },
+    "Newyear_Danmu_XSMLi": {
+        "clz": "string[]",
+        "content": [
+            "Newyear_Danmu_Bubble05",
+            "Newyear_Danmu_Bubble08",
+            "Voice_XSMLi_02_SoundDesc",
+            "Voice_XSMLi_11_SoundDesc",
+            "Voice_XSMLi_31_SoundDesc",
+            "Voice_XSMLi_25_SoundDesc"
+        ]
+    },
+    "Newyear_Danmu_YBYa": {
+        "clz": "string[]",
+        "content": [
+            "Newyear_Danmu_Bubble04",
+            "Newyear_Danmu_Bubble07",
+            "Voice_YBYa_10_SoundDesc",
+            "Voice_YBYa_13_SoundDesc",
+            "Voice_YBYa_17_SoundDesc",
+            "Newyear_Danmu_Bubble11",
+            "Voice_YBYa_20_SoundDesc",
+            "Voice_YBYa_23_SoundDesc"
+        ]
+    },
+    "Newyear_Danmu_YLSBai": {
+        "clz": "string[]",
+        "content": [
+            "Newyear_Danmu_Bubble04",
+            "Newyear_Danmu_Bubble07",
+            "Voice_YLSBai_01_SoundDesc",
+            "Voice_YLSBai_11_SoundDesc",
+            "Voice_YLSBai_12_SoundDesc"
+        ]
+    },
+    "Newyear_Danmu_ZTXChang": {
+        "clz": "string[]",
+        "content": [
+            "Newyear_Danmu_Bubble01",
+            "Newyear_Danmu_Bubble02",
+            "Newyear_Danmu_Bubble03",
+            "Newyear_Danmu_Bubble04",
+            "Newyear_Danmu_Bubble06",
+            "Newyear_Danmu_Bubble07",
+            "Newyear_Danmu_Bubble09",
+            "Newyear_Danmu_Bubble10",
+            "Newyear_Danmu_Bubble11",
+            "Newyear_Danmu_Bubble12",
+            "Newyear_Danmu_Bubble13",
+            "Newyear_Danmu_Bubble04",
+            "Newyear_Danmu_Bubble04",
+            "Voice_ZTXChang_01_SoundDesc",
+            "Voice_ZTXChang_13_SoundDesc",
+            "Voice_ZTXChang_20_SoundDesc"
+        ]
+    },
+    "Newyear_Danmu_ZZBBWei": {
+        "clz": "string[]",
+        "content": [
+            "Newyear_Danmu_Bubble05",
+            "Newyear_Danmu_Bubble06",
+            "Newyear_Danmu_Bubble08",
+            "Newyear_Danmu_Bubble09",
+            "Newyear_Danmu_Bubble10",
+            "Newyear_Danmu_Bubble11",
+            "Newyear_Danmu_Bubble12",
+            "Newyear_Danmu_Bubble13",
+            "Voice_ZZBBWei_13_SoundDesc",
+            "Voice_ZZBBWei_20_SoundDesc",
+            "Voice_ZZBBWei_32_SoundDesc"
+        ]
+    },
+    "Newyear_HeroBubble01": {
+        "clz": "string[]",
+        "content": [
+            "Voice_ALPo_18_SoundDesc",
+            "Voice_ALPo_19_SoundDesc",
+            "Voice_ALPo_20_SoundDesc"
+        ]
+    },
+    "Newyear_HeroBubble02": {
+        "clz": "string[]",
+        "content": [
+            "Voice_KMLa_42_SoundDesc",
+            "Voice_KMLa_43_SoundDesc",
+            "Voice_KMLa_44_SoundDesc"
+        ]
+    },
+    "Newyear_HeroBubbleNum": {
+        "clz": "int",
+        "content": 30
+    },
+    "Newyear_HeroBubbleSpeed": {
+        "clz": "int",
+        "content": 7
+    },
+    "Newyear_LuckyBag_ShowRewardUI": {
+        "clz": "string[]",
+        "content": [
+            "Newyear_LuckyBag_ShowReward01"
+        ]
+    },
+    "Newyear_MainLoginScene": {
+        "clz": "dict",
+        "content": [
+            {
+                "id": "Login_Scene_Newyear",
+                "time": {
+                    "end": "2021-01-09 05:00:00",
+                    "start": "2021-01-01 05:00:00"
+                }
+            },
+            {
+                "id": "Login_Scene_Christmas",
+                "time": {
+                    "end": "2021-01-01 05:00:00",
+                    "start": "2020-12-24 05:00:00"
+                }
+            }
+        ]
+    },
+    "Newyear_MainRule": {
+        "clz": "string[]",
+        "content": [
+            "NewYear_Main_Rule01",
+            "NewYear_Main_Rule02",
+            "NewYear_Main_Rule03",
+            "NewYear_Main_Rule04"
+        ]
+    },
+    "Newyear_ModelSpwanSec": {
+        "clz": "int",
+        "content": 2
+    },
+    "Newyear_ModelStaySec": {
+        "clz": "int",
+        "content": 2
+    },
+    "Newyear_ModelWalkConfig": {
+        "clz": "dict",
+        "content": [
+            {
+                "URL": "view://shopView&viewType=push&shopId=Shop_TimeLimit",
+                "bubble": "Newyear_Bubble01",
+                "hero": "Model_ZTXChang"
+            },
+            {
+                "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_PDLa_1",
+                "bubble": "Newyear_PDLa_Bubble",
+                "hero": "Model_PDLa"
+            },
+            {
+                "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_NFEr_1",
+                "bubble": "Newyear_AJYHou_Bubble",
+                "hero": "Model_NFEr"
+            },
+            {
+                "URL": "view://ActivityView&id=ActivityBlock_Holiday_Login16",
+                "bubble": "Newyear_Bubble05",
+                "hero": "Model_ADHWShi_sd"
+            },
+            {
+                "URL": "view://shopView&viewType=push&shopId=Shop_Surface",
+                "bubble": "Newyear_Bubble05",
+                "hero": "Model_SGHQShou_sd"
+            },
+            {
+                "URL": "view://ActivityBlockMonsterShopView&activityId=ActivityBlock_Holiday",
+                "bubble": "Newyear_Bubble05",
+                "hero": "Model_LCYShi_sd"
+            },
+            {
+                "URL": "view://shopView&viewType=push&shopId=Shop_TimeLimit",
+                "bubble": "Newyear_Bubble05",
+                "hero": "Model_TPGZhu"
+            },
+            {
+                "URL": "view://shopView&viewType=push&shopId=Shop_TimeLimit",
+                "bubble": "Newyear_Bubble05",
+                "hero": "Model_SDTZi"
+            }
+        ]
+    },
+    "Newyear_ModelWalkSpeed": {
+        "clz": "int",
+        "content": 50
+    },
+    "Newyear_PDLa_Bubble": {
+        "clz": "string[]",
+        "content": [
+            "NewYear_PDLa_Bubble01",
+            "NewYear_PDLa_Bubble02",
+            "NewYear_PDLa_Bubble03",
+            "NewYear_PDLa_Bubble04",
+            "NewYear_PDLa_Bubble05",
+            "NewYear_PDLa_Bubble06"
+        ]
+    },
+    "Newyeawr_HeroBubbleConfig": {
+        "clz": "dict",
+        "content": [
+            {
+                "bubble": "Newyear_Danmu_LCYShi",
+                "heroId": "LCYShi"
+            },
+            {
+                "bubble": "Newyear_Danmu_ZTXChang",
+                "heroId": "ZTXChang"
+            },
+            {
+                "bubble": "Newyear_Danmu_BBLMa",
+                "heroId": "BBLMa"
+            },
+            {
+                "bubble": "Newyear_Danmu_YLSBai",
+                "heroId": "YLSBai"
+            },
+            {
+                "bubble": "Newyear_Danmu_TPGZhu",
+                "heroId": "TPGZhu"
+            },
+            {
+                "bubble": "Newyear_Danmu_LFEr",
+                "heroId": "LFEr"
+            },
+            {
+                "bubble": "Newyear_Danmu_SSQXin",
+                "heroId": "SSQXin"
+            },
+            {
+                "bubble": "Newyear_Danmu_YBYa",
+                "heroId": "YBYa"
+            },
+            {
+                "bubble": "Newyear_Danmu_SLMen",
+                "heroId": "MLYTLSha"
+            },
+            {
+                "bubble": "Newyear_Danmu_MLYTLSha",
+                "heroId": "SLMen"
+            },
+            {
+                "bubble": "Newyear_Danmu_XSMLi",
+                "heroId": "XSMLi"
+            },
+            {
+                "bubble": "Newyear_Danmu_BEr",
+                "heroId": "BEr"
+            },
+            {
+                "bubble": "Newyear_Danmu_MGNa",
+                "heroId": "MGNa"
+            },
+            {
+                "bubble": "Newyear_Danmu_ZZBBWei",
+                "heroId": "ZZBBWei"
+            },
+            {
+                "bubble": "Newyear_Danmu_SDTZi",
+                "heroId": "SDTZi"
+            },
+            {
+                "bubble": "Newyear_Danmu_JNLong",
+                "heroId": "JNLong"
+            },
+            {
+                "bubble": "Newyear_Danmu_MTZMEShi",
+                "heroId": "MTZMEShi"
+            },
+            {
+                "bubble": "Newyear_Danmu_KTSJKe",
+                "heroId": "KTSJKe"
+            }
+        ]
+    },
+    "Newyyear_ModelStayTimes": {
+        "clz": "int",
+        "content": 1
+    },
     "Offer_Task_Amount": {
         "clz": "int",
         "content": 1
@@ -5938,6 +6553,32 @@
             "64": "QualityDesc_64"
         }
     },
+    "R_Star_Bonus": {
+        "clz": "array",
+        "content": [
+            [
+                1,
+                2,
+                3,
+                3.5,
+                4
+            ],
+            [
+                0,
+                0,
+                0,
+                0.1,
+                0.1
+            ],
+            [
+                0,
+                0,
+                0,
+                0.1,
+                0.1
+            ]
+        ]
+    },
     "Rank_RuleTranslate": {
         "clz": "string[]",
         "content": [
@@ -5973,6 +6614,67 @@
     "ResourceChange_UpperLimit": {
         "clz": "double",
         "content": 3
+    },
+    "SR_Star_Bonus": {
+        "clz": "array",
+        "content": [
+            [
+                2,
+                3,
+                3.5,
+                4,
+                4.5,
+                5
+            ],
+            [
+                0,
+                0,
+                0,
+                0,
+                0.2,
+                0.2
+            ],
+            [
+                0,
+                0,
+                0.2,
+                0.2,
+                0.2,
+                0.2
+            ]
+        ]
+    },
+    "SSR_Star_Bonus": {
+        "clz": "array",
+        "content": [
+            [
+                3,
+                3.5,
+                4,
+                4.5,
+                5,
+                5.5,
+                6
+            ],
+            [
+                0,
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.3,
+                0.3
+            ],
+            [
+                0,
+                0.1,
+                0.1,
+                0.3,
+                0.3,
+                0.3,
+                0.3
+            ]
+        ]
     },
     "Safe_Rank": {
         "clz": "int",
@@ -6453,6 +7155,115 @@
             "Curse"
         ]
     },
+    "Test_DeluxeZadiac": {
+        "clz": "array",
+        "content": [
+            "Frame_Aries",
+            "Frame_Taurus",
+            "Frame_Gemini",
+            "Frame_Cancer",
+            "Frame_Leo",
+            "Frame_Virgo",
+            "Frame_Libra",
+            "Frame_Scorpio",
+            "Frame_Sagittarius",
+            "Frame_Capricorn",
+            "Frame_Aquarius",
+            "Frame_Pisces"
+        ]
+    },
+    "Test_RealTime": {
+        "clz": "dict",
+        "content": {
+            "normal": [
+                {
+                    "end": "2020-11-22 23:59:59",
+                    "reward": "MonthCard_ReReward_Scorpio",
+                    "start": "2020-10-24 00:00:00"
+                },
+                {
+                    "end": "2020-12-21 23:59:59",
+                    "reward": "MonthCard_ReReward_Sagittarius",
+                    "start": "2020-11-23 00:00:00"
+                },
+                {
+                    "end": "2021-1-19 23:59:59",
+                    "reward": "MonthCard_ReReward_Capricorn",
+                    "start": "2020-12-22 00:00:00"
+                },
+                {
+                    "end": "2021-2-18 23:59:59",
+                    "reward": "MonthCard_ReReward_Aquarius",
+                    "start": "2021-1-20 00:00:00"
+                },
+                {
+                    "end": "2021-3-20 23:59:59",
+                    "reward": "MonthCard_ReReward_Pisces",
+                    "start": "2021-2-19 00:00:00"
+                },
+                {
+                    "end": "2021-4-19 23:59:59",
+                    "reward": "MonthCard_ReReward_Aries",
+                    "start": "2021-3-21 00:00:00"
+                },
+                {
+                    "end": "2021-5-20 23:59:59",
+                    "reward": "MonthCard_ReReward_Taurus",
+                    "start": "2021-4-20 00:00:00"
+                },
+                {
+                    "end": "2021-6-21 23:59:59",
+                    "reward": "MonthCard_ReReward_Gemini",
+                    "start": "2021-5-21 00:00:00"
+                },
+                {
+                    "end": "2021-7-22 23:59:59",
+                    "reward": "MonthCard_ReReward_Cancer",
+                    "start": "2021-6-22 00:00:00"
+                },
+                {
+                    "end": "2021-8-22 23:59:59",
+                    "reward": "MonthCard_ReReward_Leo",
+                    "start": "2021-7-23 00:00:00"
+                },
+                {
+                    "end": "2021-9-22 23:59:59",
+                    "reward": "MonthCard_ReReward_Virgo",
+                    "start": "2021-8-23 00:00:00"
+                },
+                {
+                    "end": "2021-10-23 23:59:59",
+                    "reward": "MonthCard_ReReward_Libra",
+                    "start": "2021-9-23 00:00:00"
+                },
+                {
+                    "end": "2021-11-22 23:59:59",
+                    "reward": "MonthCard_ReReward_Scorpio",
+                    "start": "2021-10-24 00:00:00"
+                },
+                {
+                    "end": "2021-12-21 23:59:59",
+                    "reward": "MonthCard_ReReward_Sagittarius",
+                    "start": "2021-11-23 00:00:00"
+                },
+                {
+                    "end": "2022-1-19 23:59:59",
+                    "reward": "MonthCard_ReReward_Capricorn",
+                    "start": "2021-12-22 00:00:00"
+                },
+                {
+                    "end": "2022-2-18 23:59:59",
+                    "reward": "MonthCard_ReReward_Aquarius",
+                    "start": "2022-1-20 00:00:00"
+                },
+                {
+                    "end": "2022-3-20 23:59:59",
+                    "reward": "MonthCard_ReReward_Pisces",
+                    "start": "2022-2-19 00:00:00"
+                }
+            ]
+        }
+    },
     "Tower_1_Awake_Buff": {
         "clz": "string",
         "content": "Tower_1_Awake_Buff"
@@ -6481,7 +7292,9 @@
             "BHTZi",
             "LYXi",
             "YSLBin",
-            "KMLa"
+            "KMLa",
+            "PDLa",
+            "NFEr"
         ]
     },
     "Tower_1_GrowMaxValue": {

@@ -146,8 +146,8 @@ function TimeUtil:getTimeByDateForTargetTimeInToday(t)
 end
 
 function TimeUtil:getTimeByDateForTargetTime(t)
-	local localUTC = self:calcLocalUTC()
-	local diffTime = (localUTC - REMOTE_UTC) * 3600
+	local localUTCDiff = self:calcLocalUTCDiff()
+	local diffTime = localUTCDiff - self:calcRemoteZoneDiff()
 	local serverTimeMap = DmGame:getInstance()._injector:getInstance("GameServerAgent"):remoteTimestamp()
 	local tb = os.date("*t", serverTimeMap)
 	tb.year = t.year or tb.year
@@ -192,4 +192,77 @@ function TimeUtil:formatStrToTImestamp(str)
 	})
 
 	return timestamp
+end
+
+function TimeUtil:remoteDate(format, time)
+	format = format or "*t"
+	local localUTCDiff = self:calcLocalUTCDiff()
+	local diffTime = self:calcRemoteZoneDiff() - localUTCDiff
+	time = time + diffTime
+
+	return os.date(format, time)
+end
+
+function TimeUtil:localDate(format, time)
+	format = format or "*t"
+
+	return os.date(format, time)
+end
+
+function TimeUtil:formatStrToRemoteTImestamp(str)
+	local _, _, y, m, d, hour, min, sec = string.find(str, "(%d+)-(%d+)-(%d+)%s*(%d+):(%d+):(%d+)")
+	local timestamp = self:timeByRemoteDate({
+		year = y,
+		month = m,
+		day = d,
+		hour = hour,
+		min = min,
+		sec = sec
+	})
+
+	return timestamp
+end
+
+REMOTE_UTC_DIFF = 28800
+
+function TimeUtil:calcRemoteZoneDiff()
+	local _developSystem = DmGame:getInstance()._injector:getInstance("DevelopSystem")
+
+	if _developSystem and _developSystem.getTimeZone then
+		return _developSystem:getTimeZone() * 3600
+	end
+
+	return REMOTE_UTC_DIFF
+end
+
+function TimeUtil:calcLocalUTCDiff()
+	local a = os.date("!*t", os.time())
+	local b = os.date("*t", os.time())
+	local at = os.time(a)
+	local bt = os.time(b)
+	local diffTime = bt - at
+
+	return diffTime
+end
+
+function TimeUtil:timeByRemoteDate(date)
+	if date then
+		local localUTCDiff = self:calcLocalUTCDiff()
+		local diffTime = localUTCDiff - self:calcRemoteZoneDiff()
+
+		return os.time(date) + diffTime
+	else
+		return GameServerAgent:getInstance():remoteTimestamp()
+	end
+end
+
+function TimeUtil:getSystemResetDate(format)
+	local todayFiveHour = self:getTimeByDateForTargetTimeInToday({
+		sec = 0,
+		min = 0,
+		hour = 5
+	})
+	local dateFiveHour = self:localDate(format or "%H:%M", todayFiveHour + 86400)
+
+	return dateFiveHour
 end

@@ -1188,7 +1188,7 @@ function RecruitMainMediator:onRecruit1Clicked()
 		self:buyCard(costId, costCount, param)
 	else
 		self._bagSystem:checkCostEnough(costId, costCount, {
-			type = "tip"
+			type = "popup"
 		})
 	end
 end
@@ -1223,7 +1223,7 @@ function RecruitMainMediator:onRecruit2Clicked()
 		self:buyCard(costId, costCount, param)
 	else
 		self._bagSystem:checkCostEnough(costId, costCount, {
-			type = "tip"
+			type = "popup"
 		})
 	end
 end

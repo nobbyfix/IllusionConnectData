@@ -108,3 +108,29 @@ function AudioTimerSystem:getResumeHomeSound(heroId, weather)
 
 	return self._passSoundId
 end
+
+function AudioTimerSystem:playStartBattleVoice(arg)
+	local team = nil
+
+	if _G.type(arg) == "string" then
+		local developSystem = shareInjector:getInstance(DevelopSystem)
+		team = developSystem:getTeamByType(arg)
+	else
+		team = arg
+	end
+
+	if team then
+		local teamHeros = team.getHeroes and team:getHeroes() or team.heroes
+
+		if teamHeros and #teamHeros > 0 then
+			local idx = math.random(1, #teamHeros)
+			local heroId = teamHeros[idx] or ""
+
+			if _G.type(heroId) == "string" and string.len(heroId) > 0 then
+				local audioId = "Voice_" .. heroId .. "_25"
+
+				AudioEngine:getInstance():playEffect(audioId, false)
+			end
+		end
+	end
+end

@@ -70,6 +70,18 @@ kAddBtnFuncMap[CurrencyIdKind.kDiamondDrawExItem] = function (self)
 	})
 end
 
+kAddBtnFuncMap[CurrencyIdKind.kHonor] = function (self)
+	CurrencySystem:showSource(self, CurrencyIdKind.kHonor)
+end
+
+kAddBtnFuncMap[CurrencyIdKind.kClub] = function (self)
+	CurrencySystem:showSource(self, CurrencyIdKind.kClub)
+end
+
+kAddBtnFuncMap[CurrencyIdKind.kPve] = function (self)
+	CurrencySystem:showSource(self, CurrencyIdKind.kPve)
+end
+
 kAddBtnFuncMap[CurrencyIdKind.kAcitvityStaminaPower] = function (self)
 	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
 end
@@ -94,14 +106,20 @@ kAddBtnFuncMap[CurrencyIdKind.kAcitvityHalloweenPower] = function (self)
 	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
 end
 
+kAddBtnFuncMap[CurrencyIdKind.kActivityHolidayPower] = function (self)
+	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
+end
+
 local kAddImgMap = {
 	[CurrencyIdKind.kGold] = true,
 	[CurrencyIdKind.kPower] = true,
 	[CurrencyIdKind.kCrystal] = true,
 	[CurrencyIdKind.kDiamond] = true,
+	[CurrencyIdKind.kHonor] = true,
+	[CurrencyIdKind.kClub] = true,
+	[CurrencyIdKind.kPve] = true,
 	[CurrencyIdKind.kDiamondDrawItem] = true,
-	[CurrencyIdKind.kDiamondDrawExItem] = true,
-	[CurrencyIdKind.IM_JinChui] = true
+	[CurrencyIdKind.kDiamondDrawExItem] = true
 }
 local PowerConfigMap = {
 	[CurrencyIdKind.kPower] = {
@@ -144,6 +162,12 @@ local PowerConfigMap = {
 		all = "Act_Halloween_Power_RecAll",
 		configFunc = "getPowerResetByCurrencyId",
 		next = "Act_Halloween_Power_RecNext",
+		func = "getPowerByCurrencyId"
+	},
+	[CurrencyIdKind.kActivityHolidayPower] = {
+		all = "Act_NewYear_Power_RecAll",
+		configFunc = "getPowerResetByCurrencyId",
+		next = "Act_NewYear_Power_RecNext",
 		func = "getPowerByCurrencyId"
 	}
 }

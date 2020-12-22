@@ -44,11 +44,13 @@ HeroEquip:has("_limitLevelTotalGold", {
 HeroEquip:has("_preHeroCombat", {
 	is = "rw"
 })
+HeroEquip:has("_overflowStarExp", {
+	is = "rw"
+})
 
 local HeroEquipExpItem = ConfigReader:getDataByNameIdAndKey("ConfigValue", "HeroEquipExpItem", "content")
 local HeroEquipResolve = ConfigReader:getDataByNameIdAndKey("ConfigValue", "HeroEquipResolve", "content")
 local HeroEquipSkillLevel = ConfigReader:getDataByNameIdAndKey("ConfigValue", "HeroEquipSkillLevel", "content")
-local SKILL_MAX_LEVEL = table.nums(HeroEquipSkillLevel)
 
 function HeroEquip:initialize(id)
 	super.initialize(self)
@@ -69,6 +71,7 @@ function HeroEquip:initialize(id)
 	self._rarity = 0
 	self._limitLevelTotalGold = 0
 	self._preHeroCombat = 0
+	self._overflowStarExp = 0
 	self._preHeroId = nil
 	self._preAttrListCache = nil
 	self._attrListCache1 = nil
@@ -91,6 +94,8 @@ function HeroEquip:initialize(id)
 	table.sort(self._heroEquipExpItemList, function (a, b)
 		return b.exp < a.exp
 	end)
+
+	self._SKILL_MAX_LEVEL = table.nums(HeroEquipSkillLevel)
 end
 
 function HeroEquip:initSkillData()
@@ -156,6 +161,10 @@ function HeroEquip:synchronize(data)
 		hasAttrChanged = true
 	end
 
+	if data.overflowStarExp then
+		self._overflowStarExp = data.overflowStarExp
+	end
+
 	self:refreshSkill()
 	self:refreshLimitLevelGold()
 
@@ -201,6 +210,10 @@ function HeroEquip:syncConfig()
 	self._config = ConfigReader:getRecordById("HeroEquipBase", self._equipId)
 
 	self:initSkillData()
+
+	if self._config.URUPSkillLV then
+		self._SKILL_MAX_LEVEL = table.nums(self._config.URUPSkillLV)
+	end
 end
 
 function HeroEquip:syncLevelConfig()
@@ -611,6 +624,10 @@ function HeroEquip:getEquipItemNum()
 	return self._starConfig.EquipItemNum
 end
 
+function HeroEquip:getEquipNeedControl()
+	return self._starConfig.EquipNeedControl
+end
+
 function HeroEquip:getIncludeEquipStarExp()
 	return self._starConfig.IncludeEquipStarExp
 end
@@ -659,7 +676,11 @@ function HeroEquip:canSkillUp()
 		return false
 	end
 
-	if HeroEquipSkillLevel[1] and HeroEquipSkillLevel[1] <= self:getLevel() then
+	if self._config.URUPSkillLV then
+		if self._config.URUPSkillLV[1] and self._config.URUPSkillLV[1] <= self:getLevel() then
+			return true
+		end
+	elseif HeroEquipSkillLevel[1] and HeroEquipSkillLevel[1] <= self:getLevel() then
 		return true
 	end
 
@@ -671,7 +692,7 @@ function HeroEquip:isHaveSkill()
 end
 
 function HeroEquip:isSkillMaxLevel()
-	if self._skill and SKILL_MAX_LEVEL <= self._skill:getLevel() then
+	if self._skill and self._SKILL_MAX_LEVEL <= self._skill:getLevel() then
 		return true
 	end
 
@@ -679,7 +700,11 @@ function HeroEquip:isSkillMaxLevel()
 end
 
 function HeroEquip:getUnLockSkillLevel()
-	return HeroEquipSkillLevel[1]
+	if self._config.URUPSkillLV then
+		return self._config.URUPSkillLV[1]
+	else
+		return HeroEquipSkillLevel[1]
+	end
 end
 
 function HeroEquip:getIsUseEquipItemNum()

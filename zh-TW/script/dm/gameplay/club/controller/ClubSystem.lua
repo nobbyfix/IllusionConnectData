@@ -790,9 +790,33 @@ function ClubSystem:requestLogList(startNum, endNum, clearData, callback)
 	end)
 end
 
-function ClubSystem:checkEnabled()
+function ClubSystem:checkEnabled(data)
 	local systemKeeper = self:getInjector():getInstance("SystemKeeper")
 	local unlock, tips = systemKeeper:isUnlock("Club_System")
+
+	if data and data.tab then
+		local tab = data.tab
+
+		if tab == ClubHallType.kTechnology then
+			local unlockCondition = ConfigReader:getDataByNameIdAndKey("ClubTechnology", "Club_Contribute", "Unlock")
+			local levelCon = unlockCondition.LEVEL
+			local clubLevelCon = unlockCondition.ClubLevel
+			local developSystem = self:getInjector():getInstance(DevelopSystem)
+			local playerLevel = developSystem:getPlayer():getLevel()
+			local clubLevel = self:getLevel()
+
+			if levelCon <= playerLevel and clubLevelCon <= clubLevel then
+				unlock = true
+			else
+				local tipsId = ConfigReader:getDataByNameIdAndKey("ClubTechnology", "Club_Contribute", "UnlockDesc")
+				tips = Strings:get(tipsId, {
+					LEVEL = levelCon,
+					ClubLevel = clubLevelCon
+				})
+				unlock = false
+			end
+		end
+	end
 
 	return unlock, tips
 end
@@ -810,6 +834,7 @@ function ClubSystem:tryEnter(data)
 		goToActivityBossFormSunmmer = data.goToActivityBossFormSunmmer
 	end
 
+	local tab = data and data.tab
 	local unlock, tips = self:checkEnabled()
 
 	if unlock then
@@ -818,6 +843,7 @@ function ClubSystem:tryEnter(data)
 
 			self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
 				clubName = clubName,
+				tab = tab,
 				goToActivityBossFormSunmmer = goToActivityBossFormSunmmer
 			}))
 		end)
@@ -825,6 +851,40 @@ function ClubSystem:tryEnter(data)
 		self:dispatch(ShowTipEvent({
 			tip = tips
 		}))
+	end
+end
+
+function ClubSystem:checkLeftCount(data)
+	local unlock, tips = self:checkEnabled()
+
+	if not unlock then
+		return 1, tips
+	end
+
+	if data and data.tab then
+		local tab = data.tab
+
+		if tab == "kTechnology" then
+			local curCount = self:getClub():getCurDonateCount()
+			local maxDonateCount = self:getMaxDonateCount()
+
+			return maxDonateCount and curCount or 0, Strings:get("Club_Donate_LeftCount_NotEnough")
+		elseif tab == "kBoss" then
+			if CommonUtils.GetSwitch("fn_clubBoss") == false or self._systemKeeper:canShow("ClubStage") == false then
+				return 0, Strings:get("")
+			end
+
+			local clubBossInfo = self:getClub():getClubBossInfo(self._viewType)
+			local leftTimes = clubBossInfo:getBossFightTimes()
+
+			if clubBossInfo:getPassAll() then
+				return 0, Strings:get("ClubBoss_PassAll")
+			end
+
+			return leftTimes, Strings:get("ClubBoss_LeftCount_NotEnough")
+		end
+	else
+		return 1
 	end
 end
 
@@ -1500,8 +1560,6 @@ function ClubSystem:requestTargetClubInfo(clubId, func)
 	local clubService = self:getInjector():getInstance(ClubService)
 
 	clubService:requestTargetClubInfo(data, true, function (response)
-		dump(response, "requestClubSimpleInfo_____")
-
 		if response.resCode == GS_SUCCESS and func then
 			func(response.data.clubInfo)
 		end
@@ -1974,9 +2032,6 @@ end
 function ClubSystem:enterBattle(params, viewType)
 	self._enterClubBossBattle = true
 	self._enterClubBossBattleViewType = viewType
-
-	dump(viewType, "_enterClubBossBattleViewType")
-
 	local playerData = params.playerData
 	local enemyData = params.enemyData
 	local mapId = params.blockMapId

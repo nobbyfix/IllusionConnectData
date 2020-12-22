@@ -70,6 +70,77 @@
         "Type": 1,
         "Unlook": 1
     },
+    "Surface_ADHWShi_sd": {
+        "ActivityId": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "point": [
+                    -2,
+                    687
+                ],
+                "range": [
+                    128,
+                    128
+                ],
+                "voice": [
+                    "Voice_ADHWShi_41",
+                    "Voice_ADHWShi_43",
+                    "Voice_ADHWShi_43",
+                    "Voice_ADHWShi_39"
+                ]
+            },
+            {
+                "action": "touch2",
+                "point": [
+                    3,
+                    586
+                ],
+                "range": [
+                    128,
+                    95
+                ],
+                "voice": [
+                    "Voice_ADHWShi_44",
+                    "Voice_ADHWShi_45",
+                    "Voice_ADHWShi_46",
+                    "Voice_ADHWShi_39"
+                ]
+            },
+            {
+                "action": "touch1",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ],
+                "voice": [
+                    "Voice_ADHWShi_47",
+                    "Voice_ADHWShi_48",
+                    "Voice_ADHWShi_07",
+                    "Voice_ADHWShi_08",
+                    "Voice_ADHWShi_09",
+                    "Voice_ADHWShi_37",
+                    "Voice_ADHWShi_39"
+                ]
+            }
+        ],
+        "Desc": "Surface_ADHWShi_sd_Desc",
+        "GainDesc": "Surface_ADHWShi_sd_GainDesc",
+        "GainShortDesc": "Surface_GainShort",
+        "GoodsId": "",
+        "Hero": "ADHWShi",
+        "Link": "",
+        "Model": "Model_ADHWShi_sd",
+        "Name": "Surface_ADHWShi_sd_Name",
+        "Quality": 4,
+        "ShopID": "",
+        "Sort": 2,
+        "Type": 4,
+        "Unlook": 1
+    },
     "Surface_AJTa_1": {
         "ActivityId": "",
         "ClickAction": [
@@ -3510,6 +3581,77 @@
         "Type": 1,
         "Unlook": 1
     },
+    "Surface_LCYShi_sd": {
+        "ActivityId": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "point": [
+                    31,
+                    938
+                ],
+                "range": [
+                    138,
+                    138
+                ],
+                "voice": [
+                    "Voice_LCYShi_41",
+                    "Voice_LCYShi_43",
+                    "Voice_LCYShi_43",
+                    "Voice_LCYShi_39"
+                ]
+            },
+            {
+                "action": "touch2",
+                "point": [
+                    26,
+                    810
+                ],
+                "range": [
+                    138,
+                    95
+                ],
+                "voice": [
+                    "Voice_LCYShi_44",
+                    "Voice_LCYShi_45",
+                    "Voice_LCYShi_46",
+                    "Voice_LCYShi_39"
+                ]
+            },
+            {
+                "action": "touch1",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ],
+                "voice": [
+                    "Voice_LCYShi_47",
+                    "Voice_LCYShi_48",
+                    "Voice_LCYShi_07",
+                    "Voice_LCYShi_08",
+                    "Voice_LCYShi_09",
+                    "Voice_LCYShi_37",
+                    "Voice_LCYShi_39"
+                ]
+            }
+        ],
+        "Desc": "Surface_LCYShi_sd_Desc",
+        "GainDesc": "Surface_LCYShi_sd_GainDesc",
+        "GainShortDesc": "Surface_GainShort",
+        "GoodsId": "",
+        "Hero": "LCYShi",
+        "Link": "",
+        "Model": "Model_LCYShi_sd",
+        "Name": "Surface_LCYShi_sd_Name",
+        "Quality": 4,
+        "ShopID": "",
+        "Sort": 2,
+        "Type": 4,
+        "Unlook": 1
+    },
     "Surface_LDu_1": {
         "ActivityId": "",
         "ClickAction": [
@@ -4788,6 +4930,77 @@
         "Type": 1,
         "Unlook": 1
     },
+    "Surface_NFEr_1": {
+        "ActivityId": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "point": [
+                    -55,
+                    1212
+                ],
+                "range": [
+                    128,
+                    128
+                ],
+                "voice": [
+                    "Voice_NFEr_41",
+                    "Voice_NFEr_43",
+                    "Voice_NFEr_43",
+                    "Voice_NFEr_39"
+                ]
+            },
+            {
+                "action": "touch2",
+                "point": [
+                    -44,
+                    369
+                ],
+                "range": [
+                    128,
+                    95
+                ],
+                "voice": [
+                    "Voice_NFEr_44",
+                    "Voice_NFEr_45",
+                    "Voice_NFEr_46",
+                    "Voice_NFEr_39"
+                ]
+            },
+            {
+                "action": "touch1",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ],
+                "voice": [
+                    "Voice_NFEr_47",
+                    "Voice_NFEr_48",
+                    "Voice_NFEr_07",
+                    "Voice_NFEr_08",
+                    "Voice_NFEr_09",
+                    "Voice_NFEr_37",
+                    "Voice_NFEr_39"
+                ]
+            }
+        ],
+        "Desc": "Surface_NFEr_1_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "1",
+        "GoodsId": "",
+        "Hero": "NFEr",
+        "Link": "",
+        "Model": "Model_NFEr",
+        "Name": "Surface_NFEr_1_Name",
+        "Quality": 2,
+        "ShopID": "",
+        "Sort": 1,
+        "Type": "",
+        "Unlook": 1
+    },
     "Surface_NXYYi_1": {
         "ActivityId": "",
         "ClickAction": [
@@ -4857,6 +5070,77 @@
         "ShopID": "",
         "Sort": 1,
         "Type": 1,
+        "Unlook": 1
+    },
+    "Surface_PDLa_1": {
+        "ActivityId": "",
+        "ClickAction": [
+            {
+                "action": "touch3",
+                "point": [
+                    -18,
+                    562
+                ],
+                "range": [
+                    128,
+                    128
+                ],
+                "voice": [
+                    "Voice_PDLa_41",
+                    "Voice_PDLa_42",
+                    "Voice_PDLa_43",
+                    "Voice_PDLa_39"
+                ]
+            },
+            {
+                "action": "touch2",
+                "point": [
+                    -44,
+                    369
+                ],
+                "range": [
+                    128,
+                    95
+                ],
+                "voice": [
+                    "Voice_PDLa_44",
+                    "Voice_PDLa_45",
+                    "Voice_PDLa_46",
+                    "Voice_PDLa_39"
+                ]
+            },
+            {
+                "action": "touch2",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ],
+                "voice": [
+                    "Voice_PDLa_47",
+                    "Voice_PDLa_48",
+                    "Voice_PDLa_07",
+                    "Voice_PDLa_08",
+                    "Voice_PDLa_09",
+                    "Voice_PDLa_37",
+                    "Voice_PDLa_39"
+                ]
+            }
+        ],
+        "Desc": "Surface_PDLa_1_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "1",
+        "GoodsId": "",
+        "Hero": "PDLa",
+        "Link": "",
+        "Model": "Model_PDLa",
+        "Name": "Surface_PDLa_1_Name",
+        "Quality": 2,
+        "ShopID": "",
+        "Sort": 1,
+        "Type": "",
         "Unlook": 1
     },
     "Surface_PNCao_1": {
@@ -5212,6 +5496,77 @@
         "ShopID": "",
         "Sort": 1,
         "Type": 1,
+        "Unlook": 1
+    },
+    "Surface_SGHQShou_sd": {
+        "ActivityId": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "point": [
+                    -64,
+                    658
+                ],
+                "range": [
+                    128,
+                    128
+                ],
+                "voice": [
+                    "Voice_SGHQShou_41",
+                    "Voice_SGHQShou_43",
+                    "Voice_SGHQShou_43",
+                    "Voice_SGHQShou_39"
+                ]
+            },
+            {
+                "action": "touch2",
+                "point": [
+                    16,
+                    588
+                ],
+                "range": [
+                    128,
+                    95
+                ],
+                "voice": [
+                    "Voice_SGHQShou_44",
+                    "Voice_SGHQShou_45",
+                    "Voice_SGHQShou_46",
+                    "Voice_SGHQShou_39"
+                ]
+            },
+            {
+                "action": "touch1",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ],
+                "voice": [
+                    "Voice_SGHQShou_47",
+                    "Voice_SGHQShou_48",
+                    "Voice_SGHQShou_07",
+                    "Voice_SGHQShou_08",
+                    "Voice_SGHQShou_09",
+                    "Voice_SGHQShou_37",
+                    "Voice_SGHQShou_39"
+                ]
+            }
+        ],
+        "Desc": "Surface_SGHQShou_sd_Desc",
+        "GainDesc": "Surface_SGHQShou_sd_GainDesc",
+        "GainShortDesc": "Surface_GainShort",
+        "GoodsId": "Surface_20201210",
+        "Hero": "SGHQShou",
+        "Link": "",
+        "Model": "Model_SGHQShou_sd",
+        "Name": "Surface_SGHQShou_sd_Name",
+        "Quality": 4,
+        "ShopID": "Shop_Surface",
+        "Sort": 2,
+        "Type": 2,
         "Unlook": 1
     },
     "Surface_SLMen_1": {

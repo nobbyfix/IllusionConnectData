@@ -6,10 +6,27 @@ CurrencySystem:has("_currencyService", {
 CurrencySystem:has("_shopSystem", {
 	is = "r"
 }):injectWith("ShopSystem")
+CurrencySystem:has("_systemKeeper", {
+	is = "r"
+}):injectWith("SystemKeeper")
 
 local CurrencyType2ResIdMap = {
 	[CurrencyType.kGold] = "gold",
 	[CurrencyType.kDiamond] = "diamond"
+}
+local CurrencyType2BuyType = {
+	[CurrencyType.kGold] = {
+		TimeRecordType.kBuyGold,
+		"BuyGold_Base"
+	},
+	[CurrencyType.kDiamond] = {
+		TimeRecordType.kBuyCrystal,
+		"BuyCrystal_Base"
+	},
+	[CurrencyType.kExp] = {
+		TimeRecordType.kBuyExp,
+		"BuyExp_Base"
+	}
 }
 
 function CurrencySystem:initialize()
@@ -80,12 +97,73 @@ function CurrencySystem:requestBuyEngry(callBack)
 	end)
 end
 
+function CurrencySystem:checkEnabled(params)
+	if params then
+		local unlock, tips = self._systemKeeper:isUnlock(params.buyType)
+		local config = ConfigReader:getRecordById("UnlockSystem", params.buyType)
+		local condition = config.Condition
+
+		if condition.STAGE then
+			unlock, tips = self._systemKeeper:checkStagePointLock(condition.STAGE)
+			tips = Strings:get("Task_UI22", {
+				factor = tips
+			})
+		end
+
+		return unlock, tips
+	end
+
+	return true
+end
+
+function CurrencySystem:checkEnabledWithTimes(params)
+	local unlock, tips = self:checkEnabled(params)
+
+	if unlock and self:getLeftBuyTimes(params.buyType) <= 0 then
+		return false, Strings:get("MAZE_TIMES")
+	end
+
+	return unlock, tips
+end
+
+function CurrencySystem:tryEnter(params)
+	local unlock, tips = self:checkEnabled(params)
+
+	if not unlock then
+		self:dispatch(ShowTipEvent({
+			tip = tips
+		}))
+	else
+		local view = self:getInjector():getInstance("NewCurrencyBuyPopView")
+
+		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+		}, {
+			_currencyType = CurrencyType.kExp
+		}))
+	end
+end
+
+function CurrencySystem:getLeftBuyTimes(currencyType)
+	if CurrencyType2BuyType[currencyType] then
+		local aBuyTimes = self._bagSystem:getBuyTimesByType(CurrencyType2BuyType[currencyType][1])
+		local buyGold_Base = ConfigReader:getDataByNameIdAndKey("ConfigValue", CurrencyType2BuyType[currencyType][2], "content")
+		local aTotTimes = buyGold_Base.maxTime
+
+		return aTotTimes - aBuyTimes
+	end
+
+	return 0
+end
+
 function CurrencySystem.class:checkEnoughGold(mediator, needGold, delegate, style)
 	local developSystem = mediator:getInjector():getInstance(DevelopSystem)
 	local gold = developSystem:getGolds()
 
-	if gold < needGold then
-		if style == nil or style.tipType == nil then
+	if gold < needGold and style ~= nil then
+		if style.tipType == nil then
+			-- Nothing
+		elseif style.tipType == "popup" then
 			CurrencySystem:buyCurrencyByType(mediator, CurrencyType.kGold)
 		elseif style.tipType == "tip" then
 			mediator:dispatch(ShowTipEvent({
@@ -104,7 +182,7 @@ function CurrencySystem.class:checkEnoughDiamond(mediator, needDiamond, delegate
 	local diamond = developSystem:getDiamonds()
 
 	if diamond < needDiamond then
-		if style == nil or style.tipType == nil then
+		if style == nil or style.tipType == nil or style.tipType == "popup" then
 			local delegate = {
 				willClose = function (self, popupMediator, data)
 					dump(data.response, "data.response")
@@ -150,25 +228,42 @@ function CurrencySystem.class:checkEnoughEquipPiece(mediator, needCount, delegat
 	return needCount <= count
 end
 
-function CurrencySystem.class:checkEnoughHonor(mediator, needCount, delegate, style)
+function CurrencySystem.class:checkEnoughNormalCurrency(mediator, currencyId, needCount, delegate, style)
 	local bagSystem = mediator:getInjector():getInstance(DevelopSystem):getBagSystem()
-	local count = bagSystem:getItemCount(CurrencyIdKind.kHonor)
+	local count = bagSystem:getItemCount(currencyId)
 
-	if count < needCount then
-		if style == nil or style.tipType == nil then
-			mediator:dispatch(ShowTipEvent({
-				duration = 0.2,
-				tip = Strings:get("SHOP_HONOR_NO_ENOUGH")
-			}))
+	if count < needCount and style ~= nil then
+		if style.tipType == nil then
+			-- Nothing
+		elseif style.tipType == "popup" then
+			self:showSource(mediator, currencyId)
 		elseif style.tipType == "tip" then
+			local itemConfig = ConfigReader:getRecordById("ResourcesIcon", currencyId)
+			itemConfig = itemConfig or ConfigReader:getRecordById("ItemConfig", currencyId)
+			local name = itemConfig and Strings:get(itemConfig.Name) or currencyId
+
 			mediator:dispatch(ShowTipEvent({
 				duration = 0.2,
-				tip = Strings:get("SHOP_HONOR_NO_ENOUGH")
+				tip = Strings:get("ItemNotEngouh_Text", {
+					item = name
+				})
 			}))
 		end
 	end
 
 	return needCount <= count
+end
+
+function CurrencySystem.class:checkEnoughHonor(mediator, needCount, delegate, style)
+	return self:checkEnoughNormalCurrency(mediator, CurrencyIdKind.kHonor, needCount, delegate, style)
+end
+
+function CurrencySystem.class:checkEnoughPve(mediator, needCount, delegate, style)
+	return self:checkEnoughNormalCurrency(mediator, CurrencyIdKind.kPve, needCount, delegate, style)
+end
+
+function CurrencySystem.class:checkEnoughClub(mediator, needCount, delegate, style)
+	return self:checkEnoughNormalCurrency(mediator, CurrencyIdKind.kClub, needCount, delegate, style)
 end
 
 function CurrencySystem.class:checkEnoughTrial(mediator, needCount, delegate, style)
@@ -210,13 +305,15 @@ function CurrencySystem.class:checkEnoughCrystal(mediator, needCount, delegate, 
 	local developSystem = mediator:getInjector():getInstance(DevelopSystem)
 	local crystal = developSystem:getCrystal()
 
-	if crystal < needCount then
-		if style == nil or style.tipType == nil then
+	if crystal < needCount and style ~= nil then
+		if style.tipType == nil then
+			-- Nothing
+		elseif style.tipType == "popup" then
 			CurrencySystem:buyCurrencyByType(mediator, CurrencyType.kCrystal)
 		elseif style.tipType == "tip" then
 			mediator:dispatch(ShowTipEvent({
 				duration = 0.2,
-				tip = Strings:get("Tips_3010010")
+				tip = Strings:get("MASTER_CRYSTAL_NO_ENOUGH")
 			}))
 		end
 	end
@@ -229,14 +326,32 @@ function CurrencySystem.class:checkEnoughCurrency(mediator, currencyId, needNum,
 		[CurrencyIdKind.kGold] = CurrencySystem.checkEnoughGold,
 		[CurrencyIdKind.kDiamond] = CurrencySystem.checkEnoughDiamond,
 		[CurrencyIdKind.kEquipPiece] = CurrencySystem.checkEnoughEquipPiece,
-		[CurrencyIdKind.kHonor] = CurrencySystem.checkEnoughHonor,
 		[CurrencyIdKind.kTrial] = CurrencySystem.checkEnoughTrial,
 		[CurrencyIdKind.kCrystal] = CurrencySystem.checkEnoughCrystal,
-		[CurrencyIdKind.kPetRace] = CurrencySystem.checkEnoughPetCoin
+		[CurrencyIdKind.kPetRace] = CurrencySystem.checkEnoughPetCoin,
+		[CurrencyIdKind.kHonor] = CurrencySystem.checkEnoughHonor,
+		[CurrencyIdKind.kClub] = CurrencySystem.checkEnoughClub,
+		[CurrencyIdKind.kPve] = CurrencySystem.checkEnoughPve
 	}
+	local checkDefaultTipTypeMap = {
+		[CurrencyIdKind.kGold] = "popup",
+		[CurrencyIdKind.kDiamond] = "popup",
+		[CurrencyIdKind.kCrystal] = "popup"
+	}
+	local currencyId = tostring(currencyId)
 
-	if checkFuncMap[tostring(currencyId)] then
-		return checkFuncMap[tostring(currencyId)](self, mediator, needNum, nil, style)
+	if checkFuncMap[currencyId] then
+		local tipType = style and style.type or checkDefaultTipTypeMap[currencyId]
+
+		if style and style.notShowTip then
+			tipType = style
+		end
+
+		return checkFuncMap[currencyId](self, mediator, needNum, nil, {
+			tipType = tipType
+		})
+	else
+		return nil
 	end
 end
 
@@ -331,8 +446,8 @@ function CurrencySystem.class:_showAlertView(mediator, title, content, delegate)
 	}, delegate))
 end
 
-function CurrencySystem.class:formatCurrency(count)
-	if count <= 999999 then
+function CurrencySystem.class:formatCurrency(count, limit)
+	if count <= (tonumber(limit) or 999999) then
 		return tostring(count), false
 	else
 		count = count - count % 1000
@@ -340,4 +455,20 @@ function CurrencySystem.class:formatCurrency(count)
 
 		return count, true
 	end
+end
+
+function CurrencySystem.class:showSource(mediator, currencyId)
+	local bagSystem = mediator:getInjector():getInstance(DevelopSystem):getBagSystem()
+	local param = {
+		needNum = 0,
+		hasWipeTip = true,
+		hideProgress = true,
+		itemId = currencyId,
+		hasNum = bagSystem:getItemCount(currencyId)
+	}
+	local view = mediator:getInjector():getInstance("sourceView")
+
+	mediator:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, {
+		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+	}, param))
 end

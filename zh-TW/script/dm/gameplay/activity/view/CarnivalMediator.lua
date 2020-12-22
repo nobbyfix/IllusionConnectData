@@ -476,6 +476,9 @@ function CarnivalMediator:initScorePanel()
 	local rewardList = self._model:getRewardList()
 	self._scoreWidget = {}
 	local giftView = self._main:getChildByName("giftListView")
+
+	giftView:setScrollBarEnabled(false)
+
 	local baseZeroPosX = self._loadingBar:getPositionX()
 	local maxSizeWidth = self._loadingBar:getContentSize().width
 	self._maxScore = 42

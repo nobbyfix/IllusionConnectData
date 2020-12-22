@@ -24,7 +24,7 @@ local kColumnNum = 4
 local kEquipsShowType = {
 	[EquipsShowType.kStrengthen] = Strings:get("Equip_UI63"),
 	[EquipsShowType.kStar] = Strings:get("Equip_UI43"),
-	[EquipsShowType.kStar] = Strings:get("Equip_UI43")
+	[EquipsShowType.kAllUpdate] = Strings:get("Equip_UI63")
 }
 
 function EquipListView:initialize(info)

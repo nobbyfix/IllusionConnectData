@@ -110,9 +110,11 @@ function DreamChallengeTeamMediator:resumeWithData()
 	super.resumeWithData(self)
 	self._costBtn:setVisible(self:showCostBtn())
 
+	self._maxTeamPetNum = math.min(self._stageSystem:getPlayerInit() + self._developSystem:getBuildingCardEffValue(), self._dreamSystem:getTeamPetNumLimit(self._battleId))
 	self._costMaxNum = self._stageSystem:getCostInit() + self._developSystem:getBuildingCostEffValue()
 
 	self._costTotalLabel2:setString("/" .. self._costMaxNum)
+	self:initLockIconsByDreamChallenge()
 end
 
 function DreamChallengeTeamMediator:initData(data)
@@ -121,22 +123,45 @@ function DreamChallengeTeamMediator:initData(data)
 	self._pointId = data.pointId
 	self._battleId = data.battleId
 	self._stageType = data and data.stageType and data.stageType or ""
+	self._forbidMasters = {}
 	self._masterList = {}
 	local masterAvail = self._dreamSystem:getMasterList(self._mapId, self._pointId)
 	local allMasterData = self._masterSystem:getShowMasterList()
 	local tmpMaster = {}
 
 	for i = 1, #allMasterData do
-		tmpMaster[allMasterData[i]:getId()] = allMasterData[i]
-	end
+		local master = allMasterData[i]
 
-	for i = 1, #masterAvail do
-		local master = tmpMaster[masterAvail[i]]
+		table.insert(self._forbidMasters, master:getId())
 
-		if master and not master:getIsLock() then
+		if not master:getIsLock() then
+			for i = 1, #masterAvail do
+				if masterAvail[i] == master:getId() then
+					table.remove(self._forbidMasters, #self._forbidMasters)
+				end
+			end
+
 			table.insert(self._masterList, master)
 		end
 	end
+
+	dump(self._forbidMasters, "self._forbidMasters >>>>>>>>>>> ")
+	table.sort(self._masterList, function (a, b)
+		local astate = kMasterState.Forbidden
+		local bstate = kMasterState.Forbidden
+
+		for i = 1, #masterAvail do
+			if masterAvail[i] == a:getId() then
+				astate = kMasterState.Normal
+			end
+
+			if masterAvail[i] == b:getId() then
+				bstate = kMasterState.Normal
+			end
+		end
+
+		return bstate < astate
+	end)
 
 	self._recomandMasterList = self._dreamSystem:getRecomandMaster(self._mapId, self._pointId)
 
@@ -148,7 +173,8 @@ function DreamChallengeTeamMediator:initData(data)
 	self._costTotal = 0
 	self._costMaxNum = self._stageSystem:getCostInit() + self._developSystem:getBuildingCostEffValue()
 	self._npc = self._dreamSystem:getNpc(self._mapId, self._pointId, self._battleId)
-	self._maxTeamPetNum = self._stageSystem:getPlayerInit() + self._developSystem:getBuildingCardEffValue()
+	self._npcForbid = self._dreamSystem:getNpcForbidId(self._mapId, self._pointId, self._battleId)
+	self._maxTeamPetNum = math.min(self._stageSystem:getPlayerInit() + self._developSystem:getBuildingCardEffValue(), self._dreamSystem:getTeamPetNumLimit(self._battleId))
 	self._teamUnlockConfig = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Stage_Team_Unlock", "content")
 
 	self._stageSystem:setSortExtand(0)
@@ -158,14 +184,14 @@ function DreamChallengeTeamMediator:initData(data)
 	self._curMasterId = self._curTeam:getMasterId()
 	local checkAvail = false
 
-	for i = 1, #self._masterList do
-		if self._curMasterId == self._masterList[i]:getId() then
+	for i = 1, #masterAvail do
+		if self._curMasterId == masterAvail[i] then
 			checkAvail = true
 		end
 	end
 
 	if not checkAvail then
-		self._curMasterId = self._masterList[1]:getId()
+		self._curMasterId = masterAvail[1]
 	end
 
 	self._oldMasterId = self._curMasterId
@@ -174,7 +200,7 @@ function DreamChallengeTeamMediator:initData(data)
 	self._tempTeams = {}
 	self._teamList = self._developSystem:getAllUnlockTeams()
 	local teamTmpHeros = self:removeExceptHeros(self._curTeam:getHeroes())
-	local teamHeros = self:removeLockedHeros(teamTmpHeros)
+	local teamHeros = self:removeOverNumHeros(self:removeLockedHeros(teamTmpHeros))
 
 	for _, v in pairs(teamHeros) do
 		self._teamPets[teamPetIndex] = v
@@ -198,8 +224,18 @@ end
 function DreamChallengeTeamMediator:removeExceptHeros(heros)
 	local showHeros = {}
 
+	local function isNpc(heroId)
+		for i = 1, #self._npcForbid do
+			if self._npcForbid[i] == heroId then
+				return true
+			end
+		end
+
+		return false
+	end
+
 	for k, v in pairs(heros) do
-		if not self._dreamSystem:checkHeroTired(self._mapId, self._pointId, v) then
+		if not self._dreamSystem:checkHeroTired(self._mapId, self._pointId, v) and not isNpc(v) then
 			showHeros[k + 1] = v
 		end
 	end
@@ -212,9 +248,24 @@ function DreamChallengeTeamMediator:removeLockedHeros(heros)
 	local index = 1
 
 	for k, v in pairs(heros) do
-		if not self._dreamSystem:checkHeroLocked(self._mapId, self._pointId, v) then
+		local isNpc = false
+
+		if not self._dreamSystem:checkHeroLocked(self._mapId, self._pointId, v) and not isNpc then
 			showHeros[index] = v
 			index = index + 1
+		end
+	end
+
+	return showHeros
+end
+
+function DreamChallengeTeamMediator:removeOverNumHeros(heros)
+	local limitNum = math.min(self._maxTeamPetNum, self._dreamSystem:getTeamPetNumLimit(self._battleId)) - #self._npc
+	local showHeros = {}
+
+	for i = 1, limitNum do
+		if heros[i] then
+			showHeros[i] = heros[i]
 		end
 	end
 
@@ -225,10 +276,21 @@ function DreamChallengeTeamMediator:showOneKeyHeros()
 	local orderPets = self._heroSystem:getTeamPrepared(self._teamPets, self._petList)
 	self._orderPets = {}
 	self._leavePets = {}
+
+	local function isNpc(heroId, npcForbids)
+		for j = 1, #npcForbids do
+			if npcForbids[j] == heroId then
+				return true
+			end
+		end
+
+		return false
+	end
+
 	local canRecommendNum = 0
 
 	for i = 1, #orderPets do
-		if self._dreamSystem:checkHeroRecomand(self._mapId, self._pointId, orderPets[i]) and self._dreamSystem:checkHeroTired(self._mapId, self._pointId, orderPets[i]) == false then
+		if self._dreamSystem:checkHeroRecomand(self._mapId, self._pointId, orderPets[i]) and self._dreamSystem:checkHeroTired(self._mapId, self._pointId, orderPets[i]) == false and isNpc(orderPets[i], self._npcForbid) == false then
 			canRecommendNum = canRecommendNum + 1
 		end
 	end
@@ -239,18 +301,24 @@ function DreamChallengeTeamMediator:showOneKeyHeros()
 
 	for i = 1, #orderPets do
 		if self._dreamSystem:checkHeroRecomand(self._mapId, self._pointId, orderPets[i]) then
-			if #self._orderPets < self._maxTeamPetNum - #self._npc and self._dreamSystem:checkHeroTired(self._mapId, self._pointId, orderPets[i]) == false then
+			local isTired = self._dreamSystem:checkHeroTired(self._mapId, self._pointId, orderPets[i])
+
+			if #self._orderPets < self._maxTeamPetNum - #self._npc and isTired == false and isNpc(orderPets[i], self._npcForbid) == false then
 				self._orderPets[#self._orderPets + 1] = orderPets[i]
 
 				table.insert(tbRecommandIds, orderPets[i])
 			else
 				self._leavePets[#self._leavePets + 1] = orderPets[i]
 			end
-		elseif notRecommendNum > 0 and self._dreamSystem:checkHeroTired(self._mapId, self._pointId, orderPets[i]) == false then
-			self._orderPets[#self._orderPets + 1] = orderPets[i]
-			notRecommendNum = notRecommendNum - 1
 		else
-			self._leavePets[#self._leavePets + 1] = orderPets[i]
+			local isTired = self._dreamSystem:checkHeroTired(self._mapId, self._pointId, orderPets[i])
+
+			if #self._orderPets < self._maxTeamPetNum - #self._npc and notRecommendNum > 0 and isTired == false and isNpc(orderPets[i], self._npcForbid) == false then
+				self._orderPets[#self._orderPets + 1] = orderPets[i]
+				notRecommendNum = notRecommendNum - 1
+			else
+				self._leavePets[#self._leavePets + 1] = orderPets[i]
+			end
 		end
 	end
 
@@ -261,6 +329,7 @@ end
 
 function DreamChallengeTeamMediator:setupView()
 	self:initLockIcons()
+	self:initLockIconsByDreamChallenge()
 	self:refreshPetNode()
 	self:refreshMasterInfo()
 	self:initView()
@@ -291,14 +360,75 @@ function DreamChallengeTeamMediator:initWidgetInfo()
 	self._costTotalLabel1 = self._main:getChildByFullName("info_bg.cost1")
 	self._costTotalLabel2 = self._main:getChildByFullName("info_bg.cost2")
 	self._movingPet = self._main:getChildByFullName("moving_pet")
+	self._combatInfoBtn = self._main:getChildByFullName("info_bg.infoBtn")
 	self._spPanel = self._main:getChildByName("ruleBtn")
 	self._spBuffInfo = self._main:getChildByName("spBuffInfo")
 	local buffInfo = self._spBuffInfo:getChildByName("buffInfo")
 	local num = self._dreamSystem:getPointFatigue(self._mapId, self._pointId)
+	local buffStr = self._dreamSystem:getTeamBuffStr(self._battleId)
 
-	buffInfo:setString(Strings:get("DreamChallenge_Team_Info", {
-		num = num
-	}))
+	if buffStr and buffStr ~= "" then
+		buffInfo:setString(Strings:get(buffStr, {
+			num = num
+		}))
+	else
+		buffInfo:setString(Strings:get("DreamChallenge_Team_Info", {
+			num = num
+		}))
+	end
+
+	self._teamPosPanel = self._main:getChildByFullName("teamPosPanel")
+	self._teamPosInfoTip = self._main:getChildByFullName("teamPosInfo")
+	self._fightInfoTip = self._main:getChildByFullName("fightInfo")
+	local teamPosData = ConfigReader:getDataByNameIdAndKey("DreamChallengeBattle", self._battleId, "PositionLimit")
+
+	self._teamPosPanel:setVisible(false)
+
+	if teamPosData and #teamPosData > 0 then
+		self._teamPosPanel:setVisible(true)
+
+		for i = 1, 9 do
+			local on = self._teamPosPanel:getChildByFullName("on_" .. i)
+			local off = self._teamPosPanel:getChildByFullName("off_" .. i)
+
+			on:setVisible(true)
+			off:setVisible(false)
+
+			for index, value in ipairs(teamPosData) do
+				if value == i then
+					on:setVisible(false)
+					off:setVisible(true)
+				end
+			end
+		end
+	end
+
+	self._teamPosPanel:addTouchEventListener(function (sender, eventType)
+		if eventType == ccui.TouchEventType.began then
+			for i = 1, 9 do
+				local on = self._teamPosInfoTip:getChildByFullName("teamPos.on_" .. i)
+				local off = self._teamPosInfoTip:getChildByFullName("teamPos.off_" .. i)
+
+				on:setVisible(true)
+				off:setVisible(false)
+
+				for index, value in ipairs(teamPosData) do
+					if value == i then
+						on:setVisible(false)
+						off:setVisible(true)
+					end
+				end
+			end
+
+			self._teamPosInfoTip:setVisible(true)
+		elseif eventType == ccui.TouchEventType.moved then
+			-- Nothing
+		elseif eventType == ccui.TouchEventType.canceled then
+			self._teamPosInfoTip:setVisible(false)
+		elseif eventType == ccui.TouchEventType.ended then
+			self._teamPosInfoTip:setVisible(false)
+		end
+	end)
 
 	self._teamBreakBtn = self._main:getChildByFullName("info_bg.button_one_key_break")
 	self._teamOneKeyBtn = self._main:getChildByFullName("info_bg.button_one_key_embattle")
@@ -467,7 +597,15 @@ function DreamChallengeTeamMediator:changeOwnPet(cell)
 	AudioEngine:getInstance():playEffect("Se_Click_Pickup", false)
 
 	if targetId then
-		self._teamPets[targetIndex] = id
+		if targetIndex <= #self._npc then
+			self:dispatch(ShowTipEvent({
+				tip = Strings:get("DreamChallenge_Team_Helper_Info")
+			}))
+
+			return
+		end
+
+		self._teamPets[targetIndex - #self._npc] = id
 		local index = table.indexof(self._petList, id)
 
 		if index then
@@ -754,6 +892,14 @@ function DreamChallengeTeamMediator:refreshListView(ignoreAdjustOffset)
 		if self._dreamSystem:checkHeroTired(self._mapId, self._pointId, self._petListAll[i]) then
 			table.insert(tbTiredIds, self._petListAll[i])
 		end
+
+		if #self._npcForbid > 0 then
+			for j = 1, #self._npcForbid do
+				if self._npcForbid[j] == self._petListAll[i] then
+					table.insert(tbTiredIds, self._petListAll[i])
+				end
+			end
+		end
 	end
 
 	self._heroSystem:sortHeroes(self._petListAll, sortType, tbRecommandIds, false, tbTiredIds)
@@ -802,25 +948,49 @@ function DreamChallengeTeamMediator:initHero(node, info)
 	if node:getChildByName("fatigueBg") then
 		local isTired = self._dreamSystem:checkHeroTired(self._mapId, self._pointId, heroId)
 
-		node:getChildByName("fatigueBg"):setCascadeColorEnabled(false)
-		node:getChildByName("fatigueBg"):setVisible(isTired)
-		node:setColor(isTired and cc.c3b(150, 150, 150) or cc.c3b(250, 250, 250))
-
-		local fatigueTxt = node:getChildByName("fatigueBg"):getChildByName("fatigueTxt")
-
-		if fatigueTxt then
-			fatigueTxt:setString(Strings:get("clubBoss_49"))
-		end
-
 		if isTired then
+			local fatigueTxt = node:getChildByName("fatigueBg"):getChildByName("fatigueTxt")
+
+			if fatigueTxt then
+				fatigueTxt:setString(Strings:get("clubBoss_49"))
+			end
+
 			node:addTouchEventListener(function (sender, eventType)
 				if eventType == ccui.TouchEventType.ended then
 					self:dispatch(ShowTipEvent({
-						tip = Strings:get("Error_52008")
+						tip = Strings:get("DreamTower_TiredTip")
 					}))
 				end
 			end)
 		end
+
+		local isNpc = false
+
+		for i = 1, #self._npcForbid do
+			if self._npcForbid[i] == heroId then
+				isNpc = true
+			end
+		end
+
+		if isNpc then
+			local fatigueTxt = node:getChildByName("fatigueBg"):getChildByName("fatigueTxt")
+
+			if fatigueTxt then
+				fatigueTxt:setString(Strings:get("DreamChallenge_Point_Team_Npc_Name"))
+			end
+
+			node:addTouchEventListener(function (sender, eventType)
+				if eventType == ccui.TouchEventType.ended then
+					self:dispatch(ShowTipEvent({
+						tip = Strings:get("DreamChallenge_Point_Team_Npc_Forbid")
+					}))
+				end
+			end)
+		end
+
+		node:getChildByName("fatigueBg"):setCascadeColorEnabled(false)
+		node:getChildByName("fatigueBg"):setVisible(isTired or isNpc)
+		node:setColor((isTired or isNpc) and cc.c3b(150, 150, 150) or cc.c3b(250, 250, 250))
 	end
 
 	local tiredLabel = node:getChildByName("tiredNum")
@@ -1039,6 +1209,7 @@ function DreamChallengeTeamMediator:initTeamHero(node, info)
 	local except_0 = node:getChildByName("except_0")
 	local help = node:getChildByName("help")
 
+	help:loadTexture("asset/commonLang/kazu_bg_yuan.png")
 	help:setVisible(true)
 	textNumEffect:setVisible(false)
 	except_0:setVisible(false)
@@ -1046,6 +1217,15 @@ function DreamChallengeTeamMediator:initTeamHero(node, info)
 	local tiredNum = node:getChildByName("tiredNum")
 
 	tiredNum:setVisible(false)
+
+	local occupationName, occupationImg = GameStyle:getHeroOccupation(info.type)
+	local occupation = node:getChildByName("occupation")
+
+	occupation:loadTexture(occupationImg)
+
+	local cost = node:getChildByFullName("costBg.cost")
+
+	cost:setString(info.cost)
 end
 
 function DreamChallengeTeamMediator:refreshCombatAndCost()
@@ -1077,6 +1257,45 @@ function DreamChallengeTeamMediator:refreshCombatAndCost()
 
 	self._costTotalLabel1:setTextColor(color)
 	self._costTotalLabel2:setPositionX(self._costTotalLabel1:getPositionX() + self._costTotalLabel1:getContentSize().width)
+
+	local fightId = ConfigReader:getDataByNameIdAndKey("DreamChallengeBattle", self._battleId, "ConfigLevelLimitID")
+
+	self._combatInfoBtn:setVisible(false)
+
+	if fightId and fightId ~= "" then
+		self._combatInfoBtn:setVisible(true)
+		self._labelCombat:setString(Strings:get("SpPower_ShowName"))
+	end
+
+	self._combatInfoBtn:addTouchEventListener(function (sender, eventType)
+		if eventType == ccui.TouchEventType.began then
+			self._fightInfoTip:removeAllChildren()
+
+			local level = DataReader:getDataByNameIdAndKey("ConfigLevelLimit", fightId, "StandardLv")
+			local desc = Strings:get("SpPower_ShowDescTitle", {
+				fontSize = 20,
+				fontName = TTF_FONT_FZYH_M,
+				level = level
+			})
+			local richText = ccui.RichText:createWithXML(desc, {})
+
+			richText:setAnchorPoint(cc.p(0, 0))
+			richText:setPosition(cc.p(10, 10))
+			richText:addTo(self._fightInfoTip)
+			richText:renderContent(440, 0, true)
+
+			local size = richText:getContentSize()
+
+			self._fightInfoTip:setContentSize(460, size.height + 20)
+			self._fightInfoTip:setVisible(true)
+		elseif eventType == ccui.TouchEventType.moved then
+			-- Nothing
+		elseif eventType == ccui.TouchEventType.canceled then
+			self._fightInfoTip:setVisible(false)
+		elseif eventType == ccui.TouchEventType.ended then
+			self._fightInfoTip:setVisible(false)
+		end
+	end)
 end
 
 function DreamChallengeTeamMediator:changeMasterId(event)
@@ -1104,7 +1323,7 @@ function DreamChallengeTeamMediator:refreshButtons()
 end
 
 function DreamChallengeTeamMediator:checkButtonVisible()
-	if #self._teamPets < self._maxTeamPetNum then
+	if #self._teamPets + #self._npc < self._maxTeamPetNum then
 		return false
 	end
 
@@ -1227,6 +1446,18 @@ function DreamChallengeTeamMediator:setupClickEnvs()
 end
 
 function DreamChallengeTeamMediator:onClickFight(sender, eventType)
+	local isUnLock, tip = self._dreamSystem:checkMapLock(self._mapId)
+
+	if not isUnLock then
+		self:dispatch(ShowTipEvent({
+			duration = 0.2,
+			tip = Strings:get("ActivityBlock_UI_8")
+		}))
+		self:dispatch(Event:new(EVT_POP_TO_TARGETVIEW, "homeView"))
+
+		return
+	end
+
 	if #self._teamPets < 1 then
 		self:dispatch(ShowTipEvent({
 			duration = 0.2,
@@ -1303,5 +1534,47 @@ function DreamChallengeTeamMediator:onClickOneKeyEmbattle()
 				iconBg:getChildByName("EmptyIcon"):setVisible(false)
 			end
 		end
+	end
+end
+
+function DreamChallengeTeamMediator:initLockIconsByDreamChallenge()
+	local maxShowNum = 10
+	local dreamLockNum = self._dreamSystem:getTeamPetNumLimit(self._battleId)
+
+	for i = dreamLockNum + 1, maxShowNum do
+		local condition, buildId = nil
+		local type = ""
+		local showAnim = false
+		local unlockLevel = 0
+		local conditions = {}
+		local iconBg = self._teamBg:getChildByName("pet_" .. i)
+
+		iconBg:removeAllChildren()
+
+		local emptyIcon = GameStyle:createEmptyIcon(true)
+
+		emptyIcon:addTo(iconBg):center(iconBg:getContentSize())
+
+		local tipLabel = emptyIcon:getChildByName("TipText")
+
+		tipLabel:setString(Strings:get("DreamChallenge_Battle_Unlock"))
+
+		local width = iconBg:getContentSize().width
+		local height = iconBg:getContentSize().height
+		local widget = ccui.Widget:create()
+
+		widget:setContentSize(cc.size(width, height))
+		widget:setTouchEnabled(false)
+		widget:addClickEventListener(function ()
+			self:dispatch(ShowTipEvent({
+				duration = 0.2,
+				tip = Strings:get("DreamChallenge_Battle_Unlock")
+			}))
+		end)
+		widget:addTo(iconBg):center(iconBg:getContentSize())
+
+		local lockImg = ccui.ImageView:create("suo_icon_s_battle.png", 1)
+
+		lockImg:addTo(iconBg):posite(width - 7, height - 6)
 	end
 end

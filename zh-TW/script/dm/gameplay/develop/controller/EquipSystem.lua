@@ -30,6 +30,7 @@ function EquipSystem:initialize(developSystem)
 	self._bagSystem = self._developSystem:getBagSystem()
 	self._equipModule = self._developSystem:getPlayer():getEquipList()
 	self._oneKeyEquips = {}
+	self._composeUsedEquips = {}
 	self._strengthenConsumeItems = {}
 	self._starConsumeItem = nil
 	self._equipStarUpItem = {
@@ -365,9 +366,11 @@ end
 
 EquipsShowType = {
 	kStrengthen = "getStrengthenEquips",
+	kAllUpdate = "getStrengthenStarAndEquips",
 	kStarBreak = "getStarBreakEquips",
 	kResolve = "getResolveEquips",
 	kStar = "getStarEquips",
+	kCompose = "getComposeEquips",
 	kReplace = "getReplaceEquips"
 }
 
@@ -375,6 +378,77 @@ function EquipSystem:getEquipList(viewType, param)
 	local equips = self[viewType](self, param)
 
 	return equips or {}
+end
+
+function EquipSystem:getComposeEquips(param)
+	local showEquips = {}
+
+	if not param then
+		return showEquips
+	end
+
+	local type = param.type
+	local enabledEquip = {}
+	local disabledEquip = {}
+	local equipIds = self._equipModule:getEquipsByType(type)
+
+	if param.type == "EquipAll" then
+		equipIds = self._equipModule:getEquipsAll()
+		local tab = {}
+
+		for k, v in pairs(equipIds) do
+			for kk, vv in pairs(v) do
+				tab[kk] = vv
+			end
+		end
+
+		equipIds = tab
+	end
+
+	local indexof = table.indexof
+
+	for equipId, _ in pairs(equipIds) do
+		local equip = self:getEquipById(equipId)
+		local ownHeroId = equip:getHeroId()
+		local ownUnlock = equip:getUnlock()
+		local level = equip:getLevel()
+		local rarity = equip:getRarity()
+
+		if tonumber(rarity) == tonumber(param.Quality) and level == 1 then
+			if ownHeroId ~= "" then
+				disabledEquip[#disabledEquip + 1] = equip
+			elseif not ownUnlock then
+				enabledEquip[#enabledEquip + 1] = equip
+			else
+				showEquips[#showEquips + 1] = equip
+			end
+		end
+	end
+
+	local function sortFun(a, b)
+		local posA = table.indexof(EquipPositionToType, a:getPosition())
+		local posB = table.indexof(EquipPositionToType, b:getPosition())
+
+		if posA == posB then
+			return a:getId() < b:getId()
+		else
+			return posA < posB
+		end
+	end
+
+	table.sort(showEquips, sortFun)
+	table.sort(disabledEquip, sortFun)
+	table.sort(enabledEquip, sortFun)
+
+	for i = 1, #enabledEquip do
+		showEquips[#showEquips + 1] = enabledEquip[i]
+	end
+
+	for i = 1, #disabledEquip do
+		showEquips[#showEquips + 1] = disabledEquip[i]
+	end
+
+	return showEquips
 end
 
 function EquipSystem:getReplaceEquips(param)
@@ -499,7 +573,7 @@ function EquipSystem:getStrengthenEquips(param)
 	local expItem = {}
 	local bagIds = self._bagSystem:getAllEntryIds()
 	local kTabFilterMap = self._bagSystem:getTabFilterMap()
-	local filterFunc = kTabFilterMap[2]
+	local filterFunc = kTabFilterMap[BagItemShowType.kEquip]
 
 	for _, entryId in ipairs(bagIds) do
 		local entry = self._bagSystem:getEntryById(entryId)
@@ -1197,4 +1271,16 @@ function EquipSystem:runIconShowAction(node, delayCount)
 	local delay = cc.DelayTime:create(delayCount * 0.1)
 
 	node:runAction(cc.Sequence:create(delay, spawn))
+end
+
+function EquipSystem:clearComposeUsedEquips()
+	self._composeUsedEquips = {}
+end
+
+function EquipSystem:addComposeUsedEquips(index, uuid)
+	self._composeUsedEquips[tonumber(index) + 1] = uuid
+end
+
+function EquipSystem:getComposeUsedEquips()
+	return self._composeUsedEquips
 end

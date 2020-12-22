@@ -936,12 +936,14 @@ KTabType = {
 KFrameType = {
 	RARE = "RARE",
 	ACTIVITY = "ACTIVITY",
-	FESTIVAL = "FESTIVAL"
+	FESTIVAL = "FESTIVAL",
+	Zodiac = "ZODIAC"
 }
 KFrameSort = {
 	ALL = 0,
 	ACTIVITY = 1,
 	FESTIVAL = 2,
+	ZODIAC = 4,
 	RARE = 3
 }
 

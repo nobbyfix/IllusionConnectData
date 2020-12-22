@@ -716,6 +716,7 @@ end
 function LoginMediator:initAnim(callback)
 	self._accountPanel:setOpacity(0)
 
+	local limitBg = self._loginSystem:getLimitTimeBg()
 	local actionPanel = self:getView():getChildByName("actionPanel")
 	self._bgAnim = cc.MovieClip:create("zdh_xindenglu")
 
@@ -724,6 +725,17 @@ function LoginMediator:initAnim(callback)
 	self._bgAnim:addCallbackAtFrame(90, function ()
 		self._bgAnim:gotoAndPlay(0)
 	end)
+
+	local bgNode = self._bgAnim:getChildByName("bg")
+
+	if limitBg then
+		bgNode:removeAllChildren()
+
+		local bgConfig = ConfigReader:getRecordById("BackGroundPicture", limitBg)
+		local bgAnim = cc.MovieClip:create(bgConfig.Flash1)
+
+		bgAnim:addTo(bgNode):center(bgNode:getContentSize())
+	end
 
 	local anim1 = self._bgAnim:getChildByName("donghua")
 	local anim2 = anim1:getChildByName("niao")

@@ -60,10 +60,10 @@ function BuffTipsMediator:adjustPos(icon, direction)
 	view:setAnchorPoint(cc.p(0.5, 0.5))
 	view:setIgnoreAnchorPointForPosition(false)
 
-	local kUpMargin = 20
-	local kDownMargin = 20
-	local kLeftMargin = 20
-	local kRightMargin = 20
+	local kUpMargin = 0
+	local kDownMargin = 0
+	local kLeftMargin = 0
+	local kRightMargin = 0
 	local viewSize = view:getContentSize()
 	local iconBoundingBox = icon:getBoundingBox()
 	local worldPos = icon:getParent():convertToWorldSpace(cc.p(iconBoundingBox.x, iconBoundingBox.y))

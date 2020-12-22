@@ -495,7 +495,7 @@ function HeroShowOwnMediator:onClickHelp()
 			local soundId = "Voice_" .. heroId .. "_" .. index
 			local pkgName = ConfigReader:getDataByNameIdAndKey("Sound", soundId, "PkgName")
 
-			if pkgName ~= "common/Default" then
+			if pkgName and pkgName ~= "common/Default" then
 				local unlock = self:isSoundUnlock(soundId)
 
 				if unlock then
@@ -1046,6 +1046,7 @@ function HeroShowOwnMediator:refreshSkill()
 
 			lockImg:addTo(panel):posite(54, 10)
 			skillIcon:setColor(cc.c3b(127, 127, 127))
+			lockImg:setScale(0.9)
 		end
 
 		local isKeySkill = self._heroSystem:checkIsKeySkill(self._heroData:getId(), skillId)

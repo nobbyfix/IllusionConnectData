@@ -196,19 +196,29 @@ function BagEquipPancel:refreshEquipBaseInfo()
 	starNode:setContentSize(cc.size(32 * index, 43))
 
 	local rarityPanel = self._nodeDesc:getChildByFullName("rarity")
-	local imageFile = GameStyle:getEquipRarityImage(rarity)
-	local rarityImage = rarityPanel:getChildByName("RarityImage")
 
-	if not rarityImage then
-		rarityImage = ccui.ImageView:create(imageFile)
+	rarityPanel:removeAllChildren()
 
-		rarityImage:addTo(rarityPanel)
-		rarityImage:setName("RarityImage")
-		rarityImage:ignoreContentAdaptWithSize(true)
-		rarityImage:setScale(0.9)
+	if rarity >= 15 then
+		local flashFile = GameStyle:getEquipRarityFlash(rarity)
+		local anim = cc.MovieClip:create(flashFile)
+
+		anim:addTo(rarityPanel)
+	else
+		local imageFile = GameStyle:getEquipRarityImage(rarity)
+		local rarityImage = rarityPanel:getChildByName("RarityImage")
+
+		if not rarityImage then
+			rarityImage = ccui.ImageView:create(imageFile)
+
+			rarityImage:addTo(rarityPanel)
+			rarityImage:setName("RarityImage")
+			rarityImage:ignoreContentAdaptWithSize(true)
+			rarityImage:setScale(0.9)
+		end
+
+		rarityImage:loadTexture(imageFile)
 	end
-
-	rarityImage:loadTexture(imageFile)
 
 	local levelTxt = self._nodeDesc:getChildByFullName("level")
 
@@ -331,7 +341,6 @@ function BagEquipPancel:refreshSkill()
 	nodeSkill:setVisible(true)
 
 	local skillName = nodeSkill:getChildByFullName("name")
-	local skillLevel = nodeSkill:getChildByFullName("level")
 	local skillDesc = self._descScrollView
 	local skillLock = nodeSkill:getChildByFullName("skillLock")
 	local skillBg = nodeSkill:getChildByFullName("skillBg")
@@ -339,10 +348,10 @@ function BagEquipPancel:refreshSkill()
 
 	skillLock:setVisible(not isHaveSkill)
 	skillName:setVisible(isHaveSkill)
-	skillLevel:setVisible(isHaveSkill)
 	skillDesc:setVisible(isHaveSkill)
 	skillBg:setVisible(isHaveSkill)
 
+	local strSpace = ""
 	local skillAttr = equipData:getSkill()
 
 	if isHaveSkill and skillAttr then
@@ -363,14 +372,12 @@ function BagEquipPancel:refreshSkill()
 				fontColor = "#C1C1C1"
 			})
 			local unlockLevel = equipData:getUnLockSkillLevel()
-			local tip = Strings:get("Equip_UI47") .. Strings:get("Strenghten_Text78", {
+			local tip = Strings:get("Equip_UI47") .. strSpace .. Strings:get("Strenghten_Text78", {
 				level = unlockLevel
-			}) .. Strings:get("Equip_UI48")
+			}) .. strSpace .. Strings:get("Equip_UI48")
 
-			skillLevel:setString(tip)
+			skillName:setString(name .. " " .. tip)
 		else
-			skillLevel:setString("")
-
 			local str = ""
 
 			if equipData:isSkillMaxLevel() then
@@ -383,8 +390,6 @@ function BagEquipPancel:refreshSkill()
 
 			skillName:setString(name .. " " .. str)
 		end
-
-		skillLevel:setPositionX(skillName:getPositionX() + skillName:getContentSize().width + 5)
 
 		local label = ccui.RichText:createWithXML(desc, {})
 
@@ -429,6 +434,8 @@ function BagEquipPancel:refreshBtn()
 		self._strengthenBtn:setVisible(true)
 		self._strengthenBtn:setPositionX(171)
 	end
+
+	self._strengthenBtn:setVisible(CommonUtils.GetSwitch("fn_equip_strengthen"))
 end
 
 function BagEquipPancel:onClickStrengthen(sender, eventType)

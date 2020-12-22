@@ -236,6 +236,11 @@ local mappings = {
 		name = "EquipTipsMediator",
 		type = "@C"
 	},
+	ItemBuffTipsMediator = {
+		url = "dm.gameplay.popup.ItemBuffTipsMediator",
+		name = "ItemBuffTipsMediator",
+		type = "@C"
+	},
 	FunctionEntranceMediator = {
 		url = "dm.gameplay.popup.FunctionEntranceMediator",
 		name = "FunctionEntranceMediator",
@@ -244,6 +249,11 @@ local mappings = {
 	PlayerLevelUpTipMediator = {
 		url = "dm.gameplay.popup.PlayerLevelUpTipMediator",
 		name = "PlayerLevelUpTipMediator",
+		type = "@C"
+	},
+	ItemShowTipsMediator = {
+		url = "dm.gameplay.popup.ItemShowTipsMediator",
+		name = "ItemShowTipsMediator",
 		type = "@C"
 	},
 	NewHeroMediator = {
@@ -511,6 +521,11 @@ local mappings = {
 		name = "EquipResolveMediator",
 		type = "@C"
 	},
+	EquipAllUpdateMediator = {
+		url = "dm.gameplay.develop.view.equip.EquipAllUpdateMediator",
+		name = "EquipAllUpdateMediator",
+		type = "@C"
+	},
 	EquipStarItemSelectMediator = {
 		url = "dm.gameplay.develop.view.equip.EquipStarItemSelectMediator",
 		name = "EquipStarItemSelectMediator",
@@ -746,9 +761,19 @@ local mappings = {
 		name = "HeroStrengthSkillMediator",
 		type = "@C"
 	},
+	BagSelectMaterialMediator = {
+		url = "dm.gameplay.develop.view.bag.BagSelectMaterialMediator",
+		name = "BagSelectMaterialMediator",
+		type = "@C"
+	},
 	BagGiftChooseOneMediator = {
 		url = "dm.gameplay.develop.view.bag.BagGiftChooseOneMediator",
 		name = "BagGiftChooseOneMediator",
+		type = "@C"
+	},
+	BagUseScrollMediator = {
+		url = "dm.gameplay.develop.view.bag.BagUseScrollMediator",
+		name = "BagUseScrollMediator",
 		type = "@C"
 	},
 	BagBatchUseSellMediator = {
@@ -1109,6 +1134,46 @@ local mappings = {
 	ActivityPointDetailMediator = {
 		url = "dm.gameplay.activity.view.ActivityPointDetailMediator",
 		name = "ActivityPointDetailMediator",
+		type = "@C"
+	},
+	ActivitySupportRankHolidayMediator = {
+		url = "dm.gameplay.activity.view.shuangdan.ActivitySupportRankHolidayMediator",
+		name = "ActivitySupportRankHolidayMediator",
+		type = "@C"
+	},
+	ActivityBlockFudaiPreviewMeditor = {
+		url = "dm.gameplay.activity.view.shuangdan.ActivityBlockFudaiPreviewMeditor",
+		name = "ActivityBlockFudaiPreviewMeditor",
+		type = "@C"
+	},
+	ActivitySupportWinHolidayMediator = {
+		url = "dm.gameplay.activity.view.shuangdan.ActivitySupportWinHolidayMediator",
+		name = "ActivitySupportWinHolidayMediator",
+		type = "@C"
+	},
+	ActivitySupportRewardHolidayMediator = {
+		url = "dm.gameplay.activity.view.shuangdan.ActivitySupportRewardHolidayMediator",
+		name = "ActivitySupportRewardHolidayMediator",
+		type = "@C"
+	},
+	ActivitySupportPailianHolidayMediator = {
+		url = "dm.gameplay.activity.view.shuangdan.ActivitySupportPailianHolidayMediator",
+		name = "ActivitySupportPailianHolidayMediator",
+		type = "@C"
+	},
+	ActivityBlockFudaiMediator = {
+		url = "dm.gameplay.activity.view.shuangdan.ActivityBlockFudaiMediator",
+		name = "ActivityBlockFudaiMediator",
+		type = "@C"
+	},
+	ActivitySupportHolidayMediator = {
+		url = "dm.gameplay.activity.view.shuangdan.ActivitySupportHolidayMediator",
+		name = "ActivitySupportHolidayMediator",
+		type = "@C"
+	},
+	ActivityBlockHolidayMediator = {
+		url = "dm.gameplay.activity.view.shuangdan.ActivityBlockHolidayMediator",
+		name = "ActivityBlockHolidayMediator",
 		type = "@C"
 	},
 	ActivitySagaSupportRankRewardMediator = {
@@ -1934,6 +1999,151 @@ local mappings = {
 	RedPointRefreshCommond = {
 		url = "dm.gameplay.redpoint.RedPointRefreshCommond",
 		name = "RedPointRefreshCommond",
+		type = "@C"
+	},
+	EVT_DARTS_PLAYAGAIN = {
+		url = "dm.gameplay.miniGame.controller.DartsSystem",
+		name = "EVT_DARTS_PLAYAGAIN",
+		type = "@V"
+	},
+	EVT_DARTS_RESULTCLOSE = {
+		url = "dm.gameplay.miniGame.controller.DartsSystem",
+		name = "EVT_DARTS_RESULTCLOSE",
+		type = "@V"
+	},
+	EVT_DARTS_REWARDCONFIRM = {
+		url = "dm.gameplay.miniGame.controller.DartsSystem",
+		name = "EVT_DARTS_REWARDCONFIRM",
+		type = "@V"
+	},
+	EVT_DARTS_REWARDCONFIRM_ADD = {
+		url = "dm.gameplay.miniGame.controller.DartsSystem",
+		name = "EVT_DARTS_REWARDCONFIRM_ADD",
+		type = "@V"
+	},
+	EVT_DARTS_QUIT_SUCC = {
+		url = "dm.gameplay.miniGame.controller.DartsSystem",
+		name = "EVT_DARTS_QUIT_SUCC",
+		type = "@V"
+	},
+	EVT_DARTS_BACK_SUCC = {
+		url = "dm.gameplay.miniGame.controller.DartsSystem",
+		name = "EVT_DARTS_BACK_SUCC",
+		type = "@V"
+	},
+	EVT_DARTS_PASSGAME_SUCC = {
+		url = "dm.gameplay.miniGame.controller.DartsSystem",
+		name = "EVT_DARTS_PASSGAME_SUCC",
+		type = "@V"
+	},
+	EVT_ACTIVITY_MINIGAME_REQUEST_ENTER_SUCCESS = {
+		url = "dm.gameplay.miniGame.MiniGameConfig",
+		name = "EVT_ACTIVITY_MINIGAME_REQUEST_ENTER_SUCCESS",
+		type = "@V"
+	},
+	EVT_ACTIVITY_MINIGAME_BUYTIMES_SCUESS = {
+		url = "dm.gameplay.miniGame.MiniGameConfig",
+		name = "EVT_ACTIVITY_MINIGAME_BUYTIMES_SCUESS",
+		type = "@V"
+	},
+	EVT_ACTIVITY_MINIGAME_BEGIN_SCUESS = {
+		url = "dm.gameplay.miniGame.MiniGameConfig",
+		name = "EVT_ACTIVITY_MINIGAME_BEGIN_SCUESS",
+		type = "@V"
+	},
+	EVT_ACTIVITY_MINIGAME_RESULT_SCUESS = {
+		url = "dm.gameplay.miniGame.MiniGameConfig",
+		name = "EVT_ACTIVITY_MINIGAME_RESULT_SCUESS",
+		type = "@V"
+	},
+	EVT_CLUB_MINIGAME_RESULT_SCUESS = {
+		url = "dm.gameplay.miniGame.MiniGameConfig",
+		name = "EVT_CLUB_MINIGAME_RESULT_SCUESS",
+		type = "@V"
+	},
+	EVT_ACTIVITY_MINIGAME_GETREWARD_SCUESS = {
+		url = "dm.gameplay.miniGame.MiniGameConfig",
+		name = "EVT_ACTIVITY_MINIGAME_GETREWARD_SCUESS",
+		type = "@V"
+	},
+	EVT_ACTIVITY_MINIGAME_BUYTIMESANDBEGIN_SCUESS = {
+		url = "dm.gameplay.miniGame.MiniGameConfig",
+		name = "EVT_ACTIVITY_MINIGAME_BUYTIMESANDBEGIN_SCUESS",
+		type = "@V"
+	},
+	EVT_CLUB_MINIGAME_BUYTIMESANDBEGIN_SCUESS = {
+		url = "dm.gameplay.miniGame.MiniGameConfig",
+		name = "EVT_CLUB_MINIGAME_BUYTIMESANDBEGIN_SCUESS",
+		type = "@V"
+	},
+	EVT_CLUB_MINIGAME_BUYTIMES_SCUESS = {
+		url = "dm.gameplay.miniGame.MiniGameConfig",
+		name = "EVT_CLUB_MINIGAME_BUYTIMES_SCUESS",
+		type = "@V"
+	},
+	EVT_CLUB_MINIGAME_BEGIN_SCUESS = {
+		url = "dm.gameplay.miniGame.MiniGameConfig",
+		name = "EVT_CLUB_MINIGAME_BEGIN_SCUESS",
+		type = "@V"
+	},
+	EVT_CLUB_MINIGAME_REWARDLIMIT_CONFIRM = {
+		url = "dm.gameplay.miniGame.MiniGameConfig",
+		name = "EVT_CLUB_MINIGAME_REWARDLIMIT_CONFIRM",
+		type = "@V"
+	},
+	EVT_CLUB_MINIGAME_ASKMAINVIEWSWEEPHIGHEST_CONFIRM = {
+		url = "dm.gameplay.miniGame.MiniGameConfig",
+		name = "EVT_CLUB_MINIGAME_ASKMAINVIEWSWEEPHIGHEST_CONFIRM",
+		type = "@V"
+	},
+	EVT_CLUB_MINIGAME_ASKMAINVIEWSWEEPSTAGE_CONFIRM = {
+		url = "dm.gameplay.miniGame.MiniGameConfig",
+		name = "EVT_CLUB_MINIGAME_ASKMAINVIEWSWEEPSTAGE_CONFIRM",
+		type = "@V"
+	},
+	EVT_CLUB_MINIGAME_CLOSERESULT_CONFIRM = {
+		url = "dm.gameplay.miniGame.MiniGameConfig",
+		name = "EVT_CLUB_MINIGAME_CLOSERESULT_CONFIRM",
+		type = "@V"
+	},
+	EVT_CLUB_MINIGAME_STOPSCENESOUND_CONFIRM = {
+		url = "dm.gameplay.miniGame.MiniGameConfig",
+		name = "EVT_CLUB_MINIGAME_STOPSCENESOUND_CONFIRM",
+		type = "@V"
+	},
+	EVT_CLUB_MINIGAME_SWEEEP_SCUESS = {
+		url = "dm.gameplay.miniGame.MiniGameConfig",
+		name = "EVT_CLUB_MINIGAME_SWEEEP_SCUESS",
+		type = "@V"
+	},
+	MiniGameRankMediator = {
+		url = "dm.gameplay.miniGame.view.common.MiniGameRankMediator",
+		name = "MiniGameRankMediator",
+		type = "@C"
+	},
+	MiniGameRewardTipMediator = {
+		url = "dm.gameplay.miniGame.view.common.MiniGameRewardTipMediator",
+		name = "MiniGameRewardTipMediator",
+		type = "@C"
+	},
+	MiniGameRewardListMediator = {
+		url = "dm.gameplay.miniGame.view.common.MiniGameRewardListMediator",
+		name = "MiniGameRewardListMediator",
+		type = "@C"
+	},
+	MiniGameResultMediator = {
+		url = "dm.gameplay.miniGame.view.common.MiniGameResultMediator",
+		name = "MiniGameResultMediator",
+		type = "@C"
+	},
+	MiniGameQuitConfirmMediator = {
+		url = "dm.gameplay.miniGame.view.common.MiniGameQuitConfirmMediator",
+		name = "MiniGameQuitConfirmMediator",
+		type = "@C"
+	},
+	DartsMediator = {
+		url = "dm.gameplay.miniGame.view.darts.DartsMediator",
+		name = "DartsMediator",
 		type = "@C"
 	},
 	MainTeamMediator = {

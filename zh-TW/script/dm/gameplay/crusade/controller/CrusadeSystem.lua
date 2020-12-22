@@ -82,6 +82,16 @@ function CrusadeSystem:tryEnter(data)
 	self:requestGetCrusadeInfo(callback)
 end
 
+function CrusadeSystem:checkLeftCount(data)
+	local unlock, tips = self:checkEnabled(data)
+
+	if not unlock then
+		return 1, tips
+	end
+
+	return self._crusade:getFinish() and 0 or 1, Strings:get("Crusade_PassAll")
+end
+
 function CrusadeSystem:synchronize(data)
 	self._crusade:synchronize(data)
 	self:dispatch(Event:new(EVT_CRUSADE_SYNC_DIFF, {}))

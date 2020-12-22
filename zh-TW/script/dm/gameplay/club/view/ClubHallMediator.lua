@@ -95,75 +95,63 @@ local askMessageFuncMap = {
 
 		clubSystem:getLogRecordListOj():cleanUp()
 		func()
-	end
-}
-
-askMessageFuncMap[ClubHallType.kTechnology] = function (self, func)
-	local unlockCondition = ConfigReader:getDataByNameIdAndKey("ClubTechnology", "Club_Contribute", "Unlock")
-	local levelCon = unlockCondition.LEVEL
-	local clubLevelCon = unlockCondition.ClubLevel
-	local developSystem = self:getInjector():getInstance(DevelopSystem)
-	local playerLevel = developSystem:getPlayer():getLevel()
-	local clubSystem = self:getInjector():getInstance("ClubSystem")
-	local clubLevel = clubSystem:getLevel()
-
-	if levelCon <= playerLevel and clubLevelCon <= clubLevel then
-		clubSystem:requestTargetDonationInfo("Club_Contribute", func)
-	else
-		local tipsId = ConfigReader:getDataByNameIdAndKey("ClubTechnology", "Club_Contribute", "UnlockDesc")
-		local tips = Strings:get(tipsId, {
-			LEVEL = levelCon,
-			ClubLevel = clubLevelCon
+	end,
+	[ClubHallType.kTechnology] = function (self, func)
+		local clubSystem = self:getInjector():getInstance("ClubSystem")
+		local unlock, tips = clubSystem:checkEnabled({
+			tab = ClubHallType.kTechnology
 		})
 
-		self:dispatch(ShowTipEvent({
-			duration = 0.35,
-			tip = tips
-		}))
-	end
-end
+		if unlock then
+			clubSystem:requestTargetDonationInfo("Club_Contribute", func)
+		else
+			self:dispatch(ShowTipEvent({
+				duration = 0.35,
+				tip = tips
+			}))
+		end
+	end,
+	[ClubHallType.kBoss] = function (self, func)
+		local result, tip = self._systemKeeper:isUnlock("ClubStage")
 
-askMessageFuncMap[ClubHallType.kBoss] = function (self, func)
-	local result, tip = self._systemKeeper:isUnlock("ClubStage")
+		if result == true then
+			local clubSystem = self:getInjector():getInstance("ClubSystem")
 
-	if result == true then
-		local clubSystem = self:getInjector():getInstance("ClubSystem")
-
-		if self._clubSystem:getClubBossKilled(ClubHallType.kBoss) and self._data and self._data.goToBoss == true then
-			if func then
-				func()
+			if self._clubSystem:getClubBossKilled(ClubHallType.kBoss) and self._data and self._data.goToBoss == true then
+				if func then
+					func()
+				end
+			else
+				clubSystem:requestClubBossInfo(func, true, ClubHallType.kBoss)
 			end
 		else
-			clubSystem:requestClubBossInfo(func, true, ClubHallType.kBoss)
+			self:dispatch(ShowTipEvent({
+				duration = 0.35,
+				tip = tip
+			}))
 		end
-	else
-		self:dispatch(ShowTipEvent({
-			duration = 0.35,
-			tip = tip
-		}))
-	end
-end
+	end,
+	[ClubHallType.kActivityBoss] = function (self, func)
+		local result, tip = self._systemKeeper:isUnlock("ClubStage")
 
-askMessageFuncMap[ClubHallType.kActivityBoss] = function (self, func)
-	local result, tip = self._systemKeeper:isUnlock("ClubStage")
+		if result == true then
+			local clubSystem = self:getInjector():getInstance("ClubSystem")
 
-	if result == true then
-		local clubSystem = self:getInjector():getInstance("ClubSystem")
-
-		if self._clubSystem:getClubBossKilled(ClubHallType.kActivityBoss) and self._data and self._data.goToActivityBoss == true then
-			if func then
-				func()
+			if self._clubSystem:getClubBossKilled(ClubHallType.kActivityBoss) and self._data and self._data.goToActivityBoss == true then
+				if func then
+					func()
+				end
+			else
+				clubSystem:requestClubBossInfo(func, true, ClubHallType.kActivityBoss)
 			end
 		else
-			clubSystem:requestClubBossInfo(func, true, ClubHallType.kActivityBoss)
+			self:dispatch(ShowTipEvent({
+				duration = 0.35,
+				tip = tip
+			}))
 		end
-	else
-		self:dispatch(ShowTipEvent({
-			duration = 0.35,
-			tip = tip
-		}))
 	end
-end
+}
 
 function ClubHallMediator:initialize()
 	super.initialize(self)
@@ -312,6 +300,18 @@ function ClubHallMediator:refreshView()
 			self._curTabIndex = bossIndex
 			self._data.goToActivityBossFormSunmmer = false
 		end
+
+		local tab = self._data.tab
+
+		if tab and ClubHallType[tab] then
+			local unlock = self._clubSystem:checkEnabled({
+				tab = ClubHallType[tab]
+			})
+
+			if unlock then
+				self._curTabIndex = self:checkOutTabIndexForHallType(ClubHallType[tab])
+			end
+		end
 	end
 
 	self:refreshTabPanel()
@@ -404,16 +404,20 @@ function ClubHallMediator:refreshTabPanel()
 
 	self._tabBtnWidget:adjustScrollViewSize(0, 440)
 	self._tabBtnWidget:initTabBtn(config, {
-		noCenterBtn = true,
+		ignoreSound = true,
 		ignoreBtnShowState = true,
+		noCenterBtn = true,
 		buttonClick = function (sender, eventType, tag)
 			if eventType == ccui.TouchEventType.ended then
-				self._tabBtnWidget._style.ignoreSound = true
-
 				self:onButtonTab(sender, eventType, tag)
 			end
 		end
 	})
+
+	if #data and self._curTabIndex > #data then
+		self._curTabIndex = 1
+	end
+
 	self._tabBtnWidget:selectTabByTag(self._curTabIndex)
 
 	local view = self._tabBtnWidget:getMainView()

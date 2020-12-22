@@ -77,6 +77,10 @@ function CommonTeamMediator:setupTopInfoWidget()
 	self._topInfoWidget:updateView(config)
 end
 
+function CommonTeamMediator:leaveWithData()
+	self:onClickBack()
+end
+
 function CommonTeamMediator:updateTopInfoTitle(title)
 	self._topInfoWidget:updateTitle(title)
 end
@@ -135,6 +139,10 @@ function CommonTeamMediator:initView()
 	tableView:registerScriptHandler(scrollViewDidScroll, cc.SCROLLVIEW_SCRIPT_SCROLL)
 	tableView:registerScriptHandler(cellSizeForTable, cc.TABLECELL_SIZE_FOR_INDEX)
 	tableView:registerScriptHandler(tableCellAtIndex, cc.TABLECELL_SIZE_AT_INDEX)
+
+	self._bgImg = self:getView():getChildByFullName("main.bgImg")
+
+	self._bgImg:loadTexture("asset/scene/bd_bg_bj.jpg", ccui.TextureResType.localType)
 end
 
 function CommonTeamMediator:initLockIcons(preMaxTeamPetNum)
@@ -415,7 +423,7 @@ function CommonTeamMediator:initHero(node, info)
 			path = "img_yinghun_img_star_empty.png"
 		end
 
-		if info.awakenLevel and info.awakenLevel > 0 then
+		if info.awakenLevel > 0 then
 			path = "jx_img_star.png"
 		end
 
@@ -631,6 +639,7 @@ end
 function CommonTeamMediator:isSelectCanceledByClick(id)
 	if self._maxTeamPetNum <= #self._teamPets then
 		if not self._runInsertPetAction and self._isReturn then
+			AudioEngine:getInstance():playEffect("Se_Alert_Error", false)
 			self:dispatch(ShowTipEvent({
 				tip = Strings:get("Stage_Team_UI7")
 			}))
@@ -705,7 +714,8 @@ function CommonTeamMediator:onClickChangeMaster()
 	}, {
 		masterId = self._curMasterId,
 		masterList = self._masterList,
-		recomandList = self._recomandMasterList or {}
+		recomandList = self._recomandMasterList or {},
+		forbidMasters = self._forbidMasters or {}
 	}, nil))
 end
 
@@ -811,6 +821,7 @@ function CommonTeamMediator:onClickHeroSkill(skill, sender, adjustPos)
 		self._skillWidget:getView():addTo(self._skillDescPanel)
 	end
 
+	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
 	self._skillWidget:refreshInfo(skill, true)
 
 	local targetPos = sender:getParent():convertToWorldSpace(cc.p(sender:getPosition()))

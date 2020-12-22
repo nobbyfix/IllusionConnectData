@@ -374,8 +374,16 @@ function ActivityPointSweepMediator:refreshSweepItemView(index, rewards, itemVie
 	local space = 5
 	local px = 0
 	local scale = 0.55
+	local showRewards = rewards.itemRewards
 
-	for i, v in ipairs(rewards.itemRewards) do
+	if rewards.activityExtraReward then
+		for i, v in pairs(rewards.activityExtraReward) do
+			v.isActivityExtra = true
+			showRewards[#showRewards + 1] = v
+		end
+	end
+
+	for i, v in ipairs(showRewards) do
 		local rewardInfo = {
 			amount = v.amount,
 			code = v.code,
@@ -400,6 +408,16 @@ function ActivityPointSweepMediator:refreshSweepItemView(index, rewards, itemVie
 			child:setName("reward" .. i)
 
 			px = px + size.width / 2 + space
+
+			if v.isActivityExtra then
+				local markImg = ccui.ImageView:create("asset/common/shaungdan_img_xianshidiaoluojiaobiao.png")
+
+				markImg:addTo(child, 10000):posite(45, 95):setScale(1.2)
+
+				local text = ccui.Text:create(Strings:get("Newyear_Item_LimitedTimeDrop"), TTF_FONT_FZYH_M, 18)
+
+				text:addTo(markImg):center(markImg:getContentSize()):offset(-3, 3)
+			end
 		end
 	end
 end
@@ -503,6 +521,8 @@ function ActivityPointSweepMediator:getMaxSwipCount()
 		containPower = self._bagSystem:getItemCount("IM_ZuoHeBossStamina")
 	elseif itemId == "IM_WuXiuHuiBossStamina" then
 		containPower = self._bagSystem:getItemCount("IM_WuXiuHuiBossStamina")
+	elseif itemId == CurrencyIdKind.kActivityHolidayPower then
+		containPower = self._bagSystem:getActivityHolidayPower()
 	end
 
 	return math.modf(containPower / cost)

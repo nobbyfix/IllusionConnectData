@@ -15,47 +15,352 @@ BuyEatItemTipMediator:has("_spStageSystem", {
 BuyEatItemTipMediator:has("_systemKeeper", {
 	is = "r"
 }):injectWith("SystemKeeper")
+BuyEatItemTipMediator:has("_buildingSystem", {
+	is = "r"
+}):injectWith("BuildingSystem")
+BuyEatItemTipMediator:has("_shopSystem", {
+	is = "r"
+}):injectWith("ShopSystem")
+BuyEatItemTipMediator:has("_bagSystem", {
+	is = "r"
+}):injectWith("BagSystem")
 
 local kBtnHandlers = {}
+local kShopTips = {
+	[kShopResetType.KResetDay] = "MAZE_TIMES",
+	[kShopResetType.KResetWeek] = "MAZE_WEEKTIMES",
+	[kShopResetType.KResetMonth] = "MAZE_MONTHTIMES"
+}
 
 function BuyEatItemTipMediator:enterWithData(data)
 	self._itemData = data
-	self._stageType = SpStageType.kExp
-	self._stageData = kSpStageTeamAndPointType[self._stageType]
-	self._unlock = self._systemKeeper:isUnlock(self._stageData.unlockType)
-	local spStageIds = ConfigReader:getRecordById("ConfigValue", "StageSp_List").content
-	self._stageId = spStageIds[self._stageType]
-	self._rewards = self._spStageSystem:getRewardById(self._stageId)
-	self._title = Strings:get("StageSp_Exp_Name")
+
+	self:setUpView()
+end
+
+function BuyEatItemTipMediator:createDataSource()
 	self._sourceList = {}
-	local stageConfig = self._spStageSystem:getPointConfigByType(self._stageType)
+	local itemId = self._itemData.itemId
+	local itemSources = ConfigReader:getDataByNameIdAndKey("ItemConfig", self._itemData.itemId, "Resource")
+
+	for k, v in pairs(itemSources) do
+		local resourceConfig = ConfigReader:getRecordById("ItemResource", v)
+
+		if string.find(resourceConfig.URL, "SpStageMainViewWithTimes") then
+			self:createStageDataSource(resourceConfig)
+		elseif string.find(resourceConfig.URL, "NewCurrencyBuyView") then
+			self:createExchangeDataSource(resourceConfig)
+		elseif string.find(resourceConfig.URL, "BuildingGetResView") then
+			self:createBuildingDataSource(resourceConfig)
+		elseif string.find(resourceConfig.URL, "shopView") then
+			self:_refreshExpGiftItemData()
+			self:createGiftDataSource(resourceConfig)
+		end
+	end
+end
+
+function BuyEatItemTipMediator:onRegister()
+	self:mapButtonHandlersClick(kBtnHandlers)
+
+	self._main = self:getView():getChildByFullName("main")
+	self._viewPanel = self._main:getChildByFullName("tableView")
+	self._tableViewBg = self._main:getChildByFullName("Image_13")
+	self._blockPanel = self._main:getChildByName("block")
+
+	self._blockPanel:setVisible(false)
+
+	self._cellPanel = self._main:getChildByName("cellmodel")
+
+	self._cellPanel:setVisible(false)
+
+	local giftNode = self._main:getChildByFullName("NodeExpGift")
+	self._giftNode = cc.CSLoader:createNode("asset/ui/ExpGift.csb")
+
+	self._giftNode:setVisible(false)
+	giftNode:addChild(self._giftNode)
+
+	local bgNode = self._main:getChildByFullName("bgNode")
+	self._bgNode = bindWidget(self, bgNode, PopupNormalWidget, {
+		btnHandler = {
+			clickAudio = "Se_Click_Close_2",
+			func = bind1(self.onClickClose, self)
+		},
+		title = Strings:get("SOURCE_TITLE"),
+		title1 = Strings:get("UITitle_EN_Huodetujing"),
+		bgSize = {
+			width = 835,
+			height = 580
+		}
+	})
+
+	self:_refreshExpGiftItemData()
+
+	local priceBtn = self._giftNode:getChildByFullName("Node_gift.Button_price")
+
+	priceBtn:addClickEventListener(function ()
+		self:onClickBuyGift()
+	end)
+end
+
+function BuyEatItemTipMediator:_refreshExpGiftItemData()
+	local minSort = 9999
+	local showShopItem, minorShowItem = nil
+	local shopItems = self._shopSystem:getPackageList()
+
+	for k, item in pairs(shopItems) do
+		if (item:getShopSort() == kShopResetType.KResetDay or item:getShopSort() == kShopResetType.KResetWeek or item:getShopSort() == kShopResetType.KResetMonth) and self._shopSystem:checkPackageExist(item:getId()) and item:getSpecialType() == "DayExp" and item:getSort() < minSort then
+			minorShowItem = item
+			minSort = item:getSort()
+			local showTime = self._shopSystem:checkTimeTagShow(item)
+
+			if showTime and item:getLeftCount() > 0 then
+				showShopItem = item
+			end
+		end
+	end
+
+	self._minorShowItem = minorShowItem
+	self._showShopItem = showShopItem
+
+	self:_adjustView()
+end
+
+function BuyEatItemTipMediator:_adjustView()
+	if self._showShopItem then
+		self._viewPanel:setPosition(0, 78)
+		self._viewPanel:setContentSize(680, 435)
+		self._tableViewBg:setPosition(0, 78)
+		self._tableViewBg:setContentSize(680, 435)
+		self._bgNode:getView():setPosition(-86, 17)
+		self._bgNode:setContentSize(1125, 580)
+	else
+		self._viewPanel:setPosition(158, 78)
+		self._viewPanel:setContentSize(680, 435)
+		self._tableViewBg:setPosition(158, 78)
+		self._tableViewBg:setContentSize(680, 435)
+		self._bgNode:getView():setPosition(74, 17)
+		self._bgNode:setContentSize(835, 580)
+	end
+end
+
+function BuyEatItemTipMediator:createStageDataSource(resourceConfig)
+	local stageType = SpStageType.kExp
+	local stageData = kSpStageTeamAndPointType[stageType]
+	local unlock = self._systemKeeper:isUnlock(stageData.unlockType)
+	local spStageIds = ConfigReader:getRecordById("ConfigValue", "StageSp_List").content
+	local stageId = spStageIds[stageType]
+	local rewards = self._spStageSystem:getRewardById(stageId)
+	self._stageType = stageType
+	self._stageId = stageId
+	local stageConfig = self._spStageSystem:getPointConfigByType(stageType)
 
 	if stageConfig then
-		local closeConfig = {}
+		local maxDifficulty, stageSource = nil
 
 		for i = 1, #stageConfig do
 			local data = stageConfig[i]
 			local pointId = data.Id
-			local close = self._spStageSystem:isPointClose(self._stageId, pointId)
+			local close = self._spStageSystem:isPointClose(stageId, pointId)
+			data.unlock = unlock and not close
 
-			if not close then
-				self._sourceList[#self._sourceList + 1] = data
-			else
-				closeConfig[#closeConfig + 1] = data
+			if stageSource == nil then
+				stageSource = data
+			elseif not close and (maxDifficulty == nil or maxDifficulty < data.Difficulty) then
+				maxDifficulty = data.Difficulty
+				stageSource = data
 			end
 		end
 
-		table.sort(self._sourceList, function (a, b)
-			return b.Difficulty < a.Difficulty
-		end)
+		stageSource.enterParams = {
+			stageType = stageType,
+			stageId = stageId,
+			pointId = stageSource.Id,
+			difficulty = stageSource.Difficulty
+		}
+		stageSource.rewards = rewards
+		stageSource.title = Strings:get("StageSp_Exp_Name") .. " " .. Strings:get(stageSource.PointName)
+		stageSource.url = resourceConfig.URL
+		stageSource.timesLimit = self._spStageSystem:getStageLeaveTime(stageId) <= 0
 
-		for i = 1, #closeConfig do
-			local data = closeConfig[i]
-			self._sourceList[#self._sourceList + 1] = data
-		end
+		table.insert(self._sourceList, stageSource)
+	end
+end
+
+function BuyEatItemTipMediator:createExchangeDataSource(resourceConfig)
+	local getResNum = self._buildingSystem:getBuyResGetNum("BuyExp_Base")
+	self._sourceList = self._sourceList or {}
+	local exchageSource = {
+		rewards = {
+			{
+				code = "PlayerHeroExp",
+				type = RewardType.kItem,
+				amount = getResNum
+			}
+		},
+		title = Strings:get("Resource_Exchange_Title_Exp"),
+		url = resourceConfig.URL,
+		enterParams = {
+			_currencyType = CurrencyType.kExp
+		}
+	}
+	local aBuyTimes = self._bagSystem:getBuyTimesByType(TimeRecordType.kBuyExp)
+	local buyExpCfg = ConfigReader:getDataByNameIdAndKey("ConfigValue", "BuyExp_Base", "content")
+	exchageSource.timesLimit = buyExpCfg.maxTime <= aBuyTimes
+
+	table.insert(self._sourceList, exchageSource)
+end
+
+function BuyEatItemTipMediator:createBuildingDataSource(resourceConfig)
+	self._sourceList = self._sourceList or {}
+	local outList, resList, resNoLimitList = self._buildingSystem:getAllBuildOutAndRes()
+	local buildingDataSource = {
+		clickGoHandler = function (data)
+			local view = self:getInjector():getInstance("BuildingOneKeyGetResView")
+
+			self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view))
+		end,
+		rewards = {
+			{
+				code = "PlayerHeroExp",
+				type = RewardType.kItem,
+				amount = resNoLimitList[KBuildingType.kExpOre]
+			}
+		},
+		title = Strings:get("Building_Home_Product"),
+		url = resourceConfig.URL
+	}
+
+	table.insert(self._sourceList, buildingDataSource)
+end
+
+function BuyEatItemTipMediator:getIconPositions(iconNum, iconSize)
+	local offset = 10
+	local posArr = {}
+
+	if iconNum == 1 then
+		table.insert(posArr, {
+			0,
+			0
+		})
+	elseif iconNum == 2 then
+		table.insert(posArr, {
+			-iconSize.width / 2 - offset,
+			0
+		})
+		table.insert(posArr, {
+			iconSize.width / 2 + offset,
+			0
+		})
+	elseif iconNum == 3 then
+		table.insert(posArr, {
+			0,
+			iconSize.height / 2 + offset
+		})
+		table.insert(posArr, {
+			-iconSize.width / 2 - offset,
+			-iconSize.height / 2 - offset
+		})
+		table.insert(posArr, {
+			iconSize.width / 2 + offset,
+			-iconSize.height / 2 - offset
+		})
+	elseif iconNum == 4 then
+		table.insert(posArr, {
+			-iconSize.width / 2 - offset,
+			iconSize.height / 2 + offset
+		})
+		table.insert(posArr, {
+			iconSize.width / 2 + offset,
+			iconSize.height / 2 + offset
+		})
+		table.insert(posArr, {
+			-iconSize.width / 2 - offset,
+			-iconSize.height / 2 - offset
+		})
+		table.insert(posArr, {
+			iconSize.width / 2 + offset,
+			-iconSize.height / 2 - offset
+		})
 	end
 
-	self:setUpView()
+	return posArr
+end
+
+local function decimal(nNum, n)
+	if type(nNum) ~= "number" then
+		return nNum
+	end
+
+	n = n or 0
+	n = math.floor(n)
+	local fmt = "%." .. n .. "f"
+	local nRet = tonumber(string.format(fmt, nNum))
+
+	return nRet
+end
+
+function BuyEatItemTipMediator:createGiftDataSource(resourceConfig)
+	local showShopItem = self._showShopItem or self._minorShowItem
+
+	if self._showShopItem then
+		local rewards = RewardSystem:getRewardsById(showShopItem:getItem())
+		local priceText = self._giftNode:getChildByFullName("Node_gift.Button_price.Text_price")
+		local prePriceText = self._giftNode:getChildByFullName("Node_gift.Button_price.Text_pre_price")
+		local discountText = self._giftNode:getChildByFullName("Node_gift.Text_discount")
+		local discountDescText = self._giftNode:getChildByFullName("Node_gift.Text_discount_desc")
+		local iconNode = self._giftNode:getChildByFullName("Node_gift.Node_icon")
+		local symbol, price = showShopItem:getPaySymbolAndPrice()
+		local drawPosX, drawPosY = prePriceText:getPosition()
+		local drawNode = cc.DrawNode:create()
+
+		drawNode:drawLine(cc.p(drawPosX - 22, drawPosY), cc.p(drawPosX + 28, drawPosY), cc.c4f(1, 0.81, 0.45, 1))
+		prePriceText:getParent():addChild(drawNode)
+		priceText:setString(symbol .. price)
+		prePriceText:setString(symbol .. showShopItem:getPrice())
+
+		local discountStr = Strings:get("ShopReset_ExpPay1_Discount_1", {
+			num = decimal(10 / tonumber(showShopItem:getCostOff()), 1)
+		})
+
+		discountText:setString(discountStr)
+		discountDescText:setString(Strings:get("ShopReset_ExpPay1_Discount_2"))
+		iconNode:removeAllChildren()
+
+		local posArr = self:getIconPositions(#rewards, {
+			width = 70,
+			height = 70
+		})
+
+		for i = 1, #rewards do
+			local icon = IconFactory:createRewardIcon(rewards[i], {
+				isWidget = true
+			})
+
+			icon:setTouchEnabled(true)
+			icon:setScale(0.65)
+			icon:addTo(iconNode)
+			icon:setPosition(cc.p(posArr[i][1], posArr[i][2]))
+		end
+
+		self._giftNode:setVisible(true)
+	else
+		self._giftNode:setVisible(false)
+	end
+
+	if showShopItem then
+		local tips = kShopTips[showShopItem:getShopSort()] or "MAZE_TIMES"
+		local rewards = RewardSystem:getRewardsById(showShopItem:getItem())
+		self._sourceList = self._sourceList or {}
+		local giftDataSource = {
+			rewards = rewards,
+			title = Strings:get(showShopItem:getName()),
+			url = resourceConfig.URL .. showShopItem:getId(),
+			timesLimit = self._showShopItem == nil,
+			tips = Strings:get(tips)
+		}
+
+		table.insert(self._sourceList, giftDataSource)
+	end
 end
 
 function BuyEatItemTipMediator:setUpView()
@@ -63,47 +368,23 @@ function BuyEatItemTipMediator:setUpView()
 
 	self._noTips:setVisible(false)
 
+	local needCountLabel = self._main:getChildByName("Text_needcount")
+	local ownCountLabel = self._main:getChildByName("Text_owncount")
+	local nameLabel = self._main:getChildByFullName("nameLabel")
+	local itemPanel = self._main:getChildByFullName("itemPanel")
 	local descText = self._main:getChildByFullName("Text_desc")
 
-	descText:setString("")
+	needCountLabel:setVisible(false)
+	ownCountLabel:setVisible(false)
+	nameLabel:setVisible(false)
+	itemPanel:setVisible(false)
+	descText:setVisible(false)
 	self:createSourceList()
 	self:refreshView()
 end
 
 function BuyEatItemTipMediator:refreshView()
-	local needCountLabel = self._main:getChildByName("Text_needcount")
-
-	needCountLabel:setString("")
-
-	local ownCountLabel = self._main:getChildByName("Text_owncount")
-
-	ownCountLabel:setString("")
-
-	local hasNum = self._bagSystem:getItemCount(self._itemData.itemId)
-	local itemPanel = self._main:getChildByFullName("itemPanel")
-
-	itemPanel:removeAllChildren()
-
-	local info = {
-		id = self._itemData.itemId,
-		amount = hasNum
-	}
-	local icon = IconFactory:createItemIcon(info, {
-		showAmount = false,
-		isWidget = true
-	})
-
-	icon:addTo(itemPanel):center(itemPanel:getContentSize())
-	icon:setScale(0.8)
-
-	local nameLabel = self._main:getChildByFullName("nameLabel")
-
-	nameLabel:setString(RewardSystem:getName({
-		id = self._itemData.itemId
-	}))
-	GameStyle:setQualityText(nameLabel, RewardSystem:getQuality({
-		id = self._itemData.itemId
-	}))
+	self:createDataSource()
 
 	if self._tabelView then
 		self._tabelView:reloadData()
@@ -112,8 +393,6 @@ end
 
 function BuyEatItemTipMediator:createCell(cell, index)
 	local data = self._sourceList[index]
-	local pointId = data.Id
-	local close = self._spStageSystem:isPointClose(self._stageId, pointId)
 	local blockPanel = cell:getChildByName("block")
 
 	if not blockPanel then
@@ -128,16 +407,45 @@ function BuyEatItemTipMediator:createCell(cell, index)
 	local titleText = cell:getChildByName("Text_name")
 
 	titleText:setVisible(true)
-	titleText:setString(self._title .. " " .. Strings:get(data.PointName))
+	titleText:setString(data.title)
 
+	local isUnlock, tip = UrlEntryManage.checkEnabledWithUserData(data.url)
+	local isOpen = isUnlock and not data.timesLimit
 	local goBtn = cell:getChildByName("btn_go")
-	local notopenImg = cell:getChildByName("Image_notopen")
 
-	notopenImg:setVisible(not self._unlock or close)
-	goBtn:setVisible(self._unlock and not close)
+	goBtn:setVisible(isOpen)
 	goBtn:addClickEventListener(function ()
 		self:onClickGo(data)
 	end)
+
+	local notopenImg = cell:getChildByName("Image_notopen")
+
+	notopenImg:setVisible(not isOpen)
+
+	if data.timesLimit then
+		tip = data.tips or ""
+
+		notopenImg:ignoreContentAdaptWithSize(true)
+		notopenImg:setString(tip)
+	end
+
+	if not isOpen then
+		cell:setTouchEnabled(true)
+		cell:setSwallowTouches(false)
+		cell:addTouchEventListener(function (sender, eventType)
+			if eventType == ccui.TouchEventType.began then
+				sender._moved = false
+			elseif eventType == ccui.TouchEventType.moved then
+				sender._moved = true
+			elseif eventType == ccui.TouchEventType.ended and not sender._moved then
+				self:dispatch(ShowTipEvent({
+					tip = tip
+				}))
+			end
+		end)
+	else
+		cell:setTouchEnabled(false)
+	end
 
 	local targetImg = blockPanel:getChildByFullName("targetImg")
 
@@ -153,7 +461,7 @@ function BuyEatItemTipMediator:createCell(cell, index)
 	end
 
 	for i = 1, 4 do
-		local rewardData = self._rewards[i]
+		local rewardData = data.rewards[i]
 		local iconBg = blockPanel:getChildByName("icon" .. i)
 
 		iconBg:removeAllChildren()
@@ -163,7 +471,9 @@ function BuyEatItemTipMediator:createCell(cell, index)
 				isWidget = true
 			})
 
+			icon:setSwallowTouches(true)
 			IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), rewardData, {
+				swallowTouches = true,
 				needDelay = true
 			})
 			icon:setScaleNotCascade(0.52)
@@ -182,6 +492,27 @@ end
 
 function BuyEatItemTipMediator:onClickGo(data)
 	AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
+
+	local context = self:getInjector():instantiate(URLContext)
+	local entry, params = UrlEntryManage.resolveUrlWithUserData(data.url)
+
+	if entry then
+		if data.enterParams then
+			for k, v in pairs(data.enterParams) do
+				params[k] = v
+			end
+		end
+
+		entry:response(context, params)
+	else
+		self:dispatch(ShowTipEvent({
+			tip = Strings:get("Function_Not_Open")
+		}))
+	end
+end
+
+function BuyEatItemTipMediator:onGuideClickGo(data)
+	AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
 	self._spStageSystem:tryEnter({
 		spType = self._stageType
 	})
@@ -197,6 +528,13 @@ function BuyEatItemTipMediator:onClickGo(data)
 	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
 		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
 	}, params, nil))
+end
+
+function BuyEatItemTipMediator:onClickBuyGift()
+	if self._shopSystem:getVersionCanBuy(self._showShopItem, Strings:get("Activity_Version_Tips1")) then
+		AudioEngine:getInstance():playEffect("Se_Click_Confirm", false)
+		self._shopSystem:requestBuyPackageShop(self._showShopItem:getId(), nil, false)
+	end
 end
 
 function BuyEatItemTipMediator:setupClickEnvs()
@@ -220,7 +558,7 @@ function BuyEatItemTipMediator:setupClickEnvs()
 						local sourceId = self._sourceList[index]
 						local sourceConfig = ConfigReader:getRecordById("ItemResource", tostring(sourceId))
 
-						self:onClickGo(sourceConfig)
+						self:onGuideClickGo(sourceConfig)
 					end)
 				end
 			end

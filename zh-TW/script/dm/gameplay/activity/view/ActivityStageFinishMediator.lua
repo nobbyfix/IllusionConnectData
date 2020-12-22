@@ -192,6 +192,16 @@ function ActivityStageFinishMediator:refreshHeroAndReward()
 			icon:addTo(layout):center(layout:getContentSize()):setName("rewardIcon")
 			icon:setScaleNotCascade(0.8)
 			self._rewardListView:pushBackCustomItem(layout)
+
+			if v.isActivityExtra then
+				local markImg = ccui.ImageView:create("asset/common/shaungdan_img_xianshidiaoluojiaobiao.png")
+
+				markImg:addTo(layout, 10):posite(45, 75)
+
+				local text = ccui.Text:create(Strings:get("Newyear_Item_LimitedTimeDrop"), TTF_FONT_FZYH_M, 18)
+
+				text:addTo(markImg):center(markImg:getContentSize()):offset(-3, 3)
+			end
 		end
 
 		local items = self._rewardListView:getItems()
@@ -858,6 +868,17 @@ function ActivityStageFinishMediator:showExpPanel()
 			})
 			icon:addTo(layout):center(layout:getContentSize()):setName("rewardIcon")
 			icon:setScaleNotCascade(0.8)
+
+			if v.isActivityExtra then
+				local markImg = ccui.ImageView:create("asset/common/shaungdan_img_xianshidiaoluojiaobiao.png")
+
+				markImg:addTo(layout, 10):posite(45, 75)
+
+				local text = ccui.Text:create(Strings:get("Newyear_Item_LimitedTimeDrop"), TTF_FONT_FZYH_M, 18)
+
+				text:addTo(markImg):center(markImg:getContentSize()):offset(-3, 3)
+			end
+
 			self._rewardListView:pushBackCustomItem(layout)
 		end
 
@@ -1035,6 +1056,7 @@ function ActivityStageFinishMediator:initRewardPanel()
 
 	if self._data.rewards.activityExtraReward then
 		for _, v in ipairs(self._data.rewards.activityExtraReward) do
+			v.isActivityExtra = true
 			self._data.rewards.itemRewards[#self._data.rewards.itemRewards + 1] = v
 		end
 	end

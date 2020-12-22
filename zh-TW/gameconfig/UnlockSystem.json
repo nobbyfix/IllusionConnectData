@@ -130,6 +130,24 @@
         "UnlockAnima": "",
         "UnlockDesc": "AutoFight_UnlockDesc"
     },
+    "Bag_Secret": {
+        "Condition": {
+            "LEVEL": 40
+        },
+        "Icon": "",
+        "IsPlay": 0,
+        "Link": "",
+        "LongDesc": "",
+        "Name": "Unlock_Bag_Secret",
+        "OutputDesc": "",
+        "ResourcesBanner": "",
+        "ShowCondition": {
+            "LEVEL": 40
+        },
+        "Tip": "Unlock_Level_Tips",
+        "UnlockAnima": "",
+        "UnlockDesc": ""
+    },
     "BattlePass": {
         "Condition": {
             "STAGE": "M01S04"
@@ -532,6 +550,24 @@
         "UnlockAnima": "",
         "UnlockDesc": ""
     },
+    "ClubStage_SkipBattle": {
+        "Condition": {
+            "CLUBLEVEL": 2
+        },
+        "Icon": "",
+        "IsPlay": "",
+        "Link": "",
+        "LongDesc": "",
+        "Name": "",
+        "OutputDesc": "",
+        "ResourcesBanner": "",
+        "ShowCondition": {
+            "CLUBLEVEL": 2
+        },
+        "Tip": "ClubStage_SkipBattleDesc",
+        "UnlockAnima": "",
+        "UnlockDesc": ""
+    },
     "Club_Chat": {
         "Condition": {
             "LEVEL": 12
@@ -690,7 +726,7 @@
     },
     "DreamChallenge": {
         "Condition": {
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "Icon": "",
         "IsPlay": "",
@@ -700,7 +736,7 @@
         "OutputDesc": "",
         "ResourcesBanner": "",
         "ShowCondition": {
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "Tip": "DreamChallenge_Unlock_Tips",
         "UnlockAnima": "",

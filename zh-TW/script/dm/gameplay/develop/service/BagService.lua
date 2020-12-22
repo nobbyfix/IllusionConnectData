@@ -38,6 +38,12 @@ function BagService:requestHeroCompose(params, blockUI, callback)
 	self:sendRequest(request, blockUI)
 end
 
+function BagService:requestScrollCompose(params, blockUI, callback)
+	local request = self:newRequest(10217, params, callback)
+
+	self:sendRequest(request, blockUI)
+end
+
 function BagService:requestHeroDebrisChange(params, blockUI, callback)
 	local request = self:newRequest(10204, params, callback)
 

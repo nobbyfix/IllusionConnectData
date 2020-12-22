@@ -3,7 +3,7 @@ TestPlayStory = class("TestPlayStory", DebugViewTemplate, _M)
 function TestPlayStory:initialize()
 	self._viewConfig = {
 		{
-			default = "story01_1a",
+			default = "elitestory01_1a",
 			name = "script",
 			title = "填写脚本名称",
 			type = "Input"

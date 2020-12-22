@@ -1097,8 +1097,10 @@ function RecruitMainMediator:onClickRebuy(sender, eventType)
 	elseif costId == CurrencyIdKind.kDiamondDrawItem then
 		self:buyCard(costId, costCount, param)
 	else
+		self._resultMain:removeAllChildren()
+		self._resultMain:setVisible(false)
 		bagSystem:checkCostEnough(costId, costCount, {
-			type = "tip"
+			type = "popup"
 		})
 	end
 end

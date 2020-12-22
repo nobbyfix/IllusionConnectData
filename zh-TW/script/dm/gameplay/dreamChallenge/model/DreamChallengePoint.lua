@@ -61,13 +61,25 @@ function DreamChallengePoint:synchronize(data)
 				if v.target then
 					self._buffs[skillId].target = v.target
 				end
+
+				if v.time then
+					self._buffs[skillId].time = v.time
+				end
+
+				if v.buffType then
+					self._buffs[skillId].buffType = v.buffType
+				end
+
+				if v.pointId then
+					self._buffs[skillId].pointId = v.pointId
+				end
+
+				if v.skillId then
+					self._buffs[skillId].skillId = v.skillId
+				end
 			else
 				self._buffs[skillId] = {}
 				self._buffs[skillId] = v
-			end
-
-			if self._buffs[skillId].duration <= 0 then
-				self._buffs[skillId] = nil
 			end
 		end
 	end
@@ -322,6 +334,18 @@ function DreamChallengePoint:getNpc(battleId)
 	return npc
 end
 
+function DreamChallengePoint:getNpcForbidId(battleId)
+	local npc = {}
+
+	if self._dreamBattles[battleId].NPC and #self._dreamBattles[battleId].NPC > 0 then
+		for i = 1, #self._dreamBattles[battleId].NPC do
+			npc[#npc + 1] = self._dreamBattles[battleId].NPC[i].forbidid
+		end
+	end
+
+	return npc
+end
+
 function DreamChallengePoint:getFullStarSkill()
 	return self._pointConfig.StarsAttrEffect
 end
@@ -344,6 +368,10 @@ end
 
 function DreamChallengePoint:getPointShowImg()
 	return self._pointConfig.Pic .. ".jpg"
+end
+
+function DreamChallengePoint:getPointMapShowImg()
+	return self._pointConfig.PointBackground .. ".jpg"
 end
 
 function DreamChallengePoint:getPointLongDesc()

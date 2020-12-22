@@ -86,7 +86,7 @@ function ActivityBlockMonsterShopBuyItemMediator:refreshData()
 		self._minNumber = 1
 	end
 
-	self._targetItemId = self._itemData.targetItem
+	self._targetItemId = self._itemData.targetItem or self._itemData.targetInfo.code
 end
 
 function ActivityBlockMonsterShopBuyItemMediator:initMember()
@@ -124,6 +124,8 @@ function ActivityBlockMonsterShopBuyItemMediator:initMember()
 	self._selectCount = self._buyTimesPanel:getChildByFullName("changetime_text_cur_count")
 	self._remainCount = self._buyTimesPanel:getChildByFullName("changetime_text1")
 	self._totalPrice = self._onePriceNode:getChildByFullName("money_text")
+
+	self._numberPanel:setVisible(false)
 end
 
 function ActivityBlockMonsterShopBuyItemMediator:refreshBaseShowView()

@@ -187,6 +187,10 @@ function BattleGroundCell:_setupView(data)
 
 	self._baseColorTrans = self._displayNode:getColorTransform()
 	self._trapNode = cc.Node:create():addTo(self._baseNode, 10)
+	self._lockShow = cc.Sprite:createWithSpriteFrameName(data.lockImage)
+
+	self._lockShow:setVisible(false)
+	self._lockShow:addTo(self._baseNode)
 end
 
 function BattleGroundCell:setPreview(cellInfo)
@@ -234,6 +238,14 @@ function BattleGroundCell:resumePreview()
 	if not self._targetNode:isVisible() then
 		self._displayNode:setVisible(true)
 	end
+end
+
+function BattleGroundCell:showBlock()
+	self._lockShow:setVisible(true)
+end
+
+function BattleGroundCell:hideBlock()
+	self._lockShow:setVisible(false)
 end
 
 function BattleGroundCell:showTarget(actId, isHeal)

@@ -4,7 +4,7 @@ function StageOneKeyFinish:initialize()
 	self._opType = 124
 	self._viewConfig = {
 		{
-			default = "M06S04",
+			default = "M09S01",
 			name = "pointId",
 			title = "关卡Id",
 			type = "Input"

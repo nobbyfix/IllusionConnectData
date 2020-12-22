@@ -135,6 +135,36 @@ function TowerSystem:tryEnter()
 	self:showTowerMainView()
 end
 
+function TowerSystem:checkLeftCount(data)
+	local systemKeeper = self:getInjector():getInstance("SystemKeeper")
+	local unlock, tips = systemKeeper:isUnlock("Unlock_Tower_All")
+
+	if not unlock then
+		return 1, tips
+	end
+
+	local list = self:getTowerDataList()
+
+	for k, v in pairs(list) do
+		dump(k, "key")
+
+		local towerId = v:getTowerId()
+		local towerData = self:getTowerDataById(towerId)
+
+		if towerData:getStatus() == kEnterFightStatus.ENTER then
+			return 1
+		end
+
+		local leftTimes = towerData:getEnterTimes().value
+
+		if leftTimes > 0 then
+			return 1
+		end
+	end
+
+	return 0, Strings:get("Tower_LeftCount_NotEnough")
+end
+
 function TowerSystem:sortHeroes(list, type)
 	local func = type and HeroSortFuncs.TowerSortFunc[type] or HeroSortFuncs.TowerSortFunc[9]
 

@@ -236,6 +236,12 @@ itemMap[ItemPages.kOther] = function (configId)
 	return MapItem:new(prototype)
 end
 
+itemMap[ItemPages.kCompose] = function (configId)
+	local prototype = MapItemPrototype:new(configId)
+
+	return MapItem:new(prototype)
+end
+
 function Bag:_createItem(itemData, id)
 	local configId = itemData.tag or id
 	local config = ConfigReader:getRecordById("ItemConfig", configId)
@@ -243,6 +249,10 @@ function Bag:_createItem(itemData, id)
 	if config and config.Id then
 		local itemType = config.Page
 		local func = itemMap[itemType]
+
+		if not CommonUtils.GetSwitch("fn_bag_mijuan_btn") and itemType == ItemPages.kCompose then
+			return
+		end
 
 		if func then
 			local item = func(configId)

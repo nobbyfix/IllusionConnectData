@@ -252,7 +252,10 @@ function Hero:initSoundList()
 
 		if not self._sounds[id] then
 			local sound = HeroSound:new(id)
-			self._sounds[id] = sound
+
+			if sound and sound:getConfig() then
+				self._sounds[id] = sound
+			end
 		end
 	end
 end

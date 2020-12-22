@@ -63,6 +63,10 @@ function EquipList:getEquipsByType(type)
 	return self._equipPositionMap[type]
 end
 
+function EquipList:getEquipsAll()
+	return self._equipPositionMap
+end
+
 function EquipList:getEquipList()
 	local list = {}
 

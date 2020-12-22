@@ -154,6 +154,10 @@ function BaseBattleSession:createBattleLogicWithConfig(config)
 		battleLogic:setResultJudgeRules(judgeRules)
 	end
 
+	if config.groundCellCfg then
+		battleLogic:setupGroundCell(config.groundCellCfg)
+	end
+
 	local skills = require("skills.all")
 
 	battleLogic:setSkillDefinitions(skills.__all__)
@@ -987,4 +991,18 @@ function BaseBattleSession:_applyBattleConfig(battleData, battleConfig)
 			self:_adjustPlayerData(enemyData, enemyExtra)
 		end
 	end
+end
+
+function BaseBattleSession:_genGroundCellCfg(cellCfg)
+	local cells = {}
+
+	if cellCfg and type(cellCfg) == "table" then
+		for k, v in pairs(cellCfg) do
+			table.insert(cells, v)
+		end
+	end
+
+	return {
+		blockCells = cells
+	}
 end

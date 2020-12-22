@@ -18,6 +18,9 @@ ActivitySystem:has("_activityService", {
 ActivitySystem:has("_gameServerAgent", {
 	is = "r"
 }):injectWith("GameServerAgent")
+ActivitySystem:has("_shopSystem", {
+	is = "r"
+}):injectWith("ShopSystem")
 ActivitySystem:has("_battleTeam", {
 	is = "rw"
 })
@@ -1253,8 +1256,6 @@ function ActivitySystem:checkClubBossSummerActivityData()
 		return
 	end
 
-	dump("refreshClubBossSummerActivityData")
-
 	if self:getBlockSummerActivity() ~= nil then
 		local clubSystem = self:getInjector():getInstance(ClubSystem)
 
@@ -1443,4 +1444,20 @@ function ActivitySystem:enterBlockMonsterShopView(activityId)
 
 		self:dispatch(event)
 	end
+end
+
+function ActivitySystem:enterBlockFudaiView(activityId)
+	AudioEngine:getInstance():playEffect("Se_Click_Select_1", false)
+
+	local function callback()
+		local view = self:getInjector():getInstance("ActivityBlockFudaiView")
+
+		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+		}, {
+			activityId = activityId
+		}))
+	end
+
+	self._shopSystem:requestGetPackageShop(callback)
 end

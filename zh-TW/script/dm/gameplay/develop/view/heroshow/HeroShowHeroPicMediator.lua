@@ -310,18 +310,25 @@ end
 
 function HeroShowHeroPicMediator:checkSoundUnlock(soundId)
 	local sound = {
-		config = ConfigReader:getRecordById("Sound", soundId),
-		setUnlock = function (self, unlock)
-		end,
-		getUnlockDesc = function (self)
-			return self.config.UnlockDesc
-		end,
-		getUnlockCondition = function (self)
-			local unlock = self.config.Unlock or {}
-
-			return unlock
-		end
+		config = ConfigReader:getRecordById("Sound", soundId)
 	}
+
+	if not sound.config then
+		return
+	end
+
+	function sound:setUnlock(unlock)
+	end
+
+	function sound:getUnlockDesc()
+		return self.config.UnlockDesc
+	end
+
+	function sound:getUnlockCondition()
+		local unlock = self.config.Unlock or {}
+
+		return unlock
+	end
 
 	return self._heroSystem:getSoundUnlock(self._heroData, sound)
 end

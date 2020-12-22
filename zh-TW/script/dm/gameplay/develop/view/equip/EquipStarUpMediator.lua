@@ -27,6 +27,7 @@ end
 function EquipStarUpMediator:enterWithData(data)
 	self._oldMaxLevel = data.oldMaxLevel
 	self._equipId = data.equipId
+	self._oldAttrList = data.oldAttrList
 	self._equipData = self._equipSystem:getEquipById(self._equipId)
 
 	self:setupView()
@@ -83,21 +84,47 @@ function EquipStarUpMediator:setupView()
 	local levelLabel1 = descNode:getChildByName("level1")
 
 	levelLabel1:setString(Strings:get("Strenghten_Text78", {
-		level = level .. "/" .. self._oldMaxLevel
+		level = self._oldMaxLevel
 	}))
 
 	local levelLabel2 = descNode:getChildByName("level2")
 
 	levelLabel2:setString(Strings:get("Strenghten_Text78", {
-		level = level .. "/" .. levelMax
+		level = levelMax
 	}))
 
-	local arrowNode = descNode:getChildByName("arrowNode")
-	local arrowAnim = cc.MovieClip:create("jiantoudonghua_jiantoudonghua")
+	local attrList = self._oldAttrList
 
-	arrowAnim:addCallbackAtFrame(50, function ()
-		arrowAnim:stop()
-	end)
-	arrowAnim:addTo(arrowNode)
-	arrowAnim:setScale(0.6)
+	for i = 1, 4 do
+		local attrPanel = self:getView():getChildByFullName("desc_" .. i)
+
+		attrPanel:setVisible(false)
+
+		local index = i
+
+		if i > 2 then
+			attrList = self._equipData:getAttrListShow()
+			index = i - 2
+		end
+
+		if attrList[index] then
+			attrPanel:setVisible(true)
+
+			local attrType = attrList[index].attrType
+			local attrNum = attrList[index].attrNum
+			local attrName = AttributeCategory:getAttName(attrType)
+			local attrTypeImage = AttrTypeImage[attrType]
+			local attrImage = attrPanel:getChildByFullName("image")
+
+			attrImage:loadTexture(attrTypeImage, 1)
+
+			local attrText = attrPanel:getChildByFullName("text")
+
+			attrText:setString(attrNum)
+
+			if AttributeCategory:getAttNameAttend(attrType) ~= "" then
+				attrText:setString(attrNum * 100 .. "%")
+			end
+		end
+	end
 end

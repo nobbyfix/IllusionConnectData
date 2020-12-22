@@ -67,6 +67,7 @@ function DreamChallengeBuffDetailMediator:initWigetInfo()
 	self._contentChildClone = self._view:getChildByName("contentChildClone")
 	self._infoCellClone = self._view:getChildByName("infoCellClone")
 	self._contentAddClone = self._view:getChildByName("contentAddClone")
+	self._contentBuffClone = self._view:getChildByName("contentBuffClone")
 	local bgNode = self:getView():getChildByFullName("main.bg")
 	local widget = self:bindWidget(bgNode, PopupNormalWidget, {
 		bg = "bg_popup_dark.png",
@@ -95,10 +96,22 @@ function DreamChallengeBuffDetailMediator:setupInfoView()
 	self._list:removeAllChildren()
 	self._list:setScrollBarEnabled(false)
 
+	local teamNumPanel = self:createTiredInfo()
+
+	if teamNumPanel then
+		self._list:pushBackCustomItem(teamNumPanel)
+	end
+
 	local masterPanel = self:createMasterInfo()
 
 	if masterPanel then
 		self._list:pushBackCustomItem(masterPanel)
+	end
+
+	local partenerPanel = self:createPartenerInfo()
+
+	if partenerPanel then
+		self._list:pushBackCustomItem(partenerPanel)
 	end
 
 	local addPanel = self:createAddInfo()
@@ -111,18 +124,6 @@ function DreamChallengeBuffDetailMediator:setupInfoView()
 
 	if buffPanel then
 		self._list:pushBackCustomItem(buffPanel)
-	end
-
-	local teamNumPanel = self:createTiredInfo()
-
-	if teamNumPanel then
-		self._list:pushBackCustomItem(teamNumPanel)
-	end
-
-	local partenerPanel = self:createPartenerInfo()
-
-	if partenerPanel then
-		self._list:pushBackCustomItem(partenerPanel)
 	end
 
 	local geroPanel = self:createHeroInfo()
@@ -239,7 +240,10 @@ function DreamChallengeBuffDetailMediator:createAddInfo()
 		end
 
 		icon:removeAllChildren()
-		icon:loadTexture(kPartyIcon[partys[i]], ccui.TextureResType.localType)
+
+		local skillIcon = "asset/skillIcon/" .. effectConfig.Icon .. ".png"
+
+		icon:loadTexture(skillIcon, ccui.TextureResType.localType)
 		node4:addTo(infoView)
 		table.insert(addTable, node4)
 	end
@@ -261,7 +265,10 @@ function DreamChallengeBuffDetailMediator:createAddInfo()
 		end
 
 		icon:removeAllChildren()
-		icon:loadTexture(kJobIcon[jobs[i]], ccui.TextureResType.localType)
+
+		local skillIcon = "asset/skillIcon/" .. effectConfig.Icon .. ".png"
+
+		icon:loadTexture(skillIcon, ccui.TextureResType.localType)
 		node5:addTo(infoView)
 		table.insert(addTable, node5)
 	end
@@ -327,21 +334,7 @@ function DreamChallengeBuffDetailMediator:createAddInfo()
 end
 
 function DreamChallengeBuffDetailMediator:createBUFFInfo()
-	local buffs = self._dreamSystem:getBuffs(self._mapId, self._pointId)
-	local buffNum = 0
-
-	for k, v in pairs(buffs) do
-		buffNum = buffNum + 1
-	end
-
-	if buffNum <= 0 then
-		return nil
-	end
-
 	local view = self._contentAddClone:clone()
-
-	self:setInfoCellBg(view, 210, 688)
-
 	local name = view:getChildByFullName("Image_31.mExtraRewardLabel")
 
 	name:setString("BUFF")
@@ -351,24 +344,129 @@ function DreamChallengeBuffDetailMediator:createBUFFInfo()
 	infoView:removeAllChildren()
 
 	local buffIndex = 0
+	local battleIds = self._dreamSystem:getBattleIds(self._mapId, self._pointId)
 
-	for k, v in pairs(buffs) do
-		local node = self._infoCellClone:clone()
-		local buffInfo = v
-		local node = self._infoCellClone:clone()
-		local attackText = node:getChildByFullName("text")
-		local icon = node:getChildByFullName("icon")
-		local skillConfig = ConfigReader:getRecordById("Skill", buffInfo.skillId)
+	for i = 1, #battleIds do
+		local buff = self._dreamSystem:getBattleRewardBuff(battleIds[i])
 
-		if skillConfig then
-			attackText:setString(Strings:get(skillConfig.Desc_short))
-			attackText:setColor(cc.c3b(255, 159, 48))
+		if buff then
+			local buffInfo = buff
+			local node = self._contentBuffClone:clone()
+			local icon = node:getChildByFullName("icon")
+
+			icon:removeAllChildren()
+
+			local info = {
+				id = buffInfo.value
+			}
+			local buffIcon = IconFactory:createBuffIcon(info, {
+				scale = 0.65
+			})
+
+			buffIcon:addTo(icon):center(icon:getContentSize())
+
+			local effectConfig = ConfigReader:getRecordById("Skill", buffInfo.value)
+			local nameLab = node:getChildByFullName("title")
+
+			nameLab:setString(Strings:get(effectConfig.Name))
+
+			local descLab = node:getChildByFullName("desc")
+			local desc = Strings:get(effectConfig.Desc)
+			local richText = ccui.RichText:createWithXML(desc, {})
+
+			richText:setAnchorPoint(descLab:getAnchorPoint())
+			richText:setPosition(cc.p(descLab:getPosition()))
+			richText:addTo(descLab:getParent())
+			richText:renderContent(descLab:getContentSize().width, 0, true)
+
+			local tipImg = node:getChildByFullName("tag")
+			local tipText = node:getChildByFullName("tag.text")
+
+			if buffInfo.Type == "OneTimeBuff" then
+				tipImg:setVisible(true)
+				tipImg:loadTexture("bg_mjt_jilibiaoshi.png", ccui.TextureResType.plistType)
+				tipText:setString(Strings:get("DreamChallenge_Buff_Type_JL"))
+			elseif buffInfo.Type == "TimeBuff" then
+				tipImg:setVisible(true)
+				tipImg:loadTexture("bg_mjt_xianshi.png", ccui.TextureResType.plistType)
+				tipText:setString(Strings:get("DreamChallenge_Buff_Type_XS"))
+			else
+				tipImg:setVisible(false)
+			end
+
+			tipImg:setPositionX(135 + nameLab:getContentSize().width)
+
+			local effectLab = node:getChildByFullName("effect")
+			local isLock = self._dreamSystem:checkBuffLock(self._mapId, self._pointId, buffInfo.value)
+			local isUsed = self._dreamSystem:checkBuffUsed(self._mapId, self._pointId, buffInfo.value)
+
+			effectLab:setVisible(false)
+
+			if isLock then
+				local pointName = self._dreamSystem:getPointName(self._pointId)
+				local battleName = self._dreamSystem:getBattleName(battleIds[i])
+
+				effectLab:setVisible(true)
+				effectLab:setString(Strings:get("DreamChallenge_Buff_Lock_Desc", {
+					point = pointName,
+					battle = battleName
+				}))
+			elseif isUsed then
+				effectLab:setVisible(true)
+				effectLab:setString(Strings:get("DreamChallenge_Buff_Used"))
+			elseif buffInfo.Type == "OneTimeBuff" then
+				local buffs = self._dreamSystem:getBuffs(self._mapId, self._pointId)
+
+				if buffs and buffs[buffInfo.value] then
+					effectLab:setVisible(true)
+					effectLab:setString(Strings:get("DreamChallenge_Buff_End_Num", {
+						num = buffs[buffInfo.value].duration
+					}))
+				end
+			elseif buffInfo.Type == "TimeBuff" then
+				local buffs = self._dreamSystem:getBuffs(self._mapId, self._pointId)
+
+				if buffs and buffs[buffInfo.value] then
+					effectLab:setVisible(true)
+
+					local str = ""
+					local fmtStr = "${d}:${H}:${M}:${S}"
+					local timeStr = TimeUtil:formatTime(fmtStr, buffs[buffInfo.value].time)
+					local parts = string.split(timeStr, ":", nil, true)
+					local timeTab = {
+						day = tonumber(parts[1]),
+						hour = tonumber(parts[2]),
+						min = tonumber(parts[3]),
+						sec = tonumber(parts[4])
+					}
+
+					if timeTab.day > 0 then
+						str = timeTab.day .. Strings:get("TimeUtil_Day") .. timeTab.hour .. Strings:get("TimeUtil_Hour")
+					elseif timeTab.hour > 0 then
+						str = timeTab.hour .. Strings:get("TimeUtil_Hour") .. timeTab.min .. Strings:get("TimeUtil_Min")
+					else
+						str = timeTab.min .. Strings:get("TimeUtil_Min") .. timeTab.sec .. Strings:get("TimeUtil_Sec")
+					end
+
+					effectLab:setString(Strings:get("DreamChallenge_Buff_End_Time", {
+						time = str
+					}))
+				end
+			end
+
+			effectLab:setPositionX(170 + nameLab:getContentSize().width)
+			node:addTo(view)
+			node:setPosition(cc.p(20, 100 * (i - 1) + 40))
+
+			buffIndex = buffIndex + 1
 		end
-
-		icon:loadTexture("asset/skillIcon/" .. skillConfig.Icon .. ".png", ccui.TextureResType.localType)
-		node:setPosition(cc.p(buffIndex * 100, -70))
-		node:addTo(infoView)
 	end
+
+	if buffIndex == 0 then
+		return nil
+	end
+
+	self:setInfoCellBg(view, 80 + buffIndex * 100, 688)
 
 	return view
 end
@@ -385,7 +483,7 @@ function DreamChallengeBuffDetailMediator:createTiredInfo()
 
 	local head = self._tiredPanel:clone()
 
-	head:getChildByName("icon"):loadTexture("icon_pilao" .. (tiredNum > 4 and 1 or tiredNum) .. ".png", ccui.TextureResType.plistType)
+	head:getChildByName("icon"):loadTexture("icon_pilao1.png", ccui.TextureResType.plistType)
 	head:getChildByName("info"):setString(Strings:get("DreamChallenge_Point_Tired_Info", {
 		mapName = mapName,
 		pointName = pointName,
@@ -403,30 +501,30 @@ function DreamChallengeBuffDetailMediator:createPartenerInfo()
 
 	name:setString(Strings:get("DreamChallenge_Point_Partener_Title"))
 
-	local hight = 105
+	local hight = 75
 	local rowIndex = 0
 	local battles = self._dreamSystem:getBattleIds(self._mapId, self._pointId)
 
-	for j = 1, #battles do
+	for j = #battles, 1, -1 do
 		local npcs = self._dreamSystem:getNpc(self._mapId, self._pointId, battles[j])
 
 		if npcs and #npcs > 0 then
-			hight = hight + 150
+			hight = hight + 157
 			rowIndex = rowIndex + 1
 			local battleName = self._dreamSystem:getBattleName(battles[j])
 			local title = self._contentChildClone:clone()
 
 			title:getChildByFullName("mTopLayout.mExtraRewardLabel"):setString(battleName)
 			title:addTo(view)
-			title:setPosition(cc.p(0, (rowIndex - 1) * 170 + 202))
+			title:setPosition(cc.p(0, (rowIndex - 1) * 157 + 200))
 
 			for i = 1, #npcs do
 				local info = self._dreamSystem:getNpcInfo(npcs[i])
 				local node = self._myPet:clone()
 
 				self:setHero(node, info)
-				node:addTo(view)
-				node:setPosition(cc.p((i - 1) * 121 + 100, 170 * (rowIndex - 1) + 100))
+				node:addTo(title)
+				node:setPosition(cc.p((i - 1) * 121 + 100, 20))
 				node:setScale(0.55)
 			end
 		end
@@ -445,6 +543,15 @@ function DreamChallengeBuffDetailMediator:createHeroInfo()
 	local view = self._content:clone()
 	local heros = self._heroSystem:getHeroShowIds()
 	local petList = self:removeLockedHeros(heros)
+	local ownHeros = self._heroSystem:getOwnHeroIds(true)
+	local ownIds = {}
+
+	for i = 1, #ownHeros do
+		ownIds[#ownIds + 1] = ownHeros[i].id
+	end
+
+	self._dreamSystem:sortHerosByType(petList, 2, ownIds)
+
 	local rowMax = math.ceil(#petList / 5)
 
 	self:setInfoCellBg(view, 105 + 120 * rowMax, 688)
@@ -596,8 +703,8 @@ function DreamChallengeBuffDetailMediator:setHero(node, info)
 		star:loadTexture(path, 1)
 	end
 
-	local brightNess = self._heroSystem:hasHero(heroId) and 0 or -75
-	local saturation = self._heroSystem:hasHero(heroId) and 0 or -80
+	local brightNess = (self._heroSystem:hasHero(heroId) or info.isNpc) and 0 or -75
+	local saturation = (self._heroSystem:hasHero(heroId) or info.isNpc) and 0 or -80
 
 	heroPanel:setBrightness(brightNess)
 	heroPanel:setSaturation(saturation)

@@ -1,4 +1,11 @@
 {
+    "Condi_ANewYearExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_HolidayExchange_4.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_ANewYearExchangeAchieve_Desc"
+    },
     "Condi_AchievementPoint": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
@@ -26,13 +33,6 @@
         "ConditionType1": "addFriend",
         "ConditionType2": "",
         "EffectDesc": "Condi_AddFriend_Desc"
-    },
-    "Condi_AhalloweenExchangeAchieve": {
-        "AchieveType1": "INCREASE",
-        "AchieveType2": "",
-        "ConditionType1": "player.bag.items.IM_HalloweenExchange_4.count",
-        "ConditionType2": "",
-        "EffectDesc": "Condi_AhalloweenExchangeAchieve_Desc"
     },
     "Condi_AhalloweenStageStarSum": {
         "AchieveType1": "CUSTOM",
@@ -894,6 +894,20 @@
         "ConditionType1": "masterStarUp",
         "ConditionType2": "",
         "EffectDesc": "Condi_MasterStarUp_Desc"
+    },
+    "Condi_MiniGameDailyScore": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.activities.activityMap.Activity_Darts.dailyTotalScore",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_MiniGameDailyScore_Decs"
+    },
+    "Condi_MiniGameTotalScore": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.activities.activityMap.Activity_Darts.totalScore",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_MiniGameTotalScore_Decs"
     },
     "Condi_NormalLabEnter": {
         "AchieveType1": "CUSTOM",

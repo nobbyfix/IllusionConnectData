@@ -64,10 +64,11 @@ ShopSpecialId = {
 	kShopMall = "Shop_Mall",
 	kShopSurfacePackage = "Shop_SurfacePackage",
 	kShopReset = "Shop_Reset",
-	kShopMonthcard = "Shop_Monthcard",
+	KLuckyBag = "LuckyBag",
 	kShopNormal = "Shop_Normal",
 	kShopSurface = "Shop_Surface",
 	kShopTimeLimit = "Shop_TimeLimit",
+	kShopMonthcard = "Shop_Monthcard",
 	kShopPackage = "Shop_Package",
 	kShopRecommend = "Shop_Recommend"
 }
@@ -692,6 +693,10 @@ function ShopSystem:syncPackage(data)
 			self._packageList[id]:sync(value)
 		end
 	end
+end
+
+function ShopSystem:checkPackageExist(id)
+	return self._packageList[id] ~= nil and true or false
 end
 
 function ShopSystem:checkIsResetPackage(id)
@@ -1522,4 +1527,26 @@ function ShopSystem:getVersionCanBuy(data, tips)
 	end
 
 	return true
+end
+
+function ShopSystem:getMonthCardHeadFrame()
+	local data = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Test_RealTime", "content")
+	local curTime = self._gameServerAgent:remoteTimestamp()
+
+	for i, v in pairs(data.normal) do
+		local startDate = TimeUtil:parseDateTime({}, v.start)
+		local endDate = TimeUtil:parseDateTime({}, v["end"])
+		local startT = TimeUtil:getTimeByDateForTargetTime(startDate)
+		local endT = TimeUtil:getTimeByDateForTargetTime(endDate)
+
+		if startT <= curTime and curTime <= endT then
+			local rewards = ConfigReader:getDataByNameIdAndKey("Reward", v.reward, "Content")
+
+			for _, reward in pairs(rewards) do
+				if reward.type == 14 then
+					return reward
+				end
+			end
+		end
+	end
 end

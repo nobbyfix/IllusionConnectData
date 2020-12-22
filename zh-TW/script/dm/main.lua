@@ -82,96 +82,291 @@ trycall(require, "cocos.framework.display")
 trycall(function ()
 	PlatformHelper = require("sdk.PlatformHelper")
 end)
-trycall(function ()
-	local fileUtils = cc.FileUtils:getInstance()
-	local writablePath = fileUtils:getWritablePath()
-	local destDBFilePath = writablePath .. "gameConfig.db"
-	local PATCH_FOLDER = "patch"
+trycall(require, "dm.init")
 
-	if not GameConfigs or not GameConfigs.noUpdate then
-		local updateDBPath = fileUtils:fullPathForFilename("gameUpdateConfig.db")
+UNZIP_ERRO_TYPE = {
+	FIRST_INSTALL_UNZIP_BASEDB = 1
+}
+UNZIP_ERRO_TYPE_CODE = {
+	EUnzipBadFile = 2,
+	EUnzipFileNotExist = 1,
+	EUnzipOutOfStorage = 3
+}
+UNZIP_ERRO_TYPE_MSG = {
+	"The decompression file does not exist！",
+	"The decompression file is damaged！",
+	"There is not enough disk space. Clean up the disk space and try again！"
+}
+DB_DAMAGE_BROKEN = "Data corruption, please reinstall the game, or clean the game storage data and try again!"
+DB_MERGE_SPACE_LIMIT = "There is not enough disk space,failed to install expansion pack. Clean up disk space and try again"
+local fileUtils = cc.FileUtils:getInstance()
+local writablePath = fileUtils:getWritablePath()
 
-		if not fileUtils:isFileExist(destDBFilePath) then
-			local srcDBFilePath = fileUtils:fullPathForFilename("gameConfig.db.zip")
+function unZipErro(erroType, erroCode)
+	local msg = "unzip file fails"
 
-			if fileUtils:isFileExist(srcDBFilePath) then
-				print("*********copy db to" .. destDBFilePath)
+	local function callBack()
+	end
 
-				local writableDBZipPath = writablePath .. "gameConfig.db.zip"
-
-				app.copyFile(srcDBFilePath, writableDBZipPath)
-
-				if not fileUtils:isFileExist(writableDBZipPath) then
-					assert(false, "copy DBFile error")
-				end
-
-				local retcode = app.unZipFileToDir(writableDBZipPath, writablePath)
-
-				fileUtils:removeFile(writableDBZipPath)
-				assert(retcode == 0, "unZip DBFile to Dir error:" .. retcode)
-				print("*********copy over*********")
-			end
-		else
-			print("*********config db existing*********")
+	if erroType == UNZIP_ERRO_TYPE.FIRST_INSTALL_UNZIP_BASEDB then
+		function callBack()
+			REBOOT()
 		end
 
-		if fileUtils:isFileExist(updateDBPath) then
-			print("start merge db")
-			DBReader:getInstance(true)
+		msg = UNZIP_ERRO_TYPE_MSG[erroCode]
+	end
 
-			local tempUpdateDBPath = writablePath .. "gameConfig_temp.db"
-			local backupDBPath = writablePath .. "gameConfig_backup.db"
+	local updateNoticPopup = require("dm.UpdateNoticPopup")
 
-			if string.find(updateDBPath, writablePath .. PATCH_FOLDER) then
-				if fileUtils:isFileExist(backupDBPath) then
-					fileUtils:removeFile(destDBFilePath)
-					app.copyFile(backupDBPath, destDBFilePath)
-				else
-					app.copyFile(destDBFilePath, backupDBPath)
-				end
-			elseif fileUtils:isFileExist(backupDBPath) then
-				fileUtils:removeFile(destDBFilePath)
-				fileUtils:renameFile(backupDBPath, destDBFilePath)
-			end
+	updateNoticPopup:alert({
+		msg = msg,
+		callBack = callBack
+	})
+end
 
-			local errorInfo = ""
+function tryOpenBaseDb(dbPath)
+	tryTable, errorinfo = DBReader:getInstance(true):getTable(dbPath, "Translate")
+
+	return tryTable ~= nil
+end
+
+function safeCopyDb(srcDb, descDb)
+	local ret = true
+
+	if not tryOpenBaseDb(srcDb) then
+		function callBack()
+			REBOOT()
+		end
+
+		local updateNoticPopup = require("dm.UpdateNoticPopup")
+
+		updateNoticPopup:alert({
+			msg = DB_DAMAGE_BROKEN,
+			callBack = callBack
+		})
+
+		ret = false
+
+		print(srcDb .. "-------db 损坏")
+
+		local content = {
+			point = "dataset_db_origin_error",
+			type = "otherflow"
+		}
+
+		StatisticSystem:send(content)
+	end
+
+	app.copyFile(srcDb, descDb)
+
+	if fileUtils:isFileExist(descDb) then
+		if not tryOpenBaseDb(descDb) then
+			print(descDb .. "-------db copy 不完整")
+			unZipErro(UNZIP_ERRO_TYPE.FIRST_INSTALL_UNZIP_BASEDB, UNZIP_ERRO_TYPE_CODE.EUnzipOutOfStorage)
+
+			ret = false
+			local content = {
+				point = "dataset_db_tmp_error",
+				type = "otherflow"
+			}
+
+			StatisticSystem:send(content)
+		end
+	else
+		print(descDb .. "-------db copy 失败")
+		unZipErro(UNZIP_ERRO_TYPE.FIRST_INSTALL_UNZIP_BASEDB, UNZIP_ERRO_TYPE_CODE.EUnzipOutOfStorage)
+
+		ret = false
+		local content = {
+			point = "dataset_db_tmp_error",
+			type = "otherflow"
+		}
+
+		StatisticSystem:send(content)
+	end
+
+	return ret
+end
+
+function getFileSize(path)
+	local size = false
+	local file = io.open(path, "r")
+
+	if file then
+		local current = file:seek()
+		size = file:seek("end")
+
+		file:seek("set", current)
+		io.close(file)
+	end
+
+	return size
+end
+
+local destDBFilePath = writablePath .. "gameConfig.db"
+local PATCH_FOLDER = "patch"
+
+if not GameConfigs or not GameConfigs.noUpdate then
+	local updateDBPath = fileUtils:fullPathForFilename("gameUpdateConfig.db")
+
+	print("updateDBPath*********", updateDBPath)
+	print("destDBFilePath*********", destDBFilePath)
+
+	if not fileUtils:isFileExist(destDBFilePath) then
+		local srcDBFilePath = fileUtils:fullPathForFilename("gameConfig.db.zip")
+
+		print("srcDBFilePath*********", srcDBFilePath)
+
+		if fileUtils:isFileExist(srcDBFilePath) then
+			print("*********copy db to" .. destDBFilePath)
+
+			local writableDBZipPath = writablePath .. "gameConfig.db.zip"
 
 			for i = 1, 3 do
-				fileUtils:removeFile(tempUpdateDBPath)
-				app.copyFile(destDBFilePath, tempUpdateDBPath)
+				print("copyFile*********", srcDBFilePath, writableDBZipPath)
+				app.copyFile(srcDBFilePath, writableDBZipPath)
 
-				if not fileUtils:isFileExist(tempUpdateDBPath) then
-					assert(false, "copy tempUpdateDBPath error")
+				if fileUtils:isFileExist(writableDBZipPath) then
+					fileUtils:removeFile(destDBFilePath)
+					print("源文件大小---->>>>>" .. tostring(getFileSize(writableDBZipPath)))
+
+					local retcode = app.unZipFileToDir(writableDBZipPath, writablePath)
+
+					print("开始解压文件到", writablePath)
+					fileUtils:removeFile(writableDBZipPath)
+
+					local tryTable, errorinfo = nil
+
+					print("解压后文件大小---->>>>>" .. tostring(getFileSize(writablePath .. "gameConfig.db")))
+					print("解压结果----->>>>>>", retcode)
+
+					if retcode == 0 then
+						tryTable, errorinfo = DBReader:getInstance(true):getTable(destDBFilePath, "Translate")
+					else
+						fileUtils:removeFile(destDBFilePath)
+						unZipErro(UNZIP_ERRO_TYPE.FIRST_INSTALL_UNZIP_BASEDB, UNZIP_ERRO_TYPE_CODE.EUnzipOutOfStorage)
+
+						return
+					end
+
+					print("尝试读取数据库", tryTable)
+
+					if tryTable then
+						break
+					elseif i == 3 then
+						fileUtils:removeFile(destDBFilePath)
+						unZipErro(UNZIP_ERRO_TYPE.FIRST_INSTALL_UNZIP_BASEDB, UNZIP_ERRO_TYPE_CODE.EUnzipOutOfStorage)
+
+						return
+					end
+				elseif i == 3 then
+					fileUtils:removeFile(destDBFilePath)
+					unZipErro(UNZIP_ERRO_TYPE.FIRST_INSTALL_UNZIP_BASEDB, UNZIP_ERRO_TYPE_CODE.EUnzipOutOfStorage)
+
+					return
 				end
 
-				errorInfo = DBReader:getInstance(true):mergeDb(tempUpdateDBPath, updateDBPath)
-
-				if #errorInfo == 0 then
-					break
-				end
+				fileUtils:removeFile(writableDBZipPath)
 			end
 
-			assert(#errorInfo == 0, "mergeDb error:" .. errorInfo)
-			fileUtils:removeFile(destDBFilePath)
-			fileUtils:renameFile(tempUpdateDBPath, destDBFilePath)
-			fileUtils:removeFile(updateDBPath)
-			print("*********merge db over*********")
+			print("*********copy over*********")
+		else
+			assert(false, "can not find db file:" .. srcDBFilePath)
 		end
-
-		require("dm.gameupdate.GameExtPackUpdater")
-		require("dm.gameupdate.GameExtPackUpdaterManager")
-		GameExtPackUpdater.initUpdateCfg()
 	else
-		local isFileExistWritablePath = fileUtils:isFileExist(destDBFilePath)
-		local localPath = fileUtils:fullPathForFilename("gameConfig.db")
-		local isFileExistLocalPath = fileUtils:isFileExist(localPath)
+		print("*********config db existing*********")
 
-		if cc.Application:getInstance():getTargetPlatform() == 3 and not isFileExistWritablePath and isFileExistLocalPath then
-			app.copyFile(localPath, destDBFilePath)
+		if not tryOpenBaseDb(destDBFilePath) then
+			function callBack()
+				REBOOT()
+			end
+
+			local updateNoticPopup = require("dm.UpdateNoticPopup")
+
+			updateNoticPopup:alert({
+				msg = DB_DAMAGE_BROKEN,
+				callBack = callBack
+			})
 		end
 	end
-end)
-trycall(require, "dm.init")
+
+	print("updateDBPath*********", updateDBPath)
+
+	if fileUtils:isFileExist(updateDBPath) then
+		print("start merge db")
+		DBReader:getInstance(true)
+
+		local tempUpdateDBPath = writablePath .. "gameConfig_temp.db"
+		local backupDBPath = writablePath .. "gameConfig_backup.db"
+
+		print("tempUpdateDBPath     " .. tempUpdateDBPath)
+		print("backupDBPath     " .. backupDBPath)
+		print(string.find(updateDBPath, writablePath .. PATCH_FOLDER))
+
+		if string.find(updateDBPath, writablePath .. PATCH_FOLDER) then
+			if fileUtils:isFileExist(backupDBPath) then
+				fileUtils:removeFile(destDBFilePath)
+
+				if not safeCopyDb(backupDBPath, destDBFilePath) then
+					return
+				end
+
+				print("应用备份db")
+			else
+				print("备份db")
+
+				if not safeCopyDb(destDBFilePath, backupDBPath) then
+					fileUtils:removeFile(backupDBPath)
+
+					return
+				end
+			end
+		elseif fileUtils:isFileExist(backupDBPath) then
+			fileUtils:removeFile(destDBFilePath)
+			fileUtils:renameFile(backupDBPath, destDBFilePath)
+			print("应用备份db   backupDBPath")
+		end
+
+		local errorInfo = ""
+
+		for i = 1, 3 do
+			fileUtils:removeFile(tempUpdateDBPath)
+
+			if not safeCopyDb(destDBFilePath, tempUpdateDBPath) then
+				return
+			end
+
+			errorInfo = DBReader:getInstance(true):mergeDb(tempUpdateDBPath, updateDBPath)
+
+			if #errorInfo == 0 then
+				break
+			end
+		end
+
+		if #errorInfo > 0 then
+			unZipErro(UNZIP_ERRO_TYPE.FIRST_INSTALL_UNZIP_BASEDB, UNZIP_ERRO_TYPE_CODE.EUnzipOutOfStorage)
+
+			return
+		end
+
+		fileUtils:removeFile(destDBFilePath)
+		fileUtils:renameFile(tempUpdateDBPath, destDBFilePath)
+		fileUtils:removeFile(updateDBPath)
+		print("*********merge db over*********")
+	end
+
+	require("dm.gameupdate.GameExtPackUpdater")
+	require("dm.gameupdate.GameExtPackUpdaterManager")
+	GameExtPackUpdater.initUpdateCfg()
+else
+	local isFileExistWritablePath = fileUtils:isFileExist(destDBFilePath)
+	local localPath = fileUtils:fullPathForFilename("gameConfig.db")
+	local isFileExistLocalPath = fileUtils:isFileExist(localPath)
+
+	if cc.Application:getInstance():getTargetPlatform() == 3 and not isFileExistWritablePath and isFileExistLocalPath then
+		app.copyFile(localPath, destDBFilePath)
+	end
+end
 
 if cc.Application:getInstance():getTargetPlatform() ~= 2 then
 	trycall(require, "sdk.SDKUtils")

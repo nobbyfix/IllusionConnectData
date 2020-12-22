@@ -49,11 +49,7 @@ function MonthSignInSystem:syncTodayReward()
 end
 
 function MonthSignInSystem:tryEnter(succcallback, failcallback)
-	local view = self:getInjector():getInstance("MonthSignInView")
-
-	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
-		maskOpacity = 0
-	}))
+	self:openView()
 end
 
 function MonthSignInSystem:getTodayLuck()
@@ -93,18 +89,27 @@ end
 
 function MonthSignInSystem:showSignView(callback)
 	if not self:isTodaySign() then
-		local viewName = "MonthSignInView"
-
-		if self:checkActivity() then
-			viewName = "MonthSignInWsjView"
-		end
-
-		local view = self:getInjector():getInstance(viewName)
-
-		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
-			maskOpacity = 0
-		}, nil, callback))
+		self:openView(callback)
 	end
+end
+
+function MonthSignInSystem:openView(callback)
+	local viewName = "MonthSignInView"
+	local isActivity, actUI = self:checkActivity()
+
+	if isActivity then
+		if actUI == ActivityType_UI.kActivityBlockWsj then
+			viewName = "MonthSignInWsjView"
+		elseif actUI == ActivityType_UI.KActivityBlockHoliday then
+			viewName = "MonthSignInHolidayView"
+		end
+	end
+
+	local view = self:getInjector():getInstance(viewName)
+
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+		maskOpacity = 0
+	}, nil, callback))
 end
 
 function MonthSignInSystem:checkActivity()
@@ -112,7 +117,13 @@ function MonthSignInSystem:checkActivity()
 	local activity = activitySystem:getActivityByComplexUI(ActivityType_UI.kActivityBlockWsj)
 
 	if activity then
-		return true
+		return true, ActivityType_UI.kActivityBlockWsj
+	end
+
+	local activity = activitySystem:getActivityByComplexUI(ActivityType_UI.KActivityBlockHoliday)
+
+	if activity then
+		return true, ActivityType_UI.KActivityBlockHoliday
 	end
 
 	return false

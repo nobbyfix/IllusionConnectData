@@ -6,6 +6,9 @@ BagSystem:has("_shopSystem", {
 BagSystem:has("_developSystem", {
 	is = "r"
 }):injectWith("DevelopSystem")
+BagSystem:has("_composeTimes", {
+	is = "rw"
+})
 
 local PowerConfigMap = {
 	[CurrencyIdKind.kPower] = {
@@ -55,6 +58,13 @@ local PowerConfigMap = {
 		perMin = "Act_Halloween_Power_RecPerMin",
 		next = "Act_Halloween_Power_RecNext",
 		configId = "AcitvityHalloweenStamina_Reset",
+		tableName = "Reset"
+	},
+	[CurrencyIdKind.kActivityHolidayPower] = {
+		all = "Act_NewYear_Power_RecAll",
+		perMin = "Act_NewYear_Power_RecPerMin",
+		next = "Act_NewYear_Power_RecNext",
+		configId = "AcitvityHolidayStamina_Reset",
 		tableName = "Reset"
 	}
 }
@@ -114,7 +124,7 @@ function BagSystem:getEntryById(entryId)
 	return self:getBag():getEntryById(entryId)
 end
 
-function BagSystem:getEntryRedStateById(entryId)
+function BagSystem:getEntryRedStateById(entryId, index)
 	local entry = self:getBag():getEntryById(entryId)
 
 	if entry then
@@ -122,6 +132,113 @@ function BagSystem:getEntryRedStateById(entryId)
 	end
 
 	return false
+end
+
+function BagSystem:getComposeRedStateByEntryId(entryId)
+	local configData = ConfigReader:getRecordById("Compose", entryId)
+	local item = self:getBag():getEntryById(entryId).item
+	local result, tipsCode = self:canUse({
+		item = item
+	})
+
+	if not result then
+		return false
+	end
+
+	for i = 1, 4 do
+		local itemM = configData["Item" .. i]
+		local state = self:getComposeMaterialRedStateById(itemM)
+
+		if not state then
+			return false
+		end
+	end
+
+	if configData.Currency then
+		local haveNum = self._developSystem:getGolds()
+
+		if haveNum < configData.Currency.amount then
+			return false
+		end
+	end
+
+	return true
+end
+
+function BagSystem:getComposeMaterialRedStateById(MaterialData)
+	local itemM = MaterialData
+
+	if itemM then
+		local allEquips = self._developSystem:getPlayer():getEquipList():getEquips()
+
+		if itemM.type == "Item" then
+			local haveNum = self:getItemCount(itemM.id)
+
+			if haveNum < itemM.amount then
+				return false
+			end
+		elseif itemM.type == "Equip" then
+			local haveNum = 0
+
+			for k, v in pairs(allEquips) do
+				if v:getEquipId() == itemM.id and v:getLevel() == 1 and self:checkComposeUsed(v:getEquipId(), v:getId()) == false then
+					haveNum = haveNum + 1
+				end
+			end
+
+			if haveNum < itemM.amount then
+				return false
+			end
+		elseif itemM.type == "EquipAll" then
+			local haveNum = 0
+
+			for k, v in pairs(allEquips) do
+				if tonumber(v:getRarity()) == tonumber(itemM.Quality) and v:getLevel() == 1 and self:checkComposeUsed(v:getEquipId(), v:getId()) == false then
+					haveNum = 1
+
+					break
+				end
+			end
+
+			if haveNum == 0 then
+				return false
+			end
+		else
+			local haveNum = 0
+
+			for k, v in pairs(allEquips) do
+				if v:getPosition() == itemM.type and tonumber(v:getRarity()) == tonumber(itemM.Quality) and v:getLevel() == 1 and self:checkComposeUsed(v:getEquipId(), v:getId()) == false then
+					haveNum = 1
+
+					break
+				end
+			end
+
+			if haveNum == 0 then
+				return false
+			end
+		end
+
+		return true
+	end
+end
+
+function BagSystem:checkComposeUsed(equipId, uuid)
+	local key_equip = equipId .. "_" .. uuid
+	local developSystem = self:getInjector():getInstance(DevelopSystem)
+	local equipSystem = developSystem:getEquipSystem()
+	local usedList = equipSystem:getComposeUsedEquips()
+	local used = false
+
+	for key, value in pairs(usedList) do
+		if key_equip == value then
+			used = true
+
+			break
+		end
+	end
+
+	return used
 end
 
 function BagSystem:hideEntryRedById(entryId)
@@ -235,8 +352,12 @@ function BagSystem:getAcitvitySummerPower()
 	return self:getPowerByCurrencyId(CurrencyIdKind.kAcitvitySummerPower)
 end
 
-function BagSystem:getAcitvityHalloweenPower()
-	return self:getPowerByCurrencyId(CurrencyIdKind.kAcitvityHalloweenPower)
+function BagSystem:getActivityHolidayPower()
+	return self:getPowerByCurrencyId(CurrencyIdKind.kActivityHolidayPower)
+end
+
+function BagSystem:getAcitvitySnowPower()
+	return self:getPowerByCurrencyId(CurrencyIdKind.kAcitvitySnowPower)
 end
 
 function BagSystem:getDiamond()
@@ -593,6 +714,7 @@ function BagSystem:tryUseActionPointItem(itemId, count)
 					needClick = true,
 					rewards = rewards
 				}))
+				self:dispatch(Event:new(EVT_SWEEPPOWERCHANGE_SERVER, {}))
 			end
 		else
 			function callBack(rewards)
@@ -773,6 +895,37 @@ function BagSystem:requestHeroCompose(itemId, callback)
 			end
 		end
 	end)
+end
+
+function BagSystem:requestScrollCompose(_data, callback)
+	local bagService = self:getInjector():getInstance(BagService)
+	local data = {
+		itemId = _data.itemId,
+		selected = _data.selected
+	}
+
+	bagService:requestScrollCompose(data, true, function (response)
+		if response.resCode == GS_SUCCESS then
+			if callback then
+				callback(response.data.reward)
+			end
+		elseif response.resCode == 10180 then
+			self:dispatch(ShowTipEvent({
+				tip = Strings:get("bag_ScrollNotEnougth")
+			}))
+		elseif response.resCode == 10181 then
+			self:dispatch(ShowTipEvent({
+				tip = Strings:get("bag_MaterialNotEnougth")
+			}))
+		elseif response.resCode == 10182 then
+			self:dispatch(ShowTipEvent({
+				tip = Strings:get("bag_coinNotEnougth")
+			}))
+		end
+	end)
+end
+
+function BagSystem:getScrollComposeRedState(_data, callback)
 end
 
 function BagSystem:requestHeroDebrisChange(heroId, num, callback)
@@ -981,37 +1134,11 @@ function BagSystem:formatCurrencyString(currencyId)
 end
 
 local CostNotEnoughDetalMap = {
-	[CurrencyIdKind.kGold] = {
-		tip = "Tips_3010010",
+	[CurrencyIdKind.kPower] = {
+		tip = "Tips_3010015",
 		popup = function (parent)
 		end
 	}
-}
-CostNotEnoughDetalMap[CurrencyIdKind.kDiamond] = {
-	tip = "Error_10005",
-	popup = function (parent)
-		parent._shopSystem:tryEnter({
-			shopId = "Shop_Mall"
-		})
-	end,
-	alert = function (parent)
-		local delegate = {
-			willClose = function (self, popupMediator, data)
-				if data.response == AlertResponse.kOK then
-					parent._shopSystem:tryEnter({
-						shopId = "Shop_Mall"
-					})
-				end
-			end
-		}
-
-		self:_showAlertView(Strings:get("DiamondNotEngouh_Text"), Strings:get("DiamondNotEngouh_Content"), delegate)
-	end
-}
-CostNotEnoughDetalMap[CurrencyIdKind.kPower] = {
-	tip = "Tips_3010015",
-	popup = function (parent)
-	end
 }
 
 function BagSystem:checkCostEnough(costId, needCost, style)
@@ -1023,16 +1150,34 @@ function BagSystem:checkCostEnough(costId, needCost, style)
 		needCost = 0
 	end
 
+	local result = CurrencySystem:checkEnoughCurrency(self, costId, needCost, style)
+
+	if result ~= nil then
+		return result
+	end
+
 	local itemCount = self:getItemCount(costId)
 
 	if needCost > itemCount then
-		slot5 = false
+		slot6 = false
 	else
 		local isEnough = true
 	end
 
 	if not isEnough and style then
-		if style.type == "tip" then
+		if not style.type then
+			local type = "tip"
+		end
+
+		if CostNotEnoughDetalMap[costId] then
+			local detalFunc = CostNotEnoughDetalMap[costId][type]
+
+			if detalFunc then
+				detalFunc(self)
+			end
+		end
+
+		if style.notShowTip == nil or style.notShowTip == false then
 			local itemConfig = ConfigReader:getRecordById("ResourcesIcon", costId)
 
 			if not itemConfig then
@@ -1049,20 +1194,6 @@ function BagSystem:checkCostEnough(costId, needCost, style)
 					item = name
 				})
 			}))
-		elseif style.type == "popup" then
-			if CostNotEnoughDetalMap[costId] then
-				local detalFunc = CostNotEnoughDetalMap[costId].popup
-
-				if detalFunc then
-					detalFunc(self)
-				end
-			end
-		elseif style.type == "alert" and CostNotEnoughDetalMap[costId] then
-			local detalFunc = CostNotEnoughDetalMap[costId].alert
-
-			if detalFunc then
-				detalFunc(self)
-			end
 		end
 	end
 
@@ -1467,4 +1598,42 @@ function BagSystem:SortFunc(itemA, itemB)
 
 		return slot9
 	end
+end
+
+function BagSystem:isHasCompose()
+	local customDataSystem = self:getInjector():getInstance(CustomDataSystem)
+	local data = customDataSystem:getValue(PrefixType.kGlobal, UserDefaultKey.kBag_Compose_Show, "0")
+	local value = tonumber(data)
+
+	if value > 0 then
+		return true
+	end
+
+	local function filterFunc(entry)
+		local item = entry.item
+
+		if item:getSubType() ~= ComsumableKind.kCOMPOSE_URSelect then
+			slot2 = false
+		else
+			slot2 = true
+		end
+
+		return slot2
+	end
+
+	local entryIds = self:getBag():getEntryIds(filterFunc)
+
+	if entryIds and #entryIds > 0 then
+		customDataSystem:setValue(PrefixType.kGlobal, UserDefaultKey.kBag_Compose_Show, "100")
+	end
+
+	if entryIds then
+		if #entryIds <= 0 then
+			slot6 = false
+		else
+			slot6 = true
+		end
+	end
+
+	return slot6
 end

@@ -1,4 +1,172 @@
 {
+    "PackageShop_TL_NY2_3": {
+        "ADSymbol": "TWD",
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "",
+        "Price": 170.0,
+        "ProductId": "iap.giftpack.282",
+        "SDKSource": [
+            "tw_mamba_ios",
+            "tw_mamba_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 1700
+    },
+    "PackageShop_TL_NY2_4": {
+        "ADSymbol": "TWD",
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "",
+        "Price": 490.0,
+        "ProductId": "iap.giftpack.283",
+        "SDKSource": [
+            "tw_mamba_ios",
+            "tw_mamba_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 4900
+    },
+    "PackageShop_TL_NY2_5": {
+        "ADSymbol": "TWD",
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "",
+        "Price": 990.0,
+        "ProductId": "iap.giftpack.284",
+        "SDKSource": [
+            "tw_mamba_ios",
+            "tw_mamba_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 9900
+    },
+    "PackageShop_TL_NY2_6": {
+        "ADSymbol": "TWD",
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "",
+        "Price": 1690.0,
+        "ProductId": "iap.giftpack.285",
+        "SDKSource": [
+            "tw_mamba_ios",
+            "tw_mamba_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 16900
+    },
+    "PackageShop_TL_NY2_7": {
+        "ADSymbol": "TWD",
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "",
+        "Price": 3290.0,
+        "ProductId": "iap.giftpack.286",
+        "SDKSource": [
+            "tw_mamba_ios",
+            "tw_mamba_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 32900
+    },
+    "PackageShop_TL_NY_2": {
+        "ADSymbol": "TWD",
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "",
+        "Price": 990.0,
+        "ProductId": "iap.giftpack.275",
+        "SDKSource": [
+            "tw_mamba_ios",
+            "tw_mamba_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 9900
+    },
+    "PackageShop_TL_NY_3": {
+        "ADSymbol": "TWD",
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "",
+        "Price": 3290.0,
+        "ProductId": "iap.giftpack.276",
+        "SDKSource": [
+            "tw_mamba_ios",
+            "tw_mamba_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 32900
+    },
+    "PackageShop_TL_NY_5": {
+        "ADSymbol": "TWD",
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "",
+        "Price": 170.0,
+        "ProductId": "iap.giftpack.277",
+        "SDKSource": [
+            "tw_mamba_ios",
+            "tw_mamba_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 1700
+    },
+    "PackageShop_TL_NY_6": {
+        "ADSymbol": "TWD",
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "",
+        "Price": 490.0,
+        "ProductId": "iap.giftpack.278",
+        "SDKSource": [
+            "tw_mamba_ios",
+            "tw_mamba_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 4900
+    },
+    "PackageShop_TL_NY_7": {
+        "ADSymbol": "TWD",
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "",
+        "Price": 990.0,
+        "ProductId": "iap.giftpack.279",
+        "SDKSource": [
+            "tw_mamba_ios",
+            "tw_mamba_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 9900
+    },
+    "PackageShop_TL_NY_8": {
+        "ADSymbol": "TWD",
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "",
+        "Price": 1690.0,
+        "ProductId": "iap.giftpack.280",
+        "SDKSource": [
+            "tw_mamba_ios",
+            "tw_mamba_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 16900
+    },
+    "PackageShop_TL_NY_9": {
+        "ADSymbol": "TWD",
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "",
+        "Price": 3290.0,
+        "ProductId": "iap.giftpack.281",
+        "SDKSource": [
+            "tw_mamba_ios",
+            "tw_mamba_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 32900
+    },
     "Pay_BattlePass_200728_128": {
         "ADSymbol": "TWD",
         "IsContinue": 0,
@@ -126,7 +294,7 @@
         "VIPExp": 3300
     },
     "Pay_BattlePass_20201217_128": {
-        "ADSymbol": "",
+        "ADSymbol": "TWD",
         "IsContinue": 0,
         "MapId": "",
         "Name": "Pay_BattlePass_20200914_128_Name",
@@ -136,11 +304,11 @@
             "tw_mamba_ios",
             "tw_mamba_android"
         ],
-        "Symbol": "$",
+        "Symbol": "NT$",
         "VIPExp": 5700
     },
     "Pay_BattlePass_20201217_60": {
-        "ADSymbol": "",
+        "ADSymbol": "TWD",
         "IsContinue": 0,
         "MapId": "",
         "Name": "Pay_BattlePass_20200914_60_Name",
@@ -150,11 +318,11 @@
             "tw_mamba_ios",
             "tw_mamba_android"
         ],
-        "Symbol": "$",
+        "Symbol": "NT$",
         "VIPExp": 2900
     },
     "Pay_BattlePass_20201217_68": {
-        "ADSymbol": "",
+        "ADSymbol": "TWD",
         "IsContinue": 0,
         "MapId": "",
         "Name": "Pay_BattlePass_20200914_68_Name",
@@ -164,7 +332,7 @@
             "tw_mamba_ios",
             "tw_mamba_android"
         ],
-        "Symbol": "$",
+        "Symbol": "NT$",
         "VIPExp": 3300
     },
     "Pay_FeiQi_1": {
@@ -1218,7 +1386,7 @@
         "VIPExp": 3300
     },
     "Pay_PackageShop_TL_AnN_3": {
-        "ADSymbol": "",
+        "ADSymbol": "TWD",
         "IsContinue": 0,
         "MapId": "",
         "Name": "Pay_PackageShop_TL_SShi_3_Name",
@@ -1232,7 +1400,7 @@
         "VIPExp": 1700
     },
     "Pay_PackageShop_TL_AnN_4": {
-        "ADSymbol": "",
+        "ADSymbol": "TWD",
         "IsContinue": 0,
         "MapId": "",
         "Name": "Pay_PackageShop_TL_SShi_4_Name",
@@ -1246,7 +1414,7 @@
         "VIPExp": 4900
     },
     "Pay_PackageShop_TL_AnN_5": {
-        "ADSymbol": "",
+        "ADSymbol": "TWD",
         "IsContinue": 0,
         "MapId": "",
         "Name": "Pay_PackageShop_TL_SShi_5_Name",
@@ -1260,7 +1428,7 @@
         "VIPExp": 9900
     },
     "Pay_PackageShop_TL_AnN_6": {
-        "ADSymbol": "",
+        "ADSymbol": "TWD",
         "IsContinue": 0,
         "MapId": "",
         "Name": "Pay_PackageShop_TL_SShi_6_Name",
@@ -1274,7 +1442,7 @@
         "VIPExp": 16900
     },
     "Pay_PackageShop_TL_AnN_7": {
-        "ADSymbol": "",
+        "ADSymbol": "TWD",
         "IsContinue": 0,
         "MapId": "",
         "Name": "Pay_PackageShop_TL_SShi_7_Name",
@@ -2758,7 +2926,7 @@
         "VIPExp": 32900
     },
     "Pay_PackageShop_TL_SShi_3": {
-        "ADSymbol": "",
+        "ADSymbol": "TWD",
         "IsContinue": 0,
         "MapId": "",
         "Name": "Pay_PackageShop_TL_SShi_3_Name",
@@ -2772,7 +2940,7 @@
         "VIPExp": 1700
     },
     "Pay_PackageShop_TL_SShi_4": {
-        "ADSymbol": "",
+        "ADSymbol": "TWD",
         "IsContinue": 0,
         "MapId": "",
         "Name": "Pay_PackageShop_TL_SShi_4_Name",
@@ -2786,7 +2954,7 @@
         "VIPExp": 4900
     },
     "Pay_PackageShop_TL_SShi_5": {
-        "ADSymbol": "",
+        "ADSymbol": "TWD",
         "IsContinue": 0,
         "MapId": "",
         "Name": "Pay_PackageShop_TL_SShi_5_Name",
@@ -2800,7 +2968,7 @@
         "VIPExp": 9900
     },
     "Pay_PackageShop_TL_SShi_6": {
-        "ADSymbol": "",
+        "ADSymbol": "TWD",
         "IsContinue": 0,
         "MapId": "",
         "Name": "Pay_PackageShop_TL_SShi_6_Name",
@@ -2814,7 +2982,7 @@
         "VIPExp": 16900
     },
     "Pay_PackageShop_TL_SShi_7": {
-        "ADSymbol": "",
+        "ADSymbol": "TWD",
         "IsContinue": 0,
         "MapId": "",
         "Name": "Pay_PackageShop_TL_SShi_7_Name",
@@ -4441,6 +4609,20 @@
         "Name": "Pay_ShopReset_Week7_648_Name",
         "Price": 3290.0,
         "ProductId": "iap.giftpack.23",
+        "SDKSource": [
+            "tw_mamba_ios",
+            "tw_mamba_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 32900
+    },
+    "Pay_TimePurchase_Holiday": {
+        "ADSymbol": "TWD",
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "",
+        "Price": 3290.0,
+        "ProductId": "iap.giftpack.287",
         "SDKSource": [
             "tw_mamba_ios",
             "tw_mamba_android"

@@ -41,7 +41,8 @@ RankType = {
 	kSupport = 40,
 	kExp = 6,
 	kClub = 9,
-	kClubBoss = 41
+	kClubBoss = 41,
+	kMiniGame = 42
 }
 RankClass = {
 	[RankType.kCombat] = CombatRankRecord,
@@ -57,7 +58,8 @@ RankClass = {
 	[RankType.kMaze] = MazeRankRecord,
 	[RankType.kArena] = ArenaRankRecord,
 	[RankType.kCrusade] = CrusadeRankRecord,
-	[RankType.kClubBoss] = ClubBossRankRecord
+	[RankType.kClubBoss] = ClubBossRankRecord,
+	[RankType.kMiniGame] = MiniGameRankRecord
 }
 RankTopImage = {
 	"img_zlb_no1.png",

@@ -1626,34 +1626,46 @@ end
 
 function ClubBossMediator:showTalkWord(isDead)
 	local currentBlockConfig = self._currentBossPoints:getBlockConfig()
-	local bubbleDes = nil
+	local playVoice = nil
 
 	if currentBlockConfig.Bubble ~= nil then
-		bubbleDes = currentBlockConfig.Bubble[1]
+		playVoice = currentBlockConfig.Bubble[math.random(1, #currentBlockConfig.Bubble)]
 	end
 
 	if isDead and currentBlockConfig.DeathBubble ~= nil then
-		bubbleDes = currentBlockConfig.DeathBubble[1]
+		playVoice = currentBlockConfig.DeathBubble[1]
 	end
+
+	self:stopTalkEffect()
+
+	local soundDesc = ConfigReader:getDataByNameIdAndKey("Sound", playVoice, "SoundDesc")
 
 	if self._clubBossInfo:getPassAll() then
-		bubbleDes = "clubBoss_43"
+		soundDesc = "clubBoss_43"
+	else
+		self._heroEffect, _ = AudioEngine:getInstance():playEffect(playVoice, false)
 	end
 
-	self._talkNode:stopAllActions()
-	self._talkNode:setVisible(true)
-	self._talkText:setString(Strings:get(bubbleDes))
-	self._talkNode:setOpacity(0)
+	if soundDesc ~= nil then
+		self._talkNode:stopAllActions()
+		self._talkNode:setVisible(true)
+		self._talkText:setString(Strings:get(soundDesc))
+		self._talkNode:setOpacity(0)
 
-	local fadeAct = cc.FadeIn:create(0.25)
-	local allDelayAction = cc.DelayTime:create(2.5)
-	local fadeAct2 = cc.FadeOut:create(0.25)
-	local callfunc1 = cc.CallFunc:create(function ()
-		self._talkNode:setVisible(false)
-	end)
-	local seqAll = cc.Sequence:create(fadeAct, allDelayAction, fadeAct2, callfunc1)
+		local fadeAct = cc.FadeIn:create(0.25)
+		local allDelayAction = cc.DelayTime:create(2.5)
+		local fadeAct2 = cc.FadeOut:create(0.25)
+		local callfunc1 = cc.CallFunc:create(function ()
+			self._talkNode:setVisible(false)
+		end)
+		local seqAll = cc.Sequence:create(fadeAct, allDelayAction, fadeAct2, callfunc1)
 
-	self._talkNode:runAction(seqAll)
+		self._talkNode:runAction(seqAll)
+	end
+end
+
+function ClubBossMediator:stopTalkEffect()
+	AudioEngine:getInstance():stopEffect(self._heroEffect)
 end
 
 function ClubBossMediator:doReset(event)

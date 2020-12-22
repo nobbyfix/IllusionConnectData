@@ -29,12 +29,19 @@ local kInvalidEntryId = -1
 local kColumnNum = 4
 local kCellHeight = 155
 local kHideItemType = {}
-local kTabBtnsNames = {
+local descHeight = 140
+local kTabBtnsNames_model = {
 	{
 		"bag_UI1",
 		"UITitle_EN_Quanbu",
 		false,
 		"ALL"
+	},
+	{
+		"bag_UI30",
+		"UITitle_EN_MiJuan",
+		true,
+		ItemPages.kCompose
 	},
 	{
 		"bag_UI5",
@@ -67,6 +74,7 @@ local kTabBtnsNames = {
 		ItemPages.kOther
 	}
 }
+local kTabBtnsNames = {}
 
 function BagMediator:initialize()
 	super.initialize(self)
@@ -81,6 +89,21 @@ function BagMediator:userInject()
 	self._heroSystem = self._developSystem:getHeroSystem()
 	self._masterSystem = self._developSystem:getMasterSystem()
 	self._equipSystem = self._developSystem:getEquipSystem()
+	local index = 1
+
+	for i = 1, #kTabBtnsNames_model do
+		local canAdd = true
+
+		if i == 2 then
+			local result, tip = self._systemKeeper:isUnlock("Bag_Secret")
+			canAdd = (result == true or self._bagSystem:isHasCompose() == true) and true or false
+		end
+
+		if canAdd then
+			kTabBtnsNames[index] = kTabBtnsNames_model[i]
+			index = index + 1
+		end
+	end
 end
 
 function BagMediator:onRegister()
@@ -104,6 +127,10 @@ function BagMediator:onRegister()
 			func = bind1(self.onUseClicked, self)
 		}
 	})
+	self.useRedPoint = self:getView():getChildByFullName("mainpanel.detail_panel.usebtn.hongdian")
+
+	self.useRedPoint:setLocalZOrder(10)
+	self.useRedPoint:setVisible(false)
 end
 
 function BagMediator:setupTopInfoWidget()
@@ -205,8 +232,6 @@ function BagMediator:getCurItems()
 			self._curEntryIds[#self._curEntryIds + 1] = entryId
 		end
 	end
-
-	self:assureItemsEnough()
 end
 
 function BagMediator:assureItemsEnough()
@@ -242,6 +267,11 @@ function BagMediator:initNodes()
 	equipPanel:hide()
 
 	self._equipPanel = equipPanel
+	self.URLevelLimit = self._mainPanel:getChildByFullName("detail_panel.URLevelLimit")
+
+	self.URLevelLimit:setVisible(false)
+	self.URLevelLimit:setString("")
+
 	local detailPanel = self._mainPanel:getChildByFullName("detail_panel")
 	local moneyIcon = detailPanel:getChildByFullName("sellpanel.goldimg")
 	local icon = IconFactory:createResourcePic({
@@ -251,6 +281,9 @@ function BagMediator:initNodes()
 	icon:addTo(moneyIcon)
 
 	self._detailPanel = detailPanel
+
+	AdjustUtils.ignorSafeAreaRectForNode(detailPanel, AdjustUtils.kAdjustType.Right)
+
 	local csFuncLabel = detailPanel:getChildByFullName("des1label")
 
 	csFuncLabel:setVisible(false)
@@ -259,6 +292,7 @@ function BagMediator:initNodes()
 
 	self._notSellLabel = detailPanel:getChildByFullName("tiplabel")
 	local size = csFuncLabel:getContentSize()
+	size.height = descHeight
 	local x, y = csFuncLabel:getPosition()
 	local descScrollView = ccui.ScrollView:create()
 
@@ -478,6 +512,7 @@ function BagMediator:changeIndicator(itemCell)
 			return
 		end
 
+		indicator:runAction(cc.FadeIn:create(0.1))
 		indicator:runAction(cc.RepeatForever:create(cc.Sequence:create(cc.ScaleTo:create(0.5, 0.95), cc.ScaleTo:create(0.5, 1))))
 	end, 0.1)
 end
@@ -499,6 +534,8 @@ function BagMediator:updateDetailArea()
 end
 
 function BagMediator:updateDetailButtons(notHasShow)
+	self.useRedPoint:setVisible(false)
+
 	local buttons = self._detailArea.buttons
 
 	for _, button in pairs(buttons) do
@@ -541,8 +578,14 @@ function BagMediator:updateDetailButtons(notHasShow)
 
 				buttons.useBtn:setButtonName(Strings:get(str), Strings:get(str1))
 			end
-
+		elseif subType == ItemTypes.K_COMPOSE then
+			buttons.useBtn:setButtonName(Strings:get("bag_UI31"), Strings:get("UITitle_EN_ZueXi"))
+			buttons.useBtn:setVisible(true)
 			self:setButtonEnabled(buttons.useBtn, true)
+
+			if self:checkCanUseCompose(item) == false then
+				buttons.useBtn:setButtonName(Strings:get("bag_Compose_UI_1"), Strings:get("bag_Compose_UI_1_EN"))
+			end
 		elseif subType == ItemTypes.K_HERO_F then
 			buttons.useBtn:setVisible(true)
 			buttons.useBtn:setButtonName(Strings:get("bag_UI13"), Strings:get("UITitle_EN_Shiyong"))
@@ -747,6 +790,8 @@ function BagMediator:updateLockArea(detailArea, item)
 end
 
 function BagMediator:updateDetailBasicArea(notHasShow)
+	self.URLevelLimit:setVisible(false)
+
 	local detailArea = self._detailArea
 
 	detailArea.iconBg:removeAllChildren(true)
@@ -772,15 +817,40 @@ function BagMediator:updateDetailBasicArea(notHasShow)
 		local subType = item:getSubType()
 
 		if ItemTypes.K_EQUIP_EXP == subType or ItemTypes.K_EQUIP_STAREXP == subType or ItemTypes.K_EQUIP_STARITEM == subType or table.indexof(Box_Rarity, item:getConfigId()) then
-			rarity = item:getRarity()
 			local rarityPanel = detailArea.rarity
-			local imageFile = GameStyle:getEquipRarityImage(rarity)
-			local rarityImage = ccui.ImageView:create(imageFile)
 
-			rarityImage:addTo(rarityPanel)
-			rarityImage:setName("RarityImage")
-			rarityImage:ignoreContentAdaptWithSize(true)
-			rarityImage:setScale(0.9)
+			rarityPanel:removeAllChildren()
+
+			rarity = item:getRarity()
+
+			if rarity >= 15 then
+				local flashFile = GameStyle:getEquipRarityFlash(rarity)
+				local anim = cc.MovieClip:create(flashFile)
+
+				anim:addTo(rarityPanel)
+			else
+				local imageFile = GameStyle:getEquipRarityImage(rarity)
+				local rarityImage = ccui.ImageView:create(imageFile)
+
+				rarityImage:addTo(rarityPanel)
+				rarityImage:setName("RarityImage")
+				rarityImage:ignoreContentAdaptWithSize(true)
+				rarityImage:setScale(0.9)
+			end
+		end
+
+		local result, tipsCode = self._bagSystem:canUse({
+			item = item
+		})
+
+		if not result then
+			self.URLevelLimit:setVisible(true)
+
+			local limitLevel = tonumber(item:getUseLevel())
+
+			self.URLevelLimit:setString(Strings:get("bag_UI36", {
+				level = limitLevel
+			}))
 		end
 
 		local icon = IconFactory:createPic({
@@ -857,7 +927,7 @@ function BagMediator:createItemsTableView()
 				itemCell:addTouchEventListener(function (sender, eventType)
 					self:onItemClicked(sender, eventType)
 
-					if self._curEntryCell ~= nil then
+					if eventType == ccui.TouchEventType.ended and self._curEntryCell ~= nil then
 						local iconHandler = self._curEntryCell.handler
 
 						if iconHandler and iconHandler:getEntryId() ~= kInvalidEntryId then
@@ -962,7 +1032,7 @@ function BagMediator:dealItemChange(event)
 
 	self:updateItemsArea()
 
-	local indexNew = table.find(self._curEntryIds, self._curEntryId)
+	local indexNew = table.find(self._curEntryIds, self._curEntryId) or 1
 
 	if index < indexNew and oldEntryId == self._curEntryId then
 		indexNew = index
@@ -1152,6 +1222,14 @@ function BagMediator:onUseClicked(sender, eventType)
 	if subType == ItemTypes.K_HEROSTONE_F then
 		self:useHeroStonePiece(self._curEntryId)
 	elseif subType == ItemTypes.K_COMPOSE then
+		if self:checkCanUseCompose(item) == false then
+			self:dispatch(ShowTipEvent({
+				tip = Strings:get("bag_UR_LearnTip")
+			}))
+
+			return
+		end
+
 		self:useScroll(self._curEntryId)
 	elseif subType == ItemTypes.K_HERO_F then
 		self:useHeroPiece(self._curEntryId)
@@ -1294,6 +1372,24 @@ function BagMediator:useConsumable(curEntryId)
 			func(self)
 		end
 	end
+end
+
+function BagMediator:useScroll(curEntryId)
+	local entry = self._bagSystem:getEntryById(curEntryId)
+
+	if not entry then
+		return
+	end
+
+	local param = {
+		curEntryId = curEntryId,
+		curEntryIds = self._curEntryIds
+	}
+	local view = self:getInjector():getInstance("BagUseScrollView")
+
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+	}, param))
 end
 
 function BagMediator:useHeroPiece(curEntryId)
@@ -1506,9 +1602,9 @@ function BagMediator:readyGoShop(tabType)
 end
 
 function BagMediator:readyUseRecruitKey(param)
-	local RecruitView = self:getInjector():getInstance("RecruitView")
+	local recruitSystem = self:getInjector():getInstance(RecruitSystem)
 
-	self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, RecruitView, nil, param))
+	recruitSystem:tryEnter(param)
 end
 
 function BagMediator:jumpToActivity(param)
@@ -1747,6 +1843,7 @@ function BagMediator:runListAnim()
 							local seq = cc.Sequence:create(cc.DelayTime:create(delayPancel), cc.CallFunc:create(function ()
 								indicator:runAction(cc.Sequence:create(cc.Spawn:create(cc.FadeIn:create(0.2), cc.ScaleTo:create(0.2, 0.95)), cc.ScaleTo:create(0.1, 1.05), cc.ScaleTo:create(0.1, 1)))
 							end), cc.DelayTime:create(0.5), cc.CallFunc:create(function ()
+								indicator:setOpacity(255)
 								indicator:runAction(cc.RepeatForever:create(cc.Sequence:create(cc.ScaleTo:create(0.5, 0.95), cc.ScaleTo:create(0.5, 1))))
 							end))
 
@@ -1757,4 +1854,23 @@ function BagMediator:runListAnim()
 			end
 		end
 	end
+end
+
+function BagMediator:checkCanUseCompose(item)
+	local result = true
+	local composeTimes = self._bagSystem:getComposeTimes()
+
+	if item:getSubType() == ItemTypes.K_COMPOSE and composeTimes then
+		local configData = ConfigReader:getRecordById("Compose", item:getId())
+
+		if configData and configData.Times and configData.Times > 0 then
+			local currentTime = composeTimes[item:getId()]
+
+			if currentTime and configData.Times <= currentTime then
+				result = false
+			end
+		end
+	end
+
+	return result
 end

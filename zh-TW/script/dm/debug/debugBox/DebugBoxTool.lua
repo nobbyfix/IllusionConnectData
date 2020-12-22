@@ -35,31 +35,43 @@ DebugBoxTool = {
 		local roundRowSize = scollerCell:getContentSize()
 
 		local function cellSizeForTable(table, idx)
+			if delegate and delegate.cellSizeForTable then
+				local width, height = delegate:cellSizeForTable(table, idx)
+
+				if width ~= nil then
+					return width, height
+				end
+			end
+
 			return roundRowSize.width, roundRowSize.height
 		end
 
-		local function createCell(cell, idx)
+		local function createCell(cell, idx, table)
 			if delegate and delegate.createCell then
-				delegate:createCell(cell, idx)
+				delegate:createCell(cell, idx, table)
 			end
 		end
 
 		local function tableCellAtIndex(table, idx)
-			local cell = table:dequeueCell()
+			local cell = table:dequeueCellByTag(idx)
 
 			if cell == nil then
 				cell = cc.TableViewCell:new()
+				local _, height = cellSizeForTable(table, idx)
 				local roundCell = scollerCell:clone()
 
-				roundCell:setPosition(cc.p(0, 0))
-				roundCell:setAnchorPoint(cc.p(0, 0))
+				roundCell:setPosition(cc.p(0, height))
+				roundCell:setAnchorPoint(cc.p(0, 1))
 				roundCell:setVisible(true)
 				cell:addChild(roundCell, 11, kCellRoundTag)
-				createCell(roundCell, idx + 1)
+				cell:setTag(idx)
+				createCell(roundCell, idx + 1, table)
 			else
+				local _, height = cellSizeForTable(table, idx)
 				local roundCell = cell:getChildByTag(kCellRoundTag)
 
-				createCell(roundCell, idx + 1)
+				roundCell:setPosition(cc.p(0, height))
+				createCell(roundCell, idx + 1, table)
 			end
 
 			return cell

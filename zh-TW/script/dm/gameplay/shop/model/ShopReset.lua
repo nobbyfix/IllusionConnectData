@@ -293,3 +293,7 @@ end
 function ShopReset:getGameCoin()
 	return self._config.GameCoin
 end
+
+function ShopReset:getSpecialType()
+	return self._config.SpecialType
+end

@@ -148,9 +148,9 @@ function StatisticSystem:send(content)
 	xhr:send(data)
 
 	if PlatformHelper:getChannelID() == "kuaishou_android" and DmGame then
-		local developSystem = DmGame:getInstance()._injector:getInstance("DevelopSystem")
-
 		if content._type_ == "loginpoint" then
+			local developSystem = DmGame:getInstance()._injector:getInstance("DevelopSystem")
+
 			developSystem:guideLog({
 				guideId = tostring(content.point),
 				step = tostring(content.step or "")
@@ -158,6 +158,8 @@ function StatisticSystem:send(content)
 		end
 
 		if content._type_ == "loginchoose" then
+			local developSystem = DmGame:getInstance()._injector:getInstance("DevelopSystem")
+
 			developSystem:guideLog({
 				guideId = tostring(content.difficult),
 				step = tostring(content.step or "")

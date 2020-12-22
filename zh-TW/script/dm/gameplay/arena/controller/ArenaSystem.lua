@@ -114,6 +114,19 @@ function ArenaSystem:tryEnter(data)
 	self:requestArenaInfo(getDataSucc)
 end
 
+function ArenaSystem:checkLeftCount(data)
+	local unlock, tips = self:checkEnabled()
+
+	if not unlock then
+		return 1, tips
+	end
+
+	local kArenaTimeCoin = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Arena_ItemUse", "content")
+	local remainTimes = self._developSystem:getBagSystem():getItemCount(kArenaTimeCoin)
+
+	return remainTimes, Strings:get("Arena_LeftCount_NotEnough")
+end
+
 function ArenaSystem:_syncArenaModel(data)
 	self:getArena():synchronize(data)
 

@@ -476,6 +476,19 @@ function BattleMainMediator:enterWithData(data)
 			callback(true)
 		end
 	end)
+	self:mapEventListener(self:getEventDispatcher(), EVT_ENTER_BACKGROUND, self, function ()
+		local storyDirector = self:getInjector():getInstance(story.StoryDirector)
+		local guideAgent = storyDirector:getGuideAgent()
+
+		if not guideAgent:isGuiding() then
+			local viewCfg = self._battleData.viewConfig
+			local isPauseVisible = viewCfg.btnsShow and viewCfg.btnsShow.pause.visible or false
+
+			if isPauseVisible and not self._isPaused then
+				self:onPause()
+			end
+		end
+	end)
 	self:getInjector():mapValue("Debug_BattleDump", nil)
 
 	local director = cc.Director:getInstance()
@@ -630,6 +643,7 @@ function BattleMainMediator:pause(block)
 	self._skeletonAnimGroup:pause()
 
 	self._pauseBlock = block
+	self._isPaused = true
 end
 
 function BattleMainMediator:resume()
@@ -641,6 +655,7 @@ function BattleMainMediator:resume()
 	self._skeletonAnimGroup:resume()
 
 	self._pauseBlock = nil
+	self._isPaused = false
 end
 
 function BattleMainMediator:onPause()

@@ -140,6 +140,10 @@ function DevelopSystem:syncPlayer(data, isDiff)
 		self:getPlayer():getEquipList():synchronize(data.equips)
 	end
 
+	if data.composeTimes then
+		self._bagSystem:setComposeTimes(data.composeTimes)
+	end
+
 	if data.cultivation or data.level then
 		self:synCultivation(data)
 	end

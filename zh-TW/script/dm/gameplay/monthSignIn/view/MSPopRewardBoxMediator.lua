@@ -19,9 +19,21 @@ end
 function MSPopRewardBoxMediator:enterWithData(data)
 	local day = data.difDay
 	local rewards = data.rewards
-	local richText = ccui.RichText:createWithXML(Strings:get("Setting_Ui_Text_8", {
-		num = day
-	}), {
+	local isAct, actUi = self._monthSignInSystem:checkActivity()
+	local diImg = self:getView():getChildByName("Image_1")
+	local textId = "Setting_Ui_Text_8"
+
+	if isAct and actUi == ActivityType_UI.KActivityBlockHoliday then
+		diImg:loadTexture("shuangdan_img_qd_neiqian2.png", ccui.TextureResType.plistType)
+
+		textId = "Newyear_Login_Text"
+	end
+
+	local str = Strings:get(textId, {
+		num = day,
+		fontName = TTF_FONT_FZYH_M
+	})
+	local richText = ccui.RichText:createWithXML(str, {
 		fontName = TTF_FONT_FZYH_M
 	})
 

@@ -596,7 +596,6 @@ function GameUpdater:installPackages()
 			end
 
 			dump(jsonData.version, "switchVersion:")
-			self._assetsManager:switchAssetsVersion(tonumber(jsonData.version))
 
 			if fileUtils then
 				fileUtils:removeDirectory(writablePath .. PATCH_FOLDER)
@@ -626,10 +625,9 @@ function GameUpdater:installPackages()
 
 				for i = 1, 3 do
 					fileUtils:removeFile(tempUpdateDBPath)
-					app.copyFile(destDBFilePath, tempUpdateDBPath)
 
-					if not fileUtils:isFileExist(tempUpdateDBPath) then
-						assert(false, "copy tempUpdateDBPath error")
+					if not safeCopyDb(destDBFilePath, tempUpdateDBPath) then
+						return
 					end
 
 					errorInfo = DBReader:getInstance(true):mergeDb(tempUpdateDBPath, updateConfigDBPath)
@@ -639,13 +637,36 @@ function GameUpdater:installPackages()
 					end
 				end
 
-				assert(#errorInfo == 0, "mergeDb error:" .. errorInfo)
+				if #errorInfo > 0 then
+					function callBack()
+						REBOOT()
+					end
+
+					local updateNoticPopup = require("dm.UpdateNoticPopup")
+
+					updateNoticPopup:alert({
+						msg = DB_MERGE_SPACE_LIMIT,
+						callBack = callBack
+					})
+
+					local content = {
+						point = "dataset_db_tmp_error",
+						type = "otherflow"
+					}
+
+					StatisticSystem:send(content)
+
+					return
+				end
+
 				fileUtils:removeFile(destDBFilePath)
 				fileUtils:renameFile(tempUpdateDBPath, destDBFilePath)
 				fileUtils:removeFile(updateConfigDBPath)
 				fileUtils:purgeCachedEntries()
 				print("*********merge db over*********")
 			end
+
+			self._assetsManager:switchAssetsVersion(tonumber(jsonData.version))
 
 			if self._delegate and self._delegate.onInstallPackage then
 				self._delegate:onInstallPackage(event, details)

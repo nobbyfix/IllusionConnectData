@@ -188,6 +188,12 @@ function EquipTipsMediator:setUi(data)
 		skillName:setString(Strings:get(skillConfig.Name))
 
 		local HeroEquipSkillLevel = ConfigReader:getDataByNameIdAndKey("ConfigValue", "HeroEquipSkillLevel", "content")
+		local URUPSkillLV = ConfigReader:getDataByNameIdAndKey("HeroEquipBase", id, "URUPSkillLV")
+
+		if URUPSkillLV then
+			HeroEquipSkillLevel = URUPSkillLV
+		end
+
 		local unlockLevel = HeroEquipSkillLevel[1]
 		local tip = Strings:get("Equip_UI47") .. Strings:get("Strenghten_Text78", {
 			level = unlockLevel

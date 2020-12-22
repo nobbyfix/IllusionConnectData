@@ -65,7 +65,7 @@ function ItemTipsMediator:setUi(data)
 	end
 
 	local icon = IconFactory:createIcon(data.info, {
-		showAmount = showAmount
+		showAmount = false
 	})
 
 	icon:addTo(iconBg):center(iconBg:getContentSize())
@@ -107,11 +107,7 @@ function ItemTipsMediator:setUi(data)
 		local lineCount = math.ceil(textSize.width / kWidth)
 
 		if lineCount > 1 then
-			descText:setTextAreaSize(cc.size(kWidth, textSize.height * lineCount))
-
-			local expandHeight = (lineCount - 2) * textSize.height
-
-			self:_expandDescHeight(expandHeight)
+			-- Nothing
 		end
 
 		local quality = RewardSystem:getQuality(data.info)
@@ -157,10 +153,10 @@ function ItemTipsMediator:adjustPos(icon, direction)
 	view:setAnchorPoint(cc.p(0.5, 0.5))
 	view:setIgnoreAnchorPointForPosition(false)
 
-	local kUpMargin = 20
-	local kDownMargin = 20
-	local kLeftMargin = 20
-	local kRightMargin = 20
+	local kUpMargin = 1
+	local kDownMargin = 1
+	local kLeftMargin = 5
+	local kRightMargin = 5
 	local viewSize = view:getContentSize()
 	local iconBoundingBox = icon:getBoundingBox()
 	local worldPos = icon:getParent():convertToWorldSpace(cc.p(iconBoundingBox.x, iconBoundingBox.y))

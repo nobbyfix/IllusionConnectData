@@ -134,3 +134,46 @@ function DumpUnitPropertiesBox:onClick(data)
 		tip = "设置完成"
 	}))
 end
+
+NoAiSetBox = class("NoAiSetBox", DebugViewTemplate, _M)
+
+function NoAiSetBox:initialize()
+	self._viewConfig = {
+		{
+			default = "",
+			name = "FileName",
+			_selectBoxShow = true,
+			type = "SelectBox",
+			title = "开启/关闭顺序出牌",
+			_selectBoxAutoHide = true,
+			selectHandler = function (selectStr)
+				local ret = {}
+
+				table.insert(ret, {
+					"1",
+					"开启顺序出牌"
+				})
+				table.insert(ret, {
+					"2",
+					"关闭顺序出牌"
+				})
+
+				return ret
+			end
+		}
+	}
+end
+
+function NoAiSetBox:onClick(data)
+	local mText = self._viewConfig[1].mtext
+
+	if tostring(mText) == "1" then
+		GameConfigs.NoAiSetBox = true
+	else
+		GameConfigs.NoAiSetBox = false
+	end
+
+	self:dispatch(ShowTipEvent({
+		tip = "设置完成"
+	}))
+end

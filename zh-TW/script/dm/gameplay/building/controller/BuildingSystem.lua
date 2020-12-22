@@ -1221,7 +1221,7 @@ function BuildingSystem:getBuildingCanLvUp(roomId, id)
 
 					for k, v in pairs(upgradeCost) do
 						local canbuild = CurrencySystem:checkEnoughCurrency(self, v.type, v.amount, {
-							tipType = "none"
+							type = "none"
 						})
 
 						if not canbuild then

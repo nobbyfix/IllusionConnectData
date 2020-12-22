@@ -26,6 +26,7 @@ function BagGiftChooseOneMediator:initialize()
 end
 
 function BagGiftChooseOneMediator:dispose()
+	self:closeChangeScheduler()
 	super.dispose(self)
 end
 

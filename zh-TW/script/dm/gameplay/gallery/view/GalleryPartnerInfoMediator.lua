@@ -328,7 +328,11 @@ function GalleryPartnerInfoMediator:refreshInfo()
 		panel:getChildByName("desc"):setString(self._heroInfos["info" .. i][1])
 
 		local info = panel:getChildByName("info")
+		local render = info:getVirtualRenderer()
 
+		render:setAlignment(cc.TEXT_ALIGNMENT_LEFT, cc.TEXT_ALIGNMENT_CENTER)
+		render:setOverflow(cc.LabelOverflow.SHRINK)
+		render:setDimensions(165, 25)
 		info:setString(self._heroInfos["info" .. i][2])
 	end
 

@@ -96,6 +96,18 @@ function DebugBox:setupView(parentLayer)
 
 	parentLayer:addChild(debugBtn)
 
+	local gameServerAgent = self:getInjector():getInstance("GameServerAgent")
+	local str = "网络延时：" .. tostring(gameServerAgent:getNetDelay()) .. " ms"
+	self._timeLabel = cc.Label:createWithTTF(str, TTF_FONT_FZYH_R, 20)
+
+	self._timeLabel:setTextColor(cc.c3b(255, 255, 0))
+	self._timeLabel:posite(31.5, 65)
+	debugBtn:addChild(self._timeLabel)
+
+	if self._timer == nil then
+		self._timer = LuaScheduler:getInstance():schedule(handler(self, self.refreshNetDelay), 0.2, false)
+	end
+
 	local parentSize = parentLayer:getContentSize()
 
 	debugBtn:setPosition(parentSize.width * 0.8, parentSize.height * 0.8)
@@ -236,8 +248,15 @@ end
 function DebugBox:show()
 	if self._parentLayer ~= nil then
 		print("DebugBox:show")
-		self._parentLayer:addChild(self:getDisplayNode())
-		self:getDisplayNode():setVisible(true)
+
+		if GameConfigs and GameConfigs.androidBack then
+			local scene = self:getInjector():getInstance("BaseSceneMediator", "activeScene")
+
+			scene:popTopView()
+		else
+			self._parentLayer:addChild(self:getDisplayNode())
+			self:getDisplayNode():setVisible(true)
+		end
 	end
 end
 
@@ -509,4 +528,27 @@ function DebugBox:setupRightScrollerView(rootNode, scollViewRect)
 	end
 
 	self._subIndexView = DebugBoxTool:createTableView(rootNode, scollViewRect, delegate)
+end
+
+function DebugBox:refreshNetDelay()
+	local gameServerAgent = self:getInjector():getInstance("GameServerAgent")
+	local str = "网络延时：" .. tostring(gameServerAgent:getNetDelay()) .. " ms"
+
+	if self._timeLabel then
+		self._timeLabel:setString(str)
+	else
+		self:clearTime()
+	end
+end
+
+function DebugBox:clearTime()
+	if self._timer then
+		self._timer:stop()
+
+		self._timer = nil
+	end
+
+	if self._timeLabel then
+		self._timeLabel = nil
+	end
 end

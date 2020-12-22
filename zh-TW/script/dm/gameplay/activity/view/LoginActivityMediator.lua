@@ -4,6 +4,47 @@ LoginActivityMediator:has("_activitySystem", {
 	is = "r"
 }):injectWith("ActivitySystem")
 
+local actUIConfig = {
+	Login_Holiday = {
+		bgPath = "asset/scene/shuangdan_img_14qd_ljdl.jpg",
+		cellTitle = "shuangdan_btn_14qd_ldi.png",
+		title = {
+			img = "shuangdan_img_14qd_biaoti.png",
+			textFontSize = 48,
+			size = cc.size(461, 118),
+			offset = {
+				10,
+				0
+			},
+			textOffset = {
+				50,
+				-3
+			},
+			textPattern = {
+				cc.c4b(255, 245, 175, 255),
+				cc.c4b(255, 224, 115, 255)
+			},
+			textOutline = {
+				size = 1,
+				color = cc.c4b(211, 72, 76, 255)
+			}
+		},
+		desc = {
+			color = cc.c3b(255, 242, 99),
+			offset = {
+				-60,
+				-10
+			}
+		},
+		cellBg = {
+			"shuangdan_btn_14qd_ldj.png",
+			"shuangdan_btn_14qd_ld_j.png",
+			"shuangdan_btn_14qd_ld_wxz.png",
+			"shuangdan_btn_14qd_ld_xz.png",
+			"shuangdan_btn_14qd_ld_ylq.png"
+		}
+	}
+}
 local lightColor = cc.c3b(180, 180, 180)
 local darkColor = cc.c3b(50, 41, 41)
 
@@ -70,6 +111,73 @@ function LoginActivityMediator:setupView()
 
 		if todayNum > 3 then
 			self._tableView:setContentOffset(cc.p(-space * (todayNum - 3), 0))
+		end
+	end
+
+	local uiConfig = actUIConfig[self._actModel:getUI()]
+
+	if uiConfig then
+		if uiConfig.bgPath then
+			local bgImg = self._main:getChildByName("Image_18")
+
+			bgImg:loadTexture(uiConfig.bgPath)
+		end
+
+		if uiConfig.title then
+			local titleImg = self._main:getChildByName("Image_2")
+
+			if uiConfig.title.img then
+				titleImg:loadTexture(uiConfig.title.img, ccui.TextureResType.plistType)
+			end
+
+			if uiConfig.title.size then
+				titleImg:setContentSize(uiConfig.title.size)
+			end
+
+			if uiConfig.title.offset then
+				titleImg:offset(uiConfig.title.offset[1], uiConfig.title.offset[2])
+			end
+
+			if uiConfig.title.textOffset then
+				self._title:offset(uiConfig.title.textOffset[1], uiConfig.title.textOffset[2])
+			end
+
+			if uiConfig.title.textPattern then
+				local lineGradiantVec2 = {
+					{
+						ratio = 0.3,
+						color = uiConfig.title.textPattern[1]
+					},
+					{
+						ratio = 0.7,
+						color = uiConfig.title.textPattern[2]
+					}
+				}
+
+				self._title:enablePattern(cc.LinearGradientPattern:create(lineGradiantVec2, {
+					x = 0,
+					y = -1
+				}))
+			end
+
+			if uiConfig.title.textOutline then
+				self._title:enableOutline(uiConfig.title.textOutline.color, uiConfig.title.textOutline.size)
+			end
+
+			if uiConfig.title.textFontSize then
+				self._title:setFontSize(uiConfig.title.textFontSize)
+			end
+		end
+
+		if uiConfig.desc then
+			if uiConfig.desc.color then
+				self._desc:disableEffect()
+				self._desc:setTextColor(uiConfig.desc.color)
+			end
+
+			if uiConfig.desc.offset then
+				self._desc:offset(uiConfig.desc.offset[1], uiConfig.desc.offset[2])
+			end
 		end
 	end
 end
@@ -172,25 +280,54 @@ function LoginActivityMediator:updateCell(cell, index)
 	title:getChildByName("text2"):setTextColor(lightColor)
 	title:getChildByName("num"):setTextColor(cc.c3b(255, 255, 255))
 
+	local uiConfig = actUIConfig[self._actModel:getUI()]
+
 	if status == ActivityTaskStatus.kGet then
 		finishAndGetView:setVisible(true)
 		unselect:setVisible(false)
 		select:setVisible(false)
+
+		if uiConfig and uiConfig.cellBg then
+			finishAndGetView:loadTexture(uiConfig.cellBg[5], ccui.TextureResType.plistType)
+		end
 	else
 		finishAndGetView:setVisible(false)
 
 		if table.indexof(spDay, index) then
-			select:loadTexture("hd_14r_btn_wxz_j.png", ccui.TextureResType.plistType)
-			unselect:loadTexture("hd_14r_btn_xz_j.png", ccui.TextureResType.plistType)
+			local selectPath = "hd_14r_btn_wxz_j.png"
+			local unselectPath = "hd_14r_btn_xz_j.png"
+
+			if uiConfig and uiConfig.cellBg then
+				selectPath = uiConfig.cellBg[1]
+				unselectPath = uiConfig.cellBg[2]
+			end
+
+			select:loadTexture(selectPath, ccui.TextureResType.plistType)
+			unselect:loadTexture(unselectPath, ccui.TextureResType.plistType)
 		else
-			select:loadTexture("hd_14r_btn_wxz.png", ccui.TextureResType.plistType)
-			unselect:loadTexture("hd_14r_btn_xz.png", ccui.TextureResType.plistType)
+			local selectPath = "hd_14r_btn_wxz.png"
+			local unselectPath = "hd_14r_btn_xz.png"
+
+			if uiConfig and uiConfig.cellBg then
+				selectPath = uiConfig.cellBg[3]
+				unselectPath = uiConfig.cellBg[4]
+			end
+
+			select:loadTexture(selectPath, ccui.TextureResType.plistType)
+			unselect:loadTexture(unselectPath, ccui.TextureResType.plistType)
 		end
 
 		if index == self._selectTag then
 			select:setVisible(false)
 			unselect:setVisible(true)
-			title:loadTexture("hd_14r_btn_ldi.png", ccui.TextureResType.plistType)
+
+			local path = "hd_14r_btn_ldi.png"
+
+			if uiConfig and uiConfig.cellTitle then
+				path = uiConfig.cellTitle
+			end
+
+			title:loadTexture(path, ccui.TextureResType.plistType)
 			title:getChildByName("text1"):setTextColor(darkColor)
 			title:getChildByName("text2"):setTextColor(darkColor)
 			title:getChildByName("num"):setTextColor(darkColor)

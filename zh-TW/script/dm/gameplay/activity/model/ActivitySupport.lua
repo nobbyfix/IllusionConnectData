@@ -263,6 +263,38 @@ function ActivitySupport:getSupportScoreRewardRedPoint()
 	return false
 end
 
+function ActivitySupport:getSupportItems()
+	local actConfig = self:getActivityConfig()
+	local scoreItem = actConfig.ScoreItem
+	local clubAttrItem = actConfig.ClubAttrItem
+	local itemList = {}
+
+	for k, v in pairs(scoreItem) do
+		itemList[#itemList + 1] = k
+	end
+
+	local clubItem = nil
+
+	if clubAttrItem then
+		for k, v in pairs(clubAttrItem) do
+			clubItem = k
+		end
+	end
+
+	table.sort(itemList, function (a, b)
+		local aItem = scoreItem[a]
+		local bItem = scoreItem[b]
+
+		return aItem[1] < bItem[1]
+	end)
+
+	if clubItem then
+		table.insert(itemList, 3, clubItem)
+	end
+
+	return itemList
+end
+
 function ActivitySupport:getTalkShow(_activityId, _heroId, _itemId)
 	local config = self:getHeroDataById(_heroId)
 
@@ -271,7 +303,7 @@ function ActivitySupport:getTalkShow(_activityId, _heroId, _itemId)
 	end
 
 	local bubble = config.Bubble
-	local item = ActivitySupportItems[_activityId]
+	local item = self:getSupportItems() or ActivitySupportItems[_activityId]
 
 	if bubble then
 		local content = nil
@@ -345,11 +377,13 @@ function ActivitySupport:hasRedPoint()
 
 	local acts = self:getActivity()
 
-	for i = 1, #acts do
-		local id = acts[i]
+	if acts then
+		for i = 1, #acts do
+			local id = acts[i]
 
-		if self:subActivityHasRedPoint(id) and self:subActivityOpen(id) then
-			return true
+			if self:subActivityHasRedPoint(id) and self:subActivityOpen(id) then
+				return true
+			end
 		end
 	end
 

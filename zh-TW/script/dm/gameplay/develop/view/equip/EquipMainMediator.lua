@@ -8,16 +8,13 @@ EquipMainMediator:has("_systemKeeper", {
 }):injectWith("SystemKeeper")
 
 local kTabBtnsNames = {
-	[1.0] = "strengthenBtn",
-	[2.0] = "breakBtn"
+	[1.0] = "strengthenBtn"
 }
 local kTabViewNames = {
-	[1.0] = "EquipStrengthenView",
-	[2.0] = "EquipBreakView"
+	[1.0] = "EquipAllUpdateView"
 }
 local kEquipsShowType = {
-	EquipsShowType.kStrengthen,
-	EquipsShowType.kStar
+	EquipsShowType.kAllUpdate
 }
 local kContentPanelTag = 10000
 
@@ -123,7 +120,7 @@ function EquipMainMediator:initTabController()
 		local tips = ""
 
 		if i == 3 then
-			unlock = false
+			unlock = true
 			tips = Strings:get("Source_General_Unknown")
 		end
 
@@ -151,7 +148,7 @@ end
 
 function EquipMainMediator:refreshTabRedPoint()
 	local hasRed = self._equipSystem:hasRedPointByEquipStarUp(self._equipId)
-	local btn = self._tabBtns[2]
+	local btn = self._tabBtns[1]
 	local redPoint = btn:getChildByTag(12138)
 
 	if redPoint then

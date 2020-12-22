@@ -14,9 +14,19 @@ local kBtnHandlers = {}
 KSourceType = {
 	kShop = 1,
 	kMain = 2,
-	kHeroStroy = 4,
+	kCheckLeftCount = 6,
 	kElite = 3,
+	kActivity = 5,
+	kHeroStroy = 4,
 	kNull = 0 or ""
+}
+local kSourceSort = {
+	[KSourceType.kShop] = 5,
+	[KSourceType.kActivity] = 4,
+	[KSourceType.kElite] = 3,
+	[KSourceType.kMain] = 2,
+	[KSourceType.kHeroStroy] = 1,
+	[KSourceType.kNull] = 0
 }
 local StageName = {
 	NORMAL = "CUSTOM_DETAIL_COMMON",
@@ -105,17 +115,22 @@ function SourceMediator:setUpView()
 		self._noTips:setVisible(true)
 		self._noTips:getChildByFullName("text"):setString(Strings:get("HEROS_UI13"))
 	else
-		local unlockTab = {}
 		local canEnter = {}
 		local lock = {}
-		local lockForStage = {}
 
 		for k, v in ipairs(self._sourceList) do
 			local sourceConfig = ConfigReader:getRecordById("ItemResource", v)
-			local url = sourceConfig.URL
+
+			assert(sourceConfig, "ItemResource not found for item.." .. self._itemData.itemId .. "..resourceId.." .. v)
+
+			local resourceType = sourceConfig.ResourceType or KSourceType.kNull
+			local url = sourceConfig and sourceConfig.URL or ""
 
 			if url == nil or url == "" then
-				lock[#lock + 1] = v
+				lock[#lock + 1] = {
+					id = v,
+					sort = kSourceSort[resourceType] or 0
+				}
 			else
 				local entry, params = UrlEntryManage.resolveUrlWithUserData(url)
 				local unlock = UrlEntryManage.checkEnabledWithUserData(url)
@@ -127,18 +142,25 @@ function SourceMediator:setUpView()
 						local pointInfo = self._stageSystem:getPointById(pointId)
 
 						if not pointInfo then
-							lock[#lock + 1] = v
+							lock[#lock + 1] = {
+								id = v,
+								sort = kSourceSort[sourceConfig] or 0
+							}
 						else
 							local _tabValue = {
 								id = v,
 								pointIndex = pointInfo:getIndex(),
 								mapIndex = pointInfo:getOwner():getIndex(),
-								stageType = pointInfo:getType() == StageType.kElite and 1 or 0
+								stageType = pointInfo:getType() == StageType.kElite and 1 or 0,
+								sort = kSourceSort[sourceConfig] or 0
 							}
-							lockForStage[#lockForStage + 1] = _tabValue
+							lock[#lock + 1] = _tabValue
 						end
 					else
-						lock[#lock + 1] = v
+						lock[#lock + 1] = {
+							id = v,
+							sort = kSourceSort[sourceConfig] or 0
+						}
 					end
 				else
 					local pointId = params.pointId
@@ -149,83 +171,84 @@ function SourceMediator:setUpView()
 						local challengeTimes = pointInfo:getChallengeTimes()
 
 						if challengeTimes > 0 then
-							if starNum == 3 then
-								local _tabValue = {
-									id = v,
-									pointIndex = pointInfo:getIndex(),
-									mapIndex = pointInfo:getOwner():getIndex(),
-									stageType = pointInfo:getType() == StageType.kElite and 1 or 0
-								}
-								unlockTab[#unlockTab + 1] = _tabValue
-							else
-								canEnter[#canEnter + 1] = v
-							end
+							local _tabValue = {
+								id = v,
+								pointIndex = pointInfo:getIndex(),
+								mapIndex = pointInfo:getOwner():getIndex(),
+								stageType = pointInfo:getType() == StageType.kElite and 1 or 0,
+								sort = kSourceSort[resourceType] or 0,
+								starNum = starNum == 3 and 1 or 0
+							}
+							canEnter[#canEnter + 1] = _tabValue
 						else
 							local _tabValue = {
 								id = v,
 								pointIndex = pointInfo:getIndex(),
 								mapIndex = pointInfo:getOwner():getIndex(),
-								stageType = pointInfo:getType() == StageType.kElite and 1 or 0
+								stageType = pointInfo:getType() == StageType.kElite and 1 or 0,
+								sort = kSourceSort[resourceType] or 0
 							}
-							lockForStage[#lockForStage + 1] = _tabValue
+							lock[#lock + 1] = _tabValue
 						end
 					else
-						local _tabValue = {
+						canEnter[#canEnter + 1] = {
+							stageType = -1,
+							pointIndex = -1,
+							mapIndex = -1,
 							id = v,
-							pointIndex = 1
+							sort = kSourceSort[resourceType] or 0
 						}
-
-						if params.index then
-							_tabValue.mapIndex = -tonumber(params.index)
-						else
-							_tabValue.mapIndex = 0
-						end
-
-						_tabValue.stageType = 0
-						unlockTab[#unlockTab + 1] = _tabValue
 					end
 				end
 			end
 		end
 
-		table.sort(unlockTab, function (a, b)
-			if a.stageType == b.stageType then
-				if a.mapIndex == b.mapIndex then
-					return b.pointIndex < a.pointIndex
+		table.sort(canEnter, function (a, b)
+			if a.sort == b.sort then
+				if a.starNum == b.starNum then
+					if a.stageType == b.stageType then
+						if a.mapIndex == b.mapIndex then
+							return b.pointIndex < a.pointIndex
+						else
+							return b.mapIndex < a.mapIndex
+						end
+					else
+						return b.stageType < a.stageType
+					end
 				else
-					return b.mapIndex < a.mapIndex
+					return b.starNum < a.starNum
 				end
 			else
-				return b.stageType < a.stageType
+				return b.sort < a.sort
 			end
 		end)
-		table.sort(lockForStage, function (a, b)
-			if a.stageType == b.stageType then
-				if a.mapIndex == b.mapIndex then
-					return a.pointIndex < b.pointIndex
+		table.sort(lock, function (a, b)
+			if a.sort == b.sort then
+				if a.stageType == b.stageType then
+					if a.mapIndex ~= nil and b.mapIndex ~= nil then
+						if a.mapIndex == b.mapIndex then
+							return a.pointIndex < b.pointIndex
+						else
+							return a.mapIndex < b.mapIndex
+						end
+					else
+						return a.mapIndex ~= nil
+					end
 				else
-					return a.mapIndex < b.mapIndex
+					return a.stageType < b.stageType
 				end
 			else
-				return a.stageType < b.stageType
+				return b.sort < a.sort
 			end
 		end)
 
 		self._sourceList = {}
 
-		for k, v in ipairs(unlockTab) do
+		for k, v in ipairs(canEnter) do
 			self._sourceList[#self._sourceList + 1] = v.id
 		end
 
-		for k, v in ipairs(canEnter) do
-			self._sourceList[#self._sourceList + 1] = v
-		end
-
 		for k, v in ipairs(lock) do
-			self._sourceList[#self._sourceList + 1] = v
-		end
-
-		for k, v in ipairs(lockForStage) do
 			self._sourceList[#self._sourceList + 1] = v.id
 		end
 
@@ -244,6 +267,7 @@ end
 function SourceMediator:refreshView()
 	local needCountLabel = self._main:getChildByName("Text_needcount")
 
+	needCountLabel:setVisible(self._itemData.needNum > 0)
 	needCountLabel:setString("/" .. self._itemData.needNum)
 
 	local ownCountLabel = self._main:getChildByName("Text_owncount")
@@ -269,6 +293,7 @@ function SourceMediator:refreshView()
 	}
 	local icon = IconFactory:createItemIcon(info, {
 		showAmount = false,
+		notShowQulity = false,
 		isWidget = true
 	})
 
@@ -442,6 +467,66 @@ function SourceMediator:createCell(cell, index)
 				self:onClickEnterHeroStory(sourceConfig)
 			end)
 		end
+	elseif sourceConfig.ResourceType == KSourceType.kActivity then
+		if blockPanel then
+			blockPanel:setVisible(false)
+		end
+
+		desc:setVisible(true)
+		desc:setString(Strings:get(sourceConfig.Text))
+
+		if string.find(url, "view://CarnivalView") then
+			unlock = true
+			self._activitySystem = self:getInjector():getInstance("ActivitySystem")
+			local unlock1 = self._activitySystem:checkCarnival()
+			local carnival = self._activitySystem:getActivityById("Carnival")
+
+			if not unlock1 or not carnival then
+				goBtnState = false
+				local regionText = ccui.Text:create("", TTF_FONT_FZYH_M, 20)
+
+				regionText:enableOutline(cc.c4b(0, 0, 0, 255), 1)
+				regionText:addTo(cell):setName("text")
+				regionText:setPositionX(goBtn:getPositionX())
+				regionText:setPositionY(goBtn:getPositionY() + 10)
+				regionText:setString(Strings:get("Resource_IHF_ZTXChang_No"))
+			elseif carnival:isScoreRewardReceived(5) and carnival:isScoreRewardReceived(10) and carnival:isScoreRewardReceived(15) then
+				goBtnState = false
+				local regionText = ccui.Text:create("", TTF_FONT_FZYH_M, 20)
+
+				regionText:enableOutline(cc.c4b(0, 0, 0, 255), 1)
+				regionText:addTo(cell):setName("text")
+				regionText:setPositionX(goBtn:getPositionX())
+				regionText:setPositionY(goBtn:getPositionY() + 10)
+				regionText:setString(Strings:get("CUSTOM_REWARD_ALREADY_RECEIVE"))
+			else
+				goBtnState = true
+			end
+		end
+	elseif sourceConfig.ResourceType == KSourceType.kCheckLeftCount then
+		if goBtnState then
+			local leftCount, tip = UrlEntryManage.checkLeftTimesWithUserData(url)
+
+			assert(leftCount ~= nil, "UrlEntry config or function checkLeftCount not find.." .. tostring(tip))
+
+			if leftCount <= 0 then
+				goBtnState = false
+				local regionText = ccui.Text:create("", TTF_FONT_FZYH_M, 20)
+
+				regionText:enableOutline(cc.c4b(0, 0, 0, 255), 1)
+				regionText:addTo(cell):setName("text")
+				regionText:setPositionX(goBtn:getPositionX())
+				regionText:setPositionY(goBtn:getPositionY() + 10)
+				regionText:setString(tip)
+			end
+		end
+
+		if blockPanel then
+			blockPanel:setVisible(false)
+		end
+
+		desc:setVisible(true)
+		desc:setString(Strings:get(sourceConfig.Text))
 	else
 		if blockPanel then
 			blockPanel:setVisible(false)
@@ -573,6 +658,9 @@ function SourceMediator:createFallItems(blockPanel, blockConfig)
 
 		icon:setScaleNotCascade(0.55)
 		icon:addTo(iconbg):center(iconbg:getContentSize())
+		IconFactory:bindTouchHander(iconbg, IconTouchHandler:new(self), reward, {
+			needDelay = true
+		})
 
 		if self._itemData.itemId == tostring(reward.code) then
 			local posX = 12

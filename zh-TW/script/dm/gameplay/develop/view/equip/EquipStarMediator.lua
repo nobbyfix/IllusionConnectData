@@ -443,6 +443,7 @@ function EquipStarMediator:onClickGrowUp(sender, eventType)
 	end
 
 	self._oldMaxLevel = levelMax
+	self._oldAttrList = self._equipData:getAttrListShow()
 	local items = {}
 
 	for id, value in pairs(self._equipSystem:getEquipStarUpItem().items) do
@@ -526,7 +527,8 @@ function EquipStarMediator:onStarUpSuccCallback(event)
 		maskOpacity = 0
 	}, {
 		equipId = self._equipId,
-		oldMaxLevel = self._oldMaxLevel
+		oldMaxLevel = self._oldMaxLevel,
+		oldAttrList = self._oldAttrList
 	}))
 end
 

@@ -237,6 +237,23 @@ local kExtResponseMap = {
 		instanceName = "ActivitySystem",
 		funcName = "tryEnterGoldEgg",
 		entry = ViewAreaEntry:new("ActivityBlockGoldEggView")
+	},
+	NewCurrencyBuyView = {
+		instanceName = "CurrencySystem",
+		funcName = "tryEnter",
+		entry = ViewAreaEntry:new("NewCurrencyBuyView")
+	},
+	BuildingGetResView = {
+		funcCheck = "checkGetExpEnable",
+		instanceName = "BuildingSystem",
+		funcName = "tryEnterGetResView",
+		entry = ViewAreaEntry:new("BuildingGetResView")
+	},
+	ActivityBlockHolidayView = {
+		funcName = "complexActivityTryEnter",
+		instanceName = "ActivitySystem",
+		funcCheck = "checkComplexActivity",
+		entry = ViewAreaEntry:new("ActivityBlockHolidayView")
 	}
 }
 

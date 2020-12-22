@@ -19,6 +19,10 @@ function DebugViewParser:tryCreateView(id, viewObj)
 
 	self.kViewWidth = 320
 	self.kCellHeight = 100
+	self.kSelectBoxWidth = 312
+	self.kSelectBoxHeight = 200
+	self.kSelectBoxCellWidth = 310
+	self.kSelectBoxCellHeight = 30
 
 	if viewObj.getViewWidth then
 		self.kViewWidth = viewObj.getViewWidth()
@@ -61,7 +65,7 @@ function DebugViewParser:tryCreateView(id, viewObj)
 			for k, v in pairs(config) do
 				local curData = config[k]
 
-				if curData.type == "Input" then
+				if curData.type == "Input" or curData.type == "SelectBox" then
 					local text = curData.mtext
 
 					if text == nil or text == "" then
@@ -173,7 +177,17 @@ function DebugViewParser:setupScrollerView(rootNode, scollViewRect, viewObj)
 		return #config
 	end
 
-	function delegate:createCell(cell, idx)
+	function delegate:cellSizeForTable(table, idx)
+		local data = config[idx + 1]
+
+		if data and data.type == "SelectBox" and data._selectBoxShow == true then
+			return parent.kViewWidth, parent.kCellHeight + parent.kSelectBoxHeight
+		end
+
+		return nil
+	end
+
+	function delegate:createCell(cell, idx, tableView)
 		cell:setSwallowTouches(false)
 
 		local data = config[idx]
@@ -191,7 +205,7 @@ function DebugViewParser:setupScrollerView(rootNode, scollViewRect, viewObj)
 				label:setString(name)
 			end
 
-			if data.type == "Input" then
+			if data.type == "Input" or data.type == "SelectBox" then
 				local textField = cell:getChildByName("textField")
 
 				if textField then
@@ -203,25 +217,51 @@ function DebugViewParser:setupScrollerView(rootNode, scollViewRect, viewObj)
 						textField:setString(data.default)
 					end
 
-					textField:addEventListener(function (sender, type)
-						data.mtext = sender:getString()
+					if data.type == "Input" then
+						textField:addEventListener(function (sender, type)
+							data.mtext = sender:getString()
 
-						if type == ccui.TextFiledEventType.attach_with_ime then
-							self:_tableCellTouchedImpl(table, cell)
+							if type == ccui.TextFiledEventType.attach_with_ime then
+								self:_tableCellTouchedImpl(table, cell)
 
-							if data.mtext == tostring(data.default) then
+								if data.mtext == tostring(data.default) then
+									sender:setString("")
+								end
+							elseif type == ccui.TextFiledEventType.detach_with_ime then
+								if data.mtext == tostring(data.default) or data.mtext == "" then
+									sender:setString(data.default)
+								end
+							elseif type == ccui.TextFiledEventType.insert_text then
+								-- Nothing
+							elseif type == ccui.TextFiledEventType.delete_backward then
+								-- Nothing
+							end
+						end)
+					elseif data.type == "SelectBox" then
+						textField:addEventListener(function (sender, type)
+							data.mtext = sender:getString()
+
+							if type == ccui.TextFiledEventType.attach_with_ime then
+								self:_tableCellTouchedImpl(table, cell)
 								sender:setString("")
+
+								if data._selectBoxShow ~= true then
+									data._selectBoxShow = true
+
+									createSelectBox(cell, data)
+									tableView:reloadData()
+								end
+							elseif type == ccui.TextFiledEventType.detach_with_ime then
+								if data.mtext == tostring(data.default) or data.mtext == "" then
+									sender:setString(data.default)
+								end
+							elseif type == ccui.TextFiledEventType.insert_text or type == ccui.TextFiledEventType.delete_backward then
+								cell.selectBox.config = data.selectHandler(data.mtext)
+
+								cell.selectBox.view:reloadData()
 							end
-						elseif type == ccui.TextFiledEventType.detach_with_ime then
-							if data.mtext == tostring(data.default) or data.mtext == "" then
-								sender:setString(data.default)
-							end
-						elseif type == ccui.TextFiledEventType.insert_text then
-							-- Nothing
-						elseif type == ccui.TextFiledEventType.delete_backward then
-							-- Nothing
-						end
-					end)
+						end)
+					end
 				end
 			else
 				local textField = cell:getChildByName("textField")
@@ -229,6 +269,111 @@ function DebugViewParser:setupScrollerView(rootNode, scollViewRect, viewObj)
 				if textField then
 					textField:setVisible(false)
 				end
+			end
+
+			function removeSelectBox(parentCell, idx)
+				local cellChild = parentCell:getParent():getChildByTag(9988)
+
+				parentCell:getParent():removeChildByTag(9988)
+			end
+
+			function createSelectBox(parentCell, data)
+				local selectBoxDelegate = {}
+
+				function selectBoxDelegate:createCellTemplate()
+					local bg = ccui.Layout:create()
+
+					bg:setSwallowTouches(false)
+					bg:setName("scollViewRect")
+					bg:setContentSize(cc.size(parent.kSelectBoxCellWidth, parent.kSelectBoxCellHeight - 1))
+					bg:setBackGroundImageScale9Enabled(true)
+					bg:setBackGroundImage(DebugBoxTool:getResPath("pic_dm_debug_tab_frame.png"))
+					bg:setBackGroundImageCapInsets(cc.rect(20, 40, 18, 18))
+
+					local text = ccui.Text:create("", TTF_FONT_FZYH_M, 18)
+
+					text:setName("selectBoxLabel")
+					text:setColor(cc.c3b(52, 65, 132))
+					text:setAnchorPoint(cc.p(0, 0))
+					text:setString("")
+					text:setTag(999)
+					text:setPositionX(5)
+					bg:addChild(text)
+
+					return bg
+				end
+
+				function selectBoxDelegate:cellSizeForTable(table, idx)
+					return parent.kSelectBoxCellWidth, parent.kSelectBoxCellHeight
+				end
+
+				function selectBoxDelegate:tableCellTouched(table, _cell)
+					local selectBoxCell = _cell:getChildByTag(110)
+					local idx = selectBoxCell.configIdx
+					local str = parentCell.selectBox.config[idx]
+					local textField = parentCell:getChildByName("textField")
+
+					if str and type(str) == "table" then
+						data.mtext = str[1]
+
+						textField:setString(str[1])
+					elseif str then
+						data.mtext = str
+
+						textField:setString(str)
+					end
+
+					if data._selectBoxAutoHide and data._selectBoxShow == true then
+						data._selectBoxShow = false
+
+						removeSelectBox(parentCell)
+						tableView:reloadData()
+					end
+				end
+
+				function selectBoxDelegate:cellNum()
+					return #parentCell.selectBox.config
+				end
+
+				function selectBoxDelegate:createCell(cellTemplate, idx)
+					cellTemplate.configIdx = idx
+					local str = parentCell.selectBox.config[idx]
+					local label = cellTemplate:getChildByTag(999)
+
+					if str and type(str) == "table" then
+						label:setString(str[1] .. "," .. str[2])
+					elseif str then
+						label:setString(str)
+					end
+				end
+
+				parentCell.selectBox = {
+					config = data.selectHandler("")
+				}
+				local layout = ccui.Layout:create()
+
+				layout:setName("scollViewRect")
+				layout:setTag(9988)
+				parentCell:getParent():addChild(layout, 1)
+				layout:setBackGroundImageScale9Enabled(true)
+				layout:setBackGroundImage(DebugBoxTool:getResPath("pic_dm_debug_tab_frame.png"))
+				layout:setBackGroundImageCapInsets(cc.rect(20, 40, 18, 18))
+				layout:setContentSize(cc.size(parent.kSelectBoxWidth, parent.kSelectBoxHeight))
+
+				local tableView = DebugBoxTool:createTableView(layout, layout, selectBoxDelegate)
+
+				tableView:setAnchorPoint(cc.p(0, 0))
+				tableView:setPosition(cc.p(0, 5))
+				layout:setAnchorPoint(cc.p(0, 0))
+				layout:setPosition(cc.p(0, 0))
+
+				parentCell.selectBox.view = tableView
+			end
+
+			removeSelectBox(cell, idx)
+
+			if data.type == "SelectBox" and data._selectBoxShow == true then
+				createSelectBox(cell, data)
 			end
 		end
 	end
