@@ -34,6 +34,9 @@ local KMenu = {
 		},
 		{
 			title = Strings:get("Frame_UI_4")
+		},
+		{
+			title = Strings:get("Frame_UI_6")
 		}
 	}
 }
@@ -136,6 +139,7 @@ function ChangeHeadImgMediator:getData()
 			local activity = {}
 			local festival = {}
 			local rare = {}
+			local zodiac = {}
 			local data = self._settingSystem:getShowHeadFrameList()
 
 			for i = 1, #data do
@@ -147,6 +151,8 @@ function ChangeHeadImgMediator:getData()
 					table.insert(festival, v)
 				elseif v.config.Type == KFrameType.RARE then
 					table.insert(rare, v)
+				elseif v.config.Type == KFrameType.Zodiac then
+					table.insert(zodiac, v)
 				end
 
 				if tostring(v.id) == tostring(self._player:getCurHeadFrame()) then
@@ -159,7 +165,8 @@ function ChangeHeadImgMediator:getData()
 				data,
 				activity,
 				festival,
-				rare
+				rare,
+				zodiac
 			}
 		end
 

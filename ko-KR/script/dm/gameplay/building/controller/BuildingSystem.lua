@@ -128,6 +128,10 @@ function BuildingSystem:combin(update, org)
 				self:extendTable(update.unlockedRooms[k].unlockedSurface, org.unlockedRooms[k].unlockedSurface)
 			end
 
+			if update.unlockedRooms[k].lastHeroLove then
+				org.unlockedRooms[k].lastHeroLove = update.unlockedRooms[k].lastHeroLove
+			end
+
 			if update.unlockedRooms[k].heroes then
 				org.unlockedRooms[k].heroes = update.unlockedRooms[k].heroes
 			end
@@ -1520,7 +1524,11 @@ function BuildingSystem:clearAllHeroPutInfo()
 end
 
 function BuildingSystem:clearAllAddLove()
-	for k, v in pairs(self._roomList) do
+	for k, v in pairs(self._selfData.unlockedRooms or {}) do
+		v.lastHeroLove = {}
+	end
+
+	for k, v in pairs(self._roomList or {}) do
 		v._lastHeroLove = {}
 	end
 end

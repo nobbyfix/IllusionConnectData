@@ -59,6 +59,13 @@ local PowerConfigMap = {
 		next = "Act_Halloween_Power_RecNext",
 		configId = "AcitvityHalloweenStamina_Reset",
 		tableName = "Reset"
+	},
+	[CurrencyIdKind.kActivityHolidayPower] = {
+		all = "Act_NewYear_Power_RecAll",
+		perMin = "Act_NewYear_Power_RecPerMin",
+		next = "Act_NewYear_Power_RecNext",
+		configId = "AcitvityHolidayStamina_Reset",
+		tableName = "Reset"
 	}
 }
 local crusadeEnergyReset = nil
@@ -345,8 +352,12 @@ function BagSystem:getAcitvitySummerPower()
 	return self:getPowerByCurrencyId(CurrencyIdKind.kAcitvitySummerPower)
 end
 
-function BagSystem:getAcitvityHalloweenPower()
-	return self:getPowerByCurrencyId(CurrencyIdKind.kAcitvityHalloweenPower)
+function BagSystem:getActivityHolidayPower()
+	return self:getPowerByCurrencyId(CurrencyIdKind.kActivityHolidayPower)
+end
+
+function BagSystem:getAcitvitySnowPower()
+	return self:getPowerByCurrencyId(CurrencyIdKind.kAcitvitySnowPower)
 end
 
 function BagSystem:getDiamond()

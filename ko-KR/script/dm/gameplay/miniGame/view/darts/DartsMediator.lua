@@ -198,6 +198,9 @@ end
 
 function DartsMediator:initTimesPanel(panel)
 	self._limitRewardLable = panel:getChildByFullName("limitRewardLable")
+
+	self._limitRewardLable:setString(Strings:get("Activity_Darts_Reward_Limit"))
+
 	self._gameTimesLabel = panel:getChildByFullName("Text_times")
 	self._beginBtn = panel:getChildByName("begin_btn")
 	self._addTimesBtn = panel:getChildByName("addbtn")
@@ -1432,7 +1435,7 @@ function DartsMediator:checkBuyTimes(call)
 
 		if factor1 and factor2 then
 			self:dispatch(ShowTipEvent({
-				tip = Strings:get("Activity_Darts_Times")
+				tip = Strings:get("Activity_Darts_Times_Out")
 			}))
 
 			return false

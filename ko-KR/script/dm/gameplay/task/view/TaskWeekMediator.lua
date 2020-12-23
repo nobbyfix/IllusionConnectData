@@ -55,6 +55,9 @@ function TaskWeekMediator:enterWithData(data)
 	table.sort(self._rewardList, function (a, b)
 		return a.num < b.num
 	end)
+
+	self._maxNum = self._rewardList[#self._rewardList].num
+
 	self:initView()
 	self:refreshView()
 end
@@ -63,6 +66,8 @@ function TaskWeekMediator:initView()
 	local view = self:getView()
 	self._main = view:getChildByFullName("main")
 	self._totalNumTxt = self._main:getChildByFullName("totalNum")
+	self._totalText = self._main:getChildByFullName("text")
+	self._loadingBar_1 = self._main:getChildByFullName("Image_1.LoadingBar_1")
 	self._listView = self._main:getChildByFullName("listView")
 
 	self._listView:setScrollBarEnabled(false)
@@ -76,8 +81,10 @@ end
 function TaskWeekMediator:refreshView()
 	self._totalNum = self._taskListModel:getWeekLiveness()
 
-	self._totalNumTxt:setString(self._totalNum)
+	self._totalNumTxt:setString(self._totalNum .. "/" .. self._maxNum)
+	self._loadingBar_1:setPercent(self._totalNum / self._maxNum * 100)
 	self._listView:removeAllItems()
+	self._totalText:setPositionX(self._totalNumTxt:getPositionX() - self._totalNumTxt:getContentSize().width - 3)
 
 	for i = 1, #self._rewardList do
 		local data = self._rewardList[i]
@@ -132,6 +139,10 @@ function TaskWeekMediator:addReward(data)
 
 	doneanim:setVisible(false)
 
+	local btn_notget = panel:getChildByFullName("btn_notget")
+
+	btn_notget:setVisible(false)
+
 	local btn_get = panel:getChildByFullName("btn_get")
 
 	btn_get:setVisible(false)
@@ -145,6 +156,7 @@ function TaskWeekMediator:addReward(data)
 		btn_get:setVisible(true)
 	else
 		doneanim:setVisible(data.num <= self._totalNum)
+		btn_notget:setVisible(self._totalNum < data.num)
 	end
 
 	panel:setAnchorPoint(cc.p(0, 0))

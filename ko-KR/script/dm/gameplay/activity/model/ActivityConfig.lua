@@ -21,6 +21,7 @@ require("dm.gameplay.activity.model.RecheargeActivity")
 require("dm.gameplay.activity.model.ActivityDrawCardFeedback")
 require("dm.gameplay.activity.model.MonsterShopActivity")
 require("dm.gameplay.activity.model.ActivityColorEggActivity")
+require("dm.gameplay.activity.model.ActivityTpurchase")
 require("dm.gameplay.activity.model.MiniGameActivity")
 
 ActivityShowTab = {
@@ -75,6 +76,7 @@ ActivityModel = {
 	[ActivityType.KDrawCardFeedbackActivity] = ActivityDrawCardFeedback,
 	[ActivityType.KColourEgg] = ActivityColorEggActivity,
 	[ActivityType.KMonsterShop] = MonsterShopActivity,
+	[ActivityType.KTPURCHASE] = ActivityTpurchase,
 	[ActivityType.KMiniGame] = MiniGameActivity
 }
 ActivityUI = {
@@ -92,6 +94,7 @@ ActivityUI = {
 	ABDAILYTASK = "ActivityTaskDailyView",
 	Carnival = "CarnivalView",
 	ExtraRewardBoard = "ExtraRewardActivityView",
+	Login_Holiday = "LoginActivityView",
 	[ActivityType.KEightLogin] = "eightDayLoginView",
 	[ActivityType.KEightLoginCommon] = "commonEightDayLoginView",
 	[ActivityType.KTASKMONTHCARD] = "ActivityTaskMonthCardView",
@@ -130,10 +133,12 @@ ActivityComplexUI = {
 		[ActivityType_UI.kActivityBlockZuoHe] = "ActivityBlockSupportView",
 		[ActivityType_UI.kActivityBlockSummer] = "ActivityBlockSummerView",
 		[ActivityType_UI.kActivityBlock] = "ActivityBlockView",
-		[ActivityType_UI.KActivityBlockSnowflake] = "ActivityBlockView"
+		[ActivityType_UI.KActivityBlockSnowflake] = "ActivityBlockView",
+		[ActivityType_UI.KActivityBlockHoliday] = "ActivityBlockHolidayView"
 	},
 	enterBlockMonsterShopView = {
-		[ActivityType_UI.kActivityBlockWsj] = "ActivityBlockMonsterShopView"
+		[ActivityType_UI.kActivityBlockWsj] = "ActivityBlockMonsterShopView",
+		[ActivityType_UI.KActivityBlockHoliday] = "ActivityBlockMonsterShopView"
 	},
 	enterSupportStageView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportMapView",
@@ -141,11 +146,13 @@ ActivityComplexUI = {
 		[ActivityType_UI.kActivityBlockSummer] = "ActivitySagaSupportMapView",
 		[ActivityType_UI.kActivityBlockWsj] = "ActivityBlockMapWsjView",
 		[ActivityType_UI.KActivityBlockSnowflake] = "ActivitySagaSupportMapView",
-		[ActivityType_UI.kActivityBlock] = "ActivitySagaSupportMapView"
+		[ActivityType_UI.kActivityBlock] = "ActivitySagaSupportMapView",
+		[ActivityType_UI.KActivityBlockHoliday] = "ActivityBlockMapWsjView"
 	},
 	enterSagaSupportStageView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportStageWxhView",
-		[ActivityType_UI.kActivityBlockZuoHe] = "ActivitySagaSupportStageView"
+		[ActivityType_UI.kActivityBlockZuoHe] = "ActivitySagaSupportStageView",
+		[ActivityType_UI.KActivitySupportHoliday] = "ActivitySupportHolidayView"
 	},
 	enterSagaSupportScheduleView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportScheduleWxhView",
@@ -157,14 +164,17 @@ ActivityComplexUI = {
 		[ActivityType_UI.kActivityBlockSummer] = "ActivityBlockTaskView",
 		[ActivityType_UI.kActivityBlockWsj] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivityBlockSnowflake] = "ActivityBlockTaskView",
-		[ActivityType_UI.kActivityBlock] = "ActivityBlockTaskView"
+		[ActivityType_UI.kActivityBlock] = "ActivityBlockTaskView",
+		[ActivityType_UI.KActivityBlockHoliday] = "ActivityBlockTaskView"
 	},
 	enterSagaSupportRankRewardView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportRankRewardWxhView",
-		[ActivityType_UI.kActivityBlockZuoHe] = "ActivitySagaSupportRankRewardView"
+		[ActivityType_UI.kActivityBlockZuoHe] = "ActivitySagaSupportRankRewardView",
+		[ActivityType_UI.KActivitySupportHoliday] = "ActivitySupportRankHolidayView"
 	},
 	enterSagaWinView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaWinWxhView",
-		[ActivityType_UI.kActivityBlockZuoHe] = "ActivitySagaWinView"
+		[ActivityType_UI.kActivityBlockZuoHe] = "ActivitySagaWinView",
+		[ActivityType_UI.KActivitySupportHoliday] = "ActivitySupportWinHolidayView"
 	}
 }

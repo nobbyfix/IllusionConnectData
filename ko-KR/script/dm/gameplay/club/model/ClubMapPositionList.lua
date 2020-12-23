@@ -37,7 +37,7 @@ function ClubMapPositionList:setClubVillageChangeCount(data)
 end
 
 function ClubMapPositionList:isMemberChange()
-	return self._memberCount_before < self._memberCount_after and self._memberCount_before ~= 0
+	return self._memberCount_after ~= self._memberCount_before and self._memberCount_before ~= 0
 end
 
 local houseImage = {

@@ -139,6 +139,22 @@ function SystemMessage:sync(data)
 end
 
 function SystemMessage:parseContent()
+	local function setHeroName(env, envKey, params, paramKey)
+		local heroInfo = ConfigReader:getRecordById("HeroBase", params[paramKey])
+
+		if heroInfo then
+			env[envKey] = Strings:get(heroInfo.Name)
+		end
+	end
+
+	local function setEquipName(env, envKey, params, paramKey)
+		local heroInfo = ConfigReader:getRecordById("HeroEquipBase", params[paramKey])
+
+		if heroInfo then
+			env[envKey] = Strings:get(heroInfo.Name)
+		end
+	end
+
 	if self._config.Channel then
 		self._channelIds = self._config.Channel
 	end
@@ -161,12 +177,7 @@ function SystemMessage:parseContent()
 		env.fontName = TTF_FONT_FZYH_M
 
 		if self._params.heroId then
-			local heroInfo = ConfigReader:getRecordById("HeroBase", self._params.heroId)
-
-			if heroInfo then
-				self._params.heroName = Strings:get(heroInfo.Name)
-				env.heroname = self._params.heroName
-			end
+			setHeroName(env, "heroname", self._params, "heroId")
 		end
 
 		if self._params.pos then
@@ -186,6 +197,40 @@ function SystemMessage:parseContent()
 
 		if self._params.award then
 			env.award = RewardSystem:getName(self._params.award)
+		end
+
+		if self._params.heroname then
+			setHeroName(env, "heroname", self._params, "heroname")
+		end
+
+		if self._params.heroname1 then
+			setHeroName(env, "heroname1", self._params, "heroname1")
+		end
+
+		if self._params.heroname2 then
+			setHeroName(env, "heroname2", self._params, "heroname2")
+		end
+
+		if self._params.equipname then
+			setEquipName(env, "equipname", self._params, "equipname")
+		end
+
+		if self._params.equipname1 then
+			setEquipName(env, "equipname1", self._params, "equipname1")
+		end
+
+		if self._params.equipname2 then
+			setEquipName(env, "equipname2", self._params, "equipname2")
+		end
+
+		if self._params.rank then
+			local nameId = ConfigReader:getDataByNameIdAndKey("ArenaRank", self._params.rank, "Name")
+			env.rank = Strings:get(nameId)
+		end
+
+		if self._params.ranklist then
+			local condition = ConfigReader:getDataByNameIdAndKey("RankList", self._params.ranklist, "Condition")
+			env.ranklist = condition
 		end
 	end
 

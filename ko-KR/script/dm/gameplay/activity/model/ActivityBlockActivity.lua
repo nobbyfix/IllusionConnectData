@@ -237,6 +237,21 @@ function ActivityBlockActivity:getEggActivity()
 	return nil
 end
 
+function ActivityBlockActivity:getActivityTpurchase()
+	local activityIds = self:getActivity()
+
+	for i = 1, #activityIds do
+		local id = activityIds[i]
+		local activity = self:getSubActivityById(id)
+
+		if activity and self:subActivityOpen(id) and activity:getType() == ActivityType.KTPURCHASE then
+			return activity
+		end
+	end
+
+	return nil
+end
+
 function ActivityBlockActivity:hasRedPoint()
 	local acts = self:getActivity()
 

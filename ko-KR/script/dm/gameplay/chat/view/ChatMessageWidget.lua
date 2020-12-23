@@ -213,8 +213,11 @@ SystemMsgLabelType = {
 	kSelf = 2,
 	kSystem = 1,
 	kTeam = 3,
-	kWorld = 5,
-	kUnion = 4
+	kMogul = 6,
+	kFight = 8,
+	kEmperor = 7,
+	kUnion = 4,
+	kWorld = 5
 }
 SystemMsgLabelMap = {
 	[SystemMsgLabelType.kSystem] = {
@@ -251,6 +254,18 @@ SystemMsgLabelMap = {
 		text = Strings:get("Chat_Label_World"),
 		color = cc.c4b(188, 95, 247, 255),
 		titleColor = cc.c4b(190, 212, 238, 255)
+	},
+	[SystemMsgLabelType.kMogul] = {
+		text = Strings:get("Chat_Label_Mogul"),
+		titleColor = cc.c4b(255, 35, 149, 255)
+	},
+	[SystemMsgLabelType.kEmperor] = {
+		text = Strings:get("Chat_Label_Emperor"),
+		titleColor = cc.c4b(174, 0, 255, 255)
+	},
+	[SystemMsgLabelType.kFight] = {
+		text = Strings:get("Chat_Label_Fight"),
+		titleColor = cc.c4b(134, 194, 255, 255)
 	}
 }
 SystemMessageWidget = class("SystemMessageWidget", BaseWidget, _M)

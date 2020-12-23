@@ -240,7 +240,10 @@ function DreamChallengeBuffDetailMediator:createAddInfo()
 		end
 
 		icon:removeAllChildren()
-		icon:loadTexture(kPartyIcon[partys[i]], ccui.TextureResType.localType)
+
+		local skillIcon = "asset/skillIcon/" .. effectConfig.Icon .. ".png"
+
+		icon:loadTexture(skillIcon, ccui.TextureResType.localType)
 		node4:addTo(infoView)
 		table.insert(addTable, node4)
 	end
@@ -262,7 +265,10 @@ function DreamChallengeBuffDetailMediator:createAddInfo()
 		end
 
 		icon:removeAllChildren()
-		icon:loadTexture(kJobIcon[jobs[i]], ccui.TextureResType.localType)
+
+		local skillIcon = "asset/skillIcon/" .. effectConfig.Icon .. ".png"
+
+		icon:loadTexture(skillIcon, ccui.TextureResType.localType)
 		node5:addTo(infoView)
 		table.insert(addTable, node5)
 	end

@@ -11,8 +11,200 @@
         "SupportHero": "",
         "Time": "",
         "Type": "",
+        "WinMail": "",
         "WinnerMail": "",
         "WinnerReward": ""
+    },
+    "ABS_Holiday_1": {
+        "LoserMail": "Mail_NewYear_SingingCompetition_RankLose",
+        "LoserReward": [
+            {
+                "rank": [
+                    1,
+                    1
+                ],
+                "reward": "Holiday_LostRankReward_1"
+            },
+            {
+                "rank": [
+                    2,
+                    2
+                ],
+                "reward": "Holiday_LostRankReward_2"
+            },
+            {
+                "rank": [
+                    3,
+                    3
+                ],
+                "reward": "Holiday_LostRankReward_3"
+            },
+            {
+                "rank": [
+                    10,
+                    4
+                ],
+                "reward": "Holiday_LostRankReward_4"
+            },
+            {
+                "rank": [
+                    50,
+                    11
+                ],
+                "reward": "Holiday_LostRankReward_5"
+            },
+            {
+                "rank": [
+                    200,
+                    51
+                ],
+                "reward": "Holiday_LostRankReward_6"
+            },
+            {
+                "rank": [
+                    500,
+                    201
+                ],
+                "reward": "Holiday_LostRankReward_7"
+            },
+            {
+                "rank": [
+                    1000,
+                    501
+                ],
+                "reward": "Holiday_LostRankReward_8"
+            },
+            {
+                "rank": [
+                    9999,
+                    1001
+                ],
+                "reward": "Holiday_LostRankReward_9"
+            }
+        ],
+        "Name": "ABSName_3_1",
+        "Next": "",
+        "PrepareTime": 604800,
+        "RestTime": 518400,
+        "ScoreMail": "Mail_Holiday_Activity_Point_1_1",
+        "ScoreReward": {
+            "10000": "Holiday_Reward_Finals_2",
+            "100000": "Holiday_Reward_Finals_20",
+            "110000": "Holiday_Reward_Finals_21",
+            "120000": "Holiday_Reward_Finals_22",
+            "130000": "Holiday_Reward_Finals_23",
+            "140000": "Holiday_Reward_Finals_24",
+            "15000": "Holiday_Reward_Finals_3",
+            "150000": "Holiday_Reward_Finals_25",
+            "160000": "Holiday_Reward_Finals_26",
+            "170000": "Holiday_Reward_Finals_27",
+            "180000": "Holiday_Reward_Finals_28",
+            "190000": "Holiday_Reward_Finals_29",
+            "20000": "Holiday_Reward_Finals_4",
+            "200000": "Holiday_Reward_Finals_30",
+            "210000": "Holiday_Reward_Finals_31",
+            "220000": "Holiday_Reward_Finals_32",
+            "230000": "Holiday_Reward_Finals_33",
+            "240000": "Holiday_Reward_Finals_34",
+            "25000": "Holiday_Reward_Finals_5",
+            "250000": "Holiday_Reward_Finals_35",
+            "260000": "Holiday_Reward_Finals_36",
+            "270000": "Holiday_Reward_Finals_37",
+            "280000": "Holiday_Reward_Finals_38",
+            "290000": "Holiday_Reward_Finals_39",
+            "30000": "Holiday_Reward_Finals_6",
+            "300000": "Holiday_Reward_Finals_40",
+            "35000": "Holiday_Reward_Finals_7",
+            "40000": "Holiday_Reward_Finals_8",
+            "45000": "Holiday_Reward_Finals_9",
+            "5000": "Holiday_Reward_Finals_1",
+            "50000": "Holiday_Reward_Finals_10",
+            "55000": "Holiday_Reward_Finals_11",
+            "60000": "Holiday_Reward_Finals_12",
+            "65000": "Holiday_Reward_Finals_13",
+            "70000": "Holiday_Reward_Finals_14",
+            "75000": "Holiday_Reward_Finals_15",
+            "80000": "Holiday_Reward_Finals_16",
+            "85000": "Holiday_Reward_Finals_17",
+            "90000": "Holiday_Reward_Finals_18",
+            "95000": "Holiday_Reward_Finals_19"
+        },
+        "SupportHero": [
+            "ABS_Holiday_1",
+            "ABS_Holiday_2"
+        ],
+        "Time": 259200,
+        "Type": 0,
+        "WinMail": [
+            "Holiday_red",
+            "Holiday_white"
+        ],
+        "WinnerMail": "Mail_NewYear_SingingCompetition_RankWin",
+        "WinnerReward": [
+            {
+                "rank": [
+                    1,
+                    1
+                ],
+                "reward": "Holiday_WinRankReward_1"
+            },
+            {
+                "rank": [
+                    2,
+                    2
+                ],
+                "reward": "Holiday_WinRankReward_2"
+            },
+            {
+                "rank": [
+                    3,
+                    3
+                ],
+                "reward": "Holiday_WinRankReward_3"
+            },
+            {
+                "rank": [
+                    10,
+                    4
+                ],
+                "reward": "Holiday_WinRankReward_4"
+            },
+            {
+                "rank": [
+                    50,
+                    11
+                ],
+                "reward": "Holiday_WinRankReward_5"
+            },
+            {
+                "rank": [
+                    200,
+                    51
+                ],
+                "reward": "Holiday_WinRankReward_6"
+            },
+            {
+                "rank": [
+                    500,
+                    201
+                ],
+                "reward": "Holiday_WinRankReward_7"
+            },
+            {
+                "rank": [
+                    1000,
+                    501
+                ],
+                "reward": "Holiday_WinRankReward_8"
+            },
+            {
+                "rank": [
+                    9999,
+                    1001
+                ],
+                "reward": "Holiday_WinRankReward_9"
+            }
+        ]
     },
     "ABS_WuXiuHui_1_1": {
         "LoserMail": "Mail_WuXiuHui_Activity_Lose_1_1",
@@ -141,6 +333,7 @@
         ],
         "Time": 59400,
         "Type": 0,
+        "WinMail": "",
         "WinnerMail": "Mail_WuXiuHui_Activity_Win_1_1",
         "WinnerReward": [
             {
@@ -370,6 +563,7 @@
         ],
         "Time": 59400,
         "Type": 0,
+        "WinMail": "",
         "WinnerMail": "Mail_WuXiuHui_Activity_Win_1_2",
         "WinnerReward": [
             {
@@ -599,6 +793,7 @@
         ],
         "Time": 59400,
         "Type": 0,
+        "WinMail": "",
         "WinnerMail": "Mail_WuXiuHui_Activity_Win_1_3",
         "WinnerReward": [
             {
@@ -828,6 +1023,7 @@
         ],
         "Time": 59400,
         "Type": 0,
+        "WinMail": "",
         "WinnerMail": "Mail_WuXiuHui_Activity_Win_1_4",
         "WinnerReward": [
             {
@@ -1057,6 +1253,7 @@
         ],
         "Time": 145800,
         "Type": 1,
+        "WinMail": "",
         "WinnerMail": "Mail_WuXiuHui_Activity_Win_2_1",
         "WinnerReward": [
             {
@@ -1286,6 +1483,7 @@
         ],
         "Time": 145800,
         "Type": 1,
+        "WinMail": "",
         "WinnerMail": "Mail_WuXiuHui_Activity_Win_2_2",
         "WinnerReward": [
             {
@@ -1518,6 +1716,7 @@
         ],
         "Time": 318600,
         "Type": 2,
+        "WinMail": "",
         "WinnerMail": "Mail_WuXiuHui_Activity_Win_3_1",
         "WinnerReward": [
             {
@@ -1740,6 +1939,7 @@
         ],
         "Time": 59400,
         "Type": 0,
+        "WinMail": "",
         "WinnerMail": "Mail_ZuoHe_Activity_Win_1_1",
         "WinnerReward": [
             {
@@ -1955,6 +2155,7 @@
         ],
         "Time": 59400,
         "Type": 0,
+        "WinMail": "",
         "WinnerMail": "Mail_ZuoHe_Activity_Win_1_2",
         "WinnerReward": [
             {
@@ -2170,6 +2371,7 @@
         ],
         "Time": 59400,
         "Type": 0,
+        "WinMail": "",
         "WinnerMail": "Mail_ZuoHe_Activity_Win_1_3",
         "WinnerReward": [
             {
@@ -2385,6 +2587,7 @@
         ],
         "Time": 59400,
         "Type": 0,
+        "WinMail": "",
         "WinnerMail": "Mail_ZuoHe_Activity_Win_1_4",
         "WinnerReward": [
             {
@@ -2600,6 +2803,7 @@
         ],
         "Time": 145800,
         "Type": 1,
+        "WinMail": "",
         "WinnerMail": "Mail_ZuoHe_Activity_Win_2_1",
         "WinnerReward": [
             {
@@ -2815,6 +3019,7 @@
         ],
         "Time": 145800,
         "Type": 1,
+        "WinMail": "",
         "WinnerMail": "Mail_ZuoHe_Activity_Win_2_2",
         "WinnerReward": [
             {
@@ -3033,6 +3238,7 @@
         ],
         "Time": 318600,
         "Type": 2,
+        "WinMail": "",
         "WinnerMail": "Mail_ZuoHe_Activity_Win_3_1",
         "WinnerReward": [
             {

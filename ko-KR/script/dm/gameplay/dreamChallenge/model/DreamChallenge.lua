@@ -253,10 +253,33 @@ function DreamChallenge:checkMapShow(mapId, info, curTime)
 	end
 
 	if cond and cond.Day then
-		local time = TimeUtil:formatStrToTImestamp(cond.Day)
+		local time = TimeUtil:formatStrToRemoteTImestamp(cond.Day)
 
 		if curTime < time then
 			isShow = false
+		end
+	end
+
+	local endCond = mapData:getMapEndCondition()
+
+	if endCond then
+		if endCond.type == "Day" then
+			local endTime = TimeUtil:formatStrToRemoteTImestamp(endCond.value)
+
+			if endTime < curTime then
+				isShow = false
+			end
+		elseif endCond.type == "SerDay" then
+			if cond and cond.Day then
+				local time = TimeUtil:formatStrToRemoteTImestamp(cond.Day)
+				local endTime = time + cond.value * 24 * 3600
+
+				if curTime > endTime then
+					isShow = false
+				end
+			else
+				isShow = false
+			end
 		end
 	end
 
@@ -267,7 +290,7 @@ function DreamChallenge:checkMapLock(mapId, info, curTime)
 	local tip = Strings:get("DreamChallenge_Map_Locked")
 	local mapData = self:getMapData(mapId)
 
-	if mapData:getOpenByServer() then
+	if mapData:getOpenByServer() and (mapData:getEndTime() == 0 or curTime < mapData:getEndTime()) then
 		return true
 	end
 
@@ -295,10 +318,33 @@ function DreamChallenge:checkMapLock(mapId, info, curTime)
 	end
 
 	if cond and cond.Day then
-		local time = TimeUtil:formatStrToTImestamp(cond.Day)
+		local time = TimeUtil:formatStrToRemoteTImestamp(cond.Day)
 
 		if curTime < time then
 			isShow = false
+		end
+	end
+
+	local endCond = mapData:getMapEndCondition()
+
+	if endCond then
+		if endCond.type == "Day" then
+			local endTime = TimeUtil:formatStrToRemoteTImestamp(endCond.value)
+
+			if endTime < curTime then
+				isShow = false
+			end
+		elseif endCond.type == "SerDay" then
+			if cond and cond.Day then
+				local time = TimeUtil:formatStrToRemoteTImestamp(cond.Day)
+				local endTime = time + cond.value * 24 * 3600
+
+				if curTime > endTime then
+					isShow = false
+				end
+			else
+				isShow = false
+			end
 		end
 	end
 
@@ -316,6 +362,30 @@ function DreamChallenge:checkMapPass(mapId)
 	end
 
 	return true
+end
+
+function DreamChallenge:getMapStartAndEndTime(mapId)
+	local mapData = self:getMapData(mapId)
+	local cond = mapData:getMapLockCondition()
+	local startTime = 0
+	local endTime = 0
+
+	if cond and cond.Day then
+		startTime = TimeUtil:formatStrToRemoteTImestamp(cond.Day)
+	end
+
+	local endCond = mapData:getMapEndCondition()
+
+	if endCond then
+		if endCond.type == "Day" then
+			endTime = TimeUtil:formatStrToRemoteTImestamp(endCond.value)
+		elseif endCond.type == "SerDay" and cond and cond.Day then
+			local time = TimeUtil:formatStrToRemoteTImestamp(cond.Day)
+			endTime = time + cond.value * 24 * 3600
+		end
+	end
+
+	return startTime, endTime
 end
 
 function DreamChallenge:checkPointShow(mapId, pointId, info, curTime, ownHeros)
@@ -363,14 +433,6 @@ function DreamChallenge:checkPointShow(mapId, pointId, info, curTime, ownHeros)
 
 				break
 			end
-		end
-	end
-
-	if cond and cond.Time then
-		local time = TimeUtil:formatStrToTImestamp(cond.Time)
-
-		if curTime < time then
-			isShow = false
 		end
 	end
 
@@ -422,14 +484,6 @@ function DreamChallenge:checkPointLock(mapId, pointId, info, curTime, ownHeros)
 
 				break
 			end
-		end
-	end
-
-	if cond and cond.Time then
-		local time = TimeUtil:formatStrToTImestamp(cond.Time)
-
-		if curTime < time then
-			isShow = false
 		end
 	end
 

@@ -249,6 +249,12 @@ local kExtResponseMap = {
 		instanceName = "BuildingSystem",
 		funcName = "tryEnterGetResView",
 		entry = ViewAreaEntry:new("BuildingGetResView")
+	},
+	ActivityBlockHolidayView = {
+		funcName = "complexActivityTryEnter",
+		instanceName = "ActivitySystem",
+		funcCheck = "checkComplexActivity",
+		entry = ViewAreaEntry:new("ActivityBlockHolidayView")
 	}
 }
 

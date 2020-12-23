@@ -939,5 +939,63 @@
             110,
             100
         ]
+    },
+    "DreamChallenge_TimeLimit_SD_N01": {
+        "AwakenAttrEffect": "DC_7star_buff",
+        "BlockPoint": [
+            "SD_N01M01",
+            "SD_N01M02",
+            "SD_N01M03",
+            "SD_N01M04",
+            "SD_N01M05",
+            "SD_N01M06",
+            "SD_N01M07",
+            "SD_N01M08",
+            "SD_N01M09",
+            "SD_N01M10",
+            "SD_N01M11",
+            "SD_N01M12"
+        ],
+        "Desc": "{\"type\":\"Day\",\"value\":\"2020-12-18  05:00:00\"}",
+        "EndDesc": "DreamChallenge_TimeLimit_SD_N01_EndDesc",
+        "Excellent": [
+            {
+                "Skill": "DC_T03_Tank_Buff",
+                "job": [
+                    "Defense"
+                ]
+            }
+        ],
+        "Master": [
+            "Master_XueZhan"
+        ],
+        "MissionPicType": 3,
+        "Name": "DreamChallenge_TimeLimit_SD_N01_Name",
+        "Num": 1,
+        "Pic": "mjt_txt_z_xntz_bgz",
+        "PointBackground": "mjt_img_z_xntz_bg",
+        "PointDesc": "DreamChallenge_TimeLimit_SD_N01_PointDesc",
+        "ShortDesc": "DreamChallenge_TimeLimit_SD_N01_ShortDesc",
+        "Show": "DreamChallenge_TimeLimit_SD_N01_Reward",
+        "ShowCondition": {
+            "Day": "2020-12-04  05:00:00",
+            "LEVEL": 5
+        },
+        "StarsAttrEffect": "DC_5star_buff",
+        "StoryLink": "",
+        "TabPic": "mjt_z_butten_x3",
+        "Type": 1,
+        "UnlockCondition": {
+            "Day": "2020-12-04  05:00:00",
+            "LEVEL": 5
+        },
+        "fatigue": 3,
+        "screen": {
+            "Down": []
+        },
+        "shifting": [
+            110,
+            100
+        ]
     }
 }

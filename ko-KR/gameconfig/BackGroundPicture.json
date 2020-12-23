@@ -17,6 +17,12 @@
         "Flash2": "",
         "Picture": "battle_event_3"
     },
+    "Battle_NewYear": {
+        "Extra": "",
+        "Flash1": "",
+        "Flash2": "",
+        "Picture": "anualshop_scene_battle_newyear"
+    },
     "Battle_Scene_1": {
         "Extra": "",
         "Flash1": "sss_youxichangjingshiyan",
@@ -203,6 +209,12 @@
         "Flash2": "",
         "Picture": "battle_scene_9"
     },
+    "Battle_Scene_Christmas": {
+        "Extra": "",
+        "Flash1": "",
+        "Flash2": "",
+        "Picture": "anualshop_scene_battle_newyear"
+    },
     "Battle_Scene_Dim1": {
         "Extra": "",
         "Flash1": "",
@@ -238,6 +250,12 @@
         "Flash1": "",
         "Flash2": "",
         "Picture": "battle_scene_map_4_1"
+    },
+    "Battle_Scene_Newyear": {
+        "Extra": "",
+        "Flash1": "",
+        "Flash2": "",
+        "Picture": "anualshop_scene_battle_christmas"
     },
     "Battle_Scene_Sp01": {
         "Extra": "",
@@ -304,6 +322,24 @@
         "Flash1": "",
         "Flash2": "",
         "Picture": "battle_scene_33"
+    },
+    "Bg_Copy_ANewYea_1": {
+        "Extra": "",
+        "Flash1": "",
+        "Flash2": "",
+        "Picture": "anualshop_scene_stagenewyear"
+    },
+    "Bg_Copy_ANewYea_2": {
+        "Extra": "",
+        "Flash1": "",
+        "Flash2": "",
+        "Picture": "anualshop_scene_stagenewyear2"
+    },
+    "Bg_Copy_ANewYea_3": {
+        "Extra": "",
+        "Flash1": "",
+        "Flash2": "",
+        "Picture": "anualshop_scene_stagechristmas"
     },
     "Bg_Copy_Halloween_1": {
         "Extra": "",
@@ -454,6 +490,18 @@
         "Flash1": "zhujiemian2_zhujiemianchangjing2",
         "Flash2": "",
         "Picture": ""
+    },
+    "Login_Scene_Christmas": {
+        "Extra": "",
+        "Flash1": "christmas_newyearlogin",
+        "Flash2": "",
+        "Picture": "anualshop_scene_christmaslogin"
+    },
+    "Login_Scene_Newyear": {
+        "Extra": "",
+        "Flash1": "newyear_newyearlogin",
+        "Flash2": "",
+        "Picture": "anualshop_scene_newyearlogin"
     },
     "Main_Event_01": {
         "Extra": "",
@@ -628,5 +676,41 @@
         "Flash1": "",
         "Flash2": "",
         "Picture": "main_img_zxxz02"
+    },
+    "Main_Scene_Christmas": {
+        "Extra": "",
+        "Flash1": "christmas_citynight",
+        "Flash2": "",
+        "Picture": "anualshop_scene_main_christmas"
+    },
+    "Main_Scene_Newyear": {
+        "Extra": "",
+        "Flash1": "newyear_citynight",
+        "Flash2": "",
+        "Picture": "anualshop_scene_main_newyear"
+    },
+    "Newyear_Activity_StageChristmas": {
+        "Extra": "",
+        "Flash1": "",
+        "Flash2": "",
+        "Picture": "anualshop_scene_stagechristmas"
+    },
+    "Newyear_Activity_StageMain": {
+        "Extra": "",
+        "Flash1": "",
+        "Flash2": "",
+        "Picture": "anualshop_scene_stagemain"
+    },
+    "Newyear_Activity_StageNewyear": {
+        "Extra": "",
+        "Flash1": "",
+        "Flash2": "",
+        "Picture": "anualshop_scene_stagenewyear"
+    },
+    "Newyear_Activity_StageNewyear2": {
+        "Extra": "",
+        "Flash1": "",
+        "Flash2": "",
+        "Picture": "anualshop_scene_stagenewyear2"
     }
 }

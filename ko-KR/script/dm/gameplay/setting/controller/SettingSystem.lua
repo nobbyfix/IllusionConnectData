@@ -966,11 +966,40 @@ function SettingSystem:getShowHeadImgList()
 	return list
 end
 
+function SettingSystem:getLimitTimeBg()
+	local allBg = ConfigReader:getDataTable("HomeBackground")
+
+	for id, v in pairs(allBg) do
+		local unlockCondition = v.Condition
+		local isUnlock, argeNum = self:checkCondition(unlockCondition)
+
+		if isUnlock and v.TimeFactor then
+			local key = "HomeViewBG_ForceChange" .. id
+			local value = cc.UserDefault:getInstance():getBoolForKey(key, false)
+
+			if not value then
+				local startDate = TimeUtil:parseDateTime(nil, v.TimeFactor.start)
+				local curTime = self:getInjector():getInstance(GameServerAgent):remoteTimestamp()
+				local startTs = TimeUtil:timeByRemoteDate(startDate)
+				local endDate = TimeUtil:parseDateTime(nil, v.TimeFactor["end"])
+				local endTs = TimeUtil:timeByRemoteDate(endDate)
+
+				if startTs < curTime and curTime < endTs then
+					cc.UserDefault:getInstance():setBoolForKey(key, true)
+
+					return id
+				end
+			end
+		end
+	end
+end
+
 function SettingSystem:getHomeBgId()
 	local defValue = ConfigReader:getDataByNameIdAndKey("ConfigValue", "HomeBackground_Default", "content")
 	local value = cc.UserDefault:getInstance():getStringForKey("HomeViewBG_ID", defValue)
+	local limitId = self:getLimitTimeBg()
 
-	return value
+	return limitId or value
 end
 
 function SettingSystem:setHomeBgId(id)
@@ -1195,12 +1224,14 @@ KTabType = {
 KFrameType = {
 	RARE = "RARE",
 	ACTIVITY = "ACTIVITY",
-	FESTIVAL = "FESTIVAL"
+	FESTIVAL = "FESTIVAL",
+	Zodiac = "ZODIAC"
 }
 KFrameSort = {
 	ALL = 0,
 	ACTIVITY = 1,
 	FESTIVAL = 2,
+	ZODIAC = 4,
 	RARE = 3
 }
 

@@ -214,7 +214,17 @@ function HealthSystem:performHealthDamage(actor, target, damage, lowerLimit, wor
 	return result
 end
 
-function HealthSystem:performHealthReduce(target, damage, workId)
+function HealthSystem:performCheckDeadlyDamage(actor, target, damage)
+	if self._skillSystem then
+		self._skillSystem:activateGlobalTrigger("UNIT_DEADHPREDUCE", {
+			actor = actor,
+			target = target,
+			damage = damage
+		})
+	end
+end
+
+function HealthSystem:performHealthReduce(target, damage, workId, actor)
 	if self._damageDisabled then
 		return nil
 	end
@@ -277,6 +287,7 @@ function HealthSystem:performHealthReduce(target, damage, workId)
 		if damageResult ~= nil then
 			result.eft = damageResult.eft
 			result.val = damageResult.val
+			result.deadly = damageResult.result
 		end
 	end
 
@@ -289,6 +300,28 @@ function HealthSystem:performHealthReduce(target, damage, workId)
 	end
 
 	local curHpRatio = targetHpComp:getHpRatio()
+
+	if floor(prevHpRatio * 100) ~= floor(curHpRatio * 100) then
+		self._skillSystem:activateGlobalTrigger("UNIT_HPCHANGE", {
+			how = "Reduce",
+			unit = target,
+			prevHpPercent = floor(prevHpRatio * 100),
+			curHpPercent = floor(curHpRatio * 100),
+			actor = actor,
+			hurt = result or {}
+		})
+
+		if actor and result and result.deadly then
+			self._skillSystem:activateGlobalTrigger("UNIT_BEKILLED", {
+				unit = target,
+				prevHpPercent = floor(prevHpRatio * 100),
+				curHpPercent = floor(curHpRatio * 100),
+				how = how,
+				actor = actor,
+				hurt = result
+			})
+		end
+	end
 
 	return result
 end

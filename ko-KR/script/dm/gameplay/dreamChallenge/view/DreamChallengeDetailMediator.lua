@@ -130,7 +130,24 @@ function DreamChallengeDetailMediator:refreshView()
 
 		if timeStrKey and timeStrKey ~= "" then
 			timeNode:setVisible(true)
-			timeStrKey:setString(Strings:get(timeStrKey))
+
+			local startStamp, endStamp = self._dreamSystem:getMapStartAndEndTime(self._mapId)
+			local startTime = TimeUtil:localDate("%Y.%m.%d %H:%M", startStamp)
+			local endTime = TimeUtil:localDate("%Y.%m.%d %H:%M", endStamp)
+			local str = Strings:get(timeStrKey, {
+				StartTime = startTime,
+				EndTime = endTime,
+				fontName = CUSTOM_TTF_FONT_1
+			})
+
+			dump(str, "str >>>>>>>>>>>>>")
+
+			local richText = ccui.RichText:createWithXML("", {})
+
+			richText:setAnchorPoint(timeText:getAnchorPoint())
+			richText:setPosition(cc.p(timeText:getPosition()))
+			richText:addTo(timeText:getParent())
+			richText:setString(str)
 		end
 
 		local desc = self._detailView:getChildByFullName("pointDesc")
@@ -229,9 +246,12 @@ function DreamChallengeDetailMediator:refreshView()
 			local icon = node:getChildByFullName("icon")
 			local iconTexture = kOtherHeroIcon
 			local infoDesc = ""
+			local infoTitle = ""
 
 			if data.type == "job" then
-				attackText:setString(Strings:get("TypeName_" .. data.value))
+				infoTitle = Strings:get("TypeName_" .. data.value)
+
+				attackText:setString(infoTitle)
 				icon:loadTexture(kJobIcon[data.value], ccui.TextureResType.localType)
 
 				iconTexture = kJobIcon[data.value]
@@ -241,7 +261,9 @@ function DreamChallengeDetailMediator:refreshView()
 					restrict = restrictStr
 				})
 			elseif data.type == "Party" then
-				attackText:setString(Strings:get("HeroPartyName_" .. data.value))
+				infoTitle = Strings:get("HeroPartyName_" .. data.value)
+
+				attackText:setString(infoTitle)
 				icon:loadTexture(kPartyIcon[data.value], ccui.TextureResType.localType)
 
 				infoDesc = Strings:get("DreamChallenge_Point_Team_Desc_" .. data.value, {
@@ -251,7 +273,9 @@ function DreamChallengeDetailMediator:refreshView()
 				})
 				iconTexture = kPartyIcon[data.value]
 			elseif data.type == "Tag" then
-				attackText:setString(Strings:get("DC_Map_OtherHero_IconName"))
+				infoTitle = Strings:get("DC_Map_OtherHero_IconName")
+
+				attackText:setString(infoTitle)
 				icon:loadTexture(kOtherHeroIcon, ccui.TextureResType.localType)
 
 				infoDesc = Strings:get("DreamChallenge_Point_Team_Desc_Tag", {
@@ -265,7 +289,7 @@ function DreamChallengeDetailMediator:refreshView()
 			local touchInfo = {
 				icon = iconTexture,
 				type = RewardType.kShow,
-				title = teamTitleStr,
+				title = infoTitle,
 				desc = infoDesc
 			}
 
@@ -287,7 +311,20 @@ function DreamChallengeDetailMediator:refreshView()
 
 		if timeStrKey and timeStrKey ~= "" then
 			timeNode:setVisible(true)
-			timeStrKey:setString(Strings:get(timeStrKey))
+
+			local startStamp, endStamp = self._dreamSystem:getMapStartAndEndTime(self._mapId)
+			local startTime = TimeUtil:localDate("%Y.%m.%d %H:%M", startStamp)
+			local endTime = TimeUtil:localDate("%Y.%m.%d %H:%M", endStamp)
+			local str = Strings:get(timeStrKey, {
+				StartTime = startTime,
+				EndTime = endTime,
+				fontName = CUSTOM_TTF_FONT_1
+			})
+			local richText = ccui.RichText:createWithXML(str, {})
+
+			richText:setAnchorPoint(timeText:getAnchorPoint())
+			richText:setPosition(cc.p(timeText:getPosition()))
+			richText:addTo(timeText:getParent())
 		end
 
 		local rewardPanel = self._lockView:getChildByFullName("rewardPanel")

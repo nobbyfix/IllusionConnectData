@@ -366,6 +366,8 @@ function RewardSystem.class:parseInfo(rewardData)
 		info.id = rewardData.code
 		info.buffType = rewardData.buffType or "Buff"
 		info.desc = rewardData.desc
+		info.title = rewardData.title
+		info.icon = rewardData.icon
 	else
 		info.id = rewardData.code
 	end

@@ -29,7 +29,8 @@ function RechargeTipMediator:enterWithData(data)
 	for i = 1, #infos do
 		local info = infos[#infos + 1 - i]
 		local desc = Strings:get(info, {
-			fontName = TTF_FONT_FZYH_M
+			fontName = TTF_FONT_FZYH_M,
+			time = TimeUtil:getSystemResetDate()
 		})
 		local label = ccui.RichText:createWithXML(desc, {})
 

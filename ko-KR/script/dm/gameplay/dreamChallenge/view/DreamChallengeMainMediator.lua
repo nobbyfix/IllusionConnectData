@@ -43,7 +43,7 @@ function DreamChallengeMainMediator:enterWithData(data)
 	self:initWigetInfo()
 	self:initData(data)
 	self:setupTopView()
-	self:setMapData()
+	self:setMapData(data)
 	self:createTreeView()
 	self:checkPointPassViewShow()
 end
@@ -123,7 +123,7 @@ function DreamChallengeMainMediator:onClickBack(sender, eventType)
 	self:dismiss()
 end
 
-function DreamChallengeMainMediator:setMapData()
+function DreamChallengeMainMediator:setMapData(data)
 	if self._fromBattle then
 		return
 	end
@@ -136,6 +136,14 @@ function DreamChallengeMainMediator:setMapData()
 		local isPass = self._dreamSystem:checkMapPass(mapList[i])
 
 		if isShow and isUnLock then
+			if data.mapId == mapList[i] then
+				self._mapId = mapList[i]
+				local pointIds = self._dreamSystem:getPointIds(mapList[i])
+				self._pointId = pointIds[#pointIds]
+
+				break
+			end
+
 			if isPass then
 				self._mapId = mapList[i]
 				local pointIds = self._dreamSystem:getPointIds(mapList[i])
@@ -159,8 +167,9 @@ function DreamChallengeMainMediator:setMapData()
 		end
 	end
 
-	assert(self._mapId ~= nil, "没有可展示的梦境塔mapId，请检查配置")
-	assert(self._pointId ~= nil, "没有可展示的梦境塔pointId，请检查配置")
+	if self._mapId == nil or self._pointId == nil then
+		self:dispatch(Event:new(EVT_POP_TO_TARGETVIEW, "homeView"))
+	end
 end
 
 function DreamChallengeMainMediator:createTreeView()
@@ -175,6 +184,33 @@ function DreamChallengeMainMediator:createTreeView()
 		self._tree:createRoot(node0, "root", 0, true)
 
 		local mapList = self._dreamSystem:getMapIds()
+
+		table.sort(mapList, function (a, b)
+			local typeA = ConfigReader:getDataByNameIdAndKey("DreamChallengeMap", a, "DCType") or 2
+			local sortA = ConfigReader:getDataByNameIdAndKey("DreamChallengeMap", a, "ListLocationNum")
+
+			if sortA == nil then
+				if typeA == 1 then
+					sortA = -1
+				else
+					sortA = 9999
+				end
+			end
+
+			local typeB = ConfigReader:getDataByNameIdAndKey("DreamChallengeMap", b, "DCType") or 2
+			local sortB = ConfigReader:getDataByNameIdAndKey("DreamChallengeMap", b, "ListLocationNum")
+
+			if sortB == nil then
+				if typeB == 1 then
+					sortB = -1
+				else
+					sortB = 9999
+				end
+			end
+
+			return sortA < sortB
+		end)
+
 		local firstNodeIndex = 0
 
 		for i = 1, #mapList do
@@ -260,13 +296,22 @@ function DreamChallengeMainMediator:checkPointPassViewShow()
 end
 
 function DreamChallengeMainMediator:onMapCellClick(data)
+	local towerType = ConfigReader:getDataByNameIdAndKey("DreamChallengeMap", data.mapId, "DCType")
 	local isLock, tip = self._dreamSystem:checkMapLock(data.mapId)
 
 	if not isLock then
-		self:dispatch(ShowTipEvent({
-			duration = 0.35,
-			tip = tip
-		}))
+		if towerType == 1 then
+			self:dispatch(ShowTipEvent({
+				duration = 0.35,
+				tip = Strings:get("ActivityBlock_UI_8")
+			}))
+			self:dispatch(Event:new(EVT_POP_TO_TARGETVIEW, "homeView"))
+		else
+			self:dispatch(ShowTipEvent({
+				duration = 0.35,
+				tip = tip
+			}))
+		end
 
 		return
 	end
@@ -290,6 +335,26 @@ function DreamChallengeMainMediator:onMapCellClick(data)
 end
 
 function DreamChallengeMainMediator:onPointCellClick(data)
+	local towerType = ConfigReader:getDataByNameIdAndKey("DreamChallengeMap", data.mapId, "DCType")
+	local isLock, tip = self._dreamSystem:checkMapLock(data.mapId)
+
+	if not isLock then
+		if towerType == 1 then
+			self:dispatch(ShowTipEvent({
+				duration = 0.35,
+				tip = Strings:get("ActivityBlock_UI_8")
+			}))
+			self:dispatch(Event:new(EVT_POP_TO_TARGETVIEW, "homeView"))
+		else
+			self:dispatch(ShowTipEvent({
+				duration = 0.35,
+				tip = tip
+			}))
+		end
+
+		return
+	end
+
 	self._mapId = data.mapId
 	self._pointId = data.pointId
 	local mapIndex = data.mapIndex

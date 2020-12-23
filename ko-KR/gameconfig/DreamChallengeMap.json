@@ -13,7 +13,9 @@
             "DreamChallengePoint_T01N04"
         ],
         "Control": 1,
+        "DCType": 2,
         "LimitTimeTxt": "",
+        "ListLocationNum": 20001,
         "Name": "DreamChallenge_1_Name",
         "ShowCondition": {
             "LEVEL": 32
@@ -42,7 +44,9 @@
             "DreamChallengePoint_T02N04"
         ],
         "Control": 1,
+        "DCType": 2,
         "LimitTimeTxt": "",
+        "ListLocationNum": 20002,
         "Name": "DreamChallenge_2_Name",
         "ShowCondition": {
             "LEVEL": 32
@@ -70,7 +74,9 @@
             "DreamChallengePoint_T03N03"
         ],
         "Control": 1,
+        "DCType": 2,
         "LimitTimeTxt": "",
+        "ListLocationNum": 20003,
         "Name": "DreamChallenge_3_Name",
         "ShowCondition": {
             "LEVEL": 32
@@ -98,7 +104,9 @@
             "DreamChallengePoint_T04N03"
         ],
         "Control": 1,
+        "DCType": 2,
         "LimitTimeTxt": "",
+        "ListLocationNum": 20004,
         "Name": "DreamChallenge_4_Name",
         "ShowCondition": {
             "LEVEL": 32
@@ -111,6 +119,37 @@
         },
         "UnlockCondition": {
             "LEVEL": 50
+        }
+    },
+    "DreamChallenge_TimeLimit_SD": {
+        "BGM": [
+            "Mus_Story_Dongwenhui",
+            "",
+            ""
+        ],
+        "Background": "mjt_img_z_xntz_bg",
+        "BlockPoint": [
+            "DreamChallenge_TimeLimit_SD_N01"
+        ],
+        "Control": 1,
+        "DCType": 1,
+        "LimitTimeTxt": "DreamChallenge_TimeShow",
+        "ListLocationNum": 10001,
+        "Name": "DreamChallenge_TimeLimit_SD_Name",
+        "ShowCondition": {
+            "Day": "2021-01-01  05:00:00",
+            "LEVEL": 5
+        },
+        "Story": "",
+        "TabPic": "mjt_txt_z_xntz_but",
+        "Tag": "",
+        "TimeFactor": {
+            "type": "Day",
+            "value": "2021-01-09  05:00:00"
+        },
+        "UnlockCondition": {
+            "Day": "2021-01-01  05:00:00",
+            "LEVEL": 5
         }
     }
 }

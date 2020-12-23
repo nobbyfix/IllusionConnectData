@@ -57,6 +57,10 @@ local ActivityPointCostConfig = {
 	[CurrencyIdKind.kAcitvitySnowPower] = {
 		tips = "ACTIVITY_Snowflake_NOT_ENOUGH_1",
 		func = "getAcitvitySnowPower"
+	},
+	[CurrencyIdKind.kActivityHolidayPower] = {
+		tips = "IR_NewyearStaminaWarning",
+		func = "getActivityHolidayPower"
 	}
 }
 
@@ -106,6 +110,8 @@ function ActivityPointDetailMediator:glueFieldAndUi()
 	self._challengeBtn = self._rightPanel:getChildByFullName("challenge_btn")
 	self._teamPanel = self._rightPanel:getChildByName("Panel_team")
 	self._teamCombatPanel = self._rightPanel:getChildByName("team_combat")
+	self._spPowerPanel = self._main:getChildByFullName("rightPanel.spPowerPanel")
+	self._fightInfoPanel = self._rightPanel:getChildByFullName("fightInfo")
 	local dropListView = self._dropPanel:getChildByName("dropListView")
 
 	dropListView:setScrollBarEnabled(false)
@@ -119,6 +125,13 @@ end
 function ActivityPointDetailMediator:enterWithData(data)
 	self._enterBattle = false
 	self._activityId = data.activityId
+	self._activity = self._activitySystem:getActivityById(self._activityId)
+
+	if not self._activity then
+		return
+	end
+
+	self._model = self._activity:getBlockMapActivity()
 	self._parent = data.parent
 	self._model = self._parent._model
 	self._mapId = self._parent._mapId
@@ -142,6 +155,52 @@ function ActivityPointDetailMediator:enterWithData(data)
 	else
 		self:setupView()
 		self:initAnim()
+	end
+
+	self:setupSpPowerPanel()
+end
+
+function ActivityPointDetailMediator:setupSpPowerPanel()
+	local fightId = self._point:getConfig().ConfigLevelLimitID
+	local combatInfoBtn = self._spPowerPanel:getChildByFullName("combatInfoBtn")
+
+	if fightId and fightId ~= "" then
+		self._teamCombatPanel:setVisible(false)
+		self._combatPanel:setVisible(false)
+		self._spPowerPanel:setVisible(true)
+		combatInfoBtn:addTouchEventListener(function (sender, eventType)
+			if eventType == ccui.TouchEventType.began then
+				self._fightInfoPanel:removeAllChildren()
+
+				local level = DataReader:getDataByNameIdAndKey("ConfigLevelLimit", fightId, "StandardLv")
+				local desc = Strings:get("SpPower_ShowDescTitle", {
+					fontSize = 20,
+					fontName = TTF_FONT_FZYH_M,
+					level = level
+				})
+				local richText = ccui.RichText:createWithXML(desc, {})
+
+				richText:setAnchorPoint(cc.p(0, 0))
+				richText:setPosition(cc.p(10, 10))
+				richText:addTo(self._fightInfoPanel)
+				richText:renderContent(440, 0, true)
+
+				local size = richText:getContentSize()
+
+				self._fightInfoPanel:setContentSize(460, size.height + 20)
+				self._fightInfoPanel:setVisible(true)
+			elseif eventType == ccui.TouchEventType.moved then
+				-- Nothing
+			elseif eventType == ccui.TouchEventType.canceled then
+				self._fightInfoPanel:setVisible(false)
+			elseif eventType == ccui.TouchEventType.ended then
+				self._fightInfoPanel:setVisible(false)
+			end
+		end)
+	else
+		self._teamCombatPanel:setVisible(true)
+		self._combatPanel:setVisible(true)
+		self._spPowerPanel:setVisible(false)
 	end
 end
 
@@ -225,6 +284,7 @@ function ActivityPointDetailMediator:initAnim()
 	local teamCombatPanel = mc:getChildByFullName("teamCombat")
 
 	self._teamCombatPanel:changeParent(teamCombatPanel):center(teamCombatPanel:getContentSize())
+	self._spPowerPanel:changeParent(teamCombatPanel):center(teamCombatPanel:getContentSize())
 
 	local heroRole = mc:getChildByFullName("hero")
 
@@ -342,6 +402,7 @@ function ActivityPointDetailMediator:initBossAnim()
 	local teamCombatPanel = mc:getChildByFullName("teamCombat")
 
 	self._teamCombatPanel:changeParent(teamCombatPanel):center(teamCombatPanel:getContentSize())
+	self._spPowerPanel:changeParent(teamCombatPanel):center(teamCombatPanel:getContentSize())
 
 	local heroRole = mc:getChildByFullName("hero")
 
@@ -474,6 +535,7 @@ function ActivityPointDetailMediator:setupView()
 		rewardTitle:setString(Strings:get("STAGE_FIRST_DROP_TITLE"))
 	end
 
+	local ui = self._model:getUI()
 	local dropListView = self._dropPanel:getChildByFullName("dropListView")
 
 	if rewards then
@@ -497,6 +559,62 @@ function ActivityPointDetailMediator:setupView()
 			icon:setScaleNotCascade(0.5)
 			iconPanel:setScale(0.01)
 			dropListView:pushBackCustomItem(iconPanel)
+
+			if ui == "ACTIVITYBLOCKMAPHoliday" then
+				local markImg = ccui.ImageView:create("asset/common/shaungdan_img_xianshidiaoluojiaobiao.png")
+
+				markImg:addTo(icon, 10000):posite(45, 95):setScale(1.2)
+
+				local strId = isFirst and "STAGE_FIRST_DROP_TITLE" or "STAGE_NORMAL_DROP_TITLE"
+				local text = ccui.Text:create(Strings:get(strId), TTF_FONT_FZYH_M, 18)
+
+				text:addTo(markImg):center(markImg:getContentSize()):offset(-3, 3)
+			end
+		end
+	end
+
+	if ui == "ACTIVITYBLOCKMAPHoliday" then
+		rewardTitle:setVisible(false)
+		dropListView:offset(-80, 0)
+
+		local extraActId = self._activity:getActivityConfig().ActivityExtra
+		local extraAct = self._activitySystem:getActivityById(extraActId)
+
+		if extraAct then
+			local rewardId = extraAct:getActivityConfig().ShowReward
+			local rewards = ConfigReader:getDataByNameIdAndKey("Reward", rewardId, "Content")
+
+			if rewards then
+				local size = cc.size(69, 69)
+
+				for index, reward in ipairs(rewards) do
+					local icon = IconFactory:createRewardIcon(reward, {
+						isWidget = true,
+						showAmount = isFirst
+					})
+
+					IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), reward, {
+						needDelay = true
+					})
+
+					local iconPanel = ccui.Layout:create()
+
+					iconPanel:setAnchorPoint(cc.p(0.5, 0.5))
+					iconPanel:setContentSize(size)
+					icon:addTo(iconPanel):center(size)
+					icon:setScaleNotCascade(0.5)
+					iconPanel:setScale(0.01)
+					dropListView:pushBackCustomItem(iconPanel)
+
+					local markImg = ccui.ImageView:create("asset/common/shaungdan_img_xianshidiaoluojiaobiao.png")
+
+					markImg:addTo(icon, 10000):posite(45, 95):setScale(1.2)
+
+					local text = ccui.Text:create(Strings:get("Newyear_Item_LimitedTimeDrop"), TTF_FONT_FZYH_M, 18)
+
+					text:addTo(markImg):center(markImg:getContentSize()):offset(-3, 3)
+				end
+			end
 		end
 	end
 
@@ -550,6 +668,7 @@ function ActivityPointDetailMediator:setupBossView()
 		rewardTitle:setString(Strings:get("STAGE_FIRST_DROP_TITLE"))
 	end
 
+	local ui = self._model:getUI()
 	local dropListView = self._dropPanel:getChildByFullName("dropListView")
 
 	if rewards then
@@ -573,6 +692,61 @@ function ActivityPointDetailMediator:setupBossView()
 			icon:setScaleNotCascade(0.5)
 			iconPanel:setScale(0.01)
 			dropListView:pushBackCustomItem(iconPanel)
+
+			if ui == "ACTIVITYBLOCKMAPHoliday" then
+				local markImg = ccui.ImageView:create("asset/common/shaungdan_img_xianshidiaoluojiaobiao.png")
+
+				markImg:addTo(icon, 10000):posite(45, 95):setScale(1.2)
+
+				local text = ccui.Text:create(Strings:get("STAGE_FIRST_DROP_TITLE"), TTF_FONT_FZYH_M, 18)
+
+				text:addTo(markImg):center(markImg:getContentSize()):offset(-3, 3)
+			end
+		end
+	end
+
+	if ui == "ACTIVITYBLOCKMAPHoliday" then
+		rewardTitle:setVisible(false)
+		dropListView:offset(-80, 0)
+
+		local extraActId = self._activity:getActivityConfig().ActivityExtra
+		local extraAct = self._activitySystem:getActivityById(extraActId)
+
+		if extraAct then
+			local rewardId = extraAct:getActivityConfig().ShowReward
+			local rewards = ConfigReader:getDataByNameIdAndKey("Reward", rewardId, "Content")
+
+			if rewards then
+				local size = cc.size(69, 69)
+
+				for index, reward in ipairs(rewards) do
+					local icon = IconFactory:createRewardIcon(reward, {
+						isWidget = true,
+						showAmount = isFirst
+					})
+
+					IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), reward, {
+						needDelay = true
+					})
+
+					local iconPanel = ccui.Layout:create()
+
+					iconPanel:setAnchorPoint(cc.p(0.5, 0.5))
+					iconPanel:setContentSize(size)
+					icon:addTo(iconPanel):center(size)
+					icon:setScaleNotCascade(0.5)
+					iconPanel:setScale(0.01)
+					dropListView:pushBackCustomItem(iconPanel)
+
+					local markImg = ccui.ImageView:create("asset/common/shaungdan_img_xianshidiaoluojiaobiao.png")
+
+					markImg:addTo(icon, 10000):posite(45, 95):setScale(1.2)
+
+					local text = ccui.Text:create(Strings:get("Newyear_Item_LimitedTimeDrop"), TTF_FONT_FZYH_M, 18)
+
+					text:addTo(markImg):center(markImg:getContentSize()):offset(-3, 3)
+				end
+			end
 		end
 	end
 

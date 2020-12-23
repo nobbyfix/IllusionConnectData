@@ -63,15 +63,19 @@ function DreamChallengeMap:synchronize(data)
 	end
 
 	if data.endTime then
-		self._endTime = data.endTime
+		self._endTime = data.endTime / 1000
 	end
 end
 
 function DreamChallengeMap:delete(data)
-	if data.dreamPoints then
-		for k, v in pairs(data.dreamPoints) do
-			self._dreamPoints[k]:delete(v)
+	if type(data) == "table" then
+		if data.dreamPoints then
+			for k, v in pairs(data.dreamPoints) do
+				self._dreamPoints[k]:delete(v)
+			end
 		end
+	else
+		self._openByServer = false
 	end
 end
 
@@ -149,6 +153,10 @@ end
 
 function DreamChallengeMap:getMapShowCondition()
 	return self._mapConfig.ShowCondition
+end
+
+function DreamChallengeMap:getMapEndCondition()
+	return self._mapConfig.TimeFactor
 end
 
 function DreamChallengeMap:getMapLockCondition()

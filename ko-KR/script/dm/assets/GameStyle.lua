@@ -244,16 +244,7 @@ local kCnStrArr = {
 function GameStyle:intNumToCnString(num)
 	num = tonumber(num)
 
-	if num and num > 0 and num < 100 then
-		local d1 = num % 10
-		local d2 = (num - d1) * 0.1
-
-		return (d2 >= 1 and (d2 > 1 and kCnStrArr[d2] or "") .. "十" or "") .. kCnStrArr[d1]
-	elseif num == 0 then
-		return "零"
-	else
-		return ""
-	end
+	return num
 end
 
 local kCnStrArr = {

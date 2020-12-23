@@ -1055,6 +1055,61 @@ end
 function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 	local this = _env.this
 	local global = _env.global
+
+	if global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "AJYHou_Passive")) > 0 and global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "AJYHou_Passive_Done")) == 0 then
+		local hp_ajyh = global.UnitPropGetter(_env, "hp")(_env, target)
+		local shield_ajyh = global.UnitPropGetter(_env, "shield")(_env, target)
+
+		if global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "IMMUNE")) == 0 and global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "UNDEAD")) == 0 and damage.val > hp_ajyh + shield_ajyh then
+			for _, unit in global.__iter__(global.RandomN(_env, 1, global.AllUnits(_env, global.TEAMMATES_OF(_env, target) * global.PETS - global.ONESELF(_env, target)))) do
+				local buff_AJYHou = global.DeathImmuneEffect(_env, 1)
+
+				global.ApplyBuff_Buff(_env, target, unit, {
+					timing = 1,
+					duration = 1,
+					display = "Undead",
+					tags = {
+						"STATUS",
+						"NUMERIC",
+						"BUFF",
+						"AJYHou_Passive_Undead",
+						"UNDISPELLABLE",
+						"UNSTEALABLE",
+						"UNDEAD"
+					}
+				}, {
+					buff_AJYHou
+				}, 1, 0)
+				global.ApplyHPDamage_ResultCheck(_env, actor, unit, damage)
+				global.AddAnim(_env, {
+					loop = 1,
+					anim = "cisha_zhanshupai",
+					zOrder = "TopLayer",
+					pos = global.UnitPos(_env, unit)
+				})
+
+				damage.val = 0
+				local buffeft_AJYHou = global.SpecialNumericEffect(_env, "+done", {
+					"?Normal"
+				}, 1)
+
+				global.ApplyBuff(_env, target, {
+					timing = 1,
+					duration = 1,
+					tags = {
+						"STATUS",
+						"NUMERIC",
+						"AJYHou_Passive_Done",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft_AJYHou
+				})
+			end
+		end
+	end
+
 	local result = global.ApplyHPDamage(_env, target, damage, lowerLimit)
 
 	if result and result.deadly then
@@ -1298,6 +1353,61 @@ end
 function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 	local this = _env.this
 	local global = _env.global
+
+	if global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "AJYHou_Passive")) > 0 and global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "AJYHou_Passive_Done")) == 0 then
+		local hp_ajyh = global.UnitPropGetter(_env, "hp")(_env, target)
+		local shield_ajyh = global.UnitPropGetter(_env, "shield")(_env, target)
+
+		if global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "IMMUNE")) == 0 and global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "UNDEAD")) == 0 and damage.val > hp_ajyh + shield_ajyh then
+			for _, unit in global.__iter__(global.RandomN(_env, 1, global.AllUnits(_env, global.TEAMMATES_OF(_env, target) * global.PETS - global.ONESELF(_env, target)))) do
+				local buff_AJYHou = global.DeathImmuneEffect(_env, 1)
+
+				global.ApplyBuff_Buff(_env, target, unit, {
+					timing = 1,
+					duration = 1,
+					display = "Undead",
+					tags = {
+						"STATUS",
+						"NUMERIC",
+						"BUFF",
+						"AJYHou_Passive_Undead",
+						"UNDISPELLABLE",
+						"UNSTEALABLE",
+						"UNDEAD"
+					}
+				}, {
+					buff_AJYHou
+				}, 1, 0)
+				global.ApplyAOEHPDamage_ResultCheck(_env, actor, unit, damage)
+				global.AddAnim(_env, {
+					loop = 1,
+					anim = "cisha_zhanshupai",
+					zOrder = "TopLayer",
+					pos = global.UnitPos(_env, unit)
+				})
+
+				damage.val = 0
+				local buffeft_AJYHou = global.SpecialNumericEffect(_env, "+done", {
+					"?Normal"
+				}, 1)
+
+				global.ApplyBuff(_env, target, {
+					timing = 1,
+					duration = 1,
+					tags = {
+						"STATUS",
+						"NUMERIC",
+						"AJYHou_Passive_Done",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft_AJYHou
+				})
+			end
+		end
+	end
+
 	local result = global.ApplyHPDamage(_env, target, damage, lowerLimit)
 
 	if result and result.deadly then
@@ -1525,6 +1635,111 @@ end
 function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 	local this = _env.this
 	local global = _env.global
+
+	if global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "AJYHou_Passive")) > 0 and global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "AJYHou_Passive_Done")) == 0 then
+		local flag_ajyhou = 0
+		local hp_ajyh = global.UnitPropGetter(_env, "hp")(_env, target)
+		local shield_ajyh = global.UnitPropGetter(_env, "shield")(_env, target)
+
+		if global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "IMMUNE")) == 0 and global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "UNDEAD")) == 0 and damages[n].val > hp_ajyh + shield_ajyh then
+			local count_AJYHou_Passive_Undead = 0
+			local unit_has_this_undead = nil
+
+			for _, unit in global.__iter__(global.AllUnits(_env, global.TEAMMATES_OF(_env, target) * global.PETS - global.ONESELF(_env, target))) do
+				if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "AJYHou_Passive_Undead")) > 0 then
+					unit_has_this_undead = unit
+					count_AJYHou_Passive_Undead = count_AJYHou_Passive_Undead + 1
+				end
+			end
+
+			local buff_AJYHou = global.DeathImmuneEffect(_env, 1)
+
+			if count_AJYHou_Passive_Undead == 0 then
+				for _, unit in global.__iter__(global.RandomN(_env, 1, global.AllUnits(_env, global.TEAMMATES_OF(_env, target) * global.PETS - global.ONESELF(_env, target)))) do
+					if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "AJYHou_Passive_Undead")) == 0 then
+						global.ApplyBuff_Buff(_env, target, unit, {
+							timing = 1,
+							duration = 1,
+							display = "Undead",
+							tags = {
+								"STATUS",
+								"NUMERIC",
+								"BUFF",
+								"AJYHou_Passive_Undead",
+								"UNDISPELLABLE",
+								"UNSTEALABLE",
+								"UNDEAD"
+							}
+						}, {
+							buff_AJYHou
+						}, 1, 0)
+					end
+
+					global.ApplyHPDamage_ResultCheck(_env, actor, unit, damages[n])
+					global.AddAnim(_env, {
+						loop = 1,
+						anim = "cisha_zhanshupai",
+						zOrder = "TopLayer",
+						pos = global.UnitPos(_env, unit)
+					})
+
+					damages[n].val = 0
+					flag_ajyhou = 1
+				end
+			else
+				if global.SelectBuffCount(_env, unit_has_this_undead, global.BUFF_MARKED(_env, "AJYHou_Passive_Undead")) == 0 then
+					global.ApplyBuff_Buff(_env, target, unit_has_this_undead, {
+						timing = 1,
+						duration = 1,
+						display = "Undead",
+						tags = {
+							"STATUS",
+							"NUMERIC",
+							"BUFF",
+							"AJYHou_Passive_Undead",
+							"UNDISPELLABLE",
+							"UNSTEALABLE",
+							"UNDEAD"
+						}
+					}, {
+						buff_AJYHou
+					}, 1, 0)
+				end
+
+				global.ApplyHPDamage_ResultCheck(_env, actor, unit_has_this_undead, damages[n])
+				global.AddAnim(_env, {
+					loop = 1,
+					anim = "cisha_zhanshupai",
+					zOrder = "TopLayer",
+					pos = global.UnitPos(_env, unit_has_this_undead)
+				})
+
+				damages[n].val = 0
+				flag_ajyhou = 1
+			end
+
+			if n == total and flag_ajyhou == 1 then
+				local buffeft_AJYHou = global.SpecialNumericEffect(_env, "+done", {
+					"?Normal"
+				}, 1)
+
+				global.ApplyBuff(_env, target, {
+					timing = 1,
+					duration = 1,
+					tags = {
+						"STATUS",
+						"NUMERIC",
+						"AJYHou_Passive_Done",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft_AJYHou
+				})
+			end
+		end
+	end
+
 	local result = global.ApplyHPDamage(_env, target, damages[n], lowerLimit, n ~= total)
 
 	if result and result.deadly then
@@ -1784,6 +1999,111 @@ end
 function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 	local this = _env.this
 	local global = _env.global
+
+	if global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "AJYHou_Passive")) > 0 and global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "AJYHou_Passive_Done")) == 0 then
+		local flag_ajyhou = 0
+		local hp_ajyh = global.UnitPropGetter(_env, "hp")(_env, target)
+		local shield_ajyh = global.UnitPropGetter(_env, "shield")(_env, target)
+
+		if global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "IMMUNE")) == 0 and global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "UNDEAD")) == 0 and damages[n].val > hp_ajyh + shield_ajyh then
+			local count_AJYHou_Passive_Undead = 0
+			local unit_has_this_undead = nil
+
+			for _, unit in global.__iter__(global.AllUnits(_env, global.TEAMMATES_OF(_env, target) * global.PETS - global.ONESELF(_env, target))) do
+				if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "AJYHou_Passive_Undead")) > 0 then
+					unit_has_this_undead = unit
+					count_AJYHou_Passive_Undead = count_AJYHou_Passive_Undead + 1
+				end
+			end
+
+			local buff_AJYHou = global.DeathImmuneEffect(_env, 1)
+
+			if count_AJYHou_Passive_Undead == 0 then
+				for _, unit in global.__iter__(global.RandomN(_env, 1, global.AllUnits(_env, global.TEAMMATES_OF(_env, target) * global.PETS - global.ONESELF(_env, target)))) do
+					if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "AJYHou_Passive_Undead")) == 0 then
+						global.ApplyBuff_Buff(_env, target, unit, {
+							timing = 1,
+							duration = 1,
+							display = "Undead",
+							tags = {
+								"STATUS",
+								"NUMERIC",
+								"BUFF",
+								"AJYHou_Passive_Undead",
+								"UNDISPELLABLE",
+								"UNSTEALABLE",
+								"UNDEAD"
+							}
+						}, {
+							buff_AJYHou
+						}, 1, 0)
+					end
+
+					global.ApplyAOEHPDamage_ResultCheck(_env, actor, unit, damages[n])
+					global.AddAnim(_env, {
+						loop = 1,
+						anim = "cisha_zhanshupai",
+						zOrder = "TopLayer",
+						pos = global.UnitPos(_env, unit)
+					})
+
+					damages[n].val = 0
+					flag_ajyhou = 1
+				end
+			else
+				if global.SelectBuffCount(_env, unit_has_this_undead, global.BUFF_MARKED(_env, "AJYHou_Passive_Undead")) == 0 then
+					global.ApplyBuff_Buff(_env, target, unit_has_this_undead, {
+						timing = 1,
+						duration = 1,
+						display = "Undead",
+						tags = {
+							"STATUS",
+							"NUMERIC",
+							"BUFF",
+							"AJYHou_Passive_Undead",
+							"UNDISPELLABLE",
+							"UNSTEALABLE",
+							"UNDEAD"
+						}
+					}, {
+						buff_AJYHou
+					}, 1, 0)
+				end
+
+				global.ApplyAOEHPDamage_ResultCheck(_env, actor, unit_has_this_undead, damages[n])
+				global.AddAnim(_env, {
+					loop = 1,
+					anim = "cisha_zhanshupai",
+					zOrder = "TopLayer",
+					pos = global.UnitPos(_env, unit_has_this_undead)
+				})
+
+				damages[n].val = 0
+				flag_ajyhou = 1
+			end
+
+			if n == total and flag_ajyhou == 1 then
+				local buffeft_AJYHou = global.SpecialNumericEffect(_env, "+done", {
+					"?Normal"
+				}, 1)
+
+				global.ApplyBuff(_env, target, {
+					timing = 1,
+					duration = 1,
+					tags = {
+						"STATUS",
+						"NUMERIC",
+						"AJYHou_Passive_Done",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft_AJYHou
+				})
+			end
+		end
+	end
+
 	local result = global.ApplyHPDamage(_env, target, damages[n], lowerLimit, n ~= total)
 
 	if result and result.deadly then

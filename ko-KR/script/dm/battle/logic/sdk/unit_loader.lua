@@ -93,6 +93,11 @@ local __getFunctions__ = {
 	end,
 	suppress = function (unit, name, compCache)
 		return unit:getSuppress()
+	end,
+	shield = function (unit, name, compCache)
+		local hpComp = compCache.Health
+
+		return hpComp and hpComp:getShield()
 	end
 }
 local __predefinedPropertySet__ = {
@@ -145,7 +150,8 @@ local __predefinedPropertySet__ = {
 		"hpRatio",
 		"rp",
 		"genre",
-		"suppress"
+		"suppress",
+		"shield"
 	},
 	ATTACKER = {
 		kAttrAttack,
@@ -171,7 +177,8 @@ local __predefinedPropertySet__ = {
 		"hpRatio",
 		"level",
 		"genre",
-		"suppress"
+		"suppress",
+		"shield"
 	},
 	DEFENDER = {
 		kAttrDefense,
@@ -191,7 +198,8 @@ local __predefinedPropertySet__ = {
 		"hpRatio",
 		"level",
 		"genre",
-		"suppress"
+		"suppress",
+		"shield"
 	},
 	HEALER = {
 		kAttrAttack,

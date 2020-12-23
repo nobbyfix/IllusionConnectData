@@ -259,7 +259,7 @@ function MiniGameResultMediator:onClickAgain(sender, eventType)
 
 		if factor1 and factor2 then
 			self:dispatch(ShowTipEvent({
-				tip = Strings:get("Activity_Darts_Times")
+				tip = Strings:get("Activity_Darts_Times_Out")
 			}))
 
 			return

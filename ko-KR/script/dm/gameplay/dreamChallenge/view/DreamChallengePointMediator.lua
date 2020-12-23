@@ -91,6 +91,8 @@ function DreamChallengePointMediator:initWidget()
 		pointCellNameStr = "pointCellClone"
 	elseif kDreamChallengeType.kTwo == self.pointCellType then
 		pointCellNameStr = "pointCell2Clone"
+	elseif kDreamChallengeType.kThree == self.pointCellType then
+		pointCellNameStr = "pointCell3Clone"
 	end
 
 	self._pointCellClone = self:getView():getChildByName(pointCellNameStr)
@@ -113,16 +115,17 @@ function DreamChallengePointMediator:refreshPointView()
 	table.deepcopy(battles, battlesTmp)
 
 	local targetCell = battleNum >= 12 and self._pointCellCloneSmall or self._pointCellClone
+	local pointListWidth = 920
 	local rowCellNum = battleNum >= 12 and 3 or 2
 	local row = math.ceil(battleNum / rowCellNum)
 	local offsetY = targetCell:getContentSize().height
 	local offsetX = targetCell:getContentSize().width
-	local innerSize = cc.size(908, row * offsetY)
-	local startPosX = (908 - rowCellNum * offsetX) / 2
+	local innerSize = cc.size(pointListWidth, row * offsetY)
+	local startPosX = (pointListWidth - rowCellNum * offsetX) / 2
 	local startPosY = innerSize.height - targetCell:getContentSize().height
 
-	self._pointView:setInnerContainerSize(cc.size(908, row * offsetY))
-	self._pointView:setContentSize(cc.size(908, 366))
+	self._pointView:setInnerContainerSize(cc.size(pointListWidth, row * offsetY))
+	self._pointView:setContentSize(cc.size(pointListWidth, 366))
 
 	local i = 0
 
@@ -359,11 +362,13 @@ function DreamChallengePointMediator:refreshBuffInfo()
 		local line = node2:getChildByFullName("line2")
 		local iconTexture = kOtherHeroIcon
 		local infoDesc = ""
+		local infoTitle = ""
 
 		if data.type == "job" then
 			iconTexture = kJobIcon[data.value]
+			infoTitle = Strings:get("TypeName_" .. data.value)
 
-			text:setString(Strings:get("TypeName_" .. data.value))
+			text:setString(infoTitle)
 			icon:loadTexture(kJobIcon[data.value], ccui.TextureResType.localType)
 			icon:setContentSize(cc.size(61, 61))
 
@@ -374,8 +379,9 @@ function DreamChallengePointMediator:refreshBuffInfo()
 			})
 		elseif data.type == "Party" then
 			iconTexture = kPartyIcon[data.value]
+			infoTitle = Strings:get("HeroPartyName_" .. data.value)
 
-			text:setString(Strings:get("HeroPartyName_" .. data.value))
+			text:setString(infoTitle)
 			icon:loadTexture(kPartyIcon[data.value], ccui.TextureResType.localType)
 			icon:setContentSize(cc.size(63, 63))
 
@@ -385,7 +391,9 @@ function DreamChallengePointMediator:refreshBuffInfo()
 				restrict = restrictStr
 			})
 		elseif data.type == "Tag" then
-			text:setString(Strings:get("DC_Map_OtherHero_IconName"))
+			infoTitle = Strings:get("DC_Map_OtherHero_IconName")
+
+			text:setString(infoTitle)
 			icon:loadTexture(kOtherHeroIcon, ccui.TextureResType.localType)
 			icon:setContentSize(cc.size(63, 63))
 
@@ -403,7 +411,7 @@ function DreamChallengePointMediator:refreshBuffInfo()
 		local touchInfo = {
 			icon = iconTexture,
 			type = RewardType.kShow,
-			title = teamTitleStr,
+			title = infoTitle,
 			desc = infoDesc
 		}
 
@@ -484,7 +492,10 @@ function DreamChallengePointMediator:refreshBuffInfo()
 		end
 
 		icon:removeAllChildren()
-		icon:loadTexture(kPartyIcon[partys[i]], ccui.TextureResType.localType)
+
+		local skillIcon = "asset/skillIcon/" .. effectConfig.Icon .. ".png"
+
+		icon:loadTexture(skillIcon, ccui.TextureResType.localType)
 		icon:setContentSize(cc.size(63, 63))
 
 		local touchInfo = {
@@ -524,7 +535,10 @@ function DreamChallengePointMediator:refreshBuffInfo()
 		end
 
 		icon:removeAllChildren()
-		icon:loadTexture(kJobIcon[jobs[i]], ccui.TextureResType.localType)
+
+		local skillIcon = "asset/skillIcon/" .. effectConfig.Icon .. ".png"
+
+		icon:loadTexture(skillIcon, ccui.TextureResType.localType)
 		icon:setContentSize(cc.size(61, 61))
 
 		local touchInfo = {

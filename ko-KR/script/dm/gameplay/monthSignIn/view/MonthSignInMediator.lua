@@ -41,6 +41,22 @@ local clutchtimeArray = {
 	"Clutchtime_Text_12",
 	"Clutchtime_Text_1"
 }
+local actUiConfig = {
+	[ActivityType_UI.kActivityBlockWsj] = {
+		qdImg = "wsj_qd_img_1.png",
+		qdStr = "wsj_",
+		dhbAnim = "dhb_xinriqiandaowansheng",
+		dhaAnim = "dha_xinriqiandaowansheng"
+	},
+	[ActivityType_UI.KActivityBlockHoliday] = {
+		qdImg = "qd_img_1.png",
+		dhbAnim = "dhb_shengdanqiandao",
+		qdStr = "",
+		dhaAnim = "dha_shengdanqiandao",
+		textColor = cc.c3b(145, 33, 51),
+		textOffset = cc.p(0, 20)
+	}
+}
 local dailyLuckImagePart = "qd_img_"
 local coordinate = nil
 local movieClipName = {
@@ -140,7 +156,8 @@ function MonthSignInMediator:setupView()
 	}))
 
 	local todayLuck = self._monthSignInSystem:getTodayLuck()
-	local imageName = self._monthSignInSystem:checkActivity() and "wsj_" .. dailyLuckImagePart .. todayLuck .. ".png" or dailyLuckImagePart .. todayLuck .. ".png"
+	local isAct, actUi = self._monthSignInSystem:checkActivity()
+	local imageName = isAct and actUiConfig[actUi].qdStr .. dailyLuckImagePart .. todayLuck .. ".png" or dailyLuckImagePart .. todayLuck .. ".png"
 
 	self._commonNode:getChildByFullName("todayLuck"):loadTexture(imageName, 1)
 
@@ -225,7 +242,8 @@ function MonthSignInMediator:setupView()
 end
 
 function MonthSignInMediator:initView(surfaceReward)
-	local n = self._monthSignInSystem:checkActivity() and "dhb_xinriqiandaowansheng" or "dhb_xinriqiandao"
+	local isAct, actUi = self._monthSignInSystem:checkActivity()
+	local n = isAct and actUiConfig[actUi].dhbAnim or "dhb_xinriqiandao"
 	local anim = cc.MovieClip:create(n)
 
 	anim:addTo(self:getView())
@@ -258,7 +276,8 @@ function MonthSignInMediator:initAnim(surfaceReward)
 
 	self._bindTotalRewardClick = true
 	self._mc = -1
-	local n = self._monthSignInSystem:checkActivity() and "dha_xinriqiandaowansheng" or "dha_xinriqiandao"
+	local isAct, actUi = self._monthSignInSystem:checkActivity()
+	local n = isAct and actUiConfig[actUi].dhaAnim or "dha_xinriqiandao"
 	local anim = cc.MovieClip:create(n)
 
 	anim:addTo(self:getView())
@@ -278,7 +297,7 @@ function MonthSignInMediator:initAnim(surfaceReward)
 	text:addTo(animSurface):setPosition(cc.p(-1, -168))
 
 	local insertNode = anim:getChildByName("insertNode")
-	local imageName = self._monthSignInSystem:checkActivity() and "wsj_qd_img_1.png" or "qd_img_1.png"
+	local imageName = isAct and actUiConfig[actUi].qdImg or "qd_img_1.png"
 	local image = ccui.ImageView:create(imageName, 1)
 
 	image:addTo(insertNode)
@@ -286,7 +305,7 @@ function MonthSignInMediator:initAnim(surfaceReward)
 	anim:addCallbackAtFrame(10, function ()
 		anim:stop()
 
-		local n = self._monthSignInSystem:checkActivity() and "dhb_xinriqiandaowansheng" or "dhb_xinriqiandao"
+		local n = isAct and actUiConfig[actUi].dhbAnim or "dhb_xinriqiandao"
 		local constMc = cc.MovieClip:create(n)
 
 		constMc:addTo(self:getView())
@@ -321,6 +340,15 @@ function MonthSignInMediator:initAnim(surfaceReward)
 		text:setTextColor(cc.c3b(255, 225, 186))
 		text:addTo(surface):setPosition(cc.p(-1, -168))
 		anim:removeFromParent()
+
+		if isAct and actUiConfig[actUi].textColor then
+			text:setTextColor(actUiConfig[actUi].textColor)
+		end
+
+		if isAct and actUiConfig[actUi].textOffset then
+			text:offset(actUiConfig[actUi].textOffset.x, actUiConfig[actUi].textOffset.y)
+			rewardIcon:offset(actUiConfig[actUi].textOffset.x, actUiConfig[actUi].textOffset.y)
+		end
 	end)
 end
 

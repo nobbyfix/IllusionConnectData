@@ -98,6 +98,15 @@ DebugBoxMainIndex = {
 				}
 			},
 			{
+				"背包",
+				{
+					"加道具",
+					"加所有道具",
+					"清空背包",
+					"加某款皮肤"
+				}
+			},
+			{
 				"城建",
 				{
 					"清除队列"
@@ -198,15 +207,6 @@ DebugBoxMainIndex = {
 				}
 			},
 			{
-				"背包",
-				{
-					"加道具",
-					"加所有道具",
-					"清空背包",
-					"加某款皮肤"
-				}
-			},
-			{
 				"新手引导",
 				{
 					"所有引导关闭",
@@ -283,6 +283,12 @@ DebugBoxMainIndex = {
 				"小游戏",
 				{
 					"投飞镖：设置关卡"
+				}
+			},
+			{
+				"bust展示",
+				{
+					"设置bust"
 				}
 			}
 		}
@@ -700,6 +706,10 @@ DebugBoxMainIndex = {
 				"ChangeDartsLevel"
 			},
 			{
+				"设置bust",
+				"DebugShowBustAni"
+			},
+			{
 				"技能Args检查",
 				"CheckSkillArgsBox"
 			},
@@ -855,7 +865,8 @@ DebugBoxMainIndex = {
 			"BattleSettingBox",
 			"FreeRecharge",
 			"BattleExtend",
-			"ChangeMiniGame"
+			"ChangeMiniGame",
+			"DebugShowBustAni"
 		}
 
 		for k, v in pairs(requireNameMap) do

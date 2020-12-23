@@ -1462,7 +1462,8 @@ local modules = {
 				requires = {
 					"dm.gameplay.activity.controller.ActivitySystem",
 					"dm.gameplay.activity.service.ActivityService",
-					"dm.gameplay.activity.view.ActivityWidget"
+					"dm.gameplay.activity.view.ActivityWidget",
+					"dm.gameplay.activity.view.shuangdan.ActivityHolidayHero"
 				},
 				injections = {
 					singletons = {
@@ -1811,6 +1812,46 @@ local modules = {
 							res = "asset/ui/ActivityColorEggPopup.csb",
 							name = "ActivityColorEggView",
 							mediator = "ActivityColorEggMediator"
+						},
+						{
+							res = "asset/ui/ActivityBlockSD.csb",
+							name = "ActivityBlockHolidayView",
+							mediator = "ActivityBlockHolidayMediator"
+						},
+						{
+							res = "asset/ui/ActivityBlockSupportSd.csb",
+							name = "ActivitySupportHolidayView",
+							mediator = "ActivitySupportHolidayMediator"
+						},
+						{
+							res = "asset/ui/ActivitySupportWinSd.csb",
+							name = "ActivitySupportWinHolidayView",
+							mediator = "ActivitySupportWinHolidayMediator"
+						},
+						{
+							res = "asset/ui/ActivitySupportRewardSd.csb",
+							name = "ActivitySupportRewardHolidayView",
+							mediator = "ActivitySupportRewardHolidayMediator"
+						},
+						{
+							res = "asset/ui/ActivitySupportRankSd.csb",
+							name = "ActivitySupportRankHolidayView",
+							mediator = "ActivitySupportRankHolidayMediator"
+						},
+						{
+							res = "asset/ui/ActivitySupportPailianSd.csb",
+							name = "ActivitySupportPailianHolidayView",
+							mediator = "ActivitySupportPailianHolidayMediator"
+						},
+						{
+							res = "asset/ui/ActivityBlockFudaiSd.csb",
+							name = "ActivityBlockFudaiView",
+							mediator = "ActivityBlockFudaiMediator"
+						},
+						{
+							res = "asset/ui/ActivityFudaiPreview.csb",
+							name = "ActivityBlockFudaiPreview",
+							mediator = "ActivityBlockFudaiPreviewMeditor"
 						}
 					}
 				}
@@ -2922,6 +2963,11 @@ local modules = {
 						{
 							res = "asset/ui/MonthSignInWsj.csb",
 							name = "MonthSignInWsjView",
+							mediator = "MonthSignInMediator"
+						},
+						{
+							res = "asset/ui/MonthSignInSd.csb",
+							name = "MonthSignInHolidayView",
 							mediator = "MonthSignInMediator"
 						}
 					}

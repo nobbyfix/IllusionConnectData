@@ -49,6 +49,7 @@ function MasterSkillMediator:initNodes()
 
 	listView:setScrollBarEnabled(false)
 
+	self._lockText = self._detailPanel:getChildByFullName("lockText")
 	local costBg = self._detailPanel:getChildByFullName("costNode_1.costBg")
 	local addImg = costBg:getChildByFullName("addImg")
 	local touchPanel = addImg:getChildByFullName("touchPanel")
@@ -458,6 +459,18 @@ function MasterSkillMediator:refreshSkillDesc(skill)
 		local newPanel = self:createEffectDescPanel(attrDescs[i])
 
 		listView:pushBackCustomItem(newPanel)
+	end
+
+	if skill:getEnable() == false then
+		self._lockText:setVisible(true)
+
+		local des, unlockLevel = skill:getUnlockUse()
+
+		self._lockText:setString(Strings:get("Master_Skill_Unlock_Level", {
+			Num = unlockLevel
+		}))
+	else
+		self._lockText:setVisible(false)
 	end
 end
 

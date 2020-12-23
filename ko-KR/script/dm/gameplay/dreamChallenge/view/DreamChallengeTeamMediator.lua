@@ -1446,6 +1446,18 @@ function DreamChallengeTeamMediator:setupClickEnvs()
 end
 
 function DreamChallengeTeamMediator:onClickFight(sender, eventType)
+	local isUnLock, tip = self._dreamSystem:checkMapLock(self._mapId)
+
+	if not isUnLock then
+		self:dispatch(ShowTipEvent({
+			duration = 0.2,
+			tip = Strings:get("ActivityBlock_UI_8")
+		}))
+		self:dispatch(Event:new(EVT_POP_TO_TARGETVIEW, "homeView"))
+
+		return
+	end
+
 	if #self._teamPets < 1 then
 		self:dispatch(ShowTipEvent({
 			duration = 0.2,

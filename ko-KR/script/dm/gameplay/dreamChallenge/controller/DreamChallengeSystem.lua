@@ -18,6 +18,7 @@ DreamChallengeSystem:has("_gameServerAgent", {
 
 kDreamChallengeType = {
 	kTwo = 2,
+	kThree = 3,
 	kOne = 1
 }
 
@@ -35,7 +36,34 @@ function DreamChallengeSystem:delete(data)
 	self._dreamChallenge:delete(data)
 end
 
-function DreamChallengeSystem:tryEnter()
+function DreamChallengeSystem:tryEnter(data)
+	data = data or {}
+
+	local function enterDream()
+		self:requestEnterUI(function (response)
+			if response.resCode == GS_SUCCESS then
+				self._dreamChallenge:synchronize(response.data)
+
+				local view = self:getInjector():getInstance("DreamChallengeMainView")
+
+				self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, data))
+			end
+		end)
+	end
+
+	local mapIds = self:getMapIds()
+
+	for i = 1, #mapIds do
+		local unLock = self:checkMapLock(mapIds[i])
+
+		if unLock then
+			AudioEngine:getInstance():playEffect("Se_Click_Open_1", false)
+			enterDream()
+
+			return
+		end
+	end
+
 	local unlock, tips = self._systemKeeper:isUnlock("DreamChallenge")
 
 	if not unlock then
@@ -46,15 +74,7 @@ function DreamChallengeSystem:tryEnter()
 		}))
 	else
 		AudioEngine:getInstance():playEffect("Se_Click_Open_1", false)
-		self:requestEnterUI(function (response)
-			if response.resCode == GS_SUCCESS then
-				self._dreamChallenge:synchronize(response.data)
-
-				local view = self:getInjector():getInstance("DreamChallengeMainView")
-
-				self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {}))
-			end
-		end)
+		enterDream()
 	end
 end
 
@@ -111,14 +131,14 @@ end
 
 function DreamChallengeSystem:checkMapShow(mapId)
 	local playerInfo = self._developSystem:getPlayer()
-	local curTime = self._gameServerAgent:remoteTimeMillis()
+	local curTime = self._gameServerAgent:remoteTimeMillis() / 1000
 
 	return self._dreamChallenge:checkMapShow(mapId, playerInfo, curTime)
 end
 
 function DreamChallengeSystem:checkMapLock(mapId)
 	local playerInfo = self._developSystem:getPlayer()
-	local curTime = self._gameServerAgent:remoteTimeMillis()
+	local curTime = self._gameServerAgent:remoteTimeMillis() / 1000
 
 	return self._dreamChallenge:checkMapLock(mapId, playerInfo, curTime)
 end
@@ -348,6 +368,10 @@ function DreamChallengeSystem:getHeroInfo(heroId)
 	}
 
 	return heroData
+end
+
+function DreamChallengeSystem:getMapStartAndEndTime(mapId)
+	return self._dreamChallenge:getMapStartAndEndTime(mapId)
 end
 
 function DreamChallengeSystem:getNpcInfo(npcId)
@@ -744,6 +768,8 @@ function DreamChallengeSystem:requestFinishBattle(dreamId, mapId, pointId, resul
 	self._service:requestFinishBattle(params, true, function (response)
 		if response.resCode == GS_SUCCESS then
 			self:enterBattleEndUI(response.data, dreamId, mapId, pointId)
+		else
+			self:dispatch(SceneEvent:new(EVT_SWITCH_SCENE, "mainScene", nil, ))
 		end
 	end)
 end

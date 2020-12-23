@@ -426,6 +426,13 @@
         "Type": "Activity",
         "TypeId": "ActivityBlock_Halloween"
     },
+    "ActivityBannerNewYear": {
+        "Img": "anualshop_banner_newyear.png",
+        "Link": "view://ActivityBlockHolidayView&activityId=ActivityBlock_Holiday",
+        "Sort": 5003,
+        "Type": "Activity",
+        "TypeId": "ActivityBlock_Holiday"
+    },
     "ActivityBannerSnowflake": {
         "Img": "ybxsdxh_banner.png",
         "Link": "view://ActivityBlockHalloweenView&activityId=ActivityBlock_Snowflake",
@@ -454,6 +461,20 @@
         "Type": "Activity",
         "TypeId": "DrawCard_1UP_20201209_2_Activity"
     },
+    "ActivityBanner_1UP_NFEr_1": {
+        "Img": "drawcard_banner_NFEr.png",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_NFEr_1",
+        "Sort": 5001,
+        "Type": "Activity",
+        "TypeId": "DrawCard_1UP_Holiday_1_Activity"
+    },
+    "ActivityBanner_1UP_PDLa_1": {
+        "Img": "drawcard_banner_PDLa.png",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_PDLa_1",
+        "Sort": 5002,
+        "Type": "Activity",
+        "TypeId": "DrawCard_1UP_Holiday_2_Activity"
+    },
     "ActivityBanner_2UP_20201209_1_Activity": {
         "Img": "drawcard_banner_YBYaZZBBWei.png",
         "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_2UP_20201209_1",
@@ -467,5 +488,19 @@
         "Sort": 3007,
         "Type": "Activity",
         "TypeId": "DrawCard_2UP_20201209_2_Activity"
+    },
+    "ActivityBanner_2UP_20201223_1_Activity": {
+        "Img": "drawcard_banner_SDTZiYSTLu.png",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_2UP_20201223_1",
+        "Sort": 3006,
+        "Type": "Activity",
+        "TypeId": "DrawCard_2UP_20201223_1_Activity"
+    },
+    "ActivityBanner_2UP_20201223_2_Activity": {
+        "Img": "drawcard_banner_XSMLiMTZMEShi.png",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_2UP_20201223_2",
+        "Sort": 3007,
+        "Type": "Activity",
+        "TypeId": "DrawCard_2UP_20201223_2_Activity"
     }
 }

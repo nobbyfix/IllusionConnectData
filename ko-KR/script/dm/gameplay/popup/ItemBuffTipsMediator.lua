@@ -47,16 +47,26 @@ function ItemBuffTipsMediator:setUi(data)
 	local info = {
 		id = buffInfo.id
 	}
-	local buffIcon = IconFactory:createBuffIcon(info, {
-		scale = 0.55
-	})
+	local buffIcon = nil
+
+	if buffInfo.icon and buffInfo.icon ~= "" then
+		buffIcon = ccui.ImageView:create(buffInfo.icon)
+	else
+		buffIcon = IconFactory:createBuffIcon(info, {
+			scale = 0.55
+		})
+	end
 
 	buffIcon:addTo(icon):center(icon:getContentSize())
 
 	local effectConfig = ConfigReader:getRecordById("Skill", buffInfo.id)
 	local nameLab = self._main:getChildByFullName("title")
 
-	nameLab:setString(Strings:get(effectConfig.Name))
+	if buffInfo.title and buffInfo.title ~= "" then
+		nameLab:setString(Strings:get(buffInfo.title))
+	else
+		nameLab:setString(Strings:get(effectConfig.Name))
+	end
 
 	local descLab = self._main:getChildByFullName("desc")
 	local desc = Strings:get(effectConfig.Desc, {

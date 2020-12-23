@@ -997,36 +997,68 @@ function HomeMediator:checkNewSystemUnlock()
 		end
 
 		if GameConfigs.closeGuide or not guideAgent:isGuiding() and level > 1 then
-			local function showMonthSignInView()
-				self:getInjector():getInstance(MonthSignInSystem):showSignView(delegate)
-			end
-
-			if CommonUtils.GetSwitch("fn_announce_check_in") then
-				if self._loginSystem:getLoginUrl() and self._loginSystem:getIsShowAnnounce() then
-					local delegate = {
-						willClose = function (self, popupMediator, data)
-							if popupMediator.resetData then
-								popupMediator:resetData()
-							end
-
-							if CommonUtils.GetSwitch("fn_check_in") then
-								showMonthSignInView()
-							end
+			if CommonUtils.GetSwitch("fn_announce_check_in") and self._loginSystem:getLoginUrl() and self._loginSystem:getIsShowAnnounce() then
+				local delegate = {
+					willClose = function (self, popupMediator, data)
+						if popupMediator.resetData then
+							popupMediator:resetData()
 						end
-					}
-					local view = self:getInjector():getInstance("serverAnnounceViewNew")
 
-					self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
-						transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-					}, {
-						isDeductTime = 1
-					}, delegate))
-				end
-			elseif CommonUtils.GetSwitch("fn_check_in") then
-				showMonthSignInView()
+						resumeCoroutine()
+					end
+				}
+				local view = self:getInjector():getInstance("serverAnnounceViewNew")
+
+				self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+					transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+				}, {
+					isDeductTime = 1
+				}, delegate))
+				coroutine.yield()
 			end
 
-			coroutine.yield()
+			if CommonUtils.GetSwitch("fn_check_in") then
+				local monthSignInSystem = self:getInjector():getInstance(MonthSignInSystem)
+
+				if not monthSignInSystem:isTodaySign() then
+					monthSignInSystem:showSignView(delegate)
+					coroutine.yield()
+				end
+			end
+
+			local activity = self._activitySystem:getActivityByComplexUI(ActivityType_UI.KActivityBlockHoliday)
+
+			if activity then
+				local supportActivityId = activity:getActivityConfig().ActivitySupport
+				local supportActivity = self._activitySystem:getActivityById(supportActivityId)
+
+				if supportActivity then
+					local status = supportActivity:getPeriodStatus()
+
+					if status == ActivitySupportStatus.Starting then
+						local playerId = self:getDevelopSystem():getPlayer():getRid()
+						local lastTime = cc.UserDefault:getInstance():getStringForKey(playerId .. supportActivity:getId(), 0)
+						local curTime = self._gameServerAgent:remoteTimeMillis()
+						local isSameDay = TimeUtil:isSameDay(lastTime / 1000, curTime / 1000, {
+							sec = 0,
+							min = 0,
+							hour = 5
+						})
+
+						if not isSameDay then
+							local view = self:getInjector():getInstance("ActivitySupportPailianHolidayView")
+
+							self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+								transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+							}, {
+								activityId = supportActivity:getId()
+							}, delegate))
+							cc.UserDefault:getInstance():setStringForKey(playerId .. supportActivity:getId(), curTime)
+							coroutine.yield()
+						end
+					end
+				end
+			end
 		end
 	end)
 	local status, str = coroutine.resume(blockCoroutine)
@@ -3487,6 +3519,11 @@ function HomeMediator:setComplexActivityEntry()
 		},
 		[ActivityType_UI.KActivityBlockSnowflake] = {
 			anim = "xuehua-CX_yongbuxiaorongrukou",
+			aimpos = cc.p(50, 43),
+			redPointFuncx = self._activitySystem.hasRedPointForActivity
+		},
+		[ActivityType_UI.KActivityBlockHoliday] = {
+			anim = "rukou_newyearshop",
 			aimpos = cc.p(50, 43),
 			redPointFuncx = self._activitySystem.hasRedPointForActivity
 		}

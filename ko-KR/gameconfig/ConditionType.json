@@ -1,4 +1,11 @@
 {
+    "Condi_ANewYearExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_HolidayExchange_4.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_ANewYearExchangeAchieve_Desc"
+    },
     "Condi_AchievementPoint": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
@@ -898,14 +905,14 @@
     "Condi_MiniGameDailyScore": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.activities.activityMap.Activity_Darts.dailyTotalScore",
+        "ConditionType1": "player.activities.activityMap.?1.dailyTotalScore",
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameDailyScore_Decs"
     },
     "Condi_MiniGameTotalScore": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.activities.activityMap.Activity_Darts.totalScore",
+        "ConditionType1": "player.activities.activityMap.?1.totalScore",
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameTotalScore_Decs"
     },

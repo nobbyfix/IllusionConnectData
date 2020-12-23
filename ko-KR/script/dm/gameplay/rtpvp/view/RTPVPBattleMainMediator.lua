@@ -151,19 +151,18 @@ end
 
 function RTPVPBattleMainMediator:setupDevMode()
 	if GameConfigs.openDevWin then
-		local winBtn = ccui.Button:create("pic_kfz_sheng.png", "pic_kfz_sheng.png", "pic_kfz_sheng.png", ccui.TextureResType.plistType)
+		local winBtn = ccui.Text:create("PASS", TTF_FONT_FZYH_M, 40)
 		local viewFrame = self.targetFrame
 
+		winBtn:setTouchEnabled(true)
 		winBtn:setScale(0.95)
 		winBtn:addTo(self:getView())
 		winBtn:setAnchorPoint(1, 0.5)
 		winBtn:setPosition(viewFrame.width - viewFrame.x, 105)
-		winBtn:addTouchEventListener(function (sender, eventType)
-			if eventType == ccui.TouchEventType.ended then
-				self:finishBattle({
-					winner = self._delegate:getMainPlayerId()
-				})
-			end
+		winBtn:addClickEventListener(function (sender, eventType)
+			self:finishBattle({
+				winner = self._delegate:getMainPlayerId()
+			})
 		end)
 	end
 end

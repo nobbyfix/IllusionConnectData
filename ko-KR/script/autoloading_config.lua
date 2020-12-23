@@ -1196,6 +1196,46 @@ local mappings = {
 		name = "ActivityPointDetailMediator",
 		type = "@C"
 	},
+	ActivitySupportRankHolidayMediator = {
+		url = "dm.gameplay.activity.view.shuangdan.ActivitySupportRankHolidayMediator",
+		name = "ActivitySupportRankHolidayMediator",
+		type = "@C"
+	},
+	ActivityBlockFudaiPreviewMeditor = {
+		url = "dm.gameplay.activity.view.shuangdan.ActivityBlockFudaiPreviewMeditor",
+		name = "ActivityBlockFudaiPreviewMeditor",
+		type = "@C"
+	},
+	ActivitySupportWinHolidayMediator = {
+		url = "dm.gameplay.activity.view.shuangdan.ActivitySupportWinHolidayMediator",
+		name = "ActivitySupportWinHolidayMediator",
+		type = "@C"
+	},
+	ActivitySupportRewardHolidayMediator = {
+		url = "dm.gameplay.activity.view.shuangdan.ActivitySupportRewardHolidayMediator",
+		name = "ActivitySupportRewardHolidayMediator",
+		type = "@C"
+	},
+	ActivitySupportPailianHolidayMediator = {
+		url = "dm.gameplay.activity.view.shuangdan.ActivitySupportPailianHolidayMediator",
+		name = "ActivitySupportPailianHolidayMediator",
+		type = "@C"
+	},
+	ActivityBlockFudaiMediator = {
+		url = "dm.gameplay.activity.view.shuangdan.ActivityBlockFudaiMediator",
+		name = "ActivityBlockFudaiMediator",
+		type = "@C"
+	},
+	ActivitySupportHolidayMediator = {
+		url = "dm.gameplay.activity.view.shuangdan.ActivitySupportHolidayMediator",
+		name = "ActivitySupportHolidayMediator",
+		type = "@C"
+	},
+	ActivityBlockHolidayMediator = {
+		url = "dm.gameplay.activity.view.shuangdan.ActivityBlockHolidayMediator",
+		name = "ActivityBlockHolidayMediator",
+		type = "@C"
+	},
 	ActivitySagaSupportRankRewardMediator = {
 		url = "dm.gameplay.activity.view.ActivitySagaSupportRankRewardMediator",
 		name = "ActivitySagaSupportRankRewardMediator",

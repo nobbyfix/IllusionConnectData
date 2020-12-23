@@ -214,7 +214,7 @@ REMOTE_UTC_DIFF = 28800
 function TimeUtil:calcRemoteZoneDiff()
 	local _developSystem = DmGame:getInstance()._injector:getInstance("DevelopSystem")
 
-	if _developSystem and _developSystem:getTimeZone() then
+	if _developSystem and _developSystem.getTimeZone then
 		return _developSystem:getTimeZone() * 3600
 	end
 

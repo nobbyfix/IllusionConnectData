@@ -92,6 +92,9 @@ function ActivityBlockMonsterShopMediator:onRegister()
 	self._cellClone = self._main:getChildByName("cellClone")
 	self._limitView = self._main:getChildByName("limit_goods")
 	self._timePanel = self._leftView:getChildByFullName("timePanel")
+
+	self._timePanel:setLocalZOrder(10)
+
 	self._rolePanel = self._leftView:getChildByFullName("talkPanel.rolePanel")
 	self._clipNode = self._leftView:getChildByFullName("talkPanel.clipNode")
 	self._bubbleText = self._leftView:getChildByFullName("talkPanel.clipNode.Text_talk")
@@ -126,7 +129,7 @@ function ActivityBlockMonsterShopMediator:setupTopInfoWidget()
 	local config = {
 		style = 1,
 		currencyInfo = currencyInfo,
-		title = Strings:get("Activity_Monster_Shop_UI1"),
+		title = Strings:get(self._activityShop:getTitle()) or Strings:get("Activity_Monster_Shop_UI1"),
 		btnHandler = {
 			clickAudio = "Se_Click_Close_1",
 			func = bind1(self.onClickBack, self)
@@ -180,11 +183,12 @@ function ActivityBlockMonsterShopMediator:getMoneyRates()
 			local view = outself:getInjector():getInstance("ActivityBlockMonsterShopPopupView")
 
 			if view then
+				local descId = self._activityConfig.GiveItemText or "Activity_Monster_Shop_Sell_UI3"
 				local viewData = {
 					activityId = outself._activityShop:getActivityId(),
 					title = Strings:get("Title_Monstershop_Text"),
 					title1 = Strings:get("UITitle_EN_Lixi"),
-					desc = Strings:get("Activity_Monster_Shop_Sell_UI3"),
+					desc = Strings:get(descId),
 					overflowString = Strings:get("Activity_Monster_Shop_Sell_UI2"),
 					lineNum = #data,
 					rewards = data,
@@ -237,7 +241,15 @@ end
 
 function ActivityBlockMonsterShopMediator:initLeftView()
 	local modelId = self._activityConfig.MonsterModelId
+	local bgUp = self._leftView:getChildByFullName("talkPanel.bg_up")
 
+	if self._activityConfig.roleDi then
+		local img = ccui.ImageView:create(self._activityConfig.roleDi, 1)
+
+		img:addTo(bgUp:getParent(), -1):posite(bgUp:getPosition()):offset(2, -80)
+	end
+
+	bgUp:setVisible(false)
 	self._rolePanel:removeAllChildren()
 
 	local rolePicId = ConfigReader:getDataByNameIdAndKey("RoleModel", modelId, "Bust15")
@@ -251,7 +263,13 @@ function ActivityBlockMonsterShopMediator:initLeftView()
 		portrait:addTo(self._rolePanel)
 		portrait:offset(0, -10)
 	else
-		local tipSprite = ccui.Scale9Sprite:createWithSpriteFrameName(kImagePath)
+		local imgPath = kImagePath
+
+		if self._activityConfig.roleImg then
+			imgPath = self._activityConfig.roleImg
+		end
+
+		local tipSprite = ccui.Scale9Sprite:createWithSpriteFrameName(imgPath)
 
 		tipSprite:setScale9Enabled(false)
 		tipSprite:setAnchorPoint(cc.p(0.5, 0.5))
@@ -403,6 +421,10 @@ function ActivityBlockMonsterShopMediator:initLeftView()
 		end
 	end
 
+	local btnText = self._leftView:getChildByFullName("button_give.Text_127")
+	local strId = self._activityConfig.ButtonText or Activity_Monster_Shop_UI5
+
+	btnText:setString(Strings:get(strId))
 	AdjustUtils.adjustLayoutUIByRootNode(self._leftView)
 end
 
@@ -632,10 +654,6 @@ function ActivityBlockMonsterShopMediator:createCell(cell, index)
 	clonePanel:setName("clonePanel")
 
 	local bg = clonePanel:getChildByFullName("bg")
-	local costText = clonePanel:getChildByFullName("info_panel.costoff")
-	local dayText = clonePanel:getChildByFullName("info_panel.day")
-	local infoBg = clonePanel:getChildByFullName("info_panel.Image_bg")
-	local time = clonePanel:getChildByFullName("info_panel.time")
 	local maskPanel = clonePanel:getChildByFullName("Mask")
 
 	maskPanel:setSwallowTouches(false)
@@ -650,6 +668,12 @@ function ActivityBlockMonsterShopMediator:createCell(cell, index)
 	if infoData.amount and next(infoData.amount) then
 		unlock = true
 	end
+
+	local infoPanel = clonePanel:getChildByName("info_panel")
+	local costText = infoPanel:getChildByFullName("costoff")
+	local dayText = infoPanel:getChildByFullName("day")
+	local infoBg = infoPanel:getChildByFullName("Image_bg")
+	local time = infoPanel:getChildByFullName("time")
 
 	dayText:setString(config.Day)
 
@@ -889,16 +913,20 @@ function ActivityBlockMonsterShopMediator:refreshOffcostRemainTime(remoteTime, s
 		local panel = self._scrollView:getChildByTag(i)
 
 		if panel then
-			local infoBg = panel:getChildByFullName("clonePanel.info_panel.Image_bg")
-			local time = panel:getChildByFullName("clonePanel.info_panel.time")
+			local infoPanel = panel:getChildByFullName("clonePanel.info_panel")
 
-			if time then
-				if str and str ~= "" then
-					time:setString(str)
-					infoBg:setContentSize(cc.size(27 + time:getContentSize().width, 20))
-				else
-					infoBg:setVisible(false)
-					time:setVisible(false)
+			if infoPanel then
+				local infoBg = infoPanel:getChildByFullName("Image_bg")
+				local time = infoPanel:getChildByFullName("time")
+
+				if time then
+					if str and str ~= "" then
+						time:setString(str)
+						infoBg:setContentSize(cc.size(27 + time:getContentSize().width, 20))
+					else
+						infoBg:setVisible(false)
+						time:setVisible(false)
+					end
 				end
 			end
 		end
@@ -944,10 +972,11 @@ function ActivityBlockMonsterShopMediator:onClickExchange(sender, eventType)
 		local view = self:getInjector():getInstance("ActivityBlockMonsterShopPopupView")
 
 		if view then
+			local descId = self._activityConfig.SellText or "Activity_Monster_Shop_Sell_UI1"
 			local data = {
 				lineNum = 3,
 				activityId = self._activityShop:getActivityId(),
-				desc = Strings:get("Activity_Monster_Shop_Sell_UI1"),
+				desc = Strings:get(descId),
 				overflowString = Strings:get("Activity_Monster_Shop_Sell_UI2"),
 				func = bind1(self.candyExchange, self),
 				filter = bind1(self.candyListFilter, self),
@@ -1055,7 +1084,6 @@ end
 function ActivityBlockMonsterShopMediator:onClickRule()
 	local rules = self._activityShop:getActivityConfig().RuleDesc
 
-	dump(rules)
 	self._activitySystem:showActivityRules(rules, TimeUtil:getSystemResetDate())
 end
 

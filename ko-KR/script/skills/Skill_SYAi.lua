@@ -338,7 +338,7 @@ all.Skill_SYAi_Unique = {
 
 				global.ApplyAOEHPMultiDamage_ResultCheck(_env, _env.ACTOR, units3, {
 					0,
-					100
+					300
 				}, global.SplitValue(_env, damage, {
 					0.4,
 					0.6
@@ -364,7 +364,12 @@ all.Skill_SYAi_Unique = {
 					}, 1, 0)
 				end
 			end
-
+		end)
+		exec["@time"]({
+			2300
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
 			_env.enemy = global.RandomN(_env, #_env.units2, global.EnemyUnits(_env))
 
 			for _, enemy in global.__iter__(_env.enemy) do
@@ -492,7 +497,7 @@ all.Skill_SYAi_Unique_EX = {
 
 				global.ApplyAOEHPMultiDamage_ResultCheck(_env, _env.ACTOR, units3, {
 					0,
-					100
+					300
 				}, global.SplitValue(_env, damage, {
 					0.4,
 					0.6
@@ -516,7 +521,12 @@ all.Skill_SYAi_Unique_EX = {
 					}, 1, 0)
 				end
 			end
-
+		end)
+		exec["@time"]({
+			2300
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
 			_env.enemy = global.RandomN(_env, #_env.units2, global.EnemyUnits(_env))
 
 			for _, enemy in global.__iter__(_env.enemy) do
