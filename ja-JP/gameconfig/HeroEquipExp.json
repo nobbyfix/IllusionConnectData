@@ -362,7 +362,7 @@
     "Rareity11_50": {
         "Exp": 1530,
         "Gold": 52000,
-        "NextId": "",
+        "NextId": "Rareity11_51",
         "ShowLevel": 50,
         "TotalExp": 23900,
         "TotalGold": 444200
@@ -922,7 +922,7 @@
     "Rareity12_50": {
         "Exp": 2040,
         "Gold": 71500,
-        "NextId": "",
+        "NextId": "Rareity12_51",
         "ShowLevel": 50,
         "TotalExp": 31790,
         "TotalGold": 610850
@@ -1482,7 +1482,7 @@
     "Rareity13_50": {
         "Exp": 2550,
         "Gold": 91000,
-        "NextId": "",
+        "NextId": "Rareity13_51",
         "ShowLevel": 50,
         "TotalExp": 39510,
         "TotalGold": 777350
@@ -2042,7 +2042,7 @@
     "Rareity14_50": {
         "Exp": 3400,
         "Gold": 130000,
-        "NextId": "",
+        "NextId": "Rareity14_51",
         "ShowLevel": 50,
         "TotalExp": 52820,
         "TotalGold": 1110500
@@ -2254,6 +2254,14 @@
         "ShowLevel": 10,
         "TotalExp": 1270,
         "TotalGold": 6500
+    },
+    "Rareity15_100": {
+        "Exp": "",
+        "Gold": 850000,
+        "NextId": "",
+        "ShowLevel": 100,
+        "TotalExp": "",
+        "TotalGold": 24949000
     },
     "Rareity15_11": {
         "Exp": 240,
@@ -2602,7 +2610,7 @@
     "Rareity15_50": {
         "Exp": 3400,
         "Gold": 130000,
-        "NextId": "",
+        "NextId": "Rareity15_51",
         "ShowLevel": 50,
         "TotalExp": 52820,
         "TotalGold": 1110500
@@ -2783,6 +2791,78 @@
         "TotalExp": 173260,
         "TotalGold": 7810500
     },
+    "Rareity15_71": {
+        "Exp": "",
+        "Gold": 360000,
+        "NextId": "Rareity15_72",
+        "ShowLevel": 71,
+        "TotalExp": "",
+        "TotalGold": 8059000
+    },
+    "Rareity15_72": {
+        "Exp": "",
+        "Gold": 370000,
+        "NextId": "Rareity15_73",
+        "ShowLevel": 72,
+        "TotalExp": "",
+        "TotalGold": 8429000
+    },
+    "Rareity15_73": {
+        "Exp": "",
+        "Gold": 380000,
+        "NextId": "Rareity15_74",
+        "ShowLevel": 73,
+        "TotalExp": "",
+        "TotalGold": 8809000
+    },
+    "Rareity15_74": {
+        "Exp": "",
+        "Gold": 400000,
+        "NextId": "Rareity15_75",
+        "ShowLevel": 74,
+        "TotalExp": "",
+        "TotalGold": 9209000
+    },
+    "Rareity15_75": {
+        "Exp": "",
+        "Gold": 410000,
+        "NextId": "Rareity15_76",
+        "ShowLevel": 75,
+        "TotalExp": "",
+        "TotalGold": 9619000
+    },
+    "Rareity15_76": {
+        "Exp": "",
+        "Gold": 420000,
+        "NextId": "Rareity15_77",
+        "ShowLevel": 76,
+        "TotalExp": "",
+        "TotalGold": 10039000
+    },
+    "Rareity15_77": {
+        "Exp": "",
+        "Gold": 430000,
+        "NextId": "Rareity15_78",
+        "ShowLevel": 77,
+        "TotalExp": "",
+        "TotalGold": 10469000
+    },
+    "Rareity15_78": {
+        "Exp": "",
+        "Gold": 440000,
+        "NextId": "Rareity15_79",
+        "ShowLevel": 78,
+        "TotalExp": "",
+        "TotalGold": 10909000
+    },
+    "Rareity15_79": {
+        "Exp": "",
+        "Gold": 450000,
+        "NextId": "Rareity15_80",
+        "ShowLevel": 79,
+        "TotalExp": "",
+        "TotalGold": 11359000
+    },
     "Rareity15_8": {
         "Exp": 190,
         "Gold": 900,
@@ -2791,6 +2871,86 @@
         "TotalExp": 880,
         "TotalGold": 4400
     },
+    "Rareity15_80": {
+        "Exp": "",
+        "Gold": 460000,
+        "NextId": "Rareity15_81",
+        "ShowLevel": 80,
+        "TotalExp": "",
+        "TotalGold": 11819000
+    },
+    "Rareity15_81": {
+        "Exp": "",
+        "Gold": 480000,
+        "NextId": "Rareity15_82",
+        "ShowLevel": 81,
+        "TotalExp": "",
+        "TotalGold": 12299000
+    },
+    "Rareity15_82": {
+        "Exp": "",
+        "Gold": 500000,
+        "NextId": "Rareity15_83",
+        "ShowLevel": 82,
+        "TotalExp": "",
+        "TotalGold": 12799000
+    },
+    "Rareity15_83": {
+        "Exp": "",
+        "Gold": 520000,
+        "NextId": "Rareity15_84",
+        "ShowLevel": 83,
+        "TotalExp": "",
+        "TotalGold": 13319000
+    },
+    "Rareity15_84": {
+        "Exp": "",
+        "Gold": 540000,
+        "NextId": "Rareity15_85",
+        "ShowLevel": 84,
+        "TotalExp": "",
+        "TotalGold": 13859000
+    },
+    "Rareity15_85": {
+        "Exp": "",
+        "Gold": 550000,
+        "NextId": "Rareity15_86",
+        "ShowLevel": 85,
+        "TotalExp": "",
+        "TotalGold": 14409000
+    },
+    "Rareity15_86": {
+        "Exp": "",
+        "Gold": 570000,
+        "NextId": "Rareity15_87",
+        "ShowLevel": 86,
+        "TotalExp": "",
+        "TotalGold": 14979000
+    },
+    "Rareity15_87": {
+        "Exp": "",
+        "Gold": 590000,
+        "NextId": "Rareity15_88",
+        "ShowLevel": 87,
+        "TotalExp": "",
+        "TotalGold": 15569000
+    },
+    "Rareity15_88": {
+        "Exp": "",
+        "Gold": 610000,
+        "NextId": "Rareity15_89",
+        "ShowLevel": 88,
+        "TotalExp": "",
+        "TotalGold": 16179000
+    },
+    "Rareity15_89": {
+        "Exp": "",
+        "Gold": 620000,
+        "NextId": "Rareity15_90",
+        "ShowLevel": 89,
+        "TotalExp": "",
+        "TotalGold": 16799000
+    },
     "Rareity15_9": {
         "Exp": 200,
         "Gold": 1000,
@@ -2798,5 +2958,85 @@
         "ShowLevel": 9,
         "TotalExp": 1070,
         "TotalGold": 5400
+    },
+    "Rareity15_90": {
+        "Exp": "",
+        "Gold": 640000,
+        "NextId": "Rareity15_91",
+        "ShowLevel": 90,
+        "TotalExp": "",
+        "TotalGold": 17439000
+    },
+    "Rareity15_91": {
+        "Exp": "",
+        "Gold": 660000,
+        "NextId": "Rareity15_92",
+        "ShowLevel": 91,
+        "TotalExp": "",
+        "TotalGold": 18099000
+    },
+    "Rareity15_92": {
+        "Exp": "",
+        "Gold": 680000,
+        "NextId": "Rareity15_93",
+        "ShowLevel": 92,
+        "TotalExp": "",
+        "TotalGold": 18779000
+    },
+    "Rareity15_93": {
+        "Exp": "",
+        "Gold": 700000,
+        "NextId": "Rareity15_94",
+        "ShowLevel": 93,
+        "TotalExp": "",
+        "TotalGold": 19479000
+    },
+    "Rareity15_94": {
+        "Exp": "",
+        "Gold": 720000,
+        "NextId": "Rareity15_95",
+        "ShowLevel": 94,
+        "TotalExp": "",
+        "TotalGold": 20199000
+    },
+    "Rareity15_95": {
+        "Exp": "",
+        "Gold": 740000,
+        "NextId": "Rareity15_96",
+        "ShowLevel": 95,
+        "TotalExp": "",
+        "TotalGold": 20939000
+    },
+    "Rareity15_96": {
+        "Exp": "",
+        "Gold": 760000,
+        "NextId": "Rareity15_97",
+        "ShowLevel": 96,
+        "TotalExp": "",
+        "TotalGold": 21699000
+    },
+    "Rareity15_97": {
+        "Exp": "",
+        "Gold": 780000,
+        "NextId": "Rareity15_98",
+        "ShowLevel": 97,
+        "TotalExp": "",
+        "TotalGold": 22479000
+    },
+    "Rareity15_98": {
+        "Exp": "",
+        "Gold": 800000,
+        "NextId": "Rareity15_99",
+        "ShowLevel": 98,
+        "TotalExp": "",
+        "TotalGold": 23279000
+    },
+    "Rareity15_99": {
+        "Exp": "",
+        "Gold": 820000,
+        "NextId": "Rareity15_100",
+        "ShowLevel": 99,
+        "TotalExp": "",
+        "TotalGold": 24099000
     }
 }

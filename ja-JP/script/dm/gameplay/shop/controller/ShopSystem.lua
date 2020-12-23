@@ -64,10 +64,11 @@ ShopSpecialId = {
 	kShopMall = "Shop_Mall",
 	kShopSurfacePackage = "Shop_SurfacePackage",
 	kShopReset = "Shop_Reset",
-	kShopMonthcard = "Shop_Monthcard",
+	KLuckyBag = "LuckyBag",
 	kShopNormal = "Shop_Normal",
 	kShopSurface = "Shop_Surface",
 	kShopTimeLimit = "Shop_TimeLimit",
+	kShopMonthcard = "Shop_Monthcard",
 	kShopPackage = "Shop_Package",
 	kShopRecommend = "Shop_Recommend"
 }
@@ -263,22 +264,39 @@ function ShopSystem:checkMainShopIdForSubNormalShopId(data)
 
 	if config then
 		self._fresh = true
-		local shopTabIds = ConfigReader:getRecordById("ConfigValue", "Shop_ShowSequence").content
-		local index = 1
+		local idx = self:getShopGroupIdx(data.shopId)
 
-		for i = 1, #shopTabIds do
-			local shopId = shopTabIds[i]
+		if idx then
+			data.rightTabIndex = idx
+			data.shopId = ShopSpecialId.kShopNormal
+		end
+	end
+end
 
-			if shopId == data.shopId then
-				index = i
+function ShopSystem:getShopGroupIdx(shopId)
+	local shopTabIds = ConfigReader:getRecordById("ConfigValue", "Shop_ShowSequence").content
+	local list = {}
 
-				break
+	for i = 1, #shopTabIds do
+		local shopId = shopTabIds[i]
+		local shopGroup = self:getShopGroupById(shopId)
+
+		if shopGroup then
+			local config = ConfigReader:getRecordById("Shop", shopId)
+			local unlock, tips = self._systemKeeper:isUnlock(config.UnlockSystem)
+			local canShow = self._systemKeeper:canShow(config.UnlockSystem)
+
+			if canShow and unlock then
+				list[#list + 1] = shopId
 			end
 		end
-
-		data.rightTabIndex = index
-		data.shopId = ShopSpecialId.kShopNormal
 	end
+
+	if #list > 0 then
+		return table.indexof(list, shopId) or 1
+	end
+
+	return nil
 end
 
 function ShopSystem:enterShop(data)
@@ -703,6 +721,10 @@ function ShopSystem:getFreePackage(packageType)
 	return freePackage
 end
 
+function ShopSystem:getPackageById(packageId)
+	return self._packageList[packageId]
+end
+
 function ShopSystem:getPackageList(packageType)
 	local packageType = packageType and packageType or nil
 	local buyPackItems = self._developSystem:getPlayer():getBuyPackItems()
@@ -768,7 +790,7 @@ end
 
 function ShopSystem:getResetShopEndMills(id)
 	local serverTimeMap = DmGame:getInstance()._injector:getInstance("GameServerAgent"):remoteTimestamp()
-	local tb = os.date("*t", serverTimeMap)
+	local tb = TimeUtil:remoteDate("*t", serverTimeMap)
 	local shopReset_RefreshTime = ConfigReader:getDataByNameIdAndKey("Reset", "ShopReset_RefreshTime", "ResetSystem")
 	local resetTime = shopReset_RefreshTime.resetTime[1]
 	local _, _, h, m, s = string.find(resetTime, "(%d+):(%d+):(%d+)")
@@ -1277,7 +1299,7 @@ function ShopSystem:getTimeEnd(timeType)
 			min = m,
 			sec = s
 		}
-		local mills = TimeUtil:getTimeByDate(table)
+		local mills = TimeUtil:timeByRemoteDate(table)
 		local ends = timeType["end"]
 		local _, _, y, mon, d, h, m, s = string.find(ends, "(%d+)-(%d+)-(%d+) (%d+):(%d+):(%d+)")
 		local table = {
@@ -1288,7 +1310,7 @@ function ShopSystem:getTimeEnd(timeType)
 			min = m,
 			sec = s
 		}
-		local mille = TimeUtil:getTimeByDate(table)
+		local mille = TimeUtil:timeByRemoteDate(table)
 		local gameServerAgent = DmGame:getInstance()._injector:getInstance("GameServerAgent")
 		local curTime = gameServerAgent:remoteTimestamp()
 

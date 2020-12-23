@@ -47,8 +47,13 @@ function ActivityExchangeMediator:setupView()
 	self._cloneCell:setVisible(false)
 
 	self._taskList = self._activity:getSortExchangeList()
+	local endTime = ConfigReader:getDataByNameIdAndKey("Activity", "VTExtraNormal_20200412_0420", "TimeFactor")
+	local remoteTime = TimeUtil:formatStrToRemoteTImestamp(endTime["end"])
+	local localDate = TimeUtil:localDate("%Y-%m-%d  %H:%M:%S", remoteTime)
 
-	self._descPanel:setString(Strings:get(self._activity:getDesc()))
+	self._descPanel:setString(Strings:get(self._activity:getDesc(), {
+		time = localDate
+	}))
 	self._descPanel:getVirtualRenderer():setLineSpacing(2)
 
 	self._iconClone = self:getView():getChildByName("iconPanel")

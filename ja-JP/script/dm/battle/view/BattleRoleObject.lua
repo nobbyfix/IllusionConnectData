@@ -5,6 +5,7 @@ require("dm.battle.view.widget.BattleBubbleWidget")
 
 local specId = ""
 local BuffColor = {
+	Negative = "Negative",
 	Red = {
 		o_r = 96
 	},
@@ -784,6 +785,7 @@ function BattleRoleObject:addBuff(args)
 
 		if buffModel.Color and buffModel.Color ~= "" then
 			buffValue.color = buffModel.Color
+			self._filmed = buffModel.Color == BuffColor.Negative
 
 			self:refreshColor()
 		end
@@ -825,6 +827,8 @@ function BattleRoleObject:removeBuff(args)
 			end
 		end
 	end
+
+	self._filmed = false
 
 	self:refreshColor()
 	self:refreshBuffEffect()

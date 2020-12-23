@@ -53,6 +53,53 @@
         "Name": "HomeBackground_1_Name",
         "Price": "",
         "Sort": 1,
+        "TimeFactor": "",
+        "Tips": "Unlock_BG_Level",
+        "Unlook": 1
+    },
+    "HomeBackground_10": {
+        "BGM": "Mus_Main_Scene",
+        "BGPContraction": "anualshop_scene_main_newyearpreview",
+        "Condition": {
+            "LEVEL": 1
+        },
+        "Cost": "",
+        "Item": "HomeBackground_1_Item",
+        "Loop": {
+            "01:00:00": {
+                "BG": "Main_Scene_Newyear"
+            }
+        },
+        "Name": "HomeBackground_10_Name",
+        "Price": "",
+        "Sort": 10,
+        "TimeFactor": {
+            "end": "2021-01-09 05:00:00",
+            "start": "2021-01-01 05:00:00"
+        },
+        "Tips": "Unlock_BG_Level",
+        "Unlook": 1
+    },
+    "HomeBackground_11": {
+        "BGM": "Mus_Main_Scene",
+        "BGPContraction": "anualshop_scene_main_christmaspreview",
+        "Condition": {
+            "LEVEL": 1
+        },
+        "Cost": "",
+        "Item": "HomeBackground_1_Item",
+        "Loop": {
+            "01:00:00": {
+                "BG": "Main_Scene_Christmas"
+            }
+        },
+        "Name": "HomeBackground_11_Name",
+        "Price": "",
+        "Sort": 11,
+        "TimeFactor": {
+            "end": "2021-01-01 05:00:00",
+            "start": "2020-12-24 05:00:00"
+        },
         "Tips": "Unlock_BG_Level",
         "Unlook": 1
     },
@@ -75,6 +122,7 @@
         "Name": "HomeBackground_2_Name",
         "Price": "",
         "Sort": 4,
+        "TimeFactor": "",
         "Tips": "Unlock_BG_Level",
         "Unlook": 1
     },
@@ -114,6 +162,7 @@
         "Name": "HomeBackground_3_Name",
         "Price": "",
         "Sort": 3,
+        "TimeFactor": "",
         "Tips": "Unlock_BG_Stage",
         "Unlook": 1
     },
@@ -162,6 +211,7 @@
         "Name": "HomeBackground_4_Name",
         "Price": "",
         "Sort": 2,
+        "TimeFactor": "",
         "Tips": "Unlock_BG_Stage",
         "Unlook": 0
     },
@@ -181,6 +231,7 @@
         "Name": "HomeBackground_5_Name",
         "Price": "",
         "Sort": 5,
+        "TimeFactor": "",
         "Tips": "Unlock_BG_Stage",
         "Unlook": 1
     },
@@ -200,6 +251,7 @@
         "Name": "HomeBackground_6_Name",
         "Price": "",
         "Sort": 6,
+        "TimeFactor": "",
         "Tips": "Unlock_BG_Stage",
         "Unlook": 1
     },
@@ -219,6 +271,7 @@
         "Name": "HomeBackground_7_Name",
         "Price": "",
         "Sort": 7,
+        "TimeFactor": "",
         "Tips": "Unlock_BG_Stage",
         "Unlook": 1
     },
@@ -238,6 +291,7 @@
         "Name": "HomeBackground_8_Name",
         "Price": "",
         "Sort": 8,
+        "TimeFactor": "",
         "Tips": "Unlock_BG_Stage",
         "Unlook": 1
     },
@@ -257,6 +311,7 @@
         "Name": "HomeBackground_9_Name",
         "Price": "",
         "Sort": 9,
+        "TimeFactor": "",
         "Tips": "Unlock_BG_Level",
         "Unlook": 1
     }

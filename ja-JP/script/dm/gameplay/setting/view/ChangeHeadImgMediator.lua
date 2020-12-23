@@ -629,7 +629,7 @@ function ChangeHeadImgMediator:refreshHeadFrameInfoView()
 	end
 
 	if self._curData.frameData then
-		local tb = os.date("*t", tonumber(self._curData.frameData) / 1000)
+		local tb = TimeUtil:localDate("*t", tonumber(self._curData.frameData) / 1000)
 
 		getText:setString(Strings:get("Frame_UI_1") .. tb.year .. "." .. tb.month .. "." .. tb.day)
 	end

@@ -71,7 +71,7 @@ function RankBestMediator:initWidgetInfo()
 	self._clonePanel:setVisible(false)
 
 	local remoteTimestamp = self._gameServerAgent:remoteTimestamp()
-	local date = os.date("*t", remoteTimestamp)
+	local date = TimeUtil:localDate("*t", remoteTimestamp)
 	local month = date.month >= 10 and date.month or "0" .. date.month
 	local day = date.day >= 10 and date.day or "0" .. date.day
 	local week = date.wday == 1 and 7 or date.wday - 1

@@ -45,13 +45,16 @@ function DreamBattleSession:genBattleConfigAndData(battleData, dreamBattleId, ma
 
 	self:_applyBattleConfig(battleData, battleConfig)
 
-	local victoryConditions = battleConfig.VictoryConditions
+	local baseConfig = ConfigReader:getRecordById("DreamChallengeBattle", dreamBattleId)
+	local cellCfg = self:_genGroundCellCfg(baseConfig.PositionLimit)
+	local victoryConditions = baseConfig.VictoryConditions
 
 	return {
 		battlePhaseConfig = battlePhaseConfig,
 		randomSeed = randomSeed,
 		maxRound = maxRound,
-		victoryCfg = victoryConditions
+		victoryCfg = victoryConditions,
+		groundCellCfg = cellCfg
 	}
 end
 

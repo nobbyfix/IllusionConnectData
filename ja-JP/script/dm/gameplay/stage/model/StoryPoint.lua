@@ -54,6 +54,14 @@ function StoryPoint:isUnlock()
 		preBCondition = preBCondition and tempBattlePoint:isPass()
 	end
 
+	for _, v in ipairs(self:getPrevSPointId()) do
+		local storyPoint = self._owner:getPointById(v)
+
+		if storyPoint then
+			preBCondition = preBCondition and storyPoint:isPass()
+		end
+	end
+
 	return preBCondition
 end
 
@@ -107,4 +115,8 @@ end
 
 function StoryPoint:getConfig()
 	return self._config
+end
+
+function StoryPoint:getLocation()
+	return self._config.Location
 end

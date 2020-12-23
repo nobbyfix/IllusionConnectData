@@ -233,20 +233,26 @@ all.Skill_DFQi_Unique = {
 
 			for _, unit in global.__iter__(global.RandomN(_env, 1, global.EnemyUnits(_env))) do
 				local buffeft1 = global.Daze(_env)
+				local attacker = global.LoadUnit(_env, _env.ACTOR, "ATTACKER")
+				local defender = global.LoadUnit(_env, unit, "DEFENDER")
+				local prob = global.EvalProb1(_env, attacker, defender, this.DazeRateFactor, 0)
 
-				global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
-					timing = 2,
-					duration = 1,
-					display = "Daze",
-					tags = {
-						"STATUS",
-						"DEBUFF",
-						"DAZE",
-						"DISPELLABLE"
-					}
-				}, {
-					buffeft1
-				}, this.DazeRateFactor, 0)
+				if global.ProbTest(_env, prob) then
+					global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
+						timing = 2,
+						duration = 1,
+						display = "Daze",
+						tags = {
+							"STATUS",
+							"DEBUFF",
+							"DAZE",
+							"DISPELLABLE"
+						}
+					}, {
+						buffeft1
+					}, 1, 0)
+				end
+
 				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
 				global.ApplyRPEffect(_env, _env.ACTOR, unit)
 
@@ -263,20 +269,26 @@ all.Skill_DFQi_Unique = {
 
 			for _, unit in global.__iter__(global.RandomN(_env, 1, global.EnemyUnits(_env))) do
 				local buffeft1 = global.Daze(_env)
+				local attacker = global.LoadUnit(_env, _env.ACTOR, "ATTACKER")
+				local defender = global.LoadUnit(_env, unit, "DEFENDER")
+				local prob = global.EvalProb1(_env, attacker, defender, this.DazeRateFactor, 0)
 
-				global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
-					timing = 2,
-					duration = 1,
-					display = "Daze",
-					tags = {
-						"STATUS",
-						"DEBUFF",
-						"DAZE",
-						"DISPELLABLE"
-					}
-				}, {
-					buffeft1
-				}, this.DazeRateFactor, 0)
+				if global.ProbTest(_env, prob) then
+					global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
+						timing = 2,
+						duration = 1,
+						display = "Daze",
+						tags = {
+							"STATUS",
+							"DEBUFF",
+							"DAZE",
+							"DISPELLABLE"
+						}
+					}, {
+						buffeft1
+					}, 1, 0)
+				end
+
 				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
 				global.ApplyRPEffect(_env, _env.ACTOR, unit)
 
@@ -293,20 +305,26 @@ all.Skill_DFQi_Unique = {
 
 			for _, unit in global.__iter__(global.RandomN(_env, 1, global.EnemyUnits(_env))) do
 				local buffeft1 = global.Daze(_env)
+				local attacker = global.LoadUnit(_env, _env.ACTOR, "ATTACKER")
+				local defender = global.LoadUnit(_env, unit, "DEFENDER")
+				local prob = global.EvalProb1(_env, attacker, defender, this.DazeRateFactor, 0)
 
-				global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
-					timing = 2,
-					duration = 1,
-					display = "Daze",
-					tags = {
-						"STATUS",
-						"DEBUFF",
-						"DAZE",
-						"DISPELLABLE"
-					}
-				}, {
-					buffeft1
-				}, this.DazeRateFactor, 0)
+				if global.ProbTest(_env, prob) then
+					global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
+						timing = 2,
+						duration = 1,
+						display = "Daze",
+						tags = {
+							"STATUS",
+							"DEBUFF",
+							"DAZE",
+							"DISPELLABLE"
+						}
+					}, {
+						buffeft1
+					}, 1, 0)
+				end
+
 				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
 				global.ApplyRPEffect(_env, _env.ACTOR, unit)
 
@@ -323,20 +341,26 @@ all.Skill_DFQi_Unique = {
 
 			for _, unit in global.__iter__(global.RandomN(_env, 1, global.EnemyUnits(_env))) do
 				local buffeft1 = global.Daze(_env)
+				local attacker = global.LoadUnit(_env, _env.ACTOR, "ATTACKER")
+				local defender = global.LoadUnit(_env, unit, "DEFENDER")
+				local prob = global.EvalProb1(_env, attacker, defender, this.DazeRateFactor, 0)
 
-				global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
-					timing = 2,
-					duration = 1,
-					display = "Daze",
-					tags = {
-						"STATUS",
-						"DEBUFF",
-						"DAZE",
-						"DISPELLABLE"
-					}
-				}, {
-					buffeft1
-				}, this.DazeRateFactor, 0)
+				if global.ProbTest(_env, prob) then
+					global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
+						timing = 2,
+						duration = 1,
+						display = "Daze",
+						tags = {
+							"STATUS",
+							"DEBUFF",
+							"DAZE",
+							"DISPELLABLE"
+						}
+					}, {
+						buffeft1
+					}, 1, 0)
+				end
+
 				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
 				global.ApplyRPEffect(_env, _env.ACTOR, unit)
 
@@ -353,20 +377,26 @@ all.Skill_DFQi_Unique = {
 
 			for _, unit in global.__iter__(global.RandomN(_env, 1, global.EnemyUnits(_env))) do
 				local buffeft1 = global.Daze(_env)
+				local attacker = global.LoadUnit(_env, _env.ACTOR, "ATTACKER")
+				local defender = global.LoadUnit(_env, unit, "DEFENDER")
+				local prob = global.EvalProb1(_env, attacker, defender, this.DazeRateFactor, 0)
 
-				global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
-					timing = 2,
-					duration = 1,
-					display = "Daze",
-					tags = {
-						"STATUS",
-						"DEBUFF",
-						"DAZE",
-						"DISPELLABLE"
-					}
-				}, {
-					buffeft1
-				}, this.DazeRateFactor, 0)
+				if global.ProbTest(_env, prob) then
+					global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
+						timing = 2,
+						duration = 1,
+						display = "Daze",
+						tags = {
+							"STATUS",
+							"DEBUFF",
+							"DAZE",
+							"DISPELLABLE"
+						}
+					}, {
+						buffeft1
+					}, 1, 0)
+				end
+
 				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
 				global.ApplyRPEffect(_env, _env.ACTOR, unit)
 
@@ -383,20 +413,26 @@ all.Skill_DFQi_Unique = {
 
 			for _, unit in global.__iter__(global.RandomN(_env, 1, global.EnemyUnits(_env))) do
 				local buffeft1 = global.Daze(_env)
+				local attacker = global.LoadUnit(_env, _env.ACTOR, "ATTACKER")
+				local defender = global.LoadUnit(_env, unit, "DEFENDER")
+				local prob = global.EvalProb1(_env, attacker, defender, this.DazeRateFactor, 0)
 
-				global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
-					timing = 2,
-					duration = 1,
-					display = "Daze",
-					tags = {
-						"STATUS",
-						"DEBUFF",
-						"DAZE",
-						"DISPELLABLE"
-					}
-				}, {
-					buffeft1
-				}, this.DazeRateFactor, 0)
+				if global.ProbTest(_env, prob) then
+					global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
+						timing = 2,
+						duration = 1,
+						display = "Daze",
+						tags = {
+							"STATUS",
+							"DEBUFF",
+							"DAZE",
+							"DISPELLABLE"
+						}
+					}, {
+						buffeft1
+					}, 1, 0)
+				end
+
 				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
 				global.ApplyRPEffect(_env, _env.ACTOR, unit)
 
@@ -560,20 +596,26 @@ all.Skill_DFQi_Proud_EX = {
 
 			for _, unit in global.__iter__(_env.units) do
 				local buffeft1 = global.Daze(_env)
+				local attacker = global.LoadUnit(_env, _env.ACTOR, "ATTACKER")
+				local defender = global.LoadUnit(_env, unit, "DEFENDER")
+				local prob = global.EvalProb1(_env, attacker, defender, this.DazeRateFactor, 0)
 
-				global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
-					timing = 2,
-					duration = 1,
-					display = "Daze",
-					tags = {
-						"STATUS",
-						"DEBUFF",
-						"DAZE",
-						"DISPELLABLE"
-					}
-				}, {
-					buffeft1
-				}, this.DazeRateFactor, 0)
+				if global.ProbTest(_env, prob) then
+					global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
+						timing = 2,
+						duration = 1,
+						display = "Daze",
+						tags = {
+							"STATUS",
+							"DEBUFF",
+							"DAZE",
+							"DISPELLABLE"
+						}
+					}, {
+						buffeft1
+					}, 1, 0)
+				end
+
 				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
 				global.ApplyRPEffect(_env, _env.ACTOR, unit)
 
@@ -669,20 +711,26 @@ all.Skill_DFQi_Unique_EX = {
 
 			for _, unit in global.__iter__(global.RandomN(_env, 1, global.EnemyUnits(_env))) do
 				local buffeft1 = global.Daze(_env)
+				local attacker = global.LoadUnit(_env, _env.ACTOR, "ATTACKER")
+				local defender = global.LoadUnit(_env, unit, "DEFENDER")
+				local prob = global.EvalProb1(_env, attacker, defender, this.DazeRateFactor, 0)
 
-				global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
-					timing = 2,
-					duration = 1,
-					display = "Daze",
-					tags = {
-						"STATUS",
-						"DEBUFF",
-						"DAZE",
-						"DISPELLABLE"
-					}
-				}, {
-					buffeft1
-				}, this.DazeRateFactor, 0)
+				if global.ProbTest(_env, prob) then
+					global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
+						timing = 2,
+						duration = 1,
+						display = "Daze",
+						tags = {
+							"STATUS",
+							"DEBUFF",
+							"DAZE",
+							"DISPELLABLE"
+						}
+					}, {
+						buffeft1
+					}, 1, 0)
+				end
+
 				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
 				global.ApplyRPEffect(_env, _env.ACTOR, unit)
 
@@ -699,20 +747,26 @@ all.Skill_DFQi_Unique_EX = {
 
 			for _, unit in global.__iter__(global.RandomN(_env, 1, global.EnemyUnits(_env))) do
 				local buffeft1 = global.Daze(_env)
+				local attacker = global.LoadUnit(_env, _env.ACTOR, "ATTACKER")
+				local defender = global.LoadUnit(_env, unit, "DEFENDER")
+				local prob = global.EvalProb1(_env, attacker, defender, this.DazeRateFactor, 0)
 
-				global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
-					timing = 2,
-					duration = 1,
-					display = "Daze",
-					tags = {
-						"STATUS",
-						"DEBUFF",
-						"DAZE",
-						"DISPELLABLE"
-					}
-				}, {
-					buffeft1
-				}, this.DazeRateFactor, 0)
+				if global.ProbTest(_env, prob) then
+					global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
+						timing = 2,
+						duration = 1,
+						display = "Daze",
+						tags = {
+							"STATUS",
+							"DEBUFF",
+							"DAZE",
+							"DISPELLABLE"
+						}
+					}, {
+						buffeft1
+					}, 1, 0)
+				end
+
 				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
 				global.ApplyRPEffect(_env, _env.ACTOR, unit)
 
@@ -729,20 +783,26 @@ all.Skill_DFQi_Unique_EX = {
 
 			for _, unit in global.__iter__(global.RandomN(_env, 1, global.EnemyUnits(_env))) do
 				local buffeft1 = global.Daze(_env)
+				local attacker = global.LoadUnit(_env, _env.ACTOR, "ATTACKER")
+				local defender = global.LoadUnit(_env, unit, "DEFENDER")
+				local prob = global.EvalProb1(_env, attacker, defender, this.DazeRateFactor, 0)
 
-				global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
-					timing = 2,
-					duration = 1,
-					display = "Daze",
-					tags = {
-						"STATUS",
-						"DEBUFF",
-						"DAZE",
-						"DISPELLABLE"
-					}
-				}, {
-					buffeft1
-				}, this.DazeRateFactor, 0)
+				if global.ProbTest(_env, prob) then
+					global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
+						timing = 2,
+						duration = 1,
+						display = "Daze",
+						tags = {
+							"STATUS",
+							"DEBUFF",
+							"DAZE",
+							"DISPELLABLE"
+						}
+					}, {
+						buffeft1
+					}, 1, 0)
+				end
+
 				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
 				global.ApplyRPEffect(_env, _env.ACTOR, unit)
 
@@ -759,20 +819,26 @@ all.Skill_DFQi_Unique_EX = {
 
 			for _, unit in global.__iter__(global.RandomN(_env, 1, global.EnemyUnits(_env))) do
 				local buffeft1 = global.Daze(_env)
+				local attacker = global.LoadUnit(_env, _env.ACTOR, "ATTACKER")
+				local defender = global.LoadUnit(_env, unit, "DEFENDER")
+				local prob = global.EvalProb1(_env, attacker, defender, this.DazeRateFactor, 0)
 
-				global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
-					timing = 2,
-					duration = 1,
-					display = "Daze",
-					tags = {
-						"STATUS",
-						"DEBUFF",
-						"DAZE",
-						"DISPELLABLE"
-					}
-				}, {
-					buffeft1
-				}, this.DazeRateFactor, 0)
+				if global.ProbTest(_env, prob) then
+					global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
+						timing = 2,
+						duration = 1,
+						display = "Daze",
+						tags = {
+							"STATUS",
+							"DEBUFF",
+							"DAZE",
+							"DISPELLABLE"
+						}
+					}, {
+						buffeft1
+					}, 1, 0)
+				end
+
 				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
 				global.ApplyRPEffect(_env, _env.ACTOR, unit)
 
@@ -789,20 +855,26 @@ all.Skill_DFQi_Unique_EX = {
 
 			for _, unit in global.__iter__(global.RandomN(_env, 1, global.EnemyUnits(_env))) do
 				local buffeft1 = global.Daze(_env)
+				local attacker = global.LoadUnit(_env, _env.ACTOR, "ATTACKER")
+				local defender = global.LoadUnit(_env, unit, "DEFENDER")
+				local prob = global.EvalProb1(_env, attacker, defender, this.DazeRateFactor, 0)
 
-				global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
-					timing = 2,
-					duration = 1,
-					display = "Daze",
-					tags = {
-						"STATUS",
-						"DEBUFF",
-						"DAZE",
-						"DISPELLABLE"
-					}
-				}, {
-					buffeft1
-				}, this.DazeRateFactor, 0)
+				if global.ProbTest(_env, prob) then
+					global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
+						timing = 2,
+						duration = 1,
+						display = "Daze",
+						tags = {
+							"STATUS",
+							"DEBUFF",
+							"DAZE",
+							"DISPELLABLE"
+						}
+					}, {
+						buffeft1
+					}, 1, 0)
+				end
+
 				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
 				global.ApplyRPEffect(_env, _env.ACTOR, unit)
 
@@ -819,20 +891,26 @@ all.Skill_DFQi_Unique_EX = {
 
 			for _, unit in global.__iter__(global.RandomN(_env, 1, global.EnemyUnits(_env))) do
 				local buffeft1 = global.Daze(_env)
+				local attacker = global.LoadUnit(_env, _env.ACTOR, "ATTACKER")
+				local defender = global.LoadUnit(_env, unit, "DEFENDER")
+				local prob = global.EvalProb1(_env, attacker, defender, this.DazeRateFactor, 0)
 
-				global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
-					timing = 2,
-					duration = 1,
-					display = "Daze",
-					tags = {
-						"STATUS",
-						"DEBUFF",
-						"DAZE",
-						"DISPELLABLE"
-					}
-				}, {
-					buffeft1
-				}, this.DazeRateFactor, 0)
+				if global.ProbTest(_env, prob) then
+					global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
+						timing = 2,
+						duration = 1,
+						display = "Daze",
+						tags = {
+							"STATUS",
+							"DEBUFF",
+							"DAZE",
+							"DISPELLABLE"
+						}
+					}, {
+						buffeft1
+					}, 1, 0)
+				end
+
 				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
 				global.ApplyRPEffect(_env, _env.ACTOR, unit)
 

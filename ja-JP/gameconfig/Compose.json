@@ -1,4 +1,38 @@
 {
+    "CO_Decoration_15001": {
+        "Currency": {
+            "amount": 2000000,
+            "id": "IR_Gold",
+            "type": "Item"
+        },
+        "Item1": {
+            "amount": 1,
+            "id": "CO_DecorationStone_1",
+            "type": "Item"
+        },
+        "Item2": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Decoration"
+        },
+        "Item3": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Decoration"
+        },
+        "Item4": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Decoration"
+        },
+        "Item5": "",
+        "Reward": "Decoration_15001",
+        "Show": {
+            "id": "Decoration_15001",
+            "type": "Equip"
+        },
+        "Times": "1"
+    },
     "CO_Weapon_1_UR": {
         "Currency": {
             "amount": 10000,
@@ -21,11 +55,13 @@
             "type": "Item"
         },
         "Item4": "",
+        "Item5": "",
         "Reward": "CO_Weapon_1_UR",
         "Show": {
             "id": "Weapon_13005",
             "type": "Equip"
-        }
+        },
+        "Times": "1"
     },
     "CO_Weapon_2_UR": {
         "Currency": {
@@ -53,11 +89,17 @@
             "id": "IHG_Quality3_10",
             "type": "Item"
         },
+        "Item5": {
+            "amount": 5,
+            "id": "IHG_Quality3_10",
+            "type": "Item"
+        },
         "Reward": "CO_Weapon_1_UR",
         "Show": {
             "id": "Weapon_13005",
             "type": "Equip"
-        }
+        },
+        "Times": "1"
     },
     "CO_Weapon_3_UR": {
         "Currency": {
@@ -81,11 +123,13 @@
             "type": "Item"
         },
         "Item4": "",
+        "Item5": "",
         "Reward": "CO_Weapon_1_UR",
         "Show": {
             "id": "Weapon_13005",
             "type": "Equip"
-        }
+        },
+        "Times": "10"
     },
     "CO_Weapon_4_UR": {
         "Currency": {
@@ -113,11 +157,17 @@
             "id": "IHG_Quality3_10",
             "type": "Item"
         },
+        "Item5": {
+            "amount": 5,
+            "id": "IHG_Quality3_10",
+            "type": "Item"
+        },
         "Reward": "CO_Weapon_2_UR",
         "Show": {
             "id": "IB_Equip_SSR",
             "type": "Item"
-        }
+        },
+        "Times": "10"
     },
     "CO_Weapon_5_UR": {
         "Currency": {
@@ -141,11 +191,13 @@
             "type": "Item"
         },
         "Item4": "",
+        "Item5": "",
         "Reward": "CO_Weapon_2_UR",
         "Show": {
             "id": "IB_Equip_SSR",
             "type": "Item"
-        }
+        },
+        "Times": "10"
     },
     "CO_Weapon_6_UR": {
         "Currency": {
@@ -173,10 +225,16 @@
             "id": "IHG_Quality3_10",
             "type": "Item"
         },
+        "Item5": {
+            "amount": 5,
+            "id": "IHG_Quality3_10",
+            "type": "Item"
+        },
         "Reward": "CO_Weapon_2_UR",
         "Show": {
             "id": "IB_Equip_SSR",
             "type": "Item"
-        }
+        },
+        "Times": "-1"
     }
 }

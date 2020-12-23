@@ -1,4 +1,200 @@
 {
+    "ANewYearS01S01": {
+        "FirstReward": "",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -250
+        ],
+        "Map": "ANewYearM01",
+        "Name": "Story_NewYear_1",
+        "NextStoryPoint": [
+            "ANewYearS01S02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_dreamtowersd_01a"
+    },
+    "ANewYearS01S02": {
+        "FirstReward": "",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "ANewYearM01",
+        "Name": "Story_NewYear_2",
+        "NextStoryPoint": [
+            "ANewYearS02S01"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [
+            "ANewYearS01S01"
+        ],
+        "StoryLink": "eventstory_dreamtowersd_02a"
+    },
+    "ANewYearS02S01": {
+        "FirstReward": "",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "ANewYearM02",
+        "Name": "Story_NewYear_3",
+        "NextStoryPoint": [
+            "ANewYearS02S02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [
+            "ANewYearS01S02"
+        ],
+        "StoryLink": "eventstory_dreamtowersd_03a"
+    },
+    "ANewYearS02S02": {
+        "FirstReward": "",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -100
+        ],
+        "Map": "ANewYearM02",
+        "Name": "Story_NewYear_4",
+        "NextStoryPoint": [
+            "ANewYearS03S01"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [
+            "ANewYearS02S01"
+        ],
+        "StoryLink": "eventstory_dreamtowersd_04a"
+    },
+    "ANewYearS03S01": {
+        "FirstReward": "",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -360,
+            -224
+        ],
+        "Map": "ANewYearM03",
+        "Name": "Story_NewYear_5",
+        "NextStoryPoint": [
+            "ANewYearS03S02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [
+            "ANewYearS02S02"
+        ],
+        "StoryLink": "eventstory_dreamtowersd_05a"
+    },
+    "ANewYearS03S02": {
+        "FirstReward": "",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -55,
+            -225
+        ],
+        "Map": "ANewYearM03",
+        "Name": "Story_NewYear_6",
+        "NextStoryPoint": [
+            "ANewYearS03S03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [
+            "ANewYearS03S01"
+        ],
+        "StoryLink": "eventstory_dreamtowersd_06a"
+    },
+    "ANewYearS03S03": {
+        "FirstReward": "",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            52,
+            90
+        ],
+        "Map": "ANewYearM03",
+        "Name": "Story_NewYear_7",
+        "NextStoryPoint": [
+            "ANewYearS03S04"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [
+            "ANewYearS03S02"
+        ],
+        "StoryLink": "eventstory_dreamtowersd_07a"
+    },
+    "ANewYearS03S04": {
+        "FirstReward": "",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            243,
+            7
+        ],
+        "Map": "ANewYearM03",
+        "Name": "Story_NewYear_8",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [
+            "ANewYearS03S03"
+        ],
+        "StoryLink": "eventstory_dreamtowersd_08a"
+    },
     "AS01E01": {
         "FirstReward": "AS01E01_Reward",
         "Icon": "s_album_story_1",

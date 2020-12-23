@@ -18,6 +18,9 @@ BFCell:has("_resident", {
 BFCell:has("_isLocked", {
 	is = "rwb"
 })
+BFCell:has("_isBlocked", {
+	is = "rwb"
+})
 
 BFCELL_MINNO = 1
 BFCELL_MAXNO = 9
@@ -86,6 +89,10 @@ function BFCell:initialize(id)
 		self._side = kBattleSideB
 		self._number = -id
 	end
+end
+
+function BFCell:isNormalStatus()
+	return not self._isLocked and not self._isBlocked
 end
 
 BattleField = class("BattleField")
@@ -342,7 +349,7 @@ end
 function BattleField:isEmptyCell(cellId)
 	local cell = self._cells[cellId]
 
-	return cell ~= nil and cell:getResident() == nil and not cell:isLocked()
+	return cell ~= nil and cell:getResident() == nil and cell:isNormalStatus()
 end
 
 function BattleField:lockCell(cellId)
@@ -368,10 +375,26 @@ function BattleField:unlockAllCells()
 	end
 end
 
+function BattleField:blockCell(cellId)
+	local cell = self._cells[cellId]
+
+	if cell then
+		cell:setIsBlocked(true)
+	end
+end
+
+function BattleField:unblockCell(cellId)
+	local cell = self._cells[cellId]
+
+	if cell then
+		cell:setIsBlocked(false)
+	end
+end
+
 function BattleField:settleUnit(cellId, unit)
 	local cell = self._cells[cellId]
 
-	if cell == nil or cell:isLocked() then
+	if cell == nil or not cell:isNormalStatus() then
 		return false, nil
 	end
 
@@ -512,6 +535,20 @@ function BattleField:collectCells(result, side, descending)
 
 	for id = start, guard, step do
 		result[#result + 1] = cells[id]
+	end
+
+	return result
+end
+
+function BattleField:collectBlockCellIndex(side, descending)
+	local result = {}
+	local start, guard, step = calcLoopRange(side, descending)
+	local cells = self._cells
+
+	for id = start, guard, step do
+		if cells[id]:isBlocked() then
+			result[#result + 1] = id
+		end
 	end
 
 	return result

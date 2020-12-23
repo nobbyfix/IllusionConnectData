@@ -130,6 +130,24 @@
         "UnlockAnima": "",
         "UnlockDesc": "AutoFight_UnlockDesc"
     },
+    "Bag_Secret": {
+        "Condition": {
+            "LEVEL": 40
+        },
+        "Icon": "",
+        "IsPlay": 0,
+        "Link": "",
+        "LongDesc": "",
+        "Name": "Unlock_Bag_Secret",
+        "OutputDesc": "",
+        "ResourcesBanner": "",
+        "ShowCondition": {
+            "LEVEL": 40
+        },
+        "Tip": "Unlock_Level_Tips",
+        "UnlockAnima": "",
+        "UnlockDesc": ""
+    },
     "BattlePass": {
         "Condition": {
             "LEVEL": 1

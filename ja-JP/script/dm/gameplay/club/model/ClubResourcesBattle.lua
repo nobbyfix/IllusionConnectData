@@ -380,7 +380,7 @@ function ClubResourcesBattle:getStartTimeAndEndTime()
 				min = m,
 				sec = s
 			}
-			local startTime = TimeUtil:getTimeByDate(table)
+			local startTime = TimeUtil:timeByRemoteDate(table)
 			local _, _, y, mon, d, h, m, s = string.find(timeStamp["end"], "(%d+)-(%d+)-(%d+) (%d+):(%d+):(%d+)")
 			local table = {
 				year = y,
@@ -390,7 +390,7 @@ function ClubResourcesBattle:getStartTimeAndEndTime()
 				min = m,
 				sec = s
 			}
-			local endTime = TimeUtil:getTimeByDate(table)
+			local endTime = TimeUtil:timeByRemoteDate(table)
 			tiemData.startTime = startTime
 			tiemData.endTime = endTime
 			self._tiemData = tiemData

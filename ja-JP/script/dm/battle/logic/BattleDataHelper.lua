@@ -113,6 +113,7 @@ function BattleDataHelper:fillSummonData(summon, skillData, protoFactory, summon
 					}
 
 					self:fillSkillData(summonInfo.skills.death, protoFactory)
+					self:fillSummonData(summon, summonInfo.skills.death, protoFactory, summonMap)
 				end
 
 				if summonData.PassiveSkill and type(summonData.PassiveSkill) == "table" then
@@ -125,6 +126,7 @@ function BattleDataHelper:fillSummonData(summon, skillData, protoFactory, summon
 						}
 
 						self:fillSkillData(summonInfo.skills.passive[i], protoFactory)
+						self:fillSummonData(summon, summonInfo.skills.passive[i], protoFactory, summonMap)
 					end
 				end
 			end

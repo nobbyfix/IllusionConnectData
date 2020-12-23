@@ -63,6 +63,11 @@ function EquipSkillUpMediator:setupView()
 	local isLevelUp = true
 	local HeroEquipSkillLevel = ConfigReader:getDataByNameIdAndKey("ConfigValue", "HeroEquipSkillLevel", "content")
 	local arr = {}
+	local URUPSkillLV = ConfigReader:getDataByNameIdAndKey("HeroEquipBase", self._equipId, "URUPSkillLV")
+
+	if URUPSkillLV then
+		HeroEquipSkillLevel = URUPSkillLV
+	end
 
 	for i = 1, #HeroEquipSkillLevel do
 		if self._oldSkillLevel < HeroEquipSkillLevel[i] and HeroEquipSkillLevel[i] <= self._equipData:getLevel() then

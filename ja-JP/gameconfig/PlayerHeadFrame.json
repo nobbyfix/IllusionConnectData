@@ -268,5 +268,25 @@
         "Reward": "",
         "Type": "ZODIAC",
         "Unlook": 1
+    },
+    "PlayerHead_Christmas": {
+        "Desc": "Frame_Activity_NewYear01_Desc",
+        "Name": "Frame_Activity_NewYear01",
+        "Order": 9,
+        "Picture": "anualshop_frame_christmas",
+        "ResourceDesc": "Frame_Activity_NewYearSource",
+        "Reward": "",
+        "Type": "ACTIVITY",
+        "Unlook": 1
+    },
+    "PlayerHead_NewYear": {
+        "Desc": "Frame_Activity_NewYear02_Desc",
+        "Name": "Frame_Activity_NewYear02",
+        "Order": 10,
+        "Picture": "anualshop_frame_newyear",
+        "ResourceDesc": "Frame_Activity_NewYearSource",
+        "Reward": "",
+        "Type": "ACTIVITY",
+        "Unlook": 1
     }
 }

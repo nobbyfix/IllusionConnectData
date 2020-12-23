@@ -949,14 +949,17 @@ function TowerTeamMediator:onClickBack()
 	self:dismiss()
 end
 
-function TowerChooseRoleMediator:onClickRule()
+function TowerTeamMediator:onClickRule()
 	local Rule = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Tower_1_RuleText", "content")
 	local view = self:getInjector():getInstance("ExplorePointRule")
 
 	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
 		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
 	}, {
-		rule = Rule
+		rule = Rule,
+		ruleReplaceInfo = {
+			time = TimeUtil:getSystemResetDate()
+		}
 	}))
 end
 

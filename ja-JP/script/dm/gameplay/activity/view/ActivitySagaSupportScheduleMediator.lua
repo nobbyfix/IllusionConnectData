@@ -249,7 +249,7 @@ function ActivitySagaSupportScheduleMediator:updateCell(data)
 			sceneValue:setVisible(true)
 		end
 
-		local tb = os.date("*t", dd.startTime * 0.001)
+		local tb = TimeUtil:localDate("*t", dd.startTime * 0.001)
 
 		dataValue:setString(Strings:get("Activity_Saga_UI_27") .. string.format("%d/%02d/%02d", tb.year, tb.month, tb.day))
 		sceneValue:setString(dd.name)

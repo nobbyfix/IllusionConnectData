@@ -137,7 +137,7 @@ function ActivityBlockActivity:getActivityClubBossActivity()
 			min = m,
 			sec = s
 		}
-		local endTime = TimeUtil:getTimeByDate(table)
+		local endTime = TimeUtil:timeByRemoteDate(table)
 		local remoteTimestamp = self._activitySystem:getCurrentTime()
 		local remainTime = endTime - remoteTimestamp
 
@@ -230,6 +230,21 @@ function ActivityBlockActivity:getEggActivity()
 		local activity = self:getSubActivityById(id)
 
 		if activity and self:subActivityOpen(id) and activity:getType() == ActivityType.kActivityBlockEgg then
+			return activity
+		end
+	end
+
+	return nil
+end
+
+function ActivityBlockActivity:getActivityTpurchase()
+	local activityIds = self:getActivity()
+
+	for i = 1, #activityIds do
+		local id = activityIds[i]
+		local activity = self:getSubActivityById(id)
+
+		if activity and self:subActivityOpen(id) and activity:getType() == ActivityType.KTPURCHASE then
 			return activity
 		end
 	end
@@ -341,7 +356,7 @@ function ActivityBlockActivity:getTimeStr()
 		return self._timeStr
 	end
 
-	local timeStr = self._config.TimeFactor
+	local timeStr = self:getLocalTimeFactor()
 	local start = ""
 	local end_ = ""
 

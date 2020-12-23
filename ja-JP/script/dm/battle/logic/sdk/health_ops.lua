@@ -134,7 +134,7 @@ function exports.ApplyHPReduce(env, target, damage)
 	local actor = env["$actor"]
 	local workId = env["$id"]
 	local result = nil
-	result = healthSystem:performHealthReduce(target, damage, workId)
+	result = healthSystem:performHealthReduce(target, damage, workId, actor)
 
 	return result
 end

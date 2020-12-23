@@ -53,3 +53,7 @@ function BFieldTLInterpreter:act_RmTrap(action, args)
 
 	cell:removeTrap(args)
 end
+
+function BFieldTLInterpreter:act_BlockCell(action, args)
+	self._battleGround:setBlockCells(args.blockCells)
+end

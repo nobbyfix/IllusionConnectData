@@ -32,6 +32,7 @@ function BagUseScrollMediator:initialize()
 end
 
 function BagUseScrollMediator:dispose()
+	self._equipSystem:clearComposeUsedEquips()
 	super.dispose(self)
 end
 
@@ -63,6 +64,7 @@ function BagUseScrollMediator:enterWithData(data)
 
 	self:setViewUI()
 	self:refreshView()
+	self._equipSystem:clearComposeUsedEquips()
 end
 
 function BagUseScrollMediator:refreshView()
@@ -106,6 +108,10 @@ function BagUseScrollMediator:setViewUI()
 	self.material_4 = self:getView():getChildByFullName("main.material_4")
 
 	self.material_4:setVisible(false)
+
+	self.material_5 = self:getView():getChildByFullName("main.material_5")
+
+	self.material_5:setVisible(false)
 	self:getView():getChildByFullName("main.Text_1"):setString(Strings:get("bag_UI32"))
 	self:getView():getChildByFullName("main.Text_2"):setString(Strings:get("bag_EN_UI32"))
 
@@ -120,10 +126,24 @@ function BagUseScrollMediator:setViewUI()
 	icon:addTo(self.coinPanel):center(self.coinPanel:getContentSize())
 end
 
+function BagUseScrollMediator:refreshRedPoint(sender)
+	for k, layout in pairs(self._layoutTab) do
+		if layout ~= sender then
+			local hongdian = layout:getChildByFullName("hongdian")
+			local redState = self._bagSystem:getComposeMaterialRedStateById(layout.curMaterial)
+
+			if hongdian:isVisible() then
+				hongdian:setVisible(redState)
+			end
+		end
+	end
+end
+
 function BagUseScrollMediator:setMaterialView()
 	self.isDelay = false
 	local cellNum = 0
 	local MaterialTab = {}
+	self._layoutTab = {}
 
 	for i = 1, 10 do
 		local curMaterial = self._configData["Item" .. i]
@@ -134,7 +154,7 @@ function BagUseScrollMediator:setMaterialView()
 
 			table.insert(MaterialTab, layout)
 		else
-			for i = 2, 4 do
+			for i = 2, 5 do
 				self["material_" .. i]:setVisible(i == #MaterialTab)
 			end
 
@@ -215,6 +235,7 @@ function BagUseScrollMediator:setMaterialView()
 					layout = layoutNull
 
 					self:refreshNullMaterialPanel(layout, i)
+					table.insert(self._layoutTab, layout)
 
 					local index = i
 
@@ -285,6 +306,7 @@ function BagUseScrollMediator:setMaterialView()
 	})
 
 	icon:addTo(self.targetPanel):center(self.targetPanel:getContentSize())
+	self:addEquipStar()
 	self.targetName:setString(Strings:get(config.Name))
 	self.rarityPanel:removeAllChildren()
 
@@ -401,8 +423,11 @@ function BagUseScrollMediator:updataSelectMaterial(sender, index, _data, _select
 		id = _selectEquipId,
 		uuId = _selectEquipUUId
 	}
+	local key = _selectEquipId .. "_" .. _selectEquipUUId
 
+	self._equipSystem:addComposeUsedEquips(index, key)
 	self:refreshNullMaterialPanel(sender, index, data)
+	self:refreshRedPoint(sender)
 end
 
 function BagUseScrollMediator:showSourcePath(itemId, hasNum, needNumLbl, layout, index)
@@ -710,12 +735,6 @@ function BagUseScrollMediator:getMaterialData(info, style)
 		return config
 	end
 
-	config = ConfigReader:getRecordById("ItemConfig", id)
-
-	if config and config.Id then
-		return config
-	end
-
 	config = ConfigReader:getRecordById("HeroEquipBase", id)
 
 	if config and config.Id then
@@ -723,6 +742,12 @@ function BagUseScrollMediator:getMaterialData(info, style)
 	end
 
 	config = ConfigReader:getRecordById("Skill", id)
+
+	if config and config.Id then
+		return config
+	end
+
+	config = ConfigReader:getRecordById("ItemConfig", id)
 
 	if config and config.Id then
 		return config
@@ -805,6 +830,41 @@ function BagUseScrollMediator:onRightClicked()
 			self:refreshView()
 
 			break
+		end
+	end
+end
+
+function BagUseScrollMediator:addEquipStar()
+	local star = 0
+	local starId = ConfigReader:getDataByNameIdAndKey("HeroEquipBase", self._target.id, "StartEquipStarID")
+
+	if starId then
+		star = ConfigReader:getDataByNameIdAndKey("HeroEquipStar", starId, "StarLevel")
+	else
+		local HeroEquipStar = ConfigReader:getDataByNameIdAndKey("ConfigValue", "HeroEquipStar", "content")
+		local rarity = ConfigReader:getDataByNameIdAndKey("HeroEquipBase", self._target.id, "Rareity")
+		star = ConfigReader:getDataByNameIdAndKey("HeroEquipStar", HeroEquipStar[tostring(rarity)], "StarLevel")
+	end
+
+	self.starPanel:removeAllChildren(true)
+
+	if star and star > 0 then
+		local intervalX = 35
+		local startX = 70 - (star - 1) * 0.5 * intervalX
+
+		for index = 1, star do
+			local starImg = ccui.ImageView:create("img_yinghun_img_star_full.png", 1)
+
+			starImg:setScale(0.6)
+
+			if index >= 6 then
+				starImg = ccui.ImageView:create("asset/common/yinghun_img_star_color.png")
+
+				starImg:setScale(1)
+			end
+
+			starImg:setPosition(startX + (index - 1) * intervalX, 15)
+			self.starPanel:addChild(starImg)
 		end
 	end
 end

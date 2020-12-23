@@ -62,6 +62,20 @@
         "Type": "Activity",
         "TypeId": "DrawCard_W4_2UP_Activity1"
     },
+    "ActivityBanner108": {
+        "Img": "drawcard_banner_LduYLSBai.png",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_LduYLSBai",
+        "Sort": 108,
+        "Type": "Activity",
+        "TypeId": "DrawCard_W5_2UP_Activity1"
+    },
+    "ActivityBanner109": {
+        "Img": "drawcard_banner_SDTZiLCYShi.png",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_SDTZiLCYShi",
+        "Sort": 109,
+        "Type": "Activity",
+        "TypeId": "DrawCard_W6_2UP_Activity1"
+    },
     "ActivityBanner11": {
         "Img": "drawcard_banner_BBLMa.png",
         "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_5",
@@ -426,6 +440,13 @@
         "Type": "Activity",
         "TypeId": "ActivityBlock_Halloween"
     },
+    "ActivityBannerNewYear": {
+        "Img": "anualshop_banner_newyear.png",
+        "Link": "view://ActivityBlockHolidayView&activityId=ActivityBlock_Holiday",
+        "Sort": 5003,
+        "Type": "Activity",
+        "TypeId": "ActivityBlock_Holiday"
+    },
     "ActivityBannerSnowflake": {
         "Img": "ybxsdxh_banner.png",
         "Link": "view://ActivityBlockHalloweenView&activityId=ActivityBlock_Snowflake",
@@ -446,5 +467,19 @@
         "Sort": 20,
         "Type": "Activity",
         "TypeId": "ActivityBattlePass_20201216"
+    },
+    "ActivityBanner_1UP_NFEr": {
+        "Img": "drawcard_banner_nfer.png",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_NFEr",
+        "Sort": 5001,
+        "Type": "Activity",
+        "TypeId": "DrawCard_1UP_NFEr_Activity"
+    },
+    "ActivityBanner_1UP_PDLa": {
+        "Img": "drawcard_banner_ansi.png",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_PDLa",
+        "Sort": 5002,
+        "Type": "Activity",
+        "TypeId": "DrawCard_1UP_PDLa_Activity"
     }
 }

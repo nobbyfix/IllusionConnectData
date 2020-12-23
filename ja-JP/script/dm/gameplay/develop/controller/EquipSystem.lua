@@ -30,6 +30,7 @@ function EquipSystem:initialize(developSystem)
 	self._bagSystem = self._developSystem:getBagSystem()
 	self._equipModule = self._developSystem:getPlayer():getEquipList()
 	self._oneKeyEquips = {}
+	self._composeUsedEquips = {}
 	self._strengthenConsumeItems = {}
 	self._starConsumeItem = nil
 	self._equipStarUpItem = {
@@ -1270,4 +1271,18 @@ function EquipSystem:runIconShowAction(node, delayCount)
 	local delay = cc.DelayTime:create(delayCount * 0.1)
 
 	node:runAction(cc.Sequence:create(delay, spawn))
+end
+
+function EquipSystem:clearComposeUsedEquips()
+	self._composeUsedEquips = {}
+end
+
+function EquipSystem:addComposeUsedEquips(index, uuid)
+	print("index----" .. index)
+
+	self._composeUsedEquips[tonumber(index) + 1] = uuid
+end
+
+function EquipSystem:getComposeUsedEquips()
+	return self._composeUsedEquips
 end

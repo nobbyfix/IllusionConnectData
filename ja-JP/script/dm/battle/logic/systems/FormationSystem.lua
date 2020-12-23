@@ -46,7 +46,7 @@ function FormationSystem:_collectEmptyCellsForPlayer(player)
 	for i = 1, #cellsForPlayer do
 		local cell = cellsForPlayer[i]
 
-		if cell and cell:getResident() == nil and not cell:isLocked() then
+		if cell and cell:getResident() == nil and cell:isNormalStatus() then
 			count = count + 1
 			emptyCells[i] = cell
 		end

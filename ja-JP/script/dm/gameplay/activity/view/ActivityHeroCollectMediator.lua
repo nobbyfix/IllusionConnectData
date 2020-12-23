@@ -246,9 +246,9 @@ function ActivityHeroCollectMediator:setupView()
 	self._heroType:setPositionX(posXList[3])
 	self._info2:setPositionX(posXList[4])
 
-	local imageFile = GameStyle:getEquipRarityImage(rarity)
+	local imageFile = GameStyle:getHeroRarityImage(rarity)
 
-	self._heroType:loadTexture(imageFile)
+	self._heroType:loadTexture(imageFile, 1)
 
 	local targerNum = self._activity:getTaskTargerNum(listData.taskId)
 	local currentNum = self._activity:getTaskProgressNum(listData.taskId)

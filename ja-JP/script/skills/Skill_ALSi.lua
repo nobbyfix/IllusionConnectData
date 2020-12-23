@@ -739,7 +739,7 @@ all.Skill_ALSi_Passive_Death = {
 			local defender = global.LoadUnit(_env, _env.TARGET, "DEFENDER")
 			local damage = global.EvalDamage(_env, attacker, defender, this.dmgFactor)
 
-			global.ApplyHPDamage(_env, _env.TARGET, damage)
+			global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage)
 
 			local buffeft1 = global.Mute(_env)
 

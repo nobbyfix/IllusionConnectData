@@ -414,3 +414,23 @@ function LoginSystem:randomLoadingView()
 
 	return config
 end
+
+function LoginSystem:getLimitTimeBg()
+	local allBg = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Newyear_MainLoginScene", "content")
+
+	if allBg then
+		for i, v in pairs(allBg) do
+			if v.time then
+				local startDate = TimeUtil:parseDateTime(nil, v.time.start)
+				local curTime = self:getInjector():getInstance(GameServerAgent):remoteTimestamp()
+				local startTs = TimeUtil:timeByRemoteDate(startDate)
+				local endDate = TimeUtil:parseDateTime(nil, v.time["end"])
+				local endTs = TimeUtil:timeByRemoteDate(endDate)
+
+				if startTs < curTime and curTime < endTs then
+					return v.id
+				end
+			end
+		end
+	end
+end

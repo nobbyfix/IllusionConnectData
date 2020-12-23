@@ -145,6 +145,10 @@ function DevelopSystem:syncPlayer(data, isDiff)
 		self:getPlayer():getEquipList():synchronize(data.equips)
 	end
 
+	if data.composeTimes then
+		self._bagSystem:setComposeTimes(data.composeTimes)
+	end
+
 	if data.cultivation or data.level then
 		self:synCultivation(data)
 	end
@@ -783,8 +787,8 @@ end
 
 function DevelopSystem:getServerOpenDay()
 	local curServerTime = self:getCurServerTime()
-	local openDate = os.date("*t", self._serverOpenTime)
-	local openTime = os.time({
+	local openDate = TimeUtil:remoteDate("*t", self._serverOpenTime)
+	local openTime = TimeUtil:timeByRemoteDate({
 		hour = 5,
 		min = 0,
 		sec = 0,

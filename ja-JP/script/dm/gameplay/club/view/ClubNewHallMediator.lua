@@ -455,9 +455,8 @@ function ClubNewHallMediator:refreshInfoView()
 	levelLabel:setString(self._clubInfoOj:getLevel())
 
 	local technologys = self._clubSystem:getTechnologyListOj()
-	local technology = technologys:getList()[1]
-	local techPoints = technology:getTechPoints()
-	local pointData = techPoints[2]
+	local technologyList = technologys:getList()
+	local pointData = technologyList[1]:getPointById("Club_Contribute_1")
 	local percent = pointData:getExp() / pointData:getUpgradeExp() * 100
 	local curExp = pointData:getExp()
 	local progressBar = self._leftNode:getChildByName("progressBGImage")

@@ -43,6 +43,29 @@ function PetRaceRuleMediator:initContent()
 	self._listView:setScrollBarEnabled(false)
 
 	self._width = self._listView:getContentSize().width
+	local openTimes = ConfigReader:requireDataByNameIdAndKey("ConfigValue", "KOF_MatchNumber", "content")
+	local localDates = {}
+
+	for k, v in pairs(openTimes) do
+		localDates[#localDates + 1] = TimeUtil:localDate("%H:%M:%S", TimeUtil:getTimeByDateForTargetTimeInToday({
+			hour = string.split(v, ":")[1],
+			min = string.split(v, ":")[2],
+			sec = string.split(v, ":")[3]
+		}))
+	end
+
+	local startTime = ConfigReader:requireDataByNameIdAndKey("ConfigValue", "KOF_JoinStartTime", "content")
+	local endTime = ConfigReader:requireDataByNameIdAndKey("ConfigValue", "KOF_JoinEndTime", "content")
+	startTime = TimeUtil:localDate("%H:%M:%S", TimeUtil:getTimeByDateForTargetTimeInToday({
+		hour = string.split(startTime, ":")[1],
+		min = string.split(startTime, ":")[2],
+		sec = string.split(startTime, ":")[3]
+	}))
+	endTime = TimeUtil:localDate("%H:%M:%S", TimeUtil:getTimeByDateForTargetTimeInToday({
+		hour = string.split(endTime, ":")[1],
+		min = string.split(endTime, ":")[2],
+		sec = string.split(endTime, ":")[3]
+	}))
 
 	for i = 1, #self._rule do
 		local rule = self._rule[i]
@@ -51,7 +74,12 @@ function PetRaceRuleMediator:initContent()
 
 		for j = 1, #rule.Desc do
 			self:addContent(Strings:get(rule.Desc[j], {
-				fontName = TTF_FONT_FZYH_M
+				fontName = TTF_FONT_FZYH_M,
+				time1 = localDates[1],
+				time2 = localDates[2],
+				time3 = localDates[3],
+				starttime = startTime,
+				endtime = endTime
 			}), j == #rule.Desc)
 		end
 	end

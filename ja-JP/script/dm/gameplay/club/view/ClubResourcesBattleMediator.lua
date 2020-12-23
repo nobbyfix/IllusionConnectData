@@ -57,6 +57,7 @@ function ClubResourcesBattleMediator:enterWithData(data)
 	self:updateRemainTime()
 	self:doSuccessLogic()
 	self:refreshAllData()
+	self:runStartAction()
 end
 
 function ClubResourcesBattleMediator:onDoRefrsh(event)
@@ -105,6 +106,14 @@ function ClubResourcesBattleMediator:initNodes()
 	self._mainPanel = self:getView():getChildByFullName("main")
 	local Image_9 = self._mainPanel:getChildByFullName("Image_9")
 	local Image_10 = self._mainPanel:getChildByFullName("Image_10")
+	local winSize = cc.Director:getInstance():getWinSize()
+
+	Image_9:setPositionX(winSize.width)
+
+	if winSize.width > 1136 then
+		Image_10:setPositionX(1136 - winSize.width)
+	end
+
 	self._titleText = self._mainPanel:getChildByFullName("titleText")
 	self._desText = self._mainPanel:getChildByFullName("desText")
 	self._timeText = self._mainPanel:getChildByFullName("timeText")
@@ -165,6 +174,34 @@ function ClubResourcesBattleMediator:initNodes()
 	self._vsNode = self._mainPanel:getChildByFullName("vsNode")
 	self._vsLineImage = self._vsNode:getChildByFullName("vsLineImage")
 	self._wordNode = self._mainPanel:getChildByFullName("wordNode")
+	local Image_wei = self._wordNode:getChildByName("Image_wei")
+	local Image_li = self._wordNode:getChildByName("Image_li")
+	local Image_po = self._wordNode:getChildByName("Image_po")
+	local Image_you = self._wordNode:getChildByName("Image_you")
+	local anim = cc.MovieClip:create("shijunlidi_jieshedabang")
+
+	anim:addTo(Image_li, 1)
+	anim:setPosition(cc.p(100, 0))
+	anim:gotoAndPlay(1)
+
+	local anim = cc.MovieClip:create("shirupozhu_jieshedabang")
+
+	anim:addTo(Image_po, 1)
+	anim:setPosition(cc.p(100, 0))
+	anim:gotoAndPlay(1)
+
+	local anim = cc.MovieClip:create("weizaidanxi_jieshedabang")
+
+	anim:addTo(Image_wei, 1)
+	anim:setPosition(cc.p(100, 0))
+	anim:gotoAndPlay(1)
+
+	local anim = cc.MovieClip:create("youshi_jieshedabang")
+
+	anim:addTo(Image_you, 1)
+	anim:setPosition(cc.p(100, 0))
+	anim:gotoAndPlay(1)
+
 	self._leftResultAnmNode = self._mainPanel:getChildByFullName("leftResultAnmNode")
 	self._rightResultAnmNode = self._mainPanel:getChildByFullName("rightResultAnmNode")
 	self._scoreMark = self._mainPanel:getChildByFullName("scoreMark")
@@ -1076,4 +1113,30 @@ function ClubResourcesBattleMediator:onForcedLevel(event)
 	end
 
 	self:dismiss()
+end
+
+function ClubResourcesBattleMediator:runStartAction()
+	print("runStartAction")
+	self._mainPanel:stopAllActions()
+
+	local action1 = cc.CSLoader:createTimeline("asset/ui/ClubResourcesBattle.csb")
+
+	self._mainPanel:runAction(action1)
+	action1:clearFrameEventCallFunc()
+	action1:gotoFrameAndPlay(0, 14, false)
+	action1:setTimeSpeed(1)
+	performWithDelay(self:getView(), function ()
+		local anim = cc.MovieClip:create("vsdonghua_jieshedabang")
+
+		anim:addTo(self._vsNode, 1)
+		anim:gotoAndPlay(1)
+		anim:addCallbackAtFrame(14, function ()
+			anim:stop()
+
+			local anim_1 = cc.MovieClip:create("vsbenti_jieshedabang")
+
+			anim_1:addTo(self._vsNode, 2)
+			anim_1:gotoAndPlay(1)
+		end)
+	end, 0.23333333333333334)
 end

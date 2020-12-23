@@ -41,7 +41,8 @@ RankType = {
 	kSupport = 40,
 	kExp = 6,
 	kClub = 9,
-	kClubBoss = 41
+	kClubBoss = 41,
+	kMiniGame = 42
 }
 RankClass = {
 	[RankType.kCombat] = CombatRankRecord,
@@ -57,7 +58,8 @@ RankClass = {
 	[RankType.kMaze] = MazeRankRecord,
 	[RankType.kArena] = ArenaRankRecord,
 	[RankType.kCrusade] = CrusadeRankRecord,
-	[RankType.kClubBoss] = ClubBossRankRecord
+	[RankType.kClubBoss] = ClubBossRankRecord,
+	[RankType.kMiniGame] = MiniGameRankRecord
 }
 RankSwitch = {
 	[RankType.kClubBoss] = "fn_clubBoss"
@@ -151,10 +153,10 @@ function RankSystem:tryEnter(data)
 	end
 
 	local remoteTimestamp = self._gameServerAgent:remoteTimestamp()
-	local date = os.date("*t", remoteTimestamp)
+	local date = TimeUtil:localDate("*t", remoteTimestamp)
 	local rankId = kShowRankBest[date.wday] or RankType.kCombat
 	remoteTimestamp = remoteTimestamp + 86400
-	local date = os.date("*t", remoteTimestamp)
+	local date = TimeUtil:localDate("*t", remoteTimestamp)
 	local nextRankId = kShowRankBest[date.wday] or RankType.kCombat
 
 	local function callback()

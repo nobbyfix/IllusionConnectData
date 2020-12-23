@@ -493,11 +493,16 @@ end
 function CrusadeSystem:showCrusadeRuleView()
 	local Rule = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Crusade_RuleText", "content")
 	local view = self:getInjector():getInstance("ExplorePointRule")
+	local week = TimeUtil:getLocalWeekByRemote(1)
+	local weekStr = Strings:get("Time_Title1_Rule_" .. week)
 
 	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
 		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
 	}, {
-		rule = Rule
+		rule = Rule,
+		ruleReplaceInfo = {
+			time = weekStr .. TimeUtil:getSystemResetDate()
+		}
 	}))
 end
 
