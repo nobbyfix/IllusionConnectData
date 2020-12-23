@@ -43,6 +43,7 @@ function ChangeTeamMasterMediator:enterWithData(data)
 	self._curMasterId = data.masterId
 	self._masterList = data.masterList
 	self._recomand = data.recomandList or {}
+	self._forbidMasters = data.forbidMasters or {}
 
 	self:initView()
 end
@@ -147,9 +148,40 @@ function ChangeTeamMasterMediator:createMaster(cell, index)
 
 		layer:setColor(color)
 	end
+
+	local lockPanel = layer:getChildByName("lockPanel")
+
+	lockPanel:setVisible(false)
+
+	local isForbid = false
+
+	for i = 1, #self._forbidMasters do
+		if data:getId() == self._forbidMasters[i] then
+			isForbid = true
+		end
+	end
+
+	if isForbid then
+		lockPanel:setTouchEnabled(false)
+		lockPanel:setVisible(true)
+		lockPanel:setLocalZOrder(10)
+		cell:setGray(true)
+	end
 end
 
 function ChangeTeamMasterMediator:onTouchChooseView(data)
+	local isForbid = false
+
+	for i = 1, #self._forbidMasters do
+		if data:getId() == self._forbidMasters[i] then
+			isForbid = true
+		end
+	end
+
+	if isForbid then
+		return
+	end
+
 	if data:getIsLock() then
 		AudioEngine:getInstance():playEffect("Se_Alert_Error", false)
 		self:dispatch(ShowTipEvent({

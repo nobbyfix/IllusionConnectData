@@ -106,7 +106,7 @@ function ActivityFateEncountersMediator:refreshViewOnChoose()
 	local nameStr = ConfigReader:getDataByNameIdAndKey("HeroBase", heroId, "Name")
 	local rareity = ConfigReader:getDataByNameIdAndKey("HeroBase", heroId, "Rareity")
 
-	self._heroQuality:loadTexture(GameStyle:getEquipRarityImage(rareity))
+	self._heroQuality:loadTexture(GameStyle:getHeroRarityImage(rareity), 1)
 	self._heroName:setString(Strings:get(nameStr))
 	self._roldNode:removeAllChildren()
 

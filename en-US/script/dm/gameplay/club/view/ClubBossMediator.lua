@@ -1340,11 +1340,21 @@ function ClubBossMediator:onClickInfoBtn(sender, eventType)
 			end
 		end
 
+		local resetInfo = ConfigReader:getDataByNameIdAndKey("Reset", "ClubBlock_Reset", "ResetSystem")
+		local week = TimeUtil:getLocalWeekByRemote(resetInfo.resetDate[1])
+		startTime = TimeUtil:localDate("%H:%M:%S", TimeUtil:getTimeByDateForTargetTimeInToday({
+			hour = string.split(resetInfo.resetTime[1], ":")[1],
+			min = string.split(resetInfo.resetTime[1], ":")[2],
+			sec = string.split(resetInfo.resetTime[1], ":")[3]
+		}))
 		local view = self:getInjector():getInstance("ArenaRuleView")
+		local weekStr = Strings:get("Time_Title1_Rule_" .. week)
 		local event = ViewEvent:new(EVT_SHOW_POPUP, view, {
 			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
 		}, {
-			rule = RuleDesc
+			useParam = true,
+			rule = RuleDesc,
+			param1 = weekStr .. startTime
 		}, nil)
 
 		self:dispatch(event)
@@ -1961,7 +1971,7 @@ function ClubBossMediator:setStarAndEndTime()
 				min = m,
 				sec = s
 			}
-			local startTime = TimeUtil:getTimeByDate(table)
+			local startTime = TimeUtil:timeByRemoteDate(table)
 			local _, _, y, mon, d, h, m, s = string.find(timeStamp.start[2], "(%d+)-(%d+)-(%d+) (%d+):(%d+):(%d+)")
 			local table = {
 				year = y,
@@ -1971,10 +1981,10 @@ function ClubBossMediator:setStarAndEndTime()
 				min = m,
 				sec = s
 			}
-			local endTime = TimeUtil:getTimeByDate(table)
-			local tb = os.date("*t", startTime)
+			local endTime = TimeUtil:timeByRemoteDate(table)
+			local tb = TimeUtil:localDate("*t", startTime)
 			local starTimeStr = tostring(tb.year) .. "." .. tostring(tb.month) .. "." .. tostring(tb.day)
-			tb = os.date("*t", endTime)
+			tb = TimeUtil:localDate("*t", endTime)
 			local endTimeStr = tostring(tb.year) .. "." .. tostring(tb.month) .. "." .. tostring(tb.day)
 			local str = starTimeStr .. " - " .. endTimeStr
 			local timeText = self._timeNode:getChildByFullName("time")

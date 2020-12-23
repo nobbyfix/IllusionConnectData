@@ -1117,13 +1117,12 @@ end
 
 function BattleMainMediator:setupDevMode()
 	local winBtn = ccui.Button:create()
+	local winBtn = ccui.Text:create("PASS", TTF_FONT_FZYH_M, 40)
 
-	winBtn:loadTextures("pic_kfz_sheng.png", "pic_kfz_sheng.png", "pic_kfz_sheng.png", ccui.TextureResType.plistType)
-	winBtn:addTouchEventListener(function (sender, eventType)
-		if eventType == ccui.TouchEventType.ended then
-			self:stopScheduler()
-			self._delegate:onDevWin(self)
-		end
+	winBtn:setTouchEnabled(true)
+	winBtn:addClickEventListener(function ()
+		self:stopScheduler()
+		self._delegate:onDevWin(self)
 	end)
 
 	local director = cc.Director:getInstance()

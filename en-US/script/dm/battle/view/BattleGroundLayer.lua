@@ -201,6 +201,10 @@ function BattleGroundLayer:setGroundTransform(tx, ty, scale)
 	}
 end
 
+function BattleGroundLayer:setBlockCells(blockCells)
+	self._blockCells = blockCells or {}
+end
+
 function BattleGroundLayer:initTeam()
 	self._leftTeam = {}
 	self._rightTeam = {}
@@ -235,6 +239,7 @@ function BattleGroundLayer:setupGroundCells(isLeft)
 			healTargetImage = string.format(resPre .. "%02d_press", i) .. ".png",
 			targetImage = string.format(resPre .. "%02d_press", i) .. "_2.png",
 			randomImage = string.format(resPre .. "%02d_wen_%d.png", i, isLeft and 1 or 2),
+			lockImage = string.format(resPre .. "%02d_press_4.png", i),
 			isLeft = isLeft
 		}
 		local groundCell = BattleGroundCell:new(args)
@@ -997,6 +1002,26 @@ function BattleGroundLayer:subGroundBlackCount()
 	if self._groundBlackCount == 0 then
 		self.blackMaskLayer:setOpacity(0)
 		self.blackMaskLayer:setVisible(false)
+	end
+end
+
+function BattleGroundLayer:previewCellLocks()
+	if self._blockCells then
+		for _, cellId in ipairs(self._blockCells) do
+			local cell = self:getCellById(cellId)
+
+			cell:showBlock()
+		end
+	end
+end
+
+function BattleGroundLayer:resumeCellLocks()
+	if self._blockCells then
+		for _, cellId in ipairs(self._blockCells) do
+			local cell = self:getCellById(cellId)
+
+			cell:hideBlock()
+		end
 	end
 end
 

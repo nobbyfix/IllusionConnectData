@@ -6,6 +6,9 @@ BagSystem:has("_shopSystem", {
 BagSystem:has("_developSystem", {
 	is = "r"
 }):injectWith("DevelopSystem")
+BagSystem:has("_composeTimes", {
+	is = "rw"
+})
 
 local PowerConfigMap = {
 	[CurrencyIdKind.kPower] = {
@@ -55,6 +58,13 @@ local PowerConfigMap = {
 		perMin = "Act_Halloween_Power_RecPerMin",
 		next = "Act_Halloween_Power_RecNext",
 		configId = "AcitvityHalloweenStamina_Reset",
+		tableName = "Reset"
+	},
+	[CurrencyIdKind.kActivityHolidayPower] = {
+		all = "Act_NewYear_Power_RecAll",
+		perMin = "Act_NewYear_Power_RecPerMin",
+		next = "Act_NewYear_Power_RecNext",
+		configId = "AcitvityHolidayStamina_Reset",
 		tableName = "Reset"
 	}
 }
@@ -184,7 +194,7 @@ function BagSystem:getComposeMaterialRedStateById(MaterialData)
 			local haveNum = 0
 
 			for k, v in pairs(allEquips) do
-				if v:getEquipId() == itemM.id and v:getLevel() == 1 then
+				if v:getEquipId() == itemM.id and v:getLevel() == 1 and self:checkComposeUsed(v:getEquipId(), v:getId()) == false then
 					haveNum = haveNum + 1
 				end
 			end
@@ -196,7 +206,7 @@ function BagSystem:getComposeMaterialRedStateById(MaterialData)
 			local haveNum = 0
 
 			for k, v in pairs(allEquips) do
-				if tonumber(v:getRarity()) == tonumber(itemM.Quality) and v:getLevel() == 1 then
+				if tonumber(v:getRarity()) == tonumber(itemM.Quality) and v:getLevel() == 1 and self:checkComposeUsed(v:getEquipId(), v:getId()) == false then
 					haveNum = 1
 
 					break
@@ -210,7 +220,7 @@ function BagSystem:getComposeMaterialRedStateById(MaterialData)
 			local haveNum = 0
 
 			for k, v in pairs(allEquips) do
-				if v:getPosition() == itemM.type and tonumber(v:getRarity()) == tonumber(itemM.Quality) and v:getLevel() == 1 then
+				if v:getPosition() == itemM.type and tonumber(v:getRarity()) == tonumber(itemM.Quality) and v:getLevel() == 1 and self:checkComposeUsed(v:getEquipId(), v:getId()) == false then
 					haveNum = 1
 
 					break
@@ -224,6 +234,24 @@ function BagSystem:getComposeMaterialRedStateById(MaterialData)
 
 		return true
 	end
+end
+
+function BagSystem:checkComposeUsed(equipId, uuid)
+	local key_equip = equipId .. "_" .. uuid
+	local developSystem = self:getInjector():getInstance(DevelopSystem)
+	local equipSystem = developSystem:getEquipSystem()
+	local usedList = equipSystem:getComposeUsedEquips()
+	local used = false
+
+	for key, value in pairs(usedList) do
+		if key_equip == value then
+			used = true
+
+			break
+		end
+	end
+
+	return used
 end
 
 function BagSystem:hideEntryRedById(entryId)
@@ -337,8 +365,12 @@ function BagSystem:getAcitvitySummerPower()
 	return self:getPowerByCurrencyId(CurrencyIdKind.kAcitvitySummerPower)
 end
 
-function BagSystem:getAcitvityHalloweenPower()
-	return self:getPowerByCurrencyId(CurrencyIdKind.kAcitvityHalloweenPower)
+function BagSystem:getActivityHolidayPower()
+	return self:getPowerByCurrencyId(CurrencyIdKind.kActivityHolidayPower)
+end
+
+function BagSystem:getAcitvitySnowPower()
+	return self:getPowerByCurrencyId(CurrencyIdKind.kAcitvitySnowPower)
 end
 
 function BagSystem:getDiamond()
@@ -1579,4 +1611,42 @@ function BagSystem:SortFunc(itemA, itemB)
 
 		return slot9
 	end
+end
+
+function BagSystem:isHasCompose()
+	local customDataSystem = self:getInjector():getInstance(CustomDataSystem)
+	local data = customDataSystem:getValue(PrefixType.kGlobal, UserDefaultKey.kBag_Compose_Show, "0")
+	local value = tonumber(data)
+
+	if value > 0 then
+		return true
+	end
+
+	local function filterFunc(entry)
+		local item = entry.item
+
+		if item:getSubType() ~= ComsumableKind.kCOMPOSE_URSelect then
+			slot2 = false
+		else
+			slot2 = true
+		end
+
+		return slot2
+	end
+
+	local entryIds = self:getBag():getEntryIds(filterFunc)
+
+	if entryIds and #entryIds > 0 then
+		customDataSystem:setValue(PrefixType.kGlobal, UserDefaultKey.kBag_Compose_Show, "100")
+	end
+
+	if entryIds then
+		if #entryIds <= 0 then
+			slot6 = false
+		else
+			slot6 = true
+		end
+	end
+
+	return slot6
 end

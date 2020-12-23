@@ -13,7 +13,9 @@
             "DreamChallengePoint_T01N04"
         ],
         "Control": 1,
+        "DCType": 2,
         "LimitTimeTxt": "",
+        "ListLocationNum": 20001,
         "Name": "DreamChallenge_1_Name",
         "ShowCondition": {
             "LEVEL": 43
@@ -42,7 +44,9 @@
             "DreamChallengePoint_T02N04"
         ],
         "Control": 1,
+        "DCType": 2,
         "LimitTimeTxt": "",
+        "ListLocationNum": 20002,
         "Name": "DreamChallenge_2_Name",
         "ShowCondition": {
             "LEVEL": 43
@@ -59,7 +63,7 @@
     },
     "DreamChallenge_T03": {
         "BGM": [
-            "Mus_Story_Undead_Bird",
+            "Mus_Story_Dongwenhui",
             "",
             ""
         ],
@@ -69,21 +73,83 @@
             "DreamChallengePoint_T03N02",
             "DreamChallengePoint_T03N03"
         ],
-        "Control": 2,
+        "Control": 1,
+        "DCType": 2,
         "LimitTimeTxt": "",
+        "ListLocationNum": 20003,
         "Name": "DreamChallenge_3_Name",
         "ShowCondition": {
-            "LEVEL": 32
+            "LEVEL": 43
         },
         "Story": "",
-        "TabPic": "mjt_z_mjjc_zix",
+        "TabPic": "mjt_z_yhzx_buts",
         "Tag": "",
         "TimeFactor": {
             "type": "Forever"
         },
         "UnlockCondition": {
-            "LEVEL": 52,
-            "Pass": "DreamChallenge_T02"
+            "LEVEL": 47
+        }
+    },
+    "DreamChallenge_T04": {
+        "BGM": [
+            "Mus_Story_Yehuo",
+            "",
+            ""
+        ],
+        "Background": "",
+        "BlockPoint": [
+            "DreamChallengePoint_T04N01",
+            "DreamChallengePoint_T04N02",
+            "DreamChallengePoint_T04N03"
+        ],
+        "Control": 1,
+        "DCType": 2,
+        "LimitTimeTxt": "",
+        "ListLocationNum": 20004,
+        "Name": "DreamChallenge_4_Name",
+        "ShowCondition": {
+            "LEVEL": 43
+        },
+        "Story": "",
+        "TabPic": "mjt_z_yhzx_butx",
+        "Tag": "",
+        "TimeFactor": {
+            "type": "Forever"
+        },
+        "UnlockCondition": {
+            "LEVEL": 50
+        }
+    },
+    "DreamChallenge_TimeLimit_SD": {
+        "BGM": [
+            "Mus_Story_Dongwenhui",
+            "",
+            ""
+        ],
+        "Background": "mjt_img_z_xntz_bg",
+        "BlockPoint": [
+            "DreamChallenge_TimeLimit_SD_N01"
+        ],
+        "Control": 1,
+        "DCType": 1,
+        "LimitTimeTxt": "DreamChallenge_TimeShow",
+        "ListLocationNum": 10001,
+        "Name": "DreamChallenge_TimeLimit_SD_Name",
+        "ShowCondition": {
+            "Day": "2021-01-01  05:00:00",
+            "LEVEL": 5
+        },
+        "Story": "",
+        "TabPic": "mjt_txt_z_xntz_but",
+        "Tag": "",
+        "TimeFactor": {
+            "type": "Day",
+            "value": "2021-01-09  05:00:00"
+        },
+        "UnlockCondition": {
+            "Day": "2021-01-01  05:00:00",
+            "LEVEL": 5
         }
     }
 }

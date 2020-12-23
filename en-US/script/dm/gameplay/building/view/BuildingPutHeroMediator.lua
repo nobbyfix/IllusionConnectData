@@ -919,6 +919,7 @@ function BuildingPutHeroMediator:refreshLoveTip(panel)
 				richTextInfo.num = village_RoomHeroLove - allComfort % village_RoomHeroLove
 			end
 
+			richTextInfo.time = TimeUtil:getSystemResetDate()
 			local richText = ccui.RichText:createWithXML(Strings:get(des, richTextInfo), {})
 
 			richText:setAnchorPoint(cc.p(0, 1))

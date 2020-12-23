@@ -296,9 +296,8 @@ function PlayerInfoWidget:clock()
 	if self._timeText and self._timer == nil then
 		local function update()
 			local serverTime = self:getGameServer():remoteTimestamp()
-			local diffTime = TimeUtil:getTimestampDiff()
 
-			self._timeText:setString(os.date("%H:%M", serverTime + diffTime))
+			self._timeText:setString(TimeUtil:localDate("%H:%M", serverTime))
 
 			if self._registerTimerEvent then
 				self._timerCallFunc()

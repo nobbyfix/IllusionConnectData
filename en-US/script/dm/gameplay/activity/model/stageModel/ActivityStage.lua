@@ -282,6 +282,11 @@ end
 
 function ActivityStage:isPass()
 	local lastBattlePoint = self._index2Points[#self._index2Points]
+	local ownerId = self._owner:getId()
+
+	if ownerId == "ActivityBlock_Holiday_Map" then
+		return lastBattlePoint:isPass()
+	end
 
 	if self._index2StoryPoint and next(self._index2StoryPoint) then
 		local lastStoryPoint = self._index2StoryPoint[#self._index2StoryPoint]

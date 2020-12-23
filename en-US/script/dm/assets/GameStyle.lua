@@ -5,6 +5,8 @@ ItemTipsViewTag = 10009
 EquipTipsViewTag = 10010
 BuffTipsViewTag = 10011
 SomeWordTipsViewTag = 10012
+ItemBuffTipsViewTag = 10013
+ItemShowTipsViewTag = 10014
 GameStyle.touchEffectZorder = 9999
 BuffTypeSet = {
 	NormalBlock = "NormalBlock",
@@ -580,6 +582,14 @@ function GameStyle:getEquipRarityRectFile(rarity)
 	return EquipRarityRect[tonumber(rarity)]
 end
 
+local EquipRarityRectFlash = {
+	[15.0] = "ur_anime_urequipeff"
+}
+
+function GameStyle:getEquipRarityRectFlashFile(rarity)
+	return EquipRarityRectFlash[tonumber(rarity)] or EquipRarityRectFlash[11]
+end
+
 local heroRect = ASSET_LANG_COMMON
 local equipRarityArr = {
 	[11] = heroRect .. "common_img_n.png",
@@ -594,7 +604,7 @@ function GameStyle:getEquipRarityImage(rarity)
 end
 
 local equipRarityFlash = {
-	[15.0] = "urdan_beibaoUR"
+	[15.0] = "ur_01_anime_urequipeff"
 }
 
 function GameStyle:getEquipRarityFlash(rarity)

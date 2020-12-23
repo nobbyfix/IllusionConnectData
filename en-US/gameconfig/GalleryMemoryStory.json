@@ -59,6 +59,36 @@
         "UnlockDesc": "",
         "UnlockStory": ""
     },
+    "Memory_ACTIVILIST_6": {
+        "ActiviType": "",
+        "Condition": "",
+        "Listpicture": "ybxrdxh_fb_Snowflake_bg_small",
+        "Name": "ActivityBlock_Snowflake_Name",
+        "Num": 6,
+        "Story": [
+            {
+                "id": [
+                    "Memory_STORY_ACTIVI_50",
+                    "Memory_STORY_ACTIVI_51",
+                    "Memory_STORY_ACTIVI_52",
+                    "Memory_STORY_ACTIVI_53"
+                ],
+                "type": "NORMAL"
+            },
+            {
+                "id": [
+                    "Memory_STORY_ACTIVI_54",
+                    "Memory_STORY_ACTIVI_55",
+                    "Memory_STORY_ACTIVI_56",
+                    "Memory_STORY_ACTIVI_57"
+                ],
+                "type": "ELITE"
+            }
+        ],
+        "Type": "ACTIVILIST",
+        "UnlockDesc": "",
+        "UnlockStory": ""
+    },
     "Memory_STORYLIST_1": {
         "ActiviType": "",
         "Condition": [

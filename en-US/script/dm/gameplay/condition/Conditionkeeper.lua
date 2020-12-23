@@ -82,11 +82,11 @@ local kPicScore = {
 	["2"] = "A"
 }
 
-function Conditionkeeper:getConditionDesc(condition)
+function Conditionkeeper:getConditionDesc(condition, descId)
 	local config = ConfigReader:getRecordById("ConditionType", condition.conditionType)
 
 	if config then
-		local desc = Strings:get(config.EffectDesc, {
+		local desc = Strings:get(descId or config.EffectDesc, {
 			fontName = TTF_FONT_FZYH_R
 		})
 		local t = TextTemplate:new(desc)

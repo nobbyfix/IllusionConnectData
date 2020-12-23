@@ -182,7 +182,7 @@ end
 function MazeEventMainMediator:onClickExit(sender, eventType)
 	if eventType == ccui.TouchEventType.ended then
 		AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
-		self:dispatch(SceneEvent:new(EVT_SWITCH_SCENE, "mainScene"))
+		self:dismiss()
 	end
 end
 

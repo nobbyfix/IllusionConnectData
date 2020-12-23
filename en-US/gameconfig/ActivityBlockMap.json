@@ -149,6 +149,86 @@
         ],
         "Type": "NORMAL"
     },
+    "ANewYearM01": {
+        "BGM": "Mus_Story_Christmas",
+        "Background": "Bg_Copy_ANewYea_1",
+        "BackgroundLength": 960,
+        "ColourEgg": [],
+        "MapName": "NewYear_Party_UI01",
+        "StarBoxReward": {
+            "10": "Holiday_StarBox12",
+            "15": "Holiday_StarBox13",
+            "5": "Holiday_StarBox11"
+        },
+        "SubPoint": [
+            "ANewYearM01S01",
+            "ANewYearM01S02",
+            "ANewYearM01S03",
+            "ANewYearM01S04",
+            "ANewYearM01S05",
+            "ANewYearM01S06"
+        ],
+        "SubStoryPoint": [
+            "ANewYearS01S01",
+            "ANewYearS01S02"
+        ],
+        "Type": "NORMAL"
+    },
+    "ANewYearM02": {
+        "BGM": "Mus_Story_Christmas",
+        "Background": "Bg_Copy_ANewYea_2",
+        "BackgroundLength": 960,
+        "ColourEgg": [],
+        "MapName": "NewYear_Party_UI02",
+        "StarBoxReward": {
+            "12": "Holiday_StarBox22",
+            "18": "Holiday_StarBox23",
+            "6": "Holiday_StarBox21"
+        },
+        "SubPoint": [
+            "ANewYearM02S01",
+            "ANewYearM02S02",
+            "ANewYearM02S03",
+            "ANewYearM02S04",
+            "ANewYearM02S05",
+            "ANewYearM02S06",
+            "ANewYearM02S07"
+        ],
+        "SubStoryPoint": [
+            "ANewYearS02S01",
+            "ANewYearS02S02"
+        ],
+        "Type": "NORMAL"
+    },
+    "ANewYearM03": {
+        "BGM": "Mus_Story_Christmas",
+        "Background": "Bg_Copy_ANewYea_3",
+        "BackgroundLength": 960,
+        "ColourEgg": [],
+        "MapName": "NewYear_Party_UI03",
+        "StarBoxReward": {
+            "14": "Holiday_StarBox32",
+            "21": "Holiday_StarBox33",
+            "7": "Holiday_StarBox31"
+        },
+        "SubPoint": [
+            "ANewYearM03S01",
+            "ANewYearM03S02",
+            "ANewYearM03S03",
+            "ANewYearM03S04",
+            "ANewYearM03S05",
+            "ANewYearM03S06",
+            "ANewYearM03S07",
+            "ANewYearM03S08"
+        ],
+        "SubStoryPoint": [
+            "ANewYearS03S01",
+            "ANewYearS03S02",
+            "ANewYearS03S03",
+            "ANewYearS03S04"
+        ],
+        "Type": "NORMAL"
+    },
     "ASummerE01": {
         "BGM": "Mus_Story_Summer",
         "Background": "Bg_story_scene_13_2",

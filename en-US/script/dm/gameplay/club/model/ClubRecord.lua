@@ -560,8 +560,8 @@ end
 function ClubLogRecord:synchronize(data)
 	if data.time then
 		self._time = data.time
-		self._dateStr = os.date(Strings:get("Club_Text176"), data.time / 1000)
-		self._timeStr = os.date(Strings:get("Club_Text177"), data.time / 1000)
+		self._dateStr = TimeUtil:localDate(Strings:get("Club_Text176"), data.time / 1000)
+		self._timeStr = TimeUtil:localDate(Strings:get("Club_Text177"), data.time / 1000)
 	end
 
 	if data.customData then

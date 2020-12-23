@@ -128,6 +128,56 @@ function ShopRecommendMediator:refreshView()
 	local path = "asset/ui/shop/" .. self._data.BackGroundImg .. ".jpg" or "sd_tj_ggt.png"
 
 	self._bgImage:loadTexture(path)
+
+	local pid = self._data.PackageId[1]
+
+	if pid == KMonthCardType.KMonthCard then
+		local frameData = self._shopSystem:getMonthCardHeadFrame()
+
+		if frameData then
+			if self._bgImage.frameData and frameData.code ~= self._bgImage.frameData.code and self._bgImage.frameIcon then
+				self._bgImage.frameIcon:removeFromParent()
+
+				self._bgImage.frameIcon = nil
+			end
+
+			if not self._bgImage.frameIcon then
+				local icon = IconFactory:createRewardIcon(frameData, {
+					isWidget = true,
+					showAmount = false
+				})
+
+				if getCurrentLanguage() == GameLanguageType.CN then
+					icon:addTo(self._bgImage):posite(640, 438):setScale(0.83)
+				elseif getCurrentLanguage() == GameLanguageType.EN then
+					icon:addTo(self._bgImage):posite(565, 455):setScale(0.83)
+				elseif getCurrentLanguage() == GameLanguageType.DE then
+					icon:addTo(self._bgImage):posite(565, 455):setScale(0.83)
+				elseif getCurrentLanguage() == GameLanguageType.FR then
+					icon:addTo(self._bgImage):posite(565, 405):setScale(0.83)
+				elseif getCurrentLanguage() == GameLanguageType.ES then
+					icon:addTo(self._bgImage):posite(565, 418):setScale(0.83)
+				elseif getCurrentLanguage() == GameLanguageType.PT then
+					icon:addTo(self._bgImage):posite(565, 418):setScale(0.83)
+				elseif getCurrentLanguage() == GameLanguageType.TH then
+					icon:addTo(self._bgImage):posite(610, 455):setScale(0.83)
+				end
+
+				IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), frameData, {
+					needDelay = true
+				})
+				icon:setSwallowTouches(true)
+
+				self._bgImage.frameData = frameData
+				self._bgImage.frameIcon = icon
+			end
+
+			self._bgImage.frameIcon:setVisible(true)
+		end
+	elseif self._bgImage.frameIcon then
+		self._bgImage.frameIcon:setVisible(false)
+	end
+
 	self:setTalkView()
 end
 

@@ -878,5 +878,561 @@
                 "rate": 0.9
             }
         ]
+    },
+    "Holiday_Shop_1": {
+        "Cost": [
+            {
+                "Item": "IM_HolidayExchange_4",
+                "Reward": "Holiday_Shop_1_1",
+                "Times": 2,
+                "Type": "1",
+                "price": 13000
+            },
+            {
+                "Item": "IM_HolidayExchange_4",
+                "Reward": "Holiday_Shop_1_2",
+                "Times": 2,
+                "Type": "1",
+                "price": 50
+            }
+        ],
+        "Day": 1,
+        "Order": 1,
+        "Rate": [
+            {
+                "day": [
+                    1,
+                    2
+                ],
+                "rate": 0.2
+            },
+            {
+                "day": [
+                    3,
+                    99
+                ],
+                "rate": 0.8
+            }
+        ]
+    },
+    "Holiday_Shop_10": {
+        "Cost": [
+            {
+                "Item": "IM_HolidayExchange_4",
+                "Reward": "Holiday_Shop_10_1",
+                "Times": 1,
+                "Type": "2",
+                "price": 3000
+            },
+            {
+                "Item": "IM_HolidayExchange_4",
+                "Reward": "Holiday_Shop_10_2",
+                "Times": 5,
+                "Type": "1",
+                "price": 150
+            }
+        ],
+        "Day": 10,
+        "Order": 10,
+        "Rate": [
+            {
+                "day": [
+                    1,
+                    99
+                ],
+                "rate": 0.8
+            }
+        ]
+    },
+    "Holiday_Shop_11": {
+        "Cost": [
+            {
+                "Item": "IM_HolidayExchange_4",
+                "Reward": "Holiday_Shop_11_1",
+                "Times": 2,
+                "Type": "1",
+                "price": 26000
+            },
+            {
+                "Item": "IM_HolidayExchange_4",
+                "Reward": "Holiday_Shop_11_2",
+                "Times": 1,
+                "Type": "1",
+                "price": 750
+            }
+        ],
+        "Day": 11,
+        "Order": 11,
+        "Rate": [
+            {
+                "day": [
+                    1,
+                    3
+                ],
+                "rate": 0.2
+            },
+            {
+                "day": [
+                    4,
+                    99
+                ],
+                "rate": 0.8
+            }
+        ]
+    },
+    "Holiday_Shop_12": {
+        "Cost": [
+            {
+                "Item": "IM_HolidayExchange_4",
+                "Reward": "Holiday_Shop_12_1",
+                "Times": 5,
+                "Type": "1",
+                "price": 1600
+            },
+            {
+                "Item": "IM_HolidayExchange_4",
+                "Reward": "Holiday_Shop_12_2",
+                "Times": 5,
+                "Type": "1",
+                "price": 150
+            }
+        ],
+        "Day": 12,
+        "Order": 12,
+        "Rate": [
+            {
+                "day": [
+                    1,
+                    3
+                ],
+                "rate": 0.4
+            },
+            {
+                "day": [
+                    4,
+                    99
+                ],
+                "rate": 0.8
+            }
+        ]
+    },
+    "Holiday_Shop_13": {
+        "Cost": [
+            {
+                "Item": "IM_HolidayExchange_4",
+                "Reward": "Holiday_Shop_13_1",
+                "Times": 1,
+                "Type": "2",
+                "price": 3750
+            },
+            {
+                "Item": "IM_HolidayExchange_4",
+                "Reward": "Holiday_Shop_13_2",
+                "Times": 2,
+                "Type": "1",
+                "price": 500
+            }
+        ],
+        "Day": 13,
+        "Order": 13,
+        "Rate": [
+            {
+                "day": [
+                    1,
+                    99
+                ],
+                "rate": 0.8
+            }
+        ]
+    },
+    "Holiday_Shop_14": {
+        "Cost": [
+            {
+                "Item": "IM_HolidayExchange_4",
+                "Reward": "Holiday_Shop_14_1",
+                "Times": 2,
+                "Type": "1",
+                "price": 13000
+            },
+            {
+                "Item": "IM_HolidayExchange_4",
+                "Reward": "Holiday_Shop_14_2",
+                "Times": 1,
+                "Type": "1",
+                "price": 750
+            }
+        ],
+        "Day": 14,
+        "Order": 14,
+        "Rate": [
+            {
+                "day": [
+                    1,
+                    3
+                ],
+                "rate": 0.2
+            },
+            {
+                "day": [
+                    4,
+                    99
+                ],
+                "rate": 0.8
+            }
+        ]
+    },
+    "Holiday_Shop_15": {
+        "Cost": [
+            {
+                "Item": "IM_HolidayExchange_4",
+                "Reward": "Holiday_Shop_15_1",
+                "Times": 5,
+                "Type": "2",
+                "price": 300
+            },
+            {
+                "Item": "IM_HolidayExchange_4",
+                "Reward": "Holiday_Shop_15_2",
+                "Times": 2,
+                "Type": "1",
+                "price": 250
+            }
+        ],
+        "Day": 15,
+        "Order": 15,
+        "Rate": [
+            {
+                "day": [
+                    1,
+                    99
+                ],
+                "rate": 0.8
+            }
+        ]
+    },
+    "Holiday_Shop_16": {
+        "Cost": [
+            {
+                "Item": "IM_HolidayExchange_4",
+                "Reward": "Holiday_Shop_16_1",
+                "Times": -1,
+                "Type": "2",
+                "price": 50
+            },
+            {
+                "Item": "IM_HolidayExchange_4",
+                "Reward": "Holiday_Shop_16_2",
+                "Times": -1,
+                "Type": "1",
+                "price": 50
+            }
+        ],
+        "Day": 16,
+        "Order": 16,
+        "Rate": [
+            {
+                "day": [
+                    1,
+                    99
+                ],
+                "rate": 0.8
+            }
+        ]
+    },
+    "Holiday_Shop_17": {
+        "Cost": [
+            {
+                "Item": "IM_HolidayExchange_4",
+                "Reward": "Holiday_Shop_17_1",
+                "Times": 1,
+                "Type": "1",
+                "price": 4900
+            }
+        ],
+        "Day": 16,
+        "Order": 17,
+        "Rate": [
+            {
+                "day": [
+                    1,
+                    1
+                ],
+                "rate": 0.4
+            },
+            {
+                "day": [
+                    2,
+                    99
+                ],
+                "rate": 0.8
+            }
+        ]
+    },
+    "Holiday_Shop_2": {
+        "Cost": [
+            {
+                "Item": "IM_HolidayExchange_4",
+                "Reward": "Holiday_Shop_2_1",
+                "Times": 10,
+                "Type": "2",
+                "price": 50
+            },
+            {
+                "Item": "IM_HolidayExchange_4",
+                "Reward": "Holiday_Shop_2_2",
+                "Times": 1,
+                "Type": "1",
+                "price": 375
+            }
+        ],
+        "Day": 2,
+        "Order": 2,
+        "Rate": [
+            {
+                "day": [
+                    1,
+                    99
+                ],
+                "rate": 0.8
+            }
+        ]
+    },
+    "Holiday_Shop_3": {
+        "Cost": [
+            {
+                "Item": "IM_HolidayExchange_4",
+                "Reward": "Holiday_Shop_3_1",
+                "Times": 2,
+                "Type": "1",
+                "price": 13000
+            },
+            {
+                "Item": "IM_HolidayExchange_4",
+                "Reward": "Holiday_Shop_3_2",
+                "Times": 2,
+                "Type": "1",
+                "price": 150
+            }
+        ],
+        "Day": 3,
+        "Order": 3,
+        "Rate": [
+            {
+                "day": [
+                    1,
+                    2
+                ],
+                "rate": 0.2
+            },
+            {
+                "day": [
+                    3,
+                    99
+                ],
+                "rate": 0.8
+            }
+        ]
+    },
+    "Holiday_Shop_4": {
+        "Cost": [
+            {
+                "Item": "IM_HolidayExchange_4",
+                "Reward": "Holiday_Shop_4_1",
+                "Times": 10,
+                "Type": "2",
+                "price": 50
+            },
+            {
+                "Item": "IM_HolidayExchange_4",
+                "Reward": "Holiday_Shop_4_2",
+                "Times": 5,
+                "Type": "1",
+                "price": 50
+            }
+        ],
+        "Day": 4,
+        "Order": 4,
+        "Rate": [
+            {
+                "day": [
+                    1,
+                    99
+                ],
+                "rate": 0.8
+            }
+        ]
+    },
+    "Holiday_Shop_5": {
+        "Cost": [
+            {
+                "Item": "IM_HolidayExchange_4",
+                "Reward": "Holiday_Shop_5_1",
+                "Times": 2,
+                "Type": "1",
+                "price": 13000
+            },
+            {
+                "Item": "IM_HolidayExchange_4",
+                "Reward": "Holiday_Shop_5_2",
+                "Times": 1,
+                "Type": "1",
+                "price": 750
+            }
+        ],
+        "Day": 5,
+        "Order": 5,
+        "Rate": [
+            {
+                "day": [
+                    1,
+                    3
+                ],
+                "rate": 0.2
+            },
+            {
+                "day": [
+                    4,
+                    99
+                ],
+                "rate": 0.8
+            }
+        ]
+    },
+    "Holiday_Shop_6": {
+        "Cost": [
+            {
+                "Item": "IM_HolidayExchange_4",
+                "Reward": "Holiday_Shop_6_1",
+                "Times": 5,
+                "Type": "1",
+                "price": 800
+            },
+            {
+                "Item": "IM_HolidayExchange_4",
+                "Reward": "Holiday_Shop_6_2",
+                "Times": 1,
+                "Type": "1",
+                "price": 500
+            }
+        ],
+        "Day": 6,
+        "Order": 6,
+        "Rate": [
+            {
+                "day": [
+                    1,
+                    3
+                ],
+                "rate": 0.4
+            },
+            {
+                "day": [
+                    4,
+                    99
+                ],
+                "rate": 0.8
+            }
+        ]
+    },
+    "Holiday_Shop_7": {
+        "Cost": [
+            {
+                "Item": "IM_HolidayExchange_4",
+                "Reward": "Holiday_Shop_7_1",
+                "Times": 5,
+                "Type": "2",
+                "price": 150
+            },
+            {
+                "Item": "IM_HolidayExchange_4",
+                "Reward": "Holiday_Shop_7_2",
+                "Times": 2,
+                "Type": "1",
+                "price": 250
+            }
+        ],
+        "Day": 7,
+        "Order": 7,
+        "Rate": [
+            {
+                "day": [
+                    1,
+                    99
+                ],
+                "rate": 0.8
+            }
+        ]
+    },
+    "Holiday_Shop_8": {
+        "Cost": [
+            {
+                "Item": "IM_HolidayExchange_4",
+                "Reward": "Holiday_Shop_8_1",
+                "Times": 1,
+                "Type": "1",
+                "price": 20000
+            },
+            {
+                "Item": "IM_HolidayExchange_4",
+                "Reward": "Holiday_Shop_8_2",
+                "Times": 5,
+                "Type": "1",
+                "price": 75
+            }
+        ],
+        "Day": 8,
+        "Order": 8,
+        "Rate": [
+            {
+                "day": [
+                    1,
+                    3
+                ],
+                "rate": 0.2
+            },
+            {
+                "day": [
+                    4,
+                    99
+                ],
+                "rate": 0.8
+            }
+        ]
+    },
+    "Holiday_Shop_9": {
+        "Cost": [
+            {
+                "Item": "IM_HolidayExchange_4",
+                "Reward": "Holiday_Shop_9_1",
+                "Times": 10,
+                "Type": "1",
+                "price": 600
+            },
+            {
+                "Item": "IM_HolidayExchange_4",
+                "Reward": "Holiday_Shop_9_2",
+                "Times": 1,
+                "Type": "1",
+                "price": 750
+            }
+        ],
+        "Day": 9,
+        "Order": 9,
+        "Rate": [
+            {
+                "day": [
+                    1,
+                    3
+                ],
+                "rate": 0.4
+            },
+            {
+                "day": [
+                    4,
+                    99
+                ],
+                "rate": 0.8
+            }
+        ]
     }
 }

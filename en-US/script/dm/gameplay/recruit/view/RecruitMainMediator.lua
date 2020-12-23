@@ -363,8 +363,8 @@ function RecruitMainMediator:initTabController()
 				fontName = TTF_FONT_FZYH_R,
 				fontColor = cc.c3b(255, 255, 255),
 				tabImage = {
-					btnImage .. "1.png",
-					btnImage .. "2.png"
+					"asset/ui/recruit/" .. btnImage .. "1.png",
+					"asset/ui/recruit/" .. btnImage .. "2.png"
 				}
 			}
 		else
@@ -372,8 +372,8 @@ function RecruitMainMediator:initTabController()
 				tabText = "",
 				tabTextTranslate = "",
 				tabImage = {
-					btnImage .. "1.png",
-					btnImage .. "2.png"
+					"asset/ui/recruit/" .. btnImage .. "1.png",
+					"asset/ui/recruit/" .. btnImage .. "2.png"
 				}
 			}
 		end
@@ -388,7 +388,8 @@ function RecruitMainMediator:initTabController()
 	self._tabBtnWidget:initTabBtn(config, {
 		noCenterBtn = true,
 		ignoreSound = true,
-		hideBtnAnim = true
+		hideBtnAnim = true,
+		imageType = ccui.TextureResType.localType
 	})
 	self._tabBtnWidget:selectTabByTag(self._curTabType)
 

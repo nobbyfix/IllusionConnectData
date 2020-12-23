@@ -685,6 +685,8 @@ function BattleUIMediator:dragBegan(cardArray, activeCard, touchPoint)
 			mc:removeFromParent()
 		end)
 	end
+
+	self._battleGround:previewCellLocks()
 end
 
 function BattleUIMediator:dragMoved(cardArray, activeCard, touchPoint)
@@ -735,6 +737,7 @@ function BattleUIMediator:dragEnded(cardArray, activeCard, touchPoint)
 	self:stopBulletTime()
 	self:hideHeroTip()
 	self._battleGround:resumeProfessionalRestraint()
+	self._battleGround:resumeCellLocks()
 
 	while true do
 		local canPush, posIdx = self._battleGround:checkCanPushHero(activeCard, touchPoint)
@@ -772,6 +775,8 @@ function BattleUIMediator:dragCancelled()
 		self:hideHeroTip()
 		self._battleGround:hideUnrealSpine()
 	end
+
+	self._battleGround:resumeCellLocks()
 end
 
 function BattleUIMediator:startPut(cardArray, card)

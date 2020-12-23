@@ -30,7 +30,7 @@ local kColumnNum = 4
 local kCellHeight = 155
 local kHideItemType = {}
 local descHeight = 140
-local kTabBtnsNames = {
+local kTabBtnsNames_model = {
 	{
 		"bag_UI1",
 		"UITitle_EN_Quanbu",
@@ -74,6 +74,7 @@ local kTabBtnsNames = {
 		ItemPages.kOther
 	}
 }
+local kTabBtnsNames = {}
 
 function BagMediator:initialize()
 	super.initialize(self)
@@ -88,6 +89,21 @@ function BagMediator:userInject()
 	self._heroSystem = self._developSystem:getHeroSystem()
 	self._masterSystem = self._developSystem:getMasterSystem()
 	self._equipSystem = self._developSystem:getEquipSystem()
+	local index = 1
+
+	for i = 1, #kTabBtnsNames_model do
+		local canAdd = true
+
+		if i == 2 then
+			local result, tip = self._systemKeeper:isUnlock("Bag_Secret")
+			canAdd = (result == true or self._bagSystem:isHasCompose() == true) and true or false
+		end
+
+		if canAdd then
+			kTabBtnsNames[index] = kTabBtnsNames_model[i]
+			index = index + 1
+		end
+	end
 end
 
 function BagMediator:onRegister()
@@ -566,6 +582,10 @@ function BagMediator:updateDetailButtons(notHasShow)
 			buttons.useBtn:setButtonName(Strings:get("bag_UI31"), Strings:get("UITitle_EN_ZueXi"))
 			buttons.useBtn:setVisible(true)
 			self:setButtonEnabled(buttons.useBtn, true)
+
+			if self:checkCanUseCompose(item) == false then
+				buttons.useBtn:setButtonName(Strings:get("bag_Compose_UI_1"), Strings:get("bag_Compose_UI_1_EN"))
+			end
 		elseif subType == ItemTypes.K_HERO_F then
 			buttons.useBtn:setVisible(true)
 			buttons.useBtn:setButtonName(Strings:get("bag_UI13"), Strings:get("UITitle_EN_Shiyong"))
@@ -751,11 +771,12 @@ function BagMediator:updateLockArea(detailArea, item)
 
 		if item:getSellNumber() > 100000 then
 			show = true
-			numLabel = tostring(math.floor(item:getSellNumber() / 10000))
+			numLabel = tostring(math.floor(item:getSellNumber() / 1000))
 		end
 
 		textNode:setString(numLabel)
 		strNode:setPositionX(textNode:getPositionX() + textNode:getContentSize().width)
+		strNode:setString("K")
 		strNode:setVisible(show)
 		detailArea.sellPanel.sellLabel:setString(Strings:get("bag_UI9"))
 	else
@@ -1202,6 +1223,14 @@ function BagMediator:onUseClicked(sender, eventType)
 	if subType == ItemTypes.K_HEROSTONE_F then
 		self:useHeroStonePiece(self._curEntryId)
 	elseif subType == ItemTypes.K_COMPOSE then
+		if self:checkCanUseCompose(item) == false then
+			self:dispatch(ShowTipEvent({
+				tip = Strings:get("bag_UR_LearnTip")
+			}))
+
+			return
+		end
+
 		self:useScroll(self._curEntryId)
 	elseif subType == ItemTypes.K_HERO_F then
 		self:useHeroPiece(self._curEntryId)
@@ -1826,4 +1855,23 @@ function BagMediator:runListAnim()
 			end
 		end
 	end
+end
+
+function BagMediator:checkCanUseCompose(item)
+	local result = true
+	local composeTimes = self._bagSystem:getComposeTimes()
+
+	if item:getSubType() == ItemTypes.K_COMPOSE and composeTimes then
+		local configData = ConfigReader:getRecordById("Compose", item:getId())
+
+		if configData and configData.Times and configData.Times > 0 then
+			local currentTime = composeTimes[item:getId()]
+
+			if currentTime and configData.Times <= currentTime then
+				result = false
+			end
+		end
+	end
+
+	return result
 end

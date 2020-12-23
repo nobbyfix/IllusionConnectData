@@ -350,8 +350,7 @@ function ShopPackageMainMediator:setInfo(panel, data, index)
 	iconLayout:removeAllChildren()
 	iconLayout:setAnchorPoint(cc.p(0.5, 0.5))
 
-	local iconPath = data:getIcon()
-	local icon = ccui.ImageView:create(iconPath, 1)
+	local icon = ccui.ImageView:create(data:getIcon(), ccui.TextureResType.localType)
 
 	iconLayout:addChild(icon)
 	icon:setAnchorPoint(cc.p(0.5, 0.5))
@@ -371,9 +370,11 @@ function ShopPackageMainMediator:setInfo(panel, data, index)
 
 	local rewardId = data:getItem()
 	local rewards = RewardSystem:getRewardsById(rewardId)
-	local offset = #rewards == 1 and 75 or #rewards == 2 and 45 or 17
+	local offset = #rewards == 1 and 75 or #rewards == 2 and 45 or #rewards == 3 and 17 or #rewards == 4 and -2 or 0
+	local scale = 0.4
+	local cellWidth = #rewards >= 4 and 48 or 53
 
-	for i = 1, 3 do
+	for i = 1, 4 do
 		local reward = rewards[i]
 
 		if reward then
@@ -383,8 +384,8 @@ function ShopPackageMainMediator:setInfo(panel, data, index)
 			})
 
 			rewardPanel:addChild(rewardIcon)
-			rewardIcon:setScaleNotCascade(0.4)
-			rewardIcon:setPosition((i - 1) * 53 + offset, 8)
+			rewardIcon:setScaleNotCascade(scale)
+			rewardIcon:setPosition((i - 1) * cellWidth + offset, 8)
 			rewardIcon:setAnchorPoint(0, 0)
 			IconFactory:bindClickHander(rewardIcon, IconTouchHandler:new(self._parentMediator), reward, {
 				touchDisappear = true,
@@ -469,7 +470,6 @@ end
 
 function ShopPackageMainMediator:refreshPackageTime(panel, data)
 	local infoPanel = panel:getChildByFullName("info_panel")
-	local iconLayout = panel:getChildByFullName("icon_layout")
 	local _times = panel:getChildByFullName("info_panel.times")
 	local _times1 = panel:getChildByFullName("info_panel.times1")
 

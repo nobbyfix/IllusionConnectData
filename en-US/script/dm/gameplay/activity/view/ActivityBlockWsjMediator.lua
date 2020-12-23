@@ -303,7 +303,7 @@ function ActivityBlockWsjMediator:initTimer()
 			min = m,
 			sec = s
 		}
-		self._endTime = TimeUtil:getTimeByDate(table)
+		self._endTime = TimeUtil:timeByRemoteDate(table)
 
 		if remoteTimestamp < self._endTime then
 			if self._timer then

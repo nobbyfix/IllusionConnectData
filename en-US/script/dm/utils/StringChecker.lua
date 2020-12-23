@@ -53,6 +53,46 @@ function StringChecker.hasForbiddenWords(str, maskType)
 	StringChecker.forbiiddenWords = maskWordSystem:getMaskWord(maskType)
 	local result = false
 	local finalString = str
+	local replacrStr = ConfigReader:requireDataByNameIdAndKey("ConfigValue", "Forbidden_Rep", "content")
+
+	if StringChecker.forbiiddenWords then
+		for k, v in pairs(StringChecker.forbiiddenWords) do
+			if v.Name ~= "*" and v.Name ~= "" then
+				local len = utf8.len(v.Name)
+
+				local function getReplaceWords()
+					if v.Type and v.Type == "1" then
+						return replacrStr
+					end
+
+					if len > 10 then
+						return preForbiddenWords[10]
+					else
+						return preForbiddenWords[len]
+					end
+				end
+
+				local start, ended = string.find(finalString, v.Name, 1, true)
+
+				while start do
+					local str1 = ""
+					local str2 = ""
+
+					if start > 1 then
+						str1 = string.sub(finalString, 1, start - 1)
+					end
+
+					if ended < string.len(finalString) then
+						str2 = string.sub(finalString, ended + 1, string.len(finalString))
+					end
+
+					finalString = str1 .. getReplaceWords() .. str2
+					start, ended = string.find(finalString, v.Name, 1, true)
+					result = true
+				end
+			end
+		end
+	end
 
 	return result, finalString
 end

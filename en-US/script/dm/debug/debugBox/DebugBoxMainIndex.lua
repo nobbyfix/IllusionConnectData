@@ -45,7 +45,8 @@ DebugBoxMainIndex = {
 				{
 					"开启/关闭战斗开始loading",
 					"设置血量增加倍数",
-					"开启/关闭打印实时属性"
+					"开启/关闭打印实时属性",
+					"开启/关闭顺序出牌"
 				}
 			},
 			{
@@ -94,6 +95,15 @@ DebugBoxMainIndex = {
 					"增加英魂",
 					"一键无敌",
 					"添加皮肤"
+				}
+			},
+			{
+				"背包",
+				{
+					"加道具",
+					"加所有道具",
+					"清空背包",
+					"加某款皮肤"
 				}
 			},
 			{
@@ -197,15 +207,6 @@ DebugBoxMainIndex = {
 				}
 			},
 			{
-				"背包",
-				{
-					"加道具",
-					"加所有道具",
-					"清空背包",
-					"加某款皮肤"
-				}
-			},
-			{
 				"新手引导",
 				{
 					"所有引导关闭",
@@ -276,6 +277,18 @@ DebugBoxMainIndex = {
 				"奖励添加",
 				{
 					"发送指定次数的奖励"
+				}
+			},
+			{
+				"小游戏",
+				{
+					"投飞镖：设置关卡"
+				}
+			},
+			{
+				"bust展示",
+				{
+					"设置bust"
 				}
 			}
 		}
@@ -689,6 +702,14 @@ DebugBoxMainIndex = {
 				"CrusadeReset"
 			},
 			{
+				"投飞镖：设置关卡",
+				"ChangeDartsLevel"
+			},
+			{
+				"设置bust",
+				"DebugShowBustAni"
+			},
+			{
 				"技能Args检查",
 				"CheckSkillArgsBox"
 			},
@@ -715,6 +736,10 @@ DebugBoxMainIndex = {
 			{
 				"开启/关闭打印实时属性",
 				"DumpUnitPropertiesBox"
+			},
+			{
+				"开启/关闭顺序出牌",
+				"NoAiSetBox"
 			},
 			{
 				"播放主线校验错误",
@@ -839,7 +864,9 @@ DebugBoxMainIndex = {
 			"ClubBoss",
 			"BattleSettingBox",
 			"FreeRecharge",
-			"BattleExtend"
+			"BattleExtend",
+			"ChangeMiniGame",
+			"DebugShowBustAni"
 		}
 
 		for k, v in pairs(requireNameMap) do

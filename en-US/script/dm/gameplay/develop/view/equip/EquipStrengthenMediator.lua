@@ -301,9 +301,15 @@ function EquipStrengthenMediator:refreshSkill()
 
 			local equipLevel = self._equipData:getLevel()
 			local upLevel = equipLevel
+			local skillUpLV = HeroEquipSkillLevel
+			local URUPSkillLV = ConfigReader:getDataByNameIdAndKey("HeroEquipBase", self._equipData:getEquipId(), "URUPSkillLV")
 
-			for i = 1, #HeroEquipSkillLevel do
-				upLevel = math.max(upLevel, HeroEquipSkillLevel[i])
+			if URUPSkillLV then
+				skillUpLV = URUPSkillLV
+			end
+
+			for i = 1, #skillUpLV do
+				upLevel = math.max(upLevel, skillUpLV[i])
 
 				if upLevel ~= equipLevel then
 					break

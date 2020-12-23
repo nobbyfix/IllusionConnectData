@@ -714,7 +714,8 @@ function CommonTeamMediator:onClickChangeMaster()
 	}, {
 		masterId = self._curMasterId,
 		masterList = self._masterList,
-		recomandList = self._recomandMasterList or {}
+		recomandList = self._recomandMasterList or {},
+		forbidMasters = self._forbidMasters or {}
 	}, nil))
 end
 

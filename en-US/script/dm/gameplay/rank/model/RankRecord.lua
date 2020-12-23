@@ -515,3 +515,22 @@ function CrusadeRankRecord:synchronize(data)
 
 	self._point = data.value or 0
 end
+
+MiniGameRankRecord = class("MiniGameRankRecord", BaseRankRecord, _M)
+
+MiniGameRankRecord:has("_score", {
+	is = "r"
+})
+
+function MiniGameRankRecord:initialize()
+	super.initialize(self)
+
+	self._rankType = RankType.kMiniGame
+	self._score = 0
+end
+
+function MiniGameRankRecord:synchronize(data)
+	super.synchronize(self, data)
+
+	self._score = data.value or 0
+end

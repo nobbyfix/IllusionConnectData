@@ -106,6 +106,10 @@ kAddBtnFuncMap[CurrencyIdKind.kAcitvityHalloweenPower] = function (self)
 	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
 end
 
+kAddBtnFuncMap[CurrencyIdKind.kActivityHolidayPower] = function (self)
+	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
+end
+
 local kAddImgMap = {
 	[CurrencyIdKind.kGold] = true,
 	[CurrencyIdKind.kPower] = true,
@@ -158,6 +162,12 @@ local PowerConfigMap = {
 		all = "Act_Halloween_Power_RecAll",
 		configFunc = "getPowerResetByCurrencyId",
 		next = "Act_Halloween_Power_RecNext",
+		func = "getPowerByCurrencyId"
+	},
+	[CurrencyIdKind.kActivityHolidayPower] = {
+		all = "Act_NewYear_Power_RecAll",
+		configFunc = "getPowerResetByCurrencyId",
+		next = "Act_NewYear_Power_RecNext",
 		func = "getPowerByCurrencyId"
 	}
 }

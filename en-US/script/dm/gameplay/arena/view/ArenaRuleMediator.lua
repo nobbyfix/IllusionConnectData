@@ -47,11 +47,12 @@ function ArenaRuleMediator:initContent(data)
 	local rule = data and data.rule or Arena_RuleTranslate
 
 	if data and data.useParam then
+		local params = data.extraParams or {}
+		params.param1 = data.param1
+		params.param2 = data.param2
+
 		for i = 1, #rule do
-			self:addContent(Strings:get(rule[i], {
-				param1 = data.param1,
-				param2 = data.param2
-			}), i)
+			self:addContent(Strings:get(rule[i], params), i)
 		end
 	else
 		for i = 1, #rule do

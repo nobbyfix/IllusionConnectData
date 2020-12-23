@@ -64,7 +64,7 @@ all.Skill_SRen_Normal = {
 			local damage = global.EvalDamage(_env, attacker, defender, this.dmgFactor)
 			damage = global.CheckCtrlExDmg(_env, _env.ACTOR, _env.TARGET, damage)
 
-			global.ApplyHPDamage(_env, _env.TARGET, damage)
+			global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage)
 		end)
 
 		return _env

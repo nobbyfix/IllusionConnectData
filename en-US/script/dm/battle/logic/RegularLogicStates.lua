@@ -80,6 +80,7 @@ function RegularLogicState_Prepare:initialize(name, duration)
 end
 
 function RegularLogicState_Prepare:setupContext(battleContext)
+	self._battleField = battleContext:getObject("BattleField")
 	self._battleRecorder = battleContext:getObject("BattleRecorder")
 	self._battleStatist = battleContext:getObject("BattleStatist")
 	self._formationSystem = battleContext:getObject("FormationSystem")
@@ -150,6 +151,9 @@ function RegularLogicState_Prepare:prepareForBattle(battleLogic)
 			time = battleLogic:getRemainTime(1),
 			bout = battleLogic:getBoutIndex(),
 			total = battleLogic:getTeamA():countPlayers() + battleLogic:getTeamB():countPlayers() - 1
+		})
+		self._battleRecorder:recordEvent(kBRFieldLine, "BlockCell", {
+			blockCells = self._battleField:collectBlockCellIndex(kBattleSideA)
 		})
 	end
 end

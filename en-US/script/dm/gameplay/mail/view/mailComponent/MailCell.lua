@@ -136,7 +136,7 @@ function MailCell:refreshData(idx, isSelect)
 		self._sender:setString(str)
 	end
 
-	local mailDate = os.date("*t", mailInfo:getSendDate())
+	local mailDate = TimeUtil:localDate("*t", mailInfo:getSendDate())
 	local dateStr = string.format("%d.%d.%d", mailDate.year, mailDate.month, mailDate.day)
 
 	self._time:setString(dateStr)

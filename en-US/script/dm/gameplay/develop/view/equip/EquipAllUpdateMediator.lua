@@ -432,9 +432,15 @@ function EquipAllUpdateMediator:refreshSkill()
 
 			local equipLevel = self._equipData:getLevel()
 			local upLevel = equipLevel
+			local skillUpLV = HeroEquipSkillLevel
+			local URUPSkillLV = ConfigReader:getDataByNameIdAndKey("HeroEquipBase", self._equipData:getEquipId(), "URUPSkillLV")
 
-			for i = 1, #HeroEquipSkillLevel do
-				upLevel = math.max(upLevel, HeroEquipSkillLevel[i])
+			if URUPSkillLV then
+				skillUpLV = URUPSkillLV
+			end
+
+			for i = 1, #skillUpLV do
+				upLevel = math.max(upLevel, skillUpLV[i])
 
 				if upLevel ~= equipLevel then
 					break
@@ -587,6 +593,58 @@ function EquipAllUpdateMediator:refreshItemCost()
 end
 
 function EquipAllUpdateMediator:refreshEquipCost()
+	local needCostControl = self._equipData:getEquipNeedControl()
+
+	if needCostControl == 1 then
+		local commonItemId = self._equipData:getCommonItemId()
+		local needNum = self._equipData:getEquipItemNum()
+
+		if needNum > 0 then
+			local equipCost = self._starPanel:getChildByFullName("equipCost")
+			local panel = equipCost:getChildByFullName("costBg")
+			local iconpanel = panel:getChildByFullName("iconpanel")
+
+			iconpanel:removeAllChildren()
+
+			local icon = IconFactory:createPic({
+				scaleRatio = 0.7,
+				id = commonItemId
+			}, {
+				largeIcon = true
+			})
+
+			icon:addTo(iconpanel):center(iconpanel:getContentSize())
+
+			local hasNum = CurrencySystem:getCurrencyCount(self, commonItemId)
+			self._equipEnough = needNum <= hasNum
+			local colorNum1 = self._equipEnough and 1 or 7
+			local enoughImg = panel:getChildByFullName("bg.enoughImg")
+
+			enoughImg:setVisible(self._equipEnough)
+
+			local costPanel = panel:getChildByFullName("costPanel")
+
+			costPanel:setVisible(true)
+
+			local cost = costPanel:getChildByFullName("cost")
+			local costLimit = costPanel:getChildByFullName("costLimit")
+
+			cost:setString(hasNum)
+			costLimit:setString("/" .. needNum)
+			costLimit:setPositionX(cost:getContentSize().width)
+			costPanel:setContentSize(cc.size(cost:getContentSize().width + costLimit:getContentSize().width, 40))
+			cost:setTextColor(GameStyle:getColor(colorNum1))
+			costLimit:setTextColor(GameStyle:getColor(colorNum1))
+
+			local addImg = panel:getChildByFullName("addImg")
+
+			addImg:setVisible(not self._equipEnough)
+			iconpanel:setGray(not self._equipEnough)
+		end
+
+		return
+	end
+
 	local needNum = self._equipData:getEquipItemNum()
 
 	if needNum > 0 then
@@ -748,6 +806,7 @@ function EquipAllUpdateMediator:refreshStar()
 	self._starPanel:setVisible(true)
 	previewNode:setVisible(true)
 	self._itemPanel:setVisible(false)
+	self:setProgrViewToAll()
 
 	local level = self._equipData:getLevel()
 	local levelMax = self._equipData:getMaxLevel()
@@ -807,9 +866,15 @@ function EquipAllUpdateMediator:onStrengthenSuccCallback(event)
 	local level = self._equipData:getLevel()
 	local skill = self._equipData:getSkill()
 	local showUpAnim = false
+	local skillUpLV = HeroEquipSkillLevel
+	local URUPSkillLV = ConfigReader:getDataByNameIdAndKey("HeroEquipBase", self._equipData:getEquipId(), "URUPSkillLV")
 
-	for i = 1, #HeroEquipSkillLevel do
-		if self._oldLevel < HeroEquipSkillLevel[i] and HeroEquipSkillLevel[i] <= level then
+	if URUPSkillLV then
+		skillUpLV = URUPSkillLV
+	end
+
+	for i = 1, #skillUpLV do
+		if self._oldLevel < skillUpLV[i] and skillUpLV[i] <= level then
 			showUpAnim = true
 
 			break
@@ -1158,6 +1223,17 @@ function EquipAllUpdateMediator:onClickGrowUp(sender, eventType)
 		table.insert(equips, id)
 	end
 
+	local needCostControl = self._equipData:getEquipNeedControl()
+
+	if needCostControl == 1 then
+		local commonItemId = self._equipData:getCommonItemId()
+		local needNum = self._equipData:getEquipItemNum()
+
+		if needNum > 0 then
+			items[commonItemId] = needNum
+		end
+	end
+
 	AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
 
 	local param = {
@@ -1170,6 +1246,32 @@ function EquipAllUpdateMediator:onClickGrowUp(sender, eventType)
 end
 
 function EquipAllUpdateMediator:onClickEquipItem()
+	local needCostControl = self._equipData:getEquipNeedControl()
+
+	if needCostControl == 1 then
+		local commonItemId = self._equipData:getCommonItemId()
+		local needNum = self._equipData:getEquipItemNum()
+
+		if needNum > 0 then
+			AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
+
+			local itemData = self._equipData:getStarItem()[1]
+			local hasCount = CurrencySystem:getCurrencyCount(self, commonItemId)
+			local param = {
+				itemId = commonItemId,
+				hasNum = hasCount,
+				needNum = needNum
+			}
+			local view = self:getInjector():getInstance("sourceView")
+
+			self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+				transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+			}, param))
+		end
+
+		return
+	end
+
 	local needNum = self._equipData:getEquipItemNum()
 
 	if needNum ~= 0 then
@@ -1302,11 +1404,7 @@ function EquipAllUpdateMediator:progrNormalShow(closeCheck, sender)
 	local stopAll = true
 
 	for i = 1, 2 do
-		if self._addAnimData.newArr[i] then
-			if self:checkStopLabelAnim(i) then
-				break
-			end
-
+		if self._addAnimData.newArr[i] and self:checkStopLabelAnim(i) == false then
 			stopAll = false
 			local addEatNum = 1
 			local addNum = self._addAnimData.newArr[i] - self._addAnimData.oldArr[i]
@@ -1400,10 +1498,6 @@ function EquipAllUpdateMediator:checkStopLabelAnim(index)
 			self._addAnimData.oldArr[index] = self._addAnimData.newArr[index]
 			self._addAnimData.curArr[index] = self._addAnimData.newArr[index]
 		end
-	end
-
-	if self._equipData:isStarMaxExp() then
-		result = true
 	end
 
 	return result

@@ -121,6 +121,15 @@ local muiscCfg = {
 	},
 	RecruitView = {
 		noAutoPlay = true
+	},
+	DartsView = {
+		noAutoPlay = true
+	},
+	ActivityBlockHolidayView = {
+		id = "Mus_Story_NewYear"
+	},
+	ActivitySupportHolidayView = {
+		id = "Mus_Redwhite"
 	}
 }
 local UINavigateHistory = {}
@@ -160,6 +169,10 @@ function MainSceneMediator:createHistory()
 end
 
 function MainSceneMediator:dispose()
+	if (DEBUG ~= 0 or app.pkgConfig.showDebugBox == 1) and self._debugBox then
+		self._debugBox:clearTime()
+	end
+
 	super.dispose(self)
 end
 
@@ -187,6 +200,8 @@ function MainSceneMediator:onRegister()
 		debugBoxLayer:setPosition(0, 0)
 		debugBoxLayer:setContentSize(cc.size(winFrame.width, winFrame.height))
 		debugBox:setupView(debugBoxLayer)
+
+		self._debugBox = debugBox
 	end
 
 	local function onKeyReleased(keyCode, event)

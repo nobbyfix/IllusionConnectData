@@ -19,7 +19,9 @@ RewardType = {
 	kGalleryMemory = 16,
 	kItem = 2,
 	kHero = 3,
+	kBuff = 17,
 	kDecorate = 20,
+	kShow = 99,
 	kSurface = 7,
 	kStory = "STORY",
 	kInvalid = -1
@@ -299,6 +301,18 @@ function RewardSystem.class:parseInfo(rewardData)
 		return rewardData
 	end
 
+	if rewardData.type == RewardType.kShow then
+		local info = {
+			rewardType = RewardType.kShow,
+			icon = rewardData.icon or "",
+			title = rewardData.title or "",
+			desc = rewardData.desc or "",
+			tips = rewardData.tips or ""
+		}
+
+		return info
+	end
+
 	assert(rewardData ~= nil, "error:rewardData=nil")
 	assert(rewardData.type ~= nil and rewardData.code ~= nil and rewardData.amount ~= nil, "error:config error")
 
@@ -348,6 +362,12 @@ function RewardSystem.class:parseInfo(rewardData)
 			info.quality = qualityConfig.Quality
 			info.modelId = info.modelId or heroConfig.BattleModel
 		end
+	elseif intType == RewardType.kBuff then
+		info.id = rewardData.code
+		info.buffType = rewardData.buffType or "Buff"
+		info.desc = rewardData.desc
+		info.title = rewardData.title
+		info.icon = rewardData.icon
 	else
 		info.id = rewardData.code
 	end

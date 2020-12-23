@@ -104,6 +104,17 @@ function ActivitySagaSupportRankMediator:initView()
 		self._main:getChildByFullName("TText4"):setString(Strings:get("Activity_Saga_UI_43_wxh"))
 		self._main:getChildByFullName("tipTxt1"):setString(Strings:get("Activity_Saga_UI_51_wxh"))
 	end
+
+	if self._activity:getUI() == ActivityType_UI.KActivitySupportHoliday then
+		self._main:getChildByFullName("TText1"):setString(Strings:get("SingingCompetition_WinFanRank"))
+		self._main:getChildByFullName("TText3"):setString(Strings:get("SingingCompetition_LoseFanRank"))
+		self._main:getChildByFullName("TText2"):setString(Strings:get("SingingCompetition_FanRank"))
+		self._main:getChildByFullName("TText4"):setString(Strings:get("SingingCompetition_FanRank"))
+		self._main:getChildByFullName("tipTxt"):setVisible(false)
+		self._main:getChildByFullName("tipTxt2"):setAnchorPoint(0, 0.5)
+		self._main:getChildByFullName("tipTxt2"):posite(self._main:getChildByFullName("tipTxt"):getPosition())
+		self._main:getChildByFullName("tipTxt1"):setString(Strings:get("SingingCompetition_Rank_BottomTip"))
+	end
 end
 
 function ActivitySagaSupportRankMediator:initContent()

@@ -104,7 +104,10 @@ function DebugBox:setupView(parentLayer)
 	self._timeLabel:posite(31.5, 65)
 	debugBtn:addChild(self._timeLabel)
 
-	local timer = LuaScheduler:getInstance():schedule(handler(self, self.refreshNetDelay), 0.2, false)
+	if self._timer == nil then
+		self._timer = LuaScheduler:getInstance():schedule(handler(self, self.refreshNetDelay), 0.2, false)
+	end
+
 	local parentSize = parentLayer:getContentSize()
 
 	debugBtn:setPosition(parentSize.width * 0.8, parentSize.height * 0.8)
@@ -531,5 +534,21 @@ function DebugBox:refreshNetDelay()
 	local gameServerAgent = self:getInjector():getInstance("GameServerAgent")
 	local str = "网络延时：" .. tostring(gameServerAgent:getNetDelay()) .. " ms"
 
-	self._timeLabel:setString(str)
+	if self._timeLabel then
+		self._timeLabel:setString(str)
+	else
+		self:clearTime()
+	end
+end
+
+function DebugBox:clearTime()
+	if self._timer then
+		self._timer:stop()
+
+		self._timer = nil
+	end
+
+	if self._timeLabel then
+		self._timeLabel = nil
+	end
 end

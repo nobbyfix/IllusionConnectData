@@ -128,7 +128,7 @@ function ClubLogMediator:createTableView()
 			return 0, 0
 		end
 
-		local height = math.max(minHeight, descLabel:getContentSize().height - 2)
+		local height = math.max(minHeight, descLabel:getContentSize().height + 2)
 		local data = self._logList[idx + 1]
 		local dateStr = data:getDateStr()
 		local hasTitle = false
@@ -191,11 +191,11 @@ function ClubLogMediator:createTableView()
 		timeLabel:setTextColor(cc.c3b(35, 35, 35))
 		timeLabel:setString(data:getTimeStr())
 		timeLabel:setAnchorPoint(0, 1)
-		timeLabel:posite(22, realHeight - 2)
-		descLabel:posite(80, realHeight + 3)
+		timeLabel:posite(22, realHeight)
+		descLabel:setAnchorPoint(0, 0)
+		descLabel:posite(80, descLabel:getContentSize().height / 2 + 2)
 		timeLabel:addTo(node)
 		descLabel:addTo(node)
-		node:setPositionY(10)
 
 		if hasTitle then
 			local image = ccui.ImageView:create("st_bg_date.png", ccui.TextureResType.plistType)
@@ -226,8 +226,8 @@ function ClubLogMediator:createTableView()
 			}))
 			dateLabel:enableOutline(cc.c4b(0, 0, 0, 255), 1)
 		else
-			timeLabel:posite(22, realHeight - 5)
-			descLabel:setPositionY(realHeight)
+			timeLabel:posite(22, realHeight)
+			descLabel:setPositionY(descLabel:getContentSize().height / 2 + 2)
 		end
 
 		return cell
@@ -311,17 +311,10 @@ function ClubLogMediator:getRichText(idx)
 	local richTextStr = Strings:get(data:getLogConfigId(), config)
 	local descLabel = ccui.RichText:createWithXML(richTextStr, {})
 
-	descLabel:ignoreContentAdaptWithSize(true)
 	descLabel:rebuildElements()
 	descLabel:formatText()
-	descLabel:setAnchorPoint(cc.p(0, 1))
 	descLabel:renderContent()
-
-	local size = descLabel:getContentSize()
-
-	if size.width > 680 then
-		descLabel:renderContent(680, 0)
-	end
+	descLabel:setAnchorPoint(cc.p(0, 1))
 
 	return descLabel
 end

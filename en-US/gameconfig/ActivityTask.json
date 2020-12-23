@@ -2067,6 +2067,763 @@
         "Reward": "AHalloween_Login14_9_Reward",
         "TaskIcon": ""
     },
+    "AHoliday_AchieveMentTask_ExchangeAchieve_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_ANewYearExchangeAchieve",
+                "factor1": [
+                    5000
+                ]
+            }
+        ],
+        "Desc": "AHoliday_AchieveMentTask_ExchangeAchieve_1_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "AHoliday_AchieveMentTask_ExchangeAchieve_1_Name",
+        "OrderNum": 16,
+        "Reward": "AHoliday_AchieveMentTask_ExchangeAchieve_1_Reward",
+        "TaskIcon": ""
+    },
+    "AHoliday_AchieveMentTask_ExchangeAchieve_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_ANewYearExchangeAchieve",
+                "factor1": [
+                    7000
+                ]
+            }
+        ],
+        "Desc": "AHoliday_AchieveMentTask_ExchangeAchieve_2_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "AHoliday_AchieveMentTask_ExchangeAchieve_2_Name",
+        "OrderNum": 17,
+        "Reward": "AHoliday_AchieveMentTask_ExchangeAchieve_2_Reward",
+        "TaskIcon": ""
+    },
+    "AHoliday_AchieveMentTask_ExchangeAchieve_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_ANewYearExchangeAchieve",
+                "factor1": [
+                    10000
+                ]
+            }
+        ],
+        "Desc": "AHoliday_AchieveMentTask_ExchangeAchieve_3_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "AHoliday_AchieveMentTask_ExchangeAchieve_3_Name",
+        "OrderNum": 18,
+        "Reward": "AHoliday_AchieveMentTask_ExchangeAchieve_3_Reward",
+        "TaskIcon": ""
+    },
+    "AHoliday_AchieveMentTask_ExchangeAchieve_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_ANewYearExchangeAchieve",
+                "factor1": [
+                    15000
+                ]
+            }
+        ],
+        "Desc": "AHoliday_AchieveMentTask_ExchangeAchieve_4_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "AHoliday_AchieveMentTask_ExchangeAchieve_4_Name",
+        "OrderNum": 19,
+        "Reward": "AHoliday_AchieveMentTask_ExchangeAchieve_4_Reward",
+        "TaskIcon": ""
+    },
+    "AHoliday_AchieveMentTask_ExchangeAchieve_5": {
+        "Condition": [
+            {
+                "conditionType": "Condi_ANewYearExchangeAchieve",
+                "factor1": [
+                    25000
+                ]
+            }
+        ],
+        "Desc": "AHoliday_AchieveMentTask_ExchangeAchieve_5_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "AHoliday_AchieveMentTask_ExchangeAchieve_5_Name",
+        "OrderNum": 20,
+        "Reward": "AHoliday_AchieveMentTask_ExchangeAchieve_5_Reward",
+        "TaskIcon": ""
+    },
+    "AHoliday_AchieveMentTask_StageStarSum_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_AhalloweenStageStarSum",
+                "factor1": [
+                    10
+                ],
+                "params": [
+                    "ActivityBlock_Holiday_Map"
+                ]
+            }
+        ],
+        "Desc": "AHoliday_AchieveMentTask_StageStarSum_1_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "AHoliday_AchieveMentTask_StageStarSum_1_Name",
+        "OrderNum": 1,
+        "Reward": "AHoliday_AchieveMentTask_StageStarSum_1_Reward",
+        "TaskIcon": ""
+    },
+    "AHoliday_AchieveMentTask_StageStarSum_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_AhalloweenStageStarSum",
+                "factor1": [
+                    20
+                ],
+                "params": [
+                    "ActivityBlock_Holiday_Map"
+                ]
+            }
+        ],
+        "Desc": "AHoliday_AchieveMentTask_StageStarSum_2_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "AHoliday_AchieveMentTask_StageStarSum_2_Name",
+        "OrderNum": 2,
+        "Reward": "AHoliday_AchieveMentTask_StageStarSum_2_Reward",
+        "TaskIcon": ""
+    },
+    "AHoliday_AchieveMentTask_StageStarSum_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_AhalloweenStageStarSum",
+                "factor1": [
+                    30
+                ],
+                "params": [
+                    "ActivityBlock_Holiday_Map"
+                ]
+            }
+        ],
+        "Desc": "AHoliday_AchieveMentTask_StageStarSum_3_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "AHoliday_AchieveMentTask_StageStarSum_3_Name",
+        "OrderNum": 3,
+        "Reward": "AHoliday_AchieveMentTask_StageStarSum_3_Reward",
+        "TaskIcon": ""
+    },
+    "AHoliday_AchieveMentTask_StageStarSum_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_AhalloweenStageStarSum",
+                "factor1": [
+                    35
+                ],
+                "params": [
+                    "ActivityBlock_Holiday_Map"
+                ]
+            }
+        ],
+        "Desc": "AHoliday_AchieveMentTask_StageStarSum_4_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "AHoliday_AchieveMentTask_StageStarSum_4_Name",
+        "OrderNum": 4,
+        "Reward": "AHoliday_AchieveMentTask_StageStarSum_4_Reward",
+        "TaskIcon": ""
+    },
+    "AHoliday_AchieveMentTask_StageStarSum_5": {
+        "Condition": [
+            {
+                "conditionType": "Condi_AhalloweenStageStarSum",
+                "factor1": [
+                    40
+                ],
+                "params": [
+                    "ActivityBlock_Holiday_Map"
+                ]
+            }
+        ],
+        "Desc": "AHoliday_AchieveMentTask_StageStarSum_5_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "AHoliday_AchieveMentTask_StageStarSum_5_Name",
+        "OrderNum": 5,
+        "Reward": "AHoliday_AchieveMentTask_StageStarSum_5_Reward",
+        "TaskIcon": ""
+    },
+    "AHoliday_AchieveMentTask_TodayLogin_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    5
+                ]
+            }
+        ],
+        "Desc": "AHoliday_AchieveMentTask_TodayLogin_1_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "AHoliday_AchieveMentTask_TodayLogin_1_Name",
+        "OrderNum": 21,
+        "Reward": "AHoliday_AchieveMentTask_TodayLogin_1_Reward",
+        "TaskIcon": ""
+    },
+    "AHoliday_AchieveMentTask_TodayLogin_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    7
+                ]
+            }
+        ],
+        "Desc": "AHoliday_AchieveMentTask_TodayLogin_2_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "AHoliday_AchieveMentTask_TodayLogin_2_Name",
+        "OrderNum": 22,
+        "Reward": "AHoliday_AchieveMentTask_TodayLogin_2_Reward",
+        "TaskIcon": ""
+    },
+    "AHoliday_AchieveMentTask_TodayLogin_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    9
+                ]
+            }
+        ],
+        "Desc": "AHoliday_AchieveMentTask_TodayLogin_3_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "AHoliday_AchieveMentTask_TodayLogin_3_Name",
+        "OrderNum": 23,
+        "Reward": "AHoliday_AchieveMentTask_TodayLogin_3_Reward",
+        "TaskIcon": ""
+    },
+    "AHoliday_AchieveMentTask_TodayLogin_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    12
+                ]
+            }
+        ],
+        "Desc": "AHoliday_AchieveMentTask_TodayLogin_4_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "AHoliday_AchieveMentTask_TodayLogin_4_Name",
+        "OrderNum": 24,
+        "Reward": "AHoliday_AchieveMentTask_TodayLogin_4_Reward",
+        "TaskIcon": ""
+    },
+    "AHoliday_AchieveMentTask_TodayLogin_5": {
+        "Condition": [
+            {
+                "conditionType": "Condi_FinishTask",
+                "factor1": [
+                    0
+                ],
+                "factorStr1": [
+                    "AHoliday_AchieveMentTask_StageStarSum_1",
+                    "AHoliday_AchieveMentTask_StageStarSum_2",
+                    "AHoliday_AchieveMentTask_StageStarSum_3",
+                    "AHoliday_AchieveMentTask_StageStarSum_4",
+                    "AHoliday_AchieveMentTask_StageStarSum_5",
+                    "AHoliday_AchieveMentTask_winActStage_1",
+                    "AHoliday_AchieveMentTask_winActStage_2",
+                    "AHoliday_AchieveMentTask_winActStage_3",
+                    "AHoliday_AchieveMentTask_winActStage_4",
+                    "AHoliday_AchieveMentTask_winActStage_5",
+                    "AHoliday_AchieveMentTask_ExchangeAchieve_1",
+                    "AHoliday_AchieveMentTask_ExchangeAchieve_2",
+                    "AHoliday_AchieveMentTask_ExchangeAchieve_3",
+                    "AHoliday_AchieveMentTask_ExchangeAchieve_4",
+                    "AHoliday_AchieveMentTask_ExchangeAchieve_5",
+                    "AHoliday_AchieveMentTask_TodayLogin_1",
+                    "AHoliday_AchieveMentTask_TodayLogin_2",
+                    "AHoliday_AchieveMentTask_TodayLogin_3",
+                    "AHoliday_AchieveMentTask_TodayLogin_4"
+                ]
+            }
+        ],
+        "Desc": "AHoliday_AchieveMentTask_TodayLogin_5_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "AHoliday_AchieveMentTask_TodayLogin_5_Name",
+        "OrderNum": 25,
+        "Reward": "AHoliday_AchieveMentTask_TodayLogin_5_Reward",
+        "TaskIcon": ""
+    },
+    "AHoliday_AchieveMentTask_winActStage_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_winActStage",
+                "factor1": [
+                    100
+                ],
+                "params": [
+                    "ActivityBlock_Holiday_Map"
+                ]
+            }
+        ],
+        "Desc": "AHoliday_AchieveMentTask_winActStage_1_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "AHoliday_AchieveMentTask_winActStage_1_Name",
+        "OrderNum": 6,
+        "Reward": "AHoliday_AchieveMentTask_winActStage_1_Reward",
+        "TaskIcon": ""
+    },
+    "AHoliday_AchieveMentTask_winActStage_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_winActStage",
+                "factor1": [
+                    200
+                ],
+                "params": [
+                    "ActivityBlock_Holiday_Map"
+                ]
+            }
+        ],
+        "Desc": "AHoliday_AchieveMentTask_winActStage_2_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "AHoliday_AchieveMentTask_winActStage_2_Name",
+        "OrderNum": 7,
+        "Reward": "AHoliday_AchieveMentTask_winActStage_2_Reward",
+        "TaskIcon": ""
+    },
+    "AHoliday_AchieveMentTask_winActStage_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_winActStage",
+                "factor1": [
+                    300
+                ],
+                "params": [
+                    "ActivityBlock_Holiday_Map"
+                ]
+            }
+        ],
+        "Desc": "AHoliday_AchieveMentTask_winActStage_3_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "AHoliday_AchieveMentTask_winActStage_3_Name",
+        "OrderNum": 8,
+        "Reward": "AHoliday_AchieveMentTask_winActStage_3_Reward",
+        "TaskIcon": ""
+    },
+    "AHoliday_AchieveMentTask_winActStage_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_winActStage",
+                "factor1": [
+                    400
+                ],
+                "params": [
+                    "ActivityBlock_Holiday_Map"
+                ]
+            }
+        ],
+        "Desc": "AHoliday_AchieveMentTask_winActStage_4_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "AHoliday_AchieveMentTask_winActStage_4_Name",
+        "OrderNum": 9,
+        "Reward": "AHoliday_AchieveMentTask_winActStage_4_Reward",
+        "TaskIcon": ""
+    },
+    "AHoliday_AchieveMentTask_winActStage_5": {
+        "Condition": [
+            {
+                "conditionType": "Condi_winActStage",
+                "factor1": [
+                    600
+                ],
+                "params": [
+                    "ActivityBlock_Holiday_Map"
+                ]
+            }
+        ],
+        "Desc": "AHoliday_AchieveMentTask_winActStage_5_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "AHoliday_AchieveMentTask_winActStage_5_Name",
+        "OrderNum": 10,
+        "Reward": "AHoliday_AchieveMentTask_winActStage_5_Reward",
+        "TaskIcon": ""
+    },
+    "AHoliday_DailyTask_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Login",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "AHoliday_DailyTask_1_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "AHoliday_DailyTask_2_Name",
+        "OrderNum": 1,
+        "Reward": "AHoliday_DailyTask_1_Reward",
+        "TaskIcon": ""
+    },
+    "AHoliday_DailyTask_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_winActStage",
+                "factor1": [
+                    10
+                ],
+                "params": [
+                    "ActivityBlock_Holiday_Map"
+                ]
+            }
+        ],
+        "Desc": "AHoliday_DailyTask_2_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "AHoliday_DailyTask_1_Name",
+        "OrderNum": 2,
+        "Reward": "AHoliday_DailyTask_2_Reward",
+        "TaskIcon": ""
+    },
+    "AHoliday_DailyTask_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TowerEnter",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "AHoliday_DailyTask_3_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "AHoliday_DailyTask_3_Name",
+        "OrderNum": 3,
+        "Reward": "AHoliday_DailyTask_3_Reward",
+        "TaskIcon": ""
+    },
+    "AHoliday_DailyTask_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroDate",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "AHoliday_DailyTask_4_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "AHoliday_DailyTask_4_Name",
+        "OrderNum": 4,
+        "Reward": "AHoliday_DailyTask_4_Reward",
+        "TaskIcon": ""
+    },
+    "AHoliday_DailyTask_5": {
+        "Condition": [
+            {
+                "conditionType": "Condi_FinishTask",
+                "factor1": [
+                    0
+                ],
+                "factorStr1": [
+                    "AHoliday_DailyTask_1",
+                    "AHoliday_DailyTask_2",
+                    "AHoliday_DailyTask_3",
+                    "AHoliday_DailyTask_4"
+                ]
+            }
+        ],
+        "Desc": "AHoliday_DailyTask_5_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "AHoliday_DailyTask_5_Name",
+        "OrderNum": 5,
+        "Reward": "AHoliday_DailyTask_5_Reward",
+        "TaskIcon": ""
+    },
+    "AHoliday_Login16_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "AHoliday_Login16_1_Name",
+        "OrderNum": 1,
+        "Reward": "AHoliday_Login16_1_Reward",
+        "TaskIcon": ""
+    },
+    "AHoliday_Login16_10": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    10
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "AHoliday_Login16_10_Name",
+        "OrderNum": 10,
+        "Reward": "AHoliday_Login16_10_Reward",
+        "TaskIcon": ""
+    },
+    "AHoliday_Login16_11": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    11
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "AHoliday_Login16_11_Name",
+        "OrderNum": 11,
+        "Reward": "AHoliday_Login16_11_Reward",
+        "TaskIcon": ""
+    },
+    "AHoliday_Login16_12": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    12
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "AHoliday_Login16_12_Name",
+        "OrderNum": 12,
+        "Reward": "AHoliday_Login16_12_Reward",
+        "TaskIcon": ""
+    },
+    "AHoliday_Login16_13": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    13
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "AHoliday_Login16_13_Name",
+        "OrderNum": 13,
+        "Reward": "AHoliday_Login16_13_Reward",
+        "TaskIcon": ""
+    },
+    "AHoliday_Login16_14": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    14
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "AHoliday_Login16_14_Name",
+        "OrderNum": 14,
+        "Reward": "AHoliday_Login16_14_Reward",
+        "TaskIcon": ""
+    },
+    "AHoliday_Login16_15": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    15
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "AHoliday_Login16_15_Name",
+        "OrderNum": 15,
+        "Reward": "AHoliday_Login16_15_Reward",
+        "TaskIcon": ""
+    },
+    "AHoliday_Login16_16": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    16
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "AHoliday_Login16_16_Name",
+        "OrderNum": 16,
+        "Reward": "AHoliday_Login16_16_Reward",
+        "TaskIcon": ""
+    },
+    "AHoliday_Login16_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    2
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "AHoliday_Login16_2_Name",
+        "OrderNum": 2,
+        "Reward": "AHoliday_Login16_2_Reward",
+        "TaskIcon": ""
+    },
+    "AHoliday_Login16_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    3
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "AHoliday_Login16_3_Name",
+        "OrderNum": 3,
+        "Reward": "AHoliday_Login16_3_Reward",
+        "TaskIcon": ""
+    },
+    "AHoliday_Login16_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    4
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "AHoliday_Login16_4_Name",
+        "OrderNum": 4,
+        "Reward": "AHoliday_Login16_4_Reward",
+        "TaskIcon": ""
+    },
+    "AHoliday_Login16_5": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    5
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "AHoliday_Login16_5_Name",
+        "OrderNum": 5,
+        "Reward": "AHoliday_Login16_5_Reward",
+        "TaskIcon": ""
+    },
+    "AHoliday_Login16_6": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    6
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "AHoliday_Login16_6_Name",
+        "OrderNum": 6,
+        "Reward": "AHoliday_Login16_6_Reward",
+        "TaskIcon": ""
+    },
+    "AHoliday_Login16_7": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    7
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "AHoliday_Login16_7_Name",
+        "OrderNum": 7,
+        "Reward": "AHoliday_Login16_7_Reward",
+        "TaskIcon": ""
+    },
+    "AHoliday_Login16_8": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    8
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "AHoliday_Login16_8_Name",
+        "OrderNum": 8,
+        "Reward": "AHoliday_Login16_8_Reward",
+        "TaskIcon": ""
+    },
+    "AHoliday_Login16_9": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    9
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "AHoliday_Login16_9_Name",
+        "OrderNum": 9,
+        "Reward": "AHoliday_Login16_9_Reward",
+        "TaskIcon": ""
+    },
     "ActivityBlock_AchieveMentTask_1": {
         "Condition": [
             {
@@ -4497,6 +5254,186 @@
         "Name": "ActivityBlock_ZuoHe_DailyTask_6_Name",
         "OrderNum": 6,
         "Reward": "ActivityBlock_ZuoHe_DailyTask_6_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_Darts_DailyTask_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_MiniGameDailyScore",
+                "factor1": [
+                    4000
+                ],
+                "params": [
+                    "Activity_Darts"
+                ]
+            }
+        ],
+        "Desc": "Activity_Darts_DailyTask_1_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "Activity_Darts_DailyTask_1_Name",
+        "OrderNum": 1,
+        "Reward": "Activity_Darts_DailyTask_1_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_Darts_DailyTask_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_MiniGameDailyScore",
+                "factor1": [
+                    8000
+                ],
+                "params": [
+                    "Activity_Darts"
+                ]
+            }
+        ],
+        "Desc": "Activity_Darts_DailyTask_2_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "Activity_Darts_DailyTask_2_Name",
+        "OrderNum": 2,
+        "Reward": "Activity_Darts_DailyTask_2_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_Darts_DailyTask_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_MiniGameDailyScore",
+                "factor1": [
+                    14000
+                ],
+                "params": [
+                    "Activity_Darts"
+                ]
+            }
+        ],
+        "Desc": "Activity_Darts_DailyTask_3_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "Activity_Darts_DailyTask_3_Name",
+        "OrderNum": 3,
+        "Reward": "Activity_Darts_DailyTask_3_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_Darts_DailyTask_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_MiniGameDailyScore",
+                "factor1": [
+                    20000
+                ],
+                "params": [
+                    "Activity_Darts"
+                ]
+            }
+        ],
+        "Desc": "Activity_Darts_DailyTask_4_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "Activity_Darts_DailyTask_4_Name",
+        "OrderNum": 4,
+        "Reward": "Activity_Darts_DailyTask_4_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_Darts_Task_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_MiniGameTotalScore",
+                "factor1": [
+                    20000
+                ],
+                "params": [
+                    "Activity_Darts"
+                ]
+            }
+        ],
+        "Desc": "Activity_Darts_AchieveMentTask_1_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "Activity_Darts_AchieveMentTask_1_Name",
+        "OrderNum": 5,
+        "Reward": "Activity_Darts_AchieveMentTask_1_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_Darts_Task_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_MiniGameTotalScore",
+                "factor1": [
+                    50000
+                ],
+                "params": [
+                    "Activity_Darts"
+                ]
+            }
+        ],
+        "Desc": "Activity_Darts_AchieveMentTask_2_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "Activity_Darts_AchieveMentTask_2_Name",
+        "OrderNum": 6,
+        "Reward": "Activity_Darts_AchieveMentTask_2_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_Darts_Task_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_MiniGameTotalScore",
+                "factor1": [
+                    80000
+                ],
+                "params": [
+                    "Activity_Darts"
+                ]
+            }
+        ],
+        "Desc": "Activity_Darts_AchieveMentTask_3_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "Activity_Darts_AchieveMentTask_3_Name",
+        "OrderNum": 7,
+        "Reward": "Activity_Darts_AchieveMentTask_3_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_Darts_Task_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_MiniGameTotalScore",
+                "factor1": [
+                    110000
+                ],
+                "params": [
+                    "Activity_Darts"
+                ]
+            }
+        ],
+        "Desc": "Activity_Darts_AchieveMentTask_4_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "Activity_Darts_AchieveMentTask_4_Name",
+        "OrderNum": 8,
+        "Reward": "Activity_Darts_AchieveMentTask_4_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_Darts_Task_5": {
+        "Condition": [
+            {
+                "conditionType": "Condi_MiniGameTotalScore",
+                "factor1": [
+                    150000
+                ],
+                "params": [
+                    "Activity_Darts"
+                ]
+            }
+        ],
+        "Desc": "Activity_Darts_AchieveMentTask_5_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "Activity_Darts_AchieveMentTask_5_Name",
+        "OrderNum": 9,
+        "Reward": "Activity_Darts_AchieveMentTask_5_Reward",
         "TaskIcon": ""
     },
     "BattlePass_Daily_Task_1": {

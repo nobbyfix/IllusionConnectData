@@ -23,6 +23,7 @@ function MCBuySuccessMediator:enterWithData(data)
 	self:initData()
 	self:initView()
 	self:updateViews()
+	self:setupExtraReward()
 end
 
 function MCBuySuccessMediator:onRegister()
@@ -38,9 +39,13 @@ function MCBuySuccessMediator:onRegister()
 end
 
 function MCBuySuccessMediator:initData()
+	self._extraRewards = {}
+
 	for k, v in pairs(self._data) do
 		if v.code == "IR_Diamond" then
 			self._diamondNum = self._diamondNum + v.amount
+		elseif v.type ~= 21 then
+			self._extraRewards[#self._extraRewards + 1] = v
 		end
 	end
 end
@@ -81,6 +86,29 @@ function MCBuySuccessMediator:updateViews()
 	local text_num = self._itemNode:getChildByFullName("Text_num")
 
 	text_num:setString("+" .. self._diamondNum)
+end
+
+function MCBuySuccessMediator:setupExtraReward()
+	if #self._extraRewards > 0 then
+		for i, v in pairs(self._extraRewards) do
+			local icon = IconFactory:createRewardIcon(v, {
+				showAmount = false
+			})
+
+			icon:addTo(self._itemNode):posite(150 + (i - 1) * 170, 30)
+			icon:setScale(0.75)
+
+			local title1 = cc.Label:createWithTTF(RewardSystem:getName(v), TTF_FONT_FZYH_M, 18)
+
+			title1:enableOutline(cc.c4b(0, 0, 0, 255), 1)
+			title1:addTo(icon):center(icon:getContentSize()):offset(0, -85)
+			title1:setDimensions(140, 50)
+			title1:setScale(1.3333333333333333)
+		end
+
+		self._itemNode:offset(-(#self._extraRewards) * 170 / 2)
+		self._itemNode:getChildByName("Text_des"):offset(#self._extraRewards * 150 / 2)
+	end
 end
 
 function MCBuySuccessMediator:onClickOk()

@@ -178,6 +178,14 @@ function RegularBattleLogic:adjustEnergyBaseSpeed(energySpeed)
 	teamB:adjustEnergyBaseSpeed(type(energySpeed) == "table" and energySpeed[2] or energySpeed)
 end
 
+function RegularBattleLogic:setupGroundCell(cfg)
+	if cfg.blockCells then
+		for k, cellId in pairs(cfg.blockCells) do
+			self._battleField:blockCell(cellId)
+		end
+	end
+end
+
 function RegularBattleLogic:startPhase()
 	self._currentPhase = self._phases[BattlePhases.kPhase1]
 

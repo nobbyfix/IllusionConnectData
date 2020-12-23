@@ -1546,6 +1546,7 @@ all.ArenaFixed_23 = {
 		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
 
 		_env.count = 0
+		_env.count_default = 0
 
 		exec["@time"]({
 			0
@@ -1562,9 +1563,11 @@ all.ArenaFixed_23 = {
 					_env.count = _env.count + 1
 				end
 
-				local count_default = global.SpecialPropGetter(_env, "startcount")(_env, global.FriendMaster(_env))
+				if global.FriendMaster(_env) then
+					_env.count_default = global.SpecialPropGetter(_env, "startcount")(_env, global.FriendMaster(_env))
+				end
 
-				if not count_default or count_default == 0 then
+				if not _env.count_default or _env.count_default == 0 then
 					local buff = global.SpecialNumericEffect(_env, "+startcount", {
 						"+Normal",
 						"+Normal"
@@ -1588,7 +1591,9 @@ all.ArenaFixed_23 = {
 					})
 				end
 
-				_env.count = global.SpecialPropGetter(_env, "startcount")(_env, global.FriendMaster(_env))
+				if global.FriendMaster(_env) then
+					_env.count = global.SpecialPropGetter(_env, "startcount")(_env, global.FriendMaster(_env))
+				end
 
 				if _env.count > 3 then
 					local buffeft1 = global.NumericEffect(_env, "+critrate", {
@@ -1652,6 +1657,7 @@ all.ArenaFixed_24 = {
 		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
 
 		_env.count = 0
+		_env.count_default = 0
 
 		exec["@time"]({
 			0
@@ -1668,9 +1674,11 @@ all.ArenaFixed_24 = {
 					_env.count = _env.count + 1
 				end
 
-				local count_default = global.SpecialPropGetter(_env, "startcount")(_env, global.FriendMaster(_env))
+				if global.FriendMaster(_env) then
+					_env.count_default = global.SpecialPropGetter(_env, "startcount")(_env, global.FriendMaster(_env))
+				end
 
-				if not count_default or count_default == 0 then
+				if not _env.count_default or _env.count_default == 0 then
 					local buff = global.SpecialNumericEffect(_env, "+startcount", {
 						"+Normal",
 						"+Normal"
@@ -1694,7 +1702,10 @@ all.ArenaFixed_24 = {
 					})
 				end
 
-				_env.count = global.SpecialPropGetter(_env, "startcount")(_env, global.FriendMaster(_env))
+				if global.FriendMaster(_env) then
+					_env.count = global.SpecialPropGetter(_env, "startcount")(_env, global.FriendMaster(_env))
+				end
+
 				local buffeft1 = global.SpecialNumericEffect(_env, "+delrppoint", {
 					"+Normal",
 					"+Normal"
@@ -1823,6 +1834,7 @@ all.ArenaFixed_26 = {
 		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
 
 		_env.count = 0
+		_env.count_default = 0
 
 		exec["@time"]({
 			0
@@ -1839,9 +1851,11 @@ all.ArenaFixed_26 = {
 					_env.count = _env.count + 1
 				end
 
-				local count_default = global.SpecialPropGetter(_env, "startcount")(_env, global.FriendMaster(_env))
+				if global.FriendMaster(_env) then
+					_env.count_default = global.SpecialPropGetter(_env, "startcount")(_env, global.FriendMaster(_env))
+				end
 
-				if not count_default or count_default == 0 then
+				if not _env.count_default or _env.count_default == 0 then
 					local buff = global.SpecialNumericEffect(_env, "+startcount", {
 						"+Normal",
 						"+Normal"
@@ -1865,7 +1879,9 @@ all.ArenaFixed_26 = {
 					})
 				end
 
-				_env.count = global.SpecialPropGetter(_env, "startcount")(_env, global.FriendMaster(_env))
+				if global.FriendMaster(_env) then
+					_env.count = global.SpecialPropGetter(_env, "startcount")(_env, global.FriendMaster(_env))
+				end
 
 				if _env.count > 4 then
 					local buffeft = global.NumericEffect(_env, "+atkrate", {
@@ -1926,6 +1942,7 @@ all.ArenaFixed_27 = {
 		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
 
 		_env.count = 0
+		_env.count_default = 0
 
 		exec["@time"]({
 			0
@@ -1942,9 +1959,11 @@ all.ArenaFixed_27 = {
 					_env.count = _env.count + 1
 				end
 
-				local count_default = global.SpecialPropGetter(_env, "startcount")(_env, global.FriendMaster(_env))
+				if global.FriendMaster(_env) then
+					_env.count_default = global.SpecialPropGetter(_env, "startcount")(_env, global.FriendMaster(_env))
+				end
 
-				if not count_default or count_default == 0 then
+				if not _env.count_default or _env.count_default == 0 then
 					local buff = global.SpecialNumericEffect(_env, "+startcount", {
 						"+Normal",
 						"+Normal"
@@ -1968,7 +1987,9 @@ all.ArenaFixed_27 = {
 					})
 				end
 
-				_env.count = global.SpecialPropGetter(_env, "startcount")(_env, global.FriendMaster(_env))
+				if global.FriendMaster(_env) then
+					_env.count = global.SpecialPropGetter(_env, "startcount")(_env, global.FriendMaster(_env))
+				end
 
 				if _env.count > 2 then
 					local buffeft = global.NumericEffect(_env, "+critstrg", {
@@ -2096,7 +2117,7 @@ all.ArenaFixed_28 = {
 				"+Normal"
 			}, 0.2)
 
-			for _, unit1 in global.__iter__(global.AllUnits(_env)) do
+			for _, unit1 in global.__iter__(global.AllUnits(_env, global.PETS)) do
 				if global.SelectBuffCount(_env, unit1, global.BUFF_MARKED_ANY(_env, "DAZE", "MUTE")) ~= 0 and global.SelectBuffCount(_env, unit1, global.BUFF_MARKED_ALL(_env, "ArenaFixed_28", "UNHURTRATEDOWN")) == 0 then
 					global.ApplyBuff(_env, unit1, {
 						timing = 1,
@@ -2151,6 +2172,7 @@ all.ArenaFixed_29 = {
 		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
 
 		_env.count = 0
+		_env.count_default = 0
 
 		exec["@time"]({
 			0
@@ -2167,9 +2189,11 @@ all.ArenaFixed_29 = {
 					_env.count = _env.count + 1
 				end
 
-				local count_default = global.SpecialPropGetter(_env, "startcount")(_env, global.FriendMaster(_env))
+				if global.FriendMaster(_env) then
+					_env.count_default = global.SpecialPropGetter(_env, "startcount")(_env, global.FriendMaster(_env))
+				end
 
-				if not count_default or count_default == 0 then
+				if not _env.count_default or _env.count_default == 0 then
 					local buff = global.SpecialNumericEffect(_env, "+startcount", {
 						"+Normal",
 						"+Normal"
@@ -2193,7 +2217,9 @@ all.ArenaFixed_29 = {
 					})
 				end
 
-				_env.count = global.SpecialPropGetter(_env, "startcount")(_env, global.FriendMaster(_env))
+				if global.FriendMaster(_env) then
+					_env.count = global.SpecialPropGetter(_env, "startcount")(_env, global.FriendMaster(_env))
+				end
 
 				if _env.count > 1 then
 					local buffeft = global.NumericEffect(_env, "+curerate", {

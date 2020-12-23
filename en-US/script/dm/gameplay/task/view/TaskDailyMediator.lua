@@ -83,6 +83,40 @@ function TaskDailyMediator:onRegister()
 	self._cellPanel:getChildByFullName("cell.loadingBar"):setCapInsets(cc.rect(1, 1, 1, 1))
 	self._doneMark:getChildByFullName("text"):enableOutline(cc.c4b(244, 39, 39, 114.75), 1)
 	self:adjustView()
+
+	local liveness = self._dailyPanel:getChildByName("liveness")
+	local lineGradiantVec2 = {
+		{
+			ratio = 0.3,
+			color = cc.c4b(255, 248, 209, 255)
+		},
+		{
+			ratio = 0.7,
+			color = cc.c4b(186, 157, 57, 255)
+		}
+	}
+
+	liveness:enablePattern(cc.LinearGradientPattern:create(lineGradiantVec2, {
+		x = 1,
+		y = -2
+	}))
+
+	local txt = self._dailyPanel:getChildByName("text")
+	local lineGradiantVec2 = {
+		{
+			ratio = 0.3,
+			color = cc.c4b(255, 255, 255, 255)
+		},
+		{
+			ratio = 0.7,
+			color = cc.c4b(233, 220, 217, 255)
+		}
+	}
+
+	txt:enablePattern(cc.LinearGradientPattern:create(lineGradiantVec2, {
+		x = 0,
+		y = -1
+	}))
 end
 
 function TaskDailyMediator:adjustView()
@@ -159,11 +193,11 @@ function TaskDailyMediator:refreshLiveness(hasAnim)
 
 	local percent = liveness / livenessList[#livenessList] * 100
 	local PercentMap = {
-		[40.0] = 13.5,
-		[160.0] = 77,
-		[80.0] = 35.5,
+		[40.0] = 20,
+		[160.0] = 80,
+		[80.0] = 40,
 		[200.0] = 100,
-		[120.0] = 55.5
+		[120.0] = 60
 	}
 
 	local function getPercent(recruitTimes)
@@ -205,41 +239,41 @@ function TaskDailyMediator:refreshLiveness(hasAnim)
 			local animName = boxRewardImg[i]
 
 			if liveness < livenessList[i] then
-				local image = ccui.ImageView:create("renwu_bg_bxd_1.png", 1)
+				local image = ccui.ImageView:create("rcrw_bx_di.png", 1)
 
 				image:addTo(box):posite(26, 29)
 
 				local child = ccui.ImageView:create(animName[1], 1)
 
 				child:addTo(box):posite(26, 29)
-				child:setScale(0.5)
+				child:setScale(0.65)
 			else
 				local boxStatusMap = self._taskListModel:getBoxStatusMap() or {}
 				local status = self._taskSystem:findValueByKey(boxStatusMap, tostring(livenessList[i]))
 
 				if status then
-					local image = ccui.ImageView:create("renwu_bg_bxd_1.png", 1)
+					local image = ccui.ImageView:create("rcrw_bx_di.png", 1)
 
 					image:addTo(box):posite(26, 29)
 
 					local child = ccui.ImageView:create(animName[1], 1)
 
 					child:addTo(box):posite(26, 29)
-					child:setScale(0.5)
+					child:setScale(0.65)
 
 					local doneMark = self._doneMark:clone()
 
-					doneMark:addTo(box):posite(26, 29)
+					doneMark:addTo(box):posite(30, 10)
 					doneMark:setVisible(true)
 				else
-					local image = ccui.ImageView:create("renwu_bg_bxd_2.png", 1)
+					local image = ccui.ImageView:create("rcrw_bx_di1.png", 1)
 
 					image:addTo(box):posite(26, 29)
 
 					local child = ccui.ImageView:create(animName[1], 1)
 
 					child:addTo(box):posite(26, 29)
-					child:setScale(0.5)
+					child:setScale(0.65)
 
 					local redPoint = ccui.ImageView:create(IconFactory.redPointPath, 1)
 

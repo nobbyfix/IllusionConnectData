@@ -219,14 +219,7 @@ end
 function ShopBuyPackageMediator:refreshIcon()
 	self._iconLayout:removeAllChildren()
 
-	local buyIconPath = self._data:getBuyIcon()
-	local icon = nil
-
-	if buyIconPath ~= "" then
-		icon = ccui.ImageView:create("asset/ui/shop/" .. buyIconPath .. ".png")
-	else
-		icon = ccui.ImageView:create(self._data:getIcon(), 1)
-	end
+	local icon = ccui.ImageView:create(self._data:getBuyIcon(), ccui.TextureResType.localType)
 
 	if icon then
 		self._iconLayout:addChild(icon)

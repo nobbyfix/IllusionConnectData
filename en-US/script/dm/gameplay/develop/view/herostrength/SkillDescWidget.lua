@@ -1,5 +1,6 @@
 SkillDescWidget = class("SkillDescWidget", BaseWidget, _M)
 local listWidth = 291
+local listWidthBig = 390
 
 function SkillDescWidget.class:createWidgetNode()
 	local resFile = "asset/ui/SkillDescWidget.csb"
@@ -14,6 +15,8 @@ function SkillDescWidget:initialize(view, data)
 	self._mediator = data.mediator
 
 	self:initSubviews(view)
+
+	self._isBig = false
 end
 
 function SkillDescWidget:dispose()
@@ -216,8 +219,15 @@ function SkillDescWidget:refreshInfo(skill, role, isMaster)
 
 	height = height + 110
 
-	bg:setContentSize(cc.size(332, height))
-	infoNode:setPositionY(height - 90)
+	if self._isBig == true then
+		bg:setContentSize(cc.size(432, height))
+		infoNode:setPositionY(height - 90)
+		infoNode:setPositionX(-105)
+		desc:setPositionX(204.39)
+	else
+		bg:setContentSize(cc.size(332, height))
+		infoNode:setPositionY(height - 90)
+	end
 end
 
 function SkillDescWidget:createSkillDescPanel(title, skill, style)
@@ -231,6 +241,18 @@ function SkillDescWidget:createSkillDescPanel(title, skill, style)
 	label:setAnchorPoint(cc.p(0, 1))
 
 	local height = label:getContentSize().height
+
+	if height > 450 or self._isBig == true then
+		self._isBig = true
+		strWidth = listWidthBig
+		label = ccui.RichText:createWithXML(desc, {})
+
+		label:setVerticalSpace(1)
+		label:renderContent(strWidth, 0)
+		label:setAnchorPoint(cc.p(0, 1))
+	end
+
+	height = label:getContentSize().height
 
 	layout:setContentSize(cc.size(strWidth, height))
 	label:addTo(layout)

@@ -1,4 +1,5 @@
 require("dm.gameplay.activity.model.ActivityColorEgg")
+require("dm.gameplay.stage.view.component.StoryStageCommonCell")
 
 ActivityBlockMapWsjMediator = class("ActivityBlockMapWsjMediator", DmAreaViewMediator, _M)
 
@@ -8,6 +9,9 @@ ActivityBlockMapWsjMediator:has("_activitySystem", {
 ActivityBlockMapWsjMediator:has("_developSystem", {
 	is = "r"
 }):injectWith("DevelopSystem")
+ActivityBlockMapWsjMediator:has("_gameServerAgent", {
+	is = "r"
+}):injectWith("GameServerAgent")
 
 local BaseChapterPath = "asset/scene/"
 local kBtnHandlers = {
@@ -21,6 +25,22 @@ local kBtnHandlers = {
 	},
 	["main.actionNode.btn_emBattle"] = {
 		func = "onClickEmBattle"
+	}
+}
+local actUiConfig = {
+	ACTIVITYBLOCKMAPHoliday = {
+		boss = {
+			bg = "shuangdan_img_gkrk_boss2.png"
+		},
+		story = {
+			lockBg = "shuangdan_img_gkrk_sheying.png",
+			unlockBg = "shuangdan_img_gkrk_jqkq.png",
+			lockIcon = "shuangdan_img_gkrk_sheying.png",
+			unlockBgSize = cc.size(208, 48)
+		},
+		normal = {
+			bg = "shuangdan_img_gkrk_zx2.png"
+		}
 	}
 }
 
@@ -564,6 +584,12 @@ function ActivityBlockMapWsjMediator:createNormalPointNode(index, pointData)
 		}, nil, true)
 		view:getChildByName("true"):setSwallowTouches(true)
 
+		local uiConfig = actUiConfig[self._model:getUI()]
+
+		if uiConfig and uiConfig.normal and uiConfig.normal.bg then
+			view:getChildByName("bg"):loadTexture(uiConfig.normal.bg, ccui.TextureResType.plistType)
+		end
+
 		self._normalPointView[pointId] = view
 	end
 
@@ -617,6 +643,12 @@ function ActivityBlockMapWsjMediator:createBossPointNode(index, pointData)
 		}, nil, true)
 		view:getChildByName("true"):setSwallowTouches(true)
 
+		local uiConfig = actUiConfig[self._model:getUI()]
+
+		if uiConfig and uiConfig.boss and uiConfig.boss.bg then
+			view:getChildByName("bg"):loadTexture(uiConfig.boss.bg, ccui.TextureResType.plistType)
+		end
+
 		self._bossPointView[pointId] = view
 	end
 
@@ -635,28 +667,46 @@ function ActivityBlockMapWsjMediator:createStoryPointNode(index, pointId)
 	local storyPoint = map:getStoryPointById(pointId)
 
 	if self._storyPointView[pointId] == nil then
+		local pos = storyPoint:getLocation()
 		local view = self._storyPointCell:clone()
 
 		view:setVisible(true)
-	else
-		self._storyPointView[pointId]:refreshViewWithState(nil, storyPoint:isUnlock(), storyPoint:isPass())
-	end
+		view:getChildByFullName("content"):setString(Strings:get(storyPoint:getName()))
+		view:addTo(self._stagePanel):center(self._bgSize):setPosition(cc.p(pos[1] + self._bgSize.width * 0.5, pos[2] + self._bgSize.height * 0.5))
+		view:setScale(self._bgScale)
+		view:setLocalZOrder(20)
 
-	if not storyPoint:getIsHidden() and not storyPoint:isPass() and storyPointConfig.IsHide ~= 1 then
-		local preOpenPointIds = storyPoint:getPrevBPointId()
-		local _pointId = preOpenPointIds[1]
+		view.point = storyPoint
 
-		if _pointId then
-			for k, v in ipairs(self._pointList) do
-				if v == _pointId then
-					table.insert(self._pointList, k + 1, pointId)
-
-					break
-				end
-			end
-		else
-			table.insert(self._pointList, 1, pointId)
+		local function callFunc(sender, eventType)
+			self:onClickPlayStory(pointId)
 		end
+
+		mapButtonHandlerClick(self, view, {
+			ignoreClickAudio = true,
+			func = callFunc
+		}, nil, true)
+		view:getChildByName("true"):setSwallowTouches(true)
+		view:getChildByFullName("unLockPanel"):setVisible(storyPoint:isUnlock())
+		view:getChildByFullName("lockPanel"):setVisible(not storyPoint:isUnlock())
+		view:getChildByFullName("progressPanel"):setVisible(false)
+
+		self._storyPointView[pointId] = view
+		local uiConfig = actUiConfig[self._model:getUI()]
+
+		if uiConfig and uiConfig.story then
+			if uiConfig.story.unlockBg then
+				view:getChildByName("unLockPanel"):loadTexture(uiConfig.story.unlockBg, ccui.TextureResType.plistType)
+			end
+
+			if uiConfig.story.unlockBgSize then
+				view:getChildByName("unLockPanel"):setContentSize(uiConfig.story.unlockBgSize)
+			end
+		end
+
+		self._storyPointView[pointId]:setVisible(storyPoint:isUnlock())
+	else
+		self._storyPointView[pointId]:setVisible(storyPoint:isUnlock())
 	end
 end
 
@@ -797,39 +847,6 @@ function ActivityBlockMapWsjMediator:onGotoHeroSystem()
 	local view = self:getInjector():getInstance("HeroShowListView")
 
 	self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view))
-end
-
-function ActivityBlockMapWsjMediator:refreshStoryPoint(pointId)
-	self:storySort(self._storyPointList)
-
-	for pId, pNode in pairs(self._storyPointView) do
-		local storyPointConfig = ConfigReader:getRecordById("ActivityStoryPoint", pId)
-
-		for index, pointCell in pairs(self._storyPointList) do
-			if pNode:getPoint() == pointCell then
-				if self._stageType == StageType.kNormal then
-					pNode:getView():setPosition(cc.p(568 + storyPointConfig.Location[1], 70 + (index - 1) * 50))
-				else
-					pNode:getView():setPosition(cc.p(568 + storyPointConfig.Location[1], 350 - (index - 1) * 50))
-				end
-			end
-		end
-	end
-
-	for pId, pNode in pairs(self._storyPointView) do
-		local storyPoint = self._model:getPointById(pId)
-
-		pNode:refreshViewWithState(nil, storyPoint:isUnlock(), storyPoint:isPass())
-	end
-
-	local selectIndex = table.indexof(self._pointList, pointId)
-
-	table.removebyvalue(self._pointList, pointId)
-
-	self._selectPointId = self._pointList[selectIndex]
-
-	self._tableView:reloadData()
-	self:setScrollPoint()
 end
 
 function ActivityBlockMapWsjMediator:refreshChooseBtnState()
@@ -984,30 +1001,31 @@ function ActivityBlockMapWsjMediator:onClickPlayStory(pointId, isCheck)
 				doActivityType = 106,
 				pointId = pointId
 			}, function (response)
+				local function refreshStory()
+					storyDirector:notifyWaiting("story_play_end")
+					self:initStage()
+				end
+
 				local delegate = {}
 				local outSelf = self
 
 				function delegate:willClose(popupMediator, data)
-					storyDirector:notifyWaiting("story_play_end")
-					outSelf:refreshStoryPoint(pointId)
-
-					local chapterInfo = outSelf._model:getMapByIndex(self._mapIndex, self._stageType)
-
-					for k, v in pairs(outSelf._bossPointView) do
-						local point = chapterInfo:getPointById(k)
-
-						v:refreshState(nil, point:isUnlock(), point:isPass())
-					end
+					refreshStory()
 				end
 
-				local view = self:getInjector():getInstance("getRewardView")
-				local reward = response.data.reward or {}
+				local reward = response.data.reward
 
-				self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
-					maskOpacity = 0
-				}, {
-					rewards = reward
-				}, delegate))
+				if reward then
+					local view = self:getInjector():getInstance("getRewardView")
+
+					self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+						maskOpacity = 0
+					}, {
+						rewards = reward
+					}, delegate))
+				else
+					refreshStory()
+				end
 			end)
 		end
 	end
@@ -1030,6 +1048,26 @@ function ActivityBlockMapWsjMediator:enterCommonPoint(pointId)
 		}))
 
 		return
+	end
+
+	local openTime = pointInfo:getConfig().PointTime
+	local curTime = self._gameServerAgent:remoteTimestamp()
+
+	if openTime and openTime.start then
+		local startTime = TimeUtil:formatStrToTImestamp(openTime.start)
+
+		if curTime < startTime then
+			local date = TimeUtil:localDate("%Y-%m-%d", startTime)
+
+			self:dispatch(ShowTipEvent({
+				duration = 0.2,
+				tip = Strings:get("Newyear_ActivityStage_OpenTimeTip", {
+					time = date
+				})
+			}))
+
+			return
+		end
 	end
 
 	local data = {

@@ -209,8 +209,8 @@ function FreeStaminaActivityMediator:showCanNotGetStatus()
 			local minData = string.split(data.Time[1], ":")
 			local maxData = string.split(data.Time[2], ":")
 			local currentTimeStamp = self:getInjector():getInstance("GameServerAgent"):remoteTimestamp()
-			local curData = os.date("*t", currentTimeStamp)
-			local minDayTimeStamp = os.time({
+			local curData = TimeUtil:remoteDate("*t", currentTimeStamp)
+			local minDayTimeStamp = TimeUtil:timeByRemoteDate({
 				year = curData.year,
 				month = curData.month,
 				day = curData.day,
@@ -221,7 +221,7 @@ function FreeStaminaActivityMediator:showCanNotGetStatus()
 			local minTimeStamp, maxTimeStamp = nil
 
 			if minDayTimeStamp <= currentTimeStamp and index ~= 3 then
-				minTimeStamp = os.time({
+				minTimeStamp = TimeUtil:timeByRemoteDate({
 					year = curData.year,
 					month = curData.month,
 					day = curData.day + 1,
@@ -229,7 +229,7 @@ function FreeStaminaActivityMediator:showCanNotGetStatus()
 					min = minData[2],
 					sec = minData[3]
 				})
-				maxTimeStamp = os.time({
+				maxTimeStamp = TimeUtil:timeByRemoteDate({
 					year = curData.year,
 					month = curData.month,
 					day = curData.day + 1,
@@ -238,7 +238,7 @@ function FreeStaminaActivityMediator:showCanNotGetStatus()
 					sec = maxData[3]
 				})
 			else
-				minTimeStamp = os.time({
+				minTimeStamp = TimeUtil:timeByRemoteDate({
 					year = curData.year,
 					month = curData.month,
 					day = curData.day,
@@ -246,7 +246,7 @@ function FreeStaminaActivityMediator:showCanNotGetStatus()
 					min = minData[2],
 					sec = minData[3]
 				})
-				maxTimeStamp = os.time({
+				maxTimeStamp = TimeUtil:timeByRemoteDate({
 					year = curData.year,
 					month = curData.month,
 					day = curData.day,

@@ -34,6 +34,9 @@ local KMenu = {
 		},
 		{
 			title = Strings:get("Frame_UI_4")
+		},
+		{
+			title = Strings:get("Frame_UI_6")
 		}
 	}
 }
@@ -136,6 +139,7 @@ function ChangeHeadImgMediator:getData()
 			local activity = {}
 			local festival = {}
 			local rare = {}
+			local zodiac = {}
 			local data = self._settingSystem:getShowHeadFrameList()
 
 			for i = 1, #data do
@@ -147,6 +151,8 @@ function ChangeHeadImgMediator:getData()
 					table.insert(festival, v)
 				elseif v.config.Type == KFrameType.RARE then
 					table.insert(rare, v)
+				elseif v.config.Type == KFrameType.Zodiac then
+					table.insert(zodiac, v)
 				end
 
 				if tostring(v.id) == tostring(self._player:getCurHeadFrame()) then
@@ -159,7 +165,8 @@ function ChangeHeadImgMediator:getData()
 				data,
 				activity,
 				festival,
-				rare
+				rare,
+				zodiac
 			}
 		end
 
@@ -403,6 +410,9 @@ function ChangeHeadImgMediator:setSelectStatus(headInfo, icon)
 		local label = cc.Label:createWithTTF("", "asset/font/CustomFont_FZYH_M.TTF", 16)
 
 		label:setString(Strings:get("Frame_UI_5"))
+		label:setAlignment(cc.TEXT_ALIGNMENT_CENTER, cc.TEXT_ALIGNMENT_CENTER)
+		label:setOverflow(cc.LabelOverflow.SHRINK)
+		label:setDimensions(70, 30)
 		label:addTo(image):center(image:getContentSize())
 		GameStyle:setCommonOutlineEffect(label, 1)
 	end
@@ -625,7 +635,7 @@ function ChangeHeadImgMediator:refreshHeadFrameInfoView()
 	end
 
 	if self._curData.frameData then
-		local tb = os.date("*t", tonumber(self._curData.frameData) / 1000)
+		local tb = TimeUtil:localDate("*t", tonumber(self._curData.frameData) / 1000)
 
 		getText:setString(Strings:get("Frame_UI_1") .. tb.year .. "." .. tb.month .. "." .. tb.day)
 	end

@@ -370,9 +370,14 @@ function PetRaceRegistLayer:getMatchStatus()
 	local state = self._petRaceSystem:getPetRace():getState()
 
 	for idx, num in pairs(enterList) do
+		local localDate = TimeUtil:localDate("%H:%M:%S", TimeUtil:getTimeByDateForTargetTimeInToday({
+			hour = string.split(matchNumbers[idx], ":")[1],
+			min = string.split(matchNumbers[idx], ":")[2],
+			sec = string.split(matchNumbers[idx], ":")[3]
+		}))
 		ret[idx] = {
 			index = idx,
-			time = matchNumbers[idx],
+			time = localDate,
 			limit = limitNum,
 			curNum = num
 		}

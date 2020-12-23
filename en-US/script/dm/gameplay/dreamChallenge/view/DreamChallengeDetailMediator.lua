@@ -54,6 +54,7 @@ function DreamChallengeDetailMediator:initWidget()
 	self._detailView = self._main:getChildByName("openPanel")
 	self._openBtn = self._detailView:getChildByName("open")
 	self._lockView = self._main:getChildByName("lockPanel")
+	self._pointDescRt = nil
 
 	self:initAnim()
 end
@@ -129,7 +130,52 @@ function DreamChallengeDetailMediator:refreshView()
 
 		if timeStrKey and timeStrKey ~= "" then
 			timeNode:setVisible(true)
-			timeStrKey:setString(Strings:get(timeStrKey))
+
+			local startStamp, endStamp = self._dreamSystem:getMapStartAndEndTime(self._mapId)
+			local startTime = TimeUtil:localDate("%Y.%m.%d %H:%M", startStamp)
+			local endTime = TimeUtil:localDate("%Y.%m.%d %H:%M", endStamp)
+			local str = Strings:get(timeStrKey, {
+				StartTime = startTime,
+				EndTime = endTime,
+				fontName = CUSTOM_TTF_FONT_1
+			})
+
+			dump(str, "str >>>>>>>>>>>>>")
+
+			local richText = ccui.RichText:createWithXML("", {})
+
+			richText:setAnchorPoint(timeText:getAnchorPoint())
+			richText:setPosition(cc.p(timeText:getPosition()))
+			richText:addTo(timeText:getParent())
+			richText:setString(str)
+		end
+
+		local desc = self._detailView:getChildByFullName("pointDesc")
+
+		desc:setVisible(false)
+
+		if self._pointDescRt then
+			self._pointDescRt:removeFromParent()
+
+			self._pointDescRt = nil
+		end
+
+		local pointDesc = self._dreamSystem:getPointTimeDesc(self._pointId)
+
+		if pointDesc and pointDesc ~= "" and self._pointDescRt == nil then
+			desc:setVisible(true)
+
+			local richText = ccui.RichText:createWithXML(Strings:get(pointDesc, {
+				fontSize = 20,
+				fontName = CUSTOM_TTF_FONT_1
+			}), {})
+
+			richText:setAnchorPoint(desc:getAnchorPoint())
+			richText:setPosition(cc.p(desc:getPosition()))
+			richText:addTo(desc:getParent())
+			richText:renderContent(desc:getContentSize().width, 0, true)
+
+			self._pointDescRt = richText
 		end
 
 		local rewardPanel = self._detailView:getChildByFullName("rewardPanel")
@@ -156,14 +202,21 @@ function DreamChallengeDetailMediator:refreshView()
 		title3:setVisible(false)
 
 		local teamData = self._dreamSystem:getPointScreen(self._mapId, self._pointId)
-		local teamCond = nil
+		local teamCond, teamTitleStr = nil
+		local restrictStr = ""
 
 		if teamData.Up then
-			text:setString(Strings:get("DreamChallenge_Point_Reward_Title_1"))
+			teamTitleStr = Strings:get("DreamChallenge_Point_Reward_Title_1")
+			restrictStr = Strings:get("DreamChallenge_Point_Rrestrict02")
+
+			text:setString(teamTitleStr)
 
 			teamCond = teamData.Up
 		else
-			text:setString(Strings:get("DreamChallenge_Point_Reward_Title_2"))
+			teamTitleStr = Strings:get("DreamChallenge_Point_Reward_Title_2")
+			restrictStr = Strings:get("DreamChallenge_Point_Rrestrict01")
+
+			text:setString(teamTitleStr)
 
 			teamCond = teamData.Down
 		end
@@ -191,19 +244,59 @@ function DreamChallengeDetailMediator:refreshView()
 
 			local attackText = node:getChildByFullName("text")
 			local icon = node:getChildByFullName("icon")
+			local iconTexture = kOtherHeroIcon
+			local infoDesc = ""
+			local infoTitle = ""
 
 			if data.type == "job" then
-				attackText:setString(Strings:get("TypeName_" .. data.value))
+				infoTitle = Strings:get("TypeName_" .. data.value)
+
+				attackText:setString(infoTitle)
 				icon:loadTexture(kJobIcon[data.value], ccui.TextureResType.localType)
+
+				iconTexture = kJobIcon[data.value]
+				infoDesc = Strings:get("DreamChallenge_Point_Team_Desc_" .. data.value, {
+					fontSize = 18,
+					fontName = TTF_FONT_FZYH_M,
+					restrict = restrictStr
+				})
 			elseif data.type == "Party" then
-				attackText:setString(Strings:get("HeroPartyName_" .. data.value))
+				infoTitle = Strings:get("HeroPartyName_" .. data.value)
+
+				attackText:setString(infoTitle)
 				icon:loadTexture(kPartyIcon[data.value], ccui.TextureResType.localType)
+
+				infoDesc = Strings:get("DreamChallenge_Point_Team_Desc_" .. data.value, {
+					fontSize = 18,
+					fontName = TTF_FONT_FZYH_M,
+					restrict = restrictStr
+				})
+				iconTexture = kPartyIcon[data.value]
 			elseif data.type == "Tag" then
-				attackText:setString(Strings:get("DC_Map_OtherHero_IconName"))
+				infoTitle = Strings:get("DC_Map_OtherHero_IconName")
+
+				attackText:setString(infoTitle)
 				icon:loadTexture(kOtherHeroIcon, ccui.TextureResType.localType)
+
+				infoDesc = Strings:get("DreamChallenge_Point_Team_Desc_Tag", {
+					fontSize = 18,
+					fontName = TTF_FONT_FZYH_M,
+					restrict = restrictStr
+				})
 			end
 
 			buffInfoBtnPosX = node:getPositionX() + 100
+			local touchInfo = {
+				icon = iconTexture,
+				type = RewardType.kShow,
+				title = infoTitle,
+				desc = infoDesc
+			}
+
+			icon:setSwallowTouches(false)
+			IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), touchInfo, {
+				needDelay = true
+			})
 		end
 
 		local buffBtn = self._detailView:getChildByFullName("detailBtn")
@@ -218,7 +311,20 @@ function DreamChallengeDetailMediator:refreshView()
 
 		if timeStrKey and timeStrKey ~= "" then
 			timeNode:setVisible(true)
-			timeStrKey:setString(Strings:get(timeStrKey))
+
+			local startStamp, endStamp = self._dreamSystem:getMapStartAndEndTime(self._mapId)
+			local startTime = TimeUtil:localDate("%Y.%m.%d %H:%M", startStamp)
+			local endTime = TimeUtil:localDate("%Y.%m.%d %H:%M", endStamp)
+			local str = Strings:get(timeStrKey, {
+				StartTime = startTime,
+				EndTime = endTime,
+				fontName = CUSTOM_TTF_FONT_1
+			})
+			local richText = ccui.RichText:createWithXML(str, {})
+
+			richText:setAnchorPoint(timeText:getAnchorPoint())
+			richText:setPosition(cc.p(timeText:getPosition()))
+			richText:addTo(timeText:getParent())
 		end
 
 		local rewardPanel = self._lockView:getChildByFullName("rewardPanel")
