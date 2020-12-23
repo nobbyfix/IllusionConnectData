@@ -2173,6 +2173,45 @@
         "Times": 2,
         "isRemind": 1
     },
+    "VT_Exchange_20201223_1": {
+        "Cost": [
+            {
+                "amount": 1,
+                "code": "IM_ZuoHeBossStamina",
+                "type": 2
+            }
+        ],
+        "Order": "",
+        "Target": "VT_Exchange_20201223_1_Reward",
+        "Times": 2,
+        "isRemind": 1
+    },
+    "VT_Exchange_20201223_2": {
+        "Cost": [
+            {
+                "amount": 1,
+                "code": "IM_ZuoHeBossStamina",
+                "type": 2
+            }
+        ],
+        "Order": "",
+        "Target": "VT_Exchange_20201223_2_Reward",
+        "Times": 999,
+        "isRemind": 1
+    },
+    "VT_Exchange_20201223_3": {
+        "Cost": [
+            {
+                "amount": 6,
+                "code": "IR_ZuoHeAcitvityStamina",
+                "type": 2
+            }
+        ],
+        "Order": "",
+        "Target": "VT_Exchange_20201223_3_Reward",
+        "Times": 999,
+        "isRemind": 1
+    },
     "VT_Summer_Exchange_20200825_0910_1": {
         "Cost": [
             {

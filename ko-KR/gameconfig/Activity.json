@@ -8651,9 +8651,9 @@
     "TimePurchase_Holiday": {
         "ActivityConfig": {
             "ShowRate": [
-                "0.0000625",
+                "0.0001",
                 "0.1",
-                "0.9",
+                "0.8999",
                 "0.03",
                 "0.1",
                 "0.25",
@@ -9140,6 +9140,53 @@
             ]
         },
         "Title": "VT_Exchange_20200928_1003_Title",
+        "Type": "EXCHANGE",
+        "UI": "Exchange",
+        "Version": ""
+    },
+    "VT_Exchange_20201223": {
+        "ActivityConfig": {
+            "BubleDesc": [
+                "VT_Exchange_20201223_Bubble1",
+                "VT_Exchange_20201223_Bubble2",
+                "VT_Exchange_20201223_Bubble3",
+                "VT_Exchange_20201223_Bubble4"
+            ],
+            "ModelId": "Model_TPGZhu",
+            "TaskBgUI": "hd_bg_cdmx",
+            "TaskTopUI": "hd_bt_bc",
+            "exchange": [
+                "VT_Exchange_20201223_1",
+                "VT_Exchange_20201223_2",
+                "VT_Exchange_20201223_3"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "VT_Exchange_20201223_Desc",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "hd_btn_jqhm",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 93,
+        "ShowTab": 1,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2020-12-24 05:00:00",
+            "start": [
+                "2020-12-23 05:00:00",
+                "2020-12-24 05:00:00"
+            ]
+        },
+        "Title": "VT_Exchange_20201223_Title",
         "Type": "EXCHANGE",
         "UI": "Exchange",
         "Version": ""
