@@ -98,8 +98,11 @@ all.Skill_PDLa_Proud = {
 			name = "main",
 			entry = prototype.main
 		})
-		this.main = global["[duration]"](this, {
+		main = global["[duration]"](this, {
 			1167
+		}, main)
+		this.main = global["[proud]"](this, {
+			"Hero_Proud_PDLa"
 		}, main)
 
 		return this
@@ -716,8 +719,11 @@ all.Skill_PDLa_Proud_EX = {
 			name = "main",
 			entry = prototype.main
 		})
-		this.main = global["[duration]"](this, {
+		main = global["[duration]"](this, {
 			1167
+		}, main)
+		this.main = global["[proud]"](this, {
+			"Hero_Proud_PDLa"
 		}, main)
 
 		return this
