@@ -47,28 +47,20 @@ function PlayerMessageWidget:decorateView(message, senderInfo, parent)
 	local contentText = self._main:getChildByFullName("content_text")
 
 	if contentText == nil then
-		contentText = ccui.RichText:createWithXML(content, {})
+		contentText = cc.Label:createWithTTF(content, TTF_FONT_FZYH_R, 18)
 
-		contentText:setTouchEnabled(true)
-		contentText:setSwallowTouches(false)
-		contentText:setWrapMode(1)
 		contentText:setAnchorPoint(contentRect:getAnchorPoint())
 		contentText:addTo(contentRect:getParent()):posite(contentRect:getPosition()):setName("content_text")
-		contentText:setOpenUrlHandler(function (url)
-			openUrlView(url, self:getInjector(), message:getExtraData(), message:getParams())
-		end)
-		contentText:setFontSize(18)
-		contentText:setFontColor("#343434")
+		contentText:setColor(cc.c3b(52, 52, 52))
+		contentText:setOverflow(cc.LabelOverflow.CLAMP)
 	else
 		contentText:setString(content)
 	end
 
-	contentText:renderContent()
-
 	local size = contentText:getContentSize()
 	local realWidth = math.min(size.width, kMaxPlayerContentWidth)
 
-	contentText:renderContent(realWidth, 0, true)
+	contentText:setDimensions(realWidth, 0)
 
 	local realSize = contentText:getContentSize()
 	self._contentText = contentText

@@ -307,7 +307,11 @@ function PlayerMessage:sync(data)
 
 	if data.content then
 		local content = xmlEscape(data.content)
-		content = string.format("<font face='asset/font/CustomFont_FZYH_R.TTF' size='18' color='#343434'>%s</font>", content)
+
+		if self:getType() ~= MessageType.kPlayer then
+			content = string.format("<font face='asset/font/CustomFont_FZYH_R.TTF' size='18' color='#343434'>%s</font>", content)
+		end
+
 		self._content = content
 	elseif data.contentId then
 		if type(data.contentId) ~= "table" then
