@@ -39,6 +39,17 @@ function PlayerMessageWidget:dispose()
 	super.dispose(self)
 end
 
+function PlayerMessageWidget:isRichText(string)
+	local str = "<font"
+	local count = string:find(str)
+
+	if count ~= nil then
+		return true
+	else
+		return false
+	end
+end
+
 function PlayerMessageWidget:decorateView(message, senderInfo, parent)
 	self._message = message
 	self._parentMediator = parent
@@ -46,24 +57,55 @@ function PlayerMessageWidget:decorateView(message, senderInfo, parent)
 	local content = message:getContent()
 	local contentText = self._main:getChildByFullName("content_text")
 
-	if contentText == nil then
-		contentText = cc.Label:createWithTTF(content, TTF_FONT_FZYH_R, 18)
+	if self:isRichText(content) then
+		if contentText == nil then
+			contentText = ccui.RichText:createWithXML(content, {})
 
-		contentText:setAnchorPoint(contentRect:getAnchorPoint())
-		contentText:addTo(contentRect:getParent()):posite(contentRect:getPosition()):setName("content_text")
-		contentText:setColor(cc.c3b(52, 52, 52))
-		contentText:setOverflow(cc.LabelOverflow.CLAMP)
+			contentText:setTouchEnabled(true)
+			contentText:setSwallowTouches(false)
+			contentText:setWrapMode(1)
+			contentText:setAnchorPoint(contentRect:getAnchorPoint())
+			contentText:addTo(contentRect:getParent()):posite(contentRect:getPosition()):setName("content_text")
+			contentText:setOpenUrlHandler(function (url)
+				openUrlView(url, self:getInjector(), message:getExtraData(), message:getParams())
+			end)
+			contentText:setFontSize(18)
+			contentText:setFontColor("#343434")
+		else
+			contentText:setString(content)
+		end
+
+		contentText:renderContent()
+
+		local size = contentText:getContentSize()
+		local realWidth = math.min(size.width, kMaxPlayerContentWidth)
+
+		contentText:renderContent(realWidth, 0, true)
+
+		self._contentText = contentText
 	else
-		contentText:setString(content)
+		if contentText == nil then
+			contentText = cc.Label:createWithTTF(content, TTF_FONT_FZYH_R, 18)
+
+			contentText:setAnchorPoint(contentRect:getAnchorPoint())
+			contentText:addTo(contentRect:getParent()):posite(contentRect:getPosition()):setName("content_text")
+			contentText:setColor(cc.c3b(52, 52, 52))
+			contentText:setOverflow(cc.LabelOverflow.CLAMP)
+		else
+			contentText:setString(content)
+		end
+
+		local size = contentText:getContentSize()
+		local realWidth = math.min(size.width, kMaxPlayerContentWidth)
+
+		if kMaxPlayerContentWidth < size.width then
+			contentText:setDimensions(realWidth, 0)
+		end
+
+		self._contentText = contentText
 	end
 
-	local size = contentText:getContentSize()
-	local realWidth = math.min(size.width, kMaxPlayerContentWidth)
-
-	contentText:setDimensions(realWidth, 0)
-
-	local realSize = contentText:getContentSize()
-	self._contentText = contentText
+	local realSize = self._contentText:getContentSize()
 	local bubble = self._main:getChildByFullName("Text_panel.bubble")
 	local setBubbleSizeX = kDefaultBubbleWidth < realSize.width + 28 and realSize.width + 28 or kDefaultBubbleWidth
 	local setBubbleSizeY = kDefaultBubbleHeight < realSize.height + 25 and realSize.height + 25 or kDefaultBubbleHeight
@@ -107,7 +149,7 @@ function PlayerMessageWidget:decorateView(message, senderInfo, parent)
 		local nameText = self._main:getChildByFullName("Text_panel.name_text")
 
 		nameText:setString(senderInfo.nickname or "")
-		nameText:setPositionY(setBubbleSizeY)
+		nameText:setPositionY(kDefaultBubbleHeight)
 		nameText:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
 
 		local vipNode = self._main:getChildByFullName("Text_panel.vipnode")
