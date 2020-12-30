@@ -5581,7 +5581,86 @@
             "IHG_Quality4_9": 8,
             "IHG_Quality5_6": 20
         },
-        "StoryLink": "",
+        "StoryLink": [
+            {
+                "bg": "main_img_00",
+                "option": [
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        3,
+                        12
+                    ]
+                ],
+                "story": "KTSJKeDate01"
+            },
+            {
+                "bg": "main_img_01",
+                "option": [
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        3,
+                        12
+                    ]
+                ],
+                "story": "KTSJKeDate02"
+            },
+            {
+                "bg": "main_img_02",
+                "option": [
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        3,
+                        12
+                    ]
+                ],
+                "story": "KTSJKeDate03"
+            }
+        ],
         "UseEventDesc": {
             "sit": "EventUse_KTSJKe",
             "sleep": "EventUse_KTSJKe"
@@ -7717,7 +7796,86 @@
             "IHG_Quality4_6": 8,
             "IHG_Quality5_3": 20
         },
-        "StoryLink": "",
+        "StoryLink": [
+            {
+                "bg": "main_img_00",
+                "option": [
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        12,
+                        3
+                    ]
+                ],
+                "story": "MLYTLShaDate01"
+            },
+            {
+                "bg": "main_img_00",
+                "option": [
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        3,
+                        12
+                    ]
+                ],
+                "story": "MLYTLShaDate02"
+            },
+            {
+                "bg": "main_img_00",
+                "option": [
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        3,
+                        12
+                    ]
+                ],
+                "story": "MLYTLShaDate03"
+            }
+        ],
         "UseEventDesc": {
             "sit": "EventUse_MLYTLSha",
             "sleep": "EventUse_MLYTLSha"

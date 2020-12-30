@@ -393,7 +393,7 @@ function EquipAllUpdateMediator:refreshSkill()
 		skillDesc:removeAllChildren()
 
 		local style = {
-			fontSize = 20
+			fontSize = 18
 		}
 		local name = skill:getName()
 		local level = skill:getLevel()

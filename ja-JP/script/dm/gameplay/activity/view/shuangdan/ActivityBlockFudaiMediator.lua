@@ -94,10 +94,10 @@ function ActivityBlockFudaiMediator:initMember()
 	self._priceText = self._main:getChildByFullName("Panel_button.Text_price")
 	self._priceNowText = self._main:getChildByFullName("Panel_button.Text_price_now")
 	self._buyDesText = self._main:getChildByFullName("Panel_button.Text_buy_des")
-	self._lineImage = self._main:getChildByFullName("Panel_button.Image_xian")
 	self._panelRate = self._main:getChildByFullName("Panel_rate")
 	self._panelButton = self._main:getChildByFullName("Panel_button")
 	self._closeButton = self._main:getChildByFullName("Button_close")
+	self._priceDi = self._main:getChildByFullName("Panel_button.Image_zi_di")
 end
 
 function ActivityBlockFudaiMediator:initListView()
@@ -215,8 +215,9 @@ function ActivityBlockFudaiMediator:refreshButtonShow()
 	local symbol, price = payOffSystem:getPaySymbolAndPrice(self._packageShopConfig:getPayId())
 
 	self._priceNowText:setString(symbol .. " " .. price)
-	self._priceText:setString(symbol .. " " .. self._price)
+	self._priceText:setString("")
 	self._buyBtn:setGray(false)
+	self._priceDi:setVisible(false)
 
 	local state = self:getFudaiOpenState()
 
@@ -226,11 +227,11 @@ function ActivityBlockFudaiMediator:refreshButtonShow()
 		if not self._packageShop then
 			self._buyBtn:setGray(true)
 			self._priceText:setString(Strings:get("NewYear_LuckyBag_UI11"))
-			self._lineImage:setVisible(false)
+			self._priceDi:setVisible(true)
 		elseif not self._packageShop:getCanBuy() then
 			self._buyBtn:setGray(true)
 			self._priceText:setString(Strings:get("NewYear_LuckyBag_UI11"))
-			self._lineImage:setVisible(false)
+			self._priceDi:setVisible(true)
 		end
 	else
 		self._buyBtn:setGray(true)

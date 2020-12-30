@@ -569,7 +569,7 @@
         "IsHiddenHead": 0,
         "Type": 3,
         "UnlockDesc": "Head_ONiTan_UnlockDesc",
-        "Zoom": 1.0
+        "Zoom": 0.4
     },
     "Head_PDLa": {
         "HeadDesc": "HeroBase_Desc_PDLa",
@@ -707,7 +707,7 @@
         "HeadDesc": "Head_VC_AI_Desc",
         "HeadMove": [
             -40,
-            -10
+            -45
         ],
         "HeadName": "Head_VC_AI_Name",
         "HeroMasterId": "Head_VC_AI",
@@ -715,13 +715,13 @@
         "IsHiddenHead": 1,
         "Type": 3,
         "UnlockDesc": "Head_VC_AI_UnlockDesc",
-        "Zoom": 1.0
+        "Zoom": 0.85
     },
     "Head_VC_HK": {
         "HeadDesc": "Head_VC_HK_Desc",
         "HeadMove": [
             -40,
-            -10
+            -18
         ],
         "HeadName": "Head_VC_HK_Name",
         "HeroMasterId": "Head_VC_HK",
@@ -729,7 +729,7 @@
         "IsHiddenHead": 1,
         "Type": 3,
         "UnlockDesc": "Head_VC_HK_UnlockDesc",
-        "Zoom": 1.0
+        "Zoom": 0.9
     },
     "Head_VC_K": {
         "HeadDesc": "Head_VC_K_Desc",
@@ -743,7 +743,7 @@
         "IsHiddenHead": 1,
         "Type": 3,
         "UnlockDesc": "Head_VC_K_UnlockDesc",
-        "Zoom": 1.0
+        "Zoom": 0.6
     },
     "Head_WEDe": {
         "HeadDesc": "HeroBase_Desc_WEDe",

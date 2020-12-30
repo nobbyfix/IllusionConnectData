@@ -3562,7 +3562,7 @@ function IconFactory:createRactHeadImage(info)
 	else
 		icon = cc.Sprite:create(playerHeadImgConfig.IconPath)
 
-		icon:setScale(0.4)
+		icon:setScale(playerHeadImgConfig.Zoom or 0.4)
 
 		offset = {
 			-40,

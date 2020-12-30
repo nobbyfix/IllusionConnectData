@@ -940,7 +940,7 @@ function DreamChallengeTeamMediator:initHero(node, info)
 			text:setString(Strings:get("clubBoss_46"))
 			text:setColor(cc.c3b(255, 203, 63))
 		else
-			text:setString(Strings:get("LOGIN_UI13"))
+			text:setString(Strings:get("LOGIN_UI_hint"))
 			text:setColor(cc.c3b(255, 255, 255))
 		end
 	end

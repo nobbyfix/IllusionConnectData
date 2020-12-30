@@ -374,7 +374,7 @@ function ChangeHeadImgMediator:createIconFrame(view, headInfo, index)
 	local icon = ccui.ImageView:create(img)
 
 	icon:setAnchorPoint(cc.p(0, 0)):setScale(0.3)
-	icon:addTo(view):posite(25 + (index - 1) * kWidth - 12, 8)
+	icon:addTo(view):posite(25 + (index - 1) * kWidth - 12, 0)
 	icon:setTouchEnabled(true)
 	icon:setSwallowTouches(false)
 	icon:setTag(index)

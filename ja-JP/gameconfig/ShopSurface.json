@@ -260,5 +260,39 @@
             "start": "2020-10-16 05:00:00",
             "type": "limit"
         }
+    },
+    "Surface_KTSJKe_Japan": {
+        "BackGroundImg": "sd_pf_bg",
+        "ClientCondition": "",
+        "Cost": [
+            {
+                "amount": 0,
+                "code": "IR_Surface"
+            }
+        ],
+        "Hide": 0,
+        "ServerCondition": "",
+        "Sort": 4,
+        "Surface": "Surface_KTSJKe_Japan",
+        "TimeType": {
+            "type": "unlimit"
+        }
+    },
+    "Surface_SDTZi_Japan": {
+        "BackGroundImg": "sd_pf_bg",
+        "ClientCondition": "",
+        "Cost": [
+            {
+                "amount": 0,
+                "code": "IR_Surface"
+            }
+        ],
+        "Hide": 0,
+        "ServerCondition": "",
+        "Sort": 4,
+        "Surface": "Surface_SDTZi_Japan",
+        "TimeType": {
+            "type": "unlimit"
+        }
     }
 }

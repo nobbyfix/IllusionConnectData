@@ -336,7 +336,17 @@ function BattleDataHelper:fillHeroData(hero, rid, waveStr, idx, isEnemy, summon,
 		hero.suppress = ConfigReader:getRecordById("BattleSuppress", hero.genre) or {}
 	end
 
-	hero.surfaceIndex = self:getSufaceIndex("HeroBase", hero)
+	if isEnemy then
+		local enemyHero = ConfigReader:getRecordById("EnemyHero", hero.cid)
+
+		if enemyHero and enemyHero.SurfaceNum and enemyHero.SurfaceNum > 0 then
+			hero.surfaceIndex = enemyHero.SurfaceNum
+		else
+			hero.surfaceIndex = 0
+		end
+	else
+		hero.surfaceIndex = self:getSufaceIndex("HeroBase", hero)
+	end
 
 	return hero
 end
@@ -420,7 +430,17 @@ function BattleDataHelper:fillMasterData(master, playerData, waveStr, isEnemy, s
 		master.suppress = ConfigReader:getRecordById("BattleSuppress", master.genre) or {}
 	end
 
-	master.surfaceIndex = self:getSufaceIndex("MasterBase", master)
+	if isEnemy then
+		local enemyMaster = ConfigReader:getRecordById("EnemyMaster", master.cid)
+
+		if enemyMaster and enemyMaster.SurfaceNum and enemyMaster.SurfaceNum > 0 then
+			master.surfaceIndex = enemyMaster.SurfaceNum
+		else
+			master.surfaceIndex = 0
+		end
+	else
+		master.surfaceIndex = self:getSufaceIndex("MasterBase", master)
+	end
 end
 
 local function deepCopy(desc, src)

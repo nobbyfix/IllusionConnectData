@@ -1069,6 +1069,7 @@ function DartsMediator:initCurLevelData()
 	self._curlevellabel:setString(Strings:get("Activity_Darts_Times", {
 		day = GameStyle:intNumToCnString(self._curLevel)
 	}))
+	self._lastTimelabel:setPositionX(self._curlevellabel:getPositionX() + self._curlevellabel:getContentSize().width + 20)
 end
 
 function DartsMediator:setButtonNameStyle(text)

@@ -4906,6 +4906,43 @@
         "UI": "",
         "Version": ""
     },
+    "DrawCard_2UP_20201230_1_Activity": {
+        "ActivityConfig": {
+            "DRAW": "DrawCard_2UP_BBLMaMTZMEShi",
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_2UP_BBLMaMTZMEShi",
+            "VANISH": 0
+        },
+        "ClientCondition": {
+            "LEVEL": 1,
+            "REGISTER": 28
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 104,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-01-13 05:00:00",
+            "start": [
+                "2021-01-06 05:00:00",
+                "2021-01-13 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "Version": ""
+    },
     "DrawCard_2UP_2_Activity": {
         "ActivityConfig": {
             "DRAW": "DrawCard_2UP_2",
@@ -5626,8 +5663,8 @@
     },
     "DrawCard_W6_2UP_Activity1": {
         "ActivityConfig": {
-            "DRAW": "DrawCard_LduYLSBai",
-            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_LduYLSBai",
+            "DRAW": "DrawCard_SDTZiLCYShi",
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_SDTZiLCYShi",
             "VANISH": 0
         },
         "ClientCondition": {
