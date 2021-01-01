@@ -8774,7 +8774,7 @@
         "UI": "",
         "Version": ""
     },
-    "DrawCard_XSMLiMGNa_Activity": {
+    "DrawCard_XSMLiMGNa0102_Activity": {
         "ActivityConfig": {
             "DRAW": "DrawCard_XSMLiMGNa",
             "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_XSMLiMGNa",
@@ -8785,6 +8785,42 @@
         },
         "Desc": "",
         "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 206,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-01-09 05:00:00",
+            "start": [
+                "2021-01-01 05:00:00",
+                "2021-01-09 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "Version": ""
+    },
+    "DrawCard_XSMLiMGNa_Activity": {
+        "ActivityConfig": {
+            "DRAW": "DrawCard_XSMLiMGNa",
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_XSMLiMGNa",
+            "VANISH": 0
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 0,
         "Icon": "",
         "LeftBanner": "",
         "Loop": "",
