@@ -10,6 +10,24 @@ ActivityBlockMonsterShopMediator:has("_bagSystem", {
 	is = "rw"
 }):injectWith("BagSystem")
 
+local actUIConfig = {
+	MONSTERSHOP = {
+		title = {
+			surpriseDiaCount = "Activity_Monster_Shop_Surprise_Cost",
+			normalDisCount = "Activity_Monster_Shop_Normal_Cost"
+		}
+	},
+	MONSTERSHOPDetective = {
+		isHideDay = true,
+		isHideTime = true,
+		isShowNoramlBg = true,
+		title = {
+			surpriseDiaCount = "Detective_Discount",
+			normalDisCount = "Detective_Discount"
+		},
+		costOffTextPos = cc.p(92, 25)
+	}
+}
 local kImagePath = "wsj_bg_mengyan.png"
 local lineGradiantDir = {
 	x = 0,
@@ -461,6 +479,12 @@ function ActivityBlockMonsterShopMediator:initRightView()
 
 			maskPanel:setSwallowTouches(false)
 
+			local uiConfig = actUIConfig[self._activityShop:getUI()]
+
+			if uiConfig.costOffTextPos then
+				costText:setPosition(uiConfig.costOffTextPos)
+			end
+
 			local config = infoData.config
 			local costList = config.Cost
 			local rateList = config.Rate
@@ -471,19 +495,36 @@ function ActivityBlockMonsterShopMediator:initRightView()
 				unlock = true
 			end
 
-			dayText:setString(config.Day)
 			bg:loadTexture(kImageBg[3], 1)
 			bg:ignoreContentAdaptWithSize(true)
+
+			local uiConfig = actUIConfig[self._activityShop:getUI()]
+
+			dayText:setString(config.Day)
+
+			if uiConfig.isHideDay then
+				dayText:setVisible(false)
+			else
+				dayText:setVisible(true)
+			end
 
 			if unlock then
 				if discountCur == 1 then
 					dayText:enablePattern(cc.LinearGradientPattern:create(kLineGradiantVec[3], lineGradiantDir))
-					costText:setString(Strings:get("Activity_Monster_Shop_Surprise_Cost"))
+
+					if uiConfig.title then
+						costText:setString(Strings:get(uiConfig.title.surpriseDiaCount))
+					end
+
 					infoBg:setVisible(true)
 					time:setVisible(true)
 				elseif discountCur == 2 then
 					dayText:enablePattern(cc.LinearGradientPattern:create(kLineGradiantVec[1], lineGradiantDir))
-					costText:setString(Strings:get("Activity_Monster_Shop_Normal_Cost"))
+
+					if uiConfig.title then
+						costText:setString(Strings:get(uiConfig.title.normalDisCount))
+					end
+
 					infoBg:setVisible(false)
 					time:setVisible(false)
 				end
@@ -491,10 +532,23 @@ function ActivityBlockMonsterShopMediator:initRightView()
 				maskPanel:setVisible(false)
 			else
 				dayText:enablePattern(cc.LinearGradientPattern:create(kLineGradiantVec[3], lineGradiantDir))
-				costText:setString(Strings:get("Activity_Monster_Shop_Surprise_Cost"))
+
+				if uiConfig.title then
+					costText:setString(Strings:get(uiConfig.title.surpriseDiaCount))
+				end
+
 				time:setVisible(false)
 				infoBg:setVisible(false)
 				maskPanel:setVisible(true)
+			end
+
+			if uiConfig.isShowNoramlBg then
+				costText:setString(Strings:get(uiConfig.title.normalDisCount))
+			end
+
+			if uiConfig.isHideTime then
+				time:setVisible(false)
+				infoBg:setVisible(false)
 			end
 
 			local itemData = costList[1]
@@ -538,8 +592,12 @@ function ActivityBlockMonsterShopMediator:initRightView()
 				})
 
 				if rateList[discountCur].rate < 1 then
+					local dis = rateList[discountCur].rate * 10
+					local z, r = math.modf(dis)
+					local discount = r == 0 and z or string.format("%.1f", dis)
+
 					costText:setString(Strings:get("Activity_Monster_Shop_UI7", {
-						num = rateList[discountCur].rate * 10
+						num = discount
 					}))
 					oldPrice:setString(Strings:get("Activity_Monster_Shop_UI6", {
 						num = costList[1].price
@@ -550,7 +608,7 @@ function ActivityBlockMonsterShopMediator:initRightView()
 				end
 
 				local rateCur = rateList[discountCur] and rateList[discountCur].rate or 1
-				local cost = rateCur * costList[1].price
+				local cost = math.ceil(rateCur * costList[1].price)
 				local costId = costList[1].Item
 				local costIcon = IconFactory:createPic({
 					id = costId
@@ -676,17 +734,27 @@ function ActivityBlockMonsterShopMediator:createCell(cell, index)
 
 	dayText:setString(config.Day)
 
+	local uiConfig = actUIConfig[self._activityShop:getUI()]
+
 	if unlock then
 		if discountCur == 1 then
 			dayText:enablePattern(cc.LinearGradientPattern:create(kLineGradiantVec[2], lineGradiantDir))
-			costText:setString(Strings:get("Activity_Monster_Shop_Surprise_Cost"))
+
+			if uiConfig.title then
+				costText:setString(Strings:get(uiConfig.title.surpriseDiaCount))
+			end
+
 			bg:loadTexture(kImageBg[2], 1)
 			bg:ignoreContentAdaptWithSize(true)
 			infoBg:setVisible(true)
 			time:setVisible(true)
 		elseif discountCur == 2 then
 			dayText:enablePattern(cc.LinearGradientPattern:create(kLineGradiantVec[1], lineGradiantDir))
-			costText:setString(Strings:get("Activity_Monster_Shop_Normal_Cost"))
+
+			if uiConfig.title then
+				costText:setString(Strings:get(uiConfig.title.normalDisCount))
+			end
+
 			bg:loadTexture(kImageBg[1], 1)
 			bg:ignoreContentAdaptWithSize(true)
 			infoBg:setVisible(false)
@@ -696,12 +764,37 @@ function ActivityBlockMonsterShopMediator:createCell(cell, index)
 		maskPanel:setVisible(false)
 	else
 		dayText:enablePattern(cc.LinearGradientPattern:create(kLineGradiantVec[2], lineGradiantDir))
-		costText:setString(Strings:get("Activity_Monster_Shop_Surprise_Cost"))
+
+		if uiConfig.title then
+			costText:setString(Strings:get(uiConfig.title.surpriseDiaCount))
+		end
+
 		bg:loadTexture(kImageBg[2], 1)
 		bg:ignoreContentAdaptWithSize(true)
 		time:setVisible(false)
 		infoBg:setVisible(false)
 		maskPanel:setVisible(true)
+	end
+
+	if uiConfig.isShowNoramlBg then
+		costText:setString(Strings:get(uiConfig.title.normalDisCount))
+		bg:loadTexture(kImageBg[2], 1)
+		bg:ignoreContentAdaptWithSize(true)
+	end
+
+	if uiConfig.isHideDay then
+		dayText:setVisible(false)
+	else
+		dayText:setVisible(true)
+	end
+
+	if uiConfig.costOffTextPos then
+		costText:setPosition(uiConfig.costOffTextPos)
+	end
+
+	if uiConfig.isHideTime then
+		time:setVisible(false)
+		infoBg:setVisible(false)
 	end
 
 	for i = 1, 2 do
@@ -744,8 +837,12 @@ function ActivityBlockMonsterShopMediator:createCell(cell, index)
 			})
 
 			if rateList[discountCur].rate < 1 then
+				local dis = rateList[discountCur].rate * 10
+				local z, r = math.modf(dis)
+				local discount = r == 0 and z or string.format("%.1f", dis)
+
 				costText:setString(Strings:get("Activity_Monster_Shop_UI7", {
-					num = rateList[discountCur].rate * 10
+					num = discount
 				}))
 				oldPrice:setString(Strings:get("Activity_Monster_Shop_UI6", {
 					num = costList[i].price
@@ -756,7 +853,7 @@ function ActivityBlockMonsterShopMediator:createCell(cell, index)
 			end
 
 			local rateCur = rateList[discountCur] and rateList[discountCur].rate or 1
-			local cost = rateCur * costList[i].price
+			local cost = math.ceil(rateCur * costList[i].price)
 			local costId = costList[i].Item
 			local costIcon = IconFactory:createPic({
 				id = costId

@@ -5028,7 +5028,7 @@
         "Zoom": 1.0
     },
     "Model_FEMSi": {
-        "Animation": "FuErMoSi",
+        "Animation": "xlte",
         "BattlePosition": "HeroBase_BattlePosition_FEMSi",
         "Bust1": "Bust1_FEMSi",
         "Bust10": "Bust10_FEMSi",
@@ -5047,7 +5047,7 @@
         "Bust8": "Bust8_FEMSi",
         "Bust9": "Bust9_FEMSi",
         "CommonResource": "",
-        "CutIn": "CutIn_FEMSi",
+        "CutIn": "CutIn_xlte",
         "DeathVoice": "",
         "HeadMain": "HeadMain_FEMSi",
         "Height": 200,
@@ -5055,11 +5055,11 @@
         "HpTierCount": 1,
         "MVPText": "MVPText_FEMSi",
         "MasterHeadWide": "",
-        "Model": "FEMSi",
+        "Model": "xlte",
         "Name": "HeroBase_Name_FEMSi",
         "Portrait": "Portraitpic_FEMSi",
         "SVPText": "SVPText_FEMSi",
-        "SkillRange": "SingleUnit_Word",
+        "SkillRange": "AllUnit_Word",
         "SoundEffect": [],
         "SoundVoice": [],
         "SoundVoiceCondition": [
@@ -5069,18 +5069,78 @@
             10
         ],
         "SoundVoiceText": [],
-        "Tag": "FuErMoSi",
+        "Tag": "FEMSi",
         "TagDesc": [
             {
                 "code": "TagDesc1_FEMSi",
-                "color": "#FF4133"
-            },
-            {
-                "code": "TagDesc2_FEMSi",
-                "color": "#bff11a"
+                "color": "#FFFFFF"
             }
         ],
-        "TagPic": "",
+        "TagPic": [
+            "zhiyeTagPic_mubiao"
+        ],
+        "TruthBubble": [
+            "Truth_FEMSi_1",
+            "Truth_FEMSi_2"
+        ],
+        "Type": "Hero",
+        "UniqueVoice": "",
+        "Width": 200,
+        "WinVoice": "",
+        "Zoom": 1.0
+    },
+    "Model_FEMSi_classic": {
+        "Animation": "xlte_classic",
+        "BattlePosition": "HeroBase_BattlePosition_FEMSi",
+        "Bust1": "Bust1_FEMSi_classic",
+        "Bust10": "Bust10_FEMSi_classic",
+        "Bust11": "Bust11_FEMSi_classic",
+        "Bust12": "Bust13_FEMSi_classic",
+        "Bust13": "Bust12_FEMSi_classic",
+        "Bust14": "Bust14_FEMSi_classic",
+        "Bust15": "Bust15_FEMSi_classic",
+        "Bust16": "Bust16_FEMSi_classic",
+        "Bust2": "Bust2_FEMSi_classic",
+        "Bust3": "Bust3_FEMSi_classic",
+        "Bust4": "Bust4_FEMSi_classic",
+        "Bust5": "Bust5_FEMSi_classic",
+        "Bust6": "Bust6_FEMSi_classic",
+        "Bust7": "Bust7_FEMSi_classic",
+        "Bust8": "Bust8_FEMSi_classic",
+        "Bust9": "Bust9_FEMSi_classic",
+        "CommonResource": "",
+        "CutIn": "CutIn_xlte_classic",
+        "DeathVoice": "",
+        "HeadMain": "HeadMain_FEMSi_classic",
+        "Height": 200,
+        "Hero": "FEMSi",
+        "HpTierCount": 1,
+        "MVPText": "MVPText_FEMSi",
+        "MasterHeadWide": "",
+        "Model": "xlte_classic",
+        "Name": "HeroBase_Name_FEMSi",
+        "Portrait": "Portraitpic_FEMSi_classic",
+        "SVPText": "SVPText_FEMSi",
+        "SkillRange": "AllUnit_Word",
+        "SoundEffect": [],
+        "SoundVoice": [],
+        "SoundVoiceCondition": [
+            1,
+            3,
+            5,
+            10
+        ],
+        "SoundVoiceText": [],
+        "Tag": "FEMSi",
+        "TagDesc": [
+            {
+                "code": "TagDesc1_FEMSi",
+                "color": "#FFFFFF"
+            }
+        ],
+        "TagPic": [
+            "zhiyeTagPic_mubiao"
+        ],
         "TruthBubble": [
             "Truth_FEMSi_1",
             "Truth_FEMSi_2"
@@ -5754,7 +5814,7 @@
         "Zoom": 1.0
     },
     "Model_HSheng": {
-        "Animation": "HuaSheng",
+        "Animation": "alin",
         "BattlePosition": "HeroBase_BattlePosition_HSheng",
         "Bust1": "Bust1_HSheng",
         "Bust10": "Bust10_HSheng",
@@ -5773,7 +5833,7 @@
         "Bust8": "Bust8_HSheng",
         "Bust9": "Bust9_HSheng",
         "CommonResource": "",
-        "CutIn": "CutIn_HSheng",
+        "CutIn": "CutIn_alin",
         "DeathVoice": "",
         "HeadMain": "HeadMain_HSheng",
         "Height": 200,
@@ -5781,11 +5841,11 @@
         "HpTierCount": 1,
         "MVPText": "MVPText_HSheng",
         "MasterHeadWide": "",
-        "Model": "HSheng",
+        "Model": "alin",
         "Name": "HeroBase_Name_HSheng",
         "Portrait": "Portraitpic_HSheng",
         "SVPText": "SVPText_HSheng",
-        "SkillRange": "SingleUnit_Word",
+        "SkillRange": "AllUnit_Word",
         "SoundEffect": [],
         "SoundVoice": [],
         "SoundVoiceCondition": [
@@ -5795,14 +5855,78 @@
             10
         ],
         "SoundVoiceText": [],
-        "Tag": "HuaSheng",
+        "Tag": "HSheng",
         "TagDesc": [
             {
                 "code": "TagDesc1_HSheng",
                 "color": "#FFFFFF"
             }
         ],
-        "TagPic": [],
+        "TagPic": [
+            "zhiyeTagPic_jiyun"
+        ],
+        "TruthBubble": [
+            "Truth_HSheng_1",
+            "Truth_HSheng_2"
+        ],
+        "Type": "Hero",
+        "UniqueVoice": "",
+        "Width": 200,
+        "WinVoice": "",
+        "Zoom": 1.0
+    },
+    "Model_HSheng_classic": {
+        "Animation": "alin",
+        "BattlePosition": "HeroBase_BattlePosition_HSheng",
+        "Bust1": "Bust1_HSheng_classic",
+        "Bust10": "Bust10_HSheng_classic",
+        "Bust11": "Bust11_HSheng_classic",
+        "Bust12": "Bust13_HSheng_classic",
+        "Bust13": "Bust12_HSheng_classic",
+        "Bust14": "Bust14_HSheng_classic",
+        "Bust15": "Bust15_HSheng_classic",
+        "Bust16": "Bust16_HSheng_classic",
+        "Bust2": "Bust2_HSheng_classic",
+        "Bust3": "Bust3_HSheng_classic",
+        "Bust4": "Bust4_HSheng_classic",
+        "Bust5": "Bust5_HSheng_classic",
+        "Bust6": "Bust6_HSheng_classic",
+        "Bust7": "Bust7_HSheng_classic",
+        "Bust8": "Bust8_HSheng_classic",
+        "Bust9": "Bust9_HSheng_classic",
+        "CommonResource": "",
+        "CutIn": "CutIn_alin_classic",
+        "DeathVoice": "",
+        "HeadMain": "HeadMain_HSheng_classic",
+        "Height": 200,
+        "Hero": "HSheng",
+        "HpTierCount": 1,
+        "MVPText": "MVPText_HSheng",
+        "MasterHeadWide": "",
+        "Model": "alin_classic",
+        "Name": "HeroBase_Name_HSheng",
+        "Portrait": "Portraitpic_HSheng_classic",
+        "SVPText": "SVPText_HSheng",
+        "SkillRange": "AllUnit_Word",
+        "SoundEffect": [],
+        "SoundVoice": [],
+        "SoundVoiceCondition": [
+            1,
+            3,
+            5,
+            10
+        ],
+        "SoundVoiceText": [],
+        "Tag": "HSheng",
+        "TagDesc": [
+            {
+                "code": "TagDesc1_HSheng",
+                "color": "#FFFFFF"
+            }
+        ],
+        "TagPic": [
+            "zhiyeTagPic_jiyun"
+        ],
         "TruthBubble": [
             "Truth_HSheng_1",
             "Truth_HSheng_2"
@@ -17165,6 +17289,68 @@
         "Model": "YLSBai",
         "Name": "HeroBase_Name_YLSBai",
         "Portrait": "Portraitpic_YLSBai",
+        "SVPText": "SVPText_YLSBai",
+        "SkillRange": "SingleUnit_Word",
+        "SoundEffect": [],
+        "SoundVoice": [],
+        "SoundVoiceCondition": [
+            1,
+            3,
+            5,
+            10
+        ],
+        "SoundVoiceText": [],
+        "Tag": "YiLiShaBai",
+        "TagDesc": [
+            {
+                "code": "TagDesc1_YLSBai",
+                "color": "#FFFFFF"
+            }
+        ],
+        "TagPic": [
+            "zhiyeTagPic_bihu"
+        ],
+        "TruthBubble": [
+            "Truth_YLSBai_1",
+            "Truth_YLSBai_2"
+        ],
+        "Type": "Hero",
+        "UniqueVoice": "",
+        "Width": 200,
+        "WinVoice": "",
+        "Zoom": 1.0
+    },
+    "Model_YLSBai_xnian": {
+        "Animation": "slna_xnian",
+        "BattlePosition": "HeroBase_BattlePosition_YLSBai",
+        "Bust1": "Bust1_YLSBai_xnian",
+        "Bust10": "Bust10_YLSBai_xnian",
+        "Bust11": "Bust11_YLSBai_xnian",
+        "Bust12": "Bust13_YLSBai_xnian",
+        "Bust13": "Bust12_YLSBai_xnian",
+        "Bust14": "Bust14_YLSBai_xnian",
+        "Bust15": "Bust15_YLSBai_xnian",
+        "Bust16": "Bust16_YLSBai_xnian",
+        "Bust2": "Bust2_YLSBai_xnian",
+        "Bust3": "Bust3_YLSBai_xnian",
+        "Bust4": "Bust4_YLSBai_xnian",
+        "Bust5": "Bust5_YLSBai_xnian",
+        "Bust6": "Bust6_YLSBai_xnian",
+        "Bust7": "Bust7_YLSBai_xnian",
+        "Bust8": "Bust8_YLSBai_xnian",
+        "Bust9": "Bust9_YLSBai_xnian",
+        "CommonResource": "",
+        "CutIn": "CutIn_slna_xnian",
+        "DeathVoice": "",
+        "HeadMain": "HeadMain_YLSBai_classic",
+        "Height": 200,
+        "Hero": "YLSBai",
+        "HpTierCount": 1,
+        "MVPText": "MVPText_YLSBai",
+        "MasterHeadWide": "",
+        "Model": "slna_xnian",
+        "Name": "HeroBase_Name_YLSBai",
+        "Portrait": "Portraitpic_YLSBai_xnian",
         "SVPText": "SVPText_YLSBai",
         "SkillRange": "SingleUnit_Word",
         "SoundEffect": [],

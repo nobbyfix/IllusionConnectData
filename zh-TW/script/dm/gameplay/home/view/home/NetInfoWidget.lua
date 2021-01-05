@@ -121,7 +121,7 @@ function NetInfoWidget:setupView()
 		end
 	end
 
-	if device.platform ~= "mac" then
+	if device.platform ~= "mac" and device.platform ~= "windows" then
 		self._timer = LuaScheduler:getInstance():schedule(update, 5, true)
 
 		update()

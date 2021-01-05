@@ -470,7 +470,7 @@ function uploadDataToBugly(title, dataStr)
 			curVersion = "dev"
 		end
 
-		if device.platform ~= "mac" then
+		if device.platform ~= "mac" and device.platform ~= "windows" then
 			dpsBugTracer.reportLuaError("[" .. curVersion .. "] LUA ERROR: " .. title, "", dataStr)
 		end
 	end

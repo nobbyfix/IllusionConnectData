@@ -48,6 +48,10 @@ local stageBtnImg = {
 	[ActivityType_UI.kActivityWxh] = {
 		[StageType.kNormal] = "zx_btn_wxh_1.png",
 		[StageType.kElite] = "zx_btn_wxh_1.png"
+	},
+	[ActivityType_UI.KActivityBlockDetetive] = {
+		[StageType.kNormal] = "ywzjdzx_btn_jdnd.png",
+		[StageType.kElite] = "ywzjdzx_btn_jdnd2.png"
 	}
 }
 

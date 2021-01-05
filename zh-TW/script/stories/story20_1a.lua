@@ -107,8 +107,8 @@ function scene_story20_1a:stage(args)
 				type = "Music"
 			},
 			{
-				id = "Se_Story_Chapter_14_15",
-				fileName = "Se_Story_Chapter_14_15",
+				id = "Se_Story_Chapter_20_21",
+				fileName = "Se_Story_Chapter_20_21",
 				type = "Sound"
 			},
 			{
@@ -154,7 +154,7 @@ function scene_story20_1a.actions.start_story20_1a(_root, args)
 			}),
 			act({
 				action = "play",
-				actor = __getnode__(_root, "Se_Story_Chapter_14_15"),
+				actor = __getnode__(_root, "Se_Story_Chapter_20_21"),
 				args = function (_ctx)
 					return {
 						isLoop = false
@@ -1213,10 +1213,10 @@ function scene_story20_1a.actions.story20_1a3(_root, args)
 					modelId = "Model_FEMSi",
 					id = "FEMSi_speak",
 					rotationX = 0,
-					scale = 1.125,
+					scale = 0.72,
 					position = {
 						x = 0,
-						y = -380,
+						y = -305,
 						refpt = {
 							x = 0.5,
 							y = 0

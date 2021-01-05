@@ -1001,6 +1001,11 @@ local mappings = {
 		name = "ActivityTaskAchievementMediator",
 		type = "@C"
 	},
+	ActivityBlockDectiveMediator = {
+		url = "dm.gameplay.activity.view.ActivityBlockDectiveMediator",
+		name = "ActivityBlockDectiveMediator",
+		type = "@C"
+	},
 	AccumulatedLoginMediator = {
 		url = "dm.gameplay.activity.view.AccumulatedLoginMediator",
 		name = "AccumulatedLoginMediator",

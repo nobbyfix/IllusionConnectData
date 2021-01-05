@@ -242,10 +242,10 @@ function scene_HeroStory_KTSJKe_03a.actions.start_HeroStory_KTSJKe_03a(_root, ar
 					modelId = "Model_FEMSi",
 					id = "FEMSi_speak",
 					rotationX = 0,
-					scale = 1.125,
+					scale = 0.72,
 					position = {
 						x = 0,
-						y = -380,
+						y = -305,
 						refpt = {
 							x = 0.5,
 							y = 0

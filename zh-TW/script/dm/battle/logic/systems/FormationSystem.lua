@@ -23,6 +23,7 @@ function FormationSystem:startup(battleContext)
 	self._actionScheduler = battleContext:getObject("ActionScheduler")
 	self._cemetery = BattleCemetery:new()
 	self._angerSystem = battleContext:getObject("AngerSystem")
+	self._TrapSystem = battleContext:getObject("TrapSystem")
 
 	return self
 end
@@ -459,6 +460,8 @@ function FormationSystem:changeUnitSettled(unit)
 				unit = unit
 			})
 		end
+
+		self._TrapSystem:triggerTrap(unit)
 	end
 end
 

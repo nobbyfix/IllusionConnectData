@@ -177,7 +177,8 @@ local __predefinedPropertySet__ = {
 		"hpRatio",
 		"level",
 		"genre",
-		"suppress"
+		"suppress",
+		"shield"
 	},
 	DEFENDER = {
 		kAttrDefense,
@@ -197,7 +198,8 @@ local __predefinedPropertySet__ = {
 		"hpRatio",
 		"level",
 		"genre",
-		"suppress"
+		"suppress",
+		"shield"
 	},
 	HEALER = {
 		kAttrAttack,

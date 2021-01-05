@@ -2199,8 +2199,8 @@
             {
                 "action": "touch3",
                 "point": [
-                    0,
-                    0
+                    -11,
+                    1063
                 ],
                 "range": [
                     128,
@@ -2209,15 +2209,14 @@
                 "voice": [
                     "Voice_FEMSi_41",
                     "Voice_FEMSi_42",
-                    "Voice_FEMSi_43",
-                    "Voice_FEMSi_39"
+                    "Voice_FEMSi_43"
                 ]
             },
             {
                 "action": "touch2",
                 "point": [
-                    0,
-                    0
+                    250,
+                    885
                 ],
                 "range": [
                     128,
@@ -2226,8 +2225,7 @@
                 "voice": [
                     "Voice_FEMSi_44",
                     "Voice_FEMSi_45",
-                    "Voice_FEMSi_46",
-                    "Voice_FEMSi_39"
+                    "Voice_FEMSi_46"
                 ]
             },
             {
@@ -2243,16 +2241,13 @@
                     "Voice_FEMSi_47",
                     "Voice_FEMSi_48",
                     "Voice_FEMSi_07",
-                    "Voice_FEMSi_08",
-                    "Voice_FEMSi_09",
-                    "Voice_FEMSi_37",
-                    "Voice_FEMSi_39"
+                    "Voice_FEMSi_37"
                 ]
             }
         ],
         "Desc": "Surface_FEMSi_1_Desc",
         "GainDesc": "",
-        "GainShortDesc": "",
+        "GainShortDesc": "1",
         "GoodsId": "",
         "Hero": "FEMSi",
         "Link": "",
@@ -2262,7 +2257,74 @@
         "RepeatReward": "",
         "ShopID": "",
         "Sort": 1,
-        "Type": 1,
+        "Type": "",
+        "Unlook": 1
+    },
+    "Surface_FEMSi_2": {
+        "ActivityId": "",
+        "ClickAction": [
+            {
+                "action": "touch3",
+                "point": [
+                    39,
+                    958
+                ],
+                "range": [
+                    128,
+                    128
+                ],
+                "voice": [
+                    "Voice_FEMSi_41",
+                    "Voice_FEMSi_42",
+                    "Voice_FEMSi_43"
+                ]
+            },
+            {
+                "action": "touch2",
+                "point": [
+                    51,
+                    787
+                ],
+                "range": [
+                    128,
+                    95
+                ],
+                "voice": [
+                    "Voice_FEMSi_44",
+                    "Voice_FEMSi_45",
+                    "Voice_FEMSi_46"
+                ]
+            },
+            {
+                "action": "touch2",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ],
+                "voice": [
+                    "Voice_FEMSi_47",
+                    "Voice_FEMSi_48",
+                    "Voice_FEMSi_07",
+                    "Voice_FEMSi_37"
+                ]
+            }
+        ],
+        "Desc": "Surface_FEMSi_2_Desc",
+        "GainDesc": "Surface_FEMSi_Detective_GainDesc",
+        "GainShortDesc": "Surface_FEMSi_GainShort",
+        "GoodsId": "Surface_Detective",
+        "Hero": "FEMSi",
+        "Link": "",
+        "Model": "Model_FEMSi_classic",
+        "Name": "Surface_FEMSi_2_Name",
+        "Quality": 4,
+        "RepeatReward": 40,
+        "ShopID": "Shop_Surface",
+        "Sort": 2,
+        "Type": 2,
         "Unlook": 1
     },
     "Surface_FTLEShi_1": {
@@ -2703,8 +2765,8 @@
             {
                 "action": "touch3",
                 "point": [
-                    0,
-                    0
+                    63,
+                    959
                 ],
                 "range": [
                     128,
@@ -2713,15 +2775,14 @@
                 "voice": [
                     "Voice_HSheng_41",
                     "Voice_HSheng_42",
-                    "Voice_HSheng_43",
-                    "Voice_HSheng_39"
+                    "Voice_HSheng_43"
                 ]
             },
             {
                 "action": "touch2",
                 "point": [
-                    0,
-                    0
+                    -316,
+                    822
                 ],
                 "range": [
                     128,
@@ -2730,8 +2791,7 @@
                 "voice": [
                     "Voice_HSheng_44",
                     "Voice_HSheng_45",
-                    "Voice_HSheng_46",
-                    "Voice_HSheng_39"
+                    "Voice_HSheng_46"
                 ]
             },
             {
@@ -2747,16 +2807,13 @@
                     "Voice_HSheng_47",
                     "Voice_HSheng_48",
                     "Voice_HSheng_07",
-                    "Voice_HSheng_08",
-                    "Voice_HSheng_09",
-                    "Voice_HSheng_37",
-                    "Voice_HSheng_39"
+                    "Voice_HSheng_37"
                 ]
             }
         ],
         "Desc": "Surface_HSheng_1_Desc",
         "GainDesc": "",
-        "GainShortDesc": "",
+        "GainShortDesc": "1",
         "GoodsId": "",
         "Hero": "HSheng",
         "Link": "",
@@ -2767,6 +2824,73 @@
         "ShopID": "",
         "Sort": 1,
         "Type": 1,
+        "Unlook": 1
+    },
+    "Surface_HSheng_2": {
+        "ActivityId": "",
+        "ClickAction": [
+            {
+                "action": "touch3",
+                "point": [
+                    -62,
+                    814
+                ],
+                "range": [
+                    128,
+                    128
+                ],
+                "voice": [
+                    "Voice_HSheng_41",
+                    "Voice_HSheng_42",
+                    "Voice_HSheng_43"
+                ]
+            },
+            {
+                "action": "touch2",
+                "point": [
+                    -123,
+                    748
+                ],
+                "range": [
+                    128,
+                    95
+                ],
+                "voice": [
+                    "Voice_HSheng_44",
+                    "Voice_HSheng_45",
+                    "Voice_HSheng_46"
+                ]
+            },
+            {
+                "action": "touch2",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ],
+                "voice": [
+                    "Voice_HSheng_47",
+                    "Voice_HSheng_48",
+                    "Voice_HSheng_07",
+                    "Voice_HSheng_37"
+                ]
+            }
+        ],
+        "Desc": "Surface_HSheng_2_Desc",
+        "GainDesc": "Surface_HSheng_Detective_GainDesc",
+        "GainShortDesc": "Surface_HSheng_GainShort",
+        "GoodsId": "",
+        "Hero": "HSheng",
+        "Link": "",
+        "Model": "Model_HSheng_classic",
+        "Name": "Surface_HSheng_2_Name",
+        "Quality": 4,
+        "RepeatReward": 10,
+        "ShopID": "",
+        "Sort": 2,
+        "Type": "",
         "Unlook": 1
     },
     "Surface_HYe_1": {
@@ -7229,6 +7353,78 @@
         "ShopID": "",
         "Sort": 1,
         "Type": 1,
+        "Unlook": 1
+    },
+    "Surface_YLSBai_2": {
+        "ActivityId": "",
+        "ClickAction": [
+            {
+                "action": "touch3",
+                "point": [
+                    41,
+                    1287
+                ],
+                "range": [
+                    128,
+                    128
+                ],
+                "voice": [
+                    "Voice_YLSBai_41",
+                    "Voice_YLSBai_42",
+                    "Voice_YLSBai_43",
+                    "Voice_YLSBai_39"
+                ]
+            },
+            {
+                "action": "touch2",
+                "point": [
+                    -9,
+                    1103
+                ],
+                "range": [
+                    128,
+                    95
+                ],
+                "voice": [
+                    "Voice_YLSBai_44",
+                    "Voice_YLSBai_45",
+                    "Voice_YLSBai_46",
+                    "Voice_YLSBai_39"
+                ]
+            },
+            {
+                "action": "touch2",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ],
+                "voice": [
+                    "Voice_YLSBai_47",
+                    "Voice_YLSBai_48",
+                    "Voice_YLSBai_07",
+                    "Voice_YLSBai_08",
+                    "Voice_YLSBai_09",
+                    "Voice_YLSBai_37",
+                    "Voice_YLSBai_39"
+                ]
+            }
+        ],
+        "Desc": "Surface_YLSBai_2_Desc",
+        "GainDesc": "Surface_YLSBai_Detective_GainDesc",
+        "GainShortDesc": "Surface_YLSBai_GainShort",
+        "GoodsId": "",
+        "Hero": "YLSBai",
+        "Link": "",
+        "Model": "Model_YLSBai_xnian",
+        "Name": "Surface_YLSBai_2_Name",
+        "Quality": 4,
+        "RepeatReward": 40,
+        "ShopID": "",
+        "Sort": 2,
+        "Type": "",
         "Unlook": 1
     },
     "Surface_YMHTPu_1": {

@@ -110,6 +110,10 @@ kAddBtnFuncMap[CurrencyIdKind.kActivityHolidayPower] = function (self)
 	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
 end
 
+kAddBtnFuncMap[CurrencyIdKind.kActivityDetectivePower] = function (self)
+	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
+end
+
 local kAddImgMap = {
 	[CurrencyIdKind.kGold] = true,
 	[CurrencyIdKind.kPower] = true,
@@ -169,6 +173,12 @@ local PowerConfigMap = {
 		configFunc = "getPowerResetByCurrencyId",
 		next = "Act_NewYear_Power_RecNext",
 		func = "getPowerByCurrencyId"
+	},
+	[CurrencyIdKind.kActivityDetectivePower] = {
+		all = "Act_Detective_Power_RecAll",
+		configFunc = "getPowerResetByCurrencyId",
+		next = "Act_Detective_Power_RecNext",
+		func = "getPowerByCurrencyId"
 	}
 }
 
@@ -182,6 +192,26 @@ function CurrencyBar:initialize(view)
 	self._recoverCd = ConfigReader:getRecordById("Reset", "3").ResetSystem.cd
 
 	super.initialize(self, view)
+
+	local label = view:getChildByFullName("tips.Text_25"):getVirtualRenderer()
+
+	label:setAlignment(cc.TEXT_ALIGNMENT_CENTER, cc.TEXT_ALIGNMENT_CENTER)
+	label:setOverflow(cc.LabelOverflow.SHRINK)
+	label:setDimensions(116, 26)
+
+	local label = view:getChildByFullName("tips.Text_27"):getVirtualRenderer()
+
+	label:setAlignment(cc.TEXT_ALIGNMENT_CENTER, cc.TEXT_ALIGNMENT_CENTER)
+	label:setOverflow(cc.LabelOverflow.SHRINK)
+	label:setDimensions(116, 26)
+
+	local recoverText = view:getChildByFullName("tips.recoverText")
+	local label = recoverText:getVirtualRenderer()
+
+	label:setAlignment(cc.TEXT_ALIGNMENT_CENTER, cc.TEXT_ALIGNMENT_CENTER)
+	label:setOverflow(cc.LabelOverflow.SHRINK)
+	label:setDimensions(185, 26)
+	recoverText:setPositionX(recoverText:getPositionX() + 86)
 end
 
 function CurrencyBar:userInject(injector)

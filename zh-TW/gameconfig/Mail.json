@@ -285,6 +285,45 @@
         "TopStatus": 0,
         "Type": "USER"
     },
+    "Mail_Detective_AchieveMentTask_Activity": {
+        "Content": "Mail_Detective_AchieveMentTask_Activity_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_Detective_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_Detective_AchieveMentTask_Activity_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
+    "Mail_Detective_DailyTask_Activity": {
+        "Content": "Mail_Detective_DailyTask_Activity_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_Detective_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_Detective_DailyTask_Activity_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
+    "Mail_Detective_MonsterShop": {
+        "Content": "Mail_Detective_MonsterShop_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_Detective_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_Detective_MonsterShop_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
     "Mail_DrawCardTimesReward": {
         "Content": "Mail_DrawCardTimesReward_Content",
         "ExpireAfterRead": 70000,
@@ -308,6 +347,19 @@
         "Reward": "",
         "SubType": 1,
         "Title": "DreamChallenge_TimeLimit_SD_Mail_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
+    "Mail_EightDays_Detective": {
+        "Content": "Mail_SevenDays_Detective_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_Detective_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_SevenDays_Detective_Title",
         "TopStatus": 0,
         "Type": "USER"
     },

@@ -257,8 +257,6 @@ function BattleLogic:enterNewRound()
 		result = result or self._battleReferee:battleRoundOver(self._roundNumber)
 
 		if result then
-			self:finish(result)
-
 			return false
 		end
 	end
@@ -483,8 +481,21 @@ function BattleLogic:on_EntityHurt(_, args)
 				unit = target,
 				prevHpPercent = floor(prevHpRatio * 100),
 				curHpPercent = floor(curHpRatio * 100),
-				how = how
+				how = how,
+				actor = actor,
+				hurt = hurt
 			})
+
+			if actor and hurt and hurt.deadly then
+				self._skillSystem:activateGlobalTrigger("UNIT_BEKILLED", {
+					unit = target,
+					prevHpPercent = floor(prevHpRatio * 100),
+					curHpPercent = floor(curHpRatio * 100),
+					how = how,
+					actor = actor,
+					hurt = hurt
+				})
+			end
 		end
 	end
 
@@ -524,7 +535,9 @@ function BattleLogic:on_EntityCure(_, args)
 				unit = target,
 				prevHpPercent = floor(prevHpRatio * 100),
 				curHpPercent = floor(curHpRatio * 100),
-				how = how
+				actor = actor,
+				how = how,
+				hurt = cure
 			})
 		end
 	end

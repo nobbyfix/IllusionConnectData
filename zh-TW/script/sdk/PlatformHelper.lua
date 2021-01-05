@@ -98,7 +98,7 @@ function PlatformHelper:getSdkSource()
 end
 
 function PlatformHelper:getSdkDid()
-	if device.platform == "mac" then
+	if device.platform == "mac" or device.platform == "windows" then
 		return ""
 	end
 

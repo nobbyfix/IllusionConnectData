@@ -523,6 +523,8 @@ function ActivityPointSweepMediator:getMaxSwipCount()
 		containPower = self._bagSystem:getItemCount("IM_WuXiuHuiBossStamina")
 	elseif itemId == CurrencyIdKind.kActivityHolidayPower then
 		containPower = self._bagSystem:getActivityHolidayPower()
+	elseif itemId == CurrencyIdKind.kActivityDetectivePower then
+		containPower = self._bagSystem:getAcitvityDetectivePower()
 	end
 
 	return math.modf(containPower / cost)

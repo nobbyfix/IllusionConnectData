@@ -1779,6 +1779,11 @@ local modules = {
 							res = "asset/ui/ActivityFudaiPreview.csb",
 							name = "ActivityBlockFudaiPreview",
 							mediator = "ActivityBlockFudaiPreviewMeditor"
+						},
+						{
+							res = "asset/ui/ActivityBlockDetective.csb",
+							name = "ActivityBlockDetectiveView",
+							mediator = "ActivityBlockDectiveMediator"
 						}
 					}
 				}

@@ -1,4 +1,66 @@
 {
+    "ADetectiveE01": {
+        "BGM": "Mus_Story_Detective",
+        "Background": "Bg_Copy_Detective_3",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_DetectiveAE01_Name",
+        "StarBoxReward": {
+            "10": "ADetectiveE01BOX01",
+            "20": "ADetectiveE01BOX02",
+            "30": "ADetectiveE01BOX03"
+        },
+        "SubPoint": [
+            "ADetectiveE01S01",
+            "ADetectiveE01S02",
+            "ADetectiveE01S03",
+            "ADetectiveE01S04",
+            "ADetectiveE01S05",
+            "ADetectiveE01S06",
+            "ADetectiveE01S07",
+            "ADetectiveE01S08",
+            "ADetectiveE01S09",
+            "ADetectiveE01S10",
+            "ADetectiveE01S11",
+            "ADetectiveE01S12"
+        ],
+        "SubStoryPoint": [
+            "ADetectiveS01S03",
+            "ADetectiveS01S04"
+        ],
+        "Type": "ELITE"
+    },
+    "ADetectiveM01": {
+        "BGM": "Mus_Story_Detective",
+        "Background": "Bg_Copy_Detective_2",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_DetectiveAM01_Name",
+        "StarBoxReward": {
+            "10": "ADetectiveM01BOX01",
+            "20": "ADetectiveM01BOX02",
+            "30": "ADetectiveM01BOX03"
+        },
+        "SubPoint": [
+            "ADetectiveM01S01",
+            "ADetectiveM01S02",
+            "ADetectiveM01S03",
+            "ADetectiveM01S04",
+            "ADetectiveM01S05",
+            "ADetectiveM01S06",
+            "ADetectiveM01S07",
+            "ADetectiveM01S08",
+            "ADetectiveM01S09",
+            "ADetectiveM01S10",
+            "ADetectiveM01S11",
+            "ADetectiveM01S12"
+        ],
+        "SubStoryPoint": [
+            "ADetectiveS01S01",
+            "ADetectiveS01S02"
+        ],
+        "Type": "NORMAL"
+    },
     "AE01": {
         "BGM": "Mus_Story_Festival",
         "Background": "Main_Event_02",

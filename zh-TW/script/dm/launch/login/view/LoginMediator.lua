@@ -457,7 +457,7 @@ function LoginMediator:connectGameServer()
 
 	StatisticSystem:send(content)
 
-	if device.platform ~= "mac" then
+	if device.platform ~= "mac" and device.platform ~= "windows" then
 		dpsBugTracer.setUserId(self._loginSystem:getPlayerRid())
 	end
 
