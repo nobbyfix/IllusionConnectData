@@ -7672,5 +7672,122 @@ all.Skill_MainStage_Start_BossComing = {
 		return _env
 	end
 }
+all.Skill_Detective_DieBubble_Passive = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.BubbleIDFactor = externs.BubbleIDFactor
+
+		assert(this.BubbleIDFactor ~= nil, "External variable `BubbleIDFactor` is not provided.")
+
+		this.DurationFactor = externs.DurationFactor
+
+		assert(this.DurationFactor ~= nil, "External variable `DurationFactor` is not provided.")
+
+		local main = __action(this, {
+			name = "main",
+			entry = prototype.main
+		})
+		main = global["[duration]"](this, {
+			1200
+		}, main)
+		this.main = global["[trigger_by]"](this, {
+			"SELF:DYING"
+		}, main)
+
+		return this
+	end,
+	main = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.Speak(_env, _env.ACTOR, {
+				{
+					this.BubbleIDFactor,
+					this.DurationFactor
+				}
+			}, "", 0)
+		end)
+
+		return _env
+	end
+}
+all.Skill_Detective_DieBubble_Passive_HasHero = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.HeroIDFactor = externs.HeroIDFactor
+
+		assert(this.HeroIDFactor ~= nil, "External variable `HeroIDFactor` is not provided.")
+
+		this.BubbleIDFactor = externs.BubbleIDFactor
+
+		assert(this.BubbleIDFactor ~= nil, "External variable `BubbleIDFactor` is not provided.")
+
+		this.DurationFactor = externs.DurationFactor
+
+		assert(this.DurationFactor ~= nil, "External variable `DurationFactor` is not provided.")
+
+		local main = __action(this, {
+			name = "main",
+			entry = prototype.main
+		})
+		main = global["[duration]"](this, {
+			1200
+		}, main)
+		this.main = global["[trigger_by]"](this, {
+			"SELF:DYING"
+		}, main)
+
+		return this
+	end,
+	main = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local factor = 0
+
+			for _, unit in global.__iter__(global.EnemyUnits(_env)) do
+				if global.MARKED(_env, "ZTXChang")(_env, unit) then
+					factor = 1
+				end
+			end
+
+			if factor == 1 then
+				global.Speak(_env, _env.ACTOR, {
+					{
+						this.BubbleIDFactor,
+						this.DurationFactor
+					}
+				}, "", 0)
+			end
+		end)
+
+		return _env
+	end
+}
 
 return _M

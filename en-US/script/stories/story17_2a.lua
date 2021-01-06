@@ -1695,10 +1695,10 @@ function scene_story17_2a.actions.start_story17_2a(_root, args)
 					modelId = "Model_FEMSi",
 					id = "FEMSi_speak",
 					rotationX = 0,
-					scale = 1.125,
+					scale = 0.72,
 					position = {
 						x = 0,
-						y = -380,
+						y = -305,
 						refpt = {
 							x = 0.25,
 							y = 0

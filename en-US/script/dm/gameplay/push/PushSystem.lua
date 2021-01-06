@@ -38,6 +38,8 @@ function PushSystem:listen()
 	self:listenCommonTipsCode()
 	self:listenClubHouseChange()
 	self:listenClubApplyAgreeEnd()
+	self:listenCooperateBoss()
+	self:listenFriendStateChanged()
 end
 
 function PushSystem:listenLoginByOthers()
@@ -172,8 +174,6 @@ end
 
 function PushSystem:listenFriendCountChange()
 	self._pushService:listenFriendCountChange(function (response)
-		dump(response, "response-_________listenFriendCountChange")
-
 		local friendSystem = self:getInjector():getInstance(FriendSystem)
 
 		if response.type == 1 then
@@ -185,6 +185,7 @@ function PushSystem:listenFriendCountChange()
 			}))
 		end
 
+		self:dispatch(Event:new(EVT_COOPERATE_BOSS_FRIEND_CHANGE))
 		friendSystem._friendService:requestFriendsMainInfo({}, false)
 	end)
 end
@@ -290,5 +291,67 @@ function PushSystem:listenClubApplyAgreeEnd()
 		local clubSystem = self:getInjector():getInstance(ClubSystem)
 
 		clubSystem:listenClubApplyAgreeEnd(response)
+	end)
+end
+
+function PushSystem:listenCooperateBoss()
+	self._pushService:listenCooperateBoss(kCooperateBossListen.COOPERATE_BOSS_TRIGGER, function (code, response)
+		local cooperateBossSystem = self:getInjector():getInstance(CooperateBossSystem)
+
+		cooperateBossSystem:listenCooperateBoss(code, response)
+	end)
+	self._pushService:listenCooperateBoss(kCooperateBossListen.COOPERATE_BOSS_INVITE, function (code, response)
+		local cooperateBossSystem = self:getInjector():getInstance(CooperateBossSystem)
+
+		cooperateBossSystem:listenCooperateBoss(code, response)
+	end)
+	self._pushService:listenCooperateBoss(kCooperateBossListen.COOPERATE_BOSS_AGREE, function (code, response)
+		local cooperateBossSystem = self:getInjector():getInstance(CooperateBossSystem)
+
+		cooperateBossSystem:listenCooperateBoss(code, response)
+	end)
+	self._pushService:listenCooperateBoss(kCooperateBossListen.COOPERATE_BOSS_REFUSE, function (code, response)
+		local cooperateBossSystem = self:getInjector():getInstance(CooperateBossSystem)
+
+		cooperateBossSystem:listenCooperateBoss(code, response)
+	end)
+	self._pushService:listenCooperateBoss(kCooperateBossListen.COOPERATE_BOSS_BEGIN, function (code, response)
+		local cooperateBossSystem = self:getInjector():getInstance(CooperateBossSystem)
+
+		cooperateBossSystem:listenCooperateBoss(code, response)
+	end)
+	self._pushService:listenCooperateBoss(kCooperateBossListen.COOPERATE_BOSS_BATTLE_OVER, function (code, response)
+		local cooperateBossSystem = self:getInjector():getInstance(CooperateBossSystem)
+
+		cooperateBossSystem:listenCooperateBoss(code, response)
+	end)
+	self._pushService:listenCooperateBoss(kCooperateBossListen.COOPERATE_BOSS_ESCAPED, function (code, response)
+		local cooperateBossSystem = self:getInjector():getInstance(CooperateBossSystem)
+
+		cooperateBossSystem:listenCooperateBoss(code, response)
+	end)
+	self._pushService:listenCooperateBoss(kCooperateBossListen.COOPERATE_BOSS_DEAD, function (code, response)
+		local cooperateBossSystem = self:getInjector():getInstance(CooperateBossSystem)
+
+		cooperateBossSystem:listenCooperateBoss(code, response)
+	end)
+	self._pushService:listenCooperateBoss(kCooperateBossListen.COOPERATE_BOSS_ENTERROOM, function (code, response)
+		local cooperateBossSystem = self:getInjector():getInstance(CooperateBossSystem)
+
+		cooperateBossSystem:listenCooperateBoss(code, response)
+	end)
+	self._pushService:listenCooperateBoss(kCooperateBossListen.COOPERATE_BOSS_LEAVEROOM, function (code, response)
+		local cooperateBossSystem = self:getInjector():getInstance(CooperateBossSystem)
+
+		cooperateBossSystem:listenCooperateBoss(code, response)
+	end)
+end
+
+function PushSystem:listenFriendStateChanged()
+	self._pushService:listenFriendLogin(function (code, response)
+		self:dispatch(Event:new(EVT_FRIEND_LOGIN))
+	end)
+	self._pushService:listenFriendLogout(function (code, response)
+		self:dispatch(Event:new(EVT_FRIEND_LOGOUT))
 	end)
 end

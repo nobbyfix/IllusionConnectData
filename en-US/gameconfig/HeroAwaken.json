@@ -13,5 +13,20 @@
         "StarId": "BBLMa_Awake",
         "StoryLink": "S11S01",
         "SurfaceId": "Surface_BBLMa_Awake"
+    },
+    "KTSJKe": {
+        "Animation": "KTSJKe_Awaken",
+        "ModelId": "Model_KTSJKe_Awake",
+        "Name": "KTSJKe_Awake_Name",
+        "NameDesc": "KTSJKe_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_KTSJKe_UnAwake",
+        "Reward": "HeroAwaken_KTSJKe",
+        "ShowHero": "KTSJKe",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "KTSJKe_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_KTSJKe_Awake"
     }
 }

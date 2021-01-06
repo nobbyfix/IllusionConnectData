@@ -109,6 +109,12 @@ function BattleUniqueSkillAction:doSkill()
 		return
 	end
 
+	if not isReadyForUniqueSkill(self._actor, self._actorAngerComp, self._actor:getComponent("Flag")) then
+		self:finish()
+
+		return
+	end
+
 	local battleContext = self:getBattleContext()
 	local formationSystem = battleContext:getObject("FormationSystem")
 	local primTrgt = formationSystem:findPrimaryTarget(actor)

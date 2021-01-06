@@ -515,7 +515,7 @@ function ActivityBlockHolidayMediator:refreshRedPoint()
 			local blockActivity = self._activity:getBlockMapActivity()
 
 			if blockActivity then
-				self._activitySystem:hasRedPointForActivity(blockActivity:getId())
+				return blockActivity:hasRedPoint()
 			end
 
 			return false

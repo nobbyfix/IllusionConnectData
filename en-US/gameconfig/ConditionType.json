@@ -237,6 +237,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_BuyCrystal_Desc"
     },
+    "Condi_BuyExp": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "buyExp",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_BuyExp_Desc"
+    },
     "Condi_BuyGold": {
         "AchieveType1": "CUSTOM",
         "AchieveType2": "",
@@ -349,6 +356,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_DailyTaskPoint_Desc"
     },
+    "Condi_DetectiveToken": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_DetectiveExchange_4.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_DetectiveToken_Desc"
+    },
     "Condi_DiamondAchieve": {
         "AchieveType1": "INCREASE",
         "AchieveType2": "",
@@ -376,6 +390,13 @@
         "ConditionType1": "player.bag.items.IR_Diamond.count",
         "ConditionType2": "",
         "EffectDesc": "Condi_DiamondReduce_Desc"
+    },
+    "Condi_DrawCardTag": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "drawCardTag.?1",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_DrawCardTag_Desc"
     },
     "Condi_DrawEquip": {
         "AchieveType1": "CUSTOM",

@@ -25,11 +25,6 @@ local kTabBtnData = {
 		tabName = Strings:get("Pass_UI3")
 	},
 	{
-		viewName = "PassExchangeView",
-		unlockKey = "",
-		tabName = Strings:get("Pass_UI2")
-	},
-	{
 		viewName = "PassShopView",
 		unlockKey = "",
 		tabName = Strings:get("Pass_UI49")
@@ -130,13 +125,13 @@ function PassMainMediator:doPassPortRefresh()
 
 	self:initCurrentLevelNode()
 
-	if self._showPass == false and self._showPassShop == true and self._tabType ~= 4 then
-		self._tabType = 4
+	if self._showPass == false and self._showPassShop == true and self._tabType ~= 3 then
+		self._tabType = 3
 
 		self:resetViews()
 	end
 
-	if self._showPass == true and self._showPassShop == false and self._tabType == 4 then
+	if self._showPass == true and self._showPassShop == false and self._tabType == 3 then
 		self._tabType = 1
 
 		self:resetViews()
@@ -239,7 +234,7 @@ function PassMainMediator:initData()
 	self._tabType = 1
 
 	if self._showPass == false and self._showPassShop == true then
-		self._tabType = 4
+		self._tabType = 3
 	end
 
 	self:getTaskEndTime()
@@ -634,7 +629,7 @@ function PassMainMediator:onClickTab(name, tag)
 	end
 
 	if self._showPass == false and self._showPassShop == true then
-		if tag ~= 4 then
+		if tag ~= 3 then
 			self:dispatch(ShowTipEvent({
 				tip = Strings:get("Pass_UI59")
 			}))
@@ -739,13 +734,13 @@ function PassMainMediator:onResetDone(event)
 			return true
 		end
 
-		if showPass == false and self._tabType ~= 4 then
-			self._tabType = 4
+		if showPass == false and self._tabType ~= 3 then
+			self._tabType = 3
 
 			self:resetViews()
 		end
 
-		if showPassShop == false and self._tabType == 4 then
+		if showPassShop == false and self._tabType == 3 then
 			self._tabType = 1
 
 			self:resetViews()

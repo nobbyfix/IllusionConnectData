@@ -446,17 +446,7 @@ function JudgeRuleFactory:playerRunOutOfEnergy(args, result)
 				return
 			end
 
-			local minRequiredEnergy = math.huge
-
-			player:visitCardsInWindow(function (card)
-				local requiredEnergy = card:getActualCost()
-
-				if requiredEnergy < minRequiredEnergy then
-					minRequiredEnergy = requiredEnergy
-				end
-			end)
-
-			if not player:energyIsEnough(minRequiredEnergy) then
+			if not player:energyIsEnough(1) then
 				return {
 					reason = "OUT_OF_ENERGY",
 					result = self:result()

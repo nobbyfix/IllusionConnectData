@@ -17,7 +17,7 @@ local rankPowerType = {
 	[RankType.kClub] = Strings:get("Strenghten_Text9"),
 	[RankType.kCombat] = Strings:get("HEROS_UI49") .. ":",
 	[RankType.kBlockStar] = Strings:get("RANK_UI6") .. ":",
-	[RankType.kPetRace] = Strings:get("Rank_Petrace_Score") .. ":",
+	[RankType.KPetWorldScore] = Strings:get("Petrace_Daily_Point") .. ":",
 	[RankType.kCrusade] = Strings:get("Crusade_UI14") .. ":",
 	[RankType.kMap] = Strings:get("EXPLORE_UI46") .. ":",
 	[RankType.kArena] = Strings:get("RANK_WeeklyHonor") .. ":",
@@ -264,11 +264,6 @@ function RankBestMediator:updataCell(cell, data, index)
 			name_bg:setVisible(true)
 			name_lbl:setString(lb[1].nickname)
 			power_num:setString(lb[1].value)
-
-			if rankType == RankType.kPetRace then
-				power_num:setString(lb[1].score)
-			end
-
 			power_lbl:setString(rankPowerType[rankType])
 
 			if rankType == RankType.kClub or rankType == RankType.kClubBoss then

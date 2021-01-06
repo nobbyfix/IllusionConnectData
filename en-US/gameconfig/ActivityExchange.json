@@ -565,6 +565,110 @@
         "Times": 2,
         "isRemind": 1
     },
+    "CooperateBoss_Exchange_20200106_1": {
+        "Cost": [
+            {
+                "amount": 4500,
+                "code": "IR_CooperateBoss",
+                "type": 2
+            }
+        ],
+        "Order": "",
+        "Target": "CooperateBoss_Exchange_20200106_1",
+        "Times": 1,
+        "isRemind": 1
+    },
+    "CooperateBoss_Exchange_20200106_2": {
+        "Cost": [
+            {
+                "amount": 600,
+                "code": "IR_CooperateBoss",
+                "type": 2
+            }
+        ],
+        "Order": "",
+        "Target": "CooperateBoss_Exchange_20200106_2",
+        "Times": 3,
+        "isRemind": 2
+    },
+    "CooperateBoss_Exchange_20200106_3": {
+        "Cost": [
+            {
+                "amount": 300,
+                "code": "IR_CooperateBoss",
+                "type": 2
+            }
+        ],
+        "Order": "",
+        "Target": "CooperateBoss_Exchange_20200106_3",
+        "Times": 10,
+        "isRemind": 3
+    },
+    "CooperateBoss_Exchange_20200106_4": {
+        "Cost": [
+            {
+                "amount": 300,
+                "code": "IR_CooperateBoss",
+                "type": 2
+            }
+        ],
+        "Order": "",
+        "Target": "CooperateBoss_Exchange_20200106_4",
+        "Times": 30,
+        "isRemind": 4
+    },
+    "CooperateBoss_Exchange_20200106_5": {
+        "Cost": [
+            {
+                "amount": 500,
+                "code": "IR_CooperateBoss",
+                "type": 2
+            }
+        ],
+        "Order": "",
+        "Target": "CooperateBoss_Exchange_20200106_5",
+        "Times": 50,
+        "isRemind": 5
+    },
+    "CooperateBoss_Exchange_20200106_6": {
+        "Cost": [
+            {
+                "amount": 60,
+                "code": "IR_CooperateBoss",
+                "type": 2
+            }
+        ],
+        "Order": "",
+        "Target": "CooperateBoss_Exchange_20200106_6",
+        "Times": 50,
+        "isRemind": 6
+    },
+    "CooperateBoss_Exchange_20200106_7": {
+        "Cost": [
+            {
+                "amount": 10,
+                "code": "IR_CooperateBoss",
+                "type": 2
+            }
+        ],
+        "Order": "",
+        "Target": "CooperateBoss_Exchange_20200106_7",
+        "Times": 999,
+        "isRemind": 7
+    },
+    "CooperateBoss_Exchange_20200106_8": {
+        "Cost": [
+            {
+                "amount": 10,
+                "code": "IR_CooperateBoss",
+                "type": 2
+            }
+        ],
+        "Order": "",
+        "Target": "CooperateBoss_Exchange_20200106_8",
+        "Times": 999,
+        "isRemind": 8
+    },
     "Exchange_NFDDi_20180901": {
         "Cost": [
             {
@@ -837,6 +941,162 @@
         "Target": "HighPointGood_20201206_5_Reward",
         "Times": 1,
         "isRemind": 1
+    },
+    "HighPointGood_20210107_1": {
+        "Cost": [
+            {
+                "amount": 400,
+                "code": "IGM_BP_HighPoint",
+                "type": 2
+            }
+        ],
+        "Order": 1,
+        "Target": "HighPointGood_20210107_1_Reward",
+        "Times": 1,
+        "isRemind": 1
+    },
+    "HighPointGood_20210107_10": {
+        "Cost": [
+            {
+                "amount": 3,
+                "code": "IGM_BP_HighPoint",
+                "type": 2
+            }
+        ],
+        "Order": 10,
+        "Target": "HighPointGood_20210107_10_Reward",
+        "Times": 100,
+        "isRemind": 0
+    },
+    "HighPointGood_20210107_11": {
+        "Cost": [
+            {
+                "amount": 3,
+                "code": "IGM_BP_HighPoint",
+                "type": 2
+            }
+        ],
+        "Order": 11,
+        "Target": "HighPointGood_20210107_11_Reward",
+        "Times": 100,
+        "isRemind": 0
+    },
+    "HighPointGood_20210107_12": {
+        "Cost": [
+            {
+                "amount": 3,
+                "code": "IGM_BP_HighPoint",
+                "type": 2
+            }
+        ],
+        "Order": 12,
+        "Target": "HighPointGood_20210107_12_Reward",
+        "Times": 100,
+        "isRemind": 0
+    },
+    "HighPointGood_20210107_2": {
+        "Cost": [
+            {
+                "amount": 400,
+                "code": "IGM_BP_HighPoint",
+                "type": 2
+            }
+        ],
+        "Order": 2,
+        "Target": "HighPointGood_20210107_2_Reward",
+        "Times": 1,
+        "isRemind": 1
+    },
+    "HighPointGood_20210107_3": {
+        "Cost": [
+            {
+                "amount": 150,
+                "code": "IGM_BP_HighPoint",
+                "type": 2
+            }
+        ],
+        "Order": 3,
+        "Target": "HighPointGood_20210107_3_Reward",
+        "Times": 1,
+        "isRemind": 1
+    },
+    "HighPointGood_20210107_4": {
+        "Cost": [
+            {
+                "amount": 150,
+                "code": "IGM_BP_HighPoint",
+                "type": 2
+            }
+        ],
+        "Order": 4,
+        "Target": "HighPointGood_20210107_4_Reward",
+        "Times": 1,
+        "isRemind": 1
+    },
+    "HighPointGood_20210107_5": {
+        "Cost": [
+            {
+                "amount": 150,
+                "code": "IGM_BP_HighPoint",
+                "type": 2
+            }
+        ],
+        "Order": 5,
+        "Target": "HighPointGood_20210107_5_Reward",
+        "Times": 1,
+        "isRemind": 1
+    },
+    "HighPointGood_20210107_6": {
+        "Cost": [
+            {
+                "amount": 6,
+                "code": "IGM_BP_HighPoint",
+                "type": 2
+            }
+        ],
+        "Order": 6,
+        "Target": "HighPointGood_20210107_6_Reward",
+        "Times": 60,
+        "isRemind": 0
+    },
+    "HighPointGood_20210107_7": {
+        "Cost": [
+            {
+                "amount": 5,
+                "code": "IGM_BP_HighPoint",
+                "type": 2
+            }
+        ],
+        "Order": 7,
+        "Target": "HighPointGood_20210107_7_Reward",
+        "Times": 30,
+        "isRemind": 0
+    },
+    "HighPointGood_20210107_8": {
+        "Cost": [
+            {
+                "amount": 30,
+                "code": "IGM_BP_HighPoint",
+                "type": 2
+            }
+        ],
+        "Order": 8,
+        "Target": "HighPointGood_20210107_8_Reward",
+        "Times": 2,
+        "isRemind": 0
+    },
+    "HighPointGood_20210107_9": {
+        "Cost": [
+            {
+                "amount": 10,
+                "code": "IGM_BP_HighPoint",
+                "type": 2
+            }
+        ],
+        "Order": 9,
+        "Target": "HighPointGood_20210107_9_Reward",
+        "Times": 5,
+        "isRemind": 0
     },
     "PointGood_2020200714_1": {
         "Cost": [

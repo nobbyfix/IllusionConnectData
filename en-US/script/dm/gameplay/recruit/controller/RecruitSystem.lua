@@ -199,8 +199,7 @@ function RecruitSystem:doReset(resetId, value)
 end
 
 function RecruitSystem:getCanAutoBuy()
-	self.playerRid = self:getInjector():getInstance("DevelopSystem"):getPlayer():getRid()
-	local value = cc.UserDefault:getInstance():getIntegerForKey(self.playerRid .. RecruitAutoBuyCard)
+	local value = cc.UserDefault:getInstance():getIntegerForKey(RecruitAutoBuyCard)
 
 	if not value or value == 0 then
 		return false

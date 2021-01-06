@@ -250,6 +250,28 @@ function SubPetRaceRankRecord:synchronize(data)
 	self._winNum = data.winNum or 0
 end
 
+PetWorldScoreRankRecord = class("PetWorldScoreRankRecord", BaseRankRecord, _M)
+
+PetWorldScoreRankRecord:has("_score", {
+	is = "r"
+})
+PetWorldScoreRankRecord:has("_winNum", {
+	is = "r"
+})
+
+function PetWorldScoreRankRecord:initialize()
+	super.initialize(self)
+
+	self._rankType = RankType.KPetWorldScore
+end
+
+function PetWorldScoreRankRecord:synchronize(data)
+	super.synchronize(self, data)
+
+	self._score = data.value or 0
+	self._winNum = data.winNum or 0
+end
+
 ClubRankRecord = class("ClubRankRecord", BaseRankRecord, _M)
 
 ClubRankRecord:has("_clubName", {

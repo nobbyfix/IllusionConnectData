@@ -43,6 +43,51 @@ local actUIConfig = {
 			"shuangdan_btn_14qd_ld_xz.png",
 			"shuangdan_btn_14qd_ld_ylq.png"
 		}
+	},
+	Login_Detective = {
+		bgPath = "asset/scene/ywzjdzx_img_14qd_ljdl.jpg",
+		cellTitle = "ywzjdzx_btn_14qd_ldi.png",
+		title = {
+			img = "ywzjdzx_img_14qd_biaoti.png",
+			textFontSize = 36,
+			size = cc.size(572, 102),
+			offset = {
+				10,
+				0
+			},
+			textOffset = {
+				-35,
+				13
+			},
+			color = cc.c3b(255, 255, 255),
+			textOutline = {
+				size = 1,
+				color = cc.c4b(0, 0, 0, 255)
+			},
+			textshadow = {
+				width = 1,
+				color = cc.c4b(0, 0, 0, 90),
+				size = cc.size(0, -2)
+			}
+		},
+		desc = {
+			color = cc.c3b(255, 241, 208),
+			offset = {
+				-65,
+				45
+			},
+			textOutline = {
+				size = 1,
+				color = cc.c4b(0, 0, 0, 255)
+			}
+		},
+		cellBg = {
+			"ywzjdzx_btn_14qd_ldj.png",
+			"ywzjdzx_btn_14qd_ld_j.png",
+			"ywzjdzx_btn_14qd_ld_wxz.png",
+			"ywzjdzx_btn_14qd_ld_xz.png",
+			"ywzjdzx_btn_14qd_ld_ylq.png"
+		}
 	}
 }
 local lightColor = cc.c3b(180, 180, 180)
@@ -63,6 +108,7 @@ end
 
 function LoginActivityMediator:enterWithData(data)
 	self._actModel = data.activity
+	self._parentMediator = data.parentMediator
 	self._cloneCell = self:getView():getChildByFullName("cloneCell")
 	self._main = self:getView():getChildByName("main")
 
@@ -167,6 +213,14 @@ function LoginActivityMediator:setupView()
 			if uiConfig.title.textFontSize then
 				self._title:setFontSize(uiConfig.title.textFontSize)
 			end
+
+			if uiConfig.title.color then
+				self._title:setTextColor(uiConfig.title.color)
+			end
+
+			if uiConfig.title.textshadow then
+				self._title:enableShadow(uiConfig.title.textshadow.color, uiConfig.title.textshadow.size, uiConfig.title.textshadow.width)
+			end
 		end
 
 		if uiConfig.desc then
@@ -177,6 +231,10 @@ function LoginActivityMediator:setupView()
 
 			if uiConfig.desc.offset then
 				self._desc:offset(uiConfig.desc.offset[1], uiConfig.desc.offset[2])
+			end
+
+			if uiConfig.desc.textOutline then
+				self._desc:enableOutline(uiConfig.desc.textOutline.color, uiConfig.desc.textOutline.size)
 			end
 		end
 	end
@@ -366,9 +424,15 @@ function LoginActivityMediator:updateCell(cell, index)
 		iamge:addTo(iconNode):center(iconNode:getContentSize())
 	end
 
-	IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), rewardData, {
-		needDelay = true
-	})
+	if self._parentMediator then
+		IconFactory:bindTouchHander(icon, IconTouchHandler:new(self._parentMediator), rewardData, {
+			needDelay = true
+		})
+	else
+		IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), rewardData, {
+			needDelay = true
+		})
+	end
 
 	local rewardName = RewardSystem:getName(rewardData)
 	local rewardNameStr = cloneCell:getChildByName("name")

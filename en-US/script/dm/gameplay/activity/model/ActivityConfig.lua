@@ -23,6 +23,7 @@ require("dm.gameplay.activity.model.MonsterShopActivity")
 require("dm.gameplay.activity.model.ActivityColorEggActivity")
 require("dm.gameplay.activity.model.ActivityTpurchase")
 require("dm.gameplay.activity.model.MiniGameActivity")
+require("dm.gameplay.cooperateBoss.model.CooperateBoss")
 
 ActivityShowTab = {
 	kInAll = 3,
@@ -80,22 +81,24 @@ ActivityModel = {
 	[ActivityType.KMiniGame] = MiniGameActivity
 }
 ActivityUI = {
-	Login_Halloween = "LoginActivityWsjView",
-	Task = "TaskActivityView",
+	ACTIVITYBLOCKEGG = "ActivityBlockEggView",
+	Community = "CommunityActivityView",
 	Gameboard = "GameBoardActivityView",
+	MONSTERSHOPDetective = "ActivityBlockMonsterShopView",
+	TaskElite = "eliteTaskView",
+	Login_Halloween = "LoginActivityWsjView",
 	Carnival = "CarnivalView",
+	Login_Holiday = "LoginActivityView",
+	Login_Detective = "LoginActivityView",
+	Task = "TaskActivityView",
 	FreeStamina = "FreeStaminaActivityView",
 	ABACHIEVEMENTTASK = "ActivityTaskAchievementView",
 	Banner = "BannerActivityView",
-	TaskElite = "eliteTaskView",
+	Login = "LoginActivityView",
 	Imgboard = "ImageBoardActivityView",
 	Questionnaire = "QuestionActivityView",
-	Community = "CommunityActivityView",
 	ABDAILYTASK = "ActivityTaskDailyView",
-	ACTIVITYBLOCKEGG = "ActivityBlockEggView",
 	ExtraRewardBoard = "ExtraRewardActivityView",
-	Login = "LoginActivityView",
-	Login_Holiday = "LoginActivityView",
 	[ActivityType.KEightLogin] = "eightDayLoginView",
 	[ActivityType.KEightLoginCommon] = "commonEightDayLoginView",
 	[ActivityType.KTASKMONTHCARD] = "ActivityTaskMonthCardView",
@@ -135,11 +138,14 @@ ActivityComplexUI = {
 		[ActivityType_UI.kActivityBlockSummer] = "ActivityBlockSummerView",
 		[ActivityType_UI.kActivityBlock] = "ActivityBlockView",
 		[ActivityType_UI.KActivityBlockSnowflake] = "ActivityBlockView",
-		[ActivityType_UI.KActivityBlockHoliday] = "ActivityBlockHolidayView"
+		[ActivityType_UI.KActivityBlockHoliday] = "ActivityBlockHolidayView",
+		[ActivityType_UI.KActivityBlockHoliday] = "ActivityBlockHolidayView",
+		[ActivityType_UI.KActivityBlockDetetive] = "ActivityBlockDetectiveView"
 	},
 	enterBlockMonsterShopView = {
 		[ActivityType_UI.kActivityBlockWsj] = "ActivityBlockMonsterShopView",
-		[ActivityType_UI.KActivityBlockHoliday] = "ActivityBlockMonsterShopView"
+		[ActivityType_UI.KActivityBlockHoliday] = "ActivityBlockMonsterShopView",
+		[ActivityType_UI.KActivityBlockDetetive] = "ActivityBlockMonsterShopView"
 	},
 	enterSupportStageView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportMapView",
@@ -148,7 +154,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.kActivityBlockWsj] = "ActivityBlockMapWsjView",
 		[ActivityType_UI.KActivityBlockSnowflake] = "ActivitySagaSupportMapView",
 		[ActivityType_UI.kActivityBlock] = "ActivitySagaSupportMapView",
-		[ActivityType_UI.KActivityBlockHoliday] = "ActivityBlockMapWsjView"
+		[ActivityType_UI.KActivityBlockHoliday] = "ActivityBlockMapWsjView",
+		[ActivityType_UI.KActivityBlockDetetive] = "ActivitySagaSupportMapView"
 	},
 	enterSagaSupportStageView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportStageWxhView",
@@ -166,7 +173,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.kActivityBlockWsj] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivityBlockSnowflake] = "ActivityBlockTaskView",
 		[ActivityType_UI.kActivityBlock] = "ActivityBlockTaskView",
-		[ActivityType_UI.KActivityBlockHoliday] = "ActivityBlockTaskView"
+		[ActivityType_UI.KActivityBlockHoliday] = "ActivityBlockTaskView",
+		[ActivityType_UI.KActivityBlockDetetive] = "ActivityBlockTaskView"
 	},
 	enterSagaSupportRankRewardView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportRankRewardWxhView",

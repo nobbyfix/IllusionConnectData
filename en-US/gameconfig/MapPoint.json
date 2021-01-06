@@ -5155,7 +5155,7 @@
             {
                 "image": "ts_bg_fl_1",
                 "itemId": "IES_StarUpDogFood_SR",
-                "text": "EXPLORE_RewardShow_Type2"
+                "text": "EXPLORE_RewardShow_Type1"
             },
             {
                 "image": "ts_bg_fl_1",
@@ -5410,7 +5410,7 @@
             "Japan_4_StoryBossA1"
         ],
         "OnceObject": "",
-        "OpenType": 1,
+        "OpenType": "",
         "PlayerPos": {
             "1": {
                 "Direction": "Left",
@@ -5454,7 +5454,7 @@
             "MapGuide": 90
         },
         "UnlockCondition": {
-            "LEVEL": 100,
+            "LEVEL": 44,
             "PREPOINT": {
                 "Japan_3": 1
             }

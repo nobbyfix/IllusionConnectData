@@ -272,8 +272,9 @@ function LoginMediator:setAccountPanel()
 	self._serverText = self._serverPanel:getChildByName("Text_server")
 	self._imageHot = self._serverPanel:getChildByName("imageHot")
 
-	serverDi:setTouchEnabled(true)
-	serverDi:addTouchEventListener(function (sender, eventType)
+	serverDi:setTouchEnabled(false)
+	self._serverPanel:setTouchEnabled(true)
+	self._serverPanel:addTouchEventListener(function (sender, eventType)
 		if eventType == ccui.TouchEventType.ended then
 			AudioEngine:getInstance():playEffect("Se_Click_Open_2", false)
 
@@ -642,10 +643,6 @@ function LoginMediator:connectGameServer()
 	gameContext:loadModuleByName("beforeLoading")
 	gameContext:loadModuleByName("gameplay")
 
-	local pushSystem = self:getInjector():getInstance(PushSystem)
-
-	pushSystem:listenBeforeLogin()
-
 	local connected = netClient:connect(self._serverData:getIp(), self._serverData:getPort(), function ()
 		local content = {
 			point = "login_request_player_info",
@@ -734,6 +731,11 @@ function LoginMediator:buildLoadingTask()
 
 				SDKHelper:reportLogin(params)
 			end
+		end, 1)
+		DO_ACTION(function ()
+			local pushSystem = self:getInjector():getInstance(PushSystem)
+
+			pushSystem:listenBeforeLogin()
 		end, 1)
 		DO_ACTION(function ()
 			if SDKHelper:isEnableSdk() then

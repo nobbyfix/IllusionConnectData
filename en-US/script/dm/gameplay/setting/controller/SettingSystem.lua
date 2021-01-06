@@ -983,13 +983,14 @@ end
 
 function SettingSystem:getLimitTimeBg()
 	local allBg = ConfigReader:getDataTable("HomeBackground")
+	local developSystem = self:getInjector():getInstance(DevelopSystem)
 
 	for id, v in pairs(allBg) do
 		local unlockCondition = v.Condition
 		local isUnlock, argeNum = self:checkCondition(unlockCondition)
 
 		if isUnlock and v.TimeFactor then
-			local key = "HomeViewBG_ForceChange" .. id
+			local key = "HomeViewBG_ForceChange" .. id .. developSystem:getPlayer():getRid()
 			local value = cc.UserDefault:getInstance():getBoolForKey(key, false)
 
 			if not value then
@@ -1001,6 +1002,7 @@ function SettingSystem:getLimitTimeBg()
 
 				if startTs < curTime and curTime < endTs then
 					cc.UserDefault:getInstance():setBoolForKey(key, true)
+					self:setHomeBgId(id)
 
 					return id
 				end

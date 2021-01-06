@@ -199,6 +199,19 @@ function SystemMessage:parseContent()
 			env.award = RewardSystem:getName(self._params.award)
 		end
 
+		if self._params.bossConfId then
+			local roleModeID = ConfigReader:getDataByNameIdAndKey("CooperateBossMain", self._params.bossConfId, "RoleModel")
+			local roleModelConfig = ConfigReader:getRecordById("RoleModel", roleModeID)
+			local name = Strings:get(roleModelConfig.Name)
+			env.bossId = name
+			local bossId = self._params.bossId
+			env.bossConfId = self._params.bossLevel or 0
+		end
+
+		if self._params.name then
+			env.name = self._params.name.value
+		end
+
 		if self._params.heroname then
 			setHeroName(env, "heroname", self._params, "heroname")
 		end

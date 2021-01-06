@@ -38,7 +38,7 @@ local kRankCell = {
 	[RankType.kMap] = MapRankCell,
 	[RankType.kCrusade] = CrusadeRankCell,
 	[RankType.kArena] = ArenaRankCell,
-	[RankType.kPetRace] = PetRaceRankCell,
+	[RankType.KPetWorldScore] = PetRaceRankCell,
 	[RankType.kClubBoss] = ClubBossRankCell
 }
 local kTextTitle = {
@@ -54,11 +54,11 @@ local kTextTitle = {
 		title3 = Strings:get("RANK_UI4"),
 		title4 = Strings:get("RANK_UI6")
 	},
-	[RankType.kPetRace] = {
+	[RankType.KPetWorldScore] = {
 		title1 = Strings:get("RANK_UI2"),
 		title2 = Strings:get("RANK_UI3"),
-		title3 = Strings:get("Rank_Petrace_WinNum"),
-		title4 = Strings:get("Rank_Petrace_Score")
+		title3 = Strings:get("Petrace_Whole_Point"),
+		title4 = Strings:get("Petrace_World_Point")
 	},
 	[RankType.kClub] = {
 		title1 = Strings:get("RANK_UI2"),
@@ -246,7 +246,7 @@ function RankMediator:setTopThreeInfo()
 				rankNumText = data:getScore()
 			end
 
-			if type == RankType.kPetRace or type == RankType.kSubPetRace then
+			if type == RankType.KPetWorldScore or type == RankType.kSubPetRace then
 				rankNumText = data:getScore()
 			end
 
@@ -312,7 +312,7 @@ function RankMediator:initWigetInfo()
 	myselfInfo:addClickEventListener(function ()
 		local type = self._allRankData[self._curTabType].AppID
 
-		if type == RankType.kPetRace then
+		if type == RankType.KPetWorldScore then
 			return
 		end
 
@@ -461,6 +461,8 @@ function RankMediator:createTableView()
 				local textData = self._crusadeSystem:getRankShowFloorData(tonumber(record:getPoint()))
 
 				cell.rankCell:refreshData(record, textData)
+			elseif type == RankType.KPetWorldScore then
+				cell.rankCell:refreshData(record)
 			else
 				cell.rankCell:refreshData(record)
 			end
@@ -504,7 +506,7 @@ function RankMediator:onClickRankCell(cell)
 			remainLastView = true,
 			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
 		}, nil)
-	elseif type ~= RankType.kPetRace then
+	elseif type ~= RankType.KPetWorldScore then
 		local view = self:getInjector():getInstance("PlayerInfoView")
 
 		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {

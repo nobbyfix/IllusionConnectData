@@ -47,6 +47,7 @@ function CommonStageSweepMediator:onRegister()
 	self:mapEventListener(self:getEventDispatcher(), EVT_SWEEPPOWERCHANGE_SERVER, self, self.setPowerView)
 	self:mapEventListener(self:getEventDispatcher(), EVT_BUY_ENERGRY_SUCC, self, self.setPowerView)
 	self:mapEventListener(self:getEventDispatcher(), EVT_STAGE_RESETTIMES, self, self.setPowerView)
+	self:mapEventListener(self:getEventDispatcher(), EVT_COOPERATE_CLOSE_SWEEP, self, self.closeViewByCooperateBoss)
 end
 
 function CommonStageSweepMediator:onRemove()
@@ -59,6 +60,7 @@ function CommonStageSweepMediator:enterWithData(data)
 	self._sweepData.extraReward = self._sweepData.extraReward or {}
 	self._needNum = data.needNum or 0
 	self._itemId = data.itemId
+	self._showCooperateBoss = false
 
 	self:initWidget()
 	self:refreshView()
@@ -309,6 +311,12 @@ function CommonStageSweepMediator:refreshView()
 
 						i = i + 1
 					else
+						if self._showCooperateBoss then
+							performWithDelay(self:getView(), function ()
+								self:close()
+							end, 0.1)
+						end
+
 						break
 					end
 				end
@@ -652,5 +660,19 @@ function CommonStageSweepMediator:onSpeedUpSweep()
 			mConfirmBtn:setPositionX(490)
 			self._sweepBtn:setVisible(false)
 		end
+
+		if self._showCooperateBoss then
+			performWithDelay(self:getView(), function ()
+				self:close()
+			end, 0.1)
+		end
 	end)))
+end
+
+function CommonStageSweepMediator:closeViewByCooperateBoss()
+	if DisposableObject:isDisposed(self) and DisposableObject:isDisposed(self:getView()) then
+		return
+	end
+
+	self._showCooperateBoss = true
 end

@@ -532,6 +532,11 @@ end
 
 function DebugBox:refreshNetDelay()
 	local gameServerAgent = self:getInjector():getInstance("GameServerAgent")
+
+	if DisposableObject:isDisposed(gameServerAgent) then
+		return
+	end
+
 	local str = "网络延时：" .. tostring(gameServerAgent:getNetDelay()) .. " ms"
 
 	if self._timeLabel then

@@ -447,8 +447,21 @@
             0,
             0
         ],
-        "Filename": "portraitpic_FEMSi",
-        "Path": 3,
+        "Filename": "battlepic_xlte",
+        "Path": 2,
+        "zoom": 0.6
+    },
+    "Bust10_FEMSi_classic": {
+        "Coordinates": [
+            0,
+            0
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "battlepic_xlte_classic",
+        "Path": 2,
         "zoom": 0.6
     },
     "Bust10_FLEr": {
@@ -577,7 +590,20 @@
             0,
             0
         ],
-        "Filename": "battlepic_HSheng",
+        "Filename": "battlepic_alin",
+        "Path": 2,
+        "zoom": 0.6
+    },
+    "Bust10_HSheng_classic": {
+        "Coordinates": [
+            0,
+            0
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "battlepic_alin_classic",
         "Path": 2,
         "zoom": 0.6
     },
@@ -682,6 +708,19 @@
             0
         ],
         "Filename": "battlepic_KTSJKe",
+        "Path": 2,
+        "zoom": 0.6
+    },
+    "Bust10_KTSJKe_Awake": {
+        "Coordinates": [
+            0,
+            0
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "portraitpic_KTSJKe_JXing",
         "Path": 2,
         "zoom": 0.6
     },
@@ -1413,6 +1452,19 @@
         "Path": 2,
         "zoom": 0.6
     },
+    "Bust10_YLSBai_xnian": {
+        "Coordinates": [
+            0,
+            0
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "battlepic_slna_xnian",
+        "Path": 2,
+        "zoom": 0.6
+    },
     "Bust10_YMHTPu": {
         "Coordinates": [
             0,
@@ -2000,16 +2052,29 @@
     },
     "Bust11_FEMSi": {
         "Coordinates": [
-            183,
-            643
-        ],
-        "Deviation": [
             0,
             0
         ],
-        "Filename": "portraitpic_FEMSi",
-        "Path": 3,
-        "zoom": 1.0
+        "Deviation": [
+            -57,
+            -177
+        ],
+        "Filename": "portrait_xlte",
+        "Path": 2,
+        "zoom": 0.38
+    },
+    "Bust11_FEMSi_classic": {
+        "Coordinates": [
+            0,
+            0
+        ],
+        "Deviation": [
+            -57,
+            -177
+        ],
+        "Filename": "portrait_xlte_classic",
+        "Path": 2,
+        "zoom": 0.38
     },
     "Bust11_FLEr": {
         "Coordinates": [
@@ -2134,12 +2199,25 @@
             0
         ],
         "Deviation": [
+            -89,
+            -131
+        ],
+        "Filename": "portrait_alin",
+        "Path": 2,
+        "zoom": 0.35
+    },
+    "Bust11_HSheng_classic": {
+        "Coordinates": [
             0,
             0
         ],
-        "Filename": "portraitpic_HSheng",
+        "Deviation": [
+            -48,
+            -132
+        ],
+        "Filename": "portrait_alin_classic",
         "Path": 2,
-        "zoom": 1.0
+        "zoom": 0.35
     },
     "Bust11_HYe": {
         "Coordinates": [
@@ -2244,6 +2322,19 @@
         "Filename": "portraitpic_KTSJKe",
         "Path": 2,
         "zoom": 0.7
+    },
+    "Bust11_KTSJKe_Awake": {
+        "Coordinates": [
+            0,
+            0
+        ],
+        "Deviation": [
+            -83.65,
+            14.0
+        ],
+        "Filename": "portraitpic_KTSJKe_JXing",
+        "Path": 2,
+        "zoom": 0.56
     },
     "Bust11_KTSJKe_QPao": {
         "Coordinates": [
@@ -2973,6 +3064,19 @@
         "Path": 2,
         "zoom": 0.7
     },
+    "Bust11_YLSBai_xnian": {
+        "Coordinates": [
+            0,
+            0
+        ],
+        "Deviation": [
+            -89,
+            -157
+        ],
+        "Filename": "portrait_slna_xnian",
+        "Path": 2,
+        "zoom": 0.3
+    },
     "Bust11_YMHTPu": {
         "Coordinates": [
             0,
@@ -3560,16 +3664,29 @@
     },
     "Bust12_FEMSi": {
         "Coordinates": [
-            183,
-            643
+            190,
+            462
         ],
         "Deviation": [
             0,
             0
         ],
-        "Filename": "portraitpic_FEMSi",
-        "Path": 3,
-        "zoom": 1.0
+        "Filename": "portrait_xlte",
+        "Path": 2,
+        "zoom": 0.6
+    },
+    "Bust12_FEMSi_classic": {
+        "Coordinates": [
+            190,
+            462
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "portrait_xlte_classic",
+        "Path": 2,
+        "zoom": 0.6
     },
     "Bust12_FLEr": {
         "Coordinates": [
@@ -3690,16 +3807,29 @@
     },
     "Bust12_HSheng": {
         "Coordinates": [
-            0,
-            0
+            160,
+            303
         ],
         "Deviation": [
             0,
             0
         ],
-        "Filename": "portraitpic_HSheng",
+        "Filename": "portrait_alin",
         "Path": 2,
-        "zoom": 1.0
+        "zoom": 0.58
+    },
+    "Bust12_HSheng_classic": {
+        "Coordinates": [
+            47,
+            305
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "portrait_alin_classic",
+        "Path": 2,
+        "zoom": 0.6
     },
     "Bust12_HYe": {
         "Coordinates": [
@@ -3802,6 +3932,19 @@
             0
         ],
         "Filename": "portraitpic_KTSJKe",
+        "Path": 2,
+        "zoom": 0.75
+    },
+    "Bust12_KTSJKe_Awake": {
+        "Coordinates": [
+            293.39,
+            171.04
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "portraitpic_KTSJKe_JXing",
         "Path": 2,
         "zoom": 0.75
     },
@@ -4533,6 +4676,19 @@
         "Path": 2,
         "zoom": 0.82
     },
+    "Bust12_YLSBai_xnian": {
+        "Coordinates": [
+            288,
+            440
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "portrait_slna_xnian",
+        "Path": 2,
+        "zoom": 0.5
+    },
     "Bust12_YMHTPu": {
         "Coordinates": [
             216,
@@ -5120,16 +5276,29 @@
     },
     "Bust13_FEMSi": {
         "Coordinates": [
-            183,
-            643
+            195,
+            583
         ],
         "Deviation": [
             0,
             0
         ],
-        "Filename": "portraitpic_FEMSi",
-        "Path": 3,
-        "zoom": 1.0
+        "Filename": "portrait_xlte",
+        "Path": 2,
+        "zoom": 0.6
+    },
+    "Bust13_FEMSi_classic": {
+        "Coordinates": [
+            195,
+            633
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "portrait_xlte_classic",
+        "Path": 2,
+        "zoom": 0.7
     },
     "Bust13_FLEr": {
         "Coordinates": [
@@ -5250,16 +5419,29 @@
     },
     "Bust13_HSheng": {
         "Coordinates": [
-            0,
-            0
+            160,
+            402
         ],
         "Deviation": [
             0,
             0
         ],
-        "Filename": "portraitpic_HSheng",
+        "Filename": "portrait_alin",
         "Path": 2,
-        "zoom": 0.6
+        "zoom": 0.55
+    },
+    "Bust13_HSheng_classic": {
+        "Coordinates": [
+            0,
+            412
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "portrait_alin_classic",
+        "Path": 2,
+        "zoom": 0.58
     },
     "Bust13_HYe": {
         "Coordinates": [
@@ -5302,8 +5484,8 @@
     },
     "Bust13_JNLong_Winter": {
         "Coordinates": [
-            752,
-            770
+            600,
+            620
         ],
         "Deviation": [
             0,
@@ -5311,7 +5493,7 @@
         ],
         "Filename": "portraitpic_JNLong_Winter",
         "Path": 2,
-        "zoom": 0.6
+        "zoom": 0.5
     },
     "Bust13_JSTDing": {
         "Coordinates": [
@@ -5364,6 +5546,19 @@
         "Filename": "portraitpic_KTSJKe",
         "Path": 2,
         "zoom": 0.7
+    },
+    "Bust13_KTSJKe_Awake": {
+        "Coordinates": [
+            206.73,
+            184.81
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "portraitpic_KTSJKe_JXing",
+        "Path": 2,
+        "zoom": 0.56
     },
     "Bust13_KTSJKe_QPao": {
         "Coordinates": [
@@ -6093,6 +6288,19 @@
         "Path": 2,
         "zoom": 0.75
     },
+    "Bust13_YLSBai_xnian": {
+        "Coordinates": [
+            287,
+            588
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "portrait_slna_xnian",
+        "Path": 2,
+        "zoom": 0.5
+    },
     "Bust13_YMHTPu": {
         "Coordinates": [
             200,
@@ -6680,16 +6888,29 @@
     },
     "Bust14_FEMSi": {
         "Coordinates": [
-            183,
-            643
+            86,
+            429
         ],
         "Deviation": [
             0,
             0
         ],
-        "Filename": "portraitpic_FEMSi",
-        "Path": 3,
-        "zoom": 1.0
+        "Filename": "portrait_xlte",
+        "Path": 2,
+        "zoom": 0.45
+    },
+    "Bust14_FEMSi_classic": {
+        "Coordinates": [
+            11,
+            331
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "portrait_xlte_classic",
+        "Path": 2,
+        "zoom": 0.45
     },
     "Bust14_FLEr": {
         "Coordinates": [
@@ -6810,16 +7031,29 @@
     },
     "Bust14_HSheng": {
         "Coordinates": [
-            0,
-            0
+            70,
+            250
         ],
         "Deviation": [
             0,
             0
         ],
-        "Filename": "portraitpic_HSheng",
+        "Filename": "portrait_alin",
         "Path": 2,
-        "zoom": 0.6
+        "zoom": 0.4
+    },
+    "Bust14_HSheng_classic": {
+        "Coordinates": [
+            -79,
+            234
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "portrait_alin_classic",
+        "Path": 2,
+        "zoom": 0.4
     },
     "Bust14_HYe": {
         "Coordinates": [
@@ -6924,6 +7158,19 @@
         "Filename": "portraitpic_KTSJKe",
         "Path": 2,
         "zoom": 0.47
+    },
+    "Bust14_KTSJKe_Awake": {
+        "Coordinates": [
+            153.32,
+            208.59
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "portraitpic_KTSJKe_JXing",
+        "Path": 2,
+        "zoom": 1.1
     },
     "Bust14_KTSJKe_QPao": {
         "Coordinates": [
@@ -7653,6 +7900,19 @@
         "Path": 2,
         "zoom": 0.5
     },
+    "Bust14_YLSBai_xnian": {
+        "Coordinates": [
+            58,
+            267
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "portrait_slna_xnian",
+        "Path": 2,
+        "zoom": 0.3
+    },
     "Bust14_YMHTPu": {
         "Coordinates": [
             36,
@@ -8240,16 +8500,29 @@
     },
     "Bust15_FEMSi": {
         "Coordinates": [
-            183,
-            643
-        ],
-        "Deviation": [
             0,
             0
         ],
-        "Filename": "portraitpic_FEMSi",
-        "Path": 3,
-        "zoom": 1.0
+        "Deviation": [
+            31,
+            -32
+        ],
+        "Filename": "portrait_xlte",
+        "Path": 2,
+        "zoom": 0.5
+    },
+    "Bust15_FEMSi_classic": {
+        "Coordinates": [
+            0,
+            0
+        ],
+        "Deviation": [
+            31,
+            -203
+        ],
+        "Filename": "portrait_xlte_classic",
+        "Path": 2,
+        "zoom": 0.85
     },
     "Bust15_FLEr": {
         "Coordinates": [
@@ -8374,12 +8647,25 @@
             0
         ],
         "Deviation": [
+            104,
+            -27
+        ],
+        "Filename": "portrait_alin",
+        "Path": 2,
+        "zoom": 0.65
+    },
+    "Bust15_HSheng_classic": {
+        "Coordinates": [
             0,
             0
         ],
-        "Filename": "portraitpic_HSheng",
+        "Deviation": [
+            206,
+            -13
+        ],
+        "Filename": "portrait_alin_classic",
         "Path": 2,
-        "zoom": 1.0
+        "zoom": 0.65
     },
     "Bust15_HYe": {
         "Coordinates": [
@@ -8484,6 +8770,19 @@
         "Filename": "portraitpic_KTSJKe",
         "Path": 2,
         "zoom": 0.85
+    },
+    "Bust15_KTSJKe_Awake": {
+        "Coordinates": [
+            0,
+            0
+        ],
+        "Deviation": [
+            -7.8,
+            -5.53
+        ],
+        "Filename": "portraitpic_KTSJKe_JXing",
+        "Path": 2,
+        "zoom": 0.67
     },
     "Bust15_KTSJKe_QPao": {
         "Coordinates": [
@@ -9213,6 +9512,19 @@
         "Path": 2,
         "zoom": 0.85
     },
+    "Bust15_YLSBai_xnian": {
+        "Coordinates": [
+            0,
+            0
+        ],
+        "Deviation": [
+            40,
+            -135
+        ],
+        "Filename": "portrait_slna_xnian",
+        "Path": 2,
+        "zoom": 0.58
+    },
     "Bust15_YMHTPu": {
         "Coordinates": [
             0,
@@ -9382,6 +9694,32 @@
         "Path": 2,
         "zoom": 0.6
     },
+    "Bust16_FEMSi_classic": {
+        "Coordinates": [
+            0,
+            250
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "portrait_xlte_classic",
+        "Path": 2,
+        "zoom": 0.6
+    },
+    "Bust16_HSheng_classic": {
+        "Coordinates": [
+            0,
+            400
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "portrait_alin_classic",
+        "Path": 2,
+        "zoom": 0.85
+    },
     "Bust16_JNLong_Winter": {
         "Coordinates": [
             321,
@@ -9431,6 +9769,19 @@
             0
         ],
         "Filename": "portraitpic_zfzxdui_sd",
+        "Path": 2,
+        "zoom": 0.6
+    },
+    "Bust16_YLSBai_xnian": {
+        "Coordinates": [
+            241,
+            469
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "portrait_slna_xnian",
         "Path": 2,
         "zoom": 0.6
     },
@@ -9904,16 +10255,29 @@
     },
     "Bust1_FEMSi": {
         "Coordinates": [
-            183,
-            643
+            151,
+            590
         ],
         "Deviation": [
             0,
             0
         ],
-        "Filename": "portraitpic_FEMSi",
+        "Filename": "portrait_xlte",
         "Path": 2,
-        "zoom": 1.0
+        "zoom": 0.58
+    },
+    "Bust1_FEMSi_classic": {
+        "Coordinates": [
+            151,
+            590
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "portrait_xlte_classic",
+        "Path": 2,
+        "zoom": 0.63
     },
     "Bust1_FLEr": {
         "Coordinates": [
@@ -10034,16 +10398,29 @@
     },
     "Bust1_HSheng": {
         "Coordinates": [
-            32,
-            608
+            130,
+            435
         ],
         "Deviation": [
             0,
             0
         ],
-        "Filename": "portraitpic_HSheng",
+        "Filename": "portrait_alin",
         "Path": 2,
-        "zoom": 1.0
+        "zoom": 0.55
+    },
+    "Bust1_HSheng_classic": {
+        "Coordinates": [
+            -5,
+            423
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "portrait_alin_classic",
+        "Path": 2,
+        "zoom": 0.55
     },
     "Bust1_HYe": {
         "Coordinates": [
@@ -10148,6 +10525,19 @@
         "Filename": "portraitpic_KTSJKe",
         "Path": 2,
         "zoom": 0.65
+    },
+    "Bust1_KTSJKe_Awake": {
+        "Coordinates": [
+            0,
+            0
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "portraitpic_KTSJKe_JXing",
+        "Path": 2,
+        "zoom": 1.0
     },
     "Bust1_KTSJKe_QPao": {
         "Coordinates": [
@@ -10916,6 +11306,19 @@
         "Path": 2,
         "zoom": 0.7
     },
+    "Bust1_YLSBai_xnian": {
+        "Coordinates": [
+            296,
+            668
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "portrait_slna_xnian",
+        "Path": 2,
+        "zoom": 0.55
+    },
     "Bust1_YMHTPu": {
         "Coordinates": [
             202,
@@ -11503,16 +11906,29 @@
     },
     "Bust2_FEMSi": {
         "Coordinates": [
-            183,
-            643
+            0,
+            0
         ],
         "Deviation": [
             0,
             0
         ],
-        "Filename": "portraitpic_FEMSi",
+        "Filename": "portrait_xlte",
         "Path": 2,
-        "zoom": 1.0
+        "zoom": 0.9
+    },
+    "Bust2_FEMSi_classic": {
+        "Coordinates": [
+            0,
+            0
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "portrait_xlte_classic",
+        "Path": 2,
+        "zoom": 0.9
     },
     "Bust2_FLEr": {
         "Coordinates": [
@@ -11633,16 +12049,29 @@
     },
     "Bust2_HSheng": {
         "Coordinates": [
-            -81,
-            608
+            0,
+            0
         ],
         "Deviation": [
             0,
             0
         ],
-        "Filename": "portraitpic_HSheng",
+        "Filename": "portrait_alin",
         "Path": 2,
-        "zoom": 1.0
+        "zoom": 0.9
+    },
+    "Bust2_HSheng_classic": {
+        "Coordinates": [
+            0,
+            0
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "portrait_alin_classic",
+        "Path": 2,
+        "zoom": 0.9
     },
     "Bust2_HYe": {
         "Coordinates": [
@@ -11747,6 +12176,19 @@
         "Filename": "portraitpic_KTSJKe",
         "Path": 2,
         "zoom": 2.3
+    },
+    "Bust2_KTSJKe_Awake": {
+        "Coordinates": [
+            0,
+            0
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "portraitpic_KTSJKe_JXing",
+        "Path": 2,
+        "zoom": 1.0
     },
     "Bust2_KTSJKe_QPao": {
         "Coordinates": [
@@ -12476,6 +12918,19 @@
         "Path": 2,
         "zoom": 2.5
     },
+    "Bust2_YLSBai_xnian": {
+        "Coordinates": [
+            0,
+            0
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "portrait_slna_xnian",
+        "Path": 2,
+        "zoom": 0.9
+    },
     "Bust2_YMHTPu": {
         "Coordinates": [
             545,
@@ -13063,15 +13518,28 @@
     },
     "Bust3_FEMSi": {
         "Coordinates": [
-            183,
-            643
+            212,
+            570
         ],
         "Deviation": [
             0,
             0
         ],
-        "Filename": "portraitpic_FEMSi",
-        "Path": 3,
+        "Filename": "portrait_xlte",
+        "Path": 2,
+        "zoom": 0.86
+    },
+    "Bust3_FEMSi_classic": {
+        "Coordinates": [
+            183,
+            574
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "portrait_xlte_classic",
+        "Path": 2,
         "zoom": 1.0
     },
     "Bust3_FLEr": {
@@ -13193,16 +13661,29 @@
     },
     "Bust3_HSheng": {
         "Coordinates": [
-            5,
-            0
+            165,
+            374
         ],
         "Deviation": [
             0,
             0
         ],
-        "Filename": "portraitpic_HSheng",
+        "Filename": "portrait_alin",
         "Path": 2,
-        "zoom": 1.0
+        "zoom": 0.85
+    },
+    "Bust3_HSheng_classic": {
+        "Coordinates": [
+            -50,
+            325
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "portrait_alin_classic",
+        "Path": 2,
+        "zoom": 0.85
     },
     "Bust3_HYe": {
         "Coordinates": [
@@ -13307,6 +13788,19 @@
         "Filename": "portraitpic_KTSJKe",
         "Path": 2,
         "zoom": 1.2
+    },
+    "Bust3_KTSJKe_Awake": {
+        "Coordinates": [
+            213.35,
+            171.63
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "portraitpic_KTSJKe_JXing",
+        "Path": 2,
+        "zoom": 0.88
     },
     "Bust3_KTSJKe_QPao": {
         "Coordinates": [
@@ -14036,6 +14530,19 @@
         "Path": 2,
         "zoom": 1.15
     },
+    "Bust3_YLSBai_xnian": {
+        "Coordinates": [
+            370,
+            572
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "portrait_slna_xnian",
+        "Path": 2,
+        "zoom": 0.75
+    },
     "Bust3_YMHTPu": {
         "Coordinates": [
             228,
@@ -14623,16 +15130,29 @@
     },
     "Bust4_FEMSi": {
         "Coordinates": [
-            183,
-            643
-        ],
-        "Deviation": [
             0,
             0
         ],
-        "Filename": "portraitpic_FEMSi",
-        "Path": 3,
-        "zoom": 1.0
+        "Deviation": [
+            -68,
+            -30
+        ],
+        "Filename": "portrait_xlte",
+        "Path": 2,
+        "zoom": 0.7
+    },
+    "Bust4_FEMSi_classic": {
+        "Coordinates": [
+            0,
+            0
+        ],
+        "Deviation": [
+            -18,
+            -30
+        ],
+        "Filename": "portrait_xlte_classic",
+        "Path": 2,
+        "zoom": 0.8
     },
     "Bust4_FLEr": {
         "Coordinates": [
@@ -14757,12 +15277,25 @@
             0
         ],
         "Deviation": [
+            -91,
+            -3
+        ],
+        "Filename": "portrait_alin",
+        "Path": 2,
+        "zoom": 0.75
+    },
+    "Bust4_HSheng_classic": {
+        "Coordinates": [
             0,
             0
         ],
-        "Filename": "portraitpic_HSheng",
+        "Deviation": [
+            -11,
+            32
+        ],
+        "Filename": "portrait_alin_classic",
         "Path": 2,
-        "zoom": 1.0
+        "zoom": 0.75
     },
     "Bust4_HYe": {
         "Coordinates": [
@@ -14867,6 +15400,19 @@
         "Filename": "portraitpic_KTSJKe",
         "Path": 2,
         "zoom": 0.935
+    },
+    "Bust4_KTSJKe_Awake": {
+        "Coordinates": [
+            0,
+            0
+        ],
+        "Deviation": [
+            -46.72,
+            121.22
+        ],
+        "Filename": "portraitpic_KTSJKe_JXing",
+        "Path": 2,
+        "zoom": 0.72
     },
     "Bust4_KTSJKe_QPao": {
         "Coordinates": [
@@ -15596,6 +16142,19 @@
         "Path": 2,
         "zoom": 1.1
     },
+    "Bust4_YLSBai_xnian": {
+        "Coordinates": [
+            0,
+            0
+        ],
+        "Deviation": [
+            -24,
+            39
+        ],
+        "Filename": "portrait_slna_xnian",
+        "Path": 2,
+        "zoom": 0.52
+    },
     "Bust4_YMHTPu": {
         "Coordinates": [
             0,
@@ -16183,16 +16742,29 @@
     },
     "Bust5_FEMSi": {
         "Coordinates": [
-            183,
-            643
+            202,
+            540
         ],
         "Deviation": [
             0,
             0
         ],
-        "Filename": "portraitpic_FEMSi",
-        "Path": 3,
-        "zoom": 1.0
+        "Filename": "portrait_xlte",
+        "Path": 2,
+        "zoom": 0.8
+    },
+    "Bust5_FEMSi_classic": {
+        "Coordinates": [
+            202,
+            540
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "portrait_xlte_classic",
+        "Path": 2,
+        "zoom": 0.9
     },
     "Bust5_FLEr": {
         "Coordinates": [
@@ -16313,16 +16885,29 @@
     },
     "Bust5_HSheng": {
         "Coordinates": [
-            4,
-            394
+            231,
+            457
         ],
         "Deviation": [
             0,
             0
         ],
-        "Filename": "portraitpic_HSheng",
+        "Filename": "portrait_alin",
         "Path": 2,
-        "zoom": 1.0
+        "zoom": 0.9
+    },
+    "Bust5_HSheng_classic": {
+        "Coordinates": [
+            44,
+            432
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "portrait_alin_classic",
+        "Path": 2,
+        "zoom": 0.9
     },
     "Bust5_HYe": {
         "Coordinates": [
@@ -16365,8 +16950,8 @@
     },
     "Bust5_JNLong_Winter": {
         "Coordinates": [
-            211,
-            117
+            500,
+            400
         ],
         "Deviation": [
             0,
@@ -16374,7 +16959,7 @@
         ],
         "Filename": "portraitpic_JNLong_Winter",
         "Path": 2,
-        "zoom": 0.6
+        "zoom": 0.5
     },
     "Bust5_JSTDing": {
         "Coordinates": [
@@ -16427,6 +17012,19 @@
         "Filename": "portraitpic_KTSJKe",
         "Path": 2,
         "zoom": 0.8
+    },
+    "Bust5_KTSJKe_Awake": {
+        "Coordinates": [
+            143.51,
+            113.67
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "portraitpic_KTSJKe_JXing",
+        "Path": 2,
+        "zoom": 0.62
     },
     "Bust5_KTSJKe_QPao": {
         "Coordinates": [
@@ -16534,8 +17132,8 @@
     },
     "Bust5_LLan_Winter": {
         "Coordinates": [
-            219,
-            277
+            300,
+            400
         ],
         "Deviation": [
             0,
@@ -16543,7 +17141,7 @@
         ],
         "Filename": "portraitpic_LLan_Winter",
         "Path": 2,
-        "zoom": 0.7
+        "zoom": 0.5
     },
     "Bust5_LYSi": {
         "Coordinates": [
@@ -17156,6 +17754,19 @@
         "Path": 2,
         "zoom": 0.85
     },
+    "Bust5_YLSBai_xnian": {
+        "Coordinates": [
+            431,
+            704
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "portrait_slna_xnian",
+        "Path": 2,
+        "zoom": 0.8
+    },
     "Bust5_YMHTPu": {
         "Coordinates": [
             139,
@@ -17743,16 +18354,29 @@
     },
     "Bust6_FEMSi": {
         "Coordinates": [
-            183,
-            643
-        ],
-        "Deviation": [
             0,
             0
         ],
-        "Filename": "portraitpic_FEMSi",
-        "Path": 3,
-        "zoom": 1.0
+        "Deviation": [
+            104,
+            100
+        ],
+        "Filename": "portrait_xlte",
+        "Path": 2,
+        "zoom": 0.65
+    },
+    "Bust6_FEMSi_classic": {
+        "Coordinates": [
+            0,
+            0
+        ],
+        "Deviation": [
+            35,
+            0
+        ],
+        "Filename": "portrait_xlte_classic",
+        "Path": 2,
+        "zoom": 0.88
     },
     "Bust6_FLEr": {
         "Coordinates": [
@@ -17877,12 +18501,25 @@
             0
         ],
         "Deviation": [
+            42,
+            100
+        ],
+        "Filename": "portrait_alin",
+        "Path": 2,
+        "zoom": 0.76
+    },
+    "Bust6_HSheng_classic": {
+        "Coordinates": [
             0,
             0
         ],
-        "Filename": "portraitpic_HSheng",
+        "Deviation": [
+            0.4,
+            130
+        ],
+        "Filename": "portrait_alin_classic",
         "Path": 2,
-        "zoom": 1.0
+        "zoom": 0.8
     },
     "Bust6_HYe": {
         "Coordinates": [
@@ -17930,11 +18567,11 @@
         ],
         "Deviation": [
             100,
-            191
+            300
         ],
         "Filename": "portraitpic_JNLong_Winter",
         "Path": 2,
-        "zoom": 0.65
+        "zoom": 0.5
     },
     "Bust6_JSTDing": {
         "Coordinates": [
@@ -17987,6 +18624,19 @@
         "Filename": "portraitpic_KTSJKe",
         "Path": 2,
         "zoom": 0.95
+    },
+    "Bust6_KTSJKe_Awake": {
+        "Coordinates": [
+            0,
+            0
+        ],
+        "Deviation": [
+            -17.97,
+            106.67
+        ],
+        "Filename": "portraitpic_KTSJKe_JXing",
+        "Path": 2,
+        "zoom": 0.84
     },
     "Bust6_KTSJKe_QPao": {
         "Coordinates": [
@@ -18716,6 +19366,19 @@
         "Path": 2,
         "zoom": 1.1
     },
+    "Bust6_YLSBai_xnian": {
+        "Coordinates": [
+            0,
+            0
+        ],
+        "Deviation": [
+            81,
+            73
+        ],
+        "Filename": "portrait_slna_xnian",
+        "Path": 2,
+        "zoom": 0.58
+    },
     "Bust6_YMHTPu": {
         "Coordinates": [
             0,
@@ -19303,16 +19966,29 @@
     },
     "Bust7_FEMSi": {
         "Coordinates": [
-            183,
-            643
+            226,
+            622
         ],
         "Deviation": [
             0,
             0
         ],
-        "Filename": "portraitpic_FEMSi",
-        "Path": 3,
-        "zoom": 1.0
+        "Filename": "portrait_xlte",
+        "Path": 2,
+        "zoom": 0.75
+    },
+    "Bust7_FEMSi_classic": {
+        "Coordinates": [
+            206,
+            581
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "portrait_xlte_classic",
+        "Path": 2,
+        "zoom": 0.85
     },
     "Bust7_FLEr": {
         "Coordinates": [
@@ -19433,16 +20109,29 @@
     },
     "Bust7_HSheng": {
         "Coordinates": [
-            -110,
-            280
+            177,
+            408
         ],
         "Deviation": [
             0,
             0
         ],
-        "Filename": "portraitpic_HSheng",
+        "Filename": "portrait_alin",
         "Path": 2,
-        "zoom": 1.0
+        "zoom": 0.7
+    },
+    "Bust7_HSheng_classic": {
+        "Coordinates": [
+            40,
+            376
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "portrait_alin_classic",
+        "Path": 2,
+        "zoom": 0.7
     },
     "Bust7_HYe": {
         "Coordinates": [
@@ -19547,6 +20236,19 @@
         "Filename": "portraitpic_KTSJKe",
         "Path": 2,
         "zoom": 1.15
+    },
+    "Bust7_KTSJKe_Awake": {
+        "Coordinates": [
+            346.54,
+            186.63
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "portraitpic_KTSJKe_JXing",
+        "Path": 2,
+        "zoom": 0.86
     },
     "Bust7_KTSJKe_QPao": {
         "Coordinates": [
@@ -20276,6 +20978,19 @@
         "Path": 2,
         "zoom": 1.25
     },
+    "Bust7_YLSBai_xnian": {
+        "Coordinates": [
+            299,
+            468
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "portrait_slna_xnian",
+        "Path": 2,
+        "zoom": 0.55
+    },
     "Bust7_YMHTPu": {
         "Coordinates": [
             312,
@@ -20863,16 +21578,29 @@
     },
     "Bust8_FEMSi": {
         "Coordinates": [
-            183,
-            643
+            253,
+            748
         ],
         "Deviation": [
             0,
             0
         ],
-        "Filename": "portraitpic_FEMSi",
-        "Path": 3,
-        "zoom": 1.0
+        "Filename": "portrait_xlte",
+        "Path": 2,
+        "zoom": 0.8
+    },
+    "Bust8_FEMSi_classic": {
+        "Coordinates": [
+            206,
+            631
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "portrait_xlte_classic",
+        "Path": 2,
+        "zoom": 0.8
     },
     "Bust8_FLEr": {
         "Coordinates": [
@@ -20993,16 +21721,29 @@
     },
     "Bust8_HSheng": {
         "Coordinates": [
-            7,
-            289
+            214,
+            510
         ],
         "Deviation": [
             0,
             0
         ],
-        "Filename": "portraitpic_HSheng",
+        "Filename": "portrait_alin",
         "Path": 2,
-        "zoom": 0.6
+        "zoom": 0.73
+    },
+    "Bust8_HSheng_classic": {
+        "Coordinates": [
+            48,
+            495
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "portrait_alin_classic",
+        "Path": 2,
+        "zoom": 0.75
     },
     "Bust8_HYe": {
         "Coordinates": [
@@ -21107,6 +21848,19 @@
         "Filename": "portraitpic_KTSJKe",
         "Path": 2,
         "zoom": 0.55
+    },
+    "Bust8_KTSJKe_Awake": {
+        "Coordinates": [
+            289.08,
+            237.7
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "portraitpic_KTSJKe_JXing",
+        "Path": 2,
+        "zoom": 0.75
     },
     "Bust8_KTSJKe_QPao": {
         "Coordinates": [
@@ -21836,6 +22590,19 @@
         "Path": 2,
         "zoom": 0.6
     },
+    "Bust8_YLSBai_xnian": {
+        "Coordinates": [
+            416,
+            779
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "portrait_slna_xnian",
+        "Path": 2,
+        "zoom": 0.7
+    },
     "Bust8_YMHTPu": {
         "Coordinates": [
             90,
@@ -22423,16 +23190,29 @@
     },
     "Bust9_FEMSi": {
         "Coordinates": [
-            183,
-            643
-        ],
-        "Deviation": [
             0,
             0
         ],
-        "Filename": "portraitpic_FEMSi",
-        "Path": 3,
-        "zoom": 1.0
+        "Deviation": [
+            -68,
+            5
+        ],
+        "Filename": "portrait_xlte",
+        "Path": 2,
+        "zoom": 0.75
+    },
+    "Bust9_FEMSi_classic": {
+        "Coordinates": [
+            0,
+            0
+        ],
+        "Deviation": [
+            -68,
+            5
+        ],
+        "Filename": "portrait_xlte_classic",
+        "Path": 2,
+        "zoom": 0.85
     },
     "Bust9_FLEr": {
         "Coordinates": [
@@ -22557,12 +23337,25 @@
             0
         ],
         "Deviation": [
-            150,
-            31
+            -116,
+            27
         ],
-        "Filename": "portraitpic_HSheng",
+        "Filename": "portrait_alin",
         "Path": 2,
-        "zoom": 1.0
+        "zoom": 0.8
+    },
+    "Bust9_HSheng_classic": {
+        "Coordinates": [
+            0,
+            0
+        ],
+        "Deviation": [
+            -65,
+            42
+        ],
+        "Filename": "portrait_alin_classic",
+        "Path": 2,
+        "zoom": 0.8
     },
     "Bust9_HYe": {
         "Coordinates": [
@@ -22667,6 +23460,19 @@
         "Filename": "portraitpic_KTSJKe",
         "Path": 2,
         "zoom": 0.85
+    },
+    "Bust9_KTSJKe_Awake": {
+        "Coordinates": [
+            0,
+            0
+        ],
+        "Deviation": [
+            -63.1,
+            62.19
+        ],
+        "Filename": "portraitpic_KTSJKe_JXing",
+        "Path": 2,
+        "zoom": 0.95
     },
     "Bust9_KTSJKe_QPao": {
         "Coordinates": [
@@ -23395,6 +24201,19 @@
         "Filename": "portraitpic_YLSBai",
         "Path": 2,
         "zoom": 0.95
+    },
+    "Bust9_YLSBai_xnian": {
+        "Coordinates": [
+            0,
+            0
+        ],
+        "Deviation": [
+            -70,
+            60
+        ],
+        "Filename": "portrait_slna_xnian",
+        "Path": 2,
+        "zoom": 0.55
     },
     "Bust9_YMHTPu": {
         "Coordinates": [
@@ -25212,7 +26031,20 @@
             0,
             0
         ],
-        "Filename": "battlepic_FEMSi",
+        "Filename": "battlepic_xlte",
+        "Path": 2,
+        "zoom": 1.0
+    },
+    "HeadMain_FEMSi_classic": {
+        "Coordinates": [
+            0,
+            0
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "battlepic_xlte_classic",
         "Path": 2,
         "zoom": 1.0
     },
@@ -25342,7 +26174,20 @@
             0,
             0
         ],
-        "Filename": "battlepic_HSheng",
+        "Filename": "battlepic_alin",
+        "Path": 2,
+        "zoom": 1.0
+    },
+    "HeadMain_HSheng_classic": {
+        "Coordinates": [
+            0,
+            0
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "battlepic_alin_classic",
         "Path": 2,
         "zoom": 1.0
     },
@@ -25447,6 +26292,19 @@
             0
         ],
         "Filename": "battlepic_KTSJKe",
+        "Path": 2,
+        "zoom": 1.0
+    },
+    "HeadMain_KTSJKe_Awake": {
+        "Coordinates": [
+            0,
+            0
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "battlepic_KTSJKe_JXing",
         "Path": 2,
         "zoom": 1.0
     },
@@ -26201,6 +27059,19 @@
             0
         ],
         "Filename": "battlepic_YLSBai",
+        "Path": 2,
+        "zoom": 1.0
+    },
+    "HeadMain_YLSBai_classic": {
+        "Coordinates": [
+            0,
+            0
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "battlepic_slna_xnian",
         "Path": 2,
         "zoom": 1.0
     },
@@ -28560,7 +29431,20 @@
             0,
             0
         ],
-        "Filename": "portraitpic_FEMSi",
+        "Filename": "portrait_xlte",
+        "Path": 2,
+        "zoom": 1.0
+    },
+    "Portraitpic_FEMSi_classic": {
+        "Coordinates": [
+            0,
+            0
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "portrait_xlte_classic",
         "Path": 2,
         "zoom": 1.0
     },
@@ -28742,7 +29626,20 @@
             0,
             0
         ],
-        "Filename": "portraitpic_HSheng",
+        "Filename": "portrait_alin",
+        "Path": 2,
+        "zoom": 1.0
+    },
+    "Portraitpic_HSheng_classic": {
+        "Coordinates": [
+            0,
+            0
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "portrait_alin_classic",
         "Path": 2,
         "zoom": 1.0
     },
@@ -28980,6 +29877,19 @@
         "Path": 2,
         "zoom": 1.0
     },
+    "Portraitpic_KTSJKe_Awake": {
+        "Coordinates": [
+            0,
+            0
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "portraitpic_KTSJKe_JXing",
+        "Path": 2,
+        "zoom": 1.0
+    },
     "Portraitpic_KTSJKe_QPao": {
         "Coordinates": [
             0,
@@ -28990,6 +29900,19 @@
             0
         ],
         "Filename": "portraitpic_KTSJKe_QPao",
+        "Path": 2,
+        "zoom": 1.0
+    },
+    "Portraitpic_KTSJKe_UnAwake": {
+        "Coordinates": [
+            0,
+            0
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "portraitpic_awake_lock_KTSJKe",
         "Path": 2,
         "zoom": 1.0
     },
@@ -29965,6 +30888,19 @@
             0
         ],
         "Filename": "portraitpic_YLSBai",
+        "Path": 2,
+        "zoom": 1.0
+    },
+    "Portraitpic_YLSBai_xnian": {
+        "Coordinates": [
+            0,
+            0
+        ],
+        "Deviation": [
+            0,
+            0
+        ],
+        "Filename": "portrait_slna_xnian",
         "Path": 2,
         "zoom": 1.0
     },

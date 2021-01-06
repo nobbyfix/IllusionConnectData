@@ -99,7 +99,10 @@ function ActivityExchangeMediator:setupView()
 	local activityConfig = self._activity:getActivityConfig()
 
 	if activityConfig and activityConfig.TaskTopUI then
-		self._main:getChildByName("Image_9"):loadTexture(activityConfig.TaskTopUI .. ".png", ccui.TextureResType.plistType)
+		local Image_9 = self._main:getChildByName("Image_9")
+
+		Image_9:ignoreContentAdaptWithSize(true)
+		Image_9:loadTexture(activityConfig.TaskTopUI .. ".png", ccui.TextureResType.plistType)
 	end
 
 	if activityConfig and activityConfig.TaskBgUI then

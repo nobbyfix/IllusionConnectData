@@ -29,9 +29,68 @@ function EliteTaskActivityMediator:setupView()
 	self._descPanel = self._main:getChildByName("desc")
 	self._cloneCell = self:getView():getChildByName("cloneCell")
 	self._taskList = self._activity:getSortActivityList()
+	local timeStr = self._activity:getLocalTimeFactor()
+	local startTime = ""
+	local endTime = ""
 
-	self._descPanel:setString(Strings:get(self._activity:getDesc()))
+	if timeStr.start then
+		if type(timeStr.start) == "table" then
+			startTime = timeStr.start[1]
+		else
+			startTime = timeStr.start
+		end
+	end
+
+	if timeStr["end"] then
+		endTime = timeStr["end"]
+	end
+
+	self._descPanel:setString(Strings:get(self._activity:getDesc(), {
+		starttime = startTime,
+		endtime = endTime
+	}))
 	self._descPanel:getVirtualRenderer():setLineSpacing(2)
+
+	local activityConfig = self._activity:getActivityConfig()
+	local heroPanel = self._main:getChildByName("heroPanel")
+
+	heroPanel:getChildByFullName("Image_33"):setVisible(not activityConfig.ModelId)
+
+	if activityConfig.ModelId then
+		local roleModel = activityConfig.ModelId
+		local heroSprite = IconFactory:createRoleIconSprite({
+			useAnim = true,
+			iconType = "Bust4",
+			id = roleModel
+		})
+
+		heroSprite:setScale(0.85)
+		heroSprite:addTo(heroPanel)
+		heroSprite:setPosition(cc.p(595, 145))
+
+		if self._activity:getId() == "ActivityBlock_KTSJKe_DailyTask" then
+			heroSprite:setScale(0.8)
+			heroSprite:setPosition(cc.p(300, 160))
+		end
+	end
+
+	heroPanel:setTouchEnabled(true)
+	heroPanel:addClickEventListener(function ()
+	end)
+
+	local activityConfig = self._activity:getActivityConfig()
+
+	if activityConfig and activityConfig.TaskTopUI then
+		local Image_9 = self._main:getChildByName("Image_9")
+
+		Image_9:ignoreContentAdaptWithSize(true)
+		Image_9:loadTexture(activityConfig.TaskTopUI .. ".png", ccui.TextureResType.plistType)
+	end
+
+	if activityConfig and activityConfig.TaskBgUI then
+		self._main:getChildByName("Image_18"):loadTexture("asset/scene/" .. activityConfig.TaskBgUI .. ".jpg")
+	end
+
 	self:createTableView()
 end
 
@@ -52,22 +111,17 @@ function EliteTaskActivityMediator:createTableView()
 
 	local function cellAtIndex(table, idx)
 		local index = idx + 1
-		local cell = table:dequeueCell()
+		local cell = cc.TableViewCell:new()
+		local cloneCell = self._cloneCell:clone()
 
-		if not cell then
-			cell = cc.TableViewCell:new()
-			local cloneCell = self._cloneCell:clone()
+		cloneCell:addTo(cell):setName("main")
+		cloneCell:setPosition(cc.p(0, 4))
 
-			cloneCell:addTo(cell):setName("main")
-			cloneCell:setPosition(cc.p(0, 4))
+		local actBtn = cloneCell:getChildByName("actBtn")
 
-			local actBtn = cloneCell:getChildByName("actBtn")
-
-			actBtn:setSwallowTouches(false)
-			actBtn:getChildByName("Text_str"):setAdditionalKerning(4)
-			cloneCell:getChildByName("title"):setAdditionalKerning(2)
-		end
-
+		actBtn:setSwallowTouches(false)
+		actBtn:getChildByName("Text_str"):setAdditionalKerning(4)
+		cloneCell:getChildByName("title"):setAdditionalKerning(2)
 		self:updataCell(cell, index)
 
 		return cell

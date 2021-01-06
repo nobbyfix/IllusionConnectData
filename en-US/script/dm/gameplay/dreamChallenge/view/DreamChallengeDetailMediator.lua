@@ -139,9 +139,6 @@ function DreamChallengeDetailMediator:refreshView()
 				EndTime = endTime,
 				fontName = CUSTOM_TTF_FONT_1
 			})
-
-			dump(str, "str >>>>>>>>>>>>>")
-
 			local richText = ccui.RichText:createWithXML("", {})
 
 			richText:setAnchorPoint(timeText:getAnchorPoint())

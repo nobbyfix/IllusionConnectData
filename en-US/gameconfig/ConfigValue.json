@@ -448,10 +448,6 @@
                 "BattlePass_RuleDesc_3",
                 "BattlePass_RuleDesc_4",
                 "BattlePass_RuleDesc_5",
-                "BattlePass_RuleDesc_6",
-                "BattlePass_RuleDesc_7",
-                "BattlePass_RuleDesc_8",
-                "BattlePass_RuleDesc_9",
                 "BattlePass_RuleDesc_10",
                 "BattlePass_RuleDesc_11",
                 "BattlePass_RuleDesc_12"
@@ -1809,6 +1805,136 @@
             }
         }
     },
+    "CooperateBoss_LevelUp": {
+        "clz": "array",
+        "content": [
+            {
+                "LV": [
+                    99,
+                    50
+                ],
+                "Value": 15
+            },
+            {
+                "LV": [
+                    49,
+                    40
+                ],
+                "Value": 15
+            },
+            {
+                "LV": [
+                    39,
+                    30
+                ],
+                "Value": 10
+            },
+            {
+                "LV": [
+                    29,
+                    20
+                ],
+                "Value": 10
+            },
+            {
+                "LV": [
+                    19,
+                    10
+                ],
+                "Value": 8
+            },
+            {
+                "LV": [
+                    9,
+                    0
+                ],
+                "Value": 8
+            }
+        ]
+    },
+    "CooperateBoss_MainBossShow": {
+        "clz": "string",
+        "content": "ZTXChang"
+    },
+    "CooperateBoss_MainRule": {
+        "clz": "string[]",
+        "content": [
+            "CooperateBoss_MainRule_Text01",
+            "CooperateBoss_MainRule_Text02",
+            "CooperateBoss_MainRule_Text03",
+            "CooperateBoss_MainRule_Text04",
+            "CooperateBoss_MainRule_Text05",
+            "CooperateBoss_MainRule_Text06",
+            "CooperateBoss_MainRule_Text07"
+        ]
+    },
+    "CooperateBoss_Occasion": {
+        "clz": "string[]",
+        "content": [
+            "NORMAL",
+            "ELITE",
+            "GOLD",
+            "CRYSTAL",
+            "EXP"
+        ]
+    },
+    "CooperateBoss_OpenTine": {
+        "clz": "int",
+        "content": 86400
+    },
+    "CooperateBoss_PurchaseTime": {
+        "clz": "array",
+        "content": [
+            [
+                50,
+                1
+            ],
+            [
+                50,
+                1
+            ],
+            [
+                100,
+                1
+            ],
+            [
+                100,
+                1
+            ],
+            [
+                150,
+                1
+            ],
+            [
+                150,
+                1
+            ],
+            [
+                200,
+                1
+            ],
+            [
+                200,
+                1
+            ],
+            [
+                250,
+                1
+            ],
+            [
+                250,
+                1
+            ]
+        ]
+    },
+    "CooperateBoss_RuleTitle": {
+        "clz": "string[]",
+        "content": [
+            "CooperateBoss_RuleTitle_Text01",
+            "CooperateBoss_RuleTitle_Text02",
+            "CooperateBoss_RuleTitle_Text03"
+        ]
+    },
     "Crusade_5_Star_buff": {
         "clz": "string",
         "content": "Crusade_ExcellentHero_Stars"
@@ -2382,7 +2508,8 @@
             "crusade",
             "dream_challenge",
             "clubboss",
-            "actstage"
+            "actstage",
+            "cooperateboss"
         ]
     },
     "FAC_HP_Check": {
@@ -4410,6 +4537,12 @@
                     "Petrace_Title6_Rule1"
                 ],
                 "Title": "Petrace_Title6"
+            },
+            {
+                "Desc": [
+                    "Petrace_Title7_Rule1"
+                ],
+                "Title": "Petrace_Title7"
             }
         ]
     },
@@ -7520,7 +7653,9 @@
             "YSLBin",
             "KMLa",
             "PDLa",
-            "NFEr"
+            "NFEr",
+            "HSheng",
+            "FEMSi"
         ]
     },
     "Tower_1_GrowMaxValue": {

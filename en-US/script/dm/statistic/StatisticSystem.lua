@@ -141,7 +141,7 @@ function StatisticSystem:send(content)
 
 	xhr:send(data)
 
-	if DmGame and (content._type_ == "loginpoint" or content._type_ == "loginchoose") then
+	if (content._type_ == "loginpoint" or content._type_ == "loginchoose") and DmGame then
 		local developSystem = DmGame:getInstance()._injector:getInstance("DevelopSystem")
 
 		developSystem:guideLog({

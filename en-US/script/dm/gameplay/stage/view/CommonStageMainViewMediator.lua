@@ -11,6 +11,12 @@ CommonStageMainViewMediator:has("_developSystem", {
 CommonStageMainViewMediator:has("_systemKeeper", {
 	is = "r"
 }):injectWith("SystemKeeper")
+CommonStageMainViewMediator:has("_cooperateBossSystem", {
+	is = "r"
+}):injectWith("CooperateBossSystem")
+CommonStageMainViewMediator:has("_gameServerAgent", {
+	is = "r"
+}):injectWith("GameServerAgent")
 
 local kChapterMapSize = {
 	1620,
@@ -118,10 +124,18 @@ function CommonStageMainViewMediator:initialize()
 end
 
 function CommonStageMainViewMediator:dispose()
+	if self._timer then
+		self._timer:stop()
+
+		self._timer = nil
+	end
+
 	super.dispose(self)
 end
 
 function CommonStageMainViewMediator:mapEventListeners()
+	self:mapEventListener(self:getEventDispatcher(), EVT_COOPERATE_REFRESH_INVITELIST, self, self.refreshInviteListView)
+	self:mapEventListener(self:getEventDispatcher(), EVT_COOPERATE_BOSS_INVITE, self, self.refreshInviteListView)
 end
 
 function CommonStageMainViewMediator:onRegister()
@@ -135,6 +149,12 @@ function CommonStageMainViewMediator:onRegister()
 end
 
 function CommonStageMainViewMediator:onRemove()
+	if self._timer then
+		self._timer:stop()
+
+		self._timer = nil
+	end
+
 	super.onRemove(self)
 end
 
@@ -179,6 +199,7 @@ function CommonStageMainViewMediator:enterWithData(data)
 	self:createTableView()
 	self:getChapterIndex(false, true)
 	self:initBottomSlider()
+	self:refreshInviteListView()
 
 	if data.chapterId then
 		local chapterIndex = self:getStageSystem():mapId2Index(data.chapterId, data.stageType)
@@ -187,6 +208,18 @@ function CommonStageMainViewMediator:enterWithData(data)
 	end
 
 	self:setupClickEnvs()
+end
+
+function CommonStageMainViewMediator:refreshInviteListView()
+	local state = self._cooperateBossSystem:getcooperateBossState()
+
+	if kCooperateBossState.kStart == state then
+		local function callback()
+			self:setupCooperateBossShow()
+		end
+
+		self._cooperateBossSystem:requestGetInviteInfo(callback)
+	end
 end
 
 function CommonStageMainViewMediator:resumeWithData()
@@ -227,6 +260,7 @@ function CommonStageMainViewMediator:resumeWithData()
 	performWithDelay(self:getView(), function ()
 		bgPanel:removeFromParent(true)
 	end, 0.3)
+	self:setupCooperateBossShow()
 	self:setupClickEnvs()
 end
 
@@ -239,6 +273,10 @@ function CommonStageMainViewMediator:initWidget()
 
 	self._commonBg = self:getView():getChildByName("chapter_commonBg")
 	self._eliteBg = self:getView():getChildByName("chapter_eliteBg")
+
+	self._commonBg:getChildByFullName("Image_1"):loadTexture("asset/scene/main_img_zxxz02.jpg", ccui.TextureResType.localType)
+	self._eliteBg:getChildByFullName("image"):loadTexture("asset/scene/zx_jy_bg.jpg", ccui.TextureResType.localType)
+
 	self._eliteEffectPanel = self._main:getChildByName("eliteEffectPanel")
 
 	self._eliteEffectPanel:setLocalZOrder(999)
@@ -251,6 +289,11 @@ function CommonStageMainViewMediator:initWidget()
 	self._darkBtn = btnImg:getChildByName("type_dark")
 	self._leftBox = self:getView():getChildByName("leftBox")
 	self._rightBox = self:getView():getChildByName("rightBox")
+	self._coopreateBossPanel = self:getView():getChildByName("coopreateBossPanel")
+
+	self._coopreateBossPanel:setSwallowTouches(false)
+	self._coopreateBossPanel:setVisible(false)
+
 	local image = self._eliteBg:getChildByName("image")
 
 	image:setScaleX(self._winSize.width / 1228)
@@ -912,4 +955,170 @@ function CommonStageMainViewMediator:setupClickEnvs()
 	end))
 
 	self:getView():runAction(sequence)
+end
+
+function CommonStageMainViewMediator:setupCooperateBossShow()
+	if self._timer then
+		self._timer:stop()
+
+		self._timer = nil
+	end
+
+	local inviteList = self._coopreateBossPanel:getChildByFullName("inviteList")
+	local mineBoss = self._coopreateBossPanel:getChildByFullName("mineBoss")
+	local inviteBossShow = self._cooperateBossSystem:checkInviteBossShow()
+	local mineBossShow = self._cooperateBossSystem:checkMineDefaultBossShow()
+
+	self._coopreateBossPanel:setVisible(false)
+	self._coopreateBossPanel:setLocalZOrder(20000)
+
+	if inviteBossShow and mineBossShow then
+		self._coopreateBossPanel:setVisible(true)
+		inviteList:setVisible(true)
+		mineBoss:setVisible(true)
+		mineBoss:setPositionY(-10)
+	elseif not inviteBossShow and mineBossShow then
+		self._coopreateBossPanel:setVisible(true)
+		mineBoss:setPositionY(340)
+		inviteList:setVisible(false)
+		mineBoss:setVisible(true)
+	elseif inviteBossShow and not mineBossShow then
+		self._coopreateBossPanel:setVisible(true)
+		inviteList:setVisible(true)
+		mineBoss:setVisible(false)
+	end
+
+	if mineBossShow then
+		local bossIcon = mineBoss:getChildByFullName("IconPanel")
+		local bossNameText = mineBoss:getChildByFullName("Name")
+		local bossTimeText = mineBoss:getChildByFullName("Time")
+		local cooperateBoss = self._cooperateBossSystem:getCooperateBoss()
+
+		bossNameText:setString(cooperateBoss:getRoleModelName())
+
+		local heroSprite = IconFactory:createRoleIconSprite({
+			id = cooperateBoss:getRoleModelId()
+		})
+
+		heroSprite:addTo(bossIcon):center(bossIcon:getContentSize())
+		heroSprite:setScale(0.4)
+
+		local endTime = cooperateBoss:getBossEndTime()
+
+		local function checkTimeFunc()
+			remoteTimestamp = self._gameServerAgent:remoteTimestamp()
+			local remainTime = endTime - remoteTimestamp
+
+			if remainTime < 0 then
+				mineBoss:setVisible(false)
+
+				if not inviteBossShow then
+					self._coopreateBossPanel:setVisible(false)
+				else
+					self._coopreateBossPanel:setVisible(true)
+				end
+
+				self._timer:stop()
+
+				self._timer = nil
+
+				return
+			end
+
+			local fmtStr = "${d}:${H}:${M}:${S}"
+			local timeStr = TimeUtil:formatTime(fmtStr, remainTime)
+			local parts = string.split(timeStr, ":", nil, true)
+			local timeTab = {
+				hour = tonumber(parts[2]),
+				min = tonumber(parts[3]),
+				sec = tonumber(parts[4])
+			}
+
+			if timeTab.hour > 0 then
+				bossTimeText:setString(string.format("%02d", timeTab.hour) .. ":" .. string.format("%02d", timeTab.min) .. ":" .. string.format("%02d", timeTab.sec))
+			else
+				bossTimeText:setString(string.format("%02d", timeTab.min) .. ":" .. string.format("%02d", timeTab.sec))
+			end
+		end
+
+		self._timer = LuaScheduler:getInstance():schedule(checkTimeFunc, 1, false)
+
+		checkTimeFunc()
+		bossIcon:addTouchEventListener(function (sender, eventType)
+			if eventType == ccui.TouchEventType.ended then
+				self._cooperateBossSystem:enterCooperateBossNewOne()
+			end
+		end)
+	end
+
+	if inviteBossShow then
+		local cooperateBoss = self._cooperateBossSystem:getCooperateBoss()
+		local inviteInfo = cooperateBoss:getSortInvitedBossIdMap()
+
+		inviteList:removeAllChildren()
+		inviteList:setScrollBarEnabled(false)
+
+		local itemclone = self:getView():getChildByName("inviteBossCellClone")
+
+		itemclone:setVisible(false)
+		dump(inviteInfo, "inviteInfo")
+
+		for i = 1, #inviteInfo do
+			local item = itemclone:clone()
+
+			item:setVisible(true)
+
+			local info = inviteInfo[i]
+			local bossIcon = item:getChildByFullName("invitePanel.role")
+			local bossNameText = item:getChildByFullName("invitePanel.nameDi.name")
+			local bossLvText = item:getChildByFullName("invitePanel.level.text")
+			local playerNameText = item:getChildByFullName("invitePanel.inviteDi.invite")
+
+			playerNameText:setString(info.name)
+			bossNameText:setString(cooperateBoss:getRoleModelName(info.confId))
+			bossLvText:setString("Lv." .. info.lv)
+			item:getChildByFullName("invitePanel.info"):setVisible(false)
+
+			local heroSprite = IconFactory:createRoleIconSprite({
+				stencil = 1,
+				iconType = "Bust13",
+				id = cooperateBoss:getRoleModelId(info.confId),
+				size = cc.size(145, 106)
+			})
+
+			heroSprite:addTo(bossIcon):center(bossIcon:getContentSize())
+			item:setTouchEnabled(true)
+
+			local touch = item:getChildByFullName("invitePanel")
+
+			touch:addTouchEventListener(function (sender, eventType)
+				if eventType == ccui.TouchEventType.ended then
+					local bossCreateTime = info.bossCreateTime
+					local bossLeaveTime = info.bossCreateTime + ConfigReader:getDataByNameIdAndKey("CooperateBossMain", info.confId, "Time")
+					local currentTIme = self._gameServerAgent:remoteTimestamp()
+
+					if bossLeaveTime - currentTIme <= 0 then
+						self:dispatch(ShowTipEvent({
+							duration = 0.35,
+							tip = Strings:get("CooperateBoss_AfterBattle_UI05")
+						}))
+						self:refreshInviteListView()
+
+						return
+					end
+
+					local data = {
+						confId = info.confId,
+						bossCreateTime = info.bossCreateTime,
+						bossLevel = info.lv,
+						name = info.name,
+						bossId = info.bossId
+					}
+
+					self._cooperateBossSystem:enterCooperateBossInvite(data)
+				end
+			end)
+			inviteList:pushBackCustomItem(item)
+		end
+	end
 end

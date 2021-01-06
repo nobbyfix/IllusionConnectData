@@ -17,7 +17,6 @@ function UpdateNoticPopup:alert(param)
 
 	local alerUrl = "asset/ui/Alert.csb"
 	local alert = cc.CSLoader:createNode(alerUrl)
-	self.param = param
 	local director = cc.Director:getInstance()
 	local winSize = director:getWinSize()
 	local scene = cc.Scene:create()
@@ -57,7 +56,7 @@ function UpdateNoticPopup:alert(param)
 
 	local x, y = root:getChildByName("btn_ok"):getPosition()
 
-	root:getChildByName("btn_ok"):setPosition(cc.p(557, y))
+	root:getChildByName("btn_ok"):setPosition(cc.p(winSize.width / 2, y))
 
 	local duration = 0.15
 	local fadeIn = cc.FadeIn:create(duration)
@@ -72,10 +71,8 @@ function UpdateNoticPopup:alert(param)
 
 	param = param or {}
 	local msg = param.msg or "解压失败（无可用的内存空间，清理空间后重试）"
-	local okBtndesc = param.okBtnDes or "重试"
 
 	root:getChildByName("Text_desc1"):setString(msg)
-	root:getChildByName("btn_ok"):getChildByName("name"):setString(okBtndesc)
 	btnok:addClickEventListener(function ()
 		AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
 
@@ -114,11 +111,6 @@ function UpdateNoticPopup:_createBg()
 	title_node:getChildByName("bg_hw"):loadTexture("common_bg_tsk_5.png", ccui.TextureResType.plistType)
 	title_node:getChildByName("Text_1"):setString("注意事项")
 	title_node:getChildByName("Text_2"):setString("notic")
-
-	if self.param.title then
-		title_node:getChildByName("Text_1"):setString("NOTIC")
-	end
-
 	title_node:getChildByName("Text_1"):enableShadow(cc.c4b(3, 1, 4, 127.5), cc.size(1, 0), 1)
 	title_node:getChildByName("Text_2"):enableShadow(cc.c4b(3, 1, 4, 127.5), cc.size(1, 0), 1)
 	Image_bg:setCapInsets(cc.rect(55, 20, 39, 30))
