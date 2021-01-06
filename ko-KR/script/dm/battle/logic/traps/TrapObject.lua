@@ -182,7 +182,7 @@ function TrapObject:trigger(target, battleContext)
 	if self._display ~= nil or eftdetails ~= nil then
 		detail = {
 			trapId = self._id,
-			cellId = targetCell:getId(),
+			cellId = self._targetCell:getId(),
 			disp = self._display,
 			eft = eftdetails
 		}

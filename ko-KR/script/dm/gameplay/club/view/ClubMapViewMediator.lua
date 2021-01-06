@@ -51,6 +51,7 @@ function ClubMapViewMediator:enterWithData(data)
 	self:setupHouseBtnWidget()
 	self:checkClubResourcesBattleTimerLogic()
 	self:checkBossLogic()
+	self:checkEnterLogic()
 	self:refreshRedPoint()
 	self:requestAuditData()
 end
@@ -292,6 +293,12 @@ function ClubMapViewMediator:onClubPlayerHouseChange()
 	self._housePositionList = self._clubSystem:getClub():getClubMapPositionList():getPlayerVillages()
 	self._doMoveHouseLogic = false
 
+	if self._clubInfoWidget:getIsButtonShow() then
+		self._clubInfoWidget:buttonHide()
+
+		self._showHouseButtonPos = 0
+	end
+
 	self:refreshAllHouse()
 end
 
@@ -467,6 +474,36 @@ function ClubMapViewMediator:checkBossLogic()
 
 	if self._data and self._data.goToActivityBossFormSunmmer == true then
 		self:tryEnterActivityBoss()
+	end
+end
+
+function ClubMapViewMediator:checkEnterLogic()
+	if self._data then
+		local tab = self._data.tab
+
+		if tab and ClubHallType[tab] then
+			local unlock = self._clubSystem:checkEnabled({
+				tab = ClubHallType[tab]
+			})
+
+			if unlock then
+				if ClubHallType[tab] == ClubHallType.kBasicInfo or ClubHallType[tab] == ClubHallType.kBasicInfo or ClubHallType[tab] == ClubHallType.kLog then
+					local view = self:getInjector():getInstance("ClubNewHallView")
+					local event = ViewEvent:new(EVT_PUSH_VIEW, view, nil, {})
+
+					self:dispatch(event)
+				elseif ClubHallType[tab] == ClubHallType.kTechnology then
+					local view = self:getInjector():getInstance("ClubNewTechnologyView")
+					local event = ViewEvent:new(EVT_PUSH_VIEW, view, nil, {})
+
+					self:dispatch(event)
+				elseif ClubHallType[tab] == ClubHallType.kBoss then
+					self:tryEnterClubBoss()
+				elseif ClubHallType[tab] == ClubHallType.kActivityBoss then
+					self:tryEnterActivityBoss()
+				end
+			end
+		end
 	end
 end
 

@@ -66,6 +66,13 @@ local PowerConfigMap = {
 		next = "Act_NewYear_Power_RecNext",
 		configId = "AcitvityHolidayStamina_Reset",
 		tableName = "Reset"
+	},
+	[CurrencyIdKind.kActivityDetectivePower] = {
+		all = "Act_Detective_Power_RecAll",
+		perMin = "Act_Detective_Power_RecPerMin",
+		next = "Act_Detective_Power_RecNext",
+		configId = "AcitvityDetectiveStamina_Reset",
+		tableName = "Reset"
 	}
 }
 local crusadeEnergyReset = nil
@@ -90,8 +97,6 @@ function BagSystem:initPowerReset()
 	for k, v in pairs(PowerConfigMap) do
 		self._powerResetMap[k] = self:initConfigSystem(v.tableName, v.configId)
 	end
-
-	dump(self._powerResetMap, "initPowerReset")
 end
 
 function BagSystem:initConfigSystem(tableName, configId)
@@ -358,6 +363,10 @@ end
 
 function BagSystem:getAcitvitySnowPower()
 	return self:getPowerByCurrencyId(CurrencyIdKind.kAcitvitySnowPower)
+end
+
+function BagSystem:getAcitvityDetectivePower()
+	return self:getPowerByCurrencyId(CurrencyIdKind.kActivityDetectivePower)
 end
 
 function BagSystem:getDiamond()

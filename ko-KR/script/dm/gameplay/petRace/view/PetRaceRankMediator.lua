@@ -32,7 +32,7 @@ function PetRaceRankMediator:onRegister()
 			clickAudio = "Se_Click_Close_1",
 			func = bind1(self.onClickBack, self)
 		},
-		title = Strings:get("Petrace_Text_52"),
+		title = Strings:get("Petrace_Daily_Rank"),
 		title1 = Strings:get("UITitle_EN_Paihang")
 	})
 end

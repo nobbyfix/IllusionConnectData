@@ -257,8 +257,6 @@ function BattleLogic:enterNewRound()
 		result = result or self._battleReferee:battleRoundOver(self._roundNumber)
 
 		if result then
-			self:finish(result)
-
 			return false
 		end
 	end

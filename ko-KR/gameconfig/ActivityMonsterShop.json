@@ -879,6 +879,1359 @@
             }
         ]
     },
+    "Detective_Shop_1": {
+        "Cost": [
+            {
+                "Item": "IM_DetectiveExchange_4",
+                "Reward": "Reward_Detective_Shop_1",
+                "Times": 1,
+                "Type": "1",
+                "price": 30000
+            },
+            {
+                "Item": "IM_DetectiveExchange_4",
+                "Reward": "Reward_Detective_Shop_Diamond1",
+                "Times": 1,
+                "Type": "1",
+                "price": 1000
+            }
+        ],
+        "Day": 1,
+        "Order": 1,
+        "Rate": [
+            {
+                "day": [
+                    1,
+                    1
+                ],
+                "rate": 0.2
+            },
+            {
+                "day": [
+                    2,
+                    2
+                ],
+                "rate": 0.5
+            },
+            {
+                "day": [
+                    3,
+                    3
+                ],
+                "rate": 0.6
+            },
+            {
+                "day": [
+                    4,
+                    4
+                ],
+                "rate": 0.5
+            },
+            {
+                "day": [
+                    5,
+                    5
+                ],
+                "rate": 0.3
+            },
+            {
+                "day": [
+                    6,
+                    6
+                ],
+                "rate": 0.6
+            },
+            {
+                "day": [
+                    7,
+                    7
+                ],
+                "rate": 0.05
+            },
+            {
+                "day": [
+                    8,
+                    8
+                ],
+                "rate": 0.3
+            },
+            {
+                "day": [
+                    9,
+                    99
+                ],
+                "rate": 0.15
+            }
+        ]
+    },
+    "Detective_Shop_10": {
+        "Cost": [
+            {
+                "Item": "IM_DetectiveExchange_4",
+                "Reward": "Reward_Detective_Shop_10",
+                "Times": 5,
+                "Type": "1",
+                "price": 200
+            },
+            {
+                "Item": "IM_DetectiveExchange_4",
+                "Reward": "Reward_Detective_Shop_Diamond10",
+                "Times": 1,
+                "Type": "1",
+                "price": 1000
+            }
+        ],
+        "Day": 1,
+        "Order": 9,
+        "Rate": [
+            {
+                "day": [
+                    1,
+                    1
+                ],
+                "rate": 0.9
+            },
+            {
+                "day": [
+                    2,
+                    2
+                ],
+                "rate": 0.6
+            },
+            {
+                "day": [
+                    3,
+                    3
+                ],
+                "rate": 0.5
+            },
+            {
+                "day": [
+                    4,
+                    4
+                ],
+                "rate": 0.9
+            },
+            {
+                "day": [
+                    5,
+                    5
+                ],
+                "rate": 0.6
+            },
+            {
+                "day": [
+                    6,
+                    6
+                ],
+                "rate": 0.9
+            },
+            {
+                "day": [
+                    7,
+                    7
+                ],
+                "rate": 0.6
+            },
+            {
+                "day": [
+                    8,
+                    8
+                ],
+                "rate": 0.9
+            },
+            {
+                "day": [
+                    9,
+                    99
+                ],
+                "rate": 0.6
+            }
+        ]
+    },
+    "Detective_Shop_11": {
+        "Cost": [
+            {
+                "Item": "IM_DetectiveExchange_4",
+                "Reward": "Reward_Detective_Shop_11",
+                "Times": 20,
+                "Type": "1",
+                "price": 600
+            },
+            {
+                "Item": "IM_DetectiveExchange_4",
+                "Reward": "Reward_Detective_Shop_Diamond11",
+                "Times": 1,
+                "Type": "1",
+                "price": 1000
+            }
+        ],
+        "Day": 1,
+        "Order": 10,
+        "Rate": [
+            {
+                "day": [
+                    1,
+                    1
+                ],
+                "rate": 0.8
+            },
+            {
+                "day": [
+                    2,
+                    2
+                ],
+                "rate": 0.5
+            },
+            {
+                "day": [
+                    3,
+                    3
+                ],
+                "rate": 0.75
+            },
+            {
+                "day": [
+                    4,
+                    4
+                ],
+                "rate": 0.6
+            },
+            {
+                "day": [
+                    5,
+                    5
+                ],
+                "rate": 0.6
+            },
+            {
+                "day": [
+                    6,
+                    6
+                ],
+                "rate": 0.8
+            },
+            {
+                "day": [
+                    7,
+                    7
+                ],
+                "rate": 0.5
+            },
+            {
+                "day": [
+                    8,
+                    8
+                ],
+                "rate": 0.4
+            },
+            {
+                "day": [
+                    9,
+                    99
+                ],
+                "rate": 0.6
+            }
+        ]
+    },
+    "Detective_Shop_12": {
+        "Cost": [
+            {
+                "Item": "IM_DetectiveExchange_4",
+                "Reward": "Reward_Detective_Shop_12",
+                "Times": 20,
+                "Type": "1",
+                "price": 300
+            },
+            {
+                "Item": "IM_DetectiveExchange_4",
+                "Reward": "Reward_Detective_Shop_Diamond12",
+                "Times": 1,
+                "Type": "1",
+                "price": 1000
+            }
+        ],
+        "Day": 1,
+        "Order": 11,
+        "Rate": [
+            {
+                "day": [
+                    1,
+                    1
+                ],
+                "rate": 0.4
+            },
+            {
+                "day": [
+                    2,
+                    2
+                ],
+                "rate": 0.5
+            },
+            {
+                "day": [
+                    3,
+                    3
+                ],
+                "rate": 0.8
+            },
+            {
+                "day": [
+                    4,
+                    4
+                ],
+                "rate": 0.3
+            },
+            {
+                "day": [
+                    5,
+                    5
+                ],
+                "rate": 0.6
+            },
+            {
+                "day": [
+                    6,
+                    6
+                ],
+                "rate": 0.15
+            },
+            {
+                "day": [
+                    7,
+                    7
+                ],
+                "rate": 0.4
+            },
+            {
+                "day": [
+                    8,
+                    8
+                ],
+                "rate": 0.9
+            },
+            {
+                "day": [
+                    9,
+                    99
+                ],
+                "rate": 0.3
+            }
+        ]
+    },
+    "Detective_Shop_13": {
+        "Cost": [
+            {
+                "Item": "IM_DetectiveExchange_4",
+                "Reward": "Reward_Detective_Shop_13",
+                "Times": 10,
+                "Type": "1",
+                "price": 500
+            },
+            {
+                "Item": "IM_DetectiveExchange_4",
+                "Reward": "Reward_Detective_Shop_Diamond13",
+                "Times": 1,
+                "Type": "1",
+                "price": 1000
+            }
+        ],
+        "Day": 1,
+        "Order": 12,
+        "Rate": [
+            {
+                "day": [
+                    1,
+                    1
+                ],
+                "rate": 0.4
+            },
+            {
+                "day": [
+                    2,
+                    2
+                ],
+                "rate": 0.3
+            },
+            {
+                "day": [
+                    3,
+                    3
+                ],
+                "rate": 0.36
+            },
+            {
+                "day": [
+                    4,
+                    4
+                ],
+                "rate": 0.2
+            },
+            {
+                "day": [
+                    5,
+                    5
+                ],
+                "rate": 0.18
+            },
+            {
+                "day": [
+                    6,
+                    6
+                ],
+                "rate": 0.24
+            },
+            {
+                "day": [
+                    7,
+                    7
+                ],
+                "rate": 0.32
+            },
+            {
+                "day": [
+                    8,
+                    8
+                ],
+                "rate": 0.3
+            },
+            {
+                "day": [
+                    9,
+                    99
+                ],
+                "rate": 0.2
+            }
+        ]
+    },
+    "Detective_Shop_14": {
+        "Cost": [
+            {
+                "Item": "IM_DetectiveExchange_4",
+                "Reward": "Reward_Detective_Shop_14",
+                "Times": 20,
+                "Type": "1",
+                "price": 250
+            },
+            {
+                "Item": "IM_DetectiveExchange_4",
+                "Reward": "Reward_Detective_Shop_Diamond14",
+                "Times": 1,
+                "Type": "1",
+                "price": 1000
+            }
+        ],
+        "Day": 1,
+        "Order": 13,
+        "Rate": [
+            {
+                "day": [
+                    1,
+                    1
+                ],
+                "rate": 0.8
+            },
+            {
+                "day": [
+                    2,
+                    2
+                ],
+                "rate": 0.6
+            },
+            {
+                "day": [
+                    3,
+                    3
+                ],
+                "rate": 0.72
+            },
+            {
+                "day": [
+                    4,
+                    4
+                ],
+                "rate": 0.2
+            },
+            {
+                "day": [
+                    5,
+                    5
+                ],
+                "rate": 0.32
+            },
+            {
+                "day": [
+                    6,
+                    6
+                ],
+                "rate": 0.48
+            },
+            {
+                "day": [
+                    7,
+                    7
+                ],
+                "rate": 0.64
+            },
+            {
+                "day": [
+                    8,
+                    8
+                ],
+                "rate": 0.6
+            },
+            {
+                "day": [
+                    9,
+                    99
+                ],
+                "rate": 0.4
+            }
+        ]
+    },
+    "Detective_Shop_15": {
+        "Cost": [
+            {
+                "Item": "IM_DetectiveExchange_4",
+                "Reward": "Reward_Detective_Shop_15",
+                "Times": 50,
+                "Type": "1",
+                "price": 50
+            },
+            {
+                "Item": "IM_DetectiveExchange_4",
+                "Reward": "Reward_Detective_Shop_Diamond15",
+                "Times": 1,
+                "Type": "1",
+                "price": 1000
+            }
+        ],
+        "Day": 1,
+        "Order": 14,
+        "Rate": [
+            {
+                "day": [
+                    1,
+                    1
+                ],
+                "rate": 0.95
+            },
+            {
+                "day": [
+                    2,
+                    2
+                ],
+                "rate": 0.9
+            },
+            {
+                "day": [
+                    3,
+                    3
+                ],
+                "rate": 0.8
+            },
+            {
+                "day": [
+                    4,
+                    4
+                ],
+                "rate": 0.7
+            },
+            {
+                "day": [
+                    5,
+                    5
+                ],
+                "rate": 0.6
+            },
+            {
+                "day": [
+                    6,
+                    6
+                ],
+                "rate": 0.5
+            },
+            {
+                "day": [
+                    7,
+                    7
+                ],
+                "rate": 0.44
+            },
+            {
+                "day": [
+                    8,
+                    8
+                ],
+                "rate": 0.4
+            },
+            {
+                "day": [
+                    9,
+                    99
+                ],
+                "rate": 0.4
+            }
+        ]
+    },
+    "Detective_Shop_16": {
+        "Cost": [
+            {
+                "Item": "IM_DetectiveExchange_4",
+                "Reward": "Reward_Detective_Shop_16",
+                "Times": 50,
+                "Type": "1",
+                "price": 100
+            },
+            {
+                "Item": "IM_DetectiveExchange_4",
+                "Reward": "Reward_Detective_Shop_Diamond16",
+                "Times": 1,
+                "Type": "1",
+                "price": 1000
+            }
+        ],
+        "Day": 1,
+        "Order": 15,
+        "Rate": [
+            {
+                "day": [
+                    1,
+                    1
+                ],
+                "rate": 0.95
+            },
+            {
+                "day": [
+                    2,
+                    2
+                ],
+                "rate": 0.9
+            },
+            {
+                "day": [
+                    3,
+                    3
+                ],
+                "rate": 0.8
+            },
+            {
+                "day": [
+                    4,
+                    4
+                ],
+                "rate": 0.7
+            },
+            {
+                "day": [
+                    5,
+                    5
+                ],
+                "rate": 0.6
+            },
+            {
+                "day": [
+                    6,
+                    6
+                ],
+                "rate": 0.5
+            },
+            {
+                "day": [
+                    7,
+                    7
+                ],
+                "rate": 0.4
+            },
+            {
+                "day": [
+                    8,
+                    8
+                ],
+                "rate": 0.3
+            },
+            {
+                "day": [
+                    9,
+                    99
+                ],
+                "rate": 0.25
+            }
+        ]
+    },
+    "Detective_Shop_2": {
+        "Cost": [
+            {
+                "Item": "IM_DetectiveExchange_4",
+                "Reward": "Reward_Detective_Shop_2",
+                "Times": 1,
+                "Type": "2",
+                "price": 30000
+            }
+        ],
+        "Day": 1,
+        "Order": 16,
+        "Rate": [
+            {
+                "day": [
+                    1,
+                    1
+                ],
+                "rate": 0.8
+            },
+            {
+                "day": [
+                    2,
+                    2
+                ],
+                "rate": 0.8
+            },
+            {
+                "day": [
+                    3,
+                    3
+                ],
+                "rate": 0.6
+            },
+            {
+                "day": [
+                    4,
+                    4
+                ],
+                "rate": 0.9
+            },
+            {
+                "day": [
+                    5,
+                    5
+                ],
+                "rate": 0.8
+            },
+            {
+                "day": [
+                    6,
+                    6
+                ],
+                "rate": 0.6
+            },
+            {
+                "day": [
+                    7,
+                    7
+                ],
+                "rate": 0.5
+            },
+            {
+                "day": [
+                    8,
+                    8
+                ],
+                "rate": 0.6
+            },
+            {
+                "day": [
+                    9,
+                    99
+                ],
+                "rate": 0.15
+            }
+        ]
+    },
+    "Detective_Shop_3": {
+        "Cost": [
+            {
+                "Item": "IM_DetectiveExchange_4",
+                "Reward": "Reward_Detective_Shop_3",
+                "Times": 6,
+                "Type": "1",
+                "price": 6000
+            },
+            {
+                "Item": "IM_DetectiveExchange_4",
+                "Reward": "Reward_Detective_Shop_Diamond3",
+                "Times": 1,
+                "Type": "1",
+                "price": 1000
+            }
+        ],
+        "Day": 1,
+        "Order": 2,
+        "Rate": [
+            {
+                "day": [
+                    1,
+                    1
+                ],
+                "rate": 0.5
+            },
+            {
+                "day": [
+                    2,
+                    2
+                ],
+                "rate": 0.4
+            },
+            {
+                "day": [
+                    3,
+                    3
+                ],
+                "rate": 0.20166
+            },
+            {
+                "day": [
+                    4,
+                    4
+                ],
+                "rate": 0.3
+            },
+            {
+                "day": [
+                    5,
+                    5
+                ],
+                "rate": 0.3
+            },
+            {
+                "day": [
+                    6,
+                    6
+                ],
+                "rate": 0.4
+            },
+            {
+                "day": [
+                    7,
+                    7
+                ],
+                "rate": 0.3
+            },
+            {
+                "day": [
+                    8,
+                    8
+                ],
+                "rate": 0.20166
+            },
+            {
+                "day": [
+                    9,
+                    99
+                ],
+                "rate": 0.25
+            }
+        ]
+    },
+    "Detective_Shop_4": {
+        "Cost": [
+            {
+                "Item": "IM_DetectiveExchange_4",
+                "Reward": "Reward_Detective_Shop_4",
+                "Times": 5,
+                "Type": "1",
+                "price": 500
+            },
+            {
+                "Item": "IM_DetectiveExchange_4",
+                "Reward": "Reward_Detective_Shop_Diamond4",
+                "Times": 1,
+                "Type": "1",
+                "price": 1000
+            }
+        ],
+        "Day": 1,
+        "Order": 3,
+        "Rate": [
+            {
+                "day": [
+                    1,
+                    1
+                ],
+                "rate": 0.3
+            },
+            {
+                "day": [
+                    2,
+                    2
+                ],
+                "rate": 0.35
+            },
+            {
+                "day": [
+                    3,
+                    3
+                ],
+                "rate": 0.4
+            },
+            {
+                "day": [
+                    4,
+                    4
+                ],
+                "rate": 0.45
+            },
+            {
+                "day": [
+                    5,
+                    5
+                ],
+                "rate": 0.5
+            },
+            {
+                "day": [
+                    6,
+                    6
+                ],
+                "rate": 0.55
+            },
+            {
+                "day": [
+                    7,
+                    7
+                ],
+                "rate": 0.6
+            },
+            {
+                "day": [
+                    8,
+                    8
+                ],
+                "rate": 0.65
+            },
+            {
+                "day": [
+                    9,
+                    99
+                ],
+                "rate": 0.7
+            }
+        ]
+    },
+    "Detective_Shop_5": {
+        "Cost": [
+            {
+                "Item": "IM_DetectiveExchange_4",
+                "Reward": "Reward_Detective_Shop_5",
+                "Times": 10,
+                "Type": "1",
+                "price": 200
+            },
+            {
+                "Item": "IM_DetectiveExchange_4",
+                "Reward": "Reward_Detective_Shop_Diamond5",
+                "Times": 1,
+                "Type": "1",
+                "price": 1000
+            }
+        ],
+        "Day": 1,
+        "Order": 4,
+        "Rate": [
+            {
+                "day": [
+                    1,
+                    1
+                ],
+                "rate": 0.75
+            },
+            {
+                "day": [
+                    2,
+                    2
+                ],
+                "rate": 0.75
+            },
+            {
+                "day": [
+                    3,
+                    3
+                ],
+                "rate": 0.75
+            },
+            {
+                "day": [
+                    4,
+                    4
+                ],
+                "rate": 0.75
+            },
+            {
+                "day": [
+                    5,
+                    5
+                ],
+                "rate": 0.225
+            },
+            {
+                "day": [
+                    6,
+                    6
+                ],
+                "rate": 0.75
+            },
+            {
+                "day": [
+                    7,
+                    7
+                ],
+                "rate": 0.75
+            },
+            {
+                "day": [
+                    8,
+                    8
+                ],
+                "rate": 0.75
+            },
+            {
+                "day": [
+                    9,
+                    99
+                ],
+                "rate": 0.75
+            }
+        ]
+    },
+    "Detective_Shop_6": {
+        "Cost": [
+            {
+                "Item": "IM_DetectiveExchange_4",
+                "Reward": "Reward_Detective_Shop_6",
+                "Times": 1,
+                "Type": "1",
+                "price": 20000
+            },
+            {
+                "Item": "IM_DetectiveExchange_4",
+                "Reward": "Reward_Detective_Shop_Diamond6",
+                "Times": 1,
+                "Type": "1",
+                "price": 1000
+            }
+        ],
+        "Day": 1,
+        "Order": 5,
+        "Rate": [
+            {
+                "day": [
+                    1,
+                    1
+                ],
+                "rate": 0.75
+            },
+            {
+                "day": [
+                    2,
+                    2
+                ],
+                "rate": 0.6
+            },
+            {
+                "day": [
+                    3,
+                    3
+                ],
+                "rate": 0.25
+            },
+            {
+                "day": [
+                    4,
+                    4
+                ],
+                "rate": 0.1
+            },
+            {
+                "day": [
+                    5,
+                    5
+                ],
+                "rate": 0.25
+            },
+            {
+                "day": [
+                    6,
+                    6
+                ],
+                "rate": 0.4
+            },
+            {
+                "day": [
+                    7,
+                    7
+                ],
+                "rate": 0.6
+            },
+            {
+                "day": [
+                    8,
+                    8
+                ],
+                "rate": 0.75
+            },
+            {
+                "day": [
+                    9,
+                    99
+                ],
+                "rate": 0.9
+            }
+        ]
+    },
+    "Detective_Shop_7": {
+        "Cost": [
+            {
+                "Item": "IM_DetectiveExchange_4",
+                "Reward": "Reward_Detective_Shop_7",
+                "Times": 1,
+                "Type": "1",
+                "price": 13000
+            },
+            {
+                "Item": "IM_DetectiveExchange_4",
+                "Reward": "Reward_Detective_Shop_Diamond7",
+                "Times": 1,
+                "Type": "1",
+                "price": 1000
+            }
+        ],
+        "Day": 1,
+        "Order": 6,
+        "Rate": [
+            {
+                "day": [
+                    1,
+                    1
+                ],
+                "rate": 0.3
+            },
+            {
+                "day": [
+                    2,
+                    2
+                ],
+                "rate": 0.3
+            },
+            {
+                "day": [
+                    3,
+                    3
+                ],
+                "rate": 0.3
+            },
+            {
+                "day": [
+                    4,
+                    4
+                ],
+                "rate": 0.3
+            },
+            {
+                "day": [
+                    5,
+                    5
+                ],
+                "rate": 0.3
+            },
+            {
+                "day": [
+                    6,
+                    6
+                ],
+                "rate": 0.3
+            },
+            {
+                "day": [
+                    7,
+                    7
+                ],
+                "rate": 0.3
+            },
+            {
+                "day": [
+                    8,
+                    8
+                ],
+                "rate": 0.3
+            },
+            {
+                "day": [
+                    9,
+                    99
+                ],
+                "rate": 0.3
+            }
+        ]
+    },
+    "Detective_Shop_8": {
+        "Cost": [
+            {
+                "Item": "IM_DetectiveExchange_4",
+                "Reward": "Reward_Detective_Shop_8",
+                "Times": 1,
+                "Type": "1",
+                "price": 13000
+            },
+            {
+                "Item": "IM_DetectiveExchange_4",
+                "Reward": "Reward_Detective_Shop_Diamond8",
+                "Times": 1,
+                "Type": "1",
+                "price": 1000
+            }
+        ],
+        "Day": 1,
+        "Order": 7,
+        "Rate": [
+            {
+                "day": [
+                    1,
+                    1
+                ],
+                "rate": 0.3
+            },
+            {
+                "day": [
+                    2,
+                    2
+                ],
+                "rate": 0.2
+            },
+            {
+                "day": [
+                    3,
+                    3
+                ],
+                "rate": 0.25
+            },
+            {
+                "day": [
+                    4,
+                    4
+                ],
+                "rate": 0.3
+            },
+            {
+                "day": [
+                    5,
+                    5
+                ],
+                "rate": 0.35
+            },
+            {
+                "day": [
+                    6,
+                    6
+                ],
+                "rate": 0.4
+            },
+            {
+                "day": [
+                    7,
+                    7
+                ],
+                "rate": 0.45
+            },
+            {
+                "day": [
+                    8,
+                    8
+                ],
+                "rate": 0.5
+            },
+            {
+                "day": [
+                    9,
+                    99
+                ],
+                "rate": 0.55
+            }
+        ]
+    },
+    "Detective_Shop_9": {
+        "Cost": [
+            {
+                "Item": "IM_DetectiveExchange_4",
+                "Reward": "Reward_Detective_Shop_9",
+                "Times": 1,
+                "Type": "1",
+                "price": 13000
+            },
+            {
+                "Item": "IM_DetectiveExchange_4",
+                "Reward": "Reward_Detective_Shop_Diamond9",
+                "Times": 1,
+                "Type": "1",
+                "price": 1000
+            }
+        ],
+        "Day": 1,
+        "Order": 8,
+        "Rate": [
+            {
+                "day": [
+                    1,
+                    1
+                ],
+                "rate": 0.9
+            },
+            {
+                "day": [
+                    2,
+                    2
+                ],
+                "rate": 0.8
+            },
+            {
+                "day": [
+                    3,
+                    3
+                ],
+                "rate": 0.6
+            },
+            {
+                "day": [
+                    4,
+                    4
+                ],
+                "rate": 0.4
+            },
+            {
+                "day": [
+                    5,
+                    5
+                ],
+                "rate": 0.2
+            },
+            {
+                "day": [
+                    6,
+                    6
+                ],
+                "rate": 0.01
+            },
+            {
+                "day": [
+                    7,
+                    7
+                ],
+                "rate": 0.1
+            },
+            {
+                "day": [
+                    8,
+                    8
+                ],
+                "rate": 0.15
+            },
+            {
+                "day": [
+                    9,
+                    99
+                ],
+                "rate": 0.01
+            }
+        ]
+    },
     "Holiday_Shop_1": {
         "Cost": [
             {

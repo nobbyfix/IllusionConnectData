@@ -181,6 +181,19 @@
         "TopStatus": 0,
         "Type": "USER"
     },
+    "Mail_Activity_CooperateBoss": {
+        "Content": "Mail_Activity_CooperateBoss_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Activity_CooperateBoss_Sender",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_Activity_CooperateBoss_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
     "Mail_Activity_Darts": {
         "Content": "Mail_Activity_Darts_Content",
         "ExpireAfterRead": 72000,
@@ -337,6 +350,45 @@
         "TopStatus": 0,
         "Type": "USER"
     },
+    "Mail_Detective_AchieveMentTask_Activity": {
+        "Content": "Mail_Detective_AchieveMentTask_Activity_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_Detective_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_Detective_AchieveMentTask_Activity_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
+    "Mail_Detective_DailyTask_Activity": {
+        "Content": "Mail_Detective_DailyTask_Activity_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_Detective_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_Detective_DailyTask_Activity_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
+    "Mail_Detective_MonsterShop": {
+        "Content": "Mail_Detective_MonsterShop_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_Detective_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_Detective_MonsterShop_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
     "Mail_DiamondReturn1": {
         "Content": "Mail_DiamondReturn1_Content",
         "ExpireAfterRead": 72000,
@@ -389,6 +441,19 @@
         "TopStatus": 0,
         "Type": "USER"
     },
+    "Mail_EightDays": {
+        "Content": "Mail_EightDays_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Activity_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_EightDays_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
     "Mail_EightDays_20201209": {
         "Content": "Mail_EightDays_20201209_Content",
         "ExpireAfterRead": 72000,
@@ -399,6 +464,19 @@
         "Reward": "",
         "SubType": 1,
         "Title": "Mail_EightDays_20201209_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
+    "Mail_EightDays_Detective": {
+        "Content": "Mail_SevenDays_Detective_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_Detective_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_SevenDays_Detective_Title",
         "TopStatus": 0,
         "Type": "USER"
     },

@@ -1061,6 +1061,11 @@ local mappings = {
 		name = "ActivityTaskAchievementMediator",
 		type = "@C"
 	},
+	ActivityBlockDectiveMediator = {
+		url = "dm.gameplay.activity.view.ActivityBlockDectiveMediator",
+		name = "ActivityBlockDectiveMediator",
+		type = "@C"
+	},
 	MonsterShopPopupMediator = {
 		url = "dm.gameplay.activity.view.MonsterShopPopupMediator",
 		name = "MonsterShopPopupMediator",
@@ -2929,6 +2934,46 @@ local mappings = {
 	ShareMediator = {
 		url = "dm.gameplay.share.view.ShareMediator",
 		name = "ShareMediator",
+		type = "@C"
+	},
+	CooperateBossSystem = {
+		url = "dm.gameplay.cooperateBoss.controller.CooperateBossSystem",
+		name = "CooperateBossSystem",
+		type = "@C"
+	},
+	CooperateBossInviteFriendMediator = {
+		url = "dm.gameplay.cooperateBoss.view.CooperateBossInviteFriendMediator",
+		name = "CooperateBossInviteFriendMediator",
+		type = "@C"
+	},
+	CooperateBossFightMediator = {
+		url = "dm.gameplay.cooperateBoss.view.CooperateBossFightMediator",
+		name = "CooperateBossFightMediator",
+		type = "@C"
+	},
+	CooperateBossBattleEndMediator = {
+		url = "dm.gameplay.cooperateBoss.view.CooperateBossBattleEndMediator",
+		name = "CooperateBossBattleEndMediator",
+		type = "@C"
+	},
+	CooperateBossMainMediator = {
+		url = "dm.gameplay.cooperateBoss.view.CooperateBossMainMediator",
+		name = "CooperateBossMainMediator",
+		type = "@C"
+	},
+	CooperateBossTeamMediator = {
+		url = "dm.gameplay.cooperateBoss.view.CooperateBossTeamMediator",
+		name = "CooperateBossTeamMediator",
+		type = "@C"
+	},
+	CooperateBossInviteMediator = {
+		url = "dm.gameplay.cooperateBoss.view.CooperateBossInviteMediator",
+		name = "CooperateBossInviteMediator",
+		type = "@C"
+	},
+	CooperateBossBuyTimeMediator = {
+		url = "dm.gameplay.cooperateBoss.view.CooperateBossBuyTimeMediator",
+		name = "CooperateBossBuyTimeMediator",
 		type = "@C"
 	},
 	TestSceneMediator = {

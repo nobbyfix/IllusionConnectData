@@ -2422,15 +2422,26 @@ function scene_story07_3a.actions.start_story07_3a(_root, args)
 					modelId = "Model_HSheng",
 					id = "HSheng_speak",
 					rotationX = 0,
-					scale = 1.05,
+					scale = 0.75,
 					position = {
 						x = 0,
-						y = -330,
+						y = -260,
 						refpt = {
 							x = 0.75,
 							y = 0
 						}
 					}
+				}
+			end
+		}),
+		act({
+			action = "orbitCamera",
+			actor = __getnode__(_root, "HSheng_speak"),
+			args = function (_ctx)
+				return {
+					angleZ = 0,
+					time = 0,
+					deltaAngleZ = 180
 				}
 			end
 		}),
@@ -2483,15 +2494,26 @@ function scene_story07_3a.actions.start_story07_3a(_root, args)
 					modelId = "Model_FEMSi",
 					id = "FEMSi_speak",
 					rotationX = 0,
-					scale = 1.125,
+					scale = 0.72,
 					position = {
 						x = 0,
-						y = -380,
+						y = -305,
 						refpt = {
 							x = 0.35,
 							y = 0
 						}
 					}
+				}
+			end
+		}),
+		act({
+			action = "orbitCamera",
+			actor = __getnode__(_root, "FEMSi_speak"),
+			args = function (_ctx)
+				return {
+					angleZ = 0,
+					time = 0,
+					deltaAngleZ = 180
 				}
 			end
 		}),

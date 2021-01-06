@@ -199,6 +199,19 @@ function SystemMessage:parseContent()
 			env.award = RewardSystem:getName(self._params.award)
 		end
 
+		if self._params.bossConfId then
+			local roleModeID = ConfigReader:getDataByNameIdAndKey("CooperateBossMain", self._params.bossConfId, "RoleModel")
+			local roleModelConfig = ConfigReader:getRecordById("RoleModel", roleModeID)
+			local name = Strings:get(roleModelConfig.Name)
+			env.bossId = name
+			local bossId = self._params.bossId
+			env.bossConfId = self._params.bossLevel or 0
+		end
+
+		if self._params.name then
+			env.name = self._params.name.value
+		end
+
 		if self._params.heroname then
 			setHeroName(env, "heroname", self._params, "heroname")
 		end
@@ -307,7 +320,11 @@ function PlayerMessage:sync(data)
 
 	if data.content then
 		local content = xmlEscape(data.content)
-		content = string.format("<font face='asset/font/CustomFont_FZYH_R.TTF' size='18' color='#343434'>%s</font>", content)
+
+		if self:getType() ~= MessageType.kPlayer then
+			content = string.format("<font face='asset/font/CustomFont_FZYH_R.TTF' size='18' color='#343434'>%s</font>", content)
+		end
+
 		self._content = content
 	elseif data.contentId then
 		if type(data.contentId) ~= "table" then

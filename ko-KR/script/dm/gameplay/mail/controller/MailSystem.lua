@@ -186,3 +186,20 @@ end
 function MailSystem:resetMailsIds()
 	self:getMailModel():resetMailsIds()
 end
+
+function MailSystem:isNeedUpdateVersion(mailData)
+	if not mailData then
+		return false
+	end
+
+	if mailData:getMailType() == MailType.kVersion then
+		local baseVersion = app.pkgConfig.packJobId
+		local mailVersion = mailData:getVersion()
+
+		if baseVersion and mailVersion[device.platform] and baseVersion < mailVersion[device.platform] then
+			return true
+		end
+	end
+
+	return false
+end

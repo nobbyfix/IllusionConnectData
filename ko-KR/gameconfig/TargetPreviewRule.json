@@ -81,7 +81,7 @@
         "Function": "return MainTarget()"
     },
     "Target_FEMSi": {
-        "Function": "return MainTarget()"
+        "Function": "return GenInfo(EnemyAll(),Red,true)"
     },
     "Target_FTLEShi": {
         "Function": "return MainTarget()"
@@ -99,7 +99,7 @@
         "Function": "return GenInfo(EnemyAll(COL_OF(TARGET)),Red)"
     },
     "Target_HSheng": {
-        "Function": "return MainTarget()"
+        "Function": "return GenInfo(EnemyAll(),Red,true)"
     },
     "Target_JDCZhang": {
         "Function": "return MainTarget()"

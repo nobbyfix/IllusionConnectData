@@ -202,6 +202,9 @@ function TowerBuffChooseMediator:onBuffRuleClick()
 	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
 		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
 	}, {
-		rule = Rule
+		rule = Rule,
+		ruleReplaceInfo = {
+			time = TimeUtil:getSystemResetDate()
+		}
 	}))
 end

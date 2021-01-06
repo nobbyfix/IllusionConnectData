@@ -48,11 +48,21 @@ end
 function Mail:synchronizeModel(data, isOpen)
 	if #self._mailsList == 0 then
 		for id, _ in pairs(data) do
-			local mailBoxModel = MailItem:new()
+			if data[id].mailType and data[id].mailType == MailType.kVersion then
+				if data[id].version and data[id].version[device.platform] ~= 0 then
+					local mailBoxModel = MailItem:new()
 
-			mailBoxModel:synchronizeModel(data[id])
+					mailBoxModel:synchronizeModel(data[id])
 
-			self._mailsList[#self._mailsList + 1] = mailBoxModel
+					self._mailsList[#self._mailsList + 1] = mailBoxModel
+				end
+			else
+				local mailBoxModel = MailItem:new()
+
+				mailBoxModel:synchronizeModel(data[id])
+
+				self._mailsList[#self._mailsList + 1] = mailBoxModel
+			end
 		end
 
 		table.sort(self._mailsList, function (a, b)

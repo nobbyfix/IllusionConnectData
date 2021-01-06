@@ -145,3 +145,27 @@ function PushService:listenClubApplyAgreeEnd(callback)
 		end
 	end)
 end
+
+function PushService:listenCooperateBoss(code, callback)
+	self:addPushHandler(code, function (op, response)
+		if callback then
+			callback(code, response)
+		end
+	end)
+end
+
+function PushService:listenFriendLogin(callback)
+	self:addPushHandler(1110, function (op, response)
+		if callback then
+			callback(response)
+		end
+	end)
+end
+
+function PushService:listenFriendLogout(callback)
+	self:addPushHandler(1112, function (op, response)
+		if callback then
+			callback(response)
+		end
+	end)
+end

@@ -41,6 +41,9 @@ local muiscCfg = {
 	ActivityBlockMonsterShopView = {
 		noAutoPlay = true
 	},
+	ActivityBlockDetectiveView = {
+		noAutoPlay = true
+	},
 	ActivityBlockTaskView = {
 		noAutoPlay = true
 	},

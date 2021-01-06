@@ -4430,21 +4430,21 @@
         "Anger": {
             "a1": [
                 10,
-                400
+                750
             ],
-            "a2": 250,
-            "a3": 250
+            "a2": 320,
+            "a3": 150
         },
         "AngerBase": 1000.0,
         "AngerMax": 1000.0,
-        "AngerRate": 0.02,
+        "AngerRate": 0.0,
         "AtkRate": 1.0,
         "AtkWeaken": 0.0,
-        "AttackFactor": 1.0,
+        "AttackFactor": 1.04,
         "AwakePic": "",
-        "BaseAttack": 160.0,
-        "BaseDefence": 80.0,
-        "BaseHp": 400.0,
+        "BaseAttack": 204.0,
+        "BaseDefence": 60.0,
+        "BaseHp": 864.0,
         "BaseQualityAttr": "SSR_10_Support",
         "BaseStar": 3,
         "BasicPower": 1600,
@@ -4455,21 +4455,21 @@
         "BlockRate": 0.0,
         "BlockStrg": 0.0,
         "CVName": "FEMSi_CVName",
-        "Cost": 8,
+        "Cost": 15,
         "CounterRate": 0.0,
         "CritRate": 0.0,
         "CritStrg": 0.0,
         "DefRate": 1.0,
         "DefWeaken": 0.0,
-        "DefenceFactor": 0.8,
+        "DefenceFactor": 1.0,
         "Desc": "HeroBase_Desc_FEMSi",
         "DoubleRate": 0.0,
         "EffectRate": 0.0,
         "EffectStrg": 0.0,
         "EnterCD": 1.0,
         "Flags": [
-            "Hero",
-            "FEMSi"
+            "FEMSi",
+            "quanti"
         ],
         "GainAnim": "",
         "HeadTouchDeviation": [
@@ -4478,26 +4478,15 @@
         ],
         "HeroShowIntro": "HeroBase_Intro_FEMSi",
         "HeroStoryMap": "",
-        "HpFactor": 0.8,
+        "HpFactor": 1.15,
         "HurtRate": 0.0,
-        "IfHidden": 0,
-        "InnerAttr": [
-            "Inner_FEMSi_1",
-            "Inner_FEMSi_2",
-            "Inner_FEMSi_3",
-            "Inner_FEMSi_4",
-            "Inner_FEMSi_5",
-            "Inner_FEMSi_6",
-            "Inner_FEMSi_7",
-            "Inner_FEMSi_8",
-            "Inner_FEMSi_9",
-            "Inner_FEMSi_10"
-        ],
+        "IfHidden": 1,
+        "InnerAttr": [],
         "ItemId": "IHF_FEMSi",
         "KeyPassiveSkill": "",
         "LevelUpFactor": 1.0,
         "MVPText": "MVPText_FEMSi",
-        "MasterRage": 90,
+        "MasterRage": 144,
         "MaxStar": 6,
         "Name": "HeroBase_Name_FEMSi",
         "NormalSkill": "Hero_Normal_FEMSi",
@@ -4507,16 +4496,7 @@
         "ProudSkill": "Hero_Proud_FEMSi",
         "Rareity": 14,
         "Reflection": 0.0,
-        "RelationList": [
-            "Relation_FEMSi_1",
-            "Relation_FEMSi_2",
-            "Relation_FEMSi_3",
-            "Relation_FEMSi_4",
-            "Relation_FEMSi_5",
-            "Relation_FEMSi_6",
-            "Relation_FEMSi_7",
-            "Relation_FEMSi_8"
-        ],
+        "RelationList": [],
         "RoleModel": "Model_FEMSi",
         "SVPText": "SVPText_FEMSi",
         "Sex": 0,
@@ -4524,51 +4504,81 @@
         "SkillCost": {
             "BattlePassiveSkill": {
                 "amount": [
-                    6,
-                    12,
+                    3,
+                    7,
+                    10,
+                    14,
                     18,
-                    24,
-                    30,
-                    36,
-                    42,
-                    48,
-                    54,
-                    60
+                    21,
+                    25,
+                    28,
+                    32,
+                    36
                 ],
-                "code": "ISU_Defense"
+                "code": "ISU_Attack"
             },
             "NormalSkill": {
                 "amount": [
-                    5,
-                    10,
+                    3,
+                    6,
+                    9,
+                    12,
                     15,
-                    20,
-                    25,
-                    30,
-                    35,
-                    40,
-                    45,
-                    50
+                    18,
+                    21,
+                    24,
+                    27,
+                    30
                 ],
-                "code": "ISU_Defense"
+                "code": "ISU_Attack"
             },
             "PassiveSkill1": {
                 "amount": [
-                    6,
-                    12,
+                    3,
+                    7,
+                    10,
+                    14,
                     18,
-                    24,
-                    30,
-                    36,
-                    42,
-                    48,
-                    54,
-                    60
+                    21,
+                    25,
+                    28,
+                    32,
+                    36
                 ],
-                "code": "ISU_Defense"
+                "code": "ISU_Attack"
             },
             "PassiveSkill2": {
                 "amount": [
+                    3,
+                    7,
+                    10,
+                    14,
+                    18,
+                    21,
+                    25,
+                    28,
+                    32,
+                    36
+                ],
+                "code": "ISU_Attack"
+            },
+            "ProudSkill": {
+                "amount": [
+                    4,
+                    9,
+                    13,
+                    18,
+                    22,
+                    27,
+                    31,
+                    36,
+                    40,
+                    45
+                ],
+                "code": "ISU_Attack"
+            },
+            "UniqueSkill": {
+                "amount": [
                     6,
                     12,
                     18,
@@ -4580,72 +4590,48 @@
                     54,
                     60
                 ],
-                "code": "ISU_Defense"
-            },
-            "ProudSkill": {
-                "amount": [
-                    7,
-                    15,
-                    22,
-                    30,
-                    36,
-                    45,
-                    52,
-                    60,
-                    66,
-                    75
-                ],
-                "code": "ISU_Defense"
-            },
-            "UniqueSkill": {
-                "amount": [
-                    10,
-                    20,
-                    30,
-                    40,
-                    50,
-                    60,
-                    70,
-                    80,
-                    90,
-                    100
-                ],
-                "code": "ISU_Defense"
+                "code": "ISU_Attack"
             }
         },
         "SkillRate": 0.15,
-        "Soul": [
-            "HeroSoul_FEMSi_1",
-            "HeroSoul_FEMSi_2",
-            "HeroSoul_FEMSi_3"
-        ],
+        "Soul": [],
         "SoundList": [
             "Voice_FEMSi_01",
-            "Voice_FEMSi_02",
-            "Voice_FEMSi_03",
-            "Voice_FEMSi_04",
-            "Voice_FEMSi_05",
-            "Voice_FEMSi_06",
+            "Voice_FEMSi_35",
+            "Voice_FEMSi_40_1",
+            "Voice_FEMSi_40_2",
+            "Voice_FEMSi_40_3",
+            "Voice_FEMSi_37",
+            "Voice_FEMSi_38",
+            "Voice_FEMSi_39",
+            "Voice_FEMSi_47",
+            "Voice_FEMSi_48",
+            "Voice_FEMSi_50",
+            "Voice_FEMSi_51",
+            "Voice_FEMSi_52",
+            "Voice_FEMSi_53",
+            "Voice_FEMSi_54",
+            "Voice_FEMSi_55",
+            "Voice_FEMSi_56",
+            "Voice_FEMSi_57",
+            "Voice_FEMSi_60",
             "Voice_FEMSi_07",
             "Voice_FEMSi_08",
             "Voice_FEMSi_09",
+            "Voice_FEMSi_58",
+            "Voice_FEMSi_59",
             "Voice_FEMSi_10",
             "Voice_FEMSi_11",
-            "Voice_FEMSi_12",
-            "Voice_FEMSi_13",
             "Voice_FEMSi_14",
             "Voice_FEMSi_15",
             "Voice_FEMSi_16",
+            "Voice_FEMSi_21",
             "Voice_FEMSi_17",
             "Voice_FEMSi_18",
+            "Voice_FEMSi_34",
             "Voice_FEMSi_19",
-            "Voice_FEMSi_20",
-            "Voice_FEMSi_21",
-            "Voice_FEMSi_22_1",
-            "Voice_FEMSi_22_2",
-            "Voice_FEMSi_22_3",
-            "Voice_FEMSi_23",
-            "Voice_FEMSi_24",
+            "Voice_FEMSi_63",
+            "Voice_FEMSi_61",
             "Voice_FEMSi_25",
             "Voice_FEMSi_26",
             "Voice_FEMSi_27",
@@ -4653,16 +4639,15 @@
             "Voice_FEMSi_29",
             "Voice_FEMSi_30",
             "Voice_FEMSi_31",
-            "Voice_FEMSi_32",
-            "Voice_FEMSi_33",
-            "Voice_FEMSi_34"
+            "Voice_FEMSi_32"
         ],
         "Speed": 50,
         "StarId": "FEMSi_1",
         "SurfaceList": [
-            "Surface_FEMSi_1"
+            "Surface_FEMSi_1",
+            "Surface_FEMSi_2"
         ],
-        "TeamSpecialVoice": "",
+        "TeamSpecialVoice": {},
         "Transform": "",
         "Type": "Support",
         "UnblockRate": 0.0,
@@ -5972,23 +5957,23 @@
         "Anger": {
             "a1": [
                 10,
-                400
+                750
             ],
-            "a2": 250,
-            "a3": 250
+            "a2": 320,
+            "a3": 150
         },
         "AngerBase": 1000.0,
         "AngerMax": 1000.0,
-        "AngerRate": 0.02,
+        "AngerRate": 0.0,
         "AtkRate": 1.0,
         "AtkWeaken": 0.0,
-        "AttackFactor": 1.0,
+        "AttackFactor": 1.04,
         "AwakePic": "",
-        "BaseAttack": 165.0,
+        "BaseAttack": 192.0,
         "BaseDefence": 60.0,
-        "BaseHp": 525.0,
-        "BaseQualityAttr": "SR_10_Attack",
-        "BaseStar": 2,
+        "BaseHp": 821.0,
+        "BaseQualityAttr": "SSR_10_Support",
+        "BaseStar": 3,
         "BasicPower": 1600,
         "BattlePassiveSkill": "Hero_PBattle_HSheng",
         "BattlePassiveType": "PBuff",
@@ -5997,7 +5982,7 @@
         "BlockRate": 0.0,
         "BlockStrg": 0.0,
         "CVName": "HSheng_CVName",
-        "Cost": 30,
+        "Cost": 13,
         "CounterRate": 0.0,
         "CritRate": 0.0,
         "CritStrg": 0.0,
@@ -6010,8 +5995,8 @@
         "EffectStrg": 0.0,
         "EnterCD": 1.0,
         "Flags": [
-            "Hero",
-            "HSheng"
+            "HSheng",
+            "quanti"
         ],
         "GainAnim": "",
         "HeadTouchDeviation": [
@@ -6020,45 +6005,25 @@
         ],
         "HeroShowIntro": "HeroBase_Intro_HSheng",
         "HeroStoryMap": "",
-        "HpFactor": 1.0,
+        "HpFactor": 1.15,
         "HurtRate": 0.0,
-        "IfHidden": 0,
-        "InnerAttr": [
-            "Inner_HSheng_1",
-            "Inner_HSheng_2",
-            "Inner_HSheng_3",
-            "Inner_HSheng_4",
-            "Inner_HSheng_5",
-            "Inner_HSheng_6",
-            "Inner_HSheng_7",
-            "Inner_HSheng_8",
-            "Inner_HSheng_9",
-            "Inner_HSheng_10"
-        ],
+        "IfHidden": 1,
+        "InnerAttr": [],
         "ItemId": "IHF_HSheng",
         "KeyPassiveSkill": "",
         "LevelUpFactor": 1.0,
         "MVPText": "MVPText_HSheng",
-        "MasterRage": 180,
-        "MaxStar": 5,
+        "MasterRage": 144,
+        "MaxStar": 6,
         "Name": "HeroBase_Name_HSheng",
         "NormalSkill": "Hero_Normal_HSheng",
         "Party": "WNSXJ",
         "PassiveCondition": "",
         "Position": "HeroBase_Position_HSheng",
         "ProudSkill": "Hero_Proud_HSheng",
-        "Rareity": 13,
+        "Rareity": 14,
         "Reflection": 0.0,
-        "RelationList": [
-            "Relation_HSheng_1",
-            "Relation_HSheng_2",
-            "Relation_HSheng_3",
-            "Relation_HSheng_4",
-            "Relation_HSheng_5",
-            "Relation_HSheng_6",
-            "Relation_HSheng_7",
-            "Relation_HSheng_8"
-        ],
+        "RelationList": [],
         "RoleModel": "Model_HSheng",
         "SVPText": "SVPText_HSheng",
         "Sex": 0,
@@ -6066,65 +6031,80 @@
         "SkillCost": {
             "BattlePassiveSkill": {
                 "amount": [
-                    4,
+                    3,
+                    7,
                     10,
-                    15,
-                    20,
-                    24,
+                    14,
+                    18,
+                    21,
+                    25,
                     28,
-                    33,
-                    38,
-                    43,
-                    48
+                    32,
+                    36
                 ],
-                "code": "ISU_Defense"
+                "code": "ISU_Attack"
             },
             "NormalSkill": {
                 "amount": [
-                    4,
-                    8,
+                    3,
+                    6,
+                    9,
                     12,
-                    16,
-                    20,
+                    15,
+                    18,
+                    21,
                     24,
-                    28,
-                    32,
-                    36,
-                    40
+                    27,
+                    30
                 ],
-                "code": "ISU_Defense"
+                "code": "ISU_Attack"
             },
             "PassiveSkill1": {
                 "amount": [
-                    4,
+                    3,
+                    7,
                     10,
-                    15,
-                    20,
-                    24,
+                    14,
+                    18,
+                    21,
+                    25,
                     28,
-                    33,
-                    38,
-                    43,
-                    48
+                    32,
+                    36
                 ],
-                "code": "ISU_Defense"
+                "code": "ISU_Attack"
             },
             "PassiveSkill2": {
                 "amount": [
-                    4,
+                    3,
+                    7,
                     10,
-                    15,
-                    20,
-                    24,
+                    14,
+                    18,
+                    21,
+                    25,
                     28,
-                    33,
-                    38,
-                    43,
-                    48
+                    32,
+                    36
                 ],
-                "code": "ISU_Defense"
+                "code": "ISU_Attack"
             },
             "ProudSkill": {
+                "amount": [
+                    4,
+                    9,
+                    13,
+                    18,
+                    22,
+                    27,
+                    31,
+                    36,
+                    40,
+                    45
+                ],
+                "code": "ISU_Attack"
+            },
+            "UniqueSkill": {
                 "amount": [
                     6,
                     12,
@@ -6137,59 +6117,48 @@
                     54,
                     60
                 ],
-                "code": "ISU_Defense"
-            },
-            "UniqueSkill": {
-                "amount": [
-                    8,
-                    16,
-                    24,
-                    32,
-                    40,
-                    48,
-                    56,
-                    64,
-                    72,
-                    80
-                ],
-                "code": "ISU_Defense"
+                "code": "ISU_Attack"
             }
         },
         "SkillRate": 0.15,
-        "Soul": [
-            "HeroSoul_HSheng_1",
-            "HeroSoul_HSheng_2",
-            "HeroSoul_HSheng_3"
-        ],
+        "Soul": [],
         "SoundList": [
             "Voice_HSheng_01",
-            "Voice_HSheng_02",
-            "Voice_HSheng_03",
-            "Voice_HSheng_04",
-            "Voice_HSheng_05",
-            "Voice_HSheng_06",
-            "Voice_HSheng_06_1",
-            "Voice_HSheng_06_2",
+            "Voice_HSheng_35",
+            "Voice_HSheng_40_1",
+            "Voice_HSheng_40_2",
+            "Voice_HSheng_40_3",
+            "Voice_HSheng_37",
+            "Voice_HSheng_38",
+            "Voice_HSheng_39",
+            "Voice_HSheng_47",
+            "Voice_HSheng_48",
+            "Voice_HSheng_50",
+            "Voice_HSheng_51",
+            "Voice_HSheng_52",
+            "Voice_HSheng_53",
+            "Voice_HSheng_54",
+            "Voice_HSheng_55",
+            "Voice_HSheng_56",
+            "Voice_HSheng_57",
+            "Voice_HSheng_60",
             "Voice_HSheng_07",
             "Voice_HSheng_08",
             "Voice_HSheng_09",
+            "Voice_HSheng_58",
+            "Voice_HSheng_59",
             "Voice_HSheng_10",
             "Voice_HSheng_11",
-            "Voice_HSheng_12",
-            "Voice_HSheng_13",
             "Voice_HSheng_14",
             "Voice_HSheng_15",
             "Voice_HSheng_16",
+            "Voice_HSheng_21",
             "Voice_HSheng_17",
             "Voice_HSheng_18",
+            "Voice_HSheng_34",
             "Voice_HSheng_19",
-            "Voice_HSheng_20",
-            "Voice_HSheng_21",
-            "Voice_HSheng_22_1",
-            "Voice_HSheng_22_2",
-            "Voice_HSheng_22_3",
-            "Voice_HSheng_23",
-            "Voice_HSheng_24",
+            "Voice_HSheng_63",
+            "Voice_HSheng_61",
             "Voice_HSheng_25",
             "Voice_HSheng_26",
             "Voice_HSheng_27",
@@ -6197,20 +6166,17 @@
             "Voice_HSheng_29",
             "Voice_HSheng_30",
             "Voice_HSheng_31",
-            "Voice_HSheng_32",
-            "Voice_HSheng_33",
-            "Voice_HSheng_34"
+            "Voice_HSheng_32"
         ],
         "Speed": 50,
         "StarId": "HSheng_1",
         "SurfaceList": [
-            "Surface_HSheng_1"
+            "Surface_HSheng_1",
+            "Surface_HSheng_2"
         ],
-        "TeamSpecialVoice": {
-            "FEMSi": "Voice_HSheng_33"
-        },
+        "TeamSpecialVoice": {},
         "Transform": "",
-        "Type": "Attack",
+        "Type": "Support",
         "UnblockRate": 0.0,
         "UncritRate": 0.0,
         "UndeadRate": 0.0,
@@ -17065,7 +17031,8 @@
         "Speed": 50,
         "StarId": "YLSBai_1",
         "SurfaceList": [
-            "Surface_YLSBai_1"
+            "Surface_YLSBai_1",
+            "Surface_YLSBai_2"
         ],
         "TeamSpecialVoice": {
             "JNLong": "Voice_YLSBai_33"

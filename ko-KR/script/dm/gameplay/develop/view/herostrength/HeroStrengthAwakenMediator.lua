@@ -371,7 +371,6 @@ function HeroStrengthAwakenMediator:refreshAwakeRole()
 				}
 				local num = math.random(1, 3)
 
-				print("self._roleSpine:playAnimation >>>>>>>>>>. " .. names[num])
 				self._roleSpine:playAnimation(0, names[num], true)
 			end
 		end)

@@ -86,42 +86,36 @@ function BuildingDecorateComponent:refreshBuildingList(isAllRoom)
 		end
 	end
 
-	local prevTime = app.getTime()
-	local actionTag = math.floor(prevTime % 100000)
-
 	if #scheduleList > 0 then
-		local index = 1
-		local action = schedule(self:getView(), function ()
-			local function stepFunc()
-				if index > #scheduleList then
-					self:getView():stopActionByTag(actionTag)
+		local loop = cc.Node:create()
 
-					if self._endCallback then
-						self._endCallback()
+		self:getView():addChild(loop)
 
-						self._endCallback = nil
-					end
+		local step_index = 1
+		local stepFunc = nil
 
-					return false
+		function stepFunc()
+			if step_index > #scheduleList then
+				loop:stopAllActions()
+
+				if self._endCallback then
+					self._endCallback()
+
+					self._endCallback = nil
 				end
 
-				local building = scheduleList[index]
-				index = index + 1
-
-				if not DisposableObject:isDisposed(building) and building._view then
-					building:enterWithData()
-				end
-
-				return true
+				return
 			end
 
-			while stepFunc() and app.getTime() - prevTime < 0.03333333333333333 do
+			local building = scheduleList[step_index]
+			step_index = step_index + 1
+
+			if not DisposableObject:isDisposed(building) and building._view then
+				building:enterWithData()
 			end
+		end
 
-			prevTime = app.getTime()
-		end, 0)
-
-		action:setTag(actionTag)
+		loop:runAction(cc.RepeatForever:create(cc.Sequence:create(cc.DelayTime:create(0.03333333333333333), cc.CallFunc:create(stepFunc))))
 
 		return
 	end
@@ -468,36 +462,30 @@ function BuildingDecorateComponent:refreshHeroList(sync)
 		end
 	end
 
-	local prevTime = app.getTime()
-	local actionTag = math.floor(prevTime % 10000)
-
 	if #scheduleList > 0 then
-		local index = 1
-		local action = schedule(self:getView(), function ()
-			local function stepFunc()
-				if index > #scheduleList then
-					self:getView():stopActionByTag(actionTag)
+		local loop = cc.Node:create()
 
-					return false
-				end
+		self:getView():addChild(loop)
 
-				local buildHero = scheduleList[index]
-				index = index + 1
+		local step_index = 1
+		local stepFunc = nil
 
-				if not DisposableObject:isDisposed(buildHero) and buildHero._view then
-					buildHero:enterWithData()
-				end
+		function stepFunc()
+			if step_index > #scheduleList then
+				loop:stopAllActions()
 
-				return true
+				return
 			end
 
-			while stepFunc() and app.getTime() - prevTime < 0.03333333333333333 do
+			local building = scheduleList[step_index]
+			step_index = step_index + 1
+
+			if not DisposableObject:isDisposed(building) and building._view then
+				building:enterWithData()
 			end
+		end
 
-			prevTime = app.getTime()
-		end, 0)
-
-		action:setTag(actionTag)
+		loop:runAction(cc.RepeatForever:create(cc.Sequence:create(cc.DelayTime:create(0.03333333333333333), cc.CallFunc:create(stepFunc))))
 	end
 end
 

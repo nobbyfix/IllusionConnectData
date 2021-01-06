@@ -31,6 +31,6 @@ function BuffTrap:trigger(target, battleContext, trapObject)
 			}
 		end
 
-		buffSystem:applyBuffOnTarget(target, self._buffObject, self._groupConfig)
+		buffSystem:applyBuffOnTarget(target, buffObject, groupConfig)
 	end
 end

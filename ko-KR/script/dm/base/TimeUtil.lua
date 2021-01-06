@@ -238,7 +238,7 @@ function TimeUtil:timeByRemoteDate(date)
 
 		return os.time(date) + diffTime
 	else
-		return GameServerAgent:getInstance():remoteTimestamp()
+		return DmGame:getInstance()._injector:getInstance("GameServerAgent"):remoteTimestamp()
 	end
 end
 

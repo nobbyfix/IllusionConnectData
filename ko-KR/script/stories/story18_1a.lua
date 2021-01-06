@@ -806,10 +806,10 @@ function scene_story18_1a.actions.start_story18_1a(_root, args)
 					modelId = "Model_FEMSi",
 					id = "FEMSi_speak",
 					rotationX = 0,
-					scale = 1.125,
+					scale = 0.72,
 					position = {
 						x = 0,
-						y = -380,
+						y = -305,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -1203,10 +1203,10 @@ function scene_story18_1a.actions.start_story18_1a(_root, args)
 					modelId = "Model_HSheng",
 					id = "HSheng_speak",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.75,
 					position = {
 						x = 0,
-						y = -330,
+						y = -260,
 						refpt = {
 							x = 0.75,
 							y = 0

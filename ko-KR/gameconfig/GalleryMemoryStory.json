@@ -543,5 +543,36 @@
         "Type": "STORYLIST",
         "UnlockDesc": "BlockPoint_S16S01_Name",
         "UnlockStory": ""
+    },
+    "Memory_Wxh_List": {
+        "ActiviType": "",
+        "Condition": "",
+        "Listpicture": "s_main_event_wxh_01",
+        "Name": "ActivityBlock_WuXiuHui_Support_Name",
+        "Num": 7,
+        "Story": [
+            {
+                "id": [
+                    "Memory_Wxh_1",
+                    "Memory_Wxh_2",
+                    "Memory_Wxh_3",
+                    "Memory_Wxh_4",
+                    "Memory_Wxh_5"
+                ],
+                "type": "NORMAL"
+            },
+            {
+                "id": [
+                    "Memory_Wxh_6",
+                    "Memory_Wxh_7",
+                    "Memory_Wxh_8",
+                    "Memory_Wxh_9"
+                ],
+                "type": "ELITE"
+            }
+        ],
+        "Type": "ACTIVILIST",
+        "UnlockDesc": "",
+        "UnlockStory": ""
     }
 }

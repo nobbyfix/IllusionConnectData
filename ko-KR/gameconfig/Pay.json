@@ -1,4 +1,19 @@
 {
+    "Pay_BattlePass_128": {
+        "ADSymbol": "",
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_BattlePass_128_Name",
+        "Price": 23000.0,
+        "ProductId": "illusion.obt.0059",
+        "SDKSource": [
+            "changyouKR_android",
+            "changyouKR_ios",
+            "changyouKR_onestore_android"
+        ],
+        "Symbol": "₩ ",
+        "VIPExp": 128
+    },
     "Pay_BattlePass_20200914_128": {
         "ADSymbol": "KRW",
         "IsContinue": 0,
@@ -124,6 +139,36 @@
         "IsContinue": 0,
         "MapId": "",
         "Name": "Pay_BattlePass_20200914_68_Name",
+        "Price": 12000.0,
+        "ProductId": "illusion.obt.0058",
+        "SDKSource": [
+            "changyouKR_android",
+            "changyouKR_ios",
+            "changyouKR_onestore_android"
+        ],
+        "Symbol": "₩ ",
+        "VIPExp": 68
+    },
+    "Pay_BattlePass_60": {
+        "ADSymbol": "",
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_BattlePass_60_Name",
+        "Price": 11000.0,
+        "ProductId": "illusion.obt.0060",
+        "SDKSource": [
+            "changyouKR_android",
+            "changyouKR_ios",
+            "changyouKR_onestore_android"
+        ],
+        "Symbol": "₩ ",
+        "VIPExp": 60
+    },
+    "Pay_BattlePass_68": {
+        "ADSymbol": "",
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_BattlePass_68_Name",
         "Price": 12000.0,
         "ProductId": "illusion.obt.0058",
         "SDKSource": [
@@ -298,6 +343,201 @@
         ],
         "Symbol": "₩ ",
         "VIPExp": 6
+    },
+    "Pay_PackageShop_20210106_10": {
+        "ADSymbol": "KRW",
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_20210106_10_Name",
+        "Price": 119000.0,
+        "ProductId": "illusion.obt.0188",
+        "SDKSource": [
+            "changyouKR_android",
+            "changyouKR_ios",
+            "changyouKR_onestore_android"
+        ],
+        "Symbol": "₩ ",
+        "VIPExp": 648
+    },
+    "Pay_PackageShop_20210106_3": {
+        "ADSymbol": "KRW",
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_20210106_3_Name",
+        "Price": 5900.0,
+        "ProductId": "illusion.obt.0176",
+        "SDKSource": [
+            "changyouKR_android",
+            "changyouKR_ios",
+            "changyouKR_onestore_android"
+        ],
+        "Symbol": "₩ ",
+        "VIPExp": 30
+    },
+    "Pay_PackageShop_20210106_4": {
+        "ADSymbol": "KRW",
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_20210106_4_Name",
+        "Price": 25000.0,
+        "ProductId": "illusion.obt.0177",
+        "SDKSource": [
+            "changyouKR_android",
+            "changyouKR_ios",
+            "changyouKR_onestore_android"
+        ],
+        "Symbol": "₩ ",
+        "VIPExp": 128
+    },
+    "Pay_PackageShop_20210106_5": {
+        "ADSymbol": "KRW",
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_20210106_5_Name",
+        "Price": 65000.0,
+        "ProductId": "illusion.obt.0178",
+        "SDKSource": [
+            "changyouKR_android",
+            "changyouKR_ios",
+            "changyouKR_onestore_android"
+        ],
+        "Symbol": "₩ ",
+        "VIPExp": 328
+    },
+    "Pay_PackageShop_20210106_6": {
+        "ADSymbol": "KRW",
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_20210106_6_Name",
+        "Price": 119000.0,
+        "ProductId": "illusion.obt.0179",
+        "SDKSource": [
+            "changyouKR_android",
+            "changyouKR_ios",
+            "changyouKR_onestore_android"
+        ],
+        "Symbol": "₩ ",
+        "VIPExp": 648
+    },
+    "Pay_PackageShop_20210106_7": {
+        "ADSymbol": "KRW",
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_20210106_7_Name",
+        "Price": 19000.0,
+        "ProductId": "illusion.obt.0184",
+        "SDKSource": [
+            "changyouKR_android",
+            "changyouKR_ios",
+            "changyouKR_onestore_android"
+        ],
+        "Symbol": "₩ ",
+        "VIPExp": 98
+    },
+    "Pay_PackageShop_20210106_8": {
+        "ADSymbol": "KRW",
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_20210106_8_Name",
+        "Price": 19000.0,
+        "ProductId": "illusion.obt.0185",
+        "SDKSource": [
+            "changyouKR_android",
+            "changyouKR_ios",
+            "changyouKR_onestore_android"
+        ],
+        "Symbol": "₩ ",
+        "VIPExp": 98
+    },
+    "Pay_PackageShop_20210106_9": {
+        "ADSymbol": "KRW",
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_20210106_9_Name",
+        "Price": 65000.0,
+        "ProductId": "illusion.obt.0187",
+        "SDKSource": [
+            "changyouKR_android",
+            "changyouKR_ios",
+            "changyouKR_onestore_android"
+        ],
+        "Symbol": "₩ ",
+        "VIPExp": 328
+    },
+    "Pay_PackageShop_20210115_3": {
+        "ADSymbol": "KRW",
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_20210115_3_Name",
+        "Price": 5900.0,
+        "ProductId": "illusion.obt.0180",
+        "SDKSource": [
+            "changyouKR_android",
+            "changyouKR_ios",
+            "changyouKR_onestore_android"
+        ],
+        "Symbol": "₩ ",
+        "VIPExp": 30
+    },
+    "Pay_PackageShop_20210115_4": {
+        "ADSymbol": "KRW",
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_20210115_4_Name",
+        "Price": 25000.0,
+        "ProductId": "illusion.obt.0181",
+        "SDKSource": [
+            "changyouKR_android",
+            "changyouKR_ios",
+            "changyouKR_onestore_android"
+        ],
+        "Symbol": "₩ ",
+        "VIPExp": 128
+    },
+    "Pay_PackageShop_20210115_5": {
+        "ADSymbol": "KRW",
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_20210115_5_Name",
+        "Price": 65000.0,
+        "ProductId": "illusion.obt.0182",
+        "SDKSource": [
+            "changyouKR_android",
+            "changyouKR_ios",
+            "changyouKR_onestore_android"
+        ],
+        "Symbol": "₩ ",
+        "VIPExp": 328
+    },
+    "Pay_PackageShop_20210115_6": {
+        "ADSymbol": "KRW",
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_20210115_6_Name",
+        "Price": 119000.0,
+        "ProductId": "illusion.obt.0183",
+        "SDKSource": [
+            "changyouKR_android",
+            "changyouKR_ios",
+            "changyouKR_onestore_android"
+        ],
+        "Symbol": "₩ ",
+        "VIPExp": 648
+    },
+    "Pay_PackageShop_20210115_7": {
+        "ADSymbol": "KRW",
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_20210115_7_Name",
+        "Price": 19000.0,
+        "ProductId": "illusion.obt.0185",
+        "SDKSource": [
+            "changyouKR_android",
+            "changyouKR_ios",
+            "changyouKR_onestore_android"
+        ],
+        "Symbol": "₩ ",
+        "VIPExp": 98
     },
     "Pay_PackageShop_3": {
         "ADSymbol": "KRW",

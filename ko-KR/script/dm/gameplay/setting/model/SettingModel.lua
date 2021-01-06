@@ -143,6 +143,7 @@ SettingBattleTypes = {
 	kClubStage = "club_battle",
 	kDreamStage = "dream_battle",
 	kExplore = "explore_battle",
+	kCooperateBoss = "copper_battle",
 	kNormalStage = "normal_stage",
 	kPetRace = "hegemony_battle",
 	kHeroStory = "herostory_battle",
@@ -175,7 +176,8 @@ local BattleSettingSpeedKeys = {
 	[SettingBattleTypes.kCrusade] = "crusade_challenge_setting_speed",
 	[SettingBattleTypes.kActstage] = "actstage_battle_setting_speed",
 	[SettingBattleTypes.kClubStage] = "clubstage_battle_setting_speed",
-	[SettingBattleTypes.kDreamStage] = "dreamstage_battle_setting_speed"
+	[SettingBattleTypes.kDreamStage] = "dreamstage_battle_setting_speed",
+	[SettingBattleTypes.kCooperateBoss] = "copper_battle_setting_speed"
 }
 local BattleSettingIsAutoKeys = {
 	[SettingBattleTypes.kNormalStage] = "normal_stage_setting_auto",
@@ -199,7 +201,8 @@ local BattleSettingIsAutoKeys = {
 	[SettingBattleTypes.kCrusade] = "crusade_challenge_setting_auto",
 	[SettingBattleTypes.kActstage] = "actstage_battle_setting_auto",
 	[SettingBattleTypes.kClubStage] = "clubstage_battle_setting_auto",
-	[SettingBattleTypes.kDreamStage] = "dreamstage_battle_setting_auto"
+	[SettingBattleTypes.kDreamStage] = "dreamstage_battle_setting_auto",
+	[SettingBattleTypes.kCooperateBoss] = "copper_battle_setting_auto"
 }
 
 function SettingModel:setHpShowSetting(hpshow)

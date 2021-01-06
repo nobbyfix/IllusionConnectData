@@ -953,7 +953,7 @@ function TowerTeamMediator:onClickBack()
 	self:dismiss()
 end
 
-function TowerChooseRoleMediator:onClickRule()
+function TowerTeamMediator:onClickRule()
 	local Rule = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Tower_1_RuleText", "content")
 	local view = self:getInjector():getInstance("ExplorePointRule")
 

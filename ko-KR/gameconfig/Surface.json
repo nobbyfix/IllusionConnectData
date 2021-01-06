@@ -1862,11 +1862,11 @@
         "ActivityId": "",
         "ClickAction": [
             {
-                "action": "touch3",
+                "action": "touch1",
                 "part": "head",
                 "point": [
-                    0,
-                    0
+                    -11,
+                    1063
                 ],
                 "range": [
                     128,
@@ -1877,8 +1877,63 @@
                 "action": "touch2",
                 "part": "body",
                 "point": [
+                    250,
+                    885
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
                     0,
                     0
+                ]
+            }
+        ],
+        "Desc": "Surface_FEMSi_1_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "1",
+        "GoodsId": "",
+        "Hero": "FEMSi",
+        "Link": "",
+        "Model": "Model_FEMSi",
+        "Name": "Surface_FEMSi_1_Name",
+        "NotGetUnlook": "",
+        "Quality": 2,
+        "RepeatReward": "",
+        "ShopID": "",
+        "Sort": 1,
+        "Type": "",
+        "Unlook": 1
+    },
+    "Surface_FEMSi_2": {
+        "ActivityId": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    39,
+                    958
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch2",
+                "part": "body",
+                "point": [
+                    51,
+                    787
                 ],
                 "range": [
                     128,
@@ -1897,20 +1952,20 @@
                 ]
             }
         ],
-        "Desc": "Surface_FEMSi_1_Desc",
-        "GainDesc": "",
-        "GainShortDesc": "",
-        "GoodsId": "",
+        "Desc": "Surface_FEMSi_2_Desc",
+        "GainDesc": "Surface_FEMSi_Detective_GainDesc",
+        "GainShortDesc": "Surface_FEMSi_GainShort",
+        "GoodsId": "ShopSurface_Surface_FEMSi_2",
         "Hero": "FEMSi",
         "Link": "",
-        "Model": "Model_FEMSi",
-        "Name": "Surface_FEMSi_1_Name",
+        "Model": "Model_FEMSi_classic",
+        "Name": "Surface_FEMSi_2_Name",
         "NotGetUnlook": "",
-        "Quality": 2,
-        "RepeatReward": "",
-        "ShopID": "",
-        "Sort": 1,
-        "Type": 1,
+        "Quality": 4,
+        "RepeatReward": 40,
+        "ShopID": "Shop_Surface",
+        "Sort": 2,
+        "Type": 3,
         "Unlook": 1
     },
     "Surface_FTLEShi_1": {
@@ -2247,11 +2302,11 @@
         "ActivityId": "",
         "ClickAction": [
             {
-                "action": "touch3",
+                "action": "touch1",
                 "part": "head",
                 "point": [
-                    0,
-                    0
+                    63,
+                    959
                 ],
                 "range": [
                     128,
@@ -2262,8 +2317,63 @@
                 "action": "touch2",
                 "part": "body",
                 "point": [
+                    -316,
+                    822
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
                     0,
                     0
+                ]
+            }
+        ],
+        "Desc": "Surface_HSheng_1_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "1",
+        "GoodsId": "",
+        "Hero": "HSheng",
+        "Link": "",
+        "Model": "Model_HSheng",
+        "Name": "Surface_HSheng_1_Name",
+        "NotGetUnlook": "",
+        "Quality": 2,
+        "RepeatReward": "",
+        "ShopID": "",
+        "Sort": 1,
+        "Type": 1,
+        "Unlook": 1
+    },
+    "Surface_HSheng_2": {
+        "ActivityId": "",
+        "ClickAction": [
+            {
+                "action": "touch1",
+                "part": "head",
+                "point": [
+                    -62,
+                    814
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch2",
+                "part": "body",
+                "point": [
+                    -123,
+                    748
                 ],
                 "range": [
                     128,
@@ -2282,20 +2392,20 @@
                 ]
             }
         ],
-        "Desc": "Surface_HSheng_1_Desc",
-        "GainDesc": "",
-        "GainShortDesc": "",
+        "Desc": "Surface_HSheng_2_Desc",
+        "GainDesc": "Surface_HSheng_Detective_GainDesc",
+        "GainShortDesc": "Surface_HSheng_GainShort",
         "GoodsId": "",
         "Hero": "HSheng",
         "Link": "",
-        "Model": "Model_HSheng",
-        "Name": "Surface_HSheng_1_Name",
+        "Model": "Model_HSheng_classic",
+        "Name": "Surface_HSheng_2_Name",
         "NotGetUnlook": "",
-        "Quality": 2,
-        "RepeatReward": "",
+        "Quality": 4,
+        "RepeatReward": 40,
         "ShopID": "",
-        "Sort": 1,
-        "Type": 1,
+        "Sort": 2,
+        "Type": 3,
         "Unlook": 1
     },
     "Surface_JDCZhang_1": {
@@ -5687,6 +5797,61 @@
         "ShopID": "",
         "Sort": 1,
         "Type": 1,
+        "Unlook": 1
+    },
+    "Surface_YLSBai_2": {
+        "ActivityId": "",
+        "ClickAction": [
+            {
+                "action": "touch1",
+                "part": "head",
+                "point": [
+                    41,
+                    1287
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch2",
+                "part": "body",
+                "point": [
+                    -9,
+                    1103
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch2",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_YLSBai_2_Desc",
+        "GainDesc": "Surface_YLSBai_Detective_GainDesc",
+        "GainShortDesc": "Surface_YLSBai_GainShort",
+        "GoodsId": "ShopSurface_Surface_YLSBai_2",
+        "Hero": "YLSBai",
+        "Link": "",
+        "Model": "Model_YLSBai_xnian",
+        "Name": "Surface_YLSBai_2_Name",
+        "NotGetUnlook": "",
+        "Quality": 4,
+        "RepeatReward": 40,
+        "ShopID": "Shop_Surface",
+        "Sort": 2,
+        "Type": 3,
         "Unlook": 1
     },
     "Surface_YMHTPu_1": {

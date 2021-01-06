@@ -869,19 +869,20 @@ end
 
 function ClubNewHallMediator:refreshMangerPanel(idx)
 	local cell = self._tableView:cellAtIndex(idx)
-	local worldSp = cell:getParent():convertToWorldSpace(cc.p(cell:getPosition()))
+	local worldSp = self:getView():getParent():convertToWorldSpace(cc.p(cell:getPosition()))
 
 	self._managePanel:setVisible(true)
 
-	local posY = nil
+	local posY = worldSp.y
+	posY = posY + self:getTableViewPosY()
 
-	if worldSp.y > 250 then
-		posY = worldSp.y + 98
+	if posY > 250 then
+		posY = posY + 146
 
 		self._managePanel:setAnchorPoint(cc.p(0, 1))
 		self._managePanel:getChildByName("panel_bg"):loadTexture("asset/common/st_bg_qpd2.png", ccui.TextureResType.localType)
 	else
-		posY = worldSp.y + 8
+		posY = posY + 52
 
 		self._managePanel:setAnchorPoint(cc.p(0, 0))
 		self._managePanel:getChildByName("panel_bg"):loadTexture("asset/common/st_bg_qpd3.png", ccui.TextureResType.localType)
@@ -1286,15 +1287,15 @@ function ClubNewHallMediator:onClickQuit(sender, eventType)
 			fontName = TTF_FONT_FZYH_R
 		}),
 		btnCancelDate = {
-			titleStr = Strings:get("Club_Text94"),
-			callBack = function ()
-			end
-		},
-		btnOkDate = {
 			titleStr = Strings:get("Club_Text93"),
 			callBack = function ()
 				outSelf._clubSystem:quitClub(function ()
 				end)
+			end
+		},
+		btnOkDate = {
+			titleStr = Strings:get("Club_Text94"),
+			callBack = function ()
 			end
 		}
 	}
@@ -1306,15 +1307,15 @@ function ClubNewHallMediator:onClickQuit(sender, eventType)
 					fontName = TTF_FONT_FZYH_R
 				}),
 				btnCancelDate = {
-					titleStr = Strings:get("Club_Text94"),
-					callBack = function ()
-					end
-				},
-				btnOkDate = {
 					titleStr = Strings:get("Club_Text93"),
 					callBack = function ()
 						outSelf._clubSystem:quitClub(function ()
 						end)
+					end
+				},
+				btnOkDate = {
+					titleStr = Strings:get("Club_Text94"),
+					callBack = function ()
 					end
 				}
 			}
