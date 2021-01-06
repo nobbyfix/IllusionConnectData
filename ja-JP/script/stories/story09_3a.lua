@@ -1331,10 +1331,10 @@ function scene_story09_3a.actions.start_story09_3a(_root, args)
 					modelId = "Model_FEMSi",
 					id = "FEMSi_speak",
 					rotationX = 0,
-					scale = 1.125,
+					scale = 0.72,
 					position = {
 						x = 0,
-						y = -380,
+						y = -305,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -2596,7 +2596,7 @@ function scene_story09_3a.actions.start_story09_3a(_root, args)
 			args = function (_ctx)
 				return {
 					angleZ = 0,
-					time = 0.5,
+					time = 0,
 					deltaAngleZ = 180
 				}
 			end

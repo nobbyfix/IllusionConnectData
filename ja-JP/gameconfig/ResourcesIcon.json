@@ -154,6 +154,91 @@
         "Shine": "",
         "Sicon": "icon_HD_Achieve"
     },
+    "IM_DetectiveExchange_1": {
+        "Desc": "IM_Candy_FunctionDesc_1",
+        "LargeIcons": [
+            "ico_m_whistle_1"
+        ],
+        "Licon": "ico_m_whistle_1",
+        "Name": "IM_DetectiveExchange_3_Name",
+        "Quality": [
+            3
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_whistle_2"
+    },
+    "IM_DetectiveExchange_2": {
+        "Desc": "IM_Candy_FunctionDesc_2",
+        "LargeIcons": [
+            "ico_m_chocolate_1"
+        ],
+        "Licon": "ico_m_chocolate_1",
+        "Name": "IM_DetectiveExchange_2_Name",
+        "Quality": [
+            4
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_chocolate_2"
+    },
+    "IM_DetectiveExchange_3": {
+        "Desc": "IM_Candy_FunctionDesc_3",
+        "LargeIcons": [
+            "ico_m_gum_1"
+        ],
+        "Licon": "ico_m_gum_1",
+        "Name": "IM_DetectiveExchange_1_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_gum_2"
+    },
+    "IM_DetectiveExchange_4": {
+        "Desc": "IM_Exchange_FunctionDesc",
+        "LargeIcons": [
+            "IM_HD_HalloweenExchange_4"
+        ],
+        "Licon": "IM_HD_HalloweenExchange_4",
+        "Name": "IM_DetectiveExchange_4_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "IM_HD_HalloweenExchange_4_Small"
+    },
+    "IM_Detective_clue_treasure": {
+        "Desc": "IM_Detective_clue_treasure_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_clue_treasure_1"
+        ],
+        "Licon": "ico_m_clue_treasure_1",
+        "Name": "IM_Detective_clue_treasure_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_clue_treasure_2"
+    },
     "IM_DiamondDraw": {
         "Desc": "IM_DiamondDraw_FunctionDesc",
         "LargeIcons": [
@@ -533,6 +618,23 @@
         "Shine": "",
         "Sicon": "icon_sthb"
     },
+    "IR_CooperateBoss": {
+        "Desc": "CooperateBoss_CoinName_FunDesc",
+        "LargeIcons": [
+            "ico_m_cooperateboss_1"
+        ],
+        "Licon": "ico_m_cooperateboss_1",
+        "Name": "CooperateBoss_CoinName",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_cooperateboss_2"
+    },
     "IR_Crystal": {
         "Desc": "ResourcesIcon_2_Desc",
         "LargeIcons": [
@@ -568,6 +670,23 @@
             1
         ],
         "Sicon": "icon_shuijing"
+    },
+    "IR_DetectiveStamina": {
+        "Desc": "IR_DetectiveStamina_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_watch_1"
+        ],
+        "Licon": "ico_m_watch_1",
+        "Name": "IR_DetectiveStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_watch_2"
     },
     "IR_Diamond": {
         "Desc": "ResourcesIcon_3_Desc",

@@ -4,6 +4,7 @@
         "EffectType": "CHANGERARITY",
         "GrowType": "FIXED",
         "Icon": "",
+        "IsHidden": "",
         "Name": "BSNCT_01_Skill_Name",
         "Parameter": {
             "heroId": "ZTXChang",
@@ -15,6 +16,7 @@
         "EffectType": "CHANGERARITY",
         "GrowType": "FIXED",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "heroId": "CLMan",
@@ -26,6 +28,7 @@
         "EffectType": "CHANGERARITY",
         "GrowType": "FIXED",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "heroId": "CLMan",
@@ -37,6 +40,7 @@
         "EffectType": "OREPOOL",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "ID": "CampOre_Lv1",
@@ -61,6 +65,7 @@
         "EffectType": "BattleConfig",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "Camp1_Dec",
         "Parameter": {
             "range": "ALL",
@@ -79,6 +84,7 @@
         "EffectType": "BattleConfig",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "Camp2_Dec",
         "Parameter": {
             "range": "ALL",
@@ -97,6 +103,7 @@
         "EffectType": "BattleConfig",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "Camp3_Dec",
         "Parameter": {
             "range": "ALL",
@@ -118,6 +125,7 @@
         "EffectType": "BattleConfig",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "range": "ALL",
@@ -139,6 +147,7 @@
         "EffectType": "BattleConfig",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "CardAcademyNum_Dec",
         "Parameter": {
             "range": "ALL",
@@ -168,6 +177,7 @@
         "EffectType": "BattleConfig",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "CardAcademyEnergy_Dec",
         "Parameter": {
             "range": "ALL",
@@ -197,6 +207,7 @@
         "EffectType": "BattleConfig",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "CardAcademyNum_Dec",
         "Parameter": {
             "range": "ALL",
@@ -226,6 +237,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "CrystalElevate_Dec",
         "Parameter": {
             "type": "CrystalOreElevate",
@@ -253,6 +265,7 @@
         "EffectType": "OREPOOL",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "ID": "CrystalOre_Lv1",
@@ -279,6 +292,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "CrystalOre_Normal_Dec",
         "Parameter": {
             "type": "CrystalOreProduction",
@@ -303,6 +317,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "CrystalStorage_Normal_Dec",
         "Parameter": {
             "type": "CrystalStorage",
@@ -327,6 +342,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "ExpElevate_Dec",
         "Parameter": {
             "type": "ExpOreElevate",
@@ -354,6 +370,7 @@
         "EffectType": "OREPOOL",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "ID": "ExpOre_Lv1",
@@ -379,6 +396,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "ExpOre_Normal_Dec",
         "Parameter": {
             "type": "ExpOreProduction",
@@ -403,6 +421,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "ExpStorage_Normal_Dec",
         "Parameter": {
             "type": "ExpStorage",
@@ -427,6 +446,7 @@
         "EffectType": "CHANGERARITY",
         "GrowType": "FIXED",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "heroId": "FTLEShi",
@@ -438,6 +458,7 @@
         "EffectType": "CHANGERARITY",
         "GrowType": "FIXED",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "heroId": "FTLEShi",
@@ -449,6 +470,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "GoldElevate_Dec",
         "Parameter": {
             "type": "GoldOreElevate",
@@ -476,6 +498,7 @@
         "EffectType": "OREPOOL",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "ID": "GoldOre_Lv1",
@@ -501,6 +524,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "GoldOre_Normal_Dec",
         "Parameter": {
             "type": "GoldOreProduction",
@@ -525,6 +549,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "GoldStorage_Normal_Dec",
         "Parameter": {
             "type": "GoldStorage",
@@ -549,6 +574,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -564,6 +590,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -579,6 +606,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -594,6 +622,7 @@
         "EffectType": "VILLAGE",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "VILLAGETYPE": "GoldOre_Normal",
@@ -620,6 +649,7 @@
         "EffectType": "SHOP_SURPRISE",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "Rebate": 0.5,
@@ -640,6 +670,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "type": "CrystalStorage",
@@ -657,6 +688,7 @@
         "EffectType": "VILLAGE",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "VILLAGETYPE": "GoldElevate",
@@ -683,6 +715,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "type": "CrystalStorage",
@@ -700,6 +733,7 @@
         "EffectType": "OREADD",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "VILLAGETYPE": "GoldOre_Normal",
@@ -724,6 +758,7 @@
         "EffectType": "VILLAGE",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "VILLAGETYPE": "CrystalOre_Normal",
@@ -750,6 +785,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "type": "CrystalStorage",
@@ -767,6 +803,7 @@
         "EffectType": "RESOURCE",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -802,6 +839,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "type": "GoldStorage",
@@ -819,6 +857,7 @@
         "EffectType": "OREADD",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "VILLAGETYPE": "CrystalOre_Normal",
@@ -843,6 +882,7 @@
         "EffectType": "OREADD",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "VILLAGETYPE": "CrystalOre_Normal",
@@ -867,6 +907,7 @@
         "EffectType": "VILLAGE",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "VILLAGETYPE": "ExpStorage_Normal",
@@ -893,6 +934,7 @@
         "EffectType": "EXTRAEXP",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -917,6 +959,7 @@
         "EffectType": "RESOURCE",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -952,6 +995,7 @@
         "EffectType": "VILLAGE",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "VILLAGETYPE": "CrystalOre_Normal",
@@ -978,6 +1022,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "type": "GoldStorage",
@@ -995,6 +1040,7 @@
         "EffectType": "VILLAGE",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "VILLAGETYPE": "ExpElevate",
@@ -1021,6 +1067,7 @@
         "EffectType": "OREADD",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "VILLAGETYPE": "ExpOre_Normal",
@@ -1045,6 +1092,7 @@
         "EffectType": "VILLAGE",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "VILLAGETYPE": "AllHeroPalace",
@@ -1071,6 +1119,7 @@
         "EffectType": "RESOURCE",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "itemType": [
@@ -1105,6 +1154,7 @@
         "EffectType": "VILLAGE",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "VILLAGETYPE": "GoldOre_Normal",
@@ -1131,6 +1181,7 @@
         "EffectType": "OREADD",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "VILLAGETYPE": "CrystalOre_Normal",
@@ -1155,6 +1206,7 @@
         "EffectType": "RESOURCE",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -1190,6 +1242,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "type": "ExpStorage",
@@ -1207,6 +1260,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "type": "ExpStorage",
@@ -1224,6 +1278,7 @@
         "EffectType": "VILLAGE",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "VILLAGETYPE": "GoldStorage_Normal",
@@ -1250,6 +1305,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "type": "ExpStorage",
@@ -1267,6 +1323,7 @@
         "EffectType": "SHOP_SURPRISE",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "Rebate": 0.5,
@@ -1287,6 +1344,7 @@
         "EffectType": "RESOURCE",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -1337,6 +1395,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "type": "CrystalStorage",
@@ -1354,6 +1413,7 @@
         "EffectType": "GOLD_MAKER",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -1376,6 +1436,7 @@
         "EffectType": "RESOURCE",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "itemType": [
@@ -1410,6 +1471,7 @@
         "EffectType": "VILLAGE",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "VILLAGETYPE": "CrystalStorage_Normal",
@@ -1436,6 +1498,7 @@
         "EffectType": "VILLAGE",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "VILLAGETYPE": "CrystalStorage_Normal",
@@ -1462,6 +1525,7 @@
         "EffectType": "VILLAGE",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "VILLAGETYPE": "ExpStorage_Normal",
@@ -1488,6 +1552,7 @@
         "EffectType": "VILLAGE",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "VILLAGETYPE": "CrystalElevate",
@@ -1514,6 +1579,7 @@
         "EffectType": "RESOURCE",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -1564,6 +1630,7 @@
         "EffectType": "CRYSTAL_MAKER",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -1586,6 +1653,7 @@
         "EffectType": "RESOURCE",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "itemType": [
@@ -1620,6 +1688,7 @@
         "EffectType": "VILLAGE",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "VILLAGETYPE": "AllHeroPalace",
@@ -1646,6 +1715,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -1661,6 +1731,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -1676,6 +1747,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -1691,6 +1763,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -1706,6 +1779,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -1721,6 +1795,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -1736,6 +1811,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -1751,6 +1827,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -1766,6 +1843,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -1781,6 +1859,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -1796,6 +1875,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -1811,6 +1891,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -1826,6 +1907,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -1841,6 +1923,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -1856,6 +1939,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -1871,6 +1955,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -1886,6 +1971,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -1901,6 +1987,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -1916,6 +2003,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -1931,6 +2019,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -1946,6 +2035,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -1961,6 +2051,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -1976,6 +2067,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -1991,6 +2083,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2006,6 +2099,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2021,6 +2115,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2036,6 +2131,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2051,6 +2147,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2066,6 +2163,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2081,6 +2179,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2096,6 +2195,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2111,6 +2211,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2126,6 +2227,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2141,6 +2243,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2156,6 +2259,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2171,6 +2275,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2186,6 +2291,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2201,6 +2307,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2216,6 +2323,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2231,6 +2339,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2246,6 +2355,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2261,6 +2371,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2276,6 +2387,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2291,6 +2403,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2306,6 +2419,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2321,6 +2435,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2336,6 +2451,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2351,6 +2467,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2366,6 +2483,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2381,6 +2499,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2396,6 +2515,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2411,6 +2531,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2426,6 +2547,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2441,6 +2563,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2456,6 +2579,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2471,6 +2595,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2486,6 +2611,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2501,6 +2627,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2516,6 +2643,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2531,6 +2659,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2546,6 +2675,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2561,6 +2691,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2576,6 +2707,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2591,6 +2723,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2606,6 +2739,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2621,6 +2755,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2636,6 +2771,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2651,6 +2787,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2666,6 +2803,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2681,6 +2819,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2696,6 +2835,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2711,6 +2851,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2726,6 +2867,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2741,6 +2883,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2756,6 +2899,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2771,6 +2915,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2786,6 +2931,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2801,6 +2947,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2816,6 +2963,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2831,6 +2979,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2846,6 +2995,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2861,6 +3011,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2876,6 +3027,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2891,6 +3043,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2906,6 +3059,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2921,6 +3075,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2936,6 +3091,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2951,6 +3107,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2966,6 +3123,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2981,6 +3139,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -2996,6 +3155,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3011,6 +3171,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3026,6 +3187,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3041,6 +3203,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3056,6 +3219,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3071,6 +3235,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3086,6 +3251,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3101,6 +3267,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3116,6 +3283,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3131,6 +3299,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3146,6 +3315,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3161,6 +3331,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3176,6 +3347,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3191,6 +3363,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3206,6 +3379,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3221,6 +3395,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3236,6 +3411,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3251,6 +3427,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3266,6 +3443,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3281,6 +3459,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3296,6 +3475,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3311,6 +3491,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3326,6 +3507,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3341,6 +3523,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3356,6 +3539,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3371,6 +3555,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3386,6 +3571,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3401,6 +3587,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3416,6 +3603,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3431,6 +3619,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3446,6 +3635,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3461,6 +3651,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3476,6 +3667,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3491,6 +3683,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3506,6 +3699,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3521,6 +3715,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3536,6 +3731,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3551,6 +3747,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3566,6 +3763,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3581,6 +3779,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3596,6 +3795,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3611,6 +3811,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3626,6 +3827,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3641,6 +3843,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3656,6 +3859,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3671,6 +3875,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3686,6 +3891,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3701,6 +3907,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3716,6 +3923,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3731,6 +3939,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3746,6 +3955,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3761,6 +3971,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3776,6 +3987,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3791,6 +4003,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3806,6 +4019,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3821,6 +4035,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3836,6 +4051,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3851,6 +4067,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3866,6 +4083,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3881,6 +4099,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3896,6 +4115,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3911,6 +4131,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3926,6 +4147,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3941,6 +4163,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3956,6 +4179,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3971,6 +4195,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -3986,6 +4211,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -4001,6 +4227,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -4016,6 +4243,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -4031,6 +4259,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -4046,6 +4275,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -4061,6 +4291,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -4076,6 +4307,7 @@
         "EffectType": "VILLAGE",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "VILLAGETYPE": "ExpOre_Normal",
@@ -4102,6 +4334,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "type": "CrystalStorage",
@@ -4119,6 +4352,7 @@
         "EffectType": "SHOP_CHEAPER",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -4145,6 +4379,7 @@
         "EffectType": "SHOP_CHEAPER",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -4171,6 +4406,7 @@
         "EffectType": "OREADD",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "VILLAGETYPE": "GoldOre_Normal",
@@ -4195,6 +4431,7 @@
         "EffectType": "VILLAGE",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "VILLAGETYPE": "ExpOre_Normal",
@@ -4221,6 +4458,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "type": "CrystalStorage",
@@ -4238,6 +4476,7 @@
         "EffectType": "SHOP_SURPRISE",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "Rebate": 0.5,
@@ -4258,6 +4497,7 @@
         "EffectType": "OREADD",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "VILLAGETYPE": "ExpOre_Normal",
@@ -4282,6 +4522,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "type": "GoldStorage",
@@ -4299,6 +4540,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "type": "CrystalStorage",
@@ -4316,6 +4558,7 @@
         "EffectType": "VILLAGE",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "VILLAGETYPE": "GoldStorage_Normal",
@@ -4342,6 +4585,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "type": "GoldStorage",
@@ -4359,6 +4603,7 @@
         "EffectType": "FREEDRAW",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "system": "DrawCard_Diamond_1",
@@ -4376,6 +4621,7 @@
         "EffectType": "OREADD",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "VILLAGETYPE": "ExpOre_Normal",
@@ -4400,6 +4646,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "type": "CrystalStorage",
@@ -4417,6 +4664,7 @@
         "EffectType": "RESOURCE",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -4452,6 +4700,7 @@
         "EffectType": "SHOP_CHEAPER",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "isPercent": 1,
@@ -4478,6 +4727,7 @@
         "EffectType": "OREADD",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "VILLAGETYPE": "GoldOre_Normal",
@@ -4502,6 +4752,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "MainCity_CrystalStorage_Dec",
         "Parameter": {
             "type": "CrystalStorage",
@@ -4539,6 +4790,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "MainCity_ExpStorage_Dec",
         "Parameter": {
             "type": "ExpStorage",
@@ -4576,6 +4828,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "MainCity_GoldStorage_Dec",
         "Parameter": {
             "type": "GoldStorage",
@@ -4613,6 +4866,7 @@
         "EffectType": "MAPAPCHANGE",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "type": "MapAPMax",
@@ -4633,6 +4887,7 @@
         "EffectType": "MAPAPCHANGE",
         "GrowType": "CUSTOM",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "type": "MapAPRecoverTime",
@@ -4653,6 +4908,7 @@
         "EffectType": "EXTRAUP",
         "GrowType": "FIXED",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "Map": 1
@@ -4663,6 +4919,7 @@
         "EffectType": "EXTRAUP",
         "GrowType": "FIXED",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "StageSp_Crystal": 1,
@@ -4679,6 +4936,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_ADHWShi",
@@ -4691,6 +4949,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_ADHWShi",
@@ -4703,6 +4962,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_ADHWShi",
@@ -4715,6 +4975,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_AJYHou",
@@ -4727,6 +4988,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_AJYHou",
@@ -4739,6 +5001,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_AJYHou",
@@ -4751,6 +5014,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Ultra_ALPo",
@@ -4763,6 +5027,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Ultra_ALPo",
@@ -4775,6 +5040,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Ultra_ALPo",
@@ -4787,6 +5053,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_ALSi",
@@ -4799,6 +5066,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_ALSi",
@@ -4811,6 +5079,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_ALSi",
@@ -4823,6 +5092,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_ATSheng",
@@ -4835,6 +5105,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_ATSheng",
@@ -4847,6 +5118,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_ATSheng",
@@ -4859,6 +5131,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_BBLMa",
@@ -4871,6 +5144,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_BBLMa",
@@ -4883,6 +5157,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_BBLMa",
@@ -4895,6 +5170,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_BDPan",
@@ -4907,6 +5183,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_BDPan",
@@ -4919,6 +5196,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_BDPan",
@@ -4931,6 +5209,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Ultra_BEr",
@@ -4943,6 +5222,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Ultra_BEr",
@@ -4955,6 +5235,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Ultra_BEr",
@@ -4967,6 +5248,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_CLMan",
@@ -4979,6 +5261,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_CLMan",
@@ -4991,6 +5274,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_CLMan",
@@ -5003,6 +5287,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_CZheng",
@@ -5015,6 +5300,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_CZheng",
@@ -5027,6 +5313,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_CZheng",
@@ -5039,6 +5326,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_DDing",
@@ -5051,6 +5339,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_DDing",
@@ -5063,6 +5352,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_DDing",
@@ -5075,6 +5365,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_DFQi",
@@ -5087,6 +5378,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_DFQi",
@@ -5099,6 +5391,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_DFQi",
@@ -5111,6 +5404,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_DNTLuo",
@@ -5123,6 +5417,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_DNTLuo",
@@ -5135,6 +5430,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_DNTLuo",
@@ -5147,6 +5443,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_FEMSi",
@@ -5159,6 +5456,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_FEMSi",
@@ -5171,6 +5469,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_FEMSi",
@@ -5183,6 +5482,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_FTLEShi",
@@ -5195,6 +5495,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_FTLEShi",
@@ -5207,6 +5508,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_FTLEShi",
@@ -5219,6 +5521,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_GLin",
@@ -5231,6 +5534,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_GLin",
@@ -5243,6 +5547,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_GLin",
@@ -5255,6 +5560,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_HLDNan",
@@ -5267,6 +5573,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_HLDNan",
@@ -5279,6 +5586,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_HLDNan",
@@ -5291,6 +5599,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_HLMGen",
@@ -5303,6 +5612,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_HLMGen",
@@ -5315,6 +5625,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_HLMGen",
@@ -5327,6 +5638,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_HSheng",
@@ -5339,6 +5651,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_HSheng",
@@ -5351,6 +5664,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_HSheng",
@@ -5363,6 +5677,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_JDCZhang",
@@ -5375,6 +5690,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_JDCZhang",
@@ -5387,6 +5703,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_JDCZhang",
@@ -5399,6 +5716,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_JNLong",
@@ -5411,6 +5729,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_JNLong",
@@ -5423,6 +5742,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_JNLong",
@@ -5435,6 +5755,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_JSTDing",
@@ -5447,6 +5768,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_JSTDing",
@@ -5459,6 +5781,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_JSTDing",
@@ -5471,6 +5794,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_KMLa",
@@ -5483,6 +5807,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_KMLa",
@@ -5495,6 +5820,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_KMLa",
@@ -5507,6 +5833,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_KTSJKe",
@@ -5519,6 +5846,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_KTSJKe",
@@ -5531,6 +5859,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_KTSJKe",
@@ -5543,6 +5872,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_KXuan",
@@ -5555,6 +5885,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_KXuan",
@@ -5567,6 +5898,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_KXuan",
@@ -5579,6 +5911,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_LCYShi",
@@ -5591,6 +5924,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_LCYShi",
@@ -5603,6 +5937,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_LCYShi",
@@ -5615,6 +5950,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_LDu",
@@ -5627,6 +5963,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_LDu",
@@ -5639,6 +5976,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_LDu",
@@ -5651,6 +5989,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_LFEr",
@@ -5663,6 +6002,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_LFEr",
@@ -5675,6 +6015,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_LFEr",
@@ -5687,6 +6028,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_LLan",
@@ -5699,6 +6041,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_LLan",
@@ -5711,6 +6054,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_LLan",
@@ -5723,6 +6067,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_MGNa",
@@ -5735,6 +6080,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_MGNa",
@@ -5747,6 +6093,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_MGNa",
@@ -5759,6 +6106,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Ultra_MKLJLuo",
@@ -5771,6 +6119,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Ultra_MKLJLuo",
@@ -5783,6 +6132,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Ultra_MKLJLuo",
@@ -5795,6 +6145,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_MLYTLSha",
@@ -5807,6 +6158,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_MLYTLSha",
@@ -5819,6 +6171,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_MLYTLSha",
@@ -5831,6 +6184,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_MTZMEShi",
@@ -5843,6 +6197,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_MTZMEShi",
@@ -5855,6 +6210,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_MTZMEShi",
@@ -5867,6 +6223,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_NDGEr",
@@ -5879,6 +6236,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_NDGEr",
@@ -5891,6 +6249,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_NDGEr",
@@ -5903,6 +6262,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_NFDDi",
@@ -5915,6 +6275,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_NFDDi",
@@ -5927,6 +6288,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_NFDDi",
@@ -5939,6 +6301,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_NXYYi",
@@ -5951,6 +6314,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_NXYYi",
@@ -5963,6 +6327,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_NXYYi",
@@ -5975,6 +6340,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_PNCao",
@@ -5987,6 +6353,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_PNCao",
@@ -5999,6 +6366,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_PNCao",
@@ -6011,6 +6379,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_SDTZi",
@@ -6023,6 +6392,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_SDTZi",
@@ -6035,6 +6405,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_SDTZi",
@@ -6047,6 +6418,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_SGHQShou",
@@ -6059,6 +6431,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_SGHQShou",
@@ -6071,6 +6444,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_SGHQShou",
@@ -6083,6 +6457,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_SLMen",
@@ -6095,6 +6470,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_SLMen",
@@ -6107,6 +6483,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_SLMen",
@@ -6119,6 +6496,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_SSQXin",
@@ -6131,6 +6509,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_SSQXin",
@@ -6143,6 +6522,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_SSQXin",
@@ -6155,6 +6535,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_TJHDe",
@@ -6167,6 +6548,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_TJHDe",
@@ -6179,6 +6561,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_TJHDe",
@@ -6191,6 +6574,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Ultra_TLMi",
@@ -6203,6 +6587,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Ultra_TLMi",
@@ -6215,6 +6600,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Ultra_TLMi",
@@ -6227,6 +6613,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_TPGZhu",
@@ -6239,6 +6626,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_TPGZhu",
@@ -6251,6 +6639,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_TPGZhu",
@@ -6263,6 +6652,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_TTKMeng",
@@ -6275,6 +6665,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_TTKMeng",
@@ -6287,6 +6678,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_TTKMeng",
@@ -6299,6 +6691,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_WEDe",
@@ -6311,6 +6704,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_WEDe",
@@ -6323,6 +6717,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_WEDe",
@@ -6335,6 +6730,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_WTXXuan",
@@ -6347,6 +6743,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_WTXXuan",
@@ -6359,6 +6756,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_WTXXuan",
@@ -6371,6 +6769,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Ultra_XLai",
@@ -6383,6 +6782,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Ultra_XLai",
@@ -6395,6 +6795,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Ultra_XLai",
@@ -6407,6 +6808,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_XSMLi",
@@ -6419,6 +6821,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_XSMLi",
@@ -6431,6 +6834,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_XSMLi",
@@ -6443,6 +6847,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_YBYa",
@@ -6455,6 +6860,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_YBYa",
@@ -6467,6 +6873,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_YBYa",
@@ -6479,6 +6886,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_YDZZong",
@@ -6491,6 +6899,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_YDZZong",
@@ -6503,6 +6912,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_YDZZong",
@@ -6515,6 +6925,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_YFZZhu",
@@ -6527,6 +6938,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_YFZZhu",
@@ -6539,6 +6951,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_YFZZhu",
@@ -6551,6 +6964,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_YKDMLai",
@@ -6563,6 +6977,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_YKDMLai",
@@ -6575,6 +6990,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_YKDMLai",
@@ -6587,6 +7003,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_YLMGZhu",
@@ -6599,6 +7016,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_YLMGZhu",
@@ -6611,6 +7029,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_YLMGZhu",
@@ -6623,6 +7042,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_YLSBai",
@@ -6635,6 +7055,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_YLSBai",
@@ -6647,6 +7068,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_YLSBai",
@@ -6659,6 +7081,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_YMHTPu",
@@ -6671,6 +7094,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_YMHTPu",
@@ -6683,6 +7107,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_YMHTPu",
@@ -6695,6 +7120,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Ultra_YSuo",
@@ -6707,6 +7133,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Ultra_YSuo",
@@ -6719,6 +7146,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Ultra_YSuo",
@@ -6731,6 +7159,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_ZTXChang",
@@ -6743,6 +7172,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_ZTXChang",
@@ -6755,6 +7185,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_ZTXChang",
@@ -6767,6 +7198,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_ZTXCun",
@@ -6779,6 +7211,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_ZTXCun",
@@ -6791,6 +7224,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_ZTXCun",
@@ -6803,6 +7237,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_ZZBBWei",
@@ -6815,6 +7250,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_ZZBBWei",
@@ -6827,6 +7263,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_ZZBBWei",
@@ -6839,6 +7276,7 @@
         "EffectType": "BattleConfig",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "Room1_PutEffect_Name",
         "Parameter": {
             "range": "ALL",
@@ -6854,6 +7292,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "Room3_PutEffect_Name",
         "Parameter": {
             "type": "GoldOreElevate",
@@ -6868,6 +7307,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "Room4_PutEffect_Name",
         "Parameter": {
             "type": "CrystalOreElevate",
@@ -6882,6 +7322,7 @@
         "EffectType": "PRODUCTION",
         "GrowType": "LINEAR",
         "Icon": "",
+        "IsHidden": "",
         "Name": "Room6_PutEffect_Name",
         "Parameter": {
             "type": "ExpOreElevate",
@@ -6896,6 +7337,7 @@
         "EffectType": "SPFUNC",
         "GrowType": "FIXED",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "type": "Stamina_Back"
@@ -6906,6 +7348,7 @@
         "EffectType": "SPFUNC",
         "GrowType": "FIXED",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "type": "Sp_Stage_Wipe"
@@ -6916,6 +7359,7 @@
         "EffectType": "SPFUNC",
         "GrowType": "FIXED",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "type": "Worldmap_Speed_Change",
@@ -6927,6 +7371,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_ADHWShi_EX",
@@ -6939,6 +7384,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_ADHWShi_EX",
@@ -6951,6 +7397,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_ADHWShi_EX",
@@ -6963,6 +7410,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_AJTa_EX",
@@ -6975,6 +7423,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_AJTa_EX",
@@ -6987,6 +7436,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_AJTa_EX",
@@ -6999,6 +7449,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_ALPo_EX",
@@ -7011,6 +7462,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_ALPo_EX",
@@ -7023,6 +7475,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_ALPo_EX",
@@ -7035,6 +7488,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_ALSi_EX",
@@ -7047,6 +7501,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_ALSi_EX",
@@ -7059,6 +7514,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_ALSi_EX",
@@ -7071,6 +7527,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_ATSheng_EX",
@@ -7083,6 +7540,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_ATSheng_EX",
@@ -7095,6 +7553,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_ATSheng_EX",
@@ -7107,6 +7566,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_BBLMa_EX",
@@ -7119,6 +7579,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_BBLMa_EX",
@@ -7131,6 +7592,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_BBLMa_EX",
@@ -7143,6 +7605,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_BBLMa_Awaken",
@@ -7155,6 +7618,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_BEr_EX",
@@ -7167,6 +7631,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_BEr_EX",
@@ -7179,6 +7644,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_BEr_EX",
@@ -7191,6 +7657,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_BHTZi_EX",
@@ -7203,6 +7670,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_BHTZi_EX",
@@ -7215,6 +7683,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_BHTZi_EX",
@@ -7227,6 +7696,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_BQDShe_EX",
@@ -7239,6 +7709,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_BQDShe_EX",
@@ -7251,6 +7722,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_BQDShe_EX",
@@ -7263,6 +7735,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_CLMan_EX",
@@ -7275,6 +7748,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_CLMan_EX",
@@ -7287,6 +7761,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_CLMan_EX",
@@ -7299,6 +7774,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_CZheng_EX",
@@ -7311,6 +7787,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_CZheng_EX",
@@ -7323,6 +7800,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_CZheng_EX",
@@ -7335,6 +7813,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_DCJKang_EX",
@@ -7347,6 +7826,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_DCJKang_EX",
@@ -7359,6 +7839,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_DCJKang_EX",
@@ -7371,6 +7852,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_DDing_EX",
@@ -7383,6 +7865,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_DDing_EX",
@@ -7395,6 +7878,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_DDing_EX",
@@ -7407,6 +7891,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_DFQi_EX",
@@ -7419,6 +7904,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_DFQi_EX",
@@ -7431,6 +7917,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_DFQi_EX",
@@ -7443,6 +7930,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_DNTLuo_EX",
@@ -7455,6 +7943,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_DNTLuo_EX",
@@ -7467,6 +7956,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_DNTLuo_EX",
@@ -7474,11 +7964,51 @@
             "slot": "Hero_Proud_DNTLuo"
         }
     },
+    "StarSE_FEMSi_4": {
+        "Desc": "StarSE_FEMSi_4_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Unique_FEMSi_EX",
+            "before": "Hero_Unique_FEMSi",
+            "slot": "Hero_Unique_FEMSi"
+        }
+    },
+    "StarSE_FEMSi_5": {
+        "Desc": "StarSE_FEMSi_5_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_PBattle_FEMSi_EX",
+            "before": "Hero_PBattle_FEMSi",
+            "slot": "Hero_PBattle_FEMSi"
+        }
+    },
+    "StarSE_FEMSi_6": {
+        "Desc": "StarSE_FEMSi_6_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Proud_FEMSi_EX",
+            "before": "Hero_Proud_FEMSi",
+            "slot": "Hero_Proud_FEMSi"
+        }
+    },
     "StarSE_FTLEShi_4": {
         "Desc": "StarSE_FTLEShi_4_Desc",
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_FTLEShi_EX",
@@ -7491,6 +8021,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_FTLEShi_EX",
@@ -7503,6 +8034,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_FTLEShi_EX",
@@ -7515,6 +8047,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_GLin_EX",
@@ -7527,6 +8060,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_GLin_EX",
@@ -7539,6 +8073,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_GLin_EX",
@@ -7551,6 +8086,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_GYCZi_EX",
@@ -7563,6 +8099,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_GYCZi_EX",
@@ -7575,6 +8112,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_GYCZi_EX",
@@ -7587,6 +8125,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_HLDNan_EX",
@@ -7599,6 +8138,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_HLDNan_EX",
@@ -7611,6 +8151,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_HLDNan_EX",
@@ -7623,6 +8164,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_HLMGen_EX",
@@ -7635,6 +8177,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_HLMGen_EX",
@@ -7647,6 +8190,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_HLMGen_EX",
@@ -7654,11 +8198,51 @@
             "slot": "Hero_Proud_HLMGen"
         }
     },
+    "StarSE_HSheng_4": {
+        "Desc": "StarSE_HSheng_4_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Unique_HSheng_EX",
+            "before": "Hero_Unique_HSheng",
+            "slot": "Hero_Unique_HSheng"
+        }
+    },
+    "StarSE_HSheng_5": {
+        "Desc": "StarSE_HSheng_5_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_PBattle_HSheng_EX",
+            "before": "Hero_PBattle_HSheng",
+            "slot": "Hero_PBattle_HSheng"
+        }
+    },
+    "StarSE_HSheng_6": {
+        "Desc": "StarSE_HSheng_6_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Proud_HSheng_EX",
+            "before": "Hero_Proud_HSheng",
+            "slot": "Hero_Proud_HSheng"
+        }
+    },
     "StarSE_JDCZhang_3": {
         "Desc": "StarSE_JDCZhang_3_Desc",
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_JDCZhang_EX",
@@ -7671,6 +8255,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_JDCZhang_EX",
@@ -7683,6 +8268,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_JDCZhang_EX",
@@ -7695,6 +8281,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_JNLong_EX",
@@ -7707,6 +8294,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_JNLong_EX",
@@ -7719,6 +8307,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_JNLong_EX",
@@ -7731,6 +8320,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_JSTDing_EX",
@@ -7743,6 +8333,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_JSTDing_EX",
@@ -7755,6 +8346,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_JSTDing_EX",
@@ -7767,6 +8359,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_KMLa_EX",
@@ -7779,6 +8372,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_KMLa_EX",
@@ -7791,6 +8385,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_KMLa_EX",
@@ -7803,6 +8398,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_KTSJKe_EX",
@@ -7815,6 +8411,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_KTSJKe_EX",
@@ -7827,6 +8424,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_KTSJKe_EX",
@@ -7839,6 +8437,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_KTSJKe_Awaken",
@@ -7851,6 +8450,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_KXuan_EX",
@@ -7863,6 +8463,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_KXuan_EX",
@@ -7875,6 +8476,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_KXuan_EX",
@@ -7887,6 +8489,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_LCYShi_EX",
@@ -7899,6 +8502,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_LCYShi_EX",
@@ -7911,6 +8515,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_LCYShi_EX",
@@ -7923,6 +8528,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_LDu_EX",
@@ -7935,6 +8541,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_LDu_EX",
@@ -7947,6 +8554,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_LDu_EX",
@@ -7959,6 +8567,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_LFEr_EX",
@@ -7971,6 +8580,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_LFEr_EX",
@@ -7983,6 +8593,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_LFEr_EX",
@@ -7995,6 +8606,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_LLan_EX",
@@ -8007,6 +8619,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_LLan_EX",
@@ -8019,6 +8632,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_LLan_EX",
@@ -8031,6 +8645,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_LYSi_EX",
@@ -8043,6 +8658,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_LYSi_EX",
@@ -8055,6 +8671,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_LYSi_EX",
@@ -8067,6 +8684,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_LYXi_EX",
@@ -8079,6 +8697,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_LYXi_EX",
@@ -8091,6 +8710,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_LYXi_EX",
@@ -8103,6 +8723,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_MGNa_EX",
@@ -8115,6 +8736,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_MGNa_EX",
@@ -8127,6 +8749,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_MGNa_EX",
@@ -8139,6 +8762,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_MKLJLuo_EX",
@@ -8151,6 +8775,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_MKLJLuo_EX",
@@ -8163,6 +8788,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_MKLJLuo_EX",
@@ -8175,6 +8801,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_MLYTLSha_EX",
@@ -8187,6 +8814,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_MLYTLSha_EX",
@@ -8199,6 +8827,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_MLYTLSha_EX",
@@ -8211,6 +8840,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_MTZMEShi_EX",
@@ -8223,6 +8853,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_MTZMEShi_EX",
@@ -8235,6 +8866,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_MTZMEShi_EX",
@@ -8247,6 +8879,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_NDGEr_EX",
@@ -8259,6 +8892,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_NDGEr_EX",
@@ -8271,6 +8905,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_NDGEr_EX",
@@ -8283,6 +8918,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_NFDDi_EX",
@@ -8295,6 +8931,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_NFDDi_EX",
@@ -8307,6 +8944,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_NFDDi_EX",
@@ -8319,6 +8957,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_NFEr_EX",
@@ -8331,6 +8970,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_NFEr_EX",
@@ -8343,6 +8983,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_NFEr_EX",
@@ -8355,6 +8996,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_NXYYi_EX",
@@ -8367,6 +9009,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_NXYYi_EX",
@@ -8379,6 +9022,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_NXYYi_EX",
@@ -8391,6 +9035,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_NXYYi_EX",
@@ -8403,6 +9048,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_PDLa_EX",
@@ -8415,6 +9061,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_PDLa_EX",
@@ -8427,6 +9074,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_PDLa_EX",
@@ -8439,6 +9087,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_PNCao_EX",
@@ -8451,6 +9100,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_PNCao_EX",
@@ -8463,6 +9113,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_PNCao_EX",
@@ -8475,6 +9126,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_SDTZi_EX",
@@ -8487,6 +9139,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_SDTZi_EX",
@@ -8499,6 +9152,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_SDTZi_EX",
@@ -8511,6 +9165,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_SDTZi_Awaken",
@@ -8523,6 +9178,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_SGHQShou_EX",
@@ -8535,6 +9191,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_SGHQShou_EX",
@@ -8547,6 +9204,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_SGHQShou_EX",
@@ -8559,6 +9217,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_SLMen_EX",
@@ -8571,6 +9230,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_SLMen_EX",
@@ -8583,6 +9243,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_SLMen_EX",
@@ -8595,6 +9256,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_SRen_EX",
@@ -8607,6 +9269,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_SRen_EX",
@@ -8619,6 +9282,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_SRen_EX",
@@ -8631,6 +9295,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_SSQXin_EX",
@@ -8643,6 +9308,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_SSQXin_EX",
@@ -8655,6 +9321,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_SSQXin_EX",
@@ -8667,6 +9334,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_SYAi_EX",
@@ -8679,6 +9347,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_SYAi_EX",
@@ -8691,6 +9360,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_SYAi_EX",
@@ -8703,6 +9373,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_TLMi_EX",
@@ -8715,6 +9386,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_TLMi_EX",
@@ -8727,6 +9399,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_TLMi_EX",
@@ -8739,6 +9412,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_TPGZhu_EX",
@@ -8751,6 +9425,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_TPGZhu_EX",
@@ -8763,6 +9438,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_TPGZhu_EX",
@@ -8775,6 +9451,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_TTKMeng_EX",
@@ -8787,6 +9464,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_TTKMeng_EX",
@@ -8799,6 +9477,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_TTKMeng_EX",
@@ -8811,6 +9490,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_WEDe_EX",
@@ -8823,6 +9503,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_WEDe_EX",
@@ -8835,6 +9516,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_WEDe_EX",
@@ -8847,6 +9529,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_WTXXuan_EX",
@@ -8859,6 +9542,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_WTXXuan_EX",
@@ -8871,6 +9555,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_WTXXuan_EX",
@@ -8883,6 +9568,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_XLai_EX",
@@ -8895,6 +9581,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_XLai_EX",
@@ -8907,6 +9594,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_XLai_EX",
@@ -8919,6 +9607,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_XSMLi_EX",
@@ -8931,6 +9620,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_XSMLi_EX",
@@ -8943,6 +9633,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_XSMLi_EX",
@@ -8955,6 +9646,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_YBYa_EX",
@@ -8967,6 +9659,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_YBYa_EX",
@@ -8979,6 +9672,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_YBYa_EX",
@@ -8991,6 +9685,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_YDZZong_EX",
@@ -9003,6 +9698,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_YDZZong_EX",
@@ -9015,6 +9711,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_YDZZong_EX",
@@ -9027,6 +9724,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_YFZZhu_EX",
@@ -9039,6 +9737,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_YFZZhu_EX",
@@ -9051,6 +9750,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_YFZZhu_EX",
@@ -9063,6 +9763,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_YKDMLai_EX",
@@ -9075,6 +9776,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_YKDMLai_EX",
@@ -9087,6 +9789,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_YKDMLai_EX",
@@ -9099,6 +9802,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_YLMGZhu_EX",
@@ -9111,6 +9815,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_YLMGZhu_EX",
@@ -9123,6 +9828,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_YLMGZhu_EX",
@@ -9135,6 +9841,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_YLSBai_EX",
@@ -9147,6 +9854,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_YLSBai_EX",
@@ -9159,6 +9867,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_YLSBai_EX",
@@ -9171,6 +9880,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_YMHTPu_EX",
@@ -9183,6 +9893,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_YMHTPu_EX",
@@ -9195,6 +9906,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_YMHTPu_EX",
@@ -9207,6 +9919,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_YSLBin_EX",
@@ -9219,6 +9932,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_YSLBin_EX",
@@ -9231,6 +9945,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_YSLBin_EX",
@@ -9243,6 +9958,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_YSTLu_EX",
@@ -9255,6 +9971,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_YSTLu_EX",
@@ -9267,6 +9984,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_YSTLu_EX",
@@ -9279,6 +9997,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_YSuo_EX",
@@ -9291,6 +10010,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_YSuo_EX",
@@ -9303,6 +10023,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_YSuo_EX",
@@ -9315,6 +10036,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "0",
         "Icon": "0",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_YXNMei_EX",
@@ -9327,6 +10049,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "0",
         "Icon": "0",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_YXNMei_EX",
@@ -9339,6 +10062,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "0",
         "Icon": "0",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_YXNMei_EX",
@@ -9351,6 +10075,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_YYing_EX",
@@ -9363,6 +10088,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_YYing_EX",
@@ -9375,6 +10101,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_YYing_EX",
@@ -9387,6 +10114,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_ZTXChang_EX",
@@ -9399,6 +10127,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_ZTXChang_EX",
@@ -9411,6 +10140,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_ZTXChang_EX",
@@ -9423,6 +10153,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_ZTXCun_EX",
@@ -9435,6 +10166,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_ZTXCun_EX",
@@ -9447,6 +10179,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_ZTXCun_EX",
@@ -9459,6 +10192,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Unique_ZZBBWei_EX",
@@ -9471,6 +10205,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_PBattle_ZZBBWei_EX",
@@ -9483,6 +10218,7 @@
         "EffectType": "CHANGESKILL",
         "GrowType": "",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "after": "Hero_Proud_ZZBBWei_EX",
@@ -9495,6 +10231,7 @@
         "EffectType": "CHANGERARITY",
         "GrowType": "FIXED",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "heroId": "ZTXChang",
@@ -9506,6 +10243,7 @@
         "EffectType": "CHANGERARITY",
         "GrowType": "FIXED",
         "Icon": "",
+        "IsHidden": "",
         "Name": "",
         "Parameter": {
             "heroId": "ZTXChang",

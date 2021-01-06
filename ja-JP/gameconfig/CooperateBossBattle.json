@@ -1,0 +1,40 @@
+{
+    "ClubBlockNormalBattle_1": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_27",
+        "BlockBattleConfig": "CooperateBoss_Stage_1",
+        "EnemyCard": "CooperateBoss_1",
+        "EnemyMaster": "CooperateBoss_1",
+        "Name": "HeroBase_Name_YLMGZhu",
+        "PointHead": "Model_YLMGZhu",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "ClubBlockNormalBattle_2": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_27",
+        "BlockBattleConfig": "ClubBoss_Stage",
+        "EnemyCard": "ClubBlockNormalBattle_2",
+        "EnemyMaster": "ClubBoss_Master_2",
+        "Name": "HeroBase_Name_SDTZi",
+        "PointHead": "Model_SDTZi",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    }
+}

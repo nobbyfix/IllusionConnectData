@@ -27,21 +27,22 @@ RankSystem:has("_eventDispatcher", {
 }):injectWith("legs_sharedEventDispatcher")
 
 RankType = {
-	kGold = 5,
+	kSupport = 40,
+	kBlockStar = 2,
 	kPetRace = 11,
-	kMaze = 15,
+	KPetWorldScore = 25,
+	kClubBoss = 41,
+	kExp = 6,
+	kClub = 9,
+	kGold = 5,
 	kMap = 14,
+	kMaze = 15,
 	kSubPetRace = 24,
 	kCrystal = 7,
 	kArena = 0,
-	kBlockStar = 2,
 	kCombat = 1,
 	kCrusade = 30,
 	kHeroCombat = 3,
-	kSupport = 40,
-	kExp = 6,
-	kClub = 9,
-	kClubBoss = 41,
 	kMiniGame = 42
 }
 RankClass = {
@@ -59,7 +60,8 @@ RankClass = {
 	[RankType.kArena] = ArenaRankRecord,
 	[RankType.kCrusade] = CrusadeRankRecord,
 	[RankType.kClubBoss] = ClubBossRankRecord,
-	[RankType.kMiniGame] = MiniGameRankRecord
+	[RankType.kMiniGame] = MiniGameRankRecord,
+	[RankType.KPetWorldScore] = PetWorldScoreRankRecord
 }
 RankSwitch = {
 	[RankType.kClubBoss] = "fn_clubBoss"
@@ -378,7 +380,7 @@ function RankSystem:getMyselfShowInfoByType(record)
 			data[2] = record:getName()
 			data[3] = record:getClubName() == "" and Strings:get("ARENA_NO_RANK") or record:getClubName()
 			data[4] = record:getDp()
-		elseif record:getRankType() == RankType.kPetRace then
+		elseif record:getRankType() == RankType.KPetWorldScore then
 			data[1] = record:getRank()
 			data[2] = record:getName()
 			data[3] = record:getWinNum()

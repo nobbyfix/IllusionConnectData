@@ -1,0 +1,197 @@
+{
+    "CooperateBossMain_1": {
+        "AwakenAttrEffect": "ExcellentHero_Awaken",
+        "AwakenBoss": "CooperateBossMain_1_Awaken",
+        "BossBattle": "ClubBlockNormalBattle_1",
+        "ExcellentHero": [
+            {
+                "Effect": "ExcellentHero_Attr_Big",
+                "Hero": [
+                    "NXYYi",
+                    "MLYTLSha"
+                ]
+            },
+            {
+                "Effect": "ExcellentHero_Attr_Small",
+                "Hero": [
+                    "SGHQShou",
+                    "XSMLi",
+                    "SDTZi"
+                ]
+            }
+        ],
+        "Revelry": 1,
+        "RewardRevelry": "IR_CooperateBoss_Revelry",
+        "RewardShow": "CooperateBossMain_1_Show",
+        "RoleModel": "Model_SLMen",
+        "StarsAttrEffect": "ExcellentHero_Stars",
+        "Story": [
+            "eventstory_BXJie_01a",
+            "eventstory_BXJie_02a"
+        ],
+        "TiggerAwaken": "IR_CooperateBoss_Awaken",
+        "Time": 1800,
+        "Type": "Normal"
+    },
+    "CooperateBossMain_1_Awaken": {
+        "AwakenAttrEffect": "ExcellentHero_Awaken",
+        "AwakenBoss": "",
+        "BossBattle": "ClubBlockNormalBattle_1",
+        "ExcellentHero": [
+            {
+                "Effect": "ExcellentHero_Attr_Big",
+                "Hero": [
+                    "NXYYi",
+                    "MLYTLSha"
+                ]
+            },
+            {
+                "Effect": "ExcellentHero_Attr_Small",
+                "Hero": [
+                    "SGHQShou",
+                    "XSMLi",
+                    "SDTZi"
+                ]
+            }
+        ],
+        "Revelry": "",
+        "RewardRevelry": "IR_CooperateBoss_Revelry",
+        "RewardShow": "CooperateBossMain_1_Show",
+        "RoleModel": "Model_SLMen",
+        "StarsAttrEffect": "ExcellentHero_Stars",
+        "Story": [
+            "eventstory_BXJie_01a",
+            "eventstory_BXJie_02a"
+        ],
+        "TiggerAwaken": "",
+        "Time": 1800,
+        "Type": "Awaken"
+    },
+    "CooperateBossMain_2": {
+        "AwakenAttrEffect": "ExcellentHero_Awaken",
+        "AwakenBoss": "CooperateBossMain_2_Awaken",
+        "BossBattle": "ClubBlockNormalBattle_2",
+        "ExcellentHero": [
+            {
+                "Effect": "ExcellentHero_Attr_Big",
+                "Hero": [
+                    "KTSJKe",
+                    "BBLMa"
+                ]
+            },
+            {
+                "Effect": "ExcellentHero_Attr_Small",
+                "Hero": [
+                    "ZZBBWei",
+                    "JNLong",
+                    "LFEr"
+                ]
+            }
+        ],
+        "Revelry": 1,
+        "RewardRevelry": "IR_CooperateBoss_Revelry",
+        "RewardShow": "CooperateBossMain_2_Show",
+        "RoleModel": "Model_SDTZi",
+        "StarsAttrEffect": "ExcellentHero_Stars",
+        "Story": [],
+        "TiggerAwaken": "IR_CooperateBoss_Awaken",
+        "Time": 1800,
+        "Type": "Normal"
+    },
+    "CooperateBossMain_2_Awaken": {
+        "AwakenAttrEffect": "ExcellentHero_Awaken",
+        "AwakenBoss": "",
+        "BossBattle": "ClubBlockNormalBattle_2",
+        "ExcellentHero": [
+            {
+                "Effect": "ExcellentHero_Attr_Big",
+                "Hero": [
+                    "KTSJKe",
+                    "BBLMa"
+                ]
+            },
+            {
+                "Effect": "ExcellentHero_Attr_Small",
+                "Hero": [
+                    "ZZBBWei",
+                    "JNLong",
+                    "LFEr"
+                ]
+            }
+        ],
+        "Revelry": "",
+        "RewardRevelry": "IR_CooperateBoss_Revelry",
+        "RewardShow": "CooperateBossMain_2_Show",
+        "RoleModel": "Model_SDTZi",
+        "StarsAttrEffect": "ExcellentHero_Stars",
+        "Story": [],
+        "TiggerAwaken": "",
+        "Time": 1800,
+        "Type": "Awaken"
+    },
+    "CooperateBossMain_YLMGZhu": {
+        "AwakenAttrEffect": "ExcellentHero_Awaken",
+        "AwakenBoss": "",
+        "BossBattle": "ClubBlockNormalBattle_1",
+        "ExcellentHero": [
+            {
+                "Effect": "ExcellentHero_Attr_Big",
+                "Hero": [
+                    "YXNMei",
+                    "MLYTLSha"
+                ]
+            },
+            {
+                "Effect": "ExcellentHero_Attr_Small",
+                "Hero": [
+                    "SGHQShou",
+                    "XSMLi",
+                    "SDTZi"
+                ]
+            }
+        ],
+        "Revelry": "",
+        "RewardRevelry": "",
+        "RewardShow": "CooperateBossMain_YLMGZhu_Show",
+        "RoleModel": "Model_YLMGZhu",
+        "StarsAttrEffect": "ExcellentHero_Stars",
+        "Story": [
+            "CooperateBoss_YLMGZhu_Escape",
+            "CooperateBoss_YLMGZhu_Win"
+        ],
+        "TiggerAwaken": "",
+        "Time": 1800,
+        "Type": "Normal"
+    },
+    "CooperateBossMain_YLMGZhu_Awaken": {
+        "AwakenAttrEffect": "ExcellentHero_Awaken",
+        "AwakenBoss": "",
+        "BossBattle": "ClubBlockNormalBattle_1",
+        "ExcellentHero": [
+            {
+                "Effect": "ExcellentHero_Attr_Big",
+                "Hero": [
+                    "YXNMei",
+                    "MLYTLSha"
+                ]
+            },
+            {
+                "Effect": "ExcellentHero_Attr_Small",
+                "Hero": [
+                    "SGHQShou",
+                    "XSMLi",
+                    "SDTZi"
+                ]
+            }
+        ],
+        "Revelry": "",
+        "RewardRevelry": "",
+        "RewardShow": "CooperateBossMain_YLMGZhu_Show",
+        "RoleModel": "Model_YLMGZhu",
+        "StarsAttrEffect": "ExcellentHero_Stars",
+        "Story": [],
+        "TiggerAwaken": "",
+        "Time": 1800,
+        "Type": "Awaken"
+    }
+}

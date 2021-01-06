@@ -17,6 +17,9 @@ local KMenu = {
 		},
 		{
 			title = Strings:get("Setting_Ui_Text_6")
+		},
+		{
+			title = Strings:get("Setting_Ui_Text_Awaken")
 		}
 	},
 	[KTabType.FRAME] = {

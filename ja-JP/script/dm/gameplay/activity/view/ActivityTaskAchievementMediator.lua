@@ -185,8 +185,9 @@ function ActivityTaskAchievementMediator:createCell(cell, index)
 
 		descText:setString(Strings:get(taskData:getDesc()))
 
-		if self._activityId == "ActivityBlock_Halloween_AchieveMentTask" then
+		if self._activityId == "ActivityBlock_Halloween_AchieveMentTask" or self._activityId == "ActivityBlock_Detective_AchieveMentTask" then
 			processNode:setVisible(true)
+			processNode:setTouchEnabled(false)
 
 			local bar = processNode:getChildByFullName("loadingBar")
 			local process = processNode:getChildByFullName("progress")
@@ -269,6 +270,7 @@ function ActivityTaskAchievementMediator:setBg(panel, titleImage)
 	local bg = ccui.ImageView:create(path)
 
 	bg:addTo(panel)
+	print(self._activity:getActivityConfig().titleImg .. ".png" .. "self._activity:getActivityConfig().titleImg")
 	titleImage:loadTexture(self._activity:getActivityConfig().titleImg .. ".png", 1)
 end
 

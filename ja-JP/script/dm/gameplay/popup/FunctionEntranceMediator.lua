@@ -18,6 +18,9 @@ FunctionEntranceMediator:has("_spStageSystem", {
 FunctionEntranceMediator:has("_exploreSystem", {
 	is = "r"
 }):injectWith("ExploreSystem")
+FunctionEntranceMediator:has("_cooperateBossSystem", {
+	is = "r"
+}):injectWith("CooperateBossSystem")
 
 local kFunctionData = {
 	{
@@ -33,6 +36,11 @@ local kFunctionData = {
 	{
 		cellNode = "friendCell",
 		switchKey = "fn_arena_friend",
+		des = "BlockSP_ShowUI_Desc"
+	},
+	{
+		cellNode = "cooperateBossCell",
+		switchKey = "fn_arena_cooperate_boss",
 		des = "BlockSP_ShowUI_Desc"
 	}
 }
@@ -75,6 +83,7 @@ end
 
 function FunctionEntranceMediator:resumeWithData()
 	self:refreshRed()
+	self:refreshCooperateBoss()
 end
 
 function FunctionEntranceMediator:setupView(data)
@@ -91,9 +100,6 @@ function FunctionEntranceMediator:initWidgetInfo(data)
 	end
 
 	self._showPanel = self._arenaPanel
-
-	self:refreshRed()
-
 	local action = cc.CSLoader:createTimeline("asset/ui/Athletics.csb")
 
 	action:clearFrameEventCallFunc()
@@ -110,21 +116,25 @@ function FunctionEntranceMediator:initWidgetInfo(data)
 
 	jjAnim:setPosition(cc.p(0, 0))
 	animPanel:addChild(jjAnim)
-	jjAnim:addCallbackAtFrame(12, function ()
+	jjAnim:addCallbackAtFrame(15, function ()
 		jjAnim:stop()
 	end)
-	action:gotoFrameAndPlay(0, 9, false)
+	action:gotoFrameAndPlay(0, 30, false)
 
-	if CommonUtils.GetSwitch("fn_arena_normal") then
+	if CommonUtils.GetSwitch(kFunctionData[1].switchKey) then
 		self:createArenaAnim()
 	end
 
-	if CommonUtils.GetSwitch("fn_arena_pet_race") then
+	if CommonUtils.GetSwitch(kFunctionData[2].switchKey) then
 		self:createPetRaceAnim()
 	end
 
-	if CommonUtils.GetSwitch("fn_arena_friend") then
+	if CommonUtils.GetSwitch(kFunctionData[3].switchKey) then
 		self:createFriendAnim()
+	end
+
+	if CommonUtils.GetSwitch(kFunctionData[4].switchKey) and self._cooperateBossSystem:cooperateBossShow() then
+		self:createCooperateBossAnim()
 	end
 
 	local function onFrameEvent(frame)
@@ -134,19 +144,28 @@ function FunctionEntranceMediator:initWidgetInfo(data)
 
 		local str = frame:getEvent()
 
-		if str == "ArenaAnim" and CommonUtils.GetSwitch("fn_arena_normal") then
+		if str == "ArenaAnim" and CommonUtils.GetSwitch(kFunctionData[1].switchKey) then
 			self._arenaPanel:getChildByFullName("arenaCell.ShowAnim"):setVisible(true)
 			self._arenaPanel:getChildByFullName("arenaCell.ShowAnim"):gotoAndPlay(0)
 		end
 
-		if str == "PetRaceAnim" and CommonUtils.GetSwitch("fn_arena_pet_race") then
+		if str == "PetRaceAnim" and CommonUtils.GetSwitch(kFunctionData[2].switchKey) then
 			self._arenaPanel:getChildByFullName("petRaceCell.ShowAnim"):setVisible(true)
 			self._arenaPanel:getChildByFullName("petRaceCell.ShowAnim"):gotoAndPlay(0)
 		end
 
-		if str == "FriendAnim" and CommonUtils.GetSwitch("fn_arena_friend") then
+		if str == "FriendAnim" and CommonUtils.GetSwitch(kFunctionData[3].switchKey) then
 			self._arenaPanel:getChildByFullName("friendCell.ShowAnim"):setVisible(true)
 			self._arenaPanel:getChildByFullName("friendCell.ShowAnim"):gotoAndPlay(0)
+		end
+
+		if str == "CooperateBossAnim" and CommonUtils.GetSwitch(kFunctionData[4].switchKey) and self._cooperateBossSystem:cooperateBossShow() then
+			self._arenaPanel:getChildByFullName("cooperateBossCell.ShowAnim"):setVisible(true)
+			self._arenaPanel:getChildByFullName("cooperateBossCell.ShowAnim"):gotoAndPlay(0)
+		end
+
+		if str == "redShow" then
+			self:refreshRed()
 		end
 	end
 
@@ -247,6 +266,111 @@ function FunctionEntranceMediator:createFriendAnim()
 	end
 end
 
+function FunctionEntranceMediator:createCooperateBossAnim()
+	local petRaceCell = self._arenaPanel:getChildByFullName("cooperateBossCell")
+	local descLabel = petRaceCell:getChildByFullName("text"):clone()
+	local stateLabel = petRaceCell:getChildByFullName("text1"):clone()
+	local timeLabel = petRaceCell:getChildByFullName("text2"):clone()
+
+	descLabel:setVisible(true)
+	timeLabel:setVisible(true)
+	stateLabel:setVisible(true)
+
+	local redPoint = petRaceCell:getChildByFullName("redPoint"):clone()
+
+	petRaceCell:removeAllChildren()
+
+	local state = self._cooperateBossSystem:getcooperateBossState()
+	local startTime = TimeUtil:localDate("%Y.%m.%d", self._cooperateBossSystem:getCooperateBoss():getHotTime())
+	local endTime = TimeUtil:localDate("%Y.%m.%d", self._cooperateBossSystem:getCooperateBoss():getEndTime())
+
+	if kCooperateBossState.kPreHot == state then
+		stateLabel:setString(Strings:get("CooperateBoss_Entry_UI03"))
+		stateLabel:setTextColor(cc.c3b(249, 91, 91))
+		timeLabel:setString(Strings:get("CooperateBoss_Entry_UI02", {
+			Start = startTime,
+			End = endTime
+		}))
+	elseif kCooperateBossState.kStart == state then
+		self._cooperateBossSystem:requestGetInviteInfo(function ()
+			local mineBossShow = self._cooperateBossSystem:checkMineDefaultBossShow()
+
+			stateLabel:setVisible(false)
+
+			if mineBossShow then
+				stateLabel:setVisible(true)
+				stateLabel:setString(Strings:get("CooperateBoss_Entry_UI05"))
+				stateLabel:setTextColor(cc.c3b(249, 217, 91))
+				stateLabel:setColor(cc.c3b(255, 255, 255))
+			end
+		end)
+		timeLabel:setString(Strings:get("CooperateBoss_Entry_UI04", {
+			EndTime = endTime
+		}))
+	elseif kCooperateBossState.kEnd == state then
+		stateLabel:setString(Strings:get("CooperateBoss_Entry_UI06"))
+		stateLabel:setTextColor(cc.c3b(249, 91, 91))
+		timeLabel:setString(Strings:get("CooperateBoss_Entry_UI04", {
+			EndTime = endTime
+		}))
+	end
+
+	local anim = cc.MovieClip:create("cooperateBossCell_jingjirukou")
+
+	anim:addTo(petRaceCell)
+	anim:addCallbackAtFrame(26, function ()
+		anim:stop()
+	end)
+	anim:setPosition(cc.p(146, 120))
+	anim:setName("ShowAnim")
+	anim:setVisible(false)
+
+	local descPanel = anim:getChildByFullName("descPanel")
+
+	if descPanel then
+		descPanel:removeAllChildren()
+		descLabel:addTo(descPanel):posite(-70, 5)
+		stateLabel:addTo(descPanel):posite(-13, 37)
+		stateLabel:setName("stateLabel")
+		timeLabel:addTo(descPanel):posite(0, -26)
+		redPoint:addTo(descPanel):posite(80, -10)
+
+		petRaceCell.redPoint = redPoint
+	end
+
+	self._cooperateBossStateLabel = stateLabel
+end
+
+function FunctionEntranceMediator:refreshCooperateBoss()
+	local coopNode = self._arenaPanel:getChildByFullName("cooperateBossCell.ShowAnim")
+
+	if self._cooperateBossStateLabel then
+		local stateLabel = self._cooperateBossStateLabel
+		local state = self._cooperateBossSystem:getcooperateBossState()
+
+		if kCooperateBossState.kPreHot == state then
+			stateLabel:setString(Strings:get("CooperateBoss_Entry_UI03"))
+			stateLabel:setTextColor(cc.c3b(249, 91, 91))
+		elseif kCooperateBossState.kStart == state then
+			self._cooperateBossSystem:requestGetInviteInfo(function ()
+				local mineBossShow = self._cooperateBossSystem:checkMineDefaultBossShow()
+
+				stateLabel:setVisible(false)
+
+				if mineBossShow then
+					stateLabel:setVisible(true)
+					stateLabel:setString(Strings:get("CooperateBoss_Entry_UI05"))
+					stateLabel:setTextColor(cc.c3b(249, 217, 91))
+					stateLabel:setColor(cc.c3b(255, 255, 255))
+				end
+			end)
+		elseif kCooperateBossState.kEnd == state then
+			self._arenaPanel:getChildByFullName("cooperateBossCell.ShowAnim"):setVisible(false)
+			self._arenaPanel:getChildByFullName("cooperateBossCell.ShowAnim"):stop()
+		end
+	end
+end
+
 function FunctionEntranceMediator:createRulePanel(parent, str)
 	local image = ccui.ImageView:create("asset/common/sl_bg_msd.png")
 
@@ -289,6 +413,18 @@ function FunctionEntranceMediator:clickPanel(index)
 		self:enterPetRaceView()
 	elseif index == 3 then
 		self:enterFriendView()
+	elseif index == 4 then
+		if self._cooperateBossSystem:getcooperateBossState() == kCooperateBossState.kStart then
+			self:enterCooperateBoss()
+		elseif self._cooperateBossSystem:getcooperateBossState() == kCooperateBossState.kPreHot then
+			local startTime = TimeUtil:localDate("%m" .. Strings:get("Setting_UI_Month") .. "%d" .. Strings:get("Setting_UI_Day"), self._cooperateBossSystem:getCooperateBoss():getHotTime())
+
+			self:dispatch(ShowTipEvent({
+				tip = Strings:get("CooperateBoss_Entry_UI07", {
+					StartTime = startTime
+				})
+			}))
+		end
 	end
 end
 
@@ -302,6 +438,9 @@ function FunctionEntranceMediator:refreshRed()
 		end,
 		function ()
 			return CommonUtils.GetSwitch("fn_arena_friend") and self._stagePracticeSystem:checkAwardRed()
+		end,
+		function ()
+			return self._cooperateBossSystem:redPointShow()
 		end
 	}
 
@@ -370,6 +509,10 @@ function FunctionEntranceMediator:enterFriendView()
 			tip = tips
 		}))
 	end
+end
+
+function FunctionEntranceMediator:enterCooperateBoss()
+	self._cooperateBossSystem:enterCooperateBoss()
 end
 
 function FunctionEntranceMediator:onClickBack(sender, eventType)

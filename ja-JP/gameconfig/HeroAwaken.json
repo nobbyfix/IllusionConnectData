@@ -1,4 +1,19 @@
 {
+    "BBLMa": {
+        "Animation": "BBLMa_Awaken",
+        "ModelId": "Model_BBLMa_Awake",
+        "Name": "BBLMa_Awake_Name",
+        "NameDesc": "BBLMa_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_BBLMa_UnAwake",
+        "Reward": "HeroAwaken_BBLMa",
+        "ShowHero": "BBLMa",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "BBLMa_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_BBLMa_Awake"
+    },
     "Test": {
         "Animation": "SDTZi_Awaken",
         "ModelId": "Model_SDTZi_Awake",

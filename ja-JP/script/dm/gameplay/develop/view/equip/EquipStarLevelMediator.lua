@@ -195,6 +195,7 @@ function EquipStarLevelMediator:initView()
 
 	local text = self._ruleNode:getChildByFullName("text")
 
+	text:getVirtualRenderer():setDimensions(700, 0)
 	text:setString(Strings:get("Equip_UI73"))
 
 	local backimg = self._ruleNode:getChildByFullName("backimg")

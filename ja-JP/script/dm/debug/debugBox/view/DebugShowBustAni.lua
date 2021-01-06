@@ -84,7 +84,7 @@ function DebugShowBustAni:createBustAnim(data)
 		info.stencil = 1
 		info.size = cc.size(185, 132)
 	elseif bustIndex == 14 then
-		info.size = cc.size(240, 250)
+		-- Nothing
 	elseif bustIndex == 15 then
 		-- Nothing
 	elseif bustIndex == 16 then
@@ -145,11 +145,64 @@ function DebugShowBustAni:createBustAnim(data)
 
 	if bustIndex == 11 then
 		heroIcon = self:createRactHeadImage(info)
+	elseif bustIndex == 14 then
+		local __topThreePos = {
+			{
+				{
+					-45,
+					190
+				}
+			},
+			{
+				{
+					0,
+					100
+				},
+				{
+					-80,
+					210
+				}
+			},
+			{
+				{
+					10,
+					50
+				},
+				{
+					-95,
+					220
+				},
+				{
+					-20,
+					175
+				}
+			}
+		}
+		local img = ccui.Layout:create()
+
+		img:setContentSize(cc.size(240, 370))
+
+		local posList = __topThreePos[1]
+		info.offsetList = posList
+		info.stencil = img
+		heroIcon = self:createTopThreeIcon(info)
 	else
 		heroIcon = self:createRoleIconSprite(info)
 	end
 
-	heroIcon:addTo(self._mainPanel):center(self._mainPanel:getContentSize())
+	if bustIndex == 4 then
+		heroIcon:addTo(self._mainPanel)
+		heroIcon:setPosition(cc.p(442, 191))
+	elseif bustIndex == 6 then
+		heroIcon:addTo(self._mainPanel)
+		heroIcon:setPosition(cc.p(618, 20))
+	elseif bustIndex == 9 then
+		heroIcon:setScale(0.8)
+		heroIcon:addTo(self._mainPanel)
+		heroIcon:setPosition(cc.p(345, 234))
+	else
+		heroIcon:addTo(self._mainPanel):center(self._mainPanel:getContentSize())
+	end
 end
 
 function DebugShowBustAni:createRoleIconSprite(info)
@@ -470,4 +523,109 @@ function DebugShowBustAni:addStencilForIcon(node, clipIndex, size, offset)
 	clipSprite:setAnchorPoint(cc.p(0.5, 0.5))
 
 	return clipSprite
+end
+
+function DebugShowBustAni:createTopThreeIcon(info)
+	local type = info.iconType or 1
+	local offsetList = info.offsetList
+	local scaleTo = 1
+	local rolePicId = ConfigReader:getDataByNameIdAndKey("RoleModel", info.id, IconFactory.kIconType[type] or type)
+	local picInfo = ConfigReader:getRecordById("SpecialPicture", rolePicId)
+
+	if info.inputIsPos == "0" then
+		local contentScale = picInfo.zoom or 1
+
+		if scaleTo < 1 / contentScale then
+			scaleTo = 1 / contentScale
+		end
+	else
+		local p = string.split(info.inputPos, ",")
+		local contentScale = tonumber(tonumber(p[3])) or 1
+
+		if scaleTo < 1 / contentScale then
+			scaleTo = 1 / contentScale
+		end
+	end
+
+	local showSize = info.stencil:getContentSize()
+	local rtx = cc.RenderTexture:create(showSize.width * scaleTo, showSize.height * scaleTo, cc.TEXTURE2_D_PIXEL_FORMAT_RGB_A8888)
+	local topPic = cc.Sprite:createWithSpriteFrameName("smzb_bg_bzdi_zhezhao.png")
+
+	topPic:setBlendFunc(cc.blendFunc(gl.ZERO, gl.SRC_ALPHA))
+	topPic:setPosition(cc.p(showSize.width * scaleTo / 2, showSize.height * scaleTo / 2))
+	topPic:setScaleY(1.5 * scaleTo)
+	topPic:setScaleX(scaleTo)
+
+	local index = 1
+	local heroAll = {}
+	local nodeBase = cc.Node:create()
+
+	nodeBase:setScale(scaleTo)
+
+	local modelID = ConfigReader:getDataByNameIdAndKey("RoleModel", info.id, "Model")
+	local commonResource = ConfigReader:getDataByNameIdAndKey("RoleModel", id, "CommonResource")
+
+	if not commonResource or commonResource == "" then
+		commonResource = modelID
+	end
+
+	local picInfo = ConfigReader:getRecordById("SpecialPicture", rolePicId)
+	local path = string.format("%s%s/%s.png", IconFactory.kIconPathCfg[tonumber(picInfo.Path)], commonResource, picInfo.Filename)
+	local sprite = ccui.ImageView:create(path)
+	local spriteSize = sprite:getContentSize()
+	local coordinates = nil
+
+	if info.inputIsPos == "0" then
+		coordinates = picInfo.Coordinates or {}
+	elseif info.inputIsPos == "1" then
+		coordinates = string.split(info.inputPos, ",")
+	end
+
+	local contentScale = nil
+
+	if info.inputIsPos == "0" then
+		contentScale = picInfo.zoom or 1
+	else
+		local p = string.split(info.inputPos, ",")
+		contentScale = tonumber(tonumber(p[3])) or 1
+	end
+
+	sprite:setScale(contentScale)
+	sprite:setAnchorPoint(cc.p(0, 0))
+
+	local posX = 0 - (coordinates[1] or 0)
+	local posY = 0 - (coordinates[2] or 0)
+	local offset = offsetList[index]
+
+	if offset then
+		posX = posX + offset[1]
+		posY = posY + offset[2]
+	end
+
+	local __topThreeZorder = {
+		3,
+		1,
+		2
+	}
+
+	sprite:setPosition(cc.p(posX, posY))
+	nodeBase:addChild(sprite, __topThreeZorder[index])
+
+	index = index + 1
+
+	rtx:begin()
+	nodeBase:visit()
+	topPic:visit()
+	rtx:endToLua()
+
+	local texture = rtx:getSprite():getTexture()
+
+	texture:setAntiAliasTexParameters()
+
+	local retval = cc.Sprite:createWithTexture(texture)
+
+	retval:setFlippedY(true)
+	retval:setScale(1 / scaleTo)
+
+	return retval
 end

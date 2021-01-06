@@ -843,6 +843,23 @@
             "Announce_Club_SSR"
         ]
     },
+    "Announce_CooperateBoss": {
+        "Channel": [
+            "BASE-SYSTEM"
+        ],
+        "Condition": [],
+        "ExpireTime": 600,
+        "Label": 1,
+        "Link": "",
+        "NotifyGroup": 4,
+        "Priority": 1,
+        "ReachType": "",
+        "Times": 1,
+        "Type": "COOPERATE_BOSS_INVITE",
+        "Words": [
+            "CooperateBoss_AnnounceContent"
+        ]
+    },
     "Announce_ExplorDegree1": {
         "Channel": [
             "BASE-SYSTEM",

@@ -145,7 +145,6 @@ function DreamChallengeTeamMediator:initData(data)
 		end
 	end
 
-	dump(self._forbidMasters, "self._forbidMasters >>>>>>>>>>> ")
 	table.sort(self._masterList, function (a, b)
 		local astate = kMasterState.Forbidden
 		local bstate = kMasterState.Forbidden

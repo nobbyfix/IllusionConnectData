@@ -74,6 +74,9 @@ DevelopSystem:has("_rankSystem", {
 DevelopSystem:has("_dreamSystem", {
 	is = "r"
 }):injectWith("DreamChallengeSystem")
+DevelopSystem:has("_CooperateBossSystem", {
+	is = "r"
+}):injectWith("CooperateBossSystem")
 
 function DevelopSystem:initialize()
 	super.initialize(self)
@@ -250,6 +253,7 @@ function DevelopSystem:syncPlayer(data, isDiff)
 		activitySystem:checkActivityState()
 		activitySystem:checkPassActivityData()
 		activitySystem:checkClubBossSummerActivityData()
+		self._CooperateBossSystem:synchronize(data.activities.activityMap)
 	end
 
 	if data.spStages then
@@ -423,7 +427,6 @@ function DevelopSystem:syncDeleteData(data)
 	end
 
 	if data and data.dreamChallenge then
-		dump(data.dreamChallenge, "data.dreamChallenge del >>>>>>>>>> ")
 		self._dreamSystem:delete(data.dreamChallenge)
 	end
 

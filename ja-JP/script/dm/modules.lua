@@ -1849,6 +1849,11 @@ local modules = {
 							res = "asset/ui/ActivityFudaiPreview.csb",
 							name = "ActivityBlockFudaiPreview",
 							mediator = "ActivityBlockFudaiPreviewMeditor"
+						},
+						{
+							res = "asset/ui/ActivityBlockDetective.csb",
+							name = "ActivityBlockDetectiveView",
+							mediator = "ActivityBlockDectiveMediator"
 						}
 					}
 				}
@@ -3735,6 +3740,60 @@ local modules = {
 							res = "asset/ui/MiniGameResult.csb",
 							name = "MiniGameResultView",
 							mediator = "MiniGameResultMediator"
+						}
+					}
+				}
+			},
+			{
+				name = "cooperateBoss",
+				requires = {
+					"dm.gameplay.cooperateBoss.controller.CooperateBossSystem",
+					"dm.gameplay.cooperateBoss.model.CooperateBoss",
+					"dm.gameplay.cooperateBoss.service.CooperateBossService"
+				},
+				injections = {
+					singletons = {
+						"CooperateBossSystem",
+						"CooperateBoss"
+					},
+					classes = {
+						"CooperateBossService"
+					},
+					views = {
+						{
+							res = "asset/ui/CooperateBossMain.csb",
+							name = "CooperateBossMainView",
+							mediator = "CooperateBossMainMediator"
+						},
+						{
+							res = "asset/ui/CooperateBossBattleEnd.csb",
+							name = "CooperateBossBattleEndView",
+							mediator = "CooperateBossBattleEndMediator"
+						},
+						{
+							res = "asset/ui/CooperateBossFight.csb",
+							name = "CooperateBossFightView",
+							mediator = "CooperateBossFightMediator"
+						},
+						{
+							res = "asset/ui/CooperateBossInvite.csb",
+							name = "CooperateBossInviteView",
+							mediator = "CooperateBossInviteMediator"
+						},
+						{
+							res = "asset/ui/CooperateBossInviteFriend.csb",
+							name = "CooperateBossInviteFriendView",
+							mediator = "CooperateBossInviteFriendMediator"
+						},
+						{
+							res = "asset/ui/CooperateBossBuyTime.csb",
+							name = "CooperateBossBuyTimeView",
+							mediator = "CooperateBossBuyTimeMediator"
+						},
+						{
+							res = "asset/ui/CooperateBossTeam.csb",
+							name = "CooperateBossTeamView",
+							mediator = "CooperateBossTeamMediator"
 						}
 					}
 				}

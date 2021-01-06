@@ -61,6 +61,10 @@ local ActivityPointCostConfig = {
 	[CurrencyIdKind.kActivityHolidayPower] = {
 		tips = "IR_NewyearStaminaWarning",
 		func = "getActivityHolidayPower"
+	},
+	[CurrencyIdKind.kActivityDetectivePower] = {
+		tips = "ACTIVITY_Detective_ENERGY_NOT_ENOUGH",
+		func = "getAcitvityDetectivePower"
 	}
 }
 

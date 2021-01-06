@@ -603,7 +603,6 @@ function CrusadeMainMediator:setRecommendHeroView()
 
 	recommendHero2:getChildByFullName("attackText"):setString(starBuff)
 	recommendHero3:getChildByFullName("attackText"):setString(aweakenBuff)
-	recommendHero3:setVisible(false)
 end
 
 function CrusadeMainMediator:refreshProgress()

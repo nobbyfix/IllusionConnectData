@@ -145,6 +145,9 @@ function ActivityBlockMonsterShopBuyItemMediator:refreshBaseShowView()
 
 	if info.rewardType == RewardType.kEquip then
 		self._numberPanel:setVisible(false)
+	elseif info.rewardType == RewardType.kHero then
+		local config = ConfigReader:getRecordById("HeroBase", tostring(info.id))
+		rarity = config.Rareity
 	else
 		rarity = rarity + 9
 	end
@@ -185,7 +188,13 @@ function ActivityBlockMonsterShopBuyItemMediator:refreshBaseShowView()
 	self._soldOut:setVisible(false)
 	self._sliderPanel:setVisible(true)
 	self._buyBtn:setVisible(true)
-	self._curCount:setString("x" .. curCount)
+
+	if info.rewardType == RewardType.kHero then
+		self._curCount:setString("x" .. 1)
+	else
+		self._curCount:setString("x" .. curCount)
+	end
+
 	self:refreshMoney()
 end
 

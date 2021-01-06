@@ -425,7 +425,7 @@ function ShopPackageMainMediator:setDiscountImg(panel, data)
 	local costOff = data:getCostOff()
 
 	if costOff and costOff > 0 then
-		costOffTagPanel:setVisible(true)
+		costOffTagPanel:setVisible(false)
 
 		local n = costOffTagPanel:getChildByName("number")
 		local n1 = costOffTagPanel:getChildByName("number1")

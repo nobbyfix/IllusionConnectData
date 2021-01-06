@@ -286,6 +286,19 @@ DebugBoxMainIndex = {
 				}
 			},
 			{
+				"BOSS共斗",
+				{
+					"触发BOSS共斗",
+					"增加共斗BOSS挑战次数"
+				}
+			},
+			{
+				"通用后端命令",
+				{
+					"触发后端命令"
+				}
+			},
+			{
 				"bust展示",
 				{
 					"设置bust"
@@ -706,6 +719,18 @@ DebugBoxMainIndex = {
 				"ChangeDartsLevel"
 			},
 			{
+				"触发BOSS共斗",
+				"CooperateBossTrigger"
+			},
+			{
+				"增加共斗BOSS挑战次数",
+				"AddCopperateBossTime"
+			},
+			{
+				"触发后端命令",
+				"CooperateBossCommand"
+			},
+			{
 				"设置bust",
 				"DebugShowBustAni"
 			},
@@ -866,6 +891,7 @@ DebugBoxMainIndex = {
 			"FreeRecharge",
 			"BattleExtend",
 			"ChangeMiniGame",
+			"CooperateBossTest",
 			"DebugShowBustAni"
 		}
 

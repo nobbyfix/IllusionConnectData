@@ -826,11 +826,11 @@
         "URL": "view://HeroStoryEnterView&viewType=push&heroId=DNTLuo"
     },
     "IHF_FEMSi_1": {
-        "Isturn": 1,
-        "ResourceText": "Resource_DrawCard",
-        "ResourceType": 1,
-        "Text": "Source_Gamble",
-        "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_Diamond_1"
+        "Isturn": 0,
+        "ResourceText": "Source_Activity",
+        "ResourceType": 0,
+        "Text": "Source_Activity",
+        "URL": ""
     },
     "IHF_FEMSi_2": {
         "Isturn": 1,
@@ -903,11 +903,11 @@
         "URL": "view://HeroStoryEnterView&viewType=push&heroId=HLMGen"
     },
     "IHF_HSheng_1": {
-        "Isturn": 1,
-        "ResourceText": "Resource_DrawCard",
-        "ResourceType": 1,
-        "Text": "Source_Gamble",
-        "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_Diamond_1"
+        "Isturn": 0,
+        "ResourceText": "Source_Activity",
+        "ResourceType": 0,
+        "Text": "Source_Activity",
+        "URL": ""
     },
     "IHF_HSheng_2": {
         "Isturn": 1,
@@ -2678,6 +2678,27 @@
         "ResourceText": "Source_Activity",
         "ResourceType": 0,
         "Text": "Source_Activity",
+        "URL": ""
+    },
+    "IM_DetectiveExchange_1": {
+        "Isturn": 0,
+        "ResourceText": "Source_IM_DetectiveExchange_1",
+        "ResourceType": 0,
+        "Text": "IM_DetectiveExchange_1_Desc",
+        "URL": ""
+    },
+    "IM_DetectiveExchange_2": {
+        "Isturn": 0,
+        "ResourceText": "Source_IM_DetectiveExchange_2",
+        "ResourceType": 0,
+        "Text": "IM_DetectiveExchange_2_Desc",
+        "URL": ""
+    },
+    "IM_DetectiveExchange_3": {
+        "Isturn": 0,
+        "ResourceText": "Source_IM_DetectiveExchange_3",
+        "ResourceType": 0,
+        "Text": "IM_DetectiveExchange_3_Desc",
         "URL": ""
     },
     "IM_FHeroAll_1": {

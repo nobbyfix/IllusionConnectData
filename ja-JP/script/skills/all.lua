@@ -1,3 +1,4 @@
+require("skills.ActivitySkill")
 require("skills.ArenaFixed")
 require("skills.BlockSp")
 require("skills.Bubble")

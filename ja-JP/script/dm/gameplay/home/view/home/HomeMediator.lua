@@ -68,6 +68,44 @@ local kBtnHandlers = {
 		func = "fastGetRes"
 	}
 }
+local detectiveBtnName = {
+	{
+		text = "ActivityBlock_Detective_Name_1",
+		fontsize = 20,
+		pos = {
+			40,
+			30
+		},
+		color = cc.c4b(255, 255, 255, 255)
+	},
+	{
+		text = "ActivityBlock_Detective_Name_2",
+		fontsize = 20,
+		pos = {
+			30,
+			10
+		},
+		color = cc.c4b(255, 255, 255, 255)
+	},
+	{
+		text = "ActivityBlock_Detective_Name_3",
+		fontsize = 24,
+		pos = {
+			65,
+			10
+		},
+		lineGradiantVec2 = {
+			{
+				ratio = 0.3,
+				color = cc.c4b(255, 253, 90, 255)
+			},
+			{
+				ratio = 0.7,
+				color = cc.c4b(255, 239, 184, 255)
+			}
+		}
+	}
+}
 local spineTouchEventTag = false
 local firstChargePackId = "PackageShop_1"
 local PREPARESTATE = "Prepare_State"
@@ -3032,8 +3070,9 @@ function HomeMediator:arenaRedPoint()
 
 	local arenaSystem = self:getInjector():getInstance(ArenaSystem)
 	local petRaceSystem = self:getInjector():getInstance(PetRaceSystem)
+	local coopBoss = self:getInjector():getInstance(CooperateBossSystem)
 
-	return arenaSystem:checkAwardRed() or petRaceSystem:redPointShow()
+	return arenaSystem:checkAwardRed() or petRaceSystem:redPointShow() or coopBoss:redPointShow()
 end
 
 function HomeMediator:exploreRedPoint()
@@ -3517,6 +3556,11 @@ function HomeMediator:setComplexActivityEntry()
 			anim = "rukou_newyearshop",
 			aimpos = cc.p(50, 43),
 			redPointFuncx = self._activitySystem.hasRedPointForActivity
+		},
+		[ActivityType_UI.KActivityBlockDetetive] = {
+			anim = "biao_timeeff",
+			aimpos = cc.p(50, 43),
+			redPointFuncx = self._activitySystem.hasRedPointForActivity
 		}
 	}
 	local extraActBtn = self._rightFuncLayout:getChildByFullName("extraActBtn")
@@ -3566,6 +3610,26 @@ function HomeMediator:setComplexActivityEntry()
 			show = ccui.ImageView:create(cfg.img, ccui.TextureResType.plistType)
 		end
 
+		if ui == ActivityType_UI.KActivityBlockDetetive then
+			for i, v in ipairs(detectiveBtnName) do
+				local label = cc.Label:createWithTTF(Strings:get(v.text), TTF_FONT_FZYH_M, v.fontsize)
+
+				label:enableOutline(cc.c4b(0, 0, 0, 255), 1)
+
+				if v.color then
+					label:setColor(v.color)
+				elseif v.lineGradiantVec2 then
+					label:enablePattern(cc.LinearGradientPattern:create(v.lineGradiantVec2, {
+						x = 0,
+						y = -1
+					}))
+				end
+
+				label:setPosition(cc.p(v.pos[1], v.pos[2]))
+				self._btns[ui]:addChild(label, 1)
+			end
+		end
+
 		if show then
 			show:addTo(self._btns[ui])
 			show:setPosition(cfg.aimpos)
@@ -3581,7 +3645,7 @@ function HomeMediator:setComplexActivityEntry()
 	for ui, cfg in pairs(complexActivityEntryAnim) do
 		local activity = self._activitySystem:getActivityByComplexUI(ui)
 
-		if activity then
+		if activity and not self._activitySystem:isActivityOver(activity:getId()) then
 			if not self._btns[ui] then
 				create(ui, cfg)
 			end

@@ -1,4 +1,106 @@
 {
+    "ADetectiveS01S01": {
+        "FirstReward": "ADetectiveS01S01_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -250
+        ],
+        "Map": "ADetectiveM01",
+        "Name": "ADetectiveS01S01_Name",
+        "NextStoryPoint": [
+            "ADetectiveS01S02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_detective_1a"
+    },
+    "ADetectiveS01S02": {
+        "FirstReward": "ADetectiveS01S02_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "ADetectiveM01",
+        "Name": "ADetectiveS01S02_Name",
+        "NextStoryPoint": [
+            "ADetectiveS01S03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "ADetectiveM01S09"
+        ],
+        "PreStoryPoint": [
+            "ADetectiveS01S01"
+        ],
+        "StoryLink": "eventstory_detective_2a"
+    },
+    "ADetectiveS01S03": {
+        "FirstReward": "ADetectiveS01S03_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "ADetectiveE01",
+        "Name": "ADetectiveS01S03_Name",
+        "NextStoryPoint": [
+            "ADetectiveS01S04"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "ADetectiveE01S02"
+        ],
+        "PreStoryPoint": [
+            "ADetectiveS01S02"
+        ],
+        "StoryLink": "eventstory_detective_3a"
+    },
+    "ADetectiveS01S04": {
+        "FirstReward": "ADetectiveS01S04_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -50
+        ],
+        "Map": "ADetectiveE01",
+        "Name": "ADetectiveS01S04_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "ADetectiveE01S12"
+        ],
+        "PreStoryPoint": [
+            "ADetectiveS01S03"
+        ],
+        "StoryLink": "eventstory_detective_4a"
+    },
     "ANewYearS01S01": {
         "FirstReward": "",
         "Icon": "s_album_story_1",

@@ -322,6 +322,8 @@ function PassBuyMediator:createBtn(btn, data)
 		discountNode:getChildByName("price"):enableStrikethrough()
 		discountNode:getChildByName("text"):setVisible(false)
 	end
+
+	discountNode:setVisible(false)
 end
 
 function PassBuyMediator:onClickBuy(sender, eventType)

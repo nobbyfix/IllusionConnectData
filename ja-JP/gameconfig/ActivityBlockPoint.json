@@ -1,4 +1,2598 @@
 {
+    "ADetectiveE01S01": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_13",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ADetectiveE01S01_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 143792,
+        "CombatValue": 121000,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Detective",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardAE07P01",
+        "EnemyMaster": "AE07P01U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "ADetectiveE01S01_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FEMSi": "Hero_ABlock_FEMSi_Extra",
+            "HSheng": "Hero_ABlock_HSheng_Extra",
+            "YLSBai": "Hero_ABlock_YLSBai_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "ADetectiveE01",
+        "Name": "BlockPoint_ADetectiveE01S01_Name",
+        "NextPoint": [
+            "ADetectiveE01S02"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_FEMSi_classic",
+        "PointPicture": "",
+        "PointReward": "ADetectiveE01S01_PointReward",
+        "PointTime": {
+            "start": "2020-05-03 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "ADetectiveE01S01_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_DetectiveStamina": 6
+        },
+        "StaminaCost": {
+            "IR_DetectiveStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": 0,
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "ADetectiveE01S02": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_13",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_3",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ADetectiveE01S02_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 143792,
+        "CombatValue": 121000,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Detective",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardAE07P02",
+        "EnemyMaster": "AE07P02U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "ADetectiveE01S02_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FEMSi": "Hero_ABlock_FEMSi_Extra",
+            "HSheng": "Hero_ABlock_HSheng_Extra",
+            "YLSBai": "Hero_ABlock_YLSBai_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "ADetectiveE01",
+        "Name": "BlockPoint_ADetectiveE01S02_Name",
+        "NextPoint": [
+            "ADetectiveE01S03"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "ADetectiveE01S01"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_FEMSi_classic",
+        "PointPicture": "",
+        "PointReward": "ADetectiveE01S02_PointReward",
+        "PointTime": {
+            "start": "2020-05-03 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "ADetectiveE01S02_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_DetectiveStamina": 6
+        },
+        "StaminaCost": {
+            "IR_DetectiveStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": 0,
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideA"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "ADetectiveE01S03": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_13",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_3",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ADetectiveE01S03_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 143792,
+        "CombatValue": 121000,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Detective",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardAE07P03",
+        "EnemyMaster": "AE07P03U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "ADetectiveE01S03_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FEMSi": "Hero_ABlock_FEMSi_Extra",
+            "HSheng": "Hero_ABlock_HSheng_Extra",
+            "YLSBai": "Hero_ABlock_YLSBai_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "ADetectiveE01",
+        "Name": "BlockPoint_ADetectiveE01S03_Name",
+        "NextPoint": [
+            "ADetectiveE01S04"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "ADetectiveE01S02"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_FEMSi_classic",
+        "PointPicture": "",
+        "PointReward": "ADetectiveE01S03_PointReward",
+        "PointTime": {
+            "start": "2020-05-03 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "ADetectiveS01S03"
+        ],
+        "ReslutBoard": "",
+        "ShowItem": "ADetectiveE01S03_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_DetectiveStamina": 6
+        },
+        "StaminaCost": {
+            "IR_DetectiveStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": 0,
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideA"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "ADetectiveE01S04": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_13",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ADetectiveE01S04_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 143792,
+        "CombatValue": 121000,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Detective",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardAE07P04",
+        "EnemyMaster": "AE07P04U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "ADetectiveE01S04_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FEMSi": "Hero_ABlock_FEMSi_Extra",
+            "HSheng": "Hero_ABlock_HSheng_Extra",
+            "YLSBai": "Hero_ABlock_YLSBai_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "ADetectiveE01",
+        "Name": "BlockPoint_ADetectiveE01S04_Name",
+        "NextPoint": [
+            "ADetectiveE01S05"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "ADetectiveE01S03"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_YLSBai_xnian",
+        "PointPicture": "",
+        "PointReward": "ADetectiveE01S04_PointReward",
+        "PointTime": {
+            "start": "2020-05-03 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "ADetectiveE01S04_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Detective_Tittle_1",
+            "SpecialRule_Detective_Rule_9"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_DetectiveStamina": 6
+        },
+        "StaminaCost": {
+            "IR_DetectiveStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": 0,
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "ADetectiveE01S05": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_13",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_MaxEnegy_2",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ADetectiveE01S05_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 143792,
+        "CombatValue": 121000,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Detective",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardAE07P05",
+        "EnemyMaster": "AE07P05U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "ADetectiveE01S05_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FEMSi": "Hero_ABlock_FEMSi_Extra",
+            "HSheng": "Hero_ABlock_HSheng_Extra",
+            "YLSBai": "Hero_ABlock_YLSBai_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "ADetectiveE01",
+        "Name": "BlockPoint_ADetectiveE01S05_Name",
+        "NextPoint": [
+            "ADetectiveE01S06"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "ADetectiveE01S04"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_YLSBai_xnian",
+        "PointPicture": "",
+        "PointReward": "ADetectiveE01S05_PointReward",
+        "PointTime": {
+            "start": "2020-05-03 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "ADetectiveE01S05_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Detective_Tittle_1",
+            "SpecialRule_Detective_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_DetectiveStamina": 6
+        },
+        "StaminaCost": {
+            "IR_DetectiveStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": 0,
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "factor": {
+                    "side": "SideA"
+                },
+                "type": "PlayerRunOutOfEnergy",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "ADetectiveE01S06": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_13",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_MaxEnegy_3",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ADetectiveE01S06_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 143792,
+        "CombatValue": 121000,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Detective",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardAE07P06",
+        "EnemyMaster": "AE07P06U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "ADetectiveE01S06_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FEMSi": "Hero_ABlock_FEMSi_Extra",
+            "HSheng": "Hero_ABlock_HSheng_Extra",
+            "YLSBai": "Hero_ABlock_YLSBai_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "ADetectiveE01",
+        "Name": "BlockPoint_ADetectiveE01S06_Name",
+        "NextPoint": [
+            "ADetectiveE01S07"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "ADetectiveE01S05"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_YLSBai_xnian",
+        "PointPicture": "",
+        "PointReward": "ADetectiveE01S06_PointReward",
+        "PointTime": {
+            "start": "2020-05-03 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "ADetectiveE01S06_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Detective_Tittle_1",
+            "SpecialRule_Detective_Rule_4"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_DetectiveStamina": 6
+        },
+        "StaminaCost": {
+            "IR_DetectiveStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": 0,
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "factor": {
+                    "side": "SideA"
+                },
+                "type": "PlayerRunOutOfEnergy",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "ADetectiveE01S07": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_13",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ADetectiveE01S07_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 143792,
+        "CombatValue": 121000,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Detective",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardAE07P07",
+        "EnemyMaster": "AE07P07U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "ADetectiveE01S07_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FEMSi": "Hero_ABlock_FEMSi_Extra",
+            "HSheng": "Hero_ABlock_HSheng_Extra",
+            "YLSBai": "Hero_ABlock_YLSBai_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "ADetectiveE01",
+        "Name": "BlockPoint_ADetectiveE01S07_Name",
+        "NextPoint": [
+            "ADetectiveE01S08"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "ADetectiveE01S06"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_NFEr",
+        "PointPicture": "",
+        "PointReward": "ADetectiveE01S07_PointReward",
+        "PointTime": {
+            "start": "2020-05-03 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "ADetectiveE01S07_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_DetectiveStamina": 6
+        },
+        "StaminaCost": {
+            "IR_DetectiveStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": 0,
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "ADetectiveE01S08": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_13",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ADetectiveE01S08_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 143792,
+        "CombatValue": 121000,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Detective",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardAE07P08",
+        "EnemyMaster": "AE07P08U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "ADetectiveE01S08_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FEMSi": "Hero_ABlock_FEMSi_Extra",
+            "HSheng": "Hero_ABlock_HSheng_Extra",
+            "YLSBai": "Hero_ABlock_YLSBai_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "ADetectiveE01",
+        "Name": "BlockPoint_ADetectiveE01S08_Name",
+        "NextPoint": [
+            "ADetectiveE01S09"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "ADetectiveE01S07"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_NFEr",
+        "PointPicture": "",
+        "PointReward": "ADetectiveE01S08_PointReward",
+        "PointTime": {
+            "start": "2020-05-03 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "ADetectiveE01S08_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_DetectiveStamina": 6
+        },
+        "StaminaCost": {
+            "IR_DetectiveStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": 0,
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "ADetectiveE01S09": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_13",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ADetectiveE01S09_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 143792,
+        "CombatValue": 121000,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Detective",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardAE07P09",
+        "EnemyMaster": "AE07P09U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "ADetectiveE01S09_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FEMSi": "Hero_ABlock_FEMSi_Extra",
+            "HSheng": "Hero_ABlock_HSheng_Extra",
+            "YLSBai": "Hero_ABlock_YLSBai_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "ADetectiveE01",
+        "Name": "BlockPoint_ADetectiveE01S09_Name",
+        "NextPoint": [
+            "ADetectiveE01S10"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "ADetectiveE01S08"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_NFEr",
+        "PointPicture": "",
+        "PointReward": "ADetectiveE01S09_PointReward",
+        "PointTime": {
+            "start": "2020-05-03 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "ADetectiveE01S09_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_DetectiveStamina": 6
+        },
+        "StaminaCost": {
+            "IR_DetectiveStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": 0,
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "ADetectiveE01S10": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_13",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_MaxEnegy_4",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ADetectiveE01S10_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 143792,
+        "CombatValue": 121000,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Detective",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardAE07P10",
+        "EnemyMaster": "AE07P10U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "ADetectiveE01S10_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FEMSi": "Hero_ABlock_FEMSi_Extra",
+            "HSheng": "Hero_ABlock_HSheng_Extra",
+            "YLSBai": "Hero_ABlock_YLSBai_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "ADetectiveE01",
+        "Name": "BlockPoint_ADetectiveE01S10_Name",
+        "NextPoint": [
+            "ADetectiveE01S11"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "ADetectiveE01S09"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_FEMSi_classic",
+        "PointPicture": "",
+        "PointReward": "ADetectiveE01S10_PointReward",
+        "PointTime": {
+            "start": "2020-05-03 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "ADetectiveE01S10_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Detective_Tittle_1",
+            "SpecialRule_Detective_Rule_5"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_DetectiveStamina": 6
+        },
+        "StaminaCost": {
+            "IR_DetectiveStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": 0,
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "factor": {
+                    "side": "SideA"
+                },
+                "type": "PlayerRunOutOfEnergy",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "ADetectiveE01S11": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_13",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_2",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ADetectiveE01S11_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 177000,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Detective",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardAE07P11",
+        "EnemyMaster": "AE07P11U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "ADetectiveE01S11_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FEMSi": "Hero_ABlock_FEMSi_Extra",
+            "HSheng": "Hero_ABlock_HSheng_Extra",
+            "YLSBai": "Hero_ABlock_YLSBai_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 0,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "ADetectiveE01",
+        "Name": "BlockPoint_ADetectiveE01S11_Name",
+        "NextPoint": [
+            "ADetectiveE01S12"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "ADetectiveE01S10"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_HSheng",
+        "PointPicture": "",
+        "PointReward": "ADetectiveE01S11_PointReward",
+        "PointTime": {
+            "start": "2020-05-03 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "ADetectiveE01S11_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_DetectiveStamina": 12
+        },
+        "StaminaCost": {
+            "IR_DetectiveStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": 0,
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "ADetectiveE01S12": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_13",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_2",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ADetectiveE01S12_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 177000,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Detective",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardAE07P12",
+        "EnemyMaster": "AE07P12U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "ADetectiveE01S12_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FEMSi": "Hero_ABlock_FEMSi_Extra",
+            "HSheng": "Hero_ABlock_HSheng_Extra",
+            "YLSBai": "Hero_ABlock_YLSBai_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 0,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "ADetectiveE01",
+        "Name": "BlockPoint_ADetectiveE01S12_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "ADetectiveE01S11"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_HSheng",
+        "PointPicture": "",
+        "PointReward": "ADetectiveE01S12_PointReward",
+        "PointTime": {
+            "start": "2020-05-03 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "ADetectiveE01S12_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_DetectiveStamina": 12
+        },
+        "StaminaCost": {
+            "IR_DetectiveStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": 0,
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "ADetectiveM01S01": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_13",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ADetectiveM01S01_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 143792,
+        "CombatValue": 121000,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Detective",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardAM07P01",
+        "EnemyMaster": "AM07P01U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "ADetectiveM01S01_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FEMSi": "Hero_ABlock_FEMSi_Extra",
+            "HSheng": "Hero_ABlock_HSheng_Extra",
+            "YLSBai": "Hero_ABlock_YLSBai_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "ADetectiveM01",
+        "Name": "BlockPoint_ADetectiveM01S01_Name",
+        "NextPoint": [
+            "ADetectiveM01S02"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_YLSBai_xnian",
+        "PointPicture": "",
+        "PointReward": "ADetectiveM01S01_PointReward",
+        "PointTime": {
+            "start": "2020-05-03 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "ADetectiveS01S01"
+        ],
+        "ReslutBoard": "",
+        "ShowItem": "ADetectiveM01S01_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_DetectiveStamina": 6
+        },
+        "StaminaCost": {
+            "IR_DetectiveStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": 0,
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "ADetectiveM01S02": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_13",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_3",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ADetectiveM01S02_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 143792,
+        "CombatValue": 121000,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Detective",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardAM07P02",
+        "EnemyMaster": "AM07P02U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "ADetectiveM01S02_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FEMSi": "Hero_ABlock_FEMSi_Extra",
+            "HSheng": "Hero_ABlock_HSheng_Extra",
+            "YLSBai": "Hero_ABlock_YLSBai_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "ADetectiveM01",
+        "Name": "BlockPoint_ADetectiveM01S02_Name",
+        "NextPoint": [
+            "ADetectiveM01S03"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "ADetectiveM01S01"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_YLSBai_xnian",
+        "PointPicture": "",
+        "PointReward": "ADetectiveM01S02_PointReward",
+        "PointTime": {
+            "start": "2020-05-03 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "ADetectiveM01S02_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Detective_Tittle_1",
+            "SpecialRule_Detective_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_DetectiveStamina": 6
+        },
+        "StaminaCost": {
+            "IR_DetectiveStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": 0,
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideA"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "ADetectiveM01S03": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_13",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_3",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ADetectiveM01S03_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 143792,
+        "CombatValue": 121000,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Detective",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardAM07P03",
+        "EnemyMaster": "AM07P03U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "ADetectiveM01S03_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FEMSi": "Hero_ABlock_FEMSi_Extra",
+            "HSheng": "Hero_ABlock_HSheng_Extra",
+            "YLSBai": "Hero_ABlock_YLSBai_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "ADetectiveM01",
+        "Name": "BlockPoint_ADetectiveM01S03_Name",
+        "NextPoint": [
+            "ADetectiveM01S04"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "ADetectiveM01S02"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_YLSBai_xnian",
+        "PointPicture": "",
+        "PointReward": "ADetectiveM01S03_PointReward",
+        "PointTime": {
+            "start": "2020-05-03 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "ADetectiveM01S03_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Detective_Tittle_1",
+            "SpecialRule_Detective_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_DetectiveStamina": 6
+        },
+        "StaminaCost": {
+            "IR_DetectiveStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": 0,
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideA"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "ADetectiveM01S04": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_13",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ADetectiveM01S04_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 143792,
+        "CombatValue": 121000,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Detective",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardAM07P04",
+        "EnemyMaster": "AM07P04U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "ADetectiveM01S04_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FEMSi": "Hero_ABlock_FEMSi_Extra",
+            "HSheng": "Hero_ABlock_HSheng_Extra",
+            "YLSBai": "Hero_ABlock_YLSBai_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "ADetectiveM01",
+        "Name": "BlockPoint_ADetectiveM01S04_Name",
+        "NextPoint": [
+            "ADetectiveM01S05"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "ADetectiveM01S03"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_YLSBai_xnian",
+        "PointPicture": "",
+        "PointReward": "ADetectiveM01S04_PointReward",
+        "PointTime": {
+            "start": "2020-05-03 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "ADetectiveM01S04_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_DetectiveStamina": 6
+        },
+        "StaminaCost": {
+            "IR_DetectiveStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": 0,
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "ADetectiveM01S05": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_13",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_MaxEnegy_1",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ADetectiveM01S05_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 143792,
+        "CombatValue": 121000,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Detective",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardAM07P05",
+        "EnemyMaster": "AM07P05U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "ADetectiveM01S05_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FEMSi": "Hero_ABlock_FEMSi_Extra",
+            "HSheng": "Hero_ABlock_HSheng_Extra",
+            "YLSBai": "Hero_ABlock_YLSBai_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "ADetectiveM01",
+        "Name": "BlockPoint_ADetectiveM01S05_Name",
+        "NextPoint": [
+            "ADetectiveM01S06"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "ADetectiveM01S04"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_NFEr",
+        "PointPicture": "",
+        "PointReward": "ADetectiveM01S05_PointReward",
+        "PointTime": {
+            "start": "2020-05-03 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "ADetectiveM01S05_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Detective_Tittle_1",
+            "SpecialRule_Detective_Rule_2"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_DetectiveStamina": 6
+        },
+        "StaminaCost": {
+            "IR_DetectiveStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": 0,
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideA"
+            },
+            {
+                "factor": {
+                    "side": "SideA"
+                },
+                "type": "PlayerRunOutOfEnergy",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "ADetectiveM01S06": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_13",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_MaxEnegy_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ADetectiveM01S06_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 143792,
+        "CombatValue": 121000,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Detective",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardAM07P06",
+        "EnemyMaster": "AM07P06U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "ADetectiveM01S06_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FEMSi": "Hero_ABlock_FEMSi_Extra",
+            "HSheng": "Hero_ABlock_HSheng_Extra",
+            "YLSBai": "Hero_ABlock_YLSBai_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "ADetectiveM01",
+        "Name": "BlockPoint_ADetectiveM01S06_Name",
+        "NextPoint": [
+            "ADetectiveM01S07"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "ADetectiveM01S05"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_NFEr",
+        "PointPicture": "",
+        "PointReward": "ADetectiveM01S06_PointReward",
+        "PointTime": {
+            "start": "2020-05-03 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "ADetectiveM01S06_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Detective_Tittle_1",
+            "SpecialRule_Detective_Rule_7"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_DetectiveStamina": 6
+        },
+        "StaminaCost": {
+            "IR_DetectiveStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": 0,
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "factor": {
+                    "side": "SideA"
+                },
+                "type": "PlayerRunOutOfEnergy",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "ADetectiveM01S07": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_13",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ADetectiveM01S07_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 143792,
+        "CombatValue": 121000,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Detective",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardAM07P07",
+        "EnemyMaster": "AM07P07U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "ADetectiveM01S07_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FEMSi": "Hero_ABlock_FEMSi_Extra",
+            "HSheng": "Hero_ABlock_HSheng_Extra",
+            "YLSBai": "Hero_ABlock_YLSBai_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "ADetectiveM01",
+        "Name": "BlockPoint_ADetectiveM01S07_Name",
+        "NextPoint": [
+            "ADetectiveM01S08"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "ADetectiveM01S06"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_NFEr",
+        "PointPicture": "",
+        "PointReward": "ADetectiveM01S07_PointReward",
+        "PointTime": {
+            "start": "2020-05-03 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "ADetectiveM01S07_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_DetectiveStamina": 6
+        },
+        "StaminaCost": {
+            "IR_DetectiveStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": 0,
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "ADetectiveM01S08": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_13",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_4",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ADetectiveM01S08_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 143792,
+        "CombatValue": 121000,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Detective",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardAM07P08",
+        "EnemyMaster": "AM07P08U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "ADetectiveM01S08_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FEMSi": "Hero_ABlock_FEMSi_Extra",
+            "HSheng": "Hero_ABlock_HSheng_Extra",
+            "YLSBai": "Hero_ABlock_YLSBai_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "ADetectiveM01",
+        "Name": "BlockPoint_ADetectiveM01S08_Name",
+        "NextPoint": [
+            "ADetectiveM01S09"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "ADetectiveM01S07"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_NFEr",
+        "PointPicture": "",
+        "PointReward": "ADetectiveM01S08_PointReward",
+        "PointTime": {
+            "start": "2020-05-03 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "ADetectiveM01S08_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Detective_Tittle_1",
+            "SpecialRule_Detective_Rule_6"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_DetectiveStamina": 6
+        },
+        "StaminaCost": {
+            "IR_DetectiveStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": 0,
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "ADetectiveM01S09": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_13",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_4",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ADetectiveM01S09_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 143792,
+        "CombatValue": 121000,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Detective",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardAM07P09",
+        "EnemyMaster": "AM07P09U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "ADetectiveM01S09_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FEMSi": "Hero_ABlock_FEMSi_Extra",
+            "HSheng": "Hero_ABlock_HSheng_Extra",
+            "YLSBai": "Hero_ABlock_YLSBai_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "ADetectiveM01",
+        "Name": "BlockPoint_ADetectiveM01S09_Name",
+        "NextPoint": [
+            "ADetectiveM01S10"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "ADetectiveM01S08"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_NFEr",
+        "PointPicture": "",
+        "PointReward": "ADetectiveM01S09_PointReward",
+        "PointTime": {
+            "start": "2020-05-03 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "ADetectiveM01S09_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Detective_Tittle_1",
+            "SpecialRule_Detective_Rule_6"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_DetectiveStamina": 6
+        },
+        "StaminaCost": {
+            "IR_DetectiveStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": 0,
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "ADetectiveM01S10": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_13",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_4",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ADetectiveM01S10_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 143792,
+        "CombatValue": 121000,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Detective",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardAM07P10",
+        "EnemyMaster": "AM07P10U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "ADetectiveM01S10_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FEMSi": "Hero_ABlock_FEMSi_Extra",
+            "HSheng": "Hero_ABlock_HSheng_Extra",
+            "YLSBai": "Hero_ABlock_YLSBai_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "ADetectiveM01",
+        "Name": "BlockPoint_ADetectiveM01S10_Name",
+        "NextPoint": [
+            "ADetectiveM01S11"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "ADetectiveM01S09"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_NFEr",
+        "PointPicture": "",
+        "PointReward": "ADetectiveM01S10_PointReward",
+        "PointTime": {
+            "start": "2020-05-03 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "ADetectiveS01S02"
+        ],
+        "ReslutBoard": "",
+        "ShowItem": "ADetectiveM01S10_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Detective_Tittle_1",
+            "SpecialRule_Detective_Rule_6"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_DetectiveStamina": 6
+        },
+        "StaminaCost": {
+            "IR_DetectiveStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": 0,
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "ADetectiveM01S11": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_13",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_2",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ADetectiveM01S11_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 157000,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Detective",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardAM07P11",
+        "EnemyMaster": "AM07P11U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "ADetectiveM01S11_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FEMSi": "Hero_ABlock_FEMSi_Extra",
+            "HSheng": "Hero_ABlock_HSheng_Extra",
+            "YLSBai": "Hero_ABlock_YLSBai_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 0,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "ADetectiveM01",
+        "Name": "BlockPoint_ADetectiveM01S11_Name",
+        "NextPoint": [
+            "ADetectiveM01S12"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "ADetectiveM01S10"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_KTSJKe",
+        "PointPicture": "",
+        "PointReward": "ADetectiveM01S11_PointReward",
+        "PointTime": {
+            "start": "2020-05-03 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "ADetectiveM01S11_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_DetectiveStamina": 12
+        },
+        "StaminaCost": {
+            "IR_DetectiveStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": 0,
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "ADetectiveM01S12": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_13",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_2",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ADetectiveM01S12_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 157000,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Detective",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardAM07P12",
+        "EnemyMaster": "AM07P12U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "ADetectiveM01S12_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FEMSi": "Hero_ABlock_FEMSi_Extra",
+            "HSheng": "Hero_ABlock_HSheng_Extra",
+            "YLSBai": "Hero_ABlock_YLSBai_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 0,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "ADetectiveM01",
+        "Name": "BlockPoint_ADetectiveM01S12_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "ADetectiveM01S11"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_FEMSi",
+        "PointPicture": "",
+        "PointReward": "ADetectiveM01S12_PointReward",
+        "PointTime": {
+            "start": "2020-05-03 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "ADetectiveM01S12_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_DetectiveStamina": 12
+        },
+        "StaminaCost": {
+            "IR_DetectiveStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 120
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": 0,
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
     "AE01S01": {
         "AiRules": "",
         "Assist": [],
