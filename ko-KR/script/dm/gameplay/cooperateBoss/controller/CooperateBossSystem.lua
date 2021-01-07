@@ -684,7 +684,7 @@ function CooperateBossSystem:enterBattle(params, viewType)
 		outSelf:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, nil, {}, popupDelegate))
 	end
 
-	local pointConfig = ConfigReader:getRecordById("ClubBlockBattle", mapId)
+	local pointConfig = ConfigReader:getRecordById("CooperateBossBattle", mapId)
 	local battleSpeed_Display = ConfigReader:getDataByNameIdAndKey("ConfigValue", "BattleSpeed_Display", "content")
 	local battleSpeed_Actual = ConfigReader:getDataByNameIdAndKey("ConfigValue", "BattleSpeed_Actual", "content")
 	local data = {

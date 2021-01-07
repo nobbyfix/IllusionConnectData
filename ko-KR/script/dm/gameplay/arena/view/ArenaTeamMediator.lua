@@ -256,7 +256,7 @@ function ArenaTeamMediator:initWidgetInfo()
 	buffInfo:setString("")
 
 	local text = Strings:get(seasonSkillData.Desc, {
-		fontSize = 28,
+		fontSize = 20,
 		fontName = TTF_FONT_FZYH_R
 	})
 	local richText = ccui.RichText:createWithXML(text, {})

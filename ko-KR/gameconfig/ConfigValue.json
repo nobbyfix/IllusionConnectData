@@ -2735,7 +2735,9 @@
     },
     "First_LogOn": {
         "clz": "string[]",
-        "content": []
+        "content": [
+            "Mail_First_LogOn"
+        ]
     },
     "Forbidden_Rep": {
         "clz": "string",
