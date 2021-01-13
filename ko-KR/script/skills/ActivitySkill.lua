@@ -202,7 +202,7 @@ all.Trap_Boss_Self_Damage_Passive = {
 						pos = global.UnitPos(_env, _env.ACTOR)
 					})
 					global.ApplyHPDamage(_env, _env.ACTOR, Hp * this.BossDamage)
-				else
+				elseif global.EnemyMaster(_env) then
 					local Hp = global.UnitPropGetter(_env, "maxHp")(_env, global.EnemyMaster(_env))
 
 					global.AddAnim(_env, {
@@ -345,7 +345,7 @@ all.Trap_Boss_Unhurtrate_Down_Passive = {
 					}, {
 						buffeft
 					})
-				else
+				elseif global.EnemyMaster(_env) then
 					local Hp = global.UnitPropGetter(_env, "maxHp")(_env, global.EnemyMaster(_env))
 
 					global.AddAnim(_env, {
