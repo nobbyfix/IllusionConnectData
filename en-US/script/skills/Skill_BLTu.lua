@@ -16,7 +16,7 @@ all.Skill_BLTu_Normal = {
 		if this.dmgFactor == nil then
 			this.dmgFactor = {
 				1,
-				1.05,
+				1,
 				0
 			}
 		end
@@ -26,7 +26,7 @@ all.Skill_BLTu_Normal = {
 			entry = prototype.main
 		})
 		this.main = global["[duration]"](this, {
-			834
+			1167
 		}, main)
 
 		return this
@@ -55,7 +55,7 @@ all.Skill_BLTu_Normal = {
 			global.AssignRoles(_env, _env.TARGET, "target")
 		end)
 		exec["@time"]({
-			467
+			300
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
@@ -65,7 +65,15 @@ all.Skill_BLTu_Normal = {
 
 			local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, this.dmgFactor)
 
-			global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage)
+			global.ApplyHPMultiDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, {
+				0,
+				200,
+				500
+			}, global.SplitValue(_env, damage, {
+				0.25,
+				0.25,
+				0.5
+			}))
 		end)
 
 		return _env
@@ -83,26 +91,17 @@ all.Skill_BLTu_Proud = {
 		if this.dmgFactor == nil then
 			this.dmgFactor = {
 				1,
-				1.6,
+				1,
 				0
 			}
-		end
-
-		this.HurtRateDown = externs.HurtRateDown
-
-		if this.HurtRateDown == nil then
-			this.HurtRateDown = 0.1
 		end
 
 		local main = __action(this, {
 			name = "main",
 			entry = prototype.main
 		})
-		main = global["[duration]"](this, {
+		this.main = global["[duration]"](this, {
 			1167
-		}, main)
-		this.main = global["[proud]"](this, {
-			"Hero_Proud_BLTu"
 		}, main)
 
 		return this
@@ -131,37 +130,25 @@ all.Skill_BLTu_Proud = {
 			global.AssignRoles(_env, _env.TARGET, "target")
 		end)
 		exec["@time"]({
-			533
+			300
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			local buffeft = global.NumericEffect(_env, "-hurtrate", {
-				"+Normal",
-				"+Normal"
-			}, this.HurtRateDown)
 
-			global.ApplyBuff_Debuff(_env, _env.ACTOR, _env.TARGET, {
-				timing = 2,
-				display = "HurtRateDown",
-				group = "Skill_BLTu_Proud",
-				duration = 1,
-				limit = 1,
-				tags = {
-					"NUMERIC",
-					"DEBUFF",
-					"HURTRATEDOWN",
-					"DISPELLABLE",
-					"UNSTEALABLE"
-				}
-			}, {
-				buffeft
-			}, 1, 0)
 			global.ApplyStatusEffect(_env, _env.ACTOR, _env.TARGET)
 			global.ApplyRPEffect(_env, _env.ACTOR, _env.TARGET)
 
 			local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, this.dmgFactor)
 
-			global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage)
+			global.ApplyHPMultiDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, {
+				0,
+				200,
+				500
+			}, global.SplitValue(_env, damage, {
+				0.25,
+				0.25,
+				0.5
+			}))
 		end)
 
 		return _env
@@ -174,48 +161,23 @@ all.Skill_BLTu_Unique = {
 		local this = global.__skill({
 			global = global
 		}, prototype, externs)
-		this.ShieldRateFactor = externs.ShieldRateFactor
+		this.dmgFactor = externs.dmgFactor
 
-		if this.ShieldRateFactor == nil then
-			this.ShieldRateFactor = 0.3
-		end
-
-		this.AOEDeRateFactor = externs.AOEDeRateFactor
-
-		if this.AOEDeRateFactor == nil then
-			this.AOEDeRateFactor = 0.3
+		if this.dmgFactor == nil then
+			this.dmgFactor = {
+				1,
+				1,
+				0
+			}
 		end
 
 		local main = __action(this, {
 			name = "main",
 			entry = prototype.main
 		})
-		main = global["[duration]"](this, {
-			2967
+		this.main = global["[duration]"](this, {
+			1167
 		}, main)
-		this.main = global["[cut_in]"](this, {
-			"1#Hero_Unique_BLTu"
-		}, main)
-		local passive1 = __action(this, {
-			name = "passive1",
-			entry = prototype.passive1
-		})
-		passive1 = global["[duration]"](this, {
-			0
-		}, passive1)
-		this.passive1 = global["[trigger_by]"](this, {
-			"UNIT_ENTER"
-		}, passive1)
-		local passive2 = __action(this, {
-			name = "passive2",
-			entry = prototype.passive2
-		})
-		passive2 = global["[duration]"](this, {
-			0
-		}, passive2)
-		this.passive2 = global["[trigger_by]"](this, {
-			"SELF:DIE"
-		}, passive2)
 
 		return this
 	end,
@@ -230,168 +192,38 @@ all.Skill_BLTu_Unique = {
 		_env.TARGET = externs.TARGET
 
 		assert(_env.TARGET ~= nil, "External variable `TARGET` is not provided.")
-
-		_env.units = nil
-
 		exec["@time"]({
 			0
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
 
-			global.GroundEft(_env, _env.ACTOR, "BGEffectBlack")
-			global.EnergyRestrain(_env, _env.ACTOR, _env.TARGET)
+			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
+				-1.3,
+				0
+			}, 100, "skill3"))
+			global.AssignRoles(_env, _env.TARGET, "target")
 		end)
 		exec["@time"]({
-			900
+			300
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
 
-			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.1, 80)
-			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.FixedPos(_env, 0, 0, 2), 100, "skill3"))
+			global.ApplyStatusEffect(_env, _env.ACTOR, _env.TARGET)
+			global.ApplyRPEffect(_env, _env.ACTOR, _env.TARGET)
 
-			_env.units = global.FriendUnits(_env)
-		end)
-		exec["@time"]({
-			1900
-		}, _env, function (_env)
-			local this = _env.this
-			local global = _env.global
-			local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.ACTOR)
-			local atk = global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR)
+			local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, this.dmgFactor)
 
-			for _, friendunit in global.__iter__(global.FriendUnits(_env)) do
-				local shield = global.ShieldEffect(_env, global.min(_env, maxHp * this.ShieldRateFactor, atk * 2))
-				local buffeft = global.NumericEffect(_env, "+aoederate", {
-					"+Normal",
-					"+Normal"
-				}, this.AOEDeRateFactor)
-
-				global.ApplyBuff_Buff(_env, _env.ACTOR, friendunit, {
-					timing = 2,
-					display = "Shield",
-					group = "Skill_BLTu_Unique",
-					duration = 2,
-					limit = 1,
-					tags = {
-						"NUMERIC",
-						"BUFF",
-						"AOEDERATEUP",
-						"SHIELD",
-						"DISPELLABLE",
-						"STEALABLE"
-					}
-				}, {
-					shield,
-					buffeft
-				}, 1)
-
-				local buff_show = global.SpecialNumericEffect(_env, "+baohuzhao", {
-					"+Normal",
-					"+Normal"
-				}, 1)
-
-				global.ApplyBuff(_env, global.FriendMaster(_env), {
-					timing = 2,
-					display = "Protecto",
-					group = "Skill_BLTu_Unique_Show",
-					duration = 2,
-					limit = 1,
-					tags = {
-						"BAOHUZHAO",
-						"BLTu_Unique"
-					}
-				}, {
-					buff_show
-				})
-			end
-		end)
-		exec["@time"]({
-			2770
-		}, _env, function (_env)
-			local this = _env.this
-			local global = _env.global
-
-			global.EnergyRestrainStop(_env, _env.ACTOR, _env.TARGET)
-		end)
-
-		return _env
-	end,
-	passive1 = function (_env, externs)
-		local this = _env.this
-		local global = _env.global
-		local exec = _env["$executor"]
-		_env.ACTOR = externs.ACTOR
-
-		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
-
-		_env.unit = externs.unit
-
-		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
-
-		_env.event = externs.event
-
-		assert(_env.event ~= nil, "External variable `event` is not provided.")
-		exec["@time"]({
-			0
-		}, _env, function (_env)
-			local this = _env.this
-			local global = _env.global
-			local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.ACTOR)
-			local atk = global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR)
-			local buffcount = 0
-
-			if global.FriendMaster(_env) then
-				buffcount = global.SelectBuffCount(_env, global.FriendMaster(_env), global.BUFF_MARKED_ALL(_env, "BAOHUZHAO", "BLTu_Unique"))
-			end
-
-			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and buffcount > 0 then
-				local shield = global.ShieldEffect(_env, global.min(_env, maxHp * this.ShieldRateFactor, atk * 2))
-				local buffeft = global.NumericEffect(_env, "+aoederate", {
-					"+Normal",
-					"+Normal"
-				}, this.AOEDeRateFactor)
-
-				global.ApplyBuff_Buff(_env, _env.ACTOR, _env.unit, {
-					timing = 2,
-					display = "Shield",
-					group = "Skill_BLTu_Unique",
-					duration = 2,
-					limit = 1,
-					tags = {
-						"NUMERIC",
-						"BUFF",
-						"AOEDERATEUP",
-						"SHIELD",
-						"DISPELLABLE",
-						"STEALABLE"
-					}
-				}, {
-					shield,
-					buffeft
-				}, 1)
-			end
-		end)
-
-		return _env
-	end,
-	passive2 = function (_env, externs)
-		local this = _env.this
-		local global = _env.global
-		local exec = _env["$executor"]
-		_env.ACTOR = externs.ACTOR
-
-		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
-		exec["@time"]({
-			0
-		}, _env, function (_env)
-			local this = _env.this
-			local global = _env.global
-
-			if global.FriendMaster(_env) then
-				global.DispelBuff(_env, global.FriendMaster(_env), global.BUFF_MARKED_ALL(_env, "BAOHUZHAO", "BLTu_Unique"), 99)
-			end
+			global.ApplyHPMultiDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, {
+				0,
+				200,
+				500
+			}, global.SplitValue(_env, damage, {
+				0.25,
+				0.25,
+				0.5
+			}))
 		end)
 
 		return _env
@@ -404,46 +236,20 @@ all.Skill_BLTu_Passive = {
 		local this = global.__skill({
 			global = global
 		}, prototype, externs)
-		this.AOEDeRateFactor = externs.AOEDeRateFactor
-
-		if this.AOEDeRateFactor == nil then
-			this.AOEDeRateFactor = 0.15
-		end
-
-		local passive1 = __action(this, {
-			name = "passive1",
-			entry = prototype.passive1
+		local passive = __action(this, {
+			name = "passive",
+			entry = prototype.passive
 		})
-		passive1 = global["[duration]"](this, {
+		passive = global["[duration]"](this, {
 			0
-		}, passive1)
-		this.passive1 = global["[trigger_by]"](this, {
+		}, passive)
+		this.passive = global["[trigger_by]"](this, {
 			"SELF:ENTER"
-		}, passive1)
-		local passive2 = __action(this, {
-			name = "passive2",
-			entry = prototype.passive2
-		})
-		passive2 = global["[duration]"](this, {
-			0
-		}, passive2)
-		this.passive2 = global["[trigger_by]"](this, {
-			"UNIT_ENTER"
-		}, passive2)
-		local passive3 = __action(this, {
-			name = "passive3",
-			entry = prototype.passive3
-		})
-		passive3 = global["[duration]"](this, {
-			0
-		}, passive3)
-		this.passive3 = global["[trigger_by]"](this, {
-			"SELF:DIE"
-		}, passive3)
+		}, passive)
 
 		return this
 	end,
-	passive1 = function (_env, externs)
+	passive = function (_env, externs)
 		local this = _env.this
 		local global = _env.global
 		local exec = _env["$executor"]
@@ -453,135 +259,6 @@ all.Skill_BLTu_Passive = {
 		exec["@time"]({
 			0
 		}, _env, function (_env)
-			local this = _env.this
-			local global = _env.global
-
-			if global.MARKED(_env, "BLTu")(_env, _env.ACTOR) then
-				local buffeft = global.NumericEffect(_env, "+aoederate", {
-					"+Normal",
-					"+Normal"
-				}, this.AOEDeRateFactor)
-
-				for _, unit in global.__iter__(global.FriendUnits(_env)) do
-					global.ApplyBuff_Buff(_env, _env.ACTOR, unit, {
-						duration = 99,
-						group = "Skill_BLTu_Passive",
-						timing = 0,
-						limit = 1,
-						tags = {
-							"STATUS",
-							"NUMERIC",
-							"BUFF",
-							"AOEDERATEUP",
-							"BLTu_Passive",
-							"UNDISPELLABLE",
-							"UNSTEALABLE"
-						}
-					}, {
-						buffeft
-					}, 1, 0)
-				end
-			end
-		end)
-
-		return _env
-	end,
-	passive2 = function (_env, externs)
-		local this = _env.this
-		local global = _env.global
-		local exec = _env["$executor"]
-		_env.ACTOR = externs.ACTOR
-
-		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
-
-		_env.unit = externs.unit
-
-		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
-
-		_env.event = externs.event
-
-		assert(_env.event ~= nil, "External variable `event` is not provided.")
-		exec["@time"]({
-			0
-		}, _env, function (_env)
-			local this = _env.this
-			local global = _env.global
-
-			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) then
-				local buffeft = global.NumericEffect(_env, "+aoederate", {
-					"+Normal",
-					"+Normal"
-				}, this.AOEDeRateFactor)
-
-				global.ApplyBuff_Buff(_env, _env.ACTOR, _env.unit, {
-					duration = 99,
-					group = "Skill_BLTu_Passive",
-					timing = 0,
-					limit = 1,
-					tags = {
-						"STATUS",
-						"NUMERIC",
-						"BUFF",
-						"AOEDERATEUP",
-						"BLTu_Passive",
-						"UNDISPELLABLE",
-						"UNSTEALABLE"
-					}
-				}, {
-					buffeft
-				}, 1, 0)
-			end
-
-			local flag = 0
-
-			for _, friend in global.__iter__(global.FriendUnits(_env)) do
-				if global.MARKED(_env, "BLTu")(_env, friend) then
-					flag = 1
-				end
-			end
-
-			if (global.MARKED(_env, "Master_BiLei")(_env, global.FriendMaster(_env)) or global.MARKED(_env, "Master_SenLing")(_env, global.FriendMaster(_env))) and global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.MARKED(_env, "WARRIOR")(_env, _env.unit) and flag == 1 then
-				local buffeft = global.Taunt(_env)
-
-				global.ApplyBuff_Buff(_env, _env.ACTOR, _env.unit, {
-					timing = 2,
-					display = "Taunt",
-					group = "Skill_BLTu_Passive_Key",
-					duration = 2,
-					limit = 1,
-					tags = {
-						"STATUS",
-						"NUMERIC",
-						"BUFF",
-						"TAUNT",
-						"Skill_BLTu_Passive_Key",
-						"DISPELLABLE",
-						"UNSTEALABLE"
-					}
-				}, {
-					buffeft
-				}, 1, 0)
-			end
-		end)
-
-		return _env
-	end,
-	passive3 = function (_env, externs)
-		local this = _env.this
-		local global = _env.global
-		local exec = _env["$executor"]
-		_env.ACTOR = externs.ACTOR
-
-		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
-		exec["@time"]({
-			0
-		}, _env, function (_env)
-			local this = _env.this
-			local global = _env.global
-
-			for _, unit in global.__iter__(global.FriendUnits(_env)) do
-				global.DispelBuff(_env, unit, global.BUFF_MARKED_ALL(_env, "AOEDERATEUP", "BLTu_Passive", "UNDISPELLABLE"), 99)
-			end
 		end)
 
 		return _env
@@ -599,26 +276,17 @@ all.Skill_BLTu_Proud_EX = {
 		if this.dmgFactor == nil then
 			this.dmgFactor = {
 				1,
-				1.6,
+				1,
 				0
 			}
-		end
-
-		this.HurtRateDown = externs.HurtRateDown
-
-		if this.HurtRateDown == nil then
-			this.HurtRateDown = 0.2
 		end
 
 		local main = __action(this, {
 			name = "main",
 			entry = prototype.main
 		})
-		main = global["[duration]"](this, {
+		this.main = global["[duration]"](this, {
 			1167
-		}, main)
-		this.main = global["[proud]"](this, {
-			"Hero_Proud_BLTu"
 		}, main)
 
 		return this
@@ -647,37 +315,25 @@ all.Skill_BLTu_Proud_EX = {
 			global.AssignRoles(_env, _env.TARGET, "target")
 		end)
 		exec["@time"]({
-			533
+			300
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			local buffeft = global.NumericEffect(_env, "-hurtrate", {
-				"+Normal",
-				"+Normal"
-			}, this.HurtRateDown)
 
-			global.ApplyBuff_Debuff(_env, _env.ACTOR, _env.TARGET, {
-				timing = 2,
-				display = "HurtRateDown",
-				group = "Skill_BLTu_Proud",
-				duration = 1,
-				limit = 1,
-				tags = {
-					"NUMERIC",
-					"DEBUFF",
-					"HURTRATEDOWN",
-					"DISPELLABLE",
-					"UNSTEALABLE"
-				}
-			}, {
-				buffeft
-			}, 1, 0)
 			global.ApplyStatusEffect(_env, _env.ACTOR, _env.TARGET)
 			global.ApplyRPEffect(_env, _env.ACTOR, _env.TARGET)
 
 			local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, this.dmgFactor)
 
-			global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage)
+			global.ApplyHPMultiDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, {
+				0,
+				200,
+				500
+			}, global.SplitValue(_env, damage, {
+				0.25,
+				0.25,
+				0.5
+			}))
 		end)
 
 		return _env
@@ -690,48 +346,23 @@ all.Skill_BLTu_Unique_EX = {
 		local this = global.__skill({
 			global = global
 		}, prototype, externs)
-		this.ShieldRateFactor = externs.ShieldRateFactor
+		this.dmgFactor = externs.dmgFactor
 
-		if this.ShieldRateFactor == nil then
-			this.ShieldRateFactor = 0.3
-		end
-
-		this.AOEDeRateFactor = externs.AOEDeRateFactor
-
-		if this.AOEDeRateFactor == nil then
-			this.AOEDeRateFactor = 0.4
+		if this.dmgFactor == nil then
+			this.dmgFactor = {
+				1,
+				1,
+				0
+			}
 		end
 
 		local main = __action(this, {
 			name = "main",
 			entry = prototype.main
 		})
-		main = global["[duration]"](this, {
-			2967
+		this.main = global["[duration]"](this, {
+			1167
 		}, main)
-		this.main = global["[cut_in]"](this, {
-			"1#Hero_Unique_BLTu"
-		}, main)
-		local passive1 = __action(this, {
-			name = "passive1",
-			entry = prototype.passive1
-		})
-		passive1 = global["[duration]"](this, {
-			0
-		}, passive1)
-		this.passive1 = global["[trigger_by]"](this, {
-			"UNIT_ENTER"
-		}, passive1)
-		local passive2 = __action(this, {
-			name = "passive2",
-			entry = prototype.passive2
-		})
-		passive2 = global["[duration]"](this, {
-			0
-		}, passive2)
-		this.passive2 = global["[trigger_by]"](this, {
-			"SELF:DIE"
-		}, passive2)
 
 		return this
 	end,
@@ -746,168 +377,38 @@ all.Skill_BLTu_Unique_EX = {
 		_env.TARGET = externs.TARGET
 
 		assert(_env.TARGET ~= nil, "External variable `TARGET` is not provided.")
-
-		_env.units = nil
-
 		exec["@time"]({
 			0
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
 
-			global.GroundEft(_env, _env.ACTOR, "BGEffectBlack")
-			global.EnergyRestrain(_env, _env.ACTOR, _env.TARGET)
+			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
+				-1.3,
+				0
+			}, 100, "skill3"))
+			global.AssignRoles(_env, _env.TARGET, "target")
 		end)
 		exec["@time"]({
-			900
+			300
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
 
-			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.1, 80)
-			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.FixedPos(_env, 0, 0, 2), 100, "skill3"))
+			global.ApplyStatusEffect(_env, _env.ACTOR, _env.TARGET)
+			global.ApplyRPEffect(_env, _env.ACTOR, _env.TARGET)
 
-			_env.units = global.FriendUnits(_env)
-		end)
-		exec["@time"]({
-			1900
-		}, _env, function (_env)
-			local this = _env.this
-			local global = _env.global
-			local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.ACTOR)
-			local atk = global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR)
+			local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, this.dmgFactor)
 
-			for _, friendunit in global.__iter__(global.FriendUnits(_env)) do
-				local shield = global.ShieldEffect(_env, global.min(_env, maxHp * this.ShieldRateFactor, atk * 2))
-				local buffeft = global.NumericEffect(_env, "+aoederate", {
-					"+Normal",
-					"+Normal"
-				}, this.AOEDeRateFactor)
-
-				global.ApplyBuff_Buff(_env, _env.ACTOR, friendunit, {
-					timing = 2,
-					display = "Shield",
-					group = "Skill_BLTu_Unique",
-					duration = 2,
-					limit = 1,
-					tags = {
-						"NUMERIC",
-						"BUFF",
-						"AOEDERATEUP",
-						"SHIELD",
-						"DISPELLABLE",
-						"STEALABLE"
-					}
-				}, {
-					shield,
-					buffeft
-				}, 1)
-
-				local buff_show = global.SpecialNumericEffect(_env, "+baohuzhao", {
-					"+Normal",
-					"+Normal"
-				}, 1)
-
-				global.ApplyBuff(_env, global.FriendMaster(_env), {
-					timing = 2,
-					display = "Protecto",
-					group = "Skill_BLTu_Unique_Show",
-					duration = 2,
-					limit = 1,
-					tags = {
-						"BAOHUZHAO",
-						"BLTu_Unique"
-					}
-				}, {
-					buff_show
-				})
-			end
-		end)
-		exec["@time"]({
-			2770
-		}, _env, function (_env)
-			local this = _env.this
-			local global = _env.global
-
-			global.EnergyRestrainStop(_env, _env.ACTOR, _env.TARGET)
-		end)
-
-		return _env
-	end,
-	passive1 = function (_env, externs)
-		local this = _env.this
-		local global = _env.global
-		local exec = _env["$executor"]
-		_env.ACTOR = externs.ACTOR
-
-		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
-
-		_env.unit = externs.unit
-
-		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
-
-		_env.event = externs.event
-
-		assert(_env.event ~= nil, "External variable `event` is not provided.")
-		exec["@time"]({
-			0
-		}, _env, function (_env)
-			local this = _env.this
-			local global = _env.global
-			local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.ACTOR)
-			local atk = global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR)
-			local buffcount = 0
-
-			if global.FriendMaster(_env) then
-				buffcount = global.SelectBuffCount(_env, global.FriendMaster(_env), global.BUFF_MARKED_ALL(_env, "BAOHUZHAO", "BLTu_Unique"))
-			end
-
-			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and buffcount > 0 then
-				local shield = global.ShieldEffect(_env, global.min(_env, maxHp * this.ShieldRateFactor, atk * 2))
-				local buffeft = global.NumericEffect(_env, "+aoederate", {
-					"+Normal",
-					"+Normal"
-				}, this.AOEDeRateFactor)
-
-				global.ApplyBuff_Buff(_env, _env.ACTOR, _env.unit, {
-					timing = 2,
-					display = "Shield",
-					group = "Skill_BLTu_Unique",
-					duration = 2,
-					limit = 1,
-					tags = {
-						"NUMERIC",
-						"BUFF",
-						"AOEDERATEUP",
-						"SHIELD",
-						"DISPELLABLE",
-						"STEALABLE"
-					}
-				}, {
-					shield,
-					buffeft
-				}, 1)
-			end
-		end)
-
-		return _env
-	end,
-	passive2 = function (_env, externs)
-		local this = _env.this
-		local global = _env.global
-		local exec = _env["$executor"]
-		_env.ACTOR = externs.ACTOR
-
-		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
-		exec["@time"]({
-			0
-		}, _env, function (_env)
-			local this = _env.this
-			local global = _env.global
-
-			if global.FriendMaster(_env) then
-				global.DispelBuff(_env, global.FriendMaster(_env), global.BUFF_MARKED_ALL(_env, "BAOHUZHAO", "BLTu_Unique"), 99)
-			end
+			global.ApplyHPMultiDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, {
+				0,
+				200,
+				500
+			}, global.SplitValue(_env, damage, {
+				0.25,
+				0.25,
+				0.5
+			}))
 		end)
 
 		return _env
@@ -920,46 +421,20 @@ all.Skill_BLTu_Passive_EX = {
 		local this = global.__skill({
 			global = global
 		}, prototype, externs)
-		this.AOEDeRateFactor = externs.AOEDeRateFactor
-
-		if this.AOEDeRateFactor == nil then
-			this.AOEDeRateFactor = 0.2
-		end
-
-		local passive1 = __action(this, {
-			name = "passive1",
-			entry = prototype.passive1
+		local passive = __action(this, {
+			name = "passive",
+			entry = prototype.passive
 		})
-		passive1 = global["[duration]"](this, {
+		passive = global["[duration]"](this, {
 			0
-		}, passive1)
-		this.passive1 = global["[trigger_by]"](this, {
+		}, passive)
+		this.passive = global["[trigger_by]"](this, {
 			"SELF:ENTER"
-		}, passive1)
-		local passive2 = __action(this, {
-			name = "passive2",
-			entry = prototype.passive2
-		})
-		passive2 = global["[duration]"](this, {
-			0
-		}, passive2)
-		this.passive2 = global["[trigger_by]"](this, {
-			"UNIT_ENTER"
-		}, passive2)
-		local passive3 = __action(this, {
-			name = "passive3",
-			entry = prototype.passive3
-		})
-		passive3 = global["[duration]"](this, {
-			0
-		}, passive3)
-		this.passive3 = global["[trigger_by]"](this, {
-			"SELF:DIE"
-		}, passive3)
+		}, passive)
 
 		return this
 	end,
-	passive1 = function (_env, externs)
+	passive = function (_env, externs)
 		local this = _env.this
 		local global = _env.global
 		local exec = _env["$executor"]
@@ -969,135 +444,6 @@ all.Skill_BLTu_Passive_EX = {
 		exec["@time"]({
 			0
 		}, _env, function (_env)
-			local this = _env.this
-			local global = _env.global
-
-			if global.MARKED(_env, "BLTu")(_env, _env.ACTOR) then
-				local buffeft = global.NumericEffect(_env, "+aoederate", {
-					"+Normal",
-					"+Normal"
-				}, this.AOEDeRateFactor)
-
-				for _, unit in global.__iter__(global.FriendUnits(_env)) do
-					global.ApplyBuff_Buff(_env, _env.ACTOR, unit, {
-						duration = 99,
-						group = "Skill_BLTu_Passive",
-						timing = 0,
-						limit = 1,
-						tags = {
-							"STATUS",
-							"NUMERIC",
-							"BUFF",
-							"AOEDERATEUP",
-							"BLTu_Passive",
-							"UNDISPELLABLE",
-							"UNSTEALABLE"
-						}
-					}, {
-						buffeft
-					}, 1, 0)
-				end
-			end
-		end)
-
-		return _env
-	end,
-	passive2 = function (_env, externs)
-		local this = _env.this
-		local global = _env.global
-		local exec = _env["$executor"]
-		_env.ACTOR = externs.ACTOR
-
-		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
-
-		_env.unit = externs.unit
-
-		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
-
-		_env.event = externs.event
-
-		assert(_env.event ~= nil, "External variable `event` is not provided.")
-		exec["@time"]({
-			0
-		}, _env, function (_env)
-			local this = _env.this
-			local global = _env.global
-
-			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) then
-				local buffeft = global.NumericEffect(_env, "+aoederate", {
-					"+Normal",
-					"+Normal"
-				}, this.AOEDeRateFactor)
-
-				global.ApplyBuff_Buff(_env, _env.ACTOR, _env.unit, {
-					duration = 99,
-					group = "Skill_BLTu_Passive",
-					timing = 0,
-					limit = 1,
-					tags = {
-						"STATUS",
-						"NUMERIC",
-						"BUFF",
-						"AOEDERATEUP",
-						"BLTu_Passive",
-						"UNDISPELLABLE",
-						"UNSTEALABLE"
-					}
-				}, {
-					buffeft
-				}, 1, 0)
-			end
-
-			local flag = 0
-
-			for _, friend in global.__iter__(global.FriendUnits(_env)) do
-				if global.MARKED(_env, "BLTu")(_env, friend) then
-					flag = 1
-				end
-			end
-
-			if (global.MARKED(_env, "Master_BiLei")(_env, global.FriendMaster(_env)) or global.MARKED(_env, "Master_SenLing")(_env, global.FriendMaster(_env))) and global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.MARKED(_env, "WARRIOR")(_env, _env.unit) and flag == 1 then
-				local buffeft = global.Taunt(_env)
-
-				global.ApplyBuff_Buff(_env, _env.ACTOR, _env.unit, {
-					timing = 2,
-					display = "Taunt",
-					group = "Skill_BLTu_Passive_Key",
-					duration = 2,
-					limit = 1,
-					tags = {
-						"STATUS",
-						"NUMERIC",
-						"BUFF",
-						"TAUNT",
-						"Skill_BLTu_Passive_Key",
-						"DISPELLABLE",
-						"UNSTEALABLE"
-					}
-				}, {
-					buffeft
-				}, 1, 0)
-			end
-		end)
-
-		return _env
-	end,
-	passive3 = function (_env, externs)
-		local this = _env.this
-		local global = _env.global
-		local exec = _env["$executor"]
-		_env.ACTOR = externs.ACTOR
-
-		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
-		exec["@time"]({
-			0
-		}, _env, function (_env)
-			local this = _env.this
-			local global = _env.global
-
-			for _, unit in global.__iter__(global.FriendUnits(_env)) do
-				global.DispelBuff(_env, unit, global.BUFF_MARKED_ALL(_env, "AOEDERATEUP", "BLTu_Passive", "UNDISPELLABLE"), 99)
-			end
 		end)
 
 		return _env
