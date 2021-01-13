@@ -24,8 +24,8 @@
         "ConfigLevelLimitID": "LevelLimit_Detective",
         "CrystalReward": 0,
         "Element": "",
-        "EnemyCard": "CardAE07P01",
-        "EnemyMaster": "AE07P01U01N08",
+        "EnemyCard": "CardAM07P01",
+        "EnemyMaster": "AM07P01U01N08",
         "EnemyName": "",
         "FirstKillReward": "ADetectiveE01S01_FirstReward",
         "GoldReward": 0,
@@ -52,7 +52,7 @@
         "OpenPoint": [],
         "PlayerCard": "",
         "PointBoard": "",
-        "PointHead": "Model_FEMSi_classic",
+        "PointHead": "Model_YLSBai_xnian",
         "PointPicture": "",
         "PointReward": "ADetectiveE01S01_PointReward",
         "PointTime": {
@@ -113,7 +113,7 @@
         ],
         "Background": "Battle_Scene_13",
         "Banner": "pic_guanqia2_01_tx",
-        "BlockBattleConfig": "Activity_Wait1_3",
+        "BlockBattleConfig": "Activity_Wait1_4",
         "BlockBubble": "",
         "BlockDesc": "BlockPoint_ADetectiveE01S02_BlockDesc",
         "BlockDetailAuto": "",
@@ -128,8 +128,8 @@
         "ConfigLevelLimitID": "LevelLimit_Detective",
         "CrystalReward": 0,
         "Element": "",
-        "EnemyCard": "CardAE07P02",
-        "EnemyMaster": "AE07P02U01N08",
+        "EnemyCard": "CardAM07P10",
+        "EnemyMaster": "AM07P10U01N08",
         "EnemyName": "",
         "FirstKillReward": "ADetectiveE01S02_FirstReward",
         "GoldReward": 0,
@@ -156,9 +156,9 @@
         "OpenPoint": [
             "ADetectiveE01S01"
         ],
-        "PlayerCard": "",
+        "PlayerCard": "      ",
         "PointBoard": "",
-        "PointHead": "Model_FEMSi_classic",
+        "PointHead": "Model_NFEr",
         "PointPicture": "",
         "PointReward": "ADetectiveE01S02_PointReward",
         "PointTime": {
@@ -169,7 +169,10 @@
         "ReslutBoard": "",
         "ShowItem": "ADetectiveE01S02_ShowReward",
         "SpRuleBubble": "",
-        "SpecialRuleShow": [],
+        "SpecialRuleShow": [
+            "SpecialRule_Detective_Tittle_1",
+            "SpecialRule_Detective_Rule_6"
+        ],
         "SpecialSkillShow": [],
         "StageEffect": "",
         "StageGuide": "",
@@ -204,7 +207,7 @@
         "VictoryConditions": [
             {
                 "type": "TimeOut",
-                "winner": "SideA"
+                "winner": "SideB"
             }
         ],
         "WipeExtraReward": ""
@@ -312,7 +315,7 @@
         "VictoryConditions": [
             {
                 "type": "TimeOut",
-                "winner": "SideA"
+                "winner": "SideB"
             }
         ],
         "WipeExtraReward": ""
@@ -534,6 +537,10 @@
                 },
                 "type": "PlayerRunOutOfEnergy",
                 "winner": "SideB"
+            },
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
             }
         ],
         "WipeExtraReward": ""
@@ -645,6 +652,10 @@
                     "side": "SideA"
                 },
                 "type": "PlayerRunOutOfEnergy",
+                "winner": "SideB"
+            },
+            {
+                "type": "TimeOut",
                 "winner": "SideB"
             }
         ],
@@ -1076,6 +1087,10 @@
                 },
                 "type": "PlayerRunOutOfEnergy",
                 "winner": "SideB"
+            },
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
             }
         ],
         "WipeExtraReward": ""
@@ -1315,8 +1330,8 @@
         "ConfigLevelLimitID": "LevelLimit_Detective",
         "CrystalReward": 0,
         "Element": "",
-        "EnemyCard": "CardAM07P01",
-        "EnemyMaster": "AM07P01U01N08",
+        "EnemyCard": "CardAM07P07",
+        "EnemyMaster": "AM07P07U01N08",
         "EnemyName": "",
         "FirstKillReward": "ADetectiveM01S01_FirstReward",
         "GoldReward": 0,
@@ -1343,7 +1358,7 @@
         "OpenPoint": [],
         "PlayerCard": "",
         "PointBoard": "",
-        "PointHead": "Model_YLSBai_xnian",
+        "PointHead": "Model_NFEr",
         "PointPicture": "",
         "PointReward": "ADetectiveM01S01_PointReward",
         "PointTime": {
@@ -1406,7 +1421,7 @@
         ],
         "Background": "Battle_Scene_13",
         "Banner": "pic_guanqia2_01_tx",
-        "BlockBattleConfig": "Activity_Wait1_3",
+        "BlockBattleConfig": "Activity_Wait1_2",
         "BlockBubble": "",
         "BlockDesc": "BlockPoint_ADetectiveM01S02_BlockDesc",
         "BlockDetailAuto": "",
@@ -1421,8 +1436,8 @@
         "ConfigLevelLimitID": "LevelLimit_Detective",
         "CrystalReward": 0,
         "Element": "",
-        "EnemyCard": "CardAM07P02",
-        "EnemyMaster": "AM07P02U01N08",
+        "EnemyCard": "CardAM07P11",
+        "EnemyMaster": "AM07P11U01N08",
         "EnemyName": "",
         "FirstKillReward": "ADetectiveM01S02_FirstReward",
         "GoldReward": 0,
@@ -1451,7 +1466,7 @@
         ],
         "PlayerCard": "",
         "PointBoard": "",
-        "PointHead": "Model_YLSBai_xnian",
+        "PointHead": "Model_KTSJKe",
         "PointPicture": "",
         "PointReward": "ADetectiveM01S02_PointReward",
         "PointTime": {
@@ -1462,10 +1477,7 @@
         "ReslutBoard": "",
         "ShowItem": "ADetectiveM01S02_ShowReward",
         "SpRuleBubble": "",
-        "SpecialRuleShow": [
-            "SpecialRule_Detective_Tittle_1",
-            "SpecialRule_Detective_Rule_1"
-        ],
+        "SpecialRuleShow": [],
         "SpecialSkillShow": [],
         "StageEffect": "",
         "StageGuide": "",
@@ -1500,7 +1512,7 @@
         "VictoryConditions": [
             {
                 "type": "TimeOut",
-                "winner": "SideA"
+                "winner": "SideB"
             }
         ],
         "WipeExtraReward": ""
@@ -1515,7 +1527,7 @@
         ],
         "Background": "Battle_Scene_13",
         "Banner": "pic_guanqia2_01_tx",
-        "BlockBattleConfig": "Activity_Wait1_3",
+        "BlockBattleConfig": "Activity_Wait1_1",
         "BlockBubble": "",
         "BlockDesc": "BlockPoint_ADetectiveM01S03_BlockDesc",
         "BlockDetailAuto": "",
@@ -1530,8 +1542,8 @@
         "ConfigLevelLimitID": "LevelLimit_Detective",
         "CrystalReward": 0,
         "Element": "",
-        "EnemyCard": "CardAM07P03",
-        "EnemyMaster": "AM07P03U01N08",
+        "EnemyCard": "CardAE07P02",
+        "EnemyMaster": "AE07P02U01N08",
         "EnemyName": "",
         "FirstKillReward": "ADetectiveM01S03_FirstReward",
         "GoldReward": 0,
@@ -1560,7 +1572,7 @@
         ],
         "PlayerCard": "",
         "PointBoard": "",
-        "PointHead": "Model_YLSBai_xnian",
+        "PointHead": "Model_FEMSi_classic",
         "PointPicture": "",
         "PointReward": "ADetectiveM01S03_PointReward",
         "PointTime": {
@@ -1571,10 +1583,7 @@
         "ReslutBoard": "",
         "ShowItem": "ADetectiveM01S03_ShowReward",
         "SpRuleBubble": "",
-        "SpecialRuleShow": [
-            "SpecialRule_Detective_Tittle_1",
-            "SpecialRule_Detective_Rule_1"
-        ],
+        "SpecialRuleShow": [],
         "SpecialSkillShow": [],
         "StageEffect": "",
         "StageGuide": "",
@@ -1609,7 +1618,7 @@
         "VictoryConditions": [
             {
                 "type": "TimeOut",
-                "winner": "SideA"
+                "winner": "SideB"
             }
         ],
         "WipeExtraReward": ""
@@ -1624,7 +1633,7 @@
         ],
         "Background": "Battle_Scene_13",
         "Banner": "pic_guanqia2_01_tx",
-        "BlockBattleConfig": "Activity_Wait1_1",
+        "BlockBattleConfig": "Activity_Wait1_3",
         "BlockBubble": "",
         "BlockDesc": "BlockPoint_ADetectiveM01S04_BlockDesc",
         "BlockDetailAuto": "",
@@ -1639,8 +1648,8 @@
         "ConfigLevelLimitID": "LevelLimit_Detective",
         "CrystalReward": 0,
         "Element": "",
-        "EnemyCard": "CardAM07P04",
-        "EnemyMaster": "AM07P04U01N08",
+        "EnemyCard": "CardAM07P02",
+        "EnemyMaster": "AM07P02U01N08",
         "EnemyName": "",
         "FirstKillReward": "ADetectiveM01S04_FirstReward",
         "GoldReward": 0,
@@ -1680,7 +1689,10 @@
         "ReslutBoard": "",
         "ShowItem": "ADetectiveM01S04_ShowReward",
         "SpRuleBubble": "",
-        "SpecialRuleShow": [],
+        "SpecialRuleShow": [
+            "SpecialRule_Detective_Tittle_1",
+            "SpecialRule_Detective_Rule_1"
+        ],
         "SpecialSkillShow": [],
         "StageEffect": "",
         "StageGuide": "",
@@ -1715,7 +1727,7 @@
         "VictoryConditions": [
             {
                 "type": "TimeOut",
-                "winner": "SideB"
+                "winner": "SideA"
             }
         ],
         "WipeExtraReward": ""
@@ -1824,7 +1836,7 @@
         "VictoryConditions": [
             {
                 "type": "TimeOut",
-                "winner": "SideA"
+                "winner": "SideB"
             },
             {
                 "factor": {
@@ -1944,6 +1956,10 @@
                 },
                 "type": "PlayerRunOutOfEnergy",
                 "winner": "SideB"
+            },
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
             }
         ],
         "WipeExtraReward": ""
@@ -1958,7 +1974,7 @@
         ],
         "Background": "Battle_Scene_13",
         "Banner": "pic_guanqia2_01_tx",
-        "BlockBattleConfig": "Activity_Wait1_1",
+        "BlockBattleConfig": "Activity_Wait1_4",
         "BlockBubble": "",
         "BlockDesc": "BlockPoint_ADetectiveM01S07_BlockDesc",
         "BlockDetailAuto": "",
@@ -1973,8 +1989,8 @@
         "ConfigLevelLimitID": "LevelLimit_Detective",
         "CrystalReward": 0,
         "Element": "",
-        "EnemyCard": "CardAM07P07",
-        "EnemyMaster": "AM07P07U01N08",
+        "EnemyCard": "CardAM07P08",
+        "EnemyMaster": "AM07P08U01N08",
         "EnemyName": "",
         "FirstKillReward": "ADetectiveM01S07_FirstReward",
         "GoldReward": 0,
@@ -2014,7 +2030,10 @@
         "ReslutBoard": "",
         "ShowItem": "ADetectiveM01S07_ShowReward",
         "SpRuleBubble": "",
-        "SpecialRuleShow": [],
+        "SpecialRuleShow": [
+            "SpecialRule_Detective_Tittle_1",
+            "SpecialRule_Detective_Rule_6"
+        ],
         "SpecialSkillShow": [],
         "StageEffect": "",
         "StageGuide": "",
@@ -2064,7 +2083,7 @@
         ],
         "Background": "Battle_Scene_13",
         "Banner": "pic_guanqia2_01_tx",
-        "BlockBattleConfig": "Activity_Wait1_4",
+        "BlockBattleConfig": "Activity_Wait1_1",
         "BlockBubble": "",
         "BlockDesc": "BlockPoint_ADetectiveM01S08_BlockDesc",
         "BlockDetailAuto": "",
@@ -2079,8 +2098,8 @@
         "ConfigLevelLimitID": "LevelLimit_Detective",
         "CrystalReward": 0,
         "Element": "",
-        "EnemyCard": "CardAM07P08",
-        "EnemyMaster": "AM07P08U01N08",
+        "EnemyCard": "CardAE07P01",
+        "EnemyMaster": "AE07P01U01N08",
         "EnemyName": "",
         "FirstKillReward": "ADetectiveM01S08_FirstReward",
         "GoldReward": 0,
@@ -2109,7 +2128,7 @@
         ],
         "PlayerCard": "",
         "PointBoard": "",
-        "PointHead": "Model_NFEr",
+        "PointHead": "Model_FEMSi_classic",
         "PointPicture": "",
         "PointReward": "ADetectiveM01S08_PointReward",
         "PointTime": {
@@ -2120,10 +2139,7 @@
         "ReslutBoard": "",
         "ShowItem": "ADetectiveM01S08_ShowReward",
         "SpRuleBubble": "",
-        "SpecialRuleShow": [
-            "SpecialRule_Detective_Tittle_1",
-            "SpecialRule_Detective_Rule_6"
-        ],
+        "SpecialRuleShow": [],
         "SpecialSkillShow": [],
         "StageEffect": "",
         "StageGuide": "",
@@ -2173,7 +2189,7 @@
         ],
         "Background": "Battle_Scene_13",
         "Banner": "pic_guanqia2_01_tx",
-        "BlockBattleConfig": "Activity_Wait1_4",
+        "BlockBattleConfig": "Activity_Wait1_1",
         "BlockBubble": "",
         "BlockDesc": "BlockPoint_ADetectiveM01S09_BlockDesc",
         "BlockDetailAuto": "",
@@ -2188,8 +2204,8 @@
         "ConfigLevelLimitID": "LevelLimit_Detective",
         "CrystalReward": 0,
         "Element": "",
-        "EnemyCard": "CardAM07P09",
-        "EnemyMaster": "AM07P09U01N08",
+        "EnemyCard": "CardAM07P04",
+        "EnemyMaster": "AM07P04U01N08",
         "EnemyName": "",
         "FirstKillReward": "ADetectiveM01S09_FirstReward",
         "GoldReward": 0,
@@ -2218,7 +2234,7 @@
         ],
         "PlayerCard": "",
         "PointBoard": "",
-        "PointHead": "Model_NFEr",
+        "PointHead": "Model_YLSBai_xnian",
         "PointPicture": "",
         "PointReward": "ADetectiveM01S09_PointReward",
         "PointTime": {
@@ -2229,10 +2245,7 @@
         "ReslutBoard": "",
         "ShowItem": "ADetectiveM01S09_ShowReward",
         "SpRuleBubble": "",
-        "SpecialRuleShow": [
-            "SpecialRule_Detective_Tittle_1",
-            "SpecialRule_Detective_Rule_6"
-        ],
+        "SpecialRuleShow": [],
         "SpecialSkillShow": [],
         "StageEffect": "",
         "StageGuide": "",
@@ -2282,7 +2295,7 @@
         ],
         "Background": "Battle_Scene_13",
         "Banner": "pic_guanqia2_01_tx",
-        "BlockBattleConfig": "Activity_Wait1_4",
+        "BlockBattleConfig": "Activity_Wait1_3",
         "BlockBubble": "",
         "BlockDesc": "BlockPoint_ADetectiveM01S10_BlockDesc",
         "BlockDetailAuto": "",
@@ -2297,8 +2310,8 @@
         "ConfigLevelLimitID": "LevelLimit_Detective",
         "CrystalReward": 0,
         "Element": "",
-        "EnemyCard": "CardAM07P10",
-        "EnemyMaster": "AM07P10U01N08",
+        "EnemyCard": "CardAM07P03",
+        "EnemyMaster": "AM07P03U01N08",
         "EnemyName": "",
         "FirstKillReward": "ADetectiveM01S10_FirstReward",
         "GoldReward": 0,
@@ -2327,7 +2340,7 @@
         ],
         "PlayerCard": "",
         "PointBoard": "",
-        "PointHead": "Model_NFEr",
+        "PointHead": "Model_YLSBai_xnian",
         "PointPicture": "",
         "PointReward": "ADetectiveM01S10_PointReward",
         "PointTime": {
@@ -2342,7 +2355,7 @@
         "SpRuleBubble": "",
         "SpecialRuleShow": [
             "SpecialRule_Detective_Tittle_1",
-            "SpecialRule_Detective_Rule_6"
+            "SpecialRule_Detective_Rule_1"
         ],
         "SpecialSkillShow": [],
         "StageEffect": "",
@@ -2378,7 +2391,7 @@
         "VictoryConditions": [
             {
                 "type": "TimeOut",
-                "winner": "SideB"
+                "winner": "SideA"
             }
         ],
         "WipeExtraReward": ""
@@ -2393,7 +2406,7 @@
         ],
         "Background": "Battle_Scene_13",
         "Banner": "pic_guanqia2_01_tx",
-        "BlockBattleConfig": "Activity_Wait1_2",
+        "BlockBattleConfig": "Activity_Wait1_4",
         "BlockBubble": "",
         "BlockDesc": "BlockPoint_ADetectiveM01S11_BlockDesc",
         "BlockDetailAuto": "",
@@ -2408,8 +2421,8 @@
         "ConfigLevelLimitID": "LevelLimit_Detective",
         "CrystalReward": 0,
         "Element": "",
-        "EnemyCard": "CardAM07P11",
-        "EnemyMaster": "AM07P11U01N08",
+        "EnemyCard": "CardAM07P09",
+        "EnemyMaster": "AM07P09U01N08",
         "EnemyName": "",
         "FirstKillReward": "ADetectiveM01S11_FirstReward",
         "GoldReward": 0,
@@ -2438,7 +2451,7 @@
         ],
         "PlayerCard": "",
         "PointBoard": "",
-        "PointHead": "Model_KTSJKe",
+        "PointHead": "Model_NFEr",
         "PointPicture": "",
         "PointReward": "ADetectiveM01S11_PointReward",
         "PointTime": {
@@ -2449,7 +2462,10 @@
         "ReslutBoard": "",
         "ShowItem": "ADetectiveM01S11_ShowReward",
         "SpRuleBubble": "",
-        "SpecialRuleShow": [],
+        "SpecialRuleShow": [
+            "SpecialRule_Detective_Tittle_1",
+            "SpecialRule_Detective_Rule_6"
+        ],
         "SpecialSkillShow": [],
         "StageEffect": "",
         "StageGuide": "",
