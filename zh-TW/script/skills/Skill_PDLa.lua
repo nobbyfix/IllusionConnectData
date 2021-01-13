@@ -649,8 +649,6 @@ all.Skill_PDLa_Box_Passive_Death = {
 					local cardvaluechange = global.CardCostEnchant(_env, "-", global.floor(_env, cost / 2), 1)
 
 					global.ApplyEnchant(_env, global.GetOwner(_env, _env.ACTOR), card, {
-						timing = 1,
-						duration = 1,
 						tags = {
 							"CARDBUFF",
 							"Skill_PDLa_Box_Passive_Death",
