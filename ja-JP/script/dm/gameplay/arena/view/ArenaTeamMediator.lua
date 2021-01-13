@@ -256,15 +256,27 @@ function ArenaTeamMediator:initWidgetInfo()
 	buffInfo:setString("")
 
 	local text = Strings:get(seasonSkillData.Desc, {
-		fontSize = 22,
+		fontSize = 17,
 		fontName = TTF_FONT_FZYH_R
 	})
 	local richText = ccui.RichText:createWithXML(text, {})
 
-	richText:setFontSize(22)
+	richText:setFontSize(18)
 	richText:setAnchorPoint(buffInfo:getAnchorPoint())
 	richText:setPosition(cc.p(buffInfo:getPositionX(), buffInfo:getPositionY()))
 	richText:addTo(buffInfo:getParent())
+	richText:renderContent()
+
+	local size = richText:getContentSize()
+
+	if size.width > 760 then
+		local text = Strings:get(seasonSkillData.Desc, {
+			fontSize = 17,
+			fontName = TTF_FONT_FZYH_R
+		})
+
+		richText:setString(text)
+	end
 
 	self._teamBreakBtn = self._main:getChildByFullName("info_bg.button_one_key_break")
 	self._teamOneKeyBtn = self._main:getChildByFullName("info_bg.button_one_key_embattle")

@@ -4286,7 +4286,7 @@
             "Japan_1_CaiDanRenZheWuQi4": "Japan_1_CaiDanRenZheWuQi4_Case1",
             "Japan_1_CaiDanShuYe": "Japan_1_CaiDanShuYe_Case2"
         },
-        "OpenType": 1,
+        "OpenType": "",
         "PlayerPos": {
             "1": {
                 "Direction": "Left",
@@ -4380,7 +4380,10 @@
             "MapGuide": 90
         },
         "UnlockCondition": {
-            "LEVEL": 99
+            "LEVEL": 32,
+            "PREPOINT": {
+                "Alice_4": 1
+            }
         },
         "WeekRecommend": [
             2,
@@ -4664,7 +4667,7 @@
             "Japan_2_CaiDanMiJi3": "Japan_2_CaiDanMiJi3_Case1",
             "Japan_2_CaiDanMiJi4": "Japan_2_CaiDanMiJi4_Case1"
         },
-        "OpenType": "",
+        "OpenType": 1,
         "PlayerPos": {
             "1": {
                 "Direction": "Left",
@@ -5079,7 +5082,7 @@
             "Japan_3_ZuDangBoss1"
         ],
         "OnceObject": "",
-        "OpenType": "",
+        "OpenType": 1,
         "PlayerPos": {
             "1": {
                 "Direction": "Left",
@@ -5412,7 +5415,7 @@
             "Japan_4_StoryBossA1"
         ],
         "OnceObject": "",
-        "OpenType": "",
+        "OpenType": 1,
         "PlayerPos": {
             "1": {
                 "Direction": "Left",

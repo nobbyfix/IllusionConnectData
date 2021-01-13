@@ -326,6 +326,7 @@ function SystemMessageWidget:decorateView(message)
 		titleText:setString(titleStr)
 	end
 
+	local size = titleText:getContentSize()
 	local contentRect = self._main:getChildByFullName("content.content_rect")
 
 	contentRect:setString("")
@@ -344,7 +345,7 @@ function SystemMessageWidget:decorateView(message)
 		local pos = contentRect:getPosition()
 
 		contentText:setAnchorPoint(anchor)
-		contentText:setName("content_text"):posite(90, 20):addTo(contentRect:getParent())
+		contentText:setName("content_text"):posite(size.width + 30, 20):addTo(contentRect:getParent())
 		contentText:setOpenUrlHandler(function (url)
 			openUrlView(url, self:getInjector(), message:getExtraData(), message:getParams())
 		end)

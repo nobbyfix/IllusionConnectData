@@ -319,6 +319,7 @@ function TabBtnWidget:_bindBtnText(btn, config)
 			lightImg = cc.Sprite:createWithSpriteFrameName(tabImage[2])
 		end
 
+		assert(lightImg ~= nil, "error:lightImg=nil" .. tabImage[2])
 		lightImg:setAnchorPoint(0.5, 0.5)
 		lightImg:addTo(btnNode.lightNode):setScale(self._tabImageScale)
 	else

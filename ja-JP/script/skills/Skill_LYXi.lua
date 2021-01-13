@@ -163,6 +163,12 @@ all.Skill_LYXi_Unique = {
 			this.HealRateFactor = 2.2
 		end
 
+		this.ExFactor = externs.ExFactor
+
+		if this.ExFactor == nil then
+			this.ExFactor = 0.2
+		end
+
 		local main = __action(this, {
 			name = "main",
 			entry = prototype.main
@@ -226,8 +232,12 @@ all.Skill_LYXi_Unique = {
 				local buffeft1 = global.NumericEffect(_env, "+defrate", {
 					"+Normal",
 					"+Normal"
-				}, 0.25)
-				local buffeft2 = global.NumericEffect(_env, "+defrate", {
+				}, this.ExFactor)
+				local buffeft2 = global.NumericEffect(_env, "+atkrate", {
+					"+Normal",
+					"+Normal"
+				}, this.ExFactor)
+				local buffeft3 = global.NumericEffect(_env, "+defrate", {
 					"+Normal",
 					"+Normal"
 				}, 0)
@@ -235,18 +245,34 @@ all.Skill_LYXi_Unique = {
 				global.ApplyBuff(_env, friendunit, {
 					timing = 0,
 					display = "DefUp",
-					group = "Skill_LYXi_Unique",
+					group = "Skill_LYXi_Unique_atk",
 					duration = 99,
 					limit = 1,
 					tags = {
 						"BUFF",
-						"DEFRATE",
+						"DEFUP",
 						"HEAL",
 						"UNDISPELLABLE",
 						"UNSTEALABLE"
 					}
 				}, {
 					buffeft1
+				})
+				global.ApplyBuff(_env, friendunit, {
+					timing = 0,
+					display = "AtkUp",
+					group = "Skill_LYXi_Unique_def",
+					duration = 99,
+					limit = 1,
+					tags = {
+						"BUFF",
+						"ATKUP",
+						"HEAL",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft2
 				})
 				global.ApplyBuff(_env, friendunit, {
 					timing = 0,
@@ -259,7 +285,7 @@ all.Skill_LYXi_Unique = {
 						"UNSTEALABLE"
 					}
 				}, {
-					buffeft2
+					buffeft3
 				})
 			end
 		end)
@@ -282,6 +308,12 @@ all.Skill_LYXi_Passive = {
 		local this = global.__skill({
 			global = global
 		}, prototype, externs)
+		this.CureFactor = externs.CureFactor
+
+		if this.CureFactor == nil then
+			this.CureFactor = 0.15
+		end
+
 		local passive = __action(this, {
 			name = "passive",
 			entry = prototype.passive
@@ -320,15 +352,15 @@ all.Skill_LYXi_Passive = {
 					if global.MARKED(_env, "LYXi")(_env, _env.unit) then
 						local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.unit)
 
-						global.ApplyHPRecovery(_env, _env.unit, maxHp * 0.2)
+						global.ApplyHPRecovery(_env, _env.unit, maxHp * this.CureFactor * 2)
 					elseif global.MARKED(_env, "WARRIOR")(_env, _env.unit) then
 						local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.unit)
 
-						global.ApplyHPRecovery(_env, _env.unit, maxHp * 0.2)
+						global.ApplyHPRecovery(_env, _env.unit, maxHp * this.CureFactor * 2)
 					else
 						local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.unit)
 
-						global.ApplyHPRecovery(_env, _env.unit, maxHp * 0.1)
+						global.ApplyHPRecovery(_env, _env.unit, maxHp * this.CureFactor)
 					end
 				end
 			end
@@ -433,6 +465,12 @@ all.Skill_LYXi_Unique_EX = {
 			this.HealRateFactor = 2.85
 		end
 
+		this.ExFactor = externs.ExFactor
+
+		if this.ExFactor == nil then
+			this.ExFactor = 0.2
+		end
+
 		local main = __action(this, {
 			name = "main",
 			entry = prototype.main
@@ -496,8 +534,12 @@ all.Skill_LYXi_Unique_EX = {
 				local buffeft1 = global.NumericEffect(_env, "+defrate", {
 					"+Normal",
 					"+Normal"
-				}, 0.25)
-				local buffeft2 = global.NumericEffect(_env, "+defrate", {
+				}, this.ExFactor)
+				local buffeft2 = global.NumericEffect(_env, "+atkrate", {
+					"+Normal",
+					"+Normal"
+				}, this.ExFactor)
+				local buffeft3 = global.NumericEffect(_env, "+defrate", {
 					"+Normal",
 					"+Normal"
 				}, 0)
@@ -505,18 +547,34 @@ all.Skill_LYXi_Unique_EX = {
 				global.ApplyBuff(_env, friendunit, {
 					timing = 0,
 					display = "DefUp",
-					group = "Skill_LYXi_Unique",
+					group = "Skill_LYXi_Unique_atk",
 					duration = 99,
 					limit = 1,
 					tags = {
 						"BUFF",
-						"DEFRATE",
+						"DEFUP",
 						"HEAL",
 						"UNDISPELLABLE",
 						"UNSTEALABLE"
 					}
 				}, {
 					buffeft1
+				})
+				global.ApplyBuff(_env, friendunit, {
+					timing = 0,
+					display = "AtkUp",
+					group = "Skill_LYXi_Unique_def",
+					duration = 99,
+					limit = 1,
+					tags = {
+						"BUFF",
+						"ATKUP",
+						"HEAL",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft2
 				})
 				global.ApplyBuff(_env, friendunit, {
 					timing = 0,
@@ -529,7 +587,7 @@ all.Skill_LYXi_Unique_EX = {
 						"UNSTEALABLE"
 					}
 				}, {
-					buffeft2
+					buffeft3
 				})
 			end
 		end)
@@ -552,6 +610,12 @@ all.Skill_LYXi_Passive_EX = {
 		local this = global.__skill({
 			global = global
 		}, prototype, externs)
+		this.CureFactor = externs.CureFactor
+
+		if this.CureFactor == nil then
+			this.CureFactor = 0.2
+		end
+
 		local passive = __action(this, {
 			name = "passive",
 			entry = prototype.passive
@@ -590,15 +654,15 @@ all.Skill_LYXi_Passive_EX = {
 					if global.MARKED(_env, "LYXi")(_env, _env.unit) then
 						local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.unit)
 
-						global.ApplyHPRecovery(_env, _env.unit, maxHp * 0.3)
+						global.ApplyHPRecovery(_env, _env.unit, maxHp * this.CureFactor * 2)
 					elseif global.MARKED(_env, "WARRIOR")(_env, _env.unit) then
 						local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.unit)
 
-						global.ApplyHPRecovery(_env, _env.unit, maxHp * 0.3)
+						global.ApplyHPRecovery(_env, _env.unit, maxHp * this.CureFactor * 2)
 					else
 						local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.unit)
 
-						global.ApplyHPRecovery(_env, _env.unit, maxHp * 0.15)
+						global.ApplyHPRecovery(_env, _env.unit, maxHp * this.CureFactor)
 					end
 				end
 			end

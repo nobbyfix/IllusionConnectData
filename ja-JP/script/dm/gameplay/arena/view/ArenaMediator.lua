@@ -356,6 +356,18 @@ function ArenaMediator:initWidgetInfo()
 	})
 
 	richText:setString(text)
+	richText:renderContent()
+
+	local size = richText:getContentSize()
+
+	if size.width > 760 then
+		local text = Strings:get(seasonSkillData.Desc, {
+			fontSize = 17,
+			fontName = TTF_FONT_FZYH_R
+		})
+
+		richText:setString(text)
+	end
 
 	local startTime, endTime = self._arenaSystem:getSeasonTime()
 

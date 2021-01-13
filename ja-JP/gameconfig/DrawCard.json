@@ -1461,6 +1461,88 @@
         ],
         "Times": []
     },
+    "DrawCard_1UP_HSheng": {
+        "Condition": "",
+        "Coupon": "IM_DiamondDrawEX",
+        "CouponCost": [
+            1,
+            10
+        ],
+        "DrawCardDesc": [
+            {
+                "3": [
+                    "pic",
+                    "common_img_ssr"
+                ]
+            },
+            {
+                "25": [
+                    "pic",
+                    "common_img_sr"
+                ]
+            },
+            {
+                "72": [
+                    "pic",
+                    "common_img_r"
+                ]
+            }
+        ],
+        "DrawCardDescTitle": "",
+        "DrawCardENName": "",
+        "DrawCardName": "",
+        "DrawCardType": "ACTIVITYDRAW",
+        "DrawCardUPDesc": "",
+        "DrawLimit": -1,
+        "ExtraReward": "",
+        "FreeReset": "DrawCard_TimeUp",
+        "Link": "view://shopView&viewType=push&shopId=Shop_TimeLimit",
+        "NormalReward": "DrawCard_Diamond_1_normal",
+        "Number": [
+            1,
+            10
+        ],
+        "OffCount": [],
+        "Preview": {
+            "btn": "drawcard_tab_HSheng_",
+            "main": "drawcard_bg_HSheng"
+        },
+        "Rank": 80,
+        "ReviewText": [
+            "Notes_1UP_HSheng"
+        ],
+        "ReviewTextSpecial": [
+            "Notes_1UP_Special"
+        ],
+        "Reward": [
+            "DrawCard_1UP_HSheng_1",
+            "DrawCard_1UP_HSheng_10"
+        ],
+        "RoleDetail": [
+            {
+                "hero": "HSheng",
+                "position": [
+                    900,
+                    400
+                ],
+                "showhero": "HSheng"
+            }
+        ],
+        "ShortDesc": [
+            "DrawCard_Diamond_1_ShortDesc",
+            "DrawCard_Diamond_10_ShortDesc"
+        ],
+        "ShortENDesc": [
+            "UILINK_EN_Zhaohuan1ci",
+            "UILINK_EN_Zhaohuan10ci"
+        ],
+        "ShowReward": {
+            "Draw_HeroBtnName": "DrawCard_1UP_HSheng_Show"
+        },
+        "SpecialReward": "",
+        "Tag": "",
+        "Times": []
+    },
     "DrawCard_1UP_NFEr": {
         "Condition": "",
         "Coupon": "IM_DiamondDrawEX",

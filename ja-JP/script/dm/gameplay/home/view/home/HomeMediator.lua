@@ -80,18 +80,18 @@ local detectiveBtnName = {
 	},
 	{
 		text = "ActivityBlock_Detective_Name_2",
-		fontsize = 20,
+		fontsize = 18,
 		pos = {
-			30,
+			26,
 			10
 		},
 		color = cc.c4b(255, 255, 255, 255)
 	},
 	{
 		text = "ActivityBlock_Detective_Name_3",
-		fontsize = 24,
+		fontsize = 20,
 		pos = {
-			65,
+			84,
 			10
 		},
 		lineGradiantVec2 = {
