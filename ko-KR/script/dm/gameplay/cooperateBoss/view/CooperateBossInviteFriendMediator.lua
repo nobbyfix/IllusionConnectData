@@ -150,12 +150,12 @@ function CooperateBossInviteFriendMediator:initView()
 	self._noFriend = self._main:getChildByFullName("friendPanel.noFriend")
 end
 
-function CooperateBossInviteFriendMediator:setupView()
-	self:createTableView()
-
+function CooperateBossInviteFriendMediator:setupFriendState()
 	self._bossFightTimes = {}
 
 	self._cooperateBossSystem:requestFriendTimes(function (respon)
+		dump(respon, "respon >>>>>>>>>>>>.")
+
 		if respon.resCode == 0 then
 			if DisposableObject:isDisposed(self) or DisposableObject:isDisposed(self:getView()) then
 				return
@@ -264,6 +264,11 @@ function CooperateBossInviteFriendMediator:setupView()
 			self:createFriendTableView()
 		end
 	end)
+end
+
+function CooperateBossInviteFriendMediator:setupView()
+	self:createTableView()
+	self:setupFriendState()
 	self:setupBossState()
 end
 
@@ -276,11 +281,23 @@ function CooperateBossInviteFriendMediator:initData(data)
 
 	self._friendSystem:requestFriendsMainInfo(function ()
 		self._friendModel = self._friendSystem:getFriendModel()
-		self._friendList = self._friendModel:getFriendList(kFriendType.kGame)
+		self._friendList = self._friendModel:getOnlineFriendList(kFriendType.kGame)
 	end)
 
 	self._memberRecordListOj = self._clubSystem:getMemberRecordListOj()
-	self._memberList = self._memberRecordListOj:getList()
+	local clubMembers = self._memberRecordListOj:getList()
+	self._memberList = {}
+
+	for i = 1, #clubMembers do
+		local member = clubMembers[i]
+
+		if member:getIsOnline() ~= false then
+			if member:getIsOnline() ~= 0 then
+				table.insert(self._memberList, member)
+			end
+		end
+	end
+
 	self._rid = self._developSystem:getPlayer():getRid()
 	local selfIndex = 0
 
@@ -1273,12 +1290,12 @@ function CooperateBossInviteFriendMediator:refreshFriendView()
 
 	self._friendSystem:requestFriendsMainInfo(function ()
 		self._friendModel = self._friendSystem:getFriendModel()
-		self._friendList = self._friendModel:getFriendList(kFriendType.kGame)
+		self._friendList = self._friendModel:getOnlineFriendList(kFriendType.kGame)
 
 		self._noFriend:setVisible(false)
 
 		if self._tableView and self._tableView:isVisible() and self._currenfFriendShowType == kFriendShowType.kFriend then
-			self._tableView:reloadData()
+			self:setupFriendState()
 
 			if #self._friendList == 0 then
 				self._noFriend:setVisible(true)
@@ -1289,7 +1306,19 @@ end
 
 function CooperateBossInviteFriendMediator:refreshClubMemberView()
 	self._memberRecordListOj = self._clubSystem:getMemberRecordListOj()
-	self._memberList = self._memberRecordListOj:getList()
+	local clubMembers = self._memberRecordListOj:getList()
+	self._memberList = {}
+
+	for i = 1, #clubMembers do
+		local member = clubMembers[i]
+
+		if member:getIsOnline() ~= false then
+			if member:getIsOnline() ~= 0 then
+				table.insert(self._memberList, member)
+			end
+		end
+	end
+
 	self._currenfFriendShowType = kFriendShowType.kFriend
 
 	self._noFriend:setVisible(false)

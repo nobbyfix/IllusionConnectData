@@ -104,6 +104,22 @@ function FriendList:getFriendList(friendType)
 	return self._friendListMap[friendType]
 end
 
+function FriendList:getOnlineFriendList(friendType)
+	local friends = {}
+
+	for i = 1, #self._friendListMap[friendType] do
+		local friendData = self._friendListMap[friendType][i]
+
+		if friendData:getOnline() ~= false then
+			if friendData:getOnline() ~= 0 then
+				table.insert(friends, friendData)
+			end
+		end
+	end
+
+	return friends
+end
+
 function FriendList:getFriendCount(friendType)
 	return self._friendCountMap[friendType]
 end
