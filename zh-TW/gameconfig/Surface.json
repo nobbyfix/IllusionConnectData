@@ -64,6 +64,7 @@
         "Link": "",
         "Model": "Model_ADHWShi",
         "Name": "Surface_ADHWShi_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -136,6 +137,7 @@
         "Link": "",
         "Model": "Model_ADHWShi_sd",
         "Name": "Surface_ADHWShi_sd_Name",
+        "NotGetUnlook": "",
         "Quality": 4,
         "RepeatReward": 10,
         "ShopID": "",
@@ -208,6 +210,7 @@
         "Link": "",
         "Model": "Model_AJTa",
         "Name": "Surface_AJTa_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -280,6 +283,7 @@
         "Link": "",
         "Model": "Model_AJYHou",
         "Name": "Surface_AJYHou_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -352,6 +356,7 @@
         "Link": "",
         "Model": "Model_ALPo",
         "Name": "Surface_ALPo_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -424,6 +429,7 @@
         "Link": "",
         "Model": "Model_ALPo_2",
         "Name": "Surface_ALPo_2_Name",
+        "NotGetUnlook": "",
         "Quality": 5,
         "RepeatReward": 10,
         "ShopID": "Shop_Surface",
@@ -496,6 +502,7 @@
         "Link": "",
         "Model": "Model_ALPo_WSJie",
         "Name": "Surface_ALPo_3_Name",
+        "NotGetUnlook": "",
         "Quality": 5,
         "RepeatReward": 10,
         "ShopID": "",
@@ -568,6 +575,7 @@
         "Link": "",
         "Model": "Model_ALSi",
         "Name": "Surface_ALSi_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -640,6 +648,7 @@
         "Link": "",
         "Model": "Model_ALSi_TGWu",
         "Name": "Surface_ALSi_2_Name",
+        "NotGetUnlook": "",
         "Quality": 5,
         "RepeatReward": 20,
         "ShopID": "",
@@ -712,6 +721,7 @@
         "Link": "",
         "Model": "Model_ATSheng",
         "Name": "Surface_ATSheng_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -784,6 +794,7 @@
         "Link": "",
         "Model": "Model_BBLMa",
         "Name": "Surface_BBLMa_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -856,6 +867,7 @@
         "Link": "",
         "Model": "Model_BBLMa_YZhuang",
         "Name": "Surface_BBLMa_2_Name",
+        "NotGetUnlook": "",
         "Quality": 5,
         "RepeatReward": 40,
         "ShopID": "",
@@ -928,11 +940,80 @@
         "Link": "",
         "Model": "Model_BBLMa_Awake",
         "Name": "Surface_BBLMa_Awake_Name",
+        "NotGetUnlook": "",
         "Quality": 5,
         "RepeatReward": "",
         "ShopID": "",
         "Sort": 2,
         "Type": 5,
+        "Unlook": 1
+    },
+    "Surface_BDFen_1": {
+        "ActivityId": "",
+        "ClickAction": [
+            {
+                "action": "touch3",
+                "point": [
+                    40,
+                    1084
+                ],
+                "range": [
+                    128,
+                    128
+                ],
+                "voice": [
+                    "Voice_BDFen_41",
+                    "Voice_BDFen_42",
+                    "Voice_BDFen_43"
+                ]
+            },
+            {
+                "action": "touch2",
+                "point": [
+                    -250,
+                    885
+                ],
+                "range": [
+                    128,
+                    95
+                ],
+                "voice": [
+                    "Voice_BDFen_44",
+                    "Voice_BDFen_45",
+                    "Voice_BDFen_46"
+                ]
+            },
+            {
+                "action": "touch2",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ],
+                "voice": [
+                    "Voice_BDFen_47",
+                    "Voice_BDFen_48",
+                    "Voice_BDFen_07",
+                    "Voice_BDFen_37"
+                ]
+            }
+        ],
+        "Desc": "Surface_BDFen_1_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "1",
+        "GoodsId": "",
+        "Hero": "BDFen",
+        "Link": "",
+        "Model": "Model_BDFen",
+        "Name": "Surface_BDFen_1_Name",
+        "NotGetUnlook": "",
+        "Quality": 2,
+        "RepeatReward": "",
+        "ShopID": "",
+        "Sort": 1,
+        "Type": "",
         "Unlook": 1
     },
     "Surface_BDPan_1": {
@@ -1000,6 +1081,7 @@
         "Link": "",
         "Model": "Model_BDPan",
         "Name": "Surface_BDPan_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -1072,6 +1154,7 @@
         "Link": "",
         "Model": "Model_BEr",
         "Name": "Surface_BEr_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -1144,6 +1227,7 @@
         "Link": "",
         "Model": "Model_BEr_WZi",
         "Name": "Surface_BEr_2_Name",
+        "NotGetUnlook": "",
         "Quality": 5,
         "RepeatReward": 20,
         "ShopID": "",
@@ -1216,6 +1300,75 @@
         "Link": "",
         "Model": "Model_BHTZi",
         "Name": "Surface_BHTZi_1_Name",
+        "NotGetUnlook": "",
+        "Quality": 2,
+        "RepeatReward": "",
+        "ShopID": "",
+        "Sort": 1,
+        "Type": 1,
+        "Unlook": 1
+    },
+    "Surface_BLTu_1": {
+        "ActivityId": "",
+        "ClickAction": [
+            {
+                "action": "touch1",
+                "point": [
+                    49,
+                    1100
+                ],
+                "range": [
+                    128,
+                    128
+                ],
+                "voice": [
+                    "Voice_BLTu_41",
+                    "Voice_BLTu_42",
+                    "Voice_BLTu_43"
+                ]
+            },
+            {
+                "action": "touch1",
+                "point": [
+                    -316,
+                    822
+                ],
+                "range": [
+                    128,
+                    95
+                ],
+                "voice": [
+                    "Voice_BLTu_44",
+                    "Voice_BLTu_45",
+                    "Voice_BLTu_46"
+                ]
+            },
+            {
+                "action": "touch1",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ],
+                "voice": [
+                    "Voice_BLTu_47",
+                    "Voice_BLTu_48",
+                    "Voice_BLTu_07",
+                    "Voice_BLTu_37"
+                ]
+            }
+        ],
+        "Desc": "Surface_BLTu_1_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "1",
+        "GoodsId": "",
+        "Hero": "BLTu",
+        "Link": "",
+        "Model": "Model_BLTu",
+        "Name": "Surface_BLTu_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -1288,6 +1441,7 @@
         "Link": "",
         "Model": "Model_BQDShe",
         "Name": "Surface_BQDShe_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -1360,6 +1514,7 @@
         "Link": "",
         "Model": "Model_CLMan",
         "Name": "Surface_CLMan_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -1432,6 +1587,7 @@
         "Link": "view://ActivityView&id=EightDaysCheckIn",
         "Model": "Model_CLMan_XHMao",
         "Name": "Surface_CLMan_2_Name",
+        "NotGetUnlook": "",
         "Quality": 5,
         "RepeatReward": 10,
         "ShopID": "",
@@ -1504,6 +1660,7 @@
         "Link": "",
         "Model": "Model_CLMan_TZHuo",
         "Name": "Surface_CLMan_TZHuo_Name",
+        "NotGetUnlook": "",
         "Quality": 4,
         "RepeatReward": 30,
         "ShopID": "Shop_Surface",
@@ -1576,6 +1733,7 @@
         "Link": "",
         "Model": "Model_CZheng",
         "Name": "Surface_CZheng_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -1648,12 +1806,86 @@
         "Link": "",
         "Model": "Model_CZheng_YZhuang",
         "Name": "Surface_CZheng_2_Name",
+        "NotGetUnlook": "",
         "Quality": 5,
         "RepeatReward": 10,
         "ShopID": "",
         "Sort": 2,
         "Type": 3,
         "Unlook": 1
+    },
+    "Surface_CZheng_3": {
+        "ActivityId": "",
+        "ClickAction": [
+            {
+                "action": "touch3",
+                "point": [
+                    -18,
+                    908
+                ],
+                "range": [
+                    128,
+                    128
+                ],
+                "voice": [
+                    "Voice_CZheng_41",
+                    "Voice_CZheng_42",
+                    "Voice_CZheng_43",
+                    "Voice_CZheng_39"
+                ]
+            },
+            {
+                "action": "touch2",
+                "point": [
+                    -99,
+                    602
+                ],
+                "range": [
+                    128,
+                    95
+                ],
+                "voice": [
+                    "Voice_CZheng_44",
+                    "Voice_CZheng_45",
+                    "Voice_CZheng_46",
+                    "Voice_CZheng_39"
+                ]
+            },
+            {
+                "action": "touch2",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ],
+                "voice": [
+                    "Voice_CZheng_47",
+                    "Voice_CZheng_48",
+                    "Voice_CZheng_07",
+                    "Voice_CZheng_08",
+                    "Voice_CZheng_09",
+                    "Voice_CZheng_37",
+                    "Voice_CZheng_39"
+                ]
+            }
+        ],
+        "Desc": "Surface_CZheng_3_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "",
+        "GoodsId": "",
+        "Hero": "CZheng",
+        "Link": "",
+        "Model": "Model_CZheng_xnian",
+        "Name": "Surface_CZheng_3_Name",
+        "NotGetUnlook": 1,
+        "Quality": 5,
+        "RepeatReward": "",
+        "ShopID": "",
+        "Sort": 3,
+        "Type": "",
+        "Unlook": 0
     },
     "Surface_DCJKang_1": {
         "ActivityId": "",
@@ -1720,6 +1952,7 @@
         "Link": "",
         "Model": "Model_DCJKang",
         "Name": "Surface_DCJKang_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -1792,6 +2025,7 @@
         "Link": "",
         "Model": "Model_DDing",
         "Name": "Surface_DDing_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -1898,6 +2132,7 @@
         "Link": "",
         "Model": "Model_DDing_TNLang",
         "Name": "Surface_DDing_2_Name",
+        "NotGetUnlook": "",
         "Quality": 5,
         "RepeatReward": 40,
         "ShopID": "",
@@ -1970,6 +2205,7 @@
         "Link": "",
         "Model": "Model_DFQi",
         "Name": "Surface_DFQi_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -2042,6 +2278,7 @@
         "Link": "",
         "Model": "Model_DFQi_MNGJi",
         "Name": "Surface_DFQi_2_Name",
+        "NotGetUnlook": "",
         "Quality": 4,
         "RepeatReward": 10,
         "ShopID": "",
@@ -2114,6 +2351,7 @@
         "Link": "",
         "Model": "Model_DNTLuo",
         "Name": "Surface_DNTLuo_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -2186,6 +2424,7 @@
         "Link": "",
         "Model": "Model_DNTLuo_YDXGuang",
         "Name": "Surface_DNTLuo_2_Name",
+        "NotGetUnlook": "",
         "Quality": 5,
         "RepeatReward": 10,
         "ShopID": "",
@@ -2253,6 +2492,7 @@
         "Link": "",
         "Model": "Model_FEMSi",
         "Name": "Surface_FEMSi_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -2320,6 +2560,7 @@
         "Link": "",
         "Model": "Model_FEMSi_classic",
         "Name": "Surface_FEMSi_2_Name",
+        "NotGetUnlook": "",
         "Quality": 4,
         "RepeatReward": 40,
         "ShopID": "Shop_Surface",
@@ -2392,6 +2633,7 @@
         "Link": "",
         "Model": "Model_FTLEShi",
         "Name": "Surface_FTLEShi_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -2464,6 +2706,7 @@
         "Link": "",
         "Model": "Model_FTLEShi_WZi",
         "Name": "Surface_FTLEShi_2_Name",
+        "NotGetUnlook": "",
         "Quality": 5,
         "RepeatReward": 30,
         "ShopID": "Shop_Surface",
@@ -2536,6 +2779,7 @@
         "Link": "",
         "Model": "Model_GLin",
         "Name": "Surface_GLin_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -2608,6 +2852,7 @@
         "Link": "",
         "Model": "Model_GYCZi",
         "Name": "Surface_GYCZi_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -2680,6 +2925,7 @@
         "Link": "",
         "Model": "Model_HLDNan",
         "Name": "Surface_HLDNan_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -2752,6 +2998,7 @@
         "Link": "",
         "Model": "Model_HLMGen",
         "Name": "Surface_HLMGen_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -2819,6 +3066,7 @@
         "Link": "",
         "Model": "Model_HSheng",
         "Name": "Surface_HSheng_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -2886,6 +3134,7 @@
         "Link": "",
         "Model": "Model_HSheng_classic",
         "Name": "Surface_HSheng_2_Name",
+        "NotGetUnlook": "",
         "Quality": 4,
         "RepeatReward": 10,
         "ShopID": "",
@@ -2958,6 +3207,7 @@
         "Link": "",
         "Model": "Model_HYe",
         "Name": "Surface_HYe_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -3030,6 +3280,7 @@
         "Link": "",
         "Model": "Model_JDCZhang",
         "Name": "Surface_JDCZhang_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -3102,6 +3353,7 @@
         "Link": "",
         "Model": "Model_JNLong",
         "Name": "Surface_JNLong_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -3174,6 +3426,7 @@
         "Link": "",
         "Model": "Model_JNLong_Winter",
         "Name": "Surface_JNLong_2_Name",
+        "NotGetUnlook": "",
         "Quality": 5,
         "RepeatReward": 40,
         "ShopID": "Shop_Surface",
@@ -3246,6 +3499,7 @@
         "Link": "",
         "Model": "Model_JSTDing",
         "Name": "Surface_JSTDing_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -3318,6 +3572,7 @@
         "Link": "",
         "Model": "Model_JSTDing_YZhuang",
         "Name": "Surface_JSTDing_2_Name",
+        "NotGetUnlook": "",
         "Quality": 4,
         "RepeatReward": 10,
         "ShopID": "",
@@ -3388,6 +3643,7 @@
         "Link": "",
         "Model": "Model_KMLa",
         "Name": "Surface_KMLa_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -3460,6 +3716,7 @@
         "Link": "",
         "Model": "Model_KTSJKe",
         "Name": "Surface_KTSJKe_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -3532,6 +3789,7 @@
         "Link": "",
         "Model": "Model_KTSJKe_QPao",
         "Name": "Surface_KTSJKe_2_Name",
+        "NotGetUnlook": "",
         "Quality": 5,
         "RepeatReward": 10,
         "ShopID": "",
@@ -3604,6 +3862,7 @@
         "Link": "",
         "Model": "Model_KTSJKe_Awake",
         "Name": "Surface_KTSJKe_Awake_Name",
+        "NotGetUnlook": "",
         "Quality": 5,
         "RepeatReward": "",
         "ShopID": "",
@@ -3676,6 +3935,7 @@
         "Link": "",
         "Model": "Model_KXuan",
         "Name": "Surface_KXuan_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -3748,6 +4008,7 @@
         "Link": "",
         "Model": "Model_LCYShi",
         "Name": "Surface_LCYShi_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -3820,6 +4081,7 @@
         "Link": "",
         "Model": "Model_LCYShi_sd",
         "Name": "Surface_LCYShi_sd_Name",
+        "NotGetUnlook": "",
         "Quality": 4,
         "RepeatReward": 10,
         "ShopID": "",
@@ -3892,6 +4154,7 @@
         "Link": "",
         "Model": "Model_LDu",
         "Name": "Surface_LDu_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -3964,6 +4227,7 @@
         "Link": "",
         "Model": "Model_LFEr",
         "Name": "Surface_LFEr_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -4036,6 +4300,7 @@
         "Link": "",
         "Model": "Model_LFEr_LHJPai",
         "Name": "Surface_LFEr_2_Name",
+        "NotGetUnlook": "",
         "Quality": 5,
         "RepeatReward": 10,
         "ShopID": "",
@@ -4108,6 +4373,7 @@
         "Link": "",
         "Model": "Model_LLan",
         "Name": "Surface_LLan_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -4180,6 +4446,7 @@
         "Link": "",
         "Model": "Model_LLan_Winter",
         "Name": "Surface_LLan_2_Name",
+        "NotGetUnlook": "",
         "Quality": 5,
         "RepeatReward": 10,
         "ShopID": "Shop_Surface",
@@ -4252,6 +4519,7 @@
         "Link": "",
         "Model": "Model_LYSi",
         "Name": "Surface_LYSi_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -4324,6 +4592,7 @@
         "Link": "",
         "Model": "Model_LYSi_CDan",
         "Name": "Surface_LYSi_CDan_Name",
+        "NotGetUnlook": "",
         "Quality": 4,
         "RepeatReward": 30,
         "ShopID": "",
@@ -4396,6 +4665,7 @@
         "Link": "",
         "Model": "Model_LYXi",
         "Name": "Surface_LYXi_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -4468,6 +4738,7 @@
         "Link": "",
         "Model": "Model_LYXi_QPao",
         "Name": "Surface_LYXi_2_Name",
+        "NotGetUnlook": "",
         "Quality": 5,
         "RepeatReward": 20,
         "ShopID": "",
@@ -4540,6 +4811,7 @@
         "Link": "",
         "Model": "Model_MGNa",
         "Name": "Surface_MGNa_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -4612,6 +4884,7 @@
         "Link": "",
         "Model": "Model_MGNa_QPao",
         "Name": "Surface_MGNa_2_Name",
+        "NotGetUnlook": "",
         "Quality": 5,
         "RepeatReward": 20,
         "ShopID": "",
@@ -4684,6 +4957,7 @@
         "Link": "",
         "Model": "Model_MKLJLuo",
         "Name": "Surface_MKLJLuo_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -4756,6 +5030,7 @@
         "Link": "",
         "Model": "Model_MKLJLuo_HBXLv",
         "Name": "Surface_MKLJLuo_2_Name",
+        "NotGetUnlook": "",
         "Quality": 4,
         "RepeatReward": 10,
         "ShopID": "",
@@ -4828,6 +5103,7 @@
         "Link": "",
         "Model": "Model_MLYTLSha",
         "Name": "Surface_MLYTLSha_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -4900,6 +5176,7 @@
         "Link": "",
         "Model": "Model_MLYTLSha_YZhuang",
         "Name": "Surface_MLYTLSh_2_Name",
+        "NotGetUnlook": "",
         "Quality": 5,
         "RepeatReward": 40,
         "ShopID": "",
@@ -4972,6 +5249,7 @@
         "Link": "",
         "Model": "Model_MTZMEShi",
         "Name": "Surface_MTZMEShi_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -5044,6 +5322,7 @@
         "Link": "",
         "Model": "Model_NDGEr",
         "Name": "Surface_NDGEr_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -5116,6 +5395,7 @@
         "Link": "",
         "Model": "Model_NFDDi",
         "Name": "Surface_NFDDi_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -5188,12 +5468,86 @@
         "Link": "",
         "Model": "Model_NFEr",
         "Name": "Surface_NFEr_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
         "Sort": 1,
         "Type": "",
         "Unlook": 1
+    },
+    "Surface_NFEr_2": {
+        "ActivityId": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "point": [
+                    -41,
+                    1007
+                ],
+                "range": [
+                    128,
+                    128
+                ],
+                "voice": [
+                    "Voice_NFEr_41",
+                    "Voice_NFEr_43",
+                    "Voice_NFEr_43",
+                    "Voice_NFEr_39"
+                ]
+            },
+            {
+                "action": "touch2",
+                "point": [
+                    -53,
+                    857
+                ],
+                "range": [
+                    128,
+                    95
+                ],
+                "voice": [
+                    "Voice_NFEr_44",
+                    "Voice_NFEr_45",
+                    "Voice_NFEr_46",
+                    "Voice_NFEr_39"
+                ]
+            },
+            {
+                "action": "touch1",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ],
+                "voice": [
+                    "Voice_NFEr_47",
+                    "Voice_NFEr_48",
+                    "Voice_NFEr_07",
+                    "Voice_NFEr_08",
+                    "Voice_NFEr_09",
+                    "Voice_NFEr_37",
+                    "Voice_NFEr_39"
+                ]
+            }
+        ],
+        "Desc": "Surface_NFEr_2_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "",
+        "GoodsId": "",
+        "Hero": "NFEr",
+        "Link": "",
+        "Model": "Model_NFEr_xnian",
+        "Name": "Surface_NFEr_2_Name",
+        "NotGetUnlook": 1,
+        "Quality": 5,
+        "RepeatReward": "",
+        "ShopID": "",
+        "Sort": 2,
+        "Type": "",
+        "Unlook": 0
     },
     "Surface_NXYYi_1": {
         "ActivityId": "",
@@ -5260,6 +5614,7 @@
         "Link": "",
         "Model": "Model_NXYYi",
         "Name": "Surface_NXYYi_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -5332,6 +5687,75 @@
         "Link": "",
         "Model": "Model_PDLa",
         "Name": "Surface_PDLa_1_Name",
+        "NotGetUnlook": "",
+        "Quality": 2,
+        "RepeatReward": "",
+        "ShopID": "",
+        "Sort": 1,
+        "Type": "",
+        "Unlook": 1
+    },
+    "Surface_PGNNi_1": {
+        "ActivityId": "",
+        "ClickAction": [
+            {
+                "action": "touch3",
+                "point": [
+                    -74,
+                    1105
+                ],
+                "range": [
+                    128,
+                    128
+                ],
+                "voice": [
+                    "Voice_PGNNi_41",
+                    "Voice_PGNNi_42",
+                    "Voice_PGNNi_43"
+                ]
+            },
+            {
+                "action": "touch2",
+                "point": [
+                    250,
+                    885
+                ],
+                "range": [
+                    128,
+                    95
+                ],
+                "voice": [
+                    "Voice_PGNNi_44",
+                    "Voice_PGNNi_45",
+                    "Voice_PGNNi_46"
+                ]
+            },
+            {
+                "action": "touch2",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ],
+                "voice": [
+                    "Voice_PGNNi_47",
+                    "Voice_PGNNi_48",
+                    "Voice_PGNNi_07",
+                    "Voice_PGNNi_37"
+                ]
+            }
+        ],
+        "Desc": "Surface_PGNNi_1_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "1",
+        "GoodsId": "",
+        "Hero": "PGNNi",
+        "Link": "",
+        "Model": "Model_PGNNi",
+        "Name": "Surface_PGNNi_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -5404,6 +5828,7 @@
         "Link": "",
         "Model": "Model_PNCao",
         "Name": "Surface_PNCao_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -5476,6 +5901,7 @@
         "Link": "",
         "Model": "Model_SDTZi",
         "Name": "Surface_SDTZi_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -5548,6 +5974,7 @@
         "Link": "",
         "Model": "Model_SDTZi_DYMEr",
         "Name": "Surface_SDTZi_2_Name",
+        "NotGetUnlook": "",
         "Quality": 5,
         "RepeatReward": 10,
         "ShopID": "",
@@ -5620,6 +6047,7 @@
         "Link": "",
         "Model": "Model_SDTZi_Awake",
         "Name": "Surface_SDTZi_Awake_Name",
+        "NotGetUnlook": "",
         "Quality": 5,
         "RepeatReward": "",
         "ShopID": "",
@@ -5692,6 +6120,7 @@
         "Link": "",
         "Model": "Model_SGHQShou",
         "Name": "Surface_SGHQShou_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -5764,6 +6193,7 @@
         "Link": "",
         "Model": "Model_SGHQShou_sd",
         "Name": "Surface_SGHQShou_sd_Name",
+        "NotGetUnlook": "",
         "Quality": 4,
         "RepeatReward": 40,
         "ShopID": "Shop_Surface",
@@ -5836,6 +6266,7 @@
         "Link": "",
         "Model": "Model_SLMen",
         "Name": "Surface_SLMen_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -5908,6 +6339,7 @@
         "Link": "",
         "Model": "Model_SRen",
         "Name": "Surface_SRen_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -5980,6 +6412,7 @@
         "Link": "",
         "Model": "Model_SSQXin",
         "Name": "Surface_SSQXin_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -6052,6 +6485,7 @@
         "Link": "",
         "Model": "Model_SYAi",
         "Name": "Surface_SYAi_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -6124,6 +6558,7 @@
         "Link": "",
         "Model": "Model_TJHDe",
         "Name": "Surface_TJHDe_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -6196,6 +6631,7 @@
         "Link": "",
         "Model": "Model_TLMi",
         "Name": "Surface_TLMi_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -6268,6 +6704,7 @@
         "Link": "",
         "Model": "Model_TPGZhu",
         "Name": "Surface_TPGZhu_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -6340,11 +6777,158 @@
         "Link": "",
         "Model": "Model_TPGZhu_QPao",
         "Name": "Surface_TPGZhu_2_Name",
+        "NotGetUnlook": "",
         "Quality": 5,
         "RepeatReward": 40,
         "ShopID": "",
         "Sort": 2,
         "Type": 2,
+        "Unlook": 1
+    },
+    "Surface_TPGZhu_3": {
+        "ActivityId": "",
+        "ClickAction": [
+            {
+                "action": "touch3",
+                "point": [
+                    -79,
+                    724
+                ],
+                "range": [
+                    128,
+                    128
+                ],
+                "voice": [
+                    "Voice_TPGZhu_41",
+                    "Voice_TPGZhu_42",
+                    "Voice_TPGZhu_43",
+                    "Voice_TPGZhu_39"
+                ]
+            },
+            {
+                "action": "touch2",
+                "point": [
+                    -99,
+                    602
+                ],
+                "range": [
+                    128,
+                    95
+                ],
+                "voice": [
+                    "Voice_TPGZhu_44",
+                    "Voice_TPGZhu_45",
+                    "Voice_TPGZhu_46",
+                    "Voice_TPGZhu_39"
+                ]
+            },
+            {
+                "action": "touch2",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ],
+                "voice": [
+                    "Voice_TPGZhu_47",
+                    "Voice_TPGZhu_48",
+                    "Voice_TPGZhu_07",
+                    "Voice_TPGZhu_08",
+                    "Voice_TPGZhu_09",
+                    "Voice_TPGZhu_37",
+                    "Voice_TPGZhu_39"
+                ]
+            }
+        ],
+        "Desc": "Surface_TPGZhu_3_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "",
+        "GoodsId": "",
+        "Hero": "TPGZhu",
+        "Link": "",
+        "Model": "Model_TPGZhu_xnian",
+        "Name": "Surface_TPGZhu_3_Name",
+        "NotGetUnlook": 1,
+        "Quality": 5,
+        "RepeatReward": "",
+        "ShopID": "",
+        "Sort": 3,
+        "Type": "",
+        "Unlook": 0
+    },
+    "Surface_TPGZhu_Awake": {
+        "ActivityId": "",
+        "ClickAction": [
+            {
+                "action": "touch3",
+                "point": [
+                    -52,
+                    993
+                ],
+                "range": [
+                    128,
+                    128
+                ],
+                "voice": [
+                    "Voice_TPGZhu_41",
+                    "Voice_TPGZhu_42",
+                    "Voice_TPGZhu_43",
+                    "Voice_TPGZhu_39"
+                ]
+            },
+            {
+                "action": "touch2",
+                "point": [
+                    -42,
+                    901
+                ],
+                "range": [
+                    128,
+                    95
+                ],
+                "voice": [
+                    "Voice_TPGZhu_44",
+                    "Voice_TPGZhu_45",
+                    "Voice_TPGZhu_46",
+                    "Voice_TPGZhu_39"
+                ]
+            },
+            {
+                "action": "touch2",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ],
+                "voice": [
+                    "Voice_TPGZhu_47",
+                    "Voice_TPGZhu_48",
+                    "Voice_TPGZhu_07",
+                    "Voice_TPGZhu_08",
+                    "Voice_TPGZhu_09",
+                    "Voice_TPGZhu_37",
+                    "Voice_TPGZhu_39"
+                ]
+            }
+        ],
+        "Desc": "Surface_TPGZhu_1Awake_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "Surface_TPGZhu_Awake_GainDesc",
+        "GoodsId": "",
+        "Hero": "TPGZhu",
+        "Link": "",
+        "Model": "Model_TPGZhu_Awake",
+        "Name": "Surface_TPGZhu_Awake_Name",
+        "NotGetUnlook": "",
+        "Quality": 5,
+        "RepeatReward": "",
+        "ShopID": "",
+        "Sort": 2,
+        "Type": 5,
         "Unlook": 1
     },
     "Surface_TTKMeng_1": {
@@ -6412,6 +6996,7 @@
         "Link": "",
         "Model": "Model_TTKMeng",
         "Name": "Surface_TTKMeng_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -6484,6 +7069,7 @@
         "Link": "",
         "Model": "Model_WEDe",
         "Name": "Surface_WEDe_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -6556,6 +7142,7 @@
         "Link": "",
         "Model": "Model_WEDe_YZhuang",
         "Name": "Surface_WEDe_2_Name",
+        "NotGetUnlook": "",
         "Quality": 5,
         "RepeatReward": 20,
         "ShopID": "",
@@ -6628,6 +7215,7 @@
         "Link": "",
         "Model": "Model_WTXXuan",
         "Name": "Surface_WTXXuan_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -6700,6 +7288,7 @@
         "Link": "",
         "Model": "Model_XLai",
         "Name": "Surface_XLai_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -6772,6 +7361,7 @@
         "Link": "",
         "Model": "Model_XLai_AShen",
         "Name": "Surface_XLai_2_Name",
+        "NotGetUnlook": "",
         "Quality": 4,
         "RepeatReward": 30,
         "ShopID": "Shop_Surface",
@@ -6844,6 +7434,7 @@
         "Link": "",
         "Model": "Model_XSMLi",
         "Name": "Surface_XSMLi_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -6916,6 +7507,7 @@
         "Link": "",
         "Model": "Model_YBYa",
         "Name": "Surface_YBYa_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -6988,6 +7580,7 @@
         "Link": "",
         "Model": "Model_YDZZong",
         "Name": "Surface_YDZZong_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -7060,6 +7653,7 @@
         "Link": "",
         "Model": "Model_YFZZhu",
         "Name": "Surface_YFZZhu_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -7132,6 +7726,7 @@
         "Link": "",
         "Model": "Model_YKDMLai",
         "Name": "Surface_YKDMLai_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -7204,6 +7799,7 @@
         "Link": "",
         "Model": "Model_YLMGZhu",
         "Name": "Surface_YLMGZhu_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -7276,6 +7872,7 @@
         "Link": "",
         "Model": "Model_YLMGZhu_WSJie",
         "Name": "Surface_YLMGZhu_2_Name",
+        "NotGetUnlook": "",
         "Quality": 5,
         "RepeatReward": 40,
         "ShopID": "",
@@ -7348,6 +7945,7 @@
         "Link": "",
         "Model": "Model_YLSBai",
         "Name": "Surface_YLSBai_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -7415,16 +8013,17 @@
         "Desc": "Surface_YLSBai_2_Desc",
         "GainDesc": "Surface_YLSBai_Detective_GainDesc",
         "GainShortDesc": "Surface_YLSBai_GainShort",
-        "GoodsId": "",
+        "GoodsId": "Surface_14",
         "Hero": "YLSBai",
         "Link": "",
         "Model": "Model_YLSBai_xnian",
         "Name": "Surface_YLSBai_2_Name",
+        "NotGetUnlook": "",
         "Quality": 4,
         "RepeatReward": 40,
-        "ShopID": "",
+        "ShopID": "Shop_Surface",
         "Sort": 2,
-        "Type": "",
+        "Type": 2,
         "Unlook": 1
     },
     "Surface_YMHTPu_1": {
@@ -7492,6 +8091,7 @@
         "Link": "",
         "Model": "Model_YMHTPu",
         "Name": "Surface_YMHTPu_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -7563,6 +8163,7 @@
         "Link": "",
         "Model": "Model_YSLBin",
         "Name": "Surface_YSLBin_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -7635,6 +8236,7 @@
         "Link": "",
         "Model": "Model_YSLBin_WSJie",
         "Name": "Surface_YSLBin_2_Name",
+        "NotGetUnlook": "",
         "Quality": 5,
         "RepeatReward": 40,
         "ShopID": "",
@@ -7707,6 +8309,7 @@
         "Link": "",
         "Model": "Model_YSTLu",
         "Name": "Surface_YSTLu_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -7779,6 +8382,7 @@
         "Link": "",
         "Model": "Model_YSuo",
         "Name": "Surface_YSuo_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -7851,6 +8455,7 @@
         "Link": "",
         "Model": "Model_YXNMei",
         "Name": "Surface_YXNMei_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -7923,6 +8528,7 @@
         "Link": "",
         "Model": "Model_YYing",
         "Name": "Surface_YYing_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -7995,6 +8601,7 @@
         "Link": "",
         "Model": "Model_ZTXChang",
         "Name": "Surface_ZTXChang_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -8067,6 +8674,7 @@
         "Link": "view://CarnivalView",
         "Model": "Model_ZTXChang_YYing",
         "Name": "Surface_ZTXChang_2_Name",
+        "NotGetUnlook": "",
         "Quality": 5,
         "RepeatReward": 20,
         "ShopID": "",
@@ -8139,6 +8747,7 @@
         "Link": "",
         "Model": "Model_ZTXCun",
         "Name": "Surface_ZTXCun_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -8211,6 +8820,7 @@
         "Link": "",
         "Model": "Model_ZZBBWei",
         "Name": "Surface_ZZBBWei_1_Name",
+        "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
         "ShopID": "",
@@ -8283,11 +8893,85 @@
         "Link": "",
         "Model": "Model_ZZBBWei_QPao",
         "Name": "Surface_ZZBBWei_2_Name",
+        "NotGetUnlook": "",
         "Quality": 5,
         "RepeatReward": 40,
         "ShopID": "Shop_Surface",
         "Sort": 2,
         "Type": 2,
+        "Unlook": 1
+    },
+    "Surface_ZZBBWei_Awake": {
+        "ActivityId": "",
+        "ClickAction": [
+            {
+                "action": "touch3",
+                "point": [
+                    -52,
+                    993
+                ],
+                "range": [
+                    128,
+                    128
+                ],
+                "voice": [
+                    "Voice_ZZBBWei_41",
+                    "Voice_ZZBBWei_42",
+                    "Voice_ZZBBWei_43",
+                    "Voice_ZZBBWei_39"
+                ]
+            },
+            {
+                "action": "touch2",
+                "point": [
+                    -42,
+                    901
+                ],
+                "range": [
+                    128,
+                    95
+                ],
+                "voice": [
+                    "Voice_ZZBBWei_44",
+                    "Voice_ZZBBWei_45",
+                    "Voice_ZZBBWei_46",
+                    "Voice_ZZBBWei_39"
+                ]
+            },
+            {
+                "action": "touch2",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ],
+                "voice": [
+                    "Voice_ZZBBWei_47",
+                    "Voice_ZZBBWei_48",
+                    "Voice_ZZBBWei_07",
+                    "Voice_ZZBBWei_08",
+                    "Voice_ZZBBWei_09",
+                    "Voice_ZZBBWei_37",
+                    "Voice_ZZBBWei_39"
+                ]
+            }
+        ],
+        "Desc": "Surface_ZZBBWei_1Awake_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "Surface_ZZBBWei_Awake_GainDesc",
+        "GoodsId": "",
+        "Hero": "ZZBBWei",
+        "Link": "",
+        "Model": "Model_ZZBBWei_Awake",
+        "Name": "Surface_ZZBBWei_Awake_Name",
+        "NotGetUnlook": "",
+        "Quality": 5,
+        "RepeatReward": "",
+        "ShopID": "",
+        "Sort": 2,
+        "Type": 5,
         "Unlook": 1
     }
 }

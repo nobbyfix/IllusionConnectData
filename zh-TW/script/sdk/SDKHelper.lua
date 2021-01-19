@@ -233,7 +233,7 @@ function SDKHelper:getOpenId()
 end
 
 function SDKHelper:_adjustEvent(data)
-	if device.platform == "mac" then
+	if device.platform == "mac" or device.platform == "windows" then
 		return
 	end
 

@@ -394,7 +394,7 @@
     "Condi_DrawCardTag": {
         "AchieveType1": "CUSTOM",
         "AchieveType2": "",
-        "ConditionType1": "drawCardTag",
+        "ConditionType1": "drawCardTag.?1",
         "ConditionType2": "",
         "EffectDesc": "Condi_DrawCardTag_Desc"
     },
@@ -926,14 +926,14 @@
     "Condi_MiniGameDailyScore": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.activities.activityMap.Activity_Darts.dailyTotalScore",
+        "ConditionType1": "player.activities.activityMap.Activity_Darts_20210119.dailyTotalScore",
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameDailyScore_Decs"
     },
     "Condi_MiniGameTotalScore": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.activities.activityMap.Activity_Darts.totalScore",
+        "ConditionType1": "player.activities.activityMap.Activity_Darts_20210119.totalScore",
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameTotalScore_Decs"
     },

@@ -326,6 +326,49 @@ function UnitTLInterpreter:act_Transform(action, args, mode)
 	end
 end
 
+function UnitTLInterpreter:act_TransportExt(action, args, mode)
+	local cellId = args.cell
+	local duration = args.duration / 1000 or 500
+	local timeScale = args.timeScale or 1
+	local ignoreSwitch = args.ignoreSwitch or false
+	local posInArr = math.abs(cellId)
+	local isLeft = true
+	isLeft = (self._mainPlayerSide and cellId > 0 or not self._mainPlayerSide and cellId < 0) and true or false
+	local pos = self._battleGround:relPositionFor(isLeft, posInArr)
+	local role = self._unit
+	local dataModel = self._dataModel
+	local oldCellId = dataModel:getCellId()
+
+	dataModel:setCellId(isLeft and posInArr or -posInArr)
+	role:setHomePlace(pos)
+
+	local from = role:getRelPosition()
+	local to = pos
+
+	if math.abs(to.x - from.x) > 0 then
+		role:switchState("run", {
+			loop = -1
+		})
+
+		if to.x == role._homePlace.x then
+			role:setLookat((to.x - from.x) * (isLeft and 1 or -1))
+		end
+	end
+
+	local oldTimeScale = role:getRoleAnim():getTimeScale()
+
+	role:getRoleAnim():setTimeScale(timeScale)
+	role:moveWithDuration(pos, duration, function ()
+		if not ignoreSwitch then
+			self._unitManager:exchange(oldCellId, dataModel:getCellId())
+		end
+
+		self._battleGround:resetGroundCell(oldCellId, GroundCellStatus.NORMAL)
+		self._battleGround:resetGroundCell(self._dataModel:getCellId(), GroundCellStatus.OCCUPIED)
+		role:getRoleAnim():setTimeScale(oldTimeScale)
+	end)
+end
+
 function UnitTLInterpreter:act_Transport(action, args, mode)
 	local cellId = args.cell
 	local posInArr = math.abs(cellId)

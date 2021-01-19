@@ -1099,7 +1099,8 @@ function Hero:initStarAttrs()
 						skillId = skillId,
 						beforeSkillId = beforeSkillId,
 						isEXSkill = isEXSkill,
-						isMiniStar = isMiniStar
+						isMiniStar = isMiniStar,
+						isHide = config.IsHidden and config.IsHidden or 0
 					}
 
 					table.insert(starAttrsTemp[star], data)
@@ -1122,6 +1123,7 @@ function Hero:initStarAttrs()
 				local data = {
 					path = "icon_yinghun_attr_up.png",
 					attrType = "attr",
+					isHide = 0,
 					name = Strings:get("HEROS_UI42"),
 					desc = desc,
 					isMiniStar = isMiniStar

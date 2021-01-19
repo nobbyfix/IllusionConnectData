@@ -759,20 +759,26 @@ function BattleRoleObject:addBuff(args)
 	self._buffMap[priorityGroup] = groupMap
 	local buffValue = groupMap[display]
 	buffValue.count = (buffValue.count or 0) + 1
+	local isFixPos = buffModel.Id == "Protecto"
 
 	if buffValue.count <= 1 or buffValue.displayNodes == nil or #buffValue.displayNodes == 0 then
 		if buffModel.Effect and buffModel.Effect ~= "" then
 			buffValue.loopMode = buffModel.Loop
 			buffValue.priority = priorityValue
 			buffValue.displayNodes = {}
+			local offsetX = buffModel.HorizontalPos
+
+			if offsetX and offsetX > 0 then
+				offsetX = self._isLeftTeam and offsetX or 0 - offsetX
+			end
 
 			local function addEffect(anim, layer)
-				return self:addActiveEffect(anim, buffValue.loopMode == 1, cc.p(0.5, buffModel.EffectPos), layer, 1, function (cid, mc)
+				return self:addActiveEffect(anim, buffValue.loopMode == 1, cc.p(offsetX or 0.5, buffModel.EffectPos), layer, 1, function (cid, mc)
 					if buffValue.loopMode == 0 then
 						table.removevalues(buffValue.displayNodes, mc)
 						mc:removeFromParent()
 					end
-				end)
+				end, isFixPos)
 			end
 
 			local displayNode = addEffect(buffModel.Effect, buffModel.Invisible == 2 and "cover" or "front")
@@ -1022,7 +1028,7 @@ function BattleRoleObject:colorReset()
 	self._roleAnim:setColorTransform(self._baseColorTrans)
 end
 
-function BattleRoleObject:addActiveEffect(mcFile, loop, dot, layer, zOrder, callback)
+function BattleRoleObject:addActiveEffect(mcFile, loop, dot, layer, zOrder, callback, isFixPos)
 	if not mcFile then
 		return
 	end
@@ -1052,6 +1058,21 @@ function BattleRoleObject:addActiveEffect(mcFile, loop, dot, layer, zOrder, call
 	anim:addTo(layer == "cover" and self._coverActiveFla or layer == "front" and self._frontActiveFla or self._backActiveFla)
 	anim:setLocalZOrder((layer == "front" or layer == "cover") and zOrder or -zOrder)
 	anim:setPosition(point)
+
+	if isFixPos then
+		local w_p = anim:getParent():convertToWorldSpace(point)
+
+		anim:changeParent(self._battleGround:getGroundLayer())
+
+		local pos_h = self:getHomePlace()
+		local pos_r = {
+			x = pos_h.x + dot.x * 0.4,
+			y = pos_h.y + 0.3333333333333333 * dot.y
+		}
+
+		self._battleGround:setRelPosition(anim, pos_r, 100, 100)
+		anim:setScale(1)
+	end
 
 	return anim
 end

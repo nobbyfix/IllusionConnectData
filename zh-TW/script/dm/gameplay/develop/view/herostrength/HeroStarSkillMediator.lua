@@ -65,7 +65,9 @@ function HeroStarSkillMediator:initData(data)
 			for index = 1, #params.info do
 				local value = params.info[index]
 
-				table.insert(self._starAttrsTemp, value)
+				if value.isHide == 0 then
+					table.insert(self._starAttrsTemp, value)
+				end
 			end
 		end
 	end

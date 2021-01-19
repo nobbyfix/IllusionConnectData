@@ -50,6 +50,9 @@
     "Target_BBLMa": {
         "Function": "return MainTarget()"
     },
+    "Target_BDFen": {
+        "Function": "return GenInfo(EnemyAll(ROW_OF(TARGET)),Red)"
+    },
     "Target_BDPan": {
         "Function": "return MainTarget()"
     },
@@ -58,6 +61,9 @@
     },
     "Target_BHTZi": {
         "Function": "return GenInfo(EnemyUnits(ROW_OF(TARGET)),Red)"
+    },
+    "Target_BLTu": {
+        "Function": ""
     },
     "Target_BQDShe": {
         "Function": "return MainTarget()"
@@ -166,6 +172,9 @@
     },
     "Target_PDLa": {
         "Function": "return GenInfo(EnemyAll(),Red,true)"
+    },
+    "Target_PGNNi": {
+        "Function": ""
     },
     "Target_PNCao": {
         "Function": "return MainTarget()"

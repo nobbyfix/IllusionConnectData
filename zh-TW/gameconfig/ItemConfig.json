@@ -14616,6 +14616,40 @@
         "UseLevel": 1,
         "Viplevel": 0
     },
+    "IHF_BDFen": {
+        "CN_Name": "贝多芬[碎片]",
+        "Compose": "",
+        "Desc": "IHF_BDFen_Desc",
+        "FunctionDesc": "IHF_BDFen_FunctionDesc",
+        "Icon": "smallpic_100065",
+        "Isvisible": 1,
+        "Link": "view://HeroShowMainView&viewType=push&tabType=3",
+        "MaxPile": 999999,
+        "MultiUse": 1,
+        "Name": "IHF_BDFen_Name",
+        "Page": "FRAGMENT",
+        "Quality": 5,
+        "Rank": "",
+        "RedTips": "",
+        "Resource": [
+            "IHF_BDFen_1"
+        ],
+        "ResourceDesc": "",
+        "Reward": [],
+        "SellPrice": -1,
+        "Shine": 1,
+        "ShinePack": 0,
+        "Sort": 350770,
+        "SoulExp": 10,
+        "TargetId": {
+            "id": "BDFen",
+            "type": "hero"
+        },
+        "Type": "HERO_F",
+        "UseAtOnce": "",
+        "UseLevel": 1,
+        "Viplevel": 0
+    },
     "IHF_BDPan": {
         "CN_Name": "彼得潘[碎片]",
         "Compose": "",
@@ -14711,6 +14745,40 @@
         "SoulExp": 10,
         "TargetId": {
             "id": "BHTZi",
+            "type": "hero"
+        },
+        "Type": "HERO_F",
+        "UseAtOnce": "",
+        "UseLevel": 1,
+        "Viplevel": 0
+    },
+    "IHF_BLTu": {
+        "CN_Name": "柏拉图[碎片]",
+        "Compose": "",
+        "Desc": "IHF_BLTu_Desc",
+        "FunctionDesc": "IHF_BLTu_FunctionDesc",
+        "Icon": "smallpic_100065",
+        "Isvisible": 1,
+        "Link": "view://HeroShowMainView&viewType=push&tabType=3",
+        "MaxPile": 999999,
+        "MultiUse": 1,
+        "Name": "IHF_BLTu_Name",
+        "Page": "FRAGMENT",
+        "Quality": 5,
+        "Rank": "",
+        "RedTips": "",
+        "Resource": [
+            "IHF_BLTu_1"
+        ],
+        "ResourceDesc": "",
+        "Reward": [],
+        "SellPrice": -1,
+        "Shine": 1,
+        "ShinePack": 0,
+        "Sort": 350769,
+        "SoulExp": 10,
+        "TargetId": {
+            "id": "BLTu",
             "type": "hero"
         },
         "Type": "HERO_F",
@@ -16031,6 +16099,40 @@
         "SoulExp": 10,
         "TargetId": {
             "id": "PDLa",
+            "type": "hero"
+        },
+        "Type": "HERO_F",
+        "UseAtOnce": "",
+        "UseLevel": 1,
+        "Viplevel": 0
+    },
+    "IHF_PGNNi": {
+        "CN_Name": "帕格尼尼[碎片]",
+        "Compose": "",
+        "Desc": "IHF_PGNNi_Desc",
+        "FunctionDesc": "IHF_PGNNi_FunctionDesc",
+        "Icon": "smallpic_100065",
+        "Isvisible": 1,
+        "Link": "view://HeroShowMainView&viewType=push&tabType=3",
+        "MaxPile": 999999,
+        "MultiUse": 1,
+        "Name": "IHF_PGNNi_Name",
+        "Page": "FRAGMENT",
+        "Quality": 5,
+        "Rank": "",
+        "RedTips": "",
+        "Resource": [
+            "IHF_PGNNi_1"
+        ],
+        "ResourceDesc": "",
+        "Reward": [],
+        "SellPrice": -1,
+        "Shine": 1,
+        "ShinePack": 0,
+        "Sort": 350771,
+        "SoulExp": 10,
+        "TargetId": {
+            "id": "PGNNi",
             "type": "hero"
         },
         "Type": "HERO_F",

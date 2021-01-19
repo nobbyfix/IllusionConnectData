@@ -764,6 +764,51 @@ function FormationSystem:transform(unit, hpRatio)
 	end
 end
 
+function FormationSystem:transportExt(unit, cellNo, duration, timeScale)
+	local cellId = makeCellId(unit:getOwner():getSide(), cellNo)
+	local battleField = self._battleField
+	local posComp = unit:getComponent("Position")
+	local oldCellId = posComp and posComp:getCell() and posComp:getCell():getId()
+	local targetUnit = nil
+	local orgCellId = unit:getCell():getId()
+
+	if not battleField:isEmptyCell(cellId) then
+		local targetCell = battleField:getCellById(cellId)
+		targetUnit = targetCell:getResident()
+	end
+
+	battleField:exchangeUnits(oldCellId, cellId)
+
+	local processRecorder = self._processRecorder
+
+	if processRecorder ~= nil then
+		processRecorder:recordObjectEvent(unit:getId(), "TransportExt", {
+			cell = cellId,
+			duration = duration,
+			timeScale = timeScale
+		})
+
+		if targetUnit then
+			processRecorder:recordObjectEvent(targetUnit:getId(), "TransportExt", {
+				ignoreSwitch = true,
+				cell = orgCellId,
+				duration = duration,
+				timeScale = timeScale
+			})
+		end
+	end
+
+	if self._eventCenter then
+		self._eventCenter:dispatchEvent("UnitTransported", {
+			player = player,
+			unit = unit,
+			cellId = cellId
+		})
+	end
+
+	return oldCellId
+end
+
 function FormationSystem:transport(unit, cellNo)
 	local cellId = makeCellId(unit:getOwner():getSide(), cellNo)
 	local battleField = self._battleField

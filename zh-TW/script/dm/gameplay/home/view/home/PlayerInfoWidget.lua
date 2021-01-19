@@ -248,7 +248,7 @@ function PlayerInfoWidget:setMonthCardState()
 end
 
 function PlayerInfoWidget:setBatteryPower()
-	if device.platform ~= "mac" then
+	if device.platform ~= "mac" and device.platform ~= "windows" then
 		local percent = app.getDevice():getBatteryLevel()
 
 		if self._batteryPower then

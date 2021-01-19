@@ -32,12 +32,6 @@ function exports.EMPTY_CELL(env)
 	end)
 end
 
-function exports.CELL_HAS_UNIT(env, unit)
-	return MakeFilter(function (cell)
-		return cell:getResident() == unit
-	end)
-end
-
 function exports.CELL_IN_POS(env, pos1, ...)
 	local poses = {
 		pos1,
@@ -53,6 +47,76 @@ function exports.CELL_IN_POS(env, pos1, ...)
 		end
 
 		return false
+	end)
+end
+
+function exports.CELL_HAS_UNIT(env, unit)
+	return MakeFilter(function (cell)
+		return cell:getResident() == unit
+	end)
+end
+
+function exports.ROW_CELL_OF(env, who)
+	if not who then
+		return nil
+	end
+
+	local pos = who:getPosition()
+
+	return MakeFilter(function (cell)
+		return cell:getPosition().x == pos.x
+	end)
+end
+
+function exports.COL_CELL_OF(env, who)
+	if not who then
+		return nil
+	end
+
+	local pos = who:getPosition()
+
+	return MakeFilter(function (cell)
+		return cell:getPosition().y == pos.y
+	end)
+end
+
+exports.FRONT_ROW_CELL = MakeFilter(function (cell)
+	return cell:getPosition().x == 1
+end)
+exports.MID_ROW_CELL = MakeFilter(function (cell)
+	return cell:getPosition().x == 2
+end)
+exports.BACK_ROW_CELL = MakeFilter(function (cell)
+	return cell:getPosition().x == 3
+end)
+exports.TOP_COL_CELL = MakeFilter(function (cell)
+	return cell:getPosition().y == 1
+end)
+exports.MID_COL_CELLL = MakeFilter(function (cell)
+	return cell:getPosition().y == 2
+end)
+exports.BOTTOM_COL_CELL = MakeFilter(function (cell)
+	return cell:getPosition().y == 3
+end)
+
+function exports.NEIGHBORS_CELL_OF(env, who)
+	if not who then
+		return nil
+	end
+
+	local pos = who:getPosition()
+
+	return MakeFilter(function (cell)
+		local sqt_x = math.pow(pos.x - cell:getPosition().x, 2)
+		local sqt_y = math.pow(pos.y - cell:getPosition().y, 2)
+
+		return sqt_x + sqt_y <= 1
+	end)
+end
+
+function exports.ONESELF_CELL(env, who)
+	return MakeFilter(function (cell)
+		return who == cell
 	end)
 end
 
@@ -92,6 +156,30 @@ end
 
 function exports.GetCell(env, unit)
 	return unit:getCell()
+end
+
+function exports.GetCellId(env, unit)
+	if not unit then
+		return nil
+	end
+
+	return unit:getCell():getId()
+end
+
+function exports.IdOfCell(env, cell)
+	if not cell then
+		return nil
+	end
+
+	return cell:getId()
+end
+
+function exports.GetCellUnit(env, cell)
+	if not cell then
+		return nil
+	end
+
+	return cell:getResident()
 end
 
 function exports.LockCellTrap(env)

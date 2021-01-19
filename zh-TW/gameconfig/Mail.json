@@ -350,6 +350,19 @@
         "TopStatus": 0,
         "Type": "USER"
     },
+    "Mail_EightDays": {
+        "Content": "Mail_EightDays_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Activity_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_EightDays_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
     "Mail_EightDays_Detective": {
         "Content": "Mail_SevenDays_Detective_Content",
         "ExpireAfterRead": 72000,
