@@ -9,22 +9,23 @@ CurrencyIdKind = {
 	kActivityHolidayPower = "IR_HolidayStamina",
 	kAcitvityZuoHePower = "IR_ZuoHeAcitvityStamina",
 	kAcitvitySummerPower = "IR_SummerAcitvityStamina",
-	kActivityDetectivePower = "IR_DetectiveStamina",
+	kActivityMusicPower = "IR_MusicFestivalStamina",
 	kCrusadeEnergy = "IR_Crusade_Energy",
-	kDiamondDrawExItem = "IM_DiamondDrawEX",
+	kActivityDetectivePower = "IR_DetectiveStamina",
 	kClub = "IR_Club",
+	kDiamondDrawExItem = "IM_DiamondDrawEX",
 	kMazeGold = "IR_PansLab",
-	kCrystal = "IR_Crystal",
 	kGold = "IR_Gold",
 	kAcitvityWxhPower = "IR_WuXiuHuiAcitvityStamina",
-	kMazeInfinityGold = "IR_PansLabInfGOLD",
+	kCrystal = "IR_Crystal",
 	kPower = "IR_Power",
-	kTECH = "IR_TECH",
+	kMazeInfinityGold = "IR_PansLabInfGOLD",
 	kFragment = "IR_Fragment",
 	kHonor = "IR_Arena",
-	kPetRace = "IR_KON",
+	kTECH = "IR_TECH",
 	kAcitvitySnowPower = "IR_SnowflakeStamina",
 	kTrial = "IR_Tower",
+	kPetRace = "IR_KON",
 	kDiamond = "IR_Diamond",
 	kEquip13 = "IR_Equip13",
 	kEquip14 = "IR_Equip14",
@@ -304,6 +305,7 @@ ActivityType_UI = {
 	KActivityBlockSnowflake = "ACTIVITYSNOWFLAKE",
 	KActivityBlockDetetive = "ACTIVITYDETECTIVE",
 	KActivitySupportHoliday = "ACTIVITYSUPPORTHOLIDAY",
+	KActivityBlockMusic = "ACTIVITYMUSICFESTIVAL",
 	kActivityPass = "BattlePass",
 	KLOGINTIME = "LOGINTIME",
 	KActivityBlockHoliday = "ACTIVITYHOLIDAY"
@@ -373,21 +375,22 @@ GalleryMemoryPackType = {
 }
 LoadingType = {
 	KStageNormal = "StageNormal",
-	KStageGold = "StageGold",
+	KStagePractice = "StagePractice",
 	KMapExplore = "MapExplore",
 	KActivity = "Activity",
 	KStageCrystal = "StageCrystal",
 	KMaze = "Maze",
 	KStageExp = "StageExp",
-	KStagePractice = "StagePractice",
-	KTower1 = "Tower1",
-	KCrusade = "Crusade",
 	KStageElite = "StageElite",
-	KFriendPK = "FriendPK",
-	KKOF = "KOF",
 	KArena = "Arena",
 	KClubBoss = "ClubBoss",
-	kDream = "DreamChallenge"
+	KKOF = "KOF",
+	KFriendPK = "FriendPK",
+	KStageGold = "StageGold",
+	kCooperate = "Cooperate",
+	kDream = "DreamChallenge",
+	KTower1 = "Tower1",
+	KCrusade = "Crusade"
 }
 kStoreRoomName = "StoreRoom"
 litTypeMap = {
@@ -398,4 +401,122 @@ kMasterState = {
 	Forbidden = 2,
 	Locked = 1,
 	Normal = 3
+}
+PowerConfigMap = {
+	IM_HalloweenBossStamina = {
+		tips = "ACTIVITY_Halloween_NOT_ENOUGH_1",
+		func = "getItemCount"
+	},
+	IM_SummerBossStamina = {
+		tips = "ACTIVITY_ENERGY_NOT_ENOUGH2_Summer",
+		func = "getItemCount"
+	},
+	IM_WuXiuHuiBossStamina = {
+		tips = "ACTIVITY_ENERGY_NOT_ENOUGH2_WXH",
+		func = "getItemCount"
+	},
+	IM_ZuoHeBossStamina = {
+		tips = "ACTIVITY_ENERGY_NOT_ENOUGH2_ZUOHE",
+		func = "getItemCount"
+	},
+	IM_BossJindan = {
+		tips = "ACTIVITY_ENERGY_NOT_ENOUGH2",
+		func = "getItemCount"
+	},
+	[CurrencyIdKind.kPower] = {
+		all = "Power_RecAll",
+		perMin = "Power_RecPerMin",
+		next = "Power_RecNext",
+		configId = "3",
+		tableName = "Reset"
+	},
+	[CurrencyIdKind.kAcitvityStaminaPower] = {
+		all = "Act_Power_RecAll",
+		perMin = "Act_Power_RecPerMin",
+		next = "Act_Power_RecNext",
+		func = "getPowerByCurrencyId",
+		configId = "AcitvityStamina_Reset",
+		tips = "ACTIVITY_ENERGY_NOT_ENOUGH",
+		tableName = "Reset"
+	},
+	[CurrencyIdKind.kAcitvitySnowPower] = {
+		all = "Act_Snowflake_Power_RecAll",
+		perMin = "Act_Snowflake_Power_RecPerMin",
+		next = "Act_Snowflake_Power_RecNext",
+		func = "getPowerByCurrencyId",
+		configId = "AcitvitySnowflakeStamina_Reset",
+		tips = "ACTIVITY_Snowflake_NOT_ENOUGH_1",
+		tableName = "Reset"
+	},
+	[CurrencyIdKind.kAcitvityZuoHePower] = {
+		all = "Act_ZuoHe_Power_RecAll",
+		perMin = "Act_ZuoHe_Power_RecPerMin",
+		next = "Act_ZuoHe_Power_RecNext",
+		func = "getPowerByCurrencyId",
+		configId = "AcitvityZuoHeStamina_Reset",
+		tips = "ACTIVITY_ENERGY_NOT_ENOUGH3_ZUOHE",
+		tableName = "Reset"
+	},
+	[CurrencyIdKind.kAcitvityWxhPower] = {
+		all = "Act_Wxh_Power_RecAll",
+		perMin = "Act_Wxh_Power_RecPerMin",
+		next = "Act_Wxh_Power_RecNext",
+		func = "getPowerByCurrencyId",
+		configId = "AcitvityWuXiuHuiStamina_Reset",
+		tips = "ACTIVITY_ENERGY_NOT_ENOUGH3_WXH",
+		tableName = "Reset"
+	},
+	[CurrencyIdKind.kAcitvitySummerPower] = {
+		all = "Act_Summer_Power_RecAll",
+		perMin = "Act_Summer_Power_RecPerMin",
+		next = "Act_Summer_Power_RecNext",
+		func = "getPowerByCurrencyId",
+		configId = "AcitvitySummerStamina_Reset",
+		tips = "ACTIVITY_ENERGY_NOT_ENOUGH2_Summer",
+		tableName = "Reset"
+	},
+	[CurrencyIdKind.kAcitvityHalloweenPower] = {
+		all = "Act_Halloween_Power_RecAll",
+		perMin = "Act_Halloween_Power_RecPerMin",
+		next = "Act_Halloween_Power_RecNext",
+		func = "getPowerByCurrencyId",
+		configId = "AcitvityHalloweenStamina_Reset",
+		tips = "ACTIVITY_Halloween_NOT_ENOUGH_2",
+		tableName = "Reset"
+	},
+	[CurrencyIdKind.kActivityHolidayPower] = {
+		all = "Act_NewYear_Power_RecAll",
+		perMin = "Act_NewYear_Power_RecPerMin",
+		next = "Act_NewYear_Power_RecNext",
+		func = "getPowerByCurrencyId",
+		configId = "AcitvityHolidayStamina_Reset",
+		tips = "IR_NewyearStaminaWarning",
+		tableName = "Reset"
+	},
+	[CurrencyIdKind.kActivityDetectivePower] = {
+		all = "Act_Detective_Power_RecAll",
+		perMin = "Act_Detective_Power_RecPerMin",
+		next = "Act_Detective_Power_RecNext",
+		func = "getPowerByCurrencyId",
+		configId = "AcitvityDetectiveStamina_Reset",
+		tips = "ACTIVITY_Detective_ENERGY_NOT_ENOUGH",
+		tableName = "Reset"
+	},
+	[CurrencyIdKind.kActivityMusicPower] = {
+		all = "Act_MusicFestival_Power_RecAll",
+		perMin = "Act_MusicFestival_Power_RecPerMin",
+		next = "Act_MusicFestival_Power_RecNext",
+		func = "getPowerByCurrencyId",
+		configId = "AcitvityMusicFestivalStamina_Reset",
+		tips = "ACTIVITY_MusicFestival_NOT_ENOUGH_1",
+		tableName = "Reset"
+	},
+	TEST = {
+		tips = "ACTIVITY_ENERGY_NOT_ENOUGH",
+		func = "getPowerByCurrencyId"
+	}
+}
+MailType = {
+	kVersion = 2,
+	kNormal = 0
 }

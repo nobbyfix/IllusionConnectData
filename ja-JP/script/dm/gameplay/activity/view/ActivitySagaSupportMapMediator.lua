@@ -7,6 +7,9 @@ ActivitySagaSupportMapMediator = class("ActivitySagaSupportMapMediator", DmAreaV
 ActivitySagaSupportMapMediator:has("_activitySystem", {
 	is = "r"
 }):injectWith("ActivitySystem")
+ActivitySagaSupportMapMediator:has("_gameServerAgent", {
+	is = "r"
+}):injectWith("GameServerAgent")
 
 local commonCellWidth = 420
 local unSelectCellHeight = 69
@@ -869,6 +872,26 @@ function ActivitySagaSupportMapMediator:onClickNextAction(index)
 		AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
 
 		if pointType == kStageTypeMap.point then
+			local openTime = pointInfo:getConfig().PointTime
+			local curTime = self._gameServerAgent:remoteTimestamp()
+
+			if openTime and openTime.start then
+				local startTime = TimeUtil:formatStrToTImestamp(openTime.start)
+
+				if curTime < startTime then
+					local date = TimeUtil:localDate("%Y-%m-%d", startTime)
+
+					self:dispatch(ShowTipEvent({
+						duration = 0.2,
+						tip = Strings:get("Newyear_ActivityStage_OpenTimeTip", {
+							time = date
+						})
+					}))
+
+					return
+				end
+			end
+
 			self:enterCommonPoint(pointId)
 		elseif pointType == kStageTypeMap.StoryPoint then
 			self:onClickPlayStory(pointId)
@@ -997,7 +1020,6 @@ function ActivitySagaSupportMapMediator:onClickChangeStageStype()
 		local curTimeStemp = self:getInjector():getInstance("GameServerAgent"):remoteTimestamp()
 
 		if curTimeStemp < timeStemp then
-			local startTime = ConfigReader:getDataByNameIdAndKey("activityblockpoint", "AE01S01", "PointTime")
 			local remoteTime = TimeUtil:formatStrToRemoteTImestamp(startTime.start)
 			local localDate = TimeUtil:localDate("%Y-%m-%d  %H:%M:%S", remoteTime)
 

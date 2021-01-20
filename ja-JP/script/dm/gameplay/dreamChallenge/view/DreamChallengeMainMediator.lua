@@ -24,6 +24,7 @@ local kBtnHandlers = {
 		func = "onClickInfoBtn"
 	}
 }
+local DREAM_REDPOINT_SAVE_KEY = "DREAM_REDPOINT_SAVE_KEY"
 
 function DreamChallengeMainMediator:initialize()
 	super.initialize(self)
@@ -89,6 +90,7 @@ function DreamChallengeMainMediator:initData(data)
 	end
 
 	self._treeNodes = {}
+	self._rid = self._developSystem:getPlayer():getRid()
 end
 
 function DreamChallengeMainMediator:setupTopView()
@@ -217,6 +219,7 @@ function DreamChallengeMainMediator:createTreeView()
 			local isShow = self._dreamSystem:checkMapShow(mapList[i])
 
 			if isShow then
+				local isUnLock = self._dreamSystem:checkMapLock(mapList[i])
 				local node = self._firstNode:clone()
 				local firstNode = self._tree:addFirstLayer(node, mapList[i], 10, true)
 
@@ -233,6 +236,28 @@ function DreamChallengeMainMediator:createTreeView()
 						firstNode:closeList()
 					end
 
+					local redPoint = firstNode:getView():getChildByFullName("redPoint")
+
+					if isUnLock then
+						local dreamPointRedStste = CommonUtils.getDataFromLocalByKey(self._rid .. DREAM_REDPOINT_SAVE_KEY)
+
+						if dreamPointRedStste == nil then
+							dreamPointRedStste = {
+								mapArr = {}
+							}
+						end
+
+						redPoint:setVisible(true)
+
+						for _, v in pairs(dreamPointRedStste.mapArr) do
+							if v == mapList[i] then
+								redPoint:setVisible(false)
+							end
+						end
+					else
+						redPoint:setVisible(false)
+					end
+
 					self._treeNodes[mapList[i]] = {
 						node = firstNode,
 						child = {}
@@ -240,8 +265,6 @@ function DreamChallengeMainMediator:createTreeView()
 				end
 
 				self:refreshMapCell(mapList[i])
-
-				local isUnLock = self._dreamSystem:checkMapLock(mapList[i])
 
 				if isUnLock then
 					local pointIds = self._dreamSystem:getPointIds(mapList[i])
@@ -252,6 +275,9 @@ function DreamChallengeMainMediator:createTreeView()
 						if open then
 							local node1 = self._secNode:clone()
 							local secNode = self._tree:addSecondLayer(node1, firstNodeIndex, pointIds[j], 0, true)
+							local redPoint = secNode:getView():getChildByFullName("redPoint")
+
+							redPoint:setVisible(false)
 
 							if secNode then
 								secNode:setUserData({
@@ -277,6 +303,8 @@ function DreamChallengeMainMediator:createTreeView()
 	else
 		self:viewShow(self._mapId, self._pointId)
 	end
+
+	self:onMapRedpointSet()
 
 	local musicId = self._dreamSystem:getMapBGM(self._mapId)
 
@@ -331,7 +359,40 @@ function DreamChallengeMainMediator:onMapCellClick(data)
 
 	local musicId = self._dreamSystem:getMapBGM(self._mapId)
 
+	self:onMapRedpointSet()
 	AudioEngine:getInstance():playBackgroundMusic(musicId[1])
+end
+
+function DreamChallengeMainMediator:onMapRedpointSet()
+	local node = self._treeNodes[self._mapId].node:getView()
+	local redPoint = node:getChildByFullName("redPoint")
+
+	if redPoint and redPoint:isVisible() then
+		redPoint:setVisible(false)
+
+		local dreamPointRedStste = CommonUtils.getDataFromLocalByKey(self._rid .. DREAM_REDPOINT_SAVE_KEY)
+
+		if dreamPointRedStste == nil then
+			dreamPointRedStste = {
+				mapArr = {}
+			}
+		end
+
+		if dreamPointRedStste then
+			local existRed = false
+
+			for _, v in pairs(dreamPointRedStste.mapArr) do
+				if v == self._mapId then
+					existRed = true
+				end
+			end
+
+			if not existRed then
+				table.insert(dreamPointRedStste.mapArr, self._mapId)
+				CommonUtils.saveDataToLocalByKey(dreamPointRedStste, self._rid .. DREAM_REDPOINT_SAVE_KEY)
+			end
+		end
+	end
 end
 
 function DreamChallengeMainMediator:onPointCellClick(data)

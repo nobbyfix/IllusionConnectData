@@ -15,7 +15,40 @@ RecruitSystem:has("_systemKeeper", {
 }):injectWith("SystemKeeper")
 
 RecruitAutoBuyCard = "RecruitAutoBuyCard"
+RecruitAutoBuyCardEx = "RecruitAutoBuyCardEx"
 RecruitNewPlayerPool = "DrawCard_NewPlayer"
+RecruitCurrencyStr = {
+	KUserDefault = {
+		[CurrencyIdKind.kDiamondDrawItem] = RecruitAutoBuyCard,
+		[CurrencyIdKind.kDiamondDrawExItem] = RecruitAutoBuyCardEx
+	},
+	KGoToShop = {
+		[CurrencyIdKind.kDiamondDrawItem] = Strings:get("Recruit_UI21"),
+		[CurrencyIdKind.kDiamondDrawExItem] = Strings:get("Recruit_UI_2")
+	},
+	KBuyTitle = {
+		[CurrencyIdKind.kDiamondDrawItem] = Strings:get("Recruit_UI16"),
+		[CurrencyIdKind.kDiamondDrawExItem] = Strings:get("Recruit_UI_1")
+	},
+	KBuyTitle1 = {
+		[CurrencyIdKind.kDiamondDrawItem] = Strings:get("UITitle_EN_Zhaohuanzhizhengbuzu"),
+		[CurrencyIdKind.kDiamondDrawExItem] = Strings:get("UITitle_EN_Zhaohuanzhizhengbuzu")
+	},
+	KBuyContent = {
+		[CurrencyIdKind.kDiamondDrawItem] = "Recruit_UI18",
+		[CurrencyIdKind.kDiamondDrawExItem] = "Recruit_UI_3"
+	},
+	KBuyPrice = {
+		single = {
+			[CurrencyIdKind.kDiamondDrawItem] = ConfigReader:getDataByNameIdAndKey("ConfigValue", "DrawCard_SinglePrice", "content"),
+			[CurrencyIdKind.kDiamondDrawExItem] = ConfigReader:getDataByNameIdAndKey("ConfigValue", "DrawCardEX_SinglePrice", "content") or 88888888
+		},
+		ten = {
+			[CurrencyIdKind.kDiamondDrawItem] = ConfigReader:getDataByNameIdAndKey("ConfigValue", "DrawCard_TenTimesPrice", "content"),
+			[CurrencyIdKind.kDiamondDrawExItem] = ConfigReader:getDataByNameIdAndKey("ConfigValue", "DrawCardEX_TenTimesPrice", "content") or 99999999
+		}
+	}
+}
 
 function RecruitSystem:initialize()
 	super.initialize(self)
@@ -206,8 +239,11 @@ function RecruitSystem:doReset(resetId, value)
 	end
 end
 
-function RecruitSystem:getCanAutoBuy()
-	local value = cc.UserDefault:getInstance():getIntegerForKey(RecruitAutoBuyCard)
+function RecruitSystem:getCanAutoBuy(costId)
+	local developSystem = DmGame:getInstance()._injector:getInstance(DevelopSystem)
+	local idStr = string.split(developSystem:getPlayer():getRid(), "_")
+	local userStr = RecruitCurrencyStr.KUserDefault[costId] .. idStr[1]
+	local value = cc.UserDefault:getInstance():getIntegerForKey(userStr)
 
 	if not value or value == 0 then
 		return false

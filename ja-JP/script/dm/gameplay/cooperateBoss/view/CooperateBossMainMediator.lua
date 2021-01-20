@@ -23,6 +23,7 @@ local kBtnHandlers = {
 }
 local SHOW_HERO_ANIM = true
 local PLAYING_BOSS_STPRY = false
+local EVT_COOPERATE_BOSS_SELF_REFRESH = "EVT_COOPERATE_BOSS_SELF_REFRESH"
 
 function CooperateBossMainMediator:initialize()
 	super.initialize(self)
@@ -55,6 +56,7 @@ function CooperateBossMainMediator:mapEventListeners()
 	self:mapEventListener(self:getEventDispatcher(), EVT_COOPERATE_BOSS_INVITE, self, self.refreshView)
 	self:mapEventListener(self:getEventDispatcher(), EVT_COOPERATE_REFRESH_INVITELIST, self, self.refreshView)
 	self:mapEventListener(self:getEventDispatcher(), EVT_COOPERATE_BOSS_BACK_MAIN, self, self.refreshView)
+	self:mapEventListener(self:getEventDispatcher(), EVT_COOPERATE_BOSS_SELF_REFRESH, self, self.setupView)
 end
 
 function CooperateBossMainMediator:enterWithData(data)
@@ -296,13 +298,15 @@ function CooperateBossMainMediator:setupBattleRecord()
 			rewardList:removeAllChildren()
 
 			if #rewards <= 0 then
-				local icon = cc.Sprite:createWithSpriteFrameName("gongdou_img_xx_wh.png")
+				if records[i].state ~= kCooperateBossEnemyState.kEscaped then
+					local icon = cc.Sprite:createWithSpriteFrameName("gongdou_img_xx_wh.png")
 
-				icon:setPosition(cc.p(-5, 0))
-				rewardPanel:addChild(icon)
-				rewardPanel:setContentSize(cc.size(icon:getContentSize().width + 20, icon:getContentSize().height))
-				icon:setAnchorPoint(0, 0)
-				rewardPanel:setPositionX(290)
+					icon:setPosition(cc.p(-5, 0))
+					rewardPanel:addChild(icon)
+					rewardPanel:setContentSize(cc.size(icon:getContentSize().width + 20, icon:getContentSize().height))
+					icon:setAnchorPoint(0, 0)
+					rewardPanel:setPositionX(290)
+				end
 			else
 				local dataList = self._cooperateBossData:getTokenRewardBossLst()
 				local isDraw = false
@@ -788,7 +792,7 @@ end
 function CooperateBossMainMediator:refreshView(data)
 	local function callback(data)
 		self:initData(data)
-		self:setupView()
+		self:dispatch(Event:new(EVT_COOPERATE_BOSS_SELF_REFRESH))
 	end
 
 	self._cooperateBossSystem:requestCooperateBossMain(callback)

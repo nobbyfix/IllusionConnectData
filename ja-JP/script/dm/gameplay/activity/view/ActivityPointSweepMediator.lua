@@ -503,24 +503,14 @@ function ActivityPointSweepMediator:getMaxSwipCount()
 		break
 	end
 
-	if itemId == CurrencyIdKind.kAcitvityStaminaPower then
-		containPower = self._bagSystem:getAcitvityStaminaPower()
-	elseif itemId == CurrencyIdKind.kAcitvityZuoHePower then
-		containPower = self._bagSystem:getAcitvitySagaSupportPower()
-	elseif itemId == CurrencyIdKind.kAcitvitySnowPower then
-		containPower = self._bagSystem:getAcitvitySnowPower()
-	elseif itemId == CurrencyIdKind.kAcitvityWxhPower then
-		containPower = self._bagSystem:getAcitvityWxhSupportPower()
-	elseif itemId == "IM_BossJindan" then
-		containPower = self._bagSystem:getItemCount("IM_BossJindan")
-	elseif itemId == "IM_ZuoHeBossStamina" then
-		containPower = self._bagSystem:getItemCount("IM_ZuoHeBossStamina")
-	elseif itemId == "IM_WuXiuHuiBossStamina" then
-		containPower = self._bagSystem:getItemCount("IM_WuXiuHuiBossStamina")
-	elseif itemId == CurrencyIdKind.kActivityHolidayPower then
-		containPower = self._bagSystem:getActivityHolidayPower()
-	elseif itemId == CurrencyIdKind.kActivityDetectivePower then
-		containPower = self._bagSystem:getAcitvityDetectivePower()
+	local config = PowerConfigMap[itemId]
+
+	if not config and DEBUG ~= 0 then
+		config = PowerConfigMap.TEST
+	end
+
+	if config then
+		containPower = self._bagSystem[config.func](self._bagSystem, itemId)
 	end
 
 	return math.modf(containPower / cost)

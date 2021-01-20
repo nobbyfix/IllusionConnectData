@@ -13,60 +13,6 @@ local kBtnHandlers = {
 		func = "onClickChallenge"
 	}
 }
-local ActivityPointCostConfig = {
-	IM_HalloweenBossStamina = {
-		tips = "ACTIVITY_Halloween_NOT_ENOUGH_1",
-		func = "getItemCount"
-	},
-	IM_SummerBossStamina = {
-		tips = "ACTIVITY_ENERGY_NOT_ENOUGH2_Summer",
-		func = "getItemCount"
-	},
-	IM_WuXiuHuiBossStamina = {
-		tips = "ACTIVITY_ENERGY_NOT_ENOUGH2_WXH",
-		func = "getItemCount"
-	},
-	IM_ZuoHeBossStamina = {
-		tips = "ACTIVITY_ENERGY_NOT_ENOUGH2_ZUOHE",
-		func = "getItemCount"
-	},
-	IM_BossJindan = {
-		tips = "ACTIVITY_ENERGY_NOT_ENOUGH2",
-		func = "getItemCount"
-	},
-	[CurrencyIdKind.kAcitvityStaminaPower] = {
-		tips = "ACTIVITY_ENERGY_NOT_ENOUGH",
-		func = "getAcitvityStaminaPower"
-	},
-	[CurrencyIdKind.kAcitvityZuoHePower] = {
-		tips = "ACTIVITY_ENERGY_NOT_ENOUGH3_ZUOHE",
-		func = "getAcitvitySagaSupportPower"
-	},
-	[CurrencyIdKind.kAcitvityWxhPower] = {
-		tips = "ACTIVITY_ENERGY_NOT_ENOUGH3_WXH",
-		func = "getAcitvityWxhSupportPower"
-	},
-	[CurrencyIdKind.kAcitvitySummerPower] = {
-		tips = "ACTIVITY_ENERGY_NOT_ENOUGH2_Summer",
-		func = "getAcitvitySummerPower"
-	},
-	[CurrencyIdKind.kAcitvityHalloweenPower] = {
-		tips = "ACTIVITY_Halloween_NOT_ENOUGH_2",
-		func = "getAcitvityHalloweenPower"
-	},
-	[CurrencyIdKind.kAcitvitySnowPower] = {
-		tips = "ACTIVITY_Snowflake_NOT_ENOUGH_1",
-		func = "getAcitvitySnowPower"
-	},
-	[CurrencyIdKind.kActivityHolidayPower] = {
-		tips = "IR_NewyearStaminaWarning",
-		func = "getActivityHolidayPower"
-	},
-	[CurrencyIdKind.kActivityDetectivePower] = {
-		tips = "ACTIVITY_Detective_ENERGY_NOT_ENOUGH",
-		func = "getAcitvityDetectivePower"
-	}
-}
 
 function ActivityPointDetailMediator:dispose()
 	if self._schedule then
@@ -146,7 +92,7 @@ function ActivityPointDetailMediator:enterWithData(data)
 	self._point:setIsDailyFirstEnter(false)
 
 	local function callFunc(sender, eventType)
-		self._activitySystem:enterTeam(self._activityId, self._model)
+		self._activitySystem:enterTeam(self._activityId, self._model, self._pointId)
 	end
 
 	mapButtonHandlerClick(nil, self._teamPanel, {
@@ -767,18 +713,8 @@ end
 function ActivityPointDetailMediator:refreshCostView()
 	self._challengeBtn:removeChildByTag(1003)
 
-	local point = self._point
 	local costText = self._challengeBtn:getChildByFullName("cost_text")
-	local cost, amount = nil
-	local costEnergy = point:getCostEnergy()
-
-	for k, v in pairs(costEnergy) do
-		cost = k
-		amount = v
-
-		break
-	end
-
+	local cost, amount = self:getCostEnergy()
 	local icon = IconFactory:createPic({
 		id = cost
 	})
@@ -786,7 +722,7 @@ function ActivityPointDetailMediator:refreshCostView()
 	icon:addTo(self._challengeBtn):setTag(1003):setPosition(cc.p(66.13, -14.18))
 	costText:setString("X" .. amount)
 
-	self._curPower = self._bagSystem:getAcitvityStaminaPower()
+	self._curPower = self._bagSystem:getPowerByCurrencyId(cost)
 
 	if self._curPower < tonumber(amount) then
 		costText:setTextColor(GameStyle:getColor(7))
@@ -795,11 +731,26 @@ function ActivityPointDetailMediator:refreshCostView()
 	end
 end
 
+function ActivityPointDetailMediator:getCostEnergy()
+	local cost, amount = nil
+	local costEnergy = self._point:getCostEnergy()
+
+	for k, v in pairs(costEnergy) do
+		cost = k
+		amount = v
+
+		break
+	end
+
+	return cost, amount
+end
+
 local checkTime = 1
 
 function ActivityPointDetailMediator:checkCostChange()
 	local function checkTimeFunc()
-		local newPower = self._bagSystem:getAcitvityStaminaPower()
+		local cost, amount = self:getCostEnergy()
+		local newPower = self._bagSystem:getPowerByCurrencyId(cost)
 
 		if newPower ~= self._curPower then
 			self:refreshCostView()
@@ -923,12 +874,17 @@ function ActivityPointDetailMediator:reachBattleCondition()
 		break
 	end
 
-	if ActivityPointCostConfig[itemId] then
-		local config = ActivityPointCostConfig[itemId]
+	local config = PowerConfigMap[itemId]
+
+	if not config and DEBUG ~= 0 then
+		config = PowerConfigMap.TEST
+	end
+
+	if config then
 		local func = config.func
 
 		if func ~= "getItemCount" then
-			containPower = self._bagSystem[func](self._bagSystem)
+			containPower = self._bagSystem[func](self._bagSystem, itemId)
 		else
 			containPower = self._bagSystem:getItemCount(itemId)
 		end
@@ -955,12 +911,17 @@ function ActivityPointDetailMediator:getMaxSwipCount()
 		break
 	end
 
-	if ActivityPointCostConfig[itemId] then
-		local config = ActivityPointCostConfig[itemId]
+	local config = PowerConfigMap[itemId]
+
+	if not config and DEBUG ~= 0 then
+		config = PowerConfigMap.TEST
+	end
+
+	if config then
 		local func = config.func
 
 		if func ~= "getItemCount" then
-			containPower = self._bagSystem[func](self._bagSystem)
+			containPower = self._bagSystem[func](self._bagSystem, itemId)
 		else
 			containPower = self._bagSystem:getItemCount(itemId)
 		end

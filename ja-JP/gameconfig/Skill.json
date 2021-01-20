@@ -19179,6 +19179,72 @@
         "TargetPreview": "",
         "Type": "BATTLEPASSIVE"
     },
+    "EquipSkill_Decoration_15002": {
+        "Actions": "EquipSkill_Accesory_15002",
+        "AllowCounterHit": [
+            {
+                "id": "BeCuredRateFactor",
+                "type": "CUSTOM",
+                "value": [
+                    0.16,
+                    0.18,
+                    0.2,
+                    0.22,
+                    0.24,
+                    0.26,
+                    0.28,
+                    0.3
+                ]
+            }
+        ],
+        "AllowDoubleHit": [
+            {
+                "id": "BeCuredRateFactor",
+                "type": "CUSTOM",
+                "value": [
+                    0.16,
+                    0.18,
+                    0.2,
+                    0.22,
+                    0.24,
+                    0.26,
+                    0.28,
+                    0.3
+                ]
+            }
+        ],
+        "Args": [
+            {
+                "id": "BeCuredRateFactor",
+                "type": "CUSTOM",
+                "value": [
+                    0.16,
+                    0.18,
+                    0.2,
+                    0.22,
+                    0.24,
+                    0.26,
+                    0.28,
+                    0.3
+                ]
+            }
+        ],
+        "AttrEffects": [],
+        "Desc": "EquipSkill_Decoration_15002_Desc",
+        "Desc_short": "EquipSkill_Decoration_15002_Desc",
+        "Icon": "",
+        "IsEXSkill": "",
+        "MasterSkillTag": "",
+        "Name": "EquipSkill_Decoration_15002_Name",
+        "ShowInBattle": "",
+        "SkillDoubleRate": "",
+        "SkillEffect": "",
+        "SkillPic": "",
+        "SkillRange": "",
+        "Summoned": "",
+        "TargetPreview": "",
+        "Type": "BATTLEPASSIVE"
+    },
     "EquipSkill_Weapon_13001": {
         "Actions": "EquipSkill_Weapon_13001",
         "AllowCounterHit": [
@@ -24378,17 +24444,15 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    1.05
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
                 ]
             }
@@ -24403,17 +24467,15 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    1.05
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
                 ]
             }
@@ -24428,17 +24490,15 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    1.05
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
                 ]
             }
@@ -24446,7 +24506,7 @@
         "AttrEffects": [],
         "Desc": "Sk_Desc_Hero_Normal_BDFen",
         "Desc_short": "Sk_DescShort_Hero_Normal_BDFen",
-        "Icon": "Icon_Hero_Normal_YFZZhu",
+        "Icon": "ico_abo_sk1",
         "IsEXSkill": "",
         "MasterSkillTag": "",
         "Name": "Sk_Name_Hero_Normal_BDFen",
@@ -24768,17 +24828,15 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    1.05
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
                 ]
             }
@@ -24793,17 +24851,15 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    1.05
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
                 ]
             }
@@ -24818,17 +24874,15 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    1.05
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
                 ]
             }
@@ -24836,7 +24890,7 @@
         "AttrEffects": [],
         "Desc": "Sk_Desc_Hero_Normal_BLTu",
         "Desc_short": "Sk_DescShort_Hero_Normal_BLTu",
-        "Icon": "Icon_Hero_Normal_YFZZhu",
+        "Icon": "ico_bler_sk1",
         "IsEXSkill": "",
         "MasterSkillTag": "",
         "Name": "Sk_Name_Hero_Normal_BLTu",
@@ -29424,17 +29478,15 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    1.05
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
                 ]
             }
@@ -29449,17 +29501,15 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    1.05
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
                 ]
             }
@@ -29474,17 +29524,15 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    1.05
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
                 ]
             }
@@ -29492,7 +29540,7 @@
         "AttrEffects": [],
         "Desc": "Sk_Desc_Hero_Normal_PGNNi",
         "Desc_short": "Sk_DescShort_Hero_Normal_PGNNi",
-        "Icon": "Icon_Hero_Normal_YFZZhu",
+        "Icon": "ico_yqing_sk1",
         "IsEXSkill": "",
         "MasterSkillTag": "",
         "Name": "Sk_Name_Hero_Normal_PGNNi",
@@ -34231,83 +34279,35 @@
         "Actions": "Skill_BDFen_Passive",
         "AllowCounterHit": [
             {
-                "id": "dmgFactor1",
+                "id": "ExDamageFactor",
                 "type": "FIXED",
                 "value": [
-                    1
-                ]
-            },
-            {
-                "id": "dmgFactor2",
-                "type": "LINEAR",
-                "value": [
-                    1.05,
-                    0.01
-                ]
-            },
-            {
-                "id": "dmgFactor3",
-                "type": "LINEAR",
-                "value": [
-                    0,
-                    0
+                    0.5
                 ]
             }
         ],
         "AllowDoubleHit": [
             {
-                "id": "dmgFactor1",
+                "id": "ExDamageFactor",
                 "type": "FIXED",
                 "value": [
-                    1
-                ]
-            },
-            {
-                "id": "dmgFactor2",
-                "type": "LINEAR",
-                "value": [
-                    1.05,
-                    0.01
-                ]
-            },
-            {
-                "id": "dmgFactor3",
-                "type": "LINEAR",
-                "value": [
-                    0,
-                    0
+                    0.5
                 ]
             }
         ],
         "Args": [
             {
-                "id": "dmgFactor1",
+                "id": "ExDamageFactor",
                 "type": "FIXED",
                 "value": [
-                    1
-                ]
-            },
-            {
-                "id": "dmgFactor2",
-                "type": "LINEAR",
-                "value": [
-                    1.05,
-                    0.01
-                ]
-            },
-            {
-                "id": "dmgFactor3",
-                "type": "LINEAR",
-                "value": [
-                    0,
-                    0
+                    0.5
                 ]
             }
         ],
         "AttrEffects": [],
         "Desc": "Sk_Desc_Hero_PBattle_BDFen",
         "Desc_short": "Sk_DescShort_Hero_PBattle_BDFen",
-        "Icon": "Icon_Hero_PBattle_YFZZhu",
+        "Icon": "ico_abo_sk4",
         "IsEXSkill": "",
         "MasterSkillTag": "",
         "Name": "Sk_Name_Hero_PBattle_BDFen",
@@ -34324,6 +34324,51 @@
         "Actions": "Skill_BDFen_Passive_EX",
         "AllowCounterHit": [
             {
+                "id": "ExDamageFactor",
+                "type": "FIXED",
+                "value": [
+                    0.75
+                ]
+            }
+        ],
+        "AllowDoubleHit": [
+            {
+                "id": "ExDamageFactor",
+                "type": "FIXED",
+                "value": [
+                    0.75
+                ]
+            }
+        ],
+        "Args": [
+            {
+                "id": "ExDamageFactor",
+                "type": "FIXED",
+                "value": [
+                    0.75
+                ]
+            }
+        ],
+        "AttrEffects": [],
+        "Desc": "Sk_Desc_Hero_PBattle_BDFen_EX",
+        "Desc_short": "Sk_DescShort_Hero_PBattle_BDFen_EX",
+        "Icon": "ico_abo_sk4",
+        "IsEXSkill": 1,
+        "MasterSkillTag": "",
+        "Name": "Sk_Name_Hero_PBattle_BDFen",
+        "ShowInBattle": "",
+        "SkillDoubleRate": 0.0,
+        "SkillEffect": "",
+        "SkillPic": "",
+        "SkillRange": "",
+        "Summoned": "",
+        "TargetPreview": "",
+        "Type": "BATTLEPASSIVE"
+    },
+    "Hero_PBattle_BDFen_Key": {
+        "Actions": "Skill_BDFen_Passive_Key",
+        "AllowCounterHit": [
+            {
                 "id": "dmgFactor1",
                 "type": "FIXED",
                 "value": [
@@ -34332,17 +34377,15 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    0
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
                 ]
             }
@@ -34357,17 +34400,15 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    0
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
                 ]
             }
@@ -34382,28 +34423,26 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    0
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
                 ]
             }
         ],
         "AttrEffects": [],
-        "Desc": "Sk_Desc_Hero_PBattle_BDFen",
-        "Desc_short": "Sk_DescShort_Hero_PBattle_BDFen",
-        "Icon": "Icon_Hero_PBattle_YFZZhu",
+        "Desc": "Sk_Desc_Hero_PBattle_BDFen_key",
+        "Desc_short": "Sk_DescShort_Hero_PBattle_BDFen_Key",
+        "Icon": "ico_abo_sk4",
         "IsEXSkill": "",
         "MasterSkillTag": "",
-        "Name": "Sk_Name_Hero_PBattle_BDFen",
+        "Name": "Sk_Name_Hero_PBattle_BDFen_Key",
         "ShowInBattle": "",
         "SkillDoubleRate": 0.0,
         "SkillEffect": "",
@@ -34714,70 +34753,28 @@
         "Actions": "Skill_BHTZi_Passive",
         "AllowCounterHit": [
             {
-                "id": "dmgFactor1",
+                "id": "RageFactor",
                 "type": "FIXED",
                 "value": [
-                    1
-                ]
-            },
-            {
-                "id": "dmgFactor2",
-                "type": "FIXED",
-                "value": [
-                    0
-                ]
-            },
-            {
-                "id": "dmgFactor3",
-                "type": "FIXED",
-                "value": [
-                    0
+                    500
                 ]
             }
         ],
         "AllowDoubleHit": [
             {
-                "id": "dmgFactor1",
+                "id": "RageFactor",
                 "type": "FIXED",
                 "value": [
-                    1
-                ]
-            },
-            {
-                "id": "dmgFactor2",
-                "type": "FIXED",
-                "value": [
-                    0
-                ]
-            },
-            {
-                "id": "dmgFactor3",
-                "type": "FIXED",
-                "value": [
-                    0
+                    500
                 ]
             }
         ],
         "Args": [
             {
-                "id": "dmgFactor1",
+                "id": "RageFactor",
                 "type": "FIXED",
                 "value": [
-                    1
-                ]
-            },
-            {
-                "id": "dmgFactor2",
-                "type": "FIXED",
-                "value": [
-                    0
-                ]
-            },
-            {
-                "id": "dmgFactor3",
-                "type": "FIXED",
-                "value": [
-                    0
+                    500
                 ]
             }
         ],
@@ -34801,70 +34798,28 @@
         "Actions": "Skill_BHTZi_Passive_EX",
         "AllowCounterHit": [
             {
-                "id": "dmgFactor1",
+                "id": "RageFactor",
                 "type": "FIXED",
                 "value": [
-                    1
-                ]
-            },
-            {
-                "id": "dmgFactor2",
-                "type": "FIXED",
-                "value": [
-                    0
-                ]
-            },
-            {
-                "id": "dmgFactor3",
-                "type": "FIXED",
-                "value": [
-                    0
+                    1000
                 ]
             }
         ],
         "AllowDoubleHit": [
             {
-                "id": "dmgFactor1",
+                "id": "RageFactor",
                 "type": "FIXED",
                 "value": [
-                    1
-                ]
-            },
-            {
-                "id": "dmgFactor2",
-                "type": "FIXED",
-                "value": [
-                    0
-                ]
-            },
-            {
-                "id": "dmgFactor3",
-                "type": "FIXED",
-                "value": [
-                    0
+                    1000
                 ]
             }
         ],
         "Args": [
             {
-                "id": "dmgFactor1",
+                "id": "RageFactor",
                 "type": "FIXED",
                 "value": [
-                    1
-                ]
-            },
-            {
-                "id": "dmgFactor2",
-                "type": "FIXED",
-                "value": [
-                    0
-                ]
-            },
-            {
-                "id": "dmgFactor3",
-                "type": "FIXED",
-                "value": [
-                    0
+                    1000
                 ]
             }
         ],
@@ -34888,83 +34843,35 @@
         "Actions": "Skill_BLTu_Passive",
         "AllowCounterHit": [
             {
-                "id": "dmgFactor1",
+                "id": "AOEDeRateFactor",
                 "type": "FIXED",
                 "value": [
-                    1
-                ]
-            },
-            {
-                "id": "dmgFactor2",
-                "type": "LINEAR",
-                "value": [
-                    1.05,
-                    0.01
-                ]
-            },
-            {
-                "id": "dmgFactor3",
-                "type": "LINEAR",
-                "value": [
-                    0,
-                    0
+                    0.15
                 ]
             }
         ],
         "AllowDoubleHit": [
             {
-                "id": "dmgFactor1",
+                "id": "AOEDeRateFactor",
                 "type": "FIXED",
                 "value": [
-                    1
-                ]
-            },
-            {
-                "id": "dmgFactor2",
-                "type": "LINEAR",
-                "value": [
-                    1.05,
-                    0.01
-                ]
-            },
-            {
-                "id": "dmgFactor3",
-                "type": "LINEAR",
-                "value": [
-                    0,
-                    0
+                    0.15
                 ]
             }
         ],
         "Args": [
             {
-                "id": "dmgFactor1",
+                "id": "AOEDeRateFactor",
                 "type": "FIXED",
                 "value": [
-                    1
-                ]
-            },
-            {
-                "id": "dmgFactor2",
-                "type": "LINEAR",
-                "value": [
-                    1.05,
-                    0.01
-                ]
-            },
-            {
-                "id": "dmgFactor3",
-                "type": "LINEAR",
-                "value": [
-                    0,
-                    0
+                    0.15
                 ]
             }
         ],
         "AttrEffects": [],
         "Desc": "Sk_Desc_Hero_PBattle_BLTu",
         "Desc_short": "Sk_DescShort_Hero_PBattle_BLTu",
-        "Icon": "Icon_Hero_PBattle_YFZZhu",
+        "Icon": "ico_bler_sk4",
         "IsEXSkill": "",
         "MasterSkillTag": "",
         "Name": "Sk_Name_Hero_PBattle_BLTu",
@@ -34981,86 +34888,59 @@
         "Actions": "Skill_BLTu_Passive_EX",
         "AllowCounterHit": [
             {
-                "id": "dmgFactor1",
+                "id": "AOEDeRateFactor",
                 "type": "FIXED",
                 "value": [
-                    1
-                ]
-            },
-            {
-                "id": "dmgFactor2",
-                "type": "LINEAR",
-                "value": [
-                    1.05,
-                    0.01
-                ]
-            },
-            {
-                "id": "dmgFactor3",
-                "type": "LINEAR",
-                "value": [
-                    0,
-                    0
+                    0.2
                 ]
             }
         ],
         "AllowDoubleHit": [
             {
-                "id": "dmgFactor1",
+                "id": "AOEDeRateFactor",
                 "type": "FIXED",
                 "value": [
-                    1
-                ]
-            },
-            {
-                "id": "dmgFactor2",
-                "type": "LINEAR",
-                "value": [
-                    1.05,
-                    0.01
-                ]
-            },
-            {
-                "id": "dmgFactor3",
-                "type": "LINEAR",
-                "value": [
-                    0,
-                    0
+                    0.2
                 ]
             }
         ],
         "Args": [
             {
-                "id": "dmgFactor1",
+                "id": "AOEDeRateFactor",
                 "type": "FIXED",
                 "value": [
-                    1
-                ]
-            },
-            {
-                "id": "dmgFactor2",
-                "type": "LINEAR",
-                "value": [
-                    1.05,
-                    0.01
-                ]
-            },
-            {
-                "id": "dmgFactor3",
-                "type": "LINEAR",
-                "value": [
-                    0,
-                    0
+                    0.2
                 ]
             }
         ],
         "AttrEffects": [],
-        "Desc": "Sk_Desc_Hero_PBattle_BLTu",
-        "Desc_short": "Sk_DescShort_Hero_PBattle_BLTu",
-        "Icon": "Icon_Hero_PBattle_YFZZhu",
-        "IsEXSkill": "",
+        "Desc": "Sk_Desc_Hero_PBattle_BLTu_EX",
+        "Desc_short": "Sk_DescShort_Hero_PBattle_BLTu_EX",
+        "Icon": "ico_bler_sk4",
+        "IsEXSkill": 1,
         "MasterSkillTag": "",
         "Name": "Sk_Name_Hero_PBattle_BLTu",
+        "ShowInBattle": "",
+        "SkillDoubleRate": 0.0,
+        "SkillEffect": "",
+        "SkillPic": "",
+        "SkillRange": "",
+        "Summoned": "",
+        "TargetPreview": "",
+        "Type": "BATTLEPASSIVE"
+    },
+    "Hero_PBattle_BLTu_Key": {
+        "Actions": "Skill_BLTu_Passive_Key",
+        "AllowCounterHit": [],
+        "AllowDoubleHit": [],
+        "Args": [],
+        "AttrEffects": [],
+        "Desc": "Sk_Desc_Hero_PBattle_BLTu_key",
+        "Desc_short": "Sk_DescShort_Hero_PBattle_BLTu_Key",
+        "Icon": "ico_bler_sk4",
+        "IsEXSkill": "",
+        "MasterSkillTag": "",
+        "Name": "Sk_Name_Hero_PBattle_BLTu_Key",
         "ShowInBattle": "",
         "SkillDoubleRate": 0.0,
         "SkillEffect": "",
@@ -38470,9 +38350,9 @@
         "IsEXSkill": "",
         "MasterSkillTag": "",
         "Name": "Sk_Name_Hero_PBattle_KTSJKe",
-        "ShowInBattle": "",
+        "ShowInBattle": [],
         "SkillDoubleRate": 0.0,
-        "SkillEffect": "",
+        "SkillEffect": [],
         "SkillPic": "",
         "SkillRange": "",
         "Summoned": "",
@@ -39488,70 +39368,28 @@
         "Actions": "Skill_LYXi_Passive",
         "AllowCounterHit": [
             {
-                "id": "dmgFactor1",
+                "id": "CureFactor",
                 "type": "FIXED",
                 "value": [
-                    1
-                ]
-            },
-            {
-                "id": "dmgFactor2",
-                "type": "FIXED",
-                "value": [
-                    0
-                ]
-            },
-            {
-                "id": "dmgFactor3",
-                "type": "FIXED",
-                "value": [
-                    0
+                    0.15
                 ]
             }
         ],
         "AllowDoubleHit": [
             {
-                "id": "dmgFactor1",
+                "id": "CureFactor",
                 "type": "FIXED",
                 "value": [
-                    1
-                ]
-            },
-            {
-                "id": "dmgFactor2",
-                "type": "FIXED",
-                "value": [
-                    0
-                ]
-            },
-            {
-                "id": "dmgFactor3",
-                "type": "FIXED",
-                "value": [
-                    0
+                    0.15
                 ]
             }
         ],
         "Args": [
             {
-                "id": "dmgFactor1",
+                "id": "CureFactor",
                 "type": "FIXED",
                 "value": [
-                    1
-                ]
-            },
-            {
-                "id": "dmgFactor2",
-                "type": "FIXED",
-                "value": [
-                    0
-                ]
-            },
-            {
-                "id": "dmgFactor3",
-                "type": "FIXED",
-                "value": [
-                    0
+                    0.15
                 ]
             }
         ],
@@ -39575,70 +39413,28 @@
         "Actions": "Skill_LYXi_Passive_EX",
         "AllowCounterHit": [
             {
-                "id": "dmgFactor1",
+                "id": "CureFactor",
                 "type": "FIXED",
                 "value": [
-                    1
-                ]
-            },
-            {
-                "id": "dmgFactor2",
-                "type": "FIXED",
-                "value": [
-                    0
-                ]
-            },
-            {
-                "id": "dmgFactor3",
-                "type": "FIXED",
-                "value": [
-                    0
+                    0.2
                 ]
             }
         ],
         "AllowDoubleHit": [
             {
-                "id": "dmgFactor1",
+                "id": "CureFactor",
                 "type": "FIXED",
                 "value": [
-                    1
-                ]
-            },
-            {
-                "id": "dmgFactor2",
-                "type": "FIXED",
-                "value": [
-                    0
-                ]
-            },
-            {
-                "id": "dmgFactor3",
-                "type": "FIXED",
-                "value": [
-                    0
+                    0.2
                 ]
             }
         ],
         "Args": [
             {
-                "id": "dmgFactor1",
+                "id": "CureFactor",
                 "type": "FIXED",
                 "value": [
-                    1
-                ]
-            },
-            {
-                "id": "dmgFactor2",
-                "type": "FIXED",
-                "value": [
-                    0
-                ]
-            },
-            {
-                "id": "dmgFactor3",
-                "type": "FIXED",
-                "value": [
-                    0
+                    0.2
                 ]
             }
         ],
@@ -41475,85 +41271,13 @@
     },
     "Hero_PBattle_PGNNi": {
         "Actions": "Skill_PGNNi_Passive",
-        "AllowCounterHit": [
-            {
-                "id": "dmgFactor1",
-                "type": "FIXED",
-                "value": [
-                    1
-                ]
-            },
-            {
-                "id": "dmgFactor2",
-                "type": "LINEAR",
-                "value": [
-                    1.05,
-                    0.01
-                ]
-            },
-            {
-                "id": "dmgFactor3",
-                "type": "LINEAR",
-                "value": [
-                    0,
-                    0
-                ]
-            }
-        ],
-        "AllowDoubleHit": [
-            {
-                "id": "dmgFactor1",
-                "type": "FIXED",
-                "value": [
-                    1
-                ]
-            },
-            {
-                "id": "dmgFactor2",
-                "type": "LINEAR",
-                "value": [
-                    1.05,
-                    0.01
-                ]
-            },
-            {
-                "id": "dmgFactor3",
-                "type": "LINEAR",
-                "value": [
-                    0,
-                    0
-                ]
-            }
-        ],
-        "Args": [
-            {
-                "id": "dmgFactor1",
-                "type": "FIXED",
-                "value": [
-                    1
-                ]
-            },
-            {
-                "id": "dmgFactor2",
-                "type": "LINEAR",
-                "value": [
-                    1.05,
-                    0.01
-                ]
-            },
-            {
-                "id": "dmgFactor3",
-                "type": "LINEAR",
-                "value": [
-                    0,
-                    0
-                ]
-            }
-        ],
+        "AllowCounterHit": [],
+        "AllowDoubleHit": [],
+        "Args": [],
         "AttrEffects": [],
         "Desc": "Sk_Desc_Hero_PBattle_PGNNi",
         "Desc_short": "Sk_DescShort_Hero_PBattle_PGNNi",
-        "Icon": "Icon_Hero_PBattle_YFZZhu",
+        "Icon": "ico_yqing_sk4",
         "IsEXSkill": "",
         "MasterSkillTag": "",
         "Name": "Sk_Name_Hero_PBattle_PGNNi",
@@ -41570,86 +41294,59 @@
         "Actions": "Skill_PGNNi_Passive_EX",
         "AllowCounterHit": [
             {
-                "id": "dmgFactor1",
+                "id": "ShieldFactor",
                 "type": "FIXED",
                 "value": [
-                    1
-                ]
-            },
-            {
-                "id": "dmgFactor2",
-                "type": "LINEAR",
-                "value": [
-                    1.05,
-                    0.01
-                ]
-            },
-            {
-                "id": "dmgFactor3",
-                "type": "LINEAR",
-                "value": [
-                    0,
-                    0
+                    0.2
                 ]
             }
         ],
         "AllowDoubleHit": [
             {
-                "id": "dmgFactor1",
+                "id": "ShieldFactor",
                 "type": "FIXED",
                 "value": [
-                    1
-                ]
-            },
-            {
-                "id": "dmgFactor2",
-                "type": "LINEAR",
-                "value": [
-                    1.05,
-                    0.01
-                ]
-            },
-            {
-                "id": "dmgFactor3",
-                "type": "LINEAR",
-                "value": [
-                    0,
-                    0
+                    0.2
                 ]
             }
         ],
         "Args": [
             {
-                "id": "dmgFactor1",
+                "id": "ShieldFactor",
                 "type": "FIXED",
                 "value": [
-                    1
-                ]
-            },
-            {
-                "id": "dmgFactor2",
-                "type": "LINEAR",
-                "value": [
-                    1.05,
-                    0.01
-                ]
-            },
-            {
-                "id": "dmgFactor3",
-                "type": "LINEAR",
-                "value": [
-                    0,
-                    0
+                    0.2
                 ]
             }
         ],
         "AttrEffects": [],
-        "Desc": "Sk_Desc_Hero_PBattle_PGNNi",
-        "Desc_short": "Sk_DescShort_Hero_PBattle_PGNNi",
-        "Icon": "Icon_Hero_PBattle_YFZZhu",
-        "IsEXSkill": "",
+        "Desc": "Sk_Desc_Hero_PBattle_PGNNi_EX",
+        "Desc_short": "Sk_DescShort_Hero_PBattle_PGNNi_EX",
+        "Icon": "ico_yqing_sk4",
+        "IsEXSkill": 1,
         "MasterSkillTag": "",
         "Name": "Sk_Name_Hero_PBattle_PGNNi",
+        "ShowInBattle": "",
+        "SkillDoubleRate": 0.0,
+        "SkillEffect": "",
+        "SkillPic": "",
+        "SkillRange": "",
+        "Summoned": "",
+        "TargetPreview": "",
+        "Type": "BATTLEPASSIVE"
+    },
+    "Hero_PBattle_PGNNi_Key": {
+        "Actions": "Skill_PGNNi_Passive_Key",
+        "AllowCounterHit": [],
+        "AllowDoubleHit": [],
+        "Args": [],
+        "AttrEffects": [],
+        "Desc": "Sk_Desc_Hero_PBattle_PGNNi_key",
+        "Desc_short": "Sk_DescShort_Hero_PBattle_PGNNi_Key",
+        "Icon": "ico_yqing_sk4",
+        "IsEXSkill": "",
+        "MasterSkillTag": "",
+        "Name": "Sk_Name_Hero_PBattle_PGNNi_Key",
         "ShowInBattle": "",
         "SkillDoubleRate": 0.0,
         "SkillEffect": "",
@@ -43315,6 +43012,135 @@
         "Summoned": "",
         "TargetPreview": "",
         "Type": "DEATH"
+    },
+    "Hero_PBattle_TPGZhu_Awaken": {
+        "Actions": "Skill_TPGZhu_Passive_Death_EX",
+        "AllowCounterHit": [
+            {
+                "id": "AtkRateFactor",
+                "type": "FIXED",
+                "value": [
+                    1.1
+                ]
+            },
+            {
+                "id": "DefRateFactor",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "MaxHpRateFactor",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "RageFactor",
+                "type": "FIXED",
+                "value": [
+                    1000
+                ]
+            },
+            {
+                "id": "EXAtkRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0.1
+                ]
+            }
+        ],
+        "AllowDoubleHit": [
+            {
+                "id": "AtkRateFactor",
+                "type": "FIXED",
+                "value": [
+                    1.1
+                ]
+            },
+            {
+                "id": "DefRateFactor",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "MaxHpRateFactor",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "RageFactor",
+                "type": "FIXED",
+                "value": [
+                    1000
+                ]
+            },
+            {
+                "id": "EXAtkRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0.1
+                ]
+            }
+        ],
+        "Args": [
+            {
+                "id": "AtkRateFactor",
+                "type": "FIXED",
+                "value": [
+                    1.1
+                ]
+            },
+            {
+                "id": "DefRateFactor",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "MaxHpRateFactor",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "RageFactor",
+                "type": "FIXED",
+                "value": [
+                    1000
+                ]
+            },
+            {
+                "id": "EXAtkRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0.1
+                ]
+            }
+        ],
+        "AttrEffects": [],
+        "Desc": "Sk_Desc_Hero_PBattle_TPGZhu_Awaken",
+        "Desc_short": "Sk_DescShort_Hero_PBattle_TPGZhu_Awaken",
+        "Icon": "Icon_Hero_PBattle_TPGZhu",
+        "IsEXSkill": 1,
+        "MasterSkillTag": "",
+        "Name": "Sk_Name_Hero_PBattle_TPGZhu_Awaken",
+        "ShowInBattle": [],
+        "SkillDoubleRate": 0.0,
+        "SkillEffect": [],
+        "SkillPic": "",
+        "SkillRange": "",
+        "Summoned": "",
+        "TargetPreview": "",
+        "Type": "BATTLEPASSIVE"
     },
     "Hero_PBattle_TPGZhu_EX": {
         "Actions": "Skill_TPGZhu_Passive_Death_EX",
@@ -46494,6 +46320,135 @@
         "TargetPreview": "",
         "Type": "BATTLEPASSIVE"
     },
+    "Hero_PBattle_ZZBBWei_Awaken": {
+        "Actions": "Skill_ZZBBWei_Passive_EX",
+        "AllowCounterHit": [
+            {
+                "id": "ProbRateFactor1",
+                "type": "FIXED",
+                "value": [
+                    0.45
+                ]
+            },
+            {
+                "id": "ProbRateFactor2",
+                "type": "FIXED",
+                "value": [
+                    0.15
+                ]
+            },
+            {
+                "id": "DmgRateFactor1",
+                "type": "FIXED",
+                "value": [
+                    1.5
+                ]
+            },
+            {
+                "id": "DmgRateFactor2",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "CritRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0.15
+                ]
+            }
+        ],
+        "AllowDoubleHit": [
+            {
+                "id": "ProbRateFactor1",
+                "type": "FIXED",
+                "value": [
+                    0.45
+                ]
+            },
+            {
+                "id": "ProbRateFactor2",
+                "type": "FIXED",
+                "value": [
+                    0.15
+                ]
+            },
+            {
+                "id": "DmgRateFactor1",
+                "type": "FIXED",
+                "value": [
+                    1.5
+                ]
+            },
+            {
+                "id": "DmgRateFactor2",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "CritRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0.15
+                ]
+            }
+        ],
+        "Args": [
+            {
+                "id": "ProbRateFactor1",
+                "type": "FIXED",
+                "value": [
+                    0.45
+                ]
+            },
+            {
+                "id": "ProbRateFactor2",
+                "type": "FIXED",
+                "value": [
+                    0.15
+                ]
+            },
+            {
+                "id": "DmgRateFactor1",
+                "type": "FIXED",
+                "value": [
+                    1.5
+                ]
+            },
+            {
+                "id": "DmgRateFactor2",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "CritRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0.15
+                ]
+            }
+        ],
+        "AttrEffects": [],
+        "Desc": "Sk_Desc_Hero_PBattle_ZZBBWei_Awaken",
+        "Desc_short": "Sk_DescShort_Hero_PBattle_ZZBBWei_Awaken",
+        "Icon": "Icon_Hero_PBattle_ZZBBWei",
+        "IsEXSkill": 1,
+        "MasterSkillTag": "",
+        "Name": "Sk_Name_Hero_PBattle_ZZBBWei_Awaken",
+        "ShowInBattle": [],
+        "SkillDoubleRate": 0.0,
+        "SkillEffect": [],
+        "SkillPic": "",
+        "SkillRange": "",
+        "Summoned": "",
+        "TargetPreview": "",
+        "Type": "BATTLEPASSIVE"
+    },
     "Hero_PBattle_ZZBBWei_EX": {
         "Actions": "Skill_ZZBBWei_Passive_EX",
         "AllowCounterHit": [
@@ -47949,17 +47904,15 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    1.6
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
                 ]
             }
@@ -47974,17 +47927,15 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    1.6
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
                 ]
             }
@@ -47999,17 +47950,15 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    1.6
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
                 ]
             }
@@ -48017,7 +47966,7 @@
         "AttrEffects": [],
         "Desc": "Sk_Desc_Hero_Proud_BDFen",
         "Desc_short": "Sk_DescShort_Hero_Proud_BDFen",
-        "Icon": "Icon_Hero_Proud_YFZZhu",
+        "Icon": "ico_abo_sk2",
         "IsEXSkill": "",
         "MasterSkillTag": "",
         "Name": "Sk_Name_Hero_Proud_BDFen",
@@ -48042,17 +47991,15 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    2
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
                 ]
             }
@@ -48067,17 +48014,15 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    2
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
                 ]
             }
@@ -48092,31 +48037,29 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    2
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
                 ]
             }
         ],
         "AttrEffects": [],
-        "Desc": "Sk_Desc_Hero_Proud_BDFen",
-        "Desc_short": "Sk_DescShort_Hero_Proud_BDFen",
-        "Icon": "Icon_Hero_Proud_YFZZhu",
+        "Desc": "Sk_Desc_Hero_Proud_BDFen_EX",
+        "Desc_short": "Sk_DescShort_Hero_Proud_BDFen_EX",
+        "Icon": "ico_abo_sk2",
         "IsEXSkill": 1,
         "MasterSkillTag": "",
         "Name": "Sk_Name_Hero_Proud_BDFen",
-        "ShowInBattle": [],
+        "ShowInBattle": "",
         "SkillDoubleRate": 0.0,
-        "SkillEffect": [],
+        "SkillEffect": "",
         "SkillPic": "",
         "SkillRange": "",
         "Summoned": "",
@@ -48690,18 +48633,23 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    1.6
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
+                ]
+            },
+            {
+                "id": "HurtRateDown",
+                "type": "FIXED",
+                "value": [
+                    0.1
                 ]
             }
         ],
@@ -48715,18 +48663,23 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    1.6
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
+                ]
+            },
+            {
+                "id": "HurtRateDown",
+                "type": "FIXED",
+                "value": [
+                    0.1
                 ]
             }
         ],
@@ -48740,25 +48693,30 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    1.6
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
+                ]
+            },
+            {
+                "id": "HurtRateDown",
+                "type": "FIXED",
+                "value": [
+                    0.1
                 ]
             }
         ],
         "AttrEffects": [],
         "Desc": "Sk_Desc_Hero_Proud_BLTu",
         "Desc_short": "Sk_DescShort_Hero_Proud_BLTu",
-        "Icon": "Icon_Hero_Proud_YFZZhu",
+        "Icon": "ico_bler_sk2",
         "IsEXSkill": "",
         "MasterSkillTag": "",
         "Name": "Sk_Name_Hero_Proud_BLTu",
@@ -48783,18 +48741,23 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    1.6
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
+                ]
+            },
+            {
+                "id": "HurtRateDown",
+                "type": "FIXED",
+                "value": [
+                    0.2
                 ]
             }
         ],
@@ -48808,18 +48771,23 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    1.6
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
+                ]
+            },
+            {
+                "id": "HurtRateDown",
+                "type": "FIXED",
+                "value": [
+                    0.2
                 ]
             }
         ],
@@ -48833,31 +48801,36 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    1.6
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
+                ]
+            },
+            {
+                "id": "HurtRateDown",
+                "type": "FIXED",
+                "value": [
+                    0.2
                 ]
             }
         ],
         "AttrEffects": [],
-        "Desc": "Sk_Desc_Hero_Proud_BLTu",
-        "Desc_short": "Sk_DescShort_Hero_Proud_BLTu",
-        "Icon": "Icon_Hero_Proud_YFZZhu",
+        "Desc": "Sk_Desc_Hero_Proud_BLTu_EX",
+        "Desc_short": "Sk_DescShort_Hero_Proud_BLTu_EX",
+        "Icon": "ico_bler_sk2",
         "IsEXSkill": 1,
         "MasterSkillTag": "",
         "Name": "Sk_Name_Hero_Proud_BLTu",
-        "ShowInBattle": [],
+        "ShowInBattle": "",
         "SkillDoubleRate": 0.0,
-        "SkillEffect": [],
+        "SkillEffect": "",
         "SkillPic": "",
         "SkillRange": "",
         "Summoned": "",
@@ -57095,17 +57068,15 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    1.6
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
                 ]
             }
@@ -57120,17 +57091,15 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    1.6
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
                 ]
             }
@@ -57145,17 +57114,15 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    1.6
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
                 ]
             }
@@ -57163,7 +57130,7 @@
         "AttrEffects": [],
         "Desc": "Sk_Desc_Hero_Proud_PGNNi",
         "Desc_short": "Sk_DescShort_Hero_Proud_PGNNi",
-        "Icon": "Icon_Hero_Proud_YFZZhu",
+        "Icon": "ico_yqing_sk2",
         "IsEXSkill": "",
         "MasterSkillTag": "",
         "Name": "Sk_Name_Hero_Proud_PGNNi",
@@ -57188,17 +57155,15 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    2
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
                 ]
             }
@@ -57213,17 +57178,15 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    2
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
                 ]
             }
@@ -57238,31 +57201,29 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    2
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
                 ]
             }
         ],
         "AttrEffects": [],
-        "Desc": "Sk_Desc_Hero_Proud_PGNNi",
-        "Desc_short": "Sk_DescShort_Hero_Proud_PGNNi",
-        "Icon": "Icon_Hero_Proud_YFZZhu",
+        "Desc": "Sk_Desc_Hero_Proud_PGNNi_EX",
+        "Desc_short": "Sk_DescShort_Hero_Proud_PGNNi_EX",
+        "Icon": "ico_yqing_sk2",
         "IsEXSkill": 1,
         "MasterSkillTag": "",
         "Name": "Sk_Name_Hero_Proud_PGNNi",
-        "ShowInBattle": [],
+        "ShowInBattle": "",
         "SkillDoubleRate": 0.0,
-        "SkillEffect": [],
+        "SkillEffect": "",
         "SkillPic": "",
         "SkillRange": "",
         "Summoned": "",
@@ -66026,17 +65987,15 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    2.8
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
                 ]
             }
@@ -66051,17 +66010,15 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    2.8
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
                 ]
             }
@@ -66076,17 +66033,15 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    2.8
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
                 ]
             }
@@ -66094,17 +66049,17 @@
         "AttrEffects": [],
         "Desc": "Sk_Desc_Hero_Unique_BDFen",
         "Desc_short": "Sk_DescShort_Hero_Unique_BDFen",
-        "Icon": "Icon_Hero_Unique_YFZZhu",
+        "Icon": "ico_abo_sk3",
         "IsEXSkill": "",
         "MasterSkillTag": "",
         "Name": "Sk_Name_Hero_Unique_BDFen",
         "ShowInBattle": "",
         "SkillDoubleRate": 0.0,
         "SkillEffect": "",
-        "SkillPic": "",
-        "SkillRange": "",
+        "SkillPic": "txt_abo_sk3",
+        "SkillRange": "Row_Attack",
         "Summoned": "",
-        "TargetPreview": "",
+        "TargetPreview": "Target_BDFen",
         "Type": "UNIQUE"
     },
     "Hero_Unique_BDFen_EX": {
@@ -66119,17 +66074,15 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    3.5
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
                 ]
             }
@@ -66144,17 +66097,15 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    3.5
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
                 ]
             }
@@ -66169,35 +66120,33 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    3.5
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
                 ]
             }
         ],
         "AttrEffects": [],
-        "Desc": "Sk_Desc_Hero_Unique_BDFen",
-        "Desc_short": "Sk_DescShort_Hero_Unique_BDFen",
-        "Icon": "Icon_Hero_Unique_YFZZhu",
-        "IsEXSkill": "",
+        "Desc": "Sk_Desc_Hero_Unique_BDFen_EX",
+        "Desc_short": "Sk_DescShort_Hero_Unique_BDFen_EX",
+        "Icon": "ico_abo_sk3",
+        "IsEXSkill": 1,
         "MasterSkillTag": "",
         "Name": "Sk_Name_Hero_Unique_BDFen",
         "ShowInBattle": "",
         "SkillDoubleRate": 0.0,
         "SkillEffect": "",
-        "SkillPic": "",
-        "SkillRange": "",
+        "SkillPic": "txt_abo_sk3",
+        "SkillRange": "Row_Attack",
         "Summoned": "",
-        "TargetPreview": "",
+        "TargetPreview": "Target_BDFen",
         "Type": "UNIQUE"
     },
     "Hero_Unique_BDPan": {
@@ -66667,6 +66616,13 @@
                 "value": [
                     0
                 ]
+            },
+            {
+                "id": "ExDamage",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
             }
         ],
         "AllowDoubleHit": [
@@ -66690,6 +66646,13 @@
                 "value": [
                     0
                 ]
+            },
+            {
+                "id": "ExDamage",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
             }
         ],
         "Args": [
@@ -66712,6 +66675,13 @@
                 "type": "FIXED",
                 "value": [
                     0
+                ]
+            },
+            {
+                "id": "ExDamage",
+                "type": "FIXED",
+                "value": [
+                    1
                 ]
             }
         ],
@@ -66745,7 +66715,7 @@
                 "id": "dmgFactor2",
                 "type": "FIXED",
                 "value": [
-                    3.1
+                    3
                 ]
             },
             {
@@ -66753,6 +66723,13 @@
                 "type": "FIXED",
                 "value": [
                     0
+                ]
+            },
+            {
+                "id": "ExDamage",
+                "type": "FIXED",
+                "value": [
+                    1.2
                 ]
             }
         ],
@@ -66768,7 +66745,7 @@
                 "id": "dmgFactor2",
                 "type": "FIXED",
                 "value": [
-                    3.1
+                    3
                 ]
             },
             {
@@ -66776,6 +66753,13 @@
                 "type": "FIXED",
                 "value": [
                     0
+                ]
+            },
+            {
+                "id": "ExDamage",
+                "type": "FIXED",
+                "value": [
+                    1.2
                 ]
             }
         ],
@@ -66791,7 +66775,7 @@
                 "id": "dmgFactor2",
                 "type": "FIXED",
                 "value": [
-                    3.1
+                    3
                 ]
             },
             {
@@ -66799,6 +66783,13 @@
                 "type": "FIXED",
                 "value": [
                     0
+                ]
+            },
+            {
+                "id": "ExDamage",
+                "type": "FIXED",
+                "value": [
+                    1.2
                 ]
             }
         ],
@@ -66822,186 +66813,198 @@
         "Actions": "Skill_BLTu_Unique",
         "AllowCounterHit": [
             {
-                "id": "dmgFactor1",
+                "id": "ShieldRateFactor",
                 "type": "FIXED",
                 "value": [
-                    1
+                    0.3
                 ]
             },
             {
-                "id": "dmgFactor2",
-                "type": "LINEAR",
+                "id": "AOEDeRateFactor",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
-                ]
-            },
-            {
-                "id": "dmgFactor3",
-                "type": "LINEAR",
-                "value": [
-                    0,
-                    0
+                    0.2
                 ]
             }
         ],
         "AllowDoubleHit": [
             {
-                "id": "dmgFactor1",
+                "id": "ShieldRateFactor",
                 "type": "FIXED",
                 "value": [
-                    1
+                    0.3
                 ]
             },
             {
-                "id": "dmgFactor2",
-                "type": "LINEAR",
+                "id": "AOEDeRateFactor",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
-                ]
-            },
-            {
-                "id": "dmgFactor3",
-                "type": "LINEAR",
-                "value": [
-                    0,
-                    0
+                    0.2
                 ]
             }
         ],
         "Args": [
             {
-                "id": "dmgFactor1",
+                "id": "ShieldRateFactor",
                 "type": "FIXED",
                 "value": [
-                    1
+                    0.3
                 ]
             },
             {
-                "id": "dmgFactor2",
-                "type": "LINEAR",
+                "id": "AOEDeRateFactor",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
-                ]
-            },
-            {
-                "id": "dmgFactor3",
-                "type": "LINEAR",
-                "value": [
-                    0,
-                    0
+                    0.2
                 ]
             }
         ],
         "AttrEffects": [],
         "Desc": "Sk_Desc_Hero_Unique_BLTu",
         "Desc_short": "Sk_DescShort_Hero_Unique_BLTu",
-        "Icon": "Icon_Hero_Unique_YFZZhu",
+        "Icon": "ico_bler_sk3",
         "IsEXSkill": "",
         "MasterSkillTag": "",
         "Name": "Sk_Name_Hero_Unique_BLTu",
         "ShowInBattle": "",
         "SkillDoubleRate": 0.0,
         "SkillEffect": "",
-        "SkillPic": "",
+        "SkillPic": "txt_bler_sk3",
         "SkillRange": "",
         "Summoned": "",
-        "TargetPreview": "",
+        "TargetPreview": "Target_BLTu",
+        "Type": "UNIQUE"
+    },
+    "Hero_Unique_BLTu_Def": {
+        "Actions": "Skill_BLTu_Unique",
+        "AllowCounterHit": [
+            {
+                "id": "ShieldRateFactor",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "AOEDeRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0.5
+                ]
+            }
+        ],
+        "AllowDoubleHit": [
+            {
+                "id": "ShieldRateFactor",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "AOEDeRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0.5
+                ]
+            }
+        ],
+        "Args": [
+            {
+                "id": "ShieldRateFactor",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "AOEDeRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0.5
+                ]
+            }
+        ],
+        "AttrEffects": [],
+        "Desc": "Sk_Desc_Hero_Unique_BLTu",
+        "Desc_short": "Sk_DescShort_Hero_Unique_BLTu",
+        "Icon": "ico_bler_sk3",
+        "IsEXSkill": "",
+        "MasterSkillTag": "",
+        "Name": "Sk_Name_Hero_Unique_BLTu",
+        "ShowInBattle": "",
+        "SkillDoubleRate": 0.0,
+        "SkillEffect": "",
+        "SkillPic": "txt_bler_sk3",
+        "SkillRange": "",
+        "Summoned": "",
+        "TargetPreview": "Target_BLTu",
         "Type": "UNIQUE"
     },
     "Hero_Unique_BLTu_EX": {
         "Actions": "Skill_BLTu_Unique_EX",
         "AllowCounterHit": [
             {
-                "id": "dmgFactor1",
+                "id": "ShieldRateFactor",
                 "type": "FIXED",
                 "value": [
-                    1
+                    0.3
                 ]
             },
             {
-                "id": "dmgFactor2",
-                "type": "LINEAR",
+                "id": "AOEDeRateFactor",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
-                ]
-            },
-            {
-                "id": "dmgFactor3",
-                "type": "LINEAR",
-                "value": [
-                    0,
-                    0
+                    0.3
                 ]
             }
         ],
         "AllowDoubleHit": [
             {
-                "id": "dmgFactor1",
+                "id": "ShieldRateFactor",
                 "type": "FIXED",
                 "value": [
-                    1
+                    0.3
                 ]
             },
             {
-                "id": "dmgFactor2",
-                "type": "LINEAR",
+                "id": "AOEDeRateFactor",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
-                ]
-            },
-            {
-                "id": "dmgFactor3",
-                "type": "LINEAR",
-                "value": [
-                    0,
-                    0
+                    0.3
                 ]
             }
         ],
         "Args": [
             {
-                "id": "dmgFactor1",
+                "id": "ShieldRateFactor",
                 "type": "FIXED",
                 "value": [
-                    1
+                    0.3
                 ]
             },
             {
-                "id": "dmgFactor2",
-                "type": "LINEAR",
+                "id": "AOEDeRateFactor",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
-                ]
-            },
-            {
-                "id": "dmgFactor3",
-                "type": "LINEAR",
-                "value": [
-                    0,
-                    0
+                    0.3
                 ]
             }
         ],
         "AttrEffects": [],
-        "Desc": "Sk_Desc_Hero_Unique_BLTu",
-        "Desc_short": "Sk_DescShort_Hero_Unique_BLTu",
-        "Icon": "Icon_Hero_Unique_YFZZhu",
-        "IsEXSkill": "",
+        "Desc": "Sk_Desc_Hero_Unique_BLTu_EX",
+        "Desc_short": "Sk_DescShort_Hero_Unique_BLTu_EX",
+        "Icon": "ico_bler_sk3",
+        "IsEXSkill": 1,
         "MasterSkillTag": "",
         "Name": "Sk_Name_Hero_Unique_BLTu",
         "ShowInBattle": "",
         "SkillDoubleRate": 0.0,
         "SkillEffect": "",
-        "SkillPic": "",
+        "SkillPic": "txt_bler_sk3",
         "SkillRange": "",
         "Summoned": "",
-        "TargetPreview": "",
+        "TargetPreview": "Target_BLTu",
         "Type": "UNIQUE"
     },
     "Hero_Unique_BQDShe": {
@@ -68035,6 +68038,135 @@
                 "type": "FIXED",
                 "value": [
                     2.8
+                ]
+            },
+            {
+                "id": "dmgFactor3",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "HpRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "CritRateFactor",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            }
+        ],
+        "AttrEffects": [],
+        "Desc": "Sk_Desc_Empty",
+        "Desc_short": "Sk_Desc_Empty",
+        "Icon": "Icon_Hero_Unique_CZheng",
+        "IsEXSkill": "",
+        "MasterSkillTag": "",
+        "Name": "Sk_Name_Hero_Unique_CZheng",
+        "ShowInBattle": "",
+        "SkillDoubleRate": 0.0,
+        "SkillEffect": "",
+        "SkillPic": "Sk_SkillName_Hero_Unique_CZheng",
+        "SkillRange": "Col_Attack",
+        "Summoned": "",
+        "TargetPreview": "Target_CZheng",
+        "Type": "UNIQUE"
+    },
+    "Hero_Unique_Czheng_5-8_Hurt": {
+        "Actions": "Skill_CZheng_Unique",
+        "AllowCounterHit": [
+            {
+                "id": "dmgFactor1",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "dmgFactor2",
+                "type": "FIXED",
+                "value": [
+                    4
+                ]
+            },
+            {
+                "id": "dmgFactor3",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "HpRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "CritRateFactor",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            }
+        ],
+        "AllowDoubleHit": [
+            {
+                "id": "dmgFactor1",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "dmgFactor2",
+                "type": "FIXED",
+                "value": [
+                    4
+                ]
+            },
+            {
+                "id": "dmgFactor3",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "HpRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "CritRateFactor",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            }
+        ],
+        "Args": [
+            {
+                "id": "dmgFactor1",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "dmgFactor2",
+                "type": "FIXED",
+                "value": [
+                    4
                 ]
             },
             {
@@ -72644,10 +72776,10 @@
         "IsEXSkill": 1,
         "MasterSkillTag": "",
         "Name": "Sk_Name_Hero_Awaken_KTSJKe",
-        "ShowInBattle": "",
+        "ShowInBattle": [],
         "SkillDoubleRate": 0.0,
-        "SkillEffect": "",
-        "SkillPic": "jx_skillname_KTSJKe_awake",
+        "SkillEffect": [],
+        "SkillPic": "Sk_SkillName_Hero_Unique_KTSJKe",
         "SkillRange": "Single_Attack",
         "Summoned": "",
         "TargetPreview": "Target_KTSJKe",
@@ -74592,6 +74724,13 @@
                 "value": [
                     0
                 ]
+            },
+            {
+                "id": "ExFactor",
+                "type": "FIXED",
+                "value": [
+                    0.2
+                ]
             }
         ],
         "AllowDoubleHit": [
@@ -74615,6 +74754,13 @@
                 "value": [
                     0
                 ]
+            },
+            {
+                "id": "ExFactor",
+                "type": "FIXED",
+                "value": [
+                    0.2
+                ]
             }
         ],
         "Args": [
@@ -74637,6 +74783,13 @@
                 "type": "FIXED",
                 "value": [
                     0
+                ]
+            },
+            {
+                "id": "ExFactor",
+                "type": "FIXED",
+                "value": [
+                    0.2
                 ]
             }
         ],
@@ -74679,6 +74832,13 @@
                 "value": [
                     0
                 ]
+            },
+            {
+                "id": "ExFactor",
+                "type": "FIXED",
+                "value": [
+                    0.2
+                ]
             }
         ],
         "AllowDoubleHit": [
@@ -74702,6 +74862,13 @@
                 "value": [
                     0
                 ]
+            },
+            {
+                "id": "ExFactor",
+                "type": "FIXED",
+                "value": [
+                    0.2
+                ]
             }
         ],
         "Args": [
@@ -74724,6 +74891,13 @@
                 "type": "FIXED",
                 "value": [
                     0
+                ]
+            },
+            {
+                "id": "ExFactor",
+                "type": "FIXED",
+                "value": [
+                    0.2
                 ]
             }
         ],
@@ -77940,186 +78114,132 @@
         "Actions": "Skill_PGNNi_Unique",
         "AllowCounterHit": [
             {
-                "id": "dmgFactor1",
+                "id": "HurtRateDownFactor",
+                "type": "FIXED",
+                "value": [
+                    0.3
+                ]
+            },
+            {
+                "id": "ExSkillRateFactor",
                 "type": "FIXED",
                 "value": [
                     1
-                ]
-            },
-            {
-                "id": "dmgFactor2",
-                "type": "LINEAR",
-                "value": [
-                    1.05,
-                    0.01
-                ]
-            },
-            {
-                "id": "dmgFactor3",
-                "type": "LINEAR",
-                "value": [
-                    0,
-                    0
                 ]
             }
         ],
         "AllowDoubleHit": [
             {
-                "id": "dmgFactor1",
+                "id": "HurtRateDownFactor",
+                "type": "FIXED",
+                "value": [
+                    0.3
+                ]
+            },
+            {
+                "id": "ExSkillRateFactor",
                 "type": "FIXED",
                 "value": [
                     1
-                ]
-            },
-            {
-                "id": "dmgFactor2",
-                "type": "LINEAR",
-                "value": [
-                    1.05,
-                    0.01
-                ]
-            },
-            {
-                "id": "dmgFactor3",
-                "type": "LINEAR",
-                "value": [
-                    0,
-                    0
                 ]
             }
         ],
         "Args": [
             {
-                "id": "dmgFactor1",
+                "id": "HurtRateDownFactor",
+                "type": "FIXED",
+                "value": [
+                    0.3
+                ]
+            },
+            {
+                "id": "ExSkillRateFactor",
                 "type": "FIXED",
                 "value": [
                     1
-                ]
-            },
-            {
-                "id": "dmgFactor2",
-                "type": "LINEAR",
-                "value": [
-                    1.05,
-                    0.01
-                ]
-            },
-            {
-                "id": "dmgFactor3",
-                "type": "LINEAR",
-                "value": [
-                    0,
-                    0
                 ]
             }
         ],
         "AttrEffects": [],
         "Desc": "Sk_Desc_Hero_Unique_PGNNi",
         "Desc_short": "Sk_DescShort_Hero_Unique_PGNNi",
-        "Icon": "Icon_Hero_Unique_YFZZhu",
+        "Icon": "ico_yqing_sk3",
         "IsEXSkill": "",
         "MasterSkillTag": "",
         "Name": "Sk_Name_Hero_Unique_PGNNi",
         "ShowInBattle": "",
         "SkillDoubleRate": 0.0,
         "SkillEffect": "",
-        "SkillPic": "",
+        "SkillPic": "txt_yqing_sk3",
         "SkillRange": "",
         "Summoned": "",
-        "TargetPreview": "",
+        "TargetPreview": "Target_PGNNi",
         "Type": "UNIQUE"
     },
     "Hero_Unique_PGNNi_EX": {
         "Actions": "Skill_PGNNi_Unique_EX",
         "AllowCounterHit": [
             {
-                "id": "dmgFactor1",
+                "id": "HurtRateDownFactor",
+                "type": "FIXED",
+                "value": [
+                    0.4
+                ]
+            },
+            {
+                "id": "ExSkillRateFactor",
                 "type": "FIXED",
                 "value": [
                     1
-                ]
-            },
-            {
-                "id": "dmgFactor2",
-                "type": "LINEAR",
-                "value": [
-                    1.05,
-                    0.01
-                ]
-            },
-            {
-                "id": "dmgFactor3",
-                "type": "LINEAR",
-                "value": [
-                    0,
-                    0
                 ]
             }
         ],
         "AllowDoubleHit": [
             {
-                "id": "dmgFactor1",
+                "id": "HurtRateDownFactor",
+                "type": "FIXED",
+                "value": [
+                    0.4
+                ]
+            },
+            {
+                "id": "ExSkillRateFactor",
                 "type": "FIXED",
                 "value": [
                     1
-                ]
-            },
-            {
-                "id": "dmgFactor2",
-                "type": "LINEAR",
-                "value": [
-                    1.05,
-                    0.01
-                ]
-            },
-            {
-                "id": "dmgFactor3",
-                "type": "LINEAR",
-                "value": [
-                    0,
-                    0
                 ]
             }
         ],
         "Args": [
             {
-                "id": "dmgFactor1",
+                "id": "HurtRateDownFactor",
+                "type": "FIXED",
+                "value": [
+                    0.4
+                ]
+            },
+            {
+                "id": "ExSkillRateFactor",
                 "type": "FIXED",
                 "value": [
                     1
                 ]
-            },
-            {
-                "id": "dmgFactor2",
-                "type": "LINEAR",
-                "value": [
-                    1.05,
-                    0.01
-                ]
-            },
-            {
-                "id": "dmgFactor3",
-                "type": "LINEAR",
-                "value": [
-                    0,
-                    0
-                ]
             }
         ],
         "AttrEffects": [],
-        "Desc": "Sk_Desc_Hero_Unique_PGNNi",
-        "Desc_short": "Sk_DescShort_Hero_Unique_PGNNi",
-        "Icon": "Icon_Hero_Unique_YFZZhu",
-        "IsEXSkill": "",
+        "Desc": "Sk_Desc_Hero_Unique_PGNNi_EX",
+        "Desc_short": "Sk_DescShort_Hero_Unique_PGNNi_EX",
+        "Icon": "ico_yqing_sk3",
+        "IsEXSkill": 1,
         "MasterSkillTag": "",
         "Name": "Sk_Name_Hero_Unique_PGNNi",
         "ShowInBattle": "",
         "SkillDoubleRate": 0.0,
         "SkillEffect": "",
-        "SkillPic": "",
+        "SkillPic": "txt_yqing_sk3",
         "SkillRange": "",
         "Summoned": "",
-        "TargetPreview": "",
+        "TargetPreview": "Target_PGNNi",
         "Type": "UNIQUE"
     },
     "Hero_Unique_PNCao": {
@@ -81155,6 +81275,114 @@
         "TargetPreview": "Target_TPGZhu",
         "Type": "UNIQUE"
     },
+    "Hero_Unique_TPGZhu_Awaken_Show": {
+        "Actions": "Skill_TPGZhu_Unique_EX",
+        "AllowCounterHit": [
+            {
+                "id": "dmgFactor1",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "dmgFactor2",
+                "type": "FIXED",
+                "value": [
+                    2.65
+                ]
+            },
+            {
+                "id": "dmgFactor3",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "DeDefRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0.5
+                ]
+            }
+        ],
+        "AllowDoubleHit": [
+            {
+                "id": "dmgFactor1",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "dmgFactor2",
+                "type": "FIXED",
+                "value": [
+                    2.65
+                ]
+            },
+            {
+                "id": "dmgFactor3",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "DeDefRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0.5
+                ]
+            }
+        ],
+        "Args": [
+            {
+                "id": "dmgFactor1",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "dmgFactor2",
+                "type": "FIXED",
+                "value": [
+                    2.65
+                ]
+            },
+            {
+                "id": "dmgFactor3",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "DeDefRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0.5
+                ]
+            }
+        ],
+        "AttrEffects": [],
+        "Desc": "Sk_Desc_Hero_Unique_TPGZhu_EX",
+        "Desc_short": "Sk_DescShort_Hero_Unique_TPGZhu_EX",
+        "Icon": "Icon_Hero_Unique_TPGZhu",
+        "IsEXSkill": "",
+        "MasterSkillTag": "",
+        "Name": "Sk_Name_Hero_Unique_TPGZhu",
+        "ShowInBattle": "",
+        "SkillDoubleRate": 0.0,
+        "SkillEffect": "",
+        "SkillPic": "txt_fhyhua_awaken_sk3",
+        "SkillRange": "All_Cure",
+        "Summoned": "",
+        "TargetPreview": "Target_TPGZhu",
+        "Type": "UNIQUE"
+    },
     "Hero_Unique_TPGZhu_EX": {
         "Actions": "Skill_TPGZhu_Unique_EX",
         "AllowCounterHit": [
@@ -81250,6 +81478,114 @@
         "AttrEffects": [],
         "Desc": "Sk_Desc_Hero_Unique_TPGZhu_EX",
         "Desc_short": "Sk_DescShort_Hero_Unique_TPGZhu_EX",
+        "Icon": "Icon_Hero_Unique_TPGZhu",
+        "IsEXSkill": "",
+        "MasterSkillTag": "",
+        "Name": "Sk_Name_Hero_Unique_TPGZhu",
+        "ShowInBattle": "",
+        "SkillDoubleRate": 0.0,
+        "SkillEffect": "",
+        "SkillPic": "Sk_SkillName_Hero_Unique_TPGZhu",
+        "SkillRange": "All_Cure",
+        "Summoned": "",
+        "TargetPreview": "Target_TPGZhu",
+        "Type": "UNIQUE"
+    },
+    "Hero_Unique_TPGZhu_Hurt": {
+        "Actions": "Skill_TPGZhu_Unique",
+        "AllowCounterHit": [
+            {
+                "id": "dmgFactor1",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "dmgFactor2",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            },
+            {
+                "id": "dmgFactor3",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "DeDefRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0.25
+                ]
+            }
+        ],
+        "AllowDoubleHit": [
+            {
+                "id": "dmgFactor1",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "dmgFactor2",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            },
+            {
+                "id": "dmgFactor3",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "DeDefRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0.25
+                ]
+            }
+        ],
+        "Args": [
+            {
+                "id": "dmgFactor1",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "dmgFactor2",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            },
+            {
+                "id": "dmgFactor3",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "DeDefRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0.25
+                ]
+            }
+        ],
+        "AttrEffects": [],
+        "Desc": "Sk_Desc_Hero_Unique_TPGZhu",
+        "Desc_short": "Sk_DescShort_Hero_Unique_TPGZhu",
         "Icon": "Icon_Hero_Unique_TPGZhu",
         "IsEXSkill": "",
         "MasterSkillTag": "",
@@ -86148,6 +86484,114 @@
         "TargetPreview": "Target_ZZBBWei",
         "Type": "UNIQUE"
     },
+    "Hero_Unique_ZZBBWei_Awaken_Show": {
+        "Actions": "Skill_ZZBBWei_Unique_EX",
+        "AllowCounterHit": [
+            {
+                "id": "dmgFactor1",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "dmgFactor2",
+                "type": "FIXED",
+                "value": [
+                    2.65
+                ]
+            },
+            {
+                "id": "dmgFactor3",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "DazeRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0.7
+                ]
+            }
+        ],
+        "AllowDoubleHit": [
+            {
+                "id": "dmgFactor1",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "dmgFactor2",
+                "type": "FIXED",
+                "value": [
+                    2.65
+                ]
+            },
+            {
+                "id": "dmgFactor3",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "DazeRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0.7
+                ]
+            }
+        ],
+        "Args": [
+            {
+                "id": "dmgFactor1",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "dmgFactor2",
+                "type": "FIXED",
+                "value": [
+                    2.65
+                ]
+            },
+            {
+                "id": "dmgFactor3",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "DazeRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0.7
+                ]
+            }
+        ],
+        "AttrEffects": [],
+        "Desc": "Sk_Desc_Hero_Unique_ZZBBWei_EX",
+        "Desc_short": "Sk_DescShort_Hero_Unique_ZZBBWei_EX",
+        "Icon": "Icon_Hero_Unique_ZZBBWei",
+        "IsEXSkill": "",
+        "MasterSkillTag": "",
+        "Name": "Sk_Name_Hero_Unique_ZZBBWei",
+        "ShowInBattle": "",
+        "SkillDoubleRate": 0.0,
+        "SkillEffect": "",
+        "SkillPic": "txt_sqying_awaken_sk3",
+        "SkillRange": "Col_Attack",
+        "Summoned": "",
+        "TargetPreview": "Target_ZZBBWei",
+        "Type": "UNIQUE"
+    },
     "Hero_Unique_ZZBBWei_EX": {
         "Actions": "Skill_ZZBBWei_Unique_EX",
         "AllowCounterHit": [
@@ -87909,49 +88353,28 @@
         "Actions": "SectSkill_Master_BiLei_1",
         "AllowCounterHit": [
             {
-                "id": "EnergyExFactor",
+                "id": "UnHurtRateFactor",
                 "type": "CUSTOM",
                 "value": [
-                    5
-                ]
-            },
-            {
-                "id": "HurtRateFactor",
-                "type": "CUSTOM",
-                "value": [
-                    0.1
+                    0.15
                 ]
             }
         ],
         "AllowDoubleHit": [
             {
-                "id": "EnergyExFactor",
+                "id": "UnHurtRateFactor",
                 "type": "CUSTOM",
                 "value": [
-                    5
-                ]
-            },
-            {
-                "id": "HurtRateFactor",
-                "type": "CUSTOM",
-                "value": [
-                    0.1
+                    0.15
                 ]
             }
         ],
         "Args": [
             {
-                "id": "EnergyExFactor",
+                "id": "UnHurtRateFactor",
                 "type": "CUSTOM",
                 "value": [
-                    5
-                ]
-            },
-            {
-                "id": "HurtRateFactor",
-                "type": "CUSTOM",
-                "value": [
-                    0.1
+                    0.15
                 ]
             }
         ],
@@ -87975,28 +88398,28 @@
         "Actions": "SectSkill_Master_BiLei_2",
         "AllowCounterHit": [
             {
-                "id": "EnergyExFactor",
+                "id": "ShieldFactor",
                 "type": "CUSTOM",
                 "value": [
-                    5
+                    0.15
                 ]
             }
         ],
         "AllowDoubleHit": [
             {
-                "id": "EnergyExFactor",
+                "id": "ShieldFactor",
                 "type": "CUSTOM",
                 "value": [
-                    5
+                    0.15
                 ]
             }
         ],
         "Args": [
             {
-                "id": "EnergyExFactor",
+                "id": "ShieldFactor",
                 "type": "CUSTOM",
                 "value": [
-                    5
+                    0.15
                 ]
             }
         ],
@@ -88020,49 +88443,49 @@
         "Actions": "SectSkill_Master_BiLei_3",
         "AllowCounterHit": [
             {
-                "id": "AtkRateFactor",
+                "id": "EnergyExFactor",
                 "type": "CUSTOM",
                 "value": [
-                    0.06
+                    5
                 ]
             },
             {
-                "id": "BlockRateFactor",
+                "id": "EnergyReduce",
                 "type": "CUSTOM",
                 "value": [
-                    0.2
+                    1
                 ]
             }
         ],
         "AllowDoubleHit": [
             {
-                "id": "AtkRateFactor",
+                "id": "EnergyExFactor",
                 "type": "CUSTOM",
                 "value": [
-                    0.06
+                    5
                 ]
             },
             {
-                "id": "BlockRateFactor",
+                "id": "EnergyReduce",
                 "type": "CUSTOM",
                 "value": [
-                    0.2
+                    1
                 ]
             }
         ],
         "Args": [
             {
-                "id": "AtkRateFactor",
+                "id": "EnergyExFactor",
                 "type": "CUSTOM",
                 "value": [
-                    0.06
+                    5
                 ]
             },
             {
-                "id": "BlockRateFactor",
+                "id": "EnergyReduce",
                 "type": "CUSTOM",
                 "value": [
-                    0.2
+                    1
                 ]
             }
         ],
@@ -88089,7 +88512,14 @@
                 "id": "AtkRateFactor",
                 "type": "CUSTOM",
                 "value": [
-                    0.06
+                    0.1
+                ]
+            },
+            {
+                "id": "DefRateFactor",
+                "type": "CUSTOM",
+                "value": [
+                    0.1
                 ]
             },
             {
@@ -88105,7 +88535,14 @@
                 "id": "AtkRateFactor",
                 "type": "CUSTOM",
                 "value": [
-                    0.06
+                    0.1
+                ]
+            },
+            {
+                "id": "DefRateFactor",
+                "type": "CUSTOM",
+                "value": [
+                    0.1
                 ]
             },
             {
@@ -88121,7 +88558,14 @@
                 "id": "AtkRateFactor",
                 "type": "CUSTOM",
                 "value": [
-                    0.06
+                    0.1
+                ]
+            },
+            {
+                "id": "DefRateFactor",
+                "type": "CUSTOM",
+                "value": [
+                    0.1
                 ]
             },
             {
@@ -88157,6 +88601,13 @@
                 "value": [
                     0.15
                 ]
+            },
+            {
+                "id": "DefRateFactor",
+                "type": "CUSTOM",
+                "value": [
+                    0.15
+                ]
             }
         ],
         "AllowDoubleHit": [
@@ -88166,11 +88617,25 @@
                 "value": [
                     0.15
                 ]
+            },
+            {
+                "id": "DefRateFactor",
+                "type": "CUSTOM",
+                "value": [
+                    0.15
+                ]
             }
         ],
         "Args": [
             {
                 "id": "AtkRateFactor",
+                "type": "CUSTOM",
+                "value": [
+                    0.15
+                ]
+            },
+            {
+                "id": "DefRateFactor",
                 "type": "CUSTOM",
                 "value": [
                     0.15
@@ -90217,16 +90682,16 @@
                 "id": "dmgFactor2",
                 "type": "CUSTOM",
                 "value": [
-                    3,
-                    3,
-                    3,
-                    3,
-                    3,
-                    3,
-                    3,
-                    3,
-                    3,
-                    3
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2
                 ]
             },
             {
@@ -90238,19 +90703,19 @@
                 ]
             },
             {
-                "id": "DeAtkRateFactor",
+                "id": "Energy",
                 "type": "CUSTOM",
                 "value": [
-                    0.2,
-                    0.205,
-                    0.21,
-                    0.215,
-                    0.22,
-                    0.225,
-                    0.23,
-                    0.237,
-                    0.243,
-                    0.25
+                    14,
+                    14,
+                    14,
+                    14,
+                    14,
+                    14,
+                    14,
+                    14,
+                    14,
+                    14
                 ]
             }
         ],
@@ -90266,16 +90731,16 @@
                 "id": "dmgFactor2",
                 "type": "CUSTOM",
                 "value": [
-                    3,
-                    3,
-                    3,
-                    3,
-                    3,
-                    3,
-                    3,
-                    3,
-                    3,
-                    3
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2
                 ]
             },
             {
@@ -90287,19 +90752,19 @@
                 ]
             },
             {
-                "id": "DeAtkRateFactor",
+                "id": "Energy",
                 "type": "CUSTOM",
                 "value": [
-                    0.2,
-                    0.205,
-                    0.21,
-                    0.215,
-                    0.22,
-                    0.225,
-                    0.23,
-                    0.237,
-                    0.243,
-                    0.25
+                    14,
+                    14,
+                    14,
+                    14,
+                    14,
+                    14,
+                    14,
+                    14,
+                    14,
+                    14
                 ]
             }
         ],
@@ -90315,16 +90780,16 @@
                 "id": "dmgFactor2",
                 "type": "CUSTOM",
                 "value": [
-                    3,
-                    3,
-                    3,
-                    3,
-                    3,
-                    3,
-                    3,
-                    3,
-                    3,
-                    3
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2
                 ]
             },
             {
@@ -90336,19 +90801,19 @@
                 ]
             },
             {
-                "id": "DeAtkRateFactor",
+                "id": "Energy",
                 "type": "CUSTOM",
                 "value": [
-                    0.2,
-                    0.205,
-                    0.21,
-                    0.215,
-                    0.22,
-                    0.225,
-                    0.23,
-                    0.237,
-                    0.243,
-                    0.25
+                    14,
+                    14,
+                    14,
+                    14,
+                    14,
+                    14,
+                    14,
+                    14,
+                    14,
+                    14
                 ]
             }
         ],
@@ -94159,6 +94624,114 @@
         "Summoned": "",
         "TargetPreview": "",
         "Type": "BATTLEPASSIVE"
+    },
+    "Skill_Boss_Random": {
+        "Actions": "Skill_Boss_AfterUnique_Passive",
+        "AllowCounterHit": [
+            {
+                "id": "SelfRageFactor",
+                "type": "FIXED",
+                "value": [
+                    1000
+                ]
+            },
+            {
+                "id": "MaxHpDamageFactor",
+                "type": "FIXED",
+                "value": [
+                    0.15
+                ]
+            },
+            {
+                "id": "RageDamageFactor",
+                "type": "FIXED",
+                "value": [
+                    500
+                ]
+            },
+            {
+                "id": "BlockRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0.3
+                ]
+            }
+        ],
+        "AllowDoubleHit": [
+            {
+                "id": "SelfRageFactor",
+                "type": "FIXED",
+                "value": [
+                    1000
+                ]
+            },
+            {
+                "id": "MaxHpDamageFactor",
+                "type": "FIXED",
+                "value": [
+                    0.15
+                ]
+            },
+            {
+                "id": "RageDamageFactor",
+                "type": "FIXED",
+                "value": [
+                    500
+                ]
+            },
+            {
+                "id": "BlockRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0.3
+                ]
+            }
+        ],
+        "Args": [
+            {
+                "id": "SelfRageFactor",
+                "type": "FIXED",
+                "value": [
+                    1000
+                ]
+            },
+            {
+                "id": "MaxHpDamageFactor",
+                "type": "FIXED",
+                "value": [
+                    0.15
+                ]
+            },
+            {
+                "id": "RageDamageFactor",
+                "type": "FIXED",
+                "value": [
+                    500
+                ]
+            },
+            {
+                "id": "BlockRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0.3
+                ]
+            }
+        ],
+        "AttrEffects": [],
+        "Desc": "Sk_Desc_Empty",
+        "Desc_short": "Sk_Desc_Empty",
+        "Icon": "",
+        "IsEXSkill": "",
+        "MasterSkillTag": "",
+        "Name": "",
+        "ShowInBattle": [],
+        "SkillDoubleRate": 0.0,
+        "SkillEffect": [],
+        "SkillPic": "",
+        "SkillRange": "",
+        "Summoned": "",
+        "TargetPreview": "",
+        "Type": "PASSIVE"
     },
     "Skill_CZheng_Passive_Story": {
         "Actions": "Skill_CZheng_Passive_Story",
@@ -110737,6 +111310,114 @@
         "Summoned": "",
         "TargetPreview": "Target_KXuan",
         "Type": "UNIQUE"
+    },
+    "Skill_Infinite_Summon_Passive": {
+        "Actions": "Skill_Infinite_Summon_Passive",
+        "AllowCounterHit": [
+            {
+                "id": "summonFactorHp",
+                "type": "FIXED",
+                "value": [
+                    0.2
+                ]
+            },
+            {
+                "id": "summonFactorAtk",
+                "type": "FIXED",
+                "value": [
+                    0.2
+                ]
+            },
+            {
+                "id": "summonFactorDef",
+                "type": "FIXED",
+                "value": [
+                    0.2
+                ]
+            },
+            {
+                "id": "DmgRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0.01
+                ]
+            }
+        ],
+        "AllowDoubleHit": [
+            {
+                "id": "summonFactorHp",
+                "type": "FIXED",
+                "value": [
+                    0.2
+                ]
+            },
+            {
+                "id": "summonFactorAtk",
+                "type": "FIXED",
+                "value": [
+                    0.2
+                ]
+            },
+            {
+                "id": "summonFactorDef",
+                "type": "FIXED",
+                "value": [
+                    0.2
+                ]
+            },
+            {
+                "id": "DmgRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0.01
+                ]
+            }
+        ],
+        "Args": [
+            {
+                "id": "summonFactorHp",
+                "type": "FIXED",
+                "value": [
+                    0.2
+                ]
+            },
+            {
+                "id": "summonFactorAtk",
+                "type": "FIXED",
+                "value": [
+                    0.2
+                ]
+            },
+            {
+                "id": "summonFactorDef",
+                "type": "FIXED",
+                "value": [
+                    0.2
+                ]
+            },
+            {
+                "id": "DmgRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0.01
+                ]
+            }
+        ],
+        "AttrEffects": [],
+        "Desc": "Sk_Desc_Empty",
+        "Desc_short": "Sk_Desc_Empty",
+        "Icon": "",
+        "IsEXSkill": "",
+        "MasterSkillTag": "",
+        "Name": "",
+        "ShowInBattle": [],
+        "SkillDoubleRate": 0.0,
+        "SkillEffect": [],
+        "SkillPic": "",
+        "SkillRange": "",
+        "Summoned": "",
+        "TargetPreview": "",
+        "Type": "BATTLEPASSIVE"
     },
     "Skill_JNLong_Unique_Story_Add": {
         "Actions": "Skill_JNLong_Unique_Story_Add",
@@ -128795,6 +129476,51 @@
         "ShowInBattle": "",
         "SkillDoubleRate": 0.0,
         "SkillEffect": "",
+        "SkillPic": "",
+        "SkillRange": "",
+        "Summoned": "",
+        "TargetPreview": "",
+        "Type": "BATTLEPASSIVE"
+    },
+    "Skill_Stay_Immune_Passive": {
+        "Actions": "Skill_Stay_Immune_Passive",
+        "AllowCounterHit": [
+            {
+                "id": "Who",
+                "type": "FIXED",
+                "value": [
+                    "Enemy_Tombstone_Big"
+                ]
+            }
+        ],
+        "AllowDoubleHit": [
+            {
+                "id": "Who",
+                "type": "FIXED",
+                "value": [
+                    "Enemy_Tombstone_Big"
+                ]
+            }
+        ],
+        "Args": [
+            {
+                "id": "Who",
+                "type": "FIXED",
+                "value": [
+                    "Enemy_Tombstone_Big"
+                ]
+            }
+        ],
+        "AttrEffects": [],
+        "Desc": "Sk_Desc_Empty",
+        "Desc_short": "Sk_Desc_Empty",
+        "Icon": "",
+        "IsEXSkill": "",
+        "MasterSkillTag": "",
+        "Name": "",
+        "ShowInBattle": [],
+        "SkillDoubleRate": 0.0,
+        "SkillEffect": [],
         "SkillPic": "",
         "SkillRange": "",
         "Summoned": "",

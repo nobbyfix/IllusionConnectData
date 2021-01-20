@@ -82,38 +82,6 @@ kAddBtnFuncMap[CurrencyIdKind.kPve] = function (self)
 	CurrencySystem:showSource(self, CurrencyIdKind.kPve)
 end
 
-kAddBtnFuncMap[CurrencyIdKind.kAcitvityStaminaPower] = function (self)
-	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
-end
-
-kAddBtnFuncMap[CurrencyIdKind.kAcitvitySnowPower] = function (self)
-	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
-end
-
-kAddBtnFuncMap[CurrencyIdKind.kAcitvitySummerPower] = function (self)
-	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
-end
-
-kAddBtnFuncMap[CurrencyIdKind.kAcitvityZuoHePower] = function (self)
-	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
-end
-
-kAddBtnFuncMap[CurrencyIdKind.kAcitvityWxhPower] = function (self)
-	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
-end
-
-kAddBtnFuncMap[CurrencyIdKind.kAcitvityHalloweenPower] = function (self)
-	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
-end
-
-kAddBtnFuncMap[CurrencyIdKind.kActivityHolidayPower] = function (self)
-	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
-end
-
-kAddBtnFuncMap[CurrencyIdKind.kActivityDetectivePower] = function (self)
-	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
-end
-
 local kAddImgMap = {
 	[CurrencyIdKind.kGold] = true,
 	[CurrencyIdKind.kPower] = true,
@@ -124,62 +92,6 @@ local kAddImgMap = {
 	[CurrencyIdKind.kPve] = true,
 	[CurrencyIdKind.kDiamondDrawItem] = true,
 	[CurrencyIdKind.kDiamondDrawExItem] = true
-}
-local PowerConfigMap = {
-	[CurrencyIdKind.kPower] = {
-		all = "Power_RecAll",
-		configFunc = "getPowerResetByCurrencyId",
-		next = "Power_RecNext",
-		func = "getPowerByCurrencyId"
-	},
-	[CurrencyIdKind.kAcitvityStaminaPower] = {
-		all = "Act_Power_RecAll",
-		configFunc = "getPowerResetByCurrencyId",
-		next = "Act_Power_RecNext",
-		func = "getPowerByCurrencyId"
-	},
-	[CurrencyIdKind.kAcitvitySnowPower] = {
-		all = "Act_Snowflake_Power_RecAll",
-		configFunc = "getPowerResetByCurrencyId",
-		next = "Act_Snowflake_Power_RecNext",
-		func = "getPowerByCurrencyId"
-	},
-	[CurrencyIdKind.kAcitvityZuoHePower] = {
-		all = "Act_ZuoHe_Power_RecAll",
-		configFunc = "getPowerResetByCurrencyId",
-		next = "Act_ZuoHe_Power_RecNext",
-		func = "getPowerByCurrencyId"
-	},
-	[CurrencyIdKind.kAcitvityWxhPower] = {
-		all = "Act_Wxh_Power_RecAll",
-		configFunc = "getPowerResetByCurrencyId",
-		next = "Act_Wxh_Power_RecNext",
-		func = "getPowerByCurrencyId"
-	},
-	[CurrencyIdKind.kAcitvitySummerPower] = {
-		all = "Act_Summer_Power_RecAll",
-		configFunc = "getPowerResetByCurrencyId",
-		next = "Act_Summer_Power_RecNext",
-		func = "getPowerByCurrencyId"
-	},
-	[CurrencyIdKind.kAcitvityHalloweenPower] = {
-		all = "Act_Halloween_Power_RecAll",
-		configFunc = "getPowerResetByCurrencyId",
-		next = "Act_Halloween_Power_RecNext",
-		func = "getPowerByCurrencyId"
-	},
-	[CurrencyIdKind.kActivityHolidayPower] = {
-		all = "Act_NewYear_Power_RecAll",
-		configFunc = "getPowerResetByCurrencyId",
-		next = "Act_NewYear_Power_RecNext",
-		func = "getPowerByCurrencyId"
-	},
-	[CurrencyIdKind.kActivityDetectivePower] = {
-		all = "Act_Detective_Power_RecAll",
-		configFunc = "getPowerResetByCurrencyId",
-		next = "Act_Detective_Power_RecNext",
-		func = "getPowerByCurrencyId"
-	}
 }
 
 function CurrencyBar.class:createWidgetNode()
@@ -266,6 +178,8 @@ function CurrencyBar:setCurrencyId(currencyId, addBtnDisable)
 			local tipsTouchPanel = addBtn:getChildByName("tipsTouchPanel")
 
 			if tipsTouchPanel == nil then
+				addBtn:setVisible(true)
+
 				local touchLayout = ccui.Layout:create()
 				local addBtnSize = addBtn:getContentSize()
 
@@ -279,6 +193,7 @@ function CurrencyBar:setCurrencyId(currencyId, addBtnDisable)
 					local tipsPanel = view:getChildByName("tips")
 
 					tipsPanel:setVisible(true)
+					AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
 				end
 
 				mapButtonHandlerClick(nil, touchLayout, {
@@ -349,7 +264,7 @@ function CurrencyBar:updateText()
 		end
 	elseif PowerConfigMap[currencyId] then
 		local curPower, lastRecoverTime, powerLimit, powerRecoverCd = nil
-		local func = PowerConfigMap[currencyId].func or "getPowerByCurrencyId"
+		local func = PowerConfigMap[currencyId].func
 		local configFunc = PowerConfigMap[currencyId].configFunc or "getPowerResetByCurrencyId"
 		curPower, lastRecoverTime = self._bagSystem[func](self._bagSystem, currencyId)
 		local resetConfig = self._bagSystem[configFunc](self._bagSystem, currencyId)

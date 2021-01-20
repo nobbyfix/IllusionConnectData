@@ -124,9 +124,20 @@ function DreamChallengeDetailMediator:refreshView()
 		local buffInfoBtnPosX = 0
 		local timeNode = self._detailView:getChildByName("timeNode")
 		local timeText = self._detailView:getChildByFullName("timeNode.desc")
+		local timeTitle = self._detailView:getChildByFullName("timeNode.title")
 		local timeStrKey = self._dreamSystem:getMapTimeDesc(self._mapId)
 
 		timeNode:setVisible(false)
+
+		local challengeType = DataReader:getDataByNameIdAndKey("DreamChallengePoint", self._pointId, "MissionPicType")
+
+		if kDreamChallengeType.kTwo == challengeType or kDreamChallengeType.kThree == challengeType then
+			timeNode:loadTexture("mjt_z_xntz_sjd.png", ccui.TextureResType.plistType)
+			timeTitle:setTextColor(cc.c3b(201, 0, 62))
+		else
+			timeNode:loadTexture("mjt_z_mjjc_sjd.png", ccui.TextureResType.plistType)
+			timeTitle:setTextColor(cc.c3b(93, 82, 205))
+		end
 
 		if timeStrKey and timeStrKey ~= "" then
 			timeNode:setVisible(true)

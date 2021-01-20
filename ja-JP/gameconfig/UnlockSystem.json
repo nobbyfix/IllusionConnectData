@@ -880,7 +880,7 @@
     },
     "Friend_PK": {
         "Condition": {
-            "STAGE": "M04S01"
+            "LEVEL": 999
         },
         "Icon": "new_system_club.png",
         "IsPlay": 0,
@@ -890,9 +890,9 @@
         "OutputDesc": "",
         "ResourcesBanner": "",
         "ShowCondition": {
-            "STAGE": "M04S01"
+            "LEVEL": 999
         },
-        "Tip": "Unlock_Stage_Tips",
+        "Tip": "Unlock_Joking_Tips",
         "UnlockAnima": "",
         "UnlockDesc": "Friend_PK_UnlockDesc"
     },

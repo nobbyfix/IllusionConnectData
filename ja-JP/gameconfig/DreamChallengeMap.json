@@ -121,6 +121,37 @@
             "LEVEL": 50
         }
     },
+    "DreamChallenge_TimeLimit_Music": {
+        "BGM": [
+            "Mus_Story_MusicFestival_2",
+            "",
+            ""
+        ],
+        "Background": "mjt_txt_z_spzs_bgz",
+        "BlockPoint": [
+            "DreamChallenge_TimeLimit_Music_T01N01"
+        ],
+        "Control": 1,
+        "DCType": 1,
+        "LimitTimeTxt": "DreamChallenge_TimeShow_Music",
+        "ListLocationNum": 10002,
+        "Name": "DreamChallenge_TimeLimit_Music_Name",
+        "ShowCondition": {
+            "Day": "2021-01-23  05:00:00",
+            "LEVEL": 5
+        },
+        "Story": "",
+        "TabPic": "mjt_txt_z_spzs_but",
+        "Tag": "",
+        "TimeFactor": {
+            "type": "Day",
+            "value": "2021-02-01  05:00:00"
+        },
+        "UnlockCondition": {
+            "Day": "2021-01-23  05:00:00",
+            "LEVEL": 5
+        }
+    },
     "DreamChallenge_TimeLimit_SD": {
         "BGM": [
             "Mus_Story_Dongwenhui",

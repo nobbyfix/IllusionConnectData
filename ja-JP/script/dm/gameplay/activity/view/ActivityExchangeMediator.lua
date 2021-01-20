@@ -89,6 +89,16 @@ function ActivityExchangeMediator:setupView()
 			heroSprite:setScale(0.8)
 			heroSprite:setPosition(cc.p(480, 160))
 		end
+
+		local param = activityConfig.ModelIdOffset
+
+		if param and param.scale then
+			heroSprite:setScale(param.scale)
+		end
+
+		if param and param.pos then
+			heroSprite:setPosition(cc.p(param.pos[1], param.pos[2]))
+		end
 	end
 
 	heroPanel:setTouchEnabled(true)
@@ -376,12 +386,12 @@ end
 function ActivityExchangeMediator:clickTipPanel(data, view, click)
 	local rid = self._developSystem:getPlayer():getRid()
 	local key = "ActivityExchange_" .. self._activity:getId() .. "_" .. rid .. "_" .. data.index
+	local default = true
 
 	if data.config.isRemind == 0 then
-		-- Nothing
+		default = false
 	end
 
-	local default = true
 	local value = cc.UserDefault:getInstance():getBoolForKey(key, default)
 
 	if click then

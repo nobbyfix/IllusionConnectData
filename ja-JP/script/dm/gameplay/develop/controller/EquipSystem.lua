@@ -991,6 +991,10 @@ function EquipSystem:hasRedPointByEquipStarUp(equipId)
 		return false
 	end
 
+	if equip:isStarMaxExp() and equip:isMaxLevel() then
+		return false
+	end
+
 	local level = equip:getLevel()
 	local levelMax = equip:getMaxLevel()
 

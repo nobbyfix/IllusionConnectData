@@ -180,6 +180,7 @@ function ActivityBlockTeamMediator:initData()
 		_heroes = self:removeExceptHeros(),
 		_masterId = self._curTeam:getMasterId()
 	}
+	self._heroes = modelTmp._heroes
 	self._curMasterId = modelTmp._masterId
 
 	if self._curMasterId == "" or self._curMasterId == 0 then
@@ -202,6 +203,7 @@ function ActivityBlockTeamMediator:initData()
 	self._petListAll = {}
 
 	table.copy(self._petList, {})
+	self:initAssistData()
 end
 
 function ActivityBlockTeamMediator:updateData()
@@ -234,7 +236,7 @@ function ActivityBlockTeamMediator:showOneKeyHeros()
 	for i = 1, #orderPets do
 		local isExcept = self._stageSystem:isHeroExcept(self._cardsExcept, orderPets[i])
 
-		if #self._orderPets < self._maxTeamPetNum and not isExcept then
+		if #self._orderPets < self._maxTeamPetNum and not isExcept and not table.indexof(self._assistHero, orderPets[i]) then
 			self._orderPets[#self._orderPets + 1] = orderPets[i]
 		else
 			self._leavePets[#self._leavePets + 1] = orderPets[i]
@@ -244,6 +246,7 @@ end
 
 function ActivityBlockTeamMediator:setupView()
 	self:initLockIcons()
+	self:initAssistView()
 	self:refreshPetNode()
 	self:refreshMasterInfo()
 	self:initView()
@@ -300,6 +303,7 @@ function ActivityBlockTeamMediator:initWidgetInfo()
 	self._myPetClone = self:getView():getChildByName("myPetClone")
 
 	self._myPetClone:setVisible(false)
+	self._myPetClone:getChildByFullName("fatigueBg"):setVisible(false)
 
 	self._petSize = self._myPetClone:getChildByFullName("myPetClone"):getContentSize()
 	self._teamPetClone = self:getView():getChildByName("teamPetClone")
@@ -361,6 +365,7 @@ function ActivityBlockTeamMediator:createTeamCell(cell, index)
 	detailBtn:addClickEventListener(function ()
 		self:onClickHeroDetail(id)
 	end)
+	self:initAssistHero(node, heroInfo)
 end
 
 function ActivityBlockTeamMediator:checkStageType()
@@ -471,9 +476,7 @@ function ActivityBlockTeamMediator:changeOwnPet(cell)
 	local targetIndex = nil
 
 	for i = 1, self._maxTeamPetNum do
-		local iconBg = self._teamBg:getChildByName("pet_" .. i)
-
-		if self:checkCollision(iconBg) then
+		if self:checkCollision(self:getPetNode(i)) then
 			targetIndex = i
 
 			break
@@ -488,9 +491,9 @@ function ActivityBlockTeamMediator:changeOwnPet(cell)
 		return
 	end
 
-	local iconBg = self._teamBg:getChildByName("pet_" .. targetIndex)
+	local iconBg = self:getPetNode(targetIndex)
 	local targetId = iconBg.id
-	local selectCanceled = self:isSelectCanceledByDray(id, iconBg.id)
+	local selectCanceled = self:isSelectCanceledByDray(id, targetId)
 
 	if selectCanceled then
 		return
@@ -694,6 +697,7 @@ function ActivityBlockTeamMediator:refreshListView(ignoreAdjustOffset)
 	local sortType = self._stageSystem:getCardSortType()
 
 	self._heroSystem:sortHeroes(self._petListAll, sortType, self._cardsRecommend)
+	self:sortAssistHero(self._petListAll)
 
 	if table.nums(self._cardsExcept) > 0 then
 		local heros1 = {}
@@ -844,7 +848,7 @@ function ActivityBlockTeamMediator:refreshPetNode()
 	self._petNodeList = {}
 
 	for i = 1, self._maxTeamPetNum do
-		local iconBg = self._teamBg:getChildByName("pet_" .. i)
+		local iconBg = self:getPetNode(i)
 
 		iconBg:removeAllChildren()
 		iconBg:setTag(i)
@@ -889,11 +893,12 @@ end
 
 function ActivityBlockTeamMediator:initTeamHero(node, info)
 	local heroId = info.id
-	info.id = info.roleModel
 
 	super.initTeamHero(self, node, info)
 
-	local heroImg = IconFactory:createRoleIconSprite(info)
+	local heroImg = IconFactory:createRoleIconSprite({
+		id = info.roleModel
+	})
 
 	heroImg:setScale(0.68)
 
@@ -1141,6 +1146,10 @@ function ActivityBlockTeamMediator:hasChangeTeam()
 		return true
 	end
 
+	if #self._tempTeams ~= #self._heroes then
+		return true
+	end
+
 	local tempTab = {}
 
 	for k, v in pairs(self._tempTeams) do
@@ -1202,5 +1211,112 @@ function ActivityBlockTeamMediator:onClickBack()
 
 	if self:checkToExit(func, false, "Stage_Team_UI10") then
 		func()
+	end
+end
+
+local assitEnemyTag = 100
+
+function ActivityBlockTeamMediator:getPetNode(idx)
+	return self._teamBg:getChildByName("pet_" .. idx + self._presetTeamPetNum)
+end
+
+function ActivityBlockTeamMediator:initAssistData()
+	local pointData = self._activity:getPointById(self._data.enterPointId)
+	self._assistEnemy = pointData and pointData:getAssistEnemy() or {}
+	self._presetTeamPetNum = #self._assistEnemy
+	self._maxTeamPetNum = self._maxTeamPetNum - self._presetTeamPetNum
+	self._assistHero = pointData and pointData:getAssistHero() or {}
+
+	for i, id in ipairs(self._assistHero) do
+		local idx = table.indexof(self._teamPets, id)
+
+		if idx then
+			table.remove(self._teamPets, idx)
+			table.remove(self._tempTeams, idx)
+		end
+	end
+
+	for idx = self._maxTeamPetNum + 1, #self._teamPets do
+		table.remove(self._teamPets, idx)
+		table.remove(self._tempTeams, idx)
+	end
+end
+
+function ActivityBlockTeamMediator:initAssistView()
+	for i, enemyId in ipairs(self._assistEnemy) do
+		local enemyData = self._activity:getAssistEnemyInfo(enemyId)
+
+		if enemyData then
+			local iconBg = self._teamBg:getChildByName("pet_" .. i)
+
+			iconBg:removeAllChildren()
+			iconBg:setTag(assitEnemyTag + i)
+			iconBg:addTouchEventListener(function (sender, eventType)
+				self:onClickOnTeamEnemy(sender, eventType)
+			end)
+
+			local emptyIcon = GameStyle:createEmptyIcon()
+
+			emptyIcon:addTo(iconBg):center(iconBg:getContentSize())
+			emptyIcon:setName("EmptyIcon")
+
+			iconBg.id = enemyId
+			local node = self._teamPetClone:clone()
+
+			node:setVisible(true)
+
+			node.id = enemyId
+
+			self:initTeamHero(node, enemyData)
+			node:addTo(iconBg):center(iconBg:getContentSize())
+			node:offset(0, -9)
+			iconBg:setTouchEnabled(true)
+
+			local flag = ccui.ImageView:create("asset/common/kazu_bg_yuan.png", ccui.TextureResType.localType)
+
+			flag:addTo(node):offset(94, 182)
+		end
+	end
+end
+
+function ActivityBlockTeamMediator:onClickOnTeamEnemy(sender, eventType)
+	if eventType == ccui.TouchEventType.ended then
+		self:dispatch(ShowTipEvent({
+			tip = Strings:get("DreamChallenge_Team_Helper_Info")
+		}))
+	end
+end
+
+function ActivityBlockTeamMediator:initAssistHero(node, info)
+	local heroId = info.id
+
+	node:setColor(cc.c3b(255, 255, 255))
+
+	local fatigueBg = node:getParent():getChildByFullName("fatigueBg")
+
+	fatigueBg:setVisible(false)
+
+	if not table.indexof(self._assistHero, heroId) then
+		return
+	end
+
+	fatigueBg:setVisible(true)
+	fatigueBg:getChildByName("fatigueTxt"):setString(Strings:get("DreamChallenge_Point_Team_Npc_Name"))
+	node:addTouchEventListener(function (sender, eventType)
+		if eventType == ccui.TouchEventType.ended then
+			self:dispatch(ShowTipEvent({
+				tip = Strings:get("DreamChallenge_Point_Team_Npc_Forbid")
+			}))
+		end
+	end)
+	node:setColor(cc.c3b(150, 150, 150))
+end
+
+function ActivityBlockTeamMediator:sortAssistHero(list)
+	for i, v in ipairs(self._assistHero) do
+		if table.indexof(list, v) then
+			table.remove(list, table.indexof(list, v))
+			table.insert(list, #list + 1, v)
+		end
 	end
 end

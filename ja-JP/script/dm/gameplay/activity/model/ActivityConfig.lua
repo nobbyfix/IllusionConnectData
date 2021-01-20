@@ -88,6 +88,7 @@ ActivityUI = {
 	FreeStamina = "FreeStaminaActivityView",
 	Login_Halloween = "LoginActivityWsjView",
 	Carnival = "CarnivalView",
+	Login_Music = "LoginActivityView",
 	Login_Detective = "LoginActivityView",
 	Task = "TaskActivityView",
 	Login_Holiday = "LoginActivityView",
@@ -139,7 +140,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityBlockSnowflake] = "ActivityBlockView",
 		[ActivityType_UI.KActivityBlockHoliday] = "ActivityBlockHolidayView",
 		[ActivityType_UI.KActivityBlockHoliday] = "ActivityBlockHolidayView",
-		[ActivityType_UI.KActivityBlockDetetive] = "ActivityBlockDetectiveView"
+		[ActivityType_UI.KActivityBlockDetetive] = "ActivityBlockDetectiveView",
+		[ActivityType_UI.KActivityBlockMusic] = "ActivityBlockMusicView"
 	},
 	enterBlockMonsterShopView = {
 		[ActivityType_UI.kActivityBlockWsj] = "ActivityBlockMonsterShopView",
@@ -154,7 +156,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityBlockSnowflake] = "ActivitySagaSupportMapView",
 		[ActivityType_UI.kActivityBlock] = "ActivitySagaSupportMapView",
 		[ActivityType_UI.KActivityBlockHoliday] = "ActivityBlockMapWsjView",
-		[ActivityType_UI.KActivityBlockDetetive] = "ActivitySagaSupportMapView"
+		[ActivityType_UI.KActivityBlockDetetive] = "ActivitySagaSupportMapView",
+		[ActivityType_UI.KActivityBlockMusic] = "ActivitySagaSupportMapView"
 	},
 	enterSagaSupportStageView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportStageWxhView",
@@ -173,7 +176,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityBlockSnowflake] = "ActivityBlockTaskView",
 		[ActivityType_UI.kActivityBlock] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivityBlockHoliday] = "ActivityBlockTaskView",
-		[ActivityType_UI.KActivityBlockDetetive] = "ActivityBlockTaskView"
+		[ActivityType_UI.KActivityBlockDetetive] = "ActivityBlockTaskView",
+		[ActivityType_UI.KActivityBlockMusic] = "ActivityBlockTaskView"
 	},
 	enterSagaSupportRankRewardView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportRankRewardWxhView",

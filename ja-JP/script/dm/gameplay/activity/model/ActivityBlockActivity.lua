@@ -237,6 +237,12 @@ function ActivityBlockActivity:getEggActivity()
 	return nil
 end
 
+function ActivityBlockActivity:getJumpActivity()
+	local activityId = self:getActivityConfig().JumpActivityId
+
+	return self._activitySystem:getActivityById(activityId)
+end
+
 function ActivityBlockActivity:getActivityTpurchase()
 	local activityIds = self:getActivity()
 

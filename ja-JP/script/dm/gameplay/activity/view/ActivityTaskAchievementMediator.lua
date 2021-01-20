@@ -172,6 +172,9 @@ function ActivityTaskAchievementMediator:createCell(cell, index)
 		local descText = panel:getChildByName("desc")
 		local processNode = panel:getChildByName("process")
 
+		processNode:setVisible(false)
+		descText:setPositionY(55)
+
 		if self._itemId then
 			local icon = IconFactory:createItemPic({
 				id = self._itemId
@@ -185,13 +188,14 @@ function ActivityTaskAchievementMediator:createCell(cell, index)
 
 		descText:setString(Strings:get(taskData:getDesc()))
 
-		if self._activityId == "ActivityBlock_Halloween_AchieveMentTask" or self._activityId == "ActivityBlock_Detective_AchieveMentTask" then
+		local taskValues = taskData._taskValueList[1]
+
+		if self._activity:getActivityConfig().ShowProgress and taskValues and taskValues.targetValue ~= 0 then
 			processNode:setVisible(true)
 			processNode:setTouchEnabled(false)
 
 			local bar = processNode:getChildByFullName("loadingBar")
 			local process = processNode:getChildByFullName("progress")
-			local taskValues = taskData._taskValueList[1]
 
 			if taskValues then
 				bar:setPercent(taskValues.currentValue / taskValues.targetValue * 100)

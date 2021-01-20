@@ -1361,6 +1361,48 @@
         ],
         "zoom": 0.6
     },
+    "Decoration_15002": {
+        "ATK": "",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "UR_Decoration_DEF_DH",
+        "Desc": "Decoration_15002_Desc",
+        "HP": "UR_Decoration_HP_DH",
+        "Icon": "ico_equip_clarinet",
+        "Name": "Decoration_15002_Name",
+        "Position": "Decoration",
+        "Profession": [
+            "Defense",
+            "Attack",
+            "Support",
+            "Summon",
+            "Aoe",
+            "Curse",
+            "Cure"
+        ],
+        "ProfessionDesc": "Decoration_ProfessionDesc",
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "",
+        "Shine": "",
+        "Skill": "EquipSkill_Decoration_15002",
+        "Sort": 290001,
+        "StartEquipStarID": "Rareity15_DecorationStone2_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
     "Shoes_11001": {
         "ATK": "",
         "AttrEffect": "",

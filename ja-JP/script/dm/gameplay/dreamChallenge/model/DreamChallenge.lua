@@ -554,6 +554,18 @@ function DreamChallenge:checkBattleRewardLock(mapId, pointId, battleId)
 	return mapData:checkBattleRewardLock(pointId, battleId)
 end
 
+function DreamChallenge:checkActivityDreamChallengeOpen(playerInfo, curTime)
+	for i = 1, #self._mapIds do
+		local mapData = self:getMapData(self._mapIds[i])
+
+		if mapData:getDCType() == 1 and self:checkMapLock(self._mapIds[i], playerInfo, curTime) and self:checkMapShow(self._mapIds[i], playerInfo, curTime) then
+			return true
+		end
+	end
+
+	return false
+end
+
 function DreamChallenge:getBattleReward(mapId, pointId, battleId)
 	local pointData = self:getPointData(mapId, pointId)
 

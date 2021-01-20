@@ -613,7 +613,7 @@ end
 
 function ShopNormalMediator:refreshTimes(panel, data)
 	local _infoPanel = panel:getChildByFullName("info_panel")
-	local iconLayout = panel:getChildByFullName("icon_layout")
+	local _iconLayout = panel:getChildByFullName("icon_layout")
 	local _times = panel:getChildByFullName("info_panel.times")
 	local _times1 = panel:getChildByFullName("info_panel.times1")
 	local _duihuanText = panel:getChildByFullName("info_panel.duihuan_text")
