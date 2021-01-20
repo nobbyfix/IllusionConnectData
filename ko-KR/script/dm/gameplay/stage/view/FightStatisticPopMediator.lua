@@ -372,7 +372,7 @@ function FightStatisticPopMediator:createSmallIcon(heroId)
 	if rarity > 11 and rarity < 15 then
 		local quality = nil
 
-		if not _rawData.quality then
+		if not _rawData.quality or _rawData.quality == 0 then
 			quality = 1
 		else
 			quality = math.ceil(_rawData.quality / 10)

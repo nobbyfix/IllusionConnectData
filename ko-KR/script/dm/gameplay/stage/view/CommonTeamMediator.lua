@@ -44,11 +44,14 @@ end
 
 function CommonTeamMediator:onRegister()
 	self:mapButtonHandlersClick(kSortBtnHandlers)
+
+	self._presetTeamPetNum = 0
 end
 
 function CommonTeamMediator:resumeWithData()
 	local preMaxTeamPetNum = self._maxTeamPetNum
 	self._maxTeamPetNum = self._stageSystem:getPlayerInit() + self._developSystem:getBuildingCardEffValue()
+	self._maxTeamPetNum = self._maxTeamPetNum - self._presetTeamPetNum
 
 	self:initLockIcons(preMaxTeamPetNum)
 end
@@ -165,7 +168,7 @@ function CommonTeamMediator:initLockIcons(preMaxTeamPetNum)
 		end
 	end
 
-	for i = self._maxTeamPetNum + 1, maxShowNum do
+	for i = self._maxTeamPetNum + 1 + self._presetTeamPetNum, maxShowNum do
 		local condition, buildId = nil
 		local type = ""
 		local showAnim = false
@@ -320,8 +323,9 @@ function CommonTeamMediator:onClickCost()
 end
 
 function CommonTeamMediator:initHero(node, info)
-	info.id = info.roleModel
-	local heroImg = IconFactory:createRoleIconSprite(info)
+	local heroImg = IconFactory:createRoleIconSprite({
+		id = info.roleModel
+	})
 
 	heroImg:setScale(0.68)
 

@@ -224,3 +224,29 @@ function ActivityStagePoint:canWipeOnce()
 
 	return false
 end
+
+function ActivityStagePoint:getAssist()
+	return self._config.Assist or {}
+end
+
+function ActivityStagePoint:getAssistEnemy()
+	local list = {}
+	local assist = self:getAssist()
+
+	for index, value in ipairs(assist) do
+		list[#list + 1] = value.id
+	end
+
+	return list
+end
+
+function ActivityStagePoint:getAssistHero()
+	local list = {}
+	local assist = self:getAssist()
+
+	for index, value in ipairs(assist) do
+		list[#list + 1] = value.forbidid
+	end
+
+	return list
+end

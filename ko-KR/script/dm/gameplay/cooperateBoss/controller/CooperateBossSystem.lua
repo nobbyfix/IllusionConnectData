@@ -21,6 +21,9 @@ CooperateBossSystem:has("_memberHelpTimeCDArr", {
 CooperateBossSystem:has("_curBossCreateTime", {
 	is = "rw"
 })
+CooperateBossSystem:has("_curBossRootView", {
+	is = "rw"
+})
 
 kCooperateBossState = {
 	kStart = "kStart",
@@ -67,6 +70,7 @@ function CooperateBossSystem:initialize()
 	self:createTimeSchedule()
 
 	self._curBossCreateTime = 0
+	self._curBossRootView = "homeView"
 end
 
 function CooperateBossSystem:dispose()
@@ -330,9 +334,7 @@ function CooperateBossSystem:enterCooperateBossInviteFriendView(bossId)
 	local function callback(data)
 		local scene = self:getInjector():getInstance("BaseSceneMediator", "activeScene")
 		local topViewName = scene:getTopViewName()
-
-		dump(topViewName, "topViewName >>>>>>>>>>>>")
-
+		self._curBossRootView = topViewName
 		local view = self:getInjector():getInstance("CooperateBossInviteFriendView")
 
 		self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, data))
@@ -351,8 +353,6 @@ function CooperateBossSystem:requestCooperateBossFriendInvite(bossId, callback)
 	}
 
 	self._service:requestDoActivity(params, true, function (response)
-		dump(response, "response >>>>>>>>")
-
 		if response.resCode == GS_SUCCESS then
 			if callback then
 				callback(response.data)

@@ -175,6 +175,10 @@ function DreamChallengeMap:getControl()
 	return self._mapConfig.Control
 end
 
+function DreamChallengeMap:getDCType()
+	return self._mapConfig.DCType
+end
+
 function DreamChallengeMap:checkMapPass()
 	local isPass = true
 

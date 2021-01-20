@@ -43,5 +43,35 @@
         "StarId": "SDTZi_Awake",
         "StoryLink": "S11S01",
         "SurfaceId": "Surface_SDTZi_Awake"
+    },
+    "TPGZhu": {
+        "Animation": "FHYH_Awaken",
+        "ModelId": "Model_TPGZhu_Awake",
+        "Name": "TPGZhu_Awake_Name",
+        "NameDesc": "TPGZhu_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_TPGZhu_UnAwake",
+        "Reward": "HeroAwaken_TPGZhu",
+        "ShowHero": "TPGZhu",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "TPGZhu_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_TPGZhu_Awake"
+    },
+    "ZZBBWei": {
+        "Animation": "ZZBBWei_Awaken",
+        "ModelId": "Model_ZZBBWei_Awake",
+        "Name": "ZZBBWei_Awake_Name",
+        "NameDesc": "ZZBBWei_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_ZZBBWei_UnAwake",
+        "Reward": "HeroAwaken_ZZBBWei",
+        "ShowHero": "ZZBBWei",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "ZZBBWei_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_ZZBBWei_Awake"
     }
 }

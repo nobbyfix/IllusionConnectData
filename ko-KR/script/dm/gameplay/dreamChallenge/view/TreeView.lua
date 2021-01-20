@@ -128,6 +128,7 @@ end
 
 function TreeNode:dispose()
 	super.dispose(self)
+	self._nodeContainer:release()
 
 	self._nodeContainer = nil
 end

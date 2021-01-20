@@ -193,5 +193,36 @@
         "TiggerAwaken": "",
         "Time": 1800,
         "Type": "Awaken"
+    },
+    "CooperateBoss_SLMen": {
+        "AwakenAttrEffect": "ExcellentHero_Awaken",
+        "AwakenBoss": "",
+        "BossBattle": "CooperateBoss_SLMen",
+        "ExcellentHero": [
+            {
+                "Effect": "ExcellentHero_Attr_Big",
+                "Hero": [
+                    "NXYYi",
+                    "MLYTLSha"
+                ]
+            },
+            {
+                "Effect": "ExcellentHero_Attr_Small",
+                "Hero": [
+                    "SGHQShou",
+                    "XSMLi",
+                    "SDTZi"
+                ]
+            }
+        ],
+        "Revelry": "",
+        "RewardRevelry": "",
+        "RewardShow": "CooperateBossMain_SLMen_Show",
+        "RoleModel": "Model_SLMen",
+        "StarsAttrEffect": "ExcellentHero_Stars",
+        "Story": [],
+        "TiggerAwaken": "",
+        "Time": 1800,
+        "Type": "Normal"
     }
 }

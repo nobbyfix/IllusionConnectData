@@ -30,6 +30,12 @@ function ActivityBlockFudaiMediator:initialize()
 end
 
 function ActivityBlockFudaiMediator:dispose()
+	if self._timer then
+		self._timer:stop()
+
+		self._timer = nil
+	end
+
 	super.dispose(self)
 end
 
@@ -302,12 +308,6 @@ function ActivityBlockFudaiMediator:getRewards()
 end
 
 function ActivityBlockFudaiMediator:onCloseClicked(sender, eventType)
-	if self._timer then
-		self._timer:stop()
-
-		self._timer = nil
-	end
-
 	self:close()
 end
 

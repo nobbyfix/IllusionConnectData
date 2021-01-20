@@ -458,6 +458,10 @@ function scene_eventstory_Halloween_10a.actions.start_eventstory_Halloween_10a(_
 			end
 		}),
 		act({
+			action = "hide",
+			actor = __getnode__(_root, "dialogue")
+		}),
+		act({
 			action = "fadeIn",
 			actor = __getnode__(_root, "curtain"),
 			args = function (_ctx)
@@ -518,7 +522,7 @@ function scene_eventstory_Halloween_10a.actions.start_eventstory_Halloween_10a(_
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_233",
+					name = "dialog_speak_name_237",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -582,7 +586,7 @@ function scene_eventstory_Halloween_10a.actions.start_eventstory_Halloween_10a(_
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_233",
+					name = "dialog_speak_name_237",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -614,7 +618,7 @@ function scene_eventstory_Halloween_10a.actions.start_eventstory_Halloween_10a(_
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_233",
+					name = "dialog_speak_name_237",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -646,7 +650,7 @@ function scene_eventstory_Halloween_10a.actions.start_eventstory_Halloween_10a(_
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_233",
+					name = "dialog_speak_name_237",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -774,7 +778,7 @@ function scene_eventstory_Halloween_10a.actions.start_eventstory_Halloween_10a(_
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_233",
+					name = "dialog_speak_name_237",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",

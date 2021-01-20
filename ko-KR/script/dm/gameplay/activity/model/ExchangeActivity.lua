@@ -155,12 +155,12 @@ function ExchangeActivity:hasRedPoint()
 	for i, value in pairs(list) do
 		local rid = developSystem:getPlayer():getRid()
 		local key = "ActivityExchange_" .. self._id .. "_" .. rid .. "_" .. value.index
+		local default = true
 
 		if value.config.isRemind == 0 then
-			-- Nothing
+			default = false
 		end
 
-		local default = true
 		local sta = cc.UserDefault:getInstance():getBoolForKey(key, default)
 
 		if sta and value.amount > 0 then

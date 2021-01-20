@@ -101,6 +101,214 @@
         ],
         "StoryLink": "eventstory_detective_4a"
     },
+    "AMusicFestivalS01E01": {
+        "FirstReward": "AMusicFestivalS01E01_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "AMusicFestivalE01",
+        "Name": "AMusicFestivalS01E01_Name",
+        "NextStoryPoint": [
+            "AMusicFestivalS01E02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "AMusicFestivalE01S01"
+        ],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_AnDieFerneGeliebte_05a"
+    },
+    "AMusicFestivalS01E02": {
+        "FirstReward": "AMusicFestivalS01E02_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "AMusicFestivalE01",
+        "Name": "AMusicFestivalS01E02_Name",
+        "NextStoryPoint": [
+            "AMusicFestivalS01E03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "AMusicFestivalE01S04"
+        ],
+        "PreStoryPoint": [
+            "AMusicFestivalS01E01"
+        ],
+        "StoryLink": "eventstory_AnDieFerneGeliebte_06a"
+    },
+    "AMusicFestivalS01E03": {
+        "FirstReward": "AMusicFestivalS01E03_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -100
+        ],
+        "Map": "AMusicFestivalE01",
+        "Name": "AMusicFestivalS01E03_Name",
+        "NextStoryPoint": [
+            "AMusicFestivalS01E04"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "AMusicFestivalE01S08"
+        ],
+        "PreStoryPoint": [
+            "AMusicFestivalS01E02"
+        ],
+        "StoryLink": "eventstory_AnDieFerneGeliebte_07a"
+    },
+    "AMusicFestivalS01E04": {
+        "FirstReward": "AMusicFestivalS01E04_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -50
+        ],
+        "Map": "AMusicFestivalE01",
+        "Name": "AMusicFestivalS01E04_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "AMusicFestivalE01S10"
+        ],
+        "PreStoryPoint": [
+            "AMusicFestivalS01E03"
+        ],
+        "StoryLink": "eventstory_AnDieFerneGeliebte_08a"
+    },
+    "AMusicFestivalS01S01": {
+        "FirstReward": "AMusicFestivalS01S01_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -250
+        ],
+        "Map": "AMusicFestivalM01",
+        "Name": "AMusicFestivalS01S01_Name",
+        "NextStoryPoint": [
+            "AMusicFestivalS01S02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_AnDieFerneGeliebte_01a"
+    },
+    "AMusicFestivalS01S02": {
+        "FirstReward": "AMusicFestivalS01S02_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "AMusicFestivalM01",
+        "Name": "AMusicFestivalS01S02_Name",
+        "NextStoryPoint": [
+            "AMusicFestivalS01S03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "AMusicFestivalM01S04"
+        ],
+        "PreStoryPoint": [
+            "AMusicFestivalS01S01"
+        ],
+        "StoryLink": "eventstory_AnDieFerneGeliebte_02a"
+    },
+    "AMusicFestivalS01S03": {
+        "FirstReward": "AMusicFestivalS01S03_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "AMusicFestivalM01",
+        "Name": "AMusicFestivalS01S03_Name",
+        "NextStoryPoint": [
+            "AMusicFestivalS01S04"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "AMusicFestivalM01S08"
+        ],
+        "PreStoryPoint": [
+            "AMusicFestivalS01S02"
+        ],
+        "StoryLink": "eventstory_AnDieFerneGeliebte_03a"
+    },
+    "AMusicFestivalS01S04": {
+        "FirstReward": "AMusicFestivalS01S04_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -100
+        ],
+        "Map": "AMusicFestivalM01",
+        "Name": "AMusicFestivalS01S04_Name",
+        "NextStoryPoint": [
+            "AMusicFestivalS01S05"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "AMusicFestivalM01S10"
+        ],
+        "PreStoryPoint": [
+            "AMusicFestivalS01S03"
+        ],
+        "StoryLink": "eventstory_AnDieFerneGeliebte_04a"
+    },
     "ANewYearS01S01": {
         "FirstReward": "",
         "Icon": "s_album_story_1",

@@ -33,6 +33,40 @@
         },
         "Times": 1
     },
+    "CO_Decoration_15002": {
+        "Currency": {
+            "amount": 2000000,
+            "id": "IR_Gold",
+            "type": "Item"
+        },
+        "Item1": {
+            "amount": 1,
+            "id": "CO_DecorationStone_2",
+            "type": "Item"
+        },
+        "Item2": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Decoration"
+        },
+        "Item3": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Decoration"
+        },
+        "Item4": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Decoration"
+        },
+        "Item5": "",
+        "Reward": "Decoration_15002",
+        "Show": {
+            "id": "Decoration_15002",
+            "type": "Equip"
+        },
+        "Times": 1
+    },
     "CO_Weapon_1_UR": {
         "Currency": {
             "amount": 10000,

@@ -1177,7 +1177,7 @@ function scene_story16_3a.actions.start_story16_3a(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_12",
+					name = "dialog_speak_name_4",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",

@@ -1076,6 +1076,10 @@ function scene_story18_3a.actions.start_story18_3a(_root, args)
 				}
 			end
 		}),
+		act({
+			action = "hide",
+			actor = __getnode__(_root, "dialogue")
+		}),
 		concurrent({
 			act({
 				action = "fadeIn",
@@ -1408,12 +1412,12 @@ function scene_story18_3a.actions.start_story18_3a(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_6",
+					name = "dialog_speak_name_32",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"ZTXChang_speak"
+						""
 					},
 					content = {
 						"story18_3a_24"

@@ -112,6 +112,7 @@ end
 
 function EntranceGodhandMediator:resumeWithData()
 	self:refreshRed()
+	self:refreshDreamActivityRulePanel()
 end
 
 function EntranceGodhandMediator:initWidgetInfo()
@@ -177,7 +178,17 @@ function EntranceGodhandMediator:initWidgetInfo()
 				anim:stop()
 			end)
 			anim:setName("ShowAnim")
-			self:createRulePanel(anim, value.des)
+
+			if kCells.kDreamChallenge == key then
+				if self._dreamChallengeSystem:checkActivityDreamChallengeOpen() then
+					self:createDreamChallengeActivityRulePanel(anim)
+				else
+					self:createRulePanel(anim, value.des)
+				end
+			else
+				self:createRulePanel(anim, value.des)
+			end
+
 			self:createNamePanel(anim, value.titleStr)
 			redPoint:addTo(anim):posite(120, -25)
 			redPoint:setLocalZOrder(3)
@@ -226,11 +237,12 @@ function EntranceGodhandMediator:runNodeAction(parentCell, index)
 	parentCell:runAction(cc.Sequence:create(delay, callfunc, spawn, scaleTo2))
 end
 
-function EntranceGodhandMediator:createRulePanel(parent, str)
+function EntranceGodhandMediator:createRulePanel(parent, str, notAnim)
 	local image = ccui.ImageView:create("asset/common/sl_bg_msd.png")
 
 	image:setAnchorPoint(cc.p(1, 0.5))
 	image:addTo(parent):posite(132, -13)
+	image:setName("rule")
 
 	local label = cc.Label:createWithTTF(str, TTF_FONT_FZYH_M, 19)
 
@@ -246,14 +258,58 @@ function EntranceGodhandMediator:createRulePanel(parent, str)
 		label:setLineSpacing(-5)
 	end
 
-	image:setOpacity(0)
-	performWithDelay(self:getView(), function ()
-		image:fadeIn({
-			time = 0.2
-		})
-	end, 0.5)
+	if not notAnim then
+		image:setOpacity(0)
+		performWithDelay(self:getView(), function ()
+			image:fadeIn({
+				time = 0.2
+			})
+		end, 0.5)
+	end
 
 	return image
+end
+
+function EntranceGodhandMediator:createDreamChallengeActivityRulePanel(parent, notAnim)
+	local image = ccui.ImageView:create("asset/common/sl_bg_msd.png")
+	local str = Strings:get("DreamChallenge_Entry_Tip02")
+
+	image:setAnchorPoint(cc.p(1, 0.5))
+	image:addTo(parent):posite(132, -13)
+	image:setName("rule")
+
+	local label = cc.Label:createWithTTF(str, TTF_FONT_FZYH_R, 26)
+
+	GameStyle:setCommonOutlineEffect(label, 255)
+	label:addTo(image):posite(image:getContentSize().width / 2, 40)
+	label:setTextColor(cc.c3b(255, 242, 155))
+	label:enableOutline(cc.c4b(3, 1, 4, 255), 1)
+	label:setOverflow(cc.LabelOverflow.SHRINK)
+	label:setDimensions(300, 45)
+	label:setAlignment(cc.TEXT_ALIGNMENT_CENTER, cc.TEXT_ALIGNMENT_CENTER)
+
+	if not notAnim then
+		image:setOpacity(0)
+		performWithDelay(self:getView(), function ()
+			image:fadeIn({
+				time = 0.2
+			})
+		end, 0.5)
+	end
+
+	return image
+end
+
+function EntranceGodhandMediator:refreshDreamActivityRulePanel()
+	local anim = self._scrollView:getChildByFullName("dreamchallenge.ShowAnim")
+
+	anim:removeChildByName("rule")
+
+	if self._dreamChallengeSystem:checkActivityDreamChallengeOpen() then
+		self:createDreamChallengeActivityRulePanel(anim, true)
+	else
+		self:createRulePanel(anim, kFunctionData[kCells.kDreamChallenge].des, true)
+	end
 end
 
 function EntranceGodhandMediator:createNamePanel(parent, str)

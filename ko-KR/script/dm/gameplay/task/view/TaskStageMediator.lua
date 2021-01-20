@@ -30,6 +30,8 @@ function TaskStageMediator:onRegister()
 	self._taskCell:getChildByFullName("loadingBar"):setCapInsets(cc.rect(1, 1, 1, 1))
 	self._cellClone:getChildByFullName("cell.loadingBar"):setScale9Enabled(true)
 	self._cellClone:getChildByFullName("cell.loadingBar"):setCapInsets(cc.rect(1, 1, 1, 1))
+
+	self._noTipsPanel = self._main:getChildByName("noTipsPanel")
 end
 
 function TaskStageMediator:dispose()
@@ -100,6 +102,12 @@ function TaskStageMediator:refreshView(hasAnim)
 		self._tableView:stopScroll()
 		self._tableView:reloadData()
 	end
+
+	self:changeNotips()
+end
+
+function TaskStageMediator:changeNotips(panel)
+	self._noTipsPanel:setVisible(not self._mainTask and (not self._taskList or #self._taskList == 0))
 end
 
 function TaskStageMediator:removeTableView()
@@ -376,6 +384,7 @@ function TaskStageMediator:updateView()
 	end
 
 	self:refreshMainTask()
+	self:changeNotips()
 end
 
 function TaskStageMediator:setBg(panel)

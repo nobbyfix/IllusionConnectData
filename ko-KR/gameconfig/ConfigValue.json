@@ -551,7 +551,8 @@
             "tower",
             "crusade",
             "actstage",
-            "club_battle"
+            "club_battle",
+            "dream_battle"
         ]
     },
     "BattleSpeed_Display": {
@@ -2291,6 +2292,14 @@
             "DrawCardDiamond_TimesRewardRule3"
         ]
     },
+    "DrawCardEX_SinglePrice": {
+        "clz": "int",
+        "content": 400
+    },
+    "DrawCardEX_TenTimesPrice": {
+        "clz": "int",
+        "content": 400
+    },
     "DrawCard_First": {
         "clz": "string",
         "content": "DrawCard_First_Reward"
@@ -2397,7 +2406,8 @@
             "E14",
             "E15",
             "E16",
-            "E17"
+            "E17",
+            "E18"
         ]
     },
     "EliteStage_RestCost": {
@@ -7799,7 +7809,10 @@
             "PDLa",
             "NFEr",
             "HSheng",
-            "FEMSi"
+            "FEMSi",
+            "BLTu",
+            "BDFen",
+            "PGNNi"
         ]
     },
     "Tower_1_GrowMaxValue": {

@@ -1371,6 +1371,11 @@ local mappings = {
 		name = "ActivityBlockSummerExchangeMediator",
 		type = "@C"
 	},
+	ActivityBlockMusicMediator = {
+		url = "dm.gameplay.activity.view.ActivityBlockMusicMediator",
+		name = "ActivityBlockMusicMediator",
+		type = "@C"
+	},
 	ActivityBlockSummerMediator = {
 		url = "dm.gameplay.activity.view.ActivityBlockSummerMediator",
 		name = "ActivityBlockSummerMediator",

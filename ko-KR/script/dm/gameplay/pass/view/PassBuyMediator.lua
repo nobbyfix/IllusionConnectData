@@ -313,8 +313,7 @@ function PassBuyMediator:createBtn(btn, data)
 		discountNode:setVisible(true)
 
 		local num = (1 - priceNum / truePriceNum) * 100
-		local z, r = math.modf(num)
-		local discount = r == 0 and z or string.format("%.1f", num)
+		local discount = "" .. tonumber(string.format("%.1f", num)) - 0
 		local _numLabel = discountNode:getChildByName("num")
 
 		_numLabel:setFontSize(13)

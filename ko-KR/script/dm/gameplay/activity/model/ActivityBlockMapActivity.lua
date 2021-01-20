@@ -155,6 +155,10 @@ function ActivityBlockMapActivity:getActivityMapById(mapId)
 end
 
 function ActivityBlockMapActivity:getPointById(pointId)
+	if not pointId then
+		return
+	end
+
 	local mapid = ConfigReader:getDataByNameIdAndKey("ActivityBlockPoint", pointId, "Map")
 	mapid = mapid or ConfigReader:getDataByNameIdAndKey("ActivityStoryPoint", pointId, "Map")
 
@@ -196,4 +200,29 @@ function ActivityBlockMapActivity:getMapByIndex(index, stageType)
 	local index = tonumber(index)
 
 	return stageMap[self._mapList[type][index]]
+end
+
+function ActivityBlockMapActivity:getAssistEnemyInfo(enemyId)
+	local enemyInfo = ConfigReader:getRecordById("EnemyHero", enemyId)
+
+	if not enemyInfo then
+		return nil
+	end
+
+	local heroData = {
+		awakenLevel = 0,
+		isNpc = true,
+		id = enemyInfo.Id,
+		level = enemyInfo.Level,
+		star = enemyInfo.Star,
+		rareity = enemyInfo.Rarity,
+		name = Strings:get(enemyInfo.Name or "NPC"),
+		roleModel = enemyInfo.RoleModel,
+		type = enemyInfo.Type,
+		cost = enemyInfo.Cost,
+		combat = enemyInfo.Combat,
+		maxStar = HeroStarCountMax
+	}
+
+	return heroData
 end

@@ -89,6 +89,16 @@ function ActivityExchangeMediator:setupView()
 			heroSprite:setScale(0.8)
 			heroSprite:setPosition(cc.p(480, 160))
 		end
+
+		local param = activityConfig.ModelIdOffset
+
+		if param and param.scale then
+			heroSprite:setScale(param.scale)
+		end
+
+		if param and param.pos then
+			heroSprite:setPosition(cc.p(param.pos[1], param.pos[2]))
+		end
 	end
 
 	heroPanel:setTouchEnabled(true)
@@ -99,14 +109,22 @@ function ActivityExchangeMediator:setupView()
 	local activityConfig = self._activity:getActivityConfig()
 
 	if activityConfig and activityConfig.TaskTopUI then
-		local imgTitle = self._main:getChildByName("Image_9")
+		local topIcon = self._main:getChildByName("Image_9")
 
-		imgTitle:loadTexture(activityConfig.TaskTopUI .. ".png", ccui.TextureResType.plistType)
-		imgTitle:ignoreContentAdaptWithSize(true)
+		topIcon:loadTexture(activityConfig.TaskTopUI .. ".png", ccui.TextureResType.plistType)
+		topIcon:ignoreContentAdaptWithSize(true)
 	end
 
 	if activityConfig and activityConfig.TaskBgUI then
 		self._main:getChildByName("Image_18"):loadTexture("asset/scene/" .. activityConfig.TaskBgUI .. ".jpg")
+	end
+
+	if activityConfig and activityConfig.TaskCellBg then
+		self._cloneCell:getChildByName("Image_15"):loadTexture(activityConfig.TaskCellBg .. ".png", ccui.TextureResType.plistType)
+	end
+
+	if activityConfig and activityConfig.TaskCellArrow then
+		self._cloneCell:getChildByName("arrow"):loadTexture(activityConfig.TaskCellArrow .. ".png", ccui.TextureResType.plistType)
 	end
 
 	self:createTableView()
@@ -368,12 +386,12 @@ end
 function ActivityExchangeMediator:clickTipPanel(data, view, click)
 	local rid = self._developSystem:getPlayer():getRid()
 	local key = "ActivityExchange_" .. self._activity:getId() .. "_" .. rid .. "_" .. data.index
+	local default = true
 
 	if data.config.isRemind == 0 then
-		-- Nothing
+		default = false
 	end
 
-	local default = true
 	local value = cc.UserDefault:getInstance():getBoolForKey(key, default)
 
 	if click then

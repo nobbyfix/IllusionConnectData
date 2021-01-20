@@ -69,6 +69,16 @@
         "UnlockDesc": "BBLMa_HeadUnlock",
         "Zoom": 0.5
     },
+    "Head_BDFen": {
+        "HeadDesc": "HeroBase_Desc_BDFen",
+        "HeadName": "BDFen_HeadName",
+        "HeroMasterId": "BDFen",
+        "IconPath": "asset/heros/BDFen/battlepic_BDFen.png",
+        "IsHiddenHead": 0,
+        "Type": 1,
+        "UnlockDesc": "BDFen_HeadUnlock",
+        "Zoom": 0.5
+    },
     "Head_BDPan": {
         "HeadDesc": "HeroBase_Desc_BDPan",
         "HeadName": "BDPan_HeadName",
@@ -97,6 +107,16 @@
         "IsHiddenHead": 0,
         "Type": 1,
         "UnlockDesc": "BHTZi_HeadUnlock",
+        "Zoom": 0.5
+    },
+    "Head_BLTu": {
+        "HeadDesc": "HeroBase_Desc_BLTu",
+        "HeadName": "BLTu_HeadName",
+        "HeroMasterId": "BLTu",
+        "IconPath": "asset/heros/HSheng/battlepic_BLTu.png",
+        "IsHiddenHead": 0,
+        "Type": 1,
+        "UnlockDesc": "BLTu_HeadUnlock",
         "Zoom": 0.5
     },
     "Head_BQDShe": {
@@ -519,6 +539,16 @@
         "UnlockDesc": "PDLa_HeadUnlock",
         "Zoom": 0.5
     },
+    "Head_PGNNi": {
+        "HeadDesc": "HeroBase_Desc_PGNNi",
+        "HeadName": "PGNNi_HeadName",
+        "HeroMasterId": "PGNNi",
+        "IconPath": "asset/heros/PGNNi/battlepic_PGNNi.png",
+        "IsHiddenHead": 0,
+        "Type": 1,
+        "UnlockDesc": "PGNNi_HeadUnlock",
+        "Zoom": 0.5
+    },
     "Head_PNCao": {
         "HeadDesc": "HeroBase_Desc_PNCao",
         "HeadName": "PNCao_HeadName",
@@ -847,6 +877,26 @@
         "IsHiddenHead": 0,
         "Type": 4,
         "UnlockDesc": "HeroAwaken_SDTZi",
+        "Zoom": 1.0
+    },
+    "HeroAwaken_TPGZhu": {
+        "HeadDesc": "HeroAwaken_TPGZhu_Desc",
+        "HeadName": "HeroAwaken_TPGZhu_1_Name",
+        "HeroMasterId": "TPGZhu",
+        "IconPath": "asset/heros/TPGZhu/battlepic_fhyhua_awaken.png",
+        "IsHiddenHead": 0,
+        "Type": 4,
+        "UnlockDesc": "HeroAwaken_TPGZhu",
+        "Zoom": 1.0
+    },
+    "HeroAwaken_ZZBBWei": {
+        "HeadDesc": "HeroAwaken_ZZBBWei_Desc",
+        "HeadName": "HeroAwaken_ZZBBWei_1_Name",
+        "HeroMasterId": "ZZBBWei",
+        "IconPath": "asset/heros/ZZBBWei/battlepic_sqying_awaken.png",
+        "IsHiddenHead": 0,
+        "Type": 4,
+        "UnlockDesc": "HeroAwaken_ZZBBWei",
         "Zoom": 1.0
     },
     "PlayerHead_Test1": {

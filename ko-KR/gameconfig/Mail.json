@@ -480,6 +480,19 @@
         "TopStatus": 0,
         "Type": "USER"
     },
+    "Mail_EightDays_MusicFestival": {
+        "Content": "Mail_EightDays_MusicFestival_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_MusicFestival_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_EightDays_MusicFestival_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
     "Mail_EightDays_Snowflake": {
         "Content": "Mail_EightDays_Snowflake_Content",
         "ExpireAfterRead": 72000,
@@ -685,6 +698,32 @@
         "Reward": "",
         "SubType": 1,
         "Title": "Mail_MonthReward_title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
+    "Mail_MusicFestival_AchieveMentTask_Activity": {
+        "Content": "Mail_MusicFestival_AchieveMentTask_Activity_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_MusicFestival_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_MusicFestival_AchieveMentTask_Activity_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
+    "Mail_MusicFestival_DailyTask_Activity": {
+        "Content": "Mail_MusicFestival_DailyTask_Activity_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_MusicFestival_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_MusicFestival_DailyTask_Activity_Title",
         "TopStatus": 0,
         "Type": "USER"
     },
@@ -920,6 +959,19 @@
         "SubType": 1,
         "Title": "Mail_Summer_DailyTask_Activity_Title",
         "TopStatus": 0,
+        "Type": "USER"
+    },
+    "Mail_TPGZhu_DailyTask_Activity": {
+        "Content": "Mail_TPGZhu_DailyTask_Activity_Content",
+        "ExpireAfterRead": "",
+        "ExpireTime": 72000,
+        "Icon": "1",
+        "Name": "Mail_TPGZhu_DailyTask_Activity_Name",
+        "QuickGet": 1,
+        "Reward": "0",
+        "SubType": 0,
+        "Title": "Mail_TPGZhu_DailyTask_Activity_Title",
+        "TopStatus": "",
         "Type": "USER"
     },
     "Mail_Test1": {

@@ -89,14 +89,16 @@ all.Sk_Master_BiLei_Action1 = {
 		if this.dmgFactor == nil then
 			this.dmgFactor = {
 				1,
-				1.5,
+				2,
 				0
 			}
 		end
 
-		this.DeAtkRateFactor = externs.DeAtkRateFactor
+		this.Energy = externs.Energy
 
-		assert(this.DeAtkRateFactor ~= nil, "External variable `DeAtkRateFactor` is not provided.")
+		if this.Energy == nil then
+			this.Energy = 14
+		end
 
 		local main = __action(this, {
 			name = "main",
@@ -183,25 +185,26 @@ all.Sk_Master_BiLei_Action1 = {
 			for _, unit in global.__iter__(_env.units) do
 				global.AssignRoles(_env, unit, "target")
 
-				local buffeft1 = global.NumericEffect(_env, "-atkrate", {
-					"+Normal",
-					"+Normal"
-				}, this.DeAtkRateFactor)
+				local buff = global.Daze(_env)
 
-				global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
-					timing = 2,
-					duration = 3,
-					display = "AtkDown",
-					tags = {
-						"NUMERIC",
-						"DEBUFF",
-						"ATKDOWN",
-						"DISPELLABLE",
-						"STEALABLE"
-					}
-				}, {
-					buffeft1
-				}, 1, 0)
+				if global.GetCost(_env, unit) < this.Energy then
+					if not global.MASTER(_env, unit) then
+						global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
+							timing = 2,
+							duration = 1,
+							display = "Daze",
+							tags = {
+								"STATUS",
+								"DEBUFF",
+								"DAZE",
+								"DISPELLABLE"
+							}
+						}, {
+							global.buffeft2
+						}, 1, 0)
+					end
+				end
+
 				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
 				global.ApplyRPEffect(_env, _env.ACTOR, unit)
 
@@ -317,8 +320,10 @@ all.Sk_Master_BiLei_Action2 = {
 
 			global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
 				timing = 1,
-				duration = 2,
 				display = "UnHurtRateUp",
+				group = "BiLei_Action2",
+				duration = 2,
+				limit = 1,
 				tags = {
 					"NUMERIC",
 					"BUFF",

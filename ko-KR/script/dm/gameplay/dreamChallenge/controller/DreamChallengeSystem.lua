@@ -19,6 +19,7 @@ DreamChallengeSystem:has("_gameServerAgent", {
 kDreamChallengeType = {
 	kTwo = 2,
 	kThree = 3,
+	kForth = 4,
 	kOne = 1
 }
 
@@ -126,6 +127,35 @@ function DreamChallengeSystem:enterBattleEndUI(data, dreamId, mapId, pointId)
 end
 
 function DreamChallengeSystem:checkIsShowRedPoint()
+	local mapIds = self:getMapIds()
+
+	for i = 1, #mapIds do
+		local isUnLock = self:checkMapLock(mapIds[i])
+
+		if isUnLock then
+			local rid = self._developSystem:getPlayer():getRid()
+			local dreamPointRedStste = CommonUtils.getDataFromLocalByKey(rid .. "DREAM_REDPOINT_SAVE_KEY")
+
+			if dreamPointRedStste == nil then
+				dreamPointRedStste = {
+					mapArr = {}
+				}
+			end
+
+			local existRed = true
+
+			for mi = 1, #dreamPointRedStste.mapArr do
+				if dreamPointRedStste.mapArr[mi] == mapIds[i] then
+					existRed = false
+				end
+			end
+
+			if existRed then
+				return true
+			end
+		end
+	end
+
 	return self._dreamChallenge:checkRedPoint()
 end
 
@@ -511,6 +541,13 @@ function DreamChallengeSystem:checkBuffUsed(mapId, poindId, buffId)
 	end
 
 	return false
+end
+
+function DreamChallengeSystem:checkActivityDreamChallengeOpen()
+	local playerInfo = self._developSystem:getPlayer()
+	local curTime = self._gameServerAgent:remoteTimeMillis() / 1000
+
+	return self._dreamChallenge:checkActivityDreamChallengeOpen(playerInfo, curTime)
 end
 
 function DreamChallengeSystem:enterBattle(serverData, serverPlayerData)
