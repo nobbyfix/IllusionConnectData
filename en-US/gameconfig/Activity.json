@@ -650,6 +650,73 @@
         "UI": "BattlePassShop",
         "Version": ""
     },
+    "ActivityBattlePassShop_20210201": {
+        "ActivityConfig": {
+            "ModelId": "Model_SDTZ_Shop",
+            "ResourcesBanner": [
+                "IGM_BP_HighPoint"
+            ],
+            "buy": [
+                "Voice_SDTZi_71_4"
+            ],
+            "exchange": [
+                "HighPointGood_20210201_1",
+                "HighPointGood_20210201_2",
+                "HighPointGood_20210201_3",
+                "HighPointGood_20210201_4",
+                "HighPointGood_20210201_5",
+                "HighPointGood_20210201_6",
+                "HighPointGood_20210201_7",
+                "HighPointGood_20210201_8",
+                "HighPointGood_20210201_9",
+                "HighPointGood_20210201_10",
+                "HighPointGood_20210201_11",
+                "HighPointGood_20210201_12"
+            ],
+            "in": [
+                "Voice_SDTZi_71_1"
+            ],
+            "position": [
+                10,
+                -300
+            ],
+            "sold_out": [
+                "Voice_SDTZi_71_2"
+            ],
+            "zoom": [
+                0.41
+            ]
+        },
+        "ClientCondition": {
+            "REGISTER": 22
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 93004,
+        "ShowTab": 2,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-02-26 05:00:00",
+            "start": [
+                "2021-02-01 05:00:00",
+                "2021-02-26 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "EXCHANGE",
+        "UI": "BattlePassShop",
+        "Version": ""
+    },
     "ActivityBattlePass_20200714": {
         "ActivityConfig": {
             "Activity": [
@@ -1116,6 +1183,41 @@
         "UI": "BattlePass",
         "Version": ""
     },
+    "ActivityBattlePass_20210201": {
+        "ActivityConfig": {
+            "Activity": [],
+            "ActivityBattlePass": "ActivityBattlePass_20210201"
+        },
+        "ClientCondition": {
+            "REGISTER": 22
+        },
+        "Desc": "ActivityBattlePass_20200914_Desc",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 1,
+        "MailId": "ActivityBattlePass_Mail",
+        "Primary": 1,
+        "Reset": 1,
+        "ServerCondition": "",
+        "ShowIndex": 93003,
+        "ShowTab": 2,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-02-26 05:00:00",
+            "start": [
+                "2021-02-01 05:00:00",
+                "2021-02-26 05:00:00"
+            ]
+        },
+        "Title": "ActivityBattlePass_20200914_Name",
+        "Type": "BattlePass",
+        "UI": "BattlePass",
+        "Version": ""
+    },
     "ActivityBlock": {
         "ActivityConfig": {
             "Activity": [
@@ -1405,6 +1507,7 @@
     "ActivityBlock_Detective_AchieveMentTask": {
         "ActivityConfig": {
             "Bmg": "renwu_bd_bj",
+            "ShowProgress": 1,
             "entitle": "ABAchieveMentTask_Detective_entitle",
             "task": [
                 "Detective_AchieveMentTask_1",
@@ -2149,6 +2252,7 @@
     "ActivityBlock_Halloween_AchieveMentTask": {
         "ActivityConfig": {
             "Bmg": "renwu_bd_bj",
+            "ShowProgress": 1,
             "entitle": "HalloweenAchieveMentTask_entitle",
             "task": [
                 "AHalloween_AchieveMentTask_StageStarSum_1",
@@ -3466,6 +3570,427 @@
         "UI": "ACTIVITYBLOCKMAP",
         "Version": ""
     },
+    "ActivityBlock_MusicFestival": {
+        "ActivityConfig": {
+            "Activity": [
+                "ActivityBlock_MusicFestival_Map",
+                "ActivityBlock_MusicFestival_DailyTask",
+                "ActivityBlock_MusicFestival_AchieveMentTask"
+            ],
+            "ActivityStaminaId": "IR_MusicFestivalStamina",
+            "Bmg": "musicfestival_scene_zy_bg",
+            "BonusHero": [
+                "PGNNi",
+                "BDFen",
+                "SLMen"
+            ],
+            "ButtonIcon": "musicfestival_btn_zy_dh",
+            "ButtonText": "ActivityBlock_MusicFestival_Exchange",
+            "ExchangeUrl": "view://ActivityView&id=ActivityBlock_MusicFestival_Exchange",
+            "JumpActivityId": "ActivityBlock_MusicFestival_Exchange",
+            "Logo": "musicfestival_txt_zy_rukou",
+            "ModelId": [
+                {
+                    "desc": "AB_MusicFestival_Model_Desc1",
+                    "model": "PGNNi",
+                    "type": "Hero"
+                },
+                {
+                    "desc": "AB_MusicFestival_Model_Desc2",
+                    "model": "BDFen",
+                    "type": "Hero"
+                }
+            ],
+            "RedPointRelatedActivity": [
+                "ActivityBlock_MusicFestival_Exchange"
+            ],
+            "ResourcesBanner": [
+                "IR_Gold",
+                "IR_Crystal",
+                "IR_MusicFestivalStamina",
+                "IR_Diamond"
+            ],
+            "RuleDesc": [
+                "ActivityTotal_MusicFestival_RuleDesc_1",
+                "ActivityTotal_MusicFestival_RuleDesc_2",
+                "ActivityTotal_MusicFestival_RuleDesc_3",
+                "ActivityTotal_MusicFestival_RuleDesc_4"
+            ],
+            "SubActivityEndTip": "SubActivity_MusicFestival_AB_1st",
+            "bgm": "Mus_Story_MusicFestival_1"
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1112,
+        "ShowTab": 2,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-02-10 05:00:00",
+            "start": [
+                "2021-02-01 05:00:00",
+                "2021-02-10 05:00:00"
+            ]
+        },
+        "Title": "ActivityBlock_MusicFestival_Name",
+        "Type": "ActivityBlock",
+        "UI": "ACTIVITYMUSICFESTIVAL",
+        "Version": ""
+    },
+    "ActivityBlock_MusicFestival_AchieveMentTask": {
+        "ActivityConfig": {
+            "Bmg": "musicfestival_img_14qd_ljdl",
+            "ShowProgress": 1,
+            "entitle": "HalloweenAchieveMentTask_entitle",
+            "task": [
+                "MusicFestival_AchieveMentTask_01",
+                "MusicFestival_AchieveMentTask_02",
+                "MusicFestival_AchieveMentTask_03",
+                "MusicFestival_AchieveMentTask_04",
+                "MusicFestival_AchieveMentTask_05",
+                "MusicFestival_AchieveMentTask_06",
+                "MusicFestival_AchieveMentTask_07",
+                "MusicFestival_AchieveMentTask_08",
+                "MusicFestival_AchieveMentTask_09",
+                "MusicFestival_AchieveMentTask_10",
+                "MusicFestival_AchieveMentTask_11",
+                "MusicFestival_AchieveMentTask_12",
+                "MusicFestival_AchieveMentTask_13",
+                "MusicFestival_AchieveMentTask_14",
+                "MusicFestival_AchieveMentTask_15"
+            ],
+            "titleImg": "musicfestival_txt_renwu_bg2"
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 1,
+        "MailId": "Mail_MusicFestival_AchieveMentTask_Activity",
+        "Primary": 0,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1115,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-02-10 05:00:00",
+            "start": [
+                "2021-02-01 05:00:00",
+                "2021-02-10 05:00:00"
+            ]
+        },
+        "Title": "ActivityBlock_MusicFestival_AchieveMentTask_Name",
+        "Type": "TASK",
+        "UI": "ABACHIEVEMENTTASK",
+        "Version": ""
+    },
+    "ActivityBlock_MusicFestival_DailyTask": {
+        "ActivityConfig": {
+            "Bmg": "musicfestival_scene_zy_bg",
+            "entitle": "ABDailyTask_MusicFestival_entitle",
+            "task": [
+                "MusicFestival_DailyTask_01",
+                "MusicFestival_DailyTask_02",
+                "MusicFestival_DailyTask_03",
+                "MusicFestival_DailyTask_04",
+                "MusicFestival_DailyTask_05",
+                "MusicFestival_DailyTask_06"
+            ],
+            "titleImg": "musicfestival_txt_renwu_bg1"
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 1,
+        "MailId": "Mail_MusicFestival_DailyTask_Activity",
+        "Primary": 0,
+        "Reset": 1,
+        "ServerCondition": "",
+        "ShowIndex": 1114,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-02-10 05:00:00",
+            "start": [
+                "2021-02-01 05:00:00",
+                "2021-02-10 05:00:00"
+            ]
+        },
+        "Title": "ActivityBlock_MusicFestival_DailyTask_Name",
+        "Type": "TASK",
+        "UI": "ABDAILYTASK",
+        "Version": ""
+    },
+    "ActivityBlock_MusicFestival_Exchange": {
+        "ActivityConfig": {
+            "BubleDesc": [
+                "ActivityBlock_MusicFestival_Buble_1",
+                "ActivityBlock_MusicFestival_Buble_2",
+                "ActivityBlock_MusicFestival_Buble_3",
+                "ActivityBlock_MusicFestival_Buble_4",
+                "ActivityBlock_MusicFestival_Buble_5"
+            ],
+            "ModelId": "Model_BDFen",
+            "ModelIdOffset": {
+                "pos": [
+                    515,
+                    145
+                ],
+                "scale": 1
+            },
+            "TaskBgUI": "musicfestival_scene_zy_bg",
+            "TaskCellArrow": "musicfestival_img_dh_jt",
+            "TaskCellBg": "musicfestival_ing_dh_di",
+            "TaskTopUI": "musicfestival_txt_dh_logo",
+            "exchange": [
+                "ActivityBlock_MusicFestival_Exchange_1",
+                "ActivityBlock_MusicFestival_Exchange_2",
+                "ActivityBlock_MusicFestival_Exchange_3",
+                "ActivityBlock_MusicFestival_Exchange_4",
+                "ActivityBlock_MusicFestival_Exchange_5",
+                "ActivityBlock_MusicFestival_Exchange_6",
+                "ActivityBlock_MusicFestival_Exchange_7",
+                "ActivityBlock_MusicFestival_Exchange_8",
+                "ActivityBlock_MusicFestival_Exchange_9",
+                "ActivityBlock_MusicFestival_Exchange_10",
+                "ActivityBlock_MusicFestival_Exchange_11",
+                "ActivityBlock_MusicFestival_Exchange_12"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "ActivityBlock_MusicFestival_Exchange_Desc",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "musicfestival_btn_dh_anniu",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 1,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1121,
+        "ShowTab": 1,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-02-10 05:00:00",
+            "start": [
+                "2021-02-01 05:00:00",
+                "2021-02-10 05:00:00"
+            ]
+        },
+        "Title": "ActivityBlock_MusicFestival_Exchange_Title",
+        "Type": "EXCHANGE",
+        "UI": "Exchange",
+        "Version": ""
+    },
+    "ActivityBlock_MusicFestival_ExtraMap": {
+        "ActivityConfig": {
+            "Reward": "MusicFestival_Stamina_ExtraMap_R",
+            "block": [
+                "Map"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1117,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-02-10 05:00:00",
+            "start": [
+                "2021-02-01 05:00:00",
+                "2021-02-10 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "ExtraReward",
+        "UI": "ExtraRewardBoard",
+        "Version": ""
+    },
+    "ActivityBlock_MusicFestival_ExtraNormal": {
+        "ActivityConfig": {
+            "Reward": "MusicFestival_Stamina_ExtraNormal_R",
+            "block": [
+                "Normal",
+                "Elite"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1116,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-02-10 05:00:00",
+            "start": [
+                "2021-02-01 05:00:00",
+                "2021-02-10 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "ExtraReward",
+        "UI": "ExtraRewardBoard",
+        "Version": ""
+    },
+    "ActivityBlock_MusicFestival_ExtraSorce": {
+        "ActivityConfig": {
+            "Reward": "MusicFestival_Stamina_ExtraSource_R",
+            "block": [
+                "GOLD",
+                "EXP",
+                "CRYSTAL"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1118,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-02-10 05:00:00",
+            "start": [
+                "2021-02-01 05:00:00",
+                "2021-02-10 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "ExtraReward",
+        "UI": "ExtraRewardBoard",
+        "Version": ""
+    },
+    "ActivityBlock_MusicFestival_Map": {
+        "ActivityConfig": {
+            "ActivityBlockMap": {
+                "Elite": [
+                    "AMusicFestivalE01"
+                ],
+                "Normal": [
+                    "AMusicFestivalM01"
+                ]
+            },
+            "BonusHero": [
+                "PGNNi",
+                "BDFen",
+                "BLTu"
+            ],
+            "BonusHeroDesc": [
+                "ABMap_MusicFestival_RuleDesc_1",
+                "ABMap_MusicFestival_RuleDesc_2",
+                "ABMap_MusicFestival_RuleDesc_3",
+                "ABMap_MusicFestival_RuleDesc_4"
+            ],
+            "ButtonIcon": "musicfestival_btn_zy_rukou",
+            "ChangeBtnImg": {
+                "ELITE": "musicfestival_btn_fbgq_kn.png",
+                "NORMAL": "musicfestival_btn_fbgq_pt.png"
+            },
+            "ResourcesBanner": [
+                "IR_Gold",
+                "IR_Crystal",
+                "IR_MusicFestivalStamina",
+                "IR_Diamond"
+            ],
+            "ShowReward": "ShowReward_MusicFestival_ABR"
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 0,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1113,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-02-10 05:00:00",
+            "start": [
+                "2021-02-01 05:00:00",
+                "2021-02-10 05:00:00"
+            ]
+        },
+        "Title": "ActivityBlock_MusicFestival_Map_Name",
+        "Type": "ActivityBlockMap",
+        "UI": "ACTIVITYBLOCKMAP",
+        "Version": ""
+    },
     "ActivityBlock_Snowflake": {
         "ActivityConfig": {
             "Activity": [
@@ -4427,6 +4952,60 @@
         "Title": "ActivityBlock_Summer_Map_Name",
         "Type": "ActivityBlockMap",
         "UI": "ACTIVITYBLOCKMAP",
+        "Version": ""
+    },
+    "ActivityBlock_TPGZhu_DailyTask": {
+        "ActivityConfig": {
+            "IsTimeClose": 1,
+            "ModelId": "Model_TPGZhu",
+            "TaskTopUI": "hd_txt_czzl",
+            "pos": [
+                300,
+                160
+            ],
+            "task": [
+                "Activity_TPGZhuTask_1",
+                "Activity_TPGZhuTask_2",
+                "Activity_TPGZhuTask_3",
+                "Activity_TPGZhuTask_4",
+                "Activity_TPGZhuTask_5",
+                "Activity_TPGZhuTask_6",
+                "Activity_TPGZhuTask_7",
+                "Activity_TPGZhuTask_8",
+                "Activity_TPGZhuTask_9",
+                "Activity_TPGZhuTask_10",
+                "Activity_TPGZhuTask_11",
+                "Activity_TPGZhuTask_12"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "ActivityBlock_TPGZhu_DailyTask_Desc",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "hd_btn_tmxh",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "Mail_TPGZhu_DailyTask_Activity",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1114,
+        "ShowTab": 1,
+        "Tag": "WONDERFUL",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-01-29 05:00:00",
+            "start": [
+                "2021-01-22 05:00:00",
+                "2021-01-29 05:00:00"
+            ]
+        },
+        "Title": "ActivityBlock_TPGZhu_DailyTask_Name",
+        "Type": "TASK",
+        "UI": "TaskElite",
         "Version": ""
     },
     "ActivityBlock_WuXiuHui_AchieveMentTask": {
@@ -5437,6 +6016,108 @@
         "UI": "MINI_DARTS",
         "Version": ""
     },
+    "Activity_Darts_210126": {
+        "ActivityConfig": {
+            "DailyTask": [
+                "Activity_Darts_DailyTask_11",
+                "Activity_Darts_DailyTask_12",
+                "Activity_Darts_DailyTask_13",
+                "Activity_Darts_DailyTask_14"
+            ],
+            "DartsScore": "100",
+            "MiniGameConfig": {
+                "point": [
+                    "Stage1",
+                    "Stage2",
+                    "Stage3",
+                    "Stage4",
+                    "Stage5",
+                    "Stage6",
+                    "Stage7",
+                    "Stage8",
+                    "Stage9",
+                    "Stage10",
+                    "Stage11",
+                    "Stage12",
+                    "Stage13",
+                    "Stage14",
+                    "Stage15"
+                ],
+                "type": "DARTS"
+            },
+            "NinjaAccelerateTime": 0.8,
+            "NinjaRevertGapTime": 1,
+            "RuleDesc": [
+                "Activity_Darts_UI_13",
+                "Activity_Darts_UI_14",
+                "Activity_Darts_UI_15",
+                "Activity_Darts_UI_29"
+            ],
+            "Task": [
+                "Activity_Darts_Task_11",
+                "Activity_Darts_Task_12",
+                "Activity_Darts_Task_13",
+                "Activity_Darts_Task_14",
+                "Activity_Darts_Task_15"
+            ],
+            "buyLimit": 3,
+            "buyTimesCost": {
+                "amount": [
+                    30,
+                    50,
+                    100
+                ],
+                "id": "IR_Diamond"
+            },
+            "dailyTimes": 3,
+            "eachBuyNum": 1,
+            "maxReward": [
+                {
+                    "amount": 110,
+                    "id": "IR_Diamond"
+                },
+                {
+                    "amount": 320000,
+                    "id": "IR_Gold"
+                },
+                {
+                    "amount": 8,
+                    "id": "IHF_YFZZhu"
+                }
+            ],
+            "maxTimes": 3,
+            "maximumShow": 200
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "Activity_DartsDarts_NewOpen_31_36_Desc",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 1,
+        "MailId": "Mail_Activity_Darts",
+        "Primary": 1,
+        "Reset": 1,
+        "ServerCondition": "",
+        "ShowIndex": 95008,
+        "ShowTab": 2,
+        "Tag": "NEW",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-01-30 05:00:00",
+            "start": [
+                "2021-01-26 05:00:00",
+                "2021-01-30 05:00:00"
+            ]
+        },
+        "Title": "Activity_Darts_Name",
+        "Type": "MINIGAME",
+        "UI": "MINI_DARTS",
+        "Version": ""
+    },
     "Activity_Gashapon_20200727": {
         "ActivityConfig": {
             "Gashapon": "Gashapon_1st_01",
@@ -5513,6 +6194,7 @@
                 "Day7Activity"
             ],
             "ActivityItem": "IM_Boom",
+            "GetRewardClose": 1,
             "Icon": "tbzl_rk_1",
             "ModelId": "Model_ZTXChang_YYing",
             "RewardList": [
@@ -5729,6 +6411,126 @@
         "UI": "COOPERATEBOSS",
         "Version": ""
     },
+    "CooperateBoss_20210125": {
+        "ActivityConfig": {
+            "BossList": {
+                "CooperateBoss_SLMen": 1
+            },
+            "LV": [
+                "CooperateBoss_20210125_1",
+                "CooperateBoss_20210125_2",
+                "CooperateBoss_20210125_3",
+                "CooperateBoss_20210125_4",
+                "CooperateBoss_20210125_5",
+                "CooperateBoss_20210125_6",
+                "CooperateBoss_20210125_7",
+                "CooperateBoss_20210125_8",
+                "CooperateBoss_20210125_9",
+                "CooperateBoss_20210125_10",
+                "CooperateBoss_20210125_11",
+                "CooperateBoss_20210125_12",
+                "CooperateBoss_20210125_13",
+                "CooperateBoss_20210125_14",
+                "CooperateBoss_20210125_15",
+                "CooperateBoss_20210125_16",
+                "CooperateBoss_20210125_17",
+                "CooperateBoss_20210125_18",
+                "CooperateBoss_20210125_19",
+                "CooperateBoss_20210125_20",
+                "CooperateBoss_20210125_21",
+                "CooperateBoss_20210125_22",
+                "CooperateBoss_20210125_23",
+                "CooperateBoss_20210125_24",
+                "CooperateBoss_20210125_25",
+                "CooperateBoss_20210125_26",
+                "CooperateBoss_20210125_27",
+                "CooperateBoss_20210125_28",
+                "CooperateBoss_20210125_29",
+                "CooperateBoss_20210125_30",
+                "CooperateBoss_20210125_31",
+                "CooperateBoss_20210125_32",
+                "CooperateBoss_20210125_33",
+                "CooperateBoss_20210125_34",
+                "CooperateBoss_20210125_35",
+                "CooperateBoss_20210125_36",
+                "CooperateBoss_20210125_37",
+                "CooperateBoss_20210125_38",
+                "CooperateBoss_20210125_39",
+                "CooperateBoss_20210125_40",
+                "CooperateBoss_20210125_41",
+                "CooperateBoss_20210125_42",
+                "CooperateBoss_20210125_43",
+                "CooperateBoss_20210125_44",
+                "CooperateBoss_20210125_45",
+                "CooperateBoss_20210125_46",
+                "CooperateBoss_20210125_47",
+                "CooperateBoss_20210125_48",
+                "CooperateBoss_20210125_49",
+                "CooperateBoss_20210125_50",
+                "CooperateBoss_20210125_51",
+                "CooperateBoss_20210125_52",
+                "CooperateBoss_20210125_53",
+                "CooperateBoss_20210125_54",
+                "CooperateBoss_20210125_55",
+                "CooperateBoss_20210125_56",
+                "CooperateBoss_20210125_57",
+                "CooperateBoss_20210125_58",
+                "CooperateBoss_20210125_59",
+                "CooperateBoss_20210125_60",
+                "CooperateBoss_20210125_61",
+                "CooperateBoss_20210125_62",
+                "CooperateBoss_20210125_63",
+                "CooperateBoss_20210125_64",
+                "CooperateBoss_20210125_65",
+                "CooperateBoss_20210125_66",
+                "CooperateBoss_20210125_67",
+                "CooperateBoss_20210125_68",
+                "CooperateBoss_20210125_69",
+                "CooperateBoss_20210125_70"
+            ],
+            "Revelry": [
+                "IR_CooperateBoss_Revelry",
+                10
+            ],
+            "RevelryList": {
+                "CooperateBossMain_1": 7,
+                "CooperateBossMain_2": 1
+            },
+            "Tigger": [
+                "IR_CooperateBoss_Normal",
+                50
+            ],
+            "TiggerItem": "IR_CooperateBoss_Normal",
+            "TiggerItemAwaken": "IR_CooperateBoss_Awaken"
+        },
+        "ClientCondition": "",
+        "Desc": "COOPERATEBOSS_Desc",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 1,
+        "MailId": "Mail_Activity_CooperateBoss",
+        "Primary": 1,
+        "Reset": 1,
+        "ServerCondition": "",
+        "ShowIndex": 11,
+        "ShowTab": 1,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE_TOP",
+        "TimeFactor": {
+            "end": "2021-02-01 05:00:00",
+            "start": [
+                "2021-01-24 05:00:00",
+                "2021-02-01 05:00:00"
+            ]
+        },
+        "Title": "CooperateBoss_20200106_Name",
+        "Type": "COOPERATEBOSS",
+        "UI": "COOPERATEBOSS",
+        "Version": ""
+    },
     "CooperateBoss_Exchange_20200109": {
         "ActivityConfig": {
             "BubleDesc": [
@@ -5773,6 +6575,57 @@
             "start": [
                 "2021-01-09 05:00:00",
                 "2021-01-16 05:00:00"
+            ]
+        },
+        "Title": "CooperateBoss_Exchange_20200106_Name",
+        "Type": "EXCHANGE",
+        "UI": "Exchange",
+        "Version": ""
+    },
+    "CooperateBoss_Exchange_20210125": {
+        "ActivityConfig": {
+            "BubleDesc": [
+                "CooperateBoss_Exchange_BBD_1",
+                "CooperateBoss_Exchange_BBD_2",
+                "CooperateBoss_Exchange_BBD_3",
+                "CooperateBoss_Exchange_BBD_4",
+                "CooperateBoss_Exchange_BBD_5"
+            ],
+            "ModelId": "Model_CLMan",
+            "TaskBgUI": "gongdou_img_dh_bg",
+            "TaskTopUI": "gongdou_img_dh_bt",
+            "exchange": [
+                "CooperateBoss_Exchange_20210125_1",
+                "CooperateBoss_Exchange_20210125_2",
+                "CooperateBoss_Exchange_20210125_3",
+                "CooperateBoss_Exchange_20210125_4",
+                "CooperateBoss_Exchange_20210125_5",
+                "CooperateBoss_Exchange_20210125_6",
+                "CooperateBoss_Exchange_20210125_7",
+                "CooperateBoss_Exchange_20210125_8"
+            ]
+        },
+        "ClientCondition": "",
+        "Desc": "CooperateBoss_Exchange_20200106_Desc",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "gongdou_btn_xtdh",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 93,
+        "ShowTab": 1,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-02-01 05:00:00",
+            "start": [
+                "2021-01-25 05:00:00",
+                "2021-02-01 05:00:00"
             ]
         },
         "Title": "CooperateBoss_Exchange_20200106_Name",
@@ -6167,6 +7020,42 @@
         "UI": "",
         "Version": ""
     },
+    "DrawCard_1UP_12New_Activity": {
+        "ActivityConfig": {
+            "DRAW": "DrawCard_1UP_12New",
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_12New",
+            "VANISH": 0
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 209,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-02-01 05:00:00",
+            "start": [
+                "2021-01-25 05:00:00",
+                "2021-02-01 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "Version": ""
+    },
     "DrawCard_1UP_12_Activity": {
         "ActivityConfig": {
             "DRAW": "DrawCard_1UP_12",
@@ -6304,6 +7193,42 @@
             "start": [
                 "2021-01-16 05:00:00",
                 "2021-01-25 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "Version": ""
+    },
+    "DrawCard_1UP_15_Activity": {
+        "ActivityConfig": {
+            "DRAW": "DrawCard_1UP_15",
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_15",
+            "VANISH": 0
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 209,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-02-08 05:00:00",
+            "start": [
+                "2021-02-01 05:00:00",
+                "2021-02-08 05:00:00"
             ]
         },
         "Title": "",
@@ -7295,6 +8220,42 @@
         "UI": "",
         "Version": ""
     },
+    "DrawCard_LFErXSMLi_Activity": {
+        "ActivityConfig": {
+            "DRAW": "DrawCard_LFErXSMLi",
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_LFErXSMLi",
+            "VANISH": 0
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 205,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-02-08 05:00:00",
+            "start": [
+                "2021-02-01 05:00:00",
+                "2021-02-08 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "Version": ""
+    },
     "DrawCard_MGNaYBYa_Activity": {
         "ActivityConfig": {
             "DRAW": "DrawCard_MGNaYBYa",
@@ -7856,6 +8817,42 @@
         "UI": "",
         "Version": ""
     },
+    "DrawCard_WEDeYLSBai_New_Activity": {
+        "ActivityConfig": {
+            "DRAW": "DrawCard_WEDeYLSBai_New",
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_WEDeYLSBai_New",
+            "VANISH": 0
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 205,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-02-01 05:00:00",
+            "start": [
+                "2021-01-25 05:00:00",
+                "2021-02-01 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "Version": ""
+    },
     "DrawCard_XSMLiMGNa_Activity": {
         "ActivityConfig": {
             "DRAW": "DrawCard_XSMLiMGNa",
@@ -8254,6 +9251,56 @@
         "UI": "EightLogin",
         "Version": ""
     },
+    "EightDays_MusicFestival": {
+        "ActivityConfig": {
+            "ActivityDesc": "Activity_MusicFestival_Supply_Tips",
+            "GetRewardClose": 1,
+            "IsTimeClose": 1,
+            "Title": "Activity_MusicFestival_Supply_Title",
+            "showHero": "PGNNi",
+            "specailDay": [
+                7
+            ],
+            "task": [
+                "MusicFestival_Login_01",
+                "MusicFestival_Login_02",
+                "MusicFestival_Login_03",
+                "MusicFestival_Login_04",
+                "MusicFestival_Login_05",
+                "MusicFestival_Login_06",
+                "MusicFestival_Login_07"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "ActivityBlock_Login_Desc",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "musicfestival_btn_14qd_anniu",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 1,
+        "MailId": "Mail_EightDays_MusicFestival",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1120,
+        "ShowTab": 1,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-02-10 05:00:00",
+            "start": [
+                "2021-02-01 05:00:00",
+                "2021-02-10 05:00:00"
+            ]
+        },
+        "Title": "EightDays_MusicFestival_Name",
+        "Type": "TASK",
+        "UI": "Login_Music",
+        "Version": ""
+    },
     "EightDays_Snowflake": {
         "ActivityConfig": {
             "Day8BgUI": [
@@ -8574,6 +9621,57 @@
             "start": [
                 "2021-01-08 05:00:00",
                 "2021-01-18 05:00:00"
+            ]
+        },
+        "Title": "Login14_Title",
+        "Type": "TASK",
+        "UI": "Login",
+        "Version": ""
+    },
+    "Login8_20210125": {
+        "ActivityConfig": {
+            "GetRewardClose": 1,
+            "IsTimeClose": 1,
+            "showHero": "ATSheng",
+            "specailDay": [
+                4,
+                7,
+                8
+            ],
+            "task": [
+                "Login7_26",
+                "Login7_27",
+                "Login7_28",
+                "Login7_29",
+                "Login7_30",
+                "Login7_31",
+                "Login7_32",
+                "Login7_33"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "Desc": "Login14_Desc",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "hd_btn_ljdl_bg",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 2,
+        "ShowTab": 1,
+        "Tag": "WONDERFUL",
+        "Time": "RANGE_RESTART",
+        "TimeFactor": {
+            "duration": 8,
+            "start": [
+                "2021-01-25 05:00:00",
+                "2021-02-04 05:00:00"
             ]
         },
         "Title": "Login14_Title",
@@ -9244,6 +10342,53 @@
             "start": [
                 "2021-01-06 05:00:00",
                 "2021-01-13 05:00:00"
+            ]
+        },
+        "Title": "Questionnaire_Name",
+        "Type": "Questionnaire",
+        "UI": "Questionnaire",
+        "Version": ""
+    },
+    "Questionnaire_9": {
+        "ActivityConfig": {
+            "DesPng": "activityQuestionDes",
+            "Desc": "Questionnaire_UI_Desc1",
+            "IsTimeClose": 1,
+            "RoleModel": "Model_HSheng",
+            "Title": "Questionnaire_UI_Title",
+            "URL": {
+                "de": "https://surveys.games.wanmei.com/survey/BBZFBr?",
+                "en": "https://surveys.games.wanmei.com/survey/BBZFBr?",
+                "fr": "https://surveys.games.wanmei.com/survey/BBZFBr?",
+                "pt": "https://surveys.games.wanmei.com/survey/BBZFBr?",
+                "th": "https://surveys.games.wanmei.com/survey/BBZFBr?"
+            },
+            "reward": "QuestionReward"
+        },
+        "ClientCondition": {
+            "LEVEL": 30,
+            "REGISTER": 22
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "hd_btn_dcwj",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 99999,
+        "ShowTab": 1,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-01-29 05:00:00",
+            "start": [
+                "2021-01-22 05:00:00",
+                "2021-01-29 05:00:00"
             ]
         },
         "Title": "Questionnaire_Name",

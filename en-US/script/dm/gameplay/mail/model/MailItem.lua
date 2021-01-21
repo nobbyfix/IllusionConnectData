@@ -54,6 +54,12 @@ MailItem:has("_showIcon", {
 MailItem:has("_receiveMailItems", {
 	is = "rw"
 })
+MailItem:has("_mailType", {
+	is = "rw"
+})
+MailItem:has("_version", {
+	is = "rw"
+})
 
 function MailItem:initialize()
 	super.initialize(self)
@@ -74,6 +80,8 @@ function MailItem:initialize()
 	self._quickGet = 0
 	self._showIcon = ""
 	self._receiveMailItems = true
+	self._mailType = MailType.kNormal
+	self._version = {}
 end
 
 function MailItem:dispose()
@@ -126,6 +134,14 @@ function MailItem:synchronizeModel(data)
 
 	if not self:isItemMail() then
 		self._receiveMailItems = true
+	end
+
+	if data.mailType then
+		self._mailType = data.mailType
+	end
+
+	if data.version then
+		self._version = data.version
 	end
 
 	table.sort(self._items, function (a, b)

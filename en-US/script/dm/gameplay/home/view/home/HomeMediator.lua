@@ -45,6 +45,9 @@ HomeMediator:has("_settingSystem", {
 HomeMediator:has("_passSystem", {
 	is = "r"
 }):injectWith("PassSystem")
+HomeMediator:has("_dreamSystem", {
+	is = "r"
+}):injectWith("DreamChallengeSystem")
 
 local kBtnHandlers = {
 	unfoldMenuBtn = {
@@ -254,6 +257,10 @@ function HomeMediator:resumeWithData(data)
 
 	if not self._webPayTimer then
 		self:enableWebPayListTimer()
+	end
+
+	if self._dreamActivityTips then
+		self._dreamActivityTips:setVisible(false)
 	end
 
 	self._touchTimes = 0
@@ -759,7 +766,7 @@ function HomeMediator:fastGetRes()
 end
 
 function HomeMediator:enableAccelerator()
-	if device.platform == "mac" then
+	if device.platform == "mac" or device.platform == "windows" then
 		return
 	end
 
@@ -843,6 +850,13 @@ function HomeMediator:initAnim()
 		mainStageNode:getChildByName("mRedSprite"):runAction(cc.Sequence:create(cc.DelayTime:create(0.5), cc.FadeIn:create(0.3)))
 		nodes[1]:getChildByName("mRedSprite"):runAction(cc.Sequence:create(cc.DelayTime:create(0.5), cc.FadeIn:create(0.3)))
 	end)
+
+	local dreamActivity = nodes[3]:getChildByFullName("dreamActivity")
+
+	if dreamActivity then
+		dreamActivity:setVisible(false)
+	end
+
 	mainMovieClip:addCallbackAtFrame(12, function ()
 		local mc1 = nodes[2].movieClip
 
@@ -853,6 +867,33 @@ function HomeMediator:initAnim()
 
 		mc2:gotoAndPlay(0)
 		nodes[3]:getChildByName("mRedSprite"):runAction(cc.Sequence:create(cc.DelayTime:create(0.5), cc.FadeIn:create(0.3)))
+		delayCallByTime(300, function ()
+			if self._dreamSystem:checkActivityDreamChallengeOpen() then
+				local dreamActivity = nodes[3]:getChildByFullName("dreamActivity")
+
+				if self._dreamActivityTips then
+					dreamActivity:setVisible(true)
+					dreamActivity:setOpacity(0)
+					self._dreamActivityTips:runAction(cc.FadeIn:create(0.3))
+				else
+					local icon = cc.Sprite:createWithSpriteFrameName("zjm_tfsjrk_bg.png")
+					local label = cc.Label:createWithTTF(Strings:get("DreamChallenge_Entry_Tip01"), TTF_FONT_FZYH_R, 16)
+
+					label:setOverflow(cc.LabelOverflow.SHRINK)
+					label:setDimensions(120, 90)
+					label:enableOutline(cc.c4b(3, 1, 4, 255), 1)
+					label:setTextColor(cc.c3b(255, 242, 155))
+					label:addTo(icon):center(icon:getContentSize())
+					label:setAlignment(cc.TEXT_ALIGNMENT_CENTER, cc.TEXT_ALIGNMENT_CENTER)
+					label:setOverflow(cc.LabelOverflow.SHRINK)
+					icon:setName("dreamActivity")
+					icon:setPositionY(46)
+					icon:addTo(nodes[3])
+
+					self._dreamActivityTips = icon
+				end
+			end
+		end)
 
 		local mc3 = nodes[4].movieClip
 
@@ -1229,6 +1270,10 @@ function HomeMediator:initWidget()
 	performWithDelay(self:getView(), function ()
 		self._navigation._initDone = true
 	end, 0.1)
+
+	if self._dreamActivityTips then
+		self._dreamActivityTips:setVisible(false)
+	end
 end
 
 function HomeMediator:setTextAnim()
@@ -3117,8 +3162,9 @@ function HomeMediator:challengeRedPoint()
 	local spStageSystem = self:getInjector():getInstance(SpStageSystem)
 	local stagePracticeSystem = self:getInjector():getInstance(StagePracticeSystem)
 	local crusadeSystem = self:getInjector():getInstance(CrusadeSystem)
+	local dreamSystem = self:getInjector():getInstance(DreamChallengeSystem)
 
-	return spStageSystem:checkIsShowRedPoint() or stagePracticeSystem:checkAwardRed() or crusadeSystem:canCrusadeSweep() or crusadeSystem:crusadeRedPointState()
+	return spStageSystem:checkIsShowRedPoint() or stagePracticeSystem:checkAwardRed() or crusadeSystem:canCrusadeSweep() or dreamSystem:checkIsShowRedPoint()
 end
 
 function HomeMediator:onMainChapterRedPoint()
@@ -3285,6 +3331,7 @@ function HomeMediator:checkExtraRedPoint()
 	local miniGameBtn = self:getView():getChildByFullName("extraActBtn.btn_4")
 
 	miniGameBtn:setVisible(false)
+	miniGameBtn:posite(posX - 95, posY - 110)
 
 	if activity then
 		miniGameBtn:setVisible(self._activitySystem:isActivityOpen(activity:getId()) and self._activitySystem:checkConditionWithId(activity:getId()) and CommonUtils.GetSwitch("fn_MiniGame_Darts"))
@@ -3303,10 +3350,6 @@ function HomeMediator:checkExtraRedPoint()
 		local miniGameRedPoint = miniGameBtn:getChildByName("redPoint")
 
 		miniGameRedPoint:setVisible(self._activitySystem:hasRedPointForActivity(activity:getId()))
-
-		if miniGameBtn:isVisible() then
-			extraBtns[#extraBtns + 1] = miniGameBtn
-		end
 	end
 
 	for i, btn in pairs(extraBtns) do
@@ -3514,33 +3557,33 @@ function HomeMediator:setComplexActivityEntry()
 		},
 		[ActivityType_UI.kActivityWxh] = {
 			anim = "wuxiurukou_wuxiurukou",
-			aimpos = cc.p(-34, 125),
-			redPointFuncx = self._activitySystem.hasRedPointForActivity
+			aimpos = cc.p(-34, 125)
 		},
 		[ActivityType_UI.kActivityBlockZuoHe] = {
 			anim = "anniu_rukouyemian",
-			aimpos = cc.p(51, 40),
-			redPointFuncx = self._activitySystem.hasRedPointForActivity
+			aimpos = cc.p(51, 40)
 		},
 		[ActivityType_UI.kActivityBlock] = {
 			img = "hd_rk_fhj.png",
-			aimpos = cc.p(50, 43),
-			redPointFuncx = self._activitySystem.hasRedPointForActivity
+			imgpos = cc.p(50, 43)
 		},
 		[ActivityType_UI.KActivityBlockSnowflake] = {
 			anim = "xuehua-CX_yongbuxiaorongrukou",
-			aimpos = cc.p(50, 43),
-			redPointFuncx = self._activitySystem.hasRedPointForActivity
+			aimpos = cc.p(50, 43)
 		},
 		[ActivityType_UI.KActivityBlockHoliday] = {
 			anim = "rukou_newyearshop",
-			aimpos = cc.p(50, 43),
-			redPointFuncx = self._activitySystem.hasRedPointForActivity
+			aimpos = cc.p(50, 43)
 		},
 		[ActivityType_UI.KActivityBlockDetetive] = {
 			anim = "biao_timeeff",
-			aimpos = cc.p(50, 43),
-			redPointFuncx = self._activitySystem.hasRedPointForActivity
+			aimpos = cc.p(50, 43)
+		},
+		[ActivityType_UI.KActivityBlockMusic] = {
+			img = "musicfestival_btn_zjm_rukou.png",
+			anim = "rukou-CX_yinyuejierukou",
+			aimpos = cc.p(55, 43),
+			imgpos = cc.p(58, 43)
 		}
 	}
 	local extraActBtn = self._rightFuncLayout:getChildByFullName("extraActBtn")
@@ -3580,14 +3623,19 @@ function HomeMediator:setComplexActivityEntry()
 			end
 		})
 
-		local show = nil
+		if cfg.img then
+			local img = ccui.ImageView:create(cfg.img, ccui.TextureResType.plistType)
+
+			img:setPosition(cfg.imgpos)
+			img:addTo(self._btns[ui])
+		end
 
 		if cfg.anim then
-			show = cc.MovieClip:create(cfg.anim)
+			local anim = cc.MovieClip:create(cfg.anim)
 
-			show:gotoAndPlay(1)
-		elseif cfg.img then
-			show = ccui.ImageView:create(cfg.img, ccui.TextureResType.plistType)
+			anim:gotoAndPlay(1)
+			anim:setPosition(cfg.aimpos)
+			anim:addTo(self._btns[ui])
 		end
 
 		if ui == ActivityType_UI.KActivityBlockDetetive then
@@ -3608,11 +3656,6 @@ function HomeMediator:setComplexActivityEntry()
 				label:setPosition(cc.p(v.pos[1], v.pos[2]))
 				self._btns[ui]:addChild(label, 1)
 			end
-		end
-
-		if show then
-			show:addTo(self._btns[ui])
-			show:setPosition(cfg.aimpos)
 		end
 	end
 
@@ -3635,7 +3678,9 @@ function HomeMediator:setComplexActivityEntry()
 			self._btns[ui]:setVisible(self._activitySystem:checkConditionWithId(activityId))
 
 			if self._btns[ui]:isVisible() then
-				self._btns[ui]:getChildByName("redPoint"):setVisible(cfg.redPointFuncx(self._activitySystem, activityId))
+				local redFunc = cfg.redPointFuncx or self._activitySystem.hasRedPointForActivity
+
+				self._btns[ui]:getChildByName("redPoint"):setVisible(redFunc(self._activitySystem, activityId))
 				extraActBtn:setVisible(true)
 			end
 

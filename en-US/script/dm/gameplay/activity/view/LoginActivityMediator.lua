@@ -88,6 +88,51 @@ local actUIConfig = {
 			"ywzjdzx_btn_14qd_ld_xz.png",
 			"ywzjdzx_btn_14qd_ld_ylq.png"
 		}
+	},
+	Login_Music = {
+		bgPath = "asset/scene/musicfestival_img_14qd_ljdl.jpg",
+		cellTitle = "musicfestival_btn_14qd_ldi.png",
+		title = {
+			img = "musicfestival_img_14qd_biaoti.png",
+			textFontSize = 36,
+			size = cc.size(617, 139),
+			offset = {
+				66,
+				-14
+			},
+			textOffset = {
+				-2,
+				-14
+			},
+			color = cc.c3b(255, 255, 255),
+			textOutline = {
+				size = 1,
+				color = cc.c4b(0, 0, 0, 255)
+			},
+			textshadow = {
+				width = 1,
+				color = cc.c4b(0, 0, 0, 90),
+				size = cc.size(0, -2)
+			}
+		},
+		desc = {
+			color = cc.c3b(228, 225, 175),
+			offset = {
+				-30,
+				17
+			},
+			textOutline = {
+				size = 1,
+				color = cc.c4b(0, 0, 0, 255)
+			}
+		},
+		cellBg = {
+			"musicfestival_btn_14qd_ldj.png",
+			"musicfestival_btn_14qd_ld_j.png",
+			"musicfestival_btn_14qd_ld_wxz.png",
+			"musicfestival_btn_14qd_ld_xz.png",
+			"musicfestival_btn_14qd_ld_ylq.png"
+		}
 	}
 }
 local lightColor = cc.c3b(180, 180, 180)

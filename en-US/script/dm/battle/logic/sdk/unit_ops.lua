@@ -127,6 +127,20 @@ function exports.Transport(env, location)
 	end
 end
 
+function exports.transportExt(env, actor, location, duration, speed)
+	if location == nil then
+		return nil
+	end
+
+	local actor = actor
+	local formationSystem = env.global["$FormationSystem"]
+	local result = formationSystem:transportExt(actor, location, duration, speed)
+
+	if result then
+		return math.abs(result)
+	end
+end
+
 function exports.GetFigureState(env, target)
 	return target and target:getFigureState()
 end

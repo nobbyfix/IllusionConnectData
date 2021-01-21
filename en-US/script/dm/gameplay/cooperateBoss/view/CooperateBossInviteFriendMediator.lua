@@ -1174,15 +1174,15 @@ function CooperateBossInviteFriendMediator:onClickHead(data, sender)
 			headFrame = data:getHeadFrame(),
 			rid = data:getRid(),
 			level = data:getLevel(),
-			nickname = data:getNickName(),
-			vipLevel = data:getVipLevel(),
+			nickname = self._currenfFriendShowType == kFriendShowType.kFriend and data:getNickName() or data:getName(),
+			vipLevel = self._currenfFriendShowType == kFriendShowType.kFriend and data:getVipLevel() or data:getVip(),
 			combat = data:getCombat(),
 			slogan = data:getSlogan(),
 			master = data:getMaster(),
 			heroes = data:getHeroes(),
-			clubName = data:getUnionName(),
-			online = data:getOnline() == ClubMemberOnLineState.kOnline,
-			lastOfflineTime = data:getLastOfflineTime(),
+			clubName = self._currenfFriendShowType == kFriendShowType.kFriend and data:getUnionName() or self._clubSystem:getName(),
+			online = self._currenfFriendShowType == kFriendShowType.kFriend and data:getOnline() == ClubMemberOnLineState.kOnline or data:getIsOnline() == ClubMemberOnLineState.kOnline,
+			lastOfflineTime = self._currenfFriendShowType == kFriendShowType.kFriend and data:getLastOfflineTime() or data:getLastOnlineTime(),
 			isFriend = response.isFriend,
 			close = response.close,
 			gender = data:getGender(),
@@ -1289,6 +1289,10 @@ function CooperateBossInviteFriendMediator:refreshFriendView()
 	self._friendList = {}
 
 	self._friendSystem:requestFriendsMainInfo(function ()
+		if DisposableObject:isDisposed(self) or DisposableObject:isDisposed(self:getView()) then
+			return
+		end
+
 		self._friendModel = self._friendSystem:getFriendModel()
 		self._friendList = self._friendModel:getOnlineFriendList(kFriendType.kGame)
 

@@ -51,7 +51,9 @@ function MailMediator:onRegister()
 	self:bindWidget("mailpanel.button_one_key_receive", TwoLevelMainButton, {
 		ignoreAddKerning = true
 	})
-	self:bindWidget("mailpanel.bg_right.button_receive", TwoLevelViceButton, {})
+
+	self._receiveBtnWidget = self:bindWidget("mailpanel.bg_right.button_receive", TwoLevelViceButton, {})
+
 	self:mapEventListeners()
 end
 
@@ -345,6 +347,12 @@ function MailMediator:refreshContent(idx)
 		end
 	end
 
+	if self._mailSystem:isNeedUpdateVersion(mailInfo) then
+		self._receiveBtnWidget:setButtonName(Strings:get("Task_UI7"))
+	else
+		self._receiveBtnWidget:setButtonName(Strings:get("Task_UI11"))
+	end
+
 	self._remainTime:setVisible(true)
 
 	local expireDate = mailInfo:getExpire()
@@ -544,6 +552,12 @@ end
 
 function MailMediator:onClickReceive(sender, eventType, oppoRecord)
 	local mailInfo = self._mailSystem:getMailByIndex(kSelectedMail)
+
+	if self._mailSystem:isNeedUpdateVersion(mailInfo) then
+		PlatformHelper:thirdUpdate()
+
+		return
+	end
 
 	if mailInfo._expireAfterRead == 0 then
 		self._mailSystem:setReceiveExpireMail(true)

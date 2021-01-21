@@ -4801,7 +4801,7 @@
         "AccumulateTimes": 1,
         "AfterFinish": 1,
         "ClientCondition": {
-            "LEVEL": 80,
+            "LEVEL": 1,
             "VIP": 0
         },
         "Condition": [
@@ -4812,18 +4812,18 @@
                 ],
                 "params": [
                     "M16",
-                    "M16S20"
+                    "M16S15"
                 ]
             }
         ],
         "Desc": "",
-        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M16&pointId=M16S20&stageType=NORMAL",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M16&stageType=NORMAL",
         "IsDailyRestart": 0,
         "IsStartTask": 1,
         "Name": "St_M16_01_Name",
         "OrderNum": 51,
         "Prepose": [
-            "St_M16_05"
+            "St_M15_05"
         ],
         "Reward": "St_M16_01_Reward",
         "TaskIcon": "",
@@ -4837,7 +4837,7 @@
         "AccumulateTimes": 1,
         "AfterFinish": 1,
         "ClientCondition": {
-            "LEVEL": 80,
+            "LEVEL": 1,
             "VIP": 0
         },
         "Condition": [
@@ -4853,7 +4853,7 @@
             }
         ],
         "Desc": "",
-        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M16&pointId=M16S30&stageType=NORMAL",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M16&stageType=NORMAL",
         "IsDailyRestart": 0,
         "IsStartTask": 1,
         "Name": "St_M16_02_Name",
@@ -4873,7 +4873,7 @@
         "AccumulateTimes": 1,
         "AfterFinish": 1,
         "ClientCondition": {
-            "LEVEL": 80,
+            "LEVEL": 1,
             "VIP": 0
         },
         "Condition": [
@@ -4884,12 +4884,12 @@
                 ],
                 "params": [
                     "M16",
-                    "M16S40"
+                    "M16S45"
                 ]
             }
         ],
         "Desc": "",
-        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M16&pointId=M16S40&stageType=NORMAL",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M16&stageType=NORMAL",
         "IsDailyRestart": 0,
         "IsStartTask": 1,
         "Name": "St_M16_03_Name",
@@ -4909,7 +4909,7 @@
         "AccumulateTimes": 1,
         "AfterFinish": 1,
         "ClientCondition": {
-            "LEVEL": 80,
+            "LEVEL": 1,
             "VIP": 0
         },
         "Condition": [
@@ -4944,7 +4944,7 @@
         "AccumulateTimes": 1,
         "AfterFinish": 1,
         "ClientCondition": {
-            "LEVEL": 80,
+            "LEVEL": 1,
             "VIP": 0
         },
         "Condition": [
@@ -4960,7 +4960,7 @@
             }
         ],
         "Desc": "",
-        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M16&pointId=M16S60&stageType=NORMAL",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M16&stageType=NORMAL",
         "IsDailyRestart": 0,
         "IsStartTask": 1,
         "Name": "St_M16_05_Name",
@@ -4969,6 +4969,150 @@
             "St_M16_04"
         ],
         "Reward": "St_M16_05_Reward",
+        "TaskIcon": "",
+        "TaskType": 5,
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        }
+    },
+    "St_M17_01": {
+        "AccumulateTimes": 1,
+        "AfterFinish": 1,
+        "ClientCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        },
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "M17",
+                    "M17S20"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M17&stageType=NORMAL",
+        "IsDailyRestart": 0,
+        "IsStartTask": 1,
+        "Name": "St_M17_01_Name",
+        "OrderNum": 55,
+        "Prepose": [
+            "St_M16_05"
+        ],
+        "Reward": "St_M17_01_Reward",
+        "TaskIcon": "",
+        "TaskType": 5,
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        }
+    },
+    "St_M17_02": {
+        "AccumulateTimes": 1,
+        "AfterFinish": 1,
+        "ClientCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        },
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "M17",
+                    "M17S40"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M17&stageType=NORMAL",
+        "IsDailyRestart": 0,
+        "IsStartTask": 1,
+        "Name": "St_M17_02_Name",
+        "OrderNum": 56,
+        "Prepose": [
+            "St_M17_01"
+        ],
+        "Reward": "St_M17_02_Reward",
+        "TaskIcon": "",
+        "TaskType": 5,
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        }
+    },
+    "St_M17_03": {
+        "AccumulateTimes": 1,
+        "AfterFinish": 1,
+        "ClientCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        },
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "M17",
+                    "M17S60"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M17&stageType=NORMAL",
+        "IsDailyRestart": 0,
+        "IsStartTask": 1,
+        "Name": "St_M17_03_Name",
+        "OrderNum": 57,
+        "Prepose": [
+            "St_M17_02"
+        ],
+        "Reward": "St_M17_03_Reward",
+        "TaskIcon": "",
+        "TaskType": 5,
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        }
+    },
+    "St_M17_04": {
+        "AccumulateTimes": 1,
+        "AfterFinish": 1,
+        "ClientCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        },
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "M17",
+                    "M17S70"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "view://CommonStageMainView&viewType=push&chapterId=M17&stageType=NORMAL",
+        "IsDailyRestart": 0,
+        "IsStartTask": 1,
+        "Name": "St_M17_04_Name",
+        "OrderNum": 58,
+        "Prepose": [
+            "St_M17_03"
+        ],
+        "Reward": "St_M17_04_Reward",
         "TaskIcon": "",
         "TaskType": 5,
         "UnlockCondition": {

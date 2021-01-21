@@ -2466,6 +2466,12 @@ function all.ApplyHPRecovery_ResultCheck(_env, actor, target, heal)
 		end
 	end
 
+	local BeCuredRage = global.SpecialPropGetter(_env, "BeCuredRage")(_env, target)
+
+	if BeCuredRage and BeCuredRage ~= 0 then
+		global.ApplyRPRecovery(_env, target, BeCuredRage)
+	end
+
 	return global.ApplyHPRecovery(_env, target, heal)
 end
 
@@ -2541,6 +2547,12 @@ function all.ApplyHPRecoveryN(_env, n, total, target, heals, actor)
 					buffeft1
 				})
 			end
+		end
+
+		local BeCuredRage = global.SpecialPropGetter(_env, "BeCuredRage")(_env, target)
+
+		if BeCuredRage and BeCuredRage ~= 0 then
+			global.ApplyRPRecovery(_env, target, BeCuredRage)
 		end
 	end
 

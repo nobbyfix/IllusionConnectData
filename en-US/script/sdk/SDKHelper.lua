@@ -43,6 +43,7 @@ REPORT_TYPE = {
 local _noSdkSourceTable = {
 	android = "dpstorm_android",
 	mac = "dpstorm_ios",
+	windows = "dpstorm_ios",
 	ios = "dpstorm_ios"
 }
 
@@ -188,7 +189,7 @@ function SDKHelper:getStatisticsBaseInfo()
 		sdkSource = _noSdkSourceTable[tostring(device.platform)]
 	end
 
-	if device.platform == "mac" then
+	if device.platform == "mac" or device.platform == "windows" then
 		return {
 			atype = 0,
 			did = "",

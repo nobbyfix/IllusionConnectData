@@ -404,6 +404,162 @@
         "Times": 30,
         "isRemind": 1
     },
+    "ActivityBlock_MusicFestival_Exchange_1": {
+        "Cost": [
+            {
+                "amount": 3000,
+                "code": "IM_MusicFestival_ExchangeItem",
+                "type": 2
+            }
+        ],
+        "Order": "",
+        "Target": "Activity_MusicFestival_Exchange_1",
+        "Times": 1,
+        "isRemind": 1
+    },
+    "ActivityBlock_MusicFestival_Exchange_10": {
+        "Cost": [
+            {
+                "amount": 20,
+                "code": "IM_MusicFestival_ExchangeItem",
+                "type": 2
+            }
+        ],
+        "Order": "",
+        "Target": "Activity_MusicFestival_Exchange_10",
+        "Times": 500,
+        "isRemind": 0
+    },
+    "ActivityBlock_MusicFestival_Exchange_11": {
+        "Cost": [
+            {
+                "amount": 20,
+                "code": "IM_MusicFestival_ExchangeItem",
+                "type": 2
+            }
+        ],
+        "Order": "",
+        "Target": "Activity_MusicFestival_Exchange_11",
+        "Times": 500,
+        "isRemind": 0
+    },
+    "ActivityBlock_MusicFestival_Exchange_12": {
+        "Cost": [
+            {
+                "amount": 20,
+                "code": "IM_MusicFestival_ExchangeItem",
+                "type": 2
+            }
+        ],
+        "Order": "",
+        "Target": "Activity_MusicFestival_Exchange_12",
+        "Times": 500,
+        "isRemind": 0
+    },
+    "ActivityBlock_MusicFestival_Exchange_2": {
+        "Cost": [
+            {
+                "amount": 800,
+                "code": "IM_MusicFestival_ExchangeItem",
+                "type": 2
+            }
+        ],
+        "Order": "",
+        "Target": "Activity_MusicFestival_Exchange_2",
+        "Times": 10,
+        "isRemind": 1
+    },
+    "ActivityBlock_MusicFestival_Exchange_3": {
+        "Cost": [
+            {
+                "amount": 200,
+                "code": "IM_MusicFestival_ExchangeItem",
+                "type": 2
+            }
+        ],
+        "Order": "",
+        "Target": "Activity_MusicFestival_Exchange_3",
+        "Times": 60,
+        "isRemind": 1
+    },
+    "ActivityBlock_MusicFestival_Exchange_4": {
+        "Cost": [
+            {
+                "amount": 350,
+                "code": "IM_MusicFestival_ExchangeItem",
+                "type": 2
+            }
+        ],
+        "Order": "",
+        "Target": "Activity_MusicFestival_Exchange_4",
+        "Times": 10,
+        "isRemind": 0
+    },
+    "ActivityBlock_MusicFestival_Exchange_5": {
+        "Cost": [
+            {
+                "amount": 5000,
+                "code": "IM_MusicFestival_ExchangeItem",
+                "type": 2
+            }
+        ],
+        "Order": "",
+        "Target": "Activity_MusicFestival_Exchange_5",
+        "Times": 1,
+        "isRemind": 0
+    },
+    "ActivityBlock_MusicFestival_Exchange_6": {
+        "Cost": [
+            {
+                "amount": 5000,
+                "code": "IM_MusicFestival_ExchangeItem",
+                "type": 2
+            }
+        ],
+        "Order": "",
+        "Target": "Activity_MusicFestival_Exchange_6",
+        "Times": 1,
+        "isRemind": 0
+    },
+    "ActivityBlock_MusicFestival_Exchange_7": {
+        "Cost": [
+            {
+                "amount": 4000,
+                "code": "IM_MusicFestival_ExchangeItem",
+                "type": 2
+            }
+        ],
+        "Order": "",
+        "Target": "Activity_MusicFestival_Exchange_7",
+        "Times": 1,
+        "isRemind": 0
+    },
+    "ActivityBlock_MusicFestival_Exchange_8": {
+        "Cost": [
+            {
+                "amount": 4000,
+                "code": "IM_MusicFestival_ExchangeItem",
+                "type": 2
+            }
+        ],
+        "Order": "",
+        "Target": "Activity_MusicFestival_Exchange_8",
+        "Times": 1,
+        "isRemind": 0
+    },
+    "ActivityBlock_MusicFestival_Exchange_9": {
+        "Cost": [
+            {
+                "amount": 300,
+                "code": "IM_MusicFestival_ExchangeItem",
+                "type": 2
+            }
+        ],
+        "Order": "",
+        "Target": "Activity_MusicFestival_Exchange_9",
+        "Times": 20,
+        "isRemind": 0
+    },
     "ActivityExchange1": {
         "Cost": [
             {
@@ -668,6 +824,110 @@
         "Target": "CooperateBoss_Exchange_20200106_8",
         "Times": 999,
         "isRemind": 8
+    },
+    "CooperateBoss_Exchange_20210125_1": {
+        "Cost": [
+            {
+                "amount": 4500,
+                "code": "IR_CooperateBoss",
+                "type": 2
+            }
+        ],
+        "Order": 1,
+        "Target": "CooperateBoss_Exchange_20210125_1",
+        "Times": 1,
+        "isRemind": 1
+    },
+    "CooperateBoss_Exchange_20210125_2": {
+        "Cost": [
+            {
+                "amount": 600,
+                "code": "IR_CooperateBoss",
+                "type": 2
+            }
+        ],
+        "Order": 2,
+        "Target": "CooperateBoss_Exchange_20210125_2",
+        "Times": 3,
+        "isRemind": 1
+    },
+    "CooperateBoss_Exchange_20210125_3": {
+        "Cost": [
+            {
+                "amount": 300,
+                "code": "IR_CooperateBoss",
+                "type": 2
+            }
+        ],
+        "Order": 3,
+        "Target": "CooperateBoss_Exchange_20210125_3",
+        "Times": 10,
+        "isRemind": 1
+    },
+    "CooperateBoss_Exchange_20210125_4": {
+        "Cost": [
+            {
+                "amount": 300,
+                "code": "IR_CooperateBoss",
+                "type": 2
+            }
+        ],
+        "Order": 4,
+        "Target": "CooperateBoss_Exchange_20210125_4",
+        "Times": 60,
+        "isRemind": 1
+    },
+    "CooperateBoss_Exchange_20210125_5": {
+        "Cost": [
+            {
+                "amount": 500,
+                "code": "IR_CooperateBoss",
+                "type": 2
+            }
+        ],
+        "Order": 5,
+        "Target": "CooperateBoss_Exchange_20210125_5",
+        "Times": 50,
+        "isRemind": 1
+    },
+    "CooperateBoss_Exchange_20210125_6": {
+        "Cost": [
+            {
+                "amount": 60,
+                "code": "IR_CooperateBoss",
+                "type": 2
+            }
+        ],
+        "Order": 6,
+        "Target": "CooperateBoss_Exchange_20210125_6",
+        "Times": 80,
+        "isRemind": 1
+    },
+    "CooperateBoss_Exchange_20210125_7": {
+        "Cost": [
+            {
+                "amount": 10,
+                "code": "IR_CooperateBoss",
+                "type": 2
+            }
+        ],
+        "Order": 7,
+        "Target": "CooperateBoss_Exchange_20210125_7",
+        "Times": 99999,
+        "isRemind": 1
+    },
+    "CooperateBoss_Exchange_20210125_8": {
+        "Cost": [
+            {
+                "amount": 10,
+                "code": "IR_CooperateBoss",
+                "type": 2
+            }
+        ],
+        "Order": 8,
+        "Target": "CooperateBoss_Exchange_20210125_8",
+        "Times": 99999,
+        "isRemind": 1
     },
     "Exchange_NFDDi_20180901": {
         "Cost": [
@@ -1095,6 +1355,162 @@
         ],
         "Order": 9,
         "Target": "HighPointGood_20210107_9_Reward",
+        "Times": 5,
+        "isRemind": 0
+    },
+    "HighPointGood_20210201_1": {
+        "Cost": [
+            {
+                "amount": 400,
+                "code": "IGM_BP_HighPoint",
+                "type": 2
+            }
+        ],
+        "Order": 1,
+        "Target": "HighPointGood_20210201_1_Reward",
+        "Times": 1,
+        "isRemind": 1
+    },
+    "HighPointGood_20210201_10": {
+        "Cost": [
+            {
+                "amount": 3,
+                "code": "IGM_BP_HighPoint",
+                "type": 2
+            }
+        ],
+        "Order": 10,
+        "Target": "HighPointGood_20210201_10_Reward",
+        "Times": 100,
+        "isRemind": 0
+    },
+    "HighPointGood_20210201_11": {
+        "Cost": [
+            {
+                "amount": 3,
+                "code": "IGM_BP_HighPoint",
+                "type": 2
+            }
+        ],
+        "Order": 11,
+        "Target": "HighPointGood_20210201_11_Reward",
+        "Times": 100,
+        "isRemind": 0
+    },
+    "HighPointGood_20210201_12": {
+        "Cost": [
+            {
+                "amount": 3,
+                "code": "IGM_BP_HighPoint",
+                "type": 2
+            }
+        ],
+        "Order": 12,
+        "Target": "HighPointGood_20210201_12_Reward",
+        "Times": 100,
+        "isRemind": 0
+    },
+    "HighPointGood_20210201_2": {
+        "Cost": [
+            {
+                "amount": 400,
+                "code": "IGM_BP_HighPoint",
+                "type": 2
+            }
+        ],
+        "Order": 2,
+        "Target": "HighPointGood_20210201_2_Reward",
+        "Times": 1,
+        "isRemind": 1
+    },
+    "HighPointGood_20210201_3": {
+        "Cost": [
+            {
+                "amount": 150,
+                "code": "IGM_BP_HighPoint",
+                "type": 2
+            }
+        ],
+        "Order": 3,
+        "Target": "HighPointGood_20210201_3_Reward",
+        "Times": 1,
+        "isRemind": 1
+    },
+    "HighPointGood_20210201_4": {
+        "Cost": [
+            {
+                "amount": 150,
+                "code": "IGM_BP_HighPoint",
+                "type": 2
+            }
+        ],
+        "Order": 4,
+        "Target": "HighPointGood_20210201_4_Reward",
+        "Times": 1,
+        "isRemind": 1
+    },
+    "HighPointGood_20210201_5": {
+        "Cost": [
+            {
+                "amount": 150,
+                "code": "IGM_BP_HighPoint",
+                "type": 2
+            }
+        ],
+        "Order": 5,
+        "Target": "HighPointGood_20210201_5_Reward",
+        "Times": 1,
+        "isRemind": 1
+    },
+    "HighPointGood_20210201_6": {
+        "Cost": [
+            {
+                "amount": 6,
+                "code": "IGM_BP_HighPoint",
+                "type": 2
+            }
+        ],
+        "Order": 6,
+        "Target": "HighPointGood_20210201_6_Reward",
+        "Times": 60,
+        "isRemind": 0
+    },
+    "HighPointGood_20210201_7": {
+        "Cost": [
+            {
+                "amount": 5,
+                "code": "IGM_BP_HighPoint",
+                "type": 2
+            }
+        ],
+        "Order": 7,
+        "Target": "HighPointGood_20210201_7_Reward",
+        "Times": 30,
+        "isRemind": 0
+    },
+    "HighPointGood_20210201_8": {
+        "Cost": [
+            {
+                "amount": 30,
+                "code": "IGM_BP_HighPoint",
+                "type": 2
+            }
+        ],
+        "Order": 8,
+        "Target": "HighPointGood_20210201_8_Reward",
+        "Times": 2,
+        "isRemind": 0
+    },
+    "HighPointGood_20210201_9": {
+        "Cost": [
+            {
+                "amount": 10,
+                "code": "IGM_BP_HighPoint",
+                "type": 2
+            }
+        ],
+        "Order": 9,
+        "Target": "HighPointGood_20210201_9_Reward",
         "Times": 5,
         "isRemind": 0
     },

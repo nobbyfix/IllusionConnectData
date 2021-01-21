@@ -481,7 +481,8 @@
             "tower",
             "crusade",
             "actstage",
-            "club_battle"
+            "club_battle",
+            "dream_battle"
         ]
     },
     "BattleSpeed_Display": {
@@ -654,7 +655,8 @@
             "M13",
             "M14",
             "M15",
-            "M16"
+            "M16",
+            "M17"
         ]
     },
     "Block_StarConditionDesc": {
@@ -1865,7 +1867,8 @@
             "CooperateBoss_MainRule_Text04",
             "CooperateBoss_MainRule_Text05",
             "CooperateBoss_MainRule_Text06",
-            "CooperateBoss_MainRule_Text07"
+            "CooperateBoss_MainRule_Text07",
+            "CooperateBoss_MainRule_Text08"
         ]
     },
     "CooperateBoss_Occasion": {
@@ -2204,6 +2207,14 @@
             "DrawCardDiamond_TimesRewardRule3"
         ]
     },
+    "DrawCardEX_SinglePrice": {
+        "clz": "int",
+        "content": 400
+    },
+    "DrawCardEX_TenTimesPrice": {
+        "clz": "int",
+        "content": 400
+    },
     "DrawCard_First": {
         "clz": "string",
         "content": "DrawCard_First_Reward"
@@ -2309,7 +2320,8 @@
             "E13",
             "E14",
             "E15",
-            "E16"
+            "E16",
+            "E17"
         ]
     },
     "EliteStage_RestCost": {
@@ -7655,7 +7667,10 @@
             "PDLa",
             "NFEr",
             "HSheng",
-            "FEMSi"
+            "FEMSi",
+            "BLTu",
+            "BDFen",
+            "PGNNi"
         ]
     },
     "Tower_1_GrowMaxValue": {

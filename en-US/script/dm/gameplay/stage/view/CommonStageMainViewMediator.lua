@@ -74,6 +74,7 @@ local kChapterOffSetR = {
 }
 local isOnScroll = false
 local isClose = false
+local EVENT_REFRESH_COOPERATE_STATE = "EVENT_REFRESH_COOPERATE_STATE"
 local kBtnHandlers = {
 	leftBox = {
 		func = "onGoLeft"
@@ -136,6 +137,7 @@ end
 function CommonStageMainViewMediator:mapEventListeners()
 	self:mapEventListener(self:getEventDispatcher(), EVT_COOPERATE_REFRESH_INVITELIST, self, self.refreshInviteListView)
 	self:mapEventListener(self:getEventDispatcher(), EVT_COOPERATE_BOSS_INVITE, self, self.refreshInviteListView)
+	self:mapEventListener(self:getEventDispatcher(), EVENT_REFRESH_COOPERATE_STATE, self, self.setupCooperateBossShow)
 end
 
 function CommonStageMainViewMediator:onRegister()
@@ -215,7 +217,7 @@ function CommonStageMainViewMediator:refreshInviteListView()
 
 	if kCooperateBossState.kStart == state then
 		local function callback()
-			self:setupCooperateBossShow()
+			self:dispatch(Event:new(EVENT_REFRESH_COOPERATE_STATE))
 		end
 
 		self._cooperateBossSystem:requestGetInviteInfo(callback)

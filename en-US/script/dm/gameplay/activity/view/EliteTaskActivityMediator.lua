@@ -72,6 +72,12 @@ function EliteTaskActivityMediator:setupView()
 			heroSprite:setScale(0.8)
 			heroSprite:setPosition(cc.p(300, 160))
 		end
+
+		if activityConfig.pos then
+			local pos = activityConfig.pos
+
+			heroSprite:setPosition(cc.p(pos[1], pos[2]))
+		end
 	end
 
 	heroPanel:setTouchEnabled(true)

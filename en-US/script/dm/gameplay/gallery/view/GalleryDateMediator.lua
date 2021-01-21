@@ -1068,9 +1068,10 @@ function GalleryDateMediator:touchBegin(sender)
 
 	local data = sender.data
 	local soundId = data.markSound or "Voice_" .. self._heroId .. "_20"
+	local useSound = data.useSoundDes
 
 	performWithDelay(self:getView(), function ()
-		if not self._soundId then
+		if not self._soundId and useSound then
 			self._soundId = AudioEngine:getInstance():playRoleEffect(soundId, false, function ()
 				self._soundId = nil
 			end)
@@ -1441,6 +1442,14 @@ function GalleryDateMediator:sendMessage(sender)
 		}
 		local addLove = (sender.data.extExp + sender.data.addExp) * sender.data.eatCount
 		local showTip = self._heroData:getGiftTip(self._selectItemId)
+
+		if sender.data.useSoundDes then
+			local desc = ConfigReader:getDataByNameIdAndKey("Sound", sender.data.markSound, "SoundDesc")
+
+			if desc then
+				showTip = Strings:get(desc)
+			end
+		end
 
 		self._gallerySystem:requestSendGift(params, function ()
 			if DisposableObject:isDisposed(self) then

@@ -28606,6 +28606,150 @@
             }
         ]
     },
+    "abo_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_BDFen_26",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 7
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_BDFen_Spark",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 9
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 17
+            }
+        ]
+    },
+    "abo_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_BDFen_27",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_BDFen_Whoosh",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 2
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_BDFen_Smash",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 14
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 20
+            }
+        ]
+    },
+    "abo_skill3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_BDFen_28",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_BDFen_Arpeggio",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_BDFen_Chord",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 28
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 44
+            }
+        ]
+    },
     "alin_skill1": {
         "events": [
             {
@@ -28750,6 +28894,534 @@
             }
         ]
     },
+    "bler_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_BLTu_Wand_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 7
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_BLTu_26_Stretch",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 7
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 14
+            }
+        ]
+    },
+    "bler_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_BLTu_Magic_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 3
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_BLTu_Wand_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 10
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_BLTu_27_Stretch",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 13
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 16
+            }
+        ]
+    },
+    "bler_skill3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_BLTu_Magic_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_BLTu_28_Stretch",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 2
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_BLTu_Wand_3",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 20
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 30
+            }
+        ]
+    },
+    "fhyhua_xnian_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_TPGZhu_XNian_Hit_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 7
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 9
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_TPGZhu_26_Cut",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 10
+            }
+        ]
+    },
+    "fhyhua_xnian_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_TPGZhu_XNian_Whoosh_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_TPGZhu_27_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_TPGZhu_XNian_Hit_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 14
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 16
+            }
+        ]
+    },
+    "fhyhua_xnian_skill3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_TPGZhu_XNian_Whoosh_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 6
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_TPGZhu_28_Cut",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 11
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_TPGZhu_XNian_Hit_3",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 24
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 34
+            }
+        ]
+    },
+    "nfer_xnian_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_NFEr_Hit_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 6
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_NFEr_26",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 8
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 11
+            }
+        ]
+    },
+    "nfer_xnian_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_NFEr_Hit_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 10
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 16
+            }
+        ]
+    },
+    "nfer_xnian_skill3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_NFEr_Whoosh_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 12
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_NFEr_Hit_3",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 22
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 33
+            }
+        ]
+    },
+    "scheng_xnian_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_CZheng_26_Stretch",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_CZheng_XNian_Hit_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 4
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 7
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 7
+            }
+        ]
+    },
+    "scheng_xnian_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_CZheng_27",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_CZheng_XNian_Hit_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 9
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 13
+            }
+        ]
+    },
+    "scheng_xnian_skill3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_CZheng_28",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_CZheng_XNian_Stab",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 19
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 27
+            }
+        ]
+    },
     "slna_xnian_skill1": {
         "events": [
             {
@@ -28848,7 +29520,7 @@
                 "evts": [
                     {
                         "d": {
-                            "file": "Voice_FEMSi_28_Stratch_2",
+                            "file": "Voice_YLSBai_28",
                             "rate": 1
                         },
                         "e": "sound"
@@ -28860,13 +29532,13 @@
                 "evts": [
                     {
                         "d": {
-                            "file": "Se_Skill_FEMSi_JDian_Mfb",
+                            "file": "Se_Skill_YLSBai_XNian_Spear_1",
                             "rate": 1
                         },
                         "e": "sound"
                     }
                 ],
-                "f": 8
+                "f": 6
             },
             {
                 "evts": [
@@ -28884,13 +29556,13 @@
                 "evts": [
                     {
                         "d": {
-                            "file": "Se_Skill_FEMSi_JDian_Expb",
+                            "file": "Se_Skill_YLSBai_XNian_Spear_2",
                             "rate": 1
                         },
                         "e": "sound"
                     }
                 ],
-                "f": 33
+                "f": 42
             }
         ]
     },
@@ -29179,6 +29851,138 @@
                     }
                 ],
                 "f": 41
+            }
+        ]
+    },
+    "yqing_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_PGNNi_26",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 5
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_PGNNi_Bowhip",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 9
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 17
+            }
+        ]
+    },
+    "yqing_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_PGNNi_27",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_PGNNi_NoteRead",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 2
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 22
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_PGNNi_NoteHit",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 24
+            }
+        ]
+    },
+    "yqing_skill3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_PGNNi_28",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_PGNNi_Virtuoso",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_PGNNi_VirtuosoDone",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 37
             }
         ]
     }

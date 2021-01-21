@@ -354,16 +354,6 @@ all.ArenaFixed_4 = {
 
 		assert(this.BeCuredRateFactor ~= nil, "External variable `BeCuredRateFactor` is not provided.")
 
-		local main = __action(this, {
-			name = "main",
-			entry = prototype.main
-		})
-		main = global["[duration]"](this, {
-			0
-		}, main)
-		this.main = global["[trigger_by]"](this, {
-			"UNIT_HPCHANGE"
-		}, main)
 		local passive = __action(this, {
 			name = "passive",
 			entry = prototype.passive
@@ -376,44 +366,6 @@ all.ArenaFixed_4 = {
 		}, passive)
 
 		return this
-	end,
-	main = function (_env, externs)
-		local this = _env.this
-		local global = _env.global
-		local exec = _env["$executor"]
-		_env.ACTOR = externs.ACTOR
-
-		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
-
-		_env.unit = externs.unit
-
-		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
-
-		_env.event = externs.event
-
-		assert(_env.event ~= nil, "External variable `event` is not provided.")
-
-		_env.prevHpPercent = externs.prevHpPercent
-
-		assert(_env.prevHpPercent ~= nil, "External variable `prevHpPercent` is not provided.")
-
-		_env.curHpPercent = externs.curHpPercent
-
-		assert(_env.curHpPercent ~= nil, "External variable `curHpPercent` is not provided.")
-		exec["@time"]({
-			0
-		}, _env, function (_env)
-			local this = _env.this
-			local global = _env.global
-
-			if global.MASTER(_env, _env.ACTOR) then
-				-- Nothing
-			elseif _env.unit == _env.ACTOR and _env.prevHpPercent < _env.curHpPercent then
-				global.ApplyRPRecovery(_env, _env.ACTOR, 500)
-			end
-		end)
-
-		return _env
 	end,
 	passive = function (_env, externs)
 		local this = _env.this
@@ -431,6 +383,10 @@ all.ArenaFixed_4 = {
 				"+Normal",
 				"+Normal"
 			}, this.BeCuredRateFactor)
+			local buff = global.SpecialNumericEffect(_env, "+BeCuredRage", {
+				"+Normal",
+				"+Normal"
+			}, this.RageFactor)
 
 			global.ApplyBuff(_env, _env.ACTOR, {
 				duration = 99,
@@ -444,6 +400,7 @@ all.ArenaFixed_4 = {
 					"UNSTEALABLE"
 				}
 			}, {
+				buff,
 				buffeft1
 			})
 		end)

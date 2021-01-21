@@ -43,7 +43,7 @@ function BugFeedbackMediator:enterWithData(data)
 	local player = self._developSystem:getPlayer()
 	local winSize = cc.Director:getInstance():getVisibleSize()
 
-	if device.platform ~= "mac" then
+	if device.platform ~= "mac" and device.platform ~= "windows" then
 		self._webView = ccui.WebView:create()
 
 		if self._webView then

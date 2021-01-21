@@ -92,7 +92,7 @@ local PlatformHelper = {
 		return isInstall
 	end,
 	getSdkDid = function (self)
-		if device.platform == "mac" then
+		if device.platform == "mac" or device.platform == "windows" then
 			return ""
 		end
 

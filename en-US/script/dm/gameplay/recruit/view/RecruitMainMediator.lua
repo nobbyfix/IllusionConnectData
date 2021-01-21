@@ -73,8 +73,6 @@ local kLeftTopNodeFontSize = {
 	[RecruitPoolType.kDiamond] = 28,
 	[RecruitPoolType.kEquip] = 28
 }
-local DrawCard_SinglePrice = ConfigReader:getDataByNameIdAndKey("ConfigValue", "DrawCard_SinglePrice", "content")
-local DrawCard_TenTimesPrice = ConfigReader:getDataByNameIdAndKey("ConfigValue", "DrawCard_TenTimesPrice", "content")
 local actions = {
 	"skill3",
 	"skill2",
@@ -1317,7 +1315,7 @@ function RecruitMainMediator:onRecruit1Clicked()
 
 	if self._bagSystem:checkCostEnough(costId, costCount) then
 		self._recruitSystem:requestRecruit(param)
-	elseif costId == CurrencyIdKind.kDiamondDrawItem then
+	elseif costId == CurrencyIdKind.kDiamondDrawItem or costId == CurrencyIdKind.kDiamondDrawExItem then
 		self:buyCard(costId, costCount, param)
 	else
 		self._bagSystem:checkCostEnough(costId, costCount, {
@@ -1352,7 +1350,7 @@ function RecruitMainMediator:onRecruit2Clicked()
 
 	if self._bagSystem:checkCostEnough(costId, costCount) then
 		self._recruitSystem:requestRecruit(param)
-	elseif costId == CurrencyIdKind.kDiamondDrawItem then
+	elseif costId == CurrencyIdKind.kDiamondDrawItem or costId == CurrencyIdKind.kDiamondDrawExItem then
 		self:buyCard(costId, costCount, param)
 	else
 		self._bagSystem:checkCostEnough(costId, costCount, {
@@ -1362,7 +1360,7 @@ function RecruitMainMediator:onRecruit2Clicked()
 end
 
 function RecruitMainMediator:buyCard(costId, costCount, param)
-	if self._recruitSystem:getCanAutoBuy() then
+	if self._recruitSystem:getCanAutoBuy(costId) then
 		self:autoBuy(costId, costCount, param)
 
 		return
@@ -1382,7 +1380,7 @@ function RecruitMainMediator:buyCard(costId, costCount, param)
 end
 
 function RecruitMainMediator:autoBuy(costId, costCount, param)
-	local price = param.times == 1 and DrawCard_SinglePrice or DrawCard_TenTimesPrice
+	local price = param.times == 1 and RecruitCurrencyStr.KBuyPrice.single[costId] or RecruitCurrencyStr.KBuyPrice.ten[costId]
 	local hasCount = self._bagSystem:getItemCount(costId)
 	local num = costCount - hasCount
 	local cost = num * price
@@ -1392,7 +1390,7 @@ function RecruitMainMediator:autoBuy(costId, costCount, param)
 	if not canBuy then
 		local data = {
 			title = Strings:get("SHOP_REFRESH_DESC_TEXT1"),
-			content = Strings:get("Recruit_UI21"),
+			content = RecruitCurrencyStr.KGoToShop[costId],
 			sureBtn = {},
 			cancelBtn = {}
 		}

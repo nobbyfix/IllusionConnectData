@@ -152,6 +152,7 @@ function EquipSkillUpMediator:setupView()
 	})
 	local descText = ccui.RichText:createWithXML(content, {})
 
+	descText:renderContent(700, 0, true)
 	descText:setAnchorPoint(cc.p(0.5, 0))
 	descText:addTo(desc)
 	descText:setPosition(cc.p(0, -10))

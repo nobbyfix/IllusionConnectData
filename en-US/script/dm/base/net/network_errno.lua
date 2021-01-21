@@ -1,5 +1,5 @@
 if neterrno == nil then
-	if device.platform == "ios" or device.platform == "mac" then
+	if device.platform == "ios" or device.platform == "mac" or device.platform == "windows" then
 		neterrno = {
 			ESHUTDOWN = 58,
 			ENETRESET = 52,

@@ -296,13 +296,22 @@ function CooperateBossBattleEndMediator:onTouchMaskLayer()
 
 	if self._bossState == kCooperateBossEnemyState.kEscaped then
 		local function callback(data)
-			local viewData = {
-				viewName = "CooperateBossMainView",
-				viewData = data
-			}
-			local viewData = {}
+			local viewName = self._cooperateBossSystem:getCurBossRootView()
 
-			BattleLoader:popBattleView(self, viewData, "homeView")
+			if viewName and viewName == "CooperateBossMainView" then
+				local viewData = {
+					viewName = viewName,
+					viewData = data
+				}
+
+				BattleLoader:popBattleView(self, viewData)
+			else
+				local viewData = {
+					viewName = viewName
+				}
+
+				BattleLoader:popBattleView(self, viewData)
+			end
 		end
 
 		self._cooperateBossSystem:requestCooperateBossMain(callback)
@@ -321,9 +330,22 @@ function CooperateBossBattleEndMediator:onTouchMaskLayer()
 
 		if remoteTimestamp >= endTime then
 			local function callback(data)
-				local viewData = {}
+				local viewName = self._cooperateBossSystem:getCurBossRootView()
 
-				BattleLoader:popBattleView(self, viewData, "homeView")
+				if viewName and viewName == "CooperateBossMainView" then
+					local viewData = {
+						viewName = viewName,
+						viewData = data
+					}
+
+					BattleLoader:popBattleView(self, viewData)
+				else
+					local viewData = {
+						viewName = viewName
+					}
+
+					BattleLoader:popBattleView(self, viewData)
+				end
 			end
 
 			self._cooperateBossSystem:requestCooperateBossMain(callback)

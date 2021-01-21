@@ -125,6 +125,48 @@
         "Symbol": "$",
         "VIPExp": 68
     },
+    "Pay_BattlePass_20210201_128": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_BattlePass_20200914_128_Name",
+        "Pay_Id": 10242,
+        "Price": 18.99,
+        "ProductId": "com.superprism.illusion.gift040",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios"
+        ],
+        "Symbol": "$",
+        "VIPExp": 128
+    },
+    "Pay_BattlePass_20210201_60": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_BattlePass_20200914_60_Name",
+        "Pay_Id": 10243,
+        "Price": 8.99,
+        "ProductId": "com.superprism.illusion.gift041",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios"
+        ],
+        "Symbol": "$",
+        "VIPExp": 60
+    },
+    "Pay_BattlePass_20210201_68": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_BattlePass_20200914_68_Name",
+        "Pay_Id": 10241,
+        "Price": 9.99,
+        "ProductId": "com.superprism.illusion.gift039",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios"
+        ],
+        "Symbol": "$",
+        "VIPExp": 68
+    },
     "Pay_Mall_128": {
         "IsContinue": 0,
         "MapId": "",
@@ -447,6 +489,48 @@
         "Symbol": "$",
         "VIPExp": 448
     },
+    "Pay_PackageShop_TL_210128_1": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_201231_1_Name",
+        "Pay_Id": 10220,
+        "Price": 4.99,
+        "ProductId": "com.superprism.illusion.gift085",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios"
+        ],
+        "Symbol": "$",
+        "VIPExp": 30
+    },
+    "Pay_PackageShop_TL_210128_2": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_201231_2_Name",
+        "Pay_Id": 10221,
+        "Price": 29.99,
+        "ProductId": "com.superprism.illusion.zk023",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios"
+        ],
+        "Symbol": "$",
+        "VIPExp": 198
+    },
+    "Pay_PackageShop_TL_210128_3": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_201231_3_Name",
+        "Pay_Id": 10222,
+        "Price": 69.99,
+        "ProductId": "com.superprism.illusion.gift086",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios"
+        ],
+        "Symbol": "$",
+        "VIPExp": 448
+    },
     "Pay_PackageShop_TL_3": {
         "IsContinue": 0,
         "MapId": "",
@@ -496,6 +580,76 @@
         "Pay_Id": 10024,
         "Price": 99.99,
         "ProductId": "com.superprism.illusion.gift028",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios"
+        ],
+        "Symbol": "$",
+        "VIPExp": 648
+    },
+    "Pay_PackageShop_TL_BDFen_2": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_BDFen_2_Name",
+        "Pay_Id": 10236,
+        "Price": 4.99,
+        "ProductId": "com.superprism.illusion.jr002",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios"
+        ],
+        "Symbol": "$",
+        "VIPExp": 30
+    },
+    "Pay_PackageShop_TL_BDFen_3": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_BDFen_3_Name",
+        "Pay_Id": 10237,
+        "Price": 18.99,
+        "ProductId": "com.superprism.illusion.zk017",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios"
+        ],
+        "Symbol": "$",
+        "VIPExp": 128
+    },
+    "Pay_PackageShop_TL_BDFen_4": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_BDFen_4_Name",
+        "Pay_Id": 10238,
+        "Price": 29.99,
+        "ProductId": "com.superprism.illusion.jr006",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios"
+        ],
+        "Symbol": "$",
+        "VIPExp": 198
+    },
+    "Pay_PackageShop_TL_BDFen_5": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_BDFen_5_Name",
+        "Pay_Id": 10239,
+        "Price": 49.99,
+        "ProductId": "com.superprism.illusion.zk012",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios"
+        ],
+        "Symbol": "$",
+        "VIPExp": 328
+    },
+    "Pay_PackageShop_TL_BDFen_6": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_BDFen_6_Name",
+        "Pay_Id": 10240,
+        "Price": 99.99,
+        "ProductId": "com.superprism.illusion.zk020",
         "SDKSource": [
             "wanmeiGlobal_android",
             "wanmeiGlobal_ios"
@@ -726,6 +880,48 @@
         ],
         "Symbol": "$",
         "VIPExp": 98
+    },
+    "Pay_PackageShop_TL_FHYHua_1": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_FHYHua_1_Name",
+        "Pay_Id": 10223,
+        "Price": 8.99,
+        "ProductId": "com.superprism.illusion.zk008",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios"
+        ],
+        "Symbol": "$",
+        "VIPExp": 60
+    },
+    "Pay_PackageShop_TL_FHYHua_2": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_FHYHua_2_Name",
+        "Pay_Id": 10224,
+        "Price": 29.99,
+        "ProductId": "com.superprism.illusion.zk018",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios"
+        ],
+        "Symbol": "$",
+        "VIPExp": 198
+    },
+    "Pay_PackageShop_TL_FHYHua_3": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_FHYHua_3_Name",
+        "Pay_Id": 10225,
+        "Price": 99.99,
+        "ProductId": "com.superprism.illusion.zk024",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios"
+        ],
+        "Symbol": "$",
+        "VIPExp": 648
     },
     "Pay_PackageShop_TL_HuanMeng_3": {
         "IsContinue": 0,
@@ -1650,6 +1846,146 @@
         ],
         "Symbol": "$",
         "VIPExp": 328
+    },
+    "Pay_PackageShop_TL_Week14_10": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_Week14_10_Name",
+        "Pay_Id": 10234,
+        "Price": 49.99,
+        "ProductId": "com.superprism.illusion.jr008",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios"
+        ],
+        "Symbol": "$",
+        "VIPExp": 328
+    },
+    "Pay_PackageShop_TL_Week14_11": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_Week14_11_Name",
+        "Pay_Id": 10235,
+        "Price": 99.99,
+        "ProductId": "com.superprism.illusion.jr010",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios"
+        ],
+        "Symbol": "$",
+        "VIPExp": 648
+    },
+    "Pay_PackageShop_TL_Week14_2": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_Week14_2_Name",
+        "Pay_Id": 10226,
+        "Price": 4.99,
+        "ProductId": "com.superprism.illusion.jr001",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios"
+        ],
+        "Symbol": "$",
+        "VIPExp": 30
+    },
+    "Pay_PackageShop_TL_Week14_3": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_Week14_3_Name",
+        "Pay_Id": 10227,
+        "Price": 18.99,
+        "ProductId": "com.superprism.illusion.zk013",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios"
+        ],
+        "Symbol": "$",
+        "VIPExp": 128
+    },
+    "Pay_PackageShop_TL_Week14_4": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_Week14_4_Name",
+        "Pay_Id": 10228,
+        "Price": 29.99,
+        "ProductId": "com.superprism.illusion.jr005",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios"
+        ],
+        "Symbol": "$",
+        "VIPExp": 198
+    },
+    "Pay_PackageShop_TL_Week14_5": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_Week14_5_Name",
+        "Pay_Id": 10229,
+        "Price": 49.99,
+        "ProductId": "com.superprism.illusion.jr007",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios"
+        ],
+        "Symbol": "$",
+        "VIPExp": 328
+    },
+    "Pay_PackageShop_TL_Week14_6": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_Week14_6_Name",
+        "Pay_Id": 10230,
+        "Price": 99.99,
+        "ProductId": "com.superprism.illusion.jr009",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios"
+        ],
+        "Symbol": "$",
+        "VIPExp": 648
+    },
+    "Pay_PackageShop_TL_Week14_7": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_Week14_7_Name",
+        "Pay_Id": 10231,
+        "Price": 14.99,
+        "ProductId": "com.superprism.illusion.jr003",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios"
+        ],
+        "Symbol": "$",
+        "VIPExp": 98
+    },
+    "Pay_PackageShop_TL_Week14_8": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_Week14_8_Name",
+        "Pay_Id": 10232,
+        "Price": 14.99,
+        "ProductId": "com.superprism.illusion.jr004",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios"
+        ],
+        "Symbol": "$",
+        "VIPExp": 98
+    },
+    "Pay_PackageShop_TL_Week14_9": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_Week14_9_Name",
+        "Pay_Id": 10233,
+        "Price": 18.99,
+        "ProductId": "com.superprism.illusion.zk014",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios"
+        ],
+        "Symbol": "$",
+        "VIPExp": 128
     },
     "Pay_PackageShop_TL_Weekend_1": {
         "IsContinue": 0,

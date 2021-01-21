@@ -344,7 +344,7 @@ end
 function FunctionEntranceMediator:refreshCooperateBoss()
 	local coopNode = self._arenaPanel:getChildByFullName("cooperateBossCell.ShowAnim")
 
-	if self._cooperateBossStateLabel then
+	if self._cooperateBossStateLabel and not DisposableObject:isDisposed(self._cooperateBossStateLabel) then
 		local stateLabel = self._cooperateBossStateLabel
 		local state = self._cooperateBossSystem:getcooperateBossState()
 

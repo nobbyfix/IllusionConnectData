@@ -10,71 +10,6 @@ BagSystem:has("_composeTimes", {
 	is = "rw"
 })
 
-local PowerConfigMap = {
-	[CurrencyIdKind.kPower] = {
-		all = "Power_RecAll",
-		perMin = "Power_RecPerMin",
-		next = "Power_RecNext",
-		configId = "3",
-		tableName = "Reset"
-	},
-	[CurrencyIdKind.kAcitvityStaminaPower] = {
-		all = "Act_Power_RecAll",
-		perMin = "Act_Power_RecPerMin",
-		next = "Act_Power_RecNext",
-		configId = "AcitvityStamina_Reset",
-		tableName = "Reset"
-	},
-	[CurrencyIdKind.kAcitvitySnowPower] = {
-		all = "Act_Snowflake_Power_RecAll",
-		perMin = "Act_Snowflake_Power_RecPerMin",
-		next = "Act_Snowflake_Power_RecNext",
-		configId = "AcitvitySnowflakeStamina_Reset",
-		tableName = "Reset"
-	},
-	[CurrencyIdKind.kAcitvityZuoHePower] = {
-		all = "Act_ZuoHe_Power_RecAll",
-		perMin = "Act_ZuoHe_Power_RecPerMin",
-		next = "Act_ZuoHe_Power_RecNext",
-		configId = "AcitvityZuoHeStamina_Reset",
-		tableName = "Reset"
-	},
-	[CurrencyIdKind.kAcitvityWxhPower] = {
-		all = "Act_Wxh_Power_RecAll",
-		perMin = "Act_Wxh_Power_RecPerMin",
-		next = "Act_Wxh_Power_RecNext",
-		configId = "AcitvityWuXiuHuiStamina_Reset",
-		tableName = "Reset"
-	},
-	[CurrencyIdKind.kAcitvitySummerPower] = {
-		all = "Act_Summer_Power_RecAll",
-		perMin = "Act_Summer_Power_RecPerMin",
-		next = "Act_Summer_Power_RecNext",
-		configId = "AcitvitySummerStamina_Reset",
-		tableName = "Reset"
-	},
-	[CurrencyIdKind.kAcitvityHalloweenPower] = {
-		all = "Act_Halloween_Power_RecAll",
-		perMin = "Act_Halloween_Power_RecPerMin",
-		next = "Act_Halloween_Power_RecNext",
-		configId = "AcitvityHalloweenStamina_Reset",
-		tableName = "Reset"
-	},
-	[CurrencyIdKind.kActivityHolidayPower] = {
-		all = "Act_NewYear_Power_RecAll",
-		perMin = "Act_NewYear_Power_RecPerMin",
-		next = "Act_NewYear_Power_RecNext",
-		configId = "AcitvityHolidayStamina_Reset",
-		tableName = "Reset"
-	},
-	[CurrencyIdKind.kActivityDetectivePower] = {
-		all = "Act_Detective_Power_RecAll",
-		perMin = "Act_Detective_Power_RecPerMin",
-		next = "Act_Detective_Power_RecNext",
-		configId = "AcitvityDetectiveStamina_Reset",
-		tableName = "Reset"
-	}
-}
 local crusadeEnergyReset = nil
 
 function BagSystem:initialize()
@@ -95,7 +30,9 @@ end
 
 function BagSystem:initPowerReset()
 	for k, v in pairs(PowerConfigMap) do
-		self._powerResetMap[k] = self:initConfigSystem(v.tableName, v.configId)
+		if v.tableName and v.configId then
+			self._powerResetMap[k] = self:initConfigSystem(v.tableName, v.configId)
+		end
 	end
 end
 
@@ -350,36 +287,8 @@ function BagSystem:getCrusadeEnergy()
 	return count, lastRecoverTime
 end
 
-function BagSystem:getAcitvityStaminaPower()
-	return self:getPowerByCurrencyId(CurrencyIdKind.kAcitvityStaminaPower)
-end
-
-function BagSystem:getAcitvitySnowPower()
-	return self:getPowerByCurrencyId(CurrencyIdKind.kAcitvitySnowPower)
-end
-
-function BagSystem:getAcitvitySagaSupportPower()
-	return self:getPowerByCurrencyId(CurrencyIdKind.kAcitvityZuoHePower)
-end
-
-function BagSystem:getAcitvityWxhSupportPower()
-	return self:getPowerByCurrencyId(CurrencyIdKind.kAcitvityWxhPower)
-end
-
 function BagSystem:getAcitvitySummerPower()
 	return self:getPowerByCurrencyId(CurrencyIdKind.kAcitvitySummerPower)
-end
-
-function BagSystem:getActivityHolidayPower()
-	return self:getPowerByCurrencyId(CurrencyIdKind.kActivityHolidayPower)
-end
-
-function BagSystem:getAcitvitySnowPower()
-	return self:getPowerByCurrencyId(CurrencyIdKind.kAcitvitySnowPower)
-end
-
-function BagSystem:getAcitvityDetectivePower()
-	return self:getPowerByCurrencyId(CurrencyIdKind.kActivityDetectivePower)
 end
 
 function BagSystem:getDiamond()

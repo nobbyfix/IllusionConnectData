@@ -283,6 +283,77 @@
         ],
         "Times": []
     },
+    "DrawCard_1UP_12New": {
+        "Condition": "",
+        "Coupon": "IM_DiamondDrawEX",
+        "CouponCost": [
+            1,
+            10
+        ],
+        "DrawCardDesc": "",
+        "DrawCardDescTitle": "",
+        "DrawCardENName": "",
+        "DrawCardName": "",
+        "DrawCardType": "ACTIVITYDRAW",
+        "DrawCardUPDesc": [
+            [
+                "DrawCard_1UP_12New_Title1",
+                "DrawCard_1UP_12New_Text1"
+            ],
+            [
+                "DrawCard_1UP_12New_Title2",
+                "DrawCard_1UP_12New_Text2"
+            ],
+            [
+                "DrawCard_1UP_12New_Title3",
+                "DrawCard_1UP_12New_Text3"
+            ]
+        ],
+        "DrawCard_Id": 10061,
+        "DrawLimit": -1,
+        "ExtraReward": "",
+        "FreeReset": "DrawCard_TimeUp",
+        "Link": "view://shopView&viewType=push&shopId=Shop_TimeLimit",
+        "NormalReward": "DrawCard_Diamond_1_normal",
+        "Number": [
+            1,
+            10
+        ],
+        "OffCount": [],
+        "Preview": {
+            "btn": "drawcard_tab_LYXi_",
+            "main": "drawcard_bg_LYXi"
+        },
+        "Rank": 90,
+        "Reward": [
+            "DrawCard_1UP_12New_1",
+            "DrawCard_1UP_12New_10"
+        ],
+        "RoleDetail": [
+            {
+                "hero": "LYXi",
+                "position": [
+                    306,
+                    404
+                ],
+                "showhero": "LYXi"
+            }
+        ],
+        "ShortDesc": [
+            "DrawCard_Diamond_1_ShortDesc",
+            "DrawCard_Diamond_10_ShortDesc"
+        ],
+        "ShortENDesc": [
+            "UILINK_EN_Zhaohuan1ci",
+            "UILINK_EN_Zhaohuan10ci"
+        ],
+        "ShowReward": {},
+        "SpecialReward": "",
+        "Tag": [
+            "1UP"
+        ],
+        "Times": []
+    },
     "DrawCard_1UP_13": {
         "Condition": "",
         "Coupon": "IM_DiamondDrawEX",
@@ -479,6 +550,77 @@
                     404
                 ],
                 "showhero": "FEMSi"
+            }
+        ],
+        "ShortDesc": [
+            "DrawCard_Diamond_1_ShortDesc",
+            "DrawCard_Diamond_10_ShortDesc"
+        ],
+        "ShortENDesc": [
+            "UILINK_EN_Zhaohuan1ci",
+            "UILINK_EN_Zhaohuan10ci"
+        ],
+        "ShowReward": {},
+        "SpecialReward": "",
+        "Tag": [
+            "1UP"
+        ],
+        "Times": []
+    },
+    "DrawCard_1UP_15": {
+        "Condition": "",
+        "Coupon": "IM_DiamondDrawEX",
+        "CouponCost": [
+            1,
+            10
+        ],
+        "DrawCardDesc": "",
+        "DrawCardDescTitle": "",
+        "DrawCardENName": "",
+        "DrawCardName": "",
+        "DrawCardType": "ACTIVITYDRAW",
+        "DrawCardUPDesc": [
+            [
+                "DrawCard_1UP_15_Title1",
+                "DrawCard_1UP_15_Text1"
+            ],
+            [
+                "DrawCard_1UP_15_Title2",
+                "DrawCard_1UP_15_Text2"
+            ],
+            [
+                "DrawCard_1UP_15_Title3",
+                "DrawCard_1UP_15_Text3"
+            ]
+        ],
+        "DrawCard_Id": 10062,
+        "DrawLimit": -1,
+        "ExtraReward": "",
+        "FreeReset": "DrawCard_TimeUp",
+        "Link": "view://shopView&viewType=push&shopId=Shop_TimeLimit",
+        "NormalReward": "DrawCard_Diamond_1_normal",
+        "Number": [
+            1,
+            10
+        ],
+        "OffCount": [],
+        "Preview": {
+            "btn": "drawcard_tab_BDFen_",
+            "main": "drawcard_bg_BDFen"
+        },
+        "Rank": 90,
+        "Reward": [
+            "DrawCard_1UP_15_1",
+            "DrawCard_1UP_15_10"
+        ],
+        "RoleDetail": [
+            {
+                "hero": "BDFen",
+                "position": [
+                    306,
+                    404
+                ],
+                "showhero": "BDFen"
             }
         ],
         "ShortDesc": [
@@ -2537,6 +2679,81 @@
         "Tag": "",
         "Times": []
     },
+    "DrawCard_LFErXSMLi": {
+        "Condition": "",
+        "Coupon": "IM_DiamondDraw",
+        "CouponCost": [
+            1,
+            10
+        ],
+        "DrawCardDesc": "",
+        "DrawCardDescTitle": "",
+        "DrawCardENName": "",
+        "DrawCardName": "",
+        "DrawCardType": "ACTIVITYDRAW",
+        "DrawCardUPDesc": [
+            [
+                "DrawCard_LFErXSMLi_Title1",
+                "DrawCard_LFErXSMLi_Text1"
+            ],
+            [
+                "DrawCard_LFErXSMLi_Title2",
+                "DrawCard_LFErXSMLi_Text2"
+            ],
+            [
+                "DrawCard_LFErXSMLi_Title3",
+                "DrawCard_LFErXSMLi_Text3"
+            ]
+        ],
+        "DrawCard_Id": 10064,
+        "DrawLimit": -1,
+        "ExtraReward": "",
+        "FreeReset": "DrawCard_TimeUp",
+        "Link": "",
+        "NormalReward": "DrawCard_Diamond_1_normal",
+        "Number": [
+            1,
+            10
+        ],
+        "OffCount": [],
+        "Preview": {
+            "btn": "drawcard_tab_LFErXSMLi_",
+            "main": "drawcard_bg_LFErXSMLi"
+        },
+        "Rank": 80,
+        "Reward": [
+            "DrawCard_LFErXSMLi_1",
+            "DrawCard_LFErXSMLi_10"
+        ],
+        "RoleDetail": [
+            {
+                "hero": "LFEr",
+                "position": [
+                    325,
+                    280
+                ]
+            },
+            {
+                "hero": "XSMLi",
+                "position": [
+                    868,
+                    325
+                ]
+            }
+        ],
+        "ShortDesc": [
+            "DrawCard_Diamond_1_ShortDesc",
+            "DrawCard_Diamond_10_ShortDesc"
+        ],
+        "ShortENDesc": [
+            "UILINK_EN_Zhaohuan1ci",
+            "UILINK_EN_Zhaohuan10ci"
+        ],
+        "ShowReward": {},
+        "SpecialReward": "",
+        "Tag": "",
+        "Times": []
+    },
     "DrawCard_MGNaYBYa": {
         "Condition": "",
         "Coupon": "IM_DiamondDraw",
@@ -3515,6 +3732,81 @@
             ]
         ],
         "DrawCard_Id": 10039,
+        "DrawLimit": -1,
+        "ExtraReward": "",
+        "FreeReset": "DrawCard_TimeUp",
+        "Link": "",
+        "NormalReward": "DrawCard_Diamond_1_normal",
+        "Number": [
+            1,
+            10
+        ],
+        "OffCount": [],
+        "Preview": {
+            "btn": "drawcard_tab_WEDeYLSBai_",
+            "main": "drawcard_bg_WEDeYLSBai"
+        },
+        "Rank": 80,
+        "Reward": [
+            "DrawCard_WEDeYLSBai_1",
+            "DrawCard_WEDeYLSBai_10"
+        ],
+        "RoleDetail": [
+            {
+                "hero": "WEDe",
+                "position": [
+                    320,
+                    300
+                ]
+            },
+            {
+                "hero": "YLSBai",
+                "position": [
+                    860,
+                    300
+                ]
+            }
+        ],
+        "ShortDesc": [
+            "DrawCard_Diamond_1_ShortDesc",
+            "DrawCard_Diamond_10_ShortDesc"
+        ],
+        "ShortENDesc": [
+            "UILINK_EN_Zhaohuan1ci",
+            "UILINK_EN_Zhaohuan10ci"
+        ],
+        "ShowReward": {},
+        "SpecialReward": "",
+        "Tag": "",
+        "Times": []
+    },
+    "DrawCard_WEDeYLSBai_New": {
+        "Condition": "",
+        "Coupon": "IM_DiamondDraw",
+        "CouponCost": [
+            1,
+            10
+        ],
+        "DrawCardDesc": "",
+        "DrawCardDescTitle": "",
+        "DrawCardENName": "",
+        "DrawCardName": "",
+        "DrawCardType": "ACTIVITYDRAW",
+        "DrawCardUPDesc": [
+            [
+                "DrawCard_WEDeYLSBai_Title1",
+                "DrawCard_WEDeYLSBai_Text1"
+            ],
+            [
+                "DrawCard_WEDeYLSBai_Title2",
+                "DrawCard_WEDeYLSBai_Text2"
+            ],
+            [
+                "DrawCard_WEDeYLSBai_Title3",
+                "DrawCard_WEDeYLSBai_Text3"
+            ]
+        ],
+        "DrawCard_Id": 10063,
         "DrawLimit": -1,
         "ExtraReward": "",
         "FreeReset": "DrawCard_TimeUp",

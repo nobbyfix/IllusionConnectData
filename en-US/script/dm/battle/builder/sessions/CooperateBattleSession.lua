@@ -112,7 +112,7 @@ function CooperateBattleSession:generateDetailedResultSummary(err)
 end
 
 function CooperateBattleSession:getBattleType()
-	return "clubboss"
+	return "cooperateboss"
 end
 
 function CooperateBattleSession:getBattlePassiveSkill()

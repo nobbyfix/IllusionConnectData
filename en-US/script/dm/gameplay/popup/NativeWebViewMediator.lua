@@ -63,7 +63,7 @@ function NativeWebViewMediator:initView()
 	local webViewSize = self._webView:getContentSize()
 	local myplatform = device.platform
 
-	if myplatform ~= "mac" then
+	if myplatform ~= "mac" and myplatform ~= "windows" then
 		self._myWebView = ccui.WebView:create()
 
 		if self._myWebView then

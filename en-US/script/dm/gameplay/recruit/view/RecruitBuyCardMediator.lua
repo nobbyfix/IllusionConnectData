@@ -20,8 +20,6 @@ local kBtnHandlers = {
 		func = "onClickCloseTip"
 	}
 }
-local DrawCard_SinglePrice = ConfigReader:getDataByNameIdAndKey("ConfigValue", "DrawCard_SinglePrice", "content")
-local DrawCard_TenTimesPrice = ConfigReader:getDataByNameIdAndKey("ConfigValue", "DrawCard_TenTimesPrice", "content")
 
 function RecruitBuyCardMediator:initialize()
 	super.initialize(self)
@@ -47,9 +45,8 @@ function RecruitBuyCardMediator:enterWithData(data)
 			clickAudio = "Se_Click_Close_2",
 			func = bind1(self.onClickClose, self)
 		},
-		title = Strings:get("Recruit_UI16"),
-		title1 = Strings:get("UITitle_EN_Zhaohuanzhizhengbuzu"),
-		fontSize = getCurrentLanguage() ~= GameLanguageType.CN and 35 or 50
+		title = RecruitCurrencyStr.KBuyTitle[self._costId],
+		title1 = RecruitCurrencyStr.KBuyTitle1[self._costId]
 	})
 
 	self._ensureBtn = self:bindWidget("sureBtn", OneLevelMainButton, {
@@ -69,6 +66,7 @@ function RecruitBuyCardMediator:enterWithData(data)
 	self._buyBtn:setVisible(false)
 	self._buyPanel:setVisible(false)
 	self:initView()
+	self:onClickCloseTip()
 end
 
 function RecruitBuyCardMediator:initData(data)
@@ -77,7 +75,7 @@ function RecruitBuyCardMediator:initData(data)
 	local needCount = data.costCount
 	local hasCount = self._bagSystem:getItemCount(self._costId)
 	self._num = needCount - hasCount
-	local price = self._param.times == 1 and DrawCard_SinglePrice or DrawCard_TenTimesPrice
+	local price = self._param.times == 1 and RecruitCurrencyStr.KBuyPrice.single[self._costId] or RecruitCurrencyStr.KBuyPrice.ten[self._costId]
 	self._cost = self._num * price
 	local hasDiamondCount = self._bagSystem:getItemCount(CurrencyIdKind.kDiamond)
 	self._canBuy = self._cost <= hasDiamondCount
@@ -91,7 +89,7 @@ end
 function RecruitBuyCardMediator:initView()
 	self._buyBtn:setVisible(true)
 	self._buyPanel:setVisible(true)
-	self._buyPanel:getChildByName("tipLabel"):setString(Strings:get("Recruit_UI18", {
+	self._buyPanel:getChildByName("tipLabel"):setString(Strings:get(RecruitCurrencyStr.KBuyContent[self._costId], {
 		cost = self._cost,
 		num = self._num
 	}))
@@ -124,7 +122,7 @@ function RecruitBuyCardMediator:onClickBuy()
 	if not self._canBuy then
 		local data = {
 			title = Strings:get("SHOP_REFRESH_DESC_TEXT1"),
-			content = Strings:get("Recruit_UI21"),
+			content = RecruitCurrencyStr.KGoToShop[self._costId],
 			sureBtn = {},
 			cancelBtn = {}
 		}
@@ -155,19 +153,22 @@ function RecruitBuyCardMediator:onClickBuy()
 end
 
 function RecruitBuyCardMediator:onClickCloseTip()
-	self.playerRid = self:getInjector():getInstance("DevelopSystem"):getPlayer():getRid()
+	self._closeBtn:setVisible(false)
+
+	return
+
 	local image = self._closeBtn:getChildByName("image")
 
 	if image:isVisible() then
 		image:setVisible(false)
-		cc.UserDefault:getInstance():setIntegerForKey(self.playerRid .. RecruitAutoBuyCard, 0)
+		cc.UserDefault:getInstance():setIntegerForKey(RecruitCurrencyStr.KUserDefault[self._costId], 0)
 	else
 		image:setVisible(true)
 
 		local gameServerAgent = self:getInjector():getInstance("GameServerAgent")
 		local lastLoginTime = gameServerAgent:remoteTimestamp()
 
-		cc.UserDefault:getInstance():setIntegerForKey(self.playerRid .. RecruitAutoBuyCard, lastLoginTime)
+		cc.UserDefault:getInstance():setIntegerForKey(RecruitCurrencyStr.KUserDefault[self._costId], lastLoginTime)
 	end
 end
 

@@ -1656,7 +1656,7 @@ local modules = {
 							mediator = "ActivityTaskAchievementMediator"
 						},
 						{
-							res = "asset/ui/BlockTeam.csb",
+							res = "asset/ui/ActivityBlockTeam.csb",
 							name = "ActivityBlockTeamView",
 							mediator = "ActivityBlockTeamMediator"
 						},
@@ -1859,6 +1859,11 @@ local modules = {
 							res = "asset/ui/ActivityBlockDetective.csb",
 							name = "ActivityBlockDetectiveView",
 							mediator = "ActivityBlockDectiveMediator"
+						},
+						{
+							res = "asset/ui/ActivityBlockMusic.csb",
+							name = "ActivityBlockMusicView",
+							mediator = "ActivityBlockMusicMediator"
 						}
 					}
 				}

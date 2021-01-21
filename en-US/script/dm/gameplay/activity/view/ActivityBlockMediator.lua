@@ -297,7 +297,7 @@ function ActivityBlockMediator:initInfo()
 
 	local text = self._eggBtn:getChildByName("text")
 
-	if btns.eggParams then
+	if btns.eggParams and btns.eggParams.icon then
 		image:loadTexture(btns.eggParams.icon .. ".png", 1)
 
 		local title = btns.eggParams.title
@@ -307,6 +307,14 @@ function ActivityBlockMediator:initInfo()
 		self._endTip.eggEndTip = Strings:get(tipStr, {
 			activityId = title
 		})
+	end
+
+	if self._model:getActivityConfig().ButtonIcon then
+		image:loadTexture(self._model:getActivityConfig().ButtonIcon .. ".png", 1)
+	end
+
+	if self._model:getActivityConfig().ButtonText then
+		text:setString(Strings:get(self._model:getActivityConfig().ButtonText))
 	end
 
 	local redPoint = self._teamBtn:getChildByName("redPoint")
@@ -543,6 +551,23 @@ function ActivityBlockMediator:onClickTeam()
 end
 
 function ActivityBlockMediator:onClickEgg()
+	local url = self._model:getActivityConfig().ExchangeUrl
+
+	if url then
+		local context = self:getInjector():instantiate(URLContext)
+		local entry, params = UrlEntryManage.resolveUrlWithUserData(url)
+
+		if not entry then
+			self:dispatch(ShowTipEvent({
+				tip = Strings:get("Function_Not_Open")
+			}))
+		else
+			entry:response(context, params)
+		end
+
+		return
+	end
+
 	if not self._eggActivity then
 		self:dispatch(ShowTipEvent({
 			tip = self._endTip.eggEndTip

@@ -556,7 +556,7 @@ end
 function HeroSystem:checkHasKeySkill(heroId)
 	local hero = self:getHeroById(heroId)
 
-	if not hero:getPassiveCondition() then
+	if not hero or not hero:getPassiveCondition() then
 		return nil
 	end
 

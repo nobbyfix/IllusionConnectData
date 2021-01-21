@@ -548,12 +548,13 @@ function ActivitySystem:showEasterRewards(data)
 	}))
 end
 
-function ActivitySystem:enterTeam(activityId, blockActivity)
+function ActivitySystem:enterTeam(activityId, blockActivity, enterPointId)
 	local view = self:getInjector():getInstance("ActivityBlockTeamView")
 
 	self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
 		activity = blockActivity,
-		activityId = activityId
+		activityId = activityId,
+		enterPointId = enterPointId
 	}))
 end
 
@@ -889,7 +890,27 @@ function ActivitySystem:hasRedPointForActivity(activityId)
 	local activity = self:getActivityById(activityId)
 
 	if activity then
-		return activity:hasRedPoint()
+		if self:hasRedPointForActivityById(activityId) then
+			return true
+		end
+
+		local redPointRelatedActivity = self:getActivityById(activityId):getActivityConfig().RedPointRelatedActivity or {}
+
+		for i, actId in ipairs(redPointRelatedActivity) do
+			if self:hasRedPointForActivityById(actId) then
+				return true
+			end
+		end
+	end
+
+	return false
+end
+
+function ActivitySystem:hasRedPointForActivityById(activityId)
+	local activity = self:getActivityById(activityId)
+
+	if activity and activity.hasRedPoint and activity:hasRedPoint() then
+		return true
 	end
 
 	return false

@@ -937,6 +937,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameTotalScore_Decs"
     },
+    "Condi_MusicFestivalExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_MusicFestival_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_MusicFestivalExchangeAchieve_Desc"
+    },
     "Condi_NormalLabEnter": {
         "AchieveType1": "CUSTOM",
         "AchieveType2": "",
