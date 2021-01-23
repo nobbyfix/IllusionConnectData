@@ -600,18 +600,18 @@
                 "Voice_SDTZi_71_4"
             ],
             "exchange": [
-                "HighPointGood_1",
-                "HighPointGood_2",
-                "HighPointGood_3",
-                "HighPointGood_4",
-                "HighPointGood_5",
-                "HighPointGood_6",
-                "HighPointGood_7",
-                "HighPointGood_8",
-                "HighPointGood_9",
-                "HighPointGood_10",
-                "HighPointGood_11",
-                "HighPointGood_12"
+                "HighPointGood_20210120_1",
+                "HighPointGood_20210120_2",
+                "HighPointGood_20210120_3",
+                "HighPointGood_20210120_4",
+                "HighPointGood_20210120_5",
+                "HighPointGood_20210120_6",
+                "HighPointGood_20210120_7",
+                "HighPointGood_20210120_8",
+                "HighPointGood_20210120_9",
+                "HighPointGood_20210120_10",
+                "HighPointGood_20210120_11",
+                "HighPointGood_20210120_12"
             ],
             "in": [
                 "Voice_SDTZi_71_1"
@@ -631,7 +631,7 @@
             "LEVEL": 1
         },
         "Desc": "",
-        "Enable": 0,
+        "Enable": 1,
         "Icon": "",
         "LeftBanner": "",
         "Loop": "",
@@ -965,12 +965,12 @@
             "LEVEL": 1
         },
         "Desc": "ActivityBattlePass_Desc",
-        "Enable": 0,
+        "Enable": 1,
         "Icon": "",
         "LeftBanner": "",
         "Loop": "",
         "LoopFactor": "",
-        "Mail": 0,
+        "Mail": 1,
         "MailId": "ActivityBattlePass_Mail",
         "Primary": 1,
         "Reset": 1,
