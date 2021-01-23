@@ -684,19 +684,17 @@
         "TeamSkillCondition1": [
             [
                 {
-                    "param": [],
-                    "range": "group",
-                    "scope": [
+                    "param": [
                         [
-                            14,
-                            1
-                        ],
-                        [
-                            99,
-                            1
+                            "Star1Up"
                         ]
                     ],
-                    "type": "avgcost"
+                    "range": "group",
+                    "scope": [
+                        10,
+                        100
+                    ],
+                    "type": "tag"
                 }
             ]
         ],
@@ -725,26 +723,15 @@
                 {
                     "param": [
                         [
-                            "Cost14Up"
+                            "Defense"
                         ]
                     ],
                     "range": "group",
                     "scope": [
-                        6,
-                        100
+                        4,
+                        99
                     ],
                     "type": "tag"
-                },
-                {
-                    "param": [
-                        []
-                    ],
-                    "range": "group",
-                    "scope": [
-                        0,
-                        4
-                    ],
-                    "type": "typevalue"
                 }
             ]
         ],
@@ -753,26 +740,15 @@
                 {
                     "param": [
                         [
-                            "Cost14Up"
+                            "Cost18Up"
                         ]
                     ],
                     "range": "group",
                     "scope": [
-                        6,
+                        3,
                         100
                     ],
                     "type": "tag"
-                },
-                {
-                    "param": [
-                        []
-                    ],
-                    "range": "group",
-                    "scope": [
-                        6,
-                        100
-                    ],
-                    "type": "typevalue"
                 }
             ]
         ],
@@ -781,7 +757,7 @@
                 {
                     "param": [
                         [
-                            "Cost14Up"
+                            "Defense"
                         ]
                     ],
                     "range": "hold",
