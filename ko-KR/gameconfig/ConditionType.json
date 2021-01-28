@@ -1336,6 +1336,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_playerpracticestagestar_Desc"
     },
+    "Condi_rechargeMoneyCount": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "recharge_money_count.?1",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_rechargeMoneyCount_Desc"
+    },
     "Condi_shopBuy": {
         "AchieveType1": "CUSTOM",
         "AchieveType2": "",

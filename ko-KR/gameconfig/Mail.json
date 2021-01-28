@@ -662,6 +662,32 @@
         "TopStatus": 0,
         "Type": "USER"
     },
+    "Mail_MergeClubName": {
+        "Content": "Mail_MergeClubName_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Sender",
+        "QuickGet": 1,
+        "Reward": "Mail_MergeClubName_Reward",
+        "SubType": 1,
+        "Title": "Mail_MergeClubName_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
+    "Mail_MergeReward": {
+        "Content": "Mail_MergeReward_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Sender",
+        "QuickGet": 1,
+        "Reward": "Mail_MergeReward_Reward",
+        "SubType": 1,
+        "Title": "Mail_MergeReward_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
     "Mail_MonthCard": {
         "Content": "Mail_MonthCard_Content",
         "ExpireAfterRead": 72000,
@@ -971,6 +997,19 @@
         "Reward": "0",
         "SubType": 0,
         "Title": "Mail_TPGZhu_DailyTask_Activity_Title",
+        "TopStatus": "",
+        "Type": "USER"
+    },
+    "Mail_Task_Activity": {
+        "Content": "Mail_Task_Activity_Content",
+        "ExpireAfterRead": "",
+        "ExpireTime": 72000,
+        "Icon": "1",
+        "Name": "Mail_Task_Activity_Name",
+        "QuickGet": 1,
+        "Reward": "0",
+        "SubType": 0,
+        "Title": "Mail_Task_Activity_Title",
         "TopStatus": "",
         "Type": "USER"
     },
