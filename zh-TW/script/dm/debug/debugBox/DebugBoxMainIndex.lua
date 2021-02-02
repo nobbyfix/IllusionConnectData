@@ -68,7 +68,19 @@ DebugBoxMainIndex = {
 				{
 					"打开测试面板",
 					"修改服务器时间",
-					"调cross和游戏服时间"
+					"调cross和游戏服时间",
+					"设置DEBUG模式"
+				}
+			},
+			{
+				"RTPK",
+				{
+					"增加积分(可负)",
+					"增加排行榜",
+					"清除数据",
+					"增加次数",
+					"修改跨服时间",
+					"数据上报"
 				}
 			},
 			{
@@ -710,6 +722,38 @@ DebugBoxMainIndex = {
 				"DebugShowBustAni"
 			},
 			{
+				"一键完成梦之轨迹",
+				"OnekeyStageTask"
+			},
+			{
+				"增加积分(可负)",
+				"DebugRTPKScore"
+			},
+			{
+				"增加排行榜",
+				"DebugRTPKAddRank"
+			},
+			{
+				"清除数据",
+				"DebugRTPKClearAll"
+			},
+			{
+				"增加次数",
+				"DebugRTPKAddCount"
+			},
+			{
+				"修改跨服时间",
+				"RTPKChangeServerTime"
+			},
+			{
+				"数据上报",
+				"RTPKServerMatch"
+			},
+			{
+				"设置DEBUG模式",
+				"ChangeDEBUGValue"
+			},
+			{
 				"技能Args检查",
 				"CheckSkillArgsBox"
 			},
@@ -867,7 +911,9 @@ DebugBoxMainIndex = {
 			"DebugShowBustAni",
 			"FreeRecharge",
 			"BattleExtend",
-			"ChangeMiniGame"
+			"ChangeMiniGame",
+			"DebugShowBustAni",
+			"DebugRTPKScore"
 		}
 
 		for k, v in pairs(requireNameMap) do

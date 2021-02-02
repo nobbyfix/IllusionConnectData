@@ -3400,6 +3400,11 @@ local modules = {
 							res = "asset/ui/RTPVPNetTips.csb",
 							name = "RTPVPNetTipsView",
 							mediator = "RTPVPNetTipsMediator"
+						},
+						{
+							node = "cc.Node",
+							name = "rtpvpRobotBattle",
+							mediator = "RTPVPRobotBattleMediator"
 						}
 					}
 				}
@@ -3636,6 +3641,68 @@ local modules = {
 							res = "asset/ui/MiniGameResult.csb",
 							name = "MiniGameResultView",
 							mediator = "MiniGameResultMediator"
+						}
+					}
+				}
+			},
+			{
+				name = "rtpk",
+				requires = {
+					"dm.gameplay.rtpk.controller.RTPKSystem",
+					"dm.gameplay.rtpk.service.RTPKService"
+				},
+				injections = {
+					singletons = {
+						"RTPKSystem"
+					},
+					classes = {
+						"RTPKService"
+					},
+					views = {
+						{
+							res = "asset/ui/RtpkRankReward.csb",
+							name = "RTPKRewardView",
+							mediator = "RTPKRewardViewMediator"
+						},
+						{
+							res = "asset/ui/RtpkRank.csb",
+							name = "RTPKRankView",
+							mediator = "RTPKRankViewMediator"
+						},
+						{
+							res = "asset/ui/RtpkTeam.csb",
+							name = "RTPKTeamView",
+							mediator = "RTPKTeamMediator"
+						},
+						{
+							res = "asset/ui/RTPKMain.csb",
+							name = "RTPKMainView",
+							mediator = "RTPKMainMediator"
+						},
+						{
+							res = "asset/ui/RTPKMatch.csb",
+							name = "RTPKMatchView",
+							mediator = "RTPKMatchMediator"
+						},
+						{
+							res = "asset/ui/ArenaReportMain.csb",
+							name = "RTPKReportView",
+							mediator = "RTPKReportViewMediator"
+						},
+						{
+							res = "asset/ui/RTPKBuffDetail.csb",
+							name = "RTPKBuffDetailView",
+							mediator = "RTPKBuffDetailMediator"
+						},
+						{
+							res = "asset/ui/RTPKResult.csb",
+							name = "RTPKResultView",
+							mediator = "RTPKResultMediator"
+						},
+						{
+							res = "asset/ui/RTPKNewSeason.csb",
+							name = "RTPKNewSeasonTipsView",
+							mediator = "RTPKNewSeasonTipsMediator"
 						}
 					}
 				}

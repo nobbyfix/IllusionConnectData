@@ -23177,6 +23177,98 @@
         "TargetPreview": "",
         "Type": "BATTLEPASSIVE"
     },
+    "ExcellentHeroSkill_Attr_Big": {
+        "Actions": "DO_NOTHING",
+        "AllowCounterHit": [],
+        "AllowDoubleHit": [],
+        "Args": [],
+        "AttrEffects": [
+            "ExcellentHero_Attr_Big"
+        ],
+        "Desc": "ExcellentHeroSkill_Attr_Big_Desc",
+        "Desc_short": "ExcellentHeroSkill_Attr_Big_Desc",
+        "Icon": "",
+        "IsEXSkill": "",
+        "MasterSkillTag": "",
+        "Name": "",
+        "ShowInBattle": "",
+        "SkillDoubleRate": 0.0,
+        "SkillEffect": "",
+        "SkillPic": "",
+        "SkillRange": "",
+        "Summoned": "",
+        "TargetPreview": "",
+        "Type": "BATTLEPASSIVE"
+    },
+    "ExcellentHeroSkill_Attr_Small": {
+        "Actions": "DO_NOTHING",
+        "AllowCounterHit": [],
+        "AllowDoubleHit": [],
+        "Args": [],
+        "AttrEffects": [
+            "ExcellentHero_Attr_Small"
+        ],
+        "Desc": "ExcellentHeroSkill_Attr_Small_Desc",
+        "Desc_short": "ExcellentHeroSkill_Attr_Small_Desc",
+        "Icon": "",
+        "IsEXSkill": "",
+        "MasterSkillTag": "",
+        "Name": "",
+        "ShowInBattle": "",
+        "SkillDoubleRate": 0.0,
+        "SkillEffect": "",
+        "SkillPic": "",
+        "SkillRange": "",
+        "Summoned": "",
+        "TargetPreview": "",
+        "Type": "BATTLEPASSIVE"
+    },
+    "ExcellentHeroSkill_Awaken": {
+        "Actions": "DO_NOTHING",
+        "AllowCounterHit": [],
+        "AllowDoubleHit": [],
+        "Args": [],
+        "AttrEffects": [
+            "ExcellentHero_Awaken"
+        ],
+        "Desc": "ExcellentHeroSkill_Awaken_Desc",
+        "Desc_short": "ExcellentHeroSkill_Awaken_Desc",
+        "Icon": "",
+        "IsEXSkill": "",
+        "MasterSkillTag": "",
+        "Name": "",
+        "ShowInBattle": "",
+        "SkillDoubleRate": 0.0,
+        "SkillEffect": "",
+        "SkillPic": "",
+        "SkillRange": "",
+        "Summoned": "",
+        "TargetPreview": "",
+        "Type": "BATTLEPASSIVE"
+    },
+    "ExcellentHeroSkill_Stars": {
+        "Actions": "DO_NOTHING",
+        "AllowCounterHit": [],
+        "AllowDoubleHit": [],
+        "Args": [],
+        "AttrEffects": [
+            "ExcellentHero_Stars"
+        ],
+        "Desc": "ExcellentHeroSkill_Stars_Desc",
+        "Desc_short": "ExcellentHeroSkill_Stars_Desc",
+        "Icon": "",
+        "IsEXSkill": "",
+        "MasterSkillTag": "",
+        "Name": "",
+        "ShowInBattle": "",
+        "SkillDoubleRate": 0.0,
+        "SkillEffect": "",
+        "SkillPic": "",
+        "SkillRange": "",
+        "Summoned": "",
+        "TargetPreview": "",
+        "Type": "BATTLEPASSIVE"
+    },
     "Fight_MaxCostBuff": {
         "Actions": "Fight_MaxCostBuff",
         "AllowCounterHit": [

@@ -5314,6 +5314,111 @@
         "UI": "MINI_DARTS",
         "Version": ""
     },
+    "Activity_Darts_20210202": {
+        "ActivityConfig": {
+            "DailyTask": [
+                "Activity_Darts_20210202_DailyTask_1",
+                "Activity_Darts_20210202_DailyTask_2",
+                "Activity_Darts_20210202_DailyTask_3",
+                "Activity_Darts_20210202_DailyTask_4"
+            ],
+            "DartsScore": "100",
+            "MiniGameConfig": {
+                "point": [
+                    "Stage1",
+                    "Stage2",
+                    "Stage3",
+                    "Stage4",
+                    "Stage5",
+                    "Stage6",
+                    "Stage7",
+                    "Stage8",
+                    "Stage9",
+                    "Stage10",
+                    "Stage11",
+                    "Stage12",
+                    "Stage13",
+                    "Stage14",
+                    "Stage15"
+                ],
+                "type": "DARTS"
+            },
+            "NinjaAccelerateTime": 0.8,
+            "NinjaRevertGapTime": 1,
+            "RuleDesc": [
+                "Activity_Darts_UI_13",
+                "Activity_Darts_UI_14",
+                "Activity_Darts_UI_15",
+                "Activity_Darts_UI_29"
+            ],
+            "Task": [
+                "Activity_Darts_20210202_Task_1",
+                "Activity_Darts_20210202_Task_2",
+                "Activity_Darts_20210202_Task_3",
+                "Activity_Darts_20210202_Task_4",
+                "Activity_Darts_20210202_Task_5"
+            ],
+            "buyLimit": 100,
+            "buyTimesCost": {
+                "amount": [
+                    50,
+                    100,
+                    200,
+                    200,
+                    200,
+                    300
+                ],
+                "id": "IR_Diamond"
+            },
+            "dailyTimes": 3,
+            "eachBuyNum": 1,
+            "maxReward": [
+                {
+                    "amount": 110,
+                    "id": "IR_Diamond"
+                },
+                {
+                    "amount": 320000,
+                    "id": "IR_Gold"
+                },
+                {
+                    "amount": 8,
+                    "id": "IHF_YFZZhu"
+                }
+            ],
+            "maxTimes": 3,
+            "maximumShow": 200
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "Activity_DartsDarts_NewOpen_31_36_Desc",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 1,
+        "MailId": "Mail_Activity_Darts",
+        "Primary": 1,
+        "Reset": 1,
+        "ServerCondition": "",
+        "ShowIndex": 95008,
+        "ShowTab": 2,
+        "Tag": "NEW",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-02-19 05:00:00",
+            "start": [
+                "2021-02-15 05:00:00",
+                "2021-02-19 05:00:00"
+            ]
+        },
+        "Title": "Activity_Darts_Name",
+        "Type": "MINIGAME",
+        "UI": "MINI_DARTS",
+        "Version": ""
+    },
     "Activity_Gashapon_20200727": {
         "ActivityConfig": {
             "Gashapon": "Gashapon_1st_01",
@@ -6745,6 +6850,186 @@
         "UI": "",
         "Version": ""
     },
+    "DrawCard_1UP_20210202_1_Activity": {
+        "ActivityConfig": {
+            "DRAW": "DrawCard_1UP_PGNNi",
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_PGNNi",
+            "VANISH": 0
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 104,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-02-15 05:00:00",
+            "start": [
+                "2021-02-08 05:00:00",
+                "2021-02-15 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "Version": ""
+    },
+    "DrawCard_1UP_20210202_2_Activity": {
+        "ActivityConfig": {
+            "DRAW": "DrawCard_1UP_BLTu",
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_BLTu",
+            "VANISH": 0
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 104,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-02-22 05:00:00",
+            "start": [
+                "2021-02-15 05:00:00",
+                "2021-02-22 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "Version": ""
+    },
+    "DrawCard_1UP_20210203_1_Activity": {
+        "ActivityConfig": {
+            "DRAW": "DrawCard_1UP_PDLa",
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_PDLa",
+            "VANISH": 0
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 104,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-03-01 05:00:00",
+            "start": [
+                "2021-02-22 05:00:00",
+                "2021-03-01 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "Version": ""
+    },
+    "DrawCard_1UP_20210203_2_Activity": {
+        "ActivityConfig": {
+            "DRAW": "DrawCard_1UP_NFEr",
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_NFEr",
+            "VANISH": 0
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 104,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-03-08 05:00:00",
+            "start": [
+                "2021-03-01 05:00:00",
+                "2021-03-08 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "Version": ""
+    },
+    "DrawCard_1UP_20210204_1_Activity": {
+        "ActivityConfig": {
+            "DRAW": "DrawCard_1UP_FEMSi",
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_FEMSi",
+            "VANISH": 0
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 104,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-03-15 05:00:00",
+            "start": [
+                "2021-03-08 05:00:00",
+                "2021-03-15 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "Version": ""
+    },
     "DrawCard_1UP_20_Activity": {
         "ActivityConfig": {
             "DRAW": "DrawCard_1UP_20",
@@ -7854,6 +8139,186 @@
             "start": [
                 "2021-02-01 05:00:00",
                 "2021-02-08 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "Version": ""
+    },
+    "DrawCard_2UP_20210202_1_Activity": {
+        "ActivityConfig": {
+            "DRAW": "DrawCard_2UP_MGNaSLMen",
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_2UP_MGNaSLMen",
+            "VANISH": 0
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 104,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-02-15 05:00:00",
+            "start": [
+                "2021-02-08 05:00:00",
+                "2021-02-15 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "Version": ""
+    },
+    "DrawCard_2UP_20210202_2_Activity": {
+        "ActivityConfig": {
+            "DRAW": "DrawCard_2UP_BHTZiTPGZhu",
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_2UP_BHTZiTPGZhu",
+            "VANISH": 0
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 104,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-02-22 05:00:00",
+            "start": [
+                "2021-02-15 05:00:00",
+                "2021-02-22 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "Version": ""
+    },
+    "DrawCard_2UP_20210203_1_Activity": {
+        "ActivityConfig": {
+            "DRAW": "DrawCard_2UP_JNLongLCYShi",
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_2UP_JNLongLCYShi",
+            "VANISH": 0
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 104,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-03-01 05:00:00",
+            "start": [
+                "2021-02-22 05:00:00",
+                "2021-03-01 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "Version": ""
+    },
+    "DrawCard_2UP_20210203_2_Activity": {
+        "ActivityConfig": {
+            "DRAW": "DrawCard_2UP_SRenYBYa",
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_2UP_SRenYBYa",
+            "VANISH": 0
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 104,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-03-08 05:00:00",
+            "start": [
+                "2021-03-01 05:00:00",
+                "2021-03-08 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "Version": ""
+    },
+    "DrawCard_2UP_20210204_1_Activity": {
+        "ActivityConfig": {
+            "DRAW": "DrawCard_2UP_BBLMaLFEr",
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_2UP_BBLMaLFEr",
+            "VANISH": 0
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 104,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-03-15 05:00:00",
+            "start": [
+                "2021-03-08 05:00:00",
+                "2021-03-15 05:00:00"
             ]
         },
         "Title": "",
@@ -10369,6 +10834,112 @@
             "start": [
                 "2021-02-01 05:00:00",
                 "2021-02-11 05:00:00"
+            ]
+        },
+        "Title": "Login14_Title",
+        "Type": "TASK",
+        "UI": "Login",
+        "Version": ""
+    },
+    "EightDays_20210214": {
+        "ActivityConfig": {
+            "ActivityDesc": "Login14_Desc",
+            "GetRewardClose": 1,
+            "IsTimeClose": 1,
+            "showHero": "YBYa",
+            "specailDay": [
+                7
+            ],
+            "task": [
+                "EightDays_20210214_1",
+                "EightDays_20210214_2",
+                "EightDays_20210214_3",
+                "EightDays_20210214_4",
+                "EightDays_20210214_5",
+                "EightDays_20210214_6",
+                "EightDays_20210214_7",
+                "EightDays_20210214_8"
+            ],
+            "title": [
+                "hd_bg_bt_5"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "Login14_Desc",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "hd_btn_ljdl_bg",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1120,
+        "ShowTab": 1,
+        "Tag": "",
+        "Time": "RANGE_RESTART",
+        "TimeFactor": {
+            "duration": 10,
+            "start": [
+                "2021-02-14 05:00:00",
+                "2021-02-24 05:00:00"
+            ]
+        },
+        "Title": "Login14_Title",
+        "Type": "TASK",
+        "UI": "Login",
+        "Version": ""
+    },
+    "EightDays_20210227": {
+        "ActivityConfig": {
+            "ActivityDesc": "Login14_Desc",
+            "GetRewardClose": 1,
+            "IsTimeClose": 1,
+            "showHero": "YBYa",
+            "specailDay": [
+                7
+            ],
+            "task": [
+                "EightDays_20210227_1",
+                "EightDays_20210227_2",
+                "EightDays_20210227_3",
+                "EightDays_20210227_4",
+                "EightDays_20210227_5",
+                "EightDays_20210227_6",
+                "EightDays_20210227_7",
+                "EightDays_20210227_8"
+            ],
+            "title": [
+                "hd_bg_bt_5"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "Login14_Desc",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "hd_btn_ljdl_bg",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1120,
+        "ShowTab": 1,
+        "Tag": "",
+        "Time": "RANGE_RESTART",
+        "TimeFactor": {
+            "duration": 10,
+            "start": [
+                "2021-02-27 05:00:00",
+                "2021-03-09 05:00:00"
             ]
         },
         "Title": "Login14_Title",

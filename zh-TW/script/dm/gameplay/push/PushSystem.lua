@@ -33,6 +33,7 @@ function PushSystem:listen()
 	self:listenClubBossKilledCode()
 	self:listenClubBossTVTipCode()
 	self:listenClubBossHurtCode()
+	self:listenRTPK()
 end
 
 function PushSystem:listenLoginByOthers()
@@ -223,4 +224,10 @@ function PushSystem:listenClubBossHurtCode()
 
 		clubSystem:listenClubBossHurtCode(response)
 	end)
+end
+
+function PushSystem:listenRTPK()
+	local RTPKSystem = self:getInjector():getInstance(RTPKSystem)
+
+	RTPKSystem:listen()
 end

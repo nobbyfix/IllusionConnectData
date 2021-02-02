@@ -253,6 +253,7 @@ function TabBtnWidget:_bindBtnText(btn, config)
 	local unEnableOutline = config.unEnableOutline
 	local textOffsetx = config.textOffsetx or 0
 	local textOffsety = config.textOffsety or 18
+	local noWrap = config.noWrap or false
 	local darkText = cc.Label:createWithTTF(tabText, fontName, fontSize)
 
 	darkText:setAnchorPoint(0.5, 0.5)
@@ -265,6 +266,16 @@ function TabBtnWidget:_bindBtnText(btn, config)
 		darkText:enableOutline(cc.c4b(3, 1, 4, 255), 1)
 	end
 
+	darkText:setOverflow(cc.LabelOverflow.SHRINK)
+
+	if noWrap then
+		darkText:setContentSize(self._cellWidth * 0.68, self._cellHeight * 0.65)
+	else
+		darkText:setDimensions(self._cellWidth * 0.68, self._cellHeight * 0.65)
+	end
+
+	darkText:setAlignment(cc.TEXT_ALIGNMENT_CENTER, cc.TEXT_ALIGNMENT_CENTER)
+
 	local lightText = cc.Label:createWithTTF(tabText, fontName, fontSize)
 
 	if fontColorSel then
@@ -276,6 +287,16 @@ function TabBtnWidget:_bindBtnText(btn, config)
 	if not unEnableOutline then
 		lightText:enableOutline(cc.c4b(3, 1, 4, 255), 1)
 	end
+
+	lightText:setOverflow(cc.LabelOverflow.SHRINK)
+
+	if noWrap then
+		lightText:setContentSize(self._cellWidth * 0.68, self._cellHeight * 0.65)
+	else
+		lightText:setDimensions(self._cellWidth * 0.68, self._cellHeight * 0.65)
+	end
+
+	lightText:setAlignment(cc.TEXT_ALIGNMENT_CENTER, cc.TEXT_ALIGNMENT_CENTER)
 
 	local darkTextTranslate = cc.Label:createWithTTF(tabTextTranslate, TTF_FONT_FZYH_M, 16)
 

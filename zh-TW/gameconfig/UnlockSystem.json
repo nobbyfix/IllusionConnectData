@@ -1476,6 +1476,31 @@
         "UnlockAnima": "",
         "UnlockDesc": ""
     },
+    "RTPK": {
+        "Condition": {
+            "LEVEL": 30,
+            "SERVER": 15
+        },
+        "Icon": "",
+        "IsPlay": 0,
+        "Link": "",
+        "LongDesc": "RTPK_Unlock_Name",
+        "Name": "RTPK_SystemName",
+        "OutputDesc": "",
+        "ResourcesBanner": [
+            "IR_Gold",
+            "IR_Crystal",
+            "IR_Power",
+            "IR_Diamond"
+        ],
+        "ShowCondition": {
+            "LEVEL": 30,
+            "SERVER": 12
+        },
+        "Tip": "RTPK_EntryUnlockTip",
+        "UnlockAnima": "",
+        "UnlockDesc": ""
+    },
     "RankList": {
         "Condition": {
             "LEVEL": 10

@@ -12,6 +12,7 @@ end
 
 function RTPVPBattleMainMediator:onRemove()
 	self._controller:leave()
+	cancelDelayCall(self._surrenderTimer)
 	super.onRemove(self)
 end
 
@@ -19,14 +20,18 @@ function RTPVPBattleMainMediator:enterWithData(data)
 	super.enterWithData(self, data)
 	self:mapEventListeners()
 
-	if self._controller:getBattleFinishData() then
-		local data = self._controller:getBattleFinishData()
+	local data = self._controller:getBattleFinishData()
 
-		self._delegate:onBattleFinished(self, {
-			winner = data.resultData.winner,
-			summary = data.resultData.summary
-		})
-		self._controller:clearBattleFinishData()
+	if data and data.roomId then
+		if data.roomId == self._delegate:getRoomId() then
+			self._delegate:onBattleFinished(self, {
+				winner = data.resultData.winner,
+				summary = data.resultData.summary
+			})
+			self._controller:clearBattleFinishData()
+		else
+			self._controller:clearBattleFinishData()
+		end
 	end
 
 	local view = self:getView()
@@ -50,13 +55,12 @@ function RTPVPBattleMainMediator:_connectError()
 	local outSelf = self
 	local delegate = {
 		willClose = function (self, popupMediator, data)
-			BattleLoader:popBattleView(outSelf)
+			BattleLoader:popBattleView(outSelf, nil, "homeView")
 		end
 	}
 	local data = {
-		notMaskClose = true,
-		title = Strings:get("Tower_Text48"),
-		content = Strings:get("RTPK_UI_101"),
+		title = Strings:get("RTPK_Reconnected_PopUp_Title"),
+		content = Strings:get("RTPK_Reconnected_PopUp_Text"),
 		sureBtn = {}
 	}
 	local view = self:getInjector():getInstance("AlertView")
@@ -170,11 +174,12 @@ end
 
 function RTPVPBattleMainMediator:createSurrenderButton()
 	local surrenderBtn = ccui.Button:create("zd_zd_icon.png", "zd_zd_icon.png", "zd_zd_icon.png", ccui.TextureResType.plistType)
-	local viewFrame = self.targetFrame
+	local ctrlButtons = self.battleUIMediator:getCtrlButtons()
+	local ctrlView = ctrlButtons:getView()
 
-	surrenderBtn:addTo(self:getView())
-	surrenderBtn:setAnchorPoint(1, 0.5)
-	surrenderBtn:setPosition(viewFrame.width - viewFrame.x, 320)
+	surrenderBtn:addTo(ctrlView)
+	surrenderBtn:setAnchorPoint(0.5, 0.5)
+	surrenderBtn:setPosition(0, 30)
 	surrenderBtn:addTouchEventListener(function (sender, eventType)
 		if eventType == ccui.TouchEventType.ended then
 			Bdump("surrender!!!!!")
@@ -225,9 +230,7 @@ function RTPVPBattleMainMediator:_battleResult(evt)
 
 		return
 	end
-end
 
-function RTPVPBattleMainMediator:didFinishBattle()
 	if self._controller:getBattleFinishData() then
 		local data = self._controller:getBattleFinishData()
 
@@ -240,15 +243,6 @@ function RTPVPBattleMainMediator:didFinishBattle()
 end
 
 function RTPVPBattleMainMediator:battleWinOrLose(result)
-	if self._controller:getBattleFinishData() then
-		local data = self._controller:getBattleFinishData()
-
-		self._delegate:onBattleFinished(self, {
-			winner = data.resultData.winner,
-			summary = data.resultData.summary
-		})
-		self._controller:clearBattleFinishData()
-	end
 end
 
 function RTPVPBattleMainMediator:_battleSkip()
@@ -256,7 +250,10 @@ function RTPVPBattleMainMediator:_battleSkip()
 end
 
 function RTPVPBattleMainMediator:_readyGoFinish()
-	self._surrenderBtn:setVisible(true)
+	local time = ConfigReader:getDataByNameIdAndKey("ConfigValue", "RTPK_LostTine", "content")
+	self._surrenderTimer = delayCallByTime((time + 1) * 1000, function ()
+		self._surrenderBtn:setVisible(true)
+	end)
 end
 
 function RTPVPBattleMainMediator:_homeResign()

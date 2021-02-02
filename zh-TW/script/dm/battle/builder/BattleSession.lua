@@ -14,7 +14,9 @@ function CreateBattleSession(args)
 		crusade = CrusadeBattleSession,
 		actstage = ActstageBattleSession,
 		clubboss = ClubBattleSession,
-		dream = DreamBattleSession
+		dream = DreamBattleSession,
+		orrtpk = RTPVPBattleSession,
+		orrtpkrobot = RTPVPRobotBattleSession
 	}
 	local sessionClass = SessionMap[args.battleType]
 

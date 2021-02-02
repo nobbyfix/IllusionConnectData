@@ -174,6 +174,7 @@ function SettingMediator:onRegister()
 	self._usrNode = self._main:getChildByFullName("setUsr")
 	self._sloganEditBox = self._main:getChildByFullName("setUsr.TextField")
 
+	self._main:getChildByName("bugFeedback"):setVisible(false)
 	self:loadPlayerInfo()
 end
 

@@ -4150,4 +4150,28 @@ function IconFactory:getHeroRarityAnim(rarity)
 	end
 end
 
+function IconFactory:createRTPKGradeIcon(gradeId)
+	local gradeConfig = ConfigReader:getRecordById("RTPKGrade", gradeId)
+	local icon = ccui.ImageView:create(gradeConfig.GradePic .. ".png", ccui.TextureResType.plistType)
+	local nameText = ccui.Text:create(Strings:get(gradeConfig.Name), CUSTOM_TTF_FONT_1, 24)
+	local lineGradiantVec2 = {
+		{
+			ratio = 0.3,
+			color = cc.c4b(66, 56, 143, 255)
+		},
+		{
+			ratio = 0.7,
+			color = cc.c4b(81, 83, 170, 255)
+		}
+	}
+
+	nameText:enablePattern(cc.LinearGradientPattern:create(lineGradiantVec2, {
+		x = 0,
+		y = -1
+	}))
+	nameText:addTo(icon):center(icon:getContentSize()):offset(5, -125)
+
+	return icon
+end
+
 IconFactory:initialize()

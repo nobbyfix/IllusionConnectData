@@ -54,7 +54,11 @@ function BattlePassiveSkillWidget:_setupView()
 		view:addChild(masterPassiveSkill)
 		masterPassiveSkill:setPosition(cc.p(posX, 2))
 
-		posX = posX + lengthM
+		if self._isLeft then
+			posX = posX + lengthM
+		else
+			posX = posX - lengthM
+		end
 
 		for index = 1, 6 do
 			local skillImg = masterPassiveSkill:getChildByFullName("Image_" .. index)

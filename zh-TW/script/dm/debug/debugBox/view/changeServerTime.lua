@@ -65,7 +65,7 @@ function changeTagetServerTime:initialize()
 		{
 			default = 0,
 			name = "timestamp",
-			title = "时间(秒)",
+			title = "yyyy-MM-dd HH:mm:ss",
 			type = "Input"
 		},
 		{
@@ -96,7 +96,8 @@ function changeTagetServerTime:onClick(data)
 			parms.timestamp = serverTimeMap + 86400 * data.timestamp_H + 3600 * data.timestamp_H
 		end
 	else
-		parms.timestamp = data.timestamp
+		parms.timestamp = TimeUtil:timeByRemoteDate(TimeUtil:parseDateTime({}, data.timestamp))
+		data.timestamp = parms.timestamp
 	end
 
 	local dataModificationDS = self:getInjector():getInstance(DataModificationDS)

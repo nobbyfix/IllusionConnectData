@@ -926,7 +926,7 @@ function FriendPvpMediator:_battleShowResult(result)
 end
 
 function FriendPvpMediator:_battleMatch(data, extra)
-	local battleDelegate = RTPVPDelegate:new(self._controller:getRtpvpService():fetchRid(), data.battleData, data.simulator, bind1(self._battleShowResult, self))
+	local battleDelegate = RTPVPDelegate:new(self._controller:getRtpvpService():fetchRid(), data.battleData, data.simulator, bind1(self._battleShowResult, self), self._friendPvp:getRoomId())
 	local bgId = extra and extra.bgId or "RealTimeFight_Background"
 	local bgRes = "Battle_Scene_1"
 	local logicInfo = {

@@ -27,21 +27,23 @@ RankSystem:has("_eventDispatcher", {
 }):injectWith("legs_sharedEventDispatcher")
 
 RankType = {
-	kGold = 5,
+	kSupport = 40,
+	kBlockStar = 2,
 	kPetRace = 11,
-	kMaze = 15,
+	KPetWorldScore = 25,
+	kClubBoss = 41,
+	KRTPK = 26,
+	kExp = 6,
+	kClub = 9,
+	kGold = 5,
 	kMap = 14,
+	kMaze = 15,
 	kSubPetRace = 24,
 	kCrystal = 7,
 	kArena = 0,
-	kBlockStar = 2,
 	kCombat = 1,
 	kCrusade = 30,
 	kHeroCombat = 3,
-	kSupport = 40,
-	kExp = 6,
-	kClub = 9,
-	kClubBoss = 41,
 	kMiniGame = 42
 }
 RankClass = {
@@ -59,7 +61,12 @@ RankClass = {
 	[RankType.kArena] = ArenaRankRecord,
 	[RankType.kCrusade] = CrusadeRankRecord,
 	[RankType.kClubBoss] = ClubBossRankRecord,
-	[RankType.kMiniGame] = MiniGameRankRecord
+	[RankType.kMiniGame] = MiniGameRankRecord,
+	[RankType.KRTPK] = RTPKRankRecord,
+	[RankType.KPetWorldScore] = PetWorldScoreRankRecord
+}
+RankSwitch = {
+	[RankType.kClubBoss] = "fn_clubBoss"
 }
 RankTopImage = {
 	"img_zlb_no1.png",
@@ -275,6 +282,29 @@ function RankSystem:requestRankData(data, callback)
 	end)
 end
 
+function RankSystem:requestRTPKAllServerRankData(data, callback, blockUI)
+	local params = {
+		type = data.type,
+		start = data.rankStart,
+		["end"] = data.rankEnd
+	}
+
+	self._rankService:requestRTPKAllServerRankData(params, blockUI, function (response)
+		local syncTime = self:getCurrentTime()
+
+		if data.rankStart == 1 then
+			self._rank:cleanUpRankList(data.type)
+		end
+
+		self._rank:synchronize(response.data, data.type, syncTime)
+		self:dispatch(Event:new(EVT_RANK_REQUEST_SUCC))
+
+		if callback then
+			callback(response)
+		end
+	end)
+end
+
 function RankSystem:requestSupportRankRewardData(data, callback)
 	local params = {
 		type = data.type,
@@ -438,6 +468,10 @@ end
 
 function RankSystem:getMaxRank()
 	return ConfigReader:getDataByNameIdAndKey("ConfigValue", "Rank_Show_Number", "content")
+end
+
+function RankSystem:getRTPKMaxRank()
+	return ConfigReader:getDataByNameIdAndKey("ConfigValue", "RTPK_RankMax", "content")
 end
 
 function RankSystem:getRequestRankCountPerTime()

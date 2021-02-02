@@ -4,7 +4,8 @@ local opType = {
 	requestAloneRankData = 10602,
 	getRewardList = 10603,
 	obtainRewardList = 10604,
-	getSubsboard = 10605
+	getSubsboard = 10605,
+	getRTPKAllserverList = 14306
 }
 
 function RankService:initialize()
@@ -47,6 +48,12 @@ end
 
 function RankService:requestObtainRewardList(params, blockUI, callback)
 	local request = self:newRequest(opType.obtainRewardList, params, callback)
+
+	self:sendRequest(request, blockUI)
+end
+
+function RankService:requestRTPKAllServerRankData(params, blockUI, callback)
+	local request = self:newRequest(opType.getRTPKAllserverList, params, callback)
 
 	self:sendRequest(request, blockUI)
 end
