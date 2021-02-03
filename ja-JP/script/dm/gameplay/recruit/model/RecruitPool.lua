@@ -153,3 +153,7 @@ end
 function RecruitPool:getLink()
 	return self._config.Link
 end
+
+function RecruitPool:getResourcesBanner()
+	return self._config.ResourcesBanner
+end

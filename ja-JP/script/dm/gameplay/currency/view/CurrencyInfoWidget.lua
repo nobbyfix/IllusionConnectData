@@ -82,6 +82,13 @@ kAddBtnFuncMap[CurrencyIdKind.kPve] = function (self)
 	CurrencySystem:showSource(self, CurrencyIdKind.kPve)
 end
 
+kAddBtnFuncMap[CurrencyIdKind.kDiamondDrawExZuoHeItem] = function (self)
+	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
+	self._shopSystem:tryEnter({
+		shopId = ShopSpecialId.kShopTimeLimit
+	})
+end
+
 local kAddImgMap = {
 	[CurrencyIdKind.kGold] = true,
 	[CurrencyIdKind.kPower] = true,
@@ -91,7 +98,8 @@ local kAddImgMap = {
 	[CurrencyIdKind.kClub] = true,
 	[CurrencyIdKind.kPve] = true,
 	[CurrencyIdKind.kDiamondDrawItem] = true,
-	[CurrencyIdKind.kDiamondDrawExItem] = true
+	[CurrencyIdKind.kDiamondDrawExItem] = true,
+	[CurrencyIdKind.kDiamondDrawExZuoHeItem] = true
 }
 
 function CurrencyBar.class:createWidgetNode()
@@ -170,7 +178,7 @@ function CurrencyBar:setCurrencyId(currencyId, addBtnDisable)
 			plusImage:setVisible(false)
 		end
 
-		if PowerConfigMap[currencyId] then
+		if PowerConfigMap[currencyId] and PowerConfigMap[currencyId].configId then
 			view:getChildByFullName("tips.Text_25"):setString(Strings:get(PowerConfigMap[currencyId].next))
 			view:getChildByFullName("tips.Text_27"):setString(Strings:get(PowerConfigMap[currencyId].all))
 			self._bagSystem:bindSchedulerOnView(self)
@@ -262,7 +270,7 @@ function CurrencyBar:updateText()
 
 			str2:setString(allDoneTimeStr)
 		end
-	elseif PowerConfigMap[currencyId] then
+	elseif PowerConfigMap[currencyId] and PowerConfigMap[currencyId].configId then
 		local curPower, lastRecoverTime, powerLimit, powerRecoverCd = nil
 		local func = PowerConfigMap[currencyId].func
 		local configFunc = PowerConfigMap[currencyId].configFunc or "getPowerResetByCurrencyId"

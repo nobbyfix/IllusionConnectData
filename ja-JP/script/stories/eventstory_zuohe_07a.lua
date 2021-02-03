@@ -230,7 +230,7 @@ function scene_eventstory_zuohe_07a.actions.start_eventstory_zuohe_07a(_root, ar
 							name = "YYing_face",
 							pathType = "STORY_FACE",
 							type = "Image",
-							image = "YYing/YYing_face_4.png",
+							image = "YYing/YYing_face_1.png",
 							scaleX = 1,
 							scaleY = 1,
 							layoutMode = 1,
@@ -660,7 +660,7 @@ function scene_eventstory_zuohe_07a.actions.start_eventstory_zuohe_07a(_root, ar
 			args = function (_ctx)
 				return {
 					resType = 0,
-					image = "GYCZi/GYCZi_face_5.png",
+					image = "GYCZi/GYCZi_face_2.png",
 					pathType = "STORY_FACE"
 				}
 			end
@@ -1653,6 +1653,17 @@ function scene_eventstory_zuohe_07a.actions.start_eventstory_zuohe_07a(_root, ar
 			end
 		}),
 		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "GYCZi_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "GYCZi/GYCZi_face_5.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
+		act({
 			action = "speak",
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
@@ -1738,6 +1749,17 @@ function scene_eventstory_zuohe_07a.actions.start_eventstory_zuohe_07a(_root, ar
 			end
 		}),
 		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "YYing_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "YYing/YYing_face_1.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
+		act({
 			action = "speak",
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
@@ -1755,6 +1777,17 @@ function scene_eventstory_zuohe_07a.actions.start_eventstory_zuohe_07a(_root, ar
 					durations = {
 						0.03
 					}
+				}
+			end
+		}),
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "GYCZi_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "GYCZi/GYCZi_face_4.png",
+					pathType = "STORY_FACE"
 				}
 			end
 		}),
@@ -1875,6 +1908,17 @@ function scene_eventstory_zuohe_07a.actions.start_eventstory_zuohe_07a(_root, ar
 					}
 				end
 			})
+		}),
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "GYCZi_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "GYCZi/GYCZi_face_4.png",
+					pathType = "STORY_FACE"
+				}
+			end
 		}),
 		act({
 			action = "speak",

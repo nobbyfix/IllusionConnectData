@@ -459,9 +459,10 @@ function ActivitySupport:getButtonConfig()
 		local config = ConfigReader:getRecordById("Activity", id)
 
 		if config and config.Type == ActivityType.KActivityBlockMap then
+			local titleStrId = config.ActivityConfig.ButtonText or config.Title
 			local data = {
 				icon = config.ActivityConfig.ButtonIcon,
-				title = Strings:get(config.Title),
+				title = Strings:get(titleStrId),
 				rewards = ConfigReader:getDataByNameIdAndKey("Reward", config.ActivityConfig.ShowReward, "Content"),
 				heroes = config.ActivityConfig.BonusHero
 			}

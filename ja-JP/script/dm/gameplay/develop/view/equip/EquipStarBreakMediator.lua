@@ -48,6 +48,8 @@ function EquipStarBreakMediator:onRegister()
 			height = 96
 		}
 	})
+
+	self:mapEventListener(self:getEventDispatcher(), EVT_EQUIP_LOCK_SUCC, self, self.refreshViewByLock)
 end
 
 function EquipStarBreakMediator:enterWithData(data)
@@ -61,7 +63,16 @@ function EquipStarBreakMediator:initData(data)
 	self._callback = data.callback
 	self._equipId = data.equipId
 	self._needNum = data.needNum
+	self._consumeTemp = {
+		items = {},
+		equips = {}
+	}
 	self._equipData = self._equipSystem:getEquipById(self._equipId)
+
+	self:refreshData()
+end
+
+function EquipStarBreakMediator:refreshData()
 	local checkParam = {
 		equipBaseId = self._equipData:getEquipId(),
 		exceptEquipId = self._equipData:getId(),
@@ -111,11 +122,6 @@ function EquipStarBreakMediator:initData(data)
 			self._cellsHeight[self._cellNum] = param
 		end
 	end
-
-	self._consumeTemp = {
-		items = {},
-		equips = {}
-	}
 end
 
 function EquipStarBreakMediator:initView()
@@ -136,6 +142,10 @@ function EquipStarBreakMediator:initView()
 	self._itemCellTop = self:getView():getChildByFullName("cell_top")
 
 	self._itemCellTop:setVisible(false)
+
+	self._itemCellLock = self:getView():getChildByFullName("cell_lock")
+
+	self._itemCellLock:setVisible(false)
 end
 
 function EquipStarBreakMediator:initTableView()
@@ -273,14 +283,31 @@ function EquipStarBreakMediator:createTeamCell(cell, index)
 
 				if heroId ~= "" then
 					color = cc.c3b(180, 180, 180)
-				elseif not unlock then
-					local image = ccui.ImageView:create("asset/common/common_img_lock.png")
+				else
+					local node_lock = self._itemCellLock:clone()
 
-					image:setAnchorPoint(cc.p(0, 0))
-					image:setPosition(cc.p(3, 22))
-					image:addTo(itemPanel)
+					node_lock:setVisible(true)
+					node_lock:addTo(node):center(node:getContentSize())
 
-					color = cc.c3b(127, 127, 127)
+					local Panel_unlock = node_lock:getChildByFullName("Panel_unlock")
+					local Panel_lock = node_lock:getChildByFullName("Panel_lock")
+
+					Panel_unlock:addTouchEventListener(function (sender, eventType)
+						self:onUnlockOrLockEquip(sender, eventType, itemData)
+					end)
+					Panel_lock:addTouchEventListener(function (sender, eventType)
+						self:onUnlockOrLockEquip(sender, eventType, itemData)
+					end)
+
+					if unlock then
+						Panel_unlock:setVisible(true)
+						Panel_lock:setVisible(false)
+					else
+						Panel_unlock:setVisible(false)
+						Panel_lock:setVisible(true)
+
+						color = cc.c3b(127, 127, 127)
+					end
 				end
 
 				item:setColor(color)
@@ -419,4 +446,38 @@ function EquipStarBreakMediator:onEatItemClicked(sender, eventType, itemData)
 		self._tableView:setContentOffset(cc.p(0, offsetY))
 		self:refreshView()
 	end
+end
+
+function EquipStarBreakMediator:onUnlockOrLockEquip(sender, eventType, itemData)
+	if eventType == ccui.TouchEventType.began then
+		self._isReturn = true
+	elseif eventType == ccui.TouchEventType.ended and self._isReturn then
+		local params = {
+			viewtype = 2,
+			equipId = itemData:getId()
+		}
+		self._doTip_Unlock = itemData:getUnlock()
+		self._itemData_change = itemData
+
+		self._equipSystem:requestEquipLock(params)
+	end
+end
+
+function EquipStarBreakMediator:refreshViewByLock()
+	if self._itemData_change and self._itemData_change.expData and self._doTip_Unlock then
+		self._consumeTemp.equips[self._itemData_change.expData.id] = nil
+	end
+
+	local tip = self._doTip_Unlock and Strings:get("Equip_Lock_Tips_2") or Strings:get("Equip_Lock_Tips_1")
+
+	self:dispatch(ShowTipEvent({
+		tip = tip
+	}))
+	self:refreshData()
+
+	local offsetY = self._tableView:getContentOffset().y
+
+	self._tableView:reloadData()
+	self._tableView:setContentOffset(cc.p(0, offsetY))
+	self:refreshView()
 end

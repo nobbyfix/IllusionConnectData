@@ -412,7 +412,9 @@ function RecruitMainMediator:onClickTab(name, tag)
 	self:updateView()
 
 	local id = self._recruitData[tag]:getType()
+	local resourcesBanner = self._recruitData[tag]:getResourcesBanner()
 	local currencyInfoData = self._currencyInfos[id] or self._currencyInfo
+	currencyInfoData = resourcesBanner or currencyInfoData
 	local currencyInfo = {}
 
 	for i = #currencyInfoData, 1, -1 do
@@ -1301,7 +1303,7 @@ function RecruitMainMediator:onRecruit1Clicked()
 
 	if self._bagSystem:checkCostEnough(costId, costCount) then
 		self._recruitSystem:requestRecruit(param)
-	elseif costId == CurrencyIdKind.kDiamondDrawItem or costId == CurrencyIdKind.kDiamondDrawExItem then
+	elseif costId == CurrencyIdKind.kDiamondDrawItem or costId == CurrencyIdKind.kDiamondDrawExItem or costId == CurrencyIdKind.kDiamondDrawExZuoHeItem then
 		self:buyCard(costId, costCount, param)
 	else
 		self._bagSystem:checkCostEnough(costId, costCount, {
@@ -1336,7 +1338,7 @@ function RecruitMainMediator:onRecruit2Clicked()
 
 	if self._bagSystem:checkCostEnough(costId, costCount) then
 		self._recruitSystem:requestRecruit(param)
-	elseif costId == CurrencyIdKind.kDiamondDrawItem or costId == CurrencyIdKind.kDiamondDrawExItem then
+	elseif costId == CurrencyIdKind.kDiamondDrawItem or costId == CurrencyIdKind.kDiamondDrawExItem or costId == CurrencyIdKind.kDiamondDrawExZuoHeItem then
 		self:buyCard(costId, costCount, param)
 	else
 		self._bagSystem:checkCostEnough(costId, costCount, {
@@ -1346,7 +1348,13 @@ function RecruitMainMediator:onRecruit2Clicked()
 end
 
 function RecruitMainMediator:buyCard(costId, costCount, param)
-	if self._bagSystem:getItemCount(costId) == 0 then
+	if self._bagSystem:getItemCount(costId) == 0 and costId == CurrencyIdKind.kDiamondDrawItem then
+		self:autoBuy(costId, costCount, param)
+
+		return
+	end
+
+	if self._recruitSystem:getCanAutoBuy(costId) then
 		self:autoBuy(costId, costCount, param)
 
 		return

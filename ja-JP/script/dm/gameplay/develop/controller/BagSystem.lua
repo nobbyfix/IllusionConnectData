@@ -7,7 +7,7 @@ BagSystem:has("_developSystem", {
 	is = "r"
 }):injectWith("DevelopSystem")
 BagSystem:has("_composeTimes", {
-	is = "rw"
+	is = "r"
 })
 
 local crusadeEnergyReset = nil
@@ -25,6 +25,7 @@ function BagSystem:initialize()
 
 	self:initPowerReset()
 
+	self._composeTimes = {}
 	crusadeEnergyReset = self:initConfigSystem("Reset", "Crusade_Energy_Recovery")
 end
 
@@ -219,7 +220,7 @@ function BagSystem:getPowerByCurrencyId(currencyId)
 	local count = 0
 	local lastRecoverTime = 0
 
-	if entry then
+	if entry and resetSystem then
 		lastRecoverTime = entry.item:getLastRecoverTime()
 		count = entry.count
 
@@ -228,6 +229,8 @@ function BagSystem:getPowerByCurrencyId(currencyId)
 			local changeCount = math.max(0, math.floor((curTime - lastRecoverTime) / resetSystem.cd))
 			count = math.min(count + changeCount, resetSystem.limit)
 		end
+	else
+		count = entry and entry.count or 0
 	end
 
 	return count, lastRecoverTime
@@ -1554,4 +1557,10 @@ function BagSystem:isHasCompose()
 	end
 
 	return slot6
+end
+
+function BagSystem:setComposeTimes(composeTimes)
+	for key, value in pairs(composeTimes) do
+		self._composeTimes[key] = value
+	end
 end

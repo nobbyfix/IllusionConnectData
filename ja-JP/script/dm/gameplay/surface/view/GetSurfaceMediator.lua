@@ -178,7 +178,9 @@ function GetSurfaceMediator:showResult(data)
 	local descNode = anim:getChildByName("descNode")
 
 	soundDesc:changeParent(descNode)
-	soundDesc:setPosition(cc.p(-180, 70))
+	soundDesc:setPosition(cc.p(-180, 56))
+	soundDesc:setTextVerticalAlignment(cc.TEXT_ALIGNMENT_CENTER)
+	soundDesc:setTextAreaSize(cc.size(385, 85))
 
 	local partyNode = anim:getChildByName("partyNode")
 

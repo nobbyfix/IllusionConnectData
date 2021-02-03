@@ -1670,7 +1670,7 @@ function scene_eventstory_zuohe_10a.actions.start_eventstory_zuohe_10a(_root, ar
 			args = function (_ctx)
 				return {
 					resType = 0,
-					image = "SYAi/SYAi_face_3.png",
+					image = "SYAi/SYAi_face_5.png",
 					pathType = "STORY_FACE"
 				}
 			end
@@ -1783,7 +1783,7 @@ function scene_eventstory_zuohe_10a.actions.start_eventstory_zuohe_10a(_root, ar
 			args = function (_ctx)
 				return {
 					resType = 0,
-					image = "YYing/YYing_face_3.png",
+					image = "YYing/YYing_face_1.png",
 					pathType = "STORY_FACE"
 				}
 			end
@@ -1906,7 +1906,7 @@ function scene_eventstory_zuohe_10a.actions.start_eventstory_zuohe_10a(_root, ar
 			args = function (_ctx)
 				return {
 					resType = 0,
-					image = "SYAi/SYAi_face_1.png",
+					image = "SYAi/SYAi_face_2.png",
 					pathType = "STORY_FACE"
 				}
 			end
@@ -1938,7 +1938,7 @@ function scene_eventstory_zuohe_10a.actions.start_eventstory_zuohe_10a(_root, ar
 			args = function (_ctx)
 				return {
 					resType = 0,
-					image = "GYCZi/GYCZi_face_1.png",
+					image = "GYCZi/GYCZi_face_5.png",
 					pathType = "STORY_FACE"
 				}
 			end

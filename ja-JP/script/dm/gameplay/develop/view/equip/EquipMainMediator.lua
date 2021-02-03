@@ -332,6 +332,7 @@ function EquipMainMediator:onClickEquipUnLock(equipId, cancelCallback, sureCallb
 				this._equipSystem:setStarConsumeItem(equipId)
 
 				local params = {
+					viewtype = 1,
 					equipId = equipId
 				}
 

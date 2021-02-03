@@ -99,14 +99,6 @@ function ActivityBlockSupportMediator:onRegister()
 	self._taskBtn = self._main:getChildByName("taskBtn")
 	self._blockBtn = self._main:getChildByName("blockBtn")
 	self._teamBtn = self._main:getChildByName("teamBtn")
-
-	self._taskBtn:getChildByFullName("text"):getVirtualRenderer():setLineSpacing(-15)
-
-	if self._blockBtn:getChildByFullName("text") then
-		self._blockBtn:getChildByFullName("text"):getVirtualRenderer():setLineSpacing(-15)
-	end
-
-	self._teamBtn:getChildByFullName("text"):getVirtualRenderer():setLineSpacing(-15)
 end
 
 function ActivityBlockSupportMediator:setupTopInfoWidget()

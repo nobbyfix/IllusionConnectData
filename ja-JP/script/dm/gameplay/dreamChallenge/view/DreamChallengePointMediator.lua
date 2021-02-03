@@ -95,6 +95,8 @@ function DreamChallengePointMediator:initWidget()
 		pointCellNameStr = "pointCell3Clone"
 	elseif kDreamChallengeType.kForth == self._pointCellType then
 		pointCellNameStr = "pointCell4Clone"
+	elseif kDreamChallengeType.kFifth == self._pointCellType then
+		pointCellNameStr = "pointCell5Clone"
 	end
 
 	self._pointCellClone = self:getView():getChildByName(pointCellNameStr)

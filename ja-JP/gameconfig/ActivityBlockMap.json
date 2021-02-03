@@ -526,7 +526,7 @@
         "Type": "ELITE"
     },
     "AZuoHeM01": {
-        "BGM": "Mus_Zuohe_1",
+        "BGM": "Mus_Story_Festival",
         "Background": "Main_Event_03",
         "BackgroundLength": 960,
         "ColourEgg": "",
@@ -556,6 +556,67 @@
             "AZuoHeS01S03",
             "AZuoHeS01S04",
             "AZuoHeS01S05"
+        ],
+        "Type": "NORMAL"
+    },
+    "BakingE01": {
+        "BGM": "Mus_Story_Common_2",
+        "Background": "Baking_Scene03",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_BakingAE01_Name",
+        "StarBoxReward": {
+            "10": "BakingE01BOX01",
+            "20": "BakingE01BOX02",
+            "30": "BakingE01BOX03"
+        },
+        "SubPoint": [
+            "BakingE01S01",
+            "BakingE01S02",
+            "BakingE01S03",
+            "BakingE01S04",
+            "BakingE01S05",
+            "BakingE01S06",
+            "BakingE01S07",
+            "BakingE01S08",
+            "BakingE01S09",
+            "BakingE01S10",
+            "BakingE01S11",
+            "BakingE01S12"
+        ],
+        "SubStoryPoint": [],
+        "Type": "ELITE"
+    },
+    "BakingM01": {
+        "BGM": "Mus_Story_Common_2",
+        "Background": "Baking_Scene02",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_BakingAM01_Name",
+        "StarBoxReward": {
+            "10": "BakingM01BOX01",
+            "20": "BakingM01BOX02",
+            "30": "BakingM01BOX03"
+        },
+        "SubPoint": [
+            "BakingM01S01",
+            "BakingM01S02",
+            "BakingM01S03",
+            "BakingM01S04",
+            "BakingM01S05",
+            "BakingM01S06",
+            "BakingM01S07",
+            "BakingM01S08",
+            "BakingM01S09",
+            "BakingM01S10",
+            "BakingM01S11",
+            "BakingM01S12"
+        ],
+        "SubStoryPoint": [
+            "BakingS01S01",
+            "BakingS01S02",
+            "BakingS01S03",
+            "BakingS01S04"
         ],
         "Type": "NORMAL"
     },

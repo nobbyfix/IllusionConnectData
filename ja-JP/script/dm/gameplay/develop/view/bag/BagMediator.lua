@@ -834,6 +834,8 @@ function BagMediator:updateDetailBasicArea(notHasShow)
 			end
 		end
 
+		local csFuncLabel = self._detailPanel:getChildByFullName("des1label")
+		local size = csFuncLabel:getContentSize()
 		local result, tipsCode = self._bagSystem:canUse({
 			item = item
 		})
@@ -846,6 +848,9 @@ function BagMediator:updateDetailBasicArea(notHasShow)
 			self.URLevelLimit:setString(Strings:get("bag_UI36", {
 				level = limitLevel
 			}))
+			detailArea.descScrollView:setContentSize(cc.size(size.width, size.height - 20))
+		else
+			detailArea.descScrollView:setContentSize(size)
 		end
 
 		local icon = IconFactory:createPic({

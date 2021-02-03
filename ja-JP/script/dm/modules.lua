@@ -1859,6 +1859,21 @@ local modules = {
 							res = "asset/ui/ActivityBlockMusic.csb",
 							name = "ActivityBlockMusicView",
 							mediator = "ActivityBlockMusicMediator"
+						},
+						{
+							res = "asset/ui/ActivityBakingMain.csb",
+							name = "ActivityBakingMainView",
+							mediator = "ActivityBakingMainMediator"
+						},
+						{
+							res = "asset/ui/LoginActivity.csb",
+							name = "ActivityLogin14CommonView",
+							mediator = "ActivityLogin14CommonMediator"
+						},
+						{
+							res = "asset/ui/TimeShopActivity.csb",
+							name = "TimeLimitShopActivityView",
+							mediator = "TimeLimitShopActivityMediator"
 						}
 					}
 				}

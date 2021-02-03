@@ -8679,6 +8679,32 @@
             "slot": "Hero_Proud_LFEr"
         }
     },
+    "StarSE_LFEr_Awake": {
+        "Desc": "StarSE_LFEr_Awake_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_PBattle_LFEr_Awaken",
+            "before": "Hero_PBattle_LFEr_EX",
+            "slot": "Hero_PBattle_LFEr"
+        }
+    },
+    "StarSE_LFEr_Awake_Show": {
+        "Desc": "",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": 1,
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Unique_LFEr_Awaken_Show",
+            "before": "Hero_Unique_LFEr_EX",
+            "slot": "Hero_Unique_LFEr"
+        }
+    },
     "StarSE_LLan_4": {
         "Desc": "StarSE_LLan_4_Desc",
         "EffectType": "CHANGESKILL",
@@ -9236,6 +9262,45 @@
             "after": "Hero_Proud_PNCao_EX",
             "before": "Hero_Proud_PNCao",
             "slot": "Hero_Proud_PNCao"
+        }
+    },
+    "StarSE_QBTe_4": {
+        "Desc": "StarSE_QBTe_4_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Unique_QBTe_EX",
+            "before": "Hero_Unique_QBTe",
+            "slot": "Hero_Unique_QBTe"
+        }
+    },
+    "StarSE_QBTe_5": {
+        "Desc": "StarSE_QBTe_5_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_PBattle_QBTe_EX",
+            "before": "Hero_PBattle_QBTe",
+            "slot": "Hero_PBattle_QBTe"
+        }
+    },
+    "StarSE_QBTe_6": {
+        "Desc": "StarSE_QBTe_6_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Proud_QBTe_EX",
+            "before": "Hero_Proud_QBTe",
+            "slot": "Hero_Proud_QBTe"
         }
     },
     "StarSE_SDTZi_4": {

@@ -26,7 +26,7 @@ end
 
 function ActivityTpurchase:getTimePurchaseId()
 	local activityConfig = self:getActivityConfig()
-	local purchaseId = activityConfig.TimePurchaseId
+	local purchaseId = activityConfig.TimePurchaseId[1]
 
 	return purchaseId
 end

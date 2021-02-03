@@ -4057,7 +4057,8 @@
         "StarId": "CZheng_1",
         "SurfaceList": [
             "Surface_CZheng_1",
-            "Surface_CZheng_2"
+            "Surface_CZheng_2",
+            "Surface_CZheng_3"
         ],
         "TeamSpecialVoice": {
             "BBLMa": "Voice_CZheng_33"
@@ -4862,7 +4863,8 @@
         "Speed": 50,
         "StarId": "DFQi_1",
         "SurfaceList": [
-            "Surface_DFQi_1"
+            "Surface_DFQi_1",
+            "Surface_DFQi_2"
         ],
         "TeamSpecialVoice": "",
         "Transform": "",
@@ -6973,7 +6975,8 @@
         "StarId": "HSheng_1",
         "SurfaceList": [
             "Surface_HSheng_1",
-            "Surface_HSheng_2"
+            "Surface_HSheng_2",
+            "Surface_HSheng_3"
         ],
         "TeamSpecialVoice": {},
         "Transform": "",
@@ -9271,7 +9274,7 @@
         "AtkRate": 1.0,
         "AtkWeaken": 0.0,
         "AttackFactor": 1.19,
-        "AwakePic": "",
+        "AwakePic": "portrait_dana_awaken",
         "BaseAttack": 200.0,
         "BaseDefence": 60.0,
         "BaseHp": 851.0,
@@ -9513,7 +9516,8 @@
         "Speed": 50,
         "StarId": "LFEr_1",
         "SurfaceList": [
-            "Surface_LFEr_1"
+            "Surface_LFEr_1",
+            "Surface_LFEr_Awake"
         ],
         "TeamSpecialVoice": "",
         "Transform": "",
@@ -10857,7 +10861,8 @@
         "Speed": 50,
         "StarId": "MKLJLuo_1",
         "SurfaceList": [
-            "Surface_MKLJLuo_1"
+            "Surface_MKLJLuo_1",
+            "Surface_MKLJLuo_2"
         ],
         "TeamSpecialVoice": "",
         "Transform": "",
@@ -12262,7 +12267,7 @@
         "HeroStoryMap": "",
         "HpFactor": 0.73,
         "HurtRate": 0.0,
-        "IfHidden": 0,
+        "IfHidden": 1,
         "InnerAttr": [],
         "ItemId": "IHF_NXYYi",
         "KeyPassiveSkill": "",
@@ -13189,6 +13194,239 @@
         "UneffectRate": 0.0,
         "UnhurtRate": 0.0,
         "UniqueSkill": "Hero_Unique_PNCao"
+    },
+    "QBTe": {
+        "Absorption": 0.0,
+        "Anger": {
+            "a1": [
+                10,
+                750
+            ],
+            "a2": 320,
+            "a3": 150
+        },
+        "AngerBase": 1000.0,
+        "AngerMax": 1000.0,
+        "AngerRate": 0.0,
+        "AtkRate": 1.0,
+        "AtkWeaken": 0.0,
+        "AttackFactor": 1.04,
+        "AwakePic": "",
+        "BaseAttack": 180.0,
+        "BaseDefence": 60.0,
+        "BaseHp": 778.0,
+        "BaseQualityAttr": "SSR_10_Support",
+        "BaseStar": 3,
+        "BasicPower": 1600,
+        "BattlePassiveSkill": "Hero_PBattle_QBTe",
+        "BattlePassiveType": "PBuff",
+        "BeCuredRate": 0.0,
+        "BlockAI": "AIQBTe",
+        "BlockRate": 0.0,
+        "BlockStrg": 0.0,
+        "CVName": "QBTe_CVName",
+        "Cost": 11,
+        "CounterRate": 0.0,
+        "CritRate": 0.0,
+        "CritStrg": 0.0,
+        "DefRate": 1.0,
+        "DefWeaken": 0.0,
+        "DefenceFactor": 1.0,
+        "Desc": "HeroBase_Desc_QBTe",
+        "DoubleRate": 0.0,
+        "EffectRate": 0.0,
+        "EffectStrg": 0.0,
+        "EnterCD": 1.0,
+        "Equip": "",
+        "EquipDecs": "",
+        "Flags": [
+            "QBTe",
+            "quanti"
+        ],
+        "GainAnim": "",
+        "HeadTouchDeviation": [
+            0,
+            0
+        ],
+        "HeroShowIntro": "HeroBase_Intro_QBTe",
+        "HeroStoryMap": "",
+        "HpFactor": 1.16,
+        "HurtRate": 0.0,
+        "IfHidden": 1,
+        "InnerAttr": [],
+        "ItemId": "IHF_QBTe",
+        "KeyPassiveSkill": "",
+        "LevelUpFactor": 1.0,
+        "MVPText": "MVPText_QBTe",
+        "MasterRage": 144,
+        "MaxStar": 6,
+        "Name": "HeroBase_Name_QBTe",
+        "NormalSkill": "Hero_Normal_QBTe",
+        "Party": "XD",
+        "PassiveCondition": "",
+        "Position": "HeroBase_Position_QBTe",
+        "ProudSkill": "Hero_Proud_QBTe",
+        "Rareity": 14,
+        "Reflection": 0.0,
+        "RelationList": [],
+        "RoleModel": "Model_QBTe",
+        "SVPText": "SVPText_QBTe",
+        "Sex": 0,
+        "ShortDesc": "HeroBase_ShortDesc_QBTe",
+        "SkillCost": {
+            "BattlePassiveSkill": {
+                "amount": [
+                    3,
+                    7,
+                    10,
+                    14,
+                    18,
+                    21,
+                    25,
+                    28,
+                    32,
+                    36
+                ],
+                "code": "ISU_Attack"
+            },
+            "NormalSkill": {
+                "amount": [
+                    3,
+                    6,
+                    9,
+                    12,
+                    15,
+                    18,
+                    21,
+                    24,
+                    27,
+                    30
+                ],
+                "code": "ISU_Attack"
+            },
+            "PassiveSkill1": {
+                "amount": [
+                    3,
+                    7,
+                    10,
+                    14,
+                    18,
+                    21,
+                    25,
+                    28,
+                    32,
+                    36
+                ],
+                "code": "ISU_Attack"
+            },
+            "PassiveSkill2": {
+                "amount": [
+                    3,
+                    7,
+                    10,
+                    14,
+                    18,
+                    21,
+                    25,
+                    28,
+                    32,
+                    36
+                ],
+                "code": "ISU_Attack"
+            },
+            "ProudSkill": {
+                "amount": [
+                    4,
+                    9,
+                    13,
+                    18,
+                    22,
+                    27,
+                    31,
+                    36,
+                    40,
+                    45
+                ],
+                "code": "ISU_Attack"
+            },
+            "UniqueSkill": {
+                "amount": [
+                    6,
+                    12,
+                    18,
+                    24,
+                    30,
+                    36,
+                    42,
+                    48,
+                    54,
+                    60
+                ],
+                "code": "ISU_Attack"
+            }
+        },
+        "SkillRate": 0.15,
+        "Soul": [],
+        "SoundList": [
+            "Voice_QBTe_01",
+            "Voice_QBTe_35",
+            "Voice_QBTe_40_1",
+            "Voice_QBTe_40_2",
+            "Voice_QBTe_40_3",
+            "Voice_QBTe_37",
+            "Voice_QBTe_38",
+            "Voice_QBTe_39",
+            "Voice_QBTe_47",
+            "Voice_QBTe_48",
+            "Voice_QBTe_50",
+            "Voice_QBTe_51",
+            "Voice_QBTe_52",
+            "Voice_QBTe_53",
+            "Voice_QBTe_54",
+            "Voice_QBTe_55",
+            "Voice_QBTe_56",
+            "Voice_QBTe_57",
+            "Voice_QBTe_60",
+            "Voice_QBTe_07",
+            "Voice_QBTe_08",
+            "Voice_QBTe_09",
+            "Voice_QBTe_58",
+            "Voice_QBTe_59",
+            "Voice_QBTe_10",
+            "Voice_QBTe_11",
+            "Voice_QBTe_14",
+            "Voice_QBTe_15",
+            "Voice_QBTe_16",
+            "Voice_QBTe_21",
+            "Voice_QBTe_17",
+            "Voice_QBTe_18",
+            "Voice_QBTe_34",
+            "Voice_QBTe_19",
+            "Voice_QBTe_63",
+            "Voice_QBTe_61",
+            "Voice_QBTe_25",
+            "Voice_QBTe_26",
+            "Voice_QBTe_27",
+            "Voice_QBTe_28",
+            "Voice_QBTe_29",
+            "Voice_QBTe_30",
+            "Voice_QBTe_31",
+            "Voice_QBTe_32"
+        ],
+        "Speed": 50,
+        "StarId": "QBTe_1",
+        "SurfaceList": [
+            "Surface_QBTe_1"
+        ],
+        "TeamSpecialVoice": {},
+        "Transform": "",
+        "Type": "Support",
+        "UnblockRate": 0.0,
+        "UncritRate": 0.0,
+        "UndeadRate": 0.0,
+        "UneffectRate": 0.0,
+        "UnhurtRate": 0.0,
+        "UniqueSkill": "Hero_Unique_QBTe"
     },
     "SDTZi": {
         "Absorption": 0.0,
@@ -15569,7 +15807,8 @@
         "StarId": "TPGZhu_1",
         "SurfaceList": [
             "Surface_TPGZhu_1",
-            "Surface_TPGZhu_2"
+            "Surface_TPGZhu_2",
+            "Surface_TPGZhu_3"
         ],
         "TeamSpecialVoice": "",
         "Transform": "TPGZhu_Transform",
@@ -21157,7 +21396,8 @@
         "StarId": "ZZBBWei_1",
         "SurfaceList": [
             "Surface_ZZBBWei_1",
-            "Surface_ZZBBWei_2"
+            "Surface_ZZBBWei_2",
+            "Surface_ZZBBWei_Awake"
         ],
         "TeamSpecialVoice": "",
         "Transform": "",

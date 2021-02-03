@@ -17,35 +17,43 @@ RecruitSystem:has("_systemKeeper", {
 RecruitAutoBuyCard = "RecruitAutoBuyCard"
 RecruitAutoBuyCardEx = "RecruitAutoBuyCardEx"
 RecruitNewPlayerPool = "DrawCard_NewPlayer"
+RecruitAutoBuyCardExZuoHe = "RecruitAutoBuyCardExZuoHe"
 RecruitCurrencyStr = {
 	KUserDefault = {
 		[CurrencyIdKind.kDiamondDrawItem] = RecruitAutoBuyCard,
-		[CurrencyIdKind.kDiamondDrawExItem] = RecruitAutoBuyCardEx
+		[CurrencyIdKind.kDiamondDrawExItem] = RecruitAutoBuyCardEx,
+		[CurrencyIdKind.kDiamondDrawExZuoHeItem] = RecruitAutoBuyCardExZuoHe
 	},
 	KGoToShop = {
 		[CurrencyIdKind.kDiamondDrawItem] = Strings:get("Recruit_UI21"),
-		[CurrencyIdKind.kDiamondDrawExItem] = Strings:get("Recruit_UI_2")
+		[CurrencyIdKind.kDiamondDrawExItem] = Strings:get("Recruit_UI_2"),
+		[CurrencyIdKind.kDiamondDrawExZuoHeItem] = Strings:get("Recruit_UI_2")
 	},
 	KBuyTitle = {
 		[CurrencyIdKind.kDiamondDrawItem] = Strings:get("Recruit_UI16"),
-		[CurrencyIdKind.kDiamondDrawExItem] = Strings:get("Recruit_UI_1")
+		[CurrencyIdKind.kDiamondDrawExItem] = Strings:get("Recruit_UI_1"),
+		[CurrencyIdKind.kDiamondDrawExZuoHeItem] = Strings:get("Zuohe_DrawCard_UI1")
 	},
 	KBuyTitle1 = {
 		[CurrencyIdKind.kDiamondDrawItem] = Strings:get("UITitle_EN_Zhaohuanzhizhengbuzu"),
-		[CurrencyIdKind.kDiamondDrawExItem] = Strings:get("UITitle_EN_Zhaohuanzhizhengbuzu")
+		[CurrencyIdKind.kDiamondDrawExItem] = Strings:get("UITitle_EN_Zhaohuanzhizhengbuzu"),
+		[CurrencyIdKind.kDiamondDrawExZuoHeItem] = Strings:get("UITitle_EN_Zhaohuanzhizhengbuzu")
 	},
 	KBuyContent = {
 		[CurrencyIdKind.kDiamondDrawItem] = "Recruit_UI18",
-		[CurrencyIdKind.kDiamondDrawExItem] = "Recruit_UI_3"
+		[CurrencyIdKind.kDiamondDrawExItem] = "Recruit_UI_3",
+		[CurrencyIdKind.kDiamondDrawExZuoHeItem] = "Zuohe_DrawCard_UI2"
 	},
 	KBuyPrice = {
 		single = {
 			[CurrencyIdKind.kDiamondDrawItem] = ConfigReader:getDataByNameIdAndKey("ConfigValue", "DrawCard_SinglePrice", "content"),
-			[CurrencyIdKind.kDiamondDrawExItem] = ConfigReader:getDataByNameIdAndKey("ConfigValue", "DrawCardEX_SinglePrice", "content") or 88888888
+			[CurrencyIdKind.kDiamondDrawExItem] = ConfigReader:getDataByNameIdAndKey("ConfigValue", "DrawCardEX_SinglePrice", "content") or 88888888,
+			[CurrencyIdKind.kDiamondDrawExZuoHeItem] = ConfigReader:getDataByNameIdAndKey("ConfigValue", "DrawCardEX_Zuohe_SinglePrice", "content") or 88888888
 		},
 		ten = {
 			[CurrencyIdKind.kDiamondDrawItem] = ConfigReader:getDataByNameIdAndKey("ConfigValue", "DrawCard_TenTimesPrice", "content"),
-			[CurrencyIdKind.kDiamondDrawExItem] = ConfigReader:getDataByNameIdAndKey("ConfigValue", "DrawCardEX_TenTimesPrice", "content") or 99999999
+			[CurrencyIdKind.kDiamondDrawExItem] = ConfigReader:getDataByNameIdAndKey("ConfigValue", "DrawCardEX_TenTimesPrice", "content") or 99999999,
+			[CurrencyIdKind.kDiamondDrawExZuoHeItem] = ConfigReader:getDataByNameIdAndKey("ConfigValue", "DrawCardEX_Zuohe_TenTimesPrice", "content") or 99999999
 		}
 	}
 }
@@ -102,8 +110,6 @@ function RecruitSystem:checkEnabled(data)
 end
 
 function RecruitSystem:tryEnter(data)
-	dump(data, "data")
-
 	local unlock, tips, recruitId = self:checkEnabled(data)
 
 	if not unlock then
@@ -240,30 +246,28 @@ function RecruitSystem:doReset(resetId, value)
 end
 
 function RecruitSystem:getCanAutoBuy(costId)
+	local st, userStr = self:getBuyTipsStatus(costId)
+
+	return not st
+end
+
+function RecruitSystem:getBuyTipsStatus(costId)
 	local developSystem = DmGame:getInstance()._injector:getInstance(DevelopSystem)
+	local gameServerAgent = DmGame:getInstance()._injector:getInstance(GameServerAgent)
 	local idStr = string.split(developSystem:getPlayer():getRid(), "_")
 	local userStr = RecruitCurrencyStr.KUserDefault[costId] .. idStr[1]
-	local value = cc.UserDefault:getInstance():getIntegerForKey(userStr)
+	local stamp = cc.UserDefault:getInstance():getIntegerForKey(userStr, 0)
 
-	if not value or value == 0 then
-		return false
+	if stamp > 0 then
+		local tb = TimeUtil:localDate("*t", stamp)
+		local tb1 = TimeUtil:localDate("*t", gameServerAgent:remoteTimestamp())
+
+		if tb.month == tb1.month then
+			return false, userStr
+		end
 	end
 
-	return true
-
-	local gameServerAgent = self:getInjector():getInstance("GameServerAgent")
-	local lastLoginTime = gameServerAgent:remoteTimestamp()
-	local clock5Time = TimeUtil:getTimeByDateForTargetTimeInToday({
-		sec = 0,
-		min = 0,
-		hour = 5
-	})
-
-	if clock5Time - value >= 0 and lastLoginTime < clock5Time or clock5Time < value then
-		return true
-	end
-
-	return false
+	return true, userStr
 end
 
 function RecruitSystem:getActivityIsOpen(recruitId)

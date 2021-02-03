@@ -278,12 +278,14 @@ function RankBestMediator:updataCell(cell, data, index)
 				end
 
 				local img, jsonPath = IconFactory:createRoleIconSprite({
-					iconType = "Bust4",
-					id = roleModel
+					stencil = 1,
+					iconType = "Bust5",
+					id = roleModel,
+					size = cc.size(368, 446)
 				})
 
-				img:addTo(roleNode):posite(30, 90)
-				img:setScale(0.8)
+				img:addTo(roleNode):posite(-40, 210)
+				img:setScale(1)
 				roleNode:setVisible(true)
 			end
 		elseif rankType == RankType.kClub or rankType == RankType.kClubBoss then

@@ -342,7 +342,8 @@ function ActivityBlockFudaiMediator:onBuyClicked()
 
 	local activityId = self._activityFudai:getId()
 	local param = {
-		doActivityType = 101
+		doActivityType = 101,
+		packageId = self._purchaseId
 	}
 
 	self._activitySystem:requestDoChildActivity(self._activity:getId(), activityId, param, function (response)

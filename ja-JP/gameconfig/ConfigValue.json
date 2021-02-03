@@ -654,7 +654,9 @@
             "M12",
             "M13",
             "M14",
-            "M15"
+            "M15",
+            "M16",
+            "M17"
         ]
     },
     "Block_StarConditionDesc": {
@@ -2227,6 +2229,14 @@
         "clz": "int",
         "content": 400
     },
+    "DrawCardEX_Zuohe_SinglePrice": {
+        "clz": "int",
+        "content": 400
+    },
+    "DrawCardEX_Zuohe_TenTimesPrice": {
+        "clz": "int",
+        "content": 400
+    },
     "DrawCard_First": {
         "clz": "string",
         "content": "DrawCard_First_Reward"
@@ -2331,7 +2341,9 @@
             "E12",
             "E13",
             "E14",
-            "E15"
+            "E15",
+            "E16",
+            "E17"
         ]
     },
     "EliteStage_RestCost": {
@@ -4160,6 +4172,20 @@
     "Hero_SpecialBase_UnRand": {
         "clz": "double",
         "content": 3
+    },
+    "Hero_StarFragment": {
+        "clz": "dict",
+        "content": {
+            "12": {
+                "IM_FAll14": 1
+            },
+            "13": {
+                "IM_FAll14": 1
+            },
+            "14": {
+                "IM_FAll14": 1
+            }
+        }
     },
     "Hero_Star_Coefficient": {
         "clz": "dict",
@@ -7743,7 +7769,8 @@
             "FEMSi",
             "BLTu",
             "BDFen",
-            "PGNNi"
+            "PGNNi",
+            "QBTe"
         ]
     },
     "Tower_1_GrowMaxValue": {

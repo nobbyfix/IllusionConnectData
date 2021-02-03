@@ -1347,6 +1347,27 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 		end
 	end
 
+	if global.SelectBuffCount(_env, target, global.BUFF_MARKED_ALL(_env, "IMMUNE", "UR_EQUIPMENT", "DURANDAL")) > 0 then
+		local buff_damage_count = global.SpecialNumericEffect(_env, "+damage_count", {
+			"+Normal",
+			"+Normal"
+		}, damage.val)
+
+		global.ApplyBuff(_env, target, {
+			timing = 0,
+			duration = 99,
+			tags = {
+				"NUMERIC",
+				"BUFF",
+				"UNDISPELLABLE",
+				"UNSTEALABLE",
+				"DAMAGECOUNT"
+			}
+		}, {
+			buff_damage_count
+		})
+	end
+
 	return result
 end
 
@@ -1627,6 +1648,27 @@ function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimi
 		if blockrecoveryrate and blockrecoveryrate ~= 0 then
 			global.ApplyHPRecovery(_env, target, maxHp * blockrecoveryrate)
 		end
+	end
+
+	if global.SelectBuffCount(_env, target, global.BUFF_MARKED_ALL(_env, "IMMUNE", "UR_EQUIPMENT", "DURANDAL")) > 0 then
+		local buff_damage_count = global.SpecialNumericEffect(_env, "+damage_count", {
+			"+Normal",
+			"+Normal"
+		}, damage.val)
+
+		global.ApplyBuff(_env, target, {
+			timing = 0,
+			duration = 99,
+			tags = {
+				"NUMERIC",
+				"BUFF",
+				"UNDISPELLABLE",
+				"UNSTEALABLE",
+				"DAMAGECOUNT"
+			}
+		}, {
+			buff_damage_count
+		})
 	end
 
 	return result
@@ -1984,6 +2026,27 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 				global.ApplyHPRecovery(_env, target, maxHp * blockrecoveryrate)
 			end
 		end
+	end
+
+	if global.SelectBuffCount(_env, target, global.BUFF_MARKED_ALL(_env, "IMMUNE", "UR_EQUIPMENT", "DURANDAL")) > 0 then
+		local buff_damage_count = global.SpecialNumericEffect(_env, "+damage_count", {
+			"+Normal",
+			"+Normal"
+		}, damages[n].val)
+
+		global.ApplyBuff(_env, target, {
+			timing = 0,
+			duration = 99,
+			tags = {
+				"NUMERIC",
+				"BUFF",
+				"UNDISPELLABLE",
+				"UNSTEALABLE",
+				"DAMAGECOUNT"
+			}
+		}, {
+			buff_damage_count
+		})
 	end
 
 	return result
@@ -2350,6 +2413,27 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 				global.ApplyHPRecovery(_env, target, maxHp * blockrecoveryrate)
 			end
 		end
+	end
+
+	if global.SelectBuffCount(_env, target, global.BUFF_MARKED_ALL(_env, "IMMUNE", "UR_EQUIPMENT", "DURANDAL")) > 0 then
+		local buff_damage_count = global.SpecialNumericEffect(_env, "+damage_count", {
+			"+Normal",
+			"+Normal"
+		}, damages[n].val)
+
+		global.ApplyBuff(_env, target, {
+			timing = 0,
+			duration = 99,
+			tags = {
+				"NUMERIC",
+				"BUFF",
+				"UNDISPELLABLE",
+				"UNSTEALABLE",
+				"DAMAGECOUNT"
+			}
+		}, {
+			buff_damage_count
+		})
 	end
 
 	return result

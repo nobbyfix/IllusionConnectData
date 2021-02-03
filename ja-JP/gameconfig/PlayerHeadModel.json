@@ -577,7 +577,7 @@
         "HeadName": "NXYYi_HeadName",
         "HeroMasterId": "NXYYi",
         "IconPath": "asset/heros/NXYYi/battlepic_NXYYi.png",
-        "IsHiddenHead": 1,
+        "IsHiddenHead": 0,
         "Type": 1,
         "UnlockDesc": "NXYYi_HeadUnlock",
         "Zoom": 0.5
@@ -624,6 +624,17 @@
         "IsHiddenHead": 0,
         "Type": 1,
         "UnlockDesc": "PNCao_HeadUnlock",
+        "Zoom": 0.5
+    },
+    "Head_QBTe": {
+        "HeadDesc": "HeroBase_Desc_QBTe",
+        "HeadMove": "",
+        "HeadName": "QBTe_HeadName",
+        "HeroMasterId": "QBTe",
+        "IconPath": "asset/heros/QBTe/battlepic_qmi.png",
+        "IsHiddenHead": 0,
+        "Type": 1,
+        "UnlockDesc": "QBTe_HeadUnlock",
         "Zoom": 0.5
     },
     "Head_SDTZi": {
@@ -1009,6 +1020,17 @@
         "UnlockDesc": "HeroAwaken_KTSJKe",
         "Zoom": 1.0
     },
+    "HeroAwaken_LFEr": {
+        "HeadDesc": "HeroAwaken_LFEr_Desc",
+        "HeadMove": "",
+        "HeadName": "HeroAwaken_LFEr_1_Name",
+        "HeroMasterId": "LFEr",
+        "IconPath": "asset/heros/LFEr/battlepic_dana_awaken.png",
+        "IsHiddenHead": 0,
+        "Type": 4,
+        "UnlockDesc": "HeroAwaken_LFEr",
+        "Zoom": 1.0
+    },
     "HeroAwaken_SDTZi": {
         "HeadDesc": "HeroAwaken_SDTZi_Desc",
         "HeadMove": "",
@@ -1037,7 +1059,7 @@
         "HeadName": "HeroAwaken_ZZBBWei_1_Name",
         "HeroMasterId": "ZZBBWei",
         "IconPath": "asset/heros/ZZBBWei/battlepic_sqying_awaken.png",
-        "IsHiddenHead": 1,
+        "IsHiddenHead": 0,
         "Type": 4,
         "UnlockDesc": "HeroAwaken_ZZBBWei",
         "Zoom": 1.0

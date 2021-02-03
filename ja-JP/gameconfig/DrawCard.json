@@ -40,6 +40,7 @@
             "main": "drawcard_bg_BBLMa"
         },
         "Rank": 90,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -112,6 +113,7 @@
             "main": "drawcard_bg_SRen"
         },
         "Rank": 90,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -184,6 +186,7 @@
             "main": "drawcard_bg_BHTZi"
         },
         "Rank": 90,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -256,6 +259,7 @@
             "main": "drawcard_bg_LYXi"
         },
         "Rank": 90,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -328,6 +332,7 @@
             "main": "drawcard_bg_KMLa"
         },
         "Rank": 90,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -400,6 +405,7 @@
             "main": "drawcard_bg_YSLBin"
         },
         "Rank": 90,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -472,6 +478,7 @@
             "main": "drawcard_bg_DCJKang"
         },
         "Rank": 90,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -544,6 +551,7 @@
             "main": "drawcard_bg_YXNMei"
         },
         "Rank": 90,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -616,6 +624,7 @@
             "main": "drawcard_bg_BBLMa"
         },
         "Rank": 90,
+        "ResourcesBanner": "",
         "ReviewText": [
             "Notes_1UP_1New"
         ],
@@ -711,6 +720,7 @@
             "main": "drawcard_bg_LLan"
         },
         "Rank": 90,
+        "ResourcesBanner": "",
         "ReviewText": [
             "Notes_1UP_2"
         ],
@@ -808,6 +818,7 @@
             "main": "drawcard_bg_YBYa"
         },
         "Rank": 90,
+        "ResourcesBanner": "",
         "ReviewText": [
             "Notes_1UP_3"
         ],
@@ -905,6 +916,7 @@
             "main": "drawcard_bg_CZheng"
         },
         "Rank": 90,
+        "ResourcesBanner": "",
         "ReviewText": [
             "Notes_1UP_4"
         ],
@@ -1002,6 +1014,7 @@
             "main": "drawcard_bg_BBLMa"
         },
         "Rank": 90,
+        "ResourcesBanner": "",
         "ReviewText": [
             "Notes_1UP_5"
         ],
@@ -1099,6 +1112,7 @@
             "main": "drawcard_bg_YSTLu"
         },
         "Rank": 90,
+        "ResourcesBanner": "",
         "ReviewText": [
             "Notes_1UP_6"
         ],
@@ -1196,6 +1210,7 @@
             "main": "drawcard_bg_MLYTLSha"
         },
         "Rank": 90,
+        "ResourcesBanner": "",
         "ReviewText": [
             "Notes_1UP_7"
         ],
@@ -1274,6 +1289,7 @@
             "main": "drawcard_bg_SGHQShou"
         },
         "Rank": 90,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -1346,6 +1362,7 @@
             "main": "drawcard_bg_AJTa"
         },
         "Rank": 90,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -1424,6 +1441,7 @@
             "main": "drawcard_bg_BDFen"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": [
             "Notes_1UP_BDFen"
         ],
@@ -1508,6 +1526,7 @@
             "main": "drawcard_bg_FEMSi"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": [
             "Notes_1UP_FEMSi"
         ],
@@ -1538,6 +1557,95 @@
         ],
         "ShowReward": {
             "Draw_HeroBtnName": "DrawCard_1UP_FEMSi_Show"
+        },
+        "SpecialReward": "",
+        "Tag": [
+            "1UP"
+        ],
+        "Times": []
+    },
+    "DrawCard_1UP_GYCZi": {
+        "Condition": "",
+        "Coupon": "IM_DiamondDrawEX_Zuohe",
+        "CouponCost": [
+            1,
+            10
+        ],
+        "DrawCardDesc": [
+            {
+                "3": [
+                    "pic",
+                    "common_img_ssr"
+                ]
+            },
+            {
+                "25": [
+                    "pic",
+                    "common_img_sr"
+                ]
+            },
+            {
+                "72": [
+                    "pic",
+                    "common_img_r"
+                ]
+            }
+        ],
+        "DrawCardDescTitle": "",
+        "DrawCardENName": "",
+        "DrawCardName": "",
+        "DrawCardType": "ACTIVITYDRAW",
+        "DrawCardUPDesc": "",
+        "DrawLimit": -1,
+        "ExtraReward": "",
+        "FreeReset": "DrawCard_TimeUp",
+        "Link": "view://shopView&viewType=push&shopId=Shop_TimeLimit",
+        "NormalReward": "DrawCard_Diamond_1_normal",
+        "Number": [
+            1,
+            10
+        ],
+        "OffCount": [],
+        "Preview": {
+            "btn": "drawcard_tab_GYCZi_",
+            "main": "drawcard_bg_GYCZi"
+        },
+        "Rank": 80,
+        "ResourcesBanner": [
+            "IM_DiamondDrawEX_Zuohe",
+            "IR_Gold",
+            "IR_Diamond"
+        ],
+        "ReviewText": [
+            "Notes_1UP_GYCZi"
+        ],
+        "ReviewTextSpecial": [
+            "Notes_1UP_Special"
+        ],
+        "Reward": [
+            "DrawCard_1UP_GYCZi_1",
+            "DrawCard_1UP_GYCZi_10"
+        ],
+        "RoleDetail": [
+            {
+                "hero": "GYCZi",
+                "position": [
+                    900,
+                    400
+                ],
+                "showhero": "GYCZi"
+            }
+        ],
+        "ShortDesc": [
+            "DrawCard_Diamond_1_ShortDesc",
+            "DrawCard_Diamond_10_ShortDesc"
+        ],
+        "ShortENDesc": [
+            "UILINK_EN_Zhaohuan1ci",
+            "UILINK_EN_Zhaohuan10ci"
+        ],
+        "ShowReward": {
+            "Draw_HeroBtnName": "DrawCard_1UP_GYCZi_Show"
         },
         "SpecialReward": "",
         "Tag": [
@@ -1592,6 +1700,7 @@
             "main": "drawcard_bg_HSheng"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": [
             "Notes_1UP_HSheng"
         ],
@@ -1660,20 +1769,7 @@
         "DrawCardENName": "",
         "DrawCardName": "",
         "DrawCardType": "ACTIVITYDRAW",
-        "DrawCardUPDesc": [
-            [
-                "DrawCard_1UP_NFEr_Title1",
-                "DrawCard_1UP_NFEr_Text1"
-            ],
-            [
-                "DrawCard_1UP_NFEr_Title2",
-                "DrawCard_1UP_NFEr_Text2"
-            ],
-            [
-                "DrawCard_1UP_NFEr_Title3",
-                "DrawCard_1UP_NFEr_Text3"
-            ]
-        ],
+        "DrawCardUPDesc": "",
         "DrawLimit": -1,
         "ExtraReward": "",
         "FreeReset": "DrawCard_TimeUp",
@@ -1685,10 +1781,11 @@
         ],
         "OffCount": [],
         "Preview": {
-            "btn": "drawcard_tab_nfer_",
-            "main": "drawcard_bg_nfer"
+            "btn": "drawcard_tab_NFEr_",
+            "main": "drawcard_bg_NFEr"
         },
-        "Rank": 90,
+        "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": [
             "Notes_1UP_NFEr"
         ],
@@ -1718,7 +1815,92 @@
             "UILINK_EN_Zhaohuan10ci"
         ],
         "ShowReward": {
-            "Draw_HeroBtnName": "DrawCard_1UP_NFEr"
+            "Draw_HeroBtnName": "DrawCard_1UP_NFEr_Show"
+        },
+        "SpecialReward": "",
+        "Tag": [
+            "1UP"
+        ],
+        "Times": []
+    },
+    "DrawCard_1UP_NXYYi": {
+        "Condition": "",
+        "Coupon": "IM_DiamondDrawEX",
+        "CouponCost": [
+            1,
+            10
+        ],
+        "DrawCardDesc": [
+            {
+                "3": [
+                    "pic",
+                    "common_img_ssr"
+                ]
+            },
+            {
+                "25": [
+                    "pic",
+                    "common_img_sr"
+                ]
+            },
+            {
+                "72": [
+                    "pic",
+                    "common_img_r"
+                ]
+            }
+        ],
+        "DrawCardDescTitle": "",
+        "DrawCardENName": "",
+        "DrawCardName": "",
+        "DrawCardType": "ACTIVITYDRAW",
+        "DrawCardUPDesc": "",
+        "DrawLimit": -1,
+        "ExtraReward": "",
+        "FreeReset": "DrawCard_TimeUp",
+        "Link": "view://shopView&viewType=push&shopId=Shop_TimeLimit",
+        "NormalReward": "DrawCard_Diamond_1_normal",
+        "Number": [
+            1,
+            10
+        ],
+        "OffCount": [],
+        "Preview": {
+            "btn": "drawcard_tab_NXYYi_",
+            "main": "drawcard_bg_NXYYi"
+        },
+        "Rank": 80,
+        "ResourcesBanner": "",
+        "ReviewText": [
+            "Notes_1UP_NXYYi"
+        ],
+        "ReviewTextSpecial": [
+            "Notes_1UP_Special"
+        ],
+        "Reward": [
+            "DrawCard_1UP_NXYYi_1",
+            "DrawCard_1UP_NXYYi_10"
+        ],
+        "RoleDetail": [
+            {
+                "hero": "NXYYi",
+                "position": [
+                    900,
+                    400
+                ],
+                "showhero": "NXYYi"
+            }
+        ],
+        "ShortDesc": [
+            "DrawCard_Diamond_1_ShortDesc",
+            "DrawCard_Diamond_10_ShortDesc"
+        ],
+        "ShortENDesc": [
+            "UILINK_EN_Zhaohuan1ci",
+            "UILINK_EN_Zhaohuan10ci"
+        ],
+        "ShowReward": {
+            "Draw_HeroBtnName": "DrawCard_1UP_NXYYi_Show"
         },
         "SpecialReward": "",
         "Tag": [
@@ -1786,6 +1968,7 @@
             "main": "drawcard_bg_ansi"
         },
         "Rank": 90,
+        "ResourcesBanner": "",
         "ReviewText": [
             "Notes_1UP_PDLa"
         ],
@@ -1870,6 +2053,7 @@
             "main": "drawcard_bg_PGNNi"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": [
             "Notes_1UP_PGNNi"
         ],
@@ -1900,6 +2084,91 @@
         ],
         "ShowReward": {
             "Draw_HeroBtnName": "DrawCard_1UP_PGNNi_Show"
+        },
+        "SpecialReward": "",
+        "Tag": [
+            "1UP"
+        ],
+        "Times": []
+    },
+    "DrawCard_1UP_QBTe": {
+        "Condition": "",
+        "Coupon": "IM_DiamondDrawEX",
+        "CouponCost": [
+            1,
+            10
+        ],
+        "DrawCardDesc": [
+            {
+                "3": [
+                    "pic",
+                    "common_img_ssr"
+                ]
+            },
+            {
+                "25": [
+                    "pic",
+                    "common_img_sr"
+                ]
+            },
+            {
+                "72": [
+                    "pic",
+                    "common_img_r"
+                ]
+            }
+        ],
+        "DrawCardDescTitle": "",
+        "DrawCardENName": "",
+        "DrawCardName": "",
+        "DrawCardType": "ACTIVITYDRAW",
+        "DrawCardUPDesc": "",
+        "DrawLimit": -1,
+        "ExtraReward": "",
+        "FreeReset": "DrawCard_TimeUp",
+        "Link": "view://shopView&viewType=push&shopId=Shop_TimeLimit",
+        "NormalReward": "DrawCard_Diamond_1_normal",
+        "Number": [
+            1,
+            10
+        ],
+        "OffCount": [],
+        "Preview": {
+            "btn": "drawcard_tab_QBTe_",
+            "main": "drawcard_bg_QBTe"
+        },
+        "Rank": 80,
+        "ResourcesBanner": "",
+        "ReviewText": [
+            "Notes_1UP_QBTe"
+        ],
+        "ReviewTextSpecial": [
+            "Notes_1UP_Special"
+        ],
+        "Reward": [
+            "DrawCard_1UP_QBTe_1",
+            "DrawCard_1UP_QBTe_10"
+        ],
+        "RoleDetail": [
+            {
+                "hero": "QBTe",
+                "position": [
+                    900,
+                    400
+                ],
+                "showhero": "QBTe"
+            }
+        ],
+        "ShortDesc": [
+            "DrawCard_Diamond_1_ShortDesc",
+            "DrawCard_Diamond_10_ShortDesc"
+        ],
+        "ShortENDesc": [
+            "UILINK_EN_Zhaohuan1ci",
+            "UILINK_EN_Zhaohuan10ci"
+        ],
+        "ShowReward": {
+            "Draw_HeroBtnName": "DrawCard_1UP_QBTe_Show"
         },
         "SpecialReward": "",
         "Tag": [
@@ -1954,6 +2223,7 @@
             "main": "drawcard_bg_SLMen"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": [
             "Notes_1UP_SLMen"
         ],
@@ -2038,6 +2308,7 @@
             "main": "drawcard_bg_YXNMei"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": [
             "Notes_1UP_YXNMei"
         ],
@@ -2068,6 +2339,95 @@
         ],
         "ShowReward": {
             "Draw_HeroBtnName": "DrawCard_1UP_YXNMei_Show"
+        },
+        "SpecialReward": "",
+        "Tag": [
+            "1UP"
+        ],
+        "Times": []
+    },
+    "DrawCard_1UP_YYing": {
+        "Condition": "",
+        "Coupon": "IM_DiamondDrawEX_Zuohe",
+        "CouponCost": [
+            1,
+            10
+        ],
+        "DrawCardDesc": [
+            {
+                "3": [
+                    "pic",
+                    "common_img_ssr"
+                ]
+            },
+            {
+                "25": [
+                    "pic",
+                    "common_img_sr"
+                ]
+            },
+            {
+                "72": [
+                    "pic",
+                    "common_img_r"
+                ]
+            }
+        ],
+        "DrawCardDescTitle": "",
+        "DrawCardENName": "",
+        "DrawCardName": "",
+        "DrawCardType": "ACTIVITYDRAW",
+        "DrawCardUPDesc": "",
+        "DrawLimit": -1,
+        "ExtraReward": "",
+        "FreeReset": "DrawCard_TimeUp",
+        "Link": "view://shopView&viewType=push&shopId=Shop_TimeLimit",
+        "NormalReward": "DrawCard_Diamond_1_normal",
+        "Number": [
+            1,
+            10
+        ],
+        "OffCount": [],
+        "Preview": {
+            "btn": "drawcard_tab_YYing_",
+            "main": "drawcard_bg_YYing"
+        },
+        "Rank": 80,
+        "ResourcesBanner": [
+            "IM_DiamondDrawEX_Zuohe",
+            "IR_Gold",
+            "IR_Diamond"
+        ],
+        "ReviewText": [
+            "Notes_1UP_YYing"
+        ],
+        "ReviewTextSpecial": [
+            "Notes_1UP_Special"
+        ],
+        "Reward": [
+            "DrawCard_1UP_YYing_1",
+            "DrawCard_1UP_YYing_10"
+        ],
+        "RoleDetail": [
+            {
+                "hero": "YYing",
+                "position": [
+                    900,
+                    400
+                ],
+                "showhero": "YYing"
+            }
+        ],
+        "ShortDesc": [
+            "DrawCard_Diamond_1_ShortDesc",
+            "DrawCard_Diamond_10_ShortDesc"
+        ],
+        "ShortENDesc": [
+            "UILINK_EN_Zhaohuan1ci",
+            "UILINK_EN_Zhaohuan10ci"
+        ],
+        "ShowReward": {
+            "Draw_HeroBtnName": "DrawCard_1UP_YYing_Show"
         },
         "SpecialReward": "",
         "Tag": [
@@ -2135,6 +2495,7 @@
             "main": "drawcard_bg_MGNa_MTZMEShi"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": [
             "Notes_2UP_1"
         ],
@@ -2236,6 +2597,7 @@
             "main": "drawcard_bg_SDTZi_LFEr"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": [
             "Notes_2UP_2"
         ],
@@ -2337,6 +2699,7 @@
             "main": "drawcard_bg_YLMGZhu_LDu"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": [
             "Notes_2UP_3"
         ],
@@ -2438,6 +2801,7 @@
             "main": "drawcard_bg_MGNa_MTZMEShi"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": [
             "Notes_2UP_4"
         ],
@@ -2539,6 +2903,7 @@
             "main": "drawcard_bg_MGNa_MTZMEShi"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": [
             "Notes_2UP_5"
         ],
@@ -2627,6 +2992,7 @@
             "main": "drawcard_bg_BBLMaMTZMEShi"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": [
             "Notes_2UP_BBLMaMTZMEShi"
         ],
@@ -2715,6 +3081,7 @@
             "main": "drawcard_bg_BErLDu"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": [
             "Notes_2UP_BErLDu"
         ],
@@ -2803,6 +3170,7 @@
             "main": "drawcard_bg_XSMLiKTSJKe"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": [
             "Notes_2UP_KTSJKeXSMLi"
         ],
@@ -2839,6 +3207,95 @@
         ],
         "ShowReward": {
             "Draw_HeroBtnName": "DrawCard_2UP_KTSJKeXSMLi_Show"
+        },
+        "SpecialReward": "",
+        "Tag": "",
+        "Times": []
+    },
+    "DrawCard_2UP_SDTZiZZBBWei": {
+        "Condition": "",
+        "Coupon": "IM_DiamondDraw",
+        "CouponCost": [
+            1,
+            10
+        ],
+        "DrawCardDesc": [
+            {
+                "2": [
+                    "pic",
+                    "common_img_ssr"
+                ]
+            },
+            {
+                "15": [
+                    "pic",
+                    "common_img_sr"
+                ]
+            },
+            {
+                "83": [
+                    "pic",
+                    "common_img_r"
+                ]
+            }
+        ],
+        "DrawCardDescTitle": "",
+        "DrawCardENName": "",
+        "DrawCardName": "",
+        "DrawCardType": "ACTIVITYDRAW",
+        "DrawCardUPDesc": "",
+        "DrawLimit": -1,
+        "ExtraReward": "",
+        "FreeReset": "DrawCard_TimeUp",
+        "Link": "",
+        "NormalReward": "DrawCard_Diamond_1_normal",
+        "Number": [
+            1,
+            10
+        ],
+        "OffCount": [],
+        "Preview": {
+            "btn": "drawcard_tab_SDTZiZZBBWei_",
+            "main": "drawcard_bg_SDTZiZZBBWei"
+        },
+        "Rank": 80,
+        "ResourcesBanner": "",
+        "ReviewText": [
+            "Notes_2UP_SDTZiZZBBWei"
+        ],
+        "ReviewTextSpecial": [
+            "Notes_2UP_Special"
+        ],
+        "Reward": [
+            "DrawCard_2UP_SDTZiZZBBWei_1",
+            "DrawCard_2UP_SDTZiZZBBWei_10"
+        ],
+        "RoleDetail": [
+            {
+                "hero": "SDTZi",
+                "position": [
+                    290,
+                    260
+                ]
+            },
+            {
+                "hero": "ZZBBWei",
+                "position": [
+                    850,
+                    300
+                ]
+            }
+        ],
+        "ShortDesc": [
+            "DrawCard_Diamond_1_ShortDesc",
+            "DrawCard_Diamond_10_ShortDesc"
+        ],
+        "ShortENDesc": [
+            "UILINK_EN_Zhaohuan1ci",
+            "UILINK_EN_Zhaohuan10ci"
+        ],
+        "ShowReward": {
+            "Draw_HeroBtnName": "DrawCard_2UP_SDTZiZZBBWei_Show"
         },
         "SpecialReward": "",
         "Tag": "",
@@ -2891,6 +3348,7 @@
             "main": "drawcard_bg_WEDeLFEr"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": [
             "Notes_2UP_WEDeLFEr"
         ],
@@ -2927,6 +3385,95 @@
         ],
         "ShowReward": {
             "Draw_HeroBtnName": "DrawCard_2UP_WEDeLFEr_Show"
+        },
+        "SpecialReward": "",
+        "Tag": "",
+        "Times": []
+    },
+    "DrawCard_2UP_YLMGZhuMGNa": {
+        "Condition": "",
+        "Coupon": "IM_DiamondDraw",
+        "CouponCost": [
+            1,
+            10
+        ],
+        "DrawCardDesc": [
+            {
+                "2": [
+                    "pic",
+                    "common_img_ssr"
+                ]
+            },
+            {
+                "15": [
+                    "pic",
+                    "common_img_sr"
+                ]
+            },
+            {
+                "83": [
+                    "pic",
+                    "common_img_r"
+                ]
+            }
+        ],
+        "DrawCardDescTitle": "",
+        "DrawCardENName": "",
+        "DrawCardName": "",
+        "DrawCardType": "ACTIVITYDRAW",
+        "DrawCardUPDesc": "",
+        "DrawLimit": -1,
+        "ExtraReward": "",
+        "FreeReset": "DrawCard_TimeUp",
+        "Link": "",
+        "NormalReward": "DrawCard_Diamond_1_normal",
+        "Number": [
+            1,
+            10
+        ],
+        "OffCount": [],
+        "Preview": {
+            "btn": "drawcard_tab_YLMGZhuMGNa_",
+            "main": "drawcard_bg_YLMGZhuMGNa"
+        },
+        "Rank": 80,
+        "ResourcesBanner": "",
+        "ReviewText": [
+            "Notes_2UP_YLMGZhuMGNa"
+        ],
+        "ReviewTextSpecial": [
+            "Notes_2UP_Special"
+        ],
+        "Reward": [
+            "DrawCard_2UP_YLMGZhuMGNa_1",
+            "DrawCard_2UP_YLMGZhuMGNa_10"
+        ],
+        "RoleDetail": [
+            {
+                "hero": "YLMGZhu",
+                "position": [
+                    260,
+                    410
+                ]
+            },
+            {
+                "hero": "MGNa",
+                "position": [
+                    920,
+                    290
+                ]
+            }
+        ],
+        "ShortDesc": [
+            "DrawCard_Diamond_1_ShortDesc",
+            "DrawCard_Diamond_10_ShortDesc"
+        ],
+        "ShortENDesc": [
+            "UILINK_EN_Zhaohuan1ci",
+            "UILINK_EN_Zhaohuan10ci"
+        ],
+        "ShowReward": {
+            "Draw_HeroBtnName": "DrawCard_2UP_YLMGZhuMGNa_Show"
         },
         "SpecialReward": "",
         "Tag": "",
@@ -2979,6 +3526,7 @@
             "main": "drawcard_bg_YLSBaiJNLong"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": [
             "Notes_2UP_YLSBaiJNLong"
         ],
@@ -3061,6 +3609,7 @@
             "main": "drawcard_bg_BBLMaKTSJKe"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -3137,6 +3686,7 @@
             "main": "drawcard_bg_BBLMa_JNLong"
         },
         "Rank": 90,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -3213,6 +3763,7 @@
             "main": "drawcard_bg_BErKTSJKe"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -3289,6 +3840,7 @@
             "main": "drawcard_bg_BErLDu"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -3365,6 +3917,7 @@
             "main": "drawcard_bg_BErMTZMEShi"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -3447,6 +4000,7 @@
             "main": "drawcard_bg_BErYLMGZhu"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": [
             "Notes_BErYLMGZhu"
         ],
@@ -3529,6 +4083,7 @@
             "main": "drawcard_bg_BErYLSBai"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -3592,6 +4147,7 @@
             "main": "ck_wf_sj_bg"
         },
         "Rank": 4,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -3653,6 +4209,7 @@
             "main": "ck_wf_sj2_bg"
         },
         "Rank": 4,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -3714,6 +4271,7 @@
             "main": "ck_LCYShi_club_bg"
         },
         "Rank": 4,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -3794,6 +4352,7 @@
             "main": "lianjie_yhlj_bg"
         },
         "Rank": 3,
+        "ResourcesBanner": "",
         "ReviewText": [
             "Recruit_UI14",
             "Recruit_UI15"
@@ -3869,6 +4428,7 @@
             "main": "lianjie_zblj_bg"
         },
         "Rank": 2,
+        "ResourcesBanner": "",
         "ReviewText": [
             "Recruit_UI22",
             "Recruit_UI23"
@@ -3922,6 +4482,7 @@
             "main": "lianjie_yqlj_bg"
         },
         "Rank": 1,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -3983,6 +4544,7 @@
             "main": "drawcard_bg_JNLongLCYShi"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -4059,6 +4621,7 @@
             "main": "drawcard_bg_KTSJKeMTZMEShi"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -4135,6 +4698,7 @@
             "main": "drawcard_bg_KTSJKeXSMLi"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -4211,6 +4775,7 @@
             "main": "drawcard_bg_LCYShiMGNa"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -4306,6 +4871,7 @@
             "main": "drawcard_bg_YLMGZhuLCYShi"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": [
             "Notes_LCYShiYLMGZhu"
         ],
@@ -4407,6 +4973,7 @@
             "main": "drawcard_bg_LDuYBYa"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": [
             "Notes_DrawCard_LDuYBYa"
         ],
@@ -4495,6 +5062,7 @@
             "main": "drawcard_bg_LFErKTSJKe"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": [
             "Notes_LFErKTSJKe"
         ],
@@ -4577,6 +5145,7 @@
             "main": "drawcard_bg_LFErLCYShi"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -4653,6 +5222,7 @@
             "main": "drawcard_bg_LFErYLSBai"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -4735,6 +5305,7 @@
             "main": "drawcard_bg_LduYLSBai"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": [
             "Notes_2UP_LduYLSBai"
         ],
@@ -4836,6 +5407,7 @@
             "main": "drawcard_bg_MGNaWEDe"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": [
             "Notes_DrawCard_MGNaWEDe"
         ],
@@ -4918,6 +5490,7 @@
             "main": "drawcard_bg_MGNaYBYa"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -4979,6 +5552,7 @@
             "main": "drawcard_bg_Xinshou"
         },
         "Rank": 100,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -5059,6 +5633,7 @@
             "main": "drawcard_bg_SDTZi_LFEr"
         },
         "Rank": 90,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -5137,6 +5712,7 @@
             "main": "drawcard_bg_KTSJKe_MTZMEShi"
         },
         "Rank": 90,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -5213,6 +5789,7 @@
             "main": "drawcard_bg_LCYShi_WEDe"
         },
         "Rank": 90,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -5276,6 +5853,7 @@
             "main": "ck_wf_pve_bg"
         },
         "Rank": 6,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -5337,6 +5915,7 @@
             "main": "ck_wf_pve2_bg"
         },
         "Rank": 6,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -5398,6 +5977,7 @@
             "main": "ck_MTZMEShi_pve_bg"
         },
         "Rank": 6,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -5459,6 +6039,7 @@
             "main": "ck_wf_pvp_bg"
         },
         "Rank": 5,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -5520,6 +6101,7 @@
             "main": "ck_wf_pvp2_bg"
         },
         "Rank": 5,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -5581,6 +6163,7 @@
             "main": "ck_YBYa_pvp_bg"
         },
         "Rank": 5,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -5674,6 +6257,7 @@
             "main": "drawcard_bg_SDTZiLCYShi"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": [
             "Notes_2UP_SDTZiLCYShi"
         ],
@@ -5775,6 +6359,7 @@
             "main": "drawcard_bg_SDTZiMTZMEShi"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": [
             "Notes_SDTZiMTZMEShi"
         ],
@@ -5857,6 +6442,7 @@
             "main": "drawcard_bg_TPGZhuZZBBWei"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -5933,6 +6519,7 @@
             "main": "drawcard_bg_WEDeYLMGZhu"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -6009,6 +6596,7 @@
             "main": "drawcard_bg_WEDeYLSBai"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -6085,6 +6673,7 @@
             "main": "drawcard_bg_XSMLiMGNa"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -6161,6 +6750,7 @@
             "main": "drawcard_bg_YBYaJNLong"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -6237,6 +6827,7 @@
             "main": "drawcard_bg_YBYaLDu"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -6313,6 +6904,7 @@
             "main": "drawcard_bg_YLMGZhuKTSJKe"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -6389,6 +6981,7 @@
             "main": "drawcard_bg_YLSBai_BEr"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -6465,6 +7058,7 @@
             "main": "drawcard_bg_YLSBaiYLMGZhu"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -6541,6 +7135,7 @@
             "main": "drawcard_bg_YSTLuBEr"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -6617,6 +7212,7 @@
             "main": "drawcard_bg_MGNa_XSMLi"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [
@@ -6693,6 +7289,7 @@
             "main": "drawcard_bg_ZZBBWeiMTZMEShi"
         },
         "Rank": 80,
+        "ResourcesBanner": "",
         "ReviewText": "",
         "ReviewTextSpecial": "",
         "Reward": [

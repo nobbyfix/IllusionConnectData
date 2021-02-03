@@ -1122,6 +1122,108 @@ function ActivitySystem:isCanGetStamina(timeList, index)
 	end
 end
 
+function ActivitySystem:getTimeLimitShopLeaveTime()
+	local activity = self:getActivityByComplexUI("FESTIVALPACKAGE")
+
+	if activity then
+		local endTime = activity:getEndTime() / 1000
+		local currentTime = self:getCurrentTime()
+
+		if currentTime < endTime then
+			return endTime - currentTime
+		end
+	end
+
+	return 0
+end
+
+function ActivitySystem:checkTimeLimitShopShow()
+	local activity = self:getActivityByComplexUI("FESTIVALPACKAGE")
+
+	if activity then
+		local srartTime = activity:getStartTime() / 1000
+		local endTime = activity:getEndTime() / 1000
+		local currentTime = self:getCurrentTime()
+
+		if currentTime < endTime and srartTime < currentTime then
+			return true
+		end
+	end
+
+	return false
+end
+
+function ActivitySystem:tryEnterTimeLimitSHop()
+	if self:checkTimeLimitShopRedpointShow() then
+		self:saveTimeLimitShopRedpoint()
+	end
+
+	if self:checkTimeLimitShopShow() then
+		local view = self:getInjector():getInstance("TimeLimitShopActivityView")
+
+		if view then
+			self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {}, {
+				activity = self:getActivityByComplexUI("FESTIVALPACKAGE")
+			}))
+		end
+	end
+end
+
+function ActivitySystem:saveTimeLimitShopRedpoint()
+	local activity = self:getActivityByComplexUI("FESTIVALPACKAGE")
+
+	if activity then
+		local activityId = activity:getId()
+		local developSystem = self:getInjector():getInstance(DevelopSystem)
+		local rid = developSystem:getPlayer():getRid()
+		local diskData = CommonUtils.getDataFromLocalByKey(rid .. "TimeLimitShopActivity")
+
+		if diskData == nil then
+			diskData = {}
+		end
+
+		if diskData then
+			table.insert(diskData, activityId)
+			CommonUtils.saveDataToLocalByKey(diskData, rid .. "TimeLimitShopActivity")
+		end
+	end
+end
+
+function ActivitySystem:checkTimeLimitShopRedpointShow()
+	local activity = self:getActivityByComplexUI("FESTIVALPACKAGE")
+
+	if activity then
+		local activityId = activity:getId()
+		local developSystem = self:getInjector():getInstance(DevelopSystem)
+		local rid = developSystem:getPlayer():getRid()
+		local diskData = CommonUtils.getDataFromLocalByKey(rid .. "TimeLimitShopActivity")
+
+		if diskData == nil then
+			diskData = {}
+		end
+
+		for i = 1, #diskData do
+			if diskData[i] == activityId then
+				return false
+			end
+		end
+
+		return true
+	end
+
+	return false
+end
+
+function ActivitySystem:getFestivalPackageTitle()
+	local activity = self:getActivityByComplexUI("FESTIVALPACKAGE")
+
+	if activity then
+		return activity:getTitle()
+	end
+
+	return ""
+end
+
 function ActivitySystem:requestAllActicities(blockUI, callback)
 	blockUI = blockUI or true
 	local params = {}

@@ -138,6 +138,7 @@ function ShopHistoryMediator:initContent(data)
 		dump(temp, "temp")
 
 		local date = os.date("*t", temp.time)
+		local config = ConfigReader:getRecordById("Pay", temp.payId)
 		local payInfo = payOffSystem:getPayInfoByProductId(temp.productId)
 		local str = Strings:get("Shop_Recharge_Template_1", {
 			month = date.month,
@@ -159,7 +160,7 @@ function ShopHistoryMediator:initContent(data)
 		})
 		str = str .. "  " .. Strings:get("Shop_Recharge_Template_2", {
 			num = 1,
-			goods = Strings:get(payInfo.Name)
+			goods = Strings:get(config.Name)
 		})
 
 		if temp.extraCoin and temp.extraCoin > 0 then

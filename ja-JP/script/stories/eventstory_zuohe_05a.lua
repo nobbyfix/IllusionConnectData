@@ -1369,6 +1369,17 @@ function scene_eventstory_zuohe_05a.actions.start_eventstory_zuohe_05a(_root, ar
 			end
 		}),
 		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "GYCZi_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "GYCZi/GYCZi_face_3.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
+		act({
 			action = "speak",
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
@@ -1490,7 +1501,7 @@ function scene_eventstory_zuohe_05a.actions.start_eventstory_zuohe_05a(_root, ar
 			args = function (_ctx)
 				return {
 					resType = 0,
-					image = "YYing/YYing_face_3.png",
+					image = "YYing/YYing_face_1.png",
 					pathType = "STORY_FACE"
 				}
 			end
@@ -1798,7 +1809,7 @@ function scene_eventstory_zuohe_05a.actions.start_eventstory_zuohe_05a(_root, ar
 			args = function (_ctx)
 				return {
 					resType = 0,
-					image = "YYing/YYing_face_4.png",
+					image = "YYing/YYing_face_2.png",
 					pathType = "STORY_FACE"
 				}
 			end

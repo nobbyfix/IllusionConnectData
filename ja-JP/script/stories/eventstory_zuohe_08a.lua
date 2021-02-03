@@ -897,7 +897,7 @@ function scene_eventstory_zuohe_08a.actions.start_eventstory_zuohe_08a(_root, ar
 							name = "SYAi_face",
 							pathType = "STORY_FACE",
 							type = "Image",
-							image = "SYAi/SYAi_face_1.png",
+							image = "SYAi/SYAi_face_2.png",
 							scaleX = 1.03,
 							scaleY = 1.03,
 							layoutMode = 1,
@@ -982,7 +982,7 @@ function scene_eventstory_zuohe_08a.actions.start_eventstory_zuohe_08a(_root, ar
 							name = "GYCZi_face",
 							pathType = "STORY_FACE",
 							type = "Image",
-							image = "GYCZi/GYCZi_face_5.png",
+							image = "GYCZi/GYCZi_face_3.png",
 							scaleX = 1,
 							scaleY = 1,
 							layoutMode = 1,
@@ -1125,7 +1125,7 @@ function scene_eventstory_zuohe_08a.actions.start_eventstory_zuohe_08a(_root, ar
 			args = function (_ctx)
 				return {
 					resType = 0,
-					image = "YYing/YYing_face_1.png",
+					image = "YYing/YYing_face_5.png",
 					pathType = "STORY_FACE"
 				}
 			end
@@ -1587,6 +1587,17 @@ function scene_eventstory_zuohe_08a.actions.start_eventstory_zuohe_08a(_root, ar
 			})
 		}),
 		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "YYing_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "YYing/YYing_face_2.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
+		act({
 			action = "speak",
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
@@ -1675,6 +1686,17 @@ function scene_eventstory_zuohe_08a.actions.start_eventstory_zuohe_08a(_root, ar
 					durations = {
 						0.03
 					}
+				}
+			end
+		}),
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "YYing_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "YYing/YYing_face_1.png",
+					pathType = "STORY_FACE"
 				}
 			end
 		}),

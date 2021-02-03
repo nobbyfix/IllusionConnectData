@@ -250,7 +250,7 @@ function ActivityBlockActivity:getActivityTpurchase()
 		local id = activityIds[i]
 		local activity = self:getSubActivityById(id)
 
-		if activity and self:subActivityOpen(id) and activity:getType() == ActivityType.KTPURCHASE then
+		if activity and self:subActivityOpen(id) and activity:getType() == ActivityType.KTPURCHASE and activity:getUI() == "C_TIMEPURCHASE" then
 			return activity
 		end
 	end
@@ -329,9 +329,10 @@ function ActivityBlockActivity:getButtonConfig()
 
 		if config then
 			if config.Type == ActivityType.KActivityBlockMap then
+				local titleStrId = config.ActivityConfig.ButtonText or config.Title
 				local data = {
 					icon = config.ActivityConfig.ButtonIcon,
-					title = Strings:get(config.Title),
+					title = Strings:get(titleStrId),
 					rewards = ConfigReader:getDataByNameIdAndKey("Reward", config.ActivityConfig.ShowReward, "Content"),
 					heroes = config.ActivityConfig.BonusHero
 				}

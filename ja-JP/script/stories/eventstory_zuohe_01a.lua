@@ -537,26 +537,39 @@ function scene_eventstory_zuohe_01a.actions.start_eventstory_zuohe_01a(_root, ar
 				}
 			end
 		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_233",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"YYing_speak"
-					},
-					content = {
-						"eventstory_zuohe_01a_8"
-					},
-					durations = {
-						0.03
+		concurrent({
+			act({
+				action = "changeTexture",
+				actor = __getnode__(_root, "YYing_face"),
+				args = function (_ctx)
+					return {
+						resType = 0,
+						image = "YYing/YYing_face_4.png",
+						pathType = "STORY_FACE"
 					}
-				}
-			end
+				end
+			}),
+			act({
+				action = "speak",
+				actor = __getnode__(_root, "dialogue"),
+				args = function (_ctx)
+					return {
+						name = "dialog_speak_name_233",
+						dialogImage = "jq_dialogue_bg_1.png",
+						location = "left",
+						pathType = "STORY_ROOT",
+						speakings = {
+							"YYing_speak"
+						},
+						content = {
+							"eventstory_zuohe_01a_8"
+						},
+						durations = {
+							0.03
+						}
+					}
+				end
+			})
 		}),
 		concurrent({
 			act({
@@ -1030,7 +1043,7 @@ function scene_eventstory_zuohe_01a.actions.start_eventstory_zuohe_01a(_root, ar
 			args = function (_ctx)
 				return {
 					resType = 0,
-					image = "YYing/YYing_face_3.png",
+					image = "YYing/YYing_face_5.png",
 					pathType = "STORY_FACE"
 				}
 			end

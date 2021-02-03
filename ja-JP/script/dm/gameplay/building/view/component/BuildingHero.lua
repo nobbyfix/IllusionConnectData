@@ -89,6 +89,27 @@ function BuildingHero:initHeroAnim()
 		isAwaken = hero:getAwakenStar() > 0
 	end
 
+	local surfaceMap = self._buildingSystem:getHeroSufaceMap()
+
+	if surfaceMap[self._heroId] and not self._buildingSystem:isSelfBuilding() then
+		modelid = ConfigReader:getDataByNameIdAndKey("Surface", surfaceMap[self._heroId].surfaceId, "Model")
+
+		if modelid then
+			local pathPrefix = "asset/anim/"
+			local resId = ConfigReader:getDataByNameIdAndKey("RoleModel", modelid, "Model")
+			local jsonPath = pathPrefix .. resId .. ".skel"
+
+			if not cc.FileUtils:getInstance():isFileExist(jsonPath) then
+				local surfaceId = ConfigReader:requireDataByNameIdAndKey("HeroBase", self._heroId, "SurfaceList")[1]
+				modelid = ConfigReader:getDataByNameIdAndKey("Surface", surfaceId, "Model")
+			end
+
+			if surfaceMap[self._heroId].awakenLevel then
+				isAwaken = surfaceMap[self._heroId].awakenLevel > 0
+			end
+		end
+	end
+
 	self._animNode = RoleFactory:createHeroAnimation(modelid, isAwaken and "stand1" or "stand")
 
 	self._animNode:setScale(self._scale)
@@ -308,8 +329,19 @@ end
 function BuildingHero:playAnimation(name)
 	self._currentState = name
 	local hero = self._developSystem._heroSystem:getHeroById(self._heroId)
+	local isAwaken = false
 
-	if hero and hero:getAwakenStar() > 0 and name == KBuildingHeroActionSta.kIdel then
+	if hero and hero:getAwakenStar() > 0 then
+		isAwaken = true
+	end
+
+	local surfaceMap = self._buildingSystem:getHeroSufaceMap()
+
+	if surfaceMap[self._heroId] and not self._buildingSystem:isSelfBuilding() and surfaceMap[self._heroId].awakenLevel then
+		isAwaken = surfaceMap[self._heroId].awakenLevel > 0
+	end
+
+	if isAwaken and name == KBuildingHeroActionSta.kIdel then
 		name = "stand1"
 	end
 
