@@ -4237,6 +4237,20 @@
         "clz": "double",
         "content": 3
     },
+    "Hero_StarFragment": {
+        "clz": "dict",
+        "content": {
+            "12": {
+                "IM_FAll14": 1
+            },
+            "13": {
+                "IM_FAll14": 1
+            },
+            "14": {
+                "IM_FAll14": 1
+            }
+        }
+    },
     "Hero_Star_Coefficient": {
         "clz": "dict",
         "content": {
@@ -7812,7 +7826,8 @@
             "FEMSi",
             "BLTu",
             "BDFen",
-            "PGNNi"
+            "PGNNi",
+            "QBTe"
         ]
     },
     "Tower_1_GrowMaxValue": {

@@ -155,6 +155,57 @@
         "UnlockDesc": "",
         "UnlockStory": ""
     },
+    "Memory_ACTIVILIST_NewYear": {
+        "ActiviType": "",
+        "Condition": "",
+        "Listpicture": "memory_scene_stagechristmas",
+        "Name": "ActivityBlock_ANewYea_UI2",
+        "Num": 7,
+        "Story": [
+            {
+                "id": [
+                    "Memory_ANewYearS01S01",
+                    "Memory_ANewYearS01S02",
+                    "Memory_ANewYearS02S01",
+                    "Memory_ANewYearS02S02",
+                    "Memory_ANewYearS03S01",
+                    "Memory_ANewYearS03S02",
+                    "Memory_ANewYearS03S03",
+                    "Memory_ANewYearS03S04"
+                ],
+                "type": "NORMAL"
+            }
+        ],
+        "Type": "ACTIVILIST",
+        "UnlockDesc": "",
+        "UnlockStory": ""
+    },
+    "Memory_Detective_List": {
+        "ActiviType": "",
+        "Condition": "",
+        "Listpicture": "s_act_detective_1",
+        "Name": "ActivityBlock_Detective_Name",
+        "Num": 8,
+        "Story": [
+            {
+                "id": [
+                    "Memory_Detective_1",
+                    "Memory_Detective_2"
+                ],
+                "type": "NORMAL"
+            },
+            {
+                "id": [
+                    "Memory_Detective_3",
+                    "Memory_Detective_4"
+                ],
+                "type": "ELITE"
+            }
+        ],
+        "Type": "ACTIVILIST",
+        "UnlockDesc": "",
+        "UnlockStory": ""
+    },
     "Memory_STORYLIST_1": {
         "ActiviType": "",
         "Condition": [

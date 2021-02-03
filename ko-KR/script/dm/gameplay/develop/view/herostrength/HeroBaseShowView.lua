@@ -187,18 +187,6 @@ function HeroBaseShowView:refreshHeroType(stopChange)
 	self._heroPanel:getChildByFullName("HeroAnim"):gotoAndPlay(0)
 end
 
-function HeroBaseShowView:onHeroShowClicked(sender, eventType)
-	if eventType == ccui.TouchEventType.ended then
-		AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
-
-		local heroShowDetailsView = self._mediator:getInjector():getInstance("HeroShowDetailsView")
-
-		self._mediator:dispatch(ViewEvent:new(EVT_SHOW_POPUP, heroShowDetailsView, {}, {
-			heroId = self._heroData:getId()
-		}))
-	end
-end
-
 function HeroBaseShowView:onClickChange()
 	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
 	self._heroSystem:setShowHeroType(self._heroSystem:getShowHeroType() == 1 and 2 or 1)

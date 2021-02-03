@@ -122,7 +122,9 @@ function BagEquipPancel:refreshView()
 	self:refreshBtn()
 end
 
-function BagEquipPancel:refreshViewByLock()
+function BagEquipPancel:refreshViewByLock(event)
+	local data = event:getData()
+
 	if self._equipData then
 		local equipData = self._equipData
 		local image = equipData:getUnlock() and kLockImage[2] or kLockImage[1]
@@ -130,11 +132,13 @@ function BagEquipPancel:refreshViewByLock()
 
 		lockBtn:getChildByName("image"):loadTexture(image)
 
-		local tip = equipData:getUnlock() and Strings:get("Equip_Success_Unlock") or Strings:get("Equip_Success_Lock")
+		if data.viewtype == 1 then
+			local tip = equipData:getUnlock() and Strings:get("Equip_Success_Unlock") or Strings:get("Equip_Success_Lock")
 
-		self._view:dispatch(ShowTipEvent({
-			tip = tip
-		}))
+			self._view:dispatch(ShowTipEvent({
+				tip = tip
+			}))
+		end
 	end
 end
 
@@ -145,6 +149,7 @@ function BagEquipPancel:refreshEquipBaseInfo()
 	local star = self._equipData:getStar()
 	local equipOccu = self._equipData:getOccupation()
 	local occupationDesc = self._equipData:getOccupationDesc()
+	local occupationType = self._equipData:getOccupationType()
 	local iconpanel = self._nodeDesc:getChildByFullName("iconpanel")
 
 	iconpanel:removeAllChildren()
@@ -255,15 +260,32 @@ function BagEquipPancel:refreshEquipBaseInfo()
 	else
 		limitDesc:setString(Strings:get("Equip_UI24"))
 
-		if equipOccu then
-			for i = 1, #equipOccu do
-				local occupationName, occupationIcon = GameStyle:getHeroOccupation(equipOccu[i])
-				local image = ccui.ImageView:create(occupationIcon)
+		if occupationType == nil or occupationType == 0 then
+			if equipOccu then
+				for i = 1, #equipOccu do
+					local occupationName, occupationIcon = GameStyle:getHeroOccupation(equipOccu[i])
+					local image = ccui.ImageView:create(occupationIcon)
 
-				image:setAnchorPoint(cc.p(0, 0.5))
-				image:setPosition(cc.p(40 * (i - 1), 0))
-				image:setScale(0.5)
-				image:addTo(limitNode)
+					image:setAnchorPoint(cc.p(0, 0.5))
+					image:setPosition(cc.p(40 * (i - 1), 0))
+					image:setScale(0.5)
+					image:addTo(limitNode)
+				end
+			end
+		elseif occupationType == 1 and equipOccu then
+			for i = 1, #equipOccu do
+				local heroInfo = {
+					id = IconFactory:getRoleModelByKey("HeroBase", equipOccu[i])
+				}
+				local headImgName = IconFactory:createRoleIconSprite(heroInfo)
+
+				headImgName:setScale(0.2)
+
+				headImgName = IconFactory:addStencilForIcon(headImgName, 2, cc.size(31, 31))
+
+				headImgName:setAnchorPoint(cc.p(0, 0.5))
+				headImgName:setPosition(cc.p(40 * (i - 1), 0))
+				headImgName:addTo(limitNode)
 			end
 		end
 	end
@@ -475,6 +497,7 @@ end
 
 function BagEquipPancel:onClickLock()
 	local params = {
+		viewtype = 1,
 		equipId = self._equipId
 	}
 

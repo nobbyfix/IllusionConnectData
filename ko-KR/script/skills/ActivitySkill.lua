@@ -872,5 +872,512 @@ all.Skill_Stay_Immune_Passive = {
 		return _env
 	end
 }
+all.Skill_Buff_Overlying = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.Mode = externs.Mode
+
+		if this.Mode == nil then
+			this.Mode = 0
+		end
+
+		this.Factor = externs.Factor
+
+		if this.Factor == nil then
+			this.Factor = 0
+		end
+
+		local passive1 = __action(this, {
+			name = "passive1",
+			entry = prototype.passive1
+		})
+		passive1 = global["[duration]"](this, {
+			0
+		}, passive1)
+		this.passive1 = global["[trigger_by]"](this, {
+			"UNIT_ENTER"
+		}, passive1)
+		local passive3 = __action(this, {
+			name = "passive3",
+			entry = prototype.passive3
+		})
+		passive3 = global["[duration]"](this, {
+			0
+		}, passive3)
+		passive3 = global["[trigger_by]"](this, {
+			"UNIT_KICK"
+		}, passive3)
+		this.passive3 = global["[trigger_by]"](this, {
+			"UNIT_DIE"
+		}, passive3)
+
+		return this
+	end,
+	passive1 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+
+		_env.event = externs.event
+
+		assert(_env.event ~= nil, "External variable `event` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local num = 0
+			local buff = nil
+
+			for _, unit_neighbor in global.__iter__(global.AllUnits(_env, global.NEIGHBORS_OF(_env, _env.unit) - global.ONESELF(_env, _env.unit))) do
+				local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, unit_neighbor)
+				num = num + 1
+
+				if this.Mode == 1 then
+					buff = global.NumericEffect(_env, "+hurtrate", {
+						"+Normal",
+						"+Normal"
+					}, this.Factor)
+
+					global.ApplyBuff_Buff(_env, _env.ACTOR, unit_neighbor, {
+						timing = 0,
+						duration = 99,
+						display = "HurtRateUp",
+						tags = {
+							"Skill_Buff_Overlying",
+							"STATUS",
+							"NUMERIC",
+							"BUFF",
+							"HURTRATEUP",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buff
+					}, 1, 0)
+				elseif this.Mode == 2 then
+					buff = global.NumericEffect(_env, "+unhurtrate", {
+						"+Normal",
+						"+Normal"
+					}, this.Factor)
+
+					global.ApplyBuff_Buff(_env, _env.ACTOR, unit_neighbor, {
+						timing = 0,
+						duration = 99,
+						display = "UnHurtRateUp",
+						tags = {
+							"Skill_Buff_Overlying",
+							"STATUS",
+							"NUMERIC",
+							"BUFF",
+							"UNHURTRATEUP",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buff
+					}, 1, 0)
+				elseif this.Mode == 3 then
+					buff = global.NumericEffect(_env, "+critrate", {
+						"+Normal",
+						"+Normal"
+					}, this.Factor)
+
+					global.ApplyBuff_Buff(_env, _env.ACTOR, unit_neighbor, {
+						timing = 0,
+						duration = 99,
+						display = "CritRateUp",
+						tags = {
+							"Skill_Buff_Overlying",
+							"STATUS",
+							"NUMERIC",
+							"BUFF",
+							"CRITRATEUP",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buff
+					}, 1, 0)
+				elseif this.Mode == 4 then
+					buff = global.MaxHpEffect(_env, maxHp * this.Factor)
+
+					global.ApplyBuff_Buff(_env, _env.ACTOR, unit_neighbor, {
+						timing = 0,
+						duration = 99,
+						display = "MaxHpUp",
+						tags = {
+							"Skill_Buff_Overlying",
+							"STATUS",
+							"NUMERIC",
+							"BUFF",
+							"MAXHPUP",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buff
+					}, 1, 0)
+				elseif this.Mode == 5 then
+					buff = global.HPPeriodRecover(_env, "HOT", maxHp * this.Factor)
+
+					global.ApplyBuff_Buff(_env, _env.ACTOR, unit_neighbor, {
+						timing = 1,
+						duration = 99,
+						display = "HOT",
+						tags = {
+							"Skill_Buff_Overlying",
+							"STATUS",
+							"NUMERIC",
+							"BUFF",
+							"HOT",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buff
+					}, 1, 0)
+				elseif this.Mode == -1 then
+					buff = global.NumericEffect(_env, "-hurtrate", {
+						"+Normal",
+						"+Normal"
+					}, this.Factor)
+
+					global.ApplyBuff_Debuff(_env, _env.ACTOR, unit_neighbor, {
+						timing = 0,
+						duration = 99,
+						display = "AtkDown",
+						tags = {
+							"Skill_Buff_Overlying",
+							"STATUS",
+							"NUMERIC",
+							"DEBUFF",
+							"HURTRATEDOWN",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buff
+					}, 1, 0)
+				elseif this.Mode == -2 then
+					buff = global.NumericEffect(_env, "-unhurtrate", {
+						"+Normal",
+						"+Normal"
+					}, this.Factor)
+
+					global.ApplyBuff_Debuff(_env, _env.ACTOR, unit_neighbor, {
+						timing = 0,
+						duration = 99,
+						display = "UnHurtRateDown",
+						tags = {
+							"Skill_Buff_Overlying",
+							"STATUS",
+							"NUMERIC",
+							"DEBUFF",
+							"UNHURTRATEDOWN",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buff
+					}, 1, 0)
+				elseif this.Mode == -3 then
+					buff = global.NumericEffect(_env, "-critrate", {
+						"+Normal",
+						"+Normal"
+					}, this.Factor)
+
+					global.ApplyBuff_Debuff(_env, _env.ACTOR, unit_neighbor, {
+						timing = 0,
+						duration = 99,
+						display = "CritRateDown",
+						tags = {
+							"Skill_Buff_Overlying",
+							"STATUS",
+							"NUMERIC",
+							"DEBUFF",
+							"CRITRATEDOWN",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buff
+					}, 1, 0)
+				elseif this.Mode == -4 then
+					buff = global.MaxHpEffect(_env, -maxHp * this.Factor)
+
+					global.ApplyBuff_Debuff(_env, _env.ACTOR, unit_neighbor, {
+						timing = 0,
+						duration = 99,
+						display = "MaxHpDown",
+						tags = {
+							"Skill_Buff_Overlying",
+							"STATUS",
+							"NUMERIC",
+							"DEBUFF",
+							"MAXHPDOWN",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buff
+					}, 1, 0)
+				elseif this.Mode == -5 then
+					buff = global.HPPeriodRecover(_env, "Poison", maxHp * this.Factor)
+
+					global.ApplyBuff_Debuff(_env, _env.ACTOR, unit_neighbor, {
+						timing = 1,
+						duration = 99,
+						display = "Poison",
+						tags = {
+							"Skill_Buff_Overlying",
+							"STATUS",
+							"NUMERIC",
+							"DEBUFF",
+							"POISON",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buff
+					}, 1, 0)
+				end
+			end
+
+			if this.Mode == 1 then
+				for i = 1, num do
+					global.ApplyBuff_Buff(_env, _env.ACTOR, _env.unit, {
+						timing = 0,
+						duration = 99,
+						display = "HurtRateUp",
+						tags = {
+							"Skill_Buff_Overlying",
+							"STATUS",
+							"NUMERIC",
+							"BUFF",
+							"HURTRATEUP",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buff
+					}, 1, 0)
+				end
+			elseif this.Mode == 2 then
+				for i = 1, num do
+					global.ApplyBuff_Buff(_env, _env.ACTOR, _env.unit, {
+						timing = 0,
+						duration = 99,
+						display = "UnHurtRateUp",
+						tags = {
+							"Skill_Buff_Overlying",
+							"STATUS",
+							"NUMERIC",
+							"BUFF",
+							"UNHURTRATEUP",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buff
+					}, 1, 0)
+				end
+			elseif this.Mode == 3 then
+				for i = 1, num do
+					global.ApplyBuff_Buff(_env, _env.ACTOR, _env.unit, {
+						timing = 0,
+						duration = 99,
+						display = "CritRateUp",
+						tags = {
+							"Skill_Buff_Overlying",
+							"STATUS",
+							"NUMERIC",
+							"BUFF",
+							"CRITRATEUP",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buff
+					}, 1, 0)
+				end
+			elseif this.Mode == 4 then
+				for i = 1, num do
+					global.ApplyBuff_Buff(_env, _env.ACTOR, _env.unit, {
+						timing = 0,
+						duration = 99,
+						display = "MaxHpUp",
+						tags = {
+							"Skill_Buff_Overlying",
+							"STATUS",
+							"NUMERIC",
+							"BUFF",
+							"MAXHPUP",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buff
+					}, 1, 0)
+				end
+			elseif this.Mode == 5 then
+				for i = 1, num do
+					global.ApplyBuff_Buff(_env, _env.ACTOR, _env.unit, {
+						timing = 1,
+						duration = 99,
+						display = "HOT",
+						tags = {
+							"Skill_Buff_Overlying",
+							"STATUS",
+							"NUMERIC",
+							"BUFF",
+							"HOT",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buff
+					}, 1, 0)
+				end
+			elseif this.Mode == -1 then
+				for i = 1, num do
+					global.ApplyBuff_Debuff(_env, _env.ACTOR, _env.unit, {
+						timing = 0,
+						duration = 99,
+						display = "HurtRateDown",
+						tags = {
+							"Skill_Buff_Overlying",
+							"STATUS",
+							"NUMERIC",
+							"DEBUFF",
+							"HURTRATEDOWN",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buff
+					}, 1, 0)
+				end
+			elseif this.Mode == -2 then
+				for i = 1, num do
+					global.ApplyBuff_Debuff(_env, _env.ACTOR, _env.unit, {
+						timing = 0,
+						duration = 99,
+						display = "UnHurtRateDown",
+						tags = {
+							"Skill_Buff_Overlying",
+							"STATUS",
+							"NUMERIC",
+							"DEBUFF",
+							"UNHURTRATEDOWN",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buff
+					}, 1, 0)
+				end
+			elseif this.Mode == -3 then
+				for i = 1, num do
+					global.ApplyBuff_Debuff(_env, _env.ACTOR, _env.unit, {
+						timing = 0,
+						duration = 99,
+						display = "CritRateDown",
+						tags = {
+							"Skill_Buff_Overlying",
+							"STATUS",
+							"NUMERIC",
+							"DEBUFF",
+							"CRITRATEDOWN",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buff
+					}, 1, 0)
+				end
+			elseif this.Mode == -4 then
+				for i = 1, num do
+					global.ApplyBuff_Debuff(_env, _env.ACTOR, _env.unit, {
+						timing = 0,
+						duration = 99,
+						display = "MaxHpDown",
+						tags = {
+							"Skill_Buff_Overlying",
+							"STATUS",
+							"NUMERIC",
+							"DEBUFF",
+							"MAXHPDOWN",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buff
+					}, 1, 0)
+				end
+			elseif this.Mode == -5 then
+				for i = 1, num do
+					global.ApplyBuff_Debuff(_env, _env.ACTOR, _env.unit, {
+						timing = 1,
+						duration = 99,
+						display = "Poison",
+						tags = {
+							"Skill_Buff_Overlying",
+							"STATUS",
+							"NUMERIC",
+							"DEBUFF",
+							"POISON",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buff
+					}, 1, 0)
+				end
+			end
+		end)
+
+		return _env
+	end,
+	passive3 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+
+		_env.event = externs.event
+
+		assert(_env.event ~= nil, "External variable `event` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			for _, unit1 in global.__iter__(global.AllUnits(_env, global.NEIGHBORS_OF(_env, _env.unit) - global.ONESELF(_env, _env.unit))) do
+				global.DispelBuff(_env, unit1, global.BUFF_MARKED_ALL(_env, "Skill_Buff_Overlying", "UNDISPELLABLE", "UNSTEALABLE"), 1)
+			end
+		end)
+
+		return _env
+	end
+}
 
 return _M

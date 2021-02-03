@@ -474,10 +474,20 @@ function EquipSystem:getReplaceEquips(param)
 	for equipId, _ in pairs(equipIds) do
 		local equip = self:getEquipById(equipId)
 		local ownHeroId = equip:getHeroId()
+		local occupationType = equip:getOccupationType()
+		local accord = false
+
+		if occupationType == nil or occupationType == 0 then
+			if indexof(equip:getOccupation(), occupation) then
+				accord = true
+			end
+		elseif occupationType == 1 and indexof(equip:getOccupation(), heroId) then
+			accord = true
+		end
 
 		if ownHeroId == heroId then
 			showEquips[#showEquips + 1] = equip
-		elseif ownHeroId ~= "" or not indexof(equip:getOccupation(), occupation) then
+		elseif ownHeroId ~= "" or not accord then
 			disabledEquip[#disabledEquip + 1] = equip
 		else
 			enabledEquip[#enabledEquip + 1] = equip
@@ -874,8 +884,18 @@ function EquipSystem:hasRedPointByReplace(param)
 
 		if heroEquipRarity <= equipRarity or equipRarity == heroEquipRarity - 1 and equipLevel >= heroEquipLevel + 10 then
 			local ownHeroId = equip:getHeroId()
+			local occupationType = equip:getOccupationType()
+			local accord = false
 
-			if table.indexof(equip:getOccupation(), occupation) and (ownHeroId == "" or ownHeroId == heroId) then
+			if occupationType == nil or occupationType == 0 then
+				if table.indexof(equip:getOccupation(), occupation) then
+					accord = true
+				end
+			elseif occupationType == 1 and table.indexof(equip:getOccupation(), heroId) then
+				accord = true
+			end
+
+			if accord and (ownHeroId == "" or ownHeroId == heroId) then
 				local preCombat = hero:getCombatByEquip(equipId)
 
 				equip:setPreHeroCombat(preCombat)
@@ -1207,18 +1227,20 @@ function EquipSystem:requestEquipStarUp(param, callback, blockUI)
 end
 
 function EquipSystem:requestEquipLock(param, callback, blockUI)
-	param = {
+	local param_request = {
 		equipId = param.equipId
 	}
 	local equipService = self:getInjector():getInstance(EquipService)
 
-	equipService:requestEquipLock(param, function (response)
+	equipService:requestEquipLock(param_request, function (response)
 		if response.resCode == GS_SUCCESS then
 			if callback then
 				callback()
 			end
 
-			self:dispatch(Event:new(EVT_EQUIP_LOCK_SUCC, {}))
+			self:dispatch(Event:new(EVT_EQUIP_LOCK_SUCC, {
+				viewtype = param.viewtype
+			}))
 		end
 	end, blockUI)
 end

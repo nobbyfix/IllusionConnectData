@@ -221,6 +221,18 @@ function PetRaceRegistLayer:initSelectIndex()
 	local enterIndex = self._petRaceSystem:getPetRace():getEnterIndex()
 	local matchStatus = self:getMatchStatus()
 	local selectIndex = enterIndex ~= -1 and enterIndex + 1 or self._petRaceSystem:getPetRace():getCurIndex() + 1
+	local enableMatch = {}
+
+	for k, v in pairs(matchStatus) do
+		if v.status == kStatus.open then
+			enableMatch[#enableMatch + 1] = v
+		end
+	end
+
+	if #enableMatch > 0 then
+		local randomIndex = math.random(1, #enableMatch)
+		selectIndex = enableMatch[randomIndex].index
+	end
 
 	self._petRaceSystem:setSelectIndex(selectIndex)
 	self:updateStatus(matchStatus[selectIndex])

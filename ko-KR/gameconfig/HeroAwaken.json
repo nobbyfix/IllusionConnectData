@@ -1,5 +1,6 @@
 {
     "BBLMa": {
+        "AnimSound": "",
         "Animation": "BBLMa_Awaken",
         "ModelId": "Model_BBLMa_Awake",
         "Name": "BBLMa_Awake_Name",
@@ -15,6 +16,7 @@
         "SurfaceId": "Surface_BBLMa_Awake"
     },
     "KTSJKe": {
+        "AnimSound": "",
         "Animation": "KTSJKe_Awaken",
         "ModelId": "Model_KTSJKe_Awake",
         "Name": "KTSJKe_Awake_Name",
@@ -29,7 +31,24 @@
         "StoryLink": "S11S01",
         "SurfaceId": "Surface_KTSJKe_Awake"
     },
+    "LFEr": {
+        "AnimSound": "Se_Effect_Awakening_LFEr",
+        "Animation": "LFEr_Awaken",
+        "ModelId": "Model_LFEr_Awake",
+        "Name": "LFEr_Awake_Name",
+        "NameDesc": "LFEr_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_LFEr_UnAwake",
+        "Reward": "HeroAwaken_LFEr",
+        "ShowHero": "LFEr",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "LFEr_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_LFEr_Awake"
+    },
     "SDTZi": {
+        "AnimSound": "",
         "Animation": "SDTZi_Awaken",
         "ModelId": "Model_SDTZi_Awake",
         "Name": "SDTZi_Awake_Name",
@@ -45,6 +64,7 @@
         "SurfaceId": "Surface_SDTZi_Awake"
     },
     "TPGZhu": {
+        "AnimSound": "",
         "Animation": "FHYH_Awaken",
         "ModelId": "Model_TPGZhu_Awake",
         "Name": "TPGZhu_Awake_Name",
@@ -60,6 +80,7 @@
         "SurfaceId": "Surface_TPGZhu_Awake"
     },
     "ZZBBWei": {
+        "AnimSound": "",
         "Animation": "ZZBBWei_Awaken",
         "ModelId": "Model_ZZBBWei_Awake",
         "Name": "ZZBBWei_Awake_Name",

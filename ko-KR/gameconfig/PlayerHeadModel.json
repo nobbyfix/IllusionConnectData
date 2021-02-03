@@ -559,6 +559,16 @@
         "UnlockDesc": "PNCao_HeadUnlock",
         "Zoom": 0.5
     },
+    "Head_QBTe": {
+        "HeadDesc": "HeroBase_Desc_QBTe",
+        "HeadName": "QBTe_HeadName",
+        "HeroMasterId": "QBTe",
+        "IconPath": "asset/heros/QBTe/battlepic_qmi.png",
+        "IsHiddenHead": 0,
+        "Type": 1,
+        "UnlockDesc": "QBTe_HeadUnlock",
+        "Zoom": 0.5
+    },
     "Head_SDTZi": {
         "HeadDesc": "HeroBase_Desc_SDTZi",
         "HeadName": "SDTZi_HeadName",
@@ -869,6 +879,16 @@
         "UnlockDesc": "HeroAwaken_KTSJKe",
         "Zoom": 1.0
     },
+    "HeroAwaken_LFEr": {
+        "HeadDesc": "HeroAwaken_LFEr_Desc",
+        "HeadName": "HeroAwaken_LFEr_1_Name",
+        "HeroMasterId": "LFEr",
+        "IconPath": "asset/heros/LFEr/battlepic_dana_awaken.png",
+        "IsHiddenHead": 0,
+        "Type": 4,
+        "UnlockDesc": "HeroAwaken_LFEr",
+        "Zoom": 1.0
+    },
     "HeroAwaken_SDTZi": {
         "HeadDesc": "HeroAwaken_SDTZi_Desc",
         "HeadName": "HeroAwaken_SDTZi_1_Name",
@@ -925,6 +945,16 @@
         "HeroMasterId": "PlayerHead_BBLMa_1",
         "IconPath": "asset/heros/BBLMa/BBLM_Home.png",
         "IsHiddenHead": 1,
+        "Type": 3,
+        "UnlockDesc": "PlayerHead_UnHave",
+        "Zoom": 1.0
+    },
+    "SpecialHead_BBLMa_SpringFestival": {
+        "HeadDesc": "SpecialHead_BBLMa_SpringFestival_Desc",
+        "HeadName": "SpecialHead_BBLMa_SpringFestival_Name",
+        "HeroMasterId": "PlayerHead_BBLMa_SpringFestival",
+        "IconPath": "asset/heros/BBLMa/ic_launcher_foreground.png",
+        "IsHiddenHead": 0,
         "Type": 3,
         "UnlockDesc": "PlayerHead_UnHave",
         "Zoom": 1.0

@@ -229,6 +229,7 @@ function ClubMediator:createMainView(data)
 			}))
 		end
 
+		self._topInfoWidget:setVisible(true)
 		self._currencyInfoWidget:setVisible(false)
 		self._clubNode:setVisible(false)
 		self._adjustUtil:setVisible(false)

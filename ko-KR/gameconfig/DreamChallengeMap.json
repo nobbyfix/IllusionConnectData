@@ -121,6 +121,36 @@
             "LEVEL": 50
         }
     },
+    "DreamChallenge_T05": {
+        "BGM": [
+            "Mus_Story_Knight_War",
+            "",
+            ""
+        ],
+        "Background": "mjt_img_dlde_bg",
+        "BlockPoint": [
+            "DreamChallengePoint_T05N01",
+            "DreamChallengePoint_T05N02",
+            "DreamChallengePoint_T05N03"
+        ],
+        "Control": 1,
+        "DCType": 2,
+        "LimitTimeTxt": "",
+        "ListLocationNum": 20005,
+        "Name": "DreamChallenge_T05_Name",
+        "ShowCondition": {
+            "LEVEL": 43
+        },
+        "Story": "",
+        "TabPic": "mjt_txt_dlde_but",
+        "Tag": "",
+        "TimeFactor": {
+            "type": "Forever"
+        },
+        "UnlockCondition": {
+            "LEVEL": 56
+        }
+    },
     "DreamChallenge_TimeLimit_Music": {
         "BGM": [
             "Mus_Story_MusicFestival_2",
@@ -152,6 +182,37 @@
             "LEVEL": 5
         }
     },
+    "DreamChallenge_TimeLimit_Pisces": {
+        "BGM": [
+            "Mus_Story_MusicFestival_2",
+            "",
+            ""
+        ],
+        "Background": "mjt_scene_xz_bg",
+        "BlockPoint": [
+            "DreamChallenge_TimeLimit_Pisces_T01N01"
+        ],
+        "Control": 1,
+        "DCType": 1,
+        "LimitTimeTxt": "DreamChallenge_TimeShow_Pisces",
+        "ListLocationNum": 10004,
+        "Name": "DreamChallenge_TimeLimit_Pisces_Name",
+        "ShowCondition": {
+            "Day": "2021-02-20  05:00:00",
+            "LEVEL": 5
+        },
+        "Story": "",
+        "TabPic": "mjt_txt_syzs_btn",
+        "Tag": "",
+        "TimeFactor": {
+            "type": "Day",
+            "value": "2021-03-01  05:00:00"
+        },
+        "UnlockCondition": {
+            "Day": "2021-02-20  05:00:00",
+            "LEVEL": 5
+        }
+    },
     "DreamChallenge_TimeLimit_SD": {
         "BGM": [
             "Mus_Story_Dongwenhui",
@@ -180,6 +241,37 @@
         },
         "UnlockCondition": {
             "Day": "2021-01-01  05:00:00",
+            "LEVEL": 5
+        }
+    },
+    "DreamChallenge_TimeLimit_Valentine": {
+        "BGM": [
+            "Mus_Story_MusicFestival_2",
+            "",
+            ""
+        ],
+        "Background": "mjt_scene_xz_bg",
+        "BlockPoint": [
+            "DreamChallenge_TimeLimit_Valentine_T01N01"
+        ],
+        "Control": 1,
+        "DCType": 1,
+        "LimitTimeTxt": "DreamChallenge_TimeShow_Valentine",
+        "ListLocationNum": 10003,
+        "Name": "DreamChallenge_TimeLimit_Valentine_Name",
+        "ShowCondition": {
+            "Day": "2021-02-06  05:00:00",
+            "LEVEL": 5
+        },
+        "Story": "",
+        "TabPic": "mjt_txt_spzx_btn",
+        "Tag": "",
+        "TimeFactor": {
+            "type": "Day",
+            "value": "2021-02-15  05:00:00"
+        },
+        "UnlockCondition": {
+            "Day": "2021-02-06  05:00:00",
             "LEVEL": 5
         }
     }

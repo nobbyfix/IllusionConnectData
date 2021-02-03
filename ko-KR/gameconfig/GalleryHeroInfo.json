@@ -3983,13 +3983,13 @@
         "BGPic": "album_bg_dryl_txd",
         "GossipDesc": {
             "LFEr_GossipDesc_1": [
-                198,
-                248,
+                303,
+                348,
                 "album_bg_tag03"
             ],
             "LFEr_GossipDesc_2": [
                 26,
-                137,
+                0,
                 "album_bg_tag02"
             ],
             "LFEr_GossipDesc_3": [
@@ -5749,6 +5749,124 @@
             ]
         }
     },
+    "QBTe": {
+        "BGPic": "album_bg_dryl_txd",
+        "GossipDesc": {
+            "QBTe_GossipDesc_1": [
+                303,
+                97,
+                "album_bg_tag03"
+            ],
+            "QBTe_GossipDesc_2": [
+                323,
+                237,
+                "album_bg_tag02"
+            ],
+            "QBTe_GossipDesc_3": [
+                33,
+                36,
+                "album_bg_tag03"
+            ]
+        },
+        "HeroReward": "GalleryHeroReward_SSR",
+        "HeroStory": [
+            {
+                "desc": "QBTe_StoryDesc1",
+                "need": [
+                    1,
+                    0
+                ],
+                "title": "QBTe_StoryTitle1"
+            },
+            {
+                "desc": "QBTe_StoryDesc2",
+                "need": [
+                    2,
+                    150
+                ],
+                "title": "QBTe_StoryTitle2"
+            },
+            {
+                "desc": "QBTe_StoryDesc3",
+                "need": [
+                    4,
+                    400
+                ],
+                "title": "QBTe_StoryTitle3"
+            },
+            {
+                "desc": "QBTe_StoryDesc4",
+                "need": [
+                    5,
+                    600
+                ],
+                "title": "QBTe_StoryTitle4"
+            },
+            {
+                "desc": "QBTe_StoryDesc5",
+                "need": [
+                    6,
+                    800
+                ],
+                "title": "QBTe_StoryTitle5"
+            }
+        ],
+        "HistoryHero": "HistoryName_QBTe",
+        "InfoDesc1": {
+            "QBTe_InfoDesc1": [
+                1,
+                50
+            ]
+        },
+        "InfoDesc2": {
+            "QBTe_InfoDesc2": [
+                3,
+                125
+            ]
+        },
+        "InfoDesc3": {
+            "QBTe_InfoDesc3": [
+                4,
+                200
+            ]
+        },
+        "InfoDesc4": {
+            "QBTe_InfoDesc4": [
+                1,
+                50
+            ]
+        },
+        "InfoDesc5": {
+            "QBTe_InfoDesc5": [
+                3,
+                125
+            ]
+        },
+        "InfoDesc6": {
+            "QBTe_InfoDesc6": [
+                4,
+                200
+            ]
+        },
+        "InfoDesc7": {
+            "QBTe_InfoDesc7": [
+                1,
+                50
+            ]
+        },
+        "InfoDesc8": {
+            "QBTe_InfoDesc8": [
+                3,
+                125
+            ]
+        },
+        "InfoDesc9": {
+            "QBTe_InfoDesc9": [
+                4,
+                200
+            ]
+        }
+    },
     "SDTZi": {
         "BGPic": "album_bg_dryl_txd",
         "GossipDesc": {
@@ -6675,7 +6793,7 @@
                 "album_bg_tag02"
             ],
             "TPGZhu_GossipDesc_3": [
-                26,
+                326,
                 176,
                 "album_bg_tag03"
             ]

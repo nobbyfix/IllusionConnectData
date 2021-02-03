@@ -125,19 +125,35 @@ function DreamChallengeDetailMediator:refreshView()
 		local timeNode = self._detailView:getChildByName("timeNode")
 		local timeText = self._detailView:getChildByFullName("timeNode.desc")
 		local timeTitle = self._detailView:getChildByFullName("timeNode.title")
-		local timeStrKey = self._dreamSystem:getMapTimeDesc(self._mapId)
+		local timeBg = self._detailView:getChildByFullName("timeNode.timeBg")
+		local leftWorlds = self._detailView:getChildByFullName("bg")
 
-		timeNode:setVisible(false)
+		leftWorlds:setPosition(cc.p(701, 383))
+
+		local textPic = DataReader:getDataByNameIdAndKey("DreamChallengePoint", self._pointId, "TextPic")
+
+		if textPic and textPic ~= "" then
+			timeBg:setVisible(false)
+			leftWorlds:setVisible(true)
+			leftWorlds:loadTexture("asset/ui/dreamChallenge/" .. textPic .. ".png", ccui.TextureResType.localType)
+		else
+			leftWorlds:setVisible(false)
+			timeBg:setVisible(true)
+		end
 
 		local challengeType = DataReader:getDataByNameIdAndKey("DreamChallengePoint", self._pointId, "MissionPicType")
 
 		if kDreamChallengeType.kTwo == challengeType or kDreamChallengeType.kThree == challengeType then
-			timeNode:loadTexture("mjt_z_xntz_sjd.png", ccui.TextureResType.plistType)
+			timeBg:loadTexture("mjt_z_xntz_sjd.png", ccui.TextureResType.plistType)
 			timeTitle:setTextColor(cc.c3b(201, 0, 62))
 		else
-			timeNode:loadTexture("mjt_z_mjjc_sjd.png", ccui.TextureResType.plistType)
+			timeBg:loadTexture("mjt_z_mjjc_sjd.png", ccui.TextureResType.plistType)
 			timeTitle:setTextColor(cc.c3b(93, 82, 205))
 		end
+
+		timeNode:setVisible(false)
+
+		local timeStrKey = self._dreamSystem:getMapTimeDesc(self._mapId)
 
 		if timeStrKey and timeStrKey ~= "" then
 			timeNode:setVisible(true)
@@ -313,6 +329,25 @@ function DreamChallengeDetailMediator:refreshView()
 	else
 		local timeNode = self._lockView:getChildByName("timeNode")
 		local timeText = self._lockView:getChildByFullName("timeNode.desc")
+		local timeBg = self._lockView:getChildByFullName("timeNode.timeBg")
+		local timeTitle = self._lockView:getChildByFullName("timeNode.title")
+		local leftWorlds = self._lockView:getChildByFullName("bg")
+
+		leftWorlds:setPosition(cc.p(701, 383))
+
+		local textPic = DataReader:getDataByNameIdAndKey("DreamChallengePoint", self._pointId, "TextPic")
+
+		if textPic and textPic ~= "" then
+			timeBg:setVisible(false)
+			leftWorlds:setVisible(true)
+			leftWorlds:loadTexture("asset/ui/dreamChallenge/" .. textPic .. ".png", ccui.TextureResType.localType)
+		else
+			leftWorlds:setVisible(false)
+			timeBg:setVisible(true)
+		end
+
+		timeNode:setVisible(false)
+
 		local timeStrKey = self._dreamSystem:getMapTimeDesc(self._mapId)
 
 		timeNode:setVisible(false)

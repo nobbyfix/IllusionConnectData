@@ -1764,5 +1764,107 @@
             "AZuoHeS01S04"
         ],
         "StoryLink": "eventstory_zuohe_05a"
+    },
+    "BakingS01S01": {
+        "FirstReward": "BakingS01S01_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -250
+        ],
+        "Map": "BakingM01",
+        "Name": "BakingS01S01_Name",
+        "NextStoryPoint": [
+            "BakingS01S02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_baking_01a"
+    },
+    "BakingS01S02": {
+        "FirstReward": "BakingS01S02_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "BakingM01",
+        "Name": "BakingS01S02_Name",
+        "NextStoryPoint": [
+            "BakingS01S03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "BakingM01S04"
+        ],
+        "PreStoryPoint": [
+            "BakingS01S01"
+        ],
+        "StoryLink": "eventstory_baking_02a"
+    },
+    "BakingS01S03": {
+        "FirstReward": "BakingS01S03_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "BakingM01",
+        "Name": "BakingS01S03_Name",
+        "NextStoryPoint": [
+            "BakingS01S04"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "BakingM01S08"
+        ],
+        "PreStoryPoint": [
+            "BakingS01S02"
+        ],
+        "StoryLink": "eventstory_baking_03a"
+    },
+    "BakingS01S04": {
+        "FirstReward": "BakingS01S04_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -100
+        ],
+        "Map": "BakingM01",
+        "Name": "BakingS01S04_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "BakingM01S10"
+        ],
+        "PreStoryPoint": [
+            "BakingS01S03"
+        ],
+        "StoryLink": "eventstory_baking_04a"
     }
 }

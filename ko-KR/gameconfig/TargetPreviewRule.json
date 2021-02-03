@@ -176,6 +176,9 @@
     "Target_PNCao": {
         "Function": "return MainTarget()"
     },
+    "Target_QBTe": {
+        "Function": "return GenInfo(EnemyAll(),Red)"
+    },
     "Target_SDTZi": {
         "Function": "return GenInfo(EnemyAll(),Red)"
     },

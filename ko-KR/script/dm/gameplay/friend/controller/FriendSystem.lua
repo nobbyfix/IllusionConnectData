@@ -392,9 +392,13 @@ function FriendSystem:requestFindFriend(name, callback)
 
 	self._friendService:requestFindFriend(params, true, function (response)
 		if response.resCode == GS_SUCCESS then
-			response.data.friendsList = {
-				response.data.player
-			}
+			response.data.friendsList = {}
+
+			if response.data.players and #response.data.players > 0 then
+				response.data.friendsList = response.data.players
+			else
+				response.data.friendsList[1] = response.data.player
+			end
 
 			self._friendModel:synchronize(response.data, kFriendType.kFind, true)
 			self:dispatch(Event:new(EVT_FRIEND_GETRECOMMENDLIST_SUCC, {}))

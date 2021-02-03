@@ -1110,6 +1110,17 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 		end
 	end
 
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED_ALL(_env, "EquipSkill_Armor_15005", "UNDISPELLABLE", "UNSTEALABLE")) > 0 then
+		local DamageFactor = global.SpecialPropGetter(_env, "First_Unique_Armor_15005")(_env, actor)
+		local ExDamageFactor = global.SpecialPropGetter(_env, "First_Unique_Armor_15005_Ex")(_env, actor)
+
+		if global.PETS(_env, target) then
+			damage.val = damage.val * (1 + ExDamageFactor)
+		else
+			damage.val = damage.val * (1 + DamageFactor)
+		end
+	end
+
 	local result = global.ApplyHPDamage(_env, target, damage, lowerLimit)
 
 	if result and result.deadly then
@@ -1347,6 +1358,27 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 		end
 	end
 
+	if global.SelectBuffCount(_env, target, global.BUFF_MARKED_ALL(_env, "IMMUNE", "UR_EQUIPMENT", "DURANDAL")) > 0 then
+		local buff_damage_count = global.SpecialNumericEffect(_env, "+damage_count", {
+			"+Normal",
+			"+Normal"
+		}, damage.val)
+
+		global.ApplyBuff(_env, target, {
+			timing = 0,
+			duration = 99,
+			tags = {
+				"NUMERIC",
+				"BUFF",
+				"UNDISPELLABLE",
+				"UNSTEALABLE",
+				"DAMAGECOUNT"
+			}
+		}, {
+			buff_damage_count
+		})
+	end
+
 	return result
 end
 
@@ -1405,6 +1437,17 @@ function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimi
 					buffeft_AJYHou
 				})
 			end
+		end
+	end
+
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED_ALL(_env, "EquipSkill_Armor_15005", "UNDISPELLABLE", "UNSTEALABLE")) > 0 then
+		local DamageFactor = global.SpecialPropGetter(_env, "First_Unique_Armor_15005")(_env, actor)
+		local ExDamageFactor = global.SpecialPropGetter(_env, "First_Unique_Armor_15005_Ex")(_env, actor)
+
+		if global.PETS(_env, target) then
+			damage.val = damage.val * (1 + ExDamageFactor)
+		else
+			damage.val = damage.val * (1 + DamageFactor)
 		end
 	end
 
@@ -1629,6 +1672,27 @@ function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimi
 		end
 	end
 
+	if global.SelectBuffCount(_env, target, global.BUFF_MARKED_ALL(_env, "IMMUNE", "UR_EQUIPMENT", "DURANDAL")) > 0 then
+		local buff_damage_count = global.SpecialNumericEffect(_env, "+damage_count", {
+			"+Normal",
+			"+Normal"
+		}, damage.val)
+
+		global.ApplyBuff(_env, target, {
+			timing = 0,
+			duration = 99,
+			tags = {
+				"NUMERIC",
+				"BUFF",
+				"UNDISPELLABLE",
+				"UNSTEALABLE",
+				"DAMAGECOUNT"
+			}
+		}, {
+			buff_damage_count
+		})
+	end
+
 	return result
 end
 
@@ -1737,6 +1801,17 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 					buffeft_AJYHou
 				})
 			end
+		end
+	end
+
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED_ALL(_env, "EquipSkill_Armor_15005", "UNDISPELLABLE", "UNSTEALABLE")) > 0 then
+		local DamageFactor = global.SpecialPropGetter(_env, "First_Unique_Armor_15005")(_env, actor)
+		local ExDamageFactor = global.SpecialPropGetter(_env, "First_Unique_Armor_15005_Ex")(_env, actor)
+
+		if global.PETS(_env, target) then
+			damages[n].val = damages[n].val * (1 + ExDamageFactor)
+		else
+			damages[n].val = damages[n].val * (1 + DamageFactor)
 		end
 	end
 
@@ -1986,6 +2061,27 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 		end
 	end
 
+	if global.SelectBuffCount(_env, target, global.BUFF_MARKED_ALL(_env, "IMMUNE", "UR_EQUIPMENT", "DURANDAL")) > 0 then
+		local buff_damage_count = global.SpecialNumericEffect(_env, "+damage_count", {
+			"+Normal",
+			"+Normal"
+		}, damages[n].val)
+
+		global.ApplyBuff(_env, target, {
+			timing = 0,
+			duration = 99,
+			tags = {
+				"NUMERIC",
+				"BUFF",
+				"UNDISPELLABLE",
+				"UNSTEALABLE",
+				"DAMAGECOUNT"
+			}
+		}, {
+			buff_damage_count
+		})
+	end
+
 	return result
 end
 
@@ -2101,6 +2197,17 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 					buffeft_AJYHou
 				})
 			end
+		end
+	end
+
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED_ALL(_env, "EquipSkill_Armor_15005", "UNDISPELLABLE", "UNSTEALABLE")) > 0 then
+		local DamageFactor = global.SpecialPropGetter(_env, "First_Unique_Armor_15005")(_env, actor)
+		local ExDamageFactor = global.SpecialPropGetter(_env, "First_Unique_Armor_15005_Ex")(_env, actor)
+
+		if global.PETS(_env, target) then
+			damages[n].val = damages[n].val * (1 + ExDamageFactor)
+		else
+			damages[n].val = damages[n].val * (1 + DamageFactor)
 		end
 	end
 
@@ -2352,6 +2459,27 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 		end
 	end
 
+	if global.SelectBuffCount(_env, target, global.BUFF_MARKED_ALL(_env, "IMMUNE", "UR_EQUIPMENT", "DURANDAL")) > 0 then
+		local buff_damage_count = global.SpecialNumericEffect(_env, "+damage_count", {
+			"+Normal",
+			"+Normal"
+		}, damages[n].val)
+
+		global.ApplyBuff(_env, target, {
+			timing = 0,
+			duration = 99,
+			tags = {
+				"NUMERIC",
+				"BUFF",
+				"UNDISPELLABLE",
+				"UNSTEALABLE",
+				"DAMAGECOUNT"
+			}
+		}, {
+			buff_damage_count
+		})
+	end
+
 	return result
 end
 
@@ -2466,6 +2594,12 @@ function all.ApplyHPRecovery_ResultCheck(_env, actor, target, heal)
 		end
 	end
 
+	local BeCuredRage = global.SpecialPropGetter(_env, "BeCuredRage")(_env, target)
+
+	if BeCuredRage and BeCuredRage ~= 0 then
+		global.ApplyRPRecovery(_env, target, BeCuredRage)
+	end
+
 	return global.ApplyHPRecovery(_env, target, heal)
 end
 
@@ -2541,6 +2675,12 @@ function all.ApplyHPRecoveryN(_env, n, total, target, heals, actor)
 					buffeft1
 				})
 			end
+		end
+
+		local BeCuredRage = global.SpecialPropGetter(_env, "BeCuredRage")(_env, target)
+
+		if BeCuredRage and BeCuredRage ~= 0 then
+			global.ApplyRPRecovery(_env, target, BeCuredRage)
 		end
 	end
 

@@ -90,6 +90,7 @@ ActivityUI = {
 	Carnival = "CarnivalView",
 	Login_Music = "LoginActivityView",
 	Login_Detective = "LoginActivityView",
+	Login14 = "ActivityLogin14CommonView",
 	Task = "TaskActivityView",
 	Login_Holiday = "LoginActivityView",
 	ABACHIEVEMENTTASK = "ActivityTaskAchievementView",
@@ -141,7 +142,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityBlockHoliday] = "ActivityBlockHolidayView",
 		[ActivityType_UI.KActivityBlockHoliday] = "ActivityBlockHolidayView",
 		[ActivityType_UI.KActivityBlockDetetive] = "ActivityBlockDetectiveView",
-		[ActivityType_UI.KActivityBlockMusic] = "ActivityBlockMusicView"
+		[ActivityType_UI.KActivityBlockMusic] = "ActivityBlockMusicView",
+		[ActivityType_UI.KActivityBlockBaking] = "ActivityBakingMainView"
 	},
 	enterBlockMonsterShopView = {
 		[ActivityType_UI.kActivityBlockWsj] = "ActivityBlockMonsterShopView",
@@ -157,7 +159,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.kActivityBlock] = "ActivitySagaSupportMapView",
 		[ActivityType_UI.KActivityBlockHoliday] = "ActivityBlockMapWsjView",
 		[ActivityType_UI.KActivityBlockDetetive] = "ActivitySagaSupportMapView",
-		[ActivityType_UI.KActivityBlockMusic] = "ActivitySagaSupportMapView"
+		[ActivityType_UI.KActivityBlockMusic] = "ActivitySagaSupportMapView",
+		[ActivityType_UI.KActivityBlockBaking] = "ActivitySagaSupportMapView"
 	},
 	enterSagaSupportStageView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportStageWxhView",
@@ -177,7 +180,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.kActivityBlock] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivityBlockHoliday] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivityBlockDetetive] = "ActivityBlockTaskView",
-		[ActivityType_UI.KActivityBlockMusic] = "ActivityBlockTaskView"
+		[ActivityType_UI.KActivityBlockMusic] = "ActivityBlockTaskView",
+		[ActivityType_UI.KActivityBlockBaking] = "ActivityBlockTaskView"
 	},
 	enterSagaSupportRankRewardView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportRankRewardWxhView",
@@ -188,5 +192,14 @@ ActivityComplexUI = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaWinWxhView",
 		[ActivityType_UI.kActivityBlockZuoHe] = "ActivitySagaWinView",
 		[ActivityType_UI.KActivitySupportHoliday] = "ActivitySupportWinHolidayView"
+	}
+}
+ActivityLogin14Config = {
+	EightDays_Baking = {
+		resFile = "asset/ui/ActivityBakingLogin14.csb",
+		textPattern = {
+			cc.c4b(255, 254, 249, 255),
+			cc.c4b(255, 213, 133, 255)
+		}
 	}
 }

@@ -76,6 +76,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_AuraUp_Desc"
     },
+    "Condi_BakingExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_Baking_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_BakingExchangeAchieve_Desc"
+    },
     "Condi_BlockStarSum": {
         "AchieveType1": "SIZESUM",
         "AchieveType2": "",

@@ -217,8 +217,6 @@ function LoginSystem:getAnnounceDataToSave(callback)
 end
 
 function LoginSystem:requestPlayerInfo(callback)
-	local developSystem = self:getInjector():getInstance(DevelopSystem)
-	local player = developSystem:getPlayer()
 	local playerRid = self._playerRid
 	local info = {}
 
@@ -235,6 +233,8 @@ function LoginSystem:requestPlayerInfo(callback)
 
 	self._loginService:requestPlayerInfo(params, true, function (response)
 		if response.resCode == GS_SUCCESS then
+			local developSystem = self:getInjector():getInstance(DevelopSystem)
+
 			if response.data.extra then
 				if response.data.extra.timeOffset then
 					self._gameServer:setTimeOffset(response.data.extra.timeOffset)
@@ -257,7 +257,6 @@ function LoginSystem:requestPlayerInfo(callback)
 				local isnew = response.data.is_new
 
 				if isnew == 1 then
-					local developSystem = self:getInjector():getInstance(DevelopSystem)
 					local player = developSystem:getPlayer()
 					local serverInfo = self:getCurServer()
 

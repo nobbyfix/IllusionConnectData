@@ -102,8 +102,6 @@ function RecruitSystem:checkEnabled(data)
 end
 
 function RecruitSystem:tryEnter(data)
-	dump(data, "data")
-
 	local unlock, tips, recruitId = self:checkEnabled(data)
 
 	if not unlock then
@@ -238,30 +236,28 @@ function RecruitSystem:doReset(resetId, value)
 end
 
 function RecruitSystem:getCanAutoBuy(costId)
+	local st, userStr = self:getBuyTipsStatus(costId)
+
+	return not st
+end
+
+function RecruitSystem:getBuyTipsStatus(costId)
 	local developSystem = DmGame:getInstance()._injector:getInstance(DevelopSystem)
+	local gameServerAgent = DmGame:getInstance()._injector:getInstance(GameServerAgent)
 	local idStr = string.split(developSystem:getPlayer():getRid(), "_")
 	local userStr = RecruitCurrencyStr.KUserDefault[costId] .. idStr[1]
-	local value = cc.UserDefault:getInstance():getIntegerForKey(userStr)
+	local stamp = cc.UserDefault:getInstance():getIntegerForKey(userStr, 0)
 
-	if not value or value == 0 then
-		return false
+	if stamp > 0 then
+		local tb = TimeUtil:localDate("*t", stamp)
+		local tb1 = TimeUtil:localDate("*t", gameServerAgent:remoteTimestamp())
+
+		if tb.month == tb1.month then
+			return false, userStr
+		end
 	end
 
-	return true
-
-	local gameServerAgent = self:getInjector():getInstance("GameServerAgent")
-	local lastLoginTime = gameServerAgent:remoteTimestamp()
-	local clock5Time = TimeUtil:getTimeByDateForTargetTimeInToday({
-		sec = 0,
-		min = 0,
-		hour = 5
-	})
-
-	if clock5Time - value >= 0 and lastLoginTime < clock5Time or clock5Time < value then
-		return true
-	end
-
-	return false
+	return true, userStr
 end
 
 function RecruitSystem:getActivityIsOpen(recruitId)

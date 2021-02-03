@@ -104,6 +104,12 @@ function HeroStrengthAwakenSuccessMediator:playVideo(close)
 
 	self:getView():addChild(videoSprite)
 	videoSprite:setPosition(cc.p(568, 320))
+
+	local animSound = self._heroData:getAwakenStarConfig().AnimSound
+
+	if animSound and animSound ~= "" then
+		AudioEngine:getInstance():playEffect(animSound, false)
+	end
 end
 
 function HeroStrengthAwakenSuccessMediator:showResult()
