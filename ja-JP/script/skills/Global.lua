@@ -1110,6 +1110,17 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 		end
 	end
 
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED_ALL(_env, "EquipSkill_Armor_15005", "UNDISPELLABLE", "UNSTEALABLE")) > 0 then
+		local DamageFactor = global.SpecialPropGetter(_env, "First_Unique_Armor_15005")(_env, actor)
+		local ExDamageFactor = global.SpecialPropGetter(_env, "First_Unique_Armor_15005_Ex")(_env, actor)
+
+		if global.PETS(_env, target) then
+			damage.val = damage.val * (1 + ExDamageFactor)
+		else
+			damage.val = damage.val * (1 + DamageFactor)
+		end
+	end
+
 	local result = global.ApplyHPDamage(_env, target, damage, lowerLimit)
 
 	if result and result.deadly then
@@ -1426,6 +1437,17 @@ function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimi
 					buffeft_AJYHou
 				})
 			end
+		end
+	end
+
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED_ALL(_env, "EquipSkill_Armor_15005", "UNDISPELLABLE", "UNSTEALABLE")) > 0 then
+		local DamageFactor = global.SpecialPropGetter(_env, "First_Unique_Armor_15005")(_env, actor)
+		local ExDamageFactor = global.SpecialPropGetter(_env, "First_Unique_Armor_15005_Ex")(_env, actor)
+
+		if global.PETS(_env, target) then
+			damage.val = damage.val * (1 + ExDamageFactor)
+		else
+			damage.val = damage.val * (1 + DamageFactor)
 		end
 	end
 
@@ -1779,6 +1801,17 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 					buffeft_AJYHou
 				})
 			end
+		end
+	end
+
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED_ALL(_env, "EquipSkill_Armor_15005", "UNDISPELLABLE", "UNSTEALABLE")) > 0 then
+		local DamageFactor = global.SpecialPropGetter(_env, "First_Unique_Armor_15005")(_env, actor)
+		local ExDamageFactor = global.SpecialPropGetter(_env, "First_Unique_Armor_15005_Ex")(_env, actor)
+
+		if global.PETS(_env, target) then
+			damages[n].val = damages[n].val * (1 + ExDamageFactor)
+		else
+			damages[n].val = damages[n].val * (1 + DamageFactor)
 		end
 	end
 
@@ -2164,6 +2197,17 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 					buffeft_AJYHou
 				})
 			end
+		end
+	end
+
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED_ALL(_env, "EquipSkill_Armor_15005", "UNDISPELLABLE", "UNSTEALABLE")) > 0 then
+		local DamageFactor = global.SpecialPropGetter(_env, "First_Unique_Armor_15005")(_env, actor)
+		local ExDamageFactor = global.SpecialPropGetter(_env, "First_Unique_Armor_15005_Ex")(_env, actor)
+
+		if global.PETS(_env, target) then
+			damages[n].val = damages[n].val * (1 + ExDamageFactor)
+		else
+			damages[n].val = damages[n].val * (1 + DamageFactor)
 		end
 	end
 
