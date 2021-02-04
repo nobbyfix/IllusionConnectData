@@ -120,11 +120,16 @@ function HeroStrengthEquipMediator:refreshView(hideAnim)
 	self:refreshEquip()
 end
 
-function HeroStrengthEquipMediator:refreshViewByLock()
+function HeroStrengthEquipMediator:refreshViewByLock(event)
 	if self._equipInfoView then
 		self._equipInfoView:refreshData()
 		self._equipInfoView:refreshLock()
-		self._equipInfoView:showLockTip()
+
+		local data = event:getData()
+
+		if data.viewtype == 1 then
+			self._equipInfoView:showLockTip()
+		end
 	end
 end
 
@@ -614,6 +619,7 @@ function HeroStrengthEquipMediator:onClickEquipLock()
 
 	if equipId then
 		local params = {
+			viewtype = 1,
 			equipId = equipId
 		}
 

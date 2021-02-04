@@ -603,6 +603,7 @@ function BaseBattleSession:_fillEnemyHeroCardData(heroId)
 	local eneryHeroPrototype = PrototypeFactory:getInstance():getEneryHeroPrototype(heroId)
 	local data = deepCopy({}, eneryHeroPrototype:getEneryData())
 	data.hero.cost = data.cost
+	data.hero.configId = heroId
 
 	BattleDataHelper:fillEnemyCostData(data.hero)
 

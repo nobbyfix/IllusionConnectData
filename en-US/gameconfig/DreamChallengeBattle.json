@@ -6893,6 +6893,1458 @@
             }
         ]
     },
+    "DreamChallengeBattle_T05N01M01": {
+        "BGM": [
+            "Mus_Story_Knight_Fall",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_Team_Info_T05N03M03",
+        "BattleFactor": [
+            13600,
+            13600,
+            13600
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 122000,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "",
+        "EnemyCard": "CardT05N01M01",
+        "EnemyMaster": "T05N01M01W01_Master_01",
+        "NPC": [
+            {
+                "forbidid": "YLMGZhu",
+                "id": "T05N01M01_Protect",
+                "pos": 7
+            }
+        ],
+        "Name": "DreamChallengeBattle_Name_T05N01M01",
+        "OpenFAC": 1,
+        "Pic": "mjt_img_dlde_gk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "DreamChallengeBattle_T05N01M01_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 56
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T05N01M01_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T05N01M02": {
+        "BGM": [
+            "Mus_Story_Knight_Fall",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_Team_Info_T05N03M05",
+        "BattleFactor": [
+            13600,
+            13600,
+            13600
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 124100,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "",
+        "EnemyCard": "CardT05N01M02",
+        "EnemyMaster": "T05N01M02W01_Master_01",
+        "NPC": [
+            {
+                "forbidid": "YXNMei",
+                "id": "T05N01M02_Protect",
+                "pos": 9
+            }
+        ],
+        "Name": "DreamChallengeBattle_Name_T05N01M02",
+        "OpenFAC": 1,
+        "Pic": "mjt_img_dlde_gk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [
+            4,
+            6
+        ],
+        "Showreward": "DreamChallengeBattle_T05N01M02_reward",
+        "StoryLink": {
+            "end": [
+                "DreamChallenge_5_dulandeer_02a"
+            ]
+        },
+        "UnlockCondition": {
+            "LEVEL": 56,
+            "Pass": "DreamChallengeBattle_T05N01M01"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T05N01M02_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T05N01M03": {
+        "BGM": [
+            "Mus_Story_Knight_Fall",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_Team_Info_T05N03M06",
+        "BattleFactor": [
+            13600,
+            13600,
+            13600
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 126200,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "",
+        "EnemyCard": "CardT05N01M03",
+        "EnemyMaster": "T05N01M03W01_Master_01",
+        "NPC": [
+            {
+                "forbidid": "SDTZi",
+                "id": "T05N01M03_Protect",
+                "pos": 5
+            }
+        ],
+        "Name": "DreamChallengeBattle_Name_T05N01M03",
+        "OpenFAC": 1,
+        "Pic": "mjt_img_dlde_gk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "DreamChallengeBattle_T05N01M03_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 56,
+            "Pass": "DreamChallengeBattle_T05N01M02"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T05N01M03_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T05N01M04": {
+        "BGM": [
+            "Mus_Story_Knight_Fall",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_Team_Info_T05N03M08",
+        "BattleFactor": [
+            13600,
+            13600,
+            13600
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 129700,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "",
+        "EnemyCard": "CardT05N01M04",
+        "EnemyMaster": "T05N01M04W01_Master_01",
+        "NPC": "",
+        "Name": "DreamChallengeBattle_Name_T05N01M04",
+        "OpenFAC": 1,
+        "Pic": "mjt_img_dlde_gk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "DreamChallengeBattle_T05N01M04_reward",
+        "StoryLink": {
+            "end": [
+                "DreamChallenge_5_dulandeer_03a"
+            ]
+        },
+        "UnlockCondition": {
+            "LEVEL": 56,
+            "Pass": "DreamChallengeBattle_T05N01M03"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T05N01M04_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T05N01M05": {
+        "BGM": [
+            "Mus_Story_Knight_Fall",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_Team_Info_T05N03M09",
+        "BattleFactor": [
+            13600,
+            13600,
+            13600
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 8,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 131800,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "",
+        "EnemyCard": "CardT05N01M05",
+        "EnemyMaster": "T05N01M05W01_Master_01",
+        "NPC": "",
+        "Name": "DreamChallengeBattle_Name_T05N01M05",
+        "OpenFAC": 1,
+        "Pic": "mjt_img_dlde_gk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "DreamChallengeBattle_T05N01M05_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 56,
+            "Pass": "DreamChallengeBattle_T05N01M04"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T05N01M05_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T05N01M06": {
+        "BGM": [
+            "Mus_Story_Knight_Fall",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_Team_Info_T05N03M10",
+        "BattleFactor": [
+            13600,
+            13600,
+            13600
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 136000,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "",
+        "EnemyCard": "CardT05N01M06",
+        "EnemyMaster": "T05N01M06W01_Master_01",
+        "NPC": [
+            {
+                "forbidid": "MGNa",
+                "id": "T05N01M06_Protect",
+                "pos": 9
+            }
+        ],
+        "Name": "DreamChallengeBattle_Name_T05N01M06",
+        "OpenFAC": 1,
+        "Pic": "mjt_img_dlde_gk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "DreamChallengeBattle_T05N01M06_reward",
+        "StoryLink": {
+            "end": [
+                "DreamChallenge_5_dulandeer_04a"
+            ]
+        },
+        "UnlockCondition": {
+            "LEVEL": 56,
+            "Pass": "DreamChallengeBattle_T05N01M05"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T05N01M06_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T05N02M01": {
+        "BGM": [
+            "Mus_Story_Knight_Fall",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_Team_Info_T05N03M01",
+        "BattleFactor": [
+            17600,
+            17600,
+            17600
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 122000,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "",
+        "EnemyCard": "CardT05N02M01",
+        "EnemyMaster": "T05N02M01W01_Master_01",
+        "NPC": [
+            {
+                "forbidid": "YLSBai",
+                "id": "T05N02M01_Protect",
+                "pos": 3
+            }
+        ],
+        "Name": "DreamChallengeBattle_Name_T05N02M01",
+        "OpenFAC": 1,
+        "Pic": "mjt_img_dlde_gk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [
+            2,
+            6
+        ],
+        "Showreward": "DreamChallengeBattle_T05N02M01_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 56,
+            "Pass": "DreamChallengeBattle_T05N01M04"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T05N02M01_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T05N02M02": {
+        "BGM": [
+            "Mus_Story_Knight_Fall",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_Team_Info_T05N03M03",
+        "BattleFactor": [
+            17600,
+            17600,
+            17600
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 128336,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "",
+        "EnemyCard": "CardT05N02M02",
+        "EnemyMaster": "T05N02M02W01_Master_01",
+        "NPC": [
+            {
+                "forbidid": "YLMGZhu",
+                "id": "T05N02M02_Protect",
+                "pos": 7
+            }
+        ],
+        "Name": "DreamChallengeBattle_Name_T05N02M02",
+        "OpenFAC": 1,
+        "Pic": "mjt_img_dlde_gk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "DreamChallengeBattle_T05N02M02_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 56,
+            "Pass": "DreamChallengeBattle_T05N02M01"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T05N02M02_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T05N02M03": {
+        "BGM": [
+            "Mus_Story_Knight_Fall",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_Team_Info_T05N03M05",
+        "BattleFactor": [
+            17600,
+            17600,
+            17600
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 136976,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "",
+        "EnemyCard": "CardT05N02M03",
+        "EnemyMaster": "T05N02M03W01_Master_01",
+        "NPC": [
+            {
+                "forbidid": "YXNMei",
+                "id": "T05N02M03_Protect",
+                "pos": 9
+            }
+        ],
+        "Name": "DreamChallengeBattle_Name_T05N02M03",
+        "OpenFAC": 1,
+        "Pic": "mjt_img_dlde_gk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [
+            4,
+            6
+        ],
+        "Showreward": "DreamChallengeBattle_T05N02M03_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 56,
+            "Pass": "DreamChallengeBattle_T05N02M02"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T05N02M03_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T05N02M04": {
+        "BGM": [
+            "Mus_Story_Knight_Fall",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_Team_Info_T05N03M06",
+        "BattleFactor": [
+            17600,
+            17600,
+            17600
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 143312,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "",
+        "EnemyCard": "CardT05N02M04",
+        "EnemyMaster": "T05N02M04W01_Master_01",
+        "NPC": [
+            {
+                "forbidid": "SDTZi",
+                "id": "T05N02M04_Protect",
+                "pos": 5
+            }
+        ],
+        "Name": "DreamChallengeBattle_Name_T05N02M04",
+        "OpenFAC": 1,
+        "Pic": "mjt_img_dlde_gk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "DreamChallengeBattle_T05N02M04_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 56,
+            "Pass": "DreamChallengeBattle_T05N02M03"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T05N02M04_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T05N02M05": {
+        "BGM": [
+            "Mus_Story_Knight_Fall",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_Team_Info_T05N03M07",
+        "BattleFactor": [
+            17600,
+            17600,
+            17600
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N3",
+        "BossRound": 1,
+        "CombatNeed": 149648,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "",
+        "EnemyCard": "CardT05N02M05",
+        "EnemyMaster": "T05N02M05W01_Master_01",
+        "NPC": [
+            {
+                "forbidid": "YLSBai",
+                "id": "T05N02M05_Protect",
+                "pos": 2
+            }
+        ],
+        "Name": "DreamChallengeBattle_Name_T05N02M05",
+        "OpenFAC": 1,
+        "Pic": "mjt_img_dlde_gk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "DreamChallengeBattle_T05N02M05_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 56,
+            "Pass": "DreamChallengeBattle_T05N02M04"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideA"
+            },
+            {
+                "factor": {
+                    "count": 1,
+                    "unitTag": "T05N02M05PROTECT"
+                },
+                "type": "KeyUnitsDied",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T05N02M05_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T05N02M06": {
+        "BGM": [
+            "Mus_Story_Knight_Fall",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_Team_Info_T05N03M08",
+        "BattleFactor": [
+            17600,
+            17600,
+            17600
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 166928,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "",
+        "EnemyCard": "CardT05N02M06",
+        "EnemyMaster": "T05N02M06W01_Master_01",
+        "NPC": "",
+        "Name": "DreamChallengeBattle_Name_T05N02M06",
+        "OpenFAC": 1,
+        "Pic": "mjt_img_dlde_gk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "DreamChallengeBattle_T05N02M06_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 56,
+            "Pass": "DreamChallengeBattle_T05N02M05"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T05N02M06_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T05N02M07": {
+        "BGM": [
+            "Mus_Story_Knight_Fall",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_Team_Info_T05N03M09",
+        "BattleFactor": [
+            17600,
+            17600,
+            17600
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 8,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 173264,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "",
+        "EnemyCard": "CardT05N02M07",
+        "EnemyMaster": "T05N02M07W01_Master_01",
+        "NPC": "",
+        "Name": "DreamChallengeBattle_Name_T05N02M07",
+        "OpenFAC": 1,
+        "Pic": "mjt_img_dlde_gk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "DreamChallengeBattle_T05N02M07_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 56,
+            "Pass": "DreamChallengeBattle_T05N02M06"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T05N02M07_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T05N02M08": {
+        "BGM": [
+            "Mus_Story_Knight_Fall",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_Team_Info_T05N03M10",
+        "BattleFactor": [
+            17600,
+            17600,
+            17600
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 179600,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "",
+        "EnemyCard": "CardT05N02M08",
+        "EnemyMaster": "T05N02M08W01_Master_01",
+        "NPC": [
+            {
+                "forbidid": "MGNa",
+                "id": "T05N02M08_Protect",
+                "pos": 9
+            }
+        ],
+        "Name": "DreamChallengeBattle_Name_T05N02M08",
+        "OpenFAC": 1,
+        "Pic": "mjt_img_dlde_gk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "DreamChallengeBattle_T05N02M08_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 56,
+            "Pass": "DreamChallengeBattle_T05N02M07"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T05N02M08_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T05N02M09": {
+        "BGM": [
+            "Mus_Story_Knight_Fall",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_Team_Info_T05N03M12",
+        "BattleFactor": [
+            17600,
+            17600,
+            17600
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 8,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 194000,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "",
+        "EnemyCard": "CardT05N02M09",
+        "EnemyMaster": "T05N02M09W01_Master_01",
+        "NPC": [
+            {
+                "forbidid": "XLai",
+                "id": "T05N02M09_Protect",
+                "pos": 6
+            }
+        ],
+        "Name": "DreamChallengeBattle_Name_T05N02M09",
+        "OpenFAC": 1,
+        "Pic": "mjt_img_dlde_gk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [
+            5
+        ],
+        "Showreward": "DreamChallengeBattle_T05N02M09_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 56,
+            "Pass": "DreamChallengeBattle_T05N02M08"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T05N02M09_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T05N03M01": {
+        "BGM": [
+            "Mus_Story_Knight_Fall",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_Team_Info_T05N03M01",
+        "BattleFactor": [
+            26200,
+            26200,
+            26200
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 174000,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "",
+        "EnemyCard": "CardT05N03M01",
+        "EnemyMaster": "T05N03M01W01_Master_01",
+        "NPC": [
+            {
+                "forbidid": "YLSBai",
+                "id": "T05N03M01_Protect",
+                "pos": 3
+            }
+        ],
+        "Name": "DreamChallengeBattle_Name_T05N03M01",
+        "OpenFAC": 1,
+        "Pic": "mjt_img_dlde_gk12",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [
+            2,
+            6
+        ],
+        "Showreward": "DreamChallengeBattle_T05N03M01_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 56,
+            "Pass": "DreamChallengeBattle_T05N02M06"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T05N03M01_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T05N03M02": {
+        "BGM": [
+            "Mus_Story_Knight_Fall",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_Team_Info_T05N03M02",
+        "BattleFactor": [
+            26200,
+            26200,
+            26200
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 8,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 175086,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "",
+        "EnemyCard": "CardT05N03M02",
+        "EnemyMaster": "T05N03M02W01_Master_01",
+        "NPC": "",
+        "Name": "DreamChallengeBattle_Name_T05N03M02",
+        "OpenFAC": 1,
+        "Pic": "mjt_img_dlde_gk12",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [
+            2,
+            5
+        ],
+        "Showreward": "DreamChallengeBattle_T05N03M02_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 56,
+            "Pass": "DreamChallengeBattle_T05N03M01"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T05N03M02_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T05N03M03": {
+        "BGM": [
+            "Mus_Story_Knight_Fall",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_Team_Info_T05N03M03",
+        "BattleFactor": [
+            26200,
+            26200,
+            26200
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 205486,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "",
+        "EnemyCard": "CardT05N03M03",
+        "EnemyMaster": "T05N03M03W01_Master_01",
+        "NPC": [
+            {
+                "forbidid": "YLMGZhu",
+                "id": "T05N03M03_Protect",
+                "pos": 7
+            }
+        ],
+        "Name": "DreamChallengeBattle_Name_T05N03M03",
+        "OpenFAC": 1,
+        "Pic": "mjt_img_dlde_gk12",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "DreamChallengeBattle_T05N03M03_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 56,
+            "Pass": "DreamChallengeBattle_T05N03M02"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T05N03M03_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T05N03M04": {
+        "BGM": [
+            "Mus_Story_Knight_Fall",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_Team_Info_T05N03M04",
+        "BattleFactor": [
+            26200,
+            26200,
+            26200
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 206572,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "",
+        "EnemyCard": "CardT05N03M04",
+        "EnemyMaster": "T05N03M04W01_Master_01",
+        "NPC": [
+            {
+                "forbidid": "CZheng",
+                "id": "T05N03M04_Protect",
+                "pos": 9
+            }
+        ],
+        "Name": "DreamChallengeBattle_Name_T05N03M04",
+        "OpenFAC": 1,
+        "Pic": "mjt_img_dlde_gk12",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [
+            1,
+            4,
+            5
+        ],
+        "Showreward": "DreamChallengeBattle_T05N03M04_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 56,
+            "Pass": "DreamChallengeBattle_T05N03M03"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            },
+            {
+                "factor": {
+                    "count": 1,
+                    "unitTag": "T05N03M04PROTECT"
+                },
+                "type": "KeyUnitsDied",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T05N03M04_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T05N03M05": {
+        "BGM": [
+            "Mus_Story_Knight_Fall",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_Team_Info_T05N03M05",
+        "BattleFactor": [
+            26200,
+            26200,
+            26200
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 207658,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "",
+        "EnemyCard": "CardT05N03M05",
+        "EnemyMaster": "T05N03M05W01_Master_01",
+        "NPC": [
+            {
+                "forbidid": "YXNMei",
+                "id": "T05N03M05_Protect",
+                "pos": 9
+            }
+        ],
+        "Name": "DreamChallengeBattle_Name_T05N03M05",
+        "OpenFAC": 1,
+        "Pic": "mjt_img_dlde_gk12",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [
+            4,
+            6
+        ],
+        "Showreward": "DreamChallengeBattle_T05N03M05_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 56,
+            "Pass": "DreamChallengeBattle_T05N03M04"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T05N03M05_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T05N03M06": {
+        "BGM": [
+            "Mus_Story_Knight_Fall",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_Team_Info_T05N03M06",
+        "BattleFactor": [
+            26200,
+            26200,
+            26200
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 238058,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "",
+        "EnemyCard": "CardT05N03M06",
+        "EnemyMaster": "T05N03M06W01_Master_01",
+        "NPC": [
+            {
+                "forbidid": "SDTZi",
+                "id": "T05N03M06_Protect",
+                "pos": 5
+            }
+        ],
+        "Name": "DreamChallengeBattle_Name_T05N03M06",
+        "OpenFAC": 1,
+        "Pic": "mjt_img_dlde_gk12",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "DreamChallengeBattle_T05N03M06_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 56,
+            "Pass": "DreamChallengeBattle_T05N03M05"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T05N03M06_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T05N03M07": {
+        "BGM": [
+            "Mus_Story_Knight_Fall",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_Team_Info_T05N03M07",
+        "BattleFactor": [
+            26200,
+            26200,
+            26200
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N3",
+        "BossRound": 1,
+        "CombatNeed": 239144,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "",
+        "EnemyCard": "CardT05N03M07",
+        "EnemyMaster": "T05N03M07W01_Master_01",
+        "NPC": [
+            {
+                "forbidid": "YLSBai",
+                "id": "T05N03M07_Protect",
+                "pos": 2
+            }
+        ],
+        "Name": "DreamChallengeBattle_Name_T05N03M07",
+        "OpenFAC": 1,
+        "Pic": "mjt_img_dlde_gk12",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "DreamChallengeBattle_T05N03M07_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 56,
+            "Pass": "DreamChallengeBattle_T05N03M06"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideA"
+            },
+            {
+                "factor": {
+                    "count": 1,
+                    "unitTag": "T05N03M07PROTECT"
+                },
+                "type": "KeyUnitsDied",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T05N03M07_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T05N03M08": {
+        "BGM": [
+            "Mus_Story_Knight_Fall",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_Team_Info_T05N03M08",
+        "BattleFactor": [
+            26200,
+            26200,
+            26200
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 240230,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "",
+        "EnemyCard": "CardT05N03M08",
+        "EnemyMaster": "T05N03M08W01_Master_01",
+        "NPC": "",
+        "Name": "DreamChallengeBattle_Name_T05N03M08",
+        "OpenFAC": 1,
+        "Pic": "mjt_img_dlde_gk12",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "DreamChallengeBattle_T05N03M08_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 56,
+            "Pass": "DreamChallengeBattle_T05N03M07"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T05N03M08_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T05N03M09": {
+        "BGM": [
+            "Mus_Story_Knight_Fall",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_Team_Info_T05N03M09",
+        "BattleFactor": [
+            26200,
+            26200,
+            26200
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 8,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 278230,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "",
+        "EnemyCard": "CardT05N03M09",
+        "EnemyMaster": "T05N03M09W01_Master_01",
+        "NPC": "",
+        "Name": "DreamChallengeBattle_Name_T05N03M09",
+        "OpenFAC": 1,
+        "Pic": "mjt_img_dlde_gk12",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "DreamChallengeBattle_T05N03M09_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 56,
+            "Pass": "DreamChallengeBattle_T05N03M08"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T05N03M09_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T05N03M10": {
+        "BGM": [
+            "Mus_Story_Knight_Fall",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_Team_Info_T05N03M10",
+        "BattleFactor": [
+            26200,
+            26200,
+            26200
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 279316,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "",
+        "EnemyCard": "CardT05N03M10",
+        "EnemyMaster": "T05N03M10W01_Master_01",
+        "NPC": [
+            {
+                "forbidid": "MGNa",
+                "id": "T05N03M10_Protect",
+                "pos": 9
+            }
+        ],
+        "Name": "DreamChallengeBattle_Name_T05N03M10",
+        "OpenFAC": 1,
+        "Pic": "mjt_img_dlde_gk12",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "DreamChallengeBattle_T05N03M10_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 56,
+            "Pass": "DreamChallengeBattle_T05N03M09"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T05N03M10_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T05N03M11": {
+        "BGM": [
+            "Mus_Story_Knight_Fall",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_Team_Info_T05N03M11",
+        "BattleFactor": [
+            26200,
+            26200,
+            26200
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 280402,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "",
+        "EnemyCard": "CardT05N03M11",
+        "EnemyMaster": "T05N03M11W01_Master_01",
+        "NPC": [
+            {
+                "forbidid": "TPGZhu",
+                "id": "T05N03M11_Protect",
+                "pos": 9
+            }
+        ],
+        "Name": "DreamChallengeBattle_Name_T05N03M11",
+        "OpenFAC": 1,
+        "Pic": "mjt_img_dlde_gk12",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [
+            6
+        ],
+        "Showreward": "DreamChallengeBattle_T05N03M11_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 56,
+            "Pass": "DreamChallengeBattle_T05N03M10"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T05N03M11_reward"
+            }
+        ]
+    },
+    "DreamChallengeBattle_T05N03M12": {
+        "BGM": [
+            "Mus_Story_Knight_Fall",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_Team_Info_T05N03M12",
+        "BattleFactor": [
+            26200,
+            26200,
+            26200
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 8,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 326002,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "",
+        "EnemyCard": "CardT05N03M12",
+        "EnemyMaster": "T05N03M12W01_Master_01",
+        "NPC": [
+            {
+                "forbidid": "XLai",
+                "id": "T05N03M12_Protect",
+                "pos": 6
+            }
+        ],
+        "Name": "DreamChallengeBattle_Name_T05N03M12",
+        "OpenFAC": 1,
+        "Pic": "mjt_img_dlde_gk12",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [
+            5
+        ],
+        "Showreward": "DreamChallengeBattle_T05N03M12_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 56,
+            "Pass": "DreamChallengeBattle_T05N03M11"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "DreamChallengeBattle_T05N03M12_reward"
+            }
+        ]
+    },
     "Music_T01N01M01": {
         "BGM": [
             "Mus_Battle_MusicFestival",
@@ -7506,6 +8958,569 @@
             }
         ]
     },
+    "Pisces_T01N01M01": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Pisces_T01N01M01_TeamInfo",
+        "BattleFactor": [
+            26200,
+            26200,
+            26200
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardPisces_T01N01M01",
+        "EnemyMaster": "Pisces_T01N01M01W01_Master_01",
+        "NPC": "",
+        "Name": "Pisces_T01N01M01_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "Pisces_T01N01M01_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Pisces_T01N01M01_reward"
+            }
+        ]
+    },
+    "Pisces_T01N01M02": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Pisces_T01N01M02_TeamInfo",
+        "BattleFactor": [
+            26200,
+            26200,
+            26200
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardPisces_T01N01M02",
+        "EnemyMaster": "Pisces_T01N01M02W01_Master_01",
+        "NPC": "",
+        "Name": "Pisces_T01N01M02_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "Pisces_T01N01M02_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5,
+            "Pass": "Pisces_T01N01M01"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Pisces_T01N01M02_reward"
+            }
+        ]
+    },
+    "Pisces_T01N01M03": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Pisces_T01N01M03_TeamInfo",
+        "BattleFactor": [
+            26200,
+            26200,
+            26200
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardPisces_T01N01M03",
+        "EnemyMaster": "Pisces_T01N01M03W01_Master_01",
+        "NPC": "",
+        "Name": "Pisces_T01N01M03_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "Pisces_T01N01M03_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5,
+            "Pass": "Pisces_T01N01M02"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Pisces_T01N01M03_reward"
+            }
+        ]
+    },
+    "Pisces_T01N01M04": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Pisces_T01N01M04_TeamInfo",
+        "BattleFactor": [
+            26200,
+            26200,
+            26200
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardPisces_T01N01M04",
+        "EnemyMaster": "Pisces_T01N01M04W01_Master_01",
+        "NPC": "",
+        "Name": "Pisces_T01N01M04_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "Pisces_T01N01M04_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5,
+            "Pass": "Pisces_T01N01M03"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Pisces_T01N01M04_reward"
+            }
+        ]
+    },
+    "Pisces_T01N01M05": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Pisces_T01N01M05_TeamInfo",
+        "BattleFactor": [
+            26200,
+            26200,
+            26200
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardPisces_T01N01M05",
+        "EnemyMaster": "Pisces_T01N01M05W01_Master_01",
+        "NPC": "",
+        "Name": "Pisces_T01N01M05_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "Pisces_T01N01M05_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5,
+            "Pass": "Pisces_T01N01M04"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Pisces_T01N01M05_reward"
+            }
+        ]
+    },
+    "Pisces_T01N01M06": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Pisces_T01N01M06_TeamInfo",
+        "BattleFactor": [
+            26200,
+            26200,
+            26200
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardPisces_T01N01M06",
+        "EnemyMaster": "Pisces_T01N01M06W01_Master_01",
+        "NPC": "",
+        "Name": "Pisces_T01N01M06_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "Pisces_T01N01M06_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5,
+            "Pass": "Pisces_T01N01M05"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Pisces_T01N01M06_reward"
+            }
+        ]
+    },
+    "Pisces_T01N01M07": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Pisces_T01N01M07_TeamInfo",
+        "BattleFactor": [
+            26200,
+            26200,
+            26200
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardPisces_T01N01M07",
+        "EnemyMaster": "Pisces_T01N01M07W01_Master_01",
+        "NPC": "",
+        "Name": "Pisces_T01N01M07_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "Pisces_T01N01M07_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5,
+            "Pass": "Pisces_T01N01M06"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Pisces_T01N01M07_reward"
+            }
+        ]
+    },
+    "Pisces_T01N01M08": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Pisces_T01N01M08_TeamInfo",
+        "BattleFactor": [
+            26200,
+            26200,
+            26200
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardPisces_T01N01M08",
+        "EnemyMaster": "Pisces_T01N01M08W01_Master_01",
+        "NPC": "",
+        "Name": "Pisces_T01N01M08_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "Pisces_T01N01M08_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5,
+            "Pass": "Pisces_T01N01M07"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Pisces_T01N01M08_reward"
+            }
+        ]
+    },
+    "Pisces_T01N01M09": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Pisces_T01N01M09_TeamInfo",
+        "BattleFactor": [
+            26200,
+            26200,
+            26200
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardPisces_T01N01M09",
+        "EnemyMaster": "Pisces_T01N01M09W01_Master_01",
+        "NPC": "",
+        "Name": "Pisces_T01N01M09_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "Pisces_T01N01M09_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5,
+            "Pass": "Pisces_T01N01M08"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Pisces_T01N01M09_reward"
+            }
+        ]
+    },
+    "Pisces_T01N01M10": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Pisces_T01N01M10_TeamInfo",
+        "BattleFactor": [
+            26200,
+            26200,
+            26200
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardPisces_T01N01M10",
+        "EnemyMaster": "Pisces_T01N01M10W01_Master_01",
+        "NPC": "",
+        "Name": "Pisces_T01N01M10_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "Pisces_T01N01M10_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5,
+            "Pass": "Pisces_T01N01M09"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Pisces_T01N01M10_reward"
+            }
+        ]
+    },
+    "Pisces_T01N01M11": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Pisces_T01N01M11_TeamInfo",
+        "BattleFactor": [
+            26200,
+            26200,
+            26200
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardPisces_T01N01M11",
+        "EnemyMaster": "Pisces_T01N01M11W01_Master_01",
+        "NPC": "",
+        "Name": "Pisces_T01N01M11_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "Pisces_T01N01M11_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5,
+            "Pass": "Pisces_T01N01M10"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Pisces_T01N01M11_reward"
+            }
+        ]
+    },
+    "Pisces_T01N01M12": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Pisces_T01N01M12_TeamInfo",
+        "BattleFactor": [
+            26200,
+            26200,
+            26200
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardPisces_T01N01M12",
+        "EnemyMaster": "Pisces_T01N01M12W01_Master_01",
+        "NPC": "",
+        "Name": "Pisces_T01N01M12_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "Pisces_T01N01M12_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5,
+            "Pass": "Pisces_T01N01M11"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Pisces_T01N01M12_reward"
+            }
+        ]
+    },
     "SD_N01M01": {
         "BGM": [
             "Mus_Story_NewYear",
@@ -8082,6 +10097,632 @@
             {
                 "Type": "Item",
                 "value": "DreamChallenge_TimeLimit_SD_N01M12_reward"
+            }
+        ]
+    },
+    "Valentine_T01N01M01": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Valentine_T01N01M01_TeamInfo",
+        "BattleFactor": [
+            26200,
+            26200,
+            26200
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardValentine_T01N01M01",
+        "EnemyMaster": "Valentine_T01N01M01W01_Master_01",
+        "NPC": [
+            {
+                "forbidid": "YKDMLai",
+                "id": "Valentine_T01N01M01_Protect",
+                "pos": 9
+            }
+        ],
+        "Name": "Valentine_T01N01M01_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [
+            4,
+            6
+        ],
+        "Showreward": "Valentine_T01N01M01_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            },
+            {
+                "factor": {
+                    "count": 1,
+                    "unitTag": "Valentine_T01N01M01PROTECT"
+                },
+                "type": "KeyUnitsDied",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Valentine_T01N01M01_reward"
+            }
+        ]
+    },
+    "Valentine_T01N01M02": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Valentine_T01N01M02_TeamInfo",
+        "BattleFactor": [
+            26200,
+            26200,
+            26200
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 8,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardValentine_T01N01M02",
+        "EnemyMaster": "Valentine_T01N01M02W01_Master_01",
+        "NPC": "",
+        "Name": "Valentine_T01N01M02_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [
+            1,
+            3
+        ],
+        "Showreward": "Valentine_T01N01M02_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5,
+            "Pass": "Valentine_T01N01M01"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Valentine_T01N01M02_reward"
+            }
+        ]
+    },
+    "Valentine_T01N01M03": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Valentine_T01N01M03_TeamInfo",
+        "BattleFactor": [
+            26200,
+            26200,
+            26200
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardValentine_T01N01M03",
+        "EnemyMaster": "Valentine_T01N01M03W01_Master_01",
+        "NPC": "",
+        "Name": "Valentine_T01N01M03_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "Valentine_T01N01M03_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5,
+            "Pass": "Valentine_T01N01M02"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Valentine_T01N01M03_reward"
+            }
+        ]
+    },
+    "Valentine_T01N01M04": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Valentine_T01N01M04_TeamInfo",
+        "BattleFactor": [
+            26200,
+            26200,
+            26200
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardValentine_T01N01M04",
+        "EnemyMaster": "Valentine_T01N01M04W01_Master_01",
+        "NPC": "",
+        "Name": "Valentine_T01N01M04_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [
+            2,
+            7,
+            9
+        ],
+        "Showreward": "Valentine_T01N01M04_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5,
+            "Pass": "Valentine_T01N01M03"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            },
+            {
+                "factor": {
+                    "count": 1,
+                    "unitTag": "Valentine_T01N01M04PROTECT"
+                },
+                "type": "KeyUnitsDied",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Valentine_T01N01M04_reward"
+            }
+        ]
+    },
+    "Valentine_T01N01M05": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Valentine_T01N01M05_TeamInfo",
+        "BattleFactor": [
+            26200,
+            26200,
+            26200
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardValentine_T01N01M05",
+        "EnemyMaster": "Valentine_T01N01M05W01_Master_01",
+        "NPC": [
+            {
+                "forbidid": "YXNMei",
+                "id": "Valentine_T01N01M05_Protect",
+                "pos": 9
+            }
+        ],
+        "Name": "Valentine_T01N01M05_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [
+            4,
+            6
+        ],
+        "Showreward": "Valentine_T01N01M05_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5,
+            "Pass": "Valentine_T01N01M04"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Valentine_T01N01M05_reward"
+            }
+        ]
+    },
+    "Valentine_T01N01M06": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Valentine_T01N01M06_TeamInfo",
+        "BattleFactor": [
+            26200,
+            26200,
+            26200
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardValentine_T01N01M06",
+        "EnemyMaster": "Valentine_T01N01M06W01_Master_01",
+        "NPC": "",
+        "Name": "Valentine_T01N01M06_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "Valentine_T01N01M06_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5,
+            "Pass": "Valentine_T01N01M05"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Valentine_T01N01M06_reward"
+            }
+        ]
+    },
+    "Valentine_T01N01M07": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Valentine_T01N01M07_TeamInfo",
+        "BattleFactor": [
+            26200,
+            26200,
+            26200
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardValentine_T01N01M07",
+        "EnemyMaster": "Valentine_T01N01M07W01_Master_01",
+        "NPC": [
+            {
+                "forbidid": "YLSBai",
+                "id": "Valentine_T01N01M07_Protect",
+                "pos": 9
+            }
+        ],
+        "Name": "Valentine_T01N01M07_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [
+            1,
+            3
+        ],
+        "Showreward": "Valentine_T01N01M07_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5,
+            "Pass": "Valentine_T01N01M06"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideA"
+            },
+            {
+                "factor": {
+                    "count": 1,
+                    "unitTag": "Valentine_T01N01M07PROTECT"
+                },
+                "type": "KeyUnitsDied",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Valentine_T01N01M07_reward"
+            }
+        ]
+    },
+    "Valentine_T01N01M08": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Valentine_T01N01M08_TeamInfo",
+        "BattleFactor": [
+            26200,
+            26200,
+            26200
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardValentine_T01N01M08",
+        "EnemyMaster": "Valentine_T01N01M08W01_Master_01",
+        "NPC": "",
+        "Name": "Valentine_T01N01M08_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "Valentine_T01N01M08_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5,
+            "Pass": "Valentine_T01N01M07"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Valentine_T01N01M08_reward"
+            }
+        ]
+    },
+    "Valentine_T01N01M09": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Valentine_T01N01M09_TeamInfo",
+        "BattleFactor": [
+            26200,
+            26200,
+            26200
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 8,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardValentine_T01N01M09",
+        "EnemyMaster": "Valentine_T01N01M09W01_Master_01",
+        "NPC": "",
+        "Name": "Valentine_T01N01M09_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "Valentine_T01N01M09_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5,
+            "Pass": "Valentine_T01N01M08"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Valentine_T01N01M09_reward"
+            }
+        ]
+    },
+    "Valentine_T01N01M10": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Valentine_T01N01M10_TeamInfo",
+        "BattleFactor": [
+            26200,
+            26200,
+            26200
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardValentine_T01N01M10",
+        "EnemyMaster": "Valentine_T01N01M10W01_Master_01",
+        "NPC": "",
+        "Name": "Valentine_T01N01M10_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "Valentine_T01N01M10_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5,
+            "Pass": "Valentine_T01N01M09"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Valentine_T01N01M10_reward"
+            }
+        ]
+    },
+    "Valentine_T01N01M11": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Valentine_T01N01M11_TeamInfo",
+        "BattleFactor": [
+            26200,
+            26200,
+            26200
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardValentine_T01N01M11",
+        "EnemyMaster": "Valentine_T01N01M11W01_Master_01",
+        "NPC": "",
+        "Name": "Valentine_T01N01M11_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [
+            2
+        ],
+        "Showreward": "Valentine_T01N01M11_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5,
+            "Pass": "Valentine_T01N01M10"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Valentine_T01N01M11_reward"
+            }
+        ]
+    },
+    "Valentine_T01N01M12": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Valentine_T01N01M12_TeamInfo",
+        "BattleFactor": [
+            26200,
+            26200,
+            26200
+        ],
+        "BattleMumLimit": "",
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardValentine_T01N01M12",
+        "EnemyMaster": "Valentine_T01N01M12W01_Master_01",
+        "NPC": "",
+        "Name": "Valentine_T01N01M12_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [
+            2,
+            5
+        ],
+        "Showreward": "Valentine_T01N01M12_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5,
+            "Pass": "Valentine_T01N01M11"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Valentine_T01N01M12_reward"
             }
         ]
     }

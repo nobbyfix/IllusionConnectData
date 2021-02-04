@@ -656,7 +656,8 @@
             "M14",
             "M15",
             "M16",
-            "M17"
+            "M17",
+            "M18"
         ]
     },
     "Block_StarConditionDesc": {
@@ -2321,7 +2322,8 @@
             "E14",
             "E15",
             "E16",
-            "E17"
+            "E17",
+            "E18"
         ]
     },
     "EliteStage_RestCost": {
@@ -4140,6 +4142,20 @@
     "Hero_SpecialBase_UnRand": {
         "clz": "double",
         "content": 3
+    },
+    "Hero_StarFragment": {
+        "clz": "dict",
+        "content": {
+            "12": {
+                "IM_FAll14": 1
+            },
+            "13": {
+                "IM_FAll14": 1
+            },
+            "14": {
+                "IM_FAll14": 1
+            }
+        }
     },
     "Hero_Star_Coefficient": {
         "clz": "dict",
@@ -7670,7 +7686,8 @@
             "FEMSi",
             "BLTu",
             "BDFen",
-            "PGNNi"
+            "PGNNi",
+            "QBTe"
         ]
     },
     "Tower_1_GrowMaxValue": {

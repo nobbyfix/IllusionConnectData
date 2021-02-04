@@ -2945,7 +2945,8 @@ function ClubSystem:tryEnterSomebodyHouse(Rid)
 				combat = memberData:getCombat(),
 				headId = memberData:getHeadId(),
 				headFrame = memberData:getHeadFrame(),
-				rid = Rid
+				rid = Rid,
+				heroSufaces = response.data.heroSufaces or {}
 			})
 		end)
 	end

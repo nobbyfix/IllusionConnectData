@@ -304,6 +304,9 @@ function DreamChallengeMainMediator:createTreeView()
 		self:viewShow(self._mapId, self._pointId)
 	end
 
+	local touchY = self._treeNodes[self._mapId].node:getPositionY()
+
+	self._tree:jumpToByPos(math.abs(touchY) - 91)
 	self:onMapRedpointSet()
 
 	local musicId = self._dreamSystem:getMapBGM(self._mapId)

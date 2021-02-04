@@ -31,6 +31,8 @@ function BagSelectMaterialMediator:onRegister()
 			func = bind1(self.onOkClicked, self)
 		}
 	})
+
+	self:mapEventListener(self:getEventDispatcher(), EVT_EQUIP_LOCK_SUCC, self, self.refreshViewByLock)
 end
 
 function BagSelectMaterialMediator:enterWithData(data)
@@ -46,23 +48,31 @@ function BagSelectMaterialMediator:initData(data)
 	self._equipType = EquipsShowType.kCompose
 	self._callBack = data.callBack
 	self._index = data.index
-	self._equipList = {}
 	self._heroData = nil
 
 	if data then
 		self._viewType = EquipsShowType.kCompose
-		local allEquipList = self._equipSystem:getEquipList(self._viewType, self._curMaterial)
 
-		for i = 1, #allEquipList do
-			local oneEquip = allEquipList[i]
-			local equipId = oneEquip:getEquipId()
-			local uuId = oneEquip:getId()
+		self:refreshData(true)
+	end
+end
 
-			if self:checkUsed(equipId, uuId) == false then
-				self._equipList[#self._equipList + 1] = oneEquip
-			end
+function BagSelectMaterialMediator:refreshData(isEnter)
+	self._equipList = {}
+	local allEquipList = self._equipSystem:getEquipList(self._viewType, self._curMaterial)
+
+	for i = 1, #allEquipList do
+		local oneEquip = allEquipList[i]
+		local equipId = oneEquip:getEquipId()
+		local uuId = oneEquip:getId()
+
+		if self:checkUsed(equipId, uuId) == false then
+			self._equipList[#self._equipList + 1] = oneEquip
 		end
+	end
 
+	if isEnter then
+		print("refreshData")
 		table.sort(self._equipList, function (a, b)
 			local a_lock = a:getUnlock() and 1 or 0
 			local b_lock = b:getUnlock() and 1 or 0
@@ -95,16 +105,16 @@ function BagSelectMaterialMediator:initData(data)
 
 			return a_lock + a_used > b_lock + b_used
 		end)
+	end
 
-		if self._equipList[1] and self._equipList[1].item then
-			self._selectEquipId = self._equipList[1].item:getEquipId()
-			self._selectEquipUUId = self._equipList[1].item:getId()
-			self._selectEquipEquipData = self._equipList[1].item
-		else
-			self._selectEquipId = self._equipList[1] and self._equipList[1]:getEquipId() or ""
-			self._selectEquipUUId = self._equipList[1] and self._equipList[1]:getId() or ""
-			self._selectEquipEquipData = self._equipList[1] and self._equipList[1] or ""
-		end
+	if self._equipList[1] and self._equipList[1].item then
+		self._selectEquipId = self._equipList[1].item:getEquipId()
+		self._selectEquipUUId = self._equipList[1].item:getId()
+		self._selectEquipEquipData = self._equipList[1].item
+	else
+		self._selectEquipId = self._equipList[1] and self._equipList[1]:getEquipId() or ""
+		self._selectEquipUUId = self._equipList[1] and self._equipList[1]:getId() or ""
+		self._selectEquipEquipData = self._equipList[1] and self._equipList[1] or ""
 	end
 end
 
@@ -145,6 +155,9 @@ function BagSelectMaterialMediator:initNodes()
 	self.emptyTip2:setVisible(false)
 
 	self._selectImage = self:createSelectImage()
+	self._itemCellLock = self:getView():getChildByFullName("cell_lock")
+
+	self._itemCellLock:setVisible(false)
 end
 
 function BagSelectMaterialMediator:setEquipView()
@@ -325,20 +338,37 @@ function BagSelectMaterialMediator:createCell(cell, index)
 
 					local state = equipData:getUnlock()
 
-					unLock:setVisible(not state)
-				end
-
-				if not ownUnlock and heroId == "" then
-					tipPanel:setVisible(true)
+					unLock:setVisible(false)
+				else
+					tipPanel:setVisible(false)
 					tipPanel:getChildByFullName("Image_4_0"):setVisible(false)
 					tipPanel:getChildByFullName("heroIcon"):setVisible(false)
 					tipPanel:getChildByFullName("Image_4"):setVisible(false)
 					tipPanel:getChildByFullName("Image_36"):setVisible(false)
 					tipPanel:getChildByFullName("text"):setVisible(false)
 
-					local unLock = tipPanel:getChildByFullName("Image_4_0")
+					local node_lock = self._itemCellLock:clone()
 
-					unLock:setVisible(true)
+					node_lock:setVisible(true)
+					node_lock:addTo(node):center(node:getContentSize())
+
+					local Panel_unlock = node_lock:getChildByFullName("Panel_unlock")
+					local Panel_lock = node_lock:getChildByFullName("Panel_lock")
+
+					Panel_unlock:addTouchEventListener(function (sender, eventType)
+						self:onUnlockOrLockEquip(sender, eventType, equipData)
+					end)
+					Panel_lock:addTouchEventListener(function (sender, eventType)
+						self:onUnlockOrLockEquip(sender, eventType, equipData)
+					end)
+
+					if ownUnlock then
+						Panel_unlock:setVisible(true)
+						Panel_lock:setVisible(false)
+					else
+						Panel_unlock:setVisible(false)
+						Panel_lock:setVisible(true)
+					end
 				end
 
 				if self._selectEquipUUId == equipData:getId() then
@@ -350,8 +380,15 @@ function BagSelectMaterialMediator:createCell(cell, index)
 				if self._heroData then
 					local type = self._heroData:getType()
 					local typeRange = equipData:getOccupation()
+					local occupationType = equipData:getOccupationType()
+					local heroId = self._heroData:getId()
 
-					if not table.indexof(typeRange, type) then
+					if occupationType == nil or occupationType == 0 then
+						if not table.indexof(typeRange, type) then
+							tipPanel:setColor(cc.c3b(131, 131, 131))
+							iconPanel:setColor(cc.c3b(131, 131, 131))
+						end
+					elseif occupationType == 1 and not table.indexof(typeRange, heroId) then
 						tipPanel:setColor(cc.c3b(131, 131, 131))
 						iconPanel:setColor(cc.c3b(131, 131, 131))
 					end
@@ -476,4 +513,33 @@ function BagSelectMaterialMediator:checkUsed(equipId, uuid)
 	end
 
 	return used
+end
+
+function BagSelectMaterialMediator:onUnlockOrLockEquip(sender, eventType, equipData)
+	if eventType == ccui.TouchEventType.began then
+		self._isReturn = true
+	elseif eventType == ccui.TouchEventType.ended and self._isReturn then
+		local params = {
+			viewtype = 2,
+			equipId = equipData:getId()
+		}
+		self._doTip_Unlock = equipData:getUnlock()
+		self._ChangeEquipData = equipData
+
+		self._equipSystem:requestEquipLock(params)
+	end
+end
+
+function BagSelectMaterialMediator:refreshViewByLock()
+	local tip = self._doTip_Unlock and Strings:get("Equip_Lock_Tips_2") or Strings:get("Equip_Lock_Tips_1")
+
+	self:dispatch(ShowTipEvent({
+		tip = tip
+	}))
+	self._ChangeEquipData:setUnlock(not self._doTip_Unlock)
+
+	local offsetY = self._equipView:getContentOffset().y
+
+	self._equipView:reloadData()
+	self._equipView:setContentOffset(cc.p(0, offsetY))
 end

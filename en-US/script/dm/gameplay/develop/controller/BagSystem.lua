@@ -7,7 +7,7 @@ BagSystem:has("_developSystem", {
 	is = "r"
 }):injectWith("DevelopSystem")
 BagSystem:has("_composeTimes", {
-	is = "rw"
+	is = "r"
 })
 
 local crusadeEnergyReset = nil
@@ -25,6 +25,7 @@ function BagSystem:initialize()
 
 	self:initPowerReset()
 
+	self._composeTimes = {}
 	crusadeEnergyReset = self:initConfigSystem("Reset", "Crusade_Energy_Recovery")
 end
 
@@ -1567,4 +1568,10 @@ function BagSystem:isHasCompose()
 	end
 
 	return slot6
+end
+
+function BagSystem:setComposeTimes(composeTimes)
+	for key, value in pairs(composeTimes) do
+		self._composeTimes[key] = value
+	end
 end

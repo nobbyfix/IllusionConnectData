@@ -192,6 +192,12 @@ function BuildingSystem:_synchronize(data, playerInfo)
 		self._rid = playerInfo.rid
 	end
 
+	self._heroSufaces = {}
+
+	if playerInfo and playerInfo.heroSufaces then
+		self._heroSufaces = playerInfo.heroSufaces
+	end
+
 	if data.buildingCollect then
 		for k, v in pairs(data.buildingCollect) do
 			self._buildingCollect[v] = true
@@ -245,6 +251,10 @@ end
 
 function BuildingSystem:dispose()
 	super.dispose(self)
+end
+
+function BuildingSystem:getHeroSufaceMap()
+	return self._heroSufaces or {}
 end
 
 function BuildingSystem:checkEnabled()

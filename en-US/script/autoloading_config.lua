@@ -1096,6 +1096,11 @@ local mappings = {
 		name = "ExchangeActivityMediator",
 		type = "@C"
 	},
+	ActivityBakingMainMediator = {
+		url = "dm.gameplay.activity.view.ActivityBakingMainMediator",
+		name = "ActivityBakingMainMediator",
+		type = "@C"
+	},
 	ActivityEggRewardMediator = {
 		url = "dm.gameplay.activity.view.ActivityEggRewardMediator",
 		name = "ActivityEggRewardMediator",
@@ -1174,6 +1179,11 @@ local mappings = {
 	BaseActivityMediator = {
 		url = "dm.gameplay.activity.view.BaseActivityMediator",
 		name = "BaseActivityMediator",
+		type = "@C"
+	},
+	ActivityLogin14CommonMediator = {
+		url = "dm.gameplay.activity.view.ActivityLogin14CommonMediator",
+		name = "ActivityLogin14CommonMediator",
 		type = "@C"
 	},
 	QuestionActivityMediator = {
@@ -1419,6 +1429,11 @@ local mappings = {
 	ActivityTaskMonthCardMediator = {
 		url = "dm.gameplay.activity.view.ActivityTaskMonthCardMediator",
 		name = "ActivityTaskMonthCardMediator",
+		type = "@C"
+	},
+	TimeLimitShopActivityMediator = {
+		url = "dm.gameplay.activity.view.TimeLimitShopActivityMediator",
+		name = "TimeLimitShopActivityMediator",
 		type = "@C"
 	},
 	ActivityTaskCollectMediator = {

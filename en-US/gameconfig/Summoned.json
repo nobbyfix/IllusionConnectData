@@ -351,7 +351,9 @@
         },
         "RoleModel": "Model_PNCao_HuaHaiJi",
         "SkillRate": 0.5,
-        "SummonSurface": [],
+        "SummonSurface": [
+            "Model_PNCao_HuaHaiJi_vt"
+        ],
         "Type": "Summoned",
         "UniqueSkill": ""
     },
@@ -380,7 +382,9 @@
         },
         "RoleModel": "Model_PNCao_NuoNuo",
         "SkillRate": 0.0,
-        "SummonSurface": [],
+        "SummonSurface": [
+            "Model_PNCao_NuoNuo_vt"
+        ],
         "Type": "Summoned",
         "UniqueSkill": ""
     },

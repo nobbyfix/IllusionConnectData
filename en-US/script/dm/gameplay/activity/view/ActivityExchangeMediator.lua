@@ -380,7 +380,7 @@ function ActivityExchangeMediator:updataCell(cell, index)
 		end
 	end
 
-	actBtn:getChildByFullName("Text_str"):setString(Strings:get("VT_Exchange_Button_Exchange") .. "（" .. tostring(count) .. "/" .. tostring(times) .. "）")
+	actBtn:getChildByFullName("Text_str"):setString(Strings:get("VT_Exchange_Button_Exchange") .. "(" .. tostring(count) .. "/" .. tostring(times) .. ")")
 end
 
 function ActivityExchangeMediator:clickTipPanel(data, view, click)

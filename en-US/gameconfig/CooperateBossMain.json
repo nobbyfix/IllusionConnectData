@@ -194,6 +194,37 @@
         "Time": 1800,
         "Type": "Awaken"
     },
+    "CooperateBoss_LFEr": {
+        "AwakenAttrEffect": "ExcellentHero_Awaken",
+        "AwakenBoss": "",
+        "BossBattle": "CooperateBoss_LFEr",
+        "ExcellentHero": [
+            {
+                "Effect": "ExcellentHero_Attr_Big",
+                "Hero": [
+                    "NFEr",
+                    "YSLBin"
+                ]
+            },
+            {
+                "Effect": "ExcellentHero_Attr_Small",
+                "Hero": [
+                    "NXYYi",
+                    "BHTZi",
+                    "YLMGZhu"
+                ]
+            }
+        ],
+        "Revelry": "",
+        "RewardRevelry": "",
+        "RewardShow": "CooperateBossMain_LFEr_Show",
+        "RoleModel": "Model_LFEr",
+        "StarsAttrEffect": "ExcellentHero_Stars",
+        "Story": [],
+        "TiggerAwaken": "",
+        "Time": 1800,
+        "Type": "Normal"
+    },
     "CooperateBoss_SLMen": {
         "AwakenAttrEffect": "ExcellentHero_Awaken",
         "AwakenBoss": "",
@@ -219,6 +250,37 @@
         "RewardRevelry": "",
         "RewardShow": "CooperateBossMain_SLMen_Show",
         "RoleModel": "Model_SLMen",
+        "StarsAttrEffect": "ExcellentHero_Stars",
+        "Story": [],
+        "TiggerAwaken": "",
+        "Time": 1800,
+        "Type": "Normal"
+    },
+    "CooperateBoss_ZZBBWei": {
+        "AwakenAttrEffect": "ExcellentHero_Awaken",
+        "AwakenBoss": "",
+        "BossBattle": "CooperateBoss_ZZBBWei",
+        "ExcellentHero": [
+            {
+                "Effect": "ExcellentHero_Attr_Big",
+                "Hero": [
+                    "LYXi",
+                    "SLMen"
+                ]
+            },
+            {
+                "Effect": "ExcellentHero_Attr_Small",
+                "Hero": [
+                    "JNLong",
+                    "BQDShe",
+                    "AJTa"
+                ]
+            }
+        ],
+        "Revelry": "",
+        "RewardRevelry": "",
+        "RewardShow": "CooperateBossMain_ZZBBWei_Show",
+        "RoleModel": "Model_ZZBBWei",
         "StarsAttrEffect": "ExcellentHero_Stars",
         "Story": [],
         "TiggerAwaken": "",

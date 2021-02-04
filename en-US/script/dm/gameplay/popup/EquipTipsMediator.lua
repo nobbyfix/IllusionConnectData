@@ -89,6 +89,7 @@ function EquipTipsMediator:setUi(data)
 
 	local equipOccu = config.Profession
 	local occupationDesc = config.ProfessionDesc
+	local occupationType = config.ProfessionType
 	local limitDesc = self._main:getChildByFullName("text")
 	local limitNode = self._main:getChildByFullName("limit")
 
@@ -101,14 +102,33 @@ function EquipTipsMediator:setUi(data)
 	else
 		limitDesc:setString(Strings:get("Equip_UI24"))
 
-		for i = 1, #equipOccu do
-			local occupationName, occupationIcon = GameStyle:getHeroOccupation(equipOccu[i])
-			local image = ccui.ImageView:create(occupationIcon)
+		if occupationType == nil or occupationType == 0 then
+			if equipOccu then
+				for i = 1, #equipOccu do
+					local occupationName, occupationIcon = GameStyle:getHeroOccupation(equipOccu[i])
+					local image = ccui.ImageView:create(occupationIcon)
 
-			image:setAnchorPoint(cc.p(0, 0.5))
-			image:setPosition(cc.p(35 * (i - 1), 0))
-			image:addTo(limitNode)
-			image:setScale(0.5)
+					image:setAnchorPoint(cc.p(0, 0.5))
+					image:setPosition(cc.p(40 * (i - 1), 0))
+					image:setScale(0.5)
+					image:addTo(limitNode)
+				end
+			end
+		elseif occupationType == 1 and equipOccu then
+			for i = 1, #equipOccu do
+				local heroInfo = {
+					id = IconFactory:getRoleModelByKey("HeroBase", equipOccu[i])
+				}
+				local headImgName = IconFactory:createRoleIconSprite(heroInfo)
+
+				headImgName:setScale(0.2)
+
+				headImgName = IconFactory:addStencilForIcon(headImgName, 2, cc.size(31, 31))
+
+				headImgName:setAnchorPoint(cc.p(0, 0.5))
+				headImgName:setPosition(cc.p(40 * (i - 1), 0))
+				headImgName:addTo(limitNode)
+			end
 		end
 	end
 

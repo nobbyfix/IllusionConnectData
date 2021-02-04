@@ -1441,19 +1441,17 @@
         "TeamSkillCondition1": [
             [
                 {
-                    "param": [],
-                    "range": "group",
-                    "scope": [
+                    "param": [
                         [
-                            0,
-                            1
-                        ],
-                        [
-                            14,
-                            1
+                            "Star1Up"
                         ]
                     ],
-                    "type": "avgcost"
+                    "range": "group",
+                    "scope": [
+                        10,
+                        100
+                    ],
+                    "type": "tag"
                 }
             ]
         ],
@@ -1465,7 +1463,7 @@
                             "BBLMa"
                         ],
                         [
-                            "MKLJLuo"
+                            "KTSJKe"
                         ]
                     ],
                     "range": "group",
@@ -1483,14 +1481,11 @@
                     "param": [
                         [
                             "Attack"
-                        ],
-                        [
-                            "Aoe"
                         ]
                     ],
                     "range": "group",
                     "scope": [
-                        6,
+                        4,
                         100
                     ],
                     "type": "tag"
@@ -1500,20 +1495,19 @@
         "TeamSkillCondition4": [
             [
                 {
-                    "param": [
-                        [
-                            "Summon"
-                        ],
-                        [
-                            "Curse"
-                        ]
-                    ],
+                    "param": [],
                     "range": "group",
                     "scope": [
-                        6,
-                        100
+                        [
+                            0,
+                            1
+                        ],
+                        [
+                            14,
+                            1
+                        ]
                     ],
-                    "type": "tag"
+                    "type": "avgcost"
                 }
             ]
         ],
@@ -1522,7 +1516,7 @@
                 {
                     "param": [
                         [
-                            "Cost15Down"
+                            "Attack"
                         ]
                     ],
                     "range": "hold",

@@ -512,9 +512,9 @@ all.Sk_Master_LieSha_Action3 = {
 			}
 		end
 
-		this.AtkRateFactor = externs.AtkRateFactor
+		this.UnHurtRateFactor = externs.UnHurtRateFactor
 
-		assert(this.AtkRateFactor ~= nil, "External variable `AtkRateFactor` is not provided.")
+		assert(this.UnHurtRateFactor ~= nil, "External variable `UnHurtRateFactor` is not provided.")
 
 		local main = __action(this, {
 			name = "main",
@@ -582,38 +582,28 @@ all.Sk_Master_LieSha_Action3 = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
+			local buffeft2 = global.NumericEffect(_env, "-unhurtrate", {
+				"+Normal",
+				"+Normal"
+			}, this.UnHurtRateFactor)
 
-			for _, friend in global.__iter__(global.FriendUnits(_env, global.PETS - global.SUMMONS)) do
-				local attacker = global.LoadUnit(_env, _env.ACTOR, "ATTACKER")
-				local buffeft1 = global.NumericEffect(_env, "+atk", {
-					"+Normal",
-					"+Normal"
-				}, attacker.atk * this.AtkRateFactor)
-				local buffeft2 = global.RageGainEffect(_env, "-", {
-					"+Normal",
-					"+Normal"
-				}, 1)
-				local buffeft3 = global.Diligent(_env)
-
-				global.ApplyBuff_Buff(_env, _env.ACTOR, friend, {
+			if global.EnemyMaster(_env) then
+				global.ApplyBuff_Debuff(_env, _env.ACTOR, global.EnemyMaster(_env), {
 					timing = 2,
-					duration = 1,
-					display = "AtkUp",
+					display = "UnHurtRateDown",
+					group = "Sk_Master_LieSha_Action3",
+					duration = 2,
+					limit = 1,
 					tags = {
 						"NUMERIC",
-						"BUFF",
-						"ATKUP",
-						"UNDISPELLABLE",
-						"UNSTEALABLE"
+						"DEBUFF",
+						"UNHURTRATEDOWN",
+						"UNDISPELLABLE"
 					}
 				}, {
-					buffeft1,
-					buffeft2,
-					buffeft3
-				}, 1)
+					buffeft2
+				}, 1, 0)
 			end
-
-			global.DiligentRound(_env)
 		end)
 		exec["@time"]({
 			3167

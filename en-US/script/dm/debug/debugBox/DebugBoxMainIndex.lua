@@ -235,7 +235,9 @@ DebugBoxMainIndex = {
 			},
 			{
 				"任务",
-				{}
+				{
+					"一键完成梦之轨迹"
+				}
 			},
 			{
 				"链接争霸",
@@ -735,6 +737,10 @@ DebugBoxMainIndex = {
 				"DebugShowBustAni"
 			},
 			{
+				"一键完成梦之轨迹",
+				"OnekeyStageTask"
+			},
+			{
 				"技能Args检查",
 				"CheckSkillArgsBox"
 			},
@@ -892,7 +898,8 @@ DebugBoxMainIndex = {
 			"BattleExtend",
 			"ChangeMiniGame",
 			"CooperateBossTest",
-			"DebugShowBustAni"
+			"DebugShowBustAni",
+			"ChangeTask"
 		}
 
 		for k, v in pairs(requireNameMap) do

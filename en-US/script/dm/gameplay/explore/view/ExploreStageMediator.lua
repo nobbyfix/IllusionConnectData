@@ -461,7 +461,7 @@ function ExploreStageMediator:initRecommendImg(panel)
 	local image = cc.Sprite:createWithSpriteFrameName("common_bg_tuijian.png")
 
 	image:setAnchorPoint(cc.p(0, 1))
-	image:addTo(panel):posite(-230, 40)
+	image:addTo(panel):posite(-205, 60)
 	image:setName("RecommendSprite")
 	image:setGlobalZOrder(10)
 

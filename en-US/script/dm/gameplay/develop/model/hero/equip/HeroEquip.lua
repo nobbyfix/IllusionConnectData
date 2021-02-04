@@ -531,6 +531,10 @@ function HeroEquip:getOccupationDesc()
 	return self._config.ProfessionDesc
 end
 
+function HeroEquip:getOccupationType()
+	return self._config.ProfessionType
+end
+
 function HeroEquip:getAttrATK()
 	return self._config.ATK
 end

@@ -12052,6 +12052,26 @@
             0.3
         ]
     },
+    "Hero_ABlock_QBTe_Extra": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            3,
+            0.3
+        ]
+    },
     "Hero_ABlock_SRen_Extra": {
         "AttrType": [
             "HURTRATE",
@@ -142584,6 +142604,26 @@
             0.15
         ]
     },
+    "Star_LFEr_Awake": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "Star_LFEr_Awake_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.1,
+            0.1
+        ]
+    },
     "Star_LLan_3_1": {
         "AttrType": [
             "ATK_RATE",
@@ -143491,6 +143531,80 @@
             "SKILLRATE"
         ],
         "EffectDesc": "Star_PNCao_5_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.15
+        ]
+    },
+    "Star_QBTe_3_1": {
+        "AttrType": [
+            "ATK_RATE",
+            "HP_RATE"
+        ],
+        "EffectDesc": "Star_QBTe_3_1_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.1,
+            0.1
+        ]
+    },
+    "Star_QBTe_4_1": {
+        "AttrType": [
+            "HP_RATE"
+        ],
+        "EffectDesc": "Star_QBTe_4_1_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.2
+        ]
+    },
+    "Star_QBTe_5_1": {
+        "AttrType": [
+            "ATK_RATE"
+        ],
+        "EffectDesc": "Star_QBTe_5_1_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.2
+        ]
+    },
+    "Star_QBTe_6": {
+        "AttrType": [
+            "SKILLRATE"
+        ],
+        "EffectDesc": "Star_QBTe_6_Desc",
         "EffectRange": [
             "ALL"
         ],
@@ -145907,6 +146021,26 @@
         "Name": "",
         "Target": "SELF",
         "Value": [
+            0.1
+        ]
+    },
+    "T05_Tank_Buff": {
+        "AttrType": [
+            "HP_RATE",
+            "DEF_RATE"
+        ],
+        "EffectDesc": "DC_T05_Tank_Buff_desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "LevelUpDesc_Empty",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.5,
             0.1
         ]
     },

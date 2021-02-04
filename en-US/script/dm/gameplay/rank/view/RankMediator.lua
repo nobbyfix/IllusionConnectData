@@ -506,7 +506,7 @@ function RankMediator:onClickRankCell(cell)
 			remainLastView = true,
 			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
 		}, nil)
-	elseif type ~= RankType.KPetWorldScore then
+	else
 		local view = self:getInjector():getInstance("PlayerInfoView")
 
 		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {

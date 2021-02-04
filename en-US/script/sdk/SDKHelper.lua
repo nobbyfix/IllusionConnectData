@@ -13,14 +13,15 @@ SDK_FUN = {
 	HIDE_FLOAT_VIEW = "hideFloatView",
 	CHECK_REALNAME_AUTH = "checkRealNameAuth",
 	USER_LOCATION_INFO = "getUserLocationInfo",
-	SYSTEM_SHARE = "systemShare",
+	REGISTERPWRDPUSH = "registerPwrdPush",
 	EXTURN_FUNCTION = "exturnFunction",
 	SHOW_CSD = "openAIHelpElva",
 	PAY_INCOMPLETE = "payIncomplete",
 	PAY_INIT = "payInit",
 	INIT = "init",
-	REPORT_DATA_AD = "trackEventAD",
+	SYSTEM_SHARE = "systemShare",
 	SWITCH_ACCOUNT = "switchAccount",
+	REPORT_DATA_AD = "trackEventAD",
 	REPORT_DATA_WM_SL = "wanmeiGameGetServerListEvent",
 	USER_CENTER = "userCenterByPwrdView",
 	REPORT_DATA = "reportData",
@@ -275,6 +276,11 @@ end
 
 function SDKHelper:userCenterByPwrdView()
 	self:callMethod(SDK_FUN.USER_CENTER)
+end
+
+function SDKHelper:registerPwrdPush(data)
+	print("lua---registerPwrdPush")
+	self:callMethod(SDK_FUN.REGISTERPWRDPUSH, cjson.encode(data))
 end
 
 function SDKHelper:systemShare(data)

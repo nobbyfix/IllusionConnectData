@@ -403,6 +403,20 @@ function exports.Diligent(env)
 	})
 end
 
+function exports.BuffIsMatched(env, buff, ...)
+	local tags = {
+		...
+	}
+
+	for k, v in pairs(tags) do
+		if buff:isMatched(v) then
+			return true
+		end
+	end
+
+	return false
+end
+
 function exports.ImmuneBuff(env, tagOrFilter)
 	local matchFunc = makeBuffMatchFunction(env, tagOrFilter)
 

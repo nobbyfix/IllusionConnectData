@@ -245,8 +245,15 @@ function EquipListView:createCell(cell, index)
 				if self._heroData then
 					local type = self._heroData:getType()
 					local typeRange = equipData:getOccupation()
+					local occupationType = equipData:getOccupationType()
+					local heroId = self._heroData:getId()
 
-					if not table.indexof(typeRange, type) then
+					if occupationType == nil or occupationType == 0 then
+						if not table.indexof(typeRange, type) then
+							tipPanel:setColor(cc.c3b(131, 131, 131))
+							iconPanel:setColor(cc.c3b(131, 131, 131))
+						end
+					elseif occupationType == 1 and not table.indexof(typeRange, heroId) then
 						tipPanel:setColor(cc.c3b(131, 131, 131))
 						iconPanel:setColor(cc.c3b(131, 131, 131))
 					end

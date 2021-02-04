@@ -71,44 +71,6 @@ local kBtnHandlers = {
 		func = "fastGetRes"
 	}
 }
-local detectiveBtnName = {
-	{
-		text = "ActivityBlock_Detective_Name_1",
-		fontsize = 20,
-		pos = {
-			40,
-			30
-		},
-		color = cc.c4b(255, 255, 255, 255)
-	},
-	{
-		text = "ActivityBlock_Detective_Name_2",
-		fontsize = 20,
-		pos = {
-			30,
-			10
-		},
-		color = cc.c4b(255, 255, 255, 255)
-	},
-	{
-		text = "ActivityBlock_Detective_Name_3",
-		fontsize = 24,
-		pos = {
-			65,
-			10
-		},
-		lineGradiantVec2 = {
-			{
-				ratio = 0.3,
-				color = cc.c4b(255, 253, 90, 255)
-			},
-			{
-				ratio = 0.7,
-				color = cc.c4b(255, 239, 184, 255)
-			}
-		}
-	}
-}
 local spineTouchEventTag = false
 local firstChargePackId = "PackageShop_1"
 local PREPARESTATE = "Prepare_State"
@@ -197,6 +159,12 @@ function HomeMediator:dispose()
 		self._webPayTimer = nil
 	end
 
+	if self._timeLimitShopTimer then
+		self._timeLimitShopTimer:stop()
+
+		self._timeLimitShopTimer = nil
+	end
+
 	if self._clubResourcesBattleTimer then
 		self._clubResourcesBattleTimer:stop()
 
@@ -257,6 +225,10 @@ function HomeMediator:resumeWithData(data)
 
 	if not self._webPayTimer then
 		self:enableWebPayListTimer()
+	end
+
+	if not self._timeLimitShopTimer then
+		self:enableTimeLimitShopTimer()
 	end
 
 	if self._dreamActivityTips then
@@ -581,11 +553,9 @@ function HomeMediator:refreshDownloadSoundLabel(event)
 end
 
 function HomeMediator:reloadView()
-	print("@@@@@@@@@@@@@@@@@@@@@@@@@")
 	self:reloadPageView()
 	self:checkClubRedPoint()
 	self:checkExtraRedPoint()
-	print("@@@@@@@@@@@@@@@@@@@@@@@@@11111111111111111")
 end
 
 function HomeMediator:initHomeView()
@@ -628,6 +598,7 @@ function HomeMediator:initHomeView()
 	self:checkExtraRedPoint()
 	self:enableBuildingResourceTimer()
 	self:enableWebPayListTimer()
+	self:enableTimeLimitShopTimer()
 	self:checkClubResourcesBattleTimerLogic()
 end
 
@@ -711,6 +682,59 @@ function HomeMediator:enableWebPayListTimer()
 	end
 
 	self._webPayTimer = LuaScheduler:getInstance():schedule(updata, 1, false)
+end
+
+function HomeMediator:enableTimeLimitShopTimer()
+	local isShow = self._activitySystem:checkTimeLimitShopShow()
+
+	if not isShow then
+		return
+	end
+
+	if self._timeLimitShopTimer then
+		self._timeLimitShopTimer:stop()
+
+		self._timeLimitShopTimer = nil
+	end
+
+	local deadline = self._showHeroPanel:getChildByFullName("timeShop.deadline")
+	local timeShop = self._showHeroPanel:getChildByName("timeShop")
+
+	timeShop:getChildByName("redPoint"):setVisible(self._activitySystem:checkTimeLimitShopRedpointShow())
+
+	local timeShopTitle = self._showHeroPanel:getChildByFullName("timeShop.title")
+
+	timeShopTitle:setString(Strings:get(self._activitySystem:getFestivalPackageTitle()))
+
+	local function updata()
+		local leaveTime = self._activitySystem:getTimeLimitShopLeaveTime()
+		local str = ""
+		local fmtStr = "${d}:${H}:${M}:${S}"
+		local timeStr = TimeUtil:formatTime(fmtStr, leaveTime)
+		local parts = string.split(timeStr, ":", nil, true)
+		local timeTab = {
+			day = tonumber(parts[1]),
+			hour = tonumber(parts[2]),
+			min = tonumber(parts[3]),
+			s = tonumber(parts[4])
+		}
+
+		if timeTab.day > 0 then
+			str = timeTab.day .. Strings:get("TimeUtil_Day") .. timeTab.hour .. Strings:get("TimeUtil_Hour")
+		elseif timeTab.hour > 0 then
+			str = timeTab.hour .. Strings:get("TimeUtil_Hour") .. timeTab.min .. Strings:get("TimeUtil_Min")
+		elseif timeTab.min > 0 then
+			str = timeTab.min .. Strings:get("TimeUtil_Min") .. timeTab.s .. Strings:get("TimeUtil_Sec")
+		else
+			str = timeTab.s .. Strings:get("TimeUtil_Sec")
+		end
+
+		deadline:setString(str)
+	end
+
+	self._timeLimitShopTimer = LuaScheduler:getInstance():schedule(updata, 1, false)
+
+	updata()
 end
 
 function HomeMediator:fastGetRes()
@@ -1170,9 +1194,9 @@ function HomeMediator:initWidget()
 
 	local giftPanel = self._showHeroPanel:getChildByName("giftImg")
 
-	giftPanel:setLocalZOrder(5557)
+	giftPanel:setLocalZOrder(5558)
 
-	local function callFunc()
+	local function giftPanelFunc()
 		giftPanel:setVisible(false)
 
 		local activity = self._activitySystem:getActivityById("FreeStamina")
@@ -1207,8 +1231,43 @@ function HomeMediator:initWidget()
 
 	mapButtonHandlerClick(nil, giftPanel, {
 		ignoreClickAudio = true,
-		func = callFunc
+		func = giftPanelFunc
 	})
+
+	local timeShop = self._showHeroPanel:getChildByName("timeShop")
+
+	timeShop:getChildByName("redPoint"):setVisible(self._activitySystem:checkTimeLimitShopRedpointShow())
+	timeShop:setLocalZOrder(5557)
+
+	local function timeShopFunc()
+		timeShop:getChildByName("redPoint"):setVisible(false)
+		self._activitySystem:tryEnterTimeLimitSHop()
+	end
+
+	mapButtonHandlerClick(nil, timeShop, {
+		ignoreClickAudio = true,
+		func = timeShopFunc
+	})
+
+	local timeShopTitle = self._showHeroPanel:getChildByFullName("timeShop.title")
+	local lineGradiantVec2 = {
+		{
+			ratio = 0.75,
+			color = cc.c4b(255, 255, 255, 255)
+		},
+		{
+			ratio = 0.99,
+			color = cc.c4b(0, 0, 0, 255)
+		}
+	}
+	local lineGradiantDir = {
+		x = 0,
+		y = -1
+	}
+
+	timeShopTitle:enablePattern(cc.LinearGradientPattern:create(lineGradiantVec2, lineGradiantDir))
+	timeShopTitle:setString(Strings:get(self._activitySystem:getFestivalPackageTitle()))
+	AdjustUtils.adjustLayoutByType(timeShop, AdjustUtils.kAdjustType.Right)
 
 	local image1 = self:getView():getChildByFullName("adjustUtil.Image_3")
 
@@ -1886,6 +1945,24 @@ function HomeMediator:registerHomeViewEvent()
 			giftImg:setVisible(false)
 		end
 
+		local isShow = self._activitySystem:checkTimeLimitShopShow()
+		local timeShop = self._showHeroPanel:getChildByName("timeShop")
+
+		if isShow then
+			self:enableTimeLimitShopTimer()
+			timeShop:setVisible(true)
+
+			local timeShop = self._showHeroPanel:getChildByName("timeShop")
+
+			timeShop:getChildByName("redPoint"):setVisible(self._activitySystem:checkTimeLimitShopRedpointShow())
+
+			local timeShopTitle = self._showHeroPanel:getChildByFullName("timeShop.title")
+
+			timeShopTitle:setString(Strings:get(self._activitySystem:getFestivalPackageTitle()))
+		else
+			timeShop:setVisible(false)
+		end
+
 		self:loadBgImage()
 	end
 
@@ -2469,7 +2546,7 @@ function HomeMediator:initButtons(config)
 						movieClip:stop()
 					end)
 					movieClip:stop()
-					movieClip:addTo(movieClipNode):center(movieClipNode:getContentSize())
+					movieClip:addTo(movieClipNode):center(movieClipNode:getContentSize()):setName(infos.name)
 
 					local node = self:getView():getChildByFullName(layout .. "." .. node)
 					node.movieClip = movieClip
@@ -3072,7 +3149,14 @@ function HomeMediator:friendRedPoint()
 end
 
 function HomeMediator:activityRedPoint()
-	return self._activitySystem:getHomeRedPointSta()
+	local st = self._activitySystem:getHomeRedPointSta()
+	local movieClipNode = self:getView():getChildByFullName("mRightFuncLayout.mActivity2Node.mMovieClip.huodong_xinzhujiemian")
+
+	movieClipNode:addCallbackAtFrame(10, function ()
+		movieClipNode:getChildByName("guang"):setVisible(st)
+	end)
+
+	return st
 end
 
 function HomeMediator:firstRechargeRedPoint()
@@ -3543,6 +3627,45 @@ function HomeMediator:randomBoardRoleAndBg()
 	end
 end
 
+local detectiveBtnName = {
+	{
+		text = "ActivityBlock_Detective_Name_1",
+		fontsize = 20,
+		pos = {
+			40,
+			30
+		},
+		color = cc.c4b(255, 255, 255, 255)
+	},
+	{
+		text = "ActivityBlock_Detective_Name_2",
+		fontsize = 20,
+		pos = {
+			30,
+			10
+		},
+		color = cc.c4b(255, 255, 255, 255)
+	},
+	{
+		text = "ActivityBlock_Detective_Name_3",
+		fontsize = 24,
+		pos = {
+			65,
+			10
+		},
+		lineGradiantVec2 = {
+			{
+				ratio = 0.3,
+				color = cc.c4b(255, 253, 90, 255)
+			},
+			{
+				ratio = 0.7,
+				color = cc.c4b(255, 239, 184, 255)
+			}
+		}
+	}
+}
+
 function HomeMediator:setComplexActivityEntry()
 	local complexActivityEntryAnim = {
 		[ActivityType_UI.kActivityBlockWsj] = {
@@ -3577,13 +3700,22 @@ function HomeMediator:setComplexActivityEntry()
 		},
 		[ActivityType_UI.KActivityBlockDetetive] = {
 			anim = "biao_timeeff",
-			aimpos = cc.p(50, 43)
+			aimpos = cc.p(50, 43),
+			detectiveBtnName = detectiveBtnName
 		},
 		[ActivityType_UI.KActivityBlockMusic] = {
 			img = "musicfestival_btn_zjm_rukou.png",
 			anim = "rukou-CX_yinyuejierukou",
 			aimpos = cc.p(55, 43),
 			imgpos = cc.p(58, 43)
+		},
+		[ActivityType_UI.KActivityBlockBaking] = {
+			animZorder = 1,
+			img = "baking_btn_zjm_rukou.png",
+			anim = "hongpeirukou_hongbeidazuozhanrukou",
+			imgZorder = 2,
+			aimpos = cc.p(55, 43),
+			imgpos = cc.p(55, 13)
 		}
 	}
 	local extraActBtn = self._rightFuncLayout:getChildByFullName("extraActBtn")
@@ -3628,6 +3760,7 @@ function HomeMediator:setComplexActivityEntry()
 
 			img:setPosition(cfg.imgpos)
 			img:addTo(self._btns[ui])
+			img:setLocalZOrder(cfg.imgZorder or 1)
 		end
 
 		if cfg.anim then
@@ -3636,10 +3769,11 @@ function HomeMediator:setComplexActivityEntry()
 			anim:gotoAndPlay(1)
 			anim:setPosition(cfg.aimpos)
 			anim:addTo(self._btns[ui])
+			anim:setLocalZOrder(cfg.animZorder or 2)
 		end
 
-		if ui == ActivityType_UI.KActivityBlockDetetive then
-			for i, v in ipairs(detectiveBtnName) do
+		if cfg.detectiveBtnName then
+			for i, v in ipairs(cfg.detectiveBtnName) do
 				local label = cc.Label:createWithTTF(Strings:get(v.text), TTF_FONT_FZYH_M, v.fontsize)
 
 				label:enableOutline(cc.c4b(0, 0, 0, 255), 1)
@@ -3654,7 +3788,7 @@ function HomeMediator:setComplexActivityEntry()
 				end
 
 				label:setPosition(cc.p(v.pos[1], v.pos[2]))
-				self._btns[ui]:addChild(label, 1)
+				self._btns[ui]:addChild(label, 3)
 			end
 		end
 	end

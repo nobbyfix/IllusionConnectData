@@ -730,6 +730,10 @@ function LoginMediator:buildLoadingTask()
 				end
 
 				SDKHelper:reportLogin(params)
+				SDKHelper:registerPwrdPush({
+					roleId = tostring(player:getRid()),
+					serverId = tostring(curServer:getSecId())
+				})
 			end
 		end, 1)
 		DO_ACTION(function ()

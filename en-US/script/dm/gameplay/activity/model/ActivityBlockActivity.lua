@@ -250,7 +250,7 @@ function ActivityBlockActivity:getActivityTpurchase()
 		local id = activityIds[i]
 		local activity = self:getSubActivityById(id)
 
-		if activity and self:subActivityOpen(id) and activity:getType() == ActivityType.KTPURCHASE then
+		if activity and self:subActivityOpen(id) and activity:getType() == ActivityType.KTPURCHASE and activity:getUI() == "C_TIMEPURCHASE" then
 			return activity
 		end
 	end

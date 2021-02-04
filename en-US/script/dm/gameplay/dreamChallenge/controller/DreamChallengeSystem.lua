@@ -17,9 +17,10 @@ DreamChallengeSystem:has("_gameServerAgent", {
 }):injectWith("GameServerAgent")
 
 kDreamChallengeType = {
-	kTwo = 2,
 	kThree = 3,
+	kFifth = 5,
 	kForth = 4,
+	kTwo = 2,
 	kOne = 1
 }
 

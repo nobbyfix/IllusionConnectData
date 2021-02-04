@@ -44,6 +44,9 @@ local muiscCfg = {
 	ActivityBlockMusicView = {
 		noAutoPlay = true
 	},
+	ActivityBakingMainView = {
+		noAutoPlay = true
+	},
 	ActivityBlockDetectiveView = {
 		noAutoPlay = true
 	},

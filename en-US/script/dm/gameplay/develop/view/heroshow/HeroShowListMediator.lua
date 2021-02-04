@@ -1465,7 +1465,7 @@ function HeroShowListMediator:runEndAnim()
 
 			heroPanel:setPosition(cc.p(898, 298))
 
-			local moveto = cc.MoveTo:create(0.2, cc.p(544, 320))
+			local moveto = cc.MoveTo:create(0.2, cc.p(500, 315))
 
 			heroPanel:runAction(moveto)
 		end

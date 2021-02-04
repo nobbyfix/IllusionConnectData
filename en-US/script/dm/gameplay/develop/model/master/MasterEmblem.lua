@@ -341,7 +341,7 @@ function MasterEmblem:getShowValue(k, value)
 	if AttributeCategory:getAttNameAttend(k) == "" then
 		return math.round(value)
 	else
-		return string.format("%.3f%%", value * 100)
+		return value * 100 - 0 .. "%"
 	end
 end
 

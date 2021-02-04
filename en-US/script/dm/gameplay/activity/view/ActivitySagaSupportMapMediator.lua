@@ -183,7 +183,7 @@ function ActivitySagaSupportMapMediator:setAdditionHero()
 
 			icon:addTo(self._stageRewardsPanel):setScale(0.5)
 
-			local x = 30 * (3 - length) + 68 * (i - 1)
+			local x = (i - 1) * 62
 
 			icon:setPositionX(x)
 
@@ -193,7 +193,7 @@ function ActivitySagaSupportMapMediator:setAdditionHero()
 		end
 	end
 
-	self._stageAdditionPanel:setContentSize(cc.size(#btns.blockParams.heroes * 75 + 45, 70))
+	self._stageAdditionPanel:setContentSize(cc.size(#btns.blockParams.heroes * 62 + 62, 70))
 end
 
 function ActivitySagaSupportMapMediator:setChapterTitle()
@@ -938,6 +938,7 @@ end
 function ActivitySagaSupportMapMediator:onClickPlayStory(pointId, isCheck)
 	local storyDirector = self:getInjector():getInstance(story.StoryDirector)
 	local chapterInfo = self._model:getStageByStageType(self._stageType)
+	local chapterConfig = chapterInfo:getConfig()
 
 	local function endCallBack()
 		local storyPoint = chapterInfo:getStoryPointById(pointId)
@@ -973,6 +974,8 @@ function ActivitySagaSupportMapMediator:onClickPlayStory(pointId, isCheck)
 				}, delegate))
 			end)
 		end
+
+		AudioEngine:getInstance():playBackgroundMusic(chapterConfig.BGM)
 	end
 
 	local storyAgent = storyDirector:getStoryAgent()

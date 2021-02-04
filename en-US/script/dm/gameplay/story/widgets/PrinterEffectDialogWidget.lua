@@ -53,6 +53,7 @@ function PrinterEffectDialogWidget:updateView(data, onEnd, parentClass)
 	self._contentTextList = {}
 	self._clickTouchTime = 0
 	self._newTextShowSta = false
+	self._printAudioOff = data.printAudioOff and true or false
 	local panelOpacity = 0
 
 	if data.panelOpacity then
@@ -241,7 +242,9 @@ function PrinterEffectDialogWidget:addContent()
 			end
 
 			local function soundCallfun()
-				AudioEngine:getInstance():playEffect("Se_Story_Type", false)
+				if not self._printAudioOff then
+					AudioEngine:getInstance():playEffect("Se_Story_Type", false)
+				end
 			end
 
 			local typerAction = NewTypeWriterAction:create(contentText, duration, soundCallfun)
