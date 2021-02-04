@@ -243,6 +243,12 @@ end
 local perTime = 0
 
 function RechargeAndVipSystem:requestRechargeDiamonds(goodsId)
+	self:dispatch(ShowTipEvent({
+		tip = "儲值服務已關閉"
+	}))
+
+	return
+
 	local curTime = self._gameServerAgent:remoteTimestamp()
 
 	if curTime - perTime < 0.5 then
@@ -276,6 +282,12 @@ function RechargeAndVipSystem:requestBuyVipReward(vipLevel, callback)
 end
 
 function RechargeAndVipSystem:requestPurchaseSubscribe(cardId, index)
+	self:dispatch(ShowTipEvent({
+		tip = "儲值服務已關閉"
+	}))
+
+	return
+
 	local curTime = self._gameServerAgent:remoteTimestamp()
 
 	if curTime - perTime < 0.5 then
@@ -297,6 +309,12 @@ function RechargeAndVipSystem:requestPurchaseSubscribe(cardId, index)
 end
 
 function RechargeAndVipSystem:requestBuyMonthCard(cardId, index)
+	self:dispatch(ShowTipEvent({
+		tip = "儲值服務已關閉"
+	}))
+
+	return
+
 	local curTime = self._gameServerAgent:remoteTimestamp()
 
 	if curTime - perTime < 0.5 then
@@ -373,6 +391,12 @@ function RechargeAndVipSystem:requestGetAccRechargeReward(chargeNum, callback)
 end
 
 function RechargeAndVipSystem:requestBuyForeverCard(callback)
+	self:dispatch(ShowTipEvent({
+		tip = "儲值服務已關閉"
+	}))
+
+	return
+
 	local params = {}
 
 	self._rechargeAndVipService:requestBuyForeverCard(params, true, function (response)

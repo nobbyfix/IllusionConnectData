@@ -842,6 +842,12 @@ function PassSystem:requestBuyLevel(count, callback)
 end
 
 function PassSystem:requestBuyGiftBag(buyType, callback)
+	self:dispatch(ShowTipEvent({
+		tip = "儲值服務已關閉"
+	}))
+
+	return
+
 	local activitySystem = self:getInjector():getInstance(ActivitySystem)
 	local activityId = self._currentActivityID
 	local param = {

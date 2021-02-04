@@ -312,6 +312,12 @@ function ActivityBlockFudaiMediator:onCloseClicked(sender, eventType)
 end
 
 function ActivityBlockFudaiMediator:onBuyClicked()
+	self:dispatch(ShowTipEvent({
+		tip = "儲值服務已關閉"
+	}))
+
+	return
+
 	AudioEngine:getInstance():playEffect("Se_Click_Confirm", false)
 
 	local tips = ""

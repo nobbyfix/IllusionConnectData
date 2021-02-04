@@ -1102,6 +1102,14 @@ end
 local perTime = 0
 
 function ShopSystem:requestBuyPackageShop(packageId, callback, isFree)
+	if isFree ~= KShopBuyType.KFree and isFree ~= KShopBuyType.KCoin then
+		self:dispatch(ShowTipEvent({
+			tip = "儲值服務已關閉"
+		}))
+
+		return
+	end
+
 	local curTime = self._gameServerAgent:remoteTimestamp()
 
 	if curTime - perTime < 0.5 then
@@ -1148,6 +1156,14 @@ end
 local perTime = 0
 
 function ShopSystem:requestBuyPackageShopCount(packageId, count, callback, isFree)
+	if isFree ~= KShopBuyType.KFree and isFree ~= KShopBuyType.KCoin then
+		self:dispatch(ShowTipEvent({
+			tip = "儲值服務已關閉"
+		}))
+
+		return
+	end
+
 	local curTime = self._gameServerAgent:remoteTimestamp()
 
 	if curTime - perTime < 0.5 then
