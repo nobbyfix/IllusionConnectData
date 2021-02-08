@@ -373,6 +373,40 @@
         },
         "Times": 1
     },
+    "CO_Tops_15006": {
+        "Currency": {
+            "amount": 2000000,
+            "id": "IR_Gold",
+            "type": "Item"
+        },
+        "Item1": {
+            "amount": 1,
+            "id": "CO_TopsStone_3",
+            "type": "Item"
+        },
+        "Item2": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Tops"
+        },
+        "Item3": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Tops"
+        },
+        "Item4": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Tops"
+        },
+        "Item5": "",
+        "Reward": "Tops_15006",
+        "Show": {
+            "id": "Tops_15006",
+            "type": "Equip"
+        },
+        "Times": 1
+    },
     "CO_Weapon_15001": {
         "Currency": {
             "amount": 2000000,

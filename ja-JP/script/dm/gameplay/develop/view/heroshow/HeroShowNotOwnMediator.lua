@@ -261,6 +261,9 @@ function HeroShowNotOwnMediator:initView()
 		local descText = cell:getChildByName("desc")
 
 		nameText:setString(Strings:get(config.Name))
+		nameText:setTextAreaSize(cc.size(215, 25))
+		nameText:getVirtualRenderer():setOverflow(cc.LabelOverflow.SHRINK)
+		nameText:setTextVerticalAlignment(cc.TEXT_ALIGNMENT_CENTER)
 
 		local str = ""
 		local attrNum = tostring(self._config.SkillRate * 100) .. "%"

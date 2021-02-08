@@ -143,11 +143,16 @@ function SkillDescWidget:refreshInfo(skill, role, isMaster)
 
 	name:setString(skill:getName())
 
+	local listView = self._skillTipPanel:getChildByName("ListView")
+
+	listView:setScrollBarEnabled(false)
+
+	local size = cc.size(290, 295)
 	local bg = self._skillTipPanel:getChildByName("Image_bg")
 	local desc = self._skillTipPanel:getChildByName("desc")
 
 	desc:setString("")
-	desc:removeAllChildren()
+	listView:removeAllChildren()
 
 	local descStr = {}
 	local height = 0
@@ -170,7 +175,7 @@ function SkillDescWidget:refreshInfo(skill, role, isMaster)
 		local newPanel = self:createSkillDescPanel(skillDesc, skill, style)
 
 		newPanel:setAnchorPoint(cc.p(0, 0))
-		newPanel:addTo(desc)
+		listView:pushBackCustomItem(newPanel)
 		table.insert(descStr, {
 			newPanel = newPanel,
 			height = newPanel:getContentSize().height
@@ -192,7 +197,7 @@ function SkillDescWidget:refreshInfo(skill, role, isMaster)
 			local newPanel = self:createEffectDescPanel(attrDescs[i])
 
 			newPanel:setAnchorPoint(cc.p(0, 0))
-			newPanel:addTo(desc)
+			listView:pushBackCustomItem(newPanel)
 			table.insert(descStr, {
 				newPanel = newPanel,
 				height = newPanel:getContentSize().height
@@ -214,10 +219,20 @@ function SkillDescWidget:refreshInfo(skill, role, isMaster)
 		end
 	end
 
-	height = height + 110
+	local realHeight = size.height
 
-	bg:setContentSize(cc.size(332, height))
-	infoNode:setPositionY(height - 90)
+	if height < size.height then
+		listView:setContentSize(cc.size(size.width, height))
+
+		realHeight = height
+	else
+		listView:setContentSize(size)
+	end
+
+	realHeight = realHeight + 110
+
+	bg:setContentSize(cc.size(332, realHeight))
+	infoNode:setPositionY(realHeight - 90)
 end
 
 function SkillDescWidget:createSkillDescPanel(title, skill, style)

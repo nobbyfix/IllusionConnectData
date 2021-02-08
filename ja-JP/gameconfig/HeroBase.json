@@ -4675,7 +4675,7 @@
         "HeroStoryMap": "",
         "HpFactor": 0.82,
         "HurtRate": 0.0,
-        "IfHidden": 0,
+        "IfHidden": 1,
         "InnerAttr": [
             "Inner_DFQi_1",
             "Inner_DFQi_2",
@@ -5128,7 +5128,8 @@
         "Speed": 50,
         "StarId": "DNTLuo_1",
         "SurfaceList": [
-            "Surface_DNTLuo_1"
+            "Surface_DNTLuo_1",
+            "Surface_DNTLuo_2"
         ],
         "TeamSpecialVoice": "",
         "Transform": "",
@@ -5994,7 +5995,7 @@
         "HeroStoryMap": "",
         "HpFactor": 1.29,
         "HurtRate": 0.0,
-        "IfHidden": 0,
+        "IfHidden": 1,
         "InnerAttr": [],
         "ItemId": "IHF_GYCZi",
         "KeyPassiveSkill": "Hero_PBattle_GYCZi_Key",
@@ -9517,6 +9518,7 @@
         "StarId": "LFEr_1",
         "SurfaceList": [
             "Surface_LFEr_1",
+            "Surface_LFEr_2",
             "Surface_LFEr_Awake"
         ],
         "TeamSpecialVoice": "",
@@ -14822,7 +14824,7 @@
         "HeroStoryMap": "",
         "HpFactor": 0.82,
         "HurtRate": 0.0,
-        "IfHidden": 0,
+        "IfHidden": 1,
         "InnerAttr": [],
         "ItemId": "IHF_SYAi",
         "KeyPassiveSkill": "Hero_PBattle_SYAi_Key",
@@ -20374,7 +20376,7 @@
         "HeroStoryMap": "",
         "HpFactor": 1.07,
         "HurtRate": 0.0,
-        "IfHidden": 0,
+        "IfHidden": 1,
         "InnerAttr": [],
         "ItemId": "IHF_YYing",
         "KeyPassiveSkill": "Hero_PBattle_YYing_Key",
