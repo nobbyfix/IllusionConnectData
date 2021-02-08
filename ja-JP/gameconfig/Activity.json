@@ -7508,6 +7508,42 @@
             "LEVEL": 1
         },
         "Desc": "",
+        "Enable": 0,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 104,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-02-15 05:00:00",
+            "start": [
+                "2021-02-08 05:00:00",
+                "2021-02-15 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "Version": ""
+    },
+    "DrawCard_1UP_20210203_2_Activity_New": {
+        "ActivityConfig": {
+            "DRAW": "DrawCard_1UP_NFEr_20210208",
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_NFEr_20210208",
+            "VANISH": 0
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
         "Enable": 1,
         "Icon": "",
         "LeftBanner": "",
@@ -7538,6 +7574,42 @@
         "ActivityConfig": {
             "DRAW": "DrawCard_1UP_HSheng",
             "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_HSheng",
+            "VANISH": 0
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 0,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 104,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-03-01 05:00:00",
+            "start": [
+                "2021-02-22 05:00:00",
+                "2021-03-01 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "Version": ""
+    },
+    "DrawCard_1UP_20210203_3_1_Activity_New": {
+        "ActivityConfig": {
+            "DRAW": "DrawCard_1UP_HSheng_20210208",
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_HSheng_20210208",
             "VANISH": 0
         },
         "ClientCondition": {
