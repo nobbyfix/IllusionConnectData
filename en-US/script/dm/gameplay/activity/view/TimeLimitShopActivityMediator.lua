@@ -165,7 +165,7 @@ function TimeLimitShopActivityMediator:setPackageItemInfo(cell, data)
 		discountText:setString(tostring(data:getCostOff() * 100) .. "%")
 		discountPanel:setVisible(true)
 		priceText:setVisible(true)
-		priceText:setString(symbol .. tostring(data:getPrice()))
+		priceText:setString("USD" .. tostring(data:getPrice()))
 		xian:setVisible(true)
 
 		if data:getPrice() == 0 then
