@@ -105,6 +105,7 @@ function DebugBox:setupView(parentLayer)
 	self._timeLabel:setTextColor(cc.c3b(255, 255, 0))
 	self._timeLabel:posite(31.5, 65)
 	debugBtn:addChild(self._timeLabel)
+	self:addShowLocalTime()
 
 	if self._timer == nil then
 		self._timer = LuaScheduler:getInstance():schedule(handler(self, self.refreshNetDelay), 0.2, false)
@@ -563,5 +564,25 @@ function DebugBox:clearTime()
 
 	if self._timeLabel then
 		self._timeLabel = nil
+	end
+end
+
+function DebugBox:addShowLocalTime()
+	if DEBUG ~= 0 then
+		local label = ccui.Text:create("", TTF_FONT_FZYH_R, 20)
+
+		label:addTo(self._timeLabel):posite(70, -20)
+		label:setColor(cc.c3b(255, 0, 0))
+
+		local gameServerAgent = DmGame:getInstance()._injector:getInstance(GameServerAgent)
+
+		local function checkTimeFunc()
+			local remoteTimestamp = gameServerAgent:remoteTimestamp()
+			local date = TimeUtil:localDate("%Y.%m.%d  %H:%M:%S", remoteTimestamp)
+
+			label:setString(date)
+		end
+
+		self._localShowTimer = LuaScheduler:getInstance():schedule(checkTimeFunc, 1, false)
 	end
 end

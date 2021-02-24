@@ -91,8 +91,8 @@ function ActivitySagaSupportMapMediator:enterWithData(data)
 		return
 	end
 
-	self._uiId = self._activity:getUI()
-	self._model = self._activity:getBlockMapActivity()
+	self._blockActivityId = data.blockActivityId
+	self._model = self._activity:getBlockMapActivity(self._blockActivityId)
 
 	if not self._model then
 		self:tryEnterSupport()
@@ -126,7 +126,7 @@ function ActivitySagaSupportMapMediator:tryEnterSupport()
 end
 
 function ActivitySagaSupportMapMediator:resumeWithData(data)
-	self._model = self._activity:getBlockMapActivity()
+	self._model = self._activity:getBlockMapActivity(self._blockActivityId)
 
 	if not self._model then
 		self:tryEnterSupport()
@@ -183,7 +183,7 @@ function ActivitySagaSupportMapMediator:setAdditionHero()
 
 			icon:addTo(self._stageRewardsPanel):setScale(0.5)
 
-			local x = (i - 1) * 62
+			local x = (i - 1) * 65 + 5
 
 			icon:setPositionX(x)
 
@@ -193,7 +193,7 @@ function ActivitySagaSupportMapMediator:setAdditionHero()
 		end
 	end
 
-	self._stageAdditionPanel:setContentSize(cc.size(#btns.blockParams.heroes * 62 + 62, 70))
+	self._stageAdditionPanel:setContentSize(cc.size(#btns.blockParams.heroes * 65 + 65, 70))
 end
 
 function ActivitySagaSupportMapMediator:setChapterTitle()
@@ -271,14 +271,20 @@ function ActivitySagaSupportMapMediator:initWidget()
 	self._starBoxPanel = self:getView():getChildByName("star_panel")
 	self._stageTypeView = self:getView():getChildByFullName("main.stageType")
 	self._stageAdditionPanel = self:getView():getChildByFullName("main.stageAddition")
+	self._starAdditionPanel = self:getView():getChildByFullName("main.starAddPanel")
 	self._Image_2 = self:getView():getChildByFullName("main.Image_2")
 
 	if self._Image_2 then
 		self._Image_2:setVisible(false)
 	end
 
-	self._stageRewardsPanel = self:getView():getChildByFullName("main.stageAddition.stageRewards")
+	self._heroSystemBtn = self._main:getChildByFullName("actionNode.btn_heroSystem")
+	self._emBattleBtn = self._main:getChildByFullName("actionNode.btn_emBattle")
 	self._stageTypeBtn = self._main:getChildByFullName("actionNode.btn_stage")
+	self._heroSystemBtnX = self._heroSystemBtn:getPositionX()
+	self._emBattleBtnX = self._emBattleBtn:getPositionX()
+	self._stageTypeBtnX = self._stageTypeBtn:getPositionX()
+	self._stageRewardsPanel = self:getView():getChildByFullName("main.stageAddition.stageRewards")
 
 	for i = 1, 3 do
 		self._stageTypeBtn:getChildByName("Text" .. i):enableOutline(cc.c4b(0, 0, 0, 204), 1)
@@ -292,6 +298,9 @@ function ActivitySagaSupportMapMediator:initWidget()
 		end
 	end)
 	self._stageAdditionPanel:addClickEventListener(function ()
+		self:onClickAditionButton()
+	end)
+	self._starAdditionPanel:addClickEventListener(function ()
 		self:onClickAditionButton()
 	end)
 end
@@ -310,6 +319,10 @@ function ActivitySagaSupportMapMediator:updataStageBtnImg()
 			self._stageTypeBtn:loadTextures(imgName, imgName, imgName, ccui.TextureResType.plistType)
 		end
 	end
+
+	self._stageTypeBtn:setVisible(self._model:getStageByStageType(StageType.kElite) and true or false)
+	self._heroSystemBtn:setPositionX(self._stageTypeBtn:isVisible() and self._heroSystemBtnX or self._heroSystemBtnX - 100)
+	self._emBattleBtn:setPositionX(self._stageTypeBtn:isVisible() and self._emBattleBtnX or self._emBattleBtnX - 100)
 end
 
 function ActivitySagaSupportMapMediator:refreshStageType()
@@ -389,6 +402,13 @@ function ActivitySagaSupportMapMediator:initStage()
 	end
 
 	self:updataStageBtnImg()
+	self._starAdditionPanel:setVisible(false)
+
+	local isHeroAttrSatrExtra = self._model:isHeroAttrStarExtra()
+
+	if isHeroAttrSatrExtra then
+		-- Nothing
+	end
 end
 
 function ActivitySagaSupportMapMediator:storySort(tab)
@@ -876,10 +896,10 @@ function ActivitySagaSupportMapMediator:onClickNextAction(index)
 			local curTime = self._gameServerAgent:remoteTimestamp()
 
 			if openTime and openTime.start then
-				local startTime = TimeUtil:formatStrToTImestamp(openTime.start)
+				local startTime = TimeUtil:formatStrToRemoteTImestamp(openTime.start)
 
 				if curTime < startTime then
-					local date = TimeUtil:localDate("%Y-%m-%d", startTime)
+					local date = TimeUtil:localDate("%Y.%m.%d  %H:%M:%S", startTime)
 
 					self:dispatch(ShowTipEvent({
 						duration = 0.2,

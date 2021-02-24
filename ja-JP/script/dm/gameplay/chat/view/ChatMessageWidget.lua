@@ -51,6 +51,9 @@ function PlayerMessageWidget:isRichText(string)
 end
 
 function PlayerMessageWidget:decorateView(message, senderInfo, parent)
+	dump(message, "message >>>>>>>>>>>")
+	dump(senderInfo, "senderInfo >>>>>>>>>>>")
+
 	self._message = message
 	self._parentMediator = parent
 	local contentRect = self._main:getChildByFullName("Text_panel.bubble.content_rect")
@@ -400,6 +403,8 @@ function PrivateMessageWidget:dispose()
 end
 
 function PrivateMessageWidget:decorateView(message, senderInfo, parent)
+	dump(message, "message >>>>>>>>>>")
+
 	self._message = message
 	self._senderInfo = senderInfo
 	self._parentMediator = parent

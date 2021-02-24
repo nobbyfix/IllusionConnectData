@@ -266,6 +266,11 @@ local kExtResponseMap = {
 		instanceName = "ActivitySystem",
 		funcCheck = "checkComplexActivity",
 		entry = ViewAreaEntry:new("ActivityBlockMusicView")
+	},
+	RTPKMainView = {
+		instanceName = "RTPKSystem",
+		funcName = "tryEnter",
+		entry = ViewAreaEntry:new("RTPKMainView")
 	}
 }
 

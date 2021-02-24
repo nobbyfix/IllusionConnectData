@@ -387,8 +387,14 @@ function BattleUnit:dumpInformation()
 		heroShow = self._heroShow,
 		isProcessingBoss = self._isProcessingBoss,
 		awakenLevel = self._awakenLevel,
-		modelScale = self._modelScale
+		modelScale = self._modelScale,
+		isSummoned = self._isSummoned,
+		side = self._side
 	}
+end
+
+function BattleUnit:isSummoned()
+	return self._isSummoned
 end
 
 function BattleUnit:getFoe()

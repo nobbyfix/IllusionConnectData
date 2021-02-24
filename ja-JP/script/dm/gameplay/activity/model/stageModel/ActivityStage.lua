@@ -18,6 +18,12 @@ ActivityStage:has("_config", {
 ActivityStage:has("_owner", {
 	is = "rw"
 })
+ActivityStage:has("_index2Points", {
+	is = "rw"
+})
+ActivityStage:has("_id2Points", {
+	is = "rw"
+})
 
 local StageBoxState = {
 	kCannotReceive = -1,

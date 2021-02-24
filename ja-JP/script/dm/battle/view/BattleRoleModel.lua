@@ -165,6 +165,12 @@ BattleRoleModel:has("_modelScale", {
 BattleRoleModel:has("_configId", {
 	is = "rw"
 })
+BattleRoleModel:has("_isSummond", {
+	is = "rw"
+})
+BattleRoleModel:has("_side", {
+	is = "rw"
+})
 
 function BattleRoleModel:initialize(context)
 	super.initialize(self)

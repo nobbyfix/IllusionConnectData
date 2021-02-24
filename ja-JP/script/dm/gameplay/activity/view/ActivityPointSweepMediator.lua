@@ -154,7 +154,19 @@ function ActivityPointSweepMediator:refreshView()
 	local hasItemNum = self:getDevelopSystem():getBagSystem():getItemCount(self._itemId)
 
 	for index, rewards in ipairs(self._sweepData.data.rewardList) do
+		local extrarewards = rewards.heroExtraReward
 		local allReward = table.deepcopy(rewards)
+
+		for k, v in pairs(extrarewards or {}) do
+			for _k, _v in pairs(allReward.itemRewards) do
+				if _v.id == v.id then
+					allReward.itemRewards[_k].amount = _v.amount + v.amount
+
+					break
+				end
+			end
+		end
+
 		local sweepLayout = ccui.Layout:create()
 		local itemView = cc.CSLoader:createNode("asset/ui/BlockSweepItemNode.csb")
 		local contentLayout = itemView:getChildByFullName("content")

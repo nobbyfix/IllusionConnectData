@@ -98,6 +98,11 @@ function HeroSystem:initialize(developSystem)
 	self:initCombatToCostRate()
 end
 
+function HeroSystem:dispose()
+	self:stopTimers()
+	super.dispose(self)
+end
+
 function HeroSystem:initCombatToCostRate()
 	self._combatToCostRate = {}
 	local rate = ConfigReader:getDataTable("HeroCostAttr")
@@ -327,23 +332,106 @@ function HeroSystem:checkHeroCanComp(heroId)
 end
 
 function HeroSystem:getAllHeroConfigIds()
-	if not self._heroIds then
-		self._heroIds = {}
-		local heroIdList = ConfigReader:getKeysOfTable("HeroBase")
+	if not self._heroTimeInfo then
+		self:initHeroTimeType()
+	end
 
-		for _, heroId in pairs(heroIdList) do
-			if heroId ~= "$" then
-				local config = ConfigReader:getRecordById("HeroBase", heroId)
-				local hero = self:getHeroById(heroId)
+	self._heroIds = {}
+	local heroIdList = ConfigReader:getKeysOfTable("HeroBase")
 
-				if hero or config.IfHidden == 1 then
-					self._heroIds[#self._heroIds + 1] = heroId
-				end
+	for _, heroId in pairs(heroIdList) do
+		if heroId ~= "$" then
+			local config = ConfigReader:getRecordById("HeroBase", heroId)
+			local hero = self:getHeroById(heroId)
+
+			if hero or config.IfHidden == 1 and self._heroTimeInfo[heroId] == nil then
+				self._heroIds[#self._heroIds + 1] = heroId
 			end
 		end
 	end
 
 	return self._heroIds
+end
+
+function HeroSystem:initHeroTimeType()
+	local gameServerAgent = self:getInjector():getInstance("GameServerAgent")
+
+	if not self._heroTimeInfo then
+		local curTime = gameServerAgent:remoteTimestamp()
+		self._heroTimeInfo = {}
+		local heroIdList = ConfigReader:getKeysOfTable("HeroBase")
+
+		for _, heroId in pairs(heroIdList) do
+			if heroId ~= "$" then
+				local config = ConfigReader:getRecordById("HeroBase", heroId)
+
+				if config.IfHidden == 1 then
+					local start = self:getTimeType(config)
+					local _, _, y, mon, d, h, m, s = string.find(start, "(%d+)-(%d+)-(%d+) (%d+):(%d+):(%d+)")
+					local table = {
+						year = y,
+						month = mon,
+						day = d,
+						hour = h,
+						min = m,
+						sec = s
+					}
+					local mills = TimeUtil:timeByRemoteDate(table)
+
+					if curTime < mills then
+						self._heroTimeInfo[heroId] = mills
+					end
+				end
+			end
+		end
+	end
+
+	if next(self._heroTimeInfo) then
+		local function checkTimeFunc()
+			local ret = false
+
+			for k, v in pairs(self._heroTimeInfo) do
+				local curTime = gameServerAgent:remoteTimestamp()
+				local remainTime = curTime - v
+
+				if remainTime >= 0 then
+					self._heroTimeInfo[k] = nil
+					ret = true
+				end
+			end
+
+			if ret then
+				self:syncHeroShowIds()
+				self:dispatch(Event:new(EVT_HEROES_SYNC_SHOW))
+
+				if not next(self._heroTimeInfo) then
+					self:stopTimers()
+
+					return
+				end
+			end
+		end
+
+		self._timer = LuaScheduler:getInstance():schedule(checkTimeFunc, 1, false)
+	end
+end
+
+function HeroSystem:getTimeType(config)
+	if config.IfHidden == 1 then
+		assert(config.TimeType and config.TimeType ~= "", config.Id .. " TimeType error")
+
+		return config.TimeType
+	end
+
+	return nil
+end
+
+function HeroSystem:stopTimers()
+	if self._timer then
+		self._timer:stop()
+
+		self._timer = nil
+	end
 end
 
 function HeroSystem:getNextLvlAddExp(heroId, level)
@@ -2464,4 +2552,23 @@ function HeroSystem:requestHeroAwake(heroId, items, callFunc)
 			callFunc(response)
 		end
 	end)
+end
+
+function HeroSystem:setAwakeHeroFragIdAndDebrisCostCount(heroID, count)
+	local heroPrototype = PrototypeFactory:getInstance():getHeroPrototype(heroID)
+	self._awakeHeroFragId = heroPrototype:getConfig().ItemId
+	self._awakeDebrisCostCount = count
+end
+
+function HeroSystem:getAwakeHeroFragIdAndDebrisCostCount()
+	if self._awakeDebrisCostCount and self._awakeHeroFragId then
+		return self._awakeHeroFragId, self._awakeDebrisCostCount
+	end
+
+	return "", 0
+end
+
+function HeroSystem:cleanAwakeHeroFragIdAndDebrisCostCount()
+	self._awakeDebrisCostCount = 0
+	self._awakeHeroFragId = ""
 end

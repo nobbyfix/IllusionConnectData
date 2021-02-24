@@ -2671,6 +2671,108 @@
         "Type": "Maze",
         "WaitingTime": 1000
     },
+    "Loading_RTPK_1": {
+        "Background": {
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg"
+            ],
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ]
+        },
+        "Content": {
+            "img": [
+                "LoadingTips_PVE001",
+                "LoadingTips_PVE002",
+                "LoadingTips_PVE003",
+                "LoadingTips_PVE004",
+                "LoadingTips_PVE005",
+                "LoadingTips_PVE006"
+            ],
+            "quanzhong": [
+                1000,
+                1000,
+                1000,
+                1000,
+                1000,
+                1000
+            ]
+        },
+        "FirstLoading": 1,
+        "Type": "RTPK",
+        "WaitingTime": 1000
+    },
+    "Loading_RTPK_2": {
+        "Background": {
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg"
+            ],
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ]
+        },
+        "Content": {
+            "img": [
+                "LoadingTips_PVE001",
+                "LoadingTips_PVE002",
+                "LoadingTips_PVE003",
+                "LoadingTips_PVE004",
+                "LoadingTips_PVE005",
+                "LoadingTips_PVE006"
+            ],
+            "quanzhong": [
+                1000,
+                1000,
+                1000,
+                1000,
+                1000,
+                1000
+            ]
+        },
+        "FirstLoading": 0,
+        "Type": "RTPK",
+        "WaitingTime": 1000
+    },
     "Loading_StageCrystal001": {
         "Background": {
             "img": [

@@ -92,7 +92,7 @@ function ActivityPointDetailMediator:enterWithData(data)
 	self._point:setIsDailyFirstEnter(false)
 
 	local function callFunc(sender, eventType)
-		self._activitySystem:enterTeam(self._activityId, self._model, self._pointId)
+		self:enterTeam()
 	end
 
 	mapButtonHandlerClick(nil, self._teamPanel, {
@@ -488,6 +488,8 @@ function ActivityPointDetailMediator:setupView()
 	local ui = self._model:getUI()
 	local dropListView = self._dropPanel:getChildByFullName("dropListView")
 
+	self._dropPanel:setVisible(#rewards > 0)
+
 	if rewards then
 		local size = cc.size(69, 69)
 
@@ -820,6 +822,12 @@ function ActivityPointDetailMediator:onClickChallenge()
 end
 
 function ActivityPointDetailMediator:onChallenge()
+	if self:isNpc() then
+		self:enterTeam()
+
+		return
+	end
+
 	if self._enterBattle then
 		return
 	end
@@ -994,4 +1002,23 @@ function ActivityPointDetailMediator:onRequsetSwip(times)
 			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
 		}, data))
 	end)
+end
+
+function ActivityPointDetailMediator:isNpc()
+	local enemy = self._point:getAssistEnemy()
+
+	if #enemy > 0 then
+		return true
+	end
+
+	return false
+end
+
+function ActivityPointDetailMediator:enterTeam()
+	self._activitySystem:enterTeam(self._activityId, self._model, {
+		type = litTypeMap[self._parent._stageType],
+		mapId = self._mapId,
+		pointId = self._pointId,
+		parent = self
+	})
 end

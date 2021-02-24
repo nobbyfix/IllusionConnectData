@@ -54,6 +54,7 @@ function HeroStrengthAwakenMediator:initialize()
 end
 
 function HeroStrengthAwakenMediator:dispose()
+	self._heroSystem:cleanAwakeHeroFragIdAndDebrisCostCount()
 	super.dispose(self)
 end
 
@@ -235,6 +236,7 @@ function HeroStrengthAwakenMediator:refreshData(heroId)
 	self._heroAwakeFinished = self._heroData:heroAwaked()
 
 	self._heroSystem:resetHeroStarUpItem()
+	self._heroSystem:cleanAwakeHeroFragIdAndDebrisCostCount()
 end
 
 function HeroStrengthAwakenMediator:refreshAllView(hideAnim)
@@ -479,6 +481,9 @@ function HeroStrengthAwakenMediator:refreshStarUpCostPanel()
 		local hasDebrisNum = self._heroSystem:getHeroDebrisCount(self._heroId)
 		local needDebrisNum = heroPrototype:getStarCostFragByStar(self._heroData:getNextStarId(true))
 		self._debrisEngouh = needDebrisNum <= hasDebrisNum
+
+		self._heroSystem:setAwakeHeroFragIdAndDebrisCostCount(self._heroId, needDebrisNum)
+
 		local icon = IconFactory:createIcon({
 			id = self._heroData:getFragId()
 		}, {

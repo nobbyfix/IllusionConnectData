@@ -50,7 +50,8 @@ function SystemKeeper:isUnlock(sysName, info)
 		Stage = blockStr,
 		num = storyInfoTab.mapIndex,
 		Name = storyInfoTab.pointName,
-		uClubLevel = condition.CLUBLEVEL
+		uClubLevel = condition.CLUBLEVEL,
+		serverDay = condition.SERVER
 	})
 
 	return isOpen, lockTip, unLockLevel
@@ -101,7 +102,8 @@ function SystemKeeper:isUnlockByCondition(condition, info)
 		uLevel = condition.LEVEL,
 		Stage = blockStr,
 		num = storyInfoTab.mapIndex,
-		Name = storyInfoTab.pointName
+		Name = storyInfoTab.pointName,
+		serverDay = condition.SERVER
 	})
 
 	return isOpen, lockTip, unLockLevel
@@ -148,6 +150,15 @@ function SystemKeeper:isConditionReached(condition, info)
 		local pointId = info and info.pointId or condition.STORY
 		local openState = self:checkStoryPointLock(pointId)
 		isOpen = openState
+	end
+
+	if condition.SERVER then
+		local developSystem = self:getInjector():getInstance(DevelopSystem)
+		local openServerDay = developSystem:getServerOpenDay()
+
+		if openServerDay < condition.SERVER then
+			isOpen = false
+		end
 	end
 
 	return isOpen

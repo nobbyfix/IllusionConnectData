@@ -116,6 +116,8 @@ function UnitTLInterpreter:act_SpawnUnit(action, args)
 	roleDataModel:setAwakenLevel(args.awakenLevel or 0)
 	roleDataModel:setModelScale(args.modelScale)
 	roleDataModel:setConfigId(args.cid)
+	roleDataModel:setIsSummond(args.isSummoned)
+	roleDataModel:setSide(args.side)
 
 	local pos = self._battleGround:relPositionFor(isLeft, posInArr)
 	local role = BattleRoleObject:new(id, roleDataModel, self._context)
@@ -559,6 +561,7 @@ end
 function UnitTLInterpreter:act_Perform(action, args, mode)
 	local actId = args.act
 	local animation = args.anim
+	local autoStand = args.autoStand
 
 	self:stopRunningPerform(actId)
 
@@ -580,7 +583,7 @@ function UnitTLInterpreter:act_Perform(action, args, mode)
 			self._unit:goBack()
 			self._unit:clearSkillEffect(actId)
 			self._unit:clearSkillMovie(actId)
-		else
+		elseif autoStand then
 			self._unit:switchState("stand", {
 				loop = -1
 			})
@@ -1071,13 +1074,25 @@ end
 function UnitTLInterpreter:act_GroundEft(action, args, mode)
 	local act = args.act
 	local id = args.id
+	local inSupering = args.inSupering
 	local config = ConfigReader:getRecordById("BattleGroundEffect", tostring(id))
 	local skillAction = self._context:getSkillAction(act)
 
-	if config and skillAction and skillAction:isInSupering() then
+	if config and (skillAction and skillAction:isInSupering() or inSupering == false) then
 		local mainMediator = self._context:getValue("BattleMainMediator")
+		local extra = nil
 
-		mainMediator:playGroundEffect(config.Path, {}, config.Anim, config.Zoom, act)
+		if config.Order and config.Order > 0 then
+			extra = {
+				opacity = 255,
+				zorder = config.Order,
+				duration = args.duration,
+				unit = self._unit,
+				Music = config.Music
+			}
+		end
+
+		mainMediator:playGroundEffect(config.Path, {}, config.Anim, config.Zoom, act, extra)
 	end
 end
 

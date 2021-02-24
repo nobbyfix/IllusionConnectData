@@ -890,7 +890,7 @@ all.Skill_YBYa_Redfox_Passive_Death = {
 			entry = prototype.main
 		})
 		this.main = global["[duration]"](this, {
-			667
+			120
 		}, main)
 
 		return this
@@ -910,9 +910,6 @@ all.Skill_YBYa_Redfox_Passive_Death = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-
-			global.Perform(_env, _env.ACTOR, global.Animation(_env, "die"))
-
 			_env.units = global.Slice(_env, global.SortBy(_env, global.EnemyUnits(_env), "<", global.UnitPropGetter(_env, "hpRatio")), 1, 1)
 
 			if _env.units[1] then
@@ -922,7 +919,7 @@ all.Skill_YBYa_Redfox_Passive_Death = {
 			end
 		end)
 		exec["@time"]({
-			500
+			100
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
@@ -949,14 +946,6 @@ all.Skill_YBYa_Redfox_Passive_Death = {
 					})
 				end
 			end
-		end)
-		exec["@time"]({
-			660
-		}, _env, function (_env)
-			local this = _env.this
-			local global = _env.global
-
-			global.Kick(_env, _env.ACTOR)
 		end)
 
 		return _env

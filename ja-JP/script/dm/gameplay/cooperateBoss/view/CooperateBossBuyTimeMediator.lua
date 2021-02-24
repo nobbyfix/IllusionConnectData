@@ -3,6 +3,9 @@ CooperateBossBuyTimeMediator = class("CooperateBossBuyTimeMediator", DmPopupView
 CooperateBossBuyTimeMediator:has("_cooperateBossSystem", {
 	is = "r"
 }):injectWith("CooperateBossSystem")
+CooperateBossBuyTimeMediator:has("_shopSystem", {
+	is = "r"
+}):injectWith("ShopSystem")
 CooperateBossBuyTimeMediator:has("_bagSystem", {
 	is = "r"
 }):injectWith("BagSystem")
@@ -114,9 +117,34 @@ function CooperateBossBuyTimeMediator:onBuyClicked()
 	if canBuy then
 		self._cooperateBossSystem:requestBuyFightTime()
 	else
-		self:dispatch(ShowTipEvent({
-			tip = Strings:get("CooperateBoss_PopUp_UI04")
-		}))
+		local outSelf = self
+		local delegate = {
+			willClose = function (self, popupMediator, data)
+				if data.response == "ok" then
+					outSelf._shopSystem:tryEnter({
+						shopId = "Shop_Mall"
+					})
+				elseif data.response == "cancel" then
+					outSelf:close()
+				elseif data.response == "close" then
+					-- Nothing
+				end
+			end
+		}
+		local data = {
+			title1 = "Tips",
+			title = Strings:get("Tip_Remind"),
+			content = Strings:get("CooperateBoss_DimondTip"),
+			sureBtn = {},
+			cancelBtn = {}
+		}
+		local view = self:getInjector():getInstance("AlertView")
+
+		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+		}, data, delegate))
+
+		return
 	end
 end
 

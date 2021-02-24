@@ -620,6 +620,95 @@
         ],
         "Type": "NORMAL"
     },
+    "CollapsedE01": {
+        "BGM": "Mus_Story_Collapsed",
+        "Background": "Collapsed_Scene01",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_CollapsedAE01_Name",
+        "StarBoxReward": {
+            "10": "CollapsedE01BOX01",
+            "20": "CollapsedE01BOX02",
+            "30": "CollapsedE01BOX03"
+        },
+        "SubPoint": [
+            "CollapsedE01S01",
+            "CollapsedE01S02",
+            "CollapsedE01S03",
+            "CollapsedE01S04",
+            "CollapsedE01S05",
+            "CollapsedE01S06",
+            "CollapsedE01S07",
+            "CollapsedE01S08",
+            "CollapsedE01S09",
+            "CollapsedE01S10",
+            "CollapsedE01S11",
+            "CollapsedE01S12"
+        ],
+        "SubStoryPoint": [
+            "CollapsedS01E01",
+            "CollapsedS01E02",
+            "CollapsedS01E03"
+        ],
+        "Type": "ELITE"
+    },
+    "CollapsedM01": {
+        "BGM": "Mus_Story_Collapsed",
+        "Background": "Collapsed_Scene01",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_CollapsedAM01_Name",
+        "StarBoxReward": {
+            "10": "CollapsedM01BOX01",
+            "20": "CollapsedM01BOX02",
+            "30": "CollapsedM01BOX03"
+        },
+        "SubPoint": [
+            "CollapsedM01S01",
+            "CollapsedM01S02",
+            "CollapsedM01S03",
+            "CollapsedM01S04",
+            "CollapsedM01S05",
+            "CollapsedM01S06",
+            "CollapsedM01S07",
+            "CollapsedM01S08",
+            "CollapsedM01S09",
+            "CollapsedM01S10",
+            "CollapsedM01S11",
+            "CollapsedM01S12"
+        ],
+        "SubStoryPoint": [
+            "CollapsedS01S01",
+            "CollapsedS01S02",
+            "CollapsedS01S03",
+            "CollapsedS01S04"
+        ],
+        "Type": "NORMAL"
+    },
+    "CollapsedN01": {
+        "BGM": "Mus_Story_Collapsed",
+        "Background": "Collapsed_Scene02",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_CollapsedAE01_Name",
+        "StarBoxReward": {
+            "10": "CollapsedN01BOX02",
+            "15": "CollapsedN01BOX03",
+            "5": "CollapsedN01BOX01"
+        },
+        "SubPoint": [
+            "CollapsedN01S01",
+            "CollapsedN01S02",
+            "CollapsedN01S03",
+            "CollapsedN01S04",
+            "CollapsedN01S05",
+            "CollapsedN01S06"
+        ],
+        "SubStoryPoint": [
+            "CollapsedS01N01"
+        ],
+        "Type": "NORMAL"
+    },
     "Snowflack_Map_E01": {
         "BGM": "Mus_Story_Mystery_2",
         "Background": "Bg_Copy_Snowflake_1",

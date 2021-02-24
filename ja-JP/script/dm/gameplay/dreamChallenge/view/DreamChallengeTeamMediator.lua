@@ -1196,7 +1196,9 @@ function DreamChallengeTeamMediator:initTeamHero(node, info)
 				image:offset(0, -5)
 			end
 
-			local isActive = self._stageSystem:checkIsKeySkillActive(condition, self._teamPets)
+			local isActive = self._stageSystem:checkIsKeySkillActive(condition, self._teamPets, {
+				masterId = self._curMasterId
+			})
 
 			skillPanel:setGray(not isActive)
 		end
@@ -1303,6 +1305,7 @@ function DreamChallengeTeamMediator:changeMasterId(event)
 
 	self:refreshMasterInfo()
 	self:checkMasterSkillActive()
+	self:refreshPetNode()
 end
 
 function DreamChallengeTeamMediator:refreshMasterInfo()

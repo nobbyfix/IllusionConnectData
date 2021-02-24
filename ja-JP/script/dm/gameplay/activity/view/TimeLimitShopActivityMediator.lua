@@ -110,18 +110,30 @@ function TimeLimitShopActivityMediator:setPackageItemInfo(cell, data)
 	money_icon:removeAllChildren()
 
 	local moneyText = panel:getChildByFullName("money_layout.money")
+	local discountPanel = panel:getChildByFullName("costOffTagPanel")
+	local discountText = panel:getChildByFullName("costOffTagPanel.number")
 	local leaveTimesText = panel:getChildByFullName("info_panel.duihuan_text")
+	local priceText = panel:getChildByFullName("money_layout.price")
+
+	priceText:removeAllChildren()
+
 	local mask = cell:getChildByFullName("mask")
 	local bg_buy = panel:getChildByName("bg_buy")
 	local bg = panel:getChildByName("bg")
+	local xian = panel:getChildByFullName("money_layout.xian")
+	local moneyLauout = panel:getChildByName("money_layout")
+
+	moneyLauout:setPositionX(230)
+
 	local isFree = data:getIsFree()
 
 	nameText:setString(data:getName())
+	nameText:setPosition(cc.p(129, 320))
 
 	if isFree == 1 then
 		moneyText:setString(Strings:get("Recruit_Free"))
 		moneyText:setAnchorPoint(0.5, 0.5)
-		moneyText:setPositionX(100)
+		moneyText:setPosition(cc.p(101, 30))
 	elseif isFree == 2 then
 		local goldIcon = IconFactory:createResourcePic({
 			id = data:getGameCoin().type
@@ -131,21 +143,46 @@ function TimeLimitShopActivityMediator:setPackageItemInfo(cell, data)
 		moneyText:setString(tostring(data:getGameCoin().amount))
 		moneyText:setAnchorPoint(0, 0.5)
 		money_icon:setPositionX(67)
-		moneyText:setPositionX(85)
+		discountPanel:setVisible(true)
+		discountText:setString(tostring(data:getCostOff() * 100) .. "%")
+		priceText:setVisible(true)
+		priceText:setString(tostring(data:getPrice()))
+		xian:setVisible(true)
 
-		local size = moneyText:getContentSize()
+		local goldIcon2 = IconFactory:createResourcePic({
+			id = data:getGameCoin().type
+		})
 
-		if size.width > 70 then
-			money_icon:setPositionX(67 - (size.width - 70) * 0.5)
-			moneyText:setPositionX(85 - (size.width - 70) * 0.5)
+		goldIcon2:addTo(priceText):center(priceText:getContentSize()):offset(-25, 0)
+		goldIcon2:setScale(0.7)
+
+		if data:getPrice() == 0 then
+			priceText:setVisible(false)
+			xian:setVisible(false)
+			discountPanel:setVisible(false)
 		end
 	else
 		local symbol, price = data:getPaySymbolAndPrice(data:getPayId())
 
 		moneyText:setString(symbol .. price)
 		moneyText:setAnchorPoint(0.5, 0.5)
-		moneyText:setPositionX(100)
+		moneyText:setPosition(cc.p(101, 30))
+		discountText:setString(tostring(data:getCostOff() * 100) .. "%")
+		discountPanel:setVisible(true)
+		priceText:setVisible(true)
+		priceText:setString(symbol .. tostring(data:getPrice()))
+		xian:setVisible(true)
+
+		if data:getPrice() == 0 then
+			priceText:setVisible(false)
+			xian:setVisible(false)
+			discountPanel:setVisible(false)
+		end
 	end
+
+	discountPanel:setVisible(false)
+	priceText:setVisible(false)
+	xian:setVisible(false)
 
 	local rewardId = data:getItem()
 	local rewards = RewardSystem:getRewardsById(rewardId)
@@ -224,11 +261,13 @@ function TimeLimitShopActivityMediator:setPackageItemInfo(cell, data)
 		bg:setVisible(false)
 		bg_buy:setVisible(true)
 		mask:setVisible(true)
+		cell:setTouchEnabled(false)
 		moneyText:enableShadow(cc.c4b(49, 49, 49, 255), cc.size(0, -3), 3)
 	else
 		bg:setVisible(true)
 		bg_buy:setVisible(false)
 		mask:setVisible(false)
+		cell:setTouchEnabled(true)
 	end
 end
 

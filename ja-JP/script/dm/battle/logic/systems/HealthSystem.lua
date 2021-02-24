@@ -301,7 +301,7 @@ function HealthSystem:performHealthReduce(target, damage, workId, actor)
 
 	local curHpRatio = targetHpComp:getHpRatio()
 
-	if floor(prevHpRatio * 100) ~= floor(curHpRatio * 100) then
+	if floor(prevHpRatio * 100) ~= floor(curHpRatio * 100) or curHpRatio <= 0 then
 		self._skillSystem:activateGlobalTrigger("UNIT_HPCHANGE", {
 			how = "Reduce",
 			unit = target,
@@ -376,6 +376,7 @@ end
 function HealthSystem:performReflection(actor, target, rawDamage, workId)
 	local targetAttrComp = target:getComponent("Numeric")
 	local reflection = targetAttrComp and targetAttrComp:getAttrValue(kAttrReflection) or 0
+	local atkvalue = targetAttrComp and targetAttrComp:getAttrValue(kAttrAttack) or 0
 
 	if reflection <= 0 then
 		return nil
@@ -387,7 +388,9 @@ function HealthSystem:performReflection(actor, target, rawDamage, workId)
 		return nil
 	end
 
+	local reflection_UpLimit = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Reflection_UpLimit", "content")
 	local reflectedValue = max(floor(rawDamage * reflection), 1)
+	local reflectedValue = min(reflectedValue, atkvalue * (reflection_UpLimit or 1))
 	local result = {
 		raw = reflectedValue
 	}

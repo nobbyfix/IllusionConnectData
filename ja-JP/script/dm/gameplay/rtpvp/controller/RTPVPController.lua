@@ -45,10 +45,11 @@ function RTPVPController:_sendEvent(evt, data)
 	self:dispatch(Event:new(evt, data))
 end
 
-function RTPVPController:enterRTPVP(battleServerIP, battleServerPort, roomId, battleData, type)
+function RTPVPController:enterRTPVP(battleServerIP, battleServerPort, roomId, battleData, type, seasonId)
 	self._roomId = roomId
 	self._battleData = battleData
 	self._type = type
+	self._seasonId = seasonId
 
 	self._rtpvpService:connect(battleServerIP, battleServerPort)
 end
@@ -78,14 +79,17 @@ function RTPVPController:sendEmoji(data)
 end
 
 function RTPVPController:connectSucc()
-	self._rtpvpService:join(self._battleData, self._roomId, self._type)
+	self._rtpvpService:join(self._battleData, self._roomId, self._type, self._seasonId)
 end
 
 function RTPVPController:fetchBattleData(data, extra)
+	extra = extra or {}
 	local battleSession = RTPVPBattleSession:new({
 		playerData = data.playerA,
 		enemyData = data.playerB,
-		logicSeed = data.logicSeed
+		logicSeed = data.logicSeed,
+		battleType = extra.battleType,
+		seasonId = extra.seasonId
 	})
 
 	battleSession:buildAll()

@@ -29,7 +29,7 @@ function RankList:hasData()
 end
 
 function RankList:synchronize(data, record, lastSyncTime)
-	if data and record then
+	if data and next(data) and record then
 		if type(data.pr) == "table" then
 			self._selfRecord = record:new()
 

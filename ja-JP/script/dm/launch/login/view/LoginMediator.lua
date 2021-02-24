@@ -769,6 +769,16 @@ function LoginMediator:buildLoadingTask()
 
 			settingSystem:autoDownloadPackage()
 		end, 1)
+		DO_ACTION(function ()
+			local systemKeeper = self:getInjector():getInstance("SystemKeeper")
+			local unlock, tips = systemKeeper:isUnlock("RTPK")
+
+			if unlock then
+				local RTPKSystem = self:getInjector():getInstance(RTPKSystem)
+
+				RTPKSystem:requestRTPKInfo(nil, false)
+			end
+		end, 1)
 		END()
 	end)
 

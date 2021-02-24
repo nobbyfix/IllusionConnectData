@@ -1044,7 +1044,7 @@ function ActivityBlockMapWsjMediator:enterCommonPoint(pointId)
 	local curTime = self._gameServerAgent:remoteTimestamp()
 
 	if openTime and openTime.start then
-		local startTime = TimeUtil:formatStrToTImestamp(openTime.start)
+		local startTime = TimeUtil:formatStrToRemoteTImestamp(openTime.start)
 
 		if curTime < startTime then
 			local date = TimeUtil:localDate("%Y-%m-%d", startTime)

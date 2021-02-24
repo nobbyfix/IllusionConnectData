@@ -540,7 +540,9 @@ function CommonTeamMediator:checkMasterSkillActive()
 		newSkillNode:setPosition(cc.p(posX, posY))
 
 		local conditions = skill:getActiveCondition()
-		local isActive = self._stageSystem:checkIsKeySkillActive(conditions, self._teamPets)
+		local isActive = self._stageSystem:checkIsKeySkillActive(conditions, self._teamPets, {
+			masterId = self._curMasterId
+		})
 
 		newSkillNode:setGray(not isActive)
 

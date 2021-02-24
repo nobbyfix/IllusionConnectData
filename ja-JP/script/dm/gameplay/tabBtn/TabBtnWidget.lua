@@ -256,6 +256,7 @@ function TabBtnWidget:_bindBtnText(btn, config)
 	local textOffsety = config.textOffsety or 18
 	local textWidth = config.textWidth or self._cellWidth * 0.68
 	local textHeight = config.textHeight or self._cellHeight * 0.65
+	local noWrap = config.noWrap or false
 	local darkText = cc.Label:createWithTTF(tabText, fontName, fontSize)
 
 	darkText:setAnchorPoint(0.5, 0.5)
@@ -269,7 +270,13 @@ function TabBtnWidget:_bindBtnText(btn, config)
 	end
 
 	darkText:setOverflow(cc.LabelOverflow.SHRINK)
-	darkText:setDimensions(textWidth, textHeight)
+
+	if noWrap then
+		darkText:setContentSize(self._cellWidth * 0.68, self._cellHeight * 0.65)
+	else
+		darkText:setDimensions(textWidth, textHeight)
+	end
+
 	darkText:setAlignment(cc.TEXT_ALIGNMENT_CENTER, cc.TEXT_ALIGNMENT_CENTER)
 
 	local lightText = cc.Label:createWithTTF(tabText, fontName, fontSize)
@@ -285,7 +292,13 @@ function TabBtnWidget:_bindBtnText(btn, config)
 	end
 
 	lightText:setOverflow(cc.LabelOverflow.SHRINK)
-	lightText:setDimensions(textWidth, textHeight)
+
+	if noWrap then
+		lightText:setContentSize(self._cellWidth * 0.68, self._cellHeight * 0.65)
+	else
+		lightText:setDimensions(textWidth, textHeight)
+	end
+
 	lightText:setAlignment(cc.TEXT_ALIGNMENT_CENTER, cc.TEXT_ALIGNMENT_CENTER)
 
 	local darkTextTranslate = cc.Label:createWithTTF(tabTextTranslate, TTF_FONT_FZYH_M, fontEnSize)
@@ -319,7 +332,7 @@ function TabBtnWidget:_bindBtnText(btn, config)
 			lightImg = cc.Sprite:createWithSpriteFrameName(tabImage[2])
 		end
 
-		assert(lightImg ~= nil, "error:lightImg=nil" .. tabImage[2])
+		assert(lightImg ~= nil, "TabImage LightImg: " .. tabImage[2] .. " is nil")
 		lightImg:setAnchorPoint(0.5, 0.5)
 		lightImg:addTo(btnNode.lightNode):setScale(self._tabImageScale)
 	else
@@ -364,6 +377,7 @@ function TabBtnWidget:_bindBtnText(btn, config)
 		darkImg = cc.Sprite:createWithSpriteFrameName(tabImage[1])
 	end
 
+	assert(darkImg ~= nil, "TabImage DarkImg: " .. tabImage[1] .. " is nil")
 	darkImg:setAnchorPoint(0.5, 0.5)
 	darkImg:addTo(btnNode.darkNode):setScale(self._tabImageScale)
 

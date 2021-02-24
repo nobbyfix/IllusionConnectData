@@ -319,6 +319,7 @@ function ChatMainMediator:setupListView()
 	end
 
 	self._unopenChannelTip:setVisible(false)
+	self:refreshListViewContent()
 
 	local channel = self:getChat():getChannel(channelId)
 
@@ -346,6 +347,38 @@ function ChatMainMediator:setupListView()
 	self._listView:onScroll(function (event)
 		self:onListViewScroll(event)
 	end)
+end
+
+function ChatMainMediator:refreshListViewContent()
+	local channelId = TabTypeToChannelId[self._curTabType]
+
+	if channelId == nil then
+		return
+	end
+
+	local channel = self:getChat():getChannel(channelId)
+
+	if channel == nil then
+		return
+	end
+
+	local messages = channel:getMessages()
+
+	if channelId == ChannelId.kWorld and #messages == 0 then
+		self._unopenChannelTip:setVisible(true)
+
+		local tipText = self._unopenChannelTip:getChildByFullName("tip_text")
+
+		tipText:setString(Strings:get("CommonUI_NoMessage"))
+
+		local joinBtn = self._unopenChannelTip:getChildByFullName("join_btn")
+
+		joinBtn:setVisible(false)
+
+		return
+	end
+
+	self._unopenChannelTip:setVisible(false)
 end
 
 function ChatMainMediator:createChatMessageView(message)
@@ -520,6 +553,7 @@ function ChatMainMediator:refreshNewMessage(event)
 
 	channel:setNewMessageCnt(0)
 	self:refreshListViewCellVisible()
+	self:refreshListViewContent()
 end
 
 function ChatMainMediator:refreshUnreadTipView()

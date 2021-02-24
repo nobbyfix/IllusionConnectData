@@ -34,7 +34,7 @@ RTPVPDelegate:has("_finishCallback", {
 	is = "r"
 })
 
-function RTPVPDelegate:initialize(rid, battleData, simulator, finishCallback)
+function RTPVPDelegate:initialize(rid, battleData, simulator, finishCallback, roomId)
 	super.initialize(self)
 
 	self._battleSimulator = simulator
@@ -60,6 +60,7 @@ function RTPVPDelegate:initialize(rid, battleData, simulator, finishCallback)
 	self._playersData = battleData
 	self._battleRecorder = self._battleSimulator:getBattleRecorder()
 	self._finishCallback = finishCallback
+	self._roomId = roomId
 end
 
 function RTPVPDelegate:setupBattleEnvironment()
@@ -74,4 +75,8 @@ function RTPVPDelegate:onBattleFinished(sender, result)
 end
 
 function RTPVPDelegate:onBattleFinish(result)
+end
+
+function RTPVPDelegate:getRoomId()
+	return self._roomId
 end

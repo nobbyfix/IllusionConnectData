@@ -440,6 +440,13 @@
         "Type": "Activity",
         "TypeId": "ActivityBlock_Baking"
     },
+    "ActivityBannerCollapsed": {
+        "Img": "collapsed_txt_zjm_banner.png",
+        "Link": "view://ActivityBlockView&activityId=ActivityBlock_Collapsed",
+        "Sort": 3007,
+        "Type": "Activity",
+        "TypeId": "ActivityBlock_Collapsed"
+    },
     "ActivityBannerCooperateBoss": {
         "Img": "gongdou_img_banner.png",
         "Link": "view://ActivityView&id=CooperateBoss_Exchange_20200109",
@@ -523,6 +530,13 @@
         "Sort": 5001,
         "Type": "Activity",
         "TypeId": "DrawCard_1UP_FEMSi_Activity"
+    },
+    "ActivityBanner_1UP_FLYDe": {
+        "Img": "drawcard_banner_FLYDe.png",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_FLYDe",
+        "Sort": 3008,
+        "Type": "Activity",
+        "TypeId": "DrawCard_1UP_FLYDe_Activity"
     },
     "ActivityBanner_1UP_NFEr": {
         "Img": "drawcard_banner_nfer.png",
@@ -636,6 +650,27 @@
         "Type": "Activity",
         "TypeId": "DrawCard_1UP_20210203_3_2_Activity"
     },
+    "ActivityBanner_DrawCard_1UP_20210224_1_1_Activity": {
+        "Img": "drawcard_banner_PDLa.png",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_PDLa_20210224_1",
+        "Sort": 3004,
+        "Type": "Activity",
+        "TypeId": "DrawCard_1UP_20210224_1_1_Activity"
+    },
+    "ActivityBanner_DrawCard_1UP_20210224_1_Activity": {
+        "Img": "drawcard_banner_FLYDe.png",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_FLYDe_20210224",
+        "Sort": 3004,
+        "Type": "Activity",
+        "TypeId": "DrawCard_1UP_20210224_1_Activity"
+    },
+    "ActivityBanner_DrawCard_1UP_20210224_2_Activity": {
+        "Img": "drawcard_banner_KMLa.png",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_KMLa_20210224",
+        "Sort": 3005,
+        "Type": "Activity",
+        "TypeId": "DrawCard_1UP_20210224_2_Activity"
+    },
     "ActivityBanner_DrawCard_2UP_20201230_1_Activity": {
         "Img": "drawcard_banner_BBLMaMTZMEShi.png",
         "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_2UP_20201230_1",
@@ -691,5 +726,19 @@
         "Sort": 3007,
         "Type": "Activity",
         "TypeId": "DrawCard_2UP_20210203_2_Activity"
+    },
+    "ActivityBanner_DrawCard_2UP_20210224_1_Activity": {
+        "Img": "drawcard_banner_SLMenYXNMei.png",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_2UP_SLMenYXNMei_20210224",
+        "Sort": 3006,
+        "Type": "Activity",
+        "TypeId": "DrawCard_2UP_20210224_1_Activity"
+    },
+    "ActivityBanner_DrawCard_2UP_20210224_2_Activity": {
+        "Img": "drawcard_banner_MTZMEShiYSTLu.png",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_2UP_MTZMEShiYSTLu_20210224",
+        "Sort": 3007,
+        "Type": "Activity",
+        "TypeId": "DrawCard_2UP_20210224_2_Activity"
     }
 }

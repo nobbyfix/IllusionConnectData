@@ -1488,6 +1488,49 @@
         ],
         "zoom": 0.6
     },
+    "Decoration_15004": {
+        "ATK": "UR_Decoration_ATK_AD",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "UR_Decoration_DEF_AD",
+        "Desc": "Decoration_15004_Desc",
+        "HP": "",
+        "Icon": "ico_equip_memorybook",
+        "Name": "Decoration_15004_Name",
+        "Position": "Decoration",
+        "Profession": [
+            "Defense",
+            "Attack",
+            "Support",
+            "Summon",
+            "Aoe",
+            "Curse",
+            "Cure"
+        ],
+        "ProfessionDesc": "Decoration_ProfessionDesc",
+        "ProfessionType": 0,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "",
+        "Shine": "",
+        "Skill": "EquipSkill_Decoration_15004",
+        "Sort": 290000,
+        "StartEquipStarID": "Rareity15_DecorationStone1_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
     "Decoration_15005": {
         "ATK": "UR_Decoration_ATK_AH",
         "AttrEffect": "",
@@ -4051,49 +4094,6 @@
         "Skill": "EquipSkill_Tops_15004",
         "Sort": 290003,
         "StartEquipStarID": "Rareity15_Top1_1",
-        "URUPSkillLV": [
-            30,
-            40,
-            50,
-            60,
-            70,
-            80,
-            90,
-            100
-        ],
-        "zoom": 0.6
-    },
-    "Tops_15006": {
-        "ATK": "",
-        "AttrEffect": "",
-        "Coordinates": [
-            8,
-            8
-        ],
-        "DEF": "UR_Top_DEF",
-        "Desc": "Tops_15006_Desc",
-        "HP": "UR_Top_HP",
-        "Icon": "ico_equip_stardress",
-        "Name": "Tops_15006_Name",
-        "Position": "Tops",
-        "Profession": [
-            "Defense",
-            "Attack",
-            "Support",
-            "Summon",
-            "Aoe",
-            "Curse",
-            "Cure"
-        ],
-        "ProfessionDesc": "Decoration_ProfessionDesc",
-        "ProfessionType": 0,
-        "Rank": 280,
-        "Rareity": 15,
-        "SPEED": "",
-        "Shine": "",
-        "Skill": "EquipSkill_Tops_15006",
-        "Sort": 289999,
-        "StartEquipStarID": "Rareity15_Top3_1",
         "URUPSkillLV": [
             30,
             40,

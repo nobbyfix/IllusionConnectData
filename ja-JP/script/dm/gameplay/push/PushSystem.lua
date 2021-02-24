@@ -40,6 +40,7 @@ function PushSystem:listen()
 	self:listenClubApplyAgreeEnd()
 	self:listenCooperateBoss()
 	self:listenFriendStateChanged()
+	self:listenRTPK()
 end
 
 function PushSystem:listenLoginByOthers()
@@ -354,4 +355,10 @@ function PushSystem:listenFriendStateChanged()
 	self._pushService:listenFriendLogout(function (code, response)
 		self:dispatch(Event:new(EVT_FRIEND_LOGOUT))
 	end)
+end
+
+function PushSystem:listenRTPK()
+	local RTPKSystem = self:getInjector():getInstance(RTPKSystem)
+
+	RTPKSystem:listen()
 end

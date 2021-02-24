@@ -785,7 +785,7 @@
     },
     "IHF_DFQi_1": {
         "Isturn": 0,
-        "ResourceText": "Resource_Activity",
+        "ResourceText": "Source_Activity",
         "ResourceType": 0,
         "Text": "Source_Activity",
         "URL": ""
@@ -839,6 +839,13 @@
         "Text": "Source_HeroStory",
         "URL": "view://HeroStoryEnterView&viewType=push&heroId=DNTLuo"
     },
+    "IHF_FAll14": {
+        "Isturn": 1,
+        "ResourceText": "Resource_RTPK",
+        "ResourceType": "",
+        "Text": "Resource_FAll14",
+        "URL": "view://RTPKMainView"
+    },
     "IHF_FEMSi_1": {
         "Isturn": 0,
         "ResourceText": "Source_Activity",
@@ -852,6 +859,13 @@
         "ResourceType": 4,
         "Text": "Source_HeroStory",
         "URL": "view://HeroStoryEnterView&viewType=push&heroId=FEMSi"
+    },
+    "IHF_FLYDe_1": {
+        "Isturn": 0,
+        "ResourceText": "Source_Activity",
+        "ResourceType": 0,
+        "Text": "Source_Activity",
+        "URL": ""
     },
     "IHF_FTLEShi_1": {
         "Isturn": 1,
@@ -883,7 +897,7 @@
     },
     "IHF_GYCZi_1": {
         "Isturn": 0,
-        "ResourceText": "Resource_Activity",
+        "ResourceText": "Source_Activity",
         "ResourceType": 0,
         "Text": "Source_Activity",
         "URL": ""
@@ -1737,17 +1751,17 @@
     },
     "IHF_SYAi_1": {
         "Isturn": 0,
-        "ResourceText": "Resource_Activity",
+        "ResourceText": "Source_Activity",
         "ResourceType": 0,
         "Text": "Source_Activity",
         "URL": ""
     },
     "IHF_TJHDe_1": {
-        "Isturn": 1,
-        "ResourceText": "Resource_DrawCard",
-        "ResourceType": 1,
-        "Text": "Source_Gamble",
-        "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_Diamond_1"
+        "Isturn": 0,
+        "ResourceText": "Source_Activity",
+        "ResourceType": 0,
+        "Text": "Source_Activity",
+        "URL": ""
     },
     "IHF_TJHDe_2": {
         "Isturn": 1,
@@ -2353,7 +2367,7 @@
     },
     "IHF_YYing_1": {
         "Isturn": 0,
-        "ResourceText": "Resource_Activity",
+        "ResourceText": "Source_Activity",
         "ResourceType": 0,
         "Text": "Source_Activity",
         "URL": ""
@@ -8216,6 +8230,13 @@
         "ResourceType": 6,
         "Text": "Source_Club",
         "URL": "view://ClubView&viewType=push&tab=kTechnology"
+    },
+    "IR_CollapsedStamina": {
+        "Isturn": 0,
+        "ResourceText": "Source_IR_CollapsedStamina",
+        "ResourceType": 0,
+        "Text": "Source_IR_CollapsedStamina_Desc",
+        "URL": ""
     },
     "IR_Crusade": {
         "Isturn": 1,
