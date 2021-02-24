@@ -212,6 +212,58 @@ function getFileSize(path)
 	return size
 end
 
+function deleteExploreResouce()
+	local fileList = require("asset.exploreMap.ExploreMap")
+	local Sql = ""
+	local fileUtils = cc.FileUtils:getInstance()
+	local writablePath = fileUtils:getWritablePath()
+	local allKeys = {}
+
+	for k, v in pairs(fileList) do
+		allKeys[#allKeys + 1] = "asset/exploreMap/" .. k .. ".lua"
+	end
+
+	app.copyFile(writablePath .. "assets.db", writablePath .. "assets_temp.db")
+
+	Sql = string.format("DELETE FROM assets WHERE logic IN('%s');", table.concat(allKeys, "', '"))
+
+	app.getAssetsManager():mergeDbBySQLString(writablePath .. "assets_temp.db", Sql)
+	fileUtils:renameFile(writablePath .. "assets_temp.db", writablePath .. "assets.db")
+	print("sub exploremap resouce!!!!")
+end
+
+local target = cc.Application:getInstance():getTargetPlatform()
+
+if target == cc.PLATFORM_OS_ANDROID then
+	local current_v = app.getAssetsManager():getCurrentVersion()
+
+	print("android current_v" .. current_v)
+
+	if tonumber(current_v) > 8025 and tonumber(current_v) < 8095 then
+		print("android platform")
+
+		local LUA_EXCEPTION_FIXED = cc.UserDefault:getInstance():getBoolForKey("LUA_EXCEPTION_FIX", false)
+
+		print("android LUA_EXCEPTION_FIXED" .. tostring(LUA_EXCEPTION_FIXED))
+
+		if not LUA_EXCEPTION_FIXED then
+			cc.UserDefault:getInstance():setBoolForKey("LUA_EXCEPTION_FIX", true)
+			deleteExploreResouce()
+			require("dm.UpdateNoticPopup").new():alert({
+				title = "お知らせ",
+				okBtnDes = "確定",
+				msg = "「リソースが更新されました。ゲームを再起動してください。」",
+				callBack = function ()
+					print("exit game!!!")
+					cc.Director:getInstance():endToLua()
+				end
+			})
+
+			return
+		end
+	end
+end
+
 local destDBFilePath = writablePath .. "gameConfig.db"
 local PATCH_FOLDER = "patch"
 
