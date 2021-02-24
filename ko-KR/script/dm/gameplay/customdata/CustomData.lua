@@ -23,9 +23,12 @@ function CustomData:sync(data)
 		if #keyData == 1 then
 			prefixType = PrefixType.kGlobal
 			key = keyData[1]
-		else
+		elseif #keyData == 2 then
 			prefixType = keyData[1]
 			key = keyData[2]
+		elseif #keyData == 3 then
+			prefixType = keyData[1]
+			key = keyData[2] .. "#" .. keyData[3]
 		end
 
 		self:setValue(prefixType, key, value)

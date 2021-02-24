@@ -253,6 +253,7 @@ function TabBtnWidget:_bindBtnText(btn, config)
 	local unEnableOutline = config.unEnableOutline
 	local textOffsetx = config.textOffsetx or 5
 	local textOffsety = config.textOffsety or 18
+	local noWrap = config.noWrap or false
 	local darkText = cc.Label:createWithTTF(tabText, fontName, fontSize)
 
 	darkText:setAnchorPoint(0.5, 0.5)
@@ -266,7 +267,13 @@ function TabBtnWidget:_bindBtnText(btn, config)
 	end
 
 	darkText:setOverflow(cc.LabelOverflow.SHRINK)
-	darkText:setDimensions(self._cellWidth * 0.68, self._cellHeight * 0.65)
+
+	if noWrap then
+		darkText:setContentSize(self._cellWidth * 0.68, self._cellHeight * 0.65)
+	else
+		darkText:setDimensions(self._cellWidth * 0.68, self._cellHeight * 0.65)
+	end
+
 	darkText:setAlignment(cc.TEXT_ALIGNMENT_CENTER, cc.TEXT_ALIGNMENT_CENTER)
 
 	local lightText = cc.Label:createWithTTF(tabText, fontName, fontSize)
@@ -282,7 +289,13 @@ function TabBtnWidget:_bindBtnText(btn, config)
 	end
 
 	lightText:setOverflow(cc.LabelOverflow.SHRINK)
-	lightText:setDimensions(self._cellWidth * 0.68, self._cellHeight * 0.65)
+
+	if noWrap then
+		lightText:setContentSize(self._cellWidth * 0.68, self._cellHeight * 0.65)
+	else
+		lightText:setDimensions(self._cellWidth * 0.68, self._cellHeight * 0.65)
+	end
+
 	lightText:setAlignment(cc.TEXT_ALIGNMENT_CENTER, cc.TEXT_ALIGNMENT_CENTER)
 
 	local darkTextTranslate = cc.Label:createWithTTF(tabTextTranslate, TTF_FONT_FZYH_M, 16)
@@ -316,6 +329,7 @@ function TabBtnWidget:_bindBtnText(btn, config)
 			lightImg = cc.Sprite:createWithSpriteFrameName(tabImage[2])
 		end
 
+		assert(lightImg ~= nil, "TabImage LightImg: " .. tabImage[2] .. " is nil")
 		lightImg:setAnchorPoint(0.5, 0.5)
 		lightImg:addTo(btnNode.lightNode):setScale(self._tabImageScale)
 	else
@@ -360,6 +374,7 @@ function TabBtnWidget:_bindBtnText(btn, config)
 		darkImg = cc.Sprite:createWithSpriteFrameName(tabImage[1])
 	end
 
+	assert(darkImg ~= nil, "TabImage DarkImg: " .. tabImage[1] .. " is nil")
 	darkImg:setAnchorPoint(0.5, 0.5)
 	darkImg:addTo(btnNode.darkNode):setScale(self._tabImageScale)
 

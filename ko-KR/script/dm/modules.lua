@@ -729,6 +729,11 @@ local modules = {
 							res = "asset/ui/StrengthenAwakenSuccess.csb",
 							name = "HeroStrengthAwakenSuccessView",
 							mediator = "HeroStrengthAwakenSuccessMediator"
+						},
+						{
+							res = "asset/ui/HeroShowTranlate.csb",
+							name = "HeroGeneralFragmentView",
+							mediator = "HeroGeneralFragmentMeditor"
 						}
 					}
 				}
@@ -1869,14 +1874,34 @@ local modules = {
 							mediator = "ActivityBakingMainMediator"
 						},
 						{
-							res = "asset/ui/LoginActivity.csb",
+							res = "asset/ui/TimeShopActivity.csb",
+							name = "TimeLimitShopActivityView",
+							mediator = "TimeLimitShopActivityMediator"
+						},
+						{
+							res = "asset/ui/TimeShopActivityXige.csb",
+							name = "TimeLimitShopActivityXigeView",
+							mediator = "TimeLimitShopActivityMediator"
+						},
+						{
+							res = "asset/ui/TimeShopActivityValentine.csb",
+							name = "TimeLimitShopActivityValentineView",
+							mediator = "TimeLimitShopActivityMediator"
+						},
+						{
+							res = "asset/ui/ActivityLogin14Common.csb",
 							name = "ActivityLogin14CommonView",
 							mediator = "ActivityLogin14CommonMediator"
 						},
 						{
-							res = "asset/ui/TimeShopActivity.csb",
-							name = "TimeLimitShopActivityView",
-							mediator = "TimeLimitShopActivityMediator"
+							res = "asset/ui/ActivityCollapsedMain.csb",
+							name = "ActivityCollapsedMainView",
+							mediator = "ActivityCollapsedMainMediator"
+						},
+						{
+							res = "asset/ui/dreamChallengeBuffDetail.csb",
+							name = "ActivityNpcRoleDetailView",
+							mediator = "ActivityNpcRoleDetailMediator"
 						}
 					}
 				}
@@ -3548,6 +3573,11 @@ local modules = {
 							res = "asset/ui/RTPVPNetTips.csb",
 							name = "RTPVPNetTipsView",
 							mediator = "RTPVPNetTipsMediator"
+						},
+						{
+							node = "cc.Node",
+							name = "rtpvpRobotBattle",
+							mediator = "RTPVPRobotBattleMediator"
 						}
 					}
 				}
@@ -3817,6 +3847,68 @@ local modules = {
 							res = "asset/ui/CooperateBossTeam.csb",
 							name = "CooperateBossTeamView",
 							mediator = "CooperateBossTeamMediator"
+						}
+					}
+				}
+			},
+			{
+				name = "rtpk",
+				requires = {
+					"dm.gameplay.rtpk.controller.RTPKSystem",
+					"dm.gameplay.rtpk.service.RTPKService"
+				},
+				injections = {
+					singletons = {
+						"RTPKSystem"
+					},
+					classes = {
+						"RTPKService"
+					},
+					views = {
+						{
+							res = "asset/ui/RtpkRankReward.csb",
+							name = "RTPKRewardView",
+							mediator = "RTPKRewardViewMediator"
+						},
+						{
+							res = "asset/ui/RtpkRank.csb",
+							name = "RTPKRankView",
+							mediator = "RTPKRankViewMediator"
+						},
+						{
+							res = "asset/ui/RtpkTeam.csb",
+							name = "RTPKTeamView",
+							mediator = "RTPKTeamMediator"
+						},
+						{
+							res = "asset/ui/RTPKMain.csb",
+							name = "RTPKMainView",
+							mediator = "RTPKMainMediator"
+						},
+						{
+							res = "asset/ui/RTPKMatch.csb",
+							name = "RTPKMatchView",
+							mediator = "RTPKMatchMediator"
+						},
+						{
+							res = "asset/ui/ArenaReportMain.csb",
+							name = "RTPKReportView",
+							mediator = "RTPKReportViewMediator"
+						},
+						{
+							res = "asset/ui/RTPKBuffDetail.csb",
+							name = "RTPKBuffDetailView",
+							mediator = "RTPKBuffDetailMediator"
+						},
+						{
+							res = "asset/ui/RTPKResult.csb",
+							name = "RTPKResultView",
+							mediator = "RTPKResultMediator"
+						},
+						{
+							res = "asset/ui/RTPKNewSeason.csb",
+							name = "RTPKNewSeasonTipsView",
+							mediator = "RTPKNewSeasonTipsMediator"
 						}
 					}
 				}

@@ -531,37 +531,6 @@ all.Skill_BLTu_Passive = {
 					buffeft
 				}, 1, 0)
 			end
-
-			local flag = 0
-
-			for _, friend in global.__iter__(global.FriendUnits(_env)) do
-				if global.MARKED(_env, "BLTu")(_env, friend) then
-					flag = 1
-				end
-			end
-
-			if (global.MARKED(_env, "Master_BiLei")(_env, global.FriendMaster(_env)) or global.MARKED(_env, "Master_SenLing")(_env, global.FriendMaster(_env))) and global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.MARKED(_env, "WARRIOR")(_env, _env.unit) and flag == 1 then
-				local buffeft = global.Taunt(_env)
-
-				global.ApplyBuff_Buff(_env, _env.ACTOR, _env.unit, {
-					timing = 2,
-					display = "Taunt",
-					group = "Skill_BLTu_Passive_Key",
-					duration = 2,
-					limit = 1,
-					tags = {
-						"STATUS",
-						"NUMERIC",
-						"BUFF",
-						"TAUNT",
-						"Skill_BLTu_Passive_Key",
-						"DISPELLABLE",
-						"UNSTEALABLE"
-					}
-				}, {
-					buffeft
-				}, 1, 0)
-			end
 		end)
 
 		return _env
@@ -581,6 +550,81 @@ all.Skill_BLTu_Passive = {
 
 			for _, unit in global.__iter__(global.FriendUnits(_env)) do
 				global.DispelBuff(_env, unit, global.BUFF_MARKED_ALL(_env, "AOEDERATEUP", "BLTu_Passive", "UNDISPELLABLE"), 99)
+			end
+		end)
+
+		return _env
+	end
+}
+all.Skill_BLTu_Passive_Key = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		local passive1 = __action(this, {
+			name = "passive1",
+			entry = prototype.passive1
+		})
+		passive1 = global["[duration]"](this, {
+			0
+		}, passive1)
+		this.passive1 = global["[trigger_by]"](this, {
+			"UNIT_ENTER"
+		}, passive1)
+
+		return this
+	end,
+	passive1 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+
+		_env.event = externs.event
+
+		assert(_env.event ~= nil, "External variable `event` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local flag = 0
+
+			for _, friend in global.__iter__(global.FriendUnits(_env)) do
+				if global.MARKED(_env, "BLTu")(_env, friend) then
+					flag = 1
+				end
+			end
+
+			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.MARKED(_env, "WARRIOR")(_env, _env.unit) and flag == 1 then
+				local buffeft = global.Taunt(_env)
+
+				global.ApplyBuff_Buff(_env, _env.ACTOR, _env.unit, {
+					timing = 1,
+					display = "Taunt",
+					group = "Skill_BLTu_Passive_Key",
+					duration = 2,
+					limit = 1,
+					tags = {
+						"STATUS",
+						"NUMERIC",
+						"BUFF",
+						"TAUNT",
+						"Skill_BLTu_Passive_Key",
+						"DISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft
+				}, 1, 0)
 			end
 		end)
 
@@ -1041,37 +1085,6 @@ all.Skill_BLTu_Passive_EX = {
 						"AOEDERATEUP",
 						"BLTu_Passive",
 						"UNDISPELLABLE",
-						"UNSTEALABLE"
-					}
-				}, {
-					buffeft
-				}, 1, 0)
-			end
-
-			local flag = 0
-
-			for _, friend in global.__iter__(global.FriendUnits(_env)) do
-				if global.MARKED(_env, "BLTu")(_env, friend) then
-					flag = 1
-				end
-			end
-
-			if (global.MARKED(_env, "Master_BiLei")(_env, global.FriendMaster(_env)) or global.MARKED(_env, "Master_SenLing")(_env, global.FriendMaster(_env))) and global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.MARKED(_env, "WARRIOR")(_env, _env.unit) and flag == 1 then
-				local buffeft = global.Taunt(_env)
-
-				global.ApplyBuff_Buff(_env, _env.ACTOR, _env.unit, {
-					timing = 2,
-					display = "Taunt",
-					group = "Skill_BLTu_Passive_Key",
-					duration = 2,
-					limit = 1,
-					tags = {
-						"STATUS",
-						"NUMERIC",
-						"BUFF",
-						"TAUNT",
-						"Skill_BLTu_Passive_Key",
-						"DISPELLABLE",
 						"UNSTEALABLE"
 					}
 				}, {

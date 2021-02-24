@@ -10304,6 +10304,29 @@
         "TargetPreview": "",
         "Type": "BATTLEPASSIVE"
     },
+    "DC_TimeLimit_Buff": {
+        "Actions": "DO_NOTHING",
+        "AllowCounterHit": [],
+        "AllowDoubleHit": [],
+        "Args": [],
+        "AttrEffects": [
+            "DC_TimeLimit_Effect"
+        ],
+        "Desc": "DC_TimeLimit_Buff_Long",
+        "Desc_short": "DC_TimeLimit_Buff_desc",
+        "Icon": "mjt_buff__shouhu",
+        "IsEXSkill": "",
+        "MasterSkillTag": "",
+        "Name": "DC_TimeLimit_Buff_Name",
+        "ShowInBattle": "",
+        "SkillDoubleRate": 0.0,
+        "SkillEffect": "",
+        "SkillPic": "",
+        "SkillRange": "",
+        "Summoned": "",
+        "TargetPreview": "",
+        "Type": "BATTLEPASSIVE"
+    },
     "Enemy_Bubble2_1_1": {
         "Actions": "Enemy_Bubble2_1_1",
         "AllowCounterHit": [
@@ -19376,6 +19399,72 @@
         "TargetPreview": "",
         "Type": "BATTLEPASSIVE"
     },
+    "EquipSkill_Decoration_15004": {
+        "Actions": "EquipSkill_Accesory_15004",
+        "AllowCounterHit": [
+            {
+                "id": "UnHurtRateFactor",
+                "type": "CUSTOM",
+                "value": [
+                    0.06,
+                    0.08,
+                    0.1,
+                    0.12,
+                    0.14,
+                    0.16,
+                    0.18,
+                    0.2
+                ]
+            }
+        ],
+        "AllowDoubleHit": [
+            {
+                "id": "UnHurtRateFactor",
+                "type": "CUSTOM",
+                "value": [
+                    0.06,
+                    0.08,
+                    0.1,
+                    0.12,
+                    0.14,
+                    0.16,
+                    0.18,
+                    0.2
+                ]
+            }
+        ],
+        "Args": [
+            {
+                "id": "UnHurtRateFactor",
+                "type": "CUSTOM",
+                "value": [
+                    0.06,
+                    0.08,
+                    0.1,
+                    0.12,
+                    0.14,
+                    0.16,
+                    0.18,
+                    0.2
+                ]
+            }
+        ],
+        "AttrEffects": [],
+        "Desc": "EquipSkill_Decoration_15004_Desc",
+        "Desc_short": "EquipSkill_Decoration_15004_Desc",
+        "Icon": "",
+        "IsEXSkill": "",
+        "MasterSkillTag": "",
+        "Name": "EquipSkill_Decoration_15004_Name",
+        "ShowInBattle": "",
+        "SkillDoubleRate": "",
+        "SkillEffect": "",
+        "SkillPic": "",
+        "SkillRange": "",
+        "Summoned": "",
+        "TargetPreview": "",
+        "Type": "BATTLEPASSIVE"
+    },
     "EquipSkill_Decoration_15005": {
         "Actions": "EquipSkill_Armor_15005",
         "AllowCounterHit": [
@@ -24218,6 +24307,98 @@
         "TargetPreview": "",
         "Type": "BATTLEPASSIVE"
     },
+    "ExcellentHeroSkill_Attr_Big": {
+        "Actions": "DO_NOTHING",
+        "AllowCounterHit": [],
+        "AllowDoubleHit": [],
+        "Args": [],
+        "AttrEffects": [
+            "ExcellentHero_Attr_Big"
+        ],
+        "Desc": "ExcellentHeroSkill_Attr_Big_Desc",
+        "Desc_short": "ExcellentHeroSkill_Attr_Big_Desc",
+        "Icon": "",
+        "IsEXSkill": "",
+        "MasterSkillTag": "",
+        "Name": "",
+        "ShowInBattle": "",
+        "SkillDoubleRate": 0.0,
+        "SkillEffect": "",
+        "SkillPic": "",
+        "SkillRange": "",
+        "Summoned": "",
+        "TargetPreview": "",
+        "Type": "BATTLEPASSIVE"
+    },
+    "ExcellentHeroSkill_Attr_Small": {
+        "Actions": "DO_NOTHING",
+        "AllowCounterHit": [],
+        "AllowDoubleHit": [],
+        "Args": [],
+        "AttrEffects": [
+            "ExcellentHero_Attr_Small"
+        ],
+        "Desc": "ExcellentHeroSkill_Attr_Small_Desc",
+        "Desc_short": "ExcellentHeroSkill_Attr_Small_Desc",
+        "Icon": "",
+        "IsEXSkill": "",
+        "MasterSkillTag": "",
+        "Name": "",
+        "ShowInBattle": "",
+        "SkillDoubleRate": 0.0,
+        "SkillEffect": "",
+        "SkillPic": "",
+        "SkillRange": "",
+        "Summoned": "",
+        "TargetPreview": "",
+        "Type": "BATTLEPASSIVE"
+    },
+    "ExcellentHeroSkill_Awaken": {
+        "Actions": "DO_NOTHING",
+        "AllowCounterHit": [],
+        "AllowDoubleHit": [],
+        "Args": [],
+        "AttrEffects": [
+            "ExcellentHero_Awaken"
+        ],
+        "Desc": "ExcellentHeroSkill_Awaken_Desc",
+        "Desc_short": "ExcellentHeroSkill_Awaken_Desc",
+        "Icon": "",
+        "IsEXSkill": "",
+        "MasterSkillTag": "",
+        "Name": "",
+        "ShowInBattle": "",
+        "SkillDoubleRate": 0.0,
+        "SkillEffect": "",
+        "SkillPic": "",
+        "SkillRange": "",
+        "Summoned": "",
+        "TargetPreview": "",
+        "Type": "BATTLEPASSIVE"
+    },
+    "ExcellentHeroSkill_Stars": {
+        "Actions": "DO_NOTHING",
+        "AllowCounterHit": [],
+        "AllowDoubleHit": [],
+        "Args": [],
+        "AttrEffects": [
+            "ExcellentHero_Stars"
+        ],
+        "Desc": "ExcellentHeroSkill_Stars_Desc",
+        "Desc_short": "ExcellentHeroSkill_Stars_Desc",
+        "Icon": "",
+        "IsEXSkill": "",
+        "MasterSkillTag": "",
+        "Name": "",
+        "ShowInBattle": "",
+        "SkillDoubleRate": 0.0,
+        "SkillEffect": "",
+        "SkillPic": "",
+        "SkillRange": "",
+        "Summoned": "",
+        "TargetPreview": "",
+        "Type": "BATTLEPASSIVE"
+    },
     "Fight_MaxCostBuff": {
         "Actions": "Fight_MaxCostBuff",
         "AllowCounterHit": [
@@ -26889,17 +27070,15 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    1.05
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
                 ]
             }
@@ -26914,17 +27093,15 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    1.05
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
                 ]
             }
@@ -26939,17 +27116,15 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    1.05
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
                 ]
             }
@@ -26957,7 +27132,7 @@
         "AttrEffects": [],
         "Desc": "Sk_Desc_Hero_Normal_FLYDe",
         "Desc_short": "Sk_DescShort_Hero_Normal_FLYDe",
-        "Icon": "Icon_Hero_Normal_YFZZhu",
+        "Icon": "ico_xge_sk1",
         "IsEXSkill": "",
         "MasterSkillTag": "",
         "Name": "Sk_Name_Hero_Normal_FLYDe",
@@ -31437,17 +31612,15 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0.9,
-                    0.001
+                    1.05
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
                 ]
             }
@@ -31462,17 +31635,15 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0.9,
-                    0.001
+                    1.05
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
                 ]
             }
@@ -31487,17 +31658,15 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0.9,
-                    0.001
+                    1.05
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
                 ]
             }
@@ -31505,7 +31674,7 @@
         "AttrEffects": [],
         "Desc": "Sk_Desc_Hero_Normal_TJHDe",
         "Desc_short": "Sk_DescShort_Hero_Normal_TJHDe",
-        "Icon": "Icon_Hero_Normal_YFZZhu",
+        "Icon": "ico_yyymeng_sk1",
         "IsEXSkill": "",
         "MasterSkillTag": "",
         "Name": "Sk_Name_Hero_Normal_TJHDe",
@@ -37309,83 +37478,122 @@
         "Actions": "Skill_FLYDe_Passive",
         "AllowCounterHit": [
             {
-                "id": "dmgFactor1",
+                "id": "DamageFactor",
                 "type": "FIXED",
                 "value": [
-                    1
+                    3.6
                 ]
             },
             {
-                "id": "dmgFactor2",
-                "type": "LINEAR",
+                "id": "DamageFloor",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
-                ]
-            },
-            {
-                "id": "dmgFactor3",
-                "type": "LINEAR",
-                "value": [
-                    0,
-                    0
+                    0.2
                 ]
             }
         ],
         "AllowDoubleHit": [
             {
-                "id": "dmgFactor1",
+                "id": "DamageFactor",
                 "type": "FIXED",
                 "value": [
-                    1
+                    3.6
                 ]
             },
             {
-                "id": "dmgFactor2",
-                "type": "LINEAR",
+                "id": "DamageFloor",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
-                ]
-            },
-            {
-                "id": "dmgFactor3",
-                "type": "LINEAR",
-                "value": [
-                    0,
-                    0
+                    0.2
                 ]
             }
         ],
         "Args": [
             {
-                "id": "dmgFactor1",
+                "id": "DamageFactor",
                 "type": "FIXED",
                 "value": [
-                    1
+                    3.6
                 ]
             },
             {
-                "id": "dmgFactor2",
-                "type": "LINEAR",
+                "id": "DamageFloor",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
-                ]
-            },
-            {
-                "id": "dmgFactor3",
-                "type": "LINEAR",
-                "value": [
-                    0,
-                    0
+                    0.2
                 ]
             }
         ],
         "AttrEffects": [],
         "Desc": "Sk_Desc_Hero_PBattle_FLYDe",
         "Desc_short": "Sk_DescShort_Hero_PBattle_FLYDe",
-        "Icon": "Icon_Hero_PBattle_YFZZhu",
+        "Icon": "ico_xge_sk4",
+        "IsEXSkill": "",
+        "MasterSkillTag": "",
+        "Name": "Sk_Name_Hero_PBattle_FLYDe",
+        "ShowInBattle": "",
+        "SkillDoubleRate": 0.0,
+        "SkillEffect": "",
+        "SkillPic": "",
+        "SkillRange": "",
+        "Summoned": "",
+        "TargetPreview": "",
+        "Type": "BATTLEPASSIVE"
+    },
+    "Hero_PBattle_FLYDe_Boss": {
+        "Actions": "Skill_FLYDe_Passive_BOSS",
+        "AllowCounterHit": [
+            {
+                "id": "DamageFactor",
+                "type": "FIXED",
+                "value": [
+                    3.6
+                ]
+            },
+            {
+                "id": "DamageFloor",
+                "type": "FIXED",
+                "value": [
+                    0.2
+                ]
+            }
+        ],
+        "AllowDoubleHit": [
+            {
+                "id": "DamageFactor",
+                "type": "FIXED",
+                "value": [
+                    3.6
+                ]
+            },
+            {
+                "id": "DamageFloor",
+                "type": "FIXED",
+                "value": [
+                    0.2
+                ]
+            }
+        ],
+        "Args": [
+            {
+                "id": "DamageFactor",
+                "type": "FIXED",
+                "value": [
+                    3.6
+                ]
+            },
+            {
+                "id": "DamageFloor",
+                "type": "FIXED",
+                "value": [
+                    0.2
+                ]
+            }
+        ],
+        "AttrEffects": [],
+        "Desc": "Sk_Desc_Hero_PBattle_FLYDe",
+        "Desc_short": "Sk_DescShort_Hero_PBattle_FLYDe",
+        "Icon": "ico_xge_sk4",
         "IsEXSkill": "",
         "MasterSkillTag": "",
         "Name": "Sk_Name_Hero_PBattle_FLYDe",
@@ -37402,84 +37610,57 @@
         "Actions": "Skill_FLYDe_Passive_EX",
         "AllowCounterHit": [
             {
-                "id": "dmgFactor1",
+                "id": "DamageFactor",
                 "type": "FIXED",
                 "value": [
-                    1
+                    4
                 ]
             },
             {
-                "id": "dmgFactor2",
-                "type": "LINEAR",
+                "id": "DamageFloor",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
-                ]
-            },
-            {
-                "id": "dmgFactor3",
-                "type": "LINEAR",
-                "value": [
-                    0,
-                    0
+                    0.2
                 ]
             }
         ],
         "AllowDoubleHit": [
             {
-                "id": "dmgFactor1",
+                "id": "DamageFactor",
                 "type": "FIXED",
                 "value": [
-                    1
+                    4
                 ]
             },
             {
-                "id": "dmgFactor2",
-                "type": "LINEAR",
+                "id": "DamageFloor",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
-                ]
-            },
-            {
-                "id": "dmgFactor3",
-                "type": "LINEAR",
-                "value": [
-                    0,
-                    0
+                    0.2
                 ]
             }
         ],
         "Args": [
             {
-                "id": "dmgFactor1",
+                "id": "DamageFactor",
                 "type": "FIXED",
                 "value": [
-                    1
+                    4
                 ]
             },
             {
-                "id": "dmgFactor2",
-                "type": "LINEAR",
+                "id": "DamageFloor",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
-                ]
-            },
-            {
-                "id": "dmgFactor3",
-                "type": "LINEAR",
-                "value": [
-                    0,
-                    0
+                    0.2
                 ]
             }
         ],
         "AttrEffects": [],
-        "Desc": "Sk_Desc_Hero_PBattle_FLYDe",
-        "Desc_short": "Sk_DescShort_Hero_PBattle_FLYDe",
-        "Icon": "Icon_Hero_PBattle_YFZZhu",
-        "IsEXSkill": "",
+        "Desc": "Sk_Desc_Hero_PBattle_FLYDe_EX",
+        "Desc_short": "Sk_DescShort_Hero_PBattle_FLYDe_EX",
+        "Icon": "ico_xge_sk4",
+        "IsEXSkill": 1,
         "MasterSkillTag": "",
         "Name": "Sk_Name_Hero_PBattle_FLYDe",
         "ShowInBattle": "",
@@ -43812,62 +43993,56 @@
         "Actions": "Skill_TJHDe_Passive",
         "AllowCounterHit": [
             {
-                "id": "buffFactorDefRate",
-                "type": "LINEAR",
+                "id": "Num",
+                "type": "FIXED",
                 "value": [
-                    0.02,
-                    0.0032
+                    6
                 ]
             },
             {
-                "id": "buffFactorDefEx",
-                "type": "LINEAR",
+                "id": "FinalNum",
+                "type": "FIXED",
                 "value": [
-                    11.25,
-                    2.25
+                    1
                 ]
             }
         ],
         "AllowDoubleHit": [
             {
-                "id": "buffFactorDefRate",
-                "type": "LINEAR",
+                "id": "Num",
+                "type": "FIXED",
                 "value": [
-                    0.02,
-                    0.0032
+                    6
                 ]
             },
             {
-                "id": "buffFactorDefEx",
-                "type": "LINEAR",
+                "id": "FinalNum",
+                "type": "FIXED",
                 "value": [
-                    11.25,
-                    2.25
+                    1
                 ]
             }
         ],
         "Args": [
             {
-                "id": "buffFactorDefRate",
-                "type": "LINEAR",
+                "id": "Num",
+                "type": "FIXED",
                 "value": [
-                    0.02,
-                    0.0032
+                    6
                 ]
             },
             {
-                "id": "buffFactorDefEx",
-                "type": "LINEAR",
+                "id": "FinalNum",
+                "type": "FIXED",
                 "value": [
-                    11.25,
-                    2.25
+                    1
                 ]
             }
         ],
         "AttrEffects": [],
         "Desc": "Sk_Desc_Hero_PBattle_TJHDe",
         "Desc_short": "Sk_DescShort_Hero_PBattle_TJHDe",
-        "Icon": "Icon_Hero_PBattle_YFZZhu",
+        "Icon": "ico_yyymeng_sk4",
         "IsEXSkill": "",
         "MasterSkillTag": "",
         "Name": "Sk_Name_Hero_PBattle_TJHDe",
@@ -43884,63 +44059,57 @@
         "Actions": "Skill_TJHDe_Passive_EX",
         "AllowCounterHit": [
             {
-                "id": "buffFactorDefRate",
-                "type": "LINEAR",
+                "id": "Num",
+                "type": "FIXED",
                 "value": [
-                    0.02,
-                    0.0032
+                    3
                 ]
             },
             {
-                "id": "buffFactorDefEx",
-                "type": "LINEAR",
+                "id": "FinalNum",
+                "type": "FIXED",
                 "value": [
-                    11.25,
-                    2.25
+                    1
                 ]
             }
         ],
         "AllowDoubleHit": [
             {
-                "id": "buffFactorDefRate",
-                "type": "LINEAR",
+                "id": "Num",
+                "type": "FIXED",
                 "value": [
-                    0.02,
-                    0.0032
+                    3
                 ]
             },
             {
-                "id": "buffFactorDefEx",
-                "type": "LINEAR",
+                "id": "FinalNum",
+                "type": "FIXED",
                 "value": [
-                    11.25,
-                    2.25
+                    1
                 ]
             }
         ],
         "Args": [
             {
-                "id": "buffFactorDefRate",
-                "type": "LINEAR",
+                "id": "Num",
+                "type": "FIXED",
                 "value": [
-                    0.02,
-                    0.0032
+                    3
                 ]
             },
             {
-                "id": "buffFactorDefEx",
-                "type": "LINEAR",
+                "id": "FinalNum",
+                "type": "FIXED",
                 "value": [
-                    11.25,
-                    2.25
+                    1
                 ]
             }
         ],
         "AttrEffects": [],
-        "Desc": "Sk_Desc_Hero_PBattle_TJHDe",
-        "Desc_short": "Sk_DescShort_Hero_PBattle_TJHDe",
-        "Icon": "Icon_Hero_PBattle_YFZZhu",
-        "IsEXSkill": "",
+        "Desc": "Sk_Desc_Hero_PBattle_TJHDe_EX",
+        "Desc_short": "Sk_DescShort_Hero_PBattle_TJHDe_EX",
+        "Icon": "ico_yyymeng_sk4",
+        "IsEXSkill": 1,
         "MasterSkillTag": "",
         "Name": "Sk_Name_Hero_PBattle_TJHDe",
         "ShowInBattle": "",
@@ -46355,6 +46524,72 @@
         "ShowInBattle": "",
         "SkillDoubleRate": 0.0,
         "SkillEffect": "",
+        "SkillPic": "",
+        "SkillRange": "",
+        "Summoned": "",
+        "TargetPreview": "",
+        "Type": "BATTLEPASSIVE"
+    },
+    "Hero_PBattle_YSTLu_Awaken": {
+        "Actions": "Skill_YSTLu_Passive_EX",
+        "AllowCounterHit": [
+            {
+                "id": "HealRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0.3
+                ]
+            },
+            {
+                "id": "RageFactor",
+                "type": "FIXED",
+                "value": [
+                    1000
+                ]
+            }
+        ],
+        "AllowDoubleHit": [
+            {
+                "id": "HealRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0.3
+                ]
+            },
+            {
+                "id": "RageFactor",
+                "type": "FIXED",
+                "value": [
+                    1000
+                ]
+            }
+        ],
+        "Args": [
+            {
+                "id": "HealRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0.3
+                ]
+            },
+            {
+                "id": "RageFactor",
+                "type": "FIXED",
+                "value": [
+                    1000
+                ]
+            }
+        ],
+        "AttrEffects": [],
+        "Desc": "Sk_Desc_Hero_PBattle_YSTLu_Awaken",
+        "Desc_short": "Sk_DescShort_Hero_PBattle_YSTLu_Awaken",
+        "Icon": "Icon_Hero_PBattle_YSTLu",
+        "IsEXSkill": 1,
+        "MasterSkillTag": "",
+        "Name": "Sk_Name_Hero_PBattle_YSTLu_Awaken",
+        "ShowInBattle": [],
+        "SkillDoubleRate": 0.0,
+        "SkillEffect": [],
         "SkillPic": "",
         "SkillRange": "",
         "Summoned": "",
@@ -51951,17 +52186,15 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    1.5
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
                 ]
             }
@@ -51976,17 +52209,15 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    1.5
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
                 ]
             }
@@ -52001,17 +52232,15 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    1.5
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
                 ]
             }
@@ -52019,7 +52248,7 @@
         "AttrEffects": [],
         "Desc": "Sk_Desc_Hero_Proud_FLYDe",
         "Desc_short": "Sk_DescShort_Hero_Proud_FLYDe",
-        "Icon": "Icon_Hero_Proud_YFZZhu",
+        "Icon": "ico_xge_sk2",
         "IsEXSkill": "",
         "MasterSkillTag": "",
         "Name": "Sk_Name_Hero_Proud_FLYDe",
@@ -52044,17 +52273,15 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    1.85
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
                 ]
             }
@@ -52069,17 +52296,15 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    1.85
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
                 ]
             }
@@ -52094,26 +52319,24 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    1.85
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
                 ]
             }
         ],
         "AttrEffects": [],
-        "Desc": "Sk_Desc_Hero_Proud_FLYDe",
-        "Desc_short": "Sk_DescShort_Hero_Proud_FLYDe",
-        "Icon": "Icon_Hero_Proud_YFZZhu",
-        "IsEXSkill": "",
+        "Desc": "Sk_Desc_Hero_Proud_FLYDe_EX",
+        "Desc_short": "Sk_DescShort_Hero_Proud_FLYDe_EX",
+        "Icon": "ico_xge_sk2",
+        "IsEXSkill": 1,
         "MasterSkillTag": "",
         "Name": "Sk_Name_Hero_Proud_FLYDe",
         "ShowInBattle": "",
@@ -59939,18 +60162,16 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.28,
-                    0.002
+                    1
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    60,
-                    12
+                    0
                 ]
             }
         ],
@@ -59964,18 +60185,16 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.28,
-                    0.002
+                    1
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    60,
-                    12
+                    0
                 ]
             }
         ],
@@ -59989,25 +60208,23 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.28,
-                    0.002
+                    1
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    60,
-                    12
+                    0
                 ]
             }
         ],
         "AttrEffects": [],
         "Desc": "Sk_Desc_Hero_Proud_TJHDe",
         "Desc_short": "Sk_DescShort_Hero_Proud_TJHDe",
-        "Icon": "Icon_Hero_Proud_YFZZhu",
+        "Icon": "ico_yyymeng_sk2",
         "IsEXSkill": "",
         "MasterSkillTag": "",
         "Name": "Sk_Name_Hero_Proud_TJHDe",
@@ -60032,18 +60249,16 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.28,
-                    0.002
+                    1.25
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    60,
-                    12
+                    0
                 ]
             }
         ],
@@ -60057,18 +60272,16 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.28,
-                    0.002
+                    1.25
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    60,
-                    12
+                    0
                 ]
             }
         ],
@@ -60082,26 +60295,24 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.28,
-                    0.002
+                    1.25
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    60,
-                    12
+                    0
                 ]
             }
         ],
         "AttrEffects": [],
-        "Desc": "Sk_Desc_Hero_Proud_TJHDe",
-        "Desc_short": "Sk_DescShort_Hero_Proud_TJHDe",
-        "Icon": "Icon_Hero_Proud_YFZZhu",
-        "IsEXSkill": "",
+        "Desc": "Sk_Desc_Hero_Proud_TJHDe_EX",
+        "Desc_short": "Sk_DescShort_Hero_Proud_TJHDe_EX",
+        "Icon": "ico_yyymeng_sk2",
+        "IsEXSkill": 1,
         "MasterSkillTag": "",
         "Name": "Sk_Name_Hero_Proud_TJHDe",
         "ShowInBattle": "",
@@ -69152,6 +69363,135 @@
         "TargetPreview": "Target_CZheng",
         "Type": "UNIQUE"
     },
+    "Hero_Unique_CZheng_Awaken": {
+        "Actions": "Skill_CZheng_Unique_EX",
+        "AllowCounterHit": [
+            {
+                "id": "dmgFactor1",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "dmgFactor2",
+                "type": "FIXED",
+                "value": [
+                    3.6
+                ]
+            },
+            {
+                "id": "dmgFactor3",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "HpRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0.4
+                ]
+            },
+            {
+                "id": "CritRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0.7
+                ]
+            }
+        ],
+        "AllowDoubleHit": [
+            {
+                "id": "dmgFactor1",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "dmgFactor2",
+                "type": "FIXED",
+                "value": [
+                    3.6
+                ]
+            },
+            {
+                "id": "dmgFactor3",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "HpRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0.4
+                ]
+            },
+            {
+                "id": "CritRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0.7
+                ]
+            }
+        ],
+        "Args": [
+            {
+                "id": "dmgFactor1",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "dmgFactor2",
+                "type": "FIXED",
+                "value": [
+                    3.6
+                ]
+            },
+            {
+                "id": "dmgFactor3",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "HpRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0.4
+                ]
+            },
+            {
+                "id": "CritRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0.7
+                ]
+            }
+        ],
+        "AttrEffects": [],
+        "Desc": "Sk_Desc_Hero_Unique_CZheng_EX",
+        "Desc_short": "Sk_DescShort_Hero_Unique_CZheng_EX",
+        "Icon": "Icon_Hero_Unique_CZheng",
+        "IsEXSkill": "",
+        "MasterSkillTag": "",
+        "Name": "Sk_Name_Hero_PBattle_CZheng_Awaken",
+        "ShowInBattle": "",
+        "SkillDoubleRate": 0.0,
+        "SkillEffect": "",
+        "SkillPic": "txt_scheng_awaken_sk3",
+        "SkillRange": "Col_Attack",
+        "Summoned": "",
+        "TargetPreview": "Target_CZheng",
+        "Type": "UNIQUE"
+    },
     "Hero_Unique_CZheng_EX": {
         "Actions": "Skill_CZheng_Unique_EX",
         "AllowCounterHit": [
@@ -71165,18 +71505,23 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    2.2
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
+                ]
+            },
+            {
+                "id": "DamageDown",
+                "type": "FIXED",
+                "value": [
+                    0.5
                 ]
             }
         ],
@@ -71190,18 +71535,23 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    2.2
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
+                ]
+            },
+            {
+                "id": "DamageDown",
+                "type": "FIXED",
+                "value": [
+                    0.5
                 ]
             }
         ],
@@ -71215,35 +71565,148 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    2.2
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
+                ]
+            },
+            {
+                "id": "DamageDown",
+                "type": "FIXED",
+                "value": [
+                    0.5
                 ]
             }
         ],
         "AttrEffects": [],
         "Desc": "Sk_Desc_Hero_Unique_FLYDe",
         "Desc_short": "Sk_DescShort_Hero_Unique_FLYDe",
-        "Icon": "Icon_Hero_Unique_YFZZhu",
+        "Icon": "ico_xge_sk3",
         "IsEXSkill": "",
         "MasterSkillTag": "",
         "Name": "Sk_Name_Hero_Unique_FLYDe",
         "ShowInBattle": "",
         "SkillDoubleRate": 0.0,
         "SkillEffect": "",
-        "SkillPic": "Sk_SkillName_Hero_Unique_YFZZhu",
-        "SkillRange": "Single_Attack",
+        "SkillPic": "txt_xge_sk3",
+        "SkillRange": "All_Attack",
         "Summoned": "",
-        "TargetPreview": "Target_YFZZhu",
+        "TargetPreview": "Target_FLYDe",
+        "Type": "UNIQUE"
+    },
+    "Hero_Unique_FLYDe_Boss": {
+        "Actions": "Skill_FLYDe_Unique_BOSS",
+        "AllowCounterHit": [
+            {
+                "id": "dmgFactor1",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "dmgFactor2",
+                "type": "FIXED",
+                "value": [
+                    2.2
+                ]
+            },
+            {
+                "id": "dmgFactor3",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "DamageDown",
+                "type": "FIXED",
+                "value": [
+                    0.5
+                ]
+            }
+        ],
+        "AllowDoubleHit": [
+            {
+                "id": "dmgFactor1",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "dmgFactor2",
+                "type": "FIXED",
+                "value": [
+                    2.2
+                ]
+            },
+            {
+                "id": "dmgFactor3",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "DamageDown",
+                "type": "FIXED",
+                "value": [
+                    0.5
+                ]
+            }
+        ],
+        "Args": [
+            {
+                "id": "dmgFactor1",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "dmgFactor2",
+                "type": "FIXED",
+                "value": [
+                    2.2
+                ]
+            },
+            {
+                "id": "dmgFactor3",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "DamageDown",
+                "type": "FIXED",
+                "value": [
+                    0.5
+                ]
+            }
+        ],
+        "AttrEffects": [],
+        "Desc": "Sk_Desc_Hero_Unique_FLYDe",
+        "Desc_short": "Sk_DescShort_Hero_Unique_FLYDe",
+        "Icon": "ico_xge_sk3",
+        "IsEXSkill": "",
+        "MasterSkillTag": "",
+        "Name": "Sk_Name_Hero_Unique_FLYDe",
+        "ShowInBattle": "",
+        "SkillDoubleRate": 0.0,
+        "SkillEffect": "",
+        "SkillPic": "txt_xge_sk3",
+        "SkillRange": "All_Attack",
+        "Summoned": "",
+        "TargetPreview": "Target_FLYDe",
         "Type": "UNIQUE"
     },
     "Hero_Unique_FLYDe_EX": {
@@ -71258,18 +71721,23 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    2.7
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
+                ]
+            },
+            {
+                "id": "DamageDown",
+                "type": "FIXED",
+                "value": [
+                    0.5
                 ]
             }
         ],
@@ -71283,18 +71751,23 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    2.7
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
+                ]
+            },
+            {
+                "id": "DamageDown",
+                "type": "FIXED",
+                "value": [
+                    0.5
                 ]
             }
         ],
@@ -71308,35 +71781,40 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    1.05,
-                    0.01
+                    2.7
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    0,
                     0
+                ]
+            },
+            {
+                "id": "DamageDown",
+                "type": "FIXED",
+                "value": [
+                    0.5
                 ]
             }
         ],
         "AttrEffects": [],
-        "Desc": "Sk_Desc_Hero_Unique_FLYDe",
-        "Desc_short": "Sk_DescShort_Hero_Unique_FLYDe",
-        "Icon": "Icon_Hero_Unique_YFZZhu",
-        "IsEXSkill": "",
+        "Desc": "Sk_Desc_Hero_Unique_FLYDe_EX",
+        "Desc_short": "Sk_DescShort_Hero_Unique_FLYDe_EX",
+        "Icon": "ico_xge_sk3",
+        "IsEXSkill": 1,
         "MasterSkillTag": "",
         "Name": "Sk_Name_Hero_Unique_FLYDe",
         "ShowInBattle": "",
         "SkillDoubleRate": 0.0,
         "SkillEffect": "",
-        "SkillPic": "Sk_SkillName_Hero_Unique_YFZZhu",
-        "SkillRange": "Single_Attack",
+        "SkillPic": "txt_xge_sk3",
+        "SkillRange": "All_Attack",
         "Summoned": "",
-        "TargetPreview": "Target_YFZZhu",
+        "TargetPreview": "Target_FLYDe",
         "Type": "UNIQUE"
     },
     "Hero_Unique_FTLEShi": {
@@ -82865,18 +83343,23 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    2.23,
-                    0.004
+                    1.8
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    120,
-                    24
+                    0
+                ]
+            },
+            {
+                "id": "MidDamage",
+                "type": "FIXED",
+                "value": [
+                    2.7
                 ]
             }
         ],
@@ -82890,18 +83373,23 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    2.23,
-                    0.004
+                    1.8
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    120,
-                    24
+                    0
+                ]
+            },
+            {
+                "id": "MidDamage",
+                "type": "FIXED",
+                "value": [
+                    2.7
                 ]
             }
         ],
@@ -82915,33 +83403,38 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    2.23,
-                    0.004
+                    1.8
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    120,
-                    24
+                    0
+                ]
+            },
+            {
+                "id": "MidDamage",
+                "type": "FIXED",
+                "value": [
+                    2.7
                 ]
             }
         ],
         "AttrEffects": [],
         "Desc": "Sk_Desc_Hero_Unique_TJHDe",
         "Desc_short": "Sk_DescShort_Hero_Unique_TJHDe",
-        "Icon": "Icon_Hero_Unique_YFZZhu",
+        "Icon": "ico_yyymeng_sk3",
         "IsEXSkill": "",
         "MasterSkillTag": "",
         "Name": "Sk_Name_Hero_Unique_TJHDe",
         "ShowInBattle": "",
         "SkillDoubleRate": 0.0,
         "SkillEffect": "",
-        "SkillPic": "Sk_SkillName_Hero_Unique_TJHDe",
-        "SkillRange": "Single_Attack",
+        "SkillPic": "txt_yyymeng_sk3",
+        "SkillRange": "All_Attack",
         "Summoned": "",
         "TargetPreview": "Target_TJHDe",
         "Type": "UNIQUE"
@@ -82958,18 +83451,23 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    2.23,
-                    0.004
+                    2.25
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    120,
-                    24
+                    0
+                ]
+            },
+            {
+                "id": "MidDamage",
+                "type": "FIXED",
+                "value": [
+                    3.35
                 ]
             }
         ],
@@ -82983,18 +83481,23 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    2.23,
-                    0.004
+                    2.25
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    120,
-                    24
+                    0
+                ]
+            },
+            {
+                "id": "MidDamage",
+                "type": "FIXED",
+                "value": [
+                    3.35
                 ]
             }
         ],
@@ -83008,33 +83511,38 @@
             },
             {
                 "id": "dmgFactor2",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    2.23,
-                    0.004
+                    2.25
                 ]
             },
             {
                 "id": "dmgFactor3",
-                "type": "LINEAR",
+                "type": "FIXED",
                 "value": [
-                    120,
-                    24
+                    0
+                ]
+            },
+            {
+                "id": "MidDamage",
+                "type": "FIXED",
+                "value": [
+                    3.35
                 ]
             }
         ],
         "AttrEffects": [],
-        "Desc": "Sk_Desc_Hero_Unique_TJHDe",
-        "Desc_short": "Sk_DescShort_Hero_Unique_TJHDe",
-        "Icon": "Icon_Hero_Unique_YFZZhu",
-        "IsEXSkill": "",
+        "Desc": "Sk_Desc_Hero_Unique_TJHDe_EX",
+        "Desc_short": "Sk_DescShort_Hero_Unique_TJHDe_EX",
+        "Icon": "ico_yyymeng_sk3",
+        "IsEXSkill": 1,
         "MasterSkillTag": "",
         "Name": "Sk_Name_Hero_Unique_TJHDe",
         "ShowInBattle": "",
         "SkillDoubleRate": 0.0,
         "SkillEffect": "",
-        "SkillPic": "Sk_SkillName_Hero_Unique_TJHDe",
-        "SkillRange": "Single_Attack",
+        "SkillPic": "txt_yyymeng_sk3",
+        "SkillRange": "All_Attack",
         "Summoned": "",
         "TargetPreview": "Target_TJHDe",
         "Type": "UNIQUE"
@@ -83910,10 +84418,17 @@
                 ]
             },
             {
+                "id": "ShieldRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0.35
+                ]
+            },
+            {
                 "id": "ReflectRateFactor",
                 "type": "FIXED",
                 "value": [
-                    0.4
+                    0.8
                 ]
             }
         ],
@@ -83940,10 +84455,17 @@
                 ]
             },
             {
+                "id": "ShieldRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0.35
+                ]
+            },
+            {
                 "id": "ReflectRateFactor",
                 "type": "FIXED",
                 "value": [
-                    0.4
+                    0.8
                 ]
             }
         ],
@@ -83970,10 +84492,17 @@
                 ]
             },
             {
+                "id": "ShieldRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0.35
+                ]
+            },
+            {
                 "id": "ReflectRateFactor",
                 "type": "FIXED",
                 "value": [
-                    0.4
+                    0.8
                 ]
             }
         ],
@@ -84018,10 +84547,17 @@
                 ]
             },
             {
+                "id": "ShieldRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0.45
+                ]
+            },
+            {
                 "id": "ReflectRateFactor",
                 "type": "FIXED",
                 "value": [
-                    0.4
+                    1
                 ]
             }
         ],
@@ -84048,10 +84584,17 @@
                 ]
             },
             {
+                "id": "ShieldRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0.45
+                ]
+            },
+            {
                 "id": "ReflectRateFactor",
                 "type": "FIXED",
                 "value": [
-                    0.4
+                    1
                 ]
             }
         ],
@@ -84078,10 +84621,17 @@
                 ]
             },
             {
+                "id": "ShieldRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0.45
+                ]
+            },
+            {
                 "id": "ReflectRateFactor",
                 "type": "FIXED",
                 "value": [
-                    0.4
+                    1
                 ]
             }
         ],
@@ -87214,6 +87764,120 @@
         "SkillDoubleRate": 0.0,
         "SkillEffect": "",
         "SkillPic": "Sk_SkillName_Hero_Unique_YSTLu",
+        "SkillRange": "All_Attack",
+        "Summoned": "",
+        "TargetPreview": "Target_YSTLu",
+        "Type": "UNIQUE"
+    },
+    "Hero_Unique_YSTLu_Awaken_Show": {
+        "Actions": "Skill_YSTLu_Unique_EX",
+        "AllowCounterHit": [
+            {
+                "id": "dmgFactor1",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "dmgFactor2",
+                "type": "LINEAR",
+                "value": [
+                    2.1,
+                    0
+                ]
+            },
+            {
+                "id": "dmgFactor3",
+                "type": "LINEAR",
+                "value": [
+                    0,
+                    0
+                ]
+            },
+            {
+                "id": "MasterHealRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0.15
+                ]
+            }
+        ],
+        "AllowDoubleHit": [
+            {
+                "id": "dmgFactor1",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "dmgFactor2",
+                "type": "LINEAR",
+                "value": [
+                    2.1,
+                    0
+                ]
+            },
+            {
+                "id": "dmgFactor3",
+                "type": "LINEAR",
+                "value": [
+                    0,
+                    0
+                ]
+            },
+            {
+                "id": "MasterHealRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0.15
+                ]
+            }
+        ],
+        "Args": [
+            {
+                "id": "dmgFactor1",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "dmgFactor2",
+                "type": "LINEAR",
+                "value": [
+                    2.1,
+                    0
+                ]
+            },
+            {
+                "id": "dmgFactor3",
+                "type": "LINEAR",
+                "value": [
+                    0,
+                    0
+                ]
+            },
+            {
+                "id": "MasterHealRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0.15
+                ]
+            }
+        ],
+        "AttrEffects": [],
+        "Desc": "Sk_Desc_Hero_Unique_YSTLu_EX",
+        "Desc_short": "Sk_DescShort_Hero_Unique_YSTLu_EX",
+        "Icon": "Icon_Hero_Unique_YSTLu",
+        "IsEXSkill": "",
+        "MasterSkillTag": "",
+        "Name": "Sk_Name_Hero_Unique_YSTLu",
+        "ShowInBattle": "",
+        "SkillDoubleRate": 0.0,
+        "SkillEffect": "",
+        "SkillPic": "txt_astlsi_awaken_sk3",
         "SkillRange": "All_Attack",
         "Summoned": "",
         "TargetPreview": "Target_YSTLu",
@@ -96908,6 +97572,51 @@
         "TargetPreview": "",
         "Type": "BATTLEPASSIVE"
     },
+    "Skill_Boom_Death": {
+        "Actions": "Skill_Boom_Death",
+        "AllowCounterHit": [
+            {
+                "id": "DmgRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0.4
+                ]
+            }
+        ],
+        "AllowDoubleHit": [
+            {
+                "id": "DmgRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0.4
+                ]
+            }
+        ],
+        "Args": [
+            {
+                "id": "DmgRateFactor",
+                "type": "FIXED",
+                "value": [
+                    0.4
+                ]
+            }
+        ],
+        "AttrEffects": [],
+        "Desc": "Sk_Desc_Empty",
+        "Desc_short": "Sk_Desc_Empty",
+        "Icon": "",
+        "IsEXSkill": "",
+        "MasterSkillTag": "",
+        "Name": "",
+        "ShowInBattle": [],
+        "SkillDoubleRate": 0.0,
+        "SkillEffect": [],
+        "SkillPic": "",
+        "SkillRange": "",
+        "Summoned": "",
+        "TargetPreview": "",
+        "Type": "DEATH"
+    },
     "Skill_Boss_Random": {
         "Actions": "Skill_Boss_AfterUnique_Passive",
         "AllowCounterHit": [
@@ -100423,6 +101132,1920 @@
         "Summoned": "",
         "TargetPreview": "",
         "Type": "DEATH"
+    },
+    "Skill_Condition_Shield_Amp_1": {
+        "Actions": "Skill_Condition_Shield",
+        "AllowCounterHit": [
+            {
+                "id": "ShieldType",
+                "type": "FIXED",
+                "value": [
+                    2
+                ]
+            },
+            {
+                "id": "ShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "AddShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "AddShieldTag",
+                "type": "FIXED",
+                "value": [
+                    ""
+                ]
+            },
+            {
+                "id": "AddShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "MoveShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    7
+                ]
+            },
+            {
+                "id": "MoveShieldTag",
+                "type": "FIXED",
+                "value": [
+                    "Co02P08protect"
+                ]
+            },
+            {
+                "id": "MoveShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            }
+        ],
+        "AllowDoubleHit": [
+            {
+                "id": "ShieldType",
+                "type": "FIXED",
+                "value": [
+                    2
+                ]
+            },
+            {
+                "id": "ShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "AddShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "AddShieldTag",
+                "type": "FIXED",
+                "value": [
+                    ""
+                ]
+            },
+            {
+                "id": "AddShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "MoveShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    7
+                ]
+            },
+            {
+                "id": "MoveShieldTag",
+                "type": "FIXED",
+                "value": [
+                    "Co02P08protect"
+                ]
+            },
+            {
+                "id": "MoveShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            }
+        ],
+        "Args": [
+            {
+                "id": "ShieldType",
+                "type": "FIXED",
+                "value": [
+                    2
+                ]
+            },
+            {
+                "id": "ShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "AddShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "AddShieldTag",
+                "type": "FIXED",
+                "value": [
+                    ""
+                ]
+            },
+            {
+                "id": "AddShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "MoveShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    7
+                ]
+            },
+            {
+                "id": "MoveShieldTag",
+                "type": "FIXED",
+                "value": [
+                    "Co02P08protect"
+                ]
+            },
+            {
+                "id": "MoveShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            }
+        ],
+        "AttrEffects": [],
+        "Desc": "Sk_Desc_Empty",
+        "Desc_short": "Sk_Desc_Empty",
+        "Icon": "",
+        "IsEXSkill": "",
+        "MasterSkillTag": "",
+        "Name": "",
+        "ShowInBattle": [],
+        "SkillDoubleRate": 0.0,
+        "SkillEffect": [],
+        "SkillPic": "",
+        "SkillRange": "",
+        "Summoned": "",
+        "TargetPreview": "",
+        "Type": "BATTLEPASSIVE"
+    },
+    "Skill_Condition_Shield_Enedown_1": {
+        "Actions": "Skill_Condition_Shield",
+        "AllowCounterHit": [
+            {
+                "id": "ShieldType",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            },
+            {
+                "id": "ShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    9
+                ]
+            },
+            {
+                "id": "AddShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            },
+            {
+                "id": "AddShieldTag",
+                "type": "FIXED",
+                "value": [
+                    ""
+                ]
+            },
+            {
+                "id": "AddShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "MoveShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    6
+                ]
+            },
+            {
+                "id": "MoveShieldTag",
+                "type": "FIXED",
+                "value": [
+                    ""
+                ]
+            },
+            {
+                "id": "MoveShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            }
+        ],
+        "AllowDoubleHit": [
+            {
+                "id": "ShieldType",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            },
+            {
+                "id": "ShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    9
+                ]
+            },
+            {
+                "id": "AddShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            },
+            {
+                "id": "AddShieldTag",
+                "type": "FIXED",
+                "value": [
+                    ""
+                ]
+            },
+            {
+                "id": "AddShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "MoveShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    6
+                ]
+            },
+            {
+                "id": "MoveShieldTag",
+                "type": "FIXED",
+                "value": [
+                    ""
+                ]
+            },
+            {
+                "id": "MoveShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            }
+        ],
+        "Args": [
+            {
+                "id": "ShieldType",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            },
+            {
+                "id": "ShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    9
+                ]
+            },
+            {
+                "id": "AddShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            },
+            {
+                "id": "AddShieldTag",
+                "type": "FIXED",
+                "value": [
+                    ""
+                ]
+            },
+            {
+                "id": "AddShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "MoveShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    6
+                ]
+            },
+            {
+                "id": "MoveShieldTag",
+                "type": "FIXED",
+                "value": [
+                    ""
+                ]
+            },
+            {
+                "id": "MoveShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            }
+        ],
+        "AttrEffects": [],
+        "Desc": "Sk_Desc_Empty",
+        "Desc_short": "Sk_Desc_Empty",
+        "Icon": "",
+        "IsEXSkill": "",
+        "MasterSkillTag": "",
+        "Name": "",
+        "ShowInBattle": [],
+        "SkillDoubleRate": 0.0,
+        "SkillEffect": [],
+        "SkillPic": "",
+        "SkillRange": "",
+        "Summoned": "",
+        "TargetPreview": "",
+        "Type": "BATTLEPASSIVE"
+    },
+    "Skill_Condition_Shield_Enedown_2": {
+        "Actions": "Skill_Condition_Shield",
+        "AllowCounterHit": [
+            {
+                "id": "ShieldType",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            },
+            {
+                "id": "ShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    9
+                ]
+            },
+            {
+                "id": "AddShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "AddShieldTag",
+                "type": "FIXED",
+                "value": [
+                    ""
+                ]
+            },
+            {
+                "id": "AddShieldFactor",
+                "type": "FIXED",
+                "value": []
+            },
+            {
+                "id": "MoveShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    6
+                ]
+            },
+            {
+                "id": "MoveShieldTag",
+                "type": "FIXED",
+                "value": [
+                    ""
+                ]
+            },
+            {
+                "id": "MoveShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            }
+        ],
+        "AllowDoubleHit": [
+            {
+                "id": "ShieldType",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            },
+            {
+                "id": "ShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    9
+                ]
+            },
+            {
+                "id": "AddShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "AddShieldTag",
+                "type": "FIXED",
+                "value": [
+                    ""
+                ]
+            },
+            {
+                "id": "AddShieldFactor",
+                "type": "FIXED",
+                "value": []
+            },
+            {
+                "id": "MoveShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    6
+                ]
+            },
+            {
+                "id": "MoveShieldTag",
+                "type": "FIXED",
+                "value": [
+                    ""
+                ]
+            },
+            {
+                "id": "MoveShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            }
+        ],
+        "Args": [
+            {
+                "id": "ShieldType",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            },
+            {
+                "id": "ShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    9
+                ]
+            },
+            {
+                "id": "AddShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "AddShieldTag",
+                "type": "FIXED",
+                "value": [
+                    ""
+                ]
+            },
+            {
+                "id": "AddShieldFactor",
+                "type": "FIXED",
+                "value": []
+            },
+            {
+                "id": "MoveShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    6
+                ]
+            },
+            {
+                "id": "MoveShieldTag",
+                "type": "FIXED",
+                "value": [
+                    ""
+                ]
+            },
+            {
+                "id": "MoveShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            }
+        ],
+        "AttrEffects": [],
+        "Desc": "Sk_Desc_Empty",
+        "Desc_short": "Sk_Desc_Empty",
+        "Icon": "",
+        "IsEXSkill": "",
+        "MasterSkillTag": "",
+        "Name": "",
+        "ShowInBattle": [],
+        "SkillDoubleRate": 0.0,
+        "SkillEffect": [],
+        "SkillPic": "",
+        "SkillRange": "",
+        "Summoned": "",
+        "TargetPreview": "",
+        "Type": "BATTLEPASSIVE"
+    },
+    "Skill_Condition_Shield_Enedown_3": {
+        "Actions": "Skill_Condition_Shield",
+        "AllowCounterHit": [
+            {
+                "id": "ShieldType",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            },
+            {
+                "id": "ShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    9
+                ]
+            },
+            {
+                "id": "AddShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            },
+            {
+                "id": "AddShieldTag",
+                "type": "FIXED",
+                "value": [
+                    ""
+                ]
+            },
+            {
+                "id": "AddShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            },
+            {
+                "id": "MoveShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    6
+                ]
+            },
+            {
+                "id": "MoveShieldTag",
+                "type": "FIXED",
+                "value": [
+                    ""
+                ]
+            },
+            {
+                "id": "MoveShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            }
+        ],
+        "AllowDoubleHit": [
+            {
+                "id": "ShieldType",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            },
+            {
+                "id": "ShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    9
+                ]
+            },
+            {
+                "id": "AddShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            },
+            {
+                "id": "AddShieldTag",
+                "type": "FIXED",
+                "value": [
+                    ""
+                ]
+            },
+            {
+                "id": "AddShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            },
+            {
+                "id": "MoveShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    6
+                ]
+            },
+            {
+                "id": "MoveShieldTag",
+                "type": "FIXED",
+                "value": [
+                    ""
+                ]
+            },
+            {
+                "id": "MoveShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            }
+        ],
+        "Args": [
+            {
+                "id": "ShieldType",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            },
+            {
+                "id": "ShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    9
+                ]
+            },
+            {
+                "id": "AddShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            },
+            {
+                "id": "AddShieldTag",
+                "type": "FIXED",
+                "value": [
+                    ""
+                ]
+            },
+            {
+                "id": "AddShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            },
+            {
+                "id": "MoveShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    6
+                ]
+            },
+            {
+                "id": "MoveShieldTag",
+                "type": "FIXED",
+                "value": [
+                    ""
+                ]
+            },
+            {
+                "id": "MoveShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            }
+        ],
+        "AttrEffects": [],
+        "Desc": "Sk_Desc_Empty",
+        "Desc_short": "Sk_Desc_Empty",
+        "Icon": "",
+        "IsEXSkill": "",
+        "MasterSkillTag": "",
+        "Name": "",
+        "ShowInBattle": [],
+        "SkillDoubleRate": 0.0,
+        "SkillEffect": [],
+        "SkillPic": "",
+        "SkillRange": "",
+        "Summoned": "",
+        "TargetPreview": "",
+        "Type": "BATTLEPASSIVE"
+    },
+    "Skill_Condition_Shield_KillDef_3": {
+        "Actions": "Skill_Condition_Shield",
+        "AllowCounterHit": [
+            {
+                "id": "ShieldType",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "ShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    0.95
+                ]
+            },
+            {
+                "id": "AddShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "AddShieldTag",
+                "type": "FIXED",
+                "value": [
+                    ""
+                ]
+            },
+            {
+                "id": "AddShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "MoveShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "MoveShieldTag",
+                "type": "FIXED",
+                "value": [
+                    "WARRIOR"
+                ]
+            },
+            {
+                "id": "MoveShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            }
+        ],
+        "AllowDoubleHit": [
+            {
+                "id": "ShieldType",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "ShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    0.95
+                ]
+            },
+            {
+                "id": "AddShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "AddShieldTag",
+                "type": "FIXED",
+                "value": [
+                    ""
+                ]
+            },
+            {
+                "id": "AddShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "MoveShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "MoveShieldTag",
+                "type": "FIXED",
+                "value": [
+                    "WARRIOR"
+                ]
+            },
+            {
+                "id": "MoveShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            }
+        ],
+        "Args": [
+            {
+                "id": "ShieldType",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "ShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    0.95
+                ]
+            },
+            {
+                "id": "AddShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "AddShieldTag",
+                "type": "FIXED",
+                "value": [
+                    ""
+                ]
+            },
+            {
+                "id": "AddShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "MoveShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "MoveShieldTag",
+                "type": "FIXED",
+                "value": [
+                    "WARRIOR"
+                ]
+            },
+            {
+                "id": "MoveShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            }
+        ],
+        "AttrEffects": [],
+        "Desc": "Sk_Desc_Empty",
+        "Desc_short": "Sk_Desc_Empty",
+        "Icon": "",
+        "IsEXSkill": "",
+        "MasterSkillTag": "",
+        "Name": "",
+        "ShowInBattle": [],
+        "SkillDoubleRate": 0.0,
+        "SkillEffect": [],
+        "SkillPic": "",
+        "SkillRange": "",
+        "Summoned": "",
+        "TargetPreview": "",
+        "Type": "BATTLEPASSIVE"
+    },
+    "Skill_Condition_Shield_KillDef_3_2": {
+        "Actions": "Skill_Condition_Shield",
+        "AllowCounterHit": [
+            {
+                "id": "ShieldType",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "ShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    0.95
+                ]
+            },
+            {
+                "id": "AddShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    4
+                ]
+            },
+            {
+                "id": "AddShieldTag",
+                "type": "FIXED",
+                "value": [
+                    "Master"
+                ]
+            },
+            {
+                "id": "AddShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    0.5
+                ]
+            },
+            {
+                "id": "MoveShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "MoveShieldTag",
+                "type": "FIXED",
+                "value": [
+                    "WARRIOR"
+                ]
+            },
+            {
+                "id": "MoveShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            }
+        ],
+        "AllowDoubleHit": [
+            {
+                "id": "ShieldType",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "ShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    0.95
+                ]
+            },
+            {
+                "id": "AddShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    4
+                ]
+            },
+            {
+                "id": "AddShieldTag",
+                "type": "FIXED",
+                "value": [
+                    "Master"
+                ]
+            },
+            {
+                "id": "AddShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    0.5
+                ]
+            },
+            {
+                "id": "MoveShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "MoveShieldTag",
+                "type": "FIXED",
+                "value": [
+                    "WARRIOR"
+                ]
+            },
+            {
+                "id": "MoveShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            }
+        ],
+        "Args": [
+            {
+                "id": "ShieldType",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "ShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    0.95
+                ]
+            },
+            {
+                "id": "AddShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    4
+                ]
+            },
+            {
+                "id": "AddShieldTag",
+                "type": "FIXED",
+                "value": [
+                    "Master"
+                ]
+            },
+            {
+                "id": "AddShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    0.5
+                ]
+            },
+            {
+                "id": "MoveShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "MoveShieldTag",
+                "type": "FIXED",
+                "value": [
+                    "WARRIOR"
+                ]
+            },
+            {
+                "id": "MoveShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            }
+        ],
+        "AttrEffects": [],
+        "Desc": "Sk_Desc_Empty",
+        "Desc_short": "Sk_Desc_Empty",
+        "Icon": "",
+        "IsEXSkill": "",
+        "MasterSkillTag": "",
+        "Name": "",
+        "ShowInBattle": [],
+        "SkillDoubleRate": 0.0,
+        "SkillEffect": [],
+        "SkillPic": "",
+        "SkillRange": "",
+        "Summoned": "",
+        "TargetPreview": "",
+        "Type": "BATTLEPASSIVE"
+    },
+    "Skill_Condition_Shield_KillSM_3": {
+        "Actions": "Skill_Condition_Shield",
+        "AllowCounterHit": [
+            {
+                "id": "ShieldType",
+                "type": "FIXED",
+                "value": [
+                    2
+                ]
+            },
+            {
+                "id": "ShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "AddShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "AddShieldTag",
+                "type": "FIXED",
+                "value": [
+                    ""
+                ]
+            },
+            {
+                "id": "AddShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "MoveShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "MoveShieldTag",
+                "type": "FIXED",
+                "value": [
+                    "WARRIOR"
+                ]
+            },
+            {
+                "id": "MoveShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            }
+        ],
+        "AllowDoubleHit": [
+            {
+                "id": "ShieldType",
+                "type": "FIXED",
+                "value": [
+                    2
+                ]
+            },
+            {
+                "id": "ShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "AddShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "AddShieldTag",
+                "type": "FIXED",
+                "value": [
+                    ""
+                ]
+            },
+            {
+                "id": "AddShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "MoveShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "MoveShieldTag",
+                "type": "FIXED",
+                "value": [
+                    "WARRIOR"
+                ]
+            },
+            {
+                "id": "MoveShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            }
+        ],
+        "Args": [
+            {
+                "id": "ShieldType",
+                "type": "FIXED",
+                "value": [
+                    2
+                ]
+            },
+            {
+                "id": "ShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "AddShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "AddShieldTag",
+                "type": "FIXED",
+                "value": [
+                    ""
+                ]
+            },
+            {
+                "id": "AddShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "MoveShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "MoveShieldTag",
+                "type": "FIXED",
+                "value": [
+                    "WARRIOR"
+                ]
+            },
+            {
+                "id": "MoveShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            }
+        ],
+        "AttrEffects": [],
+        "Desc": "Sk_Desc_Empty",
+        "Desc_short": "Sk_Desc_Empty",
+        "Icon": "",
+        "IsEXSkill": "",
+        "MasterSkillTag": "",
+        "Name": "",
+        "ShowInBattle": [],
+        "SkillDoubleRate": 0.0,
+        "SkillEffect": [],
+        "SkillPic": "",
+        "SkillRange": "",
+        "Summoned": "",
+        "TargetPreview": "",
+        "Type": "BATTLEPASSIVE"
+    },
+    "Skill_Condition_Shield_KillSu_3": {
+        "Actions": "Skill_Condition_Shield",
+        "AllowCounterHit": [
+            {
+                "id": "ShieldType",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "ShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    0.95
+                ]
+            },
+            {
+                "id": "AddShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "AddShieldTag",
+                "type": "FIXED",
+                "value": [
+                    ""
+                ]
+            },
+            {
+                "id": "AddShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "MoveShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "MoveShieldTag",
+                "type": "FIXED",
+                "value": [
+                    "SUMMONED"
+                ]
+            },
+            {
+                "id": "MoveShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            }
+        ],
+        "AllowDoubleHit": [
+            {
+                "id": "ShieldType",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "ShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    0.95
+                ]
+            },
+            {
+                "id": "AddShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "AddShieldTag",
+                "type": "FIXED",
+                "value": [
+                    ""
+                ]
+            },
+            {
+                "id": "AddShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "MoveShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "MoveShieldTag",
+                "type": "FIXED",
+                "value": [
+                    "SUMMONED"
+                ]
+            },
+            {
+                "id": "MoveShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            }
+        ],
+        "Args": [
+            {
+                "id": "ShieldType",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "ShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    0.95
+                ]
+            },
+            {
+                "id": "AddShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "AddShieldTag",
+                "type": "FIXED",
+                "value": [
+                    ""
+                ]
+            },
+            {
+                "id": "AddShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "MoveShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "MoveShieldTag",
+                "type": "FIXED",
+                "value": [
+                    "SUMMONED"
+                ]
+            },
+            {
+                "id": "MoveShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            }
+        ],
+        "AttrEffects": [],
+        "Desc": "Sk_Desc_Empty",
+        "Desc_short": "Sk_Desc_Empty",
+        "Icon": "",
+        "IsEXSkill": "",
+        "MasterSkillTag": "",
+        "Name": "",
+        "ShowInBattle": [],
+        "SkillDoubleRate": 0.0,
+        "SkillEffect": [],
+        "SkillPic": "",
+        "SkillRange": "",
+        "Summoned": "",
+        "TargetPreview": "",
+        "Type": "BATTLEPASSIVE"
+    },
+    "Skill_Condition_Shield_KillSu_3_2": {
+        "Actions": "Skill_Condition_Shield",
+        "AllowCounterHit": [
+            {
+                "id": "ShieldType",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "ShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    0.95
+                ]
+            },
+            {
+                "id": "AddShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    4
+                ]
+            },
+            {
+                "id": "AddShieldTag",
+                "type": "FIXED",
+                "value": [
+                    "Master"
+                ]
+            },
+            {
+                "id": "AddShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    0.5
+                ]
+            },
+            {
+                "id": "MoveShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "MoveShieldTag",
+                "type": "FIXED",
+                "value": [
+                    "SUMMONED"
+                ]
+            },
+            {
+                "id": "MoveShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            }
+        ],
+        "AllowDoubleHit": [
+            {
+                "id": "ShieldType",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "ShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    0.95
+                ]
+            },
+            {
+                "id": "AddShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    4
+                ]
+            },
+            {
+                "id": "AddShieldTag",
+                "type": "FIXED",
+                "value": [
+                    "Master"
+                ]
+            },
+            {
+                "id": "AddShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    0.5
+                ]
+            },
+            {
+                "id": "MoveShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "MoveShieldTag",
+                "type": "FIXED",
+                "value": [
+                    "SUMMONED"
+                ]
+            },
+            {
+                "id": "MoveShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            }
+        ],
+        "Args": [
+            {
+                "id": "ShieldType",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "ShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    0.95
+                ]
+            },
+            {
+                "id": "AddShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    4
+                ]
+            },
+            {
+                "id": "AddShieldTag",
+                "type": "FIXED",
+                "value": [
+                    "Master"
+                ]
+            },
+            {
+                "id": "AddShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    0.5
+                ]
+            },
+            {
+                "id": "MoveShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "MoveShieldTag",
+                "type": "FIXED",
+                "value": [
+                    "SUMMONED"
+                ]
+            },
+            {
+                "id": "MoveShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            }
+        ],
+        "AttrEffects": [],
+        "Desc": "Sk_Desc_Empty",
+        "Desc_short": "Sk_Desc_Empty",
+        "Icon": "",
+        "IsEXSkill": "",
+        "MasterSkillTag": "",
+        "Name": "",
+        "ShowInBattle": [],
+        "SkillDoubleRate": 0.0,
+        "SkillEffect": [],
+        "SkillPic": "",
+        "SkillRange": "",
+        "Summoned": "",
+        "TargetPreview": "",
+        "Type": "BATTLEPASSIVE"
+    },
+    "Skill_Condition_Shield_KillSu_8": {
+        "Actions": "Skill_Condition_Shield",
+        "AllowCounterHit": [
+            {
+                "id": "ShieldType",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            },
+            {
+                "id": "ShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    11
+                ]
+            },
+            {
+                "id": "AddShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "AddShieldTag",
+                "type": "FIXED",
+                "value": [
+                    "Co02P08U01N09"
+                ]
+            },
+            {
+                "id": "AddShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "MoveShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    6
+                ]
+            },
+            {
+                "id": "MoveShieldTag",
+                "type": "FIXED",
+                "value": [
+                    ""
+                ]
+            },
+            {
+                "id": "MoveShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            }
+        ],
+        "AllowDoubleHit": [
+            {
+                "id": "ShieldType",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            },
+            {
+                "id": "ShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    11
+                ]
+            },
+            {
+                "id": "AddShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "AddShieldTag",
+                "type": "FIXED",
+                "value": [
+                    "Co02P08U01N09"
+                ]
+            },
+            {
+                "id": "AddShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "MoveShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    6
+                ]
+            },
+            {
+                "id": "MoveShieldTag",
+                "type": "FIXED",
+                "value": [
+                    ""
+                ]
+            },
+            {
+                "id": "MoveShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            }
+        ],
+        "Args": [
+            {
+                "id": "ShieldType",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            },
+            {
+                "id": "ShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    11
+                ]
+            },
+            {
+                "id": "AddShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "AddShieldTag",
+                "type": "FIXED",
+                "value": [
+                    "Co02P08U01N09"
+                ]
+            },
+            {
+                "id": "AddShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "MoveShieldCondition",
+                "type": "FIXED",
+                "value": [
+                    6
+                ]
+            },
+            {
+                "id": "MoveShieldTag",
+                "type": "FIXED",
+                "value": [
+                    ""
+                ]
+            },
+            {
+                "id": "MoveShieldFactor",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            }
+        ],
+        "AttrEffects": [],
+        "Desc": "Sk_Desc_Empty",
+        "Desc_short": "Sk_Desc_Empty",
+        "Icon": "",
+        "IsEXSkill": "",
+        "MasterSkillTag": "",
+        "Name": "",
+        "ShowInBattle": [],
+        "SkillDoubleRate": 0.0,
+        "SkillEffect": [],
+        "SkillPic": "",
+        "SkillRange": "",
+        "Summoned": "",
+        "TargetPreview": "",
+        "Type": "BATTLEPASSIVE"
     },
     "Skill_Detective_bubble1": {
         "Actions": "Skill_Detective_DieBubble_Passive",
@@ -113726,6 +116349,816 @@
         "TargetPreview": "Target_KXuan",
         "Type": "UNIQUE"
     },
+    "Skill_Infinite_Summon_New_2": {
+        "Actions": "Skill_Infinite_Summon_New",
+        "AllowCounterHit": [
+            {
+                "id": "summonFactorHp",
+                "type": "FIXED",
+                "value": [
+                    0.09
+                ]
+            },
+            {
+                "id": "summonFactorAtk",
+                "type": "FIXED",
+                "value": [
+                    0.1
+                ]
+            },
+            {
+                "id": "summonFactorDef",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "BoomFirstNum",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "BoomLocation",
+                "type": "FIXED",
+                "value": [
+                    [
+                        7,
+                        9
+                    ]
+                ]
+            },
+            {
+                "id": "BoomAllNum",
+                "type": "FIXED",
+                "value": [
+                    2
+                ]
+            }
+        ],
+        "AllowDoubleHit": [
+            {
+                "id": "summonFactorHp",
+                "type": "FIXED",
+                "value": [
+                    0.09
+                ]
+            },
+            {
+                "id": "summonFactorAtk",
+                "type": "FIXED",
+                "value": [
+                    0.1
+                ]
+            },
+            {
+                "id": "summonFactorDef",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "BoomFirstNum",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "BoomLocation",
+                "type": "FIXED",
+                "value": [
+                    [
+                        7,
+                        9
+                    ]
+                ]
+            },
+            {
+                "id": "BoomAllNum",
+                "type": "FIXED",
+                "value": [
+                    2
+                ]
+            }
+        ],
+        "Args": [
+            {
+                "id": "summonFactorHp",
+                "type": "FIXED",
+                "value": [
+                    0.09
+                ]
+            },
+            {
+                "id": "summonFactorAtk",
+                "type": "FIXED",
+                "value": [
+                    0.1
+                ]
+            },
+            {
+                "id": "summonFactorDef",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "BoomFirstNum",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "BoomLocation",
+                "type": "FIXED",
+                "value": [
+                    [
+                        7,
+                        9
+                    ]
+                ]
+            },
+            {
+                "id": "BoomAllNum",
+                "type": "FIXED",
+                "value": [
+                    2
+                ]
+            }
+        ],
+        "AttrEffects": [],
+        "Desc": "Sk_Desc_Empty",
+        "Desc_short": "Sk_Desc_Empty",
+        "Icon": "",
+        "IsEXSkill": "",
+        "MasterSkillTag": "",
+        "Name": "",
+        "ShowInBattle": [],
+        "SkillDoubleRate": 0.0,
+        "SkillEffect": [],
+        "SkillPic": "",
+        "SkillRange": "",
+        "Summoned": [
+            "SummonedNormal",
+            "SummonedBoom"
+        ],
+        "TargetPreview": "",
+        "Type": "BATTLEPASSIVE"
+    },
+    "Skill_Infinite_Summon_New_3": {
+        "Actions": "Skill_Infinite_Summon_New",
+        "AllowCounterHit": [
+            {
+                "id": "summonFactorHp",
+                "type": "FIXED",
+                "value": [
+                    0.09
+                ]
+            },
+            {
+                "id": "summonFactorAtk",
+                "type": "FIXED",
+                "value": [
+                    0.1
+                ]
+            },
+            {
+                "id": "summonFactorDef",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "BoomFirstNum",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "BoomLocation",
+                "type": "FIXED",
+                "value": [
+                    [
+                        7,
+                        9
+                    ]
+                ]
+            },
+            {
+                "id": "BoomAllNum",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            }
+        ],
+        "AllowDoubleHit": [
+            {
+                "id": "summonFactorHp",
+                "type": "FIXED",
+                "value": [
+                    0.09
+                ]
+            },
+            {
+                "id": "summonFactorAtk",
+                "type": "FIXED",
+                "value": [
+                    0.1
+                ]
+            },
+            {
+                "id": "summonFactorDef",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "BoomFirstNum",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "BoomLocation",
+                "type": "FIXED",
+                "value": [
+                    [
+                        7,
+                        9
+                    ]
+                ]
+            },
+            {
+                "id": "BoomAllNum",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            }
+        ],
+        "Args": [
+            {
+                "id": "summonFactorHp",
+                "type": "FIXED",
+                "value": [
+                    0.09
+                ]
+            },
+            {
+                "id": "summonFactorAtk",
+                "type": "FIXED",
+                "value": [
+                    0.1
+                ]
+            },
+            {
+                "id": "summonFactorDef",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "BoomFirstNum",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "BoomLocation",
+                "type": "FIXED",
+                "value": [
+                    [
+                        7,
+                        9
+                    ]
+                ]
+            },
+            {
+                "id": "BoomAllNum",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            }
+        ],
+        "AttrEffects": [],
+        "Desc": "Sk_Desc_Empty",
+        "Desc_short": "Sk_Desc_Empty",
+        "Icon": "",
+        "IsEXSkill": "",
+        "MasterSkillTag": "",
+        "Name": "",
+        "ShowInBattle": [],
+        "SkillDoubleRate": 0.0,
+        "SkillEffect": [],
+        "SkillPic": "",
+        "SkillRange": "",
+        "Summoned": [
+            "SummonedNormal",
+            "SummonedBoom"
+        ],
+        "TargetPreview": "",
+        "Type": "BATTLEPASSIVE"
+    },
+    "Skill_Infinite_Summon_New_3_2": {
+        "Actions": "Skill_Infinite_Summon_New",
+        "AllowCounterHit": [
+            {
+                "id": "summonFactorHp",
+                "type": "FIXED",
+                "value": [
+                    0.09
+                ]
+            },
+            {
+                "id": "summonFactorAtk",
+                "type": "FIXED",
+                "value": [
+                    0.1
+                ]
+            },
+            {
+                "id": "summonFactorDef",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "BoomFirstNum",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "BoomLocation",
+                "type": "FIXED",
+                "value": [
+                    [
+                        4,
+                        6
+                    ]
+                ]
+            },
+            {
+                "id": "BoomAllNum",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            }
+        ],
+        "AllowDoubleHit": [
+            {
+                "id": "summonFactorHp",
+                "type": "FIXED",
+                "value": [
+                    0.09
+                ]
+            },
+            {
+                "id": "summonFactorAtk",
+                "type": "FIXED",
+                "value": [
+                    0.1
+                ]
+            },
+            {
+                "id": "summonFactorDef",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "BoomFirstNum",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "BoomLocation",
+                "type": "FIXED",
+                "value": [
+                    [
+                        4,
+                        6
+                    ]
+                ]
+            },
+            {
+                "id": "BoomAllNum",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            }
+        ],
+        "Args": [
+            {
+                "id": "summonFactorHp",
+                "type": "FIXED",
+                "value": [
+                    0.09
+                ]
+            },
+            {
+                "id": "summonFactorAtk",
+                "type": "FIXED",
+                "value": [
+                    0.1
+                ]
+            },
+            {
+                "id": "summonFactorDef",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "BoomFirstNum",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "BoomLocation",
+                "type": "FIXED",
+                "value": [
+                    [
+                        4,
+                        6
+                    ]
+                ]
+            },
+            {
+                "id": "BoomAllNum",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            }
+        ],
+        "AttrEffects": [],
+        "Desc": "Sk_Desc_Empty",
+        "Desc_short": "Sk_Desc_Empty",
+        "Icon": "",
+        "IsEXSkill": "",
+        "MasterSkillTag": "",
+        "Name": "",
+        "ShowInBattle": [],
+        "SkillDoubleRate": 0.0,
+        "SkillEffect": [],
+        "SkillPic": "",
+        "SkillRange": "",
+        "Summoned": [
+            "SummonedNormal",
+            "SummonedBoom"
+        ],
+        "TargetPreview": "",
+        "Type": "BATTLEPASSIVE"
+    },
+    "Skill_Infinite_Summon_New_3_3": {
+        "Actions": "Skill_Infinite_Summon_New",
+        "AllowCounterHit": [
+            {
+                "id": "summonFactorHp",
+                "type": "FIXED",
+                "value": [
+                    0.09
+                ]
+            },
+            {
+                "id": "summonFactorAtk",
+                "type": "FIXED",
+                "value": [
+                    0.1
+                ]
+            },
+            {
+                "id": "summonFactorDef",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "BoomFirstNum",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "BoomLocation",
+                "type": "FIXED",
+                "value": [
+                    [
+                        1,
+                        7
+                    ]
+                ]
+            },
+            {
+                "id": "BoomAllNum",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            }
+        ],
+        "AllowDoubleHit": [
+            {
+                "id": "summonFactorHp",
+                "type": "FIXED",
+                "value": [
+                    0.09
+                ]
+            },
+            {
+                "id": "summonFactorAtk",
+                "type": "FIXED",
+                "value": [
+                    0.1
+                ]
+            },
+            {
+                "id": "summonFactorDef",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "BoomFirstNum",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "BoomLocation",
+                "type": "FIXED",
+                "value": [
+                    [
+                        1,
+                        7
+                    ]
+                ]
+            },
+            {
+                "id": "BoomAllNum",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            }
+        ],
+        "Args": [
+            {
+                "id": "summonFactorHp",
+                "type": "FIXED",
+                "value": [
+                    0.09
+                ]
+            },
+            {
+                "id": "summonFactorAtk",
+                "type": "FIXED",
+                "value": [
+                    0.1
+                ]
+            },
+            {
+                "id": "summonFactorDef",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "BoomFirstNum",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "BoomLocation",
+                "type": "FIXED",
+                "value": [
+                    [
+                        1,
+                        7
+                    ]
+                ]
+            },
+            {
+                "id": "BoomAllNum",
+                "type": "FIXED",
+                "value": [
+                    3
+                ]
+            }
+        ],
+        "AttrEffects": [],
+        "Desc": "Sk_Desc_Empty",
+        "Desc_short": "Sk_Desc_Empty",
+        "Icon": "",
+        "IsEXSkill": "",
+        "MasterSkillTag": "",
+        "Name": "",
+        "ShowInBattle": [],
+        "SkillDoubleRate": 0.0,
+        "SkillEffect": [],
+        "SkillPic": "",
+        "SkillRange": "",
+        "Summoned": [
+            "SummonedNormal",
+            "SummonedBoom"
+        ],
+        "TargetPreview": "",
+        "Type": "BATTLEPASSIVE"
+    },
+    "Skill_Infinite_Summon_New_3_4": {
+        "Actions": "Skill_Infinite_Summon_New",
+        "AllowCounterHit": [
+            {
+                "id": "summonFactorHp",
+                "type": "FIXED",
+                "value": [
+                    0.09
+                ]
+            },
+            {
+                "id": "summonFactorAtk",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "summonFactorDef",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "BoomFirstNum",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "BoomLocation",
+                "type": "FIXED",
+                "value": [
+                    [
+                        9,
+                        3
+                    ]
+                ]
+            },
+            {
+                "id": "BoomAllNum",
+                "type": "FIXED",
+                "value": [
+                    2
+                ]
+            }
+        ],
+        "AllowDoubleHit": [
+            {
+                "id": "summonFactorHp",
+                "type": "FIXED",
+                "value": [
+                    0.09
+                ]
+            },
+            {
+                "id": "summonFactorAtk",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "summonFactorDef",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "BoomFirstNum",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "BoomLocation",
+                "type": "FIXED",
+                "value": [
+                    [
+                        9,
+                        3
+                    ]
+                ]
+            },
+            {
+                "id": "BoomAllNum",
+                "type": "FIXED",
+                "value": [
+                    2
+                ]
+            }
+        ],
+        "Args": [
+            {
+                "id": "summonFactorHp",
+                "type": "FIXED",
+                "value": [
+                    0.09
+                ]
+            },
+            {
+                "id": "summonFactorAtk",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "summonFactorDef",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "BoomFirstNum",
+                "type": "FIXED",
+                "value": [
+                    1
+                ]
+            },
+            {
+                "id": "BoomLocation",
+                "type": "FIXED",
+                "value": [
+                    [
+                        9,
+                        3
+                    ]
+                ]
+            },
+            {
+                "id": "BoomAllNum",
+                "type": "FIXED",
+                "value": [
+                    2
+                ]
+            }
+        ],
+        "AttrEffects": [],
+        "Desc": "Sk_Desc_Empty",
+        "Desc_short": "Sk_Desc_Empty",
+        "Icon": "",
+        "IsEXSkill": "",
+        "MasterSkillTag": "",
+        "Name": "",
+        "ShowInBattle": [],
+        "SkillDoubleRate": 0.0,
+        "SkillEffect": [],
+        "SkillPic": "",
+        "SkillRange": "",
+        "Summoned": [
+            "SummonedNormal",
+            "SummonedBoom"
+        ],
+        "TargetPreview": "",
+        "Type": "BATTLEPASSIVE"
+    },
     "Skill_Infinite_Summon_Passive": {
         "Actions": "Skill_Infinite_Summon_Passive",
         "AllowCounterHit": [
@@ -113831,6 +117264,158 @@
         "SkillPic": "",
         "SkillRange": "",
         "Summoned": "",
+        "TargetPreview": "",
+        "Type": "BATTLEPASSIVE"
+    },
+    "Skill_Infinite_Summon_Passive_Co": {
+        "Actions": "Skill_Infinite_Summon_New",
+        "AllowCounterHit": [
+            {
+                "id": "summonFactorHp",
+                "type": "FIXED",
+                "value": [
+                    0.09
+                ]
+            },
+            {
+                "id": "summonFactorAtk",
+                "type": "FIXED",
+                "value": [
+                    0.1
+                ]
+            },
+            {
+                "id": "summonFactorDef",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "BoomFirstNum",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "BoomLocation",
+                "type": "FIXED",
+                "value": [
+                    []
+                ]
+            },
+            {
+                "id": "BoomAllNum",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            }
+        ],
+        "AllowDoubleHit": [
+            {
+                "id": "summonFactorHp",
+                "type": "FIXED",
+                "value": [
+                    0.09
+                ]
+            },
+            {
+                "id": "summonFactorAtk",
+                "type": "FIXED",
+                "value": [
+                    0.1
+                ]
+            },
+            {
+                "id": "summonFactorDef",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "BoomFirstNum",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "BoomLocation",
+                "type": "FIXED",
+                "value": [
+                    []
+                ]
+            },
+            {
+                "id": "BoomAllNum",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            }
+        ],
+        "Args": [
+            {
+                "id": "summonFactorHp",
+                "type": "FIXED",
+                "value": [
+                    0.09
+                ]
+            },
+            {
+                "id": "summonFactorAtk",
+                "type": "FIXED",
+                "value": [
+                    0.1
+                ]
+            },
+            {
+                "id": "summonFactorDef",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "BoomFirstNum",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            },
+            {
+                "id": "BoomLocation",
+                "type": "FIXED",
+                "value": [
+                    []
+                ]
+            },
+            {
+                "id": "BoomAllNum",
+                "type": "FIXED",
+                "value": [
+                    0
+                ]
+            }
+        ],
+        "AttrEffects": [],
+        "Desc": "Sk_Desc_Empty",
+        "Desc_short": "Sk_Desc_Empty",
+        "Icon": "",
+        "IsEXSkill": "",
+        "MasterSkillTag": "",
+        "Name": "",
+        "ShowInBattle": [],
+        "SkillDoubleRate": 0.0,
+        "SkillEffect": [],
+        "SkillPic": "",
+        "SkillRange": "",
+        "Summoned": [
+            "SummonedNormal"
+        ],
         "TargetPreview": "",
         "Type": "BATTLEPASSIVE"
     },

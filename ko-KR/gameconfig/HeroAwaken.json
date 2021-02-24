@@ -2,6 +2,11 @@
     "BBLMa": {
         "AnimSound": "",
         "Animation": "BBLMa_Awaken",
+        "CutIn": [
+            0,
+            0,
+            1.5
+        ],
         "ModelId": "Model_BBLMa_Awake",
         "Name": "BBLMa_Awake_Name",
         "NameDesc": "BBLMa_Awake_Desc",
@@ -15,9 +20,35 @@
         "StoryLink": "S11S01",
         "SurfaceId": "Surface_BBLMa_Awake"
     },
+    "CZheng": {
+        "AnimSound": "Se_Effect_Awakening_CZheng",
+        "Animation": "CUNZHENG_Awaken",
+        "CutIn": [
+            0,
+            -200,
+            1.3
+        ],
+        "ModelId": "Model_CZheng_Awake",
+        "Name": "CZheng_Awake_Name",
+        "NameDesc": "CZheng_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_CZheng_UnAwake",
+        "Reward": "HeroAwaken_CZheng",
+        "ShowHero": "CZheng",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "CZheng_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_CZheng_Awake"
+    },
     "KTSJKe": {
         "AnimSound": "",
         "Animation": "KTSJKe_Awaken",
+        "CutIn": [
+            0,
+            0,
+            1.5
+        ],
         "ModelId": "Model_KTSJKe_Awake",
         "Name": "KTSJKe_Awake_Name",
         "NameDesc": "KTSJKe_Awake_Desc",
@@ -34,6 +65,11 @@
     "LFEr": {
         "AnimSound": "Se_Effect_Awakening_LFEr",
         "Animation": "LFEr_Awaken",
+        "CutIn": [
+            0,
+            0,
+            1.5
+        ],
         "ModelId": "Model_LFEr_Awake",
         "Name": "LFEr_Awake_Name",
         "NameDesc": "LFEr_Awake_Desc",
@@ -50,6 +86,11 @@
     "SDTZi": {
         "AnimSound": "",
         "Animation": "SDTZi_Awaken",
+        "CutIn": [
+            0,
+            0,
+            1.5
+        ],
         "ModelId": "Model_SDTZi_Awake",
         "Name": "SDTZi_Awake_Name",
         "NameDesc": "SDTZi_Awake_Desc",
@@ -66,6 +107,11 @@
     "TPGZhu": {
         "AnimSound": "",
         "Animation": "FHYH_Awaken",
+        "CutIn": [
+            0,
+            0,
+            1.5
+        ],
         "ModelId": "Model_TPGZhu_Awake",
         "Name": "TPGZhu_Awake_Name",
         "NameDesc": "TPGZhu_Awake_Desc",
@@ -79,9 +125,35 @@
         "StoryLink": "S11S01",
         "SurfaceId": "Surface_TPGZhu_Awake"
     },
+    "YSTLu": {
+        "AnimSound": "Se_Effect_Awakening_YSTLu",
+        "Animation": "ASTLSI_awken",
+        "CutIn": [
+            0,
+            0,
+            1.5
+        ],
+        "ModelId": "Model_YSTLu_Awake",
+        "Name": "YSTLu_Awake_Name",
+        "NameDesc": "YSTLu_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_YSTLu_UnAwake",
+        "Reward": "HeroAwaken_YSTLu",
+        "ShowHero": "YSTLu",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "YSTLu_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_YSTLu_Awake"
+    },
     "ZZBBWei": {
         "AnimSound": "",
         "Animation": "ZZBBWei_Awaken",
+        "CutIn": [
+            0,
+            0,
+            1.5
+        ],
         "ModelId": "Model_ZZBBWei_Awake",
         "Name": "ZZBBWei_Awake_Name",
         "NameDesc": "ZZBBWei_Awake_Desc",

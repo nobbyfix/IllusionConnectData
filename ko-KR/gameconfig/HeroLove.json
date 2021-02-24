@@ -4258,6 +4258,202 @@
             "sleep": 10
         }
     },
+    "FLYDe": {
+        "AfkAction": {
+            "walk": [
+                1,
+                4,
+                8
+            ]
+        },
+        "Birthday": [
+            11,
+            11
+        ],
+        "DateDesc": {
+            "greeting": [
+                "DateGreeting_FLYDe"
+            ],
+            "refuse": [
+                "DateRefuse_FLYDe"
+            ]
+        },
+        "EventParameter": {
+            "gift": 10,
+            "hug": 10,
+            "use": 0
+        },
+        "FreeStaminaDesc": "FreeStaminaDesc_FLYDe",
+        "Function": {
+            "date": [
+                3,
+                250
+            ],
+            "gift": [
+                1,
+                0
+            ]
+        },
+        "GiftDesc": {
+            "greeting": [
+                "GiftGreeting_FLYDe"
+            ],
+            "lovely": [
+                "GiftLovely_FLYDe"
+            ],
+            "normal": [
+                "GiftNormal_FLYDe"
+            ],
+            "offensive": [
+                "GiftOffensive_FLYDe"
+            ]
+        },
+        "GiftEventDesc": {
+            "answer": [
+                "EventGiftAnswer_FLYDe"
+            ],
+            "greeting": [
+                "EventGiftGreeting_FLYDe"
+            ]
+        },
+        "Likability": [
+            50,
+            150,
+            250,
+            400,
+            600,
+            800,
+            1200,
+            1600,
+            2000
+        ],
+        "LikabilityAttr": [
+            {
+                "25": [
+                    "Gallery_14Cost_1",
+                    "Gallery_Cost_1_Def"
+                ],
+                "50": [
+                    "Gallery_14Cost_2",
+                    "Gallery_Cost_1_Def"
+                ]
+            },
+            {
+                "150": [
+                    "Gallery_14Cost_4",
+                    "Gallery_Cost_2_Def"
+                ],
+                "75": [
+                    "Gallery_14Cost_3",
+                    "Gallery_Cost_2_Def"
+                ]
+            },
+            {
+                "125": [
+                    "Gallery_14Cost_5",
+                    "Gallery_Cost_3_Def"
+                ],
+                "250": [
+                    "Gallery_14Cost_6",
+                    "Gallery_Cost_3_Def"
+                ]
+            },
+            {
+                "200": [
+                    "Gallery_14Cost_7",
+                    "Gallery_Cost_4_Def"
+                ],
+                "400": [
+                    "Gallery_14Cost_8",
+                    "Gallery_Cost_4_Def"
+                ]
+            },
+            {
+                "300": [
+                    "Gallery_14Cost_9",
+                    "Gallery_Cost_5_Def"
+                ],
+                "600": [
+                    "Gallery_14Cost_10",
+                    "Gallery_Cost_5_Def"
+                ]
+            },
+            {
+                "400": [
+                    "Gallery_14Cost_11",
+                    "Gallery_Cost_6_Def"
+                ],
+                "800": [
+                    "Gallery_14Cost_12",
+                    "Gallery_Cost_6_Def"
+                ]
+            },
+            {
+                "1200": [
+                    "Gallery_14Cost_14",
+                    "Gallery_Cost_7_Def"
+                ],
+                "600": [
+                    "Gallery_14Cost_13",
+                    "Gallery_Cost_7_Def"
+                ]
+            },
+            {
+                "1600": [
+                    "Gallery_14Cost_16",
+                    "Gallery_Cost_8_Def"
+                ],
+                "800": [
+                    "Gallery_14Cost_15",
+                    "Gallery_Cost_8_Def"
+                ]
+            },
+            {
+                "1000": [
+                    "Gallery_14Cost_17",
+                    "Gallery_Cost_9_Def"
+                ],
+                "2000": [
+                    "Gallery_14Cost_18",
+                    "Gallery_Cost_9_Def"
+                ]
+            }
+        ],
+        "LoveSound": [
+            "Voice_FLYDe_14",
+            "Voice_FLYDe_15",
+            "Voice_FLYDe_16",
+            null,
+            "Voice_FLYDe_17",
+            null,
+            "Voice_FLYDe_18",
+            null,
+            "Voice_FLYDe_34"
+        ],
+        "LovelyGift": {
+            "IHG_Quality2_16": 1,
+            "IHG_Quality3_4": 3,
+            "IHG_Quality4_15": 10,
+            "IHG_Quality4_4": 10,
+            "IHG_Quality5_12": 20,
+            "IHG_Quality5_13": 20
+        },
+        "OffensiveGift": {
+            "IHG_Quality2_11": 1,
+            "IHG_Quality3_9": 3,
+            "IHG_Quality4_14": 10,
+            "IHG_Quality5_7": 20
+        },
+        "StoryLink": "",
+        "UseEventDesc": {
+            "sit": "EventUse_FLYDe",
+            "sleep": "EventUse_FLYDe"
+        },
+        "UseEventParameter": {
+            "sit": 10,
+            "sleep": 10
+        }
+    },
     "FTLEShi": {
         "AfkAction": {
             "walk": [
@@ -12468,19 +12664,166 @@
         }
     },
     "TJHDe": {
-        "AfkAction": "",
+        "AfkAction": {
+            "walk": [
+                1,
+                4,
+                8
+            ]
+        },
         "Birthday": [
-            1,
-            1
+            4,
+            20
         ],
-        "DateDesc": "",
-        "EventParameter": "",
+        "DateDesc": {
+            "greeting": [
+                "DateGreeting_TJHDe"
+            ],
+            "refuse": [
+                "DateRefuse_TJHDe"
+            ]
+        },
+        "EventParameter": {
+            "gift": 10,
+            "hug": 10,
+            "use": 0
+        },
         "FreeStaminaDesc": "FreeStaminaDesc_TJHDe",
-        "Function": "",
-        "GiftDesc": "",
-        "GiftEventDesc": "",
-        "Likability": "",
-        "LikabilityAttr": "",
+        "Function": {
+            "date": [
+                3,
+                250
+            ],
+            "gift": [
+                1,
+                0
+            ]
+        },
+        "GiftDesc": {
+            "greeting": [
+                "GiftGreeting_TJHDe"
+            ],
+            "lovely": [
+                "GiftLovely_TJHDe"
+            ],
+            "normal": [
+                "GiftNormal_TJHDe"
+            ],
+            "offensive": [
+                "GiftOffensive_TJHDe"
+            ]
+        },
+        "GiftEventDesc": {
+            "answer": [
+                "EventGiftAnswer_TJHDe"
+            ],
+            "greeting": [
+                "EventGiftGreeting_TJHDe"
+            ]
+        },
+        "Likability": [
+            50,
+            150,
+            250,
+            400,
+            600,
+            800,
+            1200,
+            1600,
+            2000
+        ],
+        "LikabilityAttr": [
+            {
+                "25": [
+                    "Gallery_14Cost_1",
+                    "Gallery_Cost_1_Def"
+                ],
+                "50": [
+                    "Gallery_14Cost_2",
+                    "Gallery_Cost_1_Def"
+                ]
+            },
+            {
+                "150": [
+                    "Gallery_14Cost_4",
+                    "Gallery_Cost_2_Def"
+                ],
+                "75": [
+                    "Gallery_14Cost_3",
+                    "Gallery_Cost_2_Def"
+                ]
+            },
+            {
+                "125": [
+                    "Gallery_14Cost_5",
+                    "Gallery_Cost_3_Def"
+                ],
+                "250": [
+                    "Gallery_14Cost_6",
+                    "Gallery_Cost_3_Def"
+                ]
+            },
+            {
+                "200": [
+                    "Gallery_14Cost_7",
+                    "Gallery_Cost_4_Def"
+                ],
+                "400": [
+                    "Gallery_14Cost_8",
+                    "Gallery_Cost_4_Def"
+                ]
+            },
+            {
+                "300": [
+                    "Gallery_14Cost_9",
+                    "Gallery_Cost_5_Def"
+                ],
+                "600": [
+                    "Gallery_14Cost_10",
+                    "Gallery_Cost_5_Def"
+                ]
+            },
+            {
+                "400": [
+                    "Gallery_14Cost_11",
+                    "Gallery_Cost_6_Def"
+                ],
+                "800": [
+                    "Gallery_14Cost_12",
+                    "Gallery_Cost_6_Def"
+                ]
+            },
+            {
+                "1200": [
+                    "Gallery_14Cost_14",
+                    "Gallery_Cost_7_Def"
+                ],
+                "600": [
+                    "Gallery_14Cost_13",
+                    "Gallery_Cost_7_Def"
+                ]
+            },
+            {
+                "1600": [
+                    "Gallery_14Cost_16",
+                    "Gallery_Cost_8_Def"
+                ],
+                "800": [
+                    "Gallery_14Cost_15",
+                    "Gallery_Cost_8_Def"
+                ]
+            },
+            {
+                "1000": [
+                    "Gallery_14Cost_17",
+                    "Gallery_Cost_9_Def"
+                ],
+                "2000": [
+                    "Gallery_14Cost_18",
+                    "Gallery_Cost_9_Def"
+                ]
+            }
+        ],
         "LoveSound": [
             "Voice_TJHDe_14",
             "Voice_TJHDe_15",
@@ -12493,28 +12836,28 @@
             "Voice_TJHDe_34"
         ],
         "LovelyGift": {
-            "IHG_Quality2_1": 1,
-            "IHG_Quality2_13": 1,
-            "IHG_Quality2_5": 1,
-            "IHG_Quality3_1": 3,
-            "IHG_Quality3_13": 3,
+            "IHG_Quality2_11": 1,
+            "IHG_Quality3_11": 3,
             "IHG_Quality3_5": 3,
-            "IHG_Quality4_1": 10,
-            "IHG_Quality4_13": 10,
             "IHG_Quality4_5": 10,
-            "IHG_Quality5_1": 20,
-            "IHG_Quality5_10": 20,
-            "IHG_Quality5_2": 20
+            "IHG_Quality4_8": 10,
+            "IHG_Quality5_3": 20
         },
         "OffensiveGift": {
-            "IHG_Quality2_10": 1,
-            "IHG_Quality3_10": 3,
-            "IHG_Quality4_10": 8,
-            "IHG_Quality5_7": 20
+            "IHG_Quality2_7": 1,
+            "IHG_Quality3_7": 3,
+            "IHG_Quality4_14": 10,
+            "IHG_Quality5_13": 20
         },
         "StoryLink": "",
-        "UseEventDesc": "",
-        "UseEventParameter": ""
+        "UseEventDesc": {
+            "sit": "EventUse_TJHDe",
+            "sleep": "EventUse_TJHDe"
+        },
+        "UseEventParameter": {
+            "sit": 10,
+            "sleep": 10
+        }
     },
     "TLMi": {
         "AfkAction": {

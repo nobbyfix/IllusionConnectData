@@ -476,7 +476,7 @@ function BattleLogic:on_EntityHurt(_, args)
 		local hurtRatio = targetHpComp:ratioOfMaxHp(hurt.eft)
 		local result = self._angerSystem:applyAngerRuleOnTarget(workId, target, AngerRules.kFromDamage, hurtRatio)
 
-		if floor(prevHpRatio * 100) ~= floor(curHpRatio * 100) then
+		if floor(prevHpRatio * 100) ~= floor(curHpRatio * 100) or curHpRatio <= 0 then
 			self._skillSystem:activateGlobalTrigger("UNIT_HPCHANGE", {
 				unit = target,
 				prevHpPercent = floor(prevHpRatio * 100),

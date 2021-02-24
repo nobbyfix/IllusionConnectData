@@ -43,6 +43,12 @@ function ActivityBlockTeamMediator:onRegister()
 	super.onRegister(self)
 	self:mapButtonHandlersClick(kBtnHandlers)
 
+	self._fightBtn = self:bindWidget("main.btnPanel.fightBtn", TwoLevelViceButton, {
+		handler = {
+			clickAudio = "Se_Click_Common_2",
+			func = bind1(self.onClickFight, self)
+		}
+	})
 	self._oneKeyWidget = self:bindWidget("main.info_bg.button_one_key_embattle", ThreeLevelViceButton, {
 		handler = {
 			clickAudio = "Se_Click_Common_2",
@@ -114,6 +120,8 @@ function ActivityBlockTeamMediator:enterWithData(data)
 	self._activityModel = self._activitySystem:getActivityById(self._activityId)
 	self._uiType = self._activityModel:getUI()
 	self._activity = self._data.activity
+	self._param = self._data.param
+	self._pointId = self._param and self._param.pointId and self._param.pointId or nil
 	self._cardsExcept = {}
 	self._cardsRecommend = self._activity:getActivityConfig().BonusHero
 	self._masterList = self._masterSystem:getShowMasterList()
@@ -303,13 +311,13 @@ function ActivityBlockTeamMediator:initWidgetInfo()
 	self._myPetClone = self:getView():getChildByName("myPetClone")
 
 	self._myPetClone:setVisible(false)
-	self._myPetClone:getChildByFullName("fatigueBg"):setVisible(false)
 
 	self._petSize = self._myPetClone:getChildByFullName("myPetClone"):getContentSize()
 	self._teamPetClone = self:getView():getChildByName("teamPetClone")
 
 	self._teamPetClone:setVisible(false)
 	self._teamPetClone:setScale(0.64)
+	self._myPetClone:getChildByFullName("myPetClone.fatigueBg"):setVisible(false)
 
 	self._pageTipPanel = self._main:getChildByFullName("pageTipPanel")
 
@@ -326,9 +334,9 @@ function ActivityBlockTeamMediator:ignoreSafeArea()
 	AdjustUtils.ignorSafeAreaRectForNode(self._spPanel:getChildByFullName("combatBg"), AdjustUtils.kAdjustType.Right)
 
 	local director = cc.Director:getInstance()
-	local winSize = director:getWinSize()
+	self._winSize = director:getWinSize()
 
-	self._heroPanel:setContentSize(cc.size(winSize.width, 220))
+	self._heroPanel:setContentSize(cc.size(self._winSize.width, 220))
 end
 
 function ActivityBlockTeamMediator:createTeamCell(cell, index)
@@ -1002,7 +1010,9 @@ function ActivityBlockTeamMediator:initTeamHero(node, info)
 			image:offset(0, -5)
 		end
 
-		local isActive = self._stageSystem:checkIsKeySkillActive(condition, self._teamPets)
+		local isActive = self._stageSystem:checkIsKeySkillActive(condition, self._teamPets, {
+			masterId = self._curMasterId
+		})
 
 		if dicengEff then
 			dicengEff:setVisible(isActive)
@@ -1068,6 +1078,7 @@ function ActivityBlockTeamMediator:changeMasterId(event)
 
 	self:refreshMasterInfo()
 	self:checkMasterSkillActive()
+	self:refreshPetNode()
 end
 
 function ActivityBlockTeamMediator:refreshMasterInfo()
@@ -1204,9 +1215,13 @@ function ActivityBlockTeamMediator:onClickOneKeyBreak()
 	self:refreshPetNode()
 end
 
-function ActivityBlockTeamMediator:onClickBack()
+function ActivityBlockTeamMediator:onClickBack(sender, eventType, onClickFightCallback)
 	local function func()
-		self:dismiss()
+		if onClickFightCallback then
+			onClickFightCallback()
+		else
+			self:dismiss()
+		end
 	end
 
 	if self:checkToExit(func, false, "Stage_Team_UI10") then
@@ -1221,7 +1236,7 @@ function ActivityBlockTeamMediator:getPetNode(idx)
 end
 
 function ActivityBlockTeamMediator:initAssistData()
-	local pointData = self._activity:getPointById(self._data.enterPointId)
+	local pointData = self._activity:getPointById(self._pointId)
 	self._assistEnemy = pointData and pointData:getAssistEnemy() or {}
 	self._presetTeamPetNum = #self._assistEnemy
 	self._maxTeamPetNum = self._maxTeamPetNum - self._presetTeamPetNum
@@ -1277,6 +1292,9 @@ function ActivityBlockTeamMediator:initAssistView()
 			flag:addTo(node):offset(94, 182)
 		end
 	end
+
+	self._btnPanel:setVisible(self._pointId and true or false)
+	self._heroPanel:setContentSize(cc.size(self._pointId and self._winSize.width - 177 or self._winSize.width, 220))
 end
 
 function ActivityBlockTeamMediator:onClickOnTeamEnemy(sender, eventType)
@@ -1292,7 +1310,7 @@ function ActivityBlockTeamMediator:initAssistHero(node, info)
 
 	node:setColor(cc.c3b(255, 255, 255))
 
-	local fatigueBg = node:getParent():getChildByFullName("fatigueBg")
+	local fatigueBg = node:getChildByFullName("fatigueBg")
 
 	fatigueBg:setVisible(false)
 
@@ -1319,4 +1337,36 @@ function ActivityBlockTeamMediator:sortAssistHero(list)
 			table.insert(list, #list + 1, v)
 		end
 	end
+end
+
+function ActivityBlockTeamMediator:onClickFight(sender, eventType)
+	local function callback()
+		self._curTeam = self._activity:getTeam()
+
+		AudioTimerSystem:playStartBattleVoice(self._curTeam)
+		self._activitySystem:setBattleTeamInfo(self._curTeam)
+
+		local point = self._activity:getPointById(self._pointId)
+
+		point:recordOldStar()
+		point:recordHpRate()
+
+		self._param.parent._parent._data.stageType = self._param.parent._parent._stageType
+		self._param.parent._parent._data.enterBattlePointId = self._pointId
+
+		self._activitySystem:requestDoChildActivity(self._activityId, self._activity:getId(), {
+			doActivityType = 102,
+			type = self._param.type,
+			mapId = self._param.mapId,
+			pointId = self._pointId
+		}, function (rsdata)
+			if rsdata.resCode == GS_SUCCESS then
+				self._param.parent:onClickBack()
+				self:dismiss()
+				self._activitySystem:enterActstageBattle(rsdata.data, self._activityId, self._activity:getId())
+			end
+		end, true)
+	end
+
+	self:onClickBack(nil, , callback)
 end

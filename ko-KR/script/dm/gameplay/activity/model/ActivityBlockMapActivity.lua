@@ -24,6 +24,7 @@ function ActivityBlockMapActivity:initialize()
 		[litStageType.NORMAL] = {},
 		[litStageType.ELITE] = {}
 	}
+	self._stagesMapIds = {}
 end
 
 function ActivityBlockMapActivity:synchronize(data)
@@ -79,6 +80,7 @@ function ActivityBlockMapActivity:syncStageInfo(data)
 				self._stagesMap[type][id]:setOwner(self)
 
 				self._mapList[type][#self._mapList[type] + 1] = id
+				self._stagesMapIds[id] = self._stagesMap[type][id]
 			end
 
 			self._stagesMap[type][id]:sync(map)
@@ -225,4 +227,62 @@ function ActivityBlockMapActivity:getAssistEnemyInfo(enemyId)
 	}
 
 	return heroData
+end
+
+function ActivityBlockMapActivity:getAssistEnemyList(mapId)
+	local list = {}
+
+	for mapId, stage in ipairs(self._stagesMapIds) do
+		local points = stage:getIndex2Points()
+
+		for index, pointId in ipairs(points) do
+			local assistEnemy = self:getPointById(pointId):getAssistEnemy()
+
+			for i, enemyId in ipairs(assistEnemy) do
+				local enemyData = self:getAssistEnemyInfo(enemyId)
+
+				if enemyData then
+					list[#list + 1] = enemyData
+				end
+			end
+		end
+	end
+
+	return list
+end
+
+function ActivityBlockMapActivity:isHeroAttrStarExtra()
+	for k, stageList in pairs(self._stagesMap) do
+		for _, _stage in pairs(stageList) do
+			local points = _stage:getIndex2Points()
+
+			for _, point in ipairs(points) do
+				local heroAttrStarExtra = point:getHeroAttrStarExtra()
+
+				if heroAttrStarExtra then
+					return true
+				end
+			end
+		end
+	end
+
+	return false
+end
+
+function ActivityBlockMapActivity:isAllPointPass()
+	for mapId, stage in ipairs(self._stagesMapIds) do
+		local points = stage:getIndex2Points()
+
+		for index, pointId in ipairs(points) do
+			for _, point in ipairs(points) do
+				local isPass = point:isPass()
+
+				if not isPass then
+					return false
+				end
+			end
+		end
+	end
+
+	return true
 end

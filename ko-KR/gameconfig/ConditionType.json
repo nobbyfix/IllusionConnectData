@@ -293,6 +293,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_ClubDonation_Desc"
     },
+    "Condi_CollapsedExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_Collapsed_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_CollapsedExchangeAchieve_Desc"
+    },
     "Condi_CommonStage": {
         "AchieveType1": "SIZEREACH",
         "AchieveType2": "",

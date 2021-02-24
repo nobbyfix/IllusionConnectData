@@ -548,13 +548,13 @@ function ActivitySystem:showEasterRewards(data)
 	}))
 end
 
-function ActivitySystem:enterTeam(activityId, blockActivity, enterPointId)
+function ActivitySystem:enterTeam(activityId, blockActivity, param)
 	local view = self:getInjector():getInstance("ActivityBlockTeamView")
 
 	self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
 		activity = blockActivity,
 		activityId = activityId,
-		enterPointId = enterPointId
+		param = param
 	}))
 end
 
@@ -1159,7 +1159,7 @@ function ActivitySystem:tryEnterTimeLimitSHop()
 	end
 
 	if self:checkTimeLimitShopShow() then
-		local view = self:getInjector():getInstance("TimeLimitShopActivityView")
+		local view = self:getInjector():getInstance(self:getTimeLimitShopViewName())
 
 		if view then
 			self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {}, {
@@ -1222,6 +1222,20 @@ function ActivitySystem:getFestivalPackageTitle()
 	end
 
 	return ""
+end
+
+function ActivitySystem:getTimeLimitShopViewName()
+	local activity = self:getActivityByComplexUI("FESTIVALPACKAGE")
+
+	if activity then
+		local type = activity:getConfig().ActivityConfig.PackType
+
+		if type and LimitShopActivityViewType[type] then
+			return LimitShopActivityViewType[type]
+		end
+	end
+
+	return "TimeLimitShopActivityView"
 end
 
 function ActivitySystem:requestAllActicities(blockUI, callback)
@@ -1539,14 +1553,15 @@ function ActivitySystem:enterSagaWinView(activityId)
 	end
 end
 
-function ActivitySystem:enterBlockMap(activityId)
+function ActivitySystem:enterBlockMap(activityId, blockActivityId)
 	local activity = self:getActivityById(activityId)
 
 	if activity then
 		local ui = activity:getActivityComplexUI()
 		local view = self:getInjector():getInstance(ActivityComplexUI.enterSupportStageView[ui])
 		local event = ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
-			activityId = activityId
+			activityId = activityId,
+			blockActivityId = blockActivityId
 		})
 
 		self:dispatch(event)

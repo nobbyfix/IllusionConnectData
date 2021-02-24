@@ -161,6 +161,10 @@ function BattleReferee:battleUnitDied(deadUnit)
 	return self:checkRules("onUnitDied", nil, deadUnit)
 end
 
+function BattleReferee:battleUnitOrSummonDied(deadUnit)
+	return self:checkRules("onUnitOrSummonDied", nil, deadUnit)
+end
+
 function BattleReferee:battleUnitsExcluded(excludedUnits)
 	return self:checkRules("onUnitsExcluded", nil, excludedUnits)
 end
@@ -430,7 +434,7 @@ function JudgeRuleFactory:keyUnitsDied(args, result)
 end
 
 function JudgeRuleFactory:playerRunOutOfEnergy(args, result)
-	local targetSide = sideFromString(args and args.side) or kBattleSideA
+	local unitType = args.killtype
 
 	if result == nil then
 		result = targetSide == kBattleSideA and kBattleSideALose or kBattleSideBLose
@@ -473,6 +477,51 @@ function JudgeRuleFactory:singleSideDeathsReached(args, result)
 			if deadUnit:getSide() == targetSide then
 				self._deaths = self._deaths + 1
 			end
+
+			if minimumDeaths <= self._deaths and self.result ~= nil then
+				return {
+					reason = "DEATHS_OVER_LIMIT",
+					result = self:result()
+				}
+			end
+		end
+	}
+end
+
+function JudgeRuleFactory:unitOrSummonDiedReached(args, result)
+	local unitType = args.killtype
+	local minimumDeaths = args and args.count or 1
+
+	if result == nil then
+		result = targetSide == kBattleSideA and kBattleSideALose or kBattleSideBLose
+	end
+
+	return {
+		result = resultFunction(result),
+		startup = function (self, battleLogic, battleContext)
+			self._deaths = 0
+			self._preDeaths = 0
+		end,
+		onUnitDied = function (self, deadUnit)
+			if deadUnit:getSide() == kBattleSideB then
+				if unitType == "Summoned" then
+					if deadUnit._isSummoned then
+						self._deaths = self._deaths + 1
+					end
+				elseif not deadUnit._isSummoned then
+					self._deaths = self._deaths + 1
+				end
+			end
+
+			self._processRecorder = self._battlecontext:getObject("ProcessRecorder")
+
+			if self._processRecorder and self._preDeaths < self._deaths then
+				self._processRecorder:recordObjectEvent(kBRMainLine, "CountDeath", {
+					cnt = self._deaths
+				})
+			end
+
+			self._preDeaths = self._deaths
 
 			if minimumDeaths <= self._deaths and self.result ~= nil then
 				return {

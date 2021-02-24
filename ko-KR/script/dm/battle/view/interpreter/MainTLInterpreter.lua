@@ -7,6 +7,7 @@ function MainTLInterpreter:initialize(viewContext)
 	self._mainMediator = viewContext:getValue("BattleMainMediator")
 	self._battleUIMediator = viewContext:getValue("BattleUIMediator")
 	self._screenEffectLayer = viewContext:getValue("BattleScreenEffectLayer")
+	self._battleGround = viewContext:getValue("BattleGroundLayer")
 	self._viewFrame = self._mainMediator:getTargetFrame()
 end
 
@@ -88,6 +89,12 @@ function MainTLInterpreter:act_Timing(action, args)
 	elseif args.ctrl == "resume" then
 		self._battleUIMediator:resumeTiming(args.time)
 		self._battleUIMediator:resumeEnergyIncreasing()
+	end
+end
+
+function MainTLInterpreter:act_CountDeath(action, args)
+	if self._battleUIMediator.increaseDead then
+		self._battleUIMediator:increaseDead(args.cnt)
 	end
 end
 
@@ -176,6 +183,15 @@ end
 function MainTLInterpreter:act_Timeup(action, args)
 	self._context:finishBattle(args.result)
 	self._mainMediator:battleTimeup(args.result)
+end
+
+function MainTLInterpreter:act_ShakeScreen(action, args)
+	local id = args.Id or 1
+	local duration = args.duration or 30
+	duration = duration / 1000
+	local enhance = args.enhance or 1
+
+	self._battleGround:rock(id, enhance, duration)
 end
 
 function MainTLInterpreter:act_BossComing(action, args)

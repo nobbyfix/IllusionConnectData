@@ -152,7 +152,7 @@ function TimeLimitShopActivityMediator:setPackageItemInfo(cell, data)
 		goldIcon2:addTo(priceText):center(priceText:getContentSize()):offset(-25, 0)
 		goldIcon2:setScale(0.7)
 
-		if data:getPrice() == 0 then
+		if data:getPrice() == 0 or data:getPrice() == nil then
 			priceText:setVisible(false)
 			xian:setVisible(false)
 			discountPanel:setVisible(false)
@@ -168,7 +168,7 @@ function TimeLimitShopActivityMediator:setPackageItemInfo(cell, data)
 		priceText:setString(symbol .. tostring(data:getPrice()))
 		xian:setVisible(true)
 
-		if data:getPrice() == 0 then
+		if data:getPrice() == 0 or data:getPrice() == nil then
 			priceText:setVisible(false)
 			xian:setVisible(false)
 			discountPanel:setVisible(false)
@@ -252,11 +252,13 @@ function TimeLimitShopActivityMediator:setPackageItemInfo(cell, data)
 		bg:setVisible(false)
 		bg_buy:setVisible(true)
 		mask:setVisible(true)
+		cell:setTouchEnabled(false)
 		moneyText:enableShadow(cc.c4b(49, 49, 49, 255), cc.size(0, -3), 3)
 	else
 		bg:setVisible(true)
 		bg_buy:setVisible(false)
 		mask:setVisible(false)
+		cell:setTouchEnabled(true)
 	end
 end
 

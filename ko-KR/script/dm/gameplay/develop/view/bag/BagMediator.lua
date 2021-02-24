@@ -619,6 +619,10 @@ function BagMediator:updateDetailButtons(notHasShow)
 			else
 				buttons.useBtn:setVisible(false)
 			end
+		elseif subType == ItemTypes.K_HERO_STAR then
+			buttons.useBtn:setVisible(true)
+			buttons.useBtn:setButtonName(Strings:get("bag_UI13"), Strings:get("UITitle_EN_Shiyong"))
+			self:setButtonEnabled(buttons.useBtn, true)
 		elseif page == ItemPages.kConsumable then
 			if item:getSubType() == ItemTypes.k_MAP_IN then
 				buttons.sellBtn:setVisible(false)
@@ -1233,6 +1237,8 @@ function BagMediator:onUseClicked(sender, eventType)
 		self:useScroll(self._curEntryId)
 	elseif subType == ItemTypes.K_HERO_F then
 		self:useHeroPiece(self._curEntryId)
+	elseif subType == ItemTypes.K_HERO_STAR then
+		self:useMaterial(self._curEntryId)
 	elseif subType == ItemTypes.K_MASTER_F then
 		self:useMasterPiece(self._curEntryId)
 	elseif subType == ItemTypes.K_EQUIP_F then

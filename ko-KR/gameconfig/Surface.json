@@ -1614,6 +1614,61 @@
         "Type": 3,
         "Unlook": 1
     },
+    "Surface_CZheng_Awake": {
+        "ActivityId": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    335,
+                    815
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch2",
+                "part": "body",
+                "point": [
+                    322,
+                    667
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_CZheng_1Awake_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "Surface_CZheng_Awake_GainDesc",
+        "GoodsId": "",
+        "Hero": "CZheng",
+        "Link": "",
+        "Model": "Model_CZheng_Awake",
+        "Name": "Surface_CZheng_Awake_Name",
+        "NotGetUnlook": "",
+        "Quality": 5,
+        "RepeatReward": "",
+        "ShopID": "",
+        "Sort": 2,
+        "Type": 5,
+        "Unlook": 1
+    },
     "Surface_DCJKang_1": {
         "ActivityId": "",
         "ClickAction": [
@@ -2131,6 +2186,61 @@
         "ShopID": "Shop_Surface",
         "Sort": 2,
         "Type": 3,
+        "Unlook": 1
+    },
+    "Surface_FLYDe_1": {
+        "ActivityId": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    9,
+                    1115
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch2",
+                "part": "body",
+                "point": [
+                    28,
+                    1005
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_FLYDe_1_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "1",
+        "GoodsId": "",
+        "Hero": "FLYDe",
+        "Link": "",
+        "Model": "Model_FLYDe",
+        "Name": "Surface_FLYDe_1_Name",
+        "NotGetUnlook": "",
+        "Quality": 2,
+        "RepeatReward": "",
+        "ShopID": "",
+        "Sort": 1,
+        "Type": "",
         "Unlook": 1
     },
     "Surface_FTLEShi_1": {
@@ -2965,8 +3075,8 @@
                 "action": "touch2",
                 "part": "head",
                 "point": [
-                    3,
-                    723
+                    -9,
+                    930
                 ],
                 "range": [
                     128,
@@ -2998,20 +3108,20 @@
             }
         ],
         "Desc": "Surface_KMLa_vt_Decs",
-        "GainDesc": "",
-        "GainShortDesc": "",
-        "GoodsId": "",
+        "GainDesc": "Surface_Shop_GainDesc",
+        "GainShortDesc": "Surface_GainShort",
+        "GoodsId": "ShopSurface_Surface_KMLa_2",
         "Hero": "KMLa",
         "Link": "",
         "Model": "Model_KMLa_vt",
         "Name": "Surface_KMLa_vt_Name",
         "NotGetUnlook": "",
         "Quality": 5,
-        "RepeatReward": "",
-        "ShopID": "",
+        "RepeatReward": 40,
+        "ShopID": "Shop_Surface",
         "Sort": 2,
-        "Type": "",
-        "Unlook": 0
+        "Type": 3,
+        "Unlook": 1
     },
     "Surface_KTSJKe_1": {
         "ActivityId": "",
@@ -3512,56 +3622,38 @@
         "ActivityId": "",
         "ClickAction": [
             {
-                "action": "touch3",
+                "action": "touch2",
+                "part": "head",
                 "point": [
-                    -52,
-                    993
+                    -3,
+                    538
                 ],
                 "range": [
                     128,
                     128
-                ],
-                "voice": [
-                    "Voice_ZZBBWei_41",
-                    "Voice_ZZBBWei_42",
-                    "Voice_ZZBBWei_43",
-                    "Voice_ZZBBWei_39"
                 ]
             },
             {
                 "action": "touch2",
+                "part": "body",
                 "point": [
-                    -42,
-                    901
+                    18,
+                    383
                 ],
                 "range": [
                     128,
                     95
-                ],
-                "voice": [
-                    "Voice_ZZBBWei_44",
-                    "Voice_ZZBBWei_45",
-                    "Voice_ZZBBWei_46",
-                    "Voice_ZZBBWei_39"
                 ]
             },
             {
-                "action": "touch2",
+                "action": "touch1",
+                "part": "all",
                 "point": [
                     "all"
                 ],
                 "range": [
                     0,
                     0
-                ],
-                "voice": [
-                    "Voice_ZZBBWei_47",
-                    "Voice_ZZBBWei_48",
-                    "Voice_ZZBBWei_07",
-                    "Voice_ZZBBWei_08",
-                    "Voice_ZZBBWei_09",
-                    "Voice_ZZBBWei_37",
-                    "Voice_ZZBBWei_39"
                 ]
             }
         ],
@@ -4358,8 +4450,8 @@
                 "action": "touch2",
                 "part": "head",
                 "point": [
-                    -9,
-                    930
+                    3,
+                    723
                 ],
                 "range": [
                     128,
@@ -4391,8 +4483,8 @@
             }
         ],
         "Desc": "Surface_NDGEr_vt_Decs",
-        "GainDesc": "",
-        "GainShortDesc": "",
+        "GainDesc": "Surface_NDGEr_2_GainDesc",
+        "GainShortDesc": "Surface_GainShort",
         "GoodsId": "",
         "Hero": "NDGEr",
         "Link": "",
@@ -4404,7 +4496,7 @@
         "ShopID": "",
         "Sort": 2,
         "Type": "",
-        "Unlook": 0
+        "Unlook": 1
     },
     "Surface_NFDDi_1": {
         "ActivityId": "",
@@ -5418,11 +5510,11 @@
         "ActivityId": "",
         "ClickAction": [
             {
-                "action": "touch3",
+                "action": "touch2",
                 "part": "head",
                 "point": [
-                    0,
-                    0
+                    -31,
+                    967
                 ],
                 "range": [
                     128,
@@ -5430,11 +5522,11 @@
                 ]
             },
             {
-                "action": "touch2",
+                "action": "touch3",
                 "part": "body",
                 "point": [
-                    0,
-                    0
+                    -52,
+                    778
                 ],
                 "range": [
                     128,
@@ -5442,7 +5534,7 @@
                 ]
             },
             {
-                "action": "touch2",
+                "action": "touch1",
                 "part": "all",
                 "point": [
                     "all"
@@ -5455,7 +5547,7 @@
         ],
         "Desc": "Surface_TJHDe_1_Desc",
         "GainDesc": "",
-        "GainShortDesc": "",
+        "GainShortDesc": "1",
         "GoodsId": "",
         "Hero": "TJHDe",
         "Link": "",
@@ -5466,7 +5558,7 @@
         "RepeatReward": "",
         "ShopID": "",
         "Sort": 1,
-        "Type": 1,
+        "Type": "",
         "Unlook": 1
     },
     "Surface_TLMi_1": {
@@ -5693,56 +5785,38 @@
         "ActivityId": "",
         "ClickAction": [
             {
-                "action": "touch3",
+                "action": "touch2",
+                "part": "head",
                 "point": [
-                    -52,
-                    993
+                    18,
+                    552
                 ],
                 "range": [
                     128,
                     128
-                ],
-                "voice": [
-                    "Voice_TPGZhu_41",
-                    "Voice_TPGZhu_42",
-                    "Voice_TPGZhu_43",
-                    "Voice_TPGZhu_39"
                 ]
             },
             {
                 "action": "touch2",
+                "part": "body",
                 "point": [
-                    -42,
-                    901
+                    -3,
+                    360
                 ],
                 "range": [
                     128,
                     95
-                ],
-                "voice": [
-                    "Voice_TPGZhu_44",
-                    "Voice_TPGZhu_45",
-                    "Voice_TPGZhu_46",
-                    "Voice_TPGZhu_39"
                 ]
             },
             {
-                "action": "touch2",
+                "action": "touch1",
+                "part": "all",
                 "point": [
                     "all"
                 ],
                 "range": [
                     0,
                     0
-                ],
-                "voice": [
-                    "Voice_TPGZhu_47",
-                    "Voice_TPGZhu_48",
-                    "Voice_TPGZhu_07",
-                    "Voice_TPGZhu_08",
-                    "Voice_TPGZhu_09",
-                    "Voice_TPGZhu_37",
-                    "Voice_TPGZhu_39"
                 ]
             }
         ],
@@ -6843,6 +6917,61 @@
         "Type": 1,
         "Unlook": 1
     },
+    "Surface_YSTLu_Awake": {
+        "ActivityId": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    -107,
+                    335
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch2",
+                "part": "body",
+                "point": [
+                    -76,
+                    235
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_YSTLu_1Awake_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "Surface_YSTLu_Awake_GainDesc",
+        "GoodsId": "",
+        "Hero": "YSTLu",
+        "Link": "",
+        "Model": "Model_YSTLu_Awake",
+        "Name": "Surface_YSTLu_Awake_Name",
+        "NotGetUnlook": "",
+        "Quality": 5,
+        "RepeatReward": "",
+        "ShopID": "",
+        "Sort": 2,
+        "Type": 5,
+        "Unlook": 1
+    },
     "Surface_YSuo_1": {
         "ActivityId": "",
         "ClickAction": [
@@ -7289,56 +7418,38 @@
         "ActivityId": "",
         "ClickAction": [
             {
-                "action": "touch3",
+                "action": "touch2",
+                "part": "head",
                 "point": [
-                    -52,
-                    993
+                    -37,
+                    752
                 ],
                 "range": [
                     128,
                     128
-                ],
-                "voice": [
-                    "Voice_ZZBBWei_41",
-                    "Voice_ZZBBWei_42",
-                    "Voice_ZZBBWei_43",
-                    "Voice_ZZBBWei_39"
                 ]
             },
             {
                 "action": "touch2",
+                "part": "body",
                 "point": [
-                    -42,
-                    901
+                    -87,
+                    607
                 ],
                 "range": [
                     128,
                     95
-                ],
-                "voice": [
-                    "Voice_ZZBBWei_44",
-                    "Voice_ZZBBWei_45",
-                    "Voice_ZZBBWei_46",
-                    "Voice_ZZBBWei_39"
                 ]
             },
             {
-                "action": "touch2",
+                "action": "touch1",
+                "part": "all",
                 "point": [
                     "all"
                 ],
                 "range": [
                     0,
                     0
-                ],
-                "voice": [
-                    "Voice_ZZBBWei_47",
-                    "Voice_ZZBBWei_48",
-                    "Voice_ZZBBWei_07",
-                    "Voice_ZZBBWei_08",
-                    "Voice_ZZBBWei_09",
-                    "Voice_ZZBBWei_37",
-                    "Voice_ZZBBWei_39"
                 ]
             }
         ],

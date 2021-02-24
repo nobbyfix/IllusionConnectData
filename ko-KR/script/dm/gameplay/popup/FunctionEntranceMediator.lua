@@ -18,9 +18,15 @@ FunctionEntranceMediator:has("_spStageSystem", {
 FunctionEntranceMediator:has("_exploreSystem", {
 	is = "r"
 }):injectWith("ExploreSystem")
+FunctionEntranceMediator:has("_rtpkSystem", {
+	is = "r"
+}):injectWith("RTPKSystem")
 FunctionEntranceMediator:has("_cooperateBossSystem", {
 	is = "r"
 }):injectWith("CooperateBossSystem")
+FunctionEntranceMediator:has("_gameServerAgent", {
+	is = "r"
+}):injectWith("GameServerAgent")
 
 local kFunctionData = {
 	{
@@ -42,6 +48,11 @@ local kFunctionData = {
 		cellNode = "cooperateBossCell",
 		switchKey = "fn_arena_cooperate_boss",
 		des = "BlockSP_ShowUI_Desc"
+	},
+	{
+		cellNode = "rtpkCell",
+		switchKey = "fn_arena_rtpk",
+		des = "BlockSP_ShowUI_Desc"
 	}
 }
 local EVENT_LOCAL_REFRESH_COOPERATE_STATE = "EVENT_LOCAL_REFRESH_COOPERATE_STATE"
@@ -51,6 +62,14 @@ function FunctionEntranceMediator:initialize()
 end
 
 function FunctionEntranceMediator:dispose()
+	self._viewClose = true
+
+	if self._rtpkTimer then
+		self._rtpkTimer:stop()
+
+		self._rtpkTimer = nil
+	end
+
 	super.dispose(self)
 end
 
@@ -81,11 +100,22 @@ function FunctionEntranceMediator:enterWithData(data)
 
 	self:setupView(data)
 	self:setupClickEnvs()
+
+	if CommonUtils.GetSwitch("fn_arena_rtpk") then
+		self._rtpkSystem:checkSeasonData(function ()
+			if self._viewClose then
+				return
+			end
+
+			self:refreshRTPKCell()
+		end)
+	end
 end
 
 function FunctionEntranceMediator:resumeWithData()
 	self:refreshRed()
 	self:refreshCooperateBoss()
+	self:refreshRTPKCell()
 end
 
 function FunctionEntranceMediator:setupView(data)
@@ -121,22 +151,33 @@ function FunctionEntranceMediator:initWidgetInfo(data)
 	jjAnim:addCallbackAtFrame(15, function ()
 		jjAnim:stop()
 	end)
+
+	for i, v in pairs(kFunctionData) do
+		local cell = self._arenaPanel:getChildByFullName(v.cellNode)
+
+		cell:setVisible(false)
+	end
+
 	action:gotoFrameAndPlay(0, 30, false)
 
-	if CommonUtils.GetSwitch(kFunctionData[1].switchKey) then
+	if CommonUtils.GetSwitch("fn_arena_normal") then
 		self:createArenaAnim()
 	end
 
-	if CommonUtils.GetSwitch(kFunctionData[2].switchKey) then
+	if CommonUtils.GetSwitch("fn_arena_pet_race") then
 		self:createPetRaceAnim()
 	end
 
-	if CommonUtils.GetSwitch(kFunctionData[3].switchKey) then
+	if CommonUtils.GetSwitch("fn_arena_friend") then
 		self:createFriendAnim()
 	end
 
 	if CommonUtils.GetSwitch(kFunctionData[4].switchKey) and self._cooperateBossSystem:cooperateBossShow() then
 		self:createCooperateBossAnim()
+	end
+
+	if CommonUtils.GetSwitch("fn_arena_rtpk") then
+		self:createRTPKAnim()
 	end
 
 	local function onFrameEvent(frame)
@@ -146,17 +187,17 @@ function FunctionEntranceMediator:initWidgetInfo(data)
 
 		local str = frame:getEvent()
 
-		if str == "ArenaAnim" and CommonUtils.GetSwitch(kFunctionData[1].switchKey) then
+		if str == "ArenaAnim" and CommonUtils.GetSwitch("fn_arena_normal") then
 			self._arenaPanel:getChildByFullName("arenaCell.ShowAnim"):setVisible(true)
 			self._arenaPanel:getChildByFullName("arenaCell.ShowAnim"):gotoAndPlay(0)
 		end
 
-		if str == "PetRaceAnim" and CommonUtils.GetSwitch(kFunctionData[2].switchKey) then
+		if str == "PetRaceAnim" and CommonUtils.GetSwitch("fn_arena_pet_race") then
 			self._arenaPanel:getChildByFullName("petRaceCell.ShowAnim"):setVisible(true)
 			self._arenaPanel:getChildByFullName("petRaceCell.ShowAnim"):gotoAndPlay(0)
 		end
 
-		if str == "FriendAnim" and CommonUtils.GetSwitch(kFunctionData[3].switchKey) then
+		if str == "FriendAnim" and CommonUtils.GetSwitch("fn_arena_friend") then
 			self._arenaPanel:getChildByFullName("friendCell.ShowAnim"):setVisible(true)
 			self._arenaPanel:getChildByFullName("friendCell.ShowAnim"):gotoAndPlay(0)
 		end
@@ -164,6 +205,11 @@ function FunctionEntranceMediator:initWidgetInfo(data)
 		if str == "CooperateBossAnim" and CommonUtils.GetSwitch(kFunctionData[4].switchKey) and self._cooperateBossSystem:cooperateBossShow() then
 			self._arenaPanel:getChildByFullName("cooperateBossCell.ShowAnim"):setVisible(true)
 			self._arenaPanel:getChildByFullName("cooperateBossCell.ShowAnim"):gotoAndPlay(0)
+		end
+
+		if str == "RTPKAnim" and CommonUtils.GetSwitch("fn_arena_rtpk") then
+			self._arenaPanel:getChildByFullName("rtpkCell.ShowAnim"):setVisible(true)
+			self._arenaPanel:getChildByFullName("rtpkCell.ShowAnim"):gotoAndPlay(0)
 		end
 
 		if str == "redShow" then
@@ -177,6 +223,9 @@ end
 
 function FunctionEntranceMediator:createArenaAnim()
 	local arenaCell = self._arenaPanel:getChildByFullName("arenaCell")
+
+	arenaCell:setVisible(true)
+
 	local descLabel = arenaCell:getChildByFullName("text"):clone()
 
 	descLabel:setVisible(true)
@@ -208,6 +257,9 @@ end
 
 function FunctionEntranceMediator:createPetRaceAnim()
 	local petRaceCell = self._arenaPanel:getChildByFullName("petRaceCell")
+
+	petRaceCell:setVisible(true)
+
 	local descLabel = petRaceCell:getChildByFullName("text"):clone()
 
 	descLabel:setVisible(true)
@@ -239,6 +291,9 @@ end
 
 function FunctionEntranceMediator:createFriendAnim()
 	local petRaceCell = self._arenaPanel:getChildByFullName("friendCell")
+
+	petRaceCell:setVisible(true)
+
 	local descLabel = petRaceCell:getChildByFullName("text"):clone()
 
 	descLabel:setVisible(true)
@@ -270,6 +325,9 @@ end
 
 function FunctionEntranceMediator:createCooperateBossAnim()
 	local petRaceCell = self._arenaPanel:getChildByFullName("cooperateBossCell")
+
+	petRaceCell:setVisible(true)
+
 	local descLabel = petRaceCell:getChildByFullName("text"):clone()
 	local stateLabel = petRaceCell:getChildByFullName("text1"):clone()
 	local timeLabel = petRaceCell:getChildByFullName("text2"):clone()
@@ -378,6 +436,157 @@ function FunctionEntranceMediator:refreshCooperateBossStateLab()
 	end
 end
 
+function FunctionEntranceMediator:createRTPKAnim()
+	local rtpkCell = self._arenaPanel:getChildByFullName("rtpkCell")
+
+	rtpkCell:setVisible(true)
+
+	local redPoint = rtpkCell:getChildByFullName("redPoint"):clone()
+
+	redPoint:setVisible(false)
+
+	local seasonLabel = rtpkCell:getChildByFullName("text1"):clone()
+	local timeLabel = rtpkCell:getChildByFullName("text2"):clone()
+
+	seasonLabel:setVisible(true)
+	timeLabel:setVisible(true)
+	rtpkCell:removeAllChildren()
+
+	local anim = cc.MovieClip:create("rtpkCell_jingjirukou")
+
+	anim:addTo(rtpkCell)
+	anim:addCallbackAtFrame(21, function ()
+		anim:stop()
+	end)
+	anim:setPosition(cc.p(126, 120))
+	anim:setName("ShowAnim")
+	anim:setVisible(false)
+
+	local descPanel = anim:getChildByFullName("descPanel")
+
+	if descPanel then
+		seasonLabel:addTo(descPanel):posite(-30, 10)
+		timeLabel:addTo(descPanel):posite(0, -12)
+		redPoint:addTo(descPanel):posite(60, 15)
+
+		rtpkCell.redPoint = redPoint
+		rtpkCell.seasonLabel = seasonLabel
+		rtpkCell.timeLabel = timeLabel
+	end
+
+	self:refreshRTPKCell()
+end
+
+function FunctionEntranceMediator:refreshRTPKCell()
+	local rtpkCell = self._arenaPanel:getChildByFullName("rtpkCell")
+	local seasonLabel = rtpkCell.seasonLabel
+	local timeLabel = rtpkCell.timeLabel
+	local systemKeeper = self:getInjector():getInstance("SystemKeeper")
+	local unlock, tips, unLockLevel = systemKeeper:isUnlock("RTPK")
+
+	if not unlock then
+		local config = ConfigReader:getRecordById("UnlockSystem", "RTPK")
+
+		seasonLabel:setVisible(false)
+		timeLabel:setString(Strings:get("RTPK_EntryUnlockTipShow", {
+			uLevel = unLockLevel,
+			serverDay = config.Condition.SERVER
+		}))
+	else
+		self:refreshRTPKTimer()
+	end
+end
+
+function FunctionEntranceMediator:refreshRTPKTimer()
+	local rtpkCell = self._arenaPanel:getChildByFullName("rtpkCell")
+	local seasonLabel = rtpkCell.seasonLabel
+	local timeLabel = rtpkCell.timeLabel
+	local rtpk = self._rtpkSystem:getRtpk()
+
+	if self._rtpkTimer then
+		self._rtpkTimer:stop()
+
+		self._rtpkTimer = nil
+	end
+
+	local function update()
+		local status = rtpk:getCurStatus()
+		local curTime = self._gameServerAgent:remoteTimestamp()
+
+		if status ~= RTPKSeasonStatus.kRest then
+			local seasonConfig = rtpk:getSeasonConfig()
+
+			seasonLabel:setVisible(true)
+			seasonLabel:setString(Strings:get("RTPK_Main_Season", {
+				index = seasonConfig.SeasonOrder
+			}) .. Strings:get("RTPK_Main_SeasonText"))
+
+			local startTime = TimeUtil:localDate("%Y.%m.%d", rtpk:getStartTime())
+			local endTime = TimeUtil:localDate("%Y.%m.%d", rtpk:getEndTime())
+
+			timeLabel:setString(startTime .. "-" .. endTime)
+
+			local remainTime = math.max(rtpk:getCloseTime() - curTime, 0)
+
+			if remainTime == 0 then
+				self._rtpkSystem:requestRTPKInfo(function ()
+					if self._viewClose then
+						return
+					end
+
+					self:refreshRed()
+				end, false)
+			end
+		else
+			seasonLabel:setVisible(false)
+
+			if self._rtpkSystem:getSeasonNextCD() > 0 then
+				local str = ""
+				local remainTime = math.max(self._rtpkSystem:getSeasonNextCD() - curTime, 0)
+				local fmtStr = "${d}:${HH}:${M}:${SS}"
+				local timeStr = TimeUtil:formatTime(fmtStr, remainTime)
+				local parts = string.split(timeStr, ":", nil, true)
+				local timeTab = {
+					day = tonumber(parts[1]),
+					hour = tonumber(parts[2]),
+					min = tonumber(parts[3]),
+					sec = tonumber(parts[4])
+				}
+
+				if timeTab.day > 0 then
+					str = timeTab.day .. Strings:get("TimeUtil_Day") .. timeTab.hour .. Strings:get("RTPK_TimeUtil_Hour")
+				elseif timeTab.hour > 0 then
+					str = timeTab.hour .. Strings:get("RTPK_TimeUtil_Hour") .. timeTab.min .. Strings:get("TimeUtil_Min")
+				elseif timeTab.min > 0 then
+					str = timeTab.min .. Strings:get("TimeUtil_Min") .. timeTab.sec .. Strings:get("TimeUtil_Sec")
+				else
+					str = timeTab.sec .. Strings:get("TimeUtil_Sec")
+				end
+
+				timeLabel:setString(Strings:get("RTPK_NewSeason_Countdown", {
+					time = str
+				}))
+
+				if remainTime == 0 then
+					self._rtpkSystem:requestRTPKInfo(function ()
+						if self._viewClose then
+							return
+						end
+
+						self:refreshRed()
+					end, false)
+				end
+			else
+				timeLabel:setString(Strings:get("Function_Not_Open"))
+			end
+		end
+	end
+
+	self._rtpkTimer = LuaScheduler:getInstance():schedule(update, 1, false)
+
+	update()
+end
+
 function FunctionEntranceMediator:createRulePanel(parent, str)
 	local image = ccui.ImageView:create("asset/common/sl_bg_msd.png")
 
@@ -432,6 +641,8 @@ function FunctionEntranceMediator:clickPanel(index)
 				})
 			}))
 		end
+	elseif index == 5 then
+		self:enterRTPKView()
 	end
 end
 
@@ -448,6 +659,9 @@ function FunctionEntranceMediator:refreshRed()
 		end,
 		function ()
 			return self._cooperateBossSystem:redPointShow()
+		end,
+		function ()
+			return self._rtpkSystem:checkShowRed()
 		end
 	}
 
@@ -516,6 +730,10 @@ function FunctionEntranceMediator:enterFriendView()
 			tip = tips
 		}))
 	end
+end
+
+function FunctionEntranceMediator:enterRTPKView()
+	self._rtpkSystem:tryEnter()
 end
 
 function FunctionEntranceMediator:enterCooperateBoss()

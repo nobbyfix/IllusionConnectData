@@ -293,6 +293,54 @@ function all.ApplyStatusEffect(_env, actor, target)
 	end
 end
 
+function all.ApplyRPDamage_ResultCheck(_env, actor, target, damage)
+	local this = _env.this
+	local global = _env.global
+
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Accesory_15004")) > 0 then
+		local UnHurtRateFactor = global.SpecialPropGetter(_env, "rage_unhurtrate_down")(_env, actor)
+		local buff = global.NumericEffect(_env, "-unhurtrate", {
+			"+Normal",
+			"+Normal"
+		}, UnHurtRateFactor)
+
+		global.ApplyBuff_Debuff(_env, actor, target, {
+			timing = 2,
+			display = "UnHurtRateDown",
+			group = "EquipSkill_Accesory_15004_effect",
+			duration = 2,
+			limit = 3,
+			tags = {
+				"STATUS",
+				"NUMERIC",
+				"DEBUFF",
+				"UNHURTRATEDOWN",
+				"DISPELLABLE",
+				"UNSTEALABLE"
+			}
+		}, {
+			buff
+		}, 1, 0)
+	end
+
+	global.ApplyRPDamage(_env, target, damage)
+
+	local buff_rpdown = global.SpecialNumericEffect(_env, "+rpdown", {
+		"+Normal",
+		"+Normal"
+	}, 1)
+
+	global.ApplyBuff(_env, target, {
+		timing = 1,
+		duration = 1,
+		tags = {
+			"RPDOWN"
+		}
+	}, {
+		buff_rpdown
+	})
+end
+
 function all.ApplyRPEffect(_env, actor, target)
 	local this = _env.this
 	local global = _env.global
@@ -302,7 +350,7 @@ function all.ApplyRPEffect(_env, actor, target)
 	local delrpvalue_hurted = global.SpecialPropGetter(_env, "delrpvalue_hurted")(_env, target)
 
 	if global.ProbTest(_env, delrpprob_hurted) then
-		global.ApplyRPDamage(_env, actor, delrpvalue_hurted)
+		global.ApplyRPDamage_ResultCheck(_env, target, actor, delrpvalue_hurted)
 	end
 
 	local dazeprob_hurted = global.SpecialPropGetter(_env, "dazeprob_hurted")(_env, target)
@@ -338,7 +386,7 @@ function all.ApplyRPEffect(_env, actor, target)
 	local delrpvalue = global.SpecialPropGetter(_env, "delrpvalue")(_env, actor)
 
 	if delrppoint < rp and global.ProbTest(_env, delrprate) then
-		global.ApplyRPDamage(_env, target, delrpvalue)
+		global.ApplyRPDamage_ResultCheck(_env, actor, target, delrpvalue)
 	end
 end
 

@@ -71,11 +71,12 @@ function RTPVPService:confirm(frame, info)
 	})
 end
 
-function RTPVPService:join(battleData, roomId, type)
+function RTPVPService:join(battleData, roomId, type, seasonId)
 	self:_request(1001, {
 		team = battleData,
 		roomId = roomId,
-		type = type
+		type = type,
+		seasonId = seasonId
 	})
 end
 

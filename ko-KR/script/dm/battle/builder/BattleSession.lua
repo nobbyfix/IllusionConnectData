@@ -15,7 +15,9 @@ function CreateBattleSession(args)
 		actstage = ActstageBattleSession,
 		clubboss = ClubBattleSession,
 		dream = DreamBattleSession,
-		cooperateboss = CooperateBattleSession
+		cooperateboss = CooperateBattleSession,
+		orrtpk = RTPVPBattleSession,
+		orrtpkrobot = RTPVPRobotBattleSession
 	}
 	local sessionClass = SessionMap[args.battleType]
 
@@ -469,7 +471,8 @@ function BaseBattleSession:buildResultJudgeRules(rules)
 		SingleSideDeathsReached = factory.singleSideDeathsReached,
 		PlayerDeathsReached = factory.playerDeathsReached,
 		PlayerRunOutOfEnergy = factory.playerRunOutOfEnergy,
-		KeyUnitsEscaped = factory.unitsEscaped
+		KeyUnitsEscaped = factory.unitsEscaped,
+		KillNum = factory.unitOrSummonDiedReached
 	}
 	local ret = {}
 	local rulesCopy = {}

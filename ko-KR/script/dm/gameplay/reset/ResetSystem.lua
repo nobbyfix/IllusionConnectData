@@ -62,6 +62,7 @@ ResetId = {
 	kBattlePass_ClubTask = "BattlePass_ClubTask",
 	kMapPointReset = "MapPointReset",
 	kEightDayLogin = "EightDaysCheckIn_Reset",
+	kRTPKReset = "PTPK_Reset",
 	kBlockSp_Skill_3 = "BlockSp_Skill_3",
 	kDailyTaskActivity = "DailyTask_Activity",
 	kArenaChangeEnemyTimes = "Arena_ChangeEnemyTimes",
@@ -113,7 +114,8 @@ local DoResetMap = {
 	[ResetId.kClubBlockTimesReset] = "ClubSystem",
 	[ResetId.kClubBlockReset] = "ClubSystem",
 	[ResetId.kBattlePass_ClubTask] = "ActivitySystem",
-	[ResetId.kBattlePass_DailyTask] = "ActivitySystem"
+	[ResetId.kBattlePass_DailyTask] = "ActivitySystem",
+	[ResetId.kRTPKReset] = "RTPKSystem"
 }
 
 function ResetSystem:_doReset(resetIdList, response)

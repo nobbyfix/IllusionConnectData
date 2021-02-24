@@ -996,7 +996,10 @@ function CommonStageMainViewMediator:setupCooperateBossShow()
 		local bossTimeText = mineBoss:getChildByFullName("Time")
 		local cooperateBoss = self._cooperateBossSystem:getCooperateBoss()
 
-		bossNameText:setString(cooperateBoss:getRoleModelName())
+		bossNameText:setString(Strings:get("CooperateBoss_Main_BossLevel", {
+			bossName = cooperateBoss:getRoleModelName(),
+			bossLevel = cooperateBoss:getBossLevel()
+		}))
 
 		local heroSprite = IconFactory:createRoleIconSprite({
 			id = cooperateBoss:getRoleModelId()
@@ -1048,7 +1051,7 @@ function CommonStageMainViewMediator:setupCooperateBossShow()
 		checkTimeFunc()
 		bossIcon:addTouchEventListener(function (sender, eventType)
 			if eventType == ccui.TouchEventType.ended then
-				self._cooperateBossSystem:enterCooperateBossNewOne()
+				self._cooperateBossSystem:enterCooperateBossInviteFriendView(cooperateBoss:getMineBoss().bossId)
 			end
 		end)
 	end
@@ -1075,10 +1078,12 @@ function CommonStageMainViewMediator:setupCooperateBossShow()
 			local bossNameText = item:getChildByFullName("invitePanel.nameDi.name")
 			local bossLvText = item:getChildByFullName("invitePanel.level.text")
 			local playerNameText = item:getChildByFullName("invitePanel.inviteDi.invite")
+			local bg = item:getChildByFullName("Bg")
 
 			playerNameText:setString(info.name)
-			bossNameText:setString(cooperateBoss:getRoleModelName(info.confId))
+			bossNameText:setString(self._cooperateBossSystem:getBossName(info.confId))
 			bossLvText:setString("Lv." .. info.lv)
+			bg:loadTexture(self._cooperateBossSystem:getInviteBossTabImage(info.lv), ccui.TextureResType.localType)
 			item:getChildByFullName("invitePanel.info"):setVisible(false)
 
 			local heroSprite = IconFactory:createRoleIconSprite({

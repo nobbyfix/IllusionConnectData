@@ -1371,8 +1371,8 @@ function StageSystem:syncKeySkillCache()
 	self._keySkillManager:syncKeySkillCache()
 end
 
-function StageSystem:checkIsKeySkillActive(conditions, targetIds, heroType)
-	return self._keySkillManager:checkIsKeySkillActive(conditions, targetIds, heroType)
+function StageSystem:checkIsKeySkillActive(conditions, targetIds, extra)
+	return self._keySkillManager:checkIsKeySkillActive(conditions, targetIds, extra)
 end
 
 function StageSystem:hasStaminaBackEffect()

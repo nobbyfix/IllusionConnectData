@@ -1362,7 +1362,9 @@ function TeamSystem:syncKeySkillCache()
 end
 
 function TeamSystem:checkIsKeySkillActive(conditions, targetIds, heroType)
-	return self._keySkillManager:checkIsKeySkillActive(conditions, targetIds, heroType)
+	return self._keySkillManager:checkIsKeySkillActive(conditions, targetIds, {
+		heroType = heroType
+	})
 end
 
 function TeamSystem:hasStaminaBackEffect()

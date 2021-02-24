@@ -250,3 +250,7 @@ function ActivityStagePoint:getAssistHero()
 
 	return list
 end
+
+function ActivityStagePoint:getHeroAttrStarExtra()
+	return self._config.HeroAttrSatrExtra
+end

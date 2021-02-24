@@ -6,6 +6,9 @@ CooperateBossMainMediator:has("_developSystem", {
 CooperateBossMainMediator:has("_cooperateBossSystem", {
 	is = "r"
 }):injectWith("CooperateBossSystem")
+CooperateBossMainMediator:has("_activitySystem", {
+	is = "r"
+}):injectWith("ActivitySystem")
 
 local kBtnHandlers = {
 	["main.infoBtn"] = {
@@ -22,7 +25,7 @@ local kBtnHandlers = {
 	}
 }
 local SHOW_HERO_ANIM = true
-local PLAYING_BOSS_STPRY = false
+local COOPERATE_EXACHANGE_ACTIVITY_TYPE = "Exchange"
 local EVT_COOPERATE_BOSS_SELF_REFRESH = "EVT_COOPERATE_BOSS_SELF_REFRESH"
 
 function CooperateBossMainMediator:initialize()
@@ -55,7 +58,6 @@ function CooperateBossMainMediator:mapEventListeners()
 	self:mapEventListener(self:getEventDispatcher(), EVT_COOPERATE_BOSS_DEAD, self, self.refreshView)
 	self:mapEventListener(self:getEventDispatcher(), EVT_COOPERATE_BOSS_INVITE, self, self.refreshView)
 	self:mapEventListener(self:getEventDispatcher(), EVT_COOPERATE_REFRESH_INVITELIST, self, self.refreshView)
-	self:mapEventListener(self:getEventDispatcher(), EVT_COOPERATE_BOSS_BACK_MAIN, self, self.refreshView)
 	self:mapEventListener(self:getEventDispatcher(), EVT_COOPERATE_BOSS_SELF_REFRESH, self, self.setupView)
 end
 
@@ -65,6 +67,7 @@ function CooperateBossMainMediator:enterWithData(data)
 	self:setupRule()
 	self:initData(data)
 	self:setupView()
+	self:checkStory()
 end
 
 function CooperateBossMainMediator:resumeWithData()
@@ -114,8 +117,6 @@ end
 function CooperateBossMainMediator:initData(data)
 	self._data = data
 	self._cooperateBossData = self._cooperateBossSystem:getCooperateBoss()
-
-	self:checkStory()
 end
 
 function CooperateBossMainMediator:setupView()
@@ -124,6 +125,8 @@ function CooperateBossMainMediator:setupView()
 	self:setupBossModeShow(self._data.mineBoss)
 	self:setupBattleRecord()
 	self:setupTimeShow()
+
+	local img = self._cooperateBossSystem:getInviteBossTabImage(25)
 end
 
 function CooperateBossMainMediator:setupRule()
@@ -140,7 +143,7 @@ function CooperateBossMainMediator:setupRule()
 		if ruleStr and ruleStr ~= "" then
 			local label = ccui.RichText:createWithXML(ruleStr, {})
 
-			label:renderContent(450, 0)
+			label:renderContent(518, 0)
 			label:setAnchorPoint(cc.p(0, 0))
 			label:setVerticalSpace(10)
 			self._ruleList:pushBackCustomItem(label)
@@ -189,9 +192,11 @@ function CooperateBossMainMediator:setupBossMapList()
 			local bossNameText = boss:getChildByFullName("invitePanel.nameDi.name")
 			local bossLvText = boss:getChildByFullName("invitePanel.level.text")
 			local playerNameText = boss:getChildByFullName("invitePanel.inviteDi.invite")
+			local bg = boss:getChildByFullName("Bg")
 
 			playerNameText:setString(info.name)
-			bossNameText:setString(self._cooperateBossData:getRoleModelName(info.confId))
+			bossNameText:setString(self._cooperateBossSystem:getBossName(info.confId))
+			bg:loadTexture(self._cooperateBossSystem:getInviteBossTabImage(info.lv), ccui.TextureResType.localType)
 			bossLvText:setString("Lv." .. info.lv)
 			boss:getChildByFullName("invitePanel.info"):setVisible(false)
 
@@ -240,7 +245,7 @@ function CooperateBossMainMediator:setupBattleRecord()
 		for i = 1, #records do
 			local record = self._battleRecordCellClone:clone()
 			local bossNameLab = record:getChildByFullName("name")
-			local stateLab = record:getChildByFullName("state")
+			local stateImg = record:getChildByFullName("state")
 			local detailBtn = record:getChildByFullName("detail")
 			local rewardPanel = record:getChildByFullName("reward")
 			local rewardList = record:getChildByFullName("rewardList")
@@ -252,17 +257,17 @@ function CooperateBossMainMediator:setupBattleRecord()
 
 			local nameKey = ConfigReader:getDataByNameIdAndKey("CooperateBossBattle", config.BossBattle, "Name")
 
-			bossNameLab:setString(Strings:get(nameKey))
+			bossNameLab:setString(Strings:get("CooperateBoss_Main_BossLevel", {
+				bossName = Strings:get(nameKey),
+				bossLevel = records[i].lv
+			}))
 
 			if records[i].state == kCooperateBossEnemyState.kEscaped then
-				stateLab:setString(Strings:get("CooperateBoss_BattleRecord_Status02"))
-				stateLab:setColor(cc.c3b(255, 123, 123))
+				stateImg:loadTexture("gongdou_txt_taopao.png", ccui.TextureResType.plistType)
 			elseif records[i].state == kCooperateBossEnemyState.kDead then
-				stateLab:setString(Strings:get("CooperateBoss_BattleRecord_Status03"))
-				stateLab:setColor(cc.c3b(173, 255, 113))
+				stateImg:loadTexture("gongdou_txt_jikui.png", ccui.TextureResType.plistType)
 			else
-				stateLab:setString(Strings:get("CooperateBoss_BattleRecord_Status01"))
-				stateLab:setColor(cc.c3b(232, 236, 114))
+				stateImg:loadTexture("gongdou_txt_jinxingzhong.png", ccui.TextureResType.plistType)
 			end
 
 			local rewards = {}
@@ -305,7 +310,10 @@ function CooperateBossMainMediator:setupBattleRecord()
 					rewardPanel:addChild(icon)
 					rewardPanel:setContentSize(cc.size(icon:getContentSize().width + 20, icon:getContentSize().height))
 					icon:setAnchorPoint(0, 0)
-					rewardPanel:setPositionX(290)
+					rewardPanel:setPositionX(300)
+				else
+					rewardList:setVisible(false)
+					rewardPanel:setVisible(false)
 				end
 			else
 				local dataList = self._cooperateBossData:getTokenRewardBossLst()
@@ -321,6 +329,11 @@ function CooperateBossMainMediator:setupBattleRecord()
 					rewardList:setVisible(true)
 					rewardPanel:setVisible(false)
 
+					local panel = ccui.Layout:create()
+
+					panel:setAnchorPoint(0, 0)
+					rewardList:pushBackCustomItem(panel)
+
 					for j = 1, #rewards do
 						local reward = rewards[j]
 						local icon = IconFactory:createRewardIcon(reward, {
@@ -329,11 +342,12 @@ function CooperateBossMainMediator:setupBattleRecord()
 							notShowQulity = false
 						})
 
-						icon:setPosition(cc.p((j - 1) * (icon:getContentSize().width + 10), 0))
-						rewardList:pushBackCustomItem(icon)
+						panel:addChild(icon)
+						icon:setPosition(cc.p((j - 1) * 50, 2))
+						panel:setContentSize(cc.size(50 * j, 50))
+						icon:setScaleNotCascade(0.4)
 						icon:setAnchorPoint(0, 0)
 						rewardList:setScrollBarEnabled(false)
-						rewardList:setContentSize(cc.size(icon:getContentSize().width * 3.5, icon:getContentSize().height + 14))
 						IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), reward, {
 							needDelay = true
 						})
@@ -351,23 +365,24 @@ function CooperateBossMainMediator:setupBattleRecord()
 
 							icon:addChild(tagImg)
 							tagImg:setScale(1.9)
-							tagImg:setPositionY(icon:getContentSize().height - 20)
-							tagImg:setPositionX(27)
+							tagImg:setPositionY(icon:getContentSize().height - 21)
+							tagImg:setPositionX(26)
 						end
 
 						if isDraw then
-							local ylqImg = cc.Sprite:createWithSpriteFrameName("gongdou_txt_ylq.png")
+							local ylqImg = cc.Sprite:createWithSpriteFrameName("gongdou_img_lingquzhezhao.png")
 
-							ylqImg:setScale(1.5)
+							ylqImg:setScale(2.5)
 							ylqImg:addTo(icon):center(icon:getContentSize())
+							ylqImg:setLocalZOrder(1000)
 						end
 					end
-
-					rewardList:setScale(0.4)
 				else
 					rewardList:setVisible(false)
 					rewardPanel:setVisible(true)
 
+					local starPosx = 310 - #rewards * 20 - 8
+
 					for j = 1, #rewards do
 						local reward = rewards[j]
 						local icon = IconFactory:createRewardIcon(reward, {
@@ -376,9 +391,12 @@ function CooperateBossMainMediator:setupBattleRecord()
 							notShowQulity = false
 						})
 
-						icon:setPosition(cc.p((j - 1) * (icon:getContentSize().width + 10), 0))
+						icon:setScaleNotCascade(0.4)
+
+						local detalX = starPosx - rewardPanel:getPositionX() + 8
+
+						icon:setPosition(cc.p((j - 1) * (icon:getContentSize().width * 0.4 + 10) + detalX, 5))
 						rewardPanel:addChild(icon)
-						rewardPanel:setContentSize(cc.size(icon:getContentSize().width * j + 20, icon:getContentSize().height))
 						icon:setAnchorPoint(0, 0)
 						IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), reward, {
 							needDelay = true
@@ -397,29 +415,22 @@ function CooperateBossMainMediator:setupBattleRecord()
 
 							icon:addChild(tagImg)
 							tagImg:setScale(1.9)
-							tagImg:setPositionY(icon:getContentSize().height - 15)
-							tagImg:setPositionX(20)
+							tagImg:setPositionY(icon:getContentSize().height - 21)
+							tagImg:setPositionX(26)
 						end
 
 						if isDraw then
-							local ylqImg = cc.Sprite:createWithSpriteFrameName("gongdou_txt_ylq.png")
+							local ylqImg = cc.Sprite:createWithSpriteFrameName("gongdou_img_lingquzhezhao.png")
 
-							ylqImg:setScale(1.5)
+							ylqImg:setScale(2.5)
 							ylqImg:addTo(icon):center(icon:getContentSize())
+							ylqImg:setLocalZOrder(1000)
 						end
 					end
-
-					rewardPanel:setScale(0.4)
-					rewardPanel:setPositionX(310 - #rewards * 20)
 				end
 			end
 
 			detailBtn:setVisible(true)
-
-			if records[i].state == kCooperateBossEnemyState.kEscaped then
-				detailBtn:setVisible(false)
-			end
-
 			detailBtn:addTouchEventListener(function (sender, eventType)
 				if eventType == ccui.TouchEventType.ended then
 					self._cooperateBossSystem:enterCooperateBossInviteFriendView(records[i].bossId)
@@ -448,6 +459,22 @@ function CooperateBossMainMediator:setupRewardBtnState()
 	end
 
 	self._rewardBtn:setButtonName(Strings:get("CooperateBoss_Receive"), "")
+
+	self._activeBtn = self:bindWidget("main.activeBtn", OneLevelMainButton, {
+		handler = {
+			clickAudio = "Se_Click_Cancle",
+			func = bind1(self.onActiveBtnClick, self)
+		}
+	})
+	local activity = self._activitySystem:getActivityByComplexUI(COOPERATE_EXACHANGE_ACTIVITY_TYPE)
+
+	self._activeBtn:setGray(true)
+
+	if activity and self._activitySystem:isActivityOpen(activity:getId()) then
+		self._activeBtn:setGray(false)
+	end
+
+	self._activeBtn:setButtonName(Strings:get("CooperateBoss_Btn_Exchange"), "")
 end
 
 function CooperateBossMainMediator:setupBossModeShow(mineBoss)
@@ -513,6 +540,29 @@ function CooperateBossMainMediator:setupBossModeShow(mineBoss)
 
 			self._fightBtn:setVisible(false)
 			self._talk:setVisible(true)
+			self._talk:stopAllActions()
+
+			local talkText = self._talk:getChildByName("Text_80")
+			local talkConfig = ConfigReader:getDataByNameIdAndKey("ConfigValue", "CooperateBoss_Main_Bubble", "content")
+			local talkStayTime = ConfigReader:getDataByNameIdAndKey("ConfigValue", "CooperateBoss_Main_Bubble_Stay", "content")
+			local oldIdx = math.random(1, #talkConfig)
+
+			talkText:setString(Strings:get(talkConfig[oldIdx]))
+			schedule(self._talk, function ()
+				local curIdx = nil
+
+				for i = 1, 10 do
+					curIdx = math.random(1, #talkConfig)
+
+					if curIdx ~= oldIdx then
+						break
+					end
+				end
+
+				oldIdx = curIdx
+
+				talkText:setString(Strings:get(talkConfig[curIdx]))
+			end, talkStayTime)
 			self._buyTimesBtn:setVisible(false)
 			self._leaveTimesPanel:setVisible(false)
 		end
@@ -651,48 +701,59 @@ function CooperateBossMainMediator:setupTimeShow()
 end
 
 function CooperateBossMainMediator:checkStory()
-	if PLAYING_BOSS_STPRY then
-		return
-	end
-
 	local ownerRecords = {}
 
 	for i = 1, #self._data.battleRecordLst do
 		local tmp = self._data.battleRecordLst[i]
 
-		if tmp.isOwner then
+		if tmp.isOwner and (tmp.state == kCooperateBossEnemyState.kDead or tmp.state == kCooperateBossEnemyState.kEscaped) then
 			table.insert(ownerRecords, tmp)
 		end
 	end
 
 	if #ownerRecords > 0 then
-		local triggerStory = nil
+		local tipStr = nil
 
 		if ownerRecords[1].state == kCooperateBossEnemyState.kDead then
-			local config = ConfigReader:getDataByNameIdAndKey("CooperateBossMain", ownerRecords[1].confId, "Story")
-			triggerStory = config[2]
+			local bossName = self._cooperateBossSystem:getBossName(ownerRecords[1].confId)
+			tipStr = Strings:get("CooperateBoss_PopUp_Died", {
+				bossLevel = ownerRecords[1].lv,
+				bossName = bossName
+			})
 		elseif ownerRecords[1].state == kCooperateBossEnemyState.kEscaped then
-			local config = ConfigReader:getDataByNameIdAndKey("CooperateBossMain", ownerRecords[1].confId, "Story")
-			triggerStory = config[1]
-		elseif ownerRecords[2] then
-			if ownerRecords[2].state == kCooperateBossEnemyState.kDead then
-				local config = ConfigReader:getDataByNameIdAndKey("CooperateBossMain", ownerRecords[2].confId, "Story")
-				triggerStory = config[2]
-			elseif ownerRecords[2].state == kCooperateBossEnemyState.kEscaped then
-				local config = ConfigReader:getDataByNameIdAndKey("CooperateBossMain", ownerRecords[2].confId, "Story")
-				triggerStory = config[1]
-			end
+			local bossName = self._cooperateBossSystem:getBossName(ownerRecords[1].confId)
+			tipStr = Strings:get("CooperateBoss_PopUp_Escape", {
+				bossLevel = ownerRecords[1].lv,
+				bossName = bossName
+			})
 		end
 
-		if triggerStory then
-			PLAYING_BOSS_STPRY = true
-			local storyDirector = self:getInjector():getInstance(story.StoryDirector)
-			local guideAgent = storyDirector:getStoryAgent()
+		if not self._cooperateBossSystem:isSaved(ownerRecords[1].bossId) then
+			self._cooperateBossSystem:save(ownerRecords[1].bossId)
 
-			guideAgent:setSkipCheckSave(false)
-			guideAgent:trigger(triggerStory, nil, function ()
-				PLAYING_BOSS_STPRY = false
-			end)
+			local outSelf = self
+			local delegate = {
+				willClose = function (self, popupMediator, data)
+					if data.response == "ok" then
+						-- Nothing
+					elseif data.response == "cancel" then
+						-- Nothing
+					elseif data.response == "close" then
+						-- Nothing
+					end
+				end
+			}
+			local data = {
+				title1 = "Tips",
+				title = Strings:get("Tip_Remind"),
+				content = tipStr,
+				sureBtn = {}
+			}
+			local view = self:getInjector():getInstance("AlertView")
+
+			self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+				transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+			}, data, delegate))
 		end
 	end
 end
@@ -731,6 +792,43 @@ function CooperateBossMainMediator:onRewardBtnClick(sender, eventType)
 	end
 end
 
+function CooperateBossMainMediator:onActiveBtnClick(sender, eventType)
+	local activity = self._activitySystem:getActivityByComplexUI(COOPERATE_EXACHANGE_ACTIVITY_TYPE)
+
+	if activity then
+		local curTimeStamp = TimeUtil:timeByRemoteDate()
+
+		if curTimeStamp * 1000 < activity:getStartTime() then
+			self:dispatch(ShowTipEvent({
+				duration = 0.2,
+				tip = Strings:get("CooperateBoss_ExchangeActivityTip01")
+			}))
+
+			return
+		end
+
+		if activity:getEndTime() < curTimeStamp * 1000 then
+			self:dispatch(ShowTipEvent({
+				duration = 0.2,
+				tip = Strings:get("CooperateBoss_ExchangeActivityTip02")
+			}))
+
+			return
+		end
+
+		local activityId = activity:getId()
+
+		self._activitySystem:tryEnter({
+			id = activityId
+		})
+	else
+		self:dispatch(ShowTipEvent({
+			duration = 0.2,
+			tip = Strings:get("Error_12806")
+		}))
+	end
+end
+
 function CooperateBossMainMediator:initAnim()
 	self._fightBtn:removeAllChildren()
 
@@ -743,6 +841,14 @@ function CooperateBossMainMediator:initAnim()
 	mc:addTo(self._fightBtn):center(self._fightBtn:getContentSize())
 	mc:setScale(0.8)
 	mc:setLocalZOrder(100)
+
+	local animNode = self:getView():getChildByFullName("main.bg.anim")
+
+	animNode:removeAllChildren()
+
+	local anim = cc.MovieClip:create("lizidonghua_gongdouquanping")
+
+	anim:addTo(animNode):setScale(1)
 end
 
 function CooperateBossMainMediator:onClickBack(sender, eventType)

@@ -76,9 +76,9 @@ function StatisticSystem:send(content)
 	end
 
 	if DmGame then
-		local developSystem = DmGame:getInstance()._injector:getInstance("DevelopSystem")
-
 		if content.type == "loginpoint" then
+			local developSystem = DmGame:getInstance()._injector:getInstance("DevelopSystem")
+
 			developSystem:guideLog({
 				guideId = tostring(content.point),
 				step = tostring(StatisticPointConfig[content.point] or "")
@@ -86,6 +86,8 @@ function StatisticSystem:send(content)
 		end
 
 		if content.type == "loginchoose" then
+			local developSystem = DmGame:getInstance()._injector:getInstance("DevelopSystem")
+
 			developSystem:guideLog({
 				guideId = tostring(content.difficult),
 				step = tostring(StatisticPointConfig[content.difficult] or "")

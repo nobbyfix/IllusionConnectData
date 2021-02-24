@@ -289,7 +289,7 @@ function RTPVPServerWaitingHandler:onWaitingEvent(type, handler, data)
 	elseif type == WaitingEvent.kRepairableErr then
 		if self:isActive() then
 			self:showWaiting(WaitingStyle.kTipInfo, {
-				tip = Strings:get("WaitingHandler"),
+				tip = Strings:get("WAITING_RECONNECT"),
 				onTouch = function ()
 					self:showWaiting(WaitingStyle.kLoading, {
 						delay = 200

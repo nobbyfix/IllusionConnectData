@@ -1,0 +1,103 @@
+local indexOf = table.indexof
+RTPVPRobotBattleSession = class("RTPVPRobotBattleSession", BaseBattleSession)
+
+function RTPVPRobotBattleSession:initialize(serverData)
+	super.initialize(self)
+
+	self._playerAData = serverData.playerData
+	self._playerBData = serverData.enemyData
+	self._playerAData.tacticsNeedWait = true
+	self._playerBData.tacticsNeedWait = true
+	self._seasonId = serverData.seasonId
+
+	self:setRandomSeeds(serverData.logicSeed)
+end
+
+function RTPVPRobotBattleSession:buildBattleData(playerAData, playerBData, randomSeed)
+	local randomizer = Random:new(randomSeed)
+	local playerDrawCard = ConfigReader:getRecordById("ConfigValue", "Fight_PlayerDrawCard").content
+
+	self:_buildCardPool(playerAData, randomizer, playerDrawCard, playerAData.cards)
+	self:_buildCardPool(playerBData, randomizer, playerDrawCard, playerBData.cards)
+
+	return BattleDataHelper:getIntegralBattleData({
+		playerData = playerAData,
+		enemyData = playerBData
+	})
+end
+
+function RTPVPRobotBattleSession:genBattleConfigAndData(battleData, randomSeed)
+	if battleData == nil then
+		return
+	end
+
+	local maxRound = ConfigReader:getRecordById("ConfigValue", "Fight_MaximumRound").content
+	local ruleId = ConfigReader:getDataByNameIdAndKey("RTPKSeason", self._seasonId, "SeasonRule")
+	local battleId = ConfigReader:getDataByNameIdAndKey("RTPKRule", ruleId, "BattleConfig")
+	local battleConfig = self:_getBlockBattleConfig(battleId)
+	local stageEnergy = battleConfig and battleConfig.StageEnergy or self:_getBlockBattleConfig(ConfigReader:getRecordById("ConfigValue", "Fight_StageEnergy").content).StageEnergy
+	local battlePhaseConfig = self:_genBattlePhaseConfig(stageEnergy, {
+		waitMode = battleConfig and battleConfig.WaitMode,
+		waitTime = battleConfig and battleConfig.WaitModeLimit,
+		battleMode = battleConfig and battleConfig.BattleMode
+	})
+
+	self:_applyBattleConfig(battleData, battleConfig)
+
+	return {
+		battlePhaseConfig = battlePhaseConfig,
+		randomSeed = randomSeed,
+		maxRound = maxRound,
+		victoryCfg = victoryConditions
+	}
+end
+
+function RTPVPRobotBattleSession:buildCoreBattleLogic()
+	local battleData = self:buildBattleData(self._playerAData, self._playerBData, self._logicSeed)
+	local battleConfig = self:genBattleConfigAndData(battleData, self._logicSeed)
+	local battleLogic = self:createBattleLogic(battleConfig, battleData)
+
+	self:_setBattleConfig(battleConfig)
+
+	self._rawBattleData = battleData
+
+	return battleLogic
+end
+
+function RTPVPRobotBattleSession:generateResultSummary()
+	local battleSimulator = self._battleSimulator
+	local statData = self._battleStatist and self._battleStatist:getSummary()
+	local result, winners = self:getBattleResultAndWinnerIds()
+
+	return {
+		logicSeed = self._logicSeed,
+		result = result,
+		winners = winners,
+		statist = statData,
+		opData = battleSimulator:getInputManager():dumpInputHistory()
+	}
+end
+
+function RTPVPRobotBattleSession:getBattleType()
+	return "orrtpkrobot"
+end
+
+function RTPVPRobotBattleSession:getBattlePassiveSkill(battleData, mainPlayerId)
+	local playerShow = {}
+	local enemyShow = {}
+
+	if battleData.playerData and battleData.playerData.rid == mainPlayerId then
+		playerShow = BattleDataHelper:getPassiveSkill(battleData.playerData)
+		enemyShow = BattleDataHelper:getPassiveSkill(battleData.enemyData)
+	else
+		enemyShow = BattleDataHelper:getPassiveSkill(battleData.playerData)
+		playerShow = BattleDataHelper:getPassiveSkill(battleData.enemyData)
+	end
+
+	local passiveSkill = {
+		playerShow = playerShow,
+		enemyShow = enemyShow
+	}
+
+	return passiveSkill
+end

@@ -892,7 +892,7 @@ function BattleGroundLayer:flashScreen(arr, fps, callback)
 	runNextAction()
 end
 
-function BattleGroundLayer:rock(rockType, amplitude)
+function BattleGroundLayer:rock(rockType, amplitude, duration)
 	rockType = rockType or 1
 	amplitude = amplitude or 1
 	local actionConfig = ConfigReader:getRecordById("ShakeScreen", tostring(rockType))
@@ -914,7 +914,7 @@ function BattleGroundLayer:rock(rockType, amplitude)
 
 	local battleCamera = self._viewContext:getValue("Camera")
 
-	battleCamera:shake(action, 0.03, amplitude)
+	battleCamera:shake(action, duration or 0.03, amplitude)
 end
 
 function BattleGroundLayer:slowDown(configs)

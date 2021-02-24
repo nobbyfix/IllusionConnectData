@@ -189,10 +189,10 @@ end
 
 function CooperateBoss:getRoleModelName(conId)
 	local congfigId = conId or self._mineBoss.confId
-	local roleModeID = ConfigReader:getDataByNameIdAndKey("CooperateBossMain", congfigId, "RoleModel")
-	local roleModelConfig = ConfigReader:getRecordById("RoleModel", roleModeID)
+	local bossBattle = ConfigReader:getDataByNameIdAndKey("CooperateBossMain", congfigId, "BossBattle")
+	local nameKey = ConfigReader:getDataByNameIdAndKey("CooperateBossBattle", bossBattle, "Name")
 
-	return Strings:get(roleModelConfig.Name)
+	return Strings:get(nameKey)
 end
 
 function CooperateBoss:getRoleModelId(conId)

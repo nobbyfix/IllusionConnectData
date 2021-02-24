@@ -1,6 +1,6 @@
 ArenaReportCell = class("ArenaReportCell", DisposableObject, _M)
 local kPicUp = "asset/common/st_img_up.png"
-local kPicDown = "st_img_down.png"
+local kPicDown = "asset/common/common_icon_jt_2.png"
 
 function ArenaReportCell:initialize(info)
 	super.initialize(self)
@@ -39,7 +39,9 @@ function ArenaReportCell:initWidgetInfo()
 	self._sign = panel:getChildByFullName("changeBg.sign")
 	self._increase = panel:getChildByFullName("changeBg.increase")
 	self._imgResult = panel:getChildByName("result")
+	self._tipsText = ccui.Text:create("", TTF_FONT_FZYH_M, 16)
 
+	self._tipsText:addTo(panel):posite(85, 20)
 	GameStyle:setCommonOutlineEffect(self._level)
 	GameStyle:setCommonOutlineEffect(self._level_r)
 end
@@ -47,6 +49,7 @@ end
 function ArenaReportCell:refreshReportData(data)
 	local attackerData = data:getAttacker()
 	local defenseData = data:getDefender()
+	local type = data.getReprotType and data:getReprotType() or nil
 	local showData, showMyData = nil
 	local raise = data:getRankChange()
 	local isAttacker = nil
@@ -78,7 +81,27 @@ function ArenaReportCell:refreshReportData(data)
 	self._name_r:setString(nickName)
 	self._level_r:setString(Strings:get("CUSTOM_FIGHT_LEVEL") .. level)
 
-	if raise <= 0 then
+	if type and type == "RTPK" then
+		self._increase:setString(raise)
+		self._tipsText:setVisible(false)
+
+		if raise == 0 then
+			if data:getOutOfTime() then
+				self._tipsText:setVisible(true)
+				self._tipsText:setString(Strings:get("RTPK_BattleRecord_ScoreTip"))
+			end
+
+			self._sign:loadTexture(data:getAttackerWin() and kPicUp or kPicDown)
+			self._increase:setString(data:getAttackerWin() and "+" .. raise or "-" .. raise)
+			self._increase:setColor(data:getAttackerWin() and cc.c3b(181, 235, 19) or cc.c3b(235, 19, 68))
+		elseif raise <= 0 then
+			self._sign:loadTexture(kPicDown)
+			self._increase:setColor(cc.c3b(235, 19, 68))
+		else
+			self._sign:loadTexture(kPicUp)
+			self._increase:setColor(cc.c3b(181, 235, 19))
+		end
+	elseif raise <= 0 then
 		self._changeBg:setVisible(false)
 	else
 		self._changeBg:setVisible(true)

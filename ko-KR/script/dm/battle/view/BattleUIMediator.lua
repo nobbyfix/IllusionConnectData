@@ -110,6 +110,8 @@ function BattleUIMediator:setupSubWidgets()
 	local header = view:getChildByName("header")
 	local timerNode = header:getChildByName("timer")
 	self._timerWidget = self:autoManageObject(BattleTimerWidget:new(timerNode))
+	local deadCountNode = header:getChildByName("deathcnt")
+	self._deadCountWidget = self:autoManageObject(BattleDeadCountWidget:new(deadCountNode))
 	local roundNode = header:getChildByFullName("round")
 	self._roundWidget = self:autoManageObject(RoundInfoWidget:new(roundNode))
 	local escapeNode = header:getChildByName("escape")
@@ -199,6 +201,13 @@ function BattleUIMediator:willStartEnterTransition()
 		view:runAction(cc.Sequence:create(cc.MoveBy:create(0.2, offset2), cc.MoveBy:create(0.1, offset3)))
 	end
 
+	if self._deadCountWidget then
+		local view = self._deadCountWidget:getView()
+
+		view:offset(offset1.x, offset1.y)
+		view:runAction(cc.Sequence:create(cc.MoveBy:create(0.2, offset2), cc.MoveBy:create(0.1, offset3)))
+	end
+
 	if self._leftHeadWidget then
 		local view = self._leftHeadWidget:getView()
 
@@ -262,6 +271,13 @@ function BattleUIMediator:fade()
 
 	if self._timerWidget then
 		local view = self._timerWidget:getView()
+
+		view:stopAllActions()
+		view:runAction(cc.FadeOut:create(duration))
+	end
+
+	if self._deadCountWidget then
+		local view = self._deadCountWidget:getView()
 
 		view:stopAllActions()
 		view:runAction(cc.FadeOut:create(duration))
@@ -351,6 +367,13 @@ function BattleUIMediator:fade()
 
 		if self._timerWidget then
 			local view = self._timerWidget:getView()
+
+			view:stopAllActions()
+			view:runAction(cc.FadeIn:create(duration))
+		end
+
+		if self._deadCountWidget then
+			local view = self._deadCountWidget:getView()
 
 			view:stopAllActions()
 			view:runAction(cc.FadeIn:create(duration))
@@ -639,6 +662,27 @@ function BattleUIMediator:setupViewConfig(viewConfig, isReplay)
 	if viewConfig.noHpFormat then
 		self._leftHeadWidget:setHpFormat(false)
 		self._rightHeadWidget:setHpFormat(false)
+	end
+
+	self._deadCountWidget:enabled(false)
+
+	self._deadCountCfg = self:getDeadCountVectorCfg()
+
+	if self._deadCountCfg then
+		self._deadCountWidget:setMaxNum(self._deadCountCfg.factor.count)
+		self._deadCountWidget:enabled(true)
+	end
+end
+
+function BattleUIMediator:getDeadCountVectorCfg()
+	if not self._mainMediator:getBattleConfig() then
+		return nil
+	end
+
+	for k, v in pairs(self._mainMediator:getBattleConfig().victoryCfg or {}) do
+		if v.type == "KillNum" then
+			return v
+		end
 	end
 end
 
@@ -991,6 +1035,12 @@ end
 function BattleUIMediator:setTotalTime(time)
 	if time and self._timerWidget then
 		self._timerWidget:reset(time / 1000)
+	end
+end
+
+function BattleUIMediator:increaseDead(unit)
+	if self._deadCountCfg and self._deadCountWidget then
+		self._deadCountWidget:increaseDead()
 	end
 end
 

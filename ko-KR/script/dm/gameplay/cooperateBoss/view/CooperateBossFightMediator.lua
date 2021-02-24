@@ -57,13 +57,13 @@ end
 function CooperateBossFightMediator:initView()
 	self._main = self:getView():getChildByFullName("main")
 	self._bossPanel = self._main:getChildByFullName("bossPanel")
-	self._role = self._main:getChildByFullName("role")
 	self._bossName = self._main:getChildByFullName("BgBottom.name")
 	self._bossLevel = self._main:getChildByFullName("BgBottom.level")
 	self._remainTime = self._main:getChildByFullName("TimeDi.time")
 	self._fightBtn = self._main:getChildByFullName("fight")
 	self._fifhtNum = self._main:getChildByFullName("Text_218")
 	self._des = self._main:getChildByFullName("BgBottom.text1")
+	self._qipaoText = self._main:getChildByFullName("qipao.text")
 	local lineGradiantVec1 = {
 		{
 			ratio = 0.3,
@@ -106,7 +106,7 @@ function CooperateBossFightMediator:initData(data)
 end
 
 function CooperateBossFightMediator:refreashView()
-	self._bossName:setString(self._cooperatorBoss:getRoleModelName())
+	self._bossName:setString(self._cooperateBossSystem:getBossName(self._configBossId))
 	self._bossLevel:setPositionX(self._bossName:getContentSize().width + self._bossName:getPositionX() + 20)
 
 	local model = self._cooperatorBoss:getRoleModelId()
@@ -117,7 +117,7 @@ function CooperateBossFightMediator:refreashView()
 	})
 
 	img:addTo(self._bossPanel)
-	img:setPosition(cc.p(360, 250))
+	img:setPosition(cc.p(330, 250))
 	img:setScale(0.78)
 
 	local endTime = self._bossCraeteTime + self._cooperatorBoss:getBossLiveTime()
@@ -182,6 +182,10 @@ function CooperateBossFightMediator:refreashView()
 	local act = cc.Sequence:create(cc.DelayTime:create(0.4375), cc.FadeIn:create(0.3125))
 
 	self._fightBtn:runAction(act:clone())
+
+	local inviteBubble = ConfigReader:getDataByNameIdAndKey("ConfigValue", "CooperateBoss_MyBossBubble", "content")
+
+	self._qipaoText:setString(Strings:get(inviteBubble[math.random(1, #inviteBubble)]))
 end
 
 function CooperateBossFightMediator:refreshTimes()

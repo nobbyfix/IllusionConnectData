@@ -78,14 +78,28 @@ function ActivityBlockActivity:getSubActivityById(id)
 	end
 end
 
-function ActivityBlockActivity:getBlockMapActivity()
+function ActivityBlockActivity:getBlockMapActivity(activityId)
+	local function getActivity(id)
+		local activity = self:getSubActivityById(id)
+
+		if activity and activity:getType() == ActivityType.KActivityBlockMap and self:subActivityOpen(id) then
+			return activity
+		end
+
+		return nil
+	end
+
+	if activityId then
+		return getActivity(activityId)
+	end
+
 	local activityIds = self:getActivity()
 
 	for i = 1, #activityIds do
 		local id = activityIds[i]
-		local activity = self:getSubActivityById(id)
+		local activity = getActivity(id)
 
-		if activity and self:subActivityOpen(id) and activity:getType() == ActivityType.KActivityBlockMap then
+		if activity then
 			return activity
 		end
 	end
@@ -250,7 +264,7 @@ function ActivityBlockActivity:getActivityTpurchase()
 		local id = activityIds[i]
 		local activity = self:getSubActivityById(id)
 
-		if activity and self:subActivityOpen(id) and activity:getType() == ActivityType.KTPURCHASE and activity:getUI() == "C_TIMEPURCHASE" then
+		if activity and self:subActivityOpen(id) and activity:getType() == ActivityType.KTPURCHASE then
 			return activity
 		end
 	end
@@ -353,6 +367,10 @@ function ActivityBlockActivity:getBgPath()
 	return string.format("asset/scene/%s.jpg", self:getActivityConfig().Bmg)
 end
 
+function ActivityBlockActivity:getChangeBgPath()
+	return string.format("asset/scene/%s.jpg", self:getActivityConfig().ChangeBmg)
+end
+
 function ActivityBlockActivity:getTitlePath()
 	return string.format("%s.png", self:getActivityConfig().Logo)
 end
@@ -418,4 +436,42 @@ function ActivityBlockActivity:deleteSubActivity(activityMap)
 			end
 		end
 	end
+end
+
+function ActivityBlockActivity:getSubActivityOpenTimes(config)
+	local startTime = TimeUtil:formatStrToTImestamp(config.TimeFactor.start[1])
+	local endTime = TimeUtil:formatStrToTImestamp(config.TimeFactor.start[2])
+
+	return {
+		startTime = startTime,
+		endTime = endTime
+	}
+end
+
+function ActivityBlockActivity:getSubActivityBaseData(activityId)
+	return ConfigReader:getRecordById("Activity", activityId)
+end
+
+function ActivityBlockActivity:subActivityIsOpen(activityId)
+	local activity = self:getSubActivityById(activityId)
+
+	if activity then
+		local curTime = DmGame:getInstance()._injector:getInstance("GameServerAgent"):remoteTimeMillis()
+
+		return activity:getStartTime() <= curTime
+	end
+
+	return false
+end
+
+function ActivityBlockActivity:subActivityIsOver(activityId)
+	local activity = self:getSubActivityById(activityId)
+
+	if activity then
+		local curTime = DmGame:getInstance()._injector:getInstance("GameServerAgent"):remoteTimeMillis()
+
+		return activity:getEndTime() <= curTime
+	end
+
+	return true
 end

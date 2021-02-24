@@ -65,6 +65,8 @@ function ActivityLogin14CommonMediator:setupView()
 			self._tableView:setContentOffset(cc.p(-space * (todayNum - 3), 0))
 		end
 	end
+
+	self._main:getChildByFullName("refreshPanel.times"):setString(self._activity:getTimeStr1())
 end
 
 function ActivityLogin14CommonMediator:getLastRewardDay()
@@ -325,7 +327,7 @@ function ActivityLogin14CommonMediator:refreshUIView()
 
 	heroPanel:getChildByFullName("Image_33"):setVisible(not showHero)
 
-	if showHero then
+	if showHero and showHero.modelId ~= "no" then
 		local heroSprite = IconFactory:createRoleIconSprite({
 			iconType = "Bust4",
 			id = showHero.modelId,

@@ -345,6 +345,7 @@ function EquipAllUpdateMediator:refreshAttr()
 			local name = attrPanel:getChildByFullName("name")
 
 			name:setString(attrName)
+			name:setPositionX(30)
 
 			local image = attrPanel:getChildByFullName("image")
 
@@ -483,6 +484,7 @@ function EquipAllUpdateMediator:refreshSkill()
 			skillLevel:setVisible(false)
 			skillTip:setPositionX(skillNameBg:getPositionX() + skillNameBg:getContentSize().width + 10)
 		else
+			skillLevel:setVisible(true)
 			skillLevel:setPositionX(skillNameBg:getPositionX() + skillNameBg:getContentSize().width + 10)
 			skillTip:setPositionX(skillLevel:getPositionX() + skillLevel:getContentSize().width + 10)
 		end
@@ -829,6 +831,7 @@ function EquipAllUpdateMediator:refreshStar()
 	}))
 	desc1:getChildByName("text"):setPositionX(205)
 	desc1:getChildByName("extendText"):setVisible(false)
+	desc1:getChildByName("name"):setPositionX(10)
 	desc1:getChildByName("name"):setString(Strings:get("Equip_UI46"))
 	desc1:getChildByName("image"):setVisible(false)
 

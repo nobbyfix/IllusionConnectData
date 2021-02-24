@@ -1074,7 +1074,7 @@ all.EquipSkill_Accesory_15004 = {
 			0
 		}, passive)
 		this.passive = global["[trigger_by]"](this, {
-			"SELF:ENTER"
+			"SELF:PRE_ENTER"
 		}, passive)
 
 		return this

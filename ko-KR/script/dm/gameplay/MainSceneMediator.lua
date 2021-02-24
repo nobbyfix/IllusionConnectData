@@ -47,6 +47,9 @@ local muiscCfg = {
 	ActivityBakingMainView = {
 		noAutoPlay = true
 	},
+	ActivityCollapsedMainView = {
+		noAutoPlay = true
+	},
 	ActivityBlockDetectiveView = {
 		noAutoPlay = true
 	},
@@ -139,6 +142,18 @@ local muiscCfg = {
 	},
 	ActivitySupportHolidayView = {
 		id = "Mus_Redwhite"
+	},
+	RTPKMainView = {
+		id = "Mus_Story_Danger_2"
+	},
+	RTPKMatchView = {
+		noAutoPlay = true
+	},
+	rtpvpBattle = {
+		noAutoPlay = true
+	},
+	rtpvpRobotBattle = {
+		noAutoPlay = true
 	}
 }
 local UINavigateHistory = {}
