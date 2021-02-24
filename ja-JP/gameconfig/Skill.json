@@ -19466,7 +19466,7 @@
         "Type": "BATTLEPASSIVE"
     },
     "EquipSkill_Decoration_15005": {
-        "Actions": "EquipSkill_Armor_15005",
+        "Actions": "EquipSkill_Accesory_15005",
         "AllowCounterHit": [
             {
                 "id": "DamageFactor",
@@ -19574,7 +19574,7 @@
         "Type": "BATTLEPASSIVE"
     },
     "EquipSkill_Decoration_15006": {
-        "Actions": "EquipSkill_Armor_15006",
+        "Actions": "EquipSkill_Accesory_15006",
         "AllowCounterHit": [
             {
                 "id": "RateFactor",
@@ -20152,6 +20152,72 @@
         "IsEXSkill": "",
         "MasterSkillTag": "",
         "Name": "EquipSkill_Tops_15004_Name",
+        "ShowInBattle": "",
+        "SkillDoubleRate": "",
+        "SkillEffect": "",
+        "SkillPic": "",
+        "SkillRange": "",
+        "Summoned": "",
+        "TargetPreview": "",
+        "Type": "BATTLEPASSIVE"
+    },
+    "EquipSkill_Tops_15006": {
+        "Actions": "EquipSkill_Armor_15006",
+        "AllowCounterHit": [
+            {
+                "id": "MoreRage",
+                "type": "CUSTOM",
+                "value": [
+                    65,
+                    90,
+                    115,
+                    140,
+                    165,
+                    190,
+                    215,
+                    240
+                ]
+            }
+        ],
+        "AllowDoubleHit": [
+            {
+                "id": "MoreRage",
+                "type": "CUSTOM",
+                "value": [
+                    65,
+                    90,
+                    115,
+                    140,
+                    165,
+                    190,
+                    215,
+                    240
+                ]
+            }
+        ],
+        "Args": [
+            {
+                "id": "MoreRage",
+                "type": "CUSTOM",
+                "value": [
+                    65,
+                    90,
+                    115,
+                    140,
+                    165,
+                    190,
+                    215,
+                    240
+                ]
+            }
+        ],
+        "AttrEffects": [],
+        "Desc": "EquipSkill_Tops_15006_Desc",
+        "Desc_short": "EquipSkill_Tops_15006_Desc",
+        "Icon": "",
+        "IsEXSkill": "",
+        "MasterSkillTag": "",
+        "Name": "EquipSkill_Tops_15006_Name",
         "ShowInBattle": "",
         "SkillDoubleRate": "",
         "SkillEffect": "",

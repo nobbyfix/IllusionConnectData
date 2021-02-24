@@ -4106,6 +4106,49 @@
         ],
         "zoom": 0.6
     },
+    "Tops_15006": {
+        "ATK": "",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "UR_Top_DEF",
+        "Desc": "Tops_15006_Desc",
+        "HP": "UR_Top_HP",
+        "Icon": "ico_equip_stardress",
+        "Name": "Tops_15006_Name",
+        "Position": "Tops",
+        "Profession": [
+            "Defense",
+            "Attack",
+            "Support",
+            "Summon",
+            "Aoe",
+            "Curse",
+            "Cure"
+        ],
+        "ProfessionDesc": "Decoration_ProfessionDesc",
+        "ProfessionType": 0,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "",
+        "Shine": "",
+        "Skill": "EquipSkill_Tops_15006",
+        "Sort": 289999,
+        "StartEquipStarID": "Rareity15_Top3_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
     "Weapon_11001": {
         "ATK": "A_Weapon_ATK",
         "AttrEffect": "",
