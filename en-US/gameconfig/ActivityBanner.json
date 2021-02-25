@@ -55,12 +55,54 @@
         "Type": "Activity",
         "TypeId": "DrawCard_1UP_SLMen_Activity"
     },
+    "ActivityBanner108": {
+        "Img": "drawcard_banner_MTZMEShiLDu.png",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_MTZMEShiLDu",
+        "Sort": 108,
+        "Type": "Activity",
+        "TypeId": "DrawCard_MTZMEShiLDu_Activity"
+    },
+    "ActivityBanner109": {
+        "Img": "drawcard_banner_WEDeYLMGZhu.png",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_WEDeYLMGZhu_1",
+        "Sort": 109,
+        "Type": "Activity",
+        "TypeId": "DrawCard_WEDeYLMGZhu_1_Activity"
+    },
     "ActivityBanner11": {
         "Img": "drawcard_banner_BBLMa.png",
         "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_5",
         "Sort": 11,
         "Type": "Activity",
         "TypeId": "DrawCard_1UP_5_Activity"
+    },
+    "ActivityBanner110": {
+        "Img": "drawcard_banner_FLYDe.png",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_FLYDe",
+        "Sort": 110,
+        "Type": "Activity",
+        "TypeId": "DrawCard_1UP_FLYDe_Activity"
+    },
+    "ActivityBanner111": {
+        "Img": "drawcard_banner_YSTLu.png",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_YSTLu",
+        "Sort": 111,
+        "Type": "Activity",
+        "TypeId": "DrawCard_1UP_YSTLu_Activity"
+    },
+    "ActivityBanner112": {
+        "Img": "drawcard_banner_BQDShe.png",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_BQDShe",
+        "Sort": 112,
+        "Type": "Activity",
+        "TypeId": "DrawCard_1UP_BQDShe_Activity"
+    },
+    "ActivityBanner113": {
+        "Img": "drawcard_banner_KMLa.png",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_KMLa",
+        "Sort": 113,
+        "Type": "Activity",
+        "TypeId": "DrawCard_1UP_KMLa_Activity"
     },
     "ActivityBanner12": {
         "Img": "drawcard_banner_MGNa_MTZMEShi.png",
@@ -411,6 +453,13 @@
         "Sort": 3005,
         "Type": "Activity",
         "TypeId": "ActivityBlock_Baking"
+    },
+    "ActivityBannerCollapsed": {
+        "Img": "collapsed_txt_zjm_banner.png",
+        "Link": "view://ActivityBlockView&activityId=ActivityBlock_Collapsed",
+        "Sort": 3007,
+        "Type": "Activity",
+        "TypeId": "ActivityBlock_Collapsed"
     },
     "ActivityBannerCooperateBoss": {
         "Img": "gongdou_img_banner.png",

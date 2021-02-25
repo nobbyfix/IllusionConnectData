@@ -270,14 +270,39 @@ function CooperateBossSystem:getRecomandHeroIds(mapId)
 	return recomandHeroIds
 end
 
-function CooperateBossSystem:enterCooperateBoss()
+function CooperateBossSystem:getBossName(congfigId)
+	local bossBattle = ConfigReader:getDataByNameIdAndKey("CooperateBossMain", congfigId, "BossBattle")
+	local nameKey = ConfigReader:getDataByNameIdAndKey("CooperateBossBattle", bossBattle, "Name")
+
+	return Strings:get(nameKey)
+end
+
+function CooperateBossSystem:getInviteBossTabImage(level)
+	local config = ConfigReader:getDataByNameIdAndKey("ConfigValue", "CooperateBoss_BossColor", "content")
+
+	for i = 1, #config do
+		local tmp = config[i]
+
+		if tmp.level[1] <= level and level <= tmp.level[2] then
+			return tmp.pic .. ".png"
+		end
+	end
+
+	return ""
+end
+
+function CooperateBossSystem:enterCooperateBoss(isSwitch)
 	local function callback(data)
 		local uiName = self._cooperateBoss:getUI()
 
 		if uiName then
 			local view = self:getInjector():getInstance(uiName)
 
-			self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, data))
+			if isSwitch then
+				self:dispatch(ViewEvent:new(EVT_SWITCH_VIEW, view, nil, data))
+			else
+				self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, data))
+			end
 		end
 	end
 
@@ -592,7 +617,7 @@ function CooperateBossSystem:enterBattle(params, viewType)
 
 		local data = {
 			title = Strings:get("SHOP_REFRESH_DESC_TEXT1"),
-			content = Strings:get("clubBoss_50"),
+			content = Strings:get("CooperateBoss_QuitTip"),
 			sureBtn = {},
 			cancelBtn = {}
 		}
@@ -912,4 +937,24 @@ function CooperateBossSystem:requestGetInviteInfo(callback)
 			end
 		end
 	end)
+end
+
+function CooperateBossSystem:save(bossIds)
+	if type(bossIds) ~= "string" then
+		return
+	end
+
+	local customDataSystem = self:getInjector():getInstance("CustomDataSystem")
+
+	customDataSystem:setValue(PrefixType.kGlobal, bossIds, true)
+end
+
+function CooperateBossSystem:isSaved(bossIds)
+	if type(bossIds) ~= "string" then
+		return
+	end
+
+	local customDataSystem = self:getInjector():getInstance("CustomDataSystem")
+
+	return customDataSystem:getValue(PrefixType.kGlobal, bossIds, false)
 end

@@ -21,6 +21,18 @@ function PopupNormalTitle:setupView(data)
 end
 
 function PopupNormalTitle:updateTitle(data)
+	self._titleText1:getVirtualRenderer():setOverflow(cc.LabelOverflow.SHRINK)
+
+	if data.titleDimensions then
+		self._titleText1:getVirtualRenderer():setDimensions(377, 88)
+
+		if getCurrentLanguage() ~= GameLanguageType.CN then
+			self._titleText1:getVirtualRenderer():setDimensions(data.titleDimensions[1], data.titleDimensions[2])
+		end
+	else
+		self._titleText1:getVirtualRenderer():setDimensions(377, 88)
+	end
+
 	if data.title then
 		self._titleText1:setString(data.title)
 	end

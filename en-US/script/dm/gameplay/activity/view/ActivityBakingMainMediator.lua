@@ -238,7 +238,6 @@ function ActivityBakingMainMediator:initInfo()
 	end
 
 	self._imageBg:loadTexture(self._model:getBgPath())
-	dump(self._model:getBgPath(), " self._model:getBgPath() @@@@ ")
 	self._titleImage:loadTexture(self._model:getTitlePath(), 1)
 
 	local btns = self._model:getButtonConfig()

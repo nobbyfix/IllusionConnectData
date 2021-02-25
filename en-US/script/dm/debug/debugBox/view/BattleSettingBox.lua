@@ -177,3 +177,24 @@ function NoAiSetBox:onClick(data)
 		tip = "设置完成"
 	}))
 end
+
+ChangeDEBUGValue = class("ChangeDEBUGValue", DebugViewTemplate, _M)
+
+function ChangeDEBUGValue:initialize()
+	self._viewConfig = {
+		{
+			default = "0",
+			name = "value",
+			title = "DEBUG:0,1,2",
+			type = "Input"
+		}
+	}
+end
+
+function ChangeDEBUGValue:onClick(data)
+	DEBUG = tonumber(data.value)
+
+	self:dispatch(ShowTipEvent({
+		tip = "设置成功"
+	}))
+end

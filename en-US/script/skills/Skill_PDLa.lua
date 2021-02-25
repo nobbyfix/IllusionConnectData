@@ -639,7 +639,7 @@ all.Skill_PDLa_Box_Passive_Death = {
 				end
 			elseif _env.i < 401 then
 				for _, unit in global.__iter__(global.Slice(_env, global.SortBy(_env, global.EnemyUnits(_env), ">", global.UnitPropGetter(_env, "rp")), 1, 1)) do
-					global.ApplyRPDamage(_env, unit, 1000)
+					global.ApplyRPDamage_ResultCheck(_env, _env.ACTOR, unit, 1000)
 				end
 			elseif _env.i < 601 then
 				local cards = global.RandomN(_env, 1, global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR)))

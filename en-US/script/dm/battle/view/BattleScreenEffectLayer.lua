@@ -154,6 +154,14 @@ function BattleScreenEffectLayer:showPortraitEffect()
 		portrait:setScale(1.5)
 		portrait:addTo(portraitNode)
 
+		local offsetConfig = ConfigReader:getDataByNameIdAndKey("HeroAwaken", modelId, "CutIn")
+
+		if offsetConfig then
+			portrait:setScale(offsetConfig[3] or 1.5)
+			portrait:setPositionX(offsetConfig[2] or 0)
+			portrait:setPositionY(offsetConfig[1] or 0)
+		end
+
 		local textNode = portraitAnim:getChildByFullName("text")
 		text = ccui.ImageView:create(ASSET_LANG_SKILL_WORD .. desc .. (right and "_R.png" or ".png"))
 

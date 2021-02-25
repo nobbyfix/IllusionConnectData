@@ -31,6 +31,71 @@ local mappings = {
 		name = "LoginQueueMediator",
 		type = "@C"
 	},
+	EVT_RTPK_STARTMATCH = {
+		url = "dm.gameplay.rtpk.controller.RTPKSystem",
+		name = "EVT_RTPK_STARTMATCH",
+		type = "@V"
+	},
+	EVT_RTPK_UPDATEINFO = {
+		url = "dm.gameplay.rtpk.controller.RTPKSystem",
+		name = "EVT_RTPK_UPDATEINFO",
+		type = "@V"
+	},
+	EVT_RTPK_CANCELMATCH = {
+		url = "dm.gameplay.rtpk.controller.RTPKSystem",
+		name = "EVT_RTPK_CANCELMATCH",
+		type = "@V"
+	},
+	EVT_RTPK_MATCHSUCC = {
+		url = "dm.gameplay.rtpk.controller.RTPKSystem",
+		name = "EVT_RTPK_MATCHSUCC",
+		type = "@V"
+	},
+	RTPKRankViewMediator = {
+		url = "dm.gameplay.rtpk.view.RTPKRankViewMediator",
+		name = "RTPKRankViewMediator",
+		type = "@C"
+	},
+	RTPKResultMediator = {
+		url = "dm.gameplay.rtpk.view.RTPKResultMediator",
+		name = "RTPKResultMediator",
+		type = "@C"
+	},
+	RTPKRewardViewMediator = {
+		url = "dm.gameplay.rtpk.view.RTPKRewardViewMediator",
+		name = "RTPKRewardViewMediator",
+		type = "@C"
+	},
+	RTPKMatchMediator = {
+		url = "dm.gameplay.rtpk.view.RTPKMatchMediator",
+		name = "RTPKMatchMediator",
+		type = "@C"
+	},
+	RTPKNewSeasonTipsMediator = {
+		url = "dm.gameplay.rtpk.view.RTPKNewSeasonTipsMediator",
+		name = "RTPKNewSeasonTipsMediator",
+		type = "@C"
+	},
+	RTPKBuffDetailMediator = {
+		url = "dm.gameplay.rtpk.view.RTPKBuffDetailMediator",
+		name = "RTPKBuffDetailMediator",
+		type = "@C"
+	},
+	RTPKTeamMediator = {
+		url = "dm.gameplay.rtpk.view.RTPKTeamMediator",
+		name = "RTPKTeamMediator",
+		type = "@C"
+	},
+	RTPKMainMediator = {
+		url = "dm.gameplay.rtpk.view.RTPKMainMediator",
+		name = "RTPKMainMediator",
+		type = "@C"
+	},
+	RTPKReportViewMediator = {
+		url = "dm.gameplay.rtpk.view.RTPKReportViewMediator",
+		name = "RTPKReportViewMediator",
+		type = "@C"
+	},
 	ClubBossShowBattleResultMediator = {
 		url = "dm.gameplay.club.view.ClubBossShowBattleResultMediator",
 		name = "ClubBossShowBattleResultMediator",
@@ -791,6 +856,11 @@ local mappings = {
 		name = "HeroLevelUpTipMediator",
 		type = "@C"
 	},
+	HeroGeneralFragmentMeditor = {
+		url = "dm.gameplay.develop.view.herostrength.HeroGeneralFragmentMeditor",
+		name = "HeroGeneralFragmentMeditor",
+		type = "@C"
+	},
 	HeroStarItemSelectMediator = {
 		url = "dm.gameplay.develop.view.herostrength.HeroStarItemSelectMediator",
 		name = "HeroStarItemSelectMediator",
@@ -1296,6 +1366,11 @@ local mappings = {
 		name = "ImageBoardActivityMediator",
 		type = "@C"
 	},
+	ActivityNpcRoleDetailMediator = {
+		url = "dm.gameplay.activity.view.ActivityNpcRoleDetailMediator",
+		name = "ActivityNpcRoleDetailMediator",
+		type = "@C"
+	},
 	ActivityBlockTeamMediator = {
 		url = "dm.gameplay.activity.view.ActivityBlockTeamMediator",
 		name = "ActivityBlockTeamMediator",
@@ -1444,6 +1519,11 @@ local mappings = {
 	ActivityFateEncountersMediator = {
 		url = "dm.gameplay.activity.view.ActivityFateEncountersMediator",
 		name = "ActivityFateEncountersMediator",
+		type = "@C"
+	},
+	ActivityCollapsedMainMediator = {
+		url = "dm.gameplay.activity.view.ActivityCollapsedMainMediator",
+		name = "ActivityCollapsedMainMediator",
 		type = "@C"
 	},
 	ActivityBlockMediator = {
@@ -2825,6 +2905,11 @@ local mappings = {
 		url = "dm.gameplay.currency.CurrencyEvents",
 		name = "EVT_BUY_CRYSTAL_SUCC",
 		type = "@V"
+	},
+	RTPVPRobotBattleMediator = {
+		url = "dm.gameplay.rtpvp.view.RTPVPRobotBattleMediator",
+		name = "RTPVPRobotBattleMediator",
+		type = "@C"
 	},
 	BuildingLvUpSucMediator = {
 		url = "dm.gameplay.building.view.BuildingLvUpSucMediator",

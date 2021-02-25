@@ -161,14 +161,22 @@ all.Skill_WEDe_Unique = {
 		if this.dmgFactor == nil then
 			this.dmgFactor = {
 				1,
-				3.6,
+				2,
 				0
 			}
 		end
 
+		this.ShieldRateFactor = externs.ShieldRateFactor
+
+		if this.ShieldRateFactor == nil then
+			this.ShieldRateFactor = 0.35
+		end
+
 		this.ReflectRateFactor = externs.ReflectRateFactor
 
-		assert(this.ReflectRateFactor ~= nil, "External variable `ReflectRateFactor` is not provided.")
+		if this.ReflectRateFactor == nil then
+			this.ReflectRateFactor = 0.8
+		end
 
 		local main = __action(this, {
 			name = "main",
@@ -253,6 +261,25 @@ all.Skill_WEDe_Unique = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
+			local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.ACTOR)
+			local atk = global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR)
+			local shield = global.ShieldEffect(_env, global.min(_env, maxHp * this.ShieldRateFactor, atk * 2))
+
+			global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
+				timing = 1,
+				duration = 2,
+				display = "Shield",
+				tags = {
+					"NUMERIC",
+					"BUFF",
+					"DISPELLABLE",
+					"STEALABLE",
+					"SHIELD"
+				}
+			}, {
+				shield
+			}, 1)
+
 			local buffeft2 = global.NumericEffect(_env, "+reflection", {
 				"+Normal",
 				"+Normal"
@@ -260,7 +287,7 @@ all.Skill_WEDe_Unique = {
 
 			global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
 				timing = 1,
-				duration = 3,
+				duration = 2,
 				display = "Reflect",
 				tags = {
 					"NUMERIC",
@@ -409,6 +436,7 @@ all.Skill_WEDe_Passive_Key = {
 				global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
 					timing = 2,
 					duration = 3,
+					display = "Taunt",
 					tags = {
 						"STATUS",
 						"TAUNT",
@@ -534,14 +562,22 @@ all.Skill_WEDe_Unique_EX = {
 		if this.dmgFactor == nil then
 			this.dmgFactor = {
 				1,
-				3.6,
+				2.5,
 				0
 			}
 		end
 
+		this.ShieldRateFactor = externs.ShieldRateFactor
+
+		if this.ShieldRateFactor == nil then
+			this.ShieldRateFactor = 0.45
+		end
+
 		this.ReflectRateFactor = externs.ReflectRateFactor
 
-		assert(this.ReflectRateFactor ~= nil, "External variable `ReflectRateFactor` is not provided.")
+		if this.ReflectRateFactor == nil then
+			this.ReflectRateFactor = 1
+		end
 
 		local main = __action(this, {
 			name = "main",
@@ -626,6 +662,25 @@ all.Skill_WEDe_Unique_EX = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
+			local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.ACTOR)
+			local atk = global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR)
+			local shield = global.ShieldEffect(_env, global.min(_env, maxHp * this.ShieldRateFactor, atk * 2))
+
+			global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
+				timing = 1,
+				duration = 2,
+				display = "Shield",
+				tags = {
+					"NUMERIC",
+					"BUFF",
+					"DISPELLABLE",
+					"STEALABLE",
+					"SHIELD"
+				}
+			}, {
+				shield
+			}, 1)
+
 			local buffeft2 = global.NumericEffect(_env, "+reflection", {
 				"+Normal",
 				"+Normal"
@@ -633,7 +688,7 @@ all.Skill_WEDe_Unique_EX = {
 
 			global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
 				timing = 1,
-				duration = 3,
+				duration = 2,
 				display = "Reflect",
 				tags = {
 					"NUMERIC",

@@ -32,6 +32,7 @@ ActivityShowTab = {
 	kInHome = 2
 }
 ActivityBannerType = {
+	kCooperateBoss = "COOPERATEBOSS",
 	kPackageShop = "PackageShop",
 	kActivity = "Activity"
 }
@@ -144,7 +145,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityBlockHoliday] = "ActivityBlockHolidayView",
 		[ActivityType_UI.KActivityBlockDetetive] = "ActivityBlockDetectiveView",
 		[ActivityType_UI.KActivityBlockMusic] = "ActivityBlockMusicView",
-		[ActivityType_UI.KActivityBlockBaking] = "ActivityBakingMainView"
+		[ActivityType_UI.KActivityBlockBaking] = "ActivityBakingMainView",
+		[ActivityType_UI.KActivityCollapsed] = "ActivityCollapsedMainView"
 	},
 	enterBlockMonsterShopView = {
 		[ActivityType_UI.kActivityBlockWsj] = "ActivityBlockMonsterShopView",
@@ -161,7 +163,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityBlockHoliday] = "ActivityBlockMapWsjView",
 		[ActivityType_UI.KActivityBlockDetetive] = "ActivitySagaSupportMapView",
 		[ActivityType_UI.KActivityBlockMusic] = "ActivitySagaSupportMapView",
-		[ActivityType_UI.KActivityBlockBaking] = "ActivitySagaSupportMapView"
+		[ActivityType_UI.KActivityBlockBaking] = "ActivitySagaSupportMapView",
+		[ActivityType_UI.KActivityCollapsed] = "ActivitySagaSupportMapView"
 	},
 	enterSagaSupportStageView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportStageWxhView",
@@ -182,7 +185,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityBlockHoliday] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivityBlockDetetive] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivityBlockMusic] = "ActivityBlockTaskView",
-		[ActivityType_UI.KActivityBlockBaking] = "ActivityBlockTaskView"
+		[ActivityType_UI.KActivityBlockBaking] = "ActivityBlockTaskView",
+		[ActivityType_UI.KActivityCollapsed] = "ActivityBlockTaskView"
 	},
 	enterSagaSupportRankRewardView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportRankRewardWxhView",
@@ -202,5 +206,16 @@ ActivityLogin14Config = {
 			cc.c4b(255, 254, 249, 255),
 			cc.c4b(255, 213, 133, 255)
 		}
+	},
+	EightDays_Collapsed = {
+		resFile = "asset/ui/ActivityCollapsedLogin14.csb",
+		textPattern = {
+			cc.c4b(255, 255, 255, 255),
+			cc.c4b(212, 197, 255, 255)
+		}
 	}
+}
+LimitShopActivityViewType = {
+	valentine = "TimeLimitShopActivityValentineView",
+	xige = "TimeLimitShopActivityXigeView"
 }

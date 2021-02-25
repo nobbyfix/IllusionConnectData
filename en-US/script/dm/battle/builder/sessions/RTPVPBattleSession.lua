@@ -8,6 +8,8 @@ function RTPVPBattleSession:initialize(serverData)
 	self._playerBData = serverData.enemyData
 	self._playerAData.tacticsNeedWait = true
 	self._playerBData.tacticsNeedWait = true
+	self._seasonId = serverData.seasonId
+	self._battleType = serverData.battleType
 
 	self:setRandomSeeds(serverData.logicSeed)
 end
@@ -31,7 +33,14 @@ function RTPVPBattleSession:genBattleConfigAndData(battleData, randomSeed)
 	end
 
 	local maxRound = ConfigReader:getRecordById("ConfigValue", "Fight_MaximumRound").content
-	local battleConfig = self:_getBlockBattleConfig(ConfigReader:getRecordById("ConfigValue", "Fight_Friend").content)
+	local battleId = ConfigReader:getRecordById("ConfigValue", "Fight_Friend").content
+
+	if self._battleType == "orrtpk" then
+		local ruleId = ConfigReader:getDataByNameIdAndKey("RTPKSeason", self._seasonId, "SeasonRule")
+		battleId = ConfigReader:getDataByNameIdAndKey("RTPKRule", ruleId, "BattleConfig")
+	end
+
+	local battleConfig = self:_getBlockBattleConfig(battleId)
 	local stageEnergy = battleConfig and battleConfig.StageEnergy or self:_getBlockBattleConfig(ConfigReader:getRecordById("ConfigValue", "Fight_StageEnergy").content).StageEnergy
 	local battlePhaseConfig = self:_genBattlePhaseConfig(stageEnergy, {
 		waitMode = battleConfig and battleConfig.WaitMode,

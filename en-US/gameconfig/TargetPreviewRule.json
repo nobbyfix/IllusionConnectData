@@ -89,6 +89,9 @@
     "Target_FEMSi": {
         "Function": "return GenInfo(EnemyAll(),Red,true)"
     },
+    "Target_FLYDe": {
+        "Function": "return GenInfo(EnemyAll(),Red)"
+    },
     "Target_FTLEShi": {
         "Function": "return MainTarget()"
     },
@@ -198,7 +201,7 @@
         "Function": "return GenInfo(EnemyAll(),Red,true)"
     },
     "Target_TJHDe": {
-        "Function": "return MainTarget()"
+        "Function": "return GenInfo(EnemyAll(),Red)"
     },
     "Target_TLMi": {
         "Function": "return GenInfo(EnemyAll(ROW_OF(TARGET)),Red)"

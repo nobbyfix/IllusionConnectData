@@ -219,6 +219,17 @@
         "UnlockDesc": "FEMSi_HeadUnlock",
         "Zoom": 0.5
     },
+    "Head_FLYDe": {
+        "HeadDesc": "HeroBase_Desc_FLYDe",
+        "HeadMove": "",
+        "HeadName": "FLYDe_HeadName",
+        "HeroMasterId": "FLYDe",
+        "IconPath": "asset/heros/FLYDe/battlepic_xge.png",
+        "IsHiddenHead": 0,
+        "Type": 1,
+        "UnlockDesc": "FLYDe_HeadUnlock",
+        "Zoom": 0.5
+    },
     "Head_FTLEShi": {
         "HeadDesc": "HeroBase_Desc_FTLEShi",
         "HeadMove": "",
@@ -697,8 +708,8 @@
         "HeadMove": "",
         "HeadName": "TJHDe_HeadName",
         "HeroMasterId": "TJHDe",
-        "IconPath": "asset/heros/TJHDe/battlepic_TJHDe.png",
-        "IsHiddenHead": 1,
+        "IconPath": "asset/heros/TJHDe/battlepic_yyymeng.png",
+        "IsHiddenHead": 0,
         "Type": 1,
         "UnlockDesc": "TJHDe_HeadUnlock",
         "Zoom": 0.5
@@ -735,48 +746,6 @@
         "Type": 1,
         "UnlockDesc": "TTKMeng_HeadUnlock",
         "Zoom": 0.5
-    },
-    "Head_VC_AI": {
-        "HeadDesc": "",
-        "HeadMove": [
-            -40,
-            -10
-        ],
-        "HeadName": "",
-        "HeroMasterId": "",
-        "IconPath": "",
-        "IsHiddenHead": "",
-        "Type": "",
-        "UnlockDesc": "",
-        "Zoom": ""
-    },
-    "Head_VC_HK": {
-        "HeadDesc": "",
-        "HeadMove": [
-            -40,
-            -10
-        ],
-        "HeadName": "",
-        "HeroMasterId": "",
-        "IconPath": "",
-        "IsHiddenHead": "",
-        "Type": "",
-        "UnlockDesc": "",
-        "Zoom": ""
-    },
-    "Head_VC_K": {
-        "HeadDesc": "",
-        "HeadMove": [
-            -40,
-            -10
-        ],
-        "HeadName": "",
-        "HeroMasterId": "",
-        "IconPath": "",
-        "IsHiddenHead": "",
-        "Type": "",
-        "UnlockDesc": "",
-        "Zoom": ""
     },
     "Head_WEDe": {
         "HeadDesc": "HeroBase_Desc_WEDe",
@@ -987,6 +956,17 @@
         "UnlockDesc": "HeroAwaken_BBLMa",
         "Zoom": 1.0
     },
+    "HeroAwaken_CZheng": {
+        "HeadDesc": "HeroAwaken_CZheng_Desc",
+        "HeadMove": "",
+        "HeadName": "HeroAwaken_CZheng_1_Name",
+        "HeroMasterId": "CZheng",
+        "IconPath": "asset/heros/CZheng/battlepic_scheng_awaken.png",
+        "IsHiddenHead": 0,
+        "Type": 4,
+        "UnlockDesc": "HeroAwaken_CZheng",
+        "Zoom": 1.0
+    },
     "HeroAwaken_KTSJKe": {
         "HeadDesc": "HeroAwaken_KTSJKe_Desc",
         "HeadMove": "",
@@ -1009,6 +989,17 @@
         "UnlockDesc": "HeroAwaken_LFEr",
         "Zoom": 1.0
     },
+    "HeroAwaken_SDTZi": {
+        "HeadDesc": "HeroAwaken_SDTZi_Desc",
+        "HeadMove": "",
+        "HeadName": "HeroAwaken_SDTZi_1_Name",
+        "HeroMasterId": "SDTZi",
+        "IconPath": "asset/heros/SDTZi/battlepic_SDTZi_JXing.png",
+        "IsHiddenHead": 0,
+        "Type": 4,
+        "UnlockDesc": "HeroAwaken_SDTZi",
+        "Zoom": 1.0
+    },
     "HeroAwaken_TPGZhu": {
         "HeadDesc": "HeroAwaken_TPGZhu_Desc",
         "HeadMove": "",
@@ -1018,6 +1009,17 @@
         "IsHiddenHead": 0,
         "Type": 4,
         "UnlockDesc": "HeroAwaken_TPGZhu",
+        "Zoom": 1.0
+    },
+    "HeroAwaken_YSTLu": {
+        "HeadDesc": "HeroAwaken_YSTLu_Desc",
+        "HeadMove": "",
+        "HeadName": "HeroAwaken_YSTLu_1_Name",
+        "HeroMasterId": "YSTLu",
+        "IconPath": "asset/heros/YSTLu/battlepic_astlsi_awaken.png",
+        "IsHiddenHead": 0,
+        "Type": 4,
+        "UnlockDesc": "HeroAwaken_YSTLu",
         "Zoom": 1.0
     },
     "HeroAwaken_ZZBBWei": {

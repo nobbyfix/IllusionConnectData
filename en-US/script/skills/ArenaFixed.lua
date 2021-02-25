@@ -1524,28 +1524,32 @@ all.ArenaFixed_23 = {
 					_env.count_default = global.SpecialPropGetter(_env, "startcount")(_env, global.FriendMaster(_env))
 				end
 
-				if not _env.count_default or _env.count_default == 0 then
+				if _env.count_default and _env.count_default ~= 0 then
+					-- Nothing
+				else
 					local buff = global.SpecialNumericEffect(_env, "+startcount", {
 						"+Normal",
 						"+Normal"
 					}, _env.count)
 
-					global.ApplyBuff(_env, global.FriendMaster(_env), {
-						duration = 99,
-						group = "ArenaFixed_23_count",
-						timing = 0,
-						limit = 1,
-						tags = {
-							"STATUS",
-							"NUMERIC",
-							"STARTCOUNT",
-							"skill_ArenaFixed_23",
-							"UNDISPELLABLE",
-							"UNSTEALABLE"
-						}
-					}, {
-						buff
-					})
+					if global.FriendMaster(_env) then
+						global.ApplyBuff(_env, global.FriendMaster(_env), {
+							duration = 99,
+							group = "ArenaFixed_23_count",
+							timing = 0,
+							limit = 1,
+							tags = {
+								"STATUS",
+								"NUMERIC",
+								"STARTCOUNT",
+								"skill_ArenaFixed_23",
+								"UNDISPELLABLE",
+								"UNSTEALABLE"
+							}
+						}, {
+							buff
+						})
+					end
 				end
 
 				if global.FriendMaster(_env) then
@@ -1635,28 +1639,32 @@ all.ArenaFixed_24 = {
 					_env.count_default = global.SpecialPropGetter(_env, "startcount")(_env, global.FriendMaster(_env))
 				end
 
-				if not _env.count_default or _env.count_default == 0 then
+				if _env.count_default and _env.count_default ~= 0 then
+					-- Nothing
+				else
 					local buff = global.SpecialNumericEffect(_env, "+startcount", {
 						"+Normal",
 						"+Normal"
 					}, _env.count)
 
-					global.ApplyBuff(_env, global.FriendMaster(_env), {
-						duration = 99,
-						group = "ArenaFixed_24_count",
-						timing = 0,
-						limit = 1,
-						tags = {
-							"STATUS",
-							"NUMERIC",
-							"STARTCOUNT",
-							"ArenaFixed_24",
-							"UNDISPELLABLE",
-							"UNSTEALABLE"
-						}
-					}, {
-						buff
-					})
+					if global.FriendMaster(_env) then
+						global.ApplyBuff(_env, global.FriendMaster(_env), {
+							duration = 99,
+							group = "ArenaFixed_24_count",
+							timing = 0,
+							limit = 1,
+							tags = {
+								"STATUS",
+								"NUMERIC",
+								"STARTCOUNT",
+								"ArenaFixed_24",
+								"UNDISPELLABLE",
+								"UNSTEALABLE"
+							}
+						}, {
+							buff
+						})
+					end
 				end
 
 				if global.FriendMaster(_env) then
@@ -1812,28 +1820,32 @@ all.ArenaFixed_26 = {
 					_env.count_default = global.SpecialPropGetter(_env, "startcount")(_env, global.FriendMaster(_env))
 				end
 
-				if not _env.count_default or _env.count_default == 0 then
+				if _env.count_default and _env.count_default ~= 0 then
+					-- Nothing
+				else
 					local buff = global.SpecialNumericEffect(_env, "+startcount", {
 						"+Normal",
 						"+Normal"
 					}, _env.count)
 
-					global.ApplyBuff(_env, global.FriendMaster(_env), {
-						duration = 99,
-						group = "ArenaFixed_26_count",
-						timing = 0,
-						limit = 1,
-						tags = {
-							"STATUS",
-							"NUMERIC",
-							"STARTCOUNT",
-							"ArenaFixed_26",
-							"UNDISPELLABLE",
-							"UNSTEALABLE"
-						}
-					}, {
-						buff
-					})
+					if global.FriendMaster(_env) then
+						global.ApplyBuff(_env, global.FriendMaster(_env), {
+							duration = 99,
+							group = "ArenaFixed_26_count",
+							timing = 0,
+							limit = 1,
+							tags = {
+								"STATUS",
+								"NUMERIC",
+								"STARTCOUNT",
+								"ArenaFixed_26",
+								"UNDISPELLABLE",
+								"UNSTEALABLE"
+							}
+						}, {
+							buff
+						})
+					end
 				end
 
 				if global.FriendMaster(_env) then
@@ -1920,28 +1932,32 @@ all.ArenaFixed_27 = {
 					_env.count_default = global.SpecialPropGetter(_env, "startcount")(_env, global.FriendMaster(_env))
 				end
 
-				if not _env.count_default or _env.count_default == 0 then
+				if _env.count_default and _env.count_default ~= 0 then
+					-- Nothing
+				else
 					local buff = global.SpecialNumericEffect(_env, "+startcount", {
 						"+Normal",
 						"+Normal"
 					}, _env.count)
 
-					global.ApplyBuff(_env, global.FriendMaster(_env), {
-						duration = 99,
-						group = "ArenaFixed_27_count",
-						timing = 0,
-						limit = 1,
-						tags = {
-							"STATUS",
-							"NUMERIC",
-							"STARTCOUNT",
-							"ArenaFixed_27",
-							"UNDISPELLABLE",
-							"UNSTEALABLE"
-						}
-					}, {
-						buff
-					})
+					if global.FriendMaster(_env) then
+						global.ApplyBuff(_env, global.FriendMaster(_env), {
+							duration = 99,
+							group = "ArenaFixed_27_count",
+							timing = 0,
+							limit = 1,
+							tags = {
+								"STATUS",
+								"NUMERIC",
+								"STARTCOUNT",
+								"ArenaFixed_27",
+								"UNDISPELLABLE",
+								"UNSTEALABLE"
+							}
+						}, {
+							buff
+						})
+					end
 				end
 
 				if global.FriendMaster(_env) then
@@ -2150,28 +2166,32 @@ all.ArenaFixed_29 = {
 					_env.count_default = global.SpecialPropGetter(_env, "startcount")(_env, global.FriendMaster(_env))
 				end
 
-				if not _env.count_default or _env.count_default == 0 then
+				if _env.count_default and _env.count_default ~= 0 then
+					-- Nothing
+				else
 					local buff = global.SpecialNumericEffect(_env, "+startcount", {
 						"+Normal",
 						"+Normal"
 					}, _env.count)
 
-					global.ApplyBuff(_env, global.FriendMaster(_env), {
-						duration = 99,
-						group = "ArenaFixed_29_count",
-						timing = 0,
-						limit = 1,
-						tags = {
-							"STATUS",
-							"NUMERIC",
-							"STARTCOUNT",
-							"ArenaFixed_29",
-							"UNDISPELLABLE",
-							"UNSTEALABLE"
-						}
-					}, {
-						buff
-					})
+					if global.FriendMaster(_env) then
+						global.ApplyBuff(_env, global.FriendMaster(_env), {
+							duration = 99,
+							group = "ArenaFixed_29_count",
+							timing = 0,
+							limit = 1,
+							tags = {
+								"STATUS",
+								"NUMERIC",
+								"STARTCOUNT",
+								"ArenaFixed_29",
+								"UNDISPELLABLE",
+								"UNSTEALABLE"
+							}
+						}, {
+							buff
+						})
+					end
 				end
 
 				if global.FriendMaster(_env) then

@@ -70,10 +70,11 @@ function ActivityExchangeMediator:setupView()
 
 	local activityConfig = self._activity:getActivityConfig()
 	local heroPanel = self._main:getChildByName("heroPanel")
+	local modelId = activityConfig.ModelId
 
-	heroPanel:getChildByFullName("Image_33"):setVisible(not activityConfig.ModelId)
+	heroPanel:getChildByFullName("Image_33"):setVisible(not modelId)
 
-	if activityConfig.ModelId then
+	if modelId and modelId ~= "no" then
 		local roleModel = activityConfig.ModelId
 		local heroSprite = IconFactory:createRoleIconSprite({
 			useAnim = true,
@@ -106,30 +107,41 @@ function ActivityExchangeMediator:setupView()
 		self:setBubleView(KBubleEnterStatus.ClickHero)
 	end)
 
-	local activityConfig = self._activity:getActivityConfig()
+	local topIcon = self._main:getChildByName("Image_9")
+	local taskTopUI = activityConfig.TaskTopUI
 
-	if activityConfig and activityConfig.TaskTopUI then
-		local topIcon = self._main:getChildByName("Image_9")
-
-		topIcon:loadTexture(activityConfig.TaskTopUI .. ".png", ccui.TextureResType.plistType)
+	if taskTopUI then
+		topIcon:loadTexture(taskTopUI .. ".png", ccui.TextureResType.plistType)
 		topIcon:ignoreContentAdaptWithSize(true)
 	end
 
-	if activityConfig and activityConfig.TaskBgUI then
-		self._main:getChildByName("Image_18"):loadTexture("asset/scene/" .. activityConfig.TaskBgUI .. ".jpg")
+	local taskTopUIPos = activityConfig.TaskTopUIPos
+
+	if taskTopUIPos and taskTopUIPos.x and taskTopUIPos.y then
+		topIcon:setPosition(cc.p(taskTopUIPos.x, taskTopUIPos.y))
 	end
 
-	if activityConfig and activityConfig.TaskCellBg then
-		self._cloneCell:getChildByName("Image_15"):loadTexture(activityConfig.TaskCellBg .. ".png", ccui.TextureResType.plistType)
+	local taskBgUI = activityConfig.TaskBgUI
+
+	if taskBgUI then
+		self._main:getChildByName("Image_18"):loadTexture("asset/scene/" .. taskBgUI .. ".jpg")
 	end
 
-	if activityConfig and activityConfig.TaskCellArrow then
-		self._cloneCell:getChildByName("arrow"):loadTexture(activityConfig.TaskCellArrow .. ".png", ccui.TextureResType.plistType)
+	local taskCellBg = activityConfig.TaskCellBg
+
+	if taskCellBg then
+		self._cloneCell:getChildByName("Image_15"):loadTexture(taskCellBg .. ".png", ccui.TextureResType.plistType)
+	end
+
+	local taskCellArrow = activityConfig.TaskCellArrow
+
+	if taskCellArrow then
+		self._cloneCell:getChildByName("arrow"):loadTexture(taskCellArrow .. ".png", ccui.TextureResType.plistType)
 	end
 
 	self:createTableView()
 	self:setBubleView(KBubleEnterStatus.FirstEnter)
-	self:setTimer()
+	self:setTimer1()
 end
 
 function ActivityExchangeMediator:setBubleView(status)
@@ -470,4 +482,9 @@ function ActivityExchangeMediator:setTimer()
 
 		self._timer = LuaScheduler:getInstance():schedule(checkTimeFunc, 1, false)
 	end
+end
+
+function ActivityExchangeMediator:setTimer1()
+	self._refreshPanel:setVisible(true)
+	self._refreshTime:setString(self._activity:getTimeStr1())
 end

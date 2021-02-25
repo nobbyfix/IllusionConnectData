@@ -72,6 +72,16 @@
             "storage": 5000
         }
     },
+    "AcitvityCollapsedStamina_Reset": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
     "AcitvityDetectiveStamina_Reset": {
         "ResetSystem": {
             "addValue": 1,
@@ -1129,6 +1139,24 @@
                 "05:00:00"
             ],
             "setValue": 0
+        }
+    },
+    "PTPK_Reset": {
+        "ResetSystem": {
+            "resetDate": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+            ],
+            "resetMode": "WEEK",
+            "resetTime": [
+                "05:00:00"
+            ],
+            "setValue": 9999
         }
     },
     "PansLabInfRankReward": {

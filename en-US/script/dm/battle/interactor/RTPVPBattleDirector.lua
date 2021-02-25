@@ -46,7 +46,7 @@ function RTPVPBattleDirector:update(interval)
 	if self._lastSyncClientFrame and self._maxReachableFrame then
 		self._lastSyncClientFrame = self._lastSyncClientFrame + interval
 
-		if self._lastSyncClientFrame > 5000 then
+		if self._lastSyncClientFrame > 35000 then
 			DpsLogger:fatal("rtpvp", "Server Crash")
 			self._service:stopTick()
 

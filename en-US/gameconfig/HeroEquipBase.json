@@ -1574,6 +1574,51 @@
         ],
         "zoom": 0.6
     },
+    "Decoration_15004": {
+        "ATK": "UR_Decoration_ATK_AD",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "UR_Decoration_DEF_AD",
+        "Desc": "Decoration_15004_Desc",
+        "ExclusiveHero": "",
+        "HP": "",
+        "HeroEquip_Id": "",
+        "Icon": "ico_equip_memorybook",
+        "Name": "Decoration_15004_Name",
+        "Position": "Decoration",
+        "Profession": [
+            "Defense",
+            "Attack",
+            "Support",
+            "Summon",
+            "Aoe",
+            "Curse",
+            "Cure"
+        ],
+        "ProfessionDesc": "Decoration_ProfessionDesc",
+        "ProfessionType": 0,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "",
+        "Shine": "",
+        "Skill": "EquipSkill_Decoration_15004",
+        "Sort": 290000,
+        "StartEquipStarID": "Rareity15_DecorationStone1_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
     "Decoration_15005": {
         "ATK": "UR_Decoration_ATK_AH",
         "AttrEffect": "",

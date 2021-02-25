@@ -118,6 +118,15 @@ function HeroStarLevelMediator:initData(data)
 
 		if not table.indexof(HeroStar_StiveOut, id) then
 			local num = self._bagSystem:getItemCount(itemId)
+			local awakeHeroFragId, debrisCostCount = self._heroSystem:getAwakeHeroFragIdAndDebrisCostCount()
+
+			if itemId == awakeHeroFragId then
+				num = num - debrisCostCount
+
+				if num < 0 then
+					num = 0
+				end
+			end
 
 			if num > 0 then
 				local exp = HeroStar_StiveChange[rarity]
@@ -416,9 +425,10 @@ function HeroStarLevelMediator:createTeamCell(cell, index)
 						end
 
 						local curNum = itemData.eatCount
+						local allCount = itemData.allCount
 
 						numPanel:setSwallowTouches(false)
-						numPanel:getChildByFullName("num"):setString(curNum .. "/" .. itemData.allCount)
+						numPanel:getChildByFullName("num"):setString(curNum .. "/" .. allCount)
 						numPanel:addTouchEventListener(function (sender, eventType)
 							self:onEatItemClicked(sender, eventType, true)
 						end)
@@ -806,9 +816,10 @@ end
 
 function HeroStarLevelMediator:checkBeginEatCount(sender)
 	local data = sender.data
-	local lastCount = data.allCount - data.eatCount
+	local allCount = data.allCount
+	local lastCount = allCount - data.eatCount
 
-	if lastCount == 0 then
+	if lastCount <= 0 then
 		return false
 	end
 

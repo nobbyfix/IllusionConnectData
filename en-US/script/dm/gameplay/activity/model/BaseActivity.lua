@@ -174,6 +174,30 @@ function BaseActivity:getLocalTimeFactor()
 	return timeInfo
 end
 
+function BaseActivity:getLocalTimeFactor1()
+	local timeInfo = clone(self._config.TimeFactor)
+
+	for k, v in pairs(timeInfo.start or {}) do
+		local remoteTime = TimeUtil:formatStrToRemoteTImestamp(v)
+		local localDate = TimeUtil:localDate("%Y.%m.%d %H:%M", remoteTime)
+		timeInfo.start[k] = localDate
+	end
+
+	if timeInfo["end"] then
+		local remoteTime = TimeUtil:formatStrToRemoteTImestamp(timeInfo["end"])
+		local localDate = TimeUtil:localDate("%Y.%m.%d %H:%M", remoteTime)
+		timeInfo["end"] = localDate
+	end
+
+	return timeInfo
+end
+
+function BaseActivity:getTimeStr1()
+	local timeInfo = self:getLocalTimeFactor1()
+
+	return timeInfo.start[1] .. "~" .. timeInfo["end"]
+end
+
 function BaseActivity:getBubleDesc()
 	return self._config.ActivityConfig.BubleDesc
 end

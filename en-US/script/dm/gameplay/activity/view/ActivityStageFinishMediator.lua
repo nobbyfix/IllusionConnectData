@@ -971,7 +971,14 @@ function ActivityStageFinishMediator:showExpPanel()
 	end)
 	self._herosAnim:addCallbackAtFrame(130, function ()
 		self._herosAnim:stop()
-		self._rewardPanel:setVisible(true)
+
+		local n = #self._data.rewards.itemRewards
+
+		if self._data.rewards.firstRewards then
+			n = n + #self._data.rewards.firstRewards
+		end
+
+		self._rewardPanel:setVisible(n > 0 and true or false)
 		showReward(self._data.rewards.itemRewards)
 		self:setPointStarCondition()
 	end)

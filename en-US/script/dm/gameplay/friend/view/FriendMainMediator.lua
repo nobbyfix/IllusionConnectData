@@ -157,8 +157,6 @@ function FriendMainMediator:showView()
 		if mediator then
 			local data = {}
 
-			dump(self._oldTabType, "self._oldTabType")
-
 			if self._curTabType == kFriendType.kGame then
 				if self._oldTabType == kFriendType.kRecent then
 					self._selectFriendIndex = -1

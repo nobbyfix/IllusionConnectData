@@ -556,3 +556,31 @@ function MiniGameRankRecord:synchronize(data)
 
 	self._score = data.value or 0
 end
+
+RTPKRankRecord = class("RTPKRankRecord", BaseRankRecord, _M)
+
+RTPKRankRecord:has("_score", {
+	is = "r"
+})
+
+function RTPKRankRecord:initialize()
+	super.initialize(self)
+
+	self._rankType = RankType.KRTPK
+	self._score = 0
+end
+
+function RTPKRankRecord:synchronize(data)
+	super.synchronize(self, data)
+
+	self._rank = data.rank
+	self._rid = data.r or data.rid
+	self._headId = data.h or data.headImage
+	self._name = data.n or data.nickname
+	self._level = data.l or data.level
+	self._headFrame = data.f or data.headFrame
+	self._board = data.s or data.board
+	self._combat = data.c or data.combat
+	self._nickName = data.n or data.nickname
+	self._score = data.p or data.value
+end

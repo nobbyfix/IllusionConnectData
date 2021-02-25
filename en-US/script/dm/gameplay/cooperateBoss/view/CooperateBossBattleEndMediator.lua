@@ -55,7 +55,6 @@ function CooperateBossBattleEndMediator:initView()
 	self._resultPanel1 = self._winPanel:getChildByFullName("invite")
 	self._resultPanel2 = self._winPanel:getChildByFullName("invite1")
 	self._resultPanel3 = self._winPanel:getChildByFullName("invite2")
-	self._rewardBox = self._resultPanel1:getChildByFullName("box")
 	self._loadingBar = self._resultPanel2:getChildByFullName("loadingBar")
 
 	self._loadingBar:setScale9Enabled(true)
@@ -64,14 +63,10 @@ function CooperateBossBattleEndMediator:initView()
 	self._leftBloodText = self._resultPanel2:getChildByFullName("leaveNum")
 	self._hurtText = self._winPanel:getChildByFullName("fightNum")
 	self._touchPanel = self._main:getChildByFullName("touchPanel")
+	self._kill = self._winPanel:getChildByName("kill")
 
 	self._touchPanel:setSwallowTouches(false)
 	self._winPanel:setSwallowTouches(false)
-	self._rewardBox:addTouchEventListener(function (sender, eventType)
-		if eventType == ccui.TouchEventType.ended then
-			self:onRewardClicked(sender, eventType)
-		end
-	end)
 
 	local lineGradiantVec1 = {
 		{
@@ -95,8 +90,6 @@ function CooperateBossBattleEndMediator:initView()
 end
 
 function CooperateBossBattleEndMediator:initData(data)
-	dump(data, "data .........")
-
 	self._bossId = data.bossId
 	self._bossLevel = data.bossLevel
 	self._bossConfigId = data.configId
@@ -230,16 +223,18 @@ end
 
 function CooperateBossBattleEndMediator:initWinView()
 	self._titleText:setString(Strings:get("CooperateBoss_UI03", {
-		name = self:getRoleModelName(),
+		name = self._cooperateBossSystem:getBossName(self._bossConfigId),
 		lv = self:getBossLevel()
 	}))
 	self._hurtText:setString(self:getShowHurt())
+	self._kill:setVisible(false)
 
 	if self._state == Battle_End_State.State_Escape then
 		self._resultPanel3:setVisible(true)
 		self._resultPanel3:setString(Strings:get("CooperateBoss_AfterBattle_UI05"))
 	elseif self._state == Battle_End_State.State_MVP then
 		self._resultPanel1:setVisible(true)
+		self._kill:setVisible(true)
 	elseif self._state == Battle_End_State.State_Join then
 		self._resultPanel3:setVisible(true)
 		self._resultPanel3:setString(Strings:get("CooperateBoss_AfterBattle_UI04", {
@@ -359,14 +354,6 @@ function CooperateBossBattleEndMediator:onTouchMaskLayer()
 			self._cooperateBossSystem:requestCooperateBossFriendInvite(self._bossId, callback)
 		end
 	end
-end
-
-function CooperateBossBattleEndMediator:getRoleModelName()
-	local congfigId = self._bossConfigId
-	local roleModeID = ConfigReader:getDataByNameIdAndKey("CooperateBossMain", congfigId, "RoleModel")
-	local roleModelConfig = ConfigReader:getRecordById("RoleModel", roleModeID)
-
-	return Strings:get(roleModelConfig.Name)
 end
 
 function CooperateBossBattleEndMediator:getRoleModelId()

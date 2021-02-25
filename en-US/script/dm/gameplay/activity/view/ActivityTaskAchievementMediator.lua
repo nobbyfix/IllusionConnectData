@@ -283,7 +283,7 @@ function ActivityTaskAchievementMediator:setBg(panel, titleImage)
 end
 
 function ActivityTaskAchievementMediator:refreshTime(timeStr)
-	local time = self._activity:getTimeStr()
+	local time = self._activity:getTimeStr1()
 
 	timeStr:setString(Strings:get("ActivityBlock_UI_17", {
 		time = time

@@ -67,6 +67,7 @@ function CooperateBossInviteMediator:initView()
 	self._friend = self._main:getChildByFullName("infoBg.name")
 	self._refuseBtn = self._main:getChildByFullName("refuse")
 	self._accpetBtn = self._main:getChildByFullName("accept")
+	self._qipaoText = self._main:getChildByFullName("qipao.text")
 	local lineGradiantVec1 = {
 		{
 			ratio = 0.3,
@@ -118,7 +119,7 @@ function CooperateBossInviteMediator:initData(data)
 end
 
 function CooperateBossInviteMediator:refreashView()
-	self._bossName:setString(self:getRoleModelName())
+	self._bossName:setString(self._cooperateBossSystem:getBossName(self._bossConfigId))
 	self._bossLevelText:setPositionX(self._bossName:getContentSize().width + self._bossName:getPositionX() + 20)
 	self._friend:setString(self._friendName)
 
@@ -180,6 +181,10 @@ function CooperateBossInviteMediator:refreashView()
 	self._bossLevelText:setString(Strings:get("CooperateBoss_Invite_UI32", {
 		level = bossLevel
 	}))
+
+	local inviteBubble = ConfigReader:getDataByNameIdAndKey("ConfigValue", "CooperateBoss_InviteBubble", "content")
+
+	self._qipaoText:setString(Strings:get(inviteBubble[math.random(1, #inviteBubble)]))
 end
 
 function CooperateBossInviteMediator:getBossLiveTime()
@@ -187,14 +192,6 @@ function CooperateBossInviteMediator:getBossLiveTime()
 	local bossConfig = ConfigReader:getRecordById("CooperateBossMain", congfigId)
 
 	return tonumber(bossConfig.Time)
-end
-
-function CooperateBossInviteMediator:getRoleModelName()
-	local congfigId = self._bossConfigId
-	local roleModeID = ConfigReader:getDataByNameIdAndKey("CooperateBossMain", congfigId, "RoleModel")
-	local roleModelConfig = ConfigReader:getRecordById("RoleModel", roleModeID)
-
-	return Strings:get(roleModelConfig.Name)
 end
 
 function CooperateBossInviteMediator:getRoleModelId()

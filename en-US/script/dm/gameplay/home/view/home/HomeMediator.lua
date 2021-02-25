@@ -48,6 +48,9 @@ HomeMediator:has("_passSystem", {
 HomeMediator:has("_dreamSystem", {
 	is = "r"
 }):injectWith("DreamChallengeSystem")
+HomeMediator:has("_cooperateSystem", {
+	is = "r"
+}):injectWith("CooperateBossSystem")
 
 local kBtnHandlers = {
 	unfoldMenuBtn = {
@@ -233,6 +236,12 @@ function HomeMediator:resumeWithData(data)
 
 	if self._dreamActivityTips then
 		self._dreamActivityTips:setVisible(false)
+		self._dreamActivityTips:stopAllActions()
+	end
+
+	if self._cooperateTip then
+		self._cooperateTip:setVisible(false)
+		self._cooperateTip:stopAllActions()
 	end
 
 	self._touchTimes = 0
@@ -450,6 +459,7 @@ function HomeMediator:createMapListener()
 	self:mapEventListener(self:getEventDispatcher(), EVT_DOWNLOAD_SOUNDCV_OVER, self, self.refreshDownloadStatus)
 	self:mapEventListener(self:getEventDispatcher(), EVT_DOWNLOAD_PORTRAIT, self, self.refreshDownloadPorLabel)
 	self:mapEventListener(self:getEventDispatcher(), EVT_DOWNLOAD_SOUNDCV, self, self.refreshDownloadSoundLabel)
+	self:mapEventListener(self:getEventDispatcher(), EVT_HEROES_SYNC_SHOW, self, self.refreshRedPoint)
 end
 
 function HomeMediator:getDownloadReward(event)
@@ -881,6 +891,19 @@ function HomeMediator:initAnim()
 		dreamActivity:setVisible(false)
 	end
 
+	local function nodeSparkle(node, delay1, delay2)
+		node:stopAllActions()
+		node:setOpacity(255)
+
+		local delay1 = cc.DelayTime:create(delay1)
+		local fadeOut = cc.FadeOut:create(0.2)
+		local delay2 = cc.DelayTime:create(delay2)
+		local fadeIn = cc.FadeIn:create(0.2)
+		local action = cc.RepeatForever:create(cc.Sequence:create(delay1, fadeOut, delay2, fadeIn))
+
+		node:runAction(action)
+	end
+
 	mainMovieClip:addCallbackAtFrame(12, function ()
 		local mc1 = nodes[2].movieClip
 
@@ -916,6 +939,11 @@ function HomeMediator:initAnim()
 
 					self._dreamActivityTips = icon
 				end
+
+				local delay1 = ConfigReader:getDataByNameIdAndKey("ConfigValue", "DreamChallenge_EntryBubble_Stay", "content")
+				local delay2 = ConfigReader:getDataByNameIdAndKey("ConfigValue", "DreamChallenge_EntryBubble_Gone", "content")
+
+				nodeSparkle(self._dreamActivityTips, delay1, delay2)
 			end
 		end)
 
@@ -928,6 +956,37 @@ function HomeMediator:initAnim()
 
 		mc4:gotoAndPlay(0)
 		nodes[6]:getChildByName("mRedSprite"):runAction(cc.Sequence:create(cc.DelayTime:create(0.5), cc.FadeIn:create(0.3)))
+		delayCallByTime(300, function ()
+			if self._cooperateSystem:getcooperateBossState() == kCooperateBossState.kStart then
+				local cooperateTip = nodes[5]:getChildByFullName("cooperateTip")
+
+				if self._cooperateTip then
+					cooperateTip:setVisible(true)
+					cooperateTip:setOpacity(0)
+					self._cooperateTip:runAction(cc.FadeIn:create(0.3))
+				else
+					local icon = cc.Sprite:createWithSpriteFrameName("zjm_tfsjrk_bg.png")
+					local label = cc.Label:createWithTTF(Strings:get("CooperateBoss_EntryTip"), TTF_FONT_FZYH_R, 16)
+
+					label:enableOutline(cc.c4b(3, 1, 4, 255), 1)
+					label:setTextColor(cc.c3b(255, 242, 155))
+					label:setDimensions(120, 90)
+					label:addTo(icon):center(icon:getContentSize())
+					label:setAlignment(cc.TEXT_ALIGNMENT_CENTER, cc.TEXT_ALIGNMENT_CENTER)
+					label:setOverflow(cc.LabelOverflow.SHRINK)
+					icon:setName("cooperateTip")
+					icon:setPosition(cc.p(15, 25))
+					icon:addTo(nodes[5])
+
+					self._cooperateTip = icon
+				end
+
+				local delay1 = ConfigReader:getDataByNameIdAndKey("ConfigValue", "CooperateBoss_EntryBubble_Stay", "content")
+				local delay2 = ConfigReader:getDataByNameIdAndKey("ConfigValue", "CooperateBoss_EntryBubble_Gone", "content")
+
+				nodeSparkle(self._cooperateTip, delay1, delay2)
+			end
+		end)
 	end)
 	mainMovieClip:addCallbackAtFrame(13, function ()
 		local mc = nodes[5].movieClip
@@ -1332,6 +1391,12 @@ function HomeMediator:initWidget()
 
 	if self._dreamActivityTips then
 		self._dreamActivityTips:setVisible(false)
+		self._dreamActivityTips:stopAllActions()
+	end
+
+	if self._cooperateTip then
+		self._cooperateTip:setVisible(false)
+		self._cooperateTip:stopAllActions()
 	end
 end
 
@@ -1847,6 +1912,46 @@ function HomeMediator:getBannerAct()
 		end
 	end
 
+	local autoBanner = ConfigReader:getDataTable("ActivityAutoBanner")
+
+	for _, bannerInfo in pairs(autoBanner) do
+		local bannerType = bannerInfo.Type
+
+		if bannerType == ActivityBannerType.kPackageShop then
+			local canBuyPackage = false
+			local model = nil
+
+			for _, v in ipairs(shopList) do
+				if v._id == bannerInfo.TypeId and v._leftCount > 0 then
+					canBuyPackage = true
+					model = v
+
+					break
+				end
+			end
+
+			if canBuyPackage then
+				self._animName[#self._animName + 1] = {
+					bannerInfo = bannerInfo,
+					model = model
+				}
+			end
+		elseif bannerType == ActivityBannerType.kActivity then
+			local activityId = bannerInfo.TypeId
+
+			if self._activitySystem:isActivityOpen(activityId) and not self._activitySystem:isActivityOver(activityId) then
+				self._animName[#self._animName + 1] = {
+					bannerInfo = bannerInfo,
+					id = activityId
+				}
+			end
+		elseif bannerType == ActivityBannerType.kCooperateBoss and self._cooperateSystem:cooperateBossShow() then
+			self._animName[#self._animName + 1] = {
+				bannerInfo = bannerInfo
+			}
+		end
+	end
+
 	table.sort(self._animName, function (a, b)
 		local aSortNum = a.bannerInfo.Sort
 		local bSortNum = b.bannerInfo.Sort
@@ -1865,9 +1970,7 @@ end
 
 function HomeMediator:getPageByIndex(index)
 	local animData = self._animName[index]
-	local image = animData.bannerInfo.Img
 	local pageView = self._urlFuncLayout:getChildByName("pageView")
-	local pageTipPanel = self._urlFuncLayout:getChildByName("pageTipPanel")
 	local layout = ccui.Layout:create()
 
 	layout:setName("mainLayout")
@@ -1875,6 +1978,12 @@ function HomeMediator:getPageByIndex(index)
 	layout:setPosition(cc.p(0, 0))
 	layout:setContentSize(pageView:getContentSize())
 
+	if not animData then
+		return layout
+	end
+
+	local image = animData.bannerInfo.Img
+	local pageTipPanel = self._urlFuncLayout:getChildByName("pageTipPanel")
 	local image = ccui.ImageView:create("asset/ui/mainScene/" .. image, ccui.TextureResType.localType)
 
 	image:addTo(layout):center(layout:getContentSize())
@@ -1921,6 +2030,8 @@ function HomeMediator:viewTouchEvent(index)
 			url = url,
 			extParams = param
 		}))
+	elseif bannerType == ActivityBannerType.kCooperateBoss then
+		self._cooperateSystem:enterCooperateBoss()
 	end
 end
 
@@ -1947,6 +2058,9 @@ function HomeMediator:registerHomeViewEvent()
 
 		local isShow = self._activitySystem:checkTimeLimitShopShow()
 		local timeShop = self._showHeroPanel:getChildByName("timeShop")
+		local timeShopAnimNode = timeShop:getChildByName("anim")
+
+		timeShopAnimNode:removeAllChildren()
 
 		if isShow then
 			self:enableTimeLimitShopTimer()
@@ -1959,6 +2073,10 @@ function HomeMediator:registerHomeViewEvent()
 			local timeShopTitle = self._showHeroPanel:getChildByFullName("timeShop.title")
 
 			timeShopTitle:setString(Strings:get(self._activitySystem:getFestivalPackageTitle()))
+
+			local mc = cc.MovieClip:create("eff_zong_xianshilibaorukoueff")
+
+			mc:addTo(timeShopAnimNode)
 		else
 			timeShop:setVisible(false)
 		end
@@ -3716,6 +3834,14 @@ function HomeMediator:setComplexActivityEntry()
 			imgZorder = 2,
 			aimpos = cc.p(55, 43),
 			imgpos = cc.p(55, 13)
+		},
+		[ActivityType_UI.KActivityCollapsed] = {
+			animZorder = 1,
+			img = "collapsed_btn_zjm_rukou.png",
+			anim = "rukou_xigerukou",
+			imgZorder = 2,
+			aimpos = cc.p(39, 39),
+			imgpos = cc.p(56, 22)
 		}
 	}
 	local extraActBtn = self._rightFuncLayout:getChildByFullName("extraActBtn")

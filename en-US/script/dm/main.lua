@@ -252,21 +252,6 @@ function safeCopyDb(srcDb, descDb)
 	return ret
 end
 
-function getFileSize(path)
-	local size = false
-	local file = io.open(path, "r")
-
-	if file then
-		local current = file:seek()
-		size = file:seek("end")
-
-		file:seek("set", current)
-		io.close(file)
-	end
-
-	return size
-end
-
 local destDBFilePath = writablePath .. "gameConfig.db"
 local PATCH_FOLDER = "patch"
 
@@ -292,17 +277,12 @@ if not GameConfigs or not GameConfigs.noUpdate then
 
 				if fileUtils:isFileExist(writableDBZipPath) then
 					fileUtils:removeFile(destDBFilePath)
-					print("源文件大小---->>>>>" .. tostring(getFileSize(writableDBZipPath)))
 
 					local retcode = app.unZipFileToDir(writableDBZipPath, writablePath)
 
-					print("开始解压文件到", writablePath)
 					fileUtils:removeFile(writableDBZipPath)
 
 					local tryTable, errorinfo = nil
-
-					print("解压后文件大小---->>>>>" .. tostring(getFileSize(writablePath .. "gameConfig.db")))
-					print("解压结果----->>>>>>", retcode)
 
 					if retcode == 0 then
 						tryTable, errorinfo = DBReader:getInstance(true):getTable(destDBFilePath, "Translate")
@@ -312,8 +292,6 @@ if not GameConfigs or not GameConfigs.noUpdate then
 
 						return
 					end
-
-					print("尝试读取数据库", tryTable)
 
 					if tryTable then
 						break

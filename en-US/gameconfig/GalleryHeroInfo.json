@@ -2359,6 +2359,124 @@
             ]
         }
     },
+    "FLYDe": {
+        "BGPic": "album_bg_dryl_txd",
+        "GossipDesc": {
+            "FLYDe_GossipDesc_1": [
+                303,
+                97,
+                "album_bg_tag03"
+            ],
+            "FLYDe_GossipDesc_2": [
+                323,
+                237,
+                "album_bg_tag02"
+            ],
+            "FLYDe_GossipDesc_3": [
+                33,
+                36,
+                "album_bg_tag03"
+            ]
+        },
+        "HeroReward": "GalleryHeroReward_SSR",
+        "HeroStory": [
+            {
+                "desc": "FLYDe_StoryDesc1",
+                "need": [
+                    1,
+                    0
+                ],
+                "title": "FLYDe_StoryTitle1"
+            },
+            {
+                "desc": "FLYDe_StoryDesc2",
+                "need": [
+                    2,
+                    150
+                ],
+                "title": "FLYDe_StoryTitle2"
+            },
+            {
+                "desc": "FLYDe_StoryDesc3",
+                "need": [
+                    4,
+                    400
+                ],
+                "title": "FLYDe_StoryTitle3"
+            },
+            {
+                "desc": "FLYDe_StoryDesc4",
+                "need": [
+                    5,
+                    600
+                ],
+                "title": "FLYDe_StoryTitle4"
+            },
+            {
+                "desc": "FLYDe_StoryDesc5",
+                "need": [
+                    6,
+                    800
+                ],
+                "title": "FLYDe_StoryTitle5"
+            }
+        ],
+        "HistoryHero": "HistoryName_FLYDe",
+        "InfoDesc1": {
+            "FLYDe_InfoDesc1": [
+                1,
+                50
+            ]
+        },
+        "InfoDesc2": {
+            "FLYDe_InfoDesc2": [
+                3,
+                125
+            ]
+        },
+        "InfoDesc3": {
+            "FLYDe_InfoDesc3": [
+                4,
+                200
+            ]
+        },
+        "InfoDesc4": {
+            "FLYDe_InfoDesc4": [
+                1,
+                50
+            ]
+        },
+        "InfoDesc5": {
+            "FLYDe_InfoDesc5": [
+                3,
+                125
+            ]
+        },
+        "InfoDesc6": {
+            "FLYDe_InfoDesc6": [
+                4,
+                200
+            ]
+        },
+        "InfoDesc7": {
+            "FLYDe_InfoDesc7": [
+                1,
+                50
+            ]
+        },
+        "InfoDesc8": {
+            "FLYDe_InfoDesc8": [
+                3,
+                125
+            ]
+        },
+        "InfoDesc9": {
+            "FLYDe_InfoDesc9": [
+                4,
+                200
+            ]
+        }
+    },
     "FTLEShi": {
         "BGPic": "album_bg_dryl_txd",
         "GossipDesc": {
@@ -6547,22 +6665,22 @@
         "BGPic": "album_bg_dryl_txd",
         "GossipDesc": {
             "TJHDe_GossipDesc_1": [
-                289,
-                37,
+                303,
+                97,
                 "album_bg_tag03"
             ],
             "TJHDe_GossipDesc_2": [
-                317,
-                97,
+                323,
+                237,
                 "album_bg_tag02"
             ],
             "TJHDe_GossipDesc_3": [
-                297,
-                392,
+                33,
+                36,
                 "album_bg_tag03"
             ]
         },
-        "HeroReward": "GalleryHeroReward_R",
+        "HeroReward": "GalleryHeroReward_SSR",
         "HeroStory": [
             {
                 "desc": "TJHDe_StoryDesc1",
@@ -8436,16 +8554,16 @@
         "GossipDesc": {
             "YSTLu_GossipDesc_1": [
                 303,
-                97,
+                348,
                 "album_bg_tag03"
             ],
             "YSTLu_GossipDesc_2": [
-                323,
-                237,
+                26,
+                0,
                 "album_bg_tag02"
             ],
             "YSTLu_GossipDesc_3": [
-                33,
+                323,
                 36,
                 "album_bg_tag03"
             ]

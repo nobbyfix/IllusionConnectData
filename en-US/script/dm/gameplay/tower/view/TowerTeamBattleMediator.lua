@@ -213,7 +213,10 @@ function TowerTeamBattleMediator:checkMasterSkillActive()
 			newSkillNode:setPosition(cc.p(12 + 46 * (i - 1), 15))
 
 			local conditions = skill:getActiveCondition()
-			local isActive = self._stageSystem:checkIsKeySkillActive(conditions, self._teamPets, kActiveHeroType.kTower)
+			local isActive = self._stageSystem:checkIsKeySkillActive(conditions, self._teamPets, {
+				masterId = self._curMasterId,
+				heroType = kActiveHeroType.kTower
+			})
 
 			newSkillNode:setGray(not isActive)
 
@@ -1059,7 +1062,10 @@ function TowerTeamBattleMediator:initTeamHero(node, info, heroObj)
 			image:offset(0, -5)
 		end
 
-		local isActive = self._stageSystem:checkIsKeySkillActive(condition, self._teamPets, kActiveHeroType.kTower)
+		local isActive = self._stageSystem:checkIsKeySkillActive(condition, self._teamPets, {
+			masterId = self._curMasterId,
+			heroType = kActiveHeroType.kTower
+		})
 
 		skillPanel:setGray(not isActive)
 	end

@@ -40,6 +40,10 @@ local kBtnHandlers = {
 	["main.friendPanel.friend"] = {
 		clickAudio = "Se_Click_Common_2",
 		func = "onFriendBtnClick"
+	},
+	["main.friendPanel.backBtn"] = {
+		clickAudio = "Se_Click_Common_2",
+		func = "hideFriendView"
 	}
 }
 local kFriendShowType = {
@@ -98,9 +102,57 @@ function CooperateBossInviteFriendMediator:enterWithData(data)
 	self:setupView()
 	self:setupBossTime()
 	self:hideFriendView()
+	self:checkStory()
 end
 
 function CooperateBossInviteFriendMediator:resumeWithData()
+	self:checkStory()
+end
+
+function CooperateBossInviteFriendMediator:checkStory()
+	local tipStr = nil
+
+	if self._data.bossInfo.state == kCooperateBossEnemyState.kDead then
+		local bossName = self._cooperateBossSystem:getBossName(self._data.bossInfo.confId)
+		tipStr = Strings:get("CooperateBoss_PopUp_Died", {
+			bossLevel = self._data.bossInfo.lv,
+			bossName = bossName
+		})
+	elseif self._data.bossInfo.state == kCooperateBossEnemyState.kEscaped then
+		local bossName = self._cooperateBossSystem:getBossName(self._data.bossInfo.confId)
+		tipStr = Strings:get("CooperateBoss_PopUp_Escape", {
+			bossLevel = self._data.bossInfo.lv,
+			bossName = bossName
+		})
+	end
+
+	if tipStr and not self._cooperateBossSystem:isSaved(self._data.bossInfo.bossId) then
+		self._cooperateBossSystem:save(self._data.bossInfo.bossId)
+
+		local outSelf = self
+		local delegate = {
+			willClose = function (self, popupMediator, data)
+				if data.response == "ok" then
+					-- Nothing
+				elseif data.response == "cancel" then
+					-- Nothing
+				elseif data.response == "close" then
+					-- Nothing
+				end
+			end
+		}
+		local data = {
+			title1 = "Tips",
+			title = Strings:get("Tip_Remind"),
+			content = tipStr,
+			sureBtn = {}
+		}
+		local view = self:getInjector():getInstance("AlertView")
+
+		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+		}, data, delegate))
+	end
 end
 
 function CooperateBossInviteFriendMediator:setupTopInfoWidget()
@@ -154,8 +206,6 @@ function CooperateBossInviteFriendMediator:setupFriendState()
 	self._bossFightTimes = {}
 
 	self._cooperateBossSystem:requestFriendTimes(function (respon)
-		dump(respon, "respon >>>>>>>>>>>>.")
-
 		if respon.resCode == 0 then
 			if DisposableObject:isDisposed(self) or DisposableObject:isDisposed(self:getView()) then
 				return
@@ -336,10 +386,7 @@ function CooperateBossInviteFriendMediator:onClickBack(sender, eventType)
 				return
 			end
 
-			self:dismissWithOptions({
-				transition = ViewTransitionFactory:create(ViewTransitionType.kCommonAreaView)
-			})
-			self:dispatch(Event:new(EVT_COOPERATE_BOSS_BACK_MAIN))
+			self._cooperateBossSystem:enterCooperateBoss(true)
 		end)
 	end
 
@@ -629,8 +676,6 @@ function CooperateBossInviteFriendMediator:setPlayerCellState(cell, info)
 			kill:setVisible(false)
 		end
 
-		dump(info, "info .....")
-
 		if info.isOwner then
 			di:loadTexture("gongdou_img_yq_wzd1.png", ccui.TextureResType.plistType)
 		else
@@ -881,6 +926,14 @@ function CooperateBossInviteFriendMediator:setupBossTime()
 end
 
 function CooperateBossInviteFriendMediator:onFightClick()
+	local curTimes = self._cooperateBossData:getBossFightTimes()
+
+	if curTimes.value <= 0 then
+		self:onBuyTimesClick()
+
+		return
+	end
+
 	self._cooperateBossSystem:enterEditTeamView(self._data.bossInfo)
 end
 

@@ -19,6 +19,7 @@ require("dm.battle.view.widget.RoundInfoWidget")
 require("dm.battle.view.widget.BattleLootWidget")
 require("dm.battle.view.widget.BattleWaveWidget")
 require("dm.battle.view.widget.BattleChangeWidget")
+require("dm.battle.view.widget.BattleDeadCountWidget")
 require("dm.battle.view.BattleUnitManager")
 require("dm.battle.view.BattleRoleObject")
 require("dm.battle.view.BattleRoleModel")
@@ -274,8 +275,22 @@ function BattleMainMediator:getBackGround()
 	return self:getView():getChildByName("BattleBackground")
 end
 
-function BattleMainMediator:playGroundEffect(bgRes, align, animName, zoom, actId)
+function BattleMainMediator:setCellState(isVisible)
+	for k, v in pairs(self.groundLayer:getLeftGroundCells()) do
+		v:getDisplayNode():setVisible(isVisible)
+	end
+
+	for k, v in pairs(self.groundLayer:getRightGroundCells()) do
+		v:getDisplayNode():setVisible(isVisible)
+	end
+end
+
+function BattleMainMediator:playGroundEffect(bgRes, align, animName, zoom, actId, extra)
 	local opacity = 160
+
+	if extra and extra.opacity then
+		opacity = extra.opacity
+	end
 
 	self._bgEffectLayer:removeAllChildren()
 
@@ -302,7 +317,6 @@ function BattleMainMediator:playGroundEffect(bgRes, align, animName, zoom, actId
 	background:center(CC_DESIGN_RESOLUTION)
 	self._bgEffectLayer:addChild(background)
 	background:setOpacity(0)
-	background:runAction(cc.FadeTo:create(0.2, opacity))
 
 	self._bgEffectLayer.bg = background
 
@@ -323,18 +337,67 @@ function BattleMainMediator:playGroundEffect(bgRes, align, animName, zoom, actId
 			self._bgEffectLayer:removeAllChildren()
 		end)
 	end
-end
 
-function BattleMainMediator:clearGroundEffect(actId)
-	if self._bgEffectLayer.act == actId then
-		if self._bgEffectLayer.bg then
-			self._bgEffectLayer.bg:runAction(cc.Sequence:create(cc.FadeTo:create(0.2, 0), cc.CallFunc:create(function ()
+	local function speceilFunc()
+		self._bgEffectLayer.bg.retain = extra.duration ~= nil
+		extra.duration = extra.duration or 20000
+		local actions = cc.Sequence:create(cc.FadeTo:create(0.2, opacity), cc.DelayTime:create(extra.duration / 1000 or 2), cc.CallFunc:create(function ()
+			local members = self._unitManager:getMembers()
+
+			for k, v in pairs(members) do
+				local displayObj = v:getView()
+
+				displayObj:setVisible(true)
+			end
+
+			self:setCellState(true)
+			background:runAction(cc.Sequence:create(cc.FadeTo:create(0.2, 0), cc.CallFunc:create(function ()
 				self._bgEffectLayer.bg = nil
 
 				self._bgEffectLayer:removeAllChildren()
 			end)))
-		else
+		end))
+
+		background:runAction(actions)
+
+		local members = self._unitManager:getMembers()
+
+		for k, v in pairs(members) do
+			local displayObj = v:getView()
+
+			if extra.unit and extra.zorder > 1 and extra.unit:getId() ~= v:getId() then
+				displayObj:setVisible(false)
+			end
+		end
+
+		self:setCellState(false)
+
+		if extra.Music then
+			AudioEngine:getInstance():playEffect(extra.Music)
+		end
+	end
+
+	if extra and extra.zorder and extra.zorder > 0 then
+		speceilFunc()
+	else
+		background:runAction(cc.FadeTo:create(0.2, opacity))
+	end
+end
+
+function BattleMainMediator:clearGroundEffect(actId)
+	if self._bgEffectLayer.act == actId and not clearGroundEffect then
+		if self._bgEffectLayer.bg and not self._bgEffectLayer.bg.retain then
+			self._bgEffectLayer.bg:runAction(cc.Sequence:create(cc.FadeTo:create(0.2, 0), cc.CallFunc:create(function ()
+				self._bgEffectLayer.bg = nil
+
+				self._bgEffectLayer:removeAllChildren()
+				self:setCellState(true)
+			end)))
+		elseif self._bgEffectLayer.bg and not self._bgEffectLayer.bg.retain then
 			self._bgEffectLayer:removeAllChildren()
+			self:setCellState(true)
+		else
+			self:setCellState(true)
 		end
 	end
 end
@@ -362,6 +425,10 @@ function BattleMainMediator:getViewConfig()
 	return self._battleData and self._battleData.viewConfig
 end
 
+function BattleMainMediator:getBattleConfig()
+	return self._battleData and self._battleData.battleConfig
+end
+
 function BattleMainMediator:enterWithData(data)
 	self._battleData = data
 	local logicInfo = data.logicInfo
@@ -386,7 +453,8 @@ function BattleMainMediator:enterWithData(data)
 
 	self._camera:workOnNodes({
 		self.groundLayer:getView(),
-		self:getBackGround()
+		self:getBackGround(),
+		self._bgEffectLayer
 	})
 
 	local viewContext = self._viewContext

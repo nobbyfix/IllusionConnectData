@@ -1093,7 +1093,9 @@ function ClubBossTeamMediator:initTeamHero(node, info)
 			image:offset(0, -5)
 		end
 
-		local isActive = self._stageSystem:checkIsKeySkillActive(condition, self._teamPets)
+		local isActive = self._stageSystem:checkIsKeySkillActive(condition, self._teamPets, {
+			masterId = self._curMasterId
+		})
 
 		skillPanel:setGray(not isActive)
 
@@ -1146,6 +1148,7 @@ function ClubBossTeamMediator:changeMasterId(event)
 
 	self:refreshMasterInfo()
 	self:checkMasterSkillActive()
+	self:refreshPetNode()
 end
 
 function ClubBossTeamMediator:refreshMasterInfo()

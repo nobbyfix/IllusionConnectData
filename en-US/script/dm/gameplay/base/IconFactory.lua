@@ -2687,7 +2687,12 @@ function IconFactory:createItemIcon(info, style)
 		local scaleX = (label:getContentSize().width + 16) / width
 
 		amountBg:setScaleX(scaleX)
-		amountBg:setVisible(amount ~= "" and tonumber(amount) > 0)
+
+		if type(amount) == "number" then
+			amountBg:setVisible(tonumber(amount) > 0)
+		else
+			amountBg:setVisible(amount ~= "")
+		end
 
 		if effect then
 			if effect.color then
@@ -2698,8 +2703,10 @@ function IconFactory:createItemIcon(info, style)
 				label:disableEffect(1)
 				label:enableOutline(effect.outline, 1)
 			end
+		elseif type(amount) == "number" then
+			label:setVisible(tonumber(amount) > 0)
 		else
-			label:setVisible(amount ~= "" and tonumber(amount) > 0)
+			label:setVisible(amount ~= "")
 		end
 
 		self:setNotEngouhState(amount == 0)
@@ -4216,6 +4223,30 @@ function IconFactory:getHeroRarityAnim(rarity)
 	if rarity and kHeroRarityAnim[rarity] then
 		return cc.MovieClip:create(kHeroRarityAnim[rarity])
 	end
+end
+
+function IconFactory:createRTPKGradeIcon(gradeId)
+	local gradeConfig = ConfigReader:getRecordById("RTPKGrade", gradeId)
+	local icon = ccui.ImageView:create(gradeConfig.GradePic .. ".png", ccui.TextureResType.plistType)
+	local nameText = ccui.Text:create(Strings:get(gradeConfig.Name), CUSTOM_TTF_FONT_1, 24)
+	local lineGradiantVec2 = {
+		{
+			ratio = 0.3,
+			color = cc.c4b(66, 56, 143, 255)
+		},
+		{
+			ratio = 0.7,
+			color = cc.c4b(81, 83, 170, 255)
+		}
+	}
+
+	nameText:enablePattern(cc.LinearGradientPattern:create(lineGradiantVec2, {
+		x = 0,
+		y = -1
+	}))
+	nameText:addTo(icon):center(icon:getContentSize()):offset(5, -125)
+
+	return icon
 end
 
 IconFactory:initialize()

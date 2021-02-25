@@ -16,7 +16,7 @@ all.Skill_TJHDe_Normal = {
 		if this.dmgFactor == nil then
 			this.dmgFactor = {
 				1,
-				1,
+				1.05,
 				0
 			}
 		end
@@ -26,7 +26,7 @@ all.Skill_TJHDe_Normal = {
 			entry = prototype.main
 		})
 		this.main = global["[duration]"](this, {
-			1200
+			834
 		}, main)
 
 		return this
@@ -50,25 +50,22 @@ all.Skill_TJHDe_Normal = {
 
 			global.AssignRoles(_env, _env.TARGET, "target")
 			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
-				-1.7,
+				-2,
 				0
 			}, 200, "skill1"))
 		end)
 		exec["@time"]({
-			800
+			300
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			local attacker = global.LoadUnit(_env, _env.ACTOR, "ATTACKER")
-			local defender = global.LoadUnit(_env, _env.TARGET, "DEFENDER")
-			local damage = global.EvalDamage(_env, attacker, defender, this.dmgFactor)
 
-			global.ApplyDazeEffect(_env, _env.ACTOR, _env.TARGET)
-			global.ApplyDelRPEffect(_env, _env.ACTOR, _env.TARGET)
+			global.ApplyStatusEffect(_env, _env.ACTOR, _env.TARGET)
+			global.ApplyRPEffect(_env, _env.ACTOR, _env.TARGET)
 
-			damage = global.CheckCtrlExDmg(_env, _env.ACTOR, _env.TARGET, damage)
+			local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, this.dmgFactor)
 
-			global.ApplyHPDamage(_env, _env.TARGET, damage)
+			global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage)
 		end)
 
 		return _env
@@ -86,7 +83,7 @@ all.Skill_TJHDe_Proud = {
 		if this.dmgFactor == nil then
 			this.dmgFactor = {
 				1,
-				1.5,
+				1,
 				0
 			}
 		end
@@ -95,8 +92,11 @@ all.Skill_TJHDe_Proud = {
 			name = "main",
 			entry = prototype.main
 		})
-		this.main = global["[duration]"](this, {
-			2000
+		main = global["[duration]"](this, {
+			1334
+		}, main)
+		this.main = global["[proud]"](this, {
+			"Hero_Proud_TJHDe"
 		}, main)
 
 		return this
@@ -117,45 +117,38 @@ all.Skill_TJHDe_Proud = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
+			_env.units = global.EnemyUnits(_env)
 
-			global.AssignRoles(_env, _env.TARGET, "target")
-			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
-				-1.7,
-				0
-			}, 200, "skill2"))
+			for _, unit in global.__iter__(_env.units) do
+				global.AssignRoles(_env, unit, "target")
+			end
+
+			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.FixedPos(_env, 0, -0.7, 2), 100, "skill2"))
 		end)
 		exec["@time"]({
-			1800
+			700
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			local attacker = global.LoadUnit(_env, _env.ACTOR, "ALL")
-			local defender = global.LoadUnit(_env, _env.TARGET, "DEFENDER")
-			local buffeft1 = global.ShieldEffect(_env, attacker.maxHp * 0.06 * (1 + global.ShieldStrgFactor(_env, attacker)))
 
-			global.ApplyBuff(_env, _env.ACTOR, {
-				timing = 1,
-				duration = 2,
-				display = "Shield",
-				tags = {
-					"NUMERIC",
-					"BUFF",
-					"DEFUP",
-					"SHIELD",
-					"DISPELLABLE"
-				}
-			}, {
-				buffeft1
-			})
+			for _, unit in global.__iter__(_env.units) do
+				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
+				global.ApplyRPEffect(_env, _env.ACTOR, unit)
 
-			local damage = global.EvalDamage(_env, attacker, defender, this.dmgFactor)
+				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
 
-			global.ApplyDazeEffect(_env, _env.ACTOR, _env.TARGET)
-			global.ApplyDelRPEffect(_env, _env.ACTOR, _env.TARGET)
-
-			damage = global.CheckCtrlExDmg(_env, _env.ACTOR, _env.TARGET, damage)
-
-			global.ApplyHPDamage(_env, _env.TARGET, damage)
+				global.ApplyAOEHPMultiDamage_ResultCheck(_env, _env.ACTOR, unit, {
+					0,
+					67,
+					134,
+					200
+				}, global.SplitValue(_env, damage, {
+					0.25,
+					0.25,
+					0.25,
+					0.25
+				}))
+			end
 		end)
 
 		return _env
@@ -173,9 +166,15 @@ all.Skill_TJHDe_Unique = {
 		if this.dmgFactor == nil then
 			this.dmgFactor = {
 				1,
-				3.6,
+				1.8,
 				0
 			}
+		end
+
+		this.MidDamage = externs.MidDamage
+
+		if this.MidDamage == nil then
+			this.MidDamage = 2.7
 		end
 
 		local main = __action(this, {
@@ -183,7 +182,7 @@ all.Skill_TJHDe_Unique = {
 			entry = prototype.main
 		})
 		main = global["[duration]"](this, {
-			3000
+			3034
 		}, main)
 		this.main = global["[cut_in]"](this, {
 			"1#Hero_Unique_TJHDe"
@@ -207,56 +206,75 @@ all.Skill_TJHDe_Unique = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
+			_env.units = global.EnemyUnits(_env)
 
-			global.AssignRoles(_env, _env.TARGET, "target")
-			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.1, 80)
+			for _, unit in global.__iter__(_env.units) do
+				global.RetainObject(_env, unit)
+			end
+
 			global.GroundEft(_env, _env.ACTOR, "BGEffectBlack")
-			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
-				-1.7,
-				0
-			}, 200, "skill3"))
-			global.HarmTargetView(_env, {
-				_env.TARGET
-			})
+			global.EnergyRestrain(_env, _env.ACTOR, _env.TARGET)
 		end)
 		exec["@time"]({
-			1800
+			900
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			local attacker = global.LoadUnit(_env, _env.ACTOR, "ALL")
-			local defender = global.LoadUnit(_env, _env.TARGET, "DEFENDER")
-			local buffeft1 = global.MaxHpEffect(_env, attacker.maxHp * 0.25 * (1 + global.NumBuffStrgFactor(_env, attacker)))
-			local buffeft2 = global.NumericEffect(_env, "-atkrate", {
-				"+Normal",
-				"+Normal"
-			}, 0.15)
 
-			global.ApplyBuff(_env, _env.ACTOR, {
-				timing = 1,
-				duration = 3,
-				display = "MaxHpUp",
-				tags = {
-					"NUMERIC",
-					"BUFF",
-					"DEBUFF",
-					"MAXHPUP",
-					"ATKDOWN",
-					"DISPELLABLE"
-				}
-			}, {
-				buffeft1,
-				buffeft2
-			})
+			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2.2), 1.1, 80)
+			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.FixedPos(_env, 0, 0, 2.2), 100, "skill3"))
+			global.HarmTargetView(_env, _env.units)
 
-			local damage = global.EvalDamage(_env, attacker, defender, this.dmgFactor)
+			for _, unit in global.__iter__(_env.units) do
+				global.AssignRoles(_env, unit, "target")
+			end
+		end)
+		exec["@time"]({
+			2100
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
 
-			global.ApplyDazeEffect(_env, _env.ACTOR, _env.TARGET)
-			global.ApplyDelRPEffect(_env, _env.ACTOR, _env.TARGET)
+			for _, unit in global.__iter__(_env.units) do
+				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
+				global.ApplyRPEffect(_env, _env.ACTOR, unit)
 
-			damage = global.CheckCtrlExDmg(_env, _env.ACTOR, _env.TARGET, damage)
+				local damage = nil
 
-			global.ApplyHPDamage(_env, _env.TARGET, damage)
+				if global.CellColLocation(_env, global.GetCell(_env, unit)) == 2 then
+					damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, {
+						1,
+						this.MidDamage,
+						0
+					})
+				else
+					damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
+				end
+
+				global.ApplyAOEHPMultiDamage_ResultCheck(_env, _env.ACTOR, unit, {
+					0,
+					67,
+					134,
+					200,
+					267,
+					334,
+					400,
+					467,
+					534,
+					600
+				}, global.SplitValue(_env, damage, {
+					0.06,
+					0.06,
+					0.06,
+					0.06,
+					0.06,
+					0.1,
+					0.1,
+					0.1,
+					0.2,
+					0.2
+				}))
+			end
 		end)
 
 		return _env
@@ -269,13 +287,17 @@ all.Skill_TJHDe_Passive = {
 		local this = global.__skill({
 			global = global
 		}, prototype, externs)
-		this.buffFactorDefRate = externs.buffFactorDefRate
+		this.Num = externs.Num
 
-		assert(this.buffFactorDefRate ~= nil, "External variable `buffFactorDefRate` is not provided.")
+		if this.Num == nil then
+			this.Num = 6
+		end
 
-		this.buffFactorDefEx = externs.buffFactorDefEx
+		this.FinalNum = externs.FinalNum
 
-		assert(this.buffFactorDefEx ~= nil, "External variable `buffFactorDefEx` is not provided.")
+		if this.FinalNum == nil then
+			this.FinalNum = 1
+		end
 
 		local passive = __action(this, {
 			name = "passive",
@@ -285,7 +307,7 @@ all.Skill_TJHDe_Passive = {
 			0
 		}, passive)
 		this.passive = global["[trigger_by]"](this, {
-			"SELF:HURTED"
+			"UNIT_DIE"
 		}, passive)
 
 		return this
@@ -298,38 +320,54 @@ all.Skill_TJHDe_Passive = {
 
 		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
 
-		_env.detail = externs.detail
+		_env.unit = externs.unit
 
-		assert(_env.detail ~= nil, "External variable `detail` is not provided.")
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+
+		_env.event = externs.event
+
+		assert(_env.event ~= nil, "External variable `event` is not provided.")
 		exec["@time"]({
 			0
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
+			local buff = global.SpecialNumericEffect(_env, "+death_num", {
+				"+Normal",
+				"+Normal"
+			}, 1)
+			local death_num = nil
 
-			if global.ProbTest(_env, 0.25) then
-				local attacker = global.LoadUnit(_env, _env.ACTOR, "ALL")
-				local buffeft1 = global.NumericEffect(_env, "+def", {
-					"+Normal",
-					"+Normal"
-				}, global.BuffFactorAtk(_env, _env.ACTOR, this.buffFactorDefRate, this.buffFactorDefEx) * (1 + global.NumBuffStrgFactor(_env, attacker)))
-
-				global.ApplyBuff(_env, _env.ACTOR, {
-					timing = 1,
-					display = "DefUp",
-					group = "Skill_TJHDe_Passive",
-					duration = 3,
-					limit = 1,
+			if (global.PETS(_env, _env.unit) or global.SUMMONS(_env, _env.unit) and global.MASTER(_env, _env.ACTOR)) and global.FriendMaster(_env) then
+				global.ApplyBuff(_env, global.FriendMaster(_env), {
+					timing = 0,
+					duration = 99,
 					tags = {
-						"STATUS",
-						"NUMERIC",
-						"BUFF",
-						"DEFUP",
-						"DISPELLABLE"
+						"DEATH_NUM"
 					}
 				}, {
-					buffeft1
+					buff
 				})
+			end
+
+			if global.FriendMaster(_env) then
+				death_num = global.SpecialPropGetter(_env, "death_num")(_env, global.FriendMaster(_env))
+			end
+
+			if death_num == this.Num then
+				for _, card in global.__iter__(global.CardsOfPlayer(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "TJHDe"))) do
+					local cardvaluechange = global.CardCostEnchant(_env, "-", global.GetCardCost(_env, card) - this.FinalNum, 1)
+
+					global.ApplyEnchant(_env, global.GetOwner(_env, _env.ACTOR), card, {
+						tags = {
+							"CARDBUFF",
+							"UNDISPELLABLE",
+							"Skill_TJHDe_Passive"
+						}
+					}, {
+						cardvaluechange
+					})
+				end
 			end
 		end)
 
@@ -348,7 +386,7 @@ all.Skill_TJHDe_Proud_EX = {
 		if this.dmgFactor == nil then
 			this.dmgFactor = {
 				1,
-				1.5,
+				1.25,
 				0
 			}
 		end
@@ -357,8 +395,11 @@ all.Skill_TJHDe_Proud_EX = {
 			name = "main",
 			entry = prototype.main
 		})
-		this.main = global["[duration]"](this, {
+		main = global["[duration]"](this, {
 			2000
+		}, main)
+		this.main = global["[proud]"](this, {
+			"Hero_Proud_TJHDe"
 		}, main)
 
 		return this
@@ -379,45 +420,38 @@ all.Skill_TJHDe_Proud_EX = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
+			_env.units = global.EnemyUnits(_env)
 
-			global.AssignRoles(_env, _env.TARGET, "target")
-			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
-				-1.7,
-				0
-			}, 200, "skill2"))
+			for _, unit in global.__iter__(_env.units) do
+				global.AssignRoles(_env, unit, "target")
+			end
+
+			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.FixedPos(_env, 0, 0.7, 2), 100, "skill2"))
 		end)
 		exec["@time"]({
-			1800
+			700
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			local attacker = global.LoadUnit(_env, _env.ACTOR, "ALL")
-			local defender = global.LoadUnit(_env, _env.TARGET, "DEFENDER")
-			local buffeft1 = global.ShieldEffect(_env, attacker.maxHp * 0.06 * (1 + global.ShieldStrgFactor(_env, attacker)))
 
-			global.ApplyBuff(_env, _env.ACTOR, {
-				timing = 1,
-				duration = 2,
-				display = "Shield",
-				tags = {
-					"NUMERIC",
-					"BUFF",
-					"DEFUP",
-					"SHIELD",
-					"DISPELLABLE"
-				}
-			}, {
-				buffeft1
-			})
+			for _, unit in global.__iter__(_env.units) do
+				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
+				global.ApplyRPEffect(_env, _env.ACTOR, unit)
 
-			local damage = global.EvalDamage(_env, attacker, defender, this.dmgFactor)
+				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
 
-			global.ApplyDazeEffect(_env, _env.ACTOR, _env.TARGET)
-			global.ApplyDelRPEffect(_env, _env.ACTOR, _env.TARGET)
-
-			damage = global.CheckCtrlExDmg(_env, _env.ACTOR, _env.TARGET, damage)
-
-			global.ApplyHPDamage(_env, _env.TARGET, damage)
+				global.ApplyAOEHPMultiDamage_ResultCheck(_env, _env.ACTOR, unit, {
+					0,
+					67,
+					134,
+					200
+				}, global.SplitValue(_env, damage, {
+					0.25,
+					0.25,
+					0.25,
+					0.25
+				}))
+			end
 		end)
 
 		return _env
@@ -435,9 +469,15 @@ all.Skill_TJHDe_Unique_EX = {
 		if this.dmgFactor == nil then
 			this.dmgFactor = {
 				1,
-				3.6,
+				2.25,
 				0
 			}
+		end
+
+		this.MidDamage = externs.MidDamage
+
+		if this.MidDamage == nil then
+			this.MidDamage = 3.35
 		end
 
 		local main = __action(this, {
@@ -445,7 +485,7 @@ all.Skill_TJHDe_Unique_EX = {
 			entry = prototype.main
 		})
 		main = global["[duration]"](this, {
-			3000
+			3034
 		}, main)
 		this.main = global["[cut_in]"](this, {
 			"1#Hero_Unique_TJHDe"
@@ -469,56 +509,75 @@ all.Skill_TJHDe_Unique_EX = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
+			_env.units = global.EnemyUnits(_env)
 
-			global.AssignRoles(_env, _env.TARGET, "target")
-			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.1, 80)
+			for _, unit in global.__iter__(_env.units) do
+				global.RetainObject(_env, unit)
+			end
+
 			global.GroundEft(_env, _env.ACTOR, "BGEffectBlack")
-			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
-				-1.7,
-				0
-			}, 200, "skill3"))
-			global.HarmTargetView(_env, {
-				_env.TARGET
-			})
+			global.EnergyRestrain(_env, _env.ACTOR, _env.TARGET)
 		end)
 		exec["@time"]({
-			1800
+			900
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			local attacker = global.LoadUnit(_env, _env.ACTOR, "ALL")
-			local defender = global.LoadUnit(_env, _env.TARGET, "DEFENDER")
-			local buffeft1 = global.MaxHpEffect(_env, attacker.maxHp * 0.25 * (1 + global.NumBuffStrgFactor(_env, attacker)))
-			local buffeft2 = global.NumericEffect(_env, "-atkrate", {
-				"+Normal",
-				"+Normal"
-			}, 0.15)
 
-			global.ApplyBuff(_env, _env.ACTOR, {
-				timing = 1,
-				duration = 3,
-				display = "MaxHpUp",
-				tags = {
-					"NUMERIC",
-					"BUFF",
-					"DEBUFF",
-					"MAXHPUP",
-					"ATKDOWN",
-					"DISPELLABLE"
-				}
-			}, {
-				buffeft1,
-				buffeft2
-			})
+			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2.2), 1.1, 80)
+			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.FixedPos(_env, 0, 0, 2.2), 100, "skill3"))
+			global.HarmTargetView(_env, _env.units)
 
-			local damage = global.EvalDamage(_env, attacker, defender, this.dmgFactor)
+			for _, unit in global.__iter__(_env.units) do
+				global.AssignRoles(_env, unit, "target")
+			end
+		end)
+		exec["@time"]({
+			2100
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
 
-			global.ApplyDazeEffect(_env, _env.ACTOR, _env.TARGET)
-			global.ApplyDelRPEffect(_env, _env.ACTOR, _env.TARGET)
+			for _, unit in global.__iter__(_env.units) do
+				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
+				global.ApplyRPEffect(_env, _env.ACTOR, unit)
 
-			damage = global.CheckCtrlExDmg(_env, _env.ACTOR, _env.TARGET, damage)
+				local damage = nil
 
-			global.ApplyHPDamage(_env, _env.TARGET, damage)
+				if global.CellColLocation(_env, global.GetCell(_env, unit)) == 2 then
+					damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, {
+						1,
+						this.MidDamage,
+						0
+					})
+				else
+					damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
+				end
+
+				global.ApplyAOEHPMultiDamage_ResultCheck(_env, _env.ACTOR, unit, {
+					0,
+					67,
+					134,
+					200,
+					267,
+					334,
+					400,
+					467,
+					534,
+					600
+				}, global.SplitValue(_env, damage, {
+					0.06,
+					0.06,
+					0.06,
+					0.06,
+					0.06,
+					0.1,
+					0.1,
+					0.1,
+					0.2,
+					0.2
+				}))
+			end
 		end)
 
 		return _env
@@ -531,13 +590,17 @@ all.Skill_TJHDe_Passive_EX = {
 		local this = global.__skill({
 			global = global
 		}, prototype, externs)
-		this.buffFactorDefRate = externs.buffFactorDefRate
+		this.Num = externs.Num
 
-		assert(this.buffFactorDefRate ~= nil, "External variable `buffFactorDefRate` is not provided.")
+		if this.Num == nil then
+			this.Num = 3
+		end
 
-		this.buffFactorDefEx = externs.buffFactorDefEx
+		this.FinalNum = externs.FinalNum
 
-		assert(this.buffFactorDefEx ~= nil, "External variable `buffFactorDefEx` is not provided.")
+		if this.FinalNum == nil then
+			this.FinalNum = 1
+		end
 
 		local passive = __action(this, {
 			name = "passive",
@@ -547,7 +610,7 @@ all.Skill_TJHDe_Passive_EX = {
 			0
 		}, passive)
 		this.passive = global["[trigger_by]"](this, {
-			"SELF:HURTED"
+			"UNIT_DIE"
 		}, passive)
 
 		return this
@@ -560,38 +623,54 @@ all.Skill_TJHDe_Passive_EX = {
 
 		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
 
-		_env.detail = externs.detail
+		_env.unit = externs.unit
 
-		assert(_env.detail ~= nil, "External variable `detail` is not provided.")
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+
+		_env.event = externs.event
+
+		assert(_env.event ~= nil, "External variable `event` is not provided.")
 		exec["@time"]({
 			0
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
+			local buff = global.SpecialNumericEffect(_env, "+death_num", {
+				"+Normal",
+				"+Normal"
+			}, 1)
+			local death_num = nil
 
-			if global.ProbTest(_env, 0.25) then
-				local attacker = global.LoadUnit(_env, _env.ACTOR, "ALL")
-				local buffeft1 = global.NumericEffect(_env, "+def", {
-					"+Normal",
-					"+Normal"
-				}, global.BuffFactorAtk(_env, _env.ACTOR, this.buffFactorDefRate, this.buffFactorDefEx) * (1 + global.NumBuffStrgFactor(_env, attacker)))
-
-				global.ApplyBuff(_env, _env.ACTOR, {
-					timing = 1,
-					display = "DefUp",
-					group = "Skill_TJHDe_Passive",
-					duration = 3,
-					limit = 1,
+			if (global.PETS(_env, _env.unit) or global.SUMMONS(_env, _env.unit) and global.MASTER(_env, _env.ACTOR)) and global.FriendMaster(_env) then
+				global.ApplyBuff(_env, global.FriendMaster(_env), {
+					timing = 0,
+					duration = 99,
 					tags = {
-						"STATUS",
-						"NUMERIC",
-						"BUFF",
-						"DEFUP",
-						"DISPELLABLE"
+						"DEATH_NUM"
 					}
 				}, {
-					buffeft1
+					buff
 				})
+			end
+
+			if global.FriendMaster(_env) then
+				death_num = global.SpecialPropGetter(_env, "death_num")(_env, global.FriendMaster(_env))
+			end
+
+			if death_num == this.Num then
+				for _, card in global.__iter__(global.CardsOfPlayer(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "TJHDe"))) do
+					local cardvaluechange = global.CardCostEnchant(_env, "-", global.GetCardCost(_env, card) - this.FinalNum, 1)
+
+					global.ApplyEnchant(_env, global.GetOwner(_env, _env.ACTOR), card, {
+						tags = {
+							"CARDBUFF",
+							"UNDISPELLABLE",
+							"Skill_TJHDe_Passive"
+						}
+					}, {
+						cardvaluechange
+					})
+				end
 			end
 		end)
 

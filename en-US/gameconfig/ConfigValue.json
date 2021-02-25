@@ -1808,6 +1808,61 @@
             }
         }
     },
+    "CooperateBoss_BossColor": {
+        "clz": "dict",
+        "content": [
+            {
+                "level": [
+                    1,
+                    20
+                ],
+                "pic": "gongdou_but_xuanzhonglv"
+            },
+            {
+                "level": [
+                    21,
+                    35
+                ],
+                "pic": "gongdou_but_xuanzhonglan"
+            },
+            {
+                "level": [
+                    36,
+                    50
+                ],
+                "pic": "gongdou_but_xuanzhongzi"
+            },
+            {
+                "level": [
+                    36,
+                    50
+                ],
+                "pic": "gongdou_but_xuanzhongcheng"
+            },
+            {
+                "level": [
+                    51,
+                    10000
+                ],
+                "pic": "gongdou_but_xuanzhonghong"
+            }
+        ]
+    },
+    "CooperateBoss_EntryBubble_Gone": {
+        "clz": "int",
+        "content": 25
+    },
+    "CooperateBoss_EntryBubble_Stay": {
+        "clz": "int",
+        "content": 5
+    },
+    "CooperateBoss_InviteBubble": {
+        "clz": "string[]",
+        "content": [
+            "CooperateBoss_InviteBubble01",
+            "CooperateBoss_InviteBubble02"
+        ]
+    },
     "CooperateBoss_LevelUp": {
         "clz": "array",
         "content": [
@@ -1870,6 +1925,27 @@
             "CooperateBoss_MainRule_Text06",
             "CooperateBoss_MainRule_Text07",
             "CooperateBoss_MainRule_Text08"
+        ]
+    },
+    "CooperateBoss_Main_Bubble": {
+        "clz": "string[]",
+        "content": [
+            "CooperateBoss_NoBossTip",
+            "CooperateBoss_NoBossTip02",
+            "CooperateBoss_NoBossTip03",
+            "CooperateBoss_NoBossTip04"
+        ]
+    },
+    "CooperateBoss_Main_Bubble_Stay": {
+        "clz": "int",
+        "content": 5
+    },
+    "CooperateBoss_MyBossBubble": {
+        "clz": "string[]",
+        "content": [
+            "CooperateBoss_MyBossBubble01",
+            "CooperateBoss_MyBossBubble02",
+            "CooperateBoss_MyBossBubble03"
         ]
     },
     "CooperateBoss_Occasion": {
@@ -2287,6 +2363,14 @@
         "clz": "int",
         "content": 188
     },
+    "DreamChallenge_EntryBubble_Gone": {
+        "clz": "int",
+        "content": 10
+    },
+    "DreamChallenge_EntryBubble_Stay": {
+        "clz": "int",
+        "content": 8
+    },
     "Dream_Challenge_Rule": {
         "clz": "string[]",
         "content": [
@@ -2523,7 +2607,8 @@
             "dream_challenge",
             "clubboss",
             "actstage",
-            "cooperateboss"
+            "cooperateboss",
+            "orrtpk"
         ]
     },
     "FAC_HP_Check": {
@@ -3247,7 +3332,8 @@
         "clz": "string[]",
         "content": [
             "WEDe",
-            "SGHQShou"
+            "SGHQShou",
+            "TJHDe"
         ]
     },
     "HeroStar_BoxNum": {
@@ -4751,6 +4837,26 @@
     "Mail_DrawCardTimesReward": {
         "clz": "string",
         "content": "Mail_DrawCardTimesReward"
+    },
+    "Mail_RTPK_DailyRewardConfig": {
+        "clz": "string",
+        "content": "Mail_RTPK_DailyReward"
+    },
+    "Mail_RTPK_RankRewardConfig": {
+        "clz": "string",
+        "content": "Mail_RTPK_RankReward"
+    },
+    "Mail_RTPK_RankReward_ReplenishConfig": {
+        "clz": "string",
+        "content": "Mail_RTPK_RankReward_Replenish"
+    },
+    "Mail_RTPK_RankReward_SingleConfig": {
+        "clz": "string",
+        "content": "Mail_RTPK_RankReward_Single"
+    },
+    "Mail_RTPK_RankTitleRewardConfig": {
+        "clz": "string",
+        "content": "Mail_RTPK_RankTitleReward"
     },
     "Mail_StoreMax": {
         "clz": "int",
@@ -6902,6 +7008,155 @@
             "64": "QualityDesc_64"
         }
     },
+    "RTPK_AddScope": {
+        "clz": "array",
+        "content": [
+            [
+                -100,
+                100
+            ],
+            [
+                -200,
+                200
+            ],
+            [
+                -400,
+                400
+            ],
+            [
+                -600,
+                600
+            ],
+            [
+                -800,
+                800
+            ]
+        ]
+    },
+    "RTPK_Attenuation": {
+        "clz": "string[]",
+        "content": [
+            0.5,
+            0.5,
+            0.5
+        ]
+    },
+    "RTPK_DefaultShowBG": {
+        "clz": "string",
+        "content": "Main_Scene_Christmas"
+    },
+    "RTPK_DefaultShowHero": {
+        "clz": "string",
+        "content": "ZTXChang"
+    },
+    "RTPK_FristMatchTime": {
+        "clz": "int",
+        "content": 30
+    },
+    "RTPK_LostTine": {
+        "clz": "int",
+        "content": 10
+    },
+    "RTPK_OpenScopeTime": {
+        "clz": "int[]",
+        "content": [
+            5,
+            10,
+            15,
+            20,
+            25
+        ]
+    },
+    "RTPK_OpenTime": {
+        "clz": "string[]",
+        "content": [
+            "12:00:00-14:00:00",
+            "20:00:00-22:00:00"
+        ]
+    },
+    "RTPK_RankMax": {
+        "clz": "int",
+        "content": 999
+    },
+    "RTPK_ReportMax": {
+        "clz": "int",
+        "content": 20
+    },
+    "RTPK_ReportRetain": {
+        "clz": "int",
+        "content": 3
+    },
+    "RTPK_Robot": {
+        "clz": "int",
+        "content": 3
+    },
+    "RTPK_RobotPoint": {
+        "clz": "string[]",
+        "content": [
+            0.5,
+            0.8
+        ]
+    },
+    "RTPK_RuleTranslate": {
+        "clz": "string[]",
+        "content": [
+            {
+                "Desc": [
+                    "RTPK_GeneralRules_2",
+                    "RTPK_GeneralRules_3",
+                    "RTPK_GeneralRules_4",
+                    "RTPK_GeneralRules_5",
+                    "RTPK_GeneralRules_6",
+                    "RTPK_GeneralRules_7",
+                    "RTPK_GeneralRules_8",
+                    "RTPK_GeneralRules_9",
+                    "RTPK_GeneralRules_10",
+                    "RTPK_GeneralRules_11",
+                    "RTPK_GeneralRules_12",
+                    "RTPK_GeneralRules_13",
+                    "RTPK_GeneralRules_14"
+                ],
+                "Title": "RTPK_GeneralRules_1"
+            }
+        ]
+    },
+    "RTPK_SameGame": {
+        "clz": "int",
+        "content": 3
+    },
+    "RTPK_Scope": {
+        "clz": "string[]",
+        "content": [
+            -0.03,
+            0.03
+        ]
+    },
+    "RTPK_Victory": {
+        "clz": "array",
+        "content": [
+            {
+                "Value": 20,
+                "Victory": [
+                    1,
+                    2
+                ]
+            },
+            {
+                "Value": 40,
+                "Victory": [
+                    3,
+                    5
+                ]
+            },
+            {
+                "Value": 50,
+                "Victory": [
+                    6,
+                    99
+                ]
+            }
+        ]
+    },
     "R_Star_Bonus": {
         "clz": "array",
         "content": [
@@ -6955,6 +7210,10 @@
             1,
             2
         ]
+    },
+    "Reflection_UpLimit": {
+        "clz": "double",
+        "content": 6
     },
     "ResourceChange_LowerLimit": {
         "clz": "double",
@@ -7041,6 +7300,62 @@
     "Safe_Rank": {
         "clz": "int",
         "content": 100
+    },
+    "ServerMatch_ClubLevel": {
+        "clz": "int",
+        "content": 10
+    },
+    "ServerMatch_ClubMemberNum01": {
+        "clz": "int",
+        "content": 10
+    },
+    "ServerMatch_ClubMemberNum02": {
+        "clz": "int",
+        "content": 15
+    },
+    "ServerMatch_CombatRank01": {
+        "clz": "int",
+        "content": 10
+    },
+    "ServerMatch_CombatRank02": {
+        "clz": "int",
+        "content": 50
+    },
+    "ServerMatch_CombatRank03": {
+        "clz": "int",
+        "content": 100
+    },
+    "ServerMatch_CombatRank04": {
+        "clz": "int",
+        "content": 500
+    },
+    "ServerMatch_LoginDays01": {
+        "clz": "int",
+        "content": 3
+    },
+    "ServerMatch_LoginDays02": {
+        "clz": "int",
+        "content": 5
+    },
+    "ServerMatch_LoginDays03": {
+        "clz": "int",
+        "content": 7
+    },
+    "ServerMatch_LoginDays04": {
+        "clz": "int",
+        "content": 14
+    },
+    "ServerMatch_RTPK_ActivePlayer": {
+        "clz": "int",
+        "content": 100000
+    },
+    "ServerMatch_RTPK_CombatRank": {
+        "clz": "int",
+        "content": 100
+    },
+    "ServerMatch_RTPK_LoginDays": {
+        "clz": "int",
+        "content": 3
     },
     "ShopTalkShow": {
         "clz": "string[]",
@@ -7687,7 +8002,9 @@
             "BLTu",
             "BDFen",
             "PGNNi",
-            "QBTe"
+            "QBTe",
+            "FLYDe",
+            "TJHDe"
         ]
     },
     "Tower_1_GrowMaxValue": {

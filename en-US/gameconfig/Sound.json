@@ -517,6 +517,20 @@
         "Unlock": "",
         "UnlockDesc": ""
     },
+    "Mus_Battle_Collapsed": {
+        "CueName": "Mus_Battle_Collapsed",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "Music_Expand/Mus_Battle_Collapsed",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
     "Mus_Battle_Common_Lose": {
         "CueName": "Mus_Battle_Common_Lose",
         "IncludeMusic": "",
@@ -1321,6 +1335,20 @@
         "IsMenu": "",
         "Param": "",
         "PkgName": "Music_Expand/Mus_Story_Christmas",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Mus_Story_Collapsed": {
+        "CueName": "Mus_Story_Collapsed",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "Music_Expand/Mus_Story_Collapsed",
         "Show": "",
         "ShowName": "",
         "ShowSourse": "",
@@ -3135,11 +3163,39 @@
         "Unlock": "",
         "UnlockDesc": ""
     },
+    "Se_Effect_Awakening_CZheng": {
+        "CueName": "Se_Effect_Awakening_CZheng",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "村正觉醒 ",
+        "PkgName": "common/UI",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
     "Se_Effect_Awakening_LFEr": {
         "CueName": "Se_Effect_Awakening_LFEr",
         "IncludeMusic": "",
         "IsMenu": "",
         "Param": "拉斐尔觉醒 ",
+        "PkgName": "common/UI",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Effect_Awakening_YSTLu": {
+        "CueName": "Se_Effect_Awakening_YSTLu",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "亚斯塔路觉醒 ",
         "PkgName": "common/UI",
         "Show": "",
         "ShowName": "",
@@ -5492,6 +5548,132 @@
         "IncludeMusic": "",
         "IsMenu": "",
         "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_FLYDe_4": {
+        "CueName": "Se_Skill_FLYDe_4",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_FLYDe_5": {
+        "CueName": "Se_Skill_FLYDe_5",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_FLYDe_Bush_Grow": {
+        "CueName": "Se_Skill_FLYDe_Bush_Grow",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_FLYDe_Bush_Stab": {
+        "CueName": "Se_Skill_FLYDe_Bush_Stab",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_FLYDe_MaxExplode": {
+        "CueName": "Se_Skill_FLYDe_MaxExplode",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_FLYDe_MaxLotus": {
+        "CueName": "Se_Skill_FLYDe_MaxLotus",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_FLYDe_MaxSpell": {
+        "CueName": "Se_Skill_FLYDe_MaxSpell",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_FLYDe_MaxThunder": {
+        "CueName": "Se_Skill_FLYDe_MaxThunder",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_FLYDe_Whip": {
+        "CueName": "Se_Skill_FLYDe_Whip",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "弗洛伊德{西格}",
         "PkgName": "common/Skill",
         "Show": "",
         "ShowName": "",
@@ -8133,6 +8315,90 @@
         "Unlock": "",
         "UnlockDesc": ""
     },
+    "Se_Skill_NDGEr_QRJie_Blood_1": {
+        "CueName": "Se_Skill_NDGEr_QRJie_Blood_1",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_NDGEr_QRJie_Blood_2": {
+        "CueName": "Se_Skill_NDGEr_QRJie_Blood_2",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_NDGEr_QRJie_Prick_1": {
+        "CueName": "Se_Skill_NDGEr_QRJie_Prick_1",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_NDGEr_QRJie_Prick_2": {
+        "CueName": "Se_Skill_NDGEr_QRJie_Prick_2",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_NDGEr_QRJie_Smash_1": {
+        "CueName": "Se_Skill_NDGEr_QRJie_Smash_1",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_NDGEr_QRJie_Whoosh_1": {
+        "CueName": "Se_Skill_NDGEr_QRJie_Whoosh_1",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
     "Se_Skill_NFEr_Hit_1": {
         "CueName": "Se_Skill_NFEr_Hit_1",
         "IncludeMusic": "",
@@ -9525,6 +9791,90 @@
         "IsMenu": "",
         "Param": "",
         "PkgName": "Sound_Basic/Skill_Compress",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_TJHDe_Build": {
+        "CueName": "Se_Skill_TJHDe_Build",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_TJHDe_Exp": {
+        "CueName": "Se_Skill_TJHDe_Exp",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_TJHDe_Jump": {
+        "CueName": "Se_Skill_TJHDe_Jump",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_TJHDe_Land": {
+        "CueName": "Se_Skill_TJHDe_Land",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_TJHDe_Run": {
+        "CueName": "Se_Skill_TJHDe_Run",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_TJHDe_Shot": {
+        "CueName": "Se_Skill_TJHDe_Shot",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
         "Show": "",
         "ShowName": "",
         "ShowSourse": "",
@@ -41272,6 +41622,1378 @@
         "ShowName": "",
         "ShowSourse": "",
         "SoundDesc": "Voice_FEMSi_70_3_SoundDesc",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Voice_FLYDe_01": {
+        "CueName": "Voice_FLYDe_01",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_01_SoundDesc",
+        "Text": "Sound_Text_1",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_FLYDe_02": {
+        "CueName": "Voice_FLYDe_02",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_02_SoundDesc",
+        "Text": "Sound_Text_2",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_FLYDe_03": {
+        "CueName": "Voice_FLYDe_03",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_03_SoundDesc",
+        "Text": "Sound_Text_3",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_FLYDe_04": {
+        "CueName": "Voice_FLYDe_04",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_04_SoundDesc",
+        "Text": "Sound_Text_4",
+        "Unlock": [
+            {
+                "HeroLove": 10
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_FLYDe_05": {
+        "CueName": "Voice_FLYDe_05",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_05_SoundDesc",
+        "Text": "Sound_Text_5",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_FLYDe_06": {
+        "CueName": "",
+        "IncludeMusic": [
+            "Voice_FLYDe_06_1",
+            "Voice_FLYDe_06_2"
+        ],
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Voice_FLYDe_06_1": {
+        "CueName": "Voice_FLYDe_06_1",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_06_SoundDesc",
+        "Text": "Sound_Text_6",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_FLYDe_06_2": {
+        "CueName": "Voice_FLYDe_06_2",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_06_SoundDesc_2",
+        "Text": "Sound_Text_6",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_FLYDe_07": {
+        "CueName": "Voice_FLYDe_07",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_07_SoundDesc",
+        "Text": "Sound_Text_7",
+        "Unlock": [
+            {
+                "Amount": 1,
+                "Hero": [
+                    "SLMen"
+                ]
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_OneHero"
+    },
+    "Voice_FLYDe_08": {
+        "CueName": "Voice_FLYDe_08",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_08_SoundDesc",
+        "Text": "Sound_Text_8",
+        "Unlock": [
+            {
+                "Amount": 1,
+                "Hero": [
+                    "BEr"
+                ]
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_OneHero"
+    },
+    "Voice_FLYDe_09": {
+        "CueName": "Voice_FLYDe_09",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 0,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_09_SoundDesc",
+        "Text": "Sound_Text_9",
+        "Unlock": [
+            {
+                "Amount": 2,
+                "Hero": [
+                    "HDi"
+                ]
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_OneHero"
+    },
+    "Voice_FLYDe_10": {
+        "CueName": "Voice_FLYDe_10",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_10_SoundDesc",
+        "Text": "Sound_Text_10",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_FLYDe_11": {
+        "CueName": "Voice_FLYDe_11",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_11_SoundDesc",
+        "Text": "Sound_Text_11",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_FLYDe_12": {
+        "CueName": "Voice_FLYDe_12",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_12_SoundDesc",
+        "Text": "Sound_Text_12",
+        "Unlock": [
+            {
+                "HeroStar": 4
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroStar"
+    },
+    "Voice_FLYDe_13": {
+        "CueName": "Voice_FLYDe_13",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_13_SoundDesc",
+        "Text": "Sound_Text_13",
+        "Unlock": [
+            {
+                "HeroQuality": 20
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroQuality"
+    },
+    "Voice_FLYDe_14": {
+        "CueName": "Voice_FLYDe_14",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_14_SoundDesc",
+        "Text": "Sound_Text_14",
+        "Unlock": [
+            {
+                "HeroLove": 3
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_FLYDe_15": {
+        "CueName": "Voice_FLYDe_15",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_15_SoundDesc",
+        "Text": "Sound_Text_15",
+        "Unlock": [
+            {
+                "HeroLove": 4
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_FLYDe_16": {
+        "CueName": "Voice_FLYDe_16",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_16_SoundDesc",
+        "Text": "Sound_Text_16",
+        "Unlock": [
+            {
+                "HeroLove": 5
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_FLYDe_17": {
+        "CueName": "Voice_FLYDe_17",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_17_SoundDesc",
+        "Text": "Sound_Text_17",
+        "Unlock": [
+            {
+                "HeroLove": 6
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_FLYDe_18": {
+        "CueName": "Voice_FLYDe_18",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_18_SoundDesc",
+        "Text": "Sound_Text_18",
+        "Unlock": [
+            {
+                "HeroLove": 7
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_FLYDe_19": {
+        "CueName": "Voice_FLYDe_19",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 0,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_19_SoundDesc",
+        "Text": "Sound_Text_19",
+        "Unlock": [
+            {
+                "Time": "Birthday",
+                "duration": 24
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_FLYDe_20": {
+        "CueName": "Voice_FLYDe_20",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_20_SoundDesc",
+        "Text": "Sound_Text_20",
+        "Unlock": [
+            {
+                "HeroLove": 2
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_FLYDe_21": {
+        "CueName": "Voice_FLYDe_21",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 0,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_21_SoundDesc",
+        "Text": "Sound_Text_21",
+        "Unlock": [
+            {
+                "HeroLove": 5
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_FLYDe_22_1": {
+        "CueName": "Voice_FLYDe_22_1",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 0,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_22_1_SoundDesc",
+        "Text": "Sound_Text_22",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Voice_FLYDe_22_2": {
+        "CueName": "Voice_FLYDe_22_2",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 0,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_22_2_SoundDesc",
+        "Text": "Sound_Text_22",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Voice_FLYDe_22_3": {
+        "CueName": "Voice_FLYDe_22_3",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 0,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_22_3_SoundDesc",
+        "Text": "Sound_Text_22",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Voice_FLYDe_23": {
+        "CueName": "Voice_FLYDe_23",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_23_SoundDesc",
+        "Text": "Sound_Text_23",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_FLYDe_24": {
+        "CueName": "Voice_FLYDe_24",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 0,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_24_SoundDesc",
+        "Text": "Sound_Text_24",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_FLYDe_25": {
+        "CueName": "Voice_FLYDe_25",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_25_SoundDesc",
+        "Text": "Sound_Text_25",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_FLYDe_26": {
+        "CueName": "Voice_FLYDe_26",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_26_SoundDesc",
+        "Text": "Sound_Text_26",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_FLYDe_27": {
+        "CueName": "Voice_FLYDe_27",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_27_SoundDesc",
+        "Text": "Sound_Text_27",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_FLYDe_28": {
+        "CueName": "Voice_FLYDe_28",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_28_SoundDesc",
+        "Text": "Sound_Text_28",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_FLYDe_29": {
+        "CueName": "Voice_FLYDe_29",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_29_SoundDesc",
+        "Text": "Sound_Text_29",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_FLYDe_30": {
+        "CueName": "Voice_FLYDe_30",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_30_SoundDesc",
+        "Text": "Sound_Text_30",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_FLYDe_31": {
+        "CueName": "Voice_FLYDe_31",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_31_SoundDesc",
+        "Text": "Sound_Text_31",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_FLYDe_32": {
+        "CueName": "Voice_FLYDe_32",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_32_SoundDesc",
+        "Text": "Sound_Text_32",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_OneHero"
+    },
+    "Voice_FLYDe_34": {
+        "CueName": "Voice_FLYDe_34",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_34_SoundDesc",
+        "Text": "Sound_Text_34",
+        "Unlock": [
+            {
+                "HeroLove": 10
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_FLYDe_35": {
+        "CueName": "Voice_FLYDe_35",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_35_SoundDesc",
+        "Text": "Sound_Text_35",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_FLYDe_36": {
+        "CueName": "Voice_FLYDe_36",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_36_SoundDesc",
+        "Text": "Sound_Text_36",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_FLYDe_37": {
+        "CueName": "Voice_FLYDe_37",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_37_SoundDesc",
+        "Text": "Sound_Text_37",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_FLYDe_38": {
+        "CueName": "Voice_FLYDe_38",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_38_SoundDesc",
+        "Text": "Sound_Text_38",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_FLYDe_39": {
+        "CueName": "Voice_FLYDe_39",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 0,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_39_SoundDesc",
+        "Text": "Sound_Text_39",
+        "Unlock": [
+            {
+                "Time": "11-11-00-00-00",
+                "duration": 24
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_FLYDe_40_1": {
+        "CueName": "Voice_FLYDe_40_1",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_40_1_SoundDesc",
+        "Text": "Sound_Text_40_1",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_FLYDe_40_2": {
+        "CueName": "Voice_FLYDe_40_2",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_40_2_SoundDesc",
+        "Text": "Sound_Text_40_2",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_FLYDe_40_3": {
+        "CueName": "Voice_FLYDe_40_3",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_40_3_SoundDesc",
+        "Text": "Sound_Text_40_3",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_FLYDe_41": {
+        "CueName": "Voice_FLYDe_41",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_41_SoundDesc",
+        "Text": "Sound_Text_41",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_FLYDe_42": {
+        "CueName": "Voice_FLYDe_42",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_42_SoundDesc",
+        "Text": "Sound_Text_42",
+        "Unlock": [
+            {
+                "HeroLove": 5
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_FLYDe_43": {
+        "CueName": "Voice_FLYDe_43",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_43_SoundDesc",
+        "Text": "Sound_Text_43",
+        "Unlock": [
+            {
+                "HeroLove": 10
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_FLYDe_44": {
+        "CueName": "Voice_FLYDe_44",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_44_SoundDesc",
+        "Text": "Sound_Text_44",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_FLYDe_45": {
+        "CueName": "Voice_FLYDe_45",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_45_SoundDesc",
+        "Text": "Sound_Text_45",
+        "Unlock": [
+            {
+                "HeroLove": 5
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_FLYDe_46": {
+        "CueName": "Voice_FLYDe_46",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_46_SoundDesc",
+        "Text": "Sound_Text_46",
+        "Unlock": [
+            {
+                "HeroLove": 10
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_FLYDe_47": {
+        "CueName": "Voice_FLYDe_47",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_47_SoundDesc",
+        "Text": "Sound_Text_47",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_FLYDe_48": {
+        "CueName": "Voice_FLYDe_48",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_48_SoundDesc",
+        "Text": "Sound_Text_48",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_FLYDe_49": {
+        "CueName": "Voice_FLYDe_49",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_49_SoundDesc",
+        "Text": "Sound_Text_49",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_FLYDe_50": {
+        "CueName": "Voice_FLYDe_50",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_50_SoundDesc",
+        "Text": "Sound_Text_50",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_FLYDe_51": {
+        "CueName": "Voice_FLYDe_51",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_51_SoundDesc",
+        "Text": "Sound_Text_51",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_FLYDe_52": {
+        "CueName": "Voice_FLYDe_52",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_52_SoundDesc",
+        "Text": "Sound_Text_52",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_FLYDe_53": {
+        "CueName": "Voice_FLYDe_53",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_53_SoundDesc",
+        "Text": "Sound_Text_53",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_FLYDe_54": {
+        "CueName": "Voice_FLYDe_54",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_54_SoundDesc",
+        "Text": "Sound_Text_54",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_FLYDe_55": {
+        "CueName": "Voice_FLYDe_55",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_55_SoundDesc",
+        "Text": "Sound_Text_55",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_FLYDe_56": {
+        "CueName": "Voice_FLYDe_56",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_56_SoundDesc",
+        "Text": "Sound_Text_56",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_FLYDe_57": {
+        "CueName": "Voice_FLYDe_57",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_57_SoundDesc",
+        "Text": "Sound_Text_57",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_FLYDe_58": {
+        "CueName": "Voice_FLYDe_58",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_58_SoundDesc",
+        "Text": "Sound_Text_58",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_FLYDe_59": {
+        "CueName": "Voice_FLYDe_59",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_59_SoundDesc",
+        "Text": "Sound_Text_59",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_FLYDe_60": {
+        "CueName": "Voice_FLYDe_60",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_60_SoundDesc",
+        "Text": "Sound_Text_60",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_FLYDe_61": {
+        "CueName": "Voice_FLYDe_61",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_61_SoundDesc",
+        "Text": "Sound_Text_61",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_FLYDe_62": {
+        "CueName": "Voice_FLYDe_62",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_62_SoundDesc",
+        "Text": "Sound_Text_62",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_FLYDe_63": {
+        "CueName": "Voice_FLYDe_63",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_63_SoundDesc",
+        "Text": "Sound_Text_63",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_FLYDe_64": {
+        "CueName": "Voice_FLYDe_64",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_64_SoundDesc",
+        "Text": "Sound_Text_64",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_FLYDe_65": {
+        "CueName": "Voice_FLYDe_65",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_65_SoundDesc",
+        "Text": "Sound_Text_65",
+        "Unlock": [
+            {
+                "HeroStar": 6
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_FLYDe_66": {
+        "CueName": "Voice_FLYDe_66",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_66_SoundDesc",
+        "Text": "Sound_Text_66",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_FLYDe_67": {
+        "CueName": "Voice_FLYDe_67",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_67_SoundDesc",
+        "Text": "Sound_Text_67",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_FLYDe_68": {
+        "CueName": "Voice_FLYDe_68",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_68_SoundDesc",
+        "Text": "Sound_Text_68",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_FLYDe_69": {
+        "CueName": "Voice_FLYDe_69",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_69_SoundDesc",
+        "Text": "Sound_Text_69",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_FLYDe_70_1": {
+        "CueName": "Voice_FLYDe_70_1",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_70_1_SoundDesc",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Voice_FLYDe_70_2": {
+        "CueName": "Voice_FLYDe_70_2",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_70_2_SoundDesc",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Voice_FLYDe_70_3": {
+        "CueName": "Voice_FLYDe_70_3",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/FLYDe",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_FLYDe_70_3_SoundDesc",
         "Text": "",
         "Unlock": "",
         "UnlockDesc": ""
@@ -96385,6 +98107,1357 @@
         "ShowName": "",
         "ShowSourse": "",
         "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Voice_TJHDe_01": {
+        "CueName": "Voice_TJHDe_01",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_01_SoundDesc",
+        "Text": "Sound_Text_1",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_TJHDe_02": {
+        "CueName": "Voice_TJHDe_02",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_02_SoundDesc",
+        "Text": "Sound_Text_2",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_TJHDe_03": {
+        "CueName": "Voice_TJHDe_03",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_03_SoundDesc",
+        "Text": "Sound_Text_3",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_TJHDe_04": {
+        "CueName": "Voice_TJHDe_04",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_04_SoundDesc",
+        "Text": "Sound_Text_4",
+        "Unlock": [
+            {
+                "HeroLove": 10
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_TJHDe_05": {
+        "CueName": "Voice_TJHDe_05",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_05_SoundDesc",
+        "Text": "Sound_Text_5",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_TJHDe_06": {
+        "CueName": "Voice_TJHDe_06",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_06_SoundDesc",
+        "Text": "Sound_Text_6",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_TJHDe_07": {
+        "CueName": "Voice_TJHDe_07",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_07_SoundDesc",
+        "Text": "Sound_Text_7",
+        "Unlock": [
+            {
+                "Amount": 1,
+                "Hero": [
+                    "SGHQShou"
+                ]
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_OneHero"
+    },
+    "Voice_TJHDe_08": {
+        "CueName": "Voice_TJHDe_08",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_08_SoundDesc",
+        "Text": "Sound_Text_8",
+        "Unlock": [
+            {
+                "Amount": 1,
+                "Hero": [
+                    "LLan"
+                ]
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_OneHero"
+    },
+    "Voice_TJHDe_09": {
+        "CueName": "Voice_TJHDe_09",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_09_SoundDesc",
+        "Text": "Sound_Text_9",
+        "Unlock": [
+            {
+                "Amount": 1,
+                "Hero": [
+                    "FTLEShi"
+                ]
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_OneHero"
+    },
+    "Voice_TJHDe_10": {
+        "CueName": "Voice_TJHDe_10",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_10_SoundDesc",
+        "Text": "Sound_Text_10",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_TJHDe_11": {
+        "CueName": "Voice_TJHDe_11",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_11_SoundDesc",
+        "Text": "Sound_Text_11",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_TJHDe_12": {
+        "CueName": "Voice_TJHDe_12",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_12_SoundDesc",
+        "Text": "Sound_Text_12",
+        "Unlock": [
+            {
+                "HeroStar": 4
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroStar"
+    },
+    "Voice_TJHDe_13": {
+        "CueName": "Voice_TJHDe_13",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_13_SoundDesc",
+        "Text": "Sound_Text_13",
+        "Unlock": [
+            {
+                "HeroQuality": 20
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroQuality"
+    },
+    "Voice_TJHDe_14": {
+        "CueName": "Voice_TJHDe_14",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_14_SoundDesc",
+        "Text": "Sound_Text_14",
+        "Unlock": [
+            {
+                "HeroLove": 3
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_TJHDe_15": {
+        "CueName": "Voice_TJHDe_15",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_15_SoundDesc",
+        "Text": "Sound_Text_15",
+        "Unlock": [
+            {
+                "HeroLove": 4
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_TJHDe_16": {
+        "CueName": "Voice_TJHDe_16",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_16_SoundDesc",
+        "Text": "Sound_Text_16",
+        "Unlock": [
+            {
+                "HeroLove": 5
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_TJHDe_17": {
+        "CueName": "Voice_TJHDe_17",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_17_SoundDesc",
+        "Text": "Sound_Text_17",
+        "Unlock": [
+            {
+                "HeroLove": 6
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_TJHDe_18": {
+        "CueName": "Voice_TJHDe_18",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_18_SoundDesc",
+        "Text": "Sound_Text_18",
+        "Unlock": [
+            {
+                "HeroLove": 7
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_TJHDe_19": {
+        "CueName": "Voice_TJHDe_19",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 0,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_19_SoundDesc",
+        "Text": "Sound_Text_19",
+        "Unlock": [
+            {
+                "Time": "Birthday",
+                "duration": 24
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_TJHDe_20": {
+        "CueName": "Voice_TJHDe_20",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_20_SoundDesc",
+        "Text": "Sound_Text_20",
+        "Unlock": [
+            {
+                "HeroLove": 2
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_TJHDe_21": {
+        "CueName": "Voice_TJHDe_21",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 0,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_21_SoundDesc",
+        "Text": "Sound_Text_21",
+        "Unlock": [
+            {
+                "HeroLove": 5
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_TJHDe_22_1": {
+        "CueName": "Voice_TJHDe_22_1",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 0,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_22_1_SoundDesc",
+        "Text": "Sound_Text_22",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Voice_TJHDe_22_2": {
+        "CueName": "Voice_TJHDe_22_2",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 0,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_22_2_SoundDesc",
+        "Text": "Sound_Text_22",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Voice_TJHDe_22_3": {
+        "CueName": "Voice_TJHDe_22_3",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 0,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_22_3_SoundDesc",
+        "Text": "Sound_Text_22",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Voice_TJHDe_23": {
+        "CueName": "Voice_TJHDe_23",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_23_SoundDesc",
+        "Text": "Sound_Text_23",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_TJHDe_24": {
+        "CueName": "Voice_TJHDe_24",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 0,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_24_SoundDesc",
+        "Text": "Sound_Text_24",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_TJHDe_25": {
+        "CueName": "Voice_TJHDe_25",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_25_SoundDesc",
+        "Text": "Sound_Text_25",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_TJHDe_26": {
+        "CueName": "Voice_TJHDe_26",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_26_SoundDesc",
+        "Text": "Sound_Text_26",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_TJHDe_27": {
+        "CueName": "Voice_TJHDe_27",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_27_SoundDesc",
+        "Text": "Sound_Text_27",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_TJHDe_27_Cut": {
+        "CueName": "Voice_TJHDe_27_Cut",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Voice_TJHDe_28": {
+        "CueName": "Voice_TJHDe_28",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_28_SoundDesc",
+        "Text": "Sound_Text_28",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_TJHDe_29": {
+        "CueName": "Voice_TJHDe_29",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_29_SoundDesc",
+        "Text": "Sound_Text_29",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_TJHDe_30": {
+        "CueName": "Voice_TJHDe_30",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_30_SoundDesc",
+        "Text": "Sound_Text_30",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_TJHDe_31": {
+        "CueName": "Voice_TJHDe_31",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_31_SoundDesc",
+        "Text": "Sound_Text_31",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_TJHDe_32": {
+        "CueName": "Voice_TJHDe_32",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_32_SoundDesc",
+        "Text": "Sound_Text_32",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_OneHero"
+    },
+    "Voice_TJHDe_34": {
+        "CueName": "Voice_TJHDe_34",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_34_SoundDesc",
+        "Text": "Sound_Text_34",
+        "Unlock": [
+            {
+                "HeroLove": 10
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_TJHDe_35": {
+        "CueName": "Voice_TJHDe_35",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_35_SoundDesc",
+        "Text": "Sound_Text_35",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_TJHDe_36": {
+        "CueName": "Voice_TJHDe_36",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_36_SoundDesc",
+        "Text": "Sound_Text_36",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_TJHDe_37": {
+        "CueName": "Voice_TJHDe_37",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_37_SoundDesc",
+        "Text": "Sound_Text_37",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_TJHDe_38": {
+        "CueName": "Voice_TJHDe_38",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_38_SoundDesc",
+        "Text": "Sound_Text_38",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_TJHDe_39": {
+        "CueName": "Voice_TJHDe_39",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 0,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_39_SoundDesc",
+        "Text": "Sound_Text_39",
+        "Unlock": [
+            {
+                "Time": "4-20-00-00-00",
+                "duration": 24
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_TJHDe_40_1": {
+        "CueName": "Voice_TJHDe_40_1",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_40_1_SoundDesc",
+        "Text": "Sound_Text_40_1",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_TJHDe_40_2": {
+        "CueName": "Voice_TJHDe_40_2",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_40_2_SoundDesc",
+        "Text": "Sound_Text_40_2",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_TJHDe_40_3": {
+        "CueName": "Voice_TJHDe_40_3",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_40_3_SoundDesc",
+        "Text": "Sound_Text_40_3",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_TJHDe_41": {
+        "CueName": "Voice_TJHDe_41",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_41_SoundDesc",
+        "Text": "Sound_Text_41",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_TJHDe_42": {
+        "CueName": "Voice_TJHDe_42",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_42_SoundDesc",
+        "Text": "Sound_Text_42",
+        "Unlock": [
+            {
+                "HeroLove": 5
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_TJHDe_43": {
+        "CueName": "Voice_TJHDe_43",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_43_SoundDesc",
+        "Text": "Sound_Text_43",
+        "Unlock": [
+            {
+                "HeroLove": 10
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_TJHDe_44": {
+        "CueName": "Voice_TJHDe_44",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_44_SoundDesc",
+        "Text": "Sound_Text_44",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_TJHDe_45": {
+        "CueName": "Voice_TJHDe_45",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_45_SoundDesc",
+        "Text": "Sound_Text_45",
+        "Unlock": [
+            {
+                "HeroLove": 5
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_TJHDe_46": {
+        "CueName": "Voice_TJHDe_46",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_46_SoundDesc",
+        "Text": "Sound_Text_46",
+        "Unlock": [
+            {
+                "HeroLove": 10
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_TJHDe_47": {
+        "CueName": "Voice_TJHDe_47",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_47_SoundDesc",
+        "Text": "Sound_Text_47",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_TJHDe_48": {
+        "CueName": "Voice_TJHDe_48",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_48_SoundDesc",
+        "Text": "Sound_Text_48",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_TJHDe_49": {
+        "CueName": "Voice_TJHDe_49",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_49_SoundDesc",
+        "Text": "Sound_Text_49",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_TJHDe_50": {
+        "CueName": "Voice_TJHDe_50",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_50_SoundDesc",
+        "Text": "Sound_Text_50",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_TJHDe_51": {
+        "CueName": "Voice_TJHDe_51",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_51_SoundDesc",
+        "Text": "Sound_Text_51",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_TJHDe_52": {
+        "CueName": "Voice_TJHDe_52",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_52_SoundDesc",
+        "Text": "Sound_Text_52",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_TJHDe_53": {
+        "CueName": "Voice_TJHDe_53",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_53_SoundDesc",
+        "Text": "Sound_Text_53",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_TJHDe_54": {
+        "CueName": "Voice_TJHDe_54",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_54_SoundDesc",
+        "Text": "Sound_Text_54",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_TJHDe_55": {
+        "CueName": "Voice_TJHDe_55",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_55_SoundDesc",
+        "Text": "Sound_Text_55",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_TJHDe_56": {
+        "CueName": "Voice_TJHDe_56",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_56_SoundDesc",
+        "Text": "Sound_Text_56",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_TJHDe_57": {
+        "CueName": "Voice_TJHDe_57",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_57_SoundDesc",
+        "Text": "Sound_Text_57",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_TJHDe_58": {
+        "CueName": "Voice_TJHDe_58",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_58_SoundDesc",
+        "Text": "Sound_Text_58",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_TJHDe_59": {
+        "CueName": "Voice_TJHDe_59",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_59_SoundDesc",
+        "Text": "Sound_Text_59",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_TJHDe_60": {
+        "CueName": "Voice_TJHDe_60",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_60_SoundDesc",
+        "Text": "Sound_Text_60",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_TJHDe_61": {
+        "CueName": "Voice_TJHDe_61",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_61_SoundDesc",
+        "Text": "Sound_Text_61",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_TJHDe_62": {
+        "CueName": "Voice_TJHDe_62",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_62_SoundDesc",
+        "Text": "Sound_Text_62",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_TJHDe_63": {
+        "CueName": "Voice_TJHDe_63",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_63_SoundDesc",
+        "Text": "Sound_Text_63",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_TJHDe_64": {
+        "CueName": "Voice_TJHDe_64",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_64_SoundDesc",
+        "Text": "Sound_Text_64",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_TJHDe_65": {
+        "CueName": "Voice_TJHDe_65",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_65_SoundDesc",
+        "Text": "Sound_Text_65",
+        "Unlock": [
+            {
+                "HeroStar": 6
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_TJHDe_66": {
+        "CueName": "Voice_TJHDe_66",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_66_SoundDesc",
+        "Text": "Sound_Text_66",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_TJHDe_67": {
+        "CueName": "Voice_TJHDe_67",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_67_SoundDesc",
+        "Text": "Sound_Text_67",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_TJHDe_68": {
+        "CueName": "Voice_TJHDe_68",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_68_SoundDesc",
+        "Text": "Sound_Text_68",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_TJHDe_69": {
+        "CueName": "Voice_TJHDe_69",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_69_SoundDesc",
+        "Text": "Sound_Text_69",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_TJHDe_70_1": {
+        "CueName": "Voice_TJHDe_70_1",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_70_1_SoundDesc",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Voice_TJHDe_70_2": {
+        "CueName": "Voice_TJHDe_70_2",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_70_2_SoundDesc",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Voice_TJHDe_70_3": {
+        "CueName": "Voice_TJHDe_70_3",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/TJHDe",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_TJHDe_70_3_SoundDesc",
         "Text": "",
         "Unlock": "",
         "UnlockDesc": ""
