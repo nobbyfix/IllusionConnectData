@@ -472,6 +472,11 @@ end
 
 function FunctionEntranceMediator:refreshRTPKCell()
 	local rtpkCell = self._arenaPanel:getChildByFullName("rtpkCell")
+
+	if not rtpkCell:isVisible() then
+		return
+	end
+
 	local seasonLabel = rtpkCell.seasonLabel
 	local timeLabel = rtpkCell.timeLabel
 	local systemKeeper = self:getInjector():getInstance("SystemKeeper")
