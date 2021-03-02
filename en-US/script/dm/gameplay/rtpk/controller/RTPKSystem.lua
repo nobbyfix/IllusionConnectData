@@ -46,36 +46,42 @@ function RTPKSystem:initialize()
 end
 
 function RTPKSystem:tryEnter()
-	local systemKeeper = self:getInjector():getInstance("SystemKeeper")
-	local unlock, tips = systemKeeper:isUnlock("RTPK")
+	if CommonUtils.GetSwitch("fn_arena_rtpk") then
+		local systemKeeper = self:getInjector():getInstance("SystemKeeper")
+		local unlock, tips = systemKeeper:isUnlock("RTPK")
 
-	if unlock then
-		self:requestRTPKInfo(function ()
-			local status = self._rtpk:getCurStatus()
+		if unlock then
+			self:requestRTPKInfo(function ()
+				local status = self._rtpk:getCurStatus()
 
-			if status == RTPKSeasonStatus.kRest and self:getSeasonNextCD() <= 0 then
-				self:dispatch(ShowTipEvent({
-					tip = Strings:get("RTPK_SeasonReset_Tip")
-				}))
+				if status == RTPKSeasonStatus.kRest and self:getSeasonNextCD() <= 0 then
+					self:dispatch(ShowTipEvent({
+						tip = Strings:get("RTPK_SeasonReset_Tip")
+					}))
 
-				return
-			end
+					return
+				end
 
-			if status == RTPKSeasonStatus.kRest then
-				self:dispatch(ShowTipEvent({
-					tip = Strings:get("RTPK_NewSeason_Ready")
-				}))
+				if status == RTPKSeasonStatus.kRest then
+					self:dispatch(ShowTipEvent({
+						tip = Strings:get("RTPK_NewSeason_Ready")
+					}))
 
-				return
-			end
+					return
+				end
 
-			local view = self:getInjector():getInstance("RTPKMainView")
+				local view = self:getInjector():getInstance("RTPKMainView")
 
-			self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {}))
-		end)
+				self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {}))
+			end)
+		else
+			self:dispatch(ShowTipEvent({
+				tip = tips
+			}))
+		end
 	else
 		self:dispatch(ShowTipEvent({
-			tip = tips
+			tip = Strings:get("CooperateBoss_Invite_UI31")
 		}))
 	end
 end
