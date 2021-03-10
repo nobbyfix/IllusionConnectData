@@ -249,7 +249,7 @@ function LoginSystem:requestPlayerInfo(callback)
 	local serverInfo = self:getCurServer()
 
 	developSystem:setServerInfo(serverInfo:getSecId(), serverInfo:getName(), serverInfo:getIp(), serverInfo:getPort())
-	self._loginService:requestPlayerInfo(params, false, function (response)
+	self._loginService:requestPlayerInfo(params, true, function (response)
 		if response.resCode == GS_SUCCESS then
 			if response.data.extra then
 				if response.data.extra.timeOffset then
