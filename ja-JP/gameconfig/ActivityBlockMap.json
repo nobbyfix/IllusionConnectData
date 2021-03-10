@@ -770,5 +770,67 @@
             "ASnowflakeS01S04"
         ],
         "Type": "NORMAL"
+    },
+    "SunflowerE01": {
+        "BGM": "Mus_Story_VanGogh_Egypt",
+        "Background": "Sunflower_Scene03",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_SunflowerAE01_Name",
+        "StarBoxReward": {
+            "10": "SunflowerE01BOX01",
+            "20": "SunflowerE01BOX02",
+            "30": "SunflowerE01BOX03"
+        },
+        "SubPoint": [
+            "SunflowerE01S01",
+            "SunflowerE01S02",
+            "SunflowerE01S03",
+            "SunflowerE01S04",
+            "SunflowerE01S05",
+            "SunflowerE01S06",
+            "SunflowerE01S07",
+            "SunflowerE01S08",
+            "SunflowerE01S09",
+            "SunflowerE01S10",
+            "SunflowerE01S11",
+            "SunflowerE01S12"
+        ],
+        "SubStoryPoint": [
+            "SunflowerS01S03",
+            "SunflowerS01S04"
+        ],
+        "Type": "ELITE"
+    },
+    "SunflowerM01": {
+        "BGM": "Mus_Story_VanGogh_Egypt",
+        "Background": "Sunflower_Scene02",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_SunflowerAM01_Name",
+        "StarBoxReward": {
+            "10": "SunflowerM01BOX01",
+            "20": "SunflowerM01BOX02",
+            "30": "SunflowerM01BOX03"
+        },
+        "SubPoint": [
+            "SunflowerM01S01",
+            "SunflowerM01S02",
+            "SunflowerM01S03",
+            "SunflowerM01S04",
+            "SunflowerM01S05",
+            "SunflowerM01S06",
+            "SunflowerM01S07",
+            "SunflowerM01S08",
+            "SunflowerM01S09",
+            "SunflowerM01S10",
+            "SunflowerM01S11",
+            "SunflowerM01S12"
+        ],
+        "SubStoryPoint": [
+            "SunflowerS01S01",
+            "SunflowerS01S02"
+        ],
+        "Type": "NORMAL"
     }
 }

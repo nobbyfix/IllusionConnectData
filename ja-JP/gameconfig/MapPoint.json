@@ -2944,7 +2944,7 @@
             "Egypt_1_FaZhen1"
         ],
         "OnceObject": "",
-        "OpenType": 1,
+        "OpenType": "",
         "PlayerPos": {
             "1": {
                 "Direction": "Left",
@@ -2988,7 +2988,10 @@
             "MapGuide": 90
         },
         "UnlockCondition": {
-            "LEVEL": 99
+            "LEVEL": 48,
+            "PREPOINT": {
+                "Japan_4": 1
+            }
         },
         "WeekRecommend": [
             2,
@@ -3258,7 +3261,7 @@
             "Egypt_2_StoryBoss1"
         ],
         "OnceObject": "",
-        "OpenType": "",
+        "OpenType": 1,
         "PlayerPos": {
             "1": {
                 "Direction": "Left",

@@ -728,6 +728,16 @@ function BagMediator:updateDescLabel(detailArea, item)
 	end
 
 	local descScrollView = detailArea.descScrollView
+	local result, tipsCode = self._bagSystem:canUse({
+		item = item
+	})
+
+	if not result then
+		descScrollView:setContentSize(cc.size(descScrollView:getContentSize().width, 124))
+	else
+		descScrollView:setContentSize(cc.size(descScrollView:getContentSize().width, 144))
+	end
+
 	local size = descScrollView:getContentSize()
 	size.height = funcLabel:getContentSize().height + 10
 	size.height = size.height + descLabel:getContentSize().height + 10

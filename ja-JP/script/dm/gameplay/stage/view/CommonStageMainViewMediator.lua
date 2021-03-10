@@ -1086,7 +1086,22 @@ function CommonStageMainViewMediator:setupCooperateBossShow()
 			playerNameText:setString(info.name)
 			bossNameText:setString(self._cooperateBossSystem:getBossName(info.confId))
 			bossLvText:setString("Lv." .. info.lv)
-			bg:loadTexture(self._cooperateBossSystem:getInviteBossTabImage(info.lv), ccui.TextureResType.localType)
+
+			local pic, animName = self._cooperateBossSystem:getInviteBossTabImage(info.lv)
+
+			bg:loadTexture(pic, ccui.TextureResType.localType)
+
+			if animName and animName ~= "" then
+				local animNode = item:getChildByFullName("invitePanel")
+
+				animNode:removeChildByName("FrameFX")
+
+				local anim = cc.MovieClip:create(animName)
+
+				anim:addTo(animNode):center(animNode:getContentSize()):offset(0, 5)
+				anim:setName("FrameFX")
+			end
+
 			item:getChildByFullName("invitePanel.info"):setVisible(false)
 
 			local heroSprite = IconFactory:createRoleIconSprite({

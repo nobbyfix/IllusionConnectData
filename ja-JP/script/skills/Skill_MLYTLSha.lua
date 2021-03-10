@@ -476,7 +476,7 @@ all.Skill_MLYTLSha_Passive_Key = {
 			local global = _env.global
 			local x = global.FriendUnits(_env, global.MARKED(_env, "MLYTLSha"))
 
-			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and x[1] ~= nil then
+			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.MARKED(_env, "MLYTLSha")(_env, _env.ACTOR) and x[1] ~= nil then
 				local buffeft1 = global.NumericEffect(_env, "+hurtrate", {
 					"+Normal",
 					"+Normal"

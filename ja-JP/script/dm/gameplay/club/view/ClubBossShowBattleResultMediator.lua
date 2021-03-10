@@ -58,18 +58,6 @@ function ClubBossShowBattleResultMediator:refreshView()
 	local pointName = self._winPanel:getChildByFullName("bossPanel.pointName")
 	local hpbar = self._winPanel:getChildByFullName("bossPanel.LoadingBar")
 	local rate = self._winPanel:getChildByFullName("bossPanel.rate")
-
-	if self._data.enemyRatio then
-		local rateNum = self._data.enemyRatio * 100
-
-		if rateNum < 1 and rateNum > 0 then
-			rateNum = 1
-		end
-
-		hpbar:setPercent(rateNum)
-		rate:setString(string.format("%.1f", rateNum) .. "%")
-	end
-
 	local anim = cc.MovieClip:create("tiaozhanjieshu_fubenjiesuan")
 
 	anim:addEndCallback(function ()
@@ -123,6 +111,21 @@ function ClubBossShowBattleResultMediator:refreshView()
 		end
 
 		pointName:setString(pointNameStr)
+
+		if self._data.enemyRatio then
+			local rateNum = self._data.enemyRatio * 100
+
+			if rateNum < 1 and rateNum > 0 then
+				rateNum = 1
+			end
+
+			hpbar:setPercent(rateNum)
+
+			local maxHp = math.floor(currentBossPoint:getBossHp() + 0.5)
+			local curHp = math.floor(maxHp * self._data.enemyRatio + 0.5)
+
+			rate:setString(tostring(curHp) .. "/" .. tostring(maxHp))
+		end
 	end
 
 	if model then

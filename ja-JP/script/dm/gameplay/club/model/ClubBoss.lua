@@ -75,6 +75,9 @@ ClubBoss:has("_lastFightTime", {
 ClubBoss:has("_name", {
 	is = "r"
 })
+ClubBoss:has("_monsterHpAddRate", {
+	is = "r"
+})
 
 function ClubBoss:initialize()
 	super.initialize(self)
@@ -104,6 +107,8 @@ function ClubBoss:initialize()
 end
 
 function ClubBoss:sync(data, scoreData)
+	dump(data, "data >>>>>>>>>>>")
+
 	if data.open ~= nil then
 		self._open = data.open
 	end
@@ -136,11 +141,16 @@ function ClubBoss:sync(data, scoreData)
 		self._passAll = data.passAll
 	end
 
+	if data.monsterHpAddRate then
+		self._monsterHpAddRate = data.monsterHpAddRate
+	end
+
 	if data.gates then
 		for index, dataValue in pairs(data.gates) do
 			local oneBossPoint = ClubBossPoint:new(index)
 
 			oneBossPoint:setClubBlockId(dataValue)
+			oneBossPoint:setMonsterHpAddRate(self._monsterHpAddRate)
 
 			self._allBossPoints[index] = oneBossPoint
 		end
@@ -152,6 +162,7 @@ function ClubBoss:sync(data, scoreData)
 				local oneBossPoint = ClubBossPoint:new(index)
 
 				oneBossPoint:syncPassInfo(dataValue)
+				oneBossPoint:setMonsterHpAddRate(self._monsterHpAddRate)
 
 				self._allBossPoints[index] = oneBossPoint
 			else
@@ -413,6 +424,9 @@ ClubBossPoint:has("_tableConfig", {
 ClubBossPoint:has("_blockId", {
 	is = "r"
 })
+ClubBossPoint:has("_monsterHpAddRate", {
+	is = "r"
+})
 
 function ClubBossPoint:initialize(pointId)
 	super.initialize(self)
@@ -432,6 +446,10 @@ end
 
 function ClubBossPoint:setClubBlockId(blockId)
 	self._blockId = blockId
+end
+
+function ClubBossPoint:setMonsterHpAddRate(rate)
+	self._monsterHpAddRate = rate
 end
 
 function ClubBossPoint:syncPassInfo(data)
@@ -506,6 +524,22 @@ function ClubBossPoint:getBlockConfig()
 	local config = ConfigReader:getRecordById("ClubBlockBattle", self._blockId)
 
 	return config
+end
+
+function ClubBossPoint:getBossHp()
+	local config = self:getBlockConfig()
+	local masterHp = ConfigReader:getDataByNameIdAndKey("EnemyMaster", config.EnemyMaster, "Hp")
+	local hp = masterHp * self._tableConfig.BattleFactor[3]
+
+	if self._monsterHpAddRate > 0 then
+		local clubBossStandard = ConfigReader:getDataByNameIdAndKey("ConfigValue", "ClubBoss_Standard", "content")
+
+		if self._tableConfig.Num <= clubBossStandard then
+			hp = hp * (1 + self._monsterHpAddRate)
+		end
+	end
+
+	return hp
 end
 
 ClubBossTip = class("ClubBossTip", objectlua.Object, _M)

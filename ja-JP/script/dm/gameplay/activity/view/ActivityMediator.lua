@@ -144,6 +144,8 @@ function ActivityMediator:updateTabController()
 			name2Text:setString(name2Str)
 		end
 
+		dump(activityId, "activityId >>>>>>>")
+		dump(imageName, "imageName >>>>>>>")
 		btn:getChildByName("image"):loadTexture(imageName, ccui.TextureResType.plistType)
 
 		local node = RedPoint:createDefaultNode()

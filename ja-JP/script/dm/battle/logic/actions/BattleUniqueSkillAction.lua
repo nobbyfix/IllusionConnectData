@@ -137,6 +137,9 @@ function BattleUniqueSkillAction:doSkill()
 	local skillSystem = battleContext:getObject("SkillSystem")
 
 	skillSystem:activateSpecificTrigger(actor, "BEFORE_UNIQUE")
+	skillSystem:activateGlobalTrigger("UNIT_BEFORE_UNIQUE", {
+		unit = actor
+	})
 
 	local skillAction = skill and skill:getEntryAction()
 

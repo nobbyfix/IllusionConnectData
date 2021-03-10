@@ -931,6 +931,12 @@ function BattleRoleObject:stackBuff(args)
 	if buffModel.Icon and buffModel.Icon ~= "" then
 		self._iconBar:stackBuff(args.buffId, args.dur, args.times)
 	end
+
+	local loopMode = buffModel.Loop
+
+	if not loopMode or loopMode ~= 1 then
+		self:addBuff(args)
+	end
 end
 
 function BattleRoleObject:refreshBuffEffect()

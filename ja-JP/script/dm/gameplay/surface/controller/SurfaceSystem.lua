@@ -73,6 +73,16 @@ function SurfaceSystem:getSurfaceById(id)
 	return self:getSurfaces()[id]
 end
 
+function SurfaceSystem:hasHeroSkin(id)
+	local surface = self:getSurfaceById(id)
+
+	if surface then
+		return surface:getUnlock()
+	end
+
+	return false
+end
+
 function SurfaceSystem:getSurfaces()
 	return self._surfaceList:getSurfaces()
 end

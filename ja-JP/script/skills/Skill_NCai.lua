@@ -26,7 +26,7 @@ all.Skill_NCai_Normal = {
 			entry = prototype.main
 		})
 		this.main = global["[duration]"](this, {
-			1034
+			834
 		}, main)
 
 		return this
@@ -55,7 +55,7 @@ all.Skill_NCai_Normal = {
 			global.AssignRoles(_env, _env.TARGET, "target")
 		end)
 		exec["@time"]({
-			600
+			434
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
@@ -83,17 +83,26 @@ all.Skill_NCai_Proud = {
 		if this.dmgFactor == nil then
 			this.dmgFactor = {
 				1,
-				1,
+				1.5,
 				0
 			}
+		end
+
+		this.DazeProb = externs.DazeProb
+
+		if this.DazeProb == nil then
+			this.DazeProb = 0.2
 		end
 
 		local main = __action(this, {
 			name = "main",
 			entry = prototype.main
 		})
-		this.main = global["[duration]"](this, {
-			1034
+		main = global["[duration]"](this, {
+			1167
+		}, main)
+		this.main = global["[proud]"](this, {
+			"Hero_Proud_NCai"
 		}, main)
 
 		return this
@@ -122,7 +131,7 @@ all.Skill_NCai_Proud = {
 			global.AssignRoles(_env, _env.TARGET, "target")
 		end)
 		exec["@time"]({
-			600
+			567
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
@@ -133,6 +142,28 @@ all.Skill_NCai_Proud = {
 			local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, this.dmgFactor)
 
 			global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage)
+
+			local buffeft = global.Daze(_env)
+			local attacker = global.LoadUnit(_env, _env.ACTOR, "ATTACKER")
+			local defender = global.LoadUnit(_env, _env.TARGET, "DEFENDER")
+			local prob = global.EvalProb1(_env, attacker, defender, this.DazeProb, 0)
+
+			if global.ProbTest(_env, prob) then
+				global.ApplyBuff_Debuff(_env, _env.ACTOR, _env.TARGET, {
+					timing = 2,
+					duration = 1,
+					display = "Daze",
+					tags = {
+						"STATUS",
+						"DEBUFF",
+						"DAZE",
+						"DISPELLABLE",
+						"NCai_Unique"
+					}
+				}, {
+					buffeft
+				}, 1, 0)
+			end
 		end)
 
 		return _env
@@ -150,17 +181,26 @@ all.Skill_NCai_Unique = {
 		if this.dmgFactor == nil then
 			this.dmgFactor = {
 				1,
-				3.6,
+				2.8,
 				0
 			}
+		end
+
+		this.ShieldFactor = externs.ShieldFactor
+
+		if this.ShieldFactor == nil then
+			this.ShieldFactor = 0.3
 		end
 
 		local main = __action(this, {
 			name = "main",
 			entry = prototype.main
 		})
-		this.main = global["[duration]"](this, {
-			2800
+		main = global["[duration]"](this, {
+			2733
+		}, main)
+		this.main = global["[cut_in]"](this, {
+			"1#Hero_Unique_NCai"
 		}, main)
 
 		return this
@@ -176,40 +216,31 @@ all.Skill_NCai_Unique = {
 		_env.TARGET = externs.TARGET
 
 		assert(_env.TARGET ~= nil, "External variable `TARGET` is not provided.")
-
-		_env.units = nil
-
 		exec["@time"]({
 			0
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			local buffeft1 = global.NumericEffect(_env, "+atkrate", {
-				"+Normal",
-				"+Normal"
-			}, 0)
+			_env.units = global.EnemyUnits(_env, global.ROW_OF(_env, _env.TARGET))
 
-			global.ApplyBuff(_env, _env.ACTOR, {
-				timing = 2,
-				duration = 1,
-				display = "Prepare",
-				tags = {
-					"PREPARE"
-				}
-			}, {
-				buffeft1
-			})
+			for _, unit in global.__iter__(_env.units) do
+				global.RetainObject(_env, unit)
+			end
+
+			global.GroundEft(_env, _env.ACTOR, "BGEffectBlack")
+			global.EnergyRestrain(_env, _env.ACTOR, _env.TARGET)
 		end)
 		exec["@time"]({
-			1000
+			900
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
 
-			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET, 0, nil), 100, "skill3"))
-
-			_env.units = global.EnemyUnits(_env, global.COL_OF(_env, _env.TARGET))
-
+			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.1, 80)
+			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET, nil, 2) + {
+				-1.5,
+				0
+			}, 100, "skill3"))
 			global.HarmTargetView(_env, _env.units)
 
 			for _, unit in global.__iter__(_env.units) do
@@ -217,10 +248,32 @@ all.Skill_NCai_Unique = {
 			end
 		end)
 		exec["@time"]({
-			2000
+			1767
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
+			local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.ACTOR)
+			local atk = global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR)
+			local shield = global.ShieldEffect(_env, global.min(_env, maxHp * this.ShieldFactor, atk * 2))
+
+			for _, unit in global.__iter__(global.FriendUnits(_env, global.ONESELF(_env, _env.ACTOR) + global.MARKED(_env, "MASTER"))) do
+				global.ApplyBuff_Buff(_env, _env.ACTOR, unit, {
+					timing = 3,
+					display = "Shield",
+					group = "Skill_NCai_Unique",
+					duration = 2,
+					limit = 1,
+					tags = {
+						"NUMERIC",
+						"BUFF",
+						"SHIELD",
+						"DISPELLABLE",
+						"STEALABLE"
+					}
+				}, {
+					shield
+				}, 1)
+			end
 
 			for _, unit in global.__iter__(_env.units) do
 				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
@@ -228,14 +281,16 @@ all.Skill_NCai_Unique = {
 
 				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
 
-				global.ApplyAOEHPMultiDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, {
-					0,
-					400
-				}, global.SplitValue(_env, damage, {
-					0.47,
-					0.53
-				}))
+				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
 			end
+		end)
+		exec["@time"]({
+			2700
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.EnergyRestrainStop(_env, _env.ACTOR, _env.TARGET)
 		end)
 
 		return _env
@@ -248,24 +303,53 @@ all.Skill_NCai_Passive = {
 		local this = global.__skill({
 			global = global
 		}, prototype, externs)
-		local main = __action(this, {
-			name = "main",
-			entry = prototype.main
+		this.EnergyDown = externs.EnergyDown
+
+		if this.EnergyDown == nil then
+			this.EnergyDown = 4
+		end
+
+		local passive1 = __action(this, {
+			name = "passive1",
+			entry = prototype.passive1
 		})
-		this.main = global["[duration]"](this, {
+		passive1 = global["[duration]"](this, {
 			0
-		}, main)
+		}, passive1)
+		this.passive1 = global["[trigger_by]"](this, {
+			"SELF:ENTER"
+		}, passive1)
 
 		return this
 	end,
-	main = function (_env, externs)
+	passive1 = function (_env, externs)
 		local this = _env.this
 		local global = _env.global
 		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
 
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
 		exec["@time"]({
 			0
 		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local cards = global.Slice(_env, global.SortBy(_env, global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR)), ">", global.GetCardCost), 1, 1)
+
+			for _, card in global.__iter__(cards) do
+				local cost = global.GetCardCost(_env, card)
+				local cardvaluechange = global.CardCostEnchant(_env, "-", this.EnergyDown, 1)
+
+				global.ApplyEnchant(_env, global.GetOwner(_env, _env.ACTOR), card, {
+					tags = {
+						"CARDBUFF",
+						"Skill_NCai_Passive",
+						"UNDISPELLABLE"
+					}
+				}, {
+					cardvaluechange
+				})
+			end
 		end)
 
 		return _env
@@ -283,17 +367,26 @@ all.Skill_NCai_Proud_EX = {
 		if this.dmgFactor == nil then
 			this.dmgFactor = {
 				1,
-				1,
+				1.5,
 				0
 			}
+		end
+
+		this.DazeProb = externs.DazeProb
+
+		if this.DazeProb == nil then
+			this.DazeProb = 0.35
 		end
 
 		local main = __action(this, {
 			name = "main",
 			entry = prototype.main
 		})
-		this.main = global["[duration]"](this, {
-			1034
+		main = global["[duration]"](this, {
+			1167
+		}, main)
+		this.main = global["[proud]"](this, {
+			"Hero_Proud_NCai"
 		}, main)
 
 		return this
@@ -322,7 +415,7 @@ all.Skill_NCai_Proud_EX = {
 			global.AssignRoles(_env, _env.TARGET, "target")
 		end)
 		exec["@time"]({
-			600
+			567
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
@@ -333,6 +426,28 @@ all.Skill_NCai_Proud_EX = {
 			local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, this.dmgFactor)
 
 			global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage)
+
+			local buffeft = global.Daze(_env)
+			local attacker = global.LoadUnit(_env, _env.ACTOR, "ATTACKER")
+			local defender = global.LoadUnit(_env, _env.TARGET, "DEFENDER")
+			local prob = global.EvalProb1(_env, attacker, defender, this.DazeProb, 0)
+
+			if global.ProbTest(_env, prob) then
+				global.ApplyBuff_Debuff(_env, _env.ACTOR, _env.TARGET, {
+					timing = 2,
+					duration = 1,
+					display = "Daze",
+					tags = {
+						"STATUS",
+						"DEBUFF",
+						"DAZE",
+						"DISPELLABLE",
+						"NCai_Unique"
+					}
+				}, {
+					buffeft
+				}, 1, 0)
+			end
 		end)
 
 		return _env
@@ -350,17 +465,26 @@ all.Skill_NCai_Unique_EX = {
 		if this.dmgFactor == nil then
 			this.dmgFactor = {
 				1,
-				3.6,
+				2.8,
 				0
 			}
+		end
+
+		this.ShieldFactor = externs.ShieldFactor
+
+		if this.ShieldFactor == nil then
+			this.ShieldFactor = 0.45
 		end
 
 		local main = __action(this, {
 			name = "main",
 			entry = prototype.main
 		})
-		this.main = global["[duration]"](this, {
-			2800
+		main = global["[duration]"](this, {
+			2733
+		}, main)
+		this.main = global["[cut_in]"](this, {
+			"1#Hero_Unique_NCai"
 		}, main)
 
 		return this
@@ -376,40 +500,31 @@ all.Skill_NCai_Unique_EX = {
 		_env.TARGET = externs.TARGET
 
 		assert(_env.TARGET ~= nil, "External variable `TARGET` is not provided.")
-
-		_env.units = nil
-
 		exec["@time"]({
 			0
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			local buffeft1 = global.NumericEffect(_env, "+atkrate", {
-				"+Normal",
-				"+Normal"
-			}, 0)
+			_env.units = global.EnemyUnits(_env, global.ROW_OF(_env, _env.TARGET))
 
-			global.ApplyBuff(_env, _env.ACTOR, {
-				timing = 2,
-				duration = 1,
-				display = "Prepare",
-				tags = {
-					"PREPARE"
-				}
-			}, {
-				buffeft1
-			})
+			for _, unit in global.__iter__(_env.units) do
+				global.RetainObject(_env, unit)
+			end
+
+			global.GroundEft(_env, _env.ACTOR, "BGEffectBlack")
+			global.EnergyRestrain(_env, _env.ACTOR, _env.TARGET)
 		end)
 		exec["@time"]({
-			1000
+			900
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
 
-			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET, 0, nil), 100, "skill3"))
-
-			_env.units = global.EnemyUnits(_env, global.COL_OF(_env, _env.TARGET))
-
+			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.1, 80)
+			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET, nil, 2) + {
+				-1.5,
+				0
+			}, 100, "skill3"))
 			global.HarmTargetView(_env, _env.units)
 
 			for _, unit in global.__iter__(_env.units) do
@@ -417,10 +532,32 @@ all.Skill_NCai_Unique_EX = {
 			end
 		end)
 		exec["@time"]({
-			2000
+			1767
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
+			local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.ACTOR)
+			local atk = global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR)
+			local shield = global.ShieldEffect(_env, global.min(_env, maxHp * this.ShieldFactor, atk * 2))
+
+			for _, unit in global.__iter__(global.FriendUnits(_env, global.ONESELF(_env, _env.ACTOR) + global.MARKED(_env, "MASTER"))) do
+				global.ApplyBuff_Buff(_env, _env.ACTOR, unit, {
+					timing = 3,
+					display = "Shield",
+					group = "Skill_NCai_Unique",
+					duration = 2,
+					limit = 1,
+					tags = {
+						"NUMERIC",
+						"BUFF",
+						"SHIELD",
+						"DISPELLABLE",
+						"STEALABLE"
+					}
+				}, {
+					shield
+				}, 1)
+			end
 
 			for _, unit in global.__iter__(_env.units) do
 				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
@@ -428,14 +565,16 @@ all.Skill_NCai_Unique_EX = {
 
 				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
 
-				global.ApplyAOEHPMultiDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, {
-					0,
-					400
-				}, global.SplitValue(_env, damage, {
-					0.47,
-					0.53
-				}))
+				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
 			end
+		end)
+		exec["@time"]({
+			2700
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.EnergyRestrainStop(_env, _env.ACTOR, _env.TARGET)
 		end)
 
 		return _env
@@ -448,24 +587,53 @@ all.Skill_NCai_Passive_EX = {
 		local this = global.__skill({
 			global = global
 		}, prototype, externs)
-		local main = __action(this, {
-			name = "main",
-			entry = prototype.main
+		this.EnergyDown = externs.EnergyDown
+
+		if this.EnergyDown == nil then
+			this.EnergyDown = 5
+		end
+
+		local passive1 = __action(this, {
+			name = "passive1",
+			entry = prototype.passive1
 		})
-		this.main = global["[duration]"](this, {
+		passive1 = global["[duration]"](this, {
 			0
-		}, main)
+		}, passive1)
+		this.passive1 = global["[trigger_by]"](this, {
+			"SELF:ENTER"
+		}, passive1)
 
 		return this
 	end,
-	main = function (_env, externs)
+	passive1 = function (_env, externs)
 		local this = _env.this
 		local global = _env.global
 		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
 
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
 		exec["@time"]({
 			0
 		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local cards = global.Slice(_env, global.SortBy(_env, global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR)), ">", global.GetCardCost), 1, 1)
+
+			for _, card in global.__iter__(cards) do
+				local cost = global.GetCardCost(_env, card)
+				local cardvaluechange = global.CardCostEnchant(_env, "-", this.EnergyDown, 1)
+
+				global.ApplyEnchant(_env, global.GetOwner(_env, _env.ACTOR), card, {
+					tags = {
+						"CARDBUFF",
+						"Skill_NCai_Passive",
+						"UNDISPELLABLE"
+					}
+				}, {
+					cardvaluechange
+				})
+			end
 		end)
 
 		return _env

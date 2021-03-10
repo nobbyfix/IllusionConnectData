@@ -345,11 +345,14 @@ all.Skill_KTSJKe_Passive = {
 				})
 				local result = global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
 
-				global.AddAnim(_env, {
+				global.AnimForTrgt(_env, unit, {
 					loop = 1,
 					anim = "cisha_zhanshupai",
 					zOrder = "TopLayer",
-					pos = global.UnitPos(_env, unit)
+					pos = {
+						0.5,
+						-0.5
+					}
 				})
 			end
 		end)
@@ -677,11 +680,14 @@ all.Skill_KTSJKe_Passive_EX = {
 				})
 				local result = global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
 
-				global.AddAnim(_env, {
+				global.AnimForTrgt(_env, unit, {
 					loop = 1,
 					anim = "cisha_zhanshupai",
 					zOrder = "TopLayer",
-					pos = global.UnitPos(_env, unit)
+					pos = {
+						0.5,
+						-0.5
+					}
 				})
 			end
 		end)

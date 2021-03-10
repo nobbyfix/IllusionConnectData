@@ -1261,6 +1261,11 @@ local mappings = {
 		name = "ExtraRewardActivityMediator",
 		type = "@C"
 	},
+	ActivitySunflowerMainMediator = {
+		url = "dm.gameplay.activity.view.ActivitySunflowerMainMediator",
+		name = "ActivitySunflowerMainMediator",
+		type = "@C"
+	},
 	ActivitySagaSupportRankMediator = {
 		url = "dm.gameplay.activity.view.ActivitySagaSupportRankMediator",
 		name = "ActivitySagaSupportRankMediator",
@@ -1786,6 +1791,11 @@ local mappings = {
 		name = "ShopBuyPackageMediator",
 		type = "@C"
 	},
+	ShopCoopExchangeBuyMediator = {
+		url = "dm.gameplay.shop.view.ShopCoopExchangeBuyMediator",
+		name = "ShopCoopExchangeBuyMediator",
+		type = "@C"
+	},
 	ShopMonthCardMediator = {
 		url = "dm.gameplay.shop.view.ShopMonthCardMediator",
 		name = "ShopMonthCardMediator",
@@ -1829,6 +1839,11 @@ local mappings = {
 	ShopResetMediator = {
 		url = "dm.gameplay.shop.view.ShopResetMediator",
 		name = "ShopResetMediator",
+		type = "@C"
+	},
+	ShopCoopExchangeMediator = {
+		url = "dm.gameplay.shop.view.ShopCoopExchangeMediator",
+		name = "ShopCoopExchangeMediator",
 		type = "@C"
 	},
 	ShopBuyMonthCardFMediator = {
@@ -2599,6 +2614,11 @@ local mappings = {
 	StageBoxRewardMediator = {
 		url = "dm.gameplay.stage.view.StageBoxRewardMediator",
 		name = "StageBoxRewardMediator",
+		type = "@C"
+	},
+	ChangeTeamModelMediator = {
+		url = "dm.gameplay.stage.view.ChangeTeamModelMediator",
+		name = "ChangeTeamModelMediator",
 		type = "@C"
 	},
 	AlertGoStoryPopMediator = {

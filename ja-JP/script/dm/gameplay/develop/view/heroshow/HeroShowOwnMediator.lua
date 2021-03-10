@@ -1271,7 +1271,14 @@ function HeroShowOwnMediator:refreshName()
 
 	name:setString(nameString .. qualityLevel)
 	GameStyle:setHeroNameByQuality(name, self._heroData:getQuality(), 1)
-	nameBg:setScaleX((name:getContentSize().width + 90) / nameBg:getContentSize().width)
+
+	local width = name:getContentSize().width
+
+	if name:getAutoRenderSize().width < name:getContentSize().width then
+		width = name:getAutoRenderSize().width
+	end
+
+	nameBg:setScaleX((width + 90) / nameBg:getContentSize().width)
 
 	local cvname = self._infoNode:getChildByFullName("cvname.cvname")
 	local cvNameString = self._heroData:getCVName()

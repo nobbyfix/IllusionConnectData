@@ -736,7 +736,7 @@
         "Icon": "",
         "IsPlay": "",
         "Link": "",
-        "LongDesc": "DreamChallenge_Unlock_Name",
+        "LongDesc": "DreamChallenge_LongDesc",
         "Name": "DreamChallenge_Unlock_Name",
         "OutputDesc": "",
         "ResourcesBanner": "",
@@ -1478,6 +1478,24 @@
             "LEVEL": 100
         },
         "Tip": "Unlock_Joking_Tips",
+        "UnlockAnima": "",
+        "UnlockDesc": ""
+    },
+    "QuickChallenge": {
+        "Condition": {
+            "STAGE": "M09S40"
+        },
+        "Icon": "",
+        "IsPlay": "",
+        "Link": "",
+        "LongDesc": "",
+        "Name": "QuickChanllenge_Name",
+        "OutputDesc": "",
+        "ResourcesBanner": "",
+        "ShowCondition": {
+            "STAGE": "M09S40"
+        },
+        "Tip": "Unlock_Stage_Tips",
         "UnlockAnima": "",
         "UnlockDesc": ""
     },

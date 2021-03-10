@@ -61,8 +61,6 @@ end
 
 function MailService:requestGetUnreadMailCnt(params, blockUI, callback)
 	local request = self:newRequest(opType.getUnreadMailCnt, params, function (response)
-		dump(response, "getUnreadMailCnt")
-
 		if callback then
 			callback(response)
 		end

@@ -398,6 +398,61 @@
         "UI": "TaskElite",
         "Version": ""
     },
+    "ActivityAwake_MTZMEShi_DailyTask": {
+        "ActivityConfig": {
+            "IsTimeClose": 1,
+            "ModelId": "Model_MTZMEShi",
+            "ModelPos": [
+                300,
+                160
+            ],
+            "ModelScale": 0.8,
+            "TaskTopUI": "hd_txt_czzl",
+            "task": [
+                "Activity_MTZMEShiTask_1",
+                "Activity_MTZMEShiTask_2",
+                "Activity_MTZMEShiTask_3",
+                "Activity_MTZMEShiTask_4",
+                "Activity_MTZMEShiTask_5",
+                "Activity_MTZMEShiTask_6",
+                "Activity_MTZMEShiTask_7",
+                "Activity_MTZMEShiTask_8",
+                "Activity_MTZMEShiTask_9",
+                "Activity_MTZMEShiTask_10",
+                "Activity_MTZMEShiTask_11",
+                "Activity_MTZMEShiTask_12"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "ActivityAwake_DailyTask_Desc",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "hd_btn_tmxh",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 1,
+        "MailId": "Mail_Awake_DailyTask_Activity",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1114,
+        "ShowTab": 1,
+        "Tag": "WONDERFUL",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-03-19 05:00:00",
+            "start": [
+                "2021-03-12 05:00:00",
+                "2021-03-19 05:00:00"
+            ]
+        },
+        "Title": "ActivityAwake_DailyTask_Name",
+        "Type": "TASK",
+        "UI": "TaskElite",
+        "Version": ""
+    },
     "ActivityAwake_NXYYi_DailyTask": {
         "ActivityConfig": {
             "IsTimeClose": 1,
@@ -5397,6 +5452,435 @@
         "UI": "ACTIVITYBLOCKMAP",
         "Version": ""
     },
+    "ActivityBlock_Sunflower": {
+        "ActivityConfig": {
+            "Activity": [
+                "ActivityBlock_Sunflower_Map",
+                "ActivityBlock_Sunflower_DailyTask",
+                "ActivityBlock_Sunflower_AchieveMentTask"
+            ],
+            "ActivityStaminaId": "IR_SunflowerStamina",
+            "Bmg": "scene_main_sunflower",
+            "BonusHero": [
+                "FGao",
+                "NCai"
+            ],
+            "ButtonIcon": "sunflower_btn_zy_dh",
+            "ButtonText": "ActivityBlock_Sunflower_Exchange",
+            "ExchangeUrl": "view://ActivityView&id=ActivityBlock_Sunflower_Exchange",
+            "JumpActivityId": "ActivityBlock_Sunflower_Exchange",
+            "Logo": "sunflower_txt_zy_rukou",
+            "ModelId": [
+                {
+                    "desc": "AB_Sunflower_Model_Desc1",
+                    "model": "FGao",
+                    "type": "Hero",
+                    "url": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_FGao_20210310_1"
+                },
+                {
+                    "desc": "AB_Sunflower_Model_Desc2",
+                    "model": "NCai",
+                    "type": "Hero",
+                    "url": "view://ActivityView&id=ActivityBlock_Sunflower_Exchange"
+                }
+            ],
+            "RedPointRelatedActivity": [
+                "ActivityBlock_Sunflower_Exchange"
+            ],
+            "ResourcesBanner": [
+                "IR_Gold",
+                "IR_Crystal",
+                "IR_SunflowerStamina",
+                "IR_Diamond"
+            ],
+            "RuleDesc": [
+                "ActivityTotal_Sunflower_RuleDesc_1",
+                "ActivityTotal_Sunflower_RuleDesc_2",
+                "ActivityTotal_Sunflower_RuleDesc_3",
+                "ActivityTotal_Sunflower_RuleDesc_4"
+            ],
+            "SubActivityEndTip": "SubActivity_Sunflower_AB_1st",
+            "bgm": "Mus_Story_VanGogh_Egypt"
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 2008,
+        "ShowTab": 2,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-03-26 05:00:00",
+            "start": [
+                "2021-03-17 05:00:00",
+                "2021-03-26 05:00:00"
+            ]
+        },
+        "Title": "ActivityBlock_Sunflower_Name",
+        "Type": "ActivityBlock",
+        "UI": "ACTIVITYSUNFLOWER",
+        "Version": ""
+    },
+    "ActivityBlock_Sunflower_AchieveMentTask": {
+        "ActivityConfig": {
+            "Bmg": "renwu_bd_bj",
+            "ShowProgress": 1,
+            "entitle": "HalloweenAchieveMentTask_entitle",
+            "task": [
+                "Sunflower_AchieveMentTask_01",
+                "Sunflower_AchieveMentTask_02",
+                "Sunflower_AchieveMentTask_03",
+                "Sunflower_AchieveMentTask_04",
+                "Sunflower_AchieveMentTask_05",
+                "Sunflower_AchieveMentTask_06",
+                "Sunflower_AchieveMentTask_07",
+                "Sunflower_AchieveMentTask_08",
+                "Sunflower_AchieveMentTask_09",
+                "Sunflower_AchieveMentTask_10",
+                "Sunflower_AchieveMentTask_11",
+                "Sunflower_AchieveMentTask_12",
+                "Sunflower_AchieveMentTask_13",
+                "Sunflower_AchieveMentTask_14",
+                "Sunflower_AchieveMentTask_15"
+            ],
+            "titleImg": "sunflower_txt_renwu_bg2"
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 1,
+        "MailId": "Mail_Sunflower_AchieveMentTask_Activity",
+        "Primary": 0,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 2011,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-03-26 05:00:00",
+            "start": [
+                "2021-03-17 05:00:00",
+                "2021-03-26 05:00:00"
+            ]
+        },
+        "Title": "ActivityBlock_Sunflower_AchieveMentTask_Name",
+        "Type": "TASK",
+        "UI": "ABACHIEVEMENTTASK",
+        "Version": ""
+    },
+    "ActivityBlock_Sunflower_DailyTask": {
+        "ActivityConfig": {
+            "Bmg": "renwu_bd_bj",
+            "entitle": "ABDailyTask_Sunflower_entitle",
+            "task": [
+                "Sunflower_DailyTask_01",
+                "Sunflower_DailyTask_02",
+                "Sunflower_DailyTask_03",
+                "Sunflower_DailyTask_04",
+                "Sunflower_DailyTask_05",
+                "Sunflower_DailyTask_06"
+            ],
+            "titleImg": "sunflower_txt_renwu_bg1"
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 1,
+        "MailId": "Mail_Sunflower_DailyTask_Activity",
+        "Primary": 0,
+        "Reset": 1,
+        "ServerCondition": "",
+        "ShowIndex": 2010,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-03-26 05:00:00",
+            "start": [
+                "2021-03-17 05:00:00",
+                "2021-03-26 05:00:00"
+            ]
+        },
+        "Title": "ActivityBlock_Sunflower_DailyTask_Name",
+        "Type": "TASK",
+        "UI": "ABDAILYTASK",
+        "Version": ""
+    },
+    "ActivityBlock_Sunflower_Exchange": {
+        "ActivityConfig": {
+            "BubleDesc": [
+                "ActivityBlock_Sunflower_Buble_1",
+                "ActivityBlock_Sunflower_Buble_2",
+                "ActivityBlock_Sunflower_Buble_3",
+                "ActivityBlock_Sunflower_Buble_4",
+                "ActivityBlock_Sunflower_Buble_5"
+            ],
+            "ModelId": "Model_FGao",
+            "ModelIdOffset": {
+                "pos": [
+                    500,
+                    140
+                ],
+                "scale": 1
+            },
+            "TaskBgUI": "sunflower_img_14qd_ljdl_2",
+            "TaskCellArrow": "sunflower_img_dh_jt",
+            "TaskCellBg": "sunflower_ing_dh_di",
+            "TaskTopUI": "sunflower_txt_dh_logo",
+            "TaskTopUIPos": {
+                "x": "397",
+                "y": "525"
+            },
+            "exchange": [
+                "ActivityBlock_Sunflower_Exchange_1",
+                "ActivityBlock_Sunflower_Exchange_2",
+                "ActivityBlock_Sunflower_Exchange_3",
+                "ActivityBlock_Sunflower_Exchange_4",
+                "ActivityBlock_Sunflower_Exchange_5",
+                "ActivityBlock_Sunflower_Exchange_6",
+                "ActivityBlock_Sunflower_Exchange_7",
+                "ActivityBlock_Sunflower_Exchange_8",
+                "ActivityBlock_Sunflower_Exchange_9",
+                "ActivityBlock_Sunflower_Exchange_10",
+                "ActivityBlock_Sunflower_Exchange_11",
+                "ActivityBlock_Sunflower_Exchange_12"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "ActivityBlock_Sunflower_Exchange_Desc",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "sunflower_btn_dh_anniu",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 1,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 2016,
+        "ShowTab": 1,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-03-26 05:00:00",
+            "start": [
+                "2021-03-17 05:00:00",
+                "2021-03-26 05:00:00"
+            ]
+        },
+        "Title": "ActivityBlock_Sunflower_Exchange_Title",
+        "Type": "EXCHANGE",
+        "UI": "Exchange",
+        "Version": ""
+    },
+    "ActivityBlock_Sunflower_ExtraMap": {
+        "ActivityConfig": {
+            "Reward": "Sunflower_Stamina_ExtraMap_R",
+            "block": [
+                "Map"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 2013,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-03-26 05:00:00",
+            "start": [
+                "2021-03-17 05:00:00",
+                "2021-03-26 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "ExtraReward",
+        "UI": "ExtraRewardBoard",
+        "Version": ""
+    },
+    "ActivityBlock_Sunflower_ExtraNormal": {
+        "ActivityConfig": {
+            "Reward": "Sunflower_Stamina_ExtraNormal_R",
+            "block": [
+                "Normal",
+                "Elite"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 2012,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-03-26 05:00:00",
+            "start": [
+                "2021-03-17 05:00:00",
+                "2021-03-26 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "ExtraReward",
+        "UI": "ExtraRewardBoard",
+        "Version": ""
+    },
+    "ActivityBlock_Sunflower_ExtraSorce": {
+        "ActivityConfig": {
+            "Reward": "Sunflower_Stamina_ExtraSource_R",
+            "block": [
+                "GOLD",
+                "EXP",
+                "CRYSTAL"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 2014,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-03-26 05:00:00",
+            "start": [
+                "2021-03-17 05:00:00",
+                "2021-03-26 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "ExtraReward",
+        "UI": "ExtraRewardBoard",
+        "Version": ""
+    },
+    "ActivityBlock_Sunflower_Map": {
+        "ActivityConfig": {
+            "ActivityBlockMap": {
+                "Elite": [
+                    "SunflowerE01"
+                ],
+                "Normal": [
+                    "SunflowerM01"
+                ]
+            },
+            "BonusHero": [
+                "FGao",
+                "NCai"
+            ],
+            "BonusHeroDesc": [
+                "ABMap_Sunflower_RuleDesc_1",
+                "ABMap_Sunflower_RuleDesc_2",
+                "ABMap_Sunflower_RuleDesc_3",
+                "ABMap_Sunflower_RuleDesc_4",
+                "ABMap_Sunflower_RuleDesc_5",
+                "ABMap_Sunflower_RuleDesc_6",
+                "ABMap_Sunflower_RuleDesc_7",
+                "ABMap_Sunflower_RuleDesc_8"
+            ],
+            "ButtonIcon": "sunflower_btn_zy_rukou",
+            "ChangeBtnImg": {
+                "ELITE": "sunflower_btn_fbgq_kn.png",
+                "NORMAL": "sunflower_btn_fbgq_pt.png"
+            },
+            "ResourcesBanner": [
+                "IR_Gold",
+                "IR_Crystal",
+                "IR_SunflowerStamina",
+                "IR_Diamond"
+            ],
+            "ShowReward": "ShowReward_Sunflower_ABR"
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 0,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 2009,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-03-26 05:00:00",
+            "start": [
+                "2021-03-17 05:00:00",
+                "2021-03-26 05:00:00"
+            ]
+        },
+        "Title": "ActivityBlock_Sunflower_Map_Name",
+        "Type": "ActivityBlockMap",
+        "UI": "ACTIVITYBLOCKMAP",
+        "Version": ""
+    },
     "ActivityBlock_WuXiuHui_AchieveMentTask": {
         "ActivityConfig": {
             "Bmg": "renwu_bd_bj",
@@ -6721,6 +7205,7 @@
             "BossList": {
                 "CooperateBossMain_YLMGZhu": 1
             },
+            "ExchangeID": "CooperateBoss_Exchange_20200109",
             "LV": [
                 "CooperateBoss_1",
                 "CooperateBoss_2",
@@ -6831,6 +7316,7 @@
             "BossList": {
                 "CooperateBoss_KTSJKe": 1
             },
+            "ExchangeID": "CooperateBoss_Exchange_20210125",
             "LV": [
                 "CooperateBoss_20210125_1",
                 "CooperateBoss_20210125_2",
@@ -6951,6 +7437,7 @@
             "BossList": {
                 "CooperateBoss_ZZBBWei": 1
             },
+            "ExchangeID": "CooperateBoss_Exchange_20210210",
             "LV": [
                 "CooperateBoss_20210210_1",
                 "CooperateBoss_20210210_2",
@@ -7071,6 +7558,7 @@
             "BossList": {
                 "CooperateBoss_LFEr": 1
             },
+            "ExchangeID": "CooperateBoss_Exchange_20210223",
             "LV": [
                 "CooperateBoss_20210223_1",
                 "CooperateBoss_20210223_2",
@@ -7179,6 +7667,127 @@
             "start": [
                 "2021-02-22 05:00:00",
                 "2021-03-02 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "COOPERATEBOSS",
+        "UI": "COOPERATEBOSS",
+        "Version": ""
+    },
+    "CooperateBoss_20210312": {
+        "ActivityConfig": {
+            "BossList": {
+                "CooperateBoss_MTZMEShi": 1
+            },
+            "ExchangeID": "CooperateBoss_Exchange_20210312",
+            "LV": [
+                "CooperateBoss_20210312_1",
+                "CooperateBoss_20210312_2",
+                "CooperateBoss_20210312_3",
+                "CooperateBoss_20210312_4",
+                "CooperateBoss_20210312_5",
+                "CooperateBoss_20210312_6",
+                "CooperateBoss_20210312_7",
+                "CooperateBoss_20210312_8",
+                "CooperateBoss_20210312_9",
+                "CooperateBoss_20210312_10",
+                "CooperateBoss_20210312_11",
+                "CooperateBoss_20210312_12",
+                "CooperateBoss_20210312_13",
+                "CooperateBoss_20210312_14",
+                "CooperateBoss_20210312_15",
+                "CooperateBoss_20210312_16",
+                "CooperateBoss_20210312_17",
+                "CooperateBoss_20210312_18",
+                "CooperateBoss_20210312_19",
+                "CooperateBoss_20210312_20",
+                "CooperateBoss_20210312_21",
+                "CooperateBoss_20210312_22",
+                "CooperateBoss_20210312_23",
+                "CooperateBoss_20210312_24",
+                "CooperateBoss_20210312_25",
+                "CooperateBoss_20210312_26",
+                "CooperateBoss_20210312_27",
+                "CooperateBoss_20210312_28",
+                "CooperateBoss_20210312_29",
+                "CooperateBoss_20210312_30",
+                "CooperateBoss_20210312_31",
+                "CooperateBoss_20210312_32",
+                "CooperateBoss_20210312_33",
+                "CooperateBoss_20210312_34",
+                "CooperateBoss_20210312_35",
+                "CooperateBoss_20210312_36",
+                "CooperateBoss_20210312_37",
+                "CooperateBoss_20210312_38",
+                "CooperateBoss_20210312_39",
+                "CooperateBoss_20210312_40",
+                "CooperateBoss_20210312_41",
+                "CooperateBoss_20210312_42",
+                "CooperateBoss_20210312_43",
+                "CooperateBoss_20210312_44",
+                "CooperateBoss_20210312_45",
+                "CooperateBoss_20210312_46",
+                "CooperateBoss_20210312_47",
+                "CooperateBoss_20210312_48",
+                "CooperateBoss_20210312_49",
+                "CooperateBoss_20210312_50",
+                "CooperateBoss_20210312_51",
+                "CooperateBoss_20210312_52",
+                "CooperateBoss_20210312_53",
+                "CooperateBoss_20210312_54",
+                "CooperateBoss_20210312_55",
+                "CooperateBoss_20210312_56",
+                "CooperateBoss_20210312_57",
+                "CooperateBoss_20210312_58",
+                "CooperateBoss_20210312_59",
+                "CooperateBoss_20210312_60",
+                "CooperateBoss_20210312_61",
+                "CooperateBoss_20210312_62",
+                "CooperateBoss_20210312_63",
+                "CooperateBoss_20210312_64",
+                "CooperateBoss_20210312_65",
+                "CooperateBoss_20210312_66",
+                "CooperateBoss_20210312_67",
+                "CooperateBoss_20210312_68",
+                "CooperateBoss_20210312_69",
+                "CooperateBoss_20210312_70"
+            ],
+            "Revelry": [
+                "IR_CooperateBoss_Revelry",
+                10
+            ],
+            "RevelryList": {
+                "CooperateBossMain_1": 7,
+                "CooperateBossMain_2": 1
+            },
+            "Tigger": [
+                "IR_CooperateBoss_Normal",
+                50
+            ],
+            "TiggerItem": "IR_CooperateBoss_Normal",
+            "TiggerItemAwaken": "IR_CooperateBoss_Awaken"
+        },
+        "ClientCondition": "",
+        "Desc": "COOPERATEBOSS_Desc",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 1,
+        "MailId": "Mail_Activity_CooperateBoss",
+        "Primary": 1,
+        "Reset": 1,
+        "ServerCondition": "",
+        "ShowIndex": 11,
+        "ShowTab": 1,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE_TOP",
+        "TimeFactor": {
+            "end": "2021-03-19 05:00:00",
+            "start": [
+                "2021-03-11 05:00:00",
+                "2021-03-19 05:00:00"
             ]
         },
         "Title": "",
@@ -7383,6 +7992,57 @@
             "start": [
                 "2021-02-23 05:00:00",
                 "2021-03-02 05:00:00"
+            ]
+        },
+        "Title": "CooperateBoss_Exchange_Name",
+        "Type": "EXCHANGE",
+        "UI": "Exchange",
+        "Version": ""
+    },
+    "CooperateBoss_Exchange_20210312": {
+        "ActivityConfig": {
+            "BubleDesc": [
+                "CooperateBoss_Exchange_BBD_1",
+                "CooperateBoss_Exchange_BBD_2",
+                "CooperateBoss_Exchange_BBD_3",
+                "CooperateBoss_Exchange_BBD_4",
+                "CooperateBoss_Exchange_BBD_5"
+            ],
+            "ModelId": "Model_CLMan",
+            "TaskBgUI": "gongdou_img_dh_bg",
+            "TaskTopUI": "gongdou_img_dh_bt",
+            "exchange": [
+                "CooperateBoss_Exchange_20210312_1",
+                "CooperateBoss_Exchange_20210312_2",
+                "CooperateBoss_Exchange_20210312_3",
+                "CooperateBoss_Exchange_20210312_4",
+                "CooperateBoss_Exchange_20210312_5",
+                "CooperateBoss_Exchange_20210312_6",
+                "CooperateBoss_Exchange_20210312_7",
+                "CooperateBoss_Exchange_20210312_8"
+            ]
+        },
+        "ClientCondition": "",
+        "Desc": "CooperateBoss_Exchange_Desc",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "gongdou_btn_xtdh",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 93,
+        "ShowTab": 1,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-03-19 05:00:00",
+            "start": [
+                "2021-03-12 05:00:00",
+                "2021-03-19 05:00:00"
             ]
         },
         "Title": "CooperateBoss_Exchange_Name",
@@ -8383,6 +9043,115 @@
         "UI": "",
         "Version": ""
     },
+    "DrawCard_1UP_20210310_1_1_Activity": {
+        "ActivityConfig": {
+            "DRAW": "DrawCard_1UP_FGao_20210310_1",
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_FGao_20210310_1",
+            "VANISH": 0
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 104,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-03-25 05:00:00",
+            "start": [
+                "2021-03-17 05:00:00",
+                "2021-03-25 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "Version": ""
+    },
+    "DrawCard_1UP_20210310_1_Activity": {
+        "ActivityConfig": {
+            "DRAW": "DrawCard_1UP_DCJKang_20210310",
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_DCJKang_20210310",
+            "VANISH": 0
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 104,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-04-01 05:00:00",
+            "start": [
+                "2021-03-25 05:00:00",
+                "2021-04-01 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "Version": ""
+    },
+    "DrawCard_1UP_20210310_2_Activity": {
+        "ActivityConfig": {
+            "DRAW": "DrawCard_1UP_MLYTLSha_20210310",
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_MLYTLSha_20210310",
+            "VANISH": 0
+        },
+        "ClientCondition": {
+            "LEVEL": 1,
+            "REGISTER": 32
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 104,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-04-01 05:00:00",
+            "start": [
+                "2021-03-25 05:00:00",
+                "2021-04-01 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "Version": ""
+    },
     "DrawCard_1UP_2_Activity": {
         "ActivityConfig": {
             "DRAW": "DrawCard_1UP_2",
@@ -9052,6 +9821,80 @@
             "start": [
                 "2021-03-09 05:00:00",
                 "2021-03-17 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "Version": ""
+    },
+    "DrawCard_2UP_20210310_1_Activity": {
+        "ActivityConfig": {
+            "DRAW": "DrawCard_2UP_BBLMaSDTZi_20210310",
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_2UP_BBLMaSDTZi_20210310",
+            "VANISH": 0
+        },
+        "ClientCondition": {
+            "LEVEL": 1,
+            "REGISTER": 28
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 104,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-03-25 05:00:00",
+            "start": [
+                "2021-03-17 05:00:00",
+                "2021-03-25 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "Version": ""
+    },
+    "DrawCard_2UP_20210310_2_Activity": {
+        "ActivityConfig": {
+            "DRAW": "DrawCard_2UP_LCYShiBQDShe_20210310",
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_2UP_LCYShiBQDShe_20210310",
+            "VANISH": 0
+        },
+        "ClientCondition": {
+            "LEVEL": 1,
+            "REGISTER": 28
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 104,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-04-01 05:00:00",
+            "start": [
+                "2021-03-25 05:00:00",
+                "2021-04-01 05:00:00"
             ]
         },
         "Title": "",
@@ -10508,6 +11351,75 @@
         "UI": "EightLoginCommon",
         "Version": ""
     },
+    "EightDays_Sunflower": {
+        "ActivityConfig": {
+            "GetRewardClose": 1,
+            "IsTimeClose": 1,
+            "bmg": "sunflower_img_14qd_ljdl",
+            "cellBgImg": [
+                "sunflower_btn_14qd_ldj",
+                "sunflower_btn_14qd_ld_j",
+                "sunflower_btn_14qd_ld_wxz",
+                "sunflower_btn_14qd_ld_xz",
+                "sunflower_btn_14qd_ld_ylq"
+            ],
+            "cellTitleImg": "musicfestival_btn_14qd_ldi",
+            "descTxt": "Activity_Sunflower_Supply_Tips",
+            "showHero": {
+                "anim": "0",
+                "modelId": "Model_NCai",
+                "pos": {
+                    "x": "420",
+                    "y": "140"
+                },
+                "scale": "0.85"
+            },
+            "specailDay": [
+                4,
+                7
+            ],
+            "task": [
+                "Sunflower_Login_01",
+                "Sunflower_Login_02",
+                "Sunflower_Login_03",
+                "Sunflower_Login_04",
+                "Sunflower_Login_05",
+                "Sunflower_Login_06",
+                "Sunflower_Login_07"
+            ],
+            "titleImg": "sunflower_img_14qd_biaoti",
+            "titleTxt": "Activity_Sunflower_Supply_Title"
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "ActivityBlock_Login_Desc",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "sunflower_btn_14qd_anniu",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 1,
+        "MailId": "Mail_EightDays_Sunflower",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 2015,
+        "ShowTab": 1,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-03-26 05:00:00",
+            "start": [
+                "2021-03-17 05:00:00",
+                "2021-03-26 05:00:00"
+            ]
+        },
+        "Title": "EightDays_Sunflower_Name",
+        "Type": "TASK",
+        "UI": "Login14",
+        "Version": ""
+    },
     "EightDays_adult": {
         "ActivityConfig": {
             "Day8BgUI": [
@@ -10694,6 +11606,46 @@
             ]
         },
         "Title": "FestivalPackage_20210224_Valentine_Name",
+        "Type": "TPURCHASE",
+        "UI": "FESTIVALPACKAGE",
+        "Version": ""
+    },
+    "FestivalPackage_20210310_Valentine": {
+        "ActivityConfig": {
+            "PackType": "whiteday",
+            "TimePurchaseId": [
+                "PackageShop_20210317FGao_1",
+                "PackageShop_20210317FGao_2",
+                "PackageShop_20210317FGao_3"
+            ],
+            "UIBG": "jqtd_txt_ymzdbz_di"
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 999,
+        "ShowTab": 0,
+        "Tag": "RECOMMEND",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-03-24 05:00:00",
+            "start": [
+                "2021-03-17 05:00:00",
+                "2021-03-24 05:00:00"
+            ]
+        },
+        "Title": "FestivalPackage_20210310_Valentine_Name",
         "Type": "TPURCHASE",
         "UI": "FESTIVALPACKAGE",
         "Version": ""
@@ -11265,6 +12217,86 @@
             "start": [
                 "2018-03-05 05:00:00",
                 "2030-04-01 05:00:00"
+            ]
+        },
+        "Title": "Questionnaire_Name",
+        "Type": "Questionnaire",
+        "UI": "Questionnaire",
+        "Version": ""
+    },
+    "Questionnaire_20210310_1": {
+        "ActivityConfig": {
+            "DesPng": "activityQuestionDes",
+            "Desc": "Questionnaire_UI_Desc1",
+            "IsTimeClose": 1,
+            "RoleModel": "Model_HSheng",
+            "Title": "Questionnaire_UI_Title",
+            "URL": "https://docs.google.com/forms/d/1EvSWLvYIRpOKwknBwYBqkbJq5g1-eg0q5WT-WrZxYDA/edit",
+            "reward": "QuestionReward_20210310_1"
+        },
+        "ClientCondition": {
+            "LEVEL": 10
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "hd_btn_dcwj",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 99999,
+        "ShowTab": 1,
+        "Tag": "",
+        "Time": "RANGE_RESTART_DIFF",
+        "TimeFactor": {
+            "duration": 2,
+            "start": [
+                "2021-03-12 05:00:00",
+                "2021-03-14 05:00:00"
+            ]
+        },
+        "Title": "Questionnaire_Name",
+        "Type": "Questionnaire",
+        "UI": "Questionnaire",
+        "Version": ""
+    },
+    "Questionnaire_20210310_2": {
+        "ActivityConfig": {
+            "DesPng": "activityQuestionDes",
+            "Desc": "Questionnaire_UI_Desc1",
+            "IsTimeClose": 1,
+            "RoleModel": "Model_HSheng",
+            "Title": "Questionnaire_UI_Title",
+            "URL": "https://docs.google.com/forms/d/1LIh8PpmH5O1_4YooHL9UKTv5KI0C0z2Rcfj4J1kiPBc/edit",
+            "reward": "QuestionReward_20210310_2"
+        },
+        "ClientCondition": {
+            "LEVEL": 10
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "hd_btn_dcwj",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 99999,
+        "ShowTab": 1,
+        "Tag": "",
+        "Time": "RANGE_RESTART_DIFF",
+        "TimeFactor": {
+            "duration": 2,
+            "start": [
+                "2021-03-18 05:00:00",
+                "2021-03-20 05:00:00"
             ]
         },
         "Title": "Questionnaire_Name",

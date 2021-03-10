@@ -93,7 +93,14 @@ function RecruitSystem:checkEnabled(data)
 					unlock, tips = self._systemKeeper:isUnlock(unlockKey)
 
 					if unlock then
-						return unlock, tips, recruitObj:getId()
+						if data.recruitType == RecruitPoolType.kClub or data.recruitType == RecruitPoolType.kPve or data.recruitType == RecruitPoolType.kPvp then
+							unlock = self:getActivityIsOpen(recruitObj:getId())
+							tips = Strings:get("DrewCard_Activity_Closed")
+						end
+
+						if unlock then
+							return unlock, tips, recruitObj:getId()
+						end
 					end
 				elseif recruitObj:getType() == RecruitPoolType.kActivity then
 					local unlock = self:getActivityIsOpen(recruitObj:getId())

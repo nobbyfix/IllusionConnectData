@@ -379,13 +379,15 @@ function LoginServerListMediator:createServerCell(data)
 				node:addTo(playerNode):center(playerNode:getContentSize())
 
 				local iconNode = node:getChildByFullName("icon")
-				local icon = IconFactory:createPlayerIcon({
-					clipType = 4,
+				local icon, oldIcon = IconFactory:createPlayerIcon({
 					frameStyle = 1,
-					id = cellData:getHeadId()
+					clipType = 4,
+					id = cellData:getHeadId(),
+					size = cc.size(82, 82)
 				})
 
-				icon:addTo(iconNode):center(iconNode:getContentSize()):setScale(0.7)
+				oldIcon:setScale(0.4)
+				icon:addTo(iconNode):center(iconNode:getContentSize()):setScale(0.8)
 				node:getChildByFullName("level"):setString(Strings:get("CUSTOM_FIGHT_LEVEL") .. cellData:getLevel())
 
 				local name = node:getChildByFullName("name")

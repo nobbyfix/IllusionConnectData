@@ -328,13 +328,16 @@ function BattleMainMediator:playGroundEffect(bgRes, align, animName, zoom, actId
 		bgEffect:setScale(zoom)
 		bgEffect:addEndCallback(function (cid, mc)
 			mc:stop()
-			background:stopAllActions()
-			background:runAction(cc.FadeTo:create(0.2, 0))
 
-			self._bgEffectLayer.bg = nil
+			if not extra or not extra.zorder or extra.zorder <= 0 then
+				background:stopAllActions()
+				background:runAction(cc.FadeTo:create(0.2, 0))
 
-			mc:removeFromParent(true)
-			self._bgEffectLayer:removeAllChildren()
+				self._bgEffectLayer.bg = nil
+
+				mc:removeFromParent(true)
+				self._bgEffectLayer:removeAllChildren()
+			end
 		end)
 	end
 

@@ -42,9 +42,10 @@ if app.reboot then
 		if runingScene then
 			local sprite = cc.Sprite:create("asset/scene/denglu_bg_new.jpg")
 
-			sprite:setPosition(cc.p(52, 40))
-			sprite:setPosition(cc.p(winSize.width / 2, winSize.height / 2))
-			runingScene:addChild(sprite)
+			if sprite then
+				sprite:setPosition(cc.p(winSize.width / 2, winSize.height / 2))
+				runingScene:addChild(sprite)
+			end
 		end
 
 		local param = {
@@ -65,9 +66,10 @@ if app.reboot then
 
 			local sprite = cc.Sprite:create("asset/scene/denglu_bg_new.jpg")
 
-			sprite:setPosition(cc.p(52, 40))
-			sprite:setPosition(cc.p(winSize.width / 2, winSize.height / 2))
-			scene:addChild(sprite)
+			if sprite then
+				sprite:setPosition(cc.p(winSize.width / 2, winSize.height / 2))
+				scene:addChild(sprite)
+			end
 		end
 
 		if runingScene then

@@ -28,14 +28,6 @@ function DiffCommand:execute(event)
 				end
 			end
 		end
-
-		if data.diff.player.stages then
-			stageSystem:syncStages(data.diff.player.stages)
-		end
-
-		if data.diff.player.pansLab then
-			mazeSystem:syncDiffMaze(data.diff.player.pansLab)
-		end
 	end
 
 	systemKeeper:backupUnlockSystem()

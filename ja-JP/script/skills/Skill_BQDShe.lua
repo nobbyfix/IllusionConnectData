@@ -627,7 +627,7 @@ all.Skill_BQDShe_Passive = {
 			100
 		}, passive2)
 		passive2 = global["[trigger_by]"](this, {
-			"SELF:UFF_STEALED"
+			"SELF:BUFF_STEALED"
 		}, passive2)
 		passive2 = global["[trigger_by]"](this, {
 			"SELF:BUFF_BROKED"
@@ -648,14 +648,17 @@ all.Skill_BQDShe_Passive = {
 		_env.ACTOR = externs.ACTOR
 
 		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.buff = externs.buff
+
+		assert(_env.buff ~= nil, "External variable `buff` is not provided.")
 		exec["@time"]({
 			0
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			local count = global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED_ANY(_env, "DAZE"))
 
-			if count ~= 0 and global.ProbTest(_env, 1) then
+			if global.BuffIsMatched(_env, _env.buff, "DAZE") then
 				local buffeft1 = global.NumericEffect(_env, "+unhurtrate", {
 					"+Normal",
 					"+Normal"
@@ -730,7 +733,7 @@ all.Skill_BQDShe_Passive_EX = {
 			100
 		}, passive2)
 		passive2 = global["[trigger_by]"](this, {
-			"SELF:UFF_STEALED"
+			"SELF:BUFF_STEALED"
 		}, passive2)
 		passive2 = global["[trigger_by]"](this, {
 			"SELF:BUFF_BROKED"
@@ -751,29 +754,32 @@ all.Skill_BQDShe_Passive_EX = {
 		_env.ACTOR = externs.ACTOR
 
 		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.buff = externs.buff
+
+		assert(_env.buff ~= nil, "External variable `buff` is not provided.")
 		exec["@time"]({
 			0
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			local count = global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED_ANY(_env, "DAZE"))
 
-			if count ~= 0 and global.ProbTest(_env, 1) then
+			if global.BuffIsMatched(_env, _env.buff, "DAZE") then
 				local buffeft1 = global.NumericEffect(_env, "+unhurtrate", {
 					"+Normal",
 					"+Normal"
-				}, 0.5)
+				}, 0.3)
 
 				global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
 					timing = 2,
 					display = "UnHurtRateUp",
-					group = "Skill_BQDShe_Passive_EX",
+					group = "Skill_BQDShe_Passive",
 					duration = 99,
 					limit = 1,
 					tags = {
 						"STATUS",
 						"NUMERIC",
-						"Skill_BQDShe_Passive_EX",
+						"Skill_BQDShe_Passive",
 						"UNDISPELLABLE",
 						"UNSTEALABLE"
 					}

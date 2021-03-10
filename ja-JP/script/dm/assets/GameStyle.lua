@@ -548,8 +548,7 @@ function GameStyle:getHeroNameColorByQuality(quality)
 end
 
 function GameStyle:setHeroNameByQuality(text, quality, width)
-	text:disableEffect(1)
-	text:setColor(self:getHeroNameColorByQuality(quality).color)
+	text:setTextColor(self:getHeroNameColorByQuality(quality).color)
 	text:enableOutline(self:getHeroNameColorByQuality(quality).outline, width or 1)
 end
 

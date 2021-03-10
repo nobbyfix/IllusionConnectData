@@ -20,6 +20,9 @@ local KMenu = {
 		},
 		{
 			title = Strings:get("Setting_Ui_Text_Awaken")
+		},
+		{
+			title = Strings:get("Setting_Ui_Text_skin")
 		}
 	},
 	[KTabType.FRAME] = {
@@ -105,6 +108,7 @@ function ChangeHeadImgMediator:getData()
 			local master = {}
 			local hero = {}
 			local awaken = {}
+			local skin = {}
 
 			for i = 1, #data do
 				local v = data[i]
@@ -115,6 +119,8 @@ function ChangeHeadImgMediator:getData()
 					master[#master + 1] = v
 				elseif v.config.Type == 4 then
 					awaken[#awaken + 1] = v
+				elseif v.config.Type == 5 then
+					skin[#skin + 1] = v
 				end
 
 				if tostring(v.id) == tostring(self._player:getHeadId()) then
@@ -126,7 +132,8 @@ function ChangeHeadImgMediator:getData()
 				data,
 				master,
 				hero,
-				awaken
+				awaken,
+				skin
 			}
 		end
 

@@ -271,6 +271,11 @@ local kExtResponseMap = {
 		instanceName = "RTPKSystem",
 		funcName = "tryEnter",
 		entry = ViewAreaEntry:new("RTPKMainView")
+	},
+	ShopCoopExchangeView = {
+		instanceName = "ActivitySystem",
+		funcName = "tryEnterCoopExchangeView",
+		entry = ViewAreaEntry:new("ShopCoopExchangeView")
 	}
 }
 

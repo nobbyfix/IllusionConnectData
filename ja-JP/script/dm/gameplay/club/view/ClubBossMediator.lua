@@ -229,7 +229,11 @@ function ClubBossMediator:refreshHurtAndHp(event)
 		self._rewardMaxExp:setString("/" .. tostring(self._clubBossInfo:getHurtTarget()))
 		self._rewardLoadingBar:setPercent(self._clubBossInfo:getHurt() / self._clubBossInfo:getHurtTarget() * 100)
 		self._heroLoadingBar:setPercent(100 - self._clubBossInfo:getHpRate() * 100)
-		self._heroLoadingText:setString(string.format("%.1f", self._clubBossInfo:getHpRate() * 100) .. "%")
+
+		local maxHp = math.floor(self._currentBossPoints:getBossHp() + 0.5)
+		local curHp = math.floor(maxHp * self._clubBossInfo:getHpRate() + 0.5)
+
+		self._heroLoadingText:setString(tostring(curHp) .. "/" .. tostring(maxHp))
 
 		if self._clubBossInfo:getHurt() < self._clubBossInfo:getHurtTarget() then
 			self._rewardBoxImage1:setVisible(true)
@@ -926,11 +930,11 @@ function ClubBossMediator:doSomeChangeUI(isEnter)
 		end
 
 		self._heroLoadingBar:setPercent(rate)
-		self._heroLoadingText:setString(string.format("%.1f", self._clubBossInfo:getHpRate() * 100) .. "%")
 
-		if self._clubBossInfo:getHpRate() * 100 < 1 then
-			self._heroLoadingText:setString("1.0%")
-		end
+		local maxHp = math.floor(self._currentBossPoints:getBossHp() + 0.5)
+		local curHp = math.floor(maxHp * self._clubBossInfo:getHpRate() + 0.5)
+
+		self._heroLoadingText:setString(tostring(curHp) .. "/" .. tostring(maxHp))
 
 		if self._clubBossInfo:getHurt() < self._clubBossInfo:getHurtTarget() then
 			self._rewardBoxImage1:setVisible(true)

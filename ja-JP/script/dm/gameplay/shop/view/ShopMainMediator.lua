@@ -1014,8 +1014,6 @@ function ShopMainMediator:showShopBuyView(data)
 end
 
 function ShopMainMediator:showShopBuyViewNormal(data)
-	dump(data)
-
 	local view = self:getInjector():getInstance("ShopBuyNormalView")
 
 	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {

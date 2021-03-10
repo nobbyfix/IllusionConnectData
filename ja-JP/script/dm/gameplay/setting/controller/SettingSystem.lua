@@ -907,6 +907,7 @@ function SettingSystem:getShowHeadImgList()
 	local heroSystem = developSystem:getHeroSystem()
 	local masterSystem = developSystem:getMasterSystem()
 	local bagSystem = developSystem:getBagSystem()
+	local surfaceSystem = developSystem:getSurfaceSystem()
 	local list = {}
 	local config = ConfigReader:getDataTable("PlayerHeadModel")
 
@@ -937,6 +938,12 @@ function SettingSystem:getShowHeadImgList()
 			end
 		elseif value.Type == 4 then
 			if heroSystem:hasHeroAwake(value.HeroMasterId) then
+				data.unlock = 1
+			else
+				data.unlock = 0
+			end
+		elseif value.Type == 5 then
+			if surfaceSystem:hasHeroSkin(value.SurfaceMasterId) then
 				data.unlock = 1
 			else
 				data.unlock = 0

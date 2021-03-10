@@ -93,9 +93,19 @@ function ClubNewInfoMediator:refreshInfoView()
 	proprieterLabel:setString(self._clubInfoOj.presidentName)
 
 	local proprietertitlelabel = self._mainPanel:getChildByFullName("proprietertitlelabel")
+	local text = self._mainPanel:getChildByFullName("Text_6")
+
+	proprieterLabel:setAnchorPoint(cc.p(0, 0.5))
+	proprieterLabel:setPositionX(text:getPositionX() + text:getContentSize().width)
+
 	local levelLabel = self._mainPanel:getChildByFullName("levelNum")
 
 	levelLabel:setString(self._clubInfoOj.clubLv)
+
+	local text = self._mainPanel:getChildByFullName("levelText")
+
+	levelLabel:setAnchorPoint(cc.p(0, 0.5))
+	levelLabel:setPositionX(text:getPositionX() + text:getContentSize().width)
 
 	local numLabel = self._mainPanel:getChildByFullName("numlabel")
 
@@ -111,6 +121,11 @@ function ClubNewInfoMediator:refreshInfoView()
 		rank = self._clubInfoOj.combatRank
 	}))
 
+	local text = self._mainPanel:getChildByFullName("rankTitleLabel")
+
+	rankLabel:setAnchorPoint(cc.p(0, 0.5))
+	rankLabel:setPositionX(text:getPositionX() + text:getContentSize().width)
+
 	local manifestoText = self._mainPanel:getChildByFullName("Panel_10.manifestoText")
 
 	manifestoText:setString(self._clubInfoOj.announce)
@@ -118,6 +133,7 @@ function ClubNewInfoMediator:refreshInfoView()
 	local battleRankText = self._mainPanel:getChildByFullName("battleRankText")
 	local battlerankNum = self._mainPanel:getChildByFullName("battlerankNum")
 
+	battlerankNum:setAnchorPoint(cc.p(0, 0.5))
 	battlerankNum:setString(self._clubInfoOj.bossRank)
 
 	if self._clubInfoOj.bossRank <= 0 then

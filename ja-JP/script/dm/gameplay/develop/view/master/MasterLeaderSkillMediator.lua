@@ -175,6 +175,7 @@ function MasterLeaderSkillMediator:refreshSkillCell(cell, index, isActive)
 
 	name:setString(skill:getName())
 	infoPanel:removeAllChildren()
+	infoPanel:setPositionX(150)
 
 	local isShowEff = isActive
 	local isShowGray = isActive or isActive == nil
@@ -229,12 +230,13 @@ function MasterLeaderSkillMediator:refreshSkillCell(cell, index, isActive)
 	iconNode:setTouchEnabled(false)
 end
 
-local listWidth = 520
+local listWidth = 540
 local SKILL_EFF_TAG = 1001
 local SKILL_DESC_TAG = 1000
 
 function MasterLeaderSkillMediator:createSkillDescPanel(layout, skill, isActive, heightAdd)
 	local style = {
+		fontSize = 17,
 		fontName = TTF_FONT_FZYH_M
 	}
 	local desc = ConfigReader:getEffectDesc("Skill", skill:getMasterSkillDescKey(), skill:getId(), skill:getLevel(), style)

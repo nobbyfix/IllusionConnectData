@@ -31,6 +31,10 @@ local kBtnHandlers = {
 	["main.spStagePanel.ruleBtn"] = {
 		clickAudio = "Se_Click_Common_2",
 		func = "onClickRule"
+	},
+	["main.nameBg.setBtn"] = {
+		clickAudio = "Se_Click_Common_2",
+		func = "onClickTeamSetBtn"
 	}
 }
 local kHeroRarityBgAnim = {
@@ -67,6 +71,7 @@ function ActivityBlockTeamMediator:onRegister()
 	self:mapEventListener(self:getEventDispatcher(), EVT_TEAM_CHANGE_MASTER, self, self.changeMasterId)
 	self:mapEventListener(self:getEventDispatcher(), EVT_TEAM_REFRESH_PETS, self, self.refreshViewBySort)
 	self:mapEventListener(self:getEventDispatcher(), EVT_RESET_DONE, self, self.doReset)
+	self:mapEventListener(self:getEventDispatcher(), EVT_CHANGE_TEAM_BYMODE_SUCC, self, self.changeTeamByMode)
 
 	local touchPanel = self:getView():getChildByFullName("main.bg.touchPanel")
 
@@ -143,6 +148,7 @@ function ActivityBlockTeamMediator:enterWithData(data)
 
 	self._stageSystem:setSortExtand(0)
 
+	self._hasForceChangeTeam = false
 	self._ignoreReloadData = true
 
 	self:initData()
@@ -182,8 +188,13 @@ function ActivityBlockTeamMediator:resumeWithData()
 	self._costTotalLabel2:setString("/" .. self._costMaxNum)
 end
 
-function ActivityBlockTeamMediator:initData()
-	self._curTeam = self._activity:getTeam()
+function ActivityBlockTeamMediator:initData(team)
+	if team then
+		self._curTeam = team
+	else
+		self._curTeam = self._activity:getTeam()
+	end
+
 	local modelTmp = {
 		_heroes = self:removeExceptHeros(),
 		_masterId = self._curTeam:getMasterId()
@@ -1183,7 +1194,7 @@ function ActivityBlockTeamMediator:sendChangeTeam(callBack)
 
 	self._activitySystem:requestDoChildActivity(self._activityId, self._activity:getId(), params, function (response)
 		if checkDependInstance(self) then
-			if hasChange then
+			if hasChange or self._hasForceChangeTeam then
 				self:dispatch(Event:new(EVT_ARENA_CHANGE_TEAM_SUCC))
 				self:dispatch(ShowTipEvent({
 					tip = Strings:get("Team_StorageSuccessTips")
@@ -1201,6 +1212,14 @@ function ActivityBlockTeamMediator:onClickRule()
 	local rules = self._activity:getActivityConfig().BonusHeroDesc
 
 	self._activitySystem:showActivityRules(rules)
+end
+
+function ActivityBlockTeamMediator:onClickTeamSetBtn()
+	local view = self:getInjector():getInstance("ChangeTeamModelView")
+
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+	}, {}))
 end
 
 function ActivityBlockTeamMediator:onClickOneKeyBreak()
@@ -1369,4 +1388,17 @@ function ActivityBlockTeamMediator:onClickFight(sender, eventType)
 	end
 
 	self:onClickBack(nil, , callback)
+end
+
+function ActivityBlockTeamMediator:changeTeamByMode(event)
+	local teamData = event:getData()
+
+	self:initData(teamData)
+	self:initAssistView()
+	self:refreshPetNode()
+	self:refreshMasterInfo()
+	self:refreshListView()
+	self:createSortView()
+
+	self._hasForceChangeTeam = true
 end
