@@ -1292,6 +1292,26 @@ function ActivitySystem:requestDoActivity(activityId, param, callback)
 	end)
 end
 
+function ActivitySystem:requestDoActivity2(activityId, param, callback)
+	if not self:getVersionCanBuy(activityId) then
+		return
+	end
+
+	local cjson = require("cjson.safe")
+	local params = {
+		activityId = activityId,
+		param = param
+	}
+
+	self._activityService:requestDoActivity(params, true, function (response)
+		if callback then
+			callback(response)
+		end
+
+		self:dispatch(Event:new(EVT_ACTIVITY_REDPOINT_REFRESH, {}))
+	end)
+end
+
 function ActivitySystem:requestDoChildActivity(activityId, subActivityId, param, callback, forceCallback)
 	if not self:getVersionCanBuy(activityId) then
 		return
@@ -1596,4 +1616,39 @@ function ActivitySystem:enterBlockFudaiView(activityId)
 	end
 
 	self._shopSystem:requestGetPackageShop(callback)
+end
+
+function ActivitySystem:tryEnterCoopExchangeView(data)
+	local unlock, tips = self:checkEnabled()
+	local outself = self
+
+	if unlock then
+		self:requestAllActicities(true, function ()
+			if self:checkCoopExchangeEnable(data.activityId) then
+				local view = self:getInjector():getInstance("ShopCoopExchangeView")
+
+				self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, data))
+			else
+				self:dispatch(ShowTipEvent({
+					duration = 0.35,
+					tip = Strings:get("Activity_Not_Found")
+				}))
+			end
+		end)
+	else
+		self:dispatch(ShowTipEvent({
+			duration = 0.35,
+			tip = tips
+		}))
+	end
+end
+
+function ActivitySystem:checkCoopExchangeEnable(activityId)
+	local activity = self:getActivityById(activityId)
+
+	if activity then
+		return activity:getIsTodayOpen()
+	end
+
+	return false
 end

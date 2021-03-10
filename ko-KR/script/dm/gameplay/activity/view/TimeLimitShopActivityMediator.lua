@@ -55,11 +55,16 @@ function TimeLimitShopActivityMediator:setupView()
 	self._view = self:getView()
 	self._main = self._view:getChildByName("main")
 	self._deadline = self._main:getChildByFullName("deadline")
+	self._bg = self._main:getChildByFullName("bg")
 	self._packageUI = {
 		self._main:getChildByFullName("package_1"),
 		self._main:getChildByFullName("package_2"),
 		self._main:getChildByFullName("package_3")
 	}
+
+	if self._activityConfig.UIBG and self._activityConfig.UIBG ~= "" then
+		self._bg:loadTexture("asset/lang_ui/activity/" .. self._activityConfig.UIBG .. ".png", ccui.TextureResType.localType)
+	end
 
 	self:enableTimeLimitShopTimer()
 	self:setUpPackageState()

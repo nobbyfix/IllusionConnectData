@@ -43,6 +43,10 @@ function BattleDeathSkillAction:doStart(battleContext)
 	local primTrgt = formationSystem:findFoe(actor) or formationSystem:findPrimaryTarget(actor)
 
 	if not primTrgt then
+		if actor:isInStages(ULS_Dying) then
+			formationSystem:buryUnit(actor)
+		end
+
 		self:finish()
 
 		return

@@ -47,6 +47,9 @@ local muiscCfg = {
 	ActivityBakingMainView = {
 		noAutoPlay = true
 	},
+	ActivitySunflowerMainView = {
+		noAutoPlay = true
+	},
 	ActivityCollapsedMainView = {
 		noAutoPlay = true
 	},

@@ -812,6 +812,11 @@ local modules = {
 							mediator = "StageTeamMediator"
 						},
 						{
+							res = "asset/ui/ChangeTeamModelView.csb",
+							name = "ChangeTeamModelView",
+							mediator = "ChangeTeamModelMediator"
+						},
+						{
 							res = "asset/ui/ChangeTeamMaster.csb",
 							name = "ChangeMasterView",
 							mediator = "ChangeTeamMasterMediator"
@@ -1884,6 +1889,11 @@ local modules = {
 							mediator = "TimeLimitShopActivityMediator"
 						},
 						{
+							res = "asset/ui/TimeShopActivityWhite.csb",
+							name = "TimeLimitShopActivityWhiteView",
+							mediator = "TimeLimitShopActivityMediator"
+						},
+						{
 							res = "asset/ui/TimeShopActivityValentine.csb",
 							name = "TimeLimitShopActivityValentineView",
 							mediator = "TimeLimitShopActivityMediator"
@@ -1902,6 +1912,11 @@ local modules = {
 							res = "asset/ui/dreamChallengeBuffDetail.csb",
 							name = "ActivityNpcRoleDetailView",
 							mediator = "ActivityNpcRoleDetailMediator"
+						},
+						{
+							res = "asset/ui/ActivitySunflowerMain.csb",
+							name = "ActivitySunflowerMainView",
+							mediator = "ActivitySunflowerMainMediator"
 						}
 					}
 				}
@@ -3137,6 +3152,16 @@ local modules = {
 							res = "asset/ui/refundDetail.csb",
 							name = "RefundDetailView",
 							mediator = "RefundDetailMediator"
+						},
+						{
+							res = "asset/ui/shopCoopExchange.csb",
+							name = "ShopCoopExchangeView",
+							mediator = "ShopCoopExchangeMediator"
+						},
+						{
+							res = "asset/ui/shopBuyUINormal.csb",
+							name = "ShopCoopExchangeBuyView",
+							mediator = "ShopCoopExchangeBuyMediator"
 						}
 					}
 				}

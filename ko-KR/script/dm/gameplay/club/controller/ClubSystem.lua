@@ -59,7 +59,6 @@ function ClubSystem:userInject(injector)
 			self:requestClubBossInfo(nil, false, ClubHallType.kActivityBoss)
 		end
 	end)
-	self:requestClubBattleData(nil, false)
 end
 
 function ClubSystem:getClub()

@@ -528,6 +528,15 @@ function UnitTLInterpreter:act_EndSkill(action, args, mode)
 		local mainMediator = self._context:getValue("BattleMainMediator")
 
 		mainMediator:clearGroundEffect(actId)
+
+		local camera = self._context:getValue("Camera")
+		local cameraActId = self._context:getValue("CameraActId")
+
+		if cameraActId == actId then
+			camera:focusOn(display.cx, display.cy, 1, 0.2)
+		end
+
+		self._battleGround:subGroundBlackCount()
 		skillAction:setIsInSupering(false)
 		self._battleGround:cancelTarget(actId)
 	end
@@ -1068,6 +1077,30 @@ function UnitTLInterpreter:act_Focus(action, args, mode)
 
 	if skillAction and skillAction:isInSupering() and dst then
 		-- Nothing
+	end
+end
+
+function UnitTLInterpreter:act_FocusCamera(action, args, mode)
+	local act = args.act
+	local dst = args.dst
+	local scale = args.scale or 1
+	local dur = args.dur or 200
+	local heightOffset = 50
+	local skillAction = self._context:getSkillAction(act)
+
+	if skillAction and skillAction:isInSupering() and dst then
+		local zone = dst[1]
+
+		if self._unit:isTeamFlipped() then
+			zone = -zone
+		end
+
+		local targetPos = self._battleGround:relPosWithZoneAndOffset(zone, dst[2], dst[3])
+		local point = self._battleGround:convertRelPos2WorldSpace(targetPos)
+		local camera = self._context:getValue("Camera")
+
+		self._context:setValue("CameraActId", act)
+		camera:focusOn(point.x, point.y + heightOffset, scale, dur / 1000)
 	end
 end
 

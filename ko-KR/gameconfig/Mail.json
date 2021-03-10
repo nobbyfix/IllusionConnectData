@@ -597,6 +597,19 @@
         "TopStatus": 0,
         "Type": "USER"
     },
+    "Mail_EightDays_Sunflower": {
+        "Content": "Mail_EightDays_Sunflower_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_Sunflower_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_EightDays_Sunflower_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
     "Mail_FAC_Warning10": {
         "Content": "Mail_FAC_Warning10_Content",
         "ExpireAfterRead": 72000,
@@ -766,6 +779,19 @@
         "TopStatus": 0,
         "Type": "USER"
     },
+    "Mail_MergeClubName20210310": {
+        "Content": "Mail_MergeClubName20210310_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Sender",
+        "QuickGet": 1,
+        "Reward": "Mail_MergeClubName20210310_Reward",
+        "SubType": 1,
+        "Title": "Mail_MergeClubName20210310_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
     "Mail_MergeReward": {
         "Content": "Mail_MergeReward_Content",
         "ExpireAfterRead": 72000,
@@ -776,6 +802,19 @@
         "Reward": "Mail_MergeReward_Reward",
         "SubType": 1,
         "Title": "Mail_MergeReward_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
+    "Mail_MergeReward20210310": {
+        "Content": "Mail_MergeReward20210310_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Sender",
+        "QuickGet": 1,
+        "Reward": "Mail_MergeReward20210310_Reward",
+        "SubType": 1,
+        "Title": "Mail_MergeReward20210310_Title",
         "TopStatus": 0,
         "Type": "USER"
     },
@@ -1143,6 +1182,32 @@
         "TopStatus": 0,
         "Type": "USER"
     },
+    "Mail_Sunflower_AchieveMentTask_Activity": {
+        "Content": "Mail_Sunflower_AchieveMentTask_Activity_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_Sunflower_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_Sunflower_AchieveMentTask_Activity_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
+    "Mail_Sunflower_DailyTask_Activity": {
+        "Content": "Mail_Sunflower_DailyTask_Activity_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_Sunflower_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_Sunflower_DailyTask_Activity_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
     "Mail_TPGZhu_DailyTask_Activity": {
         "Content": "Mail_TPGZhu_DailyTask_Activity_Content",
         "ExpireAfterRead": "",
@@ -1166,6 +1231,19 @@
         "Reward": "0",
         "SubType": 0,
         "Title": "Mail_Task_Activity_Title",
+        "TopStatus": "",
+        "Type": "USER"
+    },
+    "Mail_Task_Activity_20210310": {
+        "Content": "Mail_Task_Activity_20210310_Content",
+        "ExpireAfterRead": "",
+        "ExpireTime": 72000,
+        "Icon": "1",
+        "Name": "Mail_Task_Activity_20210310_Name",
+        "QuickGet": 1,
+        "Reward": "0",
+        "SubType": 0,
+        "Title": "Mail_Task_Activity_20210310_Title",
         "TopStatus": "",
         "Type": "USER"
     },

@@ -433,6 +433,8 @@ function MonthSignInMediator:onTouchMainView(sender, eventType)
 
 					self:dealReward(response.data)
 				end
+			end, function (response)
+				self:close()
 			end)
 		end
 	elseif eventType == ccui.TouchEventType.ended and not self._onRequestCheckIn then
@@ -446,6 +448,8 @@ function MonthSignInMediator:onTouchMainView(sender, eventType)
 
 				self:dealReward(response.data)
 			end
+		end, function (response)
+			self:close()
 		end)
 	end
 end

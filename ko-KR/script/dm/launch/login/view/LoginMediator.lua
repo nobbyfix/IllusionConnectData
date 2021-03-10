@@ -552,9 +552,7 @@ function LoginMediator:connectGameServer()
 			})
 		end
 
-		self._loginSystem:requestPlayerInfo(function ()
-			self:beforeLoading()
-		end)
+		self:beforeLoading()
 	end)
 
 	if not connected then
@@ -607,6 +605,9 @@ function LoginMediator:buildLoadingTask()
 	local task = taskBuilder:buildParalelTask(function ()
 		SEQUENCE(30)
 		DO_ACTION(function ()
+			self._loginSystem:requestPlayerInfo()
+		end, 1)
+		DO_ACTION(function ()
 			if SDKHelper:isEnableSdk() then
 				local developSystem = self:getInjector():getInstance(DevelopSystem)
 				local curServer = self._loginSystem:getCurServer()
@@ -650,14 +651,6 @@ function LoginMediator:buildLoadingTask()
 
 			gameContext:loadModuleByName("battle")
 		end, 1)
-		ADD_TASK(1, timesharding.CustomTask:new(function (task)
-			local stageSystem = self:getInjector():getInstance(StageSystem)
-
-			stageSystem:requestStageProgress(function ()
-				stageSystem._stageManager:eliteStageExtraInit()
-				task:finish()
-			end, false)
-		end))
 		ADD_TASK(1, timesharding.CustomTask:new(function (task)
 			local mcLibrary = cc.MCLibrary:getInstance()
 

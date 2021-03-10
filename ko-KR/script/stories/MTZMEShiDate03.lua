@@ -34,10 +34,31 @@ function scene_MTZMEShiDate03:stage(args)
 		children = {
 			{
 				resType = 0,
+				name = "hm",
+				pathType = "STORY_ROOT",
+				type = "Image",
+				image = "hm.png",
+				layoutMode = 1,
+				zorder = 100,
+				id = "hm",
+				scale = 1,
+				anchorPoint = {
+					x = 0.5,
+					y = 0.5
+				},
+				position = {
+					refpt = {
+						x = 0.5,
+						y = 0.5
+					}
+				}
+			},
+			{
+				resType = 0,
 				name = "bg",
 				pathType = "SCENE",
 				type = "Image",
-				image = "bg_story_scene_2_4.jpg",
+				image = "bg_story_EXscene_0_1.jpg",
 				layoutMode = 1,
 				zorder = 1,
 				id = "bg",
@@ -51,29 +72,31 @@ function scene_MTZMEShiDate03:stage(args)
 						x = 0.5,
 						y = 0.5
 					}
+				}
+			},
+			{
+				resType = 0,
+				name = "bg_store",
+				pathType = "SCENE",
+				type = "Image",
+				image = "bg_story_scene_1_7.jpg",
+				layoutMode = 1,
+				zorder = 1,
+				id = "bg_store",
+				scale = 1,
+				anchorPoint = {
+					x = 0.5,
+					y = 0.5
 				},
-				children = {
-					{
-						id = "bgEX_motianlun",
-						layoutMode = 1,
-						type = "MovieClip",
-						scale = 1,
-						actionName = "anim_motianlun",
-						anchorPoint = {
-							x = 0.5,
-							y = 0.5
-						},
-						position = {
-							refpt = {
-								x = 0.5,
-								y = 0.5
-							}
-						}
+				position = {
+					refpt = {
+						x = 0.5,
+						y = 0.5
 					}
 				}
 			},
 			{
-				id = "date_music",
+				id = "Mus_Date",
 				fileName = "Mus_Story_Common_2",
 				type = "Music"
 			}
@@ -90,16 +113,7 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03(_root, args)
 		}),
 		act({
 			action = "play",
-			actor = __getnode__(_root, "bgEX_motianlun"),
-			args = function (_ctx)
-				return {
-					time = -1
-				}
-			end
-		}),
-		act({
-			action = "play",
-			actor = __getnode__(_root, "date_music"),
+			actor = __getnode__(_root, "Mus_Date"),
 			args = function (_ctx)
 				return {
 					isLoop = true
@@ -115,54 +129,54 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03(_root, args)
 				}
 			end
 		}),
-		act({
-			action = "addPortrait",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					modelId = "Model_MTZMEShi",
-					id = "MTZMEShi_speak",
-					rotationX = 0,
-					scale = 0.9,
-					zorder = 5,
-					position = {
-						x = 0,
-						y = -310,
-						refpt = {
-							x = 0.65,
-							y = 0
-						}
-					},
-					children = {
-						{
-							resType = 0,
-							name = "MTZMEShi_face",
-							pathType = "STORY_FACE",
-							type = "Image",
-							image = "MTZMEShi/MTZMEShi_face_1.png",
-							scaleX = 1.15,
-							scaleY = 1.15,
-							layoutMode = 1,
-							zorder = 1100,
-							visible = true,
-							id = "MTZMEShi_face",
-							anchorPoint = {
+		concurrent({
+			act({
+				action = "addPortrait",
+				actor = __getnode__(_root, "dialogue"),
+				args = function (_ctx)
+					return {
+						modelId = "Model_MTZMEShi",
+						id = "MTZMEShi",
+						rotationX = 0,
+						scale = 1,
+						zorder = 20,
+						position = {
+							x = 0,
+							y = -400,
+							refpt = {
 								x = 0.5,
-								y = 0.5
-							},
-							position = {
-								x = -6,
-								y = 872.5
+								y = 0
+							}
+						},
+						children = {
+							{
+								resType = 0,
+								name = "MTZMEShi_face",
+								pathType = "STORY_FACE",
+								type = "Image",
+								image = "MTZMEShi/MTZMEShi_face_1.png",
+								scaleX = 1.16,
+								scaleY = 1.16,
+								layoutMode = 1,
+								zorder = 1100,
+								visible = true,
+								id = "MTZMEShi_face",
+								anchorPoint = {
+									x = 0.5,
+									y = 0.5
+								},
+								position = {
+									x = -5.5,
+									y = 874.2
+								}
 							}
 						}
 					}
-				}
-			end
-		}),
-		concurrent({
+				end
+			}),
 			act({
 				action = "updateNode",
-				actor = __getnode__(_root, "MTZMEShi_speak"),
+				actor = __getnode__(_root, "MTZMEShi"),
 				args = function (_ctx)
 					return {
 						opacity = 0
@@ -171,7 +185,7 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03(_root, args)
 			}),
 			act({
 				action = "fadeIn",
-				actor = __getnode__(_root, "MTZMEShi_speak"),
+				actor = __getnode__(_root, "MTZMEShi"),
 				args = function (_ctx)
 					return {
 						duration = 0.5
@@ -179,6 +193,133 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03(_root, args)
 				end
 			})
 		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "MTZMEShi_dialog_speak_name_1",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"MTZMEShi"
+					},
+					content = {
+						"MTZMEShiDate03_1"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "MTZMEShi_dialog_speak_name_1",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"MTZMEShi"
+					},
+					content = {
+						"MTZMEShiDate03_2"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "MTZMEShi_dialog_speak_name_1",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"MTZMEShi"
+					},
+					content = {
+						"MTZMEShiDate03_3"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "MTZMEShi_dialog_speak_name_1",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"MTZMEShi"
+					},
+					content = {
+						"MTZMEShiDate03_4"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "MTZMEShi_dialog_speak_name_1",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"MTZMEShi"
+					},
+					content = {
+						"MTZMEShiDate03_5"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "dialogueChoose"),
+			args = function (_ctx)
+				return {
+					date = true,
+					content = {
+						"MTZMEShiDate03_6",
+						"MTZMEShiDate03_7"
+					},
+					actionName = {
+						"start_MTZMEShiDate03a",
+						"start_MTZMEShiDate03b"
+					}
+				}
+			end
+		})
+	})
+end
+
+function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03a(_root, args)
+	return sequential({
 		act({
 			action = "changeTexture",
 			actor = __getnode__(_root, "MTZMEShi_face"),
@@ -195,15 +336,15 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_237",
+					name = "MTZMEShi_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"MTZMEShi_speak"
+						"MTZMEShi"
 					},
 					content = {
-						"MTZMEShiDate03_1"
+						"MTZMEShiDate03_8"
 					},
 					durations = {
 						0.03
@@ -216,30 +357,19 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_237",
+					name = "MTZMEShi_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"MTZMEShi_speak"
+						"MTZMEShi"
 					},
 					content = {
-						"MTZMEShiDate03_2"
+						"MTZMEShiDate03_9"
 					},
 					durations = {
 						0.03
 					}
-				}
-			end
-		}),
-		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "MTZMEShi_face"),
-			args = function (_ctx)
-				return {
-					resType = 0,
-					image = "MTZMEShi/MTZMEShi_face_1.png",
-					pathType = "STORY_FACE"
 				}
 			end
 		}),
@@ -248,15 +378,15 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_237",
+					name = "MTZMEShi_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"MTZMEShi_speak"
+						"MTZMEShi"
 					},
 					content = {
-						"MTZMEShiDate03_3"
+						"MTZMEShiDate03_10"
 					},
 					durations = {
 						0.03
@@ -264,20 +394,10 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03(_root, args)
 				}
 			end
 		}),
-		act({
-			action = "show",
-			actor = __getnode__(_root, "dialogueChoose"),
+		enterSceneFollowAction({
 			args = function (_ctx)
 				return {
-					date = true,
-					content = {
-						"MTZMEShiDate03_4",
-						"MTZMEShiDate03_5"
-					},
-					actionName = {
-						"start_MTZMEShiDate03b",
-						"start_MTZMEShiDate03c"
-					}
+					name = "start_MTZMEShiDate03c"
 				}
 			end
 		})
@@ -302,15 +422,15 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03b(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_237",
+					name = "MTZMEShi_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"MTZMEShi_speak"
+						"MTZMEShi"
 					},
 					content = {
-						"MTZMEShiDate03_6"
+						"MTZMEShiDate03_11"
 					},
 					durations = {
 						0.03
@@ -319,62 +439,19 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03b(_root, args)
 			end
 		}),
 		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "MTZMEShi_face"),
-			args = function (_ctx)
-				return {
-					resType = 0,
-					image = "MTZMEShi/MTZMEShi_face_2.png",
-					pathType = "STORY_FACE"
-				}
-			end
-		}),
-		act({
 			action = "speak",
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_237",
+					name = "MTZMEShi_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"MTZMEShi_speak"
+						"MTZMEShi"
 					},
 					content = {
-						"MTZMEShiDate03_7"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "MTZMEShi_face"),
-			args = function (_ctx)
-				return {
-					resType = 0,
-					image = "MTZMEShi/MTZMEShi_face_1.png",
-					pathType = "STORY_FACE"
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_237",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"MTZMEShi_speak"
-					},
-					content = {
-						"MTZMEShiDate03_8"
+						"MTZMEShiDate03_12"
 					},
 					durations = {
 						0.03
@@ -385,7 +462,7 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03b(_root, args)
 		enterSceneFollowAction({
 			args = function (_ctx)
 				return {
-					name = "start_MTZMEShiDate03d"
+					name = "start_MTZMEShiDate03c"
 				}
 			end
 		})
@@ -400,38 +477,6 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03c(_root, args)
 			args = function (_ctx)
 				return {
 					resType = 0,
-					image = "MTZMEShi/MTZMEShi_face_2.png",
-					pathType = "STORY_FACE"
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_237",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"MTZMEShi_speak"
-					},
-					content = {
-						"MTZMEShiDate03_9"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "MTZMEShi_face"),
-			args = function (_ctx)
-				return {
-					resType = 0,
 					image = "MTZMEShi/MTZMEShi_face_1.png",
 					pathType = "STORY_FACE"
 				}
@@ -442,15 +487,15 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03c(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_237",
+					name = "MTZMEShi_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"MTZMEShi_speak"
+						"MTZMEShi"
 					},
 					content = {
-						"MTZMEShiDate03_10"
+						"MTZMEShiDate03_13"
 					},
 					durations = {
 						0.03
@@ -458,10 +503,87 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03c(_root, args)
 				}
 			end
 		}),
-		enterSceneFollowAction({
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "start_MTZMEShiDate03d"
+					name = "MTZMEShi_dialog_speak_name_1",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"MTZMEShi"
+					},
+					content = {
+						"MTZMEShiDate03_14"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "MTZMEShi_dialog_speak_name_2",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"MTZMEShi"
+					},
+					content = {
+						"MTZMEShiDate03_15"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 1
+				}
+			end
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.8
+				}
+			end
+		}),
+		act({
+			action = "fadeOut",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 1
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "dialogueChoose"),
+			args = function (_ctx)
+				return {
+					date = true,
+					content = {
+						"MTZMEShiDate03_16",
+						"MTZMEShiDate03_17"
+					},
+					actionName = {
+						"start_MTZMEShiDate03d",
+						"start_MTZMEShiDate03e"
+					}
 				}
 			end
 		})
@@ -476,7 +598,7 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03d(_root, args)
 			args = function (_ctx)
 				return {
 					resType = 0,
-					image = "MTZMEShi/MTZMEShi_face_1.png",
+					image = "MTZMEShi/MTZMEShi_face_3.png",
 					pathType = "STORY_FACE"
 				}
 			end
@@ -486,15 +608,15 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03d(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_237",
+					name = "MTZMEShi_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"MTZMEShi_speak"
+						"MTZMEShi"
 					},
 					content = {
-						"MTZMEShiDate03_11"
+						"MTZMEShiDate03_18"
 					},
 					durations = {
 						0.03
@@ -518,30 +640,19 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03d(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_237",
+					name = "MTZMEShi_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"MTZMEShi_speak"
+						"MTZMEShi"
 					},
 					content = {
-						"MTZMEShiDate03_12"
+						"MTZMEShiDate03_19"
 					},
 					durations = {
 						0.03
 					}
-				}
-			end
-		}),
-		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "MTZMEShi_face"),
-			args = function (_ctx)
-				return {
-					resType = 0,
-					image = "MTZMEShi/MTZMEShi_face_1.png",
-					pathType = "STORY_FACE"
 				}
 			end
 		}),
@@ -550,15 +661,15 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03d(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_237",
+					name = "MTZMEShi_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"MTZMEShi_speak"
+						"MTZMEShi"
 					},
 					content = {
-						"MTZMEShiDate03_13"
+						"MTZMEShiDate03_20"
 					},
 					durations = {
 						0.03
@@ -566,20 +677,10 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03d(_root, args)
 				}
 			end
 		}),
-		act({
-			action = "show",
-			actor = __getnode__(_root, "dialogueChoose"),
+		enterSceneFollowAction({
 			args = function (_ctx)
 				return {
-					date = true,
-					content = {
-						"MTZMEShiDate03_14",
-						"MTZMEShiDate03_15"
-					},
-					actionName = {
-						"start_MTZMEShiDate03e",
-						"start_MTZMEShiDate03f"
-					}
+					name = "start_MTZMEShiDate03f"
 				}
 			end
 		})
@@ -594,7 +695,7 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03e(_root, args)
 			args = function (_ctx)
 				return {
 					resType = 0,
-					image = "MTZMEShi/MTZMEShi_face_2.png",
+					image = "MTZMEShi/MTZMEShi_face_1.png",
 					pathType = "STORY_FACE"
 				}
 			end
@@ -604,15 +705,15 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03e(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_237",
+					name = "MTZMEShi_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"MTZMEShi_speak"
+						"MTZMEShi"
 					},
 					content = {
-						"MTZMEShiDate03_16"
+						"MTZMEShiDate03_21"
 					},
 					durations = {
 						0.03
@@ -621,13 +722,23 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03e(_root, args)
 			end
 		}),
 		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "MTZMEShi_face"),
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					resType = 0,
-					image = "MTZMEShi/MTZMEShi_face_3.png",
-					pathType = "STORY_FACE"
+					name = "MTZMEShi_dialog_speak_name_1",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"MTZMEShi"
+					},
+					content = {
+						"MTZMEShiDate03_22"
+					},
+					durations = {
+						0.03
+					}
 				}
 			end
 		}),
@@ -636,15 +747,15 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03e(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_237",
+					name = "MTZMEShi_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"MTZMEShi_speak"
+						"MTZMEShi"
 					},
 					content = {
-						"MTZMEShiDate03_17"
+						"MTZMEShiDate03_23"
 					},
 					durations = {
 						0.03
@@ -655,7 +766,7 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03e(_root, args)
 		enterSceneFollowAction({
 			args = function (_ctx)
 				return {
-					name = "start_MTZMEShiDate03g"
+					name = "start_MTZMEShiDate03f"
 				}
 			end
 		})
@@ -680,30 +791,19 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03f(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_237",
+					name = "MTZMEShi_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"MTZMEShi_speak"
+						"MTZMEShi"
 					},
 					content = {
-						"MTZMEShiDate03_18"
+						"MTZMEShiDate03_24"
 					},
 					durations = {
 						0.03
 					}
-				}
-			end
-		}),
-		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "MTZMEShi_face"),
-			args = function (_ctx)
-				return {
-					resType = 0,
-					image = "MTZMEShi/MTZMEShi_face_2.png",
-					pathType = "STORY_FACE"
 				}
 			end
 		}),
@@ -712,66 +812,51 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03f(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_237",
+					name = "MTZMEShi_dialog_speak_name_2",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"MTZMEShi_speak"
+						"MTZMEShi"
 					},
 					content = {
-						"MTZMEShiDate03_19"
+						"MTZMEShiDate03_25"
 					},
 					durations = {
 						0.03
 					}
+				}
+			end
+		}),
+		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 1
 				}
 			end
 		}),
 		act({
 			action = "changeTexture",
-			actor = __getnode__(_root, "MTZMEShi_face"),
+			actor = __getnode__(_root, "bg"),
 			args = function (_ctx)
 				return {
 					resType = 0,
-					image = "MTZMEShi/MTZMEShi_face_3.png",
-					pathType = "STORY_FACE"
+					image = "bg_story_scene_1_7.jpg",
+					pathType = "SCENE"
 				}
 			end
 		}),
 		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
+			action = "fadeOut",
+			actor = __getnode__(_root, "curtain"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_237",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"MTZMEShi_speak"
-					},
-					content = {
-						"MTZMEShiDate03_20"
-					},
-					durations = {
-						0.03
-					}
+					duration = 1
 				}
 			end
 		}),
-		enterSceneFollowAction({
-			args = function (_ctx)
-				return {
-					name = "start_MTZMEShiDate03g"
-				}
-			end
-		})
-	})
-end
-
-function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03g(_root, args)
-	return sequential({
 		act({
 			action = "changeTexture",
 			actor = __getnode__(_root, "MTZMEShi_face"),
@@ -788,68 +873,15 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03g(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_237",
+					name = "MTZMEShi_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"MTZMEShi_speak"
+						"MTZMEShi"
 					},
 					content = {
-						"MTZMEShiDate03_21"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "MTZMEShi_face"),
-			args = function (_ctx)
-				return {
-					resType = 0,
-					image = "MTZMEShi/MTZMEShi_face_1.png",
-					pathType = "STORY_FACE"
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_237",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"MTZMEShi_speak"
-					},
-					content = {
-						"MTZMEShiDate03_22"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_237",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"MTZMEShi_speak"
-					},
-					content = {
-						"MTZMEShiDate03_23"
+						"MTZMEShiDate03_26"
 					},
 					durations = {
 						0.03
@@ -864,12 +896,12 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03g(_root, args)
 				return {
 					date = true,
 					content = {
-						"MTZMEShiDate03_24",
-						"MTZMEShiDate03_25"
+						"MTZMEShiDate03_27",
+						"MTZMEShiDate03_28"
 					},
 					actionName = {
-						"start_MTZMEShiDate03h",
-						"start_MTZMEShiDate03i"
+						"start_MTZMEShiDate03g",
+						"start_MTZMEShiDate03h"
 					}
 				}
 			end
@@ -877,79 +909,8 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03g(_root, args)
 	})
 end
 
-function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03h(_root, args)
+function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03g(_root, args)
 	return sequential({
-		act({
-			action = "fadeIn",
-			actor = __getnode__(_root, "curtain"),
-			args = function (_ctx)
-				return {
-					duration = 1
-				}
-			end
-		}),
-		act({
-			action = "fadeOut",
-			actor = __getnode__(_root, "curtain"),
-			args = function (_ctx)
-				return {
-					duration = 1
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_17",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"MTZMEShi_speak"
-					},
-					content = {
-						"MTZMEShiDate03_26"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "MTZMEShi_face"),
-			args = function (_ctx)
-				return {
-					resType = 0,
-					image = "MTZMEShi/MTZMEShi_face_3.png",
-					pathType = "STORY_FACE"
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_237",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"MTZMEShi_speak"
-					},
-					content = {
-						"MTZMEShiDate03_27"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
 		act({
 			action = "changeTexture",
 			actor = __getnode__(_root, "MTZMEShi_face"),
@@ -966,63 +927,12 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03h(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_237",
+					name = "MTZMEShi_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"MTZMEShi_speak"
-					},
-					content = {
-						"MTZMEShiDate03_28"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		enterSceneFollowAction({
-			args = function (_ctx)
-				return {
-					name = "start_MTZMEShiDate03j"
-				}
-			end
-		})
-	})
-end
-
-function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03i(_root, args)
-	return sequential({
-		act({
-			action = "fadeIn",
-			actor = __getnode__(_root, "curtain"),
-			args = function (_ctx)
-				return {
-					duration = 1
-				}
-			end
-		}),
-		act({
-			action = "fadeOut",
-			actor = __getnode__(_root, "curtain"),
-			args = function (_ctx)
-				return {
-					duration = 1
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_17",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"MTZMEShi_speak"
+						"MTZMEShi"
 					},
 					content = {
 						"MTZMEShiDate03_29"
@@ -1039,7 +949,7 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03i(_root, args)
 			args = function (_ctx)
 				return {
 					resType = 0,
-					image = "MTZMEShi/MTZMEShi_face_4.png",
+					image = "MTZMEShi/MTZMEShi_face_3.png",
 					pathType = "STORY_FACE"
 				}
 			end
@@ -1049,15 +959,59 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03i(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_237",
+					name = "MTZMEShi_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"MTZMEShi_speak"
+						"MTZMEShi"
 					},
 					content = {
 						"MTZMEShiDate03_30"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		enterSceneFollowAction({
+			args = function (_ctx)
+				return {
+					name = "start_MTZMEShiDate03i"
+				}
+			end
+		})
+	})
+end
+
+function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03h(_root, args)
+	return sequential({
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "MTZMEShi_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "MTZMEShi/MTZMEShi_face_2.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "MTZMEShi_dialog_speak_name_1",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"MTZMEShi"
+					},
+					content = {
+						"MTZMEShiDate03_31"
 					},
 					durations = {
 						0.03
@@ -1081,15 +1035,36 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03i(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_237",
+					name = "MTZMEShi_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"MTZMEShi_speak"
+						"MTZMEShi"
 					},
 					content = {
-						"MTZMEShiDate03_31"
+						"MTZMEShiDate03_32"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "MTZMEShi_dialog_speak_name_1",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"MTZMEShi"
+					},
+					content = {
+						"MTZMEShiDate03_33"
 					},
 					durations = {
 						0.03
@@ -1100,7 +1075,103 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03i(_root, args)
 		enterSceneFollowAction({
 			args = function (_ctx)
 				return {
-					name = "start_MTZMEShiDate03j"
+					name = "start_MTZMEShiDate03i"
+				}
+			end
+		})
+	})
+end
+
+function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03i(_root, args)
+	return sequential({
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "MTZMEShi_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "MTZMEShi/MTZMEShi_face_1.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "MTZMEShi_dialog_speak_name_1",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"MTZMEShi"
+					},
+					content = {
+						"MTZMEShiDate03_34"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "MTZMEShi_dialog_speak_name_1",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"MTZMEShi"
+					},
+					content = {
+						"MTZMEShiDate03_35"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "MTZMEShi_dialog_speak_name_1",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"MTZMEShi"
+					},
+					content = {
+						"MTZMEShiDate03_36"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "dialogueChoose"),
+			args = function (_ctx)
+				return {
+					date = true,
+					content = {
+						"MTZMEShiDate03_37",
+						"MTZMEShiDate03_38"
+					},
+					actionName = {
+						"start_MTZMEShiDate03j",
+						"start_MTZMEShiDate03k"
+					}
 				}
 			end
 		})
@@ -1125,15 +1196,15 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03j(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_237",
+					name = "MTZMEShi_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"MTZMEShi_speak"
+						"MTZMEShi"
 					},
 					content = {
-						"MTZMEShiDate03_32"
+						"MTZMEShiDate03_39"
 					},
 					durations = {
 						0.03
@@ -1157,15 +1228,15 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03j(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_237",
-					dialogImage = "jq_dialogue_bg_6.png",
+					name = "MTZMEShi_dialog_speak_name_1",
+					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"MTZMEShi_speak"
+						"MTZMEShi"
 					},
 					content = {
-						"MTZMEShiDate03_33"
+						"MTZMEShiDate03_40"
 					},
 					durations = {
 						0.03
@@ -1178,15 +1249,15 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03j(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_237",
-					dialogImage = "jq_dialogue_bg_6.png",
+					name = "MTZMEShi_dialog_speak_name_1",
+					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"MTZMEShi_speak"
+						"MTZMEShi"
 					},
 					content = {
-						"MTZMEShiDate03_34"
+						"MTZMEShiDate03_41"
 					},
 					durations = {
 						0.03
@@ -1194,20 +1265,10 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03j(_root, args)
 				}
 			end
 		}),
-		act({
-			action = "show",
-			actor = __getnode__(_root, "dialogueChoose"),
+		enterSceneFollowAction({
 			args = function (_ctx)
 				return {
-					date = true,
-					content = {
-						"MTZMEShiDate03_35",
-						"MTZMEShiDate03_36"
-					},
-					actionName = {
-						"start_MTZMEShiDate03k",
-						"start_MTZMEShiDate03l"
-					}
+					name = "start_MTZMEShiDate03l"
 				}
 			end
 		})
@@ -1222,38 +1283,6 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03k(_root, args)
 			args = function (_ctx)
 				return {
 					resType = 0,
-					image = "MTZMEShi/MTZMEShi_face_3.png",
-					pathType = "STORY_FACE"
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_237",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"MTZMEShi_speak"
-					},
-					content = {
-						"MTZMEShiDate03_37"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "MTZMEShi_face"),
-			args = function (_ctx)
-				return {
-					resType = 0,
 					image = "MTZMEShi/MTZMEShi_face_1.png",
 					pathType = "STORY_FACE"
 				}
@@ -1264,15 +1293,15 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03k(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_237",
+					name = "MTZMEShi_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"MTZMEShi_speak"
+						"MTZMEShi"
 					},
 					content = {
-						"MTZMEShiDate03_38"
+						"MTZMEShiDate03_42"
 					},
 					durations = {
 						0.03
@@ -1281,13 +1310,23 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03k(_root, args)
 			end
 		}),
 		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "MTZMEShi_face"),
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					resType = 0,
-					image = "MTZMEShi/MTZMEShi_face_3.png",
-					pathType = "STORY_FACE"
+					name = "MTZMEShi_dialog_speak_name_1",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"MTZMEShi"
+					},
+					content = {
+						"MTZMEShiDate03_43"
+					},
+					durations = {
+						0.03
+					}
 				}
 			end
 		}),
@@ -1296,15 +1335,15 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03k(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_237",
+					name = "MTZMEShi_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"MTZMEShi_speak"
+						"MTZMEShi"
 					},
 					content = {
-						"MTZMEShiDate03_39"
+						"MTZMEShiDate03_44"
 					},
 					durations = {
 						0.03
@@ -1315,7 +1354,7 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03k(_root, args)
 		enterSceneFollowAction({
 			args = function (_ctx)
 				return {
-					name = "start_MTZMEShiDate03m"
+					name = "start_MTZMEShiDate03l"
 				}
 			end
 		})
@@ -1324,38 +1363,6 @@ end
 
 function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03l(_root, args)
 	return sequential({
-		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "MTZMEShi_face"),
-			args = function (_ctx)
-				return {
-					resType = 0,
-					image = "MTZMEShi/MTZMEShi_face_3.png",
-					pathType = "STORY_FACE"
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_237",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"MTZMEShi_speak"
-					},
-					content = {
-						"MTZMEShiDate03_40"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
 		act({
 			action = "changeTexture",
 			actor = __getnode__(_root, "MTZMEShi_face"),
@@ -1372,15 +1379,89 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03l(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_237",
+					name = "MTZMEShi_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"MTZMEShi_speak"
+						"MTZMEShi"
 					},
 					content = {
-						"MTZMEShiDate03_41"
+						"MTZMEShiDate03_45"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "MTZMEShi_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "MTZMEShi/MTZMEShi_face_1.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "MTZMEShi_dialog_speak_name_1",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"MTZMEShi"
+					},
+					content = {
+						"MTZMEShiDate03_46"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "MTZMEShi_dialog_speak_name_1",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"MTZMEShi"
+					},
+					content = {
+						"MTZMEShiDate03_47"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "MTZMEShi_dialog_speak_name_1",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"MTZMEShi"
+					},
+					content = {
+						"MTZMEShiDate03_48"
 					},
 					durations = {
 						0.03
@@ -1404,15 +1485,324 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03l(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_237",
+					name = "MTZMEShi_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"MTZMEShi_speak"
+						"MTZMEShi"
 					},
 					content = {
-						"MTZMEShiDate03_42"
+						"MTZMEShiDate03_49"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "MTZMEShi_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "MTZMEShi/MTZMEShi_face_4.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "MTZMEShi_dialog_speak_name_1",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"MTZMEShi"
+					},
+					content = {
+						"MTZMEShiDate03_50"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "dialogueChoose"),
+			args = function (_ctx)
+				return {
+					date = true,
+					content = {
+						"MTZMEShiDate03_51",
+						"MTZMEShiDate03_52"
+					},
+					actionName = {
+						"start_MTZMEShiDate03m",
+						"start_MTZMEShiDate03n"
+					}
+				}
+			end
+		})
+	})
+end
+
+function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03m(_root, args)
+	return sequential({
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "MTZMEShi_dialog_speak_name_2",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"MTZMEShi"
+					},
+					content = {
+						"MTZMEShiDate03_53"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "MTZMEShi_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "MTZMEShi/MTZMEShi_face_4.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "MTZMEShi_dialog_speak_name_2",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"MTZMEShi"
+					},
+					content = {
+						"MTZMEShiDate03_54"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "MTZMEShi_dialog_speak_name_2",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"MTZMEShi"
+					},
+					content = {
+						"MTZMEShiDate03_55"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 1
+				}
+			end
+		}),
+		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "hm"),
+			args = function (_ctx)
+				return {
+					duration = 0
+				}
+			end
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.2
+				}
+			end
+		}),
+		act({
+			action = "hide",
+			actor = __getnode__(_root, "dialogue")
+		}),
+		act({
+			action = "fadeOut",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 0.2
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "MTZMEShi_dialog_speak_name_2",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"MTZMEShi_dialog_speak_name_2"
+					},
+					content = {
+						"MTZMEShiDate03_56"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "MTZMEShi_dialog_speak_name_2",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"MTZMEShi_dialog_speak_name_2"
+					},
+					content = {
+						"MTZMEShiDate03_57"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "bg"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "bg_story_scene_1_7.jpg",
+					pathType = "SCENE"
+				}
+			end
+		}),
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "MTZMEShi_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "MTZMEShi/MTZMEShi_face_1.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.2
+				}
+			end
+		}),
+		act({
+			action = "fadeOut",
+			actor = __getnode__(_root, "hm"),
+			args = function (_ctx)
+				return {
+					duration = 0.2
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "MTZMEShi_dialog_speak_name_1",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"MTZMEShi"
+					},
+					content = {
+						"MTZMEShiDate03_58"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "MTZMEShi_dialog_speak_name_1",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"MTZMEShi"
+					},
+					content = {
+						"MTZMEShiDate03_59"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "MTZMEShi_dialog_speak_name_1",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"MTZMEShi"
+					},
+					content = {
+						"MTZMEShiDate03_60"
 					},
 					durations = {
 						0.03
@@ -1423,21 +1813,202 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03l(_root, args)
 		enterSceneFollowAction({
 			args = function (_ctx)
 				return {
-					name = "start_MTZMEShiDate03m"
+					name = "start_MTZMEShiDate03o"
 				}
 			end
 		})
 	})
 end
 
-function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03m(_root, args)
+function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03n(_root, args)
 	return sequential({
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "MTZMEShi_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "MTZMEShi/MTZMEShi_face_4.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "MTZMEShi_dialog_speak_name_2",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"MTZMEShi"
+					},
+					content = {
+						"MTZMEShiDate03_61"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "MTZMEShi_dialog_speak_name_1",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"MTZMEShi"
+					},
+					content = {
+						"MTZMEShiDate03_62"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "MTZMEShi_dialog_speak_name_1",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"MTZMEShi"
+					},
+					content = {
+						"MTZMEShiDate03_63"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
 		act({
 			action = "fadeIn",
 			actor = __getnode__(_root, "curtain"),
 			args = function (_ctx)
 				return {
 					duration = 1
+				}
+			end
+		}),
+		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "hm"),
+			args = function (_ctx)
+				return {
+					duration = 0
+				}
+			end
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.2
+				}
+			end
+		}),
+		act({
+			action = "hide",
+			actor = __getnode__(_root, "dialogue")
+		}),
+		act({
+			action = "fadeOut",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 0.2
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "MTZMEShi_dialog_speak_name_1",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"MTZMEShi"
+					},
+					content = {
+						"MTZMEShiDate03_64"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "MTZMEShi_dialog_speak_name_1",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"MTZMEShi"
+					},
+					content = {
+						"MTZMEShiDate03_65"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 1
+				}
+			end
+		}),
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "bg"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "bg_story_scene_1_7.jpg",
+					pathType = "SCENE"
+				}
+			end
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.2
+				}
+			end
+		}),
+		act({
+			action = "fadeOut",
+			actor = __getnode__(_root, "hm"),
+			args = function (_ctx)
+				return {
+					duration = 0.2
 				}
 			end
 		}),
@@ -1466,15 +2037,36 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03m(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_17",
+					name = "MTZMEShi_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"MTZMEShi_speak"
+						"MTZMEShi"
 					},
 					content = {
-						"MTZMEShiDate03_43"
+						"MTZMEShiDate03_66"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "MTZMEShi_dialog_speak_name_1",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"MTZMEShi"
+					},
+					content = {
+						"MTZMEShiDate03_67"
 					},
 					durations = {
 						0.03
@@ -1498,186 +2090,15 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03m(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_237",
+					name = "MTZMEShi_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"MTZMEShi_speak"
+						"MTZMEShi"
 					},
 					content = {
-						"MTZMEShiDate03_44"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "MTZMEShi_face"),
-			args = function (_ctx)
-				return {
-					resType = 0,
-					image = "MTZMEShi/MTZMEShi_face_2.png",
-					pathType = "STORY_FACE"
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_237",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"MTZMEShi_speak"
-					},
-					content = {
-						"MTZMEShiDate03_45"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "MTZMEShi_face"),
-			args = function (_ctx)
-				return {
-					resType = 0,
-					image = "MTZMEShi/MTZMEShi_face_3.png",
-					pathType = "STORY_FACE"
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_237",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"MTZMEShi_speak"
-					},
-					content = {
-						"MTZMEShiDate03_46"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "show",
-			actor = __getnode__(_root, "dialogueChoose"),
-			args = function (_ctx)
-				return {
-					date = true,
-					content = {
-						"MTZMEShiDate03_47",
-						"MTZMEShiDate03_48"
-					},
-					actionName = {
-						"start_MTZMEShiDate03n",
-						"start_MTZMEShiDate03o"
-					}
-				}
-			end
-		})
-	})
-end
-
-function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03n(_root, args)
-	return sequential({
-		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "MTZMEShi_face"),
-			args = function (_ctx)
-				return {
-					resType = 0,
-					image = "MTZMEShi/MTZMEShi_face_4.png",
-					pathType = "STORY_FACE"
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_237",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"MTZMEShi_speak"
-					},
-					content = {
-						"MTZMEShiDate03_49"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_237",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"MTZMEShi_speak"
-					},
-					content = {
-						"MTZMEShiDate03_50"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "MTZMEShi_face"),
-			args = function (_ctx)
-				return {
-					resType = 0,
-					image = "MTZMEShi/MTZMEShi_face_3.png",
-					pathType = "STORY_FACE"
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_237",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"MTZMEShi_speak"
-					},
-					content = {
-						"MTZMEShiDate03_51"
+						"MTZMEShiDate03_68"
 					},
 					durations = {
 						0.03
@@ -1688,7 +2109,7 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03n(_root, args)
 		enterSceneFollowAction({
 			args = function (_ctx)
 				return {
-					name = "start_MTZMEShiDate03p"
+					name = "start_MTZMEShiDate03o"
 				}
 			end
 		})
@@ -1696,71 +2117,6 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03n(_root, args)
 end
 
 function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03o(_root, args)
-	return sequential({
-		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "MTZMEShi_face"),
-			args = function (_ctx)
-				return {
-					resType = 0,
-					image = "MTZMEShi/MTZMEShi_face_2.png",
-					pathType = "STORY_FACE"
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_237",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"MTZMEShi_speak"
-					},
-					content = {
-						"MTZMEShiDate03_52"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_237",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"MTZMEShi_speak"
-					},
-					content = {
-						"MTZMEShiDate03_53"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		enterSceneFollowAction({
-			args = function (_ctx)
-				return {
-					name = "start_MTZMEShiDate03p"
-				}
-			end
-		})
-	})
-end
-
-function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03p(_root, args)
 	return sequential({
 		act({
 			action = "changeTexture",
@@ -1778,15 +2134,15 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03p(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_237",
+					name = "MTZMEShi_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"MTZMEShi_speak"
+						"MTZMEShi"
 					},
 					content = {
-						"MTZMEShiDate03_54"
+						"MTZMEShiDate03_69"
 					},
 					durations = {
 						0.03
@@ -1795,13 +2151,23 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03p(_root, args)
 			end
 		}),
 		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "MTZMEShi_face"),
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					resType = 0,
-					image = "MTZMEShi/MTZMEShi_face_2.png",
-					pathType = "STORY_FACE"
+					name = "MTZMEShi_dialog_speak_name_1",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"MTZMEShi"
+					},
+					content = {
+						"MTZMEShiDate03_70"
+					},
+					durations = {
+						0.03
+					}
 				}
 			end
 		}),
@@ -1810,15 +2176,15 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03p(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_237",
+					name = "MTZMEShi_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"MTZMEShi_speak"
+						"MTZMEShi"
 					},
 					content = {
-						"MTZMEShiDate03_55"
+						"MTZMEShiDate03_71"
 					},
 					durations = {
 						0.03
@@ -1842,15 +2208,36 @@ function scene_MTZMEShiDate03.actions.start_MTZMEShiDate03p(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_237",
+					name = "MTZMEShi_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"MTZMEShi_speak"
+						"MTZMEShi"
 					},
 					content = {
-						"MTZMEShiDate03_56"
+						"MTZMEShiDate03_72"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "MTZMEShi_dialog_speak_name_2",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"MTZMEShi"
+					},
+					content = {
+						"MTZMEShiDate03_73"
 					},
 					durations = {
 						0.03

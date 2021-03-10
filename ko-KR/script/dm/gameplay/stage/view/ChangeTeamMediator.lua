@@ -212,6 +212,10 @@ function ChangeTeamMediator:onClickSure()
 			self._callBack()
 		end
 
+		if DisposableObject:isDisposed(self) or DisposableObject:isDisposed(self:getView()) then
+			return
+		end
+
 		self:close()
 	end)
 end

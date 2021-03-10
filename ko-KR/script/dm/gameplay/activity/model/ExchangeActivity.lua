@@ -1,8 +1,5 @@
 ExchangeActivity = class("ExchangeActivity", BaseActivity, _M)
 
-ExchangeActivity:has("_developSystem", {
-	is = "rw"
-}):injectWith("DevelopSystem")
 ExchangeActivity:has("_allData", {
 	is = "r"
 })
@@ -123,6 +120,35 @@ function ExchangeActivity:getSortExchangeList()
 		end
 
 		return a.index < b.index
+	end)
+
+	return list
+end
+
+function ExchangeActivity:getCostSortExchangeList()
+	local list = {}
+
+	for id, data in pairs(self._exchangeMap) do
+		list[#list + 1] = data
+	end
+
+	table.sort(list, function (a, b)
+		if a.amount == 0 then
+			return false
+		end
+
+		if b.amount == 0 then
+			return true
+		end
+
+		local aCost = a.config.Cost[1].amount
+		local bCost = b.config.Cost[1].amount
+
+		if aCost == bCost then
+			return a.index < b.index
+		else
+			return bCost < aCost
+		end
 	end)
 
 	return list

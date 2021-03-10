@@ -83,15 +83,34 @@ all.Sk_Master_XueZhan_Action1 = {
 		if this.dmgFactor == nil then
 			this.dmgFactor = {
 				1,
-				3.6,
+				3,
 				0
 			}
 		end
 
-		this.AtkRateFactor = externs.AtkRateFactor
+		this.summonFactorHp = externs.summonFactorHp
 
-		assert(this.AtkRateFactor ~= nil, "External variable `AtkRateFactor` is not provided.")
+		if this.summonFactorHp == nil then
+			this.summonFactorHp = 0.2
+		end
 
+		this.summonFactorAtk = externs.summonFactorAtk
+
+		if this.summonFactorAtk == nil then
+			this.summonFactorAtk = 1
+		end
+
+		this.summonFactorDef = externs.summonFactorDef
+
+		if this.summonFactorDef == nil then
+			this.summonFactorDef = 1
+		end
+
+		this.summonFactor = {
+			this.summonFactorHp,
+			this.summonFactorAtk,
+			this.summonFactorDef
+		}
 		local main = __action(this, {
 			name = "main",
 			entry = prototype.main
@@ -137,22 +156,6 @@ all.Sk_Master_XueZhan_Action1 = {
 			end
 
 			global.EnergyRestrain(_env, _env.ACTOR, _env.TARGET)
-
-			local buffeft1 = global.NumericEffect(_env, "+atkrate", {
-				"+Normal",
-				"+Normal"
-			}, 0)
-
-			global.ApplyBuff(_env, _env.ACTOR, {
-				timing = 2,
-				duration = 1,
-				display = "Prepare",
-				tags = {
-					"PREPARE"
-				}
-			}, {
-				buffeft1
-			})
 		end)
 		exec["@time"]({
 			900
@@ -191,28 +194,31 @@ all.Sk_Master_XueZhan_Action1 = {
 				}))
 			end
 
-			for _, friendunit in global.__iter__(global.FriendUnits(_env, global.PETS - global.SUMMONS)) do
-				local buffeft1 = global.NumericEffect(_env, "+atkrate", {
-					"+Normal",
-					"+Normal"
-				}, this.AtkRateFactor)
-
-				global.ApplyBuff_Buff(_env, _env.ACTOR, friendunit, {
-					timing = 3,
-					duration = 3,
-					display = "AtkUp",
-					tags = {
-						"STATUS",
-						"NUMERIC",
-						"BUFF",
-						"ATKUP",
-						"DISPELLABLE",
-						"STEALABLE"
-					}
-				}, {
-					buffeft1
-				}, 1)
-			end
+			local SummonedLengMo = global.Summon(_env, _env.ACTOR, "Summoned_LengMo", this.summonFactor, nil, {
+				2,
+				5,
+				1,
+				3,
+				4,
+				6,
+				7,
+				8,
+				9
+			})
+			local SummonedHeiHei1 = global.Summon(_env, _env.ACTOR, "Summoned_HeiHei", this.summonFactor, nil, {
+				7,
+				9,
+				4,
+				6,
+				1,
+				3,
+				5,
+				2,
+				8
+			})
+			local SummonedHeiHei2 = global.Summon(_env, _env.ACTOR, "Summoned_HeiHei", this.summonFactor, nil, {
+				global.Random(_env, 1, 9)
+			})
 		end)
 		exec["@time"]({
 			3333
@@ -233,20 +239,18 @@ all.Sk_Master_XueZhan_Action2 = {
 		local this = global.__skill({
 			global = global
 		}, prototype, externs)
-		this.ShieldRateFactor = externs.ShieldRateFactor
-
-		assert(this.ShieldRateFactor ~= nil, "External variable `ShieldRateFactor` is not provided.")
-
 		this.AtkRateFactor = externs.AtkRateFactor
 
-		assert(this.AtkRateFactor ~= nil, "External variable `AtkRateFactor` is not provided.")
+		if this.AtkRateFactor == nil then
+			this.AtkRateFactor = 0.2
+		end
 
 		local main = __action(this, {
 			name = "main",
 			entry = prototype.main
 		})
 		main = global["[duration]"](this, {
-			4167
+			3400
 		}, main)
 		main = global["[cut_in]"](this, {
 			"1"
@@ -310,48 +314,51 @@ all.Sk_Master_XueZhan_Action2 = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.ACTOR)
-			local buffeft1 = global.ShieldEffect(_env, maxHp * this.ShieldRateFactor)
-
-			global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
-				timing = 1,
-				duration = 3,
-				display = "Shield",
-				tags = {
-					"STATUS",
-					"BUFF",
-					"SHIELD",
-					"DISPELLABLE",
-					"UNSTEALABLE"
-				}
-			}, {
-				buffeft1
-			}, 1)
-
-			local buffeft2 = global.NumericEffect(_env, "+atkrate", {
+			local atk_master = global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR)
+			local buff1 = global.NumericEffect(_env, "+atk", {
 				"+Normal",
 				"+Normal"
-			}, this.AtkRateFactor)
-
-			global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
-				timing = 1,
-				duration = 3,
-				display = "AtkUp",
-				tags = {
-					"STATUS",
-					"NUMERIC",
-					"BUFF",
-					"ATKUP",
-					"SHIELD",
-					"DISPELLABLE",
-					"STEALABLE"
-				}
-			}, {
-				buffeft2
+			}, atk_master * this.AtkRateFactor)
+			local buff2 = global.Diligent(_env)
+			local buff3 = global.RageGainEffect(_env, "-", {
+				"+Normal",
+				"+Normal"
 			}, 1)
+
+			for _, unit in global.__iter__(global.FriendUnits(_env, global.PETS)) do
+				global.ApplyBuff_Buff(_env, _env.ACTOR, unit, {
+					timing = 0,
+					duration = 99,
+					display = "AtkUp",
+					tags = {
+						"NUMERIC",
+						"BUFF",
+						"ATKUP",
+						"DISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buff1
+				}, 1)
+				global.ApplyBuff(_env, unit, {
+					timing = 2,
+					duration = 1,
+					tags = {
+						"STATUS",
+						"DILIGENT",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buff2,
+					buff3
+				})
+			end
+
+			global.DiligentRound(_env)
 		end)
 		exec["@time"]({
-			4167
+			3300
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
@@ -379,9 +386,11 @@ all.Sk_Master_XueZhan_Action3 = {
 			}
 		end
 
-		this.HurtRateFactor = externs.HurtRateFactor
+		this.DmgRateFactor = externs.DmgRateFactor
 
-		assert(this.HurtRateFactor ~= nil, "External variable `HurtRateFactor` is not provided.")
+		if this.DmgRateFactor == nil then
+			this.DmgRateFactor = 0.1
+		end
 
 		local main = __action(this, {
 			name = "main",
@@ -412,7 +421,8 @@ all.Sk_Master_XueZhan_Action3 = {
 		assert(_env.TARGET ~= nil, "External variable `TARGET` is not provided.")
 
 		_env.units = nil
-		_env.masterextra = 0
+		_env.units_friends = nil
+		_env.num = 0
 
 		exec["@time"]({
 			0
@@ -422,7 +432,8 @@ all.Sk_Master_XueZhan_Action3 = {
 
 			global.GroundEft(_env, _env.ACTOR, "BGEffectBlack")
 
-			_env.units = global.EnemyUnits(_env, global.MID_COL)
+			_env.units_friends = global.FriendUnits(_env, global.PETS)
+			_env.units = global.EnemyUnits(_env, global.COL_OF(_env, _env.TARGET))
 
 			for _, unit in global.__iter__(_env.units) do
 				global.RetainObject(_env, unit)
@@ -465,22 +476,14 @@ all.Sk_Master_XueZhan_Action3 = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
+			_env.num = #_env.units_friends
 
 			for _, unit in global.__iter__(_env.units) do
 				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
 				global.ApplyRPEffect(_env, _env.ACTOR, unit)
 
 				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
-
-				if global.EnemyMaster(_env, unit) then
-					local Hp = global.UnitPropGetter(_env, "maxHp")(_env, unit)
-
-					if Hp < 0.3 then
-						_env.masterextra = this.HurtRateFactor
-					end
-				end
-
-				damage.val = damage.val * (1 + _env.masterextra)
+				damage.val = damage.val * (1 + _env.num * this.DmgRateFactor)
 
 				global.ApplyAOEHPMultiDamage_ResultCheck(_env, _env.ACTOR, unit, {
 					0,

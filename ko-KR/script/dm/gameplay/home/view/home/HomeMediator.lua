@@ -3868,6 +3868,14 @@ function HomeMediator:setComplexActivityEntry()
 			imgZorder = 2,
 			aimpos = cc.p(39, 39),
 			imgpos = cc.p(56, 22)
+		},
+		[ActivityType_UI.KActivitySunflower] = {
+			animZorder = 1,
+			img = "sunflower_btn_zjm_rukou.png",
+			anim = "eff_zong_21kedexinfengeff",
+			imgZorder = 2,
+			aimpos = cc.p(49, 42),
+			imgpos = cc.p(53, 10)
 		}
 	}
 	local extraActBtn = self._rightFuncLayout:getChildByFullName("extraActBtn")

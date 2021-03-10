@@ -42,7 +42,7 @@ function exports.ApplyHPDamage(env, target, damage, lowerLimit, notLastHit)
 	local healthSystem = env.global["$HealthSystem"]
 	local actor = env["$actor"]
 	local workId = env["$id"]
-	local result = nil
+	local result, transforTarget = nil
 	local flagComp = target:getComponent("Flag")
 
 	if flagComp:hasStatus(kBELinked) and not flagComp:hasStatus(kBEImmune) then
@@ -58,7 +58,7 @@ function exports.ApplyHPDamage(env, target, damage, lowerLimit, notLastHit)
 
 		for k, unit in ipairs(linkedUnits) do
 			if unit == target then
-				result = healthSystem:performHealthDamage(actor, target, splitDamage, lowerLimit, workId, notLastHit)
+				result, transforTarget = healthSystem:performHealthDamage(actor, target, splitDamage, lowerLimit, workId, notLastHit)
 			else
 				local _result = healthSystem:performHealthDamage(actor, unit, splitDamageVal, lowerLimit, workId, notLastHit)
 
@@ -77,10 +77,14 @@ function exports.ApplyHPDamage(env, target, damage, lowerLimit, notLastHit)
 			end
 		end
 	else
-		result = healthSystem:performHealthDamage(actor, target, damage, lowerLimit, workId, notLastHit)
+		result, transforTarget = healthSystem:performHealthDamage(actor, target, damage, lowerLimit, workId, notLastHit)
 	end
 
 	if result then
+		if transforTarget then
+			target = transforTarget
+		end
+
 		addHurtInfo(env, target, result)
 
 		if result.deadly then

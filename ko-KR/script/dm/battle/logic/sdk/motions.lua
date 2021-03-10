@@ -95,6 +95,15 @@ function exports.Focus(env, actor, destination, scale, duration)
 	})
 end
 
+function exports.FocusCamera(env, actor, destination, scale, duration)
+	env.global.RecordImmediately(env, actor:getId(), "FocusCamera", {
+		act = env["$id"],
+		dst = destination,
+		scale = scale,
+		dur = duration
+	})
+end
+
 function exports.GroundEft(env, actor, bgEftId, duration, inSupering)
 	if inSupering == nil then
 		inSupering = true

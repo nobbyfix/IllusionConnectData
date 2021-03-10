@@ -144,7 +144,9 @@ function DebugShowBustAni:createBustAnim(data)
 	local heroIcon = nil
 
 	if bustIndex == 11 then
-		heroIcon = self:createRactHeadImage(info)
+		heroIcon, oldIcon = self:createRactHeadImage(info)
+
+		oldIcon:offset(30, 0)
 	elseif bustIndex == 14 then
 		local __topThreePos = {
 			{
@@ -468,6 +470,18 @@ function DebugShowBustAni:createRactHeadImage(info)
 		}
 	elseif imageType == 4 then
 		local modelId = ConfigReader:getDataByNameIdAndKey("HeroAwaken", id, "ModelId")
+		info.id = modelId
+		local i = {
+			id = info.id,
+			iconType = info.iconType,
+			useAnim = info.useAnim,
+			inputIsPos = info.inputIsPos,
+			inputPos = info.inputPos
+		}
+		icon = self:createRoleIconSprite(i)
+	elseif imageType == 5 then
+		local skinId = playerHeadImgConfig.SurfaceMasterId
+		local modelId = ConfigReader:getDataByNameIdAndKey("Surface", skinId, "Model")
 		info.id = modelId
 		local i = {
 			id = info.id,

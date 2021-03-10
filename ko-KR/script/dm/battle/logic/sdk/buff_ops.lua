@@ -452,6 +452,13 @@ function exports.RageGainEffect(env, name, itemname, value, uplimit)
 	})
 end
 
+function exports.DamageTransferEffect(env, trasforUnit, radio)
+	return DamageTransferEffect:new({
+		trasforUnit = trasforUnit,
+		radio = radio
+	})
+end
+
 function exports.HPPeriodDamage(env, status, value, lowerLimit)
 	local ldamage = value
 	local llower = lowerLimit

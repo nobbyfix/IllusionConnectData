@@ -1702,7 +1702,7 @@ function HeroSystem:sortHeroes(list, type, recommendIds, checkInTeam, tiredIds, 
 			local aInfo = self:getHeroInfoById(a.id or a)
 			local bInfo = self:getHeroInfoById(b.id or b)
 
-			if a.showType == HeroShowType.kNotOwn then
+			if a.showType == HeroShowType.kNotOwn and b.showType == HeroShowType.kNotOwn then
 				local aHasNum = self:getHeroDebrisCount(a.id)
 				local bHasNum = self:getHeroDebrisCount(b.id)
 

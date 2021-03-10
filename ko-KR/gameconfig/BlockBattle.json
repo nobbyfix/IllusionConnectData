@@ -513,6 +513,55 @@
         "WaitMode": 1,
         "WaitModeLimit": 1500
     },
+    "Activity_SuFTime_1": {
+        "BattleMode": 2,
+        "CombatAdjust": "Skill_CombatDominating",
+        "EnemyEnergyBase": {
+            "pattern": "COVER",
+            "value": 0
+        },
+        "EnemyFBReduction": "",
+        "EnemySpecialPassive": [],
+        "EnergyBase": "",
+        "Fight_StageEnergyMax": [
+            50,
+            30
+        ],
+        "FriendFBReduction": "",
+        "FriendSpecialPassive": [],
+        "HeroRageBase": "",
+        "HeroRageRules": {
+            "a1": [
+                10,
+                750
+            ],
+            "a2": 320,
+            "a3": 150,
+            "a4": 0
+        },
+        "MasterRageBase": "",
+        "MasterRageRules": {
+            "a1": [
+                10,
+                0
+            ],
+            "a2": 60,
+            "a3": 0,
+            "a4": 6
+        },
+        "SkipTime": 0,
+        "StageEnergy": [
+            [
+                {
+                    "EnemyEnergySpeed": 1,
+                    "EnergySpeed": 1,
+                    "duration": 90000
+                }
+            ]
+        ],
+        "WaitMode": 1,
+        "WaitModeLimit": 1500
+    },
     "Activity_Wait1_1": {
         "BattleMode": 2,
         "CombatAdjust": "Skill_CombatDominating",
@@ -1095,17 +1144,17 @@
         "CombatAdjust": "Skill_CombatDominating",
         "EnemyEnergyBase": {
             "pattern": "COVER",
-            "value": 8
+            "value": 6
         },
         "EnemyFBReduction": "Sk_Enemy_FBReduction",
         "EnemySpecialPassive": [],
         "EnergyBase": {
             "pattern": "COVER",
-            "value": 8
+            "value": 6
         },
         "Fight_StageEnergyMax": [
-            30,
-            30
+            24,
+            24
         ],
         "FriendFBReduction": "Sk_Friend_FBReduction",
         "FriendSpecialPassive": [],

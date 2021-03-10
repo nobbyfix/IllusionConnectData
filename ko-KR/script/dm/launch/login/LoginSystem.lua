@@ -231,7 +231,7 @@ function LoginSystem:requestPlayerInfo(callback)
 		baseInfo = info
 	}
 
-	self._loginService:requestPlayerInfo(params, true, function (response)
+	self._loginService:requestPlayerInfo(params, false, function (response)
 		if response.resCode == GS_SUCCESS then
 			local developSystem = self:getInjector():getInstance(DevelopSystem)
 
@@ -242,6 +242,10 @@ function LoginSystem:requestPlayerInfo(callback)
 
 				if response.data.extra.serverOpenTime then
 					developSystem:setServerOpenTime(response.data.extra.serverOpenTime)
+				end
+
+				if response.data.extra.mergeTs then
+					developSystem:setServerMergeTime(response.data.extra.mergeTs)
 				end
 
 				if response.data.extra.timeZone then

@@ -117,6 +117,47 @@
             "IM_Boom"
         ]
     },
+    "Activity_TeamNameConfig": {
+        "clz": "string",
+        "content": "Activity_TeamName"
+    },
+    "Activity_TeamPresetOffset": {
+        "clz": "dict",
+        "content": {
+            "Master_BiLei": [
+                0,
+                0
+            ],
+            "Master_FuHun": [
+                0,
+                0
+            ],
+            "Master_JiangJun": [
+                0,
+                0
+            ],
+            "Master_LieSha": [
+                0,
+                0
+            ],
+            "Master_SenLing": [
+                0,
+                0
+            ],
+            "Master_WuShi": [
+                0,
+                0
+            ],
+            "Master_XueZhan": [
+                0,
+                0
+            ],
+            "Master_ZhaoHuan": [
+                0,
+                0
+            ]
+        }
+    },
     "AntiAdvertisement_A": {
         "clz": "int",
         "content": 75
@@ -1914,15 +1955,17 @@
                 "pic": "gongdou_but_xuanzhongzi"
             },
             {
+                "anim": "huangse-CX_gongdoutouxiangkuang",
                 "level": [
-                    36,
-                    50
+                    51,
+                    60
                 ],
                 "pic": "gongdou_but_xuanzhongcheng"
             },
             {
+                "anim": "hongse-CX_gongdoutouxiangkuang",
                 "level": [
-                    51,
+                    61,
                     10000
                 ],
                 "pic": "gongdou_but_xuanzhonghong"
@@ -7164,6 +7207,14 @@
             "64": "QualityDesc_64"
         }
     },
+    "QuickChallenge_Combat": {
+        "clz": "double",
+        "content": 1.3
+    },
+    "QuickChallenge_Config": {
+        "clz": "string",
+        "content": "QuickChallenge"
+    },
     "RTPK_AddScope": {
         "clz": "array",
         "content": [
@@ -8145,7 +8196,9 @@
             "PGNNi",
             "QBTe",
             "FLYDe",
-            "TJHDe"
+            "TJHDe",
+            "NCai",
+            "FGao"
         ]
     },
     "Tower_1_GrowMaxValue": {

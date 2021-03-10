@@ -11,9 +11,11 @@ all.SectSkill_Master_XueZhan_1 = {
 		local this = global.__skill({
 			global = global
 		}, prototype, externs)
-		this.HurtRateFactor = externs.HurtRateFactor
+		this.RateFactor = externs.RateFactor
 
-		assert(this.HurtRateFactor ~= nil, "External variable `HurtRateFactor` is not provided.")
+		if this.RateFactor == nil then
+			this.RateFactor = 0.1
+		end
 
 		local passive = __action(this, {
 			name = "passive",
@@ -23,7 +25,7 @@ all.SectSkill_Master_XueZhan_1 = {
 			0
 		}, passive)
 		this.passive = global["[trigger_by]"](this, {
-			"UNIT_ENTER"
+			"SELF:ENTER"
 		}, passive)
 
 		return this
@@ -35,30 +37,26 @@ all.SectSkill_Master_XueZhan_1 = {
 		_env.ACTOR = externs.ACTOR
 
 		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
-
-		_env.unit = externs.unit
-
-		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
-
-		_env.event = externs.event
-
-		assert(_env.event ~= nil, "External variable `event` is not provided.")
 		exec["@time"]({
 			0
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
 
-			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.PETS(_env, _env.unit) then
+			if global.MASTER(_env, _env.ACTOR) then
 				local buffeft1 = global.NumericEffect(_env, "+hurtrate", {
 					"+Normal",
 					"+Normal"
-				}, this.HurtRateFactor)
+				}, this.RateFactor)
+				local buffeft2 = global.NumericEffect(_env, "+unhurtrate", {
+					"+Normal",
+					"+Normal"
+				}, this.RateFactor)
 
-				global.ApplyBuff_Buff(_env, _env.ACTOR, _env.unit, {
-					duration = 2,
+				global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
+					duration = 99,
 					group = "SectSkill_Master_XueZhan_1",
-					timing = 2,
+					timing = 0,
 					limit = 1,
 					tags = {
 						"NUMERIC",
@@ -69,7 +67,8 @@ all.SectSkill_Master_XueZhan_1 = {
 						"UNSTEALABLE"
 					}
 				}, {
-					buffeft1
+					buffeft1,
+					buffeft2
 				}, 1)
 			end
 		end)
@@ -84,13 +83,9 @@ all.SectSkill_Master_XueZhan_2 = {
 		local this = global.__skill({
 			global = global
 		}, prototype, externs)
-		this.RateFactor = externs.RateFactor
+		this.AtkRateFactor = externs.AtkRateFactor
 
-		assert(this.RateFactor ~= nil, "External variable `RateFactor` is not provided.")
-
-		this.UnHurtRateFactor = externs.UnHurtRateFactor
-
-		assert(this.UnHurtRateFactor ~= nil, "External variable `UnHurtRateFactor` is not provided.")
+		assert(this.AtkRateFactor ~= nil, "External variable `AtkRateFactor` is not provided.")
 
 		local passive = __action(this, {
 			name = "passive",
@@ -127,12 +122,16 @@ all.SectSkill_Master_XueZhan_2 = {
 			local global = _env.global
 
 			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.PETS(_env, _env.unit) then
-				local buffeft1 = global.SpecialNumericEffect(_env, "+hurtedUnHurtUpProb", {
-					"?Normal"
-				}, this.RateFactor)
-				local buffeft2 = global.SpecialNumericEffect(_env, "+hurtedUnHurtUpRate", {
-					"?Normal"
-				}, this.UnHurtRateFactor)
+				local atk_master = 0
+
+				if global.FriendMaster(_env) then
+					atk_master = global.UnitPropGetter(_env, "atk")(_env, global.FriendMaster(_env))
+				end
+
+				local buff1 = global.NumericEffect(_env, "+atk", {
+					"+Normal",
+					"+Normal"
+				}, atk_master * this.AtkRateFactor)
 
 				global.ApplyBuff_Buff(_env, _env.ACTOR, _env.unit, {
 					duration = 99,
@@ -148,8 +147,7 @@ all.SectSkill_Master_XueZhan_2 = {
 						"UNSTEALABLE"
 					}
 				}, {
-					buffeft1,
-					buffeft2
+					buff1
 				}, 1, 0)
 			end
 		end)
@@ -164,28 +162,36 @@ all.SectSkill_Master_XueZhan_3 = {
 		local this = global.__skill({
 			global = global
 		}, prototype, externs)
-		this.AtkRateFactor = externs.AtkRateFactor
-
-		assert(this.AtkRateFactor ~= nil, "External variable `AtkRateFactor` is not provided.")
-
 		this.MaxHpRateFactor = externs.MaxHpRateFactor
 
-		assert(this.MaxHpRateFactor ~= nil, "External variable `MaxHpRateFactor` is not provided.")
+		if this.MaxHpRateFactor == nil then
+			this.MaxHpRateFactor = 0.12
+		end
 
-		local passive = __action(this, {
-			name = "passive",
-			entry = prototype.passive
+		local passive1 = __action(this, {
+			name = "passive1",
+			entry = prototype.passive1
 		})
-		passive = global["[duration]"](this, {
+		passive1 = global["[duration]"](this, {
 			0
-		}, passive)
-		this.passive = global["[trigger_by]"](this, {
-			"UNIT_ENTER"
-		}, passive)
+		}, passive1)
+		this.passive1 = global["[trigger_by]"](this, {
+			"UNIT_BEFORE_ACTION"
+		}, passive1)
+		local passive2 = __action(this, {
+			name = "passive2",
+			entry = prototype.passive2
+		})
+		passive2 = global["[duration]"](this, {
+			0
+		}, passive2)
+		this.passive2 = global["[trigger_by]"](this, {
+			"UNIT_AFTER_ACTION"
+		}, passive2)
 
 		return this
 	end,
-	passive = function (_env, externs)
+	passive1 = function (_env, externs)
 		local this = _env.this
 		local global = _env.global
 		local exec = _env["$executor"]
@@ -207,21 +213,19 @@ all.SectSkill_Master_XueZhan_3 = {
 			local global = _env.global
 
 			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.PETS(_env, _env.unit) then
-				local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.unit)
-				local buffeft1 = global.MaxHpEffect(_env, maxHp * this.MaxHpRateFactor)
-				local buffeft2 = global.NumericEffect(_env, "+atkrate", {
-					"+Normal",
-					"+Normal"
-				}, this.AtkRateFactor)
+				local buffeft1 = global.SpecialNumericEffect(_env, "+xuezhan_special_atk", {
+					"?Normal"
+				}, 3)
+				local buffeft2 = global.SpecialNumericEffect(_env, "+xuezhan_special_maxhp", {
+					"?Normal"
+				}, this.MaxHpRateFactor)
 
-				global.ApplyBuff_Buff(_env, _env.ACTOR, _env.unit, {
+				global.ApplyBuff(_env, _env.unit, {
 					duration = 99,
 					group = "SectSkill_Master_XueZhan_3",
 					timing = 0,
 					limit = 1,
 					tags = {
-						"NUMERIC",
-						"BUFF",
 						"SECTSKILL",
 						"SectSkill_Master_XueZhan_3",
 						"UNDISPELLABLE",
@@ -230,7 +234,35 @@ all.SectSkill_Master_XueZhan_3 = {
 				}, {
 					buffeft1,
 					buffeft2
-				}, 1)
+				})
+			end
+		end)
+
+		return _env
+	end,
+	passive2 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+
+		_env.event = externs.event
+
+		assert(_env.event ~= nil, "External variable `event` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.PETS(_env, _env.unit) then
+				global.DispelBuff(_env, _env.unit, global.BUFF_MARKED_ALL(_env, "SECTSKILL", "SectSkill_Master_XueZhan_3"), 99)
 			end
 		end)
 
@@ -246,11 +278,21 @@ all.SectSkill_Master_XueZhan_4 = {
 		}, prototype, externs)
 		this.AtkRateFactor = externs.AtkRateFactor
 
-		assert(this.AtkRateFactor ~= nil, "External variable `AtkRateFactor` is not provided.")
+		if this.AtkRateFactor == nil then
+			this.AtkRateFactor = 0.1
+		end
 
-		this.CritRateFactor = externs.CritRateFactor
+		this.DefRateFactor = externs.DefRateFactor
 
-		assert(this.CritRateFactor ~= nil, "External variable `CritRateFactor` is not provided.")
+		if this.DefRateFactor == nil then
+			this.DefRateFactor = 0.1
+		end
+
+		this.MaxHpRateFactor = externs.MaxHpRateFactor
+
+		if this.MaxHpRateFactor == nil then
+			this.MaxHpRateFactor = 0.1
+		end
 
 		local passive = __action(this, {
 			name = "passive",
@@ -286,15 +328,17 @@ all.SectSkill_Master_XueZhan_4 = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.PETS(_env, _env.unit) then
-				local buffeft1 = global.NumericEffect(_env, "+atkrate", {
+			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.PETS - global.SUMMONS(_env, _env.unit) then
+				local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.unit)
+				local buffeft1 = global.MaxHpEffect(_env, maxHp * this.MaxHpRateFactor)
+				local buffeft2 = global.NumericEffect(_env, "+atkrate", {
 					"+Normal",
 					"+Normal"
 				}, this.AtkRateFactor)
-				local buffeft2 = global.NumericEffect(_env, "+critrate", {
+				local buffeft3 = global.NumericEffect(_env, "+defrate", {
 					"+Normal",
 					"+Normal"
-				}, this.CritRateFactor)
+				}, this.DefRateFactor)
 
 				global.ApplyBuff_Buff(_env, _env.ACTOR, _env.unit, {
 					duration = 99,
@@ -311,7 +355,8 @@ all.SectSkill_Master_XueZhan_4 = {
 					}
 				}, {
 					buffeft1,
-					buffeft2
+					buffeft2,
+					buffeft3
 				}, 1)
 			end
 		end)
@@ -328,7 +373,15 @@ all.SectSkill_Master_XueZhan_5 = {
 		}, prototype, externs)
 		this.AtkRateFactor = externs.AtkRateFactor
 
-		assert(this.AtkRateFactor ~= nil, "External variable `AtkRateFactor` is not provided.")
+		if this.AtkRateFactor == nil then
+			this.AtkRateFactor = 0.15
+		end
+
+		this.DefRateFactor = externs.DefRateFactor
+
+		if this.DefRateFactor == nil then
+			this.DefRateFactor = 0.15
+		end
 
 		local passive = __action(this, {
 			name = "passive",
@@ -364,11 +417,15 @@ all.SectSkill_Master_XueZhan_5 = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.PETS(_env, _env.unit) then
+			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.PETS - global.SUMMONS(_env, _env.unit) then
 				local buffeft1 = global.NumericEffect(_env, "+atkrate", {
 					"+Normal",
 					"+Normal"
 				}, this.AtkRateFactor)
+				local buffeft2 = global.NumericEffect(_env, "+defrate", {
+					"+Normal",
+					"+Normal"
+				}, this.DefRateFactor)
 
 				global.ApplyBuff_Buff(_env, _env.ACTOR, _env.unit, {
 					duration = 99,
@@ -384,7 +441,8 @@ all.SectSkill_Master_XueZhan_5 = {
 						"UNSTEALABLE"
 					}
 				}, {
-					buffeft1
+					buffeft1,
+					buffeft2
 				}, 1)
 			end
 		end)
@@ -1404,80 +1462,9 @@ all.SectSkill_Master_FuHun_1 = {
 		}, prototype, externs)
 		this.AOEHurtRateFactor = externs.AOEHurtRateFactor
 
-		assert(this.AOEHurtRateFactor ~= nil, "External variable `AOEHurtRateFactor` is not provided.")
-
-		local passive = __action(this, {
-			name = "passive",
-			entry = prototype.passive
-		})
-		passive = global["[duration]"](this, {
-			0
-		}, passive)
-		this.passive = global["[trigger_by]"](this, {
-			"UNIT_ENTER"
-		}, passive)
-
-		return this
-	end,
-	passive = function (_env, externs)
-		local this = _env.this
-		local global = _env.global
-		local exec = _env["$executor"]
-		_env.ACTOR = externs.ACTOR
-
-		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
-
-		_env.unit = externs.unit
-
-		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
-
-		_env.event = externs.event
-
-		assert(_env.event ~= nil, "External variable `event` is not provided.")
-		exec["@time"]({
-			0
-		}, _env, function (_env)
-			local this = _env.this
-			local global = _env.global
-
-			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.PETS(_env, _env.unit) then
-				local buffeft1 = global.NumericEffect(_env, "+aoerate", {
-					"+Normal",
-					"+Normal"
-				}, this.AOEHurtRateFactor)
-
-				global.ApplyBuff_Buff(_env, _env.ACTOR, _env.unit, {
-					duration = 99,
-					group = "SectSkill_Master_FuHun_1",
-					timing = 0,
-					limit = 1,
-					tags = {
-						"NUMERIC",
-						"BUFF",
-						"SECTSKILL",
-						"SectSkill_Master_FuHun_1",
-						"UNDISPELLABLE",
-						"UNSTEALABLE"
-					}
-				}, {
-					buffeft1
-				}, 1)
-			end
-		end)
-
-		return _env
-	end
-}
-all.SectSkill_Master_FuHun_2 = {
-	__new__ = function (prototype, externs, global)
-		local __function = global.__skill_function__
-		local __action = global.__skill_action__
-		local this = global.__skill({
-			global = global
-		}, prototype, externs)
-		this.UnHurtRateFactor = externs.UnHurtRateFactor
-
-		assert(this.UnHurtRateFactor ~= nil, "External variable `UnHurtRateFactor` is not provided.")
+		if this.AOEHurtRateFactor == nil then
+			this.AOEHurtRateFactor = 0.25
+		end
 
 		local passive = __action(this, {
 			name = "passive",
@@ -1504,46 +1491,48 @@ all.SectSkill_Master_FuHun_2 = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			local buffeft1 = global.NumericEffect(_env, "+unhurtrate", {
-				"+Normal",
-				"+Normal"
-			}, this.UnHurtRateFactor)
 
-			global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
-				duration = 6,
-				group = "SectSkill_Master_FuHun_2",
-				timing = 2,
-				limit = 1,
-				tags = {
-					"NUMERIC",
-					"BUFF",
-					"SECTSKILL",
-					"SectSkill_Master_FuHun_2",
-					"UNDISPELLABLE",
-					"UNSTEALABLE"
-				}
-			}, {
-				buffeft1
-			}, 1)
+			if global.MASTER(_env, _env.ACTOR) then
+				local buffeft1 = global.NumericEffect(_env, "+aoerate", {
+					"+Normal",
+					"+Normal"
+				}, this.AOEHurtRateFactor)
+
+				global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
+					duration = 99,
+					group = "SectSkill_Master_FuHun_1",
+					timing = 0,
+					limit = 1,
+					tags = {
+						"NUMERIC",
+						"BUFF",
+						"SECTSKILL",
+						"AOERATEUP",
+						"SectSkill_Master_FuHun_1",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft1
+				}, 1)
+			end
 		end)
 
 		return _env
 	end
 }
-all.SectSkill_Master_FuHun_3 = {
+all.SectSkill_Master_FuHun_2 = {
 	__new__ = function (prototype, externs, global)
 		local __function = global.__skill_function__
 		local __action = global.__skill_action__
 		local this = global.__skill({
 			global = global
 		}, prototype, externs)
-		this.AtkRateFactor = externs.AtkRateFactor
+		this.AOEHurtRateFactor = externs.AOEHurtRateFactor
 
-		assert(this.AtkRateFactor ~= nil, "External variable `AtkRateFactor` is not provided.")
-
-		this.CritRateFactor = externs.CritRateFactor
-
-		assert(this.CritRateFactor ~= nil, "External variable `CritRateFactor` is not provided.")
+		if this.AOEHurtRateFactor == nil then
+			this.AOEHurtRateFactor = 0.3
+		end
 
 		local passive = __action(this, {
 			name = "passive",
@@ -1579,32 +1568,96 @@ all.SectSkill_Master_FuHun_3 = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.PETS(_env, _env.unit) then
-				local buffeft1 = global.NumericEffect(_env, "+atkrate", {
+			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.PETS - global.SUMMONS(_env, _env.unit) then
+				local buffeft1 = global.NumericEffect(_env, "+aoerate", {
 					"+Normal",
 					"+Normal"
-				}, this.AtkRateFactor)
-				local buffeft2 = global.NumericEffect(_env, "+critrate", {
-					"+Normal",
-					"+Normal"
-				}, this.CritRateFactor)
+				}, this.AOEHurtRateFactor)
 
 				global.ApplyBuff_Buff(_env, _env.ACTOR, _env.unit, {
 					duration = 99,
-					group = "SectSkill_Master_FuHun_3",
+					group = "SectSkill_Master_FuHun_2",
 					timing = 0,
 					limit = 1,
 					tags = {
 						"NUMERIC",
 						"BUFF",
 						"SECTSKILL",
+						"AOERATEUP",
+						"SectSkill_Master_FuHun_2",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft1
+				}, 1)
+			end
+		end)
+
+		return _env
+	end
+}
+all.SectSkill_Master_FuHun_3 = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.UnHurtRateFactor = externs.UnHurtRateFactor
+
+		if this.UnHurtRateFactor == nil then
+			this.UnHurtRateFactor = 0.35
+		end
+
+		local passive = __action(this, {
+			name = "passive",
+			entry = prototype.passive
+		})
+		passive = global["[duration]"](this, {
+			0
+		}, passive)
+		this.passive = global["[trigger_by]"](this, {
+			"SELF:ENTER"
+		}, passive)
+
+		return this
+	end,
+	passive = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.MASTER(_env, _env.ACTOR) then
+				local buffeft1 = global.NumericEffect(_env, "+unhurtrate", {
+					"+Normal",
+					"+Normal"
+				}, this.UnHurtRateFactor)
+
+				global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
+					duration = 3,
+					group = "SectSkill_Master_FuHun_3",
+					timing = 1,
+					limit = 1,
+					tags = {
+						"NUMERIC",
+						"BUFF",
+						"SECTSKILL",
+						"UNHURTRATEUP",
 						"SectSkill_Master_FuHun_3",
 						"UNDISPELLABLE",
 						"UNSTEALABLE"
 					}
 				}, {
-					buffeft1,
-					buffeft2
+					buffeft1
 				}, 1)
 			end
 		end)
@@ -1621,11 +1674,21 @@ all.SectSkill_Master_FuHun_4 = {
 		}, prototype, externs)
 		this.AtkRateFactor = externs.AtkRateFactor
 
-		assert(this.AtkRateFactor ~= nil, "External variable `AtkRateFactor` is not provided.")
+		if this.AtkRateFactor == nil then
+			this.AtkRateFactor = 0.1
+		end
+
+		this.DefRateFactor = externs.DefRateFactor
+
+		if this.DefRateFactor == nil then
+			this.DefRateFactor = 0.1
+		end
 
 		this.MaxHpRateFactor = externs.MaxHpRateFactor
 
-		assert(this.MaxHpRateFactor ~= nil, "External variable `MaxHpRateFactor` is not provided.")
+		if this.MaxHpRateFactor == nil then
+			this.MaxHpRateFactor = 0.1
+		end
 
 		local passive = __action(this, {
 			name = "passive",
@@ -1661,30 +1724,35 @@ all.SectSkill_Master_FuHun_4 = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.PETS(_env, _env.unit) then
+			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.PETS - global.SUMMONS(_env, _env.unit) then
 				local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.unit)
 				local buffeft1 = global.MaxHpEffect(_env, maxHp * this.MaxHpRateFactor)
 				local buffeft2 = global.NumericEffect(_env, "+atkrate", {
 					"+Normal",
 					"+Normal"
 				}, this.AtkRateFactor)
+				local buffeft3 = global.NumericEffect(_env, "+defrate", {
+					"+Normal",
+					"+Normal"
+				}, this.DefRateFactor)
 
 				global.ApplyBuff_Buff(_env, _env.ACTOR, _env.unit, {
 					duration = 99,
-					group = "SectSkill_Master_FuHun_4",
+					group = "SectSkill_Master_BiLei_4",
 					timing = 0,
 					limit = 1,
 					tags = {
 						"NUMERIC",
 						"BUFF",
 						"SECTSKILL",
-						"SectSkill_Master_FuHun_4",
+						"SectSkill_Master_BiLei_4",
 						"UNDISPELLABLE",
 						"UNSTEALABLE"
 					}
 				}, {
 					buffeft1,
-					buffeft2
+					buffeft2,
+					buffeft3
 				}, 1)
 			end
 		end)
@@ -1701,7 +1769,15 @@ all.SectSkill_Master_FuHun_5 = {
 		}, prototype, externs)
 		this.AtkRateFactor = externs.AtkRateFactor
 
-		assert(this.AtkRateFactor ~= nil, "External variable `AtkRateFactor` is not provided.")
+		if this.AtkRateFactor == nil then
+			this.AtkRateFactor = 0.15
+		end
+
+		this.DefRateFactor = externs.DefRateFactor
+
+		if this.DefRateFactor == nil then
+			this.DefRateFactor = 0.15
+		end
 
 		local passive = __action(this, {
 			name = "passive",
@@ -1737,27 +1813,32 @@ all.SectSkill_Master_FuHun_5 = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.PETS(_env, _env.unit) then
+			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.PETS - global.SUMMONS(_env, _env.unit) then
 				local buffeft1 = global.NumericEffect(_env, "+atkrate", {
 					"+Normal",
 					"+Normal"
 				}, this.AtkRateFactor)
+				local buffeft2 = global.NumericEffect(_env, "+defrate", {
+					"+Normal",
+					"+Normal"
+				}, this.DefRateFactor)
 
 				global.ApplyBuff_Buff(_env, _env.ACTOR, _env.unit, {
 					duration = 99,
-					group = "SectSkill_Master_FuHun_5",
+					group = "SectSkill_Master_BiLei_5",
 					timing = 0,
 					limit = 1,
 					tags = {
 						"NUMERIC",
 						"BUFF",
 						"SECTSKILL",
-						"SectSkill_Master_FuHun_5",
+						"SectSkill_Master_BiLei_5",
 						"UNDISPELLABLE",
 						"UNSTEALABLE"
 					}
 				}, {
-					buffeft1
+					buffeft1,
+					buffeft2
 				}, 1)
 			end
 		end)

@@ -1253,6 +1253,10 @@ function CooperateBossInviteFriendMediator:onClickHead(data, sender)
 	end
 
 	friendSystem:requestSimpleFriendInfo(data:getRid(), function (response)
+		if DisposableObject:isDisposed(self) or DisposableObject:isDisposed(self:getView()) then
+			return
+		end
+
 		gotoView(response)
 	end)
 end
@@ -1311,6 +1315,10 @@ function CooperateBossInviteFriendMediator:onClickInvite(data, cell, idx)
 
 	self._cooperateBossSystem:requestInviteFriend(bossId, rid, function (response)
 		if response.resCode == 0 then
+			if DisposableObject:isDisposed(self) or DisposableObject:isDisposed(self:getView()) then
+				return
+			end
+
 			local memberHelpTimeCDArr = self._cooperateBossSystem:getMemberHelpTimeCDArr()
 
 			if memberHelpTimeCDArr and (memberHelpTimeCDArr[rid] == nil or memberHelpTimeCDArr[rid].cd <= 0) then

@@ -146,7 +146,7 @@ function RTPKMatchSwitch:initialize()
 		{
 			default = 0,
 			name = "code",
-			title = "1开启0关闭",
+			title = "1关闭0开启",
 			type = "Input"
 		}
 	}

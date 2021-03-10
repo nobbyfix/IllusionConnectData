@@ -145,40 +145,72 @@ function StageWinPopMediator:showHeroPanelAnim()
 	anim:gotoAndPlay(1)
 end
 
+function StageWinPopMediator:getBatCompMaxHeroModel()
+	local developSystem = self:getInjector():getInstance(DevelopSystem)
+	local team = developSystem:getTeamByType(StageTeamType.STAGE_NORMAL)
+	local heroSystem = developSystem:getHeroSystem()
+	local player = developSystem:getPlayer()
+	local maxCombat = 0
+	local maxCombatHero = nil
+	local model = ConfigReader:getDataByNameIdAndKey("MasterBase", team:getMasterId(), "RoleModel")
+
+	for k, v in pairs(team._heroes) do
+		local heroInfo = heroSystem:getHeroById(v)
+		local roleType = ConfigReader:getDataByNameIdAndKey("RoleModel", heroInfo:getModel(), "Type")
+
+		if roleType == RoleModelType.kHero and maxCombat < heroInfo:getCombat() then
+			maxCombat = heroInfo:getCombat()
+			maxCombatHero = heroInfo
+		end
+	end
+
+	return maxCombatHero:getModel()
+end
+
 function StageWinPopMediator:showHeroPanel()
 	self._state = 1
 	self._levelUpExpBar = {}
 	self._normalExpBar = {}
-	local battleStatist = self._data.statist.players
 	local developSystem = self:getInjector():getInstance(DevelopSystem)
 	local player = developSystem:getPlayer()
-	local playerBattleData = battleStatist[player:getRid()]
-	local team = developSystem:getTeamByType(StageTeamType.STAGE_NORMAL)
-	local mvpPoint = 0
-	local model = ConfigReader:getDataByNameIdAndKey("MasterBase", team:getMasterId(), "RoleModel")
+	local model = nil
 
-	for k, v in pairs(playerBattleData.unitSummary) do
-		local roleType = ConfigReader:getDataByNameIdAndKey("RoleModel", v.model, "Type")
+	if self._data.statist then
+		local battleStatist = self._data.statist.players
+		local playerBattleData = battleStatist[player:getRid()]
+		local team = developSystem:getTeamByType(StageTeamType.STAGE_NORMAL)
+		local mvpPoint = 0
+		model = ConfigReader:getDataByNameIdAndKey("MasterBase", team:getMasterId(), "RoleModel")
 
-		if roleType == RoleModelType.kHero then
-			local unitMvpPoint = 0
-			local _unitDmg = v.damage
+		for k, v in pairs(playerBattleData.unitSummary or {}) do
+			local roleType = ConfigReader:getDataByNameIdAndKey("RoleModel", v.model, "Type")
 
-			if _unitDmg then
-				unitMvpPoint = unitMvpPoint + _unitDmg
-			end
+			if roleType == RoleModelType.kHero then
+				local unitMvpPoint = 0
+				local _unitDmg = v.damage
 
-			local _unitCure = v.cure
+				if _unitDmg then
+					unitMvpPoint = unitMvpPoint + _unitDmg
+				end
 
-			if _unitCure then
-				unitMvpPoint = unitMvpPoint + _unitCure
-			end
+				local _unitCure = v.cure
 
-			if mvpPoint < unitMvpPoint then
-				mvpPoint = unitMvpPoint
-				model = v.model
+				if _unitCure then
+					unitMvpPoint = unitMvpPoint + _unitCure
+				end
+
+				if mvpPoint < unitMvpPoint then
+					mvpPoint = unitMvpPoint
+					model = v.model
+				end
 			end
 		end
+	end
+
+	if not self._data.statist then
+		model = self:getBatCompMaxHeroModel()
+
+		self:getView():getChildByFullName("content.btnStatistic"):setVisible(false)
 	end
 
 	local mvpSprite = IconFactory:createRoleIconSprite({
@@ -424,7 +456,7 @@ function StageWinPopMediator:showExpPanel()
 	end
 
 	local point = self._stageSystem:getPointById(self._data.pointId)
-	local oldStarState = point:getOldStar()
+	local oldStarState = point:getOldStar() or {}
 	local starPanel = self._starPanel
 	local descs = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Block_StarConditionDesc", "content")
 	local starCondition = point:getStarCondition()
@@ -915,6 +947,13 @@ function StageWinPopMediator:onTouchLayout(sender, eventType)
 		local pointId = self._data.pointId
 		local guideSystem = self:getInjector():getInstance(GuideSystem)
 		local isRunGuide = guideSystem:runGuideByStage(pointId)
+
+		if self._data.quickCross then
+			self:dispatch(Event:new(EVT_STAGE_QUICK_CROSS))
+			self:close()
+
+			return
+		end
 
 		if isRunGuide and guideSystem:isToHome(pointId) then
 			BattleLoader:popBattleView(self, {

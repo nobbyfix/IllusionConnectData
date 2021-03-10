@@ -34,13 +34,13 @@ function scene_LCYShiDate02:stage(args)
 		children = {
 			{
 				resType = 0,
-				name = "bg3",
+				name = "bg",
 				pathType = "SCENE",
 				type = "Image",
 				image = "bg_story_EXscene_0_1.jpg",
 				layoutMode = 1,
 				zorder = 1,
-				id = "bg3",
+				id = "bg",
 				scale = 1,
 				anchorPoint = {
 					x = 0.5,
@@ -51,32 +51,11 @@ function scene_LCYShiDate02:stage(args)
 						x = 0.5,
 						y = 0.5
 					}
-				},
-				children = {
-					{
-						layoutMode = 1,
-						type = "MovieClip",
-						zorder = 3,
-						visible = true,
-						id = "bgEx_jiedao",
-						scale = 1,
-						actionName = "all_jiedao",
-						anchorPoint = {
-							x = 0.5,
-							y = 0.5
-						},
-						position = {
-							refpt = {
-								x = 0.5,
-								y = 0.5
-							}
-						}
-					}
 				}
 			},
 			{
-				id = "date_music",
-				fileName = "Mus_Story_Common_2",
+				id = "Mus_Date",
+				fileName = "Mus_Story_After_Battle",
 				type = "Music"
 			}
 		},
@@ -88,20 +67,11 @@ function scene_LCYShiDate02.actions.start_LCYShiDate02(_root, args)
 	return sequential({
 		act({
 			action = "activateNode",
-			actor = __getnode__(_root, "bg3")
+			actor = __getnode__(_root, "bg")
 		}),
 		act({
 			action = "play",
-			actor = __getnode__(_root, "bgEx_jiedao"),
-			args = function (_ctx)
-				return {
-					time = -1
-				}
-			end
-		}),
-		act({
-			action = "play",
-			actor = __getnode__(_root, "date_music"),
+			actor = __getnode__(_root, "Mus_Date"),
 			args = function (_ctx)
 				return {
 					isLoop = true
@@ -117,87 +87,78 @@ function scene_LCYShiDate02.actions.start_LCYShiDate02(_root, args)
 				}
 			end
 		}),
-		act({
-			action = "addPortrait",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					modelId = "Model_LCYShi",
-					id = "LCYShi_speak",
-					rotationX = 0,
-					scale = 0.9,
-					zorder = 3,
-					position = {
-						x = 0,
-						y = -350,
-						refpt = {
-							x = 0.2,
-							y = 0
-						}
-					},
-					children = {
-						{
-							resType = 0,
-							name = "LCYShi_face",
-							pathType = "STORY_FACE",
-							type = "Image",
-							image = "LCYShi/LCYShi_face_1.png",
-							scaleX = 1,
-							scaleY = 1,
-							layoutMode = 1,
-							zorder = 1100,
-							visible = true,
-							id = "LCYShi_face",
-							anchorPoint = {
+		concurrent({
+			act({
+				action = "addPortrait",
+				actor = __getnode__(_root, "dialogue"),
+				args = function (_ctx)
+					return {
+						modelId = "Model_LCYShi",
+						id = "LCYShi_speak",
+						rotationX = 0,
+						scale = 1.155,
+						zorder = 3,
+						position = {
+							x = 0,
+							y = -350,
+							refpt = {
 								x = 0.5,
-								y = 0.5
-							},
-							position = {
-								x = 44.4,
-								y = 744.2
+								y = 0
+							}
+						},
+						children = {
+							{
+								resType = 0,
+								name = "LCYShi_face",
+								pathType = "STORY_FACE",
+								type = "Image",
+								image = "LCYShi/LCYShi_face_1.png",
+								scaleX = 1,
+								scaleY = 1,
+								layoutMode = 1,
+								zorder = 1100,
+								visible = true,
+								id = "LCYShi_face",
+								anchorPoint = {
+									x = 0.5,
+									y = 0.5
+								},
+								position = {
+									x = 44.4,
+									y = 744.2
+								}
 							}
 						}
 					}
-				}
-			end
-		}),
-		concurrent({
-			act({
-				action = "updateNode",
-				actor = __getnode__(_root, "LCYShi_speak"),
-				args = function (_ctx)
-					return {
-						opacity = 0
-					}
 				end
 			}),
-			act({
-				action = "fadeIn",
-				actor = __getnode__(_root, "LCYShi_speak"),
-				args = function (_ctx)
-					return {
-						duration = 0
-					}
-				end
+			concurrent({
+				act({
+					action = "updateNode",
+					actor = __getnode__(_root, "LCYShi_speak"),
+					args = function (_ctx)
+						return {
+							opacity = 0
+						}
+					end
+				}),
+				act({
+					action = "fadeIn",
+					actor = __getnode__(_root, "LCYShi_speak"),
+					args = function (_ctx)
+						return {
+							duration = 0
+						}
+					end
+				})
 			})
-		}),
-		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "LCYShi_face"),
-			args = function (_ctx)
-				return {
-					resType = 0,
-					image = "LCYShi/LCYShi_face_4.png",
-					pathType = "STORY_FACE"
-				}
-			end
 		}),
 		act({
 			action = "speak",
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_40",
+					name = "LCYShi_dialog_speak_name_2",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -218,7 +179,7 @@ function scene_LCYShiDate02.actions.start_LCYShiDate02(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_40",
+					name = "LCYShi_dialog_speak_name_2",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -234,35 +195,12 @@ function scene_LCYShiDate02.actions.start_LCYShiDate02(_root, args)
 				}
 			end
 		}),
-		concurrent({
-			act({
-				action = "rock",
-				actor = __getnode__(_root, "LCYShi_speak"),
-				args = function (_ctx)
-					return {
-						freq = 3,
-						strength = 1
-					}
-				end
-			})
-		}),
-		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "LCYShi_face"),
-			args = function (_ctx)
-				return {
-					resType = 0,
-					image = "LCYShi/LCYShi_face_1.png",
-					pathType = "STORY_FACE"
-				}
-			end
-		}),
 		act({
 			action = "speak",
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_40",
+					name = "LCYShi_dialog_speak_name_2",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -283,7 +221,7 @@ function scene_LCYShiDate02.actions.start_LCYShiDate02(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_40",
+					name = "LCYShi_dialog_speak_name_2",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -310,8 +248,8 @@ function scene_LCYShiDate02.actions.start_LCYShiDate02(_root, args)
 						"LCYShiDate02_6"
 					},
 					actionName = {
-						"start_LCYShiDate02b",
-						"start_LCYShiDate02c"
+						"start_LCYShiDate02a",
+						"start_LCYShiDate02b"
 					}
 				}
 			end
@@ -319,81 +257,8 @@ function scene_LCYShiDate02.actions.start_LCYShiDate02(_root, args)
 	})
 end
 
-function scene_LCYShiDate02.actions.start_LCYShiDate02b(_root, args)
+function scene_LCYShiDate02.actions.start_LCYShiDate02a(_root, args)
 	return sequential({
-		concurrent({
-			act({
-				action = "moveTo",
-				actor = __getnode__(_root, "LCYShi_speak"),
-				args = function (_ctx)
-					return {
-						duration = 0.5,
-						position = {
-							x = 0,
-							y = -350,
-							refpt = {
-								x = 0.5,
-								y = 0
-							}
-						}
-					}
-				end
-			}),
-			act({
-				action = "scaleTo",
-				actor = __getnode__(_root, "LCYShi_speak"),
-				args = function (_ctx)
-					return {
-						scale = 1.155,
-						duration = 0.6
-					}
-				end
-			})
-		}),
-		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "LCYShi_face"),
-			args = function (_ctx)
-				return {
-					resType = 0,
-					image = "LCYShi/LCYShi_face_4.png",
-					pathType = "STORY_FACE"
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_40",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"LCYShi_speak"
-					},
-					content = {
-						"LCYShiDate02_7"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		concurrent({
-			act({
-				action = "rock",
-				actor = __getnode__(_root, "LCYShi_speak"),
-				args = function (_ctx)
-					return {
-						freq = 3,
-						strength = 1
-					}
-				end
-			})
-		}),
 		act({
 			action = "changeTexture",
 			actor = __getnode__(_root, "LCYShi_face"),
@@ -410,7 +275,28 @@ function scene_LCYShiDate02.actions.start_LCYShiDate02b(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_40",
+					name = "LCYShi_dialog_speak_name_2",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"LCYShi_speak"
+					},
+					content = {
+						"LCYShiDate02_7"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "LCYShi_dialog_speak_name_2",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -426,12 +312,35 @@ function scene_LCYShiDate02.actions.start_LCYShiDate02b(_root, args)
 				}
 			end
 		}),
+		enterSceneFollowAction({
+			args = function (_ctx)
+				return {
+					name = "start_LCYShiDate02c"
+				}
+			end
+		})
+	})
+end
+
+function scene_LCYShiDate02.actions.start_LCYShiDate02b(_root, args)
+	return sequential({
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "LCYShi_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "LCYShi/LCYShi_face_3.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
 		act({
 			action = "speak",
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_17",
+					name = "LCYShi_dialog_speak_name_2",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -447,22 +356,23 @@ function scene_LCYShiDate02.actions.start_LCYShiDate02b(_root, args)
 				}
 			end
 		}),
-		concurrent({
-			rockScreen({
-				args = function (_ctx)
-					return {
-						freq = 3,
-						strength = 1
-					}
-				end
-			})
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "LCYShi_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "LCYShi/LCYShi_face_1.png",
+					pathType = "STORY_FACE"
+				}
+			end
 		}),
 		act({
 			action = "speak",
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_40",
+					name = "LCYShi_dialog_speak_name_2",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -478,10 +388,31 @@ function scene_LCYShiDate02.actions.start_LCYShiDate02b(_root, args)
 				}
 			end
 		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "LCYShi_dialog_speak_name_2",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"LCYShi_speak"
+					},
+					content = {
+						"LCYShiDate02_11"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
 		enterSceneFollowAction({
 			args = function (_ctx)
 				return {
-					name = "start_LCYShiDate02d"
+					name = "start_LCYShiDate02c"
 				}
 			end
 		})
@@ -490,34 +421,69 @@ end
 
 function scene_LCYShiDate02.actions.start_LCYShiDate02c(_root, args)
 	return sequential({
-		concurrent({
-			act({
-				action = "moveTo",
-				actor = __getnode__(_root, "LCYShi_speak"),
-				args = function (_ctx)
-					return {
-						duration = 0.5,
-						position = {
-							x = 0,
-							y = -350,
-							refpt = {
-								x = 0.5,
-								y = 0
-							}
-						}
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "LCYShi_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "LCYShi/LCYShi_face_1.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "LCYShi_dialog_speak_name_2",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"LCYShi_speak"
+					},
+					content = {
+						"LCYShiDate02_12"
+					},
+					durations = {
+						0.03
 					}
-				end
-			}),
-			act({
-				action = "scaleTo",
-				actor = __getnode__(_root, "LCYShi_speak"),
-				args = function (_ctx)
-					return {
-						scale = 1.155,
-						duration = 0.6
+				}
+			end
+		}),
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "LCYShi_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "LCYShi/LCYShi_face_1.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "LCYShi_dialog_speak_name_2",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"LCYShi_speak"
+					},
+					content = {
+						"LCYShiDate02_13"
+					},
+					durations = {
+						0.03
 					}
-				end
-			})
+				}
+			end
 		}),
 		act({
 			action = "changeTexture",
@@ -535,15 +501,15 @@ function scene_LCYShiDate02.actions.start_LCYShiDate02c(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_40",
-					dialogImage = "jq_dialogue_bg_1.png",
+					name = "LCYShi_dialog_speak_name_2",
+					dialogImage = "jq_dialogue_bg_2.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
 						"LCYShi_speak"
 					},
 					content = {
-						"LCYShiDate02_11"
+						"LCYShiDate02_14"
 					},
 					durations = {
 						0.03
@@ -552,62 +518,19 @@ function scene_LCYShiDate02.actions.start_LCYShiDate02c(_root, args)
 			end
 		}),
 		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "LCYShi_face"),
+			action = "show",
+			actor = __getnode__(_root, "dialogueChoose"),
 			args = function (_ctx)
 				return {
-					resType = 0,
-					image = "LCYShi/LCYShi_face_2.png",
-					pathType = "STORY_FACE"
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_40",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"LCYShi_speak"
-					},
+					date = true,
 					content = {
-						"LCYShiDate02_12"
+						"LCYShiDate02_15",
+						"LCYShiDate02_16"
 					},
-					durations = {
-						0.03
+					actionName = {
+						"start_LCYShiDate02d",
+						"start_LCYShiDate02e"
 					}
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_40",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"LCYShi_speak"
-					},
-					content = {
-						"LCYShiDate02_13"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		enterSceneFollowAction({
-			args = function (_ctx)
-				return {
-					name = "start_LCYShiDate02d"
 				}
 			end
 		})
@@ -632,7 +555,7 @@ function scene_LCYShiDate02.actions.start_LCYShiDate02d(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_40",
+					name = "LCYShi_dialog_speak_name_2",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -640,60 +563,7 @@ function scene_LCYShiDate02.actions.start_LCYShiDate02d(_root, args)
 						"LCYShi_speak"
 					},
 					content = {
-						"LCYShiDate02_14"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "LCYShi_face"),
-			args = function (_ctx)
-				return {
-					resType = 0,
-					image = "LCYShi/LCYShi_face_4.png",
-					pathType = "STORY_FACE"
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_40",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"LCYShi_speak"
-					},
-					content = {
-						"LCYShiDate02_15"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_40",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"LCYShi_speak"
-					},
-					content = {
-						"LCYShiDate02_16"
+						"LCYShiDate02_17"
 					},
 					durations = {
 						0.03
@@ -717,7 +587,7 @@ function scene_LCYShiDate02.actions.start_LCYShiDate02d(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_40",
+					name = "LCYShi_dialog_speak_name_2",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -725,7 +595,7 @@ function scene_LCYShiDate02.actions.start_LCYShiDate02d(_root, args)
 						"LCYShi_speak"
 					},
 					content = {
-						"LCYShiDate02_17"
+						"LCYShiDate02_18"
 					},
 					durations = {
 						0.03
@@ -734,19 +604,41 @@ function scene_LCYShiDate02.actions.start_LCYShiDate02d(_root, args)
 			end
 		}),
 		act({
-			action = "show",
-			actor = __getnode__(_root, "dialogueChoose"),
+			action = "changeTexture",
+			actor = __getnode__(_root, "LCYShi_face"),
 			args = function (_ctx)
 				return {
-					date = true,
+					resType = 0,
+					image = "LCYShi/LCYShi_face_2.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "LCYShi_dialog_speak_name_2",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"LCYShi_speak"
+					},
 					content = {
-						"LCYShiDate02_18",
 						"LCYShiDate02_19"
 					},
-					actionName = {
-						"start_LCYShiDate02e",
-						"start_LCYShiDate02f"
+					durations = {
+						0.03
 					}
+				}
+			end
+		}),
+		enterSceneFollowAction({
+			args = function (_ctx)
+				return {
+					name = "start_LCYShiDate02f"
 				}
 			end
 		})
@@ -771,7 +663,7 @@ function scene_LCYShiDate02.actions.start_LCYShiDate02e(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_40",
+					name = "LCYShi_dialog_speak_name_2",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -788,22 +680,11 @@ function scene_LCYShiDate02.actions.start_LCYShiDate02e(_root, args)
 			end
 		}),
 		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "LCYShi_face"),
-			args = function (_ctx)
-				return {
-					resType = 0,
-					image = "LCYShi/LCYShi_face_4.png",
-					pathType = "STORY_FACE"
-				}
-			end
-		}),
-		act({
 			action = "speak",
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_40",
+					name = "LCYShi_dialog_speak_name_2",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -819,42 +700,10 @@ function scene_LCYShiDate02.actions.start_LCYShiDate02e(_root, args)
 				}
 			end
 		}),
-		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "LCYShi_face"),
-			args = function (_ctx)
-				return {
-					resType = 0,
-					image = "LCYShi/LCYShi_face_1.png",
-					pathType = "STORY_FACE"
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_40",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"LCYShi_speak"
-					},
-					content = {
-						"LCYShiDate02_22"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
 		enterSceneFollowAction({
 			args = function (_ctx)
 				return {
-					name = "start_LCYShiDate02g"
+					name = "start_LCYShiDate02f"
 				}
 			end
 		})
@@ -879,7 +728,28 @@ function scene_LCYShiDate02.actions.start_LCYShiDate02f(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_40",
+					name = "LCYShi_dialog_speak_name_2",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"LCYShi_speak"
+					},
+					content = {
+						"LCYShiDate02_22"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "LCYShi_dialog_speak_name_2",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -901,7 +771,7 @@ function scene_LCYShiDate02.actions.start_LCYShiDate02f(_root, args)
 			args = function (_ctx)
 				return {
 					resType = 0,
-					image = "LCYShi/LCYShi_face_2.png",
+					image = "LCYShi/LCYShi_face_3.png",
 					pathType = "STORY_FACE"
 				}
 			end
@@ -911,7 +781,7 @@ function scene_LCYShiDate02.actions.start_LCYShiDate02f(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_40",
+					name = "LCYShi_dialog_speak_name_2",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -920,71 +790,6 @@ function scene_LCYShiDate02.actions.start_LCYShiDate02f(_root, args)
 					},
 					content = {
 						"LCYShiDate02_24"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		enterSceneFollowAction({
-			args = function (_ctx)
-				return {
-					name = "start_LCYShiDate02g"
-				}
-			end
-		})
-	})
-end
-
-function scene_LCYShiDate02.actions.start_LCYShiDate02g(_root, args)
-	return sequential({
-		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "LCYShi_face"),
-			args = function (_ctx)
-				return {
-					resType = 0,
-					image = "LCYShi/LCYShi_face_4.png",
-					pathType = "STORY_FACE"
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_40",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"LCYShi_speak"
-					},
-					content = {
-						"LCYShiDate02_25"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_17",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"LCYShi_speak"
-					},
-					content = {
-						"LCYShiDate02_26"
 					},
 					durations = {
 						0.03
@@ -1008,7 +813,7 @@ function scene_LCYShiDate02.actions.start_LCYShiDate02g(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_40",
+					name = "LCYShi_dialog_speak_name_2",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -1016,7 +821,28 @@ function scene_LCYShiDate02.actions.start_LCYShiDate02g(_root, args)
 						"LCYShi_speak"
 					},
 					content = {
-						"LCYShiDate02_27"
+						"LCYShiDate02_25"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "LCYShi_dialog_speak_name_2",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"LCYShi_speak"
+					},
+					content = {
+						"LCYShiDate02_26"
 					},
 					durations = {
 						0.03
@@ -1040,7 +866,28 @@ function scene_LCYShiDate02.actions.start_LCYShiDate02g(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_40",
+					name = "LCYShi_dialog_speak_name_2",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"LCYShi_speak"
+					},
+					content = {
+						"LCYShiDate02_27"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "LCYShi_dialog_speak_name_2",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -1057,19 +904,148 @@ function scene_LCYShiDate02.actions.start_LCYShiDate02g(_root, args)
 			end
 		}),
 		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "LCYShi_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "LCYShi/LCYShi_face_1.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "LCYShi_dialog_speak_name_2",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"LCYShi_speak"
+					},
+					content = {
+						"LCYShiDate02_29"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
 			action = "show",
 			actor = __getnode__(_root, "dialogueChoose"),
 			args = function (_ctx)
 				return {
 					date = true,
 					content = {
-						"LCYShiDate02_29",
-						"LCYShiDate02_30"
+						"LCYShiDate02_30",
+						"LCYShiDate02_31"
 					},
 					actionName = {
-						"start_LCYShiDate02h",
-						"start_LCYShiDate02i"
+						"start_LCYShiDate02g",
+						"start_LCYShiDate02h"
 					}
+				}
+			end
+		})
+	})
+end
+
+function scene_LCYShiDate02.actions.start_LCYShiDate02g(_root, args)
+	return sequential({
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "LCYShi_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "LCYShi/LCYShi_face_2.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "LCYShi_dialog_speak_name_2",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"LCYShi_speak"
+					},
+					content = {
+						"LCYShiDate02_32"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "LCYShi_dialog_speak_name_2",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"LCYShi_speak"
+					},
+					content = {
+						"LCYShiDate02_33"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "LCYShi_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "LCYShi/LCYShi_face_1.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "LCYShi_dialog_speak_name_2",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"LCYShi_speak"
+					},
+					content = {
+						"LCYShiDate02_34"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		enterSceneFollowAction({
+			args = function (_ctx)
+				return {
+					name = "start_LCYShiDate02i"
 				}
 			end
 		})
@@ -1094,148 +1070,7 @@ function scene_LCYShiDate02.actions.start_LCYShiDate02h(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_40",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"LCYShi_speak"
-					},
-					content = {
-						"LCYShiDate02_31"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_40",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"LCYShi_speak"
-					},
-					content = {
-						"LCYShiDate02_32"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		enterSceneFollowAction({
-			args = function (_ctx)
-				return {
-					name = "start_LCYShiDate02j"
-				}
-			end
-		})
-	})
-end
-
-function scene_LCYShiDate02.actions.start_LCYShiDate02i(_root, args)
-	return sequential({
-		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "LCYShi_face"),
-			args = function (_ctx)
-				return {
-					resType = 0,
-					image = "LCYShi/LCYShi_face_1.png",
-					pathType = "STORY_FACE"
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_40",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"LCYShi_speak"
-					},
-					content = {
-						"LCYShiDate02_33"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "LCYShi_face"),
-			args = function (_ctx)
-				return {
-					resType = 0,
-					image = "LCYShi/LCYShi_face_2.png",
-					pathType = "STORY_FACE"
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_40",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"LCYShi_speak"
-					},
-					content = {
-						"LCYShiDate02_34"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		enterSceneFollowAction({
-			args = function (_ctx)
-				return {
-					name = "start_LCYShiDate02j"
-				}
-			end
-		})
-	})
-end
-
-function scene_LCYShiDate02.actions.start_LCYShiDate02j(_root, args)
-	return sequential({
-		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "LCYShi_face"),
-			args = function (_ctx)
-				return {
-					resType = 0,
-					image = "LCYShi/LCYShi_face_3.png",
-					pathType = "STORY_FACE"
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_40",
+					name = "LCYShi_dialog_speak_name_2",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -1267,7 +1102,7 @@ function scene_LCYShiDate02.actions.start_LCYShiDate02j(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_40",
+					name = "LCYShi_dialog_speak_name_2",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -1276,48 +1111,6 @@ function scene_LCYShiDate02.actions.start_LCYShiDate02j(_root, args)
 					},
 					content = {
 						"LCYShiDate02_36"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_40",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"LCYShi_speak"
-					},
-					content = {
-						"LCYShiDate02_37"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_40",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"LCYShi_speak"
-					},
-					content = {
-						"LCYShiDate02_38"
 					},
 					durations = {
 						0.03
@@ -1341,7 +1134,72 @@ function scene_LCYShiDate02.actions.start_LCYShiDate02j(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_40",
+					name = "LCYShi_dialog_speak_name_2",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"LCYShi_speak"
+					},
+					content = {
+						"LCYShiDate02_37"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		enterSceneFollowAction({
+			args = function (_ctx)
+				return {
+					name = "start_LCYShiDate02i"
+				}
+			end
+		})
+	})
+end
+
+function scene_LCYShiDate02.actions.start_LCYShiDate02i(_root, args)
+	return sequential({
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "LCYShi_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "LCYShi/LCYShi_face_1.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "LCYShi_dialog_speak_name_2",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"LCYShi_speak"
+					},
+					content = {
+						"LCYShiDate02_38"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "LCYShi_dialog_speak_name_2",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -1368,8 +1226,8 @@ function scene_LCYShiDate02.actions.start_LCYShiDate02j(_root, args)
 						"LCYShiDate02_41"
 					},
 					actionName = {
-						"start_LCYShiDate02k",
-						"start_LCYShiDate02l"
+						"start_LCYShiDate02j",
+						"start_LCYShiDate02k"
 					}
 				}
 			end
@@ -1377,51 +1235,7 @@ function scene_LCYShiDate02.actions.start_LCYShiDate02j(_root, args)
 	})
 end
 
-function scene_LCYShiDate02.actions.start_LCYShiDate02k(_root, args)
-	return sequential({
-		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "LCYShi_face"),
-			args = function (_ctx)
-				return {
-					resType = 0,
-					image = "LCYShi/LCYShi_face_3.png",
-					pathType = "STORY_FACE"
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_40",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"LCYShi_speak"
-					},
-					content = {
-						"LCYShiDate02_42"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		enterSceneFollowAction({
-			args = function (_ctx)
-				return {
-					name = "start_LCYShiDate02m"
-				}
-			end
-		})
-	})
-end
-
-function scene_LCYShiDate02.actions.start_LCYShiDate02l(_root, args)
+function scene_LCYShiDate02.actions.start_LCYShiDate02j(_root, args)
 	return sequential({
 		act({
 			action = "changeTexture",
@@ -1439,15 +1253,15 @@ function scene_LCYShiDate02.actions.start_LCYShiDate02l(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_40",
-					dialogImage = "jq_dialogue_bg_1.png",
+					name = "LCYShi_dialog_speak_name_2",
+					dialogImage = "jq_dialogue_bg_2.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
 						"LCYShi_speak"
 					},
 					content = {
-						"LCYShiDate02_43"
+						"LCYShiDate02_42"
 					},
 					durations = {
 						0.03
@@ -1471,7 +1285,28 @@ function scene_LCYShiDate02.actions.start_LCYShiDate02l(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_40",
+					name = "LCYShi_dialog_speak_name_2",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"LCYShi_speak"
+					},
+					content = {
+						"LCYShiDate02_43"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "LCYShi_dialog_speak_name_2",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -1503,7 +1338,7 @@ function scene_LCYShiDate02.actions.start_LCYShiDate02l(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_40",
+					name = "LCYShi_dialog_speak_name_2",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -1522,14 +1357,14 @@ function scene_LCYShiDate02.actions.start_LCYShiDate02l(_root, args)
 		enterSceneFollowAction({
 			args = function (_ctx)
 				return {
-					name = "start_LCYShiDate02m"
+					name = "start_LCYShiDate02l"
 				}
 			end
 		})
 	})
 end
 
-function scene_LCYShiDate02.actions.start_LCYShiDate02m(_root, args)
+function scene_LCYShiDate02.actions.start_LCYShiDate02k(_root, args)
 	return sequential({
 		act({
 			action = "changeTexture",
@@ -1547,7 +1382,7 @@ function scene_LCYShiDate02.actions.start_LCYShiDate02m(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_40",
+					name = "LCYShi_dialog_speak_name_2",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -1556,243 +1391,6 @@ function scene_LCYShiDate02.actions.start_LCYShiDate02m(_root, args)
 					},
 					content = {
 						"LCYShiDate02_46"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_40",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"LCYShi_speak"
-					},
-					content = {
-						"LCYShiDate02_47"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "show",
-			actor = __getnode__(_root, "dialogueChoose"),
-			args = function (_ctx)
-				return {
-					date = true,
-					content = {
-						"LCYShiDate02_48",
-						"LCYShiDate02_49"
-					},
-					actionName = {
-						"start_LCYShiDate02n",
-						"start_LCYShiDate02o"
-					}
-				}
-			end
-		})
-	})
-end
-
-function scene_LCYShiDate02.actions.start_LCYShiDate02n(_root, args)
-	return sequential({
-		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "LCYShi_face"),
-			args = function (_ctx)
-				return {
-					resType = 0,
-					image = "LCYShi/LCYShi_face_3.png",
-					pathType = "STORY_FACE"
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_40",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"LCYShi_speak"
-					},
-					content = {
-						"LCYShiDate02_50"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "LCYShi_face"),
-			args = function (_ctx)
-				return {
-					resType = 0,
-					image = "LCYShi/LCYShi_face_2.png",
-					pathType = "STORY_FACE"
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_40",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"LCYShi_speak"
-					},
-					content = {
-						"LCYShiDate02_51"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_40",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"LCYShi_speak"
-					},
-					content = {
-						"LCYShiDate02_52"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		enterSceneFollowAction({
-			args = function (_ctx)
-				return {
-					name = "start_LCYShiDate02p"
-				}
-			end
-		})
-	})
-end
-
-function scene_LCYShiDate02.actions.start_LCYShiDate02o(_root, args)
-	return sequential({
-		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "LCYShi_face"),
-			args = function (_ctx)
-				return {
-					resType = 0,
-					image = "LCYShi/LCYShi_face_3.png",
-					pathType = "STORY_FACE"
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_40",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"LCYShi_speak"
-					},
-					content = {
-						"LCYShiDate02_53"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_40",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"LCYShi_speak"
-					},
-					content = {
-						"LCYShiDate02_54"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		enterSceneFollowAction({
-			args = function (_ctx)
-				return {
-					name = "start_LCYShiDate02p"
-				}
-			end
-		})
-	})
-end
-
-function scene_LCYShiDate02.actions.start_LCYShiDate02p(_root, args)
-	return sequential({
-		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "LCYShi_face"),
-			args = function (_ctx)
-				return {
-					resType = 0,
-					image = "LCYShi/LCYShi_face_2.png",
-					pathType = "STORY_FACE"
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_40",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"LCYShi_speak"
-					},
-					content = {
-						"LCYShiDate02_55"
 					},
 					durations = {
 						0.03
@@ -1816,7 +1414,221 @@ function scene_LCYShiDate02.actions.start_LCYShiDate02p(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_40",
+					name = "LCYShi_dialog_speak_name_2",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"LCYShi_speak"
+					},
+					content = {
+						"LCYShiDate02_47"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "LCYShi_dialog_speak_name_2",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"LCYShi_speak"
+					},
+					content = {
+						"LCYShiDate02_48"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "LCYShi_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "LCYShi/LCYShi_face_2.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "LCYShi_dialog_speak_name_2",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"LCYShi_speak"
+					},
+					content = {
+						"LCYShiDate02_49"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		enterSceneFollowAction({
+			args = function (_ctx)
+				return {
+					name = "start_LCYShiDate02l"
+				}
+			end
+		})
+	})
+end
+
+function scene_LCYShiDate02.actions.start_LCYShiDate02l(_root, args)
+	return sequential({
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "LCYShi_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "LCYShi/LCYShi_face_1.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "LCYShi_dialog_speak_name_2",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"LCYShi_speak"
+					},
+					content = {
+						"LCYShiDate02_50"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "LCYShi_dialog_speak_name_2",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"LCYShi_speak"
+					},
+					content = {
+						"LCYShiDate02_51"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "LCYShi_dialog_speak_name_2",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"LCYShi_speak"
+					},
+					content = {
+						"LCYShiDate02_52"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "LCYShi_dialog_speak_name_2",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"LCYShi_speak"
+					},
+					content = {
+						"LCYShiDate02_53"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "dialogueChoose"),
+			args = function (_ctx)
+				return {
+					date = true,
+					content = {
+						"LCYShiDate02_54",
+						"LCYShiDate02_55"
+					},
+					actionName = {
+						"start_LCYShiDate02m",
+						"start_LCYShiDate02n"
+					}
+				}
+			end
+		})
+	})
+end
+
+function scene_LCYShiDate02.actions.start_LCYShiDate02m(_root, args)
+	return sequential({
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "LCYShi_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "LCYShi/LCYShi_face_1.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "LCYShi_dialog_speak_name_2",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -1848,7 +1660,7 @@ function scene_LCYShiDate02.actions.start_LCYShiDate02p(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_40",
+					name = "LCYShi_dialog_speak_name_2",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -1865,22 +1677,135 @@ function scene_LCYShiDate02.actions.start_LCYShiDate02p(_root, args)
 			end
 		}),
 		act({
-			action = "moveTo",
-			actor = __getnode__(_root, "LCYShi_speak"),
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					duration = 0.4,
-					position = {
-						x = 0,
-						y = -350,
-						refpt = {
-							x = 1.5,
-							y = 0
-						}
+					name = "LCYShi_dialog_speak_name_1",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"LCYShi_speak"
+					},
+					content = {
+						"LCYShiDate02_58"
+					},
+					durations = {
+						0.03
 					}
 				}
 			end
 		}),
+		enterSceneFollowAction({
+			args = function (_ctx)
+				return {
+					name = "start_LCYShiDate02o"
+				}
+			end
+		})
+	})
+end
+
+function scene_LCYShiDate02.actions.start_LCYShiDate02n(_root, args)
+	return sequential({
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "LCYShi_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "LCYShi/LCYShi_face_2.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "LCYShi_dialog_speak_name_2",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"LCYShi_speak"
+					},
+					content = {
+						"LCYShiDate02_59"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "LCYShi_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "LCYShi/LCYShi_face_2.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "LCYShi_dialog_speak_name_1",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"LCYShi_speak"
+					},
+					content = {
+						"LCYShiDate02_60"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "LCYShi_dialog_speak_name_1",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"LCYShi_speak"
+					},
+					content = {
+						"LCYShiDate02_61"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		enterSceneFollowAction({
+			args = function (_ctx)
+				return {
+					name = "start_LCYShiDate02o"
+				}
+			end
+		})
+	})
+end
+
+function scene_LCYShiDate02.actions.start_LCYShiDate02o(_root, args)
+	return sequential({
 		act({
 			action = "hide",
 			actor = __getnode__(_root, "dialogue")

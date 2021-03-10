@@ -58,7 +58,7 @@ local function disableUserCursor(textWidget)
 	textWidget:removeUserCursor()
 end
 
-function replaceTextFieldToEditBox(textWidget)
+function replaceTextFieldToEditBox(textWidget, notAdjustEditBox)
 	if not textWidget then
 		return nil
 	end
@@ -137,7 +137,10 @@ function replaceTextFieldToEditBox(textWidget)
 		return self._keyboardState
 	end
 
-	adjustEditBox(editBox)
+	if not notAdjustEditBox then
+		adjustEditBox(editBox)
+	end
+
 	editBox:unregisterScriptEditBoxHandler()
 	editBox:registerScriptEditBoxHandler(function (eventName, sender)
 		if eventName == "began" then

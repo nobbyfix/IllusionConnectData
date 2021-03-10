@@ -23,7 +23,6 @@ require("dm.gameplay.activity.model.MonsterShopActivity")
 require("dm.gameplay.activity.model.ActivityColorEggActivity")
 require("dm.gameplay.activity.model.ActivityTpurchase")
 require("dm.gameplay.activity.model.MiniGameActivity")
-require("dm.gameplay.cooperateBoss.model.CooperateBoss")
 
 ActivityShowTab = {
 	kInAll = 3,
@@ -52,13 +51,13 @@ ActivityModel = {
 	CarnivalMainland = CarnivalActivity,
 	ContinueLogin = LoginActivity,
 	BANNER = BannerActivity,
-	EXCHANGE = ExchangeActivity,
 	IMG_BOARD = BoardActivity,
 	GAME_BOARD = BoardActivity,
 	TEXT_BOARD = BoardActivity,
 	FreeStamina = FreeStaminaActivity,
 	ExtraReward = BoardActivity,
 	Questionnaire = QuestionActivity,
+	[ActivityType.KEXCHANGE] = ExchangeActivity,
 	[ActivityType.kBLOCKSPOPEN] = BoardActivity,
 	[ActivityType.kDRAWCARDOPEN] = BoardActivity,
 	[ActivityType.KTASKMONTHCARD] = ActivityTaskMonthCard,
@@ -86,14 +85,15 @@ ActivityUI = {
 	TaskElite = "eliteTaskView",
 	Gameboard = "GameBoardActivityView",
 	MONSTERSHOPDetective = "ActivityBlockMonsterShopView",
-	FreeStamina = "FreeStaminaActivityView",
+	Exchange = "ActivityExchangeView",
 	Login_Halloween = "LoginActivityWsjView",
 	Carnival = "CarnivalView",
-	Login_Music = "LoginActivityView",
+	Login_Holiday = "LoginActivityView",
 	Login_Detective = "LoginActivityView",
+	Login_Music = "LoginActivityView",
 	Login14 = "ActivityLogin14CommonView",
 	Task = "TaskActivityView",
-	Login_Holiday = "LoginActivityView",
+	FreeStamina = "FreeStaminaActivityView",
 	ABACHIEVEMENTTASK = "ActivityTaskAchievementView",
 	Banner = "BannerActivityView",
 	Login = "LoginActivityView",
@@ -108,7 +108,6 @@ ActivityUI = {
 	[ActivityType.KTASKCOLLECT] = "ActivityTaskCollectView",
 	[ActivityType.KTASKCOLLECTSTAR] = "ActivityTaskCollectStarView",
 	[ActivityType.KLOGINTIME] = "LoginActivityView",
-	[ActivityType.KExchange] = "ActivityExchangeView",
 	[ActivityType.KTASKSTAGESTAR] = "ActivityTaskStageStarView",
 	[ActivityType.KTASKMONTHCARDSTAGE] = "ActivityTaskMonthCardView",
 	[ActivityType.KKuaiShouApp] = "ActivityFocusOnView",
@@ -145,7 +144,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityBlockDetetive] = "ActivityBlockDetectiveView",
 		[ActivityType_UI.KActivityBlockMusic] = "ActivityBlockMusicView",
 		[ActivityType_UI.KActivityBlockBaking] = "ActivityBakingMainView",
-		[ActivityType_UI.KActivityCollapsed] = "ActivityCollapsedMainView"
+		[ActivityType_UI.KActivityCollapsed] = "ActivityCollapsedMainView",
+		[ActivityType_UI.KActivitySunflower] = "ActivitySunflowerMainView"
 	},
 	enterBlockMonsterShopView = {
 		[ActivityType_UI.kActivityBlockWsj] = "ActivityBlockMonsterShopView",
@@ -163,7 +163,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityBlockDetetive] = "ActivitySagaSupportMapView",
 		[ActivityType_UI.KActivityBlockMusic] = "ActivitySagaSupportMapView",
 		[ActivityType_UI.KActivityBlockBaking] = "ActivitySagaSupportMapView",
-		[ActivityType_UI.KActivityCollapsed] = "ActivitySagaSupportMapView"
+		[ActivityType_UI.KActivityCollapsed] = "ActivitySagaSupportMapView",
+		[ActivityType_UI.KActivitySunflower] = "ActivitySagaSupportMapView"
 	},
 	enterSagaSupportStageView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportStageWxhView",
@@ -185,7 +186,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityBlockDetetive] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivityBlockMusic] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivityBlockBaking] = "ActivityBlockTaskView",
-		[ActivityType_UI.KActivityCollapsed] = "ActivityBlockTaskView"
+		[ActivityType_UI.KActivityCollapsed] = "ActivityBlockTaskView",
+		[ActivityType_UI.KActivitySunflower] = "ActivityBlockTaskView"
 	},
 	enterSagaSupportRankRewardView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportRankRewardWxhView",
@@ -212,9 +214,17 @@ ActivityLogin14Config = {
 			cc.c4b(255, 255, 255, 255),
 			cc.c4b(212, 197, 255, 255)
 		}
+	},
+	EightDays_Sunflower = {
+		resFile = "asset/ui/ActivitySunflowerLogin14.csb",
+		textPattern = {
+			cc.c4b(255, 255, 255, 255),
+			cc.c4b(176, 228, 254, 255)
+		}
 	}
 }
 LimitShopActivityViewType = {
+	xige = "TimeLimitShopActivityXigeView",
 	valentine = "TimeLimitShopActivityValentineView",
-	xige = "TimeLimitShopActivityXigeView"
+	whiteday = "TimeLimitShopActivityWhiteView"
 }

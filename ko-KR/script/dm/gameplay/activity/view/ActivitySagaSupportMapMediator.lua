@@ -977,7 +977,9 @@ function ActivitySagaSupportMapMediator:onClickPlayStory(pointId, isCheck)
 	local storyLink = ConfigReader:getDataByNameIdAndKey("ActivityStoryPoint", pointId, "StoryLink")
 
 	storyAgent:setSkipCheckSave(not isCheck)
-	storyAgent:trigger(storyLink, nil, endCallBack)
+	storyAgent:trigger(storyLink, function ()
+		AudioEngine:getInstance():stopBackgroundMusic()
+	end, endCallBack)
 end
 
 function ActivitySagaSupportMapMediator:refreshStoryPoint(pointId)
