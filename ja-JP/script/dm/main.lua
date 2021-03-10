@@ -239,7 +239,7 @@ if target == cc.PLATFORM_OS_ANDROID then
 
 	print("android current_v" .. current_v)
 
-	if tonumber(current_v) > 8025 and tonumber(current_v) < 8095 then
+	if tonumber(current_v) > 8025 and tonumber(current_v) < 8325 then
 		print("android platform")
 
 		local LUA_EXCEPTION_FIXED = cc.UserDefault:getInstance():getBoolForKey("LUA_EXCEPTION_FIX", false)
