@@ -323,6 +323,11 @@ function all.ApplyRPDamage_ResultCheck(_env, actor, target, damage)
 		}, 1, 0)
 	end
 
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Armor_15006")) > 0 and global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "MORERAGECOUNT")) < 3 then
+		local MoreRage = global.SpecialPropGetter(_env, "rage_morerage_down")(_env, actor)
+		damage = damage + MoreRage
+	end
+
 	global.ApplyRPDamage(_env, target, damage)
 
 	local buff_rpdown = global.SpecialNumericEffect(_env, "+rpdown", {
@@ -338,6 +343,21 @@ function all.ApplyRPDamage_ResultCheck(_env, actor, target, damage)
 		}
 	}, {
 		buff_rpdown
+	})
+
+	local buff_rpdown_applyed = global.SpecialNumericEffect(_env, "+rpdown_applyed", {
+		"+Normal",
+		"+Normal"
+	}, 1)
+
+	global.ApplyBuff(_env, actor, {
+		timing = 1,
+		duration = 1,
+		tags = {
+			"RPDOWN_APPLYED"
+		}
+	}, {
+		buff_rpdown_applyed
 	})
 end
 
@@ -1158,9 +1178,21 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 		end
 	end
 
-	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED_ALL(_env, "EquipSkill_Armor_15005", "UNDISPELLABLE", "UNSTEALABLE")) > 0 then
-		local DamageFactor = global.SpecialPropGetter(_env, "First_Unique_Armor_15005")(_env, actor)
-		local ExDamageFactor = global.SpecialPropGetter(_env, "First_Unique_Armor_15005_Ex")(_env, actor)
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED_ALL(_env, "SECTSKILL", "SectSkill_Master_XueZhan_3")) > 0 then
+		local MaxHpRateFactor = global.SpecialPropGetter(_env, "xuezhan_special_maxhp")(_env, actor)
+		local AtkFactor = global.SpecialPropGetter(_env, "xuezhan_special_atk")(_env, actor)
+		local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, target)
+		local atk = global.UnitPropGetter(_env, "atk")(_env, actor)
+		local ExDmg = global.min(_env, maxHp * MaxHpRateFactor, atk * AtkFactor)
+
+		if not global.MASTER(_env, target) then
+			damage.val = damage.val + ExDmg
+		end
+	end
+
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED_ALL(_env, "EquipSkill_Accesory_15005", "UNDISPELLABLE", "UNSTEALABLE")) > 0 then
+		local DamageFactor = global.SpecialPropGetter(_env, "First_Unique_Accesory_15005")(_env, actor)
+		local ExDamageFactor = global.SpecialPropGetter(_env, "First_Unique_Accesory_15005_Ex")(_env, actor)
 
 		if global.PETS(_env, target) then
 			damage.val = damage.val * (1 + ExDamageFactor)
@@ -1404,6 +1436,27 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 		if blockrecoveryrate and blockrecoveryrate ~= 0 then
 			global.ApplyHPRecovery(_env, target, maxHp * blockrecoveryrate)
 		end
+
+		if global.MARKED(_env, "FGao")(_env, target) and global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "Skill_FGao_Unique")) > 0 then
+			local buff = global.SpecialNumericEffect(_env, "+daze_prepare", {
+				"+Normal",
+				"+Normal"
+			}, 1)
+
+			global.ApplyBuff(_env, actor, {
+				duration = 99,
+				group = "FGao_Daze_Prepare",
+				timing = 0,
+				limit = 1,
+				tags = {
+					"FGao_Daze_Prepare",
+					"UNDISPELLABLE",
+					"UNSTEALABLE"
+				}
+			}, {
+				buff
+			})
+		end
 	end
 
 	if global.SelectBuffCount(_env, target, global.BUFF_MARKED_ALL(_env, "IMMUNE", "UR_EQUIPMENT", "DURANDAL")) > 0 then
@@ -1488,9 +1541,21 @@ function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimi
 		end
 	end
 
-	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED_ALL(_env, "EquipSkill_Armor_15005", "UNDISPELLABLE", "UNSTEALABLE")) > 0 then
-		local DamageFactor = global.SpecialPropGetter(_env, "First_Unique_Armor_15005")(_env, actor)
-		local ExDamageFactor = global.SpecialPropGetter(_env, "First_Unique_Armor_15005_Ex")(_env, actor)
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED_ALL(_env, "SECTSKILL", "SectSkill_Master_XueZhan_3")) > 0 then
+		local MaxHpRateFactor = global.SpecialPropGetter(_env, "xuezhan_special_maxhp")(_env, actor)
+		local AtkFactor = global.SpecialPropGetter(_env, "xuezhan_special_atk")(_env, actor)
+		local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, target)
+		local atk = global.UnitPropGetter(_env, "atk")(_env, actor)
+		local ExDmg = global.min(_env, maxHp * MaxHpRateFactor, atk * AtkFactor)
+
+		if not global.MASTER(_env, target) then
+			damage.val = damage.val + ExDmg
+		end
+	end
+
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED_ALL(_env, "EquipSkill_Accesory_15005", "UNDISPELLABLE", "UNSTEALABLE")) > 0 then
+		local DamageFactor = global.SpecialPropGetter(_env, "First_Unique_Accesory_15005")(_env, actor)
+		local ExDamageFactor = global.SpecialPropGetter(_env, "First_Unique_Accesory_15005_Ex")(_env, actor)
 
 		if global.PETS(_env, target) then
 			damage.val = damage.val * (1 + ExDamageFactor)
@@ -1718,6 +1783,27 @@ function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimi
 		if blockrecoveryrate and blockrecoveryrate ~= 0 then
 			global.ApplyHPRecovery(_env, target, maxHp * blockrecoveryrate)
 		end
+
+		if global.MARKED(_env, "FGao")(_env, target) and global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "Skill_FGao_Unique")) > 0 then
+			local buff = global.SpecialNumericEffect(_env, "+daze_prepare", {
+				"+Normal",
+				"+Normal"
+			}, 1)
+
+			global.ApplyBuff(_env, actor, {
+				duration = 99,
+				group = "FGao_Daze_Prepare",
+				timing = 0,
+				limit = 1,
+				tags = {
+					"FGao_Daze_Prepare",
+					"UNDISPELLABLE",
+					"UNSTEALABLE"
+				}
+			}, {
+				buff
+			})
+		end
 	end
 
 	if global.SelectBuffCount(_env, target, global.BUFF_MARKED_ALL(_env, "IMMUNE", "UR_EQUIPMENT", "DURANDAL")) > 0 then
@@ -1852,9 +1938,21 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 		end
 	end
 
-	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED_ALL(_env, "EquipSkill_Armor_15005", "UNDISPELLABLE", "UNSTEALABLE")) > 0 then
-		local DamageFactor = global.SpecialPropGetter(_env, "First_Unique_Armor_15005")(_env, actor)
-		local ExDamageFactor = global.SpecialPropGetter(_env, "First_Unique_Armor_15005_Ex")(_env, actor)
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED_ALL(_env, "SECTSKILL", "SectSkill_Master_XueZhan_3")) > 0 then
+		local MaxHpRateFactor = global.SpecialPropGetter(_env, "xuezhan_special_maxhp")(_env, actor)
+		local AtkFactor = global.SpecialPropGetter(_env, "xuezhan_special_atk")(_env, actor)
+		local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, target)
+		local atk = global.UnitPropGetter(_env, "atk")(_env, actor)
+		local ExDmg = global.min(_env, maxHp * MaxHpRateFactor, atk * AtkFactor) / total
+
+		if not global.MASTER(_env, target) then
+			damages[n].val = damages[n].val + ExDmg
+		end
+	end
+
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED_ALL(_env, "EquipSkill_Accesory_15005", "UNDISPELLABLE", "UNSTEALABLE")) > 0 then
+		local DamageFactor = global.SpecialPropGetter(_env, "First_Unique_Accesory_15005")(_env, actor)
+		local ExDamageFactor = global.SpecialPropGetter(_env, "First_Unique_Accesory_15005_Ex")(_env, actor)
 
 		if global.PETS(_env, target) then
 			damages[n].val = damages[n].val * (1 + ExDamageFactor)
@@ -2106,6 +2204,27 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 			if blockrecoveryrate and blockrecoveryrate ~= 0 then
 				global.ApplyHPRecovery(_env, target, maxHp * blockrecoveryrate)
 			end
+
+			if global.MARKED(_env, "FGao")(_env, target) and global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "Skill_FGao_Unique")) > 0 then
+				local buff = global.SpecialNumericEffect(_env, "+daze_prepare", {
+					"+Normal",
+					"+Normal"
+				}, 1)
+
+				global.ApplyBuff(_env, actor, {
+					duration = 99,
+					group = "FGao_Daze_Prepare",
+					timing = 0,
+					limit = 1,
+					tags = {
+						"FGao_Daze_Prepare",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buff
+				})
+			end
 		end
 	end
 
@@ -2248,9 +2367,21 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 		end
 	end
 
-	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED_ALL(_env, "EquipSkill_Armor_15005", "UNDISPELLABLE", "UNSTEALABLE")) > 0 then
-		local DamageFactor = global.SpecialPropGetter(_env, "First_Unique_Armor_15005")(_env, actor)
-		local ExDamageFactor = global.SpecialPropGetter(_env, "First_Unique_Armor_15005_Ex")(_env, actor)
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED_ALL(_env, "SECTSKILL", "SectSkill_Master_XueZhan_3")) > 0 then
+		local MaxHpRateFactor = global.SpecialPropGetter(_env, "xuezhan_special_maxhp")(_env, actor)
+		local AtkFactor = global.SpecialPropGetter(_env, "xuezhan_special_atk")(_env, actor)
+		local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, target)
+		local atk = global.UnitPropGetter(_env, "atk")(_env, actor)
+		local ExDmg = global.min(_env, maxHp * MaxHpRateFactor, atk * AtkFactor) / total
+
+		if not global.MASTER(_env, target) then
+			damages[n].val = damages[n].val + ExDmg
+		end
+	end
+
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED_ALL(_env, "EquipSkill_Accesory_15005", "UNDISPELLABLE", "UNSTEALABLE")) > 0 then
+		local DamageFactor = global.SpecialPropGetter(_env, "First_Unique_Accesory_15005")(_env, actor)
+		local ExDamageFactor = global.SpecialPropGetter(_env, "First_Unique_Accesory_15005_Ex")(_env, actor)
 
 		if global.PETS(_env, target) then
 			damages[n].val = damages[n].val * (1 + ExDamageFactor)
@@ -2503,6 +2634,27 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 
 			if blockrecoveryrate and blockrecoveryrate ~= 0 then
 				global.ApplyHPRecovery(_env, target, maxHp * blockrecoveryrate)
+			end
+
+			if global.MARKED(_env, "FGao")(_env, target) and global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "Skill_FGao_Unique")) > 0 then
+				local buff = global.SpecialNumericEffect(_env, "+daze_prepare", {
+					"+Normal",
+					"+Normal"
+				}, 1)
+
+				global.ApplyBuff(_env, actor, {
+					duration = 99,
+					group = "FGao_Daze_Prepare",
+					timing = 0,
+					limit = 1,
+					tags = {
+						"FGao_Daze_Prepare",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buff
+				})
 			end
 		end
 	end

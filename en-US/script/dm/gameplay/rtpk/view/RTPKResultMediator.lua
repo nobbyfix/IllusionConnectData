@@ -130,9 +130,6 @@ function RTPKResultMediator:setupView(data)
 		self._main:runAction(cc.Sequence:create(action, call))
 	else
 		AudioEngine:getInstance():playBackgroundMusic("Mus_Battle_Common_Over")
-
-		local curGradeData = self._rtpk:getCurGrade()
-
 		self._main:setScaleY(0)
 
 		local scaleAct = cc.ScaleTo:create(0.16666666666666666, 1)
@@ -144,7 +141,7 @@ function RTPKResultMediator:setupView(data)
 			anim:addTo(self._aniNode):offset(0, -30)
 
 			local mc_nowGradeIcon = anim:getChildByName("mc_gradeIcon")
-			local nowGradeIcon = IconFactory:createRTPKGradeIcon(curGradeData.Id)
+			local nowGradeIcon = IconFactory:createRTPKGradeIcon(newGradeData.Id)
 
 			nowGradeIcon:addTo(mc_nowGradeIcon):offset(0, 20)
 			anim:addCallbackAtFrame(55, function ()
@@ -153,7 +150,7 @@ function RTPKResultMediator:setupView(data)
 		end)
 
 		self._main:runAction(cc.Sequence:create(action, call))
-		self._gradeText:setString(Strings:get(curGradeData.Name))
+		self._gradeText:setString(Strings:get(newGradeData.Name))
 	end
 
 	local addScoreText = self._main:getChildByName("Text_scoreadd")

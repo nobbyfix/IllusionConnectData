@@ -320,6 +320,10 @@ function DevelopSystem:syncPlayer(data, isDiff)
 		self:getPlayer():syncStagePractice(data.stagePractice)
 	end
 
+	if data.stages then
+		self._stageSystem:syncStages(data.stages, self:getPlayer())
+	end
+
 	if data.stagePresents then
 		self._stageSystem:syncStagePresents(data.stagePresents)
 	end
@@ -797,10 +801,10 @@ function DevelopSystem:getServerOpenDay()
 	return math.ceil((curServerTime - openTime) / 86400)
 end
 
-function DevelopSystem:enterType(params, blockUI, callback)
-	self._developService:enterType(params, blockUI, callback)
+function DevelopSystem:enterType(params, callback)
+	self._developService:enterType(params, false, callback)
 end
 
-function DevelopSystem:guideLog(params, blockUI, callback)
-	self._developService:guideLog(params, blockUI, callback)
+function DevelopSystem:guideLog(params, callback)
+	self._developService:guideLog(params, false, callback)
 end

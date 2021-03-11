@@ -55,6 +55,7 @@ local kFunctionData = {
 		des = "BlockSP_ShowUI_Desc"
 	}
 }
+local EVENT_LOCAL_REFRESH_COOPERATE_STATE = "EVENT_LOCAL_REFRESH_COOPERATE_STATE"
 
 function FunctionEntranceMediator:initialize()
 	super.initialize(self)
@@ -74,6 +75,7 @@ end
 
 function FunctionEntranceMediator:onRegister()
 	super.onRegister(self)
+	self:mapEventListener(self:getEventDispatcher(), EVENT_LOCAL_REFRESH_COOPERATE_STATE, self, self.refreshCooperateBossStateLab)
 end
 
 function FunctionEntranceMediator:setupTopInfoWidget(data)
@@ -403,29 +405,34 @@ function FunctionEntranceMediator:refreshCooperateBoss()
 	local coopNode = self._arenaPanel:getChildByFullName("cooperateBossCell.ShowAnim")
 
 	if self._cooperateBossStateLabel and not DisposableObject:isDisposed(self._cooperateBossStateLabel) then
-		local stateLabel = self._cooperateBossStateLabel
 		local state = self._cooperateBossSystem:getcooperateBossState()
 
 		if kCooperateBossState.kPreHot == state then
-			stateLabel:setString(Strings:get("CooperateBoss_Entry_UI03"))
-			stateLabel:setTextColor(cc.c3b(249, 91, 91))
+			self._cooperateBossStateLabel:setString(Strings:get("CooperateBoss_Entry_UI03"))
+			self._cooperateBossStateLabel:setTextColor(cc.c3b(249, 91, 91))
 		elseif kCooperateBossState.kStart == state then
 			self._cooperateBossSystem:requestGetInviteInfo(function ()
-				local mineBossShow = self._cooperateBossSystem:checkMineDefaultBossShow()
-
-				stateLabel:setVisible(false)
-
-				if mineBossShow then
-					stateLabel:setVisible(true)
-					stateLabel:setString(Strings:get("CooperateBoss_Entry_UI05"))
-					stateLabel:setTextColor(cc.c3b(249, 217, 91))
-					stateLabel:setColor(cc.c3b(255, 255, 255))
-				end
+				self:dispatch(Event:new(EVENT_LOCAL_REFRESH_COOPERATE_STATE))
 			end)
 		elseif kCooperateBossState.kEnd == state then
 			self._arenaPanel:getChildByFullName("cooperateBossCell.ShowAnim"):setVisible(false)
 			self._arenaPanel:getChildByFullName("cooperateBossCell.ShowAnim"):stop()
 		end
+	end
+end
+
+function FunctionEntranceMediator:refreshCooperateBossStateLab()
+	dump("refreshCooperateBossStateLab >>>>>>>>>>>")
+
+	local mineBossShow = self._cooperateBossSystem:checkMineDefaultBossShow()
+
+	self._cooperateBossStateLabel:setVisible(false)
+
+	if mineBossShow then
+		self._cooperateBossStateLabel:setVisible(true)
+		self._cooperateBossStateLabel:setString(Strings:get("CooperateBoss_Entry_UI05"))
+		self._cooperateBossStateLabel:setTextColor(cc.c3b(249, 217, 91))
+		self._cooperateBossStateLabel:setColor(cc.c3b(255, 255, 255))
 	end
 end
 

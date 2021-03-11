@@ -3581,6 +3581,14 @@ function IconFactory:createRactHeadImage(info)
 			iconType = "Bust11",
 			id = modelId
 		})
+	elseif imageType == 5 then
+		local skinId = playerHeadImgConfig.SurfaceMasterId
+		local modelId = ConfigReader:getDataByNameIdAndKey("Surface", skinId, "Model")
+		icon = self:createRoleIconSprite({
+			useAnim = false,
+			iconType = "Bust11",
+			id = modelId
+		})
 	else
 		icon = cc.Sprite:create(playerHeadImgConfig.IconPath)
 
@@ -3640,6 +3648,18 @@ function IconFactory:createPetRaceHeadImage(info)
 		}
 	elseif imageType == 4 then
 		local modelId = ConfigReader:getDataByNameIdAndKey("HeroAwaken", id, "ModelId")
+		icon = self:createRoleIconSprite({
+			useAnim = false,
+			iconType = "Bust11",
+			id = modelId
+		})
+		offset = {
+			50,
+			0
+		}
+	elseif imageType == 5 then
+		local skinId = playerHeadImgConfig.SurfaceMasterId
+		local modelId = ConfigReader:getDataByNameIdAndKey("Surface", skinId, "Model")
 		icon = self:createRoleIconSprite({
 			useAnim = false,
 			iconType = "Bust11",

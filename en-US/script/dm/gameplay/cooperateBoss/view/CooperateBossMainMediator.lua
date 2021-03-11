@@ -25,7 +25,7 @@ local kBtnHandlers = {
 	}
 }
 local SHOW_HERO_ANIM = true
-local COOPERATE_EXACHANGE_ACTIVITY_TYPE = "Exchange"
+local COOPERATE_EXACHANGE_ACTIVITY_TYPE = "NewExchange"
 local EVT_COOPERATE_BOSS_SELF_REFRESH = "EVT_COOPERATE_BOSS_SELF_REFRESH"
 
 function CooperateBossMainMediator:initialize()
@@ -75,6 +75,12 @@ end
 
 function CooperateBossMainMediator:setupTopInfoWidget()
 	local topInfoNode = self:getView():getChildByFullName("main.topinfo_node")
+	local fontSize = 48
+
+	if getCurrentLanguage() ~= GameLanguageType.CN then
+		fontSize = 30
+	end
+
 	local config = {
 		style = 1,
 		currencyInfo = {
@@ -84,6 +90,7 @@ function CooperateBossMainMediator:setupTopInfoWidget()
 			CurrencyIdKind.kGold
 		},
 		title = Strings:get("CooperateBoss_SystemName"),
+		fontSize = fontSize,
 		btnHandler = {
 			clickAudio = "Se_Click_Close_1",
 			func = bind1(self.onClickBack, self)
@@ -125,8 +132,6 @@ function CooperateBossMainMediator:setupView()
 	self:setupBossModeShow(self._data.mineBoss)
 	self:setupBattleRecord()
 	self:setupTimeShow()
-
-	local img = self._cooperateBossSystem:getInviteBossTabImage(25)
 end
 
 function CooperateBossMainMediator:setupRule()
@@ -196,7 +201,22 @@ function CooperateBossMainMediator:setupBossMapList()
 
 			playerNameText:setString(info.name)
 			bossNameText:setString(self._cooperateBossSystem:getBossName(info.confId))
-			bg:loadTexture(self._cooperateBossSystem:getInviteBossTabImage(info.lv), ccui.TextureResType.localType)
+
+			local pic, animName = self._cooperateBossSystem:getInviteBossTabImage(info.lv)
+
+			bg:loadTexture(pic, ccui.TextureResType.localType)
+
+			if animName and animName ~= "" then
+				local animNode = boss:getChildByFullName("invitePanel")
+
+				animNode:removeChildByName("FrameFX")
+
+				local anim = cc.MovieClip:create(animName)
+
+				anim:addTo(animNode):center(animNode:getContentSize()):offset(0, -2)
+				anim:setName("FrameFX")
+			end
+
 			bossLvText:setString("Lv." .. info.lv)
 			boss:getChildByFullName("invitePanel.info"):setVisible(false)
 
@@ -466,14 +486,24 @@ function CooperateBossMainMediator:setupRewardBtnState()
 			func = bind1(self.onActiveBtnClick, self)
 		}
 	})
-	local activity = self._activitySystem:getActivityByComplexUI(COOPERATE_EXACHANGE_ACTIVITY_TYPE)
+	local activityId = self._cooperateBossData:getConfig().ActivityConfig.ExchangeID
+	local isActivityOpen = false
 
-	self._activeBtn:setGray(true)
+	if activityId then
+		local activity = self._activitySystem:getActivityById(activityId)
 
-	if activity and self._activitySystem:isActivityOpen(activity:getId()) then
-		self._activeBtn:setGray(false)
+		if activity and self._activitySystem:isActivityOpen(activityId) then
+			isActivityOpen = true
+		end
+	else
+		local oldActivity = self._activitySystem:getActivityByComplexUI("Exchange")
+
+		if oldActivity and self._activitySystem:isActivityOpen(oldActivity:getId()) then
+			isActivityOpen = true
+		end
 	end
 
+	self._activeBtn:setGray(not isActivityOpen)
 	self._activeBtn:setButtonName(Strings:get("CooperateBoss_Btn_Exchange"), "")
 end
 
@@ -793,11 +823,18 @@ function CooperateBossMainMediator:onRewardBtnClick(sender, eventType)
 end
 
 function CooperateBossMainMediator:onActiveBtnClick(sender, eventType)
-	local activity = self._activitySystem:getActivityByComplexUI(COOPERATE_EXACHANGE_ACTIVITY_TYPE)
+	local activityId = self._cooperateBossData:getConfig().ActivityConfig.ExchangeID
+	local curTimeStamp = TimeUtil:timeByRemoteDate()
+	local activity = nil
+
+	if activityId then
+		activity = self._activitySystem:getActivityById(activityId)
+	else
+		activity = self._activitySystem:getActivityByComplexUI("Exchange")
+		activityId = activity:getId()
+	end
 
 	if activity then
-		local curTimeStamp = TimeUtil:timeByRemoteDate()
-
 		if curTimeStamp * 1000 < activity:getStartTime() then
 			self:dispatch(ShowTipEvent({
 				duration = 0.2,
@@ -816,16 +853,17 @@ function CooperateBossMainMediator:onActiveBtnClick(sender, eventType)
 			return
 		end
 
-		local activityId = activity:getId()
+		local uiType = activity:getUI()
 
-		self._activitySystem:tryEnter({
-			id = activityId
-		})
-	else
-		self:dispatch(ShowTipEvent({
-			duration = 0.2,
-			tip = Strings:get("Error_12806")
-		}))
+		if uiType == "NewExchange" then
+			self._activitySystem:tryEnterCoopExchangeView({
+				activityId = activityId
+			})
+		elseif uiType == "Exchange" then
+			self._activitySystem:tryEnter({
+				id = activityId
+			})
+		end
 	end
 end
 

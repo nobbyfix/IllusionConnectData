@@ -284,11 +284,11 @@ function CooperateBossSystem:getInviteBossTabImage(level)
 		local tmp = config[i]
 
 		if tmp.level[1] <= level and level <= tmp.level[2] then
-			return tmp.pic .. ".png"
+			return "asset/ui/cooperateBoss/" .. tmp.pic .. ".png", tmp.anim
 		end
 	end
 
-	return ""
+	return "", ""
 end
 
 function CooperateBossSystem:enterCooperateBoss(isSwitch)

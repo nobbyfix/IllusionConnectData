@@ -72,6 +72,9 @@ BasePlayer:has("_headFrames", {
 BasePlayer:has("_createTime", {
 	is = "rw"
 })
+BasePlayer:has("_maxCombat", {
+	is = "rw"
+})
 
 function BasePlayer:initialize(config)
 	super.initialize(self)
@@ -126,6 +129,10 @@ function BasePlayer:synchronizeInfoDiff(diffData)
 
 	if diffData.heads and diffData.heads.currHead then
 		self:setHeadId(tostring(diffData.heads.currHead))
+	end
+
+	if diffData.maxData and diffData.maxData.combat then
+		self:setMaxCombat(tostring(diffData.maxData.combat))
 	end
 
 	if diffData.nickname then

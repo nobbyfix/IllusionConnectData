@@ -102,6 +102,9 @@ function StageTeamMediator:enterWithData(data)
 	self._stageId = data and data.stageId and data.stageId or ""
 	self._spData = data and data.data and data.data or {}
 	self._cardsExcept = self._spData.cardsExcept and self._spData.cardsExcept or {}
+
+	dump(data, "data >>>>>>>>>>")
+
 	self._curTabType = data and data.tabType and data.tabType or 1
 	self._masterList = self._masterSystem:getShowMasterList()
 	self._canChange = true

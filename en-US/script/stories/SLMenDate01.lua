@@ -140,8 +140,8 @@ function scene_SLMenDate01.actions.start_SLMenDate01(_root, args)
 							pathType = "STORY_FACE",
 							type = "Image",
 							image = "SLMen/SLMen_face_1.png",
-							scaleX = 1,
-							scaleY = 1,
+							scaleX = 0.97,
+							scaleY = 0.97,
 							layoutMode = 1,
 							zorder = 1,
 							visible = true,
@@ -151,8 +151,8 @@ function scene_SLMenDate01.actions.start_SLMenDate01(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = 127,
-								y = 850
+								x = -35,
+								y = 740
 							}
 						}
 					}

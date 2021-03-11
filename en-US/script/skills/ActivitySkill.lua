@@ -2358,5 +2358,67 @@ all.Skill_Condition_Shield = {
 		return _env
 	end
 }
+all.Invisible_Immune = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.BuffDuration = externs.BuffDuration
+
+		if this.BuffDuration == nil then
+			this.BuffDuration = 9999
+		end
+
+		this.TimingType = externs.TimingType
+
+		if this.TimingType == nil then
+			this.TimingType = 4
+		end
+
+		local passive1 = __action(this, {
+			name = "passive1",
+			entry = prototype.passive1
+		})
+		passive1 = global["[duration]"](this, {
+			0
+		}, passive1)
+		this.passive1 = global["[trigger_by]"](this, {
+			"SELF:ENTER"
+		}, passive1)
+
+		return this
+	end,
+	passive1 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local buffeft = global.Immune(_env)
+
+			global.ApplyBuff(_env, _env.ACTOR, {
+				duration = this.BuffDuration,
+				timing = this.TimingType,
+				tags = {
+					"UNDISPELLABLE",
+					"UNSTEALABLE",
+					"Invisible_Immune"
+				}
+			}, {
+				buffeft
+			})
+		end)
+
+		return _env
+	end
+}
 
 return _M

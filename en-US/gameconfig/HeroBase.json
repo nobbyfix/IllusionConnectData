@@ -1265,7 +1265,8 @@
         "StarId": "ALSi_1",
         "SurfaceList": [
             "Surface_ALSi_1",
-            "Surface_ALSi_2"
+            "Surface_ALSi_2",
+            "Surface_ALSi_3"
         ],
         "TeamSpecialVoice": "",
         "TimeType": "\"2002-01-28 19:00:00\"",
@@ -4062,7 +4063,7 @@
         "HeroStoryMap": "",
         "HpFactor": 1.36,
         "HurtRate": 0.0,
-        "IfHidden": 0,
+        "IfHidden": 1,
         "InnerAttr": [],
         "ItemId": "IHF_DCJKang",
         "KeyPassiveSkill": "Hero_PBattle_DCJKang_Key",
@@ -5282,6 +5283,268 @@
         "UneffectRate": 0.0,
         "UnhurtRate": 0.0,
         "UniqueSkill": "Hero_Unique_FEMSi"
+    },
+    "FGao": {
+        "Absorption": 0.0,
+        "Anger": {
+            "a1": [
+                10,
+                750
+            ],
+            "a2": 320,
+            "a3": 150
+        },
+        "AngerBase": 1000.0,
+        "AngerMax": 1000.0,
+        "AngerRate": 0.0,
+        "AtkRate": 1.0,
+        "AtkWeaken": 0.0,
+        "AttackFactor": 0.7,
+        "AwakePic": "",
+        "BaseAttack": 155.0,
+        "BaseDefence": 66.0,
+        "BaseHp": 888.0,
+        "BaseQualityAttr": "SSR_10_Defense",
+        "BaseStar": 3,
+        "BasicPower": 1600,
+        "BattlePassiveSkill": "Hero_PBattle_FGao",
+        "BattlePassiveType": "PBuff",
+        "BeCuredRate": 0.0,
+        "BlockAI": "AIFGao",
+        "BlockRate": 0.0,
+        "BlockStrg": 0.0,
+        "CVName": "FGao_CVName",
+        "Cost": 12,
+        "CounterRate": 0.0,
+        "CritRate": 0.0,
+        "CritStrg": 0.0,
+        "DefRate": 1.0,
+        "DefWeaken": 0.0,
+        "DefenceFactor": 1.18,
+        "Desc": "HeroBase_Desc_FGao",
+        "DoubleRate": 0.0,
+        "EffectRate": 0.0,
+        "EffectStrg": 0.0,
+        "EnterCD": 1.0,
+        "Flags": [
+            "FGao",
+            "quanti"
+        ],
+        "GainAnim": "",
+        "HeadTouchDeviation": [
+            0,
+            0
+        ],
+        "HeroShowIntro": "HeroBase_Intro_FGao",
+        "HeroStoryMap": "",
+        "HpFactor": 1.39,
+        "HurtRate": 0.0,
+        "IfHidden": 1,
+        "InnerAttr": [],
+        "ItemId": "IHF_FGao",
+        "KeyPassiveSkill": "Hero_PBattle_FGao_Key",
+        "LevelUpFactor": 1.0,
+        "MVPText": "MVPText_FGao",
+        "MasterRage": 144,
+        "MaxStar": 6,
+        "Name": "HeroBase_Name_FGao",
+        "NormalSkill": "Hero_Normal_FGao",
+        "Party": "XD",
+        "PassiveCondition": [
+            [
+                {
+                    "param": [
+                        [
+                            "Master_BiLei"
+                        ],
+                        [
+                            "Master_SenLing"
+                        ],
+                        [
+                            "Tower_1_Master3"
+                        ],
+                        [
+                            "Tower_1_Master5"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        1,
+                        1
+                    ],
+                    "type": "master"
+                }
+            ]
+        ],
+        "Position": "HeroBase_Position_FGao",
+        "ProudSkill": "Hero_Proud_FGao",
+        "Rareity": 14,
+        "Reflection": 0.0,
+        "RelationList": [],
+        "RoleModel": "Model_FGao",
+        "RtpkPercent": [
+            0,
+            0,
+            0
+        ],
+        "SVPText": "SVPText_FGao",
+        "Sex": 0,
+        "ShortDesc": "HeroBase_ShortDesc_FGao",
+        "SkillCost": {
+            "BattlePassiveSkill": {
+                "amount": [
+                    3,
+                    7,
+                    10,
+                    14,
+                    18,
+                    21,
+                    25,
+                    28,
+                    32,
+                    36
+                ],
+                "code": "ISU_Attack"
+            },
+            "NormalSkill": {
+                "amount": [
+                    3,
+                    6,
+                    9,
+                    12,
+                    15,
+                    18,
+                    21,
+                    24,
+                    27,
+                    30
+                ],
+                "code": "ISU_Attack"
+            },
+            "PassiveSkill1": {
+                "amount": [
+                    3,
+                    7,
+                    10,
+                    14,
+                    18,
+                    21,
+                    25,
+                    28,
+                    32,
+                    36
+                ],
+                "code": "ISU_Attack"
+            },
+            "PassiveSkill2": {
+                "amount": [
+                    3,
+                    7,
+                    10,
+                    14,
+                    18,
+                    21,
+                    25,
+                    28,
+                    32,
+                    36
+                ],
+                "code": "ISU_Attack"
+            },
+            "ProudSkill": {
+                "amount": [
+                    4,
+                    9,
+                    13,
+                    18,
+                    22,
+                    27,
+                    31,
+                    36,
+                    40,
+                    45
+                ],
+                "code": "ISU_Attack"
+            },
+            "UniqueSkill": {
+                "amount": [
+                    6,
+                    12,
+                    18,
+                    24,
+                    30,
+                    36,
+                    42,
+                    48,
+                    54,
+                    60
+                ],
+                "code": "ISU_Attack"
+            }
+        },
+        "SkillRate": 0.15,
+        "Soul": [],
+        "SoundList": [
+            "Voice_FGao_01",
+            "Voice_FGao_35",
+            "Voice_FGao_40_1",
+            "Voice_FGao_40_2",
+            "Voice_FGao_40_3",
+            "Voice_FGao_37",
+            "Voice_FGao_38",
+            "Voice_FGao_39",
+            "Voice_FGao_47",
+            "Voice_FGao_48",
+            "Voice_FGao_50",
+            "Voice_FGao_51",
+            "Voice_FGao_52",
+            "Voice_FGao_53",
+            "Voice_FGao_54",
+            "Voice_FGao_55",
+            "Voice_FGao_56",
+            "Voice_FGao_57",
+            "Voice_FGao_60",
+            "Voice_FGao_07",
+            "Voice_FGao_08",
+            "Voice_FGao_09",
+            "Voice_FGao_58",
+            "Voice_FGao_59",
+            "Voice_FGao_10",
+            "Voice_FGao_11",
+            "Voice_FGao_14",
+            "Voice_FGao_15",
+            "Voice_FGao_16",
+            "Voice_FGao_21",
+            "Voice_FGao_17",
+            "Voice_FGao_18",
+            "Voice_FGao_34",
+            "Voice_FGao_19",
+            "Voice_FGao_63",
+            "Voice_FGao_61",
+            "Voice_FGao_25",
+            "Voice_FGao_26",
+            "Voice_FGao_27",
+            "Voice_FGao_28",
+            "Voice_FGao_29",
+            "Voice_FGao_30",
+            "Voice_FGao_31",
+            "Voice_FGao_32"
+        ],
+        "Speed": 50,
+        "StarId": "FGao_1",
+        "SurfaceList": [
+            "Surface_FGao_1"
+        ],
+        "TeamSpecialVoice": {},
+        "TimeType": "\"2002-01-28 19:00:00\"",
+        "Transform": "",
+        "Type": "Defense",
+        "UnblockRate": 0.0,
+        "UncritRate": 0.0,
+        "UndeadRate": 0.0,
+        "UneffectRate": 0.0,
+        "UnhurtRate": 0.0,
+        "UniqueSkill": "Hero_Unique_FGao"
     },
     "FLYDe": {
         "Absorption": 0.0,
@@ -8949,7 +9212,7 @@
         "AtkRate": 1.0,
         "AtkWeaken": 0.0,
         "AttackFactor": 1.0,
-        "AwakePic": "",
+        "AwakePic": "portrait_axwya_awaken",
         "BaseAttack": 212.0,
         "BaseDefence": 60.0,
         "BaseHp": 840.0,
@@ -9181,7 +9444,8 @@
         "Speed": 50,
         "StarId": "LDu_1",
         "SurfaceList": [
-            "Surface_LDu_1"
+            "Surface_LDu_1",
+            "Surface_LDu_Awake"
         ],
         "TeamSpecialVoice": "",
         "TimeType": "\"2002-01-28 19:00:00\"",
@@ -9443,7 +9707,6 @@
         "StarId": "LFEr_1",
         "SurfaceList": [
             "Surface_LFEr_1",
-            "Surface_LFEr_2",
             "Surface_LFEr_Awake"
         ],
         "TeamSpecialVoice": "",
@@ -11019,7 +11282,8 @@
         "Speed": 50,
         "StarId": "MLYTLSha_1",
         "SurfaceList": [
-            "Surface_MLYTLSha_1"
+            "Surface_MLYTLSha_1",
+            "Surface_MLYTLSha_3"
         ],
         "TeamSpecialVoice": "",
         "TimeType": "\"2002-01-28 19:00:00\"",
@@ -11048,7 +11312,7 @@
         "AtkRate": 1.0,
         "AtkWeaken": 0.0,
         "AttackFactor": 1.04,
-        "AwakePic": "",
+        "AwakePic": "portrait_hhui_awaken",
         "BaseAttack": 216.0,
         "BaseDefence": 60.0,
         "BaseHp": 907.0,
@@ -11280,7 +11544,8 @@
         "Speed": 50,
         "StarId": "MTZMEShi_1",
         "SurfaceList": [
-            "Surface_MTZMEShi_1"
+            "Surface_MTZMEShi_1",
+            "Surface_MTZMEShi_Awake"
         ],
         "TeamSpecialVoice": {
             "SDTZi": "Voice_MTZMEShi_33"
@@ -11294,6 +11559,243 @@
         "UneffectRate": 0.0,
         "UnhurtRate": 0.0,
         "UniqueSkill": "Hero_Unique_MTZMEShi"
+    },
+    "NCai": {
+        "Absorption": 0.0,
+        "Anger": {
+            "a1": [
+                10,
+                750
+            ],
+            "a2": 320,
+            "a3": 150
+        },
+        "AngerBase": 1000.0,
+        "AngerMax": 1000.0,
+        "AngerRate": 0.0,
+        "AtkRate": 1.0,
+        "AtkWeaken": 0.0,
+        "AttackFactor": 0.68,
+        "AwakePic": "",
+        "BaseAttack": 110.0,
+        "BaseDefence": 50.0,
+        "BaseHp": 639.0,
+        "BaseQualityAttr": "SR_10_Defense",
+        "BaseStar": 2,
+        "BasicPower": 1600,
+        "BattlePassiveSkill": "Hero_PBattle_NCai",
+        "BattlePassiveType": "PBuff",
+        "BeCuredRate": 0.0,
+        "BlockAI": "AINCai",
+        "BlockRate": 0.0,
+        "BlockStrg": 0.0,
+        "CVName": "NCai_CVName",
+        "Cost": 10,
+        "CounterRate": 0.0,
+        "CritRate": 0.0,
+        "CritStrg": 0.0,
+        "DefRate": 1.0,
+        "DefWeaken": 0.0,
+        "DefenceFactor": 1.18,
+        "Desc": "HeroBase_Desc_NCai",
+        "DoubleRate": 0.0,
+        "EffectRate": 0.0,
+        "EffectStrg": 0.0,
+        "EnterCD": 1.0,
+        "Flags": [
+            "NCai",
+            "zhengpai"
+        ],
+        "GainAnim": "",
+        "HeadTouchDeviation": [
+            0,
+            0
+        ],
+        "HeroShowIntro": "HeroBase_Intro_NCai",
+        "HeroStoryMap": "",
+        "HpFactor": 1.41,
+        "HurtRate": 0.0,
+        "IfHidden": 1,
+        "InnerAttr": [],
+        "ItemId": "IHF_NCai",
+        "KeyPassiveSkill": "",
+        "LevelUpFactor": 1.0,
+        "MVPText": "MVPText_NCai",
+        "MasterRage": 144,
+        "MaxStar": 5,
+        "Name": "HeroBase_Name_NCai",
+        "NormalSkill": "Hero_Normal_NCai",
+        "Party": "XD",
+        "PassiveCondition": "",
+        "Position": "HeroBase_Position_NCai",
+        "ProudSkill": "Hero_Proud_NCai",
+        "Rareity": 13,
+        "Reflection": 0.0,
+        "RelationList": [],
+        "RoleModel": "Model_NCai",
+        "RtpkPercent": [
+            0,
+            0,
+            0
+        ],
+        "SVPText": "SVPText_NCai",
+        "Sex": 1,
+        "ShortDesc": "HeroBase_ShortDesc_NCai",
+        "SkillCost": {
+            "BattlePassiveSkill": {
+                "amount": [
+                    3,
+                    7,
+                    10,
+                    14,
+                    18,
+                    21,
+                    25,
+                    28,
+                    32,
+                    36
+                ],
+                "code": "ISU_Attack"
+            },
+            "NormalSkill": {
+                "amount": [
+                    3,
+                    6,
+                    9,
+                    12,
+                    15,
+                    18,
+                    21,
+                    24,
+                    27,
+                    30
+                ],
+                "code": "ISU_Attack"
+            },
+            "PassiveSkill1": {
+                "amount": [
+                    3,
+                    7,
+                    10,
+                    14,
+                    18,
+                    21,
+                    25,
+                    28,
+                    32,
+                    36
+                ],
+                "code": "ISU_Attack"
+            },
+            "PassiveSkill2": {
+                "amount": [
+                    3,
+                    7,
+                    10,
+                    14,
+                    18,
+                    21,
+                    25,
+                    28,
+                    32,
+                    36
+                ],
+                "code": "ISU_Attack"
+            },
+            "ProudSkill": {
+                "amount": [
+                    4,
+                    9,
+                    13,
+                    18,
+                    22,
+                    27,
+                    31,
+                    36,
+                    40,
+                    45
+                ],
+                "code": "ISU_Attack"
+            },
+            "UniqueSkill": {
+                "amount": [
+                    6,
+                    12,
+                    18,
+                    24,
+                    30,
+                    36,
+                    42,
+                    48,
+                    54,
+                    60
+                ],
+                "code": "ISU_Attack"
+            }
+        },
+        "SkillRate": 0.15,
+        "Soul": [],
+        "SoundList": [
+            "Voice_NCai_01",
+            "Voice_NCai_35",
+            "Voice_NCai_40_1",
+            "Voice_NCai_40_2",
+            "Voice_NCai_40_3",
+            "Voice_NCai_37",
+            "Voice_NCai_38",
+            "Voice_NCai_39",
+            "Voice_NCai_47",
+            "Voice_NCai_48",
+            "Voice_NCai_50",
+            "Voice_NCai_51",
+            "Voice_NCai_52",
+            "Voice_NCai_53",
+            "Voice_NCai_54",
+            "Voice_NCai_55",
+            "Voice_NCai_56",
+            "Voice_NCai_57",
+            "Voice_NCai_60",
+            "Voice_NCai_07",
+            "Voice_NCai_08",
+            "Voice_NCai_09",
+            "Voice_NCai_58",
+            "Voice_NCai_59",
+            "Voice_NCai_10",
+            "Voice_NCai_11",
+            "Voice_NCai_14",
+            "Voice_NCai_15",
+            "Voice_NCai_16",
+            "Voice_NCai_21",
+            "Voice_NCai_17",
+            "Voice_NCai_18",
+            "Voice_NCai_34",
+            "Voice_NCai_19",
+            "Voice_NCai_63",
+            "Voice_NCai_61",
+            "Voice_NCai_25",
+            "Voice_NCai_26",
+            "Voice_NCai_27",
+            "Voice_NCai_28",
+            "Voice_NCai_29",
+            "Voice_NCai_30",
+            "Voice_NCai_31",
+            "Voice_NCai_32"
+        ],
+        "Speed": 50,
+        "StarId": "NCai_1",
+        "SurfaceList": [
+            "Surface_NCai_1"
+        ],
+        "TeamSpecialVoice": {},
+        "TimeType": "\"2002-01-28 19:00:00\"",
+        "Transform": "",
+        "Type": "Defense",
+        "UnblockRate": 0.0,
+        "UncritRate": 0.0,
+        "UndeadRate": 0.0,
+        "UneffectRate": 0.0,
+        "UnhurtRate": 0.0,
+        "UniqueSkill": "Hero_Unique_NCai"
     },
     "NDGEr": {
         "Absorption": 0.0,

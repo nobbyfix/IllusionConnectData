@@ -110,6 +110,7 @@ function PlayerLevelUpTipMediator:createUI(info)
 	TextGrade:setString(Strings:get("Team_Level"))
 	TextCri:setString(Strings:get("Tili_Text"))
 	TextSuck:setString(Strings:get("Tili_Limit"))
+	TextUnlock:setString(Strings:get("NEW_SYSTEM_OPEN"))
 
 	for i, des in ipairs(descStrList) do
 		if i == #descStrList then

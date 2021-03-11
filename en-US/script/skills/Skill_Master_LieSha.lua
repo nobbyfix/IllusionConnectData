@@ -103,7 +103,7 @@ all.Sk_Master_LieSha_Action1 = {
 			"1"
 		}, main)
 		this.main = global["[load]"](this, {
-			"Movie_LSha_Skill2"
+			"Movie_LSha_Skill3"
 		}, main)
 
 		return this
@@ -164,7 +164,7 @@ all.Sk_Master_LieSha_Action1 = {
 			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.FixedPos(_env, global.GetSide(_env, _env.TARGET), 0, 2) + {
 				-0.8,
 				0
-			}, 100, "skill2"))
+			}, 100, "skill3"))
 			global.HarmTargetView(_env, _env.units)
 
 			for _, unit in global.__iter__(_env.units) do
@@ -362,7 +362,7 @@ all.Sk_Master_LieSha_Action2 = {
 			"1"
 		}, main)
 		this.main = global["[load]"](this, {
-			"Movie_LSha_Skill3"
+			"Movie_LSha_Skill2"
 		}, main)
 
 		return this
@@ -417,7 +417,10 @@ all.Sk_Master_LieSha_Action2 = {
 			local global = _env.global
 
 			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.1, 80)
-			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.FixedPos(_env, 0, 0, 2), 100, "skill3"))
+			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.FixedPos(_env, global.GetSide(_env, _env.TARGET), 0, 2) + {
+				1,
+				0
+			}, 100, "skill2"))
 
 			if global.EnemyMaster(_env) then
 				global.AssignRoles(_env, global.EnemyMaster(_env), "target")

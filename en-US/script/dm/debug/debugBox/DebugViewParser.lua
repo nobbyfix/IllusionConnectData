@@ -17,11 +17,11 @@ function DebugViewParser:tryCreateView(id, viewObj)
 		return self._viewCache[id]:getView()
 	end
 
-	self.kViewWidth = 320
+	self.kViewWidth = 400
 	self.kCellHeight = 100
-	self.kSelectBoxWidth = 312
-	self.kSelectBoxHeight = 200
-	self.kSelectBoxCellWidth = 310
+	self.kSelectBoxWidth = 350
+	self.kSelectBoxHeight = 150
+	self.kSelectBoxCellWidth = 3350
 	self.kSelectBoxCellHeight = 30
 
 	if viewObj.getViewWidth then
@@ -56,7 +56,7 @@ function DebugViewParser:tryCreateView(id, viewObj)
 	btnOk:setName("btnOk")
 	btnOk:setScale(1.5)
 	scollViewRect:addChild(btnOk, 0)
-	btnOk:setPosition(self.kViewWidth + btnOk:getContentSize().width * btnOk:getScale() * 0.5, btnOk:getContentSize().height * btnOk:getScale() * 0.5)
+	btnOk:setPosition(self.kViewWidth, -btnOk:getContentSize().height)
 	btnOk:addTouchEventListener(function (sender, eventType)
 		if eventType == ccui.TouchEventType.ended and viewObj.onClick then
 			local config = viewObj:getViewConfig()
@@ -145,6 +145,7 @@ function DebugViewParser:setupScrollerView(rootNode, scollViewRect, viewObj)
 		scollerCell:addChild(textField, 1000)
 		textField:setPosition(10, parent.kCellHeight * 0.2)
 		textField:setName("textField")
+		textField:setSwallowTouches(false)
 
 		return scollerCell
 	end
@@ -209,41 +210,42 @@ function DebugViewParser:setupScrollerView(rootNode, scollViewRect, viewObj)
 				local textField = cell:getChildByName("textField")
 
 				if textField then
-					textField:setVisible(true)
-					textField:setTouchAreaEnabled(true)
-					textField:setTouchSize(cc.size(parent.kViewWidth - 10, parent.kCellHeight - 10))
+					textField:setContentSize(cc.size(350, 40))
+					textField:setPosition(cc.p(10, 20))
+					textField:ignoreContentAdaptWithSize(false)
 
-					if textField:getString() == "input words here" and data.default then
-						textField:setString(data.default)
+					if textField:getDescription() == "TextField" then
+						textField = replaceTextFieldToEditBox(textField, true)
+					end
+
+					textField:setSwallowTouches(false)
+
+					if textField:getText() == "input words here" and data.default then
+						textField:setText(data.default)
 					end
 
 					if data.type == "Input" then
-						textField:addEventListener(function (sender, type)
-							data.mtext = sender:getString()
+						textField:onEvent(function (eventName, sender)
+							data.mtext = sender:getText()
 
-							if type == ccui.TextFiledEventType.attach_with_ime then
+							if eventName == "began" then
 								self:_tableCellTouchedImpl(table, cell)
-
-								if data.mtext == tostring(data.default) then
-									sender:setString("")
-								end
-							elseif type == ccui.TextFiledEventType.detach_with_ime then
+							elseif eventName == "ended" then
 								if data.mtext == tostring(data.default) or data.mtext == "" then
-									sender:setString(data.default)
+									sender:setText(data.default)
 								end
-							elseif type == ccui.TextFiledEventType.insert_text then
+							elseif eventName == "return" then
 								-- Nothing
-							elseif type == ccui.TextFiledEventType.delete_backward then
+							elseif eventName == "changed" then
 								-- Nothing
 							end
 						end)
 					elseif data.type == "SelectBox" then
-						textField:addEventListener(function (sender, type)
-							data.mtext = sender:getString()
+						textField:onEvent(function (eventName, sender)
+							data.mtext = sender:getText()
 
-							if type == ccui.TextFiledEventType.attach_with_ime then
+							if eventName == "began" then
 								self:_tableCellTouchedImpl(table, cell)
-								sender:setString("")
 
 								if data._selectBoxShow ~= true then
 									data._selectBoxShow = true
@@ -251,11 +253,13 @@ function DebugViewParser:setupScrollerView(rootNode, scollViewRect, viewObj)
 									createSelectBox(cell, data)
 									tableView:reloadData()
 								end
-							elseif type == ccui.TextFiledEventType.detach_with_ime then
+							elseif eventName == "ended" then
 								if data.mtext == tostring(data.default) or data.mtext == "" then
-									sender:setString(data.default)
+									sender:setText(data.default)
 								end
-							elseif type == ccui.TextFiledEventType.insert_text or type == ccui.TextFiledEventType.delete_backward then
+							elseif eventName == "return" then
+								-- Nothing
+							elseif eventName == "changed" then
 								cell.selectBox.config = data.selectHandler(data.mtext)
 
 								cell.selectBox.view:reloadData()
@@ -316,11 +320,11 @@ function DebugViewParser:setupScrollerView(rootNode, scollViewRect, viewObj)
 					if str and type(str) == "table" then
 						data.mtext = str[1]
 
-						textField:setString(str[1])
+						textField:setText(str[1])
 					elseif str then
 						data.mtext = str
 
-						textField:setString(str)
+						textField:setText(str)
 					end
 
 					if data._selectBoxAutoHide and data._selectBoxShow == true then

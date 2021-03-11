@@ -81,7 +81,7 @@ function RTPKSystem:tryEnter()
 		end
 	else
 		self:dispatch(ShowTipEvent({
-			tip = Strings:get("CooperateBoss_Invite_UI31")
+			tip = Strings:get("ClubNew_UI_37")
 		}))
 	end
 end

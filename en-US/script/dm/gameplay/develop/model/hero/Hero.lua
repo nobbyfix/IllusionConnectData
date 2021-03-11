@@ -216,6 +216,10 @@ function Hero:initialize(heroId, player)
 	self:initStarRewardsConfig()
 end
 
+function Hero:getConfig()
+	return self._config
+end
+
 function Hero:initAttribute()
 	self._attrFactor = AttrFactor:new()
 	self._effectList = SingleEffectList:new(self:getId())

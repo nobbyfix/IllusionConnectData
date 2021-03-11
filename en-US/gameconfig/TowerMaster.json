@@ -77,6 +77,69 @@
                 {
                     "param": [
                         [
+                            "Star1Up"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        10,
+                        100
+                    ],
+                    "type": "tag"
+                }
+            ]
+        ],
+        "TeamSkillCondition2": [
+            [
+                {
+                    "param": [
+                        [
+                            "ZTXChang"
+                        ],
+                        [
+                            "FTLEShi"
+                        ],
+                        [
+                            "CLMan"
+                        ],
+                        [
+                            "ATSheng"
+                        ],
+                        [
+                            "XLai"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        1,
+                        10
+                    ],
+                    "type": "tag"
+                }
+            ]
+        ],
+        "TeamSkillCondition3": [
+            [
+                {
+                    "param": [
+                        [
+                            "Summon"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        3,
+                        99
+                    ],
+                    "type": "tag"
+                }
+            ]
+        ],
+        "TeamSkillCondition4": [
+            [
+                {
+                    "param": [
+                        [
                             "Cost8"
                         ]
                     ],
@@ -240,153 +303,6 @@
                     "scope": [
                         0,
                         2
-                    ],
-                    "type": "tag"
-                }
-            ]
-        ],
-        "TeamSkillCondition2": [
-            [
-                {
-                    "param": [
-                        [
-                            "ZTXChang"
-                        ],
-                        [
-                            "FTLEShi"
-                        ],
-                        [
-                            "CLMan"
-                        ],
-                        [
-                            "ATSheng"
-                        ],
-                        [
-                            "XLai"
-                        ]
-                    ],
-                    "range": "group",
-                    "scope": [
-                        2,
-                        10
-                    ],
-                    "type": "tag"
-                }
-            ]
-        ],
-        "TeamSkillCondition3": [
-            [
-                {
-                    "param": [
-                        [
-                            "Attack"
-                        ]
-                    ],
-                    "range": "group",
-                    "scope": [
-                        1,
-                        99
-                    ],
-                    "type": "tag"
-                },
-                {
-                    "param": [
-                        [
-                            "Defense"
-                        ]
-                    ],
-                    "range": "group",
-                    "scope": [
-                        1,
-                        99
-                    ],
-                    "type": "tag"
-                },
-                {
-                    "param": [
-                        [
-                            "Cure"
-                        ]
-                    ],
-                    "range": "group",
-                    "scope": [
-                        1,
-                        99
-                    ],
-                    "type": "tag"
-                },
-                {
-                    "param": [
-                        [
-                            "Aoe"
-                        ]
-                    ],
-                    "range": "group",
-                    "scope": [
-                        1,
-                        99
-                    ],
-                    "type": "tag"
-                },
-                {
-                    "param": [
-                        [
-                            "Summon"
-                        ]
-                    ],
-                    "range": "group",
-                    "scope": [
-                        1,
-                        99
-                    ],
-                    "type": "tag"
-                },
-                {
-                    "param": [
-                        [
-                            "Support"
-                        ]
-                    ],
-                    "range": "group",
-                    "scope": [
-                        1,
-                        99
-                    ],
-                    "type": "tag"
-                },
-                {
-                    "param": [
-                        [
-                            "Curse"
-                        ]
-                    ],
-                    "range": "group",
-                    "scope": [
-                        1,
-                        99
-                    ],
-                    "type": "tag"
-                }
-            ]
-        ],
-        "TeamSkillCondition4": [
-            [
-                {
-                    "param": [
-                        [
-                            "Attack"
-                        ],
-                        [
-                            "Defense"
-                        ],
-                        [
-                            "Aoe"
-                        ]
-                    ],
-                    "range": "group",
-                    "scope": [
-                        7,
-                        100
                     ],
                     "type": "tag"
                 }
@@ -859,12 +775,12 @@
                 {
                     "param": [
                         [
-                            "Aoe"
+                            "Star1Up"
                         ]
                     ],
                     "range": "group",
                     "scope": [
-                        5,
+                        10,
                         100
                     ],
                     "type": "tag"
@@ -879,7 +795,7 @@
                             "MGNa"
                         ],
                         [
-                            "JDCZhang"
+                            "SLMen"
                         ]
                     ],
                     "range": "group",
@@ -896,78 +812,13 @@
                 {
                     "param": [
                         [
-                            "Attack"
+                            "Aoe"
                         ]
                     ],
                     "range": "group",
                     "scope": [
-                        0,
-                        1
-                    ],
-                    "type": "tag"
-                },
-                {
-                    "param": [
-                        [
-                            "Defense"
-                        ]
-                    ],
-                    "range": "group",
-                    "scope": [
-                        0,
-                        1
-                    ],
-                    "type": "tag"
-                },
-                {
-                    "param": [
-                        [
-                            "Cure"
-                        ]
-                    ],
-                    "range": "group",
-                    "scope": [
-                        0,
-                        1
-                    ],
-                    "type": "tag"
-                },
-                {
-                    "param": [
-                        [
-                            "Summon"
-                        ]
-                    ],
-                    "range": "group",
-                    "scope": [
-                        0,
-                        1
-                    ],
-                    "type": "tag"
-                },
-                {
-                    "param": [
-                        [
-                            "Support"
-                        ]
-                    ],
-                    "range": "group",
-                    "scope": [
-                        0,
-                        1
-                    ],
-                    "type": "tag"
-                },
-                {
-                    "param": [
-                        [
-                            "Curse"
-                        ]
-                    ],
-                    "range": "group",
-                    "scope": [
-                        0,
-                        1
+                        4,
+                        99
                     ],
                     "type": "tag"
                 }
@@ -978,16 +829,169 @@
                 {
                     "param": [
                         [
-                            "Support"
-                        ],
-                        [
-                            "Curse"
+                            "Cost8"
                         ]
                     ],
                     "range": "group",
                     "scope": [
-                        3,
-                        100
+                        0,
+                        2
+                    ],
+                    "type": "tag"
+                },
+                {
+                    "param": [
+                        [
+                            "Cost9"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        0,
+                        2
+                    ],
+                    "type": "tag"
+                },
+                {
+                    "param": [
+                        [
+                            "Cost10"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        0,
+                        2
+                    ],
+                    "type": "tag"
+                },
+                {
+                    "param": [
+                        [
+                            "Cost11"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        0,
+                        2
+                    ],
+                    "type": "tag"
+                },
+                {
+                    "param": [
+                        [
+                            "Cost12"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        0,
+                        2
+                    ],
+                    "type": "tag"
+                },
+                {
+                    "param": [
+                        [
+                            "Cost13"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        0,
+                        2
+                    ],
+                    "type": "tag"
+                },
+                {
+                    "param": [
+                        [
+                            "Cost14"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        0,
+                        2
+                    ],
+                    "type": "tag"
+                },
+                {
+                    "param": [
+                        [
+                            "Cost15"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        0,
+                        2
+                    ],
+                    "type": "tag"
+                },
+                {
+                    "param": [
+                        [
+                            "Cost16"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        0,
+                        2
+                    ],
+                    "type": "tag"
+                },
+                {
+                    "param": [
+                        [
+                            "Cost17"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        0,
+                        2
+                    ],
+                    "type": "tag"
+                },
+                {
+                    "param": [
+                        [
+                            "Cost18"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        0,
+                        2
+                    ],
+                    "type": "tag"
+                },
+                {
+                    "param": [
+                        [
+                            "Cost19"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        0,
+                        2
+                    ],
+                    "type": "tag"
+                },
+                {
+                    "param": [
+                        [
+                            "Cost20"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        0,
+                        2
                     ],
                     "type": "tag"
                 }

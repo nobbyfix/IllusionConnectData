@@ -558,6 +558,19 @@
         "TopStatus": 0,
         "Type": "USER"
     },
+    "Mail_EightDays_Sunflower": {
+        "Content": "Mail_EightDays_Sunflower_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_Sunflower_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_EightDays_Sunflower_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
     "Mail_FAC_Warning10": {
         "Content": "Mail_FAC_Warning10_Content",
         "ExpireAfterRead": 72000,
@@ -738,6 +751,19 @@
         "SubType": 1,
         "Title": "Mail_LoginRewards_Title",
         "TopStatus": 0,
+        "Type": "USER"
+    },
+    "Mail_MTZMEShi_DailyTask_Activity": {
+        "Content": "Mail_MTZMEShiTask_DailyTask_Activity_Content",
+        "ExpireAfterRead": "",
+        "ExpireTime": 72000,
+        "Icon": "1",
+        "Name": "Mail_MTZMEShi_DailyTask_Activity_Name",
+        "QuickGet": 1,
+        "Reward": "0",
+        "SubType": 0,
+        "Title": "Mail_MTZMEShiTask_DailyTask_Activity_Title",
+        "TopStatus": "",
         "Type": "USER"
     },
     "Mail_MonthCard": {
@@ -1140,6 +1166,32 @@
         "Reward": "",
         "SubType": 1,
         "Title": "Mail_Summer_DailyTask_Activity_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
+    "Mail_Sunflower_AchieveMentTask_Activity": {
+        "Content": "Mail_Sunflower_AchieveMentTask_Activity_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_Sunflower_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_Sunflower_AchieveMentTask_Activity_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
+    "Mail_Sunflower_DailyTask_Activity": {
+        "Content": "Mail_Sunflower_DailyTask_Activity_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_Sunflower_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_Sunflower_DailyTask_Activity_Title",
         "TopStatus": 0,
         "Type": "USER"
     },

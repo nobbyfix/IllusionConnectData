@@ -194,7 +194,7 @@ function HeroAttribute:getRateAttrNumByType(attrType, attrFactor, env)
 end
 
 HeroAttribute._cache_res = {}
-HeroAttribute.heroCombatDesc = "单角色战力 =（攻击+防御+0.33*生命）*（3+伤害率+免伤率+反伤率*0.6+吸血率*0.6）*(8+暴击率+抗暴率*0.7+暴击强度*0.4+格挡率+破击率*0.7+格挡强度*0.4)*（1+0.0001*普攻等级+0.00015*小技能等级+0.0002*必杀等级+0.00005*战斗被动等级）*资质系数*0.011*身材系数*职业系数+（普攻等级+小技能等级+战斗被动等级+2*必杀等级）+(伤害率+免伤率+反弹率+吸血率)*800+(暴击率+抗暴率+暴击强度+格挡率+破击率+格挡强度+效果强度+效果抵抗率+效果命中率)*400"
+HeroAttribute.heroCombatValue = {}
 local Hero_Atk_CoefficientA = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Hero_Atk_CoefficientA", "content")
 local Hero_Def_CoefficientA = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Hero_Def_CoefficientA", "content")
 local Hero_Hp_CoefficientA = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Hero_Hp_CoefficientA", "content")
@@ -229,6 +229,19 @@ local Hero_UnEffectRate_CoefficientB = ConfigReader:getDataByNameIdAndKey("Confi
 local Hero_EffectStrg_CoefficientB = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Hero_EffectStrg_CoefficientB", "content")
 local Hero_Type_Coefficient = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Hero_Type_Coefficient", "content")
 local Hero_Star_Coefficient = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Hero_Star_Coefficient", "content")
+HeroAttribute.heroCombatDesc = [[
+    单角色战力 =
+    （攻击 + 防御 + 0.25*生命）
+    *（3 + 伤害率 + 免伤率 + 反伤率*0.6 + 吸血率*0.6）
+    * (8 + 暴击率 + 抗暴率*0.7 + 暴击强度*0.4 + 格挡率 + 破击率*0.7 + 格挡强度*0.4)
+    * (1+星级参数)
+    * 资质系数
+    * 0.011
+    * 身材系数
+    * 职业系数
+    + (伤害率 + 免伤率 + 反弹率 +  吸血率) * 800
+    +(暴击率 + 抗暴率 + 暴击强度 + 格挡率 + 破击率 + 格挡强度 + 效果强度 + 效果抵抗率 + 效果命中率) * 400
+]]
 
 function HeroAttribute:getCombat(data)
 	local cjson = require("cjson.safe")
@@ -239,6 +252,18 @@ function HeroAttribute:getCombat(data)
 		if data then
 			local combat = (data.attack * Hero_Atk_CoefficientA + data.defense * Hero_Def_CoefficientA + data.hp * Hero_Hp_CoefficientA) * (Hero_SpecialBase_UnRand + data.hurtRate * Hero_HurtRate_CoefficientA + data.unhurtRate * Hero_UnHurtRate_CoefficientA + data.reflection * Hero_Reflection_CoefficientA + data.absorption * Hero_Absorption_CoefficientA) * (Hero_SpecialBase_Rand + data.critRate * Hero_Critrate_CoefficientA + data.uncritRate * Hero_UnCritrate_CoefficientA + data.critStrg * Hero_Critstrg_CoefficientA + data.blockRate * Hero_BlockRate_CoefficientA + data.unblockRate * Hero_UnBlockRate_CoefficientA + data.blockStrg * Hero_BlockStrg_CoefficientA) * (1 + Hero_Star_Coefficient[tostring(data.star)]) * (Hero_Rareity_Coefficient[tostring(data.rarity)] or 1) * Hero_Revise_Coefficient * 1 * Hero_Type_Coefficient[data.occupation] + (data.hurtRate * Hero_HurtRate_CoefficientB + data.unhurtRate * Hero_UnHurtRate_CoefficientB + data.reflection * Hero_Reflection_CoefficientB + data.absorption * Hero_Absorption_CoefficientB) * Hero_Add1_Coefficient + (data.critRate * Hero_Critrate_CoefficientB + data.uncritRate * Hero_UnCritrate_CoefficientB + data.critStrg * Hero_Critstrg_CoefficientB + data.blockRate * Hero_BlockRate_CoefficientB + data.unblockRate * Hero_UnBlockRate_CoefficientB + data.blockStrg * Hero_BlockStrg_CoefficientB + data.effectStrg * Hero_EffectStrg_CoefficientB + data.unEffectRate * Hero_UnEffectRate_CoefficientB + data.effectRate * Hero_EffectRate_CoefficientB) * Hero_Add2_Coefficient
 			HeroAttribute._cache_res[id] = combat
+			HeroAttribute.heroCombatValue = {
+				data.attack * Hero_Atk_CoefficientA + data.defense * Hero_Def_CoefficientA + data.hp * Hero_Hp_CoefficientA,
+				Hero_SpecialBase_UnRand + data.hurtRate * Hero_HurtRate_CoefficientA + data.unhurtRate * Hero_UnHurtRate_CoefficientA + data.reflection * Hero_Reflection_CoefficientA + data.absorption * Hero_Absorption_CoefficientA,
+				Hero_SpecialBase_Rand + data.critRate * Hero_Critrate_CoefficientA + data.uncritRate * Hero_UnCritrate_CoefficientA + data.critStrg * Hero_Critstrg_CoefficientA + data.blockRate * Hero_BlockRate_CoefficientA + data.unblockRate * Hero_UnBlockRate_CoefficientA + data.blockStrg * Hero_BlockStrg_CoefficientA,
+				1 + Hero_Star_Coefficient[tostring(data.star)],
+				Hero_Rareity_Coefficient[tostring(data.rarity)] or 1,
+				Hero_Revise_Coefficient,
+				1,
+				Hero_Type_Coefficient[data.occupation],
+				(data.hurtRate * Hero_HurtRate_CoefficientB + data.unhurtRate * Hero_UnHurtRate_CoefficientB + data.reflection * Hero_Reflection_CoefficientB + data.absorption * Hero_Absorption_CoefficientB) * Hero_Add1_Coefficient,
+				(data.critRate * Hero_Critrate_CoefficientB + data.uncritRate * Hero_UnCritrate_CoefficientB + data.critStrg * Hero_Critstrg_CoefficientB + data.blockRate * Hero_BlockRate_CoefficientB + data.unblockRate * Hero_UnBlockRate_CoefficientB + data.blockStrg * Hero_BlockStrg_CoefficientB + data.effectStrg * Hero_EffectStrg_CoefficientB + data.unEffectRate * Hero_UnEffectRate_CoefficientB + data.effectRate * Hero_EffectRate_CoefficientB) * Hero_Add2_Coefficient
+			}
 
 			return combat
 		end

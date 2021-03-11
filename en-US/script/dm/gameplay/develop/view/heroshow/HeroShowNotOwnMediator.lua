@@ -66,6 +66,7 @@ end
 
 function HeroShowNotOwnMediator:enterWithData(data)
 	self._heroId = data.id
+	self._modelId = data.modelId
 	self._showType = data.showType or kShowType.kNotHasHero
 	self._hideLeftPanel = data.hideLeftPanel
 	self._attrAdds = data.attrAdds or {}
@@ -93,7 +94,7 @@ function HeroShowNotOwnMediator:initView()
 	local img = IconFactory:createRoleIconSprite({
 		stencil = 1,
 		iconType = "Bust5",
-		id = self._heroData.roleModel,
+		id = self._modelId or self._heroData.roleModel,
 		size = cc.size(340, 450)
 	})
 

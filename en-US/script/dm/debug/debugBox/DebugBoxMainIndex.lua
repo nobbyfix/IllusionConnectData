@@ -107,8 +107,7 @@ DebugBoxMainIndex = {
 					"主角养成",
 					"增加英魂",
 					"一键无敌",
-					"添加皮肤",
-					"单个角色"
+					"添加皮肤"
 				}
 			},
 			{
@@ -319,6 +318,12 @@ DebugBoxMainIndex = {
 				{
 					"设置bust"
 				}
+			},
+			{
+				"属性计算",
+				{
+					"属性计算展示"
+				}
 			}
 		}
 
@@ -375,7 +380,7 @@ DebugBoxMainIndex = {
 				"AddMyEquip"
 			},
 			{
-				"单个角色",
+				"属性计算展示",
 				"AttrInfoView"
 			},
 			{

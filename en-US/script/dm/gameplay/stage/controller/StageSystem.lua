@@ -446,12 +446,12 @@ function StageSystem:initTowerCardSortType()
 end
 
 function StageSystem:syncStages(data, player)
-	self._stageManager:sync(data)
-
 	if player then
 		self._stageManager:setPlayer(player)
 	end
 
+	self._stageManager:sync(data)
+	self._stageManager:eliteStageExtraInit()
 	self:dispatch(Event:new(EVT_RANK_OPNE_SYNC))
 end
 
@@ -553,6 +553,28 @@ function StageSystem:getPointById(pointId)
 	if practicePoint then
 		return practicePoint, kStageTypeMap.PracticePoint
 	end
+end
+
+function StageSystem:isPointQuickCrossEnabled(pointId)
+	local config = ConfigReader:getRecordById("BlockPoint", pointId)
+	local isquick = config.QuickChallenge
+
+	if isquick and isquick == 1 then
+		return true
+	end
+
+	return false
+end
+
+function StageSystem:isPointQuickCombatEnabled(pointId)
+	local comBatRequireRadio = ConfigReader:requireDataByNameIdAndKey("ConfigValue", "QuickChallenge_Combat", "content")
+	comBatRequireRadio = comBatRequireRadio or 1
+	local player = self:getDevelopSystem():getPlayer()
+	local playMaxCom = player:getMaxCombat()
+	local point = self:getPointById(pointId)
+	local comBatRequire = point:getRecommendCombat() * comBatRequireRadio
+
+	return comBatRequire <= tonumber(playMaxCom)
 end
 
 function StageSystem:getMapIndexByPointId(pointId)
@@ -688,6 +710,50 @@ function StageSystem:requestStageEnter(params, callback, blockUI)
 	end)
 end
 
+function StageSystem:requestStageQuickCrossEnter(params, callback, blockUI)
+	self._stageService:requestQuickStageEnter(params, blockUI, function (response)
+		if response.resCode == GS_SUCCESS then
+			local function enterBattleFunc()
+				response.data.pointId = params.pointId
+				response.data.quickCross = true
+
+				local function endFunc()
+					self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, self:getInjector():getInstance("StageWinPopView"), {}, response.data, self))
+
+					if popViewCallBack then
+						popViewCallBack()
+					end
+				end
+
+				local storyLink = ConfigReader:getDataByNameIdAndKey("BlockPoint", params.pointId, "StoryLink")
+				local storynames = storyLink and storyLink.win
+				local storyDirector = self:getInjector():getInstance(story.StoryDirector)
+				local storyAgent = storyDirector:getStoryAgent()
+
+				storyAgent:setSkipCheckSave(false)
+				storyAgent:trigger(storynames, nil, endFunc)
+
+				if winCallBack then
+					winCallBack()
+				end
+			end
+
+			local storyLink = ConfigReader:getDataByNameIdAndKey("BlockPoint", params.pointId, "StoryLink")
+			local storynames = storyLink and storyLink.enter
+			local storyDirector = self:getInjector():getInstance(story.StoryDirector)
+			local storyAgent = storyDirector:getStoryAgent()
+
+			storyAgent:setSkipCheckSave(false)
+			storyAgent:trigger(storynames, nil, enterBattleFunc)
+		elseif response.resCode == 1032 then
+			self:dispatch(ShowTipEvent({
+				duration = 0.2,
+				tip = Strings:find("CUSTOM_ENERGY_NOT_ENOUGH")
+			}))
+		end
+	end)
+end
+
 function StageSystem:requestEnterHeroStory(params, callback, blockUI)
 	self._stageService:requestEnterHeroStory(params, function (response)
 		if response.resCode == GS_SUCCESS then
@@ -709,12 +775,11 @@ function StageSystem:requestEnterHeroStory(params, callback, blockUI)
 end
 
 function StageSystem:requestStageProgress(callback, blockUI)
-	self._stageManager:setPlayer(self:getDevelopSystem():getPlayer())
 	self._stageService:requestStageProgress({}, blockUI, function (response)
 		if response.resCode == GS_SUCCESS then
 			self._hasRequest = true
 
-			self:syncStages(response.data)
+			self:syncStages(response.data, self:getDevelopSystem():getPlayer())
 		end
 
 		if callback then
@@ -2048,6 +2113,14 @@ function StageSystem:requestChangeTeamName(data, callback, blockUI)
 			if callback then
 				callback()
 			end
+		end
+	end, blockUI)
+end
+
+function StageSystem:requestChangeTeamNameByCall(data, callback, blockUI)
+	self._stageService:requestChangeTeamName(data, function (response)
+		if callback then
+			callback(response.resCode, response.data)
 		end
 	end, blockUI)
 end

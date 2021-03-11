@@ -76,6 +76,7 @@ function CommonStageChapterDetailMediator:onRegister()
 	super.onRegister(self)
 	self:mapButtonHandlersClick(kBtnHandlers)
 	self:mapEventListener(self:getEventDispatcher(), EVT_RETURN_VIEW, self, self.lastViewReturn)
+	self:mapEventListener(self:getEventDispatcher(), EVT_STAGE_QUICK_CROSS, self, self.refreshCurrentView)
 end
 
 local btns = nil
@@ -1068,6 +1069,26 @@ function CommonStageChapterDetailMediator:checkUnlockNewChapter()
 	end
 
 	self._tipsWidget:setupView(self._chapterIndex, self._stageType)
+end
+
+function CommonStageChapterDetailMediator:refreshCurrentView()
+	if self._chapterIndex > #max then
+		return
+	end
+
+	local chapterInfo = self:getStageSystem():getMapByIndex(self._chapterIndex + 1, self._stageType)
+
+	if chapterInfo then
+		local unlock, tips = chapterInfo:isUnlock()
+
+		if unlock then
+			self._chapterIndex = self._chapterIndex + 1
+		end
+	end
+
+	local chapterInfo = self:getStageSystem():getMapByIndex(self._chapterIndex, self._stageType)
+
+	self:refreshChapterView()
 end
 
 function CommonStageChapterDetailMediator:onClickLeft()

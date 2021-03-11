@@ -6228,6 +6228,222 @@
         "Reward": "Activity_LFErTask_9_Reward",
         "TaskIcon": ""
     },
+    "Activity_MTZMEShiTask_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroCollectSpecial",
+                "factor1": [
+                    180
+                ],
+                "params": [
+                    "MTZMEShi"
+                ]
+            }
+        ],
+        "Desc": "Activity_MTZMEShiTask_1_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_MTZMEShiTask_1_Name",
+        "OrderNum": 1,
+        "Reward": "Activity_MTZMEShiTask_1_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_MTZMEShiTask_10": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroCollectStar",
+                "factor1": [
+                    4
+                ],
+                "params": [
+                    "MTZMEShi"
+                ]
+            }
+        ],
+        "Desc": "Activity_MTZMEShiTask_10_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_MTZMEShiTask_10_Name",
+        "OrderNum": 10,
+        "Reward": "Activity_MTZMEShiTask_10_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_MTZMEShiTask_11": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroCollectStar",
+                "factor1": [
+                    5
+                ],
+                "params": [
+                    "MTZMEShi"
+                ]
+            }
+        ],
+        "Desc": "Activity_MTZMEShiTask_11_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_MTZMEShiTask_11_Name",
+        "OrderNum": 11,
+        "Reward": "Activity_MTZMEShiTask_11_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_MTZMEShiTask_12": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroCollectStar",
+                "factor1": [
+                    6
+                ],
+                "params": [
+                    "MTZMEShi"
+                ]
+            }
+        ],
+        "Desc": "Activity_MTZMEShiTask_12_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_MTZMEShiTask_12_Name",
+        "OrderNum": 12,
+        "Reward": "Activity_MTZMEShiTask_12_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_MTZMEShiTask_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroLevelUp",
+                "factor1": [
+                    30
+                ]
+            }
+        ],
+        "Desc": "Activity_MTZMEShiTask_2_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_MTZMEShiTask_2_Name",
+        "OrderNum": 2,
+        "Reward": "Activity_MTZMEShiTask_2_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_MTZMEShiTask_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroLevelUp",
+                "factor1": [
+                    60
+                ]
+            }
+        ],
+        "Desc": "Activity_MTZMEShiTask_3_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_MTZMEShiTask_3_Name",
+        "OrderNum": 3,
+        "Reward": "Activity_MTZMEShiTask_3_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_MTZMEShiTask_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroLevelUp",
+                "factor1": [
+                    90
+                ]
+            }
+        ],
+        "Desc": "Activity_MTZMEShiTask_4_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_MTZMEShiTask_4_Name",
+        "OrderNum": 4,
+        "Reward": "Activity_MTZMEShiTask_4_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_MTZMEShiTask_5": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroLevelUp",
+                "factor1": [
+                    120
+                ]
+            }
+        ],
+        "Desc": "Activity_MTZMEShiTask_5_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_MTZMEShiTask_5_Name",
+        "OrderNum": 5,
+        "Reward": "Activity_MTZMEShiTask_5_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_MTZMEShiTask_6": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroQualityUp",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "Activity_MTZMEShiTask_6_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_MTZMEShiTask_6_Name",
+        "OrderNum": 6,
+        "Reward": "Activity_MTZMEShiTask_6_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_MTZMEShiTask_7": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroQualityUp",
+                "factor1": [
+                    3
+                ]
+            }
+        ],
+        "Desc": "Activity_MTZMEShiTask_7_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_MTZMEShiTask_7_Name",
+        "OrderNum": 7,
+        "Reward": "Activity_MTZMEShiTask_7_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_MTZMEShiTask_8": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroQualityUp",
+                "factor1": [
+                    5
+                ]
+            }
+        ],
+        "Desc": "Activity_MTZMEShiTask_8_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_MTZMEShiTask_8_Name",
+        "OrderNum": 8,
+        "Reward": "Activity_MTZMEShiTask_8_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_MTZMEShiTask_9": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroQualityUp",
+                "factor1": [
+                    7
+                ]
+            }
+        ],
+        "Desc": "Activity_MTZMEShiTask_9_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_MTZMEShiTask_9_Name",
+        "OrderNum": 9,
+        "Reward": "Activity_MTZMEShiTask_9_Reward",
+        "TaskIcon": ""
+    },
     "Activity_PGNNiTask_1": {
         "Condition": [
             {
@@ -11401,6 +11617,40 @@
         "Reward": "Login7_48_Reward",
         "TaskIcon": ""
     },
+    "Login7_58": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ContiLogin8_1_Name",
+        "OrderNum": 1,
+        "Reward": "Login7_51_Reward",
+        "TaskIcon": ""
+    },
+    "Login7_59": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    2
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ContiLogin8_2_Name",
+        "OrderNum": 2,
+        "Reward": "Login7_52_Reward",
+        "TaskIcon": ""
+    },
     "Login7_6": {
         "Condition": [
             {
@@ -11416,6 +11666,108 @@
         "Name": "Login14_6_Name",
         "OrderNum": 6,
         "Reward": "Login7_6_Reward",
+        "TaskIcon": ""
+    },
+    "Login7_60": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    3
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ContiLogin8_3_Name",
+        "OrderNum": 3,
+        "Reward": "Login7_53_Reward",
+        "TaskIcon": ""
+    },
+    "Login7_61": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    4
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ContiLogin8_4_Name",
+        "OrderNum": 4,
+        "Reward": "Login7_54_Reward",
+        "TaskIcon": ""
+    },
+    "Login7_62": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    5
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ContiLogin8_5_Name",
+        "OrderNum": 5,
+        "Reward": "Login7_55_Reward",
+        "TaskIcon": ""
+    },
+    "Login7_63": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    6
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ContiLogin8_6_Name",
+        "OrderNum": 6,
+        "Reward": "Login7_56_Reward",
+        "TaskIcon": ""
+    },
+    "Login7_64": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    7
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ContiLogin8_7_Name",
+        "OrderNum": 7,
+        "Reward": "Login7_57_Reward",
+        "TaskIcon": ""
+    },
+    "Login7_65": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    8
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ContiLogin8_8_Name",
+        "OrderNum": 8,
+        "Reward": "Login7_58_Reward",
         "TaskIcon": ""
     },
     "Login7_7": {
@@ -13456,6 +13808,523 @@
         "Name": "ActivityBlock_Snowflake_Login_8_Name",
         "OrderNum": 8,
         "Reward": "Snowflake_Login_08_Reward",
+        "TaskIcon": ""
+    },
+    "Sunflower_AchieveMentTask_01": {
+        "Condition": [
+            {
+                "conditionType": "Condi_winActStage",
+                "factor1": [
+                    50
+                ],
+                "params": [
+                    "ActivityBlock_Sunflower_Map"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Sunflower_AchieveMentTask_1_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Sunflower_AchieveMentTask_1_Name",
+        "OrderNum": 1,
+        "Reward": "Sunflower_AchieveMentTask_001_Reward",
+        "TaskIcon": ""
+    },
+    "Sunflower_AchieveMentTask_02": {
+        "Condition": [
+            {
+                "conditionType": "Condi_winActStage",
+                "factor1": [
+                    100
+                ],
+                "params": [
+                    "ActivityBlock_Sunflower_Map"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Sunflower_AchieveMentTask_2_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Sunflower_AchieveMentTask_2_Name",
+        "OrderNum": 2,
+        "Reward": "Sunflower_AchieveMentTask_002_Reward",
+        "TaskIcon": ""
+    },
+    "Sunflower_AchieveMentTask_03": {
+        "Condition": [
+            {
+                "conditionType": "Condi_winActStage",
+                "factor1": [
+                    200
+                ],
+                "params": [
+                    "ActivityBlock_Sunflower_Map"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Sunflower_AchieveMentTask_3_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Sunflower_AchieveMentTask_3_Name",
+        "OrderNum": 3,
+        "Reward": "Sunflower_AchieveMentTask_003_Reward",
+        "TaskIcon": ""
+    },
+    "Sunflower_AchieveMentTask_04": {
+        "Condition": [
+            {
+                "conditionType": "Condi_winActStage",
+                "factor1": [
+                    300
+                ],
+                "params": [
+                    "ActivityBlock_Sunflower_Map"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Sunflower_AchieveMentTask_4_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Sunflower_AchieveMentTask_4_Name",
+        "OrderNum": 4,
+        "Reward": "Sunflower_AchieveMentTask_004_Reward",
+        "TaskIcon": ""
+    },
+    "Sunflower_AchieveMentTask_05": {
+        "Condition": [
+            {
+                "conditionType": "Condi_winActStage",
+                "factor1": [
+                    400
+                ],
+                "params": [
+                    "ActivityBlock_Sunflower_Map"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Sunflower_AchieveMentTask_5_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Sunflower_AchieveMentTask_5_Name",
+        "OrderNum": 5,
+        "Reward": "Sunflower_AchieveMentTask_005_Reward",
+        "TaskIcon": ""
+    },
+    "Sunflower_AchieveMentTask_06": {
+        "Condition": [
+            {
+                "conditionType": "Condi_SunflowerExchangeAchieve",
+                "factor1": [
+                    3000
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Sunflower_AchieveMentTask_6_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Sunflower_AchieveMentTask_6_Name",
+        "OrderNum": 6,
+        "Reward": "Sunflower_AchieveMentTask_006_Reward",
+        "TaskIcon": ""
+    },
+    "Sunflower_AchieveMentTask_07": {
+        "Condition": [
+            {
+                "conditionType": "Condi_SunflowerExchangeAchieve",
+                "factor1": [
+                    5000
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Sunflower_AchieveMentTask_7_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Sunflower_AchieveMentTask_7_Name",
+        "OrderNum": 7,
+        "Reward": "Sunflower_AchieveMentTask_007_Reward",
+        "TaskIcon": ""
+    },
+    "Sunflower_AchieveMentTask_08": {
+        "Condition": [
+            {
+                "conditionType": "Condi_SunflowerExchangeAchieve",
+                "factor1": [
+                    8000
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Sunflower_AchieveMentTask_8_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Sunflower_AchieveMentTask_8_Name",
+        "OrderNum": 8,
+        "Reward": "Sunflower_AchieveMentTask_008_Reward",
+        "TaskIcon": ""
+    },
+    "Sunflower_AchieveMentTask_09": {
+        "Condition": [
+            {
+                "conditionType": "Condi_SunflowerExchangeAchieve",
+                "factor1": [
+                    10000
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Sunflower_AchieveMentTask_9_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Sunflower_AchieveMentTask_9_Name",
+        "OrderNum": 9,
+        "Reward": "Sunflower_AchieveMentTask_009_Reward",
+        "TaskIcon": ""
+    },
+    "Sunflower_AchieveMentTask_10": {
+        "Condition": [
+            {
+                "conditionType": "Condi_SunflowerExchangeAchieve",
+                "factor1": [
+                    12000
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Sunflower_AchieveMentTask_10_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Sunflower_AchieveMentTask_10_Name",
+        "OrderNum": 10,
+        "Reward": "Sunflower_AchieveMentTask_010_Reward",
+        "TaskIcon": ""
+    },
+    "Sunflower_AchieveMentTask_11": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    2
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Sunflower_AchieveMentTask_11_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Sunflower_AchieveMentTask_11_Name",
+        "OrderNum": 11,
+        "Reward": "Sunflower_AchieveMentTask_011_Reward",
+        "TaskIcon": ""
+    },
+    "Sunflower_AchieveMentTask_12": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    4
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Sunflower_AchieveMentTask_12_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Sunflower_AchieveMentTask_12_Name",
+        "OrderNum": 12,
+        "Reward": "Sunflower_AchieveMentTask_012_Reward",
+        "TaskIcon": ""
+    },
+    "Sunflower_AchieveMentTask_13": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    6
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Sunflower_AchieveMentTask_13_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Sunflower_AchieveMentTask_13_Name",
+        "OrderNum": 13,
+        "Reward": "Sunflower_AchieveMentTask_013_Reward",
+        "TaskIcon": ""
+    },
+    "Sunflower_AchieveMentTask_14": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    8
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Sunflower_AchieveMentTask_14_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Sunflower_AchieveMentTask_14_Name",
+        "OrderNum": 14,
+        "Reward": "Sunflower_AchieveMentTask_014_Reward",
+        "TaskIcon": ""
+    },
+    "Sunflower_AchieveMentTask_15": {
+        "Condition": [
+            {
+                "conditionType": "Condi_FinishTask",
+                "factor1": [
+                    0
+                ],
+                "factorStr1": [
+                    "Sunflower_AchieveMentTask_01",
+                    "Sunflower_AchieveMentTask_02",
+                    "Sunflower_AchieveMentTask_03",
+                    "Sunflower_AchieveMentTask_04",
+                    "Sunflower_AchieveMentTask_05",
+                    "Sunflower_AchieveMentTask_06",
+                    "Sunflower_AchieveMentTask_07",
+                    "Sunflower_AchieveMentTask_08",
+                    "Sunflower_AchieveMentTask_09",
+                    "Sunflower_AchieveMentTask_10",
+                    "Sunflower_AchieveMentTask_11",
+                    "Sunflower_AchieveMentTask_12",
+                    "Sunflower_AchieveMentTask_13",
+                    "Sunflower_AchieveMentTask_14"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Sunflower_AchieveMentTask_15_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Sunflower_AchieveMentTask_15_Name",
+        "OrderNum": 15,
+        "Reward": "Sunflower_AchieveMentTask_015_Reward",
+        "TaskIcon": ""
+    },
+    "Sunflower_DailyTask_01": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Login",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Sunflower_DailyTask_1_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Sunflower_DailyTask_1_Name",
+        "OrderNum": 1,
+        "Reward": "Sunflower_DailyTask_01_Reward",
+        "TaskIcon": ""
+    },
+    "Sunflower_DailyTask_02": {
+        "Condition": [
+            {
+                "conditionType": "Condi_winActStage",
+                "factor1": [
+                    10
+                ],
+                "params": [
+                    "ActivityBlock_Sunflower_Map"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Sunflower_DailyTask_2_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Sunflower_DailyTask_2_Name",
+        "OrderNum": 2,
+        "Reward": "Sunflower_DailyTask_02_Reward",
+        "TaskIcon": ""
+    },
+    "Sunflower_DailyTask_03": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TowerEnter",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Sunflower_DailyTask_3_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Sunflower_DailyTask_3_Name",
+        "OrderNum": 3,
+        "Reward": "Sunflower_DailyTask_03_Reward",
+        "TaskIcon": ""
+    },
+    "Sunflower_DailyTask_04": {
+        "Condition": [
+            {
+                "conditionType": "Condi_BuyStamina",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Sunflower_DailyTask_4_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Sunflower_DailyTask_4_Name",
+        "OrderNum": 4,
+        "Reward": "Sunflower_DailyTask_04_Reward",
+        "TaskIcon": ""
+    },
+    "Sunflower_DailyTask_05": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroGift",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Sunflower_DailyTask_5_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Sunflower_DailyTask_5_Name",
+        "OrderNum": 5,
+        "Reward": "Sunflower_DailyTask_05_Reward",
+        "TaskIcon": ""
+    },
+    "Sunflower_DailyTask_06": {
+        "Condition": [
+            {
+                "conditionType": "Condi_FinishTask",
+                "factor1": [
+                    0
+                ],
+                "factorStr1": [
+                    "Sunflower_DailyTask_01",
+                    "Sunflower_DailyTask_02",
+                    "Sunflower_DailyTask_03",
+                    "Sunflower_DailyTask_04",
+                    "Sunflower_DailyTask_05"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Sunflower_DailyTask_6_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Sunflower_DailyTask_6_Name",
+        "OrderNum": 6,
+        "Reward": "Sunflower_DailyTask_06_Reward",
+        "TaskIcon": ""
+    },
+    "Sunflower_Login_01": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Sunflower_Login_1_Name",
+        "OrderNum": 1,
+        "Reward": "Sunflower_Login_01_Reward",
+        "TaskIcon": ""
+    },
+    "Sunflower_Login_02": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    2
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Sunflower_Login_2_Name",
+        "OrderNum": 2,
+        "Reward": "Sunflower_Login_02_Reward",
+        "TaskIcon": ""
+    },
+    "Sunflower_Login_03": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    3
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Sunflower_Login_3_Name",
+        "OrderNum": 3,
+        "Reward": "Sunflower_Login_03_Reward",
+        "TaskIcon": ""
+    },
+    "Sunflower_Login_04": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    4
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Sunflower_Login_4_Name",
+        "OrderNum": 4,
+        "Reward": "Sunflower_Login_04_Reward",
+        "TaskIcon": ""
+    },
+    "Sunflower_Login_05": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    5
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Sunflower_Login_5_Name",
+        "OrderNum": 5,
+        "Reward": "Sunflower_Login_05_Reward",
+        "TaskIcon": ""
+    },
+    "Sunflower_Login_06": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    6
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Sunflower_Login_6_Name",
+        "OrderNum": 6,
+        "Reward": "Sunflower_Login_06_Reward",
+        "TaskIcon": ""
+    },
+    "Sunflower_Login_07": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    7
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Sunflower_Login_7_Name",
+        "OrderNum": 7,
+        "Reward": "Sunflower_Login_07_Reward",
         "TaskIcon": ""
     }
 }

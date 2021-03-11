@@ -180,10 +180,17 @@ function GameUpdateMediator:refreshGameUpdate(event)
 
 		self:dismiss()
 	elseif data.type == "downloadError" then
+		local tips = "UPDATE_UI8"
+		local errorReason = ""
+
+		if data.data and data.data.errorCodeInternal and data.data.errorStr then
+			errorReason = "\n(" .. tostring(data.data.errorCodeInternal) .. ":" .. tostring(data.data.errorStr) .. ")"
+		end
+
 		self:showAlertView({
 			title = Strings:get("UPDATE_UI7"),
 			title1 = Strings:get("UITitle_EN_Tishi"),
-			content = Strings:get("UPDATE_UI8") .. "\n(" .. tostring(data.data.errorCodeInternal) .. ":" .. tostring(data.data.errorStr) .. ")",
+			content = Strings:get(tips) .. errorReason,
 			sureBtn = {},
 			okCallback = function ()
 				REBOOT()

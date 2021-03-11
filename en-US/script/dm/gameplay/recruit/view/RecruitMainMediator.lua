@@ -249,6 +249,8 @@ function RecruitMainMediator:initView()
 
 	self._resultMain:setVisible(false)
 
+	self._drawNode = self:getView():getChildByFullName("drawNum")
+	self._drawNum = self._drawNode:getChildByFullName("text")
 	local title1 = cc.Label:createWithTTF(Strings:get("Story_Skip"), TTF_FONT_FZYH_R, 24)
 
 	title1:enableOutline(cc.c4b(0, 0, 0, 204), 2)
@@ -1020,6 +1022,26 @@ function RecruitMainMediator:refreshLeftTopNode()
 	else
 		self._tipBtn:setPositionX(kTipBtnPosX[type] or tabPanel:getPositionX() + 629)
 	end
+
+	self._drawNode:setVisible(id ~= RecruitNewPlayerPool)
+
+	if type == RecruitPoolType.kActivity or type == RecruitPoolType.kPve or type == RecruitPoolType.kPvp or type == RecruitPoolType.kClub then
+		self._drawNode:setPosition(cc.p(900, self._leftTimeNode:getPositionY() - 23))
+	else
+		self._drawNode:setPosition(cc.p(self._leftTimeNode:getPositionX(), self._leftTimeNode:getPositionY() - 62))
+	end
+
+	local n = self._recruitSystem:getDrawTimeById(id)
+	n = n and n["1"] or 0
+	local str = Strings:get("RecruitHero_Times", {
+		num = n
+	})
+
+	self._drawNum:setString(str)
+
+	local imgbg = self._drawNode:getChildByFullName("Image_1")
+
+	imgbg:setContentSize(cc.size(self._drawNum:getAutoRenderSize().width + 100, imgbg:getContentSize().height))
 end
 
 function RecruitMainMediator:refreshMiddleTime()

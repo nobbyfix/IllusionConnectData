@@ -245,6 +245,27 @@ function HealthComponent:cancelImmune()
 	end
 end
 
+function HealthComponent:setTrasforHpComp(target, radio)
+	self._tansforHpComp = target
+	self._tansforHpRadio = radio
+end
+
+function HealthComponent:removeTrasforHpComp()
+	self._tansforHpComp = nil
+	self._tansforHpRadio = nil
+end
+
+function HealthComponent:getTrasforHpComp()
+	if self._tansforHpComp and self._tansforHpComp:getEntity() then
+		return {
+			comp = self._tansforHpComp,
+			radio = self._tansforHpRadio
+		}
+	end
+
+	return nil
+end
+
 function HealthComponent:addExtraLife(value, source)
 	assert(value > 0)
 

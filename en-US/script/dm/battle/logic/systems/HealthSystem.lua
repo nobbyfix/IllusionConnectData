@@ -139,9 +139,25 @@ function HealthSystem:performHealthDamage(actor, target, damage, lowerLimit, wor
 	end
 
 	local brokenShields = nil
+	local tranforHpComp = targetHpComp:getTrasforHpComp()
 
 	if targetHpComp:isImmune() then
 		result.immune = true
+	elseif tranforHpComp then
+		if dmgIsTable then
+			damage.val = damage.val * tranforHpComp.radio
+		else
+			damage = damage * tranforHpComp.radio
+		end
+
+		target = tranforHpComp.comp:getEntity()
+		local result = self:performHealthDamage(actor, target, damage, lowerLimit, workId, notLastHit)
+
+		if result then
+			local transforTarget = target
+
+			return result, transforTarget
+		end
 	else
 		local shieldResult = targetHpComp:consumeShield(dmgval)
 

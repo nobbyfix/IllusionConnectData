@@ -89,6 +89,9 @@
     "Target_FEMSi": {
         "Function": "return GenInfo(EnemyAll(),Red,true)"
     },
+    "Target_FGao": {
+        "Function": "return MainTarget()"
+    },
     "Target_FLYDe": {
         "Function": "return GenInfo(EnemyAll(),Red)"
     },
@@ -157,6 +160,9 @@
     },
     "Target_MTZMEShi": {
         "Function": "return MainTarget()"
+    },
+    "Target_NCai": {
+        "Function": "return GenInfo(EnemyAll(ROW_OF(TARGET)),Red)"
     },
     "Target_NDGEr": {
         "Function": "return GenInfo(FriendAll(),Green)"
