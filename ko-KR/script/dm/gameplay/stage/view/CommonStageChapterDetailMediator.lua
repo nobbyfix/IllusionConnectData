@@ -1048,15 +1048,18 @@ function CommonStageChapterDetailMediator:checkUnlockNewChapter()
 end
 
 function CommonStageChapterDetailMediator:refreshCurrentView()
-	if self._chapterIndex == #max then
+	if self._chapterIndex > #max then
 		return
 	end
 
 	local chapterInfo = self:getStageSystem():getMapByIndex(self._chapterIndex + 1, self._stageType)
-	local unlock, tips = chapterInfo:isUnlock()
 
-	if unlock then
-		self._chapterIndex = self._chapterIndex + 1
+	if chapterInfo then
+		local unlock, tips = chapterInfo:isUnlock()
+
+		if unlock then
+			self._chapterIndex = self._chapterIndex + 1
+		end
 	end
 
 	local chapterInfo = self:getStageSystem():getMapByIndex(self._chapterIndex, self._stageType)

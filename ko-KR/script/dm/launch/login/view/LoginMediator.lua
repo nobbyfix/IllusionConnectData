@@ -552,7 +552,9 @@ function LoginMediator:connectGameServer()
 			})
 		end
 
-		self:beforeLoading()
+		self._loginSystem:requestPlayerInfo(function ()
+			self:beforeLoading()
+		end)
 	end)
 
 	if not connected then
@@ -604,9 +606,6 @@ function LoginMediator:buildLoadingTask()
 	local taskBuilder = timesharding.TaskBuilder:new()
 	local task = taskBuilder:buildParalelTask(function ()
 		SEQUENCE(30)
-		DO_ACTION(function ()
-			self._loginSystem:requestPlayerInfo()
-		end, 1)
 		DO_ACTION(function ()
 			if SDKHelper:isEnableSdk() then
 				local developSystem = self:getInjector():getInstance(DevelopSystem)

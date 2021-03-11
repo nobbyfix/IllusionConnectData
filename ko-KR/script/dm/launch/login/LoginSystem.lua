@@ -231,7 +231,7 @@ function LoginSystem:requestPlayerInfo(callback)
 		baseInfo = info
 	}
 
-	self._loginService:requestPlayerInfo(params, false, function (response)
+	self._loginService:requestPlayerInfo(params, true, function (response)
 		if response.resCode == GS_SUCCESS then
 			local developSystem = self:getInjector():getInstance(DevelopSystem)
 
