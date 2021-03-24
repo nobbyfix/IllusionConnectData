@@ -755,6 +755,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_KernelSuite_Desc"
     },
+    "Condi_KnightExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_Knight_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_KnightExchangeAchieve_Desc"
+    },
     "Condi_LabFight": {
         "AchieveType1": "CUSTOM",
         "AchieveType2": "",

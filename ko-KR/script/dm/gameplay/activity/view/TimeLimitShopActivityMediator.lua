@@ -13,6 +13,24 @@ TimeLimitShopActivityMediator:has("_bagSystem", {
 	is = "r"
 }):injectWith("BagSystem")
 
+local timeLimitShopConfig = {
+	xige = {
+		BG = "jqtd_txt_jjbjwz_di",
+		TimeOutLineColor = cc.c4b(52, 31, 255, 255)
+	},
+	valentine = {
+		BG = "jqtd_txt_mtzazl_di",
+		TimeOutLineColor = cc.c4b(106, 0, 24, 255)
+	},
+	whiteday = {
+		BG = "jqtd_txt_ymzdbz_di",
+		TimeOutLineColor = cc.c4b(59, 65, 98, 255)
+	},
+	foolsday = {
+		BG = "jqtd_txt_zgmszl_di",
+		TimeOutLineColor = cc.c4b(106, 0, 24, 255)
+	}
+}
 local btnHandlers = {
 	["main.btn_close"] = {
 		clickAudio = "Se_Click_Common_2",
@@ -47,6 +65,7 @@ end
 function TimeLimitShopActivityMediator:enterWithData(data)
 	self._activity = data.activity
 	self._activityConfig = self._activity:getConfig().ActivityConfig
+	self._packType = self._activityConfig.PackType
 
 	self:setupView()
 end
@@ -64,15 +83,30 @@ function TimeLimitShopActivityMediator:setupView()
 
 	if self._activityConfig.UIBG and self._activityConfig.UIBG ~= "" then
 		self._bg:loadTexture("asset/lang_ui/activity/" .. self._activityConfig.UIBG .. ".png", ccui.TextureResType.localType)
+	else
+		local config = timeLimitShopConfig[self._packType]
+
+		if config and config.BG then
+			self._bg:loadTexture("asset/lang_ui/activity/" .. config.BG .. ".png", ccui.TextureResType.localType)
+		end
 	end
 
+	local config = timeLimitShopConfig[self._packType]
+
+	if config and config.TimeOutLineColor then
+		self._deadline:enableOutline(config.TimeOutLineColor, 1)
+	end
+
+	self._cellClone = self._view:getChildByFullName(self._packType .. "Cell")
+
+	assert(self._cellClone ~= nil, "Error:Not Found ItemCell By Type:" .. self._packType)
 	self:enableTimeLimitShopTimer()
 	self:setUpPackageState()
 	self:setupAnim()
 end
 
 function TimeLimitShopActivityMediator:setupAnim()
-	local action = cc.CSLoader:createTimeline("asset/ui/TimeShopActivity.csb")
+	local action = cc.CSLoader:createTimeline("asset/ui/TimeShopActivityFoolsday.csb")
 
 	self._main:runAction(action)
 	action:clearFrameEventCallFunc()
@@ -107,7 +141,12 @@ function TimeLimitShopActivityMediator:setUpPackageState()
 end
 
 function TimeLimitShopActivityMediator:setPackageItemInfo(cell, data)
-	local panel = cell:getChildByFullName("cell")
+	local baseClone = self._cellClone:clone()
+
+	baseClone:addTo(cell):center(cell:getContentSize())
+
+	local panel = baseClone:getChildByName("cell")
+	local mask = baseClone:getChildByFullName("mask")
 	local iconLayout = panel:getChildByFullName("icon_layout")
 	local nameText = panel:getChildByFullName("goods_name")
 	local money_icon = panel:getChildByFullName("money_layout.money_icon")
@@ -122,7 +161,6 @@ function TimeLimitShopActivityMediator:setPackageItemInfo(cell, data)
 
 	priceText:removeAllChildren()
 
-	local mask = cell:getChildByFullName("mask")
 	local bg_buy = panel:getChildByName("bg_buy")
 	local bg = panel:getChildByName("bg")
 	local xian = panel:getChildByFullName("money_layout.xian")
@@ -257,12 +295,14 @@ function TimeLimitShopActivityMediator:setPackageItemInfo(cell, data)
 		bg:setVisible(false)
 		bg_buy:setVisible(true)
 		mask:setVisible(true)
+		panel:setColor(cc.c3b(120, 120, 120))
 		cell:setTouchEnabled(false)
 		moneyText:enableShadow(cc.c4b(49, 49, 49, 255), cc.size(0, -3), 3)
 	else
 		bg:setVisible(true)
 		bg_buy:setVisible(false)
 		mask:setVisible(false)
+		panel:setColor(cc.c3b(255, 255, 255))
 		cell:setTouchEnabled(true)
 	end
 end

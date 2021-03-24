@@ -89,7 +89,7 @@ function RTPKMatchMediator:createTimer()
 		if self._enterPvp and not self._enterBattle then
 			pvpWaitTime = pvpWaitTime + 1
 
-			if pvpWaitTime >= 15 then
+			if pvpWaitTime >= 35 then
 				self:dismiss()
 			end
 		end

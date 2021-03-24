@@ -1161,6 +1161,11 @@ local mappings = {
 		name = "ActivityBakingMainMediator",
 		type = "@C"
 	},
+	ActivityKnightMainMediator = {
+		url = "dm.gameplay.activity.view.ActivityKnightMainMediator",
+		name = "ActivityKnightMainMediator",
+		type = "@C"
+	},
 	ActivityEggRewardMediator = {
 		url = "dm.gameplay.activity.view.ActivityEggRewardMediator",
 		name = "ActivityEggRewardMediator",

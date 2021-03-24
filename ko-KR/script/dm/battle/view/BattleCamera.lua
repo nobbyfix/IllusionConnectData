@@ -158,9 +158,16 @@ function BattleCamera:focusOn(x, y, scale, time)
 	else
 		local cx, cy = self:getCenter()
 		local s0 = self:getScale()
+		local finalOffsetX = x - cx
+		local offset = (1386 * scale - display.width) / 2
+
+		if s0 < scale and offset < math.abs(finalOffsetX) then
+			finalOffsetX = (x - cx) / math.abs(x - cx) * offset / scale
+		end
+
 		local action = {
 			time = time,
-			deltaX = x - cx,
+			deltaX = finalOffsetX,
 			deltaY = y - cy,
 			x0 = cx,
 			y0 = cy,

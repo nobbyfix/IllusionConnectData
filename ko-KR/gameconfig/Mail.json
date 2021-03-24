@@ -571,6 +571,19 @@
         "TopStatus": 0,
         "Type": "USER"
     },
+    "Mail_EightDays_Knight": {
+        "Content": "Mail_EightDays_Knight_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_Knight_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_EightDays_Knight_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
     "Mail_EightDays_MusicFestival": {
         "Content": "Mail_EightDays_MusicFestival_Content",
         "ExpireAfterRead": 72000,
@@ -763,6 +776,32 @@
         "Reward": "Mail_HuanxingTest_Reward",
         "SubType": 1,
         "Title": "Mail_HuanxingTest_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
+    "Mail_Knight_AchieveMentTask_Activity": {
+        "Content": "Mail_Knight_AchieveMentTask_Activity_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_Knight_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_Knight_AchieveMentTask_Activity_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
+    "Mail_Knight_DailyTask_Activity": {
+        "Content": "Mail_Knight_DailyTask_Activity_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_Knight_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_Knight_DailyTask_Activity_Title",
         "TopStatus": 0,
         "Type": "USER"
     },

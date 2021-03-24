@@ -388,10 +388,6 @@ all.Skill_PDLa_Passive_Death = {
 		_env.ACTOR = externs.ACTOR
 
 		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
-
-		_env.TARGET = externs.TARGET
-
-		assert(_env.TARGET ~= nil, "External variable `TARGET` is not provided.")
 		exec["@time"]({
 			0
 		}, _env, function (_env)
@@ -1084,10 +1080,6 @@ all.Skill_PDLa_Passive_Death_EX = {
 		_env.ACTOR = externs.ACTOR
 
 		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
-
-		_env.TARGET = externs.TARGET
-
-		assert(_env.TARGET ~= nil, "External variable `TARGET` is not provided.")
 		exec["@time"]({
 			0
 		}, _env, function (_env)

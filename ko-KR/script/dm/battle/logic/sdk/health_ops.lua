@@ -99,18 +99,27 @@ function exports.ApplyHPDamage(env, target, damage, lowerLimit, notLastHit)
 		local rawDamage = result.raw or 0
 
 		if actor ~= nil and rawDamage > 0 then
-			local reflectResult = healthSystem:performReflection(actor, target, rawDamage, workId, notLastHit)
+			local reflectResult, transActor = healthSystem:performReflection(actor, target, rawDamage, workId, notLastHit)
 
 			if reflectResult then
 				addReflectInfo(env, target, reflectResult)
 
 				if reflectResult.deadly then
-					actor:setFoe(target:getId())
+					if transActor then
+						transActor:setFoe(target:getId())
 
-					local formationSystem = env.global["$FormationSystem"]
+						local formationSystem = env.global["$FormationSystem"]
 
-					formationSystem:excludeDyingUnit(actor, workId)
-					formationSystem:recordDying()
+						formationSystem:excludeDyingUnit(transActor, workId)
+						formationSystem:recordDying()
+					else
+						actor:setFoe(target:getId())
+
+						local formationSystem = env.global["$FormationSystem"]
+
+						formationSystem:excludeDyingUnit(actor, workId)
+						formationSystem:recordDying()
+					end
 				end
 			end
 

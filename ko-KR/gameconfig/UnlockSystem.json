@@ -609,6 +609,24 @@
         "UnlockAnima": "HOME",
         "UnlockDesc": "Club_System_UnlockDesc"
     },
+    "CooperateBoss_SkipBattle": {
+        "Condition": {
+            "LEVEL": 1
+        },
+        "Icon": "",
+        "IsPlay": "",
+        "Link": "",
+        "LongDesc": "",
+        "Name": "",
+        "OutputDesc": "",
+        "ResourcesBanner": "",
+        "ShowCondition": {
+            "LEVEL": 1
+        },
+        "Tip": "Unlock_Level_Tips",
+        "UnlockAnima": "",
+        "UnlockDesc": ""
+    },
     "Crusade": {
         "Condition": {
             "STAGE": "M08S19"

@@ -340,6 +340,10 @@ function ActivityBlockMediator:initTimer()
 			end
 
 			local function checkTimeFunc()
+				if DisposableObject:isDisposed(self) then
+					return
+				end
+
 				remoteTimestamp = self._activitySystem:getCurrentTime()
 				local remainTime = self._endTime - remoteTimestamp
 

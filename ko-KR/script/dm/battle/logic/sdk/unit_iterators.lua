@@ -483,3 +483,47 @@ function exports.RandomN(env, n, array)
 
 	return targets
 end
+
+function exports.FriendDiedUnits(env, filter)
+	local targetSide = env["$actor"]:getSide()
+	local units = env.global["$FormationSystem"]:getCemetery():getUnitsBySide(targetSide)
+
+	if filter == nil then
+		return units
+	end
+
+	return filterArrayElements(env, units, filter)
+end
+
+function exports.EnemyDiedUnits(env, filter)
+	local targetSide = opposeBattleSide(env["$actor"]:getSide())
+	local units = env.global["$FormationSystem"]:getCemetery():getUnitsBySide(targetSide)
+
+	if filter == nil then
+		return units
+	end
+
+	return filterArrayElements(env, units, filter)
+end
+
+function exports.AllDiedUnits(env, filter)
+	local targetSide = env["$actor"]:getSide()
+	local units_f = env.global["$FormationSystem"]:getCemetery():getUnitsBySide(targetSide)
+	local targetSide = opposeBattleSide(env["$actor"]:getSide())
+	local units_e = env.global["$FormationSystem"]:getCemetery():getUnitsBySide(targetSide)
+	local units = {}
+
+	for k, v in pairs(units_f) do
+		units[#units + 1] = v
+	end
+
+	for k, v in pairs(units_e) do
+		units[#units + 1] = v
+	end
+
+	if filter == nil then
+		return units
+	end
+
+	return filterArrayElements(env, units, filter)
+end

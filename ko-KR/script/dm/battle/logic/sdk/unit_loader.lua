@@ -349,7 +349,9 @@ function exports.GetSide(env, unit)
 end
 
 function exports.GetCost(env, unit)
-	return unit:getHeroCost() == -1 and unit:getCost() or unit:getHeroCost()
+	local enemyCost = unit:getEnemyCost() == 0 and unit:getCost() or unit:getEnemyCost()
+
+	return unit:getHeroCost() == -1 and enemyCost or unit:getHeroCost()
 end
 
 function exports.GetSummoner(env, unit)

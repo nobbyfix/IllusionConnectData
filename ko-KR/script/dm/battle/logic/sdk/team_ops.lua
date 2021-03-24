@@ -157,6 +157,13 @@ function exports.Revive(env, hpRatio, anger, location)
 	return formationSystem:revive(actor, hpRatio, anger, location)
 end
 
+function exports.ReviveByUnit(env, unit, hpRatio, anger, location)
+	local formationSystem = env.global["$FormationSystem"]
+	local actor = env["$actor"]
+
+	return formationSystem:reviveByUnit(actor, unit, hpRatio, anger, location)
+end
+
 function exports.ReviveRandom(env, hpRatio, anger, location)
 	local formationSystem = env.global["$FormationSystem"]
 	local actor = env["$actor"]
@@ -181,11 +188,11 @@ function exports.Reborn(env, ratio)
 	end
 end
 
-function exports.RebornUnit(env, unit, ratio)
+function exports.RebornUnit(env, unit, ratio, anger, location)
 	if unit:isInStages(ULS_Dead) then
 		local formationSystem = env.global["$FormationSystem"]
 
-		formationSystem:rebornUnit(unit, ratio)
+		formationSystem:rebornUnit(unit, ratio, anger, location)
 	end
 end
 

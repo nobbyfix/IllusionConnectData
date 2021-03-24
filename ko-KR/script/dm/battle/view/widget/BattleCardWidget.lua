@@ -158,6 +158,7 @@ function BattleCardWidget:updateCardInfo(info)
 	self._cardId = info.id
 
 	self:adjustCost(info)
+	self:refreshCardAnim()
 end
 
 function BattleCardWidget:freshEnergyStatus(energy, remain)

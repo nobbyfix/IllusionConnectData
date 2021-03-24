@@ -108,6 +108,17 @@ function BattleCardWindow:getCardArray()
 	return result, count
 end
 
+function BattleCardWindow:removeCard(card)
+	local cards = self._cards
+
+	for i = 1, CARD_WINDOW_SIZE do
+		if cards[i] == card then
+			cards[i] = nil
+			self._cardsCount = self._cardsCount - 1
+		end
+	end
+end
+
 function BattleCardWindow:getCardIndex(card)
 	local cards = self._cards
 

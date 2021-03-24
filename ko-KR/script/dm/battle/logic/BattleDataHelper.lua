@@ -707,6 +707,12 @@ function BattleDataHelper:fillEnemyCostData(data)
 	if heroCfg then
 		data.heroCost = heroCfg.Cost
 	else
+		local enemyCfg = ConfigReader:getRecordById("EnemyHero", data.id)
+
+		if enemyCfg then
+			data.enemyCost = enemyCfg.EnergyCost
+		end
+
 		data.heroCost = -1
 	end
 end

@@ -107,7 +107,8 @@ DebugBoxMainIndex = {
 					"主角养成",
 					"增加英魂",
 					"一键无敌",
-					"添加皮肤"
+					"添加皮肤",
+					"语音检测"
 				}
 			},
 			{
@@ -414,6 +415,10 @@ DebugBoxMainIndex = {
 			{
 				"添加皮肤",
 				"AddSurface"
+			},
+			{
+				"语音检测",
+				"TestSound"
 			},
 			{
 				"进入剧情编辑",
@@ -934,6 +939,7 @@ DebugBoxMainIndex = {
 			"GuideReset",
 			"GuideEndBattle",
 			"TestPlayStory",
+			"TestSound",
 			"CheckConfigBox",
 			"CheckTranslateConfig",
 			"OnekeyInvincible",

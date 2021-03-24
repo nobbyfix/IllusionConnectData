@@ -1014,7 +1014,7 @@ function scene_MTZMEShiDate02.actions.start_MTZMEShiDate02j(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "MTZMEShi_dialog_speak_name_2",
+					name = "MTZMEShi_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -1473,7 +1473,7 @@ function scene_MTZMEShiDate02.actions.start_MTZMEShiDate02m(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "MTZMEShi_dialog_speak_name_2",
+					name = "MTZMEShi_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
