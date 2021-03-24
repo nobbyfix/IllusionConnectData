@@ -2069,6 +2069,10 @@
             "CooperateBoss_RuleTitle_Text03"
         ]
     },
+    "CooperateBoss_SkipBattle_WaitTime": {
+        "clz": "int",
+        "content": 3
+    },
     "Crusade_5_Star_buff": {
         "clz": "string",
         "content": "Crusade_ExcellentHero_Stars"
@@ -6810,6 +6814,10 @@
             "16": "PlayerLevel_Reward2"
         }
     },
+    "PlayerSuppress_Value": {
+        "clz": "string",
+        "content": 0.2
+    },
     "Player_AdvanceDrawCard_Mail": {
         "clz": "string",
         "content": "Mail_AdvanceDrawCard"
@@ -8143,7 +8151,10 @@
             "FLYDe",
             "TJHDe",
             "NCai",
-            "FGao"
+            "FGao",
+            "XBKLDi",
+            "KEDGong",
+            "HGEr"
         ]
     },
     "Tower_1_GrowMaxValue": {

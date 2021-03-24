@@ -411,6 +411,7 @@ function SurfaceMediator:updateBtnState()
 
 	self._unlockPanel:setVisible(not unlock and not inShop)
 	self._unlockPanel:getChildByFullName("unlock1"):setString(self._curSurface:getUnlockDesc())
+	self._sureBtn:setVisible(false)
 
 	local costNode = self._sureBtn:getChildByFullName("costNode")
 

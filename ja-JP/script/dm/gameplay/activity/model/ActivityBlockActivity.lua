@@ -78,6 +78,21 @@ function ActivityBlockActivity:getSubActivityById(id)
 	end
 end
 
+function ActivityBlockActivity:getBlockMapIds()
+	local ids = {}
+	local activityIds = self:getActivity()
+
+	for _, id in pairs(activityIds) do
+		local config = ConfigReader:getRecordById("Activity", id)
+
+		if config.Type == "ActivityBlockMap" then
+			ids[#ids + 1] = id
+		end
+	end
+
+	return ids
+end
+
 function ActivityBlockActivity:getBlockMapActivity(activityId)
 	local function getActivity(id)
 		local activity = self:getSubActivityById(id)
@@ -373,7 +388,11 @@ function ActivityBlockActivity:getChangeBgPath()
 end
 
 function ActivityBlockActivity:getTitlePath()
-	return string.format("%s.png", self:getActivityConfig().Logo)
+	if self:getActivityConfig().Logo then
+		return string.format("%s.png", self:getActivityConfig().Logo)
+	end
+
+	return nil
 end
 
 function ActivityBlockActivity:getTimeStr()

@@ -59,7 +59,7 @@ function exports.ApplyEnergyRecovery(env, player, energy)
 	env.global.RecordImmediately(env, player:getId(), "SyncERecovery", energyInfo)
 end
 
-function exports.Recruit(env, cardfilter, location)
+function exports.Recruit(env, cardfilter, location, cost)
 	local player = env["$actor"]:getOwner()
 	local battleField = env.global["$BattleContext"]:getObject("BattleField")
 	local cellId = battleField:findEmptyCellId(player:getSide(), location)
@@ -94,7 +94,7 @@ function exports.Recruit(env, cardfilter, location)
 	if resultIndex <= windowCount then
 		resultCard = cardsInWindow[resultIndex]
 
-		resultCard:usedByPlayer(player, env.global["$BattleContext"], cellId, 0, true)
+		resultCard:usedByPlayer(player, env.global["$BattleContext"], cellId, cost or 0, true)
 
 		local idx = player:getCardWindow():getCardIndex(resultCard)
 		local newCard, nextCard = player:fillCardAtIndex(idx)
@@ -114,7 +114,7 @@ function exports.Recruit(env, cardfilter, location)
 	else
 		resultCard = cardsInPool[resultIndex - windowCount]
 
-		resultCard:usedByPlayer(player, env.global["$BattleContext"], cellId, 0, true)
+		resultCard:usedByPlayer(player, env.global["$BattleContext"], cellId, cost or 0, true)
 
 		local removed, isFront = player:getCardPool():removeCard(resultCard)
 
@@ -135,20 +135,28 @@ function exports.Recruit(env, cardfilter, location)
 	end
 end
 
-function exports.RecruitCard(env, card, location)
+function exports.RecruitCard(env, card, location, cost)
 	local player = env["$actor"]:getOwner()
 	local battleField = env.global["$BattleContext"]:getObject("BattleField")
 	local cellId = battleField:findEmptyCellId(player:getSide(), location)
 
 	if not cellId then
-		return
+		return false
+	end
+
+	if card:isLocked() then
+		return false
 	end
 
 	local cardWindow = player:getCardWindow()
 	local index = cardWindow:getCardIndex(card)
 
 	if index then
-		card:usedByPlayer(player, env.global["$BattleContext"], cellId, 0, true)
+		local ok, detail = card:usedByPlayer(player, env.global["$BattleContext"], cellId, cost or 0, true)
+
+		if not ok then
+			return false
+		end
 
 		local newCard, nextCard = player:fillCardAtIndex(index)
 
@@ -164,11 +172,19 @@ function exports.RecruitCard(env, card, location)
 			oldcard = card,
 			newcard = newCard
 		})
+
+		local spawnUnit = detail
+
+		return spawnUnit
 	else
 		local removed, isFront = player:getCardPool():removeCard(card)
 
 		if removed then
-			card:usedByPlayer(player, env.global["$BattleContext"], cellId, 0, true)
+			local ok, detail = card:usedByPlayer(player, env.global["$BattleContext"], cellId, cost or 0, true)
+
+			if not ok then
+				return false
+			end
 
 			if isFront then
 				local nextCard = player:getCardPool():getFrontCard()
@@ -182,6 +198,12 @@ function exports.RecruitCard(env, card, location)
 					type = "hero"
 				})
 			end
+
+			local spawnUnit = detail
+
+			return spawnUnit
+		else
+			return false
 		end
 	end
 end
@@ -203,13 +225,28 @@ end
 function exports.BackToCard(env, unit)
 	local player = env["$actor"]:getOwner()
 
-	if unit:getCardInfo() and player:getCardState() ~= "skill" then
+	if unit:getCardInfo() then
 		local formationSystem = env.global["$FormationSystem"]
 
 		formationSystem:forbidenRevive(unit)
 
 		local cardSystem = env.global["$CardSystem"]
 		local cardInfo = cardSystem:genNewHeroCard(unit:getCardInfo(), "b")
+
+		if player:getCardState() == "skill" then
+			for i = 1, 4 do
+				local card_ws = player:takeCardAtIndex(i)
+
+				if card_ws then
+					player:backCardToPool(card_ws)
+				end
+			end
+
+			player:setCardPool(player:getHeroCardPool())
+			player:setupCardWindowWithHeroCards()
+			env.global.RecordImmediately(env, player:getId(), "RemoveSCard")
+		end
+
 		local card = player:getCardPool():insertCardByInfo(cardInfo)
 
 		env.global.RecordImmediately(env, player:getId(), "BackToCard", {

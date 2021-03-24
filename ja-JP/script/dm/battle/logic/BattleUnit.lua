@@ -56,6 +56,7 @@ function BattleUnit:copyRawData(srcUnit)
 	self._modelScale = srcUnit:getModelScale()
 	self._heroCost = srcUnit:getHeroCost()
 	self._cid = srcUnit:getCid()
+	self._enemyCost = srcUnit:getEnemyCost()
 end
 
 function BattleUnit:inheritUnit(srcUnit, info)
@@ -113,6 +114,9 @@ BattleUnit:has("_star", {
 	is = "rw"
 })
 BattleUnit:has("_cost", {
+	is = "rw"
+})
+BattleUnit:has("_enemyCost", {
 	is = "rw"
 })
 BattleUnit:has("_masterRage", {
@@ -186,6 +190,7 @@ function BattleUnit:initWithRawData(data)
 	self._modelScale = data.modelScale
 	self._heroCost = data.heroCost or -1
 	self._surfaceIndex = data.surfaceIndex or 0
+	self._enemyCost = data.enemyCost
 
 	super.initWithRawData(self, data)
 

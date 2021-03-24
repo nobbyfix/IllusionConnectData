@@ -1876,23 +1876,8 @@ local modules = {
 							mediator = "ActivityBakingMainMediator"
 						},
 						{
-							res = "asset/ui/TimeShopActivity.csb",
-							name = "TimeLimitShopActivityView",
-							mediator = "TimeLimitShopActivityMediator"
-						},
-						{
-							res = "asset/ui/TimeShopActivityXige.csb",
-							name = "TimeLimitShopActivityXigeView",
-							mediator = "TimeLimitShopActivityMediator"
-						},
-						{
-							res = "asset/ui/TimeShopActivityWhite.csb",
-							name = "TimeLimitShopActivityWhiteView",
-							mediator = "TimeLimitShopActivityMediator"
-						},
-						{
-							res = "asset/ui/TimeShopActivityValentine.csb",
-							name = "TimeLimitShopActivityValentineView",
+							res = "asset/ui/TimeShopActivityFoolsday.csb",
+							name = "TimeShopActivityView",
 							mediator = "TimeLimitShopActivityMediator"
 						},
 						{
@@ -1909,6 +1894,11 @@ local modules = {
 							res = "asset/ui/dreamChallengeBuffDetail.csb",
 							name = "ActivityNpcRoleDetailView",
 							mediator = "ActivityNpcRoleDetailMediator"
+						},
+						{
+							res = "asset/ui/ActivityKnightMain.csb",
+							name = "ActivityKnightMainView",
+							mediator = "ActivityKnightMainMediator"
 						},
 						{
 							res = "asset/ui/ActivitySunflowerMain.csb",

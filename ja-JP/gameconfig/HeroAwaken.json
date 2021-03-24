@@ -62,6 +62,27 @@
         "StoryLink": "S11S01",
         "SurfaceId": "Surface_KTSJKe_Awake"
     },
+    "LCYShi": {
+        "AnimSound": "Se_Effect_Awakening_LCYShi",
+        "Animation": "QLY_Awaken",
+        "CutIn": [
+            0,
+            0,
+            1.5
+        ],
+        "ModelId": "Model_LCYShi_Awake",
+        "Name": "LCYShi_Awake_Name",
+        "NameDesc": "LCYShi_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_LCYShi_UnAwake",
+        "Reward": "HeroAwaken_LCYShi",
+        "ShowHero": "LCYShi",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "LCYShi_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_LCYShi_Awake"
+    },
     "LDu": {
         "AnimSound": "Se_Effect_Awakening_LDu",
         "Animation": "AXWYA_Awaken",
@@ -103,6 +124,27 @@
         "StarId": "LFEr_Awake",
         "StoryLink": "S11S01",
         "SurfaceId": "Surface_LFEr_Awake"
+    },
+    "LLan": {
+        "AnimSound": "Se_Effect_Awakening_LLan",
+        "Animation": "LUOLAN_Awaken",
+        "CutIn": [
+            0,
+            0,
+            0.7
+        ],
+        "ModelId": "Model_LLan_Awake",
+        "Name": "LLan_Awake_Name",
+        "NameDesc": "LLan_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_LLan_UnAwake",
+        "Reward": "HeroAwaken_LLan",
+        "ShowHero": "LLan",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "LLan_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_LLan_Awake"
     },
     "MTZMEShi": {
         "AnimSound": "Se_Effect_Awakening_MTZMEShi",

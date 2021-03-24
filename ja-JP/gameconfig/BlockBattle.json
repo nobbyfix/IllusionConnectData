@@ -97,6 +97,110 @@
         "WaitMode": 1,
         "WaitModeLimit": 1500
     },
+    "Activity_KnightTime_1": {
+        "BattleMode": 2,
+        "CombatAdjust": "Skill_CombatDominating",
+        "EnemyEnergyBase": {
+            "pattern": "COVER",
+            "value": 0
+        },
+        "EnemyFBReduction": "",
+        "EnemySpecialPassive": [],
+        "EnergyBase": {
+            "pattern": "COVER",
+            "value": 95
+        },
+        "Fight_StageEnergyMax": [
+            50,
+            95
+        ],
+        "FriendFBReduction": "",
+        "FriendSpecialPassive": [],
+        "HeroRageBase": "",
+        "HeroRageRules": {
+            "a1": [
+                10,
+                750
+            ],
+            "a2": 320,
+            "a3": 150,
+            "a4": 0
+        },
+        "MasterRageBase": "",
+        "MasterRageRules": {
+            "a1": [
+                10,
+                0
+            ],
+            "a2": 60,
+            "a3": 0,
+            "a4": 6
+        },
+        "SkipTime": 0,
+        "StageEnergy": [
+            [
+                {
+                    "EnemyEnergySpeed": 1,
+                    "EnergySpeed": 0,
+                    "duration": 180000
+                }
+            ]
+        ],
+        "WaitMode": 1,
+        "WaitModeLimit": 1500
+    },
+    "Activity_KnightTime_2": {
+        "BattleMode": 2,
+        "CombatAdjust": "Skill_CombatDominating",
+        "EnemyEnergyBase": {
+            "pattern": "COVER",
+            "value": 0
+        },
+        "EnemyFBReduction": "",
+        "EnemySpecialPassive": [],
+        "EnergyBase": {
+            "pattern": "COVER",
+            "value": 90
+        },
+        "Fight_StageEnergyMax": [
+            50,
+            90
+        ],
+        "FriendFBReduction": "",
+        "FriendSpecialPassive": [],
+        "HeroRageBase": "",
+        "HeroRageRules": {
+            "a1": [
+                10,
+                750
+            ],
+            "a2": 320,
+            "a3": 150,
+            "a4": 0
+        },
+        "MasterRageBase": "",
+        "MasterRageRules": {
+            "a1": [
+                10,
+                0
+            ],
+            "a2": 60,
+            "a3": 0,
+            "a4": 6
+        },
+        "SkipTime": 0,
+        "StageEnergy": [
+            [
+                {
+                    "EnemyEnergySpeed": 1,
+                    "EnergySpeed": 0,
+                    "duration": 180000
+                }
+            ]
+        ],
+        "WaitMode": 1,
+        "WaitModeLimit": 1500
+    },
     "Activity_MaxEnegy_1": {
         "BattleMode": 2,
         "CombatAdjust": "Skill_CombatDominating",

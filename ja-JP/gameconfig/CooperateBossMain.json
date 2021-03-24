@@ -225,6 +225,37 @@
         "Time": 1800,
         "Type": "Normal"
     },
+    "CooperateBoss_LCYShi": {
+        "AwakenAttrEffect": "ExcellentHero_Awaken",
+        "AwakenBoss": "",
+        "BossBattle": "CooperateBoss_LCYShi",
+        "ExcellentHero": [
+            {
+                "Effect": "ExcellentHero_Attr_Big",
+                "Hero": [
+                    "FEMSi",
+                    "HSheng"
+                ]
+            },
+            {
+                "Effect": "ExcellentHero_Attr_Small",
+                "Hero": [
+                    "SLMen",
+                    "NFEr",
+                    "KMLa"
+                ]
+            }
+        ],
+        "Revelry": "",
+        "RewardRevelry": "",
+        "RewardShow": "CooperateBossMain_LCYShi_Show",
+        "RoleModel": "Model_LCYShi",
+        "StarsAttrEffect": "ExcellentHero_Stars",
+        "Story": [],
+        "TiggerAwaken": "",
+        "Time": 1800,
+        "Type": "Normal"
+    },
     "CooperateBoss_LFEr": {
         "AwakenAttrEffect": "ExcellentHero_Awaken",
         "AwakenBoss": "",

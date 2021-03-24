@@ -284,7 +284,7 @@ function BagEquipPancel:refreshEquipBaseInfo()
 				headImgName = IconFactory:addStencilForIcon(headImgName, 2, cc.size(31, 31))
 
 				headImgName:setAnchorPoint(cc.p(0, 0.5))
-				headImgName:setPosition(cc.p(40 * (i - 1), 0))
+				headImgName:setPosition(cc.p(10 + 40 * (i - 1), 0))
 				headImgName:addTo(limitNode)
 			end
 		end

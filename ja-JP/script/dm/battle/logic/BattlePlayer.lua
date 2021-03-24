@@ -26,7 +26,10 @@ BattlePlayer:has("_initialCellNo", {
 	is = "rw"
 })
 BattlePlayer:has("_cardPool", {
-	is = "r"
+	is = "rw"
+})
+BattlePlayer:has("_heroCardPool", {
+	is = "rw"
 })
 BattlePlayer:has("_cardWindow", {
 	is = "r"
@@ -308,6 +311,7 @@ function BattlePlayer:removeAssistInfo(assistId)
 end
 
 function BattlePlayer:setupCardWindowWithHeroCards(random)
+	self._cardState = nil
 	local cardPool = self._cardPool
 	local cardWindow = self._cardWindow
 
@@ -327,6 +331,7 @@ end
 
 function BattlePlayer:setupCardWindowWithSkillCards(random)
 	self._cardState = "skill"
+	self._heroCardPool = self._cardPool
 	self._cardPool = SkillCardPool:new()
 	local cardPool = self._cardPool
 	local cardWindow = self._cardWindow
@@ -615,6 +620,11 @@ function BattlePlayer:kickAllUnits(battleContext)
 	if self._battleRecorder then
 		self._battleRecorder:recordEvent(self:getId(), "Kick")
 	end
+end
+
+function BattlePlayer:backCardToPool(card)
+	self._cardPool:insertCard(card)
+	self._cardWindow:removeCard(card)
 end
 
 function BattlePlayer:visitCardsInWindow(visitor)

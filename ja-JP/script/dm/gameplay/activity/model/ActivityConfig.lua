@@ -145,6 +145,7 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityBlockMusic] = "ActivityBlockMusicView",
 		[ActivityType_UI.KActivityBlockBaking] = "ActivityBakingMainView",
 		[ActivityType_UI.KActivityCollapsed] = "ActivityCollapsedMainView",
+		[ActivityType_UI.KActivityKnight] = "ActivityKnightMainView",
 		[ActivityType_UI.KActivitySunflower] = "ActivitySunflowerMainView"
 	},
 	enterBlockMonsterShopView = {
@@ -164,6 +165,7 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityBlockMusic] = "ActivitySagaSupportMapView",
 		[ActivityType_UI.KActivityBlockBaking] = "ActivitySagaSupportMapView",
 		[ActivityType_UI.KActivityCollapsed] = "ActivitySagaSupportMapView",
+		[ActivityType_UI.KActivityKnight] = "ActivitySagaSupportMapView",
 		[ActivityType_UI.KActivitySunflower] = "ActivitySagaSupportMapView"
 	},
 	enterSagaSupportStageView = {
@@ -187,6 +189,7 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityBlockMusic] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivityBlockBaking] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivityCollapsed] = "ActivityBlockTaskView",
+		[ActivityType_UI.KActivityKnight] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivitySunflower] = "ActivityBlockTaskView"
 	},
 	enterSagaSupportRankRewardView = {
@@ -215,6 +218,13 @@ ActivityLogin14Config = {
 			cc.c4b(212, 197, 255, 255)
 		}
 	},
+	EightDays_Knight = {
+		resFile = "asset/ui/ActivityKnightLogin14.csb",
+		textPattern = {
+			cc.c4b(255, 252, 238, 255),
+			cc.c4b(255, 234, 177, 255)
+		}
+	},
 	EightDays_Sunflower = {
 		resFile = "asset/ui/ActivitySunflowerLogin14.csb",
 		textPattern = {
@@ -222,9 +232,4 @@ ActivityLogin14Config = {
 			cc.c4b(176, 228, 254, 255)
 		}
 	}
-}
-LimitShopActivityViewType = {
-	xige = "TimeLimitShopActivityXigeView",
-	valentine = "TimeLimitShopActivityValentineView",
-	whiteday = "TimeLimitShopActivityWhiteView"
 }

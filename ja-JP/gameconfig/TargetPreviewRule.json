@@ -104,6 +104,9 @@
     "Target_GYCZi": {
         "Function": "return GenInfo(EnemyAll(),Red)"
     },
+    "Target_HGEr": {
+        "Function": "return MainTarget()"
+    },
     "Target_HLDNan": {
         "Function": "return GenInfo(Slice(SortBy(FriendUnits(),\"<\",getHpRatio),1,2),Green)"
     },
@@ -120,6 +123,9 @@
         "Function": "return MainTarget()"
     },
     "Target_JSTDing": {
+        "Function": "return MainTarget()"
+    },
+    "Target_KEDGong": {
         "Function": "return MainTarget()"
     },
     "Target_KMLa": {
@@ -223,6 +229,9 @@
     },
     "Target_WTXXuan": {
         "Function": "return GenInfo(EnemyAll(ROW_OF(TARGET)),Red)"
+    },
+    "Target_XBKLDi": {
+        "Function": ""
     },
     "Target_XLai": {
         "Function": "return GenInfo(Slice(SortBy(FriendUnits(),\"<\",getHpRatio),1,1),Green)+GenInfo(Slice(SortBy(EnemyUnits(PETS),\"<\",getHp),1,1),Red)"

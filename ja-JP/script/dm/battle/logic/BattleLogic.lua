@@ -376,6 +376,20 @@ function BattleLogic:on_UnitTransported(_, args)
 			cellId = args.cellId
 		})
 	end
+
+	local newCell = self._battleField:getCellById(args.cellId)
+	local oldCell = self._battleField:getCellById(args.oldCellId)
+
+	self._skillSystem:activateGlobalTrigger("UNIT_TRANSPORT", {
+		unit = args.unit,
+		oldCell = oldCell,
+		newCell = newCell
+	})
+	self._skillSystem:activateSpecificTrigger(args.unit, "TRANSPORT", {
+		unit = args.unit,
+		oldCell = oldCell,
+		newCell = newCell
+	})
 end
 
 function BattleLogic:on_UnitWillDie(_, unit, player)

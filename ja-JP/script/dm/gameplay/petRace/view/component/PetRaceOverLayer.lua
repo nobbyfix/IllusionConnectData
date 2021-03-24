@@ -106,23 +106,10 @@ function PetRaceOverLayer:refreshTopThreeInfo()
 
 			text_clubName:setString(clubStr)
 
-			local showId, modelId, actionType = self:getBoardHero(info)
-			local idList = {
-				showId
-			}
-			local modelIdList = {
-				modelId
-			}
-			local posList = __topThreePos[#idList]
-			local info = {
-				iconType = "Bust14",
-				idList = idList,
-				modelIdList = modelIdList,
-				offsetList = posList,
-				stencil = panel_icon
-			}
+			modelId = ConfigReader:getDataByNameIdAndKey("Surface", info.surfaceId, "Model")
+			actionType = ConfigReader:getDataByNameIdAndKey("Surface", info.surfaceId, "Type")
 			local action = actionType == SurfaceType.kAwake and "stand1" or "stand"
-			local hero = RoleFactory:createHeroAnimation(modelId)
+			local hero = RoleFactory:createHeroAnimation(modelId, action)
 
 			hero:setAnchorPoint(cc.p(0.5, 0))
 			hero:addTo(node_icon):center(node_icon:getContentSize())

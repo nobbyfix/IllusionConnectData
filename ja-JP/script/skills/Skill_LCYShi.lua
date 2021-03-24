@@ -619,6 +619,152 @@ all.Skill_LCYShi_Unique_EX = {
 		return _env
 	end
 }
+all.Skill_LCYShi_Unique_Awken = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.dmgFactor = externs.dmgFactor
+
+		if this.dmgFactor == nil then
+			this.dmgFactor = {
+				1,
+				4,
+				0
+			}
+		end
+
+		this.ShieldRateFactor = externs.ShieldRateFactor
+
+		assert(this.ShieldRateFactor ~= nil, "External variable `ShieldRateFactor` is not provided.")
+
+		local main = __action(this, {
+			name = "main",
+			entry = prototype.main
+		})
+		main = global["[duration]"](this, {
+			2400
+		}, main)
+		main = global["[cut_in]"](this, {
+			"1#Hero_Unique_LCYShi"
+		}, main)
+		this.main = global["[load]"](this, {
+			"Movie_LCYShi_Skill3_F",
+			"Movie_LCYShi_Skill3_B"
+		}, main)
+
+		return this
+	end,
+	main = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.TARGET = externs.TARGET
+
+		assert(_env.TARGET ~= nil, "External variable `TARGET` is not provided.")
+
+		_env.units = nil
+
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.GroundEft(_env, _env.ACTOR, "BGEffectBlack")
+			global.RetainObject(_env, _env.TARGET)
+			global.EnergyRestrain(_env, _env.ACTOR, _env.TARGET)
+		end)
+		exec["@time"]({
+			900
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.1, 80)
+			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
+				-1.9,
+				0
+			}, 100, "skill3"))
+			global.HarmTargetView(_env, {
+				_env.TARGET
+			})
+			global.AssignRoles(_env, _env.TARGET, "target")
+		end)
+		exec["@time"]({
+			1800
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.ACTOR)
+			local buffeft1 = global.ShieldEffect(_env, maxHp * this.ShieldRateFactor)
+
+			for _, unit in global.__iter__(global.FriendUnits(_env, global.COL_OF(_env, _env.ACTOR))) do
+				global.ApplyBuff_Buff(_env, _env.ACTOR, unit, {
+					timing = 0,
+					display = "Shield",
+					group = "Skill_LCYShi_Unique",
+					duration = 99,
+					limit = 1,
+					tags = {
+						"STATUS",
+						"NUMERIC",
+						"BUFF",
+						"SHIELD",
+						"DISPELLABLE",
+						"STEALABLE"
+					}
+				}, {
+					buffeft1
+				}, 1)
+
+				local shieldValue = global.UnitPropGetter(_env, "shield")(_env, unit)
+			end
+
+			global.ApplyStatusEffect(_env, _env.ACTOR, _env.TARGET)
+			global.ApplyRPEffect(_env, _env.ACTOR, _env.TARGET)
+
+			local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, this.dmgFactor)
+
+			global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage)
+
+			local buffeft2 = global.Daze(_env)
+			local attacker = global.LoadUnit(_env, _env.ACTOR, "ATTACKER")
+			local defender = global.LoadUnit(_env, _env.TARGET, "DEFENDER")
+
+			global.ApplyBuff_Debuff(_env, _env.ACTOR, _env.TARGET, {
+				timing = 2,
+				duration = 1,
+				display = "Daze",
+				tags = {
+					"STATUS",
+					"DEBUFF",
+					"DAZE",
+					"DISPELLABLE",
+					"LCYShi_Unique"
+				}
+			}, {
+				buffeft2
+			}, 1, 0)
+		end)
+		exec["@time"]({
+			2400
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.EnergyRestrainStop(_env, _env.ACTOR, _env.TARGET)
+		end)
+
+		return _env
+	end
+}
 all.Skill_LCYShi_Passive_EX = {
 	__new__ = function (prototype, externs, global)
 		local __function = global.__skill_function__

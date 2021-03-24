@@ -41,8 +41,9 @@ function BattleDeathSkillAction:doStart(battleContext)
 
 	local formationSystem = battleContext:getObject("FormationSystem")
 	local primTrgt = formationSystem:findFoe(actor) or formationSystem:findPrimaryTarget(actor)
+	local isnotAskForTrg = skill:notAskForTarget()
 
-	if not primTrgt then
+	if not primTrgt and not isnotAskForTrg then
 		if actor:isInStages(ULS_Dying) then
 			formationSystem:buryUnit(actor)
 		end

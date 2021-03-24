@@ -276,6 +276,11 @@ local kExtResponseMap = {
 		instanceName = "ActivitySystem",
 		funcName = "tryEnterCoopExchangeView",
 		entry = ViewAreaEntry:new("ShopCoopExchangeView")
+	},
+	PassMainView = {
+		instanceName = "PassSystem",
+		funcName = "tryEnter",
+		entry = ViewAreaEntry:new("PassMainView")
 	}
 }
 

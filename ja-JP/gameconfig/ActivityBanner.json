@@ -482,6 +482,13 @@
         "Type": "Activity",
         "TypeId": "CooperateBoss_Exchange_20210312"
     },
+    "ActivityBannerCooperateBoss_20210326": {
+        "Img": "gongdou_img_banner.png",
+        "Link": "view://ShopCoopExchangeView&activityId=CooperateBoss_Exchange_20210326",
+        "Sort": 5011,
+        "Type": "Activity",
+        "TypeId": "CooperateBoss_Exchange_20210326"
+    },
     "ActivityBannerDetective": {
         "Img": "ywzj_txt_zjm_banner.png",
         "Link": "view://ActivityBlockHolidayView&activityId=ActivityBlock_Detective",
@@ -495,6 +502,13 @@
         "Sort": 3000,
         "Type": "Activity",
         "TypeId": "ActivityBlock_Halloween"
+    },
+    "ActivityBannerKnight": {
+        "Img": "knight_txt_zjm_banner.png",
+        "Link": "view://ActivityBlockView&activityId=ActivityBlock_Knight",
+        "Sort": 3003,
+        "Type": "Activity",
+        "TypeId": "ActivityBlock_Knight"
     },
     "ActivityBannerMusicFestival": {
         "Img": "musicfestival_txt_zjm_banner.png",
@@ -713,6 +727,13 @@
         "Type": "Activity",
         "TypeId": "DrawCard_1UP_20210310_2_Activity"
     },
+    "ActivityBanner_DrawCard_1UP_20210324_1_Activity": {
+        "Img": "drawcard_banner_HGEr.png",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_HGEr_20210324",
+        "Sort": 3004,
+        "Type": "Activity",
+        "TypeId": "DrawCard_1UP_20210324_1_Activity"
+    },
     "ActivityBanner_DrawCard_2UP_20201230_1_Activity": {
         "Img": "drawcard_banner_BBLMaMTZMEShi.png",
         "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_2UP_20201230_1",
@@ -796,5 +817,12 @@
         "Sort": 3007,
         "Type": "Activity",
         "TypeId": "DrawCard_2UP_20210310_2_Activity"
+    },
+    "ActivityBanner_DrawCard_2UP_20210324_1_Activity": {
+        "Img": "drawcard_banner_NFErHSheng.png",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_2UP_NFErHSheng_20210324",
+        "Sort": 3006,
+        "Type": "Activity",
+        "TypeId": "DrawCard_2UP_20210324_1_Activity"
     }
 }

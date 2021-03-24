@@ -1417,9 +1417,18 @@ function UnitTLInterpreter:act_AddAnim(action, args)
 	local zOrder = args.zOrder
 
 	if self._unit then
-		local realPos = self._battleGround:relPosWithZoneAndOffset(pos[1], pos[2], pos[3])
+		local zone = pos[1]
+		local isLeft = true
+		isLeft = (self._mainPlayerSide and zone > 0 or not self._mainPlayerSide and zone < 0) and true or false
+
+		if isLeft then
+			zone = math.abs(zone)
+		else
+			zone = -math.abs(zone)
+		end
+
+		local realPos = self._battleGround:relPosWithZoneAndOffset(zone, pos[2], pos[3])
 		local targetPos = self._battleGround:convertRelPos2WorldSpace(realPos)
-		local flip = not self._unit:isLeft()
 		local mainMediator = self._context:getValue("BattleMainMediator")
 
 		if mainMediator.addEffectAnim then
