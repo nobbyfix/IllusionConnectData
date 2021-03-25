@@ -37,7 +37,7 @@
         "Condition": "",
         "Listpicture": "Main_Halloween_Event_Story",
         "Name": "ActivityBlock_Halloween_Name",
-        "Num": 5,
+        "Num": 4,
         "Story": [
             {
                 "id": [
@@ -64,7 +64,7 @@
         "Condition": "",
         "Listpicture": "ybxrdxh_fb_Snowflake_bg_small",
         "Name": "ActivityBlock_Snowflake_Name",
-        "Num": 6,
+        "Num": 5,
         "Story": [
             {
                 "id": [
@@ -94,7 +94,7 @@
         "Condition": "",
         "Listpicture": "memory_scene_stagechristmas",
         "Name": "ActivityBlock_ANewYea_UI2",
-        "Num": 7,
+        "Num": 6,
         "Story": [
             {
                 "id": [
@@ -114,12 +114,114 @@
         "UnlockDesc": "",
         "UnlockStory": ""
     },
+    "Memory_Act_Baking": {
+        "ActiviType": "",
+        "Condition": "",
+        "Listpicture": "img_story_baking_1",
+        "Name": "ActivityBlock_Baking_Name",
+        "Num": 9,
+        "Story": [
+            {
+                "id": [
+                    "Memory_Act_Baking_1",
+                    "Memory_Act_Baking_2",
+                    "Memory_Act_Baking_3",
+                    "Memory_Act_Baking_4"
+                ],
+                "type": "NORMAL"
+            }
+        ],
+        "Type": "ACTIVILIST",
+        "UnlockDesc": "",
+        "UnlockStory": ""
+    },
+    "Memory_Act_Collapsed": {
+        "ActiviType": "",
+        "Condition": "",
+        "Listpicture": "img_story_collapsed_3",
+        "Name": "ActivityBlock_Collapsed_Name",
+        "Num": 10,
+        "Story": [
+            {
+                "id": [
+                    "Memory_Act_Collapsed_1",
+                    "Memory_Act_Collapsed_2",
+                    "Memory_Act_Collapsed_3",
+                    "Memory_Act_Collapsed_4"
+                ],
+                "type": "NORMAL"
+            },
+            {
+                "id": [
+                    "Memory_Act_Collapsed_5",
+                    "Memory_Act_Collapsed_6",
+                    "Memory_Act_Collapsed_7",
+                    "Memory_Act_Collapsed_8"
+                ],
+                "type": "ELITE"
+            }
+        ],
+        "Type": "ACTIVILIST",
+        "UnlockDesc": "",
+        "UnlockStory": ""
+    },
+    "Memory_Act_Musicfestival": {
+        "ActiviType": "",
+        "Condition": "",
+        "Listpicture": "img_story_musicfestival_1",
+        "Name": "ActivityBlock_MusicFestival_Name",
+        "Num": 8,
+        "Story": [
+            {
+                "id": [
+                    "Memory_Act_Musicfestival_1",
+                    "Memory_Act_Musicfestival_2",
+                    "Memory_Act_Musicfestival_3",
+                    "Memory_Act_Musicfestival_4"
+                ],
+                "type": "NORMAL"
+            },
+            {
+                "id": [
+                    "Memory_Act_Musicfestival_5",
+                    "Memory_Act_Musicfestival_6",
+                    "Memory_Act_Musicfestival_7",
+                    "Memory_Act_Musicfestival_8"
+                ],
+                "type": "ELITE"
+            }
+        ],
+        "Type": "ACTIVILIST",
+        "UnlockDesc": "",
+        "UnlockStory": ""
+    },
+    "Memory_Act_Sunflower": {
+        "ActiviType": "",
+        "Condition": "",
+        "Listpicture": "img_story_sunflower_1",
+        "Name": "ActivityBlock_Sunflower_Name",
+        "Num": 11,
+        "Story": [
+            {
+                "id": [
+                    "Memory_Act_Sunflower_1",
+                    "Memory_Act_Sunflower_2",
+                    "Memory_Act_Sunflower_3",
+                    "Memory_Act_Sunflower_4"
+                ],
+                "type": "NORMAL"
+            }
+        ],
+        "Type": "ACTIVILIST",
+        "UnlockDesc": "",
+        "UnlockStory": ""
+    },
     "Memory_Detective_List": {
         "ActiviType": "",
         "Condition": "",
         "Listpicture": "s_act_detective_1",
         "Name": "ActivityBlock_Detective_Name",
-        "Num": 8,
+        "Num": 7,
         "Story": [
             {
                 "id": [
@@ -443,6 +545,37 @@
         ],
         "Type": "STORYLIST",
         "UnlockDesc": "BlockPoint_S12S01_Name",
+        "UnlockStory": ""
+    },
+    "Memory_Wxh_List": {
+        "ActiviType": "",
+        "Condition": "",
+        "Listpicture": "s_main_event_wxh_01",
+        "Name": "ActivityBlock_WuXiuHui_Support_Name",
+        "Num": 3,
+        "Story": [
+            {
+                "id": [
+                    "Memory_Wxh_1",
+                    "Memory_Wxh_2",
+                    "Memory_Wxh_3",
+                    "Memory_Wxh_4",
+                    "Memory_Wxh_5"
+                ],
+                "type": "NORMAL"
+            },
+            {
+                "id": [
+                    "Memory_Wxh_6",
+                    "Memory_Wxh_7",
+                    "Memory_Wxh_8",
+                    "Memory_Wxh_9"
+                ],
+                "type": "ELITE"
+            }
+        ],
+        "Type": "ACTIVILIST",
+        "UnlockDesc": "",
         "UnlockStory": ""
     }
 }

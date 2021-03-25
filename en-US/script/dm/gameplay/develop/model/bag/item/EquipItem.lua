@@ -81,3 +81,7 @@ end
 function EquipItem:isExistResource()
 	return false
 end
+
+function EquipItem:getPosition()
+	return self._heroEquip:getPosition()
+end

@@ -74,6 +74,29 @@ local kTabBtnsNames_model = {
 		ItemPages.kOther
 	}
 }
+local kEquipTabBtnsNames = {
+	{
+		"Equip_Sort_1",
+		EquipBagShowType.kAll
+	},
+	{
+		"Equip_Sort_2",
+		EquipBagShowType.kWeapon
+	},
+	{
+		"Equip_Sort_3",
+		EquipBagShowType.kTops
+	},
+	{
+		"Equip_Sort_4",
+		EquipBagShowType.kShoes
+	},
+	{
+		"Equip_Sort_5",
+		EquipBagShowType.kDecoration
+	}
+}
+local kTab_button_width = 110
 local kTabBtnsNames = {}
 
 function BagMediator:initialize()
@@ -104,6 +127,9 @@ function BagMediator:userInject()
 			index = index + 1
 		end
 	end
+
+	self._equipType = EquipBagShowType.kAll
+	self._onEquipTab = false
 end
 
 function BagMediator:onRegister()
@@ -179,6 +205,8 @@ function BagMediator:enterWithData(data)
 	self:createTabController()
 	self:createItemsTableView()
 	self:selectTab(data)
+	self:createEquipTypeBtn()
+	self:refreshEquipTypeBtn()
 	self:mapEventListener(self:getEventDispatcher(), EVT_PLAYER_SYNCHRONIZED, self, self.dealItemChange)
 	self:mapEventListener(self:getEventDispatcher(), EVT_SELL_ITEM_SUCC, self, self.dealItemChange)
 	self:mapEventListener(self:getEventDispatcher(), EVT_BAG_USE_RECHARGEITEM_SUCC, self, self.useRechargeItemSucc)
@@ -229,7 +257,13 @@ function BagMediator:getCurItems()
 		local isvislble = self._bagSystem:getItemIsVisible(entryId)
 
 		if entry and isvislble and filterFunc(entry.item) and (not kHideItemType[entry.item:getSubType()] or kHideItemType[entry.item:getSubType()] and entry.item:getSubType() == self._showItemType) then
-			self._curEntryIds[#self._curEntryIds + 1] = entryId
+			if self._onEquipTab then
+				if entry.item:getPosition() == self._equipType or self._equipType == EquipBagShowType.kAll then
+					self._curEntryIds[#self._curEntryIds + 1] = entryId
+				end
+			else
+				self._curEntryIds[#self._curEntryIds + 1] = entryId
+			end
 		end
 	end
 end
@@ -241,6 +275,8 @@ function BagMediator:assureItemsEnough()
 end
 
 function BagMediator:initNodes()
+	local director = cc.Director:getInstance()
+	local winSize = director:getWinSize()
 	self._mainPanel = self:getView():getChildByFullName("mainpanel")
 	self._itemScroll = self._mainPanel:getChildByFullName("cellback")
 	self._notHasBackText = self._mainPanel:getChildByFullName("nothasbacktext")
@@ -257,7 +293,11 @@ function BagMediator:initNodes()
 
 	self._itemCellTop:setVisible(false)
 
-	self._indicator = self._itemNode:getChildByFullName("selectimg")
+	self._indicatorClone = self._itemNode:getChildByFullName("selectimg")
+	self._indicator = self._indicatorClone:clone()
+
+	self._indicator:addTo(self._itemNode)
+
 	local equipPanelUI = self._mainPanel:getChildByFullName("equipPanel")
 
 	AdjustUtils.ignorSafeAreaRectForNode(equipPanelUI, AdjustUtils.kAdjustType.Right)
@@ -272,6 +312,13 @@ function BagMediator:initNodes()
 	self.URLevelLimit:setVisible(false)
 	self.URLevelLimit:setString("")
 
+	self._equipTabPanel = self._mainPanel:getChildByFullName("equipTabPanel")
+	self._node_BuildBtn = self._equipTabPanel:getChildByFullName("Node_buildBtn")
+	self._tabBuildBtn = self._equipTabPanel:getChildByFullName("Panel_tabBuildBtn")
+
+	self._tabBuildBtn:setVisible(false)
+
+	self._line_line = self._equipTabPanel:getChildByFullName("line_line")
 	local detailPanel = self._mainPanel:getChildByFullName("detail_panel")
 	local moneyIcon = detailPanel:getChildByFullName("sellpanel.goldimg")
 	local icon = IconFactory:createResourcePic({
@@ -458,6 +505,7 @@ function BagMediator:refreshView()
 
 	if not hasItem then
 		self._notHasBackText:setVisible(true)
+		self._line_line:setContentSize(cc.size(3, 1200))
 		self._itemScroll:setVisible(false)
 		self._detailPanel:setVisible(false)
 		self._equipPanel:hide()
@@ -466,6 +514,7 @@ function BagMediator:refreshView()
 	end
 
 	self._notHasBackText:setVisible(false)
+	self._line_line:setContentSize(cc.size(3, 578))
 	self._itemScroll:setVisible(true)
 	self:updateRightPancel()
 end
@@ -911,9 +960,27 @@ function BagMediator:isEntryIdValid(entryId)
 	return entryId and entryId ~= kInvalidEntryId
 end
 
-function BagMediator:createItemsTableView()
+function BagMediator:createItemsTableView(reset)
 	local scrollview = self._itemScroll:getChildByName("scrollview")
 	local viewSize = scrollview:getContentSize()
+
+	if reset then
+		if self._onEquipTab then
+			viewSize = cc.size(viewSize.width, viewSize.height - 110)
+		end
+	elseif self._tableView then
+		return
+	end
+
+	if self._tableView then
+		self._tableView:removeFromParent(true)
+
+		self._tableView = nil
+		self._indicator = self._indicatorClone:clone()
+
+		self._indicator:addTo(self._itemNode)
+	end
+
 	local kFirstCellPos = cc.p(viewSize.width / 4 - 5, kCellHeight / 2 - 8)
 	local tableView = cc.TableView:create(viewSize)
 
@@ -1115,8 +1182,25 @@ function BagMediator:onClickTab(name, tag)
 		self._bagSystem:clearBagTabRedPointByType(kTabBtnsNames[self._curTabType][4])
 	end
 
+	local refreshTabelView = false
+	self._onEquipTab = false
+
+	if kTabBtnsNames[self._curTabType][4] == ItemPages.kEquip then
+		refreshTabelView = true
+	end
+
 	self._curTabType = tag
 
+	if kTabBtnsNames[self._curTabType][4] == ItemPages.kEquip then
+		refreshTabelView = true
+		self._onEquipTab = true
+
+		self:showEquipTypePanel(true)
+	else
+		self:showEquipTypePanel(false)
+	end
+
+	self:createItemsTableView(refreshTabelView)
 	self:updateTabArea()
 end
 
@@ -1249,6 +1333,8 @@ function BagMediator:onUseClicked(sender, eventType)
 	elseif subType == ItemTypes.K_HERO_F then
 		self:useHeroPiece(self._curEntryId)
 	elseif subType == ItemTypes.K_HERO_STAR then
+		self:useMaterial(self._curEntryId)
+	elseif subType == ItemTypes.K_MasterLeadStage then
 		self:useMaterial(self._curEntryId)
 	elseif subType == ItemTypes.K_MASTER_F then
 		self:useMasterPiece(self._curEntryId)
@@ -1890,4 +1976,59 @@ function BagMediator:checkCanUseCompose(item)
 	end
 
 	return result
+end
+
+function BagMediator:createEquipTypeBtn()
+	for k, v in pairs(kEquipTabBtnsNames) do
+		local panelNew = self._tabBuildBtn:clone()
+
+		panelNew:setVisible(true)
+		self._node_BuildBtn:addChild(panelNew)
+		panelNew:setPosition((k - 1) * kTab_button_width, 0)
+		panelNew:setName(v[2])
+
+		local name = v[1]
+		local button = panelNew:getChildByFullName("Button")
+		local textName = panelNew:getChildByFullName("name")
+
+		textName:setString(Strings:get(v[1]))
+		button:addClickEventListener(function ()
+			self:onClickEquipType(v[2])
+		end)
+	end
+end
+
+function BagMediator:onClickEquipType(equipType)
+	if self._equipType ~= equipType then
+		self._equipType = equipType
+
+		self:refreshEquipTypeBtn()
+		self:refreshEquipByType()
+	end
+end
+
+function BagMediator:showEquipTypePanel(show)
+	self._equipTabPanel:setVisible(show)
+end
+
+function BagMediator:refreshEquipByType()
+	self:updateTabArea()
+end
+
+function BagMediator:refreshEquipTypeBtn()
+	local children = self._node_BuildBtn:getChildren()
+
+	for index = 1, #children do
+		local child = children[index]
+		local image1 = child:getChildByFullName("Image_1")
+		local image2 = child:getChildByFullName("Image_2")
+
+		image1:setVisible(true)
+		image2:setVisible(false)
+
+		if child:getName() == self._equipType then
+			image1:setVisible(false)
+			image2:setVisible(true)
+		end
+	end
 end

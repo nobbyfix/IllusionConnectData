@@ -200,7 +200,7 @@ function HeroCard:usedByPlayer(player, battleContext, trgtCellNo, cost, wontEven
 		buffSystem:recordEnterBuffs(unit, self._triggerBuffs)
 	end
 
-	return true
+	return true, unit
 end
 
 function HeroCard:dumpInformation()

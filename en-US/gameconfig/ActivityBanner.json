@@ -139,12 +139,47 @@
         "Type": "Activity",
         "TypeId": "DrawCard_LCYShiKTSJKe_Activity"
     },
+    "ActivityBanner119": {
+        "Img": "drawcard_banner_HGEr.png",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_HGEr",
+        "Sort": 119,
+        "Type": "Activity",
+        "TypeId": "DrawCard_1UP_HGEr_Activity"
+    },
     "ActivityBanner12": {
         "Img": "drawcard_banner_MGNa_MTZMEShi.png",
         "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_2UP_1",
         "Sort": 12,
         "Type": "Activity",
         "TypeId": "DrawCard_2UP_1_Activity"
+    },
+    "ActivityBanner120": {
+        "Img": "drawcard_banner_NFErHSheng.png",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_NFErHSheng",
+        "Sort": 120,
+        "Type": "Activity",
+        "TypeId": "DrawCard_NFErHSheng_Activity"
+    },
+    "ActivityBanner121": {
+        "Img": "drawcard_banner_PGNNi.png",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_PGNNi",
+        "Sort": 121,
+        "Type": "Activity",
+        "TypeId": "DrawCard_1UP_PGNNi_Activity"
+    },
+    "ActivityBanner122": {
+        "Img": "drawcard_banner_BDFen.png",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_BDFen",
+        "Sort": 122,
+        "Type": "Activity",
+        "TypeId": "DrawCard_1UP_BDFen_Activity"
+    },
+    "ActivityBanner123": {
+        "Img": "drawcard_banner_JNLongNXYYi.png",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_JNLongNXYYi",
+        "Sort": 123,
+        "Type": "Activity",
+        "TypeId": "DrawCard_JNLongNXYYi_Activity"
     },
     "ActivityBanner13": {
         "Img": "drawcard_banner_SDTZi_LFEr.png",
@@ -531,6 +566,13 @@
         "Type": "Activity",
         "TypeId": "CooperateBoss_Exchange_20210312"
     },
+    "ActivityBannerCooperateBoss_20210326": {
+        "Img": "gongdou_img_banner.png",
+        "Link": "view://ShopCoopExchangeView&activityId=CooperateBoss_Exchange_20210326",
+        "Sort": 5011,
+        "Type": "Activity",
+        "TypeId": "CooperateBoss_Exchange_20210326"
+    },
     "ActivityBannerDetective": {
         "Img": "ywzj_txt_zjm_banner.png",
         "Link": "view://ActivityBlockHolidayView&activityId=ActivityBlock_Detective",
@@ -544,6 +586,13 @@
         "Sort": 3000,
         "Type": "Activity",
         "TypeId": "ActivityBlock_Halloween"
+    },
+    "ActivityBannerKnight": {
+        "Img": "knight_txt_zjm_banner.png",
+        "Link": "view://ActivityBlockView&activityId=ActivityBlock_Knight",
+        "Sort": 3008,
+        "Type": "Activity",
+        "TypeId": "ActivityBlock_Knight"
     },
     "ActivityBannerMusicFestival": {
         "Img": "musicfestival_txt_zjm_banner.png",

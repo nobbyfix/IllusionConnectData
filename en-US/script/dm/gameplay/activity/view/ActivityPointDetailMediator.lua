@@ -1018,8 +1018,9 @@ end
 
 function ActivityPointDetailMediator:isNpc()
 	local enemy = self._point:getAssistEnemy()
+	local showNpcTeam = self._activity:getActivityConfig().ShowNpcTeam
 
-	if #enemy > 0 then
+	if #enemy > 0 and showNpcTeam == "1" then
 		return true
 	end
 

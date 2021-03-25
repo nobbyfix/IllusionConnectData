@@ -307,7 +307,7 @@ function BattleMainMediator:playGroundEffect(bgRes, align, animName, zoom, actId
 		end
 	else
 		local winSize = cc.Director:getInstance():getVisibleSize()
-		background = cc.LayerColor:create(cc.c4b(0, 0, 0, opacity), winSize.width, winSize.height)
+		background = cc.LayerColor:create(cc.c4b(0, 0, 0, opacity), winSize.width + 1000, winSize.height)
 	end
 
 	local frame = self:getView():getContentSize()
@@ -342,7 +342,7 @@ function BattleMainMediator:playGroundEffect(bgRes, align, animName, zoom, actId
 	end
 
 	local function speceilFunc()
-		self._bgEffectLayer.bg.retain = extra.duration ~= nil
+		self._bgEffectLayer.bg.isRetain = extra.duration ~= nil
 		extra.duration = extra.duration or 20000
 		local actions = cc.Sequence:create(cc.FadeTo:create(0.2, opacity), cc.DelayTime:create(extra.duration / 1000 or 2), cc.CallFunc:create(function ()
 			local members = self._unitManager:getMembers()
@@ -375,7 +375,7 @@ function BattleMainMediator:playGroundEffect(bgRes, align, animName, zoom, actId
 
 		self:setCellState(false)
 
-		if extra.Music then
+		if extra.Music and extra.Music ~= "" then
 			AudioEngine:getInstance():playEffect(extra.Music)
 		end
 	end
@@ -389,14 +389,14 @@ end
 
 function BattleMainMediator:clearGroundEffect(actId)
 	if self._bgEffectLayer.act == actId and not clearGroundEffect then
-		if self._bgEffectLayer.bg and not self._bgEffectLayer.bg.retain then
+		if self._bgEffectLayer.bg and not self._bgEffectLayer.bg.isRetain then
 			self._bgEffectLayer.bg:runAction(cc.Sequence:create(cc.FadeTo:create(0.2, 0), cc.CallFunc:create(function ()
 				self._bgEffectLayer.bg = nil
 
 				self._bgEffectLayer:removeAllChildren()
 				self:setCellState(true)
 			end)))
-		elseif self._bgEffectLayer.bg and not self._bgEffectLayer.bg.retain then
+		elseif self._bgEffectLayer.bg and not self._bgEffectLayer.bg.isRetain then
 			self._bgEffectLayer:removeAllChildren()
 			self:setCellState(true)
 		else
@@ -1200,7 +1200,7 @@ function BattleMainMediator:setupDevMode()
 	local size = director:getVisibleSize()
 
 	winBtn:setAnchorPoint(cc.p(1, 0.5))
-	winBtn:setPosition(cc.p(size.width, size.height * 0.3))
+	winBtn:setPosition(cc.p(size.width, size.height * 0.2))
 	winBtn:setScale(1.5)
 	self:getView():addChild(winBtn, BattleViewZOrder.Dev)
 end

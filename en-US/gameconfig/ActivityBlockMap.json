@@ -709,6 +709,72 @@
         ],
         "Type": "NORMAL"
     },
+    "KnightE01": {
+        "BGM": "Mus_Story_Knight_War",
+        "Background": "Knight_Scene03",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_KnightAE01_Name",
+        "StarBoxReward": {
+            "10": "KnightE01BOX01",
+            "20": "KnightE01BOX02",
+            "30": "KnightE01BOX03"
+        },
+        "SubPoint": [
+            "KnightE01S01",
+            "KnightE01S02",
+            "KnightE01S03",
+            "KnightE01S04",
+            "KnightE01S05",
+            "KnightE01S06",
+            "KnightE01S07",
+            "KnightE01S08",
+            "KnightE01S09",
+            "KnightE01S10",
+            "KnightE01S11",
+            "KnightE01S12"
+        ],
+        "SubStoryPoint": [
+            "KnightS01E01",
+            "KnightS01E02",
+            "KnightS01E03",
+            "KnightS01E04"
+        ],
+        "Type": "ELITE"
+    },
+    "KnightM01": {
+        "BGM": "Mus_Story_Knight_War",
+        "Background": "Knight_Scene02",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_KnightAM01_Name",
+        "StarBoxReward": {
+            "10": "KnightM01BOX01",
+            "20": "KnightM01BOX02",
+            "30": "KnightM01BOX03"
+        },
+        "SubPoint": [
+            "KnightM01S01",
+            "KnightM01S02",
+            "KnightM01S03",
+            "KnightM01S04",
+            "KnightM01S05",
+            "KnightM01S06",
+            "KnightM01S07",
+            "KnightM01S08",
+            "KnightM01S09",
+            "KnightM01S10",
+            "KnightM01S11",
+            "KnightM01S12"
+        ],
+        "SubStoryPoint": [
+            "KnightS01S01",
+            "KnightS01S02",
+            "KnightS01S03",
+            "KnightS01S04"
+        ],
+        "Type": "NORMAL"
+    },
     "Snowflack_Map_E01": {
         "BGM": "Mus_Story_Mystery_2",
         "Background": "Bg_Copy_Snowflake_1",

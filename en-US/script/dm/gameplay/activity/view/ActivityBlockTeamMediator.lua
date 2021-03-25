@@ -1255,7 +1255,17 @@ function ActivityBlockTeamMediator:getPetNode(idx)
 end
 
 function ActivityBlockTeamMediator:initAssistData()
+	local showNpcTeam = self._activityModel:getActivityConfig().ShowNpcTeam
 	local pointData = self._activity:getPointById(self._pointId)
+
+	if not pointData or not showNpcTeam then
+		self._assistEnemy = {}
+		self._presetTeamPetNum = 0
+		self._assistHero = {}
+
+		return
+	end
+
 	self._assistEnemy = pointData and pointData:getAssistEnemy() or {}
 	self._presetTeamPetNum = #self._assistEnemy
 	self._maxTeamPetNum = self._maxTeamPetNum - self._presetTeamPetNum

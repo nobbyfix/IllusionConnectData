@@ -660,6 +660,10 @@ function all.EvalDamage_FlagCheck(_env, actor, target, dmgFactor, passiveFactors
 		end
 	end
 
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "HGEr_Passive_No_Crit")) > 0 then
+		attacker.critrate = 0
+	end
+
 	local damage = global.EvalSingleDamage(_env, attacker, defender, dmgFactor)
 
 	if global.INSTATUS(_env, "Skill_MGNa_Passive_Key")(_env, actor) and global.PETS(_env, target) then
@@ -901,6 +905,10 @@ function all.EvalAOEDamage_FlagCheck(_env, actor, target, dmgFactor, passiveFact
 				end
 			end
 		end
+	end
+
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "HGEr_Passive_No_Crit")) > 0 then
+		attacker.critrate = 0
 	end
 
 	local damage = global.EvalAOEDamage(_env, attacker, defender, dmgFactor)
@@ -1188,6 +1196,12 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 		if not global.MASTER(_env, target) then
 			damage.val = damage.val + ExDmg
 		end
+	end
+
+	local unique_hurtrate = global.SpecialPropGetter(_env, "unique_hurtrate")(_env, actor)
+
+	if unique_hurtrate and unique_hurtrate ~= 0 then
+		damage.val = damage.val * (1 + unique_hurtrate)
 	end
 
 	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED_ALL(_env, "EquipSkill_Accesory_15005", "UNDISPELLABLE", "UNSTEALABLE")) > 0 then
@@ -1551,6 +1565,12 @@ function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimi
 		if not global.MASTER(_env, target) then
 			damage.val = damage.val + ExDmg
 		end
+	end
+
+	local unique_hurtrate = global.SpecialPropGetter(_env, "unique_hurtrate")(_env, actor)
+
+	if unique_hurtrate and unique_hurtrate ~= 0 then
+		damage.val = damage.val * (1 + unique_hurtrate)
 	end
 
 	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED_ALL(_env, "EquipSkill_Accesory_15005", "UNDISPELLABLE", "UNSTEALABLE")) > 0 then
@@ -1948,6 +1968,12 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 		if not global.MASTER(_env, target) then
 			damages[n].val = damages[n].val + ExDmg
 		end
+	end
+
+	local unique_hurtrate = global.SpecialPropGetter(_env, "unique_hurtrate")(_env, actor)
+
+	if unique_hurtrate and unique_hurtrate ~= 0 then
+		damages[n].val = damages[n].val * (1 + unique_hurtrate)
 	end
 
 	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED_ALL(_env, "EquipSkill_Accesory_15005", "UNDISPELLABLE", "UNSTEALABLE")) > 0 then
@@ -2377,6 +2403,12 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 		if not global.MASTER(_env, target) then
 			damages[n].val = damages[n].val + ExDmg
 		end
+	end
+
+	local unique_hurtrate = global.SpecialPropGetter(_env, "unique_hurtrate")(_env, actor)
+
+	if unique_hurtrate and unique_hurtrate ~= 0 then
+		damages[n].val = damages[n].val * (1 + unique_hurtrate)
 	end
 
 	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED_ALL(_env, "EquipSkill_Accesory_15005", "UNDISPELLABLE", "UNSTEALABLE")) > 0 then

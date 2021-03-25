@@ -6,6 +6,9 @@ FormationSystem:has("_entityManager", {
 FormationSystem:has("_randomizer", {
 	is = "rw"
 })
+FormationSystem:has("_cemetery", {
+	is = "rw"
+})
 
 function FormationSystem:initialize()
 	super.initialize(self)
@@ -337,6 +340,48 @@ function FormationSystem:revive(actor, hpRatio, anger, location)
 	return newUnit, detail
 end
 
+function FormationSystem:reviveByUnit(actor, unit, hpRatio, anger, location)
+	local player = actor:getOwner()
+	local cellId = self._battleField:findEmptyCellId(player:getSide(), location)
+
+	if not cellId then
+		return false, "InvalidRevivePosition"
+	end
+
+	local bodies = self._cemetery:getUnitsBySide(player:getSide())
+	local unit = unit
+	local targetId = nil
+	local prefix = unit:getId() .. "_r"
+	local entityManager = self._entityManager
+	local index = 0
+
+	repeat
+		targetId = prefix .. index
+		index = index + 1
+	until entityManager:fetchEntity(targetId) == nil
+
+	local newUnit = entityManager:copyHeroUnit(unit, targetId, 1)
+
+	newUnit:setModelId(unit:getModelId())
+
+	local animation = nil
+	local angerComp = newUnit:getComponent("Anger")
+
+	angerComp:setAnger(anger)
+
+	local healthComp = newUnit:getComponent("Health")
+
+	healthComp:setHp(healthComp:getMaxHp() * hpRatio)
+
+	local newUnit, detail = self:_settleUnit(player, newUnit, cellId, animation, false, "Revive")
+
+	if unit then
+		self._cemetery:untomb(unit)
+	end
+
+	return newUnit, detail
+end
+
 function FormationSystem:reviveRandom(actor, hpRatio, anger, location)
 	local player = actor:getOwner()
 	local cellId = self._battleField:findEmptyCellId(player:getSide(), location)
@@ -401,14 +446,16 @@ function FormationSystem:reviveRandom(actor, hpRatio, anger, location)
 	return newUnit, detail
 end
 
-function FormationSystem:rebornUnit(unit, ratio)
+function FormationSystem:rebornUnit(unit, ratio, anger, location)
 	local hpRatio = ratio or 1
 	local player = unit:getOwner()
 	local pos = unit:getPosition()
 	local id = BFCell_pos2id(1, pos.x, pos.y)
-	local cellId = self._battleField:findEmptyCellId(player:getSide(), {
+	local l_ocation = {
 		id
-	})
+	}
+	location = location and l_ocation
+	local cellId = self._battleField:findEmptyCellId(player:getSide(), l_ocation)
 
 	if not cellId then
 		return false, "InvalidRebornPosition"
@@ -417,6 +464,12 @@ function FormationSystem:rebornUnit(unit, ratio)
 	local healthComp = unit:getComponent("Health")
 
 	healthComp:setHp(healthComp:getMaxHp() * hpRatio)
+
+	if anger then
+		local AngerComp = unit:getComponent("Anger")
+
+		AngerComp:setAnger(anger)
+	end
 
 	local battleField = self._battleField
 	local unitType = unit:getUnitType()
@@ -802,7 +855,8 @@ function FormationSystem:transportExt(unit, cellNo, duration, timeScale)
 		self._eventCenter:dispatchEvent("UnitTransported", {
 			player = player,
 			unit = unit,
-			cellId = cellId
+			cellId = cellId,
+			oldCellId = oldCellId
 		})
 	end
 
@@ -834,7 +888,8 @@ function FormationSystem:transport(unit, cellNo)
 		self._eventCenter:dispatchEvent("UnitTransported", {
 			player = player,
 			unit = unit,
-			cellId = cellId
+			cellId = cellId,
+			oldCellId = oldCellId
 		})
 	end
 

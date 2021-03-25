@@ -1159,7 +1159,7 @@ function ActivitySystem:tryEnterTimeLimitSHop()
 	end
 
 	if self:checkTimeLimitShopShow() then
-		local view = self:getInjector():getInstance(self:getTimeLimitShopViewName())
+		local view = self:getInjector():getInstance("TimeShopActivityView")
 
 		if view then
 			self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {}, {
@@ -1222,20 +1222,6 @@ function ActivitySystem:getFestivalPackageTitle()
 	end
 
 	return ""
-end
-
-function ActivitySystem:getTimeLimitShopViewName()
-	local activity = self:getActivityByComplexUI("FESTIVALPACKAGE")
-
-	if activity then
-		local type = activity:getConfig().ActivityConfig.PackType
-
-		if type and LimitShopActivityViewType[type] then
-			return LimitShopActivityViewType[type]
-		end
-	end
-
-	return "TimeLimitShopActivityView"
 end
 
 function ActivitySystem:requestAllActicities(blockUI, callback)

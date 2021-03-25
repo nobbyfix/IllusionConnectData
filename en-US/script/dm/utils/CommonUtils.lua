@@ -707,7 +707,7 @@ function GetServerRegion()
 	local region = cc.UserDefault:getInstance():getStringForKey(UserDefaultKey.kLocalRegionServer)
 
 	if not region or region == "" then
-		local localUTC = TimeUtil:getLocalTimeZone()
+		local localUTC = TimeUtil:getLocalUTC()
 
 		if localUTC >= -11 and localUTC <= -2 then
 			region = "NA"

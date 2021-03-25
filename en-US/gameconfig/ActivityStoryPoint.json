@@ -2058,6 +2058,214 @@
         ],
         "StoryLink": "eventstory_freud_04a"
     },
+    "KnightS01E01": {
+        "FirstReward": "KnightS01E01_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -250
+        ],
+        "Map": "KnightE01",
+        "Name": "KnightS01E01_Name",
+        "NextStoryPoint": [
+            "KnightS01E02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [
+            "KnightS01S04"
+        ],
+        "StoryLink": "eventstory_knightlight_05a"
+    },
+    "KnightS01E02": {
+        "FirstReward": "KnightS01E02_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "KnightE01",
+        "Name": "KnightS01E02_Name",
+        "NextStoryPoint": [
+            "KnightS01E03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "KnightE01S05"
+        ],
+        "PreStoryPoint": [
+            "KnightS01E01"
+        ],
+        "StoryLink": "eventstory_knightlight_06a"
+    },
+    "KnightS01E03": {
+        "FirstReward": "KnightS01E03_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "KnightE01",
+        "Name": "KnightS01E03_Name",
+        "NextStoryPoint": [
+            "KnightS01E04"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "KnightE01S09"
+        ],
+        "PreStoryPoint": [
+            "KnightS01E02"
+        ],
+        "StoryLink": "eventstory_knightlight_07a"
+    },
+    "KnightS01E04": {
+        "FirstReward": "KnightS01E04_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -100
+        ],
+        "Map": "KnightE01",
+        "Name": "KnightS01E04_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "KnightE01S12"
+        ],
+        "PreStoryPoint": [
+            "KnightS01E03"
+        ],
+        "StoryLink": "eventstory_knightlight_08a"
+    },
+    "KnightS01S01": {
+        "FirstReward": "KnightS01S01_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -250
+        ],
+        "Map": "KnightM01",
+        "Name": "KnightS01S01_Name",
+        "NextStoryPoint": [
+            "KnightS01S02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_knightlight_01a"
+    },
+    "KnightS01S02": {
+        "FirstReward": "KnightS01S02_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "KnightM01",
+        "Name": "KnightS01S02_Name",
+        "NextStoryPoint": [
+            "KnightS01S03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "KnightM01S04"
+        ],
+        "PreStoryPoint": [
+            "KnightS01S01"
+        ],
+        "StoryLink": "eventstory_knightlight_02a"
+    },
+    "KnightS01S03": {
+        "FirstReward": "KnightS01S03_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "KnightM01",
+        "Name": "KnightS01S03_Name",
+        "NextStoryPoint": [
+            "KnightS01S04"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "KnightM01S08"
+        ],
+        "PreStoryPoint": [
+            "KnightS01S02"
+        ],
+        "StoryLink": "eventstory_knightlight_03a"
+    },
+    "KnightS01S04": {
+        "FirstReward": "KnightS01S04_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -100
+        ],
+        "Map": "KnightM01",
+        "Name": "KnightS01S04_Name",
+        "NextStoryPoint": [
+            "KnightS01E01"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "KnightM01S11"
+        ],
+        "PreStoryPoint": [
+            "KnightS01S03"
+        ],
+        "StoryLink": "eventstory_knightlight_04a"
+    },
     "SunflowerS01S01": {
         "FirstReward": "SunflowerS01S01_Reward",
         "Icon": "s_album_story_1",

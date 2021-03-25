@@ -237,6 +237,40 @@
         },
         "Times": 1
     },
+    "CO_Decoration_15008": {
+        "Currency": {
+            "amount": 2000000,
+            "id": "IR_Gold",
+            "type": "Item"
+        },
+        "Item1": {
+            "amount": 1,
+            "id": "CO_DecorationStone_2",
+            "type": "Item"
+        },
+        "Item2": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Decoration"
+        },
+        "Item3": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Decoration"
+        },
+        "Item4": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Decoration"
+        },
+        "Item5": "",
+        "Reward": "Decoration_15008",
+        "Show": {
+            "id": "Decoration_15008",
+            "type": "Equip"
+        },
+        "Times": 1
+    },
     "CO_Decoration_15009": {
         "Currency": {
             "amount": 2000000,
@@ -335,6 +369,40 @@
         "Reward": "Shoes_15002",
         "Show": {
             "id": "Shoes_15002",
+            "type": "Equip"
+        },
+        "Times": 1
+    },
+    "CO_Shoes_15003": {
+        "Currency": {
+            "amount": 2000000,
+            "id": "IR_Gold",
+            "type": "Item"
+        },
+        "Item1": {
+            "amount": 1,
+            "id": "CO_ShoesStone_3",
+            "type": "Item"
+        },
+        "Item2": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Shoes"
+        },
+        "Item3": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Shoes"
+        },
+        "Item4": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Shoes"
+        },
+        "Item5": "",
+        "Reward": "Shoes_15003",
+        "Show": {
+            "id": "Shoes_15003",
             "type": "Equip"
         },
         "Times": 1
@@ -539,6 +607,74 @@
         "Reward": "Weapon_15001",
         "Show": {
             "id": "Weapon_15001",
+            "type": "Equip"
+        },
+        "Times": 1
+    },
+    "CO_Weapon_15002": {
+        "Currency": {
+            "amount": 2000000,
+            "id": "IR_Gold",
+            "type": "Item"
+        },
+        "Item1": {
+            "amount": 1,
+            "id": "CO_WeaponStone_2",
+            "type": "Item"
+        },
+        "Item2": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Weapon"
+        },
+        "Item3": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Weapon"
+        },
+        "Item4": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Weapon"
+        },
+        "Item5": "",
+        "Reward": "Weapon_15002",
+        "Show": {
+            "id": "Weapon_15002",
+            "type": "Equip"
+        },
+        "Times": 1
+    },
+    "CO_Weapon_15003": {
+        "Currency": {
+            "amount": 2000000,
+            "id": "IR_Gold",
+            "type": "Item"
+        },
+        "Item1": {
+            "amount": 1,
+            "id": "CO_WeaponStone_3",
+            "type": "Item"
+        },
+        "Item2": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Weapon"
+        },
+        "Item3": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Weapon"
+        },
+        "Item4": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Weapon"
+        },
+        "Item5": "",
+        "Reward": "Weapon_15003",
+        "Show": {
+            "id": "Weapon_15003",
             "type": "Equip"
         },
         "Times": 1

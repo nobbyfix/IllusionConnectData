@@ -1742,6 +1742,51 @@
         ],
         "zoom": 0.6
     },
+    "Decoration_15008": {
+        "ATK": "UR_Decoration_ATK_AD",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "UR_Decoration_DEF_AD",
+        "Desc": "Decoration_15008_Desc",
+        "ExclusiveHero": "",
+        "HP": "",
+        "HeroEquip_Id": "",
+        "Icon": "ico_equip_newbienecklace",
+        "Name": "Decoration_15008_Name",
+        "Position": "Decoration",
+        "Profession": [
+            "Defense",
+            "Attack",
+            "Support",
+            "Summon",
+            "Aoe",
+            "Curse",
+            "Cure"
+        ],
+        "ProfessionDesc": "Decoration_ProfessionDesc",
+        "ProfessionType": 0,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "",
+        "Shine": "",
+        "Skill": "EquipSkill_Decoration_15008",
+        "Sort": 289992,
+        "StartEquipStarID": "Rareity15_DecorationStone2_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
     "Decoration_15009": {
         "ATK": "",
         "AttrEffect": "",
@@ -2982,6 +3027,51 @@
         "Skill": "EquipSkill_Shoes_15002",
         "Sort": 290004,
         "StartEquipStarID": "Rareity15_Shoes2_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
+    "Shoes_15003": {
+        "ATK": "",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "",
+        "Desc": "Shoes_15003_Desc",
+        "ExclusiveHero": "",
+        "HP": "UR_Shoes_HP",
+        "HeroEquip_Id": "",
+        "Icon": "ico_equip_whitehorse",
+        "Name": "Shoes_15003_Name",
+        "Position": "Shoes",
+        "Profession": [
+            "Defense",
+            "Attack",
+            "Support",
+            "Summon",
+            "Aoe",
+            "Curse",
+            "Cure"
+        ],
+        "ProfessionDesc": "Decoration_ProfessionDesc",
+        "ProfessionType": 0,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "UR_Shoes_SPEED",
+        "Shine": "",
+        "Skill": "EquipSkill_Shoes_15003",
+        "Sort": 289995,
+        "StartEquipStarID": "Rareity15_Shoes3_1",
         "URUPSkillLV": [
             30,
             40,
@@ -6564,6 +6654,84 @@
         "Skill": "EquipSkill_Weapon_15001",
         "Sort": 289998,
         "StartEquipStarID": "Rareity15_Weapon1_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
+    "Weapon_15002": {
+        "ATK": "UR_Weapon_ATK",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "",
+        "Desc": "Weapon_15002_Desc",
+        "ExclusiveHero": "",
+        "HP": "",
+        "HeroEquip_Id": "",
+        "Icon": "ico_equip_cottoncandy",
+        "Name": "Weapon_15002_Name",
+        "Position": "Weapon",
+        "Profession": [
+            "SDTZi"
+        ],
+        "ProfessionDesc": "",
+        "ProfessionType": 1,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "",
+        "Shine": "",
+        "Skill": "EquipSkill_Weapon_15002",
+        "Sort": 289994,
+        "StartEquipStarID": "Rareity15_Weapon2_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
+    "Weapon_15003": {
+        "ATK": "UR_Weapon_ATK",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "",
+        "Desc": "Weapon_15003_Desc",
+        "ExclusiveHero": "",
+        "HP": "",
+        "HeroEquip_Id": "",
+        "Icon": "ico_equip_newbieblade",
+        "Name": "Weapon_15003_Name",
+        "Position": "Weapon",
+        "Profession": [
+            "CLMan"
+        ],
+        "ProfessionDesc": "",
+        "ProfessionType": 1,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "",
+        "Shine": "",
+        "Skill": "EquipSkill_Weapon_15003",
+        "Sort": 289993,
+        "StartEquipStarID": "Rareity15_Weapon3_1",
         "URUPSkillLV": [
             30,
             40,

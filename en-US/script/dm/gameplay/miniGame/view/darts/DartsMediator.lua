@@ -485,7 +485,8 @@ function DartsMediator:sendResult()
 				code = self._rewardHeroPieceId,
 				amount = fragAmount
 			}
-		}
+		},
+		round = self._curLevel
 	}
 	local doActivityType = 103
 
@@ -507,6 +508,20 @@ function DartsMediator:sendResult()
 			self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, {}, data, delegate))
 
 			return
+		end
+
+		if response.resCode == 13315 then
+			local data = {
+				title = Strings:get("Activity_Darts_Abn_1"),
+				title1 = Strings:get("Activity_Darts_Abn_2"),
+				content = Strings:get("Activity_Darts_Abn_3"),
+				sureBtn = {}
+			}
+			local view = self:getInjector():getInstance("AlertView")
+
+			self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+				transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+			}, data, delegate))
 		end
 
 		self:refreshStartView()

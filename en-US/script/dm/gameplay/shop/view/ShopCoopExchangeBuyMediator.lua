@@ -76,7 +76,7 @@ end
 function ShopCoopExchangeBuyMediator:refreshData()
 	local haveAmount = self._activity:getExchangeAmount(self._itemData.id)
 	local enoughAmount = self._activity:getExchangeCountById(self._itemData.id)
-	self._curNumber = haveAmount
+	self._curNumber = 1
 	self._maxNumber = haveAmount
 	self._minNumber = 1
 end

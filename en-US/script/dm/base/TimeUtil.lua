@@ -1,4 +1,55 @@
 TimeUtil = TimeUtil or {}
+REMOTE_UTC_DIFF = 28800
+
+function TimeUtil:getRemoteTimeZone()
+	local _developSystem = DmGame:getInstance()._injector:getInstance("DevelopSystem")
+
+	if _developSystem and _developSystem.getTimeZone then
+		return _developSystem:getTimeZone() * 3600
+	end
+
+	return REMOTE_UTC_DIFF
+end
+
+function TimeUtil:getLocalTimeZone()
+	local now = os.time()
+	local localTimeZone = os.difftime(now, os.time(os.date("!*t", now)))
+	local isdst = os.date("*t", now).isdst
+
+	if isdst then
+		localTimeZone = localTimeZone + 3600
+	end
+
+	return localTimeZone
+end
+
+function TimeUtil:timeByRemoteDate(date)
+	if date then
+		local timeZoneDiff = self:getRemoteTimeZone() - self:getLocalTimeZone()
+
+		return os.time(date) - timeZoneDiff
+	else
+		return DmGame:getInstance()._injector:getInstance("GameServerAgent"):remoteTimestamp()
+	end
+end
+
+function TimeUtil:timeByLocalDate(date)
+	return os.time(date)
+end
+
+function TimeUtil:remoteDate(format, time)
+	format = format or "*t"
+	local timeZoneDiff = self:getRemoteTimeZone() - self:getLocalTimeZone()
+
+	return os.date(format, time + timeZoneDiff)
+end
+
+function TimeUtil:localDate(format, time)
+	format = format or "*t"
+
+	return os.date(format, time)
+end
+
 local __bases = {
 	d = 86400,
 	H = 3600,
@@ -120,62 +171,21 @@ function TimeUtil:isSameDay(stampA, stampB, baseTime)
 	return dateA.day == dateB.day and dateA.month == dateB.month and dateA.year == dateB.year
 end
 
-function TimeUtil:getTimeByDate(t)
-	return os.time(t)
-end
-
-function TimeUtil:getRemoteUTC()
-	local remoteUTC = 8
-	local _developSystem = DmGame:getInstance()._injector:getInstance("DevelopSystem")
-
-	if _developSystem and _developSystem:getTimeZone() then
-		remoteUTC = _developSystem:getTimeZone()
-	end
-
-	return remoteUTC
-end
-
-function TimeUtil:getLocalTimeZone()
-	local a = os.date("!*t", os.time())
-	local b = os.date("*t", os.time())
-	local timeZone = (b.hour - a.hour) * 3600 + (b.min - a.min) * 60
-	local curUTC = timeZone / 3600
-
-	if curUTC > 12 then
-		curUTC = curUTC - 24
-	end
-
-	return curUTC
-end
-
-function TimeUtil:getTimestampDiff()
-	local curUTC = TimeUtil:getLocalTimeZone()
-	local remoteUTC = TimeUtil:getRemoteUTC()
-	local diffTime = (remoteUTC - curUTC) * 3600
-
-	return diffTime
-end
-
-function TimeUtil:calcLocalUTC()
-	local now = os.time()
-	local diffTime = os.difftime(now, os.time(os.date("!*t", now)))
-
-	return diffTime / 3600
-end
-
 function TimeUtil:getTimeByDateForTargetTimeInToday(t)
-	local diffTime = self:getTimestampDiff()
+	local localUTCDiff = self:getLocalTimeZone()
+	local diffTime = localUTCDiff - self:getRemoteTimeZone()
 	local serverTimeMap = DmGame:getInstance()._injector:getInstance("GameServerAgent"):remoteTimestamp()
 	local tb = os.date("*t", serverTimeMap)
 	tb.hour = t.hour
 	tb.min = t.min
 	tb.sec = t.sec
 
-	return os.time(tb) - diffTime
+	return os.time(tb) + diffTime
 end
 
 function TimeUtil:getTimeByDateForTargetTime(t)
-	local diffTime = self:getTimestampDiff()
+	local localUTCDiff = self:getLocalTimeZone()
+	local diffTime = localUTCDiff - self:getRemoteTimeZone()
 	local serverTimeMap = DmGame:getInstance()._injector:getInstance("GameServerAgent"):remoteTimestamp()
 	local tb = os.date("*t", serverTimeMap)
 	tb.year = t.year or tb.year
@@ -185,7 +195,7 @@ function TimeUtil:getTimeByDateForTargetTime(t)
 	tb.min = t.min or tb.min
 	tb.sec = t.sec or tb.sec
 
-	return os.time(tb) - diffTime
+	return os.time(tb) + diffTime
 end
 
 function TimeUtil:getHMSByTimestamp(time)
@@ -236,39 +246,6 @@ function TimeUtil:getYMDByTimestamp(time)
 	}
 end
 
-REMOTE_UTC_DIFF = 28800
-
-function TimeUtil:calcRemoteZoneDiff()
-	local _developSystem = DmGame:getInstance()._injector:getInstance("DevelopSystem")
-
-	if _developSystem and _developSystem.getTimeZone then
-		return _developSystem:getTimeZone() * 3600
-	end
-
-	return REMOTE_UTC_DIFF
-end
-
-function TimeUtil:calcLocalUTCDiff()
-	local a = os.date("!*t", os.time())
-	local b = os.date("*t", os.time())
-	local at = os.time(a)
-	local bt = os.time(b)
-	local diffTime = bt - at
-
-	return diffTime
-end
-
-function TimeUtil:timeByRemoteDate(date)
-	if date then
-		local localUTCDiff = self:calcLocalUTCDiff()
-		local diffTime = localUTCDiff - self:calcRemoteZoneDiff()
-
-		return os.time(date) + diffTime
-	else
-		return DmGame:getInstance()._injector:getInstance("GameServerAgent"):remoteTimestamp()
-	end
-end
-
 function TimeUtil:getSystemResetDate(format)
 	local todayFiveHour = self:getTimeByDateForTargetTimeInToday({
 		sec = 0,
@@ -283,8 +260,8 @@ end
 function TimeUtil:getLocalWeekByRemote(week)
 	local weeklocal = os.date("%w", os.time())
 	weeklocal = weeklocal == 0 and 7 or weeklocal + 1
-	local localUTCDiff = self:calcLocalUTCDiff()
-	local diffTime = localUTCDiff - self:calcRemoteZoneDiff()
+	local localUTCDiff = self:getLocalTimeZone()
+	local diffTime = localUTCDiff - self:getRemoteTimeZone()
 	local weekremote = os.date("%w", os.time() + diffTime)
 	weekremote = weekremote == 0 and 7 or weekremote + 1
 	local trueWeek = week + weekremote - weeklocal
@@ -300,21 +277,15 @@ function TimeUtil:getLocalWeekByRemote(week)
 	return trueWeek
 end
 
-function TimeUtil:timeByLocalDate(date)
-	return os.time(date)
-end
+function TimeUtil:getLocalUTC()
+	local a = os.date("!*t", os.time())
+	local b = os.date("*t", os.time())
+	local timeZone = (b.hour - a.hour) * 3600 + (b.min - a.min) * 60
+	local curUTC = timeZone / 3600
 
-function TimeUtil:remoteDate(format, time)
-	format = format or "*t"
-	local localUTCDiff = self:calcLocalUTCDiff()
-	local diffTime = self:calcRemoteZoneDiff() - localUTCDiff
-	time = time + diffTime
+	if curUTC > 12 then
+		curUTC = curUTC - 24
+	end
 
-	return os.date(format, time)
-end
-
-function TimeUtil:localDate(format, time)
-	format = format or "*t"
-
-	return os.date(format, time)
+	return curUTC
 end

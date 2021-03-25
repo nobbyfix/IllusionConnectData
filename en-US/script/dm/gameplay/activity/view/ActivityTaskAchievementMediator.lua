@@ -343,7 +343,7 @@ function ActivityTaskAchievementMediator:runListAnim()
 
 	local allCells = self._tableView:getContainer():getChildren()
 
-	for i = 1, 5 do
+	for i = 1, 7 do
 		local child = allCells[i]
 
 		if child and child:getChildByTag(123) then
@@ -361,7 +361,7 @@ function ActivityTaskAchievementMediator:runListAnim()
 	local length = math.min(4, #allCells)
 	local delayTime1 = 0.06666666666666667
 
-	for i = 1, 5 do
+	for i = 1, 7 do
 		local child = allCells[i]
 
 		if child and child:getChildByTag(123) then

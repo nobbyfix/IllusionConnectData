@@ -404,6 +404,14 @@ function HealthSystem:performReflection(actor, target, rawDamage, workId)
 		return nil
 	end
 
+	local tranforHpComp = actorHpComp:getTrasforHpComp()
+
+	if tranforHpComp then
+		transforActor = tranforHpComp.comp:getEntity()
+
+		return self:performReflection(transforActor, target, rawDamage, workId), transforActor
+	end
+
 	local reflection_UpLimit = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Reflection_UpLimit", "content")
 	local reflectedValue = max(floor(rawDamage * reflection), 1)
 	local reflectedValue = min(reflectedValue, atkvalue * (reflection_UpLimit or 1))

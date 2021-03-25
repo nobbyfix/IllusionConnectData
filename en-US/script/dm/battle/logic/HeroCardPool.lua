@@ -137,6 +137,14 @@ local function shuffle(rand, arr, start, ending)
 	end
 end
 
+function SkillCardPool:insertCard(card)
+	if self._cardArray ~= nil then
+		table.insert(self._cardArray, card)
+	end
+
+	return card
+end
+
 function SkillCardPool:shuffle(rand)
 	if self._cardArray ~= nil then
 		shuffle(rand, self._cardArray)

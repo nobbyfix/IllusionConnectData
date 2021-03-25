@@ -462,6 +462,11 @@ all.Skill_FLYDe_Passive = {
 					0
 				})
 				damage.val = global.max(_env, maxHp * (this.DamageFactor - cost * this.DamageFloor), 0)
+
+				if this.DamageFactor - cost * this.DamageFloor == 1 then
+					damage.val = damage.val + 1
+				end
+
 				damage.crit = nil
 				damage.block = nil
 
@@ -912,6 +917,11 @@ all.Skill_FLYDe_Passive_EX = {
 					0
 				})
 				damage.val = global.max(_env, maxHp * (this.DamageFactor - cost * this.DamageFloor), 0)
+
+				if this.DamageFactor - cost * this.DamageFloor == 1 then
+					damage.val = damage.val + 1
+				end
+
 				damage.crit = nil
 				damage.block = nil
 
@@ -1114,6 +1124,11 @@ all.Skill_FLYDe_Unique_BOSS = {
 					0
 				})
 				damage.val = global.max(_env, maxHp * (DamageFactor - cost * DamageFloor), 0)
+
+				if DamageFactor - cost * DamageFloor == 1 then
+					damage.val = damage.val + 1
+				end
+
 				damage.crit = nil
 				damage.block = nil
 

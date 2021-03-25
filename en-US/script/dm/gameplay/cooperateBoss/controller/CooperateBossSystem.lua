@@ -315,7 +315,7 @@ function CooperateBossSystem:requestCooperateBossMain(callback)
 	if state == kCooperateBossState.kPreHot then
 		AudioEngine:getInstance():playEffect("Se_Alert_Error", false)
 
-		local startTime = TimeUtil:localDate("%Y-%m-%d", self._cooperateBoss:getStartTime())
+		local startTime = TimeUtil:localDate("%Y-%m-%d", self._cooperateBoss:getHotTime())
 
 		self:dispatch(ShowTipEvent({
 			tip = Strings:get("CooperateBoss_Entry_UI07", {
@@ -521,9 +521,9 @@ function CooperateBossSystem:enterBattle(params, viewType)
 	local isAuto, timeScale = self:getInjector():getInstance(SettingSystem):getSettingModel():getBattleSetting(battleType)
 	local isReplay = false
 	local canSkip = false
-	local skipTime = tonumber(ConfigReader:getDataByNameIdAndKey("ConfigValue", "ClubBoss_SkipBattle_WaitTime", "content"))
+	local skipTime = tonumber(ConfigReader:getDataByNameIdAndKey("ConfigValue", "CooperateBoss_SkipBattle_WaitTime", "content"))
 
-	if self._systemKeeper:isUnlock("ClubStage") then
+	if self._systemKeeper:isUnlock("CooperateBoss_SkipBattle") then
 		canSkip = true
 	end
 

@@ -53,6 +53,9 @@ local muiscCfg = {
 	ActivityCollapsedMainView = {
 		noAutoPlay = true
 	},
+	ActivityKnightMainView = {
+		noAutoPlay = true
+	},
 	ActivityBlockDetectiveView = {
 		noAutoPlay = true
 	},

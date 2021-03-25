@@ -22,9 +22,6 @@ function BagSystem:initialize()
 	self._viewVector = {}
 	self._sharedScheduler = nil
 	self._powerResetMap = {}
-
-	self:initPowerReset()
-
 	self._composeTimes = {}
 	crusadeEnergyReset = self:initConfigSystem("Reset", "Crusade_Energy_Recovery")
 end
@@ -228,6 +225,10 @@ function BagSystem:getPowerByCurrencyId(currencyId)
 
 	assert(resetConfig, "not find config in local PowerConfigMap, id " .. currencyId)
 
+	if not self._powerResetMap[currencyId] then
+		self:initPowerReset()
+	end
+
 	local resetSystem = self._powerResetMap[currencyId]
 	local entry = self:getEntryById(currencyId)
 	local count = 0
@@ -248,6 +249,10 @@ function BagSystem:getPowerByCurrencyId(currencyId)
 end
 
 function BagSystem:getPower()
+	if not self._powerResetMap[CurrencyIdKind.kPower] then
+		self:initPowerReset()
+	end
+
 	local entry = self:getEntryById(CurrencyIdKind.kPower)
 	local count = 0
 	local lastRecoverTime = 0
@@ -1295,6 +1300,10 @@ function BagSystem:updateView()
 			table.remove(self._viewVector)
 
 			return
+		end
+
+		if not self._powerResetMap[currencyId] then
+			self:initPowerReset()
 		end
 
 		local view = obj:getView()

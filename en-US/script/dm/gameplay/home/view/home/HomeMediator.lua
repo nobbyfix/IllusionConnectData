@@ -3843,6 +3843,14 @@ function HomeMediator:setComplexActivityEntry()
 			aimpos = cc.p(39, 39),
 			imgpos = cc.p(56, 22)
 		},
+		[ActivityType_UI.KActivityKnight] = {
+			animZorder = 2,
+			img = "knight_btn_zjm_rukou.png",
+			anim = "weiguang_qishiweiguang",
+			imgZorder = 1,
+			aimpos = cc.p(39, 39),
+			imgpos = cc.p(46, 35)
+		},
 		[ActivityType_UI.KActivitySunflower] = {
 			animZorder = 1,
 			img = "sunflower_btn_zjm_rukou.png",

@@ -167,6 +167,10 @@ function PlayerTLInterpreter:act_SyncERecovery(action, args)
 	end
 end
 
+function PlayerTLInterpreter:act_RemoveSCard(action, args)
+	self._battleUIMediator:removeCards()
+end
+
 function PlayerTLInterpreter:act_FillSCard(action, args)
 	local cards = args.cards
 	local remain = args.cardPoolSize
