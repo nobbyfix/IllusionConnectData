@@ -172,6 +172,9 @@ function TowerStrengthMediator:initWidgetInfo()
 	self._nullTip = self._strengthPanel:getChildByFullName("Image_null")
 	self._contentPanel = self._main:getChildByFullName("strengthPanel.info_bg.content_panel")
 	self._contentPanelNull = self._main:getChildByFullName("strengthPanel.info_bg.content_panel_null")
+
+	self._main:getChildByFullName("strengthPanel.info_bg.awardBtn_Null.notHaveReward"):setString(Strings:get("notHaveReward"))
+
 	local winSize = cc.Director:getInstance():getWinSize()
 
 	self._main:getChildByFullName("Image_line"):setPositionY(winSize.height - 65)

@@ -629,7 +629,7 @@ function GameUpdater:installPackages()
 				for i = 1, 3 do
 					fileUtils:removeFile(tempUpdateDBPath)
 
-					if not safeCopyDb(destDBFilePath, tempUpdateDBPath) then
+					if not copyDB(destDBFilePath, tempUpdateDBPath) then
 						return
 					end
 
