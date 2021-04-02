@@ -307,6 +307,10 @@ function WeightedStrategy:determineTargetCell(battleField, side)
 	local count = #emptyCells
 
 	if count > 0 then
+		if CommonUtils and not self._nextCard.getCardAI then
+			CommonUtils.uploadDataToBugly("getCardAI Error ", self._nextCard._id or self._nextCard._heroData.blockAI)
+		end
+
 		local cardAI = self._nextCard:getCardAI()
 		local PosArray = cardAI and cardAI.ForcedPosition
 

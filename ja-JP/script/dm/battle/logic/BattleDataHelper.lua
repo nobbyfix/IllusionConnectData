@@ -137,6 +137,10 @@ end
 function BattleDataHelper:fillCardAI(card)
 	if card.hero and card.hero.blockAI and card.hero.blockAI ~= "" then
 		card.cardAI = ConfigReader:getRecordById("BlockAI", card.hero.blockAI)
+
+		if CommonUtils and not card.cardAI then
+			CommonUtils.uploadDataToBugly("fillCardAI Error", card.hero.configId or card.hero.id)
+		end
 	end
 end
 
