@@ -8523,6 +8523,32 @@
             "slot": "Hero_Proud_JNLong"
         }
     },
+    "StarSE_JNLong_Awake": {
+        "Desc": "StarSE_JNLong_Awake_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_PBattle_JNLong_Awaken",
+            "before": "Hero_PBattle_JNLong_EX",
+            "slot": "Hero_PBattle_JNLong"
+        }
+    },
+    "StarSE_JNLong_Awake_Show": {
+        "Desc": "",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": 1,
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Unique_JNLong_Awaken_Show",
+            "before": "Hero_Unique_JNLong_EX",
+            "slot": "Hero_Unique_JNLong"
+        }
+    },
     "StarSE_JSTDing_2": {
         "Desc": "StarSE_JSTDing_2_Desc",
         "EffectType": "CHANGESKILL",
@@ -8950,6 +8976,45 @@
             "after": "Hero_Unique_LLan_Awaken",
             "before": "Hero_Unique_LLan_EX",
             "slot": "Hero_Unique_LLan"
+        }
+    },
+    "StarSE_LSLTe_4": {
+        "Desc": "StarSE_LSLTe_4_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Unique_LSLTe_EX",
+            "before": "Hero_Unique_LSLTe",
+            "slot": "Hero_Unique_LSLTe"
+        }
+    },
+    "StarSE_LSLTe_5": {
+        "Desc": "StarSE_LSLTe_5_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_PBattle_LSLTe_EX",
+            "before": "Hero_PBattle_LSLTe",
+            "slot": "Hero_PBattle_LSLTe"
+        }
+    },
+    "StarSE_LSLTe_6": {
+        "Desc": "StarSE_LSLTe_6_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Proud_LSLTe_EX",
+            "before": "Hero_Proud_LSLTe",
+            "slot": "Hero_Proud_LSLTe"
         }
     },
     "StarSE_LYSi_3": {
@@ -9561,6 +9626,45 @@
             "after": "Hero_Proud_QBTe_EX",
             "before": "Hero_Proud_QBTe",
             "slot": "Hero_Proud_QBTe"
+        }
+    },
+    "StarSE_QTQCi_4": {
+        "Desc": "StarSE_QTQCi_4_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Unique_QTQCi_EX",
+            "before": "Hero_Unique_QTQCi",
+            "slot": "Hero_Unique_QTQCi"
+        }
+    },
+    "StarSE_QTQCi_5": {
+        "Desc": "StarSE_QTQCi_5_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_PBattle_QTQCi_EX",
+            "before": "Hero_PBattle_QTQCi",
+            "slot": "Hero_PBattle_QTQCi"
+        }
+    },
+    "StarSE_QTQCi_6": {
+        "Desc": "StarSE_QTQCi_6_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Proud_QTQCi_EX",
+            "before": "Hero_Proud_QTQCi",
+            "slot": "Hero_Proud_QTQCi"
         }
     },
     "StarSE_SDTZi_4": {
@@ -10419,6 +10523,19 @@
             "after": "Hero_Proud_YLSBai_EX",
             "before": "Hero_Proud_YLSBai",
             "slot": "Hero_Proud_YLSBai"
+        }
+    },
+    "StarSE_YLSBai_Awake": {
+        "Desc": "StarSE_YLSBai_Awake_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Unique_YLSBai_Awaken",
+            "before": "Hero_Unique_YLSBai_EX",
+            "slot": "Hero_Unique_YLSBai"
         }
     },
     "StarSE_YMHTPu_2": {

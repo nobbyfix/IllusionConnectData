@@ -232,7 +232,14 @@ all.Skill_LCYShi_Unique = {
 			local this = _env.this
 			local global = _env.global
 			local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.ACTOR)
-			local buffeft1 = global.ShieldEffect(_env, maxHp * this.ShieldRateFactor)
+			local shield_effect = global.SpecialPropGetter(_env, "shield_effect")(_env, _env.ACTOR)
+			local shield_ex_factor = 0
+
+			if shield_effect and shield_effect ~= 0 then
+				shield_ex_factor = shield_effect
+			end
+
+			local buffeft1 = global.ShieldEffect(_env, maxHp * this.ShieldRateFactor * (1 + shield_ex_factor))
 
 			for _, unit in global.__iter__(global.FriendUnits(_env, global.COL_OF(_env, _env.ACTOR))) do
 				global.ApplyBuff_Buff(_env, _env.ACTOR, unit, {
@@ -578,7 +585,14 @@ all.Skill_LCYShi_Unique_EX = {
 			local this = _env.this
 			local global = _env.global
 			local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.ACTOR)
-			local buffeft1 = global.ShieldEffect(_env, maxHp * this.ShieldRateFactor)
+			local shield_effect = global.SpecialPropGetter(_env, "shield_effect")(_env, _env.ACTOR)
+			local shield_ex_factor = 0
+
+			if shield_effect and shield_effect ~= 0 then
+				shield_ex_factor = shield_effect
+			end
+
+			local buffeft1 = global.ShieldEffect(_env, maxHp * this.ShieldRateFactor * (1 + shield_ex_factor))
 
 			for _, unit in global.__iter__(global.FriendUnits(_env, global.COL_OF(_env, _env.ACTOR))) do
 				global.ApplyBuff_Buff(_env, _env.ACTOR, unit, {
@@ -703,7 +717,14 @@ all.Skill_LCYShi_Unique_Awken = {
 			local this = _env.this
 			local global = _env.global
 			local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.ACTOR)
-			local buffeft1 = global.ShieldEffect(_env, maxHp * this.ShieldRateFactor)
+			local shield_effect = global.SpecialPropGetter(_env, "shield_effect")(_env, _env.ACTOR)
+			local shield_ex_factor = 0
+
+			if shield_effect and shield_effect ~= 0 then
+				shield_ex_factor = shield_effect
+			end
+
+			local buffeft1 = global.ShieldEffect(_env, maxHp * this.ShieldRateFactor * (1 + shield_ex_factor))
 
 			for _, unit in global.__iter__(global.FriendUnits(_env, global.COL_OF(_env, _env.ACTOR))) do
 				global.ApplyBuff_Buff(_env, _env.ACTOR, unit, {

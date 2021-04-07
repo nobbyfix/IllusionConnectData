@@ -2,6 +2,7 @@ require("dm.gameplay.develop.model.master.MasterSkill")
 require("dm.gameplay.develop.model.master.MasterAttribute")
 require("dm.gameplay.develop.model.master.MasterStarPoint")
 require("dm.gameplay.develop.model.effect.SingleEffectList")
+require("dm.gameplay.develop.model.master.MasterLeadStage")
 
 Master = class("Master", objectlua.Object, _M)
 
@@ -47,6 +48,24 @@ Master:has("_speed", {
 Master:has("_surfaceId", {
 	is = "rw"
 })
+Master:has("_leadStageData", {
+	is = "rw"
+})
+Master:has("_emblemEffect", {
+	is = "rw"
+})
+Master:has("_gallayEffect", {
+	is = "rw"
+})
+Master:has("_gallayAllEffect", {
+	is = "rw"
+})
+Master:has("_starPointEffect", {
+	is = "rw"
+})
+Master:has("_TimeEffect", {
+	is = "rw"
+})
 
 local StarState = {
 	1,
@@ -74,6 +93,7 @@ function Master:initialize(masterId, player)
 	self._kernels = {}
 	self._speed = self._config.Speed
 	self._surfaceId = ""
+	self._leadStageData = MasterLeadStage:new(self, self._player)
 
 	self:createSkillList()
 	self:createLeaderSkillList()
@@ -104,6 +124,10 @@ function Master:synchronize(data)
 		for key, num in pairs(data.sceneCombats) do
 			self._sceneCombats[key] = num
 		end
+	end
+
+	if data.leadStage then
+		self._leadStageData:syncData(data.leadStage)
 	end
 end
 
@@ -260,8 +284,12 @@ function Master:getGalleryAllAttrByType(type)
 	return self._player._effectCenter:getGalleryAllEffectAttrsById(type)
 end
 
+function Master:getLeadStageAllAttrByType()
+	return self._player._effectCenter:getLeadStageEffectsById(self._id)
+end
+
 function Master:getAddAttrByType(type)
-	return self:getEmblemAttrByType(type) + self:getGalleryAttrByType(type) + self:getGalleryAllAttrByType(type) + self:getStarPointAttrNumByType(type) + self:getTimeEffectById(type)
+	return 0
 end
 
 function Master:getAuraEffectByType(type)
@@ -429,6 +457,90 @@ function Master:rCreateBaseAttEffect()
 	self._effect._effectFromName = AttrSystemName.kMasterBase
 end
 
+function Master:getEffectsByEffectzCenter(effectCenter)
+	local allEffects = {}
+
+	for k, v in pairs(effectCenter) do
+		local attrNum = v
+		local attrType = k
+		local effectEvn = "ALL"
+		local elementType = SkillAttribute:getElementByConfig(attrType, effectEvn)
+		attrType = AttributeCategory:changeBaseAttrType(attrType)
+		local effectConfig = {
+			effectType = "ATTR",
+			target = "SELF",
+			effectEvn = effectEvn,
+			attrNum = attrNum,
+			attrType = attrType,
+			elementType = elementType
+		}
+		local newEffect = SingleAttrAddEffect:new(effectConfig)
+		allEffects[#allEffects + 1] = newEffect
+	end
+
+	return allEffects
+end
+
+function Master:rCreateEmblemEffect()
+	local effectCenter = self._player._effectCenter:getEmblemEffectAttrsInfo()
+	local allEffects = self:getEffectsByEffectzCenter(effectCenter)
+
+	if not next(allEffects) then
+		return
+	end
+
+	self._emblemEffect = CompositeEffect:new(allEffects)
+	self._emblemEffect._effectFromName = AttrSystemName.kMasterEmblem
+end
+
+function Master:rCreateGallayEffect()
+	local effectCenter = self._player._effectCenter:getGalleryEffectAttrsInfo()
+	local allEffects = self:getEffectsByEffectzCenter(effectCenter)
+
+	if not next(allEffects) then
+		return
+	end
+
+	self._gallayEffect = CompositeEffect:new(allEffects)
+	self._gallayEffect._effectFromName = AttrSystemName.kMasterGallay
+end
+
+function Master:rCreateGallayAllEffect()
+	local effectCenter = self._player._effectCenter:getGalleryAllEffectAttrsInfo()
+	local allEffects = self:getEffectsByEffectzCenter(effectCenter)
+
+	if not next(allEffects) then
+		return
+	end
+
+	self._gallayAllEffect = CompositeEffect:new(allEffects)
+	self._gallayAllEffect._effectFromName = AttrSystemName.kMasterGallayALL
+end
+
+function Master:rCreateStarPointEffect()
+	local effectCenter = self._starPointAttrNum
+	local allEffects = self:getEffectsByEffectzCenter(effectCenter)
+
+	if not next(allEffects) then
+		return
+	end
+
+	self._starPointEffect = CompositeEffect:new(allEffects)
+	self._starPointEffect._effectFromName = AttrSystemName.kMasterStarPoint
+end
+
+function Master:rCreateTimeEffect()
+	local effectCenter = self._player._effectCenter:getMasterTimeEffectInfoById(self._id)
+	local allEffects = self:getEffectsByEffectzCenter(effectCenter)
+
+	if not next(allEffects) then
+		return
+	end
+
+	self._TimeEffect = CompositeEffect:new(allEffects)
+	self._TimeEffect._effectFromName = AttrSystemName.kMasterTime
+end
+
 function Master:getBaseAttrForAura(attrType)
 	local star = self:getStar()
 	local data = {
@@ -448,15 +560,34 @@ end
 function Master:rCreateEffect()
 	self:removeEffect()
 	self:rCreateBaseAttEffect()
+	self:rCreateEmblemEffect()
+	self:rCreateGallayEffect()
+	self:rCreateGallayAllEffect()
+	self:rCreateStarPointEffect()
+	self:rCreateTimeEffect()
 	self:addEffect()
+
+	local effects = self:getLeadStageAllAttrByType()
+
+	self._leadStageData:synchronize(effects)
 end
 
 function Master:addEffect()
 	self:getEffectList():addEffect(self._effect)
+	self:getEffectList():addEffect(self._emblemEffect)
+	self:getEffectList():addEffect(self._gallayEffect)
+	self:getEffectList():addEffect(self._gallayAllEffect)
+	self:getEffectList():addEffect(self._starPointEffect)
+	self:getEffectList():addEffect(self._TimeEffect)
 end
 
 function Master:removeEffect()
 	self:getEffectList():removeEffect(self._effect)
+	self:getEffectList():removeEffect(self._emblemEffect)
+	self:getEffectList():removeEffect(self._gallayEffect)
+	self:getEffectList():removeEffect(self._gallayAllEffect)
+	self:getEffectList():removeEffect(self._starPointEffect)
+	self:getEffectList():removeEffect(self._TimeEffect)
 end
 
 function Master:syncEffectCenter(data)
@@ -698,6 +829,8 @@ function Master:getModel()
 	if self._surfaceId ~= "" then
 		roleModel = ConfigReader:getDataByNameIdAndKey("Surface", self._surfaceId, "Model")
 	end
+
+	roleModel = self._leadStageData:getLeadStageModel() or roleModel
 
 	return roleModel
 end

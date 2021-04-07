@@ -140,9 +140,11 @@ function FriendPvpWinMediator:setupView()
 	lostHeadIcon:addTo(self._loserIconBg):center(self._loserIconBg:getContentSize())
 
 	local winnerMasterId = winnerInfo.master[1]
-	local defMasterModel = ConfigReader:getDataByNameIdAndKey("MasterBase", winnerMasterId, "RoleModel")
+	local masterSystem = self._developSystem:getMasterSystem()
+	local masterData = masterSystem:getMasterById(winnerMasterId)
+	model = masterData:getModel()
 
-	self:createMvpHeros(defMasterModel)
+	self:createMvpHeros(model)
 end
 
 function FriendPvpWinMediator:createMvpHeros(defMasterModel)

@@ -88,6 +88,8 @@ function BattleUIMediator:adjustLayout(targetFrame)
 	AdjustUtils.ignorSafeAreaRectForNode(header:getChildByName("change"), AdjustUtils.kAdjustType.Right)
 	AdjustUtils.ignorSafeAreaRectForNode(header:getChildByName("leftPassiveSkill"), AdjustUtils.kAdjustType.Left)
 	AdjustUtils.ignorSafeAreaRectForNode(header:getChildByName("rightPassiveSkill"), AdjustUtils.kAdjustType.Right)
+	AdjustUtils.ignorSafeAreaRectForNode(header:getChildByName("leftStageLevel"), AdjustUtils.kAdjustType.Left)
+	AdjustUtils.ignorSafeAreaRectForNode(header:getChildByName("rightStageLevel"), AdjustUtils.kAdjustType.Right)
 	AdjustUtils.ignorSafeAreaRectForNode(view:getChildByName("edge_left"), AdjustUtils.kAdjustType.Left + AdjustUtils.kAdjustType.Bottom)
 	AdjustUtils.ignorSafeAreaRectForNode(view:getChildByName("edge_right"), AdjustUtils.kAdjustType.Right + AdjustUtils.kAdjustType.Bottom)
 	AdjustUtils.ignorSafeAreaRectForNode(view:getChildByName("edge_bottom"), AdjustUtils.kAdjustType.Left + AdjustUtils.kAdjustType.Bottom)
@@ -187,6 +189,18 @@ function BattleUIMediator:setupSubWidgets()
 	self._passiveSkillTip = self:autoManageObject(BattlePassiveSkillTip:new(passiveSkillTip))
 
 	self._passiveSkillTip:setListener(self)
+
+	local leftStageLevel = header:getChildByName("leftStageLevel")
+	self._leftStageLevel = self:autoManageObject(LeadStagePassiveSkillWidget:new(leftStageLevel, true))
+
+	self._leftStageLevel:setListener(self)
+
+	local rightStageLevel = header:getChildByName("rightStageLevel")
+	self._rightStageLevel = self:autoManageObject(LeadStagePassiveSkillWidget:new(rightStageLevel))
+
+	self._rightStageLevel:setListener(self)
+	self._leftStageLevel:setVisible(false)
+	self._rightStageLevel:setVisible(false)
 end
 
 function BattleUIMediator:willStartEnterTransition()
@@ -346,6 +360,20 @@ function BattleUIMediator:fade()
 		view:runAction(cc.FadeOut:create(duration))
 	end
 
+	if self._leftStageLevel then
+		local view = self._leftStageLevel:getView()
+
+		view:stopAllActions()
+		view:runAction(cc.FadeOut:create(duration))
+	end
+
+	if self._rightStageLevel then
+		local view = self._rightStageLevel:getView()
+
+		view:stopAllActions()
+		view:runAction(cc.FadeOut:create(duration))
+	end
+
 	if self._changeWidget then
 		local view = self._changeWidget:getView()
 
@@ -448,6 +476,20 @@ function BattleUIMediator:fade()
 			view:stopAllActions()
 			view:runAction(cc.FadeIn:create(duration))
 		end
+
+		if self._leftStageLevel then
+			local view = self._leftStageLevel:getView()
+
+			view:stopAllActions()
+			view:runAction(cc.FadeIn:create(duration))
+		end
+
+		if self._rightStageLevel then
+			local view = self._rightStageLevel:getView()
+
+			view:stopAllActions()
+			view:runAction(cc.FadeIn:create(duration))
+		end
 	end, waitTime)
 end
 
@@ -502,6 +544,14 @@ function BattleUIMediator:initWithContext(viewContext)
 
 	if self._rightPassiveSkill then
 		self._rightPassiveSkill:setTouchEnabled(false)
+	end
+
+	if self._leftStageLevel then
+		self._leftStageLevel:setTouchEnabled(false)
+	end
+
+	if self._rightStageLevel then
+		self._rightStageLevel:setTouchEnabled(false)
 	end
 end
 
@@ -649,6 +699,16 @@ function BattleUIMediator:setupViewConfig(viewConfig, isReplay)
 
 	if self._rightPassiveSkill and viewConfig.passiveSkill then
 		self._rightPassiveSkill:init(viewConfig.passiveSkill.enemyShow)
+	end
+
+	if self._leftStageLevel and viewConfig.passiveSkill and viewConfig.passiveSkill.playerStagePassShow then
+		self._leftStageLevel:setVisible(true)
+		self._leftStageLevel:init(viewConfig.passiveSkill.playerStagePassShow)
+	end
+
+	if self._rightStageLevel and viewConfig.passiveSkill and viewConfig.passiveSkill.enemyStagePassShow then
+		self._rightStageLevel:setVisible(true)
+		self._rightStageLevel:init(viewConfig.passiveSkill.enemyStagePassShow)
 	end
 
 	if self._changeWidget and viewConfig.changeMaxNum then
@@ -901,6 +961,14 @@ function BattleUIMediator:setTouchEnabled(touchEnable)
 		self._rightPassiveSkill:setTouchEnabled(touchEnable)
 	end
 
+	if self._leftStageLevel then
+		self._leftStageLevel:setTouchEnabled(touchEnable)
+	end
+
+	if self._rightStageLevel then
+		self._rightStageLevel:setTouchEnabled(touchEnable)
+	end
+
 	self._touchEnalbed = touchEnable
 end
 
@@ -1082,6 +1150,14 @@ function BattleUIMediator:startNewPhase(phase, duration, elapsed, energySpeed, t
 
 		if self._rightPassiveSkill then
 			self._rightPassiveSkill:setTouchEnabled(true)
+		end
+
+		if self._leftStageLevel then
+			self._leftStageLevel:setTouchEnabled(true)
+		end
+
+		if self._rightStageLevel then
+			self._rightStageLevel:setTouchEnabled(true)
 		end
 	end
 

@@ -124,6 +124,12 @@ function WeightedStrategy:update(interval)
 
 		if player:energyIsEnough(cost) then
 			if player:getCardState() == "hero" then
+				if not self._nextCard._cardAI then
+					self._nextCard = nil
+
+					return
+				end
+
 				local battleField = self._context:getObject("BattleField")
 				local cellNo = self:determineTargetCell(battleField, player:getSide())
 
@@ -307,10 +313,6 @@ function WeightedStrategy:determineTargetCell(battleField, side)
 	local count = #emptyCells
 
 	if count > 0 then
-		if CommonUtils and not self._nextCard.getCardAI then
-			CommonUtils.uploadDataToBugly("getCardAI Error ", self._nextCard._id or self._nextCard._heroData.blockAI)
-		end
-
 		local cardAI = self._nextCard:getCardAI()
 		local PosArray = cardAI and cardAI.ForcedPosition
 

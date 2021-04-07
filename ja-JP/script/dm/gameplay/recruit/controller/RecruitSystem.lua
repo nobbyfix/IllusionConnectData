@@ -57,6 +57,11 @@ RecruitCurrencyStr = {
 		}
 	}
 }
+DrawCardRewardStatus = {
+	FinishNotGet = 1,
+	FinishGot = 2,
+	NotFinish = 0
+}
 
 function RecruitSystem:initialize()
 	super.initialize(self)
@@ -186,6 +191,32 @@ function RecruitSystem:requestRewardPreview(params, callback, blockUI)
 	end, blockUI)
 end
 
+function RecruitSystem:requestGetDrawCardCountReward(params, callback, blockUI)
+	params = {
+		drawID = params.drawID,
+		targetCount = params.targetCount
+	}
+
+	self:getService():requestGetDrawCardCountReward(params, function (response)
+		if response.resCode == GS_SUCCESS then
+			if response.data.rewards then
+				local view = self:getInjector():getInstance("getRewardView")
+
+				self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+					maskOpacity = 0
+				}, {
+					needClick = false,
+					rewards = response.data.rewards
+				}))
+			end
+
+			if callback then
+				callback(response.data)
+			end
+		end
+	end, blockUI)
+end
+
 function RecruitSystem:requestOpenRewardBox(recruitTimes, callback, blockUI)
 	local params = {
 		targetPoints = recruitTimes
@@ -207,26 +238,42 @@ function RecruitSystem:getDrawTimeById(id)
 end
 
 function RecruitSystem:checkIsShowRedPoint()
-	local recruitManager = self:getManager()
-	local recruitPools = recruitManager:getRecruitPools()
+	local recruitPools = self:getShowRecruitPools()
 
 	for id, recruitObj in pairs(recruitPools) do
-		if recruitObj then
-			local type = recruitObj:getType()
-			local unlockKey = recruitObj:getCondition()
-
-			if unlockKey ~= "" then
-				local unlock, tips = self._systemKeeper:isUnlock(unlockKey)
-
-				if unlock then
-					local recruitCost = recruitObj:getRealCostIdAndCount()[1].costCount == 0 or recruitObj:getRealCostIdAndCount()[2] and recruitObj:getRealCostIdAndCount()[2].costCount == 0
-
-					if recruitCost then
-						return true
-					end
-				end
-			end
+		if self:checkIsShowRedPointByPool(recruitObj) then
+			return true
 		end
+	end
+
+	return false
+end
+
+function RecruitSystem:checkIsShowRedPointByPool(recruitObj)
+	if self:hasFree(recruitObj) then
+		return true
+	end
+
+	if self:hasReward(recruitObj) then
+		return true
+	end
+
+	return false
+end
+
+function RecruitSystem:hasFree(recruitObj)
+	local recruitCost = recruitObj:getRealCostIdAndCount()[1].costCount == 0 or recruitObj:getRealCostIdAndCount()[2] and recruitObj:getRealCostIdAndCount()[2].costCount == 0
+
+	if recruitCost then
+		return true
+	end
+
+	return false
+end
+
+function RecruitSystem:hasReward(recruitObj)
+	if recruitObj:hasRedPoint() then
+		return true
 	end
 
 	return false
@@ -317,4 +364,36 @@ function RecruitSystem:getRecruitRealCost(recruitPool, recruitCost, realTimes)
 	local costOff = math.floor(recruitCost.costCount / oldCount * 100)
 
 	return recruitCost, costOff
+end
+
+function RecruitSystem:getShowRecruitPools()
+	local recruitManager = self:getManager()
+	local recruitPools = recruitManager:getRecruitPools()
+	local data = {}
+
+	for id, recruitObj in pairs(recruitPools) do
+		if recruitObj then
+			local type = recruitObj:getType()
+			local unlockKey = recruitObj:getCondition()
+			local unlock = true
+
+			if unlockKey ~= "" then
+				unlock = self._systemKeeper:isUnlock(unlockKey)
+			end
+
+			if unlock and (type == RecruitPoolType.kClub or type == RecruitPoolType.kPve or type == RecruitPoolType.kPvp or type == RecruitPoolType.kActivity or type == RecruitPoolType.kActivityEquip) then
+				unlock = self:getActivityIsOpen(recruitObj:getId())
+			end
+
+			if unlock then
+				data[#data + 1] = recruitObj
+			end
+		end
+	end
+
+	table.sort(data, function (a, b)
+		return b:getRank() < a:getRank()
+	end)
+
+	return data
 end

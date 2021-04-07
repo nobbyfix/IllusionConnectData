@@ -6,6 +6,12 @@ CurrencyBuyPopMediator:has("_currencySystem", {
 CurrencyBuyPopMediator:has("_developSystem", {
 	is = "r"
 }):injectWith("DevelopSystem")
+CurrencyBuyPopMediator:has("_rechargeAndVipSystem", {
+	is = "r"
+}):injectWith("RechargeAndVipSystem")
+CurrencyBuyPopMediator:has("_shopSystem", {
+	is = "r"
+}):injectWith("ShopSystem")
 
 local kBtnHandlers = {
 	["main.actBtn"] = {
@@ -31,6 +37,7 @@ function CurrencyBuyPopMediator:onRegister()
 	self:mapEventListener(self:getEventDispatcher(), EVT_PLAYER_SYNCHRONIZED, self, self.refreshView)
 	self:mapEventListener(self:getEventDispatcher(), EVT_BUY_ENERGRY_SUCC, self, self.refreshView)
 	self:mapEventListener(self:getEventDispatcher(), EVT_SELL_ITEM_SUCC, self, self.updateConsumablePanel)
+	self:mapEventListener(self:getEventDispatcher(), EVT_FefreshForeverCard, self, self.updatePhysicalPanel)
 end
 
 function CurrencyBuyPopMediator:onRemove()
@@ -38,6 +45,7 @@ function CurrencyBuyPopMediator:onRemove()
 end
 
 function CurrencyBuyPopMediator:enterWithData(data)
+	self._rechargeAndVipSystem:requestFefreshForeverCard()
 	self:initView()
 	self:refreshView()
 end
@@ -46,6 +54,11 @@ function CurrencyBuyPopMediator:initView()
 	self._buyTimesLabel = self:getView():getChildByFullName("main.cur")
 	self._pricePanel = self:getView():getChildByFullName("main.actBtn.price")
 	self._consumableItemPanel = self:getView():getChildByName("itemPanel")
+	self._physicalPanel = self:getView():getChildByName("physicalPanel")
+	self._physicalPanelPosX, self._physicalPanelPosY = self._physicalPanel:getPosition()
+
+	self._physicalPanel:setVisible(false)
+
 	self._bonusAnim = self:getView():getChildByName("bonusAnim")
 	self._countPanel = self:getView():getChildByFullName("main.count")
 	local tips = self:getView():getChildByFullName("main.tips")
@@ -99,6 +112,7 @@ function CurrencyBuyPopMediator:refreshView()
 
 	self._countPanel:setString(aCurItemCount)
 	self:updateConsumablePanel()
+	self:updatePhysicalPanel()
 	self._buyTimesLabel:setString(aBuyTimes .. "/" .. aTotTimes)
 end
 
@@ -192,4 +206,87 @@ function CurrencyBuyPopMediator:updateConsumablePanel()
 	end
 
 	self._consumableItemPanel:setVisible(false)
+end
+
+function CurrencyBuyPopMediator:updatePhysicalPanel()
+	local data = self._shopSystem:getPackageListDirectPurchaseMCF()
+
+	if not data._fCardBuyFlag then
+		return
+	end
+
+	self._physicalPanel:setVisible(data._fCardStamina > 0)
+
+	if data._fCardStamina <= 0 then
+		return
+	end
+
+	if self._consumableItemPanel:isVisible() then
+		self._physicalPanel:setPositionY(self._physicalPanelPosY)
+	else
+		self._physicalPanel:setPositionY(self._consumableItemPanel:getPositionY())
+	end
+
+	local r = data._fCardStamina / data._staminaLimit
+	local ratia = tonumber(string.format("%.2f", tostring(r)))
+
+	self._physicalPanel:getChildByFullName("panel.LoadingBar"):setPercent(ratia * 100)
+	self._physicalPanel:getChildByFullName("panel.cur"):setString(data._fCardStamina .. "/" .. data._staminaLimit)
+
+	local button = self._physicalPanel:getChildByFullName("entry.button")
+
+	self._physicalPanel:getChildByFullName("entry.name"):setString(Strings:get("Shop_Stamina_UI_3"))
+
+	local function callFunc()
+		local curPower, lastRecoverTime = self._bagSystem:getPower()
+
+		if data._stamina_Max < data._fCardStamina + curPower then
+			local num = math.max(0, data._stamina_Max - curPower)
+
+			self:setPowerOverflow(num)
+
+			return
+		end
+
+		self._rechargeAndVipSystem:requestFCardStaminaReward(nil, data._fCardStamina)
+		self._shopSystem:resetRefresh()
+	end
+
+	mapButtonHandlerClick(nil, button, {
+		func = callFunc
+	})
+end
+
+function CurrencyBuyPopMediator:setPowerOverflow(num)
+	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
+
+	local function func()
+		self._rechargeAndVipSystem:requestFCardStaminaReward(nil, num)
+		self._shopSystem:resetRefresh()
+	end
+
+	local outSelf = self
+	local delegate = {
+		willClose = function (self, popupMediator, data)
+			if data.response == "ok" then
+				func()
+			elseif data.response == "cancel" then
+				-- Nothing
+			elseif data.response == "close" then
+				-- Nothing
+			end
+		end
+	}
+	local data = {
+		title = Strings:get("MonthCardForever_Overflow_Title"),
+		title1 = Strings:get("UITitle_EN_Tiliyichu"),
+		content = Strings:get("MonthCardForever_Overflow_Desc"),
+		sureBtn = {},
+		cancelBtn = {}
+	}
+	local view = self:getInjector():getInstance("AlertView")
+
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+	}, data, delegate))
 end

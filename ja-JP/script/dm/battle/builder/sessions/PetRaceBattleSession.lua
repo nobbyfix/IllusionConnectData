@@ -143,6 +143,17 @@ function PetRaceBattleSession:generateDetailedResultSummary(err)
 	}
 end
 
+function HeroStoryBattleSession:getBattlePassiveSkill()
+	local playerStagePassShow = BattleDataHelper:getStagePassiveSkill(battleData.playerData)
+	local enemyStagePassShow = BattleDataHelper:getStagePassiveSkill(battleData.enemyData)
+	local passiveSkill = {
+		playerStagePassShow = playerStagePassShow,
+		enemyStagePassShow = enemyStagePassShow
+	}
+
+	return passiveSkill
+end
+
 function PetRaceBattleSession:getBattleType()
 	return "petRace"
 end

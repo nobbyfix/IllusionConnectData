@@ -415,6 +415,12 @@ function HomeMediator:enterWithData(data)
 	local payOffSystem = self:getInjector():getInstance(PayOffSystem)
 
 	payOffSystem:createPayIncomplete()
+	self:reshMCFPower()
+	print("reshMCFPowerreshMCFPowerreshMCFPowerreshMCFPower")
+end
+
+function HomeMediator:reshMCFPower()
+	self._shopSystem:refreshMCFRedPoint()
 end
 
 function HomeMediator:onFunSwitchSet()

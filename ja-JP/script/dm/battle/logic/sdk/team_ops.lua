@@ -241,3 +241,9 @@ function exports.KillTarget(env, target)
 	formationSystem:excludeDyingUnit(target, workId)
 	env.global.RecordEffect(env, target:getId(), "KillTarget")
 end
+
+function exports.GetPlayerEnergy(env)
+	local player = env["$actor"]:getOwner()
+
+	return player:getEnergyReservoir():getEnergy()
+end

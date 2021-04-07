@@ -180,7 +180,9 @@ function StageWinPopMediator:showHeroPanel()
 		local playerBattleData = battleStatist[player:getRid()]
 		local team = developSystem:getTeamByType(StageTeamType.STAGE_NORMAL)
 		local mvpPoint = 0
-		model = ConfigReader:getDataByNameIdAndKey("MasterBase", team:getMasterId(), "RoleModel")
+		local masterSystem = developSystem:getMasterSystem()
+		local masterData = masterSystem:getMasterById(team:getMasterId())
+		model = masterData:getModel()
 
 		for k, v in pairs(playerBattleData.unitSummary or {}) do
 			local roleType = ConfigReader:getDataByNameIdAndKey("RoleModel", v.model, "Type")

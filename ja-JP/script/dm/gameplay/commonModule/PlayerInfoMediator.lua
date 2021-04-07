@@ -80,6 +80,7 @@ end
 function PlayerInfoMediator:userInject()
 	self._heroSystem = self._developSystem:getHeroSystem()
 	self._player = self._developSystem:getPlayer()
+	self._masterSystem = self._developSystem:getMasterSystem()
 end
 
 function PlayerInfoMediator:enterWithData(data)
@@ -254,8 +255,8 @@ end
 function PlayerInfoMediator:initTeamInfo()
 	local master = self._record:getMaster()
 
-	if master then
-		local roleModel = ConfigReader:requireDataByNameIdAndKey("MasterBase", master[1], "RoleModel")
+	if master and master[1] then
+		local roleModel = self._masterSystem:getMasterLeadStageModel(master[1], self._record:getLeadStageId() or "")
 		local info = {
 			stencil = 6,
 			iconType = "Bust5",
@@ -302,6 +303,16 @@ function PlayerInfoMediator:initTeamInfo()
 			petNode:addTo(petBg):center(petBg:getContentSize())
 			petNode:setPositionY(petNode:getPositionY() - 5)
 		end
+
+		local node = self._bg:getChildByFullName("teamInfo.node_leadStage")
+
+		node:removeAllChildren()
+
+		local icon = IconFactory:createLeadStageIconHor(self._record:getLeadStageId(), self._record:getLeadStageLevel())
+
+		if icon then
+			icon:addTo(node)
+		end
 	end
 end
 
@@ -346,7 +357,9 @@ function PlayerInfoMediator:onSendMsgClicked()
 			online = self._record:getOnline(),
 			lastOfflineTime = self._record:getLastOfflineTime(),
 			isFriend = self._record:getIsFriend(),
-			close = self._record:getIsFriend() == 1 and self._record:getFamiliarity() or nil
+			close = self._record:getIsFriend() == 1 and self._record:getFamiliarity() or nil,
+			leadStageId = self._record:getLeadStageId(),
+			leadStageLevel = self._record:getLeadStageLevel()
 		}
 
 		self._friendSystem:addRecentFriend(data)

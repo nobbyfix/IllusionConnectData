@@ -72,3 +72,49 @@ function PointOneKeyFinish:onClick(data)
 		end
 	end)
 end
+
+ActivityStageFinish = class("ActivityStageFinish", DebugViewTemplate, _M)
+
+function ActivityStageFinish:initialize()
+	self._opType = 235
+	self._viewConfig = {
+		{
+			default = "",
+			name = "blockId",
+			title = "指定副本(关卡ID)",
+			type = "Input"
+		},
+		{
+			default = "1",
+			name = "isAll",
+			title = "解锁全部:0:全部，1:不全部",
+			type = "Input"
+		}
+	}
+end
+
+DreamChallengeFinish = class("DreamChallengeFinish", DebugViewTemplate, _M)
+
+function DreamChallengeFinish:initialize()
+	self._opType = 236
+	self._viewConfig = {
+		{
+			default = "",
+			name = "dreamId",
+			title = "梦境塔id",
+			type = "Input"
+		},
+		{
+			default = "1",
+			name = "mapIdx",
+			title = "子章节索引（1、2、3....）",
+			type = "Input"
+		},
+		{
+			default = "1",
+			name = "pointIdx",
+			title = "关卡索引（1、2、3....）",
+			type = "Input"
+		}
+	}
+end

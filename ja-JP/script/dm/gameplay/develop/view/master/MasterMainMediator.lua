@@ -12,6 +12,9 @@ MasterMainMediator:has("_systemKeeper", {
 MasterMainMediator:has("_customDataSystem", {
 	is = "r"
 }):injectWith("CustomDataSystem")
+MasterMainMediator:has("_settingSystem", {
+	is = "r"
+}):injectWith("SettingSystem")
 MasterMainMediator:has("_soundId", {
 	is = "rw"
 })
@@ -66,6 +69,13 @@ local kTabBtnData = {
 		bg2PosY = cc.p(954, 48)
 	},
 	{
+		unlockKey = "LeadStage",
+		switchKey = "fn_master_leadStage",
+		viewName = "MasterLeadStageView",
+		tabName = Strings:get("LeadStage_SystemName"),
+		tabName1 = Strings:get("LeadStage_EnglishName")
+	},
+	{
 		unlockKey = "Master_Equip",
 		switchKey = "fn_master_equip",
 		viewName = "MasterEmblemView",
@@ -100,6 +110,7 @@ function MasterMainMediator:onRegister()
 
 	self._bagSystem = self._developSystem:getBagSystem()
 	self._masterSystem = self._developSystem:getMasterSystem()
+	self._heroSystem = self._developSystem:getHeroSystem()
 
 	self:mapButtonHandlersClick(kBtnHandlers)
 	self:mapEventListener(self:getEventDispatcher(), EVT_PLAYER_SYNCHRONIZED, self, self.refreshWithData)
@@ -141,7 +152,6 @@ function MasterMainMediator:resumeWithData()
 
 	self:updateData()
 	self:refreshTabBtn()
-	self:resetViews()
 end
 
 function MasterMainMediator:refreshWithData()
@@ -178,6 +188,7 @@ function MasterMainMediator:setupTopInfoWidget()
 end
 
 function MasterMainMediator:initNodes()
+	self._changeAnim = self:getView():getChildByFullName("animNode_0")
 	self._mainPanel = self:getView():getChildByFullName("main")
 	self._animNode = self:getView():getChildByFullName("animNode")
 	self._tabClone = self:getView():getChildByFullName("tabClone")
@@ -233,17 +244,22 @@ function MasterMainMediator:initTabBtn()
 	self._cacheViewsName = {}
 	self._cacheViews = {}
 	self._ignoreSound = true
-	local index = 0
+	self._invalidBtns = {}
 	local systemKeeper = self:getInjector():getInstance("SystemKeeper")
+	local index = 0
 
 	for i = 1, #kTabBtnData do
-		if not kTabBtnData[i].switchKey or CommonUtils.GetSwitch(kTabBtnData[i].switchKey) then
+		if not kTabBtnData[i].switchKey or systemKeeper:canShow(kTabBtnData[i].unlockKey) then
 			local data = kTabBtnData[i]
 			local unlockKey = data.unlockKey
 			local tabName = data.tabName
 			local tabName1 = data.tabName1
 			local viewName = data.viewName
-			local result, tip = systemKeeper:isUnlock(unlockKey)
+			local result, tip = systemKeeper:canShow(unlockKey)
+
+			if kTabBtnData[i].switchKey and not CommonUtils.GetSwitch(kTabBtnData[i].switchKey) then
+				result = false
+			end
 
 			if i == 1 then
 				result = true
@@ -281,10 +297,33 @@ function MasterMainMediator:initTabBtn()
 					redPoint:getView():setRotation(-45)
 
 					btn.redPoint = redPoint
+				elseif unlockKey == "LeadStage" then
+					local node = RedPoint:createDefaultNode()
+					local redPoint = RedPoint:new(node, btn, function ()
+						return self._masterSystem:checkLeadStageRedPoint(self._selectedMasterId)
+					end)
+
+					redPoint:getView():setAnchorPoint(cc.p(1, 1))
+					redPoint:getView():setPosition(cc.p(51, 106))
+					redPoint:getView():setTag(12138)
+					redPoint:getView():setLocalZOrder(999)
+					redPoint:getView():setRotation(-45)
+
+					btn.redPoint = redPoint
 				end
 
 				self._tabBtns[i] = btn
 				self._cacheViewsName[i] = viewName
+				local result, tip = systemKeeper:isUnlock(unlockKey)
+				btn.tip = nil
+
+				if not result then
+					btn.tip = tip
+
+					btn:setGray(true)
+
+					self._invalidBtns[i] = btn
+				end
 			end
 		end
 	end
@@ -316,6 +355,7 @@ function MasterMainMediator:createTabController()
 	})
 
 	self._tabController:selectTabByTag(self._tabType)
+	self._tabController:setInvalidButtons(self._invalidBtns)
 end
 
 function MasterMainMediator:refreshTabBtn()
@@ -328,6 +368,10 @@ function MasterMainMediator:refreshTabBtn()
 	self:initTabBtn()
 	self._tabController:refreshView(self._tabBtns)
 	self._tabController:selectTabByTag(self._tabType)
+end
+
+function MasterMainMediator:getAnimNode()
+	return self._changeAnim
 end
 
 function MasterMainMediator:resetViews(hideAnim)
@@ -384,7 +428,7 @@ function MasterMainMediator:refreshBgSize()
 
 	self._masterBustPanel:setVisible(self._tabType ~= tabNum)
 
-	local isShow = self._tabType ~= 1
+	local isShow = self._tabType ~= 1 and self._tabType ~= 3
 
 	self._mainPanel:getChildByFullName("bg1"):setVisible(isShow)
 	self._mainPanel:getChildByFullName("bg2"):setVisible(isShow)
@@ -543,7 +587,7 @@ function MasterMainMediator:createCell(cell, index)
 
 	local node = RedPoint:createDefaultNode()
 	local redPoint = RedPoint:new(node, cell, function ()
-		local red1 = self._masterSystem:isStarUpgradable(master)
+		local red1 = self._masterSystem:isStarUpgradable(master) or self._masterSystem:checkLeadStageRedPoint(master:getId())
 
 		return red1
 	end)
@@ -709,6 +753,18 @@ function MasterMainMediator:refreshRightBtnRedpoint()
 end
 
 function MasterMainMediator:onClickTab(name, tag)
+	if self._invalidBtns[tag] then
+		self:dispatch(ShowTipEvent({
+			tip = self._invalidBtns[tag].tip
+		}))
+
+		return
+	end
+
+	if tag ~= self._tabType then
+		self._masterSystem:setDoStageLvUpAnim(false)
+	end
+
 	self._tabType = tag
 	self._isClick = true
 
@@ -726,6 +782,15 @@ function MasterMainMediator:onClickTab(name, tag)
 		self._masterView:reloadData()
 	else
 		self._ignoreRefresh = false
+	end
+
+	if self._tabType == 3 then
+		AudioEngine:getInstance():playBackgroundMusic("Mus_Protagonist_Stage")
+	else
+		local bgImageId = self._settingSystem:getHomeBgId()
+		local BGM = ConfigReader:getDataByNameIdAndKey("HomeBackground", bgImageId, "BGM")
+
+		AudioEngine:getInstance():playBackgroundMusic(BGM)
 	end
 end
 

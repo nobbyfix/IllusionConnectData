@@ -120,6 +120,7 @@ end
 
 function FightStatisticPopMediator:processData()
 	self._statistic = {}
+	self._statistic_map = {}
 	local summonId = {}
 	self._allDmg = 0
 	self._allReceiveDamage = 0
@@ -155,8 +156,20 @@ function FightStatisticPopMediator:processData()
 			_tab.dmg = math.ceil(_tab.dmg)
 			_tab.receiveDamage = math.ceil(_tab.receiveDamage)
 			_tab.cure = math.ceil(_tab.cure)
-			self._statistic[#self._statistic + 1] = _tab
+
+			if self._statistic_map[v.cid] then
+				self._statistic_map[v.cid].liveTime = self._statistic_map[v.cid].liveTime + _tab.liveTime
+				self._statistic_map[v.cid].dmg = self._statistic_map[v.cid].dmg + _tab.dmg
+				self._statistic_map[v.cid].receiveDamage = self._statistic_map[v.cid].receiveDamage + _tab.receiveDamage
+				self._statistic_map[v.cid].cure = self._statistic_map[v.cid].cure + _tab.cure
+			else
+				self._statistic_map[v.cid] = _tab
+			end
 		end
+	end
+
+	for k, v in pairs(self._statistic_map) do
+		self._statistic[#self._statistic + 1] = v
 	end
 
 	for k, v in ipairs(self._statistic) do

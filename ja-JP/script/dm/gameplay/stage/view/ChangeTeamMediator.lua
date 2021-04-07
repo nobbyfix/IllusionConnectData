@@ -152,6 +152,18 @@ function ChangeTeamMediator:createMaster(cell, index)
 
 		layer:setColor(color)
 	end
+
+	local node = cc.Node:create()
+
+	node:addTo(layer):posite(90, 80)
+	node:removeAllChildren()
+
+	local id, lv = self._masterSystem:getMasterLeadStatgeLevel(data:getId())
+	local icon = IconFactory:createLeadStageIconVer(id, lv)
+
+	if icon then
+		icon:addTo(node)
+	end
 end
 
 function ChangeTeamMediator:onTouchChooseView(masterId)

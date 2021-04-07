@@ -228,7 +228,9 @@ function PlayerMessageWidget:onClickHead(senderInfo, sender)
 				city = senderInfo.city,
 				birthday = senderInfo.birthday,
 				tags = senderInfo.tags,
-				block = response.block
+				block = response.block,
+				leadStageId = senderInfo.leadStageId,
+				leadStageLevel = senderInfo.leadStageLevel
 			})
 
 			local view = self:getInjector():getInstance("PlayerInfoView")
@@ -515,7 +517,9 @@ function PrivateMessageWidget:onClickHead(senderInfo, sender)
 				city = senderInfo.city,
 				birthday = senderInfo.birthday,
 				tags = senderInfo.tags,
-				block = response.block
+				block = response.block,
+				leadStageId = senderInfo.leadStageId,
+				leadStageLevel = senderInfo.leadStageLevel
 			})
 
 			local view = self:getInjector():getInstance("PlayerInfoView")

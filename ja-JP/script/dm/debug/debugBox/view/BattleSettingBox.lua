@@ -178,6 +178,49 @@ function NoAiSetBox:onClick(data)
 	}))
 end
 
+StatistSetBox = class("StatistSetBox", DebugViewTemplate, _M)
+
+function StatistSetBox:initialize()
+	self._viewConfig = {
+		{
+			default = "",
+			name = "FileName",
+			_selectBoxShow = true,
+			type = "SelectBox",
+			title = "开启/关闭战斗统计详情",
+			_selectBoxAutoHide = true,
+			selectHandler = function (selectStr)
+				local ret = {}
+
+				table.insert(ret, {
+					"1",
+					"开启战斗统计详情"
+				})
+				table.insert(ret, {
+					"2",
+					"关闭战斗统计详情"
+				})
+
+				return ret
+			end
+		}
+	}
+end
+
+function StatistSetBox:onClick(data)
+	local mText = self._viewConfig[1].mtext
+
+	if tostring(mText) == "1" then
+		GameConfigs.StatistSetBox = true
+	else
+		GameConfigs.StatistSetBox = false
+	end
+
+	self:dispatch(ShowTipEvent({
+		tip = "设置完成"
+	}))
+end
+
 ChangeDEBUGValue = class("ChangeDEBUGValue", DebugViewTemplate, _M)
 
 function ChangeDEBUGValue:initialize()

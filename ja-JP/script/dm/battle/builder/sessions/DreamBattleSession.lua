@@ -162,9 +162,13 @@ function DreamBattleSession:getBattlePassiveSkill()
 		}
 	end
 
+	local playerStagePassShow = BattleDataHelper:getStagePassiveSkill(battleData.playerData)
+	local enemyStagePassShow = BattleDataHelper:getStagePassiveSkill(battleData.enemyData)
 	local passiveSkill = {
 		playerShow = playerShow,
-		enemyShow = enemyShow
+		enemyShow = enemyShow,
+		playerStagePassShow = playerStagePassShow,
+		enemyStagePassShow = enemyStagePassShow
 	}
 
 	return passiveSkill

@@ -99,18 +99,26 @@ end
 function RTPVPBattleSession:getBattlePassiveSkill(battleData, mainPlayerId)
 	local playerShow = {}
 	local enemyShow = {}
+	local playerStagePassShow = {}
+	local enemyStagePassShow = {}
 
 	if battleData.playerData and battleData.playerData.rid == mainPlayerId then
 		playerShow = BattleDataHelper:getPassiveSkill(battleData.playerData)
 		enemyShow = BattleDataHelper:getPassiveSkill(battleData.enemyData)
+		playerStagePassShow = BattleDataHelper:getStagePassiveSkill(battleData.playerData)
+		enemyStagePassShow = BattleDataHelper:getStagePassiveSkill(battleData.enemyData)
 	else
 		enemyShow = BattleDataHelper:getPassiveSkill(battleData.playerData)
 		playerShow = BattleDataHelper:getPassiveSkill(battleData.enemyData)
+		playerStagePassShow = BattleDataHelper:getStagePassiveSkill(battleData.enemyData)
+		enemyStagePassShow = BattleDataHelper:getStagePassiveSkill(battleData.playerData)
 	end
 
 	local passiveSkill = {
 		playerShow = playerShow,
-		enemyShow = enemyShow
+		enemyShow = enemyShow,
+		playerStagePassShow = playerStagePassShow,
+		enemyStagePassShow = enemyStagePassShow
 	}
 
 	return passiveSkill

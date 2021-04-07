@@ -35,7 +35,7 @@ function RangeEffectList:_attachAttrToTarget(targetType, attrFactor, env)
 	attrFactor:copyAttrFactor(mainAttrFactor)
 
 	if env and env ~= GameEnvType.kAll then
-		local evnAttrFactor = self:getAttrUnitByEvn(env)
+		local evnAttrFactor = self:getAttrUnitByEvn(targetType, env)
 
 		attrFactor:copyAttrFactor(evnAttrFactor)
 	end

@@ -148,7 +148,9 @@ function CooperateBossBattleEndMediator:refreshView()
 	local playerBattleData = battleStatist[player:getRid()]
 	local team = developSystem:getSpTeamByType(StageTeamType.CRUSADE)
 	local mvpPoint = 0
-	local model = ConfigReader:getDataByNameIdAndKey("MasterBase", team:getMasterId(), "RoleModel")
+	local masterSystem = developSystem:getMasterSystem()
+	local masterData = masterSystem:getMasterById(team:getMasterId())
+	local model = masterData:getModel()
 
 	for k, v in pairs(playerBattleData.unitSummary) do
 		local roleType = ConfigReader:getDataByNameIdAndKey("RoleModel", v.model, "Type")

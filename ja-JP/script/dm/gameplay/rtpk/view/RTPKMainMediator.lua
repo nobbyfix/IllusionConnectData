@@ -181,6 +181,10 @@ function RTPKMainMediator:addAnim()
 	local anim = cc.MovieClip:create("main_tiantizhujiemian")
 
 	anim:addTo(animNode):posite(32, 35)
+
+	local anim = cc.MovieClip:create("effect_tiantiduanweieff")
+
+	anim:addTo(self._bottom, 100):posite(580, 355)
 end
 
 function RTPKMainMediator:setBackGround()
@@ -371,12 +375,24 @@ function RTPKMainMediator:refreshMatchStatus()
 	end
 
 	local iconImg = self._main:getChildByName("Image_icon")
+	local icon = iconImg.icon
+	local needChangeIcon = false
 
-	iconImg:removeAllChildren()
+	if not icon then
+		needChangeIcon = true
+	elseif icon.gradeId ~= gradeData.Id then
+		needChangeIcon = true
+	end
 
-	local icon = IconFactory:createRTPKGradeIcon(gradeData.Id)
+	if needChangeIcon then
+		iconImg:removeAllChildren()
 
-	icon:addTo(iconImg):center(iconImg:getContentSize()):offset(0, 17)
+		local icon = IconFactory:createRTPKGradeIcon(gradeData.Id, true)
+
+		icon:addTo(iconImg):center(iconImg:getContentSize()):offset(7, 22)
+
+		iconImg.icon = icon
+	end
 
 	local timesText = self._main:getChildByName("Text_matchtimes")
 

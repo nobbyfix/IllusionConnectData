@@ -41,6 +41,27 @@
         "StoryLink": "S11S01",
         "SurfaceId": "Surface_CZheng_Awake"
     },
+    "JNLong": {
+        "AnimSound": "Se_Effect_Awakening_JNLong",
+        "Animation": "fldfa_Awaken",
+        "CutIn": [
+            0,
+            0,
+            1.0
+        ],
+        "ModelId": "Model_JNLong_Awake",
+        "Name": "JNLong_Awake_Name",
+        "NameDesc": "JNLong_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_JNLong_UnAwake",
+        "Reward": "HeroAwaken_JNLong",
+        "ShowHero": "JNLong",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "JNLong_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_JNLong_Awake"
+    },
     "KTSJKe": {
         "AnimSound": "",
         "Animation": "KTSJKe_Awaken",
@@ -187,6 +208,27 @@
         "StarId": "SDTZi_Awake",
         "StoryLink": "S11S01",
         "SurfaceId": "Surface_SDTZi_Awake"
+    },
+    "YLSBai": {
+        "AnimSound": "Se_Effect_Awakening_YLSBai",
+        "Animation": "slna_Awaken",
+        "CutIn": [
+            0,
+            0,
+            1.5
+        ],
+        "ModelId": "Model_YLSBai_Awake",
+        "Name": "YLSBai_Awake_Name",
+        "NameDesc": "YLSBai_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_YLSBai_UnAwake",
+        "Reward": "HeroAwaken_YLSBai",
+        "ShowHero": "YLSBai",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "YLSBai_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_YLSBai_Awake"
     },
     "YSTLu": {
         "AnimSound": "Se_Effect_Awakening_YSTLu",

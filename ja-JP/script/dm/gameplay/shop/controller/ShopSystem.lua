@@ -128,6 +128,11 @@ function ShopSystem:userInject()
 	self._heroSystem = self._developSystem:getHeroSystem()
 end
 
+function ActivitySystem:dispose()
+	self:shuttleTimers()
+	super.dispose(self)
+end
+
 function ShopSystem:checkEnabled(data)
 	local canShow = true
 	local unlock = true
@@ -1456,7 +1461,8 @@ function ShopSystem:getForeverConfig()
 			MonthCardForever_Img = ConfigReader:requireDataByNameIdAndKey("ConfigValue", "MonthCardForever_Img", "content"),
 			MonthCardForever_WindowImg = ConfigReader:requireDataByNameIdAndKey("ConfigValue", "MonthCardForever_WindowImg", "content"),
 			MonthCardForever_Pay = ConfigReader:requireDataByNameIdAndKey("ConfigValue", "MonthCardForever_Pay", "content"),
-			Stamina_Max = ConfigReader:requireDataByNameIdAndKey("ConfigValue", "Stamina_Max", "content")
+			Stamina_Max = ConfigReader:requireDataByNameIdAndKey("ConfigValue", "Stamina_Max", "content"),
+			Stamina_CD = ConfigReader:requireDataByNameIdAndKey("ConfigValue", "Stamina_Recovery", "content")
 		}
 	end
 
@@ -1519,7 +1525,8 @@ function ShopSystem:getPackageListDirectPurchaseMCF()
 		_sort = config.MonthCardForever_Sort,
 		_staminaLimit = config.MonthCardForever_StaminaLimit,
 		_weekReward = config.MonthCardForever_WeekReward,
-		_stamina_Max = config.Stamina_Max
+		_stamina_Max = config.Stamina_Max,
+		_stamina_CD = config.Stamina_CD
 	}
 
 	return monthCardF
@@ -1548,6 +1555,57 @@ end
 
 function ShopSystem:getRedPointForMonthcard()
 	return self:getRedPointForMCFWeekFlag() or self:getRedPointForMCFStamina()
+end
+
+function ShopSystem:refreshMCFRedPoint()
+	self:shuttleTimers()
+
+	self._isRefresh = true
+
+	local function checkTimeFunc()
+		local data = self:getPackageListDirectPurchaseMCF()
+
+		if data._fCardBuyFlag then
+			local data = self:getPackageListDirectPurchaseMCF()
+			local entry = self._bagSystem:getEntryById(CurrencyIdKind.kPower)
+			local curBagCount = entry.count
+			local curPower, lastRecoverTime = self._bagSystem:getPower()
+			local level = self._developSystem:getLevel()
+			local powerLimit = self._bagSystem:getRecoveryPowerLimit(level)
+			local cd = data._stamina_CD
+
+			if powerLimit <= curPower and curBagCount < powerLimit then
+				lastRecoverTime = (powerLimit - curBagCount) * cd + lastRecoverTime
+			end
+
+			if powerLimit <= curPower then
+				local remoteTimestamp = self._gameServerAgent:remoteTimestamp()
+				local enougth = math.floor((remoteTimestamp - lastRecoverTime) / cd) >= data._staminaLimit - data._fCardStamina
+
+				if enougth and self._isRefresh then
+					self._rechargeAndVipSystem:requestFefreshForeverCard()
+
+					self._isRefresh = false
+				end
+			end
+		end
+	end
+
+	self._timer = LuaScheduler:getInstance():schedule(checkTimeFunc, 2, false)
+
+	checkTimeFunc()
+end
+
+function ShopSystem:resetRefresh()
+	self._isRefresh = true
+end
+
+function ShopSystem:shuttleTimers()
+	if self._timer then
+		self._timer:stop()
+
+		self._timer = nil
+	end
 end
 
 function ShopSystem:getRedPointForDirectPackage()

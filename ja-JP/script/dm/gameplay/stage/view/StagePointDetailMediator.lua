@@ -743,7 +743,9 @@ function StagePointDetailMediator:refreshTeamView()
 
 	self._teamPanel:getChildByName("teamName"):setString(team:getName())
 
-	local roleModel = IconFactory:getRoleModelByKey("MasterBase", team:getMasterId())
+	local masterSystem = developSystem:getMasterSystem()
+	local masterData = masterSystem:getMasterById(team:getMasterId())
+	local roleModel = masterData:getModel()
 	local masterIcon = IconFactory:createRoleIconSprite({
 		stencil = 6,
 		iconType = "Bust5",

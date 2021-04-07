@@ -63,6 +63,12 @@ FriendPvpRecord:has("_clubPos", {
 FriendPvpRecord:has("_teamName", {
 	is = "rw"
 })
+FriendPvpRecord:has("_leadStageId", {
+	is = "r"
+})
+FriendPvpRecord:has("_leadStageLevel", {
+	is = "r"
+})
 
 FPVPPlayerStatus = {
 	kBusy = 2,
@@ -92,6 +98,8 @@ function FriendPvpRecord:initialize()
 	self._familiarity = 0
 	self._clubPos = -1
 	self._teamName = ""
+	self._leadStageId = ""
+	self._leadStageLevel = 0
 end
 
 function FriendPvpRecord:synchronize(data)
@@ -162,6 +170,14 @@ function FriendPvpRecord:synchronize(data)
 
 		if data.teamName then
 			self._teamName = data.teamName
+		end
+
+		if data.leadStageId then
+			self._leadStageId = data.leadStageId
+		end
+
+		if data.leadStageLevel then
+			self._leadStageLevel = data.leadStageLevel
 		end
 	end
 end

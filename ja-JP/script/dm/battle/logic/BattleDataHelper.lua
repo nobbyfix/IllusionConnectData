@@ -3,11 +3,19 @@ BattleDataHelper = BattleDataHelper or {}
 function BattleDataHelper:getIntegralBattleData(data)
 	local playerData = data.playerData
 	local enemyData = data.enemyData
+	local leadStageLevel_l = playerData.master.leadStageLevel
+	local leadStageLevel_r = enemyData.master.leadStageLevel
+	local leadStageId_l = playerData.master.leadStageId
+	local leadStageId_r = enemyData.master.leadStageId
 	data.playerData = BattleDataHelper:getIntegralPlayerData(playerData)
 	data.enemyData = BattleDataHelper:getIntegralPlayerData(enemyData, true)
 	local refreshCost = ConfigReader:getRecordById("ConfigValue", "TacticsCard_Reload").content
 	data.playerData.refreshCost = refreshCost
 	data.enemyData.refreshCost = refreshCost
+	data.playerData.leadStageId = leadStageId_l
+	data.enemyData.leadStageId = leadStageId_r
+	data.playerData.leadStageLevel = leadStageLevel_l
+	data.enemyData.leadStageLevel = leadStageLevel_r
 
 	return data
 end
@@ -137,10 +145,6 @@ end
 function BattleDataHelper:fillCardAI(card)
 	if card.hero and card.hero.blockAI and card.hero.blockAI ~= "" then
 		card.cardAI = ConfigReader:getRecordById("BlockAI", card.hero.blockAI)
-
-		if CommonUtils and not card.cardAI then
-			CommonUtils.uploadDataToBugly("fillCardAI Error", card.hero.configId or card.hero.id)
-		end
 	end
 end
 
@@ -445,6 +449,11 @@ function BattleDataHelper:fillMasterData(master, playerData, waveStr, isEnemy, s
 	else
 		master.surfaceIndex = self:getSufaceIndex("MasterBase", master)
 	end
+
+	if master.leadStageId and master.leadStageId ~= "" then
+		local data = ConfigReader:getRecordById("MasterLeadStage", master.leadStageId)
+		master.modelId = data.ModelId
+	end
 end
 
 local function deepCopy(desc, src)
@@ -465,6 +474,87 @@ function BattleDataHelper:addExtraPasvSkill(unit, skill, enemyBuff)
 	local protoFactory = PrototypeFactory:getInstance()
 	unit.skills.extrapasv = unit.skills.extrapasv or {}
 	unit.skills.extrapasv[#unit.skills.extrapasv + 1] = self:fillSkillData(deepCopy({}, skill), protoFactory, enemyBuff)
+end
+
+function BattleDataHelper:getStagePassiveSkill(playerData)
+	local playerShow = {
+		showMasterSkill = true
+	}
+
+	if playerData then
+		local waves = playerData.waves or {}
+		local cards = playerData.cards or {}
+
+		for index, wave in ipairs(waves) do
+			local master = wave.master
+
+			if master then
+				local masterPassive = master.skills and master.skills.passive or {}
+				local masterBuffes = playerData.skillBuff and playerData.skillBuff or {}
+				local masterSkill = {}
+				local stageBuffes = {}
+
+				if master.leadStageId and master.leadStageId ~= "" then
+					local leaderStagePass = ConfigReader:getDataByNameIdAndKey("MasterLeadStage", master.leadStageId, "Skill")
+
+					if leaderStagePass and leaderStagePass.Skill then
+						for k, v in pairs(leaderStagePass.Skill) do
+							masterSkill[v] = k
+						end
+					end
+
+					if leaderStagePass and leaderStagePass.Attr then
+						for k, v in pairs(leaderStagePass.Attr) do
+							stageBuffes[v] = k
+						end
+					end
+				end
+
+				for k, v in pairs(masterBuffes) do
+					local buffId = k
+					local buffLv = v
+
+					if stageBuffes[buffId] then
+						playerShow[#playerShow + 1] = {
+							master = true,
+							id = buffId,
+							lv = buffLv,
+							index = #playerShow + 1
+						}
+					end
+				end
+
+				for k, v in pairs(masterPassive) do
+					local skillId = v.skillId
+					local skillLv = v.level
+					local showInbattle = ConfigReader:getDataByNameIdAndKey("Skill", skillId, "ShowInBattle")
+					showInbattle = true
+
+					if showInbattle and masterSkill[skillId] then
+						playerShow[#playerShow + 1] = {
+							master = true,
+							id = skillId,
+							lv = skillLv,
+							index = masterSkill[skillId]
+						}
+					end
+				end
+			end
+
+			playerShow.leadStageLevel = master.leadStageLevel
+			playerShow.leadStageId = master.leadStageId
+		end
+	end
+
+	if not playerShow or not playerShow.leadStageLevel or playerShow.leadStageLevel <= 0 then
+		playerShow = nil
+	end
+
+	if not playerShow or not playerShow.leadStageId or playerShow.leadStageId == "" then
+		playerShow = nil
+	end
+
+	return playerShow
 end
 
 function BattleDataHelper:getPassiveSkill(playerData)
@@ -497,6 +587,7 @@ function BattleDataHelper:getPassiveSkill(playerData)
 					local skillId = v.skillId
 					local skillLv = v.level
 					local showInbattle = ConfigReader:getDataByNameIdAndKey("Skill", skillId, "ShowInBattle")
+					showInbattle = true
 
 					if showInbattle and masterSkill[skillId] then
 						playerShow[#playerShow + 1] = {

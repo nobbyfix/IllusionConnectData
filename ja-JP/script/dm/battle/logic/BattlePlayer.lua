@@ -54,6 +54,7 @@ function BattlePlayer:initialize(id)
 	self._initialCellNo = 8
 	self._energyReservoir = EnergyReservoir:new()
 	self._cardPool = HeroCardPool:new()
+	self._heroCardPool = self._cardPool
 	self._cardWindow = BattleCardWindow:new()
 end
 
@@ -331,7 +332,6 @@ end
 
 function BattlePlayer:setupCardWindowWithSkillCards(random)
 	self._cardState = "skill"
-	self._heroCardPool = self._cardPool
 	self._cardPool = SkillCardPool:new()
 	local cardPool = self._cardPool
 	local cardWindow = self._cardWindow

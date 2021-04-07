@@ -226,18 +226,20 @@ function ShopCoopExchangeMediator:createTableView()
 
 		if bar == nil then
 			bar = cc.TableViewCell:new()
+		else
+			bar:removeAllChildren()
+		end
 
-			for i = 1, 4 do
-				local itemIdx = idx * 4 + i
+		for i = 1, 4 do
+			local itemIdx = idx * 4 + i
 
-				if itemIdx <= #self._taskList then
-					local itemCell = self._cloneCell:clone()
+			if itemIdx <= #self._taskList then
+				local itemCell = self._cloneCell:clone()
 
-					itemCell:setSwallowTouches(false)
-					itemCell:setPosition(cc.p(8 + (size.width + 15) * (i - 1), 0))
-					bar:addChild(itemCell, 0, i)
-					self:updataCell(itemCell, itemIdx)
-				end
+				itemCell:setSwallowTouches(false)
+				itemCell:setPosition(cc.p(8 + (size.width + 15) * (i - 1), 0))
+				bar:addChild(itemCell, 0, i)
+				self:updataCell(itemCell, itemIdx)
 			end
 		end
 

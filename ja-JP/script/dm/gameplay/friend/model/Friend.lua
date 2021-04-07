@@ -75,6 +75,12 @@ Friend:has("_city", {
 Friend:has("_tags", {
 	is = "rw"
 })
+Friend:has("_leadStageId", {
+	is = "rw"
+})
+Friend:has("_leadStageLevel", {
+	is = "rw"
+})
 Friend:has("_recommendDesc", {
 	is = "rw"
 })
@@ -211,6 +217,14 @@ function Friend:synchronize(data)
 
 	if data.tags then
 		self._tags = data.tags
+	end
+
+	if data.leadStageId then
+		self._leadStageId = data.leadStageId
+	end
+
+	if data.leadStageLevel then
+		self._leadStageLevel = data.leadStageLevel
 	end
 
 	self:setRecommendDesc()

@@ -335,7 +335,9 @@ function RTPKTeamMediator:initWidgetInfo()
 
 	self._ruleBtn:setVisible(next(ruleData) ~= null)
 
-	if next(ruleData) then
+	local heroData = ruleData.hero
+
+	if heroData then
 		local data = {}
 
 		if ruleData.hero then
@@ -1051,6 +1053,10 @@ function RTPKTeamMediator:initTeamHero(node, info)
 end
 
 function RTPKTeamMediator:refreshCombatAndCost()
+	local effectScene = ConfigReader:getDataByNameIdAndKey("ConfigValue", "LeadStage_Effective", "content")
+	local isDouble = table.indexof("RTPK") > 0
+	local leadConfig = self._masterSystem:getMasterCurLeadStageConfig(self._curMasterId)
+	local addPercent = leadConfig and leadConfig.LeadFightHero * (isDouble and 2 or 1) or 0
 	local totalCombat = 0
 	local totalCost = 0
 	local averageCost = 0
@@ -1059,6 +1065,10 @@ function RTPKTeamMediator:refreshCombatAndCost()
 		local heroInfo = self._heroSystem:getHeroById(v)
 		totalCost = totalCost + heroInfo:getCost()
 		totalCombat = totalCombat + heroInfo:getSceneCombatByType(SceneCombatsType.kAll)
+	end
+
+	if leadConfig then
+		totalCombat = math.ceil((addPercent + 1) * totalCombat) or totalCombat
 	end
 
 	local masterData = self._masterSystem:getMasterById(self._curMasterId)
@@ -1087,37 +1097,48 @@ function RTPKTeamMediator:refreshCombatAndCost()
 	if fightId and fightId ~= "" then
 		self._combatInfoBtn:setVisible(true)
 		self._labelCombat:setString(Strings:get("SpPower_ShowName"))
+		self._combatInfoBtn:loadTextureNormal("asset/common/common_btn_xq.png")
+		self._combatInfoBtn:loadTexturePressed("asset/common/common_btn_xq.png")
 	end
 
-	self._combatInfoBtn:addTouchEventListener(function (sender, eventType)
-		if eventType == ccui.TouchEventType.began then
-			self._fightInfoTip:removeAllChildren()
+	if self._combatInfoBtn:isVisible() then
+		self._combatInfoBtn:addTouchEventListener(function (sender, eventType)
+			if eventType == ccui.TouchEventType.began then
+				self._fightInfoTip:removeAllChildren()
 
-			local level = DataReader:getDataByNameIdAndKey("ConfigLevelLimit", fightId, "StandardLv")
-			local desc = Strings:get("SpPower_ShowDescTitle", {
-				fontSize = 20,
-				fontName = TTF_FONT_FZYH_M,
-				level = level
-			})
-			local richText = ccui.RichText:createWithXML(desc, {})
+				local level = DataReader:getDataByNameIdAndKey("ConfigLevelLimit", fightId, "StandardLv")
+				local desc = Strings:get("SpPower_ShowDescTitle", {
+					fontSize = 20,
+					fontName = TTF_FONT_FZYH_M,
+					level = level
+				})
+				local richText = ccui.RichText:createWithXML(desc, {})
 
-			richText:setAnchorPoint(cc.p(0, 0))
-			richText:setPosition(cc.p(10, 10))
-			richText:addTo(self._fightInfoTip)
-			richText:renderContent(440, 0, true)
+				richText:setAnchorPoint(cc.p(0, 0))
+				richText:setPosition(cc.p(10, 10))
+				richText:addTo(self._fightInfoTip)
+				richText:renderContent(440, 0, true)
 
-			local size = richText:getContentSize()
+				local size = richText:getContentSize()
 
-			self._fightInfoTip:setContentSize(460, size.height + 20)
-			self._fightInfoTip:setVisible(true)
-		elseif eventType == ccui.TouchEventType.moved then
-			-- Nothing
-		elseif eventType == ccui.TouchEventType.canceled then
-			self._fightInfoTip:setVisible(false)
-		elseif eventType == ccui.TouchEventType.ended then
-			self._fightInfoTip:setVisible(false)
-		end
-	end)
+				self._fightInfoTip:setContentSize(460, size.height + 20)
+				self._fightInfoTip:setVisible(true)
+			elseif eventType == ccui.TouchEventType.moved then
+				-- Nothing
+			elseif eventType == ccui.TouchEventType.canceled then
+				self._fightInfoTip:setVisible(false)
+			elseif eventType == ccui.TouchEventType.ended then
+				self._fightInfoTip:setVisible(false)
+			end
+		end)
+	else
+		slot11 = self._combatInfoBtn
+
+		slot11:setVisible(leadConfig ~= nil and addPercent > 0)
+		self._combatInfoBtn:addTouchEventListener(function (sender, eventType)
+			self:onClickInfo(eventType, nil, isDouble)
+		end)
+	end
 end
 
 function RTPKTeamMediator:changeMasterId(event)

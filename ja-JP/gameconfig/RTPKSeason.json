@@ -84,5 +84,48 @@
             "end": "2021-04-15 23:00:00",
             "start": "2021-04-01 10:00:00"
         }
+    },
+    "RTPKSeason_3": {
+        "AllServerMinimum": "",
+        "AllServerNum": 30000,
+        "AllServerReward": [
+            "RTPK_SeriesALL_1",
+            "RTPK_SeriesALL_2",
+            "RTPK_SeriesALL_3",
+            "RTPK_SeriesALL_4",
+            "RTPK_SeriesALL_5",
+            "RTPK_SeriesALL_6",
+            "RTPK_SeriesALL_7",
+            "RTPK_SeriesALL_8",
+            "RTPK_SeriesALL_9",
+            "RTPK_SeriesALL_10",
+            "RTPK_SeriesALL_11",
+            "RTPK_SeriesALL_12",
+            "RTPK_SeriesALL_13",
+            "RTPK_SeriesALL_14",
+            "RTPK_SeriesALL_15",
+            "RTPK_SeriesALL_16",
+            "RTPK_SeriesALL_17"
+        ],
+        "AttrPercent": [
+            1,
+            1,
+            1.1
+        ],
+        "DailyWinReward": "",
+        "DailyWinRewardShow": "",
+        "Name": "RTPKSeason_3_Name",
+        "OneServerMinimum": "",
+        "OneServerNum": 10000,
+        "SeasonBackground": "RTPK_scene_ppcg_xxd",
+        "SeasonOrder": 3,
+        "SeasonRule": "RTPKSeason_3",
+        "SeasonShowModel": "LSLTe",
+        "ServerReward": "",
+        "ShowTime": 86400,
+        "TimeFactor": {
+            "end": "2021-05-01 23:00:00",
+            "start": "2021-04-17 10:00:00"
+        }
     }
 }

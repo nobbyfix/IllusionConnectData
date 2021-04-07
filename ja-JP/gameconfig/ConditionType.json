@@ -1091,6 +1091,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_PracticeWin_Desc"
     },
+    "Condi_PurewhiteExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_Purewhite_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_PurewhiteChengjiuDian_Desc"
+    },
     "Condi_QualityCollect": {
         "AchieveType1": "REACHCOUNT",
         "AchieveType2": "",

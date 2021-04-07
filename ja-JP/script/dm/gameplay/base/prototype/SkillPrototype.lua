@@ -149,6 +149,18 @@ function SkillPrototype.class:getEffectDesc(effectId, level)
 	return t:stringify(factorMap, funcMap)
 end
 
+function SkillPrototype.class:getSkillEffectDesc(effectId, level, style)
+	style = style or {}
+	style.fontName = style.fontName or TTF_FONT_FZYH_R
+	style.fontSize = style.fontSize or 18
+	style.fontColor = style.fontColor or "#FFFFFF"
+	local effectConfig = ConfigReader:getRecordById("Skill", effectId)
+	local desc = Strings:get(effectConfig.Desc, style)
+	local t = TextTemplate:new(desc)
+
+	return t:stringify(effectConfig, SkillPrototype:getEffectDescFactorFunc(level))
+end
+
 function SkillPrototype.class:getEffectDescFactorFunc(level)
 	return {
 		linear = function (value)
@@ -189,6 +201,7 @@ function SkillPrototype.class:getAttrEffectDesc(effectId, level, style)
 	style = style or {}
 	style.fontName = style.fontName or TTF_FONT_FZYH_R
 	style.fontSize = style.fontSize or 18
+	style.fontColor = style.fontColor or "#FFFFFF"
 	local effectConfig = ConfigReader:getRecordById("SkillAttrEffect", effectId)
 	local desc = Strings:get(effectConfig.EffectDesc, style)
 	local t = TextTemplate:new(desc)

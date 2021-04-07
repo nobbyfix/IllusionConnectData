@@ -148,9 +148,13 @@ function CrusadeBattleSession:getBattlePassiveSkill()
 	local battleData = self:getPlayersData()
 	local playerShow = BattleDataHelper:getPassiveSkill(battleData.playerData)
 	local enemyShow = BattleDataHelper:getPassiveSkill(battleData.enemyData)
+	local playerStagePassShow = BattleDataHelper:getStagePassiveSkill(battleData.playerData)
+	local enemyStagePassShow = BattleDataHelper:getStagePassiveSkill(battleData.enemyData)
 	local passiveSkill = {
 		playerShow = playerShow,
-		enemyShow = enemyShow
+		enemyShow = enemyShow,
+		playerStagePassShow = playerStagePassShow,
+		enemyStagePassShow = enemyStagePassShow
 	}
 
 	return passiveSkill

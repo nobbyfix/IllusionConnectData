@@ -115,7 +115,10 @@ end
 
 function ActivityStageUnFinishMediator:initSvpRole()
 	local team = self._model:getTeam()
-	local model = ConfigReader:getDataByNameIdAndKey("MasterBase", team:getMasterId(), "RoleModel")
+	local developSystem = self:getInjector():getInstance(DevelopSystem)
+	local masterSystem = developSystem:getMasterSystem()
+	local masterData = masterSystem:getMasterById(team:getMasterId())
+	local model = masterData:getModel()
 	local svpSprite = IconFactory:createRoleIconSprite({
 		useAnim = true,
 		iconType = "Bust9",

@@ -663,7 +663,7 @@ function BagMediator:updateDetailButtons(notHasShow)
 			else
 				buttons.useBtn:setVisible(false)
 			end
-		elseif subType == ItemTypes.K_HERO_STAR then
+		elseif subType == ItemTypes.K_HERO_STAR or subType == ItemTypes.K_MasterLeadStage then
 			buttons.useBtn:setVisible(true)
 			buttons.useBtn:setButtonName(Strings:get("bag_UI13"), Strings:get("UITitle_EN_Shiyong"))
 			self:setButtonEnabled(buttons.useBtn, true)

@@ -947,6 +947,9 @@ function ExploreTeamMediator:initTeamHero(node, info)
 end
 
 function ExploreTeamMediator:refreshCombatAndCost()
+	local leadConfig = self._masterSystem:getMasterCurLeadStageConfig(self._curMasterId)
+	local addPercent = leadConfig and leadConfig.LeadFightHero or 0
+
 	for i = 1, #self._teamList do
 		local heroes = self._teamList[i].heroes
 		local totalCombat = 0
@@ -956,6 +959,10 @@ function ExploreTeamMediator:refreshCombatAndCost()
 			local heroInfo = self._heroSystem:getHeroById(v)
 			totalCost = totalCost + heroInfo:getCost()
 			totalCombat = totalCombat + heroInfo:getSceneCombatByType(SceneCombatsType.kAll)
+		end
+
+		if leadConfig then
+			totalCombat = math.ceil((addPercent + 1) * totalCombat) or totalCombat
 		end
 
 		local masterData = self._masterSystem:getMasterById(self._curMasterId)
@@ -983,6 +990,15 @@ function ExploreTeamMediator:refreshCombatAndCost()
 			local color = self._costTotal <= self._costMaxNum and cc.c3b(255, 255, 255) or cc.c3b(255, 65, 51)
 
 			cost1:setTextColor(color)
+
+			local infoBtn = teamPanel:getChildByFullName("infoBtn")
+
+			infoBtn:setVisible(leadConfig ~= nil and addPercent > 0)
+			infoBtn:addTouchEventListener(function (sender, eventType)
+				local fightTip = teamPanel:getChildByFullName("fightInfo")
+
+				self:onClickInfo(eventType, fightTip)
+			end)
 		end
 	end
 end

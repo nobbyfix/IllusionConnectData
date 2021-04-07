@@ -561,6 +561,7 @@ function CooperateBossSystem:enterBattle(params, viewType)
 	battleDirector:setBattleSimulator(battleSimulator)
 	battleDirector:setBattleInterpreter(battleInterpreter)
 
+	local battlePassiveSkill = battleSession:getBattlePassiveSkill()
 	local logicInfo = {
 		director = battleDirector,
 		interpreter = battleInterpreter,

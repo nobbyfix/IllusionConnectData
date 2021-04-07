@@ -1217,6 +1217,20 @@
         "Unlock": "",
         "UnlockDesc": ""
     },
+    "Mus_Protagonist_Stage": {
+        "CueName": "Mus_Protagonist_Stage",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "Music_Expand/Mus_Protagonist_Stage",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
     "Mus_Redwhite": {
         "CueName": "Mus_Redwhite",
         "IncludeMusic": "",
@@ -3247,6 +3261,20 @@
         "Unlock": "",
         "UnlockDesc": ""
     },
+    "Se_Effect_Awakening_JNLong": {
+        "CueName": "Se_Effect_Awakening_JNLong",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "加尼隆觉醒",
+        "PkgName": "common/UI",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
     "Se_Effect_Awakening_LCYShi": {
         "CueName": "Se_Effect_Awakening_LCYShi",
         "IncludeMusic": "",
@@ -3308,6 +3336,20 @@
         "IncludeMusic": "",
         "IsMenu": "",
         "Param": "蒙特祖玛二世觉醒 ",
+        "PkgName": "common/UI",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Effect_Awakening_YLSBai": {
+        "CueName": "Se_Effect_Awakening_YLSBai",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "伊丽莎白觉醒",
         "PkgName": "common/UI",
         "Show": "",
         "ShowName": "",
@@ -3700,6 +3742,48 @@
         "IncludeMusic": "",
         "IsMenu": "",
         "Param": "",
+        "PkgName": "common/UI",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Effect_Stage_Detail": {
+        "CueName": "Se_Effect_Stage_Detail",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "源阶详情",
+        "PkgName": "common/UI",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Effect_Stage_Get": {
+        "CueName": "Se_Effect_Stage_Get",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "点亮",
+        "PkgName": "common/UI",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Effect_Stage_Line": {
+        "CueName": "Se_Effect_Stage_Line",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "线光",
         "PkgName": "common/UI",
         "Show": "",
         "ShowName": "",
@@ -4359,6 +4443,62 @@
         "IsMenu": "",
         "Param": "",
         "PkgName": "common/Skill_Daochang",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_BLTu_BSQRJie_Magic_1": {
+        "CueName": "Se_Skill_BLTu_BSQRJie_Magic_1",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_BLTu_BSQRJie_Magic_2": {
+        "CueName": "Se_Skill_BLTu_BSQRJie_Magic_2",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_BLTu_BSQRJie_Wand_1": {
+        "CueName": "Se_Skill_BLTu_BSQRJie_Wand_1",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_BLTu_BSQRJie_Wand_2": {
+        "CueName": "Se_Skill_BLTu_BSQRJie_Wand_2",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
         "Show": "",
         "ShowName": "",
         "ShowSourse": "",
@@ -7433,6 +7573,146 @@
         "Unlock": "",
         "UnlockDesc": ""
     },
+    "Se_Skill_LSLTe_Arrow_Hit": {
+        "CueName": "Se_Skill_LSLTe_Arrow_Hit",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_LSLTe_Arrow_Whoosh": {
+        "CueName": "Se_Skill_LSLTe_Arrow_Whoosh",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_LSLTe_Sword_1": {
+        "CueName": "Se_Skill_LSLTe_Sword_1",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_LSLTe_Sword_2": {
+        "CueName": "Se_Skill_LSLTe_Sword_2",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_LSLTe_Sword_3": {
+        "CueName": "Se_Skill_LSLTe_Sword_3",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_LSLTe_Sword_4": {
+        "CueName": "Se_Skill_LSLTe_Sword_4",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_LSLTe_Sword_5": {
+        "CueName": "Se_Skill_LSLTe_Sword_5",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_LSLTe_Sword_6": {
+        "CueName": "Se_Skill_LSLTe_Sword_6",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_LSLTe_Sword_Whoosh_1": {
+        "CueName": "Se_Skill_LSLTe_Sword_Whoosh_1",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_LSLTe_Sword_Whoosh_2": {
+        "CueName": "Se_Skill_LSLTe_Sword_Whoosh_2",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
     "Se_Skill_LYXi_Hit_1": {
         "CueName": "Se_Skill_LYXi_Hit_1",
         "IncludeMusic": "",
@@ -9409,6 +9689,90 @@
     },
     "Se_Skill_QBTe_QRJie_Jump": {
         "CueName": "Se_Skill_QBTe_QRJie_Jump",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_QTQCi_Spear_Magic_1": {
+        "CueName": "Se_Skill_QTQCi_Spear_Magic_1",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_QTQCi_Spear_Magic_2": {
+        "CueName": "Se_Skill_QTQCi_Spear_Magic_2",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_QTQCi_Spear_Stab_1": {
+        "CueName": "Se_Skill_QTQCi_Spear_Stab_1",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_QTQCi_Spear_Stab_2": {
+        "CueName": "Se_Skill_QTQCi_Spear_Stab_2",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_QTQCi_Spear_Stab_3": {
+        "CueName": "Se_Skill_QTQCi_Spear_Stab_3",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_QTQCi_Spear_Whoosh": {
+        "CueName": "Se_Skill_QTQCi_Spear_Whoosh",
         "IncludeMusic": "",
         "IsMenu": "",
         "Param": "",
@@ -11695,6 +12059,104 @@
         "IsMenu": "",
         "Param": "",
         "PkgName": "common/Skill_Halloween",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_YSuo_Air_Explode": {
+        "CueName": "Se_Skill_YSuo_Air_Explode",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_YSuo_Heart_Explode": {
+        "CueName": "Se_Skill_YSuo_Heart_Explode",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_YSuo_Knife_Spin": {
+        "CueName": "Se_Skill_YSuo_Knife_Spin",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_YSuo_Knife_Stab": {
+        "CueName": "Se_Skill_YSuo_Knife_Stab",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_YSuo_Knife_Throw": {
+        "CueName": "Se_Skill_YSuo_Knife_Throw",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_YSuo_Knife_Wave": {
+        "CueName": "Se_Skill_YSuo_Knife_Wave",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Se_Skill_YSuo_Rose_Explode": {
+        "CueName": "Se_Skill_YSuo_Rose_Explode",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Skill",
         "Show": "",
         "ShowName": "",
         "ShowSourse": "",
@@ -72624,6 +73086,1371 @@
         "Unlock": "",
         "UnlockDesc": ""
     },
+    "Voice_LSLTe_01": {
+        "CueName": "Voice_LSLTe_01",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_01_SoundDesc",
+        "Text": "Sound_Text_1",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_LSLTe_02": {
+        "CueName": "Voice_LSLTe_02",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_02_SoundDesc",
+        "Text": "Sound_Text_2",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_LSLTe_03": {
+        "CueName": "Voice_LSLTe_03",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_03_SoundDesc",
+        "Text": "Sound_Text_3",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_LSLTe_04": {
+        "CueName": "Voice_LSLTe_04",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_04_SoundDesc",
+        "Text": "Sound_Text_4",
+        "Unlock": [
+            {
+                "HeroLove": 10
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_LSLTe_05": {
+        "CueName": "Voice_LSLTe_05",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_05_SoundDesc",
+        "Text": "Sound_Text_5",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_LSLTe_06": {
+        "CueName": "Voice_LSLTe_06",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_06_SoundDesc",
+        "Text": "Sound_Text_6",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_LSLTe_07": {
+        "CueName": "Voice_LSLTe_07",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_07_SoundDesc",
+        "Text": "Sound_Text_7",
+        "Unlock": [
+            {
+                "Amount": 1,
+                "Hero": [
+                    "MGNa"
+                ]
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_OneHero"
+    },
+    "Voice_LSLTe_08": {
+        "CueName": "Voice_LSLTe_08",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_08_SoundDesc",
+        "Text": "Sound_Text_8",
+        "Unlock": [
+            {
+                "Amount": 1,
+                "Hero": [
+                    "BLTu"
+                ]
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_OneHero"
+    },
+    "Voice_LSLTe_09": {
+        "CueName": "Voice_Default",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "common/Default",
+        "Show": 0,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_09_SoundDesc",
+        "Text": "Sound_Text_9",
+        "Unlock": [
+            {
+                "Amount": 1,
+                "Hero": [
+                    "BLTu"
+                ]
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_OneHero"
+    },
+    "Voice_LSLTe_10": {
+        "CueName": "Voice_LSLTe_10",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_10_SoundDesc",
+        "Text": "Sound_Text_10",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_LSLTe_11": {
+        "CueName": "Voice_LSLTe_11",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_11_SoundDesc",
+        "Text": "Sound_Text_11",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_LSLTe_12": {
+        "CueName": "Voice_LSLTe_12",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_12_SoundDesc",
+        "Text": "Sound_Text_12",
+        "Unlock": [
+            {
+                "HeroStar": 4
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroStar"
+    },
+    "Voice_LSLTe_13": {
+        "CueName": "Voice_LSLTe_13",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_13_SoundDesc",
+        "Text": "Sound_Text_13",
+        "Unlock": [
+            {
+                "HeroQuality": 20
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroQuality"
+    },
+    "Voice_LSLTe_14": {
+        "CueName": "Voice_LSLTe_14",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_14_SoundDesc",
+        "Text": "Sound_Text_14",
+        "Unlock": [
+            {
+                "HeroLove": 3
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_LSLTe_15": {
+        "CueName": "Voice_LSLTe_15",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_15_SoundDesc",
+        "Text": "Sound_Text_15",
+        "Unlock": [
+            {
+                "HeroLove": 4
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_LSLTe_16": {
+        "CueName": "Voice_LSLTe_16",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_16_SoundDesc",
+        "Text": "Sound_Text_16",
+        "Unlock": [
+            {
+                "HeroLove": 5
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_LSLTe_17": {
+        "CueName": "Voice_LSLTe_17",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_17_SoundDesc",
+        "Text": "Sound_Text_17",
+        "Unlock": [
+            {
+                "HeroLove": 6
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_LSLTe_18": {
+        "CueName": "Voice_LSLTe_18",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_18_SoundDesc",
+        "Text": "Sound_Text_18",
+        "Unlock": [
+            {
+                "HeroLove": 7
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_LSLTe_19": {
+        "CueName": "Voice_LSLTe_19",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 0,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_19_SoundDesc",
+        "Text": "Sound_Text_19",
+        "Unlock": [
+            {
+                "Time": "Birthday",
+                "duration": 24
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_LSLTe_20": {
+        "CueName": "Voice_LSLTe_20",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_20_SoundDesc",
+        "Text": "Sound_Text_20",
+        "Unlock": [
+            {
+                "HeroLove": 2
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_LSLTe_21": {
+        "CueName": "Voice_LSLTe_21",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_21_SoundDesc",
+        "Text": "Sound_Text_21",
+        "Unlock": [
+            {
+                "HeroLove": 5
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_LSLTe_22_1": {
+        "CueName": "Voice_LSLTe_22_1",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 0,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_22_1_SoundDesc",
+        "Text": "Sound_Text_22",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Voice_LSLTe_22_2": {
+        "CueName": "Voice_LSLTe_22_2",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 0,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_22_2_SoundDesc",
+        "Text": "Sound_Text_22",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Voice_LSLTe_22_3": {
+        "CueName": "Voice_LSLTe_22_3",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 0,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_22_3_SoundDesc",
+        "Text": "Sound_Text_22",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Voice_LSLTe_22_4": {
+        "CueName": "Voice_LSLTe_22_4",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 0,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_22_4_SoundDesc",
+        "Text": "Sound_Text_22",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Voice_LSLTe_22_5": {
+        "CueName": "Voice_LSLTe_22_5",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 0,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_22_5_SoundDesc",
+        "Text": "Sound_Text_22",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Voice_LSLTe_23": {
+        "CueName": "Voice_LSLTe_23",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_23_SoundDesc",
+        "Text": "Sound_Text_23",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_LSLTe_24": {
+        "CueName": "Voice_LSLTe_24",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 0,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_24_SoundDesc",
+        "Text": "Sound_Text_24",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_LSLTe_25": {
+        "CueName": "Voice_LSLTe_25",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_25_SoundDesc",
+        "Text": "Sound_Text_25",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_LSLTe_26": {
+        "CueName": "Voice_LSLTe_26",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_26_SoundDesc",
+        "Text": "Sound_Text_26",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_LSLTe_27": {
+        "CueName": "Voice_LSLTe_27",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_27_SoundDesc",
+        "Text": "Sound_Text_27",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_LSLTe_28": {
+        "CueName": "Voice_LSLTe_28",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_28_SoundDesc",
+        "Text": "Sound_Text_28",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_LSLTe_29": {
+        "CueName": "Voice_LSLTe_29",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_29_SoundDesc",
+        "Text": "Sound_Text_29",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_LSLTe_30": {
+        "CueName": "Voice_LSLTe_30",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_30_SoundDesc",
+        "Text": "Sound_Text_30",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_LSLTe_31": {
+        "CueName": "Voice_LSLTe_31",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_31_SoundDesc",
+        "Text": "Sound_Text_31",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_LSLTe_32": {
+        "CueName": "Voice_LSLTe_32",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_32_SoundDesc",
+        "Text": "Sound_Text_32",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_OneHero"
+    },
+    "Voice_LSLTe_34": {
+        "CueName": "Voice_LSLTe_34",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_34_SoundDesc",
+        "Text": "Sound_Text_34",
+        "Unlock": [
+            {
+                "HeroLove": 10
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_LSLTe_35": {
+        "CueName": "Voice_LSLTe_35",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_35_SoundDesc",
+        "Text": "Sound_Text_35",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_LSLTe_36": {
+        "CueName": "Voice_LSLTe_36",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_36_SoundDesc",
+        "Text": "Sound_Text_36",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_LSLTe_37": {
+        "CueName": "Voice_LSLTe_37",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_37_SoundDesc",
+        "Text": "Sound_Text_37",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_LSLTe_38": {
+        "CueName": "Voice_LSLTe_38",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_38_SoundDesc",
+        "Text": "Sound_Text_38",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_LSLTe_39": {
+        "CueName": "Voice_LSLTe_39",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 0,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_39_SoundDesc",
+        "Text": "Sound_Text_39",
+        "Unlock": [
+            {
+                "Time": "9-1-00-00-00",
+                "duration": 24
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_LSLTe_40_1": {
+        "CueName": "Voice_LSLTe_40_1",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_40_1_SoundDesc",
+        "Text": "Sound_Text_40_1",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_LSLTe_40_2": {
+        "CueName": "Voice_LSLTe_40_2",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_40_2_SoundDesc",
+        "Text": "Sound_Text_40_2",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_LSLTe_40_3": {
+        "CueName": "Voice_LSLTe_40_3",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_40_3_SoundDesc",
+        "Text": "Sound_Text_40_3",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_LSLTe_41": {
+        "CueName": "Voice_LSLTe_41",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_41_SoundDesc",
+        "Text": "Sound_Text_41",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_LSLTe_42": {
+        "CueName": "Voice_LSLTe_42",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_42_SoundDesc",
+        "Text": "Sound_Text_42",
+        "Unlock": [
+            {
+                "HeroLove": 5
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_LSLTe_43": {
+        "CueName": "Voice_LSLTe_43",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_43_SoundDesc",
+        "Text": "Sound_Text_43",
+        "Unlock": [
+            {
+                "HeroLove": 10
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_LSLTe_44": {
+        "CueName": "Voice_LSLTe_44",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_44_SoundDesc",
+        "Text": "Sound_Text_44",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_LSLTe_45": {
+        "CueName": "Voice_LSLTe_45",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_45_SoundDesc",
+        "Text": "Sound_Text_45",
+        "Unlock": [
+            {
+                "HeroLove": 5
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_LSLTe_46": {
+        "CueName": "Voice_LSLTe_46",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_46_SoundDesc",
+        "Text": "Sound_Text_46",
+        "Unlock": [
+            {
+                "HeroLove": 10
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_LSLTe_47": {
+        "CueName": "Voice_LSLTe_47",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_47_SoundDesc",
+        "Text": "Sound_Text_47",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_LSLTe_48": {
+        "CueName": "Voice_LSLTe_48",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_48_SoundDesc",
+        "Text": "Sound_Text_48",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_LSLTe_49": {
+        "CueName": "Voice_LSLTe_49",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_49_SoundDesc",
+        "Text": "Sound_Text_49",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_LSLTe_50": {
+        "CueName": "Voice_LSLTe_50",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_50_SoundDesc",
+        "Text": "Sound_Text_50",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_LSLTe_51": {
+        "CueName": "Voice_LSLTe_51",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_51_SoundDesc",
+        "Text": "Sound_Text_51",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_LSLTe_52": {
+        "CueName": "Voice_LSLTe_52",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_52_SoundDesc",
+        "Text": "Sound_Text_52",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_LSLTe_53": {
+        "CueName": "Voice_LSLTe_53",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_53_SoundDesc",
+        "Text": "Sound_Text_53",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_LSLTe_54": {
+        "CueName": "Voice_LSLTe_54",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_54_SoundDesc",
+        "Text": "Sound_Text_54",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_LSLTe_55": {
+        "CueName": "Voice_LSLTe_55",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_55_SoundDesc",
+        "Text": "Sound_Text_55",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_LSLTe_56": {
+        "CueName": "Voice_LSLTe_56",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_56_SoundDesc",
+        "Text": "Sound_Text_56",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_LSLTe_57": {
+        "CueName": "Voice_LSLTe_57",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_57_SoundDesc",
+        "Text": "Sound_Text_57",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_LSLTe_58": {
+        "CueName": "Voice_LSLTe_58",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_58_SoundDesc",
+        "Text": "Sound_Text_58",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_LSLTe_59": {
+        "CueName": "Voice_LSLTe_59",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_59_SoundDesc",
+        "Text": "Sound_Text_59",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_LSLTe_60": {
+        "CueName": "Voice_LSLTe_60",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_60_SoundDesc",
+        "Text": "Sound_Text_60",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_LSLTe_61": {
+        "CueName": "Voice_LSLTe_61",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_61_SoundDesc",
+        "Text": "Sound_Text_61",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_LSLTe_62": {
+        "CueName": "Voice_LSLTe_62",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_62_SoundDesc",
+        "Text": "Sound_Text_62",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_LSLTe_63": {
+        "CueName": "Voice_LSLTe_63",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_63_SoundDesc",
+        "Text": "Sound_Text_63",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_LSLTe_64": {
+        "CueName": "Voice_LSLTe_64",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_64_SoundDesc",
+        "Text": "Sound_Text_64",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_LSLTe_65": {
+        "CueName": "Voice_LSLTe_65",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_65_SoundDesc",
+        "Text": "Sound_Text_65",
+        "Unlock": [
+            {
+                "HeroStar": 6
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_LSLTe_66": {
+        "CueName": "Voice_LSLTe_66",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_66_SoundDesc",
+        "Text": "Sound_Text_66",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_LSLTe_67": {
+        "CueName": "Voice_LSLTe_67",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_67_SoundDesc",
+        "Text": "Sound_Text_67",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_LSLTe_68": {
+        "CueName": "Voice_LSLTe_68",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_68_SoundDesc",
+        "Text": "Sound_Text_68",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_LSLTe_69": {
+        "CueName": "Voice_LSLTe_69",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_69_SoundDesc",
+        "Text": "Sound_Text_69",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_LSLTe_70_1": {
+        "CueName": "Voice_LSLTe_70_1",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_70_1_SoundDesc",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Voice_LSLTe_70_2": {
+        "CueName": "Voice_LSLTe_70_2",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_70_2_SoundDesc",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Voice_LSLTe_70_3": {
+        "CueName": "Voice_LSLTe_70_3",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/LSLTe",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_LSLTe_70_3_SoundDesc",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
     "Voice_LYSi_01": {
         "CueName": "Voice_LYSi_01",
         "IncludeMusic": "",
@@ -95152,6 +96979,1413 @@
         "ShowName": "",
         "ShowSourse": "",
         "SoundDesc": "Voice_QBTe_70_3_SoundDesc",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_01": {
+        "CueName": "Voice_QTQCi_01",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_01_SoundDesc",
+        "Text": "Sound_Text_1",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_QTQCi_02": {
+        "CueName": "Voice_QTQCi_02",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_02_SoundDesc",
+        "Text": "Sound_Text_2",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_QTQCi_03": {
+        "CueName": "Voice_QTQCi_03",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_03_SoundDesc",
+        "Text": "Sound_Text_3",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_QTQCi_04": {
+        "CueName": "Voice_QTQCi_04",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_04_SoundDesc",
+        "Text": "Sound_Text_4",
+        "Unlock": [
+            {
+                "HeroLove": 10
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_QTQCi_05": {
+        "CueName": "Voice_QTQCi_05",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_05_SoundDesc",
+        "Text": "Sound_Text_5",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_QTQCi_06": {
+        "CueName": "Voice_QTQCi_06",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_06_SoundDesc",
+        "Text": "Sound_Text_6",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_QTQCi_07": {
+        "CueName": "Voice_QTQCi_07",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 0,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_07_SoundDesc",
+        "Text": "Sound_Text_7",
+        "Unlock": [
+            {
+                "Amount": 1,
+                "Hero": [
+                    "HSYZhai"
+                ]
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_OneHero"
+    },
+    "Voice_QTQCi_08": {
+        "CueName": "Voice_QTQCi_08",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_08_SoundDesc",
+        "Text": "Sound_Text_8",
+        "Unlock": [
+            {
+                "Amount": 1,
+                "Hero": [
+                    "YXNMei"
+                ]
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_OneHero"
+    },
+    "Voice_QTQCi_09": {
+        "CueName": "Voice_QTQCi_09",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_09_SoundDesc",
+        "Text": "Sound_Text_9",
+        "Unlock": [
+            {
+                "Amount": 1,
+                "Hero": [
+                    "ZTXCun"
+                ]
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_OneHero"
+    },
+    "Voice_QTQCi_10": {
+        "CueName": "Voice_QTQCi_10",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_10_SoundDesc",
+        "Text": "Sound_Text_10",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_QTQCi_11": {
+        "CueName": "Voice_QTQCi_11",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_11_SoundDesc",
+        "Text": "Sound_Text_11",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_QTQCi_12": {
+        "CueName": "Voice_QTQCi_12",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_12_SoundDesc",
+        "Text": "Sound_Text_12",
+        "Unlock": [
+            {
+                "HeroStar": 4
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroStar"
+    },
+    "Voice_QTQCi_13": {
+        "CueName": "Voice_QTQCi_13",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_13_SoundDesc",
+        "Text": "Sound_Text_13",
+        "Unlock": [
+            {
+                "HeroQuality": 20
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroQuality"
+    },
+    "Voice_QTQCi_14": {
+        "CueName": "Voice_QTQCi_14",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_14_SoundDesc",
+        "Text": "Sound_Text_14",
+        "Unlock": [
+            {
+                "HeroLove": 3
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_QTQCi_15": {
+        "CueName": "Voice_QTQCi_15",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_15_SoundDesc",
+        "Text": "Sound_Text_15",
+        "Unlock": [
+            {
+                "HeroLove": 4
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_QTQCi_16": {
+        "CueName": "Voice_QTQCi_16",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_16_SoundDesc",
+        "Text": "Sound_Text_16",
+        "Unlock": [
+            {
+                "HeroLove": 5
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_QTQCi_17": {
+        "CueName": "Voice_QTQCi_17",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_17_SoundDesc",
+        "Text": "Sound_Text_17",
+        "Unlock": [
+            {
+                "HeroLove": 6
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_QTQCi_18": {
+        "CueName": "Voice_QTQCi_18",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_18_SoundDesc",
+        "Text": "Sound_Text_18",
+        "Unlock": [
+            {
+                "HeroLove": 7
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_QTQCi_19": {
+        "CueName": "Voice_QTQCi_19",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 0,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_19_SoundDesc",
+        "Text": "Sound_Text_19",
+        "Unlock": [
+            {
+                "Time": "Birthday",
+                "duration": 24
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_QTQCi_20": {
+        "CueName": "Voice_QTQCi_20",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_20_SoundDesc",
+        "Text": "Sound_Text_20",
+        "Unlock": [
+            {
+                "HeroLove": 2
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_QTQCi_21": {
+        "CueName": "Voice_QTQCi_21",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_21_SoundDesc",
+        "Text": "Sound_Text_21",
+        "Unlock": [
+            {
+                "HeroLove": 5
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_QTQCi_22_1": {
+        "CueName": "Voice_QTQCi_22_1",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 0,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_22_1_SoundDesc",
+        "Text": "Sound_Text_22",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_22_2": {
+        "CueName": "Voice_QTQCi_22_2",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 0,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_22_2_SoundDesc",
+        "Text": "Sound_Text_22",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_22_3": {
+        "CueName": "Voice_QTQCi_22_3",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 0,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_22_3_SoundDesc",
+        "Text": "Sound_Text_22",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_22_4": {
+        "CueName": "Voice_QTQCi_22_4",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 0,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_22_4_SoundDesc",
+        "Text": "Sound_Text_22",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_22_5": {
+        "CueName": "Voice_QTQCi_22_5",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 0,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_22_5_SoundDesc",
+        "Text": "Sound_Text_22",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_22_6": {
+        "CueName": "Voice_QTQCi_22_6",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 0,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_22_5_SoundDesc",
+        "Text": "Sound_Text_22",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_22_7": {
+        "CueName": "Voice_QTQCi_22_7",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_22_5_SoundDesc",
+        "Text": "Sound_Text_23",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_22_8": {
+        "CueName": "Voice_QTQCi_22_8",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_22_5_SoundDesc",
+        "Text": "Sound_Text_24",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_23": {
+        "CueName": "Voice_QTQCi_23",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_23_SoundDesc",
+        "Text": "Sound_Text_23",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_QTQCi_24": {
+        "CueName": "Voice_QTQCi_24",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 0,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_24_SoundDesc",
+        "Text": "Sound_Text_24",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_QTQCi_25": {
+        "CueName": "Voice_QTQCi_25",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_25_SoundDesc",
+        "Text": "Sound_Text_25",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_QTQCi_26": {
+        "CueName": "Voice_QTQCi_26",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_26_SoundDesc",
+        "Text": "Sound_Text_26",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_QTQCi_27": {
+        "CueName": "Voice_QTQCi_27",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_27_SoundDesc",
+        "Text": "Sound_Text_27",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_QTQCi_28": {
+        "CueName": "Voice_QTQCi_28",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_28_SoundDesc",
+        "Text": "Sound_Text_28",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_QTQCi_29": {
+        "CueName": "Voice_QTQCi_29",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_29_SoundDesc",
+        "Text": "Sound_Text_29",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_QTQCi_30": {
+        "CueName": "Voice_QTQCi_30",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_30_SoundDesc",
+        "Text": "Sound_Text_30",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_QTQCi_31": {
+        "CueName": "Voice_QTQCi_31",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_31_SoundDesc",
+        "Text": "Sound_Text_31",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_QTQCi_32": {
+        "CueName": "Voice_QTQCi_32",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_32_SoundDesc",
+        "Text": "Sound_Text_32",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_OneHero"
+    },
+    "Voice_QTQCi_34": {
+        "CueName": "Voice_QTQCi_34",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_34_SoundDesc",
+        "Text": "Sound_Text_34",
+        "Unlock": [
+            {
+                "HeroLove": 10
+            }
+        ],
+        "UnlockDesc": "Sound_Unlock_HeroLove"
+    },
+    "Voice_QTQCi_35": {
+        "CueName": "Voice_QTQCi_35",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_35_SoundDesc",
+        "Text": "Sound_Text_35",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_36": {
+        "CueName": "Voice_QTQCi_36",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_36_SoundDesc",
+        "Text": "Sound_Text_36",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_37": {
+        "CueName": "Voice_QTQCi_37",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_37_SoundDesc",
+        "Text": "Sound_Text_37",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_38": {
+        "CueName": "Voice_QTQCi_38",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_38_SoundDesc",
+        "Text": "Sound_Text_38",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_39": {
+        "CueName": "Voice_QTQCi_39",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 0,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_39_SoundDesc",
+        "Text": "Sound_Text_39",
+        "Unlock": [
+            {
+                "Time": "4-1-00-00-00",
+                "duration": 24
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_40_1": {
+        "CueName": "Voice_QTQCi_40_1",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_40_1_SoundDesc",
+        "Text": "Sound_Text_40_1",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_40_2": {
+        "CueName": "Voice_QTQCi_40_2",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_40_2_SoundDesc",
+        "Text": "Sound_Text_40_2",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_40_3": {
+        "CueName": "Voice_QTQCi_40_3",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_40_3_SoundDesc",
+        "Text": "Sound_Text_40_3",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_41": {
+        "CueName": "Voice_QTQCi_41",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_41_SoundDesc",
+        "Text": "Sound_Text_41",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_42": {
+        "CueName": "Voice_QTQCi_42",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_42_SoundDesc",
+        "Text": "Sound_Text_42",
+        "Unlock": [
+            {
+                "HeroLove": 5
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_43": {
+        "CueName": "Voice_QTQCi_43",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_43_SoundDesc",
+        "Text": "Sound_Text_43",
+        "Unlock": [
+            {
+                "HeroLove": 10
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_44": {
+        "CueName": "Voice_QTQCi_44",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_44_SoundDesc",
+        "Text": "Sound_Text_44",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_45": {
+        "CueName": "Voice_QTQCi_45",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_45_SoundDesc",
+        "Text": "Sound_Text_45",
+        "Unlock": [
+            {
+                "HeroLove": 5
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_46": {
+        "CueName": "Voice_QTQCi_46",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_46_SoundDesc",
+        "Text": "Sound_Text_46",
+        "Unlock": [
+            {
+                "HeroLove": 10
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_47": {
+        "CueName": "Voice_QTQCi_47",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_47_SoundDesc",
+        "Text": "Sound_Text_47",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_48": {
+        "CueName": "Voice_QTQCi_48",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_48_SoundDesc",
+        "Text": "Sound_Text_48",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_49": {
+        "CueName": "Voice_QTQCi_49",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_49_SoundDesc",
+        "Text": "Sound_Text_49",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_50": {
+        "CueName": "Voice_QTQCi_50",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_50_SoundDesc",
+        "Text": "Sound_Text_50",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_51": {
+        "CueName": "Voice_QTQCi_51",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_51_SoundDesc",
+        "Text": "Sound_Text_51",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_52": {
+        "CueName": "Voice_QTQCi_52",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_52_SoundDesc",
+        "Text": "Sound_Text_52",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_53": {
+        "CueName": "Voice_QTQCi_53",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_53_SoundDesc",
+        "Text": "Sound_Text_53",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_54": {
+        "CueName": "Voice_QTQCi_54",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_54_SoundDesc",
+        "Text": "Sound_Text_54",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_55": {
+        "CueName": "Voice_QTQCi_55",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_55_SoundDesc",
+        "Text": "Sound_Text_55",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_56": {
+        "CueName": "Voice_QTQCi_56",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_56_SoundDesc",
+        "Text": "Sound_Text_56",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_57": {
+        "CueName": "Voice_QTQCi_57",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_57_SoundDesc",
+        "Text": "Sound_Text_57",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_58": {
+        "CueName": "Voice_QTQCi_58",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_58_SoundDesc",
+        "Text": "Sound_Text_58",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_59": {
+        "CueName": "Voice_QTQCi_59",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_59_SoundDesc",
+        "Text": "Sound_Text_59",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_60": {
+        "CueName": "Voice_QTQCi_60",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_60_SoundDesc",
+        "Text": "Sound_Text_60",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_61": {
+        "CueName": "Voice_QTQCi_61",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_61_SoundDesc",
+        "Text": "Sound_Text_61",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_62": {
+        "CueName": "Voice_QTQCi_62",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_62_SoundDesc",
+        "Text": "Sound_Text_62",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_63": {
+        "CueName": "Voice_QTQCi_63",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_63_SoundDesc",
+        "Text": "Sound_Text_63",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_64": {
+        "CueName": "Voice_QTQCi_64",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_64_SoundDesc",
+        "Text": "Sound_Text_64",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_65": {
+        "CueName": "Voice_QTQCi_65",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_65_SoundDesc",
+        "Text": "Sound_Text_65",
+        "Unlock": [
+            {
+                "HeroStar": 6
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_66": {
+        "CueName": "Voice_QTQCi_66",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_66_SoundDesc",
+        "Text": "Sound_Text_66",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_67": {
+        "CueName": "Voice_QTQCi_67",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_67_SoundDesc",
+        "Text": "Sound_Text_67",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_68": {
+        "CueName": "Voice_QTQCi_68",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_68_SoundDesc",
+        "Text": "Sound_Text_68",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_69": {
+        "CueName": "Voice_QTQCi_69",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_69_SoundDesc",
+        "Text": "Sound_Text_69",
+        "Unlock": [
+            {
+                "HeroLove": 1
+            }
+        ],
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_70_1": {
+        "CueName": "Voice_QTQCi_70_1",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": 1,
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_70_1_SoundDesc",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_70_2": {
+        "CueName": "Voice_QTQCi_70_2",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_70_2_SoundDesc",
+        "Text": "",
+        "Unlock": "",
+        "UnlockDesc": ""
+    },
+    "Voice_QTQCi_70_3": {
+        "CueName": "Voice_QTQCi_70_3",
+        "IncludeMusic": "",
+        "IsMenu": "",
+        "Param": "",
+        "PkgName": "CV/QTQCi",
+        "Show": "",
+        "ShowName": "",
+        "ShowSourse": "",
+        "SoundDesc": "Voice_QTQCi_70_3_SoundDesc",
         "Text": "",
         "Unlock": "",
         "UnlockDesc": ""

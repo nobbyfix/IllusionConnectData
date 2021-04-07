@@ -142,7 +142,7 @@ end
 
 function AttrInfoView:initData(data)
 	local showType = data.showType
-	self._evnType = "ALL"
+	self._evnType = "SCENE_ALL"
 	local developSystem = self:getInjector():getInstance(DevelopSystem)
 	self._player = developSystem:getPlayer()
 	self._heroSystem = developSystem:getHeroSystem()
@@ -424,36 +424,6 @@ function AttrInfoView:getStrByAttrType(attrType, attrNum, attrName)
 
 		if num > 0 then
 			effectStr = effectStr .. "装备加成 = " .. num .. "\n"
-		end
-
-		local num = self._singleRole:getTimeEffectById(attrType)
-
-		if num > 0 then
-			effectStr = effectStr .. "计时BUFF = " .. num .. "\n"
-		end
-	else
-		local num = self._singleRole:getEmblemAttrByType(attrType)
-
-		if num > 0 then
-			effectStr = effectStr .. "光环属性加成 = " .. num .. "\n"
-		end
-
-		local num = self._singleRole:getGalleryAttrByType(attrType)
-
-		if num > 0 then
-			effectStr = effectStr .. "好感度加成 = " .. num .. "\n"
-		end
-
-		local num = self._singleRole:getGalleryAllAttrByType(attrType)
-
-		if num > 0 then
-			effectStr = effectStr .. "好感度通用加成 = " .. num .. "\n"
-		end
-
-		local num = self._singleRole:getStarPointAttrNumByType(attrType)
-
-		if num > 0 then
-			effectStr = effectStr .. "小星级加成 = " .. num .. "\n"
 		end
 
 		local num = self._singleRole:getTimeEffectById(attrType)

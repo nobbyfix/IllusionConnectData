@@ -260,7 +260,9 @@ function FriendBlackMediator:onClickFriendCell(data)
 			city = data.city,
 			birthday = data.birthday,
 			tags = data.tags,
-			block = response.block
+			block = response.block,
+			leadStageId = data.leadStageId,
+			leadStageLevel = data.leadStageLevel
 		})
 
 		local view = self:getInjector():getInstance("PlayerInfoView")

@@ -336,6 +336,11 @@ local mappings = {
 		name = "RecruitTipMediator",
 		type = "@C"
 	},
+	RecruitRewardMediator = {
+		url = "dm.gameplay.recruit.view.RecruitRewardMediator",
+		name = "RecruitRewardMediator",
+		type = "@C"
+	},
 	RecruitHeroPreviewMediator = {
 		url = "dm.gameplay.recruit.view.RecruitHeroPreviewMediator",
 		name = "RecruitHeroPreviewMediator",
@@ -706,6 +711,11 @@ local mappings = {
 		name = "MasterUpstarAniMediator",
 		type = "@C"
 	},
+	MasterLeadStageDetailMediator = {
+		url = "dm.gameplay.develop.view.master.MasterLeadStageDetailMediator",
+		name = "MasterLeadStageDetailMediator",
+		type = "@C"
+	},
 	MasterDebrisChangeTipMediator = {
 		url = "dm.gameplay.develop.view.master.MasterDebrisChangeTipMediator",
 		name = "MasterDebrisChangeTipMediator",
@@ -719,6 +729,11 @@ local mappings = {
 	MasterLeaderSkillMediator = {
 		url = "dm.gameplay.develop.view.master.MasterLeaderSkillMediator",
 		name = "MasterLeaderSkillMediator",
+		type = "@C"
+	},
+	MasterCutInMediator = {
+		url = "dm.gameplay.develop.view.master.MasterCutInMediator",
+		name = "MasterCutInMediator",
 		type = "@C"
 	},
 	MasterEmblemQualityUpMediator = {
@@ -759,6 +774,11 @@ local mappings = {
 	MasterEnterMediator = {
 		url = "dm.gameplay.develop.view.master.MasterEnterMediator",
 		name = "MasterEnterMediator",
+		type = "@C"
+	},
+	MasterLeadStageMediator = {
+		url = "dm.gameplay.develop.view.master.MasterLeadStageMediator",
+		name = "MasterLeadStageMediator",
 		type = "@C"
 	},
 	HeroSoulDimondUpTipMediator = {

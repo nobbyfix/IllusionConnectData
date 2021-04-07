@@ -287,9 +287,9 @@ function HeroStarSkillMediator:createCellHeight()
 			label:addTo(desc)
 			label:renderContent(descWidth, 0)
 			label:setAnchorPoint(cc.p(0, 0.5))
-			label:setPosition(cc.p(0, desc:getContentSize().height / 2))
+			label:setPosition(cc.p(0, desc:getContentSize().height / 2 - 2))
 
-			local sizeH = math.max(97, label:getContentSize().height + 20)
+			local sizeH = math.max(97, label:getContentSize().height + 30)
 
 			bg:setContentSize(cc.size(573, sizeH))
 

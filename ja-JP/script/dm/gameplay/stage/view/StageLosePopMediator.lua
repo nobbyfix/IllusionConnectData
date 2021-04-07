@@ -162,7 +162,9 @@ function StageLosePopMediator:initSvpRole()
 		end
 
 		local mvpPoint = 0
-		model = ConfigReader:getDataByNameIdAndKey("MasterBase", team:getMasterId(), "RoleModel")
+		local masterSystem = developSystem:getMasterSystem()
+		local masterData = masterSystem:getMasterById(team:getMasterId())
+		model = masterData:getModel()
 
 		for k, v in pairs(playerBattleData.unitSummary) do
 			local roleType = ConfigReader:getDataByNameIdAndKey("RoleModel", v.model, "Type")

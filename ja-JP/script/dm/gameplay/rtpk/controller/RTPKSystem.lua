@@ -225,7 +225,7 @@ function RTPKSystem:getSeasonBuffData()
 	local ruleMap = {}
 	local heroes = ruleConfig.ExcellentHero
 
-	if heroes then
+	if heroes and table.nums(heroes) > 0 then
 		local list = {}
 
 		for i, v in pairs(heroes) do
@@ -743,6 +743,27 @@ function RTPKSystem:enterRobotBattle(data)
 		outSelf:requestRobotBattleFinish(param)
 	end
 
+	function battleDelegate:showMaster(friend, enemy, pauseFunc, resumeCallback)
+		local delegate = self
+		local popupDelegate = {
+			willClose = function (self, sender, data)
+				if resumeCallback then
+					resumeCallback()
+				end
+			end
+		}
+		local bossView = outSelf:getInjector():getInstance("MasterCutInView")
+
+		outSelf:dispatch(ViewEvent:new(EVT_SHOW_POPUP, bossView, nil, {
+			friend = friend,
+			enemy = enemy
+		}, popupDelegate))
+
+		if pauseFunc then
+			pauseFunc()
+		end
+	end
+
 	local ruleId = self._rtpk:getSeasonRule()
 	local ruleConfig = ConfigReader:getRecordById("RTPKRule", ruleId)
 	local bgRes = ruleConfig.BattleBackground or "battle_scene_1"
@@ -838,6 +859,34 @@ function RTPKSystem:enterPvpBattle(data)
 		local view = settingSystem:getInjector():getInstance("battlerofessionalRestraintView")
 
 		settingSystem:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, nil, {}, popupDelegate))
+	end
+
+	function battleDelegate:showMaster(friend, enemy, pauseFunc, resumeCallback)
+		local delegate = self
+		local popupDelegate = {
+			willClose = function (self, sender, data)
+				if resumeCallback then
+					resumeCallback()
+				end
+			end
+		}
+		local bossView = settingSystem:getInjector():getInstance("MasterCutInView")
+
+		if battleDelegate:getMainPlayerId() == friend.rid then
+			settingSystem:dispatch(ViewEvent:new(EVT_SHOW_POPUP, bossView, nil, {
+				friend = friend,
+				enemy = enemy
+			}, popupDelegate))
+		else
+			settingSystem:dispatch(ViewEvent:new(EVT_SHOW_POPUP, bossView, nil, {
+				friend = enemy,
+				enemy = friend
+			}, popupDelegate))
+		end
+
+		if pauseFunc then
+			pauseFunc()
+		end
 	end
 
 	local data = {

@@ -253,7 +253,9 @@ function ActivityStageFinishMediator:refreshHeroAndReward()
 	local playerBattleData = battleStatist[player:getRid()]
 	local team = self._model:getTeam()
 	local mvpPoint = 0
-	local model = ConfigReader:getDataByNameIdAndKey("MasterBase", team:getMasterId(), "RoleModel")
+	local masterSystem = developSystem:getMasterSystem()
+	local masterData = masterSystem:getMasterById(team:getMasterId())
+	local model = masterData:getModel()
 
 	for k, v in pairs(playerBattleData.unitSummary) do
 		local roleType = ConfigReader:getDataByNameIdAndKey("RoleModel", v.model, "Type")
@@ -466,7 +468,9 @@ function ActivityStageFinishMediator:showHeroPanel()
 	local playerBattleData = battleStatist[player:getRid()]
 	local team = self._model:getTeam()
 	local mvpPoint = 0
-	local model = ConfigReader:getDataByNameIdAndKey("MasterBase", team:getMasterId(), "RoleModel")
+	local masterSystem = developSystem:getMasterSystem()
+	local masterData = masterSystem:getMasterById(team:getMasterId())
+	local model = masterData:getModel()
 
 	for k, v in pairs(playerBattleData.unitSummary) do
 		local roleType = ConfigReader:getDataByNameIdAndKey("RoleModel", v.model, "Type")

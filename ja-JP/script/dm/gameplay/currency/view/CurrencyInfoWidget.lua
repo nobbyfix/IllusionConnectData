@@ -13,82 +13,77 @@ CurrencyBar:has("_shopSystem", {
 	is = "r"
 }):injectWith("ShopSystem")
 
-local kAddBtnFuncMap = {}
+local length = 4
+local kAddBtnFuncMap = {
+	[CurrencyIdKind.kGold] = function (self)
+		local view = self:getInjector():getInstance("NewCurrencyBuyPopView")
 
-kAddBtnFuncMap[CurrencyIdKind.kGold] = function (self)
-	local view = self:getInjector():getInstance("NewCurrencyBuyPopView")
+		AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
+		self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, {
+			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+		}, {
+			_currencyType = CurrencyType.kGold
+		}, self))
+	end,
+	[CurrencyIdKind.kDiamond] = function (self)
+		self._shopSystem:tryEnter({
+			shopId = "Shop_Mall"
+		})
+	end,
+	[CurrencyIdKind.kPower] = function (self)
+		AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
 
-	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
-	self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, {
-		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-	}, {
-		_currencyType = CurrencyType.kGold
-	}, self))
-end
+		local view = self:getInjector():getInstance("CurrencyBuyPopView")
 
-kAddBtnFuncMap[CurrencyIdKind.kDiamond] = function (self)
-	self._shopSystem:tryEnter({
-		shopId = "Shop_Mall"
-	})
-end
+		self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, {
+			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+		}, {
+			_currencyType = CurrencyType.kActionPoint
+		}, self))
+	end,
+	[CurrencyIdKind.kCrystal] = function (self)
+		AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
 
-kAddBtnFuncMap[CurrencyIdKind.kPower] = function (self)
-	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
+		local view = self:getInjector():getInstance("NewCurrencyBuyPopView")
 
-	local view = self:getInjector():getInstance("CurrencyBuyPopView")
-
-	self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, {
-		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-	}, {
-		_currencyType = CurrencyType.kActionPoint
-	}, self))
-end
-
-kAddBtnFuncMap[CurrencyIdKind.kCrystal] = function (self)
-	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
-
-	local view = self:getInjector():getInstance("NewCurrencyBuyPopView")
-
-	self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, {
-		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-	}, {
-		_currencyType = CurrencyType.kCrystal
-	}, self))
-end
-
-kAddBtnFuncMap[CurrencyIdKind.kDiamondDrawItem] = function (self)
-	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
-	self._shopSystem:tryEnter({
-		shopId = "Shop_Diamond"
-	})
-end
-
-kAddBtnFuncMap[CurrencyIdKind.kDiamondDrawExItem] = function (self)
-	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
-	self._shopSystem:tryEnter({
-		shopId = ShopSpecialId.kShopTimeLimit
-	})
-end
-
-kAddBtnFuncMap[CurrencyIdKind.kHonor] = function (self)
-	CurrencySystem:showSource(self, CurrencyIdKind.kHonor)
-end
-
-kAddBtnFuncMap[CurrencyIdKind.kClub] = function (self)
-	CurrencySystem:showSource(self, CurrencyIdKind.kClub)
-end
-
-kAddBtnFuncMap[CurrencyIdKind.kPve] = function (self)
-	CurrencySystem:showSource(self, CurrencyIdKind.kPve)
-end
-
-kAddBtnFuncMap[CurrencyIdKind.kDiamondDrawExZuoHeItem] = function (self)
-	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
-	self._shopSystem:tryEnter({
-		shopId = ShopSpecialId.kShopTimeLimit
-	})
-end
-
+		self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, {
+			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+		}, {
+			_currencyType = CurrencyType.kCrystal
+		}, self))
+	end,
+	[CurrencyIdKind.kDiamondDrawItem] = function (self)
+		AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
+		self._shopSystem:tryEnter({
+			shopId = "Shop_Diamond"
+		})
+	end,
+	[CurrencyIdKind.kDiamondDrawExItem] = function (self)
+		AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
+		self._shopSystem:tryEnter({
+			shopId = ShopSpecialId.kShopTimeLimit
+		})
+	end,
+	[CurrencyIdKind.kHonor] = function (self)
+		CurrencySystem:showSource(self, CurrencyIdKind.kHonor)
+	end,
+	[CurrencyIdKind.kClub] = function (self)
+		CurrencySystem:showSource(self, CurrencyIdKind.kClub)
+	end,
+	[CurrencyIdKind.kPve] = function (self)
+		CurrencySystem:showSource(self, CurrencyIdKind.kPve)
+	end,
+	[CurrencyIdKind.kDiamondDrawExZuoHeItem] = function (self)
+		AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
+		self._shopSystem:tryEnter({
+			shopId = ShopSpecialId.kShopTimeLimit
+		})
+	end,
+	[CurrencyIdKind.KMasterStage_Exp] = function (self)
+		AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
+		CurrencySystem:showSource(self, CurrencyIdKind.KMasterStage_Exp)
+	end
+}
 local kAddImgMap = {
 	[CurrencyIdKind.kGold] = true,
 	[CurrencyIdKind.kPower] = true,
@@ -99,7 +94,8 @@ local kAddImgMap = {
 	[CurrencyIdKind.kPve] = true,
 	[CurrencyIdKind.kDiamondDrawItem] = true,
 	[CurrencyIdKind.kDiamondDrawExItem] = true,
-	[CurrencyIdKind.kDiamondDrawExZuoHeItem] = true
+	[CurrencyIdKind.kDiamondDrawExZuoHeItem] = true,
+	[CurrencyIdKind.KMasterStage_Exp] = true
 }
 
 function CurrencyBar.class:createWidgetNode()
@@ -624,7 +620,7 @@ function TopInfoWidget:updateView(config)
 
 	self:refreshView()
 
-	for i = 1, 3 do
+	for i = 1, length do
 		local _titleNode = self._titlePanel:getChildByName("titleNode" .. i)
 
 		_titleNode:setOpacity(kFontStyle[style])
@@ -678,7 +674,7 @@ function TopInfoWidget:startAnim(style, stopAnim)
 		self._mc:gotoAndStop(45)
 		self._progressTimer:setPercentage(100)
 	else
-		for i = 1, 3 do
+		for i = 1, length do
 			local _titleNode = self._titlePanel:getChildByName("titleNode" .. i)
 
 			_titleNode:setRotation(0)

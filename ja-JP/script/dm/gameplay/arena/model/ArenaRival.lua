@@ -30,6 +30,12 @@ ArenaRival:has("_master", {
 ArenaRival:has("_heroes", {
 	is = "r"
 })
+ArenaRival:has("_leadStageId", {
+	is = "r"
+})
+ArenaRival:has("_leadStageLevel", {
+	is = "r"
+})
 
 function ArenaRival:initialize()
 	super.initialize(self)
@@ -44,6 +50,8 @@ function ArenaRival:initialize()
 	self._master = {}
 	self._heroes = {}
 	self._extra = 0
+	self._leadStageId = ""
+	self._leadStageLevel = 0
 
 	self:initExtra()
 end
@@ -87,6 +95,14 @@ function ArenaRival:synchronize(data)
 
 	if data.heroes then
 		self:initHeroes(data.heroes)
+	end
+
+	if data.leadStageId then
+		self._leadStageId = data.leadStageId
+	end
+
+	if data.leadStageLevel then
+		self._leadStageLevel = data.leadStageLevel
 	end
 end
 

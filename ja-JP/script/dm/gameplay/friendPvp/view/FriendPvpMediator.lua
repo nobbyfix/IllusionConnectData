@@ -183,6 +183,11 @@ function FriendPvpMediator:glueFieldAndUi()
 
 	text3:enableOutline(cc.c4b(0, 0, 0, 150.45), 1)
 
+	self._fightInfoTip = self:getView():getChildByFullName("fightInfo")
+
+	self._fightInfoTip:setVisible(false)
+	self._fightInfoTip:setLocalZOrder(100)
+
 	local hostChatText = self._hostPanel:getChildByFullName("chatView.text")
 	local rivalChatText = self._rivalPanel:getChildByFullName("chatView.text")
 
@@ -515,7 +520,8 @@ function FriendPvpMediator:setupPlayerTeamInfo(info, playerIndex)
 	stencil:setVisible(true)
 	stencil:setPosition(cc.p(0, 0))
 
-	local roleModel = IconFactory:getRoleModelByKey("MasterBase", info.master[1])
+	local masterSystem = self._developSystem:getMasterSystem()
+	local roleModel = masterSystem:getMasterLeadStageModel(info.master[1], info.leadStageId or "")
 	local masterIcon = IconFactory:createRoleIconSprite({
 		iconType = 7,
 		id = roleModel,
@@ -526,6 +532,16 @@ function FriendPvpMediator:setupPlayerTeamInfo(info, playerIndex)
 	masterIcon:setPosition(cc.p(-8, 1))
 	masterIcon:setTag(620)
 	masterPanel:addChild(masterIcon)
+
+	local node = teamPanel:getChildByFullName("node_leadStage")
+
+	node:removeAllChildren()
+
+	local icon = IconFactory:createLeadStageIconHor(info.leadStageId, info.leadStageLevel)
+
+	if icon then
+		icon:addTo(node)
+	end
 
 	local heroPanel = view:getChildByName("heroPanel")
 
@@ -568,6 +584,56 @@ function FriendPvpMediator:setupPlayerTeamInfo(info, playerIndex)
 
 		petNode:setPosition((k - line * lineCellLimit - 1) * cellWidth, size.height - lineHeight * (line + 1))
 	end
+
+	local combatInfoBtn = teamPanel:getChildByFullName("infoBtn")
+	local leadConfig = masterSystem:getMasterLeadStatgeInfoById(info.leadStageId)
+	local addPercent = leadConfig and leadConfig.LeadFightHero or 0
+
+	combatInfoBtn:setVisible(leadConfig ~= nil and addPercent > 0)
+	combatInfoBtn:addTouchEventListener(function (sender, eventType)
+		if not leadConfig then
+			return
+		end
+
+		if playerIndex == player1 then
+			self._fightInfoTip:setAnchorPoint(cc.p(0, 0.5))
+			self._fightInfoTip:setPositionX(470)
+		else
+			self._fightInfoTip:setAnchorPoint(cc.p(1, 0.5))
+			self._fightInfoTip:setPositionX(1060)
+		end
+
+		if eventType == ccui.TouchEventType.began then
+			self._fightInfoTip:removeAllChildren()
+
+			local addPer = leadConfig.LeadFightHero
+			local config = ConfigReader:getRecordById("MasterBase", info.master[1])
+			local desc = Strings:get("LeadStage_TeamCombatInfo", {
+				fontSize = 20,
+				fontName = TTF_FONT_FZYH_M,
+				leader = Strings:get(config.Name),
+				stage = Strings:get(leadConfig.RomanNum) .. Strings:get(leadConfig.StageName),
+				percent = addPer * 100 .. "%"
+			})
+			local richText = ccui.RichText:createWithXML(desc, {})
+
+			richText:setAnchorPoint(cc.p(0, 0))
+			richText:setPosition(cc.p(10, 10))
+			richText:addTo(self._fightInfoTip)
+			richText:renderContent(440, 0, true)
+
+			local size = richText:getContentSize()
+
+			self._fightInfoTip:setContentSize(460, size.height + 20)
+			self._fightInfoTip:setVisible(true)
+		elseif eventType == ccui.TouchEventType.moved then
+			-- Nothing
+		elseif eventType == ccui.TouchEventType.canceled then
+			self._fightInfoTip:setVisible(false)
+		elseif eventType == ccui.TouchEventType.ended then
+			self._fightInfoTip:setVisible(false)
+		end
+	end)
 end
 
 function FriendPvpMediator:updateCDTimeScheduler()
@@ -956,6 +1022,34 @@ function FriendPvpMediator:_battleMatch(data, extra)
 		local view = settingSystem:getInjector():getInstance("battlerofessionalRestraintView")
 
 		settingSystem:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, nil, {}, popupDelegate))
+	end
+
+	function battleDelegate:showMaster(friend, enemy, pauseFunc, resumeCallback)
+		local delegate = self
+		local popupDelegate = {
+			willClose = function (self, sender, data)
+				if resumeCallback then
+					resumeCallback()
+				end
+			end
+		}
+		local bossView = settingSystem:getInjector():getInstance("MasterCutInView")
+
+		if battleDelegate:getMainPlayerId() == friend.rid then
+			settingSystem:dispatch(ViewEvent:new(EVT_SHOW_POPUP, bossView, nil, {
+				friend = friend,
+				enemy = enemy
+			}, popupDelegate))
+		else
+			settingSystem:dispatch(ViewEvent:new(EVT_SHOW_POPUP, bossView, nil, {
+				friend = enemy,
+				enemy = friend
+			}, popupDelegate))
+		end
+
+		if pauseFunc then
+			pauseFunc()
+		end
 	end
 
 	local data = {

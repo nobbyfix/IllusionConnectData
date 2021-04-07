@@ -25,6 +25,7 @@ function EffectCenter:initialize(data)
 	self._oldGalleryLegendEffects = {}
 	self._timeEffects = {}
 	self._oldTimeEffects = {}
+	self._leadStageEffects = {}
 end
 
 function EffectCenter:dispatch(event)
@@ -49,6 +50,7 @@ function EffectCenter:syncData(data)
 		self:setBuildingRoomPutHeroEffect()
 		self:setGalleryLegendAttrByType()
 		self:setTimeEffect()
+		self:setLeadStageEffect()
 		self._player:syncAttrEffect()
 	end
 end
@@ -332,6 +334,18 @@ function EffectCenter:getEmblenEffectAttrsById(type)
 	return 0
 end
 
+function EffectCenter:getEmblemEffectAttrsInfo()
+	return self._emblemEffects or {}
+end
+
+function EffectCenter:getGalleryEffectAttrsInfo()
+	return self._galleryEffects or {}
+end
+
+function EffectCenter:getGalleryAllEffectAttrsInfo()
+	return self._galleryAllEffects or {}
+end
+
 function EffectCenter:getGalleryEffectAttrsById(type)
 	if table.nums(self._galleryEffects) > 0 and self._galleryEffects[type] then
 		for k, v in pairs(self._galleryEffects) do
@@ -469,4 +483,72 @@ function EffectCenter:getMasterTimeEffectByIdForType(id, type)
 	end
 
 	return attrValue
+end
+
+function EffectCenter:getMasterTimeEffectInfoById(id)
+	local info = {}
+
+	if self._timeEffects then
+		local attr = self._timeEffects[id]
+		local attrAll = self._timeEffects.MASTER
+
+		if attr then
+			for _, vv in pairs(attr) do
+				for k, v in pairs(vv.attrs) do
+					if not info[k] then
+						info[k] = 0
+					end
+
+					info[k] = info[k] + v
+				end
+			end
+		end
+
+		if attrAll then
+			for _, vv in pairs(attrAll) do
+				for k, v in pairs(vv.attrs) do
+					if not info[k] then
+						info[k] = 0
+					end
+
+					info[k] = info[k] + v
+				end
+			end
+		end
+	end
+
+	return info
+end
+
+function EffectCenter:setLeadStageEffect()
+	if self._effCenterData.managers.AttrEffectManager then
+		self._leadStageEffects = {}
+		local sceneAll = self._effCenterData.managers.AttrEffectManager.effects.SCENE_ALL
+
+		if not sceneAll then
+			return
+		end
+
+		for id, effect in pairs(sceneAll) do
+			for k, v in pairs(effect) do
+				local strs = string.split(k, "-")
+
+				if strs[1] == "LEADSTAGE_BUFF" then
+					if not self._leadStageEffects[id] then
+						self._leadStageEffects[id] = {}
+					end
+
+					self._leadStageEffects[id][v.id] = 1
+				end
+			end
+		end
+	end
+end
+
+function EffectCenter:getLeadStageEffectsById(masterId)
+	if table.nums(self._leadStageEffects) > 0 and self._leadStageEffects[masterId] then
+		return self._leadStageEffects[masterId]
+	end
+
+	return {}
 end
