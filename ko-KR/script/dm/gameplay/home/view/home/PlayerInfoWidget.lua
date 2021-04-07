@@ -344,11 +344,17 @@ function PlayerInfoWidget:updateView()
 	local team = developSystem:getTeamByType(StageTeamType.STAGE_NORMAL)
 	local heros = team:getHeroes()
 	local masterId = team:getMasterId()
+	local leadConfig = developSystem._masterSystem:getMasterCurLeadStageConfig(masterId)
+	local addPercent = leadConfig and leadConfig.LeadFightHero or 0
 	local totalCombat = 0
 
 	for k, v in pairs(heros) do
 		local heroInfo = developSystem._heroSystem:getHeroById(v)
 		totalCombat = totalCombat + heroInfo:getSceneCombatByType(SceneCombatsType.kAll)
+	end
+
+	if leadConfig then
+		totalCombat = math.ceil((addPercent + 1) * totalCombat) or totalCombat
 	end
 
 	local masterData = developSystem._masterSystem:getMasterById(masterId)

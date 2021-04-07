@@ -29,3 +29,15 @@ function TaskService:requestAchievementReward(params, callback, blockUI)
 
 	self:sendRequest(request, blockUI)
 end
+
+function TaskService:requestOneKeyDailyTaskReward(params, blockUI, callback)
+	local request = self:newRequest(22006, params, callback)
+
+	self:sendRequest(request, blockUI)
+end
+
+function TaskService:requestOneKeyAchievementReward(params, blockUI, callback)
+	local request = self:newRequest(22007, params, callback)
+
+	self:sendRequest(request, blockUI)
+end

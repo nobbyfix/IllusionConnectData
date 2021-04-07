@@ -46,6 +46,10 @@ local kBtnHandlers = {
 	["main.btnNode.leftBtn"] = {
 		clickAudio = "Se_Click_Common_2",
 		func = "onClickLeft"
+	},
+	["main.rolePanel"] = {
+		ignoreClickAudio = true,
+		func = "onClickRolePanel"
 	}
 }
 local kModelType = {
@@ -110,12 +114,12 @@ function ActivityBlockMediator:setupTopInfoWidget()
 	local topInfoNode = self:getView():getChildByName("topinfo_node")
 	local config = {
 		style = 1,
-		hideLine = true,
 		currencyInfo = self._model:getResourcesBanner(),
 		btnHandler = {
 			clickAudio = "Se_Click_Close_1",
 			func = bind1(self.onClickBack, self)
-		}
+		},
+		title = Strings:get(self._model:getTitle())
 	}
 	local injector = self:getInjector()
 	self._topInfoWidget = self:autoManageObject(injector:injectInto(TopInfoWidget:new(topInfoNode)))
@@ -229,12 +233,16 @@ function ActivityBlockMediator:initInfo()
 					if reward then
 						local icon = IconFactory:createRewardIcon(reward, {
 							showAmount = false,
+							isWidget = true,
 							notShowQulity = true
 						})
 
-						icon:addTo(itemNode):setScale(0.26)
+						icon:addTo(itemNode):setScale(0.6)
+						IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), reward, {
+							needDelay = true
+						})
 
-						local x = 33 * (jj - 1)
+						local x = 60 * (jj - 1) + 15
 						local y = -30 * (i - 1)
 
 						icon:setPosition(cc.p(x, y))
@@ -244,6 +252,7 @@ function ActivityBlockMediator:initInfo()
 		end
 
 		if btns.blockParams.heroes then
+			local length = #btns.blockParams.heroes
 			local length = #btns.blockParams.heroes
 
 			for i = 1, length do
@@ -255,7 +264,7 @@ function ActivityBlockMediator:initInfo()
 
 				icon:addTo(heroNode):setScale(0.5)
 
-				local x = 30 * (3 - length) + 68 * (i - 1)
+				local x = (i - 1) * 62
 
 				icon:setPositionX(x)
 
@@ -326,7 +335,7 @@ end
 function ActivityBlockMediator:initTimer()
 	local text = self._timeNode:getChildByName("time")
 
-	text:setString(self._model:getTimeStr())
+	text:setString(self._model:getTimeStr1())
 
 	local remainLabel = self._stagePanel:getChildByName("remainTime")
 
@@ -628,4 +637,28 @@ function ActivityBlockMediator:onClickRight()
 	end
 
 	self:updateRolePanel()
+end
+
+function ActivityBlockMediator:onClickRolePanel()
+	local model = self._roles[self._roleIndex].model
+	local type_ = self._roles[self._roleIndex].type
+	local modelId, heroId = nil
+
+	if type_ == kModelType.kSurface then
+		modelId = ConfigReader:getDataByNameIdAndKey("Surface", model, "Model")
+		heroId = ConfigReader:getDataByNameIdAndKey("Surface", model, "Hero")
+	elseif type_ == kModelType.kHero then
+		modelId = IconFactory:getRoleModelByKey("HeroBase", model)
+		heroId = model
+	end
+
+	local view = self:getInjector():getInstance("HeroShowNotOwnView")
+
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+	}, {
+		showType = 2,
+		id = heroId,
+		modelId = modelId
+	}))
 end

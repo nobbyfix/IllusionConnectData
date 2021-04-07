@@ -1273,6 +1273,13 @@
         "Text": "Source_HeroStory",
         "URL": "view://HeroStoryEnterView&viewType=push&heroId=LLan&index=5"
     },
+    "IHF_LSLTe_1": {
+        "Isturn": 0,
+        "ResourceText": "Source_Activity",
+        "ResourceType": 0,
+        "Text": "Source_Activity",
+        "URL": ""
+    },
     "IHF_LYSi_1": {
         "Isturn": 1,
         "ResourceText": "Resource_DrawCard",
@@ -1624,6 +1631,13 @@
         "URL": "view://HeroStoryEnterView&viewType=push&heroId=PNCao&index=5"
     },
     "IHF_QBTe_1": {
+        "Isturn": 0,
+        "ResourceText": "Source_Activity",
+        "ResourceType": 0,
+        "Text": "Source_Activity",
+        "URL": ""
+    },
+    "IHF_QTQCi_1": {
         "Isturn": 0,
         "ResourceText": "Source_Activity",
         "ResourceType": 0,
@@ -2840,6 +2854,13 @@
         "ResourceType": 0,
         "Text": "IM_HolidayExchange_3_Desc",
         "URL": ""
+    },
+    "IM_MasterStage_ExpResource": {
+        "Isturn": 1,
+        "ResourceText": "Resource_DailyTaskTitle",
+        "ResourceType": "",
+        "Text": "Resource_DailyTask",
+        "URL": "view://TaskView&viewType=push"
     },
     "IM_QualityUp_1": {
         "Isturn": 1,
@@ -6374,98 +6395,98 @@
         "ResourceText": "Resource_BengHuai",
         "ResourceType": 3,
         "Text": "Source_Block",
-        "URL": "view://CommonStageChapterView&viewType=push&stageType=ELITE&chapterIndex=16&chapterId=E16&pointId=E16S06&enterPoint=true"
+        "URL": "view://CommonStageChapterView&viewType=push&stageType=ELITE&chapterIndex=19&chapterId=E19&pointId=E19S09&enterPoint=true"
     },
     "IQS_Orange3_Aoe_2": {
         "Isturn": 1,
         "ResourceText": "Resource_BengHuai",
         "ResourceType": 3,
         "Text": "Source_Block",
-        "URL": "view://CommonStageChapterView&viewType=push&stageType=ELITE&chapterIndex=17&chapterId=E17&pointId=E17S06&enterPoint=true"
+        "URL": "view://CommonStageChapterView&viewType=push&stageType=ELITE&chapterIndex=19&chapterId=E19&pointId=E19S10&enterPoint=true"
     },
     "IQS_Orange3_Attack_1": {
         "Isturn": 1,
         "ResourceText": "Resource_BengHuai",
         "ResourceType": 3,
         "Text": "Source_Block",
-        "URL": "view://CommonStageChapterView&viewType=push&stageType=ELITE&chapterIndex=16&chapterId=E16&pointId=E16S05&enterPoint=true"
+        "URL": "view://CommonStageChapterView&viewType=push&stageType=ELITE&chapterIndex=19&chapterId=E19&pointId=E19S01&enterPoint=true"
     },
     "IQS_Orange3_Attack_2": {
         "Isturn": 1,
         "ResourceText": "Resource_BengHuai",
         "ResourceType": 3,
         "Text": "Source_Block",
-        "URL": "view://CommonStageChapterView&viewType=push&stageType=ELITE&chapterIndex=17&chapterId=E17&pointId=E17S05&enterPoint=true"
+        "URL": "view://CommonStageChapterView&viewType=push&stageType=ELITE&chapterIndex=19&chapterId=E19&pointId=E19S02&enterPoint=true"
     },
     "IQS_Orange3_Cure_1": {
         "Isturn": 1,
         "ResourceText": "Resource_BengHuai",
         "ResourceType": 3,
         "Text": "Source_Block",
-        "URL": "view://CommonStageChapterView&viewType=push&stageType=ELITE&chapterIndex=16&chapterId=E16&pointId=E16S08&enterPoint=true"
+        "URL": "view://CommonStageChapterView&viewType=push&stageType=ELITE&chapterIndex=19&chapterId=E19&pointId=E19S13&enterPoint=true"
     },
     "IQS_Orange3_Cure_2": {
         "Isturn": 1,
         "ResourceText": "Resource_BengHuai",
         "ResourceType": 3,
         "Text": "Source_Block",
-        "URL": "view://CommonStageChapterView&viewType=push&stageType=ELITE&chapterIndex=17&chapterId=E17&pointId=E17S08&enterPoint=true"
+        "URL": "view://CommonStageChapterView&viewType=push&stageType=ELITE&chapterIndex=19&chapterId=E19&pointId=E19S14&enterPoint=true"
     },
     "IQS_Orange3_Curse_1": {
         "Isturn": 1,
         "ResourceText": "Resource_BengHuai",
         "ResourceType": 3,
         "Text": "Source_Block",
-        "URL": "view://CommonStageChapterView&viewType=push&stageType=ELITE&chapterIndex=16&chapterId=E16&pointId=E16S04&enterPoint=true"
+        "URL": "view://CommonStageChapterView&viewType=push&stageType=ELITE&chapterIndex=19&chapterId=E19&pointId=E19S19&enterPoint=true"
     },
     "IQS_Orange3_Curse_2": {
         "Isturn": 1,
         "ResourceText": "Resource_BengHuai",
-        "ResourceType": 3,
+        "ResourceType": 2,
         "Text": "Source_Block",
-        "URL": "view://CommonStageChapterView&viewType=push&stageType=ELITE&chapterIndex=17&chapterId=E17&pointId=E17S04&enterPoint=true"
+        "URL": "view://CommonStageChapterView&viewType=push&stageType=NORMAL&chapterIndex=16&chapterId=M16&pointId=M16S15&enterPoint=true"
     },
     "IQS_Orange3_Defense_1": {
         "Isturn": 1,
         "ResourceText": "Resource_BengHuai",
         "ResourceType": 3,
         "Text": "Source_Block",
-        "URL": "view://CommonStageChapterView&viewType=push&stageType=ELITE&chapterIndex=16&chapterId=E16&pointId=E16S09&enterPoint=true"
+        "URL": "view://CommonStageChapterView&viewType=push&stageType=ELITE&chapterIndex=19&chapterId=E19&pointId=E19S05&enterPoint=true"
     },
     "IQS_Orange3_Defense_2": {
         "Isturn": 1,
         "ResourceText": "Resource_BengHuai",
         "ResourceType": 3,
         "Text": "Source_Block",
-        "URL": "view://CommonStageChapterView&viewType=push&stageType=ELITE&chapterIndex=17&chapterId=E17&pointId=E17S09&enterPoint=true"
+        "URL": "view://CommonStageChapterView&viewType=push&stageType=ELITE&chapterIndex=19&chapterId=E19&pointId=E19S06&enterPoint=true"
     },
     "IQS_Orange3_Summon_1": {
         "Isturn": 1,
         "ResourceText": "Resource_BengHuai",
         "ResourceType": 3,
         "Text": "Source_Block",
-        "URL": "view://CommonStageChapterView&viewType=push&stageType=ELITE&chapterIndex=16&chapterId=E16&pointId=E16S01&enterPoint=true"
+        "URL": "view://CommonStageChapterView&viewType=push&stageType=ELITE&chapterIndex=19&chapterId=E19&pointId=E19S15&enterPoint=true"
     },
     "IQS_Orange3_Summon_2": {
         "Isturn": 1,
         "ResourceText": "Resource_BengHuai",
         "ResourceType": 3,
         "Text": "Source_Block",
-        "URL": "view://CommonStageChapterView&viewType=push&stageType=ELITE&chapterIndex=17&chapterId=E17&pointId=E17S01&enterPoint=true"
+        "URL": "view://CommonStageChapterView&viewType=push&stageType=ELITE&chapterIndex=19&chapterId=E19&pointId=E19S16&enterPoint=true"
     },
     "IQS_Orange3_Support_1": {
         "Isturn": 1,
         "ResourceText": "Resource_BengHuai",
         "ResourceType": 3,
         "Text": "Source_Block",
-        "URL": "view://CommonStageChapterView&viewType=push&stageType=ELITE&chapterIndex=16&chapterId=E16&pointId=E16S02&enterPoint=true"
+        "URL": "view://CommonStageChapterView&viewType=push&stageType=ELITE&chapterIndex=19&chapterId=E19&pointId=E19S18&enterPoint=true"
     },
     "IQS_Orange3_Support_2": {
         "Isturn": 1,
         "ResourceText": "Resource_BengHuai",
-        "ResourceType": 3,
+        "ResourceType": 2,
         "Text": "Source_Block",
-        "URL": "view://CommonStageChapterView&viewType=push&stageType=ELITE&chapterIndex=17&chapterId=E17&pointId=E17S02&enterPoint=true"
+        "URL": "view://CommonStageChapterView&viewType=push&stageType=NORMAL&chapterIndex=19&chapterId=M19&pointId=M19S12&enterPoint=true"
     },
     "IQS_Orange41_1": {
         "Isturn": 0,
@@ -8419,6 +8440,13 @@
         "ResourceType": 4,
         "Text": "Source_Energy_1",
         "URL": "view://buyCurrencyView&viewType=popup&_currencyType=3"
+    },
+    "IR_PurewhiteStamina": {
+        "Isturn": 0,
+        "ResourceText": "Source_IM_SnowflakeStamina",
+        "ResourceType": 0,
+        "Text": "Source_IM_SnowflakeStamina_Desc",
+        "URL": ""
     },
     "IR_Pve_1": {
         "Isturn": 1,

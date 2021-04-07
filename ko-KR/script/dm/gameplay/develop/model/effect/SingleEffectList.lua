@@ -33,6 +33,10 @@ function SingleEffectList:attachAttrToTarget(attrFactor, env)
 
 	attrFactor:copyAttrFactor(mainAttrFactor)
 
+	local sceneAttrFactor = self:getAttrUnitByEvn(GameEnvType.KSceneAll)
+
+	attrFactor:copyAttrFactor(sceneAttrFactor)
+
 	if env and env ~= GameEnvType.kAll then
 		local evnAttrFactor = self:getAttrUnitByEvn(env)
 

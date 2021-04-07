@@ -775,6 +775,72 @@
         ],
         "Type": "NORMAL"
     },
+    "Purewhite_Map_E01": {
+        "BGM": "Mus_Story_Mystery_2",
+        "Background": "Bg_Copy_Snowflake_1",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_PurewhiteAE01_Name",
+        "StarBoxReward": {
+            "10": "Purewhite_StarBox04",
+            "20": "Purewhite_StarBox05",
+            "30": "Purewhite_StarBox06"
+        },
+        "SubPoint": [
+            "PurewhiteE01",
+            "PurewhiteE02",
+            "PurewhiteE03",
+            "PurewhiteE04",
+            "PurewhiteE05",
+            "PurewhiteE06",
+            "PurewhiteE07",
+            "PurewhiteE08",
+            "PurewhiteE09",
+            "PurewhiteE10",
+            "PurewhiteE11",
+            "PurewhiteE12"
+        ],
+        "SubStoryPoint": [
+            "APurewhiteS01E01",
+            "APurewhiteS01E02",
+            "APurewhiteS01E03",
+            "APurewhiteS01E04"
+        ],
+        "Type": "ELITE"
+    },
+    "Purewhite_Map_M01": {
+        "BGM": "Mus_Story_Mystery_2",
+        "Background": "Bg_Copy_Snowflake_2",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_PurewhiteAM01_Name",
+        "StarBoxReward": {
+            "10": "Purewhite_StarBox01",
+            "20": "Purewhite_StarBox02",
+            "30": "Purewhite_StarBox03"
+        },
+        "SubPoint": [
+            "PurewhiteM01",
+            "PurewhiteM02",
+            "PurewhiteM03",
+            "PurewhiteM04",
+            "PurewhiteM05",
+            "PurewhiteM06",
+            "PurewhiteM07",
+            "PurewhiteM08",
+            "PurewhiteM09",
+            "PurewhiteM10",
+            "PurewhiteM11",
+            "PurewhiteM12"
+        ],
+        "SubStoryPoint": [
+            "APurewhiteS01S01",
+            "APurewhiteS01S02",
+            "APurewhiteS01S03",
+            "APurewhiteS01S04"
+        ],
+        "Type": "NORMAL"
+    },
     "Snowflack_Map_E01": {
         "BGM": "Mus_Story_Mystery_2",
         "Background": "Bg_Copy_Snowflake_1",

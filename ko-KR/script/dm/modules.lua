@@ -743,7 +743,8 @@ local modules = {
 				requires = {
 					"dm.gameplay.currency.CurrencySystem",
 					"dm.gameplay.currency.CurrencyService",
-					"dm.gameplay.currency.view.CurrencyInfoWidget"
+					"dm.gameplay.currency.view.CurrencyInfoWidget",
+					"dm.gameplay.currency.view.CostNodeWidget"
 				},
 				injections = {
 					singletons = {
@@ -1063,7 +1064,9 @@ local modules = {
 				name = "master",
 				requires = {
 					"dm.gameplay.develop.service.MasterService",
-					"dm.gameplay.develop.view.master.MasterAttrShowTipWidget"
+					"dm.gameplay.develop.view.master.MasterAttrShowTipWidget",
+					"dm.gameplay.develop.view.master.MasterLeadStageSkillTip",
+					"dm.gameplay.develop.view.master.MasterLeadStageKuang"
 				},
 				injections = {
 					singletons = {
@@ -1129,6 +1132,21 @@ local modules = {
 							res = "asset/ui/MasterLeaderSkillTips.csb",
 							name = "MasterLeaderSkillView",
 							mediator = "MasterLeaderSkillMediator"
+						},
+						{
+							res = "asset/ui/MasterLeadStage.csb",
+							name = "MasterLeadStageView",
+							mediator = "MasterLeadStageMediator"
+						},
+						{
+							res = "asset/ui/MasterLeadStageDetail.csb",
+							name = "MasterLeadStageDetailView",
+							mediator = "MasterLeadStageDetailMediator"
+						},
+						{
+							res = "asset/ui/MasterCutIn.csb",
+							name = "MasterCutInView",
+							mediator = "MasterCutInMediator"
 						}
 					}
 				}
@@ -1314,6 +1332,11 @@ local modules = {
 							res = "asset/ui/RecruitCommonPreview.csb",
 							name = "RecruitCommonPreviewView",
 							mediator = "RecruitCommonPreviewMediator"
+						},
+						{
+							res = "asset/ui/RecruitReward.csb",
+							name = "RecruitRewardView",
+							mediator = "RecruitRewardMediator"
 						}
 					}
 				}

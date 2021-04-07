@@ -886,7 +886,9 @@ function ClubApplyMediator:onClickPlayerInfo(sender, eventType, idx)
 			city = data:getPropCity(),
 			birthday = data:getPropBirthday(),
 			tags = data:getPropTags(),
-			block = response.block
+			block = response.block,
+			leadStageId = data:getLeadStageId(),
+			leadStageLevel = data:getLeadStageLevel()
 		})
 
 		local view = self:getInjector():getInstance("PlayerInfoView")

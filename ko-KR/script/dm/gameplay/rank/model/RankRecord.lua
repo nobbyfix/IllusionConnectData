@@ -84,6 +84,12 @@ BaseRankRecord:has("_tags", {
 BaseRankRecord:has("_block", {
 	is = "rw"
 })
+BaseRankRecord:has("_leadStageId", {
+	is = "rw"
+})
+BaseRankRecord:has("_leadStageLevel", {
+	is = "rw"
+})
 
 function BaseRankRecord:initialize()
 	super.initialize(self)
@@ -142,6 +148,8 @@ function BaseRankRecord:synchronize(data)
 		self._city = data.city
 		self._tags = data.tags
 		self._block = data.block
+		self._leadStageId = data.leadStageId or ""
+		self._leadStageLevel = data.leadStageLevel or 0
 	end
 end
 

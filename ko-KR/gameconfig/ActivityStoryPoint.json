@@ -505,6 +505,210 @@
         ],
         "StoryLink": "eventstory_dreamtowersd_08a"
     },
+    "APurewhiteS01E01": {
+        "FirstReward": "PurewhiteS01E01_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -400,
+            50
+        ],
+        "Map": "Purewhite_Map_E01",
+        "Name": "APurewhiteS01E01_Name",
+        "NextStoryPoint": [
+            "APurewhiteS01E02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_BXJie_05a"
+    },
+    "APurewhiteS01E02": {
+        "FirstReward": "PurewhiteS01E02_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -350,
+            0
+        ],
+        "Map": "Purewhite_Map_E01",
+        "Name": "APurewhiteS01E02_Name",
+        "NextStoryPoint": [
+            "APurewhiteS01E03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "PurewhiteE03"
+        ],
+        "PreStoryPoint": [
+            "APurewhiteS01E01"
+        ],
+        "StoryLink": "eventstory_BXJie_06a"
+    },
+    "APurewhiteS01E03": {
+        "FirstReward": "PurewhiteS01E03_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -300,
+            -50
+        ],
+        "Map": "Purewhite_Map_E01",
+        "Name": "APurewhiteS01E03_Name",
+        "NextStoryPoint": [
+            "APurewhiteS01E04"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "PurewhiteE06"
+        ],
+        "PreStoryPoint": [
+            "APurewhiteS01E02"
+        ],
+        "StoryLink": "eventstory_BXJie_07a"
+    },
+    "APurewhiteS01E04": {
+        "FirstReward": "PurewhiteS01E04_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -250,
+            -100
+        ],
+        "Map": "Purewhite_Map_E01",
+        "Name": "APurewhiteS01E04_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "PurewhiteE09"
+        ],
+        "PreStoryPoint": [
+            "APurewhiteS01E03"
+        ],
+        "StoryLink": "eventstory_BXJie_08a"
+    },
+    "APurewhiteS01S01": {
+        "FirstReward": "PurewhiteS01S01_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -100
+        ],
+        "Map": "Purewhite_Map_M01",
+        "Name": "APurewhiteS01S01_Name",
+        "NextStoryPoint": [
+            "APurewhiteS01S02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_BXJie_01a"
+    },
+    "APurewhiteS01S02": {
+        "FirstReward": "PurewhiteS01S02_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "Purewhite_Map_M01",
+        "Name": "APurewhiteS01S02_Name",
+        "NextStoryPoint": [
+            "APurewhiteS01S03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "PurewhiteM03"
+        ],
+        "PreStoryPoint": [
+            "APurewhiteS01S01"
+        ],
+        "StoryLink": "eventstory_BXJie_02a"
+    },
+    "APurewhiteS01S03": {
+        "FirstReward": "PurewhiteS01S03_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "Purewhite_Map_M01",
+        "Name": "APurewhiteS01S03_Name",
+        "NextStoryPoint": [
+            "APurewhiteS01S04"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "PurewhiteM06"
+        ],
+        "PreStoryPoint": [
+            "APurewhiteS01S02"
+        ],
+        "StoryLink": "eventstory_BXJie_03a"
+    },
+    "APurewhiteS01S04": {
+        "FirstReward": "PurewhiteS01S04_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -250
+        ],
+        "Map": "Purewhite_Map_M01",
+        "Name": "APurewhiteS01S04_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "PurewhiteM09"
+        ],
+        "PreStoryPoint": [
+            "APurewhiteS01S03"
+        ],
+        "StoryLink": "eventstory_BXJie_04a"
+    },
     "AS01E01": {
         "FirstReward": "AS01E01_Reward",
         "Icon": "s_album_story_1",

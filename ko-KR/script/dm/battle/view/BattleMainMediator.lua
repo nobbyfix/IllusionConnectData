@@ -6,6 +6,7 @@ require("dm.battle.view.widget.BattleCardWidget")
 require("dm.battle.view.widget.BattleControllerButtons")
 require("dm.battle.view.widget.BattleSkillCardRefreshButton")
 require("dm.battle.view.widget.BattlePassiveSkillWidget")
+require("dm.battle.view.widget.LeadStagePassiveSkillWidget")
 require("dm.battle.view.widget.BattlePassiveSkillTip")
 require("dm.battle.view.widget.BattleEnergyBar")
 require("dm.battle.view.widget.BattleMasterWidget")
@@ -484,6 +485,10 @@ function BattleMainMediator:enterWithData(data)
 	battleShowQueue:setViewContext(viewContext)
 	viewContext:setValue("BattleShowQueue", battleShowQueue)
 
+	if self._battleData.battleData then
+		battleShowQueue:addMasterShow(self._battleData.battleData.playerData, self._battleData.battleData.enemyData)
+	end
+
 	if self._delegate.onBattleStart then
 		self._delegate:onBattleStart(self, viewContext:getEventDispatcher())
 	end
@@ -670,6 +675,30 @@ function BattleMainMediator:showHero(heroBaseId)
 
 	if self._delegate.showHero then
 		self._delegate:showHero(heroBaseId, pauseFunc, resumeCallback)
+	end
+end
+
+function BattleMainMediator:showMaster(friend, enemy)
+	if self._pauseBlock then
+		return
+	end
+
+	local function pauseFunc()
+		self:pause()
+	end
+
+	local function resumeCallback()
+		self:onResume()
+
+		local battleShowQueue = self._viewContext:getValue("BattleShowQueue")
+
+		if battleShowQueue then
+			battleShowQueue:show()
+		end
+	end
+
+	if self._delegate.showMaster then
+		self._delegate:showMaster(friend, enemy, pauseFunc, resumeCallback)
 	end
 end
 

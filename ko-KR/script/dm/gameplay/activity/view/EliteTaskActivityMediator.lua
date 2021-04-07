@@ -95,6 +95,10 @@ function EliteTaskActivityMediator:setupView()
 	end
 
 	self:createTableView()
+
+	local timeText = self._main:getChildByFullName("timePanel.times")
+
+	timeText:setString(self._activity:getTimeStr1())
 end
 
 function EliteTaskActivityMediator:createTableView()

@@ -2,7 +2,7 @@ CooperateBattleSession = class("CooperateBattleSession", BaseBattleSession)
 
 function CooperateBattleSession:initialize(serverData, seasonInfo)
 	super.initialize(self)
-	dump(serverData, "serverData====>>>>", 2)
+	dump(serverData, "serverData----->>>>>>", 5)
 
 	self._pointId = serverData.pointId
 	self._mapId = serverData.mapId
@@ -116,7 +116,17 @@ function CooperateBattleSession:getBattleType()
 end
 
 function CooperateBattleSession:getBattlePassiveSkill()
-	return {}
+	local battleData = self:getPlayersData()
+	local playerStagePassShow = BattleDataHelper:getStagePassiveSkill(battleData.playerData)
+	local enemyStagePassShow = BattleDataHelper:getStagePassiveSkill(battleData.enemyData)
+	local passiveSkill = {
+		playerShow = {},
+		enemyShow = {},
+		playerStagePassShow = playerStagePassShow,
+		enemyStagePassShow = enemyStagePassShow
+	}
+
+	return passiveSkill
 end
 
 function CooperateBattleSession:modifyEnemyMasterModel(enemyData)

@@ -71,6 +71,9 @@ function ChatSystem:updateActiveMember()
 	local activeMembers = self._chat:getActiveMembers()
 	local rid = player:getRid()
 	local clubSystem = self:getInjector():getInstance(ClubSystem)
+	local masterId = self:getDevelopSystem():getTeamByType(StageTeamType.STAGE_NORMAL):getMasterId()
+	local masterSystem = self:getDevelopSystem():getMasterSystem()
+	local id, level = masterSystem:getMasterLeadStatgeLevel(masterId)
 	local sender = {
 		id = rid,
 		nickname = player:getNickName(),
@@ -82,13 +85,15 @@ function ChatSystem:updateActiveMember()
 		clubName = clubSystem:getName(),
 		heroes = self:getHeroes(),
 		master = {
-			self:getDevelopSystem():getTeamByType(StageTeamType.STAGE_NORMAL):getMasterId()
+			masterId
 		},
 		gender = player:getGender(),
 		city = player:getCity(),
 		birthday = player:getBirthday(),
 		tags = player:getTags(),
-		headFrame = player:getCurHeadFrame()
+		headFrame = player:getCurHeadFrame(),
+		leadStageId = id,
+		leadStageLevel = level
 	}
 	activeMembers[rid] = sender
 end

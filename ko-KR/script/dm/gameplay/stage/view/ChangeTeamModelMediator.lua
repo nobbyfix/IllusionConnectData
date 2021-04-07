@@ -179,7 +179,8 @@ function ChangeTeamModelMediator:teamCellSetup(cell, data)
 	end)
 
 	local masterRole = cell:getChildByName("Role")
-	local roleModel = ConfigReader:requireDataByNameIdAndKey("MasterBase", data:getMasterId(), "RoleModel")
+	local masterData = self._masterSystem:getMasterById(data:getMasterId())
+	local roleModel = masterData:getModel()
 	local info = {
 		stencil = 6,
 		iconType = "Bust5",
@@ -192,6 +193,25 @@ function ChangeTeamModelMediator:teamCellSetup(cell, data)
 	masterIcon:setPosition(cc.p(0, 0))
 	masterRole:addChild(masterIcon)
 	masterIcon:setScale(1.2)
+
+	local node = cc.Node:create()
+
+	node:setName("leadStage")
+
+	local leadStageIcon = cell:getChildByName("leadStage")
+
+	if not leadStageIcon then
+		node:addTo(cell):posite(40, 26)
+	end
+
+	node:removeAllChildren()
+
+	local id, lv = self._masterSystem:getMasterLeadStatgeLevel(data:getMasterId())
+	local icon = IconFactory:createLeadStageIconHor(id, lv)
+
+	if icon then
+		icon:addTo(node)
+	end
 
 	for i = 1, 10 do
 		local teamPet = cell:getChildByName("pet_" .. i)

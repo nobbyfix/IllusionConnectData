@@ -44,6 +44,10 @@ local kBtnHandlers = {
 		clickAudio = "Se_Click_Common_1",
 		func = "onClickMore"
 	},
+	["rewardNode.btn"] = {
+		clickAudio = "Se_Click_Common_1",
+		func = "onClickReward"
+	},
 	["activityNode.btn"] = {
 		clickAudio = "Se_Click_Common_1",
 		func = "onClickActivity"
@@ -198,6 +202,10 @@ function RecruitMainMediator:initView()
 
 	self._activityNode:setVisible(false)
 
+	self._rewardNode = self:getView():getChildByFullName("rewardNode")
+
+	self._rewardNode:setVisible(false)
+
 	self._checkBtn = self:getView():getChildByFullName("checkBtn")
 
 	self._checkBtn:setVisible(false)
@@ -288,6 +296,10 @@ function RecruitMainMediator:initView()
 		x = 0,
 		y = -1
 	}))
+	self._rewardNode:getChildByFullName("text"):enablePattern(cc.LinearGradientPattern:create(lineGradiantVec1, {
+		x = 0,
+		y = -1
+	}))
 
 	self._showResult = nil
 	self._bestRarity = 11
@@ -347,10 +359,11 @@ function RecruitMainMediator:initTabController()
 		local recruitData = self._recruitData[i]
 		local btnImage = recruitData:getPreview().btn
 		local btnText = ""
+		local temp = nil
 		local type = recruitData:getType()
 
 		if type == RecruitPoolType.kClub or type == RecruitPoolType.kPve or type == RecruitPoolType.kPvp or type == RecruitPoolType.ACTIVITYDRAW then
-			data[#data + 1] = {
+			temp = {
 				textOffsety = -33,
 				fontSize = 12,
 				unEnableOutline = true,
@@ -365,7 +378,7 @@ function RecruitMainMediator:initTabController()
 				}
 			}
 		else
-			data[#data + 1] = {
+			temp = {
 				tabText = "",
 				tabTextTranslate = "",
 				tabImage = {
@@ -373,6 +386,20 @@ function RecruitMainMediator:initTabController()
 					"asset/ui/recruit/" .. btnImage .. "2.png"
 				}
 			}
+		end
+
+		if temp then
+			function temp.redPointFunc()
+				if self._recruitSystem:checkIsShowRedPointByPool(recruitData) then
+					return true
+				end
+
+				return false
+			end
+
+			temp.redPointPosx = 215
+			temp.redPointPosy = 78
+			data[#data + 1] = temp
 		end
 	end
 
@@ -445,37 +472,8 @@ function RecruitMainMediator:getPoolTagByName(idStr)
 end
 
 function RecruitMainMediator:initViewData()
-	self._recruitManager = self._recruitSystem:getManager()
+	self._recruitData = self._recruitSystem:getShowRecruitPools()
 	self._recruitDataShow = {}
-	self._recruitData = {}
-	local recruitPools = self._recruitManager:getRecruitPools()
-
-	for id, recruitObj in pairs(recruitPools) do
-		if recruitObj then
-			local type = recruitObj:getType()
-			local unlockKey = recruitObj:getCondition()
-			local unlock = true
-
-			if unlockKey ~= "" then
-				unlock = self._systemKeeper:isUnlock(unlockKey)
-
-				if unlock and (type == RecruitPoolType.kClub or type == RecruitPoolType.kPve or type == RecruitPoolType.kPvp) then
-					unlock = self._recruitSystem:getActivityIsOpen(recruitObj:getId())
-				end
-			elseif type == RecruitPoolType.kActivity or type == RecruitPoolType.kActivityEquip then
-				unlock = self._recruitSystem:getActivityIsOpen(recruitObj:getId())
-			end
-
-			if unlock then
-				self._recruitData[#self._recruitData + 1] = recruitObj
-			end
-		end
-	end
-
-	table.sort(self._recruitData, function (a, b)
-		return b:getRank() < a:getRank()
-	end)
-
 	self._recruitDataTemp = {}
 
 	for i = 1, #self._recruitData do
@@ -497,34 +495,7 @@ function RecruitMainMediator:updateData()
 		end
 	end
 
-	self._recruitData = {}
-	local recruitPools = self._recruitManager:getRecruitPools()
-
-	for id, recruitObj in pairs(recruitPools) do
-		if recruitObj then
-			local type = recruitObj:getType()
-			local unlockKey = recruitObj:getCondition()
-			local unlock = true
-
-			if unlockKey ~= "" then
-				unlock = self._systemKeeper:isUnlock(unlockKey)
-
-				if unlock and (type == RecruitPoolType.kClub or type == RecruitPoolType.kPve or type == RecruitPoolType.kPvp) then
-					unlock = self._recruitSystem:getActivityIsOpen(recruitObj:getId())
-				end
-			elseif type == RecruitPoolType.kActivity or type == RecruitPoolType.kActivityEquip then
-				unlock = self._recruitSystem:getActivityIsOpen(recruitObj:getId())
-			end
-
-			if unlock then
-				self._recruitData[#self._recruitData + 1] = recruitObj
-			end
-		end
-	end
-
-	table.sort(self._recruitData, function (a, b)
-		return b:getRank() < a:getRank()
-	end)
+	self._recruitData = self._recruitSystem:getShowRecruitPools()
 
 	if self._recruitDataTemp then
 		if #self._recruitDataTemp ~= #self._recruitData then
@@ -727,10 +698,29 @@ function RecruitMainMediator:refreshHeroInfo()
 	end
 end
 
+function RecruitMainMediator:refreshRewardNode()
+	self._rebate = self._recruitDataShow:getRebate()
+
+	self._rewardNode:setVisible(#self._rebate ~= 0)
+
+	if not self._rewardNodeRedPoint then
+		self._rewardNodeRedPoint = RedPoint:createDefaultNode()
+
+		self._rewardNodeRedPoint:addTo(self._rewardNode):posite(93, 93)
+		self._rewardNodeRedPoint:setLocalZOrder(99)
+	end
+
+	self._rewardNodeRedPoint:setVisible(self._recruitSystem:checkIsShowRedPointByPool(self._recruitDataShow))
+end
+
 function RecruitMainMediator:refreshMoreNode()
 	self._linkStr = self._recruitDataShow:getLink()
 
 	self._moreNode:setVisible(self._linkStr ~= "")
+
+	local px = self._rewardNode:isVisible() and self._rewardNode:getPositionX() + 95 or self._rewardNode:getPositionX()
+
+	self._moreNode:setPositionX(px)
 end
 
 function RecruitMainMediator:refreshActivityNode()
@@ -740,18 +730,17 @@ function RecruitMainMediator:refreshActivityNode()
 	if activity then
 		if activity:checkRecruitIdIsInActivity(recruitId) then
 			self._activityNode:setVisible(true)
-
-			self._linkStr = self._recruitDataShow:getLink()
-
-			if self._linkStr == "" then
-				self._activityNode:setPositionX(self._moreNode:getPositionX())
-			end
 		else
 			self._activityNode:setVisible(false)
 		end
 	else
 		self._activityNode:setVisible(false)
 	end
+
+	local st = self._rewardNode:isVisible() or self._moreNode:isVisible()
+	local px = st and self._rewardNode:getPositionX() + 95 or self._rewardNode:getPositionX()
+
+	self._activityNode:setPositionX(px)
 end
 
 function RecruitMainMediator:runNodeActions()
@@ -760,6 +749,7 @@ function RecruitMainMediator:runNodeActions()
 	recruitBg:removeAllChildren()
 	self._shopBtn:stopAllActions()
 	self._moreNode:stopAllActions()
+	self._rewardNode:stopAllActions()
 	self._activityNode:stopAllActions()
 	self._recruitBtn1:stopAllActions()
 	self._recruitBtn2:stopAllActions()
@@ -767,6 +757,7 @@ function RecruitMainMediator:runNodeActions()
 	self._recruitBtn2:setTouchEnabled(false)
 	self._shopBtn:setOpacity(0)
 	self._moreNode:setOpacity(0)
+	self._rewardNode:setOpacity(0)
 	self._activityNode:setOpacity(0)
 	self._recruitBtn1:setOpacity(0)
 	self._recruitBtn2:setOpacity(0)
@@ -808,6 +799,9 @@ function RecruitMainMediator:runNodeActions()
 				time = 0.2
 			})
 			self._moreNode:fadeIn({
+				time = 0.2
+			})
+			self._rewardNode:fadeIn({
 				time = 0.2
 			})
 			self._activityNode:fadeIn({
@@ -1123,6 +1117,7 @@ function RecruitMainMediator:updateView()
 	self._tipBtn:setVisible(type ~= RecruitPoolType.kDiamond and type ~= RecruitPoolType.kEquip and self._recruitDataShow:getId() ~= RecruitNewPlayerPool)
 	self._shopBtn:setVisible(self._shopSystem:isShopFragmentOpen() and (type == RecruitPoolType.kDiamond or type == RecruitPoolType.kActivity))
 	self:refreshHeroInfo()
+	self:refreshRewardNode()
 	self:refreshMoreNode()
 	self:refreshActivityNode()
 	self:refreshLeftTopNode()
@@ -1515,6 +1510,16 @@ function RecruitMainMediator:onClickMore()
 	else
 		entry:response(context, params)
 	end
+end
+
+function RecruitMainMediator:onClickReward()
+	local view = self:getInjector():getInstance("RecruitRewardView")
+
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+	}, {
+		recruitData = self._recruitDataShow
+	}, nil))
 end
 
 function RecruitMainMediator:onClickActivity()

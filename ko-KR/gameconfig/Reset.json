@@ -132,6 +132,16 @@
             "storage": 5000
         }
     },
+    "AcitvityPurewhiteStamina_Reset": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
     "AcitvitySnowflakeStamina_Reset": {
         "ResetSystem": {
             "addValue": 1,

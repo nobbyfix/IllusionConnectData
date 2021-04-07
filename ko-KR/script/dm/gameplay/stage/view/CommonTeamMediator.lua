@@ -46,6 +46,7 @@ function CommonTeamMediator:onRegister()
 	self:mapButtonHandlersClick(kSortBtnHandlers)
 
 	self._presetTeamPetNum = 0
+	self._masterSystem = self._developSystem:getMasterSystem()
 end
 
 function CommonTeamMediator:resumeWithData()
@@ -78,6 +79,24 @@ function CommonTeamMediator:setupTopInfoWidget()
 	self._topInfoWidget = self:autoManageObject(injector:injectInto(TopInfoWidget:new(topInfoNode)))
 
 	self._topInfoWidget:updateView(config)
+	self:setLeadStageInfo()
+end
+
+function CommonTeamMediator:setLeadStageInfo()
+	local node = self:getView():getChildByFullName("main.bg.node_leadStage")
+
+	if not node then
+		return
+	end
+
+	node:removeAllChildren()
+
+	local id, lv = self._masterSystem:getMasterLeadStatgeLevel(self._curMasterId)
+	local icon = IconFactory:createLeadStageIconHor(id, lv)
+
+	if icon then
+		icon:addTo(node)
+	end
 end
 
 function CommonTeamMediator:leaveWithData()
@@ -322,6 +341,46 @@ function CommonTeamMediator:onClickCost()
 	}, data, delegate))
 end
 
+function CommonTeamMediator:onClickInfo(eventType, fightTip, isDouble)
+	local fightInfoTip = fightTip and fightTip or self._fightInfoTip
+	local leadConfig = self._masterSystem:getMasterCurLeadStageConfig(self._curMasterId)
+
+	if not leadConfig then
+		return
+	end
+
+	if eventType == ccui.TouchEventType.began then
+		fightInfoTip:removeAllChildren()
+
+		local addPer = isDouble and leadConfig.LeadFightHero * 2 or leadConfig.LeadFightHero
+		local config = ConfigReader:getRecordById("MasterBase", self._curMasterId)
+		local desc = Strings:get("LeadStage_TeamCombatInfo", {
+			fontSize = 20,
+			fontName = TTF_FONT_FZYH_M,
+			leader = Strings:get(config.Name),
+			stage = Strings:get(leadConfig.RomanNum) .. Strings:get(leadConfig.StageName),
+			percent = addPer * 100 .. "%"
+		})
+		local richText = ccui.RichText:createWithXML(desc, {})
+
+		richText:setAnchorPoint(cc.p(0, 0))
+		richText:setPosition(cc.p(10, 10))
+		richText:addTo(fightInfoTip)
+		richText:renderContent(440, 0, true)
+
+		local size = richText:getContentSize()
+
+		fightInfoTip:setContentSize(460, size.height + 20)
+		fightInfoTip:setVisible(true)
+	elseif eventType == ccui.TouchEventType.moved then
+		-- Nothing
+	elseif eventType == ccui.TouchEventType.canceled then
+		fightInfoTip:setVisible(false)
+	elseif eventType == ccui.TouchEventType.ended then
+		fightInfoTip:setVisible(false)
+	end
+end
+
 function CommonTeamMediator:initHero(node, info)
 	local heroImg = IconFactory:createRoleIconSprite({
 		id = info.roleModel
@@ -535,7 +594,7 @@ function CommonTeamMediator:checkMasterSkillActive()
 
 		local index = i <= 3 and i or i - 3
 		local posX = 20 + (index - 1) * 55
-		local posY = i <= 3 and 68 or 13
+		local posY = i <= 3 and 61 or 10
 
 		newSkillNode:setPosition(cc.p(posX, posY))
 
@@ -713,6 +772,12 @@ function CommonTeamMediator:onClickChangeMaster()
 
 	AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
 
+	local outSelf = self
+	local delegate = {
+		willClose = function (self, popupMediator, data)
+			outSelf:setLeadStageInfo()
+		end
+	}
 	local view = self:getInjector():getInstance("ChangeMasterView")
 
 	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
@@ -721,8 +786,9 @@ function CommonTeamMediator:onClickChangeMaster()
 		masterId = self._curMasterId,
 		masterList = self._masterList,
 		recomandList = self._recomandMasterList or {},
-		forbidMasters = self._forbidMasters or {}
-	}, nil))
+		forbidMasters = self._forbidMasters or {},
+		sys = self._masterSystem
+	}, delegate))
 end
 
 function CommonTeamMediator:onClickOneKeyEmbattle()

@@ -1028,7 +1028,8 @@ function MazeTeamMediator:onClickChangeMaster(sender, eventType)
 			animation = PopViewAction:new(view)
 		}, {
 			masterId = self._curMasterId,
-			masterList = self._masterList
+			masterList = self._masterList,
+			sys = self._masterSystem
 		}, nil))
 	end
 end

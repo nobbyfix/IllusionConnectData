@@ -1242,7 +1242,9 @@ function CooperateBossInviteFriendMediator:onClickHead(data, sender)
 			city = data:getCity(),
 			birthday = data:getBirthday(),
 			tags = data:getTags(),
-			block = response.block
+			block = response.block,
+			leadStageId = data:getLeadStageId(),
+			leadStageLevel = data:getLeadStageLevel()
 		})
 
 		local view = self:getInjector():getInstance("PlayerInfoView")

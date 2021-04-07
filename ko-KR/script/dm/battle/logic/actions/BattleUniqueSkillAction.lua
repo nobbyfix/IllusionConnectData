@@ -136,17 +136,23 @@ function BattleUniqueSkillAction:doSkill()
 	}
 	local skillSystem = battleContext:getObject("SkillSystem")
 
-	skillSystem:activateSpecificTrigger(actor, "BEFORE_UNIQUE")
+	skillSystem:activateSpecificTrigger(actor, "BEFORE_UNIQUE", {
+		primTrgt = primTrgt
+	})
 	skillSystem:activateGlobalTrigger("UNIT_BEFORE_UNIQUE", {
-		unit = actor
+		unit = actor,
+		primTrgt = primTrgt
 	})
 
 	local skillAction = skill and skill:getEntryAction()
 
 	skillExecutor:runAction(skillAction, args, function (executor)
-		skillSystem:activateSpecificTrigger(actor, "AFTER_UNIQUE")
+		skillSystem:activateSpecificTrigger(actor, "AFTER_UNIQUE", {
+			primTrgt = primTrgt
+		})
 		skillSystem:activateGlobalTrigger("UNIT_AFTER_UNIQUE", {
-			unit = actor
+			unit = actor,
+			primTrgt = primTrgt
 		})
 
 		local battleStatist = battleContext:getObject("BattleStatist")

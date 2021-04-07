@@ -239,17 +239,7 @@ all.Skill_HGEr_Unique = {
 			local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, this.dmgFactor)
 
 			global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage)
-
-			local damage_real = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, {
-				1,
-				1,
-				0
-			})
-			damage_real.val = atk * rate
-			damage_real.crit = nil
-			damage_real.block = nil
-
-			global.DelayCall(_env, 134, global.ApplyHPDamage_ResultCheck, _env.ACTOR, _env.TARGET, damage_real)
+			global.DelayCall(_env, 134, global.ApplyRealDamage, _env.ACTOR, _env.TARGET, 1, 1, rate)
 		end)
 		exec["@time"]({
 			2900
@@ -878,17 +868,7 @@ all.Skill_HGEr_Unique_EX = {
 			local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, this.dmgFactor)
 
 			global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage)
-
-			local damage_real = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, {
-				1,
-				1,
-				0
-			})
-			damage_real.val = atk * rate
-			damage_real.crit = nil
-			damage_real.block = nil
-
-			global.DelayCall(_env, 134, global.ApplyHPDamage_ResultCheck, _env.ACTOR, _env.TARGET, damage_real)
+			global.DelayCall(_env, 134, global.ApplyRealDamage, _env.ACTOR, _env.TARGET, 1, 1, rate)
 		end)
 		exec["@time"]({
 			2900

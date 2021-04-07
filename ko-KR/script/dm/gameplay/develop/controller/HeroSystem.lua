@@ -367,19 +367,22 @@ function HeroSystem:initHeroTimeType()
 
 				if config.IfHidden == 1 then
 					local start = self:getTimeType(config)
-					local _, _, y, mon, d, h, m, s = string.find(start, "(%d+)-(%d+)-(%d+) (%d+):(%d+):(%d+)")
-					local table = {
-						year = y,
-						month = mon,
-						day = d,
-						hour = h,
-						min = m,
-						sec = s
-					}
-					local mills = TimeUtil:timeByRemoteDate(table)
 
-					if curTime < mills then
-						self._heroTimeInfo[heroId] = mills
+					if start then
+						local _, _, y, mon, d, h, m, s = string.find(start, "(%d+)-(%d+)-(%d+) (%d+):(%d+):(%d+)")
+						local table = {
+							year = y,
+							month = mon,
+							day = d,
+							hour = h,
+							min = m,
+							sec = s
+						}
+						local mills = TimeUtil:timeByRemoteDate(table)
+
+						if curTime < mills then
+							self._heroTimeInfo[heroId] = mills
+						end
 					end
 				end
 			end
@@ -417,9 +420,7 @@ function HeroSystem:initHeroTimeType()
 end
 
 function HeroSystem:getTimeType(config)
-	if config.IfHidden == 1 then
-		assert(config.TimeType and config.TimeType ~= "", config.Id .. " TimeType error")
-
+	if config.TimeType and config.TimeType ~= "" then
 		return config.TimeType
 	end
 

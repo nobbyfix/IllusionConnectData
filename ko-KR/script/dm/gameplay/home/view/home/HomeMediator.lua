@@ -427,32 +427,12 @@ function HomeMediator:enterWithData(data)
 
 		self._hasPayIncomplete = true
 	end
+
+	self:reshMCFPower()
 end
 
-function HomeMediator:onFunSwitchSet()
-	local taskNode = self._leftBtns.mTaskNode
-
-	if taskNode then
-		taskNode:setVisible(CommonUtils.GetSwitch("fn_task"))
-	end
-
-	local shopNode = self._leftBtns.mShopNode
-
-	if shopNode then
-		shopNode:setVisible(CommonUtils.GetSwitch("fn_shop_recharge"))
-	end
-
-	local guildNode = self._rightBtns.mGuildNode
-
-	if guildNode then
-		guildNode:setVisible(CommonUtils.GetSwitch("fn_guild"))
-	end
-
-	local activityNode = self._rightBtns.mActivity2Node
-
-	if activityNode then
-		activityNode:setVisible(CommonUtils.GetSwitch("fn_activity"))
-	end
+function HomeMediator:reshMCFPower()
+	self._shopSystem:refreshMCFRedPoint()
 end
 
 function HomeMediator:onFunSwitchSet()

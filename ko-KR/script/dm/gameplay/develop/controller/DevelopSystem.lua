@@ -439,6 +439,12 @@ function DevelopSystem:syncDeleteData(data)
 	if data then
 		self._taskSystem:getTaskListModel():updateDelTasks(data)
 	end
+
+	if data and data.drawInfo then
+		local recruitSystem = self:getInjector():getInstance(RecruitSystem)
+
+		recruitSystem:sync(data.drawInfo, self._player)
+	end
 end
 
 function DevelopSystem:synCultivation(data)

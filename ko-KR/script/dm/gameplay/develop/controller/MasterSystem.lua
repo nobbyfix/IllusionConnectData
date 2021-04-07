@@ -24,6 +24,19 @@ MasterSystem:has("_showMasterIds", {
 MasterSystem:has("_systemKeeper", {
 	is = "r"
 }):injectWith("SystemKeeper")
+MasterSystem:has("_doStageLvUpAnim", {
+	is = "rw"
+})
+
+MasterLeadStageCondiState = {
+	KRareityHero = "RareityHero",
+	KEquipRareityLevel = "EquipRareityLevel",
+	KSuit = "Suit",
+	KEquip = "Equip",
+	KAwaken = "Awaken",
+	KLeadStage = "LeadStage",
+	KStarHero = "StarHero"
+}
 
 function MasterSystem:initialize(developSystem)
 	super.initialize(self)
@@ -39,6 +52,7 @@ function MasterSystem:initialize(developSystem)
 	self._temppreData = {}
 	self._leaderSkillNum = 6
 	self._showMasterIds = nil
+	self._doStageLvUpAnim = false
 end
 
 function MasterSystem:checkEnabled(params)
@@ -756,7 +770,304 @@ function MasterSystem:checkIsShowRedPoint()
 		if self:canMasterActive(master) then
 			isShow = true
 		end
+
+		if self:checkLeadStageRedPoint(master:getId()) then
+			return true
+		end
 	end
 
 	return isShow
+end
+
+function MasterSystem:requestLeadStageUp(masterId)
+	local params = {
+		masterId = masterId
+	}
+
+	self._masterService:requestLeadStageUp(params, true, function (response)
+		if response.resCode == GS_SUCCESS then
+			dump(response.data, "response.dataresponse.data")
+			self:dispatch(Event:new(EVT_LEADSTASGE_UPDONE, {}))
+
+			if callback then
+				callback()
+			end
+		end
+	end)
+end
+
+function MasterSystem:checkLeadStageRedPoint(masterId)
+	if not CommonUtils.GetSwitch("fn_master_leadStage") then
+		return false
+	end
+
+	if not self._systemKeeper:isUnlock("LeadStage") then
+		return false
+	end
+
+	local masterData = self:getMasterById(masterId)
+	local ismaxLevel = masterData:getLeadStageData():isMaxLevel()
+
+	if ismaxLevel then
+		return false
+	end
+
+	if not masterData:getLeadStageData():getIsOpen() then
+		return false
+	end
+
+	local rets = self:checkLeadStageCondition(masterId, masterData:getLeadStageData():getLeadStageLevel() + 1)
+
+	if table.indexof(rets, false) then
+		return false
+	end
+
+	local cost = masterData:getLeadStageData():getCost()
+
+	for i = 1, #cost do
+		local hasNum = self._bagSystem:getItemCount(cost[i].id)
+		local needNum = cost[i].n
+
+		if hasNum < needNum then
+			return false
+		end
+	end
+
+	return true
+end
+
+function MasterSystem:checkLeadStageCondition(masterId, leadStageLv, isNeedNum)
+	local ret = {}
+	local nums = {}
+
+	if not self._systemKeeper:isUnlock("LeadStage") then
+		return {
+			false
+		}
+	end
+
+	local masterData = self:getMasterById(masterId)
+	local leadStageData = masterData:getLeadStageData()
+	local leadStageDetailConfig = leadStageData:getConfigInfo()
+	local conditionInfo = leadStageData:getShowConditionByStageLv(leadStageLv)
+	local c = leadStageDetailConfig[leadStageLv]
+
+	if c.LeadStageControl == 0 then
+		return {
+			false
+		}
+	end
+
+	for i, info in ipairs(conditionInfo) do
+		local k = info.key
+		local v = info.value
+
+		if k == MasterLeadStageCondiState.KStarHero or k == MasterLeadStageCondiState.KRareityHero or k == MasterLeadStageCondiState.KAwaken then
+			local num = 0
+			local heros = self._player:getHeroList():getHeros()
+
+			for _, hero in pairs(heros) do
+				if hero:getType() == v.Job and (k == MasterLeadStageCondiState.KStarHero and v.HeroStar <= hero:getStar() or k == MasterLeadStageCondiState.KRareityHero and v.Rareity <= hero:getRarity() or k == MasterLeadStageCondiState.KAwaken and hero:heroAwaked()) then
+					num = num + 1
+
+					if v.Count <= num then
+						break
+					end
+				end
+			end
+
+			table.insert(ret, v.Count <= num and true or false)
+			table.insert(nums, num)
+		elseif k == MasterLeadStageCondiState.KEquip then
+			local num = 0
+			local equipList = self._player:getEquipList()
+			local equipIds = equipList:getEquipsByType(v.Location)
+
+			for id, _ in pairs(equipIds) do
+				local equip = equipList:getEquipById(id)
+
+				if v.EquipRareity <= equip:getRarity() then
+					num = num + 1
+
+					if v.Count <= num then
+						break
+					end
+				end
+			end
+
+			table.insert(ret, v.Count <= num and true or false)
+			table.insert(nums, num)
+		elseif k == MasterLeadStageCondiState.KLeadStage then
+			local num = 0
+			local masterList = self._player:getMasterList():getAllMaster()
+
+			for id, _ in pairs(masterList) do
+				local master = self:getMasterById(id)
+
+				if v.Lv <= master:getLeadStageData():getLeadStageLevel() then
+					num = num + 1
+
+					if v.Count <= num then
+						break
+					end
+				end
+			end
+
+			table.insert(ret, v.Count <= num and true or false)
+			table.insert(nums, num)
+		elseif k == MasterLeadStageCondiState.KSuit then
+			local HeroEquipAllPos = ConfigReader:getDataByNameIdAndKey("ConfigValue", "HeroEquipPowerUpOrder", "content")
+			local posNum = {}
+			local equipList = self._player:getEquipList()
+
+			for i = 1, #HeroEquipAllPos do
+				local equipType = HeroEquipAllPos[i]
+				local equipIds = equipList:getEquipsByType(equipType)
+				posNum[i] = 0
+
+				for id, _ in pairs(equipIds) do
+					local equip = equipList:getEquipById(id)
+
+					if v.EquipRareity <= equip:getRarity() and tonumber(v.SuitLevel) <= equip:getLevel() then
+						posNum[i] = posNum[i] + 1
+
+						if v.Count <= posNum[i] then
+							break
+						end
+					end
+				end
+			end
+
+			local minValue = math.min(unpack(posNum))
+
+			table.insert(ret, v.Count <= minValue and true or false)
+			table.insert(nums, minValue)
+		elseif k == MasterLeadStageCondiState.KEquipRareityLevel then
+			local HeroEquipAllPos = v.Location
+			local posNum = {}
+			local equipList = self._player:getEquipList()
+
+			for i = 1, #HeroEquipAllPos do
+				local equipType = HeroEquipAllPos[i]
+				local equipIds = equipList:getEquipsByType(equipType)
+				posNum[i] = 0
+
+				for id, _ in pairs(equipIds) do
+					local equip = equipList:getEquipById(id)
+
+					if equip:getRarity() == v.EquipRareity and tonumber(v.Level) <= equip:getLevel() then
+						posNum[i] = posNum[i] + 1
+
+						if v.Count <= posNum[i] then
+							break
+						end
+					end
+				end
+			end
+
+			local minValue = math.min(unpack(posNum))
+
+			table.insert(ret, v.Count <= minValue and true or false)
+			table.insert(nums, minValue)
+			print("checkCondition  " .. k .. " " .. minValue .. "  " .. v.Count)
+		else
+			assert(k, "not support kind " .. k)
+		end
+	end
+
+	return ret, nums
+end
+
+function MasterSystem:getMasterLeadStatgeModelByMasterId(masterId)
+	local master = self:getMasterById(id)
+	local level = master:getLeadStageData():getLeadStageLevel()
+
+	if level <= 0 then
+		local modelId = ConfigReader:getDataByNameIdAndKey("MasterBase", id, "RoleModel")
+
+		return modelId
+	else
+		local id = master:getLeadStageData():getLeadStageId()
+		local data = ConfigReader:getRecordById("MasterLeadStage", leadStageId)
+
+		return data.ModelId
+	end
+end
+
+function MasterSystem:getMasterLeadStatgeModelByLSId(leadStageId, roleModelId)
+	if leadStageId == "" then
+		local modelID = ConfigReader:getDataByNameIdAndKey("RoleModel", roleModelId, "Model")
+
+		return modelID
+	else
+		local data = ConfigReader:getRecordById("MasterLeadStage", leadStageId)
+
+		return data.ModelId
+	end
+end
+
+function MasterSystem:getMasterLeadStatgeLevel(masterId)
+	local master = self:getMasterById(masterId)
+	local level = master:getLeadStageData():getLeadStageLevel()
+	local id = master:getLeadStageData():getLeadStageId()
+
+	return id, level
+end
+
+function MasterSystem:getMasterLeadStageModel(masterId, leadStageId)
+	if leadStageId == "" then
+		local roleModel = ConfigReader:requireDataByNameIdAndKey("MasterBase", masterId, "RoleModel")
+
+		return roleModel
+	else
+		local data = ConfigReader:getRecordById("MasterLeadStage", leadStageId)
+
+		return data.ModelId
+	end
+end
+
+function MasterSystem:getMasterActiveSkills(masterId)
+	local ret = {}
+	local masterData = self:getMasterById(masterId)
+	local leadStageData = masterData:getLeadStageData()
+	local curLv = leadStageData:getLeadStageLevel()
+
+	if curLv == 0 then
+		return ret
+	end
+
+	local leadStageDetailConfig = leadStageData:getConfigInfo()
+	local skills = leadStageDetailConfig[curLv].skills
+
+	for i, v in ipairs(skills) do
+		if skills[v].level > 0 then
+			table.insert(ret, {
+				skillId = v,
+				level = skills[v].level,
+				kind = leadStageData:getSkillKind(v)
+			})
+		end
+	end
+
+	return ret
+end
+
+function MasterSystem:getMasterCurLeadStageConfig(masterId)
+	local masterData = self:getMasterById(masterId)
+	local leadStageData = masterData:getLeadStageData()
+	local curId = leadStageData:getLeadStageId()
+
+	if curId ~= "" then
+		return ConfigReader:getRecordById("MasterLeadStage", curId)
+	end
+
+	return nil
+end
+
+function MasterSystem:getMasterLeadStatgeInfoById(leadStageId)
+	if leadStageId ~= "" then
+		return ConfigReader:getRecordById("MasterLeadStage", leadStageId)
+	end
+
+	return nil
 end

@@ -194,6 +194,30 @@ function TaskSystem:hasDailyRedPoint()
 	return false
 end
 
+function TaskSystem:hasDailyTaskRedPoint()
+	local unlock, tip = self._systemKeeper:isUnlock("DailyQuest")
+	local canShow = self._systemKeeper:canShow("DailyQuest")
+
+	if not canShow or not unlock then
+		return false
+	end
+
+	local daiyTaskList = self:getShowDailyTaskList()
+
+	for i = 1, #daiyTaskList do
+		local taskData = daiyTaskList[i]
+		local taskStatus = taskData:getStatus()
+		local condition = taskData:getShowCondition()
+		local systemKeeper = self:getInjector():getInstance(SystemKeeper)
+
+		if taskStatus == TaskStatus.kFinishNotGet and systemKeeper:isConditionReached(condition) then
+			return true
+		end
+	end
+
+	return false
+end
+
 function TaskSystem:hasWeekRewardRed()
 	local weekBoxStatusMap = self:getTaskListModel():getWeekBoxStatusMap()
 	local weekLivenessList = self:getWeekLivenessList()
@@ -400,6 +424,38 @@ function TaskSystem:requestAchievementReward(params, callback)
 	local taskService = self:getInjector():getInstance(TaskService)
 
 	taskService:requestAchievementReward(params, function (response)
+		if response.resCode == GS_SUCCESS then
+			self:dispatch(Event:new(EVT_TASK_ACHI_REWARD_SUCC, {
+				response = response.data.rewards
+			}))
+
+			if callback then
+				callback(response)
+			end
+		end
+	end)
+end
+
+function TaskSystem:requestOneKeyDailyTaskReward(params, callback)
+	local taskService = self:getInjector():getInstance(TaskService)
+
+	taskService:requestOneKeyDailyTaskReward(params, true, function (response)
+		if response.resCode == GS_SUCCESS then
+			self:dispatch(Event:new(EVT_TASK_REWARD_SUCC, {
+				response = response.data.rewards
+			}))
+
+			if callback then
+				callback(response)
+			end
+		end
+	end)
+end
+
+function TaskSystem:requestOneKeyAchievementReward(params, callback)
+	local taskService = self:getInjector():getInstance(TaskService)
+
+	taskService:requestOneKeyAchievementReward(params, true, function (response)
 		if response.resCode == GS_SUCCESS then
 			self:dispatch(Event:new(EVT_TASK_ACHI_REWARD_SUCC, {
 				response = response.data.rewards

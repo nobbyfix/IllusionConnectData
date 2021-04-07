@@ -93,6 +93,12 @@ ClubMemberBasisRecord:has("_city", {
 ClubMemberBasisRecord:has("_tags", {
 	is = "rw"
 })
+ClubMemberBasisRecord:has("_leadStageId", {
+	is = "rw"
+})
+ClubMemberBasisRecord:has("_leadStageLevel", {
+	is = "rw"
+})
 
 function ClubMemberBasisRecord:initialize(player)
 	super.initialize(self)
@@ -107,6 +113,8 @@ function ClubMemberBasisRecord:initialize(player)
 	self._slogan = ""
 	self._vip = 0
 	self._rid = ""
+	self._leadStageId = ""
+	self._leadStageLevel = 0
 end
 
 function ClubMemberBasisRecord:synchronize(data)
@@ -160,6 +168,14 @@ function ClubMemberBasisRecord:synchronize(data)
 
 	if data.tags then
 		self._tags = data.tags
+	end
+
+	if data.leadStageId then
+		self._leadStageId = data.leadStageId
+	end
+
+	if data.leadStageLevel then
+		self._leadStageLevel = data.leadStageLevel
 	end
 end
 
@@ -237,6 +253,12 @@ ClubApplyRecord:has("_propCity", {
 ClubApplyRecord:has("_propTags", {
 	is = "rw"
 })
+ClubApplyRecord:has("_leadStageId", {
+	is = "rw"
+})
+ClubApplyRecord:has("_leadStageLevel", {
+	is = "rw"
+})
 
 function ClubApplyRecord:initialize(player)
 	super.initialize(self)
@@ -261,6 +283,8 @@ function ClubApplyRecord:initialize(player)
 	self._propLevel = 0
 	self._heros = {}
 	self._master = {}
+	self._leadStageId = ""
+	self._leadStageLevel = 0
 end
 
 function ClubApplyRecord:synchronize(data)
@@ -366,6 +390,14 @@ function ClubApplyRecord:synchronize(data)
 
 	if data.presidentTags then
 		self._propTags = data.presidentTags
+	end
+
+	if data.leadStageId then
+		self._leadStageId = data.leadStageId
+	end
+
+	if data.leadStageLevel then
+		self._leadStageLevel = data.leadStageLevel
 	end
 end
 

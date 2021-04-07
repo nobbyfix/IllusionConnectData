@@ -56,14 +56,7 @@ function ShopBuyMonthCardFMediator:initMember()
 	self._per = mainPanel:getChildByFullName("noBuyPanel.per")
 	self._getText = mainPanel:getChildByFullName("getText")
 	self._btnBuy = mainPanel:getChildByFullName("btnBuy")
-	self._getRewardPanel = mainPanel:getChildByFullName("getRewardPanel")
-	self._physicalPanel = self._getRewardPanel:getChildByFullName("physicalPanel")
-
-	self._physicalPanel:addClickEventListener(function ()
-		self:onClickPhysicalPanel()
-	end)
-
-	self._rewardPanel = self._getRewardPanel:getChildByFullName("rewardPanel")
+	self._imgGot = mainPanel:getChildByFullName("got")
 	self._listView = self._view:getChildByFullName("main.listView")
 end
 
@@ -74,7 +67,6 @@ end
 function ShopBuyMonthCardFMediator:refreshView()
 	self:refreshIcon()
 	self:refreshBuyStatus()
-	self:setRedPointForMonthCardF()
 	self._listView:removeAllChildren()
 	self._listView:setScrollBarEnabled(false)
 
@@ -116,29 +108,13 @@ end
 
 function ShopBuyMonthCardFMediator:refreshBuyStatus()
 	self._btnBuy:setVisible(false)
-	self._getRewardPanel:setVisible(false)
+	self._imgGot:setVisible(false)
 	self._getText:setVisible(false)
 	self._noBuyPanel:setVisible(false)
 
 	if self._data._fCardBuyFlag then
+		self._imgGot:setVisible(true)
 		self._getText:setVisible(true)
-
-		if self._data._fCardWeekFlag and self._data._fCardWeekFlag.value > 0 then
-			self._rewardPanel:getChildByFullName("icon"):setColor(cc.c3b(125, 125, 125))
-			self._rewardPanel:getChildByFullName("getEndBg"):setVisible(true)
-		else
-			self._rewardPanel:getChildByFullName("getEndBg"):setVisible(false)
-		end
-
-		self:createRewardIcon()
-		mapButtonHandlerClick(self, self._getRewardPanel, "onClickRewardPanel", nil, true)
-		self._getRewardPanel:setVisible(true)
-
-		local r = self._data._fCardStamina / self._data._staminaLimit
-		local ratia = tonumber(string.format("%.2f", tostring(r)))
-
-		self._physicalPanel:getChildByFullName("LoadingBar"):setPercent(ratia * 100)
-		self._physicalPanel:getChildByFullName("cur"):setString(self._data._fCardStamina .. "/" .. self._data._staminaLimit)
 	else
 		local payOffSystem = DmGame:getInstance()._injector:getInstance(PayOffSystem)
 		local symbol, price = payOffSystem:getPaySymbolAndPrice(self._data._payId)
@@ -149,27 +125,6 @@ function ShopBuyMonthCardFMediator:refreshBuyStatus()
 		self._per:setPositionX(94 + self._moneySymbol:getContentSize().width + self._moneyNum:getContentSize().width + 8)
 		self._btnBuy:setVisible(true)
 		self._noBuyPanel:setVisible(true)
-	end
-end
-
-function ShopBuyMonthCardFMediator:createRewardIcon()
-	local rewards = RewardSystem:getRewardsById(tostring(self._data._weekReward))
-	local rewardData = rewards[1]
-	local iconBg = self._rewardPanel:getChildByFullName("icon")
-
-	iconBg:removeAllChildren()
-
-	if rewardData then
-		local icon = IconFactory:createRewardIcon(rewardData, {
-			showAmount = true,
-			isWidget = true
-		})
-
-		IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), rewardData, {
-			needDelay = true
-		})
-		icon:setScaleNotCascade(0.5)
-		icon:addTo(iconBg):center(iconBg:getContentSize())
 	end
 end
 
@@ -250,30 +205,4 @@ function ShopBuyMonthCardFMediator:getPower(taskData)
 	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
 		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
 	}, data, delegate))
-end
-
-function ShopBuyMonthCardFMediator:setRedPointForMonthCardF()
-	local redPoint = self._rewardPanel:getChildByName("redPoint" .. "rewardPanel")
-
-	if not redPoint then
-		redPoint = RedPoint:createDefaultNode()
-
-		redPoint:addTo(self._rewardPanel):posite(72, 60)
-		redPoint:setLocalZOrder(99900)
-		redPoint:setName("redPoint" .. "rewardPanel")
-	end
-
-	redPoint:setVisible(self._shopSystem:getRedPointForMCFWeekFlag())
-
-	local redPoint = self._rewardPanel:getChildByName("redPoint" .. "physicalPanel")
-
-	if not redPoint then
-		redPoint = RedPoint:createDefaultNode()
-
-		redPoint:addTo(self._physicalPanel):posite(70, 90)
-		redPoint:setLocalZOrder(99900)
-		redPoint:setName("redPoint" .. "physicalPanel")
-	end
-
-	redPoint:setVisible(self._shopSystem:getRedPointForMCFStamina())
 end

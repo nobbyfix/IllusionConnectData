@@ -353,15 +353,17 @@ function FunctionEntranceMediator:createCooperateBossAnim()
 		}))
 	elseif kCooperateBossState.kStart == state then
 		self._cooperateBossSystem:requestGetInviteInfo(function ()
-			local mineBossShow = self._cooperateBossSystem:checkMineDefaultBossShow()
+			if not DisposableObject:isDisposed(stateLabel) then
+				local mineBossShow = self._cooperateBossSystem:checkMineDefaultBossShow()
 
-			stateLabel:setVisible(false)
+				stateLabel:setVisible(false)
 
-			if mineBossShow then
-				stateLabel:setVisible(true)
-				stateLabel:setString(Strings:get("CooperateBoss_Entry_UI05"))
-				stateLabel:setTextColor(cc.c3b(249, 217, 91))
-				stateLabel:setColor(cc.c3b(255, 255, 255))
+				if mineBossShow then
+					stateLabel:setVisible(true)
+					stateLabel:setString(Strings:get("CooperateBoss_Entry_UI05"))
+					stateLabel:setTextColor(cc.c3b(249, 217, 91))
+					stateLabel:setColor(cc.c3b(255, 255, 255))
+				end
 			end
 		end)
 		timeLabel:setString(Strings:get("CooperateBoss_Entry_UI04", {

@@ -133,11 +133,7 @@ function MasterAttribute:getBaseAttrNumByType(attrType, attrFactor, env)
 	local isAttrBaseType = AttributeCategory:isAttrBaseType(attrType)
 	local result = elementMap.a * (1 + elementMap.b) + elementMap.c
 
-	if env and env ~= GameEnvType.kAll then
-		return result * (1 + elementMap.d) + elementMap.f
-	end
-
-	return result
+	return result * (1 + elementMap.d) + elementMap.f
 end
 
 function MasterAttribute:getRateAttrNumByType(attrType, attrFactor, env)

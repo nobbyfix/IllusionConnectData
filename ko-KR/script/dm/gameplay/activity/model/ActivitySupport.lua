@@ -59,6 +59,12 @@ ActivitySupportItems = {
 		"IM_WuXiuHuiSoreItem_2",
 		"IM_WuXiuHuiClubAttrItem_1",
 		"IM_WuXiuHuiClubAttrItem_2"
+	},
+	[ActivityId.kActivityBlockZuoHe2] = {
+		"IM_ABSoreItem_1",
+		"IM_ABSoreItem_2",
+		"IM_ABClubAttrItem_1",
+		"IM_ABClubAttrItem_2"
 	}
 }
 ActivitySupportScheduleType = {
