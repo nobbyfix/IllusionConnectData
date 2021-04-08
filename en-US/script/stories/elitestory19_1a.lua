@@ -180,7 +180,7 @@ function scene_elitestory19_1a.actions.start_elitestory19_1a(_root, args)
 					scale = 0.8,
 					position = {
 						x = 0,
-						y = -80,
+						y = -180,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -327,7 +327,7 @@ function scene_elitestory19_1a.actions.start_elitestory19_1a(_root, args)
 					scale = 0.8,
 					position = {
 						x = 0,
-						y = -80,
+						y = -180,
 						refpt = {
 							x = 0.75,
 							y = 0
@@ -409,7 +409,7 @@ function scene_elitestory19_1a.actions.start_elitestory19_1a(_root, args)
 					scale = 0.95,
 					position = {
 						x = 0,
-						y = -100,
+						y = -180,
 						refpt = {
 							x = 0.45,
 							y = 0
@@ -438,7 +438,7 @@ function scene_elitestory19_1a.actions.start_elitestory19_1a(_root, args)
 					scale = 0.95,
 					position = {
 						x = 0,
-						y = -100,
+						y = -180,
 						refpt = {
 							x = 0.65,
 							y = 0

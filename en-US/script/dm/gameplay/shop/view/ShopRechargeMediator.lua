@@ -151,9 +151,11 @@ function ShopRechargeMediator:setInfo(panel, data)
 
 	local symbol, price = data:getPaySymbolAndPrice()
 
-	moneyText:setString(price)
 	moneySymbol:setString(symbol)
+	moneyText:getVirtualRenderer():setOverflow(cc.LabelOverflow.SHRINK)
+	moneyText:getVirtualRenderer():setDimensions(195 - moneySymbol:getContentSize().width, 41)
 	moneyText:setPositionX(moneySymbol:getContentSize().width)
+	moneyText:setString(price)
 
 	local name = data:getName()
 

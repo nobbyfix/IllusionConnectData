@@ -99,34 +99,6 @@ function BattleRoleSpineHandler:_judgeFinalHit(unit)
 			local mainMediator = context:getValue("BattleMainMediator")
 
 			uiLayer:setTouchEnabled(false)
-
-			local flashConfig = {}
-
-			for i = 1, 4 do
-				flashConfig[#flashConfig + 1] = {
-					color = "#FF0000",
-					duration = 3
-				}
-				flashConfig[#flashConfig + 1] = {
-					color = "#FFFFFF",
-					duration = 3
-				}
-			end
-
-			flashConfig[#flashConfig + 1] = {
-				color = "#FFFFFF",
-				duration = 3
-			}
-			flashConfig[#flashConfig + 1] = {
-				color = "#FF0000",
-				duration = 7
-			}
-			flashConfig[#flashConfig + 1] = {
-				color = "#FFFFFF",
-				duration = 4
-			}
-
-			battleGround:flashScreen(flashConfig, 24)
 			battleGround:slowDown({
 				{
 					value = 0.1,

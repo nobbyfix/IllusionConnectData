@@ -21,8 +21,8 @@
         "clz": "dict",
         "content": {
             "120": "ActiveReward_3",
-            "160": "ActiveReward_4",
-            "200": "ActiveReward_5",
+            "160": "ActiveReward_New_4",
+            "200": "ActiveReward_New_5",
             "40": "ActiveReward_1",
             "80": "ActiveReward_2"
         }
@@ -1684,7 +1684,7 @@
     },
     "Club_Set_MaxBattleValue": {
         "clz": "int",
-        "content": 100000
+        "content": 600000
     },
     "Club_Third_Number": {
         "clz": "int",
@@ -2340,6 +2340,14 @@
         "clz": "int",
         "content": 400
     },
+    "DrawCardEX_Zuohe_SinglePrice": {
+        "clz": "int",
+        "content": 400
+    },
+    "DrawCardEX_Zuohe_TenTimesPrice": {
+        "clz": "int",
+        "content": 400
+    },
     "DrawCard_First": {
         "clz": "string",
         "content": "DrawCard_First_Reward"
@@ -2455,7 +2463,8 @@
             "E15",
             "E16",
             "E17",
-            "E18"
+            "E18",
+            "E19"
         ]
     },
     "EliteStage_RestCost": {
@@ -2601,6 +2610,15 @@
             66000,
             67000
         ]
+    },
+    "Equip_Translate": {
+        "clz": "dict",
+        "content": {
+            "Decoration": "Equip_DecorationText",
+            "Shoes": "Equip_ShoesText",
+            "Tops": "Equip_TopsText",
+            "Weapon": "Equip_WeaponText"
+        }
     },
     "Exchange_Crystal_Else": {
         "clz": "string",
@@ -4826,6 +4844,92 @@
             "Voice_XLai_24",
             "Voice_XLai_24",
             "Voice_BEr_24"
+        ]
+    },
+    "LeadStage_Effective": {
+        "clz": "string[]",
+        "content": [
+            "ARENA",
+            "RTPK"
+        ]
+    },
+    "LeadStage_EffectiveTranslate": {
+        "clz": "dict",
+        "content": {
+            "ARENA": "ARENA_TITLE",
+            "RTPK": "RTPK_SystemName"
+        }
+    },
+    "LeadStage_Mail": {
+        "clz": "string",
+        "content": "LeadStage_Open_Mail"
+    },
+    "LeadStage_MailLevel": {
+        "clz": "int",
+        "content": 25
+    },
+    "LeadStage_Rebot_RTPK": {
+        "clz": "int",
+        "content": 1
+    },
+    "LeadStage_Rule": {
+        "clz": "string[]",
+        "content": [
+            "LeadStage_Rule01",
+            "LeadStage_Rule02",
+            "LeadStage_Rule03",
+            "LeadStage_Rule04"
+        ]
+    },
+    "LeadStage_SuppressSwitch": {
+        "clz": "int",
+        "content": 1
+    },
+    "LeadStage_Suppress_Attr_Type": {
+        "clz": "string[]",
+        "content": [
+            "CRITRATE",
+            "UNCRITRATE",
+            "HURTRATE",
+            "UNHURTRATE"
+        ]
+    },
+    "LeadStage_Suppress_MaxLv": {
+        "clz": "int",
+        "content": 2
+    },
+    "LeadStage_Suppress_Rate": {
+        "clz": "string[]",
+        "content": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    "LeadStage_Suppress_Value_Section": {
+        "clz": "array",
+        "content": [
+            [
+                0,
+                0.3
+            ],
+            [
+                0,
+                0.3
+            ],
+            [
+                -0.4,
+                0.4
+            ],
+            [
+                -0.4,
+                0.4
+            ]
         ]
     },
     "LevelTask_ShowUnlockLevel": {
@@ -7431,7 +7535,8 @@
         "content": [
             "Shop1",
             "Shop6",
-            "Shop_Diamond"
+            "Shop_Diamond",
+            "Shop_Crystal"
         ]
     },
     "Shop_Sort": {
@@ -7865,6 +7970,24 @@
             ]
         }
     },
+    "Suppress_Lv1": {
+        "clz": "string[]",
+        "content": [
+            0.125,
+            0.125,
+            0.15,
+            0.15
+        ]
+    },
+    "Suppress_Lv2": {
+        "clz": "string[]",
+        "content": [
+            0.25,
+            0.25,
+            0.2,
+            0.2
+        ]
+    },
     "TacticsCard_Availible": {
         "clz": "string[]",
         "content": [
@@ -8044,17 +8167,10 @@
             "SYAi",
             "YYing",
             "GYCZi",
-            "DFQi",
-            "DCJKang",
             "NXYYi",
-            "BQDShe",
             "YXNMei",
             "AJTa",
             "SRen",
-            "BHTZi",
-            "LYXi",
-            "YSLBin",
-            "KMLa",
             "PDLa",
             "NFEr",
             "HSheng",
@@ -8065,11 +8181,14 @@
             "QBTe",
             "FLYDe",
             "TJHDe",
+            "DCJKang",
             "NCai",
             "FGao",
             "XBKLDi",
             "KEDGong",
-            "HGEr"
+            "HGEr",
+            "QTQCi",
+            "LSLTe"
         ]
     },
     "Tower_1_GrowMaxValue": {

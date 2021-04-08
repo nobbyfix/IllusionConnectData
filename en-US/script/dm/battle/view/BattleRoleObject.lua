@@ -1517,6 +1517,13 @@ local skillList = {
 	"skill3_3",
 	"skill2_2"
 }
+local skillExtension = {
+	skill5_3 = "skill5_3",
+	skill3_1 = "skill3_1",
+	skill5_1 = "skill5_1",
+	skill3_2 = "skill3_2",
+	skill5_2 = "skill5_2"
+}
 local normalList = {
 	"down",
 	"getup",
@@ -1559,6 +1566,14 @@ local actMap = {
 	hurt1 = "hurt1",
 	burst = "burst"
 }
+
+for k, v in pairs(skillExtension) do
+	skillList[#skillList + 1] = v
+end
+
+for k, v in pairs(skillExtension) do
+	actMap[k] = v
+end
 
 local function startsWith(src, sub)
 	local len = string.len(sub)

@@ -599,6 +599,7 @@ function GameUpdater:installPackages()
 			end
 
 			dump(jsonData.version, "switchVersion:")
+			self._assetsManager:switchAssetsVersion(tonumber(jsonData.version))
 
 			if fileUtils then
 				fileUtils:removeDirectory(writablePath .. PATCH_FOLDER)
@@ -661,8 +662,6 @@ function GameUpdater:installPackages()
 				fileUtils:purgeCachedEntries()
 				print("*********merge db over*********")
 			end
-
-			self._assetsManager:switchAssetsVersion(tonumber(jsonData.version))
 
 			if self._delegate and self._delegate.onInstallPackage then
 				self._delegate:onInstallPackage(event, details)

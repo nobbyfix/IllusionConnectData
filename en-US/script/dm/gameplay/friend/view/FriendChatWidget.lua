@@ -429,7 +429,9 @@ function FriendChatWidget:onClickDetails(sender, eventType)
 			city = self._data:getCity(),
 			birthday = self._data:getBirthday(),
 			tags = self._data:getTags(),
-			block = response.block
+			block = response.block,
+			leadStageId = self._data:getLeadStageId(),
+			leadStageLevel = self._data:getLeadStageLevel()
 		})
 
 		record.lastView = "friendChatView"

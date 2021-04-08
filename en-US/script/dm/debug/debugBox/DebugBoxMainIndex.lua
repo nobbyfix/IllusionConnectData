@@ -46,7 +46,8 @@ DebugBoxMainIndex = {
 					"开启/关闭战斗开始loading",
 					"设置血量增加倍数",
 					"开启/关闭打印实时属性",
-					"开启/关闭顺序出牌"
+					"开启/关闭顺序出牌",
+					"开启/关闭战斗统计详情"
 				}
 			},
 			{
@@ -108,7 +109,10 @@ DebugBoxMainIndex = {
 					"增加英魂",
 					"一键无敌",
 					"添加皮肤",
-					"语音检测"
+					"语音检测",
+					"一键装备",
+					"一键卸下装备",
+					"一键觉醒"
 				}
 			},
 			{
@@ -121,18 +125,26 @@ DebugBoxMainIndex = {
 				}
 			},
 			{
+				"源阶",
+				{
+					"增加源阶"
+				}
+			},
+			{
 				"城建",
 				{
 					"清除队列"
 				}
 			},
 			{
-				"主线副本",
+				"副本",
 				{
 					"通关至指定普通关卡",
 					"通关至指定精英关卡",
 					"重置英魂副本挑战次数",
-					"关卡一键速达"
+					"关卡一键速达",
+					"通关所有活动本",
+					"通关指定梦境塔"
 				}
 			},
 			{
@@ -421,6 +433,18 @@ DebugBoxMainIndex = {
 				"TestSound"
 			},
 			{
+				"一键装备",
+				"OneKeyEquip"
+			},
+			{
+				"一键卸下装备",
+				"OneKeyDownEquip"
+			},
+			{
+				"一键觉醒",
+				"OneKeyAwake"
+			},
+			{
 				"进入剧情编辑",
 				"StoryEditor"
 			},
@@ -593,6 +617,14 @@ DebugBoxMainIndex = {
 				"PracticleToPoint"
 			},
 			{
+				"通关所有活动本",
+				"ActivityStageFinish"
+			},
+			{
+				"通关指定梦境塔",
+				"DreamChallengeFinish"
+			},
+			{
 				"增加本周荣誉值",
 				"ArenaAddHonor"
 			},
@@ -761,6 +793,10 @@ DebugBoxMainIndex = {
 				"DebugShowBustAni"
 			},
 			{
+				"增加源阶",
+				"DebugAddLeadStageLevel"
+			},
+			{
 				"增加积分(可负)",
 				"DebugRTPKScore"
 			},
@@ -827,6 +863,10 @@ DebugBoxMainIndex = {
 			{
 				"开启/关闭顺序出牌",
 				"NoAiSetBox"
+			},
+			{
+				"开启/关闭战斗统计详情",
+				"StatistSetBox"
 			},
 			{
 				"播放主线校验错误",
@@ -956,6 +996,7 @@ DebugBoxMainIndex = {
 			"ChangeMiniGame",
 			"CooperateBossTest",
 			"DebugShowBustAni",
+			"DebugAddLeadStageLevel",
 			"DebugRTPKScore",
 			"ChangeTask"
 		}

@@ -44,6 +44,7 @@ function ChangeTeamMasterMediator:enterWithData(data)
 	self._masterList = data.masterList
 	self._recomand = data.recomandList or {}
 	self._forbidMasters = data.forbidMasters or {}
+	self._masterSystem = data.sys
 
 	self:initView()
 end
@@ -166,6 +167,18 @@ function ChangeTeamMasterMediator:createMaster(cell, index)
 		lockPanel:setVisible(true)
 		lockPanel:setLocalZOrder(10)
 		cell:setGray(true)
+	end
+
+	local node = cc.Node:create()
+
+	node:addTo(layer):posite(90, 80)
+	node:removeAllChildren()
+
+	local id, lv = self._masterSystem:getMasterLeadStatgeLevel(data:getId())
+	local icon = IconFactory:createLeadStageIconVer(id, lv)
+
+	if icon then
+		icon:addTo(node)
 	end
 end
 

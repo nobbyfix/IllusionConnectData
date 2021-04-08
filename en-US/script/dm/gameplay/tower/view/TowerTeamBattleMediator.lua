@@ -1184,6 +1184,10 @@ end
 
 function TowerTeamBattleMediator:onClickBack()
 	self:sendUpdateTowerTeam1(function ()
+		if DisposableObject:isDisposed(self) or DisposableObject:isDisposed(self:getView()) then
+			return
+		end
+
 		self:dismiss()
 	end)
 end

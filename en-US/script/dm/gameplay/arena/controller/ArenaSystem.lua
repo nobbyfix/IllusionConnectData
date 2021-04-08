@@ -862,6 +862,27 @@ function ArenaSystem:enterBattleChallenge(rivalIndex, data)
 		end
 	end
 
+	function battleDelegate:showMaster(friend, enemy, pauseFunc, resumeCallback)
+		local delegate = self
+		local popupDelegate = {
+			willClose = function (self, sender, data)
+				if resumeCallback then
+					resumeCallback()
+				end
+			end
+		}
+		local bossView = outSelf:getInjector():getInstance("MasterCutInView")
+
+		outSelf:dispatch(ViewEvent:new(EVT_SHOW_POPUP, bossView, nil, {
+			friend = friend,
+			enemy = enemy
+		}, popupDelegate))
+
+		if pauseFunc then
+			pauseFunc()
+		end
+	end
+
 	function battleDelegate:onShowRestraint(continueCallback)
 		local popupDelegate = {
 			willClose = function (self, sender)

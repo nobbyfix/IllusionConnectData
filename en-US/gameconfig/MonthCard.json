@@ -23,33 +23,5 @@
         "Sort": 11,
         "Time": 30,
         "Title": "sd_yk_tc_2"
-    },
-    "MonthCard_SubScribe": {
-        "ChargeSum": 60,
-        "Desc": "MonthCard_Subscribe_Desc",
-        "DiamondBack": "MonthCard_SubScribe",
-        "Effect": [
-            "SpFunc_WorldmapSpeedUp",
-            "SpFunc_BattleStaminaBack"
-        ],
-        "EffectDesc": [
-            "MonthCard_SubScribe_Desc1",
-            "MonthCard_SubScribe_Desc2"
-        ],
-        "EndingMailId": "Mail_MonthCard_End",
-        "FirstCharge": 0,
-        "IsSubScribe": 1,
-        "Name": "MonthCard_Subscribe_Name",
-        "Pay": "Pay_Subscribe_6",
-        "Picture": "sd_yk_img_3",
-        "Price": 6,
-        "ReissueMail": "Mail_MonthCard",
-        "ReissueTime": 30,
-        "RenewalTimes": 0,
-        "Reward": "",
-        "RewardMail": "Mail_MonthReward",
-        "Sort": 13,
-        "Time": 30,
-        "Title": "sd_yk_tc_3"
     }
 }

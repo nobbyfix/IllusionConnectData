@@ -234,7 +234,7 @@ function BagSystem:getPowerByCurrencyId(currencyId)
 	local count = 0
 	local lastRecoverTime = 0
 
-	if entry then
+	if entry and resetSystem then
 		lastRecoverTime = entry.item:getLastRecoverTime()
 		count = entry.count
 

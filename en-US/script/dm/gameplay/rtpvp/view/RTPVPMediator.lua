@@ -74,6 +74,27 @@ function RTPVPMediator:_battleMatch(data, extra)
 	local systemKeeper = self:getInjector():getInstance(SystemKeeper)
 	local loadingList = LoadingTask:getRealBattleLoadingList(nil, , systemKeeper:isUnlock("Hero_Soul"))
 
+	function battleDelegate:showMaster(friend, enemy, pauseFunc, resumeCallback)
+		local delegate = self
+		local popupDelegate = {
+			willClose = function (self, sender, data)
+				if resumeCallback then
+					resumeCallback()
+				end
+			end
+		}
+		local bossView = outSelf:getInjector():getInstance("MasterCutInView")
+
+		outSelf:dispatch(ViewEvent:new(EVT_SHOW_POPUP, bossView, nil, {
+			friend = friend,
+			enemy = enemy
+		}, popupDelegate))
+
+		if pauseFunc then
+			pauseFunc()
+		end
+	end
+
 	self:dispatch(SceneEvent:new(EVT_SWITCH_SCENE, "battleScene", nil, {
 		soulLoadingType = "6v6",
 		mainView = "rtpvpBattle",

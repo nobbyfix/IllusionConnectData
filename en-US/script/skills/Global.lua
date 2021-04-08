@@ -475,7 +475,11 @@ function all.EvalDamage_FlagCheck(_env, actor, target, dmgFactor, passiveFactors
 		"atkrate",
 		"hurtrate",
 		"defweaken",
-		"critrate"
+		"critrate",
+		"unhurtrate"
+	}
+	local Props2 = {
+		"unhurtrate"
 	}
 	local Party = {
 		"XiDe",
@@ -644,6 +648,22 @@ function all.EvalDamage_FlagCheck(_env, actor, target, dmgFactor, passiveFactors
 		end
 	end
 
+	for i = 1, #Flags do
+		local flag = Flags[i]
+
+		if global.MARKED(_env, flag)(_env, actor) then
+			for _, prop in global.__iter__(Props2) do
+				local FlagsValue = global.SpecialPropGetter(_env, FlagsPrename[i] .. prop)(_env, target)
+
+				if FlagsValue and FlagsValue ~= 0 then
+					defender[prop] = defender[prop] + FlagsValue
+
+					break
+				end
+			end
+		end
+	end
+
 	for m = 1, #Status do
 		local status = Status[m]
 
@@ -734,7 +754,11 @@ function all.EvalAOEDamage_FlagCheck(_env, actor, target, dmgFactor, passiveFact
 		"atkrate",
 		"hurtrate",
 		"defweaken",
-		"critrate"
+		"critrate",
+		"unhurtrate"
+	}
+	local Props2 = {
+		"unhurtrate"
 	}
 	local Party = {
 		"XiDe",
@@ -884,6 +908,22 @@ function all.EvalAOEDamage_FlagCheck(_env, actor, target, dmgFactor, passiveFact
 
 				if FlagsValue and FlagsValue ~= 0 then
 					attacker[prop] = attacker[prop] + FlagsValue
+
+					break
+				end
+			end
+		end
+	end
+
+	for i = 1, #Flags do
+		local flag = Flags[i]
+
+		if global.MARKED(_env, flag)(_env, actor) then
+			for _, prop in global.__iter__(Props2) do
+				local FlagsValue = global.SpecialPropGetter(_env, FlagsPrename[i] .. prop)(_env, target)
+
+				if FlagsValue and FlagsValue ~= 0 then
+					defender[prop] = defender[prop] + FlagsValue
 
 					break
 				end
@@ -1441,6 +1481,14 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 				global.ApplyHPDamage(_env, unit, damage * singlecritsplitrate)
 			end
 		end
+
+		if global.MARKED(_env, "QTQCi")(_env, actor) then
+			local RpFactor = global.SpecialPropGetter(_env, "Skill_QTQCi_Passive_RP")(_env, actor)
+
+			if RpFactor and RpFactor ~= 0 then
+				global.ApplyRPRecovery(_env, actor, RpFactor)
+			end
+		end
 	end
 
 	if damage and damage.block then
@@ -1470,6 +1518,14 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 			}, {
 				buff
 			})
+		end
+
+		if global.MARKED(_env, "QTQCi")(_env, target) then
+			local RpFactor = global.SpecialPropGetter(_env, "Skill_QTQCi_Passive_RP")(_env, target)
+
+			if RpFactor and RpFactor ~= 0 then
+				global.ApplyRPRecovery(_env, target, RpFactor)
+			end
 		end
 	end
 
@@ -1796,6 +1852,14 @@ function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimi
 		end
 	end
 
+	if result and result.crit and global.MARKED(_env, "QTQCi")(_env, actor) then
+		local RpFactor = global.SpecialPropGetter(_env, "Skill_QTQCi_Passive_RP")(_env, actor)
+
+		if RpFactor and RpFactor ~= 0 then
+			global.ApplyRPRecovery(_env, actor, RpFactor)
+		end
+	end
+
 	if damage and damage.block then
 		local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, target)
 		local blockrecoveryrate = global.SpecialPropGetter(_env, "blockrecoveryrate")(_env, target)
@@ -1823,6 +1887,14 @@ function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimi
 			}, {
 				buff
 			})
+		end
+
+		if global.MARKED(_env, "QTQCi")(_env, target) then
+			local RpFactor = global.SpecialPropGetter(_env, "Skill_QTQCi_Passive_RP")(_env, target)
+
+			if RpFactor and RpFactor ~= 0 then
+				global.ApplyRPRecovery(_env, target, RpFactor)
+			end
 		end
 	end
 
@@ -2107,6 +2179,14 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 				global.ApplyHPDamage(_env, unit, damages[n] * singlecritsplitrate)
 			end
 		end
+
+		if global.MARKED(_env, "QTQCi")(_env, actor) then
+			local RpFactor = global.SpecialPropGetter(_env, "Skill_QTQCi_Passive_RP")(_env, actor)
+
+			if RpFactor and RpFactor ~= 0 and n == total then
+				global.ApplyRPRecovery(_env, actor, RpFactor)
+			end
+		end
 	end
 
 	if n == total then
@@ -2250,6 +2330,14 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 				}, {
 					buff
 				})
+			end
+
+			if global.MARKED(_env, "QTQCi")(_env, target) then
+				local RpFactor = global.SpecialPropGetter(_env, "Skill_QTQCi_Passive_RP")(_env, target)
+
+				if RpFactor and RpFactor ~= 0 then
+					global.ApplyRPRecovery(_env, target, RpFactor)
+				end
 			end
 		end
 	end
@@ -2526,6 +2614,14 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 		end
 	end
 
+	if result and result.crit and global.MARKED(_env, "QTQCi")(_env, actor) then
+		local RpFactor = global.SpecialPropGetter(_env, "Skill_QTQCi_Passive_RP")(_env, actor)
+
+		if RpFactor and RpFactor ~= 0 and n == total then
+			global.ApplyRPRecovery(_env, actor, RpFactor)
+		end
+	end
+
 	if n == total then
 		local extrapetshealrate = global.SpecialPropGetter(_env, "extrapetshealrate")(_env, actor)
 
@@ -2687,6 +2783,14 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 				}, {
 					buff
 				})
+			end
+
+			if global.MARKED(_env, "QTQCi")(_env, target) then
+				local RpFactor = global.SpecialPropGetter(_env, "Skill_QTQCi_Passive_RP")(_env, target)
+
+				if RpFactor and RpFactor ~= 0 then
+					global.ApplyRPRecovery(_env, target, RpFactor)
+				end
 			end
 		end
 	end
@@ -2924,6 +3028,57 @@ function all.ApplyHPMultiRecovery_ResultCheck(_env, actor, target, delays, heals
 	local global = _env.global
 
 	return global.MultiDelayCall(_env, delays, global.ApplyHPRecoveryN, target, heals, actor)
+end
+
+function all.ApplyRealDamage(_env, actor, target, dmgrange, dmgtype, damagerate, delays, lowerLimit)
+	local this = _env.this
+	local global = _env.global
+	local result, damage = nil
+	local atk = global.UnitPropGetter(_env, "atk")(_env, actor)
+	local atkrate = global.UnitPropGetter(_env, "atkrate")(_env, actor)
+	local hurtrate = global.UnitPropGetter(_env, "hurtrate")(_env, actor)
+	local critstrg = global.UnitPropGetter(_env, "critstrg")(_env, actor)
+	local aoerate = global.UnitPropGetter(_env, "aoerate")(_env, actor)
+
+	if dmgrange == 1 then
+		damage = global.EvalDamage_FlagCheck(_env, actor, target, {
+			1,
+			1,
+			0
+		})
+	elseif dmgrange == 2 then
+		damage = global.EvalAOEDamage_FlagCheck(_env, actor, target, {
+			1,
+			1,
+			0
+		})
+	end
+
+	damage.val = atk * atkrate * (1 + hurtrate) * damagerate
+
+	if damage and damage.crit then
+		damage.val = damage.val * (1.5 + critstrg)
+	end
+
+	damage.block = nil
+
+	if dmgrange == 1 then
+		if dmgtype == 1 then
+			result = global.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
+		elseif dmgtype == 2 then
+			result = global.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
+		end
+	elseif dmgrange == 2 then
+		damage.val = damage.val * (1 + aoerate)
+
+		if dmgtype == 1 then
+			result = global.ApplyHPMultiDamage_ResultCheck(_env, actor, target, delays, damage, lowerLimit)
+		elseif dmgtype == 2 then
+			result = global.ApplyAOEHPMultiDamage_ResultCheck(_env, actor, target, delays, damage, lowerLimit)
+		end
+	end
+
+	return result
 end
 
 return _M

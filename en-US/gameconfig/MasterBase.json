@@ -18,6 +18,7 @@
         "AtkWeaken": 0.0,
         "AttackFactor": 1.0,
         "AttackSkill": "Sk_Attack_Master_BiLei",
+        "Background": "leadStage_scene_huang",
         "BaseAttack": 150.0,
         "BaseDefence": 45.0,
         "BaseHp": 1200.0,
@@ -44,6 +45,10 @@
         "HpFactor": 1.0,
         "HurtRate": 0.0,
         "IfHidden": 1,
+        "LeadMasterSkill": [
+            "LeadStage_BiLei_PVE_Skill_002"
+        ],
+        "LeadStage": "LeadStage_BiLei_001",
         "LevelUnlock": {
             "ActionSkill1": {
                 "star": 2
@@ -350,6 +355,11 @@
                 }
             ]
         ],
+        "TreeColor": [
+            255,
+            223,
+            76
+        ],
         "Type": "ATK",
         "UnblockRate": 0.0,
         "UncritRate": 0.0,
@@ -399,6 +409,7 @@
         "AtkWeaken": 0.0,
         "AttackFactor": 1.0,
         "AttackSkill": "Sk_Attack_Master_FuHun",
+        "Background": "leadStage_scene_lan",
         "BaseAttack": 150.0,
         "BaseDefence": 45.0,
         "BaseHp": 1200.0,
@@ -425,6 +436,10 @@
         "HpFactor": 1.0,
         "HurtRate": 0.0,
         "IfHidden": 1,
+        "LeadMasterSkill": [
+            "LeadStage_FuHun_PVE_Skill_002"
+        ],
+        "LeadStage": "LeadStage_FuHun_001",
         "LevelUnlock": {
             "ActionSkill1": {
                 "star": 2
@@ -887,6 +902,11 @@
                 }
             ]
         ],
+        "TreeColor": [
+            22,
+            126,
+            255
+        ],
         "Type": "ATK",
         "UnblockRate": 0.0,
         "UncritRate": 0.0,
@@ -936,6 +956,7 @@
         "AtkWeaken": 0.0,
         "AttackFactor": 1.0,
         "AttackSkill": "Sk_Attack_Master_JiangJun",
+        "Background": "",
         "BaseAttack": 150.0,
         "BaseDefence": 45.0,
         "BaseHp": 1200.0,
@@ -962,6 +983,8 @@
         "HpFactor": 1.0,
         "HurtRate": 0.0,
         "IfHidden": 0,
+        "LeadMasterSkill": [],
+        "LeadStage": "LeadStage_JiangJun_001",
         "LevelUnlock": {
             "ActionSkill1": {
                 "star": 2
@@ -1276,6 +1299,7 @@
                 }
             ]
         ],
+        "TreeColor": "",
         "Type": "ATK",
         "UnblockRate": 0.0,
         "UncritRate": 0.0,
@@ -1325,6 +1349,7 @@
         "AtkWeaken": 0.0,
         "AttackFactor": 1.0,
         "AttackSkill": "Sk_Attack_Master_LieSha",
+        "Background": "leadStage_scene_zi",
         "BaseAttack": 150.0,
         "BaseDefence": 45.0,
         "BaseHp": 1200.0,
@@ -1351,6 +1376,10 @@
         "HpFactor": 1.0,
         "HurtRate": 0.0,
         "IfHidden": 1,
+        "LeadMasterSkill": [
+            "LeadStage_LieSha_PVE_Skill_002"
+        ],
+        "LeadStage": "LeadStage_LieSha_001",
         "LevelUnlock": {
             "ActionSkill1": {
                 "star": 2
@@ -1659,6 +1688,11 @@
                 }
             ]
         ],
+        "TreeColor": [
+            159,
+            31,
+            248
+        ],
         "Type": "ATK",
         "UnblockRate": 0.0,
         "UncritRate": 0.0,
@@ -1708,6 +1742,7 @@
         "AtkWeaken": 0.0,
         "AttackFactor": 1.0,
         "AttackSkill": "Sk_Attack_Master_SenLing",
+        "Background": "leadStage_scene_lv",
         "BaseAttack": 150.0,
         "BaseDefence": 45.0,
         "BaseHp": 1200.0,
@@ -1734,6 +1769,10 @@
         "HpFactor": 1.0,
         "HurtRate": 0.0,
         "IfHidden": 1,
+        "LeadMasterSkill": [
+            "LeadStage_SenLing_PVE_Skill_002"
+        ],
+        "LeadStage": "LeadStage_SenLing_001",
         "LevelUnlock": {
             "ActionSkill1": {
                 "star": 2
@@ -2046,6 +2085,11 @@
                 }
             ]
         ],
+        "TreeColor": [
+            0,
+            211,
+            119
+        ],
         "Type": "ATK",
         "UnblockRate": 0.0,
         "UncritRate": 0.0,
@@ -2095,6 +2139,7 @@
         "AtkWeaken": 0.0,
         "AttackFactor": 1.0,
         "AttackSkill": "Sk_Attack_Master_WuShi",
+        "Background": "",
         "BaseAttack": 150.0,
         "BaseDefence": 45.0,
         "BaseHp": 1200.0,
@@ -2121,6 +2166,8 @@
         "HpFactor": 1.0,
         "HurtRate": 0.0,
         "IfHidden": 0,
+        "LeadMasterSkill": [],
+        "LeadStage": "LeadStage_WuShi_001",
         "LevelUnlock": {
             "ActionSkill1": {
                 "star": 2
@@ -2511,6 +2558,7 @@
                 }
             ]
         ],
+        "TreeColor": "",
         "Type": "ATK",
         "UnblockRate": 0.0,
         "UncritRate": 0.0,
@@ -2560,6 +2608,7 @@
         "AtkWeaken": 0.0,
         "AttackFactor": 1.0,
         "AttackSkill": "Sk_Attack_Master_XueZhan",
+        "Background": "leadStage_scene_hong",
         "BaseAttack": 150.0,
         "BaseDefence": 45.0,
         "BaseHp": 1200.0,
@@ -2586,6 +2635,10 @@
         "HpFactor": 1.0,
         "HurtRate": 0.0,
         "IfHidden": 1,
+        "LeadMasterSkill": [
+            "LeadStage_XueZhan_PVE_Skill_002"
+        ],
+        "LeadStage": "LeadStage_XueZhan_001",
         "LevelUnlock": {
             "ActionSkill1": {
                 "star": 2
@@ -3051,6 +3104,11 @@
                 }
             ]
         ],
+        "TreeColor": [
+            231,
+            0,
+            130
+        ],
         "Type": "ATK",
         "UnblockRate": 0.0,
         "UncritRate": 0.0,
@@ -3100,6 +3158,7 @@
         "AtkWeaken": 0.0,
         "AttackFactor": 1.0,
         "AttackSkill": "Sk_Attack_Master_ZhaoHuan",
+        "Background": "",
         "BaseAttack": 150.0,
         "BaseDefence": 45.0,
         "BaseHp": 1200.0,
@@ -3126,6 +3185,8 @@
         "HpFactor": 1.0,
         "HurtRate": 0.0,
         "IfHidden": 0,
+        "LeadMasterSkill": [],
+        "LeadStage": "LeadStage_ZhaoHuan_001",
         "LevelUnlock": {
             "ActionSkill1": {
                 "star": 2
@@ -3456,6 +3517,7 @@
                 }
             ]
         ],
+        "TreeColor": "",
         "Type": "ATK",
         "UnblockRate": 0.0,
         "UncritRate": 0.0,

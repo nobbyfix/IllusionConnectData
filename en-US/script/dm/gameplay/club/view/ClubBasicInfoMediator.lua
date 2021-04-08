@@ -968,7 +968,9 @@ function ClubBasicInfoMediator:sendMessageBtn(sender, eventType)
 			clubName = clubName,
 			isFriend = response.isFriend,
 			close = response.isFriend == 1 and response.close or nil,
-			block = response.block
+			block = response.block,
+			leadStageId = memberData:getLeadStageId(),
+			leadStageLevel = memberData:getLeadStageLevel()
 		}
 
 		friendSystem:addRecentFriend(data)

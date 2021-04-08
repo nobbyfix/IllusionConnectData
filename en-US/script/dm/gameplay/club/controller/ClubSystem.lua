@@ -155,7 +155,9 @@ function ClubSystem:showMemberPlayerInfoView(playerId)
 				city = memberData:getCity(),
 				birthday = memberData:getBirthday(),
 				tags = memberData:getTags(),
-				block = response.block
+				block = response.block,
+				leadStageId = memberData:getLeadStageId(),
+				leadStageLevel = memberData:getLeadStageLevel()
 			})
 
 			local view = self:getInjector():getInstance("PlayerInfoView")

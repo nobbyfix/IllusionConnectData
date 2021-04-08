@@ -9,6 +9,15 @@ RecruitPool:has("_freeTimes", {
 RecruitPool:has("_owner", {
 	is = "rw"
 })
+RecruitPool:has("_bateInfo", {
+	is = "rw"
+})
+RecruitPool:has("_bateRound", {
+	is = "rw"
+})
+RecruitPool:has("_bateCount", {
+	is = "rw"
+})
 
 function RecruitPool:initialize(id)
 	super.initialize(self)
@@ -16,6 +25,9 @@ function RecruitPool:initialize(id)
 	self._id = id
 	self._config = ConfigReader:getRecordById("DrawCard", id)
 	self._freeTimes = 0
+	self._bateInfo = {}
+	self._bateRound = 1
+	self._bateCount = 0
 end
 
 function RecruitPool:dispose()
@@ -26,6 +38,18 @@ function RecruitPool:sync(data)
 	if data.value then
 		self._freeTimes = data.value
 	end
+end
+
+function RecruitPool:syncRebateInfo(info)
+	self._bateInfo = info
+end
+
+function RecruitPool:syncRebateRound(counts)
+	self._bateRound = counts
+end
+
+function RecruitPool:syncRebateCount(counts)
+	self._bateCount = counts
 end
 
 function RecruitPool:getType()
@@ -144,4 +168,50 @@ end
 
 function RecruitPool:getLink()
 	return self._config.Link
+end
+
+function RecruitPool:getRebate()
+	if not self._rebate then
+		self._rebate = {}
+		local rebate = self._config.Rebate
+
+		if rebate then
+			for key, value in pairs(rebate) do
+				self._rebate[#self._rebate + 1] = {
+					redPoint = false,
+					status = 0,
+					count = key,
+					reward = value
+				}
+			end
+
+			table.sort(self._rebate, function (a, b)
+				return a.count < b.count
+			end)
+		end
+	end
+
+	for index, info in ipairs(self._rebate) do
+		local st = self._bateInfo[info.count]
+		self._rebate[index].redPoint = st == DrawCardRewardStatus.FinishNotGet and true or false
+		self._rebate[index].status = st
+	end
+
+	return self._rebate
+end
+
+function RecruitPool:hasRedPoint()
+	local data = self:getRebate()
+
+	for index, info in ipairs(data) do
+		if info.redPoint then
+			return true
+		end
+	end
+
+	return false
+end
+
+function RecruitPool:getResourcesBanner()
+	return self._config.ResourcesBanner
 end

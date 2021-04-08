@@ -12,6 +12,9 @@ ShopMonthCardMediator:has("_rechargeAndVipModel", {
 ShopMonthCardMediator:has("_rechargeAndVipSystem", {
 	is = "r"
 }):injectWith("RechargeAndVipSystem")
+ShopMonthCardMediator:has("_gameServerAgent", {
+	is = "r"
+}):injectWith("GameServerAgent")
 
 local kBtnHandlers = {
 	["main.panelBg.vipBtn"] = {
@@ -41,6 +44,7 @@ function ShopMonthCardMediator:initialize()
 end
 
 function ShopMonthCardMediator:dispose()
+	self:shuttleTimers()
 	self:getView():stopAllActions()
 	super.dispose(self)
 end
@@ -62,6 +66,7 @@ function ShopMonthCardMediator:onRemove()
 end
 
 function ShopMonthCardMediator:setupView()
+	self._rechargeAndVipSystem:requestFefreshForeverCard()
 	self:initMember()
 end
 
@@ -73,7 +78,18 @@ function ShopMonthCardMediator:initMember()
 	self._vipBtn = self:getView():getChildByFullName("main.panelBg.vipBtn")
 	self._mkBtn = self:getView():getChildByFullName("main.panelBg.mkBtn")
 	self._dyBtn = self:getView():getChildByFullName("main.panelBg.dyBtn")
+	local buyEndTip = self._vipBtn:getChildByFullName("buyEndTip")
+	self._mcfPhysicalPanel = buyEndTip:getChildByFullName("getRewardPanel.physicalPanel")
 
+	self._mcfPhysicalPanel:addClickEventListener(function ()
+		self:onClickMCFPhysicalPanel()
+	end)
+
+	self._mcfRewardPanel = buyEndTip:getChildByFullName("getRewardPanel.rewardPanel")
+
+	self._mcfRewardPanel:addClickEventListener(function ()
+		self:onClickMCFRewardPanel()
+	end)
 	self:adjustView()
 end
 
@@ -85,11 +101,60 @@ function ShopMonthCardMediator:refreshData(data)
 	self._parentMediator = data.parentMediator or nil
 	self._enterData = data.enterData or nil
 
+	self._rechargeAndVipSystem:requestFefreshForeverCard()
 	self:setData()
 end
 
 function ShopMonthCardMediator:setData()
 	self._data = self._shopSystem:getPackageListMonthcardMap()
+	local mcfData = self._data[KMonthCardType.KMonthCardForever]
+	local developSystem = self:getInjector():getInstance(DevelopSystem)
+	local level = developSystem:getPlayer():getLevel()
+	self._bagSystem = developSystem:getBagSystem()
+	local powerLimit = self._bagSystem:getRecoveryPowerLimit(level)
+	local curPower, lastRecoverTime = self._bagSystem:getPower()
+	local entry = self._bagSystem:getEntryById(CurrencyIdKind.kPower)
+	local curBagCount = entry.count
+
+	self:shuttleTimers()
+
+	self._addFCardStamina = 0
+
+	if mcfData._fCardBuyFlag and powerLimit <= curPower then
+		local cd = mcfData._stamina_CD
+
+		if powerLimit <= curPower and curBagCount < powerLimit then
+			lastRecoverTime = (powerLimit - curBagCount) * cd + lastRecoverTime
+		end
+
+		local remoteTimestamp = self._gameServerAgent:remoteTimestamp()
+		self._addFCardStamina = math.min(mcfData._staminaLimit - mcfData._fCardStamina, math.floor((remoteTimestamp - lastRecoverTime) / cd))
+
+		local function checkTimeFunc()
+			local remoteTimestamp = self._gameServerAgent:remoteTimestamp()
+			self._addFCardStamina = math.min(mcfData._staminaLimit - mcfData._fCardStamina, math.floor((remoteTimestamp - lastRecoverTime) / cd))
+
+			if mcfData._staminaLimit <= mcfData._fCardStamina + self._addFCardStamina then
+				self._addFCardStamina = mcfData._staminaLimit - mcfData._fCardStamina
+
+				self:shuttleTimers()
+			end
+
+			self:setMonthCardViewF()
+		end
+
+		self._timer = LuaScheduler:getInstance():schedule(checkTimeFunc, 1, false)
+
+		checkTimeFunc()
+	end
+end
+
+function ShopMonthCardMediator:shuttleTimers()
+	if self._timer then
+		self._timer:stop()
+
+		self._timer = nil
+	end
 end
 
 function ShopMonthCardMediator:refreshView()
@@ -186,7 +251,7 @@ function ShopMonthCardMediator:setMonthCardViewF(panel, data)
 		local buytxt = buyEndTip:getChildByFullName("buytxt")
 
 		if data._fCardWeekFlag and data._fCardWeekFlag.value > 0 then
-			if data._staminaLimit <= data._fCardStamina then
+			if data._staminaLimit <= data._fCardStamina + self._addFCardStamina then
 				buytxt:setString(Strings:get("MonthCardForever_Button_PowerMax"))
 			else
 				buytxt:setString(Strings:get("MonthCardForever_Button_NextWeek"))
@@ -194,6 +259,8 @@ function ShopMonthCardMediator:setMonthCardViewF(panel, data)
 		else
 			buytxt:setString(Strings:get("MonthCardForever_Button_Receive"))
 		end
+
+		self:setMCFPowerView()
 	else
 		buyTip:setVisible(true)
 
@@ -206,6 +273,66 @@ function ShopMonthCardMediator:setMonthCardViewF(panel, data)
 	end
 
 	self:setRedPointForMonthCardF()
+end
+
+function ShopMonthCardMediator:setMCFPowerView()
+	local data = self._data[KMonthCardType.KMonthCardForever]
+
+	if data._fCardWeekFlag and data._fCardWeekFlag.value > 0 then
+		self._mcfRewardPanel:getChildByFullName("icon"):setColor(cc.c3b(125, 125, 125))
+		self._mcfRewardPanel:getChildByFullName("getEndBg"):setVisible(true)
+	else
+		self._mcfRewardPanel:getChildByFullName("getEndBg"):setVisible(false)
+	end
+
+	local rewards = RewardSystem:getRewardsById(tostring(data._weekReward))
+	local rewardData = rewards[1]
+	local iconBg = self._mcfRewardPanel:getChildByFullName("icon")
+
+	iconBg:removeAllChildren()
+
+	if rewardData then
+		local icon = IconFactory:createRewardIcon(rewardData, {
+			showAmount = true,
+			isWidget = true
+		})
+
+		IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), rewardData, {
+			needDelay = true
+		})
+		icon:setScaleNotCascade(0.5)
+		icon:addTo(iconBg):center(iconBg:getContentSize())
+	end
+
+	local r = (data._fCardStamina + self._addFCardStamina) / data._staminaLimit
+	local ratia = tonumber(string.format("%.2f", tostring(r)))
+
+	self._mcfPhysicalPanel:getChildByFullName("LoadingBar"):setPercent(ratia * 100)
+	self._mcfPhysicalPanel:getChildByFullName("cur"):setString(data._fCardStamina + self._addFCardStamina .. "/" .. data._staminaLimit)
+
+	local redPoint = self._mcfRewardPanel:getChildByName("redPoint")
+
+	if not redPoint then
+		redPoint = RedPoint:createDefaultNode()
+
+		redPoint:addTo(self._mcfRewardPanel):posite(90, 60)
+		redPoint:setLocalZOrder(99900)
+		redPoint:setName("redPoint")
+	end
+
+	redPoint:setVisible(self._shopSystem:getRedPointForMCFWeekFlag())
+
+	local redPoint = self._mcfPhysicalPanel:getChildByName("redPoint")
+
+	if not redPoint then
+		redPoint = RedPoint:createDefaultNode()
+
+		redPoint:addTo(self._mcfPhysicalPanel):posite(70, 90)
+		redPoint:setLocalZOrder(99900)
+		redPoint:setName("redPoint")
+	end
+
+	redPoint:setVisible(self._shopSystem:getRedPointForMCFStamina())
 end
 
 function ShopMonthCardMediator:setRedPointForMonthCardF()
@@ -348,6 +475,84 @@ function ShopMonthCardMediator:setMonthCardSubscribeView(panel, data)
 			buyEndTip:setVisible(false)
 		end
 	end
+end
+
+function ShopMonthCardMediator:onClickMCFPhysicalPanel()
+	local data = self._data[KMonthCardType.KMonthCardForever]
+
+	local function callback()
+		if data._fCardStamina <= 0 then
+			self:dispatch(ShowTipEvent({
+				tip = Strings:get("Error_12417")
+			}))
+
+			return
+		end
+
+		local developSystem = self:getInjector():getInstance("DevelopSystem")
+		self._bagSystem = developSystem:getBagSystem()
+		local curPower, lastRecoverTime = self._bagSystem:getPower()
+
+		if data._stamina_Max < data._fCardStamina + curPower then
+			local num = math.max(0, data._stamina_Max - curPower)
+
+			self:setPowerOverflow(num)
+
+			return
+		end
+
+		self._rechargeAndVipSystem:requestFCardStaminaReward(nil, data._fCardStamina)
+		self._shopSystem:resetRefresh()
+	end
+
+	self._rechargeAndVipSystem:requestFefreshForeverCard(callback)
+end
+
+function ShopMonthCardMediator:setPowerOverflow(num)
+	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
+
+	local function func()
+		self._rechargeAndVipSystem:requestFCardStaminaReward(nil, num)
+		self._shopSystem:resetRefresh()
+	end
+
+	local outSelf = self
+	local delegate = {
+		willClose = function (self, popupMediator, data)
+			if data.response == "ok" then
+				func()
+			elseif data.response == "cancel" then
+				-- Nothing
+			elseif data.response == "close" then
+				-- Nothing
+			end
+		end
+	}
+	local data = {
+		title = Strings:get("MonthCardForever_Overflow_Title"),
+		title1 = Strings:get("UITitle_EN_Tiliyichu"),
+		content = Strings:get("MonthCardForever_Overflow_Desc"),
+		sureBtn = {},
+		cancelBtn = {}
+	}
+	local view = self:getInjector():getInstance("AlertView")
+
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+	}, data, delegate))
+end
+
+function ShopMonthCardMediator:onClickMCFRewardPanel()
+	local data = self._data[KMonthCardType.KMonthCardForever]
+
+	if data._fCardWeekFlag and data._fCardWeekFlag.value > 0 then
+		AudioEngine:getInstance():playEffect("Se_Alert_Error", false)
+
+		return
+	end
+
+	AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
+	self._rechargeAndVipSystem:requestFCardWeekReward()
 end
 
 function ShopMonthCardMediator:refreshShopData()

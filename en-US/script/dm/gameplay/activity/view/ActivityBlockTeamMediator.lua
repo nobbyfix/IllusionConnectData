@@ -297,6 +297,11 @@ function ActivityBlockTeamMediator:initWidgetInfo()
 	self._masterImage = self._bg:getChildByName("role")
 	self._teamBg = self._bg:getChildByName("team_bg")
 	self._labelCombat = self._main:getChildByFullName("info_bg.combatLabel")
+	self._infoBtn = self._main:getChildByFullName("infoBtn")
+	self._fightInfoTip = self._main:getChildByFullName("fightInfo")
+
+	self._fightInfoTip:setVisible(false)
+
 	self._costAverageLabel = self._main:getChildByFullName("info_bg.averageLabel")
 	self._costTotalLabel1 = self._main:getChildByFullName("info_bg.cost1")
 	self._costTotalLabel2 = self._main:getChildByFullName("info_bg.cost2")
@@ -1053,6 +1058,8 @@ function ActivityBlockTeamMediator:initTeamHero(node, info)
 end
 
 function ActivityBlockTeamMediator:refreshCombatAndCost()
+	local leadConfig = self._masterSystem:getMasterCurLeadStageConfig(self._curMasterId)
+	local addPercent = leadConfig and leadConfig.LeadFightHero or 0
 	local totalCombat = 0
 	local totalCost = 0
 	local averageCost = 0
@@ -1061,6 +1068,10 @@ function ActivityBlockTeamMediator:refreshCombatAndCost()
 		local heroInfo = self._heroSystem:getHeroById(v)
 		totalCost = totalCost + heroInfo:getCost()
 		totalCombat = totalCombat + heroInfo:getSceneCombatByType(SceneCombatsType.kAll)
+	end
+
+	if leadConfig then
+		totalCombat = math.ceil((addPercent + 1) * totalCombat) or totalCombat
 	end
 
 	local masterData = self._masterSystem:getMasterById(self._curMasterId)
@@ -1081,6 +1092,10 @@ function ActivityBlockTeamMediator:refreshCombatAndCost()
 	self._costTotalLabel1:setTextColor(color)
 	self._costTotalLabel2:setString("/" .. self._costMaxNum)
 	self._costTotalLabel2:setPositionX(self._costTotalLabel1:getPositionX() + self._costTotalLabel1:getContentSize().width)
+	self._infoBtn:setVisible(leadConfig ~= nil and addPercent > 0)
+	self._infoBtn:addTouchEventListener(function (sender, eventType)
+		self:onClickInfo(eventType)
+	end)
 end
 
 function ActivityBlockTeamMediator:changeMasterId(event)
@@ -1101,6 +1116,7 @@ function ActivityBlockTeamMediator:refreshMasterInfo()
 	self._masterImage:addChild(masterData:getHalfImage())
 	self:refreshCombatAndCost()
 	self:refreshButtons()
+	self:setLeadStageInfo()
 end
 
 function ActivityBlockTeamMediator:refreshButtons()

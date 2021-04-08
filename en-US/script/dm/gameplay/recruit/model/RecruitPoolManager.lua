@@ -84,6 +84,8 @@ function RecruitPoolManager:sync(data)
 			for jj, vv in pairs(v) do
 				self._drawTimeMap[i][jj] = vv
 			end
+
+			self._recruitPools[i]:syncRebateCount(v["1"])
 		end
 	end
 
@@ -92,6 +94,18 @@ function RecruitPoolManager:sync(data)
 
 		for index, times in pairs(data.pointRewarded) do
 			boxStateData[times] = true
+		end
+	end
+
+	if data.rebateInfoMap then
+		for id, info in pairs(data.rebateInfoMap) do
+			self._recruitPools[id]:syncRebateInfo(info)
+		end
+	end
+
+	if data.rebateRoundInfoMap then
+		for id, counts in pairs(data.rebateRoundInfoMap) do
+			self._recruitPools[id]:syncRebateRound(counts)
 		end
 	end
 end

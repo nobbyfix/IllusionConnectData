@@ -371,6 +371,128 @@
         "Shop_Id": 10005,
         "UnlockSystem": "Shop_KOF"
     },
+    "Shop_Crystal": {
+        "DefaultCostType": "IR_Crystal",
+        "ENName": "UITitle_EN_Shuijing",
+        "Name": "Shop_Crystal_Name",
+        "Positions": [
+            {
+                "Condition": {
+                    "LEVEL": 60
+                },
+                "ShopId": "Shop_Crystal_1"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 60
+                },
+                "ShopId": "Shop_Crystal_2"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 60
+                },
+                "ShopId": "Shop_Crystal_3"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 60
+                },
+                "ShopId": "Shop_Crystal_4"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 60
+                },
+                "ShopId": "Shop_Crystal_5"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 60
+                },
+                "ShopId": "Shop_Crystal_6"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 60
+                },
+                "ShopId": "Shop_Crystal_7"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 60
+                },
+                "ShopId": "Shop_Crystal_8"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 60
+                },
+                "ShopId": "Shop_Crystal_9"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 60
+                },
+                "ShopId": "Shop_Crystal_10"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 60
+                },
+                "ShopId": "Shop_Crystal_11"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 60
+                },
+                "ShopId": "Shop_Crystal_12"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 60
+                },
+                "ShopId": "Shop_Crystal_13"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 60
+                },
+                "ShopId": "Shop_Crystal_14"
+            }
+        ],
+        "RefreshCurrency": "IR_Crystal",
+        "RefreshMaxTimes": 0,
+        "RefreshPrice": [
+            20,
+            30,
+            50,
+            50,
+            80,
+            80,
+            100
+        ],
+        "ResetSystem": {
+            "resetDate": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+            ],
+            "resetMode": "WEEK",
+            "resetTime": [
+                "05:00:00"
+            ],
+            "setValue": 1,
+            "storage": 1
+        },
+        "RsShow": "IR_Crystal",
+        "Shop_Id": "",
+        "UnlockSystem": "Unlock_Shop_Crystal"
+    },
     "Shop_Diamond": {
         "DefaultCostType": "IR_Diamond",
         "ENName": "UITitle_EN_Zhuanshi",

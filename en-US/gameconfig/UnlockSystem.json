@@ -668,6 +668,24 @@
         "UnlockAnima": "",
         "UnlockDesc": "DailyQuest_UnlockDesc"
     },
+    "Daily_Task_Receive": {
+        "Condition": {
+            "STAGE": "M07S01"
+        },
+        "Icon": "",
+        "IsPlay": 0,
+        "Link": "",
+        "LongDesc": "",
+        "Name": "Unlock_Daily_Task_Receive",
+        "OutputDesc": "",
+        "ResourcesBanner": "",
+        "ShowCondition": {
+            "STAGE": "M07S01"
+        },
+        "Tip": "Unlock_Daily_Task_Tips",
+        "UnlockAnima": "",
+        "UnlockDesc": ""
+    },
     "DataStatistics": {
         "Condition": {
             "STAGE": "M02S01"
@@ -1177,6 +1195,29 @@
         "Tip": "Unlock_Stage_Tips",
         "UnlockAnima": "HOME",
         "UnlockDesc": "KOF_UnlockDesc"
+    },
+    "LeadStage": {
+        "Condition": {
+            "LEVEL": 27
+        },
+        "Icon": "",
+        "IsPlay": 0,
+        "Link": "",
+        "LongDesc": "LeadStage_Unlock_Name",
+        "Name": "LeadStage_SystemName",
+        "OutputDesc": "",
+        "ResourcesBanner": [
+            "IR_Gold",
+            "IM_MasterStage_Exp",
+            "IR_Power",
+            "IR_Diamond"
+        ],
+        "ShowCondition": {
+            "LEVEL": 25
+        },
+        "Tip": "LeadStage_EntryUnlockTip",
+        "UnlockAnima": "",
+        "UnlockDesc": ""
     },
     "MainTask": {
         "Condition": {
@@ -2140,6 +2181,26 @@
         "Tip": "Unlock_Team_Chat_Tips",
         "UnlockAnima": "",
         "UnlockDesc": "Team_Chat_UnlockDesc"
+    },
+    "Unlock_Shop_Crystal": {
+        "Condition": {
+            "LEVEL": 60
+        },
+        "Icon": "new_system_club.png",
+        "IsPlay": 0,
+        "Link": "",
+        "LongDesc": "Unlock_Shop_Crystal_Desc",
+        "Name": "Unlock_Unlock_Shop_Crystal",
+        "OutputDesc": "",
+        "ResourcesBanner": [
+            "IR_Crystal"
+        ],
+        "ShowCondition": {
+            "LEVEL": 60
+        },
+        "Tip": "Unlock_Level_Tips",
+        "UnlockAnima": "",
+        "UnlockDesc": "Shop_Crystal_UnlockDesc"
     },
     "Unlock_Shop_Diamond": {
         "Condition": {

@@ -111,14 +111,6 @@ function StageLosePopMediator:refreshView()
 	self._svpSprite:setPosition(cc.p(cc.p(50, -100)))
 	anim:gotoAndPlay(1)
 
-	local shibai = cc.MovieClip:create("shibai" .. getCurrentLanguage() .. "_fubenjiesuan")
-	shibai = shibai or cc.MovieClip:create("shibai" .. "cn" .. "_fubenjiesuan")
-
-	shibai:addTo(bgPanel):posite(820, 540)
-	shibai:addCallbackAtFrame(45, function ()
-		shibai:stop()
-	end)
-
 	local action1 = cc.Sequence:create(cc.DelayTime:create(0.1), cc.FadeIn:create(0.1))
 	local action2 = cc.Sequence:create(cc.DelayTime:create(0.2), cc.FadeIn:create(0.1))
 	local action3 = cc.Sequence:create(cc.DelayTime:create(0.3), cc.FadeIn:create(0.1))
@@ -168,30 +160,30 @@ function StageLosePopMediator:initSvpRole()
 		end
 
 		local mvpPoint = 0
-		model = ConfigReader:getDataByNameIdAndKey("MasterBase", team:getMasterId(), "RoleModel")
+		local masterSystem = developSystem:getMasterSystem()
+		local masterData = masterSystem:getMasterById(team:getMasterId())
+		model = masterData:getModel()
 
-		if playerBattleData then
-			for k, v in pairs(playerBattleData.unitSummary) do
-				local roleType = ConfigReader:getDataByNameIdAndKey("RoleModel", v.model, "Type")
+		for k, v in pairs(playerBattleData.unitSummary) do
+			local roleType = ConfigReader:getDataByNameIdAndKey("RoleModel", v.model, "Type")
 
-				if roleType == RoleModelType.kHero then
-					local unitMvpPoint = 0
-					local _unitDmg = v.damage
+			if roleType == RoleModelType.kHero then
+				local unitMvpPoint = 0
+				local _unitDmg = v.damage
 
-					if _unitDmg then
-						unitMvpPoint = unitMvpPoint + _unitDmg
-					end
+				if _unitDmg then
+					unitMvpPoint = unitMvpPoint + _unitDmg
+				end
 
-					local _unitCure = v.cure
+				local _unitCure = v.cure
 
-					if _unitCure then
-						unitMvpPoint = unitMvpPoint + _unitCure
-					end
+				if _unitCure then
+					unitMvpPoint = unitMvpPoint + _unitCure
+				end
 
-					if mvpPoint < unitMvpPoint then
-						mvpPoint = unitMvpPoint
-						model = v.model
-					end
+				if mvpPoint < unitMvpPoint then
+					mvpPoint = unitMvpPoint
+					model = v.model
 				end
 			end
 		end

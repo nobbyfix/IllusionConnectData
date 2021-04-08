@@ -1036,3 +1036,18 @@ function GameStyle:getHeroPartyByHeroInfo(heroInfo)
 
 	return self:getHeroPartyBg(heroInfo:getParty())
 end
+
+local leadStageColor = {
+	cc.c3b(153, 152, 179),
+	cc.c3b(68, 172, 68),
+	cc.c3b(236, 162, 28),
+	cc.c3b(56, 136, 247),
+	cc.c3b(193, 86, 217),
+	cc.c3b(228, 117, 67),
+	cc.c3b(229, 86, 105),
+	cc.c3b(49, 40, 171)
+}
+
+function GameStyle:getLeadStageColor(lv)
+	return leadStageColor[lv]
+end

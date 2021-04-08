@@ -110,6 +110,12 @@ IconFactory.kClikpStencil = {
 	},
 	{
 		path = "asset/stencil/smzb_bg_bzdi_stencil.png"
+	},
+	{
+		path = "asset/stencil/bg_leadstage_kuang_caiqie1.png"
+	},
+	{
+		path = "asset/stencil/bg_leadstage_kuang_caiqie2.png"
 	}
 }
 IconFactory.ScaleRatio = {
@@ -4245,18 +4251,49 @@ function IconFactory:getHeroRarityAnim(rarity)
 	end
 end
 
-function IconFactory:createRTPKGradeIcon(gradeId)
+local rtpkAnimOffset = {
+	{
+		0.5,
+		-32
+	},
+	{
+		0,
+		-50
+	},
+	{
+		0,
+		-19
+	},
+	{
+		0,
+		-27
+	},
+	{
+		0,
+		-25
+	},
+	{
+		-3,
+		-30
+	},
+	{
+		0,
+		2
+	}
+}
+
+function IconFactory:createRTPKGradeIcon(gradeId, useAnim)
 	local gradeConfig = ConfigReader:getRecordById("RTPKGrade", gradeId)
 	local icon = ccui.ImageView:create(gradeConfig.GradePic .. ".png", ccui.TextureResType.plistType)
-	local nameText = ccui.Text:create(Strings:get(gradeConfig.Name), CUSTOM_TTF_FONT_1, 24)
+	local nameText = ccui.Text:create(Strings:get(gradeConfig.Name), TTF_FONT_FZYH_M, 24)
 	local lineGradiantVec2 = {
 		{
 			ratio = 0.3,
-			color = cc.c4b(66, 56, 143, 255)
+			color = cc.c4b(255, 255, 255, 255)
 		},
 		{
 			ratio = 0.7,
-			color = cc.c4b(81, 83, 170, 255)
+			color = cc.c4b(182, 200, 212, 255)
 		}
 	}
 
@@ -4264,9 +4301,189 @@ function IconFactory:createRTPKGradeIcon(gradeId)
 		x = 0,
 		y = -1
 	}))
-	nameText:addTo(icon):center(icon:getContentSize()):offset(5, -125)
+	nameText:addTo(icon):center(icon:getContentSize()):offset(0, -142)
+	nameText:enableOutline(cc.c4b(90, 91, 171, 200), 2)
+
+	icon.gradeId = gradeId
+
+	if useAnim then
+		local animName = "duanwei" .. gradeConfig.GradeType .. "_tiantiduanweieff"
+		local anim = cc.MovieClip:create(animName)
+
+		if anim then
+			local offset = rtpkAnimOffset[gradeConfig.GradeType]
+
+			anim:addTo(icon):center(icon:getContentSize()):offset(offset[1], offset[2])
+		end
+	end
 
 	return icon
+end
+
+function IconFactory:createLeadStageIconVer(id, lv, style)
+	if lv == 0 then
+		return nil
+	end
+
+	style = style or {}
+	local font = style.font and style.font or TTF_FONT_FZYH_M
+	local fontSize = style.fontSize and style.fontSize or 18
+	local notNeedBg = style.notNeedBg and style.notNeedBg or true
+	local layout = ccui.Layout:create()
+
+	if notNeedBg then
+		local iconBg = ccui.ImageView:create("bg_leadstage_zhezhao0" .. 9 - lv .. ".png", ccui.TextureResType.plistType)
+
+		iconBg:addTo(layout):offset(6, -9)
+	else
+		local iconBg = ccui.ImageView:create("bg_zhezhao_hei.png", ccui.TextureResType.plistType)
+
+		iconBg:addTo(layout):offset(4, 0)
+	end
+
+	local config = ConfigReader:getRecordById("MasterLeadStage", id)
+	local icon = ccui.ImageView:create(config.Icon, ccui.TextureResType.plistType)
+
+	icon:ignoreContentAdaptWithSize(true)
+	icon:addTo(layout):center(layout:getContentSize())
+	icon:setScale(lv == 8 and 0.5 or lv == 1 and 0.6 or 0.8)
+
+	local nameText = ccui.Text:create(Strings:get(config.RomanNum) .. Strings:get(config.StageName), font, fontSize)
+
+	nameText:enableOutline(cc.c4b(255, 255, 255, 255), 2)
+	nameText:setTextColor(GameStyle:getLeadStageColor(lv))
+	nameText:addTo(layout):center(layout:getContentSize()):offset(0, -35)
+	print("id,lv " .. id .. lv .. nameText:getString())
+
+	return layout
+end
+
+function IconFactory:createLeadStageIconHor(id, lv, style)
+	if lv == 0 then
+		return nil
+	end
+
+	style = style or {}
+	local font = style.font and style.font or TTF_FONT_FZYH_M
+	local fontSize = style.fontSize and style.fontSize or 18
+	local kind = style.kind
+	local layout = ccui.Layout:create()
+
+	if kind then
+		local iconBg = ccui.ImageView:create("asset/common/common_bd_sx.png", ccui.TextureResType.localType)
+
+		iconBg:addTo(layout):offset(50, -15)
+		iconBg:setScale(0.9)
+	else
+		local iconBg = ccui.ImageView:create("bg_zj_leadstage_heidi.png", ccui.TextureResType.plistType)
+
+		iconBg:addTo(layout):offset(40, -5)
+	end
+
+	local config = ConfigReader:getRecordById("MasterLeadStage", id)
+	local icon = ccui.ImageView:create(config.Icon, ccui.TextureResType.plistType)
+
+	icon:ignoreContentAdaptWithSize(true)
+	icon:addTo(layout):center(layout:getContentSize()):offset(0, -5)
+	icon:setScale(lv == 8 and 0.3 or lv == 1 and 0.4 or 0.5)
+
+	local nameText = ccui.Text:create(Strings:get(config.RomanNum) .. Strings:get(config.StageName), font, fontSize)
+
+	nameText:enableOutline(cc.c4b(255, 255, 255, 255), 2)
+	nameText:setTextColor(GameStyle:getLeadStageColor(lv))
+	nameText:addTo(layout):center(layout:getContentSize()):offset(45, -5)
+
+	if kind then
+		icon:offset(-32, 0)
+		icon:setScale(lv == 8 and 0.5 or lv == 1 and 0.6 or 0.8)
+		nameText:offset(0, 0)
+	end
+
+	return layout
+end
+
+function IconFactory:createMasterLeadStageSkillIcon(info, style, clickfun)
+	style = style or {}
+	local id = info.id and info.id
+	local isLock = info.isLock
+	local isGray = info.isGray or false
+	local kind = style.kind and style.kind or 0
+	local scale = info.scale and info.scale or 1
+	local skillConfig = ConfigReader:getRecordById("Skill", tostring(id))
+	local node = cc.Node:create()
+	local root = ccui.Layout:create()
+
+	root:setContentSize(cc.size(94, 94))
+	root:setTag(66)
+	node:addChild(root)
+
+	local kLevelTag = 65536
+	local kLockTag = 65537
+
+	if kind == 0 then
+		local under = ccui.ImageView:create("leadStage_img_jinegndi.png", 1)
+
+		root:addChild(under)
+		under:setPosition(cc.p(47, 47))
+		under:setScale(1.65)
+	else
+		local under = ccui.ImageView:create("yh_bg_jnk_new.png", 1)
+
+		root:addChild(under)
+		under:setPosition(cc.p(50, 44))
+		under:setScale(1.4)
+	end
+
+	local kSkillTag = 65539
+	local skillImg = IconFactory:createSkillPic({
+		id = skillConfig.Icon
+	})
+
+	skillImg:setTag(kSkillTag)
+	IconFactory:centerAddNode(node, skillImg)
+	skillImg:setPosition(cc.p(47, 47))
+	skillImg:setScale(scale)
+
+	local btn = ccui.Button:create("asset/master/masterRect/masterSkillBottomRect/pic_tongyong_di_pzk_jn.png", "asset/master/masterRect/masterSkillBottomRect/pic_tongyong_di_pzk_jn.png")
+
+	btn:setSwallowTouches(false)
+	btn:setTag(668)
+	btn:addTouchEventListener(function (sender, eventType)
+		if eventType == ccui.TouchEventType.ended and clickfun then
+			clickfun()
+		end
+	end)
+	btn:setOpacity(0)
+	btn:setPosition(cc.p(47, 47))
+	node:addChild(btn, 999)
+
+	function node:setLock(isLock)
+		local lockImg = self:getChildByTag(kLockTag)
+
+		if not lockImg then
+			lockImg = ccui.ImageView:create("asset/common/common_icon_lock_new.png")
+
+			lockImg:setPosition(80, 100)
+			node:addChild(lockImg, 1, kLockTag)
+		end
+
+		lockImg:setVisible(isLock)
+		lockImg:setScale(1.4)
+
+		local skillImg = self:getChildByTag(kSkillTag)
+
+		if skillImg then
+			skillImg:setGray(isLock)
+
+			if isGray then
+				skillImg:setGray(isGray)
+			end
+		end
+	end
+
+	node:setLock(isLock)
+
+	return node
 end
 
 IconFactory:initialize()

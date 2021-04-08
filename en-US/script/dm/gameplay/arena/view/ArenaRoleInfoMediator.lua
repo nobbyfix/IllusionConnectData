@@ -31,6 +31,7 @@ function ArenaRoleInfoMediator:onRegister()
 	self:mapButtonHandlersClick(kBtnHandlers)
 
 	self._bagSystem = self._developSystem:getBagSystem()
+	self._masterSystem = self._developSystem:getMasterSystem()
 
 	self:bindWidget("bg.battleBtn", OneLevelViceButton, {
 		handler = {
@@ -145,7 +146,7 @@ function ArenaRoleInfoMediator:initTeamInfo()
 	local master = self._record:getMaster()
 
 	if master then
-		local roleModel = ConfigReader:requireDataByNameIdAndKey("MasterBase", master[1], "RoleModel")
+		local roleModel = self._masterSystem:getMasterLeadStageModel(master[1], self._record:getLeadStageId() or "")
 		local info = {
 			stencil = 6,
 			iconType = "Bust5",
@@ -181,6 +182,16 @@ function ArenaRoleInfoMediator:initTeamInfo()
 			petNode:setScale(0.35)
 			petNode:addTo(petBg):center(petBg:getContentSize())
 			petNode:setPositionY(petNode:getPositionY() - 5)
+		end
+
+		local node = self._bg:getChildByFullName("teamInfo.node_leadStage")
+
+		node:removeAllChildren()
+
+		local icon = IconFactory:createLeadStageIconHor(self._record:getLeadStageId(), self._record:getLeadStageLevel())
+
+		if icon then
+			icon:addTo(node)
 		end
 	end
 end

@@ -210,19 +210,32 @@ function DebugViewParser:setupScrollerView(rootNode, scollViewRect, viewObj)
 				local textField = cell:getChildByName("textField")
 
 				if textField then
-					textField:setContentSize(cc.size(350, 40))
-					textField:setPosition(cc.p(10, 20))
 					textField:ignoreContentAdaptWithSize(false)
+					textField:setContentSize(cc.size(350, 40))
 
-					if textField:getDescription() == "TextField" then
-						textField = replaceTextFieldToEditBox(textField, true)
-					end
+					textField = convertTextFieldToEditBox(textField, true, MaskWordType.NAME)
 
-					textField:setSwallowTouches(false)
+					textField:posite(10, 15)
 
 					if textField:getText() == "input words here" and data.default then
 						textField:setText(data.default)
 					end
+
+					local label = textField:getContentLabel()
+
+					label:setAnchorPoint(cc.p(0, 0.5))
+
+					local size = label:getContentSize()
+
+					label:setPositionX(size.width)
+
+					local placeLabel = textField:getPlaceholderLabel()
+
+					placeLabel:setAnchorPoint(cc.p(0, 0.5))
+
+					local size = placeLabel:getContentSize()
+
+					placeLabel:setPositionX(size.width)
 
 					if data.type == "Input" then
 						textField:onEvent(function (eventName, sender)
@@ -230,6 +243,7 @@ function DebugViewParser:setupScrollerView(rootNode, scollViewRect, viewObj)
 
 							if eventName == "began" then
 								self:_tableCellTouchedImpl(table, cell)
+								sender:setPlaceHolder("")
 							elseif eventName == "ended" then
 								if data.mtext == tostring(data.default) or data.mtext == "" then
 									sender:setText(data.default)
@@ -246,6 +260,7 @@ function DebugViewParser:setupScrollerView(rootNode, scollViewRect, viewObj)
 
 							if eventName == "began" then
 								self:_tableCellTouchedImpl(table, cell)
+								sender:setPlaceHolder("")
 
 								if data._selectBoxShow ~= true then
 									data._selectBoxShow = true

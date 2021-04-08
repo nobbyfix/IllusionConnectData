@@ -186,6 +186,29 @@ function ActivityBlockSupportMediator:initView()
 end
 
 function ActivityBlockSupportMediator:initInfo()
+	local blockBtnText = self:getView():getChildByFullName("main.blockBtn.text")
+	local taskBtnText = self:getView():getChildByFullName("main.taskBtn.text")
+	local teamBtnText = self:getView():getChildByFullName("main.teamBtn.text")
+
+	if getCurrentLanguage() ~= GameLanguageType.CN then
+		blockBtnText:getVirtualRenderer():setOverflow(cc.LabelOverflow.SHRINK)
+		blockBtnText:getVirtualRenderer():setDimensions(120, 50)
+		blockBtnText:setPosition(cc.p(50, 17))
+		taskBtnText:getVirtualRenderer():setOverflow(cc.LabelOverflow.SHRINK)
+		taskBtnText:getVirtualRenderer():setDimensions(90, 50)
+		taskBtnText:setPosition(cc.p(50, 0))
+		teamBtnText:getVirtualRenderer():setOverflow(cc.LabelOverflow.SHRINK)
+		teamBtnText:getVirtualRenderer():setDimensions(90, 50)
+		teamBtnText:setPosition(cc.p(50, 0))
+	else
+		taskBtnText:getVirtualRenderer():setLineSpacing(-15)
+		blockBtnText:getVirtualRenderer():setLineSpacing(-15)
+		teamBtnText:getVirtualRenderer():setLineSpacing(-15)
+		blockBtnText:getVirtualRenderer():setDimensions(30, 84)
+		taskBtnText:getVirtualRenderer():setDimensions(25, 73)
+		teamBtnText:getVirtualRenderer():setDimensions(25, 73)
+	end
+
 	self._imageBg:loadTexture(self._supportActivity:getBgPath())
 
 	if self._titleImage then

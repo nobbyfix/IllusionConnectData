@@ -167,9 +167,12 @@ function DoActionState:enter(battleAction)
 
 		local skillSystem = battleContext:getObject("SkillSystem")
 
-		skillSystem:activateSpecificTrigger(actor, "BEFORE_ACTION")
+		skillSystem:activateSpecificTrigger(actor, "BEFORE_ACTION", {
+			primTrgt = primTrgt
+		})
 		skillSystem:activateGlobalTrigger("UNIT_BEFORE_ACTION", {
-			unit = actor
+			unit = actor,
+			primTrgt = primTrgt
 		})
 		skillExecutor:runAction(skillAction, args, function (executor)
 			local angerSystem = battleContext:getObject("AngerSystem")

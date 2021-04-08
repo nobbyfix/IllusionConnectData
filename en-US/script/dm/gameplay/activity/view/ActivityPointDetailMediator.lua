@@ -298,9 +298,11 @@ function ActivityPointDetailMediator:initBossAnim()
 	}), TTF_FONT_FZYH_M, 20)
 
 	text:enableOutline(cc.c3b(0, 0, 0), 1)
-	text:addTo(self._rightPanel):setPosition(cc.p(90, 265))
+	text:setTextVerticalAlignment(cc.TEXT_ALIGNMENT_LEFT)
+	text:setAnchorPoint(cc.p(0, 0.5))
+	text:addTo(self._rightPanel):setPosition(cc.p(30, 265))
 	text:setOpacity(0)
-	text:runAction(cc.Spawn:create(cc.FadeIn:create(0.2), cc.MoveTo:create(0.3, cc.p(60, 265))))
+	text:runAction(cc.Spawn:create(cc.FadeIn:create(0.2), cc.MoveTo:create(0.3, cc.p(-10, 265))))
 	self._bar:setVisible(true)
 	self._bar:setPosition(cc.p(183, 230))
 	self._bar:getChildByName("loadingBar"):setPercent(hpRate * 100)
@@ -797,7 +799,10 @@ function ActivityPointDetailMediator:refreshTeamView()
 
 	self._teamPanel:getChildByName("teamName"):setString(team:getName())
 
-	local roleModel = IconFactory:getRoleModelByKey("MasterBase", team:getMasterId())
+	local developSystem = self:getInjector():getInstance("DevelopSystem")
+	local masterSystem = developSystem:getMasterSystem()
+	local masterData = masterSystem:getMasterById(team:getMasterId())
+	local roleModel = masterData:getModel()
 	local masterIcon = IconFactory:createRoleIconSprite({
 		stencil = 6,
 		iconType = "Bust5",

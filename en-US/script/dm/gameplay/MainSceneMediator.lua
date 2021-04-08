@@ -160,6 +160,12 @@ local muiscCfg = {
 	},
 	rtpvpRobotBattle = {
 		noAutoPlay = true
+	},
+	MasterLeadStageDetailView = {
+		noAutoPlay = true
+	},
+	MasterMainView = {
+		noAutoPlay = true
 	}
 }
 local UINavigateHistory = {}

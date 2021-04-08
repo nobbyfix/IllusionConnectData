@@ -115,7 +115,9 @@ function FriendPvpLoseMediator:initSvpRole()
 		playersInfo = role.players
 	end
 
-	local model = ConfigReader:getDataByNameIdAndKey("MasterBase", loserMasterId, "RoleModel")
+	local masterSystem = self._developSystem:getMasterSystem()
+	local masterData = masterSystem:getMasterById(loserMasterId)
+	model = masterData:getModel()
 
 	if playersInfo and playersInfo[loserInfo.id] then
 		local mvpPoint = 0

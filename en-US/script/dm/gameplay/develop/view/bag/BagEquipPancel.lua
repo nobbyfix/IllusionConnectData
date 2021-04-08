@@ -260,7 +260,15 @@ function BagEquipPancel:refreshEquipBaseInfo()
 	else
 		limitDesc:setString(Strings:get("Equip_UI24"))
 
-		local width = getCurrentLanguage() ~= GameLanguageType.CN and 40 or 0
+		local width = 0
+
+		if getCurrentLanguage() ~= GameLanguageType.CN then
+			width = 40
+
+			if getCurrentLanguage() ~= GameLanguageType.ES then
+				width = 55
+			end
+		end
 
 		if occupationType == nil or occupationType == 0 then
 			if equipOccu then

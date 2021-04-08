@@ -16,8 +16,6 @@ function RTPVPRobotBattleMediator:enterWithData(data)
 end
 
 function RTPVPRobotBattleMediator:mapEventListeners()
-	self:mapEventListener(self:getEventDispatcher(), EVT_RESIGN_ACTIVE, self, self._homeResign)
-	self:mapEventListener(self:getEventDispatcher(), EVT_BECOME_ACTIVE, self, self._homeReturn)
 	self._viewContext:addEventListener(EVT_BATTLE_POINT_READY, self, self._readyGoFinish)
 end
 
@@ -49,20 +47,4 @@ function RTPVPRobotBattleMediator:_readyGoFinish()
 	self._surrenderTimer = delayCallByTime((time + 1) * 1000, function ()
 		self._surrenderBtn:setVisible(true)
 	end)
-end
-
-function RTPVPRobotBattleMediator:_homeResign()
-	self._homeTs = os.timemillis()
-end
-
-function RTPVPRobotBattleMediator:_homeReturn()
-	if not self._homeTs then
-		return
-	end
-
-	local tickMs = os.timemillis() - self._homeTs
-	self._homeTs = nil
-
-	self._controller:getDirector():repairHome()
-	self:tick(tickMs / 1000)
 end

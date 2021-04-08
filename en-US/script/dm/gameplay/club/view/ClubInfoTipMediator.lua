@@ -143,7 +143,9 @@ function ClubInfoTipMediator:onClickChat(sender, eventType)
 			slogan = self._data:getSlogan(),
 			isFriend = response.isFriend,
 			close = response.isFriend == 1 and response.close or nil,
-			block = response.block
+			block = response.block,
+			leadStageId = self._data:getLeadStageId(),
+			leadStageLevel = self._data:getLeadStageLevel()
 		}
 
 		friendSystem:addRecentFriend(data)

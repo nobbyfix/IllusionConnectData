@@ -1273,6 +1273,13 @@
         "Text": "Source_HeroStory",
         "URL": "view://HeroStoryEnterView&viewType=push&heroId=LLan&index=5"
     },
+    "IHF_LSLTe_1": {
+        "Isturn": 0,
+        "ResourceText": "Source_Activity",
+        "ResourceType": 0,
+        "Text": "Source_Activity",
+        "URL": ""
+    },
     "IHF_LYSi_1": {
         "Isturn": 1,
         "ResourceText": "Resource_DrawCard",
@@ -1624,6 +1631,13 @@
         "URL": "view://HeroStoryEnterView&viewType=push&heroId=PNCao&index=5"
     },
     "IHF_QBTe_1": {
+        "Isturn": 0,
+        "ResourceText": "Source_Activity",
+        "ResourceType": 0,
+        "Text": "Source_Activity",
+        "URL": ""
+    },
+    "IHF_QTQCi_1": {
         "Isturn": 0,
         "ResourceText": "Source_Activity",
         "ResourceType": 0,
@@ -2833,6 +2847,13 @@
         "ResourceType": 0,
         "Text": "IM_HolidayExchange_3_Desc",
         "URL": ""
+    },
+    "IM_MasterStage_ExpResource": {
+        "Isturn": 1,
+        "ResourceText": "Resource_DailyTaskTitle",
+        "ResourceType": "",
+        "Text": "Resource_DailyTask",
+        "URL": "view://TaskView&viewType=push"
     },
     "IM_QualityUp_1": {
         "Isturn": 1,
@@ -8412,6 +8433,13 @@
         "ResourceType": 4,
         "Text": "Source_Energy_1",
         "URL": "view://buyCurrencyView&viewType=popup&_currencyType=3"
+    },
+    "IR_PurewhiteStamina": {
+        "Isturn": 0,
+        "ResourceText": "Source_IM_SnowflakeStamina",
+        "ResourceType": 0,
+        "Text": "Source_IM_SnowflakeStamina_Desc",
+        "URL": ""
     },
     "IR_Pve_1": {
         "Isturn": 1,

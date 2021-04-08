@@ -239,6 +239,39 @@
         "Type": "Summon",
         "UniqueSkill": ""
     },
+    "SummonedJNLong_Awaken": {
+        "Cost": 2,
+        "CounterSkill": "",
+        "DeathSkill": "",
+        "DoubleSkill": "",
+        "Flags": [
+            "SUMMONED"
+        ],
+        "KillRage": 150,
+        "MasterRage": 10,
+        "NormalSkill": "Skill_Summoned_JNLong_Phantom_Normal",
+        "PassiveSkill": [
+            "Skill_Summoned_JNLong_Phantom_Passive"
+        ],
+        "ProudSkill": "Skill_Summoned_JNLong_Phantom_Proud",
+        "RageBase": 400,
+        "RageRules": {
+            "a1": [
+                10,
+                750
+            ],
+            "a2": 320,
+            "a3": 150,
+            "a4": 0
+        },
+        "RoleModel": "Model_JNLong_Phantom",
+        "SkillRate": 0.5,
+        "SummonSurface": [
+            "Model_JNLong_Phantom_Winter"
+        ],
+        "Type": "Summon",
+        "UniqueSkill": "Skill_Summoned_JNLong_Phantom_Unique"
+    },
     "SummonedLDu": {
         "Cost": 2,
         "CounterSkill": "",

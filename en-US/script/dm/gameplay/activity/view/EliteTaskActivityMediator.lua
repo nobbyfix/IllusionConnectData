@@ -97,7 +97,11 @@ function EliteTaskActivityMediator:setupView()
 		self._main:getChildByName("Image_18"):loadTexture("asset/scene/" .. activityConfig.TaskBgUI .. ".jpg")
 	end
 
+	self._refreshPanel = self._main:getChildByName("refreshPanel")
+	self._refreshTime = self._refreshPanel:getChildByName("times")
+
 	self:createTableView()
+	self._refreshTime:setString(self._activity:getTimeStr1())
 end
 
 function EliteTaskActivityMediator:createTableView()

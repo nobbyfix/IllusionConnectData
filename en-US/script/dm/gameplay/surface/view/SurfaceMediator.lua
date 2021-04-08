@@ -300,7 +300,8 @@ function SurfaceMediator:createSurfaceNode()
 		unlockDesc:setVisible(not surface:getUnlock())
 		unlockDesc:getChildByFullName("text"):setString(surface:getUnlockShortDesc())
 
-		local canBuy = surface:getType() == SurfaceType.kShop and not surface:getUnlock()
+		local inShop = self:checkIsInShopById(surface:getId())
+		local canBuy = surface:getType() == SurfaceType.kShop and not surface:getUnlock() and inShop
 		local buyPanel = surfaceNode:getChildByFullName("buyPanel")
 
 		buyPanel:setVisible(canBuy)
@@ -369,7 +370,8 @@ function SurfaceMediator:updateSurfaceNode()
 		unlockDesc:setVisible(not surface:getUnlock())
 		unlockDesc:getChildByFullName("text"):setString(surface:getUnlockShortDesc())
 
-		local canBuy = surface:getType() == SurfaceType.kShop and not surface:getUnlock()
+		local inShop = self:checkIsInShopById(surface:getId())
+		local canBuy = surface:getType() == SurfaceType.kShop and not surface:getUnlock() and inShop
 		local buyPanel = surfaceNode:getChildByFullName("buyPanel")
 
 		buyPanel:setVisible(canBuy)
@@ -495,6 +497,16 @@ function SurfaceMediator:createShopCost()
 		text:setPositionX(width1 + 30)
 		costNode:setContentSize(cc.size(width1 + width2 + 30, 50))
 	end
+end
+
+function SurfaceMediator:checkIsInShopById(surfaceId)
+	local shopSurface = self._shopSystem:getShopSurfaceById(surfaceId)
+
+	if shopSurface then
+		return true
+	end
+
+	return false
 end
 
 function SurfaceMediator:checkIsInShop()

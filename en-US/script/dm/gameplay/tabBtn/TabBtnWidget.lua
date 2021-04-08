@@ -12,6 +12,12 @@ function TabBtnWidget.class:createWidgetNode1()
 	return cc.CSLoader:createNode(resFile)
 end
 
+function TabBtnWidget.class:createWidgetNode2()
+	local resFile = "asset/ui/LeftTabBtnWidget2.csb"
+
+	return cc.CSLoader:createNode(resFile)
+end
+
 local maxLength = 4
 local kLine = {
 	[1.0] = "common_bg_line01.png",
