@@ -9024,8 +9024,245 @@
         "TimeTag": 1,
         "TimeType": {
             "amount": 1,
-            "end": "2021-04-29 05:00:00",
+            "end": "2021-04-22 05:00:00",
             "start": "2021-04-15 05:00:00",
+            "type": "limit"
+        },
+        "Vanish": 1,
+        "Version": "",
+        "WindowIcon": ""
+    },
+    "PackageShop_TL_Zuohe_11": {
+        "ClientCondition": [
+            {
+                "LEVEL": 5
+            },
+            {
+                "STAGE": "M02S01"
+            }
+        ],
+        "CoolDown": "",
+        "CostOffTag": "",
+        "Desc": "PackageShop_TL_Zuohe_1_Desc",
+        "GameCoin": "",
+        "Hide": "",
+        "Icon": "anualshop_ico_zuohe_1",
+        "IsFree": 1,
+        "Item": "PackageShop_TL_Zuohe_1_Reward",
+        "ItemShow": "PackageShop_TL_Zuohe_1_Reward",
+        "Name": "PackageShop_TL_Zuohe_1_Name",
+        "Pay": "",
+        "Platform": "ios",
+        "Prepose": "",
+        "Price": "",
+        "Quality": 5,
+        "ServerCondition": "",
+        "ShopSort": "TimeLimitShop",
+        "Sort": 5,
+        "Tag": "",
+        "TimeTag": 1,
+        "TimeType": {
+            "amount": 1,
+            "end": "2021-04-29 05:00:00",
+            "start": "2021-04-22 05:00:00",
+            "type": "limit"
+        },
+        "Vanish": 1,
+        "Version": "",
+        "WindowIcon": ""
+    },
+    "PackageShop_TL_Zuohe_12": {
+        "ClientCondition": [
+            {
+                "LEVEL": 5
+            },
+            {
+                "STAGE": "M02S01"
+            }
+        ],
+        "CoolDown": "",
+        "CostOffTag": "",
+        "Desc": "PackageShop_TL_Zuohe_2_Desc",
+        "GameCoin": "",
+        "Hide": "",
+        "Icon": "anualshop_ico_zuohe_2",
+        "IsFree": 0,
+        "Item": "PackageShop_TL_Zuohe_2_Reward",
+        "ItemShow": "PackageShop_TL_Zuohe_2_Reward",
+        "Name": "PackageShop_TL_Zuohe_2_Name",
+        "Pay": "Pay_PackageShop_TL_Zuohe_12",
+        "Platform": "ios",
+        "Prepose": "",
+        "Price": "",
+        "Quality": 5,
+        "ServerCondition": "",
+        "ShopSort": "TimeLimitShop",
+        "Sort": 6,
+        "Tag": "",
+        "TimeTag": 1,
+        "TimeType": {
+            "amount": 5,
+            "end": "2021-04-29 05:00:00",
+            "start": "2021-04-22 05:00:00",
+            "type": "limit"
+        },
+        "Vanish": 1,
+        "Version": "",
+        "WindowIcon": ""
+    },
+    "PackageShop_TL_Zuohe_13": {
+        "ClientCondition": [
+            {
+                "LEVEL": 5
+            },
+            {
+                "STAGE": "M02S01"
+            }
+        ],
+        "CoolDown": "",
+        "CostOffTag": "",
+        "Desc": "PackageShop_TL_Zuohe_3_Desc",
+        "GameCoin": {
+            "amount": 400,
+            "type": "IR_Diamond"
+        },
+        "Hide": "",
+        "Icon": "anualshop_ico_zuohe_7",
+        "IsFree": 2,
+        "Item": "PackageShop_TL_Zuohe_3_Reward",
+        "ItemShow": "PackageShop_TL_Zuohe_3_Reward",
+        "Name": "PackageShop_TL_Zuohe_3_Name",
+        "Pay": "",
+        "Platform": "ios",
+        "Prepose": "",
+        "Price": "",
+        "Quality": 5,
+        "ServerCondition": "",
+        "ShopSort": "TimeLimitShop",
+        "Sort": 1,
+        "Tag": "",
+        "TimeTag": 1,
+        "TimeType": {
+            "amount": -1,
+            "end": "2021-04-29 05:00:00",
+            "start": "2021-04-22 05:00:00",
+            "type": "limit"
+        },
+        "Vanish": 1,
+        "Version": "",
+        "WindowIcon": ""
+    },
+    "PackageShop_TL_Zuohe_14": {
+        "ClientCondition": [
+            {
+                "LEVEL": 5
+            },
+            {
+                "STAGE": "M02S01"
+            }
+        ],
+        "CoolDown": "",
+        "CostOffTag": "",
+        "Desc": "PackageShop_TL_Zuohe_4_Desc",
+        "GameCoin": "",
+        "Hide": "",
+        "Icon": "anualshop_ico_zuohe_4",
+        "IsFree": 0,
+        "Item": "PackageShop_TL_Zuohe_4_Reward",
+        "ItemShow": "PackageShop_TL_Zuohe_4_Reward",
+        "Name": "PackageShop_TL_Zuohe_4_Name",
+        "Pay": "Pay_PackageShop_TL_Zuohe_14",
+        "Platform": "ios",
+        "Prepose": "",
+        "Price": "",
+        "Quality": 5,
+        "ServerCondition": "",
+        "ShopSort": "TimeLimitShop",
+        "Sort": 7,
+        "Tag": "",
+        "TimeTag": 1,
+        "TimeType": {
+            "amount": 1,
+            "end": "2021-04-29 05:00:00",
+            "start": "2021-04-22 05:00:00",
+            "type": "limit"
+        },
+        "Vanish": 1,
+        "Version": "",
+        "WindowIcon": ""
+    },
+    "PackageShop_TL_Zuohe_15": {
+        "ClientCondition": [
+            {
+                "LEVEL": 5
+            },
+            {
+                "STAGE": "M02S01"
+            }
+        ],
+        "CoolDown": "",
+        "CostOffTag": "",
+        "Desc": "PackageShop_TL_Zuohe_5_Desc",
+        "GameCoin": "",
+        "Hide": "",
+        "Icon": "anualshop_ico_zuohe_5",
+        "IsFree": 0,
+        "Item": "PackageShop_TL_Zuohe_5_Reward",
+        "ItemShow": "PackageShop_TL_Zuohe_5_Reward",
+        "Name": "PackageShop_TL_Zuohe_5_Name",
+        "Pay": "Pay_PackageShop_TL_Zuohe_15",
+        "Platform": "ios",
+        "Prepose": "",
+        "Price": "",
+        "Quality": 5,
+        "ServerCondition": "",
+        "ShopSort": "TimeLimitShop",
+        "Sort": 8,
+        "Tag": "",
+        "TimeTag": 1,
+        "TimeType": {
+            "amount": 2,
+            "end": "2021-04-29 05:00:00",
+            "start": "2021-04-22 05:00:00",
+            "type": "limit"
+        },
+        "Vanish": 1,
+        "Version": "",
+        "WindowIcon": ""
+    },
+    "PackageShop_TL_Zuohe_16": {
+        "ClientCondition": [
+            {
+                "LEVEL": 5
+            },
+            {
+                "STAGE": "M02S01"
+            }
+        ],
+        "CoolDown": "",
+        "CostOffTag": "",
+        "Desc": "PackageShop_TL_Zuohe_6_Desc",
+        "GameCoin": "",
+        "Hide": "",
+        "Icon": "anualshop_ico_zuohe_6",
+        "IsFree": 0,
+        "Item": "PackageShop_TL_Zuohe_6_Reward",
+        "ItemShow": "PackageShop_TL_Zuohe_6_Reward",
+        "Name": "PackageShop_TL_Zuohe_6_Name",
+        "Pay": "Pay_PackageShop_TL_Zuohe_16",
+        "Platform": "ios",
+        "Prepose": "",
+        "Price": "",
+        "Quality": 5,
+        "ServerCondition": "",
+        "ShopSort": "TimeLimitShop",
+        "Sort": 9,
+        "Tag": "",
+        "TimeTag": 1,
+        "TimeType": {
+            "amount": 2,
+            "end": "2021-04-29 05:00:00",
+            "start": "2021-04-22 05:00:00",
             "type": "limit"
         },
         "Vanish": 1,
@@ -9063,7 +9300,7 @@
         "TimeTag": 1,
         "TimeType": {
             "amount": 5,
-            "end": "2021-04-29 05:00:00",
+            "end": "2021-04-22 05:00:00",
             "start": "2021-04-15 05:00:00",
             "type": "limit"
         },
@@ -9105,7 +9342,7 @@
         "TimeTag": 1,
         "TimeType": {
             "amount": -1,
-            "end": "2021-04-29 05:00:00",
+            "end": "2021-04-22 05:00:00",
             "start": "2021-04-15 05:00:00",
             "type": "limit"
         },
@@ -9144,7 +9381,7 @@
         "TimeTag": 1,
         "TimeType": {
             "amount": 1,
-            "end": "2021-04-29 05:00:00",
+            "end": "2021-04-22 05:00:00",
             "start": "2021-04-15 05:00:00",
             "type": "limit"
         },
@@ -9183,7 +9420,7 @@
         "TimeTag": 1,
         "TimeType": {
             "amount": 2,
-            "end": "2021-04-29 05:00:00",
+            "end": "2021-04-22 05:00:00",
             "start": "2021-04-15 05:00:00",
             "type": "limit"
         },
@@ -9222,7 +9459,7 @@
         "TimeTag": 1,
         "TimeType": {
             "amount": 2,
-            "end": "2021-04-29 05:00:00",
+            "end": "2021-04-22 05:00:00",
             "start": "2021-04-15 05:00:00",
             "type": "limit"
         },
