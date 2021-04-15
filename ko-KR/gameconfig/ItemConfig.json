@@ -4122,6 +4122,37 @@
         "UseLevel": 1,
         "Viplevel": 0
     },
+    "IB_SSR_ZouHe02": {
+        "CN_Name": "SSR伙伴随机箱",
+        "Compose": "",
+        "Desc": "",
+        "FunctionDesc": "IB_SSR_ZouHe02_FunctionDesc",
+        "Icon": "ico_m_baoxiang_ty",
+        "Isvisible": 1,
+        "Link": "",
+        "MaxPile": 999999,
+        "MultiUse": 1,
+        "Name": "IB_SSR_ZouHe02_Name",
+        "Page": "CONSUMABLE",
+        "Quality": 5,
+        "Rank": 747,
+        "RedTips": "",
+        "Resource": [],
+        "ResourceDesc": "",
+        "Reward": [
+            "IB_SSR_ZouHe02_Reward"
+        ],
+        "SellPrice": -1,
+        "Shine": 1,
+        "ShinePack": 1,
+        "Sort": 747850,
+        "SoulExp": -1,
+        "TargetId": "",
+        "Type": "BOX_RANDOM",
+        "UseAtOnce": "",
+        "UseLevel": 1,
+        "Viplevel": 0
+    },
     "IB_SilverBox": {
         "CN_Name": "白银宝箱",
         "Compose": "",
