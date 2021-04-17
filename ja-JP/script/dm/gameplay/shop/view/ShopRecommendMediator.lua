@@ -127,6 +127,15 @@ function ShopRecommendMediator:refreshView()
 
 	local path = "asset/ui/shop/" .. self._data.BackGroundImg .. ".jpg" or "sd_tj_ggt.png"
 
+	if PlatformHelper:isDMMChannel() then
+		local newPath = "asset/ui/shop/" .. self._data.BackGroundImg .. "_dmmp.jpg"
+		local sprite = cc.Sprite:create(newPath)
+
+		if sprite then
+			path = newPath
+		end
+	end
+
 	self._bgImage:loadTexture(path)
 
 	local pid = self._data.PackageId[1]

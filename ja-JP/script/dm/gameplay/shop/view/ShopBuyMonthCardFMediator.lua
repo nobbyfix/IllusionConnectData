@@ -121,8 +121,8 @@ function ShopBuyMonthCardFMediator:refreshBuyStatus()
 
 		self._moneySymbol:setString(symbol)
 		self._moneyNum:setString(price)
-		self._moneyNum:setPositionX(94 + self._moneySymbol:getContentSize().width + 2)
-		self._per:setPositionX(94 + self._moneySymbol:getContentSize().width + self._moneyNum:getContentSize().width + 8)
+		self._moneyNum:setPositionX(self._moneySymbol:getPositionX() + self._moneySymbol:getContentSize().width + 2)
+		self._per:setPositionX(self._moneySymbol:getPositionX() + self._moneySymbol:getContentSize().width + self._moneyNum:getContentSize().width + 8)
 		self._btnBuy:setVisible(true)
 		self._noBuyPanel:setVisible(true)
 	end

@@ -2310,6 +2310,37 @@
             "value": 1
         }
     },
+    "DMMPShop_Capital": {
+        "clz": "string[]",
+        "content": [
+            "DMMPShop_Capital_1",
+            "DMMPShop_Capital_2",
+            "DMMPShop_Capital_3",
+            "DMMPShop_Capital_4",
+            "DMMPShop_Capital_5",
+            "DMMPShop_Capital_6",
+            "DMMPShop_Capital_7",
+            "DMMPShop_Capital_8",
+            "DMMPShop_Capital_9",
+            "DMMPShop_Capital_10"
+        ]
+    },
+    "DMMPShop_Specific": {
+        "clz": "",
+        "content": [
+            "DMMPShop_Specific_1",
+            "DMMPShop_Specific_2",
+            "DMMPShop_Specific_3",
+            "DMMPShop_Specific_4",
+            "DMMPShop_Specific_5",
+            "DMMPShop_Specific_6",
+            "DMMPShop_Specific_7",
+            "DMMPShop_Specific_8",
+            "DMMPShop_Specific_9",
+            "DMMPShop_Specific_10",
+            "DMMPShop_Specific_11"
+        ]
+    },
     "Damage_reward_1": {
         "clz": "string",
         "content": 0.8

@@ -75,22 +75,49 @@ function GameExtPackUpdater.initUpdateCfg()
 		print("*********extensions db existing*********")
 	end
 
-	local updateCfgPath = writablePath .. "updateExt"
+	local updateCfgPath = writablePath .. "updateExtDist"
 
 	if fileUtils:isFileExist(updateCfgPath) then
-		local sqlData = fileUtils:getStringFromFile(updateCfgPath)
-		local sqlStr = createSqlStr(sqlData)
+		local updateContent = fileUtils:getStringFromFile(updateCfgPath)
+		local maxSQLCount = 300
+		local cjson = require("cjson.safe")
+		local updateData = cjson.decode(updateContent)
+		local sqlVector = {}
+		local sqls = updateData.data
 
-		print("start update extensions db")
+		if maxSQLCount < table.nums(sqls) then
+			for i, v in ipairs(sqls) do
+				local pointer = math.ceil(i / maxSQLCount)
+				sqlVector[pointer] = sqlVector[pointer] or {
+					data = {},
+					version = updateData.version
+				}
+				local subSQLData = sqlVector[pointer]
+				local index = math.mod(i, maxSQLCount)
+
+				if index == 0 then
+					index = maxSQLCount or index
+				end
+
+				subSQLData.data[index] = sqls[i]
+			end
+		else
+			sqlVector[#sqlVector + 1] = updateData
+		end
 
 		local tempUpdateDBPath = writablePath .. "extensions_temp.db"
 
 		fileUtils:removeFile(tempUpdateDBPath)
 		app.copyFile(dbFilePath, tempUpdateDBPath)
+		print("start update extensions db")
 
-		local errorInfo = app.getAssetsManager():mergeDbBySQLString(tempUpdateDBPath, sqlStr)
+		for _, subSqlData in ipairs(sqlVector) do
+			local subContent = createSqlStr(cjson.encode(subSqlData))
+			local errorInfo = app.getAssetsManager():mergeDbBySQLString(tempUpdateDBPath, subContent)
 
-		assert(#errorInfo == 0, "mergeDb error:" .. errorInfo)
+			assert(#errorInfo == 0, "mergeDb error:" .. errorInfo)
+		end
+
 		fileUtils:removeFile(dbFilePath)
 		fileUtils:renameFile(tempUpdateDBPath, dbFilePath)
 		fileUtils:removeFile(updateCfgPath)

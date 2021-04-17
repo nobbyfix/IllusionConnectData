@@ -1655,11 +1655,11 @@ function SettingMediator:isReLoginBtnShow()
 end
 
 function SettingMediator:isBindAccountBtnShow()
-	return SDKHelper and SDKHelper:isEnableSdk() or GameConfigs.showAllSettingBtn
+	return (SDKHelper and SDKHelper:isEnableSdk() or GameConfigs.showAllSettingBtn) and not PlatformHelper:isDMMChannel()
 end
 
 function SettingMediator:isDeleteAccountBtnShow()
-	return SDKHelper and SDKHelper:isEnableSdk() or GameConfigs.showAllSettingBtn
+	return (SDKHelper and SDKHelper:isEnableSdk() or GameConfigs.showAllSettingBtn) and not PlatformHelper:isDMMChannel()
 end
 
 function SettingMediator:isCustomerServiceBtnShow()
@@ -1667,7 +1667,7 @@ function SettingMediator:isCustomerServiceBtnShow()
 end
 
 function SettingMediator:isInheritanceCodeBtnShow()
-	return (SDKHelper and SDKHelper:isEnableSdk() or GameConfigs.showAllSettingBtn) and CommonUtils.GetSwitch("fn_inheritanceCode")
+	return (SDKHelper and SDKHelper:isEnableSdk() or GameConfigs.showAllSettingBtn) and CommonUtils.GetSwitch("fn_inheritanceCode") and not PlatformHelper:isDMMChannel()
 end
 
 function SettingMediator:isTestBtnShow()

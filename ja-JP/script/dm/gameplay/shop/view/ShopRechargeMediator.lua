@@ -40,6 +40,10 @@ local kTabBtnsNames = {
 		}
 	}
 }
+local DMMLawId = {
+	"DMMPShop_Specific",
+	"DMMPShop_Capital"
+}
 
 function ShopRechargeMediator:initialize()
 	super.initialize(self)
@@ -297,6 +301,10 @@ function ShopRechargeMediator:onClickLaw(sender, eventType)
 
 	if kTabBtnsNames[id] then
 		local lawId = kTabBtnsNames[id][4]
+
+		if PlatformHelper:isDMMChannel() then
+			lawId = DMMLawId[id]
+		end
 
 		if lawId then
 			local view = self:getInjector():getInstance("ShopHistoryView")

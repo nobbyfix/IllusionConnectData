@@ -198,6 +198,7 @@ function ShopMonthCardMediator:setMonthCardView()
 		local per = buyTip:getChildByFullName("per")
 
 		symbol:setString(sym)
+		symbol:setPositionX(190)
 		money:setString(price)
 		money:setPositionX(symbol:getPositionX() + symbol:getContentSize().width)
 		per:setPositionX(money:getPositionX() + money:getContentSize().width)
@@ -268,6 +269,7 @@ function ShopMonthCardMediator:setMonthCardViewF(panel, data)
 		local money = buyTip:getChildByFullName("money")
 
 		symbol:setString(sym)
+		symbol:setPositionX(193 - symbol:getContentSize().width * 0.5)
 		money:setString(price)
 		money:setPositionX(symbol:getPositionX() + symbol:getContentSize().width)
 	end

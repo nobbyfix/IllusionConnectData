@@ -134,9 +134,6 @@ function ShopHistoryMediator:initContent(data)
 	for i = 1, length do
 		local temp = self._content[i]
 		local node = self._textClone:clone():setVisible(true)
-
-		dump(temp, "temp")
-
 		local date = os.date("*t", temp.time)
 		local config = ConfigReader:getRecordById("Pay", temp.payId)
 		local payInfo = payOffSystem:getPayInfoByProductId(temp.productId)
@@ -151,7 +148,13 @@ function ShopHistoryMediator:initContent(data)
 				return self:formatStr(num, ...)
 			end
 		})
-		str = str .. "  " .. Strings:get("Shop_Recharge_Template_1_1", {
+		local strId = "Shop_Recharge_Template_1_1"
+
+		if PlatformHelper:isDMMChannel() then
+			strId = "DMMPCost"
+		end
+
+		str = str .. "  " .. Strings:get(strId, {
 			cost = math.ceil(temp.money / 100)
 		}, {
 			formatStr = function (num, ...)

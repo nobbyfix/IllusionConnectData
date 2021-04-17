@@ -131,6 +131,15 @@ local PlatformHelper = {
 		if self:isAndroid() then
 			luaj.callStaticMethod(PlatformClassPath, "commandFunction", args, "(Ljava/lang/String;Ljava/lang/String;)V")
 		end
+	end,
+	isDMMChannel = function (self)
+		local channelID = self:getChannelID()
+
+		if channelID == "dmm_android" then
+			return true
+		end
+
+		return false
 	end
 }
 

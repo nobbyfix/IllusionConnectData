@@ -707,12 +707,23 @@ local function showLogo()
 	local platform = cc.Application:getInstance():getTargetPlatform()
 	local isiOS = platform == 4 or platform == 5
 	local logoImgPath_def = "asset/scene/logo_def.jpg"
+	local dmmPath = ""
+
+	if PlatformHelper:isDMMChannel() then
+		dmmPath = "asset/scene/logo_dmm.png"
+	end
 
 	if cc.FileUtils:getInstance():isFileExist(logoImgPath) then
 		showFunc(logoImgPath, function ()
 			if cc.FileUtils:getInstance():isFileExist(logoImgPath_def) then
 				showFunc(logoImgPath_def, function ()
-					main()
+					if cc.FileUtils:getInstance():isFileExist(dmmPath) then
+						showFunc(dmmPath, function ()
+							main()
+						end)
+					else
+						main()
+					end
 				end)
 			else
 				main()
@@ -720,7 +731,13 @@ local function showLogo()
 		end)
 	elseif cc.FileUtils:getInstance():isFileExist(logoImgPath_def) then
 		showFunc(logoImgPath_def, function ()
-			main()
+			if cc.FileUtils:getInstance():isFileExist(dmmPath) then
+				showFunc(dmmPath, function ()
+					main()
+				end)
+			else
+				main()
+			end
 		end)
 	else
 		main()

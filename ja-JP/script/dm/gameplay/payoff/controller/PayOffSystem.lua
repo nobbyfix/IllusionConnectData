@@ -228,6 +228,10 @@ function PayOffSystem:getPaySymbolAndPrice(payId)
 			symbol = config.Symbol or ""
 			price = config.Price or 0
 		end
+
+		if PlatformHelper:isDMMChannel() then
+			symbol = Strings:get("DMMPPay")
+		end
 	end
 
 	price = checkint(price)
