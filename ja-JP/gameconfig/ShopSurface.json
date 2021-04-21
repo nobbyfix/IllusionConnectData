@@ -75,6 +75,25 @@
             "type": "limit"
         }
     },
+    "ShopSurface_Surface_FTLEShi_3": {
+        "BackGroundImg": "sd_pf_bg",
+        "ClientCondition": "",
+        "Cost": [
+            {
+                "amount": 118,
+                "code": "IR_Surface"
+            }
+        ],
+        "Hide": 1,
+        "ServerCondition": "",
+        "Sort": 2001,
+        "Surface": "Surface_FTLEShi_3",
+        "TimeType": {
+            "end": "2021-05-10 05:00:00",
+            "start": "2021-04-24 05:00:00",
+            "type": "limit"
+        }
+    },
     "ShopSurface_Surface_HSheng_3": {
         "BackGroundImg": "sd_pf_bg",
         "ClientCondition": "",

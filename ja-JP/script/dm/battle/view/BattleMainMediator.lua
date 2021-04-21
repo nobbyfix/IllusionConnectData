@@ -684,7 +684,6 @@ function BattleMainMediator:showMaster(friend, enemy)
 	end
 
 	local function pauseFunc()
-		self:pause()
 	end
 
 	local function resumeCallback()

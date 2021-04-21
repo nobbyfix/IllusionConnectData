@@ -3881,6 +3881,14 @@ function HomeMediator:setComplexActivityEntry()
 			imgZorder = 2,
 			aimpos = cc.p(49, 42),
 			imgpos = cc.p(53, 10)
+		},
+		[ActivityType_UI.KActivityFire] = {
+			animZorder = 2,
+			img = "fire_btn_zjm_rukou.png",
+			anim = "eff_rukou_Fire_yewangrukoueff",
+			imgZorder = 1,
+			aimpos = cc.p(50, 60),
+			imgpos = cc.p(40, 60)
 		}
 	}
 	local extraActBtn = self._rightFuncLayout:getChildByFullName("extraActBtn")

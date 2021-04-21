@@ -2420,5 +2420,54 @@ all.Invisible_Immune = {
 		return _env
 	end
 }
+all.Skill_HeroEnterRecruit_Passive = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.PositionFactor = externs.PositionFactor
+
+		assert(this.PositionFactor ~= nil, "External variable `PositionFactor` is not provided.")
+
+		this.RecruitFactor = externs.RecruitFactor
+
+		assert(this.RecruitFactor ~= nil, "External variable `RecruitFactor` is not provided.")
+
+		local passive = __action(this, {
+			name = "passive",
+			entry = prototype.passive
+		})
+		passive = global["[duration]"](this, {
+			0
+		}, passive)
+		this.passive = global["[trigger_by]"](this, {
+			"SELF:ENTER"
+		}, passive)
+
+		return this
+	end,
+	passive = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			for _, card in global.__iter__(global.CardsOfPlayer(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, this.RecruitFactor))) do
+				global.RecruitCard(_env, card, this.PositionFactor)
+			end
+		end)
+
+		return _env
+	end
+}
 
 return _M

@@ -310,3 +310,15 @@ function ActivityStage:isPass()
 		return lastBattlePoint:isPass()
 	end
 end
+
+function ActivityStage:getStartTimestamp()
+	local config = ConfigReader:getRecordById("ActivityBlockPoint", self._config.SubPoint[1])
+	local timestamp = 0
+
+	if config.PointTime then
+		local startTime = config.PointTime.start
+		timestamp = TimeUtil:formatStrToRemoteTImestamp(startTime)
+	end
+
+	return timestamp
+end

@@ -85,7 +85,7 @@ function ActivityBakingMainMediator:onRegister()
 
 	self._heroSystem = self._developSystem:getHeroSystem()
 
-	self:mapButtonHandlersClick(kBtnHandlers)
+	self:setupTopInfoWidget()
 	self:mapEventListener(self:getEventDispatcher(), EVT_PLAYER_SYNCHRONIZED, self, self.refreshView)
 	self:mapEventListener(self:getEventDispatcher(), EVT_RESET_DONE, self, self.doReset)
 
@@ -108,6 +108,23 @@ function ActivityBakingMainMediator:onRegister()
 	self._taskBtn:getChildByFullName("text"):getVirtualRenderer():setLineSpacing(-15)
 	self._eggBtn:getChildByFullName("text"):getVirtualRenderer():setLineSpacing(-15)
 	self._teamBtn:getChildByFullName("text"):getVirtualRenderer():setLineSpacing(-15)
+
+	local title = self._stagePanel:getChildByName("title")
+	local lineGradiantVec2 = {
+		{
+			ratio = 0.3,
+			color = cc.c4b(255, 254, 228, 255)
+		},
+		{
+			ratio = 0.7,
+			color = cc.c4b(255, 233, 133, 255)
+		}
+	}
+
+	title:enablePattern(cc.LinearGradientPattern:create(lineGradiantVec2, {
+		x = 0,
+		y = -1
+	}))
 end
 
 function ActivityBakingMainMediator:setTimerString(timeStr, timeTip)
@@ -131,9 +148,6 @@ end
 function ActivityBakingMainMediator:setupTopInfoWidget()
 	local topInfoNode = self:getView():getChildByName("topinfo_node")
 	local config = {
-		style = 1,
-		hideLine = true,
-		currencyInfo = self._model:getResourcesBanner(),
 		btnHandler = {
 			clickAudio = "Se_Click_Close_1",
 			func = bind1(self.onClickBack, self)
@@ -143,57 +157,51 @@ function ActivityBakingMainMediator:setupTopInfoWidget()
 	self._topInfoWidget = self:autoManageObject(injector:injectInto(TopInfoWidget:new(topInfoNode)))
 
 	self._topInfoWidget:updateView(config)
+end
 
-	local title = self._stagePanel:getChildByName("title")
-	local lineGradiantVec2 = {
-		{
-			ratio = 0.3,
-			color = cc.c4b(255, 254, 228, 255)
-		},
-		{
-			ratio = 0.7,
-			color = cc.c4b(255, 233, 133, 255)
-		}
+function ActivityBakingMainMediator:updateInfoWidget()
+	if not self._topInfoWidget then
+		return
+	end
+
+	local config = {
+		hideLine = true,
+		style = 1,
+		currencyInfo = self._model:getResourcesBanner()
 	}
 
-	title:enablePattern(cc.LinearGradientPattern:create(lineGradiantVec2, {
-		x = 0,
-		y = -1
-	}))
+	self._topInfoWidget:updateView(config)
 end
 
 function ActivityBakingMainMediator:enterWithData(data)
 	self._activityId = data.activityId or ActivityId.kActivityBlock
+	self._model = self._activitySystem:getActivityByComplexId(self._activityId)
+
+	if not self._model then
+		self:dispatch(ShowTipEvent({
+			tip = Strings:get("Error_12806")
+		}))
+
+		return
+	end
+
+	self:mapButtonHandlersClick(kBtnHandlers)
+	self:updateInfoWidget()
+
 	self._canChangeHero = true
 
 	self:initData()
-	self:setupTopInfoWidget()
 	self:initView()
 end
 
 function ActivityBakingMainMediator:resumeWithData()
-	local quit = self:doReset()
-
-	if quit then
-		return
-	end
-
-	self:initData()
-	self:initView()
+	self:doReset()
 end
 
 function ActivityBakingMainMediator:initData()
-	self._model = self._activitySystem:getActivityById(self._activityId)
-	self._blockActivity = nil
-	self._taskActivities = {}
-	self._jumpActivity = nil
-
-	if self._model then
-		self._blockActivity = self._model:getBlockMapActivity()
-		self._taskActivities = self._model:getTaskActivities()
-		self._jumpActivity = self._model:getJumpActivity()
-	end
-
+	self._blockActivity = self._model:getBlockMapActivity()
+	self._taskActivities = self._model:getTaskActivities()
+	self._jumpActivity = self._model:getJumpActivity()
 	self._roleIndex = 1
 	self._roles = self._model:getRoleParams()
 end
@@ -486,18 +494,16 @@ end
 function ActivityBakingMainMediator:doReset()
 	self:stopTimer()
 
-	local model = self._activitySystem:getActivityById(self._activityId)
+	self._model = self._activitySystem:getActivityByComplexId(self._activityId)
 
-	if not model then
+	if not self._model then
 		self:dispatch(Event:new(EVT_POP_TO_TARGETVIEW, "homeView"))
 
-		return true
+		return
 	end
 
 	self:initData()
 	self:initView()
-
-	return false
 end
 
 function ActivityBakingMainMediator:refreshView()

@@ -84,18 +84,19 @@ end
 function ShopBuyNormalMediator:refreshData()
 	self._storage = self._itemData:getStorage()
 	self._maxNumber = self._itemData:getStock()
+	local costType = self._itemData:getCostType()
+	local maxMoney = self._bagSystem:getItemCount(costType)
+	local costPrice = self._itemData:getPrice()
+	local maxNum = math.floor(maxMoney / costPrice)
+
+	if maxNum <= 0 then
+		maxNum = 1
+	end
 
 	if self._storage == -1 then
-		local costType = self._itemData:getCostType()
-		local maxMoney = self._bagSystem:getItemCount(costType)
-		local costPrice = self._itemData:getPrice()
-		local maxNum = math.floor(maxMoney / costPrice)
-
-		if maxNum <= 0 then
-			maxNum = 1
-		end
-
 		self._maxNumber = maxNum
+	else
+		self._maxNumber = math.min(self._maxNumber, maxNum)
 	end
 
 	if self._maxNumber == 0 then
@@ -343,7 +344,7 @@ function ShopBuyNormalMediator:refreshMoney()
 
 		self._price:setString(costPrice)
 		self._selectCount:setString(self._curNumber)
-		self._remainCount:setString(self._maxNumber)
+		self._remainCount:setString(self._itemData:getStock())
 		self._totalPrice:setString(costSum)
 		self._remainCount:setVisible(true)
 		self._buyTitleText:setVisible(true)

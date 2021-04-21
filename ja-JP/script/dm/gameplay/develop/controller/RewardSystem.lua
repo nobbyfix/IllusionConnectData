@@ -250,7 +250,7 @@ function RewardSystem.class:getDesc(rewardData)
 			local config = ConfigReader:getRecordById("Surface", id)
 
 			if config and config.Id then
-				return Strings:get(config.Desc)
+				return Strings:get(config.LongDesc)
 			end
 		elseif info.rewardType == RewardType.kHero then
 			local config = ConfigReader:getRecordById("HeroBase", id)

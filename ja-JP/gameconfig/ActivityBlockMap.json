@@ -709,6 +709,95 @@
         ],
         "Type": "NORMAL"
     },
+    "FireE01": {
+        "BGM": "Mus_Story_Yewang_Main",
+        "Background": "Fire_Scene02",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_FireAE01_Name",
+        "StarBoxReward": {
+            "10": "FireE01BOX01",
+            "20": "FireE01BOX02",
+            "30": "FireE01BOX03"
+        },
+        "SubPoint": [
+            "FireE01S01",
+            "FireE01S02",
+            "FireE01S03",
+            "FireE01S04",
+            "FireE01S05",
+            "FireE01S06",
+            "FireE01S07",
+            "FireE01S08",
+            "FireE01S09",
+            "FireE01S10",
+            "FireE01S11",
+            "FireE01S12"
+        ],
+        "SubStoryPoint": [
+            "FireS01E01",
+            "FireS01E02",
+            "FireS01E03"
+        ],
+        "Type": "ELITE"
+    },
+    "FireH01": {
+        "BGM": "Mus_Story_Yewang_Main",
+        "Background": "Fire_Scene03",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_FireAH01_Name",
+        "StarBoxReward": {
+            "10": "FireN01BOX02",
+            "15": "FireN01BOX03",
+            "5": "FireN01BOX01"
+        },
+        "SubPoint": [
+            "FireH01S01",
+            "FireH01S02",
+            "FireH01S03",
+            "FireH01S04",
+            "FireH01S05",
+            "FireH01S06"
+        ],
+        "SubStoryPoint": [
+            "FireS01H01"
+        ],
+        "Type": "HARD"
+    },
+    "FireM01": {
+        "BGM": "Mus_Story_Yewang_Main",
+        "Background": "Fire_Scene01",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_FireAM01_Name",
+        "StarBoxReward": {
+            "10": "FireM01BOX01",
+            "20": "FireM01BOX02",
+            "30": "FireM01BOX03"
+        },
+        "SubPoint": [
+            "FireM01S01",
+            "FireM01S02",
+            "FireM01S03",
+            "FireM01S04",
+            "FireM01S05",
+            "FireM01S06",
+            "FireM01S07",
+            "FireM01S08",
+            "FireM01S09",
+            "FireM01S10",
+            "FireM01S11",
+            "FireM01S12"
+        ],
+        "SubStoryPoint": [
+            "FireS01S01",
+            "FireS01S02",
+            "FireS01S03",
+            "FireS01S04"
+        ],
+        "Type": "NORMAL"
+    },
     "KnightE01": {
         "BGM": "Mus_Story_Knight_War",
         "Background": "Knight_Scene03",

@@ -597,6 +597,19 @@
         "TopStatus": 0,
         "Type": "USER"
     },
+    "Mail_EightDays_Fire": {
+        "Content": "Mail_EightDays_Fire_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_Fire_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_EightDays_Fire_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
     "Mail_EightDays_Knight": {
         "Content": "Mail_EightDays_Knight_Content",
         "ExpireAfterRead": 72000,
@@ -686,6 +699,32 @@
         "SubType": 1,
         "Title": "Mail_FAC_Warning5_Title",
         "TopStatus": 1,
+        "Type": "USER"
+    },
+    "Mail_Fire_AchieveMentTask_Activity": {
+        "Content": "Mail_Fire_AchieveMentTask_Activity_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_Fire_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_Fire_AchieveMentTask_Activity_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
+    "Mail_Fire_DailyTask_Activity": {
+        "Content": "Mail_Fire_DailyTask_Activity_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_Fire_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_Fire_DailyTask_Activity_Title",
+        "TopStatus": 0,
         "Type": "USER"
     },
     "Mail_First_Defeat": {

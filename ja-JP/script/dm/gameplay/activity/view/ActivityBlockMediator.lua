@@ -85,7 +85,7 @@ function ActivityBlockMediator:onRegister()
 
 	self._heroSystem = self._developSystem:getHeroSystem()
 
-	self:mapButtonHandlersClick(kBtnHandlers)
+	self:setupTopInfoWidget()
 	self:mapEventListener(self:getEventDispatcher(), EVT_PLAYER_SYNCHRONIZED, self, self.refreshView)
 	self:mapEventListener(self:getEventDispatcher(), EVT_RESET_DONE, self, self.doReset)
 
@@ -113,13 +113,10 @@ end
 function ActivityBlockMediator:setupTopInfoWidget()
 	local topInfoNode = self:getView():getChildByName("topinfo_node")
 	local config = {
-		style = 1,
-		currencyInfo = self._model:getResourcesBanner(),
 		btnHandler = {
 			clickAudio = "Se_Click_Close_1",
 			func = bind1(self.onClickBack, self)
-		},
-		title = Strings:get(self._model:getTitle())
+		}
 	}
 	local injector = self:getInjector()
 	self._topInfoWidget = self:autoManageObject(injector:injectInto(TopInfoWidget:new(topInfoNode)))
@@ -127,38 +124,49 @@ function ActivityBlockMediator:setupTopInfoWidget()
 	self._topInfoWidget:updateView(config)
 end
 
+function ActivityBlockMediator:updateInfoWidget()
+	if not self._topInfoWidget then
+		return
+	end
+
+	local config = {
+		style = 1,
+		currencyInfo = self._model:getResourcesBanner(),
+		title = Strings:get(self._model:getTitle())
+	}
+
+	self._topInfoWidget:updateView(config)
+end
+
 function ActivityBlockMediator:enterWithData(data)
 	self._activityId = data.activityId or ActivityId.kActivityBlock
+	self._model = self._activitySystem:getActivityByComplexId(self._activityId)
+
+	if not self._model then
+		self:dispatch(ShowTipEvent({
+			tip = Strings:get("Error_12806")
+		}))
+
+		return
+	end
+
+	self:mapButtonHandlersClick(kBtnHandlers)
+	self:updateInfoWidget()
+
 	self._canChangeHero = true
 
 	self:initData()
-	self:setupTopInfoWidget()
 	self:initView()
 end
 
 function ActivityBlockMediator:resumeWithData()
-	local quit = self:doReset()
-
-	if quit then
-		return
-	end
-
-	self:initData()
-	self:initView()
+	self:doReset()
 end
 
 function ActivityBlockMediator:initData()
-	self._model = self._activitySystem:getActivityById(self._activityId)
-	self._blockActivity = nil
-	self._taskActivities = {}
-	self._eggActivity = nil
-
-	if self._model then
-		self._blockActivity = self._model:getBlockMapActivity()
-		self._taskActivities = self._model:getTaskActivities()
-		self._eggActivity = self._model:getEggActivity()
-	end
-
+	self._blockActivity = self._model:getBlockMapActivity()
+	self._taskActivities = self._model:getTaskActivities()
+	self._eggActivity = self._model:getEggActivity()
 	self._roleIndex = 1
 	self._roles = self._model:getRoleParams()
 end
@@ -467,18 +475,16 @@ end
 function ActivityBlockMediator:doReset()
 	self:stopTimer()
 
-	local model = self._activitySystem:getActivityById(self._activityId)
+	self._model = self._activitySystem:getActivityByComplexId(self._activityId)
 
-	if not model then
+	if not self._model then
 		self:dispatch(Event:new(EVT_POP_TO_TARGETVIEW, "homeView"))
 
-		return true
+		return
 	end
 
 	self:initData()
 	self:initView()
-
-	return false
 end
 
 function ActivityBlockMediator:refreshView()

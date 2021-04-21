@@ -1,6 +1,6 @@
 CurrencyIdKind = {
 	kCrusadeEnergy = "IR_Crusade_Energy",
-	kDiamondDrawExItem = "IM_DiamondDrawEX",
+	kSurface = "IR_Surface",
 	kActivityHolidayPower = "IR_HolidayStamina",
 	kDiamondDrawExZuoHeItem = "IM_DiamondDrawEX_Zuohe",
 	kPve = "IR_Pve",
@@ -30,12 +30,13 @@ CurrencyIdKind = {
 	kAcitvityZuoHePower = "IR_ZuoHeAcitvityStamina",
 	kAcitvitySummerPower = "IR_SummerAcitvityStamina",
 	kActivityBakingPower = "IR_BakingStamina",
+	kActivityFirePower = "IR_FireStamina",
 	kAcitvityWxhPower = "IR_WuXiuHuiAcitvityStamina",
 	kPower = "IR_Power",
 	kFragment = "IR_Fragment",
 	kHonor = "IR_Arena",
 	kDiamond = "IR_Diamond",
-	kSurface = "IR_Surface",
+	kDiamondDrawExItem = "IM_DiamondDrawEX",
 	kActivityCollapsedPower = "IR_CollapsedStamina"
 }
 CurrencyType = {
@@ -307,6 +308,7 @@ ActivityType_UI = {
 	KActivityCollapsed = "ACTIVITYCOLLAPSED",
 	kActivityBlockSummer = "ACTIVITYSUMMER",
 	kActivityWxh = "ACTIVITYWUXIUHUI",
+	KActivityFire = "ACTIVITYFIRE",
 	KActivityBlockDetetive = "ACTIVITYDETECTIVE",
 	KActivityBlockBaking = "ACTIVITYBAKING",
 	KActivitySupportHoliday = "ACTIVITYSUPPORTHOLIDAY",
@@ -407,6 +409,7 @@ LoadingType = {
 }
 kStoreRoomName = "StoreRoom"
 litTypeMap = {
+	HARD = "Hard",
 	NORMAL = "Normal",
 	ELITE = "Elite"
 }
@@ -558,6 +561,15 @@ PowerConfigMap = {
 		func = "getPowerByCurrencyId",
 		configId = "AcitvitySunflowerStamina_Reset",
 		tips = "ACTIVITY_Sunflower_ENERGY_NOT_ENOUGH",
+		tableName = "Reset"
+	},
+	[CurrencyIdKind.kActivityFirePower] = {
+		all = "Act_Fire_Power_RecAll",
+		perMin = "Act_Fire_Power_RecPerMin",
+		next = "Act_Fire_Power_RecNext",
+		func = "getPowerByCurrencyId",
+		configId = "AcitvityFireStamina_Reset",
+		tips = "ACTIVITY_Fire_NOT_ENOUGH_1",
 		tableName = "Reset"
 	},
 	[CurrencyIdKind.kActivityPurewhite] = {

@@ -383,7 +383,7 @@ all.Skill_TPGZhu_Passive_Death = {
 
 			if not global.INSTATUS(_env, "Skill_TPGZhu_Passive_Transformed")(_env, _env.ACTOR) then
 				global.FullInheritTransform(_env)
-				global.Transform(_env, _env.ACTOR, 1)
+				global.Transform(_env, _env.ACTOR, 1, true)
 				global.AddStatus(_env, _env.ACTOR, "Skill_TPGZhu_Passive_Transformed")
 				global.AddAnim(_env, {
 					loop = 1,
@@ -855,7 +855,7 @@ all.Skill_TPGZhu_Passive_Death_EX = {
 
 			if not global.INSTATUS(_env, "Skill_TPGZhu_Passive_Transformed")(_env, _env.ACTOR) then
 				global.FullInheritTransform(_env)
-				global.Transform(_env, _env.ACTOR, 1)
+				global.Transform(_env, _env.ACTOR, 1, true)
 				global.AddStatus(_env, _env.ACTOR, "Skill_TPGZhu_Passive_Transformed")
 				global.AddAnim(_env, {
 					loop = 1,

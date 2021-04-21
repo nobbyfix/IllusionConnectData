@@ -164,6 +164,9 @@ local muiscCfg = {
 	rtpvpRobotBattle = {
 		noAutoPlay = true
 	},
+	ActivityFireMainView = {
+		noAutoPlay = true
+	},
 	MasterLeadStageDetailView = {
 		noAutoPlay = true
 	},

@@ -101,7 +101,7 @@ function ActivitySunflowerMainMediator:onRegister()
 
 	self._heroSystem = self._developSystem:getHeroSystem()
 
-	self:mapButtonHandlersClick(kBtnHandlers)
+	self:setupTopInfoWidget()
 	self:mapEventListener(self:getEventDispatcher(), EVT_PLAYER_SYNCHRONIZED, self, self.refreshView)
 	self:mapEventListener(self:getEventDispatcher(), EVT_RESET_DONE, self, self.doReset)
 
@@ -149,9 +149,6 @@ end
 function ActivitySunflowerMainMediator:setupTopInfoWidget()
 	local topInfoNode = self:getView():getChildByName("topinfo_node")
 	local config = {
-		style = 1,
-		hideLine = true,
-		currencyInfo = self._activity:getResourcesBanner(),
 		btnHandler = {
 			clickAudio = "Se_Click_Close_1",
 			func = bind1(self.onClickBack, self)
@@ -163,44 +160,57 @@ function ActivitySunflowerMainMediator:setupTopInfoWidget()
 	self._topInfoWidget:updateView(config)
 end
 
+function ActivitySunflowerMainMediator:updateInfoWidget()
+	if not self._topInfoWidget then
+		return
+	end
+
+	local config = {
+		hideLine = true,
+		style = 1,
+		currencyInfo = self._activity:getResourcesBanner()
+	}
+
+	self._topInfoWidget:updateView(config)
+end
+
 function ActivitySunflowerMainMediator:enterWithData(data)
 	self._activityId = data.activityId or ActivityId.kActivityBlock
+	self._activity = self._activitySystem:getActivityByComplexId(self._activityId)
+
+	if not self._activity then
+		self:dispatch(ShowTipEvent({
+			tip = Strings:get("Error_12806")
+		}))
+
+		return
+	end
+
+	self:mapButtonHandlersClick(kBtnHandlers)
+	self:updateInfoWidget()
+
 	self._canChangeHero = true
 
 	self:initData()
-	self:setupTopInfoWidget()
 	self:initView()
 end
 
 function ActivitySunflowerMainMediator:resumeWithData()
-	local quit = self:doReset()
-
-	if quit then
-		return
-	end
-
-	self:initData()
-	self:initView()
+	self:doReset()
 end
 
 function ActivitySunflowerMainMediator:initData()
-	self._activity = self._activitySystem:getActivityById(self._activityId)
 	self._activityConfig = self._activity:getActivityConfig()
 	self._blockActivity = {}
 	self._blockActivityBaseData = {}
-	self._taskActivities = {}
-	self._jumpActivity = nil
 
-	if self._activity then
-		for index, mapId in pairs(KMapIds) do
-			self._blockActivity[mapId] = self._activity:getBlockMapActivity(mapId)
-			self._blockActivityBaseData[mapId] = self._activity:getSubActivityBaseData(mapId)
-		end
-
-		self._taskActivities = self._activity:getTaskActivities()
-		self._jumpActivity = self._activity:getJumpActivity()
+	for index, mapId in pairs(KMapIds) do
+		self._blockActivity[mapId] = self._activity:getBlockMapActivity(mapId)
+		self._blockActivityBaseData[mapId] = self._activity:getSubActivityBaseData(mapId)
 	end
 
+	self._taskActivities = self._activity:getTaskActivities()
+	self._jumpActivity = self._activity:getJumpActivity()
 	self._roleIndex = 1
 	self._roles = self._activity:getRoleParams()
 end
@@ -530,18 +540,16 @@ end
 function ActivitySunflowerMainMediator:doReset()
 	self:stopTimer()
 
-	local model = self._activitySystem:getActivityById(self._activityId)
+	self._activity = self._activitySystem:getActivityByComplexId(self._activityId)
 
-	if not model then
+	if not self._activity then
 		self:dispatch(Event:new(EVT_POP_TO_TARGETVIEW, "homeView"))
 
-		return true
+		return
 	end
 
 	self:initData()
 	self:initView()
-
-	return false
 end
 
 function ActivitySunflowerMainMediator:refreshView()

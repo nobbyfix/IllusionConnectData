@@ -110,7 +110,7 @@ function ActivityCollapsedMainMediator:onRegister()
 
 	self._heroSystem = self._developSystem:getHeroSystem()
 
-	self:mapButtonHandlersClick(kBtnHandlers)
+	self:setupTopInfoWidget()
 	self:mapEventListener(self:getEventDispatcher(), EVT_PLAYER_SYNCHRONIZED, self, self.refreshView)
 	self:mapEventListener(self:getEventDispatcher(), EVT_RESET_DONE, self, self.doReset)
 
@@ -135,42 +135,6 @@ function ActivityCollapsedMainMediator:onRegister()
 	self._eggBtn = self._main:getChildByName("eggBtn")
 	self._teamBtn = self._main:getChildByName("teamBtn")
 	self._animNode = self._main:getChildByName("animNode")
-end
-
-function ActivityCollapsedMainMediator:setTimerString(timeStr, timeTip, key)
-	if not self._richTextRemainTime["_stagePanel" .. key] then
-		local remainLabel = self["_stagePanel" .. key]:getChildByName("remainTime")
-
-		remainLabel:setString("")
-
-		self._richTextRemainTime["_stagePanel" .. key] = ccui.RichText:createWithXML("", {})
-
-		self._richTextRemainTime["_stagePanel" .. key]:setAnchorPoint(remainLabel:getAnchorPoint())
-		self._richTextRemainTime["_stagePanel" .. key]:setPosition(cc.p(remainLabel:getPosition()))
-		self._richTextRemainTime["_stagePanel" .. key]:addTo(remainLabel:getParent())
-	end
-
-	local txt = "<outline color='#2A1100' size = '2'><font face='asset/font/CustomFont_FZYH_R.TTF' size='20' color='#FFD200'>" .. timeStr .. "</font><font face='asset/font/CustomFont_FZYH_R.TTF' size='20' color='#FFFFFF'>" .. timeTip .. "</font></outline>"
-
-	self._richTextRemainTime["_stagePanel" .. key]:setString(txt)
-end
-
-function ActivityCollapsedMainMediator:setupTopInfoWidget()
-	local topInfoNode = self:getView():getChildByName("topinfo_node")
-	local config = {
-		style = 1,
-		hideLine = true,
-		currencyInfo = self._activity:getResourcesBanner(),
-		btnHandler = {
-			clickAudio = "Se_Click_Close_1",
-			func = bind1(self.onClickBack, self)
-		}
-	}
-	local injector = self:getInjector()
-	self._topInfoWidget = self:autoManageObject(injector:injectInto(TopInfoWidget:new(topInfoNode)))
-
-	self._topInfoWidget:updateView(config)
-
 	local title11 = self._stagePanel11:getChildByName("title")
 	local title12 = self._stagePanel12:getChildByName("title")
 	local title21 = self._stagePanel21:getChildByName("title")
@@ -224,44 +188,90 @@ function ActivityCollapsedMainMediator:setupTopInfoWidget()
 	}))
 end
 
+function ActivityCollapsedMainMediator:setTimerString(timeStr, timeTip, key)
+	if not self._richTextRemainTime["_stagePanel" .. key] then
+		local remainLabel = self["_stagePanel" .. key]:getChildByName("remainTime")
+
+		remainLabel:setString("")
+
+		self._richTextRemainTime["_stagePanel" .. key] = ccui.RichText:createWithXML("", {})
+
+		self._richTextRemainTime["_stagePanel" .. key]:setAnchorPoint(remainLabel:getAnchorPoint())
+		self._richTextRemainTime["_stagePanel" .. key]:setPosition(cc.p(remainLabel:getPosition()))
+		self._richTextRemainTime["_stagePanel" .. key]:addTo(remainLabel:getParent())
+	end
+
+	local txt = "<outline color='#2A1100' size = '2'><font face='asset/font/CustomFont_FZYH_R.TTF' size='20' color='#FFD200'>" .. timeStr .. "</font><font face='asset/font/CustomFont_FZYH_R.TTF' size='20' color='#FFFFFF'>" .. timeTip .. "</font></outline>"
+
+	self._richTextRemainTime["_stagePanel" .. key]:setString(txt)
+end
+
+function ActivityCollapsedMainMediator:setupTopInfoWidget()
+	local topInfoNode = self:getView():getChildByName("topinfo_node")
+	local config = {
+		btnHandler = {
+			clickAudio = "Se_Click_Close_1",
+			func = bind1(self.onClickBack, self)
+		}
+	}
+	local injector = self:getInjector()
+	self._topInfoWidget = self:autoManageObject(injector:injectInto(TopInfoWidget:new(topInfoNode)))
+
+	self._topInfoWidget:updateView(config)
+end
+
+function ActivityCollapsedMainMediator:updateInfoWidget()
+	if not self._topInfoWidget then
+		return
+	end
+
+	local topInfoNode = self:getView():getChildByName("topinfo_node")
+	local config = {
+		hideLine = true,
+		style = 1,
+		currencyInfo = self._activity:getResourcesBanner()
+	}
+
+	self._topInfoWidget:updateView(config)
+end
+
 function ActivityCollapsedMainMediator:enterWithData(data)
 	self._activityId = data.activityId or ActivityId.kActivityBlock
+	self._activity = self._activitySystem:getActivityByComplexId(self._activityId)
+
+	if not self._activity then
+		self:dispatch(ShowTipEvent({
+			tip = Strings:get("Error_12806")
+		}))
+
+		return
+	end
+
+	self:mapButtonHandlersClick(kBtnHandlers)
+	self:updateInfoWidget()
+
 	self._canChangeHero = true
 
 	self:initData()
-	self:setupTopInfoWidget()
 	self:initView()
 end
 
 function ActivityCollapsedMainMediator:resumeWithData()
-	local quit = self:doReset()
-
-	if quit then
-		return
-	end
-
-	self:initData()
-	self:initView()
+	self:doReset()
 end
 
 function ActivityCollapsedMainMediator:initData()
-	self._activity = self._activitySystem:getActivityById(self._activityId)
 	self._activityConfig = self._activity:getActivityConfig()
 	self._blockActivity = {}
 	self._blockActivityBaseData = {}
-	self._taskActivities = {}
-	self._jumpActivity = nil
 
-	if self._activity then
-		for index, mapId in pairs(KMapIds) do
-			self._blockActivity[mapId] = self._activity:getBlockMapActivity(mapId)
-			self._blockActivityBaseData[mapId] = self._activity:getSubActivityBaseData(mapId)
-		end
-
-		self._taskActivities = self._activity:getTaskActivities()
-		self._jumpActivity = self._activity:getJumpActivity()
+	for index, mapId in pairs(KMapIds) do
+		self._blockActivity[mapId] = self._activity:getBlockMapActivity(mapId)
+		self._blockActivityBaseData[mapId] = self._activity:getSubActivityBaseData(mapId)
 	end
 
+	self._taskActivities = self._activity:getTaskActivities()
+	self._jumpActivity = self._activity:getJumpActivity()
 	self._roleIndex = 1
 	self._roles = self._activity:getRoleParams()
 end
@@ -588,18 +598,16 @@ end
 function ActivityCollapsedMainMediator:doReset()
 	self:stopTimer()
 
-	local model = self._activitySystem:getActivityById(self._activityId)
+	self._activity = self._activitySystem:getActivityByComplexId(self._activityId)
 
-	if not model then
+	if not self._activity then
 		self:dispatch(Event:new(EVT_POP_TO_TARGETVIEW, "homeView"))
 
-		return true
+		return
 	end
 
 	self:initData()
 	self:initView()
-
-	return false
 end
 
 function ActivityCollapsedMainMediator:refreshView()

@@ -531,6 +531,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_FinishTask_Desc"
     },
+    "Condi_FireExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_Fire_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_FireExchangeAchieve_Desc"
+    },
     "Condi_FriendCount": {
         "AchieveType1": "REACH",
         "AchieveType2": "",

@@ -77,7 +77,8 @@ function ShopCoopExchangeBuyMediator:refreshData()
 	local haveAmount = self._activity:getExchangeAmount(self._itemData.id)
 	local enoughAmount = self._activity:getExchangeCountById(self._itemData.id)
 	self._curNumber = 1
-	self._maxNumber = haveAmount
+	local maxNum = math.max(self._activity:getExchangeCountById(self._itemData.id), 1)
+	self._maxNumber = math.min(maxNum, haveAmount)
 	self._minNumber = 1
 end
 
@@ -280,7 +281,7 @@ function ShopCoopExchangeBuyMediator:refreshMoney()
 
 		self._price:setString(costPrice)
 		self._selectCount:setString(self._curNumber)
-		self._remainCount:setString(self._maxNumber)
+		self._remainCount:setString(self._activity:getExchangeAmount(self._itemData.id))
 		self._totalPrice:setString(costSum)
 		self._remainCount:setVisible(true)
 		self._buyTitleText:setVisible(true)

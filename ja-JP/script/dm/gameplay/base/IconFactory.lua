@@ -2028,6 +2028,20 @@ function IconFactory:createSurfaceIcon(info, style)
 
 	IconFactory:centerAddNode(node, itemImg)
 
+	local markImg = ccui.ImageView:create("asset/common/pf_bg_sz.png")
+
+	markImg:setRotation(30)
+	markImg:setPosition(node:getContentSize().width - 20, node:getContentSize().height - 20)
+	node:addChild(markImg)
+
+	local label = cc.Label:createWithTTF("", "asset/font/CustomFont_FZYH_R.TTF", 18)
+
+	label:setString(Strings:get("Surface_ShowTip"))
+	label:setAlignment(cc.TEXT_ALIGNMENT_CENTER, cc.TEXT_ALIGNMENT_CENTER)
+	label:setOverflow(cc.LabelOverflow.SHRINK)
+	label:setDimensions(50, 27)
+	label:addTo(markImg):center(markImg:getContentSize()):offset(0, 3)
+
 	return node
 end
 
