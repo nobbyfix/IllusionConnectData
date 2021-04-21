@@ -60,7 +60,7 @@ function RTPKTeamMediator:onRegister()
 	self:mapEventListener(self:getEventDispatcher(), EVT_TEAM_CHANGE_MASTER, self, self.changeMasterId)
 	self:mapEventListener(self:getEventDispatcher(), EVT_TEAM_REFRESH_PETS, self, self.refreshViewBySort)
 	self:mapEventListener(self:getEventDispatcher(), EVT_ARENA_CHANGE_TEAM_SUCC, self, self.refreshView)
-	self:mapEventListener(self:getEventDispatcher(), EVT_STAGE_CHANGENAME_SUCC, self, self.refreshTeamName)
+	self:mapEventListener(self:getEventDispatcher(), EVT_CHANGE_TEAM_BYMODE_SUCC, self, self.changeTeamByMode)
 
 	local touchPanel = self:getView():getChildByFullName("main.bg.touchPanel")
 
@@ -155,8 +155,13 @@ function RTPKTeamMediator:resumeWithData()
 	self._costTotalLabel2:setString("/" .. self._costMaxNum)
 end
 
-function RTPKTeamMediator:initData()
-	self._curTeam = self._developSystem:getSpTeamByType(self._stageType)
+function RTPKTeamMediator:initData(team)
+	if team then
+		self._curTeam = team
+	else
+		self._curTeam = self._developSystem:getSpTeamByType(self._stageType)
+	end
+
 	local modelTmp = {
 		_heroes = self:removeExceptHeros(),
 		_masterId = self._curTeam:getMasterId()
@@ -268,6 +273,7 @@ function RTPKTeamMediator:setupView()
 	self:initView()
 	self:refreshListView()
 	self:createSortView()
+	self:showSetButton(true)
 end
 
 function RTPKTeamMediator:initWidgetInfo()
@@ -1304,4 +1310,15 @@ function RTPKTeamMediator:onClickRule()
 	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
 		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
 	}, {}))
+end
+
+function RTPKTeamMediator:changeTeamByMode(event)
+	local teamData = event:getData()
+
+	self:initData(teamData)
+	self:refreshMasterInfo()
+	self:refreshListView()
+	self:refreshPetNode()
+
+	self._hasForceChangeTeam = true
 end

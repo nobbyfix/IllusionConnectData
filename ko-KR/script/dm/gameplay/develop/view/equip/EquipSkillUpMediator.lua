@@ -155,4 +155,10 @@ function EquipSkillUpMediator:setupView()
 	descText:setAnchorPoint(cc.p(0.5, 0))
 	descText:addTo(desc)
 	descText:setPosition(cc.p(0, -10))
+	descText:renderContent()
+
+	if descText:getContentSize().width > 800 then
+		descText:renderContent(800, 0, true)
+		descText:setPosition(cc.p(0, -19))
+	end
 end

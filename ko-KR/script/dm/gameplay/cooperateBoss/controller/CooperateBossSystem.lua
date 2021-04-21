@@ -504,6 +504,8 @@ function CooperateBossSystem:doRequestBattleStart(params)
 			self._curBossCreateTime = params.bossCreateTime
 
 			self:enterBattle(response.data, self._viewType)
+		elseif response.resCode == 12806 then
+			self:dispatch(Event:new(EVT_POP_TO_TARGETVIEW, "homeView"))
 		end
 	end)
 end

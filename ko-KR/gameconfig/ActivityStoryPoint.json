@@ -2277,6 +2277,206 @@
         ],
         "StoryLink": "eventstory_freud_04a"
     },
+    "FireS01E01": {
+        "FirstReward": "FireS01E01_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "FireE01",
+        "Name": "FireS01E01_Name",
+        "NextStoryPoint": [
+            "FireS01E02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_fire_05a"
+    },
+    "FireS01E02": {
+        "FirstReward": "FireS01E02_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "FireE01",
+        "Name": "FireS01E02_Name",
+        "NextStoryPoint": [
+            "FireS01E03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "FireE01S05"
+        ],
+        "PreStoryPoint": [
+            "FireS01E01"
+        ],
+        "StoryLink": "eventstory_fire_06a"
+    },
+    "FireS01E03": {
+        "FirstReward": "FireS01E03_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -100
+        ],
+        "Map": "FireE01",
+        "Name": "FireS01E03_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "FireE01S12"
+        ],
+        "PreStoryPoint": [
+            "FireS01E02"
+        ],
+        "StoryLink": "eventstory_fire_07a"
+    },
+    "FireS01H01": {
+        "FirstReward": "FireS01E04_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -50
+        ],
+        "Map": "FireH01",
+        "Name": "FireS01H01_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "FireH01S06"
+        ],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_fire_08a"
+    },
+    "FireS01S01": {
+        "FirstReward": "FireS01S01_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -250
+        ],
+        "Map": "FireM01",
+        "Name": "FireS01S01_Name",
+        "NextStoryPoint": [
+            "FireS01S02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_fire_01a"
+    },
+    "FireS01S02": {
+        "FirstReward": "FireS01S02_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "FireM01",
+        "Name": "FireS01S02_Name",
+        "NextStoryPoint": [
+            "FireS01S03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "FireM01S03"
+        ],
+        "PreStoryPoint": [
+            "FireS01S01"
+        ],
+        "StoryLink": "eventstory_fire_02a"
+    },
+    "FireS01S03": {
+        "FirstReward": "FireS01S03_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "FireM01",
+        "Name": "FireS01S03_Name",
+        "NextStoryPoint": [
+            "FireS01S04"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "FireM01S07"
+        ],
+        "PreStoryPoint": [
+            "FireS01S02"
+        ],
+        "StoryLink": "eventstory_fire_03a"
+    },
+    "FireS01S04": {
+        "FirstReward": "FireS01S04_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -100
+        ],
+        "Map": "FireM01",
+        "Name": "FireS01S04_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "FireM01S12"
+        ],
+        "PreStoryPoint": [
+            "FireS01S03"
+        ],
+        "StoryLink": "eventstory_fire_04a"
+    },
     "KnightS01E01": {
         "FirstReward": "KnightS01E01_Reward",
         "Icon": "s_album_story_1",

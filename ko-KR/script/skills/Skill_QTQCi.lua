@@ -318,19 +318,13 @@ all.Skill_QTQCi_Passive = {
 		this.CritFactor = externs.CritFactor
 
 		if this.CritFactor == nil then
-			this.CritFactor = 0.3
-		end
-
-		this.BlockFactor = externs.BlockFactor
-
-		if this.BlockFactor == nil then
-			this.BlockFactor = 0.3
+			this.CritFactor = 0.35
 		end
 
 		this.RpFactor = externs.RpFactor
 
 		if this.RpFactor == nil then
-			this.RpFactor = 120
+			this.RpFactor = 150
 		end
 
 		local passive1 = __action(this, {
@@ -377,10 +371,6 @@ all.Skill_QTQCi_Passive = {
 				"+Normal",
 				"+Normal"
 			}, this.CritFactor)
-			local buff2 = global.NumericEffect(_env, "+blockrate", {
-				"+Normal",
-				"+Normal"
-			}, this.BlockFactor)
 
 			global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
 				timing = 2,
@@ -394,19 +384,6 @@ all.Skill_QTQCi_Passive = {
 				}
 			}, {
 				buff1
-			}, 1, 0)
-			global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
-				timing = 2,
-				duration = 2,
-				tags = {
-					"NUMERIC",
-					"BUFF",
-					"UNDISPELLABLE",
-					"UNSTEALABLE",
-					"BLOCKRATEUP"
-				}
-			}, {
-				buff2
 			}, 1, 0)
 		end)
 
@@ -466,7 +443,7 @@ all.Skill_QTQCi_Passive_Key = {
 				for _, unit in global.__iter__(global.FriendDiedUnits(_env)) do
 					if global.MARKED(_env, "QTQCi")(_env, unit) then
 						local reviveunit = global.ReviveByUnit(_env, unit, this.HpFactor, this.RpFactor * 1000, {
-							global.GetCellId(_env, _env.unit)
+							global.abs(_env, global.GetCellId(_env, _env.unit))
 						})
 
 						if reviveunit then
@@ -477,7 +454,7 @@ all.Skill_QTQCi_Passive_Key = {
 
 				for _, card in global.__iter__(global.CardsOfPlayer(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "QTQCi"))) do
 					local Aibo = global.RecruitCard(_env, card, {
-						global.GetCellId(_env, _env.unit)
+						global.abs(_env, global.GetCellId(_env, _env.unit))
 					})
 
 					if Aibo then
@@ -749,19 +726,13 @@ all.Skill_QTQCi_Passive_EX = {
 		this.CritFactor = externs.CritFactor
 
 		if this.CritFactor == nil then
-			this.CritFactor = 0.45
-		end
-
-		this.BlockFactor = externs.BlockFactor
-
-		if this.BlockFactor == nil then
-			this.BlockFactor = 0.45
+			this.CritFactor = 0.5
 		end
 
 		this.RpFactor = externs.RpFactor
 
 		if this.RpFactor == nil then
-			this.RpFactor = 240
+			this.RpFactor = 300
 		end
 
 		local passive1 = __action(this, {
@@ -808,10 +779,6 @@ all.Skill_QTQCi_Passive_EX = {
 				"+Normal",
 				"+Normal"
 			}, this.CritFactor)
-			local buff2 = global.NumericEffect(_env, "+blockrate", {
-				"+Normal",
-				"+Normal"
-			}, this.BlockFactor)
 
 			global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
 				timing = 2,
@@ -825,19 +792,6 @@ all.Skill_QTQCi_Passive_EX = {
 				}
 			}, {
 				buff1
-			}, 1, 0)
-			global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
-				timing = 2,
-				duration = 2,
-				tags = {
-					"NUMERIC",
-					"BUFF",
-					"UNDISPELLABLE",
-					"UNSTEALABLE",
-					"BLOCKRATEUP"
-				}
-			}, {
-				buff2
 			}, 1, 0)
 		end)
 

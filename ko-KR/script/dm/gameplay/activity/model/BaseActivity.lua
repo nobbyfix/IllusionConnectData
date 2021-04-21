@@ -239,10 +239,6 @@ function BaseActivity:getBgm()
 	return self._config.ActivityConfig.bgm or "Mus_Story_Festival"
 end
 
-function BaseActivity:getActivityComplexId()
-	return self._config.ActivityConfig.ActivityComplexId
-end
-
 function BaseActivity:getActivityComplexUI()
 	return self._config.UI
 end

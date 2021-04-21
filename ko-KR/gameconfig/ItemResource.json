@@ -1462,6 +1462,13 @@
         "Text": "Source_HeroStory",
         "URL": "view://HeroStoryEnterView&viewType=push&heroId=MTZMEShi&index=5"
     },
+    "IHF_MZGXiu_1": {
+        "Isturn": 0,
+        "ResourceText": "Source_Activity",
+        "ResourceType": 0,
+        "Text": "Source_Activity",
+        "URL": ""
+    },
     "IHF_NCai_1": {
         "Isturn": 0,
         "ResourceText": "Source_Activity",
@@ -1769,6 +1776,13 @@
         "ResourceType": 4,
         "Text": "Source_HeroStory",
         "URL": "view://HeroStoryEnterView&viewType=push&heroId=SLMen&index=5"
+    },
+    "IHF_SLWan_1": {
+        "Isturn": 0,
+        "ResourceText": "Source_Activity",
+        "ResourceType": 0,
+        "Text": "Source_Activity",
+        "URL": ""
     },
     "IHF_SRen_1": {
         "Isturn": "",
@@ -2860,7 +2874,7 @@
         "ResourceText": "Resource_DailyTaskTitle",
         "ResourceType": "",
         "Text": "Resource_DailyTask",
-        "URL": "view://TaskView&viewType=push"
+        "URL": "view://TaskView&viewType=push&tabType=1"
     },
     "IM_QualityUp_1": {
         "Isturn": 1,
@@ -8363,6 +8377,13 @@
         "ResourceType": "",
         "Text": "",
         "URL": "view://shopView&viewType=push&shopId=Shop_Reset&packageId="
+    },
+    "IR_FireStamina": {
+        "Isturn": 0,
+        "ResourceText": "Source_IR_FireStamina",
+        "ResourceType": 0,
+        "Text": "Source_IR_FireStamina_Desc",
+        "URL": ""
     },
     "IR_Gold_1": {
         "Isturn": 1,

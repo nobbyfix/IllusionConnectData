@@ -368,6 +368,37 @@
             "LEVEL": 5
         }
     },
+    "DreamChallenge_TimeLimit_Taurus2": {
+        "BGM": [
+            "Mus_Story_MusicFestival_2",
+            "",
+            ""
+        ],
+        "Background": "mjt_scene_xz_bg",
+        "BlockPoint": [
+            "DreamChallenge_TimeLimit_Taurus2_T01N01"
+        ],
+        "Control": 1,
+        "DCType": 1,
+        "LimitTimeTxt": "DreamChallenge_TimeShow_Taurus2",
+        "ListLocationNum": 10009,
+        "Name": "DreamChallenge_TimeLimit_Taurus2_Name",
+        "ShowCondition": {
+            "Day": "2021-05-08  05:00:00",
+            "LEVEL": 5
+        },
+        "Story": "",
+        "TabPic": "mjt_txt_jnzx_btn",
+        "Tag": "",
+        "TimeFactor": {
+            "type": "Day",
+            "value": "2021-05-17  05:00:00"
+        },
+        "UnlockCondition": {
+            "Day": "2021-05-08  05:00:00",
+            "LEVEL": 5
+        }
+    },
     "DreamChallenge_TimeLimit_Valentine": {
         "BGM": [
             "Mus_Story_MusicFestival_2",

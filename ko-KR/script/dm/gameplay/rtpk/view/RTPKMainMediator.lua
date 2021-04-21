@@ -59,7 +59,7 @@ function RTPKMainMediator:onRegister()
 	self:mapButtonHandlersClick(kBtnHandlers)
 
 	self._main = self:getView():getChildByName("main")
-	self._seasonPanel = self._main:getChildByName("seasoninfo")
+	self._seasonPanel = self:getView():getChildByName("seasoninfo")
 	self._rulePanel = self:getView():getChildByName("seasonRule")
 	self._bottom = self:getView():getChildByName("bg_bottom")
 	self._gradeRewardPoint = self._bottom:getChildByFullName("btn_reward.redPoint")
@@ -269,6 +269,18 @@ function RTPKMainMediator:setSeasonInfo()
 	self:setTextEffect(nameText)
 	self:setTextEffect(self._seasonPanel:getChildByName("Text_14"))
 
+	local text1 = self._seasonPanel:getChildByName("Text_season_2")
+	local text2 = self._seasonPanel:getChildByName("Text_14")
+	local size = indexText2:getContentSize()
+
+	text1:setPositionX(indexText2:getPositionX() + size.width + 15)
+	text2:setPositionX(indexText2:getPositionX() + size.width + 15)
+
+	local size2 = text2:getContentSize()
+
+	nameText:setPositionX(text2:getPositionX() + size2.width + 15)
+	nameText2:setPositionX(text2:getPositionX() + size2.width + 15)
+
 	local openText = self._main:getChildByName("Text_opentime")
 	local param = self._rtpkSystem:formatMatchTimeParam()
 
@@ -411,58 +423,108 @@ function RTPKMainMediator:setSeasonRule()
 
 	listView:setScrollBarEnabled(false)
 
-	local ruleCell = self._rulePanel:getChildByName("rule")
+	local cell1 = self:getView():getChildByFullName("heroBuff")
 
-	ruleCell:setVisible(false)
+	cell1:setVisible(false)
+
+	local cell2 = self:getView():getChildByFullName("buff")
+
+	cell2:setVisible(false)
 
 	local height = 0
 
-	local function setRuleCell(data)
-		local cell = ruleCell:clone()
-
-		cell:setVisible(true)
-
-		local nameText = cell:getChildByName("Text_name")
-
-		nameText:setString(data.name)
-
-		local descText = cell:getChildByName("Text_desc")
-
-		descText:setString(data.shortDesc)
-		descText:setVisible(false)
-
-		local desc = data.shortDesc
+	local function setDescLable(cell, desc, descText)
 		local data = string.split(desc, "<font")
 
 		if #data <= 1 then
-			local rtStr = "<outline color='#000000' size = '1'><font face='${fontName}'  size='18' color='#FFFFFF'>${text}</font></outline>"
+			local rtStr = "<outline color='#000000' size = '1'><font face='${fontName}'  size='18' color='#FF7326'>${text}</font></outline>"
 			local templateStr = TextTemplate:new(rtStr)
 			desc = templateStr:stringify({
-				fontName = TTF_FONT_FZYH_M,
+				fontName = TTF_FONT_FZYH_R,
 				text = desc
 			})
 		end
 
 		local label = ccui.RichText:createWithXML(desc, {})
 
-		label:setAnchorPoint(cc.p(0, 0.5))
+		label:setAnchorPoint(cc.p(0.5, 0.5))
 		label:renderContent()
+		ajustRichTextCustomWidth(label, 92, true)
+		label:addTo(cell):posite(descText:getPosition())
+	end
 
-		if nameText:getContentSize().width > 79 then
-			label:addTo(cell):posite(nameText:getPositionX() + nameText:getContentSize().width + 10, nameText:getPositionY())
-		else
-			label:addTo(cell):posite(descText:getPosition())
+	local function setRuleCell1(data)
+		local cell = cell1:clone()
+
+		cell:setVisible(true)
+
+		if cell:getChildByFullName("iconHero") then
+			cell:getChildByFullName("iconHero"):removeFromParent()
 		end
 
-		height = height + cell:getContentSize().height
+		local config = ConfigReader:getRecordById("HeroBase", data.hero)
+		local heroImg = IconFactory:createRoleIconSprite({
+			id = config.RoleModel
+		})
 
+		heroImg:addTo(cell):center(cell:getContentSize()):offset(1.5, 9.5)
+		heroImg:setName("iconHero")
+		heroImg:setScale(0.22)
+
+		local attackText = cell:getChildByFullName("attackText")
+
+		attackText:setString(data.desc)
+		attackText:setVisible(false)
+		setDescLable(cell, data.desc, attackText)
+		cell:setTouchEnabled(true)
+
+		local function func()
+			self:onClickSeasonRule()
+		end
+
+		mapButtonHandlerClick(self, cell, {
+			clickAudio = "Se_Click_Open_1",
+			func = func
+		})
+		listView:pushBackCustomItem(cell)
+	end
+
+	local function setRuleCell2(data, hideName)
+		local cell = cell2:clone()
+
+		cell:setVisible(true)
+
+		local icon = cell:getChildByName("Image_icon")
+
+		icon:loadTexture(data.iconPath, ccui.TextureResType.plistType)
+
+		local nameText = cell:getChildByName("Text_name")
+
+		nameText:setString(data.name)
+		nameText:setVisible(not hideName)
+
+		local descText = cell:getChildByName("attackText")
+
+		descText:setString(data.shortDesc)
+		descText:setVisible(false)
+		setDescLable(cell, data.shortDesc, descText)
+		cell:setTouchEnabled(true)
+
+		local function func()
+			self:onClickSeasonRule()
+		end
+
+		mapButtonHandlerClick(self, cell, {
+			clickAudio = "Se_Click_Open_1",
+			func = func
+		})
 		listView:pushBackCustomItem(cell)
 	end
 
 	local hasBuff = false
 
 	if ruleData.seasonSkill then
-		setRuleCell(ruleData.seasonSkill)
+		setRuleCell2(ruleData.seasonSkill, true)
 
 		local skillConfig = ConfigReader:getRecordById("Skill", ruleData.seasonSkill.buffId)
 		self.seasonDataForRule.buff = Strings:get(skillConfig.Desc, {
@@ -475,34 +537,30 @@ function RTPKMainMediator:setSeasonRule()
 	end
 
 	if ruleData.levelLimit then
-		setRuleCell(ruleData.levelLimit)
+		setRuleCell2(ruleData.levelLimit, true)
 
 		hasBuff = true
 	end
 
 	if ruleData.hero then
 		for i, v in pairs(ruleData.hero) do
-			setRuleCell(v)
+			setRuleCell1(v, cell1)
 		end
 
 		hasBuff = true
 	end
 
 	if ruleData.awakenSkill then
-		setRuleCell(ruleData.awakenSkill)
+		setRuleCell2(ruleData.awakenSkill)
 
 		hasBuff = true
 	end
 
 	if ruleData.starSkill then
-		setRuleCell(ruleData.starSkill)
+		setRuleCell2(ruleData.starSkill)
 
 		hasBuff = true
 	end
-
-	local size = listView:getContentSize()
-
-	listView:setContentSize(cc.size(size.width, height))
 
 	local tipsText = self._rulePanel:getChildByName("Text_tips")
 	local ruleBtn = self._rulePanel:getChildByName("btn_rule")
@@ -514,6 +572,19 @@ function RTPKMainMediator:setSeasonRule()
 		tipsText:setVisible(true)
 		ruleBtn:setVisible(false)
 	end
+
+	local tuijian = cc.MovieClip:create("tuijian_mengjingyuanzheng")
+	local recommend = self._rulePanel:getChildByFullName("Node_recommend")
+
+	tuijian:addTo(recommend):center(recommend:getContentSize())
+	tuijian:addCallbackAtFrame(12, function ()
+		tuijian:stop()
+	end)
+
+	local tuijianAct = tuijian:getChildByFullName("tuijianAct")
+	local text = recommend:getChildByFullName("text")
+
+	text:changeParent(tuijianAct):center(tuijianAct:getContentSize())
 end
 
 function RTPKMainMediator:onClickBack()

@@ -189,14 +189,14 @@ function RecruitSystem:requestGetDrawCardCountReward(params, callback, blockUI)
 
 	self:getService():requestGetDrawCardCountReward(params, function (response)
 		if response.resCode == GS_SUCCESS then
-			if response.data.rewards then
+			if response.data.reward then
 				local view = self:getInjector():getInstance("getRewardView")
 
 				self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
 					maskOpacity = 0
 				}, {
-					needClick = false,
-					rewards = response.data.rewards
+					needClick = true,
+					rewards = response.data.reward
 				}))
 			end
 

@@ -5,6 +5,7 @@ function GetRewardMediator:initialize()
 	super.initialize(self)
 
 	self._needClick = true
+	self._allGetSurface = {}
 end
 
 function GetRewardMediator:dispose()
@@ -186,15 +187,7 @@ function GetRewardMediator:showGetRewardAnim()
 		end
 	end)
 	anim:addCallbackAtFrame(55, function ()
-		local callback = self._callback
-		local developSystem = self:getInjector():getInstance("DevelopSystem")
-
-		self:close()
-		developSystem:popPlayerLvlUpView()
-
-		if callback then
-			callback()
-		end
+		self:doLevelViewLogic()
 	end)
 
 	local cnText = anim:getChildByFullName("cnText")
@@ -378,8 +371,16 @@ function GetRewardMediator:showOneIcon(index)
 	}
 
 	anim:addCallbackAtFrame(frame[index], function ()
-		if rewardData.type == 3 then
+		if rewardData.type == RewardType.kHero then
 			self:showNewHeroView(rewardData.code)
+
+			if index < self:getCurShowRewardCount() then
+				index = index + 1
+
+				self:showOneIcon(index)
+			end
+		elseif rewardData.type == RewardType.kSurface then
+			self._allGetSurface[#self._allGetSurface + 1] = rewardData.code
 
 			if index < self:getCurShowRewardCount() then
 				index = index + 1
@@ -403,6 +404,17 @@ function GetRewardMediator:showNewHeroView(heroId, callback)
 	}))
 end
 
+function GetRewardMediator:showNewSurfaceView(surfaceId, callback)
+	if surfaceId and surfaceId ~= "" then
+		local view = self:getInjector():getInstance("GetSurfaceView")
+
+		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, nil, {
+			surfaceId = surfaceId,
+			callback = callback
+		}))
+	end
+end
+
 function GetRewardMediator:onClickOk()
 	if self._curGroupIndex and self._maxGroupCount and self._curGroupIndex < self._maxGroupCount then
 		self._curGroupIndex = self._curGroupIndex + 1
@@ -422,16 +434,7 @@ function GetRewardMediator:onTouchMaskLayer()
 
 	if not self._needClick or close then
 		self._mainAnim:stop()
-
-		local callback = self._callback
-		local developSystem = self:getInjector():getInstance("DevelopSystem")
-
-		super.onTouchMaskLayer(self)
-		developSystem:popPlayerLvlUpView()
-
-		if callback then
-			callback()
-		end
+		self:doLevelViewLogic()
 	elseif not close then
 		self:createDelayAction()
 		self._iconPanel:removeAllChildren(true)
@@ -445,4 +448,38 @@ function GetRewardMediator:createDelayAction()
 	performWithDelay(self:getView(), function ()
 		self._delayClick = false
 	end, self._delayTime)
+end
+
+function GetRewardMediator:doLevelViewLogic()
+	self:doShowSurfaceLogic()
+end
+
+function GetRewardMediator:levelAndClose()
+	local callback = self._callback
+	local developSystem = self:getInjector():getInstance("DevelopSystem")
+
+	self:close()
+	developSystem:popPlayerLvlUpView()
+
+	if callback then
+		callback()
+	end
+end
+
+function GetRewardMediator:doShowSurfaceLogic()
+	if #self._allGetSurface > 0 and self._curSurfaceIndex == nil then
+		self._curSurfaceIndex = 1
+	end
+
+	local surfaceId = self._allGetSurface[self._curSurfaceIndex]
+
+	if surfaceId then
+		self:showNewSurfaceView(surfaceId, function ()
+			self._curSurfaceIndex = self._curSurfaceIndex + 1
+
+			self:doShowSurfaceLogic()
+		end)
+	else
+		self:levelAndClose()
+	end
 end

@@ -381,8 +381,14 @@ function CooperateBossInviteFriendMediator:onClickBack(sender, eventType)
 	local function requestLeaveTeam()
 		local bossId = self._data.bossInfo.bossId
 
-		self._cooperateBossSystem:requestLeaveTeam(bossId, function ()
+		self._cooperateBossSystem:requestLeaveTeam(bossId, function (response)
 			if DisposableObject:isDisposed(self) or DisposableObject:isDisposed(self:getView()) then
+				return
+			end
+
+			if response.resCode == 12806 then
+				self:dispatch(Event:new(EVT_POP_TO_TARGETVIEW, "homeView"))
+
 				return
 			end
 

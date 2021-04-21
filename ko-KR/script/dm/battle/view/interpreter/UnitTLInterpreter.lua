@@ -794,6 +794,13 @@ function UnitTLInterpreter:act_Drop(action, args)
 	end
 end
 
+function UnitTLInterpreter:act_SwitchActionTo(action, args)
+	local actionSrc = args.srcAnim
+	local actionDes = args.desAnim
+
+	self._unit:switchAction(actionSrc, actionDes)
+end
+
 function UnitTLInterpreter:act_Hurt(action, args)
 	args.raw = args.raw or 0
 	args.eft = args.eft or 0
@@ -908,10 +915,12 @@ end
 function UnitTLInterpreter:act_HpReduce(action, args)
 	args.raw = args.raw or 0
 	args.eft = args.eft or 0
+	args.isFlyLabel = args.isFlyLabel or false
 	args.val = args.val or self._dataModel:getHp()
 	local eft = args.eft
 	local val = args.val
 	local shldVal = args.shldVal
+	local isFlyLabel = args.isFlyLabel
 	local shldCost = args.shldCost or 0
 	local lastHp = self._dataModel:getHp()
 	local diff = 0
@@ -929,7 +938,14 @@ function UnitTLInterpreter:act_HpReduce(action, args)
 		self._dataModel:setShield(shldVal)
 	end
 
-	if args.raw > 0 then
+	if isFlyLabel then
+		if args.raw > 0 then
+			self._unit:reduceHealth(math.floor(args.raw), {
+				type = "damage"
+			})
+			self._dataModel:setHp(newHp)
+		end
+	elseif args.raw > 0 then
 		self._dataModel:setHp(newHp)
 	end
 

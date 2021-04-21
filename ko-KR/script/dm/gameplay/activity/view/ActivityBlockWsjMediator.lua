@@ -95,7 +95,7 @@ function ActivityBlockWsjMediator:onRegister()
 
 	self._heroSystem = self._developSystem:getHeroSystem()
 
-	self:mapButtonHandlersClick(kBtnHandlers)
+	self:setupTopInfoWidget()
 	self:mapEventListener(self:getEventDispatcher(), EVT_RESET_DONE, self, self.doReset)
 
 	self._topPanel = self:getView():getChildByName("topPanel")
@@ -142,13 +142,8 @@ function ActivityBlockWsjMediator:onRegister()
 end
 
 function ActivityBlockWsjMediator:setupTopInfoWidget()
-	local width = 0
-	local currencyInfo = self._activity:getResourcesBanner()
 	local topInfoNode = self:getView():getChildByName("topinfo_node")
 	local config = {
-		style = 1,
-		hideLine = true,
-		currencyInfo = currencyInfo,
 		btnHandler = {
 			clickAudio = "Se_Click_Close_1",
 			func = bind1(self.onClickBack, self)
@@ -156,6 +151,22 @@ function ActivityBlockWsjMediator:setupTopInfoWidget()
 	}
 	local injector = self:getInjector()
 	self._topInfoWidget = self:autoManageObject(injector:injectInto(TopInfoWidget:new(topInfoNode)))
+
+	self._topInfoWidget:updateView(config)
+end
+
+function ActivityBlockWsjMediator:updateInfoWidget()
+	if not self._topInfoWidget then
+		return
+	end
+
+	local width = 0
+	local currencyInfo = self._activity:getResourcesBanner()
+	local config = {
+		hideLine = true,
+		style = 1,
+		currencyInfo = currencyInfo
+	}
 
 	self._topInfoWidget:updateView(config)
 
@@ -167,19 +178,24 @@ end
 function ActivityBlockWsjMediator:enterWithData(data)
 	self._resumeName = data and data.resumeName or nil
 	self._activityId = data.activityId
-	self._activity = self._activitySystem:getActivityById(self._activityId)
+	self._activity = self._activitySystem:getActivityByComplexId(self._activityId)
 
 	if not self._activity then
+		self:dispatch(ShowTipEvent({
+			tip = Strings:get("Error_12806")
+		}))
+
 		return
 	end
+
+	self:mapButtonHandlersClick(kBtnHandlers)
+	self:updateInfoWidget()
 
 	self._canChangeHero = true
 
 	self:initData()
-	self:setupTopInfoWidget()
 	self:initView()
 	self:runBtnAnim()
-	self:playBackgroundMusic()
 end
 
 function ActivityBlockWsjMediator:playBackgroundMusic()
@@ -189,34 +205,15 @@ function ActivityBlockWsjMediator:playBackgroundMusic()
 end
 
 function ActivityBlockWsjMediator:resumeWithData()
-	local quit = self:doReset()
-
-	if quit then
-		return
-	end
-
-	self:initData()
-	self:initView()
-	self:playBackgroundMusic()
+	self:doReset()
 end
 
 function ActivityBlockWsjMediator:initData()
-	self._activity = self._activitySystem:getActivityById(self._activityId)
-	self._activityId = self._activity:getActivityId()
-	self._blockActivity = nil
-	self._taskActivities = {}
-	self._loginActivity = nil
-	self._colourEggActivity = nil
-	self._monsterShopActivity = nil
-
-	if self._activity then
-		self._blockActivity = self._activity:getBlockMapActivity()
-		self._taskActivities = self._activity:getTaskActivities()
-		self._loginActivity = self._activity:getLoginActivities()
-		self._colourEggActivity = self._activity:getColourEggActivity()
-		self._monsterShopActivity = self._activity:getMonsterShopActivity()
-	end
-
+	self._blockActivity = self._activity:getBlockMapActivity()
+	self._taskActivities = self._activity:getTaskActivities()
+	self._loginActivity = self._activity:getLoginActivities()
+	self._colourEggActivity = self._activity:getColourEggActivity()
+	self._monsterShopActivity = self._activity:getMonsterShopActivity()
 	self._roleIndex = 1
 	self._roles = self._activity:getRoleParams()
 end
@@ -226,6 +223,7 @@ function ActivityBlockWsjMediator:initView()
 	self:initTimer()
 	self:initRoleTimer()
 	self:updateRolePanel()
+	self:playBackgroundMusic()
 end
 
 function ActivityBlockWsjMediator:initInfo()
@@ -425,18 +423,16 @@ end
 function ActivityBlockWsjMediator:doReset()
 	self:stopTimer()
 
-	local model = self._activitySystem:getActivityById(self._activityId)
+	self._activity = self._activitySystem:getActivityByComplexId(self._activityId)
 
-	if not model then
+	if not self._activity then
 		self:dispatch(Event:new(EVT_POP_TO_TARGETVIEW, "homeView"))
 
-		return true
+		return
 	end
 
 	self:initData()
 	self:initView()
-
-	return false
 end
 
 function ActivityBlockWsjMediator:refreshView()
@@ -486,7 +482,7 @@ function ActivityBlockWsjMediator:onClickTask()
 end
 
 function ActivityBlockWsjMediator:onClickCard()
-	local model = self._activitySystem:getActivityById(self._activityId)
+	local model = self._activitySystem:getActivityByComplexId(self._activityId)
 
 	if not model then
 		self:dispatch(ShowTipEvent({
@@ -529,7 +525,7 @@ end
 
 function ActivityBlockWsjMediator:onClickLogin()
 	local loginId = self._activity:getActivityConfig().LoginActivity
-	local model = self._activitySystem:getActivityById(loginId)
+	local model = self._activitySystem:getActivityByComplexId(loginId)
 
 	if not model then
 		self:dispatch(ShowTipEvent({

@@ -400,6 +400,53 @@ function BattleSkillSystem:buildSkillsForActor(actor)
 	end
 end
 
+function BattleSkillSystem:buildSkillsForActor_PassiveBuff(actor, skills, actions)
+	if skills == nil or #skills == 0 then
+		return
+	end
+
+	local skillGlobalEnvironment = self._globalEnvironment
+
+	for i = 1, #skills do
+		local skill = skills[i]
+
+		skill:build(skillGlobalEnvironment)
+		self:setupSkillSynchroLocks(skill, actions)
+		self:setupTriggersForActorSkill_PassiveBuff(actor, skill, actions)
+	end
+end
+
+function BattleSkillSystem:clearTriggersForActorAction(name, actor, action)
+	assert(actor ~= nil)
+
+	if self._globalSkillTriggers[name] ~= nil then
+		local trigger = self._globalSkillTriggers[name]
+
+		trigger:removeResponder(action)
+	end
+end
+
+function BattleSkillSystem:setupTriggersForActorSkill_PassiveBuff(actor, skill, actions)
+	local triggeredActions = skill:getTriggeredActions()
+
+	if triggeredActions == nil or #triggeredActions == 0 then
+		return
+	end
+
+	for _, entry in ipairs(triggeredActions) do
+		if entry.event ~= nil then
+			self:addEventTriggeredAction(entry.event, actor, entry.listener, entry.priority, entry.oneshot)
+		elseif entry.timer ~= nil then
+			self:addTimeTriggeredAction(entry.timer, actor, entry.listener, entry.priority)
+		end
+
+		actions[entry.listener] = {
+			event = entry.event,
+			listener = entry.listener
+		}
+	end
+end
+
 function BattleSkillSystem:buildSkillsForActorPreEnter(actor)
 	local skillGlobalEnvironment = self._globalEnvironment
 	local skillComp = actor:getComponent("Skill")
@@ -569,6 +616,10 @@ function BattleSkillSystem:addTimeTriggeredAction(timer, actor, action, priority
 	end
 
 	timedTrigger:addAction(timer, actor, action, priority)
+end
+
+function BattleSkillSystem:getTimeTrigger()
+	return self._timedTrigger
 end
 
 function BattleSkillSystem:activateTimingTrigger(time)

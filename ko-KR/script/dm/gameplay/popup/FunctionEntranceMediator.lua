@@ -329,12 +329,12 @@ function FunctionEntranceMediator:createCooperateBossAnim()
 	petRaceCell:setVisible(true)
 
 	local descLabel = petRaceCell:getChildByFullName("text"):clone()
-	local stateLabel = petRaceCell:getChildByFullName("text1"):clone()
+	self._cooperateBossStateLabel = petRaceCell:getChildByFullName("text1"):clone()
 	local timeLabel = petRaceCell:getChildByFullName("text2"):clone()
 
 	descLabel:setVisible(true)
 	timeLabel:setVisible(true)
-	stateLabel:setVisible(true)
+	self._cooperateBossStateLabel:setVisible(true)
 
 	local redPoint = petRaceCell:getChildByFullName("redPoint"):clone()
 
@@ -345,33 +345,35 @@ function FunctionEntranceMediator:createCooperateBossAnim()
 	local endTime = TimeUtil:localDate("%Y.%m.%d", self._cooperateBossSystem:getCooperateBoss():getEndTime())
 
 	if kCooperateBossState.kPreHot == state then
-		stateLabel:setString(Strings:get("CooperateBoss_Entry_UI03"))
-		stateLabel:setTextColor(cc.c3b(249, 91, 91))
+		self._cooperateBossStateLabel:setString(Strings:get("CooperateBoss_Entry_UI03"))
+		self._cooperateBossStateLabel:setTextColor(cc.c3b(249, 91, 91))
 		timeLabel:setString(Strings:get("CooperateBoss_Entry_UI02", {
 			Start = startTime,
 			End = endTime
 		}))
 	elseif kCooperateBossState.kStart == state then
 		self._cooperateBossSystem:requestGetInviteInfo(function ()
-			if not DisposableObject:isDisposed(stateLabel) then
-				local mineBossShow = self._cooperateBossSystem:checkMineDefaultBossShow()
+			if DisposableObject:isDisposed(self) or DisposableObject:isDisposed(self:getView()) then
+				return
+			end
 
-				stateLabel:setVisible(false)
+			local mineBossShow = self._cooperateBossSystem:checkMineDefaultBossShow()
 
-				if mineBossShow then
-					stateLabel:setVisible(true)
-					stateLabel:setString(Strings:get("CooperateBoss_Entry_UI05"))
-					stateLabel:setTextColor(cc.c3b(249, 217, 91))
-					stateLabel:setColor(cc.c3b(255, 255, 255))
-				end
+			self._cooperateBossStateLabel:setVisible(false)
+
+			if mineBossShow then
+				self._cooperateBossStateLabel:setVisible(true)
+				self._cooperateBossStateLabel:setString(Strings:get("CooperateBoss_Entry_UI05"))
+				self._cooperateBossStateLabel:setTextColor(cc.c3b(249, 217, 91))
+				self._cooperateBossStateLabel:setColor(cc.c3b(255, 255, 255))
 			end
 		end)
 		timeLabel:setString(Strings:get("CooperateBoss_Entry_UI04", {
 			EndTime = endTime
 		}))
 	elseif kCooperateBossState.kEnd == state then
-		stateLabel:setString(Strings:get("CooperateBoss_Entry_UI06"))
-		stateLabel:setTextColor(cc.c3b(249, 91, 91))
+		self._cooperateBossStateLabel:setString(Strings:get("CooperateBoss_Entry_UI06"))
+		self._cooperateBossStateLabel:setTextColor(cc.c3b(249, 91, 91))
 		timeLabel:setString(Strings:get("CooperateBoss_Entry_UI04", {
 			EndTime = endTime
 		}))
@@ -392,15 +394,13 @@ function FunctionEntranceMediator:createCooperateBossAnim()
 	if descPanel then
 		descPanel:removeAllChildren()
 		descLabel:addTo(descPanel):posite(-70, 5)
-		stateLabel:addTo(descPanel):posite(10, 37)
-		stateLabel:setName("stateLabel")
+		self._cooperateBossStateLabel:addTo(descPanel):posite(10, 37)
+		self._cooperateBossStateLabel:setName("stateLabel")
 		timeLabel:addTo(descPanel):posite(0, -26)
 		redPoint:addTo(descPanel):posite(80, -10)
 
 		petRaceCell.redPoint = redPoint
 	end
-
-	self._cooperateBossStateLabel = stateLabel
 end
 
 function FunctionEntranceMediator:refreshCooperateBoss()
@@ -424,8 +424,6 @@ function FunctionEntranceMediator:refreshCooperateBoss()
 end
 
 function FunctionEntranceMediator:refreshCooperateBossStateLab()
-	dump("refreshCooperateBossStateLab >>>>>>>>>>>")
-
 	local mineBossShow = self._cooperateBossSystem:checkMineDefaultBossShow()
 
 	self._cooperateBossStateLabel:setVisible(false)

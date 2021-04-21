@@ -41,6 +41,27 @@
         "StoryLink": "S11S01",
         "SurfaceId": "Surface_CZheng_Awake"
     },
+    "DCJKang": {
+        "AnimSound": "Se_Effect_Awakening_DCJKang",
+        "Animation": "dwyu_Awaken",
+        "CutIn": [
+            0,
+            0,
+            0.7
+        ],
+        "ModelId": "Model_DCJKang_Awake",
+        "Name": "DCJKang_Awake_Name",
+        "NameDesc": "DCJKang_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_DCJKang_UnAwake",
+        "Reward": "HeroAwaken_DCJKang",
+        "ShowHero": "DCJKang",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "DCJKang_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_DCJKang_Awake"
+    },
     "JNLong": {
         "AnimSound": "Se_Effect_Awakening_JNLong",
         "Animation": "fldfa_Awaken",

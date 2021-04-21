@@ -250,6 +250,7 @@ function RTPKSystem:getSeasonBuffData()
 	if ruleConfig.StarsAttrEffect and ruleConfig.StarsAttrEffect ~= "" then
 		local skillConfig = ConfigReader:getRecordById("Skill", ruleConfig.StarsAttrEffect)
 		local data = {
+			iconPath = "st_bg_wxhb.png",
 			buffId = ruleConfig.StarsAttrEffect,
 			name = Strings:get(Strings:get("Crusade_Point_17")),
 			shortDesc = Strings:get(skillConfig.Desc),
@@ -261,6 +262,7 @@ function RTPKSystem:getSeasonBuffData()
 	if ruleConfig.AwakenAttrEffect and ruleConfig.AwakenAttrEffect ~= "" then
 		local skillConfig = ConfigReader:getRecordById("Skill", ruleConfig.AwakenAttrEffect)
 		local data = {
+			iconPath = "st_bg_jxhb.png",
 			buffId = ruleConfig.AwakenAttrEffect,
 			name = Strings:get(Strings:get("Crusade_Point_18")),
 			shortDesc = Strings:get(skillConfig.Desc),
@@ -272,8 +274,11 @@ function RTPKSystem:getSeasonBuffData()
 	if ruleConfig.ConfigLevelLimitID and ruleConfig.ConfigLevelLimitID ~= "" then
 		local lv = DataReader:getDataByNameIdAndKey("ConfigLevelLimit", ruleConfig.ConfigLevelLimitID, "StandardLv")
 		local data = {
-			shortDesc = "",
+			iconPath = "ico_rtpk_faircombat.png",
 			name = Strings:get("SpPower_ShowName"),
+			shortDesc = Strings:get("RTPK_Bonus_FairPower", {
+				level = lv
+			}),
 			desc = Strings:get("RTPK_SpPowerDesc", {
 				level = lv
 			})
@@ -284,9 +289,10 @@ function RTPKSystem:getSeasonBuffData()
 	if ruleConfig.SeasonSkill and ruleConfig.SeasonSkill ~= "" then
 		local skillConfig = ConfigReader:getRecordById("Skill", ruleConfig.SeasonSkill)
 		local data = {
-			shortDesc = "",
+			iconPath = "ico_rtpk_buff.png",
 			buffId = ruleConfig.SeasonSkill,
-			name = Strings:get(skillConfig.Name),
+			name = Strings:get("RTPK_BonusPopUp_Buff"),
+			shortDesc = Strings:get("RTPK_BonusPopUp_Buff"),
 			desc = Strings:get(skillConfig.Desc, {
 				fontSize = 20,
 				fontName = TTF_FONT_FZYH_M
@@ -444,11 +450,13 @@ function RTPKSystem:getIsRecommend(heroId)
 	local ruleConfig = ConfigReader:getRecordById("RTPKRule", ruleId)
 	local HeroBase = ConfigReader:getRecordById("HeroBase", heroId)
 
-	for k, v in pairs(ruleConfig.ExcellentHero) do
-		if v.Hero then
-			for index, id in pairs(v.Hero) do
-				if id == HeroBase.Id then
-					return true
+	if ruleConfig.ExcellentHero then
+		for k, v in pairs(ruleConfig.ExcellentHero) do
+			if v.Hero then
+				for index, id in pairs(v.Hero) do
+					if id == HeroBase.Id then
+						return true
+					end
 				end
 			end
 		end
@@ -463,11 +471,13 @@ function RTPKSystem:getRecomandHeroIds()
 	local recomand = ruleConfig.ExcellentHero
 	local recomandHeroIds = {}
 
-	for i = 1, #recomand do
-		local heroIds = recomand[i].Hero
+	if recomand then
+		for i = 1, #recomand do
+			local heroIds = recomand[i].Hero
 
-		for j = 1, #heroIds do
-			table.insert(recomandHeroIds, heroIds[j])
+			for j = 1, #heroIds do
+				table.insert(recomandHeroIds, heroIds[j])
+			end
 		end
 	end
 

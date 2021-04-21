@@ -67,6 +67,20 @@ end
 function PassBuyItemMediator:refreshData()
 	self._storage = self._itemData:getExchangeCount()
 	self._maxNumber = self._itemData:getLeftExchangeCount()
+	local costItemId = self._itemData:getCostItemId()
+	local maxMoney = self._bagSystem:getItemCount(costItemId)
+	local costPrice = self._itemData:getCostItem().amount
+	local maxNum = math.floor(maxMoney / costPrice)
+
+	if maxNum <= 0 then
+		maxNum = 1
+	end
+
+	if self._storage == -1 then
+		self._maxNumber = maxNum
+	else
+		self._maxNumber = math.min(self._maxNumber, maxNum)
+	end
 
 	if self._maxNumber == 0 then
 		self._curNumber = 0
@@ -376,7 +390,7 @@ function PassBuyItemMediator:refreshMoney()
 
 		self._price:setString(costPrice)
 		self._selectCount:setString(self._curNumber)
-		self._remainCount:setString(self._maxNumber)
+		self._remainCount:setString(self._itemData:getLeftExchangeCount())
 		self._totalPrice:setString(costSum)
 		self._remainCount:setVisible(true)
 		self._buyTitleText:setVisible(true)

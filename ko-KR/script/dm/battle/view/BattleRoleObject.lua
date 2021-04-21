@@ -34,6 +34,9 @@ local BuffColor = {
 		saturation = -100,
 		o_r = 64,
 		o_b = 64
+	},
+	Translucent = {
+		a = 0.5
 	}
 }
 local kGravity = 14.700000000000001
@@ -89,6 +92,9 @@ BattleRoleObject:has("_equipHpWidget", {
 BattleRoleObject:has("_masterWidget", {
 	is = "rw"
 })
+BattleRoleObject:has("_actionTransform", {
+	is = "rw"
+})
 BattleRoleObject:has("_isTeamFlipped", {
 	is = "rwb"
 })
@@ -111,6 +117,7 @@ function BattleRoleObject:initialize(id, dataModel, viewContext)
 	self._dataModel = dataModel
 	self._roleType = dataModel:getRoleType()
 	self._isLeftTeam = self:isLeft()
+	self._actionTransform = {}
 
 	self:setupViewContext(viewContext)
 
@@ -551,6 +558,7 @@ function BattleRoleObject:createHeroAnim()
 
 	self._roleAnim = roleAnim
 
+	self:watchAnimAction()
 	roleAnim:registerSpineEventHandler(handler(self, self.spineHandler), sp.EventType.ANIMATION_COMPLETE)
 	roleAnim:registerSpineEventHandler(handler(self, self.spineHandler), sp.EventType.ANIMATION_EVENT)
 
@@ -1087,6 +1095,24 @@ function BattleRoleObject:addActiveEffect(mcFile, loop, dot, layer, zOrder, call
 	return anim
 end
 
+function BattleRoleObject:watchAnimAction()
+	local playAnimation = self._roleAnim.playAnimation
+
+	function self._roleAnim.playAnimation(anim, frameIndex, animName, isloop)
+		if self._actionTransform[animName] then
+			animName = self._actionTransform[animName]
+		end
+
+		playAnimation(anim, frameIndex, animName, isloop)
+	end
+end
+
+function BattleRoleObject:switchAction(srcAnim, descAnim)
+	if self._roleAnim:hasAnimation(descAnim) then
+		self._actionTransform[srcAnim] = descAnim
+	end
+end
+
 function BattleRoleObject:addActiveNode(node, dot, layer, zOrder)
 	layer = layer or "front"
 	dot = dot or {
@@ -1515,14 +1541,14 @@ local skillList = {
 	"skill5",
 	"dieskill",
 	"skill3_3",
-	"skill2_2"
-}
-local skillExtension = {
-	skill5_3 = "skill5_3",
-	skill3_1 = "skill3_1",
-	skill5_1 = "skill5_1",
-	skill3_2 = "skill3_2",
-	skill5_2 = "skill5_2"
+	"skill3_2",
+	"skill3_1",
+	"skill2_1",
+	"skill2_2",
+	"skill2_3",
+	"skill5_1",
+	"skill5_2",
+	"skill5_3"
 }
 local normalList = {
 	"down",
@@ -1539,41 +1565,40 @@ local normalList = {
 	"burst"
 }
 local actMap = {
-	walk = "run",
-	skill2 = "skill2",
-	skill3 = "skill3",
-	down = "down",
-	skill1 = "skill1",
-	debut = "stand",
-	skill4 = "skill4",
-	getup = "getup",
-	dieskill = "dieskill",
-	squat = "squat",
-	charge = "charge",
-	fakedie = "die",
-	attack = "skill1",
-	lockdie = "die",
-	die2 = "die2",
-	run = "run",
-	skill3_3 = "skill3_3",
-	skill2_2 = "skill2_2",
 	skill5 = "skill5",
+	skill2 = "skill2",
+	run = "run",
+	lockdie = "die",
+	squat = "squat",
+	skill2_3 = "skill2_3",
+	dieskill = "dieskill",
+	skill5_2 = "skill5_2",
+	skill3_3 = "skill3_3",
+	down = "down",
+	charge = "charge",
+	skill3 = "skill3",
+	attack = "skill1",
+	die2 = "die2",
+	skill3_2 = "skill3_2",
 	stand = "stand",
-	die = "die",
+	skill3_1 = "skill3_1",
 	win = "win",
 	hurt = "hurt1",
-	fail = "stand",
+	skill1 = "skill1",
 	hurt1 = "hurt1",
-	burst = "burst"
+	burst = "burst",
+	skill2_1 = "skill2_1",
+	skill5_1 = "skill5_1",
+	getup = "getup",
+	skill4 = "skill4",
+	skill5_3 = "skill5_3",
+	debut = "stand",
+	die = "die",
+	walk = "run",
+	fakedie = "die",
+	fail = "stand",
+	skill2_2 = "skill2_2"
 }
-
-for k, v in pairs(skillExtension) do
-	skillList[#skillList + 1] = v
-end
-
-for k, v in pairs(skillExtension) do
-	actMap[k] = v
-end
 
 local function startsWith(src, sub)
 	local len = string.len(sub)
@@ -2802,7 +2827,7 @@ function BattleRoleObject:spineHandler(event)
 	if event.type == "complete" then
 	JUMP TO BLOCK #1
 	else
-	JUMP TO BLOCK #21
+	JUMP TO BLOCK #22
 	end
 
 
@@ -2900,10 +2925,10 @@ function BattleRoleObject:spineHandler(event)
 	--- BLOCK #8 38-40, warpins: 3 ---
 	--- END OF BLOCK #8 ---
 
-	if event.animation == "die" then
+	if event.animation ~= "die" then
 	JUMP TO BLOCK #9
 	else
-	JUMP TO BLOCK #13
+	JUMP TO BLOCK #10
 	end
 
 
@@ -2912,19 +2937,19 @@ function BattleRoleObject:spineHandler(event)
 	--- BLOCK #9 41-43, warpins: 1 ---
 	--- END OF BLOCK #9 ---
 
-	if self._state ~= "fakedie" then
+	if event.animation == "die_1" then
 	JUMP TO BLOCK #10
 	else
-	JUMP TO BLOCK #11
+	JUMP TO BLOCK #14
 	end
 
 
 
 	-- Decompilation error in this vicinity:
-	--- BLOCK #10 44-46, warpins: 1 ---
+	--- BLOCK #10 44-46, warpins: 2 ---
 	--- END OF BLOCK #10 ---
 
-	if self._state == "lockdie" then
+	if self._state ~= "fakedie" then
 	JUMP TO BLOCK #11
 	else
 	JUMP TO BLOCK #12
@@ -2933,24 +2958,23 @@ function BattleRoleObject:spineHandler(event)
 
 
 	-- Decompilation error in this vicinity:
-	--- BLOCK #11 47-51, warpins: 2 ---
-	self._roleAnim:pauseAnimation()
-
-	return
-
+	--- BLOCK #11 47-49, warpins: 1 ---
 	--- END OF BLOCK #11 ---
 
-	FLOW; TARGET BLOCK #12
+	if self._state == "lockdie" then
+	JUMP TO BLOCK #12
+	else
+	JUMP TO BLOCK #13
+	end
 
 
 
 	-- Decompilation error in this vicinity:
-	--- BLOCK #12 52-57, warpins: 2 ---
-	self._animEnded = true
-
-	self:tryDie()
+	--- BLOCK #12 50-54, warpins: 2 ---
+	self._roleAnim:pauseAnimation()
 
 	return
+
 	--- END OF BLOCK #12 ---
 
 	FLOW; TARGET BLOCK #13
@@ -2958,22 +2982,23 @@ function BattleRoleObject:spineHandler(event)
 
 
 	-- Decompilation error in this vicinity:
-	--- BLOCK #13 58-60, warpins: 2 ---
+	--- BLOCK #13 55-60, warpins: 2 ---
+	self._animEnded = true
+
+	self:tryDie()
+
+	return
 	--- END OF BLOCK #13 ---
 
-	slot2 = if self._animLoop then
-	JUMP TO BLOCK #14
-	else
-	JUMP TO BLOCK #15
-	end
+	FLOW; TARGET BLOCK #14
 
 
 
 	-- Decompilation error in this vicinity:
-	--- BLOCK #14 61-64, warpins: 1 ---
+	--- BLOCK #14 61-63, warpins: 2 ---
 	--- END OF BLOCK #14 ---
 
-	if self._animLoop <= 0 then
+	slot2 = if self._animLoop then
 	JUMP TO BLOCK #15
 	else
 	JUMP TO BLOCK #16
@@ -2982,69 +3007,71 @@ function BattleRoleObject:spineHandler(event)
 
 
 	-- Decompilation error in this vicinity:
-	--- BLOCK #15 65-65, warpins: 2 ---
-	return
-
+	--- BLOCK #15 64-67, warpins: 1 ---
 	--- END OF BLOCK #15 ---
 
-	FLOW; TARGET BLOCK #16
-
-
-
-	-- Decompilation error in this vicinity:
-	--- BLOCK #16 66-72, warpins: 2 ---
-	self._animLoop = self._animLoop - 1
-	--- END OF BLOCK #16 ---
-
-	if self._animLoop > 0 then
-	JUMP TO BLOCK #17
+	if self._animLoop <= 0 then
+	JUMP TO BLOCK #16
 	else
-	JUMP TO BLOCK #18
+	JUMP TO BLOCK #17
 	end
 
 
 
 	-- Decompilation error in this vicinity:
-	--- BLOCK #17 73-82, warpins: 1 ---
+	--- BLOCK #16 68-68, warpins: 2 ---
+	return
+
+	--- END OF BLOCK #16 ---
+
+	FLOW; TARGET BLOCK #17
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #17 69-75, warpins: 2 ---
+	self._animLoop = self._animLoop - 1
+	--- END OF BLOCK #17 ---
+
+	if self._animLoop > 0 then
+	JUMP TO BLOCK #18
+	else
+	JUMP TO BLOCK #19
+	end
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #18 76-85, warpins: 1 ---
 	local extra = {}
 	extra.loop = self._animLoop
 
 	self:switchState(self._state, extra, true)
 
-	--- END OF BLOCK #17 ---
+	--- END OF BLOCK #18 ---
 
-	UNCONDITIONAL JUMP; TARGET BLOCK #20
+	UNCONDITIONAL JUMP; TARGET BLOCK #21
 
 
 
 	-- Decompilation error in this vicinity:
-	--- BLOCK #18 83-96, warpins: 1 ---
+	--- BLOCK #19 86-99, warpins: 1 ---
 	local frameCount = self._roleAnim:getAnimationFrames(event.animation)
 
 	self._roleAnim:goToFrameIndexAndPaused(0, frameCount - 1)
-	--- END OF BLOCK #18 ---
+	--- END OF BLOCK #19 ---
 
 	if self._animTask == nil then
-	JUMP TO BLOCK #19
-	else
 	JUMP TO BLOCK #20
+	else
+	JUMP TO BLOCK #21
 	end
 
 
 
 	-- Decompilation error in this vicinity:
-	--- BLOCK #19 97-99, warpins: 1 ---
+	--- BLOCK #20 100-102, warpins: 1 ---
 	self:actionEndCallback()
-
-	--- END OF BLOCK #19 ---
-
-	FLOW; TARGET BLOCK #20
-
-
-
-	-- Decompilation error in this vicinity:
-	--- BLOCK #20 100-100, warpins: 3 ---
-	return
 
 	--- END OF BLOCK #20 ---
 
@@ -3053,68 +3080,78 @@ function BattleRoleObject:spineHandler(event)
 
 
 	-- Decompilation error in this vicinity:
-	--- BLOCK #21 101-115, warpins: 2 ---
+	--- BLOCK #21 103-103, warpins: 3 ---
+	return
+
+	--- END OF BLOCK #21 ---
+
+	FLOW; TARGET BLOCK #22
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #22 104-118, warpins: 2 ---
 	local handler = self:getContext():getValue("SpineHandler")
 	local eventData = event.eventData
 	local argsStr = eventData.stringValue
 	local params = cjson.decode(argsStr)
 
-	--- END OF BLOCK #21 ---
+	--- END OF BLOCK #22 ---
 
 	slot5 = if not params then
-	JUMP TO BLOCK #22
-	else
 	JUMP TO BLOCK #23
+	else
+	JUMP TO BLOCK #24
 	end
 
 
 
 	-- Decompilation error in this vicinity:
-	--- BLOCK #22 116-123, warpins: 1 ---
+	--- BLOCK #23 119-126, warpins: 1 ---
 	DpsLogger:debug("battle", "Invalid events in '{}'", event.animation)
 
 	return
 
-	--- END OF BLOCK #22 ---
+	--- END OF BLOCK #23 ---
 
-	FLOW; TARGET BLOCK #23
+	FLOW; TARGET BLOCK #24
 
 
 
 	-- Decompilation error in this vicinity:
-	--- BLOCK #23 124-143, warpins: 2 ---
+	--- BLOCK #24 127-146, warpins: 2 ---
 	local action = params.eventType
 	action = action:sub(1, 1):upper() .. action:sub(2)
 	local func = handler["spineHandler_" .. action]
 
-	--- END OF BLOCK #23 ---
+	--- END OF BLOCK #24 ---
 
 	if func == nil then
-	JUMP TO BLOCK #24
-	else
 	JUMP TO BLOCK #25
+	else
+	JUMP TO BLOCK #26
 	end
 
 
 
 	-- Decompilation error in this vicinity:
-	--- BLOCK #24 144-151, warpins: 1 ---
+	--- BLOCK #25 147-154, warpins: 1 ---
 	DpsLogger:debug("battle", "BattleRoleObject skipped spine handler '{}'", action)
 
 	return
 
-	--- END OF BLOCK #24 ---
+	--- END OF BLOCK #25 ---
 
-	FLOW; TARGET BLOCK #25
+	FLOW; TARGET BLOCK #26
 
 
 
 	-- Decompilation error in this vicinity:
-	--- BLOCK #25 152-158, warpins: 2 ---
+	--- BLOCK #26 155-161, warpins: 2 ---
 	func(handler, event, params, self)
 
 	return
-	--- END OF BLOCK #25 ---
+	--- END OF BLOCK #26 ---
 
 
 
