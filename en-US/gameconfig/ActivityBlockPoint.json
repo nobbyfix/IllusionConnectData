@@ -27076,6 +27076,3841 @@
         ],
         "WipeExtraReward": ""
     },
+    "FireE01S01": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Yewang",
+            "",
+            ""
+        ],
+        "Background": "Fire_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_FireE01S01_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 55600,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Fire",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardFireE01S01",
+        "EnemyMaster": "Fir02P01U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FireE01S01_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra",
+            "SLWan": "Hero_ABlock_SLWan_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "QTQCi": {
+                "3": "Fire_QTQCi_Buff_Star3",
+                "4": "Fire_QTQCi_Buff_Star4",
+                "5": "Fire_QTQCi_Buff_Star5",
+                "6": "Fire_QTQCi_Buff_Star6"
+            },
+            "SLWan": {
+                "3": "Fire_SLWan_Buff_Star3",
+                "4": "Fire_SLWan_Buff_Star4",
+                "5": "Fire_SLWan_Buff_Star5",
+                "6": "Fire_SLWan_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "MZGXiu": {
+                "3": "Fire_Buff_Star3_2_1",
+                "4": "Fire_Buff_Star4_2_1",
+                "5": "Fire_Buff_Star5_2_1",
+                "6": "Fire_Buff_Star6_2_1"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FireE01",
+        "Name": "BlockPoint_FireE01S01_Name",
+        "NextPoint": [
+            "FireE01S02"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_ATSheng_dwhui",
+        "PointPicture": "",
+        "PointReward": "FireE01S01_PointReward",
+        "PointTime": {
+            "start": "2021-05-05 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "FireS01E01"
+        ],
+        "ReslutBoard": "",
+        "ShowItem": "FireE01S01_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_FireStamina": 12
+        },
+        "StaminaCost": {
+            "IR_FireStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FireE01S02": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Yewang",
+            "",
+            ""
+        ],
+        "Background": "Fire_Scene04",
+        "Banner": "pic_guanqia2_02_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_FireE01S02_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 71800,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Fire",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardFireE01S02",
+        "EnemyMaster": "Fir02P02U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FireE01S02_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra",
+            "SLWan": "Hero_ABlock_SLWan_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "QTQCi": {
+                "3": "Fire_QTQCi_Buff_Star3",
+                "4": "Fire_QTQCi_Buff_Star4",
+                "5": "Fire_QTQCi_Buff_Star5",
+                "6": "Fire_QTQCi_Buff_Star6"
+            },
+            "SLWan": {
+                "3": "Fire_SLWan_Buff_Star3",
+                "4": "Fire_SLWan_Buff_Star4",
+                "5": "Fire_SLWan_Buff_Star5",
+                "6": "Fire_SLWan_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "MZGXiu": {
+                "3": "Fire_Buff_Star3_2_2",
+                "4": "Fire_Buff_Star4_2_2",
+                "5": "Fire_Buff_Star5_2_2",
+                "6": "Fire_Buff_Star6_2_2"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FireE01",
+        "Name": "BlockPoint_FireE01S02_Name",
+        "NextPoint": [
+            "FireE01S03"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "FireE01S01"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_ATSheng_dwhui",
+        "PointPicture": "",
+        "PointReward": "FireE01S02_PointReward",
+        "PointTime": {
+            "start": "2021-05-05 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "FireE01S02_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_FireStamina": 12
+        },
+        "StaminaCost": {
+            "IR_FireStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FireE01S03": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Yewang",
+            "",
+            ""
+        ],
+        "Background": "Fire_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_FireE01S03_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 98700,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Fire",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardFireE01S03",
+        "EnemyMaster": "Fir02P03U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FireE01S03_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra",
+            "SLWan": "Hero_ABlock_SLWan_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "QTQCi": {
+                "3": "Fire_QTQCi_Buff_Star3",
+                "4": "Fire_QTQCi_Buff_Star4",
+                "5": "Fire_QTQCi_Buff_Star5",
+                "6": "Fire_QTQCi_Buff_Star6"
+            },
+            "SLWan": {
+                "3": "Fire_SLWan_Buff_Star3",
+                "4": "Fire_SLWan_Buff_Star4",
+                "5": "Fire_SLWan_Buff_Star5",
+                "6": "Fire_SLWan_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "MZGXiu": {
+                "3": "Fire_Buff_Star3_2_3",
+                "4": "Fire_Buff_Star4_2_3",
+                "5": "Fire_Buff_Star5_2_3",
+                "6": "Fire_Buff_Star6_2_3"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FireE01",
+        "Name": "BlockPoint_FireE01S03_Name",
+        "NextPoint": [
+            "FireE01S04"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "FireE01S02"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_DCJKang",
+        "PointPicture": "",
+        "PointReward": "FireE01S03_PointReward",
+        "PointTime": {
+            "start": "2021-05-05 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "FireE01S03_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Fire_Tittle_1",
+            "SpecialRule_Fire_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_FireStamina": 12
+        },
+        "StaminaCost": {
+            "IR_FireStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FireE01S04": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Yewang",
+            "",
+            ""
+        ],
+        "Background": "Fire_Scene04",
+        "Banner": "pic_guanqia2_02_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_FireE01S04_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 114900,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Fire",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardFireE01S04",
+        "EnemyMaster": "Fir02P04U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FireE01S04_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra",
+            "SLWan": "Hero_ABlock_SLWan_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "QTQCi": {
+                "3": "Fire_QTQCi_Buff_Star3",
+                "4": "Fire_QTQCi_Buff_Star4",
+                "5": "Fire_QTQCi_Buff_Star5",
+                "6": "Fire_QTQCi_Buff_Star6"
+            },
+            "SLWan": {
+                "3": "Fire_SLWan_Buff_Star3",
+                "4": "Fire_SLWan_Buff_Star4",
+                "5": "Fire_SLWan_Buff_Star5",
+                "6": "Fire_SLWan_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "MZGXiu": {
+                "3": "Fire_Buff_Star3_2_4",
+                "4": "Fire_Buff_Star4_2_4",
+                "5": "Fire_Buff_Star5_2_4",
+                "6": "Fire_Buff_Star6_2_4"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FireE01",
+        "Name": "BlockPoint_FireE01S04_Name",
+        "NextPoint": [
+            "FireE01S05"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "FireE01S03"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_DCJKang",
+        "PointPicture": "",
+        "PointReward": "FireE01S04_PointReward",
+        "PointTime": {
+            "start": "2021-05-05 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "FireE01S04_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Fire_Tittle_1",
+            "SpecialRule_Fire_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_FireStamina": 12
+        },
+        "StaminaCost": {
+            "IR_FireStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FireE01S05": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Yewang",
+            "",
+            ""
+        ],
+        "Background": "Fire_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_FireE01S05_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 141800,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Fire",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardFireE01S05",
+        "EnemyMaster": "Fir02P05U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FireE01S05_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra",
+            "SLWan": "Hero_ABlock_SLWan_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "QTQCi": {
+                "3": "Fire_QTQCi_Buff_Star3",
+                "4": "Fire_QTQCi_Buff_Star4",
+                "5": "Fire_QTQCi_Buff_Star5",
+                "6": "Fire_QTQCi_Buff_Star6"
+            },
+            "SLWan": {
+                "3": "Fire_SLWan_Buff_Star3",
+                "4": "Fire_SLWan_Buff_Star4",
+                "5": "Fire_SLWan_Buff_Star5",
+                "6": "Fire_SLWan_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "MZGXiu": {
+                "3": "Fire_Buff_Star3_2_5",
+                "4": "Fire_Buff_Star4_2_5",
+                "5": "Fire_Buff_Star5_2_5",
+                "6": "Fire_Buff_Star6_2_5"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FireE01",
+        "Name": "BlockPoint_FireE01S05_Name",
+        "NextPoint": [
+            "FireE01S06"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "FireE01S04"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_SLWan",
+        "PointPicture": "",
+        "PointReward": "FireE01S05_PointReward",
+        "PointTime": {
+            "start": "2021-05-05 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "FireE01S05_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_FireStamina": 12
+        },
+        "StaminaCost": {
+            "IR_FireStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FireE01S06": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Yewang",
+            "",
+            ""
+        ],
+        "Background": "Fire_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_FireE01S06_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 163400,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Fire",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardFireE01S06",
+        "EnemyMaster": "Fir02P06U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FireE01S06_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra",
+            "SLWan": "Hero_ABlock_SLWan_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "QTQCi": {
+                "3": "Fire_QTQCi_Buff_Star3",
+                "4": "Fire_QTQCi_Buff_Star4",
+                "5": "Fire_QTQCi_Buff_Star5",
+                "6": "Fire_QTQCi_Buff_Star6"
+            },
+            "SLWan": {
+                "3": "Fire_SLWan_Buff_Star3",
+                "4": "Fire_SLWan_Buff_Star4",
+                "5": "Fire_SLWan_Buff_Star5",
+                "6": "Fire_SLWan_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "MZGXiu": {
+                "3": "Fire_Buff_Star3_2_6",
+                "4": "Fire_Buff_Star4_2_6",
+                "5": "Fire_Buff_Star5_2_6",
+                "6": "Fire_Buff_Star6_2_6"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FireE01",
+        "Name": "BlockPoint_FireE01S06_Name",
+        "NextPoint": [
+            "FireE01S07"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "FireE01S05"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_ATSheng_dwhui",
+        "PointPicture": "",
+        "PointReward": "FireE01S06_PointReward",
+        "PointTime": {
+            "start": "2021-05-05 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "FireS01E02"
+        ],
+        "ReslutBoard": "",
+        "ShowItem": "FireE01S06_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_FireStamina": 12
+        },
+        "StaminaCost": {
+            "IR_FireStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FireE01S07": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Yewang",
+            "",
+            ""
+        ],
+        "Background": "Fire_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_FireE01S07_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 199000,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Fire",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardFireE01S07",
+        "EnemyMaster": "Fir02P07U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FireE01S07_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra",
+            "SLWan": "Hero_ABlock_SLWan_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "QTQCi": {
+                "3": "Fire_QTQCi_Buff_Star3",
+                "4": "Fire_QTQCi_Buff_Star4",
+                "5": "Fire_QTQCi_Buff_Star5",
+                "6": "Fire_QTQCi_Buff_Star6"
+            },
+            "SLWan": {
+                "3": "Fire_SLWan_Buff_Star3",
+                "4": "Fire_SLWan_Buff_Star4",
+                "5": "Fire_SLWan_Buff_Star5",
+                "6": "Fire_SLWan_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "MZGXiu": {
+                "3": "Fire_Buff_Star3_2_7",
+                "4": "Fire_Buff_Star4_2_7",
+                "5": "Fire_Buff_Star5_2_7",
+                "6": "Fire_Buff_Star6_2_7"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FireE01",
+        "Name": "BlockPoint_FireE01S07_Name",
+        "NextPoint": [
+            "FireE01S08"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "FireE01S06"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_DCJKang",
+        "PointPicture": "",
+        "PointReward": "FireE01S07_PointReward",
+        "PointTime": {
+            "start": "2021-05-05 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "FireE01S07_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_FireStamina": 12
+        },
+        "StaminaCost": {
+            "IR_FireStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FireE01S08": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Yewang",
+            "",
+            ""
+        ],
+        "Background": "Fire_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_FireE01S08_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 226000,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Fire",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardFireE01S08",
+        "EnemyMaster": "Fir02P08U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FireE01S08_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra",
+            "SLWan": "Hero_ABlock_SLWan_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "QTQCi": {
+                "3": "Fire_QTQCi_Buff_Star3",
+                "4": "Fire_QTQCi_Buff_Star4",
+                "5": "Fire_QTQCi_Buff_Star5",
+                "6": "Fire_QTQCi_Buff_Star6"
+            },
+            "SLWan": {
+                "3": "Fire_SLWan_Buff_Star3",
+                "4": "Fire_SLWan_Buff_Star4",
+                "5": "Fire_SLWan_Buff_Star5",
+                "6": "Fire_SLWan_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "MZGXiu": {
+                "3": "Fire_Buff_Star3_2_8",
+                "4": "Fire_Buff_Star4_2_8",
+                "5": "Fire_Buff_Star5_2_8",
+                "6": "Fire_Buff_Star6_2_8"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FireE01",
+        "Name": "BlockPoint_FireE01S08_Name",
+        "NextPoint": [
+            "FireE01S09"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "FireE01S07"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_SLWan",
+        "PointPicture": "",
+        "PointReward": "FireE01S08_PointReward",
+        "PointTime": {
+            "start": "2021-05-05 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "FireE01S08_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_FireStamina": 12
+        },
+        "StaminaCost": {
+            "IR_FireStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FireE01S09": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Yewang",
+            "",
+            ""
+        ],
+        "Background": "Fire_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_FireE01S09_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 247500,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Fire",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardFireE01S09",
+        "EnemyMaster": "Fir02P09U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FireE01S09_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra",
+            "SLWan": "Hero_ABlock_SLWan_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "QTQCi": {
+                "3": "Fire_QTQCi_Buff_Star3",
+                "4": "Fire_QTQCi_Buff_Star4",
+                "5": "Fire_QTQCi_Buff_Star5",
+                "6": "Fire_QTQCi_Buff_Star6"
+            },
+            "SLWan": {
+                "3": "Fire_SLWan_Buff_Star3",
+                "4": "Fire_SLWan_Buff_Star4",
+                "5": "Fire_SLWan_Buff_Star5",
+                "6": "Fire_SLWan_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "MZGXiu": {
+                "3": "Fire_Buff_Star3_2_9",
+                "4": "Fire_Buff_Star4_2_9",
+                "5": "Fire_Buff_Star5_2_9",
+                "6": "Fire_Buff_Star6_2_9"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FireE01",
+        "Name": "BlockPoint_FireE01S09_Name",
+        "NextPoint": [
+            "FireE01S10"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "FireE01S08"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_SLWan",
+        "PointPicture": "",
+        "PointReward": "FireE01S09_PointReward",
+        "PointTime": {
+            "start": "2021-05-05 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "FireE01S09_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_FireStamina": 12
+        },
+        "StaminaCost": {
+            "IR_FireStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FireE01S10": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Yewang",
+            "",
+            ""
+        ],
+        "Background": "Fire_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_FireE01S10_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 298200,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Fire",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardFireE01S10",
+        "EnemyMaster": "Fir02P10U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FireE01S10_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra",
+            "SLWan": "Hero_ABlock_SLWan_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "QTQCi": {
+                "3": "Fire_QTQCi_Buff_Star3",
+                "4": "Fire_QTQCi_Buff_Star4",
+                "5": "Fire_QTQCi_Buff_Star5",
+                "6": "Fire_QTQCi_Buff_Star6"
+            },
+            "SLWan": {
+                "3": "Fire_SLWan_Buff_Star3",
+                "4": "Fire_SLWan_Buff_Star4",
+                "5": "Fire_SLWan_Buff_Star5",
+                "6": "Fire_SLWan_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "MZGXiu": {
+                "3": "Fire_Buff_Star3_2_10",
+                "4": "Fire_Buff_Star4_2_10",
+                "5": "Fire_Buff_Star5_2_10",
+                "6": "Fire_Buff_Star6_2_10"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FireE01",
+        "Name": "BlockPoint_FireE01S10_Name",
+        "NextPoint": [
+            "FireE01S11"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "FireE01S09"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_ATSheng_dwhui",
+        "PointPicture": "",
+        "PointReward": "FireE01S10_PointReward",
+        "PointTime": {
+            "start": "2021-05-05 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "FireE01S10_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_FireStamina": 12
+        },
+        "StaminaCost": {
+            "IR_FireStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FireE01S11": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Yewang",
+            "",
+            ""
+        ],
+        "Background": "Fire_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_FireE01S11_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 464400,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Fire",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardFireE01S11",
+        "EnemyMaster": "Fir02P11U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FireE01S11_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra",
+            "SLWan": "Hero_ABlock_SLWan_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "QTQCi": {
+                "3": "Fire_QTQCi_Buff_Star3",
+                "4": "Fire_QTQCi_Buff_Star4",
+                "5": "Fire_QTQCi_Buff_Star5",
+                "6": "Fire_QTQCi_Buff_Star6"
+            },
+            "SLWan": {
+                "3": "Fire_SLWan_Buff_Star3",
+                "4": "Fire_SLWan_Buff_Star4",
+                "5": "Fire_SLWan_Buff_Star5",
+                "6": "Fire_SLWan_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "MZGXiu": {
+                "3": "Fire_Buff_Star3_2_11",
+                "4": "Fire_Buff_Star4_2_11",
+                "5": "Fire_Buff_Star5_2_11",
+                "6": "Fire_Buff_Star6_2_11"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FireE01",
+        "Name": "BlockPoint_FireE01S11_Name",
+        "NextPoint": [
+            "FireE01S12"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "FireE01S10"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_MZGXiu",
+        "PointPicture": "",
+        "PointReward": "FireE01S11_PointReward",
+        "PointTime": {
+            "start": "2021-05-05 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "FireE01S11_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Fire_Tittle_1",
+            "SpecialRule_Fire_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_FireStamina": 12
+        },
+        "StaminaCost": {
+            "IR_FireStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FireE01S12": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Yewang",
+            "",
+            ""
+        ],
+        "Background": "Fire_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_FireE01S12_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 756000,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Fire",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardFireE01S12",
+        "EnemyMaster": "Fir02P12U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FireE01S12_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra",
+            "SLWan": "Hero_ABlock_SLWan_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "QTQCi": {
+                "3": "Fire_QTQCi_Buff_Star3",
+                "4": "Fire_QTQCi_Buff_Star4",
+                "5": "Fire_QTQCi_Buff_Star5",
+                "6": "Fire_QTQCi_Buff_Star6"
+            },
+            "SLWan": {
+                "3": "Fire_SLWan_Buff_Star3",
+                "4": "Fire_SLWan_Buff_Star4",
+                "5": "Fire_SLWan_Buff_Star5",
+                "6": "Fire_SLWan_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "MZGXiu": {
+                "3": "Fire_Buff_Star3_2_12",
+                "4": "Fire_Buff_Star4_2_12",
+                "5": "Fire_Buff_Star5_2_12",
+                "6": "Fire_Buff_Star6_2_12"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FireE01",
+        "Name": "BlockPoint_FireE01S12_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "FireE01S11"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_MZGXiu",
+        "PointPicture": "",
+        "PointReward": "FireE01S12_PointReward",
+        "PointTime": {
+            "start": "2021-05-05 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "FireE01S12_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Fire_Tittle_1",
+            "SpecialRule_Fire_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_FireStamina": 12
+        },
+        "StaminaCost": {
+            "IR_FireStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FireH01S01": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Yewang",
+            "",
+            ""
+        ],
+        "Background": "Fire_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_FireH01S01_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 55600,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Fire",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardFireN01S01",
+        "EnemyMaster": "Fir03P01U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FireN01S01_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra",
+            "SLWan": "Hero_ABlock_SLWan_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "QTQCi": {
+                "3": "Fire_QTQCi_Buff_Star3",
+                "4": "Fire_QTQCi_Buff_Star4",
+                "5": "Fire_QTQCi_Buff_Star5",
+                "6": "Fire_QTQCi_Buff_Star6"
+            },
+            "SLWan": {
+                "3": "Fire_SLWan_Buff_Star3",
+                "4": "Fire_SLWan_Buff_Star4",
+                "5": "Fire_SLWan_Buff_Star5",
+                "6": "Fire_SLWan_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 0,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FireH01",
+        "Name": "BlockPoint_FireH01S01_Name",
+        "NextPoint": [
+            "FireH01S02"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_FTLEShi_dwhui",
+        "PointPicture": "",
+        "PointReward": "FireN01S01_PointReward",
+        "PointTime": {
+            "start": "2021-05-09 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "FireN01S01_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_FireStamina": 12
+        },
+        "StaminaCost": {
+            "IR_FireStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "HARD",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FireH01S02": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Yewang",
+            "",
+            ""
+        ],
+        "Background": "Fire_Scene05",
+        "Banner": "pic_guanqia2_02_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_FireH01S02_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 71800,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Fire",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardFireN01S02",
+        "EnemyMaster": "Fir03P02U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FireN01S02_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra",
+            "SLWan": "Hero_ABlock_SLWan_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "QTQCi": {
+                "3": "Fire_QTQCi_Buff_Star3",
+                "4": "Fire_QTQCi_Buff_Star4",
+                "5": "Fire_QTQCi_Buff_Star5",
+                "6": "Fire_QTQCi_Buff_Star6"
+            },
+            "SLWan": {
+                "3": "Fire_SLWan_Buff_Star3",
+                "4": "Fire_SLWan_Buff_Star4",
+                "5": "Fire_SLWan_Buff_Star5",
+                "6": "Fire_SLWan_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 0,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FireH01",
+        "Name": "BlockPoint_FireH01S02_Name",
+        "NextPoint": [
+            "FireH01S03"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "FireH01S01"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_QTQCi",
+        "PointPicture": "",
+        "PointReward": "FireN01S02_PointReward",
+        "PointTime": {
+            "start": "2021-05-09 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "FireN01S02_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_FireStamina": 12
+        },
+        "StaminaCost": {
+            "IR_FireStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "HARD",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FireH01S03": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Yewang",
+            "",
+            ""
+        ],
+        "Background": "Fire_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_FireH01S03_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 98700,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Fire",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardFireN01S03",
+        "EnemyMaster": "Fir03P03U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FireN01S03_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra",
+            "SLWan": "Hero_ABlock_SLWan_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "QTQCi": {
+                "3": "Fire_QTQCi_Buff_Star3",
+                "4": "Fire_QTQCi_Buff_Star4",
+                "5": "Fire_QTQCi_Buff_Star5",
+                "6": "Fire_QTQCi_Buff_Star6"
+            },
+            "SLWan": {
+                "3": "Fire_SLWan_Buff_Star3",
+                "4": "Fire_SLWan_Buff_Star4",
+                "5": "Fire_SLWan_Buff_Star5",
+                "6": "Fire_SLWan_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 0,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FireH01",
+        "Name": "BlockPoint_FireH01S03_Name",
+        "NextPoint": [
+            "FireH01S04"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "FireH01S02"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_SLWan",
+        "PointPicture": "",
+        "PointReward": "FireN01S03_PointReward",
+        "PointTime": {
+            "start": "2021-05-09 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "FireN01S03_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_FireStamina": 12
+        },
+        "StaminaCost": {
+            "IR_FireStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "HARD",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FireH01S04": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Yewang",
+            "",
+            ""
+        ],
+        "Background": "Fire_Scene05",
+        "Banner": "pic_guanqia2_02_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_FireH01S04_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 114900,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Fire",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardFireN01S04",
+        "EnemyMaster": "Fir03P04U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FireN01S04_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra",
+            "SLWan": "Hero_ABlock_SLWan_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "QTQCi": {
+                "3": "Fire_QTQCi_Buff_Star3",
+                "4": "Fire_QTQCi_Buff_Star4",
+                "5": "Fire_QTQCi_Buff_Star5",
+                "6": "Fire_QTQCi_Buff_Star6"
+            },
+            "SLWan": {
+                "3": "Fire_SLWan_Buff_Star3",
+                "4": "Fire_SLWan_Buff_Star4",
+                "5": "Fire_SLWan_Buff_Star5",
+                "6": "Fire_SLWan_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 0,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FireH01",
+        "Name": "BlockPoint_FireH01S04_Name",
+        "NextPoint": [
+            "FireH01S05"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "FireH01S03"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_MZGXiu",
+        "PointPicture": "",
+        "PointReward": "FireN01S04_PointReward",
+        "PointTime": {
+            "start": "2021-05-09 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "FireN01S04_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_FireStamina": 12
+        },
+        "StaminaCost": {
+            "IR_FireStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "HARD",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FireH01S05": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Yewang",
+            "",
+            ""
+        ],
+        "Background": "Fire_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_FireH01S05_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 2,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 141800,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Fire",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardFireN01S05",
+        "EnemyMaster": "Fir03P05U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FireN01S05_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra",
+            "SLWan": "Hero_ABlock_SLWan_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "QTQCi": {
+                "3": "Fire_QTQCi_Buff_Star3",
+                "4": "Fire_QTQCi_Buff_Star4",
+                "5": "Fire_QTQCi_Buff_Star5",
+                "6": "Fire_QTQCi_Buff_Star6"
+            },
+            "SLWan": {
+                "3": "Fire_SLWan_Buff_Star3",
+                "4": "Fire_SLWan_Buff_Star4",
+                "5": "Fire_SLWan_Buff_Star5",
+                "6": "Fire_SLWan_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 0,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FireH01",
+        "Name": "BlockPoint_FireH01S05_Name",
+        "NextPoint": [
+            "FireH01S06"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "FireH01S04"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_MZGXiu",
+        "PointPicture": "",
+        "PointReward": "FireN01S05_PointReward",
+        "PointTime": {
+            "start": "2021-05-09 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "FireN01S05_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Fire_Tittle_1",
+            "SpecialRule_Fire_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_FireStamina": 12
+        },
+        "StaminaCost": {
+            "IR_FireStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "HARD",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FireH01S06": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Yewang",
+            "",
+            ""
+        ],
+        "Background": "Fire_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_FireH01S06_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 2,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 163400,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Fire",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardFireN01S06",
+        "EnemyMaster": "Fir03P06U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FireN01S06_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra",
+            "SLWan": "Hero_ABlock_SLWan_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "QTQCi": {
+                "3": "Fire_QTQCi_Buff_Star3",
+                "4": "Fire_QTQCi_Buff_Star4",
+                "5": "Fire_QTQCi_Buff_Star5",
+                "6": "Fire_QTQCi_Buff_Star6"
+            },
+            "SLWan": {
+                "3": "Fire_SLWan_Buff_Star3",
+                "4": "Fire_SLWan_Buff_Star4",
+                "5": "Fire_SLWan_Buff_Star5",
+                "6": "Fire_SLWan_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 0,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FireH01",
+        "Name": "BlockPoint_FireH01S06_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "FireH01S05"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_MZGXiu",
+        "PointPicture": "",
+        "PointReward": "FireN01S06_PointReward",
+        "PointTime": {
+            "start": "2021-05-09 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "FireN01S06_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Fire_Tittle_1",
+            "SpecialRule_Fire_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_FireStamina": 12
+        },
+        "StaminaCost": {
+            "IR_FireStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "HARD",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FireM01S01": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Yewang",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_18",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_FireM01S01_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 4100,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Fire",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardFireM01S01",
+        "EnemyMaster": "Fir01P01U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FireM01S01_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra",
+            "SLWan": "Hero_ABlock_SLWan_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "QTQCi": {
+                "3": "Fire_QTQCi_Buff_Star3",
+                "4": "Fire_QTQCi_Buff_Star4",
+                "5": "Fire_QTQCi_Buff_Star5",
+                "6": "Fire_QTQCi_Buff_Star6"
+            },
+            "SLWan": {
+                "3": "Fire_SLWan_Buff_Star3",
+                "4": "Fire_SLWan_Buff_Star4",
+                "5": "Fire_SLWan_Buff_Star5",
+                "6": "Fire_SLWan_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "MZGXiu": {
+                "3": "Fire_Buff_Star3_1_1",
+                "4": "Fire_Buff_Star4_1_1",
+                "5": "Fire_Buff_Star5_1_1",
+                "6": "Fire_Buff_Star6_1_1"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FireM01",
+        "Name": "BlockPoint_FireM01S01_Name",
+        "NextPoint": [
+            "FireM01S02"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_FTLEShi_dwhui",
+        "PointPicture": "",
+        "PointReward": "FireM01S01_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "FireS01S01"
+        ],
+        "ReslutBoard": "",
+        "ShowItem": "FireM01S01_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_FireStamina": 6
+        },
+        "StaminaCost": {
+            "IR_FireStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FireM01S02": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Yewang",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_18",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_FireM01S02_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 11600,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Fire",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardFireM01S02",
+        "EnemyMaster": "Fir01P02U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FireM01S02_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra",
+            "SLWan": "Hero_ABlock_SLWan_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "QTQCi": {
+                "3": "Fire_QTQCi_Buff_Star3",
+                "4": "Fire_QTQCi_Buff_Star4",
+                "5": "Fire_QTQCi_Buff_Star5",
+                "6": "Fire_QTQCi_Buff_Star6"
+            },
+            "SLWan": {
+                "3": "Fire_SLWan_Buff_Star3",
+                "4": "Fire_SLWan_Buff_Star4",
+                "5": "Fire_SLWan_Buff_Star5",
+                "6": "Fire_SLWan_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "MZGXiu": {
+                "3": "Fire_Buff_Star3_1_2",
+                "4": "Fire_Buff_Star4_1_2",
+                "5": "Fire_Buff_Star5_1_2",
+                "6": "Fire_Buff_Star6_1_2"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FireM01",
+        "Name": "BlockPoint_FireM01S02_Name",
+        "NextPoint": [
+            "FireM01S03"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "FireM01S01"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_FTLEShi_dwhui",
+        "PointPicture": "",
+        "PointReward": "FireM01S02_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "FireM01S02_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_FireStamina": 6
+        },
+        "StaminaCost": {
+            "IR_FireStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FireM01S03": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Yewang",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_18",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_FireM01S03_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 20200,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Fire",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardFireM01S03",
+        "EnemyMaster": "Fir01P03U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FireM01S03_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra",
+            "SLWan": "Hero_ABlock_SLWan_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "QTQCi": {
+                "3": "Fire_QTQCi_Buff_Star3",
+                "4": "Fire_QTQCi_Buff_Star4",
+                "5": "Fire_QTQCi_Buff_Star5",
+                "6": "Fire_QTQCi_Buff_Star6"
+            },
+            "SLWan": {
+                "3": "Fire_SLWan_Buff_Star3",
+                "4": "Fire_SLWan_Buff_Star4",
+                "5": "Fire_SLWan_Buff_Star5",
+                "6": "Fire_SLWan_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "MZGXiu": {
+                "3": "Fire_Buff_Star3_1_3",
+                "4": "Fire_Buff_Star4_1_3",
+                "5": "Fire_Buff_Star5_1_3",
+                "6": "Fire_Buff_Star6_1_3"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FireM01",
+        "Name": "BlockPoint_FireM01S03_Name",
+        "NextPoint": [
+            "FireM01S04"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "FireM01S02"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_ATSheng_dwhui",
+        "PointPicture": "",
+        "PointReward": "FireM01S03_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "FireM01S03_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_FireStamina": 6
+        },
+        "StaminaCost": {
+            "IR_FireStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FireM01S04": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Yewang",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_18",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_FireM01S04_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 27600,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Fire",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardFireM01S04",
+        "EnemyMaster": "Fir01P04U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FireM01S04_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra",
+            "SLWan": "Hero_ABlock_SLWan_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "QTQCi": {
+                "3": "Fire_QTQCi_Buff_Star3",
+                "4": "Fire_QTQCi_Buff_Star4",
+                "5": "Fire_QTQCi_Buff_Star5",
+                "6": "Fire_QTQCi_Buff_Star6"
+            },
+            "SLWan": {
+                "3": "Fire_SLWan_Buff_Star3",
+                "4": "Fire_SLWan_Buff_Star4",
+                "5": "Fire_SLWan_Buff_Star5",
+                "6": "Fire_SLWan_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "MZGXiu": {
+                "3": "Fire_Buff_Star3_1_4",
+                "4": "Fire_Buff_Star4_1_4",
+                "5": "Fire_Buff_Star5_1_4",
+                "6": "Fire_Buff_Star6_1_4"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FireM01",
+        "Name": "BlockPoint_FireM01S04_Name",
+        "NextPoint": [
+            "FireM01S05"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "FireM01S03"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_ZTXChang",
+        "PointPicture": "",
+        "PointReward": "FireM01S04_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "FireS01S02"
+        ],
+        "ReslutBoard": "",
+        "ShowItem": "FireM01S04_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Fire_Tittle_1",
+            "SpecialRule_Fire_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_FireStamina": 6
+        },
+        "StaminaCost": {
+            "IR_FireStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FireM01S05": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Yewang",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_18",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_FireM01S05_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 36200,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Fire",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardFireM01S05",
+        "EnemyMaster": "Fir01P05U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FireM01S05_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra",
+            "SLWan": "Hero_ABlock_SLWan_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "QTQCi": {
+                "3": "Fire_QTQCi_Buff_Star3",
+                "4": "Fire_QTQCi_Buff_Star4",
+                "5": "Fire_QTQCi_Buff_Star5",
+                "6": "Fire_QTQCi_Buff_Star6"
+            },
+            "SLWan": {
+                "3": "Fire_SLWan_Buff_Star3",
+                "4": "Fire_SLWan_Buff_Star4",
+                "5": "Fire_SLWan_Buff_Star5",
+                "6": "Fire_SLWan_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "MZGXiu": {
+                "3": "Fire_Buff_Star3_1_5",
+                "4": "Fire_Buff_Star4_1_5",
+                "5": "Fire_Buff_Star5_1_5",
+                "6": "Fire_Buff_Star6_1_5"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FireM01",
+        "Name": "BlockPoint_FireM01S05_Name",
+        "NextPoint": [
+            "FireM01S06"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "FireM01S04"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_ZTXChang",
+        "PointPicture": "",
+        "PointReward": "FireM01S05_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "FireM01S05_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Fire_Tittle_1",
+            "SpecialRule_Fire_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_FireStamina": 6
+        },
+        "StaminaCost": {
+            "IR_FireStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FireM01S06": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Yewang",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_18",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_FireM01S06_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 44300,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Fire",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardFireM01S06",
+        "EnemyMaster": "Fir01P06U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FireM01S06_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra",
+            "SLWan": "Hero_ABlock_SLWan_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "QTQCi": {
+                "3": "Fire_QTQCi_Buff_Star3",
+                "4": "Fire_QTQCi_Buff_Star4",
+                "5": "Fire_QTQCi_Buff_Star5",
+                "6": "Fire_QTQCi_Buff_Star6"
+            },
+            "SLWan": {
+                "3": "Fire_SLWan_Buff_Star3",
+                "4": "Fire_SLWan_Buff_Star4",
+                "5": "Fire_SLWan_Buff_Star5",
+                "6": "Fire_SLWan_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "MZGXiu": {
+                "3": "Fire_Buff_Star3_1_6",
+                "4": "Fire_Buff_Star4_1_6",
+                "5": "Fire_Buff_Star5_1_6",
+                "6": "Fire_Buff_Star6_1_6"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FireM01",
+        "Name": "BlockPoint_FireM01S06_Name",
+        "NextPoint": [
+            "FireM01S07"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "FireM01S05"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_ZTXChang",
+        "PointPicture": "",
+        "PointReward": "FireM01S06_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "FireM01S06_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Fire_Tittle_1",
+            "SpecialRule_Fire_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_FireStamina": 6
+        },
+        "StaminaCost": {
+            "IR_FireStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FireM01S07": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Yewang",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_18",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_FireM01S07_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 53800,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Fire",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardFireM01S07",
+        "EnemyMaster": "Fir01P07U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FireM01S07_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra",
+            "SLWan": "Hero_ABlock_SLWan_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "QTQCi": {
+                "3": "Fire_QTQCi_Buff_Star3",
+                "4": "Fire_QTQCi_Buff_Star4",
+                "5": "Fire_QTQCi_Buff_Star5",
+                "6": "Fire_QTQCi_Buff_Star6"
+            },
+            "SLWan": {
+                "3": "Fire_SLWan_Buff_Star3",
+                "4": "Fire_SLWan_Buff_Star4",
+                "5": "Fire_SLWan_Buff_Star5",
+                "6": "Fire_SLWan_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "MZGXiu": {
+                "3": "Fire_Buff_Star3_1_7",
+                "4": "Fire_Buff_Star4_1_7",
+                "5": "Fire_Buff_Star5_1_7",
+                "6": "Fire_Buff_Star6_1_7"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FireM01",
+        "Name": "BlockPoint_FireM01S07_Name",
+        "NextPoint": [
+            "FireM01S08"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "FireM01S06"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_QTQCi",
+        "PointPicture": "",
+        "PointReward": "FireM01S07_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "FireM01S07_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Fire_Tittle_1",
+            "SpecialRule_Fire_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_FireStamina": 6
+        },
+        "StaminaCost": {
+            "IR_FireStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FireM01S08": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Yewang",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_18",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_FireM01S08_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 62300,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Fire",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardFireM01S08",
+        "EnemyMaster": "Fir01P08U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FireM01S08_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra",
+            "SLWan": "Hero_ABlock_SLWan_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "QTQCi": {
+                "3": "Fire_QTQCi_Buff_Star3",
+                "4": "Fire_QTQCi_Buff_Star4",
+                "5": "Fire_QTQCi_Buff_Star5",
+                "6": "Fire_QTQCi_Buff_Star6"
+            },
+            "SLWan": {
+                "3": "Fire_SLWan_Buff_Star3",
+                "4": "Fire_SLWan_Buff_Star4",
+                "5": "Fire_SLWan_Buff_Star5",
+                "6": "Fire_SLWan_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "MZGXiu": {
+                "3": "Fire_Buff_Star3_1_8",
+                "4": "Fire_Buff_Star4_1_8",
+                "5": "Fire_Buff_Star5_1_8",
+                "6": "Fire_Buff_Star6_1_8"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FireM01",
+        "Name": "BlockPoint_FireM01S08_Name",
+        "NextPoint": [
+            "FireM01S09"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "FireM01S07"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_QTQCi",
+        "PointPicture": "",
+        "PointReward": "FireM01S08_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "FireS01S03"
+        ],
+        "ReslutBoard": "",
+        "ShowItem": "FireM01S08_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_FireStamina": 6
+        },
+        "StaminaCost": {
+            "IR_FireStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FireM01S09": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Yewang",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_18",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_FireM01S09_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 70400,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Fire",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardFireM01S09",
+        "EnemyMaster": "Fir01P09U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FireM01S09_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra",
+            "SLWan": "Hero_ABlock_SLWan_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "QTQCi": {
+                "3": "Fire_QTQCi_Buff_Star3",
+                "4": "Fire_QTQCi_Buff_Star4",
+                "5": "Fire_QTQCi_Buff_Star5",
+                "6": "Fire_QTQCi_Buff_Star6"
+            },
+            "SLWan": {
+                "3": "Fire_SLWan_Buff_Star3",
+                "4": "Fire_SLWan_Buff_Star4",
+                "5": "Fire_SLWan_Buff_Star5",
+                "6": "Fire_SLWan_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "MZGXiu": {
+                "3": "Fire_Buff_Star3_1_9",
+                "4": "Fire_Buff_Star4_1_9",
+                "5": "Fire_Buff_Star5_1_9",
+                "6": "Fire_Buff_Star6_1_9"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FireM01",
+        "Name": "BlockPoint_FireM01S09_Name",
+        "NextPoint": [
+            "FireM01S10"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "FireM01S08"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_QTQCi",
+        "PointPicture": "",
+        "PointReward": "FireM01S09_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "FireM01S09_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_FireStamina": 6
+        },
+        "StaminaCost": {
+            "IR_FireStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FireM01S10": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Yewang",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_18",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_FireM01S10_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 81400,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Fire",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardFireM01S10",
+        "EnemyMaster": "Fir01P10U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FireM01S10_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra",
+            "SLWan": "Hero_ABlock_SLWan_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "QTQCi": {
+                "3": "Fire_QTQCi_Buff_Star3",
+                "4": "Fire_QTQCi_Buff_Star4",
+                "5": "Fire_QTQCi_Buff_Star5",
+                "6": "Fire_QTQCi_Buff_Star6"
+            },
+            "SLWan": {
+                "3": "Fire_SLWan_Buff_Star3",
+                "4": "Fire_SLWan_Buff_Star4",
+                "5": "Fire_SLWan_Buff_Star5",
+                "6": "Fire_SLWan_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "MZGXiu": {
+                "3": "Fire_Buff_Star3_1_10",
+                "4": "Fire_Buff_Star4_1_10",
+                "5": "Fire_Buff_Star5_1_10",
+                "6": "Fire_Buff_Star6_1_10"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FireM01",
+        "Name": "BlockPoint_FireM01S10_Name",
+        "NextPoint": [
+            "FireM01S11"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "FireM01S09"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_SLWan",
+        "PointPicture": "",
+        "PointReward": "FireM01S10_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "FireM01S10_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_FireStamina": 6
+        },
+        "StaminaCost": {
+            "IR_FireStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FireM01S11": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Yewang",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_18",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_FireM01S11_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 88000,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Fire",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardFireM01S11",
+        "EnemyMaster": "Fir01P11U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FireM01S11_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra",
+            "SLWan": "Hero_ABlock_SLWan_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "QTQCi": {
+                "3": "Fire_QTQCi_Buff_Star3",
+                "4": "Fire_QTQCi_Buff_Star4",
+                "5": "Fire_QTQCi_Buff_Star5",
+                "6": "Fire_QTQCi_Buff_Star6"
+            },
+            "SLWan": {
+                "3": "Fire_SLWan_Buff_Star3",
+                "4": "Fire_SLWan_Buff_Star4",
+                "5": "Fire_SLWan_Buff_Star5",
+                "6": "Fire_SLWan_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "MZGXiu": {
+                "3": "Fire_Buff_Star3_1_11",
+                "4": "Fire_Buff_Star4_1_11",
+                "5": "Fire_Buff_Star5_1_11",
+                "6": "Fire_Buff_Star6_1_11"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FireM01",
+        "Name": "BlockPoint_FireM01S11_Name",
+        "NextPoint": [
+            "FireM01S12"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "FireM01S10"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_SLWan",
+        "PointPicture": "",
+        "PointReward": "FireM01S11_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "FireM01S11_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_FireStamina": 6
+        },
+        "StaminaCost": {
+            "IR_FireStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FireM01S12": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Yewang",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_18",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_FireM01S12_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 195300,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Fire",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardFireM01S12",
+        "EnemyMaster": "Fir01P12U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FireM01S12_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra",
+            "SLWan": "Hero_ABlock_SLWan_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "QTQCi": {
+                "3": "Fire_QTQCi_Buff_Star3",
+                "4": "Fire_QTQCi_Buff_Star4",
+                "5": "Fire_QTQCi_Buff_Star5",
+                "6": "Fire_QTQCi_Buff_Star6"
+            },
+            "SLWan": {
+                "3": "Fire_SLWan_Buff_Star3",
+                "4": "Fire_SLWan_Buff_Star4",
+                "5": "Fire_SLWan_Buff_Star5",
+                "6": "Fire_SLWan_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "MZGXiu": {
+                "3": "Fire_Buff_Star3_1_12",
+                "4": "Fire_Buff_Star4_1_12",
+                "5": "Fire_Buff_Star5_1_12",
+                "6": "Fire_Buff_Star6_1_12"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FireM01",
+        "Name": "BlockPoint_FireM01S12_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "FireM01S11"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_MZGXiu",
+        "PointPicture": "",
+        "PointReward": "FireM01S12_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "FireM01S12_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Fire_Tittle_1",
+            "SpecialRule_Fire_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_FireStamina": 6
+        },
+        "StaminaCost": {
+            "IR_FireStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
     "KnightE01S01": {
         "AiRules": "",
         "Assist": [],

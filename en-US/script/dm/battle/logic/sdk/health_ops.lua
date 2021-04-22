@@ -142,12 +142,12 @@ function exports.ApplyHPDamage(env, target, damage, lowerLimit, notLastHit)
 	return result
 end
 
-function exports.ApplyHPReduce(env, target, damage)
+function exports.ApplyHPReduce(env, target, damage, isFlyLabel)
 	local healthSystem = env.global["$HealthSystem"]
 	local actor = env["$actor"]
 	local workId = env["$id"]
 	local result = nil
-	result = healthSystem:performHealthReduce(target, damage, workId, actor)
+	result = healthSystem:performHealthReduce(target, damage, workId, actor, isFlyLabel)
 
 	return result
 end

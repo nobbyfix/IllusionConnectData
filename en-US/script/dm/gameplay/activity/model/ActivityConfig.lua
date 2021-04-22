@@ -141,13 +141,13 @@ ActivityComplexUI = {
 		[ActivityType_UI.kActivityBlock] = "ActivityBlockView",
 		[ActivityType_UI.KActivityBlockSnowflake] = "ActivityBlockView",
 		[ActivityType_UI.KActivityBlockHoliday] = "ActivityBlockHolidayView",
-		[ActivityType_UI.KActivityBlockHoliday] = "ActivityBlockHolidayView",
 		[ActivityType_UI.KActivityBlockDetetive] = "ActivityBlockDetectiveView",
 		[ActivityType_UI.KActivityBlockMusic] = "ActivityBlockMusicView",
 		[ActivityType_UI.KActivityBlockBaking] = "ActivityBakingMainView",
 		[ActivityType_UI.KActivityCollapsed] = "ActivityCollapsedMainView",
 		[ActivityType_UI.KActivityKnight] = "ActivityKnightMainView",
-		[ActivityType_UI.KActivitySunflower] = "ActivitySunflowerMainView"
+		[ActivityType_UI.KActivitySunflower] = "ActivitySunflowerMainView",
+		[ActivityType_UI.KActivityFire] = "ActivityFireMainView"
 	},
 	enterBlockMonsterShopView = {
 		[ActivityType_UI.kActivityBlockWsj] = "ActivityBlockMonsterShopView",
@@ -167,7 +167,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityBlockBaking] = "ActivitySagaSupportMapView",
 		[ActivityType_UI.KActivityCollapsed] = "ActivitySagaSupportMapView",
 		[ActivityType_UI.KActivityKnight] = "ActivitySagaSupportMapView",
-		[ActivityType_UI.KActivitySunflower] = "ActivitySagaSupportMapView"
+		[ActivityType_UI.KActivitySunflower] = "ActivitySagaSupportMapView",
+		[ActivityType_UI.KActivityFire] = "ActivitySagaSupportMapView"
 	},
 	enterSagaSupportStageView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportStageWxhView",
@@ -191,7 +192,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityBlockBaking] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivityCollapsed] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivityKnight] = "ActivityBlockTaskView",
-		[ActivityType_UI.KActivitySunflower] = "ActivityBlockTaskView"
+		[ActivityType_UI.KActivitySunflower] = "ActivityBlockTaskView",
+		[ActivityType_UI.KActivityFire] = "ActivityBlockTaskView"
 	},
 	enterSagaSupportRankRewardView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportRankRewardWxhView",
@@ -228,6 +230,13 @@ ActivityLogin14Config = {
 	},
 	EightDays_Sunflower = {
 		resFile = "asset/ui/ActivitySunflowerLogin14.csb",
+		textPattern = {
+			cc.c4b(255, 255, 255, 255),
+			cc.c4b(176, 228, 254, 255)
+		}
+	},
+	EightDays_Fire = {
+		resFile = "asset/ui/ActivityFireLogin14.csb",
 		textPattern = {
 			cc.c4b(255, 255, 255, 255),
 			cc.c4b(176, 228, 254, 255)

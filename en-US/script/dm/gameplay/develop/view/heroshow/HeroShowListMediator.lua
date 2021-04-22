@@ -1233,6 +1233,10 @@ function HeroShowListMediator:runResumeAnim()
 			self:showStartAction(cells, 4)
 		end
 
+		if str == "IconAnim5" then
+			self:showStartAction(cells, 5)
+		end
+
 		if str == "HeroAnim" then
 			-- Nothing
 		end
@@ -1298,6 +1302,10 @@ function HeroShowListMediator:runStartAnim()
 
 		if str == "IconAnim4" then
 			self:showStartAction(cells, 4)
+		end
+
+		if str == "IconAnim5" then
+			self:showStartAction(cells, 5)
 		end
 
 		if str == "HeroAnim" then
@@ -1384,7 +1392,7 @@ function HeroShowListMediator:getShowCells()
 	local children = self._heroView:getContainer():getChildren()
 	local cells = {}
 
-	for index = 1, 4 do
+	for index = 1, #children do
 		local cell = children[index]
 
 		if cell then
@@ -1457,7 +1465,7 @@ function HeroShowListMediator:runEndAnim()
 		end
 
 		if str == "IconAnim3" then
-			-- Nothing
+			self:showEndAction(cells, 5)
 		end
 
 		if str == "IconAnim4" then
@@ -1525,7 +1533,7 @@ function HeroShowListMediator:getEndShowCells()
 	local children = self._heroView:getContainer():getChildren()
 	local cells = {}
 
-	for index = 1, 4 do
+	for index = 1, #children do
 		local cell = children[index]
 
 		if cell then

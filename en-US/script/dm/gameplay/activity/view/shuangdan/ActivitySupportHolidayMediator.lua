@@ -192,6 +192,16 @@ end
 
 function ActivitySupportHolidayMediator:enterWithData(data)
 	self._activityId = data.activityId or ActivityId.kActivityBlockZuoHe
+	self._activity = self._activitySystem:getActivityByComplexId(self._activityId)
+
+	if not self._activity then
+		self:dispatch(ShowTipEvent({
+			tip = Strings:get("Error_12806")
+		}))
+
+		return
+	end
+
 	self._enterView = data.enterView or ActivitySupportViewEnter.Stage
 	self._heroId = data.heroId or nil
 
@@ -217,13 +227,11 @@ function ActivitySupportHolidayMediator:doReset()
 	if not self._activity then
 		self:dispatch(Event:new(EVT_POP_TO_TARGETVIEW, "homeView"))
 
-		return true
+		return
 	end
 
 	self:initData()
 	self:initView()
-
-	return false
 end
 
 function ActivitySupportHolidayMediator:playDanmaku()
@@ -312,12 +320,6 @@ function ActivitySupportHolidayMediator:playDanmaku()
 end
 
 function ActivitySupportHolidayMediator:initData()
-	self._activity = self._activitySystem:getActivityById(self._activityId)
-
-	if not self._activity then
-		return
-	end
-
 	self._config = self._activity:getActivityConfig()
 	self._periodsInfo = self._activity:getPeriodsInfo()
 	self._periodId = self._periodsInfo.periodId

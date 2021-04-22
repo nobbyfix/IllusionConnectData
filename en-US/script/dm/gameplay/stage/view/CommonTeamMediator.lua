@@ -27,6 +27,10 @@ local kSortBtnHandlers = {
 	["main.my_pet_bg.sortPanel.screenBtn"] = {
 		clickAudio = "Se_Click_Fold_1",
 		func = "onClickScreen"
+	},
+	["main.my_pet_bg.sortPanel.setBtn"] = {
+		clickAudio = "Se_Click_Common_2",
+		func = "onClickTeamSetBtn"
 	}
 }
 
@@ -47,6 +51,9 @@ function CommonTeamMediator:onRegister()
 
 	self._presetTeamPetNum = 0
 	self._masterSystem = self._developSystem:getMasterSystem()
+	local setButton = self:getView():getChildByFullName("main.my_pet_bg.sortPanel.setBtn")
+
+	setButton:setVisible(false)
 end
 
 function CommonTeamMediator:resumeWithData()
@@ -1527,4 +1534,38 @@ function CommonTeamMediator:runInsertTeamAction(id)
 			self._runInsertAction = false
 		end
 	end)
+end
+
+function CommonTeamMediator:showSetButton(show)
+	local setButton = self:getView():getChildByFullName("main.my_pet_bg.sortPanel.setBtn")
+	local sortBtn = self:getView():getChildByFullName("main.my_pet_bg.sortPanel.sortBtn")
+	local screenBtn = self:getView():getChildByFullName("main.my_pet_bg.sortPanel.screenBtn")
+	local initY = 144
+	local height = 85
+	local btnList = {
+		sortBtn,
+		screenBtn
+	}
+
+	if show then
+		setButton:setVisible(true)
+
+		initY = 160
+		height = 65
+		btnList[#btnList + 1] = setButton
+	else
+		setButton:setVisible(false)
+	end
+
+	for i, btn in pairs(btnList) do
+		btn:setPositionY(initY - (i - 1) * height)
+	end
+end
+
+function CommonTeamMediator:onClickTeamSetBtn()
+	local view = self:getInjector():getInstance("ChangeTeamModelView")
+
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+	}, {}))
 end

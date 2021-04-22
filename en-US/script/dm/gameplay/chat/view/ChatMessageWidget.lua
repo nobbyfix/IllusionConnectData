@@ -88,7 +88,7 @@ function PlayerMessageWidget:decorateView(message, senderInfo, parent)
 		self._contentText = contentText
 	else
 		if contentText == nil then
-			contentText = cc.Label:createWithTTF(content, TTF_FONT_FZYH_R, 18)
+			contentText = cc.Label:createWithTTF(xmlUnescape(content), TTF_FONT_FZYH_R, 18)
 
 			contentText:setAnchorPoint(contentRect:getAnchorPoint())
 			contentText:addTo(contentRect:getParent()):posite(contentRect:getPosition()):setName("content_text")

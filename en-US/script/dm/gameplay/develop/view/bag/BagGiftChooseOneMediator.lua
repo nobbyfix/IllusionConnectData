@@ -85,6 +85,22 @@ function BagGiftChooseOneMediator:setupView(data)
 
 	desc2:setString(Strings:get("bag_ChoiceReward_Text1") .. item:getDesc())
 
+	local configValueKey = ConfigReader:getDataByNameIdAndKey("ConfigValue", "UREquip_ExtraPanelName", "content")
+
+	if configValueKey and configValueKey[item:getId()] then
+		local richText = ccui.RichText:createWithXML("", {})
+
+		richText:setAnchorPoint(desc2:getAnchorPoint())
+		richText:setPosition(cc.p(desc2:getPosition()))
+		richText:addTo(desc2:getParent())
+		richText:setString(Strings:get("bag_UR_Learn_Tips"))
+		richText:ignoreContentAdaptWithSize(true)
+		richText:rebuildElements()
+		richText:formatText()
+		richText:renderContent(desc2:getContentSize().width, desc2:getContentSize().height)
+		desc2:setVisible(false)
+	end
+
 	local rewardList = mainPanel:getChildByFullName("itemPanel.listView")
 
 	rewardList:removeAllItems()

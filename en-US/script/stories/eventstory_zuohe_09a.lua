@@ -172,7 +172,7 @@ function scene_eventstory_zuohe_09a.actions.start_eventstory_zuohe_09a(_root, ar
 							name = "YYing_face",
 							pathType = "STORY_FACE",
 							type = "Image",
-							image = "YYing/YYing_face_1.png",
+							image = "YYing/YYing_face_3.png",
 							scaleX = 1,
 							scaleY = 1,
 							layoutMode = 1,
@@ -436,7 +436,7 @@ function scene_eventstory_zuohe_09a.actions.start_eventstory_zuohe_09a(_root, ar
 							name = "GYCZi_face",
 							pathType = "STORY_FACE",
 							type = "Image",
-							image = "GYCZi/GYCZi_face_5.png",
+							image = "GYCZi/GYCZi_face_1.png",
 							scaleX = 1,
 							scaleY = 1,
 							layoutMode = 1,
@@ -618,7 +618,7 @@ function scene_eventstory_zuohe_09a.actions.start_eventstory_zuohe_09a(_root, ar
 			args = function (_ctx)
 				return {
 					resType = 0,
-					image = "SYAi/SYAi_face_5.png",
+					image = "SYAi/SYAi_face_2.png",
 					pathType = "STORY_FACE"
 				}
 			end
@@ -1627,16 +1627,27 @@ function scene_eventstory_zuohe_09a.actions.start_eventstory_zuohe_09a(_root, ar
 			})
 		}),
 		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "SYAi_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "SYAi/SYAi_face_1.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
+		act({
 			action = "speak",
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_233",
+					name = "dialog_speak_name_234",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"YYing_speak"
+						"SYAi_speak"
 					},
 					content = {
 						"eventstory_zuohe_09a_21"

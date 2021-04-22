@@ -311,6 +311,16 @@ function exports.DeathImmuneEffect(env, value, hpRecoverRatio)
 	})
 end
 
+function exports.PassiveFunEffectBuff(env, id, config)
+	local skillSystem = env.global["$SkillSystem"]
+
+	return PassiveFunEffect:new({
+		id = id,
+		config = config,
+		skillSystem = skillSystem
+	})
+end
+
 function exports.StatusEffect(env, status)
 	return StatusEffect:new({
 		status = status

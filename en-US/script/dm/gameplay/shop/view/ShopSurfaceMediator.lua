@@ -121,6 +121,17 @@ function ShopSurfaceMediator:initMember()
 
 	self._rarity:ignoreContentAdaptWithSize(true)
 
+	self._bonusPanel = self._mainPanel:getChildByFullName("bonusPanel")
+
+	self._bonusPanel:setVisible(false)
+
+	self._ruleBtn = self._mainPanel:getChildByFullName("ruleBtn")
+
+	self._ruleBtn:setTouchEnabled(true)
+	self._ruleBtn:addTouchEventListener(function (sender, eventType)
+		self:onClickRule(sender, eventType)
+	end)
+
 	local iconLayout = self._cellClone:getChildByFullName("cell.icon_layout")
 	self._posY = iconLayout:getContentSize().height / 2
 
@@ -597,4 +608,53 @@ function ShopSurfaceMediator:runListAnim()
 			end
 		end
 	end
+end
+
+function ShopSurfaceMediator:onClickRule(sender, eventType)
+	if eventType == ccui.TouchEventType.began then
+		AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
+		self._bonusPanel:setVisible(true)
+		self:refreshInnerAttrPanel()
+	elseif eventType == ccui.TouchEventType.canceled or eventType == ccui.TouchEventType.ended then
+		self._bonusPanel:setVisible(false)
+	end
+end
+
+function ShopSurfaceMediator:refreshInnerAttrPanel()
+	local list = {
+		Strings:get("Shop_Surface_Repeat_Tips")
+	}
+
+	if #list == 0 then
+		self._bonusPanel:setVisible(false)
+
+		return
+	end
+
+	local textLabel = self._bonusPanel:getChildByName("text")
+
+	textLabel:setVisible(false)
+
+	local width = 0
+	local height = 23
+	local posY = 175
+
+	self._bonusPanel:getChildByName("panel"):removeAllChildren()
+
+	for i = 1, #list do
+		local text = textLabel:clone()
+
+		text:setVisible(true)
+		text:addTo(self._bonusPanel:getChildByName("panel"))
+		text:setTag(12138)
+		text:getVirtualRenderer():setDimensions(300, 0)
+		text:setString(list[i])
+		text:setPositionY(posY - text:getContentSize().height / 2 + 15)
+
+		posY = posY - text:getContentSize().height
+		width = math.max(width, text:getContentSize().width)
+		height = height + text:getContentSize().height
+	end
+
+	self._bonusPanel:getChildByName("imageBg"):setContentSize(cc.size(width + 40, height))
 end

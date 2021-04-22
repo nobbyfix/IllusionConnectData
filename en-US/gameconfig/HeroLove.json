@@ -1104,7 +1104,86 @@
             "IHG_Quality4_6": 8,
             "IHG_Quality5_3": 20
         },
-        "StoryLink": "",
+        "StoryLink": [
+            {
+                "bg": "main_img_00",
+                "option": [
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        12,
+                        3
+                    ]
+                ],
+                "story": "ATShengDate01"
+            },
+            {
+                "bg": "main_img_00",
+                "option": [
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        12,
+                        3
+                    ]
+                ],
+                "story": "ATShengDate02"
+            },
+            {
+                "bg": "main_img_02",
+                "option": [
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        3,
+                        12
+                    ]
+                ],
+                "story": "ATShengDate03"
+            }
+        ],
         "UseEventDesc": {
             "sit": "EventUse_ATSheng",
             "sleep": "EventUse_ATSheng"
@@ -3165,7 +3244,86 @@
             "IHG_Quality4_8": 8,
             "IHG_Quality5_5": 20
         },
-        "StoryLink": "",
+        "StoryLink": [
+            {
+                "bg": "main_img_00",
+                "option": [
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        12,
+                        3
+                    ]
+                ],
+                "story": "DCJKangDate01"
+            },
+            {
+                "bg": "main_img_01",
+                "option": [
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        3,
+                        12
+                    ]
+                ],
+                "story": "DCJKangDate02"
+            },
+            {
+                "bg": "main_img_02",
+                "option": [
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        3,
+                        12
+                    ]
+                ],
+                "story": "DCJKangDate03"
+            }
+        ],
         "UseEventDesc": {
             "sit": "EventUse_DCJKang",
             "sleep": "EventUse_DCJKang"
@@ -10011,6 +10169,202 @@
             "sleep": 10
         }
     },
+    "MZGXiu": {
+        "AfkAction": {
+            "walk": [
+                1,
+                4,
+                8
+            ]
+        },
+        "Birthday": [
+            11,
+            1
+        ],
+        "DateDesc": {
+            "greeting": [
+                "DateGreeting_MZGXiu"
+            ],
+            "refuse": [
+                "DateRefuse_MZGXiu"
+            ]
+        },
+        "EventParameter": {
+            "gift": 10,
+            "hug": 10,
+            "use": 0
+        },
+        "FreeStaminaDesc": "FreeStaminaDesc_MZGXiu",
+        "Function": {
+            "date": [
+                3,
+                250
+            ],
+            "gift": [
+                1,
+                0
+            ]
+        },
+        "GiftDesc": {
+            "greeting": [
+                "GiftGreeting_MZGXiu"
+            ],
+            "lovely": [
+                "GiftLovely_MZGXiu"
+            ],
+            "normal": [
+                "GiftNormal_MZGXiu"
+            ],
+            "offensive": [
+                "GiftOffensive_MZGXiu"
+            ]
+        },
+        "GiftEventDesc": {
+            "answer": [
+                "EventGiftAnswer_MZGXiu"
+            ],
+            "greeting": [
+                "EventGiftGreeting_MZGXiu"
+            ]
+        },
+        "Likability": [
+            50,
+            150,
+            250,
+            400,
+            600,
+            800,
+            1200,
+            1600,
+            2000
+        ],
+        "LikabilityAttr": [
+            {
+                "25": [
+                    "Gallery_14Cost_1",
+                    "Gallery_Cost_1_Def"
+                ],
+                "50": [
+                    "Gallery_14Cost_2",
+                    "Gallery_Cost_1_Def"
+                ]
+            },
+            {
+                "150": [
+                    "Gallery_14Cost_4",
+                    "Gallery_Cost_2_Def"
+                ],
+                "75": [
+                    "Gallery_14Cost_3",
+                    "Gallery_Cost_2_Def"
+                ]
+            },
+            {
+                "125": [
+                    "Gallery_14Cost_5",
+                    "Gallery_Cost_3_Def"
+                ],
+                "250": [
+                    "Gallery_14Cost_6",
+                    "Gallery_Cost_3_Def"
+                ]
+            },
+            {
+                "200": [
+                    "Gallery_14Cost_7",
+                    "Gallery_Cost_4_Def"
+                ],
+                "400": [
+                    "Gallery_14Cost_8",
+                    "Gallery_Cost_4_Def"
+                ]
+            },
+            {
+                "300": [
+                    "Gallery_14Cost_9",
+                    "Gallery_Cost_5_Def"
+                ],
+                "600": [
+                    "Gallery_14Cost_10",
+                    "Gallery_Cost_5_Def"
+                ]
+            },
+            {
+                "400": [
+                    "Gallery_14Cost_11",
+                    "Gallery_Cost_6_Def"
+                ],
+                "800": [
+                    "Gallery_14Cost_12",
+                    "Gallery_Cost_6_Def"
+                ]
+            },
+            {
+                "1200": [
+                    "Gallery_14Cost_14",
+                    "Gallery_Cost_7_Def"
+                ],
+                "600": [
+                    "Gallery_14Cost_13",
+                    "Gallery_Cost_7_Def"
+                ]
+            },
+            {
+                "1600": [
+                    "Gallery_14Cost_16",
+                    "Gallery_Cost_8_Def"
+                ],
+                "800": [
+                    "Gallery_14Cost_15",
+                    "Gallery_Cost_8_Def"
+                ]
+            },
+            {
+                "1000": [
+                    "Gallery_14Cost_17",
+                    "Gallery_Cost_9_Def"
+                ],
+                "2000": [
+                    "Gallery_14Cost_18",
+                    "Gallery_Cost_9_Def"
+                ]
+            }
+        ],
+        "LoveSound": [
+            "Voice_MZGXiu_14",
+            "Voice_MZGXiu_15",
+            "Voice_MZGXiu_16",
+            null,
+            "Voice_MZGXiu_17",
+            null,
+            "Voice_MZGXiu_18",
+            null,
+            "Voice_MZGXiu_34"
+        ],
+        "LovelyGift": {
+            "IHG_Quality2_14": 1,
+            "IHG_Quality3_14": 3,
+            "IHG_Quality3_2": 3,
+            "IHG_Quality4_12": 10,
+            "IHG_Quality4_2": 10,
+            "IHG_Quality5_16": 20
+        },
+        "OffensiveGift": {
+            "IHG_Quality2_16": 1,
+            "IHG_Quality3_3": 3,
+            "IHG_Quality4_3": 10,
+            "IHG_Quality5_7": 20
+        },
+        "StoryLink": "",
+        "UseEventDesc": {
+            "sit": "EventUse_MZGXiu",
+            "sleep": "EventUse_MZGXiu"
+        },
+        "UseEventParameter": {
+            "sit": 10,
+            "sleep": 10
+        }
+    },
     "NCai": {
         "AfkAction": {
             "walk": [
@@ -12798,6 +13152,202 @@
         "UseEventDesc": {
             "sit": "EventUse_SLMen",
             "sleep": "EventUse_SLMen"
+        },
+        "UseEventParameter": {
+            "sit": 10,
+            "sleep": 10
+        }
+    },
+    "SLWan": {
+        "AfkAction": {
+            "walk": [
+                1,
+                4,
+                8
+            ]
+        },
+        "Birthday": [
+            4,
+            10
+        ],
+        "DateDesc": {
+            "greeting": [
+                "DateGreeting_SLWan"
+            ],
+            "refuse": [
+                "DateRefuse_SLWan"
+            ]
+        },
+        "EventParameter": {
+            "gift": 10,
+            "hug": 10,
+            "use": 0
+        },
+        "FreeStaminaDesc": "FreeStaminaDesc_SLWan",
+        "Function": {
+            "date": [
+                3,
+                250
+            ],
+            "gift": [
+                1,
+                0
+            ]
+        },
+        "GiftDesc": {
+            "greeting": [
+                "GiftGreeting_SLWan"
+            ],
+            "lovely": [
+                "GiftLovely_SLWan"
+            ],
+            "normal": [
+                "GiftNormal_SLWan"
+            ],
+            "offensive": [
+                "GiftOffensive_SLWan"
+            ]
+        },
+        "GiftEventDesc": {
+            "answer": [
+                "EventGiftAnswer_SLWan"
+            ],
+            "greeting": [
+                "EventGiftGreeting_SLWan"
+            ]
+        },
+        "Likability": [
+            50,
+            150,
+            250,
+            400,
+            600,
+            800,
+            1200,
+            1600,
+            2000
+        ],
+        "LikabilityAttr": [
+            {
+                "25": [
+                    "Gallery_12Cost_1",
+                    "Gallery_Cost_1_Def"
+                ],
+                "50": [
+                    "Gallery_12Cost_2",
+                    "Gallery_Cost_1_Def"
+                ]
+            },
+            {
+                "150": [
+                    "Gallery_12Cost_4",
+                    "Gallery_Cost_2_Def"
+                ],
+                "75": [
+                    "Gallery_12Cost_3",
+                    "Gallery_Cost_2_Def"
+                ]
+            },
+            {
+                "125": [
+                    "Gallery_12Cost_5",
+                    "Gallery_Cost_3_Def"
+                ],
+                "250": [
+                    "Gallery_12Cost_6",
+                    "Gallery_Cost_3_Def"
+                ]
+            },
+            {
+                "200": [
+                    "Gallery_12Cost_7",
+                    "Gallery_Cost_4_Def"
+                ],
+                "400": [
+                    "Gallery_12Cost_8",
+                    "Gallery_Cost_4_Def"
+                ]
+            },
+            {
+                "300": [
+                    "Gallery_12Cost_9",
+                    "Gallery_Cost_5_Def"
+                ],
+                "600": [
+                    "Gallery_12Cost_10",
+                    "Gallery_Cost_5_Def"
+                ]
+            },
+            {
+                "400": [
+                    "Gallery_12Cost_11",
+                    "Gallery_Cost_6_Def"
+                ],
+                "800": [
+                    "Gallery_12Cost_12",
+                    "Gallery_Cost_6_Def"
+                ]
+            },
+            {
+                "1200": [
+                    "Gallery_12Cost_14",
+                    "Gallery_Cost_7_Def"
+                ],
+                "600": [
+                    "Gallery_12Cost_13",
+                    "Gallery_Cost_7_Def"
+                ]
+            },
+            {
+                "1600": [
+                    "Gallery_12Cost_16",
+                    "Gallery_Cost_8_Def"
+                ],
+                "800": [
+                    "Gallery_12Cost_15",
+                    "Gallery_Cost_8_Def"
+                ]
+            },
+            {
+                "1000": [
+                    "Gallery_12Cost_17",
+                    "Gallery_Cost_9_Def"
+                ],
+                "2000": [
+                    "Gallery_12Cost_18",
+                    "Gallery_Cost_9_Def"
+                ]
+            }
+        ],
+        "LoveSound": [
+            "Voice_SLWan_14",
+            "Voice_SLWan_15",
+            "Voice_SLWan_16",
+            null,
+            "Voice_SLWan_17",
+            null,
+            "Voice_SLWan_18",
+            null,
+            "Voice_SLWan_34"
+        ],
+        "LovelyGift": {
+            "IHG_Quality2_8": 1,
+            "IHG_Quality3_11": 3,
+            "IHG_Quality4_5": 10,
+            "IHG_Quality4_6": 10,
+            "IHG_Quality5_16": 20,
+            "IHG_Quality5_9": 20
+        },
+        "OffensiveGift": {
+            "IHG_Quality2_13": 1,
+            "IHG_Quality3_16": 3,
+            "IHG_Quality4_16": 10,
+            "IHG_Quality5_4": 20
+        },
+        "StoryLink": "",
+        "UseEventDesc": {
+            "sit": "EventUse_SLWan",
+            "sleep": "EventUse_SLWan"
         },
         "UseEventParameter": {
             "sit": 10,
@@ -16582,7 +17132,86 @@
             "IHG_Quality4_6": 8,
             "IHG_Quality5_3": 20
         },
-        "StoryLink": "",
+        "StoryLink": [
+            {
+                "bg": "main_img_00",
+                "option": [
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        12,
+                        3
+                    ]
+                ],
+                "story": "YLSBaiDate01"
+            },
+            {
+                "bg": "main_img_00",
+                "option": [
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        12,
+                        3
+                    ]
+                ],
+                "story": "YLSBaiDate02"
+            },
+            {
+                "bg": "main_img_00",
+                "option": [
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        3,
+                        12
+                    ],
+                    [
+                        12,
+                        3
+                    ],
+                    [
+                        12,
+                        3
+                    ]
+                ],
+                "story": "YLSBaiDate03"
+            }
+        ],
         "UseEventDesc": {
             "sit": "EventUse_YLSBai",
             "sleep": "EventUse_YLSBai"

@@ -240,7 +240,7 @@ function HealthSystem:performCheckDeadlyDamage(actor, target, damage)
 	end
 end
 
-function HealthSystem:performHealthReduce(target, damage, workId, actor)
+function HealthSystem:performHealthReduce(target, damage, workId, actor, isFlyLabel)
 	if self._damageDisabled then
 		return nil
 	end
@@ -308,6 +308,8 @@ function HealthSystem:performHealthReduce(target, damage, workId, actor)
 	end
 
 	if result and self._processRecorder then
+		result.isFlyLabel = isFlyLabel
+
 		self._processRecorder:recordObjectEvent(target:getId(), "HpReduce", result, workId)
 	end
 

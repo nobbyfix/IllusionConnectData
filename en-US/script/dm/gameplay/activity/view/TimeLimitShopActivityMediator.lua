@@ -29,6 +29,10 @@ local timeLimitShopConfig = {
 	foolsday = {
 		BG = "jqtd_txt_zgmszl_di",
 		TimeOutLineColor = cc.c4b(106, 0, 24, 255)
+	},
+	ambition = {
+		BG = "jqtd_txt_swzzl_di",
+		TimeOutLineColor = cc.c4b(187, 41, 1, 255)
 	}
 }
 local btnHandlers = {

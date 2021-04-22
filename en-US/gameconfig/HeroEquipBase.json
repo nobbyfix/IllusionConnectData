@@ -1832,6 +1832,96 @@
         ],
         "zoom": 0.6
     },
+    "Decoration_15010": {
+        "ATK": "",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "UR_Decoration_DEF_DH",
+        "Desc": "Decoration_15010_Desc",
+        "ExclusiveHero": "",
+        "HP": "UR_Decoration_HP_DH",
+        "HeroEquip_Id": "",
+        "Icon": "ico_equip_oldstone",
+        "Name": "Decoration_15010_Name",
+        "Position": "Decoration",
+        "Profession": [
+            "Defense",
+            "Attack",
+            "Support",
+            "Summon",
+            "Aoe",
+            "Curse",
+            "Cure"
+        ],
+        "ProfessionDesc": "Decoration_ProfessionDesc",
+        "ProfessionType": 0,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "",
+        "Shine": "",
+        "Skill": "EquipSkill_Decoration_15010",
+        "Sort": 289986,
+        "StartEquipStarID": "Rareity15_DecorationStone3_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
+    "Decoration_15011": {
+        "ATK": "",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "UR_Decoration_DEF_DH",
+        "Desc": "Decoration_15011_Desc",
+        "ExclusiveHero": "",
+        "HP": "UR_Decoration_HP_DH",
+        "HeroEquip_Id": "",
+        "Icon": "ico_equip_moonbell",
+        "Name": "Decoration_15011_Name",
+        "Position": "Decoration",
+        "Profession": [
+            "Defense",
+            "Attack",
+            "Support",
+            "Summon",
+            "Aoe",
+            "Curse",
+            "Cure"
+        ],
+        "ProfessionDesc": "Decoration_ProfessionDesc",
+        "ProfessionType": 0,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "",
+        "Shine": "",
+        "Skill": "EquipSkill_Decoration_15011",
+        "Sort": 289983,
+        "StartEquipStarID": "Rareity15_DecorationStone1_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
     "Shoes_11001": {
         "ATK": "",
         "AttrEffect": "",
@@ -4681,6 +4771,51 @@
         ],
         "zoom": 0.6
     },
+    "Tops_15006": {
+        "ATK": "",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "UR_Top_DEF",
+        "Desc": "Tops_15006_Desc",
+        "ExclusiveHero": "",
+        "HP": "UR_Top_HP",
+        "HeroEquip_Id": "",
+        "Icon": "ico_equip_stardress",
+        "Name": "Tops_15006_Name",
+        "Position": "Tops",
+        "Profession": [
+            "Defense",
+            "Attack",
+            "Support",
+            "Summon",
+            "Aoe",
+            "Curse",
+            "Cure"
+        ],
+        "ProfessionDesc": "Decoration_ProfessionDesc",
+        "ProfessionType": 0,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "",
+        "Shine": "",
+        "Skill": "EquipSkill_Tops_15006",
+        "Sort": 289999,
+        "StartEquipStarID": "Rareity15_Top3_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
     "Tops_15007": {
         "ATK": "",
         "AttrEffect": "",
@@ -4714,6 +4849,96 @@
         "Skill": "EquipSkill_Tops_15007",
         "Sort": 289990,
         "StartEquipStarID": "Rareity15_Top1_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
+    "Tops_15008": {
+        "ATK": "",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "UR_Top_DEF",
+        "Desc": "Tops_15008_Desc",
+        "ExclusiveHero": "",
+        "HP": "UR_Top_HP",
+        "HeroEquip_Id": "",
+        "Icon": "ico_equip_blackarmor",
+        "Name": "Tops_15008_Name",
+        "Position": "Tops",
+        "Profession": [
+            "Defense",
+            "Attack",
+            "Support",
+            "Summon",
+            "Aoe",
+            "Curse",
+            "Cure"
+        ],
+        "ProfessionDesc": "Decoration_ProfessionDesc",
+        "ProfessionType": 0,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "",
+        "Shine": "",
+        "Skill": "EquipSkill_Tops_15008",
+        "Sort": 289984,
+        "StartEquipStarID": "Rareity15_Top2_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
+    "Tops_15009": {
+        "ATK": "",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "UR_Top_DEF",
+        "Desc": "Tops_15009_Desc",
+        "ExclusiveHero": "",
+        "HP": "UR_Top_HP",
+        "HeroEquip_Id": "",
+        "Icon": "ico_equip_repairshirt",
+        "Name": "Tops_15009_Name",
+        "Position": "Tops",
+        "Profession": [
+            "Defense",
+            "Attack",
+            "Support",
+            "Summon",
+            "Aoe",
+            "Curse",
+            "Cure"
+        ],
+        "ProfessionDesc": "Decoration_ProfessionDesc",
+        "ProfessionType": 0,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "",
+        "Shine": "",
+        "Skill": "EquipSkill_Tops_15009",
+        "Sort": 289982,
+        "StartEquipStarID": "Rareity15_Top3_1",
         "URUPSkillLV": [
             30,
             40,
@@ -6945,6 +7170,45 @@
         "Skill": "EquipSkill_Weapon_15005",
         "Sort": 289988,
         "StartEquipStarID": "Rareity15_Weapon2_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
+    "Weapon_15006": {
+        "ATK": "UR_Weapon_ATK",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "",
+        "Desc": "Weapon_15006_Desc",
+        "ExclusiveHero": "",
+        "HP": "",
+        "HeroEquip_Id": "",
+        "Icon": "ico_equip_wineglass",
+        "Name": "Weapon_15006_Name",
+        "Position": "Weapon",
+        "Profession": [
+            "XSMLi"
+        ],
+        "ProfessionDesc": "",
+        "ProfessionType": 1,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "",
+        "Shine": "",
+        "Skill": "EquipSkill_Weapon_15006",
+        "Sort": 289985,
+        "StartEquipStarID": "Rareity15_Weapon3_1",
         "URUPSkillLV": [
             30,
             40,

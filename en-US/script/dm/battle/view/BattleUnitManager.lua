@@ -968,6 +968,22 @@ function BattleUnitManager:removeUnitById(id, cellId)
 		self._members[tostring(id)] = nil
 	end
 
+	for k, v in pairs(self._leftTeam) do
+		if v._cellId ~= k and cellId == v._cellId then
+			cellId = k
+
+			break
+		end
+	end
+
+	for k, v in pairs(self._rightTeam) do
+		if 0 - v._cellId ~= k and cellId == v._cellId then
+			cellId = 0 - k
+
+			break
+		end
+	end
+
 	if cellId > 0 then
 		self._leftTeam[cellId] = nil
 	else

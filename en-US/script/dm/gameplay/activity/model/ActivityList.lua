@@ -85,16 +85,6 @@ function ActivityList:getActivityByType(actType)
 	return nil
 end
 
-function ActivityList:getActivityByComplexId(complexId)
-	for id, activity in pairs(self._activityMap) do
-		if activity:getActivityComplexId() == complexId then
-			return activity
-		end
-	end
-
-	return nil
-end
-
 function ActivityList:getActivityByComplexUI(ui)
 	for id, activity in pairs(self._activityMap) do
 		if activity:getActivityComplexUI() == ui then

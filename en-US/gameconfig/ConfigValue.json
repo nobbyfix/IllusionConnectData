@@ -7129,6 +7129,23 @@
             "Point_Skill_Text3"
         ]
     },
+    "Push_Translate": {
+        "clz": "array",
+        "content": [
+            {
+                "Title": "Daily Bread",
+                "desc": " Give us this day our daily bread!Rotania says you should claim your bread!"
+            },
+            {
+                "Title": "Stamina Fully Recovered",
+                "desc": "I haven't seen you for so long, your stamina is already full to the brim! It's time to hunt nightmares together~"
+            },
+            {
+                "Title": "Ares' Battlefield Has Opened！",
+                "desc": "Ares' Battlefield has begun!Time to join the battle, climb the rankings and grab your rewards Leader~"
+            }
+        ]
+    },
     "QualityDesc": {
         "clz": "dict",
         "content": {
@@ -8171,13 +8188,7 @@
             "YXNMei",
             "AJTa",
             "SRen",
-            "PDLa",
-            "NFEr",
-            "HSheng",
-            "FEMSi",
             "BLTu",
-            "BDFen",
-            "PGNNi",
             "QBTe",
             "FLYDe",
             "TJHDe",
@@ -8188,7 +8199,9 @@
             "KEDGong",
             "HGEr",
             "QTQCi",
-            "LSLTe"
+            "LSLTe",
+            "MZGXiu",
+            "SLWan"
         ]
     },
     "Tower_1_GrowMaxValue": {
@@ -8428,6 +8441,12 @@
             "Defense": "WARRIOR",
             "Summon": "SUMMONER",
             "Support": "LIGHT"
+        }
+    },
+    "UREquip_ExtraPanelName": {
+        "clz": "dict",
+        "content": {
+            "IBS_ScrollPack_UR": 1
         }
     },
     "VillageDecorateShopIcon": {

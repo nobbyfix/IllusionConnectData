@@ -77,7 +77,7 @@ function ActivityBlockSupportMediator:onRegister()
 
 	self._heroSystem = self._developSystem:getHeroSystem()
 
-	self:mapButtonHandlersClick(kBtnHandlers)
+	self:setupTopInfoWidget()
 	self:mapEventListener(self:getEventDispatcher(), EVT_PLAYER_SYNCHRONIZED, self, self.refreshView)
 	self:mapEventListener(self:getEventDispatcher(), EVT_RESET_DONE, self, self.doReset)
 
@@ -110,13 +110,8 @@ function ActivityBlockSupportMediator:onRegister()
 end
 
 function ActivityBlockSupportMediator:setupTopInfoWidget()
-	local width = 0
-	local currencyInfo = self._supportActivity:getResourcesBanner()
 	local topInfoNode = self:getView():getChildByName("topinfo_node")
 	local config = {
-		style = 1,
-		hideLine = true,
-		currencyInfo = currencyInfo,
 		btnHandler = {
 			clickAudio = "Se_Click_Close_1",
 			func = bind1(self.onClickBack, self)
@@ -124,6 +119,22 @@ function ActivityBlockSupportMediator:setupTopInfoWidget()
 	}
 	local injector = self:getInjector()
 	self._topInfoWidget = self:autoManageObject(injector:injectInto(TopInfoWidget:new(topInfoNode)))
+
+	self._topInfoWidget:updateView(config)
+end
+
+function ActivityBlockSupportMediator:updateInfoWidget()
+	if not self._topInfoWidget then
+		return
+	end
+
+	local width = 0
+	local currencyInfo = self._supportActivity:getResourcesBanner()
+	local config = {
+		hideLine = true,
+		style = 1,
+		currencyInfo = currencyInfo
+	}
 
 	self._topInfoWidget:updateView(config)
 
@@ -137,42 +148,34 @@ end
 function ActivityBlockSupportMediator:enterWithData(data)
 	self._resumeName = data and data.resumeName or nil
 	self._activityId = data.activityId
-	self._supportActivity = self._activitySystem:getActivityById(self._activityId)
+	self._supportActivity = self._activitySystem:getActivityByComplexId(self._activityId)
 
 	if not self._supportActivity then
+		self:dispatch(ShowTipEvent({
+			tip = Strings:get("Error_12806")
+		}))
+
 		return
 	end
+
+	self:mapButtonHandlersClick(kBtnHandlers)
+	self:updateInfoWidget()
 
 	self._canChangeHero = true
 
 	self:initData()
-	self:setupTopInfoWidget()
 	self:initView()
 	self:runBtnAnim()
 	self:showWinnerView()
 end
 
 function ActivityBlockSupportMediator:resumeWithData()
-	local quit = self:doReset()
-
-	if quit then
-		return
-	end
-
-	self:initData()
-	self:initView()
+	self:doReset()
 end
 
 function ActivityBlockSupportMediator:initData()
-	self._supportActivity = self._activitySystem:getActivityById(self._activityId)
-	self._blockActivity = nil
-	self._taskActivities = {}
-
-	if self._supportActivity then
-		self._blockActivity = self._supportActivity:getBlockMapActivity()
-		self._taskActivities = self._supportActivity:getTaskActivities()
-	end
-
+	self._blockActivity = self._supportActivity:getBlockMapActivity()
+	self._taskActivities = self._supportActivity:getTaskActivities()
 	self._roleIndex = 1
 	self._roles = self._supportActivity:getRoleParams()
 	self._clickSupport = false
@@ -465,18 +468,16 @@ end
 function ActivityBlockSupportMediator:doReset()
 	self:stopTimer()
 
-	local model = self._activitySystem:getActivityById(self._activityId)
+	self._supportActivity = self._activitySystem:getActivityByComplexId(self._activityId)
 
-	if not model then
+	if not self._supportActivity then
 		self:dispatch(Event:new(EVT_POP_TO_TARGETVIEW, "homeView"))
 
-		return true
+		return
 	end
 
 	self:initData()
 	self:initView()
-
-	return false
 end
 
 function ActivityBlockSupportMediator:refreshView()

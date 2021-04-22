@@ -550,12 +550,14 @@ function TopInfoWidget:updateView(config)
 		mapButtonHandlerClick(self, "back_btn", config.btnHandler)
 	end
 
+	self:hideTitle(false)
+
 	if config.title then
 		self:updateTitle(config.title, config.fontSize)
 	elseif config.complexTitle then
 		self:updateComplexTitle(config.complexTitle)
 	else
-		self:hideTitle()
+		self:hideTitle(true)
 	end
 
 	local style = config.style or 2
@@ -755,6 +757,6 @@ function TopInfoWidget:updateComplexTitle(title)
 	end
 end
 
-function TopInfoWidget:hideTitle()
-	self._titlePanel:setVisible(false)
+function TopInfoWidget:hideTitle(status)
+	self._titlePanel:setVisible(not status)
 end

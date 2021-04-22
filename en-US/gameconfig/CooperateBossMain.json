@@ -194,6 +194,37 @@
         "Time": 1800,
         "Type": "Awaken"
     },
+    "CooperateBoss_DCJKang": {
+        "AwakenAttrEffect": "ExcellentHero_Awaken",
+        "AwakenBoss": "",
+        "BossBattle": "CooperateBoss_DCJKang",
+        "ExcellentHero": [
+            {
+                "Effect": "ExcellentHero_Attr_Big",
+                "Hero": [
+                    "PGNNi",
+                    "BDFen"
+                ]
+            },
+            {
+                "Effect": "ExcellentHero_Attr_Small",
+                "Hero": [
+                    "SDTZi",
+                    "YLMGZhu",
+                    "YLSBai"
+                ]
+            }
+        ],
+        "Revelry": "",
+        "RewardRevelry": "",
+        "RewardShow": "CooperateBossMain_DCJKang_Show",
+        "RoleModel": "Model_DCJKang",
+        "StarsAttrEffect": "ExcellentHero_Stars",
+        "Story": [],
+        "TiggerAwaken": "",
+        "Time": 1800,
+        "Type": "Normal"
+    },
     "CooperateBoss_JNLong": {
         "AwakenAttrEffect": "ExcellentHero_Awaken",
         "AwakenBoss": "",

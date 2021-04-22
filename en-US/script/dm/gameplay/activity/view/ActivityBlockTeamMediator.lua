@@ -31,10 +31,6 @@ local kBtnHandlers = {
 	["main.spStagePanel.ruleBtn"] = {
 		clickAudio = "Se_Click_Common_2",
 		func = "onClickRule"
-	},
-	["main.nameBg.setBtn"] = {
-		clickAudio = "Se_Click_Common_2",
-		func = "onClickTeamSetBtn"
 	}
 }
 local kHeroRarityBgAnim = {
@@ -271,6 +267,7 @@ function ActivityBlockTeamMediator:setupView()
 	self:initView()
 	self:refreshListView()
 	self:createSortView()
+	self:showSetButton(true)
 end
 
 function ActivityBlockTeamMediator:initWidgetInfo()
@@ -1228,14 +1225,6 @@ function ActivityBlockTeamMediator:onClickRule()
 	local rules = self._activity:getActivityConfig().BonusHeroDesc
 
 	self._activitySystem:showActivityRules(rules)
-end
-
-function ActivityBlockTeamMediator:onClickTeamSetBtn()
-	local view = self:getInjector():getInstance("ChangeTeamModelView")
-
-	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
-		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-	}, {}))
 end
 
 function ActivityBlockTeamMediator:onClickOneKeyBreak()

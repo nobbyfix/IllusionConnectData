@@ -68,25 +68,6 @@ function RecruitRewardMediator:initView(init)
 			redPoint:setName("redPoint")
 
 			self._rewardItemNode[index] = node
-
-			local function callFunc(sender, eventType)
-				if sender.rewardData.status ~= DrawCardRewardStatus.FinishNotGet then
-					return
-				end
-
-				local function callback()
-					self:initView()
-				end
-
-				self._recruitSystem:requestGetDrawCardCountReward({
-					drawID = self._data:getId(),
-					targetCount = sender.rewardData.count
-				}, callback, true)
-			end
-
-			mapButtonHandlerClick(nil, node:getChildByFullName("cellClone.itemPanel"), {
-				func = callFunc
-			})
 		end
 
 		local node = self._rewardItemNode[index]
@@ -98,7 +79,6 @@ function RecruitRewardMediator:initView(init)
 
 		itemPanel:removeAllChildren()
 
-		itemPanel.rewardData = info
 		local rewards = ConfigReader:getDataByNameIdAndKey("Reward", reward, "Content")
 
 		for key, value in pairs(rewards) do
@@ -134,6 +114,23 @@ function RecruitRewardMediator:initView(init)
 		if info.status == DrawCardRewardStatus.FinishNotGet then
 			line:setVisible(true)
 			bg:loadTexture("asset/common/tgjl_bg_icondi_2.png", ccui.TextureResType.localType)
+
+			local function callFunc(sender, eventType)
+				local function callback()
+					self:initView()
+				end
+
+				self._recruitSystem:requestGetDrawCardCountReward({
+					drawID = self._data:getId(),
+					targetCount = sender.rewardData.count
+				}, callback, true)
+			end
+
+			mapButtonHandlerClick(nil, itemPanel, {
+				func = callFunc
+			})
+
+			itemPanel.rewardData = info
 		elseif info.status == DrawCardRewardStatus.FinishGot then
 			line:setVisible(true)
 			cellClone:setColor(cc.c3b(127, 127, 127))

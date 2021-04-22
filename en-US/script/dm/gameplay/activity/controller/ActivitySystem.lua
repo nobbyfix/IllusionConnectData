@@ -750,12 +750,24 @@ function ActivitySystem:getActivityByType(actType)
 	return self:getActivityList():getActivityByType(actType)
 end
 
-function ActivitySystem:getActivityByComplexId(complexId)
-	return self:getActivityList():getActivityByComplexId(complexId)
+function ActivitySystem:getActivityByComplexId(activityId)
+	local activity = self:getActivityList():getActivityById(activityId)
+
+	if activity and self:checkComplexActivity(activityId) then
+		return activity
+	end
+
+	return nil
 end
 
 function ActivitySystem:getActivityByComplexUI(ui)
-	return self:getActivityList():getActivityByComplexUI(ui)
+	local activity = self:getActivityList():getActivityByComplexUI(ui)
+
+	if activity and self:checkComplexActivity(activity:getId()) then
+		return activity
+	end
+
+	return nil
 end
 
 function ActivitySystem:getActivitiesByType(type)
@@ -1431,7 +1443,7 @@ end
 
 function ActivitySystem:complexActivityTryEnter(data)
 	local activityId = data.activityId
-	local activity = self:getActivityById(activityId)
+	local activity = self:getActivityByComplexId(activityId)
 
 	if activity then
 		local ui = activity:getActivityComplexUI()
@@ -1443,7 +1455,7 @@ end
 function ActivitySystem:tryEnterComplexMainView(ui)
 	local activity = self:getActivityByComplexUI(ui)
 
-	if activity and self:checkComplexActivity(activity:getId()) then
+	if activity then
 		AudioEngine:getInstance():playEffect("Se_Click_Open_1", false)
 		self:requestAllActicities(true, function ()
 			local view = self:getInjector():getInstance(ActivityComplexUI.tryEnterComplexMainView[ui])
@@ -1462,7 +1474,7 @@ function ActivitySystem:tryEnterBlockMonsterShopView(data)
 end
 
 function ActivitySystem:enterSupportStage(activityId)
-	local activity = self:getActivityById(activityId)
+	local activity = self:getActivityByComplexId(activityId)
 
 	if activity then
 		local ui = activity:getActivityComplexUI()
@@ -1481,11 +1493,11 @@ function ActivitySystem:enterSagaSupportStage(activityId)
 	}
 
 	self:requestDoActivity(activityId, params, function (response)
-		self:getActivityById(activityId):synchronizePeriodsInfo(response.data)
-
-		local activity = self:getActivityById(activityId)
+		local activity = self:getActivityByComplexId(activityId)
 
 		if activity then
+			activity:synchronizePeriodsInfo(response.data)
+
 			local ui = activity:getActivityComplexUI()
 			local view = self:getInjector():getInstance(ActivityComplexUI.enterSagaSupportStageView[ui])
 
@@ -1502,11 +1514,11 @@ function ActivitySystem:enterSagaSupportSchedule(activityId)
 	}
 
 	self:requestDoActivity(activityId, params, function (response)
-		self:getActivityById(activityId):synchronizePeriodsInfo(response.data)
-
-		local activity = self:getActivityById(activityId)
+		local activity = self:getActivityByComplexId(activityId)
 
 		if activity then
+			activity:synchronizePeriodsInfo(response.data)
+
 			local ui = activity:getActivityComplexUI()
 			local view = self:getInjector():getInstance(ActivityComplexUI.enterSagaSupportScheduleView[ui])
 
@@ -1518,7 +1530,7 @@ function ActivitySystem:enterSagaSupportSchedule(activityId)
 end
 
 function ActivitySystem:enterSupportTaskView(activityId)
-	local activity = self:getActivityById(activityId)
+	local activity = self:getActivityByComplexId(activityId)
 
 	if activity then
 		local ui = activity:getActivityComplexUI()
@@ -1531,7 +1543,7 @@ function ActivitySystem:enterSupportTaskView(activityId)
 end
 
 function ActivitySystem:enterSagaSupportRankRewardView(activityId, periodId)
-	local activity = self:getActivityById(activityId)
+	local activity = self:getActivityByComplexId(activityId)
 
 	if activity then
 		local ui = activity:getActivityComplexUI()
@@ -1547,7 +1559,7 @@ function ActivitySystem:enterSagaSupportRankRewardView(activityId, periodId)
 end
 
 function ActivitySystem:enterSagaWinView(activityId)
-	local activity = self:getActivityById(activityId)
+	local activity = self:getActivityByComplexId(activityId)
 
 	if activity then
 		local ui = activity:getActivityComplexUI()
@@ -1559,15 +1571,17 @@ function ActivitySystem:enterSagaWinView(activityId)
 	end
 end
 
-function ActivitySystem:enterBlockMap(activityId, blockActivityId)
-	local activity = self:getActivityById(activityId)
+function ActivitySystem:enterBlockMap(activityId, blockActivityId, stageType, useThreeChoice)
+	local activity = self:getActivityByComplexId(activityId)
 
 	if activity then
 		local ui = activity:getActivityComplexUI()
 		local view = self:getInjector():getInstance(ActivityComplexUI.enterSupportStageView[ui])
 		local event = ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
 			activityId = activityId,
-			blockActivityId = blockActivityId
+			blockActivityId = blockActivityId,
+			stageType = stageType,
+			useThreeChoice = useThreeChoice
 		})
 
 		self:dispatch(event)
@@ -1575,7 +1589,7 @@ function ActivitySystem:enterBlockMap(activityId, blockActivityId)
 end
 
 function ActivitySystem:enterBlockMonsterShopView(activityId)
-	local activity = self:getActivityById(activityId)
+	local activity = self:getActivityByComplexId(activityId)
 
 	if activity then
 		local ui = activity:getActivityComplexUI()

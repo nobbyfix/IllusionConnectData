@@ -1,5 +1,6 @@
 require("dm.gameplay.activity.model.stageModel.ActivityStage")
 require("dm.gameplay.develop.model.team.Team")
+require("dm.gameplay.stage.model.StageManager")
 
 ActivityBlockMapActivity = class("ActivityBlockMapActivity", BaseActivity, _M)
 
@@ -11,8 +12,14 @@ ActivityBlockMapActivity:has("_storySet", {
 })
 
 local litStageType = {
+	HARD = "Hard",
 	NORMAL = "Normal",
 	ELITE = "Elite"
+}
+local cStageType = {
+	[litStageType.NORMAL] = StageType.kNormal,
+	[litStageType.ELITE] = StageType.kElite,
+	[litStageType.HARD] = StageType.kHard
 }
 
 function ActivityBlockMapActivity:initialize()
@@ -20,9 +27,11 @@ function ActivityBlockMapActivity:initialize()
 	self._storySet = {}
 	self._stagesMap[litStageType.NORMAL] = {}
 	self._stagesMap[litStageType.ELITE] = {}
+	self._stagesMap[litStageType.HARD] = {}
 	self._mapList = {
 		[litStageType.NORMAL] = {},
-		[litStageType.ELITE] = {}
+		[litStageType.ELITE] = {},
+		[litStageType.HARD] = {}
 	}
 	self._stagesMapIds = {}
 end
@@ -58,11 +67,6 @@ function ActivityBlockMapActivity:synchronize(data)
 end
 
 function ActivityBlockMapActivity:syncStageInfo(data)
-	local cStageType = {
-		[litStageType.NORMAL] = StageType.kNormal,
-		[litStageType.ELITE] = StageType.kElite
-	}
-
 	for type, v in pairs(data) do
 		if not self._stagesMap[type] then
 			self._stagesMap[type] = {}
@@ -179,6 +183,12 @@ function ActivityBlockMapActivity:getMapIdByStageType(stageType)
 	return stage:getMapId()
 end
 
+function ActivityBlockMapActivity:getMapIdStartTimeByStageType(stageType)
+	local stage = self:getStageByStageType(stageType)
+
+	return stage:getStartTimestamp()
+end
+
 function ActivityBlockMapActivity:getStageTypeById(pointId)
 	local point = self:getPointById(pointId)
 
@@ -269,7 +279,7 @@ function ActivityBlockMapActivity:isHeroAttrStarExtra()
 	return false
 end
 
-function ActivityBlockMapActivity:isAllPointPass()
+function ActivityBlockMapActivity:isAllPointPass(stageType)
 	for mapId, stage in ipairs(self._stagesMapIds) do
 		local points = stage:getIndex2Points()
 

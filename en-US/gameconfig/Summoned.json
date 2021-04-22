@@ -113,7 +113,9 @@
         },
         "RoleModel": "Model_ATSheng_Mermaid",
         "SkillRate": 0.0,
-        "SummonSurface": [],
+        "SummonSurface": [
+            "Model_ATSheng_dwhui_Mermaid"
+        ],
         "Type": "Summoned",
         "UniqueSkill": ""
     },
@@ -144,7 +146,9 @@
         },
         "RoleModel": "Model_ATSheng_Queen",
         "SkillRate": 0.0,
-        "SummonSurface": [],
+        "SummonSurface": [
+            "Model_ATSheng_dwhui_Queen"
+        ],
         "Type": "Summoned",
         "UniqueSkill": ""
     },

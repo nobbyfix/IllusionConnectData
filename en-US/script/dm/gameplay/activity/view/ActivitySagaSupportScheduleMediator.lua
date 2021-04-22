@@ -32,7 +32,8 @@ end
 
 function ActivitySagaSupportScheduleMediator:onRegister()
 	super.onRegister(self)
-	self:mapButtonHandlersClick(kBtnHandlers)
+	self:setupTopInfoWidget()
+	self:mapEventListener(self:getEventDispatcher(), EVT_RESET_DONE, self, self.doReset)
 
 	self._main = self:getView():getChildByName("main")
 	self._imageBg = self._main:getChildByName("Imagebg")
@@ -60,13 +61,10 @@ end
 function ActivitySagaSupportScheduleMediator:setupTopInfoWidget()
 	local topInfoNode = self:getView():getChildByName("topinfo_node")
 	local config = {
-		style = 1,
-		currencyInfo = self._activity:getResourcesBanner(),
 		btnHandler = {
 			clickAudio = "Se_Click_Close_1",
 			func = bind1(self.onClickBack, self)
-		},
-		title = Strings:get("Activity_Saga_UI_26")
+		}
 	}
 	local injector = self:getInjector()
 	self._topInfoWidget = self:autoManageObject(injector:injectInto(TopInfoWidget:new(topInfoNode)))
@@ -74,11 +72,35 @@ function ActivitySagaSupportScheduleMediator:setupTopInfoWidget()
 	self._topInfoWidget:updateView(config)
 end
 
+function ActivitySagaSupportScheduleMediator:updateInfoWidget()
+	if not self._topInfoWidget then
+		return
+	end
+
+	local config = {
+		style = 1,
+		currencyInfo = self._activity:getResourcesBanner(),
+		title = Strings:get("Activity_Saga_UI_26")
+	}
+
+	self._topInfoWidget:updateView(config)
+end
+
 function ActivitySagaSupportScheduleMediator:enterWithData(data)
 	self._activityId = data.activityId or ActivityId.kActivityBlockZuoHe
+	self._activity = self._activitySystem:getActivityByComplexId(self._activityId)
 
+	if not self._activity then
+		self:dispatch(ShowTipEvent({
+			tip = Strings:get("Error_12806")
+		}))
+
+		return
+	end
+
+	self:mapButtonHandlersClick(kBtnHandlers)
+	self:updateInfoWidget()
 	self:initData()
-	self:setupTopInfoWidget()
 	self:initView()
 	self:updateViewByActivity()
 end
@@ -108,27 +130,19 @@ end
 function ActivitySagaSupportScheduleMediator:doReset()
 	self:disposeView()
 
-	self._activity = self._activitySystem:getActivityById(self._activityId)
+	self._activity = self._activitySystem:getActivityByComplexId(self._activityId)
 
 	if not self._activity then
 		self:dispatch(Event:new(EVT_POP_TO_TARGETVIEW, "homeView"))
 
-		return true
+		return
 	end
 
 	self:initData()
 	self:initView()
-
-	return false
 end
 
 function ActivitySagaSupportScheduleMediator:initData()
-	self._activity = self._activitySystem:getActivityById(self._activityId)
-
-	if not self._activity then
-		return
-	end
-
 	self._config = self._activity:getActivityConfig()
 	self._periodsInfo = self._activity:getPeriodsInfo()
 	self._periods = self._periodsInfo.periods

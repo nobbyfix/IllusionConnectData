@@ -95,7 +95,19 @@ function exports.UnassignRoles(env, target, ...)
 	end
 end
 
-function exports.Transform(env, target, hpRatio)
+function exports.Transform(env, target, hpRatio, triggerDie)
+	local skillSystem = env.global["$SkillSystem"]
+
+	if triggerDie then
+		skillSystem:activateSpecificTrigger(target, "DIE")
+	end
+
+	local timeTrigger = skillSystem:getTimeTrigger()
+
+	if timeTrigger then
+		timeTrigger:removeAction(target)
+	end
+
 	local formationSystem = env.global["$FormationSystem"]
 
 	formationSystem:transform(target, hpRatio)
@@ -207,5 +219,15 @@ function exports.CancelTargetView(env)
 
 	env.global.RecordImmediately(env, actor:getId(), "CancelTargetView", {
 		act = env["$id"]
+	})
+end
+
+function exports.SwitchActionTo(env, srcAnim, desAnim)
+	local actor = env["$actor"]
+
+	env.global.RecordImmediately(env, actor:getId(), "SwitchActionTo", {
+		act = env["$id"],
+		srcAnim = srcAnim,
+		desAnim = desAnim
 	})
 end

@@ -170,6 +170,9 @@
     "Target_MTZMEShi": {
         "Function": "return MainTarget()"
     },
+    "Target_MZGXiu": {
+        "Function": "return MainTarget()"
+    },
     "Target_NCai": {
         "Function": "return GenInfo(EnemyAll(ROW_OF(TARGET)),Red)"
     },
@@ -208,6 +211,9 @@
     },
     "Target_SLMen": {
         "Function": "return GenInfo(EnemyAll(),Red)"
+    },
+    "Target_SLWan": {
+        "Function": "return GenInfo(EnemyAll(COL_OF(TARGET)),Red)"
     },
     "Target_SRen": {
         "Function": "return GenInfo(EnemyAll(),Red)"

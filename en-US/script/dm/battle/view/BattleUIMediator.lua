@@ -1377,7 +1377,7 @@ function BattleUIMediator:createHeroTip()
 
 	anim:posite(568, 320)
 	anim:addTo(self:getView(), -1)
-	AdjustUtils.adjustLayoutByType(anim, AdjustUtils.kAdjustType.Left + AdjustUtils.kAdjustType.Bottom)
+	AdjustUtils.adjustLayoutByType(anim, AdjustUtils.kAdjustType.Left + AdjustUtils.kAdjustType.Top)
 
 	self._heroTipWidget = BattleHeroTipWidget:new(viewNode)
 

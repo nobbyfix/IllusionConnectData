@@ -63,19 +63,19 @@ end
 
 function ActivityBlockMonsterShopBuyItemMediator:refreshData()
 	self._storage = self._itemData.amount
-	self._maxNumber = self._itemData.amount
+	local costType = self._itemData.costId
+	local maxMoney = self._bagSystem:getItemCount(costType)
+	local costPrice = self._itemData.price
+	local maxNum = math.floor(maxMoney / costPrice)
+
+	if maxNum <= 0 then
+		maxNum = 1
+	end
 
 	if self._storage == -1 then
-		local costType = self._itemData.costId
-		local maxMoney = self._bagSystem:getItemCount(costType)
-		local costPrice = self._itemData.price
-		local maxNum = math.floor(maxMoney / costPrice)
-
-		if maxNum <= 0 then
-			maxNum = 1
-		end
-
 		self._maxNumber = maxNum
+	else
+		self._maxNumber = math.min(self._itemData.amount, maxNum)
 	end
 
 	if self._maxNumber == 0 then
@@ -347,7 +347,7 @@ function ActivityBlockMonsterShopBuyItemMediator:refreshMoney()
 
 		self._price:setString(costPrice)
 		self._selectCount:setString(self._curNumber)
-		self._remainCount:setString(self._maxNumber)
+		self._remainCount:setString(self._itemData.amount)
 		self._totalPrice:setString(costSum)
 		self._remainCount:setVisible(true)
 		self._buyTitleText:setVisible(true)

@@ -1932,6 +1932,11 @@ local modules = {
 							res = "asset/ui/ActivitySunflowerMain.csb",
 							name = "ActivitySunflowerMainView",
 							mediator = "ActivitySunflowerMainMediator"
+						},
+						{
+							res = "asset/ui/ActivityFireMain.csb",
+							name = "ActivityFireMainView",
+							mediator = "ActivityFireMainMediator"
 						}
 					}
 				}

@@ -328,6 +328,10 @@ function all.ApplyRPDamage_ResultCheck(_env, actor, target, damage)
 		damage = damage + MoreRage
 	end
 
+	if global.MARKED(_env, "HYXia")(_env, target) then
+		damage = 0
+	end
+
 	global.ApplyRPDamage(_env, target, damage)
 
 	local buff_rpdown = global.SpecialNumericEffect(_env, "+rpdown", {
@@ -694,6 +698,10 @@ function all.EvalDamage_FlagCheck(_env, actor, target, dmgFactor, passiveFactors
 		end
 	end
 
+	if global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "GUIDIE_SHENYIN")) > 0 then
+		damage.val = 0
+	end
+
 	return damage
 end
 
@@ -959,6 +967,10 @@ function all.EvalAOEDamage_FlagCheck(_env, actor, target, dmgFactor, passiveFact
 		if cost > 14 then
 			damage.val = damage.val * 1.2
 		end
+	end
+
+	if global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "GUIDIE_SHENYIN")) > 0 then
+		damage.val = 0
 	end
 
 	return damage
@@ -1519,21 +1531,17 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 				buff
 			})
 		end
-
-		if global.MARKED(_env, "QTQCi")(_env, target) then
-			local RpFactor = global.SpecialPropGetter(_env, "Skill_QTQCi_Passive_RP")(_env, target)
-
-			if RpFactor and RpFactor ~= 0 then
-				global.ApplyRPRecovery(_env, target, RpFactor)
-			end
-		end
 	end
 
-	if global.SelectBuffCount(_env, target, global.BUFF_MARKED_ALL(_env, "IMMUNE", "UR_EQUIPMENT", "DURANDAL")) > 0 then
+	if global.SelectBuffCount(_env, target, global.BUFF_MARKED_ALL(_env, "RECORD_DMAGE")) > 0 then
 		local buff_damage_count = global.SpecialNumericEffect(_env, "+damage_count", {
 			"+Normal",
 			"+Normal"
 		}, damage.val)
+		local buff_damage_from = global.SpecialNumericEffect(_env, "+damage_from", {
+			"+Normal",
+			"+Normal"
+		}, 1)
 
 		global.ApplyBuff(_env, target, {
 			timing = 0,
@@ -1543,7 +1551,20 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 				"BUFF",
 				"UNDISPELLABLE",
 				"UNSTEALABLE",
-				"DAMAGECOUNT"
+				"DAMAGECOUNT0408"
+			}
+		}, {
+			buff_damage_count
+		})
+		global.ApplyBuff(_env, actor, {
+			timing = 0,
+			duration = 99,
+			tags = {
+				"NUMERIC",
+				"BUFF",
+				"UNDISPELLABLE",
+				"UNSTEALABLE",
+				"DAMAGEFROM0408"
 			}
 		}, {
 			buff_damage_count
@@ -1888,21 +1909,17 @@ function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimi
 				buff
 			})
 		end
-
-		if global.MARKED(_env, "QTQCi")(_env, target) then
-			local RpFactor = global.SpecialPropGetter(_env, "Skill_QTQCi_Passive_RP")(_env, target)
-
-			if RpFactor and RpFactor ~= 0 then
-				global.ApplyRPRecovery(_env, target, RpFactor)
-			end
-		end
 	end
 
-	if global.SelectBuffCount(_env, target, global.BUFF_MARKED_ALL(_env, "IMMUNE", "UR_EQUIPMENT", "DURANDAL")) > 0 then
+	if global.SelectBuffCount(_env, target, global.BUFF_MARKED_ALL(_env, "RECORD_DMAGE")) > 0 then
 		local buff_damage_count = global.SpecialNumericEffect(_env, "+damage_count", {
 			"+Normal",
 			"+Normal"
 		}, damage.val)
+		local buff_damage_from = global.SpecialNumericEffect(_env, "+damage_from", {
+			"+Normal",
+			"+Normal"
+		}, 0)
 
 		global.ApplyBuff(_env, target, {
 			timing = 0,
@@ -1912,7 +1929,20 @@ function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimi
 				"BUFF",
 				"UNDISPELLABLE",
 				"UNSTEALABLE",
-				"DAMAGECOUNT"
+				"DAMAGECOUNT0408"
+			}
+		}, {
+			buff_damage_count
+		})
+		global.ApplyBuff(_env, actor, {
+			timing = 0,
+			duration = 99,
+			tags = {
+				"NUMERIC",
+				"BUFF",
+				"UNDISPELLABLE",
+				"UNSTEALABLE",
+				"DAMAGEFROM0408"
 			}
 		}, {
 			buff_damage_count
@@ -2331,22 +2361,18 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 					buff
 				})
 			end
-
-			if global.MARKED(_env, "QTQCi")(_env, target) then
-				local RpFactor = global.SpecialPropGetter(_env, "Skill_QTQCi_Passive_RP")(_env, target)
-
-				if RpFactor and RpFactor ~= 0 then
-					global.ApplyRPRecovery(_env, target, RpFactor)
-				end
-			end
 		end
 	end
 
-	if global.SelectBuffCount(_env, target, global.BUFF_MARKED_ALL(_env, "IMMUNE", "UR_EQUIPMENT", "DURANDAL")) > 0 then
+	if global.SelectBuffCount(_env, target, global.BUFF_MARKED_ALL(_env, "RECORD_DMAGE")) > 0 then
 		local buff_damage_count = global.SpecialNumericEffect(_env, "+damage_count", {
 			"+Normal",
 			"+Normal"
 		}, damages[n].val)
+		local buff_damage_from = global.SpecialNumericEffect(_env, "+damage_from", {
+			"+Normal",
+			"+Normal"
+		}, 0)
 
 		global.ApplyBuff(_env, target, {
 			timing = 0,
@@ -2356,7 +2382,20 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 				"BUFF",
 				"UNDISPELLABLE",
 				"UNSTEALABLE",
-				"DAMAGECOUNT"
+				"DAMAGECOUNT0408"
+			}
+		}, {
+			buff_damage_count
+		})
+		global.ApplyBuff(_env, actor, {
+			timing = 0,
+			duration = 99,
+			tags = {
+				"NUMERIC",
+				"BUFF",
+				"UNDISPELLABLE",
+				"UNSTEALABLE",
+				"DAMAGEFROM0408"
 			}
 		}, {
 			buff_damage_count
@@ -2784,22 +2823,18 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 					buff
 				})
 			end
-
-			if global.MARKED(_env, "QTQCi")(_env, target) then
-				local RpFactor = global.SpecialPropGetter(_env, "Skill_QTQCi_Passive_RP")(_env, target)
-
-				if RpFactor and RpFactor ~= 0 then
-					global.ApplyRPRecovery(_env, target, RpFactor)
-				end
-			end
 		end
 	end
 
-	if global.SelectBuffCount(_env, target, global.BUFF_MARKED_ALL(_env, "IMMUNE", "UR_EQUIPMENT", "DURANDAL")) > 0 then
+	if global.SelectBuffCount(_env, target, global.BUFF_MARKED_ALL(_env, "RECORD_DMAGE")) > 0 then
 		local buff_damage_count = global.SpecialNumericEffect(_env, "+damage_count", {
 			"+Normal",
 			"+Normal"
 		}, damages[n].val)
+		local buff_damage_from = global.SpecialNumericEffect(_env, "+damage_from", {
+			"+Normal",
+			"+Normal"
+		}, 0)
 
 		global.ApplyBuff(_env, target, {
 			timing = 0,
@@ -2809,7 +2844,20 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 				"BUFF",
 				"UNDISPELLABLE",
 				"UNSTEALABLE",
-				"DAMAGECOUNT"
+				"DAMAGECOUNT0408"
+			}
+		}, {
+			buff_damage_count
+		})
+		global.ApplyBuff(_env, actor, {
+			timing = 0,
+			duration = 99,
+			tags = {
+				"NUMERIC",
+				"BUFF",
+				"UNDISPELLABLE",
+				"UNSTEALABLE",
+				"DAMAGEFROM0408"
 			}
 		}, {
 			buff_damage_count
@@ -3030,7 +3078,7 @@ function all.ApplyHPMultiRecovery_ResultCheck(_env, actor, target, delays, heals
 	return global.MultiDelayCall(_env, delays, global.ApplyHPRecoveryN, target, heals, actor)
 end
 
-function all.ApplyRealDamage(_env, actor, target, dmgrange, dmgtype, damagerate, delays, lowerLimit)
+function all.ApplyRealDamage(_env, actor, target, dmgrange, dmgtype, damagerate, delays, multidamage, damage_compare, lowerLimit)
 	local this = _env.this
 	local global = _env.global
 	local result, damage = nil
@@ -3056,25 +3104,33 @@ function all.ApplyRealDamage(_env, actor, target, dmgrange, dmgtype, damagerate,
 
 	damage.val = atk * atkrate * (1 + hurtrate) * damagerate
 
+	if damage_compare then
+		damage.crit = damage_compare.crit
+	end
+
 	if damage and damage.crit then
 		damage.val = damage.val * (1.5 + critstrg)
 	end
 
 	damage.block = nil
 
+	if global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "GUIDIE_SHENYIN")) > 0 then
+		damage.val = 0
+	end
+
 	if dmgrange == 1 then
 		if dmgtype == 1 then
 			result = global.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 		elseif dmgtype == 2 then
-			result = global.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
+			result = global.ApplyHPMultiDamage_ResultCheck(_env, actor, target, delays, global.SplitValue(_env, damage, multidamage), lowerLimit)
 		end
 	elseif dmgrange == 2 then
 		damage.val = damage.val * (1 + aoerate)
 
 		if dmgtype == 1 then
-			result = global.ApplyHPMultiDamage_ResultCheck(_env, actor, target, delays, damage, lowerLimit)
+			result = global.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 		elseif dmgtype == 2 then
-			result = global.ApplyAOEHPMultiDamage_ResultCheck(_env, actor, target, delays, damage, lowerLimit)
+			result = global.ApplyAOEHPMultiDamage_ResultCheck(_env, actor, target, delays, global.SplitValue(_env, damage, multidamage), lowerLimit)
 		end
 	end
 

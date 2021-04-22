@@ -1368,69 +1368,6 @@ function scene_eventstory_zuohe_06a.actions.start_eventstory_zuohe_06a(_root, ar
 						"YYing_speak"
 					},
 					content = {
-						"eventstory_zuohe_06a_20"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_235",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"GYCZi_speak"
-					},
-					content = {
-						"eventstory_zuohe_06a_21"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_234",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"SYAi_speak"
-					},
-					content = {
-						"eventstory_zuohe_06a_22"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_233",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"YYing_speak"
-					},
-					content = {
 						"eventstory_zuohe_06a_23"
 					},
 					durations = {
@@ -1806,6 +1743,17 @@ function scene_eventstory_zuohe_06a.actions.start_eventstory_zuohe_06a(_root, ar
 					durations = {
 						0.03
 					}
+				}
+			end
+		}),
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "YYing_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "YYing/YYing_face_2.png",
+					pathType = "STORY_FACE"
 				}
 			end
 		}),
