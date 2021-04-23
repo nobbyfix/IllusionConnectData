@@ -590,7 +590,26 @@
             1,
             10
         ],
-        "DrawCardDesc": "",
+        "DrawCardDesc": [
+            {
+                "3": [
+                    "pic",
+                    "common_img_ssr"
+                ]
+            },
+            {
+                "25": [
+                    "pic",
+                    "common_img_sr"
+                ]
+            },
+            {
+                "72": [
+                    "pic",
+                    "common_img_r"
+                ]
+            }
+        ],
         "DrawCardDescTitle": "",
         "DrawCardENName": "",
         "DrawCardName": "",
@@ -653,7 +672,9 @@
             "UILINK_EN_Zhaohuan1ci",
             "UILINK_EN_Zhaohuan10ci"
         ],
-        "ShowReward": {},
+        "ShowReward": {
+            "Draw_HeroBtnName": "DrawCard_1UP_1New"
+        },
         "SpecialReward": "",
         "Tag": [
             "1UP"
