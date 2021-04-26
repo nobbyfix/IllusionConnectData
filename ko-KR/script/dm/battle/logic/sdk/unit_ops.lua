@@ -99,7 +99,9 @@ function exports.Transform(env, target, hpRatio, triggerDie)
 	local skillSystem = env.global["$SkillSystem"]
 
 	if triggerDie then
-		skillSystem:activateSpecificTrigger(target, "DIE")
+		skillSystem:activateSpecificTrigger(target, "TRANSFORM", {
+			isTransform = triggerDie
+		})
 	end
 
 	local timeTrigger = skillSystem:getTimeTrigger()
