@@ -154,6 +154,22 @@ function ActivityPointDetailMediator:setupSpPowerPanel()
 	end
 end
 
+function ActivityPointDetailMediator:getOwnMasterId(pointid)
+	local masterid = ConfigReader:getDataByNameIdAndKey("ActivityBlockPoint", pointid, "Master")
+
+	if masterid ~= "" then
+		return masterid
+	end
+
+	return nil
+end
+
+function ActivityPointDetailMediator:getOwnMasterRoleModel(masterid)
+	local roleModel = ConfigReader:getDataByNameIdAndKey("EnemyMaster", masterid, "RoleModel")
+
+	return roleModel
+end
+
 function ActivityPointDetailMediator:initAnim()
 	local mc = cc.MovieClip:create("guankaxiangqing_zhuxianguanka_UIjiaohudongxiao")
 
@@ -789,6 +805,11 @@ function ActivityPointDetailMediator:refreshTeamView()
 	local masterSystem = developSystem:getMasterSystem()
 	local masterData = masterSystem:getMasterById(team:getMasterId())
 	local roleModel = masterData:getModel()
+
+	if self:getOwnMasterId(self._pointId) then
+		roleModel = self:getOwnMasterRoleModel(self:getOwnMasterId(self._pointId))
+	end
+
 	local masterIcon = IconFactory:createRoleIconSprite({
 		stencil = 6,
 		iconType = "Bust5",
@@ -1000,6 +1021,7 @@ function ActivityPointDetailMediator:onRequsetSwip(times)
 			pointId = self._pointId,
 			wipeTimes = times
 		}
+		data.itemId = self._point:getMainItemId()
 
 		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, self:getInjector():getInstance("ActivityPointSweepView"), {
 			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)

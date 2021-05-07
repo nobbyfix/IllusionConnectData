@@ -698,9 +698,20 @@ function GallerySystem:checkCanGetHeroReward(partyId)
 
 	for key, v in pairs(partyMap) do
 		local heroIds = v:getHeroIds()
+		local specialHeroIds = self:getAlbumFeminineHeroForRareityString(v:getPartyId())
 
 		for i = 1, #heroIds do
 			local heroId = heroIds[i]
+			local hero = heroSystem:getHeroById(heroId)
+			local canGet = not heroRewards[heroId]
+
+			if hero and canGet then
+				return true
+			end
+		end
+
+		for i = 1, #specialHeroIds do
+			local heroId = specialHeroIds[i]
 			local hero = heroSystem:getHeroById(heroId)
 			local canGet = not heroRewards[heroId]
 
@@ -717,10 +728,21 @@ function GallerySystem:checkCanGetHeroRewardById(partyId)
 	local partyMap = self:getPartyMap()
 	local heroRewards = self:getHeroRewards()
 	local heroIds = partyMap[partyId]:getHeroIds()
+	local specialHeroIds = self:getAlbumFeminineHeroForRareityString(partyMap[partyId]:getPartyId())
 	local heroSystem = self._developSystem:getHeroSystem()
 
 	for i = 1, #heroIds do
 		local heroId = heroIds[i]
+		local canGet = not heroRewards[heroId]
+		local hero = heroSystem:getHeroById(heroId)
+
+		if hero and canGet then
+			return true
+		end
+	end
+
+	for i = 1, #specialHeroIds do
+		local heroId = specialHeroIds[i]
 		local canGet = not heroRewards[heroId]
 		local hero = heroSystem:getHeroById(heroId)
 
@@ -843,4 +865,28 @@ function GallerySystem:requestGalleryHeroReward(params, callback)
 			self:dispatch(Event:new(EVT_GALLERY_HEROREWARD_SUCC, response))
 		end
 	end)
+end
+
+function GallerySystem:getAlbumFeminineHeroForRareityString(Party)
+	local heroIds = {}
+	local party_Rareity = RareityStringToNumber[Party]
+
+	if party_Rareity then
+		local Hero_Album_Feminine = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Hero_Album_Feminine", "content")
+
+		for i = 1, #Hero_Album_Feminine do
+			local rareity = 12
+			local hero = self._developSystem:getHeroSystem():getHeroById(Hero_Album_Feminine[i])
+
+			if hero then
+				rareity = hero:getRarity()
+			end
+
+			if rareity == party_Rareity then
+				heroIds[#heroIds + 1] = Hero_Album_Feminine[i]
+			end
+		end
+	end
+
+	return heroIds
 end

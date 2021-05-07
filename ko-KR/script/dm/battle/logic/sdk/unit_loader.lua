@@ -348,6 +348,14 @@ function exports.GetSide(env, unit)
 	return unit:getSide()
 end
 
+function exports.GetUnitCid(env, unit)
+	return unit:getCid()
+end
+
+function exports.GetUnitUid(env, unit)
+	return unit:getUid()
+end
+
 function exports.GetCost(env, unit)
 	local enemyCost = unit:getEnemyCost() == 0 and unit:getCost() or unit:getEnemyCost()
 

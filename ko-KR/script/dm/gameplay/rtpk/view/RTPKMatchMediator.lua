@@ -78,9 +78,15 @@ function RTPKMatchMediator:createTimer()
 	local pvpWaitTime = 0
 
 	local function update()
+		local matchText = self._matchingPanel:getChildByName("Text_1")
+
+		matchText:setString(Strings:get("RTPK_Matching", {
+			countdown = time - tickCount
+		}))
+
 		tickCount = tickCount + 1
 
-		if time <= tickCount and not self._enterPvp then
+		if time < tickCount and not self._enterPvp then
 			self._delegate._needShowTips = true
 
 			self:dismiss()
@@ -232,15 +238,17 @@ function RTPKMatchMediator:setRivalInfo(data)
 	end
 
 	local model = IconFactory:getRoleModelByKey("HeroBase", rivalInfo.s or "ZTXChang")
+	local sfModel = ConfigReader:getDataByNameIdAndKey("Surface", rivalInfo.sf, "Model")
 	local role = IconFactory:createRoleIconSprite({
 		iconType = "Bust4",
-		id = model,
+		id = sfModel or model,
 		useAnim = self._settingModel:getRoleDynamic()
 	})
 
 	role:setTouchEnabled(true)
 	role:setScale(0.65)
 	role:addTo(heroNode):posite(70, -60)
+	heroNode:setScaleX(-1)
 
 	local headicon, oldIcon = IconFactory:createPlayerIcon({
 		clipType = 4,

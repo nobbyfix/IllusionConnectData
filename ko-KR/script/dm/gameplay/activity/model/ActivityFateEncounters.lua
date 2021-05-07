@@ -161,3 +161,13 @@ function ActivityFateEncounters:getActivityConfig()
 
 	return actConfig.ActivityConfig
 end
+
+function ActivityFateEncounters:getSubTaskLeaveNum()
+	local num = 0
+
+	for _, value in pairs(myTable) do
+		num = num + 1
+	end
+
+	return num
+end

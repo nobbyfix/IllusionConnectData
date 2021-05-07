@@ -95,6 +95,9 @@ BattleRoleObject:has("_masterWidget", {
 BattleRoleObject:has("_actionTransform", {
 	is = "rw"
 })
+BattleRoleObject:has("_actionTransformRevise", {
+	is = "rw"
+})
 BattleRoleObject:has("_isTeamFlipped", {
 	is = "rwb"
 })
@@ -118,6 +121,7 @@ function BattleRoleObject:initialize(id, dataModel, viewContext)
 	self._roleType = dataModel:getRoleType()
 	self._isLeftTeam = self:isLeft()
 	self._actionTransform = {}
+	self._actionTransformRevise = {}
 
 	self:setupViewContext(viewContext)
 
@@ -768,7 +772,12 @@ function BattleRoleObject:addBuff(args)
 	self._buffMap[priorityGroup] = groupMap
 	local buffValue = groupMap[display]
 	buffValue.count = (buffValue.count or 0) + 1
-	local isFixPos = buffModel.Id == "Protecto"
+	local isFixPos = buffModel.Id == "Protecto" or buffModel.Id == "LeadStage_SenLing" or buffModel.Id == "LeadStage_SenLing_Start"
+	local fixOrder = {
+		Protecto = 1,
+		LeadStage_SenLing = 0,
+		LeadStage_SenLing_Start = 0
+	}
 
 	if buffValue.count <= 1 or buffValue.displayNodes == nil or #buffValue.displayNodes == 0 then
 		if buffModel.Effect and buffModel.Effect ~= "" then
@@ -787,7 +796,7 @@ function BattleRoleObject:addBuff(args)
 						table.removevalues(buffValue.displayNodes, mc)
 						mc:removeFromParent()
 					end
-				end, isFixPos)
+				end, isFixPos, fixOrder[buffModel.Id])
 			end
 
 			local displayNode = addEffect(buffModel.Effect, buffModel.Invisible == 2 and "cover" or "front")
@@ -1046,7 +1055,7 @@ function BattleRoleObject:colorReset()
 	self._roleAnim:setColorTransform(self._baseColorTrans)
 end
 
-function BattleRoleObject:addActiveEffect(mcFile, loop, dot, layer, zOrder, callback, isFixPos)
+function BattleRoleObject:addActiveEffect(mcFile, loop, dot, layer, zOrder, callback, isFixPos, FixZorder)
 	if not mcFile then
 		return
 	end
@@ -1079,9 +1088,6 @@ function BattleRoleObject:addActiveEffect(mcFile, loop, dot, layer, zOrder, call
 
 	if isFixPos then
 		local w_p = anim:getParent():convertToWorldSpace(point)
-
-		anim:changeParent(self._battleGround:getGroundLayer())
-
 		local pos_h = self:getHomePlace()
 		local pos_r = {
 			x = pos_h.x + dot.x * 0.4,
@@ -1090,6 +1096,12 @@ function BattleRoleObject:addActiveEffect(mcFile, loop, dot, layer, zOrder, call
 
 		self._battleGround:setRelPosition(anim, pos_r, 100, 100)
 		anim:setScale(1)
+
+		if FixZorder and FixZorder <= 0 then
+			anim:changeParent(self._battleGround:getCellLayer())
+		else
+			anim:changeParent(self._battleGround:getGroundLayer())
+		end
 	end
 
 	return anim
@@ -1104,12 +1116,6 @@ function BattleRoleObject:watchAnimAction()
 		end
 
 		playAnimation(anim, frameIndex, animName, isloop)
-	end
-end
-
-function BattleRoleObject:switchAction(srcAnim, descAnim)
-	if self._roleAnim:hasAnimation(descAnim) then
-		self._actionTransform[srcAnim] = descAnim
 	end
 end
 
@@ -1829,6 +1835,26 @@ function BattleRoleObject:parseSkillTimeline(actionName, specialEvts)
 			anim:addUserEventForStringEx(actionName, name, frame, dataStr)
 
 			i = i + 1
+		end
+	end
+end
+
+function BattleRoleObject:switchAction(srcAnim, descAnim)
+	if self._roleAnim:hasAnimation(descAnim) then
+		if self._actionTransform[srcAnim] and self._actionTransform[srcAnim] == descAnim then
+			return
+		end
+
+		self._actionTransform[srcAnim] = descAnim
+		self._actionTransformRevise[descAnim] = srcAnim
+
+		for k, v in pairs(skillList) do
+			if v == descAnim then
+				self._roleAnim:removeUserEventForAnimation(srcAnim)
+				self:parseSkillTimeline(descAnim)
+
+				break
+			end
 		end
 	end
 end

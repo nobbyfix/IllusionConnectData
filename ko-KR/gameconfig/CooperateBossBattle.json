@@ -151,6 +151,44 @@
             }
         ]
     },
+    "CooperateBoss_YBYa": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_27",
+        "BlockBattleConfig": "CooperateBoss_Stage_1",
+        "EnemyCard": "CooperateBoss_1",
+        "EnemyMaster": "CooperateBoss_YBYa",
+        "Name": "HeroBase_Name_YBYa",
+        "PointHead": "Model_YBYa",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "CooperateBoss_YLMGZhu": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_27",
+        "BlockBattleConfig": "CooperateBoss_Stage_1",
+        "EnemyCard": "CooperateBoss_1",
+        "EnemyMaster": "CooperateBoss_YLMGZhu",
+        "Name": "HeroBase_Name_YLMGZhu",
+        "PointHead": "Model_YLMGZhu",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
     "CooperateBoss_ZZBBWei": {
         "BGM": [
             "Mus_Battle_Whale",

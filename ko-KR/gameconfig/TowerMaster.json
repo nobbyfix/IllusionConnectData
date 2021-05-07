@@ -1113,15 +1113,12 @@
                 {
                     "param": [
                         [
-                            "Cure"
-                        ],
-                        [
-                            "Support"
+                            "Star1Up"
                         ]
                     ],
                     "range": "group",
                     "scope": [
-                        5,
+                        10,
                         100
                     ],
                     "type": "tag"
@@ -1133,10 +1130,10 @@
                 {
                     "param": [
                         [
-                            "TPGZhu"
+                            "LFEr"
                         ],
                         [
-                            "LCYShi"
+                            "MLYTLSha"
                         ]
                     ],
                     "range": "group",
@@ -1153,7 +1150,176 @@
                 {
                     "param": [
                         [
-                            "Defense"
+                            "Cure"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        3,
+                        100
+                    ],
+                    "type": "tag"
+                }
+            ]
+        ],
+        "TeamSkillCondition4": [
+            [
+                {
+                    "param": [],
+                    "range": "group",
+                    "scope": [
+                        [
+                            15,
+                            1
+                        ],
+                        [
+                            100,
+                            1
+                        ]
+                    ],
+                    "type": "avgcost"
+                }
+            ]
+        ],
+        "TeamSkillCondition5": [
+            [
+                {
+                    "param": [
+                        [
+                            "Cure"
+                        ]
+                    ],
+                    "range": "hold",
+                    "scope": [
+                        [
+                            80,
+                            1
+                        ],
+                        [
+                            100,
+                            1
+                        ]
+                    ],
+                    "type": "percent"
+                }
+            ]
+        ],
+        "TeamSkillCondition6": [
+            [
+                {
+                    "param": [
+                        [
+                            "Rarity14"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        5,
+                        100
+                    ],
+                    "type": "tag"
+                }
+            ]
+        ]
+    },
+    "Tower_1_Master6": {
+        "ActionSkill1": "Sk_Action1_Master_LiMing",
+        "ActionSkill2": "Sk_Action2_Master_LiMing",
+        "ActionSkill3": "Sk_Action3_Master_LiMing",
+        "AttackSkill": "Sk_Attack_Master_LiMing",
+        "Buff": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            7
+        ],
+        "Factor": [
+            1,
+            1.1,
+            1.3,
+            1.5,
+            1.9,
+            2.2,
+            2.7,
+            3.3,
+            4
+        ],
+        "Feature": "Tower_1_MasterBase_Feature_6",
+        "Master": "Tower_1_PlayerMaster_6",
+        "MinAttack": [
+            1200,
+            1300,
+            1500,
+            1800,
+            2100,
+            2500,
+            3000,
+            3500,
+            4000
+        ],
+        "Point": [
+            "Tower_1_Point1",
+            "Tower_1_Point2",
+            "Tower_1_Point3",
+            "Tower_1_Point4",
+            "Tower_1_Point5",
+            "Tower_1_Point6",
+            "Tower_1_Point7",
+            "Tower_1_Point8",
+            "Tower_1_Point9"
+        ],
+        "TeamSkill1": "SectSkill_Master_LiMing_1",
+        "TeamSkill2": "SectSkill_Master_LiMing_2",
+        "TeamSkill3": "SectSkill_Master_LiMing_3",
+        "TeamSkill4": "SectSkill_Master_LiMing_4",
+        "TeamSkill5": "SectSkill_Master_LiMing_5",
+        "TeamSkill6": "SectSkill_Master_LiMing_6",
+        "TeamSkillCondition": [],
+        "TeamSkillCondition1": [
+            [
+                {
+                    "param": [
+                        [
+                            "Star1Up"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        10,
+                        100
+                    ],
+                    "type": "tag"
+                }
+            ]
+        ],
+        "TeamSkillCondition2": [
+            [
+                {
+                    "param": [
+                        [
+                            "TPGZhu"
+                        ],
+                        [
+                            "FEMSi"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        1,
+                        2
+                    ],
+                    "type": "tag"
+                }
+            ]
+        ],
+        "TeamSkillCondition3": [
+            [
+                {
+                    "param": [
+                        [
+                            "Support"
                         ]
                     ],
                     "range": "group",
@@ -1170,7 +1336,7 @@
                 {
                     "param": [
                         [
-                            "Summon"
+                            "Cost13Down"
                         ]
                     ],
                     "range": "group",
@@ -1188,9 +1354,6 @@
                     "param": [
                         [
                             "Support"
-                        ],
-                        [
-                            "Cure"
                         ]
                     ],
                     "range": "hold",

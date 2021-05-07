@@ -103,6 +103,12 @@ function MasterLeadStageKuang:refreshInfo()
 	icon:addTo(self._heroIconBg)
 	icon:setOpacity(50)
 
+	if self._leadStageLevel == 8 then
+		icon:offset(0, -27)
+		self._imgKuang:setPositionY(470)
+		self._imgZhezhao:setPositionY(470)
+	end
+
 	local info = {
 		id = mid,
 		iconType = "Bust14",
@@ -118,6 +124,10 @@ function MasterLeadStageKuang:refreshInfo()
 
 	icon:setAnchorPoint(cc.p(0, 0))
 	icon:addTo(self._heroIcon)
+
+	if self._leadStageLevel == 8 then
+		icon:offset(0, -27)
+	end
 end
 
 function MasterLeadStageKuang:show()

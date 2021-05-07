@@ -60,10 +60,10 @@ all.LeadStage_XueZhan_skill = {
 		local this = global.__skill({
 			global = global
 		}, prototype, externs)
-		this.summonFactorNum = externs.summonFactorNum
+		this.summonNum = externs.summonNum
 
-		if this.summonFactorNum == nil then
-			this.summonFactorNum = 2
+		if this.summonNum == nil then
+			this.summonNum = 2
 		end
 
 		this.summonFactorAtk = externs.summonFactorAtk
@@ -90,6 +90,11 @@ all.LeadStage_XueZhan_skill = {
 			this.RageSpdFactor = 0.1
 		end
 
+		this.summonFactor = {
+			this.summonFactorHp,
+			this.summonFactorAtk,
+			this.summonFactorDef
+		}
 		local passive = __action(this, {
 			name = "passive",
 			entry = prototype.passive
@@ -138,7 +143,7 @@ all.LeadStage_XueZhan_skill = {
 				2
 			})
 
-			if this.summonFactorNum == 3 then
+			if this.summonNum == 3 then
 				local i = global.Random(_env, 1, 2)
 				local Summoned3 = (i ~= 1 or global.Summon(_env, _env.ACTOR, "Summoned_LengMo", this.summonFactor, nil, {
 					global.Random(_env, 1, 9)
@@ -186,7 +191,7 @@ all.LeadStage_LieSha_skill = {
 			entry = prototype.passive
 		})
 		passive = global["[duration]"](this, {
-			0
+			120
 		}, passive)
 		this.passive = global["[trigger_by]"](this, {
 			"SELF:ENTER"
@@ -202,7 +207,7 @@ all.LeadStage_LieSha_skill = {
 
 		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
 		exec["@time"]({
-			0
+			100
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
@@ -210,16 +215,24 @@ all.LeadStage_LieSha_skill = {
 			if global.EnemyMaster(_env) then
 				local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, global.EnemyMaster(_env))
 				local atk = global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR)
-				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, global.EnemyMaster(_env), {
-					1,
-					1,
-					0
-				})
-				damage.val = global.min(_env, maxHp * this.MaxHpDamgeRate, atk * 5)
-				damage.crit = nil
-				damage.block = nil
+				local damage = 0
 
-				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, global.EnemyMaster(_env), damage)
+				if global.MARKED(_env, "Player_Master")(_env, global.EnemyMaster(_env)) then
+					damage = maxHp * this.MaxHpDamgeRate
+				else
+					damage = global.min(_env, maxHp * this.MaxHpDamgeRate, atk * 5)
+				end
+
+				global.ApplyRealDamage(_env, _env.ACTOR, global.EnemyMaster(_env), 1, 1, 0, 0, 0, nil, damage)
+				global.AnimForTrgt(_env, global.EnemyMaster(_env), {
+					loop = 1,
+					anim = "baodian_shoujibaodian",
+					zOrder = "TopLayer",
+					pos = {
+						0.5,
+						0.5
+					}
+				})
 			end
 		end)
 
@@ -282,6 +295,7 @@ all.LeadStage_BiLei_skill = {
 			global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
 				timing = 0,
 				duration = 99,
+				display = "LeadStage_BiLei",
 				tags = {
 					"NUMERIC",
 					"BUFF",
@@ -322,10 +336,10 @@ all.LeadStage_FuHun_skill = {
 			entry = prototype.passive
 		})
 		passive = global["[duration]"](this, {
-			0
+			2700
 		}, passive)
 		this.passive = global["[trigger_by]"](this, {
-			"SELF:AFTER_UNIQUE"
+			"SELF:BEFORE_UNIQUE"
 		}, passive)
 
 		return this
@@ -338,7 +352,7 @@ all.LeadStage_FuHun_skill = {
 
 		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
 		exec["@time"]({
-			0
+			2000
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
@@ -346,7 +360,16 @@ all.LeadStage_FuHun_skill = {
 			for _, unit in global.__iter__(global.EnemyUnits(_env)) do
 				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
 
-				global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
+				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
+				global.AnimForTrgt(_env, _env.ACTOR, {
+					loop = 1,
+					anim = "cx_nengliangchongji",
+					zOrder = "TopLayer",
+					pos = {
+						0.5,
+						0.5
+					}
+				})
 			end
 		end)
 
@@ -366,12 +389,18 @@ all.LeadStage_SenLing_skill = {
 			this.RecoveryFactor = 0.04
 		end
 
+		this.Time = externs.Time
+
+		if this.Time == nil then
+			this.Time = 40
+		end
+
 		local passive1 = __action(this, {
 			name = "passive1",
 			entry = prototype.passive1
 		})
 		passive1 = global["[duration]"](this, {
-			0
+			650
 		}, passive1)
 		this.passive1 = global["[trigger_by]"](this, {
 			"SELF:ENTER"
@@ -385,7 +414,7 @@ all.LeadStage_SenLing_skill = {
 		}, passive2)
 		this.passive2 = global["[schedule_at_moments]"](this, {
 			{
-				60000
+				this.Time * 1000
 			}
 		}, passive2)
 		local passive3 = __action(this, {
@@ -411,6 +440,38 @@ all.LeadStage_SenLing_skill = {
 		exec["@time"]({
 			0
 		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local buff_start = global.SpecialNumericEffect(_env, "+LeadStage_SenLing_start", {
+				"+Normal",
+				"+Normal"
+			}, 1)
+			local buff_show = global.SpecialNumericEffect(_env, "+LeadStage_SenLing", {
+				"+Normal",
+				"+Normal"
+			}, 1)
+
+			global.ApplyBuff(_env, _env.ACTOR, {
+				timing = 2,
+				duration = 2,
+				display = "LeadStage_SenLing_Start",
+				tags = {
+					"LeadStage_SenLing_skill_Start"
+				}
+			}, {
+				buff_start
+			})
+			global.DelayCall(_env, 600, global.ApplyBuff, _env.ACTOR, {
+				timing = 0,
+				duration = 99,
+				display = "LeadStage_SenLing",
+				tags = {
+					"LeadStage_SenLing_skill",
+					"Magic_Circle"
+				}
+			}, {
+				buff_show
+			})
 		end)
 
 		return _env
@@ -450,7 +511,7 @@ all.LeadStage_SenLing_skill = {
 				for _, unit in global.__iter__(global.FriendUnits(_env)) do
 					local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, unit)
 
-					global.ApplyHPRecovery(_env, unit, maxHp * this.RecoveryFactor)
+					global.ApplyHPRecovery(_env, unit, maxHp * this.RecoveryFactor, true)
 				end
 			end
 		end)
@@ -458,7 +519,7 @@ all.LeadStage_SenLing_skill = {
 		return _env
 	end
 }
-all.LeadStage_KuangNu_skill = {
+all.LeadStage_LiMing_skill = {
 	__new__ = function (prototype, externs, global)
 		local __function = global.__skill_function__
 		local __action = global.__skill_action__
@@ -469,12 +530,6 @@ all.LeadStage_KuangNu_skill = {
 
 		if this.RageFactor == nil then
 			this.RageFactor = 700
-		end
-
-		this.RageSpdFactor = externs.RageSpdFactor
-
-		if this.RageSpdFactor == nil then
-			this.RageSpdFactor = 0.1
 		end
 
 		local passive = __action(this, {
@@ -503,24 +558,7 @@ all.LeadStage_KuangNu_skill = {
 			local this = _env.this
 			local global = _env.global
 
-			global.ApplyEnergyRecovery(_env, global.GetOwner(_env, _env.ACTOR), global.Energy)
-
-			local buff = global.RageGainEffect(_env, "+", {
-				"+Normal",
-				"+Normal"
-			}, this.RageSpdFactor)
-
-			global.ApplyBuff(_env, _env.ACTOR, {
-				timing = 0,
-				duration = 99,
-				tags = {
-					"LeadStage_KuangNu_skill",
-					"UNDISPELLABLE",
-					"UNSTEALABLE"
-				}
-			}, {
-				buff
-			})
+			global.ApplyRPRecovery(_env, _env.ACTOR, this.RageFactor)
 		end)
 
 		return _env

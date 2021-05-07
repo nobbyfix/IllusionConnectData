@@ -1,5 +1,18 @@
 local floor = math.floor
 BattleMasterWidget = class("BattleMasterWidget", BattleWidget, _M)
+local SkillStackRes = {
+	[6] = {
+		bottom = "zhandou_img_nz_di.png",
+		progress = {
+			"zhandou_img_nz_1.png",
+			"zhandou_img_nz_2.png",
+			"zhandou_img_nz_3.png",
+			"zhandou_img_nz_4.png",
+			"zhandou_img_nz_5.png",
+			"zhandou_img_nz_6.png"
+		}
+	}
+}
 
 function BattleMasterWidget:initialize(view)
 	super.initialize(self, view)
@@ -10,6 +23,7 @@ function BattleMasterWidget:setupView(view)
 	self._grayCover = view:getChildByFullName("gray_cover")
 	self._skillNode = view:getChildByName("skill_node")
 	self._skillWidgets = {}
+	self._skillStackProgress = {}
 
 	for i = 1, 3 do
 		local node = self._skillNode:getChildByName("skill" .. i)
@@ -29,9 +43,43 @@ function BattleMasterWidget:setupView(view)
 		anim:addCallbackAtFrame(170, function (cid, mc)
 			mc:gotoAndStop(1)
 		end)
+
+		self._skillStackProgress[i] = node:getChildByName("progress")
+
+		self._skillStackProgress[i]:setVisible(false)
 	end
 
 	view:setVisible(false)
+end
+
+function BattleMasterWidget:StackSkill(skillId, stacknum, totalnum)
+	local function statck(index, stacknum, totalnum)
+		if self._skillStackProgress[index] and SkillStackRes[totalnum] then
+			self._skillStackProgress[index]:setVisible(true)
+			self._skillStackProgress[index]:loadTexture(SkillStackRes[totalnum].bottom, ccui.TextureResType.plistType)
+
+			local percent = self._skillStackProgress[index]:getChildByName("percent")
+
+			if SkillStackRes[totalnum].progress[stacknum] then
+				percent:loadTexture(SkillStackRes[totalnum].progress[stacknum], ccui.TextureResType.plistType)
+				percent:setVisible(true)
+			end
+
+			if stacknum == 0 then
+				percent:setVisible(false)
+			end
+		end
+	end
+
+	for k, v in pairs(self._skills) do
+		print(v.id, skillId)
+
+		if v.id == skillId then
+			statck(k, stacknum, totalnum)
+
+			break
+		end
+	end
 end
 
 function BattleMasterWidget:setupSkills(skills)

@@ -2573,3 +2573,35 @@ function HeroSystem:cleanAwakeHeroFragIdAndDebrisCostCount()
 	self._awakeDebrisCostCount = 0
 	self._awakeHeroFragId = ""
 end
+
+function HeroSystem:isLinkStageHero(heroId)
+	if self._linkHeroMap == nil then
+		self._linkHeroMap = {}
+		local Hero_Linkage = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Hero_Linkage", "content")
+
+		for i = 1, #Hero_Linkage do
+			self._linkHeroMap[Hero_Linkage[i]] = 1
+		end
+	end
+
+	return self._linkHeroMap[heroId] and true or false
+end
+
+function HeroSystem:tryEnterAwakenShowView(heroId)
+	local view = self:getInjector():getInstance("HeroStrengthAwakenView")
+
+	self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
+		fromAlbum = true,
+		heroId = heroId
+	}))
+end
+
+function HeroSystem:checkHaveAwaken(heroId)
+	local awakenStarConfig = ConfigReader:getRecordById("HeroAwaken", heroId)
+
+	if awakenStarConfig and awakenStarConfig.StarId then
+		return true
+	end
+
+	return false
+end

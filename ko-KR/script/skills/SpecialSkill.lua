@@ -385,51 +385,97 @@ all.Skill_CombatDominating = {
 
 			if this.CombatDominating_HurtRateFactor ~= 0 then
 				for _, unit in global.__iter__(global.EnemyUnits(_env)) do
-					local buffeft1 = global.NumericEffect(_env, "+hurtrate", {
-						"+Normal",
-						"+Normal"
-					}, this.CombatDominating_HurtRateFactor)
+					if this.CombatDominating_HurtRateFactor > 0 then
+						local buffeft1 = global.NumericEffect(_env, "+hurtrate", {
+							"+Normal",
+							"+Normal"
+						}, this.CombatDominating_HurtRateFactor)
 
-					global.ApplyBuff(_env, unit, {
-						duration = 99,
-						group = "Skill_MainStage_CombatDominating_Hurtrate",
-						timing = 0,
-						limit = 1,
-						tags = {
-							"STATUS",
-							"NUMERIC",
-							"UNDISPELLABLE",
-							"UNSTEALABLE",
-							"Skill_MainStage_CombatDominating_Hurtrate"
-						}
-					}, {
-						buffeft1
-					})
+						global.ApplyBuff(_env, unit, {
+							duration = 99,
+							group = "Skill_MainStage_CombatDominating_Hurtrate",
+							timing = 0,
+							limit = 1,
+							tags = {
+								"STATUS",
+								"NUMERIC",
+								"UNDISPELLABLE",
+								"UNSTEALABLE",
+								"Skill_MainStage_CombatDominating_Hurtrate"
+							}
+						}, {
+							buffeft1
+						})
+					else
+						local buffeft1 = global.NumericEffect(_env, "-hurtrate", {
+							"+Normal",
+							"+Normal"
+						}, global.abs(_env, this.CombatDominating_HurtRateFactor))
+
+						global.ApplyBuff(_env, unit, {
+							duration = 99,
+							group = "Skill_MainStage_CombatDominating_Hurtrate",
+							timing = 0,
+							limit = 1,
+							tags = {
+								"STATUS",
+								"NUMERIC",
+								"UNDISPELLABLE",
+								"UNSTEALABLE",
+								"Skill_MainStage_CombatDominating_Hurtrate"
+							}
+						}, {
+							buffeft1
+						})
+					end
 				end
 			end
 
 			if this.CombatDominating_UnHurtRateFactor ~= 0 then
 				for _, unit in global.__iter__(global.EnemyUnits(_env)) do
-					local buffeft2 = global.NumericEffect(_env, "+unhurtrate", {
-						"+Normal",
-						"+Normal"
-					}, this.CombatDominating_UnHurtRateFactor)
+					if this.CombatDominating_UnHurtRateFactor > 0 then
+						local buffeft2 = global.NumericEffect(_env, "+unhurtrate", {
+							"+Normal",
+							"+Normal"
+						}, this.CombatDominating_UnHurtRateFactor)
 
-					global.ApplyBuff(_env, unit, {
-						duration = 99,
-						group = "Skill_MainStage_CombatDominating_UnHurtrate",
-						timing = 0,
-						limit = 1,
-						tags = {
-							"STATUS",
-							"NUMERIC",
-							"UNDISPELLABLE",
-							"UNSTEALABLE",
-							"Skill_MainStage_CombatDominating_UnHurtrate"
-						}
-					}, {
-						buffeft2
-					})
+						global.ApplyBuff(_env, unit, {
+							duration = 99,
+							group = "Skill_MainStage_CombatDominating_UnHurtrate",
+							timing = 0,
+							limit = 1,
+							tags = {
+								"STATUS",
+								"NUMERIC",
+								"UNDISPELLABLE",
+								"UNSTEALABLE",
+								"Skill_MainStage_CombatDominating_UnHurtrate"
+							}
+						}, {
+							buffeft2
+						})
+					else
+						local buffeft2 = global.NumericEffect(_env, "-unhurtrate", {
+							"+Normal",
+							"+Normal"
+						}, global.abs(_env, this.CombatDominating_UnHurtRateFactor))
+
+						global.ApplyBuff(_env, unit, {
+							duration = 99,
+							group = "Skill_MainStage_CombatDominating_UnHurtrate",
+							timing = 0,
+							limit = 1,
+							tags = {
+								"STATUS",
+								"NUMERIC",
+								"UNDISPELLABLE",
+								"UNSTEALABLE",
+								"Skill_MainStage_CombatDominating_UnHurtrate"
+							}
+						}, {
+							buffeft2
+						})
+					end
 				end
 			end
 		end)
@@ -458,7 +504,9 @@ all.Skill_CombatDominating = {
 			local global = _env.global
 
 			if global.GetSide(_env, _env.unit) ~= global.GetSide(_env, _env.ACTOR) then
-				if this.CombatDominating_HurtRateFactor ~= 0 then
+				if this.CombatDominating_HurtRateFactor == 0 then
+					-- Nothing
+				elseif this.CombatDominating_HurtRateFactor > 0 then
 					local buffeft1 = global.NumericEffect(_env, "+hurtrate", {
 						"+Normal",
 						"+Normal"
@@ -479,13 +527,57 @@ all.Skill_CombatDominating = {
 					}, {
 						buffeft1
 					})
+				else
+					local buffeft1 = global.NumericEffect(_env, "-hurtrate", {
+						"+Normal",
+						"+Normal"
+					}, global.abs(_env, this.CombatDominating_HurtRateFactor))
+
+					global.ApplyBuff(_env, _env.unit, {
+						duration = 99,
+						group = "Skill_MainStage_CombatDominating_Hurtrate",
+						timing = 0,
+						limit = 1,
+						tags = {
+							"STATUS",
+							"NUMERIC",
+							"UNDISPELLABLE",
+							"UNSTEALABLE",
+							"Skill_MainStage_CombatDominating_Hurtrate"
+						}
+					}, {
+						buffeft1
+					})
 				end
 
-				if this.CombatDominating_UnHurtRateFactor ~= 0 then
+				if this.CombatDominating_UnHurtRateFactor == 0 then
+					-- Nothing
+				elseif this.CombatDominating_UnHurtRateFactor > 0 then
 					local buffeft2 = global.NumericEffect(_env, "+unhurtrate", {
 						"+Normal",
 						"+Normal"
 					}, this.CombatDominating_UnHurtRateFactor)
+
+					global.ApplyBuff(_env, _env.unit, {
+						duration = 99,
+						group = "Skill_MainStage_CombatDominating_UnHurtrate",
+						timing = 0,
+						limit = 1,
+						tags = {
+							"STATUS",
+							"NUMERIC",
+							"UNDISPELLABLE",
+							"UNSTEALABLE",
+							"Skill_MainStage_CombatDominating_UnHurtrate"
+						}
+					}, {
+						buffeft2
+					})
+				else
+					local buffeft2 = global.NumericEffect(_env, "-unhurtrate", {
+						"+Normal",
+						"+Normal"
+					}, global.abs(_env, this.CombatDominating_UnHurtRateFactor))
 
 					global.ApplyBuff(_env, _env.unit, {
 						duration = 99,

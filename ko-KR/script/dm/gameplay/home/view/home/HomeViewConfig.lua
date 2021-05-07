@@ -207,6 +207,21 @@ return {
 				fontSize = 26
 			},
 			redPointPos = cc.p(60, 6)
+		},
+		mBackFlowNode = {
+			mFunc = "onBackFlowBtn",
+			redPointFunc = "onBackFlowRedPoint",
+			mMovieClip = {
+				name = "guimeng_xinzhujiemian",
+				pos = cc.p(250 + totalOffSetX, -160.7 + totalOffSetY)
+			},
+			mLabel = {
+				mLabelNames = "Home_Return",
+				autoImageH = 35,
+				mTempName = "Home_Return_En",
+				fontSize = 22
+			},
+			redPointPos = cc.p(60, 6)
 		}
 	},
 	mBottomFuncLayout = {}

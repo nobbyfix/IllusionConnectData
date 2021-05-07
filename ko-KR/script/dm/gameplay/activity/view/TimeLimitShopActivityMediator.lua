@@ -33,6 +33,14 @@ local timeLimitShopConfig = {
 	ambition = {
 		BG = "jqtd_txt_swzzl_di",
 		TimeOutLineColor = cc.c4b(187, 41, 1, 255)
+	},
+	female = {
+		BG = "jqtd_txt_xtxlzl_di",
+		TimeOutLineColor = cc.c4b(187, 1, 106, 255)
+	},
+	xide = {
+		BG = "jqtd_txt_typl_di",
+		TimeOutLineColor = cc.c4b(186, 51, 20, 255)
 	}
 }
 local btnHandlers = {

@@ -1652,3 +1652,89 @@ function ActivitySystem:checkCoopExchangeEnable(activityId)
 
 	return false
 end
+
+function ActivitySystem:isReturnActivityShow()
+	local returnActivity = self:getActivityByComplexUI(ActivityType.KReturn)
+
+	if returnActivity and returnActivity:getIsBackFlow() then
+		return true
+	end
+
+	return false
+end
+
+function ActivitySystem:isReturnLetterDraw()
+	local returnActivity = self:getActivityByComplexUI(ActivityType.KReturn)
+
+	if returnActivity then
+		local letterActivity = returnActivity:getSubActivityByType(ActivityType.KLetter)
+
+		if letterActivity then
+			return letterActivity:getIsDraw()
+		end
+	end
+
+	return false
+end
+
+function ActivitySystem:tryEnterActivityLetter(callback)
+	local activity = self:getActivityByComplexUI(ActivityType.KReturn)
+	local view = self:getInjector():getInstance("ActivityReturnLetterView")
+
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, nil, {
+		activityId = activity:getId()
+	}, callback))
+end
+
+function ActivitySystem:tryEnterActivityReturn()
+	self:requestAllActicities(true, function ()
+		local activity = self:getActivityByComplexUI(ActivityType.KReturn)
+		local view = self:getInjector():getInstance("ActivityReturnView")
+
+		self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
+			activityId = activity:getId()
+		}))
+	end)
+end
+
+function ActivitySystem:activityReturnRedPointShow()
+	local activity = self:getActivityByComplexUI(ActivityType.KReturn)
+
+	if activity then
+		return activity:hasRedPoint()
+	end
+
+	return false
+end
+
+function ActivitySystem:drawLetterReward(callback)
+	local activity = self:getActivityByComplexUI(ActivityType.KReturn)
+	local letterActivity = activity:getSubActivityByType(ActivityType.KLetter)
+	local params = {
+		doActivityType = 101
+	}
+	local activityId = activity:getId()
+	local subActivityId = letterActivity:getId()
+
+	local function callbackFunc(response)
+		if response.resCode == GS_SUCCESS then
+			if callback then
+				callback(response)
+			end
+
+			local data = response.data.rewards
+
+			if data and next(data) then
+				local view = self:getInjector():getInstance("getRewardView")
+
+				self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+					maskOpacity = 0
+				}, {
+					rewards = data
+				}))
+			end
+		end
+	end
+
+	self:requestDoChildActivity(activityId, subActivityId, params, callbackFunc)
+end

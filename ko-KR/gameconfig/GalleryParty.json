@@ -1,4 +1,57 @@
 {
+    "Aoe": {
+        "IncludeHero": [
+            "DFQi",
+            "HLMGen",
+            "WTXXuan",
+            "CLMan",
+            "SSQXin",
+            "YLMGZhu",
+            "MGNa",
+            "XSMLi",
+            "SLMen",
+            "TLMi",
+            "SYAi",
+            "BQDShe",
+            "AJTa",
+            "SRen",
+            "NFEr"
+        ],
+        "Party": "Aoe",
+        "PartyDesc": "Party_Aoe_Desc",
+        "PartyReward": [],
+        "ShowRank": 4,
+        "Type": 2
+    },
+    "Attack": {
+        "IncludeHero": [
+            "YFZZhu",
+            "ZTXChang",
+            "CZheng",
+            "HSYZhai",
+            "GLin",
+            "YMHTPu",
+            "KTSJKe",
+            "DNTLuo",
+            "ZZBBWei",
+            "BBLMa",
+            "NXYYi",
+            "MKLJLuo",
+            "YSuo",
+            "TJHDe",
+            "KMLa",
+            "YSLBin",
+            "BDFen",
+            "QTQCi",
+            "MZGXiu",
+            "SLWan"
+        ],
+        "Party": "Attack",
+        "PartyDesc": "Party_Attack_Desc",
+        "PartyReward": [],
+        "ShowRank": 1,
+        "Type": 2
+    },
     "BSNCT": {
         "IncludeHero": [
             "SDTZi",
@@ -34,13 +87,48 @@
             "BSNCT_Star4",
             "BSNCT_Star5"
         ],
-        "ShowRank": 3
+        "ShowRank": 3,
+        "Type": 1
+    },
+    "Cure": {
+        "IncludeHero": [
+            "LFEr",
+            "MLYTLSha",
+            "KXuan",
+            "NDGEr",
+            "XLai",
+            "GYCZi",
+            "LYXi",
+            "XBKLDi"
+        ],
+        "Party": "Cure",
+        "PartyDesc": "Party_Cure_Desc",
+        "PartyReward": [],
+        "ShowRank": 3,
+        "Type": 2
+    },
+    "Curse": {
+        "IncludeHero": [
+            "ADHWShi",
+            "DDing",
+            "SDTZi",
+            "ALPo",
+            "YSTLu",
+            "YYing",
+            "FLYDe"
+        ],
+        "Party": "Curse",
+        "PartyDesc": "Party_Curse_Desc",
+        "PartyReward": [],
+        "ShowRank": 7,
+        "Type": 2
     },
     "DWH": {
         "IncludeHero": [
-            "QTQCi",
             "BBLMa",
             "DCJKang",
+            "QTQCi",
+            "HSYZhai",
             "YYing",
             "SYAi",
             "GYCZi",
@@ -71,7 +159,34 @@
             "DWH_Star4",
             "DWH_Star5"
         ],
-        "ShowRank": 4
+        "ShowRank": 4,
+        "Type": 1
+    },
+    "Defense": {
+        "IncludeHero": [
+            "ZTXCun",
+            "WEDe",
+            "JDCZhang",
+            "YKDMLai",
+            "YDZZong",
+            "JSTDing",
+            "LCYShi",
+            "FTLEShi",
+            "YLSBai",
+            "LLan",
+            "BEr",
+            "DCJKang",
+            "BLTu",
+            "PGNNi",
+            "FGao",
+            "NCai",
+            "HGEr"
+        ],
+        "Party": "Defense",
+        "PartyDesc": "Party_Defense_Desc",
+        "PartyReward": [],
+        "ShowRank": 2,
+        "Type": 2
     },
     "MNJH": {
         "IncludeHero": [
@@ -107,7 +222,119 @@
             "MNJH_Star4",
             "MNJH_Star5"
         ],
-        "ShowRank": 5
+        "ShowRank": 5,
+        "Type": 1
+    },
+    "R": {
+        "IncludeHero": [
+            "YKDMLai",
+            "ADHWShi",
+            "HLMGen",
+            "YDZZong",
+            "JSTDing",
+            "GLin",
+            "SSQXin",
+            "YMHTPu",
+            "ALSi",
+            "DNTLuo",
+            "NDGEr"
+        ],
+        "Party": "R",
+        "PartyDesc": "Party_R_Desc",
+        "PartyReward": [],
+        "ShowRank": 4,
+        "Type": 3
+    },
+    "SR": {
+        "IncludeHero": [
+            "YFZZhu",
+            "ZTXCun",
+            "DFQi",
+            "JDCZhang",
+            "WTXXuan",
+            "PNCao",
+            "DDing",
+            "NFDDi",
+            "KXuan",
+            "TTKMeng",
+            "ATSheng",
+            "MKLJLuo",
+            "ALPo",
+            "TLMi",
+            "XLai",
+            "YSuo",
+            "LYSi",
+            "NCai"
+        ],
+        "Party": "SR",
+        "PartyDesc": "Party_SR_Desc",
+        "PartyReward": [],
+        "ShowRank": 3,
+        "Type": 3
+    },
+    "SSR": {
+        "IncludeHero": [
+            "WEDe",
+            "CZheng",
+            "LDu",
+            "LFEr",
+            "HSYZhai",
+            "JNLong",
+            "LCYShi",
+            "KTSJKe",
+            "TPGZhu",
+            "ZZBBWei",
+            "YLMGZhu",
+            "YLSBai",
+            "BBLMa",
+            "MTZMEShi",
+            "LLan",
+            "MGNa",
+            "MLYTLSha",
+            "YBYa",
+            "SDTZi",
+            "SGHQShou",
+            "NXYYi",
+            "XSMLi",
+            "SLMen",
+            "BEr",
+            "TJHDe",
+            "FEMSi",
+            "HSheng",
+            "KMLa",
+            "YSTLu",
+            "DCJKang",
+            "GYCZi",
+            "SYAi",
+            "YYing",
+            "BQDShe",
+            "AJTa",
+            "SRen",
+            "YXNMei",
+            "LYXi",
+            "BHTZi",
+            "YSLBin",
+            "PDLa",
+            "NFEr",
+            "BDFen",
+            "BLTu",
+            "PGNNi",
+            "QBTe",
+            "FLYDe",
+            "FGao",
+            "HGEr",
+            "KEDGong",
+            "XBKLDi",
+            "LSLTe",
+            "QTQCi",
+            "MZGXiu",
+            "SLWan"
+        ],
+        "Party": "SSR",
+        "PartyDesc": "Party_SSR_Desc",
+        "PartyReward": [],
+        "ShowRank": 2,
+        "Type": 3
     },
     "SSZS": {
         "IncludeHero": [
@@ -143,7 +370,46 @@
             "SMZS_Star4",
             "SMZS_Star5"
         ],
-        "ShowRank": 6
+        "ShowRank": 6,
+        "Type": 1
+    },
+    "Summon": {
+        "IncludeHero": [
+            "PNCao",
+            "LDu",
+            "JNLong",
+            "YBYa",
+            "SGHQShou",
+            "ATSheng",
+            "LYSi",
+            "PDLa"
+        ],
+        "Party": "Summon",
+        "PartyDesc": "Party_Summon_Desc",
+        "PartyReward": [],
+        "ShowRank": 5,
+        "Type": 2
+    },
+    "Support": {
+        "IncludeHero": [
+            "TPGZhu",
+            "ALSi",
+            "MTZMEShi",
+            "NFDDi",
+            "TTKMeng",
+            "FEMSi",
+            "HSheng",
+            "YXNMei",
+            "BHTZi",
+            "QBTe",
+            "KEDGong",
+            "LSLTe"
+        ],
+        "Party": "Support",
+        "PartyDesc": "Party_Support_Desc",
+        "PartyReward": [],
+        "ShowRank": 6,
+        "Type": 2
     },
     "WNSXJ": {
         "IncludeHero": [
@@ -180,7 +446,8 @@
             "WNSXJ_Star4",
             "WNSXJ_Star5"
         ],
-        "ShowRank": 1
+        "ShowRank": 1,
+        "Type": 1
     },
     "XD": {
         "IncludeHero": [
@@ -221,6 +488,7 @@
             "XD_Star4",
             "XD_Star5"
         ],
-        "ShowRank": 2
+        "ShowRank": 2,
+        "Type": 1
     }
 }

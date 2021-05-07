@@ -289,6 +289,31 @@ all.Sk_Master_FuHun_Action2 = {
 			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.FixedPos(_env, 0, 0, 2), 100, "skill3"))
 		end)
 		exec["@time"]({
+			1700
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local buffeft3 = global.NumericEffect(_env, "-aoederate", {
+				"+Normal",
+				"+Normal"
+			}, this.AOEDeRateFactor)
+
+			for _, unit in global.__iter__(global.EnemyUnits(_env)) do
+				global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
+					timing = 4,
+					duration = 15,
+					tags = {
+						"STATUS",
+						"DEBUFF",
+						"AOEDERATEDOWN",
+						"DISPELLABLE"
+					}
+				}, {
+					buffeft3
+				}, 1)
+			end
+		end)
+		exec["@time"]({
 			2300
 		}, _env, function (_env)
 			local this = _env.this
@@ -314,26 +339,6 @@ all.Sk_Master_FuHun_Action2 = {
 				buffeft1,
 				buffeft2
 			}, 1)
-
-			local buffeft3 = global.NumericEffect(_env, "-aoederate", {
-				"+Normal",
-				"+Normal"
-			}, this.AOEDeRateFactor)
-
-			for _, unit in global.__iter__(global.EnemyUnits(_env)) do
-				global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
-					timing = 4,
-					duration = 15,
-					tags = {
-						"STATUS",
-						"DEBUFF",
-						"AOEDERATEDOWN",
-						"DISPELLABLE"
-					}
-				}, {
-					buffeft3
-				}, 1)
-			end
 		end)
 		exec["@time"]({
 			3100

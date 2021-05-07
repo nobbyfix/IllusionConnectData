@@ -4,9 +4,9 @@ function OnekeyStrengthen:initialize()
 	self._opType = 112
 	self._viewConfig = {
 		{
-			default = 0,
+			default = 1,
 			name = "code",
-			title = "1中强，其他值小强",
+			title = "1小强，2中强，3最强",
 			type = "Input"
 		}
 	}

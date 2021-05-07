@@ -69,6 +69,7 @@ function StageTeamMediator:onRegister()
 	self:mapEventListener(self:getEventDispatcher(), EVT_ARENA_CHANGE_TEAM_SUCC, self, self.refreshView)
 	self:mapEventListener(self:getEventDispatcher(), EVT_CRUSADE_RESET_DIFF, self, self.resetCrusade)
 	self:mapEventListener(self:getEventDispatcher(), EVT_STAGE_CHANGENAME_SUCC, self, self.refreshTeamName)
+	self:mapEventListener(self:getEventDispatcher(), EVT_CHANGE_TEAM_BYMODE_SUCC, self, self.changeTeamByMode)
 
 	local touchPanel = self:getView():getChildByFullName("main.bg.touchPanel")
 
@@ -169,12 +170,17 @@ function StageTeamMediator:resumeWithData()
 	self._costTotalLabel2:setString("/" .. self._costMaxNum)
 end
 
-function StageTeamMediator:initData()
+function StageTeamMediator:initData(team)
 	self._teamList = self._developSystem:getAllUnlockTeams()
-	self._curTeam = self._teamList[self._curTabType]
 
-	if self:isSpecialStage() then
-		self._curTeam = self._developSystem:getSpTeamByType(self._stageType)
+	if team then
+		self._curTeam = team
+	else
+		self._curTeam = self._teamList[self._curTabType]
+
+		if self:isSpecialStage() then
+			self._curTeam = self._developSystem:getSpTeamByType(self._stageType)
+		end
 	end
 
 	self._curTeamId = self._curTeam:getId()
@@ -273,6 +279,7 @@ function StageTeamMediator:setupView()
 	self:initView()
 	self:refreshListView()
 	self:createSortView()
+	self:showSetButton(true)
 end
 
 function StageTeamMediator:initWidgetInfo()
@@ -1811,4 +1818,19 @@ function StageTeamMediator:setupClickEnvs()
 	end))
 
 	self:getView():runAction(sequence)
+end
+
+function StageTeamMediator:changeTeamByMode(event)
+	local teamData = event:getData()
+
+	self:initData(teamData)
+	self:refreshMasterInfo()
+	self:refreshListView()
+	self:refreshPetNode()
+
+	self._hasForceChangeTeam = true
+
+	if not self:isSpecialStage() then
+		self._editBox:setText(self._nowName)
+	end
 end

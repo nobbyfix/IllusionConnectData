@@ -2277,6 +2277,104 @@
         ],
         "StoryLink": "eventstory_freud_04a"
     },
+    "FemaleS01E01": {
+        "FirstReward": "FemaleS01E01_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -250
+        ],
+        "Map": "FemaleE01",
+        "Name": "FemaleS01E01_Name",
+        "NextStoryPoint": [
+            "FemaleS01E02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "FemaleE01S03"
+        ],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_Girl_03a"
+    },
+    "FemaleS01E02": {
+        "FirstReward": "FemaleS01E02_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "FemaleE01",
+        "Name": "FemaleS01E02_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "FemaleE01S12"
+        ],
+        "PreStoryPoint": [
+            "FemaleS01E01"
+        ],
+        "StoryLink": "eventstory_Girl_04a"
+    },
+    "FemaleS01S01": {
+        "FirstReward": "FemaleS01S01_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -250
+        ],
+        "Map": "FemaleM01",
+        "Name": "FemaleS01S01_Name",
+        "NextStoryPoint": [
+            "FemaleS01S02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_Girl_01a"
+    },
+    "FemaleS01S02": {
+        "FirstReward": "FemaleS01S02_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "FemaleM01",
+        "Name": "FemaleS01S02_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "FemaleM01S07"
+        ],
+        "PreStoryPoint": [
+            "FemaleS01S01"
+        ],
+        "StoryLink": "eventstory_Girl_02a"
+    },
     "FireS01E01": {
         "FirstReward": "FireS01E01_Reward",
         "Icon": "s_album_story_1",

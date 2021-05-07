@@ -56,6 +56,9 @@ local muiscCfg = {
 	ActivityKnightMainView = {
 		noAutoPlay = true
 	},
+	ActivityFemaleMainView = {
+		noAutoPlay = true
+	},
 	ActivityBlockDetectiveView = {
 		noAutoPlay = true
 	},
@@ -168,6 +171,9 @@ local muiscCfg = {
 		noAutoPlay = true
 	},
 	MasterMainView = {
+		noAutoPlay = true
+	},
+	ShopCoopExchangeView = {
 		noAutoPlay = true
 	}
 }

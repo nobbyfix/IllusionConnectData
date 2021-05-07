@@ -1330,6 +1330,397 @@
             }
         }
     },
+    "Master_LiMing": {
+        "AOEDerate": 0.15,
+        "Absorption": 0.0,
+        "ActionSkill1": "Sk_Action1_Master_LiMing",
+        "ActionSkill2": "Sk_Action2_Master_LiMing",
+        "ActionSkill3": "Sk_Action3_Master_LiMing",
+        "Anger": {
+            "a1": [
+                10,
+                1000
+            ],
+            "a2": 50,
+            "a3": 0,
+            "a4": 15
+        },
+        "AtkRate": 1.0,
+        "AtkWeaken": 0.0,
+        "AttackFactor": 1.0,
+        "AttackSkill": "Sk_Attack_Master_LiMing",
+        "Background": "leadStage_scene_nvzhu",
+        "BaseAttack": 150.0,
+        "BaseDefence": 45.0,
+        "BaseHp": 1200.0,
+        "BasePower": 511,
+        "BaseStar": 1,
+        "BeCuredRate": 0.0,
+        "BlockRate": 0.0,
+        "BlockStrg": 0.0,
+        "CompositePay": 20,
+        "CounterRate": 0.0,
+        "CritRate": 0.0,
+        "CritStrg": 0.0,
+        "DefRate": 1.0,
+        "DefWeaken": 0.0,
+        "DefenceFactor": 1.0,
+        "Desc": "MasterBase_Desc_6",
+        "DoubleRate": 0.0,
+        "EffectRate": 0.0,
+        "EffectStrg": 0.0,
+        "Feature": "MasterBase_Feature_6",
+        "Flags": [
+            "Master_LiMing"
+        ],
+        "HpFactor": 1.0,
+        "HurtRate": 0.0,
+        "IfHidden": 1,
+        "LeadMasterSkill": [
+            "LeadStage_LiMing_PVE_Skill_002"
+        ],
+        "LeadStage": "LeadStage_LiMing_001",
+        "LevelUnlock": {
+            "ActionSkill1": {
+                "star": 2
+            },
+            "ActionSkill2": {
+                "star": 2
+            },
+            "ActionSkill3": {
+                "star": 2
+            },
+            "AttackSkill": {
+                "lv": 1
+            },
+            "AttrSkill1": {
+                "star": 5
+            },
+            "AttrSkill2": {
+                "star": 6
+            },
+            "PassiveSkill": {
+                "lv": 1
+            }
+        },
+        "LevelUpPicture": "zjsj_LiMing",
+        "MasterOrder": 6,
+        "Name": "MasterBase_Name_6",
+        "NamePic": "word_tcdmm_zj.png",
+        "Rank": 6,
+        "Reflection": 0.0,
+        "RoleModel": "Model_Master_LiMing",
+        "RtpkPercent": [
+            1,
+            1,
+            1.2
+        ],
+        "ShowGallery": "WNSXJ",
+        "SkillCost": {
+            "ActionSkill1": {
+                "amount": [
+                    1,
+                    5,
+                    10,
+                    15,
+                    20,
+                    25,
+                    38,
+                    50,
+                    64,
+                    100
+                ],
+                "code": "ISU_Master"
+            },
+            "ActionSkill2": {
+                "amount": [
+                    1,
+                    5,
+                    10,
+                    15,
+                    20,
+                    25,
+                    38,
+                    50,
+                    64,
+                    100
+                ],
+                "code": "ISU_Master"
+            },
+            "ActionSkill3": {
+                "amount": [
+                    1,
+                    5,
+                    10,
+                    15,
+                    20,
+                    25,
+                    38,
+                    50,
+                    64,
+                    100
+                ],
+                "code": "ISU_Master"
+            },
+            "AttackSkill": {
+                "amount": [
+                    1,
+                    3,
+                    6,
+                    9,
+                    12,
+                    15,
+                    24,
+                    30,
+                    38,
+                    60
+                ],
+                "code": "ISU_Master"
+            },
+            "AttrSkill1": {
+                "amount": [
+                    1,
+                    10,
+                    20,
+                    30,
+                    40,
+                    50,
+                    75,
+                    100,
+                    125,
+                    200
+                ],
+                "code": "ISU_Master"
+            },
+            "AttrSkill2": {
+                "amount": [
+                    1,
+                    10,
+                    20,
+                    30,
+                    40,
+                    50,
+                    75,
+                    100,
+                    125,
+                    200
+                ],
+                "code": "ISU_Master"
+            },
+            "PassiveSkill": {
+                "amount": [
+                    1,
+                    2,
+                    4,
+                    6,
+                    8,
+                    10,
+                    15,
+                    20,
+                    25,
+                    40
+                ],
+                "code": "ISU_Master"
+            }
+        },
+        "Speed": 200,
+        "StarPointBG": "",
+        "StarPointSets": [
+            [
+                "Master_CommonStar_1_1",
+                "Master_CommonStar_1_2",
+                "Master_CommonStar_1_3",
+                "Master_CommonStar_1_4",
+                "Master_CommonStar_1_5",
+                "Master_CommonStar_1_6"
+            ],
+            [
+                "Master_CommonStar_2_1",
+                "Master_CommonStar_2_2",
+                "Master_CommonStar_2_3",
+                "Master_CommonStar_2_4",
+                "Master_CommonStar_2_5",
+                "Master_CommonStar_2_6"
+            ],
+            [
+                "Master_CommonStar_3_1",
+                "Master_CommonStar_3_2",
+                "Master_CommonStar_3_3",
+                "Master_CommonStar_3_4",
+                "Master_CommonStar_3_5",
+                "Master_CommonStar_3_6"
+            ],
+            [
+                "Master_CommonStar_4_1",
+                "Master_CommonStar_4_2",
+                "Master_CommonStar_4_3",
+                "Master_CommonStar_4_4",
+                "Master_CommonStar_4_5",
+                "Master_CommonStar_4_6"
+            ],
+            [
+                "Master_CommonStar_5_1",
+                "Master_CommonStar_5_2",
+                "Master_CommonStar_5_3",
+                "Master_CommonStar_5_4",
+                "Master_CommonStar_5_5",
+                "Master_CommonStar_5_6"
+            ]
+        ],
+        "StarUpItemId": "IMF_Master_LiMing",
+        "Tactics": [],
+        "TeamSkill1": "SectSkill_Master_LiMing_1",
+        "TeamSkill2": "SectSkill_Master_LiMing_2",
+        "TeamSkill3": "SectSkill_Master_LiMing_3",
+        "TeamSkill4": "SectSkill_Master_LiMing_4",
+        "TeamSkill5": "SectSkill_Master_LiMing_5",
+        "TeamSkill6": "SectSkill_Master_LiMing_6",
+        "TeamSkillCondition1": [
+            [
+                {
+                    "param": [
+                        [
+                            "Star1Up"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        10,
+                        100
+                    ],
+                    "type": "tag"
+                }
+            ]
+        ],
+        "TeamSkillCondition2": [
+            [
+                {
+                    "param": [
+                        [
+                            "TPGZhu"
+                        ],
+                        [
+                            "FEMSi"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        1,
+                        2
+                    ],
+                    "type": "tag"
+                }
+            ]
+        ],
+        "TeamSkillCondition3": [
+            [
+                {
+                    "param": [
+                        [
+                            "Support"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        4,
+                        100
+                    ],
+                    "type": "tag"
+                }
+            ]
+        ],
+        "TeamSkillCondition4": [
+            [
+                {
+                    "param": [
+                        [
+                            "Cost13Down"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        3,
+                        100
+                    ],
+                    "type": "tag"
+                }
+            ]
+        ],
+        "TeamSkillCondition5": [
+            [
+                {
+                    "param": [
+                        [
+                            "Support"
+                        ]
+                    ],
+                    "range": "hold",
+                    "scope": [
+                        [
+                            80,
+                            1
+                        ],
+                        [
+                            100,
+                            1
+                        ]
+                    ],
+                    "type": "percent"
+                }
+            ]
+        ],
+        "TeamSkillCondition6": [
+            [
+                {
+                    "param": [
+                        [
+                            "Rarity14"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        5,
+                        100
+                    ],
+                    "type": "tag"
+                }
+            ]
+        ],
+        "TreeColor": [
+            0,
+            208,
+            227
+        ],
+        "Type": "ATK",
+        "UnblockRate": 0.0,
+        "UncritRate": 0.0,
+        "UndeadRate": 0.0,
+        "UneffectRate": 0.0,
+        "UnhurtRate": 0.0,
+        "UseUnlock": {
+            "ActionSkill1": {
+                "lv": 1
+            },
+            "ActionSkill2": {
+                "lv": 10
+            },
+            "ActionSkill3": {
+                "lv": 22
+            },
+            "AttackSkill": {
+                "lv": 1
+            },
+            "AttrSkill1": {
+                "star": 5
+            },
+            "AttrSkill2": {
+                "star": 6
+            },
+            "PassiveSkill": {
+                "lv": 1
+            }
+        }
+    },
     "Master_LieSha": {
         "AOEDerate": 0.15,
         "Absorption": 0.0,
@@ -1973,15 +2364,12 @@
                 {
                     "param": [
                         [
-                            "Cure"
-                        ],
-                        [
-                            "Support"
+                            "Star1Up"
                         ]
                     ],
                     "range": "group",
                     "scope": [
-                        5,
+                        10,
                         100
                     ],
                     "type": "tag"
@@ -1993,10 +2381,10 @@
                 {
                     "param": [
                         [
-                            "TPGZhu"
+                            "LFEr"
                         ],
                         [
-                            "LCYShi"
+                            "MLYTLSha"
                         ]
                     ],
                     "range": "group",
@@ -2013,7 +2401,7 @@
                 {
                     "param": [
                         [
-                            "Defense"
+                            "Cure"
                         ]
                     ],
                     "range": "group",
@@ -2028,17 +2416,19 @@
         "TeamSkillCondition4": [
             [
                 {
-                    "param": [
-                        [
-                            "Summon"
-                        ]
-                    ],
+                    "param": [],
                     "range": "group",
                     "scope": [
-                        3,
-                        100
+                        [
+                            15,
+                            1
+                        ],
+                        [
+                            100,
+                            1
+                        ]
                     ],
-                    "type": "tag"
+                    "type": "avgcost"
                 }
             ]
         ],
@@ -2046,9 +2436,6 @@
             [
                 {
                     "param": [
-                        [
-                            "Support"
-                        ],
                         [
                             "Cure"
                         ]

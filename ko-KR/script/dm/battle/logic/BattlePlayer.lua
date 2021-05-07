@@ -627,6 +627,11 @@ function BattlePlayer:backCardToPool(card)
 	self._cardWindow:removeCard(card)
 end
 
+function BattlePlayer:backCardToPoolAtIndex(card, index)
+	self._cardPool:insertCard(card, index)
+	self._cardWindow:removeCard(card)
+end
+
 function BattlePlayer:visitCardsInWindow(visitor)
 	return self._cardWindow:visitCards(visitor)
 end

@@ -505,6 +505,17 @@
         "UnlockDesc": "HLMGen_HeadUnlock",
         "Zoom": 0.5
     },
+    "Head_HSYZhai": {
+        "HeadDesc": "HeroBase_Desc_HSYZhai",
+        "HeadName": "HSYZhai_HeadName",
+        "HeroMasterId": "HSYZhai",
+        "IconPath": "asset/heros/HSYZhai/battlepic_xcyao.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "",
+        "Type": 1,
+        "UnlockDesc": "HSYZhai_HeadUnlock",
+        "Zoom": 0.5
+    },
     "Head_HSheng": {
         "HeadDesc": "HeroBase_Desc_HSheng",
         "HeadName": "HSheng_HeadName",
@@ -646,6 +657,17 @@
         "SurfaceMasterId": "Surface_KTSJKe_2",
         "Type": 5,
         "UnlockDesc": "KTSJKe_2_HeadUnlock",
+        "Zoom": 0.5
+    },
+    "Head_KTSJKe_3": {
+        "HeadDesc": "Surface_KTSJKe_wvt_Decs",
+        "HeadName": "KTSJKe_3_HeadName",
+        "HeroMasterId": "KTSJKe",
+        "IconPath": "asset/heros/hxi_wvt/battlepic_hxi_wvt.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "Surface_KTSJKe_3",
+        "Type": 5,
+        "UnlockDesc": "KTSJKe_3_HeadUnlock",
         "Zoom": 0.5
     },
     "Head_KXuan": {
@@ -912,6 +934,17 @@
         "UnlockDesc": "Master_JiangJun_HeadUnlock",
         "Zoom": 1.0
     },
+    "Head_Master_LiMing": {
+        "HeadDesc": "MasterBase_Desc_6",
+        "HeadName": "Master_LiMing_HeadName",
+        "HeroMasterId": "Master_LiMing",
+        "IconPath": "asset/master/master_lmzfu",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "",
+        "Type": 2,
+        "UnlockDesc": "Master_LiMing_HeadUnlock",
+        "Zoom": 1.0
+    },
     "Head_Master_LieSha": {
         "HeadDesc": "MasterBase_Desc_2",
         "HeadName": "Master_LieSha_HeadName",
@@ -1119,6 +1152,17 @@
         "SurfaceMasterId": "Surface_SDTZi_2",
         "Type": 5,
         "UnlockDesc": "SDTZi_2_HeadUnlock",
+        "Zoom": 0.5
+    },
+    "Head_SDTZi_3": {
+        "HeadDesc": "Surface_SDTZi_wedding_Decs",
+        "HeadName": "SDTZi_3_HeadName",
+        "HeroMasterId": "SDTZi",
+        "IconPath": "asset/heros/swmxue_wedding/battlepic_swmxue_wedding.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "Surface_SDTZi_3",
+        "Type": 5,
+        "UnlockDesc": "SDTZi_3_HeadUnlock",
         "Zoom": 0.5
     },
     "Head_SGHQShou": {
@@ -1561,6 +1605,17 @@
         "UnlockDesc": "ZTXChang_2_HeadUnlock",
         "Zoom": 0.5
     },
+    "Head_ZTXChang_3": {
+        "HeadDesc": "Surface_ZTXChang_wedding_Decs",
+        "HeadName": "ZTXChang_3_HeadName",
+        "HeroMasterId": "ZTXChang",
+        "IconPath": "asset/heros/cxxye_wedding/battlepic_cxxye_wedding.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "Surface_ZTXChang_3",
+        "Type": 5,
+        "UnlockDesc": "ZTXChang_3_HeadUnlock",
+        "Zoom": 0.5
+    },
     "Head_ZTXCun": {
         "HeadDesc": "HeroBase_Desc_ZTXCun",
         "HeadName": "ZTXCun_HeadName",
@@ -1693,6 +1748,17 @@
         "UnlockDesc": "HeroAwaken_LLan",
         "Zoom": 1.0
     },
+    "HeroAwaken_MLYTLSha": {
+        "HeadDesc": "HeroAwaken_MLYTLSha_Desc",
+        "HeadName": "HeroAwaken_MLYTLSha_1_Name",
+        "HeroMasterId": "MLYTLSha",
+        "IconPath": "asset/heros/MLYTLSha/battlepic_ana_awaken.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "",
+        "Type": 4,
+        "UnlockDesc": "HeroAwaken_MLYTLSha",
+        "Zoom": 1.0
+    },
     "HeroAwaken_MTZMEShi": {
         "HeadDesc": "HeroAwaken_MTZMEShi_Desc",
         "HeadName": "HeroAwaken_MTZMEShi_1_Name",
@@ -1724,6 +1790,17 @@
         "SurfaceMasterId": "",
         "Type": 4,
         "UnlockDesc": "HeroAwaken_TPGZhu",
+        "Zoom": 1.0
+    },
+    "HeroAwaken_YBYa": {
+        "HeadDesc": "HeroAwaken_YBYa_Desc",
+        "HeadName": "HeroAwaken_YBYa_1_Name",
+        "HeroMasterId": "YBYa",
+        "IconPath": "asset/heros/YBYa/battlepic_hmyyue_awaken.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "",
+        "Type": 4,
+        "UnlockDesc": "HeroAwaken_YBYa",
         "Zoom": 1.0
     },
     "HeroAwaken_YLSBai": {

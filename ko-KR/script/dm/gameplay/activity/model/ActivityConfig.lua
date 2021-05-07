@@ -23,6 +23,9 @@ require("dm.gameplay.activity.model.MonsterShopActivity")
 require("dm.gameplay.activity.model.ActivityColorEggActivity")
 require("dm.gameplay.activity.model.ActivityTpurchase")
 require("dm.gameplay.activity.model.MiniGameActivity")
+require("dm.gameplay.activity.model.return.ActivityReturn")
+require("dm.gameplay.activity.model.return.ActivityReturnLetter")
+require("dm.gameplay.activity.model.return.ActivityReturnCarnival")
 
 ActivityShowTab = {
 	kInAll = 3,
@@ -78,7 +81,10 @@ ActivityModel = {
 	[ActivityType.KColourEgg] = ActivityColorEggActivity,
 	[ActivityType.KMonsterShop] = MonsterShopActivity,
 	[ActivityType.KTPURCHASE] = ActivityTpurchase,
-	[ActivityType.KMiniGame] = MiniGameActivity
+	[ActivityType.KMiniGame] = MiniGameActivity,
+	[ActivityType.KReturn] = ActivityReturn,
+	[ActivityType.KLetter] = ActivityReturnLetter,
+	[ActivityType.KReturnCarnival] = ActivityReturnCarnival
 }
 ActivityUI = {
 	ACTIVITYBLOCKEGG = "ActivityBlockEggView",
@@ -146,7 +152,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityCollapsed] = "ActivityCollapsedMainView",
 		[ActivityType_UI.KActivityKnight] = "ActivityKnightMainView",
 		[ActivityType_UI.KActivitySunflower] = "ActivitySunflowerMainView",
-		[ActivityType_UI.KActivityFire] = "ActivityFireMainView"
+		[ActivityType_UI.KActivityFire] = "ActivityFireMainView",
+		[ActivityType_UI.KActivityFemale] = "ActivityFemaleMainView"
 	},
 	enterBlockMonsterShopView = {
 		[ActivityType_UI.kActivityBlockWsj] = "ActivityBlockMonsterShopView",
@@ -167,7 +174,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityCollapsed] = "ActivitySagaSupportMapView",
 		[ActivityType_UI.KActivityKnight] = "ActivitySagaSupportMapView",
 		[ActivityType_UI.KActivitySunflower] = "ActivitySagaSupportMapView",
-		[ActivityType_UI.KActivityFire] = "ActivitySagaSupportMapView"
+		[ActivityType_UI.KActivityFire] = "ActivitySagaSupportMapView",
+		[ActivityType_UI.KActivityFemale] = "ActivitySagaSupportMapView"
 	},
 	enterSagaSupportStageView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportStageWxhView",
@@ -192,7 +200,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityCollapsed] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivityKnight] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivitySunflower] = "ActivityBlockTaskView",
-		[ActivityType_UI.KActivityFire] = "ActivityBlockTaskView"
+		[ActivityType_UI.KActivityFire] = "ActivityBlockTaskView",
+		[ActivityType_UI.KActivityFemale] = "ActivityBlockTaskView"
 	},
 	enterSagaSupportRankRewardView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportRankRewardWxhView",
@@ -239,6 +248,55 @@ ActivityLogin14Config = {
 		textPattern = {
 			cc.c4b(255, 255, 255, 255),
 			cc.c4b(176, 228, 254, 255)
+		}
+	},
+	EightDays_Female = {
+		resFile = "asset/ui/ActivityFemaleLogin14.csb",
+		textPattern = {
+			cc.c4b(255, 165, 218, 255),
+			cc.c4b(255, 239, 163, 255)
+		}
+	}
+}
+ActivityMainMapTitleConfig = {
+	title = {
+		[ActivityType_UI.KActivityFemale] = {
+			title = {
+				{
+					ratio = 0.3,
+					color = cc.c4b(255, 240, 147, 255)
+				},
+				{
+					ratio = 0.7,
+					color = cc.c4b(255, 157, 159, 255)
+				}
+			},
+			title_0 = {
+				{
+					ratio = 0.3,
+					color = cc.c4b(255, 240, 147, 255)
+				},
+				{
+					ratio = 0.7,
+					color = cc.c4b(255, 157, 159, 255)
+				}
+			},
+			title_2 = {
+				{
+					ratio = 0.3,
+					color = cc.c4b(255, 240, 147, 255)
+				},
+				{
+					ratio = 0.7,
+					color = cc.c4b(255, 157, 159, 255)
+				}
+			}
+		}
+	},
+	anim = {
+		[ActivityType_UI.KActivityFemale] = {
+			"zhu_biannvshengzhuye",
+			cc.p(134, 135)
 		}
 	}
 }

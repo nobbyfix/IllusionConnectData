@@ -45,8 +45,8 @@ function ActivityList:syncAloneActivity(id, data)
 			activity = ActivityModel[config.Type]:new()
 			data.activityId = id
 
-			activity:synchronize(data)
 			activity:setActivitySystem(self._activitySystem)
+			activity:synchronize(data)
 
 			self._activityMap[id] = activity
 			self._activityIds[#self._activityIds + 1] = id

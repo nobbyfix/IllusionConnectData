@@ -3078,7 +3078,7 @@ function all.ApplyHPMultiRecovery_ResultCheck(_env, actor, target, delays, heals
 	return global.MultiDelayCall(_env, delays, global.ApplyHPRecoveryN, target, heals, actor)
 end
 
-function all.ApplyRealDamage(_env, actor, target, dmgrange, dmgtype, damagerate, delays, multidamage, damage_compare, lowerLimit)
+function all.ApplyRealDamage(_env, actor, target, dmgrange, dmgtype, damagerate, delays, multidamage, damage_compare, damageamount, lowerLimit)
 	local this = _env.this
 	local global = _env.global
 	local result, damage = nil
@@ -3110,6 +3110,11 @@ function all.ApplyRealDamage(_env, actor, target, dmgrange, dmgtype, damagerate,
 
 	if damage and damage.crit then
 		damage.val = damage.val * (1.5 + critstrg)
+	end
+
+	if damageamount then
+		damage.val = damageamount
+		damage.crit = nil
 	end
 
 	damage.block = nil
