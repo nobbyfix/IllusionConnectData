@@ -83,6 +83,10 @@ function ActivityTask:updateTaskValue(data)
 			if value.targetValue then
 				self._taskValueList[tonumber(k) + 1].targetValue = value.targetValue
 			end
+
+			if value.targetList then
+				self._taskValueList[tonumber(k) + 1].targetList = value.targetList
+			end
 		end
 	end
 end
@@ -137,4 +141,18 @@ function ActivityTask:getOrderStatusNum()
 	end
 
 	return result
+end
+
+function ActivityTask:getTaskUnFinishNum()
+	local num = 0
+
+	for _, v in pairs(self._taskValueList[1].targetList) do
+		num = num + 1
+	end
+
+	return num
+end
+
+function ActivityTask:getTaskTotalhNum()
+	return #self._config.Condition[1].factorStr1
 end

@@ -191,12 +191,15 @@ function EliteTaskActivityMediator:updataCell(cell, index)
 
 	local status = data:getStatus()
 	local actBtn = mainView:getChildByName("actBtn")
+	local unfinishText = mainView:getChildByName("unfinishText")
 
+	unfinishText:setString(Strings:get("Task_Text1"))
 	actBtn:setVisible(true)
 
 	local recieveImg = mainView:getChildByName("recieve")
 
 	recieveImg:setVisible(false)
+	unfinishText:setVisible(false)
 
 	if status == ActivityTaskStatus.kUnfinish then
 		local text = actBtn:getChildByName("Text_str")
@@ -204,6 +207,9 @@ function EliteTaskActivityMediator:updataCell(cell, index)
 		text:setString(Strings:get("SOURCE_DESC2"))
 
 		if data:getDestUrl() ~= nil and data:getDestUrl() ~= "" then
+			actBtn:setVisible(true)
+			actBtn:loadTexture("hd_btn_qw.png", ccui.TextureResType.plistType)
+
 			local function callFuncGo(sender, eventType)
 				local beganPos = sender:getTouchBeganPosition()
 				local endPos = sender:getTouchEndPosition()
@@ -216,9 +222,10 @@ function EliteTaskActivityMediator:updataCell(cell, index)
 			mapButtonHandlerClick(nil, actBtn, {
 				func = callFuncGo
 			})
+		else
+			unfinishText:setVisible(true)
+			actBtn:setVisible(false)
 		end
-
-		actBtn:loadTexture("hd_btn_qw.png", ccui.TextureResType.plistType)
 	elseif status == ActivityTaskStatus.kFinishNotGet then
 		local text = actBtn:getChildByName("Text_str")
 

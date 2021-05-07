@@ -156,6 +156,18 @@ function exports.ChangeBG(env, filename)
 	})
 end
 
+function exports.StackSkill(env, skillId, stacknum, totalnum)
+	local player = env["$actor"]:getOwner()
+
+	if kBattleSideA == player:getSide() then
+		env.global.RecordImmediately(env, kBRMainLine, "StackSkill", {
+			skillId = skillId,
+			stacknum = stacknum,
+			totalnum = totalnum
+		})
+	end
+end
+
 function exports.BossComing(env)
 	env.global.RecordImmediately(env, kBRMainLine, "BossComing", {})
 end
@@ -163,5 +175,12 @@ end
 function exports.BossComingPause(env)
 	env.global.RecordImmediately(env, kBRMainLine, "BossComing", {
 		pause = true
+	})
+end
+
+function exports.PvpSpeedUp(env, arg1, arg2)
+	env.global.RecordImmediately(env, kBRMainLine, "PvpSpeedUp", {
+		arg1 = arg1,
+		arg2 = arg2
 	})
 end

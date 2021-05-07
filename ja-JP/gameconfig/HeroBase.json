@@ -7690,6 +7690,245 @@
         "UnhurtRate": 0.0,
         "UniqueSkill": "Hero_Unique_HLMGen"
     },
+    "HSYZhai": {
+        "Absorption": 0.0,
+        "Anger": {
+            "a1": [
+                10,
+                750
+            ],
+            "a2": 320,
+            "a3": 150
+        },
+        "AngerBase": 1000.0,
+        "AngerMax": 1000.0,
+        "AngerRate": 0.0,
+        "AtkRate": 1.0,
+        "AtkWeaken": 0.0,
+        "AttackFactor": 1.32,
+        "AwakePic": "",
+        "BaseAttack": 198.0,
+        "BaseDefence": 54.0,
+        "BaseHp": 604.0,
+        "BaseQualityAttr": "SSR_10_Attack",
+        "BaseStar": 3,
+        "BasicPower": 1600,
+        "BattlePassiveSkill": "Hero_PBattle_HSYZhai",
+        "BattlePassiveType": "PBuff",
+        "BeCuredRate": 0.0,
+        "BlockAI": "AIHSYZhai",
+        "BlockRate": 0.0,
+        "BlockStrg": 0.0,
+        "CVName": "HSYZhai_CVName",
+        "Cost": 10,
+        "CounterRate": 0.0,
+        "CritRate": 0.0,
+        "CritStrg": 0.0,
+        "DefRate": 1.0,
+        "DefWeaken": 0.0,
+        "DefenceFactor": 0.82,
+        "Desc": "HeroBase_Desc_HSYZhai",
+        "DoubleRate": 0.0,
+        "EffectRate": 0.0,
+        "EffectStrg": 0.0,
+        "EnterCD": 1.0,
+        "Equip": "",
+        "EquipDecs": "",
+        "Flags": [
+            "HSYZhai",
+            "danti"
+        ],
+        "GainAnim": "",
+        "HeadTouchDeviation": [
+            0,
+            0
+        ],
+        "HeroShowIntro": "HeroBase_Intro_HSYZhai",
+        "HeroStoryMap": "",
+        "HpFactor": 0.69,
+        "HurtRate": 0.0,
+        "IfHidden": 1,
+        "InnerAttr": [],
+        "ItemId": "IHF_HSYZhai",
+        "KeyPassiveSkill": "",
+        "LevelUpFactor": 1.0,
+        "MVPText": "MVPText_HSYZhai",
+        "MasterRage": 144,
+        "MaxStar": 6,
+        "Name": "HeroBase_Name_HSYZhai",
+        "NormalSkill": "Hero_Normal_HSYZhai",
+        "Party": "DWH",
+        "PassiveCondition": "",
+        "Position": "HeroBase_Position_HSYZhai",
+        "ProudSkill": "Hero_Proud_HSYZhai",
+        "Rareity": 14,
+        "Reflection": 0.0,
+        "RelationList": [],
+        "RoleModel": "Model_HSYZhai",
+        "RtpkPercent": [
+            0,
+            0,
+            0
+        ],
+        "SVPText": "SVPText_HSYZhai",
+        "Sex": 0,
+        "ShortDesc": "HeroBase_ShortDesc_HSYZhai",
+        "SkillCost": {
+            "BattlePassiveSkill": {
+                "amount": [
+                    3,
+                    7,
+                    10,
+                    14,
+                    18,
+                    21,
+                    25,
+                    28,
+                    32,
+                    36
+                ],
+                "code": "ISU_Attack"
+            },
+            "NormalSkill": {
+                "amount": [
+                    3,
+                    6,
+                    9,
+                    12,
+                    15,
+                    18,
+                    21,
+                    24,
+                    27,
+                    30
+                ],
+                "code": "ISU_Attack"
+            },
+            "PassiveSkill1": {
+                "amount": [
+                    3,
+                    7,
+                    10,
+                    14,
+                    18,
+                    21,
+                    25,
+                    28,
+                    32,
+                    36
+                ],
+                "code": "ISU_Attack"
+            },
+            "PassiveSkill2": {
+                "amount": [
+                    3,
+                    7,
+                    10,
+                    14,
+                    18,
+                    21,
+                    25,
+                    28,
+                    32,
+                    36
+                ],
+                "code": "ISU_Attack"
+            },
+            "ProudSkill": {
+                "amount": [
+                    4,
+                    9,
+                    13,
+                    18,
+                    22,
+                    27,
+                    31,
+                    36,
+                    40,
+                    45
+                ],
+                "code": "ISU_Attack"
+            },
+            "UniqueSkill": {
+                "amount": [
+                    6,
+                    12,
+                    18,
+                    24,
+                    30,
+                    36,
+                    42,
+                    48,
+                    54,
+                    60
+                ],
+                "code": "ISU_Attack"
+            }
+        },
+        "SkillRate": 0.15,
+        "Soul": [],
+        "SoundList": [
+            "Voice_HSYZhai_01",
+            "Voice_HSYZhai_35",
+            "Voice_HSYZhai_40_1",
+            "Voice_HSYZhai_40_2",
+            "Voice_HSYZhai_40_3",
+            "Voice_HSYZhai_37",
+            "Voice_HSYZhai_38",
+            "Voice_HSYZhai_39",
+            "Voice_HSYZhai_47",
+            "Voice_HSYZhai_48",
+            "Voice_HSYZhai_50",
+            "Voice_HSYZhai_51",
+            "Voice_HSYZhai_52",
+            "Voice_HSYZhai_53",
+            "Voice_HSYZhai_54",
+            "Voice_HSYZhai_55",
+            "Voice_HSYZhai_56",
+            "Voice_HSYZhai_57",
+            "Voice_HSYZhai_60",
+            "Voice_HSYZhai_07",
+            "Voice_HSYZhai_08",
+            "Voice_HSYZhai_09",
+            "Voice_HSYZhai_58",
+            "Voice_HSYZhai_59",
+            "Voice_HSYZhai_10",
+            "Voice_HSYZhai_11",
+            "Voice_HSYZhai_14",
+            "Voice_HSYZhai_15",
+            "Voice_HSYZhai_16",
+            "Voice_HSYZhai_21",
+            "Voice_HSYZhai_17",
+            "Voice_HSYZhai_18",
+            "Voice_HSYZhai_34",
+            "Voice_HSYZhai_19",
+            "Voice_HSYZhai_63",
+            "Voice_HSYZhai_61",
+            "Voice_HSYZhai_25",
+            "Voice_HSYZhai_26",
+            "Voice_HSYZhai_27",
+            "Voice_HSYZhai_28",
+            "Voice_HSYZhai_29",
+            "Voice_HSYZhai_30",
+            "Voice_HSYZhai_31",
+            "Voice_HSYZhai_32"
+        ],
+        "Speed": 50,
+        "StarId": "HSYZhai_1",
+        "SurfaceList": [
+            "Surface_HSYZhai_1"
+        ],
+        "TeamSpecialVoice": {},
+        "TimeType": "\"2002-01-28 19:00:00\"",
+        "Transform": "",
+        "Type": "Attack",
+        "UnblockRate": 0.0,
+        "UncritRate": 0.0,
+        "UndeadRate": 0.0,
+        "UneffectRate": 0.0,
+        "UnhurtRate": 0.0,
+        "UniqueSkill": "Hero_Unique_HSYZhai"
+    },
     "HSheng": {
         "Absorption": 0.0,
         "Anger": {
@@ -9547,6 +9786,7 @@
             "Surface_KTSJKe_1",
             "Surface_KTSJKe_Japan",
             "Surface_KTSJKe_2",
+            "Surface_KTSJKe_3",
             "Surface_KTSJKe_Awake"
         ],
         "TeamSpecialVoice": "",
@@ -12319,7 +12559,7 @@
         "AtkRate": 1.0,
         "AtkWeaken": 0.0,
         "AttackFactor": 1.17,
-        "AwakePic": "",
+        "AwakePic": "portrait_ana_awaken",
         "BaseAttack": 240.0,
         "BaseDefence": 60.0,
         "BaseHp": 989.0,
@@ -12581,7 +12821,8 @@
         "StarId": "MLYTLSha_1",
         "SurfaceList": [
             "Surface_MLYTLSha_1",
-            "Surface_MLYTLSha_3"
+            "Surface_MLYTLSha_3",
+            "Surface_MLYTLSha_Awake"
         ],
         "TeamSpecialVoice": "",
         "TimeType": "\"2002-01-28 19:00:00\"",
@@ -15936,6 +16177,7 @@
             "Surface_SDTZi_1",
             "Surface_SDTZi_2",
             "Surface_SDTZi_Japan",
+            "Surface_SDTZi_3",
             "Surface_SDTZi_Awake"
         ],
         "TeamSpecialVoice": "",
@@ -20220,7 +20462,7 @@
         "AtkRate": 1.0,
         "AtkWeaken": 0.0,
         "AttackFactor": 1.0,
-        "AwakePic": "",
+        "AwakePic": "portrait_hmyyue_awaken",
         "BaseAttack": 200.0,
         "BaseDefence": 60.0,
         "BaseHp": 800.0,
@@ -20467,7 +20709,8 @@
         "Speed": 50,
         "StarId": "YBYa_1",
         "SurfaceList": [
-            "Surface_YBYa_1"
+            "Surface_YBYa_1",
+            "Surface_YBYa_Awake"
         ],
         "TeamSpecialVoice": "",
         "TimeType": "\"2002-01-28 19:00:00\"",
@@ -23774,7 +24017,8 @@
         "StarId": "ZTXChang_1",
         "SurfaceList": [
             "Surface_ZTXChang_1",
-            "Surface_ZTXChang_2"
+            "Surface_ZTXChang_2",
+            "Surface_ZTXChang_3"
         ],
         "TeamSpecialVoice": {
             "CLMan": "Voice_ZTXChang_33"

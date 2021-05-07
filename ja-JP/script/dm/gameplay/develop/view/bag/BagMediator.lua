@@ -1253,7 +1253,9 @@ function BagMediator:onSellClicked(sender, eventType)
 			isRich = true,
 			title = Strings:get("bag_UI17"),
 			title1 = Strings:get("bag_UI17"),
-			content = Strings:get("bag_UI20"),
+			content = Strings:get("bag_UI20", {
+				fontName = TTF_FONT_FZYH_R
+			}),
 			sureBtn = {},
 			cancelBtn = {}
 		}

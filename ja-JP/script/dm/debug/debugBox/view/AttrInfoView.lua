@@ -212,7 +212,7 @@ function AttrInfoView:createDescPanel(title, colorNum, fontSize)
 	local winSize = cc.Director:getInstance():getWinSize()
 	fontSize = fontSize or 22
 	local layout = ccui.Layout:create()
-	local label = cc.Label:createWithTTF("", TTF_FONT_FZY3JW, fontSize)
+	local label = ccui.Text:create("", TTF_FONT_FZY3JW, fontSize)
 
 	if colorNum then
 		label:setTextColor(colorNum)
@@ -222,7 +222,7 @@ function AttrInfoView:createDescPanel(title, colorNum, fontSize)
 	local shiftWidth = 6
 
 	label:setAnchorPoint(cc.p(0.5, 0.5))
-	label:setDimensions(winSize.width - 200, 0)
+	label:getVirtualRenderer():setDimensions(winSize.width - 200, 0)
 	label:setString(tostring(title))
 
 	local height = label:getContentSize().height

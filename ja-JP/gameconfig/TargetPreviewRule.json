@@ -113,6 +113,9 @@
     "Target_HLMGen": {
         "Function": "return GenInfo(EnemyAll(COL_OF(TARGET)),Red)"
     },
+    "Target_HSYZhai": {
+        "Function": "return MainTarget()"
+    },
     "Target_HSheng": {
         "Function": "return GenInfo(EnemyAll(),Red,true)"
     },

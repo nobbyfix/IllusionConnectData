@@ -317,7 +317,7 @@ all.Skill_SSQXin_Passive = {
 			0
 		}, passive)
 		this.passive = global["[trigger_by]"](this, {
-			"SELF:PRE_ENTER"
+			"SELF:ENTER"
 		}, passive)
 
 		return this
@@ -626,7 +626,7 @@ all.Skill_SSQXin_Passive_EX = {
 			0
 		}, passive)
 		this.passive = global["[trigger_by]"](this, {
-			"SELF:PRE_ENTER"
+			"SELF:ENTER"
 		}, passive)
 
 		return this

@@ -466,6 +466,11 @@ function HomeMediator:createMapListener()
 	self:mapEventListener(self:getEventDispatcher(), EVT_DOWNLOAD_PORTRAIT, self, self.refreshDownloadPorLabel)
 	self:mapEventListener(self:getEventDispatcher(), EVT_DOWNLOAD_SOUNDCV, self, self.refreshDownloadSoundLabel)
 	self:mapEventListener(self:getEventDispatcher(), EVT_HEROES_SYNC_SHOW, self, self.refreshRedPoint)
+	self:mapEventListener(self:getEventDispatcher(), EVT_RETURN_ACTIVITY_REFRESH, self, self.onBackFlowActivityRefresh)
+end
+
+function HomeMediator:onBackFlowActivityRefresh(event)
+	self._rightFuncLayout:getChildByName("mBackFlowNode"):setVisible(self._activitySystem:isReturnActivityShow())
 end
 
 function HomeMediator:getDownloadReward(event)
@@ -866,7 +871,8 @@ function HomeMediator:initAnim()
 		[#nodes + 1] = self._rightFuncLayout:getChildByName("mChallengeNode"),
 		[#nodes + 1] = self._rightFuncLayout:getChildByName("mCardsGroupNode"),
 		[#nodes + 1] = self._rightFuncLayout:getChildByName("mArena1Node"),
-		[#nodes + 1] = self._rightFuncLayout:getChildByName("mActivity2Node")
+		[#nodes + 1] = self._rightFuncLayout:getChildByName("mActivity2Node"),
+		[#nodes + 1] = self._rightFuncLayout:getChildByName("mBackFlowNode")
 	}
 
 	for i = 1, #nodes do
@@ -996,6 +1002,12 @@ function HomeMediator:initAnim()
 
 		mc:gotoAndPlay(0)
 		nodes[5]:getChildByName("mRedSprite"):runAction(cc.Sequence:create(cc.DelayTime:create(0.5), cc.FadeIn:create(0.3)))
+
+		local mc1 = nodes[7].movieClip
+
+		mc1:gotoAndPlay(0)
+		nodes[7]:getChildByName("mRedSprite"):runAction(cc.Sequence:create(cc.DelayTime:create(0.5), cc.FadeIn:create(0.3)))
+		nodes[7]:setVisible(self._activitySystem:isReturnActivityShow())
 	end)
 	mainMovieClip:addCallbackAtFrame(30, function ()
 		mainMovieClip:stop()
@@ -1141,6 +1153,11 @@ function HomeMediator:checkNewSystemUnlock()
 				}, {
 					isDeductTime = 1
 				}, delegate))
+				coroutine.yield()
+			end
+
+			if self._activitySystem:isReturnActivityShow() and not self._activitySystem:isReturnLetterDraw() then
+				self._activitySystem:tryEnterActivityLetter(delegate)
 				coroutine.yield()
 			end
 
@@ -2507,6 +2524,12 @@ function HomeMediator:onGuildBtn(sender, type)
 	end
 end
 
+function HomeMediator:onBackFlowBtn(sender, type)
+	if type == ccui.TouchEventType.ended then
+		self._activitySystem:tryEnterActivityReturn()
+	end
+end
+
 function HomeMediator:onRecruitHeroBtn(sender, type)
 	if type == ccui.TouchEventType.ended then
 		local recruitSystem = self:getInjector():getInstance("RecruitSystem")
@@ -2806,6 +2829,9 @@ function HomeMediator:getNewSyatemTarget(data)
 	return config[data.Id]
 end
 
+function HomeMediator:refreshReturnRewardDraw()
+end
+
 function HomeMediator:triggerGuide()
 	local storyDirector = self:getInjector():getInstance(story.StoryDirector)
 	local stageSystem = self:getInjector():getInstance(StageSystem)
@@ -2987,6 +3013,10 @@ function HomeMediator:setupClickEnvs(sta)
 	if sta or self._setupClickEnvs then
 		self._setupClickEnvs = true
 	else
+		return
+	end
+
+	if self._activitySystem:isReturnActivityShow() and not self._activitySystem:isReturnLetterDraw() then
 		return
 	end
 
@@ -3321,8 +3351,9 @@ function HomeMediator:arenaRedPoint()
 	local arenaSystem = self:getInjector():getInstance(ArenaSystem)
 	local petRaceSystem = self:getInjector():getInstance(PetRaceSystem)
 	local coopBoss = self:getInjector():getInstance(CooperateBossSystem)
+	local rtpkSystem = self:getInjector():getInstance(RTPKSystem)
 
-	return arenaSystem:checkAwardRed() or petRaceSystem:redPointShow() or coopBoss:redPointShow()
+	return arenaSystem:checkAwardRed() or petRaceSystem:redPointShow() or coopBoss:redPointShow() or rtpkSystem:checkShowRed()
 end
 
 function HomeMediator:exploreRedPoint()
@@ -3408,6 +3439,10 @@ function HomeMediator:onClubRedPoint()
 	local clubSystem = self:getInjector():getInstance(ClubSystem)
 
 	return clubSystem:hasHomeRedPoint() or clubSystem:hasHomeActivityRedPoint()
+end
+
+function HomeMediator:onBackFlowRedPoint()
+	return self._activitySystem:activityReturnRedPointShow()
 end
 
 function HomeMediator:checkClubRedPoint()
@@ -3889,6 +3924,14 @@ function HomeMediator:setComplexActivityEntry()
 			imgZorder = 1,
 			aimpos = cc.p(50, 60),
 			imgpos = cc.p(40, 60)
+		},
+		[ActivityType_UI.KActivityFemale] = {
+			animZorder = 1,
+			img = "female_btn_zjm_rukou.png",
+			anim = "zhu_biannvshengrukou",
+			imgZorder = 2,
+			aimpos = cc.p(39, 39),
+			imgpos = cc.p(46, 35)
 		}
 	}
 	local extraActBtn = self._rightFuncLayout:getChildByFullName("extraActBtn")

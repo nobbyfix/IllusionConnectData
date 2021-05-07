@@ -68,6 +68,10 @@ function MasterLeaderSkillMediator:initTab()
 				"asset/ui/mastercultivate/common_btn_fy4.png"
 			}
 		}
+
+		if self._ownSkills then
+			break
+		end
 	end
 
 	config.btnDatas = data
@@ -114,6 +118,8 @@ end
 function MasterLeaderSkillMediator:initData(data)
 	self._curTabIdx = data.index and data.index or 1
 	self._towerMaster = data.towerMaster or false
+	self._ownSkills = data.ownSkills
+	self._ownMasterRoleModel = data.ownMasterRoleModel
 
 	if self._towerMaster then
 		self._master = data.master
@@ -143,7 +149,13 @@ function MasterLeaderSkillMediator:setListViewVisible()
 		return
 	end
 
-	local skills = self._masterSystem:getMasterActiveSkills(self._masterId)
+	local skills = {}
+
+	if self._ownSkills then
+		skills = self._ownSkills
+	else
+		skills = self._masterSystem:getMasterActiveSkills(self._masterId)
+	end
 
 	if #skills == 0 then
 		self._tabPanel:setVisible(false)
@@ -261,6 +273,8 @@ function MasterLeaderSkillMediator:refreshSkillCell(cell, index, isActive)
 
 	if self._towerMaster then
 		skills = self._master:getSkillList()
+	elseif self._ownSkills then
+		skills = self._ownSkills
 	else
 		skills = self._masterSystem:getMasterLeaderSkillList(self._masterId)
 	end
@@ -355,7 +369,7 @@ function MasterLeaderSkillMediator:createSkillDescPanel(layout, skill, isActive,
 	if language ~= GameLanguageType.CN then
 		label:setVerticalSpace(1)
 	else
-		label:setVerticalSpace(8)
+		label:setVerticalSpace(4)
 	end
 
 	label:renderContent(listWidth, 0)
@@ -414,7 +428,7 @@ end
 function MasterLeaderSkillMediator:createMasterStandRole()
 	local info = {
 		iconType = "Bust2",
-		id = self._master:getModel()
+		id = self._ownMasterRoleModel or self._master:getModel()
 	}
 
 	self._rolePanel:removeAllChildren()

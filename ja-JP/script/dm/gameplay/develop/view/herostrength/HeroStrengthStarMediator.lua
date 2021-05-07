@@ -582,7 +582,7 @@ function HeroStrengthStarMediator:refreshStarUpCostPanel()
 	cost:setTextColor(GameStyle:getColor(colorNum1))
 	costLimit:setTextColor(GameStyle:getColor(colorNum1))
 
-	addImg = self._costPanel:getChildByFullName("costNode1.costBg.addImg")
+	addImg = self._costPanel:getChildByFullName("costNode1.costBg.addImg.Image_1")
 
 	addImg:setVisible(not self._debrisEngouh)
 	iconpanel:setGray(not self._debrisEngouh)

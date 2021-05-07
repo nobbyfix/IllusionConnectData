@@ -95,6 +95,26 @@ function RTPKSystem:switchRTPKMainView()
 end
 
 function RTPKSystem:checkShowRed()
+	local status = self:getRTPKState()
+
+	if (status == RTPKSeasonStatus.kNotCanMatch or status == RTPKSeasonStatus.kCanMatch) and self:isInMatchTime() then
+		local developSystem = self:getInjector():getInstance(DevelopSystem)
+		local playerId = developSystem:getPlayer():getRid()
+		local key = playerId .. "rtpk_entertime"
+		local lastTime = cc.UserDefault:getInstance():getIntegerForKey(key, 0)
+		local gameServerAgent = self:getInjector():getInstance(GameServerAgent)
+		local curTime = gameServerAgent:remoteTimestamp()
+		local isSameDay = TimeUtil:isSameDay(lastTime, curTime, {
+			sec = 0,
+			min = 0,
+			hour = 5
+		})
+
+		if not isSameDay then
+			return true
+		end
+	end
+
 	if self:checkGradeRewardRedpoint() then
 		return true
 	end
@@ -383,6 +403,20 @@ function RTPKSystem:checkSeasonData(callback)
 			self:requestRTPKInfo(callback, false)
 		end
 	end
+end
+
+function RTPKSystem:isDoubleScore()
+	local status = self._rtpk:getCurStatus()
+
+	if (status == RTPKSeasonStatus.kNotCanMatch or status == RTPKSeasonStatus.kCanMatch) and self:isInMatchTime() then
+		local doubleTimes = self._rtpk:getDoubleTimes()
+
+		if doubleTimes > 0 then
+			return true
+		end
+	end
+
+	return false
 end
 
 function RTPKSystem:requestGetReward(data, callback)

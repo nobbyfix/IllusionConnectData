@@ -729,6 +729,162 @@
         "Times": 60,
         "isRemind": 0
     },
+    "ActivityBlock_Female_Exchange_1": {
+        "Cost": [
+            {
+                "amount": 8000,
+                "code": "IM_Female_ExchangeItem",
+                "type": 2
+            }
+        ],
+        "Order": 1,
+        "Target": "Activity_Female_Exchange_1",
+        "Times": 1,
+        "isRemind": 1
+    },
+    "ActivityBlock_Female_Exchange_10": {
+        "Cost": [
+            {
+                "amount": 20,
+                "code": "IM_Female_ExchangeItem",
+                "type": 2
+            }
+        ],
+        "Order": 8,
+        "Target": "Activity_Female_Exchange_10",
+        "Times": 500,
+        "isRemind": 0
+    },
+    "ActivityBlock_Female_Exchange_11": {
+        "Cost": [
+            {
+                "amount": 20,
+                "code": "IM_Female_ExchangeItem",
+                "type": 2
+            }
+        ],
+        "Order": 9,
+        "Target": "Activity_Female_Exchange_11",
+        "Times": 500,
+        "isRemind": 0
+    },
+    "ActivityBlock_Female_Exchange_12": {
+        "Cost": [
+            {
+                "amount": 20,
+                "code": "IM_Female_ExchangeItem",
+                "type": 2
+            }
+        ],
+        "Order": 10,
+        "Target": "Activity_Female_Exchange_12",
+        "Times": 500,
+        "isRemind": 0
+    },
+    "ActivityBlock_Female_Exchange_2": {
+        "Cost": [
+            {
+                "amount": 5000,
+                "code": "IM_Female_ExchangeItem",
+                "type": 2
+            }
+        ],
+        "Order": 1,
+        "Target": "Activity_Female_Exchange_2",
+        "Times": 1,
+        "isRemind": 1
+    },
+    "ActivityBlock_Female_Exchange_3": {
+        "Cost": [
+            {
+                "amount": 4000,
+                "code": "IM_Female_ExchangeItem",
+                "type": 2
+            }
+        ],
+        "Order": 2,
+        "Target": "Activity_Female_Exchange_3",
+        "Times": 1,
+        "isRemind": 1
+    },
+    "ActivityBlock_Female_Exchange_4": {
+        "Cost": [
+            {
+                "amount": 3000,
+                "code": "IM_Female_ExchangeItem",
+                "type": 2
+            }
+        ],
+        "Order": 2,
+        "Target": "Activity_Female_Exchange_4",
+        "Times": 1,
+        "isRemind": 1
+    },
+    "ActivityBlock_Female_Exchange_5": {
+        "Cost": [
+            {
+                "amount": 800,
+                "code": "IM_Female_ExchangeItem",
+                "type": 2
+            }
+        ],
+        "Order": 3,
+        "Target": "Activity_Female_Exchange_5",
+        "Times": 10,
+        "isRemind": 1
+    },
+    "ActivityBlock_Female_Exchange_6": {
+        "Cost": [
+            {
+                "amount": 300,
+                "code": "IM_Female_ExchangeItem",
+                "type": 2
+            }
+        ],
+        "Order": 4,
+        "Target": "Activity_Female_Exchange_6",
+        "Times": 20,
+        "isRemind": 0
+    },
+    "ActivityBlock_Female_Exchange_7": {
+        "Cost": [
+            {
+                "amount": 200,
+                "code": "IM_Female_ExchangeItem",
+                "type": 2
+            }
+        ],
+        "Order": 5,
+        "Target": "Activity_Female_Exchange_7",
+        "Times": 60,
+        "isRemind": 0
+    },
+    "ActivityBlock_Female_Exchange_8": {
+        "Cost": [
+            {
+                "amount": 350,
+                "code": "IM_Female_ExchangeItem",
+                "type": 2
+            }
+        ],
+        "Order": 6,
+        "Target": "Activity_Female_Exchange_8",
+        "Times": 10,
+        "isRemind": 0
+    },
+    "ActivityBlock_Female_Exchange_9": {
+        "Cost": [
+            {
+                "amount": 300,
+                "code": "IM_Female_ExchangeItem",
+                "type": 2
+            }
+        ],
+        "Order": 7,
+        "Target": "Activity_Female_Exchange_9",
+        "Times": 20,
+        "isRemind": 0
+    },
     "ActivityBlock_Fire_Exchange_1": {
         "Cost": [
             {
@@ -2671,6 +2827,214 @@
         "Times": 99999,
         "isRemind": ""
     },
+    "CooperateBoss_Exchange_20210510_1": {
+        "Cost": [
+            {
+                "amount": 4500,
+                "code": "IR_CooperateBoss",
+                "type": 2
+            }
+        ],
+        "Order": 1,
+        "Target": "CooperateBoss_Exchange_20210510_1",
+        "Times": 1,
+        "isRemind": ""
+    },
+    "CooperateBoss_Exchange_20210510_2": {
+        "Cost": [
+            {
+                "amount": 600,
+                "code": "IR_CooperateBoss",
+                "type": 2
+            }
+        ],
+        "Order": 2,
+        "Target": "CooperateBoss_Exchange_20210510_2",
+        "Times": 3,
+        "isRemind": ""
+    },
+    "CooperateBoss_Exchange_20210510_3": {
+        "Cost": [
+            {
+                "amount": 300,
+                "code": "IR_CooperateBoss",
+                "type": 2
+            }
+        ],
+        "Order": 3,
+        "Target": "CooperateBoss_Exchange_20210510_3",
+        "Times": 10,
+        "isRemind": ""
+    },
+    "CooperateBoss_Exchange_20210510_4": {
+        "Cost": [
+            {
+                "amount": 300,
+                "code": "IR_CooperateBoss",
+                "type": 2
+            }
+        ],
+        "Order": 4,
+        "Target": "CooperateBoss_Exchange_20210510_4",
+        "Times": 60,
+        "isRemind": ""
+    },
+    "CooperateBoss_Exchange_20210510_5": {
+        "Cost": [
+            {
+                "amount": 500,
+                "code": "IR_CooperateBoss",
+                "type": 2
+            }
+        ],
+        "Order": 5,
+        "Target": "CooperateBoss_Exchange_20210510_5",
+        "Times": 50,
+        "isRemind": ""
+    },
+    "CooperateBoss_Exchange_20210510_6": {
+        "Cost": [
+            {
+                "amount": 60,
+                "code": "IR_CooperateBoss",
+                "type": 2
+            }
+        ],
+        "Order": 6,
+        "Target": "CooperateBoss_Exchange_20210510_6",
+        "Times": 80,
+        "isRemind": ""
+    },
+    "CooperateBoss_Exchange_20210510_7": {
+        "Cost": [
+            {
+                "amount": 10,
+                "code": "IR_CooperateBoss",
+                "type": 2
+            }
+        ],
+        "Order": 7,
+        "Target": "CooperateBoss_Exchange_20210510_7",
+        "Times": 99999,
+        "isRemind": ""
+    },
+    "CooperateBoss_Exchange_20210510_8": {
+        "Cost": [
+            {
+                "amount": 10,
+                "code": "IR_CooperateBoss",
+                "type": 2
+            }
+        ],
+        "Order": 8,
+        "Target": "CooperateBoss_Exchange_20210510_8",
+        "Times": 99999,
+        "isRemind": ""
+    },
+    "CooperateBoss_Exchange_20210526_1": {
+        "Cost": [
+            {
+                "amount": 4500,
+                "code": "IR_CooperateBoss",
+                "type": 2
+            }
+        ],
+        "Order": 1,
+        "Target": "CooperateBoss_Exchange_20210526_1",
+        "Times": 1,
+        "isRemind": ""
+    },
+    "CooperateBoss_Exchange_20210526_2": {
+        "Cost": [
+            {
+                "amount": 600,
+                "code": "IR_CooperateBoss",
+                "type": 2
+            }
+        ],
+        "Order": 2,
+        "Target": "CooperateBoss_Exchange_20210526_2",
+        "Times": 3,
+        "isRemind": ""
+    },
+    "CooperateBoss_Exchange_20210526_3": {
+        "Cost": [
+            {
+                "amount": 300,
+                "code": "IR_CooperateBoss",
+                "type": 2
+            }
+        ],
+        "Order": 3,
+        "Target": "CooperateBoss_Exchange_20210526_3",
+        "Times": 10,
+        "isRemind": ""
+    },
+    "CooperateBoss_Exchange_20210526_4": {
+        "Cost": [
+            {
+                "amount": 300,
+                "code": "IR_CooperateBoss",
+                "type": 2
+            }
+        ],
+        "Order": 4,
+        "Target": "CooperateBoss_Exchange_20210526_4",
+        "Times": 60,
+        "isRemind": ""
+    },
+    "CooperateBoss_Exchange_20210526_5": {
+        "Cost": [
+            {
+                "amount": 500,
+                "code": "IR_CooperateBoss",
+                "type": 2
+            }
+        ],
+        "Order": 5,
+        "Target": "CooperateBoss_Exchange_20210526_5",
+        "Times": 50,
+        "isRemind": ""
+    },
+    "CooperateBoss_Exchange_20210526_6": {
+        "Cost": [
+            {
+                "amount": 60,
+                "code": "IR_CooperateBoss",
+                "type": 2
+            }
+        ],
+        "Order": 6,
+        "Target": "CooperateBoss_Exchange_20210526_6",
+        "Times": 80,
+        "isRemind": ""
+    },
+    "CooperateBoss_Exchange_20210526_7": {
+        "Cost": [
+            {
+                "amount": 10,
+                "code": "IR_CooperateBoss",
+                "type": 2
+            }
+        ],
+        "Order": 7,
+        "Target": "CooperateBoss_Exchange_20210526_7",
+        "Times": 99999,
+        "isRemind": ""
+    },
+    "CooperateBoss_Exchange_20210526_8": {
+        "Cost": [
+            {
+                "amount": 10,
+                "code": "IR_CooperateBoss",
+                "type": 2
+            }
+        ],
+        "Order": 8,
+        "Target": "CooperateBoss_Exchange_20210526_8",
+        "Times": 99999,
+        "isRemind": ""
+    },
     "Exchange_NFDDi_20180901": {
         "Cost": [
             {
@@ -2682,6 +3046,19 @@
         "Order": "",
         "Target": "Exchange_NFDDi_20180901",
         "Times": 1,
+        "isRemind": 1
+    },
+    "Exchange_Zuohe02_Last_1": {
+        "Cost": [
+            {
+                "amount": 1,
+                "code": "IM_DiamondDrawEX_Zuohe",
+                "type": 2
+            }
+        ],
+        "Order": "",
+        "Target": "Exchange_Zuohe02_Last_1_reward",
+        "Times": 99999,
         "isRemind": 1
     },
     "Exchange_Zuohe_Last_1": {

@@ -711,7 +711,7 @@ function RegularLogicState_DiligentRound:enter(battleLogic, battleContext, args)
 	local allCrossUnits = self._battleField:crossCollectDiligentUnits()
 
 	if next(allCrossUnits) then
-		self:startTimer(self._duration1, function ()
+		self:startTimer(args.duration or self._duration1, function ()
 			self._lessThanLeastTime = false
 
 			self:finish(battleLogic)

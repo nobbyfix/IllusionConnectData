@@ -208,11 +208,14 @@ function exports.RecruitCard(env, card, location, cost)
 	end
 end
 
-function exports.DiligentRound(env)
+function exports.DiligentRound(env, duration)
 	local battlelogic = env.global["$BattleContext"]:getObject("BattleLogic")
 
 	battlelogic:dispatchMessage({
-		type = "DILIGENT_ROUND"
+		type = "DILIGENT_ROUND",
+		args = {
+			duration = duration
+		}
 	})
 end
 
@@ -276,6 +279,75 @@ function exports.BackToCard(env, unit)
 
 		return card
 	end
+end
+
+function exports.BackToWindow(env, unit, windowIndex)
+	local player = env["$actor"]:getOwner()
+
+	if unit:getCardInfo() then
+		local formationSystem = env.global["$FormationSystem"]
+
+		formationSystem:forbidenRevive(unit)
+
+		local cardSystem = env.global["$CardSystem"]
+		local cardInfo = cardSystem:genNewHeroCard(unit:getCardInfo(), "b")
+
+		if player:getCardState() == "skill" then
+			for i = 1, 4 do
+				local card_ws = player:takeCardAtIndex(i)
+
+				if card_ws then
+					player:backCardToPool(card_ws)
+				end
+			end
+
+			player:setCardPool(player:getHeroCardPool())
+			player:setupCardWindowWithHeroCards()
+			env.global.RecordImmediately(env, player:getId(), "RemoveSCard")
+		end
+
+		local card = player:getCardPool():insertCardByInfo(cardInfo)
+
+		env.global.RecordImmediately(env, player:getId(), "BackToCard", {
+			type = "hero",
+			card = card and card:dumpInformation() or 0
+		})
+
+		if windowIndex and windowIndex > 0 then
+			local idx = windowIndex
+			local card_ws = player:takeCardAtIndex(idx)
+
+			if card_ws then
+				player:backCardToPoolAtIndex(card_ws, 0)
+			end
+
+			local newCard, nextCard = player:fillCardAtIndex(idx)
+
+			env.global.RecordImmediately(env, player:getId(), "Card", {
+				type = "hero",
+				idx = idx,
+				card = newCard and newCard:dumpInformation() or 0,
+				next = nextCard and nextCard:dumpInformation() or 0
+			})
+			env.global["$SkillSystem"]:activateGlobalTrigger("HERO_CARD_CHANGEED", {
+				player = player,
+				idx = idx,
+				newcard = newCard
+			})
+		end
+
+		return card
+	end
+end
+
+function exports.GetCardWindowIndex(env, unit)
+	local cardInfo = unit:getCardInfo()
+
+	if cardInfo.cardIndex then
+		return cardInfo.cardIndex
+	end
+
+	return 0
 end
 
 function exports.HolyHide(env, unit, alpha)

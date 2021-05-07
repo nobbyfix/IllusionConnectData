@@ -1929,9 +1929,49 @@ local modules = {
 							mediator = "ActivitySunflowerMainMediator"
 						},
 						{
+							res = "asset/ui/ActivityReturn.csb",
+							name = "ActivityReturnView",
+							mediator = "ActivityReturnMediator"
+						},
+						{
+							res = "asset/ui/ActivityReturnLetter.csb",
+							name = "ActivityReturnLetterView",
+							mediator = "ActivityReturnLetterMediator"
+						},
+						{
+							res = "asset/ui/RewardBoxShow.csb",
+							name = "ActivityReturnLetterRewardView",
+							mediator = "ActivityReturnLetterRewardMediator"
+						},
+						{
+							res = "asset/ui/ReturnActivityLogin.csb",
+							name = "ReturnActivityLoginView",
+							mediator = "ReturnActivityLoginMediator"
+						},
+						{
+							res = "asset/ui/ReturnActivityTaskReached.csb",
+							name = "ReturnActivityTaskReachedView",
+							mediator = "ReturnActivityTaskReachedMediator"
+						},
+						{
+							res = "asset/ui/ReturnShopActivity.csb",
+							name = "ReturnShopActivityView",
+							mediator = "ReturnShopActivityMediator"
+						},
+						{
+							res = "asset/ui/ReturnHeroChange.csb",
+							name = "ReturnHeroChangeView",
+							mediator = "ReturnHeroChangeMediator"
+						},
+						{
 							res = "asset/ui/ActivityFireMain.csb",
 							name = "ActivityFireMainView",
 							mediator = "ActivityFireMainMediator"
+						},
+						{
+							res = "asset/ui/ActivityFemaleMain.csb",
+							name = "ActivityFemaleMainView",
+							mediator = "ActivityCommonMainMediator"
 						}
 					}
 				}

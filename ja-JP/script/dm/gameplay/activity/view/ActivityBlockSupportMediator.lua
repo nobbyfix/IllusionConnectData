@@ -42,6 +42,10 @@ local kBtnHandlers = {
 	["btnPanel.right.button"] = {
 		clickAudio = "Se_Click_Common_2",
 		func = "onClickRight"
+	},
+	["main.rolePanel"] = {
+		ignoreClickAudio = true,
+		func = "onClickRolePanel"
 	}
 }
 local kModelType = {
@@ -614,4 +618,24 @@ function ActivityBlockSupportMediator:runBtnAnim()
 
 	CommonUtils.runActionEffect(leftBtn, "Node_1.leftBtn", "LeftRightArrowEffect", "anim1", true, "zh_zy_jt.png")
 	CommonUtils.runActionEffect(rightBtn, "Node_2.rightBtn", "LeftRightArrowEffect", "anim1", true, "zh_zy_jt.png")
+end
+
+function ActivityBlockSupportMediator:onClickRolePanel()
+	local model = self._roles[self._roleIndex].model
+	local type_ = self._roles[self._roleIndex].type
+	local modelId, heroId = nil
+
+	if type_ == kModelType.kSurface then
+		modelId = ConfigReader:getDataByNameIdAndKey("Surface", model, "Model")
+		heroId = ConfigReader:getDataByNameIdAndKey("Surface", model, "Hero")
+	elseif type_ == kModelType.kHero then
+		modelId = IconFactory:getRoleModelByKey("HeroBase", model)
+		heroId = model
+	end
+
+	local view = self:getInjector():getInstance("HeroInfoView")
+
+	self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
+		heroId = heroId
+	}))
 end

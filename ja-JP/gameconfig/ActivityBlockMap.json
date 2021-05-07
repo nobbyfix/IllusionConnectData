@@ -709,6 +709,68 @@
         ],
         "Type": "NORMAL"
     },
+    "FemaleE01": {
+        "BGM": "Mus_Story_Girl_Main",
+        "Background": "Female_Scene03",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_FemaleAE01_Name",
+        "StarBoxReward": {
+            "10": "FemaleE01BOX01",
+            "20": "FemaleE01BOX02",
+            "30": "FemaleE01BOX03"
+        },
+        "SubPoint": [
+            "FemaleE01S01",
+            "FemaleE01S02",
+            "FemaleE01S03",
+            "FemaleE01S04",
+            "FemaleE01S05",
+            "FemaleE01S06",
+            "FemaleE01S07",
+            "FemaleE01S08",
+            "FemaleE01S09",
+            "FemaleE01S10",
+            "FemaleE01S11",
+            "FemaleE01S12"
+        ],
+        "SubStoryPoint": [
+            "FemaleS01E01",
+            "FemaleS01E02"
+        ],
+        "Type": "ELITE"
+    },
+    "FemaleM01": {
+        "BGM": "Mus_Story_Girl_Main",
+        "Background": "Female_Scene02",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_FemaleAM01_Name",
+        "StarBoxReward": {
+            "10": "FemaleM01BOX01",
+            "20": "FemaleM01BOX02",
+            "30": "FemaleM01BOX03"
+        },
+        "SubPoint": [
+            "FemaleM01S01",
+            "FemaleM01S02",
+            "FemaleM01S03",
+            "FemaleM01S04",
+            "FemaleM01S05",
+            "FemaleM01S06",
+            "FemaleM01S07",
+            "FemaleM01S08",
+            "FemaleM01S09",
+            "FemaleM01S10",
+            "FemaleM01S11",
+            "FemaleM01S12"
+        ],
+        "SubStoryPoint": [
+            "FemaleS01S01",
+            "FemaleS01S02"
+        ],
+        "Type": "NORMAL"
+    },
     "FireE01": {
         "BGM": "Mus_Story_Yewang_Main",
         "Background": "Fire_Scene02",

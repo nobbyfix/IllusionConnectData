@@ -47,20 +47,6 @@ ActivitySupportViewEnter = {
 	Main = 2,
 	Stage = 1
 }
-ActivitySupportItems = {
-	[ActivityId.kActivityBlockZuoHe] = {
-		"IM_ABSoreItem_1",
-		"IM_ABSoreItem_2",
-		"IM_ABClubAttrItem_1",
-		"IM_ABClubAttrItem_2"
-	},
-	[ActivityId.kActivityWxh] = {
-		"IM_WuXiuHuiSoreItem_1",
-		"IM_WuXiuHuiSoreItem_2",
-		"IM_WuXiuHuiClubAttrItem_1",
-		"IM_WuXiuHuiClubAttrItem_2"
-	}
-}
 ActivitySupportScheduleType = {
 	preliminaries = 0,
 	finals = 2,
@@ -177,23 +163,13 @@ end
 
 function ActivitySupport:getPeriodStartTime(periodId, index, activityId)
 	local index = index or 1
-	local pd = {}
-
-	if activityId == ActivityId.kActivityWxh then
-		pd = {
-			winner = "ABS_WuXiuHui_3_1",
-			ABS_WuXiuHui_2_1 = "ABS_WuXiuHui_1_" .. index,
-			ABS_WuXiuHui_2_2 = "ABS_WuXiuHui_1_" .. index + 2,
-			ABS_WuXiuHui_3_1 = "ABS_WuXiuHui_2_" .. index
-		}
-	else
-		pd = {
-			winner = "ABS_ZuoHe_3_1",
-			ABS_ZuoHe_2_1 = "ABS_ZuoHe_1_" .. index,
-			ABS_ZuoHe_2_2 = "ABS_ZuoHe_1_" .. index + 2,
-			ABS_ZuoHe_3_1 = "ABS_ZuoHe_2_" .. index
-		}
-	end
+	local pdstr = ActivitySupportScheduleId[self:getUI()]
+	local pd = {
+		[pdstr .. "_2_1"] = pdstr .. "_1_" .. index,
+		[pdstr .. "_2_2"] = pdstr .. "_1_" .. index + 2,
+		[pdstr .. "_3_1"] = pdstr .. "_2_" .. index,
+		winner = pdstr .. "_3_1"
+	}
 
 	if not pd[periodId] then
 		return nil
@@ -303,7 +279,7 @@ function ActivitySupport:getTalkShow(_activityId, _heroId, _itemId)
 	end
 
 	local bubble = config.Bubble
-	local item = self:getSupportItems() or ActivitySupportItems[_activityId]
+	local item = self:getSupportItems()
 
 	if bubble then
 		local content = nil

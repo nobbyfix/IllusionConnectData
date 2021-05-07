@@ -55,7 +55,7 @@ local kAddBtnFuncMap = {
 	[CurrencyIdKind.kDiamondDrawItem] = function (self)
 		AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
 		self._shopSystem:tryEnter({
-			shopId = "Shop_Diamond"
+			shopId = ShopSpecialId.kShopPackage
 		})
 	end,
 	[CurrencyIdKind.kDiamondDrawExItem] = function (self)

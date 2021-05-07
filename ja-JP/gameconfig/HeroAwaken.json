@@ -188,6 +188,27 @@
         "StoryLink": "S11S01",
         "SurfaceId": "Surface_LLan_Awake"
     },
+    "MLYTLSha": {
+        "AnimSound": "Se_Effect_Awakening_MLYTLSha",
+        "Animation": "ana_Awaken",
+        "CutIn": [
+            0,
+            0,
+            0.7
+        ],
+        "ModelId": "Model_MLYTLSha_Awake",
+        "Name": "MLYTLSha_Awake_Name",
+        "NameDesc": "MLYTLSha_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_MLYTLSha_UnAwake",
+        "Reward": "HeroAwaken_MLYTLSha",
+        "ShowHero": "MLYTLSha",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "MLYTLSha_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_MLYTLSha_Awake"
+    },
     "MTZMEShi": {
         "AnimSound": "Se_Effect_Awakening_MTZMEShi",
         "Animation": "HUIHUI_Awaken",
@@ -229,6 +250,27 @@
         "StarId": "SDTZi_Awake",
         "StoryLink": "S11S01",
         "SurfaceId": "Surface_SDTZi_Awake"
+    },
+    "YBYa": {
+        "AnimSound": "Se_Effect_Awakening_YBYa",
+        "Animation": "hmyyue_Awaken",
+        "CutIn": [
+            0,
+            0,
+            0.7
+        ],
+        "ModelId": "Model_YBYa_Awake",
+        "Name": "YBYa_Awake_Name",
+        "NameDesc": "YBYa_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_YBYa_UnAwake",
+        "Reward": "HeroAwaken_YBYa",
+        "ShowHero": "YBYa",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "YBYa_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_YBYa_Awake"
     },
     "YLSBai": {
         "AnimSound": "Se_Effect_Awakening_YLSBai",

@@ -215,11 +215,12 @@ function ShopMonthCardMediator:setMonthCardView()
 
 		times:setString(tostring(remainDays))
 		per:setPositionX(times:getPositionX() + times:getContentSize().width)
+		times:enableOutline(cc.c4b(22, 1, 0, 188.7))
 
 		if remainDays < data._dangerTime then
 			times:setColor(cc.c3b(255, 73, 73))
 		else
-			times:setColor(cc.c3b(91, 230, 255))
+			times:setColor(cc.c3b(255, 255, 255))
 		end
 
 		local canContinueBuy = self._rechargeAndVipSystem:getCanContinueBuy(data._id)

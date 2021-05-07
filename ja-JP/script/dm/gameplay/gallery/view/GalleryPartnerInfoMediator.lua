@@ -42,6 +42,10 @@ local kBtnHandlers = {
 	["tabBg.exploreBtn"] = {
 		clickAudio = "Se_Click_Tab_5",
 		func = "onClickExplore"
+	},
+	["tabBg.awakenBtn"] = {
+		clickAudio = "Se_Click_Tab_5",
+		func = "onClickAwaken"
 	}
 }
 local kGossipDescColor = {
@@ -186,9 +190,14 @@ function GalleryPartnerInfoMediator:initWidgetInfo()
 
 	self._exploreBtn:setVisible(false)
 
+	self._awakenBtn = self._tabBg:getChildByFullName("awakenBtn")
 	self._lockTip = self._tabBg:getChildByFullName("lockTip")
 
 	self._lockTip:setVisible(false)
+
+	self._linkImage = self._heroPanel:getChildByFullName("linkImage")
+
+	self._linkImage:setVisible(false)
 
 	self._bustbtn = self._main:getChildByFullName("bustbtn")
 	self._touchPanel = self:getView():getChildByFullName("touchPanel")
@@ -356,6 +365,14 @@ function GalleryPartnerInfoMediator:refreshBtnState()
 	else
 		self:createLickTip(self._exploreBtn)
 	end
+
+	self._awakenBtn:removeChildByName("LockTip")
+
+	if self._heroSystem:checkHaveAwaken(self._heroId) == false then
+		self:createLickTip(self._awakenBtn)
+	else
+		self._awakenBtn:getChildByFullName("dark_1"):setOpacity(255)
+	end
 end
 
 function GalleryPartnerInfoMediator:createLickTip(node)
@@ -400,6 +417,12 @@ function GalleryPartnerInfoMediator:refreshInfo()
 		self._namePanel:getChildByFullName("cvname"):setFontSize(22)
 	else
 		self._namePanel:getChildByFullName("cvname"):setFontSize(24)
+	end
+
+	if self._heroSystem:isLinkStageHero(self._heroId) then
+		self._linkImage:setVisible(true)
+	else
+		self._linkImage:setVisible(false)
 	end
 
 	local historyHero = ConfigReader:getDataByNameIdAndKey("GalleryHeroInfo", self._heroId, "HistoryHero")
@@ -772,6 +795,12 @@ function GalleryPartnerInfoMediator:onClickExplore()
 		self:dispatch(ShowTipEvent({
 			tip = Strings:get("Item_PleaseWait")
 		}))
+	end
+end
+
+function GalleryPartnerInfoMediator:onClickAwaken()
+	if self._heroSystem:checkHaveAwaken(self._heroId) then
+		self._heroSystem:tryEnterAwakenShowView(self._heroId)
 	end
 end
 

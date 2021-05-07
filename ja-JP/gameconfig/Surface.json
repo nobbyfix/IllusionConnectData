@@ -3083,6 +3083,62 @@
         "Type": 1,
         "Unlook": 1
     },
+    "Surface_HSYZhai_1": {
+        "ActivityId": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    328,
+                    1218
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "body",
+                "point": [
+                    400,
+                    1019
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_HSYZhai_1_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "1",
+        "GoodsId": "",
+        "Hero": "HSYZhai",
+        "Link": "",
+        "LongDesc": "",
+        "Model": "Model_HSYZhai",
+        "Name": "Surface_HSYZhai_1_Name",
+        "NotGetUnlook": "",
+        "Quality": 2,
+        "RepeatReward": "",
+        "ShopID": "",
+        "Sort": 1,
+        "Type": "",
+        "Unlook": 1
+    },
     "Surface_HSheng_1": {
         "ActivityId": "",
         "ClickAction": [
@@ -3865,6 +3921,62 @@
         "ShopID": "",
         "Sort": 2,
         "Type": 3,
+        "Unlook": 1
+    },
+    "Surface_KTSJKe_3": {
+        "ActivityId": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    19,
+                    1133
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "body",
+                "point": [
+                    19,
+                    975
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_KTSJKe_wvt_Decs",
+        "GainDesc": "Surface_Shop_GainDesc",
+        "GainShortDesc": "Surface_GainShort",
+        "GoodsId": "ShopSurface_Surface_KTSJKe_3",
+        "Hero": "KTSJKe",
+        "Link": "",
+        "LongDesc": "Surface_KTSJKe_wvt_LongDecs",
+        "Model": "Model_KTSJKe_wvt",
+        "Name": "Surface_KTSJKe_wvt_Name",
+        "NotGetUnlook": "",
+        "Quality": 5,
+        "RepeatReward": 40,
+        "ShopID": "Shop_Surface",
+        "Sort": 3,
+        "Type": 2,
         "Unlook": 1
     },
     "Surface_KTSJKe_Awake": {
@@ -5365,6 +5477,62 @@
         "Type": 2,
         "Unlook": 1
     },
+    "Surface_MLYTLSha_Awake": {
+        "ActivityId": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    56,
+                    1040
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch2",
+                "part": "body",
+                "point": [
+                    -2,
+                    868
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_MLYTLSha_1Awake_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "Surface_MLYTLSha_Awake_GainDesc",
+        "GoodsId": "",
+        "Hero": "MLYTLSha",
+        "Link": "",
+        "LongDesc": "",
+        "Model": "Model_MLYTLSha_Awake",
+        "Name": "Surface_MLYTLSha_Awake_Name",
+        "NotGetUnlook": "",
+        "Quality": 5,
+        "RepeatReward": "",
+        "ShopID": "",
+        "Sort": 2,
+        "Type": 5,
+        "Unlook": 1
+    },
     "Surface_MTZMEShi_1": {
         "ActivityId": "",
         "ClickAction": [
@@ -6389,6 +6557,62 @@
         "ShopID": "",
         "Sort": 2,
         "Type": 4,
+        "Unlook": 1
+    },
+    "Surface_SDTZi_3": {
+        "ActivityId": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    58,
+                    1044
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "body",
+                "point": [
+                    13,
+                    873
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_SDTZi_wedding_Decs",
+        "GainDesc": "Surface_Shop_GainDesc",
+        "GainShortDesc": "Surface_GainShort",
+        "GoodsId": "ShopSurface_Surface_SDTZi_3",
+        "Hero": "SDTZi",
+        "Link": "",
+        "LongDesc": "Surface_SDTZi_wedding_LongDecs",
+        "Model": "Model_SDTZi_wedding",
+        "Name": "Surface_SDTZi_wedding_Name",
+        "NotGetUnlook": "",
+        "Quality": 5,
+        "RepeatReward": 40,
+        "ShopID": "Shop_Surface",
+        "Sort": 3,
+        "Type": 2,
         "Unlook": 1
     },
     "Surface_SDTZi_Awake": {
@@ -7884,6 +8108,62 @@
         "Type": 1,
         "Unlook": 1
     },
+    "Surface_YBYa_Awake": {
+        "ActivityId": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    40,
+                    746
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch2",
+                "part": "body",
+                "point": [
+                    -77,
+                    661
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_YBYa_1Awake_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "Surface_YBYa_Awake_GainDesc",
+        "GoodsId": "",
+        "Hero": "YBYa",
+        "Link": "",
+        "LongDesc": "",
+        "Model": "Model_YBYa_Awake",
+        "Name": "Surface_YBYa_Awake_Name",
+        "NotGetUnlook": "",
+        "Quality": 5,
+        "RepeatReward": "",
+        "ShopID": "",
+        "Sort": 2,
+        "Type": 5,
+        "Unlook": 1
+    },
     "Surface_YDZZong_1": {
         "ActivityId": "",
         "ClickAction": [
@@ -9000,6 +9280,62 @@
         "ShopID": "",
         "Sort": 2,
         "Type": 3,
+        "Unlook": 1
+    },
+    "Surface_ZTXChang_3": {
+        "ActivityId": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    5,
+                    1179
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "body",
+                "point": [
+                    -3,
+                    991
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_ZTXChang_wedding_Decs",
+        "GainDesc": "Surface_Shop_GainDesc",
+        "GainShortDesc": "Surface_GainShort",
+        "GoodsId": "ShopSurface_Surface_ZTXChang_3",
+        "Hero": "ZTXChang",
+        "Link": "",
+        "LongDesc": "Surface_ZTXChang_wedding_LongDecs",
+        "Model": "Model_ZTXChang_wedding",
+        "Name": "Surface_ZTXChang_wedding_Name",
+        "NotGetUnlook": "",
+        "Quality": 5,
+        "RepeatReward": 40,
+        "ShopID": "Shop_Surface",
+        "Sort": 3,
+        "Type": 2,
         "Unlook": 1
     },
     "Surface_ZTXCun_1": {

@@ -184,6 +184,22 @@ function ActivityBlockTeamMediator:resumeWithData()
 	self._costTotalLabel2:setString("/" .. self._costMaxNum)
 end
 
+function ActivityBlockTeamMediator:getOwnMasterId(pointid)
+	local masterid = ConfigReader:getDataByNameIdAndKey("ActivityBlockPoint", pointid, "Master")
+
+	if masterid ~= "" then
+		return masterid
+	end
+
+	return nil
+end
+
+function ActivityBlockTeamMediator:getOwnMasterRoleModel(masterid)
+	local roleModel = ConfigReader:getDataByNameIdAndKey("EnemyMaster", masterid, "RoleModel")
+
+	return roleModel
+end
+
 function ActivityBlockTeamMediator:initData(team)
 	if team then
 		self._curTeam = team
@@ -197,6 +213,13 @@ function ActivityBlockTeamMediator:initData(team)
 	}
 	self._heroes = modelTmp._heroes
 	self._curMasterId = modelTmp._masterId
+	local pointData = self._activity:getPointById(self._pointId)
+	local ownMasterId = self:getOwnMasterId(self._pointId)
+
+	if ownMasterId then
+		self._curMasterId = ownMasterId
+		self._showChangeMaster = false
+	end
 
 	if self._curMasterId == "" or self._curMasterId == 0 then
 		self._curMasterId = self._developSystem:getStageTeamById(1):getMasterId()
@@ -397,7 +420,6 @@ function ActivityBlockTeamMediator:checkStageType()
 	local spRuleLabel = self._spPanel:getChildByFullName("ruleLabel")
 
 	spRuleLabel:setString(Strings:get("ActivityBlock_UI_2"))
-	ruleBtn:setPositionX(spRuleLabel:getPositionX() - spRuleLabel:getContentSize().width / 2 - 30)
 end
 
 function ActivityBlockTeamMediator:setLabelEffect()
@@ -1054,6 +1076,115 @@ function ActivityBlockTeamMediator:initTeamHero(node, info)
 	end
 end
 
+function ActivityBlockTeamMediator:onClickMasterSkill()
+	AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
+
+	local params = {
+		masterId = self._curMasterId,
+		active = self._skillActive
+	}
+	local ownMasterId = self:getOwnMasterId(self._pointId)
+
+	if ownMasterId then
+		params.ownSkills = self._ownerSkillList
+		params.ownMasterRoleModel = self._ownMasterRoleModel
+	end
+
+	local view = self:getInjector():getInstance("MasterLeaderSkillView")
+
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+	}, params))
+end
+
+function ActivityBlockTeamMediator:checkMasterSkillActive()
+	local ownMasterId = self:getOwnMasterId(self._pointId)
+
+	if ownMasterId then
+		local kConditonKey = {
+			TeamSkill5 = "TeamSkillCondition5",
+			TeamSkill4 = "TeamSkillCondition4",
+			TeamSkill6 = "TeamSkillCondition6",
+			TeamSkill3 = "TeamSkillCondition3",
+			TeamSkill2 = "TeamSkillCondition2",
+			TeamSkill1 = "TeamSkillCondition1"
+		}
+
+		self._masterSkillPanel:removeAllChildren()
+
+		self._skillActive = {}
+		local masterConfig = ConfigReader:getRecordById("MasterBase", tostring("Master_LiMing"))
+		local skillShowType = ConfigReader:requireDataByNameIdAndKey("ConfigValue", "Master_TeamSkillShow", "content")
+		self._skillIndex = {}
+		self._skills = {}
+
+		for i = 1, #skillShowType do
+			local skillId = masterConfig[skillShowType[i]]
+			local conditionKey = kConditonKey[skillShowType[i]]
+			local condition = masterConfig[conditionKey]
+
+			if skillId and skillId ~= "" then
+				table.insert(self._skillIndex, skillId)
+
+				self._skills[skillId] = MasterSkill:new(skillId)
+
+				self._skills[skillId]:createAttrEffect(self, self._player, AttrSystemName.kMasterSkill)
+				self._skills[skillId]:setActiveCondition(condition)
+			end
+		end
+
+		local skills = {}
+
+		for k, v in pairs(self._skills) do
+			skills[#skills + 1] = v
+		end
+
+		self._ownerSkillList = skills
+
+		for i = 1, #skills do
+			local skill = skills[i]
+			local skillId = skill:getId()
+			local info = {
+				levelHide = true,
+				id = skillId,
+				skillType = skill:getSkillType()
+			}
+			local newSkillNode = IconFactory:createMasterSkillIcon(info)
+
+			newSkillNode:setScale(0.36)
+			self._masterSkillPanel:addChild(newSkillNode, 2)
+
+			local index = i <= 3 and i or i - 3
+			local posX = 20 + (index - 1) * 55
+			local posY = i <= 3 and 61 or 10
+
+			newSkillNode:setPosition(cc.p(posX, posY))
+
+			local conditions = skill:getActiveCondition()
+			local isActive = self._stageSystem:checkIsKeySkillActive(conditions, self._teamPets, {
+				masterId = self._curMasterId
+			})
+
+			newSkillNode:setGray(not isActive)
+
+			if isActive then
+				self._skillActive[i] = true
+				local shangceng = cc.MovieClip:create("shangceng_jinengjihuo")
+
+				shangceng:addTo(newSkillNode)
+				shangceng:setPosition(cc.p(46.5, 46.5))
+				shangceng:setScale(1.42)
+			else
+				newSkillNode:setGray(true)
+
+				self._skillActive[i] = false
+			end
+		end
+	else
+		super.checkMasterSkillActive(self)
+	end
+end
+
 function ActivityBlockTeamMediator:refreshCombatAndCost()
 	local leadConfig = self._masterSystem:getMasterCurLeadStageConfig(self._curMasterId)
 	local addPercent = leadConfig and leadConfig.LeadFightHero or 0
@@ -1104,13 +1235,35 @@ function ActivityBlockTeamMediator:changeMasterId(event)
 	self:refreshPetNode()
 end
 
+function ActivityBlockTeamMediator:getMasterName(masterid)
+	return Strings:get(ConfigReader:getDataByNameIdAndKey("MasterBase", masterid, "Name"))
+end
+
 function ActivityBlockTeamMediator:refreshMasterInfo()
-	local masterData = self._masterSystem:getMasterById(self._curMasterId)
+	local ownMasterId = self:getOwnMasterId(self._pointId)
+
+	if ownMasterId then
+		local roleModel = self:getOwnMasterRoleModel(ownMasterId)
+		local sprite = IconFactory:createRoleIconSprite({
+			stencil = 6,
+			iconType = "Bust6",
+			id = roleModel,
+			size = cc.size(171.5, 274)
+		})
+
+		sprite:setAnchorPoint(cc.p(0, 0))
+		self._masterImage:addChild(sprite)
+
+		self._ownMasterRoleModel = roleModel
+	else
+		local masterData = self._masterSystem:getMasterById(self._curMasterId)
+
+		self._masterImage:removeAllChildren()
+		self._masterImage:addChild(masterData:getHalfImage())
+	end
 
 	self._masterBtn:setVisible(self._showChangeMaster)
 	self._masterImage:setVisible(true)
-	self._masterImage:removeAllChildren()
-	self._masterImage:addChild(masterData:getHalfImage())
 	self:refreshCombatAndCost()
 	self:refreshButtons()
 	self:setLeadStageInfo()
@@ -1160,12 +1313,18 @@ function ActivityBlockTeamMediator:getSendData()
 		hasHero = true
 	end
 
+	local masterId = self._curMasterId
+
+	if self:getOwnMasterId(self._pointId) then
+		masterId = self._developSystem:getStageTeamById(1):getMasterId()
+	end
+
 	if not hasHero then
 		table.insert(sendData, {})
 	end
 
 	local params = {
-		masterId = self._curMasterId,
+		masterId = masterId,
 		heroes = sendData
 	}
 

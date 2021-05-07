@@ -944,6 +944,13 @@
         "Text": "Source_HeroStory",
         "URL": "view://HeroStoryEnterView&viewType=push&heroId=HLMGen"
     },
+    "IHF_HSYZhai_1": {
+        "Isturn": 0,
+        "ResourceText": "Source_Activity",
+        "ResourceType": 0,
+        "Text": "Source_Activity",
+        "URL": ""
+    },
     "IHF_HSheng_1": {
         "Isturn": 0,
         "ResourceText": "Source_Activity",
@@ -2702,6 +2709,13 @@
         "URL": "view://CommonStageMainView&viewType=push&stageType=ELITE"
     },
     "IMF_Master_JiangJun_1": {
+        "Isturn": 1,
+        "ResourceText": "Resource_BengHuai",
+        "ResourceType": 1,
+        "Text": "Source_Master_BiLei",
+        "URL": "view://CommonStageMainView&viewType=push&stageType=ELITE"
+    },
+    "IMF_Master_LiMing_1": {
         "Isturn": 1,
         "ResourceText": "Resource_BengHuai",
         "ResourceType": 1,
@@ -8377,6 +8391,13 @@
         "ResourceType": "",
         "Text": "",
         "URL": "view://shopView&viewType=push&shopId=Shop_Reset&packageId="
+    },
+    "IR_FemaleStamina": {
+        "Isturn": 0,
+        "ResourceText": "Source_IR_FemaleStamina",
+        "ResourceType": 0,
+        "Text": "Source_IR_FemaleStamina_Desc",
+        "URL": ""
     },
     "IR_FireStamina": {
         "Isturn": 0,

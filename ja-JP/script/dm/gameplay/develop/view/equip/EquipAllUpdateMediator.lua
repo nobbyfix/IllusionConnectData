@@ -599,7 +599,7 @@ function EquipAllUpdateMediator:refreshItemCost()
 	cost:setTextColor(GameStyle:getColor(colorNum1))
 	costLimit:setTextColor(GameStyle:getColor(colorNum1))
 
-	local addImg = panel:getChildByFullName("addImg")
+	local addImg = panel:getChildByFullName("addImg.Image_1")
 
 	addImg:setVisible(not self._itemEnough)
 	iconpanel:setGray(not self._itemEnough)
@@ -649,7 +649,7 @@ function EquipAllUpdateMediator:refreshEquipCost()
 			cost:setTextColor(GameStyle:getColor(colorNum1))
 			costLimit:setTextColor(GameStyle:getColor(colorNum1))
 
-			local addImg = panel:getChildByFullName("addImg")
+			local addImg = panel:getChildByFullName("addImg.Image_1")
 
 			addImg:setVisible(not self._equipEnough)
 			iconpanel:setGray(not self._equipEnough)
@@ -688,7 +688,7 @@ function EquipAllUpdateMediator:refreshEquipCost()
 		cost:setTextColor(GameStyle:getColor(colorNum1))
 		costLimit:setTextColor(GameStyle:getColor(colorNum1))
 
-		local addImg = panel:getChildByFullName("addImg")
+		local addImg = panel:getChildByFullName("addImg.Image_1")
 
 		addImg:setVisible(not self._equipEnough)
 		iconpanel:setGray(not self._equipEnough)
@@ -779,7 +779,7 @@ function EquipAllUpdateMediator:refreshEquipCost()
 		cost:setTextColor(GameStyle:getColor(colorNum1))
 		costLimit:setTextColor(GameStyle:getColor(colorNum1))
 
-		local addImg = panel:getChildByFullName("addImg")
+		local addImg = panel:getChildByFullName("addImg.Image_1")
 
 		addImg:setVisible(not self._equipEnough)
 		iconpanel:setGray(not self._equipEnough)

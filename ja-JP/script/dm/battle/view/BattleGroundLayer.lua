@@ -128,6 +128,10 @@ function BattleGroundLayer:setupView()
 	self._groundLayer:addChild(self._cellLayer, -999)
 end
 
+function BattleGroundLayer:getCellLayer()
+	return self._cellLayer
+end
+
 function BattleGroundLayer:adjustLayout(targetFrame)
 	AdjustUtils.adjustLayoutByType(self:getView(), AdjustUtils.kAdjustType.Left)
 

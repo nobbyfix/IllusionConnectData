@@ -1266,6 +1266,7 @@ function HeroShowOwnMediator:refreshName()
 
 	local nameBg = self._infoNode:getChildByFullName("nameBg.nameBg")
 	local name = self._infoNode:getChildByFullName("nameLabel.nameLabel")
+	local linkImage = self._infoNode:getChildByFullName("nameLabel.linkImage")
 	local nameString = self._heroData:getName()
 	local qualityLevel = self._heroData:getQualityLevel() == 0 and "" or "+" .. self._heroData:getQualityLevel()
 
@@ -1279,6 +1280,13 @@ function HeroShowOwnMediator:refreshName()
 	end
 
 	nameBg:setScaleX((width + 90) / nameBg:getContentSize().width)
+
+	if self._heroSystem:isLinkStageHero(self._heroData:getId()) then
+		linkImage:setVisible(true)
+		linkImage:setPositionX(nameBg:getContentSize().width * nameBg:getScaleX())
+	else
+		linkImage:setVisible(false)
+	end
 
 	local cvname = self._infoNode:getChildByFullName("cvname.cvname")
 	local cvNameString = self._heroData:getCVName()

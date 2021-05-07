@@ -286,12 +286,14 @@ all.Skill_BLTu_Unique = {
 					shield,
 					buffeft
 				}, 1)
+			end
 
-				local buff_show = global.SpecialNumericEffect(_env, "+baohuzhao", {
-					"+Normal",
-					"+Normal"
-				}, 1)
+			local buff_show = global.SpecialNumericEffect(_env, "+baohuzhao", {
+				"+Normal",
+				"+Normal"
+			}, 1)
 
+			if global.FriendMaster(_env) then
 				global.ApplyBuff(_env, global.FriendMaster(_env), {
 					timing = 2,
 					display = "Protecto",
@@ -846,12 +848,14 @@ all.Skill_BLTu_Unique_EX = {
 					shield,
 					buffeft
 				}, 1)
+			end
 
-				local buff_show = global.SpecialNumericEffect(_env, "+baohuzhao", {
-					"+Normal",
-					"+Normal"
-				}, 1)
+			local buff_show = global.SpecialNumericEffect(_env, "+baohuzhao", {
+				"+Normal",
+				"+Normal"
+			}, 1)
 
+			if global.FriendMaster(_env) then
 				global.ApplyBuff(_env, global.FriendMaster(_env), {
 					timing = 2,
 					display = "Protecto",
