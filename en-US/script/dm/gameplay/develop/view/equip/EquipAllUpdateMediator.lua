@@ -166,6 +166,23 @@ function EquipAllUpdateMediator:onRegister()
 
 	CommonUtils.runActionEffect(leftBtn, "Node_1.leftBtn", "LeftRightArrowEffect", "anim1", true)
 	CommonUtils.runActionEffect(rightBtn, "Node_2.rightBtn", "LeftRightArrowEffect", "anim1", true)
+
+	local desc = self._nodeSkill:getChildByFullName("desc")
+	local size = desc:getContentSize()
+	local x, y = desc:getPosition()
+	local descScrollView = ccui.ScrollView:create()
+
+	descScrollView:setTouchEnabled(true)
+	descScrollView:setBounceEnabled(true)
+	descScrollView:setDirection(ccui.ScrollViewDir.vertical)
+	descScrollView:setContentSize(size)
+	descScrollView:setPosition(cc.p(x, y))
+	descScrollView:setAnchorPoint(cc.p(0, 1))
+	self._nodeSkill:addChild(descScrollView, desc:getLocalZOrder())
+
+	self._descScrollView = descScrollView
+
+	desc:setVisible(false)
 end
 
 function EquipAllUpdateMediator:setupView(data)
@@ -414,7 +431,7 @@ function EquipAllUpdateMediator:refreshSkill()
 		local skillName = self._nodeSkill:getChildByFullName("name")
 		local skillNameBg = self._nodeSkill:getChildByFullName("nameBg")
 		local skillLevel = self._nodeSkill:getChildByFullName("level")
-		local skillDesc = self._nodeSkill:getChildByFullName("desc")
+		local skillDesc = self._descScrollView
 
 		skillDesc:removeAllChildren()
 
@@ -497,8 +514,6 @@ function EquipAllUpdateMediator:refreshSkill()
 			skillTip:setPositionX(skillLevel:getPositionX() + skillLevel:getContentSize().width + 10)
 		end
 
-		skillDesc:setString("")
-
 		local width = skillDesc:getContentSize().width
 		local height = skillDesc:getContentSize().height
 		local label = ccui.RichText:createWithXML(desc, {})
@@ -508,9 +523,23 @@ function EquipAllUpdateMediator:refreshSkill()
 		label:setPosition(cc.p(0, height))
 		label:addTo(skillDesc)
 
-		local posY = label:getContentSize().height > 30 and 58 or 51
+		local descScrollView = skillDesc
+		local size = skillDesc:getContentSize()
+		size.height = label:getContentSize().height
 
-		skillDesc:setPositionY(posY)
+		if descScrollView:getContentSize().height < size.height then
+			descScrollView:setTouchEnabled(true)
+		else
+			size = descScrollView:getContentSize()
+
+			descScrollView:setTouchEnabled(false)
+		end
+
+		descScrollView:setInnerContainerSize(size)
+
+		local offy = size.height
+
+		label:setPositionY(size.height)
 	else
 		self._nodeSkill:setVisible(false)
 	end
@@ -606,7 +635,7 @@ function EquipAllUpdateMediator:refreshItemCost()
 	cost:setTextColor(GameStyle:getColor(colorNum1))
 	costLimit:setTextColor(GameStyle:getColor(colorNum1))
 
-	local addImg = panel:getChildByFullName("addImg")
+	local addImg = panel:getChildByFullName("addImg.Image_1")
 
 	addImg:setVisible(not self._itemEnough)
 	iconpanel:setGray(not self._itemEnough)
@@ -656,7 +685,7 @@ function EquipAllUpdateMediator:refreshEquipCost()
 			cost:setTextColor(GameStyle:getColor(colorNum1))
 			costLimit:setTextColor(GameStyle:getColor(colorNum1))
 
-			local addImg = panel:getChildByFullName("addImg")
+			local addImg = panel:getChildByFullName("addImg.Image_1")
 
 			addImg:setVisible(not self._equipEnough)
 			iconpanel:setGray(not self._equipEnough)
@@ -695,7 +724,7 @@ function EquipAllUpdateMediator:refreshEquipCost()
 		cost:setTextColor(GameStyle:getColor(colorNum1))
 		costLimit:setTextColor(GameStyle:getColor(colorNum1))
 
-		local addImg = panel:getChildByFullName("addImg")
+		local addImg = panel:getChildByFullName("addImg.Image_1")
 
 		addImg:setVisible(not self._equipEnough)
 		iconpanel:setGray(not self._equipEnough)
@@ -786,7 +815,7 @@ function EquipAllUpdateMediator:refreshEquipCost()
 		cost:setTextColor(GameStyle:getColor(colorNum1))
 		costLimit:setTextColor(GameStyle:getColor(colorNum1))
 
-		local addImg = panel:getChildByFullName("addImg")
+		local addImg = panel:getChildByFullName("addImg.Image_1")
 
 		addImg:setVisible(not self._equipEnough)
 		iconpanel:setGray(not self._equipEnough)

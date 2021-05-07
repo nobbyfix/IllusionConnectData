@@ -1216,6 +1216,11 @@ local mappings = {
 		name = "MCInfoPopMediator",
 		type = "@C"
 	},
+	ActivityReturnLetterMediator = {
+		url = "dm.gameplay.activity.view.ActivityReturnLetterMediator",
+		name = "ActivityReturnLetterMediator",
+		type = "@C"
+	},
 	EliteTaskActivityMediator = {
 		url = "dm.gameplay.activity.view.EliteTaskActivityMediator",
 		name = "EliteTaskActivityMediator",
@@ -1311,6 +1316,11 @@ local mappings = {
 		name = "ActivitySagaSupportStageMediator",
 		type = "@C"
 	},
+	ActivityCommonMainMediator = {
+		url = "dm.gameplay.activity.view.ActivityCommonMainMediator",
+		name = "ActivityCommonMainMediator",
+		type = "@C"
+	},
 	ActivityBlockMonsterShopMediator = {
 		url = "dm.gameplay.activity.view.ActivityBlockMonsterShopMediator",
 		name = "ActivityBlockMonsterShopMediator",
@@ -1324,6 +1334,11 @@ local mappings = {
 	ActivityStageUnFinishMediator = {
 		url = "dm.gameplay.activity.view.ActivityStageUnFinishMediator",
 		name = "ActivityStageUnFinishMediator",
+		type = "@C"
+	},
+	ReturnActivityTaskReachedMediator = {
+		url = "dm.gameplay.activity.view.ReturnActivityTaskReachedMediator",
+		name = "ReturnActivityTaskReachedMediator",
 		type = "@C"
 	},
 	ActivityPointDetailMediator = {
@@ -1411,6 +1426,11 @@ local mappings = {
 		name = "ActivityBlockTeamMediator",
 		type = "@C"
 	},
+	ActivityReturnLetterRewardMediator = {
+		url = "dm.gameplay.activity.view.ActivityReturnLetterRewardMediator",
+		name = "ActivityReturnLetterRewardMediator",
+		type = "@C"
+	},
 	RechargeTipMediator = {
 		url = "dm.gameplay.activity.view.RechargeTipMediator",
 		name = "RechargeTipMediator",
@@ -1439,6 +1459,11 @@ local mappings = {
 	GameBoardActivityMediator = {
 		url = "dm.gameplay.activity.view.GameBoardActivityMediator",
 		name = "GameBoardActivityMediator",
+		type = "@C"
+	},
+	ActivityReturnMediator = {
+		url = "dm.gameplay.activity.view.ActivityReturnMediator",
+		name = "ActivityReturnMediator",
 		type = "@C"
 	},
 	ActivityStageFinishMediator = {
@@ -1481,6 +1506,11 @@ local mappings = {
 		name = "ActivityHeroCollectMediator",
 		type = "@C"
 	},
+	ReturnShopActivityMediator = {
+		url = "dm.gameplay.activity.view.ReturnShopActivityMediator",
+		name = "ReturnShopActivityMediator",
+		type = "@C"
+	},
 	ActivityLoginLoverMediator = {
 		url = "dm.gameplay.activity.view.ActivityLoginLoverMediator",
 		name = "ActivityLoginLoverMediator",
@@ -1504,6 +1534,11 @@ local mappings = {
 	ActivityBlockSummerExchangeMediator = {
 		url = "dm.gameplay.activity.view.ActivityBlockSummerExchangeMediator",
 		name = "ActivityBlockSummerExchangeMediator",
+		type = "@C"
+	},
+	ReturnHeroChangeMediator = {
+		url = "dm.gameplay.activity.view.ReturnHeroChangeMediator",
+		name = "ReturnHeroChangeMediator",
 		type = "@C"
 	},
 	ActivityBlockMusicMediator = {
@@ -1564,6 +1599,11 @@ local mappings = {
 	ActivityBlockMediator = {
 		url = "dm.gameplay.activity.view.ActivityBlockMediator",
 		name = "ActivityBlockMediator",
+		type = "@C"
+	},
+	ReturnActivityLoginMediator = {
+		url = "dm.gameplay.activity.view.ReturnActivityLoginMediator",
+		name = "ReturnActivityLoginMediator",
 		type = "@C"
 	},
 	ActivitySagaSupportScheduleMediator = {

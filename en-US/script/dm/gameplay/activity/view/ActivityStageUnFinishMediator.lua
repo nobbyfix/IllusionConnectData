@@ -43,6 +43,22 @@ function ActivityStageUnFinishMediator:enterWithData(data)
 	end
 end
 
+function ActivityStageUnFinishMediator:getOwnMasterId(pointid)
+	local masterid = ConfigReader:getDataByNameIdAndKey("ActivityBlockPoint", pointid, "Master")
+
+	if masterid ~= "" then
+		return masterid
+	end
+
+	return nil
+end
+
+function ActivityStageUnFinishMediator:getOwnMasterRoleModel(masterid)
+	local roleModel = ConfigReader:getDataByNameIdAndKey("EnemyMaster", masterid, "RoleModel")
+
+	return roleModel
+end
+
 function ActivityStageUnFinishMediator:checkResumeActionPoint()
 	local resumeNode = self:getView():getChildByFullName("content.resumePowerNode")
 
@@ -119,6 +135,11 @@ function ActivityStageUnFinishMediator:initSvpRole()
 	local masterSystem = developSystem:getMasterSystem()
 	local masterData = masterSystem:getMasterById(team:getMasterId())
 	local model = masterData:getModel()
+
+	if self:getOwnMasterId(self._data.pointId) then
+		model = self:getOwnMasterRoleModel(self:getOwnMasterId(self._data.pointId))
+	end
+
 	local svpSprite = IconFactory:createRoleIconSprite({
 		useAnim = true,
 		iconType = "Bust9",

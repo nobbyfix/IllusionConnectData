@@ -92,6 +92,16 @@
             "storage": 5000
         }
     },
+    "AcitvityFemaleStamina_Reset": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
     "AcitvityFireStamina_Reset": {
         "ResetSystem": {
             "addValue": 1,
@@ -1227,6 +1237,24 @@
         "ResetSystem": {
             "resetDate": [
                 1
+            ],
+            "resetMode": "WEEK",
+            "resetTime": [
+                "05:00:00"
+            ],
+            "setValue": 3
+        }
+    },
+    "RTPKDouble_Times": {
+        "ResetSystem": {
+            "resetDate": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
             ],
             "resetMode": "WEEK",
             "resetTime": [

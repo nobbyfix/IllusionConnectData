@@ -173,6 +173,14 @@ function ActivityStagePoint:getCostEnergy()
 	return self._config.StaminaCost
 end
 
+function ActivityStagePoint:getMainItemId()
+	if self._config.MainShowItem == "" then
+		return nil
+	end
+
+	return self._config.MainShowItem
+end
+
 function ActivityStagePoint:getStarCondition()
 	return self._config.StarCondition
 end

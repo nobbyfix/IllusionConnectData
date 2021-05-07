@@ -50,6 +50,7 @@ function ArenaTeamMediator:onRegister()
 	self:mapEventListener(self:getEventDispatcher(), EVT_TEAM_REFRESH_PETS, self, self.refreshViewBySort)
 	self:mapEventListener(self:getEventDispatcher(), EVT_ARENA_CHANGE_TEAM_SUCC, self, self.refreshView)
 	self:mapEventListener(self:getEventDispatcher(), EVT_STAGE_CHANGENAME_SUCC, self, self.refreshTeamName)
+	self:mapEventListener(self:getEventDispatcher(), EVT_CHANGE_TEAM_BYMODE_SUCC, self, self.changeTeamByMode)
 
 	local touchPanel = self:getView():getChildByFullName("main.bg.touchPanel")
 
@@ -132,9 +133,15 @@ function ArenaTeamMediator:resumeWithData()
 	self._costTotalLabel2:setString("/" .. self._costMaxNum)
 end
 
-function ArenaTeamMediator:initData()
+function ArenaTeamMediator:initData(team)
 	self._teamList = self._developSystem:getAllUnlockTeams()
-	self._curTeam = self._developSystem:getSpTeamByType(self._stageType)
+
+	if team then
+		self._curTeam = team
+	else
+		self._curTeam = self._developSystem:getSpTeamByType(self._stageType)
+	end
+
 	self._curTeamId = self._curTeam:getId()
 	local modelTmp = {
 		_heroes = self:removeExceptHeros(),
@@ -221,6 +228,7 @@ function ArenaTeamMediator:setupView()
 	self:initView()
 	self:refreshListView()
 	self:createSortView()
+	self:showSetButton(true)
 end
 
 function ArenaTeamMediator:initWidgetInfo()
@@ -261,12 +269,12 @@ function ArenaTeamMediator:initWidgetInfo()
 	buffInfo:setString("")
 
 	local text = Strings:get(seasonSkillData.Desc, {
-		fontSize = 25,
+		fontSize = 22,
 		fontName = TTF_FONT_FZYH_R
 	})
 	local richText = ccui.RichText:createWithXML(text, {})
 
-	richText:setFontSize(28)
+	richText:setFontSize(22)
 	richText:setAnchorPoint(buffInfo:getAnchorPoint())
 	richText:setPosition(cc.p(buffInfo:getPositionX(), buffInfo:getPositionY()))
 	richText:addTo(buffInfo:getParent())
@@ -1247,4 +1255,15 @@ function ArenaTeamMediator:setupClickEnvs()
 	end))
 
 	oneKeyBtn:runAction(sequence)
+end
+
+function ArenaTeamMediator:changeTeamByMode(event)
+	local teamData = event:getData()
+
+	self:initData(teamData)
+	self:refreshMasterInfo()
+	self:refreshListView()
+	self:refreshPetNode()
+
+	self._hasForceChangeTeam = true
 end

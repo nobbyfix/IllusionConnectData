@@ -16,6 +16,10 @@ function BattleCardWindow:setCardAtIndex(index, card)
 	local oldCard = self._cards[index]
 	self._cards[index] = card
 
+	if card and card.setCardIndex then
+		card:setCardIndex(index)
+	end
+
 	if not oldCard and card then
 		self._cardsCount = self._cardsCount + 1
 	elseif oldCard and not card then

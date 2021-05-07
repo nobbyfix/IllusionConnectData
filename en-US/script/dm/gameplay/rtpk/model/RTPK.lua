@@ -62,6 +62,9 @@ RTPK:has("_matchCDTs", {
 RTPK:has("_battleCDTs", {
 	is = "r"
 })
+RTPK:has("_doubleTimes", {
+	is = "r"
+})
 
 function RTPK:initialize()
 	super.initialize(self)
@@ -86,6 +89,7 @@ function RTPK:initialize()
 	self._globalRank = -1
 	self._matchCDTs = 0
 	self._battleCDTs = 0
+	self._doubleTimes = 0
 
 	self:initGrade()
 end
@@ -164,6 +168,10 @@ function RTPK:synchronize(data)
 
 	if data.battleCDTs then
 		self._battleCDTs = data.battleCDTs
+	end
+
+	if data.doubleTimes then
+		self._doubleTimes = data.doubleTimes
 	end
 end
 
@@ -302,7 +310,7 @@ function RTPK:getGradeConfigInfo()
 
 		if self:isGetGradeReward(grade) then
 			info[#info].state = RTPKGradeRewardState.kHadGet
-		elseif grade <= tonumber(self._curGrade.Id) then
+		elseif tonumber(v.ScoreLow) <= self._maxScore then
 			info[#info].state = RTPKGradeRewardState.kCanGet
 		else
 			info[#info].state = RTPKGradeRewardState.kCanNotGet

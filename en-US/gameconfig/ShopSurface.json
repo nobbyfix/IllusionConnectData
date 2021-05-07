@@ -335,6 +335,66 @@
             "type": "limit"
         }
     },
+    "Surface_21": {
+        "BackGroundImg": "sd_pf_bg",
+        "ClientCondition": "",
+        "Cost": [
+            {
+                "amount": 118,
+                "code": "IR_Surface"
+            }
+        ],
+        "DrawCard_Id": 10034,
+        "Hide": 1,
+        "ServerCondition": "",
+        "Sort": 2001,
+        "Surface": "Surface_SDTZi_3",
+        "TimeType": {
+            "end": "2021-05-22 05:00:00",
+            "start": "2021-05-17 05:00:00",
+            "type": "limit"
+        }
+    },
+    "Surface_22": {
+        "BackGroundImg": "sd_pf_bg",
+        "ClientCondition": "",
+        "Cost": [
+            {
+                "amount": 118,
+                "code": "IR_Surface"
+            }
+        ],
+        "DrawCard_Id": 10035,
+        "Hide": 1,
+        "ServerCondition": "",
+        "Sort": 2001,
+        "Surface": "Surface_ZTXChang_3",
+        "TimeType": {
+            "end": "2021-05-27 05:00:00",
+            "start": "2021-05-22 05:00:00",
+            "type": "limit"
+        }
+    },
+    "Surface_23": {
+        "BackGroundImg": "sd_pf_bg",
+        "ClientCondition": "",
+        "Cost": [
+            {
+                "amount": 118,
+                "code": "IR_Surface"
+            }
+        ],
+        "DrawCard_Id": 10036,
+        "Hide": 1,
+        "ServerCondition": "",
+        "Sort": 2001,
+        "Surface": "Surface_KTSJKe_3",
+        "TimeType": {
+            "end": "2021-06-01 05:00:00",
+            "start": "2021-05-27 05:00:00",
+            "type": "limit"
+        }
+    },
     "Surface_3": {
         "BackGroundImg": "sd_pf_bg",
         "ClientCondition": "",

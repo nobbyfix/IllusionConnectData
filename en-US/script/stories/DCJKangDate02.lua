@@ -143,7 +143,7 @@ function scene_DCJKangDate02.actions.start_DCJKangDate02(_root, args)
 			}),
 			act({
 				action = "fadeIn",
-				actor = __getnode__(_root, "DCJKang_speak"),
+				actor = __getnode__(_root, "DCJKang"),
 				args = function (_ctx)
 					return {
 						duration = 0.5

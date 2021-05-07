@@ -599,6 +599,7 @@ function MasterCultivateMediator:refreshLeadStageSkill()
 		isGray = true
 	end
 
+	local titleName = self._mainPanel:getChildByFullName("leadStageSkillPanel.titleName")
 	local stageName = self._mainPanel:getChildByFullName("leadStageSkillPanel.stageName")
 	local stageName1 = self._mainPanel:getChildByFullName("leadStageSkillPanel.stageName_0")
 	local configInfo_Stage = self._leadStageData:getConfigInfo()
@@ -606,6 +607,8 @@ function MasterCultivateMediator:refreshLeadStageSkill()
 	if configInfo_Stage[showLeadStageLevel] then
 		stageName:setString(Strings:get(configInfo_Stage[showLeadStageLevel].RomanNum) .. Strings:get(configInfo_Stage[showLeadStageLevel].StageName))
 		stageName1:setString(stageName:getString())
+		stageName:setPositionX(titleName:getPositionX() + titleName:getContentSize().width)
+		stageName1:setPositionX(titleName:getPositionX() + titleName:getContentSize().width)
 		stageName:setVisible(showLeadStageLevel == self._leadStageData:getMaxLeadStageLevel())
 		stageName1:setVisible(not stageName:isVisible())
 		stageName:setGray(isGray)

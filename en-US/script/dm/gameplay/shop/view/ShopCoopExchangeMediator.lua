@@ -34,6 +34,15 @@ function ShopCoopExchangeMediator:enterWithData(data)
 	self:initData(data)
 	self:setupView()
 	self:setupTopView()
+	self:playBackgroundMusic()
+end
+
+function ShopCoopExchangeMediator:playBackgroundMusic()
+	local bgm = self._activity:getBgm1()
+
+	if bgm then
+		AudioEngine:getInstance():playBackgroundMusic(bgm)
+	end
 end
 
 function ShopCoopExchangeMediator:initView()

@@ -185,6 +185,13 @@ function MainTLInterpreter:act_Timeup(action, args)
 	self._mainMediator:battleTimeup(args.result)
 end
 
+function MainTLInterpreter:act_PvpSpeedUp(action, args)
+	local arg1 = tostring(args.arg1)
+	local arg2 = tostring(args.arg1)
+
+	self._battleUIMediator:pvpSpeedUp(arg1, arg2)
+end
+
 function MainTLInterpreter:act_ShakeScreen(action, args)
 	local id = args.Id or 1
 	local duration = args.duration or 30
@@ -204,6 +211,14 @@ function MainTLInterpreter:act_BossComing(action, args)
 			battleShowQueue:addEndBossShow()
 		end
 	end
+end
+
+function MainTLInterpreter:act_StackSkill(action, args)
+	local skillId = args.skillId
+	local stacknum = args.stacknum
+	local totalnum = args.totalnum
+
+	self._battleUIMediator:stackSkillLayer(skillId, stacknum, totalnum)
 end
 
 function MainTLInterpreter:act_Error(action, args)

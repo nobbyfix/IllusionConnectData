@@ -2469,5 +2469,239 @@ all.Skill_HeroEnterRecruit_Passive = {
 		return _env
 	end
 }
+all.Activity_Master_LiMing_Unique = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.dmgFactor = externs.dmgFactor
+
+		if this.dmgFactor == nil then
+			this.dmgFactor = {
+				1,
+				5,
+				0
+			}
+		end
+
+		this.RealDamageFactor = externs.RealDamageFactor
+
+		if this.RealDamageFactor == nil then
+			this.RealDamageFactor = 0.15
+		end
+
+		this.AtkFactor = externs.AtkFactor
+
+		if this.AtkFactor == nil then
+			this.AtkFactor = 0.3
+		end
+
+		this.RpFactor = externs.RpFactor
+
+		if this.RpFactor == nil then
+			this.RpFactor = 15
+		end
+
+		local main = __action(this, {
+			name = "main",
+			entry = prototype.main
+		})
+		main = global["[duration]"](this, {
+			2967
+		}, main)
+		this.main = global["[cut_in]"](this, {
+			"1"
+		}, main)
+		local passive1 = __action(this, {
+			name = "passive1",
+			entry = prototype.passive1
+		})
+		passive1 = global["[duration]"](this, {
+			0
+		}, passive1)
+		this.passive1 = global["[trigger_by]"](this, {
+			"SELF:PRE_ENTER"
+		}, passive1)
+
+		return this
+	end,
+	main = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.TARGET = externs.TARGET
+
+		assert(_env.TARGET ~= nil, "External variable `TARGET` is not provided.")
+
+		_env.units = nil
+		_env.count = nil
+
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.GroundEft(_env, _env.ACTOR, "BGEffectBlack")
+			global.EnergyRestrain(_env, _env.ACTOR, _env.TARGET)
+
+			local buffeft1 = global.NumericEffect(_env, "+atkrate", {
+				"+Normal",
+				"+Normal"
+			}, 0)
+
+			global.ApplyBuff(_env, _env.ACTOR, {
+				timing = 2,
+				duration = 1,
+				display = "Prepare",
+				tags = {
+					"PREPARE"
+				}
+			}, {
+				buffeft1
+			})
+			global.ApplyBuff(_env, _env.ACTOR, {
+				timing = 0,
+				duration = 99,
+				tags = {
+					"Activity_Master_LiMing_Unique_Count"
+				}
+			}, {
+				buffeft1
+			})
+
+			_env.count = global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "Activity_Master_LiMing_Unique_Count"))
+
+			if _env.count == 1 or _env.count > 5 then
+				_env.units = global.EnemyUnits(_env, global.COL_OF(_env, _env.TARGET))
+
+				for _, unit in global.__iter__(_env.units) do
+					global.RetainObject(_env, unit)
+				end
+			end
+		end)
+		exec["@time"]({
+			900
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.1, 80)
+
+			if _env.count == 1 or _env.count > 5 then
+				global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) * {
+					0,
+					1
+				} + {
+					0.2,
+					0
+				}, 100, "skill4"))
+				global.HarmTargetView(_env, _env.units)
+
+				for _, unit in global.__iter__(_env.units) do
+					global.AssignRoles(_env, unit, "target")
+				end
+			else
+				global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.FixedPos(_env, 0, 0, 2), 100, "skill3"))
+			end
+		end)
+		exec["@time"]({
+			1500
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if _env.count == 1 or _env.count > 5 then
+				for _, enemyunit in global.__iter__(_env.units) do
+					global.ApplyStatusEffect(_env, _env.ACTOR, enemyunit)
+					global.ApplyRPEffect(_env, _env.ACTOR, enemyunit)
+
+					local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, enemyunit, this.dmgFactor)
+					local count = global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "SHINING"))
+					damage.val = damage.val * (1 - this.RealDamageFactor * count)
+
+					global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, enemyunit, damage)
+					global.DelayCall(_env, 120, global.ApplyRealDamage, _env.ACTOR, enemyunit, 2, 1, this.dmgFactor[2] * this.RealDamageFactor * count, 0, 0, damage)
+				end
+			else
+				local buffeft1 = global.NumericEffect(_env, "+atkrate", {
+					"+Normal",
+					"+Normal"
+				}, this.AtkFactor)
+				local buffeft2 = global.PassiveFunEffectBuff(_env, "RpUpUp_LiMing", {
+					Factor = this.RpFactor
+				})
+
+				if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "SHINING")) < 6 then
+					global.DelayCall(_env, 300, global.ApplyBuff_Buff, _env.ACTOR, _env.ACTOR, {
+						timing = 0,
+						duration = 99,
+						display = "AtkUp",
+						tags = {
+							"NUMERIC",
+							"BUFF",
+							"ATKUP",
+							"SHINING",
+							"Sk_Master_LiMing_Action3",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buffeft1
+					}, 1)
+					global.DelayCall(_env, 1400, global.ApplyBuff, _env.ACTOR, {
+						timing = 0,
+						duration = 99,
+						tags = {
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buffeft2
+					})
+				end
+			end
+		end)
+		exec["@time"]({
+			1850
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if _env.count == 1 or _env.count > 5 then
+				global.EnergyRestrainStop(_env, _env.ACTOR, _env.TARGET)
+				global.Stop(_env)
+			else
+				global.DelayCall(_env, 1000, global.EnergyRestrainStop, _env.ACTOR, _env.TARGET)
+			end
+		end)
+
+		return _env
+	end,
+	passive1 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.AddStatus(_env, _env.ACTOR, "LiMing_STATUS_1")
+		end)
+
+		return _env
+	end
+}
 
 return _M

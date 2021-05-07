@@ -99,6 +99,11 @@ function CommonTeamMediator:setLeadStageInfo()
 	node:removeAllChildren()
 
 	local id, lv = self._masterSystem:getMasterLeadStatgeLevel(self._curMasterId)
+
+	if not id then
+		return
+	end
+
 	local icon = IconFactory:createLeadStageIconHor(id, lv)
 
 	if icon then

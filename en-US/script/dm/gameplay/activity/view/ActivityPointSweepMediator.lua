@@ -486,10 +486,14 @@ end
 function ActivityPointSweepMediator:getSweepItemNum()
 	local num = 0
 
-	for k, v in pairs(self._sweepData.rewardItems) do
+	for k, v in pairs(self._sweepData.data.rewardList) do
 		for _, rewards in pairs(v) do
-			if rewards.code == self._itemId then
-				num = num + rewards.amount
+			if type(rewards) == "table" then
+				for _, reward in pairs(rewards) do
+					if reward.code == self._itemId then
+						num = num + reward.amount
+					end
+				end
 			end
 		end
 	end

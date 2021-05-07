@@ -199,10 +199,10 @@
         "IconFlash": "",
         "LastStage": "LeadStage_BiLei_004",
         "LeadFightHero": 0.2,
-        "LeadStageControl": 0,
+        "LeadStageControl": 1,
         "LeadStageLv": 5,
         "MasterOwn": "Master_BiLei",
-        "ModelId": "Model_Master_BiLei",
+        "ModelId": "Model_Master_BiLei_1",
         "NextStage": "LeadStage_BiLei_006",
         "RomanNum": "LeadStage_StageRomanNum04",
         "Skill": {
@@ -255,10 +255,10 @@
         "IconFlash": "",
         "LastStage": "LeadStage_BiLei_005",
         "LeadFightHero": 0.24,
-        "LeadStageControl": 0,
+        "LeadStageControl": 1,
         "LeadStageLv": 6,
         "MasterOwn": "Master_BiLei",
-        "ModelId": "Model_Master_BiLei",
+        "ModelId": "Model_Master_BiLei_1",
         "NextStage": "LeadStage_BiLei_007",
         "RomanNum": "LeadStage_StageRomanNum03",
         "Skill": {
@@ -311,10 +311,10 @@
         "IconFlash": "",
         "LastStage": "LeadStage_BiLei_006",
         "LeadFightHero": 0.28,
-        "LeadStageControl": 0,
+        "LeadStageControl": 1,
         "LeadStageLv": 7,
         "MasterOwn": "Master_BiLei",
-        "ModelId": "Model_Master_BiLei",
+        "ModelId": "Model_Master_BiLei_1",
         "NextStage": "LeadStage_BiLei_008",
         "RomanNum": "LeadStage_StageRomanNum02",
         "Skill": {
@@ -363,10 +363,10 @@
         "IconFlash": "",
         "LastStage": "LeadStage_BiLei_007",
         "LeadFightHero": 0.32,
-        "LeadStageControl": 0,
+        "LeadStageControl": 1,
         "LeadStageLv": 8,
         "MasterOwn": "Master_BiLei",
-        "ModelId": "Model_Master_BiLei",
+        "ModelId": "Model_Master_BiLei_1",
         "NextStage": "",
         "RomanNum": "LeadStage_StageRomanNum01",
         "Skill": {
@@ -611,10 +611,10 @@
         "IconFlash": "",
         "LastStage": "LeadStage_FuHun_004",
         "LeadFightHero": 0.2,
-        "LeadStageControl": 0,
+        "LeadStageControl": 1,
         "LeadStageLv": 5,
         "MasterOwn": "Master_FuHun",
-        "ModelId": "Model_Master_FuHun",
+        "ModelId": "Model_Master_FuHun_1",
         "NextStage": "LeadStage_FuHun_006",
         "RomanNum": "LeadStage_StageRomanNum04",
         "Skill": {
@@ -667,10 +667,10 @@
         "IconFlash": "",
         "LastStage": "LeadStage_FuHun_005",
         "LeadFightHero": 0.24,
-        "LeadStageControl": 0,
+        "LeadStageControl": 1,
         "LeadStageLv": 6,
         "MasterOwn": "Master_FuHun",
-        "ModelId": "Model_Master_FuHun",
+        "ModelId": "Model_Master_FuHun_1",
         "NextStage": "LeadStage_FuHun_007",
         "RomanNum": "LeadStage_StageRomanNum03",
         "Skill": {
@@ -723,10 +723,10 @@
         "IconFlash": "",
         "LastStage": "LeadStage_FuHun_006",
         "LeadFightHero": 0.28,
-        "LeadStageControl": 0,
+        "LeadStageControl": 1,
         "LeadStageLv": 7,
         "MasterOwn": "Master_FuHun",
-        "ModelId": "Model_Master_FuHun",
+        "ModelId": "Model_Master_FuHun_1",
         "NextStage": "LeadStage_FuHun_008",
         "RomanNum": "LeadStage_StageRomanNum02",
         "Skill": {
@@ -775,10 +775,10 @@
         "IconFlash": "",
         "LastStage": "LeadStage_FuHun_007",
         "LeadFightHero": 0.32,
-        "LeadStageControl": 0,
+        "LeadStageControl": 1,
         "LeadStageLv": 8,
         "MasterOwn": "Master_FuHun",
-        "ModelId": "Model_Master_FuHun",
+        "ModelId": "Model_Master_FuHun_1",
         "NextStage": "",
         "RomanNum": "LeadStage_StageRomanNum01",
         "Skill": {
@@ -817,6 +817,418 @@
                 "Count": 7,
                 "HeroStar": 6,
                 "Job": "Aoe"
+            }
+        },
+        "UpNeedItem": {
+            "IM_MasterStage_Exp": 54000
+        }
+    },
+    "LeadStage_LiMing_001": {
+        "Frame": "bg_leadstage_kuang08",
+        "FrameReward": "Frame_LeadStage_008",
+        "FrameShade": "bg_leadstage_kuang_zhezhao08",
+        "Icon": "ico_leadstage_stage08.png",
+        "IconFlash": "",
+        "LastStage": "",
+        "LeadFightHero": 0.04,
+        "LeadStageControl": 1,
+        "LeadStageLv": 1,
+        "MasterOwn": "Master_LiMing",
+        "ModelId": "Model_Master_LiMing",
+        "NextStage": "LeadStage_LiMing_002",
+        "RomanNum": "LeadStage_StageRomanNum08",
+        "Skill": {
+            "Attr": [
+                "LeadStage_LiMing_Skill_001",
+                "LeadStage_LiMing_Skill_002"
+            ]
+        },
+        "StageName": "LeadStage_StageName08",
+        "StageNum": 1,
+        "StageText": "LeadStage_StageShow_Text08",
+        "StageUpText": "LeadStage_StageButton_Text08",
+        "StoryLink": "",
+        "UpCondition": {
+            "EquipRareityLevel": {
+                "Count": 1,
+                "EquipRareity": 14,
+                "Level": 10,
+                "Location": [
+                    "Tops"
+                ]
+            },
+            "StarHero": {
+                "Count": 2,
+                "HeroStar": 5,
+                "Job": "Support"
+            }
+        },
+        "UpNeedItem": {
+            "IM_MasterStage_Exp": 200
+        }
+    },
+    "LeadStage_LiMing_002": {
+        "Frame": "bg_leadstage_kuang07",
+        "FrameReward": "Frame_LeadStage_007",
+        "FrameShade": "bg_leadstage_kuang_zhezhao07",
+        "Icon": "ico_leadstage_stage07.png",
+        "IconFlash": "",
+        "LastStage": "LeadStage_LiMing_001",
+        "LeadFightHero": 0.08,
+        "LeadStageControl": 1,
+        "LeadStageLv": 2,
+        "MasterOwn": "Master_LiMing",
+        "ModelId": "Model_Master_LiMing_1",
+        "NextStage": "LeadStage_LiMing_003",
+        "RomanNum": "LeadStage_StageRomanNum07",
+        "Skill": {
+            "Attr": [
+                "LeadStage_LiMing_Skill_001",
+                "LeadStage_LiMing_Skill_002"
+            ]
+        },
+        "StageName": "LeadStage_StageName07",
+        "StageNum": 2,
+        "StageText": "LeadStage_StageShow_Text07",
+        "StageUpText": "LeadStage_StageButton_Text07",
+        "StoryLink": "",
+        "UpCondition": {
+            "EquipRareityLevel": {
+                "Count": 2,
+                "EquipRareity": 14,
+                "Level": 20,
+                "Location": [
+                    "Shoes"
+                ]
+            },
+            "StarHero": {
+                "Count": 4,
+                "HeroStar": 5,
+                "Job": "Support"
+            }
+        },
+        "UpNeedItem": {
+            "IM_MasterStage_Exp": 600
+        }
+    },
+    "LeadStage_LiMing_003": {
+        "Frame": "bg_leadstage_kuang06",
+        "FrameReward": "Frame_LeadStage_006",
+        "FrameShade": "bg_leadstage_kuang_zhezhao06",
+        "Icon": "ico_leadstage_stage06.png",
+        "IconFlash": "",
+        "LastStage": "LeadStage_LiMing_002",
+        "LeadFightHero": 0.12,
+        "LeadStageControl": 1,
+        "LeadStageLv": 3,
+        "MasterOwn": "Master_LiMing",
+        "ModelId": "Model_Master_LiMing_1",
+        "NextStage": "LeadStage_LiMing_004",
+        "RomanNum": "LeadStage_StageRomanNum06",
+        "Skill": {
+            "Attr": [
+                "LeadStage_LiMing_Skill_001",
+                "LeadStage_LiMing_Skill_002"
+            ],
+            "Skill": [
+                "LeadStage_LiMing_Skill_003"
+            ],
+            "SkillLv": [
+                1
+            ]
+        },
+        "StageName": "LeadStage_StageName06",
+        "StageNum": 3,
+        "StageText": "LeadStage_StageShow_Text06",
+        "StageUpText": "LeadStage_StageButton_Text06",
+        "StoryLink": "",
+        "UpCondition": {
+            "EquipRareityLevel": {
+                "Count": 4,
+                "EquipRareity": 14,
+                "Level": 30,
+                "Location": [
+                    "Decoration"
+                ]
+            },
+            "RareityHero": {
+                "Count": 4,
+                "Job": "Support",
+                "Rareity": 14
+            }
+        },
+        "UpNeedItem": {
+            "IM_MasterStage_Exp": 1500
+        }
+    },
+    "LeadStage_LiMing_004": {
+        "Frame": "bg_leadstage_kuang05",
+        "FrameReward": "Frame_LeadStage_005",
+        "FrameShade": "bg_leadstage_kuang_zhezhao05",
+        "Icon": "ico_leadstage_stage05.png",
+        "IconFlash": "",
+        "LastStage": "LeadStage_LiMing_003",
+        "LeadFightHero": 0.16,
+        "LeadStageControl": 1,
+        "LeadStageLv": 4,
+        "MasterOwn": "Master_LiMing",
+        "ModelId": "Model_Master_LiMing_1",
+        "NextStage": "LeadStage_LiMing_005",
+        "RomanNum": "LeadStage_StageRomanNum05",
+        "Skill": {
+            "Attr": [
+                "LeadStage_LiMing_Skill_001",
+                "LeadStage_LiMing_Skill_002"
+            ],
+            "Skill": [
+                "LeadStage_LiMing_Skill_003"
+            ],
+            "SkillLv": [
+                2
+            ]
+        },
+        "StageName": "LeadStage_StageName05",
+        "StageNum": 4,
+        "StageText": "LeadStage_StageShow_Text05",
+        "StageUpText": "LeadStage_StageButton_Text05",
+        "StoryLink": "",
+        "UpCondition": {
+            "EquipRareityLevel": {
+                "Count": 1,
+                "EquipRareity": 15,
+                "Level": 20,
+                "Location": [
+                    "Tops"
+                ]
+            },
+            "LeadStage": {
+                "Count": 5,
+                "Lv": 3
+            },
+            "StarHero": {
+                "Count": 1,
+                "HeroStar": 6,
+                "Job": "Support"
+            }
+        },
+        "UpNeedItem": {
+            "IM_MasterStage_Exp": 3000
+        }
+    },
+    "LeadStage_LiMing_005": {
+        "Frame": "bg_leadstage_kuang04",
+        "FrameReward": "Frame_LeadStage_004",
+        "FrameShade": "bg_leadstage_kuang_zhezhao04",
+        "Icon": "ico_leadstage_stage04.png",
+        "IconFlash": "",
+        "LastStage": "LeadStage_LiMing_004",
+        "LeadFightHero": 0.2,
+        "LeadStageControl": 1,
+        "LeadStageLv": 5,
+        "MasterOwn": "Master_LiMing",
+        "ModelId": "Model_Master_LiMing_1",
+        "NextStage": "LeadStage_LiMing_006",
+        "RomanNum": "LeadStage_StageRomanNum04",
+        "Skill": {
+            "Attr": [
+                "LeadStage_LiMing_Skill_001",
+                "LeadStage_LiMing_Skill_002"
+            ],
+            "Skill": [
+                "LeadStage_LiMing_Skill_003",
+                "LeadStage_LiMing_Skill_004"
+            ],
+            "SkillLv": [
+                3,
+                1
+            ]
+        },
+        "StageName": "LeadStage_StageName04",
+        "StageNum": 5,
+        "StageText": "LeadStage_StageShow_Text04",
+        "StageUpText": "LeadStage_StageButton_Text04",
+        "StoryLink": "",
+        "UpCondition": {
+            "EquipRareityLevel": {
+                "Count": 2,
+                "EquipRareity": 15,
+                "Level": 40,
+                "Location": [
+                    "Shoes"
+                ]
+            },
+            "LeadStage": {
+                "Count": 5,
+                "Lv": 4
+            },
+            "StarHero": {
+                "Count": 2,
+                "HeroStar": 6,
+                "Job": "Support"
+            }
+        },
+        "UpNeedItem": {
+            "IM_MasterStage_Exp": 5500
+        }
+    },
+    "LeadStage_LiMing_006": {
+        "Frame": "bg_leadstage_kuang03",
+        "FrameReward": "Frame_LeadStage_003",
+        "FrameShade": "bg_leadstage_kuang_zhezhao03",
+        "Icon": "ico_leadstage_stage03.png",
+        "IconFlash": "",
+        "LastStage": "LeadStage_LiMing_005",
+        "LeadFightHero": 0.24,
+        "LeadStageControl": 1,
+        "LeadStageLv": 6,
+        "MasterOwn": "Master_LiMing",
+        "ModelId": "Model_Master_LiMing_1",
+        "NextStage": "LeadStage_LiMing_007",
+        "RomanNum": "LeadStage_StageRomanNum03",
+        "Skill": {
+            "Attr": [
+                "LeadStage_LiMing_Skill_001",
+                "LeadStage_LiMing_Skill_002"
+            ],
+            "Skill": [
+                "LeadStage_LiMing_Skill_003",
+                "LeadStage_LiMing_Skill_004"
+            ],
+            "SkillLv": [
+                4,
+                2
+            ]
+        },
+        "StageName": "LeadStage_StageName03",
+        "StageNum": 6,
+        "StageText": "LeadStage_StageShow_Text03",
+        "StageUpText": "LeadStage_StageButton_Text03",
+        "StoryLink": "",
+        "UpCondition": {
+            "Awaken": {
+                "Count": 1,
+                "Job": "Support"
+            },
+            "EquipRareityLevel": {
+                "Count": 3,
+                "EquipRareity": 15,
+                "Level": 60,
+                "Location": [
+                    "Decoration"
+                ]
+            },
+            "StarHero": {
+                "Count": 3,
+                "HeroStar": 6,
+                "Job": "Support"
+            }
+        },
+        "UpNeedItem": {
+            "IM_MasterStage_Exp": 12000
+        }
+    },
+    "LeadStage_LiMing_007": {
+        "Frame": "bg_leadstage_kuang02",
+        "FrameReward": "Frame_LeadStage_002",
+        "FrameShade": "bg_leadstage_kuang_zhezhao02",
+        "Icon": "ico_leadstage_stage02.png",
+        "IconFlash": "",
+        "LastStage": "LeadStage_LiMing_006",
+        "LeadFightHero": 0.28,
+        "LeadStageControl": 1,
+        "LeadStageLv": 7,
+        "MasterOwn": "Master_LiMing",
+        "ModelId": "Model_Master_LiMing_1",
+        "NextStage": "LeadStage_LiMing_008",
+        "RomanNum": "LeadStage_StageRomanNum02",
+        "Skill": {
+            "Attr": [
+                "LeadStage_LiMing_Skill_001",
+                "LeadStage_LiMing_Skill_002"
+            ],
+            "Skill": [
+                "LeadStage_LiMing_Skill_003",
+                "LeadStage_LiMing_Skill_004"
+            ],
+            "SkillLv": [
+                5,
+                3
+            ]
+        },
+        "StageName": "LeadStage_StageName02",
+        "StageNum": 7,
+        "StageText": "LeadStage_StageShow_Text02",
+        "StageUpText": "LeadStage_StageButton_Text02",
+        "StoryLink": "",
+        "UpCondition": {
+            "Awaken": {
+                "Count": 2,
+                "Job": "Support"
+            },
+            "LeadStage": {
+                "Count": 5,
+                "Lv": 6
+            },
+            "StarHero": {
+                "Count": 5,
+                "HeroStar": 6,
+                "Job": "Support"
+            }
+        },
+        "UpNeedItem": {
+            "IM_MasterStage_Exp": 28000
+        }
+    },
+    "LeadStage_LiMing_008": {
+        "Frame": "bg_leadstage_kuang01",
+        "FrameReward": "Frame_LeadStage_001",
+        "FrameShade": "bg_leadstage_kuang_zhezhao01",
+        "Icon": "ico_leadstage_stage01.png",
+        "IconFlash": "",
+        "LastStage": "LeadStage_LiMing_007",
+        "LeadFightHero": 0.32,
+        "LeadStageControl": 1,
+        "LeadStageLv": 8,
+        "MasterOwn": "Master_LiMing",
+        "ModelId": "Model_Master_LiMing_1",
+        "NextStage": "",
+        "RomanNum": "LeadStage_StageRomanNum01",
+        "Skill": {
+            "Attr": [
+                "LeadStage_LiMing_Skill_001",
+                "LeadStage_LiMing_Skill_002"
+            ],
+            "Skill": [
+                "LeadStage_LiMing_Skill_003",
+                "LeadStage_LiMing_Skill_004"
+            ],
+            "SkillLv": [
+                6,
+                4
+            ]
+        },
+        "StageName": "LeadStage_StageName01",
+        "StageNum": 8,
+        "StageText": "LeadStage_StageShow_Text01",
+        "StageUpText": "LeadStage_StageButton_Text01",
+        "StoryLink": "",
+        "UpCondition": {
+            "Awaken": {
+                "Count": 4,
+                "Job": "Support"
+            },
+            "EquipRareityLevel": {
+                "Count": 4,
+                "EquipRareity": 15,
+                "Level": 80,
+                "Location": [
+                    "Weapon"
+                ]
+            },
+            "StarHero": {
+                "Count": 7,
+                "HeroStar": 6,
+                "Job": "Support"
             }
         },
         "UpNeedItem": {
@@ -1023,10 +1435,10 @@
         "IconFlash": "",
         "LastStage": "LeadStage_LieSha_004",
         "LeadFightHero": 0.2,
-        "LeadStageControl": 0,
+        "LeadStageControl": 1,
         "LeadStageLv": 5,
         "MasterOwn": "Master_LieSha",
-        "ModelId": "Model_Master_LieSha",
+        "ModelId": "Model_Master_LieSha_1",
         "NextStage": "LeadStage_LieSha_006",
         "RomanNum": "LeadStage_StageRomanNum04",
         "Skill": {
@@ -1079,10 +1491,10 @@
         "IconFlash": "",
         "LastStage": "LeadStage_LieSha_005",
         "LeadFightHero": 0.24,
-        "LeadStageControl": 0,
+        "LeadStageControl": 1,
         "LeadStageLv": 6,
         "MasterOwn": "Master_LieSha",
-        "ModelId": "Model_Master_LieSha",
+        "ModelId": "Model_Master_LieSha_1",
         "NextStage": "LeadStage_LieSha_007",
         "RomanNum": "LeadStage_StageRomanNum03",
         "Skill": {
@@ -1135,10 +1547,10 @@
         "IconFlash": "",
         "LastStage": "LeadStage_LieSha_006",
         "LeadFightHero": 0.28,
-        "LeadStageControl": 0,
+        "LeadStageControl": 1,
         "LeadStageLv": 7,
         "MasterOwn": "Master_LieSha",
-        "ModelId": "Model_Master_LieSha",
+        "ModelId": "Model_Master_LieSha_1",
         "NextStage": "LeadStage_LieSha_008",
         "RomanNum": "LeadStage_StageRomanNum02",
         "Skill": {
@@ -1187,10 +1599,10 @@
         "IconFlash": "",
         "LastStage": "LeadStage_LieSha_007",
         "LeadFightHero": 0.32,
-        "LeadStageControl": 0,
+        "LeadStageControl": 1,
         "LeadStageLv": 8,
         "MasterOwn": "Master_LieSha",
-        "ModelId": "Model_Master_LieSha",
+        "ModelId": "Model_Master_LieSha_1",
         "NextStage": "",
         "RomanNum": "LeadStage_StageRomanNum01",
         "Skill": {
@@ -1435,10 +1847,10 @@
         "IconFlash": "",
         "LastStage": "LeadStage_SenLing_004",
         "LeadFightHero": 0.2,
-        "LeadStageControl": 0,
+        "LeadStageControl": 1,
         "LeadStageLv": 5,
         "MasterOwn": "Master_SenLing",
-        "ModelId": "Model_Master_SenLing",
+        "ModelId": "Model_Master_SenLing_1",
         "NextStage": "LeadStage_SenLing_006",
         "RomanNum": "LeadStage_StageRomanNum04",
         "Skill": {
@@ -1491,10 +1903,10 @@
         "IconFlash": "",
         "LastStage": "LeadStage_SenLing_005",
         "LeadFightHero": 0.24,
-        "LeadStageControl": 0,
+        "LeadStageControl": 1,
         "LeadStageLv": 6,
         "MasterOwn": "Master_SenLing",
-        "ModelId": "Model_Master_SenLing",
+        "ModelId": "Model_Master_SenLing_1",
         "NextStage": "LeadStage_SenLing_007",
         "RomanNum": "LeadStage_StageRomanNum03",
         "Skill": {
@@ -1547,10 +1959,10 @@
         "IconFlash": "",
         "LastStage": "LeadStage_SenLing_006",
         "LeadFightHero": 0.28,
-        "LeadStageControl": 0,
+        "LeadStageControl": 1,
         "LeadStageLv": 7,
         "MasterOwn": "Master_SenLing",
-        "ModelId": "Model_Master_SenLing",
+        "ModelId": "Model_Master_SenLing_1",
         "NextStage": "LeadStage_SenLing_008",
         "RomanNum": "LeadStage_StageRomanNum02",
         "Skill": {
@@ -1599,10 +2011,10 @@
         "IconFlash": "",
         "LastStage": "LeadStage_SenLing_007",
         "LeadFightHero": 0.32,
-        "LeadStageControl": 0,
+        "LeadStageControl": 1,
         "LeadStageLv": 8,
         "MasterOwn": "Master_SenLing",
-        "ModelId": "Model_Master_SenLing",
+        "ModelId": "Model_Master_SenLing_1",
         "NextStage": "",
         "RomanNum": "LeadStage_StageRomanNum01",
         "Skill": {
@@ -1847,10 +2259,10 @@
         "IconFlash": "",
         "LastStage": "LeadStage_XueZhan_004",
         "LeadFightHero": 0.2,
-        "LeadStageControl": 0,
+        "LeadStageControl": 1,
         "LeadStageLv": 5,
         "MasterOwn": "Master_XueZhan",
-        "ModelId": "Model_Master_XueZhan",
+        "ModelId": "Model_Master_XueZhan_1",
         "NextStage": "LeadStage_XueZhan_006",
         "RomanNum": "LeadStage_StageRomanNum04",
         "Skill": {
@@ -1903,10 +2315,10 @@
         "IconFlash": "",
         "LastStage": "LeadStage_XueZhan_005",
         "LeadFightHero": 0.24,
-        "LeadStageControl": 0,
+        "LeadStageControl": 1,
         "LeadStageLv": 6,
         "MasterOwn": "Master_XueZhan",
-        "ModelId": "Model_Master_XueZhan",
+        "ModelId": "Model_Master_XueZhan_1",
         "NextStage": "LeadStage_XueZhan_007",
         "RomanNum": "LeadStage_StageRomanNum03",
         "Skill": {
@@ -1959,10 +2371,10 @@
         "IconFlash": "",
         "LastStage": "LeadStage_XueZhan_006",
         "LeadFightHero": 0.28,
-        "LeadStageControl": 0,
+        "LeadStageControl": 1,
         "LeadStageLv": 7,
         "MasterOwn": "Master_XueZhan",
-        "ModelId": "Model_Master_XueZhan",
+        "ModelId": "Model_Master_XueZhan_1",
         "NextStage": "LeadStage_XueZhan_008",
         "RomanNum": "LeadStage_StageRomanNum02",
         "Skill": {
@@ -2011,10 +2423,10 @@
         "IconFlash": "",
         "LastStage": "LeadStage_XueZhan_007",
         "LeadFightHero": 0.32,
-        "LeadStageControl": 0,
+        "LeadStageControl": 1,
         "LeadStageLv": 8,
         "MasterOwn": "Master_XueZhan",
-        "ModelId": "Model_Master_XueZhan",
+        "ModelId": "Model_Master_XueZhan_1",
         "NextStage": "",
         "RomanNum": "LeadStage_StageRomanNum01",
         "Skill": {

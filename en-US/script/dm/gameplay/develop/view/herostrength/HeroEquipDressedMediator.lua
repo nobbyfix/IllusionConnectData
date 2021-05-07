@@ -164,6 +164,23 @@ function HeroEquipDressedMediator:initNodes()
 	GameStyle:setCommonOutlineEffect(desc2:getChildByFullName("name"))
 	GameStyle:setCommonOutlineEffect(desc1:getChildByFullName("text"), 142.8)
 	GameStyle:setCommonOutlineEffect(desc2:getChildByFullName("text"), 142.8)
+
+	local desc = self._nodeSkill:getChildByFullName("desc")
+	local size = desc:getContentSize()
+	local x, y = desc:getPosition()
+	local descScrollView = ccui.ScrollView:create()
+
+	descScrollView:setTouchEnabled(true)
+	descScrollView:setBounceEnabled(true)
+	descScrollView:setDirection(ccui.ScrollViewDir.vertical)
+	descScrollView:setContentSize(size)
+	descScrollView:setPosition(cc.p(x, y))
+	descScrollView:setAnchorPoint(cc.p(0, 1))
+	self._nodeSkill:addChild(descScrollView, desc:getLocalZOrder())
+
+	self._descScrollView = descScrollView
+
+	desc:setVisible(false)
 	self._equipListView:showTableCellAni()
 	self:refreshEquipInfo()
 end
@@ -349,8 +366,8 @@ function HeroEquipDressedMediator:refreshSkill()
 	local skillNameBg = self._nodeSkill:getChildByFullName("nameBg")
 	local skillName = self._nodeSkill:getChildByFullName("name")
 	local skillLevel = self._nodeSkill:getChildByFullName("level")
-	local skillDesc = self._nodeSkill:getChildByFullName("desc")
 	local skillLock = self._nodeSkill:getChildByFullName("skillLock")
+	local skillDesc = self._descScrollView
 	local equipData = self._equipData
 	local isHaveSkill = equipData:isHaveSkill()
 
@@ -372,7 +389,6 @@ function HeroEquipDressedMediator:refreshSkill()
 		local width = skillDesc:getContentSize().width
 		local height = skillDesc:getContentSize().height
 
-		skillDesc:setString("")
 		skillDesc:removeAllChildren()
 
 		local desc = skillAttr:getSkillDesc()
@@ -408,6 +424,24 @@ function HeroEquipDressedMediator:refreshSkill()
 		label:setAnchorPoint(cc.p(0, 1))
 		label:addTo(skillDesc)
 		label:setPosition(cc.p(0, height))
+
+		local descScrollView = skillDesc
+		local size = skillDesc:getContentSize()
+		size.height = label:getContentSize().height
+
+		if descScrollView:getContentSize().height < size.height then
+			descScrollView:setTouchEnabled(true)
+		else
+			size = descScrollView:getContentSize()
+
+			descScrollView:setTouchEnabled(false)
+		end
+
+		descScrollView:setInnerContainerSize(size)
+
+		local offy = size.height
+
+		label:setPositionY(size.height)
 	end
 end
 

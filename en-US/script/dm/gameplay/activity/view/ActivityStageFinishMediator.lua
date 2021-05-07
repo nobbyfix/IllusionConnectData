@@ -458,6 +458,22 @@ function ActivityStageFinishMediator:showHeroPanelAnim()
 	anim:gotoAndPlay(1)
 end
 
+function ActivityStageFinishMediator:getOwnMasterId(pointid)
+	local masterid = ConfigReader:getDataByNameIdAndKey("ActivityBlockPoint", pointid, "Master")
+
+	if masterid ~= "" then
+		return masterid
+	end
+
+	return nil
+end
+
+function ActivityStageFinishMediator:getOwnMasterRoleModel(masterid)
+	local roleModel = ConfigReader:getDataByNameIdAndKey("EnemyMaster", masterid, "RoleModel")
+
+	return roleModel
+end
+
 function ActivityStageFinishMediator:showHeroPanel()
 	self._state = 1
 	self._levelUpExpBar = {}
@@ -494,6 +510,10 @@ function ActivityStageFinishMediator:showHeroPanel()
 				model = v.model
 			end
 		end
+	end
+
+	if self:getOwnMasterId(self._data.pointId) then
+		model = self:getOwnMasterRoleModel(self:getOwnMasterId(self._data.pointId))
 	end
 
 	local mvpSprite = IconFactory:createRoleIconSprite({

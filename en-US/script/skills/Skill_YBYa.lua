@@ -711,6 +711,131 @@ all.Skill_YBYa_Passive = {
 		return _env
 	end
 }
+all.Skill_YBYa_Passive_Awaken = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.DmgRateFactor = externs.DmgRateFactor
+
+		assert(this.DmgRateFactor ~= nil, "External variable `DmgRateFactor` is not provided.")
+
+		this.DmgFactor = externs.DmgFactor
+
+		assert(this.DmgFactor ~= nil, "External variable `DmgFactor` is not provided.")
+
+		this.HurtRateFactor = externs.HurtRateFactor
+
+		assert(this.HurtRateFactor ~= nil, "External variable `HurtRateFactor` is not provided.")
+
+		local passive = __action(this, {
+			name = "passive",
+			entry = prototype.passive
+		})
+		passive = global["[duration]"](this, {
+			0
+		}, passive)
+		this.passive = global["[trigger_by]"](this, {
+			"SELF:ENTER"
+		}, passive)
+		local passive2 = __action(this, {
+			name = "passive2",
+			entry = prototype.passive2
+		})
+		passive2 = global["[duration]"](this, {
+			0
+		}, passive2)
+		this.passive2 = global["[trigger_by]"](this, {
+			"UNIT_DIE"
+		}, passive2)
+
+		return this
+	end,
+	passive = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local buffeft1 = global.SpecialNumericEffect(_env, "+specialnum1", {
+				"?Normal"
+			}, this.DmgRateFactor)
+			local buffeft2 = global.NumericEffect(_env, "+hurtrate", {
+				"+Normal",
+				"+Normal"
+			}, this.HurtRateFactor)
+
+			global.ApplyBuff(_env, _env.ACTOR, {
+				timing = 0,
+				duration = 99,
+				tags = {
+					"STATUS",
+					"NUMERIC",
+					"Skill_YBYa_Passive_EX",
+					"UNDISPELLABLE",
+					"UNSTEALABLE"
+				}
+			}, {
+				buffeft1,
+				buffeft2
+			})
+		end)
+
+		return _env
+	end,
+	passive2 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+
+		_env.units = nil
+
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			_env.units = global.Slice(_env, global.SortBy(_env, global.EnemyUnits(_env), "<", global.UnitPropGetter(_env, "hpRatio")), 1, 1)
+
+			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.SUMMONS(_env, _env.unit) and _env.units[1] then
+				for _, enemy in global.__iter__(_env.units) do
+					local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, enemy, {
+						1,
+						this.DmgFactor,
+						0
+					})
+					local cherkvalue = damage.val
+
+					global.print(_env, "-=黑木雅乐觉醒造成伤害:", cherkvalue)
+					global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, enemy, damage)
+					global.AddAnim(_env, {
+						loop = 1,
+						anim = "cisha_zhanshupai",
+						zOrder = "TopLayer",
+						pos = global.UnitPos(_env, enemy)
+					})
+				end
+			end
+		end)
+
+		return _env
+	end
+}
 all.Skill_YBYa_Passive_Key = {
 	__new__ = function (prototype, externs, global)
 		local __function = global.__skill_function__
@@ -936,7 +1061,9 @@ all.Skill_YBYa_Redfox_Passive_Death = {
 						DmgRateFactor,
 						0
 					})
+					local cherkvalue = damage.val
 
+					global.print(_env, "-=狐狸亡语自爆伤害：", cherkvalue)
 					global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
 					global.AddAnim(_env, {
 						loop = 1,

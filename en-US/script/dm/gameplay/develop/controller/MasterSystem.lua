@@ -1008,6 +1008,11 @@ end
 
 function MasterSystem:getMasterLeadStatgeLevel(masterId)
 	local master = self:getMasterById(masterId)
+
+	if not master then
+		return
+	end
+
 	local level = master:getLeadStageData():getLeadStageLevel()
 	local id = master:getLeadStageData():getLeadStageId()
 
@@ -1054,6 +1059,11 @@ end
 
 function MasterSystem:getMasterCurLeadStageConfig(masterId)
 	local masterData = self:getMasterById(masterId)
+
+	if not masterData then
+		return
+	end
+
 	local leadStageData = masterData:getLeadStageData()
 	local curId = leadStageData:getLeadStageId()
 

@@ -109,6 +109,13 @@ function FunctionEntranceMediator:enterWithData(data)
 
 			self:refreshRTPKCell()
 		end)
+
+		local developSystem = self:getInjector():getInstance(DevelopSystem)
+		local playerId = developSystem:getPlayer():getRid()
+		local key = playerId .. "rtpk_entertime"
+		local curTime = self._gameServerAgent:remoteTimestamp()
+
+		cc.UserDefault:getInstance():setIntegerForKey(key, curTime)
 	end
 end
 
@@ -465,13 +472,24 @@ function FunctionEntranceMediator:createRTPKAnim()
 	local descPanel = anim:getChildByFullName("descPanel")
 
 	if descPanel then
-		seasonLabel:addTo(descPanel):posite(-30, 10)
+		seasonLabel:addTo(descPanel):posite(0, 10)
+		seasonLabel:setFontSize(16)
 		timeLabel:addTo(descPanel):posite(0, -12)
-		redPoint:addTo(descPanel):posite(60, 15)
+		redPoint:addTo(descPanel, 5):posite(115, -20)
 
 		rtpkCell.redPoint = redPoint
 		rtpkCell.seasonLabel = seasonLabel
 		rtpkCell.timeLabel = timeLabel
+		local img = ccui.ImageView:create("RTPK_yq_rk.png", ccui.TextureResType.plistType)
+		local text = ccui.Text:create(Strings:get("RTPK_DoubleScore"), TTF_FONT_FZYH_R, 18)
+
+		text:getVirtualRenderer():setDimensions(77, 25)
+		text:addTo(img):center(img:getContentSize()):offset(-1, 4)
+		img:addTo(descPanel):posite(71, 20)
+
+		rtpkCell.doubleImg = img
+
+		rtpkCell.doubleImg:setVisible(false)
 	end
 
 	self:refreshRTPKCell()
@@ -526,10 +544,22 @@ function FunctionEntranceMediator:refreshRTPKTimer()
 				index = seasonConfig.SeasonOrder
 			}) .. Strings:get("RTPK_Main_SeasonText"))
 
-			local startTime = TimeUtil:localDate("%Y.%m.%d", rtpk:getStartTime())
-			local endTime = TimeUtil:localDate("%Y.%m.%d", rtpk:getEndTime())
+			local param = self._rtpkSystem:formatMatchTimeParam()
 
-			timeLabel:setString(startTime .. "-" .. endTime)
+			timeLabel:setString(Strings:get("RTPK_OpenTime_Entry", param))
+
+			local isDouble = self._rtpkSystem:isDoubleScore()
+
+			if isDouble then
+				rtpkCell.doubleImg:setVisible(true)
+				rtpkCell.redPoint:setVisible(false)
+				seasonLabel:setAnchorPoint(cc.p(0, 0.5))
+				seasonLabel:setPositionX(-40)
+			else
+				rtpkCell.doubleImg:setVisible(false)
+				seasonLabel:setAnchorPoint(cc.p(0.5, 0.5))
+				seasonLabel:setPositionX(25)
+			end
 
 			local remainTime = math.max(rtpk:getCloseTime() - curTime, 0)
 
@@ -666,7 +696,7 @@ function FunctionEntranceMediator:refreshRed()
 			return self._cooperateBossSystem:redPointShow()
 		end,
 		function ()
-			return self._rtpkSystem:checkShowRed()
+			return self._rtpkSystem:checkShowRed() and not self._rtpkSystem:isDoubleScore()
 		end
 	}
 

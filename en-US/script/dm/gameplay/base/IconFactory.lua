@@ -4386,31 +4386,34 @@ function IconFactory:createLeadStageIconHor(id, lv, style)
 	if kind then
 		local iconBg = ccui.ImageView:create("asset/common/common_bd_sx.png", ccui.TextureResType.localType)
 
-		iconBg:addTo(layout):offset(50, -15)
+		iconBg:addTo(layout):posite(lv == 8 and 32.7 or 26, -15)
+		iconBg:setAnchorPoint(cc.p(0, 0.5))
 		iconBg:setScale(0.9)
 	else
 		local iconBg = ccui.ImageView:create("bg_zj_leadstage_heidi.png", ccui.TextureResType.plistType)
 
-		iconBg:addTo(layout):offset(40, -5)
+		iconBg:setAnchorPoint(cc.p(0, 0.5))
+		iconBg:addTo(layout):posite(lv == 8 and 25 or 21, -5)
 	end
 
 	local config = ConfigReader:getRecordById("MasterLeadStage", id)
 	local icon = ccui.ImageView:create(config.Icon, ccui.TextureResType.plistType)
 
 	icon:ignoreContentAdaptWithSize(true)
-	icon:addTo(layout):center(layout:getContentSize()):offset(0, -5)
+	icon:addTo(layout):posite(0, -5)
 	icon:setScale(lv == 8 and 0.3 or lv == 1 and 0.4 or 0.5)
 
 	local nameText = ccui.Text:create(Strings:get(config.RomanNum) .. Strings:get(config.StageName), font, fontSize)
 
 	nameText:enableOutline(cc.c4b(255, 255, 255, 255), 2)
+	nameText:setAnchorPoint(cc.p(0, 0.5))
+	nameText:setTextHorizontalAlignment(cc.TEXT_ALIGNMENT_LEFT)
 	nameText:setTextColor(GameStyle:getLeadStageColor(lv))
-	nameText:addTo(layout):center(layout:getContentSize()):offset(45, -5)
+	nameText:addTo(layout):posite(lv == 8 and 27 or 23, -5)
 
 	if kind then
-		icon:offset(-32, 0)
 		icon:setScale(lv == 8 and 0.5 or lv == 1 and 0.6 or 0.8)
-		nameText:offset(0, 0)
+		nameText:posite(lv == 8 and 41.7 or 35, -5)
 	end
 
 	return layout

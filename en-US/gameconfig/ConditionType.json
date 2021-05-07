@@ -517,6 +517,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_ExploreMapTimes_Desc"
     },
+    "Condi_FemaleExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_Female_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_FemaleExchangeAchieve_Desc"
+    },
     "Condi_FinishDailyTask": {
         "AchieveType1": "CUSTOM",
         "AchieveType2": "",

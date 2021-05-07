@@ -1,5 +1,6 @@
 {
     "CO_Decoration_15001": {
+        "ComposePosition": "Decoration",
         "Currency": {
             "amount": 2000000,
             "id": "IR_Gold",
@@ -34,6 +35,7 @@
         "Times": 1
     },
     "CO_Decoration_15002": {
+        "ComposePosition": "Decoration",
         "Currency": {
             "amount": 2000000,
             "id": "IR_Gold",
@@ -68,6 +70,7 @@
         "Times": 1
     },
     "CO_Decoration_15003": {
+        "ComposePosition": "Decoration",
         "Currency": {
             "amount": 2000000,
             "id": "IR_Gold",
@@ -102,6 +105,7 @@
         "Times": 1
     },
     "CO_Decoration_15004": {
+        "ComposePosition": "Decoration",
         "Currency": {
             "amount": 2000000,
             "id": "IR_Gold",
@@ -136,6 +140,7 @@
         "Times": 1
     },
     "CO_Decoration_15005": {
+        "ComposePosition": "Decoration",
         "Currency": {
             "amount": 2000000,
             "id": "IR_Gold",
@@ -170,6 +175,7 @@
         "Times": 1
     },
     "CO_Decoration_15006": {
+        "ComposePosition": "Decoration",
         "Currency": {
             "amount": 2000000,
             "id": "IR_Gold",
@@ -204,6 +210,7 @@
         "Times": 1
     },
     "CO_Decoration_15007": {
+        "ComposePosition": "Decoration",
         "Currency": {
             "amount": 2000000,
             "id": "IR_Gold",
@@ -238,6 +245,7 @@
         "Times": 1
     },
     "CO_Decoration_15008": {
+        "ComposePosition": "Decoration",
         "Currency": {
             "amount": 2000000,
             "id": "IR_Gold",
@@ -272,6 +280,7 @@
         "Times": 1
     },
     "CO_Decoration_15009": {
+        "ComposePosition": "Decoration",
         "Currency": {
             "amount": 2000000,
             "id": "IR_Gold",
@@ -306,6 +315,7 @@
         "Times": 1
     },
     "CO_Decoration_15010": {
+        "ComposePosition": "Decoration",
         "Currency": {
             "amount": 2000000,
             "id": "IR_Gold",
@@ -340,6 +350,7 @@
         "Times": 1
     },
     "CO_Decoration_15011": {
+        "ComposePosition": "Decoration",
         "Currency": {
             "amount": 2000000,
             "id": "IR_Gold",
@@ -374,6 +385,7 @@
         "Times": 1
     },
     "CO_Shoes_15001": {
+        "ComposePosition": "Shoes",
         "Currency": {
             "amount": 2000000,
             "id": "IR_Gold",
@@ -408,6 +420,7 @@
         "Times": 1
     },
     "CO_Shoes_15002": {
+        "ComposePosition": "Shoes",
         "Currency": {
             "amount": 2000000,
             "id": "IR_Gold",
@@ -442,6 +455,7 @@
         "Times": 1
     },
     "CO_Shoes_15003": {
+        "ComposePosition": "Shoes",
         "Currency": {
             "amount": 2000000,
             "id": "IR_Gold",
@@ -476,6 +490,7 @@
         "Times": 1
     },
     "CO_Shoes_15004": {
+        "ComposePosition": "Shoes",
         "Currency": {
             "amount": 2000000,
             "id": "IR_Gold",
@@ -510,6 +525,7 @@
         "Times": 1
     },
     "CO_Shoes_15005": {
+        "ComposePosition": "Shoes",
         "Currency": {
             "amount": 2000000,
             "id": "IR_Gold",
@@ -543,7 +559,78 @@
         },
         "Times": 1
     },
+    "CO_Shoes_15006": {
+        "ComposePosition": "Shoes",
+        "Currency": {
+            "amount": 2000000,
+            "id": "IR_Gold",
+            "type": "Item"
+        },
+        "Item1": {
+            "amount": 1,
+            "id": "CO_ShoesStone_3",
+            "type": "Item"
+        },
+        "Item2": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Shoes"
+        },
+        "Item3": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Shoes"
+        },
+        "Item4": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Shoes"
+        },
+        "Item5": "",
+        "Reward": "Shoes_15006",
+        "Show": {
+            "id": "Shoes_15006",
+            "type": "Equip"
+        },
+        "Times": 1
+    },
+    "CO_Shoes_15007": {
+        "ComposePosition": "Shoes",
+        "Currency": {
+            "amount": 2000000,
+            "id": "IR_Gold",
+            "type": "Item"
+        },
+        "Item1": {
+            "amount": 1,
+            "id": "CO_ShoesStone_1",
+            "type": "Item"
+        },
+        "Item2": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Shoes"
+        },
+        "Item3": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Shoes"
+        },
+        "Item4": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Shoes"
+        },
+        "Item5": "",
+        "Reward": "Shoes_15007",
+        "Show": {
+            "id": "Shoes_15007",
+            "type": "Equip"
+        },
+        "Times": 1
+    },
     "CO_Tops_15001": {
+        "ComposePosition": "Tops",
         "Currency": {
             "amount": 2000000,
             "id": "IR_Gold",
@@ -578,6 +665,7 @@
         "Times": 1
     },
     "CO_Tops_15002": {
+        "ComposePosition": "Tops",
         "Currency": {
             "amount": 2000000,
             "id": "IR_Gold",
@@ -612,6 +700,7 @@
         "Times": 1
     },
     "CO_Tops_15003": {
+        "ComposePosition": "Tops",
         "Currency": {
             "amount": 2000000,
             "id": "IR_Gold",
@@ -646,6 +735,7 @@
         "Times": 1
     },
     "CO_Tops_15004": {
+        "ComposePosition": "Tops",
         "Currency": {
             "amount": 2000000,
             "id": "IR_Gold",
@@ -680,6 +770,7 @@
         "Times": 1
     },
     "CO_Tops_15005": {
+        "ComposePosition": "Tops",
         "Currency": {
             "amount": 2000000,
             "id": "IR_Gold",
@@ -714,6 +805,7 @@
         "Times": 1
     },
     "CO_Tops_15006": {
+        "ComposePosition": "Tops",
         "Currency": {
             "amount": 2000000,
             "id": "IR_Gold",
@@ -748,6 +840,7 @@
         "Times": 1
     },
     "CO_Tops_15007": {
+        "ComposePosition": "Tops",
         "Currency": {
             "amount": 2000000,
             "id": "IR_Gold",
@@ -782,6 +875,7 @@
         "Times": 1
     },
     "CO_Tops_15008": {
+        "ComposePosition": "Tops",
         "Currency": {
             "amount": 2000000,
             "id": "IR_Gold",
@@ -816,6 +910,7 @@
         "Times": 1
     },
     "CO_Tops_15009": {
+        "ComposePosition": "Tops",
         "Currency": {
             "amount": 2000000,
             "id": "IR_Gold",
@@ -849,7 +944,43 @@
         },
         "Times": 1
     },
+    "CO_Tops_15010": {
+        "ComposePosition": "Tops",
+        "Currency": {
+            "amount": 2000000,
+            "id": "IR_Gold",
+            "type": "Item"
+        },
+        "Item1": {
+            "amount": 1,
+            "id": "CO_TopsStone_1",
+            "type": "Item"
+        },
+        "Item2": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Tops"
+        },
+        "Item3": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Tops"
+        },
+        "Item4": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Tops"
+        },
+        "Item5": "",
+        "Reward": "Tops_15010",
+        "Show": {
+            "id": "Tops_15010",
+            "type": "Equip"
+        },
+        "Times": 1
+    },
     "CO_Weapon_15001": {
+        "ComposePosition": "Weapon",
         "Currency": {
             "amount": 2000000,
             "id": "IR_Gold",
@@ -884,6 +1015,7 @@
         "Times": 1
     },
     "CO_Weapon_15002": {
+        "ComposePosition": "Weapon",
         "Currency": {
             "amount": 2000000,
             "id": "IR_Gold",
@@ -918,6 +1050,7 @@
         "Times": 1
     },
     "CO_Weapon_15003": {
+        "ComposePosition": "Weapon",
         "Currency": {
             "amount": 2000000,
             "id": "IR_Gold",
@@ -952,6 +1085,7 @@
         "Times": 1
     },
     "CO_Weapon_15004": {
+        "ComposePosition": "Weapon",
         "Currency": {
             "amount": 2000000,
             "id": "IR_Gold",
@@ -986,6 +1120,7 @@
         "Times": 1
     },
     "CO_Weapon_15005": {
+        "ComposePosition": "Weapon",
         "Currency": {
             "amount": 2000000,
             "id": "IR_Gold",
@@ -1020,6 +1155,7 @@
         "Times": 1
     },
     "CO_Weapon_15006": {
+        "ComposePosition": "Weapon",
         "Currency": {
             "amount": 2000000,
             "id": "IR_Gold",
@@ -1053,7 +1189,43 @@
         },
         "Times": 1
     },
+    "CO_Weapon_15007": {
+        "ComposePosition": "Weapon",
+        "Currency": {
+            "amount": 2000000,
+            "id": "IR_Gold",
+            "type": "Item"
+        },
+        "Item1": {
+            "amount": 1,
+            "id": "CO_WeaponStone_1",
+            "type": "Item"
+        },
+        "Item2": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Weapon"
+        },
+        "Item3": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Weapon"
+        },
+        "Item4": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Weapon"
+        },
+        "Item5": "",
+        "Reward": "Weapon_15007",
+        "Show": {
+            "id": "Weapon_15007",
+            "type": "Equip"
+        },
+        "Times": 1
+    },
     "CO_Weapon_1_UR": {
+        "ComposePosition": "Weapon",
         "Currency": {
             "amount": 10000,
             "id": "IR_Gold",
@@ -1084,6 +1256,7 @@
         "Times": 1
     },
     "CO_Weapon_2_UR": {
+        "ComposePosition": "Weapon",
         "Currency": {
             "amount": 10000,
             "id": "IR_Gold",
@@ -1122,6 +1295,7 @@
         "Times": 1
     },
     "CO_Weapon_3_UR": {
+        "ComposePosition": "Weapon",
         "Currency": {
             "amount": 10000,
             "id": "IR_Gold",
@@ -1152,6 +1326,7 @@
         "Times": 10
     },
     "CO_Weapon_4_UR": {
+        "ComposePosition": "Weapon",
         "Currency": {
             "amount": 10000,
             "id": "IR_Gold",
@@ -1190,6 +1365,7 @@
         "Times": 10
     },
     "CO_Weapon_5_UR": {
+        "ComposePosition": "Weapon",
         "Currency": {
             "amount": 10000,
             "id": "IR_Gold",
@@ -1220,6 +1396,7 @@
         "Times": 10
     },
     "CO_Weapon_6_UR": {
+        "ComposePosition": "Weapon",
         "Currency": {
             "amount": 10000,
             "id": "IR_Gold",

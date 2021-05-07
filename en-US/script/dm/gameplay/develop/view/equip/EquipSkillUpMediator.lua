@@ -146,20 +146,36 @@ function EquipSkillUpMediator:setupView()
 
 	desc:setString("")
 
-	local content = self._skill:getSkillDesc({
-		fontSize = 20,
-		fontName = TTF_FONT_FZYH_M
-	})
-	local descText = ccui.RichText:createWithXML(content, {})
+	local fontSize = 20
+	local height = 100
+	local descText = nil
+	local changeSize = false
 
-	descText:renderContent(700, 0, true)
+	repeat
+		local content = self._skill:getSkillDesc({
+			fontSize = fontSize,
+			fontName = TTF_FONT_FZYH_M
+		})
+		descText = ccui.RichText:createWithXML(content, {})
+
+		descText:renderContent(800, 0, true)
+
+		height = descText:getContentSize().height
+
+		if fontSize < 20 then
+			changeSize = true
+		end
+
+		fontSize = fontSize - 2
+	until height < 57 or fontSize < 2
+
 	descText:setAnchorPoint(cc.p(0.5, 0))
 	descText:addTo(desc)
 	descText:setPosition(cc.p(0, -10))
 	descText:renderContent()
 
-	if descText:getContentSize().width > 800 then
-		descText:renderContent(800, 0, true)
+	if changeSize then
 		descText:setPosition(cc.p(0, -19))
+		descText:renderContent()
 	end
 end

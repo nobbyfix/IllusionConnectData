@@ -1677,6 +1677,86 @@
         "Target": "MASTER",
         "Value": []
     },
+    "Fem_Star3_HSYZhai": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.2,
+            0.2
+        ]
+    },
+    "Fem_Star4_HSYZhai": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.4,
+            0.4
+        ]
+    },
+    "Fem_Star5_HSYZhai": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.6,
+            0.6
+        ]
+    },
+    "Fem_Star6_HSYZhai": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.8,
+            0.8
+        ]
+    },
     "Fire_QTQCi_Buff_Star3": {
         "AttrType": [
             "HURTRATE",
@@ -12206,6 +12286,26 @@
         "Value": [
             0.6,
             0.6
+        ]
+    },
+    "Hero_ABlock_HSYZhai_Extra": {
+        "AttrType": [
+            "UNHURTRATE",
+            "HURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.8,
+            0.8
         ]
     },
     "Hero_ABlock_HSheng_Extra": {
@@ -98288,6 +98388,204 @@
             ]
         ]
     },
+    "LeadStage_LiMing_PVE_Effect_001": {
+        "AttrType": [
+            "ATK_RATE",
+            "DEF_RATE",
+            "HP_RATE"
+        ],
+        "EffectDesc": "LeadStage_LiMing_Skill_001_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "CUSTOM",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "HERO",
+        "Value": [
+            [
+                0.04,
+                0.08,
+                0.12,
+                0.16,
+                0.2,
+                0.24,
+                0.28,
+                0.32
+            ],
+            [
+                0.04,
+                0.08,
+                0.12,
+                0.16,
+                0.2,
+                0.24,
+                0.28,
+                0.32
+            ],
+            [
+                0.04,
+                0.08,
+                0.12,
+                0.16,
+                0.2,
+                0.24,
+                0.28,
+                0.32
+            ]
+        ]
+    },
+    "LeadStage_LiMing_PVE_Effect_002": {
+        "AttrType": [
+            "ATK_RATE",
+            "DEF_RATE",
+            "HP_RATE"
+        ],
+        "EffectDesc": "LeadStage_LiMing_Skill_002_Desc",
+        "EffectRange": [
+            "SCENE_ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "CUSTOM",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            [
+                0.08,
+                0.12,
+                0.16,
+                0.24,
+                0.32,
+                0.4,
+                0.45,
+                0.5
+            ],
+            [
+                0.08,
+                0.12,
+                0.16,
+                0.24,
+                0.32,
+                0.4,
+                0.45,
+                0.5
+            ],
+            [
+                0.08,
+                0.12,
+                0.16,
+                0.24,
+                0.32,
+                0.4,
+                0.45,
+                0.5
+            ]
+        ]
+    },
+    "LeadStage_LiMing_PVP_Effect_001": {
+        "AttrType": [
+            "ATK_RATE",
+            "DEF_RATE",
+            "HP_RATE"
+        ],
+        "EffectDesc": "LeadStage_LiMing_Skill_001_Desc",
+        "EffectRange": [
+            "ARENA",
+            "RTPK"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "CUSTOM",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "HERO",
+        "Value": [
+            [
+                0.04,
+                0.08,
+                0.12,
+                0.16,
+                0.2,
+                0.24,
+                0.28,
+                0.32
+            ],
+            [
+                0.04,
+                0.08,
+                0.12,
+                0.16,
+                0.2,
+                0.24,
+                0.28,
+                0.32
+            ],
+            [
+                0.04,
+                0.08,
+                0.12,
+                0.16,
+                0.2,
+                0.24,
+                0.28,
+                0.32
+            ]
+        ]
+    },
+    "LeadStage_LiMing_PVP_Effect_002": {
+        "AttrType": [
+            "ATK_RATE",
+            "DEF_RATE",
+            "HP_RATE"
+        ],
+        "EffectDesc": "LeadStage_LiMing_Skill_002_Desc",
+        "EffectRange": [
+            "ARENA",
+            "RTPK"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "CUSTOM",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            [
+                0.08,
+                0.12,
+                0.16,
+                0.24,
+                0.32,
+                0.4,
+                0.45,
+                0.5
+            ],
+            [
+                0.08,
+                0.12,
+                0.16,
+                0.24,
+                0.32,
+                0.4,
+                0.45,
+                0.5
+            ],
+            [
+                0.08,
+                0.12,
+                0.16,
+                0.24,
+                0.32,
+                0.4,
+                0.45,
+                0.5
+            ]
+        ]
+    },
     "LeadStage_LieSha_PVE_Effect_001": {
         "AttrType": [
             "ATK_RATE",
@@ -143874,6 +144172,80 @@
             0.15
         ]
     },
+    "Star_HSYZhai_3_1": {
+        "AttrType": [
+            "ATK_RATE",
+            "HP_RATE"
+        ],
+        "EffectDesc": "Star_HSYZhai_3_1_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.1,
+            0.1
+        ]
+    },
+    "Star_HSYZhai_4_1": {
+        "AttrType": [
+            "HP_RATE"
+        ],
+        "EffectDesc": "Star_HSYZhai_4_1_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.2
+        ]
+    },
+    "Star_HSYZhai_5_1": {
+        "AttrType": [
+            "ATK_RATE"
+        ],
+        "EffectDesc": "Star_HSYZhai_5_1_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.2
+        ]
+    },
+    "Star_HSYZhai_6": {
+        "AttrType": [
+            "SKILLRATE"
+        ],
+        "EffectDesc": "Star_HSYZhai_6_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.15
+        ]
+    },
     "Star_HSheng_3_1": {
         "AttrType": [
             "ATK_RATE",
@@ -145208,6 +145580,26 @@
         "Target": "SELF",
         "Value": [
             0.15
+        ]
+    },
+    "Star_MLYTLSha_Awake": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "Star_MLYTLSha_Awake_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.1,
+            0.1
         ]
     },
     "Star_MTZMEShi_3_1": {
@@ -147202,6 +147594,26 @@
         "Target": "SELF",
         "Value": [
             0.15
+        ]
+    },
+    "Star_YBYa_Awake": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "Star_YBYa_Awake_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.1,
+            0.1
         ]
     },
     "Star_YDZZong_3_1": {

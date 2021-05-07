@@ -105,9 +105,15 @@ function PageViewUtil:reloadData()
 end
 
 function PageViewUtil:setCurPageIndex(index)
-	self._curPageIndex = self:adjustIndex(index)
+	local targetIdx = self:adjustIndex(index)
 
-	self:refreshPage()
+	if targetIdx == self._curPageIndex then
+		return
+	end
+
+	self._curPageIndex = targetIdx
+
+	self:refreshPageForce()
 end
 
 function PageViewUtil:scrollToDirection(dir, time)
@@ -233,6 +239,28 @@ function PageViewUtil:refreshPage()
 	end
 
 	self._pageDirty = false
+	local leftIndex = self:adjustIndex(self._curPageIndex - 1)
+	local midIndex = self._curPageIndex
+	local rightIndex = self:adjustIndex(self._curPageIndex + 1)
+
+	self:_cleanPages()
+
+	local leftNode = self._delegate:getPageByIndex(leftIndex)
+	local midNode = self._delegate:getPageByIndex(midIndex)
+	local rightNode = self._delegate:getPageByIndex(rightIndex)
+
+	self._baseLayoutArray[1]:addChild(leftNode)
+	self._baseLayoutArray[2]:addChild(midNode)
+	self._baseLayoutArray[3]:addChild(rightNode)
+
+	if self._delegate.flipEndCallBack then
+		self._delegate:flipEndCallBack(midNode, self._curPageIndex)
+	end
+end
+
+function PageViewUtil:refreshPageForce()
+	self._view:setInnerContainerPosition(cc.p(-self._viewSize.width, 0))
+
 	local leftIndex = self:adjustIndex(self._curPageIndex - 1)
 	local midIndex = self._curPageIndex
 	local rightIndex = self:adjustIndex(self._curPageIndex + 1)

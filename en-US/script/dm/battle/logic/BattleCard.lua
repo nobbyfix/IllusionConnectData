@@ -161,6 +161,7 @@ function HeroCard:initWithData(data)
 	self._heroData = data.hero
 	self._cardAI = data.cardAI
 	self._type = CARD_TYPE.kHeroCard
+	self._cardIndex = nil
 	self._triggerBuffs = {}
 
 	return self
@@ -168,6 +169,14 @@ end
 
 function HeroCard:getType()
 	return "hero"
+end
+
+function HeroCard:setCardIndex(cardIndex)
+	self._cardIndex = cardIndex
+end
+
+function HeroCard:getCardIndex()
+	return self._cardIndex
 end
 
 function HeroCard:usedByPlayer(player, battleContext, trgtCellNo, cost, wontEvent)
@@ -185,7 +194,8 @@ function HeroCard:usedByPlayer(player, battleContext, trgtCellNo, cost, wontEven
 		id = self._id,
 		cost = self._rawCost,
 		cardAI = self._cardAI,
-		hero = self._heroData
+		hero = self._heroData,
+		cardIndex = self._cardIndex
 	})
 
 	local cardSystem = battleContext:getObject("CardSystem")

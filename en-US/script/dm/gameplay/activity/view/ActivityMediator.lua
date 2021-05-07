@@ -14,12 +14,6 @@ function ActivityMediator:initialize()
 end
 
 function ActivityMediator:dispose()
-	if self._checkCloseTimer then
-		self._checkCloseTimer:stop()
-
-		self._checkCloseTimer = nil
-	end
-
 	super.dispose(self)
 end
 
@@ -144,7 +138,10 @@ function ActivityMediator:updateTabController()
 
 		dump(activityId, "activityId >>>>>>>")
 		dump(imageName, "imageName >>>>>>>")
-		btn:getChildByName("image"):loadTexture(imageName, ccui.TextureResType.plistType)
+
+		if imageName ~= ".png" then
+			btn:getChildByName("image"):loadTexture(imageName, ccui.TextureResType.plistType)
+		end
 
 		local node = RedPoint:createDefaultNode()
 		local redPoint = RedPoint:new(node, btn, redPointCal)

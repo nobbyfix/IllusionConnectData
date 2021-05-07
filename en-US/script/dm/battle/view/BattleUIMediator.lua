@@ -75,6 +75,14 @@ local function drawOutline(sprite)
 	myDrawNode:addTo(sprite)
 end
 
+function BattleUIMediator:setBattleType(battleType)
+	self._battleType = battleType
+
+	if self._battleType ~= "rtpvp" then
+		self._speedupBtn:hide()
+	end
+end
+
 function BattleUIMediator:adjustLayout(targetFrame)
 	local view = self:getView()
 	local header = view:getChildByName("header")
@@ -201,6 +209,17 @@ function BattleUIMediator:setupSubWidgets()
 	self._rightStageLevel:setListener(self)
 	self._leftStageLevel:setVisible(false)
 	self._rightStageLevel:setVisible(false)
+
+	local speedupBtn = header:getChildByName("speedup")
+	self._speedupBtn = self:autoManageObject(BattlePvpSpeedUpWidget:new(speedupBtn))
+
+	self._speedupBtn:hide()
+end
+
+function BattleUIMediator:pvpSpeedUp(arg1, arg2)
+	if self._speedupBtn then
+		self._speedupBtn:active(arg1, arg2)
+	end
 end
 
 function BattleUIMediator:willStartEnterTransition()
@@ -220,6 +239,12 @@ function BattleUIMediator:willStartEnterTransition()
 
 		view:offset(offset1.x, offset1.y)
 		view:runAction(cc.Sequence:create(cc.MoveBy:create(0.2, offset2), cc.MoveBy:create(0.1, offset3)))
+	end
+
+	if self._speedupBtn then
+		local view = self._speedupBtn:getView()
+
+		view:runAction(cc.Sequence:create(cc.DelayTime:create(6), cc.FadeIn:create(0.1)))
 	end
 
 	if self._leftHeadWidget then
@@ -385,6 +410,13 @@ function BattleUIMediator:fade()
 		self._passiveSkillTip:hide()
 	end
 
+	if self._speedupBtn then
+		local view = self._speedupBtn:getView()
+
+		view:stopAllActions()
+		view:runAction(cc.FadeOut:create(duration))
+	end
+
 	local waitTime = 10
 
 	performWithDelay(self:getView(), function ()
@@ -490,6 +522,13 @@ function BattleUIMediator:fade()
 			view:stopAllActions()
 			view:runAction(cc.FadeIn:create(duration))
 		end
+
+		if self._speedupBtn then
+			local view = self._speedupBtn:getView()
+
+			view:stopAllActions()
+			view:runAction(cc.FadeIn:create(duration))
+		end
 	end, waitTime)
 end
 
@@ -566,6 +605,8 @@ function BattleUIMediator:setupChatFlowWidget()
 	self:getInjector():injectInto(chatFlowWidget)
 
 	self._chatFlowWidget = chatFlowWidget
+
+	chatFLowNode:getChildByName("layout"):setTouchEnabled(false)
 end
 
 function BattleUIMediator:setupViewConfig(viewConfig, isReplay)
@@ -1509,6 +1550,12 @@ function BattleUIMediator:adjustCardBuff(idxInSlot)
 
 	if card then
 		card:playAddBuffAnim()
+	end
+end
+
+function BattleUIMediator:stackSkillLayer(skillId, stacknum, totalnum)
+	if self._masterWidget then
+		self._masterWidget:StackSkill(skillId, stacknum, totalnum)
 	end
 end
 

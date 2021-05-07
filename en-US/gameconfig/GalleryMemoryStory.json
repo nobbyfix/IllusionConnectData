@@ -165,6 +165,66 @@
         "UnlockDesc": "",
         "UnlockStory": ""
     },
+    "Memory_Act_Fire": {
+        "ActiviType": "",
+        "Condition": "",
+        "Listpicture": "img_story_fire_1",
+        "Name": "ActivityBlock_Fire_Name",
+        "Num": 13,
+        "Story": [
+            {
+                "id": [
+                    "Memory_Act_Fire_1",
+                    "Memory_Act_Fire_2",
+                    "Memory_Act_Fire_3",
+                    "Memory_Act_Fire_4"
+                ],
+                "type": "NORMAL"
+            },
+            {
+                "id": [
+                    "Memory_Act_Fire_5",
+                    "Memory_Act_Fire_6",
+                    "Memory_Act_Fire_7",
+                    "Memory_Act_Fire_8"
+                ],
+                "type": "ELITE"
+            }
+        ],
+        "Type": "ACTIVILIST",
+        "UnlockDesc": "",
+        "UnlockStory": ""
+    },
+    "Memory_Act_Knight": {
+        "ActiviType": "",
+        "Condition": "",
+        "Listpicture": "img_story_knight_1",
+        "Name": "ActivityBlock_Knight_Name",
+        "Num": 12,
+        "Story": [
+            {
+                "id": [
+                    "Memory_Act_Knight_1",
+                    "Memory_Act_Knight_2",
+                    "Memory_Act_Knight_3",
+                    "Memory_Act_Knight_4"
+                ],
+                "type": "NORMAL"
+            },
+            {
+                "id": [
+                    "Memory_Act_Knight_5",
+                    "Memory_Act_Knight_6",
+                    "Memory_Act_Knight_7",
+                    "Memory_Act_Knight_8"
+                ],
+                "type": "ELITE"
+            }
+        ],
+        "Type": "ACTIVILIST",
+        "UnlockDesc": "",
+        "UnlockStory": ""
+    },
     "Memory_Act_Musicfestival": {
         "ActiviType": "",
         "Condition": "",

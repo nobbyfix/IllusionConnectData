@@ -183,13 +183,13 @@ function exports.ApplyHpRatio(env, target, hpRatio)
 	return result
 end
 
-function exports.ApplyHPRecovery(env, target, recovery)
+function exports.ApplyHPRecovery(env, target, recovery, notBeEffectByCurse)
 	local healthSystem = env.global["$HealthSystem"]
 	local workId = env["$id"]
 	local battleStatist = env.global["$Statist"]
 	local flagComp = target:getComponent("Flag")
 
-	if flagComp:hasStatus(kBECurse) then
+	if flagComp:hasStatus(kBECurse) and not notBeEffectByCurse then
 		local result = healthSystem:performHealthDamage(env["$actor"], target, recovery, 1, workId)
 
 		return result

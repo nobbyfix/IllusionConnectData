@@ -68,6 +68,10 @@ function MasterLeaderSkillMediator:initTab()
 				"asset/ui/mastercultivate/common_btn_fy4.png"
 			}
 		}
+
+		if self._ownSkills then
+			break
+		end
 	end
 
 	config.btnDatas = data
@@ -114,6 +118,8 @@ end
 function MasterLeaderSkillMediator:initData(data)
 	self._curTabIdx = data.index and data.index or 1
 	self._towerMaster = data.towerMaster or false
+	self._ownSkills = data.ownSkills
+	self._ownMasterRoleModel = data.ownMasterRoleModel
 
 	if self._towerMaster then
 		self._master = data.master
@@ -143,7 +149,13 @@ function MasterLeaderSkillMediator:setListViewVisible()
 		return
 	end
 
-	local skills = self._masterSystem:getMasterActiveSkills(self._masterId)
+	local skills = {}
+
+	if self._ownSkills then
+		skills = self._ownSkills
+	else
+		skills = self._masterSystem:getMasterActiveSkills(self._masterId)
+	end
 
 	if #skills == 0 then
 		self._tabPanel:setVisible(false)
@@ -261,6 +273,8 @@ function MasterLeaderSkillMediator:refreshSkillCell(cell, index, isActive)
 
 	if self._towerMaster then
 		skills = self._master:getSkillList()
+	elseif self._ownSkills then
+		skills = self._ownSkills
 	else
 		skills = self._masterSystem:getMasterLeaderSkillList(self._masterId)
 	end
@@ -280,6 +294,7 @@ function MasterLeaderSkillMediator:refreshSkillCell(cell, index, isActive)
 	local isShowGray = isActive or isActive == nil
 
 	infoPanel:setLayoutType(ccui.LayoutType.VERTICAL)
+	print("----------------index-----------------" .. index)
 
 	local height = self:createSkillDescPanel(infoPanel, skill, isShowGray, starHeight)
 
@@ -334,39 +349,45 @@ local SKILL_EFF_TAG = 1001
 local SKILL_DESC_TAG = 1000
 
 function MasterLeaderSkillMediator:createSkillDescPanel(layout, skill, isActive, heightAdd)
-	local style = {
-		fontName = TTF_FONT_FZYH_M
-	}
-	local desc = ConfigReader:getEffectDesc("Skill", skill:getMasterSkillDescKey(), skill:getId(), skill:getLevel(), style)
-	local label = layout:getChildByTag(SKILL_DESC_TAG)
+	layout:removeChildByTag(SKILL_DESC_TAG)
 
-	if label == nil then
-		label = ccui.RichText:createWithXML(desc, {})
+	local fontSize = 18
+	local height = 200
+	local descText = nil
+	local changeSize = false
 
-		label:addTo(layout)
-	else
-		label:setString(desc)
-	end
+	repeat
+		local style = {
+			fontName = TTF_FONT_FZYH_M,
+			fontSize = fontSize
+		}
+		local showText = ConfigReader:getEffectDesc("Skill", skill:getMasterSkillDescKey(), skill:getId(), skill:getLevel(), style)
+		descText = ccui.RichText:createWithXML(showText, {})
+		local language = getCurrentLanguage()
 
-	local language = getCurrentLanguage()
+		if language ~= GameLanguageType.CN then
+			descText:setVerticalSpace(-5)
+		else
+			descText:setVerticalSpace(8)
+		end
 
-	if language ~= GameLanguageType.CN then
-		label:setVerticalSpace(-5)
-	else
-		label:setVerticalSpace(8)
-	end
+		descText:renderContent(listWidth, 0, true)
 
-	label:renderContent(listWidth, 0)
+		height = descText:getContentSize().height
+		fontSize = fontSize - 2
+	until height <= 95 or fontSize < 2
 
-	local height = label:getContentSize().height
+	descText:addTo(layout):posite(0, 0)
+
+	local height = descText:getContentSize().height
 
 	layout:setContentSize(cc.size(listWidth, height))
-	label:setTag(SKILL_DESC_TAG)
+	descText:setTag(SKILL_DESC_TAG)
 
 	if isActive then
-		label:setColor(cc.c3b(255, 255, 255))
+		descText:setColor(cc.c3b(255, 255, 255))
 	else
-		label:setColor(cc.c3b(195, 195, 195))
+		descText:setColor(cc.c3b(195, 195, 195))
 	end
 
 	return height
@@ -412,7 +433,7 @@ end
 function MasterLeaderSkillMediator:createMasterStandRole()
 	local info = {
 		iconType = "Bust2",
-		id = self._master:getModel()
+		id = self._ownMasterRoleModel or self._master:getModel()
 	}
 
 	self._rolePanel:removeAllChildren()
@@ -482,25 +503,39 @@ function MasterLeaderSkillMediator:refreshLeadStageCell(cell, skillInfo)
 	name:setString(Strings:get(self._config.Name))
 	name:setColor(cc.c3b(255, 165, 0))
 
-	local showText = nil
+	local fontSize = 18
+	local height = 100
+	local descText = nil
+	local changeSize = false
 
-	if skillInfo.kind == "Skill" then
-		showText = SkillPrototype:getSkillEffectDesc(skillInfo.skillId, skillInfo.level, {})
-	else
-		local skillProto = PrototypeFactory:getInstance():getSkillPrototype(skillInfo.skillId)
-		local style = {
-			fontName = TTF_FONT_FZYH_M
-		}
-		local attrDescs = skillProto:getAttrDescs(skillInfo.level, style) or {}
-		showText = attrDescs[1]
-	end
+	repeat
+		local showText = nil
 
-	local label2 = ccui.RichText:createWithXML(showText, {})
+		if skillInfo.kind == "Skill" then
+			showText = SkillPrototype:getSkillEffectDesc(skillInfo.skillId, skillInfo.level, {
+				fontSize = fontSize
+			})
+		else
+			local skillProto = PrototypeFactory:getInstance():getSkillPrototype(skillInfo.skillId)
+			local style = {
+				fontName = TTF_FONT_FZYH_M,
+				fontSize = fontSize
+			}
+			local attrDescs = skillProto:getAttrDescs(skillInfo.level, style) or {}
+			showText = attrDescs[1]
+		end
 
-	label2:setVerticalSpace(1)
-	label2:renderContent(infoPanel:getContentSize().width, 0)
-	label2:setAnchorPoint(cc.p(0, 1))
-	label2:addTo(infoPanel):posite(0, 0)
+		descText = ccui.RichText:createWithXML(showText, {})
+
+		descText:setVerticalSpace(1)
+		descText:renderContent(infoPanel:getContentSize().width - 8, 0, true)
+
+		height = descText:getContentSize().height
+		fontSize = fontSize - 2
+	until height < 57 or fontSize < 2
+
+	descText:setAnchorPoint(cc.p(0, 1))
+	descText:addTo(infoPanel):posite(0, 0)
 end
 
 function MasterLeaderSkillMediator:onCloseBtnClick()

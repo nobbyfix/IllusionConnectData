@@ -147,6 +147,18 @@ function RTPKResultMediator:setupView(data)
 		addScoreText:setTextColor(cc.c3b(251, 74, 78))
 	end
 
+	addScoreText:setPositionX(568)
+
+	local isDouble = data.double
+
+	if isDouble then
+		addScoreText:setString("+" .. addScore .. Strings:get("RTPK_DoubleScore_UI02"))
+		addScoreText:setPositionX(589)
+		self._main:getChildByName("Text_3"):setFontSize(24)
+	end
+
+	self._main:getChildByName("Text_3"):setPositionX(addScoreText:getPositionX() - addScoreText:getContentSize().width - 5)
+
 	local scoreText = self._main:getChildByName("Text_score")
 	local isMaxGrade = self._rtpk:isMaxGrade(newGradeData.Id)
 

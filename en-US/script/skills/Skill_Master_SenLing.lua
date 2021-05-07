@@ -78,19 +78,17 @@ all.Sk_Master_SenLing_Action1 = {
 		local this = global.__skill({
 			global = global
 		}, prototype, externs)
-		this.dmgFactor = externs.dmgFactor
+		this.DmgFactor = externs.DmgFactor
 
-		if this.dmgFactor == nil then
-			this.dmgFactor = {
-				1,
-				3.6,
-				0
-			}
+		if this.DmgFactor == nil then
+			this.DmgFactor = 0.3
 		end
 
-		this.UnHurtRateFactor = externs.UnHurtRateFactor
+		this.HpFactor = externs.HpFactor
 
-		assert(this.UnHurtRateFactor ~= nil, "External variable `UnHurtRateFactor` is not provided.")
+		if this.HpFactor == nil then
+			this.HpFactor = 0.3
+		end
 
 		local main = __action(this, {
 			name = "main",
@@ -127,30 +125,9 @@ all.Sk_Master_SenLing_Action1 = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			_env.units = global.EnemyUnits(_env)
-
-			for _, unit in global.__iter__(_env.units) do
-				global.RetainObject(_env, unit)
-			end
 
 			global.GroundEft(_env, _env.ACTOR, "BGEffectBlack")
 			global.EnergyRestrain(_env, _env.ACTOR, _env.TARGET)
-
-			local buffeft1 = global.NumericEffect(_env, "+atkrate", {
-				"+Normal",
-				"+Normal"
-			}, 0)
-
-			global.ApplyBuff(_env, _env.ACTOR, {
-				timing = 2,
-				duration = 1,
-				display = "Prepare",
-				tags = {
-					"PREPARE"
-				}
-			}, {
-				buffeft1
-			})
 		end)
 		exec["@time"]({
 			900
@@ -160,56 +137,52 @@ all.Sk_Master_SenLing_Action1 = {
 
 			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.1, 80)
 			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.FixedPos(_env, 0, 0, 2), 100, "skill2"))
-			global.HarmTargetView(_env, _env.units)
-
-			for _, unit in global.__iter__(_env.units) do
-				global.AssignRoles(_env, unit, "target")
-			end
 		end)
 		exec["@time"]({
 			1500
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
+			local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.ACTOR)
 
-			for _, unit in global.__iter__(global.FriendUnits(_env)) do
-				local buffeft1 = global.NumericEffect(_env, "+unhurtrate", {
-					"+Normal",
-					"+Normal"
-				}, this.UnHurtRateFactor)
+			global.ApplyHPReduce(_env, _env.ACTOR, maxHp * this.DmgFactor)
 
-				global.ApplyBuff_Buff(_env, _env.ACTOR, unit, {
-					timing = 2,
-					duration = 2,
-					display = "UnHurtRateUp",
-					tags = {
-						"STATUS",
-						"NUMERIC",
-						"BUFF",
-						"UNHURTRATEUP",
-						"UNDISPELLABLE",
-						"UNSTEALABLE"
-					}
-				}, {
-					buffeft1
-				}, 1)
-			end
+			local units = global.RandomN(_env, 1, global.FriendDiedUnits(_env))
 
-			for _, enemyunit in global.__iter__(_env.units) do
-				global.ApplyStatusEffect(_env, _env.ACTOR, enemyunit)
-				global.ApplyRPEffect(_env, _env.ACTOR, enemyunit)
+			if units[1] then
+				if global.MARKED(_env, "WARRIOR")(_env, units[1]) then
+					local reviveunit = global.ReviveByUnit(_env, units[1], this.HpFactor, 0, {
+						2,
+						5,
+						1,
+						3,
+						4,
+						6,
+						7,
+						8,
+						9
+					})
 
-				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, enemyunit, this.dmgFactor)
+					if reviveunit then
+						global.AddStatus(_env, reviveunit, "Sk_Master_SenLing_Action1")
+					end
+				else
+					local reviveunit = global.ReviveByUnit(_env, units[1], this.HpFactor, 0, {
+						7,
+						8,
+						9,
+						4,
+						6,
+						5,
+						1,
+						3,
+						2
+					})
 
-				global.ApplyAOEHPMultiDamage_ResultCheck(_env, _env.ACTOR, enemyunit, {
-					0,
-					500,
-					1200
-				}, global.SplitValue(_env, damage, {
-					0.3,
-					0.3,
-					0.4
-				}))
+					if reviveunit then
+						global.AddStatus(_env, reviveunit, "Sk_Master_SenLing_Action1")
+					end
+				end
 			end
 		end)
 		exec["@time"]({
@@ -233,7 +206,9 @@ all.Sk_Master_SenLing_Action2 = {
 		}, prototype, externs)
 		this.HealRateFactor = externs.HealRateFactor
 
-		assert(this.HealRateFactor ~= nil, "External variable `HealRateFactor` is not provided.")
+		if this.HealRateFactor == nil then
+			this.HealRateFactor = 2
+		end
 
 		local main = __action(this, {
 			name = "main",
@@ -354,10 +329,6 @@ all.Sk_Master_SenLing_Action3 = {
 		local this = global.__skill({
 			global = global
 		}, prototype, externs)
-		this.MaxHpFactor = externs.MaxHpFactor
-
-		assert(this.MaxHpFactor ~= nil, "External variable `MaxHpFactor` is not provided.")
-
 		local main = __action(this, {
 			name = "main",
 			entry = prototype.main
@@ -394,22 +365,6 @@ all.Sk_Master_SenLing_Action3 = {
 
 			global.GroundEft(_env, _env.ACTOR, "BGEffectBlack")
 			global.EnergyRestrain(_env, _env.ACTOR, _env.TARGET)
-
-			local buffeft1 = global.NumericEffect(_env, "+atkrate", {
-				"+Normal",
-				"+Normal"
-			}, 0)
-
-			global.ApplyBuff(_env, _env.ACTOR, {
-				timing = 2,
-				duration = 1,
-				display = "Prepare",
-				tags = {
-					"PREPARE"
-				}
-			}, {
-				buffeft1
-			})
 		end)
 		exec["@time"]({
 			900
@@ -432,37 +387,6 @@ all.Sk_Master_SenLing_Action3 = {
 
 				if card then
 					global.Kick(_env, friendunit)
-
-					local cards = global.CardsOfPlayer(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_EXACT(_env, card))
-
-					for _, card in global.__iter__(cards) do
-						local buffeft1 = global.MaxHpEffect(_env, maxHp * this.MaxHpFactor)
-
-						global.ApplyHeroCardBuff(_env, global.GetOwner(_env, _env.ACTOR), card, {
-							timing = 0,
-							duration = 99,
-							tags = {
-								"CARDBUFF",
-								"SENLING",
-								"UNDISPELLABLE",
-								"UNSTEALABLE"
-							}
-						}, {
-							buffeft1
-						})
-
-						local cardvaluechange = global.CardCostEnchant(_env, "-", 1, 1)
-
-						global.ApplyEnchant(_env, global.GetOwner(_env, _env.ACTOR), card, {
-							tags = {
-								"CARDBUFF",
-								"Sk_Master_SenLing_Action3",
-								"UNDISPELLABLE"
-							}
-						}, {
-							cardvaluechange
-						})
-					end
 				end
 			end
 		end)
