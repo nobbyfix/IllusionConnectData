@@ -527,7 +527,10 @@ function BattleMainMediator:enterWithData(data)
 	self:setMainPlayerIsAuto(false)
 	self.groundLayer:enterWithData(viewConfig)
 	self.battleUIMediator:setupViewConfig(viewConfig, data.isReplay)
-	self.battleUIMediator:setBattleType(self._battleData.battleType)
+
+	if self.battleUIMediator.setBattleType then
+		self.battleUIMediator:setBattleType(self._battleData.battleType)
+	end
 
 	local tlInterpFactory = self:createTLInterpFactory()
 	local battleInterpreter = logicInfo.interpreter
