@@ -1280,6 +1280,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_YHeroesXInnerAttrPage_Desc"
     },
+    "Condi_ZuoHe02ChengjiuDian": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_ZuoHe02ChengjiuDian.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_ZuoHeChengjiuDian_Desc"
+    },
     "Condi_ZuoHeChengjiuDian": {
         "AchieveType1": "INCREASE",
         "AchieveType2": "",
