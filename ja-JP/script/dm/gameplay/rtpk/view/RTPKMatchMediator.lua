@@ -24,6 +24,12 @@ function RTPKMatchMediator:dispose()
 		self._timer = nil
 	end
 
+	if self._delayTask then
+		cancelDelayCall(self._delayTask)
+
+		self._delayTask = nil
+	end
+
 	super.dispose(self)
 end
 
@@ -121,9 +127,12 @@ function RTPKMatchMediator:addMatchSuccAnim(data)
 
 	anim:addCallbackAtFrame(70, function ()
 		anim:stop()
+		anim:clearCallbacks()
 
 		if data.type == "ROBOT" then
-			self._rtpkSystem:enterRobotBattle(data)
+			self._delayTask = delayCallByTime(100, function ()
+				self._rtpkSystem:enterRobotBattle(data)
+			end)
 		else
 			self._rtpkSystem:enterRTPVP(data.ip, tonumber(data.port), data.room, data.br, "orrtpk")
 		end
