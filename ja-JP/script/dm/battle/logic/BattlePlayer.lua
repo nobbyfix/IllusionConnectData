@@ -214,6 +214,40 @@ function BattlePlayer:recordNewPlayer(battleRecorder)
 	battleRecorder:recordMetaEvent(playerId, "NewPlayer", playerInfo, "BattlePlayer")
 end
 
+function BattlePlayer:updateCardArray()
+	if not battleRecorder then
+		return
+	end
+
+	local cards = {}
+	local cardWindow = self._cardWindow
+
+	for i = 1, cardWindow:getWindowSize() do
+		local card = cardWindow:getCardAtIndex(i)
+		cards[i] = card and card:dumpInformation() or 0
+	end
+
+	local nextCardInfo = nil
+
+	if self._nextCard then
+		nextCardInfo = self._nextCard:dumpInformation()
+	end
+
+	local playerId = self:getId()
+	local playerInfo = {
+		id = playerId,
+		side = self:getSide(),
+		master = masterId,
+		heros = heros,
+		energy = self._energyReservoir:getEnergy(),
+		cardPoolSize = self._cardPool:getTotalCount(),
+		cards = cards,
+		nextCard = nextCardInfo
+	}
+
+	battleRecorder:recordMetaEvent(playerId, "NewPlayer", playerInfo, "BattlePlayer")
+end
+
 function BattlePlayer:update(dt, battleContext)
 	local cardWindow = self._cardWindow
 

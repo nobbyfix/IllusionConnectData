@@ -105,6 +105,7 @@ function ActivityCommonMainMediator:onRegister()
 
 	self._main = self:getView():getChildByName("main")
 	self._imageBg = self._main:getChildByName("Imagebg")
+	self._imageBgFront = self._main:getChildByName("Imagebg_1")
 	self._titleImage = self._main:getChildByName("titleImage")
 
 	self._titleImage:ignoreContentAdaptWithSize(true)
@@ -120,9 +121,33 @@ function ActivityCommonMainMediator:onRegister()
 	self._taskBtn = self._main:getChildByName("taskBtn")
 	self._eggBtn = self._main:getChildByName("eggBtn")
 	self._teamBtn = self._main:getChildByName("teamBtn")
+	self._loginBtn = self._main:getChildByName("loginBtn")
 	self._animNode = self._main:getChildByName("animNode")
 
 	self._starAddImg:setVisible(false)
+
+	if self._loginBtn then
+		self._loginBtn:setTouchEnabled(true)
+		self._loginBtn:addTouchEventListener(function (sender, eventType)
+			if eventType == ccui.TouchEventType.ended then
+				self:onClickLogin()
+			end
+		end)
+	end
+
+	self._tipBtn = self:getView():getChildByName("tipBtn")
+	self._infoPanel = self._main:getChildByName("infoPanel")
+
+	if self._infoPanel then
+		self._tipBtn:setVisible(false)
+		self._infoPanel:setTouchEnabled(true)
+		self._infoPanel:addTouchEventListener(function (sender, eventType)
+			if eventType == ccui.TouchEventType.ended then
+				AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
+				self:onClickRule()
+			end
+		end)
+	end
 end
 
 function ActivityCommonMainMediator:setTimerString(timeStr, timeTip, key)
@@ -209,6 +234,7 @@ function ActivityCommonMainMediator:initData()
 	end
 
 	self._taskActivities = self._activity:getTaskActivities()
+	self._loginActivity = self._activity:getLoginActivities()
 	self._jumpActivity = self._activity:getJumpActivity()
 	self._roleIndex = 1
 	self._roles = self._activity:getRoleParams()
@@ -231,6 +257,10 @@ end
 
 function ActivityCommonMainMediator:initInfo()
 	self._imageBg:loadTexture(self._activity:getBgPath())
+
+	if self._imageBgFront and self._activity:getFrontBgPath() ~= "" then
+		self._imageBgFront:loadTexture(self._activity:getFrontBgPath())
+	end
 
 	if self._activity:getTitlePath() then
 		-- Nothing
@@ -327,6 +357,10 @@ function ActivityCommonMainMediator:initInfo()
 		text:setString(Strings:get(self._activityConfig.ButtonText))
 	end
 
+	if self._activity:getUI() ~= ActivityType_UI.KActivityFemale then
+		self._teamBtn:setVisible(false)
+	end
+
 	local redPoint = self._teamBtn:getChildByName("redPoint")
 
 	redPoint:setVisible(false)
@@ -348,6 +382,12 @@ function ActivityCommonMainMediator:initInfo()
 	end
 
 	redPoint:setVisible(hasRed)
+
+	if self._loginBtn then
+		local redPoint = self._loginBtn:getChildByName("redPoint")
+
+		redPoint:setVisible(self._loginActivity and self._loginActivity:hasRedPoint())
+	end
 end
 
 local MAPOPENSTATUS = {
@@ -679,6 +719,25 @@ function ActivityCommonMainMediator:onClickTeam()
 	self._activitySystem:enterTeam(self._activityId, self._blockActivity[KMapIds[1]])
 end
 
+function ActivityCommonMainMediator:onClickLogin()
+	local url = self._activityConfig.EightDaysUrl
+
+	if url then
+		local context = self:getInjector():instantiate(URLContext)
+		local entry, params = UrlEntryManage.resolveUrlWithUserData(url)
+
+		if not entry then
+			self:dispatch(ShowTipEvent({
+				tip = Strings:get("Function_Not_Open")
+			}))
+		else
+			entry:response(context, params)
+		end
+
+		return
+	end
+end
+
 function ActivityCommonMainMediator:onClickEgg()
 	local url = self._activityConfig.ExchangeUrl
 
@@ -791,6 +850,10 @@ function ActivityCommonMainMediator:updateStage()
 		self._stagePanel12:setVisible(true)
 		self._stagePanel22:setVisible(true)
 		self._imageBg:loadTexture(self._activity:getChangeBgPath())
+
+		if self._imageBgFront and self._activity:getFrontBgPath() ~= "" then
+			self._imageBgFront:loadTexture(self._activity:getFrontBgPath())
+		end
 	end
 
 	self:playStageAnim()
@@ -939,6 +1002,9 @@ function ActivityCommonMainMediator:setStageView()
 
 		self._stageAnim:setPosition(anim[2])
 		self._stageAnim:addTo(self._stagePanel:getChildByName("button"))
-		self._stagePanel:getChildByName("image"):setVisible(false)
+
+		if self._stagePanel:getChildByName("image") then
+			self._stagePanel:getChildByName("image"):setVisible(false)
+		end
 	end
 end

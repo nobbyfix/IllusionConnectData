@@ -42673,6 +42673,2992 @@
         ],
         "WipeExtraReward": "Snowflack_Bonus_Reward"
     },
+    "StoryBookE01S01": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "StoryBook_Scene08",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_StoryBookE01S01_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 55600,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_StoryBook",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardBookStoryE01S01",
+        "EnemyMaster": "StroyBook02P01U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "StoryBookE01S01_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "TLSi": "Hero_ABlock_TLSi_Extra",
+            "XHMao": "Hero_ABlock_XHMao_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "XHMao": {
+                "3": "Story_Star3_XHMao",
+                "4": "Story_Star4_XHMao",
+                "5": "Story_Star5_XHMao",
+                "6": "Story_Star6_XHMao"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "TLSi": {
+                "3": "Story_Buff_Star3_2_1",
+                "4": "Story_Buff_Star4_2_1",
+                "5": "Story_Buff_Star5_2_1",
+                "6": "Story_Buff_Star6_2_1"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_StoryBook_ExchangeItem",
+        "Map": "StoryBookE01",
+        "Master": "",
+        "Name": "BlockPoint_StoryBookE01S01_Name",
+        "NextPoint": [
+            "StoryBookE01S02"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_GLin",
+        "PointPicture": "",
+        "PointReward": "StoryBookE01S01_PointReward",
+        "PointTime": {
+            "start": "2021-06-05 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "StoryBookS01E01"
+        ],
+        "ReslutBoard": "",
+        "ShowItem": "StoryBookE01S01_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_StoryBookStamina": 12
+        },
+        "StaminaCost": {
+            "IR_StoryBookStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "StoryBookE01S02": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "StoryBook_Scene08",
+        "Banner": "pic_guanqia2_02_tx",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_StoryBookE01S02_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 71800,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_StoryBook",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardBookStoryE01S02",
+        "EnemyMaster": "StroyBook02P02U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "StoryBookE01S02_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "TLSi": "Hero_ABlock_TLSi_Extra",
+            "XHMao": "Hero_ABlock_XHMao_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "XHMao": {
+                "3": "Story_Star3_XHMao",
+                "4": "Story_Star4_XHMao",
+                "5": "Story_Star5_XHMao",
+                "6": "Story_Star6_XHMao"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "TLSi": {
+                "3": "Story_Buff_Star3_2_2",
+                "4": "Story_Buff_Star4_2_2",
+                "5": "Story_Buff_Star5_2_2",
+                "6": "Story_Buff_Star6_2_2"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_StoryBook_ExchangeItem",
+        "Map": "StoryBookE01",
+        "Master": "",
+        "Name": "BlockPoint_StoryBookE01S02_Name",
+        "NextPoint": [
+            "StoryBookE01S03"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "StoryBookE01S01"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_TJHDe_trick",
+        "PointPicture": "",
+        "PointReward": "StoryBookE01S02_PointReward",
+        "PointTime": {
+            "start": "2021-06-05 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "StoryBookE01S02_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_StoryBookStamina": 12
+        },
+        "StaminaCost": {
+            "IR_StoryBookStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "StoryBookE01S03": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "StoryBook_Scene08",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_StoryBookE01S03_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 98700,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_StoryBook",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardBookStoryE01S03",
+        "EnemyMaster": "StroyBook02P03U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "StoryBookE01S03_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "TLSi": "Hero_ABlock_TLSi_Extra",
+            "XHMao": "Hero_ABlock_XHMao_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "XHMao": {
+                "3": "Story_Star3_XHMao",
+                "4": "Story_Star4_XHMao",
+                "5": "Story_Star5_XHMao",
+                "6": "Story_Star6_XHMao"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "TLSi": {
+                "3": "Story_Buff_Star3_2_3",
+                "4": "Story_Buff_Star4_2_3",
+                "5": "Story_Buff_Star5_2_3",
+                "6": "Story_Buff_Star6_2_3"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_StoryBook_ExchangeItem",
+        "Map": "StoryBookE01",
+        "Master": "",
+        "Name": "BlockPoint_StoryBookE01S03_Name",
+        "NextPoint": [
+            "StoryBookE01S04"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "StoryBookE01S02"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_MLYTLSha_forest",
+        "PointPicture": "",
+        "PointReward": "StoryBookE01S03_PointReward",
+        "PointTime": {
+            "start": "2021-06-05 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "StoryBookE01S03_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_StoryBook_Tittle_1",
+            "SpecialRule_StoryBook_Rule_5"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_StoryBookStamina": 12
+        },
+        "StaminaCost": {
+            "IR_StoryBookStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "StoryBookE01S04": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "StoryBook_Scene08",
+        "Banner": "pic_guanqia2_02_tx",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_StoryBookE01S04_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 114900,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_StoryBook",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardBookStoryE01S04",
+        "EnemyMaster": "StroyBook02P04U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "StoryBookE01S04_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "TLSi": "Hero_ABlock_TLSi_Extra",
+            "XHMao": "Hero_ABlock_XHMao_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "XHMao": {
+                "3": "Story_Star3_XHMao",
+                "4": "Story_Star4_XHMao",
+                "5": "Story_Star5_XHMao",
+                "6": "Story_Star6_XHMao"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "TLSi": {
+                "3": "Story_Buff_Star3_2_4",
+                "4": "Story_Buff_Star4_2_4",
+                "5": "Story_Buff_Star5_2_4",
+                "6": "Story_Buff_Star6_2_4"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_StoryBook_ExchangeItem",
+        "Map": "StoryBookE01",
+        "Master": "",
+        "Name": "BlockPoint_StoryBookE01S04_Name",
+        "NextPoint": [
+            "StoryBookE01S05"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "StoryBookE01S03"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_ALSi_forest",
+        "PointPicture": "",
+        "PointReward": "StoryBookE01S04_PointReward",
+        "PointTime": {
+            "start": "2021-06-05 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "StoryBookE01S04_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_StoryBook_Tittle_1",
+            "SpecialRule_StoryBook_Rule_4"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_StoryBookStamina": 12
+        },
+        "StaminaCost": {
+            "IR_StoryBookStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "StoryBookE01S05": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "StoryBook_Scene08",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_StoryBookE01S05_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 141800,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_StoryBook",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardBookStoryE01S05",
+        "EnemyMaster": "StroyBook02P05U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "StoryBookE01S05_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "TLSi": "Hero_ABlock_TLSi_Extra",
+            "XHMao": "Hero_ABlock_XHMao_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "XHMao": {
+                "3": "Story_Star3_XHMao",
+                "4": "Story_Star4_XHMao",
+                "5": "Story_Star5_XHMao",
+                "6": "Story_Star6_XHMao"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "TLSi": {
+                "3": "Story_Buff_Star3_2_5",
+                "4": "Story_Buff_Star4_2_5",
+                "5": "Story_Buff_Star5_2_5",
+                "6": "Story_Buff_Star6_2_5"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_StoryBook_ExchangeItem",
+        "Map": "StoryBookE01",
+        "Master": "",
+        "Name": "BlockPoint_StoryBookE01S05_Name",
+        "NextPoint": [
+            "StoryBookE01S06"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "StoryBookE01S04"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_TLSi",
+        "PointPicture": "",
+        "PointReward": "StoryBookE01S05_PointReward",
+        "PointTime": {
+            "start": "2021-06-05 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "StoryBookS01E02"
+        ],
+        "ReslutBoard": "",
+        "ShowItem": "StoryBookE01S05_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_StoryBookStamina": 12
+        },
+        "StaminaCost": {
+            "IR_StoryBookStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "StoryBookE01S06": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "StoryBook_Scene08",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_StoryBookE01S06_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 163400,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_StoryBook",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardBookStoryE01S06",
+        "EnemyMaster": "StroyBook02P06U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "StoryBookE01S06_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "TLSi": "Hero_ABlock_TLSi_Extra",
+            "XHMao": "Hero_ABlock_XHMao_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "XHMao": {
+                "3": "Story_Star3_XHMao",
+                "4": "Story_Star4_XHMao",
+                "5": "Story_Star5_XHMao",
+                "6": "Story_Star6_XHMao"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "TLSi": {
+                "3": "Story_Buff_Star3_2_6",
+                "4": "Story_Buff_Star4_2_6",
+                "5": "Story_Buff_Star5_2_6",
+                "6": "Story_Buff_Star6_2_6"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_StoryBook_ExchangeItem",
+        "Map": "StoryBookE01",
+        "Master": "",
+        "Name": "BlockPoint_StoryBookE01S06_Name",
+        "NextPoint": [
+            "StoryBookE01S07"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "StoryBookE01S05"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_LDu_Awake",
+        "PointPicture": "",
+        "PointReward": "StoryBookE01S06_PointReward",
+        "PointTime": {
+            "start": "2021-06-05 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "StoryBookE01S06_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_StoryBookStamina": 12
+        },
+        "StaminaCost": {
+            "IR_StoryBookStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "StoryBookE01S07": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "StoryBook_Scene08",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_StoryBookE01S07_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 199000,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_StoryBook",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardBookStoryE01S07",
+        "EnemyMaster": "StroyBook02P07U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "StoryBookE01S07_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "TLSi": "Hero_ABlock_TLSi_Extra",
+            "XHMao": "Hero_ABlock_XHMao_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "XHMao": {
+                "3": "Story_Star3_XHMao",
+                "4": "Story_Star4_XHMao",
+                "5": "Story_Star5_XHMao",
+                "6": "Story_Star6_XHMao"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "TLSi": {
+                "3": "Story_Buff_Star3_2_7",
+                "4": "Story_Buff_Star4_2_7",
+                "5": "Story_Buff_Star5_2_7",
+                "6": "Story_Buff_Star6_2_7"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_StoryBook_ExchangeItem",
+        "Map": "StoryBookE01",
+        "Master": "",
+        "Name": "BlockPoint_StoryBookE01S07_Name",
+        "NextPoint": [
+            "StoryBookE01S08"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "StoryBookE01S06"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_LYSi",
+        "PointPicture": "",
+        "PointReward": "StoryBookE01S07_PointReward",
+        "PointTime": {
+            "start": "2021-06-05 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "StoryBookE01S07_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_StoryBook_Tittle_1",
+            "SpecialRule_StoryBook_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_StoryBookStamina": 12
+        },
+        "StaminaCost": {
+            "IR_StoryBookStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "StoryBookE01S08": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "StoryBook_Scene08",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_StoryBookE01S08_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 226000,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_StoryBook",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardBookStoryE01S08",
+        "EnemyMaster": "StroyBook02P08U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "StoryBookE01S08_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "TLSi": "Hero_ABlock_TLSi_Extra",
+            "XHMao": "Hero_ABlock_XHMao_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "XHMao": {
+                "3": "Story_Star3_XHMao",
+                "4": "Story_Star4_XHMao",
+                "5": "Story_Star5_XHMao",
+                "6": "Story_Star6_XHMao"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "TLSi": {
+                "3": "Story_Buff_Star3_2_8",
+                "4": "Story_Buff_Star4_2_8",
+                "5": "Story_Buff_Star5_2_8",
+                "6": "Story_Buff_Star6_2_8"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_StoryBook_ExchangeItem",
+        "Map": "StoryBookE01",
+        "Master": "",
+        "Name": "BlockPoint_StoryBookE01S08_Name",
+        "NextPoint": [
+            "StoryBookE01S09"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "StoryBookE01S07"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_BEr_WZi",
+        "PointPicture": "",
+        "PointReward": "StoryBookE01S08_PointReward",
+        "PointTime": {
+            "start": "2021-06-05 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "StoryBookE01S08_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_StoryBook_Tittle_1",
+            "SpecialRule_StoryBook_Rule_2",
+            "SpecialRule_StoryBook_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_StoryBookStamina": 12
+        },
+        "StaminaCost": {
+            "IR_StoryBookStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "StoryBookE01S09": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "StoryBook_Scene08",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_StoryBookE01S09_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 247500,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_StoryBook",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardBookStoryE01S09",
+        "EnemyMaster": "StroyBook02P09U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "StoryBookE01S09_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "TLSi": "Hero_ABlock_TLSi_Extra",
+            "XHMao": "Hero_ABlock_XHMao_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "XHMao": {
+                "3": "Story_Star3_XHMao",
+                "4": "Story_Star4_XHMao",
+                "5": "Story_Star5_XHMao",
+                "6": "Story_Star6_XHMao"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "TLSi": {
+                "3": "Story_Buff_Star3_2_9",
+                "4": "Story_Buff_Star4_2_9",
+                "5": "Story_Buff_Star5_2_9",
+                "6": "Story_Buff_Star6_2_9"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_StoryBook_ExchangeItem",
+        "Map": "StoryBookE01",
+        "Master": "",
+        "Name": "BlockPoint_StoryBookE01S09_Name",
+        "NextPoint": [
+            "StoryBookE01S10"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "StoryBookE01S08"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_DDing_TNLang",
+        "PointPicture": "",
+        "PointReward": "StoryBookE01S09_PointReward",
+        "PointTime": {
+            "start": "2021-06-05 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "StoryBookS01E03"
+        ],
+        "ReslutBoard": "",
+        "ShowItem": "StoryBookE01S09_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_StoryBookStamina": 12
+        },
+        "StaminaCost": {
+            "IR_StoryBookStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "StoryBookE01S10": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "StoryBook_Scene08",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_StoryBookE01S10_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 298200,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_StoryBook",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardBookStoryE01S10",
+        "EnemyMaster": "StroyBook02P10U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "StoryBookE01S10_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "TLSi": "Hero_ABlock_TLSi_Extra",
+            "XHMao": "Hero_ABlock_XHMao_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "XHMao": {
+                "3": "Story_Star3_XHMao",
+                "4": "Story_Star4_XHMao",
+                "5": "Story_Star5_XHMao",
+                "6": "Story_Star6_XHMao"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "TLSi": {
+                "3": "Story_Buff_Star3_2_10",
+                "4": "Story_Buff_Star4_2_10",
+                "5": "Story_Buff_Star5_2_10",
+                "6": "Story_Buff_Star6_2_10"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_StoryBook_ExchangeItem",
+        "Map": "StoryBookE01",
+        "Master": "",
+        "Name": "BlockPoint_StoryBookE01S10_Name",
+        "NextPoint": [
+            "StoryBookE01S11"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "StoryBookE01S09"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_PNCao_vt",
+        "PointPicture": "",
+        "PointReward": "StoryBookE01S10_PointReward",
+        "PointTime": {
+            "start": "2021-06-05 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "StoryBookE01S10_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_StoryBookStamina": 12
+        },
+        "StaminaCost": {
+            "IR_StoryBookStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "StoryBookE01S11": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "StoryBook_Scene08",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_StoryBookE01S11_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 464400,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_StoryBook",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardBookStoryE01S11",
+        "EnemyMaster": "StroyBook02P11U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "StoryBookE01S11_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "TLSi": "Hero_ABlock_TLSi_Extra",
+            "XHMao": "Hero_ABlock_XHMao_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "XHMao": {
+                "3": "Story_Star3_XHMao",
+                "4": "Story_Star4_XHMao",
+                "5": "Story_Star5_XHMao",
+                "6": "Story_Star6_XHMao"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "TLSi": {
+                "3": "Story_Buff_Star3_2_11",
+                "4": "Story_Buff_Star4_2_11",
+                "5": "Story_Buff_Star5_2_11",
+                "6": "Story_Buff_Star6_2_11"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_StoryBook_ExchangeItem",
+        "Map": "StoryBookE01",
+        "Master": "",
+        "Name": "BlockPoint_StoryBookE01S11_Name",
+        "NextPoint": [
+            "StoryBookE01S12"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "StoryBookE01S10"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_Enemy_MYLang",
+        "PointPicture": "",
+        "PointReward": "StoryBookE01S11_PointReward",
+        "PointTime": {
+            "start": "2021-06-05 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "StoryBookE01S11_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_StoryBook_Tittle_1",
+            "SpecialRule_StoryBook_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_StoryBookStamina": 12
+        },
+        "StaminaCost": {
+            "IR_StoryBookStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "StoryBookE01S12": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "StoryBook_Scene08",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_StoryBookE01S12_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 756000,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_StoryBook",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardBookStoryE01S12",
+        "EnemyMaster": "StroyBook02P12U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "StoryBookE01S12_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "TLSi": "Hero_ABlock_TLSi_Extra",
+            "XHMao": "Hero_ABlock_XHMao_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "XHMao": {
+                "3": "Story_Star3_XHMao",
+                "4": "Story_Star4_XHMao",
+                "5": "Story_Star5_XHMao",
+                "6": "Story_Star6_XHMao"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "TLSi": {
+                "3": "Story_Buff_Star3_2_12",
+                "4": "Story_Buff_Star4_2_12",
+                "5": "Story_Buff_Star5_2_12",
+                "6": "Story_Buff_Star6_2_12"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_StoryBook_ExchangeItem",
+        "Map": "StoryBookE01",
+        "Master": "",
+        "Name": "BlockPoint_StoryBookE01S12_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "StoryBookE01S11"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_Enemy_MYLang",
+        "PointPicture": "",
+        "PointReward": "StoryBookE01S12_PointReward",
+        "PointTime": {
+            "start": "2021-06-05 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "StoryBookE01S12_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_StoryBook_Tittle_1",
+            "SpecialRule_StoryBook_Rule_2",
+            "SpecialRule_StoryBook_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_StoryBookStamina": 12
+        },
+        "StaminaCost": {
+            "IR_StoryBookStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 50
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "StoryBookM01S01": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "StoryBook_Scene07",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_StoryBookM01S01_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 4100,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_StoryBook",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardBookStoryM01S01",
+        "EnemyMaster": "StroyBook01P01U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "StoryBookM01S01_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "TLSi": "Hero_ABlock_TLSi_Extra",
+            "XHMao": "Hero_ABlock_XHMao_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "XHMao": {
+                "3": "Story_Star3_XHMao",
+                "4": "Story_Star4_XHMao",
+                "5": "Story_Star5_XHMao",
+                "6": "Story_Star6_XHMao"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "TLSi": {
+                "3": "Story_Buff_Star3_1_1",
+                "4": "Story_Buff_Star4_1_1",
+                "5": "Story_Buff_Star5_1_1",
+                "6": "Story_Buff_Star6_1_1"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_StoryBook_ExchangeItem",
+        "Map": "StoryBookM01",
+        "Master": "",
+        "Name": "BlockPoint_StoryBookM01S01_Name",
+        "NextPoint": [
+            "StoryBookM01S02"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_YSuo",
+        "PointPicture": "",
+        "PointReward": "StoryBookM01S01_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "StoryBookS01S01"
+        ],
+        "ReslutBoard": "",
+        "ShowItem": "StoryBookM01S01_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_StoryBookStamina": 6
+        },
+        "StaminaCost": {
+            "IR_StoryBookStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "StoryBookM01S02": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "StoryBook_Scene07",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_StoryBookM01S02_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 11600,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_StoryBook",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardBookStoryM01S02",
+        "EnemyMaster": "StroyBook01P02U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "StoryBookM01S02_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "TLSi": "Hero_ABlock_TLSi_Extra",
+            "XHMao": "Hero_ABlock_XHMao_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "XHMao": {
+                "3": "Story_Star3_XHMao",
+                "4": "Story_Star4_XHMao",
+                "5": "Story_Star5_XHMao",
+                "6": "Story_Star6_XHMao"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "TLSi": {
+                "3": "Story_Buff_Star3_1_2",
+                "4": "Story_Buff_Star4_1_2",
+                "5": "Story_Buff_Star5_1_2",
+                "6": "Story_Buff_Star6_1_2"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_StoryBook_ExchangeItem",
+        "Map": "StoryBookM01",
+        "Master": "",
+        "Name": "BlockPoint_StoryBookM01S02_Name",
+        "NextPoint": [
+            "StoryBookM01S03"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "StoryBookM01S01"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_BEr_WZi",
+        "PointPicture": "",
+        "PointReward": "StoryBookM01S02_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "StoryBookM01S02_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_StoryBookStamina": 6
+        },
+        "StaminaCost": {
+            "IR_StoryBookStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "StoryBookM01S03": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "StoryBook_Scene07",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_StoryBookM01S03_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 20200,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_StoryBook",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardBookStoryM01S03",
+        "EnemyMaster": "StroyBook01P03U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "StoryBookM01S03_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "TLSi": "Hero_ABlock_TLSi_Extra",
+            "XHMao": "Hero_ABlock_XHMao_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "XHMao": {
+                "3": "Story_Star3_XHMao",
+                "4": "Story_Star4_XHMao",
+                "5": "Story_Star5_XHMao",
+                "6": "Story_Star6_XHMao"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "TLSi": {
+                "3": "Story_Buff_Star3_1_3",
+                "4": "Story_Buff_Star4_1_3",
+                "5": "Story_Buff_Star5_1_3",
+                "6": "Story_Buff_Star6_1_3"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_StoryBook_ExchangeItem",
+        "Map": "StoryBookM01",
+        "Master": "",
+        "Name": "BlockPoint_StoryBookM01S03_Name",
+        "NextPoint": [
+            "StoryBookM01S04"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "StoryBookM01S02"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_CLMan_XHMao",
+        "PointPicture": "",
+        "PointReward": "StoryBookM01S03_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "StoryBookM01S03_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_StoryBookStamina": 6
+        },
+        "StaminaCost": {
+            "IR_StoryBookStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "StoryBookM01S04": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "StoryBook_Scene07",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_StoryBookM01S04_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 27600,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_StoryBook",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardBookStoryM01S04",
+        "EnemyMaster": "StroyBook01P04U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "StoryBookM01S04_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "TLSi": "Hero_ABlock_TLSi_Extra",
+            "XHMao": "Hero_ABlock_XHMao_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "XHMao": {
+                "3": "Story_Star3_XHMao",
+                "4": "Story_Star4_XHMao",
+                "5": "Story_Star5_XHMao",
+                "6": "Story_Star6_XHMao"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "TLSi": {
+                "3": "Story_Buff_Star3_1_4",
+                "4": "Story_Buff_Star4_1_4",
+                "5": "Story_Buff_Star5_1_4",
+                "6": "Story_Buff_Star6_1_4"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_StoryBook_ExchangeItem",
+        "Map": "StoryBookM01",
+        "Master": "",
+        "Name": "BlockPoint_StoryBookM01S04_Name",
+        "NextPoint": [
+            "StoryBookM01S05"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "StoryBookM01S03"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_TLSi",
+        "PointPicture": "",
+        "PointReward": "StoryBookM01S04_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "StoryBookM01S04_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_StoryBook_Tittle_1",
+            "SpecialRule_StoryBook_Rule_6"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_StoryBookStamina": 6
+        },
+        "StaminaCost": {
+            "IR_StoryBookStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "StoryBookM01S05": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "StoryBook_Scene07",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_StoryBookM01S05_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 36200,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_StoryBook",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardBookStoryM01S05",
+        "EnemyMaster": "StroyBook01P05U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "StoryBookM01S05_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "TLSi": "Hero_ABlock_TLSi_Extra",
+            "XHMao": "Hero_ABlock_XHMao_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "XHMao": {
+                "3": "Story_Star3_XHMao",
+                "4": "Story_Star4_XHMao",
+                "5": "Story_Star5_XHMao",
+                "6": "Story_Star6_XHMao"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "TLSi": {
+                "3": "Story_Buff_Star3_1_5",
+                "4": "Story_Buff_Star4_1_5",
+                "5": "Story_Buff_Star5_1_5",
+                "6": "Story_Buff_Star6_1_5"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_StoryBook_ExchangeItem",
+        "Map": "StoryBookM01",
+        "Master": "",
+        "Name": "BlockPoint_StoryBookM01S05_Name",
+        "NextPoint": [
+            "StoryBookM01S06"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "StoryBookM01S04"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_XHMao",
+        "PointPicture": "",
+        "PointReward": "StoryBookM01S05_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "StoryBookS01S02"
+        ],
+        "ReslutBoard": "",
+        "ShowItem": "StoryBookM01S05_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_StoryBook_Tittle_1",
+            "SpecialRule_StoryBook_Rule_10"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_StoryBookStamina": 6
+        },
+        "StaminaCost": {
+            "IR_StoryBookStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "StoryBookM01S06": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "StoryBook_Scene07",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_StoryBookM01S06_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 44300,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_StoryBook",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardBookStoryM01S06",
+        "EnemyMaster": "StroyBook01P06U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "StoryBookM01S06_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "TLSi": "Hero_ABlock_TLSi_Extra",
+            "XHMao": "Hero_ABlock_XHMao_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "XHMao": {
+                "3": "Story_Star3_XHMao",
+                "4": "Story_Star4_XHMao",
+                "5": "Story_Star5_XHMao",
+                "6": "Story_Star6_XHMao"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "TLSi": {
+                "3": "Story_Buff_Star3_1_6",
+                "4": "Story_Buff_Star4_1_6",
+                "5": "Story_Buff_Star5_1_6",
+                "6": "Story_Buff_Star6_1_6"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_StoryBook_ExchangeItem",
+        "Map": "StoryBookM01",
+        "Master": "",
+        "Name": "BlockPoint_StoryBookM01S06_Name",
+        "NextPoint": [
+            "StoryBookM01S07"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "StoryBookM01S05"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_PDLa",
+        "PointPicture": "",
+        "PointReward": "StoryBookM01S06_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "StoryBookM01S06_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_StoryBook_Tittle_1",
+            "SpecialRule_StoryBook_Rule_4"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_StoryBookStamina": 6
+        },
+        "StaminaCost": {
+            "IR_StoryBookStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "StoryBookM01S07": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "StoryBook_Scene07",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_StoryBookM01S07_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 53800,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_StoryBook",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardBookStoryM01S07",
+        "EnemyMaster": "StroyBook01P07U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "StoryBookM01S07_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "TLSi": "Hero_ABlock_TLSi_Extra",
+            "XHMao": "Hero_ABlock_XHMao_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "XHMao": {
+                "3": "Story_Star3_XHMao",
+                "4": "Story_Star4_XHMao",
+                "5": "Story_Star5_XHMao",
+                "6": "Story_Star6_XHMao"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "TLSi": {
+                "3": "Story_Buff_Star3_1_7",
+                "4": "Story_Buff_Star4_1_7",
+                "5": "Story_Buff_Star5_1_7",
+                "6": "Story_Buff_Star6_1_7"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_StoryBook_ExchangeItem",
+        "Map": "StoryBookM01",
+        "Master": "",
+        "Name": "BlockPoint_StoryBookM01S07_Name",
+        "NextPoint": [
+            "StoryBookM01S08"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "StoryBookM01S06"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_PDLa_toy",
+        "PointPicture": "",
+        "PointReward": "StoryBookM01S07_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "StoryBookM01S07_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_StoryBook_Tittle_1",
+            "SpecialRule_StoryBook_Rule_9"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_StoryBookStamina": 6
+        },
+        "StaminaCost": {
+            "IR_StoryBookStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "StoryBookM01S08": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "StoryBook_Scene07",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_StoryBookM01S08_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 62300,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_StoryBook",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardBookStoryM01S08",
+        "EnemyMaster": "StroyBook01P08U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "StoryBookM01S08_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "TLSi": "Hero_ABlock_TLSi_Extra",
+            "XHMao": "Hero_ABlock_XHMao_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "XHMao": {
+                "3": "Story_Star3_XHMao",
+                "4": "Story_Star4_XHMao",
+                "5": "Story_Star5_XHMao",
+                "6": "Story_Star6_XHMao"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "TLSi": {
+                "3": "Story_Buff_Star3_1_8",
+                "4": "Story_Buff_Star4_1_8",
+                "5": "Story_Buff_Star5_1_8",
+                "6": "Story_Buff_Star6_1_8"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_StoryBook_ExchangeItem",
+        "Map": "StoryBookM01",
+        "Master": "",
+        "Name": "BlockPoint_StoryBookM01S08_Name",
+        "NextPoint": [
+            "StoryBookM01S09"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "StoryBookM01S07"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_SRen",
+        "PointPicture": "",
+        "PointReward": "StoryBookM01S08_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "StoryBookM01S08_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_StoryBook_Tittle_1",
+            "SpecialRule_StoryBook_Rule_1",
+            "SpecialRule_StoryBook_Rule_2"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_StoryBookStamina": 6
+        },
+        "StaminaCost": {
+            "IR_StoryBookStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "StoryBookM01S09": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "StoryBook_Scene07",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_StoryBookM01S09_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 70400,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_StoryBook",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardBookStoryM01S09",
+        "EnemyMaster": "StroyBook01P09U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "StoryBookM01S09_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "TLSi": "Hero_ABlock_TLSi_Extra",
+            "XHMao": "Hero_ABlock_XHMao_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "XHMao": {
+                "3": "Story_Star3_XHMao",
+                "4": "Story_Star4_XHMao",
+                "5": "Story_Star5_XHMao",
+                "6": "Story_Star6_XHMao"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "TLSi": {
+                "3": "Story_Buff_Star3_1_9",
+                "4": "Story_Buff_Star4_1_9",
+                "5": "Story_Buff_Star5_1_9",
+                "6": "Story_Buff_Star6_1_9"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_StoryBook_ExchangeItem",
+        "Map": "StoryBookM01",
+        "Master": "",
+        "Name": "BlockPoint_StoryBookM01S09_Name",
+        "NextPoint": [
+            "StoryBookM01S10"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "StoryBookM01S08"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_SRen_toy",
+        "PointPicture": "",
+        "PointReward": "StoryBookM01S09_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "StoryBookS01S03"
+        ],
+        "ReslutBoard": "",
+        "ShowItem": "StoryBookM01S09_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_StoryBook_Tittle_1",
+            "SpecialRule_StoryBook_Rule_1",
+            "SpecialRule_StoryBook_Rule_2"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_StoryBookStamina": 6
+        },
+        "StaminaCost": {
+            "IR_StoryBookStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "StoryBookM01S10": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "StoryBook_Scene07",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_StoryBookM01S10_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 81400,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_StoryBook",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardBookStoryM01S10",
+        "EnemyMaster": "StroyBook01P10U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "StoryBookM01S10_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "TLSi": "Hero_ABlock_TLSi_Extra",
+            "XHMao": "Hero_ABlock_XHMao_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "XHMao": {
+                "3": "Story_Star3_XHMao",
+                "4": "Story_Star4_XHMao",
+                "5": "Story_Star5_XHMao",
+                "6": "Story_Star6_XHMao"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "TLSi": {
+                "3": "Story_Buff_Star3_1_10",
+                "4": "Story_Buff_Star4_1_10",
+                "5": "Story_Buff_Star5_1_10",
+                "6": "Story_Buff_Star6_1_10"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_StoryBook_ExchangeItem",
+        "Map": "StoryBookM01",
+        "Master": "",
+        "Name": "BlockPoint_StoryBookM01S10_Name",
+        "NextPoint": [
+            "StoryBookM01S11"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "StoryBookM01S09"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_ALSi",
+        "PointPicture": "",
+        "PointReward": "StoryBookM01S10_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "StoryBookM01S10_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_StoryBook_Tittle_1",
+            "SpecialRule_StoryBook_Rule_2",
+            "SpecialRule_StoryBook_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_StoryBookStamina": 6
+        },
+        "StaminaCost": {
+            "IR_StoryBookStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "StoryBookM01S11": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "StoryBook_Scene07",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_StoryBookM01S11_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 88000,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_StoryBook",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardBookStoryM01S11",
+        "EnemyMaster": "StroyBook01P11U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "StoryBookM01S11_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "TLSi": "Hero_ABlock_TLSi_Extra",
+            "XHMao": "Hero_ABlock_XHMao_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "XHMao": {
+                "3": "Story_Star3_XHMao",
+                "4": "Story_Star4_XHMao",
+                "5": "Story_Star5_XHMao",
+                "6": "Story_Star6_XHMao"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "TLSi": {
+                "3": "Story_Buff_Star3_1_11",
+                "4": "Story_Buff_Star4_1_11",
+                "5": "Story_Buff_Star5_1_11",
+                "6": "Story_Buff_Star6_1_11"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_StoryBook_ExchangeItem",
+        "Map": "StoryBookM01",
+        "Master": "",
+        "Name": "BlockPoint_StoryBookM01S11_Name",
+        "NextPoint": [
+            "StoryBookM01S12"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "StoryBookM01S10"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_ALSi_TGWu",
+        "PointPicture": "",
+        "PointReward": "StoryBookM01S11_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "StoryBookM01S11_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_StoryBook_Tittle_1",
+            "SpecialRule_StoryBook_Rule_1",
+            "SpecialRule_StoryBook_Rule_2"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_StoryBookStamina": 6
+        },
+        "StaminaCost": {
+            "IR_StoryBookStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "StoryBookM01S12": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Detective",
+            "",
+            ""
+        ],
+        "Background": "StoryBook_Scene07",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_1",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_StoryBookM01S12_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 195300,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_StoryBook",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardBookStoryM01S12",
+        "EnemyMaster": "StroyBook01P12U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "StoryBookM01S12_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "TLSi": "Hero_ABlock_TLSi_Extra",
+            "XHMao": "Hero_ABlock_XHMao_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "XHMao": {
+                "3": "Story_Star3_XHMao",
+                "4": "Story_Star4_XHMao",
+                "5": "Story_Star5_XHMao",
+                "6": "Story_Star6_XHMao"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "TLSi": {
+                "3": "Story_Buff_Star3_1_12",
+                "4": "Story_Buff_Star4_1_12",
+                "5": "Story_Buff_Star5_1_12",
+                "6": "Story_Buff_Star6_1_12"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_StoryBook_ExchangeItem",
+        "Map": "StoryBookM01",
+        "Master": "",
+        "Name": "BlockPoint_StoryBookM01S12_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "StoryBookM01S11"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_ALSi_TGWu",
+        "PointPicture": "",
+        "PointReward": "StoryBookM01S12_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "StoryBookS01S04"
+        ],
+        "ReslutBoard": "",
+        "ShowItem": "StoryBookM01S12_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_StoryBook_Tittle_1",
+            "SpecialRule_StoryBook_Rule_1",
+            "SpecialRule_StoryBook_Rule_2"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_StoryBookStamina": 6
+        },
+        "StaminaCost": {
+            "IR_StoryBookStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
     "SunflowerE01S01": {
         "AiRules": "",
         "Assist": [],

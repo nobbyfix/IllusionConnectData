@@ -184,7 +184,7 @@ function HeroShowListMediator:adjustView()
 	AdjustUtils.ignorSafeAreaRectForNode(leftNode:getChildByFullName("listBg.image1"), AdjustUtils.kAdjustType.Left)
 	AdjustUtils.ignorSafeAreaRectForNode(leftNode:getChildByFullName("listBg.image2"), AdjustUtils.kAdjustType.Right)
 	AdjustUtils.ignorSafeAreaRectForNode(leftNode:getChildByFullName("listBg.image3"), AdjustUtils.kAdjustType.Bottom)
-	AdjustUtils.ignorSafeAreaRectForNode(self._heroNode, AdjustUtils.kAdjustType.Bottom)
+	AdjustUtils.addSafeAreaRectForNode(self._heroNode, AdjustUtils.kAdjustType.Bottom)
 	AdjustUtils.ignorSafeAreaRectForNode(self._heroNode, AdjustUtils.kAdjustType.Right)
 
 	local director = cc.Director:getInstance()

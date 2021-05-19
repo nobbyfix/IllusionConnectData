@@ -41,6 +41,13 @@ local timeLimitShopConfig = {
 	xide = {
 		BG = "jqtd_txt_typl_di",
 		TimeOutLineColor = cc.c4b(186, 51, 20, 255)
+	},
+	storybook = {
+		TimeOutLineColor = cc.c4b(187, 1, 1, 255)
+	},
+	half = {
+		TimeOutLineColor = cc.c4b(186, 51, 20, 255),
+		BGSize = cc.size(1031, 640)
 	}
 }
 local btnHandlers = {
@@ -92,15 +99,19 @@ function TimeLimitShopActivityMediator:setupView()
 		self._main:getChildByFullName("package_2"),
 		self._main:getChildByFullName("package_3")
 	}
+	local config = timeLimitShopConfig[self._packType]
 
 	if self._activityConfig.UIBG and self._activityConfig.UIBG ~= "" then
 		self._bg:loadTexture("asset/lang_ui/activity/" .. self._activityConfig.UIBG .. ".png", ccui.TextureResType.localType)
-	else
-		local config = timeLimitShopConfig[self._packType]
+	elseif config and config.BG then
+		self._bg:loadTexture("asset/lang_ui/activity/" .. config.BG .. ".png", ccui.TextureResType.localType)
+	end
 
-		if config and config.BG then
-			self._bg:loadTexture("asset/lang_ui/activity/" .. config.BG .. ".png", ccui.TextureResType.localType)
-		end
+	if config and config.BGSize then
+		local size = self._bg:getContentSize()
+
+		self._bg:setContentSize(config.BGSize)
+		self._bg:offset((config.BGSize.width - size.width) * 0.5, 0)
 	end
 
 	local config = timeLimitShopConfig[self._packType]

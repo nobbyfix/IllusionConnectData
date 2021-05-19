@@ -277,27 +277,27 @@ local mappings = {
 		type = "@C"
 	},
 	HomeMediator = {
-		url = "dm.gameplay.home.view.home.HomeMediator",
+		url = "dm.gameplay.home.view.HomeMediator",
 		name = "HomeMediator",
 		type = "@C"
 	},
 	SetHomeBgPopMediator = {
-		url = "dm.gameplay.home.view.home.SetHomeBgPopMediator",
+		url = "dm.gameplay.home.view.SetHomeBgPopMediator",
 		name = "SetHomeBgPopMediator",
 		type = "@C"
 	},
 	DailyGiftViewMediator = {
-		url = "dm.gameplay.home.view.home.DailyGiftViewMediator",
+		url = "dm.gameplay.home.view.DailyGiftViewMediator",
 		name = "DailyGiftViewMediator",
 		type = "@C"
 	},
 	HeroInteractionViewMediator = {
-		url = "dm.gameplay.home.view.home.HeroInteractionViewMediator",
+		url = "dm.gameplay.home.view.HeroInteractionViewMediator",
 		name = "HeroInteractionViewMediator",
 		type = "@C"
 	},
 	SetBoardHeroPopMediator = {
-		url = "dm.gameplay.home.view.home.SetBoardHeroPopMediator",
+		url = "dm.gameplay.home.view.SetBoardHeroPopMediator",
 		name = "SetBoardHeroPopMediator",
 		type = "@C"
 	},
@@ -1484,6 +1484,11 @@ local mappings = {
 	ActivityBlockTaskMediator = {
 		url = "dm.gameplay.activity.view.ActivityBlockTaskMediator",
 		name = "ActivityBlockTaskMediator",
+		type = "@C"
+	},
+	ActivityListMediator = {
+		url = "dm.gameplay.activity.view.ActivityListMediator",
+		name = "ActivityListMediator",
 		type = "@C"
 	},
 	FreeStaminaActivityMediator = {

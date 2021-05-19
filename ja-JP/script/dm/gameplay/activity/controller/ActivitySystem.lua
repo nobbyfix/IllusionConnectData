@@ -1236,6 +1236,157 @@ function ActivitySystem:getFestivalPackageTitle()
 	return ""
 end
 
+function ActivitySystem:tryEnterActivityCalendar()
+	local view = self:getInjector():getInstance("ActivityListiew")
+
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {}))
+end
+
+function ActivitySystem:isActivityCalendarTimeType(type)
+	if type == "RANGE_CONTINUE" or type == "RANGE_CONTINUE_TOP" or type == "FIXED" or type == "SERVER_FIXED" then
+		return true
+	end
+
+	return false
+end
+
+function ActivitySystem:getActivityCalendarList()
+	local bannerConfig = self._bannerData
+	local sortOpenBanner = {}
+	local sortCloseBanner = {}
+	local closeDay = ConfigReader:getDataByNameIdAndKey("ConfigValue", "MainPage_PreviewDays", "content")
+
+	for k, v in pairs(bannerConfig) do
+		if CommonUtils.GetSwitch(v.Switch) then
+			local isOpen = false
+
+			if ActivityBannerType.kCooperateBoss == v.Type then
+				local coopSystem = self:getInjector():getInstance(CooperateBossSystem)
+				isOpen = coopSystem:cooperateBossShow()
+			elseif ActivityBannerType.kActivity == v.Type then
+				local activity = self:getActivityById(v.TypeId)
+
+				if activity then
+					isOpen = activity:getIsTodayOpen()
+				end
+			end
+
+			if isOpen then
+				table.insert(sortOpenBanner, v)
+			elseif v.TypeId and v.TypeId ~= "" then
+				local config = ConfigReader:getRecordById("Activity", v.TypeId)
+
+				if config and config.Time and self:isActivityCalendarTimeType(config.Time) then
+					local _, _, y, m, d, hour, min, sec = string.find(config.TimeFactor.start[1], "(%d+)-(%d+)-(%d+)%s*(%d+):(%d+):(%d+)")
+					local timestamp = TimeUtil:timeByRemoteDate({
+						year = y,
+						month = m,
+						day = d,
+						hour = hour,
+						min = min,
+						sec = sec
+					})
+					local curstamp = TimeUtil:timeByRemoteDate()
+
+					if curstamp < timestamp and timestamp < curstamp + closeDay * 24 * 60 * 60 then
+						table.insert(sortCloseBanner, v)
+					end
+				end
+			end
+		end
+	end
+
+	table.sort(sortOpenBanner, function (a, b)
+		return b.Sort < a.Sort
+	end)
+	table.sort(sortCloseBanner, function (a, b)
+		return b.Sort < a.Sort
+	end)
+
+	return sortOpenBanner, sortCloseBanner
+end
+
+function ActivitySystem:isActivityCalendarShow(data)
+	if ActivityBannerType.kCooperateBoss == data.Type then
+		local coopSystem = self:getInjector():getInstance(CooperateBossSystem)
+
+		return coopSystem:cooperateBossShow()
+	elseif ActivityBannerType.kActivity == data.Type then
+		local activity = self:getActivityById(data.TypeId)
+
+		if activity then
+			return activity:getIsTodayOpen()
+		end
+	end
+
+	return false
+end
+
+function ActivitySystem:isActivityCalendarRedpointShow(data)
+	if ActivityBannerType.kCooperateBoss == data.Type then
+		local coopSystem = self:getInjector():getInstance(CooperateBossSystem)
+
+		return coopSystem:redPointShow()
+	elseif ActivityBannerType.kActivity == data.Type then
+		return self:hasRedPointForActivity(data.TypeId)
+	end
+
+	return false
+end
+
+function ActivitySystem:getActivityCalendarEndTime(data)
+	if ActivityBannerType.kCooperateBoss == data.Type then
+		local coopSystem = self:getInjector():getInstance(CooperateBossSystem)
+
+		return coopSystem:getCooperateBoss():getEndTime()
+	elseif ActivityBannerType.kActivity == data.Type then
+		local activityData = self:getActivityById(data.TypeId)
+
+		return activityData:getEndTime() * 0.001
+	end
+
+	return nil
+end
+
+function ActivitySystem:saveActivityCalNewTag(activityId)
+	if activityId then
+		local developSystem = self:getInjector():getInstance(DevelopSystem)
+		local rid = developSystem:getPlayer():getRid()
+		local diskData = CommonUtils.getDataFromLocalByKey(rid .. "ActivityCalender")
+
+		if diskData == nil then
+			diskData = {}
+		end
+
+		if diskData then
+			table.insert(diskData, activityId)
+			CommonUtils.saveDataToLocalByKey(diskData, rid .. "ActivityCalender")
+		end
+	end
+end
+
+function ActivitySystem:checkActivityCalNewTagShow(activityId)
+	if activityId then
+		local developSystem = self:getInjector():getInstance(DevelopSystem)
+		local rid = developSystem:getPlayer():getRid()
+		local diskData = CommonUtils.getDataFromLocalByKey(rid .. "ActivityCalender")
+
+		if diskData == nil then
+			diskData = {}
+		end
+
+		for i = 1, #diskData do
+			if diskData[i] == activityId then
+				return false
+			end
+		end
+
+		return true
+	end
+
+	return false
+end
+
 function ActivitySystem:requestAllActicities(blockUI, callback)
 	blockUI = blockUI or true
 	local params = {}

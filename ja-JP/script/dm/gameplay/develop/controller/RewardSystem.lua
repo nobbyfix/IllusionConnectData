@@ -294,6 +294,20 @@ function RewardSystem.class:getDesc(rewardData)
 	return ""
 end
 
+function RewardSystem.class:getResource(id)
+	local config = ConfigReader:getRecordById("ResourcesIcon", id)
+
+	if config then
+		return config.Resource
+	end
+
+	config = ConfigReader:getRecordById("ItemConfig", id)
+
+	if config then
+		return config.Resource
+	end
+end
+
 function RewardSystem.class:parseInfo(rewardData)
 	if rewardData.type == RewardType.kRewardLink or rewardData.type == RewardType.kStory then
 		rewardData.id = "random"

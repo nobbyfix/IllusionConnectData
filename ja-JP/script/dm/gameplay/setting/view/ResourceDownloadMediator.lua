@@ -11,7 +11,7 @@ end
 
 function ResourceDownloadMediator:onRegister()
 	super.onRegister(self)
-	self:mapEventListener(self:getEventDispatcher(), EVT_DOWNLOAD_REWARDS_SUCC, self, self.getDownloadReward)
+	self:mapEventListener(self:getEventDispatcher(), EVT_DOWNLOAD_REWARDS_SUCC, self, self.showDownloadReward)
 	self:mapEventListener(self:getEventDispatcher(), EVT_DOWNLOAD_PORTRAIT_OVER, self, self.downloadPortraitOver)
 	self:mapEventListener(self:getEventDispatcher(), EVT_DOWNLOAD_SOUNDCV_OVER, self, self.downloadSoundCVOver)
 	self:bindWidget("main.bg", PopupNormalWidget, {
@@ -55,7 +55,7 @@ function ResourceDownloadMediator:onClickSoundCVBtn()
 	self._settingSystem:downloadSoundCV()
 end
 
-function ResourceDownloadMediator:getDownloadReward(event)
+function ResourceDownloadMediator:showDownloadReward(event)
 	self:refreshDownloadStatus()
 
 	local data = event:getData()

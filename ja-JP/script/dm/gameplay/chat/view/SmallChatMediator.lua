@@ -3,6 +3,9 @@ SmallChatMediator = class("SmallChatMediator", DmPopupViewMediator, _M)
 SmallChatMediator:has("_chatSystem", {
 	is = "r"
 }):injectWith("ChatSystem")
+SmallChatMediator:has("_passSystem", {
+	is = "r"
+}):injectWith("PassSystem")
 
 function SmallChatMediator:initialize()
 	super.initialize(self)
@@ -36,6 +39,24 @@ function SmallChatMediator:initWidget()
 	self.btn_chat:addClickEventListener(function ()
 		self:openMessageBox()
 	end)
+
+	self._passPanel = self:getView():getChildByFullName("passPanel")
+
+	if self._passPanel ~= nil and CommonUtils.GetSwitch("fn_pass") then
+		local anim = cc.MovieClip:create("m1_tongxingzhengrukou")
+
+		anim:addEndCallback(function (cid, mc)
+			anim:stop()
+		end)
+		anim:addTo(self._passPanel):center(self._passPanel:getContentSize())
+		self._passPanel:addTouchEventListener(function (sender, eventType)
+			if eventType == ccui.TouchEventType.began then
+				-- Nothing
+			elseif eventType == ccui.TouchEventType.ended then
+				self._passSystem:showMainPassView()
+			end
+		end)
+	end
 end
 
 function SmallChatMediator:enterWithData(data)

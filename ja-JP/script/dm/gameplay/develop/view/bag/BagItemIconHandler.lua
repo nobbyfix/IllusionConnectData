@@ -60,10 +60,12 @@ function BagItemIconHandler:decorateWithData(entryId)
 				id = item:getConfigId(),
 				amount = entry.count,
 				scaleRatio = scaleRatio,
-				rarity = rarity
+				rarity = rarity,
+				lock = not entry.unlock
 			}, {
 				showAmount = true,
-				shine = itemShine
+				shine = itemShine,
+				showLock = item:getCanLock()
 			})
 
 			if addFragamentCanCompEffect == true then

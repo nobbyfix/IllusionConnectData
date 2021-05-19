@@ -112,7 +112,7 @@ function scene_eventstory_Girl_04a:stage(args)
 				},
 				position = {
 					refpt = {
-						x = 0.85,
+						x = 0.65,
 						y = 0
 					}
 				}

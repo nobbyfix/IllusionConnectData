@@ -28,12 +28,55 @@
             }
         ]
     },
+    "Shuangrentangyi": {
+        "InteractionFactor": [
+            {
+                "deviation": [
+                    -40,
+                    55
+                ],
+                "direction": 0
+            },
+            {
+                "deviation": [
+                    30,
+                    0
+                ],
+                "direction": 0
+            }
+        ]
+    },
+    "Tangyi": {
+        "InteractionFactor": [
+            {
+                "deviation": [
+                    -50,
+                    -10
+                ],
+                "direction": 90
+            }
+        ]
+    },
     "Wenquan": {
         "InteractionFactor": [
             {
                 "deviation": [
-                    20,
+                    0,
                     160
+                ],
+                "direction": 0
+            },
+            {
+                "deviation": [
+                    100,
+                    120
+                ],
+                "direction": 0
+            },
+            {
+                "deviation": [
+                    -30,
+                    80
                 ],
                 "direction": 0
             }

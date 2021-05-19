@@ -37,6 +37,9 @@ local BuffColor = {
 	},
 	Translucent = {
 		a = 0.5
+	},
+	Invisible = {
+		a = 0
 	}
 }
 local kGravity = 14.700000000000001
@@ -1425,7 +1428,7 @@ function BattleRoleObject:die()
 	self._liveState = LiveState.Remove
 	local fadeOut = cc.FadeOut:create(0.2)
 	local callback = cc.CallFunc:create(function ()
-		self._battleGround:resetGroundCell(self._dataModel:getCellId(), GroundCellStatus.NORMAL)
+		self._battleGround:resetGroundCell(self._dataModel:getCellId(), GroundCellStatus.NORMAL, self._dataModel)
 		self._node:removeFromParent()
 		self._unitManager:removeUnitById(self._id, self._dataModel:getCellId())
 	end)
@@ -1440,7 +1443,7 @@ function BattleRoleObject:remove()
 
 	self._liveState = LiveState.Remove
 
-	self._battleGround:resetGroundCell(self._dataModel:getCellId(), GroundCellStatus.NORMAL)
+	self._battleGround:resetGroundCell(self._dataModel:getCellId(), GroundCellStatus.NORMAL, self._dataModel)
 	delayCallByTime(0, function ()
 		self._unitManager:removeUnitById(self:getId(), self._dataModel:getCellId())
 	end)
@@ -1453,7 +1456,7 @@ function BattleRoleObject:kick()
 
 	self._liveState = LiveState.Remove
 
-	self._battleGround:resetGroundCell(self._dataModel:getCellId(), GroundCellStatus.NORMAL)
+	self._battleGround:resetGroundCell(self._dataModel:getCellId(), GroundCellStatus.NORMAL, self._dataModel)
 	self._unitManager:removeUnitById(self._id, self._dataModel:getCellId())
 
 	local fadeOut = cc.FadeOut:create(0.2)

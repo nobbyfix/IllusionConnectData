@@ -281,6 +281,21 @@ local kExtResponseMap = {
 		instanceName = "PassSystem",
 		funcName = "tryEnter",
 		entry = ViewAreaEntry:new("PassMainView")
+	},
+	ActivityListiew = {
+		instanceName = "ActivitySystem",
+		funcName = "tryEnterActivityCalendar",
+		entry = ViewAreaEntry:new("ActivityListiew")
+	},
+	DartsView = {
+		instanceName = "MiniGameSystem",
+		funcName = "tryEnter",
+		entry = ViewAreaEntry:new("DartsView")
+	},
+	CooperateBossMainView = {
+		instanceName = "CooperateBossSystem",
+		funcName = "enterCooperateBoss",
+		entry = ViewAreaEntry:new("CooperateBossMainView")
 	}
 }
 

@@ -187,6 +187,7 @@ function GetRewardMediator:showGetRewardAnim()
 		end
 	end)
 	anim:addCallbackAtFrame(55, function ()
+		anim:stop()
 		self:doLevelViewLogic()
 	end)
 

@@ -138,9 +138,6 @@ function ActivityMediator:updateTabController()
 			name2Text:setString(name2Str)
 		end
 
-		dump(activityId, "activityId >>>>>>>")
-		dump(imageName, "imageName >>>>>>>")
-
 		if imageName ~= ".png" then
 			btn:getChildByName("image"):loadTexture(imageName, ccui.TextureResType.plistType)
 		end

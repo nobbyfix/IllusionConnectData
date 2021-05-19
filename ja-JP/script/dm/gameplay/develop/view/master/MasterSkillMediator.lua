@@ -165,9 +165,7 @@ function MasterSkillMediator:createSkillListPanel()
 			level = skill:getLevel()
 		}
 		local newSkillNode = IconFactory:createMasterSkillIcon(info, {
-			{
-				hideLevel = false
-			}
+			hideLevel = true
 		})
 
 		newSkillNode:setScale(1.15)
@@ -272,6 +270,7 @@ function MasterSkillMediator:refreshSkillNode(showAnim)
 	local skillLevel = self._detailPanel:getChildByFullName("levelNode.skillLevel")
 
 	skillLevel:setString(level)
+	skillLevel:setVisible(false)
 	self:refreshSkillDesc(skill)
 	self:refreshSkillCost()
 

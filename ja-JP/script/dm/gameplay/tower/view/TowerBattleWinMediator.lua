@@ -132,16 +132,6 @@ function TowerBattleWinMediator:showHeroPanelAnim()
 	self._rewardPanel:setVisible(false)
 
 	local anim = cc.MovieClip:create("stageshengli_fubenjiesuan")
-	local insertNode = anim:getChildByName("insertNode")
-	local winAnim = cc.MovieClip:create("shengliz_jingjijiesuan")
-
-	winAnim:addEndCallback(function ()
-		winAnim:stop()
-	end)
-	winAnim:addTo(insertNode)
-	winAnim:setScale(0.6)
-	winAnim:setPosition(cc.p(90, 110))
-
 	local bgPanel = self._main:getChildByName("heroAndBgPanel")
 	local mvpSpritePanel = anim:getChildByName("roleNode")
 

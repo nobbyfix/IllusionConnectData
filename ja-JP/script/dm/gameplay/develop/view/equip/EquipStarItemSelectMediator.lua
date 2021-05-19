@@ -28,6 +28,14 @@ local kBtnHandlers = {
 	["main.stiveNode.button"] = {
 		clickAudio = "Se_Click_Common_1",
 		func = "onClickStive"
+	},
+	["main.composeNode.button"] = {
+		clickAudio = "Se_Click_Common_1",
+		func = "onClickCompose"
+	},
+	["main.stoneNode.button"] = {
+		clickAudio = "Se_Click_Common_1",
+		func = "onClickStone"
 	}
 }
 
@@ -72,14 +80,15 @@ function EquipStarItemSelectMediator:onRegister()
 	})
 end
 
-function EquipStarItemSelectMediator:enterWithData()
-	self:initData()
+function EquipStarItemSelectMediator:enterWithData(data)
+	self:initData(data)
 	self:initView()
 	self:refreshView()
 end
 
-function EquipStarItemSelectMediator:initData()
+function EquipStarItemSelectMediator:initData(data)
 	self._selectData = {}
+	self._useCompose = data.useCompose
 	local value = cc.UserDefault:getInstance():getStringForKey(UserDefaultKey.kEquipQuickSelectKey)
 
 	if value ~= "" then
@@ -88,6 +97,14 @@ function EquipStarItemSelectMediator:initData()
 		for i = 1, #valueTemp do
 			local keys = string.split(valueTemp[i], "_")
 			self._selectData[keys[1]] = keys[2]
+		end
+	end
+
+	local selectData = self._equipSystem:getSelectData()
+
+	for key, value in pairs(selectData) do
+		if self._selectData[key] == nil then
+			self._selectData[key] = value
 		end
 	end
 end
@@ -100,15 +117,34 @@ function EquipStarItemSelectMediator:initView()
 	self._ssrNode = self._main:getChildByFullName("ssrNode")
 	self._starNode = self._main:getChildByFullName("starNode")
 	self._stiveNode = self._main:getChildByFullName("stiveNode")
+	self._composeNode = self._main:getChildByFullName("composeNode")
+	self._stoneNode = self._main:getChildByFullName("stoneNode")
+
+	if self._useCompose then
+		self._nNode:setVisible(false)
+		self._rNode:setVisible(false)
+		self._srNode:setVisible(false)
+		self._ssrNode:setVisible(false)
+		self._stiveNode:setVisible(false)
+		self._starNode:setVisible(false)
+	else
+		self._composeNode:setVisible(false)
+		self._stoneNode:setVisible(false)
+	end
 end
 
 function EquipStarItemSelectMediator:refreshView()
-	self:resetSelectView(self._nNode, self._selectData["11"])
-	self:resetSelectView(self._rNode, self._selectData["12"])
-	self:resetSelectView(self._srNode, self._selectData["13"])
-	self:resetSelectView(self._ssrNode, self._selectData["14"])
-	self:resetSelectView(self._starNode, self._selectData.onlyOneStar)
-	self:resetSelectView(self._stiveNode, self._selectData.canUseStive)
+	if self._useCompose then
+		self:resetSelectView(self._composeNode, self._selectData.canUseCompose)
+		self:resetSelectView(self._stoneNode, self._selectData.canUseStone)
+	else
+		self:resetSelectView(self._nNode, self._selectData["11"])
+		self:resetSelectView(self._rNode, self._selectData["12"])
+		self:resetSelectView(self._srNode, self._selectData["13"])
+		self:resetSelectView(self._ssrNode, self._selectData["14"])
+		self:resetSelectView(self._starNode, self._selectData.onlyOneStar)
+		self:resetSelectView(self._stiveNode, self._selectData.canUseStive)
+	end
 end
 
 function EquipStarItemSelectMediator:resetSelectView(node, state)
@@ -181,6 +217,26 @@ function EquipStarItemSelectMediator:onClickStive()
 	end
 
 	self:resetSelectView(self._stiveNode, self._selectData.canUseStive)
+end
+
+function EquipStarItemSelectMediator:onClickCompose()
+	if self._selectData.canUseCompose == "0" then
+		self._selectData.canUseCompose = "1"
+	else
+		self._selectData.canUseCompose = "0"
+	end
+
+	self:resetSelectView(self._composeNode, self._selectData.canUseCompose)
+end
+
+function EquipStarItemSelectMediator:onClickStone()
+	if self._selectData.canUseStone == "0" then
+		self._selectData.canUseStone = "1"
+	else
+		self._selectData.canUseStone = "0"
+	end
+
+	self:resetSelectView(self._stoneNode, self._selectData.canUseStone)
 end
 
 function EquipStarItemSelectMediator:onClickSure()

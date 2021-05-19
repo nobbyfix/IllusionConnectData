@@ -308,3 +308,11 @@ end
 function ItemPrototype:getResource()
 	return self._itemBase.Resource
 end
+
+function ItemPrototype:getCanLock()
+	if self._itemBase.Lock and self._itemBase.Lock > 0 then
+		return true
+	end
+
+	return false
+end

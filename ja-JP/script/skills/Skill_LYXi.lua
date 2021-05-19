@@ -603,6 +603,159 @@ all.Skill_LYXi_Unique_EX = {
 		return _env
 	end
 }
+all.Skill_LYXi_Unique_Awaken = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.HealRateFactor = externs.HealRateFactor
+
+		if this.HealRateFactor == nil then
+			this.HealRateFactor = 3.15
+		end
+
+		this.ExFactor = externs.ExFactor
+
+		if this.ExFactor == nil then
+			this.ExFactor = 0.2
+		end
+
+		local main = __action(this, {
+			name = "main",
+			entry = prototype.main
+		})
+		main = global["[duration]"](this, {
+			3200
+		}, main)
+		this.main = global["[cut_in]"](this, {
+			"1#Hero_Unique_LYXi"
+		}, main)
+
+		return this
+	end,
+	main = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.TARGET = externs.TARGET
+
+		assert(_env.TARGET ~= nil, "External variable `TARGET` is not provided.")
+
+		_env.units = nil
+
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.GroundEft(_env, _env.ACTOR, "BGEffectBlack")
+			global.EnergyRestrain(_env, _env.ACTOR, _env.TARGET)
+		end)
+		exec["@time"]({
+			900
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.1, 80)
+			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.FixedPos(_env, 0, 0, 2), 100, "skill3"))
+
+			_env.units = global.FriendUnits(_env)
+
+			global.HealTargetView(_env, _env.units)
+		end)
+		exec["@time"]({
+			1200
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			for _, friendunit in global.__iter__(_env.units) do
+				global.DispelBuff(_env, friendunit, global.BUFF_MARKED_ALL(_env, "DEBUFF", "DISPELLABLE"), 1)
+
+				local heal = global.EvalRecovery_FlagCheck(_env, _env.ACTOR, friendunit, this.HealRateFactor, 0)
+
+				global.ApplyHPRecovery_ResultCheck(_env, _env.ACTOR, friendunit, heal)
+
+				local buffeft1 = global.NumericEffect(_env, "+defrate", {
+					"+Normal",
+					"+Normal"
+				}, this.ExFactor)
+				local buffeft2 = global.NumericEffect(_env, "+atkrate", {
+					"+Normal",
+					"+Normal"
+				}, this.ExFactor)
+				local buffeft3 = global.NumericEffect(_env, "+defrate", {
+					"+Normal",
+					"+Normal"
+				}, 0)
+
+				global.ApplyBuff(_env, friendunit, {
+					timing = 0,
+					display = "DefUp",
+					group = "Skill_LYXi_Unique_atk",
+					duration = 99,
+					limit = 1,
+					tags = {
+						"BUFF",
+						"DEFUP",
+						"HEAL",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft1
+				})
+				global.ApplyBuff(_env, friendunit, {
+					timing = 0,
+					display = "AtkUp",
+					group = "Skill_LYXi_Unique_def",
+					duration = 99,
+					limit = 1,
+					tags = {
+						"BUFF",
+						"ATKUP",
+						"HEAL",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft2
+				})
+				global.ApplyBuff(_env, friendunit, {
+					timing = 0,
+					duration = 99,
+					display = "Heal",
+					tags = {
+						"DEFRATE",
+						"HEAL",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft3
+				})
+			end
+		end)
+		exec["@time"]({
+			3200
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.EnergyRestrainStop(_env, _env.ACTOR, _env.TARGET)
+		end)
+
+		return _env
+	end
+}
 all.Skill_LYXi_Passive_EX = {
 	__new__ = function (prototype, externs, global)
 		local __function = global.__skill_function__

@@ -147,6 +147,7 @@ function UnitTLInterpreter:act_SpawnUnit(action, args)
 
 	if occupy then
 		self._battleGround:resetGroundCell(roleDataModel:getCellId(), GroundCellStatus.OCCUPIED)
+		self._battleGround:setCellOccupiedHero(roleDataModel:getCellId(), roleDataModel)
 	end
 
 	self:setUnitObject(role)
@@ -369,6 +370,10 @@ function UnitTLInterpreter:act_TransportExt(action, args, mode)
 		self._battleGround:resetGroundCell(self._dataModel:getCellId(), GroundCellStatus.OCCUPIED)
 		role:getRoleAnim():setTimeScale(oldTimeScale)
 	end)
+
+	if not ignoreSwitch then
+		self._battleGround:swipCellOccupiedHero(oldCellId, dataModel:getCellId())
+	end
 end
 
 function UnitTLInterpreter:act_Transport(action, args, mode)
@@ -877,6 +882,12 @@ function UnitTLInterpreter:act_Hurt(action, args)
 			sub = sub,
 			bySub = bySub
 		})
+	end
+end
+
+function UnitTLInterpreter:act_FlyBallToCard(action, args)
+	if self._battleUIMediator and self._unit:isLeft() then
+		self._battleUIMediator:flyBallToCard(self._unit, args.index)
 	end
 end
 

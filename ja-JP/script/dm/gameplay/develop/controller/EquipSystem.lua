@@ -42,7 +42,9 @@ function EquipSystem:initialize(developSystem)
 		["14"] = "0",
 		["13"] = "0",
 		canUseStive = "0",
+		canUseCompose = "1",
 		onlyOneStar = "1",
+		canUseStone = "1",
 		["12"] = "1",
 		["11"] = "1"
 	}

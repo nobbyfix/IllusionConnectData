@@ -25,3 +25,7 @@ function TriggerBuff:trigger(unit, buffSystem)
 
 	return buffSystem:applyBuffOnTarget(unit, buffObject, self._groupConfig)
 end
+
+function TriggerBuff:getBuffConfig()
+	return self._buffConfig
+end

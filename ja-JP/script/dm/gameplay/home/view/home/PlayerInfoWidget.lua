@@ -69,7 +69,6 @@ function PlayerInfoWidget:initSubviews()
 	self._level = self._infoPanel:getChildByFullName("level_text")
 	self._vipLevel = self._infoPanel:getChildByFullName("vip_level")
 	self._headRectNode = self._infoPanel:getChildByFullName("head_icon")
-	self._passPanel = self._infoPanel:getChildByFullName("passPanel")
 
 	self._headRectNode:setTouchEnabled(true)
 	self._headRectNode:addTouchEventListener(function (sender, eventType)
@@ -119,22 +118,6 @@ function PlayerInfoWidget:initSubviews()
 			self._progressTip:setVisible(false)
 		end
 	end)
-
-	if self._passPanel ~= nil and CommonUtils.GetSwitch("fn_pass") then
-		local anim = cc.MovieClip:create("m1_tongxingzhengrukou")
-
-		anim:addEndCallback(function (cid, mc)
-			anim:stop()
-		end)
-		anim:addTo(self._passPanel):center(self._passPanel:getContentSize())
-		self._passPanel:addTouchEventListener(function (sender, eventType)
-			if eventType == ccui.TouchEventType.began then
-				-- Nothing
-			elseif eventType == ccui.TouchEventType.ended then
-				self._passSystem:showMainPassView()
-			end
-		end)
-	end
 end
 
 function PlayerInfoWidget:setNetInfoNodePos(position)
@@ -212,7 +195,7 @@ function PlayerInfoWidget:setHeadId(headId)
 
 		local headIcon, oldIcon = IconFactory:createRactHeadImage({
 			id = headId,
-			size = cc.size(160, 58)
+			size = cc.size(160, 54)
 		})
 
 		oldIcon:offset(30, 0)
@@ -299,8 +282,18 @@ end
 
 function PlayerInfoWidget:clock()
 	if self._timeText and self._timer == nil then
+		local isShowSemicolon = true
+
 		local function update()
 			local serverTime = self:getGameServer():remoteTimestamp()
+
+			if isShowSemicolon then
+				self._timeText:setString(os.date("%H:%M", serverTime))
+			else
+				self._timeText:setString(os.date("%H:%M", serverTime))
+			end
+
+			isShowSemicolon = not isShowSemicolon
 
 			self._timeText:setString(TimeUtil:localDate("%H:%M", serverTime))
 

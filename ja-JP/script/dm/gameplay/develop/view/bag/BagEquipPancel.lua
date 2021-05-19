@@ -15,10 +15,6 @@ local kAttrPosY = {
 		16
 	}
 }
-local kLockImage = {
-	"asset/common/common_icon_lock_new.png",
-	"asset/common/common_icon_unlock_new.png"
-}
 
 function BagEquipPancel:initialize(view, uiNode)
 	super.initialize(self)

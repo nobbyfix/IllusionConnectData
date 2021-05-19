@@ -272,6 +272,27 @@
         "StoryLink": "S11S01",
         "SurfaceId": "Surface_YBYa_Awake"
     },
+    "YLMGZhu": {
+        "AnimSound": "Se_Effect_Awakening_YLMGZhu",
+        "Animation": "fnbsi_Awaken",
+        "CutIn": [
+            0,
+            0,
+            0.7
+        ],
+        "ModelId": "Model_YLMGZhu_Awake",
+        "Name": "YLMGZhu_Awake_Name",
+        "NameDesc": "YLMGZhu_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_YLMGZhu_UnAwake",
+        "Reward": "HeroAwaken_YLMGZhu",
+        "ShowHero": "YLMGZhu",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "YLMGZhu_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_YLMGZhu_Awake"
+    },
     "YLSBai": {
         "AnimSound": "Se_Effect_Awakening_YLSBai",
         "Animation": "slna_Awaken",

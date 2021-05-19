@@ -967,73 +967,6 @@ end
 
 function IconFactory:createMasterIcon(info, style)
 	local id = info.id and info.id or "Master_XueZhan"
-	local qualityconfig = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Master_DefaultQuality", "content")
-	local lvl = info.level and info.level or 1
-	local star = info.star or 0
-	local quality = tonumber(qualityconfig) or 1
-	local quaRectImg = IconFactory:createSprite(GameStyle:getMasterQualityRectFile(quality, style and style.isRect))
-	local colorRectSize = quaRectImg:getContentSize()
-	local bottomFile = GameStyle:getMasterIconBottomFile(quality, style and style.isRect)
-	local bottomImg = IconFactory:createSprite(bottomFile)
-	local node = self:createBaseNode(style and style.isWidget)
-
-	node:setContentSize(cc.size(colorRectSize.width, colorRectSize.width))
-
-	local scale = info.scale or 1
-	local roleModel = IconFactory:getRoleModelByKey("MasterBase", id)
-	info.id = roleModel
-	local heroImg = self:createRoleIconSprite(info)
-
-	if heroImg == nil then
-		heroImg = self:createSprite("asset/master/1001/1001_head.png")
-	end
-
-	if info.clipType then
-		heroImg = self:addStencilForIcon(heroImg, info.clipType, info.size)
-	end
-
-	node:setScale(scale)
-	IconFactory:centerAddNode(node, bottomImg)
-	IconFactory:centerAddNode(node, heroImg)
-
-	if not style.notShowQulity == true then
-		IconFactory:centerAddNode(node, quaRectImg)
-	end
-
-	local kLevelTag = 65536
-	local kStarTag = 65537
-	local kQuaLvlTag = 65538
-
-	function node:setStar(star)
-		local starNode = self:getChildByTag(kStarTag)
-
-		if starNode == nil then
-			starNode = cc.Node:create()
-
-			IconFactory:centerAddNode(node, starNode, 0, kStarTag)
-		end
-
-		starNode:removeAllChildren(true)
-
-		local intervalX = IconFactory.kStarIntervalXArr[star] or 0
-		local startX = -(star - 1) * 0.5 * intervalX
-
-		for index = 1, star do
-			local starImg = cc.Sprite:createWithSpriteFrameName(IconFactory.starImgPath)
-
-			starImg:setPosition(startX + (index - 1) * intervalX, kStarHeight)
-			starNode:addChild(starImg)
-			starImg:setScale(IconFactory.kStarScale)
-		end
-	end
-
-	node:setStar(star)
-
-	return node
-end
-
-function IconFactory:createMasterIcon(info, style)
-	local id = info.id and info.id or "Master_XueZhan"
 	local node = self:createBaseNode(style and style.isWidget)
 
 	node:setContentSize(cc.size(81, 81))
@@ -2621,6 +2554,7 @@ function IconFactory:createItemIcon(info, style)
 	local amount = info.amount
 	info.clipIndex = info.clipIndex or 1
 	info.stencilSize = info.stencilSize or cc.size(105, 105)
+	local isLock = info.lock or false
 	local quaImgType = style and style.rectType and style.rectType or 1
 	local qualityImg = GameStyle:getItemQuaRectFile(quality, quaImgType)
 	local quaRectImg = IconFactory:createSprite(qualityImg)
@@ -2665,6 +2599,24 @@ function IconFactory:createItemIcon(info, style)
 			itemImg:setGray(notEngouh)
 			quaRectImg:setGray(notEngouh)
 		end
+	end
+
+	local kLockName = "LockImage"
+
+	function node:setLock(lock)
+		local lockImage = self:getChildByName(kLockName)
+
+		if not lockImage then
+			lockImage = ccui.ImageView:create("yinghun_img_lock.png", ccui.TextureResType.plistType)
+
+			lockImage:addTo(node)
+			lockImage:setName(kLockName)
+			lockImage:setAnchorPoint(cc.p(0, 0))
+			lockImage:setPosition(cc.p(3, 24))
+			lockImage:setScale(0.9)
+		end
+
+		lockImage:setVisible(lock)
 	end
 
 	function node:setAmount(amount, effect)
@@ -2789,6 +2741,10 @@ function IconFactory:createItemIcon(info, style)
 
 	if info.rarity then
 		node:setRarity(info.rarity)
+	end
+
+	if style and style.showLock then
+		node:setLock(isLock)
 	end
 
 	return node

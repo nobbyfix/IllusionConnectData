@@ -191,7 +191,7 @@ function ActivityReturnMediator:setupBanner()
 			name3Text:setVisible(false)
 
 			local name1Str = utf8.sub(textdes, 1, 2)
-			local name2Str = utf8.sub(textdes, 3, 4)
+			local name2Str = utf8.sub(textdes, 3, -1)
 
 			name1Text:setString(name1Str)
 			name2Text:setString(name2Str)

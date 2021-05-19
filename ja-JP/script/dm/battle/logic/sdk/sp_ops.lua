@@ -53,6 +53,18 @@ function exports.ApplyEnergyDamage(env, player, energy)
 	env.global.RecordImmediately(env, player:getId(), "SyncE", energyInfo)
 end
 
+function exports.FlyBallEffect(env, unit, card)
+	local player = env["$actor"]:getOwner()
+	local cardSystem = env.global["$CardSystem"]
+	local effectInfo = {
+		index = cardSystem:getCardIdx(player, card)
+	}
+
+	env.global.RecordImmediately(env, unit:getId(), "FlyBallToCard", effectInfo)
+
+	return true
+end
+
 function exports.ApplyEnergyRecovery(env, player, energy)
 	local energyInfo = player:recoverEnergy(energy)
 
