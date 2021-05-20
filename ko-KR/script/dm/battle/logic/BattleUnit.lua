@@ -402,6 +402,10 @@ function BattleUnit:isSummoned()
 	return self._isSummoned
 end
 
+function BattleUnit:setIsSummoned(isSummon)
+	self._isSummoned = isSummon
+end
+
 function BattleUnit:getFoe()
 	return self._foe
 end

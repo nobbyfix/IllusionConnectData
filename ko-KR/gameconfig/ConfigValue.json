@@ -5253,6 +5253,26 @@
         "clz": "int",
         "content": 200
     },
+    "MainPage_Bubble": {
+        "clz": "string[]",
+        "content": [
+            "MainPage_Bubble01",
+            "MainPage_Bubble02",
+            "MainPage_Bubble03",
+            "MainPage_Bubble04"
+        ]
+    },
+    "MainPage_BubbleTime": {
+        "clz": "int[]",
+        "content": [
+            3,
+            12
+        ]
+    },
+    "MainPage_PreviewDays": {
+        "clz": "int",
+        "content": 14
+    },
     "Main_TaskList": {
         "clz": "dict",
         "content": {
@@ -8436,7 +8456,9 @@
             "LSLTe",
             "MZGXiu",
             "SLWan",
-            "HSYZhai"
+            "HSYZhai",
+            "XHMao",
+            "TLSi"
         ]
     },
     "Tower_1_GrowMaxValue": {

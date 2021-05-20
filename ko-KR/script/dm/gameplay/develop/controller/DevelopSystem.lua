@@ -134,6 +134,11 @@ function DevelopSystem:syncPlayer(data, isDiff)
 		self._bagSystem:delItems(data.bag.del)
 	end
 
+	if data.lockItem then
+		self:getBag():synchronizeLockItems(data.lockItem)
+		self._bagSystem:synchronize(data.lockItem)
+	end
+
 	if data.shops then
 		self._shopSystem:sync(data.shops)
 	end

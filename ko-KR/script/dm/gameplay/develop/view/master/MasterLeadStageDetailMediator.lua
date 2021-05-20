@@ -15,6 +15,14 @@ local kBtnHandlers = {
 		clickAudio = "Se_Click_Open_2",
 		func = "onClickLevelUp"
 	},
+	["main.btn_left"] = {
+		clickAudio = "Se_Click_Open_2",
+		func = "onClickLeft"
+	},
+	["main.btn_right"] = {
+		clickAudio = "Se_Click_Open_2",
+		func = "onClickRight"
+	},
 	infoBtn = {
 		clickAudio = "Se_Click_Common_2",
 		func = "onClickInfoBtn"
@@ -51,6 +59,17 @@ function MasterLeadStageDetailMediator:enterWithData(data)
 	self._changeAni = data.anim
 	self._curIndex = data.stageNum and data.stageNum or 1
 	self._masterId = data.masterId
+	local masterList = self._masterSystem:getShowMasterList()
+	self._showMasterList = {}
+
+	for i = 1, #masterList do
+		local master = masterList[i]
+
+		if not master:getIsLock() then
+			table.insert(self._showMasterList, master)
+		end
+	end
+
 	self._masterData = self._masterSystem:getMasterById(self._masterId)
 	self._leadStageData = self._masterData:getLeadStageData()
 	self._leadStageDetailConfig = self._leadStageData:getConfigInfo()
@@ -58,6 +77,12 @@ function MasterLeadStageDetailMediator:enterWithData(data)
 
 	if self._curIndex == 0 then
 		self._curIndex = 1
+	end
+
+	for i, v in ipairs(self._showMasterList) do
+		if self._masterId == v:getId() then
+			self._curMasterIndex = i
+		end
 	end
 
 	self:setChagneAni()
@@ -140,6 +165,8 @@ function MasterLeadStageDetailMediator:setupView()
 
 	self._desPanel = self._rightPanel:getChildByFullName("desNode")
 	self._icon1PosX = self._boxPanel1:getChildByFullName("icon1"):getPosition()
+	self._btnLeft = self._main:getChildByFullName("btn_left")
+	self._btnRight = self._main:getChildByFullName("btn_right")
 
 	GameStyle:setCostNodeEffect(self._costNode1)
 	GameStyle:setCostNodeEffect(self._costNode2)
@@ -150,11 +177,17 @@ function MasterLeadStageDetailMediator:refreshView()
 	self:refreshListView()
 	self:refreshRightPanel()
 	self:refreshCost()
+	self:refreshBtnVisible()
 end
 
 function MasterLeadStageDetailMediator:refreshRightPanelView()
 	self:refreshRightPanel()
 	self:refreshCost()
+end
+
+function MasterLeadStageDetailMediator:refreshBtnVisible()
+	self._btnLeft:setVisible(#self._showMasterList > 1)
+	self._btnRight:setVisible(#self._showMasterList > 1)
 end
 
 function MasterLeadStageDetailMediator:refreshListView()
@@ -437,7 +470,8 @@ function MasterLeadStageDetailMediator:refreshRightPanel()
 
 		panel:setVisible(true)
 		panel:getChildByFullName("text"):setString(v)
-		panel:getChildByFullName("Image_237"):setColor((conState[i] or isLeadStageOver) and cc.c3b(0, 255, 0) or cc.c3b(255, 255, 255))
+		panel:getChildByFullName("text"):setColor((conState[i] or isLeadStageOver) and cc.c3b(202, 245, 53) or cc.c3b(255, 255, 255))
+		panel:getChildByFullName("Image_237"):setColor((conState[i] or isLeadStageOver) and cc.c3b(202, 245, 53) or cc.c3b(255, 0, 0))
 		table.insert(panelList, panel)
 		panel:addTo(listView)
 	end
@@ -686,6 +720,10 @@ function MasterLeadStageDetailMediator:setBackGround()
 		local mc_bg = mc_img1:getChildByFullName("bg")
 		local img1 = ccui.ImageView:create("asset/scene/leadStage_scene_xq.jpg")
 
+		if i == 2 then
+			img1:setFlippedX(true)
+		end
+
 		img1:addTo(mc_bg)
 	end
 
@@ -719,6 +757,52 @@ function MasterLeadStageDetailMediator:onClickCostItem(index)
 	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
 		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
 	}, param))
+end
+
+function MasterLeadStageDetailMediator:onClickLeft()
+	self:switchMaster(-1)
+end
+
+function MasterLeadStageDetailMediator:onClickRight()
+	self:switchMaster(1)
+end
+
+function MasterLeadStageDetailMediator:switchMaster(add)
+	self._curMasterIndex = self._curMasterIndex + add
+
+	if self._curMasterIndex < 1 then
+		self._curMasterIndex = #self._showMasterList
+	end
+
+	if self._curMasterIndex > #self._showMasterList then
+		self._curMasterIndex = 1
+	end
+
+	self._masterId = self._showMasterList[self._curMasterIndex]:getId()
+
+	self:dispatch(Event:new(EVT_LEADSTASGE_SWITCH_HERO, self._masterId))
+
+	self._masterData = self._masterSystem:getMasterById(self._masterId)
+	self._leadStageData = self._masterData:getLeadStageData()
+	self._leadStageDetailConfig = self._leadStageData:getConfigInfo()
+	self._curLeadStageLevel = self._leadStageData:getLeadStageLevel()
+	local curLevel = self._curLeadStageLevel
+	local isMax = self._leadStageData:isMaxLevel()
+
+	if not isMax then
+		local info = self._leadStageDetailConfig[curLevel + 1]
+
+		if info.LeadStageControl == 1 then
+			curLevel = curLevel + 1
+		end
+	end
+
+	self._curIndex = curLevel
+
+	self:runStartAction()
+	self:refreshListView()
+	self:refreshRightPanel()
+	self:refreshCost()
 end
 
 function MasterLeadStageDetailMediator:onClickInfoBtn()

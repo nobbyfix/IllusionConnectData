@@ -453,9 +453,15 @@ local modules = {
 					"dm.gameplay.home.view.home.PlayerInfoWidget",
 					"dm.gameplay.home.view.home.NetInfoWidget",
 					"dm.gameplay.tabBtn.PopTabBtnWidget",
-					"dm.gameplay.tabBtn.CompositeTabBtnWidget"
+					"dm.gameplay.tabBtn.CompositeTabBtnWidget",
+					"dm.gameplay.home.controller.HomeSystem",
+					"dm.gameplay.home.view.home.Navigation",
+					"dm.gameplay.home.controller.AudioTimerSystem"
 				},
 				injections = {
+					singletons = {
+						"HomeSystem"
+					},
 					views = {
 						{
 							res = "asset/ui/MainScene.csb",
@@ -1642,6 +1648,11 @@ local modules = {
 							mediator = "ActivityFocusOnMediator"
 						},
 						{
+							res = "asset/ui/ActivityList.csb",
+							name = "ActivityListiew",
+							mediator = "ActivityListMediator"
+						},
+						{
 							res = "asset/ui/ActivityHeroCollect.csb",
 							name = "ActivityHeroCollectView",
 							mediator = "ActivityHeroCollectMediator"
@@ -1974,6 +1985,11 @@ local modules = {
 						{
 							res = "asset/ui/ActivityFemaleMain.csb",
 							name = "ActivityFemaleMainView",
+							mediator = "ActivityCommonMainMediator"
+						},
+						{
+							res = "asset/ui/ActivityStoryBookMain.csb",
+							name = "ActivityStoryBookMainView",
 							mediator = "ActivityCommonMainMediator"
 						}
 					}

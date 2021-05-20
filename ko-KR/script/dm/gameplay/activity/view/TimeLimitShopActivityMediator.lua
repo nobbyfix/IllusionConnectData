@@ -41,6 +41,9 @@ local timeLimitShopConfig = {
 	xide = {
 		BG = "jqtd_txt_typl_di",
 		TimeOutLineColor = cc.c4b(186, 51, 20, 255)
+	},
+	storybook = {
+		TimeOutLineColor = cc.c4b(187, 1, 1, 255)
 	}
 }
 local btnHandlers = {

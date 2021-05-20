@@ -158,7 +158,6 @@ function MasterSkillMediator:createSkillListPanel()
 		local skill = self._masterSkills[i]
 		local skillId = skill:getId()
 		local info = {
-			levelHide = true,
 			id = skillId,
 			quality = skill:getQuality(),
 			isLock = not skill:getEnable(),
@@ -166,9 +165,7 @@ function MasterSkillMediator:createSkillListPanel()
 			level = skill:getLevel()
 		}
 		local newSkillNode = IconFactory:createMasterSkillIcon(info, {
-			{
-				hideLevel = false
-			}
+			hideLevel = true
 		})
 
 		newSkillNode:setScale(1.15)

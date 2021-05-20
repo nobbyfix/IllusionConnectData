@@ -776,7 +776,9 @@
         "Quality": [
             4
         ],
-        "Resource": [],
+        "Resource": [
+            "IR_Equip13_1"
+        ],
         "Segmentation": [
             1
         ],
@@ -793,7 +795,9 @@
         "Quality": [
             5
         ],
-        "Resource": [],
+        "Resource": [
+            "IR_Equip14_1"
+        ],
         "Segmentation": [
             1
         ],
@@ -1155,6 +1159,23 @@
         "Shine": "",
         "Sicon": "IR_HD_SnowflakeStamina_small"
     },
+    "IR_StoryBookStamina": {
+        "Desc": "IR_StoryBookStamina_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_storybook_stamina_1"
+        ],
+        "Licon": "ico_m_storybook_stamina_1",
+        "Name": "IR_StoryBookStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_storybook_stamina_2"
+    },
     "IR_SummerAcitvityStamina": {
         "Desc": "IR_SummerAcitvityStamina_FunctionDesc",
         "LargeIcons": [
@@ -1199,7 +1220,9 @@
         "Quality": [
             4
         ],
-        "Resource": [],
+        "Resource": [
+            "IR_Surface_1"
+        ],
         "Segmentation": [
             1
         ],

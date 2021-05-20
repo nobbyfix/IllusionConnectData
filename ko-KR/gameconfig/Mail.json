@@ -701,6 +701,19 @@
         "TopStatus": 0,
         "Type": "USER"
     },
+    "Mail_EightDays_StoryBook": {
+        "Content": "Mail_EightDays_StoryBook_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_StoryBook_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_EightDays_StoryBook_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
     "Mail_EightDays_Sunflower": {
         "Content": "Mail_EightDays_Sunflower_Content",
         "ExpireAfterRead": 72000,
@@ -1439,6 +1452,32 @@
         "Reward": "",
         "SubType": 1,
         "Title": "Mail_Snowflake_DailyTask_Activity_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
+    "Mail_StoryBook_AchieveMentTask_Activity": {
+        "Content": "Mail_StoryBook_AchieveMentTask_Activity_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_StoryBook_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_StoryBook_AchieveMentTask_Activity_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
+    "Mail_StoryBook_DailyTask_Activity": {
+        "Content": "Mail_StoryBook_DailyTask_Activity_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_StoryBook_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_StoryBook_DailyTask_Activity_Title",
         "TopStatus": 0,
         "Type": "USER"
     },

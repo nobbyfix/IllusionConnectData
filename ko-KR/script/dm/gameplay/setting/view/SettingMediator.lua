@@ -243,7 +243,7 @@ function SettingMediator:mapEventListeners()
 	self:mapEventListener(self:getEventDispatcher(), EVT_CHANGENAME_SUCC, self, self.showSettingView)
 	self:mapEventListener(self:getEventDispatcher(), EVT_CHANGESLOGAN_SUCC, self, self.showSettingView)
 	self:mapEventListener(self:getEventDispatcher(), EVT_CHANGEHEADIMG_SUCC, self, self.showSettingView)
-	self:mapEventListener(self:getEventDispatcher(), EVT_DOWNLOAD_REWARDS_SUCC, self, self.getDownloadReward)
+	self:mapEventListener(self:getEventDispatcher(), EVT_DOWNLOAD_REWARDS_SUCC, self, self.showDownloadReward)
 	self:mapEventListener(self:getEventDispatcher(), EVT_DOWNLOAD_PORTRAIT_OVER, self, self.downloadPortraitOver)
 	self:mapEventListener(self:getEventDispatcher(), EVT_DOWNLOAD_SOUNDCV_OVER, self, self.downloadSoundCVOver)
 	self:mapEventListener(self:getEventDispatcher(), EVT_BIND_ACCOUNT, self, self.refreshRightList)
@@ -632,7 +632,7 @@ function SettingMediator:onClickNaverCafeBtn()
 	cc.Application:getInstance():openURL(url)
 end
 
-function SettingMediator:getDownloadReward(event)
+function SettingMediator:showDownloadReward(event)
 	self:refreshRightList()
 
 	local data = event:getData()

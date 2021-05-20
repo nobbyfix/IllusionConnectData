@@ -285,6 +285,17 @@ function PlayerTLInterpreter:act_StackEnchant(action, args)
 	end
 end
 
+function PlayerTLInterpreter:act_UpdateHeroCard(action, args)
+	if self._isMainPlayer then
+		local cardInfo = args.cardInfo
+		local idx = args.idx
+
+		if cardInfo and idx then
+			self._battleUIMediator:updateCardInfo(idx, cardInfo)
+		end
+	end
+end
+
 function PlayerTLInterpreter:act_RmEnchant(action, args)
 	if self._isMainPlayer then
 		local idx = args.idx

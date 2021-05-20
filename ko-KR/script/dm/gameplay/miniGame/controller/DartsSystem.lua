@@ -33,6 +33,14 @@ function DartsSystem:initialize()
 	self._curLevel = 1
 end
 
+function DartsSystem:tryEnter()
+	local activityId = self:getActivityId()
+
+	if activityId then
+		self:tryEnterByActivity(activityId)
+	end
+end
+
 function DartsSystem:tryEnterByActivity(activityId)
 	self._activityId = activityId
 	local activitySystem = self:getInjector():getInstance("ActivitySystem")

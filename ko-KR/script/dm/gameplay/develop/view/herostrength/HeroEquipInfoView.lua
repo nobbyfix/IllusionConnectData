@@ -11,7 +11,7 @@ HeroEquipInfoView:has("_mediator", {
 })
 
 local componentPath = "asset/ui/HeroEquipInfo.csb"
-local kLockImage = {
+local lockImage = {
 	"yinghun_icon_unlock.png",
 	"yinghun_icon_lock.png"
 }
@@ -123,7 +123,7 @@ end
 
 function HeroEquipInfoView:refreshLock()
 	local unlock = self._equipData:getUnlock()
-	local image = unlock and kLockImage[1] or kLockImage[2]
+	local image = unlock and lockImage[1] or lockImage[2]
 
 	self._lockBtn:getChildByFullName("image"):loadTexture(image, 1)
 end
@@ -229,6 +229,18 @@ function HeroEquipInfoView:refreshDesc()
 
 		redPoint:addTo(self._strengthenBtn):posite(48, 18):setScale(0.8)
 		redPoint:setName("RedPoint")
+	end
+
+	local hasRed_1 = self._heroSystem:hasRedPointByEquipReplace(self._heroId, self._equipType)
+	local redPoint_1 = self._changeBtn:getChildByName("RedPoint")
+
+	if redPoint_1 then
+		redPoint_1:setVisible(hasRed_1)
+	elseif hasRed_1 then
+		redPoint_1 = ccui.ImageView:create(IconFactory.redPointPath, 1)
+
+		redPoint_1:addTo(self._changeBtn):posite(48, 18):setScale(0.8)
+		redPoint_1:setName("RedPoint")
 	end
 end
 

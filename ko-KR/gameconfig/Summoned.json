@@ -152,6 +152,36 @@
         "Type": "Summoned",
         "UniqueSkill": ""
     },
+    "SummonedBOtu": {
+        "Cost": 2,
+        "CounterSkill": "",
+        "DeathSkill": "Skill_Enemy_SummonedBOtuA_Passive",
+        "DoubleSkill": "",
+        "Flags": [
+            "SUMMONED",
+            "SummonedBOtu"
+        ],
+        "KillRage": 100,
+        "MasterRage": 10,
+        "NormalSkill": "Skill_Enemy_SummonedBOtuA_Normal",
+        "PassiveSkill": [],
+        "ProudSkill": "",
+        "RageBase": 0,
+        "RageRules": {
+            "a1": [
+                0,
+                0
+            ],
+            "a2": 500,
+            "a3": 0,
+            "a4": 0
+        },
+        "RoleModel": "Model_Enemy_BOTu",
+        "SkillRate": 0.0,
+        "SummonSurface": "",
+        "Type": "Summoned",
+        "UniqueSkill": "Skill_Enemy_SummonedBOtuA_Unique"
+    },
     "SummonedBoom": {
         "Cost": 2,
         "CounterSkill": "",
@@ -417,7 +447,9 @@
         },
         "RoleModel": "Model_PDLa_MHe",
         "SkillRate": 0.0,
-        "SummonSurface": "",
+        "SummonSurface": [
+            "Model_PDLa_Mhe_toy"
+        ],
         "Type": "Summoned",
         "UniqueSkill": ""
     },
@@ -578,6 +610,35 @@
         "Type": "Summoned",
         "UniqueSkill": ""
     },
+    "SummonedTLSi": {
+        "Cost": 2,
+        "CounterSkill": "",
+        "DeathSkill": "",
+        "DoubleSkill": "",
+        "Flags": [
+            "SUMMONED"
+        ],
+        "KillRage": 0,
+        "MasterRage": 10,
+        "NormalSkill": "Skill_Summoned_TLSi_Bird_Normal",
+        "PassiveSkill": [],
+        "ProudSkill": "",
+        "RageBase": 0,
+        "RageRules": {
+            "a1": [
+                0,
+                0
+            ],
+            "a2": 0,
+            "a3": 0,
+            "a4": 0
+        },
+        "RoleModel": "Model_TLSi_Bird",
+        "SkillRate": 0.0,
+        "SummonSurface": "",
+        "Type": "Summoned",
+        "UniqueSkill": ""
+    },
     "SummonedTacticsCard_TombStone": {
         "Cost": 1,
         "CounterSkill": "",
@@ -602,6 +663,35 @@
             "a4": 0
         },
         "RoleModel": "Model_Enemy_Tombstone_Small",
+        "SkillRate": 0.0,
+        "SummonSurface": "",
+        "Type": "Summoned",
+        "UniqueSkill": ""
+    },
+    "SummonedXHMao": {
+        "Cost": 2,
+        "CounterSkill": "",
+        "DeathSkill": "",
+        "DoubleSkill": "",
+        "Flags": [
+            "SUMMONED"
+        ],
+        "KillRage": 0,
+        "MasterRage": 10,
+        "NormalSkill": "Skill_Summoned_XHMao_Wolf_Normal",
+        "PassiveSkill": [],
+        "ProudSkill": "",
+        "RageBase": 0,
+        "RageRules": {
+            "a1": [
+                0,
+                0
+            ],
+            "a2": 0,
+            "a3": 0,
+            "a4": 0
+        },
+        "RoleModel": "Model_XHMao_Wolf",
         "SkillRate": 0.0,
         "SummonSurface": "",
         "Type": "Summoned",

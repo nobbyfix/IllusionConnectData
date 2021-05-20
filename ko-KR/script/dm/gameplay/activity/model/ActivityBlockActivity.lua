@@ -382,6 +382,14 @@ function ActivityBlockActivity:getBgPath()
 	return string.format("asset/scene/%s.jpg", self:getActivityConfig().Bmg)
 end
 
+function ActivityBlockActivity:getFrontBgPath()
+	if self:getActivityConfig().Bmgupp then
+		return string.format("asset/sceneStory/%s", self:getActivityConfig().Bmgupp)
+	end
+
+	return ""
+end
+
 function ActivityBlockActivity:getChangeBgPath()
 	return string.format("asset/scene/%s.jpg", self:getActivityConfig().ChangeBmg)
 end

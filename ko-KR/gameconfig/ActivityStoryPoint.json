@@ -2783,6 +2783,214 @@
         ],
         "StoryLink": "eventstory_knightlight_04a"
     },
+    "StoryBookS01E01": {
+        "FirstReward": "StoryBookS01E01_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -100
+        ],
+        "Map": "StoryBookE01",
+        "Name": "StoryBookS01E01_Name",
+        "NextStoryPoint": [
+            "StoryBookS01E02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [
+            "StoryBookS01S04"
+        ],
+        "StoryLink": "eventstory_Logan_05a"
+    },
+    "StoryBookS01E02": {
+        "FirstReward": "StoryBookS01E02_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "StoryBookE01",
+        "Name": "StoryBookS01E02_Name",
+        "NextStoryPoint": [
+            "StoryBookS01E03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "StoryBookE01S04"
+        ],
+        "PreStoryPoint": [
+            "StoryBookS01E01"
+        ],
+        "StoryLink": "eventstory_Logan_06a"
+    },
+    "StoryBookS01E03": {
+        "FirstReward": "StoryBookS01E03_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "StoryBookE01",
+        "Name": "StoryBookS01E03_Name",
+        "NextStoryPoint": [
+            "StoryBookS01E04"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "StoryBookE01S08"
+        ],
+        "PreStoryPoint": [
+            "StoryBookS01E02"
+        ],
+        "StoryLink": "eventstory_Logan_07a"
+    },
+    "StoryBookS01E04": {
+        "FirstReward": "StoryBookS01E04_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -250
+        ],
+        "Map": "StoryBookE01",
+        "Name": "StoryBookS01E04_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "StoryBookE01S12"
+        ],
+        "PreStoryPoint": [
+            "StoryBookS01E03"
+        ],
+        "StoryLink": "eventstory_Logan_08a"
+    },
+    "StoryBookS01S01": {
+        "FirstReward": "StoryBookS01S01_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -100
+        ],
+        "Map": "StoryBookM01",
+        "Name": "StoryBookS01S01_Name",
+        "NextStoryPoint": [
+            "StoryBookS01S02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_Logan_01a"
+    },
+    "StoryBookS01S02": {
+        "FirstReward": "StoryBookS01S02_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "StoryBookM01",
+        "Name": "StoryBookS01S02_Name",
+        "NextStoryPoint": [
+            "StoryBookS01S03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "StoryBookM01S04"
+        ],
+        "PreStoryPoint": [
+            "StoryBookS01S01"
+        ],
+        "StoryLink": "eventstory_Logan_02a"
+    },
+    "StoryBookS01S03": {
+        "FirstReward": "StoryBookS01S03_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "StoryBookM01",
+        "Name": "StoryBookS01S03_Name",
+        "NextStoryPoint": [
+            "StoryBookS01S04"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "StoryBookM01S08"
+        ],
+        "PreStoryPoint": [
+            "StoryBookS01S02"
+        ],
+        "StoryLink": "eventstory_Logan_03a"
+    },
+    "StoryBookS01S04": {
+        "FirstReward": "StoryBookS01S04_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -250
+        ],
+        "Map": "StoryBookM01",
+        "Name": "StoryBookS01S04_Name",
+        "NextStoryPoint": [
+            "StoryBookS01E01"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "StoryBookM01S11"
+        ],
+        "PreStoryPoint": [
+            "StoryBookS01S03"
+        ],
+        "StoryLink": "eventstory_Logan_04a"
+    },
     "SunflowerS01S01": {
         "FirstReward": "SunflowerS01S01_Reward",
         "Icon": "s_album_story_1",

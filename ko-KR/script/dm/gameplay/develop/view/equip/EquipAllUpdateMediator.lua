@@ -158,6 +158,23 @@ function EquipAllUpdateMediator:onRegister()
 
 	CommonUtils.runActionEffect(leftBtn, "Node_1.leftBtn", "LeftRightArrowEffect", "anim1", true)
 	CommonUtils.runActionEffect(rightBtn, "Node_2.rightBtn", "LeftRightArrowEffect", "anim1", true)
+
+	local desc = self._nodeSkill:getChildByFullName("desc")
+	local size = desc:getContentSize()
+	local x, y = desc:getPosition()
+	local descScrollView = ccui.ScrollView:create()
+
+	descScrollView:setTouchEnabled(true)
+	descScrollView:setBounceEnabled(true)
+	descScrollView:setDirection(ccui.ScrollViewDir.vertical)
+	descScrollView:setContentSize(size)
+	descScrollView:setPosition(cc.p(x, y))
+	descScrollView:setAnchorPoint(cc.p(0, 1))
+	self._nodeSkill:addChild(descScrollView, desc:getLocalZOrder())
+
+	self._descScrollView = descScrollView
+
+	desc:setVisible(false)
 end
 
 function EquipAllUpdateMediator:setupView(data)
@@ -406,7 +423,7 @@ function EquipAllUpdateMediator:refreshSkill()
 		local skillName = self._nodeSkill:getChildByFullName("name")
 		local skillNameBg = self._nodeSkill:getChildByFullName("nameBg")
 		local skillLevel = self._nodeSkill:getChildByFullName("level")
-		local skillDesc = self._nodeSkill:getChildByFullName("desc")
+		local skillDesc = self._descScrollView
 
 		skillDesc:removeAllChildren()
 
@@ -489,8 +506,6 @@ function EquipAllUpdateMediator:refreshSkill()
 			skillTip:setPositionX(skillLevel:getPositionX() + skillLevel:getContentSize().width + 10)
 		end
 
-		skillDesc:setString("")
-
 		local width = skillDesc:getContentSize().width
 		local height = skillDesc:getContentSize().height
 		local label = ccui.RichText:createWithXML(desc, {})
@@ -500,9 +515,23 @@ function EquipAllUpdateMediator:refreshSkill()
 		label:setPosition(cc.p(0, height))
 		label:addTo(skillDesc)
 
-		local posY = label:getContentSize().height > 30 and 58 or 51
+		local descScrollView = skillDesc
+		local size = skillDesc:getContentSize()
+		size.height = label:getContentSize().height
 
-		skillDesc:setPositionY(posY)
+		if descScrollView:getContentSize().height < size.height then
+			descScrollView:setTouchEnabled(true)
+		else
+			size = descScrollView:getContentSize()
+
+			descScrollView:setTouchEnabled(false)
+		end
+
+		descScrollView:setInnerContainerSize(size)
+
+		local offy = size.height
+
+		label:setPositionY(size.height)
 	else
 		self._nodeSkill:setVisible(false)
 	end
@@ -610,6 +639,57 @@ function EquipAllUpdateMediator:refreshEquipCost()
 	if needCostControl == 1 then
 		local commonItemId = self._equipData:getCommonItemId()
 		local needNum = self._equipData:getEquipItemNum()
+
+		if self._equipData:getRarity() == 15 then
+			local pos = self._bagSystem:getComposePos(commonItemId)
+
+			if pos then
+				local imageName = composePosImage_icon[pos][1]
+				local equipCost = self._starPanel:getChildByFullName("equipCost")
+				local panel = equipCost:getChildByFullName("costBg")
+				local iconpanel = panel:getChildByFullName("iconpanel")
+
+				iconpanel:removeAllChildren()
+
+				local hasNum = self._equipSystem:getEquipStarUpItem().stiveNum
+				self._equipEnough = needNum <= hasNum
+
+				if self._equipEnough then
+					imageName = composePosImage_icon[pos][2]
+				end
+
+				local debrisIcon = ccui.ImageView:create(imageName, 1)
+
+				debrisIcon:addTo(iconpanel):center(iconpanel:getContentSize())
+
+				local colorNum1 = self._equipEnough and 1 or 7
+				local enoughImg = panel:getChildByFullName("bg.enoughImg")
+
+				enoughImg:setVisible(self._equipEnough)
+
+				local costPanel = panel:getChildByFullName("costPanel")
+
+				costPanel:setVisible(true)
+
+				local cost = costPanel:getChildByFullName("cost")
+				local costLimit = costPanel:getChildByFullName("costLimit")
+
+				cost:setString(hasNum)
+				costLimit:setString("/" .. needNum)
+				costLimit:setPositionX(cost:getContentSize().width)
+				costPanel:setContentSize(cc.size(cost:getContentSize().width + costLimit:getContentSize().width, 40))
+				cost:setTextColor(GameStyle:getColor(colorNum1))
+				costLimit:setTextColor(GameStyle:getColor(colorNum1))
+
+				local addImg = panel:getChildByFullName("addImg.Image_1")
+
+				addImg:setVisible(not self._equipEnough)
+				iconpanel:setGray(not self._equipEnough)
+				equipCost:setVisible(needNum > 0)
+
+				return
+			end
+		end
 
 		if needNum > 0 then
 			local equipCost = self._starPanel:getChildByFullName("equipCost")
@@ -1238,7 +1318,7 @@ function EquipAllUpdateMediator:onClickGrowUp(sender, eventType)
 
 	local needCostControl = self._equipData:getEquipNeedControl()
 
-	if needCostControl == 1 then
+	if needCostControl == 1 and self._equipData:getRarity() ~= 15 then
 		local commonItemId = self._equipData:getCommonItemId()
 		local needNum = self._equipData:getEquipItemNum()
 
@@ -1266,6 +1346,30 @@ function EquipAllUpdateMediator:onClickEquipItem()
 		local needNum = self._equipData:getEquipItemNum()
 
 		if needNum > 0 then
+			if self._equipData:getRarity() == 15 then
+				local pos = self._bagSystem:getComposePos(commonItemId)
+
+				if pos then
+					AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
+
+					local view = self:getInjector():getInstance("EquipStarLevelView")
+
+					self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+						transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+					}, {
+						useCompose = true,
+						equipId = self._equipId,
+						needNum = needNum,
+						itemId = commonItemId,
+						callback = function ()
+							self:refreshEquipCost()
+						end
+					}, nil))
+				end
+
+				return
+			end
+
 			AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
 
 			local itemData = self._equipData:getStarItem()[1]

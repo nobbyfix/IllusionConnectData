@@ -96,6 +96,12 @@ function MiniGameSystem:getActivityByGameType(gameType)
 	return nil
 end
 
+function MiniGameSystem:tryEnter()
+	local activity = self._activitySystem:getActivityByType(ActivityType.KMiniGame)
+
+	self:tryEnterByActivity(activity:getId())
+end
+
 function MiniGameSystem:tryEnterByActivityType(gameType)
 	if GameConfigs.forbiddenMiniGame then
 		self:dispatch(ShowTipEvent({

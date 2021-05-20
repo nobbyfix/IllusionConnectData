@@ -8,6 +8,12 @@ BagSelectMaterialMediator:has("_systemKeeper", {
 }):injectWith("SystemKeeper")
 
 local kBtnHandlers = {}
+local kCellType = {
+	kEquip = "equip",
+	kTitle = "title",
+	kItem = "item"
+}
+local kNum = 5
 
 function BagSelectMaterialMediator:initialize()
 	super.initialize(self)
@@ -32,17 +38,24 @@ function BagSelectMaterialMediator:onRegister()
 		}
 	})
 
-	self:mapEventListener(self:getEventDispatcher(), EVT_EQUIP_LOCK_SUCC, self, self.refreshViewByLock)
+	self:mapEventListener(self:getEventDispatcher(), EVT_EQUIP_LOCK_SUCC, self, self.refreshViewByEquipLock)
+	self:mapEventListener(self:getEventDispatcher(), EVT_ITEM_LOCK_SUCC, self, self.refreshViewByItemLock)
 end
 
 function BagSelectMaterialMediator:enterWithData(data)
 	self:setupTopInfoWidget()
-	self:initData(data)
 	self:initNodes()
-	self:setEquipView()
+
+	if data.useComposeItem then
+		self:initComposeData(data)
+		self:setComposeView()
+	else
+		self:initEquipData(data)
+		self:setEquipView()
+	end
 end
 
-function BagSelectMaterialMediator:initData(data)
+function BagSelectMaterialMediator:initEquipData(data)
 	self._data = data
 	self._curMaterial = data.curMaterial
 	self._equipType = EquipsShowType.kCompose
@@ -114,7 +127,7 @@ function BagSelectMaterialMediator:refreshData(isEnter)
 	else
 		self._selectEquipId = self._equipList[1] and self._equipList[1]:getEquipId() or ""
 		self._selectEquipUUId = self._equipList[1] and self._equipList[1]:getId() or ""
-		self._selectEquipEquipData = self._equipList[1] and self._equipList[1] or ""
+		self._selectEquipEquipData = self._equipList[1] and self._equipList[1] or nil
 	end
 end
 
@@ -158,6 +171,10 @@ function BagSelectMaterialMediator:initNodes()
 	self._itemCellLock = self:getView():getChildByFullName("cell_lock")
 
 	self._itemCellLock:setVisible(false)
+
+	self._cloneTitleCell = self:getView():getChildByFullName("cloneTitleCell")
+
+	self._cloneTitleCell:setVisible(false)
 end
 
 function BagSelectMaterialMediator:setEquipView()
@@ -466,30 +483,52 @@ function BagSelectMaterialMediator:createSelectImage()
 end
 
 function BagSelectMaterialMediator:onOkClicked()
-	if self._selectEquipId == "" then
-		self:close()
+	if self._data.useComposeItem then
+		if self._selectItemId == "" then
+			self:close()
 
-		return
-	end
+			return
+		end
 
-	if self._selectEquipEquipData:getHeroId() ~= "" then
-		self:dispatch(ShowTipEvent({
-			tip = Strings:get("bag_UI39")
-		}))
+		local entry = self._bagSystem:getEntryById(self._selectItemId)
 
-		return
-	end
+		if entry.unlock == false then
+			self:dispatch(ShowTipEvent({
+				tip = Strings:get("Equip_Ur_Lock_5")
+			}))
 
-	if not self._selectEquipEquipData:getUnlock() then
-		self:dispatch(ShowTipEvent({
-			tip = Strings:get("bag_UI38")
-		}))
+			return
+		end
 
-		return
-	end
+		if self._data.callBack then
+			self._data.callBack(self._data, nil, , self._selectItemId)
+		end
+	else
+		if self._selectEquipEquipData == nil then
+			self:close()
 
-	if self._data.callBack then
-		self._data.callBack(self._data, self._selectEquipId, self._selectEquipUUId)
+			return
+		end
+
+		if self._selectEquipEquipData:getHeroId() ~= "" then
+			self:dispatch(ShowTipEvent({
+				tip = Strings:get("bag_UI39")
+			}))
+
+			return
+		end
+
+		if not self._selectEquipEquipData:getUnlock() then
+			self:dispatch(ShowTipEvent({
+				tip = Strings:get("bag_UI38")
+			}))
+
+			return
+		end
+
+		if self._data.callBack then
+			self._data.callBack(self._data, self._selectEquipId, self._selectEquipUUId, nil)
+		end
 	end
 
 	self:close()
@@ -530,7 +569,21 @@ function BagSelectMaterialMediator:onUnlockOrLockEquip(sender, eventType, equipD
 	end
 end
 
-function BagSelectMaterialMediator:refreshViewByLock()
+function BagSelectMaterialMediator:onUnlockOrLockItem(sender, eventType, itemId)
+	if eventType == ccui.TouchEventType.began then
+		self._isReturn = true
+	elseif eventType == ccui.TouchEventType.ended and self._isReturn then
+		local params = {
+			viewtype = 2,
+			itemId = itemId
+		}
+		self._lockItemId = itemId
+
+		self._bagSystem:requestItemLock(params)
+	end
+end
+
+function BagSelectMaterialMediator:refreshViewByEquipLock()
 	local tip = self._doTip_Unlock and Strings:get("Equip_Lock_Tips_2") or Strings:get("Equip_Lock_Tips_1")
 
 	self:dispatch(ShowTipEvent({
@@ -542,4 +595,267 @@ function BagSelectMaterialMediator:refreshViewByLock()
 
 	self._equipView:reloadData()
 	self._equipView:setContentOffset(cc.p(0, offsetY))
+end
+
+function BagSelectMaterialMediator:refreshViewByItemLock()
+	if self._lockItemId then
+		local entry = self._bagSystem:getEntryById(self._lockItemId)
+
+		if entry then
+			local tip = entry.unlock and Strings:get("Equip_Ur_Lock_2") or Strings:get("Equip_Ur_Lock_1")
+
+			self:dispatch(ShowTipEvent({
+				tip = tip
+			}))
+
+			local offsetY = self._tableView:getContentOffset().y
+
+			self._tableView:reloadData()
+			self._tableView:setContentOffset(cc.p(0, offsetY))
+		end
+	end
+end
+
+function BagSelectMaterialMediator:initComposeData(data)
+	self._data = data
+	self._curMaterial = data.curMaterial
+	self._equipType = EquipsShowType.kCompose
+	self._callBack = data.callBack
+	self._index = data.index
+	self._curComposeId = data.curComposeId
+	self._cellsHeight = {}
+	self._cellNum = 0
+	self._selectItemId = ""
+	local haveCount = self._bagSystem:getItemCount(self._curMaterial.id)
+
+	if haveCount > 0 then
+		self._selectItemId = self._curMaterial.id
+		self._cellNum = self._cellNum + 1
+		self._cellsHeight[self._cellNum] = {
+			type = kCellType.kTitle,
+			str = Strings:get("Equip_Ur_Mix_1")
+		}
+		self._cellNum = self._cellNum + 1
+		local param = {
+			index = 1,
+			type = kCellType.kItem,
+			ids = {
+				self._curMaterial.id
+			}
+		}
+		self._cellsHeight[self._cellNum] = param
+	end
+
+	local repleaseItems = self._bagSystem:getAllComposeEntrys(self._curMaterial.id, self._curComposeId)
+	local repleaseNum = #repleaseItems
+
+	if repleaseNum > 0 then
+		self._cellNum = self._cellNum + 1
+		self._cellsHeight[self._cellNum] = {
+			type = kCellType.kTitle,
+			str = Strings:get("Equip_Ur_Mix_2")
+		}
+		local num = math.ceil(repleaseNum / kNum)
+
+		for i = 1, num do
+			self._cellNum = self._cellNum + 1
+			local ids = {}
+
+			for j = (i - 1) * kNum + 1, i * kNum do
+				if repleaseItems[j] then
+					ids[#ids + 1] = repleaseItems[j]
+
+					if self._selectItemId == "" then
+						local entry = self._bagSystem:getEntryById(repleaseItems[j])
+
+						if entry and entry.unlock then
+							self._selectItemId = repleaseItems[j]
+						end
+					end
+				end
+			end
+
+			local param = {
+				type = kCellType.kItem,
+				ids = ids,
+				index = i
+			}
+			self._cellsHeight[self._cellNum] = param
+		end
+	end
+end
+
+function BagSelectMaterialMediator:setComposeView()
+	self._cellWidth = self._cloneTitleCell:getContentSize().width
+	self._cellHeight = self._cloneTitleCell:getContentSize().height
+	self._itemHeight = self._cellClone:getContentSize().height
+
+	local function scrollViewDidScroll(view)
+		self._isReturn = false
+	end
+
+	local function cellSizeForTable(table, idx)
+		local param = self._cellsHeight[idx + 1]
+
+		if param.type == kCellType.kTitle then
+			return self._cellWidth, self._cellHeight
+		end
+
+		return self._cellWidth, self._itemHeight
+	end
+
+	local function numberOfCellsInTableView(table)
+		return self._cellNum
+	end
+
+	local function tableCellAtIndex(table, idx)
+		local index = idx + 1
+		local cell = table:dequeueCell()
+
+		if cell == nil then
+			cell = cc.TableViewCell:new()
+		end
+
+		cell:setTag(index)
+		self:createTeamCell(cell, index)
+
+		return cell
+	end
+
+	local tableView = cc.TableView:create(self._listPanel:getContentSize())
+	self._tableView = tableView
+
+	tableView:setDirection(cc.SCROLLVIEW_DIRECTION_VERTICAL)
+	tableView:setVerticalFillOrder(cc.TABLEVIEW_FILL_TOPDOWN)
+	tableView:setAnchorPoint(0, 0)
+	tableView:setDelegate()
+	tableView:setBounceable(false)
+	self._listPanel:addChild(tableView)
+	tableView:registerScriptHandler(numberOfCellsInTableView, cc.NUMBER_OF_CELLS_IN_TABLEVIEW)
+	tableView:registerScriptHandler(scrollViewDidScroll, cc.SCROLLVIEW_SCRIPT_SCROLL)
+	tableView:registerScriptHandler(cellSizeForTable, cc.TABLECELL_SIZE_FOR_INDEX)
+	tableView:registerScriptHandler(tableCellAtIndex, cc.TABLECELL_SIZE_AT_INDEX)
+	tableView:reloadData()
+end
+
+function BagSelectMaterialMediator:createTeamCell(cell, index)
+	cell:removeAllChildren()
+
+	local param = self._cellsHeight[index]
+	local height = self._itemHeight
+
+	if param.type == kCellType.kTitle then
+		height = self._cellHeight
+		local node = self._cloneTitleCell:clone()
+
+		node:setVisible(true)
+		node:addTo(cell):posite(0, 0)
+		node:getChildByFullName("titleNode.text"):setString(param.str)
+		node:getChildByFullName("line"):setVisible(index ~= 1)
+	elseif param.type == kCellType.kItem then
+		local indexTemp = param.index
+
+		for j = 1, #param.ids do
+			local itemId = param.ids[j]
+			local node = self._cellClone:clone()
+
+			node:setVisible(true)
+			node:addTo(cell):posite((j - 1) * self._cellClone:getContentSize().width, 0)
+
+			local tipPanel = node:getChildByFullName("tipPanel")
+
+			tipPanel:setVisible(false)
+
+			local itemPanel = node:getChildByFullName("iconPanel")
+			local amount = self._bagSystem:getItemCount(itemId)
+
+			if itemId == self._curComposeId then
+				amount = amount - 1
+			end
+
+			local item = IconFactory:createItemIcon({
+				id = itemId,
+				amount = amount
+			})
+
+			item:addTo(itemPanel):center(itemPanel:getContentSize())
+			item:setScale(0.83)
+
+			local node_lock = self._itemCellLock:clone()
+
+			node_lock:setVisible(true)
+			node_lock:addTo(node):center(node:getContentSize())
+
+			local Panel_unlock = node_lock:getChildByFullName("Panel_unlock")
+			local Panel_lock = node_lock:getChildByFullName("Panel_lock")
+			local entry = self._bagSystem:getEntryById(itemId)
+
+			if entry.item:getCanLock() then
+				Panel_unlock:addTouchEventListener(function (sender, eventType)
+					self:onUnlockOrLockItem(sender, eventType, itemId)
+				end)
+				Panel_lock:addTouchEventListener(function (sender, eventType)
+					self:onUnlockOrLockItem(sender, eventType, itemId)
+				end)
+				node:getChildByFullName("clickPanel"):setSwallowTouches(false)
+				node:getChildByFullName("clickPanel"):addTouchEventListener(function (sender, eventType)
+					self:onEatItemClicked(sender, eventType, itemId)
+				end)
+
+				if entry.unlock then
+					Panel_unlock:setVisible(true)
+					Panel_lock:setVisible(false)
+				else
+					Panel_unlock:setVisible(false)
+					Panel_lock:setVisible(true)
+				end
+			else
+				Panel_unlock:setVisible(false)
+				Panel_lock:setVisible(false)
+				node:getChildByFullName("clickPanel"):setSwallowTouches(false)
+				node:getChildByFullName("clickPanel"):addTouchEventListener(function (sender, eventType)
+					self:onEatItemClicked(sender, eventType, itemId)
+				end)
+			end
+
+			if self._selectItemId == itemId then
+				self._selectImage:setVisible(true)
+				self._selectImage:removeFromParent(false)
+				self._selectImage:addTo(node):center(node:getContentSize())
+			end
+		end
+	end
+end
+
+function BagSelectMaterialMediator:onEatItemClicked(sender, eventType, itemId)
+	if eventType == ccui.TouchEventType.began then
+		self.isDelay = false
+		local delayAct = cc.DelayTime:create(0.2)
+		local judgeShowAct = cc.CallFunc:create(function ()
+			self.isDelay = true
+		end)
+		local seqAct = cc.Sequence:create(delayAct, judgeShowAct)
+
+		sender:runAction(seqAct)
+
+		self._isReturn = true
+	elseif eventType == ccui.TouchEventType.ended then
+		if self.isDelay then
+			return
+		end
+
+		if self._isReturn then
+			self._selectItemId = itemId
+
+			self._selectImage:setVisible(true)
+			self._selectImage:removeFromParent(false)
+			self._selectImage:addTo(sender):center(sender:getContentSize())
+
+			local offsetY = self._tableView:getContentOffset().y
+
+			self._tableView:reloadData()
+			self._tableView:setContentOffset(cc.p(0, offsetY))
+			AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
+		end
+	end
 end

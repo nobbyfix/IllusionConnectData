@@ -9,6 +9,16 @@ function exports.GetCardCost(env, card)
 	return card:getActualCost()
 end
 
+function exports.SetHeroCardType(env, player, card, type)
+	local cardSystem = env.global["$CardSystem"]
+
+	if cardSystem == nil then
+		return nil
+	end
+
+	return cardSystem:setHeroCardType(player, card, type)
+end
+
 function exports.CARD_HERO_MARKED(env, flag)
 	return MakeFilter(function (card)
 		if card:getType() == "hero" then
@@ -138,6 +148,24 @@ function exports.ApplyHeroCardBuff(env, player, heroCard, buffConfig, buffEffect
 	local triggerBuff = TriggerBuff:new(buffConfig, buffEffects)
 
 	return cardSystem:applyBuffsOnHeroCard(player, heroCard, triggerBuff, env["$id"])
+end
+
+function exports.SelectCardBuffCount(env, heroCard, tag)
+	if not heroCard then
+		return 0
+	end
+
+	if heroCard:getType() ~= "hero" then
+		return 0
+	end
+
+	local cardSystem = env.global["$CardSystem"]
+
+	if cardSystem == nil then
+		return 0
+	end
+
+	return cardSystem:getTiggerBuffCountOnHeroCard(heroCard, tag)
 end
 
 function exports.LockHeroCards(env, player, cardfilter)

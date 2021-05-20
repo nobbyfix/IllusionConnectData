@@ -40,6 +40,7 @@ function MasterLeadStageSkillTip:initSubviews(view)
 end
 
 function MasterLeadStageSkillTip:refreshInfo(data)
+	self._masterData = data.masterData
 	self._skillId = data.skillId
 	self._leadStageLevel = data.stageLevel
 	self._isShowCurLv = data.isShowCurLv

@@ -17,6 +17,24 @@
         "UnlockAnima": "",
         "UnlockDesc": "Activity_UnlockDesc"
     },
+    "ActivityCalendar": {
+        "Condition": {
+            "LEVEL": 1
+        },
+        "Icon": "",
+        "IsPlay": "",
+        "Link": "",
+        "LongDesc": "",
+        "Name": "ActivityCalendar_Name",
+        "OutputDesc": "",
+        "ResourcesBanner": "",
+        "ShowCondition": {
+            "LEVEL": 1
+        },
+        "Tip": "Unlock_Level_Tips",
+        "UnlockAnima": "",
+        "UnlockDesc": ""
+    },
     "Activity_ClubStage": {
         "Condition": {
             "CLUBLEVEL": 3

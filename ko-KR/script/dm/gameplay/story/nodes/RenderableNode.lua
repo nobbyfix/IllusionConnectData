@@ -648,6 +648,27 @@ function DialogueNode:speak(args, callback)
 		location = "left"
 	end
 
+	local dialogImage = "jq_dialogue_bg_1.png"
+
+	if args.dialogImage ~= nil then
+		dialogImage = args.dialogImage
+	end
+
+	local imagePath = CommonUtils.getPathByType(args.pathType, dialogImage)
+
+	dialog:loadTexture(imagePath, ccui.TextureResType.localType)
+	dialog:setScale9Enabled(true)
+
+	if args.capInsets and #args.capInsets == 4 then
+		dialog:setCapInsets(cc.rect(args.capInsets[1], args.capInsets[2], args.capInsets[3], args.capInsets[4]))
+	else
+		dialog:setCapInsets(cc.rect(240, 114, 250, 119))
+	end
+
+	local winSize = cc.Director:getInstance():getWinSize()
+
+	dialog:setContentSize(cc.size(winSize.width - 2 * AdjustUtils.getFixOffsetX(), dialog:getContentSize().height))
+
 	local name, nameBg = nil
 
 	if location == "left" then

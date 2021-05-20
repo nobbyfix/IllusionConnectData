@@ -70,6 +70,7 @@ function EquipStarLevelMediator:onRegister()
 	})
 
 	self:mapEventListener(self:getEventDispatcher(), EVT_EQUIP_LOCK_SUCC, self, self.refreshViewByLock)
+	self:mapEventListener(self:getEventDispatcher(), EVT_ITEM_LOCK_SUCC, self, self.refreshViewByItemLock)
 end
 
 function EquipStarLevelMediator:enterWithData(data)
@@ -83,15 +84,26 @@ function EquipStarLevelMediator:initData(data)
 	self._callback = data.callback
 	self._equipId = data.equipId
 	self._needNum = data.needNum
+	self._itemId = data.itemId
+	self._useCompose = data.useCompose
 	self._equipData = self._equipSystem:getEquipById(self._equipId)
 
-	self:refreshData()
+	if self._useCompose then
+		self:refreshComposeData()
+	else
+		self:refreshData()
+	end
 
 	self._consumeTemp = {
 		items = {},
 		equips = {}
 	}
 	self._curExp = self._equipData:getOverflowStarExp()
+
+	if self._useCompose then
+		self._curExp = 0
+	end
+
 	self._eatExp = 0
 	self._addExp = 0
 	self._isAdd = true
@@ -143,6 +155,88 @@ function EquipStarLevelMediator:refreshData()
 			self._cellNum = self._cellNum + 1
 			local param = {
 				type = kCellType.kEquip,
+				index = i
+			}
+			self._cellsHeight[self._cellNum] = param
+		end
+	end
+end
+
+function EquipStarLevelMediator:refreshComposeData()
+	self._stiveItem = {}
+	self._cellsHeight = {}
+	self._cellNum = 0
+	local haveCount = self._bagSystem:getItemCount(self._itemId)
+
+	if haveCount > 0 then
+		self._cellNum = self._cellNum + 1
+		self._cellsHeight[self._cellNum] = {
+			type = kCellType.kTitle,
+			str = Strings:get("Equip_Ur_Mix_1")
+		}
+		self._cellNum = self._cellNum + 1
+		local param = {
+			index = 1,
+			type = kCellType.kItem
+		}
+		local entry = self._bagSystem:getEntryById(self._itemId)
+		self._stiveItem = {
+			{
+				eatCount = 0,
+				exp = 1,
+				itemId = self._itemId,
+				allCount = entry.count,
+				quality = entry.item:getQuality(),
+				sort = entry.item:getSort()
+			}
+		}
+		self._cellsHeight[self._cellNum] = param
+	end
+
+	local repleaseItems = self._bagSystem:getAllComposeEntrys(self._itemId)
+	self._repleaseItems = repleaseItems
+	local repleaseNum = #repleaseItems
+	self._composeItems = {}
+
+	if repleaseNum > 0 then
+		self._cellNum = self._cellNum + 1
+		self._cellsHeight[self._cellNum] = {
+			type = kCellType.kTitle,
+			str = Strings:get("Equip_Ur_Mix_2")
+		}
+
+		for i = 1, repleaseNum do
+			local entry = self._bagSystem:getEntryById(repleaseItems[i])
+
+			if entry and entry.item and entry.count > 0 then
+				local item = {
+					eatCount = 0,
+					exp = 1,
+					itemId = repleaseItems[i],
+					allCount = entry.count,
+					quality = entry.item:getQuality(),
+					sort = entry.item:getSort(),
+					unlock = entry.unlock and 1 or 0
+				}
+
+				table.insert(self._composeItems, item)
+				table.sort(self._composeItems, function (a, b)
+					if a.unlock == b.unlock then
+						return a.sort < b.sort
+					end
+
+					return b.unlock < a.unlock
+				end)
+			end
+		end
+
+		local num = math.ceil(repleaseNum / kNum)
+
+		for i = 1, num do
+			self._cellNum = self._cellNum + 1
+			local param = {
+				forCompose = true,
+				type = kCellType.kItem,
 				index = i
 			}
 			self._cellsHeight[self._cellNum] = param
@@ -207,6 +301,19 @@ function EquipStarLevelMediator:initView()
 	local text = self._ruleNode:getChildByFullName("text")
 
 	text:setString(Strings:get("Equip_UI73"))
+
+	if self._useCompose then
+		local pos = self._bagSystem:getComposePos(self._itemId)
+		local iconNode = self._infoNode:getChildByFullName("Node")
+
+		iconNode:removeAllChildren()
+
+		local debrisIcon = ccui.ImageView:create(composePosImage_icon[pos][2], 1)
+
+		debrisIcon:addTo(iconNode)
+		self._infoNode:getChildByFullName("text1"):setVisible(false)
+		text:setString(Strings:get("Equip_Ur_Mix_3"))
+	end
 
 	local backimg = self._ruleNode:getChildByFullName("backimg")
 
@@ -283,9 +390,14 @@ function EquipStarLevelMediator:createTeamCell(cell, index)
 		node:getChildByFullName("line"):setVisible(index ~= 1)
 	elseif param.type == kCellType.kItem then
 		local indexTemp = param.index
+		local items = self._stiveItem
+
+		if param.forCompose then
+			items = self._composeItems
+		end
 
 		for j = 1, kNum do
-			local itemData = self._stiveItem[kNum * (indexTemp - 1) + j]
+			local itemData = items[kNum * (indexTemp - 1) + j]
 
 			if itemData then
 				local node = self._itemClone:clone()
@@ -318,10 +430,43 @@ function EquipStarLevelMediator:createTeamCell(cell, index)
 				expLabel:setPositionX(0)
 				numLabel:setPositionX(expLabel:getContentSize().width)
 				numPanel:setContentSize(cc.size(expLabel:getContentSize().width + numLabel:getContentSize().width, 30))
-				itemPanel:setSwallowTouches(false)
-				itemPanel:addTouchEventListener(function (sender, eventType)
-					self:onEatItemClicked(sender, eventType, true)
-				end)
+
+				local node_lock = self._itemCellLock:clone()
+
+				node_lock:setVisible(true)
+				node_lock:addTo(node):posite(55, 75)
+
+				local Panel_unlock = node_lock:getChildByFullName("Panel_unlock")
+				local Panel_lock = node_lock:getChildByFullName("Panel_lock")
+				local entry = self._bagSystem:getEntryById(itemData.itemId)
+
+				if entry.item:getCanLock() then
+					Panel_unlock:addTouchEventListener(function (sender, eventType)
+						self:onUnlockOrLockItem(sender, eventType, itemData)
+					end)
+					Panel_lock:addTouchEventListener(function (sender, eventType)
+						self:onUnlockOrLockItem(sender, eventType, itemData)
+					end)
+
+					if entry.unlock then
+						Panel_unlock:setVisible(true)
+						Panel_lock:setVisible(false)
+						itemPanel:setSwallowTouches(false)
+						itemPanel:addTouchEventListener(function (sender, eventType)
+							self:onEatItemClicked(sender, eventType, true)
+						end)
+					else
+						Panel_unlock:setVisible(false)
+						Panel_lock:setVisible(true)
+					end
+				else
+					Panel_unlock:setVisible(false)
+					Panel_lock:setVisible(false)
+					itemPanel:setSwallowTouches(false)
+					itemPanel:addTouchEventListener(function (sender, eventType)
+						self:onEatItemClicked(sender, eventType, true)
+					end)
+				end
 
 				local minusBtn = node:getChildByFullName("minusbtn")
 
@@ -475,7 +620,7 @@ end
 function EquipStarLevelMediator:refreshView()
 	self._progressLabel:setString(self._curExp .. "/" .. self._needNum)
 	self._loadingBar:setPercent(self._curExp / self._needNum * 100)
-	self._emptyTip:setVisible(#self._stiveItem == 0 and #self._equipList == 0)
+	self._emptyTip:setVisible(#self._stiveItem == 0 and self._equipList and #self._equipList == 0 and self._repleaseItemsand and #self._repleaseItemsand == 0)
 	self._sureWidget:getButton():setGray(self._curExp < self._needNum)
 end
 
@@ -500,8 +645,13 @@ end
 
 function EquipStarLevelMediator:getQuickItems()
 	local selectData = self._equipSystem:getSelectData()
+	local canUseStive = selectData.canUseStive
 
-	if selectData.canUseStive == "1" then
+	if self._useCompose then
+		canUseStive = selectData.canUseStone
+	end
+
+	if canUseStive == "1" then
 		for i = 1, #self._stiveItem do
 			if self._needNum <= self._curExp then
 				return self._curExp
@@ -528,32 +678,65 @@ function EquipStarLevelMediator:getQuickItems()
 		end
 	end
 
-	for i = 1, #self._equipList do
-		if self._needNum <= self._curExp then
-			return self._curExp
+	if self._useCompose and selectData.canUseCompose == "1" then
+		for i = 1, #self._composeItems do
+			if self._needNum <= self._curExp then
+				return self._curExp
+			end
+
+			local itemData = self._composeItems[i]
+			local itemId = itemData.itemId
+			local entry = self._bagSystem:getEntryById(itemId)
+
+			if entry and entry.unlock == true then
+				local exp = itemData.exp
+				local allCount = itemData.allCount
+				local eatCount = self._consumeTemp.items[itemId] and self._consumeTemp.items[itemId].eatCount or 0
+
+				for jj = eatCount + 1, allCount do
+					if self._needNum <= self._curExp then
+						return self._curExp
+					end
+
+					self._curExp = self._curExp + exp
+					self._composeItems[i].eatCount = self._composeItems[i].eatCount + 1
+					self._consumeTemp.items[itemId] = {
+						eatCount = self._composeItems[i].eatCount,
+						exp = exp
+					}
+				end
+			end
 		end
+	end
 
-		local equip = self._equipList[i]
-		local unlock = equip:getUnlock()
-		local rarity = equip:getRarity()
-		local heroId = equip:getHeroId()
-		local star = equip:getStar()
-		local onlyOneStar = selectData.onlyOneStar == "1"
-		local canUse = unlock and heroId == ""
+	if self._equipList then
+		for i = 1, #self._equipList do
+			if self._needNum <= self._curExp then
+				return self._curExp
+			end
 
-		if canUse and selectData[tostring(rarity)] == "1" and (not onlyOneStar or onlyOneStar and star == 1) then
-			local itemData = equip.expData
-			local eatCount = itemData.eatCount
-			local id = itemData.id
-			local exp = itemData.exp
+			local equip = self._equipList[i]
+			local unlock = equip:getUnlock()
+			local rarity = equip:getRarity()
+			local heroId = equip:getHeroId()
+			local star = equip:getStar()
+			local onlyOneStar = selectData.onlyOneStar == "1"
+			local canUse = unlock and heroId == ""
 
-			if eatCount == 0 then
-				self._curExp = self._curExp + exp
-				self._equipList[i].expData.eatCount = self._equipList[i].expData.eatCount + 1
-				self._consumeTemp.equips[id] = {
-					eatCount = self._equipList[i].expData.eatCount,
-					exp = exp
-				}
+			if canUse and selectData[tostring(rarity)] == "1" and (not onlyOneStar or onlyOneStar and star == 1) then
+				local itemData = equip.expData
+				local eatCount = itemData.eatCount
+				local id = itemData.id
+				local exp = itemData.exp
+
+				if eatCount == 0 then
+					self._curExp = self._curExp + exp
+					self._equipList[i].expData.eatCount = self._equipList[i].expData.eatCount + 1
+					self._consumeTemp.equips[id] = {
+						eatCount = self._equipList[i].expData.eatCount,
+						exp = exp
+					}
+				end
 			end
 		end
 	end
@@ -594,7 +777,9 @@ function EquipStarLevelMediator:onClickSelect()
 
 	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
 		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-	}, nil, ))
+	}, {
+		useCompose = self._useCompose
+	}, nil))
 end
 
 function EquipStarLevelMediator:onOkClicked()
@@ -652,6 +837,10 @@ end
 function EquipStarLevelMediator:getCostNumByItemCount(count, sender)
 	local itemId = sender.data.itemId
 
+	if self._useCompose then
+		return 1
+	end
+
 	if not itemId then
 		return 1
 	end
@@ -683,6 +872,10 @@ end
 
 function EquipStarLevelMediator:getSpeedByItemCount(count, sender)
 	local itemId = sender.data.itemId
+
+	if self._useCompose then
+		return 0.2
+	end
 
 	if not itemId then
 		return 0.2
@@ -843,6 +1036,10 @@ end
 function EquipStarLevelMediator:resetTableView()
 	self._eatExp = 0
 	self._curExp = self._equipData:getOverflowStarExp()
+
+	if self._useCompose then
+		self._curExp = 0
+	end
 
 	for i, value in pairs(self._consumeTemp.items) do
 		self._curExp = self._curExp + value.eatCount * value.exp
@@ -1192,4 +1389,42 @@ function EquipStarLevelMediator:refreshViewByLock()
 	self._tableView:reloadData()
 	self._tableView:setContentOffset(cc.p(0, offsetY))
 	self:refreshView()
+end
+
+function EquipStarLevelMediator:onUnlockOrLockItem(sender, eventType, itemData)
+	if eventType == ccui.TouchEventType.began then
+		self._isReturn = true
+	elseif eventType == ccui.TouchEventType.ended and self._isReturn then
+		local params = {
+			viewtype = 2,
+			itemId = itemData.itemId
+		}
+		self._itemData_change = itemData
+
+		self._bagSystem:requestItemLock(params)
+	end
+end
+
+function EquipStarLevelMediator:refreshViewByItemLock()
+	if self._itemData_change then
+		local entry = self._bagSystem:getEntryById(self._itemData_change.itemId)
+
+		if self._itemData_change.eatCount > 0 and entry.unlock == false then
+			self._consumeTemp.items[self._itemData_change.itemId] = nil
+			self._itemData_change.eatCount = 0
+		end
+
+		local tip = entry.unlock and Strings:get("Equip_Ur_Lock_2") or Strings:get("Equip_Ur_Lock_1")
+
+		self:dispatch(ShowTipEvent({
+			tip = tip
+		}))
+		self:resetTableView()
+
+		local offsetY = self._tableView:getContentOffset().y
+
+		self._tableView:reloadData()
+		self._tableView:setContentOffset(cc.p(0, offsetY))
+		self:refreshView()
+	end
 end

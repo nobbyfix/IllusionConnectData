@@ -1545,6 +1545,73 @@ function BattleUIMediator:adjustCardCost(idxInSlot, detail)
 	end
 end
 
+function BattleUIMediator:updateCardInfo(idxInSlot, detail)
+	local card = self._cardArray:getCardAtIndex(idxInSlot)
+
+	if card then
+		card:updateCardInfo(detail)
+	end
+end
+
+function BattleUIMediator:flyBallToCard(role, idxInSlot)
+	local card = self._cardArray:getCardAtIndex(idxInSlot)
+
+	if card then
+		local posx, posy = role:getView():getPosition()
+		local pos_org_word = role:getView():getParent():convertToWorldSpace(cc.p(posx, posy + 80))
+		local posx, posy = card:getView():getPosition()
+		local pos_des_word = card:getView():getParent():convertToWorldSpace(cc.p(posx, posy + 15))
+		local rootNode = cc.Node:create()
+		local content = cc.Node:create()
+
+		content:addTo(rootNode)
+		content:center(rootNode:getContentSize())
+
+		local flyBall = cc.MovieClip:create("guangqiu_lindaguangquan", "BattleMCGroup")
+
+		flyBall:addTo(content)
+		flyBall:offset(110, -20)
+		content:setRotation(4)
+		flyBall:addCallbackAtFrame(45, function ()
+			flyBall:stop()
+		end)
+
+		local director = cc.Director:getInstance()
+		local pos_01 = cc.Node:create()
+
+		pos_01:setPosition(pos_org_word)
+		pos_01:addTo(director:getRunningScene())
+
+		local pos_02 = cc.Node:create()
+
+		pos_02:setPosition(pos_des_word)
+		pos_02:addTo(director:getRunningScene())
+		rootNode:addTo(pos_01)
+		rootNode:center(pos_01:getContentSize())
+
+		local position_01 = cc.p(pos_01:getPosition())
+		local position_02 = cc.p(pos_02:getPosition())
+		local radio = math.abs(position_02.x - position_01.x) / math.abs(position_02.y - position_01.y)
+		local direction = position_02.x - position_01.x < 0 and 1 or -1
+		local distance = math.sqrt(math.pow(math.abs(position_02.x - position_01.x), 2) + math.pow(math.abs(position_02.y - position_01.y), 2))
+		local distance = distance - 240
+
+		rootNode:setRotation(math.atan(radio * direction) * 180 / math.pi)
+
+		local delay01 = cc.DelayTime:create(0.3333333333333333)
+		local delay02 = cc.DelayTime:create(0.16666666666666666)
+		local sequence = cc.Sequence:create(delay01, cc.MoveTo:create(0.16666666666666666, cc.p(0, -distance)), cc.CallFunc:create(function ()
+			card:getView():runAction(cc.Sequence:create(cc.ScaleTo:create(0.08333333333333333, 1.12, 1.12), cc.ScaleTo:create(0.03333333333333333, 1, 1)))
+		end), delay02, cc.CallFunc:create(function ()
+			rootNode:removeFromParent()
+			pos_01:removeFromParent()
+			pos_02:removeFromParent()
+		end))
+
+		content:runAction(sequence)
+	end
+end
+
 function BattleUIMediator:adjustCardBuff(idxInSlot)
 	local card = self._cardArray:getCardAtIndex(idxInSlot)
 
