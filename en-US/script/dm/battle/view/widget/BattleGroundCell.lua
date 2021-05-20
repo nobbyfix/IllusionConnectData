@@ -47,6 +47,7 @@ function BattleGroundCell:initialize(args)
 	self:_setupView(args)
 
 	self._targetViewRec = {}
+	self._occupiedHeros = {}
 	self._trapMap = {}
 end
 
@@ -84,9 +85,23 @@ function BattleGroundCell:setScale(sx, sy)
 	self._displayNode:setScale(sx, sy)
 end
 
-function BattleGroundCell:setStatus(status)
+function BattleGroundCell:setStatus(status, heroModel)
 	if self:isLocked() and status == GroundCellStatus.NORMAL then
 		return
+	end
+
+	if status == GroundCellStatus.NORMAL then
+		for k, v in pairs(self._occupiedHeros) do
+			if heroModel == v and heroModel then
+				table.remove(self._occupiedHeros, k)
+			end
+		end
+
+		if #self._occupiedHeros > 0 then
+			self:setStatus(GroundCellStatus.OCCUPIED)
+
+			return
+		end
 	end
 
 	self.normalShow:setVisible(status == GroundCellStatus.NORMAL)
@@ -104,8 +119,65 @@ function BattleGroundCell:setStatus(status)
 	self.status = status
 end
 
+function BattleGroundCell:setOccupiedHero(heroModel)
+	self._occupiedHeros = self._occupiedHeros or {}
+	self._occupiedHeros[#self._occupiedHeros + 1] = heroModel
+
+	self:setStatus(GroundCellStatus.OCCUPIED)
+end
+
+function BattleGroundCell:setOccupiedHeros(occupiedHeros)
+	self._occupiedHeros = occupiedHeros
+end
+
+function BattleGroundCell:getOccupiedHeros()
+	return self._occupiedHeros
+end
+
+function BattleGroundCell:getFrontOccupiedHero()
+	if self._occupiedHeros and #self._occupiedHeros > 0 then
+		return self._occupiedHeros[#self._occupiedHeros]
+	end
+end
+
 function BattleGroundCell:getStatus()
 	return self.status
+end
+
+function BattleGroundCell:canBeSitByCard(card)
+	if not card then
+		return false
+	end
+
+	if card.getCardInfo then
+		local cardInfo = card:getCardInfo()
+
+		if cardInfo then
+			if cardInfo.cardType == HeroCardType.Super then
+				if self:getStatus() ~= GroundCellStatus.OCCUPIED then
+					return true
+				else
+					local occupHero = self:getFrontOccupiedHero()
+
+					if occupHero then
+						if occupHero:getRoleType() == RoleType.Master then
+							return false
+						elseif occupHero:getIsSummond() then
+							return true
+						end
+
+						return false
+					else
+						return self:getStatus() ~= GroundCellStatus.OCCUPIED
+					end
+				end
+			else
+				return self:getStatus() ~= GroundCellStatus.OCCUPIED
+			end
+		end
+	end
+
+	return false
 end
 
 function BattleGroundCell:setRelPosition(relPos, extraZ)

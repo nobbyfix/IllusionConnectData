@@ -377,14 +377,14 @@ function BattleGroundLayer:relPosWithZoneAndOffset(zone, x, y)
 	}
 end
 
-function BattleGroundLayer:findNearbyEmpty(point)
+function BattleGroundLayer:findNearbyEmpty(point, sender)
 	local shortestLength = 70
 	local retPos = -1
 
 	for idx, __ in ipairs(self._leftGroundCells) do
 		local cell = self._leftGroundCells[idx]
 
-		if cell:getStatus() ~= GroundCellStatus.OCCUPIED and not cell:isLocked() then
+		if cell:canBeSitByCard(sender) and not cell:isLocked() then
 			local cellPos = cc.p(cell:getDisplayNode():getPosition())
 			local parentNode = cell:getDisplayNode():getParent()
 			cellPos = parentNode:convertToWorldSpace(cellPos)
@@ -414,7 +414,7 @@ function BattleGroundLayer:checkTouchCollision(sender, point)
 	local retPos = -1
 
 	if cc.rectContainsPoint(self._leftGroundRect, point) then
-		retPos = self:findNearbyEmpty(point)
+		retPos = self:findNearbyEmpty(point, sender)
 	end
 
 	for idx, cell in ipairs(self._leftGroundCells) do
@@ -462,15 +462,39 @@ function BattleGroundLayer:checkCanPushSkill(sender, point)
 	return false
 end
 
-function BattleGroundLayer:resetGroundCell(cellId, status)
+function BattleGroundLayer:resetGroundCell(cellId, status, heroModel)
 	if cellId > 0 then
-		self._leftGroundCells[cellId]:setStatus(status)
+		self._leftGroundCells[cellId]:setStatus(status, heroModel)
 
 		self._leftTeam[cellId] = nil
 	else
-		self._rightGroundCells[-cellId]:setStatus(status)
+		self._rightGroundCells[-cellId]:setStatus(status, heroModel)
 
 		self._rightTeam[-cellId] = nil
+	end
+end
+
+function BattleGroundLayer:setCellOccupiedHero(cellId, heroModel)
+	if cellId > 0 then
+		self._leftGroundCells[cellId]:setOccupiedHero(heroModel)
+	else
+		self._rightGroundCells[-cellId]:setOccupiedHero(heroModel)
+	end
+end
+
+function BattleGroundLayer:swipCellOccupiedHero(orgCellId, descCellId, heroModel)
+	if orgCellId > 0 then
+		local oldOccupiedHeros = self._leftGroundCells[orgCellId]:getOccupiedHeros()
+		local newOccupiedHeros = self._leftGroundCells[descCellId]:getOccupiedHeros()
+
+		self._leftGroundCells[orgCellId]:setOccupiedHeros(newOccupiedHeros)
+		self._leftGroundCells[descCellId]:setOccupiedHeros(oldOccupiedHeros)
+	else
+		local oldOccupiedHeros = self._rightGroundCells[-orgCellId]:getOccupiedHeros()
+		local newOccupiedHeros = self._rightGroundCells[-descCellId]:getOccupiedHeros()
+
+		self._rightGroundCells[-orgCellId]:setOccupiedHeros(newOccupiedHeros)
+		self._rightGroundCells[-descCellId]:setOccupiedHeros(oldOccupiedHeros)
 	end
 end
 
@@ -623,7 +647,7 @@ function BattleGroundLayer:onTouchBegan(touch, event)
 		aabb = cc.rect(wpos.x - aabb.width / 2, wpos.y - aabb.height / 2, aabb.width, aabb.height)
 
 		if cc.rectContainsPoint(aabb, pt) then
-			if cell:getStatus() == GroundCellStatus.OCCUPIED and self._leftTeam[i] then
+			if not cell:canBeSitByCard(self._heroCard) and self._leftTeam[i] then
 				return false
 
 				self._originTouchPos = pt

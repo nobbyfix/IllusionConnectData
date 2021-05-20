@@ -124,12 +124,23 @@ function FormationSystem:_settleUnit(player, unit, cellId, animation, isUserCmd,
 	return unit
 end
 
-function FormationSystem:SpawnUnit(player, unitData, cellNo, animation, isUserCmd, isMasterOrCost)
+function FormationSystem:SpawnUnit(player, unitData, cellNo, animation, isUserCmd, isMasterOrCost, heroCardType)
 	local cellId = makeCellId(player:getSide(), cellNo)
 	local battleField = self._battleField
 
 	if not battleField:isEmptyCell(cellId) then
-		return false, "InvalidTargetPosition"
+		if heroCardType == HeroCardType.Normal then
+			return false, "InvalidTargetPosition"
+		else
+			local cell = battleField:getCellById(cellId)
+			local oldRes = cell:getResident()
+
+			if oldRes:isSummoned() then
+				cell:setOldResident(oldRes)
+			else
+				return false, "InvalidTargetPosition"
+			end
+		end
 	end
 
 	local entityManager = self._entityManager
@@ -163,6 +174,44 @@ local function extend(values, constants)
 	for name, value in _G.pairs(constants) do
 		_G.rawset(values, name, value)
 	end
+end
+
+function FormationSystem:SpawnByTransform(player, unit, location, isMarkedSummon)
+	local transformData = unit:getTransformData()
+
+	if not transformData then
+		return
+	end
+
+	local cellId = self._battleField:findEmptyCellId(player:getSide(), location)
+
+	if not cellId then
+		return false, "InvalidSpawnPosition"
+	end
+
+	local unit = unit
+	local targetId = nil
+	local prefix = unit:getId() .. "_r"
+	local entityManager = self._entityManager
+	local index = 0
+
+	repeat
+		targetId = prefix .. index
+		index = index + 1
+	until entityManager:fetchEntity(targetId) == nil
+
+	local newUnit = entityManager:copyHeroUnit(unit, targetId, 1)
+
+	newUnit:transformWithData(transformData)
+	newUnit:setIsSummoned(isMarkedSummon)
+
+	local animation = {
+		dur = 1000,
+		name = anim or "init"
+	}
+	animation = nil
+
+	self:_settleUnit(player, newUnit, cellId, animation, false, "SpawnUnit")
 end
 
 function FormationSystem:summon(actor, source, summonId, summonFactor, location)

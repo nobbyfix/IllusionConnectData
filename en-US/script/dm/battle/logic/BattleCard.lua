@@ -154,6 +154,14 @@ HeroCard:has("_heroData", {
 HeroCard:has("_cardAI", {
 	is = "r"
 })
+HeroCard:has("_cardType", {
+	is = "rw"
+})
+
+HeroCardType = {
+	Super = 2,
+	Normal = 1
+}
 
 function HeroCard:initWithData(data)
 	super.initWithData(self, data)
@@ -163,8 +171,13 @@ function HeroCard:initWithData(data)
 	self._type = CARD_TYPE.kHeroCard
 	self._cardIndex = nil
 	self._triggerBuffs = {}
+	self._cardType = data.cardType or HeroCardType.Normal
 
 	return self
+end
+
+function HeroCard:setCardType(type)
+	self._cardType = type
 end
 
 function HeroCard:getType()
@@ -184,7 +197,7 @@ function HeroCard:usedByPlayer(player, battleContext, trgtCellNo, cost, wontEven
 		name = "spawn"
 	}
 	local formationSystem = battleContext:getObject("FormationSystem")
-	local unit, detail = formationSystem:SpawnUnit(player, self._heroData, trgtCellNo, animation, not wontEvent, cost or self:getActualCost())
+	local unit, detail = formationSystem:SpawnUnit(player, self._heroData, trgtCellNo, animation, not wontEvent, cost or self:getActualCost(), self._cardType)
 
 	if not unit then
 		return unit, detail
@@ -195,7 +208,8 @@ function HeroCard:usedByPlayer(player, battleContext, trgtCellNo, cost, wontEven
 		cost = self._rawCost,
 		cardAI = self._cardAI,
 		hero = self._heroData,
-		cardIndex = self._cardIndex
+		cardIndex = self._cardIndex,
+		cardType = self._cardType
 	})
 
 	local cardSystem = battleContext:getObject("CardSystem")
@@ -231,6 +245,7 @@ function HeroCard:dumpInformation()
 		addHurtRate = data.addHurtRate
 	}
 	info.type = "hero"
+	info.cardType = self._cardType
 
 	if data and data.skills and data.skills.unique then
 		info.unique = data.skills.unique.id
@@ -256,6 +271,10 @@ end
 
 function HeroCard:addTriggerBuff(triggerBuff)
 	self._triggerBuffs[#self._triggerBuffs + 1] = triggerBuff
+end
+
+function HeroCard:getTriggerBuff()
+	return self._triggerBuffs
 end
 
 function HeroCard:isGenre(genre)

@@ -16458,13 +16458,6 @@
                             "rate": 1
                         },
                         "e": "sound"
-                    },
-                    {
-                        "d": {
-                            "act": "start",
-                            "id": "Movie_LSha_Skill2"
-                        },
-                        "e": "skillMovie"
                     }
                 ],
                 "f": 0
@@ -16574,18 +16567,6 @@
                 "evts": [
                     {
                         "d": {
-                            "act": "start",
-                            "id": "Movie_LSha_Skill3"
-                        },
-                        "e": "skillMovie"
-                    }
-                ],
-                "f": 0
-            },
-            {
-                "evts": [
-                    {
-                        "d": {
                             "file": "Se_Skill_Spell_6",
                             "rate": 1
                         },
@@ -16646,7 +16627,7 @@
                 "evts": [
                     {
                         "d": {
-                            "act": "hurt"
+                            "act": "hurt1"
                         },
                         "e": "hit"
                     },
@@ -16666,13 +16647,6 @@
         "events": [
             {
                 "evts": [
-                    {
-                        "d": {
-                            "act": "start",
-                            "id": "Movie_LSha_Skill4"
-                        },
-                        "e": "skillMovie"
-                    },
                     {
                         "d": {
                             "file": "Se_Skill_Whoosh_9",
@@ -16777,13 +16751,6 @@
                             "rate": 1
                         },
                         "e": "sound"
-                    },
-                    {
-                        "d": {
-                            "act": "start",
-                            "id": "Movie_LSha_Skill2"
-                        },
-                        "e": "skillMovie"
                     }
                 ],
                 "f": 0
@@ -16893,18 +16860,6 @@
                 "evts": [
                     {
                         "d": {
-                            "act": "start",
-                            "id": "Movie_LSha_Skill3"
-                        },
-                        "e": "skillMovie"
-                    }
-                ],
-                "f": 0
-            },
-            {
-                "evts": [
-                    {
-                        "d": {
                             "file": "Se_Skill_Spell_6",
                             "rate": 1
                         },
@@ -16965,7 +16920,7 @@
                 "evts": [
                     {
                         "d": {
-                            "act": "hurt"
+                            "act": "hurt1"
                         },
                         "e": "hit"
                     },
@@ -16985,13 +16940,6 @@
         "events": [
             {
                 "evts": [
-                    {
-                        "d": {
-                            "act": "start",
-                            "id": "Movie_LSha_Skill4"
-                        },
-                        "e": "skillMovie"
-                    },
                     {
                         "d": {
                             "file": "Se_Skill_Whoosh_9",
@@ -31117,6 +31065,138 @@
             }
         ]
     },
+    "alna_toy_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_SRen_26",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 4
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_ALNa_Toy_Magic_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 7
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 18
+            }
+        ]
+    },
+    "alna_toy_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_SRen_27",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_ALNa_Toy_Whoosh_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 4
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_ALNa_Toy_Magic_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 11
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 22
+            }
+        ]
+    },
+    "alna_toy_skill3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_ALNa_28_Cut",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_ALNa_Toy_Magic_3",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 6
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 26
+            }
+        ]
+    },
     "alsi_forest_skill1": {
         "events": [
             {
@@ -31610,6 +31690,190 @@
                     }
                 ],
                 "f": 37
+            }
+        ]
+    },
+    "ansi_toy_mhe_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_PDLa_Toy_Mohe_Lick",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 2
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 5
+            }
+        ]
+    },
+    "ansi_toy_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_PDLa_26",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 2
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_PDLa_Toy_Lick_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 3
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 9
+            }
+        ]
+    },
+    "ansi_toy_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_PDLa_27_Stretch",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_PDLa_Toy_Whoosh_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 2
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_PDLa_Toy_Lick_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 22
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 23
+            }
+        ]
+    },
+    "ansi_toy_skill3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_PDLa_28",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 2
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_PDLa_Toy_Magic",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 8
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_PDLa_Toy_Whoosh_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 24
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_PDLa_Toy_Bite",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 34
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 44
             }
         ]
     },
@@ -33689,6 +33953,454 @@
             }
         ]
     },
+    "lbi_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_XHMao_Knife",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 9
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 11
+            }
+        ]
+    },
+    "lbi_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_XHMao_27",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 2
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_XHMao_Gun_Shot_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 15
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_XHMao_Gun_Hit",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 18
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 19
+            }
+        ]
+    },
+    "lbi_skill3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_XHMao_28",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_XHMao_Whoosh",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 12
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_XHMao_Gun_Shot_3",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 21
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 38
+            }
+        ]
+    },
+    "lbi_skill3_1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_XHMao_28",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_XHMao_Whoosh",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 14
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_XHMao_Gun_Shot_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 22
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 38
+            }
+        ]
+    },
+    "lda_bird_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_TLSi_Bird_Hit",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 7
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 14
+            }
+        ]
+    },
+    "lda_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_TLSi_26",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 3
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_TLSi_Knife",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 4
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 8
+            }
+        ]
+    },
+    "lda_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_TLSi_27",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_TLSi_Whoosh_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_TLSi_Hammer",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 20
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 22
+            }
+        ]
+    },
+    "lda_skill3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_TLSi_28",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_TLSi_Whoosh_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 4
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_TLSi_Shoot",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 35
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 39
+            }
+        ]
+    },
+    "lda_skill3_1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_TLSi_28",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 7
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_TLSi_Build",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 11
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_TLSi_Magic",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 28
+            }
+        ]
+    },
+    "lda_skill3_2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_TLSi_28",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 6
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_TLSi_Build",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 8
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_TLSi_Whoosh_3",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 35
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_TLSi_Shield",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 48
+            }
+        ]
+    },
     "ldwxi_skill1": {
         "events": [
             {
@@ -33830,6 +34542,142 @@
                     }
                 ],
                 "f": 26
+            }
+        ]
+    },
+    "lwang_black_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_LWang_BNu_Claw_Whoosh",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 3
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_LWang_BNu_Claw_Hit",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 12
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 13
+            }
+        ]
+    },
+    "lwang_black_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_LWang_BNu_Claw_Smash",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 2
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 19
+            }
+        ]
+    },
+    "lwang_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_LWang_Claw_Whoosh",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 3
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_LWang_Claw_Hit",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 11
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 13
+            }
+        ]
+    },
+    "lwang_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_LWang_Claw_Smash",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 19
             }
         ]
     },
@@ -35442,6 +36290,66 @@
                     }
                 ],
                 "f": 44
+            }
+        ]
+    },
+    "rabbittoy_dance": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_RabbitToy_Dance",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 2
+            }
+        ]
+    },
+    "rabbittoy_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_RabbitToy_Punch",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 6
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 10
+            }
+        ]
+    },
+    "rabbittoy_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_RabbitToy_Magic",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 2
             }
         ]
     },

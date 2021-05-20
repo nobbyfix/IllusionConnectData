@@ -133,17 +133,12 @@ function ArenaVictoryMediator:initWidgetInfo()
 
 	self._iconPanel = anim:getChildByFullName("icon")
 	local winTitle = bg:getChildByFullName("node_1.action_node_1.winTitle")
-	local winAnim = cc.MovieClip:create("shengliz_jingjijiesuan")
+	local winAnim = cc.MovieClip:create("shengliz_fubenjiesuan")
 
 	winAnim:addTo(winTitle)
 	winAnim:addEndCallback(function ()
 		winAnim:stop()
 	end)
-
-	local winPanel = winAnim:getChildByFullName("winTitle")
-	local title = ccui.ImageView:create("zhandou_txt_win.png", 1)
-
-	title:addTo(winPanel)
 	CommonUtils.runActionEffectByRootNode(bg, "ArenaVictoryEffect")
 
 	local action_node_4 = self._winnerRankRise:getChildByFullName("action_node_4")

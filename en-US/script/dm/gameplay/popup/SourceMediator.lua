@@ -105,8 +105,7 @@ function SourceMediator:onRegister()
 end
 
 function SourceMediator:setUpView()
-	local config = ConfigReader:getRecordById("ItemConfig", tostring(self._itemData.itemId))
-	self._sourceList = config.Resource or {}
+	self._sourceList = RewardSystem:getResource(tostring(self._itemData.itemId)) or {}
 	self._noTips = self._main:getChildByName("Text_notips")
 
 	self._noTips:setVisible(false)
@@ -699,7 +698,10 @@ function SourceMediator:onClickGo(data)
 
 		self._stageSystem:setEnterPoint(params.enterPoint)
 		entry:response(context, params)
-		self:close()
+
+		if not DisposableObject:isDisposed(self) then
+			self:close()
+		end
 	else
 		self:dispatch(ShowTipEvent({
 			tip = Strings:get("Function_Not_Open")

@@ -212,6 +212,12 @@ function exports.Summon(env, source, summonId, summonFactor, summonExtra, locati
 	return formationSystem:summon(actor, source, summonId, factors, location)
 end
 
+function exports.SpawnByTransform(env, player, source, location, isMarkedSummon)
+	local formationSystem = env.global["$FormationSystem"]
+
+	return formationSystem:SpawnByTransform(player, source, location, isMarkedSummon)
+end
+
 function exports.SpawnAssist(env, assistId, player, cellId)
 	local actor = env["$actor"]
 	local formationSystem = env.global["$FormationSystem"]

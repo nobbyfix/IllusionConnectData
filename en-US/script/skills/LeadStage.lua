@@ -215,8 +215,15 @@ all.LeadStage_LieSha_skill = {
 			if global.EnemyMaster(_env) then
 				local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, global.EnemyMaster(_env))
 				local atk = global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR)
+				local damage = 0
 
-				global.ApplyRealDamage(_env, _env.ACTOR, global.EnemyMaster(_env), 1, 1, 0, 0, 0, nil, global.min(_env, maxHp * this.MaxHpDamgeRate, atk * 5))
+				if global.MARKED(_env, "Player_Master")(_env, global.EnemyMaster(_env)) then
+					damage = maxHp * this.MaxHpDamgeRate
+				else
+					damage = global.min(_env, maxHp * this.MaxHpDamgeRate, atk * 5)
+				end
+
+				global.ApplyRealDamage(_env, _env.ACTOR, global.EnemyMaster(_env), 1, 1, 0, 0, 0, nil, damage)
 				global.AnimForTrgt(_env, global.EnemyMaster(_env), {
 					loop = 1,
 					anim = "baodian_shoujibaodian",
@@ -382,6 +389,12 @@ all.LeadStage_SenLing_skill = {
 			this.RecoveryFactor = 0.04
 		end
 
+		this.Time = externs.Time
+
+		if this.Time == nil then
+			this.Time = 40
+		end
+
 		local passive1 = __action(this, {
 			name = "passive1",
 			entry = prototype.passive1
@@ -401,7 +414,7 @@ all.LeadStage_SenLing_skill = {
 		}, passive2)
 		this.passive2 = global["[schedule_at_moments]"](this, {
 			{
-				60000
+				this.Time * 1000
 			}
 		}, passive2)
 		local passive3 = __action(this, {
@@ -519,12 +532,6 @@ all.LeadStage_LiMing_skill = {
 			this.RageFactor = 700
 		end
 
-		this.RageSpdFactor = externs.RageSpdFactor
-
-		if this.RageSpdFactor == nil then
-			this.RageSpdFactor = 0.1
-		end
-
 		local passive = __action(this, {
 			name = "passive",
 			entry = prototype.passive
@@ -552,24 +559,6 @@ all.LeadStage_LiMing_skill = {
 			local global = _env.global
 
 			global.ApplyRPRecovery(_env, _env.ACTOR, this.RageFactor)
-
-			local buff = global.RageGainEffect(_env, "+", {
-				"+Normal",
-				"+Normal"
-			}, this.RageSpdFactor)
-
-			global.ApplyBuff(_env, _env.ACTOR, {
-				timing = 0,
-				duration = 99,
-				display = "LeadStage_LiMing",
-				tags = {
-					"LeadStage_LiMing_skill",
-					"UNDISPELLABLE",
-					"UNSTEALABLE"
-				}
-			}, {
-				buff
-			})
 		end)
 
 		return _env

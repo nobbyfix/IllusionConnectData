@@ -442,6 +442,37 @@
         "Time": 1800,
         "Type": "Normal"
     },
+    "CooperateBoss_ZTXChang": {
+        "AwakenAttrEffect": "ExcellentHero_Awaken",
+        "AwakenBoss": "",
+        "BossBattle": "CooperateBoss_ZTXChang",
+        "ExcellentHero": [
+            {
+                "Effect": "ExcellentHero_Attr_Big",
+                "Hero": [
+                    "BBLMa",
+                    "DCJKang"
+                ]
+            },
+            {
+                "Effect": "ExcellentHero_Attr_Small",
+                "Hero": [
+                    "PDLa",
+                    "WEDe",
+                    "KTSJKe"
+                ]
+            }
+        ],
+        "Revelry": "",
+        "RewardRevelry": "",
+        "RewardShow": "CooperateBossMain_ZTXChang_Show",
+        "RoleModel": "Model_ZTXChang",
+        "StarsAttrEffect": "ExcellentHero_Stars",
+        "Story": [],
+        "TiggerAwaken": "",
+        "Time": 1800,
+        "Type": "Normal"
+    },
     "CooperateBoss_ZZBBWei": {
         "AwakenAttrEffect": "ExcellentHero_Awaken",
         "AwakenBoss": "",

@@ -435,7 +435,12 @@ all.Skill_FLYDe_Passive = {
 				duration = 100,
 				enhance = 5
 			})
-
+		end)
+		exec["@time"]({
+			100
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
 			local buff_rp = global.RageGainEffect(_env, "-", {
 				"+Normal",
 				"+Normal"
@@ -484,7 +489,7 @@ all.Skill_FLYDe_Passive = {
 							}
 						})
 					else
-						global.DelayCall(_env, 1700, global.AnimForTrgt, unit, {
+						global.DelayCall(_env, 1600, global.AnimForTrgt, unit, {
 							loop = 1,
 							anim = "xge_bufftexiao",
 							zOrder = "TopLayer",
@@ -511,7 +516,7 @@ all.Skill_FLYDe_Passive = {
 						}
 					})
 				else
-					global.DelayCall(_env, 1700, global.AnimForTrgt, unit, {
+					global.DelayCall(_env, 1600, global.AnimForTrgt, unit, {
 						loop = 1,
 						anim = "xge_bufftexiao",
 						zOrder = "TopLayer",
@@ -890,7 +895,12 @@ all.Skill_FLYDe_Passive_EX = {
 				duration = 100,
 				enhance = 5
 			})
-
+		end)
+		exec["@time"]({
+			100
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
 			local buff_rp = global.RageGainEffect(_env, "-", {
 				"+Normal",
 				"+Normal"
@@ -939,7 +949,7 @@ all.Skill_FLYDe_Passive_EX = {
 							}
 						})
 					else
-						global.DelayCall(_env, 1700, global.AnimForTrgt, unit, {
+						global.DelayCall(_env, 1600, global.AnimForTrgt, unit, {
 							loop = 1,
 							anim = "xge_bufftexiao",
 							zOrder = "TopLayer",
@@ -966,7 +976,7 @@ all.Skill_FLYDe_Passive_EX = {
 						}
 					})
 				else
-					global.DelayCall(_env, 1700, global.AnimForTrgt, unit, {
+					global.DelayCall(_env, 1600, global.AnimForTrgt, unit, {
 						loop = 1,
 						anim = "xge_bufftexiao",
 						zOrder = "TopLayer",

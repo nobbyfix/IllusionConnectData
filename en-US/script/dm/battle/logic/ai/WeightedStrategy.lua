@@ -131,7 +131,8 @@ function WeightedStrategy:update(interval)
 				end
 
 				local battleField = self._context:getObject("BattleField")
-				local cellNo = self:determineTargetCell(battleField, player:getSide())
+				local cardType = self._nextCard:getCardType()
+				local cellNo = self:determineTargetCell(battleField, player:getSide(), cardType)
 
 				if cellNo ~= nil then
 					self:spawnCard(self._cardIndex, cellNo, function (success, detail)
@@ -308,8 +309,22 @@ function WeightedStrategy:determineNextCard(player)
 	return nil, 
 end
 
-function WeightedStrategy:determineTargetCell(battleField, side)
+function WeightedStrategy:determineTargetCell(battleField, side, cardType)
 	local emptyCells = battleField:collectEmtpyCells({}, side)
+	local residentCells = {}
+
+	if cardType == HeroCardType.Super then
+		local allCells = battleField:collectCells({}, side)
+
+		for k, v in pairs(allCells) do
+			local resident = v:getResident()
+
+			if resident and resident._isSummoned then
+				residentCells[#residentCells + 1] = v
+			end
+		end
+	end
+
 	local count = #emptyCells
 
 	if count > 0 then
@@ -337,6 +352,35 @@ function WeightedStrategy:determineTargetCell(battleField, side)
 		local r = self._random:random(1, count)
 
 		return emptyCells[r]:getNumber()
+	end
+
+	local count = #residentCells
+
+	if count > 0 then
+		local cardAI = self._nextCard:getCardAI()
+		local PosArray = cardAI and cardAI.ForcedPosition
+
+		if PosArray then
+			local map = {}
+
+			for _, cell in ipairs(residentCells) do
+				map[math.abs(cell:getNumber())] = cell
+			end
+
+			for _, poses in ipairs(PosArray) do
+				local _poses = shuffle(self._random, deepCopy({}, poses))
+
+				for _, pos in ipairs(_poses) do
+					if map[pos] then
+						return map[pos]:getNumber()
+					end
+				end
+			end
+		end
+
+		local r = self._random:random(1, count)
+
+		return residentCells[r]:getNumber()
 	end
 
 	return nil

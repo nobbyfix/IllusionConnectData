@@ -189,6 +189,25 @@
             }
         ]
     },
+    "CooperateBoss_ZTXChang": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_27",
+        "BlockBattleConfig": "CooperateBoss_Stage_1",
+        "EnemyCard": "CooperateBoss_1",
+        "EnemyMaster": "CooperateBoss_ZTXChang",
+        "Name": "HeroBase_Name_ZTXChang",
+        "PointHead": "Model_ZTXChang",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
     "CooperateBoss_ZZBBWei": {
         "BGM": [
             "Mus_Battle_Whale",

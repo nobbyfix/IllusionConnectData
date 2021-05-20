@@ -648,6 +648,57 @@ function EquipAllUpdateMediator:refreshEquipCost()
 		local commonItemId = self._equipData:getCommonItemId()
 		local needNum = self._equipData:getEquipItemNum()
 
+		if self._equipData:getRarity() == 15 then
+			local pos = self._bagSystem:getComposePos(commonItemId)
+
+			if pos then
+				local imageName = composePosImage_icon[pos][1]
+				local equipCost = self._starPanel:getChildByFullName("equipCost")
+				local panel = equipCost:getChildByFullName("costBg")
+				local iconpanel = panel:getChildByFullName("iconpanel")
+
+				iconpanel:removeAllChildren()
+
+				local hasNum = self._equipSystem:getEquipStarUpItem().stiveNum
+				self._equipEnough = needNum <= hasNum
+
+				if self._equipEnough then
+					imageName = composePosImage_icon[pos][2]
+				end
+
+				local debrisIcon = ccui.ImageView:create(imageName, 1)
+
+				debrisIcon:addTo(iconpanel):center(iconpanel:getContentSize())
+
+				local colorNum1 = self._equipEnough and 1 or 7
+				local enoughImg = panel:getChildByFullName("bg.enoughImg")
+
+				enoughImg:setVisible(self._equipEnough)
+
+				local costPanel = panel:getChildByFullName("costPanel")
+
+				costPanel:setVisible(true)
+
+				local cost = costPanel:getChildByFullName("cost")
+				local costLimit = costPanel:getChildByFullName("costLimit")
+
+				cost:setString(hasNum)
+				costLimit:setString("/" .. needNum)
+				costLimit:setPositionX(cost:getContentSize().width)
+				costPanel:setContentSize(cc.size(cost:getContentSize().width + costLimit:getContentSize().width, 40))
+				cost:setTextColor(GameStyle:getColor(colorNum1))
+				costLimit:setTextColor(GameStyle:getColor(colorNum1))
+
+				local addImg = panel:getChildByFullName("addImg.Image_1")
+
+				addImg:setVisible(not self._equipEnough)
+				iconpanel:setGray(not self._equipEnough)
+				equipCost:setVisible(needNum > 0)
+
+				return
+			end
+		end
+
 		if needNum > 0 then
 			local equipCost = self._starPanel:getChildByFullName("equipCost")
 			local panel = equipCost:getChildByFullName("costBg")
@@ -1275,7 +1326,7 @@ function EquipAllUpdateMediator:onClickGrowUp(sender, eventType)
 
 	local needCostControl = self._equipData:getEquipNeedControl()
 
-	if needCostControl == 1 then
+	if needCostControl == 1 and self._equipData:getRarity() ~= 15 then
 		local commonItemId = self._equipData:getCommonItemId()
 		local needNum = self._equipData:getEquipItemNum()
 
@@ -1303,6 +1354,30 @@ function EquipAllUpdateMediator:onClickEquipItem()
 		local needNum = self._equipData:getEquipItemNum()
 
 		if needNum > 0 then
+			if self._equipData:getRarity() == 15 then
+				local pos = self._bagSystem:getComposePos(commonItemId)
+
+				if pos then
+					AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
+
+					local view = self:getInjector():getInstance("EquipStarLevelView")
+
+					self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+						transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+					}, {
+						useCompose = true,
+						equipId = self._equipId,
+						needNum = needNum,
+						itemId = commonItemId,
+						callback = function ()
+							self:refreshEquipCost()
+						end
+					}, nil))
+				end
+
+				return
+			end
+
 			AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
 
 			local itemData = self._equipData:getStarItem()[1]

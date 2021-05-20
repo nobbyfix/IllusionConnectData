@@ -148,7 +148,7 @@ function MasterCultivateMediator:refreshAllView(hideAnim)
 	self._leaderLeadStageSkillPanel:setVisible(not isLock and CommonUtils.GetSwitch("fn_master_leadStage"))
 	self._levelNode:setVisible(not isLock)
 	self._infoPanel:getChildByFullName("attrPanel"):setVisible(not isLock)
-	self._infoPanel:getChildByFullName("starBg"):setVisible(not isLock)
+	self._infoPanel:getChildByFullName("starBg"):setVisible(false)
 	self._infoPanel:getChildByFullName("combatNode"):setVisible(not isLock)
 
 	if isLock then
@@ -156,7 +156,6 @@ function MasterCultivateMediator:refreshAllView(hideAnim)
 	else
 		AudioEngine:getInstance():playEffect("Se_Effect_Character_Info", false)
 		self:refreshInfoPanel()
-		self:refreshStar()
 	end
 
 	self:refreshLeaderSkill()

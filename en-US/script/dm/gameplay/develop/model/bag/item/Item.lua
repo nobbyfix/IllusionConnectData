@@ -152,3 +152,7 @@ function Item:isExistResource()
 
 	return false
 end
+
+function Item:getCanLock()
+	return self._prototype:getCanLock()
+end

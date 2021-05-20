@@ -152,8 +152,9 @@ function CurrencyBar:setCurrencyId(currencyId, addBtnDisable)
 		self:updateText()
 
 		local addBtn = view:getChildByFullName("add_btn")
+		local resource = RewardSystem:getResource(currencyId)
 
-		if kAddBtnFuncMap[currencyId] and not addBtnDisable then
+		if (kAddBtnFuncMap[currencyId] or next(resource)) and not addBtnDisable then
 			addBtn:setVisible(true)
 			mapButtonHandlerClick(self, "add_btn", {
 				ignoreClickAudio = true,
@@ -168,7 +169,7 @@ function CurrencyBar:setCurrencyId(currencyId, addBtnDisable)
 
 		local plusImage = view:getChildByName("Image_1")
 
-		if kAddImgMap[currencyId] then
+		if kAddImgMap[currencyId] or next(resource) then
 			plusImage:setVisible(true)
 		else
 			plusImage:setVisible(false)
@@ -325,7 +326,8 @@ function CurrencyBar:updateText()
 	end
 
 	local width = textNode:getContentSize().width + strNode:getContentSize().width
-	local addImgShow = kAddImgMap[currencyId]
+	local resource = RewardSystem:getResource(currencyId)
+	local addImgShow = kAddImgMap[currencyId] or next(resource)
 
 	if addImgShow then
 		if width < 93 then
@@ -350,6 +352,22 @@ function CurrencyBar:onClickAdd(sender, eventType)
 
 		if addBtnFunc then
 			addBtnFunc(self)
+		else
+			local resource = RewardSystem:getResource(currencyId)
+
+			if next(resource) then
+				local hasNum = self._bagSystem:getItemCount(currencyId)
+				local param = {
+					needNum = 0,
+					itemId = currencyId,
+					hasNum = hasNum
+				}
+				local view = self:getInjector():getInstance("sourceView")
+
+				self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, {
+					transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+				}, param))
+			end
 		end
 	end
 end

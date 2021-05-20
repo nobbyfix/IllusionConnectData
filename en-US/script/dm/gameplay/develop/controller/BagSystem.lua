@@ -1584,3 +1584,72 @@ function BagSystem:setComposeTimes(composeTimes)
 		self._composeTimes[key] = value
 	end
 end
+
+function BagSystem:requestItemLock(param, callback, blockUI)
+	local param_request = {
+		itemId = param.itemId
+	}
+	local bagService = self:getInjector():getInstance(BagService)
+
+	bagService:requestItemLock(param_request, function (response)
+		if response.resCode == GS_SUCCESS then
+			if callback then
+				callback()
+			end
+
+			self:dispatch(Event:new(EVT_ITEM_LOCK_SUCC, {
+				viewtype = param.viewtype
+			}))
+		end
+	end, blockUI)
+end
+
+function BagSystem:getAllComposeEntrys(composeStoneId, curComposeId)
+	if self._composeToPos == nil then
+		self._composeToPos = ConfigReader:getRecordById("ConfigValue", "URStone_Exchange").content
+	end
+
+	local composeIds = {}
+
+	if self._composeToPos[composeStoneId] then
+		local pos = self._composeToPos[composeStoneId]
+		local dataTable = ConfigReader:getDataTable("Compose")
+
+		for k, v in pairs(dataTable) do
+			if pos == v.ComposePosition then
+				local haveCount = self:getItemCount(k)
+
+				if curComposeId and curComposeId == k then
+					haveCount = haveCount - 1
+				end
+
+				if haveCount > 0 then
+					composeIds[#composeIds + 1] = k
+				end
+			end
+		end
+	end
+
+	table.sort(composeIds, function (a, b)
+		local sortA = self:getEntryById(a).item:getSort()
+		local sortB = self:getEntryById(b).item:getSort()
+
+		if sortA >= sortB then
+			slot4 = false
+		else
+			slot4 = true
+		end
+
+		return slot4
+	end)
+
+	return composeIds
+end
+
+function BagSystem:getComposePos(composeItemId)
+	if self._composeToPos == nil then
+		self._composeToPos = ConfigReader:getRecordById("ConfigValue", "URStone_Exchange").content
+	end
+
+	return self._composeToPos[composeItemId]
+end

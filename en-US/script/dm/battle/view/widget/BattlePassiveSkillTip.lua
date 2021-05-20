@@ -65,56 +65,78 @@ function BattlePassiveSkillTip:show(passiveSkill, isLeft)
 			if info.lock then
 				image:setGray(true)
 
-				local richText = ccui.RichText:createWithXML(Strings:get("BATTLE_SectSkill_Unactivated_Detail", {
-					fontSize = 16,
-					fontName = TTF_FONT_FZYH_M
-				}), {})
+				local fontSize = 16
+				local height = 200
+				local descText = nil
 
-				richText:setAnchorPoint(descLabel:getAnchorPoint())
-				richText:setPosition(cc.p(descLabel:getPosition()))
-				richText:addTo(descLabel:getParent())
-				richText:renderContent(descLabel:getContentSize().width, 0, true)
+				repeat
+					local showText = Strings:get("BATTLE_SectSkill_Unactivated_Detail", {
+						fontName = TTF_FONT_FZYH_M,
+						fontSize = fontSize
+					})
+					descText = ccui.RichText:createWithXML(showText, {})
+
+					descText:renderContent(descLabel:getContentSize().width, 0, true)
+
+					height = descText:getContentSize().height
+					fontSize = fontSize - 1
+				until height <= 55 or fontSize < 2
+
+				descText:setAnchorPoint(descLabel:getAnchorPoint())
+				descText:setPosition(cc.p(descLabel:getPosition()))
+				descText:addTo(descLabel:getParent())
 				text_name:setString(Strings:get("BATTLE_SectSkill_Unactivated"))
 
-				lineCount = richText:getLineCount()
+				lineCount = descText:getLineCount()
 			else
 				local descKey = ConfigReader:getDataByNameIdAndKey("Skill", skillId, "Desc_short")
 				local name = ConfigReader:getDataByNameIdAndKey("Skill", skillId, "Name")
-				local desc = ConfigReader:getEffectDesc("Skill", descKey, skillId, skillLv, {
-					fontSize = 16,
-					fontColor = "#DFDFDF",
-					fontName = TTF_FONT_FZYH_M
-				})
-				local richText = ccui.RichText:createWithXML(desc, {})
+				local fontSize = 16
+				local height = 200
+				local descText = nil
 
-				richText:setAnchorPoint(descLabel:getAnchorPoint())
-				richText:setPosition(cc.p(descLabel:getPosition()))
-				richText:addTo(descLabel:getParent())
-				richText:renderContent(descLabel:getContentSize().width, 0, true)
+				repeat
+					local desc = ConfigReader:getEffectDesc("Skill", descKey, skillId, skillLv, {
+						fontColor = "#DFDFDF",
+						fontName = TTF_FONT_FZYH_M,
+						fontSize = fontSize
+					})
+					descText = ccui.RichText:createWithXML(desc, {})
+
+					descText:renderContent(descLabel:getContentSize().width, 0, true)
+
+					height = descText:getContentSize().height
+					fontSize = fontSize - 1
+				until height <= 55 or fontSize < 2
+
+				descText:setAnchorPoint(descLabel:getAnchorPoint())
+				descText:setPosition(cc.p(descLabel:getPosition()))
+				descText:addTo(descLabel:getParent())
 				text_name:setString(Strings:get(name))
 
-				lineCount = richText:getLineCount()
-			end
-
-			if lineCount > 2 then
-				cell:setContentSize(cell:getContentSize().width, cell:getContentSize().height + 10)
-
-				local children = cell:getChildren()
-
-				for k, v in pairs(children) do
-					v:setPositionY(v:getPositionY() + 10)
-				end
+				lineCount = descText:getLineCount()
 			end
 
 			if info.master then
 				local tagImg = cell:getChildByName("Image_master")
+				local Text_1 = tagImg:getChildByName("Text_1")
 
+				tagImg:setContentSize(cc.size(Text_1:getContentSize().width + 13, 23))
+				Text_1:setPositionX(3)
 				tagImg:setVisible(true)
 				tagImg:setPositionX(text_name:getPositionX() + text_name:getContentSize().width + 4)
 			else
 				local tempTagImg = cell:getChildByName("Image_temp")
-				local heroTagImg = cell:getChildByName("Image_hero")
+				local Text_1 = tempTagImg:getChildByName("Text_1")
 
+				tempTagImg:setContentSize(cc.size(Text_1:getContentSize().width + 13, 23))
+				Text_1:setPositionX(3)
+
+				local heroTagImg = cell:getChildByName("Image_hero")
+				local Text_2 = heroTagImg:getChildByName("Text_1")
+
+				heroTagImg:setContentSize(cc.size(Text_2:getContentSize().width + 13, 23))
+				Text_2:setPositionX(3)
 				tempTagImg:setPositionX(text_name:getPositionX() + text_name:getContentSize().width + 4)
 				heroTagImg:setPositionX(text_name:getPositionX() + text_name:getContentSize().width + 4)
 

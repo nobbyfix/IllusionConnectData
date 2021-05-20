@@ -811,7 +811,8 @@ all.Skill_MLYTLSha_Unique_Awaken = {
 							"NUMERIC",
 							"BUFF",
 							"SHIELD",
-							"DISPELLABLE"
+							"DISPELLABLE",
+							"STEALABLE"
 						}
 					}, {
 						buffeft1

@@ -1875,6 +1875,13 @@
         "Text": "Source_HeroStory",
         "URL": "view://HeroStoryEnterView&viewType=push&heroId=TLMi&index=5"
     },
+    "IHF_TLSi_1": {
+        "Isturn": 0,
+        "ResourceText": "Source_Activity",
+        "ResourceType": 0,
+        "Text": "Source_Activity",
+        "URL": ""
+    },
     "IHF_TPGZhu_1": {
         "Isturn": 1,
         "ResourceText": "Resource_DrawCard",
@@ -2072,6 +2079,13 @@
         "URL": "view://HeroStoryEnterView&viewType=push&heroId=WTXXuan&index=5"
     },
     "IHF_XBKLDi_1": {
+        "Isturn": 0,
+        "ResourceText": "Source_Activity",
+        "ResourceType": 0,
+        "Text": "Source_Activity",
+        "URL": ""
+    },
+    "IHF_XHMao_1": {
         "Isturn": 0,
         "ResourceText": "Source_Activity",
         "ResourceType": 0,
@@ -8350,6 +8364,20 @@
         "Text": "Source_General_Unknown",
         "URL": ""
     },
+    "IR_Equip13_1": {
+        "Isturn": 0,
+        "ResourceText": "Resource_Map",
+        "ResourceType": 0,
+        "Text": "Source_IR_Equip13_1",
+        "URL": "view://ExploreView&viewType=push"
+    },
+    "IR_Equip14_1": {
+        "Isturn": 0,
+        "ResourceText": "Resource_Map",
+        "ResourceType": 0,
+        "Text": "Source_IR_Equip14_1",
+        "URL": "view://ExploreView&viewType=push"
+    },
     "IR_Equip_1": {
         "Isturn": 1,
         "ResourceText": "Resource_EquipShop",
@@ -8497,12 +8525,26 @@
         "Text": "Source_IM_SnowflakeStamina_Desc",
         "URL": ""
     },
+    "IR_StoryBookStamina": {
+        "Isturn": 0,
+        "ResourceText": "Source_IR_StoryBookStamina",
+        "ResourceType": 0,
+        "Text": "Source_IR_StoryBookStamina_Desc",
+        "URL": ""
+    },
     "IR_SunflowerStamina": {
         "Isturn": 0,
         "ResourceText": "Source_IR_SunflowerStamina",
         "ResourceType": 0,
         "Text": "Source_IR_SunflowerStamina_Desc",
         "URL": ""
+    },
+    "IR_Surface_1": {
+        "Isturn": 1,
+        "ResourceText": "Resource_ShangDian",
+        "ResourceType": 1,
+        "Text": "Source_IR_Surface_1",
+        "URL": "view://shopView&viewType=push&shopId=Shop_SurfacePackage"
     },
     "IR_TECH_1": {
         "Isturn": 1,

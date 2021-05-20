@@ -61,6 +61,7 @@ function RTPKTeamMediator:onRegister()
 	self:mapEventListener(self:getEventDispatcher(), EVT_TEAM_REFRESH_PETS, self, self.refreshViewBySort)
 	self:mapEventListener(self:getEventDispatcher(), EVT_ARENA_CHANGE_TEAM_SUCC, self, self.refreshView)
 	self:mapEventListener(self:getEventDispatcher(), EVT_CHANGE_TEAM_BYMODE_SUCC, self, self.changeTeamByMode)
+	self:mapEventListener(self:getEventDispatcher(), EVT_PLAYER_SYNCHRONIZED, self, self.refreshCombatAndCost)
 
 	local touchPanel = self:getView():getChildByFullName("main.bg.touchPanel")
 

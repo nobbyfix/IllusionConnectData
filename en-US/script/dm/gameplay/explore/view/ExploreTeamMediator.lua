@@ -56,6 +56,7 @@ function ExploreTeamMediator:onRegister()
 
 	self:mapEventListener(self:getEventDispatcher(), EVT_TEAM_CHANGE_MASTER, self, self.changeMasterId)
 	self:mapEventListener(self:getEventDispatcher(), EVT_TEAM_REFRESH_PETS, self, self.refreshView)
+	self:mapEventListener(self:getEventDispatcher(), EVT_PLAYER_SYNCHRONIZED, self, self.refreshCombatAndCost)
 
 	local touchPanel = self:getView():getChildByFullName("main.bg.touchPanel")
 

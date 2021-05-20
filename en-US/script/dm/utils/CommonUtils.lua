@@ -452,6 +452,8 @@ function getPathByType(type, name)
 		return "asset/story/" .. name
 	elseif type == "STORY_FACE" then
 		return "asset/story/face/" .. name
+	elseif type == "STORY_ALPHA" then
+		return "asset/sceneStory/" .. name
 	end
 
 	return name

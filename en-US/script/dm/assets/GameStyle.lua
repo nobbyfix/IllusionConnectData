@@ -1037,6 +1037,34 @@ function GameStyle:getHeroPartyByHeroInfo(heroInfo)
 	return self:getHeroPartyBg(heroInfo:getParty())
 end
 
+kLockImage = {
+	"asset/common/common_icon_lock_new.png",
+	"asset/common/common_icon_unlock_new.png"
+}
+composePosImage = {
+	Weapon = "shengming_wuqi_hui.png",
+	Tops = "shengming_zhuangbei_hui.png",
+	Decoration = "shengming_shipin_hui.png",
+	Shoes = "shengming_xie_hui.png"
+}
+composePosImage_icon = {
+	Weapon = {
+		"icon_shengming_hui.png",
+		"icon_shengming.png"
+	},
+	Shoes = {
+		"icon_shengming_hui3.png",
+		"icon_shengming3.png"
+	},
+	Tops = {
+		"icon_shengming_hui2.png",
+		"icon_shengming2.png"
+	},
+	Decoration = {
+		"icon_shengming_hui4.png",
+		"icon_shengming4.png"
+	}
+}
 local leadStageColor = {
 	cc.c3b(153, 152, 179),
 	cc.c3b(68, 172, 68),

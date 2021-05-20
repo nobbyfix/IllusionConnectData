@@ -72,6 +72,10 @@ function exports.ApplyBuff(env, target, config, buffEffects)
 		return nil
 	end
 
+	if not target then
+		return
+	end
+
 	if not target:isInStages(ULS_Normal, ULS_Newborn) then
 		return
 	end

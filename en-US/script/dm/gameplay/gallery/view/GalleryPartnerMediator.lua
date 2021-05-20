@@ -206,10 +206,10 @@ function GalleryPartnerMediator:initView()
 		local nameText_1 = darkImg:getChildByFullName("nameText")
 		local nameText_2 = lightImg:getChildByFullName("nameText")
 
+		nameText_1:getVirtualRenderer():setDimensions(60, 35)
+		nameText_2:getVirtualRenderer():setDimensions(60, 35)
 		nameText_1:setString(Strings:get(AlbumGroupType[i][2]))
 		nameText_2:setString(Strings:get(AlbumGroupType[i][2]))
-		nameText_1:getVirtualRenderer():setLineHeight(33)
-		nameText_2:getVirtualRenderer():setLineHeight(33)
 
 		if not self._tabCache[i] then
 			self._tabCache[i] = {

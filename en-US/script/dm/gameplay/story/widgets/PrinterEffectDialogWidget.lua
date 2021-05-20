@@ -306,7 +306,7 @@ function PrinterEffectDialogWidget:clickToEndPrient()
 			self._contentTextIndex = index
 			local contentText = self._contentTextList[index]
 
-			if self._center and self._center == 1 then
+			if self._center > 0 then
 				if contentText and contentText.finishTypeWriter then
 					contentText:finishTypeWriter()
 				end

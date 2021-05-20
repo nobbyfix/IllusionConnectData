@@ -67,3 +67,9 @@ function BagService:requestUseRechargeItem(params, callback, blockUI)
 
 	self:sendRequest(request, blockUI)
 end
+
+function BagService:requestItemLock(params, callback, blockUI)
+	local request = self:newRequest(10218, params, callback)
+
+	self:sendRequest(request, blockUI)
+end

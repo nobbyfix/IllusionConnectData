@@ -161,7 +161,7 @@ all.Sk_Master_LieSha_Action1 = {
 			local global = _env.global
 
 			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.1, 80)
-			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.FixedPos(_env, global.GetSide(_env, _env.TARGET), 0, 2) + {
+			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET, 0, nil) + {
 				-0.8,
 				0
 			}, 100, "skill3"))
@@ -417,8 +417,8 @@ all.Sk_Master_LieSha_Action2 = {
 			local global = _env.global
 
 			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.1, 80)
-			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.FixedPos(_env, global.GetSide(_env, _env.TARGET), 0, 2) + {
-				1,
+			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
+				-1.8,
 				0
 			}, 100, "skill2"))
 

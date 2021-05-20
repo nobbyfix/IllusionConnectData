@@ -71,6 +71,23 @@ function CardSystem:getHeroCardsInPool(player, cardfilter)
 	return result
 end
 
+function CardSystem:getTiggerBuffCountOnHeroCard(card, tag)
+	local triggerBuffs = card:getTriggerBuff()
+	local count = 0
+
+	for k, v in pairs(triggerBuffs) do
+		local config = v:getBuffConfig()
+
+		for k_, v_ in pairs(config.tags) do
+			if tag == v_ then
+				count = count + 1
+			end
+		end
+	end
+
+	return count
+end
+
 function CardSystem:getCardIdx(player, card)
 	return player:getCardWindow():getCardIndex(card)
 end
@@ -134,6 +151,24 @@ function CardSystem:removeSkillCardForActor(actor)
 			end
 		end
 	end
+end
+
+function CardSystem:setHeroCardType(player, card, type)
+	if card:getType() == "hero" then
+		card:setCardType(type)
+
+		local info = card:dumpInformation()
+		local idx = self:getCardIdx(player, card)
+
+		self._processRecorder:recordObjectEvent(player:getId(), "UpdateHeroCard", {
+			cardInfo = info,
+			idx = idx
+		})
+
+		return true
+	end
+
+	return false
 end
 
 function CardSystem:lockHeroCards(player, cardfilter)

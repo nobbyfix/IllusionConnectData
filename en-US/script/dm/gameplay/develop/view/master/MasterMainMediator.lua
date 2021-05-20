@@ -114,6 +114,7 @@ function MasterMainMediator:onRegister()
 
 	self:mapButtonHandlersClick(kBtnHandlers)
 	self:mapEventListener(self:getEventDispatcher(), EVT_PLAYER_SYNCHRONIZED, self, self.refreshWithData)
+	self:mapEventListener(self:getEventDispatcher(), EVT_LEADSTASGE_SWITCH_HERO, self, self.switchHero)
 end
 
 function MasterMainMediator:enterWithData(data)
@@ -811,6 +812,15 @@ function MasterMainMediator:onTouchBottomClicked(sender, eventType, index)
 		self:resetViews()
 		self._masterView:reloadData()
 	end
+end
+
+function MasterMainMediator:switchHero(event)
+	local selectHero = event:getData()
+	self._selectedMasterId = selectHero
+
+	self:updateData()
+	self:resetViews()
+	self._masterView:reloadData()
 end
 
 function MasterMainMediator:onClickBack()

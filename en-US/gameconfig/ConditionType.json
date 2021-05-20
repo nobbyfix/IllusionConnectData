@@ -1168,6 +1168,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_StageStarSum_Desc"
     },
+    "Condi_StoryBookExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_StoryBook_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_StoryBookExchangeAchieve_Desc"
+    },
     "Condi_SumArenaScore": {
         "AchieveType1": "INCREASE",
         "AchieveType2": "",

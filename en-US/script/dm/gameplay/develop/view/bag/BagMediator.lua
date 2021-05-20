@@ -22,6 +22,10 @@ local kBtnHandlers = {
 	["mainpanel.detail_panel.frombtn"] = {
 		clickAudio = "Se_Click_Common_1",
 		func = "onClickFrom"
+	},
+	["mainpanel.detail_panel.lockBtn"] = {
+		clickAudio = "Se_Click_Common_1",
+		func = "onClickItemLock"
 	}
 }
 local kMinItemNum = 20
@@ -134,6 +138,7 @@ end
 
 function BagMediator:onRegister()
 	super.onRegister(self)
+	self:mapEventListener(self:getEventDispatcher(), EVT_ITEM_LOCK_SUCC, self, self.refreshViewByLock)
 
 	self._composeBtn = self:bindWidget("mainpanel.detail_panel.composebtn", TwoLevelViceButton, {
 		handler = {
@@ -320,6 +325,7 @@ function BagMediator:initNodes()
 
 	self._line_line = self._equipTabPanel:getChildByFullName("line_line")
 	local detailPanel = self._mainPanel:getChildByFullName("detail_panel")
+	self._lockBtn_compose = detailPanel:getChildByFullName("lockBtn")
 	local moneyIcon = detailPanel:getChildByFullName("sellpanel.goldimg")
 	local icon = IconFactory:createResourcePic({
 		id = CurrencyIdKind.kGold
@@ -401,6 +407,7 @@ function BagMediator:initNodes()
 			sellBtn = self._sellbtn,
 			composeBtn = self._composeBtn,
 			useBtn = self._usebtn,
+			lockBtn = self._lockBtn_compose,
 			fromBtn = detailPanel:getChildByFullName("frombtn")
 		}
 	}
@@ -599,11 +606,13 @@ function BagMediator:updateDetailButtons(notHasShow)
 		end
 
 		local item = entry.item
+		self._currentItem = item
 
 		buttons.sellBtn:setVisible(item:getSellNumber() > 0)
 		self:setButtonEnabled(buttons.sellBtn, item:getSellNumber() > 0)
 		buttons.useBtn:getButton():setGray(false)
 		buttons.useBtn:setVisible(false)
+		buttons.lockBtn:setVisible(false)
 		buttons.composeBtn:setVisible(false)
 
 		local subType = item:getSubType()
@@ -702,6 +711,14 @@ function BagMediator:updateDetailButtons(notHasShow)
 
 		if item:isExistResource() and (item:getSubType() == ItemTypes.K_HERO_F or item:getSubType() == ItemTypes.K_MASTER_F or item:getSubType() == ItemTypes.K_HERO_QUALITY) then
 			buttons.fromBtn:setVisible(true)
+		end
+
+		buttons.lockBtn:setVisible(item:getCanLock())
+
+		if buttons.lockBtn:isVisible() then
+			local image = entry.unlock and kLockImage[2] or kLockImage[1]
+
+			buttons.lockBtn:getChildByName("image"):loadTexture(image)
 		end
 	end
 end
@@ -1178,6 +1195,9 @@ function BagMediator:onClickBack(sender, eventType)
 end
 
 function BagMediator:onClickTab(name, tag)
+	print("-----self._curTabType--------" .. self._curTabType)
+	dump(kTabBtnsNames, "===-=-=-=kTabBtnsNames-=-=-=-=")
+
 	if kTabBtnsNames[self._curTabType][3] then
 		self._bagSystem:clearBagTabRedPointByType(kTabBtnsNames[self._curTabType][4])
 	end
@@ -1216,6 +1236,14 @@ function BagMediator:onSellClicked(sender, eventType)
 	local entry = self._bagSystem:getEntryById(self._curEntryId)
 
 	if not entry then
+		return
+	end
+
+	if entry.item:getCanLock() and entry.unlock == false then
+		self:dispatch(ShowTipEvent({
+			tip = Strings:get("Equip_Ur_Lock_1")
+		}))
+
 		return
 	end
 
@@ -2030,5 +2058,32 @@ function BagMediator:refreshEquipTypeBtn()
 			image1:setVisible(false)
 			image2:setVisible(true)
 		end
+	end
+end
+
+function BagMediator:refreshViewByLock(event)
+	local data = event:getData()
+
+	if self._currentItem then
+		local entry = self._bagSystem:getEntryById(self._currentItem:getId())
+
+		if data.viewtype == 1 then
+			local tip = entry.unlock and Strings:get("Equip_Ur_Lock_4") or Strings:get("Equip_Ur_Lock_3")
+
+			self:dispatch(ShowTipEvent({
+				tip = tip
+			}))
+		end
+	end
+end
+
+function BagMediator:onClickItemLock()
+	if self._currentItem and self._currentItem:getCanLock() then
+		local params = {
+			viewtype = 1,
+			itemId = self._currentItem:getId()
+		}
+
+		self._bagSystem:requestItemLock(params)
 	end
 end

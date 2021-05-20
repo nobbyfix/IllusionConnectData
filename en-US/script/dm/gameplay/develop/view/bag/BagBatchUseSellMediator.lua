@@ -35,6 +35,7 @@ function BagBatchUseSellMediator:onRegister()
 	super.onRegister(self)
 	self:mapButtonHandlersClick(kBtnHandlers)
 	self:mapEventListener(self:getEventDispatcher(), EVT_SELL_ITEM_SUCC, self, self.onSellSucc)
+	self:mapEventListener(self:getEventDispatcher(), EVT_ITEM_LOCK_SUCC, self, self.refreshViewByLock)
 
 	self._sellBtn = self:bindWidget("window.sellbtn", OneLevelViceButton, {
 		handler = {
@@ -48,6 +49,9 @@ function BagBatchUseSellMediator:onRegister()
 			func = bind1(self.onClickUse, self)
 		}
 	})
+	self._itemCellLock = self:getView():getChildByFullName("cell_lock")
+
+	self._itemCellLock:setVisible(false)
 end
 
 function BagBatchUseSellMediator:enterWithData(data)
@@ -106,6 +110,31 @@ function BagBatchUseSellMediator:setupView(data)
 
 	icon:addTo(iconBg):center(iconBg:getContentSize())
 	icon:setScale(0.8)
+
+	if item:getSubType() == ItemTypes.K_COMPOSE then
+		self._node_lock = self._itemCellLock:clone()
+
+		self._node_lock:setVisible(true)
+		self._node_lock:addTo(iconBg):center(iconBg:getContentSize())
+
+		local Panel_unlock = self._node_lock:getChildByFullName("Panel_unlock")
+		local Panel_lock = self._node_lock:getChildByFullName("Panel_lock")
+
+		Panel_unlock:addTouchEventListener(function (sender, eventType)
+			self:onUnlockOrLockEquip(sender, eventType)
+		end)
+		Panel_lock:addTouchEventListener(function (sender, eventType)
+			self:onUnlockOrLockEquip(sender, eventType)
+		end)
+
+		if self._entry.unlock then
+			Panel_unlock:setVisible(true)
+			Panel_lock:setVisible(false)
+		else
+			Panel_unlock:setVisible(false)
+			Panel_lock:setVisible(true)
+		end
+	end
 
 	local nameLabel = mainPanel:getChildByFullName("namelabel")
 
@@ -198,6 +227,14 @@ function BagBatchUseSellMediator:onClickMax(sender, eventType)
 end
 
 function BagBatchUseSellMediator:onClickSell(sender, eventType)
+	if self._entry.item:getCanLock() and self._entry.unlock == false then
+		self:dispatch(ShowTipEvent({
+			tip = Strings:get("Equip_Ur_Lock_1")
+		}))
+
+		return
+	end
+
 	if self._minCount <= self._curCount and self._curCount <= self._maxCount then
 		waitingClose = true
 
@@ -309,5 +346,42 @@ function BagBatchUseSellMediator:closeChangeScheduler()
 		LuaScheduler:getInstance():unschedule(self._changeScheduler)
 
 		self._changeScheduler = nil
+	end
+end
+
+function BagBatchUseSellMediator:onUnlockOrLockEquip(sender, eventType)
+	if eventType == ccui.TouchEventType.began then
+		self._isReturn = true
+	elseif eventType == ccui.TouchEventType.ended and self._isReturn and self._entry.item:getCanLock() then
+		local params = {
+			viewtype = 2,
+			itemId = self._entry.item:getId()
+		}
+
+		self._bagSystem:requestItemLock(params)
+	end
+end
+
+function BagBatchUseSellMediator:refreshViewByLock()
+	self._entry = self._bagSystem:getEntryById(self._entryId)
+	local tip = self._entry.unlock and Strings:get("Equip_Ur_Lock_4") or Strings:get("Equip_Ur_Lock_3")
+
+	self:dispatch(ShowTipEvent({
+		tip = tip
+	}))
+
+	local item = self._entry.item
+
+	if item:getCanLock() then
+		local Panel_unlock = self._node_lock:getChildByFullName("Panel_unlock")
+		local Panel_lock = self._node_lock:getChildByFullName("Panel_lock")
+
+		if self._entry.unlock then
+			Panel_unlock:setVisible(true)
+			Panel_lock:setVisible(false)
+		else
+			Panel_unlock:setVisible(false)
+			Panel_lock:setVisible(true)
+		end
 	end
 end

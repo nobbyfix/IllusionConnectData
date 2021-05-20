@@ -38,6 +38,10 @@ ActivityBannerType = {
 	kPackageShop = "PackageShop",
 	kActivity = "Activity"
 }
+ActivityBannerImportant = {
+	kIsNotImportant = 0,
+	kIsImportant = 1
+}
 ActivityTaskStatus = {
 	kUnfinish = 0,
 	kGet = 2,
@@ -154,7 +158,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityKnight] = "ActivityKnightMainView",
 		[ActivityType_UI.KActivitySunflower] = "ActivitySunflowerMainView",
 		[ActivityType_UI.KActivityFire] = "ActivityFireMainView",
-		[ActivityType_UI.KActivityFemale] = "ActivityFemaleMainView"
+		[ActivityType_UI.KActivityFemale] = "ActivityFemaleMainView",
+		[ActivityType_UI.KActivityStoryBook] = "ActivityStoryBookMainView"
 	},
 	enterBlockMonsterShopView = {
 		[ActivityType_UI.kActivityBlockWsj] = "ActivityBlockMonsterShopView",
@@ -176,7 +181,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityKnight] = "ActivitySagaSupportMapView",
 		[ActivityType_UI.KActivitySunflower] = "ActivitySagaSupportMapView",
 		[ActivityType_UI.KActivityFire] = "ActivitySagaSupportMapView",
-		[ActivityType_UI.KActivityFemale] = "ActivitySagaSupportMapView"
+		[ActivityType_UI.KActivityFemale] = "ActivitySagaSupportMapView",
+		[ActivityType_UI.KActivityStoryBook] = "ActivitySagaSupportMapView"
 	},
 	enterSagaSupportStageView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportStageWxhView",
@@ -202,7 +208,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityKnight] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivitySunflower] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivityFire] = "ActivityBlockTaskView",
-		[ActivityType_UI.KActivityFemale] = "ActivityBlockTaskView"
+		[ActivityType_UI.KActivityFemale] = "ActivityBlockTaskView",
+		[ActivityType_UI.KActivityStoryBook] = "ActivityBlockTaskView"
 	},
 	enterSagaSupportRankRewardView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportRankRewardWxhView",
@@ -257,6 +264,13 @@ ActivityLogin14Config = {
 			cc.c4b(255, 165, 218, 255),
 			cc.c4b(255, 239, 163, 255)
 		}
+	},
+	EightDays_StoryBook = {
+		resFile = "asset/ui/ActivityStoryBookLogin14.csb",
+		textPattern = {
+			cc.c4b(255, 255, 255, 255),
+			cc.c4b(255, 233, 133, 255)
+		}
 	}
 }
 ActivityMainMapTitleConfig = {
@@ -292,12 +306,28 @@ ActivityMainMapTitleConfig = {
 					color = cc.c4b(255, 157, 159, 255)
 				}
 			}
+		},
+		[ActivityType_UI.KActivityStoryBook] = {
+			title = {
+				{
+					ratio = 0.3,
+					color = cc.c4b(255, 255, 255, 255)
+				},
+				{
+					ratio = 0.7,
+					color = cc.c4b(254, 255, 157, 255)
+				}
+			}
 		}
 	},
 	anim = {
 		[ActivityType_UI.KActivityFemale] = {
 			"zhu_biannvshengzhuye",
 			cc.p(134, 135)
+		},
+		[ActivityType_UI.KActivityStoryBook] = {
+			"zhu_beimoufubenrukou",
+			cc.p(54, 155)
 		}
 	}
 }
