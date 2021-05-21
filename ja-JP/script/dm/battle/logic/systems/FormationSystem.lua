@@ -135,7 +135,7 @@ function FormationSystem:SpawnUnit(player, unitData, cellNo, animation, isUserCm
 			local cell = battleField:getCellById(cellId)
 			local oldRes = cell:getResident()
 
-			if oldRes:isSummoned() then
+			if oldRes and oldRes:isSummoned() then
 				cell:setOldResident(oldRes)
 			else
 				return false, "InvalidTargetPosition"
