@@ -427,7 +427,15 @@ function BuffSystem:cloneBuffsOnTarget(actor, target, condition, workId)
 		local buffObject = buffs[i]
 		total = total + 1
 
-		self:applyBuffOnTarget(actor, buffObject:clone(), nil, workId)
+		if buffObject._groupId then
+			local buffObjs = buffObject:clone()
+
+			for k, v in pairs(buffObjs) do
+				self:applyBuffOnTarget(actor, v, nil, workId)
+			end
+		else
+			self:applyBuffOnTarget(actor, buffObject:clone(), nil, workId)
+		end
 	end
 
 	return total

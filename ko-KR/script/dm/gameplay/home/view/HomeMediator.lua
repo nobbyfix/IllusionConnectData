@@ -189,18 +189,6 @@ function HomeMediator:resumeWithData(data)
 	self:setActivityCalendar()
 	self:randomBoardRoleAndBg()
 
-	if self._navigation._initDone then
-		self._navigation:updataTopNode()
-
-		local isOpen = self._navigation:isTopOpen()
-
-		if isOpen then
-			self._navigation:openAction()
-		else
-			self._navigation:closeAction()
-		end
-	end
-
 	if self._motion and not self._motion:isRunning() then
 		self:enableAccelerator()
 	end
@@ -538,6 +526,18 @@ function HomeMediator:refreshDownloadStatus()
 	btn:loadTextureNormal(normalPath, ccui.TextureResType.userDataType)
 	btn:loadTexturePressed(pressedPath, ccui.TextureResType.userDataType)
 	mTempName:setString(tip)
+
+	if self._navigation._initDone then
+		self._navigation:updataTopNode()
+
+		local isOpen = self._navigation:isTopOpen()
+
+		if isOpen then
+			self._navigation:openAction()
+		else
+			self._navigation:closeAction()
+		end
+	end
 end
 
 function HomeMediator:refreshDownloadPorLabel(event)
@@ -1749,7 +1749,7 @@ function HomeMediator:setBoardHeroSprite()
 			local size = heroSprite:getContentSize()
 
 			if point[1] == "all" then
-				touchPanel:setContentSize(cc.size(size.width / 2 * picInfo.zoom, size.height * picInfo.zoom))
+				touchPanel:setContentSize(cc.size(size.width, size.height))
 				touchPanel:setPosition(size.width / 2 + picInfo.Deviation[1], size.height / 2 + picInfo.Deviation[2])
 			else
 				touchPanel:setContentSize(cc.size(_info.range[1] * picInfo.zoom, _info.range[2] * picInfo.zoom))
@@ -3390,6 +3390,10 @@ function HomeMediator:setComplexActivityEntry()
 			imgZorder = 2,
 			aimpos = cc.p(39, 39),
 			imgpos = cc.p(46, 35)
+		},
+		[ActivityType_UI.KActivitySummerRe] = {
+			anim = "rukou_xiarihuodong",
+			aimpos = cc.p(40, 40)
 		}
 	}
 	local extraActBtn = self._rightFuncLayout:getChildByFullName("extraActBtn")

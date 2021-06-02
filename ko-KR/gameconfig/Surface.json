@@ -1,6 +1,7 @@
 {
     "Surface_ADHWShi_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -57,6 +58,7 @@
     },
     "Surface_ADHWShi_sd": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -113,6 +115,7 @@
     },
     "Surface_AJTa_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch1",
@@ -169,6 +172,7 @@
     },
     "Surface_AJYHou_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -225,6 +229,7 @@
     },
     "Surface_ALPo_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -281,6 +286,7 @@
     },
     "Surface_ALPo_2": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -337,6 +343,7 @@
     },
     "Surface_ALPo_3": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -411,6 +418,7 @@
     },
     "Surface_ALSi_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -467,6 +475,7 @@
     },
     "Surface_ALSi_2": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -523,6 +532,7 @@
     },
     "Surface_ALSi_3": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -579,6 +589,7 @@
     },
     "Surface_ATSheng_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -635,6 +646,7 @@
     },
     "Surface_ATSheng_2": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -691,6 +703,7 @@
     },
     "Surface_BBLMa_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -747,6 +760,7 @@
     },
     "Surface_BBLMa_2": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -785,9 +799,9 @@
             }
         ],
         "Desc": "Surface_BBLMa_2_Desc",
-        "GainDesc": "Surface_BBLMa_Summer_Desc4",
-        "GainShortDesc": "Surface_Summer_GainShort",
-        "GoodsId": "",
+        "GainDesc": "Surface_Shop_GainDesc",
+        "GainShortDesc": "Surface_GainShort",
+        "GoodsId": "ShopSurface_Surface_BBLMa_2",
         "Hero": "BBLMa",
         "Link": "",
         "LongDesc": "Surface_BBLMa_2_LongDesc",
@@ -796,13 +810,14 @@
         "NotGetUnlook": "",
         "Quality": 5,
         "RepeatReward": 40,
-        "ShopID": "",
+        "ShopID": "Shop_Surface",
         "Sort": 2,
-        "Type": 3,
+        "Type": 2,
         "Unlook": 1
     },
     "Surface_BBLMa_Awake": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -859,6 +874,7 @@
     },
     "Surface_BDFen_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch1",
@@ -915,6 +931,7 @@
     },
     "Surface_BDPan_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -971,6 +988,7 @@
     },
     "Surface_BEr_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -1027,6 +1045,7 @@
     },
     "Surface_BEr_2": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -1083,6 +1102,7 @@
     },
     "Surface_BHTZi_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch1",
@@ -1139,6 +1159,7 @@
     },
     "Surface_BLTu_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch1",
@@ -1195,6 +1216,7 @@
     },
     "Surface_BLTu_2": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -1251,6 +1273,7 @@
     },
     "Surface_BQDShe_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch1",
@@ -1307,6 +1330,7 @@
     },
     "Surface_CLMan_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -1365,6 +1389,7 @@
     },
     "Surface_CLMan_2": {
         "ActivityId": "EightDaysCheckIn",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -1421,6 +1446,7 @@
     },
     "Surface_CLMan_3": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -1477,6 +1503,7 @@
     },
     "Surface_CLMan_4": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -1533,6 +1560,7 @@
     },
     "Surface_CLMan_5": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -1589,6 +1617,7 @@
     },
     "Surface_CLMan_6": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -1645,6 +1674,7 @@
     },
     "Surface_CZheng_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -1701,6 +1731,7 @@
     },
     "Surface_CZheng_2": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch1",
@@ -1757,6 +1788,7 @@
     },
     "Surface_CZheng_3": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -1813,6 +1845,7 @@
     },
     "Surface_CZheng_Awake": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -1869,6 +1902,7 @@
     },
     "Surface_DCJKang_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch1",
@@ -1925,6 +1959,7 @@
     },
     "Surface_DCJKang_Awake": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -1981,6 +2016,7 @@
     },
     "Surface_DDing_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -2037,6 +2073,7 @@
     },
     "Surface_DDing_2": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -2117,6 +2154,7 @@
     },
     "Surface_DFQi_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -2173,6 +2211,7 @@
     },
     "Surface_DFQi_2": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch1",
@@ -2229,6 +2268,7 @@
     },
     "Surface_DNTLuo_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -2285,6 +2325,7 @@
     },
     "Surface_DNTLuo_2": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch1",
@@ -2341,6 +2382,7 @@
     },
     "Surface_FEMSi_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch1",
@@ -2397,6 +2439,7 @@
     },
     "Surface_FEMSi_2": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -2453,6 +2496,7 @@
     },
     "Surface_FGao_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -2507,8 +2551,66 @@
         "Type": "",
         "Unlook": 1
     },
+    "Surface_FLBDSi_1": {
+        "ActivityId": "",
+        "AnimeList": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    50,
+                    936
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "body",
+                "point": [
+                    44,
+                    776
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_FLBDSi_1_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "1",
+        "GoodsId": "",
+        "Hero": "FLBDSi",
+        "Link": "",
+        "LongDesc": "",
+        "Model": "Model_FLBDSi",
+        "Name": "Surface_FLBDSi_1_Name",
+        "NotGetUnlook": "",
+        "Quality": 2,
+        "RepeatReward": "",
+        "ShopID": "",
+        "Sort": 1,
+        "Type": "",
+        "Unlook": 1
+    },
     "Surface_FLYDe_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -2565,6 +2667,7 @@
     },
     "Surface_FTLEShi_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -2621,6 +2724,7 @@
     },
     "Surface_FTLEShi_2": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -2677,6 +2781,7 @@
     },
     "Surface_FTLEShi_3": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -2733,6 +2838,7 @@
     },
     "Surface_GLin_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -2789,6 +2895,7 @@
     },
     "Surface_GYCZi_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch1",
@@ -2845,6 +2952,7 @@
     },
     "Surface_HGEr_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -2901,6 +3009,7 @@
     },
     "Surface_HLDNan_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -2957,6 +3066,7 @@
     },
     "Surface_HLMGen_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -3013,6 +3123,7 @@
     },
     "Surface_HSYZhai_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -3069,6 +3180,7 @@
     },
     "Surface_HSheng_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch1",
@@ -3125,6 +3237,7 @@
     },
     "Surface_HSheng_2": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch1",
@@ -3181,6 +3294,7 @@
     },
     "Surface_HSheng_3": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -3237,6 +3351,7 @@
     },
     "Surface_JDCZhang_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -3293,6 +3408,7 @@
     },
     "Surface_JNLong_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -3349,6 +3465,7 @@
     },
     "Surface_JNLong_2": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -3405,6 +3522,7 @@
     },
     "Surface_JNLong_Awake": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -3461,6 +3579,7 @@
     },
     "Surface_JSTDing_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -3517,6 +3636,7 @@
     },
     "Surface_JSTDing_2": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch1",
@@ -3573,6 +3693,7 @@
     },
     "Surface_KEDGong_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -3629,6 +3750,7 @@
     },
     "Surface_KMLa_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch1",
@@ -3685,6 +3807,7 @@
     },
     "Surface_KMLa_2": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -3741,6 +3864,7 @@
     },
     "Surface_KTSJKe_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -3797,6 +3921,7 @@
     },
     "Surface_KTSJKe_2": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -3853,6 +3978,7 @@
     },
     "Surface_KTSJKe_3": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -3909,6 +4035,7 @@
     },
     "Surface_KTSJKe_Awake": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -3965,6 +4092,7 @@
     },
     "Surface_KXuan_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -4021,6 +4149,7 @@
     },
     "Surface_LCYShi_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -4077,6 +4206,7 @@
     },
     "Surface_LCYShi_Awake": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -4133,6 +4263,7 @@
     },
     "Surface_LCYShi_sd": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -4189,6 +4320,7 @@
     },
     "Surface_LDu_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -4245,6 +4377,7 @@
     },
     "Surface_LDu_Awake": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -4301,6 +4434,7 @@
     },
     "Surface_LFEr_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -4357,6 +4491,7 @@
     },
     "Surface_LFEr_2": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch1",
@@ -4413,6 +4548,7 @@
     },
     "Surface_LFEr_Awake": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -4469,6 +4605,7 @@
     },
     "Surface_LLan_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -4525,6 +4662,7 @@
     },
     "Surface_LLan_2": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -4581,6 +4719,7 @@
     },
     "Surface_LLan_Awake": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -4637,6 +4776,7 @@
     },
     "Surface_LSLTe_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -4693,6 +4833,7 @@
     },
     "Surface_LYSi_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -4749,6 +4890,7 @@
     },
     "Surface_LYSi_2": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -4805,6 +4947,7 @@
     },
     "Surface_LYXi_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch1",
@@ -4861,6 +5004,7 @@
     },
     "Surface_LYXi_2": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch1",
@@ -4917,6 +5061,7 @@
     },
     "Surface_LYXi_Awake": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -4973,6 +5118,7 @@
     },
     "Surface_MGNa_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -5029,6 +5175,7 @@
     },
     "Surface_MGNa_2": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -5085,6 +5232,7 @@
     },
     "Surface_MKLJLuo_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -5141,6 +5289,7 @@
     },
     "Surface_MKLJLuo_2": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch1",
@@ -5197,6 +5346,7 @@
     },
     "Surface_MLYTLSha_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -5253,6 +5403,7 @@
     },
     "Surface_MLYTLSha_2": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -5291,9 +5442,9 @@
             }
         ],
         "Desc": "Surface_MLYTLSha_2_Desc",
-        "GainDesc": "Surface_MLYTLSha_Summer_Desc4",
-        "GainShortDesc": "Surface_Summer_GainShort",
-        "GoodsId": "",
+        "GainDesc": "Surface_Shop_GainDesc",
+        "GainShortDesc": "Surface_GainShort",
+        "GoodsId": "ShopSurface_Surface_MLYTLSha_2",
         "Hero": "MLYTLSha",
         "Link": "",
         "LongDesc": "Surface_MLYTLSha_2_LongDesc",
@@ -5302,13 +5453,14 @@
         "NotGetUnlook": "",
         "Quality": 5,
         "RepeatReward": 40,
-        "ShopID": "",
+        "ShopID": "Shop_Surface",
         "Sort": 2,
-        "Type": 3,
+        "Type": 2,
         "Unlook": 1
     },
     "Surface_MLYTLSha_3": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -5365,6 +5517,7 @@
     },
     "Surface_MLYTLSha_Awake": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -5421,6 +5574,7 @@
     },
     "Surface_MTZMEShi_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -5477,6 +5631,7 @@
     },
     "Surface_MTZMEShi_Awake": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -5533,6 +5688,7 @@
     },
     "Surface_MZGXiu_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -5589,6 +5745,7 @@
     },
     "Surface_NCai_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -5645,6 +5802,7 @@
     },
     "Surface_NDGEr_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -5701,6 +5859,7 @@
     },
     "Surface_NDGEr_2": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -5757,6 +5916,7 @@
     },
     "Surface_NFDDi_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -5813,6 +5973,7 @@
     },
     "Surface_NFEr_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -5869,6 +6030,7 @@
     },
     "Surface_NFEr_2": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -5925,6 +6087,7 @@
     },
     "Surface_NXYYi_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -5981,6 +6144,7 @@
     },
     "Surface_PDLa_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -6037,6 +6201,7 @@
     },
     "Surface_PDLa_2": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -6076,7 +6241,7 @@
         ],
         "Desc": "Surface_PDLa_toy_Desc",
         "GainDesc": "Surface_Shop_GainDesc",
-        "GainShortDesc": "Surface_GainShort",
+        "GainShortDesc": "Surface_PDLa_2_GainShort",
         "GoodsId": "ShopSurface_Surface_PDLa_2",
         "Hero": "PDLa",
         "Link": "",
@@ -6093,6 +6258,7 @@
     },
     "Surface_PGNNi_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch1",
@@ -6149,6 +6315,7 @@
     },
     "Surface_PNCao_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -6205,6 +6372,7 @@
     },
     "Surface_PNCao_2": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -6261,6 +6429,10 @@
     },
     "Surface_QBTe_1": {
         "ActivityId": "",
+        "AnimeList": [
+            "qiumisj_bufftexiao",
+            "qiumitaoxin_bufftexiao"
+        ],
         "ClickAction": [
             {
                 "action": "touch2",
@@ -6315,8 +6487,72 @@
         "Type": "",
         "Unlook": 1
     },
+    "Surface_QBTe_2": {
+        "ActivityId": "",
+        "AnimeList": [
+            "qiumisj_bufftexiao",
+            "toyxuanyun_qiumishouji"
+        ],
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    25,
+                    961
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "body",
+                "point": [
+                    -32,
+                    857
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_QBTe_toy_Desc",
+        "GainDesc": "Surface_Shop_GainDesc",
+        "GainShortDesc": "Surface_GainShort",
+        "GoodsId": "ShopSurface_Surface_QBTe_2",
+        "Hero": "QBTe",
+        "Link": "",
+        "LongDesc": "Surface_QBTe_toy_LongDecs",
+        "Model": "Model_QBTe_toy",
+        "Name": "Surface_QBTe_toy_Name",
+        "NotGetUnlook": "",
+        "Quality": 5,
+        "RepeatReward": 40,
+        "ShopID": "Shop_Surface",
+        "Sort": 3,
+        "Type": 2,
+        "Unlook": 1
+    },
     "Surface_QTQCi_1": {
         "ActivityId": "",
+        "AnimeList": [
+            "shou1_huaqishouji",
+            "shou2_huaqishouji"
+        ],
         "ClickAction": [
             {
                 "action": "touch2",
@@ -6373,6 +6609,7 @@
     },
     "Surface_SDTZi_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -6429,6 +6666,7 @@
     },
     "Surface_SDTZi_2": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch1",
@@ -6485,6 +6723,7 @@
     },
     "Surface_SDTZi_3": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -6541,6 +6780,7 @@
     },
     "Surface_SDTZi_Awake": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -6615,6 +6855,7 @@
     },
     "Surface_SGHQShou_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -6671,6 +6912,7 @@
     },
     "Surface_SGHQShou_sd": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -6727,6 +6969,7 @@
     },
     "Surface_SLMen_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -6783,6 +7026,7 @@
     },
     "Surface_SLWan_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -6837,8 +7081,66 @@
         "Type": "",
         "Unlook": 1
     },
+    "Surface_SP_PNCao_1": {
+        "ActivityId": "",
+        "AnimeList": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    261,
+                    1360
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "body",
+                "point": [
+                    290,
+                    1177
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_SP_PNCao_1_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "1",
+        "GoodsId": "",
+        "Hero": "SP_PNCao",
+        "Link": "",
+        "LongDesc": "",
+        "Model": "Model_SP_PNCao",
+        "Name": "Surface_SP_PNCao_1_Name",
+        "NotGetUnlook": "",
+        "Quality": 2,
+        "RepeatReward": "",
+        "ShopID": "",
+        "Sort": 1,
+        "Type": "",
+        "Unlook": 1
+    },
     "Surface_SRen_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -6895,6 +7197,7 @@
     },
     "Surface_SRen_2": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -6933,9 +7236,9 @@
             }
         ],
         "Desc": "Surface_SRen_toy_Desc",
-        "GainDesc": "",
-        "GainShortDesc": "Surface_SRen_2_GainShort",
-        "GoodsId": "",
+        "GainDesc": "Surface_Shop_GainDesc",
+        "GainShortDesc": "Surface_GainShort",
+        "GoodsId": "ShopSurface_Surface_SRen_2",
         "Hero": "SRen",
         "Link": "",
         "LongDesc": "Surface_SRen_toy_LongDecs",
@@ -6944,13 +7247,14 @@
         "NotGetUnlook": "",
         "Quality": 5,
         "RepeatReward": 40,
-        "ShopID": "",
+        "ShopID": "Shop_Surface",
         "Sort": 3,
-        "Type": "",
-        "Unlook": 0
+        "Type": 2,
+        "Unlook": 1
     },
     "Surface_SSQXin_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -7007,6 +7311,7 @@
     },
     "Surface_SYAi_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch1",
@@ -7063,6 +7368,7 @@
     },
     "Surface_TJHDe_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -7119,6 +7425,7 @@
     },
     "Surface_TJHDe_2": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -7175,6 +7482,7 @@
     },
     "Surface_TLMi_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -7231,6 +7539,7 @@
     },
     "Surface_TLSi_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -7287,6 +7596,7 @@
     },
     "Surface_TPGZhu_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -7343,6 +7653,7 @@
     },
     "Surface_TPGZhu_2": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -7399,6 +7710,7 @@
     },
     "Surface_TPGZhu_3": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -7455,6 +7767,7 @@
     },
     "Surface_TPGZhu_Awake": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -7511,6 +7824,7 @@
     },
     "Surface_TTKMeng_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -7567,6 +7881,7 @@
     },
     "Surface_WEDe_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -7623,6 +7938,7 @@
     },
     "Surface_WEDe_2": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -7679,6 +7995,7 @@
     },
     "Surface_WTXXuan_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -7735,6 +8052,7 @@
     },
     "Surface_WTXXuan_2": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -7791,6 +8109,7 @@
     },
     "Surface_XBKLDi_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -7847,6 +8166,7 @@
     },
     "Surface_XHMao_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -7903,6 +8223,7 @@
     },
     "Surface_XLai_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -7959,6 +8280,7 @@
     },
     "Surface_XLai_2": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -8015,6 +8337,7 @@
     },
     "Surface_XSMLi_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -8071,6 +8394,7 @@
     },
     "Surface_YBYa_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -8127,6 +8451,7 @@
     },
     "Surface_YBYa_Awake": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -8183,6 +8508,7 @@
     },
     "Surface_YDZZong_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -8239,6 +8565,7 @@
     },
     "Surface_YFZZhu_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -8295,6 +8622,7 @@
     },
     "Surface_YKDMLai_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -8351,6 +8679,7 @@
     },
     "Surface_YLMGZhu_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -8407,6 +8736,7 @@
     },
     "Surface_YLMGZhu_2": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -8481,6 +8811,7 @@
     },
     "Surface_YLMGZhu_Awake": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -8537,6 +8868,7 @@
     },
     "Surface_YLSBai_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -8593,6 +8925,7 @@
     },
     "Surface_YLSBai_2": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch1",
@@ -8649,6 +8982,7 @@
     },
     "Surface_YLSBai_Awake": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -8705,6 +9039,7 @@
     },
     "Surface_YMHTPu_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -8761,6 +9096,7 @@
     },
     "Surface_YSLBin_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -8817,6 +9153,7 @@
     },
     "Surface_YSLBin_2": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -8891,6 +9228,7 @@
     },
     "Surface_YSTLu_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -8947,6 +9285,7 @@
     },
     "Surface_YSTLu_Awake": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -9003,6 +9342,7 @@
     },
     "Surface_YSuo_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -9059,6 +9399,7 @@
     },
     "Surface_YSuo_2": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -9115,6 +9456,7 @@
     },
     "Surface_YXNMei_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -9171,6 +9513,7 @@
     },
     "Surface_YYing_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch1",
@@ -9227,6 +9570,7 @@
     },
     "Surface_ZTXChang_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -9283,6 +9627,7 @@
     },
     "Surface_ZTXChang_2": {
         "ActivityId": "Carnival",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -9339,6 +9684,7 @@
     },
     "Surface_ZTXChang_3": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",
@@ -9393,8 +9739,66 @@
         "Type": 3,
         "Unlook": 1
     },
+    "Surface_ZTXChang_Awake": {
+        "ActivityId": "",
+        "AnimeList": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    -11,
+                    1103
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch2",
+                "part": "body",
+                "point": [
+                    1,
+                    916
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_ZTXChang_1Awake_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "Surface_ZTXChang_Awake_GainDesc",
+        "GoodsId": "",
+        "Hero": "ZTXChang",
+        "Link": "",
+        "LongDesc": "",
+        "Model": "Model_ZTXChang_Awake",
+        "Name": "Surface_ZTXChang_Awake_Name",
+        "NotGetUnlook": "",
+        "Quality": 5,
+        "RepeatReward": "",
+        "ShopID": "",
+        "Sort": 2,
+        "Type": 5,
+        "Unlook": 1
+    },
     "Surface_ZTXCun_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -9451,6 +9855,7 @@
     },
     "Surface_ZZBBWei_1": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -9507,6 +9912,7 @@
     },
     "Surface_ZZBBWei_2": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch3",
@@ -9565,6 +9971,7 @@
     },
     "Surface_ZZBBWei_Awake": {
         "ActivityId": "",
+        "AnimeList": "",
         "ClickAction": [
             {
                 "action": "touch2",

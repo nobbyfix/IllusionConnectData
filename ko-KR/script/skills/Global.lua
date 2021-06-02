@@ -3087,6 +3087,16 @@ function all.ApplyRealDamage(_env, actor, target, dmgrange, dmgtype, damagerate,
 	local hurtrate = global.UnitPropGetter(_env, "hurtrate")(_env, actor)
 	local critstrg = global.UnitPropGetter(_env, "critstrg")(_env, actor)
 	local aoerate = global.UnitPropGetter(_env, "aoerate")(_env, actor)
+	local unhurtrate = global.UnitPropGetter(_env, "unhurtrate")(_env, target)
+	local aoederate = global.UnitPropGetter(_env, "aoederate")(_env, target)
+
+	if unhurtrate > 0 then
+		unhurtrate = 0
+	end
+
+	if aoederate > 0 then
+		aoederate = 0
+	end
 
 	if dmgrange == 1 then
 		damage = global.EvalDamage_FlagCheck(_env, actor, target, {
@@ -3102,7 +3112,7 @@ function all.ApplyRealDamage(_env, actor, target, dmgrange, dmgtype, damagerate,
 		})
 	end
 
-	damage.val = atk * atkrate * (1 + hurtrate) * damagerate
+	damage.val = atk * atkrate * (1 + hurtrate - unhurtrate) * damagerate
 
 	if damage_compare then
 		damage.crit = damage_compare.crit
@@ -3130,7 +3140,7 @@ function all.ApplyRealDamage(_env, actor, target, dmgrange, dmgtype, damagerate,
 			result = global.ApplyHPMultiDamage_ResultCheck(_env, actor, target, delays, global.SplitValue(_env, damage, multidamage), lowerLimit)
 		end
 	elseif dmgrange == 2 then
-		damage.val = damage.val * (1 + aoerate)
+		damage.val = damage.val * (1 + aoerate - aoederate)
 
 		if dmgtype == 1 then
 			result = global.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)

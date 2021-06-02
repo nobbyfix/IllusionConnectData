@@ -61,8 +61,15 @@ function SequenceStrategy:update(interval)
 
 		if player:energyIsEnough(cost) then
 			if player:getCardState() == "hero" then
+				if not self._nextCard._cardAI then
+					self._nextCard = nil
+
+					return
+				end
+
 				local battleField = self._context:getObject("BattleField")
-				local cellNo = self:determineTargetCell(battleField, player:getSide())
+				local seatRules = self._nextCard:getSeatRules()
+				local cellNo = self:determineTargetCell(battleField, player:getSide(), seatRules)
 
 				if cellNo ~= nil then
 					self:spawnCard(self._cardIndex, cellNo, function (success, detail)

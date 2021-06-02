@@ -802,6 +802,17 @@
         "Type": "Activity",
         "TypeId": "CooperateBoss_Exchange_20210610"
     },
+    "ActivityBannerCooperateBoss_20210625": {
+        "Bubble": "",
+        "Icon": "",
+        "Img": "gongdou_img_banner.png",
+        "Important": "",
+        "Link": "view://ShopCoopExchangeView&activityId=CooperateBoss_Exchange_20210625",
+        "Sort": 5004,
+        "Switch": "",
+        "Type": "Activity",
+        "TypeId": "CooperateBoss_Exchange_20210625"
+    },
     "ActivityBannerDetective": {
         "Bubble": "",
         "Icon": "",
@@ -922,6 +933,17 @@
         "Switch": "",
         "Type": "Activity",
         "TypeId": "ActivityBlock_Summer"
+    },
+    "ActivityBannerSummerRe": {
+        "Bubble": "",
+        "Icon": "",
+        "Img": "drawcard_banner_summer.png",
+        "Important": "",
+        "Link": "view://ActivityBlockSummerView&activityId=ActivityBlock_SummerRe",
+        "Sort": 992,
+        "Switch": "",
+        "Type": "Activity",
+        "TypeId": "ActivityBlock_SummerRe"
     },
     "ActivityBannerSunflower": {
         "Bubble": "",
@@ -1429,6 +1451,39 @@
         "Type": "Activity",
         "TypeId": "DrawCard_1UP_20210601_1_Activity"
     },
+    "ActivityBanner_DrawCard_1UP_20210602_1_1_Activity": {
+        "Bubble": "",
+        "Icon": "",
+        "Img": "drawcard_banner_HGEr.png",
+        "Important": "",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_HGEr_20210602_1",
+        "Sort": 992,
+        "Switch": "",
+        "Type": "Activity",
+        "TypeId": "DrawCard_1UP_20210602_1_1_Activity"
+    },
+    "ActivityBanner_DrawCard_1UP_20210602_1_2_Activity": {
+        "Bubble": "",
+        "Icon": "",
+        "Img": "drawcard_banner_FLYDe.png",
+        "Important": "",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_FLYDe_20210602_1",
+        "Sort": 991,
+        "Switch": "",
+        "Type": "Activity",
+        "TypeId": "DrawCard_1UP_20210602_1_2_Activity"
+    },
+    "ActivityBanner_DrawCard_1UP_20210602_2_1_Activity": {
+        "Bubble": "",
+        "Icon": "",
+        "Img": "drawcard_banner_LSLTe.png",
+        "Important": "",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_LSLTe_20210602_2",
+        "Sort": 991,
+        "Switch": "",
+        "Type": "Activity",
+        "TypeId": "DrawCard_1UP_20210602_2_1_Activity"
+    },
     "ActivityBanner_DrawCard_2UP_20210106_1_Activity": {
         "Bubble": "",
         "Icon": "",
@@ -1671,6 +1726,28 @@
         "Type": "Activity",
         "TypeId": "DrawCard_2UP_20210601_2_Activity"
     },
+    "ActivityBanner_DrawCard_2UP_20210602_1_1_Activity": {
+        "Bubble": "",
+        "Icon": "",
+        "Img": "drawcard_banner_FEMSiYLMGZhu.png",
+        "Important": "",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_2UP_FEMSiYLMGZhu_20210602_1",
+        "Sort": 991,
+        "Switch": "",
+        "Type": "Activity",
+        "TypeId": "DrawCard_2UP_20210602_1_1_Activity"
+    },
+    "ActivityBanner_DrawCard_2UP_20210602_2_1_Activity": {
+        "Bubble": "",
+        "Icon": "",
+        "Img": "drawcard_banner_YLSBaiAJTa.png",
+        "Important": "",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_2UP_AJTaYLSBai_20210602_2",
+        "Sort": 3006,
+        "Switch": "",
+        "Type": "Activity",
+        "TypeId": "DrawCard_2UP_20210602_2_1_Activity"
+    },
     "ActivityBanner_KMLa_1": {
         "Bubble": "",
         "Icon": "",
@@ -1681,6 +1758,19 @@
         "Switch": "",
         "Type": "Activity",
         "TypeId": "DrawCard_1UP_KMLa_1_Activity"
+    },
+    "ActivityBanner_SP_PNCao": {
+        "Bubble": [
+            "DrawCard_SP_PNCao_Bubble"
+        ],
+        "Icon": "main_rk_sp_pncao",
+        "Img": "activity_banner_sp_pncao.png",
+        "Important": 1,
+        "Link": "view://RecruitNewDrawCardView",
+        "Sort": 992,
+        "Switch": "fn_DrawCard_SP",
+        "Type": "Activity",
+        "TypeId": "DrawCard_SP_PNCao_Activity"
     },
     "ActivityBanner_YSLBin_1": {
         "Bubble": "",
@@ -1712,7 +1802,7 @@
         "Img": "activity_banner_tbzl.png",
         "Important": 1,
         "Link": "view://CarnivalView",
-        "Sort": 10000,
+        "Sort": 10,
         "Switch": "fn_carnival",
         "Type": "Activity",
         "TypeId": "Carnival"

@@ -153,11 +153,14 @@ all.Skill_QBTe_Proud = {
 				end
 
 				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
+
+				local animarray = global.GetAttackEffects(_env, _env.ACTOR)
+
 				global.AddAnim(_env, {
 					loop = 1,
-					anim = "qiumisj_bufftexiao",
 					zOrder = "TopLayer",
-					pos = global.UnitPos(_env, unit)
+					pos = global.UnitPos(_env, unit),
+					anim = animarray[1]
 				})
 			end
 		end)
@@ -259,6 +262,8 @@ all.Skill_QBTe_Unique = {
 				global.LoveDaze(_env, units_bottom[1], units_bottom[2])
 			end
 
+			local animarray = global.GetAttackEffects(_env, _env.ACTOR)
+
 			for _, unit in global.__iter__(units_top) do
 				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
 				global.ApplyRPEffect(_env, _env.ACTOR, unit)
@@ -272,9 +277,9 @@ all.Skill_QBTe_Unique = {
 				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
 				global.AddAnim(_env, {
 					loop = 1,
-					anim = "qiumisj_bufftexiao",
 					zOrder = "TopLayer",
-					pos = global.UnitPos(_env, unit)
+					pos = global.UnitPos(_env, unit),
+					anim = animarray[1]
 				})
 			end
 
@@ -291,9 +296,9 @@ all.Skill_QBTe_Unique = {
 				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
 				global.AddAnim(_env, {
 					loop = 1,
-					anim = "qiumisj_bufftexiao",
 					zOrder = "TopLayer",
-					pos = global.UnitPos(_env, unit)
+					pos = global.UnitPos(_env, unit),
+					anim = animarray[1]
 				})
 			end
 
@@ -310,9 +315,9 @@ all.Skill_QBTe_Unique = {
 				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
 				global.AddAnim(_env, {
 					loop = 1,
-					anim = "qiumisj_bufftexiao",
 					zOrder = "TopLayer",
-					pos = global.UnitPos(_env, unit)
+					pos = global.UnitPos(_env, unit),
+					anim = animarray[1]
 				})
 			end
 		end)
@@ -440,25 +445,27 @@ function all.LoveDaze(_env, unit1, unit2)
 		buffeft
 	}, 1, 0)
 
+	local animarray = global.GetAttackEffects(_env, _env.ACTOR)
+
 	if global.CellRowLocation(_env, global.GetCell(_env, unit1)) == 1 and global.CellRowLocation(_env, global.GetCell(_env, unit2)) == 3 then
 		global.AnimForTrgt(_env, unit1, {
 			loop = 1,
-			anim = "qiumitaoxin_bufftexiao",
 			zOrder = "TopLayer",
 			pos = {
 				-0.6,
 				0.5
-			}
+			},
+			anim = animarray[2]
 		})
 	else
 		global.AnimForTrgt(_env, unit1, {
 			loop = 1,
-			anim = "qiumitaoxin_bufftexiao",
 			zOrder = "TopLayer",
 			pos = {
 				-0.1,
 				0.5
-			}
+			},
+			anim = animarray[2]
 		})
 	end
 end
@@ -545,11 +552,14 @@ all.Skill_QBTe_Proud_EX = {
 				end
 
 				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
+
+				local animarray = global.GetAttackEffects(_env, _env.ACTOR)
+
 				global.AddAnim(_env, {
 					loop = 1,
-					anim = "qiumisj_bufftexiao",
 					zOrder = "TopLayer",
-					pos = global.UnitPos(_env, unit)
+					pos = global.UnitPos(_env, unit),
+					anim = animarray[1]
 				})
 			end
 		end)
@@ -651,6 +661,8 @@ all.Skill_QBTe_Unique_EX = {
 				global.LoveDaze(_env, units_bottom[1], units_bottom[2])
 			end
 
+			local animarray = global.GetAttackEffects(_env, _env.ACTOR)
+
 			for _, unit in global.__iter__(units_top) do
 				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
 				global.ApplyRPEffect(_env, _env.ACTOR, unit)
@@ -664,9 +676,9 @@ all.Skill_QBTe_Unique_EX = {
 				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
 				global.AddAnim(_env, {
 					loop = 1,
-					anim = "qiumisj_bufftexiao",
 					zOrder = "TopLayer",
-					pos = global.UnitPos(_env, unit)
+					pos = global.UnitPos(_env, unit),
+					anim = animarray[1]
 				})
 			end
 
@@ -683,9 +695,9 @@ all.Skill_QBTe_Unique_EX = {
 				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
 				global.AddAnim(_env, {
 					loop = 1,
-					anim = "qiumisj_bufftexiao",
 					zOrder = "TopLayer",
-					pos = global.UnitPos(_env, unit)
+					pos = global.UnitPos(_env, unit),
+					anim = animarray[1]
 				})
 			end
 
@@ -702,9 +714,9 @@ all.Skill_QBTe_Unique_EX = {
 				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
 				global.AddAnim(_env, {
 					loop = 1,
-					anim = "qiumisj_bufftexiao",
 					zOrder = "TopLayer",
-					pos = global.UnitPos(_env, unit)
+					pos = global.UnitPos(_env, unit),
+					anim = animarray[1]
 				})
 			end
 		end)

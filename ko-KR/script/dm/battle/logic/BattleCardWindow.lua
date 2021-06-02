@@ -27,6 +27,16 @@ function BattleCardWindow:setCardAtIndex(index, card)
 	end
 end
 
+function BattleCardWindow:getCardById(heroId)
+	for k, v in pairs(self._cards) do
+		if v:getType() == CARD_TYPE.kHeroCard and v:getHeroData().id == heroId then
+			return true
+		end
+	end
+
+	return nil
+end
+
 function BattleCardWindow:getCardAtIndex(index)
 	return self._cards[index]
 end

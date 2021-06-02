@@ -1820,6 +1820,49 @@
         ],
         "zoom": 0.6
     },
+    "Decoration_15012": {
+        "ATK": "UR_Decoration_ATK_AH",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "",
+        "Desc": "Decoration_15012_Desc",
+        "HP": "UR_Decoration_HP_AH",
+        "Icon": "ico_equip_headphone",
+        "Name": "Decoration_15012_Name",
+        "Position": "Decoration",
+        "Profession": [
+            "Defense",
+            "Attack",
+            "Support",
+            "Summon",
+            "Aoe",
+            "Curse",
+            "Cure"
+        ],
+        "ProfessionDesc": "Decoration_ProfessionDesc",
+        "ProfessionType": 0,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "",
+        "Shine": "",
+        "Skill": "EquipSkill_Decoration_15012",
+        "Sort": 289980,
+        "StartEquipStarID": "Rareity15_DecorationStone3_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
     "Shoes_11001": {
         "ATK": "",
         "AttrEffect": "",
@@ -3154,6 +3197,49 @@
         "Skill": "EquipSkill_Shoes_15007",
         "Sort": 289977,
         "StartEquipStarID": "Rareity15_Shoes1_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
+    "Shoes_15008": {
+        "ATK": "",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "",
+        "Desc": "Shoes_15008_Desc",
+        "HP": "UR_Shoes_HP",
+        "Icon": "ico_equip_newbieshoes",
+        "Name": "Shoes_15008_Name",
+        "Position": "Shoes",
+        "Profession": [
+            "Defense",
+            "Attack",
+            "Support",
+            "Summon",
+            "Aoe",
+            "Curse",
+            "Cure"
+        ],
+        "ProfessionDesc": "Decoration_ProfessionDesc",
+        "ProfessionType": 0,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "UR_Shoes_SPEED",
+        "Shine": "",
+        "Skill": "EquipSkill_Shoes_15008",
+        "Sort": 289975,
+        "StartEquipStarID": "Rareity15_Shoes2_1",
         "URUPSkillLV": [
             30,
             40,
@@ -4782,6 +4868,49 @@
         "Skill": "EquipSkill_Tops_15010",
         "Sort": 289978,
         "StartEquipStarID": "Rareity15_Top1_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
+    "Tops_15011": {
+        "ATK": "",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "UR_Top_DEF",
+        "Desc": "Tops_15011_Desc",
+        "HP": "UR_Top_HP",
+        "Icon": "ico_equip_newbiearmor",
+        "Name": "Tops_15011_Name",
+        "Position": "Tops",
+        "Profession": [
+            "Defense",
+            "Attack",
+            "Support",
+            "Summon",
+            "Aoe",
+            "Curse",
+            "Cure"
+        ],
+        "ProfessionDesc": "Decoration_ProfessionDesc",
+        "ProfessionType": 0,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "",
+        "Shine": "",
+        "Skill": "EquipSkill_Tops_15011",
+        "Sort": 289976,
+        "StartEquipStarID": "Rareity15_Top2_1",
         "URUPSkillLV": [
             30,
             40,

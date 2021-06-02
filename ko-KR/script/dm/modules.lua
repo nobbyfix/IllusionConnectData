@@ -1153,6 +1153,11 @@ local modules = {
 							res = "asset/ui/MasterCutIn.csb",
 							name = "MasterCutInView",
 							mediator = "MasterCutInMediator"
+						},
+						{
+							res = "asset/ui/MasterLeadStageAwake.csb",
+							name = "MasterLeadStageAwakeView",
+							mediator = "MasterLeadStageAwakeMediator"
 						}
 					}
 				}
@@ -1343,6 +1348,11 @@ local modules = {
 							res = "asset/ui/RecruitReward.csb",
 							name = "RecruitRewardView",
 							mediator = "RecruitRewardMediator"
+						},
+						{
+							res = "asset/ui/RecruitMain_New.csb",
+							name = "RecruitNewDrawCardView",
+							mediator = "RecruitNewDrawCardMediator"
 						}
 					}
 				}
@@ -1990,6 +2000,11 @@ local modules = {
 						{
 							res = "asset/ui/ActivityStoryBookMain.csb",
 							name = "ActivityStoryBookMainView",
+							mediator = "ActivityCommonMainMediator"
+						},
+						{
+							res = "asset/ui/ActivitySummerReMain.csb",
+							name = "ActivitySummerReMainView",
 							mediator = "ActivityCommonMainMediator"
 						}
 					}

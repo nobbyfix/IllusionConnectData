@@ -99,7 +99,8 @@ end
 local TargetRarity = {
 	Rarity12 = 12,
 	Rarity14 = 14,
-	Rarity13 = 13
+	Rarity13 = 13,
+	Rarity15 = 15
 }
 
 function KeySkillManager:checkTargetRarity(hero, rarity)

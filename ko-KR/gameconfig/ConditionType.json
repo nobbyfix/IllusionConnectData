@@ -1196,6 +1196,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_SummerChengjiuDian_Desc"
     },
+    "Condi_SummerReExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_SummerRe_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_SummerReExchangeAchieve_Desc"
+    },
     "Condi_SunflowerExchangeAchieve": {
         "AchieveType1": "INCREASE",
         "AchieveType2": "",

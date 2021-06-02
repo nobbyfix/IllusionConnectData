@@ -58,7 +58,7 @@ function StageGuide:spawnUnit(context, player, cell, heroData, isMaster)
 		name = "init"
 	}
 
-	formationSystem:SpawnUnit(player, heroData, cell, animation, false, isMaster)
+	formationSystem:SpawnUnit(player, heroData, cell, animation, false, isMaster, {})
 end
 
 function StageGuide:newHeroCard(player, heroId, idx)

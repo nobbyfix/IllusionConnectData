@@ -1,6 +1,7 @@
 {
     "Aoe": {
         "IncludeHero": [
+            "SP_PNCao",
             "DFQi",
             "HLMGen",
             "WTXXuan",
@@ -191,6 +192,7 @@
     },
     "MNJH": {
         "IncludeHero": [
+            "SP_PNCao",
             "MGNa",
             "TLSi",
             "KTSJKe",
@@ -245,6 +247,16 @@
         "PartyDesc": "Party_R_Desc",
         "PartyReward": [],
         "ShowRank": 4,
+        "Type": 3
+    },
+    "SP": {
+        "IncludeHero": [
+            "SP_PNCao"
+        ],
+        "Party": "SP",
+        "PartyDesc": "Party_SP_Desc",
+        "PartyReward": [],
+        "ShowRank": 1,
         "Type": 3
     },
     "SR": {

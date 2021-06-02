@@ -26,6 +26,7 @@ require("dm.gameplay.activity.model.MiniGameActivity")
 require("dm.gameplay.activity.model.return.ActivityReturn")
 require("dm.gameplay.activity.model.return.ActivityReturnLetter")
 require("dm.gameplay.activity.model.return.ActivityReturnCarnival")
+require("dm.gameplay.activity.model.ActivityDrawCardSp")
 
 ActivityShowTab = {
 	kInAll = 3,
@@ -88,7 +89,8 @@ ActivityModel = {
 	[ActivityType.KMiniGame] = MiniGameActivity,
 	[ActivityType.KReturn] = ActivityReturn,
 	[ActivityType.KLetter] = ActivityReturnLetter,
-	[ActivityType.KReturnCarnival] = ActivityReturnCarnival
+	[ActivityType.KReturnCarnival] = ActivityReturnCarnival,
+	[ActivityType.kDRAWCARDSP] = ActivityDrawCardSp
 }
 ActivityUI = {
 	ACTIVITYBLOCKEGG = "ActivityBlockEggView",
@@ -158,7 +160,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivitySunflower] = "ActivitySunflowerMainView",
 		[ActivityType_UI.KActivityFire] = "ActivityFireMainView",
 		[ActivityType_UI.KActivityFemale] = "ActivityFemaleMainView",
-		[ActivityType_UI.KActivityStoryBook] = "ActivityStoryBookMainView"
+		[ActivityType_UI.KActivityStoryBook] = "ActivityStoryBookMainView",
+		[ActivityType_UI.KActivitySummerRe] = "ActivitySummerReMainView"
 	},
 	enterBlockMonsterShopView = {
 		[ActivityType_UI.kActivityBlockWsj] = "ActivityBlockMonsterShopView",
@@ -181,7 +184,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivitySunflower] = "ActivitySagaSupportMapView",
 		[ActivityType_UI.KActivityFire] = "ActivitySagaSupportMapView",
 		[ActivityType_UI.KActivityFemale] = "ActivitySagaSupportMapView",
-		[ActivityType_UI.KActivityStoryBook] = "ActivitySagaSupportMapView"
+		[ActivityType_UI.KActivityStoryBook] = "ActivitySagaSupportMapView",
+		[ActivityType_UI.KActivitySummerRe] = "ActivitySagaSupportMapView"
 	},
 	enterSagaSupportStageView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportStageWxhView",
@@ -208,7 +212,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivitySunflower] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivityFire] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivityFemale] = "ActivityBlockTaskView",
-		[ActivityType_UI.KActivityStoryBook] = "ActivityBlockTaskView"
+		[ActivityType_UI.KActivityStoryBook] = "ActivityBlockTaskView",
+		[ActivityType_UI.KActivitySummerRe] = "ActivityBlockTaskView"
 	},
 	enterSagaSupportRankRewardView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportRankRewardWxhView",
@@ -270,6 +275,13 @@ ActivityLogin14Config = {
 			cc.c4b(255, 255, 255, 255),
 			cc.c4b(255, 233, 133, 255)
 		}
+	},
+	EightDays_SummerRe = {
+		resFile = "asset/ui/ActivitySummerReLogin14.csb",
+		textPattern = {
+			cc.c4b(255, 255, 255, 255),
+			cc.c4b(144, 183, 255, 255)
+		}
 	}
 }
 ActivityMainMapTitleConfig = {
@@ -327,6 +339,14 @@ ActivityMainMapTitleConfig = {
 		[ActivityType_UI.KActivityStoryBook] = {
 			"zhu_beimoufubenrukou",
 			cc.p(54, 155)
+		},
+		[ActivityType_UI.KActivitySummerRe] = {
+			"shuijingqiu_xiarihuodong",
+			cc.p(160, 140)
 		}
 	}
+}
+ActivitySupportScheduleId = {
+	[ActivityType_UI.kActivityBlockZuoHe] = "ABS_ZuoHe",
+	[ActivityType_UI.kActivityWxh] = "ABS_WuXiuHui"
 }

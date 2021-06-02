@@ -68,6 +68,7 @@ function HeroSystem:initialize(developSystem)
 	self._selectData = {
 		["14"] = "0",
 		["13"] = "1",
+		["15"] = "0",
 		canUseStive = "1",
 		canUseOwn = "0",
 		["12"] = "1"

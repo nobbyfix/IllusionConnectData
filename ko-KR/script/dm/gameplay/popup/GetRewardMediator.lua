@@ -273,7 +273,13 @@ function GetRewardMediator:showOneIcon(index)
 			end
 
 			if config and config.Id and (config.Shine and config.Shine >= 1 or ResourcesShine >= 1) then
-				local anim = cc.MovieClip:create("ssrchuchang_zhuangbeishilian")
+				local movieName = "ssrchuchang_zhuangbeishilian"
+
+				if rewardData.type == RewardType.kItem and config.Quality and config.Quality == 7 then
+					movieName = "spchuchang_zhuangbeishilian"
+				end
+
+				local anim = cc.MovieClip:create(movieName)
 
 				anim:addEndCallback(function ()
 					anim:stop()

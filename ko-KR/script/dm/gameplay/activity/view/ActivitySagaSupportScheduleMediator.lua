@@ -98,6 +98,8 @@ function ActivitySagaSupportScheduleMediator:enterWithData(data)
 		return
 	end
 
+	self._ui = self._activity:getUI()
+
 	self:mapButtonHandlersClick(kBtnHandlers)
 	self:updateInfoWidget()
 	self:initData()
@@ -166,7 +168,7 @@ end
 
 function ActivitySagaSupportScheduleMediator:updateView()
 	for scheduleId, periodData in pairs(self._periods) do
-		local checkBtn = self._schedulePanel:getChildByFullName(periodData.periodId .. "_3.checkBtnClone")
+		local checkBtn = self._schedulePanel:getChildByFullName(self:getViewScheduleId(periodData.periodId) .. "_3.checkBtnClone")
 
 		local function callFunc()
 			self:onClickCheckBtn(scheduleId)
@@ -287,7 +289,7 @@ function ActivitySagaSupportScheduleMediator:updateCell(data)
 	local config = periodData.config
 
 	setStartTime(data.periodId)
-	node:addTo(self._schedulePanel:getChildByFullName(data.periodId .. "_" .. index))
+	node:addTo(self._schedulePanel:getChildByFullName(self:getViewScheduleId(data.periodId) .. "_" .. index))
 
 	if config.Type == ActivitySupportScheduleType.preliminaries then
 		bg:setScale(0.45)
@@ -324,7 +326,7 @@ function ActivitySagaSupportScheduleMediator:updateCell(data)
 	end
 
 	if heroData and data.status == ActivitySupportStatus.Ended and heroId == data.winHeroId then
-		local v = self._schedulePanel:getChildByFullName(data.periodId .. "_3")
+		local v = self._schedulePanel:getChildByFullName(self:getViewScheduleId(data.periodId) .. "_3")
 
 		v:getChildByFullName("checkBtnClone.line" .. index):loadTexture("hd_contest__yellowline02.png", 1)
 		v:getChildByFullName("checkBtnClone.line3"):loadTexture("hd_contest__yellowline.png", 1)
@@ -352,4 +354,8 @@ end
 
 function ActivitySagaSupportScheduleMediator:onClickBack(sender, eventType)
 	self:dismiss()
+end
+
+function ActivitySagaSupportScheduleMediator:getViewScheduleId(periodId)
+	return string.gsub(periodId, ActivitySupportScheduleId[self._ui], "schedule")
 end

@@ -725,50 +725,49 @@ all.Skill_YLSBai_Unique_Awken = {
 				0.6
 			}))
 
-			if global.UnitPropGetter(_env, "hpRatio")(_env, global.FriendMaster(_env)) >= 0.9 then
-				local buffeft4 = global.NumericEffect(_env, "+blockrate", {
-					"+Normal",
-					"+Normal"
-				}, this.BlockRateFactor)
-
-				global.ApplyBuff(_env, global.FriendMaster(_env), {
-					timing = 3,
-					display = "BlockRateUp",
-					group = "Skill_YLSBai_Unique_Awken",
-					duration = 2,
-					limit = 1,
-					tags = {
-						"NUMERIC",
-						"BUFF",
-						"BLOCKRATEUP",
-						"Skill_YLSBai_Unique_Awken",
-						"UNDISPELLABLE",
-						"UNSTEALABLE"
-					}
-				}, {
-					buffeft4
-				})
-				global.ApplyBuff(_env, _env.ACTOR, {
-					timing = 3,
-					display = "BlockRateUp",
-					group = "Skill_YLSBai_Unique_Awken",
-					duration = 2,
-					limit = 1,
-					tags = {
-						"NUMERIC",
-						"BUFF",
-						"BLOCKRATEUP",
-						"Skill_YLSBai_Unique_Awken",
-						"UNDISPELLABLE",
-						"UNSTEALABLE"
-					}
-				}, {
-					buffeft4
-				})
-				global.print(_env, "队长血量比例高于90%，触发格挡盾效果，瑟琳娜格挡率为：", global.UnitPropGetter(_env, "blockrate")(_env, _env.ACTOR), ",队长格挡率为：", global.UnitPropGetter(_env, "blockrate")(_env, global.FriendMaster(_env)))
-			end
-
 			if global.FriendMaster(_env) then
+				if global.UnitPropGetter(_env, "hpRatio")(_env, global.FriendMaster(_env)) >= 0.9 then
+					local buffeft4 = global.NumericEffect(_env, "+blockrate", {
+						"+Normal",
+						"+Normal"
+					}, this.BlockRateFactor)
+
+					global.ApplyBuff(_env, global.FriendMaster(_env), {
+						timing = 3,
+						display = "BlockRateUp",
+						group = "Skill_YLSBai_Unique_Awken",
+						duration = 2,
+						limit = 1,
+						tags = {
+							"NUMERIC",
+							"BUFF",
+							"BLOCKRATEUP",
+							"Skill_YLSBai_Unique_Awken",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buffeft4
+					})
+					global.ApplyBuff(_env, _env.ACTOR, {
+						timing = 3,
+						display = "BlockRateUp",
+						group = "Skill_YLSBai_Unique_Awken",
+						duration = 2,
+						limit = 1,
+						tags = {
+							"NUMERIC",
+							"BUFF",
+							"BLOCKRATEUP",
+							"Skill_YLSBai_Unique_Awken",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buffeft4
+					})
+				end
+
 				local heal = damage * this.HealRateFactor
 
 				global.ApplyHPRecovery_ResultCheck(_env, _env.ACTOR, global.FriendMaster(_env), heal)
@@ -790,7 +789,6 @@ all.Skill_YLSBai_Unique_Awken = {
 				}, {
 					buffeft3
 				})
-				global.print(_env, "瑟琳娜伤害治疗量为：", heal)
 			end
 		end)
 		exec["@time"]({

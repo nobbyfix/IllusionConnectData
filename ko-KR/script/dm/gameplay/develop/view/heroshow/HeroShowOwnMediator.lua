@@ -1267,6 +1267,11 @@ function HeroShowOwnMediator:refreshName()
 	local qualityLevel = self._heroData:getQualityLevel() == 0 and "" or "+" .. self._heroData:getQualityLevel()
 
 	name:setString(nameString .. qualityLevel)
+
+	if name:getContentSize().width > 200 then
+		name:setFontSize(self:getFontSizeForName(nameString .. qualityLevel))
+	end
+
 	GameStyle:setHeroNameByQuality(name, self._heroData:getQuality(), 1)
 	nameBg:setScaleX((name:getContentSize().width + 90) / nameBg:getContentSize().width)
 
@@ -1300,6 +1305,19 @@ function HeroShowOwnMediator:refreshName()
 	else
 		partyType:setVisible(false)
 	end
+end
+
+function HeroShowOwnMediator:getFontSizeForName(str)
+	local fontSize = 48
+	local width = 10000
+
+	repeat
+		local lvLabel = cc.Label:createWithTTF(str, CUSTOM_TTF_FONT_1, fontSize)
+		width = lvLabel:getContentSize().width
+		fontSize = fontSize - 2
+	until width < 200 or fontSize < 2
+
+	return fontSize
 end
 
 function HeroShowOwnMediator:runStartAnim()

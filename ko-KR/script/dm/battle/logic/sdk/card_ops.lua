@@ -9,14 +9,24 @@ function exports.GetCardCost(env, card)
 	return card:getActualCost()
 end
 
-function exports.SetHeroCardType(env, player, card, type)
+function exports.addHeroCardSeatRules(env, player, card, rules, dierules)
 	local cardSystem = env.global["$CardSystem"]
 
 	if cardSystem == nil then
 		return nil
 	end
 
-	return cardSystem:setHeroCardType(player, card, type)
+	return cardSystem:addHeroCardSeatRules(player, card, rules, dierules)
+end
+
+function exports.clearHeroCardSeatRules(env, player, card, rules, dierules)
+	local cardSystem = env.global["$CardSystem"]
+
+	if cardSystem == nil then
+		return nil
+	end
+
+	return cardSystem:clearHeroCardSeatRules(player, card, rules, dierules)
 end
 
 function exports.CARD_HERO_MARKED(env, flag)
@@ -166,6 +176,24 @@ function exports.SelectCardBuffCount(env, heroCard, tag)
 	end
 
 	return cardSystem:getTiggerBuffCountOnHeroCard(heroCard, tag)
+end
+
+function exports.DispelBuffOnHeroCard(env, heroCard, tags)
+	if not heroCard then
+		return 0
+	end
+
+	if heroCard:getType() ~= "hero" then
+		return 0
+	end
+
+	local cardSystem = env.global["$CardSystem"]
+
+	if cardSystem == nil then
+		return 0
+	end
+
+	return cardSystem:getTiggerBuffCountOnHeroCard(heroCard, tags)
 end
 
 function exports.LockHeroCards(env, player, cardfilter)

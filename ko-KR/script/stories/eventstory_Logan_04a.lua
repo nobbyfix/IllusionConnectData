@@ -103,7 +103,7 @@ function scene_eventstory_Logan_04a:stage(args)
 						layoutMode = 1,
 						zorder = 15,
 						id = "bg_juguai",
-						scale = 1.25,
+						scale = 1.3,
 						anchorPoint = {
 							x = 0.5,
 							y = 0.22

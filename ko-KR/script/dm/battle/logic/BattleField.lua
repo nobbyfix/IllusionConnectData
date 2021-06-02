@@ -18,6 +18,9 @@ BFCell:has("_resident", {
 BFCell:has("_oldResident", {
 	is = "rw"
 })
+BFCell:has("_oldResidentDieRule", {
+	is = "rw"
+})
 BFCell:has("_isLocked", {
 	is = "rwb"
 })

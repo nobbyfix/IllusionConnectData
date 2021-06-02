@@ -44,6 +44,10 @@ local timeLimitShopConfig = {
 	},
 	storybook = {
 		TimeOutLineColor = cc.c4b(187, 1, 1, 255)
+	},
+	summerre = {
+		BG = "jqtd_txt_qlyxzl_di",
+		TimeOutLineColor = cc.c4b(9, 70, 173, 255)
 	}
 }
 local btnHandlers = {

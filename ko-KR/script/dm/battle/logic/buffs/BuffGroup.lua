@@ -7,6 +7,20 @@ BuffGroup:has("_stackingCounts", {
 	is = "rw"
 })
 
+local function deepCopy(desc, src)
+	local d = desc or {}
+
+	for k, v in pairs(src) do
+		if type(v) == "table" then
+			d[k] = deepCopy({}, v)
+		else
+			d[k] = v
+		end
+	end
+
+	return d
+end
+
 function BuffGroup:initialize(buffObject)
 	local effects = buffObject:cloneEffects()
 
@@ -41,7 +55,19 @@ function BuffGroup:isGroup()
 end
 
 function BuffGroup:clone()
-	assert(false, "BuffGroup can't clone")
+	local cloneInstance = {}
+
+	for k, v in pairs(self._stackedObjects) do
+		local config = {}
+
+		deepCopy(config, v:getConfig())
+
+		config.duration = self._lifespans[k]
+		config.timing = self._timing
+		cloneInstance[#cloneInstance + 1] = BuffObject:new(config, v:cloneEffects())
+	end
+
+	return cloneInstance
 end
 
 function BuffGroup:stack(buffObject, groupLimit)

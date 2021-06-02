@@ -339,7 +339,7 @@ local heroRarityArr = {
 	"yh_bg_r.png",
 	"yh_bg_sr.png",
 	"yh_bg_ssr.png",
-	"yh_bg_ssr.png"
+	"yh_bg_sp.png"
 }
 
 function GameStyle:getHeroRarityImage(rarity)
@@ -495,8 +495,8 @@ local kHeroRarityBg = {
 		kHeroRarityBgFile .. "common_bd_ssr02.png"
 	},
 	[15] = {
-		kHeroRarityBgFile .. "common_bd_ssr01.png",
-		kHeroRarityBgFile .. "common_bd_ssr02.png"
+		kHeroRarityBgFile .. "common_bd_sp01.png",
+		kHeroRarityBgFile .. "common_bd_sp02.png"
 	}
 }
 
@@ -586,8 +586,7 @@ local equipRarityArr = {
 	[11] = heroRect .. "common_img_n.png",
 	[12] = heroRect .. "common_img_r.png",
 	[13] = heroRect .. "common_img_sr.png",
-	[14] = heroRect .. "common_img_ssr.png",
-	[15] = heroRect .. "common_img_ssr.png"
+	[14] = heroRect .. "common_img_ssr.png"
 }
 
 function GameStyle:getEquipRarityImage(rarity)
@@ -644,7 +643,8 @@ local itemQuaPatternPath = {
 	"common_pz_lan.png",
 	"common_pz_zi.png",
 	"common_pz_huang.png",
-	"common_pz_hong.png"
+	"common_pz_hong.png",
+	"common_pz_sp.png"
 }
 local kItemImgType = {
 	Pattern = 1,
@@ -801,6 +801,10 @@ local qualityTextColorMap = {
 		color = cc.c3b(255, 159, 48)
 	},
 	[ColorType.kRed] = {
+		outline = cc.c4b(0, 0, 0, 219.29999999999998),
+		color = cc.c3b(255, 76, 77)
+	},
+	[ColorType.kBlock] = {
 		outline = cc.c4b(0, 0, 0, 219.29999999999998),
 		color = cc.c3b(255, 76, 77)
 	}

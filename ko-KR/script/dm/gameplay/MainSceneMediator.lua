@@ -62,6 +62,9 @@ local muiscCfg = {
 	ActivityStoryBookMainView = {
 		noAutoPlay = true
 	},
+	ActivitySummerReMainView = {
+		noAutoPlay = true
+	},
 	ActivityBlockDetectiveView = {
 		noAutoPlay = true
 	},

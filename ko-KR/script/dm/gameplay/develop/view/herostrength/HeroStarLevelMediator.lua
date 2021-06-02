@@ -11,6 +11,7 @@ local HeroStar_StiveChange = ConfigReader:getDataByNameIdAndKey("ConfigValue", "
 local HeroStar_StiveChangeSelf = ConfigReader:getDataByNameIdAndKey("ConfigValue", "HeroStar_StiveChangeSelf", "content")
 local kExpConsumeKey = {
 	[12.0] = "HeroStar_R",
+	[15.0] = "HeroStar_SP",
 	[13.0] = "HeroStar_SR",
 	[14.0] = "HeroStar_SSR"
 }
@@ -101,12 +102,14 @@ function HeroStarLevelMediator:initData(data)
 	local rarityArr = {
 		"12",
 		"13",
-		"14"
+		"14",
+		"15"
 	}
 	self._rarityItem = {
 		["12"] = {},
 		["13"] = {},
-		["14"] = {}
+		["14"] = {},
+		["15"] = {}
 	}
 	self._selfItem = nil
 
