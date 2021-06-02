@@ -335,6 +335,27 @@
         "StoryLink": "S11S01",
         "SurfaceId": "Surface_YSTLu_Awake"
     },
+    "ZTXChang": {
+        "AnimSound": "Se_Effect_Awakening_ZTXChang",
+        "Animation": "cxxye_Awaken",
+        "CutIn": [
+            0,
+            0,
+            0.7
+        ],
+        "ModelId": "Model_ZTXChang_Awake",
+        "Name": "ZTXChang_Awake_Name",
+        "NameDesc": "ZTXChang_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_ZTXChang_UnAwake",
+        "Reward": "HeroAwaken_ZTXChang",
+        "ShowHero": "ZTXChang",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "ZTXChang_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_ZTXChang_Awake"
+    },
     "ZZBBWei": {
         "AnimSound": "",
         "Animation": "ZZBBWei_Awaken",

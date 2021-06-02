@@ -6,7 +6,7 @@ HeroStarUpTipMediator:has("_developSystem", {
 
 local kHeroRarityAnim = {
 	[15] = {
-		"ssr_choukahuodeyinghun",
+		"sp_urequipeff",
 		17
 	},
 	[14] = {

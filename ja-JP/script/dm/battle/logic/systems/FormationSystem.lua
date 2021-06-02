@@ -124,21 +124,53 @@ function FormationSystem:_settleUnit(player, unit, cellId, animation, isUserCmd,
 	return unit
 end
 
-function FormationSystem:SpawnUnit(player, unitData, cellNo, animation, isUserCmd, isMasterOrCost, heroCardType)
+function FormationSystem:CanBeSitBy(cellId, seatRules)
+	local battleField = self._battleField
+	local cell = battleField:getCellById(cellId)
+	local oldRes = cell:getResident()
+
+	if oldRes then
+		local canBeSit = false
+		local killOrKick = nil
+
+		for rule, killorkick in pairs(seatRules) do
+			if rule == "SUMMONED" then
+				canBeSit = oldRes:isSummoned()
+			else
+				local flagComp = oldRes:getComponent("Flag")
+				canBeSit = flagComp:hasFlag(rule)
+			end
+
+			if canBeSit then
+				killOrKick = killorkick
+
+				break
+			end
+		end
+
+		if canBeSit then
+			cell:setOldResident(oldRes)
+			cell:setOldResidentDieRule(killOrKick)
+
+			return true
+		end
+	end
+
+	return false, "InvalidTargetPosition"
+end
+
+function FormationSystem:SpawnUnit(player, unitData, cellNo, animation, isUserCmd, isMasterOrCost, seatRules)
 	local cellId = makeCellId(player:getSide(), cellNo)
 	local battleField = self._battleField
 
 	if not battleField:isEmptyCell(cellId) then
-		if heroCardType == HeroCardType.Normal then
+		if seatRules and not next(seatRules) then
 			return false, "InvalidTargetPosition"
 		else
-			local cell = battleField:getCellById(cellId)
-			local oldRes = cell:getResident()
+			local canBeSit, reason = self:CanBeSitBy(cellId, seatRules)
 
-			if oldRes and oldRes:isSummoned() then
-				cell:setOldResident(oldRes)
-			else
-				return false, "InvalidTargetPosition"
+			if not canBeSit then
+				return canBeSit, reason
 			end
 		end
 	end
@@ -564,6 +596,44 @@ function FormationSystem:changeUnitSettled(unit)
 		end
 
 		self._TrapSystem:triggerTrap(unit)
+	end
+end
+
+function FormationSystem:clearOldResident(actor)
+	local oldResident = actor:getCell():getOldResident()
+
+	if oldResident then
+		local dieRules = actor:getCell():getOldResidentDieRule()
+
+		for k, v in pairs(dieRules) do
+			if v == "kick" then
+				local skillSystem = self._battleContext:getObject("SkillSystem")
+
+				skillSystem:activateSpecificTrigger(oldResident, "UNIT_KICK_BY_OTHERSET", {
+					dierule = "kick",
+					newunit = actor
+				})
+				skillSystem:activateGlobalTrigger("UNIT_KICK_BY_OTHERSET", {
+					dierule = "kick",
+					unit = oldResident,
+					newunit = actor
+				})
+				self:_kickUnit(oldResident)
+
+				return
+			end
+		end
+
+		for k, v in pairs(dieRules) do
+			if v == "die" then
+				oldResident:setLifeStage(ULS_Dying)
+				self:removeDyingUnits({
+					oldResident
+				})
+
+				return
+			end
+		end
 	end
 end
 
@@ -1043,6 +1113,16 @@ function FormationSystem:update(dt, battleContext)
 
 	for i = 1, #units do
 		units[i]:update(dt, battleContext)
+
+		local posComp = units[i]:getComponent("Position")
+
+		if posComp then
+			local cell = posComp:getCell()
+
+			if cell:getOldResident() then
+				cell:getOldResident():update(dt, battleContext)
+			end
+		end
 	end
 end
 

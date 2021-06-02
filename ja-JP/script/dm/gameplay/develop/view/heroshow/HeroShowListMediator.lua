@@ -14,7 +14,7 @@ HeroShowListMediator:has("_systemKeeper", {
 }):injectWith("SystemKeeper")
 
 local kHeroRarityBgAnim = {
-	[15.0] = "ssrzong_yingxiongxuanze",
+	[15.0] = "spzong_urequipeff",
 	[13.0] = "srzong_yingxiongxuanze",
 	[14.0] = "ssrzong_yingxiongxuanze"
 }
@@ -457,20 +457,33 @@ function HeroShowListMediator:createTeamCell(cell, index)
 			end
 
 			local occupation = occupationBg:getChildByFullName("baseNode.occupation")
-			local rarityBg = actionNode:getChildByFullName("rarityBg")
 
-			if not rarityBg then
-				rarityBg = cc.Sprite:create("asset/common/common_bd_xydd.png")
+			actionNode:removeChildByName("rarityBg")
 
-				rarityBg:addTo(actionNode):posite(32, 167)
-				rarityBg:setGlobalZOrder(95)
-				rarityBg:setName("rarityBg")
+			local name_Bg = "common_bd_xydd.png"
 
-				local baseNode = cc.GroupedNode:create()
+			if heroData.rareity == 15 then
+				name_Bg = "common_bd_xydd_sp.png"
+			end
 
-				baseNode:addTo(rarityBg)
-				baseNode:setGlobalZOrder(96)
-				baseNode:setName("baseNode")
+			local rarityBg = cc.Sprite:create("asset/common/" .. name_Bg)
+
+			rarityBg:addTo(actionNode):posite(32, 167)
+			rarityBg:setGlobalZOrder(95)
+			rarityBg:setName("rarityBg")
+
+			local baseNode = cc.GroupedNode:create()
+
+			baseNode:addTo(rarityBg)
+			baseNode:setGlobalZOrder(96)
+			baseNode:setName("baseNode")
+
+			local rarityAnim = IconFactory:getHeroRarityAnim(heroData.rareity)
+
+			rarityAnim:addTo(baseNode):posite(36, 40)
+
+			if heroData.rareity == 15 then
+				rarityAnim:setPosition(cc.p(38, 55))
 			end
 
 			local levelImage = actionNode:getChildByName("levelImage")
@@ -509,11 +522,6 @@ function HeroShowListMediator:createTeamCell(cell, index)
 
 			occupation:loadTexture(occupationImg)
 			cost:setString(heroData.cost)
-
-			local baseNode = rarityBg:getChildByFullName("baseNode"):removeAllChildren()
-			local rarityAnim = IconFactory:getHeroRarityAnim(heroData.rareity)
-
-			rarityAnim:addTo(baseNode):posite(36, 40)
 			bg2:loadTexture(GameStyle:getHeroRarityBg(heroData.rareity)[2])
 			weak:removeAllChildren()
 			weakTop:removeAllChildren()
@@ -524,7 +532,12 @@ function HeroShowListMediator:createTeamCell(cell, index)
 				local anim = cc.MovieClip:create(kHeroRarityBgAnim[heroData.rareity])
 
 				anim:addTo(bg1):center(bg1:getContentSize())
-				anim:offset(-1, -30)
+
+				if heroData.rareity <= 14 then
+					anim:offset(-1, -30)
+				else
+					anim:offset(-3, 0)
+				end
 
 				if heroData.rareity >= 14 then
 					local anim = cc.MovieClip:create("ssrlizichai_yingxiongxuanze")

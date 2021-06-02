@@ -2991,6 +2991,300 @@
         ],
         "StoryLink": "eventstory_Logan_04a"
     },
+    "SummerS01E01": {
+        "FirstReward": "SummerS01E01_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -250
+        ],
+        "Map": "SummerE01",
+        "Name": "BlockPoint_SummerS01E01_Name",
+        "NextStoryPoint": [
+            "SummerS01E02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_siren_06a"
+    },
+    "SummerS01E02": {
+        "FirstReward": "SummerS01E02_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "SummerE01",
+        "Name": "BlockPoint_SummerS01E02_Name",
+        "NextStoryPoint": [
+            "SummerS01E03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "SummerE01S04"
+        ],
+        "PreStoryPoint": [
+            "SummerS01E01"
+        ],
+        "StoryLink": "eventstory_siren_07a"
+    },
+    "SummerS01E03": {
+        "FirstReward": "SummerS01E03_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "SummerE01",
+        "Name": "BlockPoint_SummerS01E03_Name",
+        "NextStoryPoint": [
+            "SummerS01E04"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "SummerE01S08"
+        ],
+        "PreStoryPoint": [
+            "SummerS01E02"
+        ],
+        "StoryLink": "eventstory_siren_08a"
+    },
+    "SummerS01E04": {
+        "FirstReward": "SummerS01E04_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -100
+        ],
+        "Map": "SummerE01",
+        "Name": "BlockPoint_SummerS01E04_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "SummerE01S10"
+        ],
+        "PreStoryPoint": [
+            "SummerS01E03"
+        ],
+        "StoryLink": "eventstory_siren_09a"
+    },
+    "SummerS01H01": {
+        "FirstReward": "SummerS01H01_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            0
+        ],
+        "Map": "SummerM01",
+        "Name": "BlockPoint_SummerS01H01_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_siren_001a"
+    },
+    "SummerS01H02": {
+        "FirstReward": "SummerS01H02_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            50
+        ],
+        "Map": "SummerM01",
+        "Name": "BlockPoint_SummerS01H02_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_siren_002a"
+    },
+    "SummerS01H03": {
+        "FirstReward": "SummerS01H03_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -50
+        ],
+        "Map": "SummerE01",
+        "Name": "BlockPoint_SummerS01H03_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_siren_003a"
+    },
+    "SummerS01S01": {
+        "FirstReward": "SummerS01S01_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -250
+        ],
+        "Map": "SummerM01",
+        "Name": "BlockPoint_SummerS01S01_Name",
+        "NextStoryPoint": [
+            "SummerS01S02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_siren_01a"
+    },
+    "SummerS01S02": {
+        "FirstReward": "SummerS01S02_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "SummerM01",
+        "Name": "BlockPoint_SummerS01S02_Name",
+        "NextStoryPoint": [
+            "SummerS01S03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "SummerM01S02"
+        ],
+        "PreStoryPoint": [
+            "SummerS01S01"
+        ],
+        "StoryLink": "eventstory_siren_02a"
+    },
+    "SummerS01S03": {
+        "FirstReward": "SummerS01S03_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "SummerM01",
+        "Name": "BlockPoint_SummerS01S03_Name",
+        "NextStoryPoint": [
+            "SummerS01S04"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "SummerM01S05"
+        ],
+        "PreStoryPoint": [
+            "SummerS01S02"
+        ],
+        "StoryLink": "eventstory_siren_03a"
+    },
+    "SummerS01S04": {
+        "FirstReward": "SummerS01S04_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -100
+        ],
+        "Map": "SummerM01",
+        "Name": "BlockPoint_SummerS01S04_Name",
+        "NextStoryPoint": [
+            "SummerS01S05"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "SummerM01S08"
+        ],
+        "PreStoryPoint": [
+            "SummerS01S03"
+        ],
+        "StoryLink": "eventstory_siren_04a"
+    },
+    "SummerS01S05": {
+        "FirstReward": "SummerS01S05_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -50
+        ],
+        "Map": "SummerM01",
+        "Name": "BlockPoint_SummerS01S05_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "SummerM01S10"
+        ],
+        "PreStoryPoint": [
+            "SummerS01S04"
+        ],
+        "StoryLink": "eventstory_siren_05a"
+    },
     "SunflowerS01S01": {
         "FirstReward": "SunflowerS01S01_Reward",
         "Icon": "s_album_story_1",

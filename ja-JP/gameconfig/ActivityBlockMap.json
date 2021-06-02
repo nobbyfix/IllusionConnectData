@@ -1120,6 +1120,73 @@
         ],
         "Type": "NORMAL"
     },
+    "SummerE01": {
+        "BGM": "Mus_Story_Summer",
+        "Background": "Bg_story_scene_13_2",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_SummerE01_Name",
+        "StarBoxReward": {
+            "10": "SummerE01BOX01",
+            "20": "SummerE01BOX02",
+            "30": "SummerE01BOX03"
+        },
+        "SubPoint": [
+            "SummerE01S01",
+            "SummerE01S02",
+            "SummerE01S03",
+            "SummerE01S04",
+            "SummerE01S05",
+            "SummerE01S06",
+            "SummerE01S07",
+            "SummerE01S08",
+            "SummerE01S09",
+            "SummerE01S10",
+            "SummerE01S11",
+            "SummerE01S12"
+        ],
+        "SubStoryPoint": [
+            "SummerS01E01",
+            "SummerS01E02",
+            "SummerS01E03",
+            "SummerS01E04"
+        ],
+        "Type": "ELITE"
+    },
+    "SummerM01": {
+        "BGM": "Mus_Story_Summer",
+        "Background": "Bg_story_scene_13_1",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_SummerM01_Name",
+        "StarBoxReward": {
+            "10": "SummerM01BOX01",
+            "20": "SummerM01BOX02",
+            "30": "SummerM01BOX03"
+        },
+        "SubPoint": [
+            "SummerM01S01",
+            "SummerM01S02",
+            "SummerM01S03",
+            "SummerM01S04",
+            "SummerM01S05",
+            "SummerM01S06",
+            "SummerM01S07",
+            "SummerM01S08",
+            "SummerM01S09",
+            "SummerM01S10",
+            "SummerM01S11",
+            "SummerM01S12"
+        ],
+        "SubStoryPoint": [
+            "SummerS01S01",
+            "SummerS01S02",
+            "SummerS01S03",
+            "SummerS01S04",
+            "SummerS01S05"
+        ],
+        "Type": "NORMAL"
+    },
     "SunflowerE01": {
         "BGM": "Mus_Story_VanGogh_Egypt",
         "Background": "Sunflower_Scene03",

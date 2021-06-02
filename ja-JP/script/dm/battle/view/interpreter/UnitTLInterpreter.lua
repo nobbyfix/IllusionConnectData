@@ -118,6 +118,7 @@ function UnitTLInterpreter:act_SpawnUnit(action, args)
 	roleDataModel:setConfigId(args.cid)
 	roleDataModel:setIsSummond(args.isSummoned)
 	roleDataModel:setSide(args.side)
+	roleDataModel:setFlags(args.flags)
 
 	local pos = self._battleGround:relPositionFor(isLeft, posInArr)
 	local role = BattleRoleObject:new(id, roleDataModel, self._context)

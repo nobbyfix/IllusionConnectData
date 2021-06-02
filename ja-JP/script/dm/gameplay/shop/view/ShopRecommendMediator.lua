@@ -156,7 +156,7 @@ function ShopRecommendMediator:refreshView()
 					showAmount = false
 				})
 
-				icon:addTo(self._bgImage):posite(425.5, 373):setScale(0.7)
+				icon:addTo(self._bgImage):posite(783.5, 454):setScale(0.7)
 				IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), frameData, {
 					needDelay = true
 				})

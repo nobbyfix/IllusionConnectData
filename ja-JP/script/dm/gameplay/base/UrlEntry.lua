@@ -296,6 +296,17 @@ local kExtResponseMap = {
 		instanceName = "CooperateBossSystem",
 		funcName = "enterCooperateBoss",
 		entry = ViewAreaEntry:new("CooperateBossMainView")
+	},
+	RecruitNewDrawCardView = {
+		instanceName = "RecruitSystem",
+		funcName = "tryEnterActivityRecruit",
+		entry = ViewAreaEntry:new("RecruitNewDrawCardView")
+	},
+	ActivityTaskView = {
+		funcName = "complexActivityTaskTryEnter",
+		instanceName = "ActivitySystem",
+		funcCheck = "checkComplexActivity",
+		entry = ViewAreaEntry:new("ActivityTaskView")
 	}
 }
 

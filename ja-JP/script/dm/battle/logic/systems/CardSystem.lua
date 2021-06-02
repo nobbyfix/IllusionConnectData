@@ -88,17 +88,53 @@ function CardSystem:getTiggerBuffCountOnHeroCard(card, tag)
 	return count
 end
 
+function CardSystem:dispelTiggerOnHeroCard(card, tags)
+	local triggerBuffs = card:getTriggerBuff()
+
+	for k, v in pairs(triggerBuffs) do
+		local config = v:getBuffConfig()
+		local isMatched = false
+
+		for k_, v_ in pairs(config.tags) do
+			for k, tag_ in pairs(tags) do
+				if tag_ == v_ then
+					isMatched = true
+
+					break
+				end
+			end
+
+			if isMatched then
+				break
+			end
+		end
+
+		if isMatched then
+			card:removeTriggerBuff(v)
+		end
+	end
+end
+
 function CardSystem:getCardIdx(player, card)
 	return player:getCardWindow():getCardIndex(card)
 end
 
-function CardSystem:genNewHeroCard(cardInfo, appendix)
+function CardSystem:genNewHeroCard(player, cardInfo, appendix)
+	local entityManager = self._battleContext:getObject("EntityManager")
+	local cardsInWindow = player:getCardWindow()
 	local info = {}
 
 	table.deepcopy(cardInfo, info)
 
 	info.id = info.id .. appendix
 	info.hero.id = info.hero.id .. appendix
+	local index = 0
+
+	repeat
+		info.id = info.id .. index
+		info.hero.id = info.hero.id .. index
+		index = index + 1
+	until entityManager:fetchEntity(info.hero.id) == nil and cardsInWindow:getCardById(info.hero.id) == nil
 
 	return info
 end
@@ -153,9 +189,31 @@ function CardSystem:removeSkillCardForActor(actor)
 	end
 end
 
-function CardSystem:setHeroCardType(player, card, type)
+function CardSystem:addHeroCardSeatRules(player, card, rules, killOrKick)
 	if card:getType() == "hero" then
-		card:setCardType(type)
+		for k, v in pairs(rules) do
+			card:addSeatRule(v, killOrKick[k])
+		end
+
+		local info = card:dumpInformation()
+		local idx = self:getCardIdx(player, card)
+
+		self._processRecorder:recordObjectEvent(player:getId(), "UpdateHeroCard", {
+			cardInfo = info,
+			idx = idx
+		})
+
+		return true
+	end
+
+	return false
+end
+
+function CardSystem:clearHeroCardSeatRules(player, card, rules, killOrKick)
+	if card:getType() == "hero" then
+		for k, v in pairs(rules) do
+			card:subSeatRule(v, killOrKick[k])
+		end
 
 		local info = card:dumpInformation()
 		local idx = self:getCardIdx(player, card)

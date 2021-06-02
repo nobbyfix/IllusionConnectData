@@ -57,7 +57,7 @@ local stage_animName = {
 	["ico_leadstage_stage07.png"] = "eff_stage_7",
 	["ico_leadstage_stage08.png"] = "eff_stage_8"
 }
-local animTime = 1
+local animTime = 0.5
 local progrSleepTime = 0.01
 local bg_BasePath = "asset/scene/"
 local changeHeight_top = 50
@@ -667,6 +667,12 @@ function MasterLeadStageMediator:onClickUpgrade()
 		return
 	end
 
+	if self._isBtnClicked then
+		return
+	end
+
+	self._isBtnClicked = true
+
 	local function callback()
 		local stageData = self._masterData:getLeadStageData()
 		local curLevel = stageData:getLeadStageLevel()
@@ -681,10 +687,6 @@ function MasterLeadStageMediator:onClickUpgrade()
 			end
 		end
 
-		if self._isBtnClicked then
-			return
-		end
-
 		AudioEngine:getInstance():playEffect("Se_Effect_Stage_Detail", false)
 
 		local view = self:getInjector():getInstance("MasterLeadStageDetailView")
@@ -694,8 +696,6 @@ function MasterLeadStageMediator:onClickUpgrade()
 			masterId = self._masterId,
 			anim = self._anim
 		}))
-
-		self._isBtnClicked = true
 	end
 
 	self:runTransLateAction(callback)
@@ -812,21 +812,44 @@ function MasterLeadStageMediator:onClickStage(sender, eventType, index)
 end
 
 function MasterLeadStageMediator:doStory()
-	if self._leadStageLevel <= 0 then
+	local outSelf = self
+
+	local function callback()
+		if DisposableObject:isDisposed(self) then
+			return
+		end
+
+		if outSelf._leadStageLevel <= 0 then
+			return
+		end
+
+		local storyLink = outSelf._configInfo[outSelf._leadStageLevel].StoryLink
+
+		if storyLink then
+			local storyDirector = outSelf:getInjector():getInstance(story.StoryDirector)
+			local storyAgent = storyDirector:getStoryAgent()
+
+			storyAgent:setSkipCheckSave(true)
+			storyAgent:trigger(storyLink, nil, function ()
+				AudioEngine:getInstance():playBackgroundMusic("Mus_Protagonist_Stage")
+			end)
+		end
+	end
+
+	if DisposableObject:isDisposed(self) then
 		return
 	end
 
-	local storyLink = self._configInfo[self._leadStageLevel].StoryLink
-
-	if storyLink then
-		local storyDirector = self:getInjector():getInstance(story.StoryDirector)
-		local storyAgent = storyDirector:getStoryAgent()
-
-		storyAgent:setSkipCheckSave(true)
-		storyAgent:trigger(storyLink, nil, function ()
-			AudioEngine:getInstance():playBackgroundMusic("Mus_Protagonist_Stage")
-		end)
+	if self._isBtnClicked then
+		return
 	end
+
+	local view = self:getInjector():getInstance("MasterLeadStageAwakeView")
+
+	self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
+		masterId = self._masterId,
+		callback = callback
+	}))
 end
 
 function MasterLeadStageMediator:runChangeViewAction()

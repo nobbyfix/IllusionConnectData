@@ -159,7 +159,9 @@ function ChangeTeamMediator:createMaster(cell, index)
 	node:removeAllChildren()
 
 	local id, lv = self._masterSystem:getMasterLeadStatgeLevel(data:getId())
-	local icon = IconFactory:createLeadStageIconVer(id, lv)
+	local icon = IconFactory:createLeadStageIconVer(id, lv, {
+		needBg = 1
+	})
 
 	if icon then
 		icon:addTo(node)

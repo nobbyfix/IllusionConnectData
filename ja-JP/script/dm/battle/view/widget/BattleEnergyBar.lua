@@ -1,5 +1,5 @@
 local MAX_BAR_INDEX = 30
-local MAX_ENERGY_NUM = 99
+local MAX_ENERGY_NUM = 199
 local kColorCharMap = {
 	"a",
 	"c",
@@ -352,7 +352,13 @@ function BattleEnergyBar:setEnergyText(energy, withEffect)
 
 		local animName = nil
 
-		if energy >= 10 and self._oldEnergy >= 10 then
+		if energy >= 100 and self._oldEnergy >= 100 then
+			animName = "dhg_zhandoushuzi"
+		elseif energy >= 100 and self._oldEnergy < 100 then
+			animName = "dhe_zhandoushuzi"
+		elseif energy < 100 and self._oldEnergy >= 100 then
+			animName = "dhf_zhandoushuzi"
+		elseif energy >= 10 and self._oldEnergy >= 10 then
 			animName = "dhc_zhandoushuzi"
 		elseif energy >= 10 and self._oldEnergy < 10 then
 			animName = "dhb_zhandoushuzi"
@@ -363,6 +369,17 @@ function BattleEnergyBar:setEnergyText(energy, withEffect)
 		end
 
 		local anim = cc.MovieClip:create(animName, "BattleMCGroup")
+
+		if energy >= 100 then
+			local bai = string.format("%d", energy):sub(-3, -3)
+			local baiText = ccui.TextBMFont:create(bai, fntFile)
+
+			anim:getChildByFullName("bai2"):addChild(baiText)
+
+			local baiText = ccui.TextBMFont:create(bai, fntFile)
+
+			anim:getChildByFullName("bai_shine"):addChild(baiText)
+		end
 
 		if energy >= 10 then
 			local ten = string.format("%d", energy):sub(-2, -2)
@@ -383,6 +400,13 @@ function BattleEnergyBar:setEnergyText(energy, withEffect)
 		local unitText = ccui.TextBMFont:create(ten, fntFile)
 
 		anim:getChildByFullName("unit_shine"):addChild(unitText)
+
+		if self._oldEnergy >= 100 then
+			local bai = string.format("%d", self._oldEnergy):sub(-3, -3)
+			local baiText = ccui.TextBMFont:create(bai, fntFile)
+
+			anim:getChildByFullName("bai"):addChild(baiText)
+		end
 
 		if self._oldEnergy >= 10 then
 			local ten = string.format("%d", self._oldEnergy):sub(-2, -2)

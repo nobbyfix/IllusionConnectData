@@ -105,12 +105,12 @@ end
 
 local animMap = {
 	"zongdh_bishatexie",
-	"zongdh_bishatexie",
+	"sp_SPbishatexie",
 	"zongdh_bishatexie"
 }
 local awakenAnimMap = {
 	"zhezhaodonghua_juexingtexie",
-	"zhezhaodonghua_juexingtexie",
+	"sp_SPbishatexie",
 	"zhezhaodonghua_juexingtexie"
 }
 
@@ -120,6 +120,7 @@ function BattleScreenEffectLayer:showPortraitEffect()
 	local right = params.right
 	local desc = params.desc
 	local key = params.key
+	local flag = params.key
 	local isAwakenEffect = params.isAwakenEffect
 	local animName = isAwakenEffect and awakenAnimMap[key] or animMap[key]
 
@@ -133,8 +134,6 @@ function BattleScreenEffectLayer:showPortraitEffect()
 		return
 	end
 
-	AudioEngine:getInstance():playEffect("Se_Alert_Common_Pic", false)
-
 	local frame = cc.size(cc.Director:getInstance():getWinSize().width, self.targetFrame.height)
 	local portraitAnim = cc.MovieClip:create(animName, "BattleMCGroup")
 
@@ -144,39 +143,59 @@ function BattleScreenEffectLayer:showPortraitEffect()
 
 	local text = nil
 
-	if isAwakenEffect then
-		portraitAnim:setScale(0.8)
+	if flag == 1 then
+		if isAwakenEffect then
+			portraitAnim:setScale(0.8)
 
-		local awakePortrait = params.awakePortrait or ""
-		local portraitNode = portraitAnim:getChildByFullName("role")
-		local portrait = ccui.ImageView:create("asset/heros/" .. modelId .. "/" .. awakePortrait .. ".png", ccui.TextureResType.localType)
+			local awakePortrait = params.awakePortrait or ""
+			local portraitNode = portraitAnim:getChildByFullName("role")
+			local portrait = ccui.ImageView:create("asset/heros/" .. modelId .. "/" .. awakePortrait .. ".png", ccui.TextureResType.localType)
 
-		portrait:setScale(1.5)
-		portrait:addTo(portraitNode)
+			portrait:setScale(1.5)
+			portrait:addTo(portraitNode)
 
-		local offsetConfig = ConfigReader:getDataByNameIdAndKey("HeroAwaken", modelId, "CutIn")
+			local offsetConfig = ConfigReader:getDataByNameIdAndKey("HeroAwaken", modelId, "CutIn")
 
-		if offsetConfig then
-			portrait:setScale(offsetConfig[3] or 1.5)
-			portrait:setPositionX(offsetConfig[2] or 0)
-			portrait:setPositionY(offsetConfig[1] or 0)
+			if offsetConfig then
+				portrait:setScale(offsetConfig[3] or 1.5)
+				portrait:setPositionX(offsetConfig[2] or 0)
+				portrait:setPositionY(offsetConfig[1] or 0)
+			end
+
+			local textNode = portraitAnim:getChildByFullName("text")
+			text = ccui.ImageView:create(ASSET_LANG_SKILL_WORD .. desc .. (right and "_R.png" or ".png"))
+
+			text:addTo(textNode)
+		else
+			local portraitNode = portraitAnim:getChildByFullName("model.image")
+			local portrait = ccui.ImageView:create(modelId .. ".png", ccui.TextureResType.plistType)
+
+			portrait:addTo(portraitNode):offset(128, 22)
+
+			local textNode = portraitAnim:getChildByFullName("model.name")
+			text = ccui.ImageView:create(ASSET_LANG_SKILL_WORD .. desc .. (right and "_R.png" or ".png"))
+
+			text:addTo(textNode)
+			text:offset(-90, 0)
 		end
 
-		local textNode = portraitAnim:getChildByFullName("text")
-		text = ccui.ImageView:create(ASSET_LANG_SKILL_WORD .. desc .. (right and "_R.png" or ".png"))
-
-		text:addTo(textNode)
+		AudioEngine:getInstance():playEffect("Se_Alert_Common_Pic", false)
 	else
-		local portraitNode = portraitAnim:getChildByFullName("model.image")
+		local portraitNode = portraitAnim:getChildByFullName("model")
+		local portraitNode1 = portraitAnim:getChildByFullName("model_shine")
+		local portraitNode2 = portraitAnim:getChildByFullName("model_shine2")
 		local portrait = ccui.ImageView:create(modelId .. ".png", ccui.TextureResType.plistType)
 
 		portrait:addTo(portraitNode):offset(128, 22)
+		portrait:clone():addTo(portraitNode1):offset(128, 22)
+		portrait:clone():addTo(portraitNode2):offset(128, 22)
 
-		local textNode = portraitAnim:getChildByFullName("model.name")
+		local textNode = portraitAnim:getChildByFullName("name")
 		text = ccui.ImageView:create(ASSET_LANG_SKILL_WORD .. desc .. (right and "_R.png" or ".png"))
 
 		text:addTo(textNode)
 		text:offset(-90, 0)
+		AudioEngine:getInstance():playEffect("Se_Alert_Common_Pic_SP", false)
 	end
 
 	portraitAnim:addEndCallback(function (cid, mc)

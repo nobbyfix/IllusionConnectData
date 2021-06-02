@@ -64,7 +64,8 @@ function SkillPrototype:getBattleSkillData(level, enemyBuff)
 		cost = self._config.Cost,
 		summoned = self._config.Summoned,
 		range = self._config.SkillRange,
-		notAskForTarget = self._config.NotAskForTarget
+		notAskForTarget = self._config.NotAskForTarget,
+		skillType = self._config.SkillType
 	}
 end
 

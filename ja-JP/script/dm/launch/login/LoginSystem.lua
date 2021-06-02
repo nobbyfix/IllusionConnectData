@@ -260,6 +260,10 @@ function LoginSystem:requestPlayerInfo(callback)
 					developSystem:setServerOpenTime(response.data.extra.serverOpenTime)
 				end
 
+				if response.data.extra.mergeTs then
+					developSystem:setServerMergeTime(response.data.extra.mergeTs)
+				end
+
 				if response.data.extra.timeZone then
 					local serverTimeZone = response.data.extra.timeZone / 1000 / 3600
 

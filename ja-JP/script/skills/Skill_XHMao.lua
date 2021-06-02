@@ -433,7 +433,11 @@ all.Skill_XHMao_Passive_Key = {
 			local global = _env.global
 
 			for _, card in global.__iter__(global.CardsOfPlayer(_env, global.GetOwner(_env, _env.ACTOR))) do
-				global.SetHeroCardType(_env, global.GetOwner(_env, _env.ACTOR), card, 2)
+				global.addHeroCardSeatRules(_env, global.GetOwner(_env, _env.ACTOR), card, {
+					"SUMMONED"
+				}, {
+					"die"
+				})
 			end
 		end)
 

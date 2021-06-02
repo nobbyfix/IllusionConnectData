@@ -237,6 +237,70 @@ function exports.TruthBubble(env, unit)
 	})
 end
 
+function exports.InheritCard(env, card, modelId)
+	if card and card:getType() == "hero" then
+		local player = env["$actor"]:getOwner()
+		local _cardInfo = card:getCardInfo()
+		local cardSystem = env.global["$CardSystem"]
+		local cardInfo = cardSystem:genNewHeroCard(player, _cardInfo, "b")
+
+		if cardInfo.hero and cardInfo.hero.skills then
+			for k, v in pairs(cardInfo.hero.skills.passive or {}) do
+				if v.skillType and v.skillType == "Equip" then
+					table.remove(cardInfo.hero.skills.passive, k)
+				end
+			end
+		end
+
+		cardInfo.hero.modelId = modelId
+
+		if player:getCardState() == "skill" then
+			for i = 1, 4 do
+				local card_ws = player:takeCardAtIndex(i)
+
+				if card_ws then
+					player:backCardToPool(card_ws)
+				end
+			end
+
+			player:setCardPool(player:getHeroCardPool())
+			player:setupCardWindowWithHeroCards()
+			env.global.RecordImmediately(env, player:getId(), "RemoveSCard")
+		end
+
+		local card = player:getCardPool():insertCardByInfo(cardInfo)
+
+		env.global.RecordImmediately(env, player:getId(), "BackToCard", {
+			type = "hero",
+			card = card and card:dumpInformation() or 0
+		})
+
+		for idx = 1, 4 do
+			if player:takeCardAtIndex(idx) == nil then
+				local newCard, nextCard = player:fillCardAtIndex(idx)
+
+				env.global.RecordImmediately(env, player:getId(), "Card", {
+					type = "hero",
+					idx = idx,
+					card = newCard and newCard:dumpInformation() or 0,
+					next = nextCard and nextCard:dumpInformation() or 0
+				})
+				env.global["$SkillSystem"]:activateGlobalTrigger("HERO_CARD_CHANGEED", {
+					player = player,
+					idx = idx,
+					newcard = newCard
+				})
+
+				return card
+			end
+		end
+
+		return card
+	end
+
+	return nil
+end
+
 function exports.BackToCard(env, unit)
 	local player = env["$actor"]:getOwner()
 
@@ -246,7 +310,7 @@ function exports.BackToCard(env, unit)
 		formationSystem:forbidenRevive(unit)
 
 		local cardSystem = env.global["$CardSystem"]
-		local cardInfo = cardSystem:genNewHeroCard(unit:getCardInfo(), "b")
+		local cardInfo = cardSystem:genNewHeroCard(player, unit:getCardInfo(), "b")
 
 		if player:getCardState() == "skill" then
 			for i = 1, 4 do
@@ -302,7 +366,7 @@ function exports.BackToWindow(env, unit, windowIndex)
 		formationSystem:forbidenRevive(unit)
 
 		local cardSystem = env.global["$CardSystem"]
-		local cardInfo = cardSystem:genNewHeroCard(unit:getCardInfo(), "b")
+		local cardInfo = cardSystem:genNewHeroCard(player, unit:getCardInfo(), "b")
 
 		if player:getCardState() == "skill" then
 			for i = 1, 4 do
@@ -360,6 +424,16 @@ function exports.GetCardWindowIndex(env, unit)
 	end
 
 	return 0
+end
+
+function exports.GetAttackEffects(env, unit)
+	local effects = unit:getAttackEffect()
+
+	if effects and next(effects) then
+		return effects
+	end
+
+	return {}
 end
 
 function exports.HolyHide(env, unit, alpha)

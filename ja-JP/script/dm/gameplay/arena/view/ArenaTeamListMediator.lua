@@ -314,7 +314,7 @@ function ArenaTeamListMediator:refreshView()
 
 		local id, lv = self._masterSystem:getMasterLeadStatgeLevel(data:getMasterId())
 		local icon = IconFactory:createLeadStageIconVer(id, lv, {
-			notNeedBg = false
+			needBg = 2
 		})
 
 		if icon then

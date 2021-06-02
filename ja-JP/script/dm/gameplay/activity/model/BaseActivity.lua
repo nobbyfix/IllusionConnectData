@@ -153,43 +153,76 @@ function BaseActivity:getLeftBanner()
 end
 
 function BaseActivity:getTimeFactor()
+	if self._config.Time == "MERGE_CONTINUE" or self._config.Time == "MERGE_RESTART" then
+		local timeInfo = {
+			start = {}
+		}
+		timeInfo.start[1] = TimeUtil:remoteDate("%Y-%m-%d %H:%M:%S", self._startTime / 1000)
+		timeInfo.start[2] = TimeUtil:remoteDate("%Y-%m-%d %H:%M:%S", self._endTime / 1000)
+		timeInfo["end"] = TimeUtil:remoteDate("%Y-%m-%d %H:%M:%S", self._endTime / 1000)
+
+		return timeInfo
+	end
+
 	return self._config.TimeFactor
 end
 
 function BaseActivity:getLocalTimeFactor()
-	local timeInfo = clone(self._config.TimeFactor)
+	if self._config.Time == "MERGE_CONTINUE" or self._config.Time == "MERGE_RESTART" then
+		local timeInfo = {
+			start = {}
+		}
+		timeInfo.start[1] = TimeUtil:localDate("%Y-%m-%d %H:%M:%S", self._startTime / 1000)
+		timeInfo.start[2] = TimeUtil:localDate("%Y-%m-%d %H:%M:%S", self._endTime / 1000)
+		timeInfo["end"] = TimeUtil:localDate("%Y-%m-%d %H:%M:%S", self._endTime / 1000)
 
-	for k, v in pairs(timeInfo.start or {}) do
-		local remoteTime = TimeUtil:formatStrToRemoteTImestamp(v)
-		local localDate = TimeUtil:localDate("%Y-%m-%d %H:%M:%S", remoteTime)
-		timeInfo.start[k] = localDate
+		return timeInfo
+	else
+		local timeInfo = clone(self._config.TimeFactor)
+
+		for k, v in pairs(timeInfo.start or {}) do
+			local remoteTime = TimeUtil:formatStrToRemoteTImestamp(v)
+			local localDate = TimeUtil:localDate("%Y-%m-%d %H:%M:%S", remoteTime)
+			timeInfo.start[k] = localDate
+		end
+
+		if timeInfo["end"] then
+			local remoteTime = TimeUtil:formatStrToRemoteTImestamp(timeInfo["end"])
+			local localDate = TimeUtil:localDate("%Y-%m-%d %H:%M:%S", remoteTime)
+			timeInfo["end"] = localDate
+		end
+
+		return timeInfo
 	end
-
-	if timeInfo["end"] then
-		local remoteTime = TimeUtil:formatStrToRemoteTImestamp(timeInfo["end"])
-		local localDate = TimeUtil:localDate("%Y-%m-%d %H:%M:%S", remoteTime)
-		timeInfo["end"] = localDate
-	end
-
-	return timeInfo
 end
 
 function BaseActivity:getLocalTimeFactor1()
-	local timeInfo = clone(self._config.TimeFactor)
+	if self._config.Time == "MERGE_CONTINUE" or self._config.Time == "MERGE_RESTART" then
+		local timeInfo = {
+			start = {}
+		}
+		timeInfo.start[1] = TimeUtil:localDate("%Y.%m.%d %H:%M", self._startTime / 1000)
+		timeInfo.start[2] = TimeUtil:localDate("%Y.%m.%d %H:%M", self._endTime / 1000)
+		timeInfo["end"] = TimeUtil:localDate("%Y.%m.%d %H:%M", self._endTime / 1000)
 
-	for k, v in pairs(timeInfo.start or {}) do
-		local remoteTime = TimeUtil:formatStrToRemoteTImestamp(v)
-		local localDate = TimeUtil:localDate("%Y.%m.%d %H:%M", remoteTime)
-		timeInfo.start[k] = localDate
+		return timeInfo
+	else
+		local timeInfo = clone(self._config.TimeFactor)
+
+		for k, v in pairs(timeInfo.start or {}) do
+			local remoteTime = TimeUtil:formatStrToRemoteTImestamp(v)
+			local localDate = TimeUtil:localDate("%Y.%m.%d %H:%M", remoteTime)
+			timeInfo.start[k] = localDate
+		end
+
+		if timeInfo["end"] then
+			local remoteTime = TimeUtil:formatStrToRemoteTImestamp(timeInfo["end"])
+			local localDate = TimeUtil:localDate("%Y.%m.%d %H:%M", remoteTime)
+			timeInfo["end"] = localDate
+		end
+
+		return timeInfo
 	end
-
-	if timeInfo["end"] then
-		local remoteTime = TimeUtil:formatStrToRemoteTImestamp(timeInfo["end"])
-		local localDate = TimeUtil:localDate("%Y.%m.%d %H:%M", remoteTime)
-		timeInfo["end"] = localDate
-	end
-
-	return timeInfo
 end
 
 function BaseActivity:getTimeStr1()

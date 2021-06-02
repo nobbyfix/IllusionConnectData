@@ -27,14 +27,8 @@ function BlockOnNewBornState:enter(battleAction)
 	end
 
 	local formationSystem = battleAction:getFormationSystem()
-	local oldResident = actor:getCell():getOldResident()
 
-	if oldResident then
-		oldResident:setLifeStage(ULS_Dying)
-		formationSystem:removeDyingUnits({
-			oldResident
-		})
-	end
+	formationSystem:clearOldResident(actor)
 end
 
 function BlockOnNewBornState:update(battleAction, dt)

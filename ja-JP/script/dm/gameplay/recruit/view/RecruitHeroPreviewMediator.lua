@@ -17,16 +17,20 @@ local kTabImage = {
 		ASSET_LANG_COMMON .. "common_bg_all02.png"
 	},
 	{
-		ASSET_LANG_COMMON .. "common_bg_SSR.png",
-		ASSET_LANG_COMMON .. "common_bg_SSR02.png"
+		ASSET_LANG_COMMON .. "common_bg_SP.png",
+		ASSET_LANG_COMMON .. "common_bg_SP02.png"
 	},
-	[4] = {
+	[5] = {
 		ASSET_LANG_COMMON .. "common_bg_R.png",
 		ASSET_LANG_COMMON .. "common_bg_R02.png"
 	},
-	[3] = {
+	[4] = {
 		ASSET_LANG_COMMON .. "common_bg_SR.png",
 		ASSET_LANG_COMMON .. "common_bg_SR02.png"
+	},
+	[3] = {
+		ASSET_LANG_COMMON .. "common_bg_SSR.png",
+		ASSET_LANG_COMMON .. "common_bg_SSR02.png"
 	}
 }
 
@@ -286,7 +290,7 @@ function RecruitHeroPreviewMediator:setSelectView()
 	self._selectPanel = self._main:getChildByName("selectPanel")
 	local buttons = {}
 
-	for i = 1, 4 do
+	for i = 1, 5 do
 		local button = self._selectPanel:getChildByName("btn" .. i)
 		buttons[#buttons + 1] = button
 		local image = button:getChildByFullName("image")
@@ -311,6 +315,7 @@ function RecruitHeroPreviewMediator:setHeroesView()
 		{},
 		{},
 		{},
+		{},
 		{}
 	}
 	self._showHeros[1] = self._previewData[TabType.kHero]
@@ -322,10 +327,12 @@ function RecruitHeroPreviewMediator:setHeroesView()
 		local rareity = heroPrototype:getConfig().Rareity
 
 		if rareity == 12 then
-			self._showHeros[4][#self._showHeros[4] + 1] = data
+			self._showHeros[5][#self._showHeros[5] + 1] = data
 		elseif rareity == 13 then
-			self._showHeros[3][#self._showHeros[3] + 1] = data
+			self._showHeros[4][#self._showHeros[4] + 1] = data
 		elseif rareity == 14 then
+			self._showHeros[3][#self._showHeros[3] + 1] = data
+		elseif rareity == 15 then
 			self._showHeros[2][#self._showHeros[2] + 1] = data
 		end
 	end
@@ -457,8 +464,8 @@ function RecruitHeroPreviewMediator:tabClickByIndex(button, eventType, index)
 
 	self._heroType = index
 
-	for i = 1, 4 do
-		local image = self._selectPanel:getChildByFullName("btn" .. i .. ".image")
+	for i = 1, 5 do
+		local iamge = self._selectPanel:getChildByFullName("btn" .. i .. ".image")
 		local pic = self._heroType == i and kTabImage[i][2] or kTabImage[i][1]
 
 		image:loadTexture(pic)

@@ -66,14 +66,17 @@ all.Skill_QTQCi_Normal = {
 			local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, this.dmgFactor)
 
 			global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage)
+
+			local animarray = global.GetAttackEffects(_env, _env.ACTOR)
+
 			global.AnimForTrgt(_env, _env.TARGET, {
 				loop = 1,
-				anim = "shou1_huaqishouji",
 				zOrder = "TopLayer",
 				pos = {
 					0.5,
 					0.5
-				}
+				},
+				anim = animarray[1]
 			})
 		end)
 
@@ -149,14 +152,17 @@ all.Skill_QTQCi_Proud = {
 				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
 
 				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
+
+				local animarray = global.GetAttackEffects(_env, _env.ACTOR)
+
 				global.AnimForTrgt(_env, unit, {
 					loop = 1,
-					anim = "shou1_huaqishouji",
 					zOrder = "TopLayer",
 					pos = {
 						0.5,
 						0.5
-					}
+					},
+					anim = animarray[1]
 				})
 			end
 		end)
@@ -251,6 +257,7 @@ all.Skill_QTQCi_Unique = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
+			local animarray = global.GetAttackEffects(_env, _env.ACTOR)
 
 			for _, unit in global.__iter__(global.EnemyUnits(_env, global.COL_OF(_env, _env.TARGET))) do
 				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
@@ -262,23 +269,23 @@ all.Skill_QTQCi_Unique = {
 					global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
 					global.AnimForTrgt(_env, unit, {
 						loop = 1,
-						anim = "shou1_huaqishouji",
 						zOrder = "TopLayer",
 						pos = {
 							0.5,
 							0.5
-						}
+						},
+						anim = animarray[1]
 					})
 				elseif global.CellRowLocation(_env, global.GetCell(_env, unit)) == 2 then
 					global.DelayCall(_env, 67, global.ApplyAOEHPDamage_ResultCheck, _env.ACTOR, unit, damage)
 					global.DelayCall(_env, 67, global.AnimForTrgt, unit, {
 						loop = 1,
-						anim = "shou1_huaqishouji",
 						zOrder = "TopLayer",
 						pos = {
 							0.5,
 							0.5
-						}
+						},
+						anim = animarray[1]
 					})
 				elseif global.CellRowLocation(_env, global.GetCell(_env, unit)) == 3 then
 					damage.val = damage.val * (1 + this.DamageFactor)
@@ -286,12 +293,12 @@ all.Skill_QTQCi_Unique = {
 					global.DelayCall(_env, 134, global.ApplyAOEHPDamage_ResultCheck, _env.ACTOR, unit, damage)
 					global.DelayCall(_env, 134, global.AnimForTrgt, unit, {
 						loop = 1,
-						anim = "shou2_huaqishouji",
 						zOrder = "TopLayer",
 						pos = {
 							0.5,
 							0.5
-						}
+						},
+						anim = animarray[2]
 					})
 				end
 			end
@@ -540,6 +547,7 @@ all.Skill_QTQCi_Proud_EX = {
 				global.ApplyRPEffect(_env, _env.ACTOR, unit)
 
 				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
+				local animarray = global.GetAttackEffects(_env, _env.ACTOR)
 
 				if global.CellRowLocation(_env, global.GetCell(_env, unit)) == 3 then
 					damage.val = damage.val * (1 + this.DamageFactor)
@@ -547,23 +555,23 @@ all.Skill_QTQCi_Proud_EX = {
 					global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
 					global.AnimForTrgt(_env, unit, {
 						loop = 1,
-						anim = "shou2_huaqishouji",
 						zOrder = "TopLayer",
 						pos = {
 							0.5,
 							0.5
-						}
+						},
+						anim = animarray[2]
 					})
 				else
 					global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
 					global.AnimForTrgt(_env, unit, {
 						loop = 1,
-						anim = "shou1_huaqishouji",
 						zOrder = "TopLayer",
 						pos = {
 							0.5,
 							0.5
-						}
+						},
+						anim = animarray[1]
 					})
 				end
 			end
@@ -659,6 +667,7 @@ all.Skill_QTQCi_Unique_EX = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
+			local animarray = global.GetAttackEffects(_env, _env.ACTOR)
 
 			for _, unit in global.__iter__(global.EnemyUnits(_env, global.COL_OF(_env, _env.TARGET))) do
 				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
@@ -670,23 +679,23 @@ all.Skill_QTQCi_Unique_EX = {
 					global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
 					global.AnimForTrgt(_env, unit, {
 						loop = 1,
-						anim = "shou1_huaqishouji",
 						zOrder = "TopLayer",
 						pos = {
 							0.5,
 							0.5
-						}
+						},
+						anim = animarray[1]
 					})
 				elseif global.CellRowLocation(_env, global.GetCell(_env, unit)) == 2 then
 					global.DelayCall(_env, 67, global.ApplyAOEHPDamage_ResultCheck, _env.ACTOR, unit, damage)
 					global.DelayCall(_env, 67, global.AnimForTrgt, unit, {
 						loop = 1,
-						anim = "shou1_huaqishouji",
 						zOrder = "TopLayer",
 						pos = {
 							0.5,
 							0.5
-						}
+						},
+						anim = animarray[1]
 					})
 				elseif global.CellRowLocation(_env, global.GetCell(_env, unit)) == 3 then
 					damage.val = damage.val * (1 + this.DamageFactor)
@@ -694,12 +703,12 @@ all.Skill_QTQCi_Unique_EX = {
 					global.DelayCall(_env, 134, global.ApplyAOEHPDamage_ResultCheck, _env.ACTOR, unit, damage)
 					global.DelayCall(_env, 134, global.AnimForTrgt, unit, {
 						loop = 1,
-						anim = "shou2_huaqishouji",
 						zOrder = "TopLayer",
 						pos = {
 							0.5,
 							0.5
-						}
+						},
+						anim = animarray[2]
 					})
 				end
 			end

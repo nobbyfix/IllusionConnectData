@@ -177,6 +177,15 @@ function ShopPackage:getStorage()
 end
 
 function ShopPackage:getStartMills()
+	local typeData = self:getTimeType()
+
+	if typeData.merge and typeData.merge == 1 then
+		local developSystem = DmGame:getInstance()._injector:getInstance(DevelopSystem)
+		local mergeTime = developSystem:getServerMergeTime()
+
+		return mergeTime + 86400 * (typeData.start - 1)
+	end
+
 	if self:getTimeTypeType() == kShopResetType.KResetUnlimit then
 		local gameServerAgent = DmGame:getInstance()._injector:getInstance("GameServerAgent")
 		local curTime = gameServerAgent:remoteTimestamp()
@@ -199,6 +208,15 @@ function ShopPackage:getStartMills()
 end
 
 function ShopPackage:getEndMills()
+	local typeData = self:getTimeType()
+
+	if typeData.merge and typeData.merge == 1 then
+		local developSystem = DmGame:getInstance()._injector:getInstance(DevelopSystem)
+		local mergeTime = developSystem:getServerMergeTime()
+
+		return mergeTime + 86400 * (typeData["end"] - 1)
+	end
+
 	if self:getTimeTypeType() == kShopResetType.KResetUnlimit then
 		local gameServerAgent = DmGame:getInstance()._injector:getInstance("GameServerAgent")
 		local curTime = gameServerAgent:remoteTimestamp()

@@ -492,6 +492,12 @@ function BagSelectMaterialMediator:onOkClicked()
 
 		local entry = self._bagSystem:getEntryById(self._selectItemId)
 
+		if entry == nil then
+			self:close()
+
+			return
+		end
+
 		if entry.unlock == false then
 			self:dispatch(ShowTipEvent({
 				tip = Strings:get("Equip_Ur_Lock_5")
@@ -628,7 +634,7 @@ function BagSelectMaterialMediator:initComposeData(data)
 	self._selectItemId = ""
 	local haveCount = self._bagSystem:getItemCount(self._curMaterial.id)
 
-	if haveCount > 0 then
+	if haveCount >= 0 then
 		self._selectItemId = self._curMaterial.id
 		self._cellNum = self._cellNum + 1
 		self._cellsHeight[self._cellNum] = {
@@ -773,7 +779,12 @@ function BagSelectMaterialMediator:createTeamCell(cell, index)
 				amount = amount - 1
 			end
 
+			if amount == nil then
+				amount = 0
+			end
+
 			local item = IconFactory:createItemIcon({
+				useNoEnough = false,
 				id = itemId,
 				amount = amount
 			})
@@ -790,38 +801,43 @@ function BagSelectMaterialMediator:createTeamCell(cell, index)
 			local Panel_lock = node_lock:getChildByFullName("Panel_lock")
 			local entry = self._bagSystem:getEntryById(itemId)
 
-			if entry.item:getCanLock() then
-				Panel_unlock:addTouchEventListener(function (sender, eventType)
-					self:onUnlockOrLockItem(sender, eventType, itemId)
-				end)
-				Panel_lock:addTouchEventListener(function (sender, eventType)
-					self:onUnlockOrLockItem(sender, eventType, itemId)
-				end)
-				node:getChildByFullName("clickPanel"):setSwallowTouches(false)
-				node:getChildByFullName("clickPanel"):addTouchEventListener(function (sender, eventType)
-					self:onEatItemClicked(sender, eventType, itemId)
-				end)
+			if entry then
+				if entry.item:getCanLock() then
+					Panel_unlock:addTouchEventListener(function (sender, eventType)
+						self:onUnlockOrLockItem(sender, eventType, itemId)
+					end)
+					Panel_lock:addTouchEventListener(function (sender, eventType)
+						self:onUnlockOrLockItem(sender, eventType, itemId)
+					end)
+					node:getChildByFullName("clickPanel"):setSwallowTouches(false)
+					node:getChildByFullName("clickPanel"):addTouchEventListener(function (sender, eventType)
+						self:onEatItemClicked(sender, eventType, itemId)
+					end)
 
-				if entry.unlock then
-					Panel_unlock:setVisible(true)
-					Panel_lock:setVisible(false)
+					if entry.unlock then
+						Panel_unlock:setVisible(true)
+						Panel_lock:setVisible(false)
+					else
+						Panel_unlock:setVisible(false)
+						Panel_lock:setVisible(true)
+					end
 				else
 					Panel_unlock:setVisible(false)
-					Panel_lock:setVisible(true)
+					Panel_lock:setVisible(false)
+					node:getChildByFullName("clickPanel"):setSwallowTouches(false)
+					node:getChildByFullName("clickPanel"):addTouchEventListener(function (sender, eventType)
+						self:onEatItemClicked(sender, eventType, itemId)
+					end)
+				end
+
+				if self._selectItemId == itemId then
+					self._selectImage:setVisible(true)
+					self._selectImage:removeFromParent(false)
+					self._selectImage:addTo(node):center(node:getContentSize())
 				end
 			else
 				Panel_unlock:setVisible(false)
 				Panel_lock:setVisible(false)
-				node:getChildByFullName("clickPanel"):setSwallowTouches(false)
-				node:getChildByFullName("clickPanel"):addTouchEventListener(function (sender, eventType)
-					self:onEatItemClicked(sender, eventType, itemId)
-				end)
-			end
-
-			if self._selectItemId == itemId then
-				self._selectImage:setVisible(true)
-				self._selectImage:removeFromParent(false)
-				self._selectImage:addTo(node):center(node:getContentSize())
 			end
 		end
 	end

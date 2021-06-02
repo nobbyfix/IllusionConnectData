@@ -564,6 +564,7 @@ all.Skill_TLSi_Passive = {
 						limit = 1,
 						tags = {
 							"CARDBUFF",
+							"BUFF",
 							"Skill_TLSi_Passive",
 							"UNDISPELLABLE",
 							"UNSTEALABLE"
@@ -749,6 +750,7 @@ all.Skill_TLSi_Proud_EX = {
 						duration = 99,
 						tags = {
 							"CARDBUFF",
+							"BUFF",
 							"Skill_TLSi_Proud_EX",
 							"HURTRATEUP",
 							"UNHURTRATEUP",
@@ -1202,6 +1204,7 @@ all.Skill_TLSi_Passive_EX = {
 						limit = 1,
 						tags = {
 							"CARDBUFF",
+							"BUFF",
 							"Skill_TLSi_Passive",
 							"UNDISPELLABLE",
 							"UNSTEALABLE"

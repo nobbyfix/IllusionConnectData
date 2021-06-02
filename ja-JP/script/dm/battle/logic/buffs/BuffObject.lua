@@ -26,6 +26,20 @@ BuffObject:has("_buffGroup", {
 	is = "rw"
 })
 
+local function deepCopy(desc, src)
+	local d = desc or {}
+
+	for k, v in pairs(src) do
+		if type(v) == "table" then
+			d[k] = deepCopy({}, v)
+		else
+			d[k] = v
+		end
+	end
+
+	return d
+end
+
 function BuffObject:initialize(config, effects)
 	super.initialize(self)
 
@@ -62,7 +76,14 @@ function BuffObject:getEffect(index)
 end
 
 function BuffObject:clone()
-	return self.class:new(self._config, self._effects)
+	local config = {}
+
+	deepCopy(config, self._config)
+
+	config.duration = self._lifespan
+	config.timing = self._timing
+
+	return self.class:new(config, self._effects)
 end
 
 function BuffObject:isMatched(buffTag)

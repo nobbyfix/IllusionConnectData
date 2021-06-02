@@ -671,6 +671,12 @@ function TopInfoWidget:updateView(config)
 	self._progressTimer = progressTimer
 
 	self:startAnim(style, stopAnim)
+
+	if not not config.hideLine then
+		self._progressTimer:setVisible(false)
+
+		stopAnim = true
+	end
 end
 
 function TopInfoWidget:startAnim(style, stopAnim)

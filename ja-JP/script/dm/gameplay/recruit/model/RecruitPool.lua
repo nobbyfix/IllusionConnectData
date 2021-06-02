@@ -182,6 +182,36 @@ function RecruitPool:getResourcesBanner()
 	return self._config.ResourcesBanner
 end
 
+function RecruitPool:getTimeRewardData()
+	local resultList = {}
+	local resultArray = {}
+	local TimeRewardId = self._config.TimeRewardId
+
+	if TimeRewardId then
+		for i = 1, #TimeRewardId do
+			local oneId = TimeRewardId[i]
+			local config = ConfigReader:getRecordById("TimeReward", tostring(oneId))
+
+			if config then
+				resultArray[#resultArray + 1] = config
+				resultList[config.Id] = config
+			end
+		end
+	end
+
+	table.sort(resultArray, function (a, b)
+		return a.DrawCardTimes < b.DrawCardTimes
+	end)
+
+	self._firstTimeRewardId = resultArray[1].Id
+
+	return resultList, resultArray
+end
+
+function RecruitPool:getFirstTimeRewardId()
+	return self._firstTimeRewardId
+end
+
 function RecruitPool:getRebate()
 	if not self._rebate then
 		self._rebate = {}

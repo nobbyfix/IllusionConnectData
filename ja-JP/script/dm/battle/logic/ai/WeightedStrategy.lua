@@ -131,8 +131,8 @@ function WeightedStrategy:update(interval)
 				end
 
 				local battleField = self._context:getObject("BattleField")
-				local cardType = self._nextCard:getCardType()
-				local cellNo = self:determineTargetCell(battleField, player:getSide(), cardType)
+				local seatRules = self._nextCard:getSeatRules()
+				local cellNo = self:determineTargetCell(battleField, player:getSide(), seatRules)
 
 				if cellNo ~= nil then
 					self:spawnCard(self._cardIndex, cellNo, function (success, detail)
@@ -309,18 +309,34 @@ function WeightedStrategy:determineNextCard(player)
 	return nil, 
 end
 
-function WeightedStrategy:determineTargetCell(battleField, side, cardType)
+function WeightedStrategy:determineTargetCell(battleField, side, seatRules)
 	local emptyCells = battleField:collectEmtpyCells({}, side)
 	local residentCells = {}
 
-	if cardType == HeroCardType.Super then
+	if next(seatRules) then
 		local allCells = battleField:collectCells({}, side)
 
 		for k, v in pairs(allCells) do
 			local resident = v:getResident()
+			local canBeSit = false
 
-			if resident and resident._isSummoned then
-				residentCells[#residentCells + 1] = v
+			if resident then
+				for rule, _ in pairs(seatRules) do
+					if rule == "SUMMONED" then
+						canBeSit = resident._isSummoned
+					else
+						local flagComp = resident:getComponent("Flag")
+						canBeSit = flagComp:hasFlag(rule)
+					end
+
+					if canBeSit then
+						break
+					end
+				end
+
+				if canBeSit then
+					residentCells[#residentCells + 1] = v
+				end
 			end
 		end
 	end

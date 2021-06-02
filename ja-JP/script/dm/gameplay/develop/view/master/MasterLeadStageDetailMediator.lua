@@ -91,14 +91,21 @@ end
 function MasterLeadStageDetailMediator:setChagneAni()
 	self:mapEventListeners()
 	self:setupView()
-	self._main:setVisible(false)
-	self._changeAni:changeParent(self._changeAniBg)
-	self._changeAni:addCallbackAtFrame(20, function ()
-		self._main:setVisible(true)
+
+	if self._changeAni ~= nil then
+		self._main:setVisible(false)
+		self._changeAni:changeParent(self._changeAniBg)
+		self._changeAni:addCallbackAtFrame(20, function ()
+			self._main:setVisible(true)
+			self:setupTopInfoWidget()
+			self:refreshView()
+			self:runStartAction()
+		end)
+	else
 		self:setupTopInfoWidget()
 		self:refreshView()
 		self:runStartAction()
-	end)
+	end
 end
 
 function MasterLeadStageDetailMediator:resumeWithData(data)

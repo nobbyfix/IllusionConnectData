@@ -166,7 +166,7 @@
             "12": 0.95,
             "13": 1,
             "14": 1.1,
-            "15": 1.2
+            "15": 1.1
         }
     },
     "Arena_Background": {
@@ -2448,6 +2448,24 @@
             ]
         }
     },
+    "DrawCard_SP_Position": {
+        "clz": "dict",
+        "content": {
+            "1": 0,
+            "2": 120,
+            "3": 550,
+            "4": 750
+        }
+    },
+    "DrawCard_SP_Speed": {
+        "clz": "dict",
+        "content": {
+            "1": 0.6,
+            "2": 0.9,
+            "3": 1.6,
+            "4": 2.6
+        }
+    },
     "DrawCard_SinglePrice": {
         "clz": "int",
         "content": 200
@@ -2458,6 +2476,7 @@
             "12": 1,
             "13": 2,
             "14": 5,
+            "15": 5,
             "reward": "IR_HeroStive"
         }
     },
@@ -3264,7 +3283,7 @@
                 ]
             ],
             "love": 10,
-            "loveMax": 8,
+            "loveMax": 9,
             "time": [
                 5,
                 9,
@@ -3541,7 +3560,9 @@
         "content": [
             "WEDe",
             "SGHQShou",
-            "TJHDe"
+            "TJHDe",
+            "FLBDSi",
+            "SP_PNCao"
         ]
     },
     "HeroStar_BoxNum": {
@@ -3580,6 +3601,20 @@
                 ]
             },
             "14": {
+                "4": [
+                    14,
+                    5
+                ],
+                "5": [
+                    14,
+                    5
+                ],
+                "6": [
+                    14,
+                    10
+                ]
+            },
+            "15": {
                 "4": [
                     14,
                     5
@@ -3644,7 +3679,8 @@
         "content": {
             "12": 1,
             "13": 2,
-            "14": 5
+            "14": 5,
+            "15": 5
         }
     },
     "HeroStar_StiveChangeSelf": {
@@ -4158,7 +4194,8 @@
         "content": {
             "12": 0.95,
             "13": 1,
-            "14": 1.05
+            "14": 1.05,
+            "15": 1.05
         }
     },
     "Hero_RarityFactor": {
@@ -4463,6 +4500,9 @@
                 "IM_FAll14": 1
             },
             "14": {
+                "IM_FAll14": 1
+            },
+            "15": {
                 "IM_FAll14": 1
             }
         }
@@ -5936,6 +5976,14 @@
     "Master_UnHurtRate_CoefficientB": {
         "clz": "double",
         "content": 1
+    },
+    "MergeClubNameMailId": {
+        "clz": "string",
+        "content": "Mail_MergeClubName20210602"
+    },
+    "MergeSysMailId": {
+        "clz": "string",
+        "content": "Mail_MergeReward20210602"
     },
     "MonthCardForever_Desc": {
         "clz": "string",
@@ -7666,6 +7714,38 @@
             "linyou_android": 1
         }
     },
+    "SP_Star_Bonus": {
+        "clz": "array",
+        "content": [
+            [
+                3,
+                3.5,
+                4,
+                4.5,
+                5,
+                5.5,
+                6
+            ],
+            [
+                0,
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.3,
+                0.3
+            ],
+            [
+                0,
+                0.1,
+                0.1,
+                0.3,
+                0.3,
+                0.3,
+                0.3
+            ]
+        ]
+    },
     "SR_Star_Bonus": {
         "clz": "array",
         "content": [
@@ -8451,7 +8531,9 @@
             "SLWan",
             "HSYZhai",
             "TLSi",
-            "XHMao"
+            "XHMao",
+            "FLBDSi",
+            "SP_PNCao"
         ]
     },
     "Tower_1_GrowMaxValue": {
@@ -8459,7 +8541,8 @@
         "content": {
             "12": 50,
             "13": 80,
-            "14": 150
+            "14": 150,
+            "15": 150
         }
     },
     "Tower_1_GrowRareityBase": {
@@ -8467,7 +8550,8 @@
         "content": {
             "12": 10,
             "13": 20,
-            "14": 30
+            "14": 30,
+            "15": 30
         }
     },
     "Tower_1_GrowSameCard": {
@@ -8475,7 +8559,8 @@
         "content": {
             "12": 10,
             "13": 15,
-            "14": 20
+            "14": 20,
+            "15": 20
         }
     },
     "Tower_1_GrowSameType": {
@@ -8483,7 +8568,8 @@
         "content": {
             "12": 15,
             "13": 15,
-            "14": 15
+            "14": 15,
+            "15": 15
         }
     },
     "Tower_1_HeroChooseValue": {
@@ -8507,7 +8593,8 @@
         "content": {
             "12": 1,
             "13": 1,
-            "14": 1
+            "14": 1,
+            "15": 1
         }
     },
     "Tower_1_HeroValue": {

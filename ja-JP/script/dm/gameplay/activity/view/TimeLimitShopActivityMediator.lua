@@ -48,6 +48,10 @@ local timeLimitShopConfig = {
 	half = {
 		TimeOutLineColor = cc.c4b(186, 51, 20, 255),
 		BGSize = cc.size(1031, 640)
+	},
+	summerre = {
+		BG = "jqtd_txt_qlyxzl_di",
+		TimeOutLineColor = cc.c4b(9, 70, 173, 255)
 	}
 }
 local btnHandlers = {

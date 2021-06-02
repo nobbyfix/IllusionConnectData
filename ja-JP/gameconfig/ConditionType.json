@@ -1196,6 +1196,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_SummerChengjiuDian_Desc"
     },
+    "Condi_SummerReExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_SummerRe_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_SummerReExchangeAchieve_Desc"
+    },
     "Condi_SunflowerExchangeAchieve": {
         "AchieveType1": "INCREASE",
         "AchieveType2": "",
@@ -1405,6 +1412,13 @@
         "ConditionType1": "player.practice.stageMaps.*.stagePoints.*.stars",
         "ConditionType2": "",
         "EffectDesc": "Condi_playerpracticestagestar_Desc"
+    },
+    "Condi_rechargeMoneyCount": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "recharge_money_count.?1",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_rechargeMoneyCount_Desc"
     },
     "Condi_shopBuy": {
         "AchieveType1": "CUSTOM",

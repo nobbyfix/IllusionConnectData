@@ -153,16 +153,30 @@ function BattleGroundCell:canBeSitByCard(card)
 		local cardInfo = card:getCardInfo()
 
 		if cardInfo then
-			if cardInfo.cardType == HeroCardType.Super then
+			if next(cardInfo.seatRules) then
 				if self:getStatus() ~= GroundCellStatus.OCCUPIED then
 					return true
 				else
 					local occupHero = self:getFrontOccupiedHero()
 
 					if occupHero then
+						local canBeSit = false
+
+						for rule, _ in pairs(cardInfo.seatRules) do
+							if rule == "SUMMONED" then
+								canBeSit = occupHero:getIsSummond()
+							else
+								canBeSit = occupHero:hasFlag(rule)
+							end
+
+							if canBeSit then
+								break
+							end
+						end
+
 						if occupHero:getRoleType() == RoleType.Master then
 							return false
-						elseif occupHero:getIsSummond() then
+						elseif canBeSit then
 							return true
 						end
 

@@ -1117,7 +1117,7 @@ local SortOrder = {
 local SortExtendFunc = {
 	{
 		func = function (sortExtendType, hero)
-			return hero:getRarity() == 15 - sortExtendType
+			return hero:getRarity() == 16 - sortExtendType
 		end
 	},
 	{
@@ -1295,6 +1295,7 @@ function TeamSystem:initExtendParam()
 	end
 
 	SortExtend[1] = {
+		"SP",
 		"SSR",
 		"SR",
 		"R"

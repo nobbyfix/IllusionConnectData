@@ -481,6 +481,7 @@ function DreamChallengePointMediator:refreshBuffInfo()
 
 	for i = 1, #heros do
 		addIndex = addIndex + 1
+		local config = ConfigReader:getRecordById("HeroBase", heros[i])
 		local node3 = self._infoCellClone:clone()
 		local attackText = node3:getChildByFullName("text")
 		local icon = node3:getChildByFullName("icon")
@@ -497,7 +498,14 @@ function DreamChallengePointMediator:refreshBuffInfo()
 		end
 
 		icon:removeAllChildren()
-		icon:loadTexture("asset/commonRaw/common_bd_ssr01.png", ccui.TextureResType.localType)
+
+		local iconName = "asset/commonRaw/common_bd_ssr01.png"
+
+		if config.Rareity == 15 then
+			iconName = "asset/commonRaw/common_bd_sp01.png"
+		end
+
+		icon:loadTexture(iconName, ccui.TextureResType.localType)
 		icon:setContentSize(cc.size(93, 93))
 
 		local touchInfo = {
@@ -512,7 +520,6 @@ function DreamChallengePointMediator:refreshBuffInfo()
 			needDelay = true
 		})
 
-		local config = ConfigReader:getRecordById("HeroBase", heros[i])
 		local heroImg = IconFactory:createRoleIconSprite({
 			id = config.RoleModel
 		})

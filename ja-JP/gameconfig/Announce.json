@@ -1114,7 +1114,8 @@
             11,
             12,
             13,
-            14
+            14,
+            15
         ],
         "ExpireTime": "",
         "Label": 2,
@@ -1126,6 +1127,26 @@
         "Type": "HERO_FIRSTGET",
         "Words": [
             "Announce_GetHero2A"
+        ]
+    },
+    "Announce_GetHero3": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Condition": [
+            15
+        ],
+        "ExpireTime": 600,
+        "Label": 1,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": 1,
+        "ReachType": "",
+        "Times": 1,
+        "Type": "HERO_RARE",
+        "Words": [
+            "Announce_GetHero3A"
         ]
     },
     "Announce_GetTwoHero": {
@@ -1147,6 +1168,27 @@
         "Type": "HERO_LUCKY",
         "Words": [
             "Announce_GetTwoHero"
+        ]
+    },
+    "Announce_GetTwoHero_SP": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "CHAT-WORLD"
+        ],
+        "Condition": [
+            2,
+            15
+        ],
+        "ExpireTime": "",
+        "Label": 7,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": "",
+        "ReachType": "",
+        "Times": 1,
+        "Type": "HERO_LUCKY",
+        "Words": [
+            "Announce_GetTwoHero_SP"
         ]
     },
     "Announce_Huanjinghuilang_Clear": {

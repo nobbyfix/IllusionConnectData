@@ -10,14 +10,14 @@ GetSurfaceMediator:has("_surfaceSystem", {
 local kHandlerBtn = {}
 local heroRect = "asset/heroRect/heroRarity/"
 local kHeroRarityBg1 = {
-	[15] = heroRect .. "hero_rarity_bg_ssr.png",
+	[15] = heroRect .. "hero_rarity_bg_sp.png",
 	[14] = heroRect .. "hero_rarity_bg_ssr.png",
 	[13] = heroRect .. "hero_rarity_bg_sr.png",
 	[12] = heroRect .. "hero_rarity_bg_r.png",
 	[11] = heroRect .. "hero_rarity_bg_r.png"
 }
 local kHeroRarityBg2 = {
-	[15] = heroRect .. "hero_rarity_bg_1_ssr.png",
+	[15] = heroRect .. "hero_rarity_bg_1_sp.png",
 	[14] = heroRect .. "hero_rarity_bg_1_ssr.png",
 	[13] = heroRect .. "hero_rarity_bg_1_ssr.png",
 	[12] = heroRect .. "hero_rarity_bg_1_r.png",

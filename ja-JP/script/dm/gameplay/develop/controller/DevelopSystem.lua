@@ -14,6 +14,9 @@ DevelopSystem:has("_developService", {
 DevelopSystem:has("_serverOpenTime", {
 	is = "rw"
 })
+DevelopSystem:has("_serverMergeTime", {
+	is = "rw"
+})
 DevelopSystem:has("_timeZone", {
 	is = "rw"
 })
@@ -86,6 +89,7 @@ function DevelopSystem:initialize()
 	self._serverOpenTime = 0
 	self._serverIp = ""
 	self._serverPort = 0
+	self._serverMergeTime = 0
 
 	self:initSystem()
 end

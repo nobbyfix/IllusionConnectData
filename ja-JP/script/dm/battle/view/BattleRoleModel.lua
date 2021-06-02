@@ -171,6 +171,9 @@ BattleRoleModel:has("_isSummond", {
 BattleRoleModel:has("_side", {
 	is = "rw"
 })
+BattleRoleModel:has("_flags", {
+	is = "rw"
+})
 
 function BattleRoleModel:initialize(context)
 	super.initialize(self)
@@ -193,6 +196,16 @@ end
 
 function BattleRoleModel:getModelConfig()
 	return self._modelConfig
+end
+
+function BattleRoleModel:hasFlag(flag)
+	for k, v in pairs(self._flags) do
+		if v == flag then
+			return true
+		end
+	end
+
+	return false
 end
 
 function BattleRoleModel:setHp(hp)

@@ -52,7 +52,7 @@ all.Skill_Rtpk_Quicken = {
 			local this = _env.this
 			local global = _env.global
 			local cards1 = global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR))
-			local cards2 = 99
+			local cards2 = {}
 
 			if global.EnemyMaster(_env) then
 				cards2 = global.CardsInWindow(_env, global.GetOwner(_env, global.EnemyMaster(_env)))

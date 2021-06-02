@@ -982,17 +982,15 @@ function ActivityCommonMainMediator:setStageView()
 	local ui = self._activity:getUI()
 	local title = ActivityMainMapTitleConfig.title[ui]
 
-	if not title then
-		return
-	end
+	if title then
+		for key, lineGradiantVec2 in pairs(title) do
+			local title = self._stagePanel:getChildByName(key)
 
-	for key, lineGradiantVec2 in pairs(title) do
-		local title = self._stagePanel:getChildByName(key)
-
-		title:enablePattern(cc.LinearGradientPattern:create(lineGradiantVec2, {
-			x = 0,
-			y = -1
-		}))
+			title:enablePattern(cc.LinearGradientPattern:create(lineGradiantVec2, {
+				x = 0,
+				y = -1
+			}))
+		end
 	end
 
 	local anim = ActivityMainMapTitleConfig.anim[ui]

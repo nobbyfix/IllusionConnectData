@@ -240,7 +240,37 @@ function BattleDataHelper:getIntegralPlayerData(playerData, isEnemy)
 		end
 	end
 
+	self:fillAttackEffect(playerData)
+
 	return playerData
+end
+
+function BattleDataHelper:fillAttackEffect(playerData)
+	local function attachAttckEffect(target)
+		local allkeys = ConfigReader:getKeysOfTable("Surface")
+
+		for k, v in pairs(allkeys) do
+			local model = ConfigReader:getDataByNameIdAndKey("Surface", v, "Model")
+
+			if model == target.modelId then
+				target.attackEffect = ConfigReader:getDataByNameIdAndKey("Surface", v, "AnimeList")
+			end
+		end
+	end
+
+	for k, v in pairs(playerData.waves or {}) do
+		if v.master then
+			attachAttckEffect(v.master)
+		end
+
+		for k, v in pairs(v.heros or {}) do
+			attachAttckEffect(v)
+		end
+	end
+
+	for k, v in pairs(playerData.cards or {}) do
+		attachAttckEffect(v.hero)
+	end
 end
 
 function BattleDataHelper:dealWithTransform(master, summon, summonMap)
