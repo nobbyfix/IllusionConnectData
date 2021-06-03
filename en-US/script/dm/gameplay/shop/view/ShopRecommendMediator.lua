@@ -148,19 +148,19 @@ function ShopRecommendMediator:refreshView()
 				})
 
 				if getCurrentLanguage() == GameLanguageType.CN then
-					icon:addTo(self._bgImage):posite(640, 438):setScale(0.83)
+					icon:addTo(self._bgImage):posite(688, 442):setScale(0.83)
 				elseif getCurrentLanguage() == GameLanguageType.EN then
-					icon:addTo(self._bgImage):posite(565, 455):setScale(0.83)
+					icon:addTo(self._bgImage):posite(577.5, 444):setScale(0.83)
 				elseif getCurrentLanguage() == GameLanguageType.DE then
-					icon:addTo(self._bgImage):posite(565, 455):setScale(0.83)
+					icon:addTo(self._bgImage):posite(568, 455):setScale(0.83)
 				elseif getCurrentLanguage() == GameLanguageType.FR then
-					icon:addTo(self._bgImage):posite(565, 405):setScale(0.83)
+					icon:addTo(self._bgImage):posite(568, 405):setScale(0.83)
 				elseif getCurrentLanguage() == GameLanguageType.ES then
-					icon:addTo(self._bgImage):posite(565, 418):setScale(0.83)
+					icon:addTo(self._bgImage):posite(566, 388):setScale(0.83)
 				elseif getCurrentLanguage() == GameLanguageType.PT then
-					icon:addTo(self._bgImage):posite(565, 418):setScale(0.83)
+					icon:addTo(self._bgImage):posite(568, 338):setScale(0.83)
 				elseif getCurrentLanguage() == GameLanguageType.TH then
-					icon:addTo(self._bgImage):posite(610, 455):setScale(0.83)
+					icon:addTo(self._bgImage):posite(612, 455):setScale(0.83)
 				end
 
 				IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), frameData, {

@@ -331,7 +331,7 @@ function ActivitySagaSupportStageMediator:updateMainView()
 
 	itemAddClone:setVisible(false)
 
-	local items = ActivitySupportItems[self._activityId]
+	local items = self._activity:getSupportItems()
 
 	for i = 1, #items do
 		local rewardData = {

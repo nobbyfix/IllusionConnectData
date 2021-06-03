@@ -30,23 +30,24 @@ local kHeroRarityAnim = {
 	"r_choukahuodeyinghun",
 	"sr_choukahuodeyinghun",
 	"ssr_choukahuodeyinghun",
-	"ssr_choukahuodeyinghun"
+	"sp_urequipeff"
 }
 local kHeroRarityBg1 = {
-	[15] = heroRect .. "hero_rarity_bg_ssr.png",
+	[15] = heroRect .. "hero_rarity_bg_sp.png",
 	[14] = heroRect .. "hero_rarity_bg_ssr.png",
 	[13] = heroRect .. "hero_rarity_bg_sr.png",
 	[12] = heroRect .. "hero_rarity_bg_r.png",
 	[11] = heroRect .. "hero_rarity_bg_r.png"
 }
 local kHeroRarityBg2 = {
-	[15] = heroRect .. "hero_rarity_bg_1_ssr.png",
+	[15] = heroRect .. "hero_rarity_bg_1_sp.png",
 	[14] = heroRect .. "hero_rarity_bg_1_ssr.png",
 	[13] = heroRect .. "hero_rarity_bg_1_ssr.png",
 	[12] = heroRect .. "hero_rarity_bg_1_r.png",
 	[11] = heroRect .. "hero_rarity_bg_1_r.png"
 }
 local kHeroRarityBgGuang = {
+	[15.0] = "ssrdonghuaguang_choukahuodeyinghun",
 	[13.0] = "srdonghuaguang_choukahuodeyinghun",
 	[14.0] = "ssrdonghuaguang_choukahuodeyinghun"
 }

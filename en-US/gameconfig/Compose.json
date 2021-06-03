@@ -384,6 +384,41 @@
         },
         "Times": 1
     },
+    "CO_Decoration_15012": {
+        "ComposePosition": "Decoration",
+        "Currency": {
+            "amount": 2000000,
+            "id": "IR_Gold",
+            "type": "Item"
+        },
+        "Item1": {
+            "amount": 1,
+            "id": "CO_DecorationStone_3",
+            "type": "Item"
+        },
+        "Item2": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Decoration"
+        },
+        "Item3": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Decoration"
+        },
+        "Item4": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Decoration"
+        },
+        "Item5": "",
+        "Reward": "Decoration_15012",
+        "Show": {
+            "id": "Decoration_15012",
+            "type": "Equip"
+        },
+        "Times": 1
+    },
     "CO_Shoes_15001": {
         "ComposePosition": "Shoes",
         "Currency": {
@@ -625,6 +660,41 @@
         "Reward": "Shoes_15007",
         "Show": {
             "id": "Shoes_15007",
+            "type": "Equip"
+        },
+        "Times": 1
+    },
+    "CO_Shoes_15008": {
+        "ComposePosition": "Shoes",
+        "Currency": {
+            "amount": 2000000,
+            "id": "IR_Gold",
+            "type": "Item"
+        },
+        "Item1": {
+            "amount": 1,
+            "id": "CO_ShoesStone_2",
+            "type": "Item"
+        },
+        "Item2": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Shoes"
+        },
+        "Item3": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Shoes"
+        },
+        "Item4": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Shoes"
+        },
+        "Item5": "",
+        "Reward": "Shoes_15008",
+        "Show": {
+            "id": "Shoes_15008",
             "type": "Equip"
         },
         "Times": 1
@@ -975,6 +1045,41 @@
         "Reward": "Tops_15010",
         "Show": {
             "id": "Tops_15010",
+            "type": "Equip"
+        },
+        "Times": 1
+    },
+    "CO_Tops_15011": {
+        "ComposePosition": "Tops",
+        "Currency": {
+            "amount": 2000000,
+            "id": "IR_Gold",
+            "type": "Item"
+        },
+        "Item1": {
+            "amount": 1,
+            "id": "CO_TopsStone_2",
+            "type": "Item"
+        },
+        "Item2": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Tops"
+        },
+        "Item3": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Tops"
+        },
+        "Item4": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Tops"
+        },
+        "Item5": "",
+        "Reward": "Tops_15011",
+        "Show": {
+            "id": "Tops_15011",
             "type": "Equip"
         },
         "Times": 1

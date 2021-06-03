@@ -26,7 +26,7 @@ local kBtnHandlers = {
 	}
 }
 local kHeroRarityBgAnim = {
-	[15.0] = "ssrzong_yingxiongxuanze",
+	[15.0] = "spzong_urequipeff",
 	[13.0] = "srzong_yingxiongxuanze",
 	[14.0] = "ssrzong_yingxiongxuanze"
 }
@@ -380,8 +380,8 @@ function ClubBossTeamMediator:initWidgetInfo()
 	self._teamBg = self._bg:getChildByName("team_bg")
 	self._labelCombat = self._main:getChildByFullName("info_bg.combatLabel")
 	self._costAverageTitleLabel = self._main:getChildByFullName("info_bg.text_prior")
-	self._infoBtn = self:getView():getChildByFullName("infoBtn")
-	self._fightInfoTip = self:getView():getChildByFullName("fightInfo")
+	self._infoBtn = self._main:getChildByFullName("infoBtn")
+	self._fightInfoTip = self._main:getChildByFullName("fightInfo")
 
 	self._fightInfoTip:setVisible(false)
 
@@ -1003,7 +1003,12 @@ function ClubBossTeamMediator:initTeamHero(node, info)
 		local anim = cc.MovieClip:create(kHeroRarityBgAnim[info.rareity])
 
 		anim:addTo(bg1):center(bg1:getContentSize())
-		anim:offset(-1, -29)
+
+		if info.rareity <= 14 then
+			anim:offset(-1, -29)
+		else
+			anim:offset(-3, 0)
+		end
 
 		if info.rareity >= 14 then
 			local anim = cc.MovieClip:create("ssrlizichai_yingxiongxuanze")

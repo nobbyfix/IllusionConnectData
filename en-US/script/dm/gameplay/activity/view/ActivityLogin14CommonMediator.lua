@@ -364,23 +364,25 @@ function ActivityLogin14CommonMediator:refreshUIView()
 		local titleTxt = self._activityConfig.titleTxt or "title"
 		local titleLab = node:getChildByFullName("main.Text_12")
 
-		titleLab:setString(Strings:get(titleTxt))
-
-		local lineGradiantVec = {
-			{
-				ratio = 0.3,
-				color = config.textPattern[1]
-			},
-			{
-				ratio = 0.7,
-				color = config.textPattern[2]
+		if config.textPattern then
+			local lineGradiantVec = {
+				{
+					ratio = 0.3,
+					color = config.textPattern[1]
+				},
+				{
+					ratio = 0.7,
+					color = config.textPattern[2]
+				}
 			}
-		}
 
-		titleLab:enablePattern(cc.LinearGradientPattern:create(lineGradiantVec, {
-			x = 0,
-			y = -1
-		}))
+			titleLab:enablePattern(cc.LinearGradientPattern:create(lineGradiantVec, {
+				x = 0,
+				y = -1
+			}))
+		end
+
+		titleLab:setString(Strings:get(titleTxt))
 
 		local descTxt = self._activityConfig.descTxt or "desc"
 

@@ -257,13 +257,18 @@ function RecruitHeroPreviewMediator:setSelectView()
 	self._selectPanel = self._main:getChildByName("selectPanel")
 	local buttons = {}
 
-	for i = 1, 4 do
+	for i = 1, 5 do
 		local button = self._selectPanel:getChildByName("btn" .. i)
-		buttons[#buttons + 1] = button
-		local image = button:getChildByFullName("image")
-		local pic = self._heroType == i and kTabImage[i][2] or kTabImage[i][1]
 
-		image:loadTexture(pic)
+		if i < 5 then
+			buttons[#buttons + 1] = button
+			local image = button:getChildByFullName("image")
+			local pic = self._heroType == i and kTabImage[i][2] or kTabImage[i][1]
+
+			image:loadTexture(pic)
+		else
+			button:setVisible(false)
+		end
 	end
 
 	local data = {
@@ -279,6 +284,7 @@ end
 
 function RecruitHeroPreviewMediator:setHeroesView()
 	self._showHeros = {
+		{},
 		{},
 		{},
 		{},

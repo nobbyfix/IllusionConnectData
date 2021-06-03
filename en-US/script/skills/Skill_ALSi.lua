@@ -349,6 +349,7 @@ all.Skill_ALSi_Passive = {
 					duration = 3,
 					tags = {
 						"CARDBUFF",
+						"BUFF",
 						"Skill_ALSi_Passive",
 						"UNDISPELLABLE",
 						"UNSTEALABLE"
@@ -675,6 +676,7 @@ all.Skill_ALSi_Passive_EX = {
 					duration = 3,
 					tags = {
 						"CARDBUFF",
+						"BUFF",
 						"Skill_ALSi_Passive",
 						"UNDISPELLABLE",
 						"UNSTEALABLE"

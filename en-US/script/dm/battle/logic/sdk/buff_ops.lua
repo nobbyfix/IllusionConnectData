@@ -224,7 +224,7 @@ function exports.CloneBuff(env, unit, target, tagOrFilter, maxCount)
 		end
 	end
 
-	return buffSystem:cloneBuffsOnTarget(actor, target, matchFunc, env["$id"])
+	return buffSystem:cloneBuffsOnTarget(unit, target, matchFunc, env["$id"])
 end
 
 function exports.SelectBuffs(env, target, tagOrFilter)

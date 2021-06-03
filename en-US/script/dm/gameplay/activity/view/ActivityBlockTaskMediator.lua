@@ -65,7 +65,7 @@ function ActivityBlockTaskMediator:enterWithData(data)
 	self._activityModel = self._activitySystem:getActivityById(self._activityId)
 	self._activities = self._activityModel:getTaskActivities()
 	self._viewCache = {}
-	local viewType = self:getFirstEnterTabType()
+	local viewType = self:getFirstEnterTabType(data.taskId)
 	self._curViewType = data.tabType or viewType
 	self._refreshFirst = true
 
@@ -92,13 +92,19 @@ end
 function ActivityBlockTaskMediator:updateView()
 end
 
-function ActivityBlockTaskMediator:getFirstEnterTabType()
+function ActivityBlockTaskMediator:getFirstEnterTabType(taskId)
 	local tabType = 1
 
 	for i = 1, #self._activities do
 		local activity = self._activities[i]
 
-		if activity:hasRedPoint() then
+		if taskId then
+			if activity:getId() == taskId then
+				tabType = i
+
+				break
+			end
+		elseif activity:hasRedPoint() then
 			tabType = i
 
 			break

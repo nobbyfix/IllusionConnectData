@@ -77,7 +77,7 @@ local kRarityBg = {
 	"asset/ui/gallery/album_bg_archives_txd_r.png",
 	"asset/ui/gallery/album_bg_archives_txd_sr.png",
 	"asset/ui/gallery/album_bg_archives_txd_ssr.png",
-	"asset/ui/gallery/album_bg_archives_txd_ssr.png"
+	"asset/ui/gallery/album_bg_archives_txd_sp.png"
 }
 
 function GalleryPartnerMediator:initialize()

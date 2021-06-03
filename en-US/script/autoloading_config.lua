@@ -346,6 +346,11 @@ local mappings = {
 		name = "RecruitHeroBoxMediator",
 		type = "@C"
 	},
+	RecruitNewDrawCardMediator = {
+		url = "dm.gameplay.recruit.view.RecruitNewDrawCardMediator",
+		name = "RecruitNewDrawCardMediator",
+		type = "@C"
+	},
 	RecruitMainMediator = {
 		url = "dm.gameplay.recruit.view.RecruitMainMediator",
 		name = "RecruitMainMediator",
@@ -759,6 +764,11 @@ local mappings = {
 	MasterCultivateMediator = {
 		url = "dm.gameplay.develop.view.master.MasterCultivateMediator",
 		name = "MasterCultivateMediator",
+		type = "@C"
+	},
+	MasterLeadStageAwakeMediator = {
+		url = "dm.gameplay.develop.view.master.MasterLeadStageAwakeMediator",
+		name = "MasterLeadStageAwakeMediator",
 		type = "@C"
 	},
 	NewMasterMediator = {

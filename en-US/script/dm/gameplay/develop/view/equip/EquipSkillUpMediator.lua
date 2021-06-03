@@ -171,7 +171,7 @@ function EquipSkillUpMediator:setupView()
 
 	descText:setAnchorPoint(cc.p(0.5, 0))
 	descText:addTo(desc)
-	descText:setPosition(cc.p(0, -10))
+	descText:setPosition(cc.p(0, -19))
 	descText:renderContent()
 
 	if changeSize then

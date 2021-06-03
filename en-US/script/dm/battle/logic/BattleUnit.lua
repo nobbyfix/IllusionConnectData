@@ -57,6 +57,7 @@ function BattleUnit:copyRawData(srcUnit)
 	self._heroCost = srcUnit:getHeroCost()
 	self._cid = srcUnit:getCid()
 	self._enemyCost = srcUnit:getEnemyCost()
+	self._attackEffect = srcUnit:getAttackEffect()
 end
 
 function BattleUnit:inheritUnit(srcUnit, info)
@@ -161,6 +162,9 @@ BattleUnit:has("_heroCost", {
 BattleUnit:has("_surfaceIndex", {
 	is = "rw"
 })
+BattleUnit:has("_attackEffect", {
+	is = "rw"
+})
 
 function BattleUnit:initialize(id)
 	super.initialize(self, id)
@@ -190,6 +194,7 @@ function BattleUnit:initWithRawData(data)
 	self._modelScale = data.modelScale
 	self._heroCost = data.heroCost or -1
 	self._surfaceIndex = data.surfaceIndex or 0
+	self._attackEffect = data.attackEffect
 	self._enemyCost = data.enemyCost
 
 	super.initWithRawData(self, data)
@@ -340,6 +345,7 @@ function BattleUnit:dumpInformation()
 	local hpComp = self:getComponent("Health")
 	local angerComp = self:getComponent("Anger")
 	local posComp = self:getComponent("Position")
+	local flagComp = self:getComponent("Flag")
 	local cell = posComp:getCell()
 	local skills = nil
 	local unitType = self:getUnitType()
@@ -394,7 +400,8 @@ function BattleUnit:dumpInformation()
 		awakenLevel = self._awakenLevel,
 		modelScale = self._modelScale,
 		isSummoned = self._isSummoned,
-		side = self._side
+		side = self._side,
+		flags = flagComp:getFlags()
 	}
 end
 

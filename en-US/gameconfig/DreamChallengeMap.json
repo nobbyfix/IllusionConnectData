@@ -244,6 +244,37 @@
             "LEVEL": 5
         }
     },
+    "DreamChallenge_TimeLimit_Gemini2": {
+        "BGM": [
+            "Mus_Story_MusicFestival_2",
+            "",
+            ""
+        ],
+        "Background": "mjt_scene_xz_bg",
+        "BlockPoint": [
+            "DreamChallenge_TimeLimit_Gemini2_T01N01"
+        ],
+        "Control": 1,
+        "DCType": 1,
+        "LimitTimeTxt": "DreamChallenge_TimeShow_Gemini2",
+        "ListLocationNum": 10011,
+        "Name": "DreamChallenge_TimeLimit_Gemini2_Name",
+        "ShowCondition": {
+            "Day": "2021-06-07  05:00:00",
+            "LEVEL": 5
+        },
+        "Story": "",
+        "TabPic": "mjt_txt_szzx_btn",
+        "Tag": "",
+        "TimeFactor": {
+            "type": "Day",
+            "value": "2021-06-16  05:00:00"
+        },
+        "UnlockCondition": {
+            "Day": "2021-06-07  05:00:00",
+            "LEVEL": 5
+        }
+    },
     "DreamChallenge_TimeLimit_Music": {
         "BGM": [
             "Mus_Story_MusicFestival_2",

@@ -15,7 +15,7 @@ BaseTeamMediator:has("_buildingSystem", {
 
 local costType = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Player_Init_Cost_Type", "content")
 local kHeroRarityBgAnim = {
-	[15.0] = "ssrzong_yingxiongxuanze",
+	[15.0] = "spzong_urequipeff",
 	[13.0] = "srzong_yingxiongxuanze",
 	[14.0] = "ssrzong_yingxiongxuanze"
 }

@@ -3087,6 +3087,2466 @@
         "QualityLevel": 2,
         "Speed": 70
     },
+    "SP_10": {
+        "AtkQualityBaseValue": 0.0,
+        "AtkQualityFactor": 5.0,
+        "CostItem": [
+            {
+                "amount": 3,
+                "id": "IQS_Green11"
+            },
+            {
+                "amount": 1,
+                "id": "IQS_Green12"
+            },
+            {
+                "amount": 1,
+                "id": "IQS_Green13"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 6400,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 0.0,
+        "DefQualityFactor": 1.5,
+        "HpQualityBaseValue": 0.0,
+        "HpQualityFactor": 20.0,
+        "LevelRequest": 30,
+        "MaxLevel": 30,
+        "NextQuality": "SP_20",
+        "PlayerLevelRequest": 1,
+        "Quality": 10,
+        "QualityLevel": 0,
+        "Speed": 0
+    },
+    "SP_10_Aoe": {
+        "AtkQualityBaseValue": 0.0,
+        "AtkQualityFactor": 27.0,
+        "CostItem": [
+            {
+                "amount": 6,
+                "id": "IQS_Green1_Attack"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 6400,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 0.0,
+        "DefQualityFactor": 8.0,
+        "HpQualityBaseValue": 0.0,
+        "HpQualityFactor": 108.0,
+        "LevelRequest": 15,
+        "MaxLevel": 15,
+        "NextQuality": "SP_20_Aoe",
+        "PlayerLevelRequest": 1,
+        "Quality": 10,
+        "QualityLevel": 0,
+        "Speed": 0
+    },
+    "SP_10_Attack": {
+        "AtkQualityBaseValue": 0.0,
+        "AtkQualityFactor": 27.0,
+        "CostItem": [
+            {
+                "amount": 6,
+                "id": "IQS_Green1_Attack"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 6400,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 0.0,
+        "DefQualityFactor": 8.0,
+        "HpQualityBaseValue": 0.0,
+        "HpQualityFactor": 108.0,
+        "LevelRequest": 15,
+        "MaxLevel": 15,
+        "NextQuality": "SP_20_Attack",
+        "PlayerLevelRequest": 1,
+        "Quality": 10,
+        "QualityLevel": 0,
+        "Speed": 0
+    },
+    "SP_10_Cure": {
+        "AtkQualityBaseValue": 0.0,
+        "AtkQualityFactor": 27.0,
+        "CostItem": [
+            {
+                "amount": 6,
+                "id": "IQS_Green1_Attack"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 6400,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 0.0,
+        "DefQualityFactor": 8.0,
+        "HpQualityBaseValue": 0.0,
+        "HpQualityFactor": 108.0,
+        "LevelRequest": 15,
+        "MaxLevel": 15,
+        "NextQuality": "SP_20_Cure",
+        "PlayerLevelRequest": 1,
+        "Quality": 10,
+        "QualityLevel": 0,
+        "Speed": 0
+    },
+    "SP_10_Curse": {
+        "AtkQualityBaseValue": 0.0,
+        "AtkQualityFactor": 27.0,
+        "CostItem": [
+            {
+                "amount": 6,
+                "id": "IQS_Green1_Attack"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 6400,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 0.0,
+        "DefQualityFactor": 8.0,
+        "HpQualityBaseValue": 0.0,
+        "HpQualityFactor": 108.0,
+        "LevelRequest": 15,
+        "MaxLevel": 15,
+        "NextQuality": "SP_20_Curse",
+        "PlayerLevelRequest": 1,
+        "Quality": 10,
+        "QualityLevel": 0,
+        "Speed": 0
+    },
+    "SP_10_Defense": {
+        "AtkQualityBaseValue": 0.0,
+        "AtkQualityFactor": 27.0,
+        "CostItem": [
+            {
+                "amount": 6,
+                "id": "IQS_Green1_Attack"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 6400,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 0.0,
+        "DefQualityFactor": 8.0,
+        "HpQualityBaseValue": 0.0,
+        "HpQualityFactor": 108.0,
+        "LevelRequest": 15,
+        "MaxLevel": 15,
+        "NextQuality": "SP_20_Defense",
+        "PlayerLevelRequest": 1,
+        "Quality": 10,
+        "QualityLevel": 0,
+        "Speed": 0
+    },
+    "SP_10_Summon": {
+        "AtkQualityBaseValue": 0.0,
+        "AtkQualityFactor": 27.0,
+        "CostItem": [
+            {
+                "amount": 6,
+                "id": "IQS_Green1_Attack"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 6400,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 0.0,
+        "DefQualityFactor": 8.0,
+        "HpQualityBaseValue": 0.0,
+        "HpQualityFactor": 108.0,
+        "LevelRequest": 15,
+        "MaxLevel": 15,
+        "NextQuality": "SP_20_Summon",
+        "PlayerLevelRequest": 1,
+        "Quality": 10,
+        "QualityLevel": 0,
+        "Speed": 0
+    },
+    "SP_10_Support": {
+        "AtkQualityBaseValue": 0.0,
+        "AtkQualityFactor": 27.0,
+        "CostItem": [
+            {
+                "amount": 6,
+                "id": "IQS_Green1_Attack"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 6400,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 0.0,
+        "DefQualityFactor": 8.0,
+        "HpQualityBaseValue": 0.0,
+        "HpQualityFactor": 108.0,
+        "LevelRequest": 15,
+        "MaxLevel": 15,
+        "NextQuality": "SP_20_Support",
+        "PlayerLevelRequest": 1,
+        "Quality": 10,
+        "QualityLevel": 0,
+        "Speed": 0
+    },
+    "SP_20": {
+        "AtkQualityBaseValue": 20.0,
+        "AtkQualityFactor": 5.0,
+        "CostItem": [
+            {
+                "amount": 3,
+                "id": "IQS_Blue11"
+            },
+            {
+                "amount": 2,
+                "id": "IQS_Blue12"
+            },
+            {
+                "amount": 2,
+                "id": "IQS_Blue13"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 20000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 6.0,
+        "DefQualityFactor": 1.5,
+        "HpQualityBaseValue": 80.0,
+        "HpQualityFactor": 20.0,
+        "LevelRequest": 60,
+        "MaxLevel": 60,
+        "NextQuality": "SP_30",
+        "PlayerLevelRequest": 1,
+        "Quality": 20,
+        "QualityLevel": 0,
+        "Speed": 10
+    },
+    "SP_20_Aoe": {
+        "AtkQualityBaseValue": 200.0,
+        "AtkQualityFactor": 27.0,
+        "CostItem": [
+            {
+                "amount": 15,
+                "id": "IQS_Green2_Attack"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 20000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 60.0,
+        "DefQualityFactor": 8.0,
+        "HpQualityBaseValue": 800.0,
+        "HpQualityFactor": 108.0,
+        "LevelRequest": 30,
+        "MaxLevel": 30,
+        "NextQuality": "SP_21_Aoe",
+        "PlayerLevelRequest": 13,
+        "Quality": 20,
+        "QualityLevel": 0,
+        "Speed": 10
+    },
+    "SP_20_Attack": {
+        "AtkQualityBaseValue": 200.0,
+        "AtkQualityFactor": 27.0,
+        "CostItem": [
+            {
+                "amount": 15,
+                "id": "IQS_Green2_Attack"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 20000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 60.0,
+        "DefQualityFactor": 8.0,
+        "HpQualityBaseValue": 800.0,
+        "HpQualityFactor": 108.0,
+        "LevelRequest": 30,
+        "MaxLevel": 30,
+        "NextQuality": "SP_21_Attack",
+        "PlayerLevelRequest": 13,
+        "Quality": 20,
+        "QualityLevel": 0,
+        "Speed": 10
+    },
+    "SP_20_Cure": {
+        "AtkQualityBaseValue": 200.0,
+        "AtkQualityFactor": 27.0,
+        "CostItem": [
+            {
+                "amount": 15,
+                "id": "IQS_Green2_Attack"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 20000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 60.0,
+        "DefQualityFactor": 8.0,
+        "HpQualityBaseValue": 800.0,
+        "HpQualityFactor": 108.0,
+        "LevelRequest": 30,
+        "MaxLevel": 30,
+        "NextQuality": "SP_21_Cure",
+        "PlayerLevelRequest": 13,
+        "Quality": 20,
+        "QualityLevel": 0,
+        "Speed": 10
+    },
+    "SP_20_Curse": {
+        "AtkQualityBaseValue": 200.0,
+        "AtkQualityFactor": 27.0,
+        "CostItem": [
+            {
+                "amount": 15,
+                "id": "IQS_Green2_Attack"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 20000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 60.0,
+        "DefQualityFactor": 8.0,
+        "HpQualityBaseValue": 800.0,
+        "HpQualityFactor": 108.0,
+        "LevelRequest": 30,
+        "MaxLevel": 30,
+        "NextQuality": "SP_21_Curse",
+        "PlayerLevelRequest": 13,
+        "Quality": 20,
+        "QualityLevel": 0,
+        "Speed": 10
+    },
+    "SP_20_Defense": {
+        "AtkQualityBaseValue": 200.0,
+        "AtkQualityFactor": 27.0,
+        "CostItem": [
+            {
+                "amount": 15,
+                "id": "IQS_Green2_Attack"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 20000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 60.0,
+        "DefQualityFactor": 8.0,
+        "HpQualityBaseValue": 800.0,
+        "HpQualityFactor": 108.0,
+        "LevelRequest": 30,
+        "MaxLevel": 30,
+        "NextQuality": "SP_21_Defense",
+        "PlayerLevelRequest": 13,
+        "Quality": 20,
+        "QualityLevel": 0,
+        "Speed": 10
+    },
+    "SP_20_Summon": {
+        "AtkQualityBaseValue": 200.0,
+        "AtkQualityFactor": 27.0,
+        "CostItem": [
+            {
+                "amount": 15,
+                "id": "IQS_Green2_Attack"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 20000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 60.0,
+        "DefQualityFactor": 8.0,
+        "HpQualityBaseValue": 800.0,
+        "HpQualityFactor": 108.0,
+        "LevelRequest": 30,
+        "MaxLevel": 30,
+        "NextQuality": "SP_21_Summon",
+        "PlayerLevelRequest": 13,
+        "Quality": 20,
+        "QualityLevel": 0,
+        "Speed": 10
+    },
+    "SP_20_Support": {
+        "AtkQualityBaseValue": 200.0,
+        "AtkQualityFactor": 27.0,
+        "CostItem": [
+            {
+                "amount": 15,
+                "id": "IQS_Green2_Attack"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 20000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 60.0,
+        "DefQualityFactor": 8.0,
+        "HpQualityBaseValue": 800.0,
+        "HpQualityFactor": 108.0,
+        "LevelRequest": 30,
+        "MaxLevel": 30,
+        "NextQuality": "SP_21_Support",
+        "PlayerLevelRequest": 13,
+        "Quality": 20,
+        "QualityLevel": 0,
+        "Speed": 10
+    },
+    "SP_21_Aoe": {
+        "AtkQualityBaseValue": 300.0,
+        "AtkQualityFactor": 27.0,
+        "CostItem": [
+            {
+                "amount": 24,
+                "id": "IQS_Green3_Attack"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 48000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 90.0,
+        "DefQualityFactor": 8.0,
+        "HpQualityBaseValue": 1200.0,
+        "HpQualityFactor": 108.0,
+        "LevelRequest": 45,
+        "MaxLevel": 45,
+        "NextQuality": "SP_22_Aoe",
+        "PlayerLevelRequest": 22,
+        "Quality": 21,
+        "QualityLevel": 1,
+        "Speed": 20
+    },
+    "SP_21_Attack": {
+        "AtkQualityBaseValue": 300.0,
+        "AtkQualityFactor": 27.0,
+        "CostItem": [
+            {
+                "amount": 24,
+                "id": "IQS_Green3_Attack"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 48000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 90.0,
+        "DefQualityFactor": 8.0,
+        "HpQualityBaseValue": 1200.0,
+        "HpQualityFactor": 108.0,
+        "LevelRequest": 45,
+        "MaxLevel": 45,
+        "NextQuality": "SP_22_Attack",
+        "PlayerLevelRequest": 22,
+        "Quality": 21,
+        "QualityLevel": 1,
+        "Speed": 20
+    },
+    "SP_21_Cure": {
+        "AtkQualityBaseValue": 300.0,
+        "AtkQualityFactor": 27.0,
+        "CostItem": [
+            {
+                "amount": 24,
+                "id": "IQS_Green3_Attack"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 48000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 90.0,
+        "DefQualityFactor": 8.0,
+        "HpQualityBaseValue": 1200.0,
+        "HpQualityFactor": 108.0,
+        "LevelRequest": 45,
+        "MaxLevel": 45,
+        "NextQuality": "SP_22_Cure",
+        "PlayerLevelRequest": 22,
+        "Quality": 21,
+        "QualityLevel": 1,
+        "Speed": 20
+    },
+    "SP_21_Curse": {
+        "AtkQualityBaseValue": 300.0,
+        "AtkQualityFactor": 27.0,
+        "CostItem": [
+            {
+                "amount": 24,
+                "id": "IQS_Green3_Attack"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 48000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 90.0,
+        "DefQualityFactor": 8.0,
+        "HpQualityBaseValue": 1200.0,
+        "HpQualityFactor": 108.0,
+        "LevelRequest": 45,
+        "MaxLevel": 45,
+        "NextQuality": "SP_22_Curse",
+        "PlayerLevelRequest": 22,
+        "Quality": 21,
+        "QualityLevel": 1,
+        "Speed": 20
+    },
+    "SP_21_Defense": {
+        "AtkQualityBaseValue": 300.0,
+        "AtkQualityFactor": 27.0,
+        "CostItem": [
+            {
+                "amount": 24,
+                "id": "IQS_Green3_Attack"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 48000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 90.0,
+        "DefQualityFactor": 8.0,
+        "HpQualityBaseValue": 1200.0,
+        "HpQualityFactor": 108.0,
+        "LevelRequest": 45,
+        "MaxLevel": 45,
+        "NextQuality": "SP_22_Defense",
+        "PlayerLevelRequest": 22,
+        "Quality": 21,
+        "QualityLevel": 1,
+        "Speed": 20
+    },
+    "SP_21_Summon": {
+        "AtkQualityBaseValue": 300.0,
+        "AtkQualityFactor": 27.0,
+        "CostItem": [
+            {
+                "amount": 24,
+                "id": "IQS_Green3_Attack"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 48000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 90.0,
+        "DefQualityFactor": 8.0,
+        "HpQualityBaseValue": 1200.0,
+        "HpQualityFactor": 108.0,
+        "LevelRequest": 45,
+        "MaxLevel": 45,
+        "NextQuality": "SP_22_Summon",
+        "PlayerLevelRequest": 22,
+        "Quality": 21,
+        "QualityLevel": 1,
+        "Speed": 20
+    },
+    "SP_21_Support": {
+        "AtkQualityBaseValue": 300.0,
+        "AtkQualityFactor": 27.0,
+        "CostItem": [
+            {
+                "amount": 24,
+                "id": "IQS_Green3_Attack"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 48000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 90.0,
+        "DefQualityFactor": 8.0,
+        "HpQualityBaseValue": 1200.0,
+        "HpQualityFactor": 108.0,
+        "LevelRequest": 45,
+        "MaxLevel": 45,
+        "NextQuality": "SP_22_Support",
+        "PlayerLevelRequest": 22,
+        "Quality": 21,
+        "QualityLevel": 1,
+        "Speed": 20
+    },
+    "SP_22_Aoe": {
+        "AtkQualityBaseValue": 400.0,
+        "AtkQualityFactor": 27.0,
+        "CostItem": [
+            {
+                "amount": 28,
+                "id": "IQS_Blue1_Aoe"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 95000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 120.0,
+        "DefQualityFactor": 8.0,
+        "HpQualityBaseValue": 1600.0,
+        "HpQualityFactor": 108.0,
+        "LevelRequest": 60,
+        "MaxLevel": 60,
+        "NextQuality": "SP_30_Aoe",
+        "PlayerLevelRequest": 30,
+        "Quality": 22,
+        "QualityLevel": 2,
+        "Speed": 30
+    },
+    "SP_22_Attack": {
+        "AtkQualityBaseValue": 400.0,
+        "AtkQualityFactor": 27.0,
+        "CostItem": [
+            {
+                "amount": 28,
+                "id": "IQS_Blue1_Attack"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 95000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 120.0,
+        "DefQualityFactor": 8.0,
+        "HpQualityBaseValue": 1600.0,
+        "HpQualityFactor": 108.0,
+        "LevelRequest": 60,
+        "MaxLevel": 60,
+        "NextQuality": "SP_30_Attack",
+        "PlayerLevelRequest": 30,
+        "Quality": 22,
+        "QualityLevel": 2,
+        "Speed": 30
+    },
+    "SP_22_Cure": {
+        "AtkQualityBaseValue": 400.0,
+        "AtkQualityFactor": 27.0,
+        "CostItem": [
+            {
+                "amount": 28,
+                "id": "IQS_Blue1_Cure"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 95000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 120.0,
+        "DefQualityFactor": 8.0,
+        "HpQualityBaseValue": 1600.0,
+        "HpQualityFactor": 108.0,
+        "LevelRequest": 60,
+        "MaxLevel": 60,
+        "NextQuality": "SP_30_Cure",
+        "PlayerLevelRequest": 30,
+        "Quality": 22,
+        "QualityLevel": 2,
+        "Speed": 30
+    },
+    "SP_22_Curse": {
+        "AtkQualityBaseValue": 400.0,
+        "AtkQualityFactor": 27.0,
+        "CostItem": [
+            {
+                "amount": 28,
+                "id": "IQS_Blue1_Curse"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 95000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 120.0,
+        "DefQualityFactor": 8.0,
+        "HpQualityBaseValue": 1600.0,
+        "HpQualityFactor": 108.0,
+        "LevelRequest": 60,
+        "MaxLevel": 60,
+        "NextQuality": "SP_30_Curse",
+        "PlayerLevelRequest": 30,
+        "Quality": 22,
+        "QualityLevel": 2,
+        "Speed": 30
+    },
+    "SP_22_Defense": {
+        "AtkQualityBaseValue": 400.0,
+        "AtkQualityFactor": 27.0,
+        "CostItem": [
+            {
+                "amount": 28,
+                "id": "IQS_Blue1_Defense"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 95000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 120.0,
+        "DefQualityFactor": 8.0,
+        "HpQualityBaseValue": 1600.0,
+        "HpQualityFactor": 108.0,
+        "LevelRequest": 60,
+        "MaxLevel": 60,
+        "NextQuality": "SP_30_Defense",
+        "PlayerLevelRequest": 30,
+        "Quality": 22,
+        "QualityLevel": 2,
+        "Speed": 30
+    },
+    "SP_22_Summon": {
+        "AtkQualityBaseValue": 400.0,
+        "AtkQualityFactor": 27.0,
+        "CostItem": [
+            {
+                "amount": 28,
+                "id": "IQS_Blue1_Summon"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 95000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 120.0,
+        "DefQualityFactor": 8.0,
+        "HpQualityBaseValue": 1600.0,
+        "HpQualityFactor": 108.0,
+        "LevelRequest": 60,
+        "MaxLevel": 60,
+        "NextQuality": "SP_30_Summon",
+        "PlayerLevelRequest": 30,
+        "Quality": 22,
+        "QualityLevel": 2,
+        "Speed": 30
+    },
+    "SP_22_Support": {
+        "AtkQualityBaseValue": 400.0,
+        "AtkQualityFactor": 27.0,
+        "CostItem": [
+            {
+                "amount": 28,
+                "id": "IQS_Blue1_Support"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 95000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 120.0,
+        "DefQualityFactor": 8.0,
+        "HpQualityBaseValue": 1600.0,
+        "HpQualityFactor": 108.0,
+        "LevelRequest": 60,
+        "MaxLevel": 60,
+        "NextQuality": "SP_30_Support",
+        "PlayerLevelRequest": 30,
+        "Quality": 22,
+        "QualityLevel": 2,
+        "Speed": 30
+    },
+    "SP_30": {
+        "AtkQualityBaseValue": 50.0,
+        "AtkQualityFactor": 5.0,
+        "CostItem": [
+            {
+                "amount": 4,
+                "id": "IQS_Purple11"
+            },
+            {
+                "amount": 2,
+                "id": "IQS_Purple12"
+            },
+            {
+                "amount": 2,
+                "id": "IQS_Purple13"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 48000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 15.0,
+        "DefQualityFactor": 1.5,
+        "HpQualityBaseValue": 200.0,
+        "HpQualityFactor": 20.0,
+        "LevelRequest": 100,
+        "MaxLevel": 100,
+        "NextQuality": "SP_40",
+        "PlayerLevelRequest": 1,
+        "Quality": 30,
+        "QualityLevel": 0,
+        "Speed": 20
+    },
+    "SP_30_Aoe": {
+        "AtkQualityBaseValue": 550.0,
+        "AtkQualityFactor": 28.0,
+        "CostItem": [
+            {
+                "amount": 42,
+                "id": "IQS_Blue2_Aoe"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 138000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 165.0,
+        "DefQualityFactor": 8.0,
+        "HpQualityBaseValue": 2200.0,
+        "HpQualityFactor": 112.0,
+        "LevelRequest": 80,
+        "MaxLevel": 80,
+        "NextQuality": "SP_31_Aoe",
+        "PlayerLevelRequest": 36,
+        "Quality": 30,
+        "QualityLevel": 0,
+        "Speed": 40
+    },
+    "SP_30_Attack": {
+        "AtkQualityBaseValue": 550.0,
+        "AtkQualityFactor": 28.0,
+        "CostItem": [
+            {
+                "amount": 42,
+                "id": "IQS_Blue2_Attack"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 138000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 165.0,
+        "DefQualityFactor": 8.0,
+        "HpQualityBaseValue": 2200.0,
+        "HpQualityFactor": 112.0,
+        "LevelRequest": 80,
+        "MaxLevel": 80,
+        "NextQuality": "SP_31_Attack",
+        "PlayerLevelRequest": 36,
+        "Quality": 30,
+        "QualityLevel": 0,
+        "Speed": 40
+    },
+    "SP_30_Cure": {
+        "AtkQualityBaseValue": 550.0,
+        "AtkQualityFactor": 28.0,
+        "CostItem": [
+            {
+                "amount": 42,
+                "id": "IQS_Blue2_Cure"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 138000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 165.0,
+        "DefQualityFactor": 8.0,
+        "HpQualityBaseValue": 2200.0,
+        "HpQualityFactor": 112.0,
+        "LevelRequest": 80,
+        "MaxLevel": 80,
+        "NextQuality": "SP_31_Cure",
+        "PlayerLevelRequest": 36,
+        "Quality": 30,
+        "QualityLevel": 0,
+        "Speed": 40
+    },
+    "SP_30_Curse": {
+        "AtkQualityBaseValue": 550.0,
+        "AtkQualityFactor": 28.0,
+        "CostItem": [
+            {
+                "amount": 42,
+                "id": "IQS_Blue2_Curse"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 138000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 165.0,
+        "DefQualityFactor": 8.0,
+        "HpQualityBaseValue": 2200.0,
+        "HpQualityFactor": 112.0,
+        "LevelRequest": 80,
+        "MaxLevel": 80,
+        "NextQuality": "SP_31_Curse",
+        "PlayerLevelRequest": 36,
+        "Quality": 30,
+        "QualityLevel": 0,
+        "Speed": 40
+    },
+    "SP_30_Defense": {
+        "AtkQualityBaseValue": 550.0,
+        "AtkQualityFactor": 28.0,
+        "CostItem": [
+            {
+                "amount": 42,
+                "id": "IQS_Blue2_Defense"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 138000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 165.0,
+        "DefQualityFactor": 8.0,
+        "HpQualityBaseValue": 2200.0,
+        "HpQualityFactor": 112.0,
+        "LevelRequest": 80,
+        "MaxLevel": 80,
+        "NextQuality": "SP_31_Defense",
+        "PlayerLevelRequest": 36,
+        "Quality": 30,
+        "QualityLevel": 0,
+        "Speed": 40
+    },
+    "SP_30_Summon": {
+        "AtkQualityBaseValue": 550.0,
+        "AtkQualityFactor": 28.0,
+        "CostItem": [
+            {
+                "amount": 42,
+                "id": "IQS_Blue2_Summon"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 138000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 165.0,
+        "DefQualityFactor": 8.0,
+        "HpQualityBaseValue": 2200.0,
+        "HpQualityFactor": 112.0,
+        "LevelRequest": 80,
+        "MaxLevel": 80,
+        "NextQuality": "SP_31_Summon",
+        "PlayerLevelRequest": 36,
+        "Quality": 30,
+        "QualityLevel": 0,
+        "Speed": 40
+    },
+    "SP_30_Support": {
+        "AtkQualityBaseValue": 550.0,
+        "AtkQualityFactor": 28.0,
+        "CostItem": [
+            {
+                "amount": 42,
+                "id": "IQS_Blue2_Support"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 138000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 165.0,
+        "DefQualityFactor": 8.0,
+        "HpQualityBaseValue": 2200.0,
+        "HpQualityFactor": 112.0,
+        "LevelRequest": 80,
+        "MaxLevel": 80,
+        "NextQuality": "SP_31_Support",
+        "PlayerLevelRequest": 36,
+        "Quality": 30,
+        "QualityLevel": 0,
+        "Speed": 40
+    },
+    "SP_31_Aoe": {
+        "AtkQualityBaseValue": 700.0,
+        "AtkQualityFactor": 30.0,
+        "CostItem": [
+            {
+                "amount": 48,
+                "id": "IQS_Blue3_Aoe"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 144000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 210.0,
+        "DefQualityFactor": 9.0,
+        "HpQualityBaseValue": 2800.0,
+        "HpQualityFactor": 120.0,
+        "LevelRequest": 100,
+        "MaxLevel": 100,
+        "NextQuality": "SP_32_Aoe",
+        "PlayerLevelRequest": 39,
+        "Quality": 31,
+        "QualityLevel": 1,
+        "Speed": 50
+    },
+    "SP_31_Attack": {
+        "AtkQualityBaseValue": 700.0,
+        "AtkQualityFactor": 30.0,
+        "CostItem": [
+            {
+                "amount": 48,
+                "id": "IQS_Blue3_Attack"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 144000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 210.0,
+        "DefQualityFactor": 9.0,
+        "HpQualityBaseValue": 2800.0,
+        "HpQualityFactor": 120.0,
+        "LevelRequest": 100,
+        "MaxLevel": 100,
+        "NextQuality": "SP_32_Attack",
+        "PlayerLevelRequest": 39,
+        "Quality": 31,
+        "QualityLevel": 1,
+        "Speed": 50
+    },
+    "SP_31_Cure": {
+        "AtkQualityBaseValue": 700.0,
+        "AtkQualityFactor": 30.0,
+        "CostItem": [
+            {
+                "amount": 48,
+                "id": "IQS_Blue3_Cure"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 144000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 210.0,
+        "DefQualityFactor": 9.0,
+        "HpQualityBaseValue": 2800.0,
+        "HpQualityFactor": 120.0,
+        "LevelRequest": 100,
+        "MaxLevel": 100,
+        "NextQuality": "SP_32_Cure",
+        "PlayerLevelRequest": 39,
+        "Quality": 31,
+        "QualityLevel": 1,
+        "Speed": 50
+    },
+    "SP_31_Curse": {
+        "AtkQualityBaseValue": 700.0,
+        "AtkQualityFactor": 30.0,
+        "CostItem": [
+            {
+                "amount": 48,
+                "id": "IQS_Blue3_Curse"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 144000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 210.0,
+        "DefQualityFactor": 9.0,
+        "HpQualityBaseValue": 2800.0,
+        "HpQualityFactor": 120.0,
+        "LevelRequest": 100,
+        "MaxLevel": 100,
+        "NextQuality": "SP_32_Curse",
+        "PlayerLevelRequest": 39,
+        "Quality": 31,
+        "QualityLevel": 1,
+        "Speed": 50
+    },
+    "SP_31_Defense": {
+        "AtkQualityBaseValue": 700.0,
+        "AtkQualityFactor": 30.0,
+        "CostItem": [
+            {
+                "amount": 48,
+                "id": "IQS_Blue3_Defense"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 144000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 210.0,
+        "DefQualityFactor": 9.0,
+        "HpQualityBaseValue": 2800.0,
+        "HpQualityFactor": 120.0,
+        "LevelRequest": 100,
+        "MaxLevel": 100,
+        "NextQuality": "SP_32_Defense",
+        "PlayerLevelRequest": 39,
+        "Quality": 31,
+        "QualityLevel": 1,
+        "Speed": 50
+    },
+    "SP_31_Summon": {
+        "AtkQualityBaseValue": 700.0,
+        "AtkQualityFactor": 30.0,
+        "CostItem": [
+            {
+                "amount": 48,
+                "id": "IQS_Blue3_Summon"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 144000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 210.0,
+        "DefQualityFactor": 9.0,
+        "HpQualityBaseValue": 2800.0,
+        "HpQualityFactor": 120.0,
+        "LevelRequest": 100,
+        "MaxLevel": 100,
+        "NextQuality": "SP_32_Summon",
+        "PlayerLevelRequest": 39,
+        "Quality": 31,
+        "QualityLevel": 1,
+        "Speed": 50
+    },
+    "SP_31_Support": {
+        "AtkQualityBaseValue": 700.0,
+        "AtkQualityFactor": 30.0,
+        "CostItem": [
+            {
+                "amount": 48,
+                "id": "IQS_Blue3_Support"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 144000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 210.0,
+        "DefQualityFactor": 9.0,
+        "HpQualityBaseValue": 2800.0,
+        "HpQualityFactor": 120.0,
+        "LevelRequest": 100,
+        "MaxLevel": 100,
+        "NextQuality": "SP_32_Support",
+        "PlayerLevelRequest": 39,
+        "Quality": 31,
+        "QualityLevel": 1,
+        "Speed": 50
+    },
+    "SP_32_Aoe": {
+        "AtkQualityBaseValue": 1100.0,
+        "AtkQualityFactor": 31.0,
+        "CostItem": [
+            {
+                "amount": 48,
+                "id": "IQS_Purple1_Aoe"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 158000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 330.0,
+        "DefQualityFactor": 9.0,
+        "HpQualityBaseValue": 4400.0,
+        "HpQualityFactor": 124.0,
+        "LevelRequest": 120,
+        "MaxLevel": 120,
+        "NextQuality": "SP_40_Aoe",
+        "PlayerLevelRequest": 42,
+        "Quality": 32,
+        "QualityLevel": 2,
+        "Speed": 60
+    },
+    "SP_32_Attack": {
+        "AtkQualityBaseValue": 1100.0,
+        "AtkQualityFactor": 31.0,
+        "CostItem": [
+            {
+                "amount": 48,
+                "id": "IQS_Purple1_Attack"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 158000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 330.0,
+        "DefQualityFactor": 9.0,
+        "HpQualityBaseValue": 4400.0,
+        "HpQualityFactor": 124.0,
+        "LevelRequest": 120,
+        "MaxLevel": 120,
+        "NextQuality": "SP_40_Attack",
+        "PlayerLevelRequest": 42,
+        "Quality": 32,
+        "QualityLevel": 2,
+        "Speed": 60
+    },
+    "SP_32_Cure": {
+        "AtkQualityBaseValue": 1100.0,
+        "AtkQualityFactor": 31.0,
+        "CostItem": [
+            {
+                "amount": 48,
+                "id": "IQS_Purple1_Cure"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 158000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 330.0,
+        "DefQualityFactor": 9.0,
+        "HpQualityBaseValue": 4400.0,
+        "HpQualityFactor": 124.0,
+        "LevelRequest": 120,
+        "MaxLevel": 120,
+        "NextQuality": "SP_40_Cure",
+        "PlayerLevelRequest": 42,
+        "Quality": 32,
+        "QualityLevel": 2,
+        "Speed": 60
+    },
+    "SP_32_Curse": {
+        "AtkQualityBaseValue": 1100.0,
+        "AtkQualityFactor": 31.0,
+        "CostItem": [
+            {
+                "amount": 48,
+                "id": "IQS_Purple1_Curse"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 158000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 330.0,
+        "DefQualityFactor": 9.0,
+        "HpQualityBaseValue": 4400.0,
+        "HpQualityFactor": 124.0,
+        "LevelRequest": 120,
+        "MaxLevel": 120,
+        "NextQuality": "SP_40_Curse",
+        "PlayerLevelRequest": 42,
+        "Quality": 32,
+        "QualityLevel": 2,
+        "Speed": 60
+    },
+    "SP_32_Defense": {
+        "AtkQualityBaseValue": 1100.0,
+        "AtkQualityFactor": 31.0,
+        "CostItem": [
+            {
+                "amount": 48,
+                "id": "IQS_Purple1_Defense"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 158000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 330.0,
+        "DefQualityFactor": 9.0,
+        "HpQualityBaseValue": 4400.0,
+        "HpQualityFactor": 124.0,
+        "LevelRequest": 120,
+        "MaxLevel": 120,
+        "NextQuality": "SP_40_Defense",
+        "PlayerLevelRequest": 42,
+        "Quality": 32,
+        "QualityLevel": 2,
+        "Speed": 60
+    },
+    "SP_32_Summon": {
+        "AtkQualityBaseValue": 1100.0,
+        "AtkQualityFactor": 31.0,
+        "CostItem": [
+            {
+                "amount": 48,
+                "id": "IQS_Purple1_Summon"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 158000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 330.0,
+        "DefQualityFactor": 9.0,
+        "HpQualityBaseValue": 4400.0,
+        "HpQualityFactor": 124.0,
+        "LevelRequest": 120,
+        "MaxLevel": 120,
+        "NextQuality": "SP_40_Summon",
+        "PlayerLevelRequest": 42,
+        "Quality": 32,
+        "QualityLevel": 2,
+        "Speed": 60
+    },
+    "SP_32_Support": {
+        "AtkQualityBaseValue": 1100.0,
+        "AtkQualityFactor": 31.0,
+        "CostItem": [
+            {
+                "amount": 48,
+                "id": "IQS_Purple1_Support"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 158000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 330.0,
+        "DefQualityFactor": 9.0,
+        "HpQualityBaseValue": 4400.0,
+        "HpQualityFactor": 124.0,
+        "LevelRequest": 120,
+        "MaxLevel": 120,
+        "NextQuality": "SP_40_Support",
+        "PlayerLevelRequest": 42,
+        "Quality": 32,
+        "QualityLevel": 2,
+        "Speed": 60
+    },
+    "SP_40": {
+        "AtkQualityBaseValue": 90.0,
+        "AtkQualityFactor": 5.0,
+        "CostItem": [
+            {
+                "amount": 2,
+                "id": "IQS_Purple21"
+            },
+            {
+                "amount": 1,
+                "id": "IQS_Purple22"
+            },
+            {
+                "amount": 1,
+                "id": "IQS_Purple23"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 95000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 27.0,
+        "DefQualityFactor": 1.5,
+        "HpQualityBaseValue": 360.0,
+        "HpQualityFactor": 20.0,
+        "LevelRequest": 140,
+        "MaxLevel": 140,
+        "NextQuality": "SP_41",
+        "PlayerLevelRequest": 1,
+        "Quality": 40,
+        "QualityLevel": 0,
+        "Speed": 30
+    },
+    "SP_40_Aoe": {
+        "AtkQualityBaseValue": 1500.0,
+        "AtkQualityFactor": 32.0,
+        "CostItem": [
+            {
+                "amount": 48,
+                "id": "IQS_Purple2_Aoe"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 180000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 450.0,
+        "DefQualityFactor": 10.0,
+        "HpQualityBaseValue": 6000.0,
+        "HpQualityFactor": 128.0,
+        "LevelRequest": 140,
+        "MaxLevel": 140,
+        "NextQuality": "SP_41_Aoe",
+        "PlayerLevelRequest": 45,
+        "Quality": 40,
+        "QualityLevel": 0,
+        "Speed": 70
+    },
+    "SP_40_Attack": {
+        "AtkQualityBaseValue": 1500.0,
+        "AtkQualityFactor": 32.0,
+        "CostItem": [
+            {
+                "amount": 48,
+                "id": "IQS_Purple2_Attack"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 180000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 450.0,
+        "DefQualityFactor": 10.0,
+        "HpQualityBaseValue": 6000.0,
+        "HpQualityFactor": 128.0,
+        "LevelRequest": 140,
+        "MaxLevel": 140,
+        "NextQuality": "SP_41_Attack",
+        "PlayerLevelRequest": 45,
+        "Quality": 40,
+        "QualityLevel": 0,
+        "Speed": 70
+    },
+    "SP_40_Cure": {
+        "AtkQualityBaseValue": 1500.0,
+        "AtkQualityFactor": 32.0,
+        "CostItem": [
+            {
+                "amount": 48,
+                "id": "IQS_Purple2_Cure"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 180000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 450.0,
+        "DefQualityFactor": 10.0,
+        "HpQualityBaseValue": 6000.0,
+        "HpQualityFactor": 128.0,
+        "LevelRequest": 140,
+        "MaxLevel": 140,
+        "NextQuality": "SP_41_Cure",
+        "PlayerLevelRequest": 45,
+        "Quality": 40,
+        "QualityLevel": 0,
+        "Speed": 70
+    },
+    "SP_40_Curse": {
+        "AtkQualityBaseValue": 1500.0,
+        "AtkQualityFactor": 32.0,
+        "CostItem": [
+            {
+                "amount": 48,
+                "id": "IQS_Purple2_Curse"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 180000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 450.0,
+        "DefQualityFactor": 10.0,
+        "HpQualityBaseValue": 6000.0,
+        "HpQualityFactor": 128.0,
+        "LevelRequest": 140,
+        "MaxLevel": 140,
+        "NextQuality": "SP_41_Curse",
+        "PlayerLevelRequest": 45,
+        "Quality": 40,
+        "QualityLevel": 0,
+        "Speed": 70
+    },
+    "SP_40_Defense": {
+        "AtkQualityBaseValue": 1500.0,
+        "AtkQualityFactor": 32.0,
+        "CostItem": [
+            {
+                "amount": 48,
+                "id": "IQS_Purple2_Defense"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 180000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 450.0,
+        "DefQualityFactor": 10.0,
+        "HpQualityBaseValue": 6000.0,
+        "HpQualityFactor": 128.0,
+        "LevelRequest": 140,
+        "MaxLevel": 140,
+        "NextQuality": "SP_41_Defense",
+        "PlayerLevelRequest": 45,
+        "Quality": 40,
+        "QualityLevel": 0,
+        "Speed": 70
+    },
+    "SP_40_Summon": {
+        "AtkQualityBaseValue": 1500.0,
+        "AtkQualityFactor": 32.0,
+        "CostItem": [
+            {
+                "amount": 48,
+                "id": "IQS_Purple2_Summon"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 180000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 450.0,
+        "DefQualityFactor": 10.0,
+        "HpQualityBaseValue": 6000.0,
+        "HpQualityFactor": 128.0,
+        "LevelRequest": 140,
+        "MaxLevel": 140,
+        "NextQuality": "SP_41_Summon",
+        "PlayerLevelRequest": 45,
+        "Quality": 40,
+        "QualityLevel": 0,
+        "Speed": 70
+    },
+    "SP_40_Support": {
+        "AtkQualityBaseValue": 1500.0,
+        "AtkQualityFactor": 32.0,
+        "CostItem": [
+            {
+                "amount": 48,
+                "id": "IQS_Purple2_Support"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 180000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 450.0,
+        "DefQualityFactor": 10.0,
+        "HpQualityBaseValue": 6000.0,
+        "HpQualityFactor": 128.0,
+        "LevelRequest": 140,
+        "MaxLevel": 140,
+        "NextQuality": "SP_41_Support",
+        "PlayerLevelRequest": 45,
+        "Quality": 40,
+        "QualityLevel": 0,
+        "Speed": 70
+    },
+    "SP_41": {
+        "AtkQualityBaseValue": 135.0,
+        "AtkQualityFactor": 5.0,
+        "CostItem": [
+            {
+                "amount": 2,
+                "id": "IQS_Purple31"
+            },
+            {
+                "amount": 1,
+                "id": "IQS_Purple32"
+            },
+            {
+                "amount": 1,
+                "id": "IQS_Purple33"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 138000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 41.0,
+        "DefQualityFactor": 1.5,
+        "HpQualityBaseValue": 540.0,
+        "HpQualityFactor": 20.0,
+        "LevelRequest": 180,
+        "MaxLevel": 180,
+        "NextQuality": "SP_50",
+        "PlayerLevelRequest": 1,
+        "Quality": 41,
+        "QualityLevel": 1,
+        "Speed": 40
+    },
+    "SP_41_Aoe": {
+        "AtkQualityBaseValue": 1900.0,
+        "AtkQualityFactor": 32.0,
+        "CostItem": [
+            {
+                "amount": 60,
+                "id": "IQS_Purple3_Aoe"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 210000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 570.0,
+        "DefQualityFactor": 10.0,
+        "HpQualityBaseValue": 7600.0,
+        "HpQualityFactor": 128.0,
+        "LevelRequest": 170,
+        "MaxLevel": 170,
+        "NextQuality": "SP_42_Aoe",
+        "PlayerLevelRequest": 48,
+        "Quality": 41,
+        "QualityLevel": 1,
+        "Speed": 80
+    },
+    "SP_41_Attack": {
+        "AtkQualityBaseValue": 1900.0,
+        "AtkQualityFactor": 32.0,
+        "CostItem": [
+            {
+                "amount": 60,
+                "id": "IQS_Purple3_Attack"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 210000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 570.0,
+        "DefQualityFactor": 10.0,
+        "HpQualityBaseValue": 7600.0,
+        "HpQualityFactor": 128.0,
+        "LevelRequest": 170,
+        "MaxLevel": 170,
+        "NextQuality": "SP_42_Attack",
+        "PlayerLevelRequest": 48,
+        "Quality": 41,
+        "QualityLevel": 1,
+        "Speed": 80
+    },
+    "SP_41_Cure": {
+        "AtkQualityBaseValue": 1900.0,
+        "AtkQualityFactor": 32.0,
+        "CostItem": [
+            {
+                "amount": 60,
+                "id": "IQS_Purple3_Cure"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 210000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 570.0,
+        "DefQualityFactor": 10.0,
+        "HpQualityBaseValue": 7600.0,
+        "HpQualityFactor": 128.0,
+        "LevelRequest": 170,
+        "MaxLevel": 170,
+        "NextQuality": "SP_42_Cure",
+        "PlayerLevelRequest": 48,
+        "Quality": 41,
+        "QualityLevel": 1,
+        "Speed": 80
+    },
+    "SP_41_Curse": {
+        "AtkQualityBaseValue": 1900.0,
+        "AtkQualityFactor": 32.0,
+        "CostItem": [
+            {
+                "amount": 60,
+                "id": "IQS_Purple3_Curse"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 210000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 570.0,
+        "DefQualityFactor": 10.0,
+        "HpQualityBaseValue": 7600.0,
+        "HpQualityFactor": 128.0,
+        "LevelRequest": 170,
+        "MaxLevel": 170,
+        "NextQuality": "SP_42_Curse",
+        "PlayerLevelRequest": 48,
+        "Quality": 41,
+        "QualityLevel": 1,
+        "Speed": 80
+    },
+    "SP_41_Defense": {
+        "AtkQualityBaseValue": 1900.0,
+        "AtkQualityFactor": 32.0,
+        "CostItem": [
+            {
+                "amount": 60,
+                "id": "IQS_Purple3_Defense"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 210000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 570.0,
+        "DefQualityFactor": 10.0,
+        "HpQualityBaseValue": 7600.0,
+        "HpQualityFactor": 128.0,
+        "LevelRequest": 170,
+        "MaxLevel": 170,
+        "NextQuality": "SP_42_Defense",
+        "PlayerLevelRequest": 48,
+        "Quality": 41,
+        "QualityLevel": 1,
+        "Speed": 80
+    },
+    "SP_41_Summon": {
+        "AtkQualityBaseValue": 1900.0,
+        "AtkQualityFactor": 32.0,
+        "CostItem": [
+            {
+                "amount": 60,
+                "id": "IQS_Purple3_Summon"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 210000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 570.0,
+        "DefQualityFactor": 10.0,
+        "HpQualityBaseValue": 7600.0,
+        "HpQualityFactor": 128.0,
+        "LevelRequest": 170,
+        "MaxLevel": 170,
+        "NextQuality": "SP_42_Summon",
+        "PlayerLevelRequest": 48,
+        "Quality": 41,
+        "QualityLevel": 1,
+        "Speed": 80
+    },
+    "SP_41_Support": {
+        "AtkQualityBaseValue": 1900.0,
+        "AtkQualityFactor": 32.0,
+        "CostItem": [
+            {
+                "amount": 60,
+                "id": "IQS_Purple3_Support"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 210000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 570.0,
+        "DefQualityFactor": 10.0,
+        "HpQualityBaseValue": 7600.0,
+        "HpQualityFactor": 128.0,
+        "LevelRequest": 170,
+        "MaxLevel": 170,
+        "NextQuality": "SP_42_Support",
+        "PlayerLevelRequest": 48,
+        "Quality": 41,
+        "QualityLevel": 1,
+        "Speed": 80
+    },
+    "SP_42_Aoe": {
+        "AtkQualityBaseValue": 2000.0,
+        "AtkQualityFactor": 35.0,
+        "CostItem": [
+            {
+                "amount": 90,
+                "id": "IQS_Purple4_Aoe"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 240000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 600.0,
+        "DefQualityFactor": 11.0,
+        "HpQualityBaseValue": 8000.0,
+        "HpQualityFactor": 140.0,
+        "LevelRequest": 200,
+        "MaxLevel": 200,
+        "NextQuality": "SP_43_Aoe",
+        "PlayerLevelRequest": 51,
+        "Quality": 42,
+        "QualityLevel": 2,
+        "Speed": 90
+    },
+    "SP_42_Attack": {
+        "AtkQualityBaseValue": 2000.0,
+        "AtkQualityFactor": 35.0,
+        "CostItem": [
+            {
+                "amount": 90,
+                "id": "IQS_Purple4_Attack"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 240000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 600.0,
+        "DefQualityFactor": 11.0,
+        "HpQualityBaseValue": 8000.0,
+        "HpQualityFactor": 140.0,
+        "LevelRequest": 200,
+        "MaxLevel": 200,
+        "NextQuality": "SP_43_Attack",
+        "PlayerLevelRequest": 51,
+        "Quality": 42,
+        "QualityLevel": 2,
+        "Speed": 90
+    },
+    "SP_42_Cure": {
+        "AtkQualityBaseValue": 2000.0,
+        "AtkQualityFactor": 35.0,
+        "CostItem": [
+            {
+                "amount": 90,
+                "id": "IQS_Purple4_Cure"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 240000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 600.0,
+        "DefQualityFactor": 11.0,
+        "HpQualityBaseValue": 8000.0,
+        "HpQualityFactor": 140.0,
+        "LevelRequest": 200,
+        "MaxLevel": 200,
+        "NextQuality": "SP_43_Cure",
+        "PlayerLevelRequest": 51,
+        "Quality": 42,
+        "QualityLevel": 2,
+        "Speed": 90
+    },
+    "SP_42_Curse": {
+        "AtkQualityBaseValue": 2000.0,
+        "AtkQualityFactor": 35.0,
+        "CostItem": [
+            {
+                "amount": 90,
+                "id": "IQS_Purple4_Curse"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 240000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 600.0,
+        "DefQualityFactor": 11.0,
+        "HpQualityBaseValue": 8000.0,
+        "HpQualityFactor": 140.0,
+        "LevelRequest": 200,
+        "MaxLevel": 200,
+        "NextQuality": "SP_43_Curse",
+        "PlayerLevelRequest": 51,
+        "Quality": 42,
+        "QualityLevel": 2,
+        "Speed": 90
+    },
+    "SP_42_Defense": {
+        "AtkQualityBaseValue": 2000.0,
+        "AtkQualityFactor": 35.0,
+        "CostItem": [
+            {
+                "amount": 90,
+                "id": "IQS_Purple4_Defense"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 240000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 600.0,
+        "DefQualityFactor": 11.0,
+        "HpQualityBaseValue": 8000.0,
+        "HpQualityFactor": 140.0,
+        "LevelRequest": 200,
+        "MaxLevel": 200,
+        "NextQuality": "SP_43_Defense",
+        "PlayerLevelRequest": 51,
+        "Quality": 42,
+        "QualityLevel": 2,
+        "Speed": 90
+    },
+    "SP_42_Summon": {
+        "AtkQualityBaseValue": 2000.0,
+        "AtkQualityFactor": 35.0,
+        "CostItem": [
+            {
+                "amount": 90,
+                "id": "IQS_Purple4_Summon"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 240000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 600.0,
+        "DefQualityFactor": 11.0,
+        "HpQualityBaseValue": 8000.0,
+        "HpQualityFactor": 140.0,
+        "LevelRequest": 200,
+        "MaxLevel": 200,
+        "NextQuality": "SP_43_Summon",
+        "PlayerLevelRequest": 51,
+        "Quality": 42,
+        "QualityLevel": 2,
+        "Speed": 90
+    },
+    "SP_42_Support": {
+        "AtkQualityBaseValue": 2000.0,
+        "AtkQualityFactor": 35.0,
+        "CostItem": [
+            {
+                "amount": 90,
+                "id": "IQS_Purple4_Support"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 240000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 600.0,
+        "DefQualityFactor": 11.0,
+        "HpQualityBaseValue": 8000.0,
+        "HpQualityFactor": 140.0,
+        "LevelRequest": 200,
+        "MaxLevel": 200,
+        "NextQuality": "SP_43_Support",
+        "PlayerLevelRequest": 51,
+        "Quality": 42,
+        "QualityLevel": 2,
+        "Speed": 90
+    },
+    "SP_43_Aoe": {
+        "AtkQualityBaseValue": 2600.0,
+        "AtkQualityFactor": 35.0,
+        "CostItem": [
+            {
+                "amount": 140,
+                "id": "IQS_Orange1_Aoe"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 280000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 780.0,
+        "DefQualityFactor": 11.0,
+        "HpQualityBaseValue": 10400.0,
+        "HpQualityFactor": 140.0,
+        "LevelRequest": 240,
+        "MaxLevel": 240,
+        "NextQuality": "SP_50_Aoe",
+        "PlayerLevelRequest": 54,
+        "Quality": 43,
+        "QualityLevel": 3,
+        "Speed": 100
+    },
+    "SP_43_Attack": {
+        "AtkQualityBaseValue": 2600.0,
+        "AtkQualityFactor": 35.0,
+        "CostItem": [
+            {
+                "amount": 140,
+                "id": "IQS_Orange1_Attack"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 280000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 780.0,
+        "DefQualityFactor": 11.0,
+        "HpQualityBaseValue": 10400.0,
+        "HpQualityFactor": 140.0,
+        "LevelRequest": 240,
+        "MaxLevel": 240,
+        "NextQuality": "SP_50_Attack",
+        "PlayerLevelRequest": 54,
+        "Quality": 43,
+        "QualityLevel": 3,
+        "Speed": 100
+    },
+    "SP_43_Cure": {
+        "AtkQualityBaseValue": 2600.0,
+        "AtkQualityFactor": 35.0,
+        "CostItem": [
+            {
+                "amount": 140,
+                "id": "IQS_Orange1_Cure"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 280000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 780.0,
+        "DefQualityFactor": 11.0,
+        "HpQualityBaseValue": 10400.0,
+        "HpQualityFactor": 140.0,
+        "LevelRequest": 240,
+        "MaxLevel": 240,
+        "NextQuality": "SP_50_Cure",
+        "PlayerLevelRequest": 54,
+        "Quality": 43,
+        "QualityLevel": 3,
+        "Speed": 100
+    },
+    "SP_43_Curse": {
+        "AtkQualityBaseValue": 2600.0,
+        "AtkQualityFactor": 35.0,
+        "CostItem": [
+            {
+                "amount": 140,
+                "id": "IQS_Orange1_Curse"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 280000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 780.0,
+        "DefQualityFactor": 11.0,
+        "HpQualityBaseValue": 10400.0,
+        "HpQualityFactor": 140.0,
+        "LevelRequest": 240,
+        "MaxLevel": 240,
+        "NextQuality": "SP_50_Curse",
+        "PlayerLevelRequest": 54,
+        "Quality": 43,
+        "QualityLevel": 3,
+        "Speed": 100
+    },
+    "SP_43_Defense": {
+        "AtkQualityBaseValue": 2600.0,
+        "AtkQualityFactor": 35.0,
+        "CostItem": [
+            {
+                "amount": 140,
+                "id": "IQS_Orange1_Defense"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 280000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 780.0,
+        "DefQualityFactor": 11.0,
+        "HpQualityBaseValue": 10400.0,
+        "HpQualityFactor": 140.0,
+        "LevelRequest": 240,
+        "MaxLevel": 240,
+        "NextQuality": "SP_50_Defense",
+        "PlayerLevelRequest": 54,
+        "Quality": 43,
+        "QualityLevel": 3,
+        "Speed": 100
+    },
+    "SP_43_Summon": {
+        "AtkQualityBaseValue": 2600.0,
+        "AtkQualityFactor": 35.0,
+        "CostItem": [
+            {
+                "amount": 140,
+                "id": "IQS_Orange1_Summon"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 280000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 780.0,
+        "DefQualityFactor": 11.0,
+        "HpQualityBaseValue": 10400.0,
+        "HpQualityFactor": 140.0,
+        "LevelRequest": 240,
+        "MaxLevel": 240,
+        "NextQuality": "SP_50_Summon",
+        "PlayerLevelRequest": 54,
+        "Quality": 43,
+        "QualityLevel": 3,
+        "Speed": 100
+    },
+    "SP_43_Support": {
+        "AtkQualityBaseValue": 2600.0,
+        "AtkQualityFactor": 35.0,
+        "CostItem": [
+            {
+                "amount": 140,
+                "id": "IQS_Orange1_Support"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 280000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 780.0,
+        "DefQualityFactor": 11.0,
+        "HpQualityBaseValue": 10400.0,
+        "HpQualityFactor": 140.0,
+        "LevelRequest": 240,
+        "MaxLevel": 240,
+        "NextQuality": "SP_50_Support",
+        "PlayerLevelRequest": 54,
+        "Quality": 43,
+        "QualityLevel": 3,
+        "Speed": 100
+    },
+    "SP_50": {
+        "AtkQualityBaseValue": 180.0,
+        "AtkQualityFactor": 5.0,
+        "CostItem": [
+            {
+                "amount": 3,
+                "id": "IQS_Orange21"
+            },
+            {
+                "amount": 1,
+                "id": "IQS_Orange22"
+            },
+            {
+                "amount": 1,
+                "id": "IQS_Orange23"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 144000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 54.0,
+        "DefQualityFactor": 1.5,
+        "HpQualityBaseValue": 720.0,
+        "HpQualityFactor": 20.0,
+        "LevelRequest": 220,
+        "MaxLevel": 220,
+        "NextQuality": "SP_51",
+        "PlayerLevelRequest": 1,
+        "Quality": 50,
+        "QualityLevel": 0,
+        "Speed": 50
+    },
+    "SP_50_Aoe": {
+        "AtkQualityBaseValue": 3500.0,
+        "AtkQualityFactor": 35.0,
+        "CostItem": [],
+        "CurrencyCost": [],
+        "DefQualityBaseValue": 1050.0,
+        "DefQualityFactor": 11.0,
+        "HpQualityBaseValue": 14000.0,
+        "HpQualityFactor": 140.0,
+        "LevelRequest": 300,
+        "MaxLevel": 300,
+        "NextQuality": "",
+        "PlayerLevelRequest": 60,
+        "Quality": 50,
+        "QualityLevel": 0,
+        "Speed": 110
+    },
+    "SP_50_Attack": {
+        "AtkQualityBaseValue": 3500.0,
+        "AtkQualityFactor": 35.0,
+        "CostItem": [],
+        "CurrencyCost": [],
+        "DefQualityBaseValue": 1050.0,
+        "DefQualityFactor": 11.0,
+        "HpQualityBaseValue": 14000.0,
+        "HpQualityFactor": 140.0,
+        "LevelRequest": 300,
+        "MaxLevel": 300,
+        "NextQuality": "",
+        "PlayerLevelRequest": 60,
+        "Quality": 50,
+        "QualityLevel": 0,
+        "Speed": 110
+    },
+    "SP_50_Cure": {
+        "AtkQualityBaseValue": 3500.0,
+        "AtkQualityFactor": 35.0,
+        "CostItem": [],
+        "CurrencyCost": [],
+        "DefQualityBaseValue": 1050.0,
+        "DefQualityFactor": 11.0,
+        "HpQualityBaseValue": 14000.0,
+        "HpQualityFactor": 140.0,
+        "LevelRequest": 300,
+        "MaxLevel": 300,
+        "NextQuality": "",
+        "PlayerLevelRequest": 60,
+        "Quality": 50,
+        "QualityLevel": 0,
+        "Speed": 110
+    },
+    "SP_50_Curse": {
+        "AtkQualityBaseValue": 3500.0,
+        "AtkQualityFactor": 35.0,
+        "CostItem": [],
+        "CurrencyCost": [],
+        "DefQualityBaseValue": 1050.0,
+        "DefQualityFactor": 11.0,
+        "HpQualityBaseValue": 14000.0,
+        "HpQualityFactor": 140.0,
+        "LevelRequest": 300,
+        "MaxLevel": 300,
+        "NextQuality": "",
+        "PlayerLevelRequest": 60,
+        "Quality": 50,
+        "QualityLevel": 0,
+        "Speed": 110
+    },
+    "SP_50_Defense": {
+        "AtkQualityBaseValue": 3500.0,
+        "AtkQualityFactor": 35.0,
+        "CostItem": [],
+        "CurrencyCost": [],
+        "DefQualityBaseValue": 1050.0,
+        "DefQualityFactor": 11.0,
+        "HpQualityBaseValue": 14000.0,
+        "HpQualityFactor": 140.0,
+        "LevelRequest": 300,
+        "MaxLevel": 300,
+        "NextQuality": "",
+        "PlayerLevelRequest": 60,
+        "Quality": 50,
+        "QualityLevel": 0,
+        "Speed": 110
+    },
+    "SP_50_Summon": {
+        "AtkQualityBaseValue": 3500.0,
+        "AtkQualityFactor": 35.0,
+        "CostItem": [],
+        "CurrencyCost": [],
+        "DefQualityBaseValue": 1050.0,
+        "DefQualityFactor": 11.0,
+        "HpQualityBaseValue": 14000.0,
+        "HpQualityFactor": 140.0,
+        "LevelRequest": 300,
+        "MaxLevel": 300,
+        "NextQuality": "",
+        "PlayerLevelRequest": 60,
+        "Quality": 50,
+        "QualityLevel": 0,
+        "Speed": 110
+    },
+    "SP_50_Support": {
+        "AtkQualityBaseValue": 3500.0,
+        "AtkQualityFactor": 35.0,
+        "CostItem": [],
+        "CurrencyCost": [],
+        "DefQualityBaseValue": 1050.0,
+        "DefQualityFactor": 11.0,
+        "HpQualityBaseValue": 14000.0,
+        "HpQualityFactor": 140.0,
+        "LevelRequest": 300,
+        "MaxLevel": 300,
+        "NextQuality": "",
+        "PlayerLevelRequest": 60,
+        "Quality": 50,
+        "QualityLevel": 0,
+        "Speed": 110
+    },
+    "SP_51": {
+        "AtkQualityBaseValue": 240.0,
+        "AtkQualityFactor": 5.0,
+        "CostItem": [
+            {
+                "amount": 3,
+                "id": "IQS_Orange31"
+            },
+            {
+                "amount": 1,
+                "id": "IQS_Orange32"
+            },
+            {
+                "amount": 1,
+                "id": "IQS_Orange33"
+            }
+        ],
+        "CurrencyCost": [
+            {
+                "amount": 144000,
+                "id": "IR_Gold"
+            }
+        ],
+        "DefQualityBaseValue": 72.0,
+        "DefQualityFactor": 1.5,
+        "HpQualityBaseValue": 960.0,
+        "HpQualityFactor": 20.0,
+        "LevelRequest": 260,
+        "MaxLevel": 260,
+        "NextQuality": "SP_52",
+        "PlayerLevelRequest": 1,
+        "Quality": 51,
+        "QualityLevel": 1,
+        "Speed": 60
+    },
+    "SP_52": {
+        "AtkQualityBaseValue": 300.0,
+        "AtkQualityFactor": 5.0,
+        "CostItem": [],
+        "CurrencyCost": [],
+        "DefQualityBaseValue": 90.0,
+        "DefQualityFactor": 1.5,
+        "HpQualityBaseValue": 1200.0,
+        "HpQualityFactor": 20.0,
+        "LevelRequest": 300,
+        "MaxLevel": 300,
+        "NextQuality": "",
+        "PlayerLevelRequest": 1,
+        "Quality": 52,
+        "QualityLevel": 2,
+        "Speed": 70
+    },
     "SR_10": {
         "AtkQualityBaseValue": 0.0,
         "AtkQualityFactor": 5.0,

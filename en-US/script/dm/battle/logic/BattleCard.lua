@@ -154,14 +154,9 @@ HeroCard:has("_heroData", {
 HeroCard:has("_cardAI", {
 	is = "r"
 })
-HeroCard:has("_cardType", {
+HeroCard:has("_seatRules", {
 	is = "rw"
 })
-
-HeroCardType = {
-	Super = 2,
-	Normal = 1
-}
 
 function HeroCard:initWithData(data)
 	super.initWithData(self, data)
@@ -171,13 +166,31 @@ function HeroCard:initWithData(data)
 	self._type = CARD_TYPE.kHeroCard
 	self._cardIndex = nil
 	self._triggerBuffs = {}
-	self._cardType = data.cardType or HeroCardType.Normal
+	self._seatRules = data.seatRules or {}
 
 	return self
 end
 
-function HeroCard:setCardType(type)
-	self._cardType = type
+function HeroCard:addSeatRule(rule, killOrKick)
+	self._seatRules[rule] = self._seatRules[rule] or {}
+
+	table.insert(self._seatRules[rule], 1, killOrKick)
+end
+
+function HeroCard:subSeatRule(rule, killOrKick)
+	if self._seatRules[rule] then
+		for k, v in pairs(self._seatRules[rule]) do
+			if v == killOrKick then
+				table.remove(self._seatRules[rule], k)
+
+				break
+			end
+		end
+
+		if not next(self._seatRules[rule]) then
+			self._seatRules[rule] = nil
+		end
+	end
 end
 
 function HeroCard:getType()
@@ -197,7 +210,7 @@ function HeroCard:usedByPlayer(player, battleContext, trgtCellNo, cost, wontEven
 		name = "spawn"
 	}
 	local formationSystem = battleContext:getObject("FormationSystem")
-	local unit, detail = formationSystem:SpawnUnit(player, self._heroData, trgtCellNo, animation, not wontEvent, cost or self:getActualCost(), self._cardType)
+	local unit, detail = formationSystem:SpawnUnit(player, self._heroData, trgtCellNo, animation, not wontEvent, cost or self:getActualCost(), self._seatRules)
 
 	if not unit then
 		return unit, detail
@@ -209,7 +222,7 @@ function HeroCard:usedByPlayer(player, battleContext, trgtCellNo, cost, wontEven
 		cardAI = self._cardAI,
 		hero = self._heroData,
 		cardIndex = self._cardIndex,
-		cardType = self._cardType
+		seatRules = self._seatRules
 	})
 
 	local cardSystem = battleContext:getObject("CardSystem")
@@ -225,6 +238,22 @@ function HeroCard:usedByPlayer(player, battleContext, trgtCellNo, cost, wontEven
 	end
 
 	return true, unit
+end
+
+function HeroCard:getCardInfo()
+	local cardInfo = {
+		id = self._id,
+		cost = self._rawCost,
+		cardAI = self._cardAI,
+		hero = self._heroData,
+		cardIndex = self._cardIndex,
+		cardType = self._cardType
+	}
+	local info = {}
+
+	table.deepcopy(cardInfo, info)
+
+	return info
 end
 
 function HeroCard:dumpInformation()
@@ -245,7 +274,7 @@ function HeroCard:dumpInformation()
 		addHurtRate = data.addHurtRate
 	}
 	info.type = "hero"
-	info.cardType = self._cardType
+	info.seatRules = self._seatRules
 
 	if data and data.skills and data.skills.unique then
 		info.unique = data.skills.unique.id
@@ -275,6 +304,14 @@ end
 
 function HeroCard:getTriggerBuff()
 	return self._triggerBuffs
+end
+
+function HeroCard:removeTriggerBuff(buff)
+	for k, v in pairs(self._triggerBuffs) do
+		if v == buff then
+			table.remove(self._triggerBuffs, k)
+		end
+	end
 end
 
 function HeroCard:isGenre(genre)

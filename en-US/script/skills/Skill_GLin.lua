@@ -313,6 +313,7 @@ all.Skill_GLin_Passive = {
 					limit = 1,
 					tags = {
 						"CARDBUFF",
+						"BUFF",
 						"Skill_GLin_Passive",
 						"UNDISPELLABLE",
 						"UNSTEALABLE"
@@ -415,6 +416,7 @@ all.Skill_GLin_Proud_EX = {
 					limit = 1,
 					tags = {
 						"CARDBUFF",
+						"BUFF",
 						"Skill_GLin_Proud",
 						"UNDISPELLABLE",
 						"UNSTEALABLE"
@@ -615,6 +617,7 @@ all.Skill_GLin_Passive_EX = {
 					limit = 1,
 					tags = {
 						"CARDBUFF",
+						"BUFF",
 						"Skill_GLin_Passive_EX",
 						"UNDISPELLABLE",
 						"UNSTEALABLE"

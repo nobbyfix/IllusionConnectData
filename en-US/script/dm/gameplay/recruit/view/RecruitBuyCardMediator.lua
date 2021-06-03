@@ -9,6 +9,9 @@ RecruitBuyCardMediator:has("_shopSystem", {
 RecruitBuyCardMediator:has("_recruitSystem", {
 	is = "r"
 }):injectWith("RecruitSystem")
+RecruitBuyCardMediator:has("_activitySystem", {
+	is = "r"
+}):injectWith("ActivitySystem")
 
 local kBtnHandlers = {
 	buyBtn = {
@@ -74,6 +77,7 @@ function RecruitBuyCardMediator:initData(data)
 	self._param = data.param
 	self._costId = data.itemId
 	local needCount = data.costCount
+	self._activityId = data.activityId
 	local hasCount = self._bagSystem:getItemCount(self._costId)
 	self._num = needCount - hasCount
 	local price = self._param.times == 1 and RecruitCurrencyStr.KBuyPrice.single[self._costId] or RecruitCurrencyStr.KBuyPrice.ten[self._costId]
@@ -149,7 +153,11 @@ function RecruitBuyCardMediator:onClickBuy()
 
 	self:closeView({
 		callback = function ()
-			self._recruitSystem:requestRecruit(self._param)
+			if self._activityId then
+				self._activitySystem:requestRecruitActivity(self._activityId, self._param, nil)
+			else
+				self._recruitSystem:requestRecruit(self._param)
+			end
 		end
 	})
 end

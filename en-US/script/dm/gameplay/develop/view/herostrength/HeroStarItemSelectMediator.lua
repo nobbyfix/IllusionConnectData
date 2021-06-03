@@ -17,6 +17,10 @@ local kBtnHandlers = {
 		clickAudio = "Se_Click_Common_1",
 		func = "onClickSSR"
 	},
+	["main.spNode.button"] = {
+		clickAudio = "Se_Click_Common_1",
+		func = "onClickSP"
+	},
 	["main.ownNode.button"] = {
 		clickAudio = "Se_Click_Common_1",
 		func = "onClickOwn"
@@ -93,6 +97,7 @@ function HeroStarItemSelectMediator:initView()
 	self._rNode = self._main:getChildByFullName("rNode")
 	self._srNode = self._main:getChildByFullName("srNode")
 	self._ssrNode = self._main:getChildByFullName("ssrNode")
+	self._spNode = self._main:getChildByFullName("spNode")
 	self._ownNode = self._main:getChildByFullName("ownNode")
 	self._stiveNode = self._main:getChildByFullName("stiveNode")
 end
@@ -101,6 +106,7 @@ function HeroStarItemSelectMediator:refreshView()
 	self:resetSelectView(self._rNode, self._selectData["12"])
 	self:resetSelectView(self._srNode, self._selectData["13"])
 	self:resetSelectView(self._ssrNode, self._selectData["14"])
+	self:resetSelectView(self._spNode, self._selectData["15"])
 	self:resetSelectView(self._ownNode, self._selectData.canUseOwn)
 	self:resetSelectView(self._stiveNode, self._selectData.canUseStive)
 end
@@ -145,6 +151,16 @@ function HeroStarItemSelectMediator:onClickSSR()
 	end
 
 	self:resetSelectView(self._ssrNode, self._selectData["14"])
+end
+
+function HeroStarItemSelectMediator:onClickSP()
+	if self._selectData["15"] == nil or self._selectData["15"] == "0" then
+		self._selectData["15"] = "1"
+	else
+		self._selectData["15"] = "0"
+	end
+
+	self:resetSelectView(self._spNode, self._selectData["15"])
 end
 
 function HeroStarItemSelectMediator:onClickOwn()

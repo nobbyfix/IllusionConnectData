@@ -1603,6 +1603,15 @@ function ActivitySystem:complexActivityTryEnter(data)
 	end
 end
 
+function ActivitySystem:complexActivityTaskTryEnter(data)
+	local activityId = data.activityId
+	local activity = self:getActivityByComplexId(activityId)
+
+	if activity then
+		self:enterSupportTaskView(data.activityId, data.taskId)
+	end
+end
+
 function ActivitySystem:tryEnterComplexMainView(ui)
 	local activity = self:getActivityByComplexUI(ui)
 
@@ -1680,7 +1689,7 @@ function ActivitySystem:enterSagaSupportSchedule(activityId)
 	end)
 end
 
-function ActivitySystem:enterSupportTaskView(activityId)
+function ActivitySystem:enterSupportTaskView(activityId, taskId)
 	local activity = self:getActivityByComplexId(activityId)
 
 	if activity then
@@ -1688,7 +1697,8 @@ function ActivitySystem:enterSupportTaskView(activityId)
 		local view = self:getInjector():getInstance(ActivityComplexUI.enterSupportTaskView[ui])
 
 		self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
-			activityId = activityId
+			activityId = activityId,
+			taskId = taskId
 		}))
 	end
 end
@@ -1888,4 +1898,81 @@ function ActivitySystem:drawLetterReward(callback)
 	end
 
 	self:requestDoChildActivity(activityId, subActivityId, params, callbackFunc)
+end
+
+function ActivitySystem:requestRecruitActivity(activityId, data, callback)
+	local params = {
+		doActivityType = 101,
+		drawId = data.id,
+		times = data.times
+	}
+	local activityId = activityId
+
+	local function callbackFunc(response)
+		if response.resCode == GS_SUCCESS then
+			local data = response.data
+
+			if callback then
+				callback()
+			end
+
+			self:dispatch(Event:new(EVT_RECRUIT_SUCC, data))
+		else
+			self:dispatch(Event:new(EVT_RECRUIT_FAIL))
+		end
+	end
+
+	self:requestDoActivity(activityId, params, callbackFunc)
+end
+
+function ActivitySystem:requestRecruitActivityReward(activityId, subActivityId, data, callback)
+	local params = {
+		doActivityType = data.doActivityType
+	}
+
+	if data.taskId then
+		params.taskId = data.taskId
+	end
+
+	if data.round then
+		params.round = data.round
+	end
+
+	if data.TimeReward then
+		params.TimeReward = data.TimeReward
+	end
+
+	local activityId = activityId
+
+	local function callbackFunc(response)
+		if response.resCode == GS_SUCCESS then
+			if callback then
+				callback(response)
+			end
+
+			local data = response.data.rewards
+
+			if subActivityId then
+				data = response.data.reward
+			end
+
+			self:dispatch(Event:new(EVT_RECRUITNEWDRAWCARD_REFRESH))
+
+			if data and next(data) then
+				local view = self:getInjector():getInstance("getRewardView")
+
+				self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+					maskOpacity = 0
+				}, {
+					rewards = data
+				}))
+			end
+		end
+	end
+
+	if subActivityId then
+		self:requestDoChildActivity(activityId, subActivityId, params, callbackFunc)
+	else
+		self:requestDoActivity(activityId, params, callbackFunc)
+	end
 end

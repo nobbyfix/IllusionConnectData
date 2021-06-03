@@ -358,6 +358,7 @@ all.Skill_WTXXuan_Passive = {
 					limit = 1,
 					tags = {
 						"CARDBUFF",
+						"BUFF",
 						"Skill_WTXXuan_Passive",
 						"HURTRATEUP",
 						"UNDISPELLABLE",
@@ -715,6 +716,7 @@ all.Skill_WTXXuan_Passive_EX = {
 							limit = 1,
 							tags = {
 								"CARDBUFF",
+								"BUFF",
 								"Skill_WTXXuan_Passive",
 								"HURTRATEUP",
 								"UNDISPELLABLE",
@@ -736,6 +738,7 @@ all.Skill_WTXXuan_Passive_EX = {
 							limit = 1,
 							tags = {
 								"CARDBUFF",
+								"BUFF",
 								"Skill_WTXXuan_Passive",
 								"HURTRATEUP",
 								"UNDISPELLABLE",

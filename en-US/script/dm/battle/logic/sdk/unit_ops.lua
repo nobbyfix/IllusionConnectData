@@ -4,6 +4,14 @@ function exports.GetOwner(env, target)
 	return target and target:getOwner()
 end
 
+function exports.GetSufaceIndex(env, target)
+	if target and target:getSurfaceIndex() and target:getSurfaceIndex() > 0 then
+		return target:getSurfaceIndex()
+	end
+
+	return 1
+end
+
 local function getTargetRoles(env, target, createIfNotExist)
 	local rolesMap = env["$roles_map"]
 
@@ -100,6 +108,11 @@ function exports.Transform(env, target, hpRatio, triggerDie)
 
 	if triggerDie then
 		skillSystem:activateSpecificTrigger(target, "TRANSFORM", {
+			unit = target,
+			isTransform = triggerDie
+		})
+		skillSystem:activateGlobalTrigger("UNIT_TRANSFORM", {
+			unit = target,
 			isTransform = triggerDie
 		})
 	end

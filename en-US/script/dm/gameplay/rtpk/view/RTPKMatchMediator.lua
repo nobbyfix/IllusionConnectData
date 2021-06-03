@@ -73,7 +73,7 @@ function RTPKMatchMediator:setupView()
 end
 
 function RTPKMatchMediator:createTimer()
-	local time = ConfigReader:getDataByNameIdAndKey("ConfigValue", "RTPK_FristMatchTime", "content")
+	local time = ConfigReader:getDataByNameIdAndKey("ConfigValue", "RTPK_FristMatchTime", "content") + 5
 	local tickCount = 0
 	local pvpWaitTime = 0
 
@@ -123,6 +123,8 @@ function RTPKMatchMediator:addMatchSuccAnim(data)
 		anim:stop()
 
 		if data.type == "ROBOT" then
+			self._enterBattle = true
+
 			self._rtpkSystem:enterRobotBattle(data)
 		else
 			self._rtpkSystem:enterRTPVP(data.ip, tonumber(data.port), data.room, data.br, "orrtpk")

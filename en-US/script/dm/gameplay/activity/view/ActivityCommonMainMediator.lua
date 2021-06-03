@@ -982,17 +982,15 @@ function ActivityCommonMainMediator:setStageView()
 	local ui = self._activity:getUI()
 	local title = ActivityMainMapTitleConfig.title[ui]
 
-	if not title then
-		return
-	end
+	if title then
+		for key, lineGradiantVec2 in pairs(title) do
+			local title = self._stagePanel:getChildByName(key)
 
-	for key, lineGradiantVec2 in pairs(title) do
-		local title = self._stagePanel:getChildByName(key)
-
-		title:enablePattern(cc.LinearGradientPattern:create(lineGradiantVec2, {
-			x = 0,
-			y = -1
-		}))
+			title:enablePattern(cc.LinearGradientPattern:create(lineGradiantVec2, {
+				x = 0,
+				y = -1
+			}))
+		end
 	end
 
 	local anim = ActivityMainMapTitleConfig.anim[ui]
@@ -1005,6 +1003,16 @@ function ActivityCommonMainMediator:setStageView()
 
 		if self._stagePanel:getChildByName("image") then
 			self._stagePanel:getChildByName("image"):setVisible(false)
+		end
+
+		if ui == ActivityType_UI.KActivitySummerRe and self._stageAnim then
+			local zidi = self._stageAnim:getChildByName("zidi")
+			local zi = self._stageAnim:getChildByName("zi")
+
+			if getCurrentLanguage() ~= GameLanguageType.CN then
+				zidi:setRotation(-90)
+				zi:setRotation(-90)
+			end
 		end
 	end
 end

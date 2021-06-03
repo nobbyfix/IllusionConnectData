@@ -57,6 +57,135 @@ RecruitCurrencyStr = {
 		}
 	}
 }
+ItemsPosition1 = {
+	cc.p(350, 171)
+}
+ItemsPosition2 = {
+	cc.p(38, 292),
+	cc.p(194, 292),
+	cc.p(350, 292),
+	cc.p(506, 292),
+	cc.p(662, 292),
+	cc.p(38, 110),
+	cc.p(194, 110),
+	cc.p(350, 110),
+	cc.p(506, 110),
+	cc.p(662, 110)
+}
+ItemsPosition3 = {
+	cc.p(34, 316),
+	cc.p(192, 316),
+	cc.p(350, 316),
+	cc.p(508, 316),
+	cc.p(666, 316),
+	cc.p(34, 110),
+	cc.p(192, 110),
+	cc.p(350, 110),
+	cc.p(508, 110),
+	cc.p(666, 110)
+}
+ItemsPosition4 = {
+	cc.p(-50, 292),
+	cc.p(150, 292),
+	cc.p(350, 292),
+	cc.p(550, 292),
+	cc.p(750, 292),
+	cc.p(-50, 30),
+	cc.p(150, 30),
+	cc.p(350, 30),
+	cc.p(550, 30),
+	cc.p(750, 30)
+}
+ItemsPosition5 = {
+	cc.p(29, 305),
+	cc.p(194, 305),
+	cc.p(359, 305),
+	cc.p(524, 305),
+	cc.p(689, 305),
+	cc.p(29, 89),
+	cc.p(194, 89),
+	cc.p(359, 89),
+	cc.p(524, 89),
+	cc.p(689, 89)
+}
+RecruitRewardType = {
+	kHero = 1,
+	kHeroConvert = 2,
+	kPieceOrItem = 3
+}
+kRoleRarityAnim = {
+	[12] = {
+		"r_choukajieguokapai",
+		0.57,
+		"img_chouka_new_r.png"
+	},
+	[13] = {
+		"sr_choukajieguokapai",
+		0.627,
+		"img_chouka_new_sr.png"
+	},
+	[14] = {
+		"ssr_choukajieguokapai",
+		0.741,
+		"img_chouka_new_ssr.png"
+	},
+	[15] = {
+		"sp_choukajieguokapai",
+		0.741,
+		"img_chouka_new_sp.png"
+	}
+}
+kRoleRarityNameBg = {
+	[12.0] = "asset/heroRect/heroRarity/img_chouka_front_r.png",
+	[15.0] = "asset/heroRect/heroRarity/img_chouka_front_sp.png",
+	[13.0] = "asset/heroRect/heroRarity/img_chouka_front_sr.png",
+	[14.0] = "asset/heroRect/heroRarity/img_chouka_front_ssr.png"
+}
+kItemScale = {
+	nil,
+	nil,
+	nil,
+	nil,
+	nil,
+	nil,
+	nil,
+	nil,
+	nil,
+	nil,
+	1,
+	1,
+	1.1,
+	1.3,
+	1.5
+}
+kEquipRarityAnim = {
+	[12.0] = "r_zhuangbeishilian",
+	[14.0] = "ssrchuchang_zhuangbeishilian",
+	[13.0] = "sr_zhuangbeishilian",
+	[11.0] = "r_zhuangbeishilian"
+}
+ResultAnimOfRarity = {
+	[11] = {
+		224,
+		"ShowResult_224"
+	},
+	[12] = {
+		225,
+		"ShowResult_225"
+	},
+	[13] = {
+		295,
+		"ShowResult_295"
+	},
+	[14] = {
+		407,
+		"ShowResult_407"
+	},
+	[15] = {
+		407,
+		"ShowResult_407"
+	}
+}
 DrawCardRewardStatus = {
 	FinishNotGet = 1,
 	FinishGot = 2,
@@ -388,4 +517,24 @@ function RecruitSystem:getShowRecruitPools()
 	end)
 
 	return data
+end
+
+function RecruitSystem:tryEnterActivityRecruit(data)
+	local unlock, tips, recruitId = self:checkEnabled(data)
+
+	if not unlock then
+		self:dispatch(ShowTipEvent({
+			duration = 0.2,
+			tip = tips
+		}))
+		AudioEngine:getInstance():playEffect("Se_Alert_Error", false)
+
+		return
+	end
+
+	AudioEngine:getInstance():playEffect("Se_Click_Story_Common", false)
+
+	local view = self:getInjector():getInstance("RecruitNewDrawCardView")
+
+	self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, data))
 end

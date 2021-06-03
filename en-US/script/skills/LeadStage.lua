@@ -360,7 +360,6 @@ all.LeadStage_FuHun_skill = {
 			for _, unit in global.__iter__(global.EnemyUnits(_env)) do
 				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
 
-				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
 				global.AnimForTrgt(_env, _env.ACTOR, {
 					loop = 1,
 					anim = "cx_nengliangchongji",
@@ -370,6 +369,7 @@ all.LeadStage_FuHun_skill = {
 						0.5
 					}
 				})
+				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
 			end
 		end)
 

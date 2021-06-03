@@ -102,7 +102,7 @@ function EnergyReservoir:consume(cost)
 	if cost <= energy then
 		local speed = nil
 
-		if self._capacity <= energy then
+		if self._capacity < energy then
 			self._immediateSpeed = self:getSpeedValue()
 		end
 

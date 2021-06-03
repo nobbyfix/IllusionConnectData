@@ -77,11 +77,11 @@ function Navigation:updataTopNode()
 	local canDownload = settingSystem:canDownloadPortrait() or settingSystem:canDownloadSoundCV()
 
 	if canDownload then
-		mRankNode:setVisible(true)
+		mDownNode:setVisible(true)
 
 		self._topNodes[#self._topNodes + 1] = mDownNode
 	else
-		mRankNode:setVisible(false)
+		mDownNode:setVisible(false)
 	end
 
 	local mPassNode = self._topLayout:getChildByFullName("mPassNode")

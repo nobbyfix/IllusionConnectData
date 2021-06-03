@@ -780,6 +780,8 @@ function MasterSystem:checkIsShowRedPoint()
 end
 
 function MasterSystem:requestLeadStageUp(masterId)
+	self:setMastertAwakeAttr(masterId)
+
 	local params = {
 		masterId = masterId
 	}
@@ -794,6 +796,31 @@ function MasterSystem:requestLeadStageUp(masterId)
 			end
 		end
 	end)
+end
+
+function MasterSystem:setMastertAwakeAttr(masterId)
+	local masterData = self:getMasterById(masterId)
+	local combat, attrData = masterData:getCombat()
+	self._awakeAttrNum = {
+		ATK = attrData.attack,
+		HP = attrData.hp,
+		DEF = attrData.defense
+	}
+	self._oldLeadStageId, self._oldLeadStageLevel = self:getMasterLeadStatgeLevel(masterId)
+end
+
+function MasterSystem:getMastertAwakeAttr()
+	if not self._awakeAttrNum then
+		self._awakeAttrNum = {
+			DEF = 0,
+			HP = 0,
+			ATK = 0
+		}
+		self._oldLeadStageId = ""
+		self._oldLeadStageLevel = 0
+	end
+
+	return self._awakeAttrNum, self._oldLeadStageId, self._oldLeadStageLevel
 end
 
 function MasterSystem:checkLeadStageRedPoint(masterId)

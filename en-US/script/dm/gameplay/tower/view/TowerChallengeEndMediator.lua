@@ -11,7 +11,7 @@ local kBtnHandlers = {
 	mTouchLayout = "onTouchLayout"
 }
 local kHeroRarityBgAnim = {
-	[15.0] = "ssrzong_yingxiongxuanze",
+	[15.0] = "spzong_urequipeff",
 	[13.0] = "srzong_yingxiongxuanze",
 	[14.0] = "ssrzong_yingxiongxuanze"
 }
@@ -346,6 +346,10 @@ function TowerChallengeEndMediator:initHero(node, info)
 
 		anim:addTo(bg1):center(bg1:getContentSize())
 		anim:setPosition(cc.p(bg1:getContentSize().width / 2 - 1, bg1:getContentSize().height / 2 - 30))
+
+		if info.rareity == 15 then
+			anim:setPosition(cc.p(bg1:getContentSize().width / 2 - 3, bg1:getContentSize().height / 2))
+		end
 
 		if info.rarity >= 14 then
 			local anim = cc.MovieClip:create("ssrlizichai_yingxiongxuanze")

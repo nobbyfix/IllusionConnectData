@@ -781,6 +781,17 @@ function IconFactory:createRewardIcon(rewardInfo, style)
 			if label then
 				label:setScale(0.8 / scale)
 				label:enableOutline(cc.c4b(0, 0, 0, 255), 1)
+
+				if icon:getChildByName("AmountBg") then
+					local amountBg = icon:getChildByName("AmountBg")
+
+					amountBg:setAnchorPoint(cc.p(1, 0))
+
+					local width = amountBg:getContentSize().width * scale
+					local scaleX = (label:getContentSize().width * 0.8 / scale + 16) / width
+
+					amountBg:setScaleX(scaleX * scale)
+				end
 			end
 		end
 	end
@@ -1507,10 +1518,10 @@ local kHeroRarityAnim = {
 	"r_yingxiongxuanze",
 	"sr_yingxiongxuanze",
 	"ssr_yingxiongxuanze",
-	"ssr_yingxiongxuanze"
+	"sp_xiao_urequipeff"
 }
 local kHeroRarityBgAnim = {
-	[15.0] = "ssrzong_yingxiongxuanze",
+	[15.0] = "spzong_urequipeff",
 	[13.0] = "srzong_yingxiongxuanze",
 	[14.0] = "ssrzong_yingxiongxuanze"
 }
@@ -1587,7 +1598,12 @@ function IconFactory:createHeroLargeIcon(info, style)
 			local anim = cc.MovieClip:create(kHeroRarityBgAnim[rarity])
 
 			anim:addTo(bg):center(bg:getContentSize())
-			anim:offset(-1, -30)
+
+			if rarity <= 14 then
+				anim:offset(-1, -30)
+			else
+				anim:offset(-3, 0)
+			end
 
 			if rarity >= 14 then
 				local anim = cc.MovieClip:create("ssrlizichai_yingxiongxuanze")
@@ -1992,8 +2008,13 @@ function IconFactory:createHeroIconForReward(info, style)
 	local heroPrototype = PrototypeFactory:getInstance():getHeroPrototype(id)
 	local heroConfig = heroPrototype:getConfig()
 	local star = newInfo.star and newInfo.star or heroConfig.BaseStar
-	local quality = heroConfig.Rareity
-	local qualityImg = GameStyle:getItemQuaRectFile(quality - 9, 1)
+	local quality = heroConfig.Rareity - 9
+
+	if heroConfig.Rareity == 15 then
+		quality = 7
+	end
+
+	local qualityImg = GameStyle:getItemQuaRectFile(quality, 1)
 	local quaRectImg = IconFactory:createSprite(qualityImg)
 	local colorRectSize = cc.size(110, 110)
 	local node = self:createBaseNode(style and style.isWidget)
@@ -2559,6 +2580,12 @@ function IconFactory:createItemIcon(info, style)
 	info.clipIndex = info.clipIndex or 1
 	info.stencilSize = info.stencilSize or cc.size(105, 105)
 	local isLock = info.lock or false
+	local useNoEnough = true
+
+	if info.useNoEnough ~= nil then
+		useNoEnough = info.useNoEnough
+	end
+
 	local quaImgType = style and style.rectType and style.rectType or 1
 	local qualityImg = GameStyle:getItemQuaRectFile(quality, quaImgType)
 	local quaRectImg = IconFactory:createSprite(qualityImg)
@@ -2661,7 +2688,9 @@ function IconFactory:createItemIcon(info, style)
 		amountBg:setScaleX(scaleX)
 
 		if type(amount) == "number" then
-			amountBg:setVisible(tonumber(amount) > 0)
+			if useNoEnough then
+				amountBg:setVisible(tonumber(amount) > 0)
+			end
 		else
 			amountBg:setVisible(amount ~= "")
 		end
@@ -2676,12 +2705,20 @@ function IconFactory:createItemIcon(info, style)
 				label:enableOutline(effect.outline, 1)
 			end
 		elseif type(amount) == "number" then
-			label:setVisible(tonumber(amount) > 0)
+			if useNoEnough then
+				label:setVisible(tonumber(amount) > 0)
+			elseif tonumber(amount) == 0 then
+				label:setColor(cc.c3b(220, 0, 0))
+			else
+				label:setColor(cc.c3b(255, 255, 255))
+			end
 		else
 			label:setVisible(amount ~= "")
 		end
 
-		self:setNotEngouhState(amount == 0)
+		if useNoEnough then
+			self:setNotEngouhState(amount == 0)
+		end
 	end
 
 	function node:adjustAmountBg()
@@ -4298,14 +4335,14 @@ function IconFactory:createLeadStageIconVer(id, lv, style)
 	style = style or {}
 	local font = style.font and style.font or TTF_FONT_FZYH_M
 	local fontSize = style.fontSize and style.fontSize or 18
-	local notNeedBg = style.notNeedBg and style.notNeedBg or true
+	local needBg = style.needBg and style.needBg or 1
 	local layout = ccui.Layout:create()
 
-	if notNeedBg then
+	if needBg == 1 then
 		local iconBg = ccui.ImageView:create("bg_leadstage_zhezhao0" .. 9 - lv .. ".png", ccui.TextureResType.plistType)
 
 		iconBg:addTo(layout):offset(6, -9)
-	else
+	elseif needBg == 2 then
 		local iconBg = ccui.ImageView:create("bg_zhezhao_hei.png", ccui.TextureResType.plistType)
 
 		iconBg:addTo(layout):offset(4, 0)

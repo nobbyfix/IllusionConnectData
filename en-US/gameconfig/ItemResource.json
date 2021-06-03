@@ -435,7 +435,7 @@
     },
     "IHF_AJTa_1": {
         "Isturn": 0,
-        "ResourceText": "Source_Activity",
+        "ResourceText": "Source_Pass",
         "ResourceType": 0,
         "Text": "Source_Activity",
         "URL": ""
@@ -658,9 +658,9 @@
         "URL": "view://HeroStoryEnterView&viewType=push&heroId=BEr&index=5"
     },
     "IHF_BHTZi_1": {
-        "Isturn": "",
+        "Isturn": 0,
         "ResourceText": "Source_Activity",
-        "ResourceType": "",
+        "ResourceType": 0,
         "Text": "Source_Activity",
         "URL": ""
     },
@@ -861,6 +861,13 @@
         "URL": "view://HeroStoryEnterView&viewType=push&heroId=FEMSi"
     },
     "IHF_FGao_1": {
+        "Isturn": 0,
+        "ResourceText": "Source_Activity",
+        "ResourceType": 0,
+        "Text": "Source_Activity",
+        "URL": ""
+    },
+    "IHF_FLBDSi_1": {
         "Isturn": 0,
         "ResourceText": "Source_Activity",
         "ResourceType": 0,
@@ -1295,9 +1302,9 @@
         "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_Diamond_1"
     },
     "IHF_LYXi_1": {
-        "Isturn": "",
+        "Isturn": 0,
         "ResourceText": "Source_Activity",
-        "ResourceType": "",
+        "ResourceType": 0,
         "Text": "Source_Activity",
         "URL": ""
     },
@@ -1791,10 +1798,17 @@
         "Text": "Source_Activity",
         "URL": ""
     },
-    "IHF_SRen_1": {
-        "Isturn": "",
+    "IHF_SP_PNCao_1": {
+        "Isturn": 0,
         "ResourceText": "Source_Activity",
-        "ResourceType": "",
+        "ResourceType": 0,
+        "Text": "Source_Activity",
+        "URL": ""
+    },
+    "IHF_SRen_1": {
+        "Isturn": 0,
+        "ResourceText": "Source_Pass",
+        "ResourceType": 0,
         "Text": "Source_Activity",
         "URL": ""
     },
@@ -2387,9 +2401,9 @@
         "URL": "view://HeroStoryEnterView&viewType=push&heroId=YMHTPu&index=5"
     },
     "IHF_YSLBin_1": {
-        "Isturn": "",
+        "Isturn": 0,
         "ResourceText": "Source_Activity",
-        "ResourceType": "",
+        "ResourceType": 0,
         "Text": "Source_Activity",
         "URL": ""
     },
@@ -8530,6 +8544,13 @@
         "ResourceText": "Source_IR_StoryBookStamina",
         "ResourceType": 0,
         "Text": "Source_IR_StoryBookStamina_Desc",
+        "URL": ""
+    },
+    "IR_SummerReStamina": {
+        "Isturn": 0,
+        "ResourceText": "Source_IM_SummerBox",
+        "ResourceType": 0,
+        "Text": "Source_IM_SummerBox_Desc",
         "URL": ""
     },
     "IR_SunflowerStamina": {

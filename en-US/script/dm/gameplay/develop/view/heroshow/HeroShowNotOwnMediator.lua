@@ -39,7 +39,7 @@ local kHeroRarityAnim = {
 	"r_yingxiongxuanze",
 	"sr_yingxiongxuanze",
 	"ssr_yingxiongxuanze",
-	"ssr_yingxiongxuanze"
+	"sp_xiao_urequipeff"
 }
 local kBtnHandlers = {
 	["main.backBtn"] = {

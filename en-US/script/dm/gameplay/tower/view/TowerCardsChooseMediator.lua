@@ -53,10 +53,16 @@ local kRoleRarityAnim = {
 		"ssr_choukajieguokapai",
 		0.78,
 		"img_chouka_new_ssr.png"
+	},
+	[15] = {
+		"sp_choukajieguokapai",
+		0.741,
+		"img_chouka_new_sp.png"
 	}
 }
 local kRoleRarityNameBg = {
 	[12.0] = "asset/heroRect/heroRarity/img_chouka_front_r.png",
+	[15.0] = "asset/heroRect/heroRarity/img_chouka_front_sp.png",
 	[13.0] = "asset/heroRect/heroRarity/img_chouka_front_sr.png",
 	[14.0] = "asset/heroRect/heroRarity/img_chouka_front_ssr.png"
 }

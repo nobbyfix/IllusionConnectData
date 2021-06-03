@@ -102,8 +102,22 @@ function MCBuySuccessMediator:setupExtraReward()
 
 			title1:enableOutline(cc.c4b(0, 0, 0, 255), 1)
 			title1:addTo(icon):center(icon:getContentSize()):offset(0, -85)
+			title1:setAlignment(cc.TEXT_ALIGNMENT_CENTER, cc.TEXT_ALIGNMENT_CENTER)
+			title1:setOverflow(cc.LabelOverflow.SHRINK)
 			title1:setDimensions(140, 50)
 			title1:setScale(1.3333333333333333)
+
+			if v.code == "IM_MasterStage_Exp" then
+				title1:offset(-20, 0)
+
+				local text_num = self._itemNode:getChildByFullName("Text_num")
+				local amountText = text_num:clone()
+
+				amountText:setString("+" .. v.amount)
+				amountText:addTo(icon)
+				amountText:setPosition(title1:getPosition()):offset(52, 0)
+				amountText:setScale(1.3333333333333333)
+			end
 		end
 
 		self._itemNode:offset(-(#self._extraRewards) * 170 / 2)

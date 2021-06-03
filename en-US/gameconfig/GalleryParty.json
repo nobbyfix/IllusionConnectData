@@ -1,6 +1,7 @@
 {
     "Aoe": {
         "IncludeHero": [
+            "SP_PNCao",
             "DFQi",
             "HLMGen",
             "WTXXuan",
@@ -13,6 +14,8 @@
             "TLMi",
             "SYAi",
             "BQDShe",
+            "AJTa",
+            "SRen",
             "NFEr"
         ],
         "Party": "Aoe",
@@ -189,11 +192,13 @@
     },
     "MNJH": {
         "IncludeHero": [
+            "SP_PNCao",
             "MGNa",
             "TLSi",
             "KTSJKe",
             "MTZMEShi",
             "PGNNi",
+            "AJTa",
             "YSLBin",
             "ALPo",
             "DDing",
@@ -241,6 +246,16 @@
         "PartyDesc": "Party_R_Desc",
         "PartyReward": [],
         "ShowRank": 4,
+        "Type": 3
+    },
+    "SP": {
+        "IncludeHero": [
+            "SP_PNCao"
+        ],
+        "Party": "SP",
+        "PartyDesc": "Party_SP_Desc",
+        "PartyReward": [],
+        "ShowRank": 1,
         "Type": 3
     },
     "SR": {
@@ -304,6 +319,8 @@
             "SYAi",
             "YYing",
             "BQDShe",
+            "AJTa",
+            "SRen",
             "LYXi",
             "BHTZi",
             "YSLBin",
@@ -455,6 +472,7 @@
             "LCYShi",
             "WEDe",
             "SGHQShou",
+            "SRen",
             "QBTe",
             "TJHDe",
             "NCai",
