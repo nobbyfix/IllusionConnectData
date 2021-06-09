@@ -247,7 +247,7 @@ function exports.InheritCard(env, card, modelId)
 		if cardInfo.hero and cardInfo.hero.skills then
 			for k, v in pairs(cardInfo.hero.skills.passive or {}) do
 				if v.skillType and v.skillType == "Equip" then
-					cardInfo.hero.skills.passive[k] = nil
+					table.remove(cardInfo.hero.skills.passive, k)
 				end
 			end
 		end
