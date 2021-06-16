@@ -1,6 +1,6 @@
 local GuideLauncher = {
-	enterGuideBattle = function (self, dispatcher, callback)
-		local GuideBattle1 = require("dm.battle.guide.GuideBattle1")
+	enterGuideBattle = function (self, dispatcher, callback, guideBattle)
+		local GuideBattle1 = require("dm.battle.guide." .. (guideBattle or "GuideBattle1"))
 		local battleLogic = GuideBattleLogic:new(GuideBattle1)
 		local battleSimulator = BattleSimulator:new()
 

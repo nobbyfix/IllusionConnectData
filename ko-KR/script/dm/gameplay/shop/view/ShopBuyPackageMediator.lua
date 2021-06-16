@@ -65,10 +65,12 @@ function ShopBuyPackageMediator:initMember()
 	self._moneyNum = mainPanel:getChildByFullName("moneyNum")
 	self._moneyIcon = mainPanel:getChildByFullName("money_icon")
 	self._freeText = mainPanel:getChildByFullName("getText")
+	self._discont = mainPanel:getChildByFullName("discont")
 	self._listView = mainPanel:getChildByFullName("goods_listview")
 
 	self._listView:setScrollBarEnabled(false)
 
+	self._buyTimes = mainPanel:getChildByFullName("buyTimes")
 	self._cellClone = mainPanel:getChildByFullName("cellClone")
 
 	self._cellClone:setVisible(false)
@@ -140,12 +142,17 @@ function ShopBuyPackageMediator:refreshView()
 	node:setVisible(true)
 	node:setString(descString)
 	node:getVirtualRenderer():setDimensions(self._descListView:getContentSize().width, 0)
+
+	local fontSize = node:getContentSize()
+
 	self._descListView:pushBackCustomItem(node)
 
-	if string.len(descString) < 80 then
-		self._descListView:setEnabled(false)
+	if fontSize.height >= 25 then
+		self._descListView:setTouchEnabled(true)
+		self._descListView:setPositionY(139)
 	else
-		self._descListView:setEnabled(true)
+		self._descListView:setTouchEnabled(false)
+		self._descListView:setPositionY(122)
 	end
 
 	local name = self._data:getName()
@@ -156,7 +163,7 @@ function ShopBuyPackageMediator:refreshView()
 	self._moneyNum:setString("")
 	self._moneyIcon:removeAllChildren()
 	self._moneyIconSum:removeAllChildren()
-	self._listView:setContentSize(cc.size(307, 120))
+	self._listView:removeAllChildren()
 
 	if self._isFree == KShopBuyType.KCoin then
 		local goldIcon = IconFactory:createResourcePic({
@@ -180,16 +187,30 @@ function ShopBuyPackageMediator:refreshView()
 		local payOffSystem = DmGame:getInstance()._injector:getInstance(PayOffSystem)
 		local symbol, price = payOffSystem:getPaySymbolAndPrice(self._data._payId)
 		local length = string.len(tostring(price))
-		local offsetX = length >= 6 and 749 or 759
+		local offsetX = length >= 6 and 668 or 678
 
 		self._moneySymbol:setString(symbol)
 		self._moneyNum:setString(price)
-		self._moneySymbol:setPositionX(759)
+		self._moneySymbol:setPositionX(685)
 		self._moneyNum:setPositionX(offsetX + self._moneySymbol:getContentSize().width + 2)
 	end
 
 	local rewardId = self._data:getItem()
 	local rewards = RewardSystem:getRewardsById(rewardId)
+
+	self._discont:setVisible(false)
+
+	if self._data:getCostOff() ~= nil then
+		self._discont:setVisible(true)
+		self._discont:getChildByFullName("number"):setString(tostring(self._data:getCostOff() * 100) .. "%")
+	end
+
+	self._buyTimes:setVisible(false)
+
+	if self._data:getStorage() > 0 then
+		self._buyTimes:setVisible(true)
+		self._buyTimes:getChildByFullName("good_number"):setString(Strings:get("Shop_BuyNumLimit") .. "(" .. self._data:getLeftCount() .. "/" .. self._data:getStorage() .. ")")
+	end
 
 	for i = 1, #rewards do
 		local data = rewards[i]
@@ -211,7 +232,19 @@ function ShopBuyPackageMediator:refreshView()
 		name:setString(RewardSystem:getName(data))
 
 		local quality = ConfigReader:getDataByNameIdAndKey("ItemConfig", data.code, "Quality")
+		local iconPanel = node:getChildByFullName("icon")
+		local icon = IconFactory:createRewardIcon(data, {
+			hideLevel = true,
+			showAmount = false,
+			notShowQulity = false,
+			isWidget = true
+		})
 
+		IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), data, {
+			needDelay = true
+		})
+		icon:setScale(0.49)
+		icon:addTo(iconPanel):center(iconPanel:getContentSize())
 		self._listView:pushBackCustomItem(node)
 	end
 end
@@ -223,6 +256,10 @@ function ShopBuyPackageMediator:refreshIcon()
 
 	if icon then
 		self._iconLayout:addChild(icon)
+
+		local scale = self._data._config.WindowIcon ~= "" and 0.7 or 1
+
+		icon:setScale(scale)
 		icon:setAnchorPoint(cc.p(0.5, 0.5))
 
 		local pos = cc.p(self._iconLayout:getContentSize().width / 2, self._iconLayout:getContentSize().height / 2)

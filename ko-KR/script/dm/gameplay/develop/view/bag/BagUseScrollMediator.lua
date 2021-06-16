@@ -579,13 +579,26 @@ function BagUseScrollMediator:addIcon(_data, _parentNode, isMaterial)
 
 	if not numBg then
 		icon:setVisible(false)
-		IconFactory:bindTouchHander(_parentNode, IconTouchHandler:new(self), data, {
-			needDelay = true
-		})
+
+		if _data.type == "Equip" then
+			IconFactory:bindClickHander(_parentNode, IconTouchHandler:new(self), data, {
+				touchDisappear = true,
+				swallowTouches = true
+			})
+		else
+			IconFactory:bindTouchHander(_parentNode, IconTouchHandler:new(self), data, {
+				needDelay = true
+			})
+		end
 
 		return
+	elseif _data.type == "Equip" then
+		IconFactory:bindClickHander(_parentNode, IconTouchHandler:new(self), data, {
+			touchDisappear = true,
+			swallowTouches = true
+		})
 	else
-		IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), data, {
+		IconFactory:bindTouchHander(_parentNode, IconTouchHandler:new(self), data, {
 			needDelay = true
 		})
 	end

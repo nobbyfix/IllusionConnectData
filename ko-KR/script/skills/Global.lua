@@ -3152,4 +3152,18 @@ function all.ApplyRealDamage(_env, actor, target, dmgrange, dmgtype, damagerate,
 	return result
 end
 
+function all.SelectBuffCount_Unit(_env, units, tags)
+	local this = _env.this
+	local global = _env.global
+	local count = 0
+
+	for _, unit in global.__iter__(units) do
+		if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, tags)) > 0 then
+			count = count + 1
+		end
+	end
+
+	return count
+end
+
 return _M

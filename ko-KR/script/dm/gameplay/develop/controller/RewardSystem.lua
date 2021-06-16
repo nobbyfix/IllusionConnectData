@@ -446,3 +446,28 @@ function RewardSystem.class:getRewardsById(id, param)
 
 	return {}
 end
+
+function RewardSystem.class:checkIsComposeItem(info)
+	local result = false
+	local id = info.id
+
+	if info.code then
+		id = info.code
+	end
+
+	local rewardType = info.rewardType
+
+	if info.type then
+		rewardType = info.type
+	end
+
+	if rewardType == RewardType.kItem then
+		local config = ConfigReader:getRecordById("ItemConfig", tostring(id))
+
+		if config and config.Id and config.Type == ItemTypes.K_COMPOSE then
+			result = true
+		end
+	end
+
+	return result
+end

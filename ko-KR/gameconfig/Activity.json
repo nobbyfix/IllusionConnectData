@@ -18093,6 +18093,42 @@
         "UI": "",
         "Version": ""
     },
+    "DrawCard_Club_20210616_Activity": {
+        "ActivityConfig": {
+            "DRAW": "DrawCard_Club_20210616",
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_Club_20210616_Activity",
+            "VANISH": 0
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 10003,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-09-01 05:00:00",
+            "start": [
+                "2021-07-01 05:00:00",
+                "2021-09-01 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "Version": ""
+    },
     "DrawCard_Club_2_Activity": {
         "ActivityConfig": {
             "DRAW": "DrawCard_Club_2",
@@ -18711,6 +18747,42 @@
         "UI": "",
         "Version": ""
     },
+    "DrawCard_Pve_20210616_Activity": {
+        "ActivityConfig": {
+            "DRAW": "DrawCard_Pve_20210616",
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_Pve_20210616_Activity",
+            "VANISH": 0
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 10001,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-09-01 05:00:00",
+            "start": [
+                "2021-07-01 05:00:00",
+                "2021-09-01 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "Version": ""
+    },
     "DrawCard_Pve_2_Activity": {
         "ActivityConfig": {
             "DRAW": "DrawCard_Pve_2",
@@ -18884,6 +18956,42 @@
             "start": [
                 "2021-05-01 05:00:00",
                 "2021-07-01 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "Version": ""
+    },
+    "DrawCard_Pvp_20210616_Activity": {
+        "ActivityConfig": {
+            "DRAW": "DrawCard_Pvp_20210616",
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_Pvp_20210616_Activity",
+            "VANISH": 0
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 10002,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-09-01 05:00:00",
+            "start": [
+                "2021-07-01 05:00:00",
+                "2021-09-01 05:00:00"
             ]
         },
         "Title": "",

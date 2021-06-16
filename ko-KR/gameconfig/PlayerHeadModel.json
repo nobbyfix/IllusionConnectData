@@ -901,6 +901,17 @@
         "UnlockDesc": "MTZMEShi_HeadUnlock",
         "Zoom": 0.5
     },
+    "Head_MTZMEShi_2": {
+        "HeadDesc": "Surface_MTZMEShi_pirate_Desc",
+        "HeadName": "MTZMEShi_2_HeadName",
+        "HeroMasterId": "MTZMEShi",
+        "IconPath": "asset/heros/hhui_pirate/battlepic_hhui_pirate.png",
+        "IsHiddenHead": 1,
+        "SurfaceMasterId": "Surface_MTZMEShi_2",
+        "Type": 5,
+        "UnlockDesc": "MTZMEShi_2_HeadUnlock",
+        "Zoom": 0.5
+    },
     "Head_MZGXiu": {
         "HeadDesc": "HeroBase_Desc_MZGXiu",
         "HeadName": "MZGXiu_HeadName",
@@ -910,6 +921,17 @@
         "SurfaceMasterId": "",
         "Type": 1,
         "UnlockDesc": "MZGXiu_HeadUnlock",
+        "Zoom": 0.5
+    },
+    "Head_MZu": {
+        "HeadDesc": "HeroBase_Desc_MZu",
+        "HeadName": "MZu_HeadName",
+        "HeroMasterId": "MZu",
+        "IconPath": "asset/heros/lmmo/battlepic_lmmo.png",
+        "IsHiddenHead": 1,
+        "SurfaceMasterId": "",
+        "Type": 1,
+        "UnlockDesc": "MZu_HeadUnlock",
         "Zoom": 0.5
     },
     "Head_Master_BiLei": {
@@ -1269,7 +1291,7 @@
         "HeadName": "SRen_2_HeadName",
         "HeroMasterId": "SRen",
         "IconPath": "asset/heros/alna_toy/battlepic_alna_toy.png",
-        "IsHiddenHead": 1,
+        "IsHiddenHead": 0,
         "SurfaceMasterId": "Surface_SRen_2",
         "Type": 5,
         "UnlockDesc": "SRen_2_HeadUnlock",
@@ -1528,6 +1550,17 @@
         "UnlockDesc": "YKDMLai_HeadUnlock",
         "Zoom": 0.5
     },
+    "Head_YKDMLai_2": {
+        "HeadDesc": "Surface_YKDMLai_pirate_Desc",
+        "HeadName": "YKDMLai_2_HeadName",
+        "HeroMasterId": "YKDMLai",
+        "IconPath": "asset/heros/xti_pirate/battlepic_xti_pirate.png",
+        "IsHiddenHead": 1,
+        "SurfaceMasterId": "Surface_YKDMLai_2",
+        "Type": 5,
+        "UnlockDesc": "YKDMLai_2_HeadUnlock",
+        "Zoom": 0.5
+    },
     "Head_YLMGZhu": {
         "HeadDesc": "HeroBase_Desc_YLMGZhu",
         "HeadName": "YLMGZhu_HeadName",
@@ -1649,6 +1682,17 @@
         "UnlockDesc": "YXNMei_HeadUnlock",
         "Zoom": 0.5
     },
+    "Head_YXZChun": {
+        "HeadDesc": "HeroBase_Desc_YXZChun",
+        "HeadName": "YXZChun_HeadName",
+        "HeroMasterId": "YXZChun",
+        "IconPath": "asset/heros/qjwan/battlepic_qjwan.png",
+        "IsHiddenHead": 1,
+        "SurfaceMasterId": "",
+        "Type": 1,
+        "UnlockDesc": "YXZChun_HeadUnlock",
+        "Zoom": 0.5
+    },
     "Head_YYing": {
         "HeadDesc": "HeroBase_Desc_YYing",
         "HeadName": "YYing_HeadName",
@@ -1757,6 +1801,17 @@
         "SurfaceMasterId": "",
         "Type": 4,
         "UnlockDesc": "HeroAwaken_DCJKang",
+        "Zoom": 1.0
+    },
+    "HeroAwaken_FLYDe": {
+        "HeadDesc": "HeroAwaken_FLYDe_Desc",
+        "HeadName": "HeroAwaken_FLYDe_1_Name",
+        "HeroMasterId": "FLYDe",
+        "IconPath": "asset/heros/xge/battlepic_xge_awaken.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "",
+        "Type": 4,
+        "UnlockDesc": "HeroAwaken_FLYDe",
         "Zoom": 1.0
     },
     "HeroAwaken_JNLong": {

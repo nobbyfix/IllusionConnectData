@@ -1289,6 +1289,11 @@ local modules = {
 							res = "asset/ui/ShowSomeWordTips.csb",
 							name = "ShowSomeWordTipsView",
 							mediator = "ShowSomeWordTipsMediator"
+						},
+						{
+							res = "asset/ui/ComposeToEquipTips.csb",
+							name = "ComposeToEquipTipsView",
+							mediator = "ComposeToEquipTipsMediator"
 						}
 					}
 				}
@@ -1402,36 +1407,6 @@ local modules = {
 							res = "asset/ui/StagePracticeLose.csb",
 							name = "StagePracticeLoseView",
 							mediator = "StagePracticeLoseMediator"
-						},
-						{
-							res = "asset/ui/StagePracticeResetTips.csb",
-							name = "StagePracticeResetTipsView",
-							mediator = "StagePracticeResetTipsMediator"
-						},
-						{
-							res = "asset/ui/StagePracticeRank.csb",
-							name = "StagePracticeRankView",
-							mediator = "StagePracticeRankMediator"
-						},
-						{
-							res = "asset/ui/StagePracticeMap.csb",
-							name = "StagePracticeView",
-							mediator = "StagePracticeMapMediator"
-						},
-						{
-							res = "asset/ui/StagePracticePoint.csb",
-							name = "StagePracticePointView",
-							mediator = "StagePracticePointMediator"
-						},
-						{
-							res = "asset/ui/StagePracticeHelpTip.csb",
-							name = "StagePracticeHelpTipView",
-							mediator = "StagePracticeHelpTipMediator"
-						},
-						{
-							res = "asset/ui/RewardBox.csb",
-							name = "StagePracticeBoxTipView",
-							mediator = "StagePracticeBoxTipMediator"
 						},
 						{
 							res = "asset/ui/StagePracticeComment.csb",

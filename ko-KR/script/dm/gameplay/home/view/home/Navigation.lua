@@ -85,18 +85,27 @@ function Navigation:updataTopNode()
 	end
 
 	local mPassNode = self._topLayout:getChildByFullName("mPassNode")
-	local anim = cc.MovieClip:create("m1_tongxingzhengrukou")
 
-	anim:addEndCallback(function (cid, mc)
-		anim:stop()
-	end)
+	if CommonUtils.GetSwitch("fn_pass") then
+		mPassNode:setVisible(true)
 
-	local passMovie = mPassNode:getChildByFullName("mMovieClip")
+		local anim = cc.MovieClip:create("m1_tongxingzhengrukou")
 
-	passMovie:removeAllChildren()
-	anim:addTo(passMovie):center(passMovie:getContentSize()):offset(0, 10)
+		anim:addEndCallback(function (cid, mc)
+			anim:stop()
+		end)
 
-	self._topNodes[#self._topNodes + 1] = mPassNode
+		local passMovie = mPassNode:getChildByFullName("mMovieClip")
+
+		passMovie:removeAllChildren()
+		anim:addTo(passMovie):center(passMovie:getContentSize()):offset(0, 10)
+
+		self._topNodes[#self._topNodes + 1] = mPassNode
+
+		return
+	end
+
+	mPassNode:setVisible(false)
 end
 
 function Navigation:openNavigation()

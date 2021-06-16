@@ -33437,6 +33437,126 @@
             }
         ]
     },
+    "hhui_pirate_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MTZMEShi_Pirate_Sword_Hit_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 2
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_MTZMEShi_26",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 3
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 11
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MTZMEShi_Pirate_Sword_Hit_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 11
+            }
+        ]
+    },
+    "hhui_pirate_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_MTZMEShi_27",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MTZMEShi_Pirate_Light_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            }
+        ]
+    },
+    "hhui_pirate_skill3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MTZMEShi_Pirate_Absorb",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_MTZMEShi_28",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 8
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MTZMEShi_Pirate_Light_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 18
+            }
+        ]
+    },
     "hqbfang_skill1": {
         "events": [
             {
@@ -34686,6 +34806,162 @@
                     }
                 ],
                 "f": 26
+            }
+        ]
+    },
+    "lmmo_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_MZu_26",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MZu_Water_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 8
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 11
+            }
+        ]
+    },
+    "lmmo_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MZu_Whoosh_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_MZu_27",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MZu_Water_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 18
+            }
+        ]
+    },
+    "lmmo_skill3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_MZu_28",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MZu_Whoosh_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 11
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MZu_Water_Shot",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 26
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MZu_Water_Hit_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 43
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MZu_Water_Hit_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 47
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MZu_Water_Hit_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 53
             }
         ]
     },
@@ -36302,6 +36578,266 @@
                     }
                 ],
                 "f": 28
+            }
+        ]
+    },
+    "qjwan_laohu_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_LHu_Fist_Hit",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 7
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_LHu_Body_Move_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 9
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 13
+            }
+        ]
+    },
+    "qjwan_laohu_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_LHu_Roar",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 16
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 33
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_LHu_Body_Move_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 57
+            }
+        ]
+    },
+    "qjwan_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_YXiu_Scroll_Hit_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 2
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_YXZChun_26",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 4
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 10
+            }
+        ]
+    },
+    "qjwan_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_YXZChun_27",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 5
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_YXiu_Scroll_Spin_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 5
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_YXiu_Scroll_Whoosh",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 9
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 15
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_YXiu_Scroll_Hit_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 19
+            }
+        ]
+    },
+    "qjwan_skill3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_YXZChun_28",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_YXiu_Scroll_Throw",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 3
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_YXiu_Scroll_Spin_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 15
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_YXiu_Scroll_Explode",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 19
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 21
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_YXiu_Scroll_Drop",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 35
             }
         ]
     },
@@ -38874,6 +39410,150 @@
                     }
                 ],
                 "f": 41
+            }
+        ]
+    },
+    "xti_pirate_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_YKDMLai_26",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_YKDMLai_Pirate_Hit_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 8
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 11
+            }
+        ]
+    },
+    "xti_pirate_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_YKDMLai_27",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_YKDMLai_Pirate_Hit_4",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 3
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_YKDMLai_Pirate_Whoosh_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 19
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_YKDMLai_Pirate_Whoosh_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 29
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_YKDMLai_Pirate_Hit_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 31
+            }
+        ]
+    },
+    "xti_pirate_skill3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_YKDMLai_28",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_YKDMLai_Pirate_Magic",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_YKDMLai_Pirate_Hit_3",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 31
             }
         ]
     },

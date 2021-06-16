@@ -113,6 +113,7 @@ function ShopBuyNormalMediator:initMember()
 	self._view = self:getView()
 	local mainPanel = self._view:getChildByFullName("main")
 	self._iconLayout = mainPanel:getChildByFullName("icon_panel")
+	self._icon = mainPanel:getChildByFullName("icon")
 	self._sliderPanel = mainPanel:getChildByFullName("slider_panel")
 
 	self._sliderPanel:setTouchEnabled(true)
@@ -245,6 +246,41 @@ function ShopBuyNormalMediator:refreshIcon()
 	end
 
 	icon:addTo(self._iconLayout):center(self._iconLayout:getContentSize())
+	self._icon:removeAllChildren()
+
+	local icon = nil
+	local info = self._itemData:getEquipInfo()
+
+	if info then
+		icon = IconFactory:createRewardEquipIcon(info, {
+			hideLevel = true,
+			showAmount = false,
+			notShowQulity = true,
+			isWidget = true
+		})
+	else
+		icon = IconFactory:createIcon({
+			id = self._itemData:getItemId(),
+			amount = self._itemData:getAmount()
+		}, {
+			hideLevel = true,
+			showAmount = false,
+			notShowQulity = false,
+			isWidget = true
+		})
+
+		icon:setScale(0.5)
+		IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), {
+			code = self._itemData:getItemId(),
+			type = RewardType.kItem,
+			amount = self._itemData:getAmount()
+		}, {
+			swallowTouches = true,
+			needDelay = true
+		})
+	end
+
+	icon:addTo(self._icon):center(self._icon:getContentSize())
 end
 
 function ShopBuyNormalMediator:onClickedRightBtn()
