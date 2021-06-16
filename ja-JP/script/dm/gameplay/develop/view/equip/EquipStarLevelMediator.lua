@@ -104,6 +104,7 @@ function EquipStarLevelMediator:initData(data)
 		self._curExp = 0
 	end
 
+	self._finalExp = self._curExp
 	self._eatExp = 0
 	self._addExp = 0
 	self._isAdd = true
@@ -1050,6 +1051,7 @@ function EquipStarLevelMediator:resetTableView()
 		self._curExp = self._curExp + value.eatCount * value.exp
 	end
 
+	self._finalExp = self._curExp
 	self._addExp = self._curExp
 	self._minusOnceExp = 1
 	self._eatOnceExp = 1
@@ -1113,6 +1115,7 @@ function EquipStarLevelMediator:eatOneItem(sender)
 	local changeExp = data.exp
 	self._eatExp = self._eatExp + changeExp
 	self._addExp = self._addExp + data.exp * changeNum
+	self._finalExp = self._finalExp + data.exp * changeNum
 
 	self:refreshEatNode(sender)
 
@@ -1191,6 +1194,16 @@ end
 
 function EquipStarLevelMediator:refreshEatOnceExp(nextExp)
 	self._eatOnceExp = (nextExp - self._curExp) / self._seeTime
+
+	if nextExp == self._curExp or self._finalExp == self._curExp then
+		if nextExp < self._finalExp and self._finalExp ~= self._curExp then
+			self._eatOnceExp = (self._finalExp - nextExp) / self._seeTime
+		else
+			self:closeProgrScheduler()
+
+			return
+		end
+	end
 
 	if self._eatExp < self._eatOnceExp then
 		self._eatOnceExp = self._eatExp

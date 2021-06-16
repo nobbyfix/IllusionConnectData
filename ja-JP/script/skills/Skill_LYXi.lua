@@ -319,7 +319,7 @@ all.Skill_LYXi_Passive = {
 			entry = prototype.passive
 		})
 		passive = global["[duration]"](this, {
-			0
+			100
 		}, passive)
 		passive = global["[trigger_by]"](this, {
 			"UNIT_AFTER_UNIQUE"
@@ -342,7 +342,7 @@ all.Skill_LYXi_Passive = {
 
 		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
 		exec["@time"]({
-			0
+			100
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
@@ -774,7 +774,7 @@ all.Skill_LYXi_Passive_EX = {
 			entry = prototype.passive
 		})
 		passive = global["[duration]"](this, {
-			0
+			100
 		}, passive)
 		passive = global["[trigger_by]"](this, {
 			"UNIT_AFTER_UNIQUE"
@@ -797,7 +797,7 @@ all.Skill_LYXi_Passive_EX = {
 
 		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
 		exec["@time"]({
-			0
+			100
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global

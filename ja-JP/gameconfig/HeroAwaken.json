@@ -62,6 +62,27 @@
         "StoryLink": "S11S01",
         "SurfaceId": "Surface_DCJKang_Awake"
     },
+    "FLYDe": {
+        "AnimSound": "Se_Effect_Awakening_FLYDe",
+        "Animation": "xge_Awaken",
+        "CutIn": [
+            0,
+            0,
+            1
+        ],
+        "ModelId": "Model_FLYDe_Awake",
+        "Name": "FLYDe_Awake_Name",
+        "NameDesc": "FLYDe_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_FLYDe_UnAwake",
+        "Reward": "HeroAwaken_FLYDe",
+        "ShowHero": "FLYDe",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "FLYDe_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_FLYDe_Awake"
+    },
     "JNLong": {
         "AnimSound": "Se_Effect_Awakening_JNLong",
         "Animation": "fldfa_Awaken",

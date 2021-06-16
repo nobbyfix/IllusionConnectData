@@ -38,7 +38,6 @@ function HeroStarSkillMediator:enterWithData(data)
 	self:initData(data)
 	self:initView()
 	self:createCellHeight()
-	self:initTabView()
 	self:initTableView()
 end
 
@@ -78,7 +77,6 @@ end
 
 function HeroStarSkillMediator:initView()
 	self._main = self:getView():getChildByFullName("main")
-	self._tabpanel = self._main:getChildByFullName("tabpanel")
 	self._cloneSkill = self._main:getChildByFullName("cloneSkill")
 
 	self._cloneSkill:setVisible(false)
@@ -90,42 +88,6 @@ function HeroStarSkillMediator:initView()
 	self._viewPanel = self._main:getChildByFullName("panel")
 end
 
-function HeroStarSkillMediator:initTabView()
-	local config = {
-		onClickTab = function (name, tag)
-			self:onClickTab(name, tag)
-		end
-	}
-	local data = {}
-
-	for i = 1, #self._starAttrs do
-		local star = self._starAttrs[i].star
-		data[#data + 1] = {
-			tabText = (star == 7 and Strings:get("AWAKE_TITLE") or star) .. Strings:get("HEROS_UI5"),
-			tabTextTranslate = Strings:get("UITitle_EN_Jingjie")
-		}
-	end
-
-	config.btnDatas = data
-	local injector = self:getInjector()
-	local widget = TabBtnWidget:createWidgetNode()
-	self._tabBtnWidget = self:autoManageObject(injector:injectInto(TabBtnWidget:new(widget)))
-
-	self._tabBtnWidget:adjustScrollViewSize(0, 634)
-	self._tabBtnWidget:initTabBtn(config, {
-		ignoreSound = true,
-		noCenterBtn = true,
-		ignoreRedSelectState = true
-	})
-	self._tabBtnWidget:selectTabByTag(self._selectTab)
-
-	local view = self._tabBtnWidget:getMainView()
-
-	view:addTo(self._tabpanel):posite(20, 4)
-	view:setLocalZOrder(1100)
-	view:setScale(0.7)
-end
-
 function HeroStarSkillMediator:initTableView()
 	self._cellWidth = self._cloneSkill:getContentSize().width
 
@@ -134,7 +96,6 @@ function HeroStarSkillMediator:initTableView()
 			return
 		end
 
-		local oldTab = self._selectTab
 		local maxOffset = view:minContainerOffset().y
 		local y = view:getContentOffset().y
 
@@ -152,10 +113,6 @@ function HeroStarSkillMediator:initTableView()
 					self._selectTab = index
 				end
 			end
-		end
-
-		if oldTab ~= self._selectTab then
-			self._tabBtnWidget:selectTabByTag(self._selectTab)
 		end
 	end
 
@@ -291,11 +248,11 @@ function HeroStarSkillMediator:createCellHeight()
 
 			local sizeH = math.max(97, label:getContentSize().height + 20)
 
-			bg:setContentSize(cc.size(573, sizeH))
+			bg:setContentSize(cc.size(bg:getContentSize().width, sizeH))
 
 			height = sizeH - 20
 
-			node:setContentSize(cc.size(559, height))
+			node:setContentSize(cc.size(node:getContentSize().width, height))
 			icon:setPositionY(height / 2 + 2)
 			name:setPositionY(height / 2 + 3)
 			desc:setPositionY(height / 2 + 5)
@@ -329,15 +286,6 @@ function HeroStarSkillMediator:refreshView()
 
 		self._tableView:setContentOffset(cc.p(0, offsetY))
 	end
-end
-
-function HeroStarSkillMediator:onClickTab(name, tag)
-	self._ignoreSlide = true
-	self._selectTab = tag
-
-	self:refreshView()
-
-	self._ignoreSlide = false
 end
 
 function HeroStarSkillMediator:onClickBack()

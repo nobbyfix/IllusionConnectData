@@ -336,6 +336,13 @@ DebugBoxMainIndex = {
 				{
 					"属性计算展示"
 				}
+			},
+			{
+				"音频测试",
+				{
+					"战斗音频",
+					"其他音频"
+				}
 			}
 		}
 
@@ -854,6 +861,14 @@ DebugBoxMainIndex = {
 			{
 				"设置血量增加倍数",
 				"HealthMultiBox"
+			},
+			{
+				"战斗音频",
+				"BattleSoundBox"
+			},
+			{
+				"其他音频",
+				"OtherSoundBox"
 			},
 			{
 				"开启/关闭打印实时属性",

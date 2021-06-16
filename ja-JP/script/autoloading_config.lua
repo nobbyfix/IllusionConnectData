@@ -426,6 +426,11 @@ local mappings = {
 		name = "SourceMediator",
 		type = "@C"
 	},
+	ComposeToEquipTipsMediator = {
+		url = "dm.gameplay.popup.ComposeToEquipTipsMediator",
+		name = "ComposeToEquipTipsMediator",
+		type = "@C"
+	},
 	NewSystemUnlockMediator = {
 		url = "dm.gameplay.popup.NewSystemUnlockMediator",
 		name = "NewSystemUnlockMediator",

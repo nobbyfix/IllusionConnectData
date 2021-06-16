@@ -161,8 +161,14 @@ function BattleCamera:focusOn(x, y, scale, time)
 		local finalOffsetX = x - cx
 		local offset = (1386 * scale - display.width) / 2
 
-		if s0 < scale and offset < math.abs(finalOffsetX) then
+		if s0 <= scale and offset < math.abs(finalOffsetX) then
 			finalOffsetX = (x - cx) / math.abs(x - cx) * offset / scale
+		end
+
+		local offsetRealX = finalOffsetX
+
+		if self._deltaX and self._deltaX == finalOffsetX then
+			finalOffsetX = 0
 		end
 
 		local action = {
@@ -176,6 +182,7 @@ function BattleCamera:focusOn(x, y, scale, time)
 			current = action
 		}
 		self._focusAction = action
+		self._deltaX = offsetRealX
 	end
 end
 

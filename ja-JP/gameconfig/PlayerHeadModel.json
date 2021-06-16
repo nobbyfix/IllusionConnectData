@@ -659,6 +659,18 @@
         "UnlockDesc": "JSTDing_HeadUnlock",
         "Zoom": 0.5
     },
+    "Head_JSTDing_2": {
+        "HeadDesc": "Surface_JSTDing_2_Desc",
+        "HeadMove": "",
+        "HeadName": "JSTDing_2_HeadName",
+        "HeroMasterId": "JSTDing",
+        "IconPath": "asset/heros/JSTDing_YZhuang/battlepic_JSTDing_YZhuang.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "Surface_JSTDing_2",
+        "Type": 5,
+        "UnlockDesc": "JSTDing_2_HeadUnlock",
+        "Zoom": 0.5
+    },
     "Head_KEDGong": {
         "HeadDesc": "HeroBase_Desc_KEDGong",
         "HeadMove": "",
@@ -947,6 +959,18 @@
         "UnlockDesc": "MTZMEShi_HeadUnlock",
         "Zoom": 0.5
     },
+    "Head_MTZMEShi_2": {
+        "HeadDesc": "Surface_MTZMEShi_pirate_Desc",
+        "HeadMove": "",
+        "HeadName": "MTZMEShi_2_HeadName",
+        "HeroMasterId": "MTZMEShi",
+        "IconPath": "asset/heros/hhui_pirate/battlepic_hhui_pirate.png",
+        "IsHiddenHead": 1,
+        "SurfaceMasterId": "Surface_MTZMEShi_2",
+        "Type": 5,
+        "UnlockDesc": "MTZMEShi_2_HeadUnlock",
+        "Zoom": 0.5
+    },
     "Head_MZGXiu": {
         "HeadDesc": "HeroBase_Desc_MZGXiu",
         "HeadMove": "",
@@ -957,6 +981,18 @@
         "SurfaceMasterId": "",
         "Type": 1,
         "UnlockDesc": "MZGXiu_HeadUnlock",
+        "Zoom": 0.5
+    },
+    "Head_MZu": {
+        "HeadDesc": "HeroBase_Desc_MZu",
+        "HeadMove": "",
+        "HeadName": "MZu_HeadName",
+        "HeroMasterId": "MZu",
+        "IconPath": "asset/heros/lmmo/battlepic_lmmo.png",
+        "IsHiddenHead": 1,
+        "SurfaceMasterId": "",
+        "Type": 1,
+        "UnlockDesc": "MZu_HeadUnlock",
         "Zoom": 0.5
     },
     "Head_Master_BiLei": {
@@ -1544,6 +1580,18 @@
         "UnlockDesc": "WEDe_HeadUnlock",
         "Zoom": 0.5
     },
+    "Head_WEDe_2": {
+        "HeadDesc": "Surface_WEDe_2_Desc",
+        "HeadMove": "",
+        "HeadName": "WEDe_2_HeadName",
+        "HeroMasterId": "WEDe",
+        "IconPath": "asset/heros/WEDe_YZhuang/battlepic_WEDe_YZhuang.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "Surface_WEDe_2",
+        "Type": 5,
+        "UnlockDesc": "WEDe_2_HeadUnlock",
+        "Zoom": 0.5
+    },
     "Head_WTXXuan": {
         "HeadDesc": "HeroBase_Desc_WTXXuan",
         "HeadMove": "",
@@ -1676,6 +1724,18 @@
         "UnlockDesc": "YKDMLai_HeadUnlock",
         "Zoom": 0.5
     },
+    "Head_YKDMLai_2": {
+        "HeadDesc": "Surface_YKDMLai_pirate_Desc",
+        "HeadMove": "",
+        "HeadName": "YKDMLai_2_HeadName",
+        "HeroMasterId": "YKDMLai",
+        "IconPath": "asset/heros/xti_pirate/battlepic_xti_pirate.png",
+        "IsHiddenHead": 1,
+        "SurfaceMasterId": "Surface_YKDMLai_2",
+        "Type": 5,
+        "UnlockDesc": "YKDMLai_2_HeadUnlock",
+        "Zoom": 0.5
+    },
     "Head_YLMGZhu": {
         "HeadDesc": "HeroBase_Desc_YLMGZhu",
         "HeadMove": "",
@@ -1782,6 +1842,18 @@
         "SurfaceMasterId": "",
         "Type": 1,
         "UnlockDesc": "YXNMei_HeadUnlock",
+        "Zoom": 0.5
+    },
+    "Head_YXZChun": {
+        "HeadDesc": "HeroBase_Desc_YXZChun",
+        "HeadMove": "",
+        "HeadName": "YXZChun_HeadName",
+        "HeroMasterId": "YXZChun",
+        "IconPath": "asset/heros/qjwan/battlepic_qjwan.png",
+        "IsHiddenHead": 1,
+        "SurfaceMasterId": "",
+        "Type": 1,
+        "UnlockDesc": "YXZChun_HeadUnlock",
         "Zoom": 0.5
     },
     "Head_YYing": {
@@ -1902,6 +1974,18 @@
         "SurfaceMasterId": "",
         "Type": 4,
         "UnlockDesc": "HeroAwaken_DCJKang",
+        "Zoom": 1.0
+    },
+    "HeroAwaken_FLYDe": {
+        "HeadDesc": "HeroAwaken_FLYDe_Desc",
+        "HeadMove": "",
+        "HeadName": "HeroAwaken_FLYDe_1_Name",
+        "HeroMasterId": "FLYDe",
+        "IconPath": "asset/heros/xge/battlepic_xge_awaken.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "",
+        "Type": 4,
+        "UnlockDesc": "HeroAwaken_FLYDe",
         "Zoom": 1.0
     },
     "HeroAwaken_JNLong": {

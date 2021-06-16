@@ -266,7 +266,13 @@ function ActivityListMediator:setupActivity(item, data)
 			end
 		end)
 
-		local localDate = TimeUtil:localDate("%Y-%m-%d %H:%M:%S", self._activitySystem:getActivityCalendarEndTime(data))
+		local endTime = self._activitySystem:getActivityCalendarEndTime(data)
+		local curstamp = TimeUtil:timeByRemoteDate()
+		local limitDay = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Clender_LongTime", "content")
+
+		timeText:setVisible(limitDay >= (endTime - curstamp) / 86400)
+
+		local localDate = TimeUtil:localDate("%Y-%m-%d %H:%M:%S", endTime)
 
 		timeText:setString(Strings:get("ActivityCalendar_TimeEnd_Text", {
 			time = localDate

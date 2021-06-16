@@ -1135,6 +1135,1202 @@
             }
         ]
     },
+    "Cancer1_T01N01M01": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Cancer1_T01N01M01_TeamInfo",
+        "BattleFactor": [
+            16241,
+            16241,
+            16241
+        ],
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardCancer1_T01N01M01",
+        "EnemyMaster": "Cancer1_T01N01M01W01_Master_01",
+        "NPC": "",
+        "Name": "Cancer1_T01N01M01_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "Cancer1_T01N01M01_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Cancer1_T01N01M01_reward"
+            }
+        ]
+    },
+    "Cancer1_T01N01M02": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Cancer1_T01N01M02_TeamInfo",
+        "BattleFactor": [
+            16241,
+            16241,
+            16241
+        ],
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardCancer1_T01N01M02",
+        "EnemyMaster": "Cancer1_T01N01M02W01_Master_01",
+        "NPC": "",
+        "Name": "Cancer1_T01N01M02_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "Cancer1_T01N01M02_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5,
+            "Pass": "Cancer1_T01N01M01"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Cancer1_T01N01M02_reward"
+            }
+        ]
+    },
+    "Cancer1_T01N01M03": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Cancer1_T01N01M03_TeamInfo",
+        "BattleFactor": [
+            16241,
+            16241,
+            16241
+        ],
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardCancer1_T01N01M03",
+        "EnemyMaster": "Cancer1_T01N01M03W01_Master_01",
+        "NPC": "",
+        "Name": "Cancer1_T01N01M03_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "Cancer1_T01N01M03_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5,
+            "Pass": "Cancer1_T01N01M02"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Cancer1_T01N01M03_reward"
+            }
+        ]
+    },
+    "Cancer1_T01N01M04": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Cancer1_T01N01M04_TeamInfo",
+        "BattleFactor": [
+            19494,
+            19494,
+            19494
+        ],
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardCancer1_T01N01M04",
+        "EnemyMaster": "Cancer1_T01N01M04W01_Master_01",
+        "NPC": "",
+        "Name": "Cancer1_T01N01M04_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "Cancer1_T01N01M04_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5,
+            "Pass": "Cancer1_T01N01M03"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Cancer1_T01N01M04_reward"
+            }
+        ]
+    },
+    "Cancer1_T01N01M05": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Cancer1_T01N01M05_TeamInfo",
+        "BattleFactor": [
+            19494,
+            19494,
+            19494
+        ],
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardCancer1_T01N01M05",
+        "EnemyMaster": "Cancer1_T01N01M05W01_Master_01",
+        "NPC": "",
+        "Name": "Cancer1_T01N01M05_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "Cancer1_T01N01M05_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5,
+            "Pass": "Cancer1_T01N01M04"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Cancer1_T01N01M05_reward"
+            }
+        ]
+    },
+    "Cancer1_T01N01M06": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Cancer1_T01N01M06_TeamInfo",
+        "BattleFactor": [
+            19494,
+            19494,
+            19494
+        ],
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardCancer1_T01N01M06",
+        "EnemyMaster": "Cancer1_T01N01M06W01_Master_01",
+        "NPC": [
+            {
+                "forbidid": "BLTu",
+                "id": "Cancer1_T01N01M06_Protect",
+                "pos": 5
+            }
+        ],
+        "Name": "Cancer1_T01N01M06_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [
+            6,
+            7,
+            9
+        ],
+        "Showreward": "Cancer1_T01N01M06_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5,
+            "Pass": "Cancer1_T01N01M05"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideA"
+            },
+            {
+                "factor": {
+                    "count": 1,
+                    "unitTag": "Cancer1_T01N01M06PROTECT"
+                },
+                "type": "KeyUnitsDied",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Cancer1_T01N01M06_reward"
+            }
+        ]
+    },
+    "Cancer1_T01N01M07": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Cancer1_T01N01M07_TeamInfo",
+        "BattleFactor": [
+            22748,
+            22748,
+            22748
+        ],
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardCancer1_T01N01M07",
+        "EnemyMaster": "Cancer1_T01N01M07W01_Master_01",
+        "NPC": "",
+        "Name": "Cancer1_T01N01M07_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "Cancer1_T01N01M07_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5,
+            "Pass": "Cancer1_T01N01M06"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Cancer1_T01N01M07_reward"
+            }
+        ]
+    },
+    "Cancer1_T01N01M08": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Cancer1_T01N01M08_TeamInfo",
+        "BattleFactor": [
+            22748,
+            22748,
+            22748
+        ],
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardCancer1_T01N01M08",
+        "EnemyMaster": "Cancer1_T01N01M08W01_Master_01",
+        "NPC": "",
+        "Name": "Cancer1_T01N01M08_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [
+            3,
+            6
+        ],
+        "Showreward": "Cancer1_T01N01M08_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5,
+            "Pass": "Cancer1_T01N01M07"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Cancer1_T01N01M08_reward"
+            }
+        ]
+    },
+    "Cancer1_T01N01M09": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Cancer1_T01N01M09_TeamInfo",
+        "BattleFactor": [
+            22748,
+            22748,
+            22748
+        ],
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardCancer1_T01N01M09",
+        "EnemyMaster": "Cancer1_T01N01M09W01_Master_01",
+        "NPC": "",
+        "Name": "Cancer1_T01N01M09_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "Cancer1_T01N01M09_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5,
+            "Pass": "Cancer1_T01N01M08"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Cancer1_T01N01M09_reward"
+            }
+        ]
+    },
+    "Cancer1_T01N01M10": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Cancer1_T01N01M10_TeamInfo",
+        "BattleFactor": [
+            26200,
+            26200,
+            26200
+        ],
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardCancer1_T01N01M10",
+        "EnemyMaster": "Cancer1_T01N01M10W01_Master_01",
+        "NPC": "",
+        "Name": "Cancer1_T01N01M10_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "Cancer1_T01N01M10_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5,
+            "Pass": "Cancer1_T01N01M09"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Cancer1_T01N01M10_reward"
+            }
+        ]
+    },
+    "Cancer1_T01N01M11": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Cancer1_T01N01M11_TeamInfo",
+        "BattleFactor": [
+            26200,
+            26200,
+            26200
+        ],
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardCancer1_T01N01M11",
+        "EnemyMaster": "Cancer1_T01N01M11W01_Master_01",
+        "NPC": "",
+        "Name": "Cancer1_T01N01M11_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "Cancer1_T01N01M11_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5,
+            "Pass": "Cancer1_T01N01M10"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Cancer1_T01N01M11_reward"
+            }
+        ]
+    },
+    "Cancer1_T01N01M12": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Cancer1_T01N01M12_TeamInfo",
+        "BattleFactor": [
+            26200,
+            26200,
+            26200
+        ],
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardCancer1_T01N01M12",
+        "EnemyMaster": "Cancer1_T01N01M12W01_Master_01",
+        "NPC": "",
+        "Name": "Cancer1_T01N01M12_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "Cancer1_T01N01M12_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5,
+            "Pass": "Cancer1_T01N01M11"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Cancer1_T01N01M12_reward"
+            }
+        ]
+    },
+    "Cancer2_T01N01M01": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Cancer2_T01N01M01_TeamInfo",
+        "BattleFactor": [
+            16241,
+            16241,
+            16241
+        ],
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardCancer2_T01N01M01",
+        "EnemyMaster": "Cancer2_T01N01M01W01_Master_01",
+        "NPC": "",
+        "Name": "Cancer2_T01N01M01_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "Cancer2_T01N01M01_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Cancer2_T01N01M01_reward"
+            }
+        ]
+    },
+    "Cancer2_T01N01M02": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Cancer2_T01N01M02_TeamInfo",
+        "BattleFactor": [
+            16241,
+            16241,
+            16241
+        ],
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardCancer2_T01N01M02",
+        "EnemyMaster": "Cancer2_T01N01M02W01_Master_01",
+        "NPC": [
+            {
+                "forbidid": "YKDMLai",
+                "id": "Cancer2_T01N01M02_Protect",
+                "pos": 9
+            }
+        ],
+        "Name": "Cancer2_T01N01M02_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [
+            4,
+            6
+        ],
+        "Showreward": "Cancer2_T01N01M02_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5,
+            "Pass": "Cancer2_T01N01M01"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            },
+            {
+                "factor": {
+                    "count": 1,
+                    "unitTag": "Cancer2_T01N01M02PROTECT"
+                },
+                "type": "KeyUnitsDied",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Cancer2_T01N01M02_reward"
+            }
+        ]
+    },
+    "Cancer2_T01N01M03": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Cancer2_T01N01M03_TeamInfo",
+        "BattleFactor": [
+            16241,
+            16241,
+            16241
+        ],
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardCancer2_T01N01M03",
+        "EnemyMaster": "Cancer2_T01N01M03W01_Master_01",
+        "NPC": "",
+        "Name": "Cancer2_T01N01M03_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "Cancer2_T01N01M03_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5,
+            "Pass": "Cancer2_T01N01M02"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Cancer2_T01N01M03_reward"
+            }
+        ]
+    },
+    "Cancer2_T01N01M04": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Cancer2_T01N01M04_TeamInfo",
+        "BattleFactor": [
+            19494,
+            19494,
+            19494
+        ],
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardCancer2_T01N01M04",
+        "EnemyMaster": "Cancer2_T01N01M04W01_Master_01",
+        "NPC": [
+            {
+                "forbidid": "MLYTLSha",
+                "id": "Cancer2_T01N01M04_Protect",
+                "pos": 9
+            }
+        ],
+        "Name": "Cancer2_T01N01M04_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [
+            1,
+            3
+        ],
+        "Showreward": "Cancer2_T01N01M04_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5,
+            "Pass": "Cancer2_T01N01M03"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            },
+            {
+                "factor": {
+                    "count": 1,
+                    "unitTag": "Cancer2_T01N01M04PROTECT"
+                },
+                "type": "KeyUnitsDied",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Cancer2_T01N01M04_reward"
+            }
+        ]
+    },
+    "Cancer2_T01N01M05": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Cancer2_T01N01M05_TeamInfo",
+        "BattleFactor": [
+            19494,
+            19494,
+            19494
+        ],
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardCancer2_T01N01M05",
+        "EnemyMaster": "Cancer2_T01N01M05W01_Master_01",
+        "NPC": "",
+        "Name": "Cancer2_T01N01M05_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [
+            1,
+            3
+        ],
+        "Showreward": "Cancer2_T01N01M05_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5,
+            "Pass": "Cancer2_T01N01M04"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Cancer2_T01N01M05_reward"
+            }
+        ]
+    },
+    "Cancer2_T01N01M06": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Cancer2_T01N01M06_TeamInfo",
+        "BattleFactor": [
+            19494,
+            19494,
+            19494
+        ],
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardCancer2_T01N01M06",
+        "EnemyMaster": "Cancer2_T01N01M06W01_Master_01",
+        "NPC": "",
+        "Name": "Cancer2_T01N01M06_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "Cancer2_T01N01M06_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5,
+            "Pass": "Cancer2_T01N01M05"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Cancer2_T01N01M06_reward"
+            }
+        ]
+    },
+    "Cancer2_T01N01M07": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Cancer2_T01N01M07_TeamInfo",
+        "BattleFactor": [
+            22748,
+            22748,
+            22748
+        ],
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardCancer2_T01N01M07",
+        "EnemyMaster": "Cancer2_T01N01M07W01_Master_01",
+        "NPC": "",
+        "Name": "Cancer2_T01N01M07_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "Cancer2_T01N01M07_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5,
+            "Pass": "Cancer2_T01N01M06"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Cancer2_T01N01M07_reward"
+            }
+        ]
+    },
+    "Cancer2_T01N01M08": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Cancer2_T01N01M08_TeamInfo",
+        "BattleFactor": [
+            22748,
+            22748,
+            22748
+        ],
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardCancer2_T01N01M08",
+        "EnemyMaster": "Cancer2_T01N01M08W01_Master_01",
+        "NPC": "",
+        "Name": "Cancer2_T01N01M08_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "Cancer2_T01N01M08_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5,
+            "Pass": "Cancer2_T01N01M07"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Cancer2_T01N01M08_reward"
+            }
+        ]
+    },
+    "Cancer2_T01N01M09": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Cancer2_T01N01M09_TeamInfo",
+        "BattleFactor": [
+            22748,
+            22748,
+            22748
+        ],
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardCancer2_T01N01M09",
+        "EnemyMaster": "Cancer2_T01N01M09W01_Master_01",
+        "NPC": [
+            {
+                "forbidid": "FEMSi",
+                "id": "Cancer2_T01N01M09_Protect",
+                "pos": 9
+            }
+        ],
+        "Name": "Cancer2_T01N01M09_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [
+            5
+        ],
+        "Showreward": "Cancer2_T01N01M09_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5,
+            "Pass": "Cancer2_T01N01M08"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            },
+            {
+                "factor": {
+                    "count": 1,
+                    "unitTag": "Cancer2_T01N01M09PROTECT"
+                },
+                "type": "KeyUnitsDied",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Cancer2_T01N01M09_reward"
+            }
+        ]
+    },
+    "Cancer2_T01N01M10": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Cancer2_T01N01M10_TeamInfo",
+        "BattleFactor": [
+            26200,
+            26200,
+            26200
+        ],
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardCancer2_T01N01M10",
+        "EnemyMaster": "Cancer2_T01N01M10W01_Master_01",
+        "NPC": [
+            {
+                "forbidid": "WEDe",
+                "id": "Cancer2_T01N01M10_Protect",
+                "pos": 2
+            }
+        ],
+        "Name": "Cancer2_T01N01M10_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [
+            4,
+            5
+        ],
+        "Showreward": "Cancer2_T01N01M10_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5,
+            "Pass": "Cancer2_T01N01M09"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            },
+            {
+                "factor": {
+                    "count": 1,
+                    "unitTag": "Cancer2_T01N01M10PROTECT"
+                },
+                "type": "KeyUnitsDied",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Cancer2_T01N01M10_reward"
+            }
+        ]
+    },
+    "Cancer2_T01N01M11": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Cancer2_T01N01M11_TeamInfo",
+        "BattleFactor": [
+            26200,
+            26200,
+            26200
+        ],
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardCancer2_T01N01M11",
+        "EnemyMaster": "Cancer2_T01N01M11W01_Master_01",
+        "NPC": "",
+        "Name": "Cancer2_T01N01M11_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [
+            2,
+            5
+        ],
+        "Showreward": "Cancer2_T01N01M11_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5,
+            "Pass": "Cancer2_T01N01M10"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Cancer2_T01N01M11_reward"
+            }
+        ]
+    },
+    "Cancer2_T01N01M12": {
+        "BGM": [
+            "Mus_Battle_MusicFestival",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_20",
+        "BattleDesc": "DreamChallenge_TimeLimit_Cancer2_T01N01M12_TeamInfo",
+        "BattleFactor": [
+            26200,
+            26200,
+            26200
+        ],
+        "BattleNumLimit": 10,
+        "BlockBattleConfig": "DreamChallengeBattle_N1",
+        "BossRound": 1,
+        "CombatNeed": 263379,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_TimeLimit_DC",
+        "EnemyCard": "CardCancer2_T01N01M12",
+        "EnemyMaster": "Cancer2_T01N01M12W01_Master_01",
+        "NPC": "",
+        "Name": "Cancer2_T01N01M12_Name",
+        "OpenFAC": 1,
+        "Pic": "njt3_img_xz_rk",
+        "PointHead": "Model_NXYYi",
+        "PositionLimit": [],
+        "Showreward": "Cancer2_T01N01M12_reward",
+        "StoryLink": "",
+        "UnlockCondition": {
+            "LEVEL": 5,
+            "Pass": "Cancer2_T01N01M11"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "reward": [
+            {
+                "Type": "Item",
+                "value": "Cancer2_T01N01M12_reward"
+            }
+        ]
+    },
     "DreamChallengeBattle_T01N01M01": {
         "BGM": [
             "Mus_Battle_Danger_Boss",

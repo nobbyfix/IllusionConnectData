@@ -64,6 +64,10 @@ function ClubNewTechnologyMediator:initeNode()
 	self._bubble = self._view:getChildByName("Panel_bubble")
 
 	self._bubble:setVisible(false)
+	self._bubble:setSwallowTouches(false)
+	self._bubble:addClickEventListener(function ()
+		self._bubble:setVisible(false)
+	end)
 end
 
 function ClubNewTechnologyMediator:setupTopInfoWidget()
@@ -443,12 +447,8 @@ function ClubNewTechnologyMediator:onDonateClick(pointId, techId)
 end
 
 function ClubNewTechnologyMediator:onClickTotalPanel(sender, eventType)
-	if eventType == ccui.TouchEventType.began then
+	if eventType == ccui.TouchEventType.ended and not self._bubble:isVisible() then
 		self._bubble:setVisible(true)
-	elseif eventType == ccui.TouchEventType.ended then
-		self._bubble:setVisible(false)
-	elseif eventType == ccui.TouchEventType.canceled then
-		self._bubble:setVisible(false)
 	end
 end
 

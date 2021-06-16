@@ -83,14 +83,15 @@ end
 function BattleScreenEffectLayer:setupView()
 end
 
-function BattleScreenEffectLayer:pushPortraitEffect(portrait, model, skillDesc, right, isAwakenEffect, awakePortrait)
+function BattleScreenEffectLayer:pushPortraitEffect(portrait, model, skillDesc, right, isAwakenEffect, awakePortrait, offsetId)
 	local params = {
 		portrait = portrait,
 		desc = skillDesc,
 		right = right,
 		key = model,
 		isAwakenEffect = isAwakenEffect,
-		awakePortrait = awakePortrait
+		awakePortrait = awakePortrait,
+		offsetId = offsetId
 	}
 	local listLength = #self._portraitList
 
@@ -121,6 +122,7 @@ function BattleScreenEffectLayer:showPortraitEffect()
 	local desc = params.desc
 	local key = params.key
 	local flag = params.key
+	local offsetId = params.offsetId
 	local isAwakenEffect = params.isAwakenEffect
 	local animName = isAwakenEffect and awakenAnimMap[key] or animMap[key]
 
@@ -154,7 +156,7 @@ function BattleScreenEffectLayer:showPortraitEffect()
 			portrait:setScale(1.5)
 			portrait:addTo(portraitNode)
 
-			local offsetConfig = ConfigReader:getDataByNameIdAndKey("HeroAwaken", modelId, "CutIn")
+			local offsetConfig = ConfigReader:getDataByNameIdAndKey("HeroAwaken", offsetId, "CutIn")
 
 			if offsetConfig then
 				portrait:setScale(offsetConfig[3] or 1.5)

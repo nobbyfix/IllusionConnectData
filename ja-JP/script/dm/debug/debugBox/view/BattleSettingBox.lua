@@ -92,6 +92,58 @@ function HealthMultiBox:onClick(data)
 	}))
 end
 
+BattleSoundBox = class("BattleSoundBox", DebugViewTemplate, _M)
+
+function BattleSoundBox:initialize()
+	self._viewConfig = {
+		{
+			default = "FLYDe",
+			name = "heroId",
+			title = "heroId",
+			type = "Input"
+		},
+		{
+			default = "skill1,skill2,skill3",
+			name = "skills",
+			title = "skills",
+			type = "Input"
+		}
+	}
+end
+
+function BattleSoundBox:onClick(data)
+	GameConfigs.debugHeroId = data.heroId
+
+	if data.skills and data.skills ~= "" then
+		GameConfigs.debugSkills = string.split(data.skills, ",")
+	end
+
+	self:dispatch(ShowTipEvent({
+		tip = "设置完成"
+	}))
+
+	local GuideLauncher = require("dm.battle.guide.GuideLauncher")
+
+	GuideLauncher:enterGuideBattle(self, videoCallback, "GuideBattleDebug")
+end
+
+OtherSoundBox = class("OtherSoundBox", DebugViewTemplate, _M)
+
+function OtherSoundBox:initialize()
+	self._viewConfig = {
+		{
+			default = "Voice_SDTZi_67",
+			name = "soundId",
+			title = "soundId",
+			type = "Input"
+		}
+	}
+end
+
+function OtherSoundBox:onClick(data)
+	AudioEngine:getInstance():playEffect(data.soundId)
+end
+
 DumpUnitPropertiesBox = class("DumpUnitPropertiesBox", DebugViewTemplate, _M)
 
 function DumpUnitPropertiesBox:initialize()

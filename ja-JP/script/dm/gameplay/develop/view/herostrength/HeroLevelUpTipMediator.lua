@@ -84,11 +84,29 @@ function HeroLevelUpTipMediator:createUI(data)
 
 	level1:setString(data.level)
 	level2:setString(level)
+
+	local desNode1 = attrPanel:getChildByFullName("des_1")
+	local desNode2 = attrPanel:getChildByFullName("des_2")
+	local desNode3 = attrPanel:getChildByFullName("des_3")
+	local desNode4 = attrPanel:getChildByFullName("des_4")
+	local desLab1 = attrPanel:getChildByFullName("des_1.text")
+	local desLab2 = attrPanel:getChildByFullName("des_2.text")
+	local desLab3 = attrPanel:getChildByFullName("des_3.text")
+	local desLab4 = attrPanel:getChildByFullName("des_4.text")
+	local extandText1 = attrPanel:getChildByFullName("des_1.extandText")
+	local extandText2 = attrPanel:getChildByFullName("des_2.extandText")
+	local extandText3 = attrPanel:getChildByFullName("des_3.extandText")
+	local extandText4 = attrPanel:getChildByFullName("des_4.extandText")
+	local attrDi1 = attrPanel:getChildByFullName("des_1.Image_6")
+	local attrDi2 = attrPanel:getChildByFullName("des_2.Image_6")
+	local attrDi3 = attrPanel:getChildByFullName("des_3.Image_6")
+	local attrDi4 = attrPanel:getChildByFullName("des_4.Image_6")
+
 	attrPanel:getChildByFullName("des_4"):setVisible(false)
 	attrPanel:setPositionX(637)
-	attrPanel:getChildByFullName("des_1.text"):setString(data.attr.attack[1])
-	attrPanel:getChildByFullName("des_2.text"):setString(data.attr.hp[1])
-	attrPanel:getChildByFullName("des_3.text"):setString(data.attr.defense[1])
+	desLab1:setString(data.attr.attack[1])
+	desLab2:setString(data.attr.hp[1])
+	desLab3:setString(data.attr.defense[1])
 
 	local attack = hero:getAttack()
 	local hp = hero:getHp()
@@ -97,9 +115,24 @@ function HeroLevelUpTipMediator:createUI(data)
 	local addHp = hp - data.attr.hp[1] > 0 and hp - data.attr.hp[1] or 0
 	local addDef = defense - data.attr.defense[1] > 0 and defense - data.attr.defense[1] or 0
 
-	attrPanel:getChildByFullName("des_1.extandText"):setString("+" .. addAtk)
-	attrPanel:getChildByFullName("des_2.extandText"):setString("+" .. addHp)
-	attrPanel:getChildByFullName("des_3.extandText"):setString("+" .. addDef)
+	extandText1:setString("+" .. addAtk)
+	extandText2:setString("+" .. addHp)
+	extandText3:setString("+" .. addDef)
+	desLab1:setPositionX(35)
+	desLab2:setPositionX(35)
+	desLab3:setPositionX(35)
+	extandText1:setPositionX(desLab1:getPositionX() + desLab1:getContentSize().width + 5)
+	extandText2:setPositionX(desLab2:getPositionX() + desLab2:getContentSize().width + 5)
+	extandText3:setPositionX(desLab3:getPositionX() + desLab3:getContentSize().width + 5)
+	attrDi1:setContentSize(cc.size(desLab1:getContentSize().width + extandText1:getContentSize().width + 50, 23))
+	attrDi2:setContentSize(cc.size(desLab2:getContentSize().width + extandText2:getContentSize().width + 50, 23))
+	attrDi3:setContentSize(cc.size(desLab3:getContentSize().width + extandText3:getContentSize().width + 50, 23))
+
+	local starX = (1046 - attrDi1:getContentSize().width - attrDi2:getContentSize().width - attrDi3:getContentSize().width - attrDi4:getContentSize().width) / 2
+
+	desNode1:setPositionX(starX)
+	desNode2:setPositionX(desNode1:getPositionX() + attrDi1:getContentSize().width + 30)
+	desNode3:setPositionX(desNode2:getPositionX() + attrDi2:getContentSize().width + 30)
 end
 
 function HeroLevelUpTipMediator:onTouchMaskLayer()

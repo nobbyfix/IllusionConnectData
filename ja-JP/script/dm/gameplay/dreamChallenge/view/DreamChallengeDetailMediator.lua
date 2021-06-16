@@ -215,9 +215,17 @@ function DreamChallengeDetailMediator:refreshView()
 
 			icon:addTo(rewardPanel):setScale(0.5)
 			icon:setPosition(cc.p(40 + (i - 1) * 70, 35))
-			IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), reward[i], {
-				needDelay = true
-			})
+
+			if RewardSystem:checkIsComposeItem(reward[i]) then
+				IconFactory:bindClickHander(icon, IconTouchHandler:new(self), reward[i], {
+					touchDisappear = true,
+					swallowTouches = true
+				})
+			else
+				IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), reward[i], {
+					needDelay = true
+				})
+			end
 		end
 
 		local title3 = self._detailView:getChildByFullName("title3")
@@ -383,9 +391,17 @@ function DreamChallengeDetailMediator:refreshView()
 
 			icon:addTo(rewardPanel):setScale(0.5)
 			icon:setPosition(cc.p(40 + (i - 1) * 70, 35))
-			IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), reward[i], {
-				needDelay = true
-			})
+
+			if RewardSystem:checkIsComposeItem(reward[i]) then
+				IconFactory:bindClickHander(icon, IconTouchHandler:new(self), reward[i], {
+					touchDisappear = true,
+					swallowTouches = true
+				})
+			else
+				IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), reward[i], {
+					needDelay = true
+				})
+			end
 		end
 
 		local talkText = self._lockView:getChildByFullName("role.Text_43")

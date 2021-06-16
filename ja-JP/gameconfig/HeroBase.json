@@ -6058,7 +6058,7 @@
         "AtkRate": 1.0,
         "AtkWeaken": 0.0,
         "AttackFactor": 1.08,
-        "AwakePic": "",
+        "AwakePic": "portrait_xge_awaken",
         "BaseAttack": 242.0,
         "BaseDefence": 60.0,
         "BaseHp": 936.0,
@@ -6268,7 +6268,8 @@
         "Speed": 50,
         "StarId": "FLYDe_1",
         "SurfaceList": [
-            "Surface_FLYDe_1"
+            "Surface_FLYDe_1",
+            "Surface_FLYDe_Awake"
         ],
         "TeamSpecialVoice": {},
         "TimeType": "\"2002-01-28 19:00:00\"",
@@ -9253,7 +9254,8 @@
         "Speed": 50,
         "StarId": "JSTDing_1",
         "SurfaceList": [
-            "Surface_JSTDing_1"
+            "Surface_JSTDing_1",
+            "Surface_JSTDing_2"
         ],
         "TeamSpecialVoice": {
             "LCYShi": "Voice_JSTDing_33"
@@ -13609,6 +13611,245 @@
         "UneffectRate": 0.0,
         "UnhurtRate": 0.0,
         "UniqueSkill": "Hero_Unique_MZGXiu"
+    },
+    "MZu": {
+        "Absorption": 0.0,
+        "Anger": {
+            "a1": [
+                10,
+                750
+            ],
+            "a2": 320,
+            "a3": 150
+        },
+        "AngerBase": 1000.0,
+        "AngerMax": 1000.0,
+        "AngerRate": 0.0,
+        "AtkRate": 1.0,
+        "AtkWeaken": 0.0,
+        "AttackFactor": 1.04,
+        "AwakePic": "",
+        "BaseAttack": 175.0,
+        "BaseDefence": 60.0,
+        "BaseHp": 767.0,
+        "BaseQualityAttr": "SSR_10_Support",
+        "BaseStar": 3,
+        "BasicPower": 1600,
+        "BattlePassiveSkill": "Hero_PBattle_MZu",
+        "BattlePassiveType": "PBuff",
+        "BeCuredRate": 0.0,
+        "BlockAI": "AIMZu",
+        "BlockRate": 0.0,
+        "BlockStrg": 0.0,
+        "CVName": "MZu_CVName",
+        "Cost": 10,
+        "CounterRate": 0.0,
+        "CritRate": 0.0,
+        "CritStrg": 0.0,
+        "DefRate": 1.0,
+        "DefWeaken": 0.0,
+        "DefenceFactor": 1.0,
+        "Desc": "HeroBase_Desc_MZu",
+        "DoubleRate": 0.0,
+        "EffectRate": 0.0,
+        "EffectStrg": 0.0,
+        "EnterCD": 1.0,
+        "Equip": "",
+        "EquipDecs": "",
+        "Flags": [
+            "MZu",
+            "fanwei"
+        ],
+        "GainAnim": "",
+        "HeadTouchDeviation": [
+            0,
+            0
+        ],
+        "HeroShowIntro": "HeroBase_Intro_MZu",
+        "HeroStoryMap": "",
+        "HpFactor": 1.16,
+        "HurtRate": 0.0,
+        "IfHidden": 0,
+        "InnerAttr": [],
+        "ItemId": "IHF_MZu",
+        "KeyPassiveSkill": "",
+        "LevelUpFactor": 1.0,
+        "MVPText": "MVPText_MZu",
+        "MasterRage": 144,
+        "MaxStar": 6,
+        "Name": "HeroBase_Name_MZu",
+        "NormalSkill": "Hero_Normal_MZu",
+        "Party": "WNSXJ",
+        "PassiveCondition": "",
+        "Position": "HeroBase_Position_MZu",
+        "ProudSkill": "Hero_Proud_MZu",
+        "Rareity": 14,
+        "Reflection": 0.0,
+        "RelationList": [],
+        "RoleModel": "Model_MZu",
+        "RtpkPercent": [
+            0,
+            0,
+            0
+        ],
+        "SVPText": "SVPText_MZu",
+        "Sex": 0,
+        "ShortDesc": "HeroBase_ShortDesc_MZu",
+        "SkillCost": {
+            "BattlePassiveSkill": {
+                "amount": [
+                    3,
+                    7,
+                    10,
+                    14,
+                    18,
+                    21,
+                    25,
+                    28,
+                    32,
+                    36
+                ],
+                "code": "ISU_Attack"
+            },
+            "NormalSkill": {
+                "amount": [
+                    3,
+                    6,
+                    9,
+                    12,
+                    15,
+                    18,
+                    21,
+                    24,
+                    27,
+                    30
+                ],
+                "code": "ISU_Attack"
+            },
+            "PassiveSkill1": {
+                "amount": [
+                    3,
+                    7,
+                    10,
+                    14,
+                    18,
+                    21,
+                    25,
+                    28,
+                    32,
+                    36
+                ],
+                "code": "ISU_Attack"
+            },
+            "PassiveSkill2": {
+                "amount": [
+                    3,
+                    7,
+                    10,
+                    14,
+                    18,
+                    21,
+                    25,
+                    28,
+                    32,
+                    36
+                ],
+                "code": "ISU_Attack"
+            },
+            "ProudSkill": {
+                "amount": [
+                    4,
+                    9,
+                    13,
+                    18,
+                    22,
+                    27,
+                    31,
+                    36,
+                    40,
+                    45
+                ],
+                "code": "ISU_Attack"
+            },
+            "UniqueSkill": {
+                "amount": [
+                    6,
+                    12,
+                    18,
+                    24,
+                    30,
+                    36,
+                    42,
+                    48,
+                    54,
+                    60
+                ],
+                "code": "ISU_Attack"
+            }
+        },
+        "SkillRate": 0.15,
+        "Soul": [],
+        "SoundList": [
+            "Voice_MZu_01",
+            "Voice_MZu_35",
+            "Voice_MZu_40_1",
+            "Voice_MZu_40_2",
+            "Voice_MZu_40_3",
+            "Voice_MZu_37",
+            "Voice_MZu_38",
+            "Voice_MZu_39",
+            "Voice_MZu_47",
+            "Voice_MZu_48",
+            "Voice_MZu_50",
+            "Voice_MZu_51",
+            "Voice_MZu_52",
+            "Voice_MZu_53",
+            "Voice_MZu_54",
+            "Voice_MZu_55",
+            "Voice_MZu_56",
+            "Voice_MZu_57",
+            "Voice_MZu_60",
+            "Voice_MZu_07",
+            "Voice_MZu_08",
+            "Voice_MZu_09",
+            "Voice_MZu_58",
+            "Voice_MZu_59",
+            "Voice_MZu_10",
+            "Voice_MZu_11",
+            "Voice_MZu_14",
+            "Voice_MZu_15",
+            "Voice_MZu_16",
+            "Voice_MZu_21",
+            "Voice_MZu_17",
+            "Voice_MZu_18",
+            "Voice_MZu_34",
+            "Voice_MZu_19",
+            "Voice_MZu_63",
+            "Voice_MZu_61",
+            "Voice_MZu_25",
+            "Voice_MZu_26",
+            "Voice_MZu_27",
+            "Voice_MZu_28",
+            "Voice_MZu_29",
+            "Voice_MZu_30",
+            "Voice_MZu_31",
+            "Voice_MZu_32"
+        ],
+        "Speed": 50,
+        "StarId": "MZu_1",
+        "SurfaceList": [
+            "Surface_MZu_1"
+        ],
+        "TeamSpecialVoice": {},
+        "TimeType": "\"2002-01-28 19:00:00\"",
+        "Transform": "",
+        "Type": "Support",
+        "UnblockRate": 0.0,
+        "UncritRate": 0.0,
+        "UndeadRate": 0.0,
+        "UneffectRate": 0.0,
+        "UnhurtRate": 0.0,
+        "UniqueSkill": "Hero_Unique_MZu"
     },
     "NCai": {
         "Absorption": 0.0,
@@ -19913,7 +20154,8 @@
         "Speed": 50,
         "StarId": "WEDe_1",
         "SurfaceList": [
-            "Surface_WEDe_1"
+            "Surface_WEDe_1",
+            "Surface_WEDe_2"
         ],
         "TeamSpecialVoice": "",
         "TimeType": "\"2002-01-28 19:00:00\"",
@@ -24444,6 +24686,270 @@
         "UneffectRate": 0.0,
         "UnhurtRate": 0.0,
         "UniqueSkill": "Hero_Unique_YXNMei"
+    },
+    "YXZChun": {
+        "Absorption": 0.0,
+        "Anger": {
+            "a1": [
+                10,
+                750
+            ],
+            "a2": 320,
+            "a3": 150
+        },
+        "AngerBase": 1000.0,
+        "AngerMax": 1000.0,
+        "AngerRate": 0.0,
+        "AtkRate": 1.0,
+        "AtkWeaken": 0.0,
+        "AttackFactor": 1.0,
+        "AwakePic": "",
+        "BaseAttack": 230.0,
+        "BaseDefence": 60.0,
+        "BaseHp": 900.0,
+        "BaseQualityAttr": "SSR_10_Summon",
+        "BaseStar": 3,
+        "BasicPower": 1600,
+        "BattlePassiveSkill": "Hero_PBattle_YXZChun",
+        "BattlePassiveType": "PBuff",
+        "BeCuredRate": 0.0,
+        "BlockAI": "AIYXZChun",
+        "BlockRate": 0.0,
+        "BlockStrg": 0.0,
+        "CVName": "YXZChun_CVName",
+        "Cost": 20,
+        "CounterRate": 0.0,
+        "CritRate": 0.0,
+        "CritStrg": 0.0,
+        "DefRate": 1.0,
+        "DefWeaken": 0.0,
+        "DefenceFactor": 1.0,
+        "Desc": "HeroBase_Desc_YXZChun",
+        "DoubleRate": 0.0,
+        "EffectRate": 0.0,
+        "EffectStrg": 0.0,
+        "EnterCD": 1.0,
+        "Equip": "",
+        "EquipDecs": "",
+        "Flags": [
+            "YXZChun",
+            "danti"
+        ],
+        "GainAnim": "",
+        "HeadTouchDeviation": [
+            0,
+            0
+        ],
+        "HeroShowIntro": "HeroBase_Intro_YXZChun",
+        "HeroStoryMap": "",
+        "HpFactor": 1.0,
+        "HurtRate": 0.0,
+        "IfHidden": 0,
+        "InnerAttr": [],
+        "ItemId": "IHF_YXZChun",
+        "KeyPassiveSkill": "Hero_PBattle_YXZChun_Key",
+        "LevelUpFactor": 1.0,
+        "MVPText": "MVPText_YXZChun",
+        "MasterRage": 144,
+        "MaxStar": 6,
+        "Name": "HeroBase_Name_YXZChun",
+        "NormalSkill": "Hero_Normal_YXZChun",
+        "Party": "DWH",
+        "PassiveCondition": [
+            [
+                {
+                    "param": [
+                        [
+                            "Master_XueZhan"
+                        ],
+                        [
+                            "Master_LiMing"
+                        ],
+                        [
+                            "Tower_1_Master1"
+                        ],
+                        [
+                            "Tower_1_Master6"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        1,
+                        1
+                    ],
+                    "type": "master"
+                }
+            ]
+        ],
+        "Position": "HeroBase_Position_YXZChun",
+        "ProudSkill": "Hero_Proud_YXZChun",
+        "Rareity": 14,
+        "Reflection": 0.0,
+        "RelationList": [],
+        "RoleModel": "Model_YXZChun",
+        "RtpkPercent": [
+            0,
+            0,
+            0
+        ],
+        "SVPText": "SVPText_YXZChun",
+        "Sex": 1,
+        "ShortDesc": "HeroBase_ShortDesc_YXZChun",
+        "SkillCost": {
+            "BattlePassiveSkill": {
+                "amount": [
+                    3,
+                    7,
+                    10,
+                    14,
+                    18,
+                    21,
+                    25,
+                    28,
+                    32,
+                    36
+                ],
+                "code": "ISU_Attack"
+            },
+            "NormalSkill": {
+                "amount": [
+                    3,
+                    6,
+                    9,
+                    12,
+                    15,
+                    18,
+                    21,
+                    24,
+                    27,
+                    30
+                ],
+                "code": "ISU_Attack"
+            },
+            "PassiveSkill1": {
+                "amount": [
+                    3,
+                    7,
+                    10,
+                    14,
+                    18,
+                    21,
+                    25,
+                    28,
+                    32,
+                    36
+                ],
+                "code": "ISU_Attack"
+            },
+            "PassiveSkill2": {
+                "amount": [
+                    3,
+                    7,
+                    10,
+                    14,
+                    18,
+                    21,
+                    25,
+                    28,
+                    32,
+                    36
+                ],
+                "code": "ISU_Attack"
+            },
+            "ProudSkill": {
+                "amount": [
+                    4,
+                    9,
+                    13,
+                    18,
+                    22,
+                    27,
+                    31,
+                    36,
+                    40,
+                    45
+                ],
+                "code": "ISU_Attack"
+            },
+            "UniqueSkill": {
+                "amount": [
+                    6,
+                    12,
+                    18,
+                    24,
+                    30,
+                    36,
+                    42,
+                    48,
+                    54,
+                    60
+                ],
+                "code": "ISU_Attack"
+            }
+        },
+        "SkillRate": 0.15,
+        "Soul": [],
+        "SoundList": [
+            "Voice_YXZChun_01",
+            "Voice_YXZChun_35",
+            "Voice_YXZChun_40_1",
+            "Voice_YXZChun_40_2",
+            "Voice_YXZChun_40_3",
+            "Voice_YXZChun_37",
+            "Voice_YXZChun_38",
+            "Voice_YXZChun_39",
+            "Voice_YXZChun_47",
+            "Voice_YXZChun_48",
+            "Voice_YXZChun_50",
+            "Voice_YXZChun_51",
+            "Voice_YXZChun_52",
+            "Voice_YXZChun_53",
+            "Voice_YXZChun_54",
+            "Voice_YXZChun_55",
+            "Voice_YXZChun_56",
+            "Voice_YXZChun_57",
+            "Voice_YXZChun_60",
+            "Voice_YXZChun_07",
+            "Voice_YXZChun_08",
+            "Voice_YXZChun_09",
+            "Voice_YXZChun_58",
+            "Voice_YXZChun_59",
+            "Voice_YXZChun_10",
+            "Voice_YXZChun_11",
+            "Voice_YXZChun_14",
+            "Voice_YXZChun_15",
+            "Voice_YXZChun_16",
+            "Voice_YXZChun_21",
+            "Voice_YXZChun_17",
+            "Voice_YXZChun_18",
+            "Voice_YXZChun_34",
+            "Voice_YXZChun_19",
+            "Voice_YXZChun_63",
+            "Voice_YXZChun_61",
+            "Voice_YXZChun_25",
+            "Voice_YXZChun_26",
+            "Voice_YXZChun_27",
+            "Voice_YXZChun_28",
+            "Voice_YXZChun_29",
+            "Voice_YXZChun_30",
+            "Voice_YXZChun_31",
+            "Voice_YXZChun_32"
+        ],
+        "Speed": 50,
+        "StarId": "YXZChun_1",
+        "SurfaceList": [
+            "Surface_YXZChun_1"
+        ],
+        "TeamSpecialVoice": {},
+        "TimeType": "\"2002-01-28 19:00:00\"",
+        "Transform": "",
+        "Type": "Summon",
+        "UnblockRate": 0.0,
+        "UncritRate": 0.0,
+        "UndeadRate": 0.0,
+        "UneffectRate": 0.0,
+        "UnhurtRate": 0.0,
+        "UniqueSkill": "Hero_Unique_YXZChun"
     },
     "YYing": {
         "Absorption": 0.0,

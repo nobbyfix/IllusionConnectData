@@ -726,6 +726,35 @@
         "Type": "Summoned",
         "UniqueSkill": ""
     },
+    "SummonedYBYa_Qiannian": {
+        "Cost": 2,
+        "CounterSkill": "",
+        "DeathSkill": "Skill_Summoned_YBYa_Redfox_Passive_Death",
+        "DoubleSkill": "",
+        "Flags": [
+            "SUMMONED"
+        ],
+        "KillRage": 0,
+        "MasterRage": 10,
+        "NormalSkill": "Skill_Summoned_YBYa_Redfox_Normal",
+        "PassiveSkill": [],
+        "ProudSkill": "",
+        "RageBase": 0,
+        "RageRules": {
+            "a1": [
+                0,
+                0
+            ],
+            "a2": 0,
+            "a3": 0,
+            "a4": 0
+        },
+        "RoleModel": "Model_YBYa_Redfox_Qiannian",
+        "SkillRate": 0.0,
+        "SummonSurface": [],
+        "Type": "Summoned",
+        "UniqueSkill": ""
+    },
     "SummonedYLJSi_AOE": {
         "Cost": 2,
         "CounterSkill": "",
@@ -783,6 +812,34 @@
         "SummonSurface": "",
         "Type": "Summoned",
         "UniqueSkill": ""
+    },
+    "SummonedYXZChun": {
+        "Cost": 2,
+        "CounterSkill": "",
+        "DeathSkill": "",
+        "DoubleSkill": "",
+        "Flags": [
+            "SUMMONED"
+        ],
+        "KillRage": 0,
+        "MasterRage": 10,
+        "NormalSkill": "Skill_Summoned_YXZChun_Tiger_Normal",
+        "PassiveSkill": [],
+        "ProudSkill": "",
+        "RageBase": 0,
+        "RageRules": {
+            "a1": [
+                10,
+                750
+            ],
+            "a2": 320,
+            "a3": 150
+        },
+        "RoleModel": "Model_YXZChun_Tiger",
+        "SkillRate": 0.0,
+        "SummonSurface": "",
+        "Type": "Summoned",
+        "UniqueSkill": "Skill_Summoned_YXZChun_Tiger_Unique"
     },
     "SummonedYYing": {
         "Cost": 2,
