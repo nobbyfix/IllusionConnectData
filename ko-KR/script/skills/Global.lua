@@ -1201,7 +1201,7 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 						"NUMERIC",
 						"BUFF",
 						"AJYHou_Passive_Undead",
-						"UNDISPELLABLE",
+						"DISPELLABLE",
 						"UNSTEALABLE",
 						"UNDEAD"
 					}
@@ -1595,7 +1595,7 @@ function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimi
 						"NUMERIC",
 						"BUFF",
 						"AJYHou_Passive_Undead",
-						"UNDISPELLABLE",
+						"DISPELLABLE",
 						"UNSTEALABLE",
 						"UNDEAD"
 					}
@@ -1986,7 +1986,7 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 								"NUMERIC",
 								"BUFF",
 								"AJYHou_Passive_Undead",
-								"UNDISPELLABLE",
+								"DISPELLABLE",
 								"UNSTEALABLE",
 								"UNDEAD"
 							}
@@ -2446,7 +2446,7 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 								"NUMERIC",
 								"BUFF",
 								"AJYHou_Passive_Undead",
-								"UNDISPELLABLE",
+								"DISPELLABLE",
 								"UNSTEALABLE",
 								"UNDEAD"
 							}

@@ -317,9 +317,8 @@ all.Skill_YLSBai_Passive = {
 					"STATUS",
 					"NUMERIC",
 					"BUFF",
-					"MAXHPUP",
 					"UNDEAD",
-					"UNDISPELLABLE",
+					"DISPELLABLE",
 					"UNSTEALABLE"
 				}
 			}, {
@@ -844,6 +843,22 @@ all.Skill_YLSBai_Passive_EX = {
 			local buffeft2 = global.DeathImmuneEffect(_env, 2)
 
 			global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
+				duration = 99,
+				group = "Skill_YLSBai_Passive_EX_Hp",
+				timing = 0,
+				limit = 1,
+				tags = {
+					"STATUS",
+					"NUMERIC",
+					"BUFF",
+					"MAXHPUP",
+					"UNDISPELLABLE",
+					"UNSTEALABLE"
+				}
+			}, {
+				buffeft1
+			}, 1)
+			global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
 				timing = 0,
 				display = "Undead",
 				group = "Skill_YLSBai_Passive_EX",
@@ -853,13 +868,11 @@ all.Skill_YLSBai_Passive_EX = {
 					"STATUS",
 					"NUMERIC",
 					"BUFF",
-					"MAXHPUP",
 					"UNDEAD",
-					"UNDISPELLABLE",
+					"DISPELLABLE",
 					"UNSTEALABLE"
 				}
 			}, {
-				buffeft1,
 				buffeft2
 			}, 1)
 		end)
