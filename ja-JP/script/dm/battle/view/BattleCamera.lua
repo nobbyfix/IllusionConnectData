@@ -161,7 +161,7 @@ function BattleCamera:focusOn(x, y, scale, time)
 		local finalOffsetX = x - cx
 		local offset = (1386 * scale - display.width) / 2
 
-		if s0 <= scale and offset < math.abs(finalOffsetX) then
+		if s0 <= scale and offset < math.abs(finalOffsetX) and math.abs(x - cx) > 0 then
 			finalOffsetX = (x - cx) / math.abs(x - cx) * offset / scale
 		end
 

@@ -346,7 +346,8 @@ all.Skill_SSQXin_Passive = {
 					"STATUS",
 					"NUMERIC",
 					"Skill_SSQXin_Passive",
-					"UNDISPELLABLE",
+					"UNDEAD",
+					"DISPELLABLE",
 					"UNSTEALABLE"
 				}
 			}, {
@@ -659,7 +660,8 @@ all.Skill_SSQXin_Passive_EX = {
 					"STATUS",
 					"NUMERIC",
 					"Skill_SSQXin_Passive_EX",
-					"UNDISPELLABLE",
+					"UNDEAD",
+					"DISPELLABLE",
 					"UNSTEALABLE"
 				}
 			}, {

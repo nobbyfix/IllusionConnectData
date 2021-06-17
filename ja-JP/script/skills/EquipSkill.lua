@@ -2961,7 +2961,7 @@ all.EquipSkill_Armor_15012 = {
 						"NUMERIC",
 						"BUFF",
 						"UNDEAD",
-						"UNDISPELLABLE",
+						"DISPELLABLE",
 						"UNSTEALABLE"
 					}
 				}, {
