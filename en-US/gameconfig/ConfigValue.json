@@ -1434,6 +1434,10 @@
         "clz": "string",
         "content": "Mail_CheckInReward"
     },
+    "Clender_LongTime": {
+        "clz": "int",
+        "content": 500
+    },
     "Click_Hero_Sound": {
         "clz": "string[]",
         "content": [
@@ -3364,6 +3368,16 @@
             "IM_EquipExp4": 3500
         }
     },
+    "HeroEquipExpMax": {
+        "clz": "dict",
+        "content": {
+            "11": "Rareity11_70",
+            "12": "Rareity12_70",
+            "13": "Rareity13_70",
+            "14": "Rareity14_70",
+            "15": "Rareity15_100"
+        }
+    },
     "HeroEquipPowerUpOrder": {
         "clz": "string[]",
         "content": [
@@ -3448,6 +3462,16 @@
     "HeroEquipStarExpRate": {
         "clz": "double",
         "content": 2
+    },
+    "HeroEquipStarMax": {
+        "clz": "dict",
+        "content": {
+            "11": "Rareity11_7",
+            "12": "Rareity12_7",
+            "13": "Rareity13_7",
+            "14": "Rareity14_7",
+            "15": "Rareity15_7"
+        }
     },
     "HeroEquipStarPayBack": {
         "clz": "double",
@@ -8425,7 +8449,9 @@
             "TLSi",
             "XHMao",
             "FLBDSi",
-            "SP_PNCao"
+            "SP_PNCao",
+            "YXZChun",
+            "MZu"
         ]
     },
     "Tower_1_GrowMaxValue": {

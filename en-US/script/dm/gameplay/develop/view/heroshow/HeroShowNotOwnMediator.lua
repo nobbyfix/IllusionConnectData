@@ -795,6 +795,9 @@ function HeroShowNotOwnMediator:onClickSkill(skill)
 
 	if not self._skillWidget then
 		local skillInfoNode = self._main:getChildByFullName("skillInfoNode")
+
+		skillInfoNode:offset(0, -130)
+
 		self._skillWidget = self:autoManageObject(self:getInjector():injectInto(SkillDescWidget:new(SkillDescWidget:createWidgetNode(), {
 			skill = skill,
 			mediator = self

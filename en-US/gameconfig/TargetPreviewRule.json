@@ -179,6 +179,9 @@
     "Target_MZGXiu": {
         "Function": "return MainTarget()"
     },
+    "Target_MZu": {
+        "Function": "return GenInfo(EnemyAll(),Red,true)"
+    },
     "Target_NCai": {
         "Function": "return GenInfo(EnemyAll(ROW_OF(TARGET)),Red)"
     },
@@ -298,6 +301,9 @@
     },
     "Target_YXNMei": {
         "Function": "return GenInfo(EnemyAll(),Red)"
+    },
+    "Target_YXZChun": {
+        "Function": "return MainTarget()"
     },
     "Target_YYing": {
         "Function": "return GenInfo(EnemyAll(),Red)"

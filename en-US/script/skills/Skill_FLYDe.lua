@@ -1639,5 +1639,237 @@ all.Skill_FLYDe_Unique_PV = {
 		return _env
 	end
 }
+all.Skill_FLYDe_Passive_Awaken = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.DamageFactor = externs.DamageFactor
+
+		if this.DamageFactor == nil then
+			this.DamageFactor = 3.2
+		end
+
+		this.DamageFloor = externs.DamageFloor
+
+		if this.DamageFloor == nil then
+			this.DamageFloor = 0.2
+		end
+
+		this.AtkRate = externs.AtkRate
+
+		if this.AtkRate == nil then
+			this.AtkRate = 0.1
+		end
+
+		local passive1 = __action(this, {
+			name = "passive1",
+			entry = prototype.passive1
+		})
+		passive1 = global["[duration]"](this, {
+			2000
+		}, passive1)
+		this.passive1 = global["[trigger_by]"](this, {
+			"SELF:ENTER"
+		}, passive1)
+
+		return this
+	end,
+	passive1 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.count = externs.count
+
+		if _env.count == nil then
+			_env.count = 0
+		end
+
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local rp_enter = global.UnitPropGetter(_env, "rp")(_env, _env.ACTOR)
+
+			if rp_enter < 1000 then
+				global.GroundEft(_env, _env.ACTOR, "Ground_Xige", 1000, false)
+			else
+				local buff_first = global.SpecialNumericEffect(_env, "+xige_first", {
+					"+Normal",
+					"+Normal"
+				}, 1)
+
+				global.ApplyBuff(_env, _env.ACTOR, {
+					duration = 1,
+					group = "xige_first",
+					timing = 2,
+					limit = 1,
+					tags = {
+						"XIGE_FIRST"
+					}
+				}, {
+					buff_first
+				})
+			end
+
+			global.DelayCall(_env, 600, global.ShakeScreen, {
+				Id = 3,
+				duration = 80,
+				enhance = 5
+			})
+			global.DelayCall(_env, 1000, global.ShakeScreen, {
+				Id = 3,
+				duration = 100,
+				enhance = 5
+			})
+		end)
+		exec["@time"]({
+			100
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local buff_rp = global.RageGainEffect(_env, "-", {
+				"+Normal",
+				"+Normal"
+			}, 1)
+
+			global.ApplyBuff(_env, _env.ACTOR, {
+				duration = 1,
+				group = "passive_rp",
+				timing = 2,
+				limit = 1,
+				tags = {
+					"PASSIVE_RP"
+				}
+			}, {
+				buff_rp
+			})
+
+			for _, unit in global.__iter__(global.AllUnits(_env, global.PETS - global.SUMMONS)) do
+				local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, unit)
+				local cost = global.GetCost(_env, unit)
+				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, {
+					1,
+					1,
+					0
+				})
+				damage.val = global.max(_env, maxHp * (this.DamageFactor - cost * this.DamageFloor), 0)
+
+				if this.DamageFactor - cost * this.DamageFloor == 1 then
+					damage.val = damage.val + 1
+				end
+
+				damage.crit = nil
+				damage.block = nil
+
+				if damage.val > 0 then
+					local result = global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
+
+					if result.deadly == true then
+						_env.count = _env.count + 1
+					end
+
+					if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "XIGE_FIRST")) == 0 then
+						global.AnimForTrgt(_env, unit, {
+							loop = 1,
+							anim = "xge_bufftexiao",
+							zOrder = "TopLayer",
+							pos = {
+								0.45,
+								0.85
+							}
+						})
+					else
+						global.DelayCall(_env, 1600, global.AnimForTrgt, unit, {
+							loop = 1,
+							anim = "xge_bufftexiao",
+							zOrder = "TopLayer",
+							pos = {
+								0.45,
+								0.85
+							}
+						})
+					end
+				end
+			end
+
+			for _, unit in global.__iter__(global.AllUnits(_env, global.SUMMONS)) do
+				global.KillTarget(_env, unit)
+
+				_env.count = _env.count + 1
+
+				if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "XIGE_FIRST")) == 0 then
+					global.AnimForTrgt(_env, unit, {
+						loop = 1,
+						anim = "xge_bufftexiao",
+						zOrder = "TopLayer",
+						pos = {
+							0.45,
+							0.85
+						}
+					})
+				else
+					global.DelayCall(_env, 1600, global.AnimForTrgt, unit, {
+						loop = 1,
+						anim = "xge_bufftexiao",
+						zOrder = "TopLayer",
+						pos = {
+							0.45,
+							0.85
+						}
+					})
+				end
+			end
+
+			local buff_atk = global.NumericEffect(_env, "+atkrate", {
+				"+Normal",
+				"+Normal"
+			}, this.AtkRate)
+			local buff_atk_3 = global.NumericEffect(_env, "+atkrate", {
+				"+Normal",
+				"+Normal"
+			}, this.AtkRate * 2)
+
+			global.ApplyBuff(_env, _env.ACTOR, {
+				timing = 0,
+				display = "AtkUp",
+				group = "Skill_FLYDe_Passive_Awaken",
+				duration = 99,
+				limit = 1,
+				tags = {
+					"Skill_FLYDe_Passive_Awaken"
+				}
+			}, {
+				buff_atk
+			})
+			global.print(_env, "-=强化基本属性")
+
+			if _env.count >= 4 then
+				global.ApplyBuff(_env, _env.ACTOR, {
+					timing = 0,
+					display = "AtkUp",
+					group = "Skill_FLYDe_Passive_Awaken_3",
+					duration = 99,
+					limit = 1,
+					tags = {
+						"Skill_FLYDe_Passive_Awaken"
+					}
+				}, {
+					buff_atk_3
+				})
+				global.print(_env, "-=强化奖励属性")
+			end
+		end)
+
+		return _env
+	end
+}
 
 return _M

@@ -47,7 +47,7 @@ end
 function PayOffSystem:payInit()
 	local channelID = SDKHelper:getChannelID()
 
-	if channelID == "wanmeiGlobal_ios" or channelID == "wanmeiGlobal_android" or channelID == "wanmeiGlobal_android_amazon" or channelID == "wanmeiGlobal_android_samsungapp" or channelID == "wanmeiGlobal_android_huaweiappgallery" or channelID == "wanmeiGlobal_android_apt" then
+	if channelID == "wanmeiGlobal_ios" or channelID == "wanmeiGlobal_android" or channelID == "wanmeiGlobal_android_amazon" or channelID == "wanmeiGlobal_android_samsungapps" or channelID == "wanmeiGlobal_android_huaweiappgallery" or channelID == "wanmeiGlobal_android_apt" then
 		local function hasId(value, key)
 			for _, __ in pairs(value) do
 				if __ == key then
@@ -69,7 +69,7 @@ function PayOffSystem:payInit()
 			if hasId(sDKSource, channelID) then
 				if channelID == "wanmeiGlobal_ios" then
 					productList[#productList + 1] = productId
-				elseif channelID == "wanmeiGlobal_android" or channelID == "wanmeiGlobal_android_amazon" or channelID == "wanmeiGlobal_android_samsungapp" or channelID == "wanmeiGlobal_android_huaweiappgallery" or channelID == "wanmeiGlobal_android_apt" then
+				elseif channelID == "wanmeiGlobal_android" or channelID == "wanmeiGlobal_android_amazon" or channelID == "wanmeiGlobal_android_samsungapps" or channelID == "wanmeiGlobal_android_huaweiappgallery" or channelID == "wanmeiGlobal_android_apt" then
 					productList["s" .. index] = productId
 				end
 

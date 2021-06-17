@@ -213,6 +213,68 @@
             "LEVEL": 5
         }
     },
+    "DreamChallenge_TimeLimit_Cancer1": {
+        "BGM": [
+            "Mus_Story_MusicFestival_2",
+            "",
+            ""
+        ],
+        "Background": "mjt_scene_xz_bg",
+        "BlockPoint": [
+            "DreamChallenge_TimeLimit_Cancer1_T01N01"
+        ],
+        "Control": 1,
+        "DCType": 1,
+        "LimitTimeTxt": "DreamChallenge_TimeShow_Cancer1",
+        "ListLocationNum": 10010,
+        "Name": "DreamChallenge_TimeLimit_Cancer1_Name",
+        "ShowCondition": {
+            "Day": "2021-06-22 05:00:00",
+            "LEVEL": 5
+        },
+        "Story": "",
+        "TabPic": "mjt_txt_jxzs_btn",
+        "Tag": "",
+        "TimeFactor": {
+            "type": "Day",
+            "value": "2021-07-01 05:00:00"
+        },
+        "UnlockCondition": {
+            "Day": "2021-06-22 05:00:00",
+            "LEVEL": 5
+        }
+    },
+    "DreamChallenge_TimeLimit_Cancer2": {
+        "BGM": [
+            "Mus_Story_MusicFestival_2",
+            "",
+            ""
+        ],
+        "Background": "mjt_scene_xz_bg",
+        "BlockPoint": [
+            "DreamChallenge_TimeLimit_Cancer2_T01N01"
+        ],
+        "Control": 1,
+        "DCType": 1,
+        "LimitTimeTxt": "DreamChallenge_TimeShow_Cancer2",
+        "ListLocationNum": 10013,
+        "Name": "DreamChallenge_TimeLimit_Cancer2_Name",
+        "ShowCondition": {
+            "Day": "2021-07-08  05:00:00",
+            "LEVEL": 5
+        },
+        "Story": "",
+        "TabPic": "mjt_txt_jxzx_btn",
+        "Tag": "",
+        "TimeFactor": {
+            "type": "Day",
+            "value": "2021-07-17  05:00:00"
+        },
+        "UnlockCondition": {
+            "Day": "2021-07-08  05:00:00",
+            "LEVEL": 5
+        }
+    },
     "DreamChallenge_TimeLimit_Gemini1": {
         "BGM": [
             "Mus_Story_MusicFestival_2",

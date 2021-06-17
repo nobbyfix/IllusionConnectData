@@ -1,6 +1,6 @@
 SkillDescWidget = class("SkillDescWidget", BaseWidget, _M)
 local listWidth = 291
-local listWidthBig = 390
+local listWidthBig = 440
 
 function SkillDescWidget.class:createWidgetNode()
 	local resFile = "asset/ui/SkillDescWidget.csb"
@@ -220,10 +220,10 @@ function SkillDescWidget:refreshInfo(skill, role, isMaster)
 	height = height + 110
 
 	if self._isBig == true then
-		bg:setContentSize(cc.size(432, height))
+		bg:setContentSize(cc.size(listWidthBig + 20, height))
 		infoNode:setPositionY(height - 90)
-		infoNode:setPositionX(-105)
-		desc:setPositionX(204.39)
+		infoNode:setPositionX(-140)
+		desc:setPositionX(169.39)
 	else
 		bg:setContentSize(cc.size(332, height))
 		infoNode:setPositionY(height - 90)

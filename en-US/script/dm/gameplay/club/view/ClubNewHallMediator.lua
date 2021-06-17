@@ -538,6 +538,8 @@ function ClubNewHallMediator:refreshTextFiled()
 				}))
 			end
 		end)
+	else
+		self._manifestoEditBox:setText(self._inPutStr)
 	end
 
 	local isProprieter = self._clubInfoOj:getPosition() == ClubPosition.kProprieter

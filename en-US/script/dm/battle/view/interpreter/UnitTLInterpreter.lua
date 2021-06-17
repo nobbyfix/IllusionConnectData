@@ -465,8 +465,10 @@ function UnitTLInterpreter:act_BeginSkill(action, args, mode)
 			local awakeSkillId, _ = unpack(string.split(skill, ":"))
 			local skillDesc = ConfigReader:getDataByNameIdAndKey("Skill", awakeSkillId, "SkillPic")
 			local awakePortrait = ConfigReader:getDataByNameIdAndKey("HeroBase", configId, "AwakePic")
+			local roleModelId = ConfigReader:getDataByNameIdAndKey("HeroBase", configId, "RoleModel")
+			local _modelId = ConfigReader:getDataByNameIdAndKey("RoleModel", roleModelId, "Model")
 
-			effectLayer:pushPortraitEffect(configId, flag, skillDesc, not self._unit:isLeft(), isAwakenEffect, awakePortrait)
+			effectLayer:pushPortraitEffect(_modelId, flag, skillDesc, not self._unit:isLeft(), isAwakenEffect, awakePortrait, configId)
 
 			break
 		end

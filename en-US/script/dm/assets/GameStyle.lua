@@ -7,6 +7,7 @@ BuffTipsViewTag = 10011
 SomeWordTipsViewTag = 10012
 ItemBuffTipsViewTag = 10013
 ItemShowTipsViewTag = 10014
+ComposeToEquipTipsViewTag = 10015
 GameStyle.touchEffectZorder = 9999
 BuffTypeSet = {
 	NormalBlock = "NormalBlock",

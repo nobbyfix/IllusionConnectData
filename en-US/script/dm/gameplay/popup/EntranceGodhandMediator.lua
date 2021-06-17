@@ -148,19 +148,21 @@ function EntranceGodhandMediator:initWidgetInfo()
 	animPanel:addChild(lightFlash)
 
 	local offsetX = 0
+	local idx = 0
 
 	for i = 1, #configValueKey do
 		local key = configValueKey[i]
 		local value = kFunctionData[key]
 
 		if CommonUtils.GetSwitch(value.switchKey) then
+			idx = idx + 1
 			local parentCell = self._cellClone:clone()
 
 			parentCell:setName(key)
 			parentCell:addTo(self._scrollView)
 
-			local x = 177 + (i - 1) * 264
-			local y = i % 2 == 0 and 406 or 327
+			local x = 177 + (idx - 1) * 264
+			local y = idx % 2 == 0 and 406 or 327
 
 			parentCell:setPosition(cc.p(x, y))
 			parentCell:addClickEventListener(function ()
@@ -206,7 +208,7 @@ function EntranceGodhandMediator:initWidgetInfo()
 				redPoint:setVisible(resShow)
 			end
 
-			self:runNodeAction(parentCell, i)
+			self:runNodeAction(parentCell, idx)
 
 			offsetX = x
 		end

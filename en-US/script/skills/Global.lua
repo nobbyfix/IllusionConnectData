@@ -1201,7 +1201,7 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 						"NUMERIC",
 						"BUFF",
 						"AJYHou_Passive_Undead",
-						"UNDISPELLABLE",
+						"DISPELLABLE",
 						"UNSTEALABLE",
 						"UNDEAD"
 					}
@@ -1595,7 +1595,7 @@ function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimi
 						"NUMERIC",
 						"BUFF",
 						"AJYHou_Passive_Undead",
-						"UNDISPELLABLE",
+						"DISPELLABLE",
 						"UNSTEALABLE",
 						"UNDEAD"
 					}
@@ -1986,7 +1986,7 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 								"NUMERIC",
 								"BUFF",
 								"AJYHou_Passive_Undead",
-								"UNDISPELLABLE",
+								"DISPELLABLE",
 								"UNSTEALABLE",
 								"UNDEAD"
 							}
@@ -2446,7 +2446,7 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 								"NUMERIC",
 								"BUFF",
 								"AJYHou_Passive_Undead",
-								"UNDISPELLABLE",
+								"DISPELLABLE",
 								"UNSTEALABLE",
 								"UNDEAD"
 							}
@@ -3150,6 +3150,20 @@ function all.ApplyRealDamage(_env, actor, target, dmgrange, dmgtype, damagerate,
 	end
 
 	return result
+end
+
+function all.SelectBuffCount_Unit(_env, units, tags)
+	local this = _env.this
+	local global = _env.global
+	local count = 0
+
+	for _, unit in global.__iter__(units) do
+		if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, tags)) > 0 then
+			count = count + 1
+		end
+	end
+
+	return count
 end
 
 return _M

@@ -334,7 +334,7 @@ end
 function DPSAnySdk:requestReviewInApp(data)
 	local channelID = SDKHelper:getChannelID()
 
-	if channelID == "wanmeiGlobal_android_amazon" or channelID == "wanmeiGlobal_android_samsungapp" or channelID == "wanmeiGlobal_android_huaweiappgallery" or channelID == "wanmeiGlobal_android_apt" then
+	if channelID == "wanmeiGlobal_android_amazon" or channelID == "wanmeiGlobal_android_samsungapps" or channelID == "wanmeiGlobal_android_huaweiappgallery" or channelID == "wanmeiGlobal_android_apt" then
 		return
 	end
 

@@ -386,11 +386,7 @@ end
 
 function GalleryPartnerMediator:refreshView(hideReload, changeAlbumType)
 	self:refreshTabStatus()
-
-	if changeAlbumType then
-		self:refreshBottomView()
-	end
-
+	self:refreshBottomView()
 	self:refreshBottomTabStatus()
 	self:refreshRewardRedPoint()
 
@@ -470,6 +466,12 @@ function GalleryPartnerMediator:refreshBottomView()
 			local Image_icon = btn:getChildByFullName("Image_3")
 
 			Image_icon:loadTexture(kImageParty[data:getPartyId()][1], ccui.TextureResType.plistType)
+
+			local redPoint = btn:getChildByFullName("redPoint")
+			local canGain = self._gallerySystem:checkcanReceive(data:getPartyId())
+			canGain = canGain or self._gallerySystem:checkCanGetHeroReward(data:getPartyId())
+
+			redPoint:setVisible(canGain)
 		end
 
 		if not self._bottomTabCache[i] then
@@ -552,7 +554,7 @@ function GalleryPartnerMediator:refreshRewardRedPoint()
 			local redPoint = ccui.ImageView:create(IconFactory.redPointPath, 1)
 
 			redPoint:setName("RedPoint_" .. i)
-			redPoint:addTo(self._tabPanelLight):posite(btn:getPositionX() + 40, btn:getPositionY() + 40)
+			redPoint:addTo(self._tabPanelLight):posite(btn:getPositionX() + 35, btn:getPositionY() + 60)
 		end
 
 		local partyArray = self._albumArray[i]
@@ -565,6 +567,8 @@ function GalleryPartnerMediator:refreshRewardRedPoint()
 
 			if canGain then
 				canReceive = true
+
+				self._tabPanelLight:getChildByName("RedPoint_" .. i):setVisible(canReceive)
 
 				return
 			end

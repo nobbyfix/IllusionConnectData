@@ -194,6 +194,12 @@ function IconTouchHandler:removeItemTipView()
 		equipTipView:removeFromParent(true)
 	end
 
+	local composeToEquipTipView = self._parentViewMediator:getView():getChildByTag(ComposeToEquipTipsViewTag)
+
+	if composeToEquipTipView ~= nil then
+		composeToEquipTipView:removeFromParent(true)
+	end
+
 	local buffTipView = self._parentViewMediator:getView():getChildByTag(BuffTipsViewTag)
 
 	if buffTipView ~= nil then
@@ -251,6 +257,15 @@ function IconTouchHandler:onBegan(icon)
 	elseif rewardType == RewardType.kShow then
 		itemTipView = mediator:getInjector():getInstance("ItemShowTipsView")
 		tipsViewTag = ItemShowTipsViewTag
+	elseif rewardType == RewardType.kItem then
+		if RewardSystem:checkIsComposeItem(info) then
+			itemTipView = mediator:getInjector():getInstance("ComposeToEquipTipsView")
+			info.parentMediatorSize = mediator:getView():getContentSize()
+			tipsViewTag = ComposeToEquipTipsViewTag
+		else
+			itemTipView = mediator:getInjector():getInstance("ItemTipsView")
+			tipsViewTag = ItemTipsViewTag
+		end
 	else
 		itemTipView = mediator:getInjector():getInstance("ItemTipsView")
 		tipsViewTag = ItemTipsViewTag
