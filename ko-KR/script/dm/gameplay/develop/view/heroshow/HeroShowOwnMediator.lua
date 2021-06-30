@@ -56,7 +56,8 @@ local kBgAnimAndImage = {
 	[GalleryPartyType.kMNJH] = "asset/ui/gallery/party_icon_monv.png",
 	[GalleryPartyType.kDWH] = "asset/ui/gallery/party_icon_dongwenhui.png",
 	[GalleryPartyType.kWNSXJ] = "asset/ui/gallery/party_icon_weinasi.png",
-	[GalleryPartyType.kSSZS] = "asset/ui/gallery/party_icon_she.png"
+	[GalleryPartyType.kSSZS] = "asset/ui/gallery/party_icon_she.png",
+	[GalleryPartyType.kUNKNOWN] = "asset/ui/gallery/party_icon_unknown.png"
 }
 local kHeroRarityAnim = {
 	[15] = {
@@ -680,7 +681,8 @@ function HeroShowOwnMediator:onClickSkill(skill)
 			mediator = self._parentMedi
 		})))
 
-		self._skillWidget:getView():addTo(self._parentMedi:getView()):posite(464, 40)
+		self._skillWidget:getView():addTo(self._parentMedi:getView())
+		self._skillWidget:getView():setPosition(cc.p(self._skillPanel:getPosition())):offset(-240, -48)
 	end
 
 	self._skillWidget:refreshInfo(skill, self._heroData)

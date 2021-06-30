@@ -179,7 +179,7 @@ all.Skill_BBLMa_Unique = {
 			entry = prototype.main
 		})
 		main = global["[duration]"](this, {
-			7500
+			5000
 		}, main)
 		main = global["[cut_in]"](this, {
 			"1#Hero_Unique_BBLMa"
@@ -227,7 +227,7 @@ all.Skill_BBLMa_Unique = {
 			global.AssignRoles(_env, _env.TARGET, "target")
 		end)
 		exec["@time"]({
-			1500
+			1367
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
@@ -238,14 +238,14 @@ all.Skill_BBLMa_Unique = {
 			local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, this.dmgFactor)
 			local result = global.ApplyHPMultiDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, {
 				0,
-				1000
+				500
 			}, global.SplitValue(_env, damage, {
 				0.5,
 				0.5
 			}))
 		end)
 		exec["@time"]({
-			3100
+			2300
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
@@ -291,7 +291,7 @@ all.Skill_BBLMa_Unique = {
 			end
 		end)
 		exec["@time"]({
-			3700
+			2766
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
@@ -306,14 +306,14 @@ all.Skill_BBLMa_Unique = {
 			})
 			local result = global.ApplyHPMultiDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, {
 				0,
-				1000
+				500
 			}, global.SplitValue(_env, damage, {
 				0.5,
 				0.5
 			}))
 		end)
 		exec["@time"]({
-			5300
+			3600
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
@@ -359,7 +359,7 @@ all.Skill_BBLMa_Unique = {
 			end
 		end)
 		exec["@time"]({
-			5900
+			4066
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
@@ -374,14 +374,14 @@ all.Skill_BBLMa_Unique = {
 			})
 			local result = global.ApplyHPMultiDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, {
 				0,
-				1000
+				500
 			}, global.SplitValue(_env, damage, {
 				0.5,
 				0.5
 			}))
 		end)
 		exec["@time"]({
-			7500
+			4950
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
@@ -634,7 +634,7 @@ all.Skill_BBLMa_Unique_EX = {
 			entry = prototype.main
 		})
 		main = global["[duration]"](this, {
-			7500
+			5000
 		}, main)
 		main = global["[cut_in]"](this, {
 			"1#Hero_Unique_BBLMa"
@@ -682,7 +682,7 @@ all.Skill_BBLMa_Unique_EX = {
 			global.AssignRoles(_env, _env.TARGET, "target")
 		end)
 		exec["@time"]({
-			1500
+			1367
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
@@ -693,14 +693,14 @@ all.Skill_BBLMa_Unique_EX = {
 			local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, this.dmgFactor)
 			local result = global.ApplyHPMultiDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, {
 				0,
-				1000
+				500
 			}, global.SplitValue(_env, damage, {
 				0.5,
 				0.5
 			}))
 		end)
 		exec["@time"]({
-			3100
+			2300
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
@@ -746,7 +746,7 @@ all.Skill_BBLMa_Unique_EX = {
 			end
 		end)
 		exec["@time"]({
-			3700
+			2766
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
@@ -761,14 +761,14 @@ all.Skill_BBLMa_Unique_EX = {
 			})
 			local result = global.ApplyHPMultiDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, {
 				0,
-				1000
+				500
 			}, global.SplitValue(_env, damage, {
 				0.5,
 				0.5
 			}))
 		end)
 		exec["@time"]({
-			5300
+			3600
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
@@ -814,7 +814,7 @@ all.Skill_BBLMa_Unique_EX = {
 			end
 		end)
 		exec["@time"]({
-			5900
+			4066
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
@@ -829,14 +829,14 @@ all.Skill_BBLMa_Unique_EX = {
 			})
 			local result = global.ApplyHPMultiDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, {
 				0,
-				1000
+				500
 			}, global.SplitValue(_env, damage, {
 				0.5,
 				0.5
 			}))
 		end)
 		exec["@time"]({
-			7500
+			4950
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global

@@ -217,8 +217,12 @@ function MainTLInterpreter:act_StackSkill(action, args)
 	local skillId = args.skillId
 	local stacknum = args.stacknum
 	local totalnum = args.totalnum
+	local playerId = args.playerId
+	local mainPlayerId = self._context:getValue("CurMainPlayerId")
 
-	self._battleUIMediator:stackSkillLayer(skillId, stacknum, totalnum)
+	if playerId == mainPlayerId then
+		self._battleUIMediator:stackSkillLayer(skillId, stacknum, totalnum)
+	end
 end
 
 function MainTLInterpreter:act_Error(action, args)

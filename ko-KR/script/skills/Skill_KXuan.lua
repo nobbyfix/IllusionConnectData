@@ -360,7 +360,7 @@ all.Skill_KXuan_Passive = {
 			local global = _env.global
 
 			if global.FriendMaster(_env) then
-				_env.units = global.Slice(_env, global.SortBy(_env, global.FriendUnits(_env, global.PETS - global.ONESELF(_env, _env.ACTOR) - global.SUMMONS), "<", global.UnitPropGetter(_env, "hpRatio")), 1, 1)
+				_env.units = global.Slice(_env, global.SortBy(_env, global.FriendUnits(_env, global.PETS - global.ONESELF(_env, _env.ACTOR) - global.SUMMONS - global.MARKED(_env, "DAGUN")), "<", global.UnitPropGetter(_env, "hpRatio")), 1, 1)
 
 				if _env.units[1] then
 					if not global.MARKED(_env, "CANNOT_BACK_TO_CARD")(_env, _env.units[1]) then
@@ -719,7 +719,7 @@ all.Skill_KXuan_Passive_EX = {
 			})
 
 			if global.FriendMaster(_env) then
-				_env.units = global.Slice(_env, global.SortBy(_env, global.FriendUnits(_env, global.PETS - global.ONESELF(_env, _env.ACTOR) - global.SUMMONS), "<", global.UnitPropGetter(_env, "hpRatio")), 1, 1)
+				_env.units = global.Slice(_env, global.SortBy(_env, global.FriendUnits(_env, global.PETS - global.ONESELF(_env, _env.ACTOR) - global.SUMMONS - global.MARKED(_env, "DAGUN")), "<", global.UnitPropGetter(_env, "hpRatio")), 1, 1)
 
 				if _env.units[1] then
 					if not global.MARKED(_env, "CANNOT_BACK_TO_CARD")(_env, _env.units[1]) then

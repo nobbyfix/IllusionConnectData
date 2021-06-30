@@ -15,10 +15,14 @@ ActivityTask:has("_taskValueList", {
 ActivityTask:has("_activityId", {
 	is = "rw"
 })
+ActivityTask:has("_type", {
+	is = "rw"
+})
 
 function ActivityTask:initialize()
 	super.initialize(self)
 
+	self._type = "ActivityTask"
 	self._id = ""
 	self._status = ActivityTaskStatus.kUnfinish
 	self._config = {}

@@ -218,6 +218,59 @@ function Conditionkeeper:getConditionDesc(condition, descId)
 	end
 end
 
+local descMap = {
+	KillNum = "VictoryConditions4",
+	KeyUnitsDied = "VictoryConditions3",
+	TimeOut = {
+		SideB = "VictoryConditions1",
+		SideA = "VictoryConditions2"
+	}
+}
+
+function Conditionkeeper:getVictoryConditionsDesc(conditions, extra)
+	local condition = conditions[1]
+
+	dump(condition, "condition")
+
+	local desc = descMap[condition.type]
+
+	if desc then
+		if condition.type == "TimeOut" then
+			return Strings:get(desc[condition.winner])
+		end
+
+		if condition.type == "KillNum" then
+			local count = condition.factor.count
+
+			return Strings:get(desc, {
+				num = count
+			})
+		end
+
+		if condition.type == "KeyUnitsDied" then
+			local tag = condition.factor.unitTag
+			local name = ""
+			local assist = extra.assist
+
+			for i, v in pairs(assist) do
+				local config = ConfigReader:getRecordById("EnemyHero", v.id)
+
+				for _, flag in pairs(config.Flags) do
+					if flag == tag then
+						name = Strings:get(config.Name)
+					end
+				end
+			end
+
+			return Strings:get(desc, {
+				name = name
+			})
+		end
+	end
+
+	return ""
+end
+
 function Conditionkeeper:registerConditionValueFunc(key, func)
 	self._valueFuncMap[key] = func
 end

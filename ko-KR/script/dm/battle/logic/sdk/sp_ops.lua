@@ -66,6 +66,10 @@ function exports.FlyBallEffect(env, unit, card)
 end
 
 function exports.ApplyEnergyRecovery(env, player, energy)
+	if not player then
+		return
+	end
+
 	local energyInfo = player:recoverEnergy(energy)
 
 	env.global.RecordImmediately(env, player:getId(), "SyncERecovery", energyInfo)

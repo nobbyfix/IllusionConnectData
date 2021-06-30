@@ -789,6 +789,7 @@ local modules = {
 					"dm.gameplay.stage.view.component.commonStageMap.ChapterEightCell",
 					"dm.gameplay.stage.view.component.commonStageMap.ChapterNightCell",
 					"dm.gameplay.stage.view.component.commonStageMap.ChapterTenCell",
+					"dm.gameplay.stage.view.component.commonStageMap.ChapterElevenCell",
 					"dm.gameplay.stage.view.component.eliteStageMap.EliteOneCell",
 					"dm.gameplay.stage.view.component.eliteStageMap.EliteTwoCell",
 					"dm.gameplay.stage.view.component.eliteStageMap.EliteThreeCell",
@@ -798,7 +799,8 @@ local modules = {
 					"dm.gameplay.stage.view.component.eliteStageMap.EliteSevenCell",
 					"dm.gameplay.stage.view.component.eliteStageMap.EliteEightCell",
 					"dm.gameplay.stage.view.component.eliteStageMap.EliteNightCell",
-					"dm.gameplay.stage.view.component.eliteStageMap.EliteTenCell"
+					"dm.gameplay.stage.view.component.eliteStageMap.EliteTenCell",
+					"dm.gameplay.stage.view.component.eliteStageMap.EliteElevenCell"
 				},
 				injections = {
 					singletons = {
@@ -964,6 +966,10 @@ local modules = {
 							name = "ChapterTenCell"
 						},
 						{
+							res = "asset/ui/BlockMapCell11.csb",
+							name = "ChapterElevenCell"
+						},
+						{
 							res = "asset/ui/EliteMapCell1.csb",
 							name = "EliteOneCell"
 						},
@@ -1002,6 +1008,10 @@ local modules = {
 						{
 							res = "asset/ui/EliteMapCell10.csb",
 							name = "EliteTenCell"
+						},
+						{
+							res = "asset/ui/EliteMapCell11.csb",
+							name = "EliteElevenCell"
 						},
 						{
 							res = "asset/ui/StoryBlockTeam.csb",
@@ -1976,6 +1986,21 @@ local modules = {
 							res = "asset/ui/ActivityStoryBookMain.csb",
 							name = "ActivityStoryBookMainView",
 							mediator = "ActivityCommonMainMediator"
+						},
+						{
+							res = "asset/ui/ActivityDeepSeaMain.csb",
+							name = "ActivityDeepSeaMainView",
+							mediator = "ActivityCommonMainMediator"
+						},
+						{
+							res = "asset/ui/ActivityMapNew.csb",
+							name = "ActivityMapNewView",
+							mediator = "ActivityMapNewMediator"
+						},
+						{
+							res = "asset/ui/ActivityPointDetail_New.csb",
+							name = "ActivityPointDetailNewView",
+							mediator = "ActivityPointDetailNewMediator"
 						},
 						{
 							res = "asset/ui/ActivitySummerReMain.csb",

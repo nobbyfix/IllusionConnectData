@@ -473,7 +473,7 @@ all.Skill_DCJKang_Unique_EX = {
 					tags = {
 						"NUMERIC",
 						"BUFF",
-						"REFLECT",
+						"TAUNT",
 						"UNDISPELLABLE",
 						"UNSTEALABLE"
 					}

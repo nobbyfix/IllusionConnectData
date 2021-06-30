@@ -157,6 +157,9 @@ HeroCard:has("_cardAI", {
 HeroCard:has("_seatRules", {
 	is = "rw"
 })
+HeroCard:has("_enterPauseTime", {
+	is = "rw"
+})
 
 function HeroCard:initWithData(data)
 	super.initWithData(self, data)
@@ -167,6 +170,7 @@ function HeroCard:initWithData(data)
 	self._cardIndex = nil
 	self._triggerBuffs = {}
 	self._seatRules = data.seatRules or {}
+	self._enterPauseTime = data.enterPauseTime or nil
 
 	return self
 end
@@ -222,7 +226,8 @@ function HeroCard:usedByPlayer(player, battleContext, trgtCellNo, cost, wontEven
 		cardAI = self._cardAI,
 		hero = self._heroData,
 		cardIndex = self._cardIndex,
-		seatRules = self._seatRules
+		seatRules = self._seatRules,
+		enterPauseTime = self._enterPauseTime
 	})
 
 	local cardSystem = battleContext:getObject("CardSystem")

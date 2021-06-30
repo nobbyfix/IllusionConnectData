@@ -539,6 +539,222 @@
         "Time": "",
         "Type": "STORY"
     },
+    "Memory_Act_DeepSea_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_DeepSea",
+                    "ActivityBlock_DeepSea_Map",
+                    "DeepSeaM01",
+                    "DeepSeaS01",
+                    "DeepSeaS01M"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_deepsea_1",
+        "Name": "DeepSeaS01S01_Name",
+        "Num": 660,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_deepSea_01a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_DeepSea_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_DeepSea",
+                    "ActivityBlock_DeepSea_Map",
+                    "DeepSeaM01",
+                    "DeepSeaS02",
+                    "DeepSeaS02M"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_deepsea_1",
+        "Name": "DeepSeaS01S02_Name",
+        "Num": 661,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_deepSea_02a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_DeepSea_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_DeepSea",
+                    "ActivityBlock_DeepSea_Map",
+                    "DeepSeaM01",
+                    "DeepSeaS05",
+                    "DeepSeaS05M"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_deepsea_1",
+        "Name": "DeepSeaS01S03_Name",
+        "Num": 662,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_deepSea_03a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_DeepSea_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_DeepSea",
+                    "ActivityBlock_DeepSea_Map",
+                    "DeepSeaM01",
+                    "DeepSeaS07",
+                    "DeepSeaS07M"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_deepsea_1",
+        "Name": "DeepSeaS01S04_Name",
+        "Num": 663,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_deepSea_04a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_DeepSea_5": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_DeepSea",
+                    "ActivityBlock_DeepSea_Map",
+                    "DeepSeaM01",
+                    "DeepSeaS09",
+                    "DeepSeaS09M"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_deepsea_1",
+        "Name": "DeepSeaS01S05_Name",
+        "Num": 664,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_deepSea_05a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_DeepSea_6": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_DeepSea",
+                    "ActivityBlock_DeepSea_Map",
+                    "DeepSeaM01",
+                    "DeepSeaS10",
+                    "DeepSeaS10M"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_deepsea_1",
+        "Name": "DeepSeaS01S06_Name",
+        "Num": 665,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_deepSea_06a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_DeepSea_7": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_DeepSea",
+                    "ActivityBlock_DeepSea_Map",
+                    "DeepSeaM01",
+                    "DeepSeaS13",
+                    "DeepSeaS13M"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_deepsea_1",
+        "Name": "DeepSeaS01S07_Name",
+        "Num": 666,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_deepSea_07a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_DeepSea_8": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_DeepSea",
+                    "ActivityBlock_DeepSea_Map",
+                    "DeepSeaM01",
+                    "DeepSeaS16",
+                    "DeepSeaS16M"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_deepsea_1",
+        "Name": "DeepSeaS01S08_Name",
+        "Num": 667,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_deepSea_08a",
+        "Time": "",
+        "Type": "STORY"
+    },
     "Memory_Act_Fire_1": {
         "Condition": [
             {

@@ -24,7 +24,7 @@ end
 function UnitTLInterpreter:doAction(action, args, mode)
 	local role = self._unitManager:getUnitById(self:getId())
 
-	if role == nil and action ~= "SpawnUnit" and action ~= "RebornUnit" and action ~= "CallUnit" and action ~= "Revive" then
+	if role == nil and action ~= "SpawnUnit" and action ~= "RebornUnit" and action ~= "CallUnit" and action ~= "Revive" and action ~= "CallMasterUnit" then
 		return
 	end
 
@@ -119,6 +119,7 @@ function UnitTLInterpreter:act_SpawnUnit(action, args)
 	roleDataModel:setIsSummond(args.isSummoned)
 	roleDataModel:setSide(args.side)
 	roleDataModel:setFlags(args.flags)
+	roleDataModel:setIsBattleField(args.isBattleField)
 
 	local pos = self._battleGround:relPositionFor(isLeft, posInArr)
 	local role = BattleRoleObject:new(id, roleDataModel, self._context)
@@ -143,7 +144,7 @@ function UnitTLInterpreter:act_SpawnUnit(action, args)
 
 		occupy = false
 	else
-		role:hideRole(180)
+		role:hideRole(args.opacity or 180)
 	end
 
 	if occupy then
@@ -282,6 +283,12 @@ function UnitTLInterpreter:act_RebornUnit(action, args)
 end
 
 function UnitTLInterpreter:act_CallUnit(action, args)
+	self:act_SpawnUnit("SpawnUnit", args)
+end
+
+function UnitTLInterpreter:act_CallMasterUnit(action, args)
+	args.opacity = 0
+
 	self:act_SpawnUnit("SpawnUnit", args)
 end
 
@@ -525,6 +532,10 @@ function UnitTLInterpreter:act_EndSkill(action, args, mode)
 	local abort = args.reason and (args.reason == "abort" or args.reason == "finish")
 	local skillAction = self._context:getSkillAction(actId)
 
+	if not skillAction then
+		return
+	end
+
 	skillAction:setState(BattleRoleSkillState.End)
 
 	local performAct = self._dataModel:getPerformAct()
@@ -584,6 +595,10 @@ function UnitTLInterpreter:act_Perform(action, args, mode)
 
 	local skillAction = self._context:getSkillAction(actId)
 
+	if not skillAction then
+		return
+	end
+
 	skillAction:setState(BattleRoleSkillState.Perform)
 
 	local behaviorNode = self._unit:createBehaviorNode(animation)
@@ -613,6 +628,11 @@ function UnitTLInterpreter:stopRunningPerform(nextAct)
 
 	if performAct then
 		local skillAction = self._context:getSkillAction(performAct)
+
+		if not skillAction then
+			return
+		end
+
 		local behaviorNode = skillAction:getBehaviorNode()
 		local targets = skillAction:getTargets()
 
@@ -807,6 +827,20 @@ function UnitTLInterpreter:act_SwitchActionTo(action, args)
 	local actionDes = args.desAnim
 
 	self._unit:switchAction(actionSrc, actionDes)
+end
+
+function UnitTLInterpreter:act_ClearAllSwitchAction(action, args)
+	self._unit:clearAllTransformAction()
+end
+
+function UnitTLInterpreter:act_SetDisplayZorder(action, args)
+	local zorder = args.zorder
+
+	self._unit:setDisplayZorder(zorder)
+end
+
+function UnitTLInterpreter:act_ResetDisplayZorder(action, args)
+	self._unit:resetDisplayZorder()
 end
 
 function UnitTLInterpreter:act_Hurt(action, args)
@@ -1155,7 +1189,9 @@ function UnitTLInterpreter:act_GroundEft(action, args, mode)
 			}
 		end
 
-		mainMediator:playGroundEffect(config.Path, {}, config.Anim, config.Zoom, act, extra)
+		local blackOpacity = config.Black
+
+		mainMediator:playGroundEffect(config.Path, {}, config.Anim, config.Zoom, act, extra, blackOpacity)
 	end
 end
 
@@ -1207,6 +1243,10 @@ end
 
 function UnitTLInterpreter:act_CancelTargetView(action, args, mode)
 	self._battleGround:cancelTarget(args.act)
+end
+
+function UnitTLInterpreter:act_SetOpacity(action, args, mode)
+	self._unit:hideRole(args.value)
 end
 
 function UnitTLInterpreter:act_Die(action, args)
@@ -1304,6 +1344,11 @@ function UnitTLInterpreter:onUnitDie(evt)
 
 	if performAct then
 		local skillAction = self._context:getSkillAction(performAct)
+
+		if not skillAction then
+			return
+		end
+
 		local behaviorNode = skillAction:getBehaviorNode()
 
 		if behaviorNode and behaviorNode:isRunning() then
@@ -1467,6 +1512,42 @@ function UnitTLInterpreter:act_AddAnim(action, args)
 	end
 end
 
+function UnitTLInterpreter:act_AddAnimWithFlip(action, args)
+	local pos = args.pos
+	local anim = args.anim
+	local loop = args.loop
+	local zOrder = args.zOrder
+	local isflip = args.isFlip
+	local isflipX = args.isFlipX
+	local isflipY = args.isFlipY
+
+	if self._unit then
+		local zone = pos[1]
+		local isLeft = true
+		isLeft = (self._mainPlayerSide and zone > 0 or not self._mainPlayerSide and zone < 0) and true or false
+
+		if isLeft then
+			zone = math.abs(zone)
+		else
+			zone = -math.abs(zone)
+		end
+
+		local _isflipX = not isLeft
+
+		if isflipX then
+			_isflipX = not _isflipX
+		end
+
+		local realPos = self._battleGround:relPosWithZoneAndOffset(zone, pos[2], pos[3])
+		local targetPos = self._battleGround:convertRelPos2WorldSpace(realPos)
+		local mainMediator = self._context:getValue("BattleMainMediator")
+
+		if mainMediator.addEffectAnim then
+			mainMediator:addEffectAnim(anim, targetPos, zOrder, loop, _isflipX, isflipY)
+		end
+	end
+end
+
 function UnitTLInterpreter:act_TruthBubble(action, args)
 	local seed = args.seed
 	self._tbRandomizer = Random:new(seed)
@@ -1493,6 +1574,10 @@ end
 
 function UnitTLInterpreter:act_HolyHide(action, args)
 	self._unit:holyHide(args.alpha)
+end
+
+function UnitTLInterpreter:act_FanUpdate(action, args)
+	self._unit:updateFanBar(args.progress)
 end
 
 function UnitTLInterpreter:act_CancelSpecificSkill(action, args)

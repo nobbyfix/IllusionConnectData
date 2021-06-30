@@ -140,6 +140,19 @@ function exports.AddAnim(env, configs)
 	})
 end
 
+function exports.AddAnimWithFlip(env, configs)
+	local actor = env["$actor"]
+
+	env.global.RecordImmediately(env, actor:getId(), "AddAnimWithFlip", {
+		pos = configs.pos,
+		zOrder = configs.zOrder,
+		loop = configs.loop,
+		anim = configs.anim,
+		isFlipX = configs.isFlipX,
+		isFlipY = configs.isFlipY
+	})
+end
+
 function exports.ShakeScreen(env, configs)
 	local actor = env["$actor"]
 
@@ -159,13 +172,12 @@ end
 function exports.StackSkill(env, skillId, stacknum, totalnum)
 	local player = env["$actor"]:getOwner()
 
-	if kBattleSideA == player:getSide() then
-		env.global.RecordImmediately(env, kBRMainLine, "StackSkill", {
-			skillId = skillId,
-			stacknum = stacknum,
-			totalnum = totalnum
-		})
-	end
+	env.global.RecordImmediately(env, kBRMainLine, "StackSkill", {
+		skillId = skillId,
+		stacknum = stacknum,
+		totalnum = totalnum,
+		playerId = player:getId()
+	})
 end
 
 function exports.BossComing(env)

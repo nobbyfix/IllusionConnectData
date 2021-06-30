@@ -166,8 +166,7 @@ function ActivityTaskAchievementMediator:createCell(cell, index)
 		panel = panel:getChildByFullName("cell")
 		local taskStatus = taskData:getStatus()
 		local subActivityId = taskData:getActivityId()
-		local config = taskData:getConfig()
-		local taskId = config.Id
+		local taskId = taskData:getId()
 		local iconNode = panel:getChildByName("icon")
 		local descText = panel:getChildByName("desc")
 		local processNode = panel:getChildByName("process")
@@ -219,7 +218,7 @@ function ActivityTaskAchievementMediator:createCell(cell, index)
 			btnGet:setName("TodoMark")
 
 			local function callFunc()
-				self:onClickGetReward(subActivityId, taskId)
+				self:onClickGetReward(subActivityId, taskData)
 			end
 
 			mapButtonHandlerClick(nil, btnGet, {
@@ -285,13 +284,18 @@ function ActivityTaskAchievementMediator:refreshTime(timeStr)
 	}))
 end
 
-function ActivityTaskAchievementMediator:onClickGetReward(subActivityId, taskId)
+function ActivityTaskAchievementMediator:onClickGetReward(subActivityId, taskData)
 	AudioEngine:getInstance():playEffect("Se_Click_Get", false)
 
-	local param = {
-		doActivityType = "101",
-		taskId = taskId
-	}
+	local param = {}
+
+	if taskData:getType() == "ActivityNumTask" then
+		param.doActivityType = "102"
+		param.num = taskData:getId()
+	else
+		param.doActivityType = "101"
+		param.taskId = taskData:getId()
+	end
 
 	self._activitySystem:requestDoChildActivity(self._activityModel:getId(), subActivityId, param, function (response)
 		if checkDependInstance(self) then

@@ -26,6 +26,7 @@ require("dm.gameplay.activity.model.MiniGameActivity")
 require("dm.gameplay.activity.model.return.ActivityReturn")
 require("dm.gameplay.activity.model.return.ActivityReturnLetter")
 require("dm.gameplay.activity.model.return.ActivityReturnCarnival")
+require("dm.gameplay.activity.model.ActivityBlockMapNewActivity")
 require("dm.gameplay.activity.model.ActivityDrawCardSp")
 
 ActivityShowTab = {
@@ -89,6 +90,8 @@ ActivityModel = {
 	[ActivityType.KMiniGame] = MiniGameActivity,
 	[ActivityType.KReturn] = ActivityReturn,
 	[ActivityType.KLetter] = ActivityReturnLetter,
+	[ActivityType.KReturnCarnival] = ActivityReturnCarnival,
+	[ActivityType.KActivityBlockMapNew] = ActivityBlockMapNewActivity,
 	[ActivityType.KReturnCarnival] = ActivityReturnCarnival,
 	[ActivityType.kDRAWCARDSP] = ActivityDrawCardSp
 }
@@ -161,6 +164,7 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityFire] = "ActivityFireMainView",
 		[ActivityType_UI.KActivityFemale] = "ActivityFemaleMainView",
 		[ActivityType_UI.KActivityStoryBook] = "ActivityStoryBookMainView",
+		[ActivityType_UI.KActivityDeepSea] = "ActivityDeepSeaMainView",
 		[ActivityType_UI.KActivitySummerRe] = "ActivitySummerReMainView"
 	},
 	enterBlockMonsterShopView = {
@@ -185,6 +189,7 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityFire] = "ActivitySagaSupportMapView",
 		[ActivityType_UI.KActivityFemale] = "ActivitySagaSupportMapView",
 		[ActivityType_UI.KActivityStoryBook] = "ActivitySagaSupportMapView",
+		[ActivityType_UI.KActivityDeepSea] = "ActivityMapNewView",
 		[ActivityType_UI.KActivitySummerRe] = "ActivitySagaSupportMapView"
 	},
 	enterSagaSupportStageView = {
@@ -212,6 +217,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivitySunflower] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivityFire] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivityFemale] = "ActivityBlockTaskView",
+		[ActivityType_UI.KActivityStoryBook] = "ActivityBlockTaskView",
+		[ActivityType_UI.KActivityDeepSea] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivityStoryBook] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivitySummerRe] = "ActivityBlockTaskView"
 	},
@@ -276,6 +283,16 @@ ActivityLogin14Config = {
 			cc.c4b(255, 233, 133, 255)
 		}
 	},
+	EightDays_StoryBook = {
+		resFile = "asset/ui/ActivityStoryBookLogin14.csb",
+		textPattern = {
+			cc.c4b(255, 255, 255, 255),
+			cc.c4b(255, 233, 133, 255)
+		}
+	},
+	EightDays_DeepSea = {
+		resFile = "asset/ui/ActivityDeepSeaLogin.csb"
+	},
 	EightDays_SummerRe = {
 		resFile = "asset/ui/ActivitySummerReLogin14.csb",
 		textPattern = {
@@ -329,6 +346,18 @@ ActivityMainMapTitleConfig = {
 					color = cc.c4b(254, 255, 157, 255)
 				}
 			}
+		},
+		[ActivityType_UI.KActivityDeepSea] = {
+			title_0 = {
+				{
+					ratio = 0.3,
+					color = cc.c4b(0, 0, 0, 255)
+				},
+				{
+					ratio = 0.7,
+					color = cc.c4b(33, 97, 83, 255)
+				}
+			}
 		}
 	},
 	anim = {
@@ -339,6 +368,10 @@ ActivityMainMapTitleConfig = {
 		[ActivityType_UI.KActivityStoryBook] = {
 			"zhu_beimoufubenrukou",
 			cc.p(54, 155)
+		},
+		[ActivityType_UI.KActivityDeepSea] = {
+			"fubenrukou_shenhaihuodongrukou",
+			cc.p(-165, 63)
 		},
 		[ActivityType_UI.KActivitySummerRe] = {
 			"shuijingqiu_xiarihuodong",

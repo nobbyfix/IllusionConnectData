@@ -27,6 +27,20 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_ActivityTask_Desc"
     },
+    "Condi_Activity_Block": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.activities.activityMap.?1.subActivities.?2.stageInfos.?3.stageMaps.?4.points.?5.passed",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_Activity_Block_Desc"
+    },
+    "Condi_Activity_Block_Num": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "passCount.?1.?2",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_Activity_Block_Num_Desc"
+    },
     "Condi_AddFriend": {
         "AchieveType1": "CUSTOM",
         "AchieveType2": "",
@@ -376,6 +390,13 @@
         "ConditionType1": "player.taskCenter.dailyTaskManager.dailyAcPoint",
         "ConditionType2": "",
         "EffectDesc": "Condi_DailyTaskPoint_Desc"
+    },
+    "Condi_DeepSeaExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_DeepSea_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_DeepSeaExchangeAchieve_Desc"
     },
     "Condi_DetectiveToken": {
         "AchieveType1": "INCREASE",
@@ -1461,5 +1482,12 @@
         "ConditionType1": "winArenaChallenge",
         "ConditionType2": "",
         "EffectDesc": "Condi_winArenaChallenge_Desc"
+    },
+    "Condi_winNewActStage": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "winNewActStage.?1",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_winNewActStage_Desc"
     }
 }

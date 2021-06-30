@@ -98,6 +98,10 @@ function SimpleBattleStatist:on_UseHeroCard(args)
 end
 
 function SimpleBattleStatist:on_UnitSpawned(args)
+	if args.type == "battlefield" then
+		return
+	end
+
 	local player = args.player
 	local unit = args.unit
 	local type = args.type
@@ -121,6 +125,15 @@ function SimpleBattleStatist:on_UnitSpawned(args)
 	unitInfo.quality = unit:getQuality()
 	unitInfo.qualityId = unit:getQualityId()
 	unitInfo.summoned = {}
+	unitInfo.presentMaster = unit._presentMaster
+
+	if unitInfo.presentMaster then
+		for id, info in pairs(self._units) do
+			if info.owner == unitInfo.owner and unitInfo.id ~= info.id then
+				info.presentMaster = nil
+			end
+		end
+	end
 end
 
 function SimpleBattleStatist:on_UnitDied(args)
@@ -446,7 +459,8 @@ function SimpleBattleStatist:summarize()
 			summoned = info.summoned,
 			doSkill = info.doSkill,
 			cure = info.cure or 0,
-			receiveCure = info.receiveCure or 0
+			receiveCure = info.receiveCure or 0,
+			presentMaster = info.presentMaster
 		}
 
 		for range, killed in pairs(info.skillKilled) do

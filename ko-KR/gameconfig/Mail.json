@@ -428,6 +428,32 @@
         "TopStatus": 0,
         "Type": "USER"
     },
+    "Mail_DeepSea_AchieveMentTask_Activity": {
+        "Content": "Mail_DeepSea_AchieveMentTask_Activity_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_DeepSea_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_DeepSea_AchieveMentTask_Activity_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
+    "Mail_DeepSea_DailyTask_Activity": {
+        "Content": "Mail_DeepSea_DailyTask_Activity_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_DeepSea_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_DeepSea_DailyTask_Activity_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
     "Mail_DefinedTask_Activity": {
         "Content": "Mail_DefinedTask_Content",
         "ExpireAfterRead": "",
@@ -607,6 +633,19 @@
         "Reward": "",
         "SubType": 1,
         "Title": "Mail_EightDays_Collapsed_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
+    "Mail_EightDays_DeepSea": {
+        "Content": "Mail_EightDays_DeepSea_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_DeepSea_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_EightDays_DeepSea_Title",
         "TopStatus": 0,
         "Type": "USER"
     },

@@ -417,14 +417,18 @@ all.Sk_Master_LieSha_Action2 = {
 			local global = _env.global
 
 			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.1, 80)
-			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
-				-1.8,
-				0
-			}, 100, "skill2"))
 
 			if global.EnemyMaster(_env) then
+				global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, global.EnemyMaster(_env)) + {
+					-1.8,
+					0
+				}, 100, "skill2"))
 				global.AssignRoles(_env, global.EnemyMaster(_env), "target")
 			else
+				global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
+					-1.8,
+					0
+				}, 100, "skill2"))
 				global.AssignRoles(_env, _env.TARGET, "target")
 			end
 		end)

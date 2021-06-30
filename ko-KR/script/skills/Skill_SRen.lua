@@ -322,36 +322,27 @@ all.Skill_SRen_Unique = {
 			local global = _env.global
 
 			for _, unit in global.__iter__(_env.units) do
+				_env.num = global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "UNDEAD"))
+
+				if _env.num > 1 then
+					global.DispelBuff(_env, unit, global.BUFF_MARKED_ALL(_env, "UNDEAD", "DISPELLABLE"), 2)
+				end
+
+				if _env.num == 1 then
+					global.DispelBuff(_env, unit, global.BUFF_MARKED_ALL(_env, "UNDEAD", "DISPELLABLE"), 1)
+					global.DispelBuff(_env, unit, global.BUFF_MARKED_ALL(_env, "BUFF", "DISPELLABLE"), 1)
+				end
+
+				if _env.num == 0 then
+					global.DispelBuff(_env, unit, global.BUFF_MARKED_ALL(_env, "BUFF", "DISPELLABLE"), 2)
+				end
+
 				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
 				global.ApplyRPEffect(_env, _env.ACTOR, unit)
 
 				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
 
 				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
-			end
-
-			_env.num = global.SelectBuffCount(_env, _env.units, global.BUFF_MARKED_ALL(_env, "UNDEAD"))
-
-			if _env.num == 2 then
-				for _, unit2 in global.__iter__(_env.units) do
-					global.DispelBuff(_env, unit2, global.BUFF_MARKED_ALL(_env, "UNDEAD", "DISPELLABLE"), 2)
-				end
-			end
-
-			if _env.num == 1 then
-				for _, unit3 in global.__iter__(_env.units) do
-					global.DispelBuff(_env, unit3, global.BUFF_MARKED_ALL(_env, "UNDEAD", "DISPELLABLE"), 1)
-				end
-
-				for _, unit4 in global.__iter__(_env.units) do
-					global.DispelBuff(_env, unit4, global.BUFF_MARKED_ALL(_env, "BUFF", "DISPELLABLE"), 1)
-				end
-			end
-
-			if _env.num == 0 then
-				for _, unit5 in global.__iter__(_env.units) do
-					global.DispelBuff(_env, unit5, global.BUFF_MARKED_ALL(_env, "BUFF", "DISPELLABLE"), 2)
-				end
 			end
 		end)
 		exec["@time"]({
@@ -444,41 +435,32 @@ all.Skill_SRen_Unique_EX = {
 			local this = _env.this
 			local global = _env.global
 
+			for _, unit in global.__iter__(global.FriendUnits(_env)) do
+				global.DispelBuff(_env, unit, global.BUFF_MARKED_ALL(_env, "DEBUFF", "DISPELLABLE"), 2)
+			end
+
 			for _, unit in global.__iter__(_env.units) do
+				_env.num = global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "UNDEAD"))
+
+				if _env.num > 1 then
+					global.DispelBuff(_env, unit, global.BUFF_MARKED_ALL(_env, "UNDEAD", "DISPELLABLE"), 2)
+				end
+
+				if _env.num == 1 then
+					global.DispelBuff(_env, unit, global.BUFF_MARKED_ALL(_env, "UNDEAD", "DISPELLABLE"), 1)
+					global.DispelBuff(_env, unit, global.BUFF_MARKED_ALL(_env, "BUFF", "DISPELLABLE"), 1)
+				end
+
+				if _env.num == 0 then
+					global.DispelBuff(_env, unit, global.BUFF_MARKED_ALL(_env, "BUFF", "DISPELLABLE"), 2)
+				end
+
 				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
 				global.ApplyRPEffect(_env, _env.ACTOR, unit)
 
 				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
 
 				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
-			end
-
-			_env.num = global.SelectBuffCount(_env, _env.units, global.BUFF_MARKED_ALL(_env, "UNDEAD"))
-
-			if _env.num == 2 then
-				for _, unit2 in global.__iter__(_env.units) do
-					global.DispelBuff(_env, unit2, global.BUFF_MARKED_ALL(_env, "UNDEAD", "DISPELLABLE"), 2)
-				end
-			end
-
-			if _env.num == 1 then
-				for _, unit3 in global.__iter__(_env.units) do
-					global.DispelBuff(_env, unit3, global.BUFF_MARKED_ALL(_env, "UNDEAD", "DISPELLABLE"), 1)
-				end
-
-				for _, unit4 in global.__iter__(_env.units) do
-					global.DispelBuff(_env, unit4, global.BUFF_MARKED_ALL(_env, "BUFF", "DISPELLABLE"), 1)
-				end
-			end
-
-			if _env.num == 0 then
-				for _, unit5 in global.__iter__(_env.units) do
-					global.DispelBuff(_env, unit5, global.BUFF_MARKED_ALL(_env, "BUFF", "DISPELLABLE"), 2)
-				end
-			end
-
-			for _, unit6 in global.__iter__(global.FriendUnits(_env)) do
-				global.DispelBuff(_env, unit6, global.BUFF_MARKED_ALL(_env, "DEBUFF", "DISPELLABLE"), 2)
 			end
 		end)
 		exec["@time"]({

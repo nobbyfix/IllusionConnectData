@@ -66,7 +66,8 @@ local SortExtend = {
 		GalleryPartyType.kBSNCT,
 		GalleryPartyType.kDWH,
 		GalleryPartyType.kMNJH,
-		GalleryPartyType.kSSZS
+		GalleryPartyType.kSSZS,
+		GalleryPartyType.kUNKNOWN
 	}
 }
 

@@ -502,7 +502,14 @@ function ActivityPointSweepMediator:getSweepItemNum()
 end
 
 function ActivityPointSweepMediator:checkTimesUp()
-	self._point = self._model:getPointById(self._sweepData.param.pointId)
+	if self._model:getType() == ActivityType.KActivityBlockMapNew then
+		self._point = self._model:getSubPointById(self._sweepData.param.pointId)
+		self._type = self._sweepData.param.type
+	else
+		self._pointId = self._data.pointId
+		self._point = self._model:getPointById(self._sweepData.param.pointId)
+		self._type = litTypeMap[self._model:getStageTypeById(self._sweepData.param.pointId)]
+	end
 
 	return self:getMaxSwipCount() <= 0
 end
@@ -548,7 +555,7 @@ function ActivityPointSweepMediator:onSweepBtn(sender, type)
 	self._comfirmBtn:setVisible(false)
 
 	local param = {
-		type = litTypeMap[self._model:getStageTypeById(self._sweepData.param.pointId)],
+		type = self._type,
 		doActivityType = 107,
 		mapId = self._sweepData.param.mapId,
 		pointId = self._sweepData.param.pointId

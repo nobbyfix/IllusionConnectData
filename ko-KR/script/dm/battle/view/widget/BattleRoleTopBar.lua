@@ -34,6 +34,13 @@ function BattleRoleTopBar:initialize(view, mode, isLeft, viewContext)
 
 	self._viewContext = viewContext
 	self._isLeft = isLeft
+
+	if GameConfigs.debugHeroId then
+		view:setVisible(false)
+
+		function view.setVisible()
+		end
+	end
 end
 
 function BattleRoleTopBar:dispose()
@@ -124,9 +131,11 @@ function BattleRoleTopBar:_setupView()
 	self._hpCover = barsPanel:getChildByName("hp_coverbar")
 	local mpbar = barsPanel:getChildByFullName("bars.mp_bar")
 	self._baseShield = barsPanel:getChildByName("Node_shield")
+	self._fanProgress = barsPanel:getChildByName("progress")
 	self._shield = self._baseShield:getChildByName("shield")
 
 	self._shield:setVisible(false)
+	self._fanProgress:setVisible(false)
 	mpbar:setPercent(0)
 
 	self._mpbar = mpbar
@@ -162,6 +171,11 @@ function BattleRoleTopBar:_setupView()
 end
 
 function BattleRoleTopBar:setRoleAttrbute(attr)
+end
+
+function BattleRoleTopBar:updateFanProgress(progress)
+	self._fanProgress:setVisible(progress > 0)
+	self._fanProgress:getChildByName("value"):setPercent(progress * 100)
 end
 
 function BattleRoleTopBar:setHp(value)

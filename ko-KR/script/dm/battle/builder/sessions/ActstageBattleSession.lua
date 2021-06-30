@@ -17,7 +17,9 @@ end
 function ActstageBattleSession:buildBattleData(playerData, enemyData, randomSeed)
 	local randomizer = Random:new(randomSeed)
 	local playerDrawCard = ConfigReader:getRecordById("ConfigValue", "Fight_PlayerDrawCard").content
-	local enemyCard = ConfigReader:getDataByNameIdAndKey("ActivityBlockPoint", self._blockPointId, "EnemyCard")
+	local pointConfig = ConfigReader:getRecordById("ActivityBlockPoint", self._blockPointId)
+	pointConfig = pointConfig or ConfigReader:getRecordById("ActivityBlockBattle", self._blockPointId)
+	local enemyCard = pointConfig.EnemyCard
 	local playerCards = playerData.cards
 
 	self:_buildCardPool(enemyData, randomizer, enemyCard, playerCards)
@@ -34,8 +36,10 @@ function ActstageBattleSession:genBattleConfigAndData(battleData, randomSeed)
 		return
 	end
 
+	local pointConfig = ConfigReader:getRecordById("ActivityBlockPoint", self._blockPointId)
+	pointConfig = pointConfig or ConfigReader:getRecordById("ActivityBlockBattle", self._blockPointId)
 	local maxRound = ConfigReader:getRecordById("ConfigValue", "Fight_MaximumRound").content
-	local battleConfig = self:_getBlockBattleConfig(ConfigReader:getDataByNameIdAndKey("ActivityBlockPoint", self._blockPointId, "BlockBattleConfig"))
+	local battleConfig = self:_getBlockBattleConfig(pointConfig.BlockBattleConfig)
 	local stageEnergy = battleConfig and battleConfig.StageEnergy or self:_getBlockBattleConfig(ConfigReader:getRecordById("ConfigValue", "Fight_StageEnergy").content).StageEnergy
 	local battlePhaseConfig = self:_genBattlePhaseConfig(stageEnergy, {
 		waitMode = battleConfig and battleConfig.WaitMode,
@@ -45,7 +49,7 @@ function ActstageBattleSession:genBattleConfigAndData(battleData, randomSeed)
 
 	self:_applyBattleConfig(battleData, battleConfig)
 
-	local victoryConditions = ConfigReader:getDataByNameIdAndKey("ActivityBlockPoint", self._blockPointId, "VictoryConditions")
+	local victoryConditions = pointConfig.VictoryConditions
 
 	return {
 		battlePhaseConfig = battlePhaseConfig,
@@ -154,6 +158,7 @@ function ActstageBattleSession:getBattlePassiveSkill()
 	local battleData = self:getPlayersData()
 	local playerShow = BattleDataHelper:getTowerPassiveSkill(battleData.playerData)
 	local pointConfig = ConfigReader:getRecordById("ActivityBlockPoint", self._blockPointId)
+	pointConfig = pointConfig or ConfigReader:getRecordById("ActivityBlockBattle", self._blockPointId)
 	local specialSkillShow = pointConfig.SpecialSkillShow or {}
 	local enemyShow = {}
 

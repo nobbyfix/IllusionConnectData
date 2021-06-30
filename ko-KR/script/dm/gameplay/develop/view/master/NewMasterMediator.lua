@@ -8,6 +8,7 @@ local kHandlerBtn = {}
 local GalleryPartyType = {
 	kBSNCT = "BSNCT",
 	kWNSXJ = "WNSXJ",
+	kUNKNOWN = "UNKNOWN",
 	kMNJH = "MNJH",
 	kDWH = "DWH",
 	kXD = "XD",
@@ -42,6 +43,11 @@ local kBgAnimAndImage = {
 		"weinasi_weinasixianjing",
 		"asset/scene/party_bg_weinasi",
 		"asset/ui/gallery/party_icon_she.png"
+	},
+	[GalleryPartyType.kUNKNOWN] = {
+		"weinasi_weinasixianjing",
+		"asset/scene/party_bg_unknown",
+		"asset/ui/gallery/party_icon_unknown.png"
 	}
 }
 

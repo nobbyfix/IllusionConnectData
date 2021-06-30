@@ -1,4 +1,5 @@
 require("dm.gameplay.activity.model.ActivityTask")
+require("dm.gameplay.activity.model.ActivityNumTask")
 
 BaseActivity = class("BaseActivity", objectlua.Object, _M)
 

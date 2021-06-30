@@ -68,8 +68,8 @@ local function stopAffectedSkillActions(env, target)
 	end)
 end
 
-function exports.Flee(env, duration)
-	local target = env["$actor"]
+function exports.Flee(env, duration, target)
+	local target = target or env["$actor"]
 
 	if target == nil or target:isDying() then
 		return false
@@ -212,6 +212,22 @@ function exports.Summon(env, source, summonId, summonFactor, summonExtra, locati
 	return formationSystem:summon(actor, source, summonId, factors, location)
 end
 
+function exports.SummonMaster(env, source, summonId, summonFactor, summonExtra, location, curHpRatio)
+	local formationSystem = env.global["$FormationSystem"]
+	local actor = env["$actor"]
+	local factors = {
+		hpRatio = summonFactor and summonFactor[1] or 1,
+		atkRatio = summonFactor and summonFactor[2] or 1,
+		defRatio = summonFactor and summonFactor[3] or 1,
+		hpEx = summonExtra and summonExtra[1] or 0,
+		atkEx = summonExtra and summonExtra[2] or 0,
+		defEx = summonExtra and summonExtra[3] or 0,
+		curHpRatio = curHpRatio or 1
+	}
+
+	return formationSystem:summonMaster(actor, source, summonId, factors, env["$id"])
+end
+
 function exports.SpawnByTransform(env, player, source, location, isMarkedSummon)
 	local formationSystem = env.global["$FormationSystem"]
 
@@ -223,6 +239,12 @@ function exports.SpawnAssist(env, assistId, player, cellId)
 	local formationSystem = env.global["$FormationSystem"]
 
 	formationSystem:spawnAssist(actor, assistId, player, cellId)
+end
+
+function exports.MarkSummoned(env, unit, isMarkSummon)
+	if unit then
+		unit:setIsSummoned(isMarkSummon)
+	end
 end
 
 function exports.Suicide(env)

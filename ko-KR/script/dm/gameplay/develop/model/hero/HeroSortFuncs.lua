@@ -5,7 +5,8 @@ local kHeroPartyOrder = {
 	[GalleryPartyType.kMNJH] = 200,
 	[GalleryPartyType.kDWH] = 300,
 	[GalleryPartyType.kWNSXJ] = 600,
-	[GalleryPartyType.kSSZS] = 100
+	[GalleryPartyType.kSSZS] = 100,
+	[GalleryPartyType.kUNKNOWN] = 700
 }
 local kHeroSortType = {
 	SortByCombat = 1,
