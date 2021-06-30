@@ -22,11 +22,11 @@ function PassiveFunEffect:takeEffect(target, buffObject)
 		return false
 	end
 
-	local skill = skillComp:addPassiveSkill(data)
+	local skill, isNewPassive = skillComp:addPassiveSkill(data)
 
 	self._skillSystem:buildSkillsForActor_PassiveBuff(target, {
 		skill
-	}, self._actionList)
+	}, self._actionList, isNewPassive)
 	super.takeEffect(self, target, buffObject)
 
 	return true

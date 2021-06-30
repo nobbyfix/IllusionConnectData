@@ -2408,67 +2408,65 @@ all.EquipSkill_Armor_15009 = {
 				"+Normal"
 			}, 1)
 
-			if global.FriendMaster(_env) then
-				global.ApplyBuff(_env, global.FriendMaster(_env), {
+			global.ApplyBuff(_env, global.FriendField(_env), {
+				timing = 0,
+				duration = 99,
+				tags = {
+					"NUMERIC",
+					"BUFF",
+					"UNDISPELLABLE",
+					"UNSTEALABLE",
+					"UR_EQUIPMENT",
+					"EquipSkill_Armor_15009_check"
+				}
+			}, {
+				buff_check
+			})
+
+			if global.SpecialPropGetter(_env, "EquipSkill_Armor_15009")(_env, global.FriendField(_env)) == 1 then
+				local buffeft2 = global.NumericEffect(_env, "+unhurtrate", {
+					"+Normal",
+					"+Normal"
+				}, this.UnHurtRateFactor)
+
+				global.ApplyBuff(_env, _env.ACTOR, {
 					timing = 0,
+					display = "EquipSkill_Armor_15009",
+					group = "EquipSkill_Armor_15009",
 					duration = 99,
+					limit = 1,
 					tags = {
 						"NUMERIC",
 						"BUFF",
+						"UNHURTRATEUP",
 						"UNDISPELLABLE",
 						"UNSTEALABLE",
-						"UR_EQUIPMENT",
-						"EquipSkill_Armor_15009_check"
+						"UR_EQUIPMENT"
 					}
 				}, {
-					buff_check
+					buffeft2
 				})
 
-				if global.SpecialPropGetter(_env, "EquipSkill_Armor_15009")(_env, global.FriendMaster(_env)) == 1 then
-					local buffeft2 = global.NumericEffect(_env, "+unhurtrate", {
-						"+Normal",
-						"+Normal"
-					}, this.UnHurtRateFactor)
+				local buff_self = global.PassiveFunEffectBuff(_env, "EquipSkill_Armor_15009_UnhurtRate", {
+					UnHurtRateFactor = this.UnHurtRateFactor
+				})
 
-					global.ApplyBuff(_env, _env.ACTOR, {
-						timing = 0,
-						display = "EquipSkill_Armor_15009",
-						group = "EquipSkill_Armor_15009",
-						duration = 99,
-						limit = 1,
-						tags = {
-							"NUMERIC",
-							"BUFF",
-							"UNHURTRATEUP",
-							"UNDISPELLABLE",
-							"UNSTEALABLE",
-							"UR_EQUIPMENT"
-						}
-					}, {
-						buffeft2
-					})
-
-					local buff_self = global.PassiveFunEffectBuff(_env, "EquipSkill_Armor_15009_UnhurtRate", {
-						UnHurtRateFactor = this.UnHurtRateFactor
-					})
-
-					global.ApplyBuff(_env, _env.ACTOR, {
-						duration = 99,
-						group = "EquipSkill_Armor_15009_self",
-						timing = 0,
-						limit = 1,
-						tags = {
-							"NUMERIC",
-							"BUFF",
-							"UNHURTRATEUP",
-							"UNDISPELLABLE",
-							"UNSTEALABLE",
-							"UR_EQUIPMENT"
-						}
-					}, {
-						buff_self
-					})
-				end
+				global.ApplyBuff(_env, _env.ACTOR, {
+					duration = 99,
+					group = "EquipSkill_Armor_15009_self",
+					timing = 0,
+					limit = 1,
+					tags = {
+						"NUMERIC",
+						"BUFF",
+						"UNHURTRATEUP",
+						"UNDISPELLABLE",
+						"UNSTEALABLE",
+						"UR_EQUIPMENT"
+					}
+				}, {
+					buff_self
+				})
 			end
 		end)
 
@@ -2523,7 +2521,7 @@ all.EquipSkill_Armor_15009_UnhurtRate = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			local units = global.RandomN(_env, 1, global.FriendUnits(_env, global.PETS))
+			local units = global.RandomN(_env, 1, global.FriendUnits(_env, global.PETS - global.MARKED(_env, "DAGUN")))
 
 			if units[1] then
 				local buffeft2 = global.NumericEffect(_env, "+unhurtrate", {
@@ -2586,7 +2584,7 @@ all.EquipSkill_Armor_15009_UnhurtRate = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			local units = global.RandomN(_env, 1, global.FriendUnits(_env, global.PETS))
+			local units = global.RandomN(_env, 1, global.FriendUnits(_env, global.PETS - global.MARKED(_env, "DAGUN")))
 
 			if units[1] then
 				local buffeft2 = global.NumericEffect(_env, "+unhurtrate", {
@@ -2703,7 +2701,7 @@ all.EquipSkill_Armor_15010 = {
 
 			global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
 				timing = 0,
-				display = "BlockRateUp",
+				display = "UnHurtRateUp",
 				group = "EquipSkill_Armor_15010_1",
 				duration = 99,
 				limit = 1,
@@ -2881,6 +2879,7 @@ all.EquipSkill_Armor_15011 = {
 				global.ApplyBuff(_env, _env.ACTOR, {
 					timing = 0,
 					duration = 99,
+					display = "DefUp",
 					tags = {
 						"NUMERIC",
 						"BUFF",
@@ -2894,6 +2893,7 @@ all.EquipSkill_Armor_15011 = {
 				global.ApplyBuff(_env, _env.ACTOR, {
 					timing = 0,
 					duration = 99,
+					display = "BlockRateUp",
 					tags = {
 						"NUMERIC",
 						"BUFF",
@@ -4959,39 +4959,37 @@ all.EquipSkill_Accesory_15010 = {
 				"+Normal"
 			}, 1)
 
-			if global.FriendMaster(_env) then
-				global.ApplyBuff(_env, global.FriendMaster(_env), {
-					timing = 0,
-					duration = 99,
+			global.ApplyBuff(_env, global.FriendField(_env), {
+				timing = 0,
+				duration = 99,
+				tags = {
+					"EquipSkill_Accesory_15010_biaozhi"
+				}
+			}, {
+				buffeft_tag
+			})
+
+			local buffeft1 = global.Immune(_env)
+			local buffeft2 = global.ImmuneBuff(_env, global.BUFF_MARKED_ANY(_env, "DEBUFF"))
+
+			if global.SpecialPropGetter(_env, "EquipSkill_Accesory_15010_biaozhi")(_env, global.FriendField(_env)) == 2 then
+				global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
+					timing = 4,
+					display = "Immune",
+					duration = this.ImmuneTime,
 					tags = {
-						"EquipSkill_Accesory_15010_biaozhi"
+						"STATUS",
+						"NUMERIC",
+						"BUFF",
+						"IMMUNE",
+						"DISPELLABLE",
+						"STEALABLE",
+						"EquipSkill_Accesory_15010"
 					}
 				}, {
-					buffeft_tag
-				})
-
-				local buffeft1 = global.Immune(_env)
-				local buffeft2 = global.ImmuneBuff(_env, global.BUFF_MARKED_ANY(_env, "DEBUFF"))
-
-				if global.SpecialPropGetter(_env, "EquipSkill_Accesory_15010_biaozhi")(_env, global.FriendMaster(_env)) == 2 then
-					global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
-						timing = 4,
-						display = "Immune",
-						duration = this.ImmuneTime,
-						tags = {
-							"STATUS",
-							"NUMERIC",
-							"BUFF",
-							"IMMUNE",
-							"DISPELLABLE",
-							"STEALABLE",
-							"EquipSkill_Accesory_15010"
-						}
-					}, {
-						buffeft1,
-						buffeft2
-					}, 1, 0)
-				end
+					buffeft1,
+					buffeft2
+				}, 1, 0)
 			end
 		end)
 

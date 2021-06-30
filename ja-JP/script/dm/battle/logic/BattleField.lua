@@ -168,6 +168,9 @@ function BattleField:createCells()
 		cells[-i] = BFCell:new(-i)
 	end
 
+	cells[108] = BFCell:new(108)
+	cells[-108] = BFCell:new(-108)
+
 	return cells
 end
 
@@ -553,6 +556,30 @@ function BattleField:collectCells(result, side, descending)
 
 	for id = start, guard, step do
 		result[#result + 1] = cells[id]
+	end
+
+	return result
+end
+
+function BattleField:collectFieldUnits(result, side)
+	if result == nil then
+		result = {}
+	end
+
+	local cells = self._cells
+
+	if side == kBattleSideA then
+		local unit = cells[108]:getResident()
+
+		if unit ~= nil and unit:isInStages(ULS_Normal) then
+			result[#result + 1] = unit
+		end
+	else
+		local unit = cells[-108]:getResident()
+
+		if unit ~= nil and unit:isInStages(ULS_Normal) then
+			result[#result + 1] = unit
+		end
 	end
 
 	return result

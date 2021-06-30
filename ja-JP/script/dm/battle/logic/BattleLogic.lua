@@ -331,7 +331,7 @@ function BattleLogic:on_UnitSpawned(_, args)
 		battleStatist:sendStatisticEvent("UnitSpawned", {
 			player = player,
 			unit = unit,
-			type = unitType == BattleUnitType.kMaster and "master" or "hero",
+			type = unitType == BattleUnitType.kMaster and "master" or unitType == BattleUnitType.kBattleField and "battlefield" or "hero",
 			round = self:getRoundNumber(),
 			startTime = self._battleContext:getCurrentTime()
 		})

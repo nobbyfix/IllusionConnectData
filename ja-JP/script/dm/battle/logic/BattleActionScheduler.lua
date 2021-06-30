@@ -121,6 +121,20 @@ function BattleActionScheduler:addEmergentAction(action)
 	self._emergentActions[#self._emergentActions + 1] = action
 end
 
+function BattleActionScheduler:addUserActionAtFirst(action)
+	local actionIndex = #self._userActions + 1
+
+	for k, v in pairs(self._userActions) do
+		if v._targetSkillType and (v._targetSkillType == kBattleUniqueSkill or v._targetSkillType == kBattleMasterSkill1 or v._targetSkillType == kBattleMasterSkill2 or v._targetSkillType == kBattleMasterSkill3) then
+			actionIndex = k
+
+			break
+		end
+	end
+
+	table.insert(self._userActions, actionIndex, action)
+end
+
 function BattleActionScheduler:removeEmergentAction(action)
 	return self:removeActionFromSequence(self._emergentActions, action)
 end
@@ -141,7 +155,7 @@ function BattleActionScheduler:nextUserAction(battleContext)
 	return self:nextActionInSequence(self._userActions, battleContext)
 end
 
-function BattleActionScheduler:exertUniqueSkill(actor, skillType)
+function BattleActionScheduler:exertUniqueSkill(actor, skillType, isEmergent)
 	if self._finished then
 		return false, "Finished"
 	end
@@ -170,7 +184,11 @@ function BattleActionScheduler:exertUniqueSkill(actor, skillType)
 
 	skillRoutine = BattleUniqueSkillAction:new(skillType):withActor(actor)
 
-	self:addUserAction(skillRoutine)
+	if isEmergent then
+		self:addUserActionAtFirst(skillRoutine)
+	else
+		self:addUserAction(skillRoutine)
+	end
 
 	return true
 end

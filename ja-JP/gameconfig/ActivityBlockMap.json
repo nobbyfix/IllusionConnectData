@@ -24,6 +24,7 @@
             "ADetectiveE01S11",
             "ADetectiveE01S12"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "ADetectiveS01S03",
             "ADetectiveS01S04"
@@ -55,6 +56,7 @@
             "ADetectiveM01S11",
             "ADetectiveM01S12"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "ADetectiveS01S01",
             "ADetectiveS01S02"
@@ -86,6 +88,7 @@
             "AE01S11",
             "AE01S12"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "AS01E01",
             "AS01E02",
@@ -118,6 +121,7 @@
             "AHalloweenM01S05",
             "AHalloweenM01S06"
         ],
+        "SubSort": "",
         "SubStoryPoint": "",
         "Type": "NORMAL"
     },
@@ -145,6 +149,7 @@
             "AHalloweenM02S06",
             "AHalloweenM02S07"
         ],
+        "SubSort": "",
         "SubStoryPoint": "",
         "Type": "NORMAL"
     },
@@ -174,6 +179,7 @@
             "AHalloweenM03S07",
             "AHalloweenM03S08"
         ],
+        "SubSort": "",
         "SubStoryPoint": "",
         "Type": "NORMAL"
     },
@@ -202,6 +208,7 @@
             "AM01S11",
             "AM01S12"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "AS01S01",
             "AS01S02",
@@ -236,6 +243,7 @@
             "AMusicFestivalE01S11",
             "AMusicFestivalE01S12"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "AMusicFestivalS01E01",
             "AMusicFestivalS01E02",
@@ -269,6 +277,7 @@
             "AMusicFestivalM01S11",
             "AMusicFestivalM01S12"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "AMusicFestivalS01S01",
             "AMusicFestivalS01S02",
@@ -296,6 +305,7 @@
             "ANewYearM01S05",
             "ANewYearM01S06"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "ANewYearS01S01",
             "ANewYearS01S02"
@@ -322,6 +332,7 @@
             "ANewYearM02S06",
             "ANewYearM02S07"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "ANewYearS02S01",
             "ANewYearS02S02"
@@ -349,6 +360,7 @@
             "ANewYearM03S07",
             "ANewYearM03S08"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "ANewYearS03S01",
             "ANewYearS03S02",
@@ -382,6 +394,7 @@
             "ASummerE01S11",
             "ASummerE01S12"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "ASummerS01E01",
             "ASummerS01E02",
@@ -415,6 +428,7 @@
             "ASummerM01S11",
             "ASummerM01S12"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "ASummerS01S01",
             "ASummerS01S02",
@@ -449,6 +463,7 @@
             "AWuXiuHuiE01S11",
             "AWuXiuHuiE01S12"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "AWuXiuHuiS01E01",
             "AWuXiuHuiS01E02",
@@ -482,6 +497,7 @@
             "AWuXiuHuiM01S11",
             "AWuXiuHuiM01S12"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "AWuXiuHuiS01S01",
             "AWuXiuHuiS01S02",
@@ -516,6 +532,7 @@
             "AE02S11",
             "AE02S12"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "AZuoHeS01E01",
             "AZuoHeS01E02",
@@ -550,6 +567,7 @@
             "AM02S11",
             "AM02S12"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "AZuoHeS01S01",
             "AZuoHeS01S02",
@@ -584,6 +602,7 @@
             "BakingE01S11",
             "BakingE01S12"
         ],
+        "SubSort": "",
         "SubStoryPoint": [],
         "Type": "ELITE"
     },
@@ -612,6 +631,7 @@
             "BakingM01S11",
             "BakingM01S12"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "BakingS01S01",
             "BakingS01S02",
@@ -645,6 +665,7 @@
             "CollapsedE01S11",
             "CollapsedE01S12"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "CollapsedS01E01",
             "CollapsedS01E02",
@@ -677,6 +698,7 @@
             "CollapsedM01S11",
             "CollapsedM01S12"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "CollapsedS01S01",
             "CollapsedS01S02",
@@ -704,8 +726,47 @@
             "CollapsedN01S05",
             "CollapsedN01S06"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "CollapsedS01N01"
+        ],
+        "Type": "NORMAL"
+    },
+    "DeepSeaM01": {
+        "BGM": "Mus_Story_DeepSea_Main",
+        "Background": "DeepSea_Scene01",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_DeepSeaAM01_Name",
+        "StarBoxReward": "",
+        "SubPoint": [],
+        "SubSort": [
+            "DeepSeaS01",
+            "DeepSeaS02",
+            "DeepSeaS03",
+            "DeepSeaS04",
+            "DeepSeaS05",
+            "DeepSeaS06",
+            "DeepSeaS07",
+            "DeepSeaS08",
+            "DeepSeaS09",
+            "DeepSeaS10",
+            "DeepSeaS11",
+            "DeepSeaS12",
+            "DeepSeaS13",
+            "DeepSeaS14",
+            "DeepSeaS15",
+            "DeepSeaS16"
+        ],
+        "SubStoryPoint": [
+            "DeepSeaS01S01",
+            "DeepSeaS01S02",
+            "DeepSeaS01S03",
+            "DeepSeaS01S04",
+            "DeepSeaS01S05",
+            "DeepSeaS01S06",
+            "DeepSeaS01S07",
+            "DeepSeaS01S08"
         ],
         "Type": "NORMAL"
     },
@@ -734,6 +795,7 @@
             "FemaleE01S11",
             "FemaleE01S12"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "FemaleS01E01",
             "FemaleS01E02"
@@ -765,6 +827,7 @@
             "FemaleM01S11",
             "FemaleM01S12"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "FemaleS01S01",
             "FemaleS01S02"
@@ -796,6 +859,7 @@
             "FireE01S11",
             "FireE01S12"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "FireS01E01",
             "FireS01E02",
@@ -822,6 +886,7 @@
             "FireH01S05",
             "FireH01S06"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "FireS01H01"
         ],
@@ -852,6 +917,7 @@
             "FireM01S11",
             "FireM01S12"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "FireS01S01",
             "FireS01S02",
@@ -885,6 +951,7 @@
             "KnightE01S11",
             "KnightE01S12"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "KnightS01E01",
             "KnightS01E02",
@@ -918,6 +985,7 @@
             "KnightM01S11",
             "KnightM01S12"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "KnightS01S01",
             "KnightS01S02",
@@ -951,6 +1019,7 @@
             "PurewhiteE11",
             "PurewhiteE12"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "APurewhiteS01E01",
             "APurewhiteS01E02",
@@ -984,6 +1053,7 @@
             "PurewhiteM11",
             "PurewhiteM12"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "APurewhiteS01S01",
             "APurewhiteS01S02",
@@ -1015,6 +1085,7 @@
             "SnowflackE09",
             "SnowflackE10"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "ASnowflakeS01E01",
             "ASnowflakeS01E02",
@@ -1046,6 +1117,7 @@
             "SnowflackM09",
             "SnowflackM10"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "ASnowflakeS01S01",
             "ASnowflakeS01S02",
@@ -1079,6 +1151,7 @@
             "StoryBookE01S11",
             "StoryBookE01S12"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "StoryBookS01E01",
             "StoryBookS01E02",
@@ -1112,6 +1185,7 @@
             "StoryBookM01S11",
             "StoryBookM01S12"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "StoryBookS01S01",
             "StoryBookS01S02",
@@ -1145,6 +1219,7 @@
             "SummerE01S11",
             "SummerE01S12"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "SummerS01E01",
             "SummerS01E02",
@@ -1178,6 +1253,7 @@
             "SummerM01S11",
             "SummerM01S12"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "SummerS01S01",
             "SummerS01S02",
@@ -1212,6 +1288,7 @@
             "SunflowerE01S11",
             "SunflowerE01S12"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "SunflowerS01S03",
             "SunflowerS01S04"
@@ -1243,6 +1320,7 @@
             "SunflowerM01S11",
             "SunflowerM01S12"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "SunflowerS01S01",
             "SunflowerS01S02"

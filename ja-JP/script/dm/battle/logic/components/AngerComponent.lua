@@ -169,6 +169,14 @@ function AngerComponent:applyAngerRule(ruleName, a)
 	return self:applyRecovery(inc)
 end
 
+function AngerComponent:getAngerRules()
+	return self._angerRules
+end
+
+function AngerComponent:setAngerRules(rules)
+	self._angerRules = rules
+end
+
 function AngerComponent:copyComponent(srcComp, ratio)
 	self:setMaxAnger(1000)
 	self:setAnger(0)

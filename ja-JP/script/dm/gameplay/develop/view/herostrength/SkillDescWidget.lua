@@ -1,5 +1,5 @@
 SkillDescWidget = class("SkillDescWidget", BaseWidget, _M)
-local listWidth = 291
+local listWidth = 391
 
 function SkillDescWidget.class:createWidgetNode()
 	local resFile = "asset/ui/SkillDescWidget.csb"
@@ -143,19 +143,82 @@ function SkillDescWidget:refreshInfo(skill, role, isMaster)
 
 	name:setString(skill:getName())
 
-	local listView = self._skillTipPanel:getChildByName("ListView")
-
-	listView:setScrollBarEnabled(false)
-
-	local size = cc.size(290, 295)
 	local bg = self._skillTipPanel:getChildByName("Image_bg")
 	local desc = self._skillTipPanel:getChildByName("desc")
 
 	desc:setString("")
-	listView:removeAllChildren()
+	desc:removeAllChildren()
 
 	local descStr = {}
 	local height = 0
+	local height_bottom = 0
+
+	if self._isMaster ~= true then
+		self._starAttrs = self._role:getStarAttrs()
+		local nextPanel = self._skillTipPanel:getChildByName("nextPanel")
+		local titleStr = ""
+		local nextDes = ""
+		local check_star = 0
+
+		for i = 1, #self._starAttrs do
+			local params = self._starAttrs[i]
+
+			if params.star then
+				check_star = params.star
+				titleStr = Strings:get("Hero_Star_UI_Effect_Desc", {
+					star = params.star == 7 and Strings:get("AWAKE_TITLE") or params.star
+				})
+			end
+
+			if params.info and self._role:getStar() < check_star then
+				for index = 1, #params.info do
+					local value = params.info[index]
+
+					if value.isHide == 0 and value.beforeSkillId and value.beforeSkillId == skill:getSkillId() then
+						nextDes = value.desc
+
+						break
+					end
+				end
+			end
+
+			if nextDes ~= "" then
+				break
+			end
+		end
+
+		if titleStr ~= "" and nextDes ~= "" then
+			nextPanel:setVisible(true)
+
+			local Text_title = nextPanel:getChildByName("Text_title")
+			local Image_line_1 = nextPanel:getChildByName("Image_line_1")
+			local Image_line_2 = nextPanel:getChildByName("Image_line_2")
+
+			Text_title:setString(titleStr)
+
+			if Text_title:getContentSize().width > 400 then
+				Text_title:getVirtualRenderer():setOverflow(cc.LabelOverflow.SHRINK)
+				Text_title:getVirtualRenderer():setDimensions(400, 38)
+			end
+
+			Image_line_1:setContentSize(cc.size(208 - Text_title:getContentSize().width / 2 - 5, 1.2))
+			Image_line_2:setContentSize(cc.size(208 - Text_title:getContentSize().width / 2 - 5, 1.2))
+
+			local newPanel = self:createEffectDescPanel(nextDes)
+
+			newPanel:setAnchorPoint(cc.p(0, 0))
+			newPanel:addTo(desc)
+
+			height = height + newPanel:getContentSize().height
+			height = height + 50
+			height_bottom = height
+
+			nextPanel:setPositionY(height_bottom - 4.5)
+		else
+			nextPanel:setVisible(false)
+		end
+	end
+
 	local skillDesc = self._isMaster and skill:getMasterSkillDescKey() or skill:getDesc()
 
 	if skillDesc and skillDesc ~= "" then
@@ -175,7 +238,7 @@ function SkillDescWidget:refreshInfo(skill, role, isMaster)
 		local newPanel = self:createSkillDescPanel(skillDesc, skill, style)
 
 		newPanel:setAnchorPoint(cc.p(0, 0))
-		listView:pushBackCustomItem(newPanel)
+		newPanel:addTo(desc)
 		table.insert(descStr, {
 			newPanel = newPanel,
 			height = newPanel:getContentSize().height
@@ -197,7 +260,7 @@ function SkillDescWidget:refreshInfo(skill, role, isMaster)
 			local newPanel = self:createEffectDescPanel(attrDescs[i])
 
 			newPanel:setAnchorPoint(cc.p(0, 0))
-			listView:pushBackCustomItem(newPanel)
+			newPanel:addTo(desc)
 			table.insert(descStr, {
 				newPanel = newPanel,
 				height = newPanel:getContentSize().height
@@ -211,28 +274,18 @@ function SkillDescWidget:refreshInfo(skill, role, isMaster)
 		local newPanel = descStr[i].newPanel
 
 		if i == #descStr then
-			newPanel:setPositionY(0)
+			newPanel:setPositionY(0 + height_bottom)
 		else
-			local posY = descStr[i + 1].height
+			local posY = descStr[i + 1].height + height_bottom
 
 			newPanel:setPositionY(posY)
 		end
 	end
 
-	local realHeight = size.height
+	height = height + 110
 
-	if height < size.height then
-		listView:setContentSize(cc.size(size.width, height))
-
-		realHeight = height
-	else
-		listView:setContentSize(size)
-	end
-
-	realHeight = realHeight + 110
-
-	bg:setContentSize(cc.size(332, realHeight))
-	infoNode:setPositionY(realHeight - 90)
+	bg:setContentSize(cc.size(432, height))
+	infoNode:setPositionY(height - 90)
 end
 
 function SkillDescWidget:createSkillDescPanel(title, skill, style)

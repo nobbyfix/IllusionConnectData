@@ -287,11 +287,15 @@ function BattleMainMediator:setCellState(isVisible)
 	end
 end
 
-function BattleMainMediator:playGroundEffect(bgRes, align, animName, zoom, actId, extra)
+function BattleMainMediator:playGroundEffect(bgRes, align, animName, zoom, actId, extra, blackOpacity)
 	local opacity = 160
 
 	if extra and extra.opacity then
 		opacity = extra.opacity
+	end
+
+	if blackOpacity and blackOpacity ~= "" then
+		opacity = blackOpacity
 	end
 
 	self._bgEffectLayer:removeAllChildren()
@@ -422,7 +426,6 @@ function BattleMainMediator:playBGM(music)
 end
 
 function BattleMainMediator:playDieEffect(sound)
-	dump(sound)
 	AudioEngine:getInstance():playEffect(sound)
 end
 
@@ -543,7 +546,7 @@ function BattleMainMediator:enterWithData(data)
 	self._battleDirector:start()
 	self:startMainLoop()
 
-	if GameConfigs.openDevWin then
+	if GameConfigs.openDevWin and not GameConfigs.debugHeroId then
 		self:setupDevMode()
 	end
 
@@ -1336,7 +1339,7 @@ function BattleMainMediator:debugChangeSpeed(event)
 	self:setTimeScale(speed)
 end
 
-function BattleMainMediator:addEffectAnim(anim, pos, zOrder, loop, flip)
+function BattleMainMediator:addEffectAnim(anim, pos, zOrder, loop, flipx, flipy)
 	local zOrders = {
 		Ground = 0,
 		UnderUI = BattleViewZOrder.OpLayer,
@@ -1344,7 +1347,8 @@ function BattleMainMediator:addEffectAnim(anim, pos, zOrder, loop, flip)
 	}
 	local movieClip = cc.MovieClip:create(anim, "BattleMCGroup")
 
-	movieClip:setScaleX(flip and -1 or 1)
+	movieClip:setScaleX(flipx and -1 or 1)
+	movieClip:setScaleY(flipy and -1 or 1)
 
 	local worldPos = self:getView():convertToWorldSpace(cc.p(0, 0))
 

@@ -263,8 +263,10 @@ function ActivitySystem:enterActstageBattle(data, activityId, subActivityId)
 		outSelf:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, nil, {}, popupDelegate))
 	end
 
-	local bgRes = ConfigReader:getDataByNameIdAndKey("ActivityBlockPoint", blockPointId, "Background") or "battle_scene_1"
-	local BGM = ConfigReader:getDataByNameIdAndKey("ActivityBlockPoint", blockPointId, "BGM")
+	local pointConfig = ConfigReader:getRecordById("ActivityBlockPoint", blockPointId)
+	pointConfig = pointConfig or ConfigReader:getRecordById("ActivityBlockBattle", blockPointId)
+	local bgRes = pointConfig.Background or "battle_scene_1"
+	local BGM = pointConfig.BGM
 	local battleSpeed_Display = ConfigReader:getDataByNameIdAndKey("ConfigValue", "BattleSpeed_Display", "content")
 	local battleSpeed_Actual = ConfigReader:getDataByNameIdAndKey("ConfigValue", "BattleSpeed_Actual", "content")
 	local data = {
@@ -290,7 +292,7 @@ function ActivitySystem:enterActstageBattle(data, activityId, subActivityId)
 			passiveSkill = battlePassiveSkill,
 			unlockMasterSkill = self:getInjector():getInstance(SystemKeeper):isUnlock("Master_BattleSkill"),
 			finishWaitTime = BattleDataHelper:getBattleFinishWaitTime("crusade"),
-			changeMaxNum = ConfigReader:getDataByNameIdAndKey("ActivityBlockPoint", blockPointId, "BossRound") or 1,
+			changeMaxNum = pointConfig.BossRound or 1,
 			btnsShow = {
 				speed = {
 					visible = speedOpenSta and speedCanshow,
@@ -335,6 +337,7 @@ function ActivitySystem:requestFinishActstage(activityId, subActivityId, params)
 				data.activityId = activityId
 				data.subActivityId = subActivityId
 				data.pointId = params.pointId
+				data.params = params
 
 				if data.pass then
 					local function endFunc()
@@ -403,6 +406,7 @@ function ActivitySystem:requestLeaveActstage(activityId, subActivityId, params)
 			data.subActivityId = subActivityId
 			data.pointId = params.pointId
 			data.activeLeave = true
+			data.params = params
 
 			self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, self:getInjector():getInstance("ActivityStageUnFinishView"), {}, data))
 		else

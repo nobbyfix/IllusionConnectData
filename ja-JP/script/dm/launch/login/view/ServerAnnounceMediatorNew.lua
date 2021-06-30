@@ -9,6 +9,10 @@ local kBtnHandlers = {
 	["main.btn_close"] = {
 		clickAudio = "Se_Click_Close_2",
 		func = "onClickClose"
+	},
+	btn_skip = {
+		clickAudio = "Se_Click_Close_2",
+		func = "onClickSkip"
 	}
 }
 local redPointType = {
@@ -32,6 +36,7 @@ end
 function ServerAnnounceMediatorNew:mapEventListeners()
 	self:mapEventListener(self:getEventDispatcher(), EVT_ANNOUNCE_REFRESH_SERVER, self, self.onRefreshAnnounceEvent)
 	self:mapEventListener(self:getEventDispatcher(), EVT_PATFACE_REFRESH_SERVER, self, self.onRefreshPatfaceEvent)
+	self:mapEventListener(self:getEventDispatcher(), EVT_PV_REFRESH_SERVER, self, self.onRefreshPVEvent)
 end
 
 function ServerAnnounceMediatorNew:onRegister()
@@ -62,6 +67,10 @@ function ServerAnnounceMediatorNew:onRegister()
 
 	self._centerType3:setVisible(false)
 
+	self._centerType4 = self:getView():getChildByName("centerType4")
+
+	self._centerType4:setVisible(false)
+
 	self._activityLayout = self._main:getChildByName("activityLayout")
 	self._listViewLeft = self._activityLayout:getChildByName("ListView_left")
 
@@ -70,6 +79,14 @@ function ServerAnnounceMediatorNew:onRegister()
 	self._listViewCenter = self._activityLayout:getChildByName("ListView_center")
 
 	self._listViewCenter:setScrollBarEnabled(false)
+
+	self._skipBtn = self:getView():getChildByName("btn_skip")
+
+	self._skipBtn:setVisible(false)
+
+	self._pvPanel = self:getView():getChildByName("pv")
+
+	self._pvPanel:setVisible(false)
 
 	self._listViewUp = self._main:getChildByName("ListView_up")
 
@@ -81,6 +98,7 @@ function ServerAnnounceMediatorNew:onRegister()
 	self.btnLeftTable = {}
 	self.loadTaskTable = {}
 	self.relativeFolderPath = cc.FileUtils:getInstance():getWritablePath() .. "AnnounceDir"
+	self.pvFolderPath = cc.FileUtils:getInstance():getWritablePath() .. "PVDir"
 	self.playerRid = self:getInjector():getInstance("DevelopSystem"):getPlayer():getRid()
 
 	self:mapEventListeners()
@@ -88,17 +106,22 @@ end
 
 function ServerAnnounceMediatorNew:enterWithData(data)
 	self._data = data
+	self._curShowType = ""
 
 	self:setupView()
 end
 
 function ServerAnnounceMediatorNew:setupView()
 	local AnnounceDate = {
-		["1"] = {
+		{
 			type = "activity",
 			data = {}
 		},
-		["2"] = {
+		{
+			type = "activityPV",
+			data = {}
+		},
+		{
 			type = "system",
 			data = {}
 		}
@@ -118,6 +141,9 @@ function ServerAnnounceMediatorNew:setUpList(AnnounceDate)
 			cell:getChildByName("btn_up_lbl"):setString(Strings:get("Frame_UI_2"))
 		elseif v.type == "system" then
 			cell:getChildByName("btn_up_lbl"):setString(Strings:get("LOGIN_UI1"))
+		elseif v.type == "activityPV" then
+			cell:getChildByName("btn_up_lbl"):setString(Strings:get("BoardTitle_Tab_1"))
+			self:addPVRedPoint(cell)
 		end
 
 		local cellSize = cell:getContentSize()
@@ -178,9 +204,21 @@ function ServerAnnounceMediatorNew:changBtnUp(sender, isDeductTime)
 			self._listViewLeft:removeAllChildren()
 
 			if cell.data.type == "system" then
+				self._curShowType = "system"
+
 				self:setSystemView()
 			elseif cell.data.type == "activity" then
+				self._curShowType = "activity"
+
 				self:setActivityView(isDeductTime)
+			elseif cell.data.type == "activityPV" then
+				self._curShowType = "activityPV"
+
+				if cell.redPoint then
+					cell.redPoint:setVisible(false)
+				end
+
+				self:setPVView(isDeductTime)
 			end
 		else
 			cell:setTouchEnabled(true)
@@ -221,6 +259,14 @@ function ServerAnnounceMediatorNew:onRefreshAnnounceEvent()
 	end
 end
 
+function ServerAnnounceMediatorNew:removeBtnUp(type)
+	for i, v in pairs(self.btnUpTable) do
+		if type == v.data.type then
+			table.remove(self.btnUpTable, i)
+		end
+	end
+end
+
 function ServerAnnounceMediatorNew:setSystemView()
 	if self._loginSystem:getLoginUrl() then
 		if self._data.isDeductTime == 1 then
@@ -235,33 +281,44 @@ function ServerAnnounceMediatorNew:setSystemView()
 end
 
 function ServerAnnounceMediatorNew:onRefreshPatfaceEvent()
-	local response = self._loginSystem:getPatFaceSaveData()
+	if self._curShowType == "activity" then
+		local response = self._loginSystem:getPatFaceSaveData()
 
-	self._listViewUp:setVisible(true)
+		self._listViewUp:setVisible(true)
 
-	if response.data then
-		table.sort(response.data, function (a, b)
-			return a.priority < b.priority
-		end)
+		if response then
+			table.sort(response, function (a, b)
+				return a.priority < b.priority
+			end)
 
-		if #response.data == 0 then
-			self._listViewUp:removeChildByTag(1, true)
-			table.remove(self.btnUpTable, 1)
-			self:changBtnUp(self.btnUpTable[1])
+			if #response == 0 then
+				self._listViewUp:removeChildByTag(1, true)
+				self:removeBtnUp("activity")
+				self:changBtnUp(self.btnUpTable[1])
 
-			return
+				return
+			end
+
+			self.btnLeftTable = {}
+
+			for k, v in pairs(response) do
+				local redPointType = v.redDot or redPointType.KOneTimeEveryDay
+				local layout = self:getLeftListCell(v.mainbody, k, v, redPointType)
+
+				self._listViewLeft:pushBackCustomItem(layout)
+			end
+
+			self:selectLifeCell(1)
 		end
 
-		self.btnLeftTable = {}
+		local response = self._loginSystem:getPvSaveData()
 
-		for k, v in pairs(response.data) do
-			local redPointType = v.redDot or redPointType.KOneTimeEveryDay
-			local layout = self:getLeftListCell(v.mainbody, k, v, redPointType)
-
-			self._listViewLeft:pushBackCustomItem(layout)
+		if #response == 0 then
+			self._listViewUp:removeChildByTag(2, true)
+			self:removeBtnUp("activityPV")
 		end
-
-		self:selectLifeCell(1)
+	elseif self._curShowType == "activityPV" then
+		self:onRefreshPVEvent()
 	end
 end
 
@@ -278,7 +335,8 @@ function ServerAnnounceMediatorNew:setActivityView(isDeductTime)
 	end
 end
 
-function ServerAnnounceMediatorNew:addRedPoint(curRedPointType, redPointAnnounceKey, cell)
+function ServerAnnounceMediatorNew:addRedPoint(curRedPointType, redPointAnnounceKey, cell, pos)
+	pos = pos or {}
 	redPointAnnounceKey = tonumber(redPointAnnounceKey) and tonumber(redPointAnnounceKey) or 0
 
 	if curRedPointType == redPointType.KNotShow then
@@ -303,7 +361,7 @@ function ServerAnnounceMediatorNew:addRedPoint(curRedPointType, redPointAnnounce
 
 	local redPoint = RedPoint:createDefaultNode()
 
-	redPoint:addTo(cell):posite(193, 72)
+	redPoint:addTo(cell):posite(pos.x or 193, pos.y or 72)
 	redPoint:setLocalZOrder(99900)
 
 	cell.redPoint = redPoint
@@ -422,13 +480,17 @@ function ServerAnnounceMediatorNew:changBtnLeft(sender)
 end
 
 function ServerAnnounceMediatorNew:setCenterList(data)
-	if data.tpl == "1" then
-		self:setCenterType1(data)
-	elseif data.tpl == "2" then
-		self:setCenterType2(data)
-	end
+	if data.type == 2 then
+		self:setCenterType4(data)
+	else
+		if data.tpl == "1" then
+			self:setCenterType1(data)
+		elseif data.tpl == "2" then
+			self:setCenterType2(data)
+		end
 
-	self:announceDownloadImg()
+		self:announceDownloadImg()
+	end
 end
 
 function ServerAnnounceMediatorNew:setCenterType1(data)
@@ -624,4 +686,181 @@ end
 function ServerAnnounceMediatorNew:onClickClose(sender, eventType)
 	self:resetData()
 	self:close()
+end
+
+function ServerAnnounceMediatorNew:addPVRedPoint(cell)
+	local response = self._loginSystem:getPvSaveData()
+
+	if response and #response > 0 then
+		local data = response[1]
+		local redPointAnnounceKey = cc.UserDefault:getInstance():getStringForKey(self.playerRid .. "redPointAnnounce" .. data.mainbody.tag) or 0
+
+		if redPointAnnounceKey ~= 0 then
+			self:addRedPoint(data.redDot, redPointAnnounceKey, cell, cc.p(123, 33))
+		end
+	end
+end
+
+function ServerAnnounceMediatorNew:setPVView(isDeductTime)
+	if self._data.isDeductTime == 1 then
+		self:onRefreshPatfaceEvent()
+	else
+		local params = {
+			isDeductTime = isDeductTime and isDeductTime or self._data.isDeductTime
+		}
+
+		self._loginSystem:getPatFaceData(params, function (response)
+		end)
+	end
+end
+
+function ServerAnnounceMediatorNew:onRefreshPVEvent()
+	local response = self._loginSystem:getPvSaveData()
+
+	if response then
+		if #response == 0 then
+			self._listViewUp:removeChildByTag(2, true)
+			self:removeBtnUp("activityPV")
+			self:changBtnUp(self.btnUpTable[1])
+
+			return
+		end
+
+		self.btnLeftTable = {}
+
+		self._listViewLeft:removeAllChildren()
+
+		for k, v in pairs(response) do
+			local redPointType = v.redDot or redPointType.KOneTimeEveryDay
+			local layout = self:getLeftListCell(v.mainbody, k, v, redPointType)
+
+			self._listViewLeft:pushBackCustomItem(layout)
+		end
+
+		self:selectLifeCell(1)
+	end
+end
+
+function ServerAnnounceMediatorNew:setCenterType4(data)
+	self._listViewCenter:setTouchEnabled(false)
+
+	local cell = self._centerType4:clone()
+
+	cell:setVisible(true)
+	self._listViewCenter:pushBackCustomItem(cell)
+
+	local title_lbl1 = cell:getChildByName("title_lbl")
+
+	title_lbl1:setString(data.mainbody.title)
+
+	local btn_img = cell:getChildByName("btn_img")
+
+	btn_img:setVisible(true)
+
+	local playBtn = cell:getChildByName("btn_play")
+
+	playBtn:setVisible(false)
+
+	local function callFunc(sender, eventType)
+		self:onClickPlayPV(data)
+	end
+
+	mapButtonHandlerClick(nil, playBtn, {
+		func = callFunc
+	})
+
+	local fileUtils = cc.FileUtils:getInstance()
+
+	if not fileUtils:isDirectoryExist(self.pvFolderPath) then
+		fileUtils:createDirectory(self.pvFolderPath)
+	end
+
+	local storagePath = self.pvFolderPath .. data.mainbody.images[1]
+
+	if fileUtils:isFileExist(storagePath) then
+		btn_img:loadTexture(storagePath, ccui.TextureResType.localType)
+	end
+
+	local pvPath = self.pvFolderPath .. data.pvvideo
+
+	if fileUtils:isFileExist(pvPath) then
+		playBtn:setVisible(true)
+	else
+		self:pvLoadingText(cell)
+	end
+end
+
+function ServerAnnounceMediatorNew:onClickPlayPV(data)
+	AudioEngine:getInstance():pauseBackgroundMusic()
+
+	local pvPath = self.pvFolderPath .. data.pvvideo
+
+	self._pvPanel:setVisible(true)
+
+	self._videoSprite = VideoSprite.create(pvPath, function (sprite, eventName)
+		self:onClickSkip()
+	end, nil, true)
+
+	self._pvPanel:addChild(self._videoSprite)
+	self._videoSprite:setPosition(cc.p(568, 320))
+	self._skipBtn:setVisible(true)
+
+	local size = self._videoSprite:getContentSize()
+	local winSize = cc.Director:getInstance():getWinSize()
+	local scale = math.max(winSize.height / size.height, winSize.width / size.width)
+
+	self._videoSprite:setScale(scale)
+end
+
+function ServerAnnounceMediatorNew:onClickSkip()
+	AudioEngine:getInstance():resumeBackgroundMusic()
+	self._skipBtn:setVisible(false)
+	self._pvPanel:setVisible(false)
+
+	if self._videoSprite then
+		self._videoSprite:getPlayer():pause(true)
+		self._videoSprite:removeFromParent()
+
+		self._videoSprite = nil
+	end
+end
+
+function ServerAnnounceMediatorNew:pvLoadingText(cell)
+	local text = Strings:get("BoardTitle_Tips", {
+		fontName = TTF_FONT_FZYH_M
+	})
+	local contentText = ccui.RichText:createWithXML(text, {})
+
+	contentText:setAnchorPoint(cc.p(0.5, 0.5))
+	contentText:addTo(cell):center(cell:getContentSize())
+	contentText:renderContent()
+
+	local width = contentText:getContentSize().width
+
+	contentText:renderContent(width, 0, true)
+
+	function contentText.playTypeWriter(contentText)
+		contentText:clipContent(0, 0)
+
+		local count = 0
+		local maxCount = contentText:getContentLength()
+
+		local function show()
+			if maxCount < count then
+				count = 0
+			end
+
+			contentText:clipContent(0, count)
+
+			count = count + 1
+		end
+
+		local action = cc.DelayTime:create(0.2)
+		local action2 = cc.CallFunc:create(show)
+		local waitAction = cc.Sequence:create(action, action2)
+
+		contentText:runAction(cc.RepeatForever:create(waitAction))
+	end
+
+	contentText:playTypeWriter()
 end

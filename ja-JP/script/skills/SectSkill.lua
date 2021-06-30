@@ -558,7 +558,7 @@ all.SectSkill_Master_LieSha_1 = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.MASTER(_env, _env.ACTOR) then
+			if global.MASTER(_env, _env.ACTOR) and not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) then
 				local buffeft = global.NumericEffect(_env, "+hurtrate", {
 					"+Normal",
 					"+Normal"
@@ -622,20 +622,23 @@ all.SectSkill_Master_LieSha_2 = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			local cards = global.Slice(_env, global.SortBy(_env, global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR)), ">", global.GetCardCost), 1, 4)
 
-			for _, card in global.__iter__(cards) do
-				local cardvaluechange = global.CardCostEnchant(_env, "-", this.CardChangeValueFactor, 1)
+			if not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) then
+				local cards = global.Slice(_env, global.SortBy(_env, global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR)), ">", global.GetCardCost), 1, 4)
 
-				global.ApplyEnchant(_env, global.GetOwner(_env, _env.ACTOR), card, {
-					tags = {
-						"CARDBUFF",
-						"SectSkill_Master_LieSha_2",
-						"UNDISPELLABLE"
-					}
-				}, {
-					cardvaluechange
-				})
+				for _, card in global.__iter__(cards) do
+					local cardvaluechange = global.CardCostEnchant(_env, "-", this.CardChangeValueFactor, 1)
+
+					global.ApplyEnchant(_env, global.GetOwner(_env, _env.ACTOR), card, {
+						tags = {
+							"CARDBUFF",
+							"SectSkill_Master_LieSha_2",
+							"UNDISPELLABLE"
+						}
+					}, {
+						cardvaluechange
+					})
+				end
 			end
 		end)
 
@@ -1164,7 +1167,9 @@ all.SectSkill_Master_BiLei_3 = {
 			local this = _env.this
 			local global = _env.global
 
-			global.ApplyEnergyRecovery(_env, global.GetOwner(_env, _env.ACTOR), this.EnergyExFactor)
+			if not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) then
+				global.ApplyEnergyRecovery(_env, global.GetOwner(_env, _env.ACTOR), this.EnergyExFactor)
+			end
 		end)
 
 		return _env

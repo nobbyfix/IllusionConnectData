@@ -433,7 +433,7 @@ all.Skill_FLBDSi_Passive = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.MARKED(_env, "FLBDSi")(_env, _env.newunit) and _env.dierule == "kick" and global.MASTER(_env, _env.ACTOR) then
+			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.MARKED(_env, "FLBDSi")(_env, _env.newunit) and _env.dierule == "kick" and global.MASTER(_env, _env.ACTOR) and global.PETS - global.SUMMONS(_env, _env.unit) then
 				local cardlocation = global.GetCardWindowIndex(_env, _env.newunit)
 
 				if cardlocation == 0 then
@@ -863,7 +863,7 @@ all.Skill_FLBDSi_Passive_EX = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.MARKED(_env, "FLBDSi")(_env, _env.newunit) and _env.dierule == "kick" and global.MASTER(_env, _env.ACTOR) then
+			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.MARKED(_env, "FLBDSi")(_env, _env.newunit) and _env.dierule == "kick" and global.MASTER(_env, _env.ACTOR) and global.PETS - global.SUMMONS(_env, _env.unit) then
 				local cardlocation = global.GetCardWindowIndex(_env, _env.newunit)
 
 				if cardlocation == 0 then

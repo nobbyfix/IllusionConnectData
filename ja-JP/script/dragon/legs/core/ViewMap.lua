@@ -108,7 +108,7 @@ function ViewMap:mapViewToRes(viewName, resId)
 			return nil
 		end
 
-		_G.print("cjkdscnjsdkcndjscndjncdj", viewName, resId)
+		_G.print("load---view---->>>", viewName, resId)
 
 		return viewFactory:createViewByResourceId(resId)
 	end)

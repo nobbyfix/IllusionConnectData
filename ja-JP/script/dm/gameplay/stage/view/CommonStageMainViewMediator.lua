@@ -28,7 +28,8 @@ local kChapterMapSize = {
 	1700,
 	2185,
 	2287,
-	2300
+	2300,
+	2181
 }
 local kChapterOffSetL = {
 	1324,
@@ -44,12 +45,14 @@ local kChapterOffSetL = {
 	10317,
 	11400,
 	12140,
-	13390,
-	13445,
-	14400,
-	15100,
+	13290,
+	14045,
+	15500,
 	16200,
-	16600
+	17900,
+	18600,
+	19300,
+	20500
 }
 local kChapterOffSetR = {
 	-10,
@@ -67,10 +70,12 @@ local kChapterOffSetR = {
 	10240,
 	11711,
 	12118,
-	13118,
-	13818,
-	15000,
-	15600
+	13618,
+	14218,
+	16000,
+	16800,
+	19300,
+	20500
 }
 local isOnScroll = false
 local isClose = false
@@ -89,6 +94,7 @@ StageMapUI = {
 	chapter5 = "ChapterFiveCell",
 	chapter6 = "ChapterSixCell",
 	chapter3 = "ChapterThreeCell",
+	chapter11 = "ChapterElevenCell",
 	chapter4 = "ChapterFourCell",
 	chapter1 = "ChapterOneCell",
 	chapter2 = "ChapterTwoCell",
@@ -101,6 +107,7 @@ EliteStageMapUI = {
 	chapter5 = "EliteFiveCell",
 	chapter6 = "EliteSixCell",
 	chapter3 = "EliteThreeCell",
+	chapter11 = "EliteElevenCell",
 	chapter4 = "EliteFourCell",
 	chapter1 = "EliteOneCell",
 	chapter2 = "EliteTwoCell",
@@ -1069,7 +1076,6 @@ function CommonStageMainViewMediator:setupCooperateBossShow()
 		local itemclone = self:getView():getChildByName("inviteBossCellClone")
 
 		itemclone:setVisible(false)
-		dump(inviteInfo, "inviteInfo")
 
 		for i = 1, #inviteInfo do
 			local item = itemclone:clone()

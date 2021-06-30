@@ -237,12 +237,39 @@ function exports.CancelTargetView(env)
 	})
 end
 
-function exports.SwitchActionTo(env, srcAnim, desAnim)
+function exports.SwitchActionTo(env, srcAnim, desAnim, target)
 	local actor = env["$actor"]
+
+	if target then
+		actor = target
+	end
 
 	env.global.RecordImmediately(env, actor:getId(), "SwitchActionTo", {
 		act = env["$id"],
 		srcAnim = srcAnim,
 		desAnim = desAnim
+	})
+end
+
+function exports.SetDisplayZorder(env, unit, zorder)
+	env.global.RecordImmediately(env, unit:getId(), "SetDisplayZorder", {
+		act = env["$id"],
+		zorder = zorder
+	})
+end
+
+function exports.ResetDisplayZorder(env, unit)
+	env.global.RecordImmediately(env, unit:getId(), "ResetDisplayZorder", {
+		act = env["$id"]
+	})
+end
+
+function exports.UpdateFanProgress(env, unit, progress)
+	if not unit then
+		return
+	end
+
+	env.global.RecordImmediately(env, unit:getId(), "FanUpdate", {
+		progress = progress
 	})
 end

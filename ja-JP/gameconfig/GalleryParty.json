@@ -57,6 +57,7 @@
             "SDTZi",
             "NFEr",
             "TPGZhu",
+            "FLBDSi",
             "XHMao",
             "YLSBai",
             "ZZBBWei",
@@ -319,9 +320,6 @@
             "AJTa",
             "SRen",
             "YXNMei",
-            "LYXi",
-            "BHTZi",
-            "YSLBin",
             "PDLa",
             "NFEr",
             "BDFen",
@@ -337,9 +335,10 @@
             "QTQCi",
             "MZGXiu",
             "SLWan",
-            "HSYZhai",
             "XHMao",
-            "TLSi"
+            "TLSi",
+            "FLBDSi",
+            "LFKLFTe"
         ],
         "Party": "SSR",
         "PartyDesc": "Party_SSR_Desc",
@@ -394,7 +393,8 @@
             "ATSheng",
             "LYSi",
             "PDLa",
-            "XHMao"
+            "XHMao",
+            "LFKLFTe"
         ],
         "Party": "Summon",
         "PartyDesc": "Party_Summon_Desc",
@@ -412,17 +412,27 @@
             "FEMSi",
             "HSheng",
             "YXNMei",
-            "BHTZi",
             "QBTe",
             "KEDGong",
             "LSLTe",
-            "TLSi"
+            "TLSi",
+            "FLBDSi"
         ],
         "Party": "Support",
         "PartyDesc": "Party_Support_Desc",
         "PartyReward": [],
         "ShowRank": 6,
         "Type": 2
+    },
+    "UNKNOWN": {
+        "IncludeHero": [
+            "LFKLFTe"
+        ],
+        "Party": "UNKNOWN",
+        "PartyDesc": "PartyDesc_UNKNOWN",
+        "PartyReward": [],
+        "ShowRank": 7,
+        "Type": 1
     },
     "WNSXJ": {
         "IncludeHero": [

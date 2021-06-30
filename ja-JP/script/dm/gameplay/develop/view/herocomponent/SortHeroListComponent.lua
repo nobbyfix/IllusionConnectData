@@ -63,6 +63,7 @@ function SortHeroListComponent:createView(info)
 
 	self._extandPartyBtnPanel:setVisible(false)
 
+	self._resetBtn = self._extandPanel:getChildByFullName("resetBtn")
 	self._btnCache = {}
 	self._btnCache1 = {}
 
@@ -144,6 +145,14 @@ function SortHeroListComponent:createView(info)
 			end
 		end
 	end
+
+	self._resetBtn:addClickEventListener(function ()
+		AudioEngine:getInstance():playEffect("Se_Click_Tab_1", false)
+		self._stageSystem:resetSortExtand()
+		self:refreshView()
+		self._extandPanel:setVisible(true)
+		self._mediator:dispatch(Event:new(EVT_TEAM_REFRESH_PETS, {}))
+	end)
 end
 
 function SortHeroListComponent:refreshView()

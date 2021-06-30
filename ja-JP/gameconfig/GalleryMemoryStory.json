@@ -181,6 +181,50 @@
         "UnlockDesc": "",
         "UnlockStory": ""
     },
+    "Memory_Act_DeepSea": {
+        "ActiviType": "",
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_DeepSea",
+                    "ActivityBlock_DeepSea_Map",
+                    "DeepSeaM01",
+                    "DeepSeaS01",
+                    "DeepSeaS01M"
+                ]
+            }
+        ],
+        "Listpicture": "img_story_deepsea_1",
+        "Name": "ActivityBlock_DeepSea_Name",
+        "Num": 12,
+        "Story": [
+            {
+                "id": [
+                    "Memory_Act_DeepSea_1",
+                    "Memory_Act_DeepSea_2",
+                    "Memory_Act_DeepSea_3",
+                    "Memory_Act_DeepSea_4"
+                ],
+                "type": "NORMAL"
+            },
+            {
+                "id": [
+                    "Memory_Act_DeepSea_5",
+                    "Memory_Act_DeepSea_6",
+                    "Memory_Act_DeepSea_7",
+                    "Memory_Act_DeepSea_8"
+                ],
+                "type": "ELITE"
+            }
+        ],
+        "Type": "ACTIVILIST",
+        "UnlockDesc": "",
+        "UnlockStory": ""
+    },
     "Memory_Act_Fire": {
         "ActiviType": "",
         "Condition": "",

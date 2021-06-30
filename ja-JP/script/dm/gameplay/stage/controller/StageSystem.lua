@@ -1239,6 +1239,12 @@ function StageSystem:setSortExtand(sortType, sortExtendType)
 	end
 end
 
+function StageSystem:resetSortExtand()
+	for i, v in ipairs(SortExtend) do
+		self._sortExtand[i] = {}
+	end
+end
+
 function StageSystem:isSortExtendTypeExist(sortType, sortExtendType)
 	for i = 1, #self._sortExtand[sortType] do
 		local v = self._sortExtand[sortType][i]
@@ -1382,7 +1388,8 @@ function StageSystem:initExtendParam()
 		GalleryPartyType.kBSNCT,
 		GalleryPartyType.kDWH,
 		GalleryPartyType.kMNJH,
-		GalleryPartyType.kSSZS
+		GalleryPartyType.kSSZS,
+		GalleryPartyType.kUNKNOWN
 	}
 
 	for i = 1, #TargetOccupation do

@@ -328,7 +328,7 @@ function all.ApplyRPDamage_ResultCheck(_env, actor, target, damage)
 		damage = damage + MoreRage
 	end
 
-	if global.MARKED(_env, "HYXia")(_env, target) then
+	if global.MARKED(_env, "HYXia")(_env, target) or global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "CANNOT_RP_DOWN")) > 0 then
 		damage = 0
 	end
 
@@ -1242,8 +1242,28 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 		local MaxHpRateFactor = global.SpecialPropGetter(_env, "xuezhan_special_maxhp")(_env, actor)
 		local AtkFactor = global.SpecialPropGetter(_env, "xuezhan_special_atk")(_env, actor)
 		local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, target)
-		local atk = global.UnitPropGetter(_env, "atk")(_env, actor)
-		local ExDmg = global.min(_env, maxHp * MaxHpRateFactor, atk * AtkFactor)
+		local ExDmg = 0
+
+		if global.FriendMaster(_env) then
+			local atk = global.UnitPropGetter(_env, "atk")(_env, global.FriendMaster(_env))
+			ExDmg = global.min(_env, maxHp * MaxHpRateFactor, atk * AtkFactor)
+		end
+
+		if not global.MASTER(_env, target) then
+			damage.val = damage.val + ExDmg
+		end
+	end
+
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED_ALL(_env, "DAGUNKILL", "YIYU")) > 0 then
+		local MaxHpRateFactor = global.SpecialPropGetter(_env, "yiyu_special_maxhp")(_env, actor)
+		local AtkFactor = global.SpecialPropGetter(_env, "yiyu_special_atk")(_env, actor)
+		local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, target)
+		local ExDmg = 0
+
+		if global.FriendMaster(_env) then
+			local atk = global.UnitPropGetter(_env, "atk")(_env, global.FriendMaster(_env))
+			ExDmg = global.min(_env, maxHp * MaxHpRateFactor, atk * AtkFactor)
+		end
 
 		if not global.MASTER(_env, target) then
 			damage.val = damage.val + ExDmg
@@ -1268,6 +1288,9 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 	end
 
 	local result = global.ApplyHPDamage(_env, target, damage, lowerLimit)
+
+	global.ActivateSpecificTrigger(_env, target, "GET_ATTACKED")
+	global.ActivateGlobalTrigger(_env, target, "UNIT_GET_ATTACKED")
 
 	if result and result.deadly then
 		local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, actor)
@@ -1636,8 +1659,28 @@ function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimi
 		local MaxHpRateFactor = global.SpecialPropGetter(_env, "xuezhan_special_maxhp")(_env, actor)
 		local AtkFactor = global.SpecialPropGetter(_env, "xuezhan_special_atk")(_env, actor)
 		local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, target)
-		local atk = global.UnitPropGetter(_env, "atk")(_env, actor)
-		local ExDmg = global.min(_env, maxHp * MaxHpRateFactor, atk * AtkFactor)
+		local ExDmg = 0
+
+		if global.FriendMaster(_env) then
+			local atk = global.UnitPropGetter(_env, "atk")(_env, global.FriendMaster(_env))
+			ExDmg = global.min(_env, maxHp * MaxHpRateFactor, atk * AtkFactor)
+		end
+
+		if not global.MASTER(_env, target) then
+			damage.val = damage.val + ExDmg
+		end
+	end
+
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED_ALL(_env, "DAGUNKILL", "YIYU")) > 0 then
+		local MaxHpRateFactor = global.SpecialPropGetter(_env, "yiyu_special_maxhp")(_env, actor)
+		local AtkFactor = global.SpecialPropGetter(_env, "yiyu_special_atk")(_env, actor)
+		local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, target)
+		local ExDmg = 0
+
+		if global.FriendMaster(_env) then
+			local atk = global.UnitPropGetter(_env, "atk")(_env, global.FriendMaster(_env))
+			ExDmg = global.min(_env, maxHp * MaxHpRateFactor, atk * AtkFactor)
+		end
 
 		if not global.MASTER(_env, target) then
 			damage.val = damage.val + ExDmg
@@ -1662,6 +1705,9 @@ function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimi
 	end
 
 	local result = global.ApplyHPDamage(_env, target, damage, lowerLimit)
+
+	global.ActivateSpecificTrigger(_env, target, "GET_ATTACKED")
+	global.ActivateGlobalTrigger(_env, target, "UNIT_GET_ATTACKED")
 
 	if result and result.deadly then
 		local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, actor)
@@ -2064,8 +2110,28 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 		local MaxHpRateFactor = global.SpecialPropGetter(_env, "xuezhan_special_maxhp")(_env, actor)
 		local AtkFactor = global.SpecialPropGetter(_env, "xuezhan_special_atk")(_env, actor)
 		local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, target)
-		local atk = global.UnitPropGetter(_env, "atk")(_env, actor)
-		local ExDmg = global.min(_env, maxHp * MaxHpRateFactor, atk * AtkFactor) / total
+		local ExDmg = 0
+
+		if global.FriendMaster(_env) then
+			local atk = global.UnitPropGetter(_env, "atk")(_env, global.FriendMaster(_env))
+			ExDmg = global.min(_env, maxHp * MaxHpRateFactor, atk * AtkFactor) / total
+		end
+
+		if not global.MASTER(_env, target) then
+			damages[n].val = damages[n].val + ExDmg
+		end
+	end
+
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED_ALL(_env, "DAGUNKILL", "YIYU")) > 0 then
+		local MaxHpRateFactor = global.SpecialPropGetter(_env, "yiyu_special_maxhp")(_env, actor)
+		local AtkFactor = global.SpecialPropGetter(_env, "yiyu_special_atk")(_env, actor)
+		local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, target)
+		local ExDmg = 0
+
+		if global.FriendMaster(_env) then
+			local atk = global.UnitPropGetter(_env, "atk")(_env, global.FriendMaster(_env))
+			ExDmg = global.min(_env, maxHp * MaxHpRateFactor, atk * AtkFactor) / total
+		end
 
 		if not global.MASTER(_env, target) then
 			damages[n].val = damages[n].val + ExDmg
@@ -2090,6 +2156,9 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 	end
 
 	local result = global.ApplyHPDamage(_env, target, damages[n], lowerLimit, n ~= total)
+
+	global.ActivateSpecificTrigger(_env, target, "GET_ATTACKED")
+	global.ActivateGlobalTrigger(_env, target, "UNIT_GET_ATTACKED")
 
 	if result and result.deadly then
 		local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, actor)
@@ -2524,8 +2593,28 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 		local MaxHpRateFactor = global.SpecialPropGetter(_env, "xuezhan_special_maxhp")(_env, actor)
 		local AtkFactor = global.SpecialPropGetter(_env, "xuezhan_special_atk")(_env, actor)
 		local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, target)
-		local atk = global.UnitPropGetter(_env, "atk")(_env, actor)
-		local ExDmg = global.min(_env, maxHp * MaxHpRateFactor, atk * AtkFactor) / total
+		local ExDmg = 0
+
+		if global.FriendMaster(_env) then
+			local atk = global.UnitPropGetter(_env, "atk")(_env, global.FriendMaster(_env))
+			ExDmg = global.min(_env, maxHp * MaxHpRateFactor, atk * AtkFactor) / total
+		end
+
+		if not global.MASTER(_env, target) then
+			damages[n].val = damages[n].val + ExDmg
+		end
+	end
+
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED_ALL(_env, "DAGUNKILL", "YIYU")) > 0 then
+		local MaxHpRateFactor = global.SpecialPropGetter(_env, "yiyu_special_maxhp")(_env, actor)
+		local AtkFactor = global.SpecialPropGetter(_env, "yiyu_special_atk")(_env, actor)
+		local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, target)
+		local ExDmg = 0
+
+		if global.FriendMaster(_env) then
+			local atk = global.UnitPropGetter(_env, "atk")(_env, global.FriendMaster(_env))
+			ExDmg = global.min(_env, maxHp * MaxHpRateFactor, atk * AtkFactor) / total
+		end
 
 		if not global.MASTER(_env, target) then
 			damages[n].val = damages[n].val + ExDmg
@@ -2550,6 +2639,9 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 	end
 
 	local result = global.ApplyHPDamage(_env, target, damages[n], lowerLimit, n ~= total)
+
+	global.ActivateSpecificTrigger(_env, target, "GET_ATTACKED")
+	global.ActivateGlobalTrigger(_env, target, "UNIT_GET_ATTACKED")
 
 	if result and result.deadly then
 		local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, actor)
@@ -3150,6 +3242,41 @@ function all.ApplyRealDamage(_env, actor, target, dmgrange, dmgtype, damagerate,
 	end
 
 	return result
+end
+
+function all.NoMove(_env, unit)
+	local this = _env.this
+	local global = _env.global
+	local buff = global.NumericEffect(_env, "+def", {
+		"+Normal",
+		"+Normal"
+	}, 0)
+
+	global.ApplyBuff(_env, unit, {
+		timing = 0,
+		duration = 99,
+		tags = {
+			"CANNOT_MOVE"
+		}
+	}, {
+		buff
+	})
+end
+
+function all.CancelNoMove(_env, unit)
+	local this = _env.this
+	local global = _env.global
+
+	global.DispelBuff(_env, unit, global.BUFF_MARKED(_env, "CANNOT_MOVE"), 99)
+end
+
+function all.transportExt_ResultCheck(_env, unit, cellid, runtime, flag)
+	local this = _env.this
+	local global = _env.global
+
+	if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "CANNOT_MOVE")) == 0 then
+		global.transportExt(_env, unit, cellid, runtime, flag)
+	end
 end
 
 function all.SelectBuffCount_Unit(_env, units, tags)

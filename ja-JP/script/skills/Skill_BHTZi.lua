@@ -308,9 +308,11 @@ all.Skill_BHTZi_Passive = {
 			local this = _env.this
 			local global = _env.global
 
-			for _, unit in global.__iter__(global.FriendUnits(_env, global.COL_OF(_env, _env.ACTOR) * global.NEIGHBORS_OF(_env, _env.ACTOR) * global.BACK_OF(_env, _env.ACTOR))) do
-				if global.PETS - global.SUMMONS(_env, unit) then
-					global.ApplyRPRecovery(_env, unit, this.RageFactor)
+			if global.MARKED(_env, "BHTZi")(_env, _env.ACTOR) then
+				for _, unit in global.__iter__(global.FriendUnits(_env, global.COL_OF(_env, _env.ACTOR) * global.NEIGHBORS_OF(_env, _env.ACTOR) * global.BACK_OF(_env, _env.ACTOR))) do
+					if global.PETS - global.SUMMONS(_env, unit) then
+						global.ApplyRPRecovery(_env, unit, this.RageFactor)
+					end
 				end
 			end
 		end)
@@ -574,9 +576,268 @@ all.Skill_BHTZi_Passive_EX = {
 			local this = _env.this
 			local global = _env.global
 
-			for _, unit in global.__iter__(global.FriendUnits(_env, global.COL_OF(_env, _env.ACTOR) * global.NEIGHBORS_OF(_env, _env.ACTOR) * global.BACK_OF(_env, _env.ACTOR))) do
-				if global.PETS - global.SUMMONS(_env, unit) then
-					global.ApplyRPRecovery(_env, unit, this.RageFactor)
+			if global.MARKED(_env, "BHTZi")(_env, _env.ACTOR) then
+				for _, unit in global.__iter__(global.FriendUnits(_env, global.COL_OF(_env, _env.ACTOR) * global.NEIGHBORS_OF(_env, _env.ACTOR) * global.BACK_OF(_env, _env.ACTOR))) do
+					if global.PETS - global.SUMMONS(_env, unit) then
+						global.ApplyRPRecovery(_env, unit, this.RageFactor)
+					end
+				end
+			end
+		end)
+
+		return _env
+	end
+}
+all.Skill_BHTZi_Passive_Awaken = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.RageFactor = externs.RageFactor
+
+		if this.RageFactor == nil then
+			this.RageFactor = 1000
+		end
+
+		this.CostNum = externs.CostNum
+
+		if this.CostNum == nil then
+			this.CostNum = 2
+		end
+
+		this.FinalNum = externs.FinalNum
+
+		if this.FinalNum == nil then
+			this.FinalNum = 4
+		end
+
+		this.supportCount = nil
+		this.summonCount = nil
+		this.allCount = nil
+		local passive1 = __action(this, {
+			name = "passive1",
+			entry = prototype.passive1
+		})
+		passive1 = global["[duration]"](this, {
+			0
+		}, passive1)
+		this.passive1 = global["[trigger_by]"](this, {
+			"SELF:PRE_ENTER"
+		}, passive1)
+		local passive2 = __action(this, {
+			name = "passive2",
+			entry = prototype.passive2
+		})
+		passive2 = global["[duration]"](this, {
+			0
+		}, passive2)
+		this.passive2 = global["[trigger_by]"](this, {
+			"SELF:ENTER"
+		}, passive2)
+		local passive3 = __action(this, {
+			name = "passive3",
+			entry = prototype.passive3
+		})
+		passive3 = global["[duration]"](this, {
+			0
+		}, passive3)
+		this.passive3 = global["[trigger_by]"](this, {
+			"UNIT_KICK"
+		}, passive3)
+		local passive4 = __action(this, {
+			name = "passive4",
+			entry = prototype.passive4
+		})
+		passive4 = global["[duration]"](this, {
+			0
+		}, passive4)
+		this.passive4 = global["[trigger_by]"](this, {
+			"UNIT_KICK_BY_OTHERSET"
+		}, passive4)
+
+		return this
+	end,
+	passive1 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.MASTER(_env, _env.ACTOR) then
+				for _, card in global.__iter__(global.CardsOfPlayer(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "BHTZi"))) do
+					local cardvaluechange1 = global.CardCostEnchant(_env, "-", this.CostNum, 1)
+
+					global.ApplyEnchant(_env, global.GetOwner(_env, _env.ACTOR), card, {
+						tags = {
+							"CARDBUFF",
+							"UNDISPELLABLE",
+							"Skill_BHTZi_Passive_Awaken"
+						}
+					}, {
+						cardvaluechange1
+					})
+				end
+
+				this.supportCount = #global.CardsOfPlayer(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "LIGHT"))
+				this.summonCount = #global.CardsOfPlayer(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "SUMMONER"))
+				this.allCount = this.supportCount + this.summonCount
+
+				if this.allCount >= 4 then
+					for _, card in global.__iter__(global.CardsOfPlayer(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "BHTZi"))) do
+						local cardvaluechange2 = global.CardCostEnchant(_env, "-", this.FinalNum - this.CostNum, 1)
+
+						global.ApplyEnchant(_env, global.GetOwner(_env, _env.ACTOR), card, {
+							tags = {
+								"CARDBUFF",
+								"UNDISPELLABLE",
+								"Skill_BHTZi_Passive_Awaken"
+							}
+						}, {
+							cardvaluechange2
+						})
+					end
+				end
+			end
+		end)
+
+		return _env
+	end,
+	passive2 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.supportCount = nil
+		_env.summonCount = nil
+		_env.fieldCount = nil
+
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.MARKED(_env, "BHTZi")(_env, _env.ACTOR) then
+				for _, unit in global.__iter__(global.FriendUnits(_env, global.COL_OF(_env, _env.ACTOR) * global.NEIGHBORS_OF(_env, _env.ACTOR) * global.BACK_OF(_env, _env.ACTOR))) do
+					if global.PETS - global.SUMMONS(_env, unit) then
+						global.ApplyRPRecovery(_env, unit, this.RageFactor)
+					end
+				end
+			end
+		end)
+
+		return _env
+	end,
+	passive3 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.MASTER(_env, _env.ACTOR) and global.MARKED(_env, "BHTZi")(_env, _env.unit) and global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) then
+				for _, card in global.__iter__(global.CardsOfPlayer(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "BHTZi"))) do
+					local cardvaluechange1 = global.CardCostEnchant(_env, "-", this.CostNum, 1)
+
+					global.ApplyEnchant(_env, global.GetOwner(_env, _env.ACTOR), card, {
+						tags = {
+							"CARDBUFF",
+							"UNDISPELLABLE",
+							"Skill_BHTZi_Passive_Awaken"
+						}
+					}, {
+						cardvaluechange1
+					})
+				end
+
+				if global.FriendMaster(_env) and this.allCount >= 4 then
+					for _, card in global.__iter__(global.CardsOfPlayer(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "BHTZi"))) do
+						local cardvaluechange2 = global.CardCostEnchant(_env, "-", this.FinalNum - this.CostNum, 1)
+
+						global.ApplyEnchant(_env, global.GetOwner(_env, _env.ACTOR), card, {
+							tags = {
+								"CARDBUFF",
+								"UNDISPELLABLE",
+								"Skill_BHTZi_Passive_Awaken"
+							}
+						}, {
+							cardvaluechange2
+						})
+					end
+				end
+			end
+		end)
+
+		return _env
+	end,
+	passive4 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.MASTER(_env, _env.ACTOR) and global.MARKED(_env, "BHTZi")(_env, _env.unit) and global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) then
+				for _, card in global.__iter__(global.CardsOfPlayer(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "BHTZi"))) do
+					local cardvaluechange1 = global.CardCostEnchant(_env, "-", this.CostNum, 1)
+
+					global.ApplyEnchant(_env, global.GetOwner(_env, _env.ACTOR), card, {
+						tags = {
+							"CARDBUFF",
+							"UNDISPELLABLE",
+							"Skill_BHTZi_Passive_Awaken"
+						}
+					}, {
+						cardvaluechange1
+					})
+				end
+
+				if global.FriendMaster(_env) and this.allCount >= 4 then
+					for _, card in global.__iter__(global.CardsOfPlayer(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "BHTZi"))) do
+						local cardvaluechange2 = global.CardCostEnchant(_env, "-", this.FinalNum - this.CostNum, 1)
+
+						global.ApplyEnchant(_env, global.GetOwner(_env, _env.ACTOR), card, {
+							tags = {
+								"CARDBUFF",
+								"UNDISPELLABLE",
+								"Skill_BHTZi_Passive_Awaken"
+							}
+						}, {
+							cardvaluechange2
+						})
+					end
 				end
 			end
 		end)

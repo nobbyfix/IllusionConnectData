@@ -500,8 +500,8 @@ all.Skill_XHMao_Wolf_Normal = {
 			local this = _env.this
 			local global = _env.global
 
-			global.DispelBuff(_env, _env.TARGET, global.BUFF_MARKED(_env, "SHIELD"), 99)
-			global.DispelBuff(_env, _env.TARGET, global.BUFF_MARKED(_env, "IMMUNE"), 99)
+			global.DispelBuff(_env, _env.TARGET, global.BUFF_MARKED_ALL(_env, "SHIELD", "DISPELLABLE"), 99)
+			global.DispelBuff(_env, _env.TARGET, global.BUFF_MARKED_ALL(_env, "IMMUNE", "DISPELLABLE"), 99)
 			global.ApplyStatusEffect(_env, _env.ACTOR, _env.TARGET)
 			global.ApplyRPEffect(_env, _env.ACTOR, _env.TARGET)
 

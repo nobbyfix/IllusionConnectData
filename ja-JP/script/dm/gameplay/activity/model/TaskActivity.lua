@@ -18,12 +18,38 @@ function TaskActivity:dispose()
 	super.dispose(self)
 end
 
+function TaskActivity:initAllAchieveTask()
+	if self._config then
+		local actConfig = self:getActivityConfig()
+
+		if actConfig.Allachieve and not self._allAchieveTaskList then
+			self._allAchieveTaskList = {}
+
+			for i, v in pairs(actConfig.Allachieve) do
+				local task = ActivityNumTask:new()
+				local data = {
+					targetValue = v.num,
+					reward = v.reward,
+					descId = v.translate,
+					activityId = self._id,
+					orderNum = 10000 + i
+				}
+
+				task:synchronize(data)
+
+				self._allAchieveTaskList[tostring(v.num)] = task
+			end
+		end
+	end
+end
+
 function TaskActivity:synchronize(data)
 	if not data then
 		return
 	end
 
 	super.synchronize(self, data)
+	self:initAllAchieveTask()
 
 	if data.taskList then
 		for id, value in pairs(data.taskList) do
@@ -51,10 +77,28 @@ function TaskActivity:synchronize(data)
 				end
 			end
 		end
+
+		if self._allAchieveTaskList then
+			local unfinishCount = self:getTaskCountByStatus(ActivityTaskStatus.kUnfinish)
+
+			for k, task in pairs(self._allAchieveTaskList) do
+				task:synchronize({
+					currentValue = #self._taskList - unfinishCount
+				})
+			end
+		end
 	end
 
 	if data.isTodayOpen then
 		self._isTodayOpen = data.isTodayOpen
+	end
+
+	if data.rewards then
+		for k, status in pairs(data.rewards) do
+			dump(type(k))
+			self._allAchieveTaskList[k]:setGetStatus(status)
+			self._allAchieveTaskList[k]:updateStatus()
+		end
 	end
 end
 
@@ -103,6 +147,12 @@ function TaskActivity:getSortActivityList()
 
 	for i, taskData in pairs(self._taskList) do
 		list[#list + 1] = taskData
+	end
+
+	if self._allAchieveTaskList then
+		for i, taskData in pairs(self._allAchieveTaskList) do
+			list[#list + 1] = taskData
+		end
 	end
 
 	table.sort(list, function (a, b)

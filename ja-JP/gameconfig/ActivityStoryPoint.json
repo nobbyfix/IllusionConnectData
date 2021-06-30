@@ -2277,6 +2277,216 @@
         ],
         "StoryLink": "eventstory_freud_04a"
     },
+    "DeepSeaS01S01": {
+        "FirstReward": "DeepSeaS01S01_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -250
+        ],
+        "Map": "DeepSeaM01",
+        "Name": "DeepSeaS01S01_Name",
+        "NextStoryPoint": [
+            "DeepSeaS01S02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_deepSea_01a"
+    },
+    "DeepSeaS01S02": {
+        "FirstReward": "DeepSeaS01S02_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "DeepSeaM01",
+        "Name": "DeepSeaS01S02_Name",
+        "NextStoryPoint": [
+            "DeepSeaS01S03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "DeepSeaS02"
+        ],
+        "PreStoryPoint": [
+            "DeepSeaS01S01"
+        ],
+        "StoryLink": "eventstory_deepSea_02a"
+    },
+    "DeepSeaS01S03": {
+        "FirstReward": "DeepSeaS01S03_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "DeepSeaM01",
+        "Name": "DeepSeaS01S03_Name",
+        "NextStoryPoint": [
+            "DeepSeaS01S04"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "DeepSeaS05"
+        ],
+        "PreStoryPoint": [
+            "DeepSeaS01S02"
+        ],
+        "StoryLink": "eventstory_deepSea_03a"
+    },
+    "DeepSeaS01S04": {
+        "FirstReward": "DeepSeaS01S04_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "DeepSeaM01",
+        "Name": "DeepSeaS01S04_Name",
+        "NextStoryPoint": [
+            "DeepSeaS01S05"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "DeepSeaS07"
+        ],
+        "PreStoryPoint": [
+            "DeepSeaS01S03"
+        ],
+        "StoryLink": "eventstory_deepSea_04a"
+    },
+    "DeepSeaS01S05": {
+        "FirstReward": "DeepSeaS01S05_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "DeepSeaM01",
+        "Name": "DeepSeaS01S05_Name",
+        "NextStoryPoint": [
+            "DeepSeaS01S06"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "DeepSeaS08"
+        ],
+        "PreStoryPoint": [
+            "DeepSeaS01S04"
+        ],
+        "StoryLink": "eventstory_deepSea_05a"
+    },
+    "DeepSeaS01S06": {
+        "FirstReward": "DeepSeaS01S06_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "DeepSeaM01",
+        "Name": "DeepSeaS01S06_Name",
+        "NextStoryPoint": [
+            "DeepSeaS01S07"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "DeepSeaS10"
+        ],
+        "PreStoryPoint": [
+            "DeepSeaS01S05"
+        ],
+        "StoryLink": "eventstory_deepSea_06a"
+    },
+    "DeepSeaS01S07": {
+        "FirstReward": "DeepSeaS01S07_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -250
+        ],
+        "Map": "DeepSeaM01",
+        "Name": "DeepSeaS01S07_Name",
+        "NextStoryPoint": [
+            "DeepSeaS01S08"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "DeepSeaS13"
+        ],
+        "PreStoryPoint": [
+            "DeepSeaS01S06"
+        ],
+        "StoryLink": "eventstory_deepSea_07a"
+    },
+    "DeepSeaS01S08": {
+        "FirstReward": "DeepSeaS01S08_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "DeepSeaM01",
+        "Name": "DeepSeaS01S08_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "DeepSeaS16"
+        ],
+        "PreStoryPoint": [
+            "DeepSeaS01S07"
+        ],
+        "StoryLink": "eventstory_deepSea_08a"
+    },
     "FemaleS01E01": {
         "FirstReward": "FemaleS01E01_Reward",
         "Icon": "s_album_story_1",

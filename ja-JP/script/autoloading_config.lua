@@ -1421,6 +1421,11 @@ local mappings = {
 		name = "ActivitySagaSupportClubMediator",
 		type = "@C"
 	},
+	ActivityPointDetailNewMediator = {
+		url = "dm.gameplay.activity.view.ActivityPointDetailNewMediator",
+		name = "ActivityPointDetailNewMediator",
+		type = "@C"
+	},
 	ImageBoardActivityMediator = {
 		url = "dm.gameplay.activity.view.ImageBoardActivityMediator",
 		name = "ImageBoardActivityMediator",
@@ -1559,6 +1564,11 @@ local mappings = {
 	ActivityBlockMusicMediator = {
 		url = "dm.gameplay.activity.view.ActivityBlockMusicMediator",
 		name = "ActivityBlockMusicMediator",
+		type = "@C"
+	},
+	ActivityMapNewMediator = {
+		url = "dm.gameplay.activity.view.ActivityMapNewMediator",
+		name = "ActivityMapNewMediator",
 		type = "@C"
 	},
 	ActivityBlockSummerMediator = {

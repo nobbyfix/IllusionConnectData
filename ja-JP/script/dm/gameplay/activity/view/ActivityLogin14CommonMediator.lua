@@ -364,6 +364,8 @@ function ActivityLogin14CommonMediator:refreshUIView()
 		local titleTxt = self._activityConfig.titleTxt or "title"
 		local titleLab = node:getChildByFullName("main.Text_12")
 
+		titleLab:setString(Strings:get(titleTxt))
+
 		if config.textPattern then
 			local lineGradiantVec = {
 				{
@@ -381,8 +383,6 @@ function ActivityLogin14CommonMediator:refreshUIView()
 				y = -1
 			}))
 		end
-
-		titleLab:setString(Strings:get(titleTxt))
 
 		local descTxt = self._activityConfig.descTxt or "desc"
 

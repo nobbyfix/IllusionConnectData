@@ -88,12 +88,31 @@ function BattleDataHelper:fillSummonData(summon, skillData, protoFactory, summon
 				end
 
 				if summonData.UniqueSkill and summonData.UniqueSkill ~= "" then
-					summonInfo.skills.unique = {
-						skillId = summonData.UniqueSkill,
-						level = skillData.level
-					}
+					if string.find(summonData.UniqueSkill, "|") and string.find(summonData.UniqueSkill, "|") > 0 then
+						summonInfo.skills.unique = {}
+						local uniques = string.split(summonData.UniqueSkill, "|")
+						local index = 1
 
-					self:fillSkillData(summonInfo.skills.unique, protoFactory)
+						for k, v in pairs(uniques) do
+							if v and v ~= "" then
+								summonInfo.skills["master" .. index] = {
+									skillId = v,
+									level = skillData.level
+								}
+
+								self:fillSkillData(summonInfo.skills["master" .. index], protoFactory)
+							end
+
+							index = index + 1
+						end
+					else
+						summonInfo.skills.unique = {
+							skillId = summonData.UniqueSkill,
+							level = skillData.level
+						}
+
+						self:fillSkillData(summonInfo.skills.unique, protoFactory)
+					end
 				end
 
 				if summonData.DoubleSkill and summonData.DoubleSkill ~= "" then

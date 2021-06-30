@@ -2763,5 +2763,133 @@ all.MagicBox_Shader = {
 		return _env
 	end
 }
+all.Activity_San = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.MaxSan = externs.MaxSan
+
+		if this.MaxSan == nil then
+			this.MaxSan = 100
+		end
+
+		local passive1 = __action(this, {
+			name = "passive1",
+			entry = prototype.passive1
+		})
+		passive1 = global["[duration]"](this, {
+			0
+		}, passive1)
+		this.passive1 = global["[trigger_by]"](this, {
+			"SELF:ENTER"
+		}, passive1)
+		local passive2 = __action(this, {
+			name = "passive2",
+			entry = prototype.passive2
+		})
+		passive2 = global["[duration]"](this, {
+			0
+		}, passive2)
+		this.passive2 = global["[trigger_by]"](this, {
+			"UNIT_ENTER"
+		}, passive2)
+
+		return this
+	end,
+	passive1 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local buffeft1 = global.SpecialNumericEffect(_env, "+Max_San", {
+				"+Normal",
+				"+Normal"
+			}, this.MaxSan)
+			local buffeft2 = global.SpecialNumericEffect(_env, "+Current_San", {
+				"+Normal",
+				"+Normal"
+			}, this.MaxSan)
+
+			if global.EnemyMaster(_env) then
+				global.ApplyBuff(_env, global.EnemyMaster(_env), {
+					timing = 0,
+					duration = 99,
+					display = "",
+					tags = {
+						"UNDISPELLABLE",
+						"UNSTEALABLE",
+						"SAN"
+					}
+				}, {
+					buffeft1,
+					buffeft2
+				})
+				global.UpdateFanProgress(_env, global.EnemyMaster(_env), 1)
+			end
+		end)
+
+		return _env
+	end,
+	passive2 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local buffeft1 = global.SpecialNumericEffect(_env, "+Max_San", {
+				"+Normal",
+				"+Normal"
+			}, this.MaxSan)
+			local buffeft2 = global.SpecialNumericEffect(_env, "+Current_San", {
+				"+Normal",
+				"+Normal"
+			}, this.MaxSan)
+			local max_san = global.SpecialPropGetter(_env, "Max_San")(_env, _env.unit)
+
+			if global.GetSide(_env, _env.unit) ~= global.GetSide(_env, _env.ACTOR) and max_san == 0 and not global.INSTATUS(_env, "SummonedLFKLFTeLeftFoot")(_env, _env.unit) and not global.INSTATUS(_env, "SummonedLFKLFTeRightFoot")(_env, _env.unit) and not global.INSTATUS(_env, "SummonedLFKLFTe")(_env, _env.unit) then
+				global.ApplyBuff(_env, _env.unit, {
+					timing = 0,
+					duration = 99,
+					display = "",
+					tags = {
+						"UNDISPELLABLE",
+						"UNSTEALABLE",
+						"SAN"
+					}
+				}, {
+					buffeft1,
+					buffeft2
+				})
+				global.UpdateFanProgress(_env, _env.unit, 1)
+			end
+
+			if global.GetSide(_env, _env.unit) ~= global.GetSide(_env, _env.ACTOR) and global.INSTATUS(_env, "SummonedLFKLFTe")(_env, _env.unit) then
+				global.DispelBuff(_env, _env.unit, global.BUFF_MARKED_ALL(_env, "UNDISPELLABLE", "UNSTEALABLE", "SAN"), 99)
+			end
+		end)
+
+		return _env
+	end
+}
 
 return _M

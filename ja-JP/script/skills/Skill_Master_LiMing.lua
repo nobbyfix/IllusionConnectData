@@ -421,8 +421,23 @@ all.Sk_Master_LiMing_Action3 = {
 				Factor = this.RpFactor
 			})
 
+			global.ApplyBuff(_env, _env.ACTOR, {
+				duration = 99,
+				group = "Master_LiMing_RpUpUp",
+				timing = 0,
+				limit = 1,
+				tags = {
+					"PASSIVEBUFF",
+					"RpUpUp",
+					"UNDISPELLABLE",
+					"UNSTEALABLE"
+				}
+			}, {
+				buffeft2
+			})
+
 			if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "SHINING")) < 6 then
-				global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
+				global.DelayCall(_env, 1100, global.ApplyBuff_Buff, _env.ACTOR, _env.ACTOR, {
 					timing = 0,
 					duration = 99,
 					display = "AtkUp",
@@ -438,16 +453,6 @@ all.Sk_Master_LiMing_Action3 = {
 				}, {
 					buffeft1
 				}, 1)
-				global.DelayCall(_env, 1100, global.ApplyBuff, _env.ACTOR, {
-					timing = 0,
-					duration = 99,
-					tags = {
-						"UNDISPELLABLE",
-						"UNSTEALABLE"
-					}
-				}, {
-					buffeft2
-				})
 			end
 		end)
 		exec["@time"]({
@@ -530,7 +535,7 @@ all.RpUpUp_LiMing = {
 			local this = _env.this
 			local global = _env.global
 
-			global.ApplyRPRecovery(_env, _env.ACTOR, this.Factor)
+			global.ApplyRPRecovery(_env, _env.ACTOR, this.Factor * global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "SHINING")))
 		end)
 
 		return _env

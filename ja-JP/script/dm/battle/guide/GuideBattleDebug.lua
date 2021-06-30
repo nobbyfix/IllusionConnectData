@@ -193,7 +193,7 @@ local function loadHeroData(heroId, owner, cellId, anim)
 		maxAnger = 1000,
 		infoId = heroId,
 		id = unitId,
-		model = config.RoleModel,
+		model = GameConfigs.debugModelId or config.RoleModel,
 		cell = cellId,
 		owner = owner,
 		hp = config.BaseHp,
@@ -627,9 +627,13 @@ function GuideBattleDebug:main(guideThread, battleContext)
 		return guideBuilder
 	end
 
-	guideBuilder:startBattle(guideThread, battleContext):addObjectEvent(kBRGuideLine, "Prologue", true):addObjectEvent(kBRGuideLine, "TouchEnabled", false):addObjectEvent(kBRGuideLine, "HideRightButton"):addObjectEvent(kBRGuideLine, "HideCardArray"):addObjectEvent(kBRGuideLine, "HideEnergyBar"):addObjectEvent(kBRGuideLine, "HideTime"):addObjectEvent(kBRGuideLine, "ResumeTime", {}):addObjectEvent(kBRGuideLine, "HidePauseButton", {}):addPlayer(getInfo(player1)):addPlayer(getInfo(player2)):addObjectEvent(kBRGuideLine, "TimeScale", {
+	guideBuilder:startBattle(guideThread, battleContext):sleepForFrames(80):addObjectEvent(kBRGuideLine, "Prologue", true):addObjectEvent(kBRGuideLine, "TouchEnabled", false):addObjectEvent(kBRGuideLine, "HideRightButton"):addObjectEvent(kBRGuideLine, "HideCardArray"):addObjectEvent(kBRGuideLine, "HideEnergyBar"):addObjectEvent(kBRGuideLine, "HideTime"):addObjectEvent(kBRGuideLine, "ResumeTime", {}):addObjectEvent(kBRGuideLine, "HidePauseButton", {}):addPlayer(getInfo(player1)):addPlayer(getInfo(player2)):addObjectEvent(kBRGuideLine, "TimeScale", {
 		timeScale = 1
-	}):addObjectEvent(kBRGuideLine, "HideSkillButton"):processSpawnUnit():sleepForFrames(30):playSkill():addObjectEvent(kBRGuideLine, "StartStory", {
+	}):addObjectEvent(kBRGuideLine, "HideSkillButton"):processSpawnUnit():sleepForFrames(30):playSkill():endBattle(function ()
+		GameConfigs.debugHeroId = nil
+		GameConfigs.debugModelId = nil
+		GameConfigs.debugSkills = nil
+	end):sleepForFrames(60):addObjectEvent(kBRGuideLine, "StartStory", {
 		pause = true,
 		leaveBattle = true,
 		statisticPoint = "battle_guide_story_3",

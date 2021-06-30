@@ -149,6 +149,7 @@ function FormationSystem:CanBeSitBy(cellId, seatRules)
 		end
 
 		if canBeSit then
+			oldRes:setLifeStage(ULS_Kicked)
 			cell:setOldResident(oldRes)
 			cell:setOldResidentDieRule(killOrKick)
 
@@ -179,7 +180,11 @@ function FormationSystem:SpawnUnit(player, unitData, cellNo, animation, isUserCm
 	local unit = nil
 
 	if isMasterOrCost == true then
-		unit = entityManager:createMasterUnit(unitData)
+		if unitData.isBattleField then
+			unit = entityManager:createBattleFieldUnit(unitData)
+		else
+			unit = entityManager:createMasterUnit(unitData)
+		end
 	else
 		local cost = isMasterOrCost
 		local energyInfo = nil
@@ -281,6 +286,98 @@ function FormationSystem:summon(actor, source, summonId, summonFactor, location)
 		self._eventCenter:dispatchEvent("UnitSummoned", {
 			unit = unit,
 			actor = actor
+		})
+	end
+
+	return result
+end
+
+function FormationSystem:summonMaster(actor, source, summonId, summonFactor, workId)
+	assert(type(summonId) == "string", "summonId is not string")
+
+	local player = actor:getOwner()
+	local summonInfo = actor:getOwner():getSummonInfo(summonId)
+
+	if not summonInfo then
+		return false, "NoSummonInfo"
+	end
+
+	summonInfo.skills.unique = nil
+
+	extend(summonFactor, summonInfo)
+
+	local targetId = player:calcSummonIdentify(summonId)
+	local entityManager = self._entityManager
+	local unit = entityManager:summonHeroUnit(source, targetId, summonFactor)
+	local animation = nil
+
+	player:setMasterUnit(unit)
+
+	local sourceAngerComp = source:getComponent("Anger")
+	local unitAngerComp = unit:getComponent("Anger")
+
+	unitAngerComp:setAngerRules(sourceAngerComp:getAngerRules())
+
+	local skillComp = source:getComponent("Skill")
+	local targetSkill = unit:getComponent("Skill")
+	local passives = targetSkill:getSkill(kBattlePassiveSkill)
+	passives = passives or {}
+
+	for k, v in pairs(skillComp:getSkill(kBattlePassiveSkill)) do
+		local passive = v:clone()
+		passives[#passives + 1] = passive
+	end
+
+	unit:setCardInfo({
+		enterPauseTime = 1500
+	})
+	unit:getComponent("Skill"):setupSkillList(kBattlePassiveSkill, passives)
+	source:setPresentMaster(false)
+
+	if self._battleField:eraseUnit(source) then
+		if self._processRecorder then
+			self._processRecorder:recordObjectEvent(source:getId(), "ClearAllSwitchAction")
+			self._processRecorder:recordObjectEvent(source:getId(), "Die")
+		end
+
+		if eventCenter then
+			eventCenter:dispatchEvent("UnitDied", source, source:getOwner())
+		end
+	end
+
+	unit:setUnitType(BattleUnitType.kMaster)
+	unit:setPresentMaster(true)
+
+	local playerSide = player:getSide()
+	local cellId = 8
+	cellId = playerSide == kBattleSideA and 8 or -8
+	local result = self:_settleUnit(player, unit, cellId, animation, false, "CallMasterUnit")
+
+	source:getFSM():changeState(nil)
+	source:setLifeStage(ULS_Kicked)
+
+	local buffSystem = self._battleContext:getObject("BuffSystem")
+	local skillSystem = self._battleContext:getObject("SkillSystem")
+
+	buffSystem:cloneBuffsOnTarget(unit, source, nil, workId)
+	skillSystem:clearTriggersForActor(source)
+	skillSystem:cancelSkillsForActor(source)
+	buffSystem:cleanupBuffsOnTarget(source)
+
+	if self._eventCenter then
+		self._eventCenter:dispatchEvent("UnitSummoned", {
+			unit = unit,
+			actor = actor
+		})
+	end
+
+	local battleStatist = self._battleContext:getObject("BattleStatist")
+
+	if battleStatist then
+		battleStatist:sendStatisticEvent("UnitHurt", {
+			hpDetails = {
+				[source:getId()] = 0
+			}
 		})
 	end
 
@@ -575,6 +672,14 @@ function FormationSystem:rebornUnit(unit, ratio, anger, location)
 		self._eventCenter:dispatchEvent("UnitReborn", {
 			unit = unit
 		})
+	end
+end
+
+function FormationSystem:changeUnitPreSettled(unit)
+	local processRecorder = self._processRecorder
+
+	if processRecorder ~= nil then
+		processRecorder:recordObjectEvent(unit:getId(), "Settled")
 	end
 end
 
@@ -947,6 +1052,14 @@ function FormationSystem:transportExt(unit, cellNo, duration, timeScale)
 	if not battleField:isEmptyCell(cellId) then
 		local targetCell = battleField:getCellById(cellId)
 		targetUnit = targetCell:getResident()
+	end
+
+	if unit and unit:hasFlag("CANNOT_MOVE") then
+		return
+	end
+
+	if targetUnit and targetUnit:hasFlag("CANNOT_MOVE") then
+		return
 	end
 
 	battleField:exchangeUnits(oldCellId, cellId)

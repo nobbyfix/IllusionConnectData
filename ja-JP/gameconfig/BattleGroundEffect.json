@@ -1,14 +1,25 @@
 {
     "BGEffectBlack": {
         "Anim": "",
+        "Black": "",
         "Location": "",
         "Music": "",
         "Order": "",
         "Path": "",
         "Zoom": 1.0
     },
+    "Ground_Dagun": {
+        "Anim": "dengchang_dengchang",
+        "Black": 0,
+        "Location": "",
+        "Music": "",
+        "Order": 1,
+        "Path": "",
+        "Zoom": 1.0
+    },
     "Ground_Fangao": {
         "Anim": "fangao_fangaodazhao",
+        "Black": "",
         "Location": "",
         "Music": "Se_Skill_FGao_StarryNight",
         "Order": 1,
@@ -17,6 +28,7 @@
     },
     "Ground_Xige": {
         "Anim": "",
+        "Black": "",
         "Location": "",
         "Music": "Se_Skill_FLYDe_MaxThunder",
         "Order": 1,
@@ -25,6 +37,7 @@
     },
     "Ground_Yiasong": {
         "Anim": "quanpingcx_yiasongbeijing",
+        "Black": "",
         "Location": "",
         "Music": "",
         "Order": 1,

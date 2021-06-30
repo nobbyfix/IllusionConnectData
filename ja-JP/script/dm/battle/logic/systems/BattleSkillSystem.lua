@@ -87,6 +87,8 @@ function BattleSkillSystem:installBuiltinEnvironment()
 	globals.print = toSkillAPIFunc(_G.print)
 	globals.assert = toSkillAPIFunc(_G.assert)
 	globals.dump = toSkillAPIFunc(_G.dump)
+	globals.insert = toSkillAPIFunc(table.insert)
+	globals.remove = toSkillAPIFunc(table.remove)
 	globals["$next_id"] = 1
 
 	function globals.genID(env)
@@ -400,7 +402,22 @@ function BattleSkillSystem:buildSkillsForActor(actor)
 	end
 end
 
-function BattleSkillSystem:buildSkillsForActor_PassiveBuff(actor, skills, actions)
+function BattleSkillSystem:buildSkillsForActor_PassiveBuff(actor, skills, actions, isNewPassive)
+	if not isNewPassive then
+		for i = 1, #skills do
+			local triggeredActions = skills[i]:getTriggeredActions()
+
+			for _, entry in ipairs(triggeredActions) do
+				actions[entry.listener] = {
+					event = entry.event,
+					listener = entry.listener
+				}
+			end
+		end
+
+		return
+	end
+
 	if skills == nil or #skills == 0 then
 		return
 	end
@@ -417,8 +434,6 @@ function BattleSkillSystem:buildSkillsForActor_PassiveBuff(actor, skills, action
 end
 
 function BattleSkillSystem:clearTriggersForActorAction(name, actor, action)
-	assert(actor ~= nil)
-
 	if self._globalSkillTriggers[name] ~= nil then
 		local trigger = self._globalSkillTriggers[name]
 

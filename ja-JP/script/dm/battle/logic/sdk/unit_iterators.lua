@@ -327,6 +327,32 @@ function exports.FriendMaster(env)
 	return nil
 end
 
+function exports.FriendField(env)
+	local targetSide = env["$actor"]:getSide()
+	local units = env.global["$BattleField"]:collectFieldUnits({}, targetSide)
+
+	for _, unit in ipairs(units) do
+		if unit:getFlagCheckers()["$FIELD"](unit) then
+			return unit
+		end
+	end
+
+	return nil
+end
+
+function exports.EnemyField(env)
+	local targetSide = opposeBattleSide(env["$actor"]:getSide())
+	local units = env.global["$BattleField"]:collectFieldUnits({}, targetSide)
+
+	for _, unit in ipairs(units) do
+		if unit:getFlagCheckers()["$FIELD"](unit) then
+			return unit
+		end
+	end
+
+	return nil
+end
+
 function exports.Killer(env)
 	local foeId = env["$actor"]:getFoe()
 

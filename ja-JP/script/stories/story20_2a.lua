@@ -316,7 +316,7 @@ function scene_story20_2a.actions.start_story20_2a(_root, args)
 					scale = 0.72,
 					position = {
 						x = 0,
-						y = -305,
+						y = -340,
 						refpt = {
 							x = 0.25,
 							y = 0

@@ -1133,6 +1133,48 @@
         "TickPos": "",
         "Type": 2
     },
+    "Sea_Dark": {
+        "Color": "",
+        "DescWord": "",
+        "Effect": "xunhuan_zhanzhengmiwu",
+        "EffectPos": 0.0,
+        "HorizontalPos": -0.8,
+        "Icon": "",
+        "Invisible": 2,
+        "Loop": 1,
+        "Priority": 1,
+        "Tick": "",
+        "TickPos": "",
+        "Type": 4
+    },
+    "Sea_Dark_In": {
+        "Color": "",
+        "DescWord": "",
+        "Effect": "jin_zhanzhengmiwu",
+        "EffectPos": 0.0,
+        "HorizontalPos": -0.8,
+        "Icon": "",
+        "Invisible": 2,
+        "Loop": 0,
+        "Priority": 1,
+        "Tick": "",
+        "TickPos": "",
+        "Type": 4
+    },
+    "Sea_Dark_Leave": {
+        "Color": "",
+        "DescWord": "",
+        "Effect": "tui_zhanzhengmiwu",
+        "EffectPos": 0.0,
+        "HorizontalPos": -0.8,
+        "Icon": "",
+        "Invisible": 2,
+        "Loop": 0,
+        "Priority": 1,
+        "Tick": "",
+        "TickPos": "",
+        "Type": 4
+    },
     "Shader_BOTu": {
         "Color": "Red",
         "DescWord": "",

@@ -9,6 +9,7 @@ local showRarityTipHero = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Her
 local GalleryPartyType = {
 	kBSNCT = "BSNCT",
 	kWNSXJ = "WNSXJ",
+	kUNKNOWN = "UNKNOWN",
 	kMNJH = "MNJH",
 	kDWH = "DWH",
 	kXD = "XD",

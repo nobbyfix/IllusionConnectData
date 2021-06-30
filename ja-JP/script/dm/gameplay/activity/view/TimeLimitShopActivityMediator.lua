@@ -49,6 +49,10 @@ local timeLimitShopConfig = {
 		TimeOutLineColor = cc.c4b(186, 51, 20, 255),
 		BGSize = cc.size(1031, 640)
 	},
+	deepsea = {
+		TimeOutLineColor = cc.c4b(1, 6, 187, 255),
+		bgSize = cc.size(1136, 640)
+	},
 	summerre = {
 		BG = "jqtd_txt_qlyxzl_di",
 		TimeOutLineColor = cc.c4b(9, 70, 173, 255)
@@ -122,6 +126,10 @@ function TimeLimitShopActivityMediator:setupView()
 
 	if config and config.TimeOutLineColor then
 		self._deadline:enableOutline(config.TimeOutLineColor, 1)
+	end
+
+	if config and config.bgSize then
+		self._bg:setContentSize(config.bgSize)
 	end
 
 	self._cellClone = self._view:getChildByFullName(self._packType .. "Cell")

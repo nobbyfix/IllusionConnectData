@@ -107,6 +107,12 @@ function BattleSoundBox:initialize()
 			name = "skills",
 			title = "skills",
 			type = "Input"
+		},
+		{
+			default = "",
+			name = "modelId",
+			title = "modelId",
+			type = "Input"
 		}
 	}
 end
@@ -118,13 +124,17 @@ function BattleSoundBox:onClick(data)
 		GameConfigs.debugSkills = string.split(data.skills, ",")
 	end
 
-	self:dispatch(ShowTipEvent({
-		tip = "设置完成"
-	}))
+	if data.modelId and data.modelId ~= "" then
+		GameConfigs.debugModelId = data.modelId
+	end
 
 	local GuideLauncher = require("dm.battle.guide.GuideLauncher")
 
 	GuideLauncher:enterGuideBattle(self, videoCallback, "GuideBattleDebug")
+
+	local debugBox = self:getInjector():getInstance("DebugBox")
+
+	debugBox:hide()
 end
 
 OtherSoundBox = class("OtherSoundBox", DebugViewTemplate, _M)

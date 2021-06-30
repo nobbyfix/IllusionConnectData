@@ -7730,6 +7730,32 @@
             "slot": "Hero_Proud_BHTZi"
         }
     },
+    "StarSE_BHTZi_Awake": {
+        "Desc": "StarSE_BHTZi_Awake_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_PBattle_BHTZi_Awaken",
+            "before": "Hero_PBattle_BHTZi_EX",
+            "slot": "Hero_PBattle_BHTZi"
+        }
+    },
+    "StarSE_BHTZi_Awake_Show": {
+        "Desc": "",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": 1,
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Unique_BHTZi_Awaken_Show",
+            "before": "Hero_Unique_BHTZi_EX",
+            "slot": "Hero_Unique_BHTZi"
+        }
+    },
     "StarSE_BLTu_4": {
         "Desc": "StarSE_BLTu_4_Desc",
         "EffectType": "CHANGESKILL",
@@ -9054,6 +9080,45 @@
             "after": "Hero_Unique_LFEr_Awaken_Show",
             "before": "Hero_Unique_LFEr_EX",
             "slot": "Hero_Unique_LFEr"
+        }
+    },
+    "StarSE_LFKLFTe_4": {
+        "Desc": "StarSE_LFKLFTe_4_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Unique_LFKLFTe_EX",
+            "before": "Hero_Unique_LFKLFTe",
+            "slot": "Hero_Unique_LFKLFTe"
+        }
+    },
+    "StarSE_LFKLFTe_5": {
+        "Desc": "StarSE_LFKLFTe_5_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_PBattle_LFKLFTe_EX",
+            "before": "Hero_PBattle_LFKLFTe",
+            "slot": "Hero_PBattle_LFKLFTe"
+        }
+    },
+    "StarSE_LFKLFTe_6": {
+        "Desc": "StarSE_LFKLFTe_6_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Proud_LFKLFTe_EX",
+            "before": "Hero_Proud_LFKLFTe",
+            "slot": "Hero_Proud_LFKLFTe"
         }
     },
     "StarSE_LLan_4": {
