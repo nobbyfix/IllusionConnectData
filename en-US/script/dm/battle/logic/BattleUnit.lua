@@ -1,5 +1,6 @@
 BattleUnitType = {
 	kHero = 2,
+	kBattleField = 3,
 	kMaster = 1
 }
 BattleUnit = class("BattleUnit", BattleEntity, _M)
@@ -21,6 +22,16 @@ function BattleUnit.class:createMasterUnit(id)
 	local unit = BattleUnit:new(id)
 
 	unit:setUnitType(BattleUnitType.kMaster)
+	unit:setPresentMaster(true)
+	registBasicComponents(unit)
+
+	return unit
+end
+
+function BattleUnit.class:createBattleFieldUnit(id)
+	local unit = BattleUnit:new(id)
+
+	unit:setUnitType(BattleUnitType.kBattleField)
 	registBasicComponents(unit)
 
 	return unit
@@ -33,6 +44,10 @@ function BattleUnit.class:createHeroUnit(id)
 	registBasicComponents(unit)
 
 	return unit
+end
+
+function BattleUnit:setPresentMaster()
+	self._presentMaster = true
 end
 
 function BattleUnit:copyUnit(srcUnit, ratio)
@@ -165,6 +180,9 @@ BattleUnit:has("_surfaceIndex", {
 BattleUnit:has("_attackEffect", {
 	is = "rw"
 })
+BattleUnit:has("_isBattleField", {
+	is = "rw"
+})
 
 function BattleUnit:initialize(id)
 	super.initialize(self, id)
@@ -195,6 +213,7 @@ function BattleUnit:initWithRawData(data)
 	self._heroCost = data.heroCost or -1
 	self._surfaceIndex = data.surfaceIndex or 0
 	self._attackEffect = data.attackEffect
+	self._isBattleField = data.isBattleField
 	self._enemyCost = data.enemyCost
 
 	super.initWithRawData(self, data)
@@ -295,6 +314,9 @@ function BattleUnit:getFlagCheckers()
 		end,
 		["$MASTER"] = function (target)
 			return target:getUnitType() == BattleUnitType.kMaster
+		end,
+		["$FIELD"] = function (target)
+			return target:getUnitType() == BattleUnitType.kBattleField
 		end,
 		["$SUMMONED"] = function (target)
 			return target._isSummoned == true
@@ -401,7 +423,8 @@ function BattleUnit:dumpInformation()
 		modelScale = self._modelScale,
 		isSummoned = self._isSummoned,
 		side = self._side,
-		flags = flagComp:getFlags()
+		flags = flagComp:getFlags(),
+		isBattleField = self._isBattleField
 	}
 end
 

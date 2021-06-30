@@ -200,7 +200,8 @@ function RecruitMainMediator:refreshBg(heroId)
 			GalleryPartyType.kMNJH,
 			GalleryPartyType.kDWH,
 			GalleryPartyType.kWNSXJ,
-			GalleryPartyType.kSSZS
+			GalleryPartyType.kSSZS,
+			GalleryPartyType.kUNKNOWN
 		}
 		local num = math.random(1, 6)
 		party = partys[num]

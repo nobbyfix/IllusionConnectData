@@ -152,6 +152,9 @@
     "Target_LFEr": {
         "Function": "return MainTarget()+GenInfo(Slice(SortBy(FriendUnits(PETS),\"<\",getHpRatio),1,1),Green)"
     },
+    "Target_LFKLFTe": {
+        "Function": "return GenInfo(EnemyAll(),Red)"
+    },
     "Target_LLan": {
         "Function": ""
     },

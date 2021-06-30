@@ -20,9 +20,12 @@ BattlePlayer:has("_initiative", {
 	is = "rw"
 })
 BattlePlayer:has("_masterUnit", {
-	is = "r"
+	is = "rw"
 })
 BattlePlayer:has("_initialCellNo", {
+	is = "rw"
+})
+BattlePlayer:has("_initialBattleFeildCellNo", {
 	is = "rw"
 })
 BattlePlayer:has("_cardPool", {
@@ -52,6 +55,7 @@ function BattlePlayer:initialize(id)
 
 	self._id = id
 	self._initialCellNo = 8
+	self._initialBattleFeildCellNo = 108
 	self._energyReservoir = EnergyReservoir:new()
 	self._cardPool = HeroCardPool:new()
 	self._heroCardPool = self._cardPool
@@ -147,6 +151,15 @@ function BattlePlayer:embattle(waveIndex, anim, formationSystem, battleRecorder)
 		self._masterUnit = nil
 	end
 
+	if not self._BattleFieldUnit then
+		local battleFeildData = self:getBattleFieldData()
+		local animation = {
+			dur = 1000,
+			name = anim or "init"
+		}
+		self._BattleFieldUnit = formationSystem:SpawnUnit(self, battleFeildData, self:getInitialBattleFeildCellNo(), animation, false, true, {})
+	end
+
 	if herosData and next(herosData) ~= nil then
 		local heroUnits = {}
 
@@ -166,6 +179,56 @@ function BattlePlayer:embattle(waveIndex, anim, formationSystem, battleRecorder)
 	else
 		self._heros = nil
 	end
+end
+
+function BattlePlayer:getBattleFieldData()
+	local battleFeildData = {
+		absorption = 0,
+		effectstrg = 0,
+		skillrate = 0,
+		maxHp = 106818.8,
+		anger = 0,
+		surfaceIndex = 0,
+		defrate = 1,
+		cid = "Master_XueZhan",
+		combat = 15010,
+		unhurtrate = 0.01875,
+		critstrg = 0.05625,
+		atk = 8962.6,
+		defweaken = 0,
+		def = 2717.7,
+		star = 2,
+		level = 40,
+		blockrate = 0.0375,
+		configId = "Master_XueZhan",
+		undeadrate = 0,
+		hurtrate = 0.01875,
+		isBattleField = true,
+		curerate = 0,
+		uncritrate = 0.0375,
+		blockstrg = 0.05625,
+		speed = 295,
+		hp = 8888888888.0,
+		reflection = 0,
+		aoederate = 0.15,
+		atkrate = 1,
+		counterrate = 0,
+		critrate = 0.0875,
+		leadStageLevel = 0,
+		doublerate = 0,
+		unblockrate = 0.0375,
+		uneffectrate = 0,
+		effectrate = 0,
+		modelId = "Model_Master_XueZhan",
+		atkweaken = 0,
+		uid = "m-BattleField-108" .. self._id,
+		id = "f_BattleField-108" .. self._id,
+		flags = {
+			"FIELD"
+		}
+	}
+
+	return battleFeildData
 end
 
 function BattlePlayer:hasNextWave()

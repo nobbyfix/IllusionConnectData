@@ -1216,7 +1216,7 @@ function scene_story20_1a.actions.story20_1a3(_root, args)
 					scale = 0.72,
 					position = {
 						x = 0,
-						y = -305,
+						y = -340,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -1876,7 +1876,7 @@ function scene_story20_1a.actions.story20_1a6(_root, args)
 						duration = 0.75,
 						position = {
 							x = 0,
-							y = -368,
+							y = -340,
 							refpt = {
 								x = 0.25,
 								y = 0

@@ -143,9 +143,9 @@ all.Skill_PGNNi_Proud = {
 			local this = _env.this
 			local global = _env.global
 
-			for _, unit in global.__iter__(global.Slice(_env, global.SortBy(_env, global.EnemyUnits(_env, global.PETS - global.SUMMONS - global.ONESELF(_env, _env.TARGET)), "<", global.UnitPropGetter(_env, "hp")), 1, 1)) do
+			for _, unit in global.__iter__(global.Slice(_env, global.SortBy(_env, global.EnemyUnits(_env, global.PETS - global.SUMMONS - global.ONESELF(_env, _env.TARGET) - global.MARKED(_env, "DAGUN")), "<", global.UnitPropGetter(_env, "hp")), 1, 1)) do
 				if not global.MASTER(_env, _env.TARGET) then
-					global.transportExt(_env, _env.TARGET, global.IdOfCell(_env, global.GetCell(_env, unit)), 200, 1)
+					global.transportExt_ResultCheck(_env, _env.TARGET, global.IdOfCell(_env, global.GetCell(_env, unit)), 200, 1)
 				end
 			end
 		end)
@@ -313,12 +313,12 @@ all.Skill_PGNNi_Passive = {
 					for _, cell3 in global.__iter__(global.EnemyCells(_env, global.CELL_IN_POS(_env, 7))) do
 						if global.GetCellUnit(_env, cell1) then
 							if global.GetCellUnit(_env, cell2) then
-								global.DelayCall(_env, delay, global.transportExt, global.GetCellUnit(_env, cell1), 4, runtime, 1)
+								global.DelayCall(_env, delay, global.transportExt_ResultCheck, global.GetCellUnit(_env, cell1), 4, runtime, 1)
 							elseif global.GetCellUnit(_env, cell3) then
-								global.DelayCall(_env, delay, global.transportExt, global.GetCellUnit(_env, cell1), 7, runtime, 1)
+								global.DelayCall(_env, delay, global.transportExt_ResultCheck, global.GetCellUnit(_env, cell1), 7, runtime, 1)
 							end
 						elseif global.GetCellUnit(_env, cell2) and global.GetCellUnit(_env, cell3) then
-							global.DelayCall(_env, delay, global.transportExt, global.GetCellUnit(_env, cell2), 7, runtime, 1)
+							global.DelayCall(_env, delay, global.transportExt_ResultCheck, global.GetCellUnit(_env, cell2), 7, runtime, 1)
 						end
 					end
 				end
@@ -327,7 +327,7 @@ all.Skill_PGNNi_Passive = {
 			for _, cell1 in global.__iter__(global.EnemyCells(_env, global.CELL_IN_POS(_env, 2))) do
 				for _, cell2 in global.__iter__(global.EnemyCells(_env, global.CELL_IN_POS(_env, 5))) do
 					if global.GetCellUnit(_env, cell1) and global.GetCellUnit(_env, cell2) then
-						global.DelayCall(_env, delay, global.transportExt, global.GetCellUnit(_env, cell1), 5, runtime, 1)
+						global.DelayCall(_env, delay, global.transportExt_ResultCheck, global.GetCellUnit(_env, cell1), 5, runtime, 1)
 					end
 				end
 			end
@@ -337,12 +337,12 @@ all.Skill_PGNNi_Passive = {
 					for _, cell3 in global.__iter__(global.EnemyCells(_env, global.CELL_IN_POS(_env, 9))) do
 						if global.GetCellUnit(_env, cell1) then
 							if global.GetCellUnit(_env, cell2) then
-								global.DelayCall(_env, delay, global.transportExt, global.GetCellUnit(_env, cell1), 6, runtime, 1)
+								global.DelayCall(_env, delay, global.transportExt_ResultCheck, global.GetCellUnit(_env, cell1), 6, runtime, 1)
 							elseif global.GetCellUnit(_env, cell3) then
-								global.DelayCall(_env, delay, global.transportExt, global.GetCellUnit(_env, cell1), 9, runtime, 1)
+								global.DelayCall(_env, delay, global.transportExt_ResultCheck, global.GetCellUnit(_env, cell1), 9, runtime, 1)
 							end
 						elseif global.GetCellUnit(_env, cell2) and global.GetCellUnit(_env, cell3) then
-							global.DelayCall(_env, delay, global.transportExt, global.GetCellUnit(_env, cell2), 9, runtime, 1)
+							global.DelayCall(_env, delay, global.transportExt_ResultCheck, global.GetCellUnit(_env, cell2), 9, runtime, 1)
 						end
 					end
 				end
@@ -478,9 +478,9 @@ all.Skill_PGNNi_Proud_EX = {
 			local this = _env.this
 			local global = _env.global
 
-			for _, unit in global.__iter__(global.Slice(_env, global.SortBy(_env, global.EnemyUnits(_env, global.PETS - global.SUMMONS - global.ONESELF(_env, _env.TARGET)), "<", global.UnitPropGetter(_env, "hp")), 1, 1)) do
+			for _, unit in global.__iter__(global.Slice(_env, global.SortBy(_env, global.EnemyUnits(_env, global.PETS - global.SUMMONS - global.ONESELF(_env, _env.TARGET) - global.MARKED(_env, "DAGUN")), "<", global.UnitPropGetter(_env, "hp")), 1, 1)) do
 				if not global.MASTER(_env, _env.TARGET) then
-					global.transportExt(_env, _env.TARGET, global.IdOfCell(_env, global.GetCell(_env, unit)), 200, 1)
+					global.transportExt_ResultCheck(_env, _env.TARGET, global.IdOfCell(_env, global.GetCell(_env, unit)), 200, 1)
 				end
 			end
 		end)
@@ -654,12 +654,12 @@ all.Skill_PGNNi_Passive_EX = {
 					for _, cell3 in global.__iter__(global.EnemyCells(_env, global.CELL_IN_POS(_env, 7))) do
 						if global.GetCellUnit(_env, cell1) then
 							if global.GetCellUnit(_env, cell2) then
-								global.DelayCall(_env, delay, global.transportExt, global.GetCellUnit(_env, cell1), 4, runtime, 1)
+								global.DelayCall(_env, delay, global.transportExt_ResultCheck, global.GetCellUnit(_env, cell1), 4, runtime, 1)
 							elseif global.GetCellUnit(_env, cell3) then
-								global.DelayCall(_env, delay, global.transportExt, global.GetCellUnit(_env, cell1), 7, runtime, 1)
+								global.DelayCall(_env, delay, global.transportExt_ResultCheck, global.GetCellUnit(_env, cell1), 7, runtime, 1)
 							end
 						elseif global.GetCellUnit(_env, cell2) and global.GetCellUnit(_env, cell3) then
-							global.DelayCall(_env, delay, global.transportExt, global.GetCellUnit(_env, cell2), 7, runtime, 1)
+							global.DelayCall(_env, delay, global.transportExt_ResultCheck, global.GetCellUnit(_env, cell2), 7, runtime, 1)
 						end
 					end
 				end
@@ -668,7 +668,7 @@ all.Skill_PGNNi_Passive_EX = {
 			for _, cell1 in global.__iter__(global.EnemyCells(_env, global.CELL_IN_POS(_env, 2))) do
 				for _, cell2 in global.__iter__(global.EnemyCells(_env, global.CELL_IN_POS(_env, 5))) do
 					if global.GetCellUnit(_env, cell1) and global.GetCellUnit(_env, cell2) then
-						global.DelayCall(_env, delay, global.transportExt, global.GetCellUnit(_env, cell1), 5, runtime, 1)
+						global.DelayCall(_env, delay, global.transportExt_ResultCheck, global.GetCellUnit(_env, cell1), 5, runtime, 1)
 					end
 				end
 			end
@@ -678,12 +678,12 @@ all.Skill_PGNNi_Passive_EX = {
 					for _, cell3 in global.__iter__(global.EnemyCells(_env, global.CELL_IN_POS(_env, 9))) do
 						if global.GetCellUnit(_env, cell1) then
 							if global.GetCellUnit(_env, cell2) then
-								global.DelayCall(_env, delay, global.transportExt, global.GetCellUnit(_env, cell1), 6, runtime, 1)
+								global.DelayCall(_env, delay, global.transportExt_ResultCheck, global.GetCellUnit(_env, cell1), 6, runtime, 1)
 							elseif global.GetCellUnit(_env, cell3) then
-								global.DelayCall(_env, delay, global.transportExt, global.GetCellUnit(_env, cell1), 9, runtime, 1)
+								global.DelayCall(_env, delay, global.transportExt_ResultCheck, global.GetCellUnit(_env, cell1), 9, runtime, 1)
 							end
 						elseif global.GetCellUnit(_env, cell2) and global.GetCellUnit(_env, cell3) then
-							global.DelayCall(_env, delay, global.transportExt, global.GetCellUnit(_env, cell2), 9, runtime, 1)
+							global.DelayCall(_env, delay, global.transportExt_ResultCheck, global.GetCellUnit(_env, cell2), 9, runtime, 1)
 						end
 					end
 				end

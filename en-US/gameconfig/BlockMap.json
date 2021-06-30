@@ -2724,7 +2724,7 @@
     },
     "M20": {
         "BGM": "Mus_Story_Stage",
-        "Background": "Main_Img_00",
+        "Background": "Main_Img_20",
         "BackgroundLength": 2272,
         "ButtonIcon": "main_chapter_10.jpg",
         "ContinueDiamonds": "",
@@ -2733,7 +2733,7 @@
         "IconDesc": "",
         "MapName": "BlockMap_M20_Name",
         "MapReward": "Test_BlockSp_Reward",
-        "OpenLevel": 99,
+        "OpenLevel": 1,
         "OpenStar": 2900,
         "Order": 20,
         "StageEventPoint": [],
@@ -2825,7 +2825,12 @@
             "M20S80"
         ],
         "SubPracticePoint": [],
-        "SubStoryPoint": [],
+        "SubStoryPoint": [
+            "S20S01",
+            "S20S02",
+            "S20S03",
+            "S20S04"
+        ],
         "Task": [],
         "Type": "NORMAL",
         "URL": "",

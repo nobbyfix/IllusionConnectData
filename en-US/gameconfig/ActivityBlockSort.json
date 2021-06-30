@@ -1,0 +1,364 @@
+{
+    "DeepSeaS01": {
+        "BlockPoint": [
+            "DeepSeaS01M",
+            "DeepSeaS01E"
+        ],
+        "HiddenStory": "",
+        "Map": "DeepSeaM01",
+        "Name": "BlockPoint_DeepSeaS01M_Name",
+        "NextPoint": [
+            "DeepSeaS02"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "DeepSeaS01S01"
+        ],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": ""
+    },
+    "DeepSeaS02": {
+        "BlockPoint": [
+            "DeepSeaS02M",
+            "DeepSeaS02E"
+        ],
+        "HiddenStory": "",
+        "Map": "DeepSeaM01",
+        "Name": "BlockPoint_DeepSeaS02M_Name",
+        "NextPoint": [
+            "DeepSeaS03"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DeepSeaS01"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": ""
+    },
+    "DeepSeaS03": {
+        "BlockPoint": [
+            "DeepSeaS03M",
+            "DeepSeaS03E"
+        ],
+        "HiddenStory": "",
+        "Map": "DeepSeaM01",
+        "Name": "BlockPoint_DeepSeaS03M_Name",
+        "NextPoint": [
+            "DeepSeaS04"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DeepSeaS02"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "DeepSeaS01S02"
+        ],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": ""
+    },
+    "DeepSeaS04": {
+        "BlockPoint": [
+            "DeepSeaS04M",
+            "DeepSeaS04E"
+        ],
+        "HiddenStory": "",
+        "Map": "DeepSeaM01",
+        "Name": "BlockPoint_DeepSeaS04M_Name",
+        "NextPoint": [
+            "DeepSeaS05"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DeepSeaS03"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": ""
+    },
+    "DeepSeaS05": {
+        "BlockPoint": [
+            "DeepSeaS05M",
+            "DeepSeaS05E"
+        ],
+        "HiddenStory": "",
+        "Map": "DeepSeaM01",
+        "Name": "BlockPoint_DeepSeaS05M_Name",
+        "NextPoint": [
+            "DeepSeaS06"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DeepSeaS04"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": ""
+    },
+    "DeepSeaS06": {
+        "BlockPoint": [
+            "DeepSeaS06M",
+            "DeepSeaS06E"
+        ],
+        "HiddenStory": "",
+        "Map": "DeepSeaM01",
+        "Name": "BlockPoint_DeepSeaS06M_Name",
+        "NextPoint": [
+            "DeepSeaS07"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DeepSeaS05"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "DeepSeaS01S03"
+        ],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": ""
+    },
+    "DeepSeaS07": {
+        "BlockPoint": [
+            "DeepSeaS07M",
+            "DeepSeaS07E"
+        ],
+        "HiddenStory": "",
+        "Map": "DeepSeaM01",
+        "Name": "BlockPoint_DeepSeaS07M_Name",
+        "NextPoint": [
+            "DeepSeaS08"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DeepSeaS06"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": ""
+    },
+    "DeepSeaS08": {
+        "BlockPoint": [
+            "DeepSeaS08M",
+            "DeepSeaS08E"
+        ],
+        "HiddenStory": "",
+        "Map": "DeepSeaM01",
+        "Name": "BlockPoint_DeepSeaS08M_Name",
+        "NextPoint": [
+            "DeepSeaS09"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DeepSeaS07"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "DeepSeaS01S04"
+        ],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": ""
+    },
+    "DeepSeaS09": {
+        "BlockPoint": [
+            "DeepSeaS09M",
+            "DeepSeaS09E"
+        ],
+        "HiddenStory": "",
+        "Map": "DeepSeaM01",
+        "Name": "BlockPoint_DeepSeaS09M_Name",
+        "NextPoint": [
+            "DeepSeaS10"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DeepSeaS08"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "DeepSeaS01S05"
+        ],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2021-07-07 05:00:00"
+        }
+    },
+    "DeepSeaS10": {
+        "BlockPoint": [
+            "DeepSeaS10M",
+            "DeepSeaS10E"
+        ],
+        "HiddenStory": "",
+        "Map": "DeepSeaM01",
+        "Name": "BlockPoint_DeepSeaS10M_Name",
+        "NextPoint": [
+            "DeepSeaS11"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DeepSeaS09"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2021-07-07 05:00:00"
+        }
+    },
+    "DeepSeaS11": {
+        "BlockPoint": [
+            "DeepSeaS11M",
+            "DeepSeaS11E"
+        ],
+        "HiddenStory": "",
+        "Map": "DeepSeaM01",
+        "Name": "BlockPoint_DeepSeaS11M_Name",
+        "NextPoint": [
+            "DeepSeaS12"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DeepSeaS10"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "DeepSeaS01S06"
+        ],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2021-07-07 05:00:00"
+        }
+    },
+    "DeepSeaS12": {
+        "BlockPoint": [
+            "DeepSeaS12M",
+            "DeepSeaS12E"
+        ],
+        "HiddenStory": "",
+        "Map": "DeepSeaM01",
+        "Name": "BlockPoint_DeepSeaS12M_Name",
+        "NextPoint": [
+            "DeepSeaS13"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DeepSeaS11"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2021-07-07 05:00:00"
+        }
+    },
+    "DeepSeaS13": {
+        "BlockPoint": [
+            "DeepSeaS13M",
+            "DeepSeaS13E"
+        ],
+        "HiddenStory": "",
+        "Map": "DeepSeaM01",
+        "Name": "BlockPoint_DeepSeaS13M_Name",
+        "NextPoint": [
+            "DeepSeaS14"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DeepSeaS12"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2021-07-07 05:00:00"
+        }
+    },
+    "DeepSeaS14": {
+        "BlockPoint": [
+            "DeepSeaS14M",
+            "DeepSeaS14E"
+        ],
+        "HiddenStory": "",
+        "Map": "DeepSeaM01",
+        "Name": "BlockPoint_DeepSeaS14M_Name",
+        "NextPoint": [
+            "DeepSeaS15"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DeepSeaS13"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "DeepSeaS01S07"
+        ],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2021-07-07 05:00:00"
+        }
+    },
+    "DeepSeaS15": {
+        "BlockPoint": [
+            "DeepSeaS15M",
+            "DeepSeaS15E"
+        ],
+        "HiddenStory": "",
+        "Map": "DeepSeaM01",
+        "Name": "BlockPoint_DeepSeaS15M_Name",
+        "NextPoint": [
+            "DeepSeaS16"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DeepSeaS14"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2021-07-07 05:00:00"
+        }
+    },
+    "DeepSeaS16": {
+        "BlockPoint": [
+            "DeepSeaS16M",
+            "DeepSeaS16E"
+        ],
+        "HiddenStory": "",
+        "Map": "DeepSeaM01",
+        "Name": "BlockPoint_DeepSeaS16M_Name",
+        "NextPoint": [],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DeepSeaS15"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2021-07-07 05:00:00"
+        }
+    }
+}

@@ -1544,27 +1544,46 @@ function ActivityBlockTeamMediator:onClickFight(sender, eventType)
 
 		AudioTimerSystem:playStartBattleVoice(self._curTeam)
 		self._activitySystem:setBattleTeamInfo(self._curTeam)
+		dump(self._pointId, "elf._pointId-___")
 
-		local point = self._activity:getPointById(self._pointId)
+		if self._activity:getType() == ActivityType.KActivityBlockMapNew then
+			local point = self._activity:getSubPointById(self._pointId)
+			self._param.parent._parent._data.enterBattlePointId = point:getOwner():getId()
 
-		point:recordOldStar()
-		point:recordHpRate()
+			self._activitySystem:requestDoChildActivity(self._activityId, self._activity:getId(), {
+				doActivityType = 102,
+				type = self._param.type,
+				mapId = self._param.mapId,
+				pointId = self._pointId
+			}, function (rsdata)
+				if rsdata.resCode == GS_SUCCESS then
+					self._param.parent:onClickBack()
+					self:dismiss()
+					self._activitySystem:enterActstageBattle(rsdata.data, self._activityId, self._activity:getId())
+				end
+			end, true)
+		else
+			local point = self._activity:getPointById(self._pointId)
 
-		self._param.parent._parent._data.stageType = self._param.parent._parent._stageType
-		self._param.parent._parent._data.enterBattlePointId = self._pointId
+			point:recordOldStar()
+			point:recordHpRate()
 
-		self._activitySystem:requestDoChildActivity(self._activityId, self._activity:getId(), {
-			doActivityType = 102,
-			type = self._param.type,
-			mapId = self._param.mapId,
-			pointId = self._pointId
-		}, function (rsdata)
-			if rsdata.resCode == GS_SUCCESS then
-				self._param.parent:onClickBack()
-				self:dismiss()
-				self._activitySystem:enterActstageBattle(rsdata.data, self._activityId, self._activity:getId())
-			end
-		end, true)
+			self._param.parent._parent._data.stageType = self._param.parent._parent._stageType
+			self._param.parent._parent._data.enterBattlePointId = self._pointId
+
+			self._activitySystem:requestDoChildActivity(self._activityId, self._activity:getId(), {
+				doActivityType = 102,
+				type = self._param.type,
+				mapId = self._param.mapId,
+				pointId = self._pointId
+			}, function (rsdata)
+				if rsdata.resCode == GS_SUCCESS then
+					self._param.parent:onClickBack()
+					self:dismiss()
+					self._activitySystem:enterActstageBattle(rsdata.data, self._activityId, self._activity:getId())
+				end
+			end, true)
+		end
 	end
 
 	self:onClickBack(nil, , callback)

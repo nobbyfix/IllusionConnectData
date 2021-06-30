@@ -206,6 +206,11 @@ function FriendPvpWinMediator:createMvpHeros(defMasterModel)
 		heroAnim:addTo(self._heroPanel)
 		heroAnim:setScale(0.75)
 		heroAnim:setPosition(pos[1][1])
+
+		if master[1].model == "Model_LFKLFTe_DGun" then
+			heroAnim:setScale(0.35)
+			heroAnim:offset(-270, 40)
+		end
 	else
 		local showHeroNum = math.min(#heroes, 5)
 

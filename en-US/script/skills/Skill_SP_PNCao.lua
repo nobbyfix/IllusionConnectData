@@ -442,7 +442,7 @@ all.Skill_SP_PNCao_Passive = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.MASTER(_env, _env.ACTOR) then
+			if global.MASTER(_env, _env.ACTOR) and not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) then
 				local RoleModel = {
 					"Model_SP_PNCao_NNuo"
 				}
@@ -965,7 +965,7 @@ all.Skill_SP_PNCao_Passive_EX = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.MASTER(_env, _env.ACTOR) then
+			if global.MASTER(_env, _env.ACTOR) and not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) then
 				local RoleModel = {
 					"Model_SP_PNCao_NNuo"
 				}

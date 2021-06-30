@@ -538,10 +538,10 @@ function RecruitMainMediator:initRoleInfo(heroId, adjustPos)
 
 	model = ConfigReader:getDataByNameIdAndKey("RoleModel", model, "Model")
 	local roleNode = self._heroInfoNode:getChildByFullName("roleNode")
-	local skillDescPosX = 464
+	local skillDescPosX = 780
 
 	if adjustPos then
-		skillDescPosX = 600
+		skillDescPosX = 780
 
 		self._heroInfoNode:setPosition(cc.p(801.3, 426))
 		roleNode:setPosition(cc.p(163.6, -161.3))
@@ -606,7 +606,7 @@ function RecruitMainMediator:onClickSkill(skill, heroData, skillDescPosX)
 			mediator = self
 		})))
 
-		self._skillWidget:getView():addTo(self:getView()):posite(464, 170)
+		self._skillWidget:getView():addTo(self:getView()):posite(464, 70)
 	end
 
 	self._skillWidget:refreshInfo(skill, heroData)

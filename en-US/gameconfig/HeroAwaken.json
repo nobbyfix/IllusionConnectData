@@ -20,6 +20,27 @@
         "StoryLink": "S11S01",
         "SurfaceId": "Surface_BBLMa_Awake"
     },
+    "BHTZi": {
+        "AnimSound": "Se_Effect_Awakening_BSu",
+        "Animation": "bsu_Awaken",
+        "CutIn": [
+            0,
+            0,
+            1
+        ],
+        "ModelId": "Model_BHTZi_Awake",
+        "Name": "BHTZi_Awake_Name",
+        "NameDesc": "BHTZi_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_BHTZi_UnAwake",
+        "Reward": "HeroAwaken_BHTZi",
+        "ShowHero": "BHTZi",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "BHTZi_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_BHTZi_Awake"
+    },
     "CZheng": {
         "AnimSound": "Se_Effect_Awakening_CZheng",
         "Animation": "CUNZHENG_Awaken",

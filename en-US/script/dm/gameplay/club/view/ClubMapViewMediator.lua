@@ -565,10 +565,12 @@ function ClubMapViewMediator:onClickBuilding(sender, eventType)
 		end
 
 		if tag == 3 then
-			local view = self:getInjector():getInstance("ClubNewHallView")
-			local event = ViewEvent:new(EVT_PUSH_VIEW, view, nil, {})
+			self._clubSystem:requestClubInfo(function ()
+				local view = self:getInjector():getInstance("ClubNewHallView")
+				local event = ViewEvent:new(EVT_PUSH_VIEW, view, nil, {})
 
-			self:dispatch(event)
+				self:dispatch(event)
+			end)
 		end
 
 		if tag == 4 then

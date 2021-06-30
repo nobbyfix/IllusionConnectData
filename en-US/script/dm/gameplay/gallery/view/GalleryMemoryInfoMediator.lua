@@ -136,7 +136,10 @@ function GalleryMemoryInfoMediator:initView()
 	self._photoDate:setFontName(TTF_FONT_FZYH_R)
 	self._photoDate:setFontSize(self._photoDesc:getFontSize())
 	self._photoDate:enableOutline(cc.c4b(0, 0, 0, 255), 1)
-	self._photoDate:setString(self._memoryData:getTime())
+
+	local date = TimeUtil:localDate("%Y/%m/%d", self._memoryData:getDate())
+
+	self._photoDate:setString(date)
 	self._photoEnTitle:setPositionX(self._photoTitle:getPositionX() + self._photoTitle:getContentSize().width + 2)
 	self._titleBg2:setPositionX(self._photoEnTitle:getPositionX() - 38)
 	self._titleBg2:setContentSize(cc.size(self._photoEnTitle:getContentSize().width + 76, 36))

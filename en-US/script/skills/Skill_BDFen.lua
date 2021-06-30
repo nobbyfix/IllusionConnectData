@@ -231,7 +231,7 @@ all.Skill_BDFen_Unique = {
 			for _, unit in global.__iter__(global.EnemyUnits(_env, global.MID_ROW)) do
 				for _, cell in global.__iter__(global.EnemyCells(_env, global.COL_CELL_OF(_env, global.GetCell(_env, unit)) * global.FRONT_ROW_CELL)) do
 					if not global.GetCellUnit(_env, cell) then
-						global.transportExt(_env, unit, global.IdOfCell(_env, cell), runtime, 1)
+						global.transportExt_ResultCheck(_env, unit, global.IdOfCell(_env, cell), runtime, 1)
 					end
 				end
 			end
@@ -242,11 +242,11 @@ all.Skill_BDFen_Unique = {
 						if global.GetCellUnit(_env, cell) then
 							for _, cell_else in global.__iter__(global.EnemyCells(_env, global.COL_CELL_OF(_env, cell) * global.MID_ROW_CELL)) do
 								if not global.GetCellUnit(_env, cell_else) then
-									global.transportExt(_env, unit, global.IdOfCell(_env, cell_else), runtime, 1)
+									global.transportExt_ResultCheck(_env, unit, global.IdOfCell(_env, cell_else), runtime, 1)
 								end
 							end
 						else
-							global.transportExt(_env, unit, global.IdOfCell(_env, cell), runtime, 1)
+							global.transportExt_ResultCheck(_env, unit, global.IdOfCell(_env, cell), runtime, 1)
 						end
 					end
 				end
@@ -572,7 +572,7 @@ all.Skill_BDFen_Unique_EX = {
 			for _, unit in global.__iter__(global.EnemyUnits(_env, global.MID_ROW)) do
 				for _, cell in global.__iter__(global.EnemyCells(_env, global.COL_CELL_OF(_env, global.GetCell(_env, unit)) * global.FRONT_ROW_CELL)) do
 					if not global.GetCellUnit(_env, cell) then
-						global.transportExt(_env, unit, global.IdOfCell(_env, cell), runtime, 1)
+						global.transportExt_ResultCheck(_env, unit, global.IdOfCell(_env, cell), runtime, 1)
 					end
 				end
 			end
@@ -583,11 +583,11 @@ all.Skill_BDFen_Unique_EX = {
 						if global.GetCellUnit(_env, cell) then
 							for _, cell_else in global.__iter__(global.EnemyCells(_env, global.COL_CELL_OF(_env, cell) * global.MID_ROW_CELL)) do
 								if not global.GetCellUnit(_env, cell_else) then
-									global.transportExt(_env, unit, global.IdOfCell(_env, cell_else), runtime, 1)
+									global.transportExt_ResultCheck(_env, unit, global.IdOfCell(_env, cell_else), runtime, 1)
 								end
 							end
 						else
-							global.transportExt(_env, unit, global.IdOfCell(_env, cell), runtime, 1)
+							global.transportExt_ResultCheck(_env, unit, global.IdOfCell(_env, cell), runtime, 1)
 						end
 					end
 				end

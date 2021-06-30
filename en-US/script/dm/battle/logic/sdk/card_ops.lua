@@ -29,6 +29,16 @@ function exports.clearHeroCardSeatRules(env, player, card, rules, dierules)
 	return cardSystem:clearHeroCardSeatRules(player, card, rules, dierules)
 end
 
+function exports.setEnterPauseTime(env, player, card, time)
+	local cardSystem = env.global["$CardSystem"]
+
+	if cardSystem == nil then
+		return nil
+	end
+
+	return cardSystem:setEnterPauseTime(player, card, time)
+end
+
 function exports.CARD_HERO_MARKED(env, flag)
 	return MakeFilter(function (card)
 		if card:getType() == "hero" then

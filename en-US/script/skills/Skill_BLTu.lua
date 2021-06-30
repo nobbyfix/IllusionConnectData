@@ -216,6 +216,19 @@ all.Skill_BLTu_Unique = {
 		this.passive2 = global["[trigger_by]"](this, {
 			"SELF:DIE"
 		}, passive2)
+		local passive3 = __action(this, {
+			name = "passive3",
+			entry = prototype.passive3
+		})
+		passive3 = global["[duration]"](this, {
+			0
+		}, passive3)
+		passive3 = global["[trigger_by]"](this, {
+			"SELF:BUFF_CANCELED"
+		}, passive3)
+		this.passive3 = global["[trigger_by]"](this, {
+			"SELF:BUFF_ENDED"
+		}, passive3)
 
 		return this
 	end,
@@ -293,21 +306,28 @@ all.Skill_BLTu_Unique = {
 				"+Normal"
 			}, 1)
 
-			if global.FriendMaster(_env) then
-				global.ApplyBuff(_env, global.FriendMaster(_env), {
-					timing = 2,
-					display = "Protecto",
-					group = "Skill_BLTu_Unique_Show",
-					duration = 2,
-					limit = 1,
-					tags = {
-						"BAOHUZHAO",
-						"BLTu_Unique"
-					}
-				}, {
-					buff_show
-				})
-			end
+			global.ApplyBuff(_env, global.FriendField(_env), {
+				timing = 2,
+				display = "Protecto",
+				group = "Skill_BLTu_Unique_Show",
+				duration = 2,
+				limit = 1,
+				tags = {
+					"BAOHUZHAO",
+					"BLTu_Unique"
+				}
+			}, {
+				buff_show
+			})
+			global.ApplyBuff(_env, _env.ACTOR, {
+				timing = 2,
+				duration = 2,
+				tags = {
+					"BLTu_Unique_Check"
+				}
+			}, {
+				buff_show
+			})
 		end)
 		exec["@time"]({
 			2770
@@ -342,11 +362,7 @@ all.Skill_BLTu_Unique = {
 			local global = _env.global
 			local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.ACTOR)
 			local atk = global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR)
-			local buffcount = 0
-
-			if global.FriendMaster(_env) then
-				buffcount = global.SelectBuffCount(_env, global.FriendMaster(_env), global.BUFF_MARKED_ALL(_env, "BAOHUZHAO", "BLTu_Unique"))
-			end
+			local buffcount = global.SelectBuffCount(_env, global.FriendField(_env), global.BUFF_MARKED_ALL(_env, "BAOHUZHAO", "BLTu_Unique"))
 
 			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and buffcount > 0 then
 				local shield = global.ShieldEffect(_env, global.min(_env, maxHp * this.ShieldRateFactor, atk * 2))
@@ -391,8 +407,30 @@ all.Skill_BLTu_Unique = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.FriendMaster(_env) then
-				global.DispelBuff(_env, global.FriendMaster(_env), global.BUFF_MARKED_ALL(_env, "BAOHUZHAO", "BLTu_Unique"), 99)
+			global.DispelBuff(_env, global.FriendField(_env), global.BUFF_MARKED_ALL(_env, "BAOHUZHAO", "BLTu_Unique"), 99)
+		end)
+
+		return _env
+	end,
+	passive3 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.buff = externs.buff
+
+		assert(_env.buff ~= nil, "External variable `buff` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.BuffIsMatched(_env, _env.buff, "BLTu_Unique_Check") then
+				global.DispelBuff(_env, global.FriendField(_env), global.BUFF_MARKED_ALL(_env, "BAOHUZHAO", "BLTu_Unique"), 99)
 			end
 		end)
 
@@ -483,6 +521,18 @@ all.Skill_BLTu_Passive = {
 						buffeft
 					}, 1, 0)
 				end
+
+				local buff = global.PassiveFunEffectBuff(_env, "BLTu_Protecto_Kick", {})
+
+				global.ApplyBuff(_env, global.FriendField(_env), {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"BLTu_Protecto_Kick"
+					}
+				}, {
+					buff
+				})
 			end
 		end)
 
@@ -627,6 +677,51 @@ all.Skill_BLTu_Passive_Key = {
 				}, {
 					buffeft
 				}, 1, 0)
+			end
+		end)
+
+		return _env
+	end
+}
+all.BLTu_Protecto_Kick = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		local passive = __action(this, {
+			name = "passive",
+			entry = prototype.passive
+		})
+		passive = global["[duration]"](this, {
+			0
+		}, passive)
+		this.passive = global["[trigger_by]"](this, {
+			"UNIT_KICK"
+		}, passive)
+
+		return this
+	end,
+	passive = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.MARKED(_env, "BLTu")(_env, _env.unit) then
+				global.DispelBuff(_env, global.FriendField(_env), global.BUFF_MARKED_ALL(_env, "BAOHUZHAO", "BLTu_Unique"), 99)
 			end
 		end)
 
@@ -778,6 +873,19 @@ all.Skill_BLTu_Unique_EX = {
 		this.passive2 = global["[trigger_by]"](this, {
 			"SELF:DIE"
 		}, passive2)
+		local passive3 = __action(this, {
+			name = "passive3",
+			entry = prototype.passive3
+		})
+		passive3 = global["[duration]"](this, {
+			0
+		}, passive3)
+		passive3 = global["[trigger_by]"](this, {
+			"SELF:BUFF_CANCELED"
+		}, passive3)
+		this.passive3 = global["[trigger_by]"](this, {
+			"SELF:BUFF_ENDED"
+		}, passive3)
 
 		return this
 	end,
@@ -855,21 +963,28 @@ all.Skill_BLTu_Unique_EX = {
 				"+Normal"
 			}, 1)
 
-			if global.FriendMaster(_env) then
-				global.ApplyBuff(_env, global.FriendMaster(_env), {
-					timing = 2,
-					display = "Protecto",
-					group = "Skill_BLTu_Unique_Show",
-					duration = 2,
-					limit = 1,
-					tags = {
-						"BAOHUZHAO",
-						"BLTu_Unique"
-					}
-				}, {
-					buff_show
-				})
-			end
+			global.ApplyBuff(_env, global.FriendField(_env), {
+				timing = 2,
+				display = "Protecto",
+				group = "Skill_BLTu_Unique_Show",
+				duration = 2,
+				limit = 1,
+				tags = {
+					"BAOHUZHAO",
+					"BLTu_Unique"
+				}
+			}, {
+				buff_show
+			})
+			global.ApplyBuff(_env, _env.ACTOR, {
+				timing = 2,
+				duration = 2,
+				tags = {
+					"BLTu_Unique_Check"
+				}
+			}, {
+				buff_show
+			})
 		end)
 		exec["@time"]({
 			2770
@@ -904,11 +1019,7 @@ all.Skill_BLTu_Unique_EX = {
 			local global = _env.global
 			local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.ACTOR)
 			local atk = global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR)
-			local buffcount = 0
-
-			if global.FriendMaster(_env) then
-				buffcount = global.SelectBuffCount(_env, global.FriendMaster(_env), global.BUFF_MARKED_ALL(_env, "BAOHUZHAO", "BLTu_Unique"))
-			end
+			local buffcount = global.SelectBuffCount(_env, global.FriendField(_env), global.BUFF_MARKED_ALL(_env, "BAOHUZHAO", "BLTu_Unique"))
 
 			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and buffcount > 0 then
 				local shield = global.ShieldEffect(_env, global.min(_env, maxHp * this.ShieldRateFactor, atk * 2))
@@ -953,8 +1064,30 @@ all.Skill_BLTu_Unique_EX = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.FriendMaster(_env) then
-				global.DispelBuff(_env, global.FriendMaster(_env), global.BUFF_MARKED_ALL(_env, "BAOHUZHAO", "BLTu_Unique"), 99)
+			global.DispelBuff(_env, global.FriendField(_env), global.BUFF_MARKED_ALL(_env, "BAOHUZHAO", "BLTu_Unique"), 99)
+		end)
+
+		return _env
+	end,
+	passive3 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.buff = externs.buff
+
+		assert(_env.buff ~= nil, "External variable `buff` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.BuffIsMatched(_env, _env.buff, "BLTu_Unique_Check") then
+				global.DispelBuff(_env, global.FriendField(_env), global.BUFF_MARKED_ALL(_env, "BAOHUZHAO", "BLTu_Unique"), 99)
 			end
 		end)
 
@@ -1045,6 +1178,18 @@ all.Skill_BLTu_Passive_EX = {
 						buffeft
 					}, 1, 0)
 				end
+
+				local buff = global.PassiveFunEffectBuff(_env, "BLTu_Protecto_Kick", {})
+
+				global.ApplyBuff(_env, global.FriendField(_env), {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"BLTu_Protecto_Kick"
+					}
+				}, {
+					buff
+				})
 			end
 		end)
 

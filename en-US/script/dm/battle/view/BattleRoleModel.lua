@@ -174,6 +174,9 @@ BattleRoleModel:has("_side", {
 BattleRoleModel:has("_flags", {
 	is = "rw"
 })
+BattleRoleModel:has("_isBattleField", {
+	is = "rw"
+})
 
 function BattleRoleModel:initialize(context)
 	super.initialize(self)

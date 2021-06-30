@@ -388,6 +388,30 @@ function ActivityCommonMainMediator:initInfo()
 
 		redPoint:setVisible(self._loginActivity and self._loginActivity:hasRedPoint())
 	end
+
+	local ui = self._activity:getUI()
+
+	if ui == ActivityType_UI.KActivityDeepSea and getCurrentLanguage() ~= GameLanguageType.CN then
+		local title = self._stagePanel:getChildByName("title_shenhai")
+
+		if title then
+			title:setString(Strings:get("ActivityBlock_DeepSea_Map_Name_1_1"))
+		end
+
+		local titles = {
+			"title",
+			"title_0",
+			"title_1"
+		}
+
+		for i, v in ipairs(titles) do
+			local title = self._stagePanel:getChildByName(v)
+
+			if title then
+				title:setString("")
+			end
+		end
+	end
 end
 
 local MAPOPENSTATUS = {

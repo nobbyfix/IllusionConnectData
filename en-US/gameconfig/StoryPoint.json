@@ -2032,5 +2032,115 @@
         ],
         "StoryLink": "story19_3a",
         "UnlockBubble": ""
+    },
+    "S20S01": {
+        "FirstReward": "S20S01_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -448,
+            14
+        ],
+        "Map": "M20",
+        "Name": "BlockPoint_S20S01_Name",
+        "NextStoryPoint": [
+            "S20S02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "M20S10"
+        ],
+        "PreStoryPoint": [
+            "S19S03"
+        ],
+        "StoryLink": "story20_1a",
+        "UnlockBubble": ""
+    },
+    "S20S02": {
+        "FirstReward": "S20S02_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -225,
+            106
+        ],
+        "Map": "M20",
+        "Name": "BlockPoint_S20S02_Name",
+        "NextStoryPoint": [
+            "S20S03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "M20S30"
+        ],
+        "PreStoryPoint": [
+            "S20S01"
+        ],
+        "StoryLink": "story20_2a",
+        "UnlockBubble": ""
+    },
+    "S20S03": {
+        "FirstReward": "S20S03_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -100,
+            -120
+        ],
+        "Map": "M20",
+        "Name": "BlockPoint_S20S03_Name",
+        "NextStoryPoint": [
+            "S20S04"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "M20S50"
+        ],
+        "PreStoryPoint": [
+            "S20S02"
+        ],
+        "StoryLink": "story20_3a",
+        "UnlockBubble": ""
+    },
+    "S20S04": {
+        "FirstReward": "S20S04_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -400,
+            -90
+        ],
+        "Map": "M20",
+        "Name": "BlockPoint_S20S04_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "M20S70"
+        ],
+        "PreStoryPoint": [
+            "S20S03"
+        ],
+        "StoryLink": "story20_4a",
+        "UnlockBubble": ""
     }
 }

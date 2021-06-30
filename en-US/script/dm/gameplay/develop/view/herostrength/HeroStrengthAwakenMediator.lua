@@ -45,7 +45,8 @@ local kBgAnimAndImage = {
 	[GalleryPartyType.kMNJH] = "asset/ui/gallery/party_icon_monv.png",
 	[GalleryPartyType.kDWH] = "asset/ui/gallery/party_icon_dongwenhui.png",
 	[GalleryPartyType.kWNSXJ] = "asset/ui/gallery/party_icon_weinasi.png",
-	[GalleryPartyType.kSSZS] = "asset/ui/gallery/party_icon_she.png"
+	[GalleryPartyType.kSSZS] = "asset/ui/gallery/party_icon_she.png",
+	[GalleryPartyType.kUNKNOWN] = "asset/ui/gallery/party_icon_unknown.png"
 }
 local AWAKEN_STAR_ICON = "jx_img_star.png"
 

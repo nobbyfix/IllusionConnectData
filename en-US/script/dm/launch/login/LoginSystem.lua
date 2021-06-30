@@ -1,6 +1,7 @@
 EVT_LOGIN_REFRESH_SERVER = "EVT_LOGIN_REFRESH_SERVER"
 EVT_ANNOUNCE_REFRESH_SERVER = "EVT_ANNOUNCE_REFRESH_SERVER"
 EVT_PATFACE_REFRESH_SERVER = "EVT_PATFACE_REFRESH_SERVER"
+EVT_PV_REFRESH_SERVER = "EVT_PV_REFRESH_SERVER"
 EVT_REQUEST_LOGIN_SUCC = "EVT_REQUEST_LOGIN_SUCC"
 LoginSystem = class("LoginSystem", Facade, _M)
 
@@ -31,6 +32,9 @@ LoginSystem:has("_announceSaveData", {
 LoginSystem:has("_language", {
 	is = "rw"
 })
+LoginSystem:has("_pvSaveData", {
+	is = "rw"
+})
 LoginSystem:has("_logoPvName", {
 	is = "rw"
 })
@@ -52,6 +56,7 @@ function LoginSystem:initialize()
 	self._announceSaveData = nil
 	self._patFaceSaveData = nil
 	self._language = GameLanguageTypeForGmPlatform[getCurrentLanguage()]
+	self._pvSaveData = nil
 end
 
 function LoginSystem:vmsRequest(url, version, callback)
@@ -187,8 +192,7 @@ function LoginSystem:getPatFaceData(data)
 	}
 
 	self._loginService:getPatFaceData(params, false, function (response)
-		self._patFaceSaveData = response
-
+		self:syncPatFaceData(response)
 		self:dispatch(Event:new(EVT_PATFACE_REFRESH_SERVER, {}))
 	end)
 end
@@ -200,7 +204,7 @@ function LoginSystem:getPatFaceDataToSave(callback)
 	}
 
 	self._loginService:getPatFaceData(params, false, function (response)
-		self._patFaceSaveData = response
+		self:syncPatFaceData(response)
 
 		if callback then
 			callback()
@@ -253,6 +257,10 @@ function LoginSystem:requestPlayerInfo(callback)
 
 				if response.data.extra.serverOpenTime then
 					developSystem:setServerOpenTime(response.data.extra.serverOpenTime)
+				end
+
+				if response.data.extra.mergeTs then
+					developSystem:setServerMergeTime(response.data.extra.mergeTs)
 				end
 
 				if response.data.extra.timeZone then
@@ -448,4 +456,85 @@ function LoginSystem:getLimitTimeBg()
 			end
 		end
 	end
+end
+
+function LoginSystem:syncPatFaceData(response)
+	self._patFaceSaveData = {}
+	self._pvSaveData = {}
+
+	if response.data then
+		for i, v in pairs(response.data) do
+			if v.type == 1 then
+				self._patFaceSaveData[#self._patFaceSaveData + 1] = v
+			elseif v.type == 2 then
+				self._pvSaveData[#self._pvSaveData + 1] = v
+			end
+		end
+
+		self:downloadPVFile()
+	end
+end
+
+function LoginSystem:downloadPVFile()
+	local data = self:getPvSaveData()
+	local loadTaskTable = {}
+	local downloader = Downloader:getInstance()
+	local fileUtils = cc.FileUtils:getInstance()
+	local pvDir = fileUtils:getWritablePath() .. "PVDir"
+
+	if not fileUtils:isDirectoryExist(pvDir) then
+		fileUtils:createDirectory(pvDir)
+	end
+
+	for i, v in pairs(data) do
+		local function addTask(path)
+			local storagePath = pvDir .. "/" .. path
+
+			if fileUtils:isFileExist(storagePath) then
+				return
+			else
+				local params = {
+					urlPath = v.baseUrl .. path,
+					storagePath = storagePath
+				}
+				loadTaskTable[#loadTaskTable + 1] = params
+			end
+		end
+
+		local pvImgPath = v.mainbody.images[1]
+
+		addTask(pvImgPath)
+
+		local pvPath = v.pvvideo
+
+		addTask(pvPath)
+	end
+
+	for i, params in pairs(loadTaskTable) do
+		local storagePath = params.storagePath
+		local url = params.urlPath
+
+		local function onFileTaskSuccess(task)
+			if fileUtils:isFileExist(storagePath) then
+				self:dispatch(Event:new(EVT_PV_REFRESH_SERVER, {}))
+			end
+		end
+
+		local function onTaskError(task, errorCode, errorCodeInternal, errorStr)
+		end
+
+		local taskInfo = {
+			type = "file",
+			identifier = storagePath,
+			srcUrl = url,
+			storagePath = storagePath,
+			onTaskError = onTaskError,
+			onFileTaskSuccess = onFileTaskSuccess
+		}
+
+		downloader:addDownloadTask(taskInfo)
+	end
+end
+
+function LoginSystem:addDownloadTask()
 end

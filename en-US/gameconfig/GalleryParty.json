@@ -343,7 +343,8 @@
             "HSYZhai",
             "XHMao",
             "TLSi",
-            "FLBDSi"
+            "FLBDSi",
+            "LFKLFTe"
         ],
         "Party": "SSR",
         "PartyDesc": "Party_SSR_Desc",
@@ -396,7 +397,8 @@
             "SGHQShou",
             "ATSheng",
             "PDLa",
-            "XHMao"
+            "XHMao",
+            "LFKLFTe"
         ],
         "Party": "Summon",
         "PartyDesc": "Party_Summon_Desc",
@@ -425,6 +427,16 @@
         "PartyReward": [],
         "ShowRank": 6,
         "Type": 2
+    },
+    "UNKNOWN": {
+        "IncludeHero": [
+            "LFKLFTe"
+        ],
+        "Party": "UNKNOWN",
+        "PartyDesc": "PartyDesc_UNKNOWN",
+        "PartyReward": [],
+        "ShowRank": 7,
+        "Type": 1
     },
     "WNSXJ": {
         "IncludeHero": [

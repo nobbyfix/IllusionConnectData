@@ -211,6 +211,35 @@
         "Type": "Summoned",
         "UniqueSkill": ""
     },
+    "SummonedDGun": {
+        "Cost": 20,
+        "CounterSkill": "",
+        "DeathSkill": "",
+        "DoubleSkill": "",
+        "Flags": [
+            "SUMMONED"
+        ],
+        "KillRage": 0,
+        "MasterRage": 10,
+        "NormalSkill": "Skill_Enemy_GGun_Normal",
+        "PassiveSkill": [],
+        "ProudSkill": "",
+        "RageBase": 0,
+        "RageRules": {
+            "a1": [
+                0,
+                1000
+            ],
+            "a2": 0,
+            "a3": 0,
+            "a4": 0
+        },
+        "RoleModel": "Model_Enemy_GGun",
+        "SkillRate": 0.0,
+        "SummonSurface": "",
+        "Type": "Summoned",
+        "UniqueSkill": "Skill_Enemy_GGun_Unique"
+    },
     "SummonedGYCZi": {
         "Cost": 2,
         "CounterSkill": "",
@@ -363,6 +392,113 @@
         "SummonSurface": "",
         "Type": "Summoned",
         "UniqueSkill": ""
+    },
+    "SummonedLFKLFTe": {
+        "Cost": 20,
+        "CounterSkill": "",
+        "DeathSkill": "",
+        "DoubleSkill": "",
+        "Flags": [
+            "SUMMONED",
+            "DAGUN",
+            "CANNOT_MOVE"
+        ],
+        "KillRage": 0,
+        "MasterRage": 10,
+        "NormalSkill": "Skill_Summoned_LFKLFTe_Normal",
+        "PassiveSkill": [
+            "Skill_Summoned_LFKLFTe_Passive"
+        ],
+        "ProudSkill": "",
+        "RageBase": 0,
+        "RageRules": {},
+        "RoleModel": "Model_LFKLFTe_DGun",
+        "SkillRate": 0.0,
+        "SummonSurface": "",
+        "Type": "Summoned",
+        "UniqueSkill": "Skill_Summoned_LFKLFTe_Unique_Yiyu|Skill_Summoned_LFKLFTe_Unique_Gongping"
+    },
+    "SummonedLFKLFTeFoot": {
+        "Cost": 20,
+        "CounterSkill": "",
+        "DeathSkill": "Skill_Summoned_LFKLFTe_Foot_Passive_Death",
+        "DoubleSkill": "",
+        "Flags": [
+            "SUMMONED",
+            "DAGUN",
+            "CANNOT_MOVE"
+        ],
+        "KillRage": 0,
+        "MasterRage": 10,
+        "NormalSkill": "Skill_Summoned_LFKLFTe_Foot_Normal",
+        "PassiveSkill": [
+            "Skill_Summoned_LFKLFTe_Foot_Passive"
+        ],
+        "ProudSkill": "",
+        "RageBase": 0,
+        "RageRules": {
+            "a1": [
+                0,
+                0
+            ],
+            "a2": 0,
+            "a3": 0,
+            "a4": 0
+        },
+        "RoleModel": "Model_LFKLFTe_TMing",
+        "SkillRate": 0.0,
+        "SummonSurface": "",
+        "Type": "Summoned",
+        "UniqueSkill": ""
+    },
+    "SummonedLFKLFTe_Activity": {
+        "Cost": 20,
+        "CounterSkill": "",
+        "DeathSkill": "",
+        "DoubleSkill": "",
+        "Flags": [
+            "SUMMONED",
+            "DAGUN"
+        ],
+        "KillRage": 0,
+        "MasterRage": 10,
+        "NormalSkill": "Skill_Summoned_LFKLFTe_Normal",
+        "PassiveSkill": [
+            "Skill_Summoned_LFKLFTe_Passive"
+        ],
+        "ProudSkill": "",
+        "RageBase": 0,
+        "RageRules": {},
+        "RoleModel": "Model_LFKLFTe_DGun",
+        "SkillRate": 0.0,
+        "SummonSurface": "",
+        "Type": "Summoned",
+        "UniqueSkill": "Skill_LFKLFTe_Dagun_Unique_Activity"
+    },
+    "SummonedLFKLFTe_Ex": {
+        "Cost": 20,
+        "CounterSkill": "",
+        "DeathSkill": "",
+        "DoubleSkill": "",
+        "Flags": [
+            "SUMMONED",
+            "DAGUN",
+            "CANNOT_MOVE"
+        ],
+        "KillRage": 0,
+        "MasterRage": 10,
+        "NormalSkill": "Skill_Summoned_LFKLFTe_Normal",
+        "PassiveSkill": [
+            "Skill_Summoned_LFKLFTe_Passive"
+        ],
+        "ProudSkill": "",
+        "RageBase": 0,
+        "RageRules": {},
+        "RoleModel": "Model_LFKLFTe_DGun",
+        "SkillRate": 0.0,
+        "SummonSurface": "",
+        "Type": "Summoned",
+        "UniqueSkill": "Skill_Summoned_LFKLFTe_Unique_Yiyu_Ex|Skill_Summoned_LFKLFTe_Unique_Gongping_Ex"
     },
     "SummonedLYSi": {
         "Cost": 2,

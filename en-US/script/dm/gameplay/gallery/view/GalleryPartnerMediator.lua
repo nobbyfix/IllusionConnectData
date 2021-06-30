@@ -34,7 +34,8 @@ local kImageDi = {
 	"album_bg_tab_3_0.png",
 	"album_bg_tab_4_0.png",
 	"album_bg_tab_5_0.png",
-	"album_bg_tab_6_0.png"
+	"album_bg_tab_6_0.png",
+	"album_bg_tab_7_0.png"
 }
 local kImageParty = {
 	XD = {
@@ -60,6 +61,10 @@ local kImageParty = {
 	SSZS = {
 		"common_btn_smzs.png",
 		"img_gallery_sl_smzs.png"
+	},
+	UNKNOWN = {
+		"common_btn_unknown.png",
+		"img_gallery_sl_unknown.png"
 	}
 }
 local kRarityBg = {

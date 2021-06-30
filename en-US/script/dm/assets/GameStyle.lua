@@ -992,6 +992,11 @@ local kBgAnimAndImage = {
 		"shebeijing_choukahuodeyinghun",
 		"asset/scene/party_bg_sszs",
 		"asset/ui/gallery/party_icon_she.png"
+	},
+	[GalleryPartyType.kUNKNOWN] = {
+		"unknown_choukahuodeyinghun",
+		"asset/scene/party_bg_unknown",
+		"asset/ui/gallery/party_icon_unknown.png"
 	}
 }
 

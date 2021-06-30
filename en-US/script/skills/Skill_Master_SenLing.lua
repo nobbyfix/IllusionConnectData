@@ -381,7 +381,7 @@ all.Sk_Master_SenLing_Action3 = {
 			local this = _env.this
 			local global = _env.global
 
-			for _, friendunit in global.__iter__(global.Slice(_env, global.SortBy(_env, global.FriendUnits(_env, global.PETS - global.SUMMONS), "<", global.UnitPropGetter(_env, "hpRatio")), 1, 1)) do
+			for _, friendunit in global.__iter__(global.Slice(_env, global.SortBy(_env, global.FriendUnits(_env, global.PETS - global.SUMMONS - global.MARKED(_env, "DAGUN")), "<", global.UnitPropGetter(_env, "hpRatio")), 1, 1)) do
 				local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, friendunit)
 				local card = global.BackToCard(_env, friendunit)
 

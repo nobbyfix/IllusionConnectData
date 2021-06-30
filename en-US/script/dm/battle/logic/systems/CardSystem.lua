@@ -209,6 +209,14 @@ function CardSystem:addHeroCardSeatRules(player, card, rules, killOrKick)
 	return false
 end
 
+function CardSystem:setEnterPauseTime(player, card, pauseTime)
+	if card:getType() == "hero" and card.setEnterPauseTime then
+		card:setEnterPauseTime(pauseTime)
+	end
+
+	return false
+end
+
 function CardSystem:clearHeroCardSeatRules(player, card, rules, killOrKick)
 	if card:getType() == "hero" then
 		for k, v in pairs(rules) do

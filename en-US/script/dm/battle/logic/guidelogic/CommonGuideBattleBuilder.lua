@@ -181,3 +181,11 @@ function CommonGuideBattleBuilder:addBuff(targetId, data)
 
 	return self
 end
+
+function CommonGuideBattleBuilder:endBattle(callback)
+	if callback then
+		callback()
+	end
+
+	return self
+end

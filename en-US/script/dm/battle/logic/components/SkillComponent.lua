@@ -93,14 +93,21 @@ function SkillComponent:setupSkill(type, skill)
 end
 
 function SkillComponent:addPassiveSkill(data)
-	local skill = BattleSkill:new(data)
 	local passiveSkills = self:getSkill(kBattlePassiveSkill)
+	local skill = BattleSkill:new(data)
 	passiveSkills = passiveSkills or {}
+
+	for k, v in pairs(passiveSkills) do
+		if v:getId() == skill:getId() then
+			return v, false
+		end
+	end
+
 	passiveSkills[#passiveSkills + 1] = skill
 
 	self:setupSkillList(kBattlePassiveSkill, passiveSkills)
 
-	return skill
+	return skill, true
 end
 
 function SkillComponent:removePassiveSkill(id)

@@ -4247,7 +4247,8 @@ local kHeroPartyImagePath = {
 		[GalleryPartyType.kMNJH] = "asset/common/sl_bg_mvjh.png",
 		[GalleryPartyType.kDWH] = "asset/common/sl_bg_dwh.png",
 		[GalleryPartyType.kWNSXJ] = "asset/common/sl_bg_wns.png",
-		[GalleryPartyType.kSSZS] = "asset/common/sl_bg_smzs.png"
+		[GalleryPartyType.kSSZS] = "asset/common/sl_bg_smzs.png",
+		[GalleryPartyType.kUNKNOWN] = "asset/common/sl_bg_unknown.png"
 	}
 }
 

@@ -699,7 +699,8 @@
             "M16",
             "M17",
             "M18",
-            "M19"
+            "M19",
+            "M20"
         ]
     },
     "Block_StarConditionDesc": {
@@ -1686,9 +1687,17 @@
         "clz": "int",
         "content": 2
     },
+    "Club_Set_MaxBattleNum": {
+        "clz": "int",
+        "content": 7
+    },
     "Club_Set_MaxBattleValue": {
         "clz": "int",
-        "content": 600000
+        "content": 1100000
+    },
+    "Club_Set_MaxLevelNum": {
+        "clz": "int",
+        "content": 2
     },
     "Club_Third_Number": {
         "clz": "int",
@@ -3509,6 +3518,7 @@
             "SSZS": "HeroPartyName_SSZS",
             "Summon": "PROFESSION_SUM_Title",
             "Support": "PROFESSION_SUP_Title",
+            "UNKNOWN": "HeroPartyName_UNKNOWN",
             "WNSXJ": "HeroPartyName_WNSXJ",
             "XD": "HeroPartyName_XD"
         }
@@ -3530,7 +3540,9 @@
             "SGHQShou",
             "TJHDe",
             "FLBDSi",
-            "SP_PNCao"
+            "SP_PNCao",
+            "LFKLFTe",
+            "BHTZi"
         ]
     },
     "HeroStar_BoxNum": {
@@ -5883,6 +5895,14 @@
     "Master_UnHurtRate_CoefficientB": {
         "clz": "double",
         "content": 1
+    },
+    "MergeClubNameMailId": {
+        "clz": "string",
+        "content": "Mail_MergeClubName_1"
+    },
+    "MergeSysMailId": {
+        "clz": "string",
+        "content": "Mail_MergeReward_1"
     },
     "MonthCardForever_Desc": {
         "clz": "string",
@@ -8451,7 +8471,8 @@
             "FLBDSi",
             "SP_PNCao",
             "YXZChun",
-            "MZu"
+            "MZu",
+            "LFKLFTe"
         ]
     },
     "Tower_1_GrowMaxValue": {

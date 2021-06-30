@@ -41,7 +41,7 @@ local gBattleArrayLayout = {
 }
 
 function relPositionOfLeftside(idx)
-	local pos = gBattleArrayLayout[idx]
+	local pos = gBattleArrayLayout[idx % 100]
 
 	return {
 		x = pos.x,
@@ -50,7 +50,7 @@ function relPositionOfLeftside(idx)
 end
 
 function relPositionOfRightside(idx)
-	local pos = gBattleArrayLayout[idx]
+	local pos = gBattleArrayLayout[idx % 100]
 
 	return {
 		x = -pos.x,
@@ -463,6 +463,10 @@ function BattleGroundLayer:checkCanPushSkill(sender, point)
 end
 
 function BattleGroundLayer:resetGroundCell(cellId, status, heroModel)
+	if not self._leftGroundCells[cellId] then
+		return
+	end
+
 	if cellId > 0 then
 		self._leftGroundCells[cellId]:setStatus(status, heroModel)
 
@@ -475,6 +479,10 @@ function BattleGroundLayer:resetGroundCell(cellId, status, heroModel)
 end
 
 function BattleGroundLayer:setCellOccupiedHero(cellId, heroModel)
+	if not self._leftGroundCells[cellId] then
+		return
+	end
+
 	if cellId > 0 then
 		self._leftGroundCells[cellId]:setOccupiedHero(heroModel)
 	else

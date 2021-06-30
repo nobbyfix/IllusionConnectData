@@ -181,6 +181,12 @@ local muiscCfg = {
 	},
 	ShopCoopExchangeView = {
 		noAutoPlay = true
+	},
+	ActivityDeepSeaMainView = {
+		noAutoPlay = true
+	},
+	ActivityMapNewView = {
+		noAutoPlay = true
 	}
 }
 local UINavigateHistory = {}

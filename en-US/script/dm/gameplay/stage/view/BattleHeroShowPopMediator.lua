@@ -8,7 +8,8 @@ local kBgAndImage = {
 	[GalleryPartyType.kMNJH] = "loading_img_mnjh.png",
 	[GalleryPartyType.kDWH] = "loading_img_dwh_new.png",
 	[GalleryPartyType.kWNSXJ] = "loading_img_vnsxj.png",
-	[GalleryPartyType.kSSZS] = "loading_img_smzs.png"
+	[GalleryPartyType.kSSZS] = "loading_img_smzs.png",
+	[GalleryPartyType.kUNKNOWN] = "loading_img_unknown.png"
 }
 local kBgAndImageOffset = {
 	[GalleryPartyType.kBSNCT] = 15,
@@ -16,7 +17,8 @@ local kBgAndImageOffset = {
 	[GalleryPartyType.kMNJH] = 0,
 	[GalleryPartyType.kDWH] = 12,
 	[GalleryPartyType.kWNSXJ] = 8,
-	[GalleryPartyType.kSSZS] = 0
+	[GalleryPartyType.kSSZS] = 0,
+	[GalleryPartyType.kUNKNOWN] = 0
 }
 
 function BattleHeroShowPopMediator:initialize()

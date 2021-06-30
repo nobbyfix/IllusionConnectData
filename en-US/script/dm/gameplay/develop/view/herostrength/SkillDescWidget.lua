@@ -1,5 +1,5 @@
 SkillDescWidget = class("SkillDescWidget", BaseWidget, _M)
-local listWidth = 291
+local listWidth = 391
 local listWidthBig = 440
 
 function SkillDescWidget.class:createWidgetNode()
@@ -34,9 +34,91 @@ function SkillDescWidget:initSubviews(view)
 	end)
 end
 
+function SkillDescWidget:checkIsBigBg(skill)
+	self._isBig = false
+	local totalHeight = 0
+	local skillDesc = self._isMaster and skill:getMasterSkillDescKey() or skill:getDesc()
+
+	if skillDesc and skillDesc ~= "" then
+		local style = {
+			fontSize = 20,
+			fontName = TTF_FONT_FZYH_R
+		}
+
+		if not self._isMaster then
+			style = {
+				fontSize = 20,
+				SkillRate = self._role:getSkillRateShow(),
+				fontName = TTF_FONT_FZYH_R
+			}
+		end
+
+		local desc = ConfigReader:getEffectDesc("Skill", skillDesc, skill:getSkillProId(), skill:getLevel(), style)
+		local label = ccui.RichText:createWithXML(desc, {})
+
+		label:setVerticalSpace(1)
+		label:renderContent(listWidth, 0)
+		label:setAnchorPoint(cc.p(0, 1))
+
+		local height = label:getContentSize().height
+		totalHeight = totalHeight + height
+	end
+
+	if self._isMaster ~= true then
+		self._starAttrs = self._role:getStarAttrs()
+		local titleStr = ""
+		local nextDes = ""
+		local check_star = 0
+
+		for i = 1, #self._starAttrs do
+			local params = self._starAttrs[i]
+
+			if params.star then
+				check_star = params.star
+				titleStr = Strings:get("Hero_Star_UI_Effect_Desc", {
+					star = params.star == 7 and Strings:get("AWAKE_TITLE") or params.star
+				})
+			end
+
+			if params.info and self._role:getStar() < check_star then
+				for index = 1, #params.info do
+					local value = params.info[index]
+
+					if value.isHide == 0 and value.beforeSkillId and value.beforeSkillId == skill:getSkillId() then
+						nextDes = value.desc
+
+						break
+					end
+				end
+			end
+
+			if nextDes ~= "" then
+				break
+			end
+		end
+
+		if titleStr ~= "" and nextDes ~= "" then
+			local label = ccui.RichText:createWithXML(nextDes, {})
+
+			label:setVerticalSpace(1)
+			label:renderContent(listWidth, 0)
+
+			local height = label:getContentSize().height
+			totalHeight = totalHeight + height
+		end
+	end
+
+	if totalHeight > 450 then
+		self._isBig = true
+	end
+end
+
 function SkillDescWidget:refreshInfo(skill, role, isMaster)
 	self._role = role
 	self._isMaster = isMaster
+
+	self:checkIsBigBg(skill)
+
 	local infoNode = self._skillTipPanel:getChildByFullName("infoNode")
 	local iconPanel = infoNode:getChildByFullName("iconPanel")
 
@@ -154,6 +236,76 @@ function SkillDescWidget:refreshInfo(skill, role, isMaster)
 
 	local descStr = {}
 	local height = 0
+	local height_bottom = 0
+
+	if self._isMaster ~= true then
+		self._starAttrs = self._role:getStarAttrs()
+		local nextPanel = self._skillTipPanel:getChildByName("nextPanel")
+		local titleStr = ""
+		local nextDes = ""
+		local check_star = 0
+
+		for i = 1, #self._starAttrs do
+			local params = self._starAttrs[i]
+
+			if params.star then
+				check_star = params.star
+				titleStr = Strings:get("Hero_Star_UI_Effect_Desc", {
+					star = params.star == 7 and Strings:get("AWAKE_TITLE") or params.star
+				})
+			end
+
+			if params.info and self._role:getStar() < check_star then
+				for index = 1, #params.info do
+					local value = params.info[index]
+
+					if value.isHide == 0 and value.beforeSkillId and value.beforeSkillId == skill:getSkillId() then
+						nextDes = value.desc
+
+						break
+					end
+				end
+			end
+
+			if nextDes ~= "" then
+				break
+			end
+		end
+
+		if titleStr ~= "" and nextDes ~= "" then
+			nextPanel:setVisible(true)
+
+			local Text_title = nextPanel:getChildByName("Text_title")
+			local Image_line_1 = nextPanel:getChildByName("Image_line_1")
+			local Image_line_2 = nextPanel:getChildByName("Image_line_2")
+
+			Text_title:setString(titleStr)
+
+			if Text_title:getContentSize().width > 400 then
+				Text_title:getVirtualRenderer():setOverflow(cc.LabelOverflow.SHRINK)
+				Text_title:getVirtualRenderer():setDimensions(400, 38)
+			end
+
+			local imgWidth = self._isBig and listWidthBig or listWidth + 20
+
+			Text_title:setPositionX(imgWidth / 2)
+			Image_line_2:setPositionX(imgWidth)
+
+			local newPanel = self:createEffectDescPanel(nextDes)
+
+			newPanel:setAnchorPoint(cc.p(0, 0))
+			newPanel:addTo(desc)
+
+			height = height + newPanel:getContentSize().height
+			height = height + 50
+			height_bottom = height
+
+			nextPanel:setPositionY(height_bottom - 4.5)
+		else
+			nextPanel:setVisible(false)
+		end
+	end
+
 	local skillDesc = self._isMaster and skill:getMasterSkillDescKey() or skill:getDesc()
 
 	if skillDesc and skillDesc ~= "" then
@@ -209,9 +361,9 @@ function SkillDescWidget:refreshInfo(skill, role, isMaster)
 		local newPanel = descStr[i].newPanel
 
 		if i == #descStr then
-			newPanel:setPositionY(0)
+			newPanel:setPositionY(0 + height_bottom)
 		else
-			local posY = descStr[i + 1].height
+			local posY = descStr[i + 1].height + height_bottom
 
 			newPanel:setPositionY(posY)
 		end
@@ -222,10 +374,8 @@ function SkillDescWidget:refreshInfo(skill, role, isMaster)
 	if self._isBig == true then
 		bg:setContentSize(cc.size(listWidthBig + 20, height))
 		infoNode:setPositionY(height - 90)
-		infoNode:setPositionX(-140)
-		desc:setPositionX(169.39)
 	else
-		bg:setContentSize(cc.size(332, height))
+		bg:setContentSize(cc.size(listWidth + 40, height))
 		infoNode:setPositionY(height - 90)
 	end
 end
@@ -263,6 +413,11 @@ end
 
 function SkillDescWidget:createEffectDescPanel(desc)
 	local strWidth = listWidth
+
+	if self._isBig == true then
+		strWidth = listWidthBig
+	end
+
 	local layout = ccui.Layout:create()
 	local label = ccui.RichText:createWithXML(desc, {})
 

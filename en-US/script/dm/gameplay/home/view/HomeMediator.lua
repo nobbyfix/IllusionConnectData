@@ -3396,6 +3396,14 @@ function HomeMediator:setComplexActivityEntry()
 			aimpos = cc.p(39, 39),
 			imgpos = cc.p(46, 35)
 		},
+		[ActivityType_UI.KActivityDeepSea] = {
+			animZorder = 1,
+			img = "deepsea_btn_zjm_rukou.png",
+			anim = "rukou_shenhaihuodongrukou",
+			imgZorder = 2,
+			aimpos = cc.p(-90, 125),
+			imgpos = cc.p(60, 33)
+		},
 		[ActivityType_UI.KActivitySummerRe] = {
 			anim = "rukou_xiarihuodong",
 			aimpos = cc.p(40, 40)

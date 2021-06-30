@@ -1175,6 +1175,63 @@
         "Type": 1,
         "Unlook": 1
     },
+    "Surface_BHTZi_Awake": {
+        "ActivityId": "",
+        "AnimeList": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    8,
+                    563
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch2",
+                "part": "body",
+                "point": [
+                    8,
+                    361
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_BHTZi_1Awake_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "Surface_BHTZi_Awake_GainDesc",
+        "GoodsId": "",
+        "Hero": "BHTZi",
+        "Link": "",
+        "LongDesc": "",
+        "Model": "Model_BHTZi_Awake",
+        "Name": "Surface_BHTZi_Awake_Name",
+        "NotGetUnlook": "",
+        "Quality": 5,
+        "RepeatReward": "",
+        "ShopID": "",
+        "Sort": 2,
+        "Type": 5,
+        "Unlook": 1
+    },
     "Surface_BLTu_1": {
         "ActivityId": "",
         "AnimeList": "",
@@ -4786,6 +4843,68 @@
         "Type": 5,
         "Unlook": 1
     },
+    "Surface_LFKLFTe_1": {
+        "ActivityId": "",
+        "AnimeList": [
+            "zuo_dagunzhuahen",
+            "you_dagunzhuahen",
+            "pugong_dagunpugong",
+            "die_zhanshupai"
+        ],
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    61,
+                    1611
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "body",
+                "point": [
+                    30,
+                    1369
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_LFKLFTe_1_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "1",
+        "GoodsId": "",
+        "Hero": "LFKLFTe",
+        "Link": "",
+        "LongDesc": "",
+        "Model": "Model_LFKLFTe",
+        "Name": "Surface_LFKLFTe_1_Name",
+        "NotGetUnlook": "",
+        "Quality": 2,
+        "RepeatReward": "",
+        "ShopID": "",
+        "Sort": 1,
+        "Type": "",
+        "Unlook": 1
+    },
     "Surface_LLan_1": {
         "ActivityId": "",
         "AnimeList": "",
@@ -5871,20 +5990,20 @@
             }
         ],
         "Desc": "Surface_MTZMEShi_pirate_Desc",
-        "GainDesc": "",
+        "GainDesc": "Surface_YLSBai_Detective_GainDesc",
         "GainShortDesc": "Surface_MTZMEShi_2_GainShort",
-        "GoodsId": "",
+        "GoodsId": "Surface_30",
         "Hero": "MTZMEShi",
-        "Link": "",
+        "Link": "view://shopView&viewType=push&shopId=Shop_Surface",
         "LongDesc": "Surface_MTZMEShi_pirate_LongDecs",
         "Model": "Model_MTZMEShi_pirate",
         "Name": "Surface_MTZMEShi_pirate_Name",
         "NotGetUnlook": "",
         "Quality": 5,
         "RepeatReward": 68,
-        "ShopID": "",
+        "ShopID": "Shop_Surface",
         "Sort": 3,
-        "Type": "",
+        "Type": 2,
         "Unlook": 1
     },
     "Surface_MTZMEShi_Awake": {
@@ -5999,6 +6118,63 @@
         "ShopID": "",
         "Sort": 1,
         "Type": "",
+        "Unlook": 1
+    },
+    "Surface_MZGXiu_2": {
+        "ActivityId": "",
+        "AnimeList": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    -15,
+                    1393
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "body",
+                "point": [
+                    -42,
+                    1259
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_MZGXiu_pirate_Desc",
+        "GainDesc": "Surface_YLSBai_Detective_GainDesc",
+        "GainShortDesc": "Surface_MZGXiu_2_GainShort",
+        "GoodsId": "Surface_31",
+        "Hero": "MZGXiu",
+        "Link": "view://shopView&viewType=push&shopId=Shop_Surface",
+        "LongDesc": "Surface_MZGXiu_pirate_LongDecs",
+        "Model": "Model_MZGXiu_pirate",
+        "Name": "Surface_MZGXiu_pirate_Name",
+        "NotGetUnlook": "",
+        "Quality": 5,
+        "RepeatReward": 68,
+        "ShopID": "Shop_Surface",
+        "Sort": 3,
+        "Type": 2,
         "Unlook": 1
     },
     "Surface_MZu_1": {

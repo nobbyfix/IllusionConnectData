@@ -1601,11 +1601,15 @@ function BattleUIMediator:flyBallToCard(role, idxInSlot)
 		local delay01 = cc.DelayTime:create(0.3333333333333333)
 		local delay02 = cc.DelayTime:create(0.16666666666666666)
 		local sequence = cc.Sequence:create(delay01, cc.MoveTo:create(0.16666666666666666, cc.p(0, -distance)), cc.CallFunc:create(function ()
-			card:getView():runAction(cc.Sequence:create(cc.ScaleTo:create(0.08333333333333333, 1.12, 1.12), cc.ScaleTo:create(0.03333333333333333, 1, 1)))
+			if not tolua.isnull(card:getView()) then
+				card:getView():runAction(cc.Sequence:create(cc.ScaleTo:create(0.08333333333333333, 1.12, 1.12), cc.ScaleTo:create(0.03333333333333333, 1, 1)))
+			end
 		end), delay02, cc.CallFunc:create(function ()
-			rootNode:removeFromParent()
-			pos_01:removeFromParent()
-			pos_02:removeFromParent()
+			if not tolua.isnull(rootNode) then
+				rootNode:removeFromParent()
+				pos_01:removeFromParent()
+				pos_02:removeFromParent()
+			end
 		end))
 
 		content:runAction(sequence)

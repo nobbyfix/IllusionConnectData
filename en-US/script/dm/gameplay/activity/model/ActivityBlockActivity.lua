@@ -85,7 +85,7 @@ function ActivityBlockActivity:getBlockMapIds()
 	for _, id in pairs(activityIds) do
 		local config = ConfigReader:getRecordById("Activity", id)
 
-		if config.Type == "ActivityBlockMap" then
+		if config.Type == "ActivityBlockMap" or config.Type == ActivityType.KActivityBlockMapNew then
 			ids[#ids + 1] = id
 		end
 	end
@@ -97,7 +97,7 @@ function ActivityBlockActivity:getBlockMapActivity(activityId)
 	local function getActivity(id)
 		local activity = self:getSubActivityById(id)
 
-		if activity and activity:getType() == ActivityType.KActivityBlockMap and self:subActivityOpen(id) then
+		if activity and (activity:getType() == ActivityType.KActivityBlockMap or activity:getType() == ActivityType.KActivityBlockMapNew) and self:subActivityOpen(id) then
 			return activity
 		end
 
@@ -357,7 +357,7 @@ function ActivityBlockActivity:getButtonConfig()
 		local config = ConfigReader:getRecordById("Activity", id)
 
 		if config then
-			if config.Type == ActivityType.KActivityBlockMap then
+			if config.Type == ActivityType.KActivityBlockMap or config.Type == ActivityType.KActivityBlockMapNew then
 				local data = {
 					icon = config.ActivityConfig.ButtonIcon,
 					title = Strings:get(config.Title),

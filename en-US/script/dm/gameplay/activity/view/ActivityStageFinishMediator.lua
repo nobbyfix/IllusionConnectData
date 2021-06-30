@@ -34,8 +34,18 @@ function ActivityStageFinishMediator:enterWithData(data)
 	self._data = data
 	self._activity = self._activitySystem:getActivityById(self._data.activityId)
 	self._model = self._activity:getSubActivityById(self._data.subActivityId)
-	self._pointId = self._data.pointId
-	self._point = self._model:getPointById(self._pointId)
+	local params = data.params
+
+	if self._model:getType() == ActivityType.KActivityBlockMapNew then
+		self._pointId = params.pointId
+		self._point = self._model:getSubPointById(params.pointId)
+		self._notShowStar = true
+		self._showCondition = true
+	else
+		self._pointId = self._data.pointId
+		self._point = self._model:getPointById(self._pointId)
+	end
+
 	self._starNum = 0
 	self._stars = {}
 
@@ -386,6 +396,9 @@ function ActivityStageFinishMediator:initWidget()
 	self._wordPanel = self._main:getChildByName("word")
 	self._expPanel = self._main:getChildByFullName("Panel_exp")
 	self._state = 1
+	self._conditionPanel = self._main:getChildByFullName("condition")
+
+	self._conditionPanel:setVisible(false)
 end
 
 function ActivityStageFinishMediator:refreshView()
@@ -721,45 +734,63 @@ end
 
 function ActivityStageFinishMediator:showExpPanel()
 	self._state = 2
-	local point = self._model:getPointById(self._data.pointId)
-	local oldStarState = point:getOldStar()
-	local starPanel = self._starPanel
-	local descs = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Block_StarConditionDesc", "content")
-	local starCondition = point:getStarCondition()
+	local point = self._model:getPointById(self._pointId)
 
-	for i = 1, 3 do
-		local diamondNode = self._starPanel:getChildByFullName("star" .. i .. ".diamond")
+	if not self._notShowStar then
+		local oldStarState = point:getOldStar()
+		local starPanel = self._starPanel
+		local descs = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Block_StarConditionDesc", "content")
+		local starCondition = point:getStarCondition()
 
-		if self._stars[i] then
-			if oldStarState[i] then
-				diamondNode:setColor(cc.c3b(127, 127, 127))
-				diamondNode:getChildByName("diamondNum"):setVisible(false)
-				diamondNode:getChildByName("onFinish"):setVisible(true)
+		for i = 1, 3 do
+			local diamondNode = self._starPanel:getChildByFullName("star" .. i .. ".diamond")
+
+			if self._stars[i] then
+				if oldStarState[i] then
+					diamondNode:setColor(cc.c3b(127, 127, 127))
+					diamondNode:getChildByName("diamondNum"):setVisible(false)
+					diamondNode:getChildByName("onFinish"):setVisible(true)
+				else
+					diamondNode:setColor(cc.c3b(255, 255, 255))
+					diamondNode:getChildByName("onFinish"):setVisible(true)
+
+					local diamondNum = diamondNode:getChildByName("diamondNum")
+
+					diamondNum:setVisible(true)
+					diamondNum:setString("+" .. starDiamondCount)
+				end
 			else
 				diamondNode:setColor(cc.c3b(255, 255, 255))
-				diamondNode:getChildByName("onFinish"):setVisible(true)
+				diamondNode:getChildByName("onFinish"):setVisible(false)
 
 				local diamondNum = diamondNode:getChildByName("diamondNum")
 
 				diamondNum:setVisible(true)
 				diamondNum:setString("+" .. starDiamondCount)
 			end
-		else
-			diamondNode:setColor(cc.c3b(255, 255, 255))
-			diamondNode:getChildByName("onFinish"):setVisible(false)
 
-			local diamondNum = diamondNode:getChildByName("diamondNum")
+			local star = starPanel:getChildByFullName("star" .. i)
+			local labelText = star:getChildByFullName("text")
 
-			diamondNum:setVisible(true)
-			diamondNum:setString("+" .. starDiamondCount)
+			labelText:setString(Strings:get(descs[starCondition[i].type], {
+				value = starCondition[i].value
+			}))
 		end
+	else
+		self._starPanel:setVisible(false)
+	end
 
-		local star = starPanel:getChildByFullName("star" .. i)
-		local labelText = star:getChildByFullName("text")
+	if self._showCondition then
+		self._conditionPanel:setVisible(true)
 
-		labelText:setString(Strings:get(descs[starCondition[i].type], {
-			value = starCondition[i].value
-		}))
+		local conditionkeeper = self:getInjector():getInstance(Conditionkeeper)
+		local conditions = self._point:getConfig().VictoryConditions
+		local desc = conditionkeeper:getVictoryConditionsDesc(conditions, {
+			assist = self._point:getAssist()
+		})
+		local descText = self._conditionPanel:getChildByName("Text_desc")
+
+		descText:setString(desc)
 	end
 
 	self:initRewardPanel()
@@ -937,7 +968,9 @@ function ActivityStageFinishMediator:showExpPanel()
 
 	local actOffSet = 680
 
-	self._starPanel:setVisible(true)
+	if not self._notShowStar then
+		self._starPanel:setVisible(true)
+	end
 
 	local _star1 = self._starPanel:getChildByFullName("star1")
 	local posX1, posY1 = _star1:getPosition()
@@ -965,6 +998,14 @@ function ActivityStageFinishMediator:showExpPanel()
 	local posX5, posY5 = lvName:getPosition()
 
 	lvName:setPositionX(posX5 + actOffSet)
+
+	local condPosX, condPosY = self._conditionPanel:getPosition()
+
+	if self._showCondition then
+		self._conditionPanel:setVisible(true)
+		self._conditionPanel:setPositionX(condPosX + actOffSet)
+	end
+
 	self._herosAnim:addCallbackAtFrame(108, function ()
 		local easeBackOutAni = cc.EaseBackOut:create(cc.MoveTo:create(0.5, cc.p(posX1, posY1)))
 
@@ -972,6 +1013,7 @@ function ActivityStageFinishMediator:showExpPanel()
 		_star1:runAction(easeBackOutAni)
 		lv:runAction(cc.MoveTo:create(0.5, cc.p(posX4, posY4)))
 		lvName:runAction(cc.MoveTo:create(0.5, cc.p(posX5, posY5)))
+		self._conditionPanel:runAction(cc.MoveTo:create(0.5, cc.p(condPosX, condPosY)))
 	end)
 	self._herosAnim:addCallbackAtFrame(113, function ()
 		local easeBackOutAni = cc.EaseBackOut:create(cc.MoveTo:create(0.5, cc.p(posX2, posY2)))
