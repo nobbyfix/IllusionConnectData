@@ -268,7 +268,7 @@ all.Skill_TLMi_Unique = {
 			local global = _env.global
 
 			for _, unit in global.__iter__(_env.units) do
-				if global.MARKED(_env, "SUMMONED")(_env, unit) then
+				if global.SUMMONS(_env, unit) then
 					global.KillTarget(_env, unit)
 				end
 			end
@@ -561,7 +561,7 @@ all.Skill_TLMi_Unique_EX = {
 			local global = _env.global
 
 			for _, unit in global.__iter__(_env.units) do
-				if global.MARKED(_env, "SUMMONED")(_env, unit) then
+				if global.SUMMONS(_env, unit) then
 					global.KillTarget(_env, unit)
 				end
 			end
