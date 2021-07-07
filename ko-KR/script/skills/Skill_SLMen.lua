@@ -293,7 +293,7 @@ all.Skill_SLMen_Unique = {
 
 				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
 
-				if global.MARKED(_env, "SUMMONED")(_env, unit) then
+				if global.SUMMONS(_env, unit) then
 					damage.val = damage.val * this.RateFactor
 				end
 
@@ -610,7 +610,7 @@ all.Skill_SLMen_Unique_EX = {
 
 				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
 
-				if global.MARKED(_env, "SUMMONED")(_env, unit) then
+				if global.SUMMONS(_env, unit) then
 					damage.val = damage.val * this.RateFactor
 				end
 
