@@ -637,7 +637,9 @@ function RecruitMainMediator:createRewardItem(reward, pos, scale)
 
 		node.icon = icon
 		node.tag = "EQUIP"
+		local scale = scale or 1
 
+		nameText:setPositionY(-icon:getContentSize().height * scale / 2 + 5)
 		table.insert(self._showAnimNodes, node)
 	else
 		local icon = IconFactory:createRewardIcon(reward, {
@@ -655,7 +657,7 @@ function RecruitMainMediator:createRewardItem(reward, pos, scale)
 		local scale = scale or 1
 
 		icon:setScale(scale)
-		nameText:setPositionY(-icon:getContentSize().height * scale / 2 - 1)
+		nameText:setPositionY(-icon:getContentSize().height * scale / 2 + 5)
 
 		node.tag = "ITEM"
 

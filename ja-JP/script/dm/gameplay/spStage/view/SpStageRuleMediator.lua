@@ -36,7 +36,6 @@ function SpStageRuleMediator:enterWithData(data)
 	self._callback = data.callback
 
 	self:initContent(data)
-	self:setupClickEnvs()
 end
 
 function SpStageRuleMediator:initContent(data)
@@ -94,25 +93,4 @@ end
 
 function SpStageRuleMediator:onClickClose(sender, eventType)
 	self:close()
-end
-
-function SpStageRuleMediator:setupClickEnvs()
-	if GameConfigs.closeGuide then
-		return
-	end
-
-	local storyDirector = self:getInjector():getInstance(story.StoryDirector)
-	local guideAgent = storyDirector:getGuideAgent()
-
-	if guideAgent:isGuiding() then
-		local sequence = cc.Sequence:create(cc.DelayTime:create(0.5), cc.CallFunc:create(function ()
-			local btnClose = self._contextPanel
-
-			storyDirector:setClickEnv("SpStageRuleMediator.btnClose", btnClose, function ()
-				self:onClickClose()
-			end)
-		end))
-
-		self:getView():runAction(sequence)
-	end
 end

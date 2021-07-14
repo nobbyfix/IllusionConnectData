@@ -230,6 +230,9 @@
     "Target_SP_PNCao": {
         "Function": "return GenInfo(EnemyAll(),Red)"
     },
+    "Target_SP_SSQXin": {
+        "Function": "return GenInfo(EnemyAll(COL_OF(TARGET)),Red)"
+    },
     "Target_SRen": {
         "Function": "return GenInfo(EnemyAll(),Red)"
     },
@@ -255,6 +258,9 @@
         "Function": ""
     },
     "Target_WEDe": {
+        "Function": "return MainTarget()"
+    },
+    "Target_WSLi": {
         "Function": "return MainTarget()"
     },
     "Target_WTXXuan": {

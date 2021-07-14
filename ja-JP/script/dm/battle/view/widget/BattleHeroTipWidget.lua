@@ -1,29 +1,4 @@
-local rangeMap = {
-	Single_Cure = "zhiye_wz01_green.png",
-	Col_Cure = "zhiye_wz03_green.png",
-	X_Attack = "zhiye_wz05_red.png",
-	Single_Attack = "zhiye_wz01_red.png",
-	Card = "zhiye_wzkp_green.png",
-	Random4_Attack = "zhiye_wz04w_red.png",
-	Row_Attack = "zhiye_wz03s_red.png",
-	AllUnit_Word = "zhiye_qt.png",
-	Row_Cure = "zhiye_wz03s_green.png",
-	SingleUnit_Word = "zhiye_dt.png",
-	Single_Atk_Double_Cure = "zhiye_wz03_rg.png",
-	Random3_Attack = "zhiye_wz03w_red.png",
-	CrossUnit_Word = "zhiye_sz.png",
-	ColUnit_Word = "zhiye_zl.png",
-	Summon = "zhiye_wzzh_green.png",
-	RowUnit_Word = "zhiye_zp.png",
-	RandomUnit_Word = "zhiye_fw.png",
-	Cross_Attack = "zhiye_wz05z_red.png",
-	Col_Attack = "zhiye_wz03_red.png",
-	Random1_Attack = "zhiye_wz00w_red.png",
-	All_Cure = "zhiye_wz09_green.png",
-	Cross_Cure = "zhiye_wz05z_green.png",
-	X_Cure = "zhiye_wz05_green.png",
-	All_Attack = "zhiye_wz09_red.png"
-}
+local rangeMap = {}
 BattleHeroTipWidget = class("BattleHeroTipWidget", BattleWidget, _M)
 
 function BattleHeroTipWidget:initialize(view)
@@ -78,7 +53,6 @@ function BattleHeroTipWidget:setupHeroInfo(cardInfo)
 	end
 
 	local range = ConfigReader:getDataByNameIdAndKey("RoleModel", modelId, "SkillRange")
-	range = range and rangeMap[range]
 
 	self:setSkillInfo(heroInfo.skillId, heroInfo.skillLevel, range)
 
@@ -120,27 +94,12 @@ function BattleHeroTipWidget:setupHeroInfo(cardInfo)
 		self._tagNode:removeAllChildren()
 	end
 
-	local tagDesc1 = ConfigReader:getDataByNameIdAndKey("RoleModel", modelId, "TagDesc")
-	local tagDesc = table.deepcopy(tagDesc1 or {}, {})
+	for i = 1, #tagPicArray do
+		local pic = self._rangePic:clone()
 
-	for i = 1, #tagDesc do
-		local data = table.remove(tagDesc, #tagDesc)
-
-		if data then
-			local cell = self._specialClone:clone()
-
-			cell:setVisible(true)
-
-			local label = cell:getChildByName("desc")
-
-			label:setString(Strings:get(data.code))
-			label:setTextColor(GameStyle:stringToColor(data.color))
-
-			local bg = cell:getChildByName("Image_7")
-
-			bg:setContentSize(cc.size(label:getContentSize().width * 2.6 + 36, 63))
-			cell:addTo(self._tagNode):posite(18 + (i - 1) * 110, 0)
-		end
+		pic:setVisible(true)
+		pic:getChildByName("tag"):setString(Strings:get(tagPicArray[i]))
+		pic:addTo(self._tagNode):posite((i - 1) * 46, 0)
 	end
 
 	return true
@@ -171,8 +130,10 @@ function BattleHeroTipWidget:setSkillInfo(skillId, level, range)
 		return
 	end
 
-	if range then
-		self._rangePic:loadTexture(range, ccui.TextureResType.plistType)
+	if range and range ~= "" then
+		local tag = self._rangePic:getChildByName("tag")
+
+		tag:setString(Strings:get(range))
 		self._rangePic:setVisible(true)
 	else
 		self._rangePic:setVisible(false)

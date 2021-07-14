@@ -440,6 +440,28 @@ function exports.GetAttackEffects(env, unit)
 	return {}
 end
 
+function exports.SelectHeroPassiveCount(env, unit, skillId)
+	if not unit then
+		return 0
+	end
+
+	local formationSystem = env.global["$FormationSystem"]
+
+	if formationSystem == nil then
+		return 0
+	end
+
+	return formationSystem:getPassiveCountOnHero(unit, skillId)
+end
+
+function exports.IsAwaken(env, unit)
+	if not unit then
+		return false
+	end
+
+	return unit:getAwakenLevel() > 0
+end
+
 function exports.HolyHide(env, unit, alpha)
 	env.global.RecordImmediately(env, unit:getId(), "HolyHide", {
 		alpha = alpha

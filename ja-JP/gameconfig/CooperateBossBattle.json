@@ -37,6 +37,25 @@
             }
         ]
     },
+    "CooperateBoss_BHTZi": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_27",
+        "BlockBattleConfig": "CooperateBoss_Stage_1",
+        "EnemyCard": "CooperateBoss_1",
+        "EnemyMaster": "CooperateBoss_BHTZi",
+        "Name": "HeroBase_Name_BHTZi",
+        "PointHead": "Model_BHTZi",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
     "CooperateBoss_DCJKang": {
         "BGM": [
             "Mus_Battle_Whale",

@@ -717,6 +717,8 @@ function SurfaceMediator:onTouch(event)
 			return
 		end
 
+		dump(event, "onTouch : ")
+
 		local scrollPosX = self._scrollView:getInnerContainerPosition().x
 		local curIndex = math.floor(math.abs(scrollPosX) / self._cellWidth + 0.5) + 1
 

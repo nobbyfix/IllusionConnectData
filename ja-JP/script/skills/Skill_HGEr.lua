@@ -308,16 +308,16 @@ all.Skill_HGEr_Passive = {
 		this.passive3 = global["[trigger_by]"](this, {
 			"SELF:PRE_ENTER"
 		}, passive3)
-		local passive = __action(this, {
-			name = "passive",
-			entry = prototype.passive
+		local passive4 = __action(this, {
+			name = "passive4",
+			entry = prototype.passive4
 		})
-		passive = global["[duration]"](this, {
+		passive4 = global["[duration]"](this, {
 			0
-		}, passive)
-		this.passive = global["[schedule_in_cycles]"](this, {
-			1000
-		}, passive)
+		}, passive4)
+		this.passive4 = global["[trigger_by]"](this, {
+			"SELF:ENTER"
+		}, passive4)
 
 		return this
 	end,
@@ -412,7 +412,7 @@ all.Skill_HGEr_Passive = {
 
 		return _env
 	end,
-	passive = function (_env, externs)
+	passive4 = function (_env, externs)
 		local this = _env.this
 		local global = _env.global
 		local exec = _env["$executor"]
@@ -424,30 +424,21 @@ all.Skill_HGEr_Passive = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.ACTOR)
-			local atk = global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR)
-			local shield = global.UnitPropGetter(_env, "shield")(_env, _env.ACTOR)
-			local shield_add = global.ShieldEffect(_env, global.min(_env, maxHp * this.ShieldRateFactor, atk * 0.25))
+			local buffeft = global.PassiveFunEffectBuff(_env, "Skill_Sustained_Shield", {
+				ShieldRateFactor = this.ShieldRateFactor
+			})
 
-			if shield < maxHp then
-				global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
-					timing = 0,
-					display = "Shield",
-					group = "Skill_HGEr_Passive",
-					duration = 99,
-					limit = 999,
-					tags = {
-						"NUMERIC",
-						"BUFF",
-						"SHIELD",
-						"Skill_HGEr_Passive",
-						"DISPELLABLE",
-						"STEALABLE"
-					}
-				}, {
-					shield_add
-				}, 1)
-			end
+			global.ApplyBuff(_env, _env.ACTOR, {
+				timing = 0,
+				duration = 99,
+				tags = {
+					"Skill_HGEr_Passive",
+					"UNDISPELLABLE",
+					"UNSTEALABLE"
+				}
+			}, {
+				buffeft
+			})
 		end)
 
 		return _env
@@ -682,6 +673,73 @@ all.Skill_HGEr_Passive_Key = {
 						buff
 					}, 1, 0)
 				end
+			end
+		end)
+
+		return _env
+	end
+}
+all.Skill_Sustained_Shield = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.ShieldRateFactor = externs.ShieldRateFactor
+
+		if this.ShieldRateFactor == nil then
+			this.ShieldRateFactor = 0.03
+		end
+
+		local passive = __action(this, {
+			name = "passive",
+			entry = prototype.passive
+		})
+		passive = global["[duration]"](this, {
+			0
+		}, passive)
+		this.passive = global["[schedule_in_cycles]"](this, {
+			1000
+		}, passive)
+
+		return this
+	end,
+	passive = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.ACTOR)
+			local atk = global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR)
+			local shield = global.UnitPropGetter(_env, "shield")(_env, _env.ACTOR)
+			local shield_add = global.ShieldEffect(_env, global.min(_env, maxHp * this.ShieldRateFactor, atk * 0.25))
+
+			if shield < maxHp then
+				global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
+					timing = 0,
+					display = "Shield",
+					group = "Skill_HGEr_Passive",
+					duration = 99,
+					limit = 999,
+					tags = {
+						"NUMERIC",
+						"BUFF",
+						"SHIELD",
+						"Skill_HGEr_Passive",
+						"DISPELLABLE",
+						"STEALABLE"
+					}
+				}, {
+					shield_add
+				}, 1)
 			end
 		end)
 
@@ -937,16 +995,16 @@ all.Skill_HGEr_Passive_EX = {
 		this.passive3 = global["[trigger_by]"](this, {
 			"SELF:PRE_ENTER"
 		}, passive3)
-		local passive = __action(this, {
-			name = "passive",
-			entry = prototype.passive
+		local passive4 = __action(this, {
+			name = "passive4",
+			entry = prototype.passive4
 		})
-		passive = global["[duration]"](this, {
+		passive4 = global["[duration]"](this, {
 			0
-		}, passive)
-		this.passive = global["[schedule_in_cycles]"](this, {
-			1000
-		}, passive)
+		}, passive4)
+		this.passive4 = global["[trigger_by]"](this, {
+			"SELF:ENTER"
+		}, passive4)
 
 		return this
 	end,
@@ -1041,7 +1099,7 @@ all.Skill_HGEr_Passive_EX = {
 
 		return _env
 	end,
-	passive = function (_env, externs)
+	passive4 = function (_env, externs)
 		local this = _env.this
 		local global = _env.global
 		local exec = _env["$executor"]
@@ -1053,30 +1111,21 @@ all.Skill_HGEr_Passive_EX = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.ACTOR)
-			local atk = global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR)
-			local shield = global.UnitPropGetter(_env, "shield")(_env, _env.ACTOR)
-			local shield_add = global.ShieldEffect(_env, global.min(_env, maxHp * this.ShieldRateFactor, atk * 0.25))
+			local buffeft = global.PassiveFunEffectBuff(_env, "Skill_Sustained_Shield", {
+				ShieldRateFactor = this.ShieldRateFactor
+			})
 
-			if shield < maxHp then
-				global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
-					timing = 0,
-					display = "Shield",
-					group = "Skill_HGEr_Passive",
-					duration = 99,
-					limit = 999,
-					tags = {
-						"NUMERIC",
-						"BUFF",
-						"SHIELD",
-						"Skill_HGEr_Passive",
-						"DISPELLABLE",
-						"STEALABLE"
-					}
-				}, {
-					shield_add
-				}, 1)
-			end
+			global.ApplyBuff(_env, _env.ACTOR, {
+				timing = 0,
+				duration = 99,
+				tags = {
+					"Skill_HGEr_Passive",
+					"UNDISPELLABLE",
+					"UNSTEALABLE"
+				}
+			}, {
+				buffeft
+			})
 		end)
 
 		return _env

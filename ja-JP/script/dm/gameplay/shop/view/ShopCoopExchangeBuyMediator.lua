@@ -87,6 +87,7 @@ function ShopCoopExchangeBuyMediator:initMember()
 	self._view = self:getView()
 	local mainPanel = self._view:getChildByFullName("main")
 	self._iconLayout = mainPanel:getChildByFullName("icon_panel")
+	self._icon = mainPanel:getChildByFullName("icon")
 	self._sliderPanel = mainPanel:getChildByFullName("slider_panel")
 
 	self._sliderPanel:setTouchEnabled(true)
@@ -194,6 +195,19 @@ function ShopCoopExchangeBuyMediator:refreshIcon()
 
 	icon:addTo(self._iconLayout):center(self._iconLayout:getContentSize())
 	icon:setScale(1.3)
+	self._icon:removeAllChildren()
+
+	local icon = IconFactory:createRewardIcon(targetList[1], {
+		hideLevel = true,
+		showAmount = false,
+		isWidget = true
+	})
+
+	icon:setScale(0.6)
+	icon:addTo(self._icon):center(self._icon:getContentSize())
+	IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), targetList[1], {
+		needDelay = true
+	})
 end
 
 function ShopCoopExchangeBuyMediator:onClickedRightBtn()

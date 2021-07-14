@@ -796,7 +796,8 @@ all.Skill_YSTLu_Passive_Key = {
 							"NUMERIC",
 							"Skill_YSTLu_Passive_Key",
 							"UNDISPELLABLE",
-							"UNSTEALABLE"
+							"UNSTEALABLE",
+							"UNDEAD"
 						}
 					}, {
 						buffeft1

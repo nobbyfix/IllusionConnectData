@@ -73,6 +73,7 @@ function BattleUnit:copyRawData(srcUnit)
 	self._cid = srcUnit:getCid()
 	self._enemyCost = srcUnit:getEnemyCost()
 	self._attackEffect = srcUnit:getAttackEffect()
+	self._sex = srcUnit:getSex()
 end
 
 function BattleUnit:inheritUnit(srcUnit, info)
@@ -84,6 +85,7 @@ function BattleUnit:inheritUnit(srcUnit, info)
 	self._killAnger = info.killAnger
 	self._masterRage = info.masterRage
 	self._genre = info.genre
+	self._sex = info.sex
 	local components = self._components
 
 	for name, comp in pairs(components) do
@@ -183,6 +185,9 @@ BattleUnit:has("_attackEffect", {
 BattleUnit:has("_isBattleField", {
 	is = "rw"
 })
+BattleUnit:has("_sex", {
+	is = "rw"
+})
 
 function BattleUnit:initialize(id)
 	super.initialize(self, id)
@@ -215,6 +220,7 @@ function BattleUnit:initWithRawData(data)
 	self._attackEffect = data.attackEffect
 	self._isBattleField = data.isBattleField
 	self._enemyCost = data.enemyCost
+	self._sex = data.sex
 
 	super.initWithRawData(self, data)
 
@@ -347,12 +353,32 @@ function BattleUnit:getPosition()
 	return cell and cell:getPosition()
 end
 
+function BattleUnit:isBeRevive()
+	return self._isRevive or false
+end
+
+function BattleUnit:setBeRevive(isRevive)
+	self._isRevive = isRevive
+end
+
 function BattleUnit:canRevive()
 	return self._noRevive ~= true
 end
 
 function BattleUnit:forbidenRevive()
 	self._noRevive = true
+end
+
+function BattleUnit:forbidenUnearth()
+	self._noUnearth = true
+end
+
+function BattleUnit:enableUnearth()
+	self._noUnearth = false
+end
+
+function BattleUnit:canBeUnearth()
+	return self._noUnearth ~= true
 end
 
 function BattleUnit:getFSM()

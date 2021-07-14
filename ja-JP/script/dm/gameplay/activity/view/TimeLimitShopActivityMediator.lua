@@ -56,6 +56,17 @@ local timeLimitShopConfig = {
 	summerre = {
 		BG = "jqtd_txt_qlyxzl_di",
 		TimeOutLineColor = cc.c4b(9, 70, 173, 255)
+	},
+	wuxiu = {
+		TimeOutLineColor = cc.c4b(162, 16, 16, 255),
+		cell = {
+			cellPanel = "deepseaCell",
+			cellDi = {
+				"jqtd_img_hwxxl_jldi.png",
+				"jqtd_img_hwxxl_jldih.png"
+			},
+			nameColor = cc.c3b(227, 183, 123)
+		}
 	}
 }
 local btnHandlers = {
@@ -133,6 +144,19 @@ function TimeLimitShopActivityMediator:setupView()
 	end
 
 	self._cellClone = self._view:getChildByFullName(self._packType .. "Cell")
+
+	if not self._cellClone and config.cell then
+		self._cellClone = self._view:getChildByFullName(config.cell.cellPanel)
+
+		if config.cell.cellDi then
+			self._cellClone:getChildByFullName("cell.bg"):loadTexture("asset/ui/activity/" .. config.cell.cellDi[1])
+			self._cellClone:getChildByFullName("cell.bg_buy"):loadTexture("asset/ui/activity/" .. config.cell.cellDi[2])
+		end
+
+		if config.cell.nameColor then
+			self._cellClone:getChildByFullName("cell.goods_name"):setTextColor(config.cell.nameColor)
+		end
+	end
 
 	assert(self._cellClone ~= nil, "Error:Not Found ItemCell By Type:" .. self._packType)
 	self:enableTimeLimitShopTimer()

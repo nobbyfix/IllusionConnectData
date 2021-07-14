@@ -869,7 +869,7 @@ function ClubBossTeamMediator:initHero(node, info)
 
 	if textNumEffect then
 		textNumEffect:setVisible(not isShow and effectNum > 0)
-		textNumEffect:setString(Strings:get("LOGIN_UI_hint"))
+		textNumEffect:setString(Strings:get("EXPLORE_UI22"))
 		textNumEffect:setColor(cc.c3b(255, 255, 255))
 	end
 
@@ -1037,7 +1037,7 @@ function ClubBossTeamMediator:initTeamHero(node, info)
 			textNumEffect:setString(Strings:get("clubBoss_46"))
 			textNumEffect:setColor(cc.c3b(255, 203, 63))
 		else
-			textNumEffect:setString(Strings:get("LOGIN_UI_hint"))
+			textNumEffect:setString(Strings:get("EXPLORE_UI22"))
 			textNumEffect:setColor(cc.c3b(255, 255, 255))
 		end
 	end

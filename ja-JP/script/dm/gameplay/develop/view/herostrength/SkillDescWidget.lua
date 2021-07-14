@@ -23,6 +23,10 @@ end
 function SkillDescWidget:initSubviews(view)
 	self._view = view
 	self._skillTipPanel = self._view:getChildByName("skillTipPanel")
+	local nextPanel = self._skillTipPanel:getChildByName("nextPanel")
+
+	nextPanel:setVisible(false)
+
 	local skillTouchPanel = self._skillTipPanel:getChildByFullName("skillTouchPanel")
 
 	skillTouchPanel:setSwallowTouches(false)

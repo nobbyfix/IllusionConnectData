@@ -169,6 +169,29 @@ function EquipStarLevelMediator:refreshComposeData()
 	self._cellNum = 0
 	local haveCount = self._bagSystem:getItemCount(self._itemId)
 
+	if haveCount == 0 then
+		self._cellNum = self._cellNum + 1
+		self._cellsHeight[self._cellNum] = {
+			type = kCellType.kTitle,
+			str = Strings:get("Equip_Ur_Mix_1")
+		}
+		self._cellNum = self._cellNum + 1
+		local param = {
+			index = 1,
+			type = kCellType.kItem
+		}
+		local entry = self._bagSystem:getEntryById(self._itemId)
+		self._stiveItem = {
+			{
+				exp = 1,
+				allCount = 0,
+				eatCount = 0,
+				itemId = self._itemId
+			}
+		}
+		self._cellsHeight[self._cellNum] = param
+	end
+
 	if haveCount > 0 then
 		self._cellNum = self._cellNum + 1
 		self._cellsHeight[self._cellNum] = {
@@ -408,10 +431,16 @@ function EquipStarLevelMediator:createTeamCell(cell, index)
 				node:addTo(cell):posite(57 + (j - 1) * 115, 0)
 
 				local itemPanel = node:getChildByFullName("itemNode")
-				local item = IconFactory:createItemIcon({
+				local info = {
 					id = itemData.itemId,
 					amount = itemData.allCount
-				})
+				}
+
+				if itemData.allCount == 0 then
+					info.useNoEnough = false
+				end
+
+				local item = IconFactory:createItemIcon(info)
 
 				item:addTo(itemPanel):center(itemPanel:getContentSize())
 				item:setScale(0.83)
@@ -442,7 +471,11 @@ function EquipStarLevelMediator:createTeamCell(cell, index)
 				local Panel_lock = node_lock:getChildByFullName("Panel_lock")
 				local entry = self._bagSystem:getEntryById(itemData.itemId)
 
-				if entry.item:getCanLock() then
+				if not entry then
+					Panel_unlock:setVisible(false)
+					Panel_lock:setVisible(false)
+					itemPanel:setSwallowTouches(false)
+				elseif entry.item:getCanLock() then
 					Panel_unlock:addTouchEventListener(function (sender, eventType)
 						self:onUnlockOrLockItem(sender, eventType, itemData)
 					end)
