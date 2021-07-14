@@ -482,7 +482,7 @@ function UnitTLInterpreter:act_BeginSkill(action, args, mode)
 
 		local skillDesc = ConfigReader:getDataByNameIdAndKey("Skill", skillId, "SkillPic")
 
-		effectLayer:pushPortraitEffect(modelConfig.CutIn, flag, skillDesc, not self._unit:isLeft(), isAwakenEffect)
+		effectLayer:pushPortraitEffect(model .. "/" .. modelConfig.CutIn, flag, skillDesc, not self._unit:isLeft(), isAwakenEffect)
 
 		break
 	end

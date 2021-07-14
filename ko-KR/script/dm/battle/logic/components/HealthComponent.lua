@@ -1,6 +1,9 @@
 HealthComponent = class("HealthComponent", BaseComponent, _M)
 
 function HealthComponent:initialize()
+	self._shieldRatio = 1
+	self._hpRecoverRatio = 1
+
 	super.initialize(self)
 end
 
@@ -106,6 +109,8 @@ function HealthComponent:applyDamage(value, lowerLimitValue)
 end
 
 function HealthComponent:applyRecovery(value)
+	value = value * self:getHpRecoverRatio()
+
 	if value < 0 then
 		return nil
 	end
@@ -160,6 +165,7 @@ function HealthComponent:getShield()
 end
 
 function HealthComponent:addShield(shieldValue, upLimit, source)
+	shieldValue = shieldValue * self:getShieldRatio()
 	local newValue = self:getShield() + shieldValue
 	self._shield = upLimit and upLimit < newValue and upLimit or newValue
 	self._shieldSources = self._shieldSources or {}
@@ -169,6 +175,22 @@ function HealthComponent:addShield(shieldValue, upLimit, source)
 	end
 
 	return self._shield
+end
+
+function HealthComponent:addShieldRatio(ratio)
+	self._shieldRatio = self:getShieldRatio() + ratio
+end
+
+function HealthComponent:addHpRecoverRatio(ratio)
+	self._hpRecoverRatio = self:getHpRecoverRatio() + ratio
+end
+
+function HealthComponent:getHpRecoverRatio()
+	return self._hpRecoverRatio or 1
+end
+
+function HealthComponent:getShieldRatio()
+	return self._shieldRatio or 1
 end
 
 function HealthComponent:cancelShield(source)

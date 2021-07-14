@@ -4,6 +4,28 @@ module("pkg")
 
 local all = _M.__all__ or {}
 _M.__all__ = all
+
+function all.Aien_Circle(_env, target)
+	local this = _env.this
+	local global = _env.global
+	local buff_count = global.SpecialNumericEffect(_env, "+Count_LSLTe_Passive", {
+		"+Normal",
+		"+Normal"
+	}, 1)
+
+	global.ApplyBuff(_env, target, {
+		timing = 0,
+		duration = 99,
+		tags = {
+			"Count_LSLTe_Passive"
+		}
+	}, {
+		buff_count
+	})
+	global.ActivateSpecificTrigger(_env, target, "GET_AIEN_CIRCLE")
+	global.ActivateGlobalTrigger(_env, target, "UNIT_GET_AIEN_CIRCLE")
+end
+
 all.Skill_LSLTe_Normal = {
 	__new__ = function (prototype, externs, global)
 		local __function = global.__skill_function__
@@ -66,21 +88,7 @@ all.Skill_LSLTe_Normal = {
 			local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, this.dmgFactor)
 
 			global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage)
-
-			local buff_count = global.SpecialNumericEffect(_env, "+Count_LSLTe_Passive", {
-				"+Normal",
-				"+Normal"
-			}, 1)
-
-			global.ApplyBuff(_env, _env.TARGET, {
-				timing = 0,
-				duration = 99,
-				tags = {
-					"Count_LSLTe_Passive"
-				}
-			}, {
-				buff_count
-			})
+			global.Aien_Circle(_env, _env.TARGET)
 		end)
 
 		return _env
@@ -151,21 +159,7 @@ all.Skill_LSLTe_Proud = {
 			local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, this.dmgFactor)
 
 			global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage)
-
-			local buff_count = global.SpecialNumericEffect(_env, "+Count_LSLTe_Passive", {
-				"+Normal",
-				"+Normal"
-			}, 1)
-
-			global.ApplyBuff(_env, _env.TARGET, {
-				timing = 0,
-				duration = 99,
-				tags = {
-					"Count_LSLTe_Passive"
-				}
-			}, {
-				buff_count
-			})
+			global.Aien_Circle(_env, _env.TARGET)
 		end)
 		exec["@time"]({
 			800
@@ -179,21 +173,7 @@ all.Skill_LSLTe_Proud = {
 			local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, this.dmgFactor)
 
 			global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage)
-
-			local buff_count = global.SpecialNumericEffect(_env, "+Count_LSLTe_Passive", {
-				"+Normal",
-				"+Normal"
-			}, 1)
-
-			global.ApplyBuff(_env, _env.TARGET, {
-				timing = 0,
-				duration = 99,
-				tags = {
-					"Count_LSLTe_Passive"
-				}
-			}, {
-				buff_count
-			})
+			global.Aien_Circle(_env, _env.TARGET)
 		end)
 
 		return _env
@@ -310,21 +290,7 @@ all.Skill_LSLTe_Unique = {
 			})
 
 			global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage)
-
-			local buff_count = global.SpecialNumericEffect(_env, "+Count_LSLTe_Passive", {
-				"+Normal",
-				"+Normal"
-			}, 1)
-
-			global.ApplyBuff(_env, _env.TARGET, {
-				timing = 0,
-				duration = 99,
-				tags = {
-					"Count_LSLTe_Passive"
-				}
-			}, {
-				buff_count
-			})
+			global.Aien_Circle(_env, _env.TARGET)
 		end)
 		exec["@time"]({
 			1400
@@ -363,21 +329,7 @@ all.Skill_LSLTe_Unique = {
 				})
 
 				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
-
-				local buff_count = global.SpecialNumericEffect(_env, "+Count_LSLTe_Passive", {
-					"+Normal",
-					"+Normal"
-				}, 1)
-
-				global.ApplyBuff(_env, unit, {
-					timing = 0,
-					duration = 99,
-					tags = {
-						"Count_LSLTe_Passive"
-					}
-				}, {
-					buff_count
-				})
+				global.Aien_Circle(_env, unit)
 			end
 		end)
 		exec["@time"]({
@@ -435,21 +387,7 @@ all.Skill_LSLTe_Unique = {
 				})
 
 				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
-
-				local buff_count = global.SpecialNumericEffect(_env, "+Count_LSLTe_Passive", {
-					"+Normal",
-					"+Normal"
-				}, 1)
-
-				global.ApplyBuff(_env, unit, {
-					timing = 0,
-					duration = 99,
-					tags = {
-						"Count_LSLTe_Passive"
-					}
-				}, {
-					buff_count
-				})
+				global.Aien_Circle(_env, unit)
 			end
 		end)
 		exec["@time"]({
@@ -485,7 +423,7 @@ all.Skill_LSLTe_Passive = {
 			400
 		}, passive1)
 		this.passive1 = global["[trigger_by]"](this, {
-			"UNIT_BUFF_APPLYED"
+			"UNIT_GET_AIEN_CIRCLE"
 		}, passive1)
 		local passive2 = __action(this, {
 			name = "passive2",
@@ -511,10 +449,6 @@ all.Skill_LSLTe_Passive = {
 		_env.unit = externs.unit
 
 		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
-
-		_env.buff = externs.buff
-
-		assert(_env.buff ~= nil, "External variable `buff` is not provided.")
 		exec["@time"]({
 			0
 		}, _env, function (_env)
@@ -522,7 +456,7 @@ all.Skill_LSLTe_Passive = {
 			local global = _env.global
 			local delaytime = 350
 
-			if global.GetSide(_env, _env.unit) ~= global.GetSide(_env, _env.ACTOR) and global.BuffIsMatched(_env, _env.buff, "Count_LSLTe_Passive") then
+			if global.GetSide(_env, _env.unit) ~= global.GetSide(_env, _env.ACTOR) then
 				if global.SelectBuffCount(_env, _env.unit, global.BUFF_MARKED(_env, "Count_LSLTe_Passive")) == 1 then
 					local buff = global.NumericEffect(_env, "+defrate", {
 						"+Normal",
@@ -680,21 +614,7 @@ all.Skill_LSLTe_Proud_EX = {
 			local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, this.dmgFactor)
 
 			global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage)
-
-			local buff_count = global.SpecialNumericEffect(_env, "+Count_LSLTe_Passive", {
-				"+Normal",
-				"+Normal"
-			}, 1)
-
-			global.ApplyBuff(_env, _env.TARGET, {
-				timing = 0,
-				duration = 99,
-				tags = {
-					"Count_LSLTe_Passive"
-				}
-			}, {
-				buff_count
-			})
+			global.Aien_Circle(_env, _env.TARGET)
 		end)
 		exec["@time"]({
 			800
@@ -708,21 +628,7 @@ all.Skill_LSLTe_Proud_EX = {
 			local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, this.dmgFactor)
 
 			global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage)
-
-			local buff_count = global.SpecialNumericEffect(_env, "+Count_LSLTe_Passive", {
-				"+Normal",
-				"+Normal"
-			}, 1)
-
-			global.ApplyBuff(_env, _env.TARGET, {
-				timing = 0,
-				duration = 99,
-				tags = {
-					"Count_LSLTe_Passive"
-				}
-			}, {
-				buff_count
-			})
+			global.Aien_Circle(_env, _env.TARGET)
 		end)
 
 		return _env
@@ -839,21 +745,7 @@ all.Skill_LSLTe_Unique_EX = {
 			})
 
 			global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage)
-
-			local buff_count = global.SpecialNumericEffect(_env, "+Count_LSLTe_Passive", {
-				"+Normal",
-				"+Normal"
-			}, 1)
-
-			global.ApplyBuff(_env, _env.TARGET, {
-				timing = 0,
-				duration = 99,
-				tags = {
-					"Count_LSLTe_Passive"
-				}
-			}, {
-				buff_count
-			})
+			global.Aien_Circle(_env, _env.TARGET)
 		end)
 		exec["@time"]({
 			1400
@@ -903,21 +795,7 @@ all.Skill_LSLTe_Unique_EX = {
 				})
 
 				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
-
-				local buff_count = global.SpecialNumericEffect(_env, "+Count_LSLTe_Passive", {
-					"+Normal",
-					"+Normal"
-				}, 1)
-
-				global.ApplyBuff(_env, unit, {
-					timing = 0,
-					duration = 99,
-					tags = {
-						"Count_LSLTe_Passive"
-					}
-				}, {
-					buff_count
-				})
+				global.Aien_Circle(_env, unit)
 			end
 		end)
 		exec["@time"]({
@@ -980,21 +858,7 @@ all.Skill_LSLTe_Unique_EX = {
 				})
 
 				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
-
-				local buff_count = global.SpecialNumericEffect(_env, "+Count_LSLTe_Passive", {
-					"+Normal",
-					"+Normal"
-				}, 1)
-
-				global.ApplyBuff(_env, unit, {
-					timing = 0,
-					duration = 99,
-					tags = {
-						"Count_LSLTe_Passive"
-					}
-				}, {
-					buff_count
-				})
+				global.Aien_Circle(_env, unit)
 			end
 		end)
 		exec["@time"]({
@@ -1030,7 +894,7 @@ all.Skill_LSLTe_Passive_EX = {
 			400
 		}, passive1)
 		this.passive1 = global["[trigger_by]"](this, {
-			"UNIT_BUFF_APPLYED"
+			"UNIT_GET_AIEN_CIRCLE"
 		}, passive1)
 		local passive2 = __action(this, {
 			name = "passive2",
@@ -1056,10 +920,6 @@ all.Skill_LSLTe_Passive_EX = {
 		_env.unit = externs.unit
 
 		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
-
-		_env.buff = externs.buff
-
-		assert(_env.buff ~= nil, "External variable `buff` is not provided.")
 		exec["@time"]({
 			0
 		}, _env, function (_env)
@@ -1067,7 +927,7 @@ all.Skill_LSLTe_Passive_EX = {
 			local global = _env.global
 			local delaytime = 350
 
-			if global.GetSide(_env, _env.unit) ~= global.GetSide(_env, _env.ACTOR) and global.BuffIsMatched(_env, _env.buff, "Count_LSLTe_Passive") then
+			if global.GetSide(_env, _env.unit) ~= global.GetSide(_env, _env.ACTOR) then
 				if global.SelectBuffCount(_env, _env.unit, global.BUFF_MARKED(_env, "Count_LSLTe_Passive")) == 1 then
 					local buff = global.NumericEffect(_env, "+defrate", {
 						"+Normal",

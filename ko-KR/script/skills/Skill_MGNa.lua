@@ -640,6 +640,144 @@ all.Skill_MGNa_Unique_EX = {
 		return _env
 	end
 }
+all.Skill_MGNa_Unique_Awaken = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.dmgFactor = externs.dmgFactor
+
+		if this.dmgFactor == nil then
+			this.dmgFactor = {
+				1,
+				3,
+				0
+			}
+		end
+
+		this.HurtRateFactor = externs.HurtRateFactor
+
+		assert(this.HurtRateFactor ~= nil, "External variable `HurtRateFactor` is not provided.")
+
+		this.AwakenFactor = externs.AwakenFactor
+
+		if this.AwakenFactor == nil then
+			this.AwakenFactor = 0.3
+		end
+
+		this.scount = 0
+		local main = __action(this, {
+			name = "main",
+			entry = prototype.main
+		})
+		main = global["[duration]"](this, {
+			3134
+		}, main)
+		main = global["[cut_in]"](this, {
+			"1#Hero_Unique_MGNa"
+		}, main)
+		this.main = global["[load]"](this, {
+			"Movie_MGNa_Skill3"
+		}, main)
+
+		return this
+	end,
+	main = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.TARGET = externs.TARGET
+
+		assert(_env.TARGET ~= nil, "External variable `TARGET` is not provided.")
+
+		_env.units = nil
+
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			_env.units = global.EnemyUnits(_env)
+
+			for _, unit in global.__iter__(_env.units) do
+				global.RetainObject(_env, unit)
+			end
+
+			global.GroundEft(_env, _env.ACTOR, "BGEffectBlack")
+			global.EnergyRestrain(_env, _env.ACTOR, _env.TARGET)
+		end)
+		exec["@time"]({
+			900
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.1, 80)
+			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.FixedPos(_env, 0, 0, 2), 100, "skill3"))
+			global.HarmTargetView(_env, _env.units)
+
+			for _, unit in global.__iter__(_env.units) do
+				global.AssignRoles(_env, unit, "target")
+			end
+		end)
+		exec["@time"]({
+			1533
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			this.scount = #global.EnemyUnits(_env)
+
+			for _, unit in global.__iter__(_env.units) do
+				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
+				global.ApplyRPEffect(_env, _env.ACTOR, unit)
+
+				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
+
+				if this.scount < 4 then
+					global.print(_env, "-=敌人少于4人，加伤害", this.AwakenFactor)
+
+					damage.val = damage.val * (1 + this.AwakenFactor)
+				end
+
+				if global.EnemyMaster(_env) then
+					-- Nothing
+				else
+					local cost = global.GetCost(_env, unit)
+
+					if cost > 13 then
+						damage.val = damage.val * (1 + this.HurtRateFactor)
+					end
+				end
+
+				global.ApplyAOEHPMultiDamage_ResultCheck(_env, _env.ACTOR, unit, {
+					0,
+					400,
+					967
+				}, global.SplitValue(_env, damage, {
+					0.25,
+					0.25,
+					0.5
+				}))
+			end
+		end)
+		exec["@time"]({
+			3134
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.EnergyRestrainStop(_env, _env.ACTOR, _env.TARGET)
+		end)
+
+		return _env
+	end
+}
 all.Skill_MGNa_Passive_EX = {
 	__new__ = function (prototype, externs, global)
 		local __function = global.__skill_function__

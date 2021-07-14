@@ -62,6 +62,11 @@ function TowerHeroShowDetailsMediator:enterWithData(data)
 	else
 		self._heroData = data.hero
 		self._heroId = self._heroData:getId()
+		local heroData = Hero:new(self._heroId, self._developSystem:getPlayer())
+
+		heroData:rCreateEffect()
+
+		self._heroData = heroData
 	end
 
 	self:initView()

@@ -506,7 +506,7 @@ function ActivityPointSweepMediator:checkTimesUp()
 		self._point = self._model:getSubPointById(self._sweepData.param.pointId)
 		self._type = self._sweepData.param.type
 	else
-		self._pointId = self._data.pointId
+		self._pointId = self._sweepData.param.pointId
 		self._point = self._model:getPointById(self._sweepData.param.pointId)
 		self._type = litTypeMap[self._model:getStageTypeById(self._sweepData.param.pointId)]
 	end

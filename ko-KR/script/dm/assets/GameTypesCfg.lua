@@ -302,13 +302,13 @@ ActivityType = {
 ActivityId = {
 	kActivityBlock = "ActivityBlock",
 	kActivityBlockZuoHe2 = "ActivityBlock_ZuoHe02_Support",
-	kActivityWxh = "ActivityBlock_WuXiuHui_Support",
+	kActivityWxh = "ActivityBlock_WuXiuHui_New_Support",
 	kActivityBlockZuoHe = "ActivityBlock_ZuoHe_Support",
 	kActivityBlockSummer = "ActivityBlock_Summer"
 }
 ActivityComplexId = {
 	kActivityBlock = "ActivityBlock",
-	kActivityWxh = "ActivityBlock_WuXiuHui_Support",
+	kActivityWxh = "ActivityBlock_WuXiuHui_New_Support",
 	kActivityBlockWsj = "ActivityBlock_Halloween",
 	kActivityBlockZuoHe = "ActivityBlock_ZuoHe_Support",
 	KActivityBlockDetetive = "ActivityBlock_Detective",

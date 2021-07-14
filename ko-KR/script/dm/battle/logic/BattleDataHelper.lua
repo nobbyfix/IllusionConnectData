@@ -64,7 +64,8 @@ function BattleDataHelper:fillSummonData(summon, skillData, protoFactory, summon
 					masterRage = summonData.MasterRage,
 					flags = flags,
 					genre = summonData.Type,
-					extraSurFace = summonData.SummonSurface
+					extraSurFace = summonData.SummonSurface,
+					sex = summonData.Sex or 0
 				}
 				summon[#summon + 1] = summonInfo
 				summonInfo.skills = {}
@@ -401,11 +402,21 @@ function BattleDataHelper:fillHeroData(hero, rid, waveStr, idx, isEnemy, summon,
 		else
 			hero.surfaceIndex = 0
 		end
+
+		hero.sex = self:getSex("EnemyHero", hero)
 	else
 		hero.surfaceIndex = self:getSufaceIndex("HeroBase", hero)
+		hero.sex = self:getSex("HeroBase", hero)
 	end
 
 	return hero
+end
+
+function BattleDataHelper:getSex(HeroTag, hero)
+	local sex = ConfigReader:getDataByNameIdAndKey(HeroTag, hero.cid, "Sex")
+	sex = sex or 0
+
+	return sex
 end
 
 function BattleDataHelper:getSufaceIndex(HeroTag, hero)
@@ -495,8 +506,11 @@ function BattleDataHelper:fillMasterData(master, playerData, waveStr, isEnemy, s
 		else
 			master.surfaceIndex = 0
 		end
+
+		master.sex = self:getSex("EnemyMaster", master)
 	else
 		master.surfaceIndex = self:getSufaceIndex("MasterBase", master)
+		master.sex = self:getSex("MasterBase", master)
 	end
 
 	if master.leadStageId and master.leadStageId ~= "" then

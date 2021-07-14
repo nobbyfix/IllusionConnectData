@@ -188,6 +188,24 @@ function exports.SelectCardBuffCount(env, heroCard, tag)
 	return cardSystem:getTiggerBuffCountOnHeroCard(heroCard, tag)
 end
 
+function exports.SelectCardPassiveCount(env, heroCard, skillId)
+	if not heroCard then
+		return 0
+	end
+
+	if heroCard:getType() ~= "hero" then
+		return 0
+	end
+
+	local cardSystem = env.global["$CardSystem"]
+
+	if cardSystem == nil then
+		return 0
+	end
+
+	return cardSystem:getPassiveCountOnHeroCard(heroCard, skillId)
+end
+
 function exports.DispelBuffOnHeroCard(env, heroCard, tags)
 	if not heroCard then
 		return 0

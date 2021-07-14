@@ -217,6 +217,11 @@ function ClubMapViewMediator:setupMapPanel()
 			anim:addTo(animNode, 1)
 			anim:setPosition(cc.p(105, 30))
 			anim:gotoAndPlay(1)
+
+			if not CommonUtils.GetSwitch("fn_clubBossPass") then
+				nameNode:setVisible(false)
+				touchPanel:setTouchEnabled(false)
+			end
 		elseif i == 6 then
 			local vertices = {
 				cc.p(75, 0),

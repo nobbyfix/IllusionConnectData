@@ -341,9 +341,12 @@ end
 function BattleLogic:on_UnitSettled(_, args)
 	local unit = args.unit
 
-	self._skillSystem:activateSpecificTrigger(unit, "ENTER")
+	self._skillSystem:activateSpecificTrigger(unit, "ENTER", {
+		isRevive = unit:isBeRevive()
+	})
 	self._skillSystem:activateGlobalTrigger("UNIT_ENTER", {
-		unit = unit
+		unit = unit,
+		isRevive = unit:isBeRevive()
 	})
 end
 
@@ -597,10 +600,13 @@ function BattleLogic:on_UnitTransformed(_, unit, player)
 
 	buffSystem:triggerEnterBuffs(unit)
 	self._skillSystem:buildSkillsForActor(unit)
-	self._skillSystem:activateSpecificTrigger(unit, "ENTER")
+	self._skillSystem:activateSpecificTrigger(unit, "ENTER", {
+		isRevive = unit:isBeRevive()
+	})
 	self._skillSystem:activateGlobalTrigger("UNIT_ENTER", {
 		type = "transform",
-		unit = unit
+		unit = unit,
+		isRevive = unit:isBeRevive()
 	})
 end
 

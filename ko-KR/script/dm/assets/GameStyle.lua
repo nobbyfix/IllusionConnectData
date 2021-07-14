@@ -133,24 +133,7 @@ function GameStyle:getDefaultUnfoundFile()
 	return "asset/items/item_200001.png"
 end
 
-local rangeMap = {
-	Random4_Attack = "zhiye_wz04_red.png",
-	Col_Cure = "zhiye_wz03_green.png",
-	Row_Attack = "zhiye_wz03s_red.png",
-	Single_Attack = "zhiye_wz01_red.png",
-	Cross_Attack = "zhiye_wz05z_red.png",
-	X_Attack = "zhiye_wz05_red.png",
-	Cross_Cure = "zhiye_wz05z_green.png",
-	Col_Attack = "zhiye_wz03_red.png",
-	Row_Cure = "zhiye_wz03s_green.png",
-	All_Cure = "zhiye_wz09_green.png",
-	Single_Cure = "zhiye_wz01_green.png",
-	Random3_Attack = "zhiye_wz03l_red.png",
-	Card = "zhiye_wzkp_green.png",
-	X_Cure = "zhiye_wz05_green.png",
-	All_Attack = "zhiye_wz09_red.png",
-	Summon = "zhiye_wzzh_green.png"
-}
+local rangeMap = {}
 
 function GameStyle:setHeroAtkRangeImage(targetNode, type)
 	local image = rangeMap[type] or rangeMap.Single_Attack

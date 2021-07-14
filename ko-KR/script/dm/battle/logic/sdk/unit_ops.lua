@@ -273,3 +273,25 @@ function exports.UpdateFanProgress(env, unit, progress)
 		progress = progress
 	})
 end
+
+function exports.ForbidenRevive(env, unit, isforbiden)
+	if not unit then
+		return
+	end
+
+	if isforbiden then
+		unit:forbidenUnearth()
+	else
+		unit:enableUnearth()
+	end
+
+	return true
+end
+
+function exports.GetSex(env, unit)
+	if not unit then
+		return
+	end
+
+	return unit:getSex()
+end

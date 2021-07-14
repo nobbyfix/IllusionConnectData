@@ -803,9 +803,10 @@ all.Skill_MLYTLSha_Unique_Awaken = {
 					local buffeft1 = global.ShieldEffect(_env, global.min(_env, this.shieldValue, global.UnitPropGetter(_env, "maxHp")(_env, friendunit) * 0.3))
 
 					global.ApplyBuff(_env, friendunit, {
-						duration = 99,
-						group = "Skill_MLYTLSha_Unique_Awaken",
 						timing = 0,
+						display = "Shield",
+						group = "Skill_MLYTLSha_Unique_Awaken",
+						duration = 99,
 						limit = 1,
 						tags = {
 							"NUMERIC",

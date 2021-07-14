@@ -88,6 +88,27 @@ function CardSystem:getTiggerBuffCountOnHeroCard(card, tag)
 	return count
 end
 
+function CardSystem:getPassiveCountOnHeroCard(card, skillId)
+	local count = 0
+	local heroData = card:getHeroData()
+
+	if heroData and heroData.skills then
+		for k, v in pairs(heroData.skills or {}) do
+			if table.getn(v) > 0 then
+				for k_, v_ in pairs(v or {}) do
+					if v_.skillId == skillId then
+						count = count + 1
+					end
+				end
+			elseif v.skillId == skillId then
+				count = count + 1
+			end
+		end
+	end
+
+	return count
+end
+
 function CardSystem:dispelTiggerOnHeroCard(card, tags)
 	local triggerBuffs = card:getTriggerBuff()
 

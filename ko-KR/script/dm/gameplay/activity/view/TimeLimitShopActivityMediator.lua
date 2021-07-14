@@ -45,6 +45,10 @@ local timeLimitShopConfig = {
 	storybook = {
 		TimeOutLineColor = cc.c4b(187, 1, 1, 255)
 	},
+	half = {
+		TimeOutLineColor = cc.c4b(186, 51, 20, 255),
+		BGSize = cc.size(1031, 640)
+	},
 	deepsea = {
 		TimeOutLineColor = cc.c4b(1, 6, 187, 255),
 		bgSize = cc.size(1136, 640)
@@ -52,6 +56,17 @@ local timeLimitShopConfig = {
 	summerre = {
 		BG = "jqtd_txt_qlyxzl_di",
 		TimeOutLineColor = cc.c4b(9, 70, 173, 255)
+	},
+	wuxiu = {
+		TimeOutLineColor = cc.c4b(162, 16, 16, 255),
+		cell = {
+			cellPanel = "deepseaCell",
+			cellDi = {
+				"jqtd_img_hwxxl_jldi.png",
+				"jqtd_img_hwxxl_jldih.png"
+			},
+			nameColor = cc.c3b(227, 183, 123)
+		}
 	}
 }
 local btnHandlers = {
@@ -103,15 +118,19 @@ function TimeLimitShopActivityMediator:setupView()
 		self._main:getChildByFullName("package_2"),
 		self._main:getChildByFullName("package_3")
 	}
+	local config = timeLimitShopConfig[self._packType]
 
 	if self._activityConfig.UIBG and self._activityConfig.UIBG ~= "" then
 		self._bg:loadTexture("asset/lang_ui/activity/" .. self._activityConfig.UIBG .. ".png", ccui.TextureResType.localType)
-	else
-		local config = timeLimitShopConfig[self._packType]
+	elseif config and config.BG then
+		self._bg:loadTexture("asset/lang_ui/activity/" .. config.BG .. ".png", ccui.TextureResType.localType)
+	end
 
-		if config and config.BG then
-			self._bg:loadTexture("asset/lang_ui/activity/" .. config.BG .. ".png", ccui.TextureResType.localType)
-		end
+	if config and config.BGSize then
+		local size = self._bg:getContentSize()
+
+		self._bg:setContentSize(config.BGSize)
+		self._bg:offset((config.BGSize.width - size.width) * 0.5, 0)
 	end
 
 	local config = timeLimitShopConfig[self._packType]
@@ -125,6 +144,19 @@ function TimeLimitShopActivityMediator:setupView()
 	end
 
 	self._cellClone = self._view:getChildByFullName(self._packType .. "Cell")
+
+	if not self._cellClone and config.cell then
+		self._cellClone = self._view:getChildByFullName(config.cell.cellPanel)
+
+		if config.cell.cellDi then
+			self._cellClone:getChildByFullName("cell.bg"):loadTexture("asset/ui/activity/" .. config.cell.cellDi[1])
+			self._cellClone:getChildByFullName("cell.bg_buy"):loadTexture("asset/ui/activity/" .. config.cell.cellDi[2])
+		end
+
+		if config.cell.nameColor then
+			self._cellClone:getChildByFullName("cell.goods_name"):setTextColor(config.cell.nameColor)
+		end
+	end
 
 	assert(self._cellClone ~= nil, "Error:Not Found ItemCell By Type:" .. self._packType)
 	self:enableTimeLimitShopTimer()
@@ -191,16 +223,20 @@ function TimeLimitShopActivityMediator:setPackageItemInfo(cell, data)
 	local bg_buy = panel:getChildByName("bg_buy")
 	local bg = panel:getChildByName("bg")
 	local xian = panel:getChildByFullName("money_layout.xian")
+	local infoPanel = panel:getChildByName("info_panel")
+	local moneyLauout = panel:getChildByName("money_layout")
+
+	moneyLauout:setPositionX(infoPanel:getPositionX() - 6)
+
 	local isFree = data:getIsFree()
 
 	nameText:setString(data:getName())
+	nameText:setPosition(cc.p(129, 300))
 
 	if isFree == 1 then
 		moneyText:setString(Strings:get("Recruit_Free"))
-		moneyText:setPositionX(65)
-		discountPanel:setVisible(false)
-		priceText:setVisible(false)
-		xian:setVisible(false)
+		moneyText:setAnchorPoint(0.5, 0.5)
+		moneyText:setPosition(cc.p(101, 30))
 	elseif isFree == 2 then
 		local goldIcon = IconFactory:createResourcePic({
 			id = data:getGameCoin().type
@@ -208,7 +244,8 @@ function TimeLimitShopActivityMediator:setPackageItemInfo(cell, data)
 
 		goldIcon:addTo(money_icon):center(money_icon:getContentSize()):offset(0, 0)
 		moneyText:setString(tostring(data:getGameCoin().amount))
-		moneyText:setPositionX(85)
+		moneyText:setAnchorPoint(0, 0.5)
+		money_icon:setPositionX(67)
 		discountPanel:setVisible(true)
 		discountText:setString(tostring(data:getCostOff() * 100) .. "%")
 		priceText:setVisible(true)
@@ -222,7 +259,7 @@ function TimeLimitShopActivityMediator:setPackageItemInfo(cell, data)
 		goldIcon2:addTo(priceText):center(priceText:getContentSize()):offset(-25, 0)
 		goldIcon2:setScale(0.7)
 
-		if data:getPrice() == 0 or data:getPrice() == nil then
+		if data:getPrice() == 0 then
 			priceText:setVisible(false)
 			xian:setVisible(false)
 			discountPanel:setVisible(false)
@@ -231,14 +268,15 @@ function TimeLimitShopActivityMediator:setPackageItemInfo(cell, data)
 		local symbol, price = data:getPaySymbolAndPrice(data:getPayId())
 
 		moneyText:setString(symbol .. price)
-		moneyText:setPositionX(60)
+		moneyText:setAnchorPoint(0.5, 0.5)
+		moneyText:setPosition(cc.p(101, 30))
 		discountText:setString(tostring(data:getCostOff() * 100) .. "%")
 		discountPanel:setVisible(true)
 		priceText:setVisible(true)
 		priceText:setString(symbol .. tostring(data:getPrice()))
 		xian:setVisible(true)
 
-		if data:getPrice() == 0 or data:getPrice() == nil then
+		if data:getPrice() == 0 then
 			priceText:setVisible(false)
 			xian:setVisible(false)
 			discountPanel:setVisible(false)

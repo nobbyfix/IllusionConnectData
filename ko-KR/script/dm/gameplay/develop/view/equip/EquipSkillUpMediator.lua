@@ -169,8 +169,11 @@ function EquipSkillUpMediator:setupView()
 		fontSize = fontSize - 2
 	until height < 57 or fontSize < 2
 
+	local contentLen = descText:getContentLength()
+	local realWidth = math.min(contentLen * fontSize, 800)
+
 	descText:setAnchorPoint(cc.p(0.5, 0))
 	descText:addTo(desc)
-	descText:setPosition(cc.p(0, -19))
+	descText:setPosition(cc.p((800 - realWidth) / 2, -19))
 	descText:renderContent()
 end

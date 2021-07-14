@@ -55,10 +55,10 @@
     },
     "BSNCT": {
         "IncludeHero": [
-            "FLBDSi",
             "SDTZi",
             "NFEr",
             "TPGZhu",
+            "FLBDSi",
             "XHMao",
             "YLSBai",
             "ZZBBWei",
@@ -289,8 +289,6 @@
     },
     "SSR": {
         "IncludeHero": [
-            "FLBDSi",
-            "LFKLFTe",
             "WEDe",
             "CZheng",
             "LDu",
@@ -346,7 +344,9 @@
             "MZGXiu",
             "SLWan",
             "XHMao",
-            "TLSi"
+            "TLSi",
+            "FLBDSi",
+            "LFKLFTe"
         ],
         "Party": "SSR",
         "PartyDesc": "Party_SSR_Desc",
@@ -412,7 +412,6 @@
     },
     "Support": {
         "IncludeHero": [
-            "FLBDSi",
             "TPGZhu",
             "ALSi",
             "MTZMEShi",
@@ -425,7 +424,8 @@
             "QBTe",
             "KEDGong",
             "LSLTe",
-            "TLSi"
+            "TLSi",
+            "FLBDSi"
         ],
         "Party": "Support",
         "PartyDesc": "Party_Support_Desc",

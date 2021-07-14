@@ -141,6 +141,10 @@ function SkillComponent:getSkill(type)
 	return self._skills[type]
 end
 
+function SkillComponent:getSkills()
+	return self._skills
+end
+
 function SkillComponent:setUniqueSkillRoutine(routine)
 	self._uniqueSkillRoutine = routine
 end

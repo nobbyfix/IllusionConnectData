@@ -118,3 +118,17 @@ function DreamChallengeFinish:initialize()
 		}
 	}
 end
+
+NewActivityStageFinish = class("NewActivityStageFinish", DebugViewTemplate, _M)
+
+function NewActivityStageFinish:initialize()
+	self._opType = 304
+	self._viewConfig = {
+		{
+			default = "1",
+			name = "isAll",
+			title = "解锁全部:0:全部，1:不全部",
+			type = "Input"
+		}
+	}
+end

@@ -30793,6 +30793,250 @@
             }
         ]
     },
+    "aflya_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_WSLi_26",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 6
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_WSLi_Scalpel_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 7
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 9
+            }
+        ]
+    },
+    "aflya_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_WSLi_27_Cut",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_WSLi_Scalpel_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 10
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 12
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 16
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 21
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_WSLi_28",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 22
+            }
+        ]
+    },
+    "aflya_skill3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_WSLi_Scalpel_3",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 3
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_WSLi_Scalpel_4",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 7
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_WSLi_Scalpel_5",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 32
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 42
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_WSLi_Scalpel_6",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 54
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 65
+            }
+        ]
+    },
+    "aflya_skill3_1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_WSLi_28",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 3
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_WSLi_Scalpel_4",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 7
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_WSLi_Scalpel_5",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 31
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 42
+            }
+        ]
+    },
     "ahui_skill1": {
         "events": [
             {
@@ -39521,6 +39765,138 @@
             }
         ]
     },
+    "sp_xmlhui_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_SSQXin_SP_Sword_Hit",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_SSQXin_26",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 15
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 16
+            }
+        ]
+    },
+    "sp_xmlhui_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_SSQXin_SP_Air_Explode",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 2
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 12
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_SSQXin_27_Cut",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 14
+            }
+        ]
+    },
+    "sp_xmlhui_skill3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_SSQXin_SP_Sword_Whoosh",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 2
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_SSQXin_28",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 4
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_SSQXin_SP_Sword_Smash",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 14
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 26
+            }
+        ]
+    },
     "swmxue_wedding_skill1": {
         "events": [
             {
@@ -39794,6 +40170,186 @@
                     }
                 ],
                 "f": 34
+            }
+        ]
+    },
+    "xcy_olympics_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MZGXiu_Pirate_Dagger_Scratch_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 3
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_MZGXiu_26",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 4
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 8
+            }
+        ]
+    },
+    "xcy_olympics_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_MZGXiu_27",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MZGXiu_Pirate_Jump",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 5
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 9
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MZGXiu_Pirate_Dagger_Chain",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 12
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MZGXiu_Pirate_Dagger_Smash_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 12
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MZGXiu_Pirate_Dagger_Smash_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 20
+            }
+        ]
+    },
+    "xcy_olympics_skill3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_MZGXiu_28",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MZGXiu_Pirate_Dagger_Magic",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 5
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 23
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MZGXiu_Pirate_Dagger_Scratch_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 28
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MZGXiu_Pirate_Dagger_Scratch_3",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 37
             }
         ]
     },
