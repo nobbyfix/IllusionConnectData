@@ -698,10 +698,6 @@ function all.EvalDamage_FlagCheck(_env, actor, target, dmgFactor, passiveFactors
 		end
 	end
 
-	if global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "GUIDIE_SHENYIN")) > 0 then
-		damage.val = 0
-	end
-
 	return damage
 end
 
@@ -969,10 +965,6 @@ function all.EvalAOEDamage_FlagCheck(_env, actor, target, dmgFactor, passiveFact
 		end
 	end
 
-	if global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "GUIDIE_SHENYIN")) > 0 then
-		damage.val = 0
-	end
-
 	return damage
 end
 
@@ -1184,6 +1176,8 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 	local this = _env.this
 	local global = _env.global
 
+	global.DispelBuff(_env, actor, global.BUFF_MARKED(_env, "APPLYDAMAGEVALUE"), 99)
+
 	if global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "AJYHou_Passive")) > 0 and global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "AJYHou_Passive_Done")) == 0 then
 		local hp_ajyh = global.UnitPropGetter(_env, "hp")(_env, target)
 		local shield_ajyh = global.UnitPropGetter(_env, "shield")(_env, target)
@@ -1285,6 +1279,93 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 		else
 			damage.val = damage.val * (1 + DamageFactor)
 		end
+	end
+
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED_ALL(_env, "EquipSkill_Boots_15101_1", "UNDISPELLABLE", "UNSTEALABLE")) > 0 then
+		local AtkRateFactor = global.SpecialPropGetter(_env, "Atk_EquipSkill_Boots_15101_1")(_env, actor)
+
+		if global.MASTER(_env, target) and global.SpecialPropGetter(_env, "equipSkill_boots_15101_1")(_env, global.FriendField(_env)) < 3 then
+			local cards = global.Slice(_env, global.SortBy(_env, global.CardsInWindow(_env, global.GetOwner(_env, actor)), "<", global.GetCardCost), 1, 1)
+			local buff_hurt = global.SpecialNumericEffect(_env, "+equipSkill_boots_15101_1", {
+				"+Normal",
+				"+Normal"
+			}, 1)
+			local buffeft1 = global.NumericEffect(_env, "+atkrate", {
+				"+Normal",
+				"+Normal"
+			}, AtkRateFactor)
+			local cardvaluechange = global.CardCostEnchant(_env, "-", 2, 1)
+
+			for _, card in global.__iter__(cards) do
+				global.ApplyBuff(_env, global.FriendField(_env), {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"NUMERIC",
+						"BUFF",
+						"UNDISPELLABLE",
+						"UNSTEALABLE",
+						"UR_EQUIPMENT",
+						"YINGLUO"
+					}
+				}, {
+					buff_hurt
+				})
+				global.ApplyEnchant(_env, global.GetOwner(_env, actor), card, {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"CARDBUFF",
+						"YINGLUO",
+						"UNDISPELLABLE"
+					}
+				}, {
+					cardvaluechange
+				})
+				global.ApplyHeroCardBuff(_env, global.GetOwner(_env, actor), card, {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"CARDBUFF",
+						"BUFF",
+						"YINGLUO",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft1
+				})
+			end
+		end
+	end
+
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED_ALL(_env, "EquipSkill_Accesory_15101_1", "UNDISPELLABLE", "UNSTEALABLE")) > 0 then
+		local HurtRateFactor = global.SpecialPropGetter(_env, "Hur_EquipSkill_Accesory_15101_1")(_env, actor)
+		local DelRpValueFactor = global.SpecialPropGetter(_env, "Del_EquipSkill_Accesory_15101_1")(_env, actor)
+
+		if global.MASTER(_env, target) then
+			damage.val = damage.val * (1 + HurtRateFactor)
+
+			global.ApplyRPDamage_ResultCheck(_env, actor, target, DelRpValueFactor)
+		end
+	end
+
+	local buffeft_damage = global.SpecialNumericEffect(_env, "+ApplyDamageValue", {
+		"?Normal"
+	}, damage.val)
+
+	global.ApplyBuff(_env, actor, {
+		timing = 0,
+		duration = 99,
+		tags = {
+			"APPLYDAMAGEVALUE"
+		}
+	}, {
+		buffeft_damage
+	})
+
+	if global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "GUIDIE_SHENYIN")) > 0 then
+		damage.val = 0
 	end
 
 	local result = global.ApplyHPDamage(_env, target, damage, lowerLimit)
@@ -1601,6 +1682,8 @@ function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimi
 	local this = _env.this
 	local global = _env.global
 
+	global.DispelBuff(_env, actor, global.BUFF_MARKED(_env, "APPLYDAMAGEVALUE"), 99)
+
 	if global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "AJYHou_Passive")) > 0 and global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "AJYHou_Passive_Done")) == 0 then
 		local hp_ajyh = global.UnitPropGetter(_env, "hp")(_env, target)
 		local shield_ajyh = global.UnitPropGetter(_env, "shield")(_env, target)
@@ -1702,6 +1785,93 @@ function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimi
 		else
 			damage.val = damage.val * (1 + DamageFactor)
 		end
+	end
+
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED_ALL(_env, "EquipSkill_Boots_15101_1", "UNDISPELLABLE", "UNSTEALABLE")) > 0 then
+		local AtkRateFactor = global.SpecialPropGetter(_env, "Atk_EquipSkill_Boots_15101_1")(_env, actor)
+
+		if global.MASTER(_env, target) and global.SpecialPropGetter(_env, "equipSkill_boots_15101_1")(_env, global.FriendField(_env)) < 3 then
+			local cards = global.Slice(_env, global.SortBy(_env, global.CardsInWindow(_env, global.GetOwner(_env, actor)), "<", global.GetCardCost), 1, 1)
+			local buff_hurt = global.SpecialNumericEffect(_env, "+equipSkill_boots_15101_1", {
+				"+Normal",
+				"+Normal"
+			}, 1)
+			local buffeft1 = global.NumericEffect(_env, "+atkrate", {
+				"+Normal",
+				"+Normal"
+			}, AtkRateFactor)
+			local cardvaluechange = global.CardCostEnchant(_env, "-", 2, 1)
+
+			for _, card in global.__iter__(cards) do
+				global.ApplyBuff(_env, global.FriendField(_env), {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"NUMERIC",
+						"BUFF",
+						"UNDISPELLABLE",
+						"UNSTEALABLE",
+						"UR_EQUIPMENT",
+						"YINGLUO"
+					}
+				}, {
+					buff_hurt
+				})
+				global.ApplyEnchant(_env, global.GetOwner(_env, actor), card, {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"CARDBUFF",
+						"YINGLUO",
+						"UNDISPELLABLE"
+					}
+				}, {
+					cardvaluechange
+				})
+				global.ApplyHeroCardBuff(_env, global.GetOwner(_env, actor), card, {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"CARDBUFF",
+						"BUFF",
+						"YINGLUO",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft1
+				})
+			end
+		end
+	end
+
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED_ALL(_env, "EquipSkill_Accesory_15101_1", "UNDISPELLABLE", "UNSTEALABLE")) > 0 then
+		local HurtRateFactor = global.SpecialPropGetter(_env, "Hur_EquipSkill_Accesory_15101_1")(_env, actor)
+		local DelRpValueFactor = global.SpecialPropGetter(_env, "Del_EquipSkill_Accesory_15101_1")(_env, actor)
+
+		if global.MASTER(_env, target) then
+			damage.val = damage.val * (1 + HurtRateFactor)
+
+			global.ApplyRPDamage_ResultCheck(_env, actor, target, DelRpValueFactor)
+		end
+	end
+
+	local buffeft_damage = global.SpecialNumericEffect(_env, "+ApplyDamageValue", {
+		"?Normal"
+	}, damage.val)
+
+	global.ApplyBuff(_env, actor, {
+		timing = 0,
+		duration = 99,
+		tags = {
+			"APPLYDAMAGEVALUE"
+		}
+	}, {
+		buffeft_damage
+	})
+
+	if global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "GUIDIE_SHENYIN")) > 0 then
+		damage.val = 0
 	end
 
 	local result = global.ApplyHPDamage(_env, target, damage, lowerLimit)
@@ -2153,6 +2323,79 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 		else
 			damages[n].val = damages[n].val * (1 + DamageFactor)
 		end
+	end
+
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED_ALL(_env, "EquipSkill_Boots_15101_1", "UNDISPELLABLE", "UNSTEALABLE")) > 0 then
+		local AtkRateFactor = global.SpecialPropGetter(_env, "Atk_EquipSkill_Boots_15101_1")(_env, actor)
+
+		if global.MASTER(_env, target) and n == total and global.SpecialPropGetter(_env, "equipSkill_boots_15101_1")(_env, global.FriendField(_env)) < 3 then
+			local cards = global.Slice(_env, global.SortBy(_env, global.CardsInWindow(_env, global.GetOwner(_env, actor)), "<", global.GetCardCost), 1, 1)
+			local buff_hurt = global.SpecialNumericEffect(_env, "+equipSkill_boots_15101_1", {
+				"+Normal",
+				"+Normal"
+			}, 1)
+			local buffeft1 = global.NumericEffect(_env, "+atkrate", {
+				"+Normal",
+				"+Normal"
+			}, AtkRateFactor)
+			local cardvaluechange = global.CardCostEnchant(_env, "-", 2, 1)
+
+			for _, card in global.__iter__(cards) do
+				global.ApplyBuff(_env, global.FriendField(_env), {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"NUMERIC",
+						"BUFF",
+						"UNDISPELLABLE",
+						"UNSTEALABLE",
+						"UR_EQUIPMENT",
+						"YINGLUO"
+					}
+				}, {
+					buff_hurt
+				})
+				global.ApplyEnchant(_env, global.GetOwner(_env, actor), card, {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"CARDBUFF",
+						"YINGLUO",
+						"UNDISPELLABLE"
+					}
+				}, {
+					cardvaluechange
+				})
+				global.ApplyHeroCardBuff(_env, global.GetOwner(_env, actor), card, {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"CARDBUFF",
+						"BUFF",
+						"YINGLUO",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft1
+				})
+			end
+		end
+	end
+
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED_ALL(_env, "EquipSkill_Accesory_15101_1", "UNDISPELLABLE", "UNSTEALABLE")) > 0 then
+		local HurtRateFactor = global.SpecialPropGetter(_env, "Hur_EquipSkill_Accesory_15101_1")(_env, actor)
+		local DelRpValueFactor = global.SpecialPropGetter(_env, "Del_EquipSkill_Accesory_15101_1")(_env, actor)
+
+		if global.MASTER(_env, target) then
+			damages[n].val = damages[n].val * (1 + HurtRateFactor)
+
+			global.ApplyRPDamage_ResultCheck(_env, actor, target, DelRpValueFactor)
+		end
+	end
+
+	if global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "GUIDIE_SHENYIN")) > 0 then
+		damages[n].val = 0
 	end
 
 	local result = global.ApplyHPDamage(_env, target, damages[n], lowerLimit, n ~= total)
@@ -2636,6 +2879,79 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 		else
 			damages[n].val = damages[n].val * (1 + DamageFactor)
 		end
+	end
+
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED_ALL(_env, "EquipSkill_Boots_15101_1", "UNDISPELLABLE", "UNSTEALABLE")) > 0 then
+		local AtkRateFactor = global.SpecialPropGetter(_env, "Atk_EquipSkill_Boots_15101_1")(_env, actor)
+
+		if global.MASTER(_env, target) and n == total and global.SpecialPropGetter(_env, "equipSkill_boots_15101_1")(_env, global.FriendField(_env)) < 3 then
+			local cards = global.Slice(_env, global.SortBy(_env, global.CardsInWindow(_env, global.GetOwner(_env, actor)), "<", global.GetCardCost), 1, 1)
+			local buff_hurt = global.SpecialNumericEffect(_env, "+equipSkill_boots_15101_1", {
+				"+Normal",
+				"+Normal"
+			}, 1)
+			local buffeft1 = global.NumericEffect(_env, "+atkrate", {
+				"+Normal",
+				"+Normal"
+			}, AtkRateFactor)
+			local cardvaluechange = global.CardCostEnchant(_env, "-", 2, 1)
+
+			for _, card in global.__iter__(cards) do
+				global.ApplyBuff(_env, global.FriendField(_env), {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"NUMERIC",
+						"BUFF",
+						"UNDISPELLABLE",
+						"UNSTEALABLE",
+						"UR_EQUIPMENT",
+						"YINGLUO"
+					}
+				}, {
+					buff_hurt
+				})
+				global.ApplyEnchant(_env, global.GetOwner(_env, actor), card, {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"CARDBUFF",
+						"YINGLUO",
+						"UNDISPELLABLE"
+					}
+				}, {
+					cardvaluechange
+				})
+				global.ApplyHeroCardBuff(_env, global.GetOwner(_env, actor), card, {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"CARDBUFF",
+						"BUFF",
+						"YINGLUO",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft1
+				})
+			end
+		end
+	end
+
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED_ALL(_env, "EquipSkill_Accesory_15101_1", "UNDISPELLABLE", "UNSTEALABLE")) > 0 then
+		local HurtRateFactor = global.SpecialPropGetter(_env, "Hur_EquipSkill_Accesory_15101_1")(_env, actor)
+		local DelRpValueFactor = global.SpecialPropGetter(_env, "Del_EquipSkill_Accesory_15101_1")(_env, actor)
+
+		if global.MASTER(_env, target) then
+			damages[n].val = damages[n].val * (1 + HurtRateFactor)
+
+			global.ApplyRPDamage_ResultCheck(_env, actor, target, DelRpValueFactor)
+		end
+	end
+
+	if global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "GUIDIE_SHENYIN")) > 0 then
+		damages[n].val = 0
 	end
 
 	local result = global.ApplyHPDamage(_env, target, damages[n], lowerLimit, n ~= total)
@@ -3173,6 +3489,9 @@ end
 function all.ApplyRealDamage(_env, actor, target, dmgrange, dmgtype, damagerate, delays, multidamage, damage_compare, damageamount, lowerLimit)
 	local this = _env.this
 	local global = _env.global
+
+	global.DispelBuff(_env, actor, global.BUFF_MARKED(_env, "REALDAMAGEVALUE"), 99)
+
 	local result, damage = nil
 	local atk = global.UnitPropGetter(_env, "atk")(_env, actor)
 	local atkrate = global.UnitPropGetter(_env, "atkrate")(_env, actor)
@@ -3220,6 +3539,19 @@ function all.ApplyRealDamage(_env, actor, target, dmgrange, dmgtype, damagerate,
 	end
 
 	damage.block = nil
+	local buffeft_damage = global.SpecialNumericEffect(_env, "+RealDamageValue", {
+		"?Normal"
+	}, damage.val)
+
+	global.ApplyBuff(_env, actor, {
+		timing = 0,
+		duration = 99,
+		tags = {
+			"REALDAMAGEVALUE"
+		}
+	}, {
+		buffeft_damage
+	})
 
 	if global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "GUIDIE_SHENYIN")) > 0 then
 		damage.val = 0
@@ -3241,7 +3573,63 @@ function all.ApplyRealDamage(_env, actor, target, dmgrange, dmgtype, damagerate,
 		end
 	end
 
+	global.DispelBuff(_env, actor, global.BUFF_MARKED(_env, "APPLYDAMAGEVALUE"), 99)
+
 	return result
+end
+
+function all.EvalRealDamage(_env, actor, target, dmgrange, dmgtype, damagerate, delays, multidamage, damage_compare, damageamount, lowerLimit)
+	local this = _env.this
+	local global = _env.global
+	local damage = nil
+	local atk = global.UnitPropGetter(_env, "atk")(_env, actor)
+	local atkrate = global.UnitPropGetter(_env, "atkrate")(_env, actor)
+	local hurtrate = global.UnitPropGetter(_env, "hurtrate")(_env, actor)
+	local critstrg = global.UnitPropGetter(_env, "critstrg")(_env, actor)
+	local aoerate = global.UnitPropGetter(_env, "aoerate")(_env, actor)
+	local unhurtrate = global.UnitPropGetter(_env, "unhurtrate")(_env, target)
+	local aoederate = global.UnitPropGetter(_env, "aoederate")(_env, target)
+
+	if unhurtrate > 0 then
+		unhurtrate = 0
+	end
+
+	if aoederate > 0 then
+		aoederate = 0
+	end
+
+	if dmgrange == 1 then
+		damage = global.EvalDamage_FlagCheck(_env, actor, target, {
+			1,
+			1,
+			0
+		})
+	elseif dmgrange == 2 then
+		damage = global.EvalAOEDamage_FlagCheck(_env, actor, target, {
+			1,
+			1,
+			0
+		})
+	end
+
+	damage.val = atk * atkrate * (1 + hurtrate - unhurtrate) * damagerate
+
+	if damage_compare then
+		damage.crit = damage_compare.crit
+	end
+
+	if damage and damage.crit then
+		damage.val = damage.val * (1.5 + critstrg)
+	end
+
+	if damageamount then
+		damage.val = damageamount
+		damage.crit = nil
+	end
+
+	damage.block = nil
+
+	return damage.val
 end
 
 function all.NoMove(_env, unit)
@@ -3291,6 +3679,29 @@ function all.SelectBuffCount_Unit(_env, units, tags)
 	end
 
 	return count
+end
+
+function all.Serious_Injury(_env, actor, target, ratio, duration, timing)
+	local this = _env.this
+	local global = _env.global
+	local buff1 = global.HPRecoverRatioEffect(_env, -ratio)
+	local buff2 = global.ShieldRatioEffect(_env, -ratio)
+
+	global.ApplyBuff_Debuff(_env, actor, target, {
+		display = "Injury",
+		duration = duration,
+		timing = timing,
+		tags = {
+			"STATUS",
+			"DEBUFF",
+			"INJURY",
+			"DISPELLABLE",
+			"UNSTEALABLE"
+		}
+	}, {
+		buff1,
+		buff2
+	}, 1, 0)
 end
 
 return _M

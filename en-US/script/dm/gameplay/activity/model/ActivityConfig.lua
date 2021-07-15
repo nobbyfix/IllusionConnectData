@@ -382,5 +382,5 @@ ActivityMainMapTitleConfig = {
 }
 ActivitySupportScheduleId = {
 	[ActivityType_UI.kActivityBlockZuoHe] = "ABS_ZuoHe",
-	[ActivityType_UI.kActivityWxh] = "ABS_WuXiuHui"
+	[ActivityType_UI.kActivityWxh] = "ABS_WuXiuHui_New"
 }

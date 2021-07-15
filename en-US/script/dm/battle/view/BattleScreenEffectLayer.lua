@@ -170,7 +170,7 @@ function BattleScreenEffectLayer:showPortraitEffect()
 			text:addTo(textNode)
 		else
 			local portraitNode = portraitAnim:getChildByFullName("model.image")
-			local portrait = ccui.ImageView:create(modelId .. ".png", ccui.TextureResType.plistType)
+			local portrait = ccui.ImageView:create("asset/heros/" .. modelId .. ".png", ccui.TextureResType.localType)
 
 			portrait:addTo(portraitNode):offset(128, 22)
 
@@ -186,7 +186,7 @@ function BattleScreenEffectLayer:showPortraitEffect()
 		local portraitNode = portraitAnim:getChildByFullName("model")
 		local portraitNode1 = portraitAnim:getChildByFullName("model_shine")
 		local portraitNode2 = portraitAnim:getChildByFullName("model_shine2")
-		local portrait = ccui.ImageView:create(modelId .. ".png", ccui.TextureResType.plistType)
+		local portrait = ccui.ImageView:create("asset/heros/" .. modelId .. ".png", ccui.TextureResType.localType)
 
 		portrait:addTo(portraitNode):offset(128, 22)
 		portrait:clone():addTo(portraitNode1):offset(128, 22)

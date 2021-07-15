@@ -303,7 +303,8 @@ ActivityType = {
 ActivityId = {
 	kActivityBlockZuoHe = "ActivityBlock_ZuoHe_Support",
 	kActivityBlock = "ActivityBlock",
-	kActivityWxh = "ActivityBlock_WuXiuHui_Support"
+	kActivityWxh = "ActivityBlock_WuXiuHui_Support",
+	kActivityWxhNew = "ActivityBlock_WuXiuHui_New_Support"
 }
 ActivityComplexId = {
 	kActivityBlock = "ActivityBlock",

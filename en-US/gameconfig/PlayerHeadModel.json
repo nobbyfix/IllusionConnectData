@@ -119,6 +119,18 @@
         "UnlockDesc": "ALSi_3_HeadUnlock",
         "Zoom": 0.5
     },
+    "Head_AMLYa": {
+        "HeadDesc": "HeroBase_Desc_AMLYa",
+        "HeadMove": "",
+        "HeadName": "AMLYa_HeadName",
+        "HeroMasterId": "AMLYa",
+        "IconPath": "asset/heros/AMLYa/battlepic_amlya.png",
+        "IsHiddenHead": 1,
+        "SurfaceMasterId": "",
+        "Type": 1,
+        "UnlockDesc": "AMLYa_HeadUnlock",
+        "Zoom": 0.5
+    },
     "Head_ATSheng": {
         "HeadDesc": "HeroBase_Desc_ATSheng",
         "HeadMove": "",
@@ -623,6 +635,18 @@
         "UnlockDesc": "HSYZhai_HeadUnlock",
         "Zoom": 0.5
     },
+    "Head_HSYZhai_2": {
+        "HeadDesc": "Surface_HSYZhai_olympics_Desc",
+        "HeadMove": "",
+        "HeadName": "HSYZhai_2_HeadName",
+        "HeroMasterId": "HSYZhai",
+        "IconPath": "asset/heros/xcy_olympics/battlepic_xcy_olympics.png",
+        "IsHiddenHead": 1,
+        "SurfaceMasterId": "Surface_HSYZhai_2",
+        "Type": 5,
+        "UnlockDesc": "HSYZhai_2_HeadUnlock",
+        "Zoom": 0.5
+    },
     "Head_HSheng": {
         "HeadDesc": "HeroBase_Desc_HSheng",
         "HeadMove": "",
@@ -803,6 +827,18 @@
         "UnlockDesc": "KXuan_HeadUnlock",
         "Zoom": 0.5
     },
+    "Head_LAMu": {
+        "HeadDesc": "HeroBase_Desc_LAMu",
+        "HeadMove": "",
+        "HeadName": "LAMu_HeadName",
+        "HeroMasterId": "LAMu",
+        "IconPath": "asset/heros/LAMu/battlepic_lamu.png",
+        "IsHiddenHead": 1,
+        "SurfaceMasterId": "",
+        "Type": 1,
+        "UnlockDesc": "LAMu_HeadUnlock",
+        "Zoom": 0.5
+    },
     "Head_LCYShi": {
         "HeadDesc": "HeroBase_Desc_LCYShi",
         "HeadMove": "",
@@ -837,6 +873,18 @@
         "SurfaceMasterId": "",
         "Type": 1,
         "UnlockDesc": "LDu_HeadUnlock",
+        "Zoom": 0.5
+    },
+    "Head_LEIMu": {
+        "HeadDesc": "HeroBase_Desc_LEIMu",
+        "HeadMove": "",
+        "HeadName": "LEIMu_HeadName",
+        "HeroMasterId": "LEIMu",
+        "IconPath": "asset/heros/LEIMu/battlepic_leimu.png",
+        "IsHiddenHead": 1,
+        "SurfaceMasterId": "",
+        "Type": 1,
+        "UnlockDesc": "LEIMu_HeadUnlock",
         "Zoom": 0.5
     },
     "Head_LFEr": {
@@ -1475,6 +1523,18 @@
         "UnlockDesc": "SP_PNCao_HeadUnlock",
         "Zoom": 0.5
     },
+    "Head_SP_SSQXin": {
+        "HeadDesc": "HeroBase_Desc_SP_SSQXin",
+        "HeadMove": "",
+        "HeadName": "SP_SSQXin_HeadName",
+        "HeroMasterId": "SP_SSQXin",
+        "IconPath": "asset/heros/sp_xmlhui/battlepic_sp_xmlhui.png",
+        "IsHiddenHead": 1,
+        "SurfaceMasterId": "",
+        "Type": 1,
+        "UnlockDesc": "SP_SSQXin_HeadUnlock",
+        "Zoom": 0.5
+    },
     "Head_SRen": {
         "HeadDesc": "HeroBase_Desc_SRen",
         "HeadMove": "",
@@ -1641,6 +1701,18 @@
         "SurfaceMasterId": "Surface_WEDe_2",
         "Type": 5,
         "UnlockDesc": "WEDe_2_HeadUnlock",
+        "Zoom": 0.5
+    },
+    "Head_WSLi": {
+        "HeadDesc": "HeroBase_Desc_WSLi",
+        "HeadMove": "",
+        "HeadName": "WSLi_HeadName",
+        "HeroMasterId": "WSLi",
+        "IconPath": "asset/heros/aflya/battlepic_aflya.png",
+        "IsHiddenHead": 1,
+        "SurfaceMasterId": "",
+        "Type": 1,
+        "UnlockDesc": "WSLi_HeadUnlock",
         "Zoom": 0.5
     },
     "Head_WTXXuan": {
@@ -1913,7 +1985,7 @@
         "HeadName": "YXNMei_HeadName",
         "HeroMasterId": "YXNMei",
         "IconPath": "asset/heros/YXNMei/battlepic_YXNMei.png",
-        "IsHiddenHead": 1,
+        "IsHiddenHead": 0,
         "SurfaceMasterId": "",
         "Type": 1,
         "UnlockDesc": "YXNMei_HeadUnlock",
@@ -2157,6 +2229,18 @@
         "SurfaceMasterId": "",
         "Type": 4,
         "UnlockDesc": "HeroAwaken_LYXi",
+        "Zoom": 1.0
+    },
+    "HeroAwaken_MGNa": {
+        "HeadDesc": "HeroAwaken_MGNa_Desc",
+        "HeadMove": "",
+        "HeadName": "HeroAwaken_MGNa_1_Name",
+        "HeroMasterId": "MGNa",
+        "IconPath": "asset/heros/MGNa/battlepic_yfei_awaken.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "",
+        "Type": 4,
+        "UnlockDesc": "HeroAwaken_MGNa",
         "Zoom": 1.0
     },
     "HeroAwaken_MLYTLSha": {

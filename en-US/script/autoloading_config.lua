@@ -441,6 +441,11 @@ local mappings = {
 		name = "BuffTipsMediator",
 		type = "@C"
 	},
+	GameIntroduceMediator = {
+		url = "dm.gameplay.popup.GameIntroduceMediator",
+		name = "GameIntroduceMediator",
+		type = "@C"
+	},
 	ItemTipsMediator = {
 		url = "dm.gameplay.popup.ItemTipsMediator",
 		name = "ItemTipsMediator",

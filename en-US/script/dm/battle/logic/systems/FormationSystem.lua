@@ -486,6 +486,10 @@ function FormationSystem:revive(actor, hpRatio, anger, location)
 		return false, "NoValidBody"
 	end
 
+	if not unit:canBeUnearth() then
+		return false, "ForbidenRevive"
+	end
+
 	local targetId = nil
 	local prefix = unit:getId() .. "_r"
 	local entityManager = self._entityManager
@@ -508,6 +512,7 @@ function FormationSystem:revive(actor, hpRatio, anger, location)
 	local healthComp = newUnit:getComponent("Health")
 
 	healthComp:setHp(healthComp:getMaxHp() * hpRatio)
+	newUnit:setBeRevive(true)
 
 	local newUnit, detail = self:_settleUnit(player, newUnit, cellId, animation, false, "Revive")
 
@@ -526,7 +531,10 @@ function FormationSystem:reviveByUnit(actor, unit, hpRatio, anger, location)
 		return false, "InvalidRevivePosition"
 	end
 
-	local bodies = self._cemetery:getUnitsBySide(player:getSide())
+	if not unit:canBeUnearth() then
+		return false, "ForbidenRevive"
+	end
+
 	local unit = unit
 	local targetId = nil
 	local prefix = unit:getId() .. "_r"
@@ -550,6 +558,7 @@ function FormationSystem:reviveByUnit(actor, unit, hpRatio, anger, location)
 	local healthComp = newUnit:getComponent("Health")
 
 	healthComp:setHp(healthComp:getMaxHp() * hpRatio)
+	newUnit:setBeRevive(true)
 
 	local newUnit, detail = self:_settleUnit(player, newUnit, cellId, animation, false, "Revive")
 
@@ -586,6 +595,10 @@ function FormationSystem:reviveRandom(actor, hpRatio, anger, location)
 		return false, "NoValidBody"
 	end
 
+	if not unit:canBeUnearth() then
+		return false, "ForbidenRevive"
+	end
+
 	local targetId = nil
 	local prefix = (player:getSide() == kBattleSideA and "f_" or "e_") .. unit:getId() .. "_r"
 	local entityManager = self._entityManager
@@ -608,6 +621,7 @@ function FormationSystem:reviveRandom(actor, hpRatio, anger, location)
 	local healthComp = newUnit:getComponent("Health")
 
 	healthComp:setHp(healthComp:getMaxHp() * hpRatio)
+	newUnit:setBeRevive(true)
 
 	local newUnit, detail = self:_settleUnit(player, newUnit, cellId, animation, false, "Revive")
 
@@ -1200,6 +1214,25 @@ function FormationSystem:findFoe(actor)
 	end
 
 	return nil
+end
+
+function FormationSystem:getPassiveCountOnHero(unit, skillId)
+	local count = 0
+	local skillComp = unit:getComponent("Skill")
+
+	for k, v in pairs(skillComp:getSkills() or {}) do
+		if table.getn(v) > 0 then
+			for k_, v_ in pairs(v) do
+				if v_:getId() == skillId then
+					count = count + 1
+				end
+			end
+		elseif v.getId and v:getId() == skillId then
+			count = count + 1
+		end
+	end
+
+	return count
 end
 
 function FormationSystem:updateOnRoundEnded()

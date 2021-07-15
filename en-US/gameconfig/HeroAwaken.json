@@ -251,13 +251,34 @@
         "StoryLink": "S11S01",
         "SurfaceId": "Surface_LYXi_Awake"
     },
+    "MGNa": {
+        "AnimSound": "Se_Effect_Awakening_MGNa",
+        "Animation": "yfei_Awaken",
+        "CutIn": [
+            0,
+            0,
+            1.5
+        ],
+        "ModelId": "Model_MGNa_Awake",
+        "Name": "MGNa_Awake_Name",
+        "NameDesc": "MGNa_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_MGNa_UnAwake",
+        "Reward": "HeroAwaken_MGNa",
+        "ShowHero": "MGNa",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "MGNa_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_MGNa_Awake"
+    },
     "MLYTLSha": {
         "AnimSound": "Se_Effect_Awakening_MLYTLSha",
         "Animation": "ana_Awaken",
         "CutIn": [
             0,
             0,
-            0.7
+            1.3
         ],
         "ModelId": "Model_MLYTLSha_Awake",
         "Name": "MLYTLSha_Awake_Name",
@@ -341,7 +362,7 @@
         "CutIn": [
             0,
             0,
-            0.7
+            1.1
         ],
         "ModelId": "Model_YBYa_Awake",
         "Name": "YBYa_Awake_Name",

@@ -1509,6 +1509,65 @@
             100
         ]
     },
+    "DreamChallenge_TimeLimit_Leo1_T01N01": {
+        "AwakenAttrEffect": "DC_7star_buff",
+        "BlockPoint": [
+            "Leo1_T01N01M01",
+            "Leo1_T01N01M02",
+            "Leo1_T01N01M03",
+            "Leo1_T01N01M04",
+            "Leo1_T01N01M05",
+            "Leo1_T01N01M06",
+            "Leo1_T01N01M07",
+            "Leo1_T01N01M08",
+            "Leo1_T01N01M09",
+            "Leo1_T01N01M10",
+            "Leo1_T01N01M11",
+            "Leo1_T01N01M12"
+        ],
+        "Desc": "{\"type\":\"Day\",\"value\":\"2021-08-01  05:00:00\"}",
+        "EndDesc": "DreamChallenge_TimeLimit_Leo1_N01_EndDesc",
+        "Excellent": [
+            {
+                "Skill": "DC_TimeLimit_Buff",
+                "job": [
+                    "Defense"
+                ]
+            }
+        ],
+        "Master": [
+            "Master_XueZhan"
+        ],
+        "MissionPicType": 4,
+        "Name": "DreamChallenge_TimeLimit_Leo1_N01_Name",
+        "Num": 1,
+        "Pic": "mjt_scene_xz_bg",
+        "PointBackground": "",
+        "PointDesc": "DreamChallenge_TimeLimit_Leo1_N01_PointDesc",
+        "ShortDesc": "DreamChallenge_TimeLimit_Leo1_N01_ShortDesc",
+        "Show": "Leo1_T01N01_Reward",
+        "ShowCondition": {
+            "Day": "2021-07-23  05:00:00",
+            "LEVEL": 5
+        },
+        "StarsAttrEffect": "DC_5star_buff",
+        "StoryLink": "",
+        "TabPic": "mjt_z_butten_x3",
+        "TextPic": "mjt_txt_xz_szizs",
+        "Type": 1,
+        "UnlockCondition": {
+            "Day": "2021-07-23  05:00:00",
+            "LEVEL": 5
+        },
+        "fatigue": 3,
+        "screen": {
+            "Down": []
+        },
+        "shifting": [
+            110,
+            100
+        ]
+    },
     "DreamChallenge_TimeLimit_Music_T01N01": {
         "AwakenAttrEffect": "DC_7star_buff",
         "BlockPoint": [

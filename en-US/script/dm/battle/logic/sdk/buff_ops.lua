@@ -367,6 +367,18 @@ function exports.ShieldEffect(env, value, upLimit)
 	})
 end
 
+function exports.ShieldRatioEffect(env, ratio)
+	return ShieldRatioEffect:new({
+		ratio = ratio
+	})
+end
+
+function exports.HPRecoverRatioEffect(env, ratio)
+	return HPRecoverRatioEffect:new({
+		ratio = ratio
+	})
+end
+
 function exports.Freeze(env)
 	return StatusEffect:new({
 		status = kBEFrozen

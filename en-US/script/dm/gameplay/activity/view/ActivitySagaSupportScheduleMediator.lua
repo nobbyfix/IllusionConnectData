@@ -357,5 +357,5 @@ function ActivitySagaSupportScheduleMediator:onClickBack(sender, eventType)
 end
 
 function ActivitySagaSupportScheduleMediator:getViewScheduleId(periodId)
-	return string.gsub(periodId, ActivitySupportScheduleId[self._ui], "schedule")
+	return string.gsub(periodId, ActivitySupportScheduleId[self._ui], "ABS_WuXiuHui")
 end

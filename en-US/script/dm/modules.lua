@@ -588,7 +588,8 @@ local modules = {
 					"dm.gameplay.develop.view.herostrength.RelationInfoWidget",
 					"dm.gameplay.develop.view.herostrength.RelationHeroWidget",
 					"dm.gameplay.develop.view.herostrength.SkillDescWidget",
-					"dm.gameplay.develop.view.herostrength.SkillTipWidget"
+					"dm.gameplay.develop.view.herostrength.SkillTipWidget",
+					"dm.gameplay.develop.view.herostrength.SkillMaxDescWidget"
 				},
 				injections = {
 					classes = {
@@ -1023,14 +1024,14 @@ local modules = {
 				injections = {
 					views = {
 						{
-							res = "asset/ui/HeroShowDetails.csb",
+							res = "asset/ui/HeroShowDetailsNew.csb",
 							name = "HeroShowDetailsView",
 							mediator = "HeroShowDetailsMediator"
 						},
 						{
-							res = "asset/ui/HeroShowDetails.csb",
+							res = "asset/ui/HeroShowDetailsNew.csb",
 							name = "HeroInfoView",
-							mediator = "HeroInfoMediator"
+							mediator = "HeroShowDetailsMediator"
 						},
 						{
 							res = "asset/ui/HeroShowMain.csb",
@@ -1296,6 +1297,11 @@ local modules = {
 							res = "asset/ui/ShowSomeWordTips.csb",
 							name = "ShowSomeWordTipsView",
 							mediator = "ShowSomeWordTipsMediator"
+						},
+						{
+							res = "asset/ui/GameIntroduce.csb",
+							name = "GameIntroduceView",
+							mediator = "GameIntroduceMediator"
 						},
 						{
 							res = "asset/ui/ComposeToEquipTips.csb",

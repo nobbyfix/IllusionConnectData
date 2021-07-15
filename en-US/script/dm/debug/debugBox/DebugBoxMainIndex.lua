@@ -143,7 +143,8 @@ DebugBoxMainIndex = {
 					"重置英魂副本挑战次数",
 					"关卡一键速达",
 					"通关所有活动本",
-					"通关指定梦境塔"
+					"通关指定梦境塔",
+					"通关所有新活动本"
 				}
 			},
 			{
@@ -629,6 +630,10 @@ DebugBoxMainIndex = {
 			{
 				"通关指定梦境塔",
 				"DreamChallengeFinish"
+			},
+			{
+				"通关所有新活动本",
+				"NewActivityStageFinish"
 			},
 			{
 				"增加本周荣誉值",

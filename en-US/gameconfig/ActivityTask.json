@@ -4733,6 +4733,529 @@
         "Reward": "ActivityBlock_WuXiuHui_DailyTask_6_Reward",
         "TaskIcon": ""
     },
+    "ActivityBlock_WuXiuHui_New_AchieveMentTask_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_WuXiuHuiChengjiuDian",
+                "factor1": [
+                    200
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_WuXiuHui_AchieveMentTask_1_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_WuXiuHui_AchieveMentTask_1_Name",
+        "OrderNum": 1,
+        "Reward": "ActivityBlock_WuXiuHui_New_AchieveMentTask_1_Reward",
+        "TaskIcon": ""
+    },
+    "ActivityBlock_WuXiuHui_New_AchieveMentTask_10": {
+        "Condition": [
+            {
+                "conditionType": "Condi_WuXiuHuiChengjiuDian",
+                "factor1": [
+                    4500
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_WuXiuHui_AchieveMentTask_10_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_WuXiuHui_AchieveMentTask_10_Name",
+        "OrderNum": 10,
+        "Reward": "ActivityBlock_WuXiuHui_New_AchieveMentTask_10_Reward",
+        "TaskIcon": ""
+    },
+    "ActivityBlock_WuXiuHui_New_AchieveMentTask_11": {
+        "Condition": [
+            {
+                "conditionType": "Condi_WuXiuHuiChengjiuDian",
+                "factor1": [
+                    5000
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_WuXiuHui_AchieveMentTask_11_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_WuXiuHui_AchieveMentTask_11_Name",
+        "OrderNum": 11,
+        "Reward": "ActivityBlock_WuXiuHui_New_AchieveMentTask_11_Reward",
+        "TaskIcon": ""
+    },
+    "ActivityBlock_WuXiuHui_New_AchieveMentTask_12": {
+        "Condition": [
+            {
+                "conditionType": "Condi_WuXiuHuiChengjiuDian",
+                "factor1": [
+                    6000
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_WuXiuHui_AchieveMentTask_12_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_WuXiuHui_AchieveMentTask_12_Name",
+        "OrderNum": 12,
+        "Reward": "ActivityBlock_WuXiuHui_New_AchieveMentTask_12_Reward",
+        "TaskIcon": ""
+    },
+    "ActivityBlock_WuXiuHui_New_AchieveMentTask_13": {
+        "Condition": [
+            {
+                "conditionType": "Condi_WuXiuHuiChengjiuDian",
+                "factor1": [
+                    7000
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_WuXiuHui_AchieveMentTask_13_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_WuXiuHui_AchieveMentTask_13_Name",
+        "OrderNum": 13,
+        "Reward": "ActivityBlock_WuXiuHui_New_AchieveMentTask_13_Reward",
+        "TaskIcon": ""
+    },
+    "ActivityBlock_WuXiuHui_New_AchieveMentTask_14": {
+        "Condition": [
+            {
+                "conditionType": "Condi_WuXiuHuiChengjiuDian",
+                "factor1": [
+                    8000
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_WuXiuHui_AchieveMentTask_14_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_WuXiuHui_AchieveMentTask_14_Name",
+        "OrderNum": 14,
+        "Reward": "ActivityBlock_WuXiuHui_New_AchieveMentTask_14_Reward",
+        "TaskIcon": ""
+    },
+    "ActivityBlock_WuXiuHui_New_AchieveMentTask_15": {
+        "Condition": [
+            {
+                "conditionType": "Condi_WuXiuHuiChengjiuDian",
+                "factor1": [
+                    9000
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_WuXiuHui_AchieveMentTask_15_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_WuXiuHui_AchieveMentTask_15_Name",
+        "OrderNum": 15,
+        "Reward": "ActivityBlock_WuXiuHui_New_AchieveMentTask_15_Reward",
+        "TaskIcon": ""
+    },
+    "ActivityBlock_WuXiuHui_New_AchieveMentTask_16": {
+        "Condition": [
+            {
+                "conditionType": "Condi_WuXiuHuiChengjiuDian",
+                "factor1": [
+                    10000
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_WuXiuHui_AchieveMentTask_16_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_WuXiuHui_AchieveMentTask_16_Name",
+        "OrderNum": 16,
+        "Reward": "ActivityBlock_WuXiuHui_New_AchieveMentTask_16_Reward",
+        "TaskIcon": ""
+    },
+    "ActivityBlock_WuXiuHui_New_AchieveMentTask_17": {
+        "Condition": [
+            {
+                "conditionType": "Condi_WuXiuHuiChengjiuDian",
+                "factor1": [
+                    11000
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_WuXiuHui_AchieveMentTask_17_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_WuXiuHui_AchieveMentTask_17_Name",
+        "OrderNum": 17,
+        "Reward": "ActivityBlock_WuXiuHui_New_AchieveMentTask_17_Reward",
+        "TaskIcon": ""
+    },
+    "ActivityBlock_WuXiuHui_New_AchieveMentTask_18": {
+        "Condition": [
+            {
+                "conditionType": "Condi_WuXiuHuiChengjiuDian",
+                "factor1": [
+                    12000
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_WuXiuHui_AchieveMentTask_18_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_WuXiuHui_AchieveMentTask_18_Name",
+        "OrderNum": 18,
+        "Reward": "ActivityBlock_WuXiuHui_New_AchieveMentTask_18_Reward",
+        "TaskIcon": ""
+    },
+    "ActivityBlock_WuXiuHui_New_AchieveMentTask_19": {
+        "Condition": [
+            {
+                "conditionType": "Condi_WuXiuHuiChengjiuDian",
+                "factor1": [
+                    13000
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_WuXiuHui_AchieveMentTask_19_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_WuXiuHui_AchieveMentTask_19_Name",
+        "OrderNum": 19,
+        "Reward": "ActivityBlock_WuXiuHui_New_AchieveMentTask_19_Reward",
+        "TaskIcon": ""
+    },
+    "ActivityBlock_WuXiuHui_New_AchieveMentTask_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_WuXiuHuiChengjiuDian",
+                "factor1": [
+                    500
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_WuXiuHui_AchieveMentTask_2_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_WuXiuHui_AchieveMentTask_2_Name",
+        "OrderNum": 2,
+        "Reward": "ActivityBlock_WuXiuHui_New_AchieveMentTask_2_Reward",
+        "TaskIcon": ""
+    },
+    "ActivityBlock_WuXiuHui_New_AchieveMentTask_20": {
+        "Condition": [
+            {
+                "conditionType": "Condi_WuXiuHuiChengjiuDian",
+                "factor1": [
+                    14000
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_WuXiuHui_AchieveMentTask_20_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_WuXiuHui_AchieveMentTask_20_Name",
+        "OrderNum": 20,
+        "Reward": "ActivityBlock_WuXiuHui_New_AchieveMentTask_20_Reward",
+        "TaskIcon": ""
+    },
+    "ActivityBlock_WuXiuHui_New_AchieveMentTask_21": {
+        "Condition": [
+            {
+                "conditionType": "Condi_WuXiuHuiChengjiuDian",
+                "factor1": [
+                    15000
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_WuXiuHui_AchieveMentTask_21_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_WuXiuHui_AchieveMentTask_21_Name",
+        "OrderNum": 21,
+        "Reward": "ActivityBlock_WuXiuHui_New_AchieveMentTask_21_Reward",
+        "TaskIcon": ""
+    },
+    "ActivityBlock_WuXiuHui_New_AchieveMentTask_22": {
+        "Condition": [
+            {
+                "conditionType": "Condi_WuXiuHuiChengjiuDian",
+                "factor1": [
+                    16000
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_WuXiuHui_AchieveMentTask_22_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_WuXiuHui_AchieveMentTask_22_Name",
+        "OrderNum": 22,
+        "Reward": "ActivityBlock_WuXiuHui_New_AchieveMentTask_22_Reward",
+        "TaskIcon": ""
+    },
+    "ActivityBlock_WuXiuHui_New_AchieveMentTask_23": {
+        "Condition": [
+            {
+                "conditionType": "Condi_WuXiuHuiChengjiuDian",
+                "factor1": [
+                    17000
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_WuXiuHui_AchieveMentTask_23_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_WuXiuHui_AchieveMentTask_23_Name",
+        "OrderNum": 23,
+        "Reward": "ActivityBlock_WuXiuHui_New_AchieveMentTask_23_Reward",
+        "TaskIcon": ""
+    },
+    "ActivityBlock_WuXiuHui_New_AchieveMentTask_24": {
+        "Condition": [
+            {
+                "conditionType": "Condi_WuXiuHuiChengjiuDian",
+                "factor1": [
+                    18000
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_WuXiuHui_AchieveMentTask_24_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_WuXiuHui_AchieveMentTask_24_Name",
+        "OrderNum": 24,
+        "Reward": "ActivityBlock_WuXiuHui_New_AchieveMentTask_24_Reward",
+        "TaskIcon": ""
+    },
+    "ActivityBlock_WuXiuHui_New_AchieveMentTask_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_WuXiuHuiChengjiuDian",
+                "factor1": [
+                    1000
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_WuXiuHui_AchieveMentTask_3_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_WuXiuHui_AchieveMentTask_3_Name",
+        "OrderNum": 3,
+        "Reward": "ActivityBlock_WuXiuHui_New_AchieveMentTask_3_Reward",
+        "TaskIcon": ""
+    },
+    "ActivityBlock_WuXiuHui_New_AchieveMentTask_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_WuXiuHuiChengjiuDian",
+                "factor1": [
+                    1500
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_WuXiuHui_AchieveMentTask_4_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_WuXiuHui_AchieveMentTask_4_Name",
+        "OrderNum": 4,
+        "Reward": "ActivityBlock_WuXiuHui_New_AchieveMentTask_4_Reward",
+        "TaskIcon": ""
+    },
+    "ActivityBlock_WuXiuHui_New_AchieveMentTask_5": {
+        "Condition": [
+            {
+                "conditionType": "Condi_WuXiuHuiChengjiuDian",
+                "factor1": [
+                    2000
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_WuXiuHui_AchieveMentTask_5_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_WuXiuHui_AchieveMentTask_5_Name",
+        "OrderNum": 5,
+        "Reward": "ActivityBlock_WuXiuHui_New_AchieveMentTask_5_Reward",
+        "TaskIcon": ""
+    },
+    "ActivityBlock_WuXiuHui_New_AchieveMentTask_6": {
+        "Condition": [
+            {
+                "conditionType": "Condi_WuXiuHuiChengjiuDian",
+                "factor1": [
+                    2500
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_WuXiuHui_AchieveMentTask_6_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_WuXiuHui_AchieveMentTask_6_Name",
+        "OrderNum": 6,
+        "Reward": "ActivityBlock_WuXiuHui_New_AchieveMentTask_6_Reward",
+        "TaskIcon": ""
+    },
+    "ActivityBlock_WuXiuHui_New_AchieveMentTask_7": {
+        "Condition": [
+            {
+                "conditionType": "Condi_WuXiuHuiChengjiuDian",
+                "factor1": [
+                    3000
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_WuXiuHui_AchieveMentTask_7_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_WuXiuHui_AchieveMentTask_7_Name",
+        "OrderNum": 7,
+        "Reward": "ActivityBlock_WuXiuHui_New_AchieveMentTask_7_Reward",
+        "TaskIcon": ""
+    },
+    "ActivityBlock_WuXiuHui_New_AchieveMentTask_8": {
+        "Condition": [
+            {
+                "conditionType": "Condi_WuXiuHuiChengjiuDian",
+                "factor1": [
+                    3500
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_WuXiuHui_AchieveMentTask_8_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_WuXiuHui_AchieveMentTask_8_Name",
+        "OrderNum": 8,
+        "Reward": "ActivityBlock_WuXiuHui_New_AchieveMentTask_8_Reward",
+        "TaskIcon": ""
+    },
+    "ActivityBlock_WuXiuHui_New_AchieveMentTask_9": {
+        "Condition": [
+            {
+                "conditionType": "Condi_WuXiuHuiChengjiuDian",
+                "factor1": [
+                    4000
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_WuXiuHui_AchieveMentTask_9_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_WuXiuHui_AchieveMentTask_9_Name",
+        "OrderNum": 9,
+        "Reward": "ActivityBlock_WuXiuHui_New_AchieveMentTask_9_Reward",
+        "TaskIcon": ""
+    },
+    "ActivityBlock_WuXiuHui_New_DailyTask_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_winActStage",
+                "factor1": [
+                    10
+                ],
+                "params": [
+                    "ActivityBlock_WuXiuHui_New_Map"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_WuXiuHui_DailyTask_1_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_WuXiuHui_DailyTask_1_Name",
+        "OrderNum": 1,
+        "Reward": "ActivityBlock_WuXiuHui_New_DailyTask_1_Reward",
+        "TaskIcon": ""
+    },
+    "ActivityBlock_WuXiuHui_New_DailyTask_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_winActBossStage",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_WuXiuHui_New_Map"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_WuXiuHui_DailyTask_2_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_WuXiuHui_DailyTask_2_Name",
+        "OrderNum": 2,
+        "Reward": "ActivityBlock_WuXiuHui_New_DailyTask_2_Reward",
+        "TaskIcon": ""
+    },
+    "ActivityBlock_WuXiuHui_New_DailyTask_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TowerEnter",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_WuXiuHui_DailyTask_3_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_WuXiuHui_DailyTask_3_Name",
+        "OrderNum": 3,
+        "Reward": "ActivityBlock_WuXiuHui_New_DailyTask_3_Reward",
+        "TaskIcon": ""
+    },
+    "ActivityBlock_WuXiuHui_New_DailyTask_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroDate",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_WuXiuHui_DailyTask_4_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_WuXiuHui_DailyTask_4_Name",
+        "OrderNum": 4,
+        "Reward": "ActivityBlock_WuXiuHui_New_DailyTask_4_Reward",
+        "TaskIcon": ""
+    },
+    "ActivityBlock_WuXiuHui_New_DailyTask_5": {
+        "Condition": [
+            {
+                "conditionType": "Condi_CrusadeJoin",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_WuXiuHui_DailyTask_5_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_WuXiuHui_DailyTask_5_Name",
+        "OrderNum": 5,
+        "Reward": "ActivityBlock_WuXiuHui_New_DailyTask_5_Reward",
+        "TaskIcon": ""
+    },
+    "ActivityBlock_WuXiuHui_New_DailyTask_6": {
+        "Condition": [
+            {
+                "conditionType": "Condi_FinishTask",
+                "factor1": [
+                    0
+                ],
+                "factorStr1": [
+                    "ActivityBlock_WuXiuHui_New_DailyTask_1",
+                    "ActivityBlock_WuXiuHui_New_DailyTask_2",
+                    "ActivityBlock_WuXiuHui_New_DailyTask_3",
+                    "ActivityBlock_WuXiuHui_New_DailyTask_4",
+                    "ActivityBlock_WuXiuHui_New_DailyTask_5"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_WuXiuHui_DailyTask_6_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_WuXiuHui_DailyTask_6_Name",
+        "OrderNum": 6,
+        "Reward": "ActivityBlock_WuXiuHui_New_DailyTask_6_Reward",
+        "TaskIcon": ""
+    },
     "ActivityBlock_ZuoHe_AchieveMentTask_1": {
         "Condition": [
             {
@@ -7148,6 +7671,186 @@
         "Reward": "Activity_DrawCardBonus_50_Reward",
         "TaskIcon": ""
     },
+    "Activity_DrawCardBonus_51": {
+        "Condition": [
+            {
+                "conditionType": "Condi_DrawCardTag",
+                "factor1": [
+                    10
+                ],
+                "params": [
+                    "1UP"
+                ]
+            }
+        ],
+        "Desc": "Activity_DrawCardBonus_Task1_Desc",
+        "Destination": "view://RecruitView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_DrawCardBonus_Task1_Name",
+        "OrderNum": 1,
+        "Reward": "Activity_DrawCardBonus_51_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_DrawCardBonus_52": {
+        "Condition": [
+            {
+                "conditionType": "Condi_DrawCardTag",
+                "factor1": [
+                    20
+                ],
+                "params": [
+                    "1UP"
+                ]
+            }
+        ],
+        "Desc": "Activity_DrawCardBonus_Task2_Desc",
+        "Destination": "view://RecruitView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_DrawCardBonus_Task2_Name",
+        "OrderNum": 2,
+        "Reward": "Activity_DrawCardBonus_52_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_DrawCardBonus_53": {
+        "Condition": [
+            {
+                "conditionType": "Condi_DrawCardTag",
+                "factor1": [
+                    30
+                ],
+                "params": [
+                    "1UP"
+                ]
+            }
+        ],
+        "Desc": "Activity_DrawCardBonus_Task3_Desc",
+        "Destination": "view://RecruitView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_DrawCardBonus_Task3_Name",
+        "OrderNum": 3,
+        "Reward": "Activity_DrawCardBonus_53_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_DrawCardBonus_54": {
+        "Condition": [
+            {
+                "conditionType": "Condi_DrawCardTag",
+                "factor1": [
+                    40
+                ],
+                "params": [
+                    "1UP"
+                ]
+            }
+        ],
+        "Desc": "Activity_DrawCardBonus_Task4_Desc",
+        "Destination": "view://RecruitView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_DrawCardBonus_Task4_Name",
+        "OrderNum": 4,
+        "Reward": "Activity_DrawCardBonus_54_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_DrawCardBonus_55": {
+        "Condition": [
+            {
+                "conditionType": "Condi_DrawCardTag",
+                "factor1": [
+                    50
+                ],
+                "params": [
+                    "1UP"
+                ]
+            }
+        ],
+        "Desc": "Activity_DrawCardBonus_Task5_Desc",
+        "Destination": "view://RecruitView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_DrawCardBonus_Task5_Name",
+        "OrderNum": 5,
+        "Reward": "Activity_DrawCardBonus_55_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_DrawCardBonus_56": {
+        "Condition": [
+            {
+                "conditionType": "Condi_DrawCardTag",
+                "factor1": [
+                    60
+                ],
+                "params": [
+                    "1UP"
+                ]
+            }
+        ],
+        "Desc": "Activity_DrawCardBonus_Task6_Desc",
+        "Destination": "view://RecruitView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_DrawCardBonus_Task6_Name",
+        "OrderNum": 6,
+        "Reward": "Activity_DrawCardBonus_56_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_DrawCardBonus_57": {
+        "Condition": [
+            {
+                "conditionType": "Condi_DrawCardTag",
+                "factor1": [
+                    70
+                ],
+                "params": [
+                    "1UP"
+                ]
+            }
+        ],
+        "Desc": "Activity_DrawCardBonus_Task7_Desc",
+        "Destination": "view://RecruitView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_DrawCardBonus_Task7_Name",
+        "OrderNum": 7,
+        "Reward": "Activity_DrawCardBonus_57_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_DrawCardBonus_58": {
+        "Condition": [
+            {
+                "conditionType": "Condi_DrawCardTag",
+                "factor1": [
+                    80
+                ],
+                "params": [
+                    "1UP"
+                ]
+            }
+        ],
+        "Desc": "Activity_DrawCardBonus_Task8_Desc",
+        "Destination": "view://RecruitView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_DrawCardBonus_Task8_Name",
+        "OrderNum": 8,
+        "Reward": "Activity_DrawCardBonus_58_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_DrawCardBonus_59": {
+        "Condition": [
+            {
+                "conditionType": "Condi_DrawCardTag",
+                "factor1": [
+                    90
+                ],
+                "params": [
+                    "1UP"
+                ]
+            }
+        ],
+        "Desc": "Activity_DrawCardBonus_Task9_Desc",
+        "Destination": "view://RecruitView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_DrawCardBonus_Task9_Name",
+        "OrderNum": 9,
+        "Reward": "Activity_DrawCardBonus_59_Reward",
+        "TaskIcon": ""
+    },
     "Activity_DrawCardBonus_6": {
         "Condition": [
             {
@@ -7166,6 +7869,26 @@
         "Name": "Activity_DrawCardBonus_Task6_Name",
         "OrderNum": 6,
         "Reward": "Activity_DrawCardBonus_6_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_DrawCardBonus_60": {
+        "Condition": [
+            {
+                "conditionType": "Condi_DrawCardTag",
+                "factor1": [
+                    100
+                ],
+                "params": [
+                    "1UP"
+                ]
+            }
+        ],
+        "Desc": "Activity_DrawCardBonus_Task10_Desc",
+        "Destination": "view://RecruitView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_DrawCardBonus_Task10_Name",
+        "OrderNum": 10,
+        "Reward": "Activity_DrawCardBonus_60_Reward",
         "TaskIcon": ""
     },
     "Activity_DrawCardBonus_7": {
@@ -8306,6 +9029,222 @@
         "Name": "Activity_LFErTask_9_Name",
         "OrderNum": 9,
         "Reward": "Activity_LFErTask_9_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_MGNaTask_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroCollectSpecial",
+                "factor1": [
+                    180
+                ],
+                "params": [
+                    "MGNa"
+                ]
+            }
+        ],
+        "Desc": "Activity_MGNaTask_1_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_1_Name",
+        "OrderNum": 1,
+        "Reward": "Activity_MGNaTask_1_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_MGNaTask_10": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroCollectStar",
+                "factor1": [
+                    4
+                ],
+                "params": [
+                    "MGNa"
+                ]
+            }
+        ],
+        "Desc": "Activity_MGNaTask_10_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_10_Name",
+        "OrderNum": 10,
+        "Reward": "Activity_MGNaTask_10_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_MGNaTask_11": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroCollectStar",
+                "factor1": [
+                    5
+                ],
+                "params": [
+                    "MGNa"
+                ]
+            }
+        ],
+        "Desc": "Activity_MGNaTask_11_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_11_Name",
+        "OrderNum": 11,
+        "Reward": "Activity_MGNaTask_11_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_MGNaTask_12": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroCollectStar",
+                "factor1": [
+                    6
+                ],
+                "params": [
+                    "MGNa"
+                ]
+            }
+        ],
+        "Desc": "Activity_MGNaTask_12_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_12_Name",
+        "OrderNum": 12,
+        "Reward": "Activity_MGNaTask_12_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_MGNaTask_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroLevelUp",
+                "factor1": [
+                    30
+                ]
+            }
+        ],
+        "Desc": "Activity_MGNaTask_2_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_2_Name",
+        "OrderNum": 2,
+        "Reward": "Activity_MGNaTask_2_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_MGNaTask_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroLevelUp",
+                "factor1": [
+                    60
+                ]
+            }
+        ],
+        "Desc": "Activity_MGNaTask_3_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_3_Name",
+        "OrderNum": 3,
+        "Reward": "Activity_MGNaTask_3_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_MGNaTask_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroLevelUp",
+                "factor1": [
+                    90
+                ]
+            }
+        ],
+        "Desc": "Activity_MGNaTask_4_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_4_Name",
+        "OrderNum": 4,
+        "Reward": "Activity_MGNaTask_4_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_MGNaTask_5": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroLevelUp",
+                "factor1": [
+                    120
+                ]
+            }
+        ],
+        "Desc": "Activity_MGNaTask_5_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_5_Name",
+        "OrderNum": 5,
+        "Reward": "Activity_MGNaTask_5_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_MGNaTask_6": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroQualityUp",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "Activity_MGNaTask_6_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_6_Name",
+        "OrderNum": 6,
+        "Reward": "Activity_MGNaTask_6_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_MGNaTask_7": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroQualityUp",
+                "factor1": [
+                    3
+                ]
+            }
+        ],
+        "Desc": "Activity_MGNaTask_7_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_7_Name",
+        "OrderNum": 7,
+        "Reward": "Activity_MGNaTask_7_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_MGNaTask_8": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroQualityUp",
+                "factor1": [
+                    5
+                ]
+            }
+        ],
+        "Desc": "Activity_MGNaTask_8_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_8_Name",
+        "OrderNum": 8,
+        "Reward": "Activity_MGNaTask_8_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_MGNaTask_9": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroQualityUp",
+                "factor1": [
+                    7
+                ]
+            }
+        ],
+        "Desc": "Activity_MGNaTask_9_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_9_Name",
+        "OrderNum": 9,
+        "Reward": "Activity_MGNaTask_9_Reward",
         "TaskIcon": ""
     },
     "Activity_MTZMEShiTask_1": {
@@ -16406,6 +17345,142 @@
         "Name": "ContiLogin8_8_Name",
         "OrderNum": 8,
         "Reward": "Login7_121_Reward",
+        "TaskIcon": ""
+    },
+    "Login7_122": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ContiLogin8_1_Name",
+        "OrderNum": 1,
+        "Reward": "Login7_122_Reward",
+        "TaskIcon": ""
+    },
+    "Login7_123": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    2
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ContiLogin8_2_Name",
+        "OrderNum": 2,
+        "Reward": "Login7_123_Reward",
+        "TaskIcon": ""
+    },
+    "Login7_124": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    3
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ContiLogin8_3_Name",
+        "OrderNum": 3,
+        "Reward": "Login7_124_Reward",
+        "TaskIcon": ""
+    },
+    "Login7_125": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    4
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ContiLogin8_4_Name",
+        "OrderNum": 4,
+        "Reward": "Login7_125_Reward",
+        "TaskIcon": ""
+    },
+    "Login7_126": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    5
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ContiLogin8_5_Name",
+        "OrderNum": 5,
+        "Reward": "Login7_126_Reward",
+        "TaskIcon": ""
+    },
+    "Login7_127": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    6
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ContiLogin8_6_Name",
+        "OrderNum": 6,
+        "Reward": "Login7_127_Reward",
+        "TaskIcon": ""
+    },
+    "Login7_128": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    7
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ContiLogin8_7_Name",
+        "OrderNum": 7,
+        "Reward": "Login7_128_Reward",
+        "TaskIcon": ""
+    },
+    "Login7_129": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    8
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ContiLogin8_8_Name",
+        "OrderNum": 8,
+        "Reward": "Login7_129_Reward",
         "TaskIcon": ""
     },
     "Login7_13": {

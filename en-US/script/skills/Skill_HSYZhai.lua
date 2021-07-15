@@ -365,11 +365,7 @@ all.Skill_HSYZhai_Passive = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			local count = 99
-
-			if global.FriendMaster(_env) then
-				count = global.SelectBuffCount(_env, global.FriendMaster(_env), global.BUFF_MARKED(_env, "HSYZhai_Passive_Count"))
-			end
+			local count = global.SelectBuffCount(_env, global.FriendField(_env), global.BUFF_MARKED(_env, "HSYZhai_Passive_Count"))
 
 			if global.PETS - global.SUMMONS(_env, _env.unit) and global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and count < this.Times and global.abs(_env, global.GetCellId(_env, _env.ACTOR)) - global.abs(_env, global.GetCellId(_env, _env.unit)) == 3 then
 				global.ApplyEnergyRecovery(_env, global.GetOwner(_env, _env.ACTOR), this.Energy)
@@ -391,17 +387,15 @@ all.Skill_HSYZhai_Passive = {
 					"+Normal"
 				}, 0)
 
-				if global.FriendMaster(_env) then
-					global.ApplyBuff(_env, global.FriendMaster(_env), {
-						timing = 0,
-						duration = 99,
-						tags = {
-							"HSYZhai_Passive_Count"
-						}
-					}, {
-						buff
-					})
-				end
+				global.ApplyBuff(_env, global.FriendField(_env), {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"HSYZhai_Passive_Count"
+					}
+				}, {
+					buff
+				})
 			end
 		end)
 
@@ -815,11 +809,7 @@ all.Skill_HSYZhai_Passive_EX = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			local count = 99
-
-			if global.FriendMaster(_env) then
-				count = global.SelectBuffCount(_env, global.FriendMaster(_env), global.BUFF_MARKED(_env, "HSYZhai_Passive_Count"))
-			end
+			local count = global.SelectBuffCount(_env, global.FriendField(_env), global.BUFF_MARKED(_env, "HSYZhai_Passive_Count"))
 
 			if global.PETS - global.SUMMONS(_env, _env.unit) and global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and count < this.Times and global.abs(_env, global.GetCellId(_env, _env.ACTOR)) - global.abs(_env, global.GetCellId(_env, _env.unit)) == 3 then
 				global.ApplyEnergyRecovery(_env, global.GetOwner(_env, _env.ACTOR), this.Energy)
@@ -841,33 +831,31 @@ all.Skill_HSYZhai_Passive_EX = {
 					"+Normal"
 				}, 0)
 
-				if global.FriendMaster(_env) then
-					global.ApplyBuff(_env, global.FriendMaster(_env), {
-						timing = 0,
-						duration = 99,
-						tags = {
-							"HSYZhai_Passive_Count"
-						}
-					}, {
-						buff
-					})
+				global.ApplyBuff(_env, global.FriendField(_env), {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"HSYZhai_Passive_Count"
+					}
+				}, {
+					buff
+				})
 
-					count = count + 1
-					local buffeft = global.NumericEffect(_env, "+atkrate", {
-						"+Normal",
-						"+Normal"
-					}, this.atkrate * count)
+				count = count + 1
+				local buffeft = global.NumericEffect(_env, "+atkrate", {
+					"+Normal",
+					"+Normal"
+				}, this.atkrate * count)
 
-					global.ApplyHeroCardBuff(_env, global.GetOwner(_env, _env.ACTOR), card, {
-						timing = 0,
-						duration = 99,
-						tags = {
-							"Skill_HSYZhai_Passive_EX"
-						}
-					}, {
-						buffeft
-					})
-				end
+				global.ApplyHeroCardBuff(_env, global.GetOwner(_env, _env.ACTOR), card, {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"Skill_HSYZhai_Passive_EX"
+					}
+				}, {
+					buffeft
+				})
 			end
 		end)
 

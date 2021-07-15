@@ -5387,6 +5387,22 @@
             }
         ]
     },
+    "Marking_Rule": {
+        "clz": "string[]",
+        "content": [
+            {
+                "Desc": [
+                    "Marking_GuideInfo_text_2",
+                    "Marking_GuideInfo_text_3",
+                    "Marking_GuideInfo_text_4",
+                    "Marking_GuideInfo_text_5",
+                    "Marking_GuideInfo_text_6",
+                    "Marking_GuideInfo_text_7"
+                ],
+                "Title": "Marking_GuideInfo_text_1"
+            }
+        ]
+    },
     "MasterAuraItemPrice": {
         "clz": "dict",
         "content": {
@@ -8472,7 +8488,12 @@
             "SP_PNCao",
             "YXZChun",
             "MZu",
-            "LFKLFTe"
+            "LFKLFTe",
+            "LEIMu",
+            "LAMu",
+            "AMLYa",
+            "SP_SSQXin",
+            "WSLi"
         ]
     },
     "Tower_1_GrowMaxValue": {

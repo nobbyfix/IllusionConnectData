@@ -325,6 +325,10 @@ function ClubMediator:showChat()
 		view:setAnchorPoint(cc.p(0.5, 0.5))
 		view:setPosition(cc.p(568, 320))
 
+		if not CommonUtils.GetSwitch("fn_clubBossPass") then
+			view:getChildByFullName("passPanel"):setVisible(false)
+		end
+
 		self._chatViewPanel = self:getView():getChildByName("chatNode")
 
 		self._chatViewPanel:addChild(view)

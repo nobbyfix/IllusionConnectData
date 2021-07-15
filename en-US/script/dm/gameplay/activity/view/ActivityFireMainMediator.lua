@@ -1045,14 +1045,10 @@ function ActivityFireMainMediator:onClickRolePanel()
 		heroId = model
 	end
 
-	local view = self:getInjector():getInstance("HeroShowNotOwnView")
+	local view = self:getInjector():getInstance("HeroInfoView")
 
-	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
-		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-	}, {
-		showType = 2,
-		id = heroId,
-		modelId = modelId
+	self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
+		heroId = heroId
 	}))
 end
 

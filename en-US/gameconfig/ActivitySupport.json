@@ -1803,6 +1803,1619 @@
             }
         ]
     },
+    "ABS_WuXiuHui_New_1_1": {
+        "LoserMail": "Mail_WuXiuHui_Activity_Lose_1_1",
+        "LoserReward": [
+            {
+                "rank": [
+                    100000,
+                    30001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_14"
+            },
+            {
+                "rank": [
+                    30000,
+                    15001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_13"
+            },
+            {
+                "rank": [
+                    15000,
+                    8001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_12"
+            },
+            {
+                "rank": [
+                    8000,
+                    4001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_11"
+            },
+            {
+                "rank": [
+                    4000,
+                    2001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_10"
+            },
+            {
+                "rank": [
+                    2000,
+                    1001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_9"
+            },
+            {
+                "rank": [
+                    1000,
+                    501
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_8"
+            },
+            {
+                "rank": [
+                    500,
+                    201
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_7"
+            },
+            {
+                "rank": [
+                    200,
+                    51
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_6"
+            },
+            {
+                "rank": [
+                    50,
+                    11
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_5"
+            },
+            {
+                "rank": [
+                    10,
+                    4
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_4"
+            },
+            {
+                "rank": [
+                    3,
+                    3
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_3"
+            },
+            {
+                "rank": [
+                    2,
+                    2
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_2"
+            },
+            {
+                "rank": [
+                    1,
+                    1
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_1"
+            }
+        ],
+        "Name": "ABSName_1_1",
+        "Next": "ABS_WuXiuHui_New_1_2",
+        "PrepareTime": 0,
+        "RestTime": 9000,
+        "ScoreMail": "Mail_WuXiuHui_Activity_Point_1_1",
+        "ScoreReward": {
+            "10000": "ABS_WuXiuHui_New_Reward_5",
+            "12000": "ABS_WuXiuHui_New_Reward_6",
+            "15000": "ABS_WuXiuHui_New_Reward_7",
+            "18000": "ABS_WuXiuHui_New_Reward_8",
+            "2000": "ABS_WuXiuHui_New_Reward_1",
+            "22000": "ABS_WuXiuHui_New_Reward_9",
+            "26000": "ABS_WuXiuHui_New_Reward_10",
+            "30000": "ABS_WuXiuHui_New_Reward_11",
+            "35000": "ABS_WuXiuHui_New_Reward_12",
+            "4000": "ABS_WuXiuHui_New_Reward_2",
+            "6000": "ABS_WuXiuHui_New_Reward_3",
+            "8000": "ABS_WuXiuHui_New_Reward_4"
+        },
+        "SupportHero": [
+            "ABS_WuXiuHui_New_1",
+            "ABS_WuXiuHui_New_2"
+        ],
+        "Time": 59400,
+        "Type": 0,
+        "WinMail": "",
+        "WinnerMail": "Mail_WuXiuHui_Activity_Win_1_1",
+        "WinnerReward": [
+            {
+                "rank": [
+                    100000,
+                    30001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_14"
+            },
+            {
+                "rank": [
+                    30000,
+                    15001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_13"
+            },
+            {
+                "rank": [
+                    15000,
+                    8001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_12"
+            },
+            {
+                "rank": [
+                    8000,
+                    4001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_11"
+            },
+            {
+                "rank": [
+                    4000,
+                    2001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_10"
+            },
+            {
+                "rank": [
+                    2000,
+                    1001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_9"
+            },
+            {
+                "rank": [
+                    1000,
+                    501
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_8"
+            },
+            {
+                "rank": [
+                    500,
+                    201
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_7"
+            },
+            {
+                "rank": [
+                    200,
+                    51
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_6"
+            },
+            {
+                "rank": [
+                    50,
+                    11
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_5"
+            },
+            {
+                "rank": [
+                    10,
+                    4
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_4"
+            },
+            {
+                "rank": [
+                    3,
+                    3
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_3"
+            },
+            {
+                "rank": [
+                    2,
+                    2
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_2"
+            },
+            {
+                "rank": [
+                    1,
+                    1
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_1"
+            }
+        ]
+    },
+    "ABS_WuXiuHui_New_1_2": {
+        "LoserMail": "Mail_WuXiuHui_Activity_Lose_1_2",
+        "LoserReward": [
+            {
+                "rank": [
+                    100000,
+                    30001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_14"
+            },
+            {
+                "rank": [
+                    30000,
+                    15001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_13"
+            },
+            {
+                "rank": [
+                    15000,
+                    8001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_12"
+            },
+            {
+                "rank": [
+                    8000,
+                    4001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_11"
+            },
+            {
+                "rank": [
+                    4000,
+                    2001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_10"
+            },
+            {
+                "rank": [
+                    2000,
+                    1001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_9"
+            },
+            {
+                "rank": [
+                    1000,
+                    501
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_8"
+            },
+            {
+                "rank": [
+                    500,
+                    201
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_7"
+            },
+            {
+                "rank": [
+                    200,
+                    51
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_6"
+            },
+            {
+                "rank": [
+                    50,
+                    11
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_5"
+            },
+            {
+                "rank": [
+                    10,
+                    4
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_4"
+            },
+            {
+                "rank": [
+                    3,
+                    3
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_3"
+            },
+            {
+                "rank": [
+                    2,
+                    2
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_2"
+            },
+            {
+                "rank": [
+                    1,
+                    1
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_1"
+            }
+        ],
+        "Name": "ABSName_1_2",
+        "Next": "ABS_WuXiuHui_New_1_3",
+        "PrepareTime": 18000,
+        "RestTime": 9000,
+        "ScoreMail": "Mail_WuXiuHui_Activity_Point_1_2",
+        "ScoreReward": {
+            "10000": "ABS_WuXiuHui_New_Reward_5",
+            "12000": "ABS_WuXiuHui_New_Reward_6",
+            "15000": "ABS_WuXiuHui_New_Reward_7",
+            "18000": "ABS_WuXiuHui_New_Reward_8",
+            "2000": "ABS_WuXiuHui_New_Reward_1",
+            "22000": "ABS_WuXiuHui_New_Reward_9",
+            "26000": "ABS_WuXiuHui_New_Reward_10",
+            "30000": "ABS_WuXiuHui_New_Reward_11",
+            "35000": "ABS_WuXiuHui_New_Reward_12",
+            "4000": "ABS_WuXiuHui_New_Reward_2",
+            "6000": "ABS_WuXiuHui_New_Reward_3",
+            "8000": "ABS_WuXiuHui_New_Reward_4"
+        },
+        "SupportHero": [
+            "ABS_WuXiuHui_New_3",
+            "ABS_WuXiuHui_New_4"
+        ],
+        "Time": 59400,
+        "Type": 0,
+        "WinMail": "",
+        "WinnerMail": "Mail_WuXiuHui_Activity_Win_1_2",
+        "WinnerReward": [
+            {
+                "rank": [
+                    100000,
+                    30001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_14"
+            },
+            {
+                "rank": [
+                    30000,
+                    15001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_13"
+            },
+            {
+                "rank": [
+                    15000,
+                    8001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_12"
+            },
+            {
+                "rank": [
+                    8000,
+                    4001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_11"
+            },
+            {
+                "rank": [
+                    4000,
+                    2001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_10"
+            },
+            {
+                "rank": [
+                    2000,
+                    1001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_9"
+            },
+            {
+                "rank": [
+                    1000,
+                    501
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_8"
+            },
+            {
+                "rank": [
+                    500,
+                    201
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_7"
+            },
+            {
+                "rank": [
+                    200,
+                    51
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_6"
+            },
+            {
+                "rank": [
+                    50,
+                    11
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_5"
+            },
+            {
+                "rank": [
+                    10,
+                    4
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_4"
+            },
+            {
+                "rank": [
+                    3,
+                    3
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_3"
+            },
+            {
+                "rank": [
+                    2,
+                    2
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_2"
+            },
+            {
+                "rank": [
+                    1,
+                    1
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_1"
+            }
+        ]
+    },
+    "ABS_WuXiuHui_New_1_3": {
+        "LoserMail": "Mail_WuXiuHui_Activity_Lose_1_3",
+        "LoserReward": [
+            {
+                "rank": [
+                    100000,
+                    30001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_14"
+            },
+            {
+                "rank": [
+                    30000,
+                    15001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_13"
+            },
+            {
+                "rank": [
+                    15000,
+                    8001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_12"
+            },
+            {
+                "rank": [
+                    8000,
+                    4001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_11"
+            },
+            {
+                "rank": [
+                    4000,
+                    2001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_10"
+            },
+            {
+                "rank": [
+                    2000,
+                    1001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_9"
+            },
+            {
+                "rank": [
+                    1000,
+                    501
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_8"
+            },
+            {
+                "rank": [
+                    500,
+                    201
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_7"
+            },
+            {
+                "rank": [
+                    200,
+                    51
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_6"
+            },
+            {
+                "rank": [
+                    50,
+                    11
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_5"
+            },
+            {
+                "rank": [
+                    10,
+                    4
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_4"
+            },
+            {
+                "rank": [
+                    3,
+                    3
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_3"
+            },
+            {
+                "rank": [
+                    2,
+                    2
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_2"
+            },
+            {
+                "rank": [
+                    1,
+                    1
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_1"
+            }
+        ],
+        "Name": "ABSName_1_3",
+        "Next": "ABS_WuXiuHui_New_1_4",
+        "PrepareTime": 18000,
+        "RestTime": 9000,
+        "ScoreMail": "Mail_WuXiuHui_Activity_Point_1_3",
+        "ScoreReward": {
+            "10000": "ABS_WuXiuHui_New_Reward_5",
+            "12000": "ABS_WuXiuHui_New_Reward_6",
+            "15000": "ABS_WuXiuHui_New_Reward_7",
+            "18000": "ABS_WuXiuHui_New_Reward_8",
+            "2000": "ABS_WuXiuHui_New_Reward_1",
+            "22000": "ABS_WuXiuHui_New_Reward_9",
+            "26000": "ABS_WuXiuHui_New_Reward_10",
+            "30000": "ABS_WuXiuHui_New_Reward_11",
+            "35000": "ABS_WuXiuHui_New_Reward_12",
+            "4000": "ABS_WuXiuHui_New_Reward_2",
+            "6000": "ABS_WuXiuHui_New_Reward_3",
+            "8000": "ABS_WuXiuHui_New_Reward_4"
+        },
+        "SupportHero": [
+            "ABS_WuXiuHui_New_5",
+            "ABS_WuXiuHui_New_6"
+        ],
+        "Time": 59400,
+        "Type": 0,
+        "WinMail": "",
+        "WinnerMail": "Mail_WuXiuHui_Activity_Win_1_3",
+        "WinnerReward": [
+            {
+                "rank": [
+                    100000,
+                    30001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_14"
+            },
+            {
+                "rank": [
+                    30000,
+                    15001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_13"
+            },
+            {
+                "rank": [
+                    15000,
+                    8001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_12"
+            },
+            {
+                "rank": [
+                    8000,
+                    4001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_11"
+            },
+            {
+                "rank": [
+                    4000,
+                    2001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_10"
+            },
+            {
+                "rank": [
+                    2000,
+                    1001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_9"
+            },
+            {
+                "rank": [
+                    1000,
+                    501
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_8"
+            },
+            {
+                "rank": [
+                    500,
+                    201
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_7"
+            },
+            {
+                "rank": [
+                    200,
+                    51
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_6"
+            },
+            {
+                "rank": [
+                    50,
+                    11
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_5"
+            },
+            {
+                "rank": [
+                    10,
+                    4
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_4"
+            },
+            {
+                "rank": [
+                    3,
+                    3
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_3"
+            },
+            {
+                "rank": [
+                    2,
+                    2
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_2"
+            },
+            {
+                "rank": [
+                    1,
+                    1
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_1"
+            }
+        ]
+    },
+    "ABS_WuXiuHui_New_1_4": {
+        "LoserMail": "Mail_WuXiuHui_Activity_Lose_1_4",
+        "LoserReward": [
+            {
+                "rank": [
+                    100000,
+                    30001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_14"
+            },
+            {
+                "rank": [
+                    30000,
+                    15001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_13"
+            },
+            {
+                "rank": [
+                    15000,
+                    8001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_12"
+            },
+            {
+                "rank": [
+                    8000,
+                    4001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_11"
+            },
+            {
+                "rank": [
+                    4000,
+                    2001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_10"
+            },
+            {
+                "rank": [
+                    2000,
+                    1001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_9"
+            },
+            {
+                "rank": [
+                    1000,
+                    501
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_8"
+            },
+            {
+                "rank": [
+                    500,
+                    201
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_7"
+            },
+            {
+                "rank": [
+                    200,
+                    51
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_6"
+            },
+            {
+                "rank": [
+                    50,
+                    11
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_5"
+            },
+            {
+                "rank": [
+                    10,
+                    4
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_4"
+            },
+            {
+                "rank": [
+                    3,
+                    3
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_3"
+            },
+            {
+                "rank": [
+                    2,
+                    2
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_2"
+            },
+            {
+                "rank": [
+                    1,
+                    1
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_1"
+            }
+        ],
+        "Name": "ABSName_1_4",
+        "Next": "ABS_WuXiuHui_New_2_1",
+        "PrepareTime": 18000,
+        "RestTime": 95400,
+        "ScoreMail": "Mail_WuXiuHui_Activity_Point_1_4",
+        "ScoreReward": {
+            "10000": "ABS_WuXiuHui_New_Reward_5",
+            "12000": "ABS_WuXiuHui_New_Reward_6",
+            "15000": "ABS_WuXiuHui_New_Reward_7",
+            "18000": "ABS_WuXiuHui_New_Reward_8",
+            "2000": "ABS_WuXiuHui_New_Reward_1",
+            "22000": "ABS_WuXiuHui_New_Reward_9",
+            "26000": "ABS_WuXiuHui_New_Reward_10",
+            "30000": "ABS_WuXiuHui_New_Reward_11",
+            "35000": "ABS_WuXiuHui_New_Reward_12",
+            "4000": "ABS_WuXiuHui_New_Reward_2",
+            "6000": "ABS_WuXiuHui_New_Reward_3",
+            "8000": "ABS_WuXiuHui_New_Reward_4"
+        },
+        "SupportHero": [
+            "ABS_WuXiuHui_New_7",
+            "ABS_WuXiuHui_New_8"
+        ],
+        "Time": 59400,
+        "Type": 0,
+        "WinMail": "",
+        "WinnerMail": "Mail_WuXiuHui_Activity_Win_1_4",
+        "WinnerReward": [
+            {
+                "rank": [
+                    100000,
+                    30001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_14"
+            },
+            {
+                "rank": [
+                    30000,
+                    15001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_13"
+            },
+            {
+                "rank": [
+                    15000,
+                    8001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_12"
+            },
+            {
+                "rank": [
+                    8000,
+                    4001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_11"
+            },
+            {
+                "rank": [
+                    4000,
+                    2001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_10"
+            },
+            {
+                "rank": [
+                    2000,
+                    1001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_9"
+            },
+            {
+                "rank": [
+                    1000,
+                    501
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_8"
+            },
+            {
+                "rank": [
+                    500,
+                    201
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_7"
+            },
+            {
+                "rank": [
+                    200,
+                    51
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_6"
+            },
+            {
+                "rank": [
+                    50,
+                    11
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_5"
+            },
+            {
+                "rank": [
+                    10,
+                    4
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_4"
+            },
+            {
+                "rank": [
+                    3,
+                    3
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_3"
+            },
+            {
+                "rank": [
+                    2,
+                    2
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_2"
+            },
+            {
+                "rank": [
+                    1,
+                    1
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_1"
+            }
+        ]
+    },
+    "ABS_WuXiuHui_New_2_1": {
+        "LoserMail": "Mail_WuXiuHui_Activity_Lose_2_1",
+        "LoserReward": [
+            {
+                "rank": [
+                    100000,
+                    30001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_14"
+            },
+            {
+                "rank": [
+                    30000,
+                    15001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_13"
+            },
+            {
+                "rank": [
+                    15000,
+                    8001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_12"
+            },
+            {
+                "rank": [
+                    8000,
+                    4001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_11"
+            },
+            {
+                "rank": [
+                    4000,
+                    2001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_10"
+            },
+            {
+                "rank": [
+                    2000,
+                    1001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_9"
+            },
+            {
+                "rank": [
+                    1000,
+                    501
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_8"
+            },
+            {
+                "rank": [
+                    500,
+                    201
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_7"
+            },
+            {
+                "rank": [
+                    200,
+                    51
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_6"
+            },
+            {
+                "rank": [
+                    50,
+                    11
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_5"
+            },
+            {
+                "rank": [
+                    10,
+                    4
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_4"
+            },
+            {
+                "rank": [
+                    3,
+                    3
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_3"
+            },
+            {
+                "rank": [
+                    2,
+                    2
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_2"
+            },
+            {
+                "rank": [
+                    1,
+                    1
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_1"
+            }
+        ],
+        "Name": "ABSName_2_1",
+        "Next": "ABS_WuXiuHui_New_2_2",
+        "PrepareTime": 18000,
+        "RestTime": 9000,
+        "ScoreMail": "Mail_WuXiuHui_Activity_Point_2_1",
+        "ScoreReward": {
+            "12000": "ABS_WuXiuHui_New_Reward_Semifinals_3",
+            "16000": "ABS_WuXiuHui_New_Reward_Semifinals_4",
+            "20000": "ABS_WuXiuHui_New_Reward_Semifinals_5",
+            "24000": "ABS_WuXiuHui_New_Reward_Semifinals_6",
+            "32000": "ABS_WuXiuHui_New_Reward_Semifinals_7",
+            "4000": "ABS_WuXiuHui_New_Reward_Semifinals_1",
+            "40000": "ABS_WuXiuHui_New_Reward_Semifinals_8",
+            "48000": "ABS_WuXiuHui_New_Reward_Semifinals_9",
+            "56000": "ABS_WuXiuHui_New_Reward_Semifinals_10",
+            "64000": "ABS_WuXiuHui_New_Reward_Semifinals_11",
+            "8000": "ABS_WuXiuHui_New_Reward_Semifinals_2",
+            "80000": "ABS_WuXiuHui_New_Reward_Semifinals_12"
+        },
+        "SupportHero": [
+            "ABS_WuXiuHui_New_1_1",
+            "ABS_WuXiuHui_New_1_2"
+        ],
+        "Time": 145800,
+        "Type": 1,
+        "WinMail": "",
+        "WinnerMail": "Mail_WuXiuHui_Activity_Win_2_1",
+        "WinnerReward": [
+            {
+                "rank": [
+                    100000,
+                    30001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_14"
+            },
+            {
+                "rank": [
+                    30000,
+                    15001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_13"
+            },
+            {
+                "rank": [
+                    15000,
+                    8001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_12"
+            },
+            {
+                "rank": [
+                    8000,
+                    4001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_11"
+            },
+            {
+                "rank": [
+                    4000,
+                    2001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_10"
+            },
+            {
+                "rank": [
+                    2000,
+                    1001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_9"
+            },
+            {
+                "rank": [
+                    1000,
+                    501
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_8"
+            },
+            {
+                "rank": [
+                    500,
+                    201
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_7"
+            },
+            {
+                "rank": [
+                    200,
+                    51
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_6"
+            },
+            {
+                "rank": [
+                    50,
+                    11
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_5"
+            },
+            {
+                "rank": [
+                    10,
+                    4
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_4"
+            },
+            {
+                "rank": [
+                    3,
+                    3
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_3"
+            },
+            {
+                "rank": [
+                    2,
+                    2
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_2"
+            },
+            {
+                "rank": [
+                    1,
+                    1
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_1"
+            }
+        ]
+    },
+    "ABS_WuXiuHui_New_2_2": {
+        "LoserMail": "Mail_WuXiuHui_Activity_Lose_2_2",
+        "LoserReward": [
+            {
+                "rank": [
+                    100000,
+                    30001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_14"
+            },
+            {
+                "rank": [
+                    30000,
+                    15001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_13"
+            },
+            {
+                "rank": [
+                    15000,
+                    8001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_12"
+            },
+            {
+                "rank": [
+                    8000,
+                    4001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_11"
+            },
+            {
+                "rank": [
+                    4000,
+                    2001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_10"
+            },
+            {
+                "rank": [
+                    2000,
+                    1001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_9"
+            },
+            {
+                "rank": [
+                    1000,
+                    501
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_8"
+            },
+            {
+                "rank": [
+                    500,
+                    201
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_7"
+            },
+            {
+                "rank": [
+                    200,
+                    51
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_6"
+            },
+            {
+                "rank": [
+                    50,
+                    11
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_5"
+            },
+            {
+                "rank": [
+                    10,
+                    4
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_4"
+            },
+            {
+                "rank": [
+                    3,
+                    3
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_3"
+            },
+            {
+                "rank": [
+                    2,
+                    2
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_2"
+            },
+            {
+                "rank": [
+                    1,
+                    1
+                ],
+                "reward": "ABS_WuXiuHui_New_RankLoseReward_1"
+            }
+        ],
+        "Name": "ABSName_2_2",
+        "Next": "ABS_WuXiuHui_New_3_1",
+        "PrepareTime": 18000,
+        "RestTime": 95400,
+        "ScoreMail": "Mail_WuXiuHui_Activity_Point_2_2",
+        "ScoreReward": {
+            "12000": "ABS_WuXiuHui_New_Reward_Semifinals_3",
+            "16000": "ABS_WuXiuHui_New_Reward_Semifinals_4",
+            "20000": "ABS_WuXiuHui_New_Reward_Semifinals_5",
+            "24000": "ABS_WuXiuHui_New_Reward_Semifinals_6",
+            "32000": "ABS_WuXiuHui_New_Reward_Semifinals_7",
+            "4000": "ABS_WuXiuHui_New_Reward_Semifinals_1",
+            "40000": "ABS_WuXiuHui_New_Reward_Semifinals_8",
+            "48000": "ABS_WuXiuHui_New_Reward_Semifinals_9",
+            "56000": "ABS_WuXiuHui_New_Reward_Semifinals_10",
+            "64000": "ABS_WuXiuHui_New_Reward_Semifinals_11",
+            "8000": "ABS_WuXiuHui_New_Reward_Semifinals_2",
+            "80000": "ABS_WuXiuHui_New_Reward_Semifinals_12"
+        },
+        "SupportHero": [
+            "ABS_WuXiuHui_New_1_3",
+            "ABS_WuXiuHui_New_1_4"
+        ],
+        "Time": 145800,
+        "Type": 1,
+        "WinMail": "",
+        "WinnerMail": "Mail_WuXiuHui_Activity_Win_2_2",
+        "WinnerReward": [
+            {
+                "rank": [
+                    100000,
+                    30001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_14"
+            },
+            {
+                "rank": [
+                    30000,
+                    15001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_13"
+            },
+            {
+                "rank": [
+                    15000,
+                    8001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_12"
+            },
+            {
+                "rank": [
+                    8000,
+                    4001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_11"
+            },
+            {
+                "rank": [
+                    4000,
+                    2001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_10"
+            },
+            {
+                "rank": [
+                    2000,
+                    1001
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_9"
+            },
+            {
+                "rank": [
+                    1000,
+                    501
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_8"
+            },
+            {
+                "rank": [
+                    500,
+                    201
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_7"
+            },
+            {
+                "rank": [
+                    200,
+                    51
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_6"
+            },
+            {
+                "rank": [
+                    50,
+                    11
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_5"
+            },
+            {
+                "rank": [
+                    10,
+                    4
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_4"
+            },
+            {
+                "rank": [
+                    3,
+                    3
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_3"
+            },
+            {
+                "rank": [
+                    2,
+                    2
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_2"
+            },
+            {
+                "rank": [
+                    1,
+                    1
+                ],
+                "reward": "ABS_WuXiuHui_New_RankReward_1"
+            }
+        ]
+    },
+    "ABS_WuXiuHui_New_3_1": {
+        "LoserMail": "Mail_WuXiuHui_Activity_Lose_3_1",
+        "LoserReward": [
+            {
+                "rank": [
+                    100000,
+                    30001
+                ],
+                "reward": "ABS_WuXiuHui_New_FinalRankLoseReward_14"
+            },
+            {
+                "rank": [
+                    30000,
+                    15001
+                ],
+                "reward": "ABS_WuXiuHui_New_FinalRankLoseReward_13"
+            },
+            {
+                "rank": [
+                    15000,
+                    8001
+                ],
+                "reward": "ABS_WuXiuHui_New_FinalRankLoseReward_12"
+            },
+            {
+                "rank": [
+                    8000,
+                    4001
+                ],
+                "reward": "ABS_WuXiuHui_New_FinalRankLoseReward_11"
+            },
+            {
+                "rank": [
+                    4000,
+                    2001
+                ],
+                "reward": "ABS_WuXiuHui_New_FinalRankLoseReward_10"
+            },
+            {
+                "rank": [
+                    2000,
+                    1001
+                ],
+                "reward": "ABS_WuXiuHui_New_FinalRankLoseReward_9"
+            },
+            {
+                "rank": [
+                    1000,
+                    501
+                ],
+                "reward": "ABS_WuXiuHui_New_FinalRankLoseReward_8"
+            },
+            {
+                "rank": [
+                    500,
+                    201
+                ],
+                "reward": "ABS_WuXiuHui_New_FinalRankLoseReward_7"
+            },
+            {
+                "rank": [
+                    200,
+                    51
+                ],
+                "reward": "ABS_WuXiuHui_New_FinalRankLoseReward_6"
+            },
+            {
+                "rank": [
+                    50,
+                    11
+                ],
+                "reward": "ABS_WuXiuHui_New_FinalRankLoseReward_5"
+            },
+            {
+                "rank": [
+                    10,
+                    4
+                ],
+                "reward": "ABS_WuXiuHui_New_FinalRankLoseReward_4"
+            },
+            {
+                "rank": [
+                    3,
+                    3
+                ],
+                "reward": "ABS_WuXiuHui_New_FinalRankLoseReward_3"
+            },
+            {
+                "rank": [
+                    2,
+                    2
+                ],
+                "reward": "ABS_WuXiuHui_New_FinalRankLoseReward_2"
+            },
+            {
+                "rank": [
+                    1,
+                    1
+                ],
+                "reward": "ABS_WuXiuHui_New_FinalRankLoseReward_1"
+            }
+        ],
+        "Name": "ABSName_3_1",
+        "Next": "",
+        "PrepareTime": 18000,
+        "RestTime": 113400,
+        "ScoreMail": "Mail_WuXiuHui_Activity_Point_3_1",
+        "ScoreReward": {
+            "120000": "ABS_WuXiuHui_New_Reward_Finals_8",
+            "15000": "ABS_WuXiuHui_New_Reward_Finals_3",
+            "150000": "ABS_WuXiuHui_New_Reward_Finals_9",
+            "180000": "ABS_WuXiuHui_New_Reward_Finals_10",
+            "220000": "ABS_WuXiuHui_New_Reward_Finals_11",
+            "260000": "ABS_WuXiuHui_New_Reward_Finals_12",
+            "30000": "ABS_WuXiuHui_New_Reward_Finals_4",
+            "300000": "ABS_WuXiuHui_New_Reward_Finals_13",
+            "350000": "ABS_WuXiuHui_New_Reward_Finals_14",
+            "4000": "ABS_WuXiuHui_New_Reward_Finals_1",
+            "400000": "ABS_WuXiuHui_New_Reward_Finals_15",
+            "45000": "ABS_WuXiuHui_New_Reward_Finals_5",
+            "60000": "ABS_WuXiuHui_New_Reward_Finals_6",
+            "8000": "ABS_WuXiuHui_New_Reward_Finals_2",
+            "90000": "ABS_WuXiuHui_New_Reward_Finals_7"
+        },
+        "SupportHero": [
+            "ABS_WuXiuHui_New_2_1",
+            "ABS_WuXiuHui_New_2_2"
+        ],
+        "Time": 318600,
+        "Type": 2,
+        "WinMail": "",
+        "WinnerMail": "Mail_WuXiuHui_Activity_Win_3_1",
+        "WinnerReward": [
+            {
+                "rank": [
+                    100000,
+                    30001
+                ],
+                "reward": "ABS_WuXiuHui_New_FinalRankReward_14"
+            },
+            {
+                "rank": [
+                    30000,
+                    15001
+                ],
+                "reward": "ABS_WuXiuHui_New_FinalRankReward_13"
+            },
+            {
+                "rank": [
+                    15000,
+                    8001
+                ],
+                "reward": "ABS_WuXiuHui_New_FinalRankReward_12"
+            },
+            {
+                "rank": [
+                    8000,
+                    4001
+                ],
+                "reward": "ABS_WuXiuHui_New_FinalRankReward_11"
+            },
+            {
+                "rank": [
+                    4000,
+                    2001
+                ],
+                "reward": "ABS_WuXiuHui_New_FinalRankReward_10"
+            },
+            {
+                "rank": [
+                    2000,
+                    1001
+                ],
+                "reward": "ABS_WuXiuHui_New_FinalRankReward_9"
+            },
+            {
+                "rank": [
+                    1000,
+                    501
+                ],
+                "reward": "ABS_WuXiuHui_New_FinalRankReward_8"
+            },
+            {
+                "rank": [
+                    500,
+                    201
+                ],
+                "reward": "ABS_WuXiuHui_New_FinalRankReward_7"
+            },
+            {
+                "rank": [
+                    200,
+                    51
+                ],
+                "reward": "ABS_WuXiuHui_New_FinalRankReward_6"
+            },
+            {
+                "rank": [
+                    50,
+                    11
+                ],
+                "reward": "ABS_WuXiuHui_New_FinalRankReward_5"
+            },
+            {
+                "rank": [
+                    10,
+                    4
+                ],
+                "reward": "ABS_WuXiuHui_New_FinalRankReward_4"
+            },
+            {
+                "rank": [
+                    3,
+                    3
+                ],
+                "reward": "ABS_WuXiuHui_New_FinalRankReward_3"
+            },
+            {
+                "rank": [
+                    2,
+                    2
+                ],
+                "reward": "ABS_WuXiuHui_New_FinalRankReward_2"
+            },
+            {
+                "rank": [
+                    1,
+                    1
+                ],
+                "reward": "ABS_WuXiuHui_New_FinalRankReward_1"
+            }
+        ]
+    },
     "ABS_ZuoHe_1_1": {
         "LoserMail": "Mail_ZuoHe_Activity_Lose_1_1",
         "LoserReward": [

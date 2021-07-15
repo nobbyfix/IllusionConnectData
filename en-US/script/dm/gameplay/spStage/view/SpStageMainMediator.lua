@@ -20,6 +20,10 @@ local kBtnHandlers = {
 	["bg.main_panel.button_rule"] = {
 		clickAudio = "Se_Click_Common_1",
 		func = "onClickRule"
+	},
+	["bg.main_panel.button_info"] = {
+		clickAudio = "Se_Click_Common_1",
+		func = "onClickInfo"
 	}
 }
 local BGImage = {
@@ -605,12 +609,19 @@ function SpStageMainMediator:onClickTab(name, tag)
 end
 
 function SpStageMainMediator:showRule()
-	local customKey = self._config[self._curTabType].Id .. "_Rule"
-	local customData = self._customDataSystem:getValue(PrefixType.kGlobal, customKey)
+	local storyDirector = self:getInjector():getInstance(story.StoryDirector)
+	local guideAgent = storyDirector:getGuideAgent()
 
-	if not customData then
-		self:onClickRule()
-		self._customDataSystem:setValue(PrefixType.kGlobal, customKey, "show")
+	if guideAgent:isGuiding() then
+		return
+	end
+
+	local customKey = "Marking_GuidePic"
+	local cjson = require("cjson.safe")
+	local customData = cjson.decode(self._customDataSystem:getValue(PrefixType.kGlobal, "GameIntroduce", "{}"))
+
+	if customData[customKey] == nil or customData[customKey] == 0 then
+		self:onClickInfo()
 	end
 end
 
@@ -633,13 +644,17 @@ function SpStageMainMediator:onClickRule()
 				return
 			end
 
-			local storyDirector = this:getInjector():getInstance(story.StoryDirector)
-
-			storyDirector:notifyWaiting("exit_SpStageRuleMediator")
-
 			this._isShowRuleView = false
 		end
 	}, nil))
+end
+
+function SpStageMainMediator:onClickInfo()
+	local Rule = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Marking_Rule", "content")
+
+	RuleFactory:showRules(self, {
+		rule = Rule
+	}, "Marking_GuidePic")
 end
 
 function SpStageMainMediator:onClickRank()
@@ -714,8 +729,6 @@ function SpStageMainMediator:setupClickEnvs()
 	local guideAgent = storyDirector:getGuideAgent()
 
 	if guideAgent:isGuiding() then
-		self:onClickRule()
-
 		local sequence = cc.Sequence:create(cc.DelayTime:create(0.5), cc.CallFunc:create(function ()
 			storyDirector:setClickEnv("SpStageMainMediator.rewardBg", self._rewardBg, nil)
 			storyDirector:setClickEnv("SpStageMainMediator.heroPanel", self._heroPanel, nil)

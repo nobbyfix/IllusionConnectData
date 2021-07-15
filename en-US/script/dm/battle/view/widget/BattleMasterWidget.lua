@@ -108,17 +108,29 @@ function BattleMasterWidget:setupSkills(skills)
 			skillWidget:addTouchEventListener(function (sender, eventType)
 				self:onClickedSkill(sender, eventType)
 			end)
-			node:getChildByName("tagIcon"):setVisible(false)
 
 			local masterSkillTag = ConfigReader:getDataByNameIdAndKey("Skill", skill.id, "MasterSkillTag")
 
 			if masterSkillTag and masterSkillTag ~= "" then
 				node:getChildByName("tagIcon"):setLocalZOrder(2)
 				node:getChildByName("tagIcon"):setVisible(true)
-				node:getChildByName("tagIcon"):loadTexture(masterSkillTag .. ".png", ccui.TextureResType.plistType)
+
+				local tag = node:getChildByName("tagIcon"):getChildByName("tag")
+
+				tag:setString(Strings:get(masterSkillTag))
+
+				local size = tag:getContentSize()
+				size.width = size.width + 30
+				size.height = node:getChildByName("tagIcon"):getContentSize().height
+
+				node:getChildByName("tagIcon"):setContentSize(size)
+				tag:center(size)
+				tag:offset(0, 4)
 			else
 				node:getChildByName("tagIcon"):setVisible(false)
 			end
+
+			node:getChildByName("tagIcon"):setVisible(false)
 		else
 			node:setVisible(false)
 			skillWidget:addTouchEventListener(function (sender, eventType)

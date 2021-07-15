@@ -575,7 +575,7 @@
         "Bubble": "",
         "Icon": "",
         "Img": "drawcard_banner_LFKLFTe.png",
-        "Important": "",
+        "Important": 0,
         "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_LFKLFTe",
         "Sort": 999,
         "Switch": "",
@@ -597,7 +597,7 @@
         "Bubble": "",
         "Icon": "",
         "Img": "drawcard_banner_LSLTe.png",
-        "Important": "",
+        "Important": 0,
         "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_LSLTe_New",
         "Sort": 999,
         "Switch": "",
@@ -608,7 +608,7 @@
         "Bubble": "",
         "Icon": "",
         "Img": "drawcard_banner_MZGXiu.png",
-        "Important": "",
+        "Important": 0,
         "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_MZGXiu_New",
         "Sort": 999,
         "Switch": "",
@@ -626,6 +626,39 @@
         "Type": "Activity",
         "TypeId": "DrawCard_NXYYiQBTe_Activity"
     },
+    "ActivityBanner157": {
+        "Bubble": "",
+        "Icon": "",
+        "Img": "drawcard_banner_YXNMei.png",
+        "Important": "",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_YXNMei",
+        "Sort": 999,
+        "Switch": "",
+        "Type": "Activity",
+        "TypeId": "DrawCard_1UP_YXNMei_Activity"
+    },
+    "ActivityBanner158": {
+        "Bubble": "",
+        "Icon": "",
+        "Img": "drawcard_banner_LYXiBHTZi.png",
+        "Important": 0,
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_LYXiBHTZi_1",
+        "Sort": 999,
+        "Switch": "",
+        "Type": "Activity",
+        "TypeId": "DrawCard_LYXiBHTZi_1_Activity"
+    },
+    "ActivityBanner159": {
+        "Bubble": "",
+        "Icon": "",
+        "Img": "drawcard_banner_SLWan.png",
+        "Important": "",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_SLWan",
+        "Sort": 999,
+        "Switch": "",
+        "Type": "Activity",
+        "TypeId": "DrawCard_1UP_SLWan_Activity"
+    },
     "ActivityBanner16": {
         "Bubble": "",
         "Icon": "",
@@ -636,6 +669,28 @@
         "Switch": "",
         "Type": "Activity",
         "TypeId": "DrawCard_2UP_5_Activity"
+    },
+    "ActivityBanner160": {
+        "Bubble": "",
+        "Icon": "",
+        "Img": "drawcard_banner_HGEr.png",
+        "Important": 0,
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_HGEr_New",
+        "Sort": 999,
+        "Switch": "",
+        "Type": "Activity",
+        "TypeId": "DrawCard_1UP_HGEr_New_Activity"
+    },
+    "ActivityBanner161": {
+        "Bubble": "",
+        "Icon": "",
+        "Img": "drawcard_banner_MGNa_XSMLi.png",
+        "Important": 0,
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_XSMLiMGNa_New",
+        "Sort": 999,
+        "Switch": "",
+        "Type": "Activity",
+        "TypeId": "DrawCard_XSMLiMGNa_New_Activity"
     },
     "ActivityBanner17": {
         "Bubble": "",
@@ -697,11 +752,11 @@
         "Icon": "",
         "Img": "activity_banner_wxh.png",
         "Important": 0,
-        "Link": "view://ActivityBlockSupportView&activityId=ActivityBlock_WuXiuHui_Support",
+        "Link": "view://ActivityBlockSupportView&activityId=ActivityBlock_WuXiuHui_New_Support",
         "Sort": 2001,
         "Switch": "",
         "Type": "Activity",
-        "TypeId": "ActivityBlock_WuXiuHui_Support"
+        "TypeId": "ActivityBlock_WuXiuHui_New_Support"
     },
     "ActivityBanner3": {
         "Bubble": "",
@@ -1290,18 +1345,29 @@
         "Bubble": "",
         "Icon": "",
         "Img": "gongdou_img_banner.png",
-        "Important": "",
+        "Important": 0,
         "Link": "view://ShopCoopExchangeView&activityId=CooperateBoss_Exchange_20210710",
         "Sort": 999,
         "Switch": "",
         "Type": "Activity",
         "TypeId": "CooperateBoss_Exchange_20210710"
     },
+    "ActivityBannerCooperateBoss_20210726": {
+        "Bubble": "",
+        "Icon": "",
+        "Img": "gongdou_img_banner.png",
+        "Important": "",
+        "Link": "view://ShopCoopExchangeView&activityId=CooperateBoss_Exchange_20210726",
+        "Sort": 999,
+        "Switch": "",
+        "Type": "Activity",
+        "TypeId": "CooperateBoss_Exchange_20210726"
+    },
     "ActivityBannerDeepSea": {
         "Bubble": "",
         "Icon": "",
         "Img": "deepsea_txt_zjm_banner.png",
-        "Important": "",
+        "Important": 0,
         "Link": "view://ActivityBlockView&activityId=ActivityBlock_DeepSea",
         "Sort": 3015,
         "Switch": "",

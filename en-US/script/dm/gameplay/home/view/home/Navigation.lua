@@ -141,8 +141,9 @@ end
 function Navigation:openAction()
 	local basePosX, basePosY = self._topLayoutFoldBtn:getPosition()
 	basePosY = basePosY - 1
+	local btnNum = CommonUtils.GetSwitch("fn_pass") and #self._topNodes - 1 or #self._topNodes
 
-	for i = 1, #self._topNodes - 1 do
+	for i = 1, btnNum do
 		local node = self._topNodes[i]
 
 		node:setVisible(true)
@@ -164,8 +165,10 @@ function Navigation:openAction()
 		node:runAction(action)
 	end
 
-	self._topNodes[#self._topNodes]:stopAllActions()
-	self._topNodes[#self._topNodes]:runAction(cc.MoveTo:create(#self._topNodes * 0.1, cc.p(basePosX - #self._topNodes * self._interval - 11, 31)))
+	if CommonUtils.GetSwitch("fn_pass") then
+		self._topNodes[#self._topNodes]:stopAllActions()
+		self._topNodes[#self._topNodes]:runAction(cc.MoveTo:create(#self._topNodes * 0.1, cc.p(basePosX - #self._topNodes * self._interval - 11, 31)))
+	end
 end
 
 function Navigation:closeTop()
@@ -181,8 +184,9 @@ end
 function Navigation:closeAction()
 	local basePosX, basePosY = self._topLayoutFoldBtn:getPosition()
 	basePosY = basePosY - 1
+	local btnNum = CommonUtils.GetSwitch("fn_pass") and #self._topNodes - 1 or #self._topNodes
 
-	for i = 1, #self._topNodes - 1 do
+	for i = 1, btnNum do
 		local node = self._topNodes[i]
 
 		node:getChildByFullName("mTouchLayer"):setTouchEnabled(false)
@@ -199,8 +203,10 @@ function Navigation:closeAction()
 		node:runAction(action)
 	end
 
-	self._topNodes[#self._topNodes]:stopAllActions()
-	self._topNodes[#self._topNodes]:runAction(cc.MoveTo:create(#self._topNodes * 0.1, cc.p(basePosX - 66, 31)))
+	if CommonUtils.GetSwitch("fn_pass") then
+		self._topNodes[#self._topNodes]:stopAllActions()
+		self._topNodes[#self._topNodes]:runAction(cc.MoveTo:create(#self._topNodes * 0.1, cc.p(basePosX - 66, 31)))
+	end
 end
 
 function Navigation:checkTopRedPoint()

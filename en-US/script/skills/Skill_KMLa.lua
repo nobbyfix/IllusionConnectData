@@ -297,18 +297,60 @@ all.Skill_KMLa_Passive_Death = {
 			local this = _env.this
 			local global = _env.global
 
-			if not global.INSTATUS(_env, "Skill_KMLa_Passive_Transformed")(_env, _env.ACTOR) then
-				global.AddAnim(_env, {
-					loop = 2,
-					anim = "huanrao_zhanshupai",
-					zOrder = "TopLayer",
-					pos = global.UnitPos(_env, _env.ACTOR) + {
-						0.3,
-						-0.8
-					}
-				})
-				global.Sound(_env, "Se_Skill_Change_1", 1)
-				global.Perform(_env, _env.ACTOR, global.Animation(_env, "fakedie"))
+			if global.SelectBuffCount(_env, global.FriendField(_env), global.BUFF_MARKED(_env, "Skill_KMLa_Passive_Death")) < 1 then
+				if global.INSTATUS(_env, "Skill_KMLa_Passive_Transformed")(_env, _env.ACTOR) then
+					global.Stop(_env)
+				else
+					global.ActivateSpecificTrigger(_env, _env.ACTOR, "FAKE_DIE")
+					global.ActivateGlobalTrigger(_env, _env.ACTOR, "UNIT_FAKE_DIE")
+				end
+			else
+				global.Stop(_env)
+			end
+		end)
+		exec["@time"]({
+			100
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.SelectBuffCount(_env, global.FriendField(_env), global.BUFF_MARKED(_env, "Skill_KMLa_Passive_Death")) < 1 then
+				if global.INSTATUS(_env, "Skill_KMLa_Passive_Transformed")(_env, _env.ACTOR) then
+					-- Nothing
+				else
+					global.AddAnim(_env, {
+						loop = 2,
+						anim = "huanrao_zhanshupai",
+						zOrder = "TopLayer",
+						pos = global.UnitPos(_env, _env.ACTOR) + {
+							0.3,
+							-0.8
+						}
+					})
+					global.Sound(_env, "Se_Skill_Change_1", 1)
+
+					if global.SelectBuffCount(_env, global.EnemyField(_env), global.BUFF_MARKED(_env, "LOVER_UNLOCK")) == 0 then
+						global.Perform(_env, _env.ACTOR, global.Animation(_env, "fakedie"))
+					else
+						global.DispelBuff(_env, global.EnemyField(_env), global.BUFF_MARKED(_env, "LOVER_UNLOCK"), 1)
+
+						local buff = global.SpecialNumericEffect(_env, "+Skill_KMLa_Passive_Transformed", {
+							"+Normal",
+							"+Normal"
+						}, 1)
+
+						global.ApplyBuff(_env, global.FriendField(_env), {
+							timing = 0,
+							duration = 99,
+							tags = {
+								"Skill_KMLa_Passive_Transformed"
+							}
+						}, {
+							buff
+						})
+						global.Stop(_env)
+					end
+				end
 			end
 		end)
 		exec["@time"]({
@@ -317,25 +359,61 @@ all.Skill_KMLa_Passive_Death = {
 			local this = _env.this
 			local global = _env.global
 
-			if not global.INSTATUS(_env, "Skill_KMLa_Passive_Transformed")(_env, _env.ACTOR) then
-				global.FullInheritTransform(_env)
-				global.Transform(_env, _env.ACTOR, 1, true)
-				global.AddStatus(_env, _env.ACTOR, "Skill_KMLa_Passive_Transformed")
-				global.AddAnim(_env, {
-					loop = 1,
-					anim = "die_zhanshupai",
-					zOrder = "TopLayer",
-					pos = global.UnitPos(_env, _env.ACTOR) + {
-						0.3,
-						-1.3
+			if global.SelectBuffCount(_env, global.FriendField(_env), global.BUFF_MARKED(_env, "Skill_KMLa_Passive_Death")) < 1 then
+				if not global.INSTATUS(_env, "Skill_KMLa_Passive_Transformed")(_env, _env.ACTOR) then
+					global.FullInheritTransform(_env)
+					global.Transform(_env, _env.ACTOR, 1, true)
+					global.AddStatus(_env, _env.ACTOR, "Skill_KMLa_Passive_Transformed")
+					global.AddAnim(_env, {
+						loop = 1,
+						anim = "die_zhanshupai",
+						zOrder = "TopLayer",
+						pos = global.UnitPos(_env, _env.ACTOR) + {
+							0.3,
+							-1.3
+						}
+					})
+					global.Sound(_env, "Se_Skill_Change_2", 1)
+
+					local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.ACTOR)
+
+					global.ApplyHPReduce(_env, _env.ACTOR, maxHp * 0.99)
+					global.ApplyRPRecovery(_env, _env.ACTOR, 1000)
+				end
+			end
+
+			if global.FriendMaster(_env) then
+				if global.MARKED(_env, "Player_Master")(_env, global.FriendMaster(_env)) then
+					local buff_check = global.NumericEffect(_env, "+def", {
+						"+Normal",
+						"+Normal"
+					}, 0)
+
+					global.ApplyBuff(_env, global.FriendField(_env), {
+						timing = 0,
+						duration = 99,
+						tags = {
+							"Skill_KMLa_Passive_Death"
+						}
+					}, {
+						buff_check
+					})
+				end
+			else
+				local buff_check = global.NumericEffect(_env, "+def", {
+					"+Normal",
+					"+Normal"
+				}, 0)
+
+				global.ApplyBuff(_env, global.FriendField(_env), {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"Skill_KMLa_Passive_Death"
 					}
+				}, {
+					buff_check
 				})
-				global.Sound(_env, "Se_Skill_Change_2", 1)
-
-				local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.ACTOR)
-
-				global.ApplyHPReduce(_env, _env.ACTOR, maxHp * 0.99)
-				global.ApplyRPRecovery(_env, _env.ACTOR, 1000)
 			end
 		end)
 
@@ -568,18 +646,80 @@ all.Skill_KMLa_Passive_Death_EX = {
 			local this = _env.this
 			local global = _env.global
 
-			if not global.INSTATUS(_env, "Skill_KMLa_Passive_Transformed2")(_env, _env.ACTOR) then
-				global.AddAnim(_env, {
-					loop = 2,
-					anim = "huanrao_zhanshupai",
-					zOrder = "TopLayer",
-					pos = global.UnitPos(_env, _env.ACTOR) + {
-						0.3,
-						-0.8
-					}
-				})
-				global.Sound(_env, "Se_Skill_Change_1", 1)
-				global.Perform(_env, _env.ACTOR, global.Animation(_env, "fakedie"))
+			if global.SelectBuffCount(_env, global.FriendField(_env), global.BUFF_MARKED(_env, "Skill_KMLa_Passive_Death")) < 2 then
+				if global.INSTATUS(_env, "Skill_KMLa_Passive_Transformed2")(_env, _env.ACTOR) then
+					global.Stop(_env)
+				else
+					global.ActivateSpecificTrigger(_env, _env.ACTOR, "FAKE_DIE")
+					global.ActivateGlobalTrigger(_env, _env.ACTOR, "UNIT_FAKE_DIE")
+				end
+			else
+				global.Stop(_env)
+			end
+		end)
+		exec["@time"]({
+			100
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.SelectBuffCount(_env, global.FriendField(_env), global.BUFF_MARKED(_env, "Skill_KMLa_Passive_Death")) < 2 then
+				if global.INSTATUS(_env, "Skill_KMLa_Passive_Transformed2")(_env, _env.ACTOR) then
+					-- Nothing
+				else
+					global.AddAnim(_env, {
+						loop = 2,
+						anim = "huanrao_zhanshupai",
+						zOrder = "TopLayer",
+						pos = global.UnitPos(_env, _env.ACTOR) + {
+							0.3,
+							-0.8
+						}
+					})
+					global.Sound(_env, "Se_Skill_Change_1", 1)
+
+					if global.SelectBuffCount(_env, global.EnemyField(_env), global.BUFF_MARKED(_env, "LOVER_UNLOCK")) == 0 then
+						global.Perform(_env, _env.ACTOR, global.Animation(_env, "fakedie"))
+					else
+						if global.INSTATUS(_env, "Skill_KMLa_Passive_Transformed")(_env, _env.ACTOR) then
+							global.DispelBuff(_env, global.EnemyField(_env), global.BUFF_MARKED(_env, "LOVER_UNLOCK"), 1)
+
+							local buff = global.SpecialNumericEffect(_env, "+Skill_KMLa_Passive_Transformed2", {
+								"+Normal",
+								"+Normal"
+							}, 1)
+
+							global.ApplyBuff(_env, global.FriendField(_env), {
+								timing = 0,
+								duration = 99,
+								tags = {
+									"Skill_KMLa_Passive_Transformed2"
+								}
+							}, {
+								buff
+							})
+						else
+							global.DispelBuff(_env, global.EnemyField(_env), global.BUFF_MARKED(_env, "LOVER_UNLOCK"), 1)
+
+							local buff = global.SpecialNumericEffect(_env, "+Skill_KMLa_Passive_Transformed", {
+								"+Normal",
+								"+Normal"
+							}, 1)
+
+							global.ApplyBuff(_env, global.FriendField(_env), {
+								timing = 0,
+								duration = 99,
+								tags = {
+									"Skill_KMLa_Passive_Transformed"
+								}
+							}, {
+								buff
+							})
+						end
+
+						global.Stop(_env)
+					end
+				end
 			end
 		end)
 		exec["@time"]({
@@ -588,67 +728,103 @@ all.Skill_KMLa_Passive_Death_EX = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.INSTATUS(_env, "Skill_KMLa_Passive_Transformed2")(_env, _env.ACTOR) then
-				-- Nothing
-			elseif global.INSTATUS(_env, "Skill_KMLa_Passive_Transformed")(_env, _env.ACTOR) then
-				global.FullInheritTransform(_env)
-				global.Transform(_env, _env.ACTOR, 1, true)
-				global.AddStatus(_env, _env.ACTOR, "Skill_KMLa_Passive_Transformed2")
-				global.AddAnim(_env, {
-					loop = 1,
-					anim = "die_zhanshupai",
-					zOrder = "TopLayer",
-					pos = global.UnitPos(_env, _env.ACTOR) + {
-						0.3,
-						-1.3
-					}
-				})
-				global.Sound(_env, "Se_Skill_Change_2", 1)
+			if global.SelectBuffCount(_env, global.FriendField(_env), global.BUFF_MARKED(_env, "Skill_KMLa_Passive_Death")) < 2 then
+				if global.INSTATUS(_env, "Skill_KMLa_Passive_Transformed2")(_env, _env.ACTOR) then
+					-- Nothing
+				elseif global.INSTATUS(_env, "Skill_KMLa_Passive_Transformed")(_env, _env.ACTOR) then
+					global.FullInheritTransform(_env)
+					global.Transform(_env, _env.ACTOR, 1, true)
+					global.AddStatus(_env, _env.ACTOR, "Skill_KMLa_Passive_Transformed2")
+					global.AddAnim(_env, {
+						loop = 1,
+						anim = "die_zhanshupai",
+						zOrder = "TopLayer",
+						pos = global.UnitPos(_env, _env.ACTOR) + {
+							0.3,
+							-1.3
+						}
+					})
+					global.Sound(_env, "Se_Skill_Change_2", 1)
 
-				local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.ACTOR)
+					local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.ACTOR)
 
-				global.ApplyHPReduce(_env, _env.ACTOR, maxHp * 0.99)
-				global.ApplyRPRecovery(_env, _env.ACTOR, 1000)
+					global.ApplyHPReduce(_env, _env.ACTOR, maxHp * 0.99)
+					global.ApplyRPRecovery(_env, _env.ACTOR, 1000)
 
-				local maxatk = global.UnitPropGetter(_env, "atkrate")(_env, _env.ACTOR)
-				local buffeft1 = global.NumericEffect(_env, "-atkrate", {
+					local maxatk = global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR)
+					local buffeft1 = global.NumericEffect(_env, "-atk", {
+						"+Normal",
+						"+Normal"
+					}, maxatk / 2)
+
+					global.ApplyBuff(_env, _env.ACTOR, {
+						duration = 99,
+						group = "Skill_TPGZhu_Passive_Death",
+						timing = 0,
+						limit = 1,
+						tags = {
+							"NUMERIC",
+							"BUFF",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buffeft1
+					})
+				else
+					global.FullInheritTransform(_env)
+					global.Transform(_env, _env.ACTOR, 1, true)
+					global.AddStatus(_env, _env.ACTOR, "Skill_KMLa_Passive_Transformed")
+					global.AddAnim(_env, {
+						loop = 1,
+						anim = "die_zhanshupai",
+						zOrder = "TopLayer",
+						pos = global.UnitPos(_env, _env.ACTOR) + {
+							0.3,
+							-1.3
+						}
+					})
+					global.Sound(_env, "Se_Skill_Change_2", 1)
+
+					local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.ACTOR)
+
+					global.ApplyHPReduce(_env, _env.ACTOR, maxHp * 0.99)
+					global.ApplyRPRecovery(_env, _env.ACTOR, 1000)
+				end
+			end
+
+			if global.FriendMaster(_env) then
+				if global.MARKED(_env, "Player_Master")(_env, global.FriendMaster(_env)) then
+					local buff_check = global.NumericEffect(_env, "+def", {
+						"+Normal",
+						"+Normal"
+					}, 0)
+
+					global.ApplyBuff(_env, global.FriendField(_env), {
+						timing = 0,
+						duration = 99,
+						tags = {
+							"Skill_KMLa_Passive_Death"
+						}
+					}, {
+						buff_check
+					})
+				end
+			else
+				local buff_check = global.NumericEffect(_env, "+def", {
 					"+Normal",
 					"+Normal"
-				}, maxatk / 2)
+				}, 0)
 
-				global.ApplyBuff(_env, _env.ACTOR, {
-					duration = 99,
-					group = "Skill_TPGZhu_Passive_Death",
+				global.ApplyBuff(_env, global.FriendField(_env), {
 					timing = 0,
-					limit = 1,
+					duration = 99,
 					tags = {
-						"NUMERIC",
-						"BUFF",
-						"UNDISPELLABLE",
-						"UNSTEALABLE"
+						"Skill_KMLa_Passive_Death"
 					}
 				}, {
-					buffeft1
+					buff_check
 				})
-			else
-				global.FullInheritTransform(_env)
-				global.Transform(_env, _env.ACTOR, 1, true)
-				global.AddStatus(_env, _env.ACTOR, "Skill_KMLa_Passive_Transformed")
-				global.AddAnim(_env, {
-					loop = 1,
-					anim = "die_zhanshupai",
-					zOrder = "TopLayer",
-					pos = global.UnitPos(_env, _env.ACTOR) + {
-						0.3,
-						-1.3
-					}
-				})
-				global.Sound(_env, "Se_Skill_Change_2", 1)
-
-				local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.ACTOR)
-
-				global.ApplyHPReduce(_env, _env.ACTOR, maxHp * 0.99)
-				global.ApplyRPRecovery(_env, _env.ACTOR, 1000)
 			end
 		end)
 

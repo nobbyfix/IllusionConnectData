@@ -70,6 +70,7 @@ function PlayerInfoWidget:initSubviews()
 	self._vipLevel = self._infoPanel:getChildByFullName("vip_level")
 	self._headRectNode = self._infoPanel:getChildByFullName("head_icon")
 
+	self._headRectNode:setContentSize(cc.size(88, 88))
 	self._headRectNode:setTouchEnabled(true)
 	self._headRectNode:addTouchEventListener(function (sender, eventType)
 		self:onClickHead(sender, eventType)
@@ -189,17 +190,23 @@ end
 
 function PlayerInfoWidget:setHeadId(headId)
 	if self._headRectNode then
+		local developSystem = self:getInjector():getInstance(DevelopSystem)
+		local player = developSystem:getPlayer()
 		local rectNode = self._headRectNode
 
 		rectNode:removeAllChildren(true)
 
-		local headIcon, oldIcon = IconFactory:createRactHeadImage({
-			id = headId,
-			size = cc.size(160, 54)
+		local headicon, oldIcon = IconFactory:createPlayerIcon({
+			clipType = 4,
+			id = player:getHeadId(),
+			size = cc.size(93, 94),
+			headFrameId = player:getCurHeadFrame()
 		})
 
-		oldIcon:offset(30, 0)
-		headIcon:addTo(rectNode):center(rectNode:getContentSize())
+		headicon:setScale(1.15)
+		oldIcon:setScale(0.5)
+		rectNode:setScale(0.7)
+		headicon:addTo(rectNode):center(rectNode:getContentSize())
 	end
 end
 

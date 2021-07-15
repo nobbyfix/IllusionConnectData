@@ -198,20 +198,27 @@ function ActivityBlockSupportMediator:initInfo()
 	local teamBtnText = self:getView():getChildByFullName("main.teamBtn.text")
 
 	if getCurrentLanguage() ~= GameLanguageType.CN then
-		blockBtnText:getVirtualRenderer():setOverflow(cc.LabelOverflow.SHRINK)
-		blockBtnText:getVirtualRenderer():setDimensions(120, 50)
-		blockBtnText:setPosition(cc.p(50, 17))
+		if blockBtnText then
+			blockBtnText:getVirtualRenderer():setOverflow(cc.LabelOverflow.SHRINK)
+			blockBtnText:getVirtualRenderer():setDimensions(120, 50)
+			blockBtnText:setPosition(cc.p(50, 17))
+		end
+
 		taskBtnText:getVirtualRenderer():setOverflow(cc.LabelOverflow.SHRINK)
 		taskBtnText:getVirtualRenderer():setDimensions(90, 50)
-		taskBtnText:setPosition(cc.p(50, 0))
+		taskBtnText:setPosition(cc.p(50, 40))
 		teamBtnText:getVirtualRenderer():setOverflow(cc.LabelOverflow.SHRINK)
 		teamBtnText:getVirtualRenderer():setDimensions(90, 50)
-		teamBtnText:setPosition(cc.p(50, 0))
+		teamBtnText:setPosition(cc.p(50, 40))
 	else
 		taskBtnText:getVirtualRenderer():setLineSpacing(-15)
-		blockBtnText:getVirtualRenderer():setLineSpacing(-15)
 		teamBtnText:getVirtualRenderer():setLineSpacing(-15)
-		blockBtnText:getVirtualRenderer():setDimensions(30, 84)
+
+		if blockBtnText then
+			blockBtnText:getVirtualRenderer():setLineSpacing(-15)
+			blockBtnText:getVirtualRenderer():setDimensions(30, 84)
+		end
+
 		taskBtnText:getVirtualRenderer():setDimensions(25, 73)
 		teamBtnText:getVirtualRenderer():setDimensions(25, 73)
 	end
@@ -247,7 +254,7 @@ function ActivityBlockSupportMediator:initInfo()
 		})
 	end
 
-	if self._activityId == ActivityId.kActivityWxh then
+	if self._activityId == ActivityId.kActivityWxh or self._activityId == ActivityId.kActivityWxhNew then
 		self._endTip.supportEndTip = Strings:get("Activity_Saga_UI_endtip_support_wxh")
 	end
 
@@ -255,7 +262,7 @@ function ActivityBlockSupportMediator:initInfo()
 
 	redPoint:setVisible(self._blockActivity and self._blockActivity:hasRedPoint())
 
-	if self._activityId == ActivityId.kActivityWxh then
+	if self._activityId == ActivityId.kActivityWxh or self._activityId == ActivityId.kActivityWxhNew then
 		local anim = self._blockBtn:getChildByFullName("anim")
 
 		anim:removeChildByName("blockAnim")
@@ -316,7 +323,7 @@ function ActivityBlockSupportMediator:initInfo()
 
 	redPoint:setVisible(hasRed)
 
-	if self._activityId == ActivityId.kActivityWxh then
+	if self._activityId == ActivityId.kActivityWxh or self._activityId == ActivityId.kActivityWxhNew then
 		local anim = self._supportPanel:getChildByFullName("anim")
 
 		anim:removeChildByName("supportAnim")
@@ -388,7 +395,7 @@ function ActivityBlockSupportMediator:initTimer()
 					str = timeTab.min .. Strings:get("TimeUtil_Min")
 				end
 
-				local s = self._activityId == ActivityId.kActivityWxh and "Activity_Saga_UI_1_wxh" or "Activity_Saga_UI_1"
+				local s = (self._activityId == ActivityId.kActivityWxh or self._activityId == ActivityId.kActivityWxhNew) and "Activity_Saga_UI_1_wxh" or "Activity_Saga_UI_1"
 
 				remainLabel:setString(Strings:get(s, {
 					time = str
@@ -553,7 +560,7 @@ function ActivityBlockSupportMediator:onClickSupport()
 		return
 	end
 
-	if self._activityId == ActivityId.kActivityWxh then
+	if self._activityId == ActivityId.kActivityWxh or self._activityId == ActivityId.kActivityWxhNew then
 		self._clickSupport = true
 		local anim = self._supportPanel:getChildByFullName("anim")
 		local supportAnim = anim:getChildByFullName("supportAnim")
