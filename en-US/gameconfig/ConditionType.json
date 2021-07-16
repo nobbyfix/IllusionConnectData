@@ -1297,7 +1297,14 @@
     "Condi_WuXiuHuiChengjiuDian": {
         "AchieveType1": "INCREASE",
         "AchieveType2": "",
-        "ConditionType1": "player.bag.items.IM_WuXiuHuiChengjiuDian.count",
+        "ConditionType1": "player.bag.items.IM_WuXiuHuiChengjiuDian_New.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_WuXiuHuiChengjiuDian_Desc"
+    },
+    "Condi_WuXiuHuiChengjiuDian_New": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_WuXiuHuiChengjiuDian_New.count",
         "ConditionType2": "",
         "EffectDesc": "Condi_WuXiuHuiChengjiuDian_Desc"
     },
