@@ -1284,8 +1284,8 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED_ALL(_env, "EquipSkill_Boots_15101_1", "UNDISPELLABLE", "UNSTEALABLE")) > 0 then
 		local AtkRateFactor = global.SpecialPropGetter(_env, "Atk_EquipSkill_Boots_15101_1")(_env, actor)
 
-		if global.MASTER(_env, target) and global.SpecialPropGetter(_env, "equipSkill_boots_15101_1")(_env, _env.ACTOR) < 3 then
-			local cards = global.Slice(_env, global.SortBy(_env, global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR)), "<", global.GetCardCost), 1, 1)
+		if global.MASTER(_env, target) and global.SpecialPropGetter(_env, "equipSkill_boots_15101_1")(_env, global.FriendField(_env)) < 3 then
+			local cards = global.Slice(_env, global.SortBy(_env, global.CardsInWindow(_env, global.GetOwner(_env, actor)), "<", global.GetCardCost), 1, 1)
 			local buff_hurt = global.SpecialNumericEffect(_env, "+equipSkill_boots_15101_1", {
 				"+Normal",
 				"+Normal"
@@ -1297,7 +1297,7 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 			local cardvaluechange = global.CardCostEnchant(_env, "-", 2, 1)
 
 			for _, card in global.__iter__(cards) do
-				global.ApplyBuff(_env, _env.ACTOR, {
+				global.ApplyBuff(_env, global.FriendField(_env), {
 					timing = 0,
 					duration = 99,
 					tags = {
@@ -1306,29 +1306,29 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 						"UNDISPELLABLE",
 						"UNSTEALABLE",
 						"UR_EQUIPMENT",
-						"EquipSkill_Boots_15101_1"
+						"YINGLUO"
 					}
 				}, {
 					buff_hurt
 				})
-				global.ApplyEnchant(_env, global.GetOwner(_env, _env.ACTOR), card, {
+				global.ApplyEnchant(_env, global.GetOwner(_env, actor), card, {
 					timing = 0,
 					duration = 99,
 					tags = {
 						"CARDBUFF",
-						"EquipSkill_Boots_15101_1",
+						"YINGLUO",
 						"UNDISPELLABLE"
 					}
 				}, {
 					cardvaluechange
 				})
-				global.ApplyHeroCardBuff(_env, global.GetOwner(_env, _env.ACTOR), card, {
+				global.ApplyHeroCardBuff(_env, global.GetOwner(_env, actor), card, {
 					timing = 0,
 					duration = 99,
 					tags = {
 						"CARDBUFF",
 						"BUFF",
-						"EquipSkill_Boots_15101_1",
+						"YINGLUO",
 						"UNDISPELLABLE",
 						"UNSTEALABLE"
 					}
@@ -1790,8 +1790,8 @@ function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimi
 	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED_ALL(_env, "EquipSkill_Boots_15101_1", "UNDISPELLABLE", "UNSTEALABLE")) > 0 then
 		local AtkRateFactor = global.SpecialPropGetter(_env, "Atk_EquipSkill_Boots_15101_1")(_env, actor)
 
-		if global.MASTER(_env, target) and global.SpecialPropGetter(_env, "equipSkill_boots_15101_1")(_env, _env.ACTOR) < 3 then
-			local cards = global.Slice(_env, global.SortBy(_env, global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR)), "<", global.GetCardCost), 1, 1)
+		if global.MASTER(_env, target) and global.SpecialPropGetter(_env, "equipSkill_boots_15101_1")(_env, global.FriendField(_env)) < 3 then
+			local cards = global.Slice(_env, global.SortBy(_env, global.CardsInWindow(_env, global.GetOwner(_env, actor)), "<", global.GetCardCost), 1, 1)
 			local buff_hurt = global.SpecialNumericEffect(_env, "+equipSkill_boots_15101_1", {
 				"+Normal",
 				"+Normal"
@@ -1803,7 +1803,7 @@ function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimi
 			local cardvaluechange = global.CardCostEnchant(_env, "-", 2, 1)
 
 			for _, card in global.__iter__(cards) do
-				global.ApplyBuff(_env, _env.ACTOR, {
+				global.ApplyBuff(_env, global.FriendField(_env), {
 					timing = 0,
 					duration = 99,
 					tags = {
@@ -1812,29 +1812,29 @@ function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimi
 						"UNDISPELLABLE",
 						"UNSTEALABLE",
 						"UR_EQUIPMENT",
-						"EquipSkill_Boots_15101_1"
+						"YINGLUO"
 					}
 				}, {
 					buff_hurt
 				})
-				global.ApplyEnchant(_env, global.GetOwner(_env, _env.ACTOR), card, {
+				global.ApplyEnchant(_env, global.GetOwner(_env, actor), card, {
 					timing = 0,
 					duration = 99,
 					tags = {
 						"CARDBUFF",
-						"EquipSkill_Boots_15101_1",
+						"YINGLUO",
 						"UNDISPELLABLE"
 					}
 				}, {
 					cardvaluechange
 				})
-				global.ApplyHeroCardBuff(_env, global.GetOwner(_env, _env.ACTOR), card, {
+				global.ApplyHeroCardBuff(_env, global.GetOwner(_env, actor), card, {
 					timing = 0,
 					duration = 99,
 					tags = {
 						"CARDBUFF",
 						"BUFF",
-						"EquipSkill_Boots_15101_1",
+						"YINGLUO",
 						"UNDISPELLABLE",
 						"UNSTEALABLE"
 					}
@@ -2328,8 +2328,8 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED_ALL(_env, "EquipSkill_Boots_15101_1", "UNDISPELLABLE", "UNSTEALABLE")) > 0 then
 		local AtkRateFactor = global.SpecialPropGetter(_env, "Atk_EquipSkill_Boots_15101_1")(_env, actor)
 
-		if global.MASTER(_env, target) and n == total and global.SpecialPropGetter(_env, "equipSkill_boots_15101_1")(_env, _env.ACTOR) < 3 then
-			local cards = global.Slice(_env, global.SortBy(_env, global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR)), "<", global.GetCardCost), 1, 1)
+		if global.MASTER(_env, target) and n == total and global.SpecialPropGetter(_env, "equipSkill_boots_15101_1")(_env, global.FriendField(_env)) < 3 then
+			local cards = global.Slice(_env, global.SortBy(_env, global.CardsInWindow(_env, global.GetOwner(_env, actor)), "<", global.GetCardCost), 1, 1)
 			local buff_hurt = global.SpecialNumericEffect(_env, "+equipSkill_boots_15101_1", {
 				"+Normal",
 				"+Normal"
@@ -2341,7 +2341,7 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 			local cardvaluechange = global.CardCostEnchant(_env, "-", 2, 1)
 
 			for _, card in global.__iter__(cards) do
-				global.ApplyBuff(_env, _env.ACTOR, {
+				global.ApplyBuff(_env, global.FriendField(_env), {
 					timing = 0,
 					duration = 99,
 					tags = {
@@ -2350,29 +2350,29 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 						"UNDISPELLABLE",
 						"UNSTEALABLE",
 						"UR_EQUIPMENT",
-						"EquipSkill_Boots_15101_1"
+						"YINGLUO"
 					}
 				}, {
 					buff_hurt
 				})
-				global.ApplyEnchant(_env, global.GetOwner(_env, _env.ACTOR), card, {
+				global.ApplyEnchant(_env, global.GetOwner(_env, actor), card, {
 					timing = 0,
 					duration = 99,
 					tags = {
 						"CARDBUFF",
-						"EquipSkill_Boots_15101_1",
+						"YINGLUO",
 						"UNDISPELLABLE"
 					}
 				}, {
 					cardvaluechange
 				})
-				global.ApplyHeroCardBuff(_env, global.GetOwner(_env, _env.ACTOR), card, {
+				global.ApplyHeroCardBuff(_env, global.GetOwner(_env, actor), card, {
 					timing = 0,
 					duration = 99,
 					tags = {
 						"CARDBUFF",
 						"BUFF",
-						"EquipSkill_Boots_15101_1",
+						"YINGLUO",
 						"UNDISPELLABLE",
 						"UNSTEALABLE"
 					}
@@ -2884,8 +2884,8 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED_ALL(_env, "EquipSkill_Boots_15101_1", "UNDISPELLABLE", "UNSTEALABLE")) > 0 then
 		local AtkRateFactor = global.SpecialPropGetter(_env, "Atk_EquipSkill_Boots_15101_1")(_env, actor)
 
-		if global.MASTER(_env, target) and n == total and global.SpecialPropGetter(_env, "equipSkill_boots_15101_1")(_env, _env.ACTOR) < 3 then
-			local cards = global.Slice(_env, global.SortBy(_env, global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR)), "<", global.GetCardCost), 1, 1)
+		if global.MASTER(_env, target) and n == total and global.SpecialPropGetter(_env, "equipSkill_boots_15101_1")(_env, global.FriendField(_env)) < 3 then
+			local cards = global.Slice(_env, global.SortBy(_env, global.CardsInWindow(_env, global.GetOwner(_env, actor)), "<", global.GetCardCost), 1, 1)
 			local buff_hurt = global.SpecialNumericEffect(_env, "+equipSkill_boots_15101_1", {
 				"+Normal",
 				"+Normal"
@@ -2897,7 +2897,7 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 			local cardvaluechange = global.CardCostEnchant(_env, "-", 2, 1)
 
 			for _, card in global.__iter__(cards) do
-				global.ApplyBuff(_env, _env.ACTOR, {
+				global.ApplyBuff(_env, global.FriendField(_env), {
 					timing = 0,
 					duration = 99,
 					tags = {
@@ -2906,29 +2906,29 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 						"UNDISPELLABLE",
 						"UNSTEALABLE",
 						"UR_EQUIPMENT",
-						"EquipSkill_Boots_15101_1"
+						"YINGLUO"
 					}
 				}, {
 					buff_hurt
 				})
-				global.ApplyEnchant(_env, global.GetOwner(_env, _env.ACTOR), card, {
+				global.ApplyEnchant(_env, global.GetOwner(_env, actor), card, {
 					timing = 0,
 					duration = 99,
 					tags = {
 						"CARDBUFF",
-						"EquipSkill_Boots_15101_1",
+						"YINGLUO",
 						"UNDISPELLABLE"
 					}
 				}, {
 					cardvaluechange
 				})
-				global.ApplyHeroCardBuff(_env, global.GetOwner(_env, _env.ACTOR), card, {
+				global.ApplyHeroCardBuff(_env, global.GetOwner(_env, actor), card, {
 					timing = 0,
 					duration = 99,
 					tags = {
 						"CARDBUFF",
 						"BUFF",
-						"EquipSkill_Boots_15101_1",
+						"YINGLUO",
 						"UNDISPELLABLE",
 						"UNSTEALABLE"
 					}
