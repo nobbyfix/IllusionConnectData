@@ -113,15 +113,16 @@ function BattleRoleTopBar:_setupView()
 	local mpbar = barsPanel:getChildByFullName("bars.mp_bar")
 	self._baseShield = barsPanel:getChildByName("Node_shield")
 	self._fanProgress = barsPanel:getChildByName("progress")
+	self._hp_gray = barsPanel:getChildByName("hp_gray")
 	self._shield = self._baseShield:getChildByName("shield")
 
+	self._hp_gray:setVisible(false)
 	self._shield:setVisible(false)
 	self._fanProgress:setVisible(false)
 	mpbar:setPercent(0)
 
 	self._mpbar = mpbar
 	self._mpBg = barsPanel:getChildByName("mp_bg")
-	self._baseColorTrans = self._hpbar:getColorTransform()
 
 	if roleType ~= RoleType.Master then
 		local genreIcon = barsPanel:getChildByFullName("genre")
@@ -149,6 +150,20 @@ function BattleRoleTopBar:_setupView()
 			end
 		end
 	end
+end
+
+function BattleRoleTopBar:setMaxHpValue(orgMax, newMax)
+	local grayPercent = newMax / orgMax
+
+	self._hp_gray:setVisible(true)
+
+	local function grayAction(duration, value)
+		return cc.ScaleTo:create(duration, value, 1)
+	end
+
+	self._hpbar:runAction(grayAction(0.2, grayPercent))
+	self._hp_gray:runAction(grayAction(0.2, 1 - grayPercent))
+	self._hpCover:runAction(grayAction(0.2, grayPercent))
 end
 
 function BattleRoleTopBar:setRoleAttrbute(attr)
@@ -204,7 +219,7 @@ function BattleRoleTopBar:setHp(value)
 
 			label:setColor(cc.c3b(0, 255, 0))
 			label:setAnchorPoint(cc.p(0.5, 0))
-			label:addTo(self._hpbar):posite(self._hpbar:getContentSize().width / 2, 10)
+			label:addTo(self._hpbar:getParent()):posite(self._hpbar:getContentSize().width / 2, 10)
 
 			self._hpLabel = label
 		end

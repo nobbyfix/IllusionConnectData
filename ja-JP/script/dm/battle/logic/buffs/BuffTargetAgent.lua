@@ -217,7 +217,7 @@ function BuffTargetAgent:discardBuffGroup(groupId)
 	return buffGroup
 end
 
-function BuffTargetAgent:addImmuneSelector(selector)
+function BuffTargetAgent:addImmuneSelector(selector, bufftype)
 	if selector == nil then
 		return nil
 	end
@@ -232,7 +232,10 @@ function BuffTargetAgent:addImmuneSelector(selector)
 	local cnt = immuneSelectors[selector]
 
 	if cnt == nil then
-		immuneSelectors[#immuneSelectors + 1] = selector
+		immuneSelectors[#immuneSelectors + 1] = {
+			selector = selector,
+			bufftype = bufftype or "normal"
+		}
 		immuneSelectors[selector] = 1
 	else
 		immuneSelectors[selector] = cnt + 1
@@ -283,10 +286,32 @@ function BuffTargetAgent:isImmuneToBuffObject(buffObject)
 	end
 
 	for i = 1, #immuneSelectors do
-		local selector = immuneSelectors[i]
+		if immuneSelectors[i].bufftype == "normal" then
+			local selector = immuneSelectors[i].selector
 
-		if selector(buffObject) then
-			return true
+			if selector(buffObject) then
+				return true
+			end
+		end
+	end
+
+	return false
+end
+
+function BuffTargetAgent:isImmuneToTrapBuffObject(buffObject)
+	local immuneSelectors = self._immuneSelectors
+
+	if immuneSelectors == nil then
+		return false
+	end
+
+	for i = 1, #immuneSelectors do
+		if immuneSelectors[i].bufftype == "trap" then
+			local selector = immuneSelectors[i].selector
+
+			if selector(buffObject) then
+				return true
+			end
 		end
 	end
 

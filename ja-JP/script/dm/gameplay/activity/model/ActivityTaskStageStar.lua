@@ -131,3 +131,21 @@ function ActivityTaskStageStar:getPayStatus()
 
 	return buy
 end
+
+function ActivityTaskStageStar:getTotalNumReward()
+	local total = 0
+
+	if self._taskList then
+		for k, data in pairs(self._taskList) do
+			local rewards = data:getExtraReward()
+
+			if rewards and rewards.Content then
+				for i, rewardData in pairs(rewards.Content) do
+					total = total + rewardData.amount
+				end
+			end
+		end
+	end
+
+	return total
+end

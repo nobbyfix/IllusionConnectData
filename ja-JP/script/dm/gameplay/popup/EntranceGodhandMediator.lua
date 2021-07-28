@@ -27,6 +27,9 @@ EntranceGodhandMediator:has("_crusadeSystem", {
 EntranceGodhandMediator:has("_dreamChallengeSystem", {
 	is = "r"
 }):injectWith("DreamChallengeSystem")
+EntranceGodhandMediator:has("_dreamHouseSystem", {
+	is = "r"
+}):injectWith("DreamHouseSystem")
 
 local configValueKey = ConfigReader:getDataByNameIdAndKey("ConfigValue", "TrialSwitch", "content")
 local kCells = {
@@ -35,7 +38,8 @@ local kCells = {
 	kExplore = "explore",
 	kCrusade = "crusade",
 	kTower = "tower",
-	kPractice = "practice"
+	kPractice = "practice",
+	kDreamHouse = "dreamhouse"
 }
 local kFunctionData = {
 	[kCells.kPractice] = {
@@ -55,6 +59,12 @@ local kFunctionData = {
 		switchKey = "fn_train_explore",
 		des = Strings:get("Explore_Desc"),
 		titleStr = Strings:get("TrialTitle_TS")
+	},
+	[kCells.kDreamHouse] = {
+		animName = "bumengguan_shilianrukou",
+		switchKey = "fn_train_dreamhouse",
+		des = Strings:get("DreamHouse_Desc"),
+		titleStr = Strings:get("DreamHouse_Main_UI04")
 	},
 	[kCells.kTower] = {
 		animName = "pataCell_shilianrukou",
@@ -318,6 +328,8 @@ function EntranceGodhandMediator:createNamePanel(parent, str)
 	local nameNode = parent:getChildByFullName("nameNode")
 
 	if not nameNode then
+		dump(str, "createNamePanel >>>>>>")
+
 		return
 	end
 
@@ -350,6 +362,8 @@ function EntranceGodhandMediator:clickPanel(index)
 		self:enterCrusadeView()
 	elseif index == kCells.kDreamChallenge then
 		self:enterDreamChallenge()
+	elseif index == kCells.kDreamHouse then
+		self:enterDreamHouse()
 	end
 end
 
@@ -388,6 +402,9 @@ function EntranceGodhandMediator:checkHasRed(key)
 		end,
 		[kCells.kDreamChallenge] = function ()
 			return self._dreamChallengeSystem:checkIsShowRedPoint()
+		end,
+		[kCells.kDreamHouse] = function ()
+			return self._dreamHouseSystem:checkIsShowRedPoint()
 		end
 	}
 
@@ -478,6 +495,21 @@ end
 
 function EntranceGodhandMediator:enterDreamChallenge()
 	self._dreamChallengeSystem:tryEnter()
+end
+
+function EntranceGodhandMediator:enterDreamHouse()
+	local unlock, tips = self._dreamHouseSystem:checkEnabled()
+
+	if not unlock then
+		AudioEngine:getInstance():playEffect("Se_Alert_Error", false)
+		self:dispatch(ShowTipEvent({
+			duration = 0.2,
+			tip = tips
+		}))
+	else
+		AudioEngine:getInstance():playEffect("Se_Click_Open_1", false)
+		self._dreamHouseSystem:tryEnter()
+	end
 end
 
 function EntranceGodhandMediator:onClickBack()

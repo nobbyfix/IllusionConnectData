@@ -1370,17 +1370,77 @@ function CommonStageChapterDetailMediator:passChapterMc()
 
 		self._delayLvPop = false
 
-		if self._chapterIndex == 1 or self._chapterIndex == #max then
+		if self._chapterIndex == 1 then
 			return
 		end
 
-		local chapterInfo = self:getStageSystem():getMapByIndex(self._chapterIndex + 1, self._stageType)
-		local unlock, tips = chapterInfo:isUnlock()
+		local function showNext()
+			if self._chapterIndex >= #max then
+				return
+			end
 
-		if unlock then
-			self._chapterIndex = self._chapterIndex + 1
+			local chapterNextInfo = self:getStageSystem():getMapByIndex(self._chapterIndex + 1, self._stageType)
+			local unlock, tips = chapterNextInfo:isUnlock()
 
-			self:refreshChapterView()
+			if unlock then
+				self._chapterIndex = self._chapterIndex + 1
+
+				self:refreshChapterView()
+			end
+		end
+
+		local chapterInfo = self:getStageSystem():getMapByIndex(self._chapterIndex, self._stageType)
+		local chapterConfig = self:getStageSystem():getMapConfigByIndex(self._chapterIndex, self._stageType)
+		local boxRewardList = self:getStageSystem():boxReardToTable(chapterConfig.StarBoxReward)
+		local boxIndex = #boxRewardList
+		local curStarNum = chapterInfo and chapterInfo:getCurrentStarCount() or 0
+		local chapterId = self:getStageSystem():index2MapId(self._chapterIndex, self._stageType)
+
+		local function receiveAward()
+			local function requestRewardSuc(data)
+				local stageSystem = self._stageSystem
+				local curChapterId = stageSystem:index2MapId(self._chapterIndex, self._stageType)
+
+				if chapterId == curChapterId then
+					local parent = self._starBoxPanel:getChildByFullName("bar_schedule.box_panel_3")
+					local redPoint = parent:getChildByName("red_point")
+
+					redPoint:setVisible(false)
+				end
+
+				local view = self:getInjector():getInstance("getRewardView")
+
+				stageSystem:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+					maskOpacity = 0
+				}, {
+					rewards = data,
+					callback = showNext
+				}))
+			end
+
+			self:getStageSystem():requestStageStarsReward(chapterId, boxRewardList[boxIndex].starNum, function (data)
+				requestRewardSuc(data)
+			end)
+		end
+
+		if boxRewardList[boxIndex].starNum <= curStarNum and chapterInfo and chapterInfo:getMapBoxState(boxRewardList[boxIndex].starNum) == StageBoxState.kCanReceive then
+			local data = {
+				guide = true,
+				type = StageRewardType.kStarBox,
+				state = StageBoxState.kCanReceive,
+				rewardId = boxRewardList[boxIndex].rewardId,
+				callback = receiveAward,
+				closeback = showNext,
+				extra = {}
+			}
+			data.extra[1] = curStarNum
+			data.extra[2] = boxRewardList[boxIndex].starNum
+
+			self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, self:getInjector():getInstance("StageShowRewardView"), {
+				transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+			}, data, self))
+		else
+			showNext()
 		end
 	end)
 end

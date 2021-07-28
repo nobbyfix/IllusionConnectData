@@ -19,10 +19,11 @@ RewardType = {
 	kGalleryMemory = 16,
 	kItem = 2,
 	kHero = 3,
+	kHeadFrame = 14,
 	kBuff = 17,
 	kDecorate = 20,
-	kShow = 99,
 	kSurface = 7,
+	kShow = 99,
 	kStory = "STORY",
 	kInvalid = -1
 }

@@ -389,7 +389,7 @@
         "StarsAttrEffect": ""
     },
     "RTPKSeason_6": {
-        "AwakenAttrEffect": "",
+        "AwakenAttrEffect": "ExcellentHeroSkill_Awaken",
         "BGM": [
             "Mus_Battle_Danger_Boss",
             "",
@@ -404,19 +404,19 @@
                 "Hero": [
                     "LFKLFTe",
                     "FLBDSi",
-                    "TPGZhu",
-                    "FLYDe",
-                    "MZGXiu"
+                    "MZGXiu",
+                    "BHTZi",
+                    "FLYDe"
                 ]
             }
         ],
         "RuleDesc": "RTPKSeason_6_Desc",
         "SeasonSkill": "",
         "SeasonSkillCondition": "",
-        "StarsAttrEffect": ""
+        "StarsAttrEffect": "ExcellentHeroSkill_Stars"
     },
     "RTPKSeason_7": {
-        "AwakenAttrEffect": "",
+        "AwakenAttrEffect": "ExcellentHeroSkill_Awaken",
         "BGM": [
             "Mus_Battle_Danger_Boss",
             "",
@@ -427,17 +427,20 @@
         "ConfigLevelLimitID": "LevelLimit_RTPK",
         "ExcellentHero": [
             {
-                "Effect": "ExcellentHeroSkill_Attr_Big",
+                "Effect": "ExcellentHeroSkill_Attr_Small",
                 "Hero": [
-                    "CZheng",
-                    "BBLMa"
+                    "MYing",
+                    "WSLi",
+                    "BQDShe",
+                    "HSYZhai",
+                    "MGNa"
                 ]
             }
         ],
         "RuleDesc": "RTPKSeason_7_Desc",
         "SeasonSkill": "",
         "SeasonSkillCondition": "",
-        "StarsAttrEffect": ""
+        "StarsAttrEffect": "ExcellentHeroSkill_Stars"
     },
     "RTPKSeason_8": {
         "AwakenAttrEffect": "",

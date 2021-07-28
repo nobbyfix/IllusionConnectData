@@ -117,6 +117,13 @@ function BuildingPutHeroCell:updateIcon()
 	GameStyle:setHeroNameByQuality(name, heroInfo:getQuality())
 	GameStyle:setHeroNameByQuality(qualityLevel, heroInfo:getQuality())
 
+	local nameBg = view:getChildByFullName("image")
+	local nameWidth = name:getContentSize().width + qualityLevel:getContentSize().width
+	local w = math.max(104, nameWidth + 25)
+
+	nameBg:setContentSize(cc.size(w, nameBg:getContentSize().height))
+	nameBg:setPositionX(namePanel:getPositionX())
+
 	local buffAddNum, buffAddDesc = self._buildingSystem:getBuildPutHeroAddBuff(self._roomId, {
 		self._heroId
 	})

@@ -52,6 +52,12 @@ function ChangeHeadImgMediator:initialize()
 end
 
 function ChangeHeadImgMediator:dispose()
+	if self._timer then
+		self._timer:stop()
+
+		self._timer = nil
+	end
+
 	super.dispose(self)
 end
 
@@ -80,6 +86,7 @@ function ChangeHeadImgMediator:onRegister()
 	mapButtonHandlerClick(nil, btn, {
 		func = callfunc
 	})
+	self:mapEventListener(self:getEventDispatcher(), EVT_RESET_DONE, self, self.doReset)
 end
 
 function ChangeHeadImgMediator:enterWithData(data)
@@ -389,6 +396,21 @@ function ChangeHeadImgMediator:createIconFrame(view, headInfo, index)
 	icon:setSwallowTouches(false)
 	icon:setTag(index)
 
+	if headInfo.config and headInfo.config.Type == "LIMIT" then
+		local tnode = IconFactory:createBaseNode()
+		local img = ccui.ImageView:create("asset/common/common_bg_xb_4.png", ccui.TextureResType.localType)
+
+		IconFactory:centerAddNode(tnode, img)
+
+		local lvLabel = cc.Label:createWithTTF("", CUSTOM_TTF_FONT_1, 18)
+
+		lvLabel:setString(Strings:get("ActivityBlock_UI_13"))
+		lvLabel:setColor(cc.c3b(255, 255, 255))
+		lvLabel:addTo(tnode):offset(0, 5)
+		tnode:setScale(1 / icon:getScale() * 0.8)
+		tnode:addTo(icon):center(icon:getContentSize()):offset(70, 90)
+	end
+
 	return icon
 end
 
@@ -621,8 +643,20 @@ function ChangeHeadImgMediator:refreshHeadFrameInfoView()
 	local isUsed = self._main:getChildByFullName("view_0.isUsed")
 	local btn = self._main:getChildByFullName("view_0.exchangeBtn")
 	local getText = self._main:getChildByFullName("view_0.getDesc")
+	local expireText = self._main:getChildByFullName("view_0.expireTime")
 
 	getText:setString("")
+	expireText:setString("")
+
+	if self._timer then
+		self._timer:stop()
+
+		self._timer = nil
+	end
+
+	if self._curData.isLimit and not self._curData.isExpire and self._curData.expireTime and self._curData.useText then
+		self:setExpireTimer(expireText, self._curData)
+	end
 
 	if tostring(self._curData.id) == tostring(self._player:getCurHeadFrame()) then
 		isUsed:setVisible(true)
@@ -638,10 +672,31 @@ function ChangeHeadImgMediator:refreshHeadFrameInfoView()
 		end
 	end
 
-	if self._curData.frameData then
+	if self._curData.frameData and self._curData.unlock == 1 then
 		local tb = TimeUtil:localDate("*t", tonumber(self._curData.frameData) / 1000)
 
 		getText:setString(Strings:get("Frame_UI_1") .. tb.year .. "." .. tb.month .. "." .. tb.day)
+	end
+end
+
+function ChangeHeadImgMediator:setExpireTimer(expireText, data)
+	local strId = data.useText
+	local gameServerAgent = self:getInjector():getInstance(GameServerAgent)
+
+	local function checkTimeFunc()
+		local curTime = gameServerAgent:remoteTimeMillis()
+		local remainTime = data.expireTime - curTime
+		local str = TimeUtil:formatTimeStr(remainTime * 0.001)
+
+		expireText:setString(Strings:get(strId, {
+			day = str
+		}))
+	end
+
+	if not self._timer then
+		self._timer = LuaScheduler:getInstance():schedule(checkTimeFunc, 1, false)
+
+		checkTimeFunc()
 	end
 end
 
@@ -661,4 +716,12 @@ function ChangeHeadImgMediator:setDescView(str)
 	scrollView:setInnerContainerSize(cc.size(descText:getContentSize().width, h))
 	scrollView:scrollToTop(0.01, false)
 	descText:setPosition(cc.p(0, h))
+end
+
+function ChangeHeadImgMediator:doReset()
+	self._frameList = nil
+
+	self:getData()
+	self._tableView:reloadData()
+	self:refreshHeadImgInfoView()
 end

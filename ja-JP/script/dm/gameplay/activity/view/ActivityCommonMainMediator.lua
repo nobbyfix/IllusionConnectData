@@ -996,13 +996,17 @@ function ActivityCommonMainMediator:setStageView()
 	local anim = ActivityMainMapTitleConfig.anim[ui]
 
 	if not self._stageAnim and anim then
-		self._stageAnim = cc.MovieClip:create(anim[1])
+		self._stageAnim = cc.MovieClip:create(anim.name)
 
-		self._stageAnim:setPosition(anim[2])
+		self._stageAnim:setPosition(anim.position)
 		self._stageAnim:addTo(self._stagePanel:getChildByName("button"))
 
 		if self._stagePanel:getChildByName("image") then
 			self._stagePanel:getChildByName("image"):setVisible(false)
+		end
+
+		if anim.runAction then
+			anim.runAction(self._stageAnim)
 		end
 	end
 end

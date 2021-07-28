@@ -453,9 +453,29 @@ all.Skill_LFKLFTe_Passive = {
 	end
 }
 
+function all.RecertMaster(_env, actor)
+	local this = _env.this
+	local global = _env.global
+
+	global.DispelBuff(_env, actor, global.BUFF_MARKED(_env, "DAGUN_SPE"), 99)
+	global.ExertUniqueSkill(_env, actor)
+end
+
 function all.SummonDaGun(_env, actor, snya_factors, master_factors, normal, skill1, skillhp, skill2, skillex, ex_flag)
 	local this = _env.this
 	local global = _env.global
+	local buff_mute = global.Mute(_env)
+
+	global.ApplyBuff(_env, actor, {
+		timing = 0,
+		duration = 99,
+		tags = {
+			"DAGUN_SPE"
+		}
+	}, {
+		buff_mute
+	})
+	global.DelayCall(_env, 800, global.RecertMaster, actor)
 
 	if global.SpecialPropGetter(_env, "DaGun")(_env, global.FriendField(_env)) == 0 and global.FriendMaster(_env) then
 		for _, cell in global.__iter__(global.FriendCells(_env, global.CELL_IN_POS(_env, 7) + global.CELL_IN_POS(_env, 9))) do

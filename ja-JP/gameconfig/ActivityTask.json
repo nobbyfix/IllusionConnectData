@@ -5357,6 +5357,222 @@
         "Reward": "ACT_EliteGo_2_rwa",
         "TaskIcon": ""
     },
+    "Activity_BQDShe_20210810Task_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroCollectSpecial",
+                "factor1": [
+                    180
+                ],
+                "params": [
+                    "BQDShe"
+                ]
+            }
+        ],
+        "Desc": "Activity_BQDShe_20210810Task_13_Name",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_BQDShe_20210810Task_1_Name",
+        "OrderNum": 1,
+        "Reward": "Activity_BQDShe_20210810Task_1_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_BQDShe_20210810Task_10": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroCollectStar",
+                "factor1": [
+                    4
+                ],
+                "params": [
+                    "BQDShe"
+                ]
+            }
+        ],
+        "Desc": "Activity_BQDShe_20210810Task_22_Name",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_BQDShe_20210810Task_10_Name",
+        "OrderNum": 10,
+        "Reward": "Activity_BQDShe_20210810Task_10_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_BQDShe_20210810Task_11": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroCollectStar",
+                "factor1": [
+                    5
+                ],
+                "params": [
+                    "BQDShe"
+                ]
+            }
+        ],
+        "Desc": "Activity_BQDShe_20210810Task_23_Name",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_BQDShe_20210810Task_11_Name",
+        "OrderNum": 11,
+        "Reward": "Activity_BQDShe_20210810Task_11_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_BQDShe_20210810Task_12": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroCollectStar",
+                "factor1": [
+                    6
+                ],
+                "params": [
+                    "BQDShe"
+                ]
+            }
+        ],
+        "Desc": "Activity_BQDShe_20210810Task_24_Name",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_BQDShe_20210810Task_12_Name",
+        "OrderNum": 12,
+        "Reward": "Activity_BQDShe_20210810Task_12_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_BQDShe_20210810Task_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroLevelUp",
+                "factor1": [
+                    30
+                ]
+            }
+        ],
+        "Desc": "Activity_BQDShe_20210810Task_14_Name",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_BQDShe_20210810Task_2_Name",
+        "OrderNum": 2,
+        "Reward": "Activity_BQDShe_20210810Task_2_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_BQDShe_20210810Task_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroLevelUp",
+                "factor1": [
+                    60
+                ]
+            }
+        ],
+        "Desc": "Activity_BQDShe_20210810Task_15_Name",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_BQDShe_20210810Task_3_Name",
+        "OrderNum": 3,
+        "Reward": "Activity_BQDShe_20210810Task_3_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_BQDShe_20210810Task_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroLevelUp",
+                "factor1": [
+                    90
+                ]
+            }
+        ],
+        "Desc": "Activity_BQDShe_20210810Task_16_Name",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_BQDShe_20210810Task_4_Name",
+        "OrderNum": 4,
+        "Reward": "Activity_BQDShe_20210810Task_4_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_BQDShe_20210810Task_5": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroLevelUp",
+                "factor1": [
+                    120
+                ]
+            }
+        ],
+        "Desc": "Activity_BQDShe_20210810Task_17_Name",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_BQDShe_20210810Task_5_Name",
+        "OrderNum": 5,
+        "Reward": "Activity_BQDShe_20210810Task_5_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_BQDShe_20210810Task_6": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroQualityUp",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "Activity_BQDShe_20210810Task_18_Name",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_BQDShe_20210810Task_6_Name",
+        "OrderNum": 6,
+        "Reward": "Activity_BQDShe_20210810Task_6_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_BQDShe_20210810Task_7": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroQualityUp",
+                "factor1": [
+                    3
+                ]
+            }
+        ],
+        "Desc": "Activity_BQDShe_20210810Task_19_Name",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_BQDShe_20210810Task_7_Name",
+        "OrderNum": 7,
+        "Reward": "Activity_BQDShe_20210810Task_7_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_BQDShe_20210810Task_8": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroQualityUp",
+                "factor1": [
+                    5
+                ]
+            }
+        ],
+        "Desc": "Activity_BQDShe_20210810Task_20_Name",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_BQDShe_20210810Task_8_Name",
+        "OrderNum": 8,
+        "Reward": "Activity_BQDShe_20210810Task_8_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_BQDShe_20210810Task_9": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroQualityUp",
+                "factor1": [
+                    7
+                ]
+            }
+        ],
+        "Desc": "Activity_BQDShe_20210810Task_21_Name",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_BQDShe_20210810Task_9_Name",
+        "OrderNum": 9,
+        "Reward": "Activity_BQDShe_20210810Task_9_Reward",
+        "TaskIcon": ""
+    },
     "Activity_DCJKang_20210421Task_1": {
         "Condition": [
             {
@@ -16681,6 +16897,142 @@
         "Reward": "EightDays_20210725_8_Reward",
         "TaskIcon": ""
     },
+    "EightDays_20210809_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_1_Name",
+        "OrderNum": 1,
+        "Reward": "EightDays_20210809_1_Reward",
+        "TaskIcon": ""
+    },
+    "EightDays_20210809_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    2
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_2_Name",
+        "OrderNum": 2,
+        "Reward": "EightDays_20210809_2_Reward",
+        "TaskIcon": ""
+    },
+    "EightDays_20210809_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    3
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_3_Name",
+        "OrderNum": 3,
+        "Reward": "EightDays_20210809_3_Reward",
+        "TaskIcon": ""
+    },
+    "EightDays_20210809_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    4
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_4_Name",
+        "OrderNum": 4,
+        "Reward": "EightDays_20210809_4_Reward",
+        "TaskIcon": ""
+    },
+    "EightDays_20210809_5": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    5
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_5_Name",
+        "OrderNum": 5,
+        "Reward": "EightDays_20210809_5_Reward",
+        "TaskIcon": ""
+    },
+    "EightDays_20210809_6": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    6
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_6_Name",
+        "OrderNum": 6,
+        "Reward": "EightDays_20210809_6_Reward",
+        "TaskIcon": ""
+    },
+    "EightDays_20210809_7": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    7
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_7_Name",
+        "OrderNum": 7,
+        "Reward": "EightDays_20210809_7_Reward",
+        "TaskIcon": ""
+    },
+    "EightDays_20210809_8": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    8
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_8_Name",
+        "OrderNum": 8,
+        "Reward": "EightDays_20210809_8_Reward",
+        "TaskIcon": ""
+    },
     "EightDays_ZuoHe02_1": {
         "Condition": [
             {
@@ -23850,6 +24202,773 @@
         "Name": "ActivityBlock_Sunflower_Login_7_Name",
         "OrderNum": 7,
         "Reward": "Sunflower_Login_07_Reward",
+        "TaskIcon": ""
+    },
+    "Terror_AchieveMentTask_01": {
+        "Condition": [
+            {
+                "conditionType": "Condi_winNewActStage",
+                "factor1": [
+                    50
+                ],
+                "params": [
+                    "ActivityBlock_Terror_Map"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Terror_AchieveMentTask_1_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Terror_AchieveMentTask_1_Name",
+        "OrderNum": 1,
+        "Reward": "Terror_AchieveMentTask_001_Reward",
+        "TaskIcon": ""
+    },
+    "Terror_AchieveMentTask_02": {
+        "Condition": [
+            {
+                "conditionType": "Condi_winNewActStage",
+                "factor1": [
+                    100
+                ],
+                "params": [
+                    "ActivityBlock_Terror_Map"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Terror_AchieveMentTask_2_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Terror_AchieveMentTask_2_Name",
+        "OrderNum": 2,
+        "Reward": "Terror_AchieveMentTask_002_Reward",
+        "TaskIcon": ""
+    },
+    "Terror_AchieveMentTask_03": {
+        "Condition": [
+            {
+                "conditionType": "Condi_winNewActStage",
+                "factor1": [
+                    200
+                ],
+                "params": [
+                    "ActivityBlock_Terror_Map"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Terror_AchieveMentTask_3_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Terror_AchieveMentTask_3_Name",
+        "OrderNum": 3,
+        "Reward": "Terror_AchieveMentTask_003_Reward",
+        "TaskIcon": ""
+    },
+    "Terror_AchieveMentTask_04": {
+        "Condition": [
+            {
+                "conditionType": "Condi_winNewActStage",
+                "factor1": [
+                    300
+                ],
+                "params": [
+                    "ActivityBlock_Terror_Map"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Terror_AchieveMentTask_4_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Terror_AchieveMentTask_4_Name",
+        "OrderNum": 4,
+        "Reward": "Terror_AchieveMentTask_004_Reward",
+        "TaskIcon": ""
+    },
+    "Terror_AchieveMentTask_05": {
+        "Condition": [
+            {
+                "conditionType": "Condi_winNewActStage",
+                "factor1": [
+                    400
+                ],
+                "params": [
+                    "ActivityBlock_Terror_Map"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Terror_AchieveMentTask_5_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Terror_AchieveMentTask_5_Name",
+        "OrderNum": 5,
+        "Reward": "Terror_AchieveMentTask_005_Reward",
+        "TaskIcon": ""
+    },
+    "Terror_AchieveMentTask_06": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TerrorExchangeAchieve",
+                "factor1": [
+                    5000
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Terror_AchieveMentTask_6_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Terror_AchieveMentTask_6_Name",
+        "OrderNum": 6,
+        "Reward": "Terror_AchieveMentTask_006_Reward",
+        "TaskIcon": ""
+    },
+    "Terror_AchieveMentTask_07": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TerrorExchangeAchieve",
+                "factor1": [
+                    10000
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Terror_AchieveMentTask_7_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Terror_AchieveMentTask_7_Name",
+        "OrderNum": 7,
+        "Reward": "Terror_AchieveMentTask_007_Reward",
+        "TaskIcon": ""
+    },
+    "Terror_AchieveMentTask_08": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TerrorExchangeAchieve",
+                "factor1": [
+                    16000
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Terror_AchieveMentTask_8_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Terror_AchieveMentTask_8_Name",
+        "OrderNum": 8,
+        "Reward": "Terror_AchieveMentTask_008_Reward",
+        "TaskIcon": ""
+    },
+    "Terror_AchieveMentTask_09": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TerrorExchangeAchieve",
+                "factor1": [
+                    20000
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Terror_AchieveMentTask_9_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Terror_AchieveMentTask_9_Name",
+        "OrderNum": 9,
+        "Reward": "Terror_AchieveMentTask_009_Reward",
+        "TaskIcon": ""
+    },
+    "Terror_AchieveMentTask_10": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TerrorExchangeAchieve",
+                "factor1": [
+                    25000
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Terror_AchieveMentTask_10_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Terror_AchieveMentTask_10_Name",
+        "OrderNum": 10,
+        "Reward": "Terror_AchieveMentTask_010_Reward",
+        "TaskIcon": ""
+    },
+    "Terror_AchieveMentTask_11": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Terror",
+                    "ActivityBlock_Terror_Map",
+                    "TerrorM01",
+                    "TerrorS05",
+                    "TerrorS05M"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Terror_AchieveMentTask_11_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Terror_AchieveMentTask_11_Name",
+        "OrderNum": 11,
+        "Reward": "Terror_AchieveMentTask_011_Reward",
+        "TaskIcon": ""
+    },
+    "Terror_AchieveMentTask_12": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Terror",
+                    "ActivityBlock_Terror_Map",
+                    "TerrorM01",
+                    "TerrorS08",
+                    "TerrorS08M"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Terror_AchieveMentTask_12_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Terror_AchieveMentTask_12_Name",
+        "OrderNum": 12,
+        "Reward": "Terror_AchieveMentTask_012_Reward",
+        "TaskIcon": ""
+    },
+    "Terror_AchieveMentTask_13": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Terror",
+                    "ActivityBlock_Terror_Map",
+                    "TerrorM01",
+                    "TerrorS12",
+                    "TerrorS12M"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Terror_AchieveMentTask_13_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Terror_AchieveMentTask_13_Name",
+        "OrderNum": 13,
+        "Reward": "Terror_AchieveMentTask_013_Reward",
+        "TaskIcon": ""
+    },
+    "Terror_AchieveMentTask_14": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Terror",
+                    "ActivityBlock_Terror_Map",
+                    "TerrorM01",
+                    "TerrorS15",
+                    "TerrorS15M"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Terror_AchieveMentTask_14_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Terror_AchieveMentTask_14_Name",
+        "OrderNum": 14,
+        "Reward": "Terror_AchieveMentTask_014_Reward",
+        "TaskIcon": ""
+    },
+    "Terror_AchieveMentTask_15": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Terror",
+                    "ActivityBlock_Terror_Map",
+                    "TerrorM01",
+                    "TerrorS16",
+                    "TerrorS16M"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Terror_AchieveMentTask_15_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Terror_AchieveMentTask_15_Name",
+        "OrderNum": 15,
+        "Reward": "Terror_AchieveMentTask_015_Reward",
+        "TaskIcon": ""
+    },
+    "Terror_AchieveMentTask_16": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block_Num",
+                "factor1": [
+                    3
+                ],
+                "params": [
+                    "ActivityBlock_Terror_Map",
+                    "ELITE"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Terror_AchieveMentTask_16_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Terror_AchieveMentTask_16_Name",
+        "OrderNum": 16,
+        "Reward": "Terror_AchieveMentTask_016_Reward",
+        "TaskIcon": ""
+    },
+    "Terror_AchieveMentTask_17": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block_Num",
+                "factor1": [
+                    6
+                ],
+                "params": [
+                    "ActivityBlock_Terror_Map",
+                    "ELITE"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Terror_AchieveMentTask_17_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Terror_AchieveMentTask_17_Name",
+        "OrderNum": 17,
+        "Reward": "Terror_AchieveMentTask_017_Reward",
+        "TaskIcon": ""
+    },
+    "Terror_AchieveMentTask_18": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block_Num",
+                "factor1": [
+                    8
+                ],
+                "params": [
+                    "ActivityBlock_Terror_Map",
+                    "ELITE"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Terror_AchieveMentTask_18_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Terror_AchieveMentTask_18_Name",
+        "OrderNum": 18,
+        "Reward": "Terror_AchieveMentTask_018_Reward",
+        "TaskIcon": ""
+    },
+    "Terror_AchieveMentTask_19": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block_Num",
+                "factor1": [
+                    10
+                ],
+                "params": [
+                    "ActivityBlock_Terror_Map",
+                    "ELITE"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Terror_AchieveMentTask_19_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Terror_AchieveMentTask_19_Name",
+        "OrderNum": 19,
+        "Reward": "Terror_AchieveMentTask_019_Reward",
+        "TaskIcon": ""
+    },
+    "Terror_AchieveMentTask_20": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block_Num",
+                "factor1": [
+                    12
+                ],
+                "params": [
+                    "ActivityBlock_Terror_Map",
+                    "ELITE"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Terror_AchieveMentTask_20_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Terror_AchieveMentTask_20_Name",
+        "OrderNum": 20,
+        "Reward": "Terror_AchieveMentTask_020_Reward",
+        "TaskIcon": ""
+    },
+    "Terror_AchieveMentTask_21": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block_Num",
+                "factor1": [
+                    14
+                ],
+                "params": [
+                    "ActivityBlock_Terror_Map",
+                    "ELITE"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Terror_AchieveMentTask_21_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Terror_AchieveMentTask_21_Name",
+        "OrderNum": 21,
+        "Reward": "Terror_AchieveMentTask_021_Reward",
+        "TaskIcon": ""
+    },
+    "Terror_AchieveMentTask_22": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block_Num",
+                "factor1": [
+                    16
+                ],
+                "params": [
+                    "ActivityBlock_Terror_Map",
+                    "ELITE"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Terror_AchieveMentTask_22_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Terror_AchieveMentTask_22_Name",
+        "OrderNum": 22,
+        "Reward": "Terror_AchieveMentTask_022_Reward",
+        "TaskIcon": ""
+    },
+    "Terror_AchieveMentTask_23": {
+        "Condition": [
+            {
+                "conditionType": "Condi_FinishTask",
+                "factor1": [
+                    0
+                ],
+                "factorStr1": [
+                    "Terror_AchieveMentTask_01",
+                    "Terror_AchieveMentTask_02",
+                    "Terror_AchieveMentTask_03",
+                    "Terror_AchieveMentTask_04",
+                    "Terror_AchieveMentTask_05",
+                    "Terror_AchieveMentTask_06",
+                    "Terror_AchieveMentTask_07",
+                    "Terror_AchieveMentTask_08",
+                    "Terror_AchieveMentTask_09",
+                    "Terror_AchieveMentTask_10",
+                    "Terror_AchieveMentTask_11",
+                    "Terror_AchieveMentTask_12",
+                    "Terror_AchieveMentTask_13",
+                    "Terror_AchieveMentTask_14"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Terror_AchieveMentTask_23_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Terror_AchieveMentTask_23_Name",
+        "OrderNum": 23,
+        "Reward": "Terror_AchieveMentTask_023_Reward",
+        "TaskIcon": ""
+    },
+    "Terror_DailyTask_01": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Login",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Terror_DailyTask_1_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Terror_DailyTask_1_Name",
+        "OrderNum": 1,
+        "Reward": "Terror_DailyTask_01_Reward",
+        "TaskIcon": ""
+    },
+    "Terror_DailyTask_02": {
+        "Condition": [
+            {
+                "conditionType": "Condi_winNewActStage",
+                "factor1": [
+                    10
+                ],
+                "params": [
+                    "ActivityBlock_Terror_Map"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Terror_DailyTask_2_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Terror_DailyTask_2_Name",
+        "OrderNum": 2,
+        "Reward": "Terror_DailyTask_02_Reward",
+        "TaskIcon": ""
+    },
+    "Terror_DailyTask_03": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TowerEnter",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Terror_DailyTask_3_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Terror_DailyTask_3_Name",
+        "OrderNum": 3,
+        "Reward": "Terror_DailyTask_03_Reward",
+        "TaskIcon": ""
+    },
+    "Terror_DailyTask_04": {
+        "Condition": [
+            {
+                "conditionType": "Condi_BuyStamina",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Terror_DailyTask_4_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Terror_DailyTask_4_Name",
+        "OrderNum": 4,
+        "Reward": "Terror_DailyTask_04_Reward",
+        "TaskIcon": ""
+    },
+    "Terror_DailyTask_05": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroGift",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Terror_DailyTask_5_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Terror_DailyTask_5_Name",
+        "OrderNum": 5,
+        "Reward": "Terror_DailyTask_05_Reward",
+        "TaskIcon": ""
+    },
+    "Terror_DailyTask_06": {
+        "Condition": [
+            {
+                "conditionType": "Condi_FinishTask",
+                "factor1": [
+                    0
+                ],
+                "factorStr1": [
+                    "Terror_DailyTask_01",
+                    "Terror_DailyTask_02",
+                    "Terror_DailyTask_03",
+                    "Terror_DailyTask_04",
+                    "Terror_DailyTask_05"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Terror_DailyTask_6_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Terror_DailyTask_6_Name",
+        "OrderNum": 6,
+        "Reward": "Terror_DailyTask_06_Reward",
+        "TaskIcon": ""
+    },
+    "Terror_Login_01": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Terror_Login_1_Name",
+        "OrderNum": 1,
+        "Reward": "Terror_Login_01_Reward",
+        "TaskIcon": ""
+    },
+    "Terror_Login_02": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    2
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Terror_Login_2_Name",
+        "OrderNum": 2,
+        "Reward": "Terror_Login_02_Reward",
+        "TaskIcon": ""
+    },
+    "Terror_Login_03": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    3
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Terror_Login_3_Name",
+        "OrderNum": 3,
+        "Reward": "Terror_Login_03_Reward",
+        "TaskIcon": ""
+    },
+    "Terror_Login_04": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    4
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Terror_Login_4_Name",
+        "OrderNum": 4,
+        "Reward": "Terror_Login_04_Reward",
+        "TaskIcon": ""
+    },
+    "Terror_Login_05": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    5
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Terror_Login_5_Name",
+        "OrderNum": 5,
+        "Reward": "Terror_Login_05_Reward",
+        "TaskIcon": ""
+    },
+    "Terror_Login_06": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    6
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Terror_Login_6_Name",
+        "OrderNum": 6,
+        "Reward": "Terror_Login_06_Reward",
+        "TaskIcon": ""
+    },
+    "Terror_Login_07": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    7
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Terror_Login_7_Name",
+        "OrderNum": 7,
+        "Reward": "Terror_Login_07_Reward",
+        "TaskIcon": ""
+    },
+    "Terror_Login_08": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    8
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Terror_Login_8_Name",
+        "OrderNum": 8,
+        "Reward": "Terror_Login_08_Reward",
+        "TaskIcon": ""
+    },
+    "Terror_Login_09": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    9
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Terror_Login_9_Name",
+        "OrderNum": 9,
+        "Reward": "Terror_Login_09_Reward",
+        "TaskIcon": ""
+    },
+    "Terror_Login_10": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    10
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Terror_Login_10_Name",
+        "OrderNum": 10,
+        "Reward": "Terror_Login_10_Reward",
         "TaskIcon": ""
     }
 }

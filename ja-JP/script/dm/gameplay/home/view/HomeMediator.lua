@@ -3412,6 +3412,14 @@ function HomeMediator:setComplexActivityEntry()
 		[ActivityType_UI.KActivitySummerRe] = {
 			anim = "rukou_xiarihuodong",
 			aimpos = cc.p(40, 40)
+		},
+		[ActivityType_UI.KActivityTerror] = {
+			animZorder = 1,
+			img = "terror_btn_zjm_rukou.png",
+			anim = "eff_rukoutexiao_kongbubenrukou",
+			imgZorder = 2,
+			aimpos = cc.p(-90, 125),
+			imgpos = cc.p(58, 7)
 		}
 	}
 	local extraActBtn = self._rightFuncLayout:getChildByFullName("extraActBtn")

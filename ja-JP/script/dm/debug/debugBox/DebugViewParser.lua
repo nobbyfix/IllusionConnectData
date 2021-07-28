@@ -203,7 +203,10 @@ function DebugViewParser:setupScrollerView(rootNode, scollViewRect, viewObj)
 					name = data.title
 				end
 
+				label:setTextAreaSize(cc.size(330, 30))
 				label:setString(name)
+				label:getVirtualRenderer():setOverflow(cc.LabelOverflow.NONE)
+				label:getVirtualRenderer():setOverflow(cc.LabelOverflow.SHRINK)
 			end
 
 			if data.type == "Input" or data.type == "SelectBox" then

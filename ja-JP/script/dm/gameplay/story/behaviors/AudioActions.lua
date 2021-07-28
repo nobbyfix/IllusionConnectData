@@ -107,3 +107,15 @@ function BlockAudio:start(args)
 
 	return BehaviorResult.Success
 end
+
+VolumeAudio = class("VolumeAudio", BaseAction)
+
+function VolumeAudio:start(args)
+	local actor = self:getActor()
+
+	if actor and args and args.type and args.volumebegin >= 0 and args.volumeend >= 0 and args.duration then
+		actor:volumeTo(args.type, args.volumebegin, args.volumeend, args.duration)
+	end
+
+	return BehaviorResult.Success
+end

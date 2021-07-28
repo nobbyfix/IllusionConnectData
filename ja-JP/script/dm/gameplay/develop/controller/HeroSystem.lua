@@ -1186,7 +1186,6 @@ function HeroSystem:hasRedPointByEvolution(heroId)
 end
 
 local kHeroStiveId = "IR_HeroStive"
-local HeroStar_StiveOut = ConfigReader:getDataByNameIdAndKey("ConfigValue", "HeroStar_StiveOut", "content")
 local HeroStar_StiveChange = ConfigReader:getDataByNameIdAndKey("ConfigValue", "HeroStar_StiveChange", "content")
 local HeroStar_StiveChangeSelf = ConfigReader:getDataByNameIdAndKey("ConfigValue", "HeroStar_StiveChangeSelf", "content")
 
@@ -1252,7 +1251,7 @@ function HeroSystem:hasRedPointByStar(heroId)
 			local itemId = value.fragId
 			local rarity = tostring(value.rareity)
 
-			if rarity == canUseRarity and not table.indexof(HeroStar_StiveOut, id) and heroId ~= id then
+			if rarity == canUseRarity and heroId ~= id then
 				local num = self._bagSystem:getItemCount(itemId)
 
 				if num > 0 then

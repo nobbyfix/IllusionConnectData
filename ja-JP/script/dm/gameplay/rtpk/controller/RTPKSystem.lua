@@ -119,6 +119,10 @@ function RTPKSystem:checkShowRed()
 		return true
 	end
 
+	if self:checkWinTaskRewardRedpoint() then
+		return true
+	end
+
 	return false
 end
 
@@ -154,6 +158,24 @@ function RTPKSystem:checkGradeRewardRedpoint()
 	local gradeInfo = self:getGradeConfigInfo()
 
 	for i, v in ipairs(gradeInfo) do
+		if v.state == RTPKGradeRewardState.kCanGet then
+			return true
+		end
+	end
+
+	return false
+end
+
+function RTPKSystem:checkWinTaskRewardRedpoint()
+	local status = self._rtpk:getCurStatus()
+
+	if status == RTPKSeasonStatus.kRest then
+		return false
+	end
+
+	local data = self._rtpk:getWinTaskData()
+
+	for i, v in ipairs(data) do
 		if v.state == RTPKGradeRewardState.kCanGet then
 			return true
 		end
@@ -642,6 +664,32 @@ function RTPKSystem:requestRobotBattleSurrender(data, callback)
 			end
 
 			self:showResultView(response.data)
+		end
+	end, true)
+end
+
+function RTPKSystem:requestTotalWinReward(data, callback)
+	self._rtpkService:requestTotalWinReward(data, function (response)
+		if response.resCode == GS_SUCCESS then
+			self._rtpk:synchronize(response.data)
+
+			local rewards = response.data.rewards
+
+			if rewards and next(rewards) then
+				local view = self:getInjector():getInstance("getRewardView")
+
+				self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+					maskOpacity = 0
+				}, {
+					rewards = rewards
+				}))
+			end
+
+			if callback then
+				callback(response)
+			end
+
+			self:dispatch(Event:new(EVT_REFRESH_GRADE_REWARD_DONE))
 		end
 	end, true)
 end

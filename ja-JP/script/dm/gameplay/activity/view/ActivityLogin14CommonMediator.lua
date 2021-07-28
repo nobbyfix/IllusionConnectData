@@ -328,15 +328,25 @@ function ActivityLogin14CommonMediator:refreshUIView()
 	heroPanel:getChildByFullName("Image_33"):setVisible(not showHero)
 
 	if showHero and showHero.modelId ~= "no" then
-		local heroSprite = IconFactory:createRoleIconSprite({
-			iconType = "Bust4",
-			id = showHero.modelId,
-			useAnim = showHero.anim == "1" and true or false
-		})
+		local function addRole(showHero)
+			local heroSprite = IconFactory:createRoleIconSprite({
+				iconType = "Bust4",
+				id = showHero.modelId,
+				useAnim = showHero.anim == "1" and true or false
+			})
 
-		heroSprite:setScale(showHero.scale or 0.85)
-		heroSprite:setPosition(cc.p(showHero.pos.x or 355, showHero.pos.y or 140))
-		heroSprite:addTo(heroPanel)
+			heroSprite:setScale(showHero.scale or 0.85)
+			heroSprite:setPosition(cc.p(showHero.pos.x or 355, showHero.pos.y or 140))
+			heroSprite:addTo(heroPanel)
+		end
+
+		if showHero.modelId then
+			addRole(showHero)
+		elseif showHero[1] then
+			for i, v in ipairs(showHero) do
+				addRole(v)
+			end
+		end
 	end
 
 	local bmg = self._activityConfig.bmg

@@ -77,9 +77,12 @@ DevelopSystem:has("_rankSystem", {
 DevelopSystem:has("_dreamSystem", {
 	is = "r"
 }):injectWith("DreamChallengeSystem")
-DevelopSystem:has("_CooperateBossSystem", {
+DevelopSystem:has("_cooperateBossSystem", {
 	is = "r"
 }):injectWith("CooperateBossSystem")
+DevelopSystem:has("_dreamHouseSystem", {
+	is = "r"
+}):injectWith("DreamHouseSystem")
 
 function DevelopSystem:initialize()
 	super.initialize(self)
@@ -262,7 +265,7 @@ function DevelopSystem:syncPlayer(data, isDiff)
 		activitySystem:checkActivityState()
 		activitySystem:checkPassActivityData()
 		activitySystem:checkClubBossSummerActivityData()
-		self._CooperateBossSystem:synchronize(data.activities.activityMap)
+		self._cooperateBossSystem:synchronize(data.activities.activityMap)
 	end
 
 	if data.spStages then
@@ -369,6 +372,10 @@ function DevelopSystem:syncPlayer(data, isDiff)
 		self._dreamSystem:synchronize(data.dreamChallenge)
 	end
 
+	if data.house then
+		self._dreamHouseSystem:synchronize(data.house)
+	end
+
 	self:dispatch(Event:new(EVT_PLAYER_SYNCHRONIZED))
 	self:checkPlayerLevelUp(playerLevelUpData)
 end
@@ -451,6 +458,10 @@ function DevelopSystem:syncDeleteData(data)
 		local recruitSystem = self:getInjector():getInstance(RecruitSystem)
 
 		recruitSystem:sync(data.drawInfo, self._player)
+	end
+
+	if data and data.house then
+		self._dreamHouseSystem:delete(data.house)
 	end
 end
 
@@ -750,6 +761,10 @@ end
 
 function DevelopSystem:getExplore()
 	return self:getPlayer():getExplore()
+end
+
+function DevelopSystem:getStageArenaStage()
+	return self:getPlayer():getPlayerStageArena()
 end
 
 function DevelopSystem:getEnergy()

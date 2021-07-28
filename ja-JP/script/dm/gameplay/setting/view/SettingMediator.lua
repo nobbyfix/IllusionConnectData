@@ -485,6 +485,7 @@ function SettingMediator:mapEventListeners()
 	self:mapEventListener(self:getEventDispatcher(), EVT_BIND_ACCOUNT, self, self.bindAccountCb)
 	self:mapEventListener(self:getEventDispatcher(), EVT_CHANGEHEADFRAME_SUCC, self, self.showSettingView)
 	self:mapEventListener(self:getEventDispatcher(), EVT_DELETE_ACCOUNT, self, self.deleteAccountSuccess)
+	self:mapEventListener(self:getEventDispatcher(), EVT_RESET_DONE, self, self.showSettingView)
 end
 
 function SettingMediator:enterWithData(data)

@@ -151,7 +151,8 @@ all.Trap_Boss_Self_Damage_Passive = {
 				timing = 2,
 				duration = 1,
 				tags = {
-					"BINGO"
+					"BINGO",
+					"TRAP"
 				}
 			}, {
 				buff
@@ -286,7 +287,8 @@ all.Trap_Boss_Unhurtrate_Down_Passive = {
 				timing = 2,
 				duration = 1,
 				tags = {
-					"BINGO"
+					"BINGO",
+					"TRAP"
 				}
 			}, {
 				buff

@@ -106,6 +106,7 @@ function BattleGroundLayer:enterWithData(data)
 	self:setupGroundCells(true)
 	self:setupGroundCells(false)
 	self:setupLeftGroundRect()
+	self:setupRightGroundRect()
 	self:registerTouchEvent()
 end
 
@@ -287,6 +288,24 @@ function BattleGroundLayer:setupLeftGroundRect()
 	return self._leftGroundRect
 end
 
+function BattleGroundLayer:setupRightGroundRect()
+	self._rightGroundRect = {}
+	local cell = self._rightGroundCells[3]
+	local pos = cc.p(cell:getDisplayNode():getPosition())
+	pos = cell:getDisplayNode():getParent():convertToWorldSpace(pos)
+	local size = cell:getViewFrame()
+	self._rightGroundRect.x = pos.x + size.width * 0.5
+	self._rightGroundRect.y = pos.y - size.height * 0.5
+	cell = self._rightGroundCells[7]
+	pos = cc.p(cell:getDisplayNode():getPosition())
+	pos = cell:getDisplayNode():getParent():convertToWorldSpace(pos)
+	size = cell:getViewFrame()
+	self._rightGroundRect.width = pos.x + size.width * 0.5
+	self._rightGroundRect.height = pos.y + size.height * 0.5
+
+	return self._rightGroundRect
+end
+
 function BattleGroundLayer:setRelPosition(node, relPos, extraZ, height)
 	local x, y, s, d2 = self.perspectiveTool:norm2view(relPos.x, relPos.y)
 	d2 = d2 * 10
@@ -410,20 +429,113 @@ function BattleGroundLayer:findNearbyEmpty(point, sender)
 	return retPos
 end
 
-function BattleGroundLayer:checkTouchCollision(sender, point)
+function BattleGroundLayer:findNearbyEmptyForExtraCard(point, sender)
+	local shortestLength = 70
 	local retPos = -1
+	local left = -1
 
-	if cc.rectContainsPoint(self._leftGroundRect, point) then
-		retPos = self:findNearbyEmpty(point, sender)
-	end
+	for idx, __ in ipairs(self._leftGroundCells) do
+		local cell = self._leftGroundCells[idx]
 
-	for idx, cell in ipairs(self._leftGroundCells) do
-		if idx ~= retPos and cell:getStatus() == GroundCellStatus.HIGHLIGHT then
+		if cell:canBeSitByExtraSkillCard(sender) and not cell:isLocked() then
+			local cellPos = cc.p(cell:getDisplayNode():getPosition())
+			local parentNode = cell:getDisplayNode():getParent()
+			cellPos = parentNode:convertToWorldSpace(cellPos)
+			local length = cc.pGetDistance(cellPos, point)
+
+			if length < shortestLength then
+				shortestLength = length
+				retPos = idx
+				left = -1
+			end
+		end
+
+		if cell:getStatus() == GroundCellStatus.HIGHLIGHT and retPos < idx then
 			cell:setStatus(GroundCellStatus.NORMAL)
 		end
 	end
 
-	return retPos ~= -1, retPos
+	for idx, __ in ipairs(self._rightGroundCells) do
+		local cell = self._rightGroundCells[idx]
+
+		if cell:canBeSitByExtraSkillCard(sender) and not cell:isLocked() then
+			local cellPos = cc.p(cell:getDisplayNode():getPosition())
+			local parentNode = cell:getDisplayNode():getParent()
+			cellPos = parentNode:convertToWorldSpace(cellPos)
+			local length = cc.pGetDistance(cellPos, point)
+
+			if length < shortestLength then
+				shortestLength = length
+				retPos = idx
+				left = 1
+			end
+		end
+
+		if cell:getStatus() == GroundCellStatus.HIGHLIGHT and retPos < idx then
+			cell:setStatus(GroundCellStatus.NORMAL)
+		end
+	end
+
+	if retPos ~= -1 then
+		if left < 0 then
+			local cell = self._leftGroundCells[retPos]
+
+			if cell then
+				cell:setStatus(GroundCellStatus.HIGHLIGHT)
+			end
+		else
+			local cell = self._rightGroundCells[retPos]
+
+			if cell then
+				cell:setStatus(GroundCellStatus.HIGHLIGHT)
+			end
+		end
+	end
+
+	return retPos, left == -1
+end
+
+function BattleGroundLayer:checkTouchCollision(sender, point)
+	if sender:getType() == "hero" then
+		local retPos = -1
+
+		if cc.rectContainsPoint(self._leftGroundRect, point) then
+			retPos = self:findNearbyEmpty(point, sender)
+		end
+
+		for idx, cell in ipairs(self._leftGroundCells) do
+			if idx ~= retPos and cell:getStatus() == GroundCellStatus.HIGHLIGHT then
+				cell:setStatus(GroundCellStatus.NORMAL)
+			end
+		end
+
+		return retPos ~= -1, retPos
+	else
+		local retPos = -1
+		local isleft = nil
+
+		if cc.rectContainsPoint(self._leftGroundRect, point) then
+			retPos, isleft = self:findNearbyEmptyForExtraCard(point, sender)
+		end
+
+		if cc.rectContainsPoint(self._rightGroundRect, point) then
+			retPos, isleft = self:findNearbyEmptyForExtraCard(point, sender)
+		end
+
+		for idx, cell in ipairs(self._leftGroundCells) do
+			if idx ~= retPos and cell:getStatus() == GroundCellStatus.HIGHLIGHT then
+				cell:setStatus(GroundCellStatus.NORMAL)
+			end
+		end
+
+		for idx, cell in ipairs(self._rightGroundCells) do
+			if idx ~= retPos and cell:getStatus() == GroundCellStatus.HIGHLIGHT then
+				cell:setStatus(GroundCellStatus.NORMAL)
+			end
+		end
+
+		return retPos ~= -1, retPos, isleft
+	end
 end
 
 function BattleGroundLayer:checkCanPushHero(sender, point)
@@ -431,7 +543,7 @@ function BattleGroundLayer:checkCanPushHero(sender, point)
 		return false
 	end
 
-	local canPush, pos = self:checkTouchCollision(sender, point)
+	local canPush, pos, isleft = self:checkTouchCollision(sender, point)
 
 	if canPush then
 		local cell = self._leftGroundCells[pos]
@@ -441,22 +553,7 @@ function BattleGroundLayer:checkCanPushHero(sender, point)
 		self._willPushCell = cell
 		self._posIdx = pos
 
-		return true, self._posIdx
-	end
-
-	return false
-end
-
-function BattleGroundLayer:checkCanPushSkill(sender, point)
-	if not sender then
-		return false
-	end
-
-	local minY = self._leftGroundRect.y
-	local maxY = minY + self._leftGroundRect.height
-
-	if minY <= point.y and point.y <= maxY then
-		return true
+		return true, self._posIdx, isleft
 	end
 
 	return false
@@ -488,6 +585,21 @@ function BattleGroundLayer:setCellOccupiedHero(cellId, heroModel)
 	else
 		self._rightGroundCells[-cellId]:setOccupiedHero(heroModel)
 	end
+end
+
+function BattleGroundLayer:checkCanPushSkill(sender, point, extra)
+	if not sender then
+		return false
+	end
+
+	local minY = self._leftGroundRect.y
+	local maxY = minY + self._leftGroundRect.height
+
+	if minY <= point.y and point.y <= maxY then
+		return true
+	end
+
+	return false
 end
 
 function BattleGroundLayer:swipCellOccupiedHero(orgCellId, descCellId, heroModel)

@@ -70,10 +70,6 @@ function AfterEnteringState:enter(battleAction)
 	self._duration = cardInfo and cardInfo.enterPauseTime
 
 	local function doSetDown()
-		if self._duration then
-			return
-		end
-
 		formationSystem:changeUnitSettled(actor)
 	end
 
@@ -85,21 +81,24 @@ function AfterEnteringState:enter(battleAction)
 			if not actionScheduler:exertUniqueSkill(actor, kBattleUniqueSkill) then
 				doSetDown()
 			end
+
+			battleAction:finish()
 		else
 			doSetDown()
+
+			if self._duration and self._duration > 0 then
+				self:startTimer(self._duration, function ()
+					battleAction:finish()
+				end)
+
+				return
+			end
+
+			battleAction:finish()
 		end
-
-		battleAction:finish()
 	end
 
-	if self._duration and self._duration > 0 then
-		formationSystem:changeUnitSettled(actor)
-		self:startTimer(self._duration, function ()
-			doSkill()
-		end)
-	else
-		doSkill()
-	end
+	doSkill()
 end
 
 function AfterEnteringState:update(battleAction, dt)

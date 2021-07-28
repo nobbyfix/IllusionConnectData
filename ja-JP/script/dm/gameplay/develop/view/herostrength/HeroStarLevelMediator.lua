@@ -6,7 +6,6 @@ HeroStarLevelMediator:has("_developSystem", {
 
 local kNum = 6
 local kHeroStiveId = "IR_HeroStive"
-local HeroStar_StiveOut = ConfigReader:getDataByNameIdAndKey("ConfigValue", "HeroStar_StiveOut", "content")
 local HeroStar_StiveChange = ConfigReader:getDataByNameIdAndKey("ConfigValue", "HeroStar_StiveChange", "content")
 local HeroStar_StiveChangeSelf = ConfigReader:getDataByNameIdAndKey("ConfigValue", "HeroStar_StiveChangeSelf", "content")
 local kExpConsumeKey = {
@@ -118,43 +117,40 @@ function HeroStarLevelMediator:initData(data)
 		local id = value.id
 		local itemId = value.fragId
 		local rarity = tostring(value.rareity)
+		local num = self._bagSystem:getItemCount(itemId)
+		local awakeHeroFragId, debrisCostCount = self._heroSystem:getAwakeHeroFragIdAndDebrisCostCount()
 
-		if not table.indexof(HeroStar_StiveOut, id) then
-			local num = self._bagSystem:getItemCount(itemId)
-			local awakeHeroFragId, debrisCostCount = self._heroSystem:getAwakeHeroFragIdAndDebrisCostCount()
+		if itemId == awakeHeroFragId then
+			num = num - debrisCostCount
 
-			if itemId == awakeHeroFragId then
-				num = num - debrisCostCount
-
-				if num < 0 then
-					num = 0
-				end
+			if num < 0 then
+				num = 0
 			end
+		end
 
-			if num > 0 then
-				local exp = HeroStar_StiveChange[rarity]
+		if num > 0 then
+			local exp = HeroStar_StiveChange[rarity]
 
-				if self._heroId == id then
-					exp = math.floor(exp * HeroStar_StiveChangeSelf)
-					self._selfItem = {
-						eatCount = 0,
-						itemId = itemId,
-						exp = exp,
-						rarity = tonumber(rarity),
-						allCount = num
-					}
-				end
-
-				local itemData = {
+			if self._heroId == id then
+				exp = math.floor(exp * HeroStar_StiveChangeSelf)
+				self._selfItem = {
 					eatCount = 0,
 					itemId = itemId,
 					exp = exp,
 					rarity = tonumber(rarity),
 					allCount = num
 				}
-
-				table.insert(self._rarityItem[rarity], itemData)
 			end
+
+			local itemData = {
+				eatCount = 0,
+				itemId = itemId,
+				exp = exp,
+				rarity = tonumber(rarity),
+				allCount = num
+			}
+
+			table.insert(self._rarityItem[rarity], itemData)
 		end
 	end
 

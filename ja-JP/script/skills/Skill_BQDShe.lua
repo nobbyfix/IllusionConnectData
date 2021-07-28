@@ -937,5 +937,196 @@ all.Skill_BQDShe_Passive_Key = {
 		return _env
 	end
 }
+all.Skill_BQDShe_Unique_Awaken = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.dmgFactor = externs.dmgFactor
+
+		if this.dmgFactor == nil then
+			this.dmgFactor = {
+				1,
+				3.6,
+				0
+			}
+		end
+
+		local main = __action(this, {
+			name = "main",
+			entry = prototype.main
+		})
+		main = global["[duration]"](this, {
+			2734
+		}, main)
+		this.main = global["[cut_in]"](this, {
+			"1#Hero_Unique_BQDShe"
+		}, main)
+
+		return this
+	end,
+	main = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.TARGET = externs.TARGET
+
+		assert(_env.TARGET ~= nil, "External variable `TARGET` is not provided.")
+
+		_env.units = nil
+
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.ProbTest(_env, 0.6) then
+				_env.units = global.RandomN(_env, 4, global.EnemyUnits(_env))
+
+				for _, unit in global.__iter__(_env.units) do
+					global.RetainObject(_env, unit)
+				end
+
+				global.AddStatus(_env, _env.ACTOR, "Drunk")
+			else
+				_env.units = global.RandomN(_env, 3, global.EnemyUnits(_env))
+
+				for _, unit in global.__iter__(_env.units) do
+					global.RetainObject(_env, unit)
+				end
+			end
+
+			global.GroundEft(_env, _env.ACTOR, "BGEffectBlack")
+			global.EnergyRestrain(_env, _env.ACTOR, _env.TARGET)
+		end)
+		exec["@time"]({
+			900
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.1, 80)
+			global.HarmTargetView(_env, _env.units)
+			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.FixedPos(_env, 0, 0, 2), 100, "skill3"))
+
+			for _, unit in global.__iter__(_env.units) do
+				global.AssignRoles(_env, unit, "target")
+			end
+		end)
+		exec["@time"]({
+			1900
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.INSTATUS(_env, "Drunk")(_env, _env.ACTOR) then
+				local buffeft1 = global.NumericEffect(_env, "+hurtrate", {
+					"+Normal",
+					"+Normal"
+				}, 1)
+
+				global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
+					timing = 2,
+					duration = 1,
+					tags = {
+						"STATUS",
+						"NUMERIC",
+						"BUFF",
+						"CRITRATEUP",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft1
+				}, 1, 0)
+
+				for _, unit in global.__iter__(_env.units) do
+					local buffeft2 = global.Daze(_env)
+
+					global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
+						timing = 2,
+						duration = 1,
+						display = "Daze",
+						tags = {
+							"STATUS",
+							"DEBUFF",
+							"DAZE",
+							"DISPELLABLE"
+						}
+					}, {
+						buffeft2
+					}, 1, 0)
+				end
+			end
+
+			for _, unit in global.__iter__(_env.units) do
+				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
+				global.ApplyRPEffect(_env, _env.ACTOR, unit)
+
+				local buffeft3 = global.NumericEffect(_env, "-unhurtrate", {
+					"+Normal",
+					"+Normal"
+				}, 0.2)
+
+				global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
+					timing = 2,
+					display = "UnHurtRateDown",
+					group = "Skill_SSQXin_Unique",
+					duration = 99,
+					limit = 1,
+					tags = {
+						"STATUS",
+						"DEBUFF",
+						"UNHURTRATE",
+						"DISPELLABLE"
+					}
+				}, {
+					buffeft3
+				}, 1, 0)
+
+				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
+
+				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
+			end
+		end)
+		exec["@time"]({
+			2734
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.EnergyRestrainStop(_env, _env.ACTOR, _env.TARGET)
+
+			if global.INSTATUS(_env, "Drunk")(_env, _env.ACTOR) then
+				local buffeft4 = global.Daze(_env)
+
+				global.ApplyBuff_Debuff(_env, _env.ACTOR, _env.ACTOR, {
+					timing = 2,
+					duration = 1,
+					display = "Daze",
+					tags = {
+						"STATUS",
+						"DEBUFF",
+						"DAZE",
+						"DISPELLABLE"
+					}
+				}, {
+					buffeft4
+				}, 1, 0)
+			end
+
+			global.RemoveStatus(_env, _env.ACTOR, "Drunk")
+		end)
+
+		return _env
+	end
+}
 
 return _M

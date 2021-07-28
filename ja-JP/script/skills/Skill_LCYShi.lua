@@ -854,8 +854,8 @@ all.Skill_LCYShi_Passive_EX = {
 
 			for _, unit in global.__iter__(global.EnemyUnits(_env)) do
 				global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
-					timing = 2,
-					duration = 3,
+					timing = 4,
+					duration = 10,
 					display = "AngerRateDown",
 					tags = {
 						"STATUS",

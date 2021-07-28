@@ -1326,5 +1326,43 @@
             "SunflowerS01S02"
         ],
         "Type": "NORMAL"
+    },
+    "TerrorM01": {
+        "BGM": "Mus_Story_Terror",
+        "Background": "Terror_Scene01",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_TerrorAM01_Name",
+        "StarBoxReward": "",
+        "SubPoint": [],
+        "SubSort": [
+            "TerrorS01",
+            "TerrorS02",
+            "TerrorS03",
+            "TerrorS04",
+            "TerrorS05",
+            "TerrorS06",
+            "TerrorS07",
+            "TerrorS08",
+            "TerrorS09",
+            "TerrorS10",
+            "TerrorS11",
+            "TerrorS12",
+            "TerrorS13",
+            "TerrorS14",
+            "TerrorS15",
+            "TerrorS16"
+        ],
+        "SubStoryPoint": [
+            "TerrorS01S01",
+            "TerrorS01S02",
+            "TerrorS01S03",
+            "TerrorS01S04",
+            "TerrorS01S05",
+            "TerrorS01S06",
+            "TerrorS01S07",
+            "TerrorS01S08"
+        ],
+        "Type": "NORMAL"
     }
 }

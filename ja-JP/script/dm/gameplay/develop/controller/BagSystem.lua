@@ -223,12 +223,18 @@ function BagSystem:getPowerByCurrencyId(currencyId)
 
 	if entry and resetSystem then
 		lastRecoverTime = entry.item:getLastRecoverTime()
-		count = entry.count
 
-		if count < resetSystem.limit then
+		if lastRecoverTime == 0 then
+			lastRecoverTime = self._gameServerAgent:remoteTimestamp()
+		end
+
+		count = entry.count
+		local powerLimit = resetSystem.limit
+
+		if count < powerLimit then
 			local curTime = self._gameServerAgent:remoteTimestamp()
 			local changeCount = math.max(0, math.floor((curTime - lastRecoverTime) / resetSystem.cd))
-			count = math.min(count + changeCount, resetSystem.limit)
+			count = math.min(count + changeCount, powerLimit)
 		end
 	else
 		count = entry and entry.count or 0

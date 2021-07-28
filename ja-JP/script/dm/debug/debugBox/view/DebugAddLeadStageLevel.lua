@@ -64,3 +64,85 @@ function DebugAddLeadStageLevel:initialize()
 		}
 	}
 end
+
+DebugAddStageArenaOldCoin = class("DebugAddStageArenaOldCoin", DebugViewTemplate, _M)
+
+function DebugAddStageArenaOldCoin:initialize()
+	self._opType = 409
+	self._viewConfig = {
+		{
+			default = 100,
+			name = "addCoin",
+			title = "增加古币",
+			type = "Input"
+		}
+	}
+end
+
+DebugAddStageArenaPower = class("DebugAddStageArenaPower", DebugViewTemplate, _M)
+
+function DebugAddStageArenaPower:initialize()
+	self._opType = 410
+	self._viewConfig = {
+		{
+			default = 1,
+			name = "addBacchus",
+			title = "增加体力",
+			type = "Input"
+		}
+	}
+end
+
+DebugAddStageArenaRank = class("DebugAddStageArenaRank", DebugViewTemplate, _M)
+
+function DebugAddStageArenaRank:initialize()
+	self._opType = 411
+	self._viewConfig = {
+		{
+			default = 300,
+			name = "max",
+			title = "古币上限 ",
+			type = "Input"
+		},
+		{
+			default = 100,
+			name = "min",
+			title = "古币下限 ",
+			type = "Input"
+		},
+		{
+			default = 20,
+			name = "count",
+			title = "人数 ",
+			type = "Input"
+		}
+	}
+end
+
+DebugClearStageArenaData = class("DebugClearStageArenaData", DebugViewTemplate, _M)
+
+function DebugClearStageArenaData:initialize()
+	self._opType = 412
+	self._viewConfig = {
+		{
+			default = 1,
+			name = "clearData",
+			title = "清除全部赛季数据",
+			type = "Input"
+		}
+	}
+end
+
+DebugClearServerGroup = class("DebugClearServerGroup", DebugViewTemplate, _M)
+
+function DebugClearServerGroup:initialize()
+	self._opType = 413
+	self._viewConfig = {
+		{
+			default = 1,
+			name = "clearServerGroup",
+			title = "清除服务器分组",
+			type = "Input"
+		}
+	}
+end

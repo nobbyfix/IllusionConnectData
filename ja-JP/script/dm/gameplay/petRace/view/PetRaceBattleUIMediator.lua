@@ -226,6 +226,12 @@ end
 function PetRaceBattleUIMediator:updateCardArray(cards, remain, next)
 end
 
+function PetRaceBattleUIMediator:updateExtraCardArray(cards, remain, next)
+end
+
+function PetRaceBattleUIMediator:replaceExtraPreview(cards, idx)
+end
+
 function PetRaceBattleUIMediator:syncEnergy(energy, remain, speed)
 end
 

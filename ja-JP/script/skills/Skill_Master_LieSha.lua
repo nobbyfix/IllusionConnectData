@@ -460,7 +460,7 @@ all.Sk_Master_LieSha_Action2 = {
 				global.ApplyStatusEffect(_env, _env.ACTOR, global.EnemyMaster(_env))
 				global.ApplyRPEffect(_env, _env.ACTOR, global.EnemyMaster(_env))
 
-				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, global.EnemyMaster(_env), this.dmgFactor)
+				local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, global.EnemyMaster(_env), this.dmgFactor)
 
 				global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, global.EnemyMaster(_env), damage)
 			else
@@ -485,7 +485,7 @@ all.Sk_Master_LieSha_Action2 = {
 				global.ApplyStatusEffect(_env, _env.ACTOR, _env.TARGET)
 				global.ApplyRPEffect(_env, _env.ACTOR, _env.TARGET)
 
-				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, this.dmgFactor)
+				local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, this.dmgFactor)
 
 				global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage)
 			end

@@ -336,6 +336,47 @@
         "UnlockDesc": "",
         "UnlockStory": ""
     },
+    "Memory_Act_Terror": {
+        "ActiviType": "",
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Terror_Map",
+                    "TerrorS01S01"
+                ]
+            }
+        ],
+        "Listpicture": "img_story_terror_1",
+        "Name": "ActivityBlock_Terror_Name",
+        "Num": 15,
+        "Story": [
+            {
+                "id": [
+                    "Memory_Act_Terror_1",
+                    "Memory_Act_Terror_2",
+                    "Memory_Act_Terror_3",
+                    "Memory_Act_Terror_4"
+                ],
+                "type": "NORMAL"
+            },
+            {
+                "id": [
+                    "Memory_Act_Terror_5",
+                    "Memory_Act_Terror_6",
+                    "Memory_Act_Terror_7",
+                    "Memory_Act_Terror_8"
+                ],
+                "type": "ELITE"
+            }
+        ],
+        "Type": "ACTIVILIST",
+        "UnlockDesc": "",
+        "UnlockStory": ""
+    },
     "Memory_Detective_List": {
         "ActiviType": "",
         "Condition": "",

@@ -41,3 +41,9 @@ function TaskService:requestOneKeyAchievementReward(params, blockUI, callback)
 
 	self:sendRequest(request, blockUI)
 end
+
+function TaskService:requestObtainCoinRewardOneKey(params, blockUI, callback)
+	local request = self:newRequest(22008, params, callback)
+
+	self:sendRequest(request, blockUI)
+end

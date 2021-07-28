@@ -82,6 +82,10 @@ function TaskSystem:synchronizeTask(data)
 		self:getTaskListModel():updateTasks(data.mapTaskManager)
 	end
 
+	if data.seasonTaskManager then
+		self:getTaskListModel():updateTasks(data.seasonTaskManager)
+	end
+
 	self:dispatch(Event:new(EVT_TASK_REFRESHVIEW, {}))
 end
 
@@ -307,6 +311,14 @@ function TaskSystem:getShowMapTaskList()
 	return self._taskListModel:getShowMapTask()
 end
 
+function TaskSystem:getTaskListByType(taskType)
+	return self._taskListModel:getTaskListByType(taskType)
+end
+
+function TaskSystem:hasUnreceivedTask(taskType)
+	return self._taskListModel:hasUnreceivedTask(taskType)
+end
+
 function TaskSystem:hasAchieveRedPoint()
 	local unlock, tip = self._systemKeeper:isUnlock("Task_Achievement")
 	local canShow = self._systemKeeper:canShow("Task_Achievement")
@@ -458,6 +470,22 @@ function TaskSystem:requestOneKeyAchievementReward(params, callback)
 	taskService:requestOneKeyAchievementReward(params, true, function (response)
 		if response.resCode == GS_SUCCESS then
 			self:dispatch(Event:new(EVT_TASK_ACHI_REWARD_SUCC, {
+				response = response.data.rewards
+			}))
+
+			if callback then
+				callback(response)
+			end
+		end
+	end)
+end
+
+function TaskSystem:requestObtainCoinRewardOneKey(params, callback)
+	local taskService = self:getInjector():getInstance(TaskService)
+
+	taskService:requestObtainCoinRewardOneKey(params, true, function (response)
+		if response.resCode == GS_SUCCESS then
+			self:dispatch(Event:new(EVT_TASK_REWARD_SUCC, {
 				response = response.data.rewards
 			}))
 

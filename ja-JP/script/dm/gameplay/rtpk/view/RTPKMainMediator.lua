@@ -733,7 +733,7 @@ function RTPKMainMediator:onGetRewardCallback()
 end
 
 function RTPKMainMediator:refreshRedPoint()
-	self._gradeRewardPoint:setVisible(self._rtpkSystem:checkGradeRewardRedpoint())
+	self._gradeRewardPoint:setVisible(self._rtpkSystem:checkGradeRewardRedpoint() or self._rtpkSystem:checkWinTaskRewardRedpoint())
 	self._matchBtnRed:setVisible(false)
 end
 

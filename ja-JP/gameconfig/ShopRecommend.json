@@ -216,5 +216,22 @@
             "type": "limit"
         },
         "Vanish": 1
+    },
+    "ShopRecommend_fxzm": {
+        "BackGroundImg": "sd_tj_bg_fxzm",
+        "ClientCondition": "",
+        "Hide": 1,
+        "Link": "view://ActivityView&id=ACT_StageStar",
+        "PackageId": [
+            "KCarfFanxingZhiMeng"
+        ],
+        "Prepose": "",
+        "ServerCondition": "",
+        "Sort": 3,
+        "TabName": "ShopRecommend_fxzm_Name",
+        "TimeType": {
+            "type": "unlimit"
+        },
+        "Vanish": 1
     }
 }

@@ -20,6 +20,8 @@ function StagePracticeSpecialRuleMediator:onRegister()
 end
 
 function StagePracticeSpecialRuleMediator:enterWithData(data)
+	dump(data, "data >>>>>>")
+
 	self._ruleList = data.ruleList or {}
 	self._title = self._ruleList[1]
 

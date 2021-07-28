@@ -151,7 +151,13 @@ function ShopItem:setInfo(data)
 		local totalPrice = self._data:getPrice()
 
 		if costOff * 10 ~= 0 then
-			totalPrice = math.ceil(totalPrice / costOff)
+			local originalPrice = self._data:getOriginalPrice()
+
+			if originalPrice then
+				totalPrice = originalPrice
+			else
+				totalPrice = math.ceil(totalPrice / costOff)
+			end
 		end
 
 		self._totalMoney:setString(totalPrice)
@@ -166,7 +172,7 @@ function ShopItem:setInfo(data)
 	local width = self._totalMoney:getContentSize().width
 
 	if self._totalMoney:isVisible() then
-		self._lineImage:setContentSize(cc.size(width + 16, 16))
+		self._lineImage:setContentSize(cc.size(width + 16, 1))
 	end
 
 	self._touchPanel:setTouchEnabled(true)

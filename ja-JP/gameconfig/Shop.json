@@ -521,5 +521,72 @@
         },
         "RsShow": "IR_Diamond",
         "UnlockSystem": "Unlock_Shop_Diamond"
+    },
+    "Shop_StageArena": {
+        "DefaultCostType": "IR_NewArenaCoin",
+        "ENName": "Shop_StageArenaEN",
+        "Name": "Shop_StageArenaName",
+        "Positions": [
+            {
+                "Condition": {
+                    "LEVEL": 1
+                },
+                "ShopId": "Shop_StageArena_1"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1
+                },
+                "ShopId": "Shop_StageArena_2"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1
+                },
+                "ShopId": "Shop_StageArena_3"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1
+                },
+                "ShopId": "Shop_StageArena_4"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1
+                },
+                "ShopId": "Shop_StageArena_5"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1
+                },
+                "ShopId": "Shop_StageArena_6"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1
+                },
+                "ShopId": "Shop_StageArena_7"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1
+                },
+                "ShopId": "Shop_StageArena_8"
+            }
+        ],
+        "RefreshCurrency": "",
+        "RefreshMaxTimes": 0,
+        "RefreshPrice": [
+            100,
+            200,
+            300
+        ],
+        "ResetSystem": {
+            "resetMode": "NONE"
+        },
+        "RsShow": "IR_NewArenaCoin",
+        "UnlockSystem": "Shop_StageArenaShop_Unlock"
     }
 }

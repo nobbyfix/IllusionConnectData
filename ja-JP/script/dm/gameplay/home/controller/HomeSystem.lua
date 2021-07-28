@@ -45,6 +45,9 @@ HomeSystem:has("_passSystem", {
 HomeSystem:has("_dreamSystem", {
 	is = "r"
 }):injectWith("DreamChallengeSystem")
+HomeSystem:has("_houseSystem", {
+	is = "r"
+}):injectWith("DreamHouseSystem")
 HomeSystem:has("_cooperateSystem", {
 	is = "r"
 }):injectWith("CooperateBossSystem")
@@ -78,6 +81,9 @@ HomeSystem:has("_spStageSystem", {
 HomeSystem:has("_stagePracticeSystem", {
 	is = "r"
 }):injectWith("StagePracticeSystem")
+HomeSystem:has("_leadStageArenaSystem", {
+	is = "r"
+}):injectWith("LeadStageArenaSystem")
 
 function HomeSystem:initialize()
 	super.initialize(self)
@@ -121,7 +127,7 @@ function HomeSystem:arenaRedPoint()
 		return false
 	end
 
-	return self._arenaSystem:checkAwardRed() or self._petRaceSystem:redPointShow() or self._cooperateSystem:redPointShow()
+	return self._arenaSystem:checkAwardRed() or self._petRaceSystem:redPointShow() or self._cooperateSystem:redPointShow() or self._leadStageArenaSystem:checkShowRed()
 end
 
 function HomeSystem:exploreRedPoint()
@@ -170,7 +176,7 @@ function HomeSystem:bagRedPoint()
 end
 
 function HomeSystem:challengeRedPoint()
-	return self._spStageSystem:checkIsShowRedPoint() or self._stagePracticeSystem:checkAwardRed() or self._crusadeSystem:canCrusadeSweep() or self._dreamSystem:checkIsShowRedPoint()
+	return self._spStageSystem:checkIsShowRedPoint() or self._stagePracticeSystem:checkAwardRed() or self._crusadeSystem:canCrusadeSweep() or self._dreamSystem:checkIsShowRedPoint() or self._houseSystem:checkIsShowRedPoint()
 end
 
 function HomeSystem:onMainChapterRedPoint()

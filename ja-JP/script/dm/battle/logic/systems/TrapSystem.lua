@@ -32,6 +32,18 @@ function TrapSystem:retrieveCellAgent(cell, autoCreate)
 	return cellAgent
 end
 
+function TrapSystem:selectBuffsOnTarget(cell, condition)
+	assert(cell ~= nil)
+
+	local cellAgent = self:retrieveCellAgent(cell, false)
+
+	if cellAgent == nil then
+		return {}, 0
+	end
+
+	return cellAgent:selectBuffObjects(condition)
+end
+
 function TrapSystem:discardCellAgent(cell)
 	local cellAgentRegistry = self._cellAgentRegistry
 	local cellAgent = cellAgentRegistry[cell]
@@ -60,6 +72,8 @@ end
 function TrapSystem:triggerTrap(target)
 	local posComp = target:getComponent("Position")
 	local cell = target:getCell()
+	local buffSystem = self._battleContext:getObject("BuffSystem")
+	local targetAgent = buffSystem:retrieveTargetAgent(target, true)
 	local cellAgent = self:retrieveCellAgent(cell)
 
 	if cellAgent then
@@ -67,10 +81,12 @@ function TrapSystem:triggerTrap(target)
 
 		if trapList then
 			for i, trap in ipairs(trapList) do
-				trap:trigger(target, self._battleContext)
+				if not targetAgent:isImmuneToTrapBuffObject(trap) then
+					trap:trigger(target, self._battleContext)
 
-				if trap:isScrapped() then
-					self:cancelTrap(cell, trap)
+					if trap:isScrapped() then
+						self:cancelTrap(cell, trap)
+					end
 				end
 			end
 		end
@@ -112,6 +128,38 @@ function TrapSystem:cancelTrap(cell, trap)
 			self._processRecorder:recordObjectEvent(kBRFieldLine, "RmTrap", detail)
 		end
 	end
+end
+
+function TrapSystem:dispelBuffsOnTarget(cell, condition, workId, ignoreTriggerEvent)
+	local cellAgent = self:retrieveCellAgent(cell, false)
+
+	if cellAgent == nil then
+		return 0
+	end
+
+	local trapList = cellAgent:selectBuffObjects(condition)
+
+	if trapList == nil then
+		return 0
+	end
+
+	local total = 0
+
+	for i = 1, #trapList do
+		local trap = trapList[i]
+
+		if cellAgent:removeTrapObject(trap) then
+			local sucess, detail = trap:cancelTrap(cellAgent)
+
+			if sucess and self._processRecorder then
+				self._processRecorder:recordObjectEvent(kBRFieldLine, "RmTrap", detail)
+			end
+
+			total = total + 1
+		end
+	end
+
+	return total
 end
 
 function TrapSystem:cleanTrapsOnCell(cell)

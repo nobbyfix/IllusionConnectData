@@ -48,10 +48,14 @@ ShopSystem:has("_shopService", {
 ShopSystem:has("_playInstance", {
 	is = "rw"
 })
+ShopSystem:has("_activitySystem", {
+	is = "rw"
+}):injectWith("ActivitySystem")
 
 KMonthCardType = {
 	KMonthCardForever = "monthCardF",
 	KMonthCardSubscribe = "MonthCard_SubScribe",
+	KCardFanxingZhi = "KCarfFanxingZhiMeng",
 	KMonthCard = "MonthCard_1"
 }
 kShopResetType = {
@@ -1358,6 +1362,19 @@ function ShopSystem:getRecomendData()
 							add = true
 						elseif info.Vanish == 0 then
 							add = true
+						end
+					end
+
+					if pid == KMonthCardType.KCardFanxingZhi then
+						local activity = self._activitySystem:getFanXingZhiMengActivity()
+
+						if activity and self._activitySystem:isActivityOpen(activity:getId()) and not self._activitySystem:isActivityOver(activity:getId()) then
+							local buy = activity:getPayStatus()
+							local deadline = activity:getDeadline()
+
+							if not buy and not deadline then
+								add = true
+							end
 						end
 					end
 

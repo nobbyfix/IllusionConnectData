@@ -1636,7 +1636,7 @@ local modules = {
 							mediator = "ActivityExchangeTipMediator"
 						},
 						{
-							res = "asset/ui/ActivityTaskStageStar.csb",
+							res = "asset/ui/ActivityTaskStageStarNew.csb",
 							name = "ActivityTaskStageStarView",
 							mediator = "ActivityTaskStageStarMediator"
 						},
@@ -2008,6 +2008,11 @@ local modules = {
 						{
 							res = "asset/ui/ActivitySummerReMain.csb",
 							name = "ActivitySummerReMainView",
+							mediator = "ActivityCommonMainMediator"
+						},
+						{
+							res = "asset/ui/ActivityTerrorMain.csb",
+							name = "ActivityTerrorMainView",
 							mediator = "ActivityCommonMainMediator"
 						}
 					}
@@ -3851,6 +3856,52 @@ local modules = {
 				}
 			},
 			{
+				name = "dreamHouse",
+				requires = {
+					"dm.gameplay.dreamHouse.controller.DreamHouseSystem",
+					"dm.gameplay.dreamHouse.service.DreamHouseService",
+					"dm.gameplay.dreamHouse.model.DreamHouse",
+					"dm.gameplay.dreamHouse.model.DreamHousePoint",
+					"dm.gameplay.dreamHouse.model.DreamHouseMap"
+				},
+				injections = {
+					singletons = {
+						"DreamHouseSystem",
+						"DreamHouse"
+					},
+					classes = {
+						"DreamHouseService"
+					},
+					views = {
+						{
+							res = "asset/ui/dreamHouseMain.csb",
+							name = "DreamHouseMainView",
+							mediator = "DreamHouseMainMediator"
+						},
+						{
+							res = "asset/ui/dreamHouseTeam.csb",
+							name = "DreamHouseTeamView",
+							mediator = "DreamHouseTeamMediator"
+						},
+						{
+							res = "asset/ui/dreamHouseBattleEnd.csb",
+							name = "DreamHouseBattleEndView",
+							mediator = "DreamHouseBattleEndMediator"
+						},
+						{
+							res = "asset/ui/dreamHouseDetail.csb",
+							name = "DreamHouseDetailView",
+							mediator = "DreamHouseDetailMediator"
+						},
+						{
+							res = "asset/ui/dreamHousePass.csb",
+							name = "DreamHousePassView",
+							mediator = "DreamHousePassMediator"
+						}
+					}
+				}
+			},
+			{
 				name = "team",
 				requires = {
 					"dm.gameplay.team.controller.TeamSystem"
@@ -4026,6 +4077,79 @@ local modules = {
 							res = "asset/ui/RTPKNewSeason.csb",
 							name = "RTPKNewSeasonTipsView",
 							mediator = "RTPKNewSeasonTipsMediator"
+						}
+					}
+				}
+			},
+			{
+				name = "leadStageArena",
+				requires = {
+					"dm.gameplay.leadStageArena.controller.LeadStageArenaSystem",
+					"dm.gameplay.leadStageArena.service.LeadStageArenaService",
+					"dm.gameplay.leadStageArena.model.LeadStageArenaHero"
+				},
+				injections = {
+					singletons = {
+						"LeadStageArenaSystem"
+					},
+					classes = {
+						"LeadStageArenaService"
+					},
+					views = {
+						{
+							res = "asset/ui/LeadStageAreaMain.csb",
+							name = "LeadStageArenaMainView",
+							mediator = "LeadStageArenaMainMediator"
+						},
+						{
+							res = "asset/ui/LeadStageAreaRank.csb",
+							name = "LeadStageArenaRankView",
+							mediator = "LeadStageArenaRankViewMediator"
+						},
+						{
+							res = "asset/ui/LeadStageArenaPlayerInfo.csb",
+							name = "LeadStageArenaPlayerInfoView",
+							mediator = "LeadStageArenaPlayerInfoViewMediator"
+						},
+						{
+							res = "asset/ui/leadStageAreaLoading.csb",
+							name = "LeadStageArenaLoadingView",
+							mediator = "LeadStageArenaLoadingMediator"
+						},
+						{
+							res = "asset/ui/LeadStageAreaRival.csb",
+							name = "LeadStageArenaRivalView",
+							mediator = "LeadStageArenaRivalMediator"
+						},
+						{
+							res = "asset/ui/StageAreaFreshRival.csb",
+							name = "LeadStageArenaFreshRivalView",
+							mediator = "LeadStageArenaFreshRivalMediator"
+						},
+						{
+							res = "asset/ui/LeadStageAreaTeamList.csb",
+							name = "LeadStageArenaTeamListView",
+							mediator = "LeadStageArenaTeamListMediator"
+						},
+						{
+							res = "asset/ui/LeadStageAreaBattleFinish.csb",
+							name = "LeadStageAreaBattleFinishView",
+							mediator = "LeadStageAreaBattleFinishMediator"
+						},
+						{
+							res = "asset/ui/LeadStageArenaTeam.csb",
+							name = "LeadStageArenaTeamView",
+							mediator = "LeadStageArenaTeamMediator"
+						},
+						{
+							res = "asset/ui/ArenaReportMain.csb",
+							name = "LeadStageArenaReportView",
+							mediator = "LeadStageArenaReportViewMediator"
+						},
+						{
+							res = "asset/ui/LeadStageArenaReward.csb",
+							name = "LeadStageArenaRewardView",
+							mediator = "LeadStageArenaRewardViewMediator"
 						}
 					}
 				}

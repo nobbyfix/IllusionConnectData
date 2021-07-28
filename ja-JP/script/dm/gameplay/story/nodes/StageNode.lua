@@ -204,6 +204,10 @@ function StageNode:setVolatileProps(config)
 	if config.touchEnabled ~= nil then
 		self:setTouchEnabled(config.touchEnabled)
 	end
+
+	if config.opacityTo then
+		self:setOpacityTo(config.opacityTo)
+	end
 end
 
 function StageNode:getScene()
@@ -689,4 +693,14 @@ end
 
 function StageNode:onTouchEnded(touch, event)
 	self:dispatchTouchEvent(TouchType.kEnded, touch, event, data)
+end
+
+function StageNode:setOpacityTo(cfg)
+	local node = self:getRenderNode()
+
+	if cfg.valbegin or cfg.valbegin == 0 then
+		node:setOpacity(cfg.valbegin)
+	end
+
+	node:runAction(cc.FadeTo:create(cfg.duration, cfg.valend))
 end

@@ -140,7 +140,7 @@ function CardSystem:getCardIdx(player, card)
 	return player:getCardWindow():getCardIndex(card)
 end
 
-function CardSystem:genNewHeroCard(player, cardInfo, appendix)
+function CardSystem:genNewHeroCard(player, cardInfo, appendix, iscreateInstance)
 	local entityManager = self._battleContext:getObject("EntityManager")
 	local cardsInWindow = player:getCardWindow()
 	local info = {}
@@ -157,21 +157,19 @@ function CardSystem:genNewHeroCard(player, cardInfo, appendix)
 		index = index + 1
 	until entityManager:fetchEntity(info.hero.id) == nil and cardsInWindow:getCardById(info.hero.id) == nil
 
+	if iscreateInstance then
+		local card = HeroCard:new(info)
+
+		return card
+	end
+
 	return info
 end
 
-function CardSystem:genNewSkillCard(actor, skillData)
-	local cardInfo = actor:getCardInfo()
+function CardSystem:genNewSkillCard(skillInfo)
+	local card = SkillCard:new(skillInfo)
 
-	if cardInfo then
-		return {
-			id = cardInfo.id,
-			cost = cardInfo.cost,
-			model = cardInfo.hero.modelId,
-			actor = actor,
-			skill = skillData
-		}
-	end
+	return card
 end
 
 function CardSystem:removeSkillCardForActor(actor)
@@ -333,6 +331,18 @@ end
 
 function CardSystem:sendTimingEvent(event, args)
 	self._timingEventDispatcher:dispatchEvent(event, args)
+end
+
+function CardSystem:selectEnchantOnTarget(player, card, condition)
+	local cardAgent = self:retrieveCardAgent(player, card, false)
+
+	print("selectEnchantOnTarget", player, card, condition, cardAgent)
+
+	if cardAgent == nil then
+		return {}, 0
+	end
+
+	return cardAgent:selectEnchantObjects(condition)
 end
 
 function CardSystem:applyEnchantOnCard(player, card, enchantObject, groupConfig, workId)

@@ -75,6 +75,12 @@ BasePlayer:has("_createTime", {
 BasePlayer:has("_maxCombat", {
 	is = "rw"
 })
+BasePlayer:has("_playerStageArena", {
+	is = "rw"
+})
+BasePlayer:has("_stageArenafriends", {
+	is = "r"
+})
 
 function BasePlayer:initialize(config)
 	super.initialize(self)
@@ -96,6 +102,8 @@ function BasePlayer:initialize(config)
 	self._cheatCount = 0
 	self._curHeadFrame = ""
 	self._headFrames = {}
+	self._playerStageArena = {}
+	self._stageArenafriends = {}
 end
 
 function BasePlayer:synchronizeInfoDiff(diffData)
@@ -214,6 +222,26 @@ function BasePlayer:synchronizeInfoDiff(diffData)
 
 	if diffData.headFrames ~= nil then
 		self:setHeadFrames(diffData.headFrames)
+	end
+
+	if diffData.playerStageArena then
+		for k, v in pairs(diffData.playerStageArena) do
+			self._playerStageArena[k] = v
+		end
+
+		if diffData.playerStageArena.friendsInfoMap then
+			self._stageArenafriends = {}
+			local index = 1
+
+			for i, v in pairs(diffData.playerStageArena.friendsInfoMap) do
+				local info = LeadStageArenaHeroInfo:new()
+
+				info:synchronize(v)
+
+				self._stageArenafriends[index] = info
+				index = index + 1
+			end
+		end
 	end
 end
 

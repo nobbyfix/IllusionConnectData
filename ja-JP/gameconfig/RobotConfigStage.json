@@ -1,0 +1,665 @@
+{
+    "1": {
+        "MasterIDBase": "Master_XueZhan",
+        "RobotATKBase": 4000,
+        "RobotBattleBase": 40000,
+        "RobotGroup": 1,
+        "RobotHeroATK": 8567,
+        "RobotHeroDEF": 2803,
+        "RobotHeroHP": 28663,
+        "RobotHeroLv": 64,
+        "RobotHeroStar": 3,
+        "RobotLeadStage": "LeadStage_XueZhan_001",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "10": {
+        "MasterIDBase": "Master_XueZhan",
+        "RobotATKBase": 10620,
+        "RobotBattleBase": 106200,
+        "RobotGroup": 4,
+        "RobotHeroATK": 17999,
+        "RobotHeroDEF": 5685,
+        "RobotHeroHP": 60653,
+        "RobotHeroLv": 113,
+        "RobotHeroStar": 4,
+        "RobotLeadStage": "LeadStage_XueZhan_004",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "11": {
+        "MasterIDBase": "Master_LieSha",
+        "RobotATKBase": 10620,
+        "RobotBattleBase": 106200,
+        "RobotGroup": 4,
+        "RobotHeroATK": 17999,
+        "RobotHeroDEF": 5685,
+        "RobotHeroHP": 60653,
+        "RobotHeroLv": 113,
+        "RobotHeroStar": 4,
+        "RobotLeadStage": "LeadStage_LieSha_004",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "12": {
+        "MasterIDBase": "Master_BiLei",
+        "RobotATKBase": 10620,
+        "RobotBattleBase": 106200,
+        "RobotGroup": 4,
+        "RobotHeroATK": 17999,
+        "RobotHeroDEF": 5685,
+        "RobotHeroHP": 60653,
+        "RobotHeroLv": 113,
+        "RobotHeroStar": 4,
+        "RobotLeadStage": "LeadStage_BiLei_004",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "13": {
+        "MasterIDBase": "Master_FuHun",
+        "RobotATKBase": 10620,
+        "RobotBattleBase": 106200,
+        "RobotGroup": 4,
+        "RobotHeroATK": 17999,
+        "RobotHeroDEF": 5685,
+        "RobotHeroHP": 60653,
+        "RobotHeroLv": 113,
+        "RobotHeroStar": 4,
+        "RobotLeadStage": "LeadStage_FuHun_004",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "14": {
+        "MasterIDBase": "Master_XueZhan",
+        "RobotATKBase": 15956,
+        "RobotBattleBase": 159560,
+        "RobotGroup": 5,
+        "RobotHeroATK": 24811,
+        "RobotHeroDEF": 7939,
+        "RobotHeroHP": 84181,
+        "RobotHeroLv": 162,
+        "RobotHeroStar": 5,
+        "RobotLeadStage": "LeadStage_XueZhan_005",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "15": {
+        "MasterIDBase": "Master_LieSha",
+        "RobotATKBase": 15956,
+        "RobotBattleBase": 159560,
+        "RobotGroup": 5,
+        "RobotHeroATK": 24811,
+        "RobotHeroDEF": 7939,
+        "RobotHeroHP": 84181,
+        "RobotHeroLv": 162,
+        "RobotHeroStar": 5,
+        "RobotLeadStage": "LeadStage_LieSha_005",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "16": {
+        "MasterIDBase": "Master_BiLei",
+        "RobotATKBase": 15956,
+        "RobotBattleBase": 159560,
+        "RobotGroup": 5,
+        "RobotHeroATK": 24811,
+        "RobotHeroDEF": 7939,
+        "RobotHeroHP": 84181,
+        "RobotHeroLv": 162,
+        "RobotHeroStar": 5,
+        "RobotLeadStage": "LeadStage_BiLei_005",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "17": {
+        "MasterIDBase": "Master_FuHun",
+        "RobotATKBase": 15956,
+        "RobotBattleBase": 159560,
+        "RobotGroup": 5,
+        "RobotHeroATK": 24811,
+        "RobotHeroDEF": 7939,
+        "RobotHeroHP": 84181,
+        "RobotHeroLv": 162,
+        "RobotHeroStar": 5,
+        "RobotLeadStage": "LeadStage_FuHun_005",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "18": {
+        "MasterIDBase": "Master_SenLing",
+        "RobotATKBase": 15956,
+        "RobotBattleBase": 159560,
+        "RobotGroup": 5,
+        "RobotHeroATK": 24811,
+        "RobotHeroDEF": 7939,
+        "RobotHeroHP": 84181,
+        "RobotHeroLv": 162,
+        "RobotHeroStar": 5,
+        "RobotLeadStage": "LeadStage_SenLing_005",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "19": {
+        "MasterIDBase": "Master_XueZhan",
+        "RobotATKBase": 19253,
+        "RobotBattleBase": 192530,
+        "RobotGroup": 6,
+        "RobotHeroATK": 34086,
+        "RobotHeroDEF": 10794,
+        "RobotHeroHP": 128354,
+        "RobotHeroLv": 223,
+        "RobotHeroStar": 5,
+        "RobotLeadStage": "LeadStage_XueZhan_006",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "2": {
+        "MasterIDBase": "Master_LieSha",
+        "RobotATKBase": 4000,
+        "RobotBattleBase": 40000,
+        "RobotGroup": 1,
+        "RobotHeroATK": 8567,
+        "RobotHeroDEF": 2803,
+        "RobotHeroHP": 28663,
+        "RobotHeroLv": 64,
+        "RobotHeroStar": 3,
+        "RobotLeadStage": "LeadStage_LieSha_001",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "20": {
+        "MasterIDBase": "Master_LieSha",
+        "RobotATKBase": 19253,
+        "RobotBattleBase": 192530,
+        "RobotGroup": 6,
+        "RobotHeroATK": 34086,
+        "RobotHeroDEF": 10794,
+        "RobotHeroHP": 128354,
+        "RobotHeroLv": 223,
+        "RobotHeroStar": 5,
+        "RobotLeadStage": "LeadStage_LieSha_006",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "21": {
+        "MasterIDBase": "Master_BiLei",
+        "RobotATKBase": 19253,
+        "RobotBattleBase": 192530,
+        "RobotGroup": 6,
+        "RobotHeroATK": 34086,
+        "RobotHeroDEF": 10794,
+        "RobotHeroHP": 128354,
+        "RobotHeroLv": 223,
+        "RobotHeroStar": 5,
+        "RobotLeadStage": "LeadStage_BiLei_006",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "22": {
+        "MasterIDBase": "Master_FuHun",
+        "RobotATKBase": 19253,
+        "RobotBattleBase": 192530,
+        "RobotGroup": 6,
+        "RobotHeroATK": 34086,
+        "RobotHeroDEF": 10794,
+        "RobotHeroHP": 128354,
+        "RobotHeroLv": 223,
+        "RobotHeroStar": 5,
+        "RobotLeadStage": "LeadStage_FuHun_006",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "23": {
+        "MasterIDBase": "Master_SenLing",
+        "RobotATKBase": 19253,
+        "RobotBattleBase": 192530,
+        "RobotGroup": 6,
+        "RobotHeroATK": 34086,
+        "RobotHeroDEF": 10794,
+        "RobotHeroHP": 128354,
+        "RobotHeroLv": 223,
+        "RobotHeroStar": 5,
+        "RobotLeadStage": "LeadStage_SenLing_006",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "24": {
+        "MasterIDBase": "Master_LiMing",
+        "RobotATKBase": 19253,
+        "RobotBattleBase": 192530,
+        "RobotGroup": 6,
+        "RobotHeroATK": 34086,
+        "RobotHeroDEF": 10794,
+        "RobotHeroHP": 128354,
+        "RobotHeroLv": 223,
+        "RobotHeroStar": 5,
+        "RobotLeadStage": "LeadStage_LiMing_006",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "25": {
+        "MasterIDBase": "Master_XueZhan",
+        "RobotATKBase": 39845,
+        "RobotBattleBase": 398450,
+        "RobotGroup": 7,
+        "RobotHeroATK": 48601,
+        "RobotHeroDEF": 14174,
+        "RobotHeroHP": 169855,
+        "RobotHeroLv": 267,
+        "RobotHeroStar": 6,
+        "RobotLeadStage": "LeadStage_XueZhan_007",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "26": {
+        "MasterIDBase": "Master_LieSha",
+        "RobotATKBase": 39845,
+        "RobotBattleBase": 398450,
+        "RobotGroup": 7,
+        "RobotHeroATK": 48601,
+        "RobotHeroDEF": 14174,
+        "RobotHeroHP": 169855,
+        "RobotHeroLv": 267,
+        "RobotHeroStar": 6,
+        "RobotLeadStage": "LeadStage_LieSha_007",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "27": {
+        "MasterIDBase": "Master_BiLei",
+        "RobotATKBase": 39845,
+        "RobotBattleBase": 398450,
+        "RobotGroup": 7,
+        "RobotHeroATK": 48601,
+        "RobotHeroDEF": 14174,
+        "RobotHeroHP": 169855,
+        "RobotHeroLv": 267,
+        "RobotHeroStar": 6,
+        "RobotLeadStage": "LeadStage_BiLei_007",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "28": {
+        "MasterIDBase": "Master_FuHun",
+        "RobotATKBase": 39845,
+        "RobotBattleBase": 398450,
+        "RobotGroup": 7,
+        "RobotHeroATK": 48601,
+        "RobotHeroDEF": 14174,
+        "RobotHeroHP": 169855,
+        "RobotHeroLv": 267,
+        "RobotHeroStar": 6,
+        "RobotLeadStage": "LeadStage_FuHun_007",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "29": {
+        "MasterIDBase": "Master_SenLing",
+        "RobotATKBase": 39845,
+        "RobotBattleBase": 398450,
+        "RobotGroup": 7,
+        "RobotHeroATK": 48601,
+        "RobotHeroDEF": 14174,
+        "RobotHeroHP": 169855,
+        "RobotHeroLv": 267,
+        "RobotHeroStar": 6,
+        "RobotLeadStage": "LeadStage_SenLing_007",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "3": {
+        "MasterIDBase": "Master_BiLei",
+        "RobotATKBase": 4000,
+        "RobotBattleBase": 40000,
+        "RobotGroup": 1,
+        "RobotHeroATK": 8567,
+        "RobotHeroDEF": 2803,
+        "RobotHeroHP": 28663,
+        "RobotHeroLv": 64,
+        "RobotHeroStar": 3,
+        "RobotLeadStage": "LeadStage_BiLei_001",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "30": {
+        "MasterIDBase": "Master_LiMing",
+        "RobotATKBase": 39845,
+        "RobotBattleBase": 398450,
+        "RobotGroup": 7,
+        "RobotHeroATK": 48601,
+        "RobotHeroDEF": 14174,
+        "RobotHeroHP": 169855,
+        "RobotHeroLv": 267,
+        "RobotHeroStar": 6,
+        "RobotLeadStage": "LeadStage_LiMing_007",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "31": {
+        "MasterIDBase": "Master_XueZhan",
+        "RobotATKBase": 50474,
+        "RobotBattleBase": 504740,
+        "RobotGroup": 8,
+        "RobotHeroATK": 56409,
+        "RobotHeroDEF": 16637,
+        "RobotHeroHP": 195400,
+        "RobotHeroLv": 300,
+        "RobotHeroStar": 6,
+        "RobotLeadStage": "LeadStage_XueZhan_008",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "32": {
+        "MasterIDBase": "Master_LieSha",
+        "RobotATKBase": 50474,
+        "RobotBattleBase": 504740,
+        "RobotGroup": 8,
+        "RobotHeroATK": 56409,
+        "RobotHeroDEF": 16637,
+        "RobotHeroHP": 195400,
+        "RobotHeroLv": 300,
+        "RobotHeroStar": 6,
+        "RobotLeadStage": "LeadStage_LieSha_008",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "33": {
+        "MasterIDBase": "Master_BiLei",
+        "RobotATKBase": 50474,
+        "RobotBattleBase": 504740,
+        "RobotGroup": 8,
+        "RobotHeroATK": 56409,
+        "RobotHeroDEF": 16637,
+        "RobotHeroHP": 195400,
+        "RobotHeroLv": 300,
+        "RobotHeroStar": 6,
+        "RobotLeadStage": "LeadStage_BiLei_008",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "34": {
+        "MasterIDBase": "Master_FuHun",
+        "RobotATKBase": 50474,
+        "RobotBattleBase": 504740,
+        "RobotGroup": 8,
+        "RobotHeroATK": 56409,
+        "RobotHeroDEF": 16637,
+        "RobotHeroHP": 195400,
+        "RobotHeroLv": 300,
+        "RobotHeroStar": 6,
+        "RobotLeadStage": "LeadStage_FuHun_008",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "35": {
+        "MasterIDBase": "Master_SenLing",
+        "RobotATKBase": 50474,
+        "RobotBattleBase": 504740,
+        "RobotGroup": 8,
+        "RobotHeroATK": 56409,
+        "RobotHeroDEF": 16637,
+        "RobotHeroHP": 195400,
+        "RobotHeroLv": 300,
+        "RobotHeroStar": 6,
+        "RobotLeadStage": "LeadStage_SenLing_008",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "36": {
+        "MasterIDBase": "Master_LiMing",
+        "RobotATKBase": 50474,
+        "RobotBattleBase": 504740,
+        "RobotGroup": 8,
+        "RobotHeroATK": 56409,
+        "RobotHeroDEF": 16637,
+        "RobotHeroHP": 195400,
+        "RobotHeroLv": 300,
+        "RobotHeroStar": 6,
+        "RobotLeadStage": "LeadStage_LiMing_008",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "37": {
+        "MasterIDBase": "Master_XueZhan",
+        "RobotATKBase": 4000,
+        "RobotBattleBase": 40000,
+        "RobotGroup": 0,
+        "RobotHeroATK": 4795,
+        "RobotHeroDEF": 1493,
+        "RobotHeroHP": 17344,
+        "RobotHeroLv": 64,
+        "RobotHeroStar": 3,
+        "RobotLeadStage": "",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "38": {
+        "MasterIDBase": "Master_LieSha",
+        "RobotATKBase": 4000,
+        "RobotBattleBase": 40000,
+        "RobotGroup": 0,
+        "RobotHeroATK": 4795,
+        "RobotHeroDEF": 1493,
+        "RobotHeroHP": 17344,
+        "RobotHeroLv": 64,
+        "RobotHeroStar": 3,
+        "RobotLeadStage": "",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "39": {
+        "MasterIDBase": "Master_BiLei",
+        "RobotATKBase": 4000,
+        "RobotBattleBase": 40000,
+        "RobotGroup": 0,
+        "RobotHeroATK": 4795,
+        "RobotHeroDEF": 1493,
+        "RobotHeroHP": 17344,
+        "RobotHeroLv": 64,
+        "RobotHeroStar": 3,
+        "RobotLeadStage": "",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "4": {
+        "MasterIDBase": "Master_XueZhan",
+        "RobotATKBase": 4000,
+        "RobotBattleBase": 40000,
+        "RobotGroup": 2,
+        "RobotHeroATK": 10742,
+        "RobotHeroDEF": 3511,
+        "RobotHeroHP": 35422,
+        "RobotHeroLv": 73,
+        "RobotHeroStar": 3,
+        "RobotLeadStage": "LeadStage_XueZhan_002",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "5": {
+        "MasterIDBase": "Master_LieSha",
+        "RobotATKBase": 4000,
+        "RobotBattleBase": 40000,
+        "RobotGroup": 2,
+        "RobotHeroATK": 10742,
+        "RobotHeroDEF": 3511,
+        "RobotHeroHP": 35422,
+        "RobotHeroLv": 73,
+        "RobotHeroStar": 3,
+        "RobotLeadStage": "LeadStage_LieSha_002",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "6": {
+        "MasterIDBase": "Master_BiLei",
+        "RobotATKBase": 4000,
+        "RobotBattleBase": 40000,
+        "RobotGroup": 2,
+        "RobotHeroATK": 10742,
+        "RobotHeroDEF": 3511,
+        "RobotHeroHP": 35422,
+        "RobotHeroLv": 73,
+        "RobotHeroStar": 3,
+        "RobotLeadStage": "LeadStage_BiLei_002",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "7": {
+        "MasterIDBase": "Master_XueZhan",
+        "RobotATKBase": 7000,
+        "RobotBattleBase": 70000,
+        "RobotGroup": 3,
+        "RobotHeroATK": 14515,
+        "RobotHeroDEF": 4637,
+        "RobotHeroHP": 48627,
+        "RobotHeroLv": 87,
+        "RobotHeroStar": 4,
+        "RobotLeadStage": "LeadStage_XueZhan_003",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "8": {
+        "MasterIDBase": "Master_LieSha",
+        "RobotATKBase": 7000,
+        "RobotBattleBase": 70000,
+        "RobotGroup": 3,
+        "RobotHeroATK": 14515,
+        "RobotHeroDEF": 4637,
+        "RobotHeroHP": 48627,
+        "RobotHeroLv": 87,
+        "RobotHeroStar": 4,
+        "RobotLeadStage": "LeadStage_LieSha_003",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "9": {
+        "MasterIDBase": "Master_BiLei",
+        "RobotATKBase": 7000,
+        "RobotBattleBase": 70000,
+        "RobotGroup": 3,
+        "RobotHeroATK": 14515,
+        "RobotHeroDEF": 4637,
+        "RobotHeroHP": 48627,
+        "RobotHeroLv": 87,
+        "RobotHeroStar": 4,
+        "RobotLeadStage": "LeadStage_BiLei_003",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    }
+}

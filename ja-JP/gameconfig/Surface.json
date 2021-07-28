@@ -1175,6 +1175,63 @@
         "Type": 1,
         "Unlook": 1
     },
+    "Surface_BHTZi_2": {
+        "ActivityId": "",
+        "AnimeList": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    10,
+                    1122
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "body",
+                "point": [
+                    -26,
+                    835
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_BHTZi_ghost_Desc",
+        "GainDesc": "Surface_Shop_GainDesc",
+        "GainShortDesc": "Surface_GainShort",
+        "GoodsId": "ShopSurface_Surface_BHTZi_2",
+        "Hero": "BHTZi",
+        "Link": "",
+        "LongDesc": "Surface_BHTZi_ghost_LongDecs",
+        "Model": "Model_BHTZi_ghost",
+        "Name": "Surface_BHTZi_ghost_Name",
+        "NotGetUnlook": "",
+        "Quality": 5,
+        "RepeatReward": 68,
+        "ShopID": "Shop_Surface",
+        "Sort": 3,
+        "Type": 2,
+        "Unlook": 1
+    },
     "Surface_BHTZi_Awake": {
         "ActivityId": "",
         "AnimeList": "",
@@ -1401,6 +1458,63 @@
         "ShopID": "",
         "Sort": 1,
         "Type": 1,
+        "Unlook": 1
+    },
+    "Surface_BQDShe_Awake": {
+        "ActivityId": "",
+        "AnimeList": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    -21,
+                    383
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch2",
+                "part": "body",
+                "point": [
+                    9,
+                    322
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_BQDShe_1Awake_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "Surface_BQDShe_Awake_GainDesc",
+        "GoodsId": "",
+        "Hero": "BQDShe",
+        "Link": "",
+        "LongDesc": "",
+        "Model": "Model_BQDShe_Awake",
+        "Name": "Surface_BQDShe_Awake_Name",
+        "NotGetUnlook": "",
+        "Quality": 5,
+        "RepeatReward": "",
+        "ShopID": "",
+        "Sort": 2,
+        "Type": 5,
         "Unlook": 1
     },
     "Surface_CLMan_1": {
@@ -3191,6 +3305,64 @@
         "ShopID": "",
         "Sort": 1,
         "Type": "",
+        "Unlook": 1
+    },
+    "Surface_HGEr_Awake": {
+        "ActivityId": "",
+        "AnimeList": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    -90,
+                    1460
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "body",
+                "point": [
+                    87,
+                    1,
+                    352
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_HGEr_1Awake_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "Surface_HGEr_Awake_GainDesc",
+        "GoodsId": "",
+        "Hero": "HGEr",
+        "Link": "",
+        "LongDesc": "",
+        "Model": "Model_HGEr_Awake",
+        "Name": "Surface_HGEr_Awake_Name",
+        "NotGetUnlook": "",
+        "Quality": 5,
+        "RepeatReward": "",
+        "ShopID": "",
+        "Sort": 2,
+        "Type": 5,
         "Unlook": 1
     },
     "Surface_HLDNan_1": {
@@ -6202,6 +6374,63 @@
         "ShopID": "",
         "Sort": 2,
         "Type": 5,
+        "Unlook": 1
+    },
+    "Surface_MYing_1": {
+        "ActivityId": "",
+        "AnimeList": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    19,
+                    1140
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "body",
+                "point": [
+                    50,
+                    936
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_MYing_1_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "1",
+        "GoodsId": "",
+        "Hero": "MYing",
+        "Link": "",
+        "LongDesc": "",
+        "Model": "Model_MYing",
+        "Name": "Surface_MYing_1_Name",
+        "NotGetUnlook": "",
+        "Quality": 2,
+        "RepeatReward": "",
+        "ShopID": "",
+        "Sort": 1,
+        "Type": "",
         "Unlook": 1
     },
     "Surface_MZGXiu_1": {
@@ -9708,9 +9937,9 @@
             }
         ],
         "Desc": "Surface_YLMGZhu_2_Desc",
-        "GainDesc": "Surface_YLMGZhu_WSJie_GainDesc",
-        "GainShortDesc": "Surface_WSJie_GainShort",
-        "GoodsId": "Surface_12",
+        "GainDesc": "Surface_Shop_GainDesc",
+        "GainShortDesc": "Surface_GainShort",
+        "GoodsId": "ShopSurface_Surface_YLMGZhu_2",
         "Hero": "YLMGZhu",
         "Link": "",
         "LongDesc": "Surface_YLMGZhu_2_LongDesc",
@@ -9721,7 +9950,7 @@
         "RepeatReward": 40,
         "ShopID": "Shop_Surface",
         "Sort": 2,
-        "Type": 3,
+        "Type": 2,
         "Unlook": 1
     },
     "Surface_YLMGZhu_Awake": {

@@ -1686,6 +1686,36 @@ local mappings = {
 		name = "MailMediator",
 		type = "@C"
 	},
+	DreamHouseSystem = {
+		url = "dm.gameplay.dreamHouse.controller.DreamHouseSystem",
+		name = "DreamHouseSystem",
+		type = "@C"
+	},
+	DreamHousePassMediator = {
+		url = "dm.gameplay.dreamHouse.view.DreamHousePassMediator",
+		name = "DreamHousePassMediator",
+		type = "@C"
+	},
+	DreamHouseDetailMediator = {
+		url = "dm.gameplay.dreamHouse.view.DreamHouseDetailMediator",
+		name = "DreamHouseDetailMediator",
+		type = "@C"
+	},
+	DreamHouseBattleEndMediator = {
+		url = "dm.gameplay.dreamHouse.view.DreamHouseBattleEndMediator",
+		name = "DreamHouseBattleEndMediator",
+		type = "@C"
+	},
+	DreamHouseTeamMediator = {
+		url = "dm.gameplay.dreamHouse.view.DreamHouseTeamMediator",
+		name = "DreamHouseTeamMediator",
+		type = "@C"
+	},
+	DreamHouseMainMediator = {
+		url = "dm.gameplay.dreamHouse.view.DreamHouseMainMediator",
+		name = "DreamHouseMainMediator",
+		type = "@C"
+	},
 	GalleryMemoryListMediator = {
 		url = "dm.gameplay.gallery.view.GalleryMemoryListMediator",
 		name = "GalleryMemoryListMediator",
@@ -3035,6 +3065,61 @@ local mappings = {
 		url = "dm.gameplay.currency.CurrencyEvents",
 		name = "EVT_BUY_CRYSTAL_SUCC",
 		type = "@V"
+	},
+	LeadStageArenaTeamMediator = {
+		url = "dm.gameplay.leadStageArena.view.LeadStageArenaTeamMediator",
+		name = "LeadStageArenaTeamMediator",
+		type = "@C"
+	},
+	LeadStageArenaLoadingMediator = {
+		url = "dm.gameplay.leadStageArena.view.LeadStageArenaLoadingMediator",
+		name = "LeadStageArenaLoadingMediator",
+		type = "@C"
+	},
+	LeadStageArenaFreshRivalMediator = {
+		url = "dm.gameplay.leadStageArena.view.LeadStageArenaFreshRivalMediator",
+		name = "LeadStageArenaFreshRivalMediator",
+		type = "@C"
+	},
+	LeadStageArenaPlayerInfoViewMediator = {
+		url = "dm.gameplay.leadStageArena.view.LeadStageArenaPlayerInfoViewMediator",
+		name = "LeadStageArenaPlayerInfoViewMediator",
+		type = "@C"
+	},
+	LeadStageArenaReportViewMediator = {
+		url = "dm.gameplay.leadStageArena.view.LeadStageArenaReportViewMediator",
+		name = "LeadStageArenaReportViewMediator",
+		type = "@C"
+	},
+	LeadStageArenaMainMediator = {
+		url = "dm.gameplay.leadStageArena.view.LeadStageArenaMainMediator",
+		name = "LeadStageArenaMainMediator",
+		type = "@C"
+	},
+	LeadStageArenaRankViewMediator = {
+		url = "dm.gameplay.leadStageArena.view.LeadStageArenaRankViewMediator",
+		name = "LeadStageArenaRankViewMediator",
+		type = "@C"
+	},
+	LeadStageArenaRewardViewMediator = {
+		url = "dm.gameplay.leadStageArena.view.LeadStageArenaRewardViewMediator",
+		name = "LeadStageArenaRewardViewMediator",
+		type = "@C"
+	},
+	LeadStageArenaTeamListMediator = {
+		url = "dm.gameplay.leadStageArena.view.LeadStageArenaTeamListMediator",
+		name = "LeadStageArenaTeamListMediator",
+		type = "@C"
+	},
+	LeadStageAreaBattleFinishMediator = {
+		url = "dm.gameplay.leadStageArena.view.LeadStageAreaBattleFinishMediator",
+		name = "LeadStageAreaBattleFinishMediator",
+		type = "@C"
+	},
+	LeadStageArenaRivalMediator = {
+		url = "dm.gameplay.leadStageArena.view.LeadStageArenaRivalMediator",
+		name = "LeadStageArenaRivalMediator",
+		type = "@C"
 	},
 	RTPVPRobotBattleMediator = {
 		url = "dm.gameplay.rtpvp.view.RTPVPRobotBattleMediator",

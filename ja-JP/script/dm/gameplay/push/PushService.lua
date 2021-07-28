@@ -169,3 +169,11 @@ function PushService:listenFriendLogout(callback)
 		end
 	end)
 end
+
+function PushService:listenHistoryRankChange(callback)
+	self:addPushHandler(1150, function (op, response)
+		if callback then
+			callback(response)
+		end
+	end)
+end

@@ -23379,13 +23379,13 @@
         "AiRules": "",
         "Assist": [],
         "BGM": [
-            "Mus_Battle_Danger",
+            "Mus_Battle_Chaos_1",
             "",
             ""
         ],
-        "Background": "Battle_Scene_20",
+        "Background": "Battle_Scene_30",
         "Banner": "pic_guanqia2_01_tx",
-        "BlockBattleConfig": "Normal",
+        "BlockBattleConfig": "Normal_Stage_7_Wait1",
         "BlockBubble": "",
         "BlockDesc": "BlockPoint_E20S01_BlockDesc",
         "BlockDetailAuto": "",
@@ -23397,39 +23397,41 @@
             0.8
         ],
         "BossHeadPic": "",
-        "BossRound": "",
+        "BossRound": 1,
         "CardsExcept": "",
         "Challenge": [],
-        "CombatNeed": 1000,
-        "CombatValue": 1000,
+        "CombatNeed": 504391,
+        "CombatValue": 544700,
         "Combat_Adjust_Rate": 1.0,
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardE20S01",
-        "EnemyMaster": "E20S01_Master",
+        "EnemyMaster": "E20P01U01N08",
         "EnemyName": "",
         "FirstKillReward": "E20S01_FirstReward",
         "GoldReward": 2000,
         "HeroExpReward": "E20_HeroExpReward",
         "LoadingBorad": "",
-        "MainShowItem": "IM_ExpUp1",
+        "MainShowItem": "IQS_Orange1_Attack",
         "Map": "E20",
         "Name": "BlockPoint_E20S01_Name",
         "NextPoint": [
             "E20S02"
         ],
         "OpenFAC": 0,
-        "OpenLevel": 99,
+        "OpenLevel": 1,
         "OpenPoint": [
             "E19S20"
         ],
         "PlayerCard": "",
         "PointBoard": "",
-        "PointHead": "Model_ALSi",
+        "PointHead": "Model_BBLMa",
         "PointPicture": "",
         "PointReward": "E20S01",
         "PointType": "NORMAL",
-        "PreStoryPoint": [],
+        "PreStoryPoint": [
+            "S20E01"
+        ],
         "QuickChallenge": 1,
         "ReslutBoard": "",
         "ShowItem": "E20S01_Show",
@@ -23446,7 +23448,7 @@
             },
             {
                 "type": "MyHpRatio",
-                "value": 50
+                "value": 10
             },
             {
                 "type": "Time",
@@ -23474,13 +23476,13 @@
         "AiRules": "",
         "Assist": [],
         "BGM": [
-            "Mus_Battle_Danger",
+            "Mus_Battle_Chaos_1",
             "",
             ""
         ],
-        "Background": "Battle_Scene_20",
+        "Background": "Battle_Scene_30",
         "Banner": "pic_guanqia2_02_tx",
-        "BlockBattleConfig": "Normal",
+        "BlockBattleConfig": "Normal_Stage_7_Wait1",
         "BlockBubble": "",
         "BlockDesc": "BlockPoint_E20S02_BlockDesc",
         "BlockDetailAuto": "",
@@ -23492,35 +23494,35 @@
             0.8
         ],
         "BossHeadPic": "",
-        "BossRound": "",
+        "BossRound": 1,
         "CardsExcept": "",
         "Challenge": [],
-        "CombatNeed": 1000,
-        "CombatValue": 1000,
+        "CombatNeed": 508101,
+        "CombatValue": 548700,
         "Combat_Adjust_Rate": 1.0,
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardE20S02",
-        "EnemyMaster": "E20S02_Master",
+        "EnemyMaster": "E20P02U01N08",
         "EnemyName": "",
         "FirstKillReward": "E20S02_FirstReward",
         "GoldReward": 2000,
         "HeroExpReward": "E20_HeroExpReward",
         "LoadingBorad": "",
-        "MainShowItem": "IM_ExpUp1",
+        "MainShowItem": "IQS_Orange1_Attack",
         "Map": "E20",
         "Name": "BlockPoint_E20S02_Name",
         "NextPoint": [
             "E20S03"
         ],
         "OpenFAC": 1,
-        "OpenLevel": 99,
+        "OpenLevel": 1,
         "OpenPoint": [
             "E20S01"
         ],
         "PlayerCard": "",
         "PointBoard": "",
-        "PointHead": "Model_ALPo",
+        "PointHead": "Model_ZZBBWei",
         "PointPicture": "",
         "PointReward": "E20S02",
         "PointType": "NORMAL",
@@ -23541,7 +23543,7 @@
             },
             {
                 "type": "MyHpRatio",
-                "value": 50
+                "value": 10
             },
             {
                 "type": "Time",
@@ -23569,13 +23571,13 @@
         "AiRules": "",
         "Assist": [],
         "BGM": [
-            "Mus_Battle_Danger",
+            "Mus_Battle_Chaos_1",
             "",
             ""
         ],
-        "Background": "Battle_Scene_20",
+        "Background": "Battle_Scene_30",
         "Banner": "pic_guanqia2_01_tx",
-        "BlockBattleConfig": "Normal",
+        "BlockBattleConfig": "Normal_Stage_7_Wait1",
         "BlockBubble": "",
         "BlockDesc": "BlockPoint_E20S03_BlockDesc",
         "BlockDetailAuto": "",
@@ -23587,35 +23589,35 @@
             0.8
         ],
         "BossHeadPic": "",
-        "BossRound": "",
+        "BossRound": 1,
         "CardsExcept": "",
         "Challenge": [],
-        "CombatNeed": 1000,
-        "CombatValue": 1000,
+        "CombatNeed": 514522,
+        "CombatValue": 555700,
         "Combat_Adjust_Rate": 1.0,
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardE20S03",
-        "EnemyMaster": "E20S03_Master",
+        "EnemyMaster": "E20P03U01N08",
         "EnemyName": "",
         "FirstKillReward": "E20S03_FirstReward",
         "GoldReward": 2000,
         "HeroExpReward": "E20_HeroExpReward",
         "LoadingBorad": "",
-        "MainShowItem": "IM_ExpUp1",
+        "MainShowItem": "IQS_Orange1_Attack",
         "Map": "E20",
         "Name": "BlockPoint_E20S03_Name",
         "NextPoint": [
             "E20S04"
         ],
         "OpenFAC": 0,
-        "OpenLevel": 99,
+        "OpenLevel": 1,
         "OpenPoint": [
             "E20S02"
         ],
         "PlayerCard": "",
         "PointBoard": "",
-        "PointHead": "Model_ALSi",
+        "PointHead": "Model_SDTZi",
         "PointPicture": "",
         "PointReward": "E20S03",
         "PointType": "NORMAL",
@@ -23636,7 +23638,7 @@
             },
             {
                 "type": "MyHpRatio",
-                "value": 50
+                "value": 10
             },
             {
                 "type": "Time",
@@ -23664,13 +23666,13 @@
         "AiRules": "",
         "Assist": [],
         "BGM": [
-            "Mus_Battle_Danger",
+            "Mus_Battle_Chaos_1",
             "",
             ""
         ],
-        "Background": "Battle_Scene_20",
+        "Background": "Battle_Scene_30",
         "Banner": "pic_guanqia2_02_tx",
-        "BlockBattleConfig": "Normal",
+        "BlockBattleConfig": "Normal_Stage_7_Wait1",
         "BlockBubble": "",
         "BlockDesc": "BlockPoint_E20S04_BlockDesc",
         "BlockDetailAuto": "",
@@ -23682,35 +23684,35 @@
             0.8
         ],
         "BossHeadPic": "",
-        "BossRound": "",
+        "BossRound": 1,
         "CardsExcept": "",
         "Challenge": [],
-        "CombatNeed": 1000,
-        "CombatValue": 1000,
+        "CombatNeed": 521943,
+        "CombatValue": 563700,
         "Combat_Adjust_Rate": 1.0,
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardE20S04",
-        "EnemyMaster": "E20S04_Master",
+        "EnemyMaster": "E20P04U01N08",
         "EnemyName": "",
         "FirstKillReward": "E20S04_FirstReward",
         "GoldReward": 2000,
         "HeroExpReward": "E20_HeroExpReward",
         "LoadingBorad": "",
-        "MainShowItem": "IM_ExpUp1",
+        "MainShowItem": "IEQ_Weapon_9",
         "Map": "E20",
         "Name": "BlockPoint_E20S04_Name",
         "NextPoint": [
             "E20S05"
         ],
         "OpenFAC": 1,
-        "OpenLevel": 99,
+        "OpenLevel": 1,
         "OpenPoint": [
             "E20S03"
         ],
         "PlayerCard": "",
         "PointBoard": "",
-        "PointHead": "Model_ALSi",
+        "PointHead": "Model_MGNa",
         "PointPicture": "",
         "PointReward": "E20S04",
         "PointType": "NORMAL",
@@ -23731,7 +23733,7 @@
             },
             {
                 "type": "MyHpRatio",
-                "value": 50
+                "value": 10
             },
             {
                 "type": "Time",
@@ -23759,13 +23761,13 @@
         "AiRules": "",
         "Assist": [],
         "BGM": [
-            "Mus_Battle_Danger",
+            "Mus_Battle_Chaos_1",
             "",
             ""
         ],
-        "Background": "Battle_Scene_20",
+        "Background": "Battle_Scene_30",
         "Banner": "pic_guanqia2_01_tx",
-        "BlockBattleConfig": "Normal",
+        "BlockBattleConfig": "Normal_Stage_7_Wait1",
         "BlockBubble": "",
         "BlockDesc": "BlockPoint_E20S05_BlockDesc",
         "BlockDetailAuto": "",
@@ -23777,35 +23779,35 @@
             0.8
         ],
         "BossHeadPic": "",
-        "BossRound": "",
+        "BossRound": 1,
         "CardsExcept": "",
         "Challenge": [],
-        "CombatNeed": 1000,
-        "CombatValue": 1000,
+        "CombatNeed": 525654,
+        "CombatValue": 567700,
         "Combat_Adjust_Rate": 1.0,
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardE20S05",
-        "EnemyMaster": "E20S05_Master",
+        "EnemyMaster": "E20P05U01N08",
         "EnemyName": "",
         "FirstKillReward": "E20S05_FirstReward",
         "GoldReward": 2000,
         "HeroExpReward": "E20_HeroExpReward",
         "LoadingBorad": "",
-        "MainShowItem": "IM_ExpUp1",
+        "MainShowItem": "IQS_Orange1_Defense",
         "Map": "E20",
         "Name": "BlockPoint_E20S05_Name",
         "NextPoint": [
             "E20S06"
         ],
         "OpenFAC": 0,
-        "OpenLevel": 99,
+        "OpenLevel": 1,
         "OpenPoint": [
             "E20S04"
         ],
         "PlayerCard": "",
         "PointBoard": "",
-        "PointHead": "Model_ZTXChang",
+        "PointHead": "Model_ATSheng",
         "PointPicture": "",
         "PointReward": "E20S05",
         "PointType": "NORMAL",
@@ -23826,7 +23828,7 @@
             },
             {
                 "type": "MyHpRatio",
-                "value": 50
+                "value": 10
             },
             {
                 "type": "Time",
@@ -23854,13 +23856,13 @@
         "AiRules": "",
         "Assist": [],
         "BGM": [
-            "Mus_Battle_Danger",
+            "Mus_Battle_Chaos_1",
             "",
             ""
         ],
-        "Background": "Battle_Scene_20",
+        "Background": "Battle_Scene_30",
         "Banner": "pic_guanqia2_02_tx",
-        "BlockBattleConfig": "Normal",
+        "BlockBattleConfig": "Normal_Stage_7_Wait1",
         "BlockBubble": "",
         "BlockDesc": "BlockPoint_E20S06_BlockDesc",
         "BlockDetailAuto": "",
@@ -23872,35 +23874,35 @@
             0.8
         ],
         "BossHeadPic": "",
-        "BossRound": "",
+        "BossRound": 1,
         "CardsExcept": "",
         "Challenge": [],
-        "CombatNeed": 1000,
-        "CombatValue": 1000,
+        "CombatNeed": 529364,
+        "CombatValue": 571700,
         "Combat_Adjust_Rate": 1.0,
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardE20S06",
-        "EnemyMaster": "E20S06_Master",
+        "EnemyMaster": "E20P06U01N08",
         "EnemyName": "",
         "FirstKillReward": "E20S06_FirstReward",
         "GoldReward": 2000,
         "HeroExpReward": "E20_HeroExpReward",
         "LoadingBorad": "",
-        "MainShowItem": "IM_ExpUp1",
+        "MainShowItem": "IQS_Orange1_Defense",
         "Map": "E20",
         "Name": "BlockPoint_E20S06_Name",
         "NextPoint": [
             "E20S07"
         ],
         "OpenFAC": 1,
-        "OpenLevel": 99,
+        "OpenLevel": 1,
         "OpenPoint": [
             "E20S05"
         ],
         "PlayerCard": "",
         "PointBoard": "",
-        "PointHead": "Model_DDing",
+        "PointHead": "Model_ZZBBWei",
         "PointPicture": "",
         "PointReward": "E20S06",
         "PointType": "NORMAL",
@@ -23921,7 +23923,7 @@
             },
             {
                 "type": "MyHpRatio",
-                "value": 50
+                "value": 10
             },
             {
                 "type": "Time",
@@ -23949,13 +23951,13 @@
         "AiRules": "",
         "Assist": [],
         "BGM": [
-            "Mus_Battle_Danger",
+            "Mus_Battle_Chaos_1",
             "",
             ""
         ],
-        "Background": "Battle_Scene_20",
+        "Background": "Battle_Scene_30",
         "Banner": "pic_guanqia2_01_tx",
-        "BlockBattleConfig": "Normal",
+        "BlockBattleConfig": "Normal_Stage_7_Wait1",
         "BlockBubble": "",
         "BlockDesc": "BlockPoint_E20S07_BlockDesc",
         "BlockDetailAuto": "",
@@ -23967,35 +23969,35 @@
             0.8
         ],
         "BossHeadPic": "",
-        "BossRound": "",
+        "BossRound": 1,
         "CardsExcept": "",
         "Challenge": [],
-        "CombatNeed": 1000,
-        "CombatValue": 1000,
+        "CombatNeed": 535785,
+        "CombatValue": 578600,
         "Combat_Adjust_Rate": 1.0,
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardE20S07",
-        "EnemyMaster": "E20S07_Master",
+        "EnemyMaster": "E20P07U01N08",
         "EnemyName": "",
         "FirstKillReward": "E20S07_FirstReward",
         "GoldReward": 2000,
         "HeroExpReward": "E20_HeroExpReward",
         "LoadingBorad": "",
-        "MainShowItem": "IM_ExpUp1",
+        "MainShowItem": "IQS_Orange1_Defense",
         "Map": "E20",
         "Name": "BlockPoint_E20S07_Name",
         "NextPoint": [
             "E20S08"
         ],
         "OpenFAC": 0,
-        "OpenLevel": 99,
+        "OpenLevel": 1,
         "OpenPoint": [
             "E20S06"
         ],
         "PlayerCard": "",
         "PointBoard": "",
-        "PointHead": "Model_HLMGen",
+        "PointHead": "Model_AJTa",
         "PointPicture": "",
         "PointReward": "E20S07",
         "PointType": "NORMAL",
@@ -24016,7 +24018,7 @@
             },
             {
                 "type": "MyHpRatio",
-                "value": 50
+                "value": 10
             },
             {
                 "type": "Time",
@@ -24044,13 +24046,13 @@
         "AiRules": "",
         "Assist": [],
         "BGM": [
-            "Mus_Battle_Danger",
+            "Mus_Battle_Chaos_1",
             "",
             ""
         ],
-        "Background": "Battle_Scene_20",
+        "Background": "Battle_Scene_30",
         "Banner": "pic_guanqia2_02_tx",
-        "BlockBattleConfig": "Normal",
+        "BlockBattleConfig": "Normal_Stage_7_Wait1",
         "BlockBubble": "",
         "BlockDesc": "BlockPoint_E20S08_BlockDesc",
         "BlockDetailAuto": "",
@@ -24062,35 +24064,35 @@
             0.8
         ],
         "BossHeadPic": "",
-        "BossRound": "",
+        "BossRound": 1,
         "CardsExcept": "",
         "Challenge": [],
-        "CombatNeed": 1000,
-        "CombatValue": 1000,
+        "CombatNeed": 543206,
+        "CombatValue": 586700,
         "Combat_Adjust_Rate": 1.0,
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardE20S08",
-        "EnemyMaster": "E20S08_Master",
+        "EnemyMaster": "E20P08U01N08",
         "EnemyName": "",
         "FirstKillReward": "E20S08_FirstReward",
         "GoldReward": 2000,
         "HeroExpReward": "E20_HeroExpReward",
         "LoadingBorad": "",
-        "MainShowItem": "IM_ExpUp1",
+        "MainShowItem": "IEQ_Top_9",
         "Map": "E20",
         "Name": "BlockPoint_E20S08_Name",
         "NextPoint": [
             "E20S09"
         ],
         "OpenFAC": 1,
-        "OpenLevel": 99,
+        "OpenLevel": 1,
         "OpenPoint": [
             "E20S07"
         ],
         "PlayerCard": "",
         "PointBoard": "",
-        "PointHead": "Model_LFEr",
+        "PointHead": "Model_SRen",
         "PointPicture": "",
         "PointReward": "E20S08",
         "PointType": "NORMAL",
@@ -24111,7 +24113,7 @@
             },
             {
                 "type": "MyHpRatio",
-                "value": 50
+                "value": 10
             },
             {
                 "type": "Time",
@@ -24139,13 +24141,13 @@
         "AiRules": "",
         "Assist": [],
         "BGM": [
-            "Mus_Battle_Danger",
+            "Mus_Battle_Chaos_1",
             "",
             ""
         ],
-        "Background": "Battle_Scene_20",
+        "Background": "Battle_Scene_30",
         "Banner": "pic_guanqia2_01_tx",
-        "BlockBattleConfig": "Normal",
+        "BlockBattleConfig": "Normal_Stage_7_Wait1",
         "BlockBubble": "",
         "BlockDesc": "BlockPoint_E20S09_BlockDesc",
         "BlockDetailAuto": "",
@@ -24157,35 +24159,35 @@
             0.8
         ],
         "BossHeadPic": "",
-        "BossRound": "",
+        "BossRound": 1,
         "CardsExcept": "",
         "Challenge": [],
-        "CombatNeed": 1000,
-        "CombatValue": 1000,
+        "CombatNeed": 546917,
+        "CombatValue": 590700,
         "Combat_Adjust_Rate": 1.0,
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardE20S09",
-        "EnemyMaster": "E20S09_Master",
+        "EnemyMaster": "E20P09U01N08",
         "EnemyName": "",
         "FirstKillReward": "E20S09_FirstReward",
         "GoldReward": 2000,
         "HeroExpReward": "E20_HeroExpReward",
         "LoadingBorad": "",
-        "MainShowItem": "IM_ExpUp1",
+        "MainShowItem": "IQS_Orange1_Aoe",
         "Map": "E20",
         "Name": "BlockPoint_E20S09_Name",
         "NextPoint": [
             "E20S10"
         ],
         "OpenFAC": 0,
-        "OpenLevel": 99,
+        "OpenLevel": 1,
         "OpenPoint": [
             "E20S08"
         ],
         "PlayerCard": "",
         "PointBoard": "",
-        "PointHead": "Model_YMHTPu",
+        "PointHead": "Model_MTZMEShi",
         "PointPicture": "",
         "PointReward": "E20S09",
         "PointType": "NORMAL",
@@ -24206,7 +24208,7 @@
             },
             {
                 "type": "MyHpRatio",
-                "value": 50
+                "value": 10
             },
             {
                 "type": "Time",
@@ -24234,13 +24236,13 @@
         "AiRules": "",
         "Assist": [],
         "BGM": [
-            "Mus_Battle_Danger",
+            "Mus_Battle_Chaos_1",
             "",
             ""
         ],
-        "Background": "Battle_Scene_21",
+        "Background": "Battle_Scene_30",
         "Banner": "pic_guanqia2_02_tx",
-        "BlockBattleConfig": "Normal",
+        "BlockBattleConfig": "Normal_Stage_7_Wait1",
         "BlockBubble": "",
         "BlockDesc": "BlockPoint_E20S10_BlockDesc",
         "BlockDetailAuto": "",
@@ -24252,35 +24254,35 @@
             0.8
         ],
         "BossHeadPic": "",
-        "BossRound": "",
+        "BossRound": 1,
         "CardsExcept": "",
         "Challenge": [],
-        "CombatNeed": 1000,
-        "CombatValue": 1000,
+        "CombatNeed": 550627,
+        "CombatValue": 594700,
         "Combat_Adjust_Rate": 1.0,
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardE20S10",
-        "EnemyMaster": "E20S10_Master",
+        "EnemyMaster": "E20P10U01N08",
         "EnemyName": "",
         "FirstKillReward": "E20S10_FirstReward",
         "GoldReward": 2000,
         "HeroExpReward": "E20_HeroExpReward",
         "LoadingBorad": "",
-        "MainShowItem": "IM_ExpUp1",
+        "MainShowItem": "IQS_Orange1_Aoe",
         "Map": "E20",
         "Name": "BlockPoint_E20S10_Name",
         "NextPoint": [
             "E20S11"
         ],
         "OpenFAC": 1,
-        "OpenLevel": 99,
+        "OpenLevel": 1,
         "OpenPoint": [
             "E20S09"
         ],
         "PlayerCard": "",
         "PointBoard": "",
-        "PointHead": "Model_TLMi",
+        "PointHead": "Model_NXYYi",
         "PointPicture": "",
         "PointReward": "E20S10",
         "PointType": "NORMAL",
@@ -24301,7 +24303,7 @@
             },
             {
                 "type": "MyHpRatio",
-                "value": 50
+                "value": 10
             },
             {
                 "type": "Time",
@@ -24329,13 +24331,13 @@
         "AiRules": "",
         "Assist": [],
         "BGM": [
-            "Mus_Battle_Danger",
+            "Mus_Battle_Chaos_1",
             "",
             ""
         ],
-        "Background": "Battle_Scene_20",
+        "Background": "Battle_Scene_30",
         "Banner": "pic_guanqia2_01_tx",
-        "BlockBattleConfig": "Normal",
+        "BlockBattleConfig": "Normal_Stage_7_Wait1",
         "BlockBubble": "",
         "BlockDesc": "BlockPoint_E20S11_BlockDesc",
         "BlockDetailAuto": "",
@@ -24347,35 +24349,35 @@
             0.8
         ],
         "BossHeadPic": "",
-        "BossRound": "",
+        "BossRound": 1,
         "CardsExcept": "",
         "Challenge": [],
-        "CombatNeed": 1000,
-        "CombatValue": 1000,
+        "CombatNeed": 557048,
+        "CombatValue": 601600,
         "Combat_Adjust_Rate": 1.0,
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardE20S11",
-        "EnemyMaster": "E20S11_Master",
+        "EnemyMaster": "E20P11U01N08",
         "EnemyName": "",
         "FirstKillReward": "E20S11_FirstReward",
         "GoldReward": 2000,
         "HeroExpReward": "E20_HeroExpReward",
         "LoadingBorad": "",
-        "MainShowItem": "IM_ExpUp1",
+        "MainShowItem": "IQS_Orange1_Aoe",
         "Map": "E20",
         "Name": "BlockPoint_E20S11_Name",
         "NextPoint": [
             "E20S12"
         ],
         "OpenFAC": 0,
-        "OpenLevel": 99,
+        "OpenLevel": 1,
         "OpenPoint": [
             "E20S10"
         ],
         "PlayerCard": "",
         "PointBoard": "",
-        "PointHead": "Model_ALSi",
+        "PointHead": "Model_NDGEr",
         "PointPicture": "",
         "PointReward": "E20S11",
         "PointType": "NORMAL",
@@ -24396,7 +24398,7 @@
             },
             {
                 "type": "MyHpRatio",
-                "value": 50
+                "value": 10
             },
             {
                 "type": "Time",
@@ -24424,13 +24426,13 @@
         "AiRules": "",
         "Assist": [],
         "BGM": [
-            "Mus_Battle_Danger",
+            "Mus_Battle_Chaos_1",
             "",
             ""
         ],
-        "Background": "Battle_Scene_20",
+        "Background": "Battle_Scene_30",
         "Banner": "pic_guanqia2_02_tx",
-        "BlockBattleConfig": "Normal",
+        "BlockBattleConfig": "Normal_Stage_7_Wait1",
         "BlockBubble": "",
         "BlockDesc": "BlockPoint_E20S12_BlockDesc",
         "BlockDetailAuto": "",
@@ -24442,35 +24444,35 @@
             0.8
         ],
         "BossHeadPic": "",
-        "BossRound": "",
+        "BossRound": 1,
         "CardsExcept": "",
         "Challenge": [],
-        "CombatNeed": 1000,
-        "CombatValue": 1000,
+        "CombatNeed": 623838,
+        "CombatValue": 673700,
         "Combat_Adjust_Rate": 1.0,
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardE20S12",
-        "EnemyMaster": "E20S12_Master",
+        "EnemyMaster": "E20P12U01N08",
         "EnemyName": "",
         "FirstKillReward": "E20S12_FirstReward",
         "GoldReward": 2000,
         "HeroExpReward": "E20_HeroExpReward",
         "LoadingBorad": "",
-        "MainShowItem": "IM_ExpUp1",
+        "MainShowItem": "IEQ_Shoes_9",
         "Map": "E20",
         "Name": "BlockPoint_E20S12_Name",
         "NextPoint": [
             "E20S13"
         ],
         "OpenFAC": 1,
-        "OpenLevel": 99,
+        "OpenLevel": 1,
         "OpenPoint": [
             "E20S11"
         ],
         "PlayerCard": "",
         "PointBoard": "",
-        "PointHead": "Model_PNCao",
+        "PointHead": "Model_NXYYi",
         "PointPicture": "",
         "PointReward": "E20S12",
         "PointType": "NORMAL",
@@ -24491,7 +24493,7 @@
             },
             {
                 "type": "MyHpRatio",
-                "value": 50
+                "value": 10
             },
             {
                 "type": "Time",
@@ -24519,13 +24521,13 @@
         "AiRules": "",
         "Assist": [],
         "BGM": [
-            "Mus_Battle_Danger",
+            "Mus_Battle_Chaos_1",
             "",
             ""
         ],
-        "Background": "Battle_Scene_20",
+        "Background": "Battle_Scene_30",
         "Banner": "pic_guanqia2_01_tx",
-        "BlockBattleConfig": "Normal",
+        "BlockBattleConfig": "Normal_Stage_7_Wait1",
         "BlockBubble": "",
         "BlockDesc": "BlockPoint_E20S13_BlockDesc",
         "BlockDetailAuto": "",
@@ -24537,35 +24539,35 @@
             0.8
         ],
         "BossHeadPic": "",
-        "BossRound": "",
+        "BossRound": 1,
         "CardsExcept": "",
         "Challenge": [],
-        "CombatNeed": 1000,
-        "CombatValue": 1000,
+        "CombatNeed": 549627,
+        "CombatValue": 593600,
         "Combat_Adjust_Rate": 1.0,
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardE20S13",
-        "EnemyMaster": "E20S13_Master",
+        "EnemyMaster": "E20P13U01N08",
         "EnemyName": "",
         "FirstKillReward": "E20S13_FirstReward",
         "GoldReward": 2000,
         "HeroExpReward": "E20_HeroExpReward",
         "LoadingBorad": "",
-        "MainShowItem": "IM_ExpUp1",
+        "MainShowItem": "IQS_Orange1_Cure",
         "Map": "E20",
         "Name": "BlockPoint_E20S13_Name",
         "NextPoint": [
             "E20S14"
         ],
         "OpenFAC": 0,
-        "OpenLevel": 99,
+        "OpenLevel": 1,
         "OpenPoint": [
             "E20S12"
         ],
         "PlayerCard": "",
         "PointBoard": "",
-        "PointHead": "Model_ALSi",
+        "PointHead": "Model_YBYa",
         "PointPicture": "",
         "PointReward": "E20S13",
         "PointType": "NORMAL",
@@ -24586,7 +24588,7 @@
             },
             {
                 "type": "MyHpRatio",
-                "value": 50
+                "value": 10
             },
             {
                 "type": "Time",
@@ -24614,13 +24616,13 @@
         "AiRules": "",
         "Assist": [],
         "BGM": [
-            "Mus_Battle_Danger",
+            "Mus_Battle_Chaos_1",
             "",
             ""
         ],
-        "Background": "Battle_Scene_20",
+        "Background": "Battle_Scene_30",
         "Banner": "pic_guanqia2_02_tx",
-        "BlockBattleConfig": "Normal",
+        "BlockBattleConfig": "Normal_Stage_7_Wait1",
         "BlockBubble": "",
         "BlockDesc": "BlockPoint_E20S14_BlockDesc",
         "BlockDetailAuto": "",
@@ -24632,35 +24634,35 @@
             0.8
         ],
         "BossHeadPic": "",
-        "BossRound": "",
+        "BossRound": 1,
         "CardsExcept": "",
         "Challenge": [],
-        "CombatNeed": 1000,
-        "CombatValue": 1000,
+        "CombatNeed": 553338,
+        "CombatValue": 597600,
         "Combat_Adjust_Rate": 1.0,
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardE20S14",
-        "EnemyMaster": "E20S14_Master",
+        "EnemyMaster": "E20P14U01N08",
         "EnemyName": "",
         "FirstKillReward": "E20S14_FirstReward",
         "GoldReward": 2000,
         "HeroExpReward": "E20_HeroExpReward",
         "LoadingBorad": "",
-        "MainShowItem": "IM_ExpUp1",
+        "MainShowItem": "IQS_Orange1_Cure",
         "Map": "E20",
         "Name": "BlockPoint_E20S14_Name",
         "NextPoint": [
             "E20S15"
         ],
         "OpenFAC": 1,
-        "OpenLevel": 99,
+        "OpenLevel": 1,
         "OpenPoint": [
             "E20S13"
         ],
         "PlayerCard": "",
         "PointBoard": "",
-        "PointHead": "Model_ALSi",
+        "PointHead": "Model_ZZBBWei",
         "PointPicture": "",
         "PointReward": "E20S14",
         "PointType": "NORMAL",
@@ -24681,7 +24683,7 @@
             },
             {
                 "type": "MyHpRatio",
-                "value": 50
+                "value": 10
             },
             {
                 "type": "Time",
@@ -24709,13 +24711,13 @@
         "AiRules": "",
         "Assist": [],
         "BGM": [
-            "Mus_Battle_Danger",
+            "Mus_Battle_Chaos_1",
             "",
             ""
         ],
-        "Background": "Battle_Scene_22",
+        "Background": "Battle_Scene_30",
         "Banner": "pic_guanqia2_01_tx",
-        "BlockBattleConfig": "Normal",
+        "BlockBattleConfig": "Normal_Stage_7_Wait1",
         "BlockBubble": "",
         "BlockDesc": "BlockPoint_E20S15_BlockDesc",
         "BlockDetailAuto": "",
@@ -24727,35 +24729,35 @@
             0.8
         ],
         "BossHeadPic": "",
-        "BossRound": "",
+        "BossRound": 1,
         "CardsExcept": "",
         "Challenge": [],
-        "CombatNeed": 1000,
-        "CombatValue": 1000,
+        "CombatNeed": 559759,
+        "CombatValue": 604500,
         "Combat_Adjust_Rate": 1.0,
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardE20S15",
-        "EnemyMaster": "E20S15_Master",
+        "EnemyMaster": "E20P15U01N08",
         "EnemyName": "",
         "FirstKillReward": "E20S15_FirstReward",
         "GoldReward": 2000,
         "HeroExpReward": "E20_HeroExpReward",
         "LoadingBorad": "",
-        "MainShowItem": "IM_ExpUp1",
+        "MainShowItem": "IQS_Orange1_Summon",
         "Map": "E20",
         "Name": "BlockPoint_E20S15_Name",
         "NextPoint": [
             "E20S16"
         ],
         "OpenFAC": 0,
-        "OpenLevel": 99,
+        "OpenLevel": 1,
         "OpenPoint": [
             "E20S14"
         ],
         "PlayerCard": "",
         "PointBoard": "",
-        "PointHead": "Model_ALSi",
+        "PointHead": "Model_KXuan",
         "PointPicture": "",
         "PointReward": "E20S15",
         "PointType": "NORMAL",
@@ -24776,7 +24778,7 @@
             },
             {
                 "type": "MyHpRatio",
-                "value": 50
+                "value": 10
             },
             {
                 "type": "Time",
@@ -24804,13 +24806,13 @@
         "AiRules": "",
         "Assist": [],
         "BGM": [
-            "Mus_Battle_Danger",
+            "Mus_Battle_Chaos_1",
             "",
             ""
         ],
-        "Background": "Battle_Scene_22",
+        "Background": "Battle_Scene_30",
         "Banner": "pic_guanqia2_02_tx",
-        "BlockBattleConfig": "Normal",
+        "BlockBattleConfig": "Normal_Stage_7_Wait1",
         "BlockBubble": "",
         "BlockDesc": "BlockPoint_E20S16_BlockDesc",
         "BlockDetailAuto": "",
@@ -24822,35 +24824,35 @@
             0.8
         ],
         "BossHeadPic": "",
-        "BossRound": "",
+        "BossRound": 1,
         "CardsExcept": "",
         "Challenge": [],
-        "CombatNeed": 1000,
-        "CombatValue": 1000,
+        "CombatNeed": 567180,
+        "CombatValue": 612600,
         "Combat_Adjust_Rate": 1.0,
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardE20S16",
-        "EnemyMaster": "E20S16_Master",
+        "EnemyMaster": "E20P16U01N08",
         "EnemyName": "",
         "FirstKillReward": "E20S16_FirstReward",
         "GoldReward": 2000,
         "HeroExpReward": "E20_HeroExpReward",
         "LoadingBorad": "",
-        "MainShowItem": "IM_ExpUp1",
+        "MainShowItem": "IQS_Orange1_Summon",
         "Map": "E20",
         "Name": "BlockPoint_E20S16_Name",
         "NextPoint": [
             "E20S17"
         ],
         "OpenFAC": 1,
-        "OpenLevel": 99,
+        "OpenLevel": 1,
         "OpenPoint": [
             "E20S15"
         ],
         "PlayerCard": "",
         "PointBoard": "",
-        "PointHead": "Model_ALSi",
+        "PointHead": "Model_YLMGZhu",
         "PointPicture": "",
         "PointReward": "E20S16",
         "PointType": "NORMAL",
@@ -24871,7 +24873,7 @@
             },
             {
                 "type": "MyHpRatio",
-                "value": 50
+                "value": 10
             },
             {
                 "type": "Time",
@@ -24899,13 +24901,13 @@
         "AiRules": "",
         "Assist": [],
         "BGM": [
-            "Mus_Battle_Danger",
+            "Mus_Battle_Chaos_1",
             "",
             ""
         ],
-        "Background": "Battle_Scene_22",
+        "Background": "Battle_Scene_30",
         "Banner": "pic_guanqia2_01_tx",
-        "BlockBattleConfig": "Normal",
+        "BlockBattleConfig": "Normal_Stage_7_Wait1",
         "BlockBubble": "",
         "BlockDesc": "BlockPoint_E20S17_BlockDesc",
         "BlockDetailAuto": "",
@@ -24917,35 +24919,35 @@
             0.8
         ],
         "BossHeadPic": "",
-        "BossRound": "",
+        "BossRound": 1,
         "CardsExcept": "",
         "Challenge": [],
-        "CombatNeed": 1000,
-        "CombatValue": 1000,
+        "CombatNeed": 570891,
+        "CombatValue": 616600,
         "Combat_Adjust_Rate": 1.0,
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardE20S17",
-        "EnemyMaster": "E20S17_Master",
+        "EnemyMaster": "E20P17U01N08",
         "EnemyName": "",
         "FirstKillReward": "E20S17_FirstReward",
         "GoldReward": 2000,
         "HeroExpReward": "E20_HeroExpReward",
         "LoadingBorad": "",
-        "MainShowItem": "IM_ExpUp1",
+        "MainShowItem": "IEQ_Decoration_9",
         "Map": "E20",
         "Name": "BlockPoint_E20S17_Name",
         "NextPoint": [
             "E20S18"
         ],
         "OpenFAC": 0,
-        "OpenLevel": 99,
+        "OpenLevel": 1,
         "OpenPoint": [
             "E20S16"
         ],
         "PlayerCard": "",
         "PointBoard": "",
-        "PointHead": "Model_ZTXChang",
+        "PointHead": "Model_GLin",
         "PointPicture": "",
         "PointReward": "E20S17",
         "PointType": "NORMAL",
@@ -24966,7 +24968,7 @@
             },
             {
                 "type": "MyHpRatio",
-                "value": 50
+                "value": 10
             },
             {
                 "type": "Time",
@@ -24994,13 +24996,13 @@
         "AiRules": "",
         "Assist": [],
         "BGM": [
-            "Mus_Battle_Danger",
+            "Mus_Battle_Chaos_1",
             "",
             ""
         ],
-        "Background": "Battle_Scene_22",
+        "Background": "Battle_Scene_30",
         "Banner": "pic_guanqia2_02_tx",
-        "BlockBattleConfig": "Normal",
+        "BlockBattleConfig": "Normal_Stage_7_Wait1",
         "BlockBubble": "",
         "BlockDesc": "BlockPoint_E20S18_BlockDesc",
         "BlockDetailAuto": "",
@@ -25012,35 +25014,35 @@
             0.8
         ],
         "BossHeadPic": "",
-        "BossRound": "",
+        "BossRound": 1,
         "CardsExcept": "",
         "Challenge": [],
-        "CombatNeed": 1000,
-        "CombatValue": 1000,
+        "CombatNeed": 574601,
+        "CombatValue": 620600,
         "Combat_Adjust_Rate": 1.0,
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardE20S18",
-        "EnemyMaster": "E20S18_Master",
+        "EnemyMaster": "E20P18U01N08",
         "EnemyName": "",
         "FirstKillReward": "E20S18_FirstReward",
         "GoldReward": 2000,
         "HeroExpReward": "E20_HeroExpReward",
         "LoadingBorad": "",
-        "MainShowItem": "IM_ExpUp1",
+        "MainShowItem": "IQS_Orange1_Support",
         "Map": "E20",
         "Name": "BlockPoint_E20S18_Name",
         "NextPoint": [
             "E20S19"
         ],
         "OpenFAC": 1,
-        "OpenLevel": 99,
+        "OpenLevel": 1,
         "OpenPoint": [
             "E20S17"
         ],
         "PlayerCard": "",
         "PointBoard": "",
-        "PointHead": "Model_CLMan",
+        "PointHead": "Model_JNLong",
         "PointPicture": "",
         "PointReward": "E20S18",
         "PointType": "NORMAL",
@@ -25061,7 +25063,7 @@
             },
             {
                 "type": "MyHpRatio",
-                "value": 50
+                "value": 10
             },
             {
                 "type": "Time",
@@ -25089,13 +25091,13 @@
         "AiRules": "",
         "Assist": [],
         "BGM": [
-            "Mus_Battle_Danger",
+            "Mus_Battle_Chaos_1",
             "",
             ""
         ],
-        "Background": "Battle_Scene_22",
+        "Background": "Battle_Scene_30",
         "Banner": "pic_guanqia2_01_tx",
-        "BlockBattleConfig": "Normal",
+        "BlockBattleConfig": "Normal_Stage_7_Wait1",
         "BlockBubble": "",
         "BlockDesc": "BlockPoint_E20S19_BlockDesc",
         "BlockDetailAuto": "",
@@ -25107,35 +25109,35 @@
             0.8
         ],
         "BossHeadPic": "",
-        "BossRound": "",
+        "BossRound": 1,
         "CardsExcept": "",
         "Challenge": [],
-        "CombatNeed": 1000,
-        "CombatValue": 1000,
+        "CombatNeed": 581022,
+        "CombatValue": 627500,
         "Combat_Adjust_Rate": 1.0,
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardE20S19",
-        "EnemyMaster": "E20S19_Master",
+        "EnemyMaster": "E20P19U01N08",
         "EnemyName": "",
         "FirstKillReward": "E20S19_FirstReward",
         "GoldReward": 2000,
         "HeroExpReward": "E20_HeroExpReward",
         "LoadingBorad": "",
-        "MainShowItem": "IM_ExpUp1",
+        "MainShowItem": "IQS_Orange1_Curse",
         "Map": "E20",
         "Name": "BlockPoint_E20S19_Name",
         "NextPoint": [
             "E20S20"
         ],
         "OpenFAC": 0,
-        "OpenLevel": 99,
+        "OpenLevel": 1,
         "OpenPoint": [
             "E20S18"
         ],
         "PlayerCard": "",
         "PointBoard": "",
-        "PointHead": "Model_FTLEShi",
+        "PointHead": "Model_NDGEr",
         "PointPicture": "",
         "PointReward": "E20S19",
         "PointType": "NORMAL",
@@ -25156,7 +25158,7 @@
             },
             {
                 "type": "MyHpRatio",
-                "value": 50
+                "value": 10
             },
             {
                 "type": "Time",
@@ -25188,9 +25190,9 @@
             "",
             ""
         ],
-        "Background": "Battle_Scene_22",
+        "Background": "Battle_Scene_30",
         "Banner": "pic_guanqia2_02_tx",
-        "BlockBattleConfig": "Normal",
+        "BlockBattleConfig": "Normal_Stage_7_Wait1",
         "BlockBubble": "",
         "BlockDesc": "BlockPoint_E20S20_BlockDesc",
         "BlockDetailAuto": "",
@@ -25202,35 +25204,35 @@
             0.8
         ],
         "BossHeadPic": "",
-        "BossRound": "",
+        "BossRound": 1,
         "CardsExcept": "",
         "Challenge": [],
-        "CombatNeed": 1000,
-        "CombatValue": 1000,
+        "CombatNeed": 645391,
+        "CombatValue": 697000,
         "Combat_Adjust_Rate": 1.0,
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardE20S20",
-        "EnemyMaster": "E20S20_Master",
+        "EnemyMaster": "E20P20U01N08",
         "EnemyName": "",
         "FirstKillReward": "E20S20_FirstReward",
         "GoldReward": 2000,
         "HeroExpReward": "E20_HeroExpReward",
         "LoadingBorad": "",
-        "MainShowItem": "IM_ExpUp1",
+        "MainShowItem": "IEQ_Decoration_9",
         "Map": "E20",
         "Name": "BlockPoint_E20S20_Name",
         "NextPoint": [
             "E21S01"
         ],
         "OpenFAC": 1,
-        "OpenLevel": 99,
+        "OpenLevel": 1,
         "OpenPoint": [
             "E20S19"
         ],
         "PlayerCard": "",
         "PointBoard": "",
-        "PointHead": "Model_LDu",
+        "PointHead": "Model_YSTLu",
         "PointPicture": "",
         "PointReward": "E20S20",
         "PointType": "BOSS",
@@ -25251,7 +25253,7 @@
             },
             {
                 "type": "MyHpRatio",
-                "value": 50
+                "value": 10
             },
             {
                 "type": "Time",

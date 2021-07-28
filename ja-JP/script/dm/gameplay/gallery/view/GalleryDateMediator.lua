@@ -1794,7 +1794,7 @@ function GalleryDateMediator:getUnlockData(levelStart, levelEnd)
 				for j = 1, #conditions do
 					local condition = conditions[j]
 
-					if condition.HeroLove and condition.HeroLove == loveLevel then
+					if condition.HeroLove and condition.HeroLove == loveLevel + 1 then
 						table.insert(sounds, sound)
 
 						break

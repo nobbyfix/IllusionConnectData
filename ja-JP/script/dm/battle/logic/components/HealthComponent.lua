@@ -14,6 +14,8 @@ function HealthComponent:initWithRawData(data)
 
 	self:setMaxHp(data.maxHp * ratio * (GameConfigs and GameConfigs.healthMulti or 1))
 	self:setHp((data.hp or data.maxHp) * ratio * (GameConfigs and GameConfigs.healthMulti or 1))
+
+	self._orgMaxHp = self._maxHp
 end
 
 function HealthComponent:setHp(val)
@@ -55,6 +57,10 @@ end
 
 function HealthComponent:getMaxHp()
 	return self._maxHp or 0
+end
+
+function HealthComponent:getOrgMaxHp()
+	return self._orgMaxHp or self._maxHp
 end
 
 function HealthComponent:getHpRatio()
@@ -109,12 +115,13 @@ function HealthComponent:applyDamage(value, lowerLimitValue)
 end
 
 function HealthComponent:applyRecovery(value)
-	value = value * self:getHpRecoverRatio()
+	value = math.floor(value * self:getHpRecoverRatio())
 
 	if value < 0 then
 		return nil
 	end
 
+	value = math.floor(value)
 	local hp0 = self:getHp()
 
 	self:setHp(hp0 + value)
