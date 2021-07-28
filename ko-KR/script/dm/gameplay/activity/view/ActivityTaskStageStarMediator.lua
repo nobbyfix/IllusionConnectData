@@ -36,32 +36,34 @@ function ActivityTaskStageStarMediator:enterWithData(data)
 	self._activity = data.activity
 	self._parentMediator = data.parentMediator
 
+	self:initData()
 	self:setupView()
+end
+
+function ActivityTaskStageStarMediator:initData()
+	self._taskList = self._activity:getSortActivityList()
+	self._activityConfig = self._activity:getActivityConfig()
+	self._deadline = self._activity:getDeadline()
 end
 
 function ActivityTaskStageStarMediator:setupView()
 	self._main = self:getView():getChildByName("main")
 	self._listView = self._main:getChildByName("ListView")
-	self._cloneCell = self:getView():getChildByName("cloneCell")
+	local buy = self._activity:getPayStatus()
+	self._state = nil
 
-	self._cloneCell:setVisible(false)
+	if buy or not self._deadline then
+		self._state = 1
+		self._cloneCell = self:getView():getChildByName("cloneCell")
 
-	self._taskList = self._activity:getSortActivityList()
-	self._activityConfig = self._activity:getActivityConfig()
+		self._cloneCell:setVisible(false)
+		self:getView():getChildByName("cloneCell_0"):setVisible(false)
+	else
+		self._state = 2
+		self._cloneCell = self:getView():getChildByName("cloneCell_0")
 
-	self._main:getChildByFullName("heroPanel.Image_33"):setVisible(not self._activityConfig.showHero)
-
-	if self._activityConfig.showHero then
-		local heroPanel = self._main:getChildByName("heroPanel")
-		local roleModel = IconFactory:getRoleModelByKey("HeroBase", self._activityConfig.showHero)
-		local heroSprite = IconFactory:createRoleIconSprite({
-			iconType = 6,
-			id = roleModel
-		})
-
-		heroSprite:setScale(1.1)
-		heroSprite:addTo(heroPanel)
-		heroSprite:setPosition(cc.p(275, 90))
+		self._cloneCell:setVisible(false)
+		self:getView():getChildByName("cloneCell"):setVisible(false)
 	end
 
 	if self._activityConfig and self._activityConfig.TaskBgUI then
@@ -80,49 +82,15 @@ function ActivityTaskStageStarMediator:setupView()
 	contentText:setWrapMode(1)
 	contentText:setAnchorPoint(cc.p(0, 0.5))
 	contentText:setPosition(cc.p(0, 0))
-	contentText:setFontSize(16)
+	contentText:setFontSize(18)
 	contentText:addTo(descPanel)
 
 	self._descPanel = contentText
-	self._buyTtitlePanel = self._main:getChildByFullName("buyTtitlePanel")
 	self._timesTipPanel = self._main:getChildByFullName("timesTipPanel")
-	local txt_0 = self._main:getChildByFullName("buyTtitlePanel.txt_0")
-	local txt_1 = self._main:getChildByFullName("buyTtitlePanel.txt_1")
-	local lineGradiantVec2 = {
-		{
-			ratio = 0.3,
-			color = cc.c4b(255, 238, 92, 255)
-		},
-		{
-			ratio = 0.7,
-			color = cc.c4b(255, 255, 255, 255)
-		}
-	}
-
-	txt_0:enablePattern(cc.LinearGradientPattern:create(lineGradiantVec2, {
-		x = 0,
-		y = -1
-	}))
-	txt_0:enableOutline(cc.c4b(120, 54, 85, 255), 2)
-
-	local lineGradiantVec2 = {
-		{
-			ratio = 0.3,
-			color = cc.c4b(255, 225, 103, 255)
-		},
-		{
-			ratio = 0.7,
-			color = cc.c4b(255, 252, 228, 255)
-		}
-	}
-
-	txt_1:enablePattern(cc.LinearGradientPattern:create(lineGradiantVec2, {
-		x = 0,
-		y = -1
-	}))
-	txt_1:enableShadow(cc.c4b(16, 103, 5, 255), cc.size(2, 0), 2)
-
-	local actBtnBuy = self._main:getChildByFullName("timesTipPanel.actBtnBuy")
+	self._rightPanel = self._main:getChildByFullName("panel_right")
+	self._buyPanel = self._rightPanel:getChildByFullName("buyDone")
+	self._notBuyPanel = self._rightPanel:getChildByFullName("notbuy")
+	local actBtnBuy = self._notBuyPanel:getChildByFullName("actBtnBuy")
 
 	local function callFuncGo(sender, eventType)
 		self:goBuy()
@@ -133,61 +101,48 @@ function ActivityTaskStageStarMediator:setupView()
 	})
 	self:updateTopBuyView()
 	self:createTableView()
-
-	local _refundPanel = self._main:getChildByName("refundTipBg")
-
-	_refundPanel:addClickEventListener(function (sender)
-		self:onClickRefundBtn()
-	end)
 end
 
 function ActivityTaskStageStarMediator:updateTopBuyView()
 	local buyDays = self._activityConfig.buyDays
 	local payId = self._activityConfig.payId
 	local buy = self._activity:getPayStatus()
+	local buyImg = self._rightPanel:getChildByFullName("Image_16")
+
+	self._buyPanel:setVisible(false)
+	self._notBuyPanel:setVisible(false)
+
 	local desc = Strings:get("ACT_StageStar_Desc2", {
 		fontName = TTF_FONT_FZYH_M
 	})
 
 	if buy then
-		self._buyTtitlePanel:setPositionX(466.1)
-		self._buyTtitlePanel:setVisible(true)
-		self._timesTipPanel:setVisible(false)
+		self._buyPanel:setVisible(true)
+		buyImg:loadTexture("starsdream_txt_tq_1.png", ccui.TextureResType.plistType)
+	elseif self._deadline then
+		buyImg:loadTexture("starsdream_txt_tq_1.png", ccui.TextureResType.plistType)
+	else
+		buyImg:loadTexture("starsdream_txt_tq_2.png", ccui.TextureResType.plistType)
+		self._notBuyPanel:setVisible(true)
 
-		desc = Strings:get("ACT_StageStar_Desc2", {
+		local payOffSystem = DmGame:getInstance()._injector:getInstance(PayOffSystem)
+		local symbol, price = payOffSystem:getPaySymbolAndPrice(payId)
+		local symbolS = self._notBuyPanel:getChildByFullName("symbol")
+		local moneyS = self._notBuyPanel:getChildByFullName("money")
+		local times = self._notBuyPanel:getChildByFullName("times")
+		local timeTitle = self._notBuyPanel:getChildByFullName("txt")
+
+		times:setPositionX(timeTitle:getPositionX() + timeTitle:getContentSize().width + 5)
+		symbolS:setString(symbol)
+		moneyS:setString(price)
+
+		local sysw = symbolS:getContentSize().width
+		local mw = moneyS:getContentSize().width
+		desc = Strings:get("ACT_StageStar_Desc1", {
 			fontName = TTF_FONT_FZYH_M
 		})
-	else
-		local deadline = self._activity:getDeadline()
 
-		if deadline then
-			self._buyTtitlePanel:setVisible(false)
-			self._timesTipPanel:setVisible(false)
-		else
-			self._buyTtitlePanel:setPositionX(366.1)
-			self._buyTtitlePanel:setVisible(true)
-			self._timesTipPanel:setVisible(true)
-
-			local payOffSystem = DmGame:getInstance()._injector:getInstance(PayOffSystem)
-			local symbol, price = payOffSystem:getPaySymbolAndPrice(payId)
-			local symbolS = self._timesTipPanel:getChildByFullName("symbol")
-			local moneyS = self._timesTipPanel:getChildByFullName("money")
-
-			symbolS:setString(symbol)
-			moneyS:setString(price)
-
-			local sysw = symbolS:getContentSize().width
-			local mw = moneyS:getContentSize().width
-
-			symbolS:setPositionX(323 + (sysw - mw) / 2)
-			moneyS:setPositionX(323 + (sysw - mw) / 2)
-
-			desc = Strings:get("ACT_StageStar_Desc1", {
-				fontName = TTF_FONT_FZYH_M
-			})
-
-			self:setTimer()
-		end
+		self:setTimer()
 	end
 
 	self._descPanel:setString(desc)
@@ -195,7 +150,7 @@ end
 
 function ActivityTaskStageStarMediator:createTableView()
 	local size = self._cloneCell:getContentSize()
-	local tableView = cc.TableView:create(cc.size(size.width, 350))
+	local tableView = cc.TableView:create(cc.size(655, 475))
 
 	local function numberOfCells(view)
 		return #self._taskList
@@ -205,7 +160,7 @@ function ActivityTaskStageStarMediator:createTableView()
 	end
 
 	local function cellSize(table, idx)
-		return size.width, size.height + 5
+		return size.width, size.height
 	end
 
 	local function cellAtIndex(table, idx)
@@ -219,13 +174,7 @@ function ActivityTaskStageStarMediator:createTableView()
 
 			cloneCell:setVisible(true)
 			cloneCell:addTo(cell):setName("main")
-			cloneCell:setPosition(cc.p(0, 4))
-
-			local actBtn = cloneCell:getChildByName("actBtn")
-
-			actBtn:setSwallowTouches(false)
-			actBtn:getChildByName("Text_str"):setAdditionalKerning(4)
-			cloneCell:getChildByName("title"):setAdditionalKerning(2)
+			cloneCell:setPosition(cc.p(0, 0))
 		end
 
 		self:updataCell(cell, index)
@@ -233,8 +182,7 @@ function ActivityTaskStageStarMediator:createTableView()
 		return cell
 	end
 
-	tableView:setDirection(cc.SCROLLVIEW_DIRECTION_VERTICAL)
-	tableView:setVerticalFillOrder(cc.TABLEVIEW_FILL_TOPDOWN)
+	tableView:setDirection(cc.SCROLLVIEW_DIRECTION_HORIZONTAL)
 	tableView:setDelegate()
 	tableView:setAnchorPoint(cc.p(0.5, 0.5))
 	tableView:setPosition(cc.p(10, 11))
@@ -254,7 +202,6 @@ function ActivityTaskStageStarMediator:updataCell(cell, index)
 	local data = self._taskList[index]
 	local taskValueList = data:getTaskValueList()
 
-	mainView:getChildByName("progressText"):setString("(" .. taskValueList[1].currentValue .. "/" .. taskValueList[1].targetValue .. ")")
 	mainView:getChildByName("level"):setString(taskValueList[1].targetValue)
 
 	local name = data:getConfig().Name
@@ -262,146 +209,116 @@ function ActivityTaskStageStarMediator:updataCell(cell, index)
 
 	nameText:setString(Strings:get(name))
 
-	local rewardPanel = mainView:getChildByName("reward")
-
-	rewardPanel:removeAllChildren()
-
-	local rewards = data:getReward()
-
-	if rewards and rewards.Content then
-		for i, rewardData in pairs(rewards.Content) do
-			local icon = IconFactory:createRewardIcon(rewardData, {
-				isWidget = true
-			})
-
-			icon:setAnchorPoint(cc.p(0, 0))
-			icon:setScaleNotCascade(0.5)
-			icon:addTo(rewardPanel):posite(-4.5 + (i - 1) * 66, 0)
-			IconFactory:bindTouchHander(icon, IconTouchHandler:new(self._parentMediator), rewardData, {
-				needDelay = true
-			})
-		end
+	if self._state == 1 then
+		self:updateDataPanel(mainView:getChildByName("panel_normal"), data, index - 1, true)
+		self:updateDataPanel(mainView:getChildByName("panel_super"), data, index - 1)
+	else
+		self:updateDataPanel(mainView:getChildByName("panel_normal"), data, index - 1, true)
 	end
+end
 
-	local buy = self._activity:getPayStatus()
-	local deadline = self._activity:getDeadline()
+function ActivityTaskStageStarMediator:updateDataPanel(panel, data, cellIndex, isNormal)
+	local taskValueList = data:getTaskValueList()
 
-	if buy then
-		deadline = false
-	end
-
-	local cardRewardPanel = mainView:getChildByName("Panel_CardReward")
-
-	cardRewardPanel:setVisible(not deadline)
-
-	local cardRewardPanel = mainView:getChildByName("Panel_CardReward")
-	local extraRewardIconPanel = cardRewardPanel:getChildByName("icon")
-
-	extraRewardIconPanel:removeAllChildren()
-
-	local rewards = data:getExtraReward()
-
-	if rewards and rewards.Content then
-		for i, rewardData in pairs(rewards.Content) do
-			local icon = IconFactory:createRewardIcon(rewardData, {
-				isWidget = true
-			})
-
-			icon:setAnchorPoint(cc.p(0, 0))
-			icon:setScaleNotCascade(0.5)
-			icon:addTo(extraRewardIconPanel):posite(0 + (i - 1) * 66, 0)
-			IconFactory:bindTouchHander(icon, IconTouchHandler:new(self._parentMediator), rewardData, {
-				needDelay = true
-			})
-		end
-	end
+	panel:getChildByFullName("notgot.progressText"):setString("(" .. taskValueList[1].currentValue .. "/" .. taskValueList[1].targetValue .. ")")
 
 	local status = data:getStatus()
-	local actBtn = mainView:getChildByName("actBtn")
+	local actBtn = panel:getChildByName("actBtn")
+	local recieveImg = panel:getChildByName("recieve")
+	local noRecieveStr = panel:getChildByName("notgot")
 
 	actBtn:setVisible(false)
-
-	local actBtnGold = mainView:getChildByName("actBtnGold")
-
-	actBtnGold:setVisible(false)
-
-	local recieveImg = mainView:getChildByName("recieve")
-
 	recieveImg:setVisible(false)
-
-	local noRecieveStr = mainView:getChildByName("noRecieveStr")
-
 	noRecieveStr:setVisible(false)
-	mainView:getChildByName("progressText"):setVisible(false)
 
-	if status == ActivityTaskStatus.kUnfinish then
-		noRecieveStr:setVisible(true)
-		mainView:getChildByName("progressText"):setVisible(true)
-	elseif status == ActivityTaskStatus.kFinishNotGet then
-		actBtn:setVisible(true)
+	if isNormal then
+		local rewardPanel = panel:getChildByName("reward")
 
-		local function callFuncGo(sender, eventType)
-			local beganPos = sender:getTouchBeganPosition()
-			local endPos = sender:getTouchEndPosition()
+		rewardPanel:removeAllChildren()
 
-			if math.abs(beganPos.x - endPos.x) < 30 and math.abs(beganPos.y - endPos.y) < 30 then
-				self:onClickGet(data, cell:getIdx(), KGetType.normal)
+		local rewards = data:getReward()
+
+		if rewards and rewards.Content then
+			for i, rewardData in pairs(rewards.Content) do
+				local icon = IconFactory:createRewardIcon(rewardData, {
+					isWidget = true
+				})
+
+				icon:setAnchorPoint(cc.p(0, 0))
+				icon:setScaleNotCascade(0.7)
+				icon:addTo(rewardPanel):posite((i - 1) * 66, 0)
+				IconFactory:bindTouchHander(icon, IconTouchHandler:new(self._parentMediator), rewardData, {
+					needDelay = true
+				})
 			end
 		end
 
-		mapButtonHandlerClick(nil, actBtn, {
-			func = callFuncGo
-		})
+		if status == ActivityTaskStatus.kUnfinish then
+			noRecieveStr:setVisible(true)
+		elseif status == ActivityTaskStatus.kFinishNotGet then
+			actBtn:setVisible(true)
+
+			local function callFuncGo(sender, eventType)
+				local beganPos = sender:getTouchBeganPosition()
+				local endPos = sender:getTouchEndPosition()
+
+				if math.abs(beganPos.x - endPos.x) < 30 and math.abs(beganPos.y - endPos.y) < 30 then
+					self:onClickGet(data, cellIndex, KGetType.normal)
+				end
+			end
+
+			mapButtonHandlerClick(nil, actBtn, {
+				func = callFuncGo
+			})
+		else
+			recieveImg:setVisible(true)
+		end
 	else
-		local children = rewardPanel:getChildren()
+		local buttonText = actBtn:getChildByFullName("Text_str")
+		local rewardPanel = panel:getChildByName("reward")
 
-		for i = 1, #children do
-			local node = children[i]
+		rewardPanel:removeAllChildren()
 
-			node:setColor(cc.c3b(120, 120, 120))
+		local rewards = data:getExtraReward()
 
-			local img = ccui.ImageView:create("hd_14r_btn_go.png", 1)
+		if rewards and rewards.Content then
+			for i, rewardData in pairs(rewards.Content) do
+				local icon = IconFactory:createRewardIcon(rewardData, {
+					isWidget = true
+				})
 
-			img:setScale(0.5)
-			img:addTo(rewardPanel)
-			img:setPosition(cc.p(-42 + i * 66, 28))
+				icon:setAnchorPoint(cc.p(0, 0))
+				icon:setScaleNotCascade(0.7)
+				icon:addTo(rewardPanel):posite(0 + (i - 1) * 66, 0)
+				IconFactory:bindTouchHander(icon, IconTouchHandler:new(self._parentMediator), rewardData, {
+					needDelay = true
+				})
+			end
 		end
 
-		if deadline then
-			actBtn:setVisible(false)
-			recieveImg:setVisible(true)
+		if status == ActivityTaskStatus.kUnfinish then
+			noRecieveStr:setVisible(true)
 		else
 			local get = self._activity:getRechargeStatus(data:getId())
 
 			if get then
 				recieveImg:setVisible(true)
-
-				local children = extraRewardIconPanel:getChildren()
-
-				for i = 1, #children do
-					local node = children[i]
-
-					node:setColor(cc.c3b(120, 120, 120))
-
-					local img = ccui.ImageView:create("hd_14r_btn_go.png", 1)
-
-					img:setScale(0.5)
-					img:addTo(extraRewardIconPanel)
-					img:setPosition(cc.p(28 + (i - 1) * 56, 29))
-				end
 			else
-				actBtnGold:setVisible(true)
+				local buy = self._activity:getPayStatus()
+
+				buttonText:setString(buy and Strings:get("ACT_LevelUp_PRIVILEGEReceive") or Strings:get("ACT_LevelUp_ActivationReceive"))
+				actBtn:setVisible(true)
 
 				local function callFuncGo(sender, eventType)
 					local beganPos = sender:getTouchBeganPosition()
 					local endPos = sender:getTouchEndPosition()
 
 					if math.abs(beganPos.x - endPos.x) < 30 and math.abs(beganPos.y - endPos.y) < 30 then
-						self:onClickGet(data, cell:getIdx(), KGetType.recharge)
+						self:onClickGet(data, cellIndex, KGetType.recharge)
 					end
 				end
 
-				mapButtonHandlerClick(nil, actBtnGold, {
+				mapButtonHandlerClick(nil, actBtn, {
 					func = callFuncGo
 				})
 			end
@@ -466,6 +383,7 @@ function ActivityTaskStageStarMediator:onClickGet(data, index, activityType)
 			}))
 		end
 
+		self:initData()
 		self._tableView:updateCellAtIndex(index)
 	end)
 end
@@ -518,7 +436,7 @@ function ActivityTaskStageStarMediator:setTimer()
 		return
 	end
 
-	local times = self._timesTipPanel:getChildByFullName("times")
+	local times = self._notBuyPanel:getChildByFullName("times")
 	local gameServerAgent = self:getInjector():getInstance("GameServerAgent")
 	local remoteTimestamp = gameServerAgent:remoteTimestamp()
 	local startTime = self._activity:getStartTime() / 1000
@@ -532,6 +450,7 @@ function ActivityTaskStageStarMediator:setTimer()
 
 			if endMills <= remoteTimestamp then
 				self:stopTimer()
+				self:initData()
 				self:updateTopBuyView()
 				self._tableView:reloadData()
 
@@ -568,6 +487,10 @@ function ActivityTaskStageStarMediator:setTimer()
 end
 
 function ActivityTaskStageStarMediator:goBuy()
+	if self._deadline then
+		return
+	end
+
 	local data = {
 		doActivityType = 103
 	}
@@ -592,7 +515,9 @@ function ActivityTaskStageStarMediator:goBuy()
 end
 
 function ActivityTaskStageStarMediator:paySuccCallBack()
+	self:initData()
 	self:updateTopBuyView()
+	self._tableView:reloadData()
 end
 
 function ActivityTaskStageStarMediator:onClickRefundBtn()

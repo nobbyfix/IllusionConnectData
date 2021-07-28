@@ -211,6 +211,18 @@ function BattleRoleModel:hasFlag(flag)
 	return false
 end
 
+function BattleRoleModel:setMaxHp(maxHp)
+	if not self._orgMaxHp then
+		self._orgMaxHp = maxHp
+	end
+
+	self._maxHp = maxHp
+end
+
+function BattleRoleModel:getOrgMaxHp()
+	return self._orgMaxHp or self._maxHp
+end
+
 function BattleRoleModel:setHp(hp)
 	local last = self._hp or 0
 	self._hp = hp
@@ -236,7 +248,8 @@ function BattleRoleModel:setRp(rp)
 end
 
 function BattleRoleModel:updateMaxHp(maxHp, hp)
-	self._maxHp = maxHp
+	self:setMaxHp(maxHp)
+
 	local last = self._hp or 0
 	self._hp = hp
 	local data = {

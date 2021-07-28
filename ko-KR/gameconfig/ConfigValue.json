@@ -239,6 +239,10 @@
             "15": 1.1
         }
     },
+    "ArenaStage_Background": {
+        "clz": "string",
+        "content": "Battle_scene_stagearena"
+    },
     "Arena_Background": {
         "clz": "string",
         "content": "Battle_Scene_1"
@@ -593,7 +597,8 @@
             "crusade",
             "actstage",
             "club_battle",
-            "dream_battle"
+            "dream_battle",
+            "stagearena"
         ]
     },
     "BattleSpeed_Display": {
@@ -1000,6 +1005,10 @@
         "content": 1
     },
     "BulletTime_PVP_RealTime": {
+        "clz": "int",
+        "content": 0
+    },
+    "BulletTime_PVP_StageArena": {
         "clz": "int",
         "content": 0
     },
@@ -2442,6 +2451,10 @@
         "clz": "string",
         "content": "DrawCard_First_Reward"
     },
+    "DrawCard_Rebate_Limit": {
+        "clz": "int",
+        "content": 2
+    },
     "DrawCard_Resource": {
         "clz": "string",
         "content": [
@@ -2535,6 +2548,38 @@
     "DreamChallenge_EntryBubble_Stay": {
         "clz": "int",
         "content": 8
+    },
+    "DreamHouseHeroBattleNum": {
+        "clz": "int",
+        "content": 1
+    },
+    "DreamHouseHeroNum": {
+        "clz": "int",
+        "content": 6
+    },
+    "DreamHouseViewNum": {
+        "clz": "int",
+        "content": 1
+    },
+    "DreamHouse_Rule": {
+        "clz": "string[]",
+        "content": [
+            "DreamHouse_Rule01",
+            "DreamHouse_Rule02",
+            "DreamHouse_Rule03",
+            "DreamHouse_Rule04",
+            "DreamHouse_Rule05"
+        ]
+    },
+    "DreamHouse_StarTrans": {
+        "clz": "dict",
+        "content": {
+            "killBossHero": "StarCondition_killBossHero",
+            "killCount": "StarCondition_killCount",
+            "occupationCount": "StarCondition_occupationCount",
+            "usedHero": "StarCondition_usedHero",
+            "win": "StarCondition_win"
+        }
     },
     "Dream_Challenge_Rule": {
         "clz": "string[]",
@@ -2720,6 +2765,12 @@
             67000
         ]
     },
+    "EquipSpecialPassive": {
+        "clz": "string[]",
+        "content": [
+            "Weapon_14023"
+        ]
+    },
     "Equip_Translate": {
         "clz": "dict",
         "content": {
@@ -2783,7 +2834,8 @@
             "clubboss",
             "actstage",
             "cooperateboss",
-            "orrtpk"
+            "orrtpk",
+            "stagearena"
         ]
     },
     "FAC_HP_Check": {
@@ -2880,6 +2932,10 @@
     "Fight_PlayerDrawCard": {
         "clz": "string",
         "content": "PlayerCard"
+    },
+    "Fight_StageArena": {
+        "clz": "string",
+        "content": "BlockBattle_StageArena"
     },
     "Fight_StageEnergy": {
         "clz": "string",
@@ -3745,14 +3801,6 @@
     "HeroStar_StiveChangeSelf": {
         "clz": "double",
         "content": 2
-    },
-    "HeroStar_StiveOut": {
-        "clz": "string[]",
-        "content": [
-            "ZTXChang",
-            "CLMan",
-            "FTLEShi"
-        ]
     },
     "HeroStar_TheLeadsStarReward": {
         "clz": "dict",
@@ -5164,14 +5212,16 @@
         "clz": "string[]",
         "content": [
             "ARENA",
-            "RTPK"
+            "RTPK",
+            "STAGE_ARENA"
         ]
     },
     "LeadStage_EffectiveTranslate": {
         "clz": "dict",
         "content": {
             "ARENA": "ARENA_TITLE",
-            "RTPK": "RTPK_SystemName"
+            "RTPK": "RTPK_SystemName",
+            "STAGE_ARENA": "StageArena_SystemName"
         }
     },
     "LeadStage_Mail": {
@@ -5324,6 +5374,22 @@
     "Mail_RTPK_RankTitleRewardConfig": {
         "clz": "string",
         "content": "Mail_RTPK_RankTitleReward"
+    },
+    "Mail_RTPK_WinReward": {
+        "clz": "string",
+        "content": "Mail_RTPK_WinReward"
+    },
+    "Mail_StageArena_GoldRewardConfig": {
+        "clz": "string",
+        "content": "Mail_StageArena_GoldReward"
+    },
+    "Mail_StageArena_RankRewardConfig": {
+        "clz": "string",
+        "content": "Mail_StageArena_RankReward"
+    },
+    "Mail_StageArena_ReplenishConfig": {
+        "clz": "string",
+        "content": "Mail_StageArena_Replenish"
     },
     "Mail_StoreMax": {
         "clz": "int",
@@ -6216,6 +6282,14 @@
             ""
         ]
     },
+    "Music_BattleBGM_StageArena": {
+        "clz": "",
+        "content": [
+            "Mus_Battle_Danger_Boss",
+            "",
+            ""
+        ]
+    },
     "Music_PlayList": {
         "clz": "string[]",
         "content": [
@@ -6301,6 +6375,12 @@
         "clz": "string",
         "content": "M02S06"
     },
+    "NewPlayerGuide_LevelOpen": {
+        "clz": "dict",
+        "content": {
+            "60": "guide_StageArena"
+        }
+    },
     "NewPlayerGuide_Limit": {
         "clz": "string[]",
         "content": [
@@ -6339,7 +6419,8 @@
             "S02S02": "guide_Village_Building_2",
             "S03S03": "guide_ChapterElite",
             "S04S03": "guide_Village_Building_8",
-            "S05S03": "guide_Explore"
+            "S05S03": "guide_Explore",
+            "level30": "guide_StageArena"
         }
     },
     "NewPlayerGuide_Text": {
@@ -7935,6 +8016,18 @@
         "clz": "int",
         "content": 3
     },
+    "ServerMatch_StageArena_ActivePlayer": {
+        "clz": "int",
+        "content": 5
+    },
+    "ServerMatch_StageArena_CombatRank": {
+        "clz": "int",
+        "content": 50
+    },
+    "ServerMatch_StageArena_LoginDays": {
+        "clz": "int",
+        "content": 5
+    },
     "ShopTalkShow": {
         "clz": "string[]",
         "content": [
@@ -7947,10 +8040,10 @@
     "Shop_ShowSequence": {
         "clz": "string[]",
         "content": [
+            "Shop_StageArena",
             "Shop1",
             "Shop6",
-            "Shop_Diamond",
-            "Shop_Crystal"
+            "Shop_Diamond"
         ]
     },
     "Shop_Sort": {
@@ -8012,6 +8105,493 @@
             "dpstorm_android": "dream_memory_logo_tai",
             "dpstorm_ios": "dream_memory_logo_tai",
             "normal": "dream_memory_logo"
+        }
+    },
+    "StageArena_Achievement_Rank": {
+        "clz": "array",
+        "content": [
+            {
+                "bubble": [
+                    "StageArena_rankBubble01"
+                ],
+                "rank": [
+                    1,
+                    1
+                ]
+            },
+            {
+                "bubble": [
+                    "StageArena_rankBubble02"
+                ],
+                "rank": [
+                    2,
+                    2
+                ]
+            },
+            {
+                "bubble": [
+                    "StageArena_rankBubble03"
+                ],
+                "rank": [
+                    3,
+                    3
+                ]
+            },
+            {
+                "bubble": [
+                    "StageArena_rankBubble04"
+                ],
+                "rank": [
+                    4,
+                    20
+                ]
+            }
+        ]
+    },
+    "StageArena_Achievement_WinNum": {
+        "clz": "array",
+        "content": [
+            {
+                "bubble": [
+                    "StageArena_winNumBubble01"
+                ],
+                "winNum": 5
+            },
+            {
+                "bubble": [
+                    "StageArena_winNumBubble02"
+                ],
+                "winNum": 6
+            },
+            {
+                "bubble": [
+                    "StageArena_winNumBubble03"
+                ],
+                "winNum": 7
+            },
+            {
+                "bubble": [
+                    "StageArena_winNumBubble04"
+                ],
+                "winNum": 8
+            },
+            {
+                "bubble": [
+                    "StageArena_winNumBubble05"
+                ],
+                "winNum": 10
+            }
+        ]
+    },
+    "StageArena_Attenuation": {
+        "clz": "int[]",
+        "content": [
+            1,
+            1,
+            1
+        ]
+    },
+    "StageArena_DefaultTeam": {
+        "clz": "string[]",
+        "content": [
+            "ZTXChang",
+            "CLMan",
+            "FTLEShi"
+        ]
+    },
+    "StageArena_MainBubble": {
+        "clz": "string[]",
+        "content": [
+            "StageArena_MainBubble01",
+            "StageArena_MainBubble02",
+            "StageArena_MainBubble03",
+            "StageArena_MainBubble04",
+            "StageArena_MainBubble05",
+            "StageArena_MainBubble06",
+            "StageArena_MainBubble07",
+            "StageArena_MainBubble08",
+            "StageArena_MainBubble09",
+            "StageArena_MainBubble10",
+            "StageArena_MainBubble11",
+            "StageArena_MainBubble12",
+            "StageArena_MainBubble13",
+            "StageArena_MainBubble14",
+            "StageArena_MainBubble15",
+            "StageArena_MainBubble16",
+            "StageArena_MainBubble17",
+            "StageArena_MainBubble18",
+            "StageArena_MainBubble19",
+            "StageArena_MainBubble20",
+            "StageArena_MainBubble21",
+            "StageArena_MainBubble22",
+            "StageArena_MainBubble23",
+            "StageArena_MainBubble24",
+            "StageArena_MainBubble25",
+            "StageArena_MainBubble26",
+            "StageArena_MainBubble27",
+            "StageArena_MainBubble28",
+            "StageArena_MainBubble29",
+            "StageArena_MainBubble30",
+            "StageArena_MainBubble31",
+            "StageArena_MainBubble32",
+            "StageArena_MainBubble33"
+        ]
+    },
+    "StageArena_MainPlayerNum": {
+        "clz": "int[]",
+        "content": [
+            7,
+            7
+        ]
+    },
+    "StageArena_MainRankNum": {
+        "clz": "int",
+        "content": 200
+    },
+    "StageArena_MatchStep01": {
+        "clz": "dict",
+        "content": {
+            "0": {
+                "rate": 1700,
+                "sameStage": 0.25
+            },
+            "1": {
+                "rate": 1800,
+                "sameStage": 0.25
+            },
+            "2": {
+                "rate": 1900,
+                "sameStage": 0.25
+            },
+            "3": {
+                "rate": 2000,
+                "sameStage": 0.25
+            },
+            "4": {
+                "rate": 2000,
+                "sameStage": 0.25
+            },
+            "5": {
+                "rate": 2300,
+                "sameStage": 0.25
+            },
+            "6": {
+                "rate": 2500,
+                "sameStage": 0.25
+            },
+            "7": {
+                "rate": 2800,
+                "sameStage": 0.25
+            },
+            "8": {
+                "rate": 3000,
+                "sameStage": 0.25
+            }
+        }
+    },
+    "StageArena_MatchStep02": {
+        "clz": "dict",
+        "content": "{\"0\":{\"1\":10,\"2\":10,\"3\":10,\"4\":10,\"5\":20,\"6\":10,\"7\":5,\"8\":0},\"1\":{\"1\":10,\"2\":10,\"3\":10,\"4\":10,\"5\":20,\"6\":10,\"7\":5,\"8\":0},\"2\":{\"1\":10,\"2\":10,\"3\":10,\"4\":10,\"5\":20,\"6\":10,\"7\":5,\"8\":0},\"3\":{\"1\":10,\"2\":10,\"3\":10,\"4\":10,\"5\":20,\"6\":10,\"7\":5,\"8\":0},\"4\":{\"1\":10,\"2\":10,\"3\":10,\"4\":10,\"5\":20,\"6\":10,\"7\":5,\"8\":0},\"5\":{\"1\":5,\"2\":5,\"3\":10,\"4\":15,\"5\":10,\"6\":10,\"7\":15,\"8\":5},\"6\":{\"1\":5,\"2\":5,\"3\":10,\"4\":15,\"5\":10,\"6\":10,\"7\":15,\"7\":15,\"8\":5},\"7\":{\"1\":0,\"2\":5,\"3\":5,\"4\":5,\"5\":10,\"6\":10,\"7\":20,\"8\":20},\"8\":{\"1\":0,\"2\":5,\"3\":5,\"4\":5,\"5\":10,\"6\":10,\"7\":20,\"8\":20}}"
+    },
+    "StageArena_MatchStep03": {
+        "clz": "dict",
+        "content": {
+            "1": [
+                {
+                    "rate": 100,
+                    "weight": 12
+                },
+                {
+                    "rate": 500,
+                    "weight": 38
+                },
+                {
+                    "rate": 1500,
+                    "weight": 38
+                },
+                {
+                    "rate": 2500,
+                    "weight": 6
+                },
+                {
+                    "rate": 3500,
+                    "weight": 7
+                }
+            ],
+            "2": [
+                {
+                    "rate": 100,
+                    "weight": 12
+                },
+                {
+                    "rate": 500,
+                    "weight": 38
+                },
+                {
+                    "rate": 1500,
+                    "weight": 38
+                },
+                {
+                    "rate": 2500,
+                    "weight": 6
+                },
+                {
+                    "rate": 3500,
+                    "weight": 7
+                }
+            ],
+            "3": [
+                {
+                    "rate": 100,
+                    "weight": 12
+                },
+                {
+                    "rate": 500,
+                    "weight": 38
+                },
+                {
+                    "rate": 1500,
+                    "weight": 38
+                },
+                {
+                    "rate": 2500,
+                    "weight": 6
+                },
+                {
+                    "rate": 3500,
+                    "weight": 7
+                }
+            ],
+            "4": [
+                {
+                    "rate": 100,
+                    "weight": 12
+                },
+                {
+                    "rate": 500,
+                    "weight": 38
+                },
+                {
+                    "rate": 1500,
+                    "weight": 38
+                },
+                {
+                    "rate": 2500,
+                    "weight": 6
+                },
+                {
+                    "rate": 3500,
+                    "weight": 7
+                }
+            ],
+            "5": [
+                {
+                    "rate": 100,
+                    "weight": 10
+                },
+                {
+                    "rate": 500,
+                    "weight": 32
+                },
+                {
+                    "rate": 1500,
+                    "weight": 40
+                },
+                {
+                    "rate": 2500,
+                    "weight": 8
+                },
+                {
+                    "rate": 3500,
+                    "weight": 10
+                }
+            ],
+            "6": [
+                {
+                    "rate": 100,
+                    "weight": 10
+                },
+                {
+                    "rate": 500,
+                    "weight": 32
+                },
+                {
+                    "rate": 1500,
+                    "weight": 40
+                },
+                {
+                    "rate": 2500,
+                    "weight": 8
+                },
+                {
+                    "rate": 3500,
+                    "weight": 10
+                }
+            ],
+            "7": [
+                {
+                    "rate": 500,
+                    "weight": 30
+                },
+                {
+                    "rate": 1500,
+                    "weight": 48
+                },
+                {
+                    "rate": 2500,
+                    "weight": 10
+                },
+                {
+                    "rate": 3500,
+                    "weight": 12
+                }
+            ],
+            "8": [
+                {
+                    "rate": 500,
+                    "weight": 30
+                },
+                {
+                    "rate": 1500,
+                    "weight": 48
+                },
+                {
+                    "rate": 2500,
+                    "weight": 10
+                },
+                {
+                    "rate": 3500,
+                    "weight": 12
+                }
+            ]
+        }
+    },
+    "StageArena_ModelSpwanSec": {
+        "clz": "double",
+        "content": 0.5
+    },
+    "StageArena_ModelWalkSpeed": {
+        "clz": "int",
+        "content": 50
+    },
+    "StageArena_RankMax": {
+        "clz": "int",
+        "content": 999
+    },
+    "StageArena_RateRandom": {
+        "clz": "array",
+        "content": [
+            0.0,
+            0.0
+        ]
+    },
+    "StageArena_RealTimeFresh": {
+        "clz": "int",
+        "content": 300
+    },
+    "StageArena_RedPoint_Num": {
+        "clz": "int",
+        "content": 3
+    },
+    "StageArena_RefreshCost": {
+        "clz": "int",
+        "content": 150
+    },
+    "StageArena_ReportMax": {
+        "clz": "int",
+        "content": 3
+    },
+    "StageArena_ReportRetain": {
+        "clz": "int",
+        "content": 5
+    },
+    "StageArena_Robot_Job_Deviation": {
+        "clz": "dict",
+        "content": {
+            "Aoe": [
+                1.1,
+                1,
+                0.81
+            ],
+            "Attack": [
+                1.2,
+                0.82,
+                0.71
+            ],
+            "Cure": [
+                1.06,
+                1,
+                1.18
+            ],
+            "Curse": [
+                1.05,
+                1,
+                1.04
+            ],
+            "Defense": [
+                0.75,
+                1.18,
+                1.41
+            ],
+            "Summon": [
+                1,
+                1,
+                1
+            ],
+            "Support": [
+                1.04,
+                1,
+                1.15
+            ]
+        }
+    },
+    "StageArena_Robot_Quality_Deviation": {
+        "clz": "dict",
+        "content": {
+            "12": 0.8,
+            "13": 0.9,
+            "14": 1,
+            "15": 1
+        }
+    },
+    "StageArena_RuleTranslate": {
+        "clz": "string[]",
+        "content": {
+            "Desc": [
+                "StageArena_GeneralRules_1",
+                "StageArena_GeneralRules_2",
+                "StageArena_GeneralRules_3",
+                "StageArena_GeneralRules_4",
+                "StageArena_GeneralRules_5",
+                "StageArena_GeneralRules_6",
+                "StageArena_GeneralRules_7",
+                "StageArena_GeneralRules_8",
+                "StageArena_GeneralRules_9",
+                "StageArena_GeneralRules_10",
+                "StageArena_GeneralRules_11",
+                "StageArena_GeneralRules_12",
+                "StageArena_GeneralRules_13"
+            ]
+        }
+    },
+    "StageArena_SameGame": {
+        "clz": "int",
+        "content": 3
+    },
+    "StageArena_SeasonShowTime": {
+        "clz": "int",
+        "content": 72
+    },
+    "StageArena_SkipBattle_WaitTime": {
+        "clz": "int",
+        "content": 3
+    },
+    "StageArena_security": {
+        "clz": "dict",
+        "content": {
+            "gold": 3500,
+            "stage": -2,
+            "times": 3
         }
     },
     "StagePractice_CommentMaxWords": {
@@ -8592,7 +9172,8 @@
             "LAMu",
             "AMLYa",
             "WSLi",
-            "SP_SSQXin"
+            "SP_SSQXin",
+            "WSLi"
         ]
     },
     "Tower_1_GrowMaxValue": {
@@ -8822,6 +9403,36 @@
         "content": {
             "Effect": "jihan_bufftexiao",
             "EffectPos": 45,
+            "Loop": 1,
+            "Priority": null,
+            "Type": 1
+        }
+    },
+    "TrapModel_Light_cheng": {
+        "clz": "dict",
+        "content": {
+            "Effect": "cheng_kongbubenchangjingtexiao",
+            "EffectPos": 5,
+            "Loop": 1,
+            "Priority": null,
+            "Type": 1
+        }
+    },
+    "TrapModel_Light_lan": {
+        "clz": "dict",
+        "content": {
+            "Effect": "lan_kongbubenchangjingtexiao",
+            "EffectPos": 5,
+            "Loop": 1,
+            "Priority": null,
+            "Type": 1
+        }
+    },
+    "TrapModel_Stage": {
+        "clz": "dict",
+        "content": {
+            "Effect": "main_yinyuehe",
+            "EffectPos": 5,
             "Loop": 1,
             "Priority": null,
             "Type": 1

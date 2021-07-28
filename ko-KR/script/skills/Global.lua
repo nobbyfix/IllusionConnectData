@@ -690,6 +690,24 @@ function all.EvalDamage_FlagCheck(_env, actor, target, dmgFactor, passiveFactors
 
 	local damage = global.EvalSingleDamage(_env, attacker, defender, dmgFactor)
 
+	for i = 1, #Flags do
+		local flag = Flags[i]
+
+		if not global.MASTER(_env, actor) then
+			if global.MARKED(_env, "SUMMONED")(_env, actor) then
+				if global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "DHB_Damage_Way")) > 0 and global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "Damage_Way_SUMMONER")) == 0 then
+					damage.val = 0
+
+					break
+				end
+			elseif global.MARKED(_env, flag)(_env, actor) and global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "DHB_Damage_Way")) > 0 and global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "Damage_Way_" .. flag)) == 0 then
+				damage.val = 0
+
+				break
+			end
+		end
+	end
+
 	if global.INSTATUS(_env, "Skill_MGNa_Passive_Key")(_env, actor) and global.PETS(_env, target) then
 		local cost = global.GetCost(_env, target)
 
@@ -956,6 +974,24 @@ function all.EvalAOEDamage_FlagCheck(_env, actor, target, dmgFactor, passiveFact
 	end
 
 	local damage = global.EvalAOEDamage(_env, attacker, defender, dmgFactor)
+
+	for i = 1, #Flags do
+		local flag = Flags[i]
+
+		if not global.MASTER(_env, actor) then
+			if global.MARKED(_env, "SUMMONED")(_env, actor) then
+				if global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "DHB_Damage_Way")) > 0 and global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "Damage_Way_SUMMONER")) == 0 then
+					damage.val = 0
+
+					break
+				end
+			elseif global.MARKED(_env, flag)(_env, actor) and global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "DHB_Damage_Way")) > 0 and global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "Damage_Way_" .. flag)) == 0 then
+				damage.val = 0
+
+				break
+			end
+		end
+	end
 
 	if global.INSTATUS(_env, "Skill_MGNa_Passive_Key")(_env, actor) and global.PETS(_env, target) then
 		local cost = global.GetCost(_env, target)
@@ -3509,6 +3545,19 @@ function all.ApplyRealDamage(_env, actor, target, dmgrange, dmgtype, damagerate,
 		aoederate = 0
 	end
 
+	local Flags = {
+		"MASTER",
+		"HERO",
+		"SUMMONED",
+		"ASSASSIN",
+		"WARRIOR",
+		"MAGE",
+		"SUMMONER",
+		"HEALER",
+		"LIGHT",
+		"DARK"
+	}
+
 	if dmgrange == 1 then
 		damage = global.EvalDamage_FlagCheck(_env, actor, target, {
 			1,
@@ -3555,6 +3604,24 @@ function all.ApplyRealDamage(_env, actor, target, dmgrange, dmgtype, damagerate,
 
 	if global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "GUIDIE_SHENYIN")) > 0 then
 		damage.val = 0
+	end
+
+	for i = 1, #Flags do
+		local flag = Flags[i]
+
+		if not global.MASTER(_env, actor) then
+			if global.MARKED(_env, "SUMMONED")(_env, actor) then
+				if global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "DHB_Damage_Way")) > 0 and global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "Damage_Way_SUMMONER")) == 0 then
+					damage.val = 0
+
+					break
+				end
+			elseif global.MARKED(_env, flag)(_env, actor) and global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "DHB_Damage_Way")) > 0 and global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "Damage_Way_" .. flag)) == 0 then
+				damage.val = 0
+
+				break
+			end
+		end
 	end
 
 	if dmgrange == 1 then

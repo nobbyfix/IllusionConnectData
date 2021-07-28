@@ -274,6 +274,19 @@ function exports.UpdateFanProgress(env, unit, progress)
 	})
 end
 
+function exports.SetHSVColor(env, unit, hue, contrast, brightness, saturation)
+	if not unit then
+		return
+	end
+
+	env.global.RecordImmediately(env, unit:getId(), "SetHSVColor", {
+		hue = hue,
+		contrast = contrast,
+		brightness = brightness,
+		saturation = saturation
+	})
+end
+
 function exports.ForbidenRevive(env, unit, isforbiden)
 	if not unit then
 		return
@@ -294,4 +307,31 @@ function exports.GetSex(env, unit)
 	end
 
 	return unit:getSex()
+end
+
+function exports.GetAIPosition(env, side, card)
+	if not card then
+		return
+	end
+
+	if card:getType() ~= "hero" then
+		return nil
+	end
+
+	local cardAi = card:getCardAI()
+
+	if cardAi then
+		local cardPos = cardAi.ForcedPosition
+		local aiPos = {}
+
+		for k, v in pairs(cardPos or {}) do
+			for k_, v_ in pairs(v) do
+				aiPos[k] = v_ * side
+			end
+		end
+
+		return aiPos
+	end
+
+	return nil
 end

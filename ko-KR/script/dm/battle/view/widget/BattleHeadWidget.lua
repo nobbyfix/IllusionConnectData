@@ -23,6 +23,10 @@ function BattleHeadWidget:setIsLeft()
 	self._hpWidget:setIsLeft(true)
 end
 
+function BattleHeadWidget:modifyMaxHp(maxHp, orgMaxHp)
+	self._hpWidget:setMaxHpValue(orgMaxHp, maxHp)
+end
+
 function BattleHeadWidget:setHpFormat(isFormat)
 	self._hpWidget:setIsFormat(isFormat)
 end
@@ -129,7 +133,7 @@ function BattleHeadWidget:setListener(listener)
 end
 
 function BattleHeadWidget:setHp(value, maxHp)
-	self._hpWidget:setHp(value, maxHp)
+	self._hpWidget:setHp(value, maxHp, self._dataModel)
 end
 
 function BattleHeadWidget:setRp(value, maxRp)
@@ -266,14 +270,16 @@ function BattleHeadWidget:addCard(cardType)
 	self._cardText:setString(tostring(self._cardNum))
 end
 
-function BattleHeadWidget:updateHeadInfo(data)
+function BattleHeadWidget:updateHeadInfo(data, dataModel)
+	self._dataModel = dataModel
+
 	self._hpWidget:setMaxHp(data.maxHp)
 	self:setMasterIcon(data.modelId)
 	self._hpWidget:setPrevHpPercent(nil)
 
 	self._prevRpPercent = nil
 
-	self._hpWidget:setHp(data.hp)
+	self._hpWidget:setHp(data.hp, nil, self._dataModel)
 	self:setRp(data.mp, data.maxMp)
 end
 

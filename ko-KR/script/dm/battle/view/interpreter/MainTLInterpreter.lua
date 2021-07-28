@@ -225,6 +225,15 @@ function MainTLInterpreter:act_StackSkill(action, args)
 	end
 end
 
+function MainTLInterpreter:act_PlayBGM(action, args)
+	local bgm = args.bgm
+	local playerId = args.playerId
+
+	if bgm and bgm ~= "" then
+		self._mainMediator:playBGM(bgm)
+	end
+end
+
 function MainTLInterpreter:act_Error(action, args)
 	self._mainMediator:uploadErrorBattleDump(args)
 end

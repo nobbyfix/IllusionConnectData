@@ -801,6 +801,27 @@
         "UnlockAnima": "",
         "UnlockDesc": ""
     },
+    "DreamHouseUnlockParm": {
+        "Condition": {
+            "STAGE": "M01S02"
+        },
+        "Icon": "new_system_club.png",
+        "IsPlay": 0,
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_Diamond_1",
+        "LongDesc": "Unlock_Draw_Hero_Desc",
+        "Name": "Unlock_Draw_Hero",
+        "OutputDesc": "Unlock_Draw_Hero_OpDesc",
+        "ResourcesBanner": [
+            "IR_Gold",
+            "IR_Diamond"
+        ],
+        "ShowCondition": {
+            "LEVEL": 1
+        },
+        "Tip": "Unlock_Stage_Tips",
+        "UnlockAnima": "HOME",
+        "UnlockDesc": "Draw_Hero_UnlockDesc"
+    },
     "Elite_Block": {
         "Condition": {
             "STORY": "S03S03"
@@ -1858,6 +1879,26 @@
         "UnlockAnima": "",
         "UnlockDesc": ""
     },
+    "Shop_StageArenaShop_Unlock": {
+        "Condition": {
+            "LEVEL": 1
+        },
+        "Icon": "new_system_club.png",
+        "IsPlay": 0,
+        "Link": "",
+        "LongDesc": "Shop_StageArenaShop_Unlock_Desc",
+        "Name": "Shop_StageArenaShop_Unlock_Name",
+        "OutputDesc": "",
+        "ResourcesBanner": [
+            "IR_NewArenaCoin"
+        ],
+        "ShowCondition": {
+            "LEVEL": 1
+        },
+        "Tip": "Unlock_Level_Tips",
+        "UnlockAnima": "",
+        "UnlockDesc": "Shop_StageArenaShop_Unlock_UnlockDesc"
+    },
     "Shop_SurfacePackage": {
         "Condition": {
             "LEVEL": 1
@@ -1939,6 +1980,30 @@
         "Tip": "Unlock_Level_Tips",
         "UnlockAnima": "",
         "UnlockDesc": "Shop_Unlock_UnlockDesc"
+    },
+    "StageArena": {
+        "Condition": {
+            "LEADER": 3,
+            "LEVEL": 60
+        },
+        "Icon": "",
+        "IsPlay": 1,
+        "Link": "",
+        "LongDesc": "StageArena_Unlock_Name",
+        "Name": "StageArena_SystemName",
+        "OutputDesc": "",
+        "ResourcesBanner": [
+            "IR_Gold",
+            "IR_Crystal",
+            "IR_Power",
+            "IR_Diamond"
+        ],
+        "ShowCondition": {
+            "LEVEL": 3
+        },
+        "Tip": "StageArena_EntryUnlockTip",
+        "UnlockAnima": "HOME",
+        "UnlockDesc": ""
     },
     "StagePresent1_Unlock": {
         "Condition": {

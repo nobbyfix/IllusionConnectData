@@ -34,6 +34,49 @@ local kBtnHandlers = {
 		func = "onClickHideUI"
 	}
 }
+local terrorBmg = {
+	bmg_1 = {
+		role = "ico_roleshadow_1",
+		img = "scene_main_terror_1",
+		rolePosition = cc.p(415, 204),
+		anim = {
+			name = "PT_ZONG_juyuanfenwei",
+			position = cc.p(568, 320)
+		}
+	},
+	bmg_2 = {
+		img = "scene_main_terror_1",
+		saturation = -50,
+		role = "ico_roleshadow_2",
+		rolePosition = cc.p(498, 193),
+		anim = {
+			name = "PT_ZONG_juyuanfenwei",
+			position = cc.p(568, 320)
+		}
+	},
+	bmg_3 = {
+		img = "scene_main_terror_1",
+		saturation = -80,
+		role = "ico_roleshadow_3",
+		rolePosition = cc.p(588, 130),
+		anim = {
+			name = "PT_ZONG_juyuanfenwei",
+			position = cc.p(568, 320)
+		}
+	},
+	bmg_4 = {
+		img = "scene_main_terror_3",
+		anim = {
+			name = "zHJzong1_juyuanfenwei",
+			position = cc.p(568, 320),
+			runAction = function (node)
+				node:addCallbackAtFrame(95, function ()
+					node:stop()
+				end)
+			end
+		}
+	}
+}
 
 function ActivityMapNewMediator:initialize()
 	super.initialize(self)
@@ -195,6 +238,7 @@ end
 function ActivityMapNewMediator:setChapterTitle()
 	local chapterInfo = self._model:getStageByStageIndex(self._stageIndex)
 	local chapterConfig = chapterInfo:getConfig()
+	local activityConfig = self._model:getActivityConfig()
 
 	if chapterConfig then
 		self._textContent:setString(Strings:get(chapterConfig.MapName))
@@ -204,13 +248,13 @@ function ActivityMapNewMediator:setChapterTitle()
 		bgPanel:removeAllChildren()
 		self._bgList:setTouchEnabled(false)
 
-		if self._model:getActivityConfig().LongBmg then
+		if activityConfig.LongBmg then
 			bgPanel:setVisible(false)
 
 			self._bgCanMove = true
 			local listSize = self._bgList:getContentSize()
 			local height = 0
-			local longBg = self._model:getActivityConfig().LongBmg
+			local longBg = activityConfig.LongBmg
 
 			for i, v in pairs(longBg) do
 				local bg = ccui.ImageView:create(BaseChapterPath .. longBg[#longBg - i + 1] .. ".jpg")
@@ -251,6 +295,8 @@ function ActivityMapNewMediator:setChapterTitle()
 			self._bgList:onScroll(function (event)
 				self:refreshBgScroll()
 			end)
+		elseif activityConfig.ExchangeBmg then
+			self:showExchangeBmg()
 		else
 			local backgroundId = ConfigReader:getDataByNameIdAndKey("BackGroundPicture", chapterConfig.Background, "Picture")
 
@@ -299,6 +345,76 @@ function ActivityMapNewMediator:setChapterTitle()
 
 			imageViewNode:setContentSize(cc.size(titleSize, imageViewNode:getContentSize().height))
 		end
+	end
+end
+
+function ActivityMapNewMediator:showExchangeBmg()
+	local activityConfig = self._model:getActivityConfig()
+
+	if not activityConfig.ExchangeBmg then
+		return
+	end
+
+	local lastPointId = self._pointList[#self._pointList]
+	local map = self._model:getStageByStageIndex(self._stageIndex)
+	local lastPoint = map:getPointById(lastPointId)
+	local pointId = self._selectPointId
+
+	if not pointId and lastPoint:isPass() then
+		pointId = lastPointId
+	end
+
+	local bgImg = activityConfig.ExchangeBmg[pointId]
+
+	if not bgImg then
+		return
+	end
+
+	local bgPanel = self:getView():getChildByFullName("main.bg")
+
+	bgPanel:removeChildByName("add_background")
+	bgPanel:removeChildByName("add_role")
+	bgPanel:setVisible(true)
+
+	local bgImgCfg = terrorBmg[bgImg]
+	local background = cc.Sprite:create(BaseChapterPath .. bgImgCfg.img .. ".jpg")
+
+	background:setAnchorPoint(cc.p(0.5, 0.5))
+	background:setPosition(cc.p(568, 320))
+	background:addTo(bgPanel)
+	background:setName("add_background")
+	background:setLocalZOrder(11)
+
+	if bgImgCfg.saturation then
+		background:setSaturation(bgImgCfg.saturation)
+	end
+
+	if bgImgCfg.role then
+		local role = ccui.ImageView:create(bgImgCfg.role .. ".png", ccui.TextureResType.plistType)
+
+		role:setAnchorPoint(cc.p(0.5, 0.5))
+		role:setPosition(bgImgCfg.rolePosition)
+		role:addTo(bgPanel)
+		role:setName("add_role")
+		role:setLocalZOrder(22)
+	end
+
+	if bgImgCfg.anim and self.bgAnimName ~= bgImgCfg.anim.name then
+		if self._bgAnim then
+			self._bgAnim:removeFromParent()
+		end
+
+		self._bgAnim = cc.MovieClip:create(bgImgCfg.anim.name)
+
+		self._bgAnim:setPosition(bgImgCfg.anim.position)
+		self._bgAnim:addTo(bgPanel)
+		self._bgAnim:setLocalZOrder(99)
+
+		if bgImgCfg.anim.runAction then
+			bgImgCfg.anim.runAction(self._bgAnim)
+		end
+
+		self.bgAnimName = bgImgCfg.anim.name
 	end
 end
 
@@ -952,6 +1068,8 @@ function ActivityMapNewMediator:onClickNextAction(index)
 			self:onClickPlayStory(pointId)
 		end
 	end
+
+	self:showExchangeBmg()
 end
 
 function ActivityMapNewMediator:enterCommonPoint(pointId, index)

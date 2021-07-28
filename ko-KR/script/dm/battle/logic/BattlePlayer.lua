@@ -31,6 +31,9 @@ BattlePlayer:has("_initialBattleFeildCellNo", {
 BattlePlayer:has("_cardPool", {
 	is = "rw"
 })
+BattlePlayer:has("_extraCardPool", {
+	is = "rw"
+})
 BattlePlayer:has("_heroCardPool", {
 	is = "rw"
 })
@@ -59,6 +62,7 @@ function BattlePlayer:initialize(id)
 	self._energyReservoir = EnergyReservoir:new()
 	self._cardPool = HeroCardPool:new()
 	self._heroCardPool = self._cardPool
+	self._extraCardPool = ExtraCardPool:new()
 	self._cardWindow = BattleCardWindow:new()
 end
 
@@ -76,6 +80,18 @@ function BattlePlayer:initWithData(data)
 	self._tactics = data.tactics or {}
 	self._refreshCost = data.refreshCost
 	self._tacticsNeedWait = data.tacticsNeedWait
+
+	if data.extraCards2 and #data.extraCards2 > 0 then
+		self._extraCardPool:addHeroCard({
+			data.extraCards2[1]
+		})
+	end
+
+	if data.extraTactics and #data.extraTactics > 0 then
+		self._extraCardPool:addSkillCard({
+			data.extraTactics[1]
+		})
+	end
 
 	return self
 end
@@ -95,6 +111,7 @@ function BattlePlayer:start(battleContext)
 	self._battleStatist = battleContext:getObject("BattleStatist")
 
 	self:setupCardWindowWithHeroCards(battleContext:getObject("Randomizer"))
+	self:setupExtraCardWindowWithCards(battleContext:getObject("Randomizer"))
 	self._energyReservoir:start(battleContext)
 	self:recordNewPlayer(self._battleRecorder)
 
@@ -256,6 +273,13 @@ function BattlePlayer:recordNewPlayer(battleRecorder)
 		cards[i] = card and card:dumpInformation() or 0
 	end
 
+	local extraCards = {}
+
+	for i = 1, cardWindow:getExtraWindowSize() do
+		local card = cardWindow:getExtraCardAtIndex(i)
+		extraCards[i] = card and card:dumpInformation() or 0
+	end
+
 	local nextCardInfo = nil
 
 	if self._nextCard then
@@ -271,6 +295,7 @@ function BattlePlayer:recordNewPlayer(battleRecorder)
 		energy = self._energyReservoir:getEnergy(),
 		cardPoolSize = self._cardPool:getTotalCount(),
 		cards = cards,
+		extraCards = extraCards,
 		nextCard = nextCardInfo
 	}
 
@@ -452,6 +477,18 @@ function BattlePlayer:setupCardWindowWithSkillCards(random)
 	end
 end
 
+function BattlePlayer:setupExtraCardWindowWithCards(random)
+	for idx = 1, self._cardWindow:getExtraWindowSize() do
+		self._cardWindow:setExtraCardAtIndex(idx, self._extraCardPool:getCardAtIndex(idx))
+	end
+end
+
+function BattlePlayer:fillExtraCardAtIndex(index)
+	self._cardWindow:setExtraCardAtIndex(index, self._extraCardPool:getCardAtIndex(index))
+
+	return self._extraCardPool:getCardAtIndex(index)
+end
+
 function BattlePlayer:checkCanFillSkillCards(battleContext)
 	if self._cardState == "skill" then
 		return true
@@ -533,7 +570,13 @@ function BattlePlayer:takeCardAtIndex(wndIdx, cardId)
 	local card = self._cardWindow:getCardAtIndex(wndIdx)
 
 	if card == nil then
-		return nil, "NoCard"
+		local extraCard = self._cardWindow:getExtraCardAtIndex(wndIdx - 4)
+
+		if not extraCard then
+			return nil, "NoCard"
+		end
+
+		card = extraCard
 	end
 
 	if cardId ~= nil and cardId ~= card:getId() then

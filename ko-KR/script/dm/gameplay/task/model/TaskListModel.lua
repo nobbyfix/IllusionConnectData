@@ -47,7 +47,8 @@ TaskType = {
 	kDaily = 1,
 	kMapDaily = 6,
 	kLevel = 3,
-	kOffer = 2
+	kOffer = 2,
+	kStageArena = 8
 }
 local statusPriorityMap = {
 	[TaskStatus.kFinishNotGet] = 1,
@@ -419,6 +420,18 @@ end
 
 function TaskListModel:hasUnreceivedDailyTask()
 	local list = self:getTaskListByType(TaskType.kDaily)
+
+	for id, task in pairs(list) do
+		if task:getStatus() == TaskStatus.kFinishNotGet then
+			return true
+		end
+	end
+
+	return false
+end
+
+function TaskListModel:hasUnreceivedTask(taskType)
+	local list = self:getTaskListByType(taskType)
 
 	for id, task in pairs(list) do
 		if task:getStatus() == TaskStatus.kFinishNotGet then

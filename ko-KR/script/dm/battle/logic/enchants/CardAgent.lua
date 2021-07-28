@@ -70,6 +70,46 @@ function CardAgent:getEnchants()
 	return self._enchantList
 end
 
+function CardAgent:selectEnchantObjects(condition)
+	print("condition      ", condition)
+
+	local enchantList = self._enchantList
+
+	if enchantList == nil then
+		return {}, 0
+	end
+
+	local enchantRegistry = self._enchantRegistry
+	local matchedEnchant = {}
+	local matchedCount = 0
+	local holeIndex = nil
+
+	for i = 1, table.maxn(enchantList) do
+		local enhanceObject = enchantList[i]
+
+		if enchantRegistry[enhanceObject] == nil then
+			enchantList[i] = nil
+
+			if holeIndex == nil then
+				holeIndex = i
+			end
+		else
+			if holeIndex ~= nil then
+				enchantList[holeIndex] = enhanceObject
+				enchantList[i] = nil
+				holeIndex = holeIndex + 1
+			end
+
+			if condition == nil or condition(enhanceObject) then
+				matchedCount = matchedCount + 1
+				matchedEnchant[matchedCount] = enhanceObject
+			end
+		end
+	end
+
+	return matchedEnchant, matchedCount
+end
+
 function CardAgent:removeEnchantObject(enchantObject)
 	assert(enchantObject ~= nil, "Invalid arguments")
 

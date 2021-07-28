@@ -946,7 +946,7 @@
         "Icon": "",
         "Invisible": 1,
         "Loop": 1,
-        "Priority": 3,
+        "Priority": "",
         "Tick": "",
         "TickPos": "",
         "Type": 1
@@ -1044,7 +1044,7 @@
         "Icon": "",
         "Invisible": 1,
         "Loop": 1,
-        "Priority": 2,
+        "Priority": "",
         "Tick": "",
         "TickPos": "",
         "Type": 1
@@ -1203,6 +1203,20 @@
         "TickPos": "",
         "Type": 1
     },
+    "Shader_Black": {
+        "Color": "Black",
+        "DescWord": "",
+        "Effect": "",
+        "EffectPos": 0.5,
+        "HorizontalPos": "",
+        "Icon": "",
+        "Invisible": 2,
+        "Loop": 1,
+        "Priority": "",
+        "Tick": "",
+        "TickPos": "",
+        "Type": 1
+    },
     "Shader_MagicBox_1": {
         "Color": "Green",
         "DescWord": "",
@@ -1233,6 +1247,20 @@
     },
     "Shader_MagicBox_3": {
         "Color": "Red",
+        "DescWord": "",
+        "Effect": "",
+        "EffectPos": 0.5,
+        "HorizontalPos": "",
+        "Icon": "",
+        "Invisible": 2,
+        "Loop": 1,
+        "Priority": "",
+        "Tick": "",
+        "TickPos": "",
+        "Type": 1
+    },
+    "Shader_Purple": {
+        "Color": "Purple",
         "DescWord": "",
         "Effect": "",
         "EffectPos": 0.5,
@@ -1380,7 +1408,7 @@
         "Icon": "",
         "Invisible": 1,
         "Loop": 1,
-        "Priority": 4,
+        "Priority": "",
         "Tick": "",
         "TickPos": "",
         "Type": 1

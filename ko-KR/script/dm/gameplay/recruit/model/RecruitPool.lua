@@ -230,7 +230,27 @@ function RecruitPool:getRebate()
 	return self._rebate
 end
 
+function RecruitPool:getRebateRoundLimit()
+	local limit = ConfigReader:getDataByNameIdAndKey("ConfigValue", "DrawCard_Rebate_Limit", "content")
+
+	return limit or 999
+end
+
+function RecruitPool:getRebateCanShow()
+	local rebate = self:getRebate()
+
+	if #self._rebate == 0 or self:getRebateRoundLimit() < self:getBateRound() then
+		return false
+	end
+
+	return true
+end
+
 function RecruitPool:hasRedPoint()
+	if self:getRebateRoundLimit() < self:getBateRound() then
+		return false
+	end
+
 	local data = self:getRebate()
 
 	for index, info in ipairs(data) do

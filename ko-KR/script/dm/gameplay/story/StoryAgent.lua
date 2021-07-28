@@ -25,6 +25,7 @@ function BaseStoryAgent:initialize()
 	self._dialogues = {}
 	self._isStatisticSta = false
 	self._currentStoryType = ""
+	self._onEnd = nil
 end
 
 function BaseStoryAgent:dispose()
@@ -133,6 +134,10 @@ function BaseStoryAgent:_runScript(scriptname, setEnv, onEnd)
 	return script
 end
 
+function BaseStoryAgent:setStoryEnd(onEnd)
+	self._onEnd = onEnd
+end
+
 function BaseStoryAgent:checkSave(scriptnames)
 	for _, scriptname in ipairs(scriptnames) do
 		if not self:isSaved(scriptname) then
@@ -169,6 +174,12 @@ function BaseStoryAgent:_endScriptList(onEnd)
 
 	if onEnd then
 		onEnd(script, context)
+	end
+
+	if self._onEnd then
+		self._onEnd()
+
+		self._onEnd = nil
 	end
 end
 

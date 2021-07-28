@@ -11,3 +11,17 @@ function ChangeLevelDV:initialize()
 		}
 	}
 end
+
+AddHeadFrame = class("AddHeadFrame", DebugViewTemplate, _M)
+
+function AddHeadFrame:initialize()
+	self._opType = 142
+	self._viewConfig = {
+		{
+			default = "",
+			name = "headId",
+			title = "头像框Id",
+			type = "Input"
+		}
+	}
+end

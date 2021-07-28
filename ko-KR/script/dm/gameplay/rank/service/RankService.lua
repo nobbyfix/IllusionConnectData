@@ -57,3 +57,9 @@ function RankService:requestRTPKAllServerRankData(params, blockUI, callback)
 
 	self:sendRequest(request, blockUI)
 end
+
+function RankService:requestStageAreanaAllServerRankData(params, blockUI, callback)
+	local request = self:newRequest(14402, params, callback)
+
+	self:sendRequest(request, blockUI)
+end

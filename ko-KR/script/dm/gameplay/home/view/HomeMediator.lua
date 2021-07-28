@@ -3010,6 +3010,146 @@ function HomeMediator:setShowHero(event)
 	self:setBoardHeroSprite()
 end
 
+function HomeMediator:mailRedPoint()
+	local mailSystem = self:getInjector():getInstance(MailSystem)
+
+	return mailSystem:queryRedPointState()
+end
+
+function HomeMediator:rankRedPoint()
+	local rankSystem = self:getInjector():getInstance(RankSystem)
+
+	return rankSystem:getRewardRedPoint()
+end
+
+function HomeMediator:friendRedPoint()
+	local friendSystem = self:getInjector():getInstance(FriendSystem)
+
+	return friendSystem:queryRedPointState()
+end
+
+function HomeMediator:activityRedPoint()
+	local st = self._activitySystem:getHomeRedPointSta()
+	local movieClipNode = self:getView():getChildByFullName("mRightFuncLayout.mActivity2Node.mMovieClip.huodong_xinzhujiemian")
+
+	movieClipNode:addCallbackAtFrame(10, function ()
+		movieClipNode:getChildByName("guang"):setVisible(st)
+	end)
+
+	return st
+end
+
+function HomeMediator:firstRechargeRedPoint()
+	local player = self:getDevelopSystem():getPlayer()
+	local rechargeState = player:getFirstRecharge()
+
+	if rechargeState == 1 then
+		return true
+	else
+		return false
+	end
+end
+
+function HomeMediator:arenaRedPoint()
+	local unlock = self._systemKeeper:isUnlock("Arena_All")
+
+	if not unlock then
+		return false
+	end
+
+	local arenaSystem = self:getInjector():getInstance(ArenaSystem)
+	local petRaceSystem = self:getInjector():getInstance(PetRaceSystem)
+	local coopBoss = self:getInjector():getInstance(CooperateBossSystem)
+	local leadStageArena = self:getInjector():getInstance(LeadStageArenaSystem)
+
+	return arenaSystem:checkAwardRed() or petRaceSystem:redPointShow() or coopBoss:redPointShow() or leadStageArena:checkShowRed()
+end
+
+function HomeMediator:exploreRedPoint()
+	local exploreSystem = self:getInjector():getInstance(ExploreSystem)
+
+	return exploreSystem:checkIsShowRedPoint()
+end
+
+function HomeMediator:heroRedPoint()
+	local heroSystem = self._developSystem:getHeroSystem()
+	local customDataSystem = self:getInjector():getInstance(CustomDataSystem)
+	local pointFirstPassCheck1 = customDataSystem:getValue(PrefixType.kGlobal, "S02S02_FirstPassState", "false")
+	local pointFirstPassCheck2 = customDataSystem:getValue(PrefixType.kGlobal, "M03S02_FirstPassState", "false")
+
+	return pointFirstPassCheck1 == "true" or pointFirstPassCheck2 == "true" or heroSystem:checkIsShowRedPoint()
+end
+
+function HomeMediator:teamRedPoint()
+	local unlock, tips = self._systemKeeper:isUnlock("Hero_Group")
+
+	if not unlock then
+		return false
+	end
+
+	local stageSystem = self:getInjector():getInstance(StageSystem)
+
+	return stageSystem:checkIsShowRedPoint()
+end
+
+function HomeMediator:recruitRedPoint()
+	local recruitSystem = self:getInjector():getInstance(RecruitSystem)
+	local customDataSystem = self:getInjector():getInstance(CustomDataSystem)
+	local pointFirstPassCheck1 = customDataSystem:getValue(PrefixType.kGlobal, "M02S01_FirstPassState", "false")
+	local pointFirstPassCheck2 = customDataSystem:getValue(PrefixType.kGlobal, "M03S04_FirstPassState", "false")
+
+	return pointFirstPassCheck1 == "true" or pointFirstPassCheck2 == "true" or recruitSystem:checkIsShowRedPoint()
+end
+
+function HomeMediator:taskRedPoint()
+	local taskSystem = self:getInjector():getInstance(TaskSystem)
+
+	return taskSystem:checkIsShowRedPoint()
+end
+
+function HomeMediator:galleryRedPoint()
+	local gallerySystem = self:getInjector():getInstance(GallerySystem)
+
+	return gallerySystem:checkIsShowRedPoint()
+end
+
+function HomeMediator:shopRedPoint()
+	return self._shopSystem:getRedPoint()
+end
+
+function HomeMediator:bagRedPoint()
+	local bagSystem = self:getInjector():getInstance(BagSystem)
+
+	return bagSystem:isBagRedPointShow()
+end
+
+function HomeMediator:challengeRedPoint()
+	local spStageSystem = self:getInjector():getInstance(SpStageSystem)
+	local stagePracticeSystem = self:getInjector():getInstance(StagePracticeSystem)
+	local crusadeSystem = self:getInjector():getInstance(CrusadeSystem)
+	local dreamSystem = self:getInjector():getInstance(DreamChallengeSystem)
+
+	return spStageSystem:checkIsShowRedPoint() or stagePracticeSystem:checkAwardRed() or crusadeSystem:canCrusadeSweep() or dreamSystem:checkIsShowRedPoint()
+end
+
+function HomeMediator:onMainChapterRedPoint()
+	local stageSystem = self:getInjector():getInstance(StageSystem)
+
+	return stageSystem:hasHomeRedPoint()
+end
+
+function HomeMediator:masterRedPoint()
+	local masterSystem = self._developSystem:getMasterSystem()
+
+	return masterSystem:checkIsShowRedPoint()
+end
+
+function HomeMediator:onClubRedPoint()
+	local clubSystem = self:getInjector():getInstance(ClubSystem)
+
+	return clubSystem:hasHomeRedPoint() or clubSystem:hasHomeActivityRedPoint()
+end
+
 function HomeMediator:checkClubRedPoint()
 	local customDataSystem = self:getInjector():getInstance(CustomDataSystem)
 	local clubSystem = self._clubSystem
@@ -3402,6 +3542,14 @@ function HomeMediator:setComplexActivityEntry()
 		[ActivityType_UI.KActivitySummerRe] = {
 			anim = "rukou_xiarihuodong",
 			aimpos = cc.p(40, 40)
+		},
+		[ActivityType_UI.KActivityTerror] = {
+			animZorder = 1,
+			img = "terror_btn_zjm_rukou.png",
+			anim = "eff_rukoutexiao_kongbubenrukou",
+			imgZorder = 2,
+			aimpos = cc.p(-90, 125),
+			imgpos = cc.p(58, 7)
 		}
 	}
 	local extraActBtn = self._rightFuncLayout:getChildByFullName("extraActBtn")

@@ -338,6 +338,21 @@ function GetRewardMediator:showOneIcon(index)
 				needDelay = true
 			})
 			icon:setScaleNotCascade(0.6)
+
+			if rewardData.type == RewardType.kHeadFrame then
+				local settingSystem = self:getInjector():getInstance(SettingSystem)
+				local data = settingSystem:checkHeadFrameExpire(rewardData.code)
+
+				if data.isExpire then
+					local markImg = ccui.ImageView:create("asset/common/touxiang_img_yiguoqi.png")
+
+					markImg:addTo(icon, 10000):posite(52, 58):setScale(1.3)
+
+					local text = ccui.Text:create(Strings:get("Frame_Expire"), TTF_FONT_FZYH_M, 18)
+
+					text:addTo(markImg):center(markImg:getContentSize())
+				end
+			end
 		end
 
 		local name = RewardSystem:getName(rewardData)

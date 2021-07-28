@@ -151,7 +151,13 @@ function ShopItem:setInfo(data)
 		local totalPrice = self._data:getPrice()
 
 		if costOff * 10 ~= 0 then
-			totalPrice = math.ceil(totalPrice / costOff)
+			local originalPrice = self._data:getOriginalPrice()
+
+			if originalPrice then
+				totalPrice = originalPrice
+			else
+				totalPrice = math.ceil(totalPrice / costOff)
+			end
 		end
 
 		self._totalMoney:setString(totalPrice)
@@ -166,7 +172,7 @@ function ShopItem:setInfo(data)
 	local width = self._totalMoney:getContentSize().width
 
 	if self._totalMoney:isVisible() then
-		self._lineImage:setContentSize(cc.size(width + 16, 16))
+		self._lineImage:setContentSize(cc.size(width + 16, 1))
 	end
 
 	self._touchPanel:setTouchEnabled(true)
@@ -529,7 +535,7 @@ function ShopItem:setDiscountImg(costOff)
 		image:addTo(self._view)
 		image:setName("DiscountMark")
 
-		local label = cc.Label:createWithTTF("", TTF_FONT_FZYH_M, 18)
+		local label = cc.Label:createWithTTF("", TTF_FONT_FZYH_M, 16)
 
 		label:addTo(image)
 		label:setPosition(cc.p(26, 19))
@@ -550,7 +556,7 @@ function ShopItem:setDiscountImg(costOff)
 		label:enableOutline(cc.c4b(58, 86, 8, 255), 2)
 	end
 
-	label:setString(costOff * 10 .. Strings:get("SHOP_COST_OFF_TEXT10"))
+	label:setString(costOff * 100 .. "%" .. Strings:get("SHOP_COST_OFF_TEXT10"))
 end
 
 function ShopItem:setLimitDateImg(time)

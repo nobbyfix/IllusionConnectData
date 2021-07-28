@@ -64,6 +64,7 @@ function ItemTipsMediator:setUi(data)
 		showAmount = data.style.showAmount
 	end
 
+	data.info.notShowFrameLimit = true
 	local icon = IconFactory:createIcon(data.info, {
 		showAmount = false
 	})

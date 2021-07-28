@@ -2477,6 +2477,78 @@
         "Type": "RTPK",
         "WaitingTime": 1000
     },
+    "Loading_StageArena_1": {
+        "Background": {
+            "img": [
+                "album_photo_20.jpg",
+                "album_photo_12.jpg",
+                "album_photo_03.jpg",
+                "album_active_5.jpg"
+            ],
+            "quanzhong": [
+                2,
+                1,
+                1,
+                1
+            ]
+        },
+        "Content": {
+            "img": [
+                "StageArena_LoadingTip01",
+                "StageArena_LoadingTip02",
+                "StageArena_LoadingTip03",
+                "StageArena_LoadingTip04",
+                "StageArena_LoadingTip05"
+            ],
+            "quanzhong": [
+                1500,
+                1500,
+                1500,
+                1000,
+                1000,
+                1000
+            ]
+        },
+        "FirstLoading": 1,
+        "Type": "StageArena",
+        "WaitingTime": 1000
+    },
+    "Loading_StageArena_2": {
+        "Background": {
+            "img": [
+                "album_photo_20.jpg",
+                "album_photo_12.jpg",
+                "album_photo_03.jpg",
+                "album_active_5.jpg"
+            ],
+            "quanzhong": [
+                2,
+                1,
+                1,
+                1
+            ]
+        },
+        "Content": {
+            "img": [
+                "StageArena_LoadingTip01",
+                "StageArena_LoadingTip02",
+                "StageArena_LoadingTip03",
+                "StageArena_LoadingTip04",
+                "StageArena_LoadingTip05"
+            ],
+            "quanzhong": [
+                1500,
+                1500,
+                1500,
+                1000,
+                1000,
+                1000
+            ]
+        },
+        "FirstLoading": 0,
+        "Type": "StageArena",
+        "WaitingTime": 700
+    },
     "Loading_StageCrystal001": {
         "Background": {
             "img": [

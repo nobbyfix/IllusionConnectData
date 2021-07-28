@@ -150,8 +150,6 @@ function MasterLeadStage:initConfig()
 end
 
 function MasterLeadStage:syncData(data)
-	dump(data, "syncDatasyncDatasyncDatasyncData " .. self._masterId)
-
 	if not self._detailConfig then
 		return
 	end

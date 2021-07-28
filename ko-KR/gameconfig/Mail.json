@@ -779,6 +779,19 @@
         "TopStatus": 0,
         "Type": "USER"
     },
+    "Mail_EightDays_Terror": {
+        "Content": "Mail_EightDays_Terror_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_Terror_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_EightDays_Terror_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
     "Mail_FAC_Warning10": {
         "Content": "Mail_FAC_Warning10_Content",
         "ExpireAfterRead": 72000,
@@ -1429,6 +1442,19 @@
         "TopStatus": 0,
         "Type": "USER"
     },
+    "Mail_RTPK_WinReward": {
+        "Content": "Mail_RTPK_WinReward_Desc",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_RTPK_Sender",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_RTPK_WinReward_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
     "Mail_Return": {
         "Content": "Mail_Return_Desc",
         "ExpireAfterRead": 72000,
@@ -1504,6 +1530,45 @@
         "Reward": "",
         "SubType": 1,
         "Title": "Mail_Snowflake_DailyTask_Activity_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
+    "Mail_StageArena_GoldReward": {
+        "Content": "Mail_StageArena_GoldReward_Desc",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_StageArena_Sender",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_StageArena_GoldReward_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
+    "Mail_StageArena_RankReward": {
+        "Content": "Mail_StageArena_RankReward_Desc",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_StageArena_Sender",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_StageArena_RankReward_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
+    "Mail_StageArena_Replenish": {
+        "Content": "Mail_StageArena_Replenish_Desc",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_StageArena_Sender",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_StageArena_Replenish_Title",
         "TopStatus": 0,
         "Type": "USER"
     },
@@ -1648,6 +1713,32 @@
         "SubType": 0,
         "Title": "Mail_Task_Activity_20210310_Title",
         "TopStatus": "",
+        "Type": "USER"
+    },
+    "Mail_Terror_AchieveMentTask_Activity": {
+        "Content": "Mail_Terror_AchieveMentTask_Activity_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_Terror_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_Terror_AchieveMentTask_Activity_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
+    "Mail_Terror_DailyTask_Activity": {
+        "Content": "Mail_Terror_DailyTask_Activity_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_Terror_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_Terror_DailyTask_Activity_Title",
+        "TopStatus": 0,
         "Type": "USER"
     },
     "Mail_Test1": {

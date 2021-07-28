@@ -208,6 +208,17 @@
         "UnlockDesc": "BHTZi_HeadUnlock",
         "Zoom": 0.5
     },
+    "Head_BHTZi_2": {
+        "HeadDesc": "Surface_BHTZi_ghost_Desc",
+        "HeadName": "BHTZi_2_HeadName",
+        "HeroMasterId": "BHTZi",
+        "IconPath": "asset/heros/bsu_ghost/battlepic_bsu_ghost.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "Surface_BHTZi_2",
+        "Type": 5,
+        "UnlockDesc": "BHTZi_2_HeadUnlock",
+        "Zoom": 0.5
+    },
     "Head_BLTu": {
         "HeadDesc": "HeroBase_Desc_BLTu",
         "HeadName": "BLTu_HeadName",
@@ -934,6 +945,17 @@
         "UnlockDesc": "MTZMEShi_2_HeadUnlock",
         "Zoom": 0.5
     },
+    "Head_MYing": {
+        "HeadDesc": "HeroBase_Desc_MYing",
+        "HeadName": "MYing_HeadName",
+        "HeroMasterId": "MYing",
+        "IconPath": "asset/heros/MYing/battlepic_mwsi.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "",
+        "Type": 1,
+        "UnlockDesc": "MYing_HeadUnlock",
+        "Zoom": 0.5
+    },
     "Head_MZGXiu": {
         "HeadDesc": "HeroBase_Desc_MZGXiu",
         "HeadName": "MZGXiu_HeadName",
@@ -1489,7 +1511,7 @@
         "HeadName": "WSLi_HeadName",
         "HeroMasterId": "WSLi",
         "IconPath": "asset/heros/aflya/battlepic_aflya.png",
-        "IsHiddenHead": 1,
+        "IsHiddenHead": 0,
         "SurfaceMasterId": "",
         "Type": 1,
         "UnlockDesc": "WSLi_HeadUnlock",
@@ -1858,6 +1880,17 @@
         "UnlockDesc": "HeroAwaken_BHTZi",
         "Zoom": 1.0
     },
+    "HeroAwaken_BQDShe": {
+        "HeadDesc": "HeroAwaken_BQDShe_Desc",
+        "HeadName": "HeroAwaken_BQDShe_1_Name",
+        "HeroMasterId": "BQDShe",
+        "IconPath": "asset/heros/BQDShe/battlepic_zqba_awaken.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "",
+        "Type": 4,
+        "UnlockDesc": "HeroAwaken_BQDShe",
+        "Zoom": 1.0
+    },
     "HeroAwaken_CZheng": {
         "HeadDesc": "HeroAwaken_CZheng_Desc",
         "HeadName": "HeroAwaken_CZheng_1_Name",
@@ -1889,6 +1922,17 @@
         "SurfaceMasterId": "",
         "Type": 4,
         "UnlockDesc": "HeroAwaken_FLYDe",
+        "Zoom": 1.0
+    },
+    "HeroAwaken_HGEr": {
+        "HeadDesc": "HeroAwaken_HGEr_Desc",
+        "HeadName": "HeroAwaken_HGEr_1_Name",
+        "HeroMasterId": "HGEr",
+        "IconPath": "asset/heros/glte/battlepic_glte_awaken.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "",
+        "Type": 4,
+        "UnlockDesc": "HeroAwaken_HGEr",
         "Zoom": 1.0
     },
     "HeroAwaken_JNLong": {

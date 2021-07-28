@@ -140,7 +140,8 @@ function exports.ApplyEnchant(env, player, card, config, enchants)
 
 	local enchantConfig = {
 		duration = config.duration,
-		timing = config.timing
+		timing = config.timing,
+		tags = config.tags
 	}
 	local enchantObject = EnchantObject:new(enchantConfig, enchants)
 
@@ -222,6 +223,14 @@ function exports.DispelBuffOnHeroCard(env, heroCard, tags)
 	end
 
 	return cardSystem:getTiggerBuffCountOnHeroCard(heroCard, tags)
+end
+
+function exports.SelectEnhanceCount(env, player, target, tagOrFilter)
+	local cardSystem = env.global["$CardSystem"]
+	local matchFunc = makeBuffMatchFunction(env, tagOrFilter)
+	local buffs, count = cardSystem:selectEnchantOnTarget(player, target, matchFunc)
+
+	return count
 end
 
 function exports.LockHeroCards(env, player, cardfilter)

@@ -141,8 +141,15 @@ function ComposeToEquipTipsMediator:setCompose(data, composeConfigData)
 				Image_62:setVisible(false)
 
 				local pos = bagSystem:getComposePos(oneItemData.id)
+				local icon = IconFactory:createIcon({
+					id = oneItemData.id,
+					amount = oneItemData.amount
+				}, {
+					showAmount = true
+				})
 
-				Image_pos:loadTexture(composePosImage[pos], ccui.TextureResType.plistType)
+				icon:setScale(0.8)
+				icon:addTo(Image_pos):center(Image_pos:getContentSize())
 			else
 				Image_pos:setVisible(not not weaponIcon[oneItemData.type])
 

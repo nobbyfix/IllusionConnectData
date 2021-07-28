@@ -90,6 +90,9 @@ function BattleUniqueSkillAction:doStart(battleContext)
 	if actor:isInStages(ULS_Newborn) then
 		self._formationSystem:changeUnitSettled(actor)
 	end
+
+	local cardInfo = actor:getCardInfo()
+	self._duration = cardInfo and cardInfo.enterPauseTime
 end
 
 function BattleUniqueSkillAction:doSkill()

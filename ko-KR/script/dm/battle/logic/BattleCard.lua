@@ -242,6 +242,12 @@ function HeroCard:usedByPlayer(player, battleContext, trgtCellNo, cost, wontEven
 		buffSystem:recordEnterBuffs(unit, self._triggerBuffs)
 	end
 
+	local battleRecorder = battleContext:getObject("BattleRecorder")
+
+	battleRecorder:recordEvent(player:getId(), "UseHeroCard", {
+		cardId = self:getId()
+	})
+
 	return true, unit
 end
 
@@ -344,19 +350,39 @@ function SkillCard:initWithData(data)
 	self._skillData = data.skill
 	self._skillPic = data.skillPic
 	self._autoWeight = data.autoWeight
+	self._targetCell = nil
 
 	return self
+end
+
+function SkillCard:getSkillInfo()
+	return {
+		id = self._id,
+		cost = self._rawCost,
+		skill = self._skillData,
+		skillPic = self._skillPic,
+		autoWeight = self._autoWeight,
+		cardType = self._cardType
+	}
 end
 
 function SkillCard:getType()
 	return "skill"
 end
 
+function SkillCard:getType()
+	return "skill"
+end
+
+function SkillCard:setTargetCell(cellId)
+	self._targetCell = cellId
+end
+
 local function isValidUnit(unit)
 	return not unit:isInStages(ULS_Dying, ULS_Dead, ULS_Kicked)
 end
 
-function SkillCard:usedByPlayer(player, battleContext, cost)
+function SkillCard:usedByPlayer(player, battleContext, cost, args)
 	local actor = player:getMasterUnit()
 
 	if not actor or not isValidUnit(actor) then
@@ -376,6 +402,10 @@ function SkillCard:usedByPlayer(player, battleContext, cost)
 
 	if energyInfo then
 		battleContext:getObject("ProcessRecorder"):recordObjectEvent(player:getId(), "SyncE", energyInfo)
+	end
+
+	for k, v in pairs(args.extra or {}) do
+		self._skillData.args[k] = v
 	end
 
 	local skill = BattleSkill:new(self._skillData)

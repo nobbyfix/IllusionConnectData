@@ -41,6 +41,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_Activity_Block_Num_Desc"
     },
+    "Condi_Activity_Story_Block": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "actStoryPass.?1.?2",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_Activity_Story_Block_Desc"
+    },
     "Condi_AddFriend": {
         "AchieveType1": "CUSTOM",
         "AchieveType2": "",
@@ -1238,6 +1245,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_TargetResStageLevel_Desc"
     },
+    "Condi_TerrorExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_Terror_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_TerrorExchangeAchieve_Desc"
+    },
     "Condi_TodayLogin": {
         "AchieveType1": "TOTALLOGIN",
         "AchieveType2": "",
@@ -1489,5 +1503,12 @@
         "ConditionType1": "winNewActStage.?1",
         "ConditionType2": "",
         "EffectDesc": "Condi_winNewActStage_Desc"
+    },
+    "StageArena_GoldReward": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.playerStageArena.rlyehCoin",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_StageArena_GoldReward"
     }
 }

@@ -831,6 +831,8 @@ function BattleUIMediator:dragBegan(cardArray, activeCard, touchPoint)
 		end)
 	end
 
+	self._activeCard = activeCard
+
 	self._battleGround:previewCellLocks()
 end
 
@@ -863,6 +865,85 @@ function BattleUIMediator:dragMoved(cardArray, activeCard, touchPoint)
 			self._battleGround:resumePreviews()
 			self._battleGround:resumeProfessionalRestraint()
 		end
+	end
+end
+
+function BattleUIMediator:dragExtraSkillMoved(cardArray, activeCard, touchPoint)
+	if self._battleGround then
+		local col, cellId = self._battleGround:checkTouchCollision(activeCard, touchPoint)
+
+		if col then
+			if cellId ~= activeCard.tmpCellId then
+				activeCard.tmpCellId = cellId
+				local result = {}
+
+				for i = 1, 9 do
+					result[i] = {
+						color = "Green",
+						id = i
+					}
+				end
+
+				for i = 1, 9 do
+					result[#result + 1] = {
+						color = "Green",
+						id = 0 - i
+					}
+				end
+
+				self._battleGround:previewTargets(result)
+			end
+		else
+			activeCard.tmpCellId = nil
+
+			self._battleGround:resumePreviews()
+		end
+	end
+end
+
+function BattleUIMediator:dragExtraSkillEnded(cardArray, activeCard, touchPoint)
+	if self._battleGround then
+		if self._viewContext == nil then
+			return
+		end
+
+		if self._battleGround == nil then
+			return
+		end
+
+		self._battleGround:resumePreviews()
+		self._battleGround:onHeroCardTouchEnded()
+		self:stopBulletTime()
+		self:hideHeroTip()
+		self._battleGround:resumeProfessionalRestraint()
+		self._battleGround:resumeCellLocks()
+
+		while true do
+			local canPush, posIdx, isLeft = self._battleGround:checkCanPushHero(activeCard, touchPoint)
+
+			if not canPush then
+				break
+			end
+
+			if self._viewContext:isBattleFinished() then
+				break
+			end
+
+			local cost = activeCard:getCost()
+
+			if not self._energyBar:isEnergyEnough(cost) then
+				break
+			end
+
+			self:applySkillCard(cardArray, activeCard, touchPoint, {
+				cellId = posIdx,
+				isLeft = isLeft
+			})
+
+			return
+		end
+
+		activeCard:restoreNormalState(cc.p(0, 0))
 	end
 end
 
@@ -908,6 +989,16 @@ function BattleUIMediator:dragEnded(cardArray, activeCard, touchPoint)
 
 	self._battleGround:hideUnrealSpine()
 	activeCard:restoreNormalState(cc.p(0, 0))
+
+	self._activeCard = nil
+end
+
+function BattleUIMediator:usedCard(cardId)
+	if self._activeCard and self._activeCard:getCardId() == cardId then
+		self:dragCancelled()
+
+		self._activeCard = nil
+	end
 end
 
 function BattleUIMediator:dragCancelled()
@@ -922,6 +1013,8 @@ function BattleUIMediator:dragCancelled()
 	end
 
 	self._battleGround:resumeCellLocks()
+
+	self._activeCard = nil
 end
 
 function BattleUIMediator:startPut(cardArray, card)
@@ -1082,16 +1175,16 @@ function BattleUIMediator:refreshSkillCard()
 	end)
 end
 
-function BattleUIMediator:applySkillCard(cardArray, card, touchPoint)
+function BattleUIMediator:applySkillCard(cardArray, card, touchPoint, extra)
 	if self._viewContext == nil then
 		return
 	end
 
 	card:setStatus("in-use")
 
-	local canRelease = self._battleGround:checkCanPushSkill(card, touchPoint)
+	local canRelease = self._battleGround:checkCanPushSkill(card, touchPoint, extra)
 
-	if not canRelease then
+	if not canRelease and not extra then
 		card:getView():setVisible(true)
 		card:setStatus("norm")
 		card:restoreNormalState(cc.p(0, 0))
@@ -1101,7 +1194,8 @@ function BattleUIMediator:applySkillCard(cardArray, card, touchPoint)
 
 	local args = {
 		idx = card:getIndex(),
-		card = card:getCardId()
+		card = card:getCardId(),
+		extra = extra
 	}
 
 	card:getView():setVisible(false)
@@ -1260,6 +1354,10 @@ function BattleUIMediator:resumeEnergyIncreasing()
 end
 
 function BattleUIMediator:replaceCard(idxInSlot, card, next)
+	if idxInSlot > 4 then
+		return
+	end
+
 	self._cardArray:setCardAtIndex(idxInSlot, nil)
 
 	local timeScale = self._viewContext:getTimeScale()
@@ -1359,6 +1457,47 @@ function BattleUIMediator:updateCardArray(cards, remain, next)
 	end
 
 	self._cardArray:setRemainingCount(math.max(remain - 4, 0))
+end
+
+function BattleUIMediator:updateExtraCardArray(cards, remain)
+	local timeScale = self._viewContext:getTimeScale()
+	local count = 0
+
+	for i = math.min(2, #cards), 1, -1 do
+		local cardInfo = cards[i]
+
+		if type(cardInfo) == "table" then
+			local cardWidget = cardInfo.type == "skill" and ExtraSkillCardWidget or ExtraHeroCardWidget
+			local view = cardWidget:createWidgetNode()
+			local card = cardWidget:new(view)
+
+			card:updateCardInfo(cardInfo)
+			self._cardArray:pushPreviewCard(card)
+
+			count = count + 1
+		end
+	end
+
+	for i = 1, count do
+		local delay = 0.3 * (i - 1) * timeScale
+
+		self._cardArray:putPreviewCardAtIndex(4 + i, delay, timeScale)
+	end
+end
+
+function BattleUIMediator:replaceExtraPreview(preview, index)
+	if preview and type(preview) == "table" then
+		local cardWidget = preview.type == "skill" and ExtraSkillCardWidget or ExtraHeroCardWidget
+		local view = cardWidget:createWidgetNode()
+		local card = cardWidget:new(view)
+
+		card:updateCardInfo(preview)
+		self._cardArray:pushPreviewCard(card)
+	end
+
+	local timeScale = self._viewContext:getTimeScale()
+
+	self._cardArray:putPreviewCardAtIndex(index, 0, timeScale)
 end
 
 function BattleUIMediator:removeCards()

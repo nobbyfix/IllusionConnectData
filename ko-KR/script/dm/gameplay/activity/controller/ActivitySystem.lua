@@ -28,8 +28,6 @@ ActivitySystem:has("_curStageType", {
 	is = "rw"
 })
 
-local checkNewOpenActivity = nil
-
 function ActivitySystem:initialize()
 	super.initialize(self)
 
@@ -42,11 +40,11 @@ function ActivitySystem:initialize()
 	self._timer = {}
 	self._initActivityClubBoss = false
 	self._bannerData = ConfigReader:getDataTable("ActivityBanner")
-	checkNewOpenActivity = {}
+	self._checkNewOpenActivity = {}
 
 	for k, v in pairs(self._bannerData) do
 		if v.Type == ActivityBannerType.kActivity then
-			checkNewOpenActivity[#checkNewOpenActivity + 1] = v.TypeId
+			self._checkNewOpenActivity[#self._checkNewOpenActivity + 1] = v.TypeId
 		end
 	end
 end
@@ -454,7 +452,7 @@ function ActivitySystem:checkActivityState()
 		if not isOver and not self._timer[activityId] then
 			self._timer[activityId] = 1
 
-			if table.indexof(checkNewOpenActivity, activityId) then
+			if table.indexof(self._checkNewOpenActivity, activityId) then
 				hasNewActivity = true
 			end
 		end
@@ -1270,7 +1268,7 @@ function ActivitySystem:getActivityCalendarList()
 			elseif ActivityBannerType.kActivity == v.Type then
 				local activity = self:getActivityById(v.TypeId)
 
-				if activity then
+				if activity and activity:getConfig().Enable ~= 0 then
 					isOpen = activity:getIsTodayOpen()
 				end
 			end
@@ -1281,6 +1279,10 @@ function ActivitySystem:getActivityCalendarList()
 				local config = ConfigReader:getRecordById("Activity", v.TypeId)
 
 				if config and config.Time and self:isActivityCalendarTimeType(config.Time) then
+					if v.EarlyShow and v.EarlyShow ~= "" then
+						closeDay = v.EarlyShow
+					end
+
 					local _, _, y, m, d, hour, min, sec = string.find(config.TimeFactor.start[1], "(%d+)-(%d+)-(%d+)%s*(%d+):(%d+):(%d+)")
 					local timestamp = TimeUtil:timeByRemoteDate({
 						year = y,
@@ -1816,6 +1818,23 @@ function ActivitySystem:checkCoopExchangeEnable(activityId)
 	end
 
 	return false
+end
+
+function ActivitySystem:getFanXingZhiMengActivity()
+	local resultActivity = nil
+	local activityList = self:getAllActivityIds()
+
+	for k, activityId in ipairs(activityList) do
+		local activity = self:getActivityById(activityId)
+
+		if activity:getUI() == ActivityType_UI.KTASKSTAGESTAR then
+			resultActivity = activity
+
+			break
+		end
+	end
+
+	return resultActivity
 end
 
 function ActivitySystem:isReturnActivityShow()

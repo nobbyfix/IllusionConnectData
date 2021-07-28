@@ -388,12 +388,17 @@ function MasterLeadStageDetailMediator:refreshRightPanel()
 	local conState, nums = self._masterSystem:checkLeadStageCondition(self._masterId, info.LeadStageLv, true)
 	local showContidion = self._leadStageData:getShowConditionByStageLv(info.LeadStageLv)
 	local desTable = {}
+	nums = nums or {}
 
 	for i, v in ipairs(showContidion) do
 		local des = nil
 		local kind = v.key
 		local value = v.value
 		nums[i] = isLeadStageOver and value.Count or nums[i]
+
+		if nums[i] == nil then
+			nums[i] = 0
+		end
 
 		if kind == MasterLeadStageCondiState.KAwaken then
 			local occupationName = GameStyle:getHeroOccupation(value.Job)

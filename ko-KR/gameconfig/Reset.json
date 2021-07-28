@@ -232,6 +232,16 @@
             "storage": 5000
         }
     },
+    "AcitvityTerrorStamina_Reset": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
     "AcitvityWuXiuHuiStamina_Reset": {
         "ResetSystem": {
             "addValue": 1,
@@ -1345,6 +1355,16 @@
                 "00:00:00"
             ],
             "setValue": 0
+        }
+    },
+    "StageArenaStamina_Reset": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 10800,
+            "initial": 5,
+            "limit": 15,
+            "resetMode": "CD",
+            "storage": 15
         }
     },
     "Tower_1_Reset": {

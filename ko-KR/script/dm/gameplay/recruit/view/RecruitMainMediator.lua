@@ -699,9 +699,7 @@ function RecruitMainMediator:refreshHeroInfo()
 end
 
 function RecruitMainMediator:refreshRewardNode()
-	self._rebate = self._recruitDataShow:getRebate()
-
-	self._rewardNode:setVisible(#self._rebate ~= 0)
+	self._rewardNode:setVisible(self._recruitDataShow:getRebateCanShow())
 
 	if not self._rewardNodeRedPoint then
 		self._rewardNodeRedPoint = RedPoint:createDefaultNode()

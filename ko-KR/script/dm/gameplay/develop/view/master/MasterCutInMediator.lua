@@ -16,63 +16,33 @@ end
 function MasterCutInMediator:onTouchMaskLayer()
 end
 
+function MasterCutInMediator:close()
+	if self._closeCallBack then
+		self._closeCallBack()
+	end
+
+	super.close(self)
+end
+
 function MasterCutInMediator:enterWithData(data)
 	local master1 = self:getView():getChildByName("master1")
 	local master2 = self:getView():getChildByName("master2")
-	local anim = cc.MovieClip:create("cutin_zhujuezhandou")
+	local animKey = "you_zhujuezhandou"
+
+	if data.enemy.leadStageLevel < data.friend.leadStageLevel then
+		animKey = "zuo_zhujuezhandou"
+	elseif data.friend.leadStageLevel == data.enemy.leadStageLevel then
+		animKey = "zhong_zhujuezhandou"
+	end
+
+	local anim = cc.MovieClip:create(animKey)
 	local leftAnim = anim:getChildByFullName("left")
 	local rightAnim = anim:getChildByFullName("right")
 
-	leftAnim:setPosition(cc.p(leftAnim:getPosition(), anim:getContentSize().height / 2))
-	rightAnim:setPosition(cc.p(rightAnim:getPosition(), anim:getContentSize().height / 2))
+	anim:gotoAndPlay(0)
 
-	local function playUp(sender)
-		local x, y = sender:getPosition()
-		local moveTo1 = cc.MoveTo:create(0.05, cc.p(x, y + 60))
-		local moveTo2 = cc.MoveTo:create(0.15, cc.p(x, y + 50))
-		local action = cc.Sequence:create(moveTo1, moveTo2)
-		local easeIn = cc.EaseIn:create(action, 1)
+	self._closeCallBack = data.closeCallFunc
 
-		sender:runAction(action)
-	end
-
-	local function playDown(sender)
-		local x, y = sender:getPosition()
-		local moveTo1 = cc.MoveTo:create(0.05, cc.p(x, y - 60))
-		local moveTo2 = cc.MoveTo:create(0.15, cc.p(x, y - 50))
-		local action = cc.Sequence:create(moveTo1, moveTo2)
-		local easeIn = cc.EaseIn:create(action, 1)
-
-		sender:runAction(action)
-	end
-
-	local vsAnim = anim:getChildByFullName("vs")
-
-	anim:addEndCallback(function (cid, mc)
-		leftAnim:stop()
-		rightAnim:stop()
-		vsAnim:stop()
-		anim:stop()
-	end)
-
-	local finishFrame = 80
-
-	if data.friend.leadStageLevel == data.enemy.leadStageLevel then
-		finishFrame = 50
-	end
-
-	anim:addCallbackAtFrame(15, function ()
-		if data.enemy.leadStageLevel < data.friend.leadStageLevel then
-			playUp(leftAnim)
-			playDown(rightAnim)
-		elseif data.friend.leadStageLevel < data.enemy.leadStageLevel then
-			playDown(leftAnim)
-			playUp(rightAnim)
-		end
-	end)
-	anim:addCallbackAtFrame(finishFrame, function ()
-		self:close()
-	end)
 	anim:addTo(self:getView()):center(self:getView():getContentSize())
 
 	local modelId_l = data.friend.waves[1].master.modelId
@@ -91,8 +61,22 @@ function MasterCutInMediator:enterWithData(data)
 	self:getView():getChildByName("mask"):addClickEventListener(function ()
 		self:close()
 	end)
-	master1:changeParent(anim:getChildByFullName("left.card")):center(anim:getChildByFullName("left.card"):getContentSize())
-	master2:changeParent(anim:getChildByFullName("right.card")):center(anim:getChildByFullName("right.card"):getContentSize())
+	anim:addCallbackAtFrame(7, function ()
+		AudioEngine:getInstance():playEffect("Se_Effect_BYYYC_Hit", false)
+	end)
+	master1:changeParent(anim:getChildByFullName("left.content")):center(anim:getChildByFullName("left.content"):getContentSize())
+	master2:changeParent(anim:getChildByFullName("right.content")):center(anim:getChildByFullName("right.content"):getContentSize())
 	master1:offset(-25, 0)
 	master2:offset(0, 0)
+
+	if data.title then
+		local label = ccui.Text:create(data.title, TTF_FONT_FZYH_M, 22)
+
+		label:addTo(anim:getChildByFullName("title")):center(anim:getChildByFullName("title"):getContentSize())
+		label:offset(-10, 0)
+	end
+
+	anim:addCallbackAtFrame(50, function ()
+		self:close()
+	end)
 end

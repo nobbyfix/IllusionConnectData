@@ -190,6 +190,15 @@ function exports.BossComingPause(env)
 	})
 end
 
+function exports.PlayBGM(env, bgm)
+	local player = env["$actor"]:getOwner()
+
+	env.global.RecordImmediately(env, kBRMainLine, "PlayBGM", {
+		bgm = bgm,
+		playerId = player:getId()
+	})
+end
+
 function exports.PvpSpeedUp(env, arg1, arg2)
 	env.global.RecordImmediately(env, kBRMainLine, "PvpSpeedUp", {
 		arg1 = arg1,

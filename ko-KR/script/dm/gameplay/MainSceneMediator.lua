@@ -179,6 +179,21 @@ local muiscCfg = {
 	MasterMainView = {
 		noAutoPlay = true
 	},
+	LeadStageArenaMainView = {
+		id = "Mus_Redwhite"
+	},
+	LeadStageArenaRivalView = {
+		noAutoPlay = true
+	},
+	LeadStageArenaTeamListView = {
+		noAutoPlay = true
+	},
+	LeadStageArenaTeamView = {
+		noAutoPlay = true
+	},
+	LeadStageArenaReportView = {
+		noAutoPlay = true
+	},
 	ShopCoopExchangeView = {
 		noAutoPlay = true
 	},
@@ -186,6 +201,9 @@ local muiscCfg = {
 		noAutoPlay = true
 	},
 	ActivityMapNewView = {
+		noAutoPlay = true
+	},
+	ActivityTerrorMainView = {
 		noAutoPlay = true
 	}
 }

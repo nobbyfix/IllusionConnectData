@@ -125,6 +125,7 @@ function SimpleBattleStatist:on_UnitSpawned(args)
 	unitInfo.quality = unit:getQuality()
 	unitInfo.qualityId = unit:getQualityId()
 	unitInfo.summoned = {}
+	unitInfo.isSummoned = unit._isSummoned
 	unitInfo.presentMaster = unit._presentMaster
 
 	if unitInfo.presentMaster then
@@ -460,6 +461,7 @@ function SimpleBattleStatist:summarize()
 			doSkill = info.doSkill,
 			cure = info.cure or 0,
 			receiveCure = info.receiveCure or 0,
+			isSummoned = info.isSummoned,
 			presentMaster = info.presentMaster
 		}
 
@@ -537,6 +539,8 @@ function SimpleBattleStatist:summarize()
 			end
 		end
 	end
+
+	dump(players, "cdskcndsjkcndk", 8)
 
 	return {
 		players = players,

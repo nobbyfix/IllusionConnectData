@@ -51,7 +51,8 @@ function SystemKeeper:isUnlock(sysName, info)
 		num = storyInfoTab.mapIndex,
 		Name = storyInfoTab.pointName,
 		uClubLevel = condition.CLUBLEVEL,
-		serverDay = condition.SERVER
+		serverDay = condition.SERVER,
+		leaderNum = condition.LEADER
 	})
 
 	return isOpen, lockTip, unLockLevel
@@ -157,6 +158,15 @@ function SystemKeeper:isConditionReached(condition, info)
 		local openServerDay = developSystem:getServerOpenDay()
 
 		if openServerDay < condition.SERVER then
+			isOpen = false
+		end
+	end
+
+	if condition.LEADER then
+		local player = self:getInjector():getInstance(DevelopSystem):getPlayer()
+		local masters = player:getMasterList():getAllMaster()
+
+		if table.nums(masters) < condition.LEADER then
 			isOpen = false
 		end
 	end

@@ -97,7 +97,8 @@ DebugBoxMainIndex = {
 					"加核心",
 					"加装备",
 					"强化装备至满级",
-					"我要装备！"
+					"我要装备！",
+					"加头像框"
 				}
 			},
 			{
@@ -126,7 +127,12 @@ DebugBoxMainIndex = {
 			{
 				"源阶",
 				{
-					"增加源阶"
+					"增加源阶",
+					"增加古币",
+					"增加源阶体力",
+					"增加源阶排行榜",
+					"清除全部赛季数据",
+					"清除服务器分组"
 				}
 			},
 			{
@@ -808,6 +814,26 @@ DebugBoxMainIndex = {
 				"DebugAddLeadStageLevel"
 			},
 			{
+				"增加古币",
+				"DebugAddStageArenaOldCoin"
+			},
+			{
+				"增加源阶体力",
+				"DebugAddStageArenaPower"
+			},
+			{
+				"增加源阶排行榜",
+				"DebugAddStageArenaRank"
+			},
+			{
+				"清除全部赛季数据",
+				"DebugClearStageArenaData"
+			},
+			{
+				"清除服务器分组",
+				"DebugClearServerGroup"
+			},
+			{
 				"增加积分(可负)",
 				"DebugRTPKScore"
 			},
@@ -842,6 +868,10 @@ DebugBoxMainIndex = {
 			{
 				"一键完成梦之轨迹",
 				"OnekeyStageTask"
+			},
+			{
+				"加头像框",
+				"AddHeadFrame"
 			},
 			{
 				"技能Args检查",

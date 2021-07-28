@@ -196,6 +196,8 @@ function LoginSystem:getPatFaceDataToSave(callback)
 	}
 
 	self._loginService:getPatFaceData(params, false, function (response)
+		self._patFaceSaveData = response
+
 		self:syncPatFaceData(response)
 
 		if callback then

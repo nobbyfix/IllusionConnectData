@@ -696,7 +696,8 @@ function LoginMediator:buildLoadingTask()
 				taskType = {
 					TaskType.kDaily,
 					TaskType.kBranch,
-					TaskType.kStage
+					TaskType.kStage,
+					TaskType.kStageArena
 				}
 			}
 
@@ -745,6 +746,16 @@ function LoginMediator:buildLoadingTask()
 				local RTPKSystem = self:getInjector():getInstance(RTPKSystem)
 
 				RTPKSystem:requestRTPKInfo(nil, false)
+			end
+		end, 1)
+		DO_ACTION(function ()
+			local systemKeeper = self:getInjector():getInstance("SystemKeeper")
+			local unlock, tips = systemKeeper:isUnlock("StageArena")
+
+			if unlock then
+				local leadStageSystem = self:getInjector():getInstance(LeadStageArenaSystem)
+
+				leadStageSystem:requestGetSeasonInfo(nil, false)
 			end
 		end, 1)
 		END()

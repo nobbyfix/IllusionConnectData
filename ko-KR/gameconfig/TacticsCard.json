@@ -8,6 +8,7 @@
         "SkillCost": 18,
         "SkillPic": "TacticsCard_Cure_Multi",
         "TagPic": "TacticsCard_Cure_Multi",
+        "ToolCard": "",
         "Type": "green",
         "Weight": 1
     },
@@ -20,6 +21,7 @@
         "SkillCost": 10,
         "SkillPic": "TacticsCard_Cure_Single",
         "TagPic": "TacticsCard_Cure_Single",
+        "ToolCard": "",
         "Type": "green",
         "Weight": 1
     },
@@ -32,6 +34,7 @@
         "SkillCost": 20,
         "SkillPic": "TacticsCard_Damage_Multi",
         "TagPic": "TacticsCard_Damage_Multi",
+        "ToolCard": "",
         "Type": "red",
         "Weight": 1
     },
@@ -44,6 +47,7 @@
         "SkillCost": 12,
         "SkillPic": "TacticsCard_Damage_Single",
         "TagPic": "TacticsCard_Damage_Single",
+        "ToolCard": "",
         "Type": "red",
         "Weight": 1
     },
@@ -56,6 +60,7 @@
         "SkillCost": 12,
         "SkillPic": "TacticsCard_MasterTaunt",
         "TagPic": "TacticsCard_Dispel_Multi",
+        "ToolCard": "",
         "Type": "green",
         "Weight": 1
     },
@@ -68,6 +73,7 @@
         "SkillCost": 8,
         "SkillPic": "TacticsCard_Dispel",
         "TagPic": "TacticsCard_Dispel_Single",
+        "ToolCard": "",
         "Type": "green",
         "Weight": 1
     },
@@ -80,6 +86,7 @@
         "SkillCost": 20,
         "SkillPic": "TacticsCard_Freeze_Multi",
         "TagPic": "TacticsCard_Freeze_Multi",
+        "ToolCard": "",
         "Type": "red",
         "Weight": 1
     },
@@ -92,6 +99,7 @@
         "SkillCost": 12,
         "SkillPic": "TacticsCard_Freeze_Single",
         "TagPic": "TacticsCard_Freeze_Single",
+        "ToolCard": "",
         "Type": "red",
         "Weight": 1
     },
@@ -104,6 +112,7 @@
         "SkillCost": 15,
         "SkillPic": "TacticsCard_HurtRateUp_Multi",
         "TagPic": "TacticsCard_HurtRateUp_Multi",
+        "ToolCard": "",
         "Type": "yellow",
         "Weight": 1
     },
@@ -116,6 +125,18 @@
         "SkillCost": 8,
         "SkillPic": "TacticsCard_HurtRateUp_Single",
         "TagPic": "TacticsCard_HurtRateUp_Single",
+        "ToolCard": "",
+        "Type": "yellow",
+        "Weight": 1
+    },
+    "TacticsCard_QHDeng": {
+        "AutoWeight": "",
+        "Condition": {},
+        "Skill": "Skill_ToolCard_QHDeng",
+        "SkillCost": 8,
+        "SkillPic": "battlepic_light_on",
+        "TagPic": "TacticsCard_QHDeng",
+        "ToolCard": 1,
         "Type": "yellow",
         "Weight": 1
     },
@@ -128,6 +149,7 @@
         "SkillCost": 18,
         "SkillPic": "TacticsCard_RageUp_Multi",
         "TagPic": "TacticsCard_RageUp_Multi",
+        "ToolCard": "",
         "Type": "yellow",
         "Weight": 1
     },
@@ -140,6 +162,7 @@
         "SkillCost": 12,
         "SkillPic": "TacticsCard_RageUp_Single",
         "TagPic": "TacticsCard_RageUp_Single",
+        "ToolCard": "",
         "Type": "yellow",
         "Weight": 1
     },
@@ -152,6 +175,7 @@
         "SkillCost": 12,
         "SkillPic": "TacticsCard_Stealth",
         "TagPic": "TacticsCard_Stealth",
+        "ToolCard": "",
         "Type": "yellow",
         "Weight": 1
     },
@@ -164,6 +188,7 @@
         "SkillCost": 15,
         "SkillPic": "TacticsCard_Summon",
         "TagPic": "TacticsCard_Summon",
+        "ToolCard": "",
         "Type": "yellow",
         "Weight": 1
     },
@@ -176,6 +201,7 @@
         "SkillCost": 18,
         "SkillPic": "TacticsCard_Sacrifice",
         "TagPic": "TacticsCard_Undead",
+        "ToolCard": "",
         "Type": "yellow",
         "Weight": 1
     }

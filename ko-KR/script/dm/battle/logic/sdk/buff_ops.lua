@@ -261,6 +261,21 @@ function exports.ResetBuffsLifespan(env, target, tagOrFilter)
 	return count
 end
 
+function exports.SelectTraps(env, cell, tagOrFilter)
+	local trapSystem = env.global["$TrapSystem"]
+	local matchFunc = makeBuffMatchFunction(env, tagOrFilter)
+
+	return trapSystem:selectBuffsOnTarget(cell, matchFunc)
+end
+
+function exports.SelectTrapCount(env, cell, tagOrFilter)
+	local trapSystem = env.global["$TrapSystem"]
+	local matchFunc = makeBuffMatchFunction(env, tagOrFilter)
+	local buffs, count = trapSystem:selectBuffsOnTarget(cell, matchFunc)
+
+	return count
+end
+
 function exports.LimitHpEffect(env, value)
 	return LimitHpEffect:new({
 		value = value
@@ -269,7 +284,7 @@ end
 
 function exports.MaxHpEffect(env, value)
 	return MaxHpEffect:new({
-		value = value
+		value = math.floor(value)
 	})
 end
 
@@ -453,6 +468,20 @@ function exports.ImmuneBuff(env, tagOrFilter)
 	end
 
 	return ImmuneBuffEffect:new({
+		filter = matchFunc
+	})
+end
+
+function exports.ImmuneTrapBuffEffect(env, tagOrFilter)
+	local matchFunc = makeBuffMatchFunction(env, tagOrFilter)
+
+	if matchFunc == nil then
+		function matchFunc(buff)
+			return true
+		end
+	end
+
+	return ImmuneTrapBuffEffect:new({
 		filter = matchFunc
 	})
 end
