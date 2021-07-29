@@ -300,15 +300,17 @@ function RegularBattleLogic:handle_HeroCard(player, op, args)
 		return false, detail
 	end
 
-	local newCard, nextCard = player:fillCardAtIndex(idx)
+	if idx <= 4 then
+		local newCard, nextCard = player:fillCardAtIndex(idx)
 
-	if self._battleRecorder ~= nil then
-		self._battleRecorder:recordEvent(player:getId(), "Card", {
-			type = "hero",
-			idx = idx,
-			card = newCard and newCard:dumpInformation() or 0,
-			next = nextCard and nextCard:dumpInformation() or 0
-		})
+		if self._battleRecorder ~= nil then
+			self._battleRecorder:recordEvent(player:getId(), "Card", {
+				type = "hero",
+				idx = idx,
+				card = newCard and newCard:dumpInformation() or 0,
+				next = nextCard and nextCard:dumpInformation() or 0
+			})
+		end
 	end
 
 	if self._battleStatist ~= nil then
@@ -347,21 +349,23 @@ function RegularBattleLogic:handle_SkillCard(player, op, args)
 		return false, "cardIsLocked"
 	end
 
-	local ok, detail = card:usedByPlayer(player, self._battleContext)
+	local ok, detail = card:usedByPlayer(player, self._battleContext, nil, args)
 
 	if not ok then
 		return false, detail
 	end
 
-	local newCard, nextCard = player:fillCardAtIndex(idx)
+	if idx <= 4 then
+		local newCard, nextCard = player:fillCardAtIndex(idx)
 
-	if self._battleRecorder ~= nil then
-		self._battleRecorder:recordEvent(player:getId(), "Card", {
-			type = "skill",
-			idx = idx,
-			card = newCard and newCard:dumpInformation() or 0,
-			next = nextCard and nextCard:dumpInformation() or 0
-		})
+		if self._battleRecorder ~= nil then
+			self._battleRecorder:recordEvent(player:getId(), "Card", {
+				type = "skill",
+				idx = idx,
+				card = newCard and newCard:dumpInformation() or 0,
+				next = nextCard and nextCard:dumpInformation() or 0
+			})
+		end
 	end
 
 	if self._battleStatist ~= nil then

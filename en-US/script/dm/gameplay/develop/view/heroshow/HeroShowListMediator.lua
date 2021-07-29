@@ -424,8 +424,9 @@ function HeroShowListMediator:createTeamCell(cell, index)
 			local nameBg = actionNode:getChildByFullName("nameBg")
 
 			if not nameBg then
-				nameBg = cc.Sprite:create("asset/common/common_bd_jsmd.png")
+				nameBg = ccui.ImageView:create("asset/common/common_bd_jsmd.png", ccui.TextureResType.localType)
 
+				nameBg:setScale9Enabled(true)
 				nameBg:setAnchorPoint(cc.p(0.5, 0))
 				nameBg:addTo(actionNode):posite(91, -8.6)
 				nameBg:setName("nameBg")
@@ -673,6 +674,12 @@ function HeroShowListMediator:createTeamCell(cell, index)
 			name:setPositionX(0)
 			qualityLevel:setPositionX(name:getContentSize().width)
 			namePanel:setContentSize(cc.size(name:getContentSize().width + qualityLevel:getContentSize().width, 30))
+
+			local nameWidth = name:getContentSize().width + qualityLevel:getContentSize().width
+			local w = math.max(104, nameWidth + 25)
+
+			nameBg:setContentSize(cc.size(w, nameBg:getContentSize().height))
+			nameBg:setPositionX(namePanel:getPositionX())
 			heroIcon:setVisible(true)
 
 			if heroData.id == self._chooseHeroId then

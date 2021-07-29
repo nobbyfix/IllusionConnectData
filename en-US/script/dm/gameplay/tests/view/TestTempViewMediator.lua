@@ -41,4 +41,20 @@ function TestTempViewMediator:setupView()
 
 	self._des:addChild(label)
 	label:setPosition(cc.p(280, 0))
+
+	local anim = cc.MovieClip:create("jinru_zhuxianguanka_UIjiaohudongxiao")
+
+	anim:setPosition(cc.p(300, 300))
+	anim:addTo(self._view):offset(250, 0)
+
+	local sp = cc.Sprite:create("asset/11111.jpg")
+
+	sp:setPosition(cc.p(300, 300))
+	sp:addTo(self._view):offset(250, 0)
+	sp:setSaturation(-50)
+
+	local a = sp:getColorMatrix()
+
+	sp:setColorMatrix(a)
+	dump(a)
 end

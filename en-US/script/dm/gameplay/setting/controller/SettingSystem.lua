@@ -1234,6 +1234,7 @@ KFrameType = {
 	Zodiac = "ZODIAC",
 	FESTIVAL = "FESTIVAL",
 	LEADSTAGE = "LEADSTAGE",
+	LIMIT = "LIMIT",
 	RARE = "RARE"
 }
 KFrameSort = {
@@ -1242,6 +1243,7 @@ KFrameSort = {
 	FESTIVAL = 2,
 	ZODIAC = 4,
 	LEADSTAGE = 5,
+	LIMIT = 6,
 	RARE = 3
 }
 
@@ -1251,6 +1253,65 @@ function SettingSystem:getHeadFrameData()
 	end
 
 	return self._headFrameDB
+end
+
+function SettingSystem:getHeadFrameGetTime(id)
+	local developSystem = self:getInjector():getInstance(DevelopSystem)
+	local headFrames = developSystem:getPlayer():getHeadFrames()
+
+	for k, time in pairs(headFrames) do
+		if k == id then
+			return time
+		end
+	end
+end
+
+function SettingSystem:checkHeadFrameExpire(id, data)
+	data = data or {}
+	data.isExpire = false
+	local getDate = data.frameData or self:getHeadFrameGetTime(id)
+	local config = ConfigReader:getRecordById("PlayerHeadFrame", id)
+
+	if config.CondiType == "Time" then
+		local gameServerAgent = self:getInjector():getInstance(GameServerAgent)
+		local curTime = gameServerAgent:remoteTimeMillis()
+		data.expireTime = getDate + config.TypeNum.value * 86400 * 1000
+		data.useText = config.TypeDesc
+
+		if data.expireTime < curTime then
+			data.isExpire = true
+		end
+	end
+
+	if config.CondiType == "RTPK" then
+		local rtpk = self:getInjector():getInstance(RTPKSystem):getRtpk()
+		local rank = rtpk:getHistoryRank()
+
+		if rank < config.TypeNum.value[1] or config.TypeNum.value[2] < rank then
+			data.isExpire = true
+		end
+	end
+
+	if config.CondiType == "StageArena" then
+		local leadStageArena = self:getInjector():getInstance(LeadStageArenaSystem):getLeadStageArena()
+		local rank = leadStageArena:getHistoryRank()
+
+		if rank < config.TypeNum.value[1] or config.TypeNum.value[2] < rank then
+			data.isExpire = true
+		end
+	end
+
+	return data
+end
+
+function SettingSystem:setLimitHeadFrameData(id, data)
+	local config = ConfigReader:getRecordById("PlayerHeadFrame", id)
+
+	if config.Type == KFrameType.LIMIT then
+		data.isLimit = true
+
+		self:checkHeadFrameExpire(id, data)
+	end
 end
 
 function SettingSystem:getShowHeadFrameList()
@@ -1266,8 +1327,15 @@ function SettingSystem:getShowHeadFrameList()
 		}
 
 		if headFrames[k] then
-			data.unlock = 1
 			data.frameData = headFrames[k]
+
+			self:setLimitHeadFrameData(k, data)
+
+			if data.isLimit and data.isExpire then
+				data.unlock = 0
+			else
+				data.unlock = 1
+			end
 		end
 
 		if data.unlock == 1 or value.Unlook == 1 then

@@ -1080,6 +1080,10 @@ function BattleRoleObject:colorDye(args)
 end
 
 function BattleRoleObject:colorReset()
+	if self._hsvChange then
+		return
+	end
+
 	self._roleAnim:setSaturation(0)
 	self._roleAnim:setColorMatrix(self._baseColorMatrix)
 	self._roleAnim:setColorTransform(self._baseColorTrans)
@@ -7441,6 +7445,19 @@ function BattleRoleObject:resumeProfessionalRestraint()
 
 end
 
+function BattleRoleObject:modifyMaxHp(oldMax, MaxHp)
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #0 1-7, warpins: 1 ---
+	self._topBar:setMaxHpValue(oldMax, MaxHp)
+
+	return
+	--- END OF BLOCK #0 ---
+
+
+
+end
+
 function BattleRoleObject:getShowRpNum(num)
 
 	-- Decompilation error in this vicinity:
@@ -7495,6 +7512,114 @@ function BattleRoleObject:getShowRpNum(num)
 	--- BLOCK #4 17-17, warpins: 4 ---
 	return num
 	--- END OF BLOCK #4 ---
+
+
+
+end
+
+function BattleRoleObject:setHSVColor(hue, contrast, brightness, saturation)
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #0 1-8, warpins: 1 ---
+	print(hue, contrast, brightness, saturation)
+	--- END OF BLOCK #0 ---
+
+	if hue ~= 0 then
+	JUMP TO BLOCK #1
+	else
+	JUMP TO BLOCK #2
+	end
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #1 9-15, warpins: 1 ---
+	self._roleAnim:setHue(hue)
+
+	self._hsvChange = true
+
+	--- END OF BLOCK #1 ---
+
+	FLOW; TARGET BLOCK #2
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #2 16-17, warpins: 2 ---
+	--- END OF BLOCK #2 ---
+
+	if contrast ~= 0 then
+	JUMP TO BLOCK #3
+	else
+	JUMP TO BLOCK #4
+	end
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #3 18-24, warpins: 1 ---
+	self._roleAnim:setContrast(contrast)
+
+	self._hsvChange = true
+
+	--- END OF BLOCK #3 ---
+
+	FLOW; TARGET BLOCK #4
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #4 25-26, warpins: 2 ---
+	--- END OF BLOCK #4 ---
+
+	if brightness ~= 0 then
+	JUMP TO BLOCK #5
+	else
+	JUMP TO BLOCK #6
+	end
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #5 27-33, warpins: 1 ---
+	self._roleAnim:setBrightness(brightness)
+
+	self._hsvChange = true
+
+	--- END OF BLOCK #5 ---
+
+	FLOW; TARGET BLOCK #6
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #6 34-35, warpins: 2 ---
+	--- END OF BLOCK #6 ---
+
+	if saturation ~= 0 then
+	JUMP TO BLOCK #7
+	else
+	JUMP TO BLOCK #8
+	end
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #7 36-42, warpins: 1 ---
+	self._roleAnim:setSaturation(saturation)
+
+	self._hsvChange = true
+
+	--- END OF BLOCK #7 ---
+
+	FLOW; TARGET BLOCK #8
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #8 43-43, warpins: 2 ---
+	return
+	--- END OF BLOCK #8 ---
 
 
 

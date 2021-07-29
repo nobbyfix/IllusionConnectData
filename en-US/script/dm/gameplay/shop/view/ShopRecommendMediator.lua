@@ -9,6 +9,9 @@ ShopRecommendMediator:has("_developSystem", {
 ShopRecommendMediator:has("_rechargeSystem", {
 	is = "r"
 }):injectWith("RechargeAndVipSystem")
+ShopRecommendMediator:has("_activitySystem", {
+	is = "rw"
+}):injectWith("ActivitySystem")
 
 local kNums = 1
 local kCellHeight = 490
@@ -22,6 +25,7 @@ end
 
 function ShopRecommendMediator:dispose()
 	self:clearView()
+	self:stopTimer()
 	super.dispose(self)
 end
 
@@ -31,6 +35,7 @@ function ShopRecommendMediator:onRegister()
 end
 
 function ShopRecommendMediator:mapEventListeners()
+	self:mapEventListener(self:getEventDispatcher(), EVT_BUY_ACTIVITY_PAY_SUCC, self, self.refreshShopData)
 end
 
 function ShopRecommendMediator:onRemove()
@@ -98,6 +103,10 @@ function ShopRecommendMediator:initMember()
 	self._talkText = self._talkRole:getChildByName("Text_talk")
 
 	self._talkText:setString("")
+
+	self._fanxingPanel = self:getView():getChildByFullName("panel_fanxing")
+
+	self._fanxingPanel:setVisible(false)
 	self:adjustView()
 end
 
@@ -124,6 +133,7 @@ function ShopRecommendMediator:refreshView()
 
 	self:getView():stopAllActions()
 	self:initRightTabController()
+	self._fanxingPanel:setVisible(false)
 
 	local path = "asset/ui/shop/" .. self._data.BackGroundImg .. ".jpg" or "sd_tj_ggt.png"
 
@@ -173,6 +183,40 @@ function ShopRecommendMediator:refreshView()
 			end
 
 			self._bgImage.frameIcon:setVisible(true)
+		end
+	elseif pid == KMonthCardType.KCardFanxingZhi then
+		local activity = self._activitySystem:getFanXingZhiMengActivity()
+
+		if activity then
+			self._fanxingPanel:setVisible(true)
+
+			local activityConfig = activity:getActivityConfig()
+			local payId = activityConfig.payId
+			local payOffSystem = DmGame:getInstance()._injector:getInstance(PayOffSystem)
+			local symbol, price = payOffSystem:getPaySymbolAndPrice(payId)
+			local symbolS = self._fanxingPanel:getChildByFullName("symbol")
+			local moneyS = self._fanxingPanel:getChildByFullName("money")
+			local textNum = self._fanxingPanel:getChildByFullName("text_num")
+
+			symbolS:setString(symbol)
+			moneyS:setString(price)
+			textNum:setString(activity:getTotalNumReward())
+
+			if getCurrentLanguage() == GameLanguageType.EN then
+				textNum:setPositionX(678)
+			elseif getCurrentLanguage() == GameLanguageType.FR then
+				textNum:setPositionX(686)
+			elseif getCurrentLanguage() == GameLanguageType.DE then
+				textNum:setPositionX(656)
+			elseif getCurrentLanguage() == GameLanguageType.PT then
+				textNum:setPositionX(674)
+			elseif getCurrentLanguage() == GameLanguageType.ES then
+				textNum:setPositionX(678)
+			elseif getCurrentLanguage() == GameLanguageType.TH then
+				textNum:setPositionX(692)
+			end
+
+			self:setTimer()
 		end
 	elseif self._bgImage.frameIcon then
 		self._bgImage.frameIcon:setVisible(false)
@@ -291,7 +335,7 @@ end
 function ShopRecommendMediator:onClickItem(sender, eventType)
 	if eventType == ccui.TouchEventType.began then
 		self._isReturn = true
-	elseif eventType == ccui.TouchEventType.ended and self._isReturn and self._data.Link then
+	elseif eventType == ccui.TouchEventType.ended and self._isReturn and self._data.Link and self._data.Link ~= "" then
 		local context = self:getInjector():instantiate(URLContext)
 		local entry, params = UrlEntryManage.resolveUrlWithUserData(self._data.Link)
 
@@ -334,5 +378,86 @@ function ShopRecommendMediator:playAnimation(sender)
 		self._shopSystem:setPlayInstance(false)
 	else
 		self._shopSpine:playAnimation(KShopAction.beginEnd, true)
+	end
+end
+
+function ShopRecommendMediator:setTimer()
+	self:stopTimer()
+
+	local activity = self._activitySystem:getFanXingZhiMengActivity()
+
+	if not activity then
+		return
+	end
+
+	local activityConfig = activity:getActivityConfig()
+	local times = self._fanxingPanel:getChildByFullName("times")
+
+	if getCurrentLanguage() == GameLanguageType.EN then
+		times:setPositionX(380)
+	elseif getCurrentLanguage() == GameLanguageType.FR then
+		times:setPositionX(380)
+	elseif getCurrentLanguage() == GameLanguageType.DE then
+		times:setPositionX(360)
+	elseif getCurrentLanguage() == GameLanguageType.PT then
+		times:setPositionX(402)
+	elseif getCurrentLanguage() == GameLanguageType.ES then
+		times:setPositionX(440)
+	elseif getCurrentLanguage() == GameLanguageType.TH then
+		times:setPositionX(360)
+	end
+
+	local gameServerAgent = self:getInjector():getInstance("GameServerAgent")
+	local remoteTimestamp = gameServerAgent:remoteTimestamp()
+	local startTime = activity:getStartTime() / 1000
+	local buyDays = activityConfig.buyDays
+	local endMills = startTime + tonumber(buyDays) * 24 * 60 * 60
+
+	if remoteTimestamp < endMills and not self._timer then
+		local function checkTimeFunc()
+			remoteTimestamp = gameServerAgent:remoteTimestamp()
+			local endMills = startTime + tonumber(buyDays) * 24 * 60 * 60
+
+			if endMills <= remoteTimestamp then
+				self:stopTimer()
+				self:refreshData()
+
+				return
+			end
+
+			local str = ""
+			local fmtStr = "${d}:${H}:${M}:${S}"
+			local remainTime = endMills - remoteTimestamp
+			local timeStr = TimeUtil:formatTime(fmtStr, remainTime)
+			local parts = string.split(timeStr, ":", nil, true)
+			local timeTab = {
+				day = tonumber(parts[1]),
+				hour = tonumber(parts[2]),
+				min = tonumber(parts[3]),
+				sec = tonumber(parts[4])
+			}
+
+			if timeTab.day > 0 then
+				str = timeTab.day .. Strings:get("TimeUtil_Day") .. timeTab.hour .. Strings:get("TimeUtil_Hour")
+			elseif timeTab.hour > 0 then
+				str = timeTab.hour .. Strings:get("TimeUtil_Hour") .. timeTab.min .. Strings:get("TimeUtil_Min")
+			else
+				str = timeTab.min .. Strings:get("TimeUtil_Min") .. timeTab.sec .. Strings:get("TimeUtil_Sec")
+			end
+
+			times:setString(str)
+		end
+
+		checkTimeFunc()
+
+		self._timer = LuaScheduler:getInstance():schedule(checkTimeFunc, 1, false)
+	end
+end
+
+function ShopRecommendMediator:stopTimer()
+	if self._timer then
+		self._timer:stop()
+
+		self._timer = nil
 	end
 end

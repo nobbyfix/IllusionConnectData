@@ -41,6 +41,27 @@
         "StoryLink": "S11S01",
         "SurfaceId": "Surface_BHTZi_Awake"
     },
+    "BQDShe": {
+        "AnimSound": "Se_Effect_Awakening_BQDShe",
+        "Animation": "zqba_Awaken",
+        "CutIn": [
+            0,
+            0,
+            1
+        ],
+        "ModelId": "Model_BQDShe_Awake",
+        "Name": "BQDShe_Awake_Name",
+        "NameDesc": "BQDShe_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_BQDShe_UnAwake",
+        "Reward": "HeroAwaken_BQDShe",
+        "ShowHero": "BQDShe",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "BQDShe_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_BQDShe_Awake"
+    },
     "CZheng": {
         "AnimSound": "Se_Effect_Awakening_CZheng",
         "Animation": "CUNZHENG_Awaken",
@@ -103,6 +124,27 @@
         "StarId": "FLYDe_Awake",
         "StoryLink": "S11S01",
         "SurfaceId": "Surface_FLYDe_Awake"
+    },
+    "HGEr": {
+        "AnimSound": "Se_Effect_Awakening_HGEr",
+        "Animation": "glte_Awaken",
+        "CutIn": [
+            0,
+            0,
+            0.6
+        ],
+        "ModelId": "Model_HGEr_Awake",
+        "Name": "HGEr_Awake_Name",
+        "NameDesc": "HGEr_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_HGEr_UnAwake",
+        "Reward": "HeroAwaken_HGEr",
+        "ShowHero": "HGEr",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "HGEr_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_HGEr_Awake"
     },
     "JNLong": {
         "AnimSound": "Se_Effect_Awakening_JNLong",

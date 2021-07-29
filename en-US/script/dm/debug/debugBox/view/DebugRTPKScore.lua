@@ -59,7 +59,7 @@ function DebugRTPKAddCount:initialize()
 		{
 			default = 1,
 			name = "code",
-			title = "1挑战2已挑战3连胜4连败 ",
+			title = "1挑战2已挑战3连胜4连败5累积胜场 ",
 			type = "Input"
 		},
 		{

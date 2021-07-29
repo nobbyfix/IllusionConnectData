@@ -368,6 +368,37 @@
             "LEVEL": 5
         }
     },
+    "DreamChallenge_TimeLimit_Leo2": {
+        "BGM": [
+            "Mus_Story_MusicFestival_2",
+            "",
+            ""
+        ],
+        "Background": "mjt_scene_xz_bg",
+        "BlockPoint": [
+            "DreamChallenge_TimeLimit_Leo2_T01N01"
+        ],
+        "Control": 1,
+        "DCType": 1,
+        "LimitTimeTxt": "DreamChallenge_TimeShow_Leo2",
+        "ListLocationNum": 10015,
+        "Name": "DreamChallenge_TimeLimit_Leo2_Name",
+        "ShowCondition": {
+            "Day": "2021-08-07 05:00:00",
+            "LEVEL": 5
+        },
+        "Story": "",
+        "TabPic": "mjt_txt_szizx_btn",
+        "Tag": "",
+        "TimeFactor": {
+            "type": "Day",
+            "value": "2021-08-16 05:00:00"
+        },
+        "UnlockCondition": {
+            "Day": "2021-08-07 05:00:00",
+            "LEVEL": 5
+        }
+    },
     "DreamChallenge_TimeLimit_Music": {
         "BGM": [
             "Mus_Story_MusicFestival_2",

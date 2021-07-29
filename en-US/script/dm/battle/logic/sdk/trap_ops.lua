@@ -28,7 +28,7 @@ _G.filterElements = filterElements
 
 function exports.EMPTY_CELL(env)
 	return MakeFilter(function (cell)
-		return cell:getResident() == nil
+		return cell:getResident() == nil and cell:isNormalStatus()
 	end)
 end
 
@@ -156,6 +156,10 @@ end
 
 function exports.GetCell(env, unit)
 	return unit:getCell()
+end
+
+function exports.GetCellById(env, id)
+	return env.global["$BattleField"]:getCellById(id)
 end
 
 function exports.GetCellId(env, unit)
@@ -296,21 +300,14 @@ function exports.AngerRecoverTrap(env, value)
 	return TrapEffect:new(config)
 end
 
-function exports.DispelBuffTrap(env, tagOrFilter)
-	local config = {
-		value = tagOrFilter,
-		onTrigger = function (battleContext, cell, unit, buffValue)
-			local buffSystem = battleContext:getObject("BuffSystem")
+function exports.DispelBuffTrap(env, cell, tagOrFilter)
+	local trapSystem = env.global["$TrapSystem"]
 
-			if not buffSystem then
-				return nil
-			end
+	if not trapSystem then
+		return nil
+	end
 
-			local matchFunc = makeBuffMatchFunction(buffValue)
+	local matchFunc = makeBuffMatchFunction(env, tagOrFilter)
 
-			return buffSystem:dispelBuffsOnTarget(unit, matchFunc)
-		end
-	}
-
-	return TrapEffect:new(config)
+	return trapSystem:dispelBuffsOnTarget(cell, matchFunc)
 end

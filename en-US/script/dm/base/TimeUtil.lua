@@ -289,3 +289,28 @@ function TimeUtil:getLocalUTC()
 
 	return curUTC
 end
+
+function TimeUtil:formatTimeStr(remainTime)
+	local fmtStr = "${d}:${HH}:${M}:${SS}"
+	local timeStr = TimeUtil:formatTime(fmtStr, remainTime)
+	local parts = string.split(timeStr, ":", nil, true)
+	local timeTab = {
+		day = tonumber(parts[1]),
+		hour = tonumber(parts[2]),
+		min = tonumber(parts[3]),
+		sec = tonumber(parts[4])
+	}
+	local str = ""
+
+	if timeTab.day > 0 then
+		str = timeTab.day .. Strings:get("TimeUtil_Day")
+	elseif timeTab.hour > 0 then
+		str = timeTab.hour .. Strings:get("TimeUtil_Hour")
+	elseif timeTab.min > 0 then
+		str = timeTab.min .. Strings:get("TimeUtil_Min")
+	else
+		str = timeTab.sec .. Strings:get("TimeUtil_Sec")
+	end
+
+	return str
+end

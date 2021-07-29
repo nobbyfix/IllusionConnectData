@@ -166,11 +166,11 @@ function ShowNode:show(args, clickListener)
 		local scaleImg = ccui.Scale9Sprite:createWithSpriteFrameName("zz_yindaoimage.png")
 
 		scaleImg:setAnchorPoint(0.5, 0.5)
-		scaleImg:setCapInsets(cc.rect(57, 57, 61, 61))
-		scaleImg:setContentSize(cc.size(msSize.width + 20, msSize.height + 20))
+		scaleImg:setCapInsets(cc.rect(15, 15, 145, 146))
+		scaleImg:setContentSize(cc.size(msSize.width + 28, msSize.height + 28))
 
 		if maskSize then
-			scaleImg:setContentSize(cc.size(maskSize.w + 20, maskSize.h + 20))
+			scaleImg:setContentSize(cc.size(maskSize.w + 28, maskSize.h + 28))
 		end
 
 		local actionPos = {
@@ -191,24 +191,18 @@ function ShowNode:show(args, clickListener)
 		local flickerImg = ccui.Scale9Sprite:createWithSpriteFrameName("zg_yindaoimage.png")
 
 		flickerImg:setAnchorPoint(0.5, 0.5)
-		flickerImg:setCapInsets(cc.rect(73, 73, 49, 49))
-		flickerImg:setContentSize(cc.size(msSize.width + 60, msSize.height + 60))
+		flickerImg:setCapInsets(cc.rect(52, 52, 118, 119))
+		flickerImg:setContentSize(cc.size(msSize.width + 75, msSize.height + 75))
 
 		local deltaOffsetX = 0
 		local deltaOffsetY = 0
 
 		if maskSize then
-			local deltaW = maskSize.w >= 120 and 60 or 60 * maskSize.w / 146
-			deltaOffsetX = maskSize.w >= 120 and 0 or 30 - 30 * maskSize.w / 146
-			local deltaH = maskSize.h >= 120 and 60 or 60 * maskSize.h / 146
-			deltaOffsetY = maskSize.h >= 120 and 0 or 30 - 30 * maskSize.h / 146
-
-			flickerImg:setContentSize(cc.size(maskSize.w + deltaW, maskSize.h + deltaH))
+			flickerImg:setContentSize(cc.size(maskSize.w + 75, maskSize.h + 75))
 		end
 
 		flickerImg:addTo(self._renderNode, 999)
 		flickerImg:setPosition(actionPos)
-		flickerImg:offset(offset.x - deltaOffsetX / 2, offset.y - deltaOffsetY / 2)
 
 		local nodeToActionMap2 = {
 			[flickerImg] = flickerNode

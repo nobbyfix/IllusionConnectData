@@ -190,6 +190,7 @@ end
 function BattleMainMediator:adjustLayout(targetFrame)
 	self:getView():setContentSize(targetFrame)
 
+	targetFrame.width = targetFrame.width - 2 * AdjustUtils.getFixOffsetX()
 	self.targetFrame = targetFrame
 
 	self.screenEffectLayer:adjustLayout(targetFrame)
@@ -313,7 +314,7 @@ function BattleMainMediator:playGroundEffect(bgRes, align, animName, zoom, actId
 		end
 	else
 		local winSize = cc.Director:getInstance():getVisibleSize()
-		background = cc.LayerColor:create(cc.c4b(0, 0, 0, opacity), winSize.width + 1000, winSize.height)
+		background = cc.LayerColor:create(cc.c4b(0, 0, 0, opacity), winSize.width + 1000, winSize.height + 500)
 	end
 
 	local frame = self:getView():getContentSize()

@@ -945,8 +945,8 @@
         ]
     },
     "E20": {
-        "BGM": "",
-        "Background": "Main_Img_06",
+        "BGM": "Mus_Story_Chaos",
+        "Background": "Main_Img_20",
         "BackgroundLength": 2272,
         "ButtonIcon": "main_chapter_10.jpg",
         "ContinueDiamonds": "",
@@ -956,7 +956,7 @@
         "MapName": "BlockMap_E20_Name",
         "MapReward": "",
         "OpenLevel": 99,
-        "OpenStar": 3280,
+        "OpenStar": 2370,
         "Order": 20,
         "StageEventPoint": [],
         "StarBoxReward": {
@@ -987,7 +987,9 @@
             "E20S20"
         ],
         "SubPracticePoint": [],
-        "SubStoryPoint": [],
+        "SubStoryPoint": [
+            "S20E01"
+        ],
         "Task": [],
         "Type": "ELITE",
         "URL": "",

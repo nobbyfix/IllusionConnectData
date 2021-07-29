@@ -291,6 +291,7 @@ function SettingMediator:mapEventListeners()
 	self:mapEventListener(self:getEventDispatcher(), EVT_DOWNLOAD_SOUNDCV_OVER, self, self.downloadSoundCVOver)
 	self:mapEventListener(self:getEventDispatcher(), EVT_BIND_ACCOUNT, self, self.refreshRightList)
 	self:mapEventListener(self:getEventDispatcher(), EVT_CHANGEHEADFRAME_SUCC, self, self.showSettingView)
+	self:mapEventListener(self:getEventDispatcher(), EVT_RESET_DONE, self, self.showSettingView)
 end
 
 function SettingMediator:enterWithData(data)

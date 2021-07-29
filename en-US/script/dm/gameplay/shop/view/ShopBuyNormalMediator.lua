@@ -34,7 +34,8 @@ local rarityShopNormalBuyBgMap = {
 	"sd_tc_dj_bg_2.png",
 	"sd_tc_dj_bg_3.png",
 	"sd_tc_dj_bg_4.png",
-	"sd_tc_dj_bg_5.png"
+	"sd_tc_dj_bg_5.png",
+	"sd_tc_dj_bg_6.png"
 }
 
 function ShopBuyNormalMediator:initialize()

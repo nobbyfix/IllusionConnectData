@@ -305,6 +305,18 @@ function StoryContext:checkStageTaskSta()
 	return guideSystem:check_guide_stageTask()
 end
 
+function StoryContext:checkStageArenaOpen()
+	local system = self:getInjector():getInstance(LeadStageArenaSystem)
+
+	return system:stageArenaOpen()
+end
+
+function StoryContext:checkStageArenaState()
+	local system = self:getInjector():getInstance(LeadStageArenaSystem)
+
+	return system:stageArenaState()
+end
+
 function StoryContext:checkVillageBuildingSta()
 	local GuideSystem = self:getInjector():getInstance(GuideSystem)
 

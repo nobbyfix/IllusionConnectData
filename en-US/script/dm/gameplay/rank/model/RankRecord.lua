@@ -592,3 +592,30 @@ function RTPKRankRecord:synchronize(data)
 	self._nickName = data.n or data.nickname
 	self._score = data.p or data.value
 end
+
+StageAreanaRankRecord = class("StageAreanaRankRecord", BaseRankRecord, _M)
+
+StageAreanaRankRecord:has("_oldCoin", {
+	is = "r"
+})
+
+function StageAreanaRankRecord:initialize()
+	super.initialize(self)
+
+	self._rankType = RankType.KStageAreana
+end
+
+function StageAreanaRankRecord:synchronize(data)
+	super.synchronize(self, data)
+
+	self._rank = data.rank
+	self._rid = data.r
+	self._headId = data.h
+	self._name = data.n
+	self._level = data.l
+	self._headFrame = data.f
+	self._board = data.s
+	self._combat = data.c
+	self._nickName = data.n
+	self._oldCoin = data.p
+end

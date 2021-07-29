@@ -3581,5 +3581,215 @@
             "SunflowerS01S03"
         ],
         "StoryLink": "eventstory_VanGogh_04a"
+    },
+    "TerrorS01S01": {
+        "FirstReward": "TerrorS01S01_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -250
+        ],
+        "Map": "TerrorM01",
+        "Name": "TerrorS01S01_Name",
+        "NextStoryPoint": [
+            "TerrorS01S02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_Lover_01a"
+    },
+    "TerrorS01S02": {
+        "FirstReward": "TerrorS01S02_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "TerrorM01",
+        "Name": "TerrorS01S02_Name",
+        "NextStoryPoint": [
+            "TerrorS01S03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "TerrorS02"
+        ],
+        "PreStoryPoint": [
+            "TerrorS01S01"
+        ],
+        "StoryLink": "eventstory_Lover_02a"
+    },
+    "TerrorS01S03": {
+        "FirstReward": "TerrorS01S03_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "TerrorM01",
+        "Name": "TerrorS01S03_Name",
+        "NextStoryPoint": [
+            "TerrorS01S04"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "TerrorS05"
+        ],
+        "PreStoryPoint": [
+            "TerrorS01S02"
+        ],
+        "StoryLink": "eventstory_Lover_03a"
+    },
+    "TerrorS01S04": {
+        "FirstReward": "TerrorS01S04_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "TerrorM01",
+        "Name": "TerrorS01S04_Name",
+        "NextStoryPoint": [
+            "TerrorS01S05"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "TerrorS07"
+        ],
+        "PreStoryPoint": [
+            "TerrorS01S03"
+        ],
+        "StoryLink": "eventstory_Lover_04a"
+    },
+    "TerrorS01S05": {
+        "FirstReward": "TerrorS01S05_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "TerrorM01",
+        "Name": "TerrorS01S05_Name",
+        "NextStoryPoint": [
+            "TerrorS01S06"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "TerrorS08"
+        ],
+        "PreStoryPoint": [
+            "TerrorS01S04"
+        ],
+        "StoryLink": "eventstory_Lover_05a"
+    },
+    "TerrorS01S06": {
+        "FirstReward": "TerrorS01S06_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "TerrorM01",
+        "Name": "TerrorS01S06_Name",
+        "NextStoryPoint": [
+            "TerrorS01S07"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "TerrorS10"
+        ],
+        "PreStoryPoint": [
+            "TerrorS01S05"
+        ],
+        "StoryLink": "eventstory_Lover_06a"
+    },
+    "TerrorS01S07": {
+        "FirstReward": "TerrorS01S07_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -250
+        ],
+        "Map": "TerrorM01",
+        "Name": "TerrorS01S07_Name",
+        "NextStoryPoint": [
+            "TerrorS01S08"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "TerrorS13"
+        ],
+        "PreStoryPoint": [
+            "TerrorS01S06"
+        ],
+        "StoryLink": "eventstory_Lover_07a"
+    },
+    "TerrorS01S08": {
+        "FirstReward": "TerrorS01S08_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "TerrorM01",
+        "Name": "TerrorS01S08_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "TerrorS16"
+        ],
+        "PreStoryPoint": [
+            "TerrorS01S07"
+        ],
+        "StoryLink": "eventstory_Lover_08a"
     }
 }

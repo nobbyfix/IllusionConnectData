@@ -522,6 +522,13 @@ function CommonTeamMediator:initHero(node, info)
 	namePanel:setContentSize(cc.size(name:getContentSize().width + qualityLevel:getContentSize().width, 30))
 	GameStyle:setHeroNameByQuality(name, info.quality)
 	GameStyle:setHeroNameByQuality(qualityLevel, info.quality)
+
+	local nameBg = node:getChildByFullName("nameBg")
+	local nameWidth = name:getContentSize().width + qualityLevel:getContentSize().width
+	local w = math.max(104, nameWidth + 25)
+
+	nameBg:setContentSize(cc.size(w, nameBg:getContentSize().height))
+	nameBg:setPositionX(namePanel:getPositionX())
 end
 
 function CommonTeamMediator:initTeamHero(node, info)

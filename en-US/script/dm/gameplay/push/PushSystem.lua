@@ -41,6 +41,7 @@ function PushSystem:listen()
 	self:listenCooperateBoss()
 	self:listenFriendStateChanged()
 	self:listenRTPK()
+	self:listenHistoryRankChange()
 end
 
 function PushSystem:listenLoginByOthers()
@@ -361,4 +362,30 @@ function PushSystem:listenRTPK()
 	local RTPKSystem = self:getInjector():getInstance(RTPKSystem)
 
 	RTPKSystem:listen()
+end
+
+function PushSystem:listenHistoryRankChange()
+	self._pushService:listenHistoryRankChange(function (response)
+		if response and response.sceneType then
+			if response.sceneType == "rtpk" then
+				local systemKeeper = self:getInjector():getInstance("SystemKeeper")
+				local unlock, tips = systemKeeper:isUnlock("RTPK")
+
+				if unlock then
+					local RTPKSystem = self:getInjector():getInstance(RTPKSystem)
+
+					RTPKSystem:requestRTPKInfo(nil, false)
+				end
+			elseif response.sceneType == "stage_arena" then
+				local systemKeeper = self:getInjector():getInstance("SystemKeeper")
+				local unlock, tips = systemKeeper:isUnlock("StageArena")
+
+				if unlock then
+					local leadStageSystem = self:getInjector():getInstance(LeadStageArenaSystem)
+
+					leadStageSystem:requestGetSeasonInfo(nil, false)
+				end
+			end
+		end
+	end)
 end

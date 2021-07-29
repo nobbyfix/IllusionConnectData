@@ -12,11 +12,16 @@ local rankTabData = {
 	{
 		Desc2 = "EN_RTPK_PopUpReward_UI03",
 		Desc1 = "RTPK_PopUpReward_UI04"
+	},
+	{
+		Desc2 = "RTPK_WinReward_UI03",
+		Desc1 = "RTPK_WinReward_UI01"
 	}
 }
 local RTPKRankRewardType = {
+	Grade = 1,
 	AllRank = 2,
-	Grade = 1
+	WinTask = 3
 }
 local kBtnHandlers = {
 	["main.btn_close"] = {
@@ -53,6 +58,7 @@ function RTPKRewardViewMediator:enterWithData(data)
 	self._curTabType = data.tab or RTPKRankRewardType.Grade
 	self._serverRank = self._rtpk:getServerRank() or -1
 	self._allserverRank = self._rtpk:getGlobalRank() or -1
+	self._dataList = {}
 
 	self:initWidgetInfo()
 	self:createTabController()
@@ -74,6 +80,10 @@ function RTPKRewardViewMediator:initWidgetInfo()
 	self._duanweiCellPanel = self._viewPanel:getChildByName("rankCellPanel")
 
 	self._duanweiCellPanel:setVisible(false)
+
+	self._winCellPanel = self._viewPanel:getChildByName("winCellPanel")
+
+	self._winCellPanel:setVisible(false)
 
 	self._duanweiTitle = self._viewPanel:getChildByFullName("RankProperty_bg")
 	self._rewardTitle = self._viewPanel:getChildByFullName("rewardProperty_bg")
@@ -103,6 +113,10 @@ function RTPKRewardViewMediator:createTabController()
 			redPointFunc = function ()
 				if i == RTPKRankRewardType.Grade then
 					return self._rTPKSystem:checkGradeRewardRedpoint()
+				end
+
+				if i == RTPKRankRewardType.WinTask then
+					return self._rTPKSystem:checkWinTaskRewardRedpoint()
 				end
 
 				return false
@@ -135,24 +149,28 @@ function RTPKRewardViewMediator:refreshGradeReward()
 		self._tabBtnWidget:refreshAllRedPoint()
 	end
 
-	self._gradeInfo = self._rTPKSystem:getGradeConfigInfo()
-
 	if self._curTabType == RTPKRankRewardType.Grade then
-		self:refreshDuanweiView()
+		self._dataList = self._rTPKSystem:getGradeConfigInfo()
+	elseif self._curTabType == RTPKRankRewardType.WinTask then
+		self._dataList = self._rtpk:getWinTaskData()
 	end
+
+	self:refreshTableView()
 end
 
 function RTPKRewardViewMediator:onClickTab(name, tag)
 	self._curTabType = tag
 
 	if self._curTabType == RTPKRankRewardType.Grade then
-		self._gradeInfo = self._rTPKSystem:getGradeConfigInfo()
-
-		self:refreshDuanweiView()
+		self._dataList = self._rTPKSystem:getGradeConfigInfo()
+	elseif self._curTabType == RTPKRankRewardType.AllRank then
+		local seasonConfig = self._rtpk:getSeasonConfig()
+		self._dataList = seasonConfig and seasonConfig.AllServerReward or {}
 	else
-		self:refreshRewardView()
+		self._dataList = self._rtpk:getWinTaskData()
 	end
 
+	self:refreshTableView()
 	self:refreshRewardSelfView()
 	self:refreshTitlePanel()
 end
@@ -160,6 +178,12 @@ end
 function RTPKRewardViewMediator:refreshTitlePanel()
 	self._duanweiTitle:setVisible(self._curTabType == RTPKRankRewardType.Grade)
 	self._rewardTitle:setVisible(self._curTabType ~= RTPKRankRewardType.Grade)
+
+	if self._curTabType == RTPKRankRewardType.WinTask then
+		self._rewardTitle:getChildByName("property_1"):setString(Strings:get("RTPK_Task"))
+	else
+		self._rewardTitle:getChildByName("property_1"):setString(Strings:get("RTPK_PopUpReward_UI11"))
+	end
 end
 
 function RTPKRewardViewMediator:refreshRewardSelfView()
@@ -188,6 +212,12 @@ function RTPKRewardViewMediator:refreshRewardSelfView()
 		}))
 	end
 
+	if self._curTabType == RTPKRankRewardType.WinTask then
+		textName1:setString(Strings:get("RTPK_WinReward_UI04", {
+			times = self._rtpk:getTotalWin()
+		}))
+	end
+
 	local gradeData = self._rtpk:getCurGrade()
 
 	textName3:setString(Strings:get("RTPK_PopUpReward_UI10", {
@@ -195,52 +225,68 @@ function RTPKRewardViewMediator:refreshRewardSelfView()
 	}))
 end
 
-function RTPKRewardViewMediator:refreshDuanweiView()
-	self._tableViewLayout:removeAllChildren()
+function RTPKRewardViewMediator:refreshTableView()
+	if self._tableView then
+		self._tableView:reloadData()
+	else
+		self._tableViewLayout:removeAllChildren()
 
-	local viewSize = self._tableViewLayout:getContentSize()
-	local tableView = cc.TableView:create(viewSize)
-	local kCellHeight = self._rewardCellPanel:getContentSize().height
+		local viewSize = self._tableViewLayout:getContentSize()
+		local tableView = cc.TableView:create(viewSize)
+		local kCellHeight = self._rewardCellPanel:getContentSize().height
 
-	local function numberOfCells(view)
-		return #self._gradeInfo
-	end
-
-	local function cellSize(table, idx)
-		return viewSize.width, kCellHeight
-	end
-
-	local function cellAtIndex(table, idx)
-		local cell = table:dequeueCell()
-
-		if cell == nil then
-			cell = cc.TableViewCell:new()
-
-			cell:setContentSize(cc.size(viewSize.width, kCellHeight))
+		local function numberOfCells(view)
+			return #self._dataList
 		end
 
-		local index = idx + 1
+		local function cellSize(table, idx)
+			return viewSize.width, kCellHeight
+		end
 
-		self:addRankGradePanel(cell, index)
+		local function cellAtIndex(table, idx)
+			local cell = table:dequeueCell()
 
-		return cell
+			if cell == nil then
+				cell = cc.TableViewCell:new()
+
+				cell:setContentSize(cc.size(viewSize.width, kCellHeight))
+			end
+
+			local index = idx + 1
+
+			self:addCellPanel(cell, index)
+
+			return cell
+		end
+
+		tableView:setDirection(cc.SCROLLVIEW_DIRECTION_VERTICAL)
+		tableView:setVerticalFillOrder(cc.TABLEVIEW_FILL_TOPDOWN)
+		tableView:setDelegate()
+		tableView:addTo(self._tableViewLayout)
+		tableView:registerScriptHandler(numberOfCells, cc.NUMBER_OF_CELLS_IN_TABLEVIEW)
+		tableView:registerScriptHandler(cellSize, cc.TABLECELL_SIZE_FOR_INDEX)
+		tableView:registerScriptHandler(cellAtIndex, cc.TABLECELL_SIZE_AT_INDEX)
+		tableView:setMaxBounceOffset(20)
+		tableView:reloadData()
+
+		self._tableView = tableView
 	end
+end
 
-	tableView:setDirection(cc.SCROLLVIEW_DIRECTION_VERTICAL)
-	tableView:setVerticalFillOrder(cc.TABLEVIEW_FILL_TOPDOWN)
-	tableView:setDelegate()
-	tableView:addTo(self._tableViewLayout)
-	tableView:registerScriptHandler(numberOfCells, cc.NUMBER_OF_CELLS_IN_TABLEVIEW)
-	tableView:registerScriptHandler(cellSize, cc.TABLECELL_SIZE_FOR_INDEX)
-	tableView:registerScriptHandler(cellAtIndex, cc.TABLECELL_SIZE_AT_INDEX)
-	tableView:setMaxBounceOffset(20)
-	tableView:reloadData()
+function RTPKRewardViewMediator:addCellPanel(cell, index)
+	if self._curTabType == RTPKRankRewardType.Grade then
+		self:addRankGradePanel(cell, index)
+	elseif self._curTabType == RTPKRankRewardType.AllRank then
+		self:addRankAwardPanel(cell, index)
+	else
+		self:addWinTaskPanel(cell, index)
+	end
 end
 
 function RTPKRewardViewMediator:addRankGradePanel(cell, index)
 	cell:removeAllChildren()
 
-	local info = self._gradeInfo[index]
+	local info = self._dataList[index]
 
 	assert(type(info.Reward) == "table", "error type Reward ")
 
@@ -321,61 +367,10 @@ function RTPKRewardViewMediator:addRankGradePanel(cell, index)
 	end
 end
 
-function RTPKRewardViewMediator:refreshRewardView()
-	self._tableViewLayout:removeAllChildren()
-
-	local seasonConfig = self._rtpk:getSeasonConfig()
-	self._rewards = {}
-
-	if self._curTabType == RTPKRankRewardType.SelfRank then
-		self._rewards = seasonConfig and seasonConfig.ServerReward or {}
-	else
-		self._rewards = seasonConfig and seasonConfig.AllServerReward or {}
-	end
-
-	local viewSize = self._tableViewLayout:getContentSize()
-	local tableView = cc.TableView:create(viewSize)
-	local kCellHeight = self._rewardCellPanel:getContentSize().height
-
-	local function numberOfCells(view)
-		return #self._rewards
-	end
-
-	local function cellSize(table, idx)
-		return viewSize.width, kCellHeight
-	end
-
-	local function cellAtIndex(table, idx)
-		local cell = table:dequeueCell()
-
-		if cell == nil then
-			cell = cc.TableViewCell:new()
-
-			cell:setContentSize(cc.size(viewSize.width, kCellHeight))
-		end
-
-		local index = idx + 1
-		local rewardId = self._rewards[index]
-
-		self:addRankAwardPanel(cell, rewardId, index)
-
-		return cell
-	end
-
-	tableView:setDirection(cc.SCROLLVIEW_DIRECTION_VERTICAL)
-	tableView:setVerticalFillOrder(cc.TABLEVIEW_FILL_TOPDOWN)
-	tableView:setDelegate()
-	tableView:addTo(self._tableViewLayout)
-	tableView:registerScriptHandler(numberOfCells, cc.NUMBER_OF_CELLS_IN_TABLEVIEW)
-	tableView:registerScriptHandler(cellSize, cc.TABLECELL_SIZE_FOR_INDEX)
-	tableView:registerScriptHandler(cellAtIndex, cc.TABLECELL_SIZE_AT_INDEX)
-	tableView:setMaxBounceOffset(20)
-	tableView:reloadData()
-end
-
-function RTPKRewardViewMediator:addRankAwardPanel(cell, rewardId, idx)
+function RTPKRewardViewMediator:addRankAwardPanel(cell, idx)
 	cell:removeAllChildren()
 
+	local rewardId = self._dataList[idx]
 	local reward = ConfigReader:getDataByNameIdAndKey("RankReward", rewardId, "Reward") or ""
 	local rank = ConfigReader:getDataByNameIdAndKey("RankReward", rewardId, "Rank") or {}
 	local score = ConfigReader:getDataByNameIdAndKey("RankReward", rewardId, "Score") or 0
@@ -434,6 +429,66 @@ function RTPKRewardViewMediator:addRankAwardPanel(cell, rewardId, idx)
 		IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), rewards[i], {
 			needDelay = true
 		})
+	end
+end
+
+function RTPKRewardViewMediator:addWinTaskPanel(cell, index)
+	cell:removeAllChildren()
+
+	local info = self._dataList[index]
+	local panel = self._winCellPanel:clone()
+
+	panel:setVisible(true)
+	panel:addTo(cell):posite(0, 0)
+
+	local bg1 = panel:getChildByName("Image_bg1")
+	local bg2 = panel:getChildByName("Image_bg2")
+	local descText = panel:getChildByName("desc")
+	local iconPanel = panel:getChildByName("icon")
+	local btnGet = panel:getChildByName("rewardFinishBtn")
+	local notGetText = panel:getChildByName("ranktext1")
+	local recivedText = panel:getChildByName("Image_87")
+
+	bg1:setVisible(index % 2 == 0)
+	bg2:setVisible(index % 2 ~= 0)
+	descText:setString(Strings:get("RTPK_WinReward_UI02", {
+		times = info.num
+	}))
+
+	local rewardId = info.rewardId
+	local rewards = ConfigReader:getDataByNameIdAndKey("Reward", rewardId, "Content") or {}
+	local length = #rewards
+
+	for i = 1, length do
+		local icon = IconFactory:createRewardIcon(rewards[i], {
+			showAmount = true,
+			isWidget = true
+		})
+
+		icon:addTo(iconPanel)
+		icon:setScale(0.65)
+		icon:setPosition(cc.p(iconPanel:getContentSize().width / 2 + (i - 1) * 105, iconPanel:getContentSize().height / 2 - 7))
+		IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), rewards[i], {
+			needDelay = true
+		})
+	end
+
+	local state = info.state
+
+	btnGet:setVisible(state == RTPKGradeRewardState.kCanGet)
+	notGetText:setVisible(state == RTPKGradeRewardState.kCanNotGet)
+	recivedText:setVisible(state == RTPKGradeRewardState.kHadGet)
+
+	if state == RTPKGradeRewardState.kCanGet then
+		btnGet:addTouchEventListener(function (sender, eventType)
+			if eventType == ccui.TouchEventType.ended then
+				local data = {
+					key = tostring(info.num)
+				}
+
+				self._rTPKSystem:requestTotalWinReward(data)
+			end
+		end)
 	end
 end
 

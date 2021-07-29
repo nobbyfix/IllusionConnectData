@@ -182,12 +182,12 @@ function UnitTLInterpreter:act_SpawnUnit(action, args)
 
 			local headWidget = self._battleUIMediator:getLeftHeadWidget()
 
-			headWidget:updateHeadInfo(data)
+			headWidget:updateHeadInfo(data, roleDataModel)
 			self:setHeadWidget(headWidget)
 		else
 			local headWidget = self._battleUIMediator:getRightHeadWidget()
 
-			headWidget:updateHeadInfo(data)
+			headWidget:updateHeadInfo(data, roleDataModel)
 			self:setHeadWidget(headWidget)
 		end
 
@@ -1082,6 +1082,31 @@ function UnitTLInterpreter:dealWithBuffEft(eft)
 			elseif detail.evt == "modifyMaxHp" then
 				local maxHp = detail.maxHp
 				local hp = detail.hp
+				local orgMaxHp = self._dataModel:getOrgMaxHp()
+
+				if self._unit._roleType == RoleType.Master then
+					if self._unit:isLeft() then
+						if self._battleUIMediator._leftHeadWidget then
+							if maxHp < orgMaxHp then
+								self._battleUIMediator._leftHeadWidget:modifyMaxHp(maxHp, orgMaxHp)
+							else
+								self._battleUIMediator._leftHeadWidget:modifyMaxHp(maxHp, maxHp)
+							end
+						end
+					elseif self._battleUIMediator._rightHeadWidget then
+						if maxHp < orgMaxHp then
+							self._battleUIMediator._rightHeadWidget:modifyMaxHp(maxHp, orgMaxHp)
+						else
+							self._battleUIMediator._rightHeadWidget:modifyMaxHp(maxHp, maxHp)
+						end
+					end
+				end
+
+				if maxHp < orgMaxHp then
+					self._unit:modifyMaxHp(orgMaxHp, maxHp)
+				else
+					self._unit:modifyMaxHp(maxHp, maxHp)
+				end
 
 				self._dataModel:updateMaxHp(maxHp, hp)
 			end
@@ -1627,4 +1652,13 @@ end
 function UnitTLInterpreter:act_GuideMoveBy(action, args)
 	self._unit:guideMoveBy(args)
 	self._unit:setBarAndBuffVisble(false)
+end
+
+function UnitTLInterpreter:act_SetHSVColor(action, args)
+	local hue = args.hue or 0
+	local contrast = args.contrast or 0
+	local brightness = args.brightness or 0
+	local saturation = args.saturation or 0
+
+	self._unit:setHSVColor(hue, contrast, brightness, saturation)
 end

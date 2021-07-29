@@ -10,6 +10,7 @@ CUSTOM_CIRCLEOUTLINE = "customShader_circleOutline"
 CUSTOM_WATER = "customShader_water"
 CUSTOM_MASK = "customShader_mask"
 CUSTOM_OUTLINE = "customShader_outlineLight"
+CUSTOM_CIRCLE_SMOOTH = "customShader_circle_smooth"
 local customShaderProgramAche = {}
 local shader_f = {}
 local commonShaderV = [[
@@ -136,6 +137,40 @@ function setBlurToNode(node, blurRadius, sampleNum)
 	glProgramState:setUniformFloat("sampleNum", sampleNum)
 end
 
+function setGrayPart(node, left, right, top, bottom)
+	left = left or 0
+	right = right or 1
+	top = top or 0.5
+	bottom = bottom or 0
+	local glProgramState = setCustomShaderToNodeByType(node, CUSTOM_GrayPart)
+	local size = nil
+
+	if not node.getTexture then
+		size = node:getVirtualRenderer():getSprite():getTexture():getContentSizeInPixels()
+	else
+		size = node:getTexture():getContentSizeInPixels()
+	end
+
+	glProgramState:setUniformVec2("resolution", {
+		x = size.width,
+		y = size.height
+	})
+	glProgramState:setUniformFloat("left", left)
+	glProgramState:setUniformFloat("right", right)
+	glProgramState:setUniformFloat("top", top)
+	glProgramState:setUniformFloat("bottom", bottom)
+
+	local startTime = os.clock()
+	local sequence = cc.Sequence:create(cc.CallFunc:create(function ()
+		time = os.clock() - startTime
+
+		glProgramState:setUniformFloat("time", time)
+	end))
+	local action = cc.RepeatForever:create(sequence)
+
+	node:runAction(action)
+end
+
 function setFluxayToNode(node, color)
 	color = color or {}
 	local glProgramState = setCustomShaderToNodeByType(node, CUSTOM_FLUXAY)
@@ -220,6 +255,10 @@ function setStarToNode(node)
 	node:runAction(action)
 end
 
+function setCircleSmoothToNode(node, edge)
+	local glProgramState = setCustomShaderToNodeByType(node, CUSTOM_CIRCLE_SMOOTH)
+end
+
 function setCircleToNode(node, edge)
 	local glProgramState = setCustomShaderToNodeByType(node, CUSTOM_CIRCLE)
 
@@ -280,6 +319,62 @@ function setDynamicOutlineLightToNode(node)
 	node:runAction(action)
 end
 
+shader_f.customShader_grayPart = [[
+	#ifdef GL_ES
+	precision mediump float;
+	#endif
+
+	varying vec4 v_fragmentColor;
+	varying vec2 v_texCoord;
+
+	uniform vec2 resolution;
+	uniform float left;
+	uniform float right;
+	uniform float top;
+	uniform float bottom;
+	uniform float time;
+	void main(void)
+	{	
+		vec2 uv = v_texCoord.xy;
+		float aaa = (sin(time * 30.) + 1.) / 2.;
+		if (uv.x >= aaa && uv.x <= right)
+		{
+			if (uv.y >= bottom && uv.y <= top){
+				vec4 c = getFragColor(v_texCoord);
+				float clrbright = (c.r + c.g + c.b) * (1. / 3.);
+				float gray = (0.6) * clrbright;
+				gl_FragColor = vec4(gray,gray+ 0.1,gray + 0.2,1.);
+			}else{
+				gl_FragColor = getFragColor(v_texCoord);
+			}
+		}else{
+			gl_FragColor = getFragColor(v_texCoord);
+		}
+	}
+]]
+shader_f.customShader_circle_smooth = [[
+	#ifdef GL_ES
+	precision mediump float;
+	#endif
+
+	varying vec4 v_fragmentColor;
+	varying vec2 v_texCoord;
+
+	void main(void)
+	{	
+		vec2 uv = v_texCoord.xy;
+		uv-=0.5;
+		float detal = smoothstep(0.48,0.5,distance(uv.xy, vec2(0.)));	
+		vec4 finalColor = getFragColor(v_texCoord);	
+		finalColor.a *= (1.-detal);
+		if (1.-detal == 0.)
+		{
+			gl_FragColor = vec4(0.);
+		}else{
+			gl_FragColor = finalColor;
+		}
+	}
+]]
 shader_f.customShader_blur = [[
 	#ifdef GL_ES
 	precision mediump float;

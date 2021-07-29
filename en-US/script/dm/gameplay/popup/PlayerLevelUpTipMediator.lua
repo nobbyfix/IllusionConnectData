@@ -188,13 +188,14 @@ function PlayerLevelUpTipMediator:onClickOK(sender, eventType)
 		local guideNames, guideViewName = guideSystem:checkLevelUpGuide()
 
 		if #guideNames > 0 then
-			local scene = self:getInjector():getInstance("BaseSceneMediator", "activeScene")
-			local topViewName = scene:getTopViewName()
-
-			guideAgent:trigger(guideNames, nil, )
-
-			if topViewName == "homeView" then
-				self:close()
+			if guideAgent:isGuiding() then
+				guideAgent:setStoryEnd(function ()
+					guideAgent:trigger(guideNames, nil, )
+					self:dispatch(Event:new(EVT_POP_TO_TARGETVIEW, "homeView"))
+				end)
+			else
+				guideAgent:trigger(guideNames, nil, )
+				self:dispatch(Event:new(EVT_POP_TO_TARGETVIEW, "homeView"))
 			end
 
 			return

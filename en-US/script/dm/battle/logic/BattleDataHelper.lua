@@ -199,6 +199,16 @@ function BattleDataHelper:getIntegralPlayerData(playerData, isEnemy)
 		playerData.cards = cards
 	end
 
+	local extraCards2 = playerData.extraCards2
+
+	if extraCards2 then
+		for idx, card in ipairs(extraCards2) do
+			extraCards2[idx] = self:fillCardData(card, playerData.rid, "c", idx, isEnemy, summon, summonMap)
+		end
+
+		playerData.extraCards2 = extraCards2
+	end
+
 	local heros = playerData.heros
 
 	if heros then
@@ -480,6 +490,34 @@ function BattleDataHelper:fillMasterData(master, playerData, waveStr, isEnemy, s
 		end
 
 		playerData.tactics = tactics
+	end
+
+	if master.extraTactics then
+		local tactics = {}
+		local protoFactory = PrototypeFactory:getInstance()
+
+		for idx, tactic in ipairs(master.extraTactics) do
+			local config = ConfigReader:getRecordById("TacticsCard", tactic)
+			local data = {
+				id = tactic,
+				targetType = config.Type,
+				skillPic = config.SkillPic,
+				cost = config.SkillCost,
+				skill = {
+					level = 1,
+					skillId = config.Skill
+				},
+				weight = config.Weight,
+				autoWeight = config.AutoWeight
+			}
+
+			self:fillSkillData(data.skill, protoFactory)
+			self:fillSummonData(summon, data.skill, protoFactory, summonMap)
+
+			tactics[#tactics + 1] = data
+		end
+
+		playerData.extraTactics = tactics
 	end
 
 	self:dealWithTransform(master, summon, summonMap)

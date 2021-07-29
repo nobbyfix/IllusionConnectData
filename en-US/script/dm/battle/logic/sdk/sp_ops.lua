@@ -151,8 +151,8 @@ function exports.Recruit(env, cardfilter, location, cost)
 	end
 end
 
-function exports.RecruitCard(env, card, location, cost)
-	local player = env["$actor"]:getOwner()
+function exports.RecruitCard(env, card, location, cost, otherPlayer)
+	local player = otherPlayer or env["$actor"]:getOwner()
 	local battleField = env.global["$BattleContext"]:getObject("BattleField")
 	local cellId = battleField:findEmptyCellId(player:getSide(), location)
 
@@ -420,6 +420,108 @@ function exports.BackToWindow(env, unit, windowIndex)
 	end
 end
 
+function exports.RelocateExtraCard(env, cardType, cost)
+	local player = env["$actor"]:getOwner()
+	local extraCardPool = player:getExtraCardPool()
+	local cardInstance = nil
+	local windowIndex = 0
+
+	for i = 1, 2 do
+		if extraCardPool:getCardAtIndex(i):getType() == cardType then
+			cardInstance = extraCardPool:getCardAtIndex(i)
+			windowIndex = i
+
+			break
+		end
+	end
+
+	local cardSystem = env.global["$CardSystem"]
+	local card = nil
+
+	if cardType == "hero" then
+		if not cardInstance:getCardInfo() then
+			return
+		end
+
+		local cardInfo = cardSystem:genNewHeroCard(player, cardInstance:getCardInfo(), "b", true)
+		card = player:getExtraCardPool():repleaceCard(cardInfo, windowIndex)
+	end
+
+	if cardType == "skill" then
+		if not cardInstance:getSkillInfo() then
+			return
+		end
+
+		local cardInfo = cardSystem:genNewSkillCard(cardInstance:getSkillInfo())
+		card = player:getExtraCardPool():repleaceCard(cardInfo, windowIndex)
+	end
+
+	if cost and cost >= 0 then
+		card:setRawCost(cost)
+	end
+
+	env.global.RecordImmediately(env, player:getId(), "BackToExtraCard", {
+		type = cardType,
+		idx = 4 + windowIndex,
+		card = card and card:dumpInformation() or 0
+	})
+
+	if windowIndex and windowIndex > 0 then
+		local idx = windowIndex
+		local newCard = player:fillExtraCardAtIndex(idx)
+
+		env.global.RecordImmediately(env, player:getId(), "Card", {
+			next = 0,
+			idx = 4 + idx,
+			type = cardType,
+			card = newCard and newCard:dumpInformation() or 0
+		})
+		env.global["$SkillSystem"]:activateGlobalTrigger("HERO_CARD_CHANGEED", {
+			player = player,
+			idx = idx,
+			newcard = newCard
+		})
+	end
+end
+
+function exports.BackToExtraWindow(env, unit, windowIndex)
+	local player = env["$actor"]:getOwner()
+
+	if unit:getCardInfo() then
+		local formationSystem = env.global["$FormationSystem"]
+
+		formationSystem:forbidenRevive(unit)
+
+		local cardSystem = env.global["$CardSystem"]
+		local cardInfo = cardSystem:genNewHeroCard(player, unit:getCardInfo(), "b")
+		local card = player:getExtraCardPool():insertCardByInfoAtIndex(cardInfo, windowIndex)
+
+		env.global.RecordImmediately(env, player:getId(), "BackToExtraCard", {
+			type = "hero",
+			card = card and card:dumpInformation() or 0
+		})
+
+		if windowIndex and windowIndex > 0 then
+			local idx = windowIndex
+			local newCard = player:fillExtraCardAtIndex(idx)
+
+			env.global.RecordImmediately(env, player:getId(), "Card", {
+				next = 0,
+				type = "hero",
+				idx = idx,
+				card = newCard and newCard:dumpInformation() or 0
+			})
+			env.global["$SkillSystem"]:activateGlobalTrigger("HERO_CARD_CHANGEED", {
+				player = player,
+				idx = idx,
+				newcard = newCard
+			})
+		end
+
+		return card
+	end
+end
+
 function exports.GetCardWindowIndex(env, unit)
 	local cardInfo = unit:getCardInfo()
 
@@ -496,4 +598,13 @@ function exports.ActivateGlobalTrigger(env, unit, event, detail)
 	detail.unit = unit
 
 	skillSystem:activateGlobalTrigger(event, detail)
+end
+
+function exports.ExertUniqueSkill(env, unit)
+	local battleContext = env.global["$BattleContext"]
+	local actionScheduler = battleContext:getObject("ActionScheduler")
+	local skillComp = unit:getComponent("Skill")
+
+	skillComp:setUniqueSkillRoutine(nil)
+	actionScheduler:exertUniqueSkill(unit, kBattleUniqueSkill, true)
 end

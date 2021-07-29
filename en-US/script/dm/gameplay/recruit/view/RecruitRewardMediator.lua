@@ -117,6 +117,16 @@ function RecruitRewardMediator:initView(init)
 
 			local function callFunc(sender, eventType)
 				local function callback()
+					if self._data:getRebateRoundLimit() < self._data:getBateRound() then
+						self:dispatch(ShowTipEvent({
+							duration = 0.2,
+							tip = Strings:get("DrawCard_Rebate_Over_Limit")
+						}))
+						self:close()
+
+						return
+					end
+
 					self:initView()
 				end
 

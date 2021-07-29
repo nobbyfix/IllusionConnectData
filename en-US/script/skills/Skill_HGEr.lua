@@ -741,6 +741,37 @@ all.Skill_Sustained_Shield = {
 					shield_add
 				}, 1)
 			end
+
+			if global.IsAwaken(_env, _env.ACTOR) then
+				for _, unit in global.__iter__(global.FriendUnits(_env, global.COL_OF(_env, _env.ACTOR))) do
+					if global.MASTER(_env, unit) == false then
+						local maxHp_friend = global.UnitPropGetter(_env, "maxHp")(_env, unit)
+						local shield_friend = global.UnitPropGetter(_env, "shield")(_env, unit)
+						local FriendShieldRateFactor = global.SpecialPropGetter(_env, "For_HGEr_FriendShieldRateFactor")(_env, _env.ACTOR)
+						local shield_friend_add = global.ShieldEffect(_env, global.min(_env, maxHp * FriendShieldRateFactor, atk * 0.25))
+
+						if shield_friend < maxHp_friend then
+							global.ApplyBuff_Buff(_env, _env.ACTOR, unit, {
+								timing = 0,
+								display = "Shield",
+								group = "Skill_HGEr_Passive",
+								duration = 99,
+								limit = 999,
+								tags = {
+									"NUMERIC",
+									"BUFF",
+									"SHIELD",
+									"Skill_HGEr_Passive",
+									"DISPELLABLE",
+									"STEALABLE"
+								}
+							}, {
+								shield_friend_add
+							}, 1)
+						end
+					end
+				end
+			end
 		end)
 
 		return _env
@@ -1111,6 +1142,218 @@ all.Skill_HGEr_Passive_EX = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
+			local buffeft = global.PassiveFunEffectBuff(_env, "Skill_Sustained_Shield", {
+				ShieldRateFactor = this.ShieldRateFactor
+			})
+
+			global.ApplyBuff(_env, _env.ACTOR, {
+				timing = 0,
+				duration = 99,
+				tags = {
+					"Skill_HGEr_Passive",
+					"UNDISPELLABLE",
+					"UNSTEALABLE"
+				}
+			}, {
+				buffeft
+			})
+		end)
+
+		return _env
+	end
+}
+all.Skill_HGEr_Passive_Awaken = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.ShieldRateFactor = externs.ShieldRateFactor
+
+		if this.ShieldRateFactor == nil then
+			this.ShieldRateFactor = 0.05
+		end
+
+		this.AoeDeRateFactor = externs.AoeDeRateFactor
+
+		if this.AoeDeRateFactor == nil then
+			this.AoeDeRateFactor = 0.8
+		end
+
+		this.FriendShieldRateFactor = externs.FriendShieldRateFactor
+
+		if this.FriendShieldRateFactor == nil then
+			this.FriendShieldRateFactor = 0.025
+		end
+
+		local passive1 = __action(this, {
+			name = "passive1",
+			entry = prototype.passive1
+		})
+		passive1 = global["[duration]"](this, {
+			0
+		}, passive1)
+		passive1 = global["[trigger_by]"](this, {
+			"UNIT_BEFORE_UNIQUE"
+		}, passive1)
+		this.passive1 = global["[trigger_by]"](this, {
+			"UNIT_BEFORE_ACTION"
+		}, passive1)
+		local passive2 = __action(this, {
+			name = "passive2",
+			entry = prototype.passive2
+		})
+		passive2 = global["[duration]"](this, {
+			0
+		}, passive2)
+		passive2 = global["[trigger_by]"](this, {
+			"UNIT_AFTER_UNIQUE"
+		}, passive2)
+		this.passive2 = global["[trigger_by]"](this, {
+			"UNIT_AFTER_ACTION"
+		}, passive2)
+		local passive3 = __action(this, {
+			name = "passive3",
+			entry = prototype.passive3
+		})
+		passive3 = global["[duration]"](this, {
+			0
+		}, passive3)
+		this.passive3 = global["[trigger_by]"](this, {
+			"SELF:PRE_ENTER"
+		}, passive3)
+		local passive4 = __action(this, {
+			name = "passive4",
+			entry = prototype.passive4
+		})
+		passive4 = global["[duration]"](this, {
+			0
+		}, passive4)
+		this.passive4 = global["[trigger_by]"](this, {
+			"SELF:ENTER"
+		}, passive4)
+
+		return this
+	end,
+	passive1 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.GetSide(_env, _env.unit) ~= global.GetSide(_env, _env.ACTOR) and global.PETS(_env, _env.unit) then
+				local buff = global.SpecialNumericEffect(_env, "+HGEr_Passive_No_Crit", {
+					"+Normal",
+					"+Normal"
+				}, 1)
+
+				global.ApplyBuff(_env, _env.unit, {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"HGEr_Passive_No_Crit"
+					}
+				}, {
+					buff
+				})
+			end
+		end)
+
+		return _env
+	end,
+	passive2 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.GetSide(_env, _env.unit) ~= global.GetSide(_env, _env.ACTOR) and global.PETS(_env, _env.unit) then
+				global.DispelBuff(_env, _env.unit, global.BUFF_MARKED(_env, "HGEr_Passive_No_Crit"), 99)
+			end
+		end)
+
+		return _env
+	end,
+	passive3 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local buff_key = global.SpecialNumericEffect(_env, "+For_HGEr_Key", {
+				"+Normal",
+				"+Normal"
+			}, this.AoeDeRateFactor)
+
+			global.ApplyBuff(_env, _env.ACTOR, {
+				timing = 0,
+				duration = 99,
+				tags = {
+					"For_HGEr_Key"
+				}
+			}, {
+				buff_key
+			})
+		end)
+
+		return _env
+	end,
+	passive4 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local buff_friend = global.SpecialNumericEffect(_env, "+For_HGEr_FriendShieldRateFactor", {
+				"+Normal",
+				"+Normal"
+			}, this.FriendShieldRateFactor)
+
+			global.ApplyBuff(_env, _env.ACTOR, {
+				timing = 0,
+				duration = 99,
+				tags = {
+					"FPassiveFunEffectBuffor_HGEr_FriendShieldRateFactor"
+				}
+			}, {
+				buff_friend
+			})
+
 			local buffeft = global.PassiveFunEffectBuff(_env, "Skill_Sustained_Shield", {
 				ShieldRateFactor = this.ShieldRateFactor
 			})

@@ -10,6 +10,17 @@ function GuideSystem:checkLevelUpGuide()
 		return {}, ""
 	end
 
+	local playerLevel = self:getInjector():getInstance("DevelopSystem"):getPlayer():getLevel()
+	local playerGuide = ConfigReader:getDataByNameIdAndKey("ConfigValue", "NewPlayerGuide_LevelOpen", "content") or {}
+
+	for k, v in pairs(playerGuide) do
+		if tostring(playerLevel) == k then
+			return {
+				v
+			}, ""
+		end
+	end
+
 	return {}, ""
 end
 

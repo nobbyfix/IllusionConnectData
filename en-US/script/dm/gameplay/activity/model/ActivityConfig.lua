@@ -166,7 +166,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityFemale] = "ActivityFemaleMainView",
 		[ActivityType_UI.KActivityStoryBook] = "ActivityStoryBookMainView",
 		[ActivityType_UI.KActivityDeepSea] = "ActivityDeepSeaMainView",
-		[ActivityType_UI.KActivitySummerRe] = "ActivitySummerReMainView"
+		[ActivityType_UI.KActivitySummerRe] = "ActivitySummerReMainView",
+		[ActivityType_UI.KActivityTerror] = "ActivityTerrorMainView"
 	},
 	enterBlockMonsterShopView = {
 		[ActivityType_UI.kActivityBlockWsj] = "ActivityBlockMonsterShopView",
@@ -191,7 +192,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityFemale] = "ActivitySagaSupportMapView",
 		[ActivityType_UI.KActivityStoryBook] = "ActivitySagaSupportMapView",
 		[ActivityType_UI.KActivityDeepSea] = "ActivityMapNewView",
-		[ActivityType_UI.KActivitySummerRe] = "ActivitySagaSupportMapView"
+		[ActivityType_UI.KActivitySummerRe] = "ActivitySagaSupportMapView",
+		[ActivityType_UI.KActivityTerror] = "ActivityMapNewView"
 	},
 	enterSagaSupportStageView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportStageWxhView",
@@ -221,7 +223,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityStoryBook] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivityDeepSea] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivityStoryBook] = "ActivityBlockTaskView",
-		[ActivityType_UI.KActivitySummerRe] = "ActivityBlockTaskView"
+		[ActivityType_UI.KActivitySummerRe] = "ActivityBlockTaskView",
+		[ActivityType_UI.KActivityTerror] = "ActivityBlockTaskView"
 	},
 	enterSagaSupportRankRewardView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportRankRewardWxhView",
@@ -300,6 +303,13 @@ ActivityLogin14Config = {
 			cc.c4b(255, 255, 255, 255),
 			cc.c4b(144, 183, 255, 255)
 		}
+	},
+	EightDays_Terror = {
+		resFile = "asset/ui/ActivityTerrorLogin14.csb",
+		textPattern = {
+			cc.c4b(255, 255, 255, 255),
+			cc.c4b(130, 130, 130, 255)
+		}
 	}
 }
 ActivityMainMapTitleConfig = {
@@ -359,24 +369,45 @@ ActivityMainMapTitleConfig = {
 					color = cc.c4b(33, 97, 83, 255)
 				}
 			}
+		},
+		[ActivityType_UI.KActivityTerror] = {
+			title = {
+				{
+					ratio = 0.3,
+					color = cc.c4b(255, 255, 255, 255)
+				},
+				{
+					ratio = 0.7,
+					color = cc.c4b(130, 130, 130, 255)
+				}
+			}
 		}
 	},
 	anim = {
 		[ActivityType_UI.KActivityFemale] = {
-			"zhu_biannvshengzhuye",
-			cc.p(134, 135)
+			name = "zhu_biannvshengzhuye",
+			position = cc.p(134, 135)
 		},
 		[ActivityType_UI.KActivityStoryBook] = {
-			"zhu_beimoufubenrukou",
-			cc.p(54, 155)
+			name = "zhu_beimoufubenrukou",
+			position = cc.p(54, 155)
 		},
 		[ActivityType_UI.KActivityDeepSea] = {
-			"fubenrukou_shenhaihuodongrukou",
-			cc.p(-165, 63)
+			name = "fubenrukou_shenhaihuodongrukou",
+			position = cc.p(-165, 63)
 		},
 		[ActivityType_UI.KActivitySummerRe] = {
-			"shuijingqiu_xiarihuodong",
-			cc.p(160, 140)
+			name = "shuijingqiu_xiarihuodong",
+			position = cc.p(160, 140)
+		},
+		[ActivityType_UI.KActivityTerror] = {
+			name = "eff_zhuyerukou_kongbubenrukou",
+			position = cc.p(-145, 72),
+			runAction = function (node)
+				node:addCallbackAtFrame(75, function ()
+					node:stop()
+				end)
+			end
 		}
 	}
 }

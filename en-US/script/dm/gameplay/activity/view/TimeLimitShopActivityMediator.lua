@@ -63,6 +63,10 @@ local timeLimitShopConfig = {
 			},
 			nameColor = cc.c3b(227, 183, 123)
 		}
+	},
+	terror = {
+		BG = "jqtd_txt_xzldmm_di",
+		TimeOutLineColor = cc.c4b(106, 0, 24, 255)
 	}
 }
 local btnHandlers = {

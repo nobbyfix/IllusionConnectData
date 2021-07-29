@@ -362,7 +362,7 @@ function ActivityPointDetailNewMediator:setupView()
 	descLabel:getVirtualRenderer():setLineHeight(24)
 	descLabel:setLineSpacing(0)
 
-	local pointIndex = self._point:getIndex()
+	local pointIndex = self._sortPoint:getIndex()
 
 	self._titleLabel:setString(pointIndex .. " " .. Strings:get(point:getName()))
 
@@ -427,11 +427,22 @@ function ActivityPointDetailNewMediator:setupView()
 	self:addContent(Strings:get("BlockPoint_Condition_Name_3") .. desc, listView)
 
 	local descs = self._point:getGuideDesc()
-
-	self:addContent(Strings:get("BlockPoint_Condition_Name_4"), listView)
+	self._addDesc = false
 
 	for i = 2, #descs do
-		self:addContent(Strings:get(descs[i]), listView)
+		if not self._addDesc then
+			self._addDesc = true
+
+			self:addContent(Strings:get("BlockPoint_Condition_Name_4", {
+				fontName = "asset/font/CustomFont_FZYH_M.TTF"
+			}) .. Strings:get(descs[i], {
+				fontName = "asset/font/CustomFont_FZYH_M.TTF"
+			}), listView)
+		else
+			self:addContent(Strings:get(descs[i], {
+				fontName = "asset/font/CustomFont_FZYH_M.TTF"
+			}), listView)
+		end
 	end
 
 	self:refreshCostView()

@@ -188,6 +188,9 @@
     "Target_MTZMEShi": {
         "Function": "return MainTarget()"
     },
+    "Target_MYing": {
+        "Function": "return GenInfo(EnemyAll(),Red)"
+    },
     "Target_MZGXiu": {
         "Function": "return MainTarget()"
     },

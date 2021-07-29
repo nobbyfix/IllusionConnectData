@@ -153,6 +153,16 @@ function ShopGoods:getResetMode()
 	return nil
 end
 
+function ShopGoods:getOriginalPrice()
+	local rewards = RewardSystem:getRewardsById(self._rewardId)
+
+	if rewards[1].originalPrice then
+		return rewards[1].originalPrice
+	end
+
+	return nil
+end
+
 function ShopGoods:getUpdateTime()
 	if not self._updateTime then
 		return 1

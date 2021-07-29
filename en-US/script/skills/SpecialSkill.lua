@@ -7687,6 +7687,10 @@ all.Skill_MainStage_DieTransform_BossComing = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
+			local buffeft1 = global.SpecialNumericEffect(_env, "+transformcount", {
+				"+Normal",
+				"+Normal"
+			}, 9999)
 
 			global.Perform(_env, _env.ACTOR, global.Animation(_env, "fakedie", nil, , 1))
 			global.AddAnim(_env, {

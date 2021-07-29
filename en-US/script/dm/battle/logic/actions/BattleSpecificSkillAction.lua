@@ -53,6 +53,11 @@ function BattleSpecificSkillAction:doSkill()
 		ACTOR = actor,
 		TARGET = primTrgt
 	}
+
+	for k, v in pairs(self._skill:getArgs() or {}) do
+		args[k] = v
+	end
+
 	local skillAction = skill and skill:getEntryAction()
 
 	skillExecutor:runAction(skillAction, args, function (executor)

@@ -167,6 +167,10 @@ function BattleSkill:dumpInformation()
 	}
 end
 
+function BattleSkill:getArgs()
+	return self._args
+end
+
 function BattleSkill:build(globalScope, force)
 	if self._prototype and not force then
 		return

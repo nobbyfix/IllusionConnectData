@@ -267,13 +267,16 @@ function BuildingMainComponent:setupCornerMask()
 				local maskImg = ccui.ImageView:create("asset/ui/building/pic_jiaodu.png", ccui.TextureResType.localType)
 
 				maskImg:setAnchorPoint(cc.p(0, 0))
-				maskImg:setPosition(cc.p((x - 1) * size.width, (y - 1) * size.height))
 				maskImg:setScaleX(x > 1 and -1 or 1)
 				maskImg:setScaleY(y > 1 and -1 or 1)
 				maskImg:setOpacity(0)
 				AdjustUtils.adjustLayoutByType(maskImg, adjustType[idx])
 				self:getView():addChild(maskImg, -1)
 				table.insert(self._maskImg, maskImg)
+
+				local offsetX = cc.Director:getInstance():getWinSize().width - 1136
+
+				maskImg:setPosition(cc.p((x - 1) * size.width - offsetX * (x > 1 and -1 or 1), (y - 1) * size.height))
 
 				idx = idx + 1
 			end

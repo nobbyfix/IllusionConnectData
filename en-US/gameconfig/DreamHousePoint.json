@@ -1,0 +1,50 @@
+{
+    "DH01N01_Point": {
+        "BeforePoint": "",
+        "BlockId": "DH01N01M01",
+        "Name": "DHPointDes_Easy",
+        "NextPoint": "DH01N02_Point",
+        "StarNum": [
+            1,
+            2,
+            3
+        ],
+        "StarReward": [
+            "DH01N01_StarReward1",
+            "DH01N01_StarReward2",
+            "DH01N01_StarReward3"
+        ]
+    },
+    "DH01N02_Point": {
+        "BeforePoint": "DH01N01_Point",
+        "BlockId": "DH01N02M01",
+        "Name": "DHPointDes_Mid",
+        "NextPoint": "DH01N03_Point",
+        "StarNum": [
+            4,
+            6,
+            8
+        ],
+        "StarReward": [
+            "DH01N02_StarReward1",
+            "DH01N02_StarReward2",
+            "DH01N02_StarReward3"
+        ]
+    },
+    "DH01N03_Point": {
+        "BeforePoint": "DH01N02_Point",
+        "BlockId": "DH01N03M01",
+        "Name": "DHPointDes_Hard",
+        "NextPoint": "",
+        "StarNum": [
+            9,
+            12,
+            15
+        ],
+        "StarReward": [
+            "DH01N03_StarReward1",
+            "DH01N03_StarReward2",
+            "DH01N03_StarReward3"
+        ]
+    }
+}

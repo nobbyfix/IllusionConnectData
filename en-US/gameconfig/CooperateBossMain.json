@@ -225,6 +225,37 @@
         "Time": 1800,
         "Type": "Normal"
     },
+    "CooperateBoss_BQDShe": {
+        "AwakenAttrEffect": "ExcellentHero_Awaken",
+        "AwakenBoss": "",
+        "BossBattle": "CooperateBoss_BQDShe",
+        "ExcellentHero": [
+            {
+                "Effect": "ExcellentHero_Attr_Big",
+                "Hero": [
+                    "XBKLDi",
+                    "HSYZhai"
+                ]
+            },
+            {
+                "Effect": "ExcellentHero_Attr_Small",
+                "Hero": [
+                    "BQDShe",
+                    "LCYShi",
+                    "XSMLi"
+                ]
+            }
+        ],
+        "Revelry": "",
+        "RewardRevelry": "",
+        "RewardShow": "CooperateBossMain_BQDShe_Show",
+        "RoleModel": "Model_BQDShe",
+        "StarsAttrEffect": "ExcellentHero_Stars",
+        "Story": [],
+        "TiggerAwaken": "",
+        "Time": 1800,
+        "Type": "Normal"
+    },
     "CooperateBoss_DCJKang": {
         "AwakenAttrEffect": "ExcellentHero_Awaken",
         "AwakenBoss": "",

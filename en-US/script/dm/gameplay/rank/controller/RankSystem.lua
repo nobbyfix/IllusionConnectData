@@ -35,6 +35,7 @@ RankType = {
 	KRTPK = 26,
 	kExp = 6,
 	kClub = 9,
+	KStageAreana = 43,
 	kGold = 5,
 	kMap = 14,
 	kMaze = 15,
@@ -63,7 +64,8 @@ RankClass = {
 	[RankType.kClubBoss] = ClubBossRankRecord,
 	[RankType.kMiniGame] = MiniGameRankRecord,
 	[RankType.KRTPK] = RTPKRankRecord,
-	[RankType.KPetWorldScore] = PetWorldScoreRankRecord
+	[RankType.KPetWorldScore] = PetWorldScoreRankRecord,
+	[RankType.KStageAreana] = StageAreanaRankRecord
 }
 RankSwitch = {
 	[RankType.kClubBoss] = "fn_clubBoss"
@@ -305,6 +307,29 @@ function RankSystem:requestRTPKAllServerRankData(data, callback, blockUI)
 	end)
 end
 
+function RankSystem:requestStageAreanaAllServerRankData(data, callback, blockUI)
+	local params = {
+		rankType = data.type,
+		start = data.rankStart,
+		["end"] = data.rankEnd
+	}
+
+	self._rankService:requestStageAreanaAllServerRankData(params, blockUI, function (response)
+		local syncTime = self:getCurrentTime()
+
+		if data.rankStart == 1 then
+			self._rank:cleanUpRankList(data.type)
+		end
+
+		self._rank:synchronize(response.data, data.type, syncTime)
+		self:dispatch(Event:new(EVT_RANK_REQUEST_SUCC))
+
+		if callback then
+			callback(response)
+		end
+	end)
+end
+
 function RankSystem:requestSupportRankRewardData(data, callback)
 	local params = {
 		type = data.type,
@@ -472,6 +497,10 @@ end
 
 function RankSystem:getRTPKMaxRank()
 	return ConfigReader:getDataByNameIdAndKey("ConfigValue", "RTPK_RankMax", "content")
+end
+
+function RankSystem:getLeadStageAreanaMaxRank()
+	return ConfigReader:getDataByNameIdAndKey("ConfigValue", "StageArena_RankMax", "content")
 end
 
 function RankSystem:getRequestRankCountPerTime()

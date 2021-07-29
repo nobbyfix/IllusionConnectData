@@ -15,9 +15,11 @@ function CreateBattleSession(args)
 		actstage = ActstageBattleSession,
 		clubboss = ClubBattleSession,
 		dream = DreamBattleSession,
+		house = HouseBattleSession,
 		cooperateboss = CooperateBattleSession,
 		orrtpk = RTPVPBattleSession,
-		orrtpkrobot = RTPVPRobotBattleSession
+		orrtpkrobot = RTPVPRobotBattleSession,
+		stageArena = StageArenaBattleSession
 	}
 	local sessionClass = SessionMap[args.battleType]
 
@@ -901,7 +903,7 @@ function BaseBattleSession:_adjustPlayerData(data, extra)
 						BattleDataHelper:addExtraPasvSkill(master, {
 							level = 1,
 							skillId = masterpasv
-						})
+						}, extra.masterpasvsParam)
 					end
 				end
 			end
@@ -985,6 +987,7 @@ function BaseBattleSession:_applyBattleConfig(battleData, battleConfig)
 		},
 		masterFBReduction = battleConfig.FriendFBReduction,
 		masterpasvs = battleConfig.FriendSpecialPassive,
+		masterpasvsParam = battleConfig.FriendSpecialPassiveParm,
 		combatAdjust = battleConfig.CombatAdjust
 	}
 
@@ -1003,7 +1006,8 @@ function BaseBattleSession:_applyBattleConfig(battleData, battleConfig)
 			scale = battleConfig.EnemyEnergyScale
 		},
 		masterFBReduction = battleConfig.EnemyFBReduction,
-		masterpasvs = battleConfig.EnemySpecialPassive
+		masterpasvs = battleConfig.EnemySpecialPassive,
+		masterpasvsParam = battleConfig.EnemySpecialPassiveParm
 	}
 
 	if battleData.enemyData.rid then

@@ -12,6 +12,9 @@ CurrencyBar:has("_eventDispatcher", {
 CurrencyBar:has("_shopSystem", {
 	is = "r"
 }):injectWith("ShopSystem")
+CurrencyBar:has("_leadStageArenaSystem", {
+	is = "r"
+}):injectWith("LeadStageArenaSystem")
 
 local length = 4
 local kAddBtnFuncMap = {
@@ -146,10 +149,17 @@ function CurrencyBar:setCurrencyId(currencyId, addBtnDisable)
 		})
 
 		if iconPic then
+			if currencyId == CurrencyIdKind.kStageArenaOldCoin then
+				local nameText = ccui.Text:create(Strings:get("StageArena_GoldName") .. ":", TTF_FONT_FZYH_M, 18)
+
+				nameText:getVirtualRenderer():setOverflow(cc.LabelOverflow.SHRINK)
+				nameText:getVirtualRenderer():setDimensions(200, 18)
+				nameText:setTextHorizontalAlignment(cc.TEXT_ALIGNMENT_RIGHT)
+				nameText:addTo(iconNode):offset(-120, 0)
+			end
+
 			iconPic:addTo(iconNode)
 		end
-
-		self:updateText()
 
 		local addBtn = view:getChildByFullName("add_btn")
 		local resource = RewardSystem:getResource(currencyId)
@@ -214,6 +224,8 @@ function CurrencyBar:setCurrencyId(currencyId, addBtnDisable)
 			end
 		end
 	end
+
+	self:updateText()
 end
 
 function CurrencyBar:updateText()
@@ -279,7 +291,7 @@ function CurrencyBar:updateText()
 		curPower, lastRecoverTime = self._bagSystem[func](self._bagSystem, currencyId)
 		local resetConfig = self._bagSystem[configFunc](self._bagSystem, currencyId)
 		powerLimit = resetConfig.limit or 3000
-		powerRecoverCd = resetConfig.limit or 100
+		powerRecoverCd = resetConfig.cd or 100
 		text = curPower .. "/" .. powerLimit
 		local tipPanel = view:getChildByFullName("tips")
 		local str1 = tipPanel:getChildByName("oneTimes")
@@ -313,6 +325,8 @@ function CurrencyBar:updateText()
 		end
 	elseif currencyId == CurrencyIdKind.kMazeInfinityGold then
 		text = self._bagSystem:getItemCount(currencyId)
+	elseif currencyId == CurrencyIdKind.kStageArenaOldCoin then
+		text = self._leadStageArenaSystem:getOldCoin()
 	else
 		text = self._bagSystem:getItemCount(currencyId)
 	end

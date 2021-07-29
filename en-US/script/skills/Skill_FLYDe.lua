@@ -475,6 +475,10 @@ all.Skill_FLYDe_Passive = {
 				damage.crit = nil
 				damage.block = nil
 
+				if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "DHB_Damage_Way")) > 0 and global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "Damage_Way_DARK")) == 0 then
+					damage.val = 0
+				end
+
 				if damage.val > 0 then
 					global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
 
@@ -934,6 +938,10 @@ all.Skill_FLYDe_Passive_EX = {
 
 				damage.crit = nil
 				damage.block = nil
+
+				if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "DHB_Damage_Way")) > 0 and global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "Damage_Way_DARK")) == 0 then
+					damage.val = 0
+				end
 
 				if damage.val > 0 then
 					global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
@@ -1768,6 +1776,10 @@ all.Skill_FLYDe_Passive_Awaken = {
 
 				damage.crit = nil
 				damage.block = nil
+
+				if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "DHB_Damage_Way")) > 0 and global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "Damage_Way_DARK")) == 0 then
+					damage.val = 0
+				end
 
 				if damage.val > 0 then
 					local result = global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)

@@ -1,0 +1,155 @@
+DreamHousePassMediator = class("DreamHousePassMediator", DmPopupViewMediator, _M)
+
+DreamHousePassMediator:has("_dreamSystem", {
+	is = "r"
+}):injectWith("DreamHouseSystem")
+DreamHousePassMediator:has("_developSystem", {
+	is = "r"
+}):injectWith("DevelopSystem")
+
+local kBtnHandlers = {
+	["main.nextBtn"] = {
+		clickAudio = "Se_Click_Common_2",
+		func = "onClickNext"
+	},
+	["main.closeBtn"] = {
+		clickAudio = "Se_Click_Common_2",
+		func = "onClickClose"
+	}
+}
+
+function DreamHousePassMediator:initialize()
+	super.initialize(self)
+end
+
+function DreamHousePassMediator:dispose()
+	super.dispose(self)
+end
+
+function DreamHousePassMediator:onRegister()
+	super.onRegister(self)
+	self:mapButtonHandlersClick(kBtnHandlers)
+end
+
+function DreamHousePassMediator:onRemove()
+	super.onRemove(self)
+end
+
+function DreamHousePassMediator:enterWithData(data)
+	self._mapId = data.mapId
+	self._pointId = data.pointId
+	self._keyStr = data.keyStr
+	self._mapData = self._dreamSystem:getMapById(self._mapId)
+	self.pointData = self._mapData:getPointById(self._pointId)
+
+	self:initWidget()
+	self:refreshView()
+	self:save(self._keyStr)
+	self:initAnim()
+end
+
+function DreamHousePassMediator:initWidget()
+	self._main = self:getView():getChildByName("main")
+	self._anim = self._main:getChildByName("anim")
+	self._name = self._main:getChildByName("name")
+
+	self._name:setOpacity(0)
+
+	self._leftBtn = self._main:getChildByName("nextBtn")
+
+	self._leftBtn:setOpacity(0)
+
+	self._rightBtn = self._main:getChildByName("closeBtn")
+
+	self._rightBtn:setOpacity(0)
+end
+
+function DreamHousePassMediator:refreshView()
+	local mapName = Strings:get(ConfigReader:getDataByNameIdAndKey("DreamHouseMap", self._mapId, "Name"))
+	local pointName = Strings:get(ConfigReader:getDataByNameIdAndKey("DreamHousePoint", self._pointId, "Name"))
+
+	self._name:setString(mapName .. "-" .. pointName)
+
+	local nextPointId = Strings:get(ConfigReader:getDataByNameIdAndKey("DreamHousePoint", self._pointId, "NextPoint"))
+
+	self._leftBtn:setVisible(true)
+	self._rightBtn:setPositionX(720)
+
+	if nextPointId == nil or nextPointId == "" then
+		self._leftBtn:setVisible(false)
+		self._rightBtn:setPositionX(570)
+	end
+end
+
+function DreamHousePassMediator:initAnim()
+	self._anim:removeAllChildren()
+
+	local animName = "tongguanchenggong_bumengguangwanmeitongguang"
+
+	if self.pointData:isPerfectPass() then
+		animName = "wanmeitongguang_bumengguangwanmeitongguang"
+	end
+
+	local anim = cc.MovieClip:create(animName)
+
+	anim:setPlaySpeed(0.7)
+	anim:setPosition(cc.p(0, 0))
+	anim:addTo(self._anim):offset(0, 0)
+	anim:addEndCallback(function (cid, mc)
+		mc:stop()
+	end)
+	anim:addCallbackAtFrame(17, function (cid, mc)
+		local fadeIn = cc.FadeIn:create(0.1)
+		local scaleTo1 = cc.ScaleTo:create(0.1, 1.1)
+		local spawn = cc.Spawn:create(fadeIn, scaleTo1)
+		local scaleTo2 = cc.ScaleTo:create(0.1, 1)
+		local action = cc.Sequence:create(spawn, scaleTo2)
+
+		self._name:runAction(action)
+	end)
+	anim:addCallbackAtFrame(20, function (cid, mc)
+		local fadeIn = cc.FadeIn:create(0.07)
+		local scaleTo1 = cc.ScaleTo:create(0.07, 0.9)
+		local spawn = cc.Spawn:create(fadeIn, scaleTo1)
+		local scaleTo2 = cc.ScaleTo:create(0.07, 0.8)
+		local action = cc.Sequence:create(spawn, scaleTo2)
+
+		self._leftBtn:runAction(action)
+	end)
+	anim:addCallbackAtFrame(23, function (cid, mc)
+		local fadeIn = cc.FadeIn:create(0.07)
+		local scaleTo1 = cc.ScaleTo:create(0.07, 0.9)
+		local spawn = cc.Spawn:create(fadeIn, scaleTo1)
+		local scaleTo2 = cc.ScaleTo:create(0.07, 0.8)
+		local action = cc.Sequence:create(spawn, scaleTo2)
+
+		self._rightBtn:runAction(action)
+	end)
+end
+
+function DreamHousePassMediator:onClickNext()
+	local nextPointId = Strings:get(ConfigReader:getDataByNameIdAndKey("DreamHousePoint", self._pointId, "NextPoint"))
+
+	if nextPointId and nextPointId ~= "" then
+		self:dispatch(Event:new(EVT_POINT_REFRESH_NEXT, {
+			mapId = self._mapId,
+			pointId = nextPointId
+		}))
+	end
+
+	self:close()
+end
+
+function DreamHousePassMediator:onClickClose()
+	self:close()
+end
+
+function DreamHousePassMediator:save(pointId)
+	if type(pointId) ~= "string" then
+		return
+	end
+
+	local customDataSystem = self:getInjector():getInstance("CustomDataSystem")
+
+	customDataSystem:setValue(PrefixType.kGlobal, pointId, true)
+end

@@ -144,6 +144,14 @@ function BattleGroundCell:getStatus()
 	return self.status
 end
 
+function BattleGroundCell:canBeSitByExtraSkillCard(card)
+	if not card then
+		return false
+	end
+
+	return true
+end
+
 function BattleGroundCell:canBeSitByCard(card)
 	if not card then
 		return false
@@ -410,7 +418,7 @@ function BattleGroundCell:isLocked()
 	return self._lockTimes and self._lockTimes > 0
 end
 
-function BattleGroundCell:addTrap(param)
+function BattleGroundCell:addTrap(param, isleft)
 	local trapId = param.trapId
 	local display = param.disp
 
@@ -444,7 +452,7 @@ function BattleGroundCell:addTrap(param)
 						table.removevalues(trapValue.displayNodes, mc)
 						mc:removeFromParent()
 					end
-				end)
+				end, isleft)
 			end
 
 			local displayNode = addEffect(trapModel.Effect, "front")
@@ -488,7 +496,7 @@ function BattleGroundCell:removeTrap(param)
 	self:refreshTrapEffect()
 end
 
-function BattleGroundCell:addActiveEffect(mcFile, loop, offsetY, layer, zOrder, callback)
+function BattleGroundCell:addActiveEffect(mcFile, loop, offsetY, layer, zOrder, callback, isLeft)
 	if not mcFile then
 		return
 	end
@@ -513,6 +521,7 @@ function BattleGroundCell:addActiveEffect(mcFile, loop, offsetY, layer, zOrder, 
 	anim:addTo(layer == "front" and self._trapNode or self._trapNode)
 	anim:setLocalZOrder(layer == "front" and zOrder or -zOrder)
 	anim:setPosition(point)
+	anim:setScaleX(isLeft and 1 or -1)
 
 	return anim
 end

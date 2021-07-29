@@ -3566,6 +3566,21 @@ function IconFactory:createPlayerFrameIcon(info, style)
 
 		node:setAmount(info.amount)
 
+		if config.Type == "LIMIT" and not info.notShowFrameLimit and getCurrentLanguage() == GameLanguageType.CN then
+			local tnode = self:createBaseNode()
+			local img = ccui.ImageView:create("asset/common/common_bg_xb_4.png", ccui.TextureResType.localType)
+
+			IconFactory:centerAddNode(tnode, img)
+
+			local lvLabel = cc.Label:createWithTTF("", CUSTOM_TTF_FONT_1, 18)
+
+			lvLabel:setString(Strings:get("ActivityBlock_UI_13"))
+			lvLabel:setColor(cc.c3b(255, 255, 255))
+			lvLabel:addTo(tnode):offset(0, 5)
+			tnode:setScale(1.2)
+			tnode:addTo(node):posite(90, 100)
+		end
+
 		if style and style.shine then
 			IconFactory:_createShineAnim(nil, , node)
 		end
