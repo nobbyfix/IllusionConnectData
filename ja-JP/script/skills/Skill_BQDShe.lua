@@ -949,7 +949,7 @@ all.Skill_BQDShe_Unique_Awaken = {
 		if this.dmgFactor == nil then
 			this.dmgFactor = {
 				1,
-				3.6,
+				3.5,
 				0
 			}
 		end
@@ -986,21 +986,10 @@ all.Skill_BQDShe_Unique_Awaken = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
+			_env.units = global.RandomN(_env, 3, global.EnemyUnits(_env))
 
-			if global.ProbTest(_env, 0.6) then
-				_env.units = global.RandomN(_env, 4, global.EnemyUnits(_env))
-
-				for _, unit in global.__iter__(_env.units) do
-					global.RetainObject(_env, unit)
-				end
-
-				global.AddStatus(_env, _env.ACTOR, "Drunk")
-			else
-				_env.units = global.RandomN(_env, 3, global.EnemyUnits(_env))
-
-				for _, unit in global.__iter__(_env.units) do
-					global.RetainObject(_env, unit)
-				end
+			for _, unit in global.__iter__(_env.units) do
+				global.RetainObject(_env, unit)
 			end
 
 			global.GroundEft(_env, _env.ACTOR, "BGEffectBlack")
@@ -1014,7 +1003,13 @@ all.Skill_BQDShe_Unique_Awaken = {
 
 			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.1, 80)
 			global.HarmTargetView(_env, _env.units)
-			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.FixedPos(_env, 0, 0, 2), 100, "skill3"))
+
+			if global.ProbTest(_env, 0.6) then
+				global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.FixedPos(_env, 0, 0, 2), 100, "skill3"))
+				global.AddStatus(_env, _env.ACTOR, "Drunk")
+			else
+				global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.FixedPos(_env, 0, 0, 2), 100, "skill3"))
+			end
 
 			for _, unit in global.__iter__(_env.units) do
 				global.AssignRoles(_env, unit, "target")
@@ -1073,7 +1068,7 @@ all.Skill_BQDShe_Unique_Awaken = {
 				local buffeft3 = global.NumericEffect(_env, "-unhurtrate", {
 					"+Normal",
 					"+Normal"
-				}, 0.2)
+				}, 0.3)
 
 				global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
 					timing = 2,
