@@ -262,7 +262,7 @@ function BuffTargetAgent:removeImmuneSelector(selector)
 	end
 
 	for i = 1, #immuneSelectors do
-		if immuneSelectors[i] == selector then
+		if immuneSelectors[i].selector == selector then
 			if cnt > 1 then
 				immuneSelectors[selector] = cnt - 1
 

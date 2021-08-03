@@ -559,7 +559,7 @@ function LeadStageArenaRivalMediator:refreshRivalTeamView(index)
 					local petNode = IconFactory:createHeroLargeIcon(heroInfo, {
 						hideStar = true,
 						hideName = true,
-						rarityAnim = true,
+						rarityAnim = false,
 						hideLevel = true
 					})
 

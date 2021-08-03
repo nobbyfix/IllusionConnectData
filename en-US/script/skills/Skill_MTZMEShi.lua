@@ -362,7 +362,7 @@ all.Skill_MTZMEShi_Passive = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.SelectBuffCount(_env, _env.unit, global.BUFF_MARKED(_env, "Skill_MTZMEShi_Passive")) > 0 and global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and _env.unit ~= _env.ACTOR then
+			if global.SelectBuffCount(_env, global.FriendField(_env), global.BUFF_MARKED(_env, "MTZMEShi_For_BackCard")) > 0 and global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and _env.unit ~= _env.ACTOR then
 				global.DispelBuff(_env, global.FriendField(_env), global.BUFF_MARKED_ALL(_env, "MTZMEShi_For_BackCard"), 1)
 			end
 		end)
@@ -724,7 +724,7 @@ all.Skill_MTZMEShi_Passive_EX = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.SelectBuffCount(_env, _env.unit, global.BUFF_MARKED(_env, "Skill_MTZMEShi_Passive")) > 0 and global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and _env.unit ~= _env.ACTOR then
+			if global.SelectBuffCount(_env, global.FriendField(_env), global.BUFF_MARKED(_env, "MTZMEShi_For_BackCard")) > 0 and global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and _env.unit ~= _env.ACTOR then
 				global.DispelBuff(_env, global.FriendField(_env), global.BUFF_MARKED_ALL(_env, "MTZMEShi_For_BackCard"), 1)
 			end
 		end)
