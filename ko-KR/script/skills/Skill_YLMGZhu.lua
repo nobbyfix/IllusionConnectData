@@ -271,7 +271,7 @@ all.Skill_YLMGZhu_Passive = {
 			entry = prototype.passive1
 		})
 		passive1 = global["[duration]"](this, {
-			0
+			20
 		}, passive1)
 		this.passive1 = global["[trigger_by]"](this, {
 			"SELF:ENTER"
@@ -287,7 +287,7 @@ all.Skill_YLMGZhu_Passive = {
 
 		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
 		exec["@time"]({
-			0
+			15
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
@@ -666,7 +666,7 @@ all.Skill_YLMGZhu_Passive_EX = {
 			entry = prototype.passive1
 		})
 		passive1 = global["[duration]"](this, {
-			0
+			20
 		}, passive1)
 		this.passive1 = global["[trigger_by]"](this, {
 			"SELF:ENTER"
@@ -692,7 +692,7 @@ all.Skill_YLMGZhu_Passive_EX = {
 
 		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
 		exec["@time"]({
-			0
+			15
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
