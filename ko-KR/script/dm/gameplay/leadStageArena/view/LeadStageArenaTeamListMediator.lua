@@ -255,7 +255,7 @@ function LeadStageArenaTeamListMediator:refreshTeamView()
 					local petNode = IconFactory:createHeroLargeIcon(heroInfo, {
 						hideStar = true,
 						hideName = true,
-						rarityAnim = true,
+						rarityAnim = false,
 						hideLevel = true
 					})
 
@@ -508,7 +508,7 @@ function LeadStageArenaTeamListMediator:createMovingPet(cell)
 		local petNode = IconFactory:createHeroLargeIcon(heroInfo, {
 			hideStar = true,
 			hideName = true,
-			rarityAnim = true,
+			rarityAnim = false,
 			hideLevel = true
 		})
 
@@ -805,7 +805,7 @@ function LeadStageArenaTeamListMediator:refreshRivalTeamView()
 					local petNode = IconFactory:createHeroLargeIcon(heroInfo, {
 						hideStar = true,
 						hideName = true,
-						rarityAnim = true,
+						rarityAnim = false,
 						hideLevel = true
 					})
 
