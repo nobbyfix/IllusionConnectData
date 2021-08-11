@@ -475,12 +475,20 @@ all.Skill_ZTXChang_Unique_Awaken = {
 				local attacker = global.LoadUnit(_env, _env.ACTOR, "ALL")
 				local defender = global.LoadUnit(_env, _env.TARGET, "ALL")
 				local OTKProb = global.SpecialPropGetter(_env, "specialnum1")(_env, _env.ACTOR)
-				local prob = global.EvalProb1(_env, attacker, defender, OTKProb, 0)
+				local StepProbFactor = global.SpecialPropGetter(_env, "specialnum2")(_env, _env.ACTOR)
 
-				if global.ProbTest(_env, prob) then
-					global.KillTarget(_env, _env.TARGET)
+				if StepProbFactor and StepProbFactor ~= 0 then
+					if defender.atk < attacker.atk then
+						_env.exprob = global.floor(_env, (attacker.atk - defender.atk) * 20 / defender.atk) * StepProbFactor
+					end
 
-					_env.flag = 1
+					local prob = global.EvalProb1(_env, attacker, defender, OTKProb + _env.exprob, 0)
+
+					if global.ProbTest(_env, prob) then
+						global.KillTarget(_env, _env.TARGET)
+
+						_env.flag = 1
+					end
 				end
 			end
 		end)

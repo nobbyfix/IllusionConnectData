@@ -230,9 +230,52 @@ function NoAiSetBox:onClick(data)
 	local mText = self._viewConfig[1].mtext
 
 	if tostring(mText) == "1" then
-		GameConfigs.NoAiSetBox = true
+		GameConfigs.ShowAiWeightBox = true
 	else
-		GameConfigs.NoAiSetBox = false
+		GameConfigs.ShowAiWeightBox = false
+	end
+
+	self:dispatch(ShowTipEvent({
+		tip = "设置完成"
+	}))
+end
+
+ShowAiWeightBox = class("ShowAiWeightBox", DebugViewTemplate, _M)
+
+function ShowAiWeightBox:initialize()
+	self._viewConfig = {
+		{
+			default = "",
+			name = "FileName",
+			_selectBoxShow = true,
+			type = "SelectBox",
+			title = "开启/关闭AI权重显示",
+			_selectBoxAutoHide = true,
+			selectHandler = function (selectStr)
+				local ret = {}
+
+				table.insert(ret, {
+					"1",
+					"开启AI权重显示"
+				})
+				table.insert(ret, {
+					"2",
+					"关闭AI权重显示"
+				})
+
+				return ret
+			end
+		}
+	}
+end
+
+function ShowAiWeightBox:onClick(data)
+	local mText = self._viewConfig[1].mtext
+
+	if tostring(mText) == "1" then
+		GameConfigs.ShowAiWeightBox = true
+	else
+		GameConfigs.ShowAiWeightBox = false
 	end
 
 	self:dispatch(ShowTipEvent({

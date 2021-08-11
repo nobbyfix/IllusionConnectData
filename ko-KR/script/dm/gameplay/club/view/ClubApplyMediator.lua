@@ -268,6 +268,11 @@ function ClubApplyMediator:initNodes()
 	local applaybtn = self._infoNode:getChildByFullName("applaybtn.button")
 
 	applaybtn:setContentSize(cc.size(364, 99))
+
+	local winSize = cc.Director:getInstance():getWinSize()
+
+	self._infoNode:setPositionX(winSize.width - self._infoNode:getContentSize().width - (winSize.width - 1136) / 2)
+	self._notHasNode:setPositionX(winSize.width - self._infoNode:getContentSize().width - (winSize.width - 1136) / 2)
 end
 
 function ClubApplyMediator:createTableView()

@@ -170,6 +170,10 @@ function RecruitPool:getLink()
 	return self._config.Link
 end
 
+function RecruitPool:getUPDesc()
+	return self._config.UPDesc
+end
+
 function RecruitPool:getTimeRewardData()
 	local resultList = {}
 	local resultArray = {}

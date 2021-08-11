@@ -43,7 +43,7 @@ function RecruitMainMediator:initResultView()
 	local cardType = self._recruitPool:getType()
 	local showBtnsPanel = true
 
-	if cardType == RecruitPoolType.kGold or cardType == RecruitPoolType.kPve or cardType == RecruitPoolType.kPvp or cardType == RecruitPoolType.kClub or cardType == RecruitPoolType.kEquip or cardType == RecruitPoolType.kActivityEquip then
+	if cardType == RecruitPoolType.kGold or cardType == RecruitPoolType.kPve or cardType == RecruitPoolType.kPvp or cardType == RecruitPoolType.kClub or cardType == RecruitPoolType.kEquip or cardType == RecruitPoolType.kActivityEquip or cardType == RecruitPoolType.kActivityUREquip then
 		local itemResult = cc.CSLoader:createNode("asset/ui/RecruitHeroResult.csb")
 
 		itemResult:addTo(self._resultMain):center(self._resultMain:getContentSize())
@@ -143,7 +143,7 @@ function RecruitMainMediator:initResultView()
 		end
 	end
 
-	local hideAnim = (cardType == RecruitPoolType.kEquip or cardType == RecruitPoolType.kActivityEquip) and self._realRecruitTimes == 1 or HIDE_RECRUIT_ANIM
+	local hideAnim = (cardType == RecruitPoolType.kEquip or cardType == RecruitPoolType.kActivityEquip or cardType == RecruitPoolType.kActivityUREquip) and self._realRecruitTimes == 1 or HIDE_RECRUIT_ANIM
 
 	if not hideAnim then
 		self._soundId = AudioEngine:getInstance():playEffect("Se_Effect_Card", false)
@@ -187,6 +187,8 @@ function RecruitMainMediator:initResultView()
 
 	if hideAnim then
 		self._showResult()
+
+		self._showResult = nil
 	end
 end
 
@@ -377,7 +379,7 @@ function RecruitMainMediator:showOneAnim()
 				self:refreshBg()
 			end
 		end
-	elseif cardType == RecruitPoolType.kEquip or cardType == RecruitPoolType.kActivityEquip then
+	elseif cardType == RecruitPoolType.kEquip or cardType == RecruitPoolType.kActivityEquip or cardType == RecruitPoolType.kActivityUREquip then
 		self._itemPanel = self._itemResult:getChildByFullName("itemPanel")
 
 		self._itemPanel:removeAllChildren()
@@ -490,7 +492,7 @@ function RecruitMainMediator:showTenAnim()
 		end
 
 		self:refreshBg(heroId)
-	elseif cardType == RecruitPoolType.kEquip or cardType == RecruitPoolType.kActivityEquip then
+	elseif cardType == RecruitPoolType.kEquip or cardType == RecruitPoolType.kActivityEquip or cardType == RecruitPoolType.kActivityUREquip then
 		self._itemPanel:removeAllChildren()
 		self._itemResult:setVisible(true)
 		self:setButtonAndDesc()
@@ -643,17 +645,46 @@ function RecruitMainMediator:createRewardItem(reward, pos, scale)
 		})
 
 		icon:setContentSize(cc.size(110, 110))
-		icon:addTo(itemIconNode)
 		GameStyle:setQualityText(nameText, RewardSystem:getQuality(reward))
-		icon:setAnchorPoint(cc.p(0.5, 0.5))
-		icon:setPositionY(20)
+		icon:setAnchorPoint(cc.p(0.5, 0))
 
 		node.icon = icon
 		icon.ignoreMoveAction = true
+
+		IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), reward, {
+			swallowTouches = true,
+			needDelay = true
+		})
+
+		if RewardSystem:checkIsComposeItem(reward) then
+			local iconNode = ccui.Widget:create()
+
+			iconNode:setContentSize(cc.size(110, 110))
+			iconNode:setScale(1.3)
+
+			local anim = cc.MovieClip:create(kEquipRarityAnim[15])
+
+			anim:addEndCallback(function ()
+				anim:stop()
+			end)
+			anim:addTo(iconNode, -1):center(iconNode:getContentSize())
+			anim:offset(9, -3)
+
+			local equipNode = anim:getChildByFullName("equipNode")
+			local iconNode1 = equipNode:getChildByFullName("icon")
+
+			icon:addTo(iconNode1):setPositionY(-55)
+			iconNode:addTo(itemIconNode)
+			iconNode:setAnchorPoint(cc.p(0.5, 0))
+			iconNode:setPositionY(0)
+		else
+			icon:addTo(itemIconNode)
+			icon:setPositionY(-40)
+		end
+
 		local scale = scale or 1
 
 		icon:setScale(scale)
-		nameText:setPositionY(-icon:getContentSize().height * scale / 2 - 1)
 
 		node.tag = "ITEM"
 
@@ -990,7 +1021,7 @@ function RecruitMainMediator:onClickRebuy(sender, eventType)
 
 	if bagSystem:checkCostEnough(costId, costCount) then
 		self._recruitSystem:requestRecruit(param)
-	elseif costId == CurrencyIdKind.kDiamondDrawItem then
+	elseif costId == CurrencyIdKind.kDiamondDrawItem or costId == CurrencyIdKind.kDiamondDrawURItem then
 		self:buyCard(costId, costCount, param)
 	else
 		self._resultMain:removeAllChildren()

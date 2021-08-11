@@ -173,6 +173,13 @@ function ActivityTaskAchievementMediator:createCell(cell, index)
 
 		processNode:setVisible(false)
 		descText:setPositionY(55)
+		processNode:setPositionY(20)
+
+		local getVirtualRenderer = descText:getVirtualRenderer()
+
+		getVirtualRenderer:setAlignment(cc.TEXT_ALIGNMENT_LEFT, cc.TEXT_ALIGNMENT_CENTER)
+		getVirtualRenderer:setOverflow(cc.LabelOverflow.SHRINK)
+		getVirtualRenderer:setDimensions(430, 30)
 
 		if self._itemId then
 			local icon = IconFactory:createItemPic({
@@ -199,8 +206,8 @@ function ActivityTaskAchievementMediator:createCell(cell, index)
 			if taskValues then
 				bar:setPercent(taskValues.currentValue / taskValues.targetValue * 100)
 				process:setString(taskValues.currentValue .. "/" .. taskValues.targetValue)
-				processNode:setPositionX(descText:getPositionX() - 5)
-				descText:setPositionY(70)
+				processNode:setPositionX(descText:getPositionX())
+				descText:setPositionY(60)
 			end
 		end
 
@@ -236,6 +243,7 @@ function ActivityTaskAchievementMediator:createCell(cell, index)
 		local rewardBg = panel:getChildByName("rewardicon")
 
 		rewardBg:removeAllChildren()
+		rewardBg:setPositionX(500)
 
 		if rewards then
 			for i = 1, #rewards do

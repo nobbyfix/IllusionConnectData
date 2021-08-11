@@ -357,7 +357,7 @@ function GalleryMemoryListMediator:onClickMemory(sender, eventType, data, index)
 				local maskImage = self:getView():getChildByName("maskImage")
 				local fade = cc.FadeIn:create(0.2)
 				local func = cc.CallFunc:create(function ()
-					self:onClickCallback(data, index)
+					self:onClickCallback(sender, data, index)
 
 					self._isReturn = true
 
@@ -382,7 +382,7 @@ function GalleryMemoryListMediator:onClickMemory(sender, eventType, data, index)
 	end
 end
 
-function GalleryMemoryListMediator:onClickCallback(data, index)
+function GalleryMemoryListMediator:onClickCallback(sender, data, index)
 	if data:getType() == GalleryMemoryType.STORY then
 		local storyLink = data:getStoryLink()
 
@@ -391,7 +391,11 @@ function GalleryMemoryListMediator:onClickCallback(data, index)
 			local storyAgent = storyDirector:getStoryAgent()
 
 			storyAgent:setSkipCheckSave(true)
-			storyAgent:trigger(storyLink, nil)
+			storyAgent:trigger(storyLink, function ()
+			end, function ()
+				self._gallerySystem:setActivityStorySaveStatus(data:getId(), false)
+				self:refreshRedPoint(sender, data, false)
+			end)
 		end
 	else
 		local view = self:getInjector():getInstance("GalleryMemoryInfoView")
@@ -405,6 +409,16 @@ function GalleryMemoryListMediator:onClickCallback(data, index)
 end
 
 function GalleryMemoryListMediator:onClickBack()
+	if self._memoryType == GalleryMemoryType.STORY then
+		for index, data in ipairs(self._showList) do
+			self._gallerySystem:setActivityStorySaveStatus(data:getId(), false)
+		end
+
+		for index, data in ipairs(self._eliteShowList) do
+			self._gallerySystem:setActivityStorySaveStatus(data:getId(), false)
+		end
+	end
+
 	self:dismiss()
 end
 

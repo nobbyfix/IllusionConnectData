@@ -10,6 +10,9 @@ ActivityBlockMapNewActivity:has("_team", {
 ActivityBlockMapNewActivity:has("_storySet", {
 	is = "rw"
 })
+ActivityBlockMapNewActivity:has("_mapList", {
+	is = "rw"
+})
 
 function ActivityBlockMapNewActivity:initialize()
 	self._stagesMap = {}
@@ -56,7 +59,7 @@ function ActivityBlockMapNewActivity:syncStageInfo(data)
 
 			self._stagesMap[id]:setOwner(self)
 
-			self._mapList[#self._mapList + 1] = stage
+			self._mapList[table.indexof(self._activityConfig.ActivityBlockMap, id)] = stage
 		end
 
 		self._stagesMap[id]:sync(map)
@@ -84,6 +87,12 @@ function ActivityBlockMapNewActivity:hasRedPoint()
 				end
 			end
 		end
+	end
+
+	local gallerySystem = DmGame:getInstance()._injector:getInstance(GallerySystem)
+
+	if gallerySystem:getStoryPackRedPointByType(GalleryMemoryPackType.ACTIVI) then
+		return true
 	end
 
 	return false
@@ -145,6 +154,16 @@ function ActivityBlockMapNewActivity:getMapIdByStageIndex(stageIndex)
 	return stage:getMapId()
 end
 
+function ActivityBlockMapNewActivity:getMapIndexByMap(mapId)
+	for index, value in ipairs(self._mapList) do
+		if value:getMapId() == mapId then
+			return index
+		end
+	end
+
+	return nil
+end
+
 function ActivityBlockMapNewActivity:getMapIdStartTimeByStageType(stageIndex)
 	local stage = self:getStageByStageIndex(stageIndex)
 
@@ -162,6 +181,22 @@ function ActivityBlockMapNewActivity:getMapIdByPointId(pointId)
 	mapid = mapid or ConfigReader:getDataByNameIdAndKey("ActivityStoryPoint", pointId, "Map")
 
 	return mapid
+end
+
+function ActivityBlockMapNewActivity:getMapIdexBySortId(sortId)
+	if not sortId then
+		return
+	end
+
+	local mapid = self:getMapIdByPointId(sortId)
+
+	if not mapid then
+		return nil
+	end
+
+	local mapIndex = self:getMapIndexByMap(mapid)
+
+	return mapIndex
 end
 
 function ActivityBlockMapNewActivity:getAssistEnemyInfo(enemyId)

@@ -529,6 +529,21 @@ local modules = {
 							res = "asset/ui/bagSelectMaterial.csb",
 							name = "BagSelectMaterialView",
 							mediator = "BagSelectMaterialMediator"
+						},
+						{
+							res = "asset/ui/bagURMap.csb",
+							name = "BagURMapView",
+							mediator = "BagURMapMediator"
+						},
+						{
+							res = "asset/ui/bagURMapDetail.csb",
+							name = "BagURMapViewDetailView",
+							mediator = "BagURMapViewDetailMediator"
+						},
+						{
+							res = "asset/ui/bagURMapReward.csb",
+							name = "BagURMapRewardView",
+							mediator = "BagURMapRewardMediator"
 						}
 					}
 				}
@@ -2011,6 +2026,11 @@ local modules = {
 						{
 							res = "asset/ui/ActivitySummerReMain.csb",
 							name = "ActivitySummerReMainView",
+							mediator = "ActivityCommonMainMediator"
+						},
+						{
+							res = "asset/ui/ActivityFireWorksMain.csb",
+							name = "ActivityFireWorksMainView",
 							mediator = "ActivityCommonMainMediator"
 						},
 						{

@@ -731,6 +731,12 @@ function IconFactory:createIcon(info, style)
 			if config and config.Id then
 				return IconFactory:createBuffIcon(info, style)
 			end
+		elseif info.rewardType == RewardType.kBackground then
+			local config = ConfigReader:getRecordById("HomeBackground", tostring(id))
+
+			if config and config.Id then
+				return IconFactory:createBackgroundIcon(info, style)
+			end
 		end
 	end
 
@@ -2075,6 +2081,11 @@ function IconFactory:createEquipPic(info, style)
 		local iconName = config.Icon
 		local path = "asset/items/" .. iconName .. ".png"
 		icon = cc.Sprite:create(path)
+		local size = icon:getContentSize()
+
+		if size.width > 200 then
+			icon:setScale(0.42)
+		end
 	else
 		icon = cc.Sprite:create()
 	end
@@ -2148,40 +2159,10 @@ function IconFactory:createEquipIcon(info, style)
 	end
 
 	local equipImg = self:createEquipPic(info)
-	local spriteSize = equipImg:getContentSize()
-	local coordinates = ConfigReader:getDataByNameIdAndKey("HeroEquipBase", id, "Coordinates") or {}
+	local scale = equipImg:getScale()
 	local contentScale = ConfigReader:getDataByNameIdAndKey("HeroEquipBase", id, "zoom") or 1
-	local x = coordinates[1] or 0
-	local y = coordinates[2] or 0
-	local clipIndex = 1
-	local stencilSize = cc.size(105, 105)
 
-	if style.showAllSprite == true then
-		stencilSize = spriteSize
-	end
-
-	info.stencil = self:getStencilByType(clipIndex, stencilSize)
-	local equipSize = info.stencil:getContentSize()
-	equipSize.width = equipSize.width * info.stencil:getScaleX()
-	equipSize.height = equipSize.height * info.stencil:getScaleY()
-	local anchorPoint = cc.p(x / (spriteSize.width * contentScale), y / (spriteSize.height * contentScale))
-
-	if style.showAllSprite == true then
-		anchorPoint = cc.p(0, 0)
-	end
-
-	equipImg:setAnchorPoint(anchorPoint)
-	equipImg:setFlippedX(info.stencilFlip)
-	equipImg:setScale(contentScale)
-	info.stencil:setPosition(0, 0)
-	info.stencil:setAnchorPoint(cc.p(0, 0))
-
-	equipImg = ClippingNodeUtils.getClippingNodeByData({
-		stencil = info.stencil,
-		content = equipImg
-	}, info.alpha)
-
-	equipImg:setContentSize(equipSize)
+	equipImg:setScale(contentScale * scale)
 	equipImg:setAnchorPoint(cc.p(0.5, 0.5))
 	equipImg:setIgnoreAnchorPointForPosition(false)
 	IconFactory:centerAddNode(node, equipImg)
@@ -3443,6 +3424,121 @@ function IconFactory:createPlayerIcon(info)
 	end
 
 	return node, oldIcon
+end
+
+function IconFactory:createBackgroundIcon(info, style)
+	assert(info ~= nil, "Bad argument")
+
+	local config = ConfigReader:getRecordById("HomeBackground", tostring(info.id))
+	style = style or {}
+
+	if config ~= nil then
+		local index, iconNode = nil
+		iconNode = ccui.ImageView:create("asset/items/" .. config.Information.img .. ".png")
+
+		if iconNode == nil then
+			iconNode = self:createSprite(GameStyle:getDefaultUnfoundFile())
+		end
+
+		iconNode:setScale(0.5)
+
+		local node = ccui.Widget:create()
+
+		node:setContentSize(cc.size(iconNode:getContentSize().width, iconNode:getContentSize().height))
+		node:setAnchorPoint(cc.p(0.5, 0.5))
+
+		local quality = cc.Sprite:create("asset/itemRect/common_pz_huang.png")
+
+		node:addChild(quality)
+		quality:setPosition(100, 100)
+		iconNode:addTo(node):center(node:getContentSize())
+
+		iconNode = node
+
+		if info.scaleRatio then
+			iconNode:setScale(info.scaleRatio)
+		else
+			iconNode:setScale(1)
+		end
+
+		local size = cc.size(110, 110)
+		local node = self:createBaseNode(style and style.isWidget)
+
+		node:setContentSize(size)
+		IconFactory:centerAddNode(node, iconNode)
+
+		local kAmountTag = 65536
+		local mySelf = self
+
+		function node:setAmount(amount)
+			if style and style.showAmount == false then
+				return
+			end
+
+			amount = amount or ""
+			local label = self:getChildByTag(kAmountTag)
+
+			if not label then
+				local amountBg = cc.Sprite:create("asset/common/common_icon_sld.png")
+
+				amountBg:setAnchorPoint(cc.p(1, 0))
+				amountBg:addTo(self):posite(109, -5)
+				amountBg:setName("AmountBg")
+
+				label = mySelf:_createAmountLabel(info, nil, self)
+
+				label:setTag(kAmountTag)
+				label:setAnchorPoint(1, 0.5)
+				label:setPosition(cc.p(100, 15))
+			end
+
+			if type(amount) == "number" and amount > 99999 then
+				local str = Strings:get("Common_Time_01")
+				local amountTemp = amount / 10000
+
+				label:setString(amountTemp .. str)
+			else
+				label:setString(amount)
+			end
+
+			local amountBg = self:getChildByName("AmountBg")
+			local width = amountBg:getContentSize().width
+			local scaleX = (label:getContentSize().width + 16) / width
+
+			amountBg:setScaleX(scaleX)
+			amountBg:setVisible(amount ~= "" and tonumber(amount) > 0)
+		end
+
+		function node:adjustAmountBg()
+			if style and style.showAmount == false then
+				return
+			end
+
+			local label = self:getChildByTag(kAmountTag)
+			local amountBg = self:getChildByName("AmountBg")
+
+			if not label or not amountBg then
+				return
+			end
+
+			local width = amountBg:getContentSize().width
+			local scaleX = (label:getContentSize().width + 16) / width
+
+			amountBg:setScaleX(scaleX)
+		end
+
+		function node:getAmountLabel()
+			return self:getChildByTag(kAmountTag)
+		end
+
+		node:setAmount(info.amount)
+
+		if style and style.shine then
+			IconFactory:_createShineAnim(nil, , node)
+		end
+
+		return node
+	end
 end
 
 function IconFactory:createPlayerFrameIcon(info, style)

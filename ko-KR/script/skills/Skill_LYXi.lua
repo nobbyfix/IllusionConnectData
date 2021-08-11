@@ -351,16 +351,22 @@ all.Skill_LYXi_Passive = {
 				if global.MARKED(_env, "LYXi")(_env, unit1) and global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) then
 					if global.MARKED(_env, "LYXi")(_env, _env.unit) then
 						local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.unit)
+						local atk = global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR) * 3
+						local heal = global.min(_env, maxHp * this.CureFactor * 2, atk)
 
-						global.ApplyHPRecovery(_env, _env.unit, maxHp * this.CureFactor * 2)
+						global.ApplyHPRecovery(_env, _env.unit, heal)
 					elseif global.MARKED(_env, "WARRIOR")(_env, _env.unit) then
 						local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.unit)
+						local atk = global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR) * 3
+						local heal = global.min(_env, maxHp * this.CureFactor * 2, atk)
 
-						global.ApplyHPRecovery(_env, _env.unit, maxHp * this.CureFactor * 2)
+						global.ApplyHPRecovery(_env, _env.unit, heal)
 					else
 						local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.unit)
+						local atk = global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR) * 1.5
+						local heal = global.min(_env, maxHp * this.CureFactor, atk)
 
-						global.ApplyHPRecovery(_env, _env.unit, maxHp * this.CureFactor)
+						global.ApplyHPRecovery(_env, _env.unit, heal)
 					end
 				end
 			end
@@ -806,16 +812,22 @@ all.Skill_LYXi_Passive_EX = {
 				if global.MARKED(_env, "LYXi")(_env, unit1) and global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) then
 					if global.MARKED(_env, "LYXi")(_env, _env.unit) then
 						local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.unit)
+						local atk = global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR) * 3
+						local heal = global.min(_env, maxHp * this.CureFactor * 2, atk)
 
-						global.ApplyHPRecovery(_env, _env.unit, maxHp * this.CureFactor * 2)
+						global.ApplyHPRecovery(_env, _env.unit, heal)
 					elseif global.MARKED(_env, "WARRIOR")(_env, _env.unit) then
 						local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.unit)
+						local atk = global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR) * 3
+						local heal = global.min(_env, maxHp * this.CureFactor * 2, atk)
 
-						global.ApplyHPRecovery(_env, _env.unit, maxHp * this.CureFactor * 2)
+						global.ApplyHPRecovery(_env, _env.unit, heal)
 					else
 						local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.unit)
+						local atk = global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR) * 1.5
+						local heal = global.min(_env, maxHp * this.CureFactor, atk)
 
-						global.ApplyHPRecovery(_env, _env.unit, maxHp * this.CureFactor)
+						global.ApplyHPRecovery(_env, _env.unit, heal)
 					end
 				end
 			end

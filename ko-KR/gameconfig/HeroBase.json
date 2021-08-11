@@ -1293,6 +1293,246 @@
         "UnhurtRate": 0.0,
         "UniqueSkill": "Hero_Unique_ALSi"
     },
+    "AMLBLTe": {
+        "Absorption": 0.0,
+        "Anger": {
+            "a1": [
+                10,
+                750
+            ],
+            "a2": 320,
+            "a3": 150
+        },
+        "AngerBase": 1000.0,
+        "AngerMax": 1000.0,
+        "AngerRate": 0.0,
+        "AtkRate": 1.0,
+        "AtkWeaken": 0.0,
+        "AttackFactor": 1.04,
+        "AwakePic": "",
+        "BaseAttack": 186.0,
+        "BaseDefence": 60.0,
+        "BaseHp": 799.0,
+        "BaseQualityAttr": "SSR_10_Support",
+        "BaseStar": 3,
+        "BasicPower": 1600,
+        "BattlePassiveSkill": "Hero_PBattle_AMLBLTe",
+        "BattlePassiveType": "PBuff",
+        "BeCuredRate": 0.0,
+        "BlockAI": "AIAMLBLTe",
+        "BlockRate": 0.0,
+        "BlockStrg": 0.0,
+        "CVName": "AMLBLTe_CVName",
+        "Cost": 12,
+        "CounterRate": 0.0,
+        "CritRate": 0.0,
+        "CritStrg": 0.0,
+        "DefRate": 1.0,
+        "DefWeaken": 0.0,
+        "DefenceFactor": 1.0,
+        "Desc": "HeroBase_Desc_AMLBLTe",
+        "DoubleRate": 0.0,
+        "EffectRate": 0.0,
+        "EffectStrg": 0.0,
+        "EnterCD": 1.0,
+        "Flags": [
+            "AMLBLTe",
+            "quanti"
+        ],
+        "GainAnim": "",
+        "HeadTouchDeviation": [
+            0,
+            0
+        ],
+        "HeroShowIntro": "HeroBase_Intro_AMLBLTe",
+        "HeroStoryMap": "",
+        "HpFactor": 1.16,
+        "HurtRate": 0.0,
+        "IfHidden": 0,
+        "InnerAttr": [],
+        "ItemId": "IHF_AMLBLTe",
+        "KeyPassiveSkill": "",
+        "LevelUpFactor": 1.0,
+        "MVPText": "MVPText_AMLBLTe",
+        "MasterRage": 144,
+        "MaxLevel": 300,
+        "MaxQuality": "SSR_50_Support",
+        "MaxStar": 6,
+        "MaxStarEffect": "AMLBLTe_6",
+        "Name": "HeroBase_Name_AMLBLTe",
+        "NormalSkill": "Hero_Normal_AMLBLTe",
+        "Party": "WNSXJ",
+        "PassiveCondition": "",
+        "Position": "HeroBase_Position_AMLBLTe",
+        "ProudSkill": "Hero_Proud_AMLBLTe",
+        "Rareity": 14,
+        "Reflection": 0.0,
+        "RelationList": [],
+        "RoleModel": "Model_AMLBLTe",
+        "RtpkPercent": [
+            0,
+            0,
+            0
+        ],
+        "SVPText": "SVPText_AMLBLTe",
+        "Sex": 0,
+        "ShortDesc": "HeroBase_ShortDesc_AMLBLTe",
+        "SkillCost": {
+            "BattlePassiveSkill": {
+                "amount": [
+                    3,
+                    7,
+                    10,
+                    14,
+                    18,
+                    21,
+                    25,
+                    28,
+                    32,
+                    36
+                ],
+                "code": "ISU_Attack"
+            },
+            "NormalSkill": {
+                "amount": [
+                    3,
+                    6,
+                    9,
+                    12,
+                    15,
+                    18,
+                    21,
+                    24,
+                    27,
+                    30
+                ],
+                "code": "ISU_Attack"
+            },
+            "PassiveSkill1": {
+                "amount": [
+                    3,
+                    7,
+                    10,
+                    14,
+                    18,
+                    21,
+                    25,
+                    28,
+                    32,
+                    36
+                ],
+                "code": "ISU_Attack"
+            },
+            "PassiveSkill2": {
+                "amount": [
+                    3,
+                    7,
+                    10,
+                    14,
+                    18,
+                    21,
+                    25,
+                    28,
+                    32,
+                    36
+                ],
+                "code": "ISU_Attack"
+            },
+            "ProudSkill": {
+                "amount": [
+                    4,
+                    9,
+                    13,
+                    18,
+                    22,
+                    27,
+                    31,
+                    36,
+                    40,
+                    45
+                ],
+                "code": "ISU_Attack"
+            },
+            "UniqueSkill": {
+                "amount": [
+                    6,
+                    12,
+                    18,
+                    24,
+                    30,
+                    36,
+                    42,
+                    48,
+                    54,
+                    60
+                ],
+                "code": "ISU_Attack"
+            }
+        },
+        "SkillRate": 0.15,
+        "Soul": [],
+        "SoundList": [
+            "Voice_AMLBLTe_01",
+            "Voice_AMLBLTe_35",
+            "Voice_AMLBLTe_40_1",
+            "Voice_AMLBLTe_40_2",
+            "Voice_AMLBLTe_40_3",
+            "Voice_AMLBLTe_37",
+            "Voice_AMLBLTe_38",
+            "Voice_AMLBLTe_39",
+            "Voice_AMLBLTe_47",
+            "Voice_AMLBLTe_48",
+            "Voice_AMLBLTe_50",
+            "Voice_AMLBLTe_51",
+            "Voice_AMLBLTe_52",
+            "Voice_AMLBLTe_53",
+            "Voice_AMLBLTe_54",
+            "Voice_AMLBLTe_55",
+            "Voice_AMLBLTe_56",
+            "Voice_AMLBLTe_57",
+            "Voice_AMLBLTe_60",
+            "Voice_AMLBLTe_07",
+            "Voice_AMLBLTe_08",
+            "Voice_AMLBLTe_09",
+            "Voice_AMLBLTe_58",
+            "Voice_AMLBLTe_59",
+            "Voice_AMLBLTe_10",
+            "Voice_AMLBLTe_11",
+            "Voice_AMLBLTe_14",
+            "Voice_AMLBLTe_15",
+            "Voice_AMLBLTe_16",
+            "Voice_AMLBLTe_21",
+            "Voice_AMLBLTe_17",
+            "Voice_AMLBLTe_18",
+            "Voice_AMLBLTe_34",
+            "Voice_AMLBLTe_19",
+            "Voice_AMLBLTe_63",
+            "Voice_AMLBLTe_61",
+            "Voice_AMLBLTe_25",
+            "Voice_AMLBLTe_26",
+            "Voice_AMLBLTe_27",
+            "Voice_AMLBLTe_28",
+            "Voice_AMLBLTe_29",
+            "Voice_AMLBLTe_30",
+            "Voice_AMLBLTe_31",
+            "Voice_AMLBLTe_32"
+        ],
+        "Speed": 50,
+        "StarId": "AMLBLTe_1",
+        "SurfaceList": [
+            "Surface_AMLBLTe_1"
+        ],
+        "TeamSpecialVoice": {},
+        "TimeType": "\"2002-01-28 19:00:00\"",
+        "Transform": "",
+        "Type": "Support",
+        "UnblockRate": 0.0,
+        "UncritRate": 0.0,
+        "UndeadRate": 0.0,
+        "UneffectRate": 0.0,
+        "UnhurtRate": 0.0,
+        "UniqueSkill": "Hero_Unique_AMLBLTe"
+    },
     "AMLYa": {
         "Absorption": "",
         "Anger": "",
@@ -2087,8 +2327,9 @@
         "StarId": "BBLMa_1",
         "SurfaceList": [
             "Surface_BBLMa_1",
-            "Surface_BBLMa_Awake",
-            "Surface_BBLMa_2"
+            "Surface_BBLMa_2",
+            "Surface_BBLMa_3",
+            "Surface_BBLMa_Awake"
         ],
         "TeamSpecialVoice": {
             "CZheng": "Voice_BBLMa_33"
@@ -3858,7 +4099,11 @@
         "StarId": "CLMan_1",
         "SurfaceList": [
             "Surface_CLMan_1",
-            "Surface_CLMan_2"
+            "Surface_CLMan_2",
+            "Surface_CLMan_3",
+            "Surface_CLMan_4",
+            "Surface_CLMan_5",
+            "Surface_CLMan_6"
         ],
         "TeamSpecialVoice": {
             "FTLEShi": "Voice_CLMan_33"
@@ -6432,7 +6677,8 @@
         "SurfaceList": [
             "Surface_FTLEShi_1",
             "Surface_FTLEShi_2",
-            "Surface_FTLEShi_3"
+            "Surface_FTLEShi_3",
+            "Surface_FTLEShi_4"
         ],
         "TeamSpecialVoice": {
             "CLMan": "Voice_FTLEShi_33_1"
@@ -8013,7 +8259,8 @@
         "Speed": 50,
         "StarId": "HSYZhai_1",
         "SurfaceList": [
-            "Surface_HSYZhai_1"
+            "Surface_HSYZhai_1",
+            "Surface_HSYZhai_2"
         ],
         "TeamSpecialVoice": {},
         "TimeType": "\"2002-01-28 19:00:00\"",
@@ -8042,7 +8289,7 @@
         "AtkRate": 1.0,
         "AtkWeaken": 0.0,
         "AttackFactor": 1.04,
-        "AwakePic": "",
+        "AwakePic": "portrait_alin_awaken",
         "BaseAttack": 192.0,
         "BaseDefence": 60.0,
         "BaseHp": 821.0,
@@ -8255,7 +8502,8 @@
         "SurfaceList": [
             "Surface_HSheng_1",
             "Surface_HSheng_2",
-            "Surface_HSheng_3"
+            "Surface_HSheng_3",
+            "Surface_HSheng_Awake"
         ],
         "TeamSpecialVoice": {},
         "TimeType": "\"2002-01-28 19:00:00\"",
@@ -12879,6 +13127,246 @@
         "UneffectRate": 0.0,
         "UnhurtRate": 0.0,
         "UniqueSkill": "Hero_Unique_MKLJLuo"
+    },
+    "MLYDi": {
+        "Absorption": 0.0,
+        "Anger": {
+            "a1": [
+                10,
+                750
+            ],
+            "a2": 320,
+            "a3": 150
+        },
+        "AngerBase": 1000.0,
+        "AngerMax": 1000.0,
+        "AngerRate": 0.0,
+        "AtkRate": 1.0,
+        "AtkWeaken": 0.0,
+        "AttackFactor": 1.09,
+        "AwakePic": "",
+        "BaseAttack": 210.0,
+        "BaseDefence": 60.0,
+        "BaseHp": 832.0,
+        "BaseQualityAttr": "SSR_10_Curse",
+        "BaseStar": 3,
+        "BasicPower": 1600,
+        "BattlePassiveSkill": "Hero_PBattle_MLYDi",
+        "BattlePassiveType": "PBuff",
+        "BeCuredRate": 0.0,
+        "BlockAI": "AIMLYDi",
+        "BlockRate": 0.0,
+        "BlockStrg": 0.0,
+        "CVName": "MLYDi_CVName",
+        "Cost": 15,
+        "CounterRate": 0.0,
+        "CritRate": 0.0,
+        "CritStrg": 0.0,
+        "DefRate": 1.0,
+        "DefWeaken": 0.0,
+        "DefenceFactor": 1.0,
+        "Desc": "HeroBase_Desc_MLYDi",
+        "DoubleRate": 0.0,
+        "EffectRate": 0.0,
+        "EffectStrg": 0.0,
+        "EnterCD": 1.0,
+        "Flags": [
+            "MLYDi",
+            "danti"
+        ],
+        "GainAnim": "",
+        "HeadTouchDeviation": [
+            0,
+            0
+        ],
+        "HeroShowIntro": "HeroBase_Intro_MLYDi",
+        "HeroStoryMap": "",
+        "HpFactor": 1.07,
+        "HurtRate": 0.0,
+        "IfHidden": 0,
+        "InnerAttr": [],
+        "ItemId": "IHF_MLYDi",
+        "KeyPassiveSkill": "",
+        "LevelUpFactor": 1.0,
+        "MVPText": "MVPText_MLYDi",
+        "MasterRage": 180,
+        "MaxLevel": 300,
+        "MaxQuality": "SSR_50_Curse",
+        "MaxStar": 6,
+        "MaxStarEffect": "MLYDi_6",
+        "Name": "HeroBase_Name_MLYDi",
+        "NormalSkill": "Hero_Normal_MLYDi",
+        "Party": "UNKNOWN",
+        "PassiveCondition": "",
+        "Position": "HeroBase_Position_MLYDi",
+        "ProudSkill": "Hero_Proud_MLYDi",
+        "Rareity": 14,
+        "Reflection": 0.0,
+        "RelationList": [],
+        "RoleModel": "Model_MLYDi",
+        "RtpkPercent": [
+            0,
+            0,
+            0
+        ],
+        "SVPText": "SVPText_MLYDi",
+        "Sex": 0,
+        "ShortDesc": "HeroBase_ShortDesc_MLYDi",
+        "SkillCost": {
+            "BattlePassiveSkill": {
+                "amount": [
+                    3,
+                    7,
+                    10,
+                    14,
+                    18,
+                    21,
+                    25,
+                    28,
+                    32,
+                    36
+                ],
+                "code": "ISU_Attack"
+            },
+            "NormalSkill": {
+                "amount": [
+                    3,
+                    6,
+                    9,
+                    12,
+                    15,
+                    18,
+                    21,
+                    24,
+                    27,
+                    30
+                ],
+                "code": "ISU_Attack"
+            },
+            "PassiveSkill1": {
+                "amount": [
+                    3,
+                    7,
+                    10,
+                    14,
+                    18,
+                    21,
+                    25,
+                    28,
+                    32,
+                    36
+                ],
+                "code": "ISU_Attack"
+            },
+            "PassiveSkill2": {
+                "amount": [
+                    3,
+                    7,
+                    10,
+                    14,
+                    18,
+                    21,
+                    25,
+                    28,
+                    32,
+                    36
+                ],
+                "code": "ISU_Attack"
+            },
+            "ProudSkill": {
+                "amount": [
+                    4,
+                    9,
+                    13,
+                    18,
+                    22,
+                    27,
+                    31,
+                    36,
+                    40,
+                    45
+                ],
+                "code": "ISU_Attack"
+            },
+            "UniqueSkill": {
+                "amount": [
+                    6,
+                    12,
+                    18,
+                    24,
+                    30,
+                    36,
+                    42,
+                    48,
+                    54,
+                    60
+                ],
+                "code": "ISU_Attack"
+            }
+        },
+        "SkillRate": 0.15,
+        "Soul": [],
+        "SoundList": [
+            "Voice_MLYDi_01",
+            "Voice_MLYDi_35",
+            "Voice_MLYDi_40_1",
+            "Voice_MLYDi_40_2",
+            "Voice_MLYDi_40_3",
+            "Voice_MLYDi_37",
+            "Voice_MLYDi_38",
+            "Voice_MLYDi_39",
+            "Voice_MLYDi_47",
+            "Voice_MLYDi_48",
+            "Voice_MLYDi_50",
+            "Voice_MLYDi_51",
+            "Voice_MLYDi_52",
+            "Voice_MLYDi_53",
+            "Voice_MLYDi_54",
+            "Voice_MLYDi_55",
+            "Voice_MLYDi_56",
+            "Voice_MLYDi_57",
+            "Voice_MLYDi_60",
+            "Voice_MLYDi_07",
+            "Voice_MLYDi_08",
+            "Voice_MLYDi_09",
+            "Voice_MLYDi_58",
+            "Voice_MLYDi_59",
+            "Voice_MLYDi_10",
+            "Voice_MLYDi_11",
+            "Voice_MLYDi_14",
+            "Voice_MLYDi_15",
+            "Voice_MLYDi_16",
+            "Voice_MLYDi_21",
+            "Voice_MLYDi_17",
+            "Voice_MLYDi_18",
+            "Voice_MLYDi_34",
+            "Voice_MLYDi_19",
+            "Voice_MLYDi_63",
+            "Voice_MLYDi_61",
+            "Voice_MLYDi_25",
+            "Voice_MLYDi_26",
+            "Voice_MLYDi_27",
+            "Voice_MLYDi_28",
+            "Voice_MLYDi_29",
+            "Voice_MLYDi_30",
+            "Voice_MLYDi_31",
+            "Voice_MLYDi_32"
+        ],
+        "Speed": 50,
+        "StarId": "MLYDi_1",
+        "SurfaceList": [
+            "Surface_MLYDi_1"
+        ],
+        "TeamSpecialVoice": {},
+        "TimeType": "\"2002-01-28 19:00:00\"",
+        "Transform": "",
+        "Type": "Curse",
+        "UnblockRate": 0.0,
+        "UncritRate": 0.0,
+        "UndeadRate": 0.0,
+        "UneffectRate": 0.0,
+        "UnhurtRate": 0.0,
+        "UniqueSkill": "Hero_Unique_MLYDi"
     },
     "MLYTLSha": {
         "Absorption": 0.0,
@@ -18022,7 +18510,7 @@
         "HeroStoryMap": "",
         "HpFactor": 0.74,
         "HurtRate": 0.0,
-        "IfHidden": 0,
+        "IfHidden": 1,
         "InnerAttr": [],
         "ItemId": "IHF_SP_SSQXin",
         "KeyPassiveSkill": "",

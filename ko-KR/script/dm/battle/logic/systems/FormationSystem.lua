@@ -739,6 +739,14 @@ function FormationSystem:clearOldResident(actor)
 				})
 				self:_kickUnit(oldResident)
 
+				if self._eventCenter then
+					self._eventCenter:dispatchEvent("UnitsLeft", {
+						oldResident
+					}, self:_groupUnitsByPlayer({
+						oldResident
+					}), false, true)
+				end
+
 				return
 			end
 		end
@@ -779,6 +787,7 @@ local kExcludeDying = "dying"
 local kExcludeExpelled = "expelled"
 local kExcludeFlee = "flee"
 local kExcludeReviving = "reviving"
+local kExcludeExpelledJoinreferee = "expelled_joinreferee"
 
 function FormationSystem:_excludeUnit(unit, reason, workId, force)
 	local excludingUnits = self._excludingUnits
@@ -810,8 +819,12 @@ function FormationSystem:excludeDyingUnit(unit, workId)
 	return self:_excludeUnit(unit, kExcludeDying, workId)
 end
 
-function FormationSystem:expelUnit(unit, workId, force)
-	return self:_excludeUnit(unit, kExcludeExpelled, workId, force)
+function FormationSystem:expelUnit(unit, workId, force, joinReferee)
+	if joinReferee then
+		return self:_excludeUnit(unit, kExcludeExpelledJoinreferee, workId, force)
+	else
+		return self:_excludeUnit(unit, kExcludeExpelled, workId, force)
+	end
 end
 
 function FormationSystem:fleeUnit(unit, workId, force)
@@ -854,6 +867,8 @@ function FormationSystem:processExcludingUnits(workId)
 	local cntDead = 0
 	local expelledUnits = nil
 	local cntExpelled = 0
+	local expelledRefereeUnits = nil
+	local cntRefereeExpelled = 0
 	local fleeUnits = nil
 	local cntFlee = 0
 
@@ -887,6 +902,13 @@ function FormationSystem:processExcludingUnits(workId)
 
 				cntExpelled = cntExpelled + 1
 				expelledUnits[cntExpelled] = unit
+			elseif reason == kExcludeExpelledJoinreferee then
+				if expelledRefereeUnits == nil then
+					expelledRefereeUnits = {}
+				end
+
+				cntRefereeExpelled = cntRefereeExpelled + 1
+				expelledRefereeUnits[cntRefereeExpelled] = unit
 			elseif reason == kExcludeFlee then
 				if fleeUnits == nil then
 					fleeUnits = {}
@@ -904,6 +926,10 @@ function FormationSystem:processExcludingUnits(workId)
 		self:removeExpelledUnits(expelledUnits)
 	end
 
+	if expelledRefereeUnits then
+		self:removeExpelledUnits(expelledRefereeUnits, nil, true)
+	end
+
 	if fleeUnits then
 		self:removeExpelledUnits(fleeUnits, true)
 	end
@@ -913,7 +939,7 @@ function FormationSystem:processExcludingUnits(workId)
 	end
 end
 
-function FormationSystem:removeExpelledUnits(units, fleeSta)
+function FormationSystem:removeExpelledUnits(units, fleeSta, joinReferee)
 	if units == nil or #units == 0 then
 		return nil
 	end
@@ -930,7 +956,7 @@ function FormationSystem:removeExpelledUnits(units, fleeSta)
 	end
 
 	if eventCenter then
-		eventCenter:dispatchEvent("UnitsLeft", units, groupedByPlayer, fleeSta)
+		eventCenter:dispatchEvent("UnitsLeft", units, groupedByPlayer, fleeSta, joinReferee)
 	end
 
 	return groupedByPlayer

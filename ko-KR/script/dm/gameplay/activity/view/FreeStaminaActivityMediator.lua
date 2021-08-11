@@ -3,6 +3,9 @@ FreeStaminaActivityMediator = class("FreeStaminaActivityMediator", BaseActivityM
 FreeStaminaActivityMediator:has("_activitySystem", {
 	is = "r"
 }):injectWith("ActivitySystem")
+FreeStaminaActivityMediator:has("_gameServerAgent", {
+	is = "r"
+}):injectWith("GameServerAgent")
 
 function FreeStaminaActivityMediator:initialize()
 	super.initialize(self)
@@ -25,317 +28,250 @@ end
 function FreeStaminaActivityMediator:onRegister()
 	super.onRegister(self)
 
-	local developSystem = self:getInjector():getInstance("DevelopSystem")
-	self._bagSystem = developSystem:getBagSystem()
-
-	self:bindWidget("main.Button_get", OneLevelViceButton, {
-		handler = {
-			clickAudio = "Se_Click_Confirm",
-			func = bind1(self.onOkClicked, self)
-		}
-	})
-
 	self._main = self:getView():getChildByName("main")
-	self._recoverTime = self._main:getChildByFullName("recoverTime")
-	local roleNode = self._main:getChildByFullName("roleNode")
-
-	roleNode:removeAllChildren()
-
-	local roleModel = IconFactory:getRoleModelByKey("HeroBase", "YFZZhu")
-	local img, jsonPath = IconFactory:createRoleIconSprite({
-		iconType = "Bust4",
-		id = roleModel
-	})
-
-	img:addTo(roleNode)
-	img:setScale(1.4)
-	img:offset(40, -100)
-	self._main:getChildByFullName("Node_icon.Text_duration"):enableOutline(cc.c4b(80, 40, 20, 219.29999999999998), 1)
-	self._main:getChildByFullName("title"):enableOutline(cc.c4b(80, 40, 20, 219.29999999999998), 1)
-	self._main:getChildByFullName("text1"):setAdditionalKerning(5)
-	self._main:getChildByFullName("Node_icon.Text_duration"):setAdditionalKerning(3)
-	self._recoverTime:setAdditionalKerning(2)
 end
 
 function FreeStaminaActivityMediator:enterWithData(data)
 	self._activity = data.activity
 	self._parentMediator = data.parentMediator
+	self._dataList = self._activity:getActivityConfig().FreeStamina
+	self._bagSystem = self:getInjector():getInstance(DevelopSystem):getBagSystem()
 
 	self:setupView()
 end
 
 function FreeStaminaActivityMediator:setupView()
-	local iconBg = self._main:getChildByName("Node_icon")
+	local roleModelId = {
+		"Model_Story_FTLEShi01",
+		"Model_Story_CLMan01",
+		"Model_Story_ZTXChang01"
+	}
+	local pos = {
+		{
+			150,
+			73
+		},
+		{
+			140,
+			120
+		},
+		{
+			150,
+			100
+		}
+	}
 
-	iconBg:removeChildByName("PowerIcon")
+	for i = 1, 3 do
+		local data = self._dataList[i]
+		local panel = self._main:getChildByName("Panel_" .. i)
+		local roleNode = panel:getChildByName("rolepanel")
+		local img, jsonPath = IconFactory:createRoleIconSprite({
+			iconType = 2,
+			id = roleModelId[i]
+		})
 
-	local icon = IconFactory:createIcon({
-		id = CurrencyIdKind.kPower
-	})
+		img:setScale(0.91)
+		img:addTo(roleNode):posite(pos[i][1], pos[i][2])
 
-	icon:addTo(iconBg):center(iconBg:getContentSize())
-	icon:setName("PowerIcon")
+		local rewardNode = panel:getChildByName("reward")
+		local rewards = ConfigReader:getDataByNameIdAndKey("Reward", data.Reward, "Content")
+		local scale = 0.5
+		local count = #rewards
+		local cellWidth = 70
+		local offset = count * cellWidth * 0.5 - 8
 
-	self._getBtn = self._main:getChildByName("Button_get")
-	self._recoveringBtn = self._main:getChildByName("Button_recovering")
-	self._gotImage = self._main:getChildByName("gotImage")
+		for i = 1, 4 do
+			local reward = rewards[i]
+
+			if reward then
+				local rewardIcon = IconFactory:createRewardIcon(reward, {
+					showAmount = true,
+					isWidget = true
+				})
+
+				rewardIcon:setAnchorPoint(0, 0.5)
+				rewardIcon:addTo(rewardNode):posite((i - 1) * cellWidth - offset, 0)
+				rewardIcon:setScaleNotCascade(scale)
+				IconFactory:bindTouchHander(rewardIcon, IconTouchHandler:new(self._parentMediator), reward, {
+					swallowTouches = true
+				})
+			end
+		end
+
+		local timeText = panel:getChildByName("Text_time")
+		local time1 = self:getRealGetTime(data.Time[1])
+		local time2 = self:getRealGetTime(data.Time[2])
+		local timeStr1 = TimeUtil:localDate("%H:%M", time1)
+		local timeStr2 = TimeUtil:localDate("%H:%M", time2)
+
+		timeText:setString(timeStr1 .. "-" .. timeStr2)
+
+		local richText = ccui.RichText:createWithXML("", {})
+
+		richText:addTo(panel):setName("descText")
+		richText:setAnchorPoint(cc.p(0.5, 0.5))
+		richText:posite(153, 83)
+
+		local getBtn = panel:getChildByName("btn_get")
+
+		getBtn:getChildByName("Text_name"):setAdditionalKerning(4)
+
+		local function getFunc()
+			self:onClickGet(data.Order)
+		end
+
+		mapButtonHandlerClick(nil, getBtn, {
+			func = getFunc
+		})
+
+		local buyBtn = panel:getChildByName("btn_buy")
+
+		buyBtn:getChildByName("Text_name"):setAdditionalKerning(4)
+
+		local function buyFunc()
+			self:onClickBuy(data.Order)
+		end
+
+		mapButtonHandlerClick(nil, buyBtn, {
+			func = buyFunc
+		})
+	end
 
 	self:refreshView()
+	self:startTimer()
 end
 
-local kRoleTag = 999
-
-function FreeStaminaActivityMediator:refreshRolesState(playAnim)
-	local time = ""
-	local config = self._activity:getActivityConfig()
-
-	if config then
-		local showTime = {}
-		local curList = config.FreeStamina
-
-		table.copy(curList, showTime)
-		table.sort(showTime, function (a, b)
-			return a.Order < b.Order
-		end)
-
-		if curList then
-			table.sort(curList, function (a, b)
-				return self:compare(a, b)
-			end)
-
-			for i = 1, #curList do
-				local showTimeData = showTime[i]
-				local showTimeList1 = string.split(showTimeData.Time[1], ":")
-				local showTimeList2 = string.split(showTimeData.Time[2], ":")
-
-				if time == "" then
-					time = showTimeList1[1] .. ":" .. showTimeList1[2] .. "-" .. showTimeList2[1] .. ":" .. showTimeList2[2]
-				else
-					time = time .. "  " .. showTimeList1[1] .. ":" .. showTimeList1[2] .. "-" .. showTimeList2[1] .. ":" .. showTimeList2[2]
-				end
-
-				local data = curList[i]
-
-				if i == 1 then
-					local timeStatus = self._activitySystem:isCanGetStamina(data.Time, data.Order)
-					local showMask = true
-
-					if timeStatus == StaminaRewardTimeStatus.kNow then
-						showMask = false
-					end
-
-					local staminaLabel = self._main:getChildByName("Text_basenum")
-
-					staminaLabel:setString(data.Amount)
-
-					local addStaminaLabel = self._main:getChildByName("Text_addnum")
-					local addNum = 0
-					addNum = addNum or 0
-
-					addStaminaLabel:setString(tostring("+" .. addNum))
-					addStaminaLabel:setVisible(addNum and addNum > 0 or false)
-
-					local durationLabel = self._main:getChildByFullName("Node_icon.Text_duration")
-					local timeList1 = string.split(data.Time[1], ":")
-					local timeList2 = string.split(data.Time[2], ":")
-					local currentTime = timeList1[1] .. ":" .. timeList1[2] .. "-" .. timeList2[1] .. ":" .. timeList2[2]
-
-					durationLabel:setString(currentTime)
-					self._getBtn:setVisible(timeStatus == StaminaRewardTimeStatus.kNow)
-
-					if self._getBtn:isVisible() then
-						local function callFuncGet(sender, eventType)
-							self:onClickGet(data.Order, data.Amount + addNum)
-						end
-
-						self:bindWidget("main.Button_get", OneLevelViceButton, {
-							handler = {
-								clickAudio = "Se_Click_Confirm",
-								func = callFuncGet
-							}
-						})
-					end
-
-					if timeStatus ~= StaminaRewardTimeStatus.kNow then
-						local status, currentTime = self:showCanNotGetStatus()
-
-						self._recoveringBtn:setVisible(status == StaminaRewardTimeStatus.kAfter)
-						self._gotImage:setVisible(status == StaminaRewardTimeStatus.kBefore)
-
-						if self._gotImage:isVisible() and currentTime then
-							durationLabel:setString(currentTime)
-						end
-					else
-						self._recoveringBtn:setVisible(false)
-						self._gotImage:setVisible(false)
-					end
-
-					self._centerIndex = data.Order
-					self._centerStatus = timeStatus
-
-					if not self._timeScheduler then
-						self:createTimeScheduler()
-					end
-				end
-			end
-		end
-	end
-
-	self._recoverTime:setString(Strings:get("Activity_Free_Text3", {
-		time = time
-	}))
-end
-
-function FreeStaminaActivityMediator:showCanNotGetStatus()
-	local config = self._activity:getActivityConfig()
-
-	if config then
-		local curList = config.FreeStamina
-		local showTime = {}
-
-		table.copy(curList, showTime)
-		table.sort(showTime, function (a, b)
-			return a.Order < b.Order
-		end)
-
-		local dayMaxTime = showTime[#showTime].Time
-		local dayMaxDataMin = string.split(dayMaxTime[1], ":")
-		local activity = self._activitySystem:getActivityById("FreeStamina")
-
-		for i = 1, #curList do
-			local data = curList[i]
-			local index = data.Order
-			local receiveStatus = activity:getRewardStatusByIndex(data.Order)
-			local minData = string.split(data.Time[1], ":")
-			local maxData = string.split(data.Time[2], ":")
-			local currentTimeStamp = self:getInjector():getInstance("GameServerAgent"):remoteTimestamp()
-			local curData = TimeUtil:remoteDate("*t", currentTimeStamp)
-			local minDayTimeStamp = TimeUtil:timeByRemoteDate({
-				year = curData.year,
-				month = curData.month,
-				day = curData.day,
-				hour = dayMaxDataMin[1],
-				min = dayMaxDataMin[2],
-				sec = dayMaxDataMin[3]
-			})
-			local minTimeStamp, maxTimeStamp = nil
-
-			if minDayTimeStamp <= currentTimeStamp and index ~= 3 then
-				minTimeStamp = TimeUtil:timeByRemoteDate({
-					year = curData.year,
-					month = curData.month,
-					day = curData.day + 1,
-					hour = minData[1],
-					min = minData[2],
-					sec = minData[3]
-				})
-				maxTimeStamp = TimeUtil:timeByRemoteDate({
-					year = curData.year,
-					month = curData.month,
-					day = curData.day + 1,
-					hour = maxData[1],
-					min = maxData[2],
-					sec = maxData[3]
-				})
-			else
-				minTimeStamp = TimeUtil:timeByRemoteDate({
-					year = curData.year,
-					month = curData.month,
-					day = curData.day,
-					hour = minData[1],
-					min = minData[2],
-					sec = minData[3]
-				})
-				maxTimeStamp = TimeUtil:timeByRemoteDate({
-					year = curData.year,
-					month = curData.month,
-					day = curData.day,
-					hour = maxData[1],
-					min = maxData[2],
-					sec = maxData[3]
-				})
-			end
-
-			if currentTimeStamp <= maxTimeStamp and minTimeStamp <= currentTimeStamp and receiveStatus == ActivityTaskStatus.kGet then
-				local currentTime = minData[1] .. ":" .. minData[2] .. "-" .. maxData[1] .. ":" .. maxData[2]
-
-				return StaminaRewardTimeStatus.kBefore, currentTime
-			end
-		end
-	end
-
-	return StaminaRewardTimeStatus.kAfter
-end
-
-function FreeStaminaActivityMediator:refreshView(playAnim)
-	self:refreshRolesState()
-end
-
-function FreeStaminaActivityMediator:compare(a, b)
-	local timeAList = a.Time
-	local timeBList = b.Time
-	local aStatus = self._activitySystem:isCanGetStamina(timeAList, a.Order)
-	local bStatus = self._activitySystem:isCanGetStamina(timeBList, b.Order)
-
-	if aStatus == bStatus then
-		return a.Order < b.Order
-	else
-		return bStatus < aStatus
-	end
-end
-
-function FreeStaminaActivityMediator:createTimeScheduler()
+function FreeStaminaActivityMediator:startTimer()
 	local function update()
-		local config = self._activity:getActivityConfig()
+		for i = 1, 3 do
+			local panel = self._main:getChildByName("Panel_" .. i)
+			local data = self._dataList[i]
+			local receiveStatus = self._activity:getRewardStatusByIndex(data.Order)
+			local status, canDiamondGet = self._activitySystem:isCanGetStamina(data.Time, data.Order)
+			local descText = panel:getChildByName("descText")
 
-		if config then
-			local curList = config.FreeStamina
+			descText:setVisible(false)
 
-			if curList then
-				table.sort(curList, function (a, b)
-					return self:compare(a, b)
-				end)
+			if canDiamondGet then
+				descText:setVisible(true)
+				descText:setString(Strings:get("FreeStamina_Cost", {
+					num = self._activity:getActivityConfig().Replacement,
+					fontName = TTF_FONT_FZYH_M
+				}))
+			elseif not canDiamondGet and status == StaminaRewardTimeStatus.kAfter and receiveStatus == ActivityTaskStatus.kUnfinish then
+				descText:setVisible(true)
 
-				local centerData = curList[1]
-				local centerIndex = centerData.Order
-				local centerStatus = self._activitySystem:isCanGetStamina(centerData.Time, centerIndex)
+				local currentTime = self._gameServerAgent:remoteTimestamp()
+				local targetTime = self:getRealGetTime(data.Time[1])
+				local remainTime = targetTime - currentTime
+				local timeStr = TimeUtil:formatTime("${HH}:${MM}:${SS}", remainTime)
 
-				if self._centerIndex == centerIndex then
-					if self._centerStatus ~= centerStatus then
-						self:refreshView()
-						self:dispatch(Event:new(EVT_REDPOINT_REFRESH))
-					end
-				else
-					self:refreshView(true)
-					self:dispatch(Event:new(EVT_REDPOINT_REFRESH))
-				end
+				descText:setString(Strings:get("FreeStamina_Count", {
+					time = timeStr,
+					fontName = TTF_FONT_FZYH_M
+				}))
 			end
+
+			self:refreshView()
 		end
 	end
 
 	self._timeScheduler = LuaScheduler:getInstance():schedule(update, 1, true)
 end
 
-function FreeStaminaActivityMediator:onClickGet(index, amount)
-	if self._bagSystem:isPowerFull(amount) then
-		self:dispatch(ShowTipEvent({
-			duration = 0.2,
-			tip = Strings:get("Tapenergy_Tips08")
-		}))
-	else
-		local activityId = "FreeStamina"
+function FreeStaminaActivityMediator:getRealGetTime(dateStr)
+	local timeList = string.split(dateStr, ":")
+	local currentTime = self._gameServerAgent:remoteTimestamp()
+	local currentRemoteDate = TimeUtil:remoteDate("*t", currentTime)
+	currentRemoteDate.hour = timeList[1]
+	currentRemoteDate.min = timeList[2]
+	currentRemoteDate.sec = timeList[3]
+	local targetTimestamp = TimeUtil:timeByRemoteDate(currentRemoteDate)
+
+	return targetTimestamp
+end
+
+function FreeStaminaActivityMediator:refreshView()
+	for i = 1, 3 do
+		local data = self._dataList[i]
+		local panel = self._main:getChildByName("Panel_" .. i)
+		local receiveStatus = self._activity:getRewardStatusByIndex(data.Order)
+		local status, canDiamondGet = self._activitySystem:isCanGetStamina(data.Time, data.Order)
+		local getImg = panel:getChildByName("Image_hasget")
+
+		getImg:setVisible(receiveStatus == ActivityTaskStatus.kGet)
+
+		local getBtn = panel:getChildByName("btn_get")
+		local buyBtn = panel:getChildByName("btn_buy")
+
+		getBtn:setVisible(status == StaminaRewardTimeStatus.kNow or not canDiamondGet and status == StaminaRewardTimeStatus.kAfter and receiveStatus == ActivityTaskStatus.kUnfinish)
+		buyBtn:setVisible(canDiamondGet)
+		getBtn:setGray(status == StaminaRewardTimeStatus.kAfter)
+	end
+end
+
+function FreeStaminaActivityMediator:onClickGet(index)
+	local data = self._dataList[index]
+	local status = self._activitySystem:isCanGetStamina(data.Time, data.Order)
+
+	if status == StaminaRewardTimeStatus.kNow then
 		local param = {
 			doActivityType = 101,
 			index = index
 		}
 
-		self._activitySystem:requestDoActivity(activityId, param, function (response)
-			self:dispatch(ShowTipEvent({
-				tip = Strings:get("Power_Tips_1", {
-					num = amount
-				})
-			}))
+		self._activitySystem:requestDoActivity(self._activity:getId(), param, function (response)
 			self:refreshView()
+			self:showRewardView(response)
 		end)
 	end
+end
+
+function FreeStaminaActivityMediator:onClickBuy(index)
+	local costCount = self._activity:getActivityConfig().Replacement
+	local data = {
+		title = Strings:get("Tip_Remind"),
+		title1 = Strings:get("UITitle_EN_Tishi"),
+		content = Strings:get("FreeStamina_FindConfirm", {
+			num = costCount,
+			fontName = TTF_FONT_FZYH_M
+		}),
+		sureBtn = {},
+		cancelBtn = {}
+	}
+	local outSelf = self
+	local delegate = {
+		willClose = function (self, popupMediator, data)
+			if data.response == "ok" and outSelf._bagSystem:checkCostEnough(CurrencyIdKind.kDiamond, costCount, {
+				type = "tip"
+			}) then
+				local param = {
+					doActivityType = 102,
+					index = index
+				}
+
+				outSelf._activitySystem:requestDoActivity(outSelf._activity:getId(), param, function (response)
+					outSelf:refreshView()
+					outSelf:showRewardView(response)
+				end)
+			end
+		end
+	}
+	local view = self:getInjector():getInstance("AlertView")
+
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+	}, data, delegate))
+end
+
+function FreeStaminaActivityMediator:showRewardView(response)
+	local view = self:getInjector():getInstance("getRewardView")
+
+	self:dispatch(ShowTipEvent({
+		tip = Strings:get("Daily_Gift_Get")
+	}))
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, nil, {
+		needClick = true,
+		rewards = response.data.reward
+	}))
 end

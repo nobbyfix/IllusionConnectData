@@ -162,6 +162,14 @@ function DevelopSystem:syncPlayer(data, isDiff)
 		self._bagSystem:setComposeTimes(data.composeTimes)
 	end
 
+	if data.urCount then
+		self._bagSystem:setURCount(data.urCount)
+	end
+
+	if data.urEquipStat then
+		self._bagSystem:setUREquipState(data.urEquipStat)
+	end
+
 	if data.cultivation or data.level then
 		self:synCultivation(data)
 	end

@@ -2447,6 +2447,14 @@
         "clz": "int",
         "content": 400
     },
+    "DrawCardEX_UR_SinglePrice": {
+        "clz": "int",
+        "content": 400
+    },
+    "DrawCardEX_UR_TenTimesPrice": {
+        "clz": "int",
+        "content": 400
+    },
     "DrawCard_First": {
         "clz": "string",
         "content": "DrawCard_First_Reward"
@@ -2477,6 +2485,9 @@
                 "IM_DiamondDraw",
                 "IR_Gold",
                 "IR_Diamond"
+            ],
+            "ACTIVITYDRAWUR": [
+                "IM_DiamondDraw_UR"
             ],
             "CLUB": [
                 "IR_Club"
@@ -2768,7 +2779,8 @@
     "EquipSpecialPassive": {
         "clz": "string[]",
         "content": [
-            "Weapon_14023"
+            "Weapon_14023",
+            "Shoes_15103_3"
         ]
     },
     "Equip_Translate": {
@@ -3677,7 +3689,8 @@
             "FLBDSi",
             "SP_PNCao",
             "LFKLFTe",
-            "BHTZi"
+            "BHTZi",
+            "AMLBLTe"
         ]
     },
     "HeroStar_BoxNum": {
@@ -7732,7 +7745,6 @@
             {
                 "Desc": [
                     "RTPK_GeneralRules_2",
-                    "RTPK_GeneralRules_3",
                     "RTPK_GeneralRules_4",
                     "RTPK_GeneralRules_5",
                     "RTPK_GeneralRules_6",
@@ -9172,9 +9184,10 @@
             "LEIMu",
             "LAMu",
             "AMLYa",
-            "WSLi",
+            "MLYDi",
             "SP_SSQXin",
-            "WSLi"
+            "WSLi",
+            "AMLBLTe"
         ]
     },
     "Tower_1_GrowMaxValue": {
@@ -9439,6 +9452,36 @@
             "Type": 1
         }
     },
+    "TrapModel_cheng_yumao": {
+        "clz": "dict",
+        "content": {
+            "Effect": "cheng_jianyumao",
+            "EffectPos": 5,
+            "Loop": 1,
+            "Priority": null,
+            "Type": 1
+        }
+    },
+    "TrapModel_fen_yumao": {
+        "clz": "dict",
+        "content": {
+            "Effect": "fen_jianyumao",
+            "EffectPos": 5,
+            "Loop": 1,
+            "Priority": null,
+            "Type": 1
+        }
+    },
+    "TrapModel_fencheng_yumao": {
+        "clz": "dict",
+        "content": {
+            "Effect": "fencheng_jianyumao",
+            "EffectPos": 5,
+            "Loop": 1,
+            "Priority": null,
+            "Type": 1
+        }
+    },
     "TrialSwitch": {
         "clz": "string[]",
         "content": [
@@ -9461,6 +9504,19 @@
             "Summon": "SUMMONER",
             "Support": "LIGHT"
         }
+    },
+    "URMap_RuleText": {
+        "clz": "",
+        "content": [
+            {
+                "Desc": [
+                    "URMaps_Rule_1",
+                    "URMaps_Rule_2",
+                    "URMaps_Rule_3"
+                ],
+                "Title": "URMaps_Title"
+            }
+        ]
     },
     "URStone_Exchange": {
         "clz": "dict",

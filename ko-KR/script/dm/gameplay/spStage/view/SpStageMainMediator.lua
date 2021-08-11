@@ -21,7 +21,7 @@ local kBtnHandlers = {
 		clickAudio = "Se_Click_Common_1",
 		func = "onClickRule"
 	},
-	["bg.main_panel.button_info"] = {
+	button_info = {
 		clickAudio = "Se_Click_Common_1",
 		func = "onClickInfo"
 	}
@@ -192,7 +192,6 @@ function SpStageMainMediator:initWidgetInfo()
 end
 
 function SpStageMainMediator:ignoreSafeArea()
-	AdjustUtils.ignorSafeAreaRectForNode(self._mainPanel, AdjustUtils.kAdjustType.Right)
 end
 
 function SpStageMainMediator:setupTopInfoWidget()

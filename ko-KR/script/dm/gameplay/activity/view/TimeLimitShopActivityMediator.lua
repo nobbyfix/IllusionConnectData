@@ -68,6 +68,10 @@ local timeLimitShopConfig = {
 			nameColor = cc.c3b(227, 183, 123)
 		}
 	},
+	fireworks = {
+		TimeOutLineColor = cc.c4b(67, 1, 187, 255),
+		bgSize = cc.size(1136, 640)
+	},
 	terror = {
 		BG = "jqtd_txt_xzldmm_di",
 		TimeOutLineColor = cc.c4b(106, 0, 24, 255)
@@ -248,10 +252,15 @@ function TimeLimitShopActivityMediator:setPackageItemInfo(cell, data)
 
 		goldIcon:addTo(money_icon):center(money_icon:getContentSize()):offset(0, 0)
 		moneyText:setString(tostring(data:getGameCoin().amount))
-		moneyText:setAnchorPoint(0, 0.5)
-		money_icon:setPositionX(67)
-		discountPanel:setVisible(true)
-		discountText:setString(tostring(data:getCostOff() * 100) .. "%")
+		moneyText:setPositionX(85)
+
+		if data:getCostOff() then
+			discountPanel:setVisible(true)
+			discountText:setString(tostring(data:getCostOff() * 100) .. "%")
+		else
+			discountPanel:setVisible(false)
+		end
+
 		priceText:setVisible(true)
 		priceText:setString(tostring(data:getPrice()))
 		xian:setVisible(true)
@@ -272,10 +281,15 @@ function TimeLimitShopActivityMediator:setPackageItemInfo(cell, data)
 		local symbol, price = data:getPaySymbolAndPrice(data:getPayId())
 
 		moneyText:setString(symbol .. price)
-		moneyText:setAnchorPoint(0.5, 0.5)
-		moneyText:setPosition(cc.p(101, 30))
-		discountText:setString(tostring(data:getCostOff() * 100) .. "%")
-		discountPanel:setVisible(true)
+		moneyText:setPositionX(60)
+
+		if data:getCostOff() then
+			discountText:setString(tostring(data:getCostOff() * 100) .. "%")
+			discountPanel:setVisible(true)
+		else
+			discountPanel:setVisible(false)
+		end
+
 		priceText:setVisible(true)
 		priceText:setString(symbol .. tostring(data:getPrice()))
 		xian:setVisible(true)

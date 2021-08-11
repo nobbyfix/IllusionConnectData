@@ -121,6 +121,10 @@ function ActivityStageSort:getHiddenStory()
 	return self._config.HiddenStory or {}
 end
 
+function ActivityStageSort:getFirstReward()
+	return self._config.FirstKillReward
+end
+
 ActivityStageNew = class("ActivityStageNew")
 
 ActivityStageNew:has("_mapCount", {

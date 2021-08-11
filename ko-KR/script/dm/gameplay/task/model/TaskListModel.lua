@@ -41,14 +41,15 @@ TaskListModel:has("_achieveTaskList", {
 })
 
 TaskType = {
-	kMapMain = 7,
-	kBranch = 4,
-	kStage = 5,
+	kURMap = 9,
 	kDaily = 1,
+	kStage = 5,
+	kMapMain = 7,
 	kMapDaily = 6,
+	kStageArena = 8,
+	kBranch = 4,
 	kLevel = 3,
-	kOffer = 2,
-	kStageArena = 8
+	kOffer = 2
 }
 local statusPriorityMap = {
 	[TaskStatus.kFinishNotGet] = 1,
@@ -359,9 +360,15 @@ end
 
 function TaskListModel:getTaskListByType(taskType)
 	if self._taskListMap[taskType] ~= nil then
-		table.sort(self._taskListMap[taskType], function (a, b)
-			return self:compare(a, b)
-		end)
+		if taskType == TaskType.kURMap then
+			table.sort(self._taskListMap[taskType], function (a, b)
+				return a:getSortId() < b:getSortId()
+			end)
+		else
+			table.sort(self._taskListMap[taskType], function (a, b)
+				return self:compare(a, b)
+			end)
+		end
 
 		return self._taskListMap[taskType]
 	end
@@ -430,18 +437,6 @@ function TaskListModel:hasUnreceivedDailyTask()
 	return false
 end
 
-function TaskListModel:hasUnreceivedTask(taskType)
-	local list = self:getTaskListByType(taskType)
-
-	for id, task in pairs(list) do
-		if task:getStatus() == TaskStatus.kFinishNotGet then
-			return true
-		end
-	end
-
-	return false
-end
-
 function TaskListModel:getUnFinishedDailyTaskCount()
 	local count = 0
 	local list = self:getAllDailyTaskList()
@@ -453,6 +448,18 @@ function TaskListModel:getUnFinishedDailyTaskCount()
 	end
 
 	return count
+end
+
+function TaskListModel:hasUnreceivedTask(taskType)
+	local list = self:getTaskListByType(taskType)
+
+	for id, task in pairs(list) do
+		if task:getStatus() == TaskStatus.kFinishNotGet then
+			return true
+		end
+	end
+
+	return false
 end
 
 function TaskListModel:getShowMapTask()

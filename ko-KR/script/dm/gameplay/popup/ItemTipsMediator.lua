@@ -117,6 +117,7 @@ function ItemTipsMediator:setUi(data)
 
 		local countInfo = self:getCountInfo(data.info)
 
+		dump(countInfo, " countInfo @@@ ")
 		countValue:setVisible(countInfo.showCount)
 		countText:setVisible(countInfo.showCount)
 
@@ -129,6 +130,17 @@ end
 
 function ItemTipsMediator:getCountInfo(info)
 	local id = tostring(info.id)
+
+	if info.rewardType == RewardType.kBackground then
+		local info = {
+			count = self._developSystem:getPlayer():getBackground()[id] or 0,
+			showCount = true,
+			text = Strings:get("bag_UI7")
+		}
+
+		return info
+	end
+
 	local info = {}
 	local config = ConfigReader:getRecordById("ItemConfig", id)
 

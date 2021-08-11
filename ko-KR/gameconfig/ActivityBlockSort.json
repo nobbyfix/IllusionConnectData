@@ -600,6 +600,440 @@
             "start": "2021-05-05 05:00:00"
         }
     },
+    "FWorksSE01": {
+        "BlockPoint": [
+            "FWorksSE01M",
+            "FWorksSE01E"
+        ],
+        "HiddenStory": "",
+        "Map": "FWorksM02",
+        "Name": "BlockPoint_FireWorksS09M_Name",
+        "NextPoint": [
+            "FWorksSE02"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2021-08-22 05:00:00"
+        }
+    },
+    "FWorksSE02": {
+        "BlockPoint": [
+            "FWorksSE02M",
+            "FWorksSE02E"
+        ],
+        "HiddenStory": "",
+        "Map": "FWorksM02",
+        "Name": "BlockPoint_FireWorksS10M_Name",
+        "NextPoint": [
+            "FWorksSE03"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "FWorksSE01"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2021-08-22 05:00:00"
+        }
+    },
+    "FWorksSE03": {
+        "BlockPoint": [
+            "FWorksSE03M",
+            "FWorksSE03E"
+        ],
+        "HiddenStory": "",
+        "Map": "FWorksM02",
+        "Name": "BlockPoint_FireWorksS11M_Name",
+        "NextPoint": [
+            "FWorksSE04"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "FWorksSE02"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2021-08-22 05:00:00"
+        }
+    },
+    "FWorksSE04": {
+        "BlockPoint": [
+            "FWorksSE04M",
+            "FWorksSE04E"
+        ],
+        "HiddenStory": "",
+        "Map": "FWorksM02",
+        "Name": "BlockPoint_FireWorksS12M_Name",
+        "NextPoint": [
+            "FWorksSE05"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "FWorksSE03"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "FireWorksS01S03"
+        ],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2021-08-22 05:00:00"
+        }
+    },
+    "FWorksSE05": {
+        "BlockPoint": [
+            "FWorksSE05M",
+            "FWorksSE05E"
+        ],
+        "HiddenStory": "",
+        "Map": "FWorksM02",
+        "Name": "BlockPoint_FireWorksS13M_Name",
+        "NextPoint": [
+            "FWorksSE06"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "FWorksSE04"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2021-08-22 05:00:00"
+        }
+    },
+    "FWorksSE06": {
+        "BlockPoint": [
+            "FWorksSE06M",
+            "FWorksSE06E"
+        ],
+        "HiddenStory": "",
+        "Map": "FWorksM02",
+        "Name": "BlockPoint_FireWorksS14M_Name",
+        "NextPoint": [
+            "FWorksSE07"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "FWorksSE05"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2021-08-22 05:00:00"
+        }
+    },
+    "FWorksSE07": {
+        "BlockPoint": [
+            "FWorksSE07M",
+            "FWorksSE07E"
+        ],
+        "HiddenStory": "",
+        "Map": "FWorksM02",
+        "Name": "BlockPoint_FireWorksS15M_Name",
+        "NextPoint": [
+            "FWorksSE08"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "FWorksSE06"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2021-08-22 05:00:00"
+        }
+    },
+    "FWorksSE08": {
+        "BlockPoint": [
+            "FWorksSE08M",
+            "FWorksSE08E"
+        ],
+        "HiddenStory": "",
+        "Map": "FWorksM02",
+        "Name": "BlockPoint_FireWorksS16M_Name",
+        "NextPoint": [
+            "FWorksSE09"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "FWorksSE07"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "FireWorksS01S04"
+        ],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2021-08-22 05:00:00"
+        }
+    },
+    "FWorksSE09": {
+        "BlockPoint": [
+            "FWorksSH01M"
+        ],
+        "HiddenStory": "",
+        "Map": "FWorksM02",
+        "Name": "BlockPoint_FireWorksS01H_Name",
+        "NextPoint": [
+            "FWorksSE10"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "FWorksSE08"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "HARD",
+        "UnlockCondition": {
+            "start": "2021-08-22 05:00:00"
+        }
+    },
+    "FWorksSE10": {
+        "BlockPoint": [
+            "FWorksSH02M"
+        ],
+        "HiddenStory": "",
+        "Map": "FWorksM02",
+        "Name": "BlockPoint_FireWorksS02H_Name",
+        "NextPoint": [
+            "FWorksSE11"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "FWorksSE09"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "HARD",
+        "UnlockCondition": {
+            "start": "2021-08-22 05:00:00"
+        }
+    },
+    "FWorksSE11": {
+        "BlockPoint": [
+            "FWorksSH03M"
+        ],
+        "HiddenStory": "",
+        "Map": "FWorksM02",
+        "Name": "BlockPoint_FireWorksS03H_Name",
+        "NextPoint": [],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "FWorksSE10"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "HARD",
+        "UnlockCondition": {
+            "start": "2021-08-22 05:00:00"
+        }
+    },
+    "FWorksSN01": {
+        "BlockPoint": [
+            "FWorksSN01M",
+            "FWorksSN01E"
+        ],
+        "HiddenStory": "",
+        "Map": "FWorksM01",
+        "Name": "BlockPoint_FireWorksS01M_Name",
+        "NextPoint": [
+            "FWorksSN02"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "FireWorksS01S01"
+        ],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2021-08-16 05:00:00"
+        }
+    },
+    "FWorksSN02": {
+        "BlockPoint": [
+            "FWorksSN02M",
+            "FWorksSN02E"
+        ],
+        "HiddenStory": "",
+        "Map": "FWorksM01",
+        "Name": "BlockPoint_FireWorksS02M_Name",
+        "NextPoint": [
+            "FWorksSN03"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "FWorksSN01"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2021-08-16 05:00:00"
+        }
+    },
+    "FWorksSN03": {
+        "BlockPoint": [
+            "FWorksSN03M",
+            "FWorksSN03E"
+        ],
+        "HiddenStory": "",
+        "Map": "FWorksM01",
+        "Name": "BlockPoint_FireWorksS03M_Name",
+        "NextPoint": [
+            "FWorksSN04"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "FWorksSN02"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2021-08-16 05:00:00"
+        }
+    },
+    "FWorksSN04": {
+        "BlockPoint": [
+            "FWorksSN04M",
+            "FWorksSN04E"
+        ],
+        "HiddenStory": "",
+        "Map": "FWorksM01",
+        "Name": "BlockPoint_FireWorksS04M_Name",
+        "NextPoint": [
+            "FWorksSN05"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "FWorksSN03"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "FireWorksS01S02"
+        ],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2021-08-16 05:00:00"
+        }
+    },
+    "FWorksSN05": {
+        "BlockPoint": [
+            "FWorksSN05M",
+            "FWorksSN05E"
+        ],
+        "HiddenStory": "",
+        "Map": "FWorksM01",
+        "Name": "BlockPoint_FireWorksS05M_Name",
+        "NextPoint": [
+            "FWorksSN06"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "FWorksSN04"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2021-08-16 05:00:00"
+        }
+    },
+    "FWorksSN06": {
+        "BlockPoint": [
+            "FWorksSN06M",
+            "FWorksSN06E"
+        ],
+        "HiddenStory": "",
+        "Map": "FWorksM01",
+        "Name": "BlockPoint_FireWorksS06M_Name",
+        "NextPoint": [
+            "FWorksSN07"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "FWorksSN05"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2021-08-16 05:00:00"
+        }
+    },
+    "FWorksSN07": {
+        "BlockPoint": [
+            "FWorksSN07M",
+            "FWorksSN07E"
+        ],
+        "HiddenStory": "",
+        "Map": "FWorksM01",
+        "Name": "BlockPoint_FireWorksS07M_Name",
+        "NextPoint": [
+            "FWorksSN08"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "FWorksSN06"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2021-08-16 05:00:00"
+        }
+    },
+    "FWorksSN08": {
+        "BlockPoint": [
+            "FWorksSN08M",
+            "FWorksSN08E"
+        ],
+        "HiddenStory": "",
+        "Map": "FWorksM01",
+        "Name": "BlockPoint_FireWorksS08M_Name",
+        "NextPoint": [],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "FWorksSN07"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2021-08-16 05:00:00"
+        }
+    },
     "TerrorS01": {
         "BlockPoint": [
             "TerrorS01M",

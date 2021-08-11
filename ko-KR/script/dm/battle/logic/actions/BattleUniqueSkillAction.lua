@@ -93,6 +93,13 @@ function BattleUniqueSkillAction:doStart(battleContext)
 
 	local cardInfo = actor:getCardInfo()
 	self._duration = cardInfo and cardInfo.enterPauseTime
+	local battleContext = self:getBattleContext()
+	local skillSystem = battleContext:getObject("SkillSystem")
+
+	skillSystem:activateSpecificTrigger(actor, "BEFORE_FINDTARGET")
+	skillSystem:activateGlobalTrigger("UNIT_BEFORE_FINDTARGET", {
+		unit = actor
+	})
 end
 
 function BattleUniqueSkillAction:doSkill()
@@ -119,6 +126,7 @@ function BattleUniqueSkillAction:doSkill()
 	end
 
 	local battleContext = self:getBattleContext()
+	local skillSystem = battleContext:getObject("SkillSystem")
 	local formationSystem = battleContext:getObject("FormationSystem")
 	local primTrgt = formationSystem:findPrimaryTarget(actor)
 
@@ -137,7 +145,6 @@ function BattleUniqueSkillAction:doSkill()
 		ACTOR = actor,
 		TARGET = primTrgt
 	}
-	local skillSystem = battleContext:getObject("SkillSystem")
 
 	skillSystem:activateSpecificTrigger(actor, "BEFORE_UNIQUE", {
 		primTrgt = primTrgt

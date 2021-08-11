@@ -287,6 +287,26 @@ function exports.SetHSVColor(env, unit, hue, contrast, brightness, saturation)
 	})
 end
 
+function exports.setRootVisible(env, unit, isVisible)
+	if not unit then
+		return
+	end
+
+	env.global.RecordImmediately(env, unit:getId(), "SetRootVisible", {
+		isVisible = isVisible
+	})
+end
+
+function exports.setRoleScale(env, unit, scale)
+	if not unit then
+		return
+	end
+
+	env.global.RecordImmediately(env, unit:getId(), "SetRoleScale", {
+		scale = scale
+	})
+end
+
 function exports.ForbidenRevive(env, unit, isforbiden)
 	if not unit then
 		return

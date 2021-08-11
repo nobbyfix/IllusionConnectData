@@ -10,22 +10,23 @@ function RewardSystem:userInject(injector)
 end
 
 RewardType = {
-	kKernel = 5,
-	kExp = 1,
-	kSpecialValue = 4,
-	kEquip = 6,
-	kEquipExplore = 11,
-	kRewardLink = 9,
-	kGalleryMemory = 16,
-	kItem = 2,
 	kHero = 3,
-	kHeadFrame = 14,
+	kGalleryMemory = 16,
+	kEquipExplore = 11,
+	kEquip = 6,
+	kExp = 1,
+	kRewardLink = 9,
 	kBuff = 17,
-	kDecorate = 20,
-	kSurface = 7,
+	kSpecialValue = 4,
+	kInvalid = -1,
+	kKernel = 5,
 	kShow = 99,
-	kStory = "STORY",
-	kInvalid = -1
+	kHeadFrame = 14,
+	kDecorate = 20,
+	kItem = 2,
+	kBackground = 22,
+	kSurface = 7,
+	kStory = "STORY"
 }
 RewardRandomType = {
 	kOnce = "Once",
@@ -107,6 +108,12 @@ function RewardSystem.class:getName(rewardData)
 
 			if config and config.Id then
 				return Strings:get(config.Name)
+			end
+		elseif info.rewardType == RewardType.kBackground then
+			local config = ConfigReader:getRecordById("HomeBackground", id)
+
+			if config and config.Id then
+				return Strings:get(config.Information.name)
 			end
 		end
 	end
@@ -264,6 +271,12 @@ function RewardSystem.class:getDesc(rewardData)
 
 			if config and config.Id then
 				return Strings:get(config.Desc)
+			end
+		elseif info.rewardType == RewardType.kBackground then
+			local config = ConfigReader:getRecordById("HomeBackground", id)
+
+			if config and config.Id then
+				return Strings:get(config.Information.desc)
 			end
 		end
 	end

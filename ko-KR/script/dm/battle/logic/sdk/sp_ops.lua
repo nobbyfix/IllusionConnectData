@@ -420,6 +420,37 @@ function exports.BackToWindow(env, unit, windowIndex)
 	end
 end
 
+function exports.RefreshCardPool(env, buffTag)
+	local player = env["$actor"]:getOwner()
+
+	for i = 1, 4 do
+		local windowIndex = i
+		local idx = windowIndex
+		local card_ws = player:takeCardAtIndex(idx)
+
+		if card_ws then
+			player:backCardToPoolAtIndex(card_ws, 1)
+		end
+	end
+
+	local cardSystem = env.global["$CardSystem"]
+
+	cardSystem:sortCardInPool(player, buffTag)
+
+	local cards = {}
+
+	for i = 1, 4 do
+		local card = player:fillCardAtIndex(i)
+		cards[i] = card and card:dumpInformation() or 0
+	end
+
+	env.global.RecordImmediately(env, player:getId(), "RelocatCardWindow", {
+		cards = cards,
+		cardPoolSize = player:getCardPool():getTotalCount(),
+		nextCard = player:getNextCard() and player:getNextCard():dumpInformation()
+	})
+end
+
 function exports.RelocateExtraCard(env, cardType, cost)
 	local player = env["$actor"]:getOwner()
 	local extraCardPool = player:getExtraCardPool()

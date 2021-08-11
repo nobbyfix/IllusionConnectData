@@ -593,7 +593,7 @@ all.Skill_YXZChun_Tiger_Unique = {
 				global.RetainObject(_env, unit)
 			end
 
-			global.GroundEft(_env, _env.ACTOR, "BGEffectBlack")
+			global.GroundEft(_env, _env.ACTOR, "BGEffectHalfBlack", 1850, false)
 			global.EnergyRestrain(_env, _env.ACTOR, _env.TARGET)
 			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.1, 80)
 			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.FixedPos(_env, 0, 0, 2), 100, "skill2"))
@@ -602,6 +602,12 @@ all.Skill_YXZChun_Tiger_Unique = {
 			for _, unit in global.__iter__(_env.units) do
 				global.AssignRoles(_env, unit, "target")
 			end
+
+			global.DelayCall(_env, 1200, global.ShakeScreen, {
+				Id = 4,
+				duration = 60,
+				enhance = 5
+			})
 		end)
 		exec["@time"]({
 			1200

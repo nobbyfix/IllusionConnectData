@@ -90,6 +90,9 @@ function ActivityTaskStageStarMediator:setupView()
 	self._rightPanel = self._main:getChildByFullName("panel_right")
 	self._buyPanel = self._rightPanel:getChildByFullName("buyDone")
 	self._notBuyPanel = self._rightPanel:getChildByFullName("notbuy")
+
+	self:getView():getChildByFullName("cloneCell.panel_super.title"):setString(Strings:get("ACT_StageStar_Buytitle"))
+
 	local actBtnBuy = self._notBuyPanel:getChildByFullName("actBtnBuy")
 
 	local function callFuncGo(sender, eventType)

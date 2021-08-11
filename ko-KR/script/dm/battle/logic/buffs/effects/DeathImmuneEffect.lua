@@ -77,3 +77,17 @@ function DeathImmuneEffect:stack(buff, buffObject)
 		times = times
 	}
 end
+
+function DeathImmuneEffect:remove(buff, buffObject)
+	super.remove(self, buff, buffObject)
+
+	local target = buffObject:getEffectValue(self, "target")
+	local healthComp = target:getComponent("Health")
+
+	if healthComp == nil then
+		return nil
+	end
+
+	local source = buffObject:getEffectValue(self, "source")
+	local times = healthComp:consumeExtraLife(source)
+end
