@@ -22,7 +22,7 @@ local kHeroWeakemAnim = "dikuang_yinghunxuanze"
 local kHeroWeakemShangAnim = "shangkuang_yinghunxuanze"
 local kNum = 3
 local kBtnHandlers = {
-	["main.leftNode.sortBtn"] = {
+	["main.sortBtnPanel.sortBtn"] = {
 		clickAudio = "Se_Click_Tab_1",
 		func = "onClickSort"
 	},
@@ -113,7 +113,7 @@ function HeroShowListMediator:initWidgetInfo()
 
 	self._listNode = self._main:getChildByFullName("heroList")
 	self._buttonTip = self._heroNode:getChildByFullName("nameBg.buttonTip")
-	self._sortType = self._main:getChildByFullName("leftNode.sortBtn.text")
+	self._sortType = self._main:getChildByFullName("sortBtnPanel.sortBtn.text")
 
 	self._heroNode:setTouchEnabled(true)
 	self._heroNode:addClickEventListener(function ()
@@ -920,6 +920,7 @@ function HeroShowListMediator:createSortView()
 		return
 	end
 
+	local sortPanel = self._main:getChildByFullName("sortBtnPanel")
 	local sortType = self._stageSystem:getSortType()
 
 	local function callBack(data)
@@ -940,7 +941,7 @@ function HeroShowListMediator:createSortView()
 
 	self._sortType:setString(sortStr)
 	self._sortComponent:getRootNode():setVisible(false)
-	self._sortComponent:getRootNode():addTo(self._main):posite(637, 205)
+	self._sortComponent:getRootNode():addTo(self._main):posite(sortPanel:getPositionX() + 30, 205)
 	self._sortComponent:getRootNode():setName("SortPanel")
 end
 

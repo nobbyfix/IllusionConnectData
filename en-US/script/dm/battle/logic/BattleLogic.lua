@@ -341,6 +341,10 @@ end
 function BattleLogic:on_UnitSettled(_, args)
 	local unit = args.unit
 
+	if unit:getUnitType() == BattleUnitType.kBattleField then
+		return
+	end
+
 	self._skillSystem:activateSpecificTrigger(unit, "ENTER", {
 		isRevive = unit:isBeRevive()
 	})
@@ -438,7 +442,7 @@ function BattleLogic:on_UnitsWillLeave(_, units, unitGroups)
 	end
 end
 
-function BattleLogic:on_UnitsLeft(_, units, unitGroups, fleeSta)
+function BattleLogic:on_UnitsLeft(_, units, unitGroups, fleeSta, joinReferee)
 	local battleStatist = self._battleStatist
 
 	if battleStatist ~= nil then
@@ -456,6 +460,12 @@ function BattleLogic:on_UnitsLeft(_, units, unitGroups, fleeSta)
 
 		if fleeSta then
 			self._battleReferee:battleUnitsEscaped(units)
+		end
+
+		if joinReferee then
+			for k, v in pairs(units) do
+				self._battleReferee:battleUnitDied(v)
+			end
 		end
 	end
 end

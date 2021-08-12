@@ -64,6 +64,10 @@ local timeLimitShopConfig = {
 			nameColor = cc.c3b(227, 183, 123)
 		}
 	},
+	fireworks = {
+		TimeOutLineColor = cc.c4b(67, 1, 187, 255),
+		bgSize = cc.size(1136, 640)
+	},
 	terror = {
 		BG = "jqtd_txt_xzldmm_di",
 		TimeOutLineColor = cc.c4b(106, 0, 24, 255)

@@ -239,6 +239,43 @@
         "UnlockDesc": "",
         "UnlockStory": ""
     },
+    "Memory_Act_FireWorks": {
+        "ActiviType": "",
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_FireWorks_Map",
+                    "FireWorksS01S01"
+                ]
+            }
+        ],
+        "Listpicture": "img_story_fireworks_1",
+        "Name": "ActivityBlock_FireWorks_Name",
+        "Num": 16,
+        "Story": [
+            {
+                "id": [
+                    "Memory_Act_FireWorks_1",
+                    "Memory_Act_FireWorks_2"
+                ],
+                "type": "NORMAL"
+            },
+            {
+                "id": [
+                    "Memory_Act_FireWorks_3",
+                    "Memory_Act_FireWorks_4"
+                ],
+                "type": "ELITE"
+            }
+        ],
+        "Type": "ACTIVILIST",
+        "UnlockDesc": "",
+        "UnlockStory": ""
+    },
     "Memory_Act_Knight": {
         "ActiviType": "",
         "Condition": "",

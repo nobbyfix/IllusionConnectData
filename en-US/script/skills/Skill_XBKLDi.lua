@@ -231,6 +231,7 @@ all.Skill_XBKLDi_Unique = {
 
 			global.FocusCamera(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.3, 200)
 			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.FixedPos(_env, 0, 0, 2), 100, "skill3"))
+			global.DelayCall(_env, 700, global.FocusCamera, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1, 400)
 		end)
 		exec["@time"]({
 			1900

@@ -134,6 +134,25 @@
             3.6
         ]
     },
+    "AMLBLTe": {
+        "Reward": {},
+        "RewardNumShow": [],
+        "Tower_1_Weight": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "Tower_2_Weight": [
+            1.05,
+            0.3,
+            3.2
+        ]
+    },
     "AMLYa": {
         "Reward": {},
         "RewardNumShow": [],
@@ -1352,6 +1371,25 @@
             3.1
         ]
     },
+    "MLYDi": {
+        "Reward": {},
+        "RewardNumShow": [],
+        "Tower_1_Weight": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "Tower_2_Weight": [
+            1.05,
+            0.3,
+            3.2
+        ]
+    },
     "MLYTLSha": {
         "Reward": {
             "1": 80,
@@ -1893,8 +1931,16 @@
         ]
     },
     "SP_SSQXin": {
-        "Reward": {},
-        "RewardNumShow": [],
+        "Reward": {
+            "1": 100,
+            "2": 30,
+            "3": 10
+        },
+        "RewardNumShow": [
+            3,
+            2,
+            1
+        ],
         "Tower_1_Weight": [
             0,
             0,

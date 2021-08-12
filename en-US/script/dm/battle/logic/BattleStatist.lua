@@ -540,8 +540,6 @@ function SimpleBattleStatist:summarize()
 		end
 	end
 
-	dump(players, "cdskcndsjkcndk", 8)
-
 	return {
 		players = players,
 		totalTime = totalTime,

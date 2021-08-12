@@ -2265,6 +2265,29 @@
         "UnlockAnima": "",
         "UnlockDesc": "Team_Chat_UnlockDesc"
     },
+    "URMap_Unlock": {
+        "Condition": {
+            "LEVEL": 20
+        },
+        "Icon": "",
+        "IsPlay": 1,
+        "Link": "",
+        "LongDesc": "",
+        "Name": "Unlock_Secret_Hall",
+        "OutputDesc": "",
+        "ResourcesBanner": [
+            "IR_Gold",
+            "IR_Crystal",
+            "IR_Power",
+            "IR_Diamond"
+        ],
+        "ShowCondition": {
+            "LEVEL": 20
+        },
+        "Tip": "Unlock_Level_Tips",
+        "UnlockAnima": "",
+        "UnlockDesc": "URMaps_Unlock_Des"
+    },
     "Unlock_Shop_Crystal": {
         "Condition": {
             "LEVEL": 60

@@ -394,8 +394,8 @@ function GameUpdateMediator:launchLoading(data)
 			fontName = TTF_FONT_FZYH_R
 		}), {})
 
-		curVersionText:setAnchorPoint(cc.p(1, 0.5))
-		curVersionText:addTo(bottom):posite(1100, y - 20)
+		curVersionText:setAnchorPoint(cc.p(0, 0.5))
+		curVersionText:addTo(bottom):posite(36, self._yPos - 20)
 
 		self._loadingWidget = loadingWidget
 
@@ -414,8 +414,8 @@ function GameUpdateMediator:launchLoading(data)
 			fontName = TTF_FONT_FZYH_R
 		}), {})
 
-		targetVersionText:setAnchorPoint(cc.p(0, 0.5))
-		targetVersionText:addTo(bottom):posite(36, self._yPos - 20)
+		targetVersionText:setAnchorPoint(cc.p(1, 0.5))
+		targetVersionText:addTo(bottom):posite(1100, self._yPos - 20)
 		targetVersionText:setName("targetVersion")
 
 		loadingWidget.targetVersion = targetVersion

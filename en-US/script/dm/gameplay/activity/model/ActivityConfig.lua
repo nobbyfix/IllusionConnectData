@@ -93,7 +93,8 @@ ActivityModel = {
 	[ActivityType.KReturnCarnival] = ActivityReturnCarnival,
 	[ActivityType.KActivityBlockMapNew] = ActivityBlockMapNewActivity,
 	[ActivityType.KReturnCarnival] = ActivityReturnCarnival,
-	[ActivityType.kDRAWCARDSP] = ActivityDrawCardSp
+	[ActivityType.kDRAWCARDSP] = ActivityDrawCardSp,
+	[ActivityType.kDRAWCARDUR] = BoardActivity
 }
 ActivityUI = {
 	ACTIVITYBLOCKEGG = "ActivityBlockEggView",
@@ -167,6 +168,7 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityStoryBook] = "ActivityStoryBookMainView",
 		[ActivityType_UI.KActivityDeepSea] = "ActivityDeepSeaMainView",
 		[ActivityType_UI.KActivitySummerRe] = "ActivitySummerReMainView",
+		[ActivityType_UI.KActivityFireWorks] = "ActivityFireWorksMainView",
 		[ActivityType_UI.KActivityTerror] = "ActivityTerrorMainView"
 	},
 	enterBlockMonsterShopView = {
@@ -193,6 +195,7 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityStoryBook] = "ActivitySagaSupportMapView",
 		[ActivityType_UI.KActivityDeepSea] = "ActivityMapNewView",
 		[ActivityType_UI.KActivitySummerRe] = "ActivitySagaSupportMapView",
+		[ActivityType_UI.KActivityFireWorks] = "ActivityMapNewView",
 		[ActivityType_UI.KActivityTerror] = "ActivityMapNewView"
 	},
 	enterSagaSupportStageView = {
@@ -224,6 +227,7 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityDeepSea] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivityStoryBook] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivitySummerRe] = "ActivityBlockTaskView",
+		[ActivityType_UI.KActivityFireWorks] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivityTerror] = "ActivityBlockTaskView"
 	},
 	enterSagaSupportRankRewardView = {
@@ -304,6 +308,13 @@ ActivityLogin14Config = {
 			cc.c4b(144, 183, 255, 255)
 		}
 	},
+	EightDays_FireWorks = {
+		resFile = "asset/ui/ActivityFireWorksLogin14.csb",
+		textPattern = {
+			cc.c4b(204, 184, 255, 255),
+			cc.c4b(255, 255, 255, 255)
+		}
+	},
 	EightDays_Terror = {
 		resFile = "asset/ui/ActivityTerrorLogin14.csb",
 		textPattern = {
@@ -370,6 +381,28 @@ ActivityMainMapTitleConfig = {
 				}
 			}
 		},
+		[ActivityType_UI.KActivityFireWorks] = {
+			title = {
+				{
+					ratio = 0.3,
+					color = cc.c4b(210, 186, 255, 255)
+				},
+				{
+					ratio = 0.7,
+					color = cc.c4b(255, 255, 255, 255)
+				}
+			},
+			title_0 = {
+				{
+					ratio = 0.3,
+					color = cc.c4b(255, 255, 255, 255)
+				},
+				{
+					ratio = 0.7,
+					color = cc.c4b(255, 248, 129, 255)
+				}
+			}
+		},
 		[ActivityType_UI.KActivityTerror] = {
 			title = {
 				{
@@ -408,6 +441,10 @@ ActivityMainMapTitleConfig = {
 					node:stop()
 				end)
 			end
+		},
+		[ActivityType_UI.KActivityFireWorks] = {
+			name = "eff_Z_hdjm_huohuadahuirukou",
+			position = cc.p(-137, 62)
 		}
 	}
 }

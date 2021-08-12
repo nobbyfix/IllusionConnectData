@@ -770,6 +770,57 @@
         ],
         "Type": "NORMAL"
     },
+    "FWorksM01": {
+        "BGM": "Mus_Story_Fireworks_Main",
+        "Background": "FireWorks_Scene02",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_FireWorksAM01_Name",
+        "StarBoxReward": "",
+        "SubPoint": [],
+        "SubSort": [
+            "FWorksSN01",
+            "FWorksSN02",
+            "FWorksSN03",
+            "FWorksSN04",
+            "FWorksSN05",
+            "FWorksSN06",
+            "FWorksSN07",
+            "FWorksSN08"
+        ],
+        "SubStoryPoint": [
+            "FireWorksS01S01",
+            "FireWorksS01S02"
+        ],
+        "Type": "NORMAL"
+    },
+    "FWorksM02": {
+        "BGM": "Mus_Story_Fireworks_Main",
+        "Background": "FireWorks_Scene03",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_FireWorksAM02_Name",
+        "StarBoxReward": "",
+        "SubPoint": [],
+        "SubSort": [
+            "FWorksSE01",
+            "FWorksSE02",
+            "FWorksSE03",
+            "FWorksSE04",
+            "FWorksSE05",
+            "FWorksSE06",
+            "FWorksSE07",
+            "FWorksSE08",
+            "FWorksSE09",
+            "FWorksSE10",
+            "FWorksSE11"
+        ],
+        "SubStoryPoint": [
+            "FireWorksS01S03",
+            "FireWorksS01S04"
+        ],
+        "Type": "ELITE"
+    },
     "FemaleE01": {
         "BGM": "Mus_Story_Girl_Main",
         "Background": "Female_Scene03",

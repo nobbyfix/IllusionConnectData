@@ -289,6 +289,7 @@ function BagUseScrollMediator:setMaterialView()
 		largeIcon = true
 	})
 
+	icon:setScale(0.5)
 	icon:addTo(self.targetPanel):center(self.targetPanel:getContentSize())
 	self:addEquipStar()
 	self.targetName:setString(Strings:get(config.Name))

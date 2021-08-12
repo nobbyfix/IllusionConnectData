@@ -234,7 +234,7 @@ all.Skill_FEMSi_Unique = {
 
 				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
 
-				if global.SelectBuffCount(_env, unit, global.BUFF_MARKED_ALL(_env, "MURDERER", "Skill_FEMSi_Passive")) > 0 then
+				if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "MURDERER")) > 0 then
 					damage.val = damage.val * this.murderer_rate
 				end
 
@@ -296,16 +296,6 @@ all.Skill_FEMSi_Passive = {
 		this.passive3 = global["[trigger_by]"](this, {
 			"SELF:ENTER"
 		}, passive3)
-		local passive4 = __action(this, {
-			name = "passive4",
-			entry = prototype.passive4
-		})
-		passive4 = global["[duration]"](this, {
-			0
-		}, passive4)
-		this.passive4 = global["[trigger_by]"](this, {
-			"SELF:DIE"
-		}, passive4)
 
 		return this
 	end,
@@ -459,26 +449,6 @@ all.Skill_FEMSi_Passive = {
 						buff_murder
 					})
 				end
-			end
-		end)
-
-		return _env
-	end,
-	passive4 = function (_env, externs)
-		local this = _env.this
-		local global = _env.global
-		local exec = _env["$executor"]
-		_env.ACTOR = externs.ACTOR
-
-		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
-		exec["@time"]({
-			0
-		}, _env, function (_env)
-			local this = _env.this
-			local global = _env.global
-
-			for _, unit in global.__iter__(global.EnemyUnits(_env)) do
-				global.DispelBuff(_env, unit, global.BUFF_MARKED_ALL(_env, "MURDERER", "Skill_FEMSi_Passive"), 99)
 			end
 		end)
 
@@ -674,7 +644,7 @@ all.Skill_FEMSi_Unique_EX = {
 
 				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
 
-				if global.SelectBuffCount(_env, unit, global.BUFF_MARKED_ALL(_env, "MURDERER", "Skill_FEMSi_Passive")) > 0 then
+				if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "MURDERER")) > 0 then
 					damage.val = damage.val * this.murderer_rate
 				end
 
@@ -736,16 +706,6 @@ all.Skill_FEMSi_Passive_EX = {
 		this.passive3 = global["[trigger_by]"](this, {
 			"SELF:ENTER"
 		}, passive3)
-		local passive4 = __action(this, {
-			name = "passive4",
-			entry = prototype.passive4
-		})
-		passive4 = global["[duration]"](this, {
-			0
-		}, passive4)
-		this.passive4 = global["[trigger_by]"](this, {
-			"SELF:DIE"
-		}, passive4)
 
 		return this
 	end,
@@ -899,26 +859,6 @@ all.Skill_FEMSi_Passive_EX = {
 						buff_murder
 					})
 				end
-			end
-		end)
-
-		return _env
-	end,
-	passive4 = function (_env, externs)
-		local this = _env.this
-		local global = _env.global
-		local exec = _env["$executor"]
-		_env.ACTOR = externs.ACTOR
-
-		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
-		exec["@time"]({
-			0
-		}, _env, function (_env)
-			local this = _env.this
-			local global = _env.global
-
-			for _, unit in global.__iter__(global.EnemyUnits(_env)) do
-				global.DispelBuff(_env, unit, global.BUFF_MARKED_ALL(_env, "MURDERER", "Skill_FEMSi_Passive"), 99)
 			end
 		end)
 

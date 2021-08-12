@@ -52,6 +52,17 @@ function PlayerTLInterpreter:checkMainPlayerId(id)
 	return false
 end
 
+function PlayerTLInterpreter:act_RelocatCardWindow(action, args)
+	if self._isMainPlayer then
+		local cards = args.cards
+		local remain = args.cardPoolSize
+		local nextCard = args.nextCard
+
+		self._battleUIMediator:removeCards()
+		self._battleUIMediator:updateCardArray(cards, remain, nextCard)
+	end
+end
+
 function PlayerTLInterpreter:act_NewPlayer(action, args)
 	local id = args.id
 	local side = args.side
@@ -326,6 +337,24 @@ function PlayerTLInterpreter:act_RmEnchant(action, args)
 				end
 			end
 		end
+	end
+end
+
+function PlayerTLInterpreter:act_UpdateCardWeight(action, args)
+	if self._isMainPlayer then
+		self._battleUIMediator:updateCardWeight(args.cardInfos[1], args.cardInfos[2], args.cardInfos[3])
+	end
+end
+
+function PlayerTLInterpreter:act_CurrentBattleSt(action, args)
+	if self._isMainPlayer then
+		self._battleUIMediator:updateCurrentBattleSt(args.status)
+	end
+end
+
+function PlayerTLInterpreter:act_MaxCardWeight(action, args)
+	if self._isMainPlayer then
+		self._battleUIMediator:maxCardWeight(args.cardInfos)
 	end
 end
 

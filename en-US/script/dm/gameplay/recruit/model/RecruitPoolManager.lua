@@ -2,11 +2,12 @@ RecruitPoolType = {
 	kGold = "GOLD",
 	kEquip = "EQUIP",
 	kActivity = "ACTIVITYDRAW",
-	kDiamond = "DIAMOND",
 	kPve = "PVE",
-	kClub = "CLUB",
 	kPvp = "PVP",
-	kActivityEquip = "ACTIVITYDRAWEQUIP"
+	kActivityEquip = "ACTIVITYDRAWEQUIP",
+	kDiamond = "DIAMOND",
+	kActivityUREquip = "ACTIVITYDRAWUR",
+	kClub = "CLUB"
 }
 RecruitPoolId = {
 	kHeroGold = "DrawCard_Gold_1",

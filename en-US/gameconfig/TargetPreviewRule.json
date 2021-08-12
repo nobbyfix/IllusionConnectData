@@ -44,6 +44,9 @@
     "Target_ALSi": {
         "Function": "return MainTarget()"
     },
+    "Target_AMLBLTe": {
+        "Function": "return GenInfo(EnemyAll(),Red)"
+    },
     "Target_AMLYa": {
         "Function": "return GenInfo(EnemyAll(),Red)"
     },
@@ -180,6 +183,9 @@
         "Function": "return GenInfo(EnemyAll(),Red)"
     },
     "Target_MKLJLuo": {
+        "Function": "return MainTarget()"
+    },
+    "Target_MLYDi": {
         "Function": "return MainTarget()"
     },
     "Target_MLYTLSha": {

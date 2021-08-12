@@ -282,16 +282,6 @@ all.Skill_MTZMEShi_Passive = {
 		this.passive1 = global["[trigger_by]"](this, {
 			"SELF:ENTER"
 		}, passive1)
-		local passive2 = __action(this, {
-			name = "passive2",
-			entry = prototype.passive2
-		})
-		passive2 = global["[duration]"](this, {
-			0
-		}, passive2)
-		this.passive2 = global["[trigger_by]"](this, {
-			"UNIT_ENTER"
-		}, passive2)
 
 		return this
 	end,
@@ -344,30 +334,6 @@ all.Skill_MTZMEShi_Passive = {
 		end)
 
 		return _env
-	end,
-	passive2 = function (_env, externs)
-		local this = _env.this
-		local global = _env.global
-		local exec = _env["$executor"]
-		_env.ACTOR = externs.ACTOR
-
-		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
-
-		_env.unit = externs.unit
-
-		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
-		exec["@time"]({
-			0
-		}, _env, function (_env)
-			local this = _env.this
-			local global = _env.global
-
-			if global.SelectBuffCount(_env, global.FriendField(_env), global.BUFF_MARKED(_env, "MTZMEShi_For_BackCard")) > 0 and global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and _env.unit ~= _env.ACTOR then
-				global.DispelBuff(_env, global.FriendField(_env), global.BUFF_MARKED_ALL(_env, "MTZMEShi_For_BackCard"), 1)
-			end
-		end)
-
-		return _env
 	end
 }
 all.MTZMEShi_For_BackCard = {
@@ -387,6 +353,16 @@ all.MTZMEShi_For_BackCard = {
 		this.passive = global["[trigger_by]"](this, {
 			"UNIT_KICK"
 		}, passive)
+		local passive2 = __action(this, {
+			name = "passive2",
+			entry = prototype.passive2
+		})
+		passive2 = global["[duration]"](this, {
+			0
+		}, passive2)
+		this.passive2 = global["[trigger_by]"](this, {
+			"UNIT_ENTER"
+		}, passive2)
 
 		return this
 	end,
@@ -407,7 +383,7 @@ all.MTZMEShi_For_BackCard = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) then
+			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "MTZMEShi_BackCard_Check")) == 0 then
 				for _, card in global.__iter__(global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR))) do
 					if global.SelectEnhanceCount(_env, global.GetOwner(_env, _env.ACTOR), card, global.BUFF_MARKED(_env, "Skill_MTZMEShi_Passive")) == 0 then
 						local cardvaluechange = global.CardCostEnchant(_env, "-", global.SpecialPropGetter(_env, "MTZMEShi_Passive_Energy")(_env, global.FriendField(_env)), 1)
@@ -423,8 +399,51 @@ all.MTZMEShi_For_BackCard = {
 						}, {
 							cardvaluechange
 						})
+
+						local buff_check = global.SpecialNumericEffect(_env, "+MTZMEShi_BackCard_Check", {
+							"+Normal",
+							"+Normal"
+						}, 1)
+
+						global.ApplyBuff(_env, global.FriendField(_env), {
+							timing = 0,
+							duration = 99,
+							tags = {
+								"MTZMEShi_BackCard_Check"
+							}
+						}, {
+							buff_check
+						})
 					end
 				end
+			end
+		end)
+
+		return _env
+	end,
+	passive2 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+
+		_env.isRevive = externs.isRevive
+
+		assert(_env.isRevive ~= nil, "External variable `isRevive` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "MTZMEShi_For_BackCard")) > 0 and global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and _env.isRevive == false and global.PETS - global.SUMMONS(_env, _env.unit) then
+				global.DispelBuff(_env, _env.ACTOR, global.BUFF_MARKED_ALL(_env, "MTZMEShi_For_BackCard"), 99)
 			end
 		end)
 
@@ -644,16 +663,6 @@ all.Skill_MTZMEShi_Passive_EX = {
 		this.passive1 = global["[trigger_by]"](this, {
 			"SELF:ENTER"
 		}, passive1)
-		local passive2 = __action(this, {
-			name = "passive2",
-			entry = prototype.passive2
-		})
-		passive2 = global["[duration]"](this, {
-			0
-		}, passive2)
-		this.passive2 = global["[trigger_by]"](this, {
-			"UNIT_ENTER"
-		}, passive2)
 
 		return this
 	end,
@@ -702,30 +711,6 @@ all.Skill_MTZMEShi_Passive_EX = {
 				}, {
 					cardvaluechange
 				})
-			end
-		end)
-
-		return _env
-	end,
-	passive2 = function (_env, externs)
-		local this = _env.this
-		local global = _env.global
-		local exec = _env["$executor"]
-		_env.ACTOR = externs.ACTOR
-
-		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
-
-		_env.unit = externs.unit
-
-		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
-		exec["@time"]({
-			0
-		}, _env, function (_env)
-			local this = _env.this
-			local global = _env.global
-
-			if global.SelectBuffCount(_env, global.FriendField(_env), global.BUFF_MARKED(_env, "MTZMEShi_For_BackCard")) > 0 and global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and _env.unit ~= _env.ACTOR then
-				global.DispelBuff(_env, global.FriendField(_env), global.BUFF_MARKED_ALL(_env, "MTZMEShi_For_BackCard"), 1)
 			end
 		end)
 

@@ -11,6 +11,9 @@ ActivityMapNewMediator:has("_gameServerAgent", {
 ActivityMapNewMediator:has("_developSystem", {
 	is = "r"
 }):injectWith("DevelopSystem")
+ActivityMapNewMediator:has("_gallerySystem", {
+	is = "r"
+}):injectWith("GallerySystem")
 
 local commonCellWidth = 420
 local unSelectCellHeight = 69
@@ -26,6 +29,9 @@ local kBtnHandlers = {
 	},
 	["main.actionNode.btn_stage"] = {
 		func = "onClickChangeStageStype"
+	},
+	["main.actionNode.btn_stage_parttwo"] = {
+		func = "onClickChangeStagePartTwo"
 	},
 	["main.actionNode.btn_story"] = {
 		func = "onClickStory"
@@ -88,6 +94,7 @@ function ActivityMapNewMediator:onRegister()
 	self:mapEventListener(self:getEventDispatcher(), EVT_PLAYER_SYNCHRONIZED, self, self.refreshStoryColorEggs)
 	self:mapEventListener(self:getEventDispatcher(), EVT_COLOUR_EGG_REFRESH, self, self.refreshEggs)
 	self:mapEventListener(self:getEventDispatcher(), EVT_RESET_DONE, self, self.doReset)
+	self:mapEventListener(self:getEventDispatcher(), EVT_GET_NEW_STORY, self, self.refreshStoryBtnRedPoint)
 end
 
 function ActivityMapNewMediator:setupTopInfoWidget()
@@ -129,7 +136,13 @@ function ActivityMapNewMediator:enterWithData(data)
 
 	self._showUI = true
 	self._data = data or {}
-	self._stageIndex = self._data.stageIndex or 1
+
+	if data.enterBattlePointId then
+		self._stageIndex = self._model:getMapIdexBySortId(data.enterBattlePointId)
+	else
+		self._stageIndex = self._data.stageIndex or 1
+	end
+
 	self._mapId = self._model:getMapIdByStageIndex(self._stageIndex)
 
 	self:initWidget()
@@ -141,6 +154,7 @@ function ActivityMapNewMediator:enterWithData(data)
 	self:setAdditionHero()
 	self:playBackGroundMusic()
 	self:getColorEggs()
+	self:refreshStoryBtnRedPoint()
 end
 
 function ActivityMapNewMediator:doReset()
@@ -442,10 +456,13 @@ function ActivityMapNewMediator:initWidget()
 	self._emBattleBtn = self._main:getChildByFullName("actionNode.btn_emBattle")
 	self._stageTypeBtn = self._main:getChildByFullName("actionNode.btn_stage")
 	self._storyBtn = self._main:getChildByFullName("actionNode.btn_story")
+	self._parttwoBtn = self._main:getChildByFullName("actionNode.btn_stage_parttwo")
 	self._choicePanel = self._main:getChildByFullName("actionNode.choicePanel")
 	self._heroSystemBtnX = self._heroSystemBtn:getPositionX()
 	self._emBattleBtnX = self._emBattleBtn:getPositionX()
 	self._stageTypeBtnX = self._stageTypeBtn:getPositionX()
+	self._parttwoBtnX = self._parttwoBtn:getPositionX()
+	self._parttwoBtnTxt = self._parttwoBtn:getChildByName("Text_1")
 	self._stageRewardsPanel = self:getView():getChildByFullName("main.stageAddition.stageRewards")
 	self._bgList = self:getView():getChildByName("ScrollView_bg")
 
@@ -496,6 +513,24 @@ function ActivityMapNewMediator:updataStageBtnImg()
 	self._heroSystemBtn:setPositionX(self._stageTypeBtn:isVisible() and self._heroSystemBtnX or self._heroSystemBtnX - 100)
 	self._emBattleBtn:setPositionX(self._stageTypeBtn:isVisible() and self._emBattleBtnX or self._emBattleBtnX - 100)
 	self._storyBtn:setPositionX(self._emBattleBtn:getPositionX() + 120)
+
+	if not self._stageTypeBtn:isVisible() then
+		local list = self._model:getMapList()
+
+		self._parttwoBtn:setVisible(table.nums(list) > 1)
+		self._heroSystemBtn:setPositionX(self._parttwoBtn:isVisible() and self._heroSystemBtnX or self._heroSystemBtnX - 100)
+		self._emBattleBtn:setPositionX(self._parttwoBtn:isVisible() and self._emBattleBtnX or self._emBattleBtnX - 100)
+		self._storyBtn:setPositionX(self._emBattleBtn:getPositionX() + 120)
+
+		if self._parttwoBtn:isVisible() and self._model:getActivityConfig().ChangeBtnImg then
+			local config = self._model:getActivityConfig().ChangeBtnImg[self._mapId]
+			local image = config.Image or "fireworks_btn_fbgq_pt.png"
+			local name = Strings:get(config.Part) or "NONE"
+
+			self._stageTypeBtn:loadTextures(image, image, image, ccui.TextureResType.plistType)
+			self._parttwoBtnTxt:setString(Strings:get(name))
+		end
+	end
 end
 
 function ActivityMapNewMediator:switchMainScene()
@@ -908,7 +943,7 @@ function ActivityMapNewMediator:createTableView()
 			cell.mediator = mediator
 		end
 
-		cell.mediator:refreshData(pointId)
+		cell.mediator:refreshData(self._selectPointId, pointId)
 		cell.mediator:setCellState(self._selectPointId, pointId)
 		cell.mediator:setHiddenStory(self:checkShowHiddenStory(pointId))
 
@@ -1097,6 +1132,7 @@ function ActivityMapNewMediator:onClickPlayStory(pointId, isCheck)
 	local storyDirector = self:getInjector():getInstance(story.StoryDirector)
 	local chapterInfo = self._model:getStageByStageIndex(self._stageIndex)
 	local chapterConfig = chapterInfo:getConfig()
+	local storyLink = ConfigReader:getDataByNameIdAndKey("ActivityStoryPoint", pointId, "StoryLink")
 
 	local function endCallBack()
 		local storyPoint = chapterInfo:getStoryPointById(pointId)
@@ -1126,10 +1162,10 @@ function ActivityMapNewMediator:onClickPlayStory(pointId, isCheck)
 		end
 
 		AudioEngine:getInstance():playBackgroundMusic(chapterConfig.BGM)
+		self._gallerySystem:setActivityStorySaveStatus(self._gallerySystem:getStoryIdByStoryLink(storyLink), true)
 	end
 
 	local storyAgent = storyDirector:getStoryAgent()
-	local storyLink = ConfigReader:getDataByNameIdAndKey("ActivityStoryPoint", pointId, "StoryLink")
 
 	storyAgent:setSkipCheckSave(not isCheck)
 	storyAgent:trigger(storyLink, function ()
@@ -1240,7 +1276,10 @@ function ActivityMapNewMediator:onClickStory()
 	local view = self:getInjector():getInstance("GalleryMemoryPackView")
 
 	self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
-		type = GalleryMemoryType.STORY
+		type = GalleryMemoryType.STORY,
+		callback = function ()
+			self:refreshStoryBtnRedPoint()
+		end
 	}))
 end
 
@@ -1320,4 +1359,103 @@ function ActivityMapNewMediator:refreshBgScroll()
 
 	self._tableView:setContentOffset(cc.p(0, maxOffset * (1 - percent)))
 	self._pointSlider:setPercent(percent * 100)
+end
+
+function ActivityMapNewMediator:refreshStoryBtnRedPoint()
+	if not self._storyBtnRedPoint then
+		self._storyBtnRedPoint = RedPoint:createDefaultNode()
+
+		self._storyBtnRedPoint:addTo(self._storyBtn):posite(80, 80)
+		self._storyBtnRedPoint:setName("redPoint")
+		self._storyBtnRedPoint:setScale(0.8)
+	end
+
+	local st = self._gallerySystem:getStoryPackRedPointByType(GalleryMemoryPackType.ACTIVI)
+
+	self._storyBtnRedPoint:setVisible(st)
+end
+
+function ActivityMapNewMediator:onClickChangeStagePartTwo()
+	local list = self._model:getMapList()
+	local stageIndex = self._stageIndex
+	stageIndex = stageIndex >= #list and 1 or stageIndex + 1
+	local mapId = self._model:getMapIdByStageIndex(stageIndex)
+	local config = self._model:getActivityConfig().ChangeBtnImg[mapId]
+	local tips = Strings:get("SubActivity_FireWorks_AB_6st", {
+		part = Strings:get(config.Part)
+	})
+	local mapId = self._model:getMapIdByStageIndex(self._stageIndex)
+	local config = self._model:getActivityConfig().ChangeBtnImg[mapId]
+	local lockTip = Strings:get("SubActivity_FireWorks_AB_3st", {
+		title = Strings:get(config.Part)
+	})
+
+	self:changeStagePart(stageIndex, tips, lockTip)
+end
+
+function ActivityMapNewMediator:changeStagePart(stageIndex, tips, lockTip)
+	local map = self._model:getStageByStageIndex(stageIndex)
+	local mapId = self._model:getMapIdByStageIndex(stageIndex)
+	local config = self._model:getActivityConfig().ChangeBtnImg[mapId]
+	local mapPoints = map._index2Points
+	local firstPoint = mapPoints[1]
+	local startTime = firstPoint:getConfig().UnlockCondition
+
+	if startTime and startTime.start then
+		local timeStr = startTime.start
+		local timeStrTab = string.split(timeStr, " ")
+		local _tab1 = TimeUtil:parseDate(nil, timeStrTab[1])
+		local _tab2 = TimeUtil:parseTime(nil, timeStrTab[2])
+
+		for k, v in pairs(_tab2) do
+			_tab1[k] = v
+		end
+
+		local timeStemp = TimeUtil:getTimeByDateForTargetTime(_tab1)
+		local curTimeStemp = self:getInjector():getInstance("GameServerAgent"):remoteTimestamp()
+
+		if curTimeStemp < timeStemp then
+			local remoteTime = TimeUtil:formatStrToRemoteTImestamp(startTime.start)
+			local localDate = TimeUtil:localDate("%Y.%m.%d  %H:%M:%S", remoteTime)
+			local tip = Strings:get("SubActivity_FireWorks_AB_2st", {
+				title = Strings:get(config.Part),
+				time = localDate
+			})
+
+			self:dispatch(ShowTipEvent({
+				duration = 0.2,
+				tip = tip
+			}))
+
+			return
+		end
+	end
+
+	local pass = true
+	local curMap = self._model:getStageByStageIndex(self._stageIndex)
+
+	if self._stageIndex < #self._model:getMapList() then
+		pass = self._model:getStageByStageIndex(self._stageIndex):isPass()
+	end
+
+	if map:isUnlock() and pass then
+		self._stageIndex = stageIndex
+		self._mapId = self._model:getMapIdByStageIndex(stageIndex)
+
+		self:initStage()
+		self:setChapterTitle()
+		self:getColorEggs()
+		self._tableView:reloadData()
+		self:setScrollPoint()
+		self:playBackGroundMusic()
+		self:dispatch(ShowTipEvent({
+			duration = 0.2,
+			tip = tips
+		}))
+	else
+		self:dispatch(ShowTipEvent({
+			duration = 0.2,
+			tip = lockTip
+		}))
+	end
 end

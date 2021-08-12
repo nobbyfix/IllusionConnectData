@@ -336,6 +336,10 @@ function BattlePlayer:updateCardArray()
 	battleRecorder:recordMetaEvent(playerId, "NewPlayer", playerInfo, "BattlePlayer")
 end
 
+function BattlePlayer:getNextCard()
+	return self._nextCard
+end
+
 function BattlePlayer:update(dt, battleContext)
 	local cardWindow = self._cardWindow
 

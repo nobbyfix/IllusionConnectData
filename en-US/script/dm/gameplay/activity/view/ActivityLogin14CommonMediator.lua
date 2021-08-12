@@ -366,6 +366,7 @@ function ActivityLogin14CommonMediator:refreshUIView()
 		local node = cc.CSLoader:createNode(resfile)
 
 		node:addTo(self._main, 10):setName(self._activityId)
+		self._main:getChildByFullName("refreshPanel"):setLocalZOrder(99)
 
 		local titleImg = self._activityConfig.titleImg or "baking_img_14qd_biaoti"
 

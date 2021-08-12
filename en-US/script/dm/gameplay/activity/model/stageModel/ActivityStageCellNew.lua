@@ -1,7 +1,7 @@
 ActivityStageCellNew = class("ActivityStageCellNew", DisposableObject, _M)
 local lockIconPosX = {
 	243,
-	331
+	243
 }
 
 local function checkRewardContainDiamond(rewards)
@@ -64,12 +64,19 @@ function ActivityStageCellNew:initWigetInfo()
 	self._showDiamondView:getChildByName("image"):ignoreContentAdaptWithSize(true)
 end
 
-function ActivityStageCellNew:refreshData(pointId)
+function ActivityStageCellNew:refreshData(selectPointId, pointId)
 	local pointInfo, pointType = self._model:getPointById(pointId)
 	self._pointInfo = pointInfo
 	self._pointType = pointType
 	self.isUnLock = pointInfo:isUnlock()
 	self._isPassed = pointInfo:isPass()
+	self._type = pointInfo:getConfig().Type
+	local hardTopImage = self:getView():getChildByTag(1111)
+
+	if hardTopImage then
+		hardTopImage:removeFromParent(true)
+	end
+
 	local panelBgC = self:getView():getChildByName("decBgC")
 	local image = panelBgC:getChildByFullName("clipPanel.Image_1")
 
@@ -77,14 +84,35 @@ function ActivityStageCellNew:refreshData(pointId)
 		self._lock:setVisible(false)
 		self._name:setTextColor(color1)
 		self._content:setTextColor(color1)
-		panelBgC:loadTexture("zx_passed_bg.png", ccui.TextureResType.plistType)
-		image:loadTexture("zx_passed.png", ccui.TextureResType.plistType)
+
+		if self._type == StageType.kHard then
+			panelBgC:loadTexture("img_actblock_bh_1.png", ccui.TextureResType.plistType)
+			image:loadTexture("img_actblock_bh_3.png", ccui.TextureResType.plistType)
+
+			if selectPointId ~= pointId and not self._isPassed then
+				local img = ccui.ImageView:create("img_actblock_bh_4.png", 1)
+
+				img:addTo(self:getView()):posite(36, 25)
+				img:setTag(1111)
+			end
+		else
+			panelBgC:loadTexture("zx_passed_bg.png", ccui.TextureResType.plistType)
+			image:loadTexture("zx_passed.png", ccui.TextureResType.plistType)
+		end
 	else
 		self._lock:setVisible(true)
 		self._name:setTextColor(color2)
 		self._content:setTextColor(color2)
 		panelBgC:loadTexture("zx_locked_bg.png", ccui.TextureResType.plistType)
 		image:loadTexture("zx_locked.png", ccui.TextureResType.plistType)
+	end
+
+	local panelBgUC = self:getView():getChildByName("decBgUC")
+
+	if self._type == StageType.kHard then
+		panelBgUC:setBackGroundImage("img_actblock_bh_2.png", ccui.TextureResType.plistType)
+	else
+		panelBgUC:setBackGroundImage("zx_choosed_bg.png", ccui.TextureResType.plistType)
 	end
 
 	self._boss:setVisible(self._pointInfo:isBoss())
@@ -129,9 +157,18 @@ end
 function ActivityStageCellNew:setCellState(selectPointId, id)
 	local panelBgC = self:getView():getChildByName("decBgC")
 	local panelBgUC = self:getView():getChildByName("decBgUC")
+	local tag9521 = panelBgUC:getChildByTag(9521)
 
-	panelBgUC:removeChildByTag(9521, true)
-	panelBgUC:removeChildByTag(9522, true)
+	if tag9521 then
+		tag9521:removeFromParent(true)
+	end
+
+	local tag9522 = panelBgUC:getChildByTag(9522)
+
+	if tag9522 then
+		tag9522:removeFromParent(true)
+	end
+
 	self._img:setVisible(selectPointId == id)
 
 	local redPoint = self:getView():getChildByName("redPoint")
@@ -153,12 +190,14 @@ function ActivityStageCellNew:setCellState(selectPointId, id)
 		local bar = self._img:getChildByName("bar")
 		local normal = self._img:getChildByName("normal")
 		local elite = self._img:getChildByName("elite")
+		local hard = self._img:getChildByName("hard")
 		local rewardPanel = self._img:getChildByName("reward")
 
 		barImg:setVisible(false)
 		bar:setVisible(false)
 		normal:setVisible(false)
 		elite:setVisible(false)
+		hard:setVisible(false)
 		rewardPanel:setVisible(false)
 
 		local rewardNodes = nil
@@ -214,6 +253,7 @@ function ActivityStageCellNew:setCellState(selectPointId, id)
 			bar:setVisible(true)
 			normal:setVisible(false)
 			elite:setVisible(false)
+			hard:setVisible(false)
 
 			local count = #self._subPointList
 			local loadingWidth = bar:getContentSize().width
@@ -226,6 +266,8 @@ function ActivityStageCellNew:setCellState(selectPointId, id)
 					cell = normal
 				elseif subPoint:getType() == StageType.kElite then
 					cell = elite
+				elseif subPoint:getType() == StageType.kHard then
+					cell = hard
 				end
 
 				cell:setVisible(true)
@@ -244,9 +286,9 @@ function ActivityStageCellNew:setCellState(selectPointId, id)
 
 			if count == 1 then
 				if self._isPassed then
-					percent = 1
+					percent = 100
 				else
-					percent = 0
+					percent = 1
 				end
 			elseif self._isPerfect then
 				percent = 100

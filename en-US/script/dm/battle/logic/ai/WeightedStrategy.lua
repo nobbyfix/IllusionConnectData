@@ -53,6 +53,7 @@ function WeightedStrategy:start(battleContext)
 
 	self._context = battleContext
 	self._battleLogic = battleContext:getObject("BattleLogic")
+	self._processRecorder = battleContext:getObject("ProcessRecorder")
 	self._willCheckEnergy = true
 	self._cardIndex = nil
 	self._nextCard = nil
@@ -158,25 +159,28 @@ function WeightedStrategy:update(interval)
 	end
 end
 
-function WeightedStrategy:calcWeight(card, side)
+function WeightedStrategy:calcWeight(card, side, player)
 	local statusNames = {
 		"FriendMasterHP",
-		"FriendMinHP",
-		"FriendAVRHP",
-		"FriendCount",
 		"EnemyMasterHP",
-		"EnemyMinHP",
-		"EnemyAVRHP",
-		"EnemyCount",
-		"Time",
-		"ForcedWeight"
+		"PaddingCard",
+		"UniqueRatio",
+		"Curse",
+		"Cost",
+		"CardForce"
 	}
-	local cardAI = card:getCardAI() or {}
-	self._status = self._status or self:calcStatus(side)
+	self._status = self:calcStatus(side, card)
 	local weight = 0
+	local cardAI = card:getCardAI() or {}
 
 	for index, name in ipairs(statusNames) do
 		weight = weight + (tonumber(cardAI[name]) or 0) * (self._status[index] or 1)
+	end
+
+	if self._processRecorder and GameConfigs and GameConfigs.ShowAiWeightBox then
+		self._processRecorder:recordObjectEvent(player:getId(), "CurrentBattleSt", {
+			status = self._status
+		})
 	end
 
 	return weight
@@ -192,17 +196,40 @@ function WeightedStrategy:calcSkillWeight(card)
 	return weight
 end
 
-function WeightedStrategy:calcStatus(side)
+function WeightedStrategy:calcStatus(side, card)
+	local cardAI = card:getCardAI() or {}
 	local result = self:calcOneSideStatus(side)
 	local oppoResult = self:calcOneSideStatus(opposeBattleSide(side))
 
-	for i = 1, 4 do
-		result[i + 4] = oppoResult[i]
+	for i = 1, 1 do
+		result[i + 1] = oppoResult[i]
 	end
 
-	local battlelogic = self._context:getObject("BattleLogic")
-	result[9] = (120 - battlelogic:getBoutTime() / 1000) * 0.05
-	result[10] = 1
+	result[3] = 1
+	local battleField = self._context:getObject("BattleField")
+	local units = battleField:collectLivingUnits({}, opposeBattleSide(side))
+	local x = tonumber(cardAI.UniqueRatio) or 0
+	local y = #units
+	result[4] = x > 0 and 400 / (x / y + y / x) / x or 0
+	local units = battleField:collectLivingUnits({}, side)
+	local isMasterCurse = false
+
+	for k, v in pairs(units) do
+		if v:getUnitType() == BattleUnitType.kMaster then
+			local unitFlagComp = v:getComponent("Flag")
+
+			if unitFlagComp:hasStatus(kBECurse) then
+				isMasterCurse = true
+			end
+
+			break
+		end
+	end
+
+	result[5] = isMasterCurse and 1 or 0
+	result[6] = -1
+	local x = tonumber(cardAI.CardForce) or 0
+	result[7] = x > 0 and (x + 20) / x or 0
 
 	return result
 end
@@ -238,21 +265,13 @@ function WeightedStrategy:calcOneSideStatus(side)
 		totalHpPercent = totalHpPercent + hpRatio
 	end
 
-	if minHP <= 0.05 then
-		minHP = 0.05
+	if masterHp and masterHp >= 0.5 then
+		masterHp = 0
+	else
+		masterHp = 1
 	end
 
-	masterHp = masterHp and masterHp > 0.05 and masterHp or 0.05
-	local avrHp = totalHpPercent / #units
-
-	if avrHp <= 0.05 then
-		avrHp = 0.05
-	end
-
-	result[1] = 1 / masterHp
-	result[2] = 1 / minHP
-	result[3] = 1 / avrHp
-	result[4] = (heroCounts + 1) / 3 * 1.5
+	result[1] = masterHp
 
 	return result
 end
@@ -287,7 +306,7 @@ function WeightedStrategy:determineNextCard(player)
 			local weight = 0
 
 			if player:getCardState() == "hero" then
-				weight = self:calcWeight(card, side)
+				weight = self:calcWeight(card, side, player)
 			elseif player:getCardState() == "skill" then
 				weight = self:calcSkillWeight(card)
 			end
@@ -297,11 +316,26 @@ function WeightedStrategy:determineNextCard(player)
 				card,
 				weight
 			}
+
+			if self._processRecorder and GameConfigs and GameConfigs.ShowAiWeightBox then
+				self._processRecorder:recordObjectEvent(player:getId(), "UpdateCardWeight", {
+					cardInfos = {
+						idx,
+						[3] = weight
+					}
+				})
+			end
 		end
 
 		table.sort(result, function (a, b)
 			return b[3] < a[3]
 		end)
+
+		if self._processRecorder and GameConfigs and GameConfigs.ShowAiWeightBox then
+			self._processRecorder:recordObjectEvent(player:getId(), "MaxCardWeight", {
+				cardInfos = result[1][1]
+			})
+		end
 
 		return result[1][1], result[1][2]
 	end

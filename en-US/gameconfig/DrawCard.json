@@ -74,7 +74,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_11": {
         "Condition": "",
@@ -151,7 +152,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_11New": {
         "Condition": "",
@@ -228,7 +230,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_12": {
         "Condition": "",
@@ -305,7 +308,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_12New": {
         "Condition": "",
@@ -382,7 +386,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_13": {
         "Condition": "",
@@ -459,7 +464,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_13_NEW": {
         "Condition": "",
@@ -536,7 +542,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_14": {
         "Condition": "",
@@ -613,7 +620,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_15": {
         "Condition": "",
@@ -690,7 +698,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_16": {
         "Condition": "",
@@ -767,7 +776,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_1New": {
         "Condition": "",
@@ -844,7 +854,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_2": {
         "Condition": "",
@@ -921,7 +932,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_28": {
         "Condition": "",
@@ -998,7 +1010,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_3": {
         "Condition": "",
@@ -1075,7 +1088,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_4": {
         "Condition": "",
@@ -1152,7 +1166,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_5": {
         "Condition": "",
@@ -1229,7 +1244,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_6": {
         "Condition": "",
@@ -1306,7 +1322,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_7": {
         "Condition": "",
@@ -1383,7 +1400,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_8": {
         "Condition": "",
@@ -1460,7 +1478,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_AJTa": {
         "Condition": "",
@@ -1537,7 +1556,86 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
+    },
+    "DrawCard_1UP_AJTa_New": {
+        "Condition": "",
+        "Coupon": "IM_DiamondDrawEX",
+        "CouponCost": [
+            1,
+            10
+        ],
+        "DrawCardDesc": "",
+        "DrawCardDescTitle": "",
+        "DrawCardENName": "",
+        "DrawCardName": "",
+        "DrawCardType": "ACTIVITYDRAW",
+        "DrawCardUPDesc": [
+            [
+                "DrawCard_1UP_AJTa_New_Title1",
+                "DrawCard_1UP_AJTa_New_Text1"
+            ],
+            [
+                "DrawCard_1UP_AJTa_New_Title2",
+                "DrawCard_1UP_AJTa_New_Text2"
+            ],
+            [
+                "DrawCard_1UP_AJTa_New_Title3",
+                "DrawCard_1UP_AJTa_New_Text3"
+            ]
+        ],
+        "DrawCard_Id": 10144,
+        "DrawLimit": -1,
+        "ExtraReward": "",
+        "FreeReset": "DrawCard_TimeUp",
+        "Link": "view://shopView&viewType=push&shopId=Shop_TimeLimit",
+        "NormalReward": "DrawCard_Diamond_1_normal",
+        "Number": [
+            1,
+            10
+        ],
+        "OffCount": [],
+        "Preview": {
+            "btn": "drawcard_tab_AJTa_",
+            "main": "drawcard_bg_AJTa"
+        },
+        "Rank": 90,
+        "Rebate": "",
+        "ResourcesBanner": "",
+        "ReviewText": "",
+        "ReviewTextSpecial": "",
+        "Reward": [
+            "DrawCard_1UP_AJTa_New_1",
+            "DrawCard_1UP_AJTa_New_10"
+        ],
+        "RoleDetail": [
+            {
+                "hero": "AJTa",
+                "position": [
+                    306,
+                    404
+                ],
+                "showhero": "AJTa"
+            }
+        ],
+        "ShortDesc": [
+            "DrawCard_Diamond_1_ShortDesc",
+            "DrawCard_Diamond_10_ShortDesc"
+        ],
+        "ShortENDesc": [
+            "UILINK_EN_Zhaohuan1ci",
+            "UILINK_EN_Zhaohuan10ci"
+        ],
+        "ShowReward": {},
+        "SpecialReward": "",
+        "Tag": [
+            "1UP"
+        ],
+        "TimeRewardId": "",
+        "TimeRewardReset": "",
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_BDFen": {
         "Condition": "",
@@ -1614,7 +1712,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_BDFen_New": {
         "Condition": "",
@@ -1691,7 +1790,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_BLTu": {
         "Condition": "",
@@ -1768,7 +1868,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_BQDShe": {
         "Condition": "",
@@ -1845,7 +1946,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_DCJKang": {
         "Condition": "",
@@ -1922,7 +2024,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_DCJKang_1": {
         "Condition": "",
@@ -1999,7 +2102,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_FGao": {
         "Condition": "",
@@ -2076,7 +2180,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_FGao_1": {
         "Condition": "",
@@ -2153,7 +2258,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_FLYDe": {
         "Condition": "",
@@ -2230,7 +2336,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_FLYDe_1": {
         "Condition": "",
@@ -2307,7 +2414,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_FLYDe_New": {
         "Condition": "",
@@ -2384,7 +2492,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_GYCZi": {
         "Condition": "",
@@ -2490,7 +2599,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_HGEr": {
         "Condition": "",
@@ -2567,7 +2677,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_HGEr_New": {
         "Condition": "",
@@ -2644,7 +2755,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_HSYZhai": {
         "Condition": "",
@@ -2721,7 +2833,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_HSYZhai_New": {
         "Condition": "",
@@ -2798,7 +2911,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_HSheng": {
         "Condition": "",
@@ -2875,7 +2989,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_KMLa": {
         "Condition": "",
@@ -2952,7 +3067,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_LFKLFTe": {
         "Condition": "",
@@ -3029,7 +3145,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_LSLTe": {
         "Condition": "",
@@ -3106,7 +3223,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_LSLTe_New": {
         "Condition": "",
@@ -3183,7 +3301,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_MLYTLSha": {
         "Condition": "",
@@ -3260,7 +3379,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_MYing": {
         "Condition": "",
@@ -3343,7 +3463,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_MZGXiu": {
         "Condition": "",
@@ -3420,7 +3541,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_MZGXiu_New": {
         "Condition": "",
@@ -3497,7 +3619,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_NFEr": {
         "Condition": "",
@@ -3574,7 +3697,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_NFEr_new": {
         "Condition": "",
@@ -3651,7 +3775,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_NFEr_new1": {
         "Condition": "",
@@ -3728,7 +3853,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_PDLa": {
         "Condition": "",
@@ -3805,7 +3931,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_PGNNi": {
         "Condition": "",
@@ -3882,7 +4009,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_PGNNi_New": {
         "Condition": "",
@@ -3959,7 +4087,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_QBTe": {
         "Condition": "",
@@ -4036,7 +4165,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_SLMen": {
         "Condition": "",
@@ -4113,7 +4243,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_SLWan": {
         "Condition": "",
@@ -4190,7 +4321,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_SRen": {
         "Condition": "",
@@ -4267,7 +4399,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_TJHDe": {
         "Condition": "",
@@ -4344,7 +4477,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_TLSi": {
         "Condition": "",
@@ -4421,7 +4555,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_XBKLDi": {
         "Condition": "",
@@ -4498,7 +4633,86 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
+    },
+    "DrawCard_1UP_XHMao": {
+        "Condition": "",
+        "Coupon": "IM_DiamondDrawEX",
+        "CouponCost": [
+            1,
+            10
+        ],
+        "DrawCardDesc": "",
+        "DrawCardDescTitle": "",
+        "DrawCardENName": "",
+        "DrawCardName": "",
+        "DrawCardType": "ACTIVITYDRAW",
+        "DrawCardUPDesc": [
+            [
+                "DrawCard_1UP_XHMao_Title1",
+                "DrawCard_1UP_XHMao_Text1"
+            ],
+            [
+                "DrawCard_1UP_XHMao_Title2",
+                "DrawCard_1UP_XHMao_Text2"
+            ],
+            [
+                "DrawCard_1UP_XHMao_Title3",
+                "DrawCard_1UP_XHMao_Text3"
+            ]
+        ],
+        "DrawCard_Id": 10145,
+        "DrawLimit": -1,
+        "ExtraReward": "",
+        "FreeReset": "DrawCard_TimeUp",
+        "Link": "view://shopView&viewType=push&shopId=Shop_TimeLimit",
+        "NormalReward": "DrawCard_Diamond_1_normal",
+        "Number": [
+            1,
+            10
+        ],
+        "OffCount": [],
+        "Preview": {
+            "btn": "drawcard_tab_XHMao_",
+            "main": "drawcard_bg_XHMao"
+        },
+        "Rank": 90,
+        "Rebate": "",
+        "ResourcesBanner": "",
+        "ReviewText": "",
+        "ReviewTextSpecial": "",
+        "Reward": [
+            "DrawCard_1UP_XHMao_1",
+            "DrawCard_1UP_XHMao_10"
+        ],
+        "RoleDetail": [
+            {
+                "hero": "XHMao",
+                "position": [
+                    306,
+                    404
+                ],
+                "showhero": "XHMao"
+            }
+        ],
+        "ShortDesc": [
+            "DrawCard_Diamond_1_ShortDesc",
+            "DrawCard_Diamond_10_ShortDesc"
+        ],
+        "ShortENDesc": [
+            "UILINK_EN_Zhaohuan1ci",
+            "UILINK_EN_Zhaohuan10ci"
+        ],
+        "ShowReward": {},
+        "SpecialReward": "",
+        "Tag": [
+            "1UP"
+        ],
+        "TimeRewardId": "",
+        "TimeRewardReset": "",
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_YSTLu": {
         "Condition": "",
@@ -4575,7 +4789,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_YSTLu_1": {
         "Condition": "",
@@ -4652,7 +4867,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_YXNMei": {
         "Condition": "",
@@ -4729,7 +4945,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_1UP_YYing": {
         "Condition": "",
@@ -4835,7 +5052,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_2UP_1": {
         "Condition": "",
@@ -4916,7 +5134,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_2UP_2": {
         "Condition": "",
@@ -4997,7 +5216,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_2UP_3": {
         "Condition": "",
@@ -5078,7 +5298,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_2UP_4": {
         "Condition": "",
@@ -5159,7 +5380,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_2UP_5": {
         "Condition": "",
@@ -5240,7 +5462,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_BBLMaUp": {
         "Condition": "",
@@ -5321,7 +5544,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_BDFenPGNNi": {
         "Condition": "",
@@ -5402,7 +5626,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_BErKTSJKe": {
         "Condition": "",
@@ -5483,7 +5708,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_BErMTZMEShi": {
         "Condition": "",
@@ -5564,7 +5790,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_BHTZiLFEr": {
         "Condition": "",
@@ -5645,7 +5872,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_BLTuPDLa": {
         "Condition": "",
@@ -5726,7 +5954,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_Club_1": {
         "Condition": "Club_System",
@@ -5792,7 +6021,8 @@
         "Times": [
             0,
             99
-        ]
+        ],
+        "UPDesc": ""
     },
     "DrawCard_Club_2": {
         "Condition": "Club_System",
@@ -5858,7 +6088,8 @@
         "Times": [
             0,
             99
-        ]
+        ],
+        "UPDesc": ""
     },
     "DrawCard_Club_3": {
         "Condition": "Club_System",
@@ -5924,7 +6155,8 @@
         "Times": [
             0,
             99
-        ]
+        ],
+        "UPDesc": ""
     },
     "DrawCard_Club_4": {
         "Condition": "Club_System",
@@ -5990,7 +6222,8 @@
         "Times": [
             0,
             99
-        ]
+        ],
+        "UPDesc": ""
     },
     "DrawCard_Club_5": {
         "Condition": "Club_System",
@@ -6056,7 +6289,8 @@
         "Times": [
             0,
             99
-        ]
+        ],
+        "UPDesc": ""
     },
     "DrawCard_Club_6": {
         "Condition": "Club_System",
@@ -6122,7 +6356,8 @@
         "Times": [
             0,
             99
-        ]
+        ],
+        "UPDesc": ""
     },
     "DrawCard_Diamond_1": {
         "Condition": "Draw_Hero",
@@ -6196,7 +6431,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_Equip_1": {
         "Condition": "Draw_Equip",
@@ -6271,7 +6507,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_FEMSiHSheng": {
         "Condition": "",
@@ -6352,7 +6589,172 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
+    },
+    "DrawCard_FEMSiHSheng_New": {
+        "Condition": "",
+        "Coupon": "IM_DiamondDraw",
+        "CouponCost": [
+            1,
+            10
+        ],
+        "DrawCardDesc": "",
+        "DrawCardDescTitle": "",
+        "DrawCardENName": "",
+        "DrawCardName": "",
+        "DrawCardType": "ACTIVITYDRAW",
+        "DrawCardUPDesc": [
+            [
+                "DrawCard_FEMSiHSheng_Title1",
+                "DrawCard_FEMSiHSheng_Text1"
+            ],
+            [
+                "DrawCard_FEMSiHSheng_Title2",
+                "DrawCard_FEMSiHSheng_Text2"
+            ],
+            [
+                "DrawCard_FEMSiHSheng_Title3",
+                "DrawCard_FEMSiHSheng_Text3"
+            ]
+        ],
+        "DrawCard_Id": 10143,
+        "DrawLimit": -1,
+        "ExtraReward": "",
+        "FreeReset": "DrawCard_TimeUp",
+        "Link": "",
+        "NormalReward": "DrawCard_Diamond_1_normal",
+        "Number": [
+            1,
+            10
+        ],
+        "OffCount": [],
+        "Preview": {
+            "btn": "drawcard_tab_FEMSiHSheng_",
+            "main": "drawcard_bg_FEMSiHSheng"
+        },
+        "Rank": 80,
+        "Rebate": "",
+        "ResourcesBanner": "",
+        "ReviewText": "",
+        "ReviewTextSpecial": "",
+        "Reward": [
+            "DrawCard_FEMSiHSheng_1",
+            "DrawCard_FEMSiHSheng_10"
+        ],
+        "RoleDetail": [
+            {
+                "hero": "FEMSi",
+                "position": [
+                    320,
+                    300
+                ]
+            },
+            {
+                "hero": "HSheng",
+                "position": [
+                    860,
+                    300
+                ]
+            }
+        ],
+        "ShortDesc": [
+            "DrawCard_Diamond_1_ShortDesc",
+            "DrawCard_Diamond_10_ShortDesc"
+        ],
+        "ShortENDesc": [
+            "UILINK_EN_Zhaohuan1ci",
+            "UILINK_EN_Zhaohuan10ci"
+        ],
+        "ShowReward": {},
+        "SpecialReward": "",
+        "Tag": "",
+        "TimeRewardId": "",
+        "TimeRewardReset": "",
+        "Times": [],
+        "UPDesc": ""
+    },
+    "DrawCard_FGaoKMLa": {
+        "Condition": "",
+        "Coupon": "IM_DiamondDraw",
+        "CouponCost": [
+            1,
+            10
+        ],
+        "DrawCardDesc": "",
+        "DrawCardDescTitle": "",
+        "DrawCardENName": "",
+        "DrawCardName": "",
+        "DrawCardType": "ACTIVITYDRAW",
+        "DrawCardUPDesc": [
+            [
+                "DrawCard_FGaoKMLa_Title1",
+                "DrawCard_FGaoKMLa_Text1"
+            ],
+            [
+                "DrawCard_FGaoKMLa_Title2",
+                "DrawCard_FGaoKMLa_Text2"
+            ],
+            [
+                "DrawCard_FGaoKMLa_Title3",
+                "DrawCard_FGaoKMLa_Text3"
+            ]
+        ],
+        "DrawCard_Id": 10142,
+        "DrawLimit": -1,
+        "ExtraReward": "",
+        "FreeReset": "DrawCard_TimeUp",
+        "Link": "",
+        "NormalReward": "DrawCard_Diamond_1_normal",
+        "Number": [
+            1,
+            10
+        ],
+        "OffCount": [],
+        "Preview": {
+            "btn": "drawcard_tab_FGaoKMLa_",
+            "main": "drawcard_bg_FGaoKMLa"
+        },
+        "Rank": 80,
+        "Rebate": "",
+        "ResourcesBanner": "",
+        "ReviewText": "",
+        "ReviewTextSpecial": "",
+        "Reward": [
+            "DrawCard_FGaoKMLa_1",
+            "DrawCard_FGaoKMLa_10"
+        ],
+        "RoleDetail": [
+            {
+                "hero": "KMLa",
+                "position": [
+                    320,
+                    300
+                ]
+            },
+            {
+                "hero": "FGao",
+                "position": [
+                    860,
+                    300
+                ]
+            }
+        ],
+        "ShortDesc": [
+            "DrawCard_Diamond_1_ShortDesc",
+            "DrawCard_Diamond_10_ShortDesc"
+        ],
+        "ShortENDesc": [
+            "UILINK_EN_Zhaohuan1ci",
+            "UILINK_EN_Zhaohuan10ci"
+        ],
+        "ShowReward": {},
+        "SpecialReward": "",
+        "Tag": "",
+        "TimeRewardId": "",
+        "TimeRewardReset": "",
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_Gold_1": {
         "Condition": "Draw_Gold",
@@ -6405,7 +6807,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_JNLongNXYYi": {
         "Condition": "",
@@ -6486,7 +6889,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_JNLongZZBBWei": {
         "Condition": "",
@@ -6567,7 +6971,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_KMLaKTSJKe": {
         "Condition": "",
@@ -6648,7 +7053,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_KMLaPDLa": {
         "Condition": "",
@@ -6729,7 +7135,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_KTSJKeMTZMEShi": {
         "Condition": "",
@@ -6810,7 +7217,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_LCYShiBQDShe": {
         "Condition": "",
@@ -6891,7 +7299,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_LCYShiKTSJKe": {
         "Condition": "",
@@ -6972,7 +7381,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_LCYShiMGNa": {
         "Condition": "",
@@ -7053,7 +7463,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_LFErBHTZi": {
         "Condition": "",
@@ -7134,7 +7545,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_LFErLCYShi": {
         "Condition": "",
@@ -7215,7 +7627,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_LFErXSMLi": {
         "Condition": "",
@@ -7296,7 +7709,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_LYXiBHTZi": {
         "Condition": "",
@@ -7377,7 +7791,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_LYXiBHTZi_1": {
         "Condition": "",
@@ -7458,7 +7873,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_LYXiSLMen": {
         "Condition": "",
@@ -7539,7 +7955,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_LYXiTJHDe": {
         "Condition": "",
@@ -7620,7 +8037,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_MGNaSLMen": {
         "Condition": "",
@@ -7701,7 +8119,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_MGNaYBYa": {
         "Condition": "",
@@ -7782,7 +8201,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_MTZMEShiLDu": {
         "Condition": "",
@@ -7863,7 +8283,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_MTZMEShiLDu_New": {
         "Condition": "",
@@ -7944,7 +8365,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_NFErHSheng": {
         "Condition": "",
@@ -8025,7 +8447,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_NXYYiQBTe": {
         "Condition": "",
@@ -8106,7 +8529,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_NewPlayer": {
         "Condition": "",
@@ -8176,7 +8600,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_PDLaNFEr": {
         "Condition": "",
@@ -8257,7 +8682,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_Party1Up": {
         "Condition": "",
@@ -8340,7 +8766,8 @@
         ],
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_Party2Up": {
         "Condition": "",
@@ -8421,7 +8848,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_Party3Up": {
         "Condition": "",
@@ -8502,7 +8930,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_Pve_1": {
         "Condition": "Unlock_Tower_1",
@@ -8568,7 +8997,8 @@
         "Times": [
             0,
             99
-        ]
+        ],
+        "UPDesc": ""
     },
     "DrawCard_Pve_2": {
         "Condition": "Unlock_Tower_1",
@@ -8634,7 +9064,8 @@
         "Times": [
             0,
             99
-        ]
+        ],
+        "UPDesc": ""
     },
     "DrawCard_Pve_3": {
         "Condition": "Unlock_Tower_1",
@@ -8700,7 +9131,8 @@
         "Times": [
             0,
             99
-        ]
+        ],
+        "UPDesc": ""
     },
     "DrawCard_Pve_4": {
         "Condition": "Unlock_Tower_1",
@@ -8766,7 +9198,8 @@
         "Times": [
             0,
             99
-        ]
+        ],
+        "UPDesc": ""
     },
     "DrawCard_Pve_5": {
         "Condition": "Unlock_Tower_1",
@@ -8832,7 +9265,8 @@
         "Times": [
             0,
             99
-        ]
+        ],
+        "UPDesc": ""
     },
     "DrawCard_Pve_6": {
         "Condition": "Unlock_Tower_1",
@@ -8898,7 +9332,8 @@
         "Times": [
             0,
             99
-        ]
+        ],
+        "UPDesc": ""
     },
     "DrawCard_Pvp_1": {
         "Condition": "Arena_System",
@@ -8964,7 +9399,8 @@
         "Times": [
             0,
             99
-        ]
+        ],
+        "UPDesc": ""
     },
     "DrawCard_Pvp_2": {
         "Condition": "Arena_System",
@@ -9030,7 +9466,8 @@
         "Times": [
             0,
             99
-        ]
+        ],
+        "UPDesc": ""
     },
     "DrawCard_Pvp_3": {
         "Condition": "Arena_System",
@@ -9096,7 +9533,8 @@
         "Times": [
             0,
             99
-        ]
+        ],
+        "UPDesc": ""
     },
     "DrawCard_Pvp_4": {
         "Condition": "Arena_System",
@@ -9162,7 +9600,8 @@
         "Times": [
             0,
             99
-        ]
+        ],
+        "UPDesc": ""
     },
     "DrawCard_Pvp_5": {
         "Condition": "Arena_System",
@@ -9228,7 +9667,8 @@
         "Times": [
             0,
             99
-        ]
+        ],
+        "UPDesc": ""
     },
     "DrawCard_Pvp_6": {
         "Condition": "Arena_System",
@@ -9294,7 +9734,8 @@
         "Times": [
             0,
             99
-        ]
+        ],
+        "UPDesc": ""
     },
     "DrawCard_SDTZiLCYShi": {
         "Condition": "",
@@ -9375,7 +9816,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_SDTZiLFEr": {
         "Condition": "",
@@ -9456,7 +9898,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_SP_PNCao_Up": {
         "Condition": "",
@@ -9594,7 +10037,248 @@
             "TimeReward_SP_PNCao_8"
         ],
         "TimeRewardReset": 1,
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
+    },
+    "DrawCard_SP_SSQXin_Up": {
+        "Condition": "",
+        "Coupon": "IM_DiamondDrawEX",
+        "CouponCost": [
+            1,
+            10
+        ],
+        "DrawCardDesc": "",
+        "DrawCardDescTitle": "",
+        "DrawCardENName": "UITitle_EN_YLSBaiUp",
+        "DrawCardName": "DrawCard_YLSBaiUp_Name",
+        "DrawCardType": "ACTIVITYDRAW",
+        "DrawCardUPDesc": [
+            [
+                "DrawCard_SP_SSQXin_Title1",
+                "DrawCard_SP_SSQXin_Text1"
+            ],
+            [
+                "DrawCard_SP_SSQXin_Title2",
+                "DrawCard_SP_SSQXin_Text2"
+            ],
+            [
+                "DrawCard_SP_SSQXin_Title3",
+                "DrawCard_SP_SSQXin_Text3"
+            ]
+        ],
+        "DrawCard_Id": 10141,
+        "DrawLimit": -1,
+        "ExtraReward": "",
+        "FreeReset": "DrawCard_TimeUp",
+        "Link": "",
+        "NormalReward": "DrawCard_Diamond_1_normal",
+        "Number": [
+            1,
+            10
+        ],
+        "OffCount": [],
+        "Preview": {
+            "SPbmg": "drawcard_bg_sp_PNCao_1",
+            "bannerbmg": "drawcard_bg_SP_SSQXin",
+            "chancetips": "sp_kachi_txt_xd"
+        },
+        "Rank": 80,
+        "Rebate": "",
+        "ResourcesBanner": "",
+        "ReviewText": "",
+        "ReviewTextSpecial": "",
+        "Reward": [
+            "DrawCard_SP_SSQXin_1",
+            "DrawCard_SP_SSQXin_10"
+        ],
+        "RoleDetail": [
+            {
+                "ModelIdOffset": {
+                    "pos": [
+                        -380,
+                        -80
+                    ],
+                    "scale": 0.45,
+                    "shadow": 3
+                },
+                "detail": [
+                    -455,
+                    -188
+                ],
+                "hero": "FLBDSi",
+                "modeltype": 0,
+                "position": [
+                    -400,
+                    -160
+                ]
+            },
+            {
+                "ModelIdOffset": {
+                    "pos": [
+                        -60,
+                        -80
+                    ],
+                    "scale": 0.45,
+                    "shadow": 3
+                },
+                "detail": [
+                    -120,
+                    -188
+                ],
+                "hero": "SRen",
+                "modeltype": 0,
+                "position": [
+                    -45,
+                    -160
+                ]
+            },
+            {
+                "ModelIdOffset": {
+                    "pos": [
+                        528,
+                        -130
+                    ],
+                    "scale": 0.88
+                },
+                "detail": [
+                    277,
+                    -120
+                ],
+                "hero": "SP_SSQXin",
+                "modeltype": 1,
+                "position": [
+                    485,
+                    -90
+                ]
+            }
+        ],
+        "ShortDesc": [
+            "DrawCard_Equip_1_ShortDesc",
+            "DrawCard_Equip_10_ShortDesc"
+        ],
+        "ShortENDesc": [
+            "UILINK_EN_Zhaohuan1ci",
+            "UILINK_EN_Zhaohuan10ci"
+        ],
+        "ShowReward": {},
+        "SpecialReward": "",
+        "Tag": [
+            "1UP"
+        ],
+        "TimeRewardId": [
+            "TimeReward_SP_SSQXin_1",
+            "TimeReward_SP_SSQXin_2",
+            "TimeReward_SP_SSQXin_3",
+            "TimeReward_SP_SSQXin_4",
+            "TimeReward_SP_SSQXin_5",
+            "TimeReward_SP_SSQXin_6",
+            "TimeReward_SP_SSQXin_7",
+            "TimeReward_SP_SSQXin_8"
+        ],
+        "TimeRewardReset": 1,
+        "Times": [],
+        "UPDesc": ""
+    },
+    "DrawCard_UR_2UP_1": {
+        "Condition": "Draw_Equip",
+        "Coupon": "IM_DiamondDraw_UR",
+        "CouponCost": [
+            1,
+            10
+        ],
+        "DrawCardDesc": [
+            {
+                "3": [
+                    "str",
+                    "UREquip_DrawCardDesc_1"
+                ]
+            },
+            {
+                "14.5": [
+                    "str",
+                    "UREquip_DrawCardDesc_2"
+                ]
+            },
+            {
+                "39": [
+                    "str",
+                    "UREquip_DrawCardDesc_3"
+                ]
+            },
+            {
+                "43.5": [
+                    "str",
+                    "UREquip_DrawCardDesc_4"
+                ]
+            }
+        ],
+        "DrawCardDescTitle": "DrawCard_UR_2UP_Desc",
+        "DrawCardENName": "UITitle_EN_YLSBaiUp",
+        "DrawCardName": "DrawCard_UR_2UP_1_Name",
+        "DrawCardType": "ACTIVITYDRAWUR",
+        "DrawCardUPDesc": "",
+        "DrawCard_Id": 10003,
+        "DrawLimit": -1,
+        "ExtraReward": "",
+        "FreeReset": "DrawCard_TimeUp",
+        "Link": "view://shopView&viewType=push&shopId=Shop_TimeLimit",
+        "NormalReward": "DrawCard_Equip_1_normal",
+        "Number": [
+            1,
+            10
+        ],
+        "OffCount": [],
+        "Preview": {
+            "btn": "draw_urtab_1_",
+            "main": "draw_urbg_1"
+        },
+        "Rank": 2,
+        "Rebate": "",
+        "ResourcesBanner": "",
+        "ReviewText": "",
+        "ReviewTextSpecial": "",
+        "Reward": [
+            "DrawCard_UREquip_CO_Weapon_15103_3_1_TopBag",
+            "DrawCard_UREquip_CO_Weapon_15103_3_10_TopBag"
+        ],
+        "RoleDetail": [
+            {
+                "equip": "CO_Weapon_15103_3",
+                "showequip": "Weapon_15103_3",
+                "urposition": [
+                    575,
+                    380
+                ]
+            },
+            {
+                "equip": "CO_Tops_15003",
+                "showequip": "Tops_15003",
+                "urposition": [
+                    865,
+                    350
+                ]
+            }
+        ],
+        "ShortDesc": [
+            "DrawCard_Equip_1_ShortDesc",
+            "DrawCard_Equip_10_ShortDesc"
+        ],
+        "ShortENDesc": [
+            "UILINK_EN_Zhaohuan1ci",
+            "UILINK_EN_Zhaohuan10ci"
+        ],
+        "ShowReward": {
+            "Draw_UR_EquipBtnName": "DrawCard_UR_Equip_MainShow"
+        },
+        "SpecialReward": "",
+        "Tag": "",
+        "TimeRewardId": "",
+        "TimeRewardReset": "",
+        "Times": [],
+        "UPDesc": [
+            "DrawCard_UR_Desc_1",
+            "DrawCard_UR_Desc_2"
+        ]
     },
     "DrawCard_WEDeYLMGZhu": {
         "Condition": "",
@@ -9675,7 +10359,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_WEDeYLMGZhu_1": {
         "Condition": "",
@@ -9756,7 +10441,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_WEDeYLSBai": {
         "Condition": "",
@@ -9837,7 +10523,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_WEDeYLSBai_New": {
         "Condition": "",
@@ -9918,7 +10605,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_XSMLiBHTZi": {
         "Condition": "",
@@ -9999,7 +10687,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_XSMLiBHTZi_New": {
         "Condition": "",
@@ -10080,7 +10769,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_XSMLiHGEr": {
         "Condition": "",
@@ -10161,7 +10851,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_XSMLiMGNa": {
         "Condition": "",
@@ -10242,7 +10933,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_XSMLiMGNa_New": {
         "Condition": "",
@@ -10323,7 +11015,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_YBYaLDu": {
         "Condition": "",
@@ -10404,7 +11097,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_YBYaLDu_New": {
         "Condition": "",
@@ -10485,7 +11179,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_YLMGZhuKMLa": {
         "Condition": "",
@@ -10566,7 +11261,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_YLMGZhuKTSJKe": {
         "Condition": "",
@@ -10647,7 +11343,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_YLMGZhuYLSBai": {
         "Condition": "",
@@ -10728,7 +11425,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_YLSBaiUp": {
         "Condition": "",
@@ -10809,7 +11507,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_YLSBaiYLMGZhu": {
         "Condition": "",
@@ -10890,7 +11589,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_YSLBinKTSJKe": {
         "Condition": "",
@@ -10971,7 +11671,8 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     },
     "DrawCard_YeFeiUp": {
         "Condition": "",
@@ -11052,6 +11753,7 @@
         "Tag": "",
         "TimeRewardId": "",
         "TimeRewardReset": "",
-        "Times": []
+        "Times": [],
+        "UPDesc": ""
     }
 }

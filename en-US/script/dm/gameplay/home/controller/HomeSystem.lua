@@ -496,3 +496,26 @@ function HomeSystem:getActivityCalenderBubble(activityBubbles)
 
 	return bubbles[math.random(1, #staticBubbles)]
 end
+
+function HomeSystem:getHomeBackgroundList()
+	local config = ConfigReader:getDataTable("HomeBackground")
+	local player = self._developSystem:getPlayer()
+	local background = player:getBackground()
+	local list = {}
+
+	for id, v in pairs(config) do
+		if v.Information then
+			if background[id] then
+				list[#list + 1] = v
+			end
+		else
+			list[#list + 1] = v
+		end
+	end
+
+	table.sort(list, function (a, b)
+		return a.Sort < b.Sort
+	end)
+
+	return list
+end

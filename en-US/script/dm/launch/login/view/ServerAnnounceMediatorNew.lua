@@ -117,20 +117,34 @@ function ServerAnnounceMediatorNew:enterWithData(data)
 end
 
 function ServerAnnounceMediatorNew:setupView()
-	local AnnounceDate = {
-		{
-			type = "activity",
-			data = {}
-		},
-		{
-			type = "activityPV",
-			data = {}
-		},
-		{
-			type = "system",
-			data = {}
+	local AnnounceDate = {}
+
+	if self.isLogin then
+		AnnounceDate = {
+			{
+				type = "system",
+				data = {}
+			}
 		}
-	}
+
+		self._listViewUp:setVisible(true)
+	else
+		self.playerRid = self:getInjector():getInstance("DevelopSystem"):getPlayer():getRid()
+		AnnounceDate = {
+			{
+				type = "activity",
+				data = {}
+			},
+			{
+				type = "activityPV",
+				data = {}
+			},
+			{
+				type = "system",
+				data = {}
+			}
+		}
+	end
 
 	self:setUpList(AnnounceDate)
 end

@@ -755,6 +755,102 @@
         "Time": "",
         "Type": "STORY"
     },
+    "Memory_Act_FireWorks_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_FireWorks_Map",
+                    "FireWorksS01S01"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_fireworks_1",
+        "Name": "FireWorksS01S01_Name",
+        "Num": 680,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_sayounara_01a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_FireWorks_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_FireWorks_Map",
+                    "FireWorksS01S02"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_fireworks_1",
+        "Name": "FireWorksS01S02_Name",
+        "Num": 681,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_sayounara_02a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_FireWorks_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_FireWorks_Map",
+                    "FireWorksS01S03"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_fireworks_2",
+        "Name": "FireWorksS01S03_Name",
+        "Num": 682,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_sayounara_03a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_FireWorks_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_FireWorks_Map",
+                    "FireWorksS01S04"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_fireworks_2",
+        "Name": "FireWorksS01S04_Name",
+        "Num": 683,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_sayounara_04a",
+        "Time": "",
+        "Type": "STORY"
+    },
     "Memory_Act_Fire_1": {
         "Condition": [
             {

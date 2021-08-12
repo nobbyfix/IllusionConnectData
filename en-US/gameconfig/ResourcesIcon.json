@@ -273,6 +273,23 @@
         "Shine": "",
         "Sicon": "icon_zuanshiquanEX"
     },
+    "IM_DiamondDraw_UR": {
+        "Desc": "IM_DiamondDraw_UR_FunctionDesc",
+        "LargeIcons": [
+            "IM_DiamondDraw_UR_1"
+        ],
+        "Licon": "IM_DiamondDraw_UR_1",
+        "Name": "IM_DiamondDraw_UR_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "IM_DiamondDraw_UR_2"
+    },
     "IM_GoldDraw": {
         "Desc": "IM_GoldDraw_FunctionDesc",
         "LargeIcons": [
@@ -888,6 +905,23 @@
         ],
         "Shine": "",
         "Sicon": "ico_m_fire_stamina_2"
+    },
+    "IR_FireWorksStamina": {
+        "Desc": "IR_FireWorksStamina_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_fireworks_stamina_1"
+        ],
+        "Licon": "ico_m_fireworks_stamina_1",
+        "Name": "IR_FireWorksStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_fireworks_stamina_2"
     },
     "IR_Fragment": {
         "Desc": "IR_Fragment_FunctionDesc",

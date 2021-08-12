@@ -13,6 +13,17 @@ local kBtnHandlers = {
 		func = "onClickChallenge"
 	}
 }
+local btnsName = {
+	[StageType.kNormal] = {
+		btnName = "btn_normal"
+	},
+	[StageType.kElite] = {
+		btnName = "btn_elite"
+	},
+	[StageType.kHard] = {
+		btnName = "btn_hard"
+	}
+}
 
 function ActivityPointDetailNewMediator:dispose()
 	if self._schedule then
@@ -81,6 +92,10 @@ function ActivityPointDetailNewMediator:glueFieldAndUi()
 	self._bg = self._main:getChildByName("Image_bg")
 	self._conditionPanel = self._rightPanel:getChildByFullName("Panel_condition")
 	self._guideBtn = self._main:getChildByName("guildBtn")
+
+	self._guideBtn:setLocalZOrder(9999)
+	self._guideBtn:setVisible(false)
+
 	local text = self._guideBtn:getChildByName("text")
 
 	text:getVirtualRenderer():setMaxLineWidth(50)
@@ -132,15 +147,12 @@ function ActivityPointDetailNewMediator:enterWithData(data)
 end
 
 function ActivityPointDetailNewMediator:initTabButton()
-	local btnsName = {
-		"btn_normal",
-		"btn_elite"
-	}
 	local tabBtns = {}
 	self._invalidButtons = {}
 
-	for i, name in pairs(btnsName) do
-		local subPoint = self._subPointList[i]
+	for i, subPoint in ipairs(self._subPointList) do
+		local stageType = subPoint:getType()
+		local name = btnsName[stageType].btnName
 		local btn = self._main:getChildByName(name)
 
 		btn:setLocalZOrder(2000)
@@ -340,6 +352,8 @@ function ActivityPointDetailNewMediator:setupView()
 		self._bg:loadTexture("asset/ui/activity/hd_bg_pt.png")
 	elseif point:getType() == StageType.kElite then
 		self._bg:loadTexture("asset/ui/activity/hd_bg_bh.png")
+	elseif point:getType() == StageType.kHard then
+		self._bg:loadTexture("asset/ui/activity/hd_bg_bh.png")
 	end
 
 	self._rolePanel:removeAllChildren()
@@ -484,7 +498,7 @@ function ActivityPointDetailNewMediator:refreshCostView()
 		id = cost
 	})
 
-	icon:addTo(self._challengeBtn):setTag(1003):setPosition(cc.p(80, 5)):setScale(0.8)
+	icon:addTo(self._challengeBtn):setTag(1003):setPosition(cc.p(80, -20)):setScale(0.8)
 	costText:setString("X" .. amount)
 
 	self._curPower = self._bagSystem:getPowerByCurrencyId(cost)

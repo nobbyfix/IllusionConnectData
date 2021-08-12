@@ -85,6 +85,12 @@ local kAddBtnFuncMap = {
 		self._shopSystem:tryEnter({
 			shopId = ShopSpecialId.kShopTimeLimit
 		})
+	end,
+	[CurrencyIdKind.kDiamondDrawURItem] = function (self)
+		AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
+		self._shopSystem:tryEnter({
+			shopId = ShopSpecialId.kShopTimeLimit
+		})
 	end
 }
 local kAddImgMap = {
@@ -98,7 +104,8 @@ local kAddImgMap = {
 	[CurrencyIdKind.kDiamondDrawItem] = true,
 	[CurrencyIdKind.kDiamondDrawExItem] = true,
 	[CurrencyIdKind.KMasterStage_Exp] = true,
-	[CurrencyIdKind.kDiamondDrawExZuoHeItem] = true
+	[CurrencyIdKind.kDiamondDrawExZuoHeItem] = true,
+	[CurrencyIdKind.kDiamondDrawURItem] = true
 }
 
 function CurrencyBar.class:createWidgetNode()
