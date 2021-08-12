@@ -158,11 +158,11 @@ function exports.Revive(env, hpRatio, anger, location)
 	return formationSystem:revive(actor, hpRatio, anger, location)
 end
 
-function exports.ReviveByUnit(env, unit, hpRatio, anger, location)
+function exports.ReviveByUnit(env, unit, hpRatio, anger, location, owner)
 	local formationSystem = env.global["$FormationSystem"]
 	local actor = env["$actor"]
 
-	return formationSystem:reviveByUnit(actor, unit, hpRatio, anger, location)
+	return formationSystem:reviveByUnit(actor, unit, hpRatio, anger, location, owner)
 end
 
 function exports.ReviveRandom(env, hpRatio, anger, location)

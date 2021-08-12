@@ -560,16 +560,16 @@ all.Skill_LOVER_Passive = {
 						end
 
 						local reviveunit = global.ReviveByUnit(_env, unit, HpFactor, RpFactor, {
-							-7,
-							-8,
-							-9,
-							-4,
-							-6,
-							-5,
-							-1,
-							-3,
-							-2
-						})
+							7,
+							8,
+							9,
+							4,
+							6,
+							5,
+							1,
+							3,
+							2
+						}, global.GetOwner(_env, global.EnemyField(_env)))
 
 						if reviveunit then
 							global.AddStatus(_env, reviveunit, "Skill_TPGZhu_Passive_Transformed")
@@ -582,16 +582,16 @@ all.Skill_LOVER_Passive = {
 						HpFactor = 0.01
 						RpFactor = 1000
 						local reviveunit = global.ReviveByUnit(_env, unit, HpFactor, RpFactor, {
-							-7,
-							-8,
-							-9,
-							-4,
-							-6,
-							-5,
-							-1,
-							-3,
-							-2
-						})
+							7,
+							8,
+							9,
+							4,
+							6,
+							5,
+							1,
+							3,
+							2
+						}, global.GetOwner(_env, global.EnemyField(_env)))
 
 						if reviveunit then
 							global.AddStatus(_env, reviveunit, "Skill_KMLa_Passive_Transformed")
@@ -604,16 +604,16 @@ all.Skill_LOVER_Passive = {
 						HpFactor = 0.01
 						RpFactor = 1000
 						local reviveunit = global.ReviveByUnit(_env, unit, HpFactor, RpFactor, {
-							-7,
-							-8,
-							-9,
-							-4,
-							-6,
-							-5,
-							-1,
-							-3,
-							-2
-						})
+							7,
+							8,
+							9,
+							4,
+							6,
+							5,
+							1,
+							3,
+							2
+						}, global.GetOwner(_env, global.EnemyField(_env)))
 
 						if reviveunit then
 							global.AddStatus(_env, reviveunit, "Skill_KMLa_Passive_Transformed2")

@@ -1850,6 +1850,17 @@ function BagSystem:getURSuiteRewards(urMapId, callback)
 end
 
 function BagSystem:mainInfoURSuite(callback)
+	local systemKeeper = self:getInjector():getInstance("SystemKeeper")
+	local result, tip = systemKeeper:isUnlock("URMap_Unlock")
+
+	if not result then
+		if callback then
+			callback()
+		end
+
+		return
+	end
+
 	local param = {}
 	local bagService = self:getInjector():getInstance(BagService)
 
