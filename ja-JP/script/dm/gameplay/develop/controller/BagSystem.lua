@@ -9,6 +9,12 @@ BagSystem:has("_developSystem", {
 BagSystem:has("_composeTimes", {
 	is = "r"
 })
+BagSystem:has("_uRCount", {
+	is = "r"
+})
+BagSystem:has("_uREquipState", {
+	is = "r"
+})
 
 local crusadeEnergyReset = nil
 
@@ -23,6 +29,11 @@ function BagSystem:initialize()
 	self._sharedScheduler = nil
 	self._powerResetMap = {}
 	self._composeTimes = {}
+	self._uRCount = 0
+	self._uREquipState = {
+		uRSuiteMap = {},
+		uRStatMap = {}
+	}
 	crusadeEnergyReset = self:initConfigSystem("Reset", "Crusade_Energy_Recovery")
 end
 
@@ -1580,6 +1591,34 @@ function BagSystem:setComposeTimes(composeTimes)
 	end
 end
 
+function BagSystem:setURCount(count)
+	dump(count, "========== BagSystem:setURCount   ")
+
+	self._uRCount = count
+end
+
+function BagSystem:setUREquipState(info)
+	dump(info, "========== BagSystem:setUREquipState   ")
+
+	if info.uRStatMap then
+		for k, v in pairs(info.uRStatMap) do
+			self._uREquipState.uRStatMap[k] = v
+		end
+	end
+
+	if info.uRSuiteMap then
+		for k, v in pairs(info.uRSuiteMap) do
+			local t = {}
+
+			for _, id in pairs(v) do
+				table.insert(t, id)
+			end
+
+			self._uREquipState.uRSuiteMap[k] = t
+		end
+	end
+end
+
 function BagSystem:requestItemLock(param, callback, blockUI)
 	local param_request = {
 		itemId = param.itemId
@@ -1616,6 +1655,17 @@ function BagSystem:getAllComposeEntrys(composeStoneId, curComposeId)
 
 				if curComposeId and curComposeId == k then
 					haveCount = haveCount - 1
+				else
+					local ret = true
+					local currentTime = self._composeTimes[k]
+
+					if currentTime and currentTime >= 1 then
+						ret = false
+					end
+
+					if ret then
+						haveCount = haveCount - 1
+					end
 				end
 
 				if haveCount > 0 then
@@ -1647,4 +1697,227 @@ function BagSystem:getComposePos(composeItemId)
 	end
 
 	return self._composeToPos[composeItemId]
+end
+
+UPMapStatus = {
+	kNot_Collect_NOT_Over = 1,
+	kFinish_YiLingQu = 2,
+	KFinish_WeiLingQu = 0
+}
+
+function BagSystem:getURMapConfig(urMapId)
+	return ConfigReader:getRecordById("UREuipmentMap", urMapId)
+end
+
+function BagSystem:getURMapStateById(urMapId)
+	local state = UPMapStatus.kNot_Collect_NOT_Over
+	local urMapState = self:getUREquipState()
+	local config = self:getURMapConfig(urMapId)
+
+	if urMapState.uRSuiteMap and urMapState.uRSuiteMap[urMapId] and next(urMapState.uRSuiteMap) and #config.EquipList == #urMapState.uRSuiteMap[urMapId] then
+		if urMapState.uRStatMap[urMapId] and urMapState.uRStatMap[urMapId] == 1 then
+			state = UPMapStatus.KFinish_WeiLingQu
+		elseif urMapState.uRStatMap[urMapId] and urMapState.uRStatMap[urMapId] == 2 then
+			state = UPMapStatus.kFinish_YiLingQu
+		end
+	end
+
+	return state
+end
+
+function BagSystem:getHasURMapEquipId(urMapId, eqId)
+	local urMapState = self:getUREquipState()
+
+	if not urMapState or not urMapState.uRSuiteMap then
+		return false
+	end
+
+	local gotEquips = urMapState.uRSuiteMap[urMapId]
+
+	if gotEquips and next(gotEquips) and table.indexof(gotEquips, eqId) then
+		return true
+	end
+
+	return false
+end
+
+function BagSystem:getURMapInfo()
+	local info = {}
+	local dataTable = ConfigReader:getDataTable("UREuipmentMap")
+
+	for k, v in pairs(dataTable) do
+		local tmp = {
+			config = v
+		}
+		local state = self:getURMapStateById(k)
+		tmp.state = state
+
+		table.insert(info, tmp)
+	end
+
+	table.sort(info, function (a, b)
+		if a.state ~= b.state then
+			if a.state >= b.state then
+				slot2 = false
+			else
+				slot2 = true
+			end
+
+			return slot2
+		else
+			if a.config.Sort >= b.config.Sort then
+				slot2 = false
+			else
+				slot2 = true
+			end
+
+			return slot2
+		end
+	end)
+
+	return info
+end
+
+function BagSystem:getURMapIdByItemId(itemId)
+	local index = -1
+	local info = self:getURMapInfo()
+
+	for i, v in ipairs(info) do
+		local data = v.config
+
+		for i, v in ipairs(data.EquipList) do
+			if itemId == v.scrollID then
+				index = i
+			end
+		end
+	end
+
+	return index
+end
+
+function BagSystem:getProcessByURMapId(urMapId)
+	local urMapState = self:getUREquipState()
+	local ret1 = 0
+	local ret2 = nil
+	local configData = self:getURMapConfig(urMapId)
+	ret2 = #configData.EquipList
+
+	if urMapState.uRSuiteMap[urMapId] then
+		ret1 = #urMapState.uRSuiteMap[urMapId]
+	end
+
+	return ret1, ret2
+end
+
+function BagSystem:getProcessOfURMap()
+	local ret = 0
+	local info = self:getURMapInfo()
+
+	for k, v in pairs(info) do
+		ret = ret + #v.config.EquipList
+	end
+
+	return ret
+end
+
+function BagSystem:getURSuiteRewards(urMapId, callback)
+	local param = {
+		UREquipmentMapId = urMapId
+	}
+	local bagService = self:getInjector():getInstance(BagService)
+
+	bagService:getURSuiteRewards(param, function (response)
+		if response.resCode == GS_SUCCESS then
+			if callback then
+				callback()
+			end
+
+			local rewards = response.data
+
+			if rewards then
+				local view = self:getInjector():getInstance("getRewardView")
+
+				self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+					maskOpacity = 0
+				}, {
+					rewards = rewards
+				}))
+			end
+
+			self:dispatch(Event:new(EVT_URMAP_GetReward_SUCC, {}))
+		end
+	end, true)
+end
+
+function BagSystem:mainInfoURSuite(callback)
+	local systemKeeper = self:getInjector():getInstance("SystemKeeper")
+	local result, tip = systemKeeper:isUnlock("URMap_Unlock")
+
+	if not result then
+		if callback then
+			callback()
+		end
+
+		return
+	end
+
+	local param = {}
+	local bagService = self:getInjector():getInstance(BagService)
+
+	bagService:mainInfoURSuite(param, function (response)
+		if response.resCode == GS_SUCCESS and callback then
+			callback()
+		end
+	end, true)
+end
+
+function BagSystem:getURMapRedPoint()
+	local systemKeeper = self:getInjector():getInstance("SystemKeeper")
+	local result, tip = systemKeeper:isUnlock("URMap_Unlock")
+
+	if not result then
+		return false
+	end
+
+	local taskSys = self._developSystem:getTaskSystem()
+	local hasRedPoint = taskSys:hasUnreceivedTask(TaskType.kURMap)
+
+	if hasRedPoint then
+		return true
+	end
+
+	local urMapInfo = self:getURMapInfo()
+
+	for k, v in pairs(urMapInfo) do
+		if v.state == UPMapStatus.KFinish_WeiLingQu then
+			return true
+		end
+	end
+
+	return self:checkURMapCountKey()
+end
+
+function BagSystem:checkURMapCountKey()
+	local dataTable = ConfigReader:getDataTable("UREuipmentMap")
+	local playerId = self._developSystem:getPlayer():getRid()
+
+	if not cc.UserDefault:getInstance():getIntegerForKey(playerId .. UserDefaultKey.KURMapCountKey) then
+		local cur = ""
+	end
+
+	if cur == table.nums(dataTable) then
+		slot4 = false
+	else
+		slot4 = true
+	end
+
+	return slot4
+end
+
+function BagSystem:setURMapCountKeyValue()
+	local dataTable = ConfigReader:getDataTable("UREuipmentMap")
+	local playerId = self._developSystem:getPlayer():getRid()
+	local cur = table.nums(dataTable)
+
+	cc.UserDefault:getInstance():setIntegerForKey(playerId .. UserDefaultKey.KURMapCountKey, cur)
 end

@@ -2,7 +2,6 @@ CooperateBattleSession = class("CooperateBattleSession", BaseBattleSession)
 
 function CooperateBattleSession:initialize(serverData, seasonInfo)
 	super.initialize(self)
-	dump(serverData, "serverData----->>>>>>", 5)
 
 	self._pointId = serverData.pointId
 	self._mapId = serverData.mapId

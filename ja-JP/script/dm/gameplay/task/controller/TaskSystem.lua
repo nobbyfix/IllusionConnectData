@@ -82,6 +82,10 @@ function TaskSystem:synchronizeTask(data)
 		self:getTaskListModel():updateTasks(data.mapTaskManager)
 	end
 
+	if data.urTaskManager then
+		self:getTaskListModel():updateTasks(data.urTaskManager)
+	end
+
 	if data.seasonTaskManager then
 		self:getTaskListModel():updateTasks(data.seasonTaskManager)
 	end
@@ -470,6 +474,22 @@ function TaskSystem:requestOneKeyAchievementReward(params, callback)
 	taskService:requestOneKeyAchievementReward(params, true, function (response)
 		if response.resCode == GS_SUCCESS then
 			self:dispatch(Event:new(EVT_TASK_ACHI_REWARD_SUCC, {
+				response = response.data.rewards
+			}))
+
+			if callback then
+				callback(response)
+			end
+		end
+	end)
+end
+
+function TaskSystem:oneKeyURTaskReward(params, callback)
+	local taskService = self:getInjector():getInstance(TaskService)
+
+	taskService:oneKeyURTaskReward(params, true, function (response)
+		if response.resCode == GS_SUCCESS then
+			self:dispatch(Event:new(EVT_TASK_REWARD_SUCC, {
 				response = response.data.rewards
 			}))
 

@@ -18,42 +18,50 @@ RecruitAutoBuyCard = "RecruitAutoBuyCard"
 RecruitAutoBuyCardEx = "RecruitAutoBuyCardEx"
 RecruitNewPlayerPool = "DrawCard_NewPlayer"
 RecruitAutoBuyCardExZuoHe = "RecruitAutoBuyCardExZuoHe"
+RecruitAutoBuyCardUR = "RecruitAutoBuyCardUR"
 RecruitCurrencyStr = {
 	KUserDefault = {
 		[CurrencyIdKind.kDiamondDrawItem] = RecruitAutoBuyCard,
 		[CurrencyIdKind.kDiamondDrawExItem] = RecruitAutoBuyCardEx,
-		[CurrencyIdKind.kDiamondDrawExZuoHeItem] = RecruitAutoBuyCardExZuoHe
+		[CurrencyIdKind.kDiamondDrawExZuoHeItem] = RecruitAutoBuyCardExZuoHe,
+		[CurrencyIdKind.kDiamondDrawURItem] = RecruitAutoBuyCardUR
 	},
 	KGoToShop = {
 		[CurrencyIdKind.kDiamondDrawItem] = Strings:get("Recruit_UI21"),
 		[CurrencyIdKind.kDiamondDrawExItem] = Strings:get("Recruit_UI_2"),
-		[CurrencyIdKind.kDiamondDrawExZuoHeItem] = Strings:get("Recruit_UI_2")
+		[CurrencyIdKind.kDiamondDrawExZuoHeItem] = Strings:get("Recruit_UI_2"),
+		[CurrencyIdKind.kDiamondDrawURItem] = Strings:get("Recruit_UI_8")
 	},
 	KBuyTitle = {
 		[CurrencyIdKind.kDiamondDrawItem] = Strings:get("Recruit_UI16"),
 		[CurrencyIdKind.kDiamondDrawExItem] = Strings:get("Recruit_UI_1"),
-		[CurrencyIdKind.kDiamondDrawExZuoHeItem] = Strings:get("Zuohe_DrawCard_UI1")
+		[CurrencyIdKind.kDiamondDrawExZuoHeItem] = Strings:get("Zuohe_DrawCard_UI1"),
+		[CurrencyIdKind.kDiamondDrawURItem] = Strings:get("Recruit_UI_7")
 	},
 	KBuyTitle1 = {
 		[CurrencyIdKind.kDiamondDrawItem] = Strings:get("UITitle_EN_Zhaohuanzhizhengbuzu"),
 		[CurrencyIdKind.kDiamondDrawExItem] = Strings:get("UITitle_EN_Zhaohuanzhizhengbuzu"),
-		[CurrencyIdKind.kDiamondDrawExZuoHeItem] = Strings:get("UITitle_EN_Zhaohuanzhizhengbuzu")
+		[CurrencyIdKind.kDiamondDrawExZuoHeItem] = Strings:get("UITitle_EN_Zhaohuanzhizhengbuzu"),
+		[CurrencyIdKind.kDiamondDrawURItem] = Strings:get("UITitle_EN_Zhaohuanzhizhengbuzu")
 	},
 	KBuyContent = {
 		[CurrencyIdKind.kDiamondDrawItem] = "Recruit_UI18",
 		[CurrencyIdKind.kDiamondDrawExItem] = "Recruit_UI_3",
-		[CurrencyIdKind.kDiamondDrawExZuoHeItem] = "Zuohe_DrawCard_UI2"
+		[CurrencyIdKind.kDiamondDrawExZuoHeItem] = "Zuohe_DrawCard_UI2",
+		[CurrencyIdKind.kDiamondDrawURItem] = "Recruit_UI_9"
 	},
 	KBuyPrice = {
 		single = {
 			[CurrencyIdKind.kDiamondDrawItem] = ConfigReader:getDataByNameIdAndKey("ConfigValue", "DrawCard_SinglePrice", "content"),
 			[CurrencyIdKind.kDiamondDrawExItem] = ConfigReader:getDataByNameIdAndKey("ConfigValue", "DrawCardEX_SinglePrice", "content") or 88888888,
-			[CurrencyIdKind.kDiamondDrawExZuoHeItem] = ConfigReader:getDataByNameIdAndKey("ConfigValue", "DrawCardEX_Zuohe_SinglePrice", "content") or 88888888
+			[CurrencyIdKind.kDiamondDrawExZuoHeItem] = ConfigReader:getDataByNameIdAndKey("ConfigValue", "DrawCardEX_Zuohe_SinglePrice", "content") or 88888888,
+			[CurrencyIdKind.kDiamondDrawURItem] = ConfigReader:getDataByNameIdAndKey("ConfigValue", "DrawCardEX_UR_SinglePrice", "content") or 88888888
 		},
 		ten = {
 			[CurrencyIdKind.kDiamondDrawItem] = ConfigReader:getDataByNameIdAndKey("ConfigValue", "DrawCard_TenTimesPrice", "content"),
 			[CurrencyIdKind.kDiamondDrawExItem] = ConfigReader:getDataByNameIdAndKey("ConfigValue", "DrawCardEX_TenTimesPrice", "content") or 99999999,
-			[CurrencyIdKind.kDiamondDrawExZuoHeItem] = ConfigReader:getDataByNameIdAndKey("ConfigValue", "DrawCardEX_Zuohe_TenTimesPrice", "content") or 99999999
+			[CurrencyIdKind.kDiamondDrawExZuoHeItem] = ConfigReader:getDataByNameIdAndKey("ConfigValue", "DrawCardEX_Zuohe_TenTimesPrice", "content") or 99999999,
+			[CurrencyIdKind.kDiamondDrawURItem] = ConfigReader:getDataByNameIdAndKey("ConfigValue", "DrawCardEX_UR_TenTimesPrice", "content") or 99999999
 		}
 	}
 }
@@ -159,10 +167,21 @@ kItemScale = {
 	1.5
 }
 kEquipRarityAnim = {
-	[12.0] = "r_zhuangbeishilian",
-	[14.0] = "ssrchuchang_zhuangbeishilian",
-	[13.0] = "sr_zhuangbeishilian",
-	[11.0] = "r_zhuangbeishilian"
+	nil,
+	nil,
+	nil,
+	nil,
+	nil,
+	nil,
+	nil,
+	nil,
+	nil,
+	nil,
+	"r_zhuangbeishilian",
+	"r_zhuangbeishilian",
+	"sr_zhuangbeishilian",
+	"ssrchuchang_zhuangbeishilian",
+	"spchuchang_zhuangbeishilian"
 }
 ResultAnimOfRarity = {
 	[11] = {
@@ -467,6 +486,18 @@ function RecruitSystem:getActivityIsOpen(recruitId)
 		end
 	end
 
+	local activities = activitySystem:getActivitiesByType(ActivityType.kDRAWCARDUR)
+
+	for id, activity in pairs(activities) do
+		if activitySystem:isActivityOpen(id) and not activitySystem:isActivityOver(id) then
+			local activityConfig = activity:getActivityConfig()
+
+			if activityConfig.DRAW and recruitId == activityConfig.DRAW then
+				return true, activity:getId()
+			end
+		end
+	end
+
 	return false
 end
 
@@ -510,7 +541,7 @@ function RecruitSystem:getShowRecruitPools()
 				unlock = self._systemKeeper:isUnlock(unlockKey)
 			end
 
-			if unlock and (type == RecruitPoolType.kClub or type == RecruitPoolType.kPve or type == RecruitPoolType.kPvp or type == RecruitPoolType.kActivity or type == RecruitPoolType.kActivityEquip) then
+			if unlock and (type == RecruitPoolType.kClub or type == RecruitPoolType.kPve or type == RecruitPoolType.kPvp or type == RecruitPoolType.kActivity or type == RecruitPoolType.kActivityEquip or type == RecruitPoolType.kActivityUREquip) then
 				unlock = self:getActivityIsOpen(recruitObj:getId())
 			end
 

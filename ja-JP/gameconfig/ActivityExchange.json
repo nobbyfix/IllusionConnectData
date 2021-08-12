@@ -1093,6 +1093,214 @@
         "Times": 20,
         "isRemind": 0
     },
+    "ActivityBlock_FireWorks_Exchange_1": {
+        "Cost": [
+            {
+                "amount": 5000,
+                "code": "IM_FireWorks_ExchangeItem",
+                "type": 2
+            }
+        ],
+        "Order": 0,
+        "Target": "Activity_FireWorks_Exchange_1",
+        "Times": 1,
+        "isRemind": 1
+    },
+    "ActivityBlock_FireWorks_Exchange_10": {
+        "Cost": [
+            {
+                "amount": 200,
+                "code": "IM_FireWorks_ExchangeItem",
+                "type": 2
+            }
+        ],
+        "Order": 9,
+        "Target": "Activity_FireWorks_Exchange_10",
+        "Times": 30,
+        "isRemind": 0
+    },
+    "ActivityBlock_FireWorks_Exchange_11": {
+        "Cost": [
+            {
+                "amount": 350,
+                "code": "IM_FireWorks_ExchangeItem",
+                "type": 2
+            }
+        ],
+        "Order": 10,
+        "Target": "Activity_FireWorks_Exchange_11",
+        "Times": 10,
+        "isRemind": 0
+    },
+    "ActivityBlock_FireWorks_Exchange_12": {
+        "Cost": [
+            {
+                "amount": 200,
+                "code": "IM_FireWorks_ExchangeItem",
+                "type": 2
+            }
+        ],
+        "Order": 11,
+        "Target": "Activity_FireWorks_Exchange_12",
+        "Times": 20,
+        "isRemind": 0
+    },
+    "ActivityBlock_FireWorks_Exchange_13": {
+        "Cost": [
+            {
+                "amount": 300,
+                "code": "IM_FireWorks_ExchangeItem",
+                "type": 2
+            }
+        ],
+        "Order": 12,
+        "Target": "Activity_FireWorks_Exchange_13",
+        "Times": 20,
+        "isRemind": 0
+    },
+    "ActivityBlock_FireWorks_Exchange_14": {
+        "Cost": [
+            {
+                "amount": 20,
+                "code": "IM_FireWorks_ExchangeItem",
+                "type": 2
+            }
+        ],
+        "Order": 13,
+        "Target": "Activity_FireWorks_Exchange_14",
+        "Times": 800,
+        "isRemind": 0
+    },
+    "ActivityBlock_FireWorks_Exchange_15": {
+        "Cost": [
+            {
+                "amount": 20,
+                "code": "IM_FireWorks_ExchangeItem",
+                "type": 2
+            }
+        ],
+        "Order": 14,
+        "Target": "Activity_FireWorks_Exchange_15",
+        "Times": 800,
+        "isRemind": 0
+    },
+    "ActivityBlock_FireWorks_Exchange_16": {
+        "Cost": [
+            {
+                "amount": 20,
+                "code": "IM_FireWorks_ExchangeItem",
+                "type": 2
+            }
+        ],
+        "Order": 15,
+        "Target": "Activity_FireWorks_Exchange_16",
+        "Times": 800,
+        "isRemind": 0
+    },
+    "ActivityBlock_FireWorks_Exchange_2": {
+        "Cost": [
+            {
+                "amount": 5000,
+                "code": "IM_FireWorks_ExchangeItem",
+                "type": 2
+            }
+        ],
+        "Order": 1,
+        "Target": "Activity_FireWorks_Exchange_2",
+        "Times": 1,
+        "isRemind": 1
+    },
+    "ActivityBlock_FireWorks_Exchange_3": {
+        "Cost": [
+            {
+                "amount": 3500,
+                "code": "IM_FireWorks_ExchangeItem",
+                "type": 2
+            }
+        ],
+        "Order": 2,
+        "Target": "Activity_FireWorks_Exchange_3",
+        "Times": 1,
+        "isRemind": 1
+    },
+    "ActivityBlock_FireWorks_Exchange_4": {
+        "Cost": [
+            {
+                "amount": 3500,
+                "code": "IM_FireWorks_ExchangeItem",
+                "type": 2
+            }
+        ],
+        "Order": 3,
+        "Target": "Activity_FireWorks_Exchange_4",
+        "Times": 1,
+        "isRemind": 1
+    },
+    "ActivityBlock_FireWorks_Exchange_5": {
+        "Cost": [
+            {
+                "amount": 3000,
+                "code": "IM_FireWorks_ExchangeItem",
+                "type": 2
+            }
+        ],
+        "Order": 4,
+        "Target": "Activity_FireWorks_Exchange_5",
+        "Times": 1,
+        "isRemind": 0
+    },
+    "ActivityBlock_FireWorks_Exchange_6": {
+        "Cost": [
+            {
+                "amount": 3000,
+                "code": "IM_FireWorks_ExchangeItem",
+                "type": 2
+            }
+        ],
+        "Order": 5,
+        "Target": "Activity_FireWorks_Exchange_6",
+        "Times": 1,
+        "isRemind": 0
+    },
+    "ActivityBlock_FireWorks_Exchange_7": {
+        "Cost": [
+            {
+                "amount": 2500,
+                "code": "IM_FireWorks_ExchangeItem",
+                "type": 2
+            }
+        ],
+        "Order": 6,
+        "Target": "Activity_FireWorks_Exchange_7",
+        "Times": 1,
+        "isRemind": 0
+    },
+    "ActivityBlock_FireWorks_Exchange_8": {
+        "Cost": [
+            {
+                "amount": 800,
+                "code": "IM_FireWorks_ExchangeItem",
+                "type": 2
+            }
+        ],
+        "Order": 7,
+        "Target": "Activity_FireWorks_Exchange_8",
+        "Times": 10,
+        "isRemind": 0
+    },
+    "ActivityBlock_FireWorks_Exchange_9": {
+        "Cost": [
+            {
+                "amount": 300,
+                "code": "IM_FireWorks_ExchangeItem",
+                "type": 2
+            }
+        ],
+        "Order": 8,
+        "Target": "Activity_FireWorks_Exchange_9",
+        "Times": 10,
+        "isRemind": 0
+    },
     "ActivityBlock_Fire_Exchange_1": {
         "Cost": [
             {
@@ -4293,6 +4501,110 @@
         ],
         "Order": 8,
         "Target": "CooperateBoss_Exchange_20210810_8",
+        "Times": 99999,
+        "isRemind": ""
+    },
+    "CooperateBoss_Exchange_20210824_1": {
+        "Cost": [
+            {
+                "amount": 4500,
+                "code": "IR_CooperateBoss",
+                "type": 2
+            }
+        ],
+        "Order": 1,
+        "Target": "CooperateBoss_Exchange_20210824_1",
+        "Times": 1,
+        "isRemind": ""
+    },
+    "CooperateBoss_Exchange_20210824_2": {
+        "Cost": [
+            {
+                "amount": 600,
+                "code": "IR_CooperateBoss",
+                "type": 2
+            }
+        ],
+        "Order": 2,
+        "Target": "CooperateBoss_Exchange_20210824_2",
+        "Times": 3,
+        "isRemind": ""
+    },
+    "CooperateBoss_Exchange_20210824_3": {
+        "Cost": [
+            {
+                "amount": 300,
+                "code": "IR_CooperateBoss",
+                "type": 2
+            }
+        ],
+        "Order": 3,
+        "Target": "CooperateBoss_Exchange_20210824_3",
+        "Times": 10,
+        "isRemind": ""
+    },
+    "CooperateBoss_Exchange_20210824_4": {
+        "Cost": [
+            {
+                "amount": 300,
+                "code": "IR_CooperateBoss",
+                "type": 2
+            }
+        ],
+        "Order": 4,
+        "Target": "CooperateBoss_Exchange_20210824_4",
+        "Times": 60,
+        "isRemind": ""
+    },
+    "CooperateBoss_Exchange_20210824_5": {
+        "Cost": [
+            {
+                "amount": 500,
+                "code": "IR_CooperateBoss",
+                "type": 2
+            }
+        ],
+        "Order": 5,
+        "Target": "CooperateBoss_Exchange_20210824_5",
+        "Times": 50,
+        "isRemind": ""
+    },
+    "CooperateBoss_Exchange_20210824_6": {
+        "Cost": [
+            {
+                "amount": 60,
+                "code": "IR_CooperateBoss",
+                "type": 2
+            }
+        ],
+        "Order": 6,
+        "Target": "CooperateBoss_Exchange_20210824_6",
+        "Times": 80,
+        "isRemind": ""
+    },
+    "CooperateBoss_Exchange_20210824_7": {
+        "Cost": [
+            {
+                "amount": 10,
+                "code": "IR_CooperateBoss",
+                "type": 2
+            }
+        ],
+        "Order": 7,
+        "Target": "CooperateBoss_Exchange_20210824_7",
+        "Times": 99999,
+        "isRemind": ""
+    },
+    "CooperateBoss_Exchange_20210824_8": {
+        "Cost": [
+            {
+                "amount": 10,
+                "code": "IR_CooperateBoss",
+                "type": 2
+            }
+        ],
+        "Order": 8,
+        "Target": "CooperateBoss_Exchange_20210824_8",
         "Times": 99999,
         "isRemind": ""
     },

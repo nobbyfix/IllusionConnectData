@@ -1512,6 +1512,11 @@ function BattleRoleObject:kick()
 	self._unitManager:removeUnitById(self._id, self._dataModel:getCellId())
 
 	local fadeOut = cc.FadeOut:create(0.2)
+
+	if self._equipHpWidget then
+		self._equipHpWidget:refreshHp(self._id, 0)
+	end
+
 	local callback = cc.CallFunc:create(function ()
 		self._node:removeFromParent()
 
@@ -7512,6 +7517,37 @@ function BattleRoleObject:getShowRpNum(num)
 	--- BLOCK #4 17-17, warpins: 4 ---
 	return num
 	--- END OF BLOCK #4 ---
+
+
+
+end
+
+function BattleRoleObject:setRootVisible(isVisible)
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #0 1-6, warpins: 1 ---
+	self._root:setVisible(isVisible)
+
+	return
+	--- END OF BLOCK #0 ---
+
+
+
+end
+
+function BattleRoleObject:setRoleScale(scale)
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #0 1-30, warpins: 1 ---
+	local baseScale = self._roleAnim:getScale()
+	local sequence = cc.Sequence:create(cc.EaseBackOut:create(cc.ScaleTo:create(0.15, baseScale * scale)))
+
+	self._roleAnim:runAction(sequence)
+
+	self._modelScale = self._modelScale * scale
+
+	return
+	--- END OF BLOCK #0 ---
 
 
 

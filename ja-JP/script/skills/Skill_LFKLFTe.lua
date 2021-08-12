@@ -480,7 +480,7 @@ function all.SummonDaGun(_env, actor, snya_factors, master_factors, normal, skil
 	if global.SpecialPropGetter(_env, "DaGun")(_env, global.FriendField(_env)) == 0 and global.FriendMaster(_env) then
 		for _, cell in global.__iter__(global.FriendCells(_env, global.CELL_IN_POS(_env, 7) + global.CELL_IN_POS(_env, 9))) do
 			if global.GetCellUnit(_env, cell) then
-				global.Kick(_env, global.GetCellUnit(_env, cell))
+				global.Kick(_env, global.GetCellUnit(_env, cell), true)
 			end
 		end
 

@@ -385,6 +385,10 @@ function GalleryPartyManage:syncMemoryData(data)
 	end
 
 	self:updateMemoryStoryByForce()
+
+	local developSystem = DmGame:getInstance()._injector:getInstance(DevelopSystem)
+
+	developSystem:dispatch(Event:new(EVT_GET_NEW_STORY))
 end
 
 function GalleryPartyManage:insertMemory(type, id)

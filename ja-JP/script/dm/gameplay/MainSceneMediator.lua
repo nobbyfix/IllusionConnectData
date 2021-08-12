@@ -206,6 +206,9 @@ local muiscCfg = {
 	ActivityMapNewView = {
 		noAutoPlay = true
 	},
+	ActivityFireWorksMainView = {
+		noAutoPlay = true
+	},
 	ActivityTerrorMainView = {
 		noAutoPlay = true
 	}

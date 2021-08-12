@@ -224,6 +224,15 @@ function HomeMediator:resumeWithData(data)
 	self:setupClickEnvs(true)
 	self:playClimate2Audio()
 	self:checkNewSystemUnlock()
+
+	local isActivity = self._activitySystem:hasRedPointForActivity(DailyGift)
+	local giftImg = self._homePanel:getChildByName("giftImg")
+
+	giftImg:setVisible(false)
+
+	if isActivity then
+		giftImg:setVisible(true)
+	end
 end
 
 function HomeMediator:leaveWithData(data)
@@ -1999,8 +2008,16 @@ function HomeMediator:registerHomeViewEvent()
 
 		if isActivity then
 			giftImg:setVisible(true)
+
+			if not self._refreshGiftRed then
+				self:refreshRedPoint()
+
+				self._refreshGiftRed = true
+			end
 		else
 			giftImg:setVisible(false)
+
+			self._refreshGiftRed = false
 		end
 
 		local isShow = self._activitySystem:checkTimeLimitShopShow()
@@ -3412,6 +3429,14 @@ function HomeMediator:setComplexActivityEntry()
 		[ActivityType_UI.KActivitySummerRe] = {
 			anim = "rukou_xiarihuodong",
 			aimpos = cc.p(40, 40)
+		},
+		[ActivityType_UI.KActivityFireWorks] = {
+			animZorder = 1,
+			img = "fireworks_btn_zjm_rukou.png",
+			anim = "eff_Z_zjm_huohuadahuirukou",
+			imgZorder = 2,
+			aimpos = cc.p(-125, 160),
+			imgpos = cc.p(55, 38)
 		},
 		[ActivityType_UI.KActivityTerror] = {
 			animZorder = 1,

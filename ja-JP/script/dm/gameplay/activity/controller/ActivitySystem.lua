@@ -1088,52 +1088,90 @@ function ActivitySystem:isCanGetStamina(timeList, index)
 	local minData = string.split(timeList[1], ":")
 	local maxData = string.split(timeList[2], ":")
 	local currentTimeStamp = self:getInjector():getInstance("GameServerAgent"):remoteTimestamp()
-	local minDayTimeStamp = TimeUtil:getTimeByDateForTargetTimeInToday({
+	local curData = TimeUtil:remoteDate("*t", currentTimeStamp)
+	local minDayTimeStamp = TimeUtil:timeByRemoteDate({
+		year = curData.year,
+		month = curData.month,
+		day = curData.day,
 		hour = dayMaxDataMin[1],
 		min = dayMaxDataMin[2],
 		sec = dayMaxDataMin[3]
 	})
-	local minTimeStamp, maxTimeStamp, isTomorrow = nil
+	local minTimeStamp, maxTimeStamp = nil
 
 	if minDayTimeStamp <= currentTimeStamp and index ~= timeSlot then
-		minTimeStamp = TimeUtil:getTimeByDateForTargetTimeInToday({
+		minTimeStamp = TimeUtil:timeByRemoteDate({
+			year = curData.year,
+			month = curData.month,
+			day = curData.day + 1,
 			hour = minData[1],
 			min = minData[2],
 			sec = minData[3]
 		})
-		maxTimeStamp = TimeUtil:getTimeByDateForTargetTimeInToday({
+		maxTimeStamp = TimeUtil:timeByRemoteDate({
+			year = curData.year,
+			month = curData.month,
+			day = curData.day + 1,
 			hour = maxData[1],
 			min = maxData[2],
 			sec = maxData[3]
 		})
-		minTimeStamp = minTimeStamp + 86400
-		maxTimeStamp = maxTimeStamp + 86400
-		isTomorrow = true
 	else
-		minTimeStamp = TimeUtil:getTimeByDateForTargetTimeInToday({
+		minTimeStamp = TimeUtil:timeByRemoteDate({
+			year = curData.year,
+			month = curData.month,
+			day = curData.day,
 			hour = minData[1],
 			min = minData[2],
 			sec = minData[3]
 		})
-		maxTimeStamp = TimeUtil:getTimeByDateForTargetTimeInToday({
+		maxTimeStamp = TimeUtil:timeByRemoteDate({
+			year = curData.year,
+			month = curData.month,
+			day = curData.day,
 			hour = maxData[1],
 			min = maxData[2],
 			sec = maxData[3]
 		})
-		isTomorrow = false
 	end
 
+	local canDiamondGet = false
+	local status = nil
+
 	if maxTimeStamp < currentTimeStamp then
-		return StaminaRewardTimeStatus.kBefore, isTomorrow
+		if TimeUtil:isSameDay(currentTimeStamp, maxTimeStamp, {
+			sec = 0,
+			min = 0,
+			hour = 5
+		}) and receiveStatus ~= ActivityTaskStatus.kGet then
+			canDiamondGet = true
+		end
+
+		status = StaminaRewardTimeStatus.kBefore
 	elseif currentTimeStamp <= maxTimeStamp and minTimeStamp <= currentTimeStamp then
 		if receiveStatus == ActivityTaskStatus.kGet then
-			return StaminaRewardTimeStatus.kBefore, isTomorrow
+			status = StaminaRewardTimeStatus.kBefore
 		else
-			return StaminaRewardTimeStatus.kNow, isTomorrow
+			status = StaminaRewardTimeStatus.kNow
 		end
 	else
-		return StaminaRewardTimeStatus.kAfter, isTomorrow
+		local baseTime = TimeUtil:timeByRemoteDate({
+			hour = 5,
+			min = 0,
+			sec = 0,
+			year = curData.year,
+			month = curData.month,
+			day = curData.day
+		})
+
+		if receiveStatus ~= ActivityTaskStatus.kGet and (currentTimeStamp < baseTime or minDayTimeStamp < currentTimeStamp) then
+			canDiamondGet = true
+		end
+
+		status = StaminaRewardTimeStatus.kAfter
 	end
+
+	return status, canDiamondGet
 end
 
 function ActivitySystem:getTimeLimitShopLeaveTime()

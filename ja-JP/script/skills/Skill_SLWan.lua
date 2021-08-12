@@ -499,23 +499,26 @@ all.Skill_SLWan_Passive_Key = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			local buff = global.NumericEffect(_env, "+def", {
-				"+Normal",
-				"+Normal"
-			}, 0)
 
-			global.ApplyBuff(_env, _env.ACTOR, {
-				timing = 0,
-				duration = 99,
-				tags = {
-					"STATUS",
-					"Skill_SLWan_Passive_Key",
-					"UNDISPELLABLE",
-					"UNSTEALABLE"
-				}
-			}, {
-				buff
-			})
+			if global.MARKED(_env, "SLWan")(_env, _env.ACTOR) then
+				local buff = global.NumericEffect(_env, "+def", {
+					"+Normal",
+					"+Normal"
+				}, 0)
+
+				global.ApplyBuff(_env, _env.ACTOR, {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"STATUS",
+						"Skill_SLWan_Passive_Key",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buff
+				})
+			end
 		end)
 
 		return _env
@@ -533,7 +536,7 @@ all.Skill_SLWan_Passive_Key = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED_ALL(_env, "STATUS", "Skill_SLWan_Passive_Key", "UNDISPELLABLE", "UNSTEALABLE")) > 0 then
+			if global.MARKED(_env, "SLWan")(_env, _env.ACTOR) and global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED_ALL(_env, "STATUS", "Skill_SLWan_Passive_Key", "UNDISPELLABLE", "UNSTEALABLE")) > 0 then
 				global.ApplyRPRecovery(_env, _env.ACTOR, this.RpFactor)
 				global.DispelBuff(_env, _env.ACTOR, global.BUFF_MARKED_ALL(_env, "STATUS", "Skill_SLWan_Passive_Key", "UNDISPELLABLE", "UNSTEALABLE"), 99)
 			end

@@ -182,6 +182,10 @@ function RecruitPool:getResourcesBanner()
 	return self._config.ResourcesBanner
 end
 
+function RecruitPool:getUPDesc()
+	return self._config.UPDesc
+end
+
 function RecruitPool:getTimeRewardData()
 	local resultList = {}
 	local resultArray = {}

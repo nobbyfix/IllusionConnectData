@@ -1662,3 +1662,15 @@ function UnitTLInterpreter:act_SetHSVColor(action, args)
 
 	self._unit:setHSVColor(hue, contrast, brightness, saturation)
 end
+
+function UnitTLInterpreter:act_SetRootVisible(action, args)
+	local isVisible = args.isVisible
+
+	self._unit:setRootVisible(isVisible)
+end
+
+function UnitTLInterpreter:act_SetRoleScale(action, args)
+	local scale = args.scale
+
+	self._unit:setRoleScale(scale)
+end

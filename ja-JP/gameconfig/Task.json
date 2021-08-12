@@ -7141,5 +7141,153 @@
             "LEVEL": 1,
             "VIP": 0
         }
+    },
+    "URMap_EquipNum_10": {
+        "AccumulateTimes": 0,
+        "AfterFinish": 0,
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Condition": [
+            {
+                "conditionType": "Condi_URMap_URCount",
+                "factor1": [
+                    10
+                ]
+            }
+        ],
+        "Desc": "Condi_URMap_URCount_Des",
+        "Destination": "",
+        "IsDailyRestart": 0,
+        "IsStartTask": 1,
+        "Name": "Condi_URMap_URCount_Des",
+        "OrderNum": 1,
+        "Prepose": "",
+        "Reward": "URMap_URcount_Reward_10",
+        "TaskIcon": "",
+        "TaskType": 9,
+        "UnlockCondition": {
+            "LEVEL": 1
+        }
+    },
+    "URMap_EquipNum_20": {
+        "AccumulateTimes": 1,
+        "AfterFinish": 0,
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Condition": [
+            {
+                "conditionType": "Condi_URMap_URCount",
+                "factor1": [
+                    20
+                ]
+            }
+        ],
+        "Desc": "Condi_URMap_URCount_Des",
+        "Destination": "",
+        "IsDailyRestart": 0,
+        "IsStartTask": 0,
+        "Name": "Condi_URMap_URCount_Des",
+        "OrderNum": 2,
+        "Prepose": [
+            "URMap_EquipNum_10"
+        ],
+        "Reward": "URMap_URcount_Reward_20",
+        "TaskIcon": "",
+        "TaskType": 9,
+        "UnlockCondition": {
+            "LEVEL": 1
+        }
+    },
+    "URMap_EquipNum_30": {
+        "AccumulateTimes": 1,
+        "AfterFinish": 0,
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Condition": [
+            {
+                "conditionType": "Condi_URMap_URCount",
+                "factor1": [
+                    30
+                ]
+            }
+        ],
+        "Desc": "Condi_URMap_URCount_Des",
+        "Destination": "",
+        "IsDailyRestart": 0,
+        "IsStartTask": 0,
+        "Name": "Condi_URMap_URCount_Des",
+        "OrderNum": 3,
+        "Prepose": [
+            "URMap_EquipNum_20"
+        ],
+        "Reward": "URMap_URcount_Reward_30",
+        "TaskIcon": "",
+        "TaskType": 9,
+        "UnlockCondition": {
+            "LEVEL": 1
+        }
+    },
+    "URMap_EquipNum_40": {
+        "AccumulateTimes": 1,
+        "AfterFinish": 0,
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Condition": [
+            {
+                "conditionType": "Condi_URMap_URCount",
+                "factor1": [
+                    40
+                ]
+            }
+        ],
+        "Desc": "Condi_URMap_URCount_Des",
+        "Destination": "",
+        "IsDailyRestart": 0,
+        "IsStartTask": 0,
+        "Name": "Condi_URMap_URCount_Des",
+        "OrderNum": 4,
+        "Prepose": [
+            "URMap_EquipNum_30"
+        ],
+        "Reward": "URMap_URcount_Reward_40",
+        "TaskIcon": "",
+        "TaskType": 9,
+        "UnlockCondition": {
+            "LEVEL": 1
+        }
+    },
+    "URMap_EquipNum_50": {
+        "AccumulateTimes": 1,
+        "AfterFinish": 0,
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Condition": [
+            {
+                "conditionType": "Condi_URMap_URCount",
+                "factor1": [
+                    50
+                ]
+            }
+        ],
+        "Desc": "Condi_URMap_URCount_Des",
+        "Destination": "",
+        "IsDailyRestart": 0,
+        "IsStartTask": 0,
+        "Name": "Condi_URMap_URCount_Des",
+        "OrderNum": 5,
+        "Prepose": [
+            "URMap_EquipNum_40"
+        ],
+        "Reward": "URMap_URcount_Reward_50",
+        "TaskIcon": "",
+        "TaskType": 9,
+        "UnlockCondition": {
+            "LEVEL": 1
+        }
     }
 }

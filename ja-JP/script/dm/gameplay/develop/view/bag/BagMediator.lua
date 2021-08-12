@@ -422,6 +422,11 @@ function BagMediator:adjustView()
 	local scrollview = self._itemScroll:getChildByName("scrollview")
 
 	scrollview:setContentSize(cc.size(572, winSize.height - 63))
+
+	local tabPanel = self:getView():getChildByFullName("tab_panel")
+	local w = winSize.width - tabPanel:getContentSize().width - self._detailPanel:getContentSize().width / 2 - (winSize.width - self._detailPanel:getPositionX() - (winSize.width - 1136) / 2)
+
+	self._itemScroll:setPositionX(w / 2 + tabPanel:getPositionX() + tabPanel:getContentSize().width)
 end
 
 function BagMediator:createTabController()

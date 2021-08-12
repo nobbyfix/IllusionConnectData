@@ -629,8 +629,9 @@ function EquipSystem:getStarEquips(param)
 	local equipIds = self._equipModule:getEquipsByType(type)
 
 	for id, _ in pairs(equipIds) do
-		if id ~= exceptEquipId then
-			local equip = self:getEquipById(id)
+		local equip = self:getEquipById(id)
+
+		if id ~= exceptEquipId and equip:getRarity() ~= 15 then
 			local exp = equip:getEquipId() == equipBaseId and equip:getSameEquipStarExp() or equip:getIncludeEquipStarExp()
 			local expData = {
 				eatCount = 0,

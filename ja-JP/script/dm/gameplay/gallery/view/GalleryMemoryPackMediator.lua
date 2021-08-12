@@ -12,6 +12,10 @@ local Titles = {
 	Strings:get("Gallery_Memory_title_1"),
 	Strings:get("Gallery_Memory_title_2")
 }
+local TitlesType = {
+	GalleryMemoryPackType.STORY,
+	GalleryMemoryPackType.ACTIVI
+}
 local ShowLineNum = 4
 local infoImage = "album_img_jqsx.png"
 local memoryTitle = Strings:get("GALLERY_UI15")
@@ -21,6 +25,10 @@ function GalleryMemoryPackMediator:initialize()
 end
 
 function GalleryMemoryPackMediator:dispose()
+	if self._delegateCallback then
+		self._delegateCallback()
+	end
+
 	super.dispose(self)
 end
 
@@ -44,6 +52,11 @@ function GalleryMemoryPackMediator:enterWithData(data)
 	self:initInfoView()
 	self:changePageView()
 	self:runStartAnim()
+end
+
+function GalleryMemoryPackMediator:resumeWithData()
+	self:refreshRedPoint(self._sender, self._senderData)
+	self:refreshTitlePanelRedPoint()
 end
 
 function GalleryMemoryPackMediator:initWidgetInfo()
@@ -144,6 +157,7 @@ function GalleryMemoryPackMediator:initData(data)
 	self._tableViewTitleIdx[3] = self._tableViewTitleIdx[2] + 1
 	self._tableViewTitleIdx[4] = self._tableViewTitleIdx[3] + math.ceil(#self._showList[2] / ShowLineNum)
 	self._tableViewCell = {}
+	self._delegateCallback = data.callback
 end
 
 function GalleryMemoryPackMediator:initInfoView()
@@ -182,9 +196,24 @@ function GalleryMemoryPackMediator:initLeftView()
 			self:changePageView(true)
 		end)
 		titlePanel:setPosition(cc.p(0, positionY - kLeftTitleDisY * (i - 1)))
+
+		local node = RedPoint:createDefaultNode()
+
+		node:setScale(0.8)
+		RedPoint:new(node, titlePanel, function ()
+			return self._gallerySystem:getStoryPackRedPointByType(TitlesType[i])
+		end)
+
+		self["titlePanelRedPoint" .. i] = node
 	end
 
 	self._curSelectTitleIndex = 1
+end
+
+function GalleryMemoryPackMediator:refreshTitlePanelRedPoint()
+	for i = 1, #Titles do
+		self["titlePanelRedPoint" .. i]:setVisible(self._gallerySystem:getStoryPackRedPointByType(TitlesType[i]))
+	end
 end
 
 function GalleryMemoryPackMediator:initView()
@@ -429,9 +458,8 @@ function GalleryMemoryPackMediator:onClickMemoryPack(sender, eventType, data, in
 
 				maskImage:runAction(seq)
 			end)
-
-			self:refreshRedPoint(sender, data, false)
-
+			self._sender = sender
+			self._senderData = data
 			local seq = cc.Sequence:create(scale3, callfunc)
 
 			sender:runAction(seq)
@@ -566,20 +594,18 @@ function GalleryMemoryPackMediator:refreshRedPoint(panel, data, value)
 		return
 	end
 
-	local redPoint = panel:getChildByName("redPoint")
+	if data:getType() == GalleryMemoryPackType.ACTIVI then
+		local redPoint = panel:getChildByName("redPoint")
 
-	if not redPoint then
-		redPoint = RedPoint:createDefaultNode()
+		if not redPoint then
+			redPoint = RedPoint:createDefaultNode()
 
-		redPoint:addTo(panel):posite(250, 120)
-		redPoint:setLocalZOrder(99901)
-		redPoint:setName("redPoint")
-		redPoint:setScale(0.7)
-	end
+			redPoint:addTo(panel):posite(200, 145)
+			redPoint:setLocalZOrder(99901)
+			redPoint:setName("redPoint")
+			redPoint:setScale(0.7)
+		end
 
-	if value ~= nil or not data then
-		redPoint:setVisible(value)
-	else
-		redPoint:setVisible(self._gallerySystem:isNewMemory(data))
+		redPoint:setVisible(self._gallerySystem:getActivityStoryPackRedPoint(data:getType(), data:getId()))
 	end
 end

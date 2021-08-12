@@ -40,6 +40,60 @@ function CardSystem:getHeroCards(player, cardfilter)
 	return result
 end
 
+function CardSystem:sortCardInPool(player, tag)
+	if player:getCardState() == "skill" then
+		return {}
+	end
+
+	local cardsInPool = player:getCardPool():getCardArray()
+	local result = {}
+
+	for _, card in ipairs(cardsInPool) do
+		local isMatched = false
+
+		for k, v in pairs(card:getTriggerBuff() or {}) do
+			local config = v:getBuffConfig()
+
+			for k_, v_ in pairs(config.tags) do
+				if tag == v_ then
+					isMatched = true
+
+					break
+				end
+			end
+
+			if isMatched then
+				break
+			end
+		end
+
+		if isMatched then
+			result[#result + 1] = {
+				marked = true,
+				card = card
+			}
+		else
+			result[#result + 1] = {
+				card = card
+			}
+		end
+	end
+
+	table.sort(result, function (a, b)
+		return a.marked and not b.marked
+	end)
+
+	local newArray = {}
+
+	for k, v in pairs(result) do
+		newArray[k] = v.card
+	end
+
+	player:getCardPool():setupCardArray(newArray)
+
+	return result
+end
+
 function CardSystem:getHeroCardsInWindow(player, cardfilter)
 	local cardsInWindow = player:getCardWindow():getCardArray()
 

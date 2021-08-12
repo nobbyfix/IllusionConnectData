@@ -96,6 +96,40 @@
         "UnlockDesc": "",
         "UnlockStory": ""
     },
+    "Memory_ACTIVILIST_4": {
+        "ActiviType": "",
+        "Condition": "",
+        "Listpicture": "s_main_event_05",
+        "Name": "ActivityBlock_Summer",
+        "Num": 3,
+        "Story": [
+            {
+                "id": [
+                    "Memory_STORY_ACTIVI_28",
+                    "Memory_STORY_ACTIVI_29",
+                    "Memory_STORY_ACTIVI_30",
+                    "Memory_STORY_ACTIVI_31",
+                    "Memory_STORY_ACTIVI_32"
+                ],
+                "type": "NORMAL"
+            },
+            {
+                "id": [
+                    "Memory_STORY_ACTIVI_33",
+                    "Memory_STORY_ACTIVI_34",
+                    "Memory_STORY_ACTIVI_35",
+                    "Memory_STORY_ACTIVI_36",
+                    "Memory_STORY_ACTIVI_37",
+                    "Memory_STORY_ACTIVI_38",
+                    "Memory_STORY_ACTIVI_39"
+                ],
+                "type": "ELITE"
+            }
+        ],
+        "Type": "ACTIVILIST",
+        "UnlockDesc": "",
+        "UnlockStory": ""
+    },
     "Memory_ACTIVILIST_6": {
         "ActiviType": "",
         "Condition": "",
@@ -247,6 +281,43 @@
                     "Memory_Act_Fire_6",
                     "Memory_Act_Fire_7",
                     "Memory_Act_Fire_8"
+                ],
+                "type": "ELITE"
+            }
+        ],
+        "Type": "ACTIVILIST",
+        "UnlockDesc": "",
+        "UnlockStory": ""
+    },
+    "Memory_Act_FireWorks": {
+        "ActiviType": "",
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_FireWorks_Map",
+                    "FireWorksS01S01"
+                ]
+            }
+        ],
+        "Listpicture": "img_story_fireworks_1",
+        "Name": "ActivityBlock_FireWorks_Name",
+        "Num": 16,
+        "Story": [
+            {
+                "id": [
+                    "Memory_Act_FireWorks_1",
+                    "Memory_Act_FireWorks_2"
+                ],
+                "type": "NORMAL"
+            },
+            {
+                "id": [
+                    "Memory_Act_FireWorks_3",
+                    "Memory_Act_FireWorks_4"
                 ],
                 "type": "ELITE"
             }
@@ -662,6 +733,37 @@
         ],
         "Type": "STORYLIST",
         "UnlockDesc": "BlockPoint_S10S01_Name",
+        "UnlockStory": ""
+    },
+    "Memory_Wxh_List": {
+        "ActiviType": "",
+        "Condition": "",
+        "Listpicture": "s_main_event_wxh_01",
+        "Name": "ActivityBlock_WuXiuHui_Support_Name",
+        "Num": 4,
+        "Story": [
+            {
+                "id": [
+                    "Memory_Wxh_1",
+                    "Memory_Wxh_2",
+                    "Memory_Wxh_3",
+                    "Memory_Wxh_4",
+                    "Memory_Wxh_5"
+                ],
+                "type": "NORMAL"
+            },
+            {
+                "id": [
+                    "Memory_Wxh_6",
+                    "Memory_Wxh_7",
+                    "Memory_Wxh_8",
+                    "Memory_Wxh_9"
+                ],
+                "type": "ELITE"
+            }
+        ],
+        "Type": "ACTIVILIST",
+        "UnlockDesc": "",
         "UnlockStory": ""
     }
 }

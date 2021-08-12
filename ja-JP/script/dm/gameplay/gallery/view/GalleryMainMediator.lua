@@ -12,26 +12,33 @@ GalleryMainMediator:has("_systemKeeper", {
 
 local kTabBtnsViews = {
 	"GalleryPartnerView",
+	"BagURMapView",
 	"GalleryMemoryView",
 	"GalleryLegendView",
 	"GalleryAlbumView"
 }
 local kTabBtnsLock = {
 	nil,
+	"URMap_Unlock",
 	"Memory",
 	"HerosLegend",
 	"Photo"
 }
 local kTabSwitch = {
 	nil,
-	"fn_gallery_huiyi",
+	nil,
 	"fn_gallery_legend",
+	"fn_gallery_huiyi",
 	"fn_gallery_zhaopian"
 }
 local TitleString = {
 	{
 		Strings:get("GALLERY_UI1"),
 		Strings:get("UITitle_EN_Huoban")
+	},
+	{
+		Strings:get("URMaps_Name"),
+		Strings:get("URMaps_Name_EN")
 	},
 	{
 		Strings:get("GALLERY_UI2"),
@@ -62,6 +69,8 @@ function GalleryMainMediator:onRegister()
 	self:mapEventListener(self:getEventDispatcher(), EVT_PLAYER_SYNCHRONIZED, self, self.refreshRedPoint)
 	self:mapEventListener(self:getEventDispatcher(), EVT_HEROCOMPOSE_SUCC, self, self.refreshRedPoint)
 	self:mapEventListener(self:getEventDispatcher(), EVT_GALLERY_BOX_GET_SUCC, self, self.refreshRedPoint)
+
+	self._bagSystem = self._developSystem:getBagSystem()
 end
 
 function GalleryMainMediator:enterWithData(data)
@@ -140,7 +149,10 @@ function GalleryMainMediator:createTabView()
 			return self._gallerySystem:checkcanReceive() or self._gallerySystem:checkCanGetHeroReward()
 		end,
 		function ()
-			return self:checkTabIsLock(2) and (self._gallerySystem:checkNewMemory(GalleryMemoryType.ACTIVI) or self._gallerySystem:checkNewMemory(GalleryMemoryType.HERO))
+			return self._bagSystem:getURMapRedPoint()
+		end,
+		function ()
+			return self._gallerySystem:checkNewMemory(GalleryMemoryType.ACTIVI) or self._gallerySystem:checkNewMemory(GalleryMemoryType.HERO) or self._gallerySystem:checkNewMemory(GalleryMemoryType.STORY)
 		end,
 		function ()
 			return false

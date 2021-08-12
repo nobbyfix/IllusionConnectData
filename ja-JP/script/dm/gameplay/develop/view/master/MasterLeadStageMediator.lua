@@ -702,8 +702,6 @@ function MasterLeadStageMediator:onClickUpgrade()
 end
 
 function MasterLeadStageMediator:runTransLateAction(callback)
-	self:runChangeViewAction()
-
 	local animNode = self._parentMediator:getAnimNode()
 	self._anim = cc.MovieClip:create("eff_zhuanchang_yuanjiebeijingeff")
 	local mc_bgPanel = self._anim:getChildByFullName("imgBg")

@@ -233,11 +233,24 @@ function EquipStarLevelMediator:refreshComposeData()
 			local entry = self._bagSystem:getEntryById(repleaseItems[i])
 
 			if entry and entry.item and entry.count > 0 then
+				local tmpCount = entry.count
+				local ret = true
+				local composeTimes = self._bagSystem:getComposeTimes()
+				local currentTime = composeTimes[repleaseItems[i]]
+
+				if currentTime and currentTime >= 1 then
+					ret = false
+				end
+
+				if ret then
+					tmpCount = tmpCount - 1
+				end
+
 				local item = {
 					eatCount = 0,
 					exp = 1,
 					itemId = repleaseItems[i],
-					allCount = entry.count,
+					allCount = tmpCount,
 					quality = entry.item:getQuality(),
 					sort = entry.item:getSort(),
 					unlock = entry.unlock and 1 or 0

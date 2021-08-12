@@ -3,6 +3,9 @@ SetHomeBgPopMediator = class("SetHomeBgPopMediator", DmPopupViewMediator)
 SetHomeBgPopMediator:has("_customDataSystem", {
 	is = "r"
 }):injectWith("CustomDataSystem")
+SetHomeBgPopMediator:has("_homeSystem", {
+	is = "r"
+}):injectWith("HomeSystem")
 
 local kBtnHandlers = {
 	["main.randomBox.Panel_5"] = {
@@ -32,17 +35,7 @@ function SetHomeBgPopMediator:enterWithData(data)
 	self._main = self:getView():getChildByName("main")
 	self._randomBox = self._main:getChildByName("randomBox")
 	self._cloneCell = self:getView():getChildByName("cloneCell")
-	local allBg = ConfigReader:getDataTable("HomeBackground")
-	self._allBg = {}
-
-	for k, v in pairs(allBg) do
-		self._allBg[#self._allBg + 1] = v
-	end
-
-	table.sort(self._allBg, function (a, b)
-		return a.Sort < b.Sort
-	end)
-
+	self._allBg = self._homeSystem:getHomeBackgroundList()
 	self._chooseIndex = 0
 
 	if data and data.setHomeBgId then

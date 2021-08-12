@@ -1,9 +1,9 @@
 local exports = SkillDevKit or {}
 
-local function excludeTarget(env, target)
+local function excludeTarget(env, target, joinReferee)
 	local formationSystem = env.global["$FormationSystem"]
 
-	if not formationSystem:expelUnit(target, env["$id"]) then
+	if not formationSystem:expelUnit(target, env["$id"], nil, joinReferee) then
 		return nil
 	end
 
@@ -137,8 +137,9 @@ function exports.Expel(env, target, animation)
 	return true
 end
 
-function exports.Kick(env, target)
-	local unit = excludeTarget(env, target)
+function exports.Kick(env, target, joinReferee)
+	joinReferee = joinReferee or true
+	local unit = excludeTarget(env, target, joinReferee)
 
 	if unit == nil then
 		return false

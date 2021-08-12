@@ -315,6 +315,8 @@ function MasterLeadStageSkillTip:createIncludePanel(effects)
 			table.insert(des, Strings:get("ARENA_TITLE"))
 		elseif v == "RTPK" then
 			table.insert(des, Strings:get("RTPK_SystemName"))
+		elseif v == "STAGE_ARENA" then
+			table.insert(des, Strings:get("StageArena_SystemName"))
 		end
 	end
 

@@ -73,3 +73,15 @@ function BagService:requestItemLock(params, callback, blockUI)
 
 	self:sendRequest(request, blockUI)
 end
+
+function BagService:getURSuiteRewards(params, callback, blockUI)
+	local request = self:newRequest(12112, params, callback)
+
+	self:sendRequest(request, blockUI)
+end
+
+function BagService:mainInfoURSuite(params, callback, blockUI)
+	local request = self:newRequest(12113, params, callback)
+
+	self:sendRequest(request, blockUI)
+end

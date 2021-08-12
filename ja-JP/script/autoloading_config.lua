@@ -941,6 +941,11 @@ local mappings = {
 		name = "HeroStrengthSkillMediator",
 		type = "@C"
 	},
+	BagURMapRewardMediator = {
+		url = "dm.gameplay.develop.view.bag.BagURMapRewardMediator",
+		name = "BagURMapRewardMediator",
+		type = "@C"
+	},
 	BagSelectMaterialMediator = {
 		url = "dm.gameplay.develop.view.bag.BagSelectMaterialMediator",
 		name = "BagSelectMaterialMediator",
@@ -951,9 +956,19 @@ local mappings = {
 		name = "BagGiftChooseOneMediator",
 		type = "@C"
 	},
+	BagURMapMediator = {
+		url = "dm.gameplay.develop.view.bag.BagURMapMediator",
+		name = "BagURMapMediator",
+		type = "@C"
+	},
 	BagUseScrollMediator = {
 		url = "dm.gameplay.develop.view.bag.BagUseScrollMediator",
 		name = "BagUseScrollMediator",
+		type = "@C"
+	},
+	BagURMapViewDetailMediator = {
+		url = "dm.gameplay.develop.view.bag.BagURMapViewDetailMediator",
+		name = "BagURMapViewDetailMediator",
 		type = "@C"
 	},
 	BagBatchUseSellMediator = {

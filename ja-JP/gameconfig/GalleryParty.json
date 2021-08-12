@@ -27,7 +27,7 @@
     },
     "Attack": {
         "IncludeHero": [
-            "WSLi",
+            "SP_SSQXin",
             "YFZZhu",
             "ZTXChang",
             "CZheng",
@@ -46,7 +46,8 @@
             "BDFen",
             "QTQCi",
             "MZGXiu",
-            "SLWan"
+            "SLWan",
+            "WSLi"
         ],
         "Party": "Attack",
         "PartyDesc": "Party_Attack_Desc",
@@ -129,6 +130,7 @@
     },
     "DWH": {
         "IncludeHero": [
+            "SP_SSQXin",
             "BBLMa",
             "DCJKang",
             "QTQCi",
@@ -254,6 +256,7 @@
     },
     "SP": {
         "IncludeHero": [
+            "SP_SSQXin",
             "SP_PNCao"
         ],
         "Party": "SP",

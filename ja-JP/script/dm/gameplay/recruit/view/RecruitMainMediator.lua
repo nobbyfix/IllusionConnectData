@@ -254,6 +254,10 @@ function RecruitMainMediator:initView()
 
 	self._drawNode = self:getView():getChildByFullName("drawNum")
 	self._drawNum = self._drawNode:getChildByFullName("text")
+	self._urEquipNode = self._main:getChildByFullName("urequip")
+
+	self._urEquipNode:setVisible(false)
+
 	local title1 = cc.Label:createWithTTF(Strings:get("Story_Skip"), TTF_FONT_FZYH_R, 20)
 
 	title1:enableOutline(cc.c4b(0, 0, 0, 204), 2)
@@ -631,7 +635,7 @@ function RecruitMainMediator:refreshHeroInfo()
 
 	local heroInfo = self._recruitDataShow:getRoleDetail()
 
-	if heroInfo then
+	if heroInfo and type ~= RecruitPoolType.kActivityUREquip then
 		local showhero = ""
 		local showACThero = ""
 		local showHeroId = ""
@@ -858,7 +862,12 @@ function RecruitMainMediator:runNodeActions()
 			local bg = ccui.ImageView:create("asset/scene/" .. bgName .. ".jpg")
 
 			bg:addTo(recruitBg):center(recruitBg:getContentSize())
-			bg:setScale(0.6666666666666666)
+
+			local size = bg:getContentSize()
+
+			if size.width > 1386 then
+				bg:setScale(0.6666666666666666)
+			end
 		end
 	end
 end
@@ -899,11 +908,11 @@ function RecruitMainMediator:initCostNode(recruitCost, costNode, offCount)
 			largeIcon = true
 		})
 
-		costIcon:setScale(0.5)
+		costIcon:setScale(0.45)
 		costIcon:addTo(icon1):center(icon1:getContentSize())
 
 		if costId ~= "IM_DiamondDraw" and costId ~= "IM_DiamondDrawEX" then
-			icon1:setPositionY(10)
+			icon1:setPositionY(15)
 		end
 
 		icon1:setPositionX(name1:getPositionX() - name1:getContentSize().width / 2 - 2)
@@ -923,7 +932,7 @@ function RecruitMainMediator:refreshLeftTopNode()
 	local id = self._recruitDataShow:getId()
 	local type = self._recruitDataShow:getType()
 
-	if type == RecruitPoolType.kActivity or type == RecruitPoolType.kPve or type == RecruitPoolType.kPvp or type == RecruitPoolType.kClub then
+	if type == RecruitPoolType.kActivity or type == RecruitPoolType.kPve or type == RecruitPoolType.kPvp or type == RecruitPoolType.kClub or type == RecruitPoolType.kActivityUREquip then
 		if id == RecruitNewPlayerPool then
 			self._leftTimeNode:setVisible(false)
 			self._tipBtn:setVisible(false)
@@ -945,7 +954,7 @@ function RecruitMainMediator:refreshLeftTopNode()
 				local type = self._recruitDataShow:getType()
 				local id = self._recruitDataShow:getId()
 
-				if type == RecruitPoolType.kActivity or type == RecruitPoolType.kPve or type == RecruitPoolType.kPvp or type == RecruitPoolType.kClub and id ~= RecruitNewPlayerPool then
+				if (type == RecruitPoolType.kActivity or type == RecruitPoolType.kPve or type == RecruitPoolType.kPvp or type == RecruitPoolType.kClub or type == RecruitPoolType.kActivityUREquip) and id ~= RecruitNewPlayerPool then
 					local text = self._leftTimeNode:getChildByFullName("text")
 					local unlock, activityId = self._recruitSystem:getActivityIsOpen(id)
 
@@ -1024,7 +1033,7 @@ function RecruitMainMediator:refreshLeftTopNode()
 
 	self._drawNode:setVisible(id ~= RecruitNewPlayerPool)
 
-	if type == RecruitPoolType.kActivity or type == RecruitPoolType.kPve or type == RecruitPoolType.kPvp or type == RecruitPoolType.kClub then
+	if type == RecruitPoolType.kActivity or type == RecruitPoolType.kPve or type == RecruitPoolType.kPvp or type == RecruitPoolType.kClub or type == RecruitPoolType.kActivityUREquip then
 		self._drawNode:setPosition(cc.p(900, self._leftTimeNode:getPositionY() - 23))
 	else
 		self._drawNode:setPosition(cc.p(self._leftTimeNode:getPositionX(), self._leftTimeNode:getPositionY() - 62))
@@ -1125,7 +1134,16 @@ function RecruitMainMediator:updateView()
 	local type = self._recruitDataShow:getType()
 
 	self._tipBtn:setVisible(type ~= RecruitPoolType.kDiamond and type ~= RecruitPoolType.kEquip and self._recruitDataShow:getId() ~= RecruitNewPlayerPool)
-	self._shopBtn:setVisible(self._shopSystem:isShopFragmentOpen() and (type == RecruitPoolType.kDiamond or type == RecruitPoolType.kActivity))
+	self._shopBtn:setVisible(self._shopSystem:isShopFragmentOpen() and (type == RecruitPoolType.kDiamond or type == RecruitPoolType.kActivity or type == RecruitPoolType.kActivityUREquip))
+
+	if type == RecruitPoolType.kActivityUREquip then
+		self._main:getChildByFullName("node1"):setPositionY(85)
+		self._main:getChildByFullName("node2"):setPositionY(85)
+	else
+		self._main:getChildByFullName("node1"):setPositionY(97)
+		self._main:getChildByFullName("node2"):setPositionY(97)
+	end
+
 	self:refreshHeroInfo()
 	self:refreshRewardNode()
 	self:refreshMoreNode()
@@ -1133,6 +1151,7 @@ function RecruitMainMediator:updateView()
 	self:refreshLeftTopNode()
 	self:refreshMiddleTime()
 	self:runNodeActions()
+	self:refreshUREQuipInfo()
 
 	local costNode1 = self._main:getChildByFullName("node1.recruitBtn1")
 	local costNode2 = self._main:getChildByFullName("node2.recruitBtn2")
@@ -1318,7 +1337,7 @@ function RecruitMainMediator:onRecruit1Clicked()
 
 	if self._bagSystem:checkCostEnough(costId, costCount) then
 		self._recruitSystem:requestRecruit(param)
-	elseif costId == CurrencyIdKind.kDiamondDrawItem or costId == CurrencyIdKind.kDiamondDrawExItem or costId == CurrencyIdKind.kDiamondDrawExZuoHeItem then
+	elseif costId == CurrencyIdKind.kDiamondDrawItem or costId == CurrencyIdKind.kDiamondDrawExItem or costId == CurrencyIdKind.kDiamondDrawExZuoHeItem or costId == CurrencyIdKind.kDiamondDrawURItem then
 		self:buyCard(costId, costCount, param)
 	else
 		self._bagSystem:checkCostEnough(costId, costCount, {
@@ -1353,7 +1372,7 @@ function RecruitMainMediator:onRecruit2Clicked()
 
 	if self._bagSystem:checkCostEnough(costId, costCount) then
 		self._recruitSystem:requestRecruit(param)
-	elseif costId == CurrencyIdKind.kDiamondDrawItem or costId == CurrencyIdKind.kDiamondDrawExItem or costId == CurrencyIdKind.kDiamondDrawExZuoHeItem then
+	elseif costId == CurrencyIdKind.kDiamondDrawItem or costId == CurrencyIdKind.kDiamondDrawExItem or costId == CurrencyIdKind.kDiamondDrawExZuoHeItem or costId == CurrencyIdKind.kDiamondDrawURItem then
 		self:buyCard(costId, costCount, param)
 	else
 		self._bagSystem:checkCostEnough(costId, costCount, {
@@ -1667,4 +1686,107 @@ function RecruitMainMediator:setupResultClickEnvs()
 	end
 
 	storyDirector:notifyWaiting("enter_recruitHeroDiamondResul_view")
+end
+
+function RecruitMainMediator:refreshUREQuipInfo()
+	local type = self._recruitDataShow:getType()
+	local nodeShow = type == RecruitPoolType.kPve or type == RecruitPoolType.kPvp or type == RecruitPoolType.kClub
+	local common_text_node = self._middleTimeNode:getChildByFullName("common_text")
+
+	common_text_node:removeAllChildren()
+	self._middleTimeNode:setVisible(nodeShow)
+
+	local titleText = self._urEquipNode:getChildByName("Text_title")
+
+	titleText:setString(self._recruitDataShow:getName())
+
+	local text = self._urEquipNode:getChildByName("Text_1")
+	local pos1 = self._leftTimeNode:convertToWorldSpace(cc.p(0, 0))
+	local pos2 = self._urEquipNode:convertToNodeSpace(pos1)
+
+	text:setPosition(cc.p(pos2.x + 7, pos2.y - 60))
+	titleText:setPositionY(pos2.y - 100)
+
+	local equipInfo = self._recruitDataShow:getRoleDetail()
+
+	if equipInfo and type == RecruitPoolType.kActivityUREquip then
+		self._urEquipNode:setVisible(true)
+
+		for i = 1, #equipInfo do
+			local equipId = equipInfo[i].equip
+			local equipNode = self._urEquipNode:getChildByName("equip" .. i)
+			local config = ConfigReader:getRecordById("Compose", equipId)
+			local iconPanel = equipNode:getChildByName("icon")
+
+			iconPanel:removeAllChildren()
+
+			local icon = IconFactory:createPic(config.Item1)
+
+			icon:addTo(iconPanel):center(iconPanel:getContentSize())
+			IconFactory:bindTouchHander(iconPanel, IconTouchHandler:new(self), {
+				type = config.Item1.type,
+				code = config.Item1.id,
+				amount = config.Item1.amount
+			}, {
+				swallowTouches = true,
+				needDelay = true
+			})
+
+			local info = {
+				amount = 1,
+				code = equipId,
+				type = RewardType.kItem
+			}
+			local btn = equipNode:getChildByName("checkBtn")
+
+			IconFactory:bindClickHander(btn, IconTouchHandler:new(self), info, {
+				touchDisappear = true,
+				swallowTouches = true
+			})
+
+			local nameText = equipNode:getChildByName("Text_name")
+
+			nameText:setString(RewardSystem:getName(info))
+
+			local iconNode = self._urEquipNode:getChildByName("icon" .. i)
+
+			iconNode:removeAllChildren()
+
+			local position = equipInfo[i].urposition
+			local iconImg = IconFactory:createPic({
+				id = equipInfo[i].showequip
+			}, {
+				isWidget = true
+			})
+
+			iconImg:addTo(iconNode):posite(position[1], position[2])
+			iconImg:setScale(1)
+		end
+
+		local desc = self._recruitDataShow:getUPDesc()
+
+		if self._urEquipNode:getChildByName("richDesc1") then
+			self._urEquipNode:removeChildByName("richDesc1")
+		end
+
+		if self._urEquipNode:getChildByName("richDesc2") then
+			self._urEquipNode:removeChildByName("richDesc2")
+		end
+
+		local rich1 = ccui.RichText:createWithXML(Strings:get(desc[1], {
+			fontName = TTF_FONT_FZYH_M
+		}), {})
+
+		rich1:setAnchorPoint(0, 0.5)
+		rich1:addTo(self._urEquipNode):posite(295, 230):setName("richDesc1")
+
+		local rich1 = ccui.RichText:createWithXML(Strings:get(desc[2], {
+			fontName = TTF_FONT_FZYH_M
+		}), {})
+
+		rich1:setAnchorPoint(0, 0.5)
+		rich1:addTo(self._urEquipNode):posite(430, 180):setName("richDesc2")
+	else
+		self._urEquipNode:setVisible(false)
+	end
 end

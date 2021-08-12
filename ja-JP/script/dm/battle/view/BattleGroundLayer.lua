@@ -496,7 +496,7 @@ function BattleGroundLayer:findNearbyEmptyForExtraCard(point, sender)
 end
 
 function BattleGroundLayer:checkTouchCollision(sender, point)
-	if sender:getType() == "hero" then
+	if not sender.getType or sender:getType() == "hero" then
 		local retPos = -1
 
 		if cc.rectContainsPoint(self._leftGroundRect, point) then

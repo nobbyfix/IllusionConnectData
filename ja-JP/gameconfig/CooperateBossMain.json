@@ -442,6 +442,37 @@
         "Time": 1800,
         "Type": "Normal"
     },
+    "CooperateBoss_MGNa": {
+        "AwakenAttrEffect": "ExcellentHero_Awaken",
+        "AwakenBoss": "",
+        "BossBattle": "CooperateBoss_MGNa",
+        "ExcellentHero": [
+            {
+                "Effect": "ExcellentHero_Attr_Big",
+                "Hero": [
+                    "BBLMa",
+                    "FGao"
+                ]
+            },
+            {
+                "Effect": "ExcellentHero_Attr_Small",
+                "Hero": [
+                    "BQDShe",
+                    "MTZMEShi",
+                    "XHMao"
+                ]
+            }
+        ],
+        "Revelry": "",
+        "RewardRevelry": "",
+        "RewardShow": "CooperateBossMain_MGNa_Show",
+        "RoleModel": "Model_MGNa",
+        "StarsAttrEffect": "ExcellentHero_Stars",
+        "Story": [],
+        "TiggerAwaken": "",
+        "Time": 1800,
+        "Type": "Normal"
+    },
     "CooperateBoss_MTZMEShi": {
         "AwakenAttrEffect": "ExcellentHero_Awaken",
         "AwakenBoss": "",

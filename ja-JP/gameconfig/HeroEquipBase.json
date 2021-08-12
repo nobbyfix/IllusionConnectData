@@ -1407,7 +1407,7 @@
             8
         ],
         "DEF": "UR_Decoration_DEF_DH",
-        "Desc": "Decoration_15001_Desc",
+        "Desc": "CO_Decoration_15001_Desc",
         "HP": "UR_Decoration_HP_DH",
         "Icon": "ico_e_sakura",
         "Name": "Decoration_15001_Name",
@@ -1451,7 +1451,7 @@
             8
         ],
         "DEF": "UR_Decoration_DEF_DH",
-        "Desc": "Decoration_15002_Desc",
+        "Desc": "CO_Decoration_15002_Desc",
         "HP": "UR_Decoration_HP_DH",
         "Icon": "ico_equip_clarinet",
         "Name": "Decoration_15002_Name",
@@ -1495,7 +1495,7 @@
             8
         ],
         "DEF": "UR_Decoration_DEF_AD",
-        "Desc": "Decoration_15003_Desc",
+        "Desc": "CO_Decoration_15003_Desc",
         "HP": "",
         "Icon": "ico_equip_gyroscope",
         "Name": "Decoration_15003_Name",
@@ -1539,7 +1539,7 @@
             8
         ],
         "DEF": "UR_Decoration_DEF_AD",
-        "Desc": "Decoration_15004_Desc",
+        "Desc": "CO_Decoration_15004_Desc",
         "HP": "",
         "Icon": "ico_equip_memorybook",
         "Name": "Decoration_15004_Name",
@@ -1583,7 +1583,7 @@
             8
         ],
         "DEF": "",
-        "Desc": "Decoration_15005_Desc",
+        "Desc": "CO_Decoration_15005_Desc",
         "HP": "UR_Decoration_HP_DH",
         "Icon": "ico_equip_eyebadge",
         "Name": "Decoration_15005_Name",
@@ -1621,7 +1621,7 @@
             8
         ],
         "DEF": "",
-        "Desc": "Decoration_15006_Desc",
+        "Desc": "CO_Decoration_15006_Desc",
         "HP": "UR_Decoration_HP_DH",
         "Icon": "ico_equip_queencrown",
         "Name": "Decoration_15006_Name",
@@ -1659,7 +1659,7 @@
             8
         ],
         "DEF": "",
-        "Desc": "Decoration_15007_Desc",
+        "Desc": "CO_Decoration_15007_Desc",
         "HP": "UR_Decoration_HP_AH",
         "Icon": "ico_equip_lens",
         "Name": "Decoration_15007_Name",
@@ -1703,7 +1703,7 @@
             8
         ],
         "DEF": "UR_Decoration_DEF_AD",
-        "Desc": "Decoration_15008_Desc",
+        "Desc": "CO_Decoration_15008_Desc",
         "HP": "",
         "Icon": "ico_equip_newbienecklace",
         "Name": "Decoration_15008_Name",
@@ -1747,7 +1747,7 @@
             8
         ],
         "DEF": "UR_Decoration_DEF_DH",
-        "Desc": "Decoration_15009_Desc",
+        "Desc": "CO_Decoration_15009_Desc",
         "HP": "UR_Decoration_HP_DH",
         "Icon": "ico_equip_voodoodoll",
         "Name": "Decoration_15009_Name",
@@ -1791,7 +1791,7 @@
             8
         ],
         "DEF": "UR_Decoration_DEF_DH",
-        "Desc": "Decoration_15010_Desc",
+        "Desc": "CO_Decoration_15010_Desc",
         "HP": "UR_Decoration_HP_DH",
         "Icon": "ico_equip_oldstone",
         "Name": "Decoration_15010_Name",
@@ -1835,7 +1835,7 @@
             8
         ],
         "DEF": "UR_Decoration_DEF_DH",
-        "Desc": "Decoration_15011_Desc",
+        "Desc": "CO_Decoration_15011_Desc",
         "HP": "UR_Decoration_HP_DH",
         "Icon": "ico_equip_moonbell",
         "Name": "Decoration_15011_Name",
@@ -1879,7 +1879,7 @@
             8
         ],
         "DEF": "",
-        "Desc": "Decoration_15012_Desc",
+        "Desc": "CO_Decoration_15012_Desc",
         "HP": "UR_Decoration_HP_AH",
         "Icon": "ico_equip_headphone",
         "Name": "Decoration_15012_Name",
@@ -1981,6 +1981,45 @@
         "Sort": 299008,
         "StartEquipEndID": "Rareity15_DecorationStone2_8",
         "StartEquipStarID": "Rareity15_DecorationStone2_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
+    "Decoration_15103_3": {
+        "ATK": "UR_Decoration_ATK_AD",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "UR_Decoration_DEF_AD",
+        "Desc": "CO_Decoration_15103_3_Desc",
+        "HP": "",
+        "Icon": "ico_equip_hexiring",
+        "Name": "Decoration_15103_3_Name",
+        "Position": "Decoration",
+        "Profession": [
+            "Attack",
+            "Aoe"
+        ],
+        "ProfessionDesc": "",
+        "ProfessionType": 0,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "",
+        "Shine": "",
+        "Skill": "EquipSkill_Decoration_15103_3",
+        "Sort": 299012,
+        "StartEquipEndID": "Rareity15_DecorationStone3_8",
+        "StartEquipStarID": "Rareity15_DecorationStone3_1",
         "URUPSkillLV": [
             30,
             40,
@@ -3094,7 +3133,7 @@
             8
         ],
         "DEF": "",
-        "Desc": "Shoes_15001_Desc",
+        "Desc": "CO_Shoes_15001_Desc",
         "HP": "UR_Shoes_HP",
         "Icon": "ico_equip_durandelshoes",
         "Name": "Shoes_15001_Name",
@@ -3132,7 +3171,7 @@
             8
         ],
         "DEF": "",
-        "Desc": "Shoes_15002_Desc",
+        "Desc": "CO_Shoes_15002_Desc",
         "HP": "UR_Shoes_HP",
         "Icon": "ico_equip_queenshoes",
         "Name": "Shoes_15002_Name",
@@ -3170,7 +3209,7 @@
             8
         ],
         "DEF": "",
-        "Desc": "Shoes_15003_Desc",
+        "Desc": "CO_Shoes_15003_Desc",
         "HP": "UR_Shoes_HP",
         "Icon": "ico_equip_whitehorse",
         "Name": "Shoes_15003_Name",
@@ -3214,7 +3253,7 @@
             8
         ],
         "DEF": "",
-        "Desc": "Shoes_15004_Desc",
+        "Desc": "CO_Shoes_15004_Desc",
         "HP": "UR_Shoes_HP",
         "Icon": "ico_equip_blackshoes",
         "Name": "Shoes_15004_Name",
@@ -3258,7 +3297,7 @@
             8
         ],
         "DEF": "",
-        "Desc": "Shoes_15005_Desc",
+        "Desc": "CO_Shoes_15005_Desc",
         "HP": "UR_Shoes_HP",
         "Icon": "ico_equip_flyshoes",
         "Name": "Shoes_15005_Name",
@@ -3302,7 +3341,7 @@
             8
         ],
         "DEF": "",
-        "Desc": "Shoes_15006_Desc",
+        "Desc": "CO_Shoes_15006_Desc",
         "HP": "UR_Shoes_HP",
         "Icon": "ico_equip_mousepad",
         "Name": "Shoes_15006_Name",
@@ -3346,7 +3385,7 @@
             8
         ],
         "DEF": "",
-        "Desc": "Shoes_15007_Desc",
+        "Desc": "CO_Shoes_15007_Desc",
         "HP": "UR_Shoes_HP",
         "Icon": "ico_equip_brambleshoes",
         "Name": "Shoes_15007_Name",
@@ -3390,7 +3429,7 @@
             8
         ],
         "DEF": "",
-        "Desc": "Shoes_15008_Desc",
+        "Desc": "CO_Shoes_15008_Desc",
         "HP": "UR_Shoes_HP",
         "Icon": "ico_equip_newbieshoes",
         "Name": "Shoes_15008_Name",
@@ -3492,6 +3531,45 @@
         "Sort": 299007,
         "StartEquipEndID": "Rareity15_Shoes2_8",
         "StartEquipStarID": "Rareity15_Shoes2_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
+    "Shoes_15103_3": {
+        "ATK": "",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "",
+        "Desc": "CO_Shoes_15103_3_Desc",
+        "HP": "UR_Shoes_HP",
+        "Icon": "ico_equip_hexishoes",
+        "Name": "Shoes_15103_3_Name",
+        "Position": "Shoes",
+        "Profession": [
+            "Attack",
+            "Aoe"
+        ],
+        "ProfessionDesc": "",
+        "ProfessionType": 0,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "UR_Shoes_SPEED",
+        "Shine": "",
+        "Skill": "EquipSkill_Shoes_15103_3",
+        "Sort": 299011,
+        "StartEquipEndID": "Rareity15_Shoes3_8",
+        "StartEquipStarID": "Rareity15_Shoes3_1",
         "URUPSkillLV": [
             30,
             40,
@@ -4770,7 +4848,7 @@
             8
         ],
         "DEF": "UR_Top_DEF",
-        "Desc": "Tops_15001_Desc",
+        "Desc": "CO_Tops_15001_Desc",
         "HP": "UR_Top_HP",
         "Icon": "ico_equip_lionarmor",
         "Name": "Tops_15001_Name",
@@ -4808,7 +4886,7 @@
             8
         ],
         "DEF": "UR_Top_DEF",
-        "Desc": "Tops_15002_Desc",
+        "Desc": "CO_Tops_15002_Desc",
         "HP": "UR_Top_HP",
         "Icon": "ico_equip_chef",
         "Name": "Tops_15002_Name",
@@ -4852,7 +4930,7 @@
             8
         ],
         "DEF": "UR_Top_DEF",
-        "Desc": "Tops_15003_Desc",
+        "Desc": "CO_Tops_15003_Desc",
         "HP": "UR_Top_HP",
         "Icon": "ico_equip_shadowcloth",
         "Name": "Tops_15003_Name",
@@ -4890,7 +4968,7 @@
             8
         ],
         "DEF": "UR_Top_DEF",
-        "Desc": "Tops_15004_Desc",
+        "Desc": "CO_Tops_15004_Desc",
         "HP": "UR_Top_HP",
         "Icon": "ico_equip_queendress",
         "Name": "Tops_15004_Name",
@@ -4928,7 +5006,7 @@
             8
         ],
         "DEF": "UR_Top_DEF",
-        "Desc": "Tops_15005_Desc",
+        "Desc": "CO_Tops_15005_Desc",
         "HP": "UR_Top_HP",
         "Icon": "ico_equip_redemption",
         "Name": "Tops_15005_Name",
@@ -4972,7 +5050,7 @@
             8
         ],
         "DEF": "UR_Top_DEF",
-        "Desc": "Tops_15006_Desc",
+        "Desc": "CO_Tops_15006_Desc",
         "HP": "UR_Top_HP",
         "Icon": "ico_equip_stardress",
         "Name": "Tops_15006_Name",
@@ -5016,7 +5094,7 @@
             8
         ],
         "DEF": "UR_Top_DEF",
-        "Desc": "Tops_15007_Desc",
+        "Desc": "CO_Tops_15007_Desc",
         "HP": "UR_Top_HP",
         "Icon": "ico_equip_blacksuit",
         "Name": "Tops_15007_Name",
@@ -5060,7 +5138,7 @@
             8
         ],
         "DEF": "UR_Top_DEF",
-        "Desc": "Tops_15008_Desc",
+        "Desc": "CO_Tops_15008_Desc",
         "HP": "UR_Top_HP",
         "Icon": "ico_equip_blackarmor",
         "Name": "Tops_15008_Name",
@@ -5104,7 +5182,7 @@
             8
         ],
         "DEF": "UR_Top_DEF",
-        "Desc": "Tops_15009_Desc",
+        "Desc": "CO_Tops_15009_Desc",
         "HP": "UR_Top_HP",
         "Icon": "ico_equip_repairshirt",
         "Name": "Tops_15009_Name",
@@ -5148,7 +5226,7 @@
             8
         ],
         "DEF": "UR_Top_DEF",
-        "Desc": "Tops_15010_Desc",
+        "Desc": "CO_Tops_15010_Desc",
         "HP": "UR_Top_HP",
         "Icon": "ico_equip_scalecape",
         "Name": "Tops_15010_Name",
@@ -5192,7 +5270,7 @@
             8
         ],
         "DEF": "UR_Top_DEF",
-        "Desc": "Tops_15011_Desc",
+        "Desc": "CO_Tops_15011_Desc",
         "HP": "UR_Top_HP",
         "Icon": "ico_equip_newbiearmor",
         "Name": "Tops_15011_Name",
@@ -5236,7 +5314,7 @@
             8
         ],
         "DEF": "UR_Top_DEF",
-        "Desc": "Tops_15012_Desc",
+        "Desc": "CO_Tops_15012_Desc",
         "HP": "UR_Top_HP",
         "Icon": "ico_equip_devilarmor",
         "Name": "Tops_15012_Name",
@@ -5338,6 +5416,45 @@
         "Sort": 299006,
         "StartEquipEndID": "Rareity15_Top2_8",
         "StartEquipStarID": "Rareity15_Top2_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
+    "Tops_15103_3": {
+        "ATK": "",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "UR_Top_DEF",
+        "Desc": "CO_Tops_15103_3_Desc",
+        "HP": "UR_Top_HP",
+        "Icon": "ico_equip_hexidress",
+        "Name": "Tops_15103_3_Name",
+        "Position": "Tops",
+        "Profession": [
+            "Attack",
+            "Aoe"
+        ],
+        "ProfessionDesc": "",
+        "ProfessionType": 0,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "",
+        "Shine": "",
+        "Skill": "EquipSkill_Tops_15103_3",
+        "Sort": 299010,
+        "StartEquipEndID": "Rareity15_Top3_8",
+        "StartEquipStarID": "Rareity15_Top3_1",
         "URUPSkillLV": [
             30,
             40,
@@ -7330,7 +7447,7 @@
             8
         ],
         "DEF": "",
-        "Desc": "Weapon_15001_Desc",
+        "Desc": "CO_Weapon_15001_Desc",
         "HP": "",
         "Icon": "ico_equip_durandelsword",
         "Name": "Weapon_15001_Name",
@@ -7368,7 +7485,7 @@
             8
         ],
         "DEF": "",
-        "Desc": "Weapon_15002_Desc",
+        "Desc": "CO_Weapon_15002_Desc",
         "HP": "",
         "Icon": "ico_equip_cottoncandy",
         "Name": "Weapon_15002_Name",
@@ -7406,7 +7523,7 @@
             8
         ],
         "DEF": "",
-        "Desc": "Weapon_15003_Desc",
+        "Desc": "CO_Weapon_15003_Desc",
         "HP": "",
         "Icon": "ico_equip_newbieblade",
         "Name": "Weapon_15003_Name",
@@ -7444,7 +7561,7 @@
             8
         ],
         "DEF": "",
-        "Desc": "Weapon_15004_Desc",
+        "Desc": "CO_Weapon_15004_Desc",
         "HP": "",
         "Icon": "ico_equip_glove",
         "Name": "Weapon_15004_Name",
@@ -7482,7 +7599,7 @@
             8
         ],
         "DEF": "",
-        "Desc": "Weapon_15005_Desc",
+        "Desc": "CO_Weapon_15005_Desc",
         "HP": "",
         "Icon": "ico_equip_naskblade",
         "Name": "Weapon_15005_Name",
@@ -7520,7 +7637,7 @@
             8
         ],
         "DEF": "",
-        "Desc": "Weapon_15006_Desc",
+        "Desc": "CO_Weapon_15006_Desc",
         "HP": "",
         "Icon": "ico_equip_wineglass",
         "Name": "Weapon_15006_Name",
@@ -7558,7 +7675,7 @@
             8
         ],
         "DEF": "",
-        "Desc": "Weapon_15007_Desc",
+        "Desc": "CO_Weapon_15007_Desc",
         "HP": "",
         "Icon": "ico_equip_venom",
         "Name": "Weapon_15007_Name",
@@ -7596,7 +7713,7 @@
             8
         ],
         "DEF": "",
-        "Desc": "Weapon_15008_Desc",
+        "Desc": "CO_Weapon_15008_Desc",
         "HP": "",
         "Icon": "ico_equip_flute",
         "Name": "Weapon_15008_Name",
@@ -7634,7 +7751,7 @@
             8
         ],
         "DEF": "",
-        "Desc": "Weapon_15009_Desc",
+        "Desc": "CO_Weapon_15009_Desc",
         "HP": "",
         "Icon": "ico_equip_pipe",
         "Name": "Weapon_15009_Name",
@@ -7729,6 +7846,46 @@
         "Sort": 299005,
         "StartEquipEndID": "Rareity15_Weapon2_8",
         "StartEquipStarID": "Rareity15_Weapon2_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
+    "Weapon_15103_3": {
+        "ATK": "UR_Weapon_ATK",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "",
+        "Desc": "CO_Weapon_15103_3_Desc",
+        "HP": "",
+        "Icon": "ico_equip_hexiweapon",
+        "Name": "Weapon_15103_3_Name",
+        "Position": "Weapon",
+        "Profession": [
+            "KTSJKe",
+            "KMLa",
+            "YSuo"
+        ],
+        "ProfessionDesc": "",
+        "ProfessionType": 1,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "",
+        "Shine": "",
+        "Skill": "EquipSkill_Weapon_15103_3",
+        "Sort": 299009,
+        "StartEquipEndID": "Rareity15_Weapon3_8",
+        "StartEquipStarID": "Rareity15_Weapon3_1",
         "URUPSkillLV": [
             30,
             40,

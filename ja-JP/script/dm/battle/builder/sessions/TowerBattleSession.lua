@@ -123,18 +123,6 @@ function TowerBattleSession:generateResultSummary()
 	}
 end
 
-function TowerBattleSession:buildAutoStrategy(playerRole, team, randomSeed)
-	local strategy = SequenceStrategy:new(team, Random:new(randomSeed))
-
-	if strategy.setDefaultInitWaitingCD then
-		local defaultCD = ConfigReader:getRecordById("ConfigValue", "Fight_DefaultInitWaitingCD") and ConfigReader:getRecordById("ConfigValue", "Fight_DefaultInitWaitingCD").content or 500
-
-		strategy:setDefaultInitWaitingCD(defaultCD)
-	end
-
-	return strategy
-end
-
 function TowerBattleSession:getBattleType()
 	return "tower"
 end

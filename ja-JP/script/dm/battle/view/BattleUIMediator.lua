@@ -1692,6 +1692,56 @@ function BattleUIMediator:updateCardInfo(idxInSlot, detail)
 	end
 end
 
+function BattleUIMediator:updateCardWeight(idxInSlot, card, weight)
+	local card = self._cardArray:getCardAtIndex(idxInSlot)
+
+	if card then
+		card:updateCardWeight(weight)
+	end
+end
+
+function BattleUIMediator:maxCardWeight(idxInSlot)
+	for i = 1, 4 do
+		local card = self._cardArray:getCardAtIndex(i)
+
+		if card then
+			if i == idxInSlot then
+				card:maxCardWeight(1)
+			else
+				card:maxCardWeight(0)
+			end
+		end
+	end
+end
+
+function BattleUIMediator:updateCurrentBattleSt(status)
+	if not self._statusLabel then
+		self._statusLabel = cc.Label:createWithTTF(weight, TTF_FONT_FZYH_M, 18)
+
+		self._statusLabel:addTo(self:getView()):offset(50, 200)
+		self._statusLabel:setColor(cc.c3b(0, 255, 0))
+	end
+
+	local keys = {
+		"FriendMasterHP",
+		"EnemyMasterHP",
+		"PaddingCard",
+		"UniqueRatio",
+		"Curse",
+		"Cost",
+		"CardForce"
+	}
+	local statues = ""
+
+	self._statusLabel:setString(statues)
+
+	for k, v in pairs(status) do
+		statues = statues .. string.format(keys[k] .. ":%.02f", v) .. "\n"
+	end
+
+	self._statusLabel:setString(statues)
+end
+
 function BattleUIMediator:flyBallToCard(role, idxInSlot)
 	local card = self._cardArray:getCardAtIndex(idxInSlot)
 

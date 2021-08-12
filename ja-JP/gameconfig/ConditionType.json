@@ -580,6 +580,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_FireExchangeAchieve_Desc"
     },
+    "Condi_FireWorksExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_FireWorks_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_FireWorksExchangeAchieve_Desc"
+    },
     "Condi_FriendCount": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
@@ -1279,6 +1286,13 @@
         "ConditionType1": "towerWin",
         "ConditionType2": "",
         "EffectDesc": "Condi_TowerWin_Desc"
+    },
+    "Condi_URMap_URCount": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.urCount",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_URMap_URCount_Des"
     },
     "Condi_UseExp": {
         "AchieveType1": "CUSTOM",

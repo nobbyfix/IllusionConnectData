@@ -143,6 +143,25 @@ function BattleCardWidget:playAddBuffAnim()
 	end
 end
 
+function BattleCardWidget:updateCardWeight(weight)
+	if not self._weightLabel then
+		self._weightLabel = cc.Label:createWithTTF(weight, TTF_FONT_FZYH_M, 23)
+
+		self._weightLabel:addTo(self:getView()):offset(0, 80)
+		self._weightLabel:setColor(cc.c3b(0, 255, 0))
+	end
+
+	self._weightLabel:setString(string.format("%0.2f", weight))
+end
+
+function BattleCardWidget:maxCardWeight(isMax)
+	if isMax > 0 then
+		self._weightLabel:setScale(1.4)
+	else
+		self._weightLabel:setScale(1)
+	end
+end
+
 function BattleCardWidget:isAvailable()
 	if self._status == "in-use" then
 		return false
