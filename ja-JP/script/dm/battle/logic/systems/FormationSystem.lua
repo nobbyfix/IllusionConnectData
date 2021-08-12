@@ -523,8 +523,8 @@ function FormationSystem:revive(actor, hpRatio, anger, location)
 	return newUnit, detail
 end
 
-function FormationSystem:reviveByUnit(actor, unit, hpRatio, anger, location)
-	local player = actor:getOwner()
+function FormationSystem:reviveByUnit(actor, unit, hpRatio, anger, location, owner)
+	local player = owner or actor:getOwner()
 	local cellId = self._battleField:findEmptyCellId(player:getSide(), location)
 
 	if not cellId then
