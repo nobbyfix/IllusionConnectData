@@ -377,6 +377,27 @@
         "StoryLink": "S11S01",
         "SurfaceId": "Surface_MTZMEShi_Awake"
     },
+    "PDLa": {
+        "AnimSound": "Se_Effect_Awakening_PDLa",
+        "Animation": "ansi_Awaken",
+        "CutIn": [
+            0,
+            0,
+            1
+        ],
+        "ModelId": "Model_PDLa_Awake",
+        "Name": "PDLa_Awake_Name",
+        "NameDesc": "PDLa_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_PDLa_UnAwake",
+        "Reward": "HeroAwaken_PDLa",
+        "ShowHero": "PDLa",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "PDLa_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_PDLa_Awake"
+    },
     "SDTZi": {
         "AnimSound": "",
         "Animation": "SDTZi_Awaken",

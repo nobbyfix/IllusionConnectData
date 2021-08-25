@@ -237,8 +237,6 @@ function ReturnShopActivityMediator:setPackageItemInfo(cell, data)
 	local times1 = data:getLeftCount()
 	local times2 = data:getStorage()
 
-	dump(data:getTimeTypeType(), "data:getTimeTypeType() >>>>>")
-
 	if data:getTimeTypeType() == "limit" then
 		leaveTimesText:setVisible(true)
 		leaveTimesText:setString(Strings:get("LimitPack_TotalLimit", {

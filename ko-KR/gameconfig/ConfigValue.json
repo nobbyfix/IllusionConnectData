@@ -18,14 +18,22 @@
         ]
     },
     "ActiveReward": {
-        "clz": "dict",
-        "content": {
-            "120": "ActiveReward_3",
-            "160": "ActiveReward_New_4",
-            "200": "ActiveReward_New_5",
-            "40": "ActiveReward_1",
-            "80": "ActiveReward_2"
-        }
+        "clz": "array",
+        "content": [
+            {
+                "level": [
+                    0,
+                    99
+                ],
+                "reward": {
+                    "120": "ActiveReward_3",
+                    "160": "ActiveReward_New_4",
+                    "200": "ActiveReward_New_5",
+                    "40": "ActiveReward_1",
+                    "80": "ActiveReward_2"
+                }
+            }
+        ]
     },
     "ActiveRewardChange": {
         "clz": "string",
@@ -3690,7 +3698,8 @@
             "SP_PNCao",
             "LFKLFTe",
             "BHTZi",
-            "AMLBLTe"
+            "AMLBLTe",
+            "XLDBLTe"
         ]
     },
     "HeroStar_BoxNum": {
@@ -6391,6 +6400,7 @@
     "NewPlayerGuide_LevelOpen": {
         "clz": "dict",
         "content": {
+            "27": "guide_MasterLeadeStage",
             "60": "guide_StageArena"
         }
     },
@@ -9187,7 +9197,9 @@
             "MLYDi",
             "SP_SSQXin",
             "WSLi",
-            "AMLBLTe"
+            "AMLBLTe",
+            "XLDBLTe",
+            "MYing"
         ]
     },
     "Tower_1_GrowMaxValue": {

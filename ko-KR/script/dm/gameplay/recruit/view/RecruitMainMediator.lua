@@ -79,6 +79,50 @@ local actions = {
 	"skill2",
 	"skill1"
 }
+local descBgH = {
+	["1UP"] = {
+		28,
+		25.8,
+		25.8
+	},
+	["2UP"] = {
+		58,
+		30
+	}
+}
+local descBgW = {
+	["1UP"] = {
+		100,
+		100,
+		100
+	},
+	["2UP"] = {
+		60,
+		40
+	}
+}
+local descX = {
+	["1UP"] = {
+		20,
+		40,
+		60
+	},
+	["2UP"] = {
+		10,
+		-10
+	}
+}
+local descScale9 = {
+	["1UP"] = {
+		cc.rect(220, 18, 1, 1),
+		cc.rect(220, 18, 1, 1),
+		cc.rect(220, 18, 1, 1)
+	},
+	["2UP"] = {
+		cc.rect(110, 19, 1, 1),
+		cc.rect(89, 19, 1, 1)
+	}
+}
 
 function RecruitMainMediator:initialize()
 	super.initialize(self)
@@ -362,6 +406,7 @@ function RecruitMainMediator:initTabController()
 	for i = 1, #self._recruitData do
 		local recruitData = self._recruitData[i]
 		local btnImage = recruitData:getPreview().btn
+		local previewType = recruitData:getPreview().type
 		local btnText = ""
 		local temp = nil
 		local type = recruitData:getType()
@@ -389,6 +434,14 @@ function RecruitMainMediator:initTabController()
 					"asset/ui/recruit/" .. btnImage .. "1.png",
 					"asset/ui/recruit/" .. btnImage .. "2.png"
 				}
+			}
+		end
+
+		if previewType then
+			temp.tabImage = {
+				"asset/ui/recruit/" .. btnImage .. "1.png",
+				"asset/ui/recruit/" .. btnImage .. "1.png",
+				"asset/ui/recruit/ck_btn_com_1.png"
 			}
 		end
 
@@ -1138,6 +1191,7 @@ function RecruitMainMediator:updateView()
 	self:refreshActivityNode()
 	self:refreshLeftTopNode()
 	self:refreshMiddleTime()
+	self:refreshActivityUpView()
 	self:runNodeActions()
 	self:refreshUREQuipInfo()
 
@@ -1685,6 +1739,128 @@ function RecruitMainMediator:setupResultClickEnvs()
 	end
 
 	storyDirector:notifyWaiting("enter_recruitHeroDiamondResul_view")
+end
+
+function RecruitMainMediator:refreshActivityUpView()
+	local up1 = self._main:getChildByName("Node_1Up")
+	local up2 = self._main:getChildByName("Node_2Up")
+	local previewType = self._recruitDataShow:getPreview().type
+
+	if previewType ~= "1UP" and previewType ~= "2UP" then
+		up1:setVisible(false)
+		up2:setVisible(false)
+
+		return
+	end
+
+	local previewImg = self._recruitDataShow:getPreview().img
+
+	local function setName(node, rect, size)
+		local name = node:getChildByName("name")
+
+		name:setString("")
+		name:getParent():removeChildByName("richTextName")
+
+		local richTextName = ccui.RichText:createWithXML(self._recruitDataShow:getName(CUSTOM_TTF_FONT_1), {})
+
+		richTextName:setAnchorPoint(name:getAnchorPoint())
+		richTextName:setPosition(name:getPosition())
+		richTextName:addTo(name:getParent())
+		richTextName:renderContent(0, 0, true)
+		richTextName:setName("richTextName")
+
+		local namebg = node:getChildByName("namebg")
+
+		namebg:loadTexture(previewImg[1] .. ".png", ccui.TextureResType.plistType)
+		namebg:setScale9Enabled(true)
+
+		if previewType == "1UP" then
+			namebg:setCapInsets(cc.rect(80, 10, 1, 1))
+			namebg:setContentSize(cc.size(richTextName:getContentSize().width + 60, 38))
+		else
+			namebg:setCapInsets(cc.rect(1, 1, 1, 1))
+			namebg:setContentSize(cc.size(node:getChildByName("name1"):getContentSize().width + 50, 63))
+		end
+	end
+
+	local function setRole(node)
+		local heroInfo = self._recruitDataShow:getRoleDetail()
+
+		for i = 1, #heroInfo do
+			local heroId = heroInfo[i].hero
+			local config = ConfigReader:getRecordById("HeroBase", tostring(heroId))
+			local roleNode = node:getChildByName("roleNode" .. i)
+			local rolenamebg = roleNode:getChildByName("rolenamebg")
+			local rolerarity = roleNode:getChildByName("rolerarity")
+			local rolename = roleNode:getChildByName("rolename")
+			local roletag = roleNode:getChildByName("roletag")
+
+			rolerarity:loadTexture(GameStyle:getHeroRarityImage(config.Rareity), ccui.TextureResType.plistType)
+			rolename:setString(Strings:get(config.Name))
+			roletag:setString(Strings:get(config.Position))
+			rolenamebg:setContentSize(cc.size(rolename:getContentSize().width + 50, 48))
+
+			if previewType == "1UP" then
+				rolerarity:setPositionX(rolename:getContentSize().width / 2)
+			else
+				rolerarity:setPositionX(-rolename:getContentSize().width / 2 + 10)
+			end
+		end
+	end
+
+	local function setDesc(node)
+		local poolDesc = self._recruitDataShow:getPoolDesc()
+
+		for index, trans in ipairs(poolDesc) do
+			local descbg = node:getChildByName("descbg" .. index)
+
+			if descbg then
+				if previewType == "2UP" and index == 2 then
+					descbg:loadTexture(previewImg[3] .. ".png", ccui.TextureResType.plistType)
+				else
+					descbg:loadTexture(previewImg[2] .. ".png", ccui.TextureResType.plistType)
+				end
+
+				descbg:getParent():removeChildByName("descRichText" .. index)
+
+				local desc = ccui.RichText:createWithXML(Strings:get(trans, {
+					fontName = CUSTOM_TTF_FONT_1
+				}), {})
+
+				desc:setAnchorPoint(descbg:getAnchorPoint())
+				desc:addTo(descbg:getParent())
+				desc:renderContent(0, 0, true)
+				desc:setPosition(cc.p(descbg:getPositionX() - descX[previewType][index], descbg:getPositionY() + 5))
+				desc:setName("descRichText" .. index)
+				descbg:setScale9Enabled(true)
+				descbg:setCapInsets(descScale9[previewType][index])
+
+				if previewType == "1UP" then
+					descbg:setContentSize(cc.size(desc:getContentSize().width + descBgW[previewType][index], descBgH[previewType][index]))
+				else
+					descbg:setContentSize(cc.size(desc:getContentSize().width + descBgW[previewType][index], descBgH[previewType][index]))
+				end
+			end
+		end
+	end
+
+	local node = nil
+
+	if previewType == "1UP" then
+		up1:setVisible(true)
+		up2:setVisible(false)
+
+		node = up1
+	else
+		up2:setVisible(true)
+		up1:setVisible(false)
+
+		node = up2
+	end
+
+	setName(node)
+	setRole(node)
+	setDesc(node)
 end
 
 function RecruitMainMediator:refreshUREQuipInfo()

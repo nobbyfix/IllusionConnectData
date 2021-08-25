@@ -494,6 +494,10 @@ function BattleMainMediator:enterWithData(data)
 		battleShowQueue:addMasterShow(self._battleData.battleData.playerData, self._battleData.battleData.enemyData)
 	end
 
+	if self._battleData.battleData then
+		battleShowQueue:addBattleItemShow(self._battleData.battleData.playerData, self.battleUIMediator)
+	end
+
 	if self._delegate.onBattleStart then
 		self._delegate:onBattleStart(self, viewContext:getEventDispatcher())
 	end
@@ -684,6 +688,8 @@ function BattleMainMediator:showHero(heroBaseId)
 
 	if self._delegate.showHero then
 		self._delegate:showHero(heroBaseId, pauseFunc, resumeCallback)
+	else
+		resumeCallback()
 	end
 end
 
@@ -707,6 +713,30 @@ function BattleMainMediator:showMaster(friend, enemy)
 
 	if self._delegate.showMaster then
 		self._delegate:showMaster(friend, enemy, pauseFunc, resumeCallback)
+	else
+		resumeCallback()
+	end
+end
+
+function BattleMainMediator:showBattleItem(paseSta)
+	if self._pauseBlock then
+		return
+	end
+
+	local function resumeCallback()
+		if paseSta then
+			self:onResume()
+		end
+
+		local battleShowQueue = self._viewContext:getValue("BattleShowQueue")
+
+		if battleShowQueue then
+			battleShowQueue:show()
+		end
+	end
+
+	if self._delegate.showBattleItem then
+		self._delegate:showBattleItem(pauseFunc, resumeCallback, paseSta)
 	end
 end
 
@@ -1237,7 +1267,7 @@ function BattleMainMediator:setupDevMode()
 	local size = director:getVisibleSize()
 
 	winBtn:setAnchorPoint(cc.p(1, 0.5))
-	winBtn:setPosition(cc.p(size.width, size.height * 0.2))
+	winBtn:setPosition(cc.p(size.width - 140, size.height * 0.2))
 	winBtn:setScale(1.5)
 	self:getView():addChild(winBtn, BattleViewZOrder.Dev)
 end

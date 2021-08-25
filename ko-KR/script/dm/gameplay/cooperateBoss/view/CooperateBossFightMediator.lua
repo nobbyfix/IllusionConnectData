@@ -61,7 +61,7 @@ function CooperateBossFightMediator:initView()
 	self._bossLevel = self._main:getChildByFullName("BgBottom.level")
 	self._remainTime = self._main:getChildByFullName("TimeDi.time")
 	self._fightBtn = self._main:getChildByFullName("fight")
-	self._fifhtNum = self._main:getChildByFullName("Text_218")
+	self._fifhtNum = self._main:getChildByFullName("Text_Num")
 	self._des = self._main:getChildByFullName("BgBottom.text1")
 	self._qipaoText = self._main:getChildByFullName("qipao.text")
 	local lineGradiantVec1 = {
@@ -168,10 +168,13 @@ function CooperateBossFightMediator:refreashView()
 	local num1 = self._cooperatorBoss:getBossFightTimes().value or 0
 	local num2 = self._cooperatorBoss:getFightNumMax()
 
-	self._fifhtNum:setString(Strings:get("CooperateBoss_UI02", {
-		cur = num1,
-		total = num2
-	}))
+	self._fifhtNum:setString(tostring(num1) .. "/" .. tostring(num2))
+
+	if num1 <= 0 then
+		self._fifhtNum:setTextColor(cc.c3b(255, 117, 117))
+	else
+		self._fifhtNum:setTextColor(cc.c3b(255, 255, 255))
+	end
 
 	local mc = cc.MovieClip:create("xiangqingxunhuan_zhuxianguanka_UIjiaohudongxiao")
 
@@ -192,10 +195,13 @@ function CooperateBossFightMediator:refreshTimes()
 	local num1 = self._cooperatorBoss:getBossFightTimes().value or 0
 	local num2 = self._cooperatorBoss:getFightNumMax()
 
-	self._fifhtNum:setString(Strings:get("CooperateBoss_UI02", {
-		cur = num1,
-		total = num2
-	}))
+	self._fifhtNum:setString(tostring(num1) .. "/" .. tostring(num2))
+
+	if num1 <= 0 then
+		self._fifhtNum:setTextColor(cc.c3b(255, 117, 117))
+	else
+		self._fifhtNum:setTextColor(cc.c3b(255, 255, 255))
+	end
 end
 
 function CooperateBossFightMediator:onFigthClicked()

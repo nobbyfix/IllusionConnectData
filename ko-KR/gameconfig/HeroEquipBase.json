@@ -2032,6 +2032,44 @@
         ],
         "zoom": 0.6
     },
+    "Decoration_15104_1": {
+        "ATK": "UR_Decoration_ATK_AH",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "",
+        "Desc": "CO_Decoration_15104_1_Desc",
+        "HP": "UR_Decoration_HP_AH",
+        "Icon": "ico_equip_mahaaccess",
+        "Name": "Decoration_15104_1_Name",
+        "Position": "Decoration",
+        "Profession": [
+            "Summon"
+        ],
+        "ProfessionDesc": "",
+        "ProfessionType": 0,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "",
+        "Shine": "",
+        "Skill": "EquipSkill_Decoration_15104_1",
+        "Sort": 299016,
+        "StartEquipEndID": "Rareity15_DecorationStone1_8",
+        "StartEquipStarID": "Rareity15_DecorationStone1_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
     "Shoes_11001": {
         "ATK": "",
         "AttrEffect": "",
@@ -3570,6 +3608,44 @@
         "Sort": 299011,
         "StartEquipEndID": "Rareity15_Shoes3_8",
         "StartEquipStarID": "Rareity15_Shoes3_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
+    "Shoes_15104_1": {
+        "ATK": "",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "",
+        "Desc": "CO_Shoes_15104_1_Desc",
+        "HP": "UR_Shoes_HP",
+        "Icon": "ico_equip_mahashoes",
+        "Name": "Shoes_15104_1_Name",
+        "Position": "Shoes",
+        "Profession": [
+            "Summon"
+        ],
+        "ProfessionDesc": "",
+        "ProfessionType": 0,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "UR_Shoes_SPEED",
+        "Shine": "",
+        "Skill": "EquipSkill_Shoes_15104_1",
+        "Sort": 299015,
+        "StartEquipEndID": "Rareity15_Shoes1_8",
+        "StartEquipStarID": "Rareity15_Shoes1_1",
         "URUPSkillLV": [
             30,
             40,
@@ -5455,6 +5531,44 @@
         "Sort": 299010,
         "StartEquipEndID": "Rareity15_Top3_8",
         "StartEquipStarID": "Rareity15_Top3_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
+    "Tops_15104_1": {
+        "ATK": "",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "UR_Top_DEF",
+        "Desc": "CO_Tops_15104_1_Desc",
+        "HP": "UR_Top_HP",
+        "Icon": "ico_equip_mahacloth",
+        "Name": "Tops_15104_1_Name",
+        "Position": "Tops",
+        "Profession": [
+            "Summon"
+        ],
+        "ProfessionDesc": "",
+        "ProfessionType": 0,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "",
+        "Shine": "",
+        "Skill": "EquipSkill_Tops_15104_1",
+        "Sort": 299014,
+        "StartEquipEndID": "Rareity15_Top1_8",
+        "StartEquipStarID": "Rareity15_Top1_1",
         "URUPSkillLV": [
             30,
             40,
@@ -7873,7 +7987,7 @@
         "Position": "Weapon",
         "Profession": [
             "KTSJKe",
-            "KMLa",
+            "NXYYi",
             "YSuo"
         ],
         "ProfessionDesc": "",
@@ -7886,6 +8000,44 @@
         "Sort": 299009,
         "StartEquipEndID": "Rareity15_Weapon3_8",
         "StartEquipStarID": "Rareity15_Weapon3_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
+    "Weapon_15104_1": {
+        "ATK": "UR_Weapon_ATK",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "",
+        "Desc": "CO_Weapon_15104_1_Desc",
+        "HP": "",
+        "Icon": "ico_equip_mahaweapon",
+        "Name": "Weapon_15104_1_Name",
+        "Position": "Weapon",
+        "Profession": [
+            "LDu"
+        ],
+        "ProfessionDesc": "",
+        "ProfessionType": 1,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "",
+        "Shine": "",
+        "Skill": "EquipSkill_Weapon_15104_1",
+        "Sort": 299013,
+        "StartEquipEndID": "Rareity15_Weapon1_8",
+        "StartEquipStarID": "Rareity15_Weapon1_1",
         "URUPSkillLV": [
             30,
             40,

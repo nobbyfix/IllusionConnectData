@@ -410,7 +410,8 @@ function BattleSkillSystem:buildSkillsForActor_PassiveBuff(actor, skills, action
 			for _, entry in ipairs(triggeredActions) do
 				actions[entry.listener] = {
 					event = entry.event,
-					listener = entry.listener
+					listener = entry.listener,
+					timer = entry.timer
 				}
 			end
 		end
@@ -457,7 +458,8 @@ function BattleSkillSystem:setupTriggersForActorSkill_PassiveBuff(actor, skill, 
 
 		actions[entry.listener] = {
 			event = entry.event,
-			listener = entry.listener
+			listener = entry.listener,
+			timer = entry.timer
 		}
 	end
 end

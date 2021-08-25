@@ -2893,5 +2893,505 @@ all.Activity_San = {
 		return _env
 	end
 }
+all.Activity_Create_Glass = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.Duartion = externs.Duartion
+
+		if this.Duartion == nil then
+			this.Duartion = 10000
+		end
+
+		local passive = __action(this, {
+			name = "passive",
+			entry = prototype.passive
+		})
+		passive = global["[duration]"](this, {
+			0
+		}, passive)
+		this.passive = global["[schedule_in_cycles]"](this, {
+			this.Duartion
+		}, passive)
+		local passive2 = __action(this, {
+			name = "passive2",
+			entry = prototype.passive2
+		})
+		passive2 = global["[duration]"](this, {
+			0
+		}, passive2)
+		this.passive2 = global["[trigger_by]"](this, {
+			"UNIT_AFTER_UNIQUE"
+		}, passive2)
+		local passive3 = __action(this, {
+			name = "passive3",
+			entry = prototype.passive3
+		})
+		passive3 = global["[duration]"](this, {
+			0
+		}, passive3)
+		this.passive3 = global["[trigger_by]"](this, {
+			"UNIT_ENTER"
+		}, passive3)
+
+		return this
+	end,
+	passive = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.summonFactor = {
+			1,
+			1,
+			1
+		}
+
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local x = global.Random(_env, 1, 10)
+
+			if x > 3 then
+				local glass1 = global.Summon(_env, _env.ACTOR, "SummonedGlass1", this.summonFactor, nil, {
+					global.Random(_env, 1, 9)
+				})
+
+				if glass1 then
+					global.AddStatus(_env, glass1, "SummonedGlass1")
+
+					local buff1 = global.ImmuneBuff(_env, "DEBUFF")
+					local buff2 = global.ImmuneBuff(_env, "MURDERER")
+
+					global.ApplyBuff(_env, glass1, {
+						timing = 0,
+						duration = 99,
+						display = "",
+						tags = {
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buff1,
+						buff2
+					})
+					global.MarkSummoned(_env, glass1, false)
+
+					local buffeft = global.Offline(_env)
+
+					global.ApplyBuff(_env, glass1, {
+						timing = 0,
+						duration = 99,
+						tags = {
+							""
+						}
+					}, {
+						buffeft
+					})
+				end
+			else
+				local glass2 = global.SummonEnemy(_env, _env.ACTOR, "SummonedGlass2", this.summonFactor, nil, {
+					global.Random(_env, 1, 9)
+				})
+
+				if glass2 then
+					global.AddStatus(_env, glass2, "SummonedGlass2")
+
+					local buff1 = global.ImmuneBuff(_env, "DEBUFF")
+					local buff2 = global.ImmuneBuff(_env, "MURDERER")
+
+					global.ApplyBuff(_env, glass2, {
+						timing = 0,
+						duration = 99,
+						display = "",
+						tags = {
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buff1,
+						buff2
+					})
+					global.MarkSummoned(_env, glass2, false)
+
+					local buffeft = global.Offline(_env)
+
+					global.ApplyBuff(_env, glass2, {
+						timing = 0,
+						duration = 99,
+						tags = {
+							""
+						}
+					}, {
+						buffeft
+					})
+				end
+			end
+		end)
+
+		return _env
+	end,
+	passive2 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if _env.unit and global.INSTATUS(_env, "SummonedGlass1")(_env, _env.unit) then
+				local cellid = global.GetCellId(_env, _env.unit)
+
+				global.Kick(_env, _env.unit)
+
+				for _, card in global.__iter__(global.CardsOfPlayer(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "MLYDi1"))) do
+					global.RecruitCard(_env, card, {
+						-cellid
+					})
+
+					break
+				end
+			end
+		end)
+
+		return _env
+	end,
+	passive3 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.INSTATUS(_env, "SummonedGlass1")(_env, _env.unit) or global.INSTATUS(_env, "SummonedGlass2")(_env, _env.unit) then
+				global.ChangeActionLoop(_env, "stand", false, _env.unit)
+
+				local buffeft1 = global.Stealth(_env, 0.8)
+				local buffeft2 = global.Immune(_env)
+				local buffeft3 = global.HPRecoverRatioEffect(_env, -1)
+
+				global.ApplyBuff(_env, _env.unit, {
+					timing = 2,
+					duration = 99,
+					tags = {
+						"UNDISPELLABLE",
+						"STEALTH",
+						"UNSTEALABLE",
+						"Invisible_Immune"
+					}
+				}, {
+					buffeft1,
+					buffeft2,
+					buffeft3
+				})
+			end
+		end)
+
+		return _env
+	end
+}
+all.Activity_Create_Glass1 = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.Duartion = externs.Duartion
+
+		if this.Duartion == nil then
+			this.Duartion = 15000
+		end
+
+		local passive = __action(this, {
+			name = "passive",
+			entry = prototype.passive
+		})
+		passive = global["[duration]"](this, {
+			0
+		}, passive)
+		this.passive = global["[schedule_in_cycles]"](this, {
+			this.Duartion
+		}, passive)
+		local passive2 = __action(this, {
+			name = "passive2",
+			entry = prototype.passive2
+		})
+		passive2 = global["[duration]"](this, {
+			0
+		}, passive2)
+		this.passive2 = global["[trigger_by]"](this, {
+			"UNIT_AFTER_UNIQUE"
+		}, passive2)
+		local passive3 = __action(this, {
+			name = "passive3",
+			entry = prototype.passive3
+		})
+		passive3 = global["[duration]"](this, {
+			0
+		}, passive3)
+		this.passive3 = global["[trigger_by]"](this, {
+			"UNIT_ENTER"
+		}, passive3)
+
+		return this
+	end,
+	passive = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.summonFactor = {
+			1,
+			1,
+			1
+		}
+
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local x = global.Random(_env, 1, 10)
+
+			if x > 7 then
+				local glass1 = global.Summon(_env, _env.ACTOR, "SummonedGlass1", this.summonFactor, nil, {
+					global.Random(_env, 1, 9)
+				})
+
+				if glass1 then
+					global.AddStatus(_env, glass1, "SummonedGlass1")
+
+					local buff1 = global.ImmuneBuff(_env, "DEBUFF")
+					local buff2 = global.ImmuneBuff(_env, "MURDERER")
+
+					global.ApplyBuff(_env, glass1, {
+						timing = 0,
+						duration = 99,
+						display = "",
+						tags = {
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buff1,
+						buff2
+					})
+					global.MarkSummoned(_env, glass1, false)
+
+					local buffeft = global.Offline(_env)
+
+					global.ApplyBuff(_env, glass1, {
+						timing = 0,
+						duration = 99,
+						tags = {
+							""
+						}
+					}, {
+						buffeft
+					})
+				end
+			else
+				local glass2 = global.SummonEnemy(_env, _env.ACTOR, "SummonedGlass2", this.summonFactor, nil, {
+					global.Random(_env, 1, 9)
+				})
+
+				if glass2 then
+					global.AddStatus(_env, glass2, "SummonedGlass2")
+
+					local buff1 = global.ImmuneBuff(_env, "DEBUFF")
+					local buff2 = global.ImmuneBuff(_env, "MURDERER")
+
+					global.ApplyBuff(_env, glass2, {
+						timing = 0,
+						duration = 99,
+						display = "",
+						tags = {
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buff1,
+						buff2
+					})
+					global.MarkSummoned(_env, glass2, false)
+
+					local buffeft1 = global.Offline(_env)
+					local buffeft2 = global.Daze(_env)
+
+					global.ApplyBuff(_env, glass2, {
+						timing = 0,
+						duration = 99,
+						tags = {
+							""
+						}
+					}, {
+						buffeft1,
+						buffeft2
+					})
+				end
+			end
+		end)
+
+		return _env
+	end,
+	passive2 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if _env.unit and global.INSTATUS(_env, "SummonedGlass1")(_env, _env.unit) then
+				local cellid = global.GetCellId(_env, _env.unit)
+
+				global.Kick(_env, _env.unit)
+
+				for _, card in global.__iter__(global.CardsOfPlayer(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "MLYDi1"))) do
+					global.RecruitCard(_env, card, {
+						-cellid
+					})
+
+					break
+				end
+			end
+		end)
+
+		return _env
+	end,
+	passive3 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.INSTATUS(_env, "SummonedGlass1")(_env, _env.unit) or global.INSTATUS(_env, "SummonedGlass2")(_env, _env.unit) then
+				global.ChangeActionLoop(_env, "stand", false, _env.unit)
+
+				local buffeft1 = global.Stealth(_env, 0.8)
+				local buffeft2 = global.Immune(_env)
+				local buffeft3 = global.HPRecoverRatioEffect(_env, -1)
+
+				global.ApplyBuff(_env, _env.unit, {
+					timing = 2,
+					duration = 99,
+					tags = {
+						"UNDISPELLABLE",
+						"STEALTH",
+						"UNSTEALABLE",
+						"Invisible_Immune"
+					}
+				}, {
+					buffeft1,
+					buffeft2,
+					buffeft3
+				})
+			end
+		end)
+
+		return _env
+	end
+}
+all.Skill_JZi1_Unique = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		local main = __action(this, {
+			name = "main",
+			entry = prototype.main
+		})
+		this.main = global["[duration]"](this, {
+			500
+		}, main)
+
+		return this
+	end,
+	main = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local buffeft1 = global.NumericEffect(_env, "-atk", {
+				"+Normal",
+				"+Normal"
+			}, 0)
+
+			global.ApplyBuff(_env, _env.ACTOR, {
+				timing = 0,
+				duration = 99,
+				tags = {
+					"Jingzi"
+				}
+			}, {
+				buffeft1
+			})
+			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.ACTOR), 100, "skill1"))
+			global.Sound(_env, "Se_Skill_Glass_Broken", 1)
+		end)
+
+		return _env
+	end
+}
 
 return _M

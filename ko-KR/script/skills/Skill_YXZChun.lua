@@ -332,7 +332,14 @@ all.Skill_YXZChun_Passive = {
 			end
 
 			if num < 2 then
-				local SummonedYXZChun = global.Summon(_env, _env.ACTOR, "SummonedYXZChun", this.summonFactor, nil, {
+				local atk = global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR)
+				local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.ACTOR)
+				local deta_hp = global.max(_env, 0, maxHp * this.summonFactorHp - atk * 10)
+				local SummonedYXZChun = global.Summon(_env, _env.ACTOR, "SummonedYXZChun", this.summonFactor, {
+					-deta_hp,
+					0,
+					0
+				}, {
 					5,
 					4,
 					6,
@@ -389,24 +396,6 @@ all.Skill_YXZChun_Passive = {
 
 			if global.INSTATUS(_env, "SummonedYXZChun")(_env, _env.unit) then
 				global.ApplyRPRecovery(_env, _env.unit, this.RageFactor)
-
-				local atk = global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR)
-				local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.unit)
-
-				if maxHp > atk * 10 then
-					local buff = global.MaxHpEffect(_env, -(maxHp - atk * 10))
-
-					global.ApplyBuff(_env, _env.unit, {
-						timing = 0,
-						duration = 99,
-						tags = {
-							"UNDISPELLABLE",
-							"UNSTEALABLE"
-						}
-					}, {
-						buff
-					})
-				end
 			end
 		end)
 
@@ -939,7 +928,14 @@ all.Skill_YXZChun_Passive_EX = {
 			end
 
 			if num < 2 then
-				local SummonedYXZChun = global.Summon(_env, _env.ACTOR, "SummonedYXZChun", this.summonFactor, nil, {
+				local atk = global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR)
+				local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.ACTOR)
+				local deta_hp = global.max(_env, 0, maxHp * this.summonFactorHp - atk * 10)
+				local SummonedYXZChun = global.Summon(_env, _env.ACTOR, "SummonedYXZChun", this.summonFactor, {
+					-deta_hp,
+					0,
+					0
+				}, {
 					5,
 					4,
 					6,
@@ -996,25 +992,6 @@ all.Skill_YXZChun_Passive_EX = {
 
 			if global.INSTATUS(_env, "SummonedYXZChun")(_env, _env.unit) then
 				global.ApplyRPRecovery(_env, _env.unit, this.RageFactor)
-
-				local atk = global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR)
-				local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.unit)
-
-				if maxHp > atk * 10 then
-					local buff = global.MaxHpEffect(_env, -(maxHp - atk * 10))
-
-					global.ApplyBuff(_env, _env.unit, {
-						timing = 0,
-						duration = 99,
-						tags = {
-							"UNDISPELLABLE",
-							"UNSTEALABLE"
-						}
-					}, {
-						buff
-					})
-				end
-
 				global.CloneBuff(_env, _env.unit, _env.ACTOR, global.BUFF_MARKED_ALL(_env, "BUFF"))
 			end
 		end)

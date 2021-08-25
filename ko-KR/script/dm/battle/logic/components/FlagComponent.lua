@@ -11,6 +11,7 @@ kBEProvoked = "PROVOKED"
 kBEStealth = "STEALTH"
 kBEDiligent = "DILIGENT"
 kBECurse = "CURSE"
+kBEOffline = "OFFLINE"
 FlagComponent = class("FlagComponent", BaseComponent, _M)
 
 function FlagComponent:initialize()

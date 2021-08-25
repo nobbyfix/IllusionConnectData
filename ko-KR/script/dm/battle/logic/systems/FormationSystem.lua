@@ -523,8 +523,8 @@ function FormationSystem:revive(actor, hpRatio, anger, location)
 	return newUnit, detail
 end
 
-function FormationSystem:reviveByUnit(actor, unit, hpRatio, anger, location)
-	local player = actor:getOwner()
+function FormationSystem:reviveByUnit(actor, unit, hpRatio, anger, location, owner)
+	local player = owner or actor:getOwner()
 	local cellId = self._battleField:findEmptyCellId(player:getSide(), location)
 
 	if not cellId then
@@ -740,6 +740,11 @@ function FormationSystem:clearOldResident(actor)
 				self:_kickUnit(oldResident)
 
 				if self._eventCenter then
+					self._eventCenter:dispatchEvent("UnitsWillLeave", {
+						oldResident
+					}, self:_groupUnitsByPlayer({
+						oldResident
+					}))
 					self._eventCenter:dispatchEvent("UnitsLeft", {
 						oldResident
 					}, self:_groupUnitsByPlayer({

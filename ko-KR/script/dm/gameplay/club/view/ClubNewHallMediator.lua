@@ -82,6 +82,10 @@ local kBtnHandlers = {
 	["main.leftnode.auditBtn"] = {
 		clickAudio = "Se_Click_Common_1",
 		func = "onClickAudit"
+	},
+	infoBtn = {
+		clickAudio = "Se_Click_Common_1",
+		func = "onClickInfo"
 	}
 }
 local kSortTypeFunc = {
@@ -1080,6 +1084,10 @@ function ClubNewHallMediator:onClickAudit(sender, eventType)
 
 		self:dispatch(event)
 	end
+end
+
+function ClubNewHallMediator:onClickInfo(sender, eventType)
+	RuleFactory:showRules(self, nil, "Group_GuidePic")
 end
 
 function ClubNewHallMediator:requestAuditData()

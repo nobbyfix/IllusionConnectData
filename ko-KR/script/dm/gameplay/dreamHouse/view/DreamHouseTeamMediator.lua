@@ -183,17 +183,61 @@ function DreamHouseTeamMediator:initData(data)
 		teamPetIndex = teamPetIndex + 1
 	end
 
-	self._petList = self._stageSystem:getNotOnTeamPet(self._teamPets)
-	self._petListAll = {}
+	local petList = self._stageSystem:getNotOnTeamPet(self._teamPets)
+	local campCond = ConfigReader:getDataByNameIdAndKey("DreamHouseBattle", self._battleId, "Camp")
 
-	table.copy(self._petList, self._petListAll)
+	if campCond == nil or #campCond == 0 then
+		self._petList = petList
+		self._petListAll = {}
+
+		table.copy(self._petList, self._petListAll)
+	else
+		self._petList = {}
+
+		for i = 1, #petList do
+			local heroId = petList[i]
+			local heroInfo = self._heroSystem:getHeroById(heroId)
+
+			for j = 1, #campCond do
+				if heroInfo:getParty() == campCond[j] then
+					table.insert(self._petList, heroId)
+				end
+			end
+		end
+
+		self._petListAll = {}
+
+		table.copy(self._petList, self._petListAll)
+	end
 end
 
 function DreamHouseTeamMediator:updateData()
-	self._petList = self._stageSystem:getNotOnTeamPet(self._teamPets)
-	self._petListAll = {}
+	local petList = self._stageSystem:getNotOnTeamPet(self._teamPets)
+	local campCond = ConfigReader:getDataByNameIdAndKey("DreamHouseBattle", self._battleId, "Camp")
 
-	table.copy(self._petList, self._petListAll)
+	if campCond == nil or #campCond == 0 then
+		self._petList = petList
+		self._petListAll = {}
+
+		table.copy(self._petList, self._petListAll)
+	else
+		self._petList = {}
+
+		for i = 1, #petList do
+			local heroId = petList[i]
+			local heroInfo = self._heroSystem:getHeroById(heroId)
+
+			for j = 1, #campCond do
+				if heroInfo:getParty() == campCond[j] then
+					table.insert(self._petList, heroId)
+				end
+			end
+		end
+
+		self._petListAll = {}
+
+		table.copy(self._petList, self._petListAll)
+	end
 end
 
 function DreamHouseTeamMediator:removeExceptHeros(heros)
@@ -1309,10 +1353,32 @@ function DreamHouseTeamMediator:onClickOneKeyBreak()
 	self._teamView:stopScroll()
 
 	local petListTemp = self._stageSystem:getNotOnTeamPet(self._forceTeam)
-	self._teamPets = table.deepcopy(self._forceTeam, {})
-	self._petList = {}
+	local campCond = ConfigReader:getDataByNameIdAndKey("DreamHouseBattle", self._battleId, "Camp")
 
-	table.copy(petListTemp, self._petList)
+	if campCond == nil or #campCond == 0 then
+		self._teamPets = table.deepcopy(self._forceTeam, {})
+		self._petList = {}
+
+		table.copy(petListTemp, self._petList)
+	else
+		self._teamPets = table.deepcopy(self._forceTeam, {})
+		self._petList = {}
+		local tmpHeros = {}
+
+		for i = 1, #petListTemp do
+			local heroId = petListTemp[i]
+			local heroInfo = self._heroSystem:getHeroById(heroId)
+
+			for j = 1, #campCond do
+				if heroInfo:getParty() == campCond[j] then
+					table.insert(tmpHeros, heroId)
+				end
+			end
+		end
+
+		table.copy(tmpHeros, self._petList)
+	end
+
 	self:refreshListView(true)
 	self:refreshPetNode()
 end
@@ -1417,7 +1483,7 @@ end
 function DreamHouseTeamMediator:initLockIconsByDreamChallenge()
 	local maxShowNum = 10
 
-	for i = 1, maxShowNum do
+	for i = self._maxTeamPetNum + 1, maxShowNum do
 		local condition, buildId = nil
 		local type = ""
 		local showAnim = false

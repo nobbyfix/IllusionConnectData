@@ -356,11 +356,4 @@ function ClubMediator:onClickBack(sender, eventType)
 end
 
 function ClubMediator:setupClickEnvs()
-	local sequence = cc.Sequence:create(cc.CallFunc:create(function ()
-		local storyDirector = self:getInjector():getInstance(story.StoryDirector)
-
-		storyDirector:notifyWaiting("enter_ClubMediator")
-	end))
-
-	self:getView():runAction(sequence)
 end

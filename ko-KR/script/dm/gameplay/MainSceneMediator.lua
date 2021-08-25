@@ -208,6 +208,9 @@ local muiscCfg = {
 	},
 	ActivityTerrorMainView = {
 		noAutoPlay = true
+	},
+	ActivityRiddleMainView = {
+		noAutoPlay = true
 	}
 }
 local UINavigateHistory = {}

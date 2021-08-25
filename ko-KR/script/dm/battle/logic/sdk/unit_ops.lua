@@ -251,6 +251,20 @@ function exports.SwitchActionTo(env, srcAnim, desAnim, target)
 	})
 end
 
+function exports.ChangeActionLoop(env, desAnim, isLoop, target)
+	local actor = env["$actor"]
+
+	if target then
+		actor = target
+	end
+
+	env.global.RecordImmediately(env, actor:getId(), "ChangeActionLoop", {
+		act = env["$id"],
+		isLoop = isLoop,
+		desAnim = desAnim
+	})
+end
+
 function exports.SetDisplayZorder(env, unit, zorder)
 	env.global.RecordImmediately(env, unit:getId(), "SetDisplayZorder", {
 		act = env["$id"],

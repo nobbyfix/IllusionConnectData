@@ -103,8 +103,33 @@ function TaskSystem:synchronizeAchieveTask(data)
 	end
 end
 
-function TaskSystem:getLivenessList()
+function TaskSystem:getLivenessRewardConfig()
 	local configList = ConfigReader:getDataByNameIdAndKey("ConfigValue", "ActiveReward", "content")
+	local data = configList
+
+	if configList[1] and configList[1].level then
+		local actLevel = self._taskListModel:getActivityLevel()
+
+		for i, v in pairs(configList) do
+			if v.level[1] and v.level[2] then
+				if tonumber(v.level[1]) <= tonumber(actLevel) and tonumber(actLevel) <= tonumber(v.level[2]) then
+					data = v.reward
+
+					break
+				end
+			elseif v.level[1] and tonumber(v.level[1]) <= tonumber(actLevel) then
+				data = v.reward
+
+				break
+			end
+		end
+	end
+
+	return data
+end
+
+function TaskSystem:getLivenessList()
+	local configList = self:getLivenessRewardConfig()
 	local livenessList = {}
 
 	for k, v in pairs(configList) do
@@ -119,7 +144,7 @@ function TaskSystem:getLivenessList()
 end
 
 function TaskSystem:getLivenessRewardByType(rType)
-	local configList = ConfigReader:getDataByNameIdAndKey("ConfigValue", "ActiveReward", "content")
+	local configList = self:getLivenessRewardConfig()
 	local rewardId = nil
 
 	for k, v in pairs(configList) do

@@ -125,6 +125,7 @@ function BattleRoleObject:initialize(id, dataModel, viewContext)
 	self._isLeftTeam = self:isLeft()
 	self._actionTransform = {}
 	self._actionTransformRevise = {}
+	self._actionLoopMap = {}
 
 	self:setupViewContext(viewContext)
 
@@ -1160,6 +1161,16 @@ function BattleRoleObject:watchAnimAction()
 		end
 
 		adjustWinOrLoseZorder(animName)
+
+		if self._actionLoopMap[animName] ~= nil then
+			isloop = self._actionLoopMap[animName]
+			local totalFrame = anim:getAnimationFrames(animName)
+
+			anim:playAnimationInFrameIndex(0, animName, totalFrame - 2, false)
+
+			return
+		end
+
 		playAnimation(anim, frameIndex, animName, isloop)
 	end
 
@@ -1932,6 +1943,13 @@ function BattleRoleObject:switchAction(srcAnim, descAnim)
 				break
 			end
 		end
+	end
+end
+
+function BattleRoleObject:changeActionLoop(descAnim, isLoop)
+	if self._roleAnim:hasAnimation(descAnim) then
+		self._actionLoopMap = self._actionLoopMap or {}
+		self._actionLoopMap[descAnim] = isLoop
 	end
 end
 
@@ -7656,6 +7674,48 @@ function BattleRoleObject:setHSVColor(hue, contrast, brightness, saturation)
 	--- BLOCK #8 43-43, warpins: 2 ---
 	return
 	--- END OF BLOCK #8 ---
+
+
+
+end
+
+function BattleRoleObject:showAtkAndDef(atk, def)
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #0 1-3, warpins: 1 ---
+	--- END OF BLOCK #0 ---
+
+	slot3 = if not self._atkdefLabel then
+	JUMP TO BLOCK #1
+	else
+	JUMP TO BLOCK #2
+	end
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #1 4-34, warpins: 1 ---
+	self._atkdefLabel = cc.Label:createWithTTF(weight, TTF_FONT_FZYH_M, 15)
+
+	self._atkdefLabel:addTo(self:getView()):offset(2, 200)
+	self._atkdefLabel:setColor(cc.c3b(0, 255, 0))
+	--- END OF BLOCK #1 ---
+
+	FLOW; TARGET BLOCK #2
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #2 35-53, warpins: 2 ---
+	self._atkdefLabel:setString("")
+
+	local desc = "atk:" .. atk .. "\n"
+	local desc = desc .. "def:" .. def
+
+	self._atkdefLabel:setString(desc)
+
+	return
+	--- END OF BLOCK #2 ---
 
 
 

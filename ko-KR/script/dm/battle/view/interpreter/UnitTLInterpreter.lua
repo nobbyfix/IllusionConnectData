@@ -829,6 +829,13 @@ function UnitTLInterpreter:act_SwitchActionTo(action, args)
 	self._unit:switchAction(actionSrc, actionDes)
 end
 
+function UnitTLInterpreter:act_ChangeActionLoop(action, args)
+	local isLoop = args.isLoop
+	local actionDes = args.desAnim
+
+	self._unit:changeActionLoop(actionDes, isLoop)
+end
+
 function UnitTLInterpreter:act_ClearAllSwitchAction(action, args)
 	self._unit:clearAllTransformAction()
 end
@@ -1661,6 +1668,13 @@ function UnitTLInterpreter:act_SetHSVColor(action, args)
 	local saturation = args.saturation or 0
 
 	self._unit:setHSVColor(hue, contrast, brightness, saturation)
+end
+
+function UnitTLInterpreter:act_ShowAtkAndDef(action, args)
+	local atk = args.detail.atk or 0
+	local def = args.detail.def or 0
+
+	self._unit:showAtkAndDef(atk, def)
 end
 
 function UnitTLInterpreter:act_SetRootVisible(action, args)

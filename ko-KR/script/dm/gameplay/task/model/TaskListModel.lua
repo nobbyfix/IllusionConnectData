@@ -39,6 +39,9 @@ TaskListModel:has("_achieveTaskMap", {
 TaskListModel:has("_achieveTaskList", {
 	is = "rw"
 })
+TaskListModel:has("_activityLevel", {
+	is = "rw"
+})
 
 TaskType = {
 	kURMap = 9,
@@ -264,6 +267,10 @@ function TaskListModel:updateTasks(data)
 
 	if data.dailyAcPoint then
 		self._dayLiveness = data.dailyAcPoint
+	end
+
+	if data.activityLevel then
+		self._activityLevel = data.activityLevel
 	end
 
 	self._hasSync = true

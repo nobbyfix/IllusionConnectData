@@ -338,6 +338,13 @@ function TabBtnWidget:_bindBtnText(btn, config)
 		assert(lightImg ~= nil, "TabImage LightImg: " .. tabImage[2] .. " is nil")
 		lightImg:setAnchorPoint(0.5, 0.5)
 		lightImg:addTo(btnNode.lightNode):setScale(self._tabImageScale)
+
+		if tabImage[3] then
+			local bg = cc.Sprite:create(tabImage[3])
+
+			bg:setAnchorPoint(0.5, 0.5)
+			bg:addTo(btnNode.lightNode):setScale(self._tabImageScale)
+		end
 	else
 		local anim = cc.MovieClip:create("chang_anniu")
 

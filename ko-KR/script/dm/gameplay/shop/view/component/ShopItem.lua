@@ -341,7 +341,9 @@ function ShopItem:refreshTimes()
 		self._duihuanText:setString(str)
 		self._times:setString("")
 		self._times1:setString("")
-	elseif times1 == 0 then
+	end
+
+	if times1 == 0 then
 		if self._shopId ~= ShopSpecialId.kShopSurface then
 			self:setMarkImg(kMarkImgAndStr.SoldOutMark)
 		else
@@ -516,6 +518,7 @@ function ShopItem:setRecommendImg(tagData)
 
 	label:setString(str)
 	label:enableOutline(outline, 2)
+	image:setVisible(self._data:getStock() ~= 0)
 end
 
 function ShopItem:setDiscountImg(costOff)

@@ -125,7 +125,7 @@
         "HeadName": "AMLBLTe_HeadName",
         "HeroMasterId": "AMLBLTe",
         "IconPath": "asset/heros/AMLBLTe/battlepic_jian.png",
-        "IsHiddenHead": 1,
+        "IsHiddenHead": 0,
         "SurfaceMasterId": "",
         "Type": 1,
         "UnlockDesc": "AMLBLTe_HeadUnlock",
@@ -312,7 +312,7 @@
         "HeadName": "CLMan_7_HeadName",
         "HeroMasterId": "CLMan",
         "IconPath": "asset/heros/nna_uniform/battlepic_nna_uniform.png",
-        "IsHiddenHead": 1,
+        "IsHiddenHead": 0,
         "SurfaceMasterId": "Surface_CLMan_7",
         "Type": 5,
         "UnlockDesc": "CLMan_7_HeadUnlock",
@@ -950,7 +950,7 @@
         "HeadName": "MLYDi_HeadName",
         "HeroMasterId": "MLYDi",
         "IconPath": "asset/heros/MLYDi/battlepic_jni.png",
-        "IsHiddenHead": 1,
+        "IsHiddenHead": 0,
         "SurfaceMasterId": "",
         "Type": 1,
         "UnlockDesc": "MLYDi_HeadUnlock",
@@ -1396,6 +1396,17 @@
         "UnlockDesc": "SLWan_HeadUnlock",
         "Zoom": 0.5
     },
+    "Head_SP_KTSJKe": {
+        "HeadDesc": "HeroBase_Desc_SP_KTSJKe",
+        "HeadName": "SP_KTSJKe_HeadName",
+        "HeroMasterId": "SP_KTSJKe",
+        "IconPath": "asset/heros/SP_KTSJKe/battlepic_sp_hxi.png",
+        "IsHiddenHead": 1,
+        "SurfaceMasterId": "",
+        "Type": 1,
+        "UnlockDesc": "SP_KTSJKe_HeadUnlock",
+        "Zoom": 0.5
+    },
     "Head_SP_PNCao": {
         "HeadDesc": "HeroBase_Desc_SP_PNCao",
         "HeadName": "SP_PNCao_HeadName",
@@ -1504,6 +1515,17 @@
         "SurfaceMasterId": "",
         "Type": 1,
         "UnlockDesc": "TLSi_HeadUnlock",
+        "Zoom": 0.5
+    },
+    "Head_TLSi_2": {
+        "HeadDesc": "Surface_TLSi_artist_Desc",
+        "HeadName": "TLSi_2_HeadName",
+        "HeroMasterId": "TLSi",
+        "IconPath": "asset/heros/lda_artist/battlepic_lda_artist.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "Surface_TLSi_2",
+        "Type": 5,
+        "UnlockDesc": "TLSi_2_HeadUnlock",
         "Zoom": 0.5
     },
     "Head_TPGZhu": {
@@ -1625,6 +1647,17 @@
         "SurfaceMasterId": "",
         "Type": 1,
         "UnlockDesc": "XHMao_HeadUnlock",
+        "Zoom": 0.5
+    },
+    "Head_XLDBLTe": {
+        "HeadDesc": "HeroBase_Desc_XLDBLTe",
+        "HeadName": "XLDBLTe_HeadName",
+        "HeroMasterId": "XLDBLTe",
+        "IconPath": "asset/heros/XLDBLTe/battlepic_agnsi.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "",
+        "Type": 1,
+        "UnlockDesc": "XLDBLTe_HeadUnlock",
         "Zoom": 0.5
     },
     "Head_XLai": {
@@ -1841,7 +1874,7 @@
         "HeadName": "YXZChun_HeadName",
         "HeroMasterId": "YXZChun",
         "IconPath": "asset/heros/qjwan/battlepic_qjwan.png",
-        "IsHiddenHead": 1,
+        "IsHiddenHead": 0,
         "SurfaceMasterId": "",
         "Type": 1,
         "UnlockDesc": "YXZChun_HeadUnlock",
@@ -1896,7 +1929,7 @@
         "HeadName": "ZTXChang_4_HeadName",
         "HeroMasterId": "ZTXChang",
         "IconPath": "asset/heros/cxxye_uniform/battlepic_cxxye_uniform.png",
-        "IsHiddenHead": 1,
+        "IsHiddenHead": 0,
         "SurfaceMasterId": "Surface_ZTXChang_4",
         "Type": 5,
         "UnlockDesc": "ZTXChang_4_HeadUnlock",
@@ -2131,6 +2164,17 @@
         "SurfaceMasterId": "",
         "Type": 4,
         "UnlockDesc": "HeroAwaken_MTZMEShi",
+        "Zoom": 1.0
+    },
+    "HeroAwaken_PDLa": {
+        "HeadDesc": "HeroAwaken_PDLa_Desc",
+        "HeadName": "HeroAwaken_PDLa_1_Name",
+        "HeroMasterId": "PDLa",
+        "IconPath": "asset/heros/PDLa/battlepic_ansi_awaken.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "",
+        "Type": 4,
+        "UnlockDesc": "HeroAwaken_PDLa",
         "Zoom": 1.0
     },
     "HeroAwaken_SDTZi": {

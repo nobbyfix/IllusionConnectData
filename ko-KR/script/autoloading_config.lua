@@ -1,6 +1,11 @@
 module(...)
 
 local mappings = {
+	BattleItemMediator = {
+		url = "dm.battle.view.BattleItemMediator",
+		name = "BattleItemMediator",
+		type = "@C"
+	},
 	EVT_REQUEST_LOGIN_SUCC = {
 		url = "dm.launch.login.LoginSystem",
 		name = "EVT_REQUEST_LOGIN_SUCC",
@@ -1246,6 +1251,11 @@ local mappings = {
 		name = "EliteTaskActivityMediator",
 		type = "@C"
 	},
+	ActivityMailMediator = {
+		url = "dm.gameplay.activity.view.ActivityMailMediator",
+		name = "ActivityMailMediator",
+		type = "@C"
+	},
 	CommonEightDayLoginMediator = {
 		url = "dm.gameplay.activity.view.CommonEightDayLoginMediator",
 		name = "CommonEightDayLoginMediator",
@@ -1554,6 +1564,11 @@ local mappings = {
 	TaskActivityMediator = {
 		url = "dm.gameplay.activity.view.TaskActivityMediator",
 		name = "TaskActivityMediator",
+		type = "@C"
+	},
+	ActivityRiddleVoteMediator = {
+		url = "dm.gameplay.activity.view.ActivityRiddleVoteMediator",
+		name = "ActivityRiddleVoteMediator",
 		type = "@C"
 	},
 	ActivityTaskReachedMediator = {

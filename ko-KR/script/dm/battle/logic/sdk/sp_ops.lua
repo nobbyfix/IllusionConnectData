@@ -554,7 +554,15 @@ function exports.BackToExtraWindow(env, unit, windowIndex)
 end
 
 function exports.GetCardWindowIndex(env, unit)
+	if not unit then
+		return 0
+	end
+
 	local cardInfo = unit:getCardInfo()
+
+	if not cardInfo then
+		return 0
+	end
 
 	if cardInfo.cardIndex then
 		return cardInfo.cardIndex

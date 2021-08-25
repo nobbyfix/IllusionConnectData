@@ -312,6 +312,11 @@ local kExtResponseMap = {
 		instanceName = "DreamHouseSystem",
 		funcName = "tryEnter",
 		entry = ViewAreaEntry:new("DreamHouseMainView")
+	},
+	ActivityMailView = {
+		instanceName = "ActivitySystem",
+		funcName = "tryEnterActivityMailView",
+		entry = ViewAreaEntry:new("ActivityMailView")
 	}
 }
 

@@ -19,6 +19,7 @@ function BattleActionScheduler:reset(battleContext)
 	end
 
 	self._userActions = {}
+	self._extraActions = {}
 end
 
 function BattleActionScheduler:setFinished()
@@ -205,6 +206,44 @@ function BattleActionScheduler:exertSpecificSkill(actor, skill)
 	return true
 end
 
+function BattleActionScheduler:exertExtraSkill(actor, skill)
+	if self._finished then
+		return false, "Finished"
+	end
+
+	local specificAction = BattleSpecificSkillAction:new(skill):withActor(actor)
+
+	self:addExtraSkillAction(specificAction)
+
+	return true
+end
+
+function BattleActionScheduler:addExtraSkillAction(action)
+	self._extraActions[#self._extraActions + 1] = action
+end
+
+function BattleActionScheduler:updateExtraSkill(dt, battleContext)
+	if self._finished then
+		return false, "Finished"
+	end
+
+	self._runningExtraActions = self._runningExtraActions or {}
+
+	for k, v in pairs(self._extraActions) do
+		if not self._runningExtraActions[v] then
+			self._runningExtraActions[v] = v
+
+			self._runningExtraActions[v]:start(battleContext, function ()
+				self._runningExtraActions[v] = nil
+
+				self:removeActionFromSequence(self._extraActions, v)
+			end)
+		else
+			self._runningExtraActions[v]:update(dt)
+		end
+	end
+end
+
 function BattleActionScheduler:update(dt, battleContext)
 	local running = false
 
@@ -290,6 +329,8 @@ function BattleActionScheduler:update(dt, battleContext)
 			end
 		until true
 	end
+
+	self:updateExtraSkill(dt, battleContext)
 
 	return running
 end

@@ -56,7 +56,13 @@ function RecruitPool:getType()
 	return self._config.DrawCardType
 end
 
-function RecruitPool:getName()
+function RecruitPool:getName(fontName)
+	if fontName then
+		return Strings:get(self._config.DrawCardName, {
+			fontName = fontName
+		})
+	end
+
 	return Strings:get(self._config.DrawCardName)
 end
 
@@ -160,6 +166,10 @@ end
 
 function RecruitPool:getPoolInfo()
 	return self._config.DrawCardUPDesc or {}
+end
+
+function RecruitPool:getPoolDesc()
+	return self._config.UPDesc or {}
 end
 
 function RecruitPool:getRoleDetail()

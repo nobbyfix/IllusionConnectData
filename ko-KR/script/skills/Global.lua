@@ -1300,6 +1300,19 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 		end
 	end
 
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED_ALL(_env, "SP_KTSJKe_Passive_Key")) > 0 then
+		local MaxHpRateFactor = global.SpecialPropGetter(_env, "sp_hexi_special_maxhp")(_env, actor)
+		local AtkFactor = global.SpecialPropGetter(_env, "sp_hexi_special_atk")(_env, actor)
+		local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, target)
+		local ExDmg = 0
+		local atk = global.UnitPropGetter(_env, "atk")(_env, actor)
+		ExDmg = global.min(_env, maxHp * MaxHpRateFactor, atk * AtkFactor)
+
+		if not global.MASTER(_env, target) then
+			damage.val = damage.val + ExDmg
+		end
+	end
+
 	local unique_hurtrate = global.SpecialPropGetter(_env, "unique_hurtrate")(_env, actor)
 
 	if unique_hurtrate and unique_hurtrate ~= 0 then
@@ -1800,6 +1813,19 @@ function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimi
 			local atk = global.UnitPropGetter(_env, "atk")(_env, global.FriendMaster(_env))
 			ExDmg = global.min(_env, maxHp * MaxHpRateFactor, atk * AtkFactor)
 		end
+
+		if not global.MASTER(_env, target) then
+			damage.val = damage.val + ExDmg
+		end
+	end
+
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED_ALL(_env, "SP_KTSJKe_Passive_Key")) > 0 then
+		local MaxHpRateFactor = global.SpecialPropGetter(_env, "sp_hexi_special_maxhp")(_env, actor)
+		local AtkFactor = global.SpecialPropGetter(_env, "sp_hexi_special_atk")(_env, actor)
+		local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, target)
+		local ExDmg = 0
+		local atk = global.UnitPropGetter(_env, "atk")(_env, actor)
+		ExDmg = global.min(_env, maxHp * MaxHpRateFactor, atk * AtkFactor)
 
 		if not global.MASTER(_env, target) then
 			damage.val = damage.val + ExDmg
@@ -2338,6 +2364,19 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 			local atk = global.UnitPropGetter(_env, "atk")(_env, global.FriendMaster(_env))
 			ExDmg = global.min(_env, maxHp * MaxHpRateFactor, atk * AtkFactor) / total
 		end
+
+		if not global.MASTER(_env, target) then
+			damages[n].val = damages[n].val + ExDmg
+		end
+	end
+
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED_ALL(_env, "SP_KTSJKe_Passive_Key")) > 0 then
+		local MaxHpRateFactor = global.SpecialPropGetter(_env, "sp_hexi_special_maxhp")(_env, actor)
+		local AtkFactor = global.SpecialPropGetter(_env, "sp_hexi_special_atk")(_env, actor)
+		local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, target)
+		local ExDmg = 0
+		local atk = global.UnitPropGetter(_env, "atk")(_env, actor)
+		ExDmg = global.min(_env, maxHp * MaxHpRateFactor, atk * AtkFactor) / total
 
 		if not global.MASTER(_env, target) then
 			damages[n].val = damages[n].val + ExDmg
@@ -2894,6 +2933,19 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 			local atk = global.UnitPropGetter(_env, "atk")(_env, global.FriendMaster(_env))
 			ExDmg = global.min(_env, maxHp * MaxHpRateFactor, atk * AtkFactor) / total
 		end
+
+		if not global.MASTER(_env, target) then
+			damages[n].val = damages[n].val + ExDmg
+		end
+	end
+
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED_ALL(_env, "SP_KTSJKe_Passive_Key")) > 0 then
+		local MaxHpRateFactor = global.SpecialPropGetter(_env, "sp_hexi_special_maxhp")(_env, actor)
+		local AtkFactor = global.SpecialPropGetter(_env, "sp_hexi_special_atk")(_env, actor)
+		local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, target)
+		local ExDmg = 0
+		local atk = global.UnitPropGetter(_env, "atk")(_env, actor)
+		ExDmg = global.min(_env, maxHp * MaxHpRateFactor, atk * AtkFactor) / total
 
 		if not global.MASTER(_env, target) then
 			damages[n].val = damages[n].val + ExDmg

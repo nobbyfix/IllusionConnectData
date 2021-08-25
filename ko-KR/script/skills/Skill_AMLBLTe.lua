@@ -226,21 +226,24 @@ all.Skill_AMLBLTe_Unique = {
 
 				local buffeft1 = global.DeathImmuneEffect(_env, 1)
 
-				global.DelayCall(_env, 200, global.ApplyBuff_Buff, _env.ACTOR, _env.ACTOR, {
-					timing = 0,
-					display = "Undead",
-					group = "AMLBLTe_Undead",
-					duration = 99,
-					limit = 3,
-					tags = {
-						"UNDEAD",
-						"STATUS",
-						"DISPELLABLE",
-						"UNSTEALABLE"
-					}
-				}, {
-					buffeft1
-				}, 1, 0)
+				if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "AMLBLTe_Undead")) == 0 then
+					global.DelayCall(_env, 200, global.ApplyBuff_Buff, _env.ACTOR, _env.ACTOR, {
+						timing = 0,
+						display = "Undead",
+						group = "AMLBLTe_Undead",
+						duration = 99,
+						limit = 1,
+						tags = {
+							"AMLBLTe_Undead",
+							"UNDEAD",
+							"STATUS",
+							"DISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buffeft1
+					}, 1, 0)
+				end
 			end
 		end)
 		exec["@time"]({
@@ -272,7 +275,7 @@ all.Skill_AMLBLTe_Unique = {
 			if units[1] then
 				global.Perform(_env, _env.ACTOR, global.Animation(_env, "skill3_2"))
 
-				shield = global.ShieldEffect(_env, atk * this.shieldFactor * 2)
+				shield = global.ShieldEffect(_env, atk * this.shieldFactor * 1.5)
 			else
 				global.Perform(_env, _env.ACTOR, global.Animation(_env, "skill3_3"))
 			end
@@ -559,7 +562,7 @@ all.Skill_Cross_Buff_AMLBLTe = {
 
 						global.ApplyBuff(_env, unit, {
 							duration = 99,
-							group = "Cross_Buff",
+							group = "Cross_Buff_AMLBLTe",
 							timing = 0,
 							limit = 1,
 							tags = {
@@ -628,7 +631,7 @@ all.Skill_Cross_Buff_AMLBLTe = {
 						global.DispelBuffTrap(_env, cell, global.BUFF_MARKED(_env, "AMLBLTe_Yumao"))
 						global.DispelBuffTrap(_env, cell, global.BUFF_MARKED(_env, "BOTH_Yumao"))
 
-						for _, cells_out in global.__iter__(global.FriendCells(_env, global.NEIGHBORS_CELL_OF(_env, cell))) do
+						for _, cells_out in global.__iter__(global.FriendCells(_env, global.NEIGHBORS_CELL_OF(_env, cell) - global.ONESELF_CELL(_env, cell))) do
 							if global.GetCellUnit(_env, cells_out) and global.MARKED(_env, "XLDBLTe")(_env, global.GetCellUnit(_env, cells_out)) then
 								global.ApplyTrap(_env, cell, {
 									display = "cheng_yumao",
@@ -702,7 +705,7 @@ all.Skill_Cross_Buff_AMLBLTe = {
 					global.DispelBuffTrap(_env, cell, global.BUFF_MARKED(_env, "AMLBLTe_Yumao"))
 					global.DispelBuffTrap(_env, cell, global.BUFF_MARKED(_env, "BOTH_Yumao"))
 
-					for _, cells_out in global.__iter__(global.FriendCells(_env, global.NEIGHBORS_CELL_OF(_env, cell))) do
+					for _, cells_out in global.__iter__(global.FriendCells(_env, global.NEIGHBORS_CELL_OF(_env, cell) - global.ONESELF_CELL(_env, cell))) do
 						if global.GetCellUnit(_env, cells_out) and global.MARKED(_env, "XLDBLTe")(_env, global.GetCellUnit(_env, cells_out)) then
 							local buff_trap = global.NumericEffect(_env, "+defrate", {
 								"+Normal",
@@ -892,21 +895,24 @@ all.Skill_AMLBLTe_Unique_EX = {
 
 				local buffeft1 = global.DeathImmuneEffect(_env, 1)
 
-				global.DelayCall(_env, 200, global.ApplyBuff_Buff, _env.ACTOR, _env.ACTOR, {
-					timing = 0,
-					display = "Undead",
-					group = "AMLBLTe_Undead",
-					duration = 99,
-					limit = 3,
-					tags = {
-						"UNDEAD",
-						"STATUS",
-						"DISPELLABLE",
-						"UNSTEALABLE"
-					}
-				}, {
-					buffeft1
-				}, 1, 0)
+				if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "AMLBLTe_Undead")) == 0 then
+					global.DelayCall(_env, 200, global.ApplyBuff_Buff, _env.ACTOR, _env.ACTOR, {
+						timing = 0,
+						display = "Undead",
+						group = "AMLBLTe_Undead",
+						duration = 99,
+						limit = 1,
+						tags = {
+							"AMLBLTe_Undead",
+							"UNDEAD",
+							"STATUS",
+							"DISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buffeft1
+					}, 1, 0)
+				end
 			end
 		end)
 		exec["@time"]({
@@ -938,7 +944,7 @@ all.Skill_AMLBLTe_Unique_EX = {
 			if units[1] then
 				global.Perform(_env, _env.ACTOR, global.Animation(_env, "skill3_2"))
 
-				shield = global.ShieldEffect(_env, atk * this.shieldFactor * 2)
+				shield = global.ShieldEffect(_env, atk * this.shieldFactor * 1.5)
 			else
 				global.Perform(_env, _env.ACTOR, global.Animation(_env, "skill3_3"))
 			end

@@ -132,22 +132,36 @@ function DreamHousePoint:isPerfectPass()
 	return self:isPass() and self._totalStar == totalStarNum
 end
 
-function DreamHousePoint:getLastBattleId()
-	local outId = ""
-	local outIdx = 1
+function DreamHousePoint:getBattleStarNum(battleId)
+	local num = 0
 
-	for i = 1, #self._battleIds do
-		local battleId = self._battleIds[i]
-
-		for k, v in pairs(self._points) do
-			if battleId == k then
-				outId = battleId
-				outIdx = i
+	for k, v in pairs(self._points) do
+		if battleId == k then
+			for _, value in pairs(v.stars) do
+				num = num + 1
 			end
 		end
 	end
 
-	return outId, outIdx
+	return num
+end
+
+function DreamHousePoint:getLastBattleId()
+	for i = 1, #self._battleIds do
+		local battleId = self._battleIds[i]
+
+		if self:isPass() then
+			local starCond = ConfigReader:getDataByNameIdAndKey("DreamHouseBattle", battleId, "Star")
+
+			if self:getBattleStarNum(battleId) < #starCond then
+				return battleId, i
+			end
+		elseif self:getBattleStarNum(battleId) == 0 then
+			return battleId, i
+		end
+	end
+
+	return self._battleIds[1], 1
 end
 
 function DreamHousePoint:isBosRewarded(starNum)

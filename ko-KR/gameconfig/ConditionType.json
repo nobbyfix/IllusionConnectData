@@ -1182,6 +1182,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_ResourceStage_Desc"
     },
+    "Condi_RiddleExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_Riddle_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_RiddleExchangeAchieve_Desc"
+    },
     "Condi_SnowflakeChengjiuDian": {
         "AchieveType1": "INCREASE",
         "AchieveType2": "",

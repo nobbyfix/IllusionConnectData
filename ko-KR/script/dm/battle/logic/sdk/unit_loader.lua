@@ -228,7 +228,7 @@ local __predefinedPropertySet__ = {
 	}
 }
 
-local function dumpUnitProperties(unit, propNames, dest)
+local function dumpUnitProperties(unit, propNames, dest, env)
 	local hpComp = unit:getComponent("Health")
 	local angerComp = unit:getComponent("Anger")
 	local attrComp = unit:getComponent("Numeric")
@@ -289,6 +289,22 @@ local function dumpUnitProperties(unit, propNames, dest)
 		print("dumpUnitProperties______end________" .. unit:getId())
 	end
 
+	local attrComp = unit:getComponent("Numeric")
+	local atk = attrComp:getAttribute(kAttrAttack):value()
+	local atkrate = attrComp:getAttribute(kAttrAttackRate):value()
+	local def = attrComp:getAttribute(kAttrDefense):value()
+	local defrate = attrComp:getAttribute(kAttrDefenseRate):value()
+
+	if GameConfigs and GameConfigs.DumpUnitProperties then
+		env.global.RecordImmediately(env, unit:getId(), "ShowAtkAndDef", {
+			act = env["$id"],
+			detail = {
+				atk = atk * (1 + atkrate),
+				def = def * (1 + defrate)
+			}
+		})
+	end
+
 	return dest
 end
 
@@ -297,7 +313,7 @@ function exports.LoadUnit(env, unit, properties, destVar)
 		properties = __predefinedPropertySet__[properties] or {}
 	end
 
-	return dumpUnitProperties(unit, properties, destVar or {})
+	return dumpUnitProperties(unit, properties, destVar or {}, env)
 end
 
 function exports._getUnitProperty(unit, propName, dest)
