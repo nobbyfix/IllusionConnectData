@@ -777,6 +777,18 @@ function BagSelectMaterialMediator:createTeamCell(cell, index)
 
 			if itemId == self._curComposeId then
 				amount = amount - 1
+			elseif itemId ~= self._curMaterial.id then
+				local ret = true
+				local composeTimes = self._bagSystem:getComposeTimes()
+				local currentTime = composeTimes[itemId]
+
+				if currentTime and currentTime >= 1 then
+					ret = false
+				end
+
+				if ret then
+					amount = amount - 1
+				end
 			end
 
 			if amount == nil then

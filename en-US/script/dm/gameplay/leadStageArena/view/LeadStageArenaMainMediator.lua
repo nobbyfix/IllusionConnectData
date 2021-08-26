@@ -509,7 +509,7 @@ function LeadStageArenaMainMediator:enterRivalView()
 		self._leadStageArenaSystem:enterRivalView()
 	end
 
-	self._leadStageArenaSystem:requestEnter(callback, false)
+	self._leadStageArenaSystem:requestEnter(callback, true)
 end
 
 function LeadStageArenaMainMediator:refreshTopInfo()

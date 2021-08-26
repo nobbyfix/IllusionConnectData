@@ -371,6 +371,13 @@ function BuildingAfkGiftMediator:initWidgetInfo()
 	else
 		self._rightActNode:setVisible(false)
 	end
+
+	local HideVoice = ConfigReader:getDataByNameIdAndKey("ConfigValue", "HideVoice", "content")
+	local isHide = table.indexof(HideVoice, self._heroId)
+
+	self._talkPanel:setVisible(not isHide)
+	self._btnGift:getChildByFullName("name_1"):setString(Strings:get("Village_UI3") .. Strings:get("Village_UI4"))
+	self._btnDate:getChildByFullName("name_1"):setString(Strings:get("Village_UI5") .. Strings:get("Village_UI6"))
 end
 
 function BuildingAfkGiftMediator:initTabBtn()
@@ -681,8 +688,10 @@ function BuildingAfkGiftMediator:updateHero()
 				self._touchTimes = self._touchTimes + 1
 				local soundId = AudioTimerSystem:getHeroTouchSoundByPart(self._heroId, _info.part, self._touchTimes)
 				local isExistStr = Strings:get(ConfigReader:getDataByNameIdAndKey("Sound", soundId, "CueName"))
+				local HideVoice = ConfigReader:getDataByNameIdAndKey("ConfigValue", "HideVoice", "content")
+				local isHide = table.indexof(HideVoice, self._heroId)
 
-				if isExistStr and isExistStr ~= "Voice_Default" then
+				if isExistStr and isExistStr ~= "Voice_Default" and not isHide then
 					self._talkPanel:setVisible(true)
 
 					local text = self._talkPanel:getChildByFullName("clipNode.text")

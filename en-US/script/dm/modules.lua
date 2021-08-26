@@ -1034,7 +1034,8 @@ local modules = {
 			{
 				name = "heroshow",
 				requires = {
-					"dm.gameplay.develop.view.herocomponent.SortHeroListComponent"
+					"dm.gameplay.develop.view.herocomponent.SortHeroListComponent",
+					"dm.gameplay.develop.view.herocomponent.SortHeroListNewComponent"
 				},
 				injections = {
 					views = {
@@ -2039,6 +2040,21 @@ local modules = {
 							res = "asset/ui/ActivityTerrorMain.csb",
 							name = "ActivityTerrorMainView",
 							mediator = "ActivityCommonMainMediator"
+						},
+						{
+							res = "asset/ui/ActivityRiddleMain.csb",
+							name = "ActivityRiddleMainView",
+							mediator = "ActivityCommonMainMediator"
+						},
+						{
+							res = "asset/ui/ActivityRiddleVote.csb",
+							name = "ActivityRiddleVoteView",
+							mediator = "ActivityRiddleVoteMediator"
+						},
+						{
+							res = "asset/ui/ActivityMail.csb",
+							name = "ActivityMailView",
+							mediator = "ActivityMailMediator"
 						}
 					}
 				}
@@ -4228,6 +4244,11 @@ local modules = {
 							node = "cc.Node",
 							name = "DreamBattleView",
 							mediator = "DreamBattleMainMediator"
+						},
+						{
+							node = "cc.Node",
+							name = "BattleItemShowView",
+							mediator = "BattleItemMediator"
 						}
 					}
 				}

@@ -454,6 +454,7 @@ function HomeMediator:createMapListener()
 	self:mapEventListener(self:getEventDispatcher(), EVT_DOWNLOAD_SOUNDCV, self, self.refreshDownloadSoundLabel)
 	self:mapEventListener(self:getEventDispatcher(), EVT_HEROES_SYNC_SHOW, self, self.refreshRedPoint)
 	self:mapEventListener(self:getEventDispatcher(), EVT_RETURN_ACTIVITY_REFRESH, self, self.onBackFlowActivityRefresh)
+	self:mapEventListener(self:getEventDispatcher(), EVT_ACTIVITY_MAIL_NEW, self, self.refreshActivityCalendarRedPoint)
 end
 
 function HomeMediator:onBackFlowActivityRefresh(event)
@@ -1482,8 +1483,10 @@ end
 
 function HomeMediator:setBoardHeroEffectState(isEnable, isEnterHome)
 	local talkPanel = self._homePanel:getChildByName("talkPanel")
+	local HideVoice = ConfigReader:getDataByNameIdAndKey("ConfigValue", "HideVoice", "content")
+	local isHide = table.indexof(HideVoice, self._showHeroId)
 
-	if isEnable then
+	if isEnable and not isHide then
 		if not self._boardHeroEffect then
 			self._boardHeroEffect = PREPARESTATE
 
@@ -1516,16 +1519,18 @@ function HomeMediator:setBoardHeroEffectState(isEnable, isEnterHome)
 				end)
 			end, 1)
 		end
-	elseif self._boardHeroEffect then
-		if self._boardHeroEffect == PREPARESTATE then
-			talkPanel:stopAllActions()
-		else
-			AudioEngine:getInstance():stopEffect(self._boardHeroEffect)
+	else
+		if self._boardHeroEffect then
+			if self._boardHeroEffect == PREPARESTATE then
+				talkPanel:stopAllActions()
+			else
+				AudioEngine:getInstance():stopEffect(self._boardHeroEffect)
+			end
+
+			self._boardHeroEffect = nil
 		end
 
 		talkPanel:setVisible(false)
-
-		self._boardHeroEffect = nil
 	end
 end
 
@@ -1786,8 +1791,10 @@ function HomeMediator:setBoardHeroSprite()
 
 					local soundId = AudioTimerSystem:getHeroTouchSoundByPart(self._showHeroId, _info.part, self._touchTimes)
 					local isExistStr = Strings:get(ConfigReader:getDataByNameIdAndKey("Sound", soundId, "CueName"))
+					local HideVoice = ConfigReader:getDataByNameIdAndKey("ConfigValue", "HideVoice", "content")
+					local isHide = table.indexof(HideVoice, self._showHeroId)
 
-					if isExistStr and isExistStr ~= "Voice_Default" then
+					if isExistStr and isExistStr ~= "Voice_Default" and not isHide then
 						local talkPanel = self._homePanel:getChildByName("talkPanel")
 						local text = talkPanel:getChildByFullName("clipNode.text")
 
@@ -3580,6 +3587,14 @@ function HomeMediator:setComplexActivityEntry()
 			imgZorder = 2,
 			aimpos = cc.p(-90, 125),
 			imgpos = cc.p(58, 7)
+		},
+		[ActivityType_UI.KActivityRiddle] = {
+			animZorder = 1,
+			img = "riddle_btn_zjm_rukou.png",
+			anim = "rukouZ__zhentanduijuerukouzhuye",
+			imgZorder = 2,
+			aimpos = cc.p(-80, 135),
+			imgpos = cc.p(55, 9)
 		}
 	}
 	local extraActBtn = self._rightFuncLayout:getChildByFullName("extraActBtn")
@@ -3722,6 +3737,8 @@ function HomeMediator:setActivityCalendar()
 		else
 			redPoint:setVisible(false)
 		end
+
+		self:refreshActivityCalendarRedPoint()
 	end
 
 	local activityBtn = self._urlFuncLayout:getChildByFullName("activityBtn")
@@ -3761,4 +3778,19 @@ function HomeMediator:setActivityCalendar()
 
 		nodeSparkle(activityTalk, delay[1], delay[2])
 	end
+end
+
+function HomeMediator:refreshActivityCalendarRedPoint()
+	if not self._activityBtnRedPoint then
+		local redPoint = RedPoint:createDefaultNode()
+
+		redPoint:setName("redPoint")
+		redPoint:setScale(0.8)
+		redPoint:addTo(self._urlFuncLayout:getChildByFullName("activityBtn")):posite(173, 120)
+		redPoint:setLocalZOrder(99900)
+
+		self._activityBtnRedPoint = redPoint
+	end
+
+	self._activityBtnRedPoint:setVisible(self._activitySystem:isActivityCalendarRedpointShowAll())
 end

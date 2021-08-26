@@ -112,5 +112,7 @@ function SettingCodeExcMediator:changeSuc()
 	if self._editBox.setText then
 		self._editBox:setText("")
 		tipsText:setVisible(true)
+
+		self._keyStr = ""
 	end
 end

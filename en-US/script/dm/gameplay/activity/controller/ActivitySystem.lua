@@ -250,6 +250,27 @@ function ActivitySystem:enterActstageBattle(data, activityId, subActivityId)
 		end
 	end
 
+	function battleDelegate:showBattleItem(pauseFunc, resumeCallback, paseSta)
+		local popupDelegate = {
+			willClose = function (self, sender, data)
+				if resumeCallback then
+					resumeCallback()
+				end
+			end
+		}
+		local bossView = outSelf:getInjector():getInstance("BattleItemShowView")
+
+		outSelf:dispatch(ViewEvent:new(EVT_SHOW_POPUP, bossView, {
+			maskOpacity = 0
+		}, {
+			paseSta = paseSta
+		}, popupDelegate))
+
+		if pauseFunc then
+			pauseFunc()
+		end
+	end
+
 	function battleDelegate:onShowRestraint(continueCallback)
 		local popupDelegate = {
 			willClose = function (self, sender)
@@ -1316,7 +1337,7 @@ function ActivitySystem:getActivityCalendarList()
 			elseif v.TypeId and v.TypeId ~= "" then
 				local config = ConfigReader:getRecordById("Activity", v.TypeId)
 
-				if config and config.Time and self:isActivityCalendarTimeType(config.Time) then
+				if config and config.Time and self:isActivityCalendarTimeType(config.Time) and config.Enable ~= 0 then
 					if v.EarlyShow and v.EarlyShow ~= "" then
 						closeDay = v.EarlyShow
 					end
@@ -1360,6 +1381,20 @@ function ActivitySystem:isActivityCalendarShow(data)
 
 		if activity then
 			return activity:getIsTodayOpen()
+		end
+	end
+
+	return false
+end
+
+function ActivitySystem:isActivityCalendarRedpointShowAll(data)
+	local openList = self:getActivityCalendarList()
+
+	for i = 1, #openList do
+		local tmpRedPoint = self:isActivityCalendarRedpointShow(openList[i])
+
+		if tmpRedPoint then
+			return true
 		end
 	end
 
@@ -2035,5 +2070,32 @@ function ActivitySystem:requestRecruitActivityReward(activityId, subActivityId, 
 		self:requestDoChildActivity(activityId, subActivityId, params, callbackFunc)
 	else
 		self:requestDoActivity(activityId, params, callbackFunc)
+	end
+end
+
+function ActivitySystem:tryEnterActivityMailView()
+	local activity = self:getActivityById("RiddlePreMail")
+
+	if activity then
+		local list = activity:getMailList()
+
+		if #list > 0 then
+			local view = self:getInjector():getInstance("ActivityMailView")
+			local event = ViewEvent:new(EVT_SHOW_POPUP, view, {
+				transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+			}, {}, nil)
+
+			self:dispatch(event)
+		else
+			self:dispatch(ShowTipEvent({
+				duration = 0.35,
+				tip = Strings:get("Activity_Not_Found")
+			}))
+		end
+	else
+		self:dispatch(ShowTipEvent({
+			duration = 0.35,
+			tip = Strings:get("Activity_Not_Found")
+		}))
 	end
 end

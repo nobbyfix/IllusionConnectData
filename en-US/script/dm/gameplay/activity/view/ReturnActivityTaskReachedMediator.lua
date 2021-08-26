@@ -213,7 +213,6 @@ function ReturnActivityTaskReachedMediator:updataCell(mainView, data)
 				local endPos = sender:getTouchEndPosition()
 
 				if math.abs(beganPos.x - endPos.x) < 30 and math.abs(beganPos.y - endPos.y) < 30 then
-					dump(data, "data >>>>>>")
 					self:onClickGo(data)
 				end
 			end
@@ -399,7 +398,7 @@ function ReturnActivityTaskReachedMediator:refreshHeroShow()
 				self._taskBtn:setGray(true)
 				self._taskBtn:addTouchEventListener(function (sender, eventType)
 					if eventType == ccui.TouchEventType.ended then
-						dump("addTouchEventListener >>>>>>")
+						-- Nothing
 					end
 				end)
 				self._taskInfo:getChildByName("curNum"):setTextColor(cc.c3b(255, 255, 255))

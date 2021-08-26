@@ -1,5 +1,5 @@
 MasterLeadStageSkillTip = class("MasterLeadStageSkillTip", BaseWidget, _M)
-local listWidth = 291
+local listWidth = 0
 
 function MasterLeadStageSkillTip.class:createWidgetNode()
 	local resFile = "asset/ui/MasterLeadStageSkillTip.csb"
@@ -31,6 +31,8 @@ function MasterLeadStageSkillTip:initSubviews(view)
 
 	self._line:setVisible(false)
 
+	local desc = self._skillTipPanel:getChildByName("desc")
+	listWidth = desc:getContentSize().width
 	local skillTouchPanel = self._skillTipPanel:getChildByFullName("skillTouchPanel")
 
 	skillTouchPanel:setSwallowTouches(false)
@@ -184,7 +186,7 @@ function MasterLeadStageSkillTip:refreshInfo(data)
 
 	height = height + 100
 
-	bg:setContentSize(cc.size(332, height))
+	bg:setContentSize(cc.size(bg:getContentSize().width, height))
 	infoNode:setPositionY(height - 80)
 end
 

@@ -18,14 +18,22 @@
         ]
     },
     "ActiveReward": {
-        "clz": "dict",
-        "content": {
-            "120": "ActiveReward_3",
-            "160": "ActiveReward_New_4",
-            "200": "ActiveReward_New_5",
-            "40": "ActiveReward_1",
-            "80": "ActiveReward_2"
-        }
+        "clz": "array",
+        "content": [
+            {
+                "level": [
+                    0,
+                    99
+                ],
+                "reward": {
+                    "120": "ActiveReward_3",
+                    "160": "ActiveReward_New_4",
+                    "200": "ActiveReward_New_5",
+                    "40": "ActiveReward_1",
+                    "80": "ActiveReward_2"
+                }
+            }
+        ]
     },
     "ActiveRewardChange": {
         "clz": "string",
@@ -4719,6 +4727,13 @@
             "actstage"
         ]
     },
+    "HideVoice": {
+        "clz": "string[]",
+        "content": [
+            "SP_PNCao",
+            "SP_SSQXin"
+        ]
+    },
     "HomeBackground_Default": {
         "clz": "string",
         "content": "HomeBackground_9"
@@ -6250,6 +6265,7 @@
     "NewPlayerGuide_LevelOpen": {
         "clz": "dict",
         "content": {
+            "27": "guide_MasterLeadeStage",
             "60": "guide_StageArena"
         }
     },
@@ -9089,7 +9105,9 @@
             "WSLi",
             "MYing",
             "MLYDi",
-            "AMLBLTe"
+            "AMLBLTe",
+            "XLDBLTe",
+            "SP_KTSJKe"
         ]
     },
     "Tower_1_GrowMaxValue": {

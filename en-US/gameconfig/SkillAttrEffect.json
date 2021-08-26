@@ -12800,6 +12800,26 @@
             0.3
         ]
     },
+    "Hero_ABlock_MLYDi_Extra": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.8,
+            0.8
+        ]
+    },
     "Hero_ABlock_MYing_Extra": {
         "AttrType": [
             "HURTRATE",
@@ -13220,6 +13240,26 @@
         "Value": [
             2,
             0.4
+        ]
+    },
+    "Hero_ABlock_YXZChun_Extra": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.8,
+            0.8
         ]
     },
     "Hero_ABlock_YYing_Extra": {
@@ -98570,7 +98610,8 @@
         "EffectRange": [
             "ARENA",
             "RTPK",
-            "STAGE_ARENA"
+            "STAGE_ARENA",
+            "CHESS_ARENA"
         ],
         "EffectType": "ATTR",
         "GrowType": "CUSTOM",
@@ -98621,7 +98662,8 @@
         "EffectRange": [
             "ARENA",
             "RTPK",
-            "STAGE_ARENA"
+            "STAGE_ARENA",
+            "CHESS_ARENA"
         ],
         "EffectType": "ATTR",
         "GrowType": "CUSTOM",
@@ -98770,7 +98812,8 @@
         "EffectRange": [
             "ARENA",
             "RTPK",
-            "STAGE_ARENA"
+            "STAGE_ARENA",
+            "CHESS_ARENA"
         ],
         "EffectType": "ATTR",
         "GrowType": "CUSTOM",
@@ -98821,7 +98864,8 @@
         "EffectRange": [
             "ARENA",
             "RTPK",
-            "STAGE_ARENA"
+            "STAGE_ARENA",
+            "CHESS_ARENA"
         ],
         "EffectType": "ATTR",
         "GrowType": "CUSTOM",
@@ -98970,7 +99014,8 @@
         "EffectRange": [
             "ARENA",
             "RTPK",
-            "STAGE_ARENA"
+            "STAGE_ARENA",
+            "CHESS_ARENA"
         ],
         "EffectType": "ATTR",
         "GrowType": "CUSTOM",
@@ -99021,7 +99066,8 @@
         "EffectRange": [
             "ARENA",
             "RTPK",
-            "STAGE_ARENA"
+            "STAGE_ARENA",
+            "CHESS_ARENA"
         ],
         "EffectType": "ATTR",
         "GrowType": "CUSTOM",
@@ -99170,7 +99216,8 @@
         "EffectRange": [
             "ARENA",
             "RTPK",
-            "STAGE_ARENA"
+            "STAGE_ARENA",
+            "CHESS_ARENA"
         ],
         "EffectType": "ATTR",
         "GrowType": "CUSTOM",
@@ -99221,7 +99268,8 @@
         "EffectRange": [
             "ARENA",
             "RTPK",
-            "STAGE_ARENA"
+            "STAGE_ARENA",
+            "CHESS_ARENA"
         ],
         "EffectType": "ATTR",
         "GrowType": "CUSTOM",
@@ -99370,7 +99418,8 @@
         "EffectRange": [
             "ARENA",
             "RTPK",
-            "STAGE_ARENA"
+            "STAGE_ARENA",
+            "CHESS_ARENA"
         ],
         "EffectType": "ATTR",
         "GrowType": "CUSTOM",
@@ -99421,7 +99470,8 @@
         "EffectRange": [
             "ARENA",
             "RTPK",
-            "STAGE_ARENA"
+            "STAGE_ARENA",
+            "CHESS_ARENA"
         ],
         "EffectType": "ATTR",
         "GrowType": "CUSTOM",
@@ -99570,7 +99620,8 @@
         "EffectRange": [
             "ARENA",
             "RTPK",
-            "STAGE_ARENA"
+            "STAGE_ARENA",
+            "CHESS_ARENA"
         ],
         "EffectType": "ATTR",
         "GrowType": "CUSTOM",
@@ -99621,7 +99672,8 @@
         "EffectRange": [
             "ARENA",
             "RTPK",
-            "STAGE_ARENA"
+            "STAGE_ARENA",
+            "CHESS_ARENA"
         ],
         "EffectType": "ATTR",
         "GrowType": "CUSTOM",
@@ -141818,6 +141870,166 @@
             0.15
         ]
     },
+    "Riddle_MLYDi_Buff_Star3": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.15,
+            0.15
+        ]
+    },
+    "Riddle_MLYDi_Buff_Star4": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.3,
+            0.3
+        ]
+    },
+    "Riddle_MLYDi_Buff_Star5": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.45,
+            0.45
+        ]
+    },
+    "Riddle_MLYDi_Buff_Star6": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.6,
+            0.6
+        ]
+    },
+    "Riddle_YXZChun_Buff_Star3": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.15,
+            0.15
+        ]
+    },
+    "Riddle_YXZChun_Buff_Star4": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.3,
+            0.3
+        ]
+    },
+    "Riddle_YXZChun_Buff_Star5": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.45,
+            0.45
+        ]
+    },
+    "Riddle_YXZChun_Buff_Star6": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.6,
+            0.6
+        ]
+    },
     "Room2_PutEffect": {
         "AttrType": [
             "HP_RATE"
@@ -147426,6 +147638,26 @@
             0.15
         ]
     },
+    "Star_PDLa_Awake": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "Star_PDLa_Awake_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.1,
+            0.1
+        ]
+    },
     "Star_PGNNi_3_1": {
         "AttrType": [
             "ATK_RATE",
@@ -148005,6 +148237,80 @@
             "SKILLRATE"
         ],
         "EffectDesc": "Star_SLWan_6_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.15
+        ]
+    },
+    "Star_SP_KTSJKe_3_1": {
+        "AttrType": [
+            "ATK_RATE",
+            "HP_RATE"
+        ],
+        "EffectDesc": "Star_SP_KTSJKe_3_1_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.1,
+            0.1
+        ]
+    },
+    "Star_SP_KTSJKe_4_1": {
+        "AttrType": [
+            "HP_RATE"
+        ],
+        "EffectDesc": "Star_SP_KTSJKe_4_1_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.2
+        ]
+    },
+    "Star_SP_KTSJKe_5_1": {
+        "AttrType": [
+            "ATK_RATE"
+        ],
+        "EffectDesc": "Star_SP_KTSJKe_5_1_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.2
+        ]
+    },
+    "Star_SP_KTSJKe_6": {
+        "AttrType": [
+            "SKILLRATE"
+        ],
+        "EffectDesc": "Star_SP_KTSJKe_6_Desc",
         "EffectRange": [
             "ALL"
         ],
@@ -149039,6 +149345,80 @@
             "SKILLRATE"
         ],
         "EffectDesc": "Star_XHMao_6_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.15
+        ]
+    },
+    "Star_XLDBLTe_3_1": {
+        "AttrType": [
+            "ATK_RATE",
+            "HP_RATE"
+        ],
+        "EffectDesc": "Star_XLDBLTe_3_1_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.1,
+            0.1
+        ]
+    },
+    "Star_XLDBLTe_4_1": {
+        "AttrType": [
+            "HP_RATE"
+        ],
+        "EffectDesc": "Star_XLDBLTe_4_1_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.2
+        ]
+    },
+    "Star_XLDBLTe_5_1": {
+        "AttrType": [
+            "ATK_RATE"
+        ],
+        "EffectDesc": "Star_XLDBLTe_5_1_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.2
+        ]
+    },
+    "Star_XLDBLTe_6": {
+        "AttrType": [
+            "SKILLRATE"
+        ],
+        "EffectDesc": "Star_XLDBLTe_6_Desc",
         "EffectRange": [
             "ALL"
         ],

@@ -30,8 +30,11 @@ function ActivityStageUnFinishMediator:enterWithData(data)
 	local params = data.params
 
 	if self._model:getType() == ActivityType.KActivityBlockMapNew then
-		self._pointId = params.mapId
-		self._point = self._model:getPointById(self._pointId)
+		self._mapId = params.type
+		self._sortId = params.mapId
+		self._pointId = params.pointId
+		self._sort = self._model:getPointById(self._sortId)
+		self._point = self._sort:getPointById(self._pointId)
 		self._notShowStar = true
 	else
 		self._pointId = self._data.pointId
@@ -71,27 +74,47 @@ function ActivityStageUnFinishMediator:checkResumeActionPoint()
 	local resumeNode = self:getView():getChildByFullName("content.resumePowerNode")
 
 	resumeNode:setOpacity(0)
+	resumeNode:setVisible(true)
 
-	local info = ConfigReader:getDataByNameIdAndKey("ActivityBlockPoint", self._pointId, "StaminaBack")
+	local info = ConfigReader:getDataByNameIdAndKey("ActivityBlockBattle", self._pointId, "StaminaBack")
+	local cost = ConfigReader:getDataByNameIdAndKey("ActivityBlockBattle", self._pointId, "StaminaCostAgain")
 
-	if info then
-		local countText = resumeNode:getChildByName("resume")
+	local function showBack(...)
+		if info then
+			resumeNode:setVisible(true)
 
-		for k, v in pairs(info) do
-			countText:setString("+" .. v)
-			countText:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
+			local countText = resumeNode:getChildByName("resume")
 
-			local icon = IconFactory:createPic({
-				id = k
-			})
+			for k, v in pairs(info) do
+				countText:setString("+" .. v)
+				countText:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
 
-			icon:setScale(2)
-			icon:addTo(resumeNode, -1):setPosition(cc.p(750, 378))
+				local icon = IconFactory:createPic({
+					id = k
+				})
 
-			break
+				icon:setScale(2)
+				icon:addTo(resumeNode, -1):setPosition(cc.p(750, 378))
+
+				break
+			end
+
+			resumeNode:runAction(cc.Sequence:create(cc.DelayTime:create(0.25), cc.FadeIn:create(0.2)))
+		else
+			resumeNode:setVisible(false)
 		end
+	end
 
-		resumeNode:runAction(cc.Sequence:create(cc.DelayTime:create(0.25), cc.FadeIn:create(0.2)))
+	local pass = self._point:isPass()
+
+	if pass then
+		if cost == 1 then
+			showBack()
+		else
+			resumeNode:setVisible(false)
+		end
+	else
+		showBack()
 	end
 end
 

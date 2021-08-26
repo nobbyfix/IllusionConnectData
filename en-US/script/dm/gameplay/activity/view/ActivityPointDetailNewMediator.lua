@@ -493,12 +493,19 @@ function ActivityPointDetailNewMediator:refreshCostView()
 	self._challengeBtn:removeChildByTag(1003)
 
 	local costText = self._challengeBtn:getChildByFullName("cost_text")
+
+	costText:setVisible(true)
+
+	local costTxt = self._challengeBtn:getChildByFullName("Text_2")
+
+	costTxt:setVisible(true)
+
 	local cost, amount = self:getCostEnergy()
-	local icon = IconFactory:createPic({
+	local CostIcon = IconFactory:createPic({
 		id = cost
 	})
 
-	icon:addTo(self._challengeBtn):setTag(1003):setPosition(cc.p(80, -20)):setScale(0.8)
+	CostIcon:addTo(self._challengeBtn):setTag(1003):setPosition(cc.p(80, -20)):setScale(0.8)
 	costText:setString("X" .. amount)
 
 	self._curPower = self._bagSystem:getPowerByCurrencyId(cost)
@@ -507,6 +514,15 @@ function ActivityPointDetailNewMediator:refreshCostView()
 		costText:setTextColor(GameStyle:getColor(7))
 	else
 		costText:setTextColor(GameStyle:getColor(1))
+	end
+
+	local pass = self._point:isPass()
+	local cost = ConfigReader:getDataByNameIdAndKey("ActivityBlockBattle", self._point:getId(), "StaminaCostAgain")
+
+	if pass and cost == 0 then
+		costText:setVisible(false)
+		CostIcon:setVisible(false)
+		costTxt:setVisible(false)
 	end
 end
 
@@ -646,6 +662,13 @@ function ActivityPointDetailNewMediator:onChallenge()
 end
 
 function ActivityPointDetailNewMediator:reachBattleCondition()
+	local pass = self._point:isPass()
+	local cost = ConfigReader:getDataByNameIdAndKey("ActivityBlockBattle", self._point:getId(), "StaminaCostAgain")
+
+	if pass and cost == 0 then
+		return true
+	end
+
 	local containPower = 0
 	local itemId, cost, tips = nil
 	local costEnergy = self._point:getCostEnergy()

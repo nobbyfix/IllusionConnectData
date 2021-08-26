@@ -657,41 +657,87 @@ function SpStageDftMediator:getSweepReward(event)
 
 	local data = event:getData().data
 	local type = self:getSpStageSystem():getStageTypeById(self._data.stageId)
+	local rewards = {}
 
-	if data[type] and (data[type].rewards or data[type].spNmReward or data[type].spExRewards) then
-		local baseRewards = data[type].rewards or {}
-		local spNmRewards = data[type].spNmReward or {}
-		local spExRewards = data[type].spExRewards or {}
-		local activityExtraReward = data[type].activityExtraReward or {}
-		local rewards = {}
+	for _, reward in pairs(data) do
+		if reward[type] and (reward[type].rewards or reward[type].spNmReward or reward[type].spExRewards) then
+			local baseRewards = reward[type].rewards or {}
+			local spNmRewards = reward[type].spNmReward or {}
+			local spExRewards = reward[type].spExRewards or {}
+			local activityExtraReward = reward[type].activityExtraReward or {}
 
-		for i, value in pairs(baseRewards) do
-			for j = 1, #value do
-				table.insert(rewards, value[j])
+			for i, value in pairs(baseRewards) do
+				for j = 1, #value do
+					local has = false
+
+					for k = 1, #rewards do
+						if rewards[k].code == value[j].code then
+							has = true
+							rewards[k].amount = rewards[k].amount + value[j].amount
+						end
+					end
+
+					if not has then
+						table.insert(rewards, value[j])
+					end
+				end
+			end
+
+			for i, value in ipairs(spNmRewards) do
+				local has = false
+
+				for j = 1, #rewards do
+					if rewards[j].code == value.code then
+						has = true
+						rewards[j].amount = rewards[j].amount + value.amount
+					end
+				end
+
+				if not has then
+					table.insert(rewards, value)
+				end
+			end
+
+			for i, value in ipairs(spExRewards) do
+				local has = false
+
+				for j = 1, #rewards do
+					if rewards[j].code == value.code then
+						has = true
+						rewards[j].amount = rewards[j].amount + value.amount
+					end
+				end
+
+				if not has then
+					table.insert(rewards, value)
+				end
+			end
+
+			for i, value in ipairs(activityExtraReward) do
+				local has = false
+
+				for j = 1, #rewards do
+					if rewards[j].code == value.code then
+						has = true
+						rewards[j].amount = rewards[j].amount + value.amount
+					end
+				end
+
+				if not has then
+					table.insert(rewards, value)
+				end
 			end
 		end
+	end
 
-		for i, value in ipairs(spNmRewards) do
-			table.insert(rewards, value)
-		end
+	if #rewards > 0 then
+		local view = self:getInjector():getInstance("getRewardView")
 
-		for i, value in ipairs(spExRewards) do
-			table.insert(rewards, value)
-		end
-
-		for i, value in ipairs(activityExtraReward) do
-			table.insert(rewards, value)
-		end
-
-		if #rewards > 0 then
-			local view = self:getInjector():getInstance("getRewardView")
-
-			self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
-				maskOpacity = 0
-			}, {
-				rewards = rewards
-			}))
-		end
+		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+			maskOpacity = 0
+		}, {
+			rewards = rewards
+		}))
 	end
 end
 
@@ -731,9 +777,6 @@ function SpStageDftMediator:isStaminaCostEnough()
 	local energy = self._developSystem:getEnergy()
 
 	if energy < staminaCost then
-		self:dispatch(ShowTipEvent({
-			tip = Strings:get("CUSTOM_ENERGY_NOT_ENOUGH")
-		}))
 		CurrencySystem:buyCurrencyByType(self, CurrencyType.kActionPoint)
 
 		return false
@@ -857,41 +900,47 @@ function SpStageDftMediator:onClickSweep(sender, eventType)
 	end
 
 	local stageId = self._data.stageId
-	local teamType = self._spStageSystem:getPointTeamByType(self._stageType)
-	local isSweepPointLow = self:getSpStageSystem():isSweepPointLow(pointId, teamType)
-
-	local function requestSweep()
-		local params = {
-			spType = self:getSpStageSystem():getStageTypeById(stageId),
-			pointId = pointId
-		}
-
-		self:getSpStageSystem():requestSweepSpStage(params)
-	end
-
-	if isSweepPointLow then
-		local outSelf = self
-		local delegate = {
-			willClose = function (self, popupMediator, data)
-				if data.response == AlertResponse.kOK then
-					requestSweep()
-				end
+	local leaveTimes = math.min(self:getSpStageSystem():getStageLeaveTime(stageId), 5)
+	local outSelf = self
+	local delegate = {
+		willClose = function (self, popupMediator, data)
+			if not data then
+				return
 			end
-		}
-		local data = {
-			title = Strings:get("Club_Text85"),
-			content = Strings:get("SPECIAL_STAGE_TEXT_32"),
-			sureBtn = {},
-			cancelBtn = {}
-		}
-		local view = self:getInjector():getInstance("AlertView")
 
-		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
-			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-		}, data, delegate))
-	else
-		requestSweep()
-	end
+			if data.returnValue == 1 then
+				outSelf:onClickBattle()
+			elseif data.returnValue == 2 then
+				outSelf:onClickWipeTimes(leaveTimes)
+			elseif data.returnValue == 3 then
+				outSelf:onClickWipeTimes(1)
+			end
+		end
+	}
+	local data = {
+		normalType = 1,
+		stageType = StageType.kElite,
+		challengeTimes = leaveTimes
+	}
+
+	AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, self:getInjector():getInstance("SweepBoxPopView"), {
+		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+	}, data, delegate))
+end
+
+function SpStageDftMediator:onClickWipeTimes(times)
+	AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
+
+	local params = {
+		spType = self:getSpStageSystem():getStageTypeById(self._data.stageId),
+		pointId = self._config[self._curIndex].Id,
+		times = times
+	}
+
+	self:getSpStageSystem():requestSweepSpStage(params, true, function ()
+		self:onClickSweep()
+	end)
 end
 
 function SpStageDftMediator:onClickBattle(sender, eventType)

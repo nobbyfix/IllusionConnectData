@@ -975,11 +975,26 @@ function CommonStageMainViewMediator:setupCooperateBossShow()
 
 	local inviteList = self._coopreateBossPanel:getChildByFullName("inviteList")
 	local mineBoss = self._coopreateBossPanel:getChildByFullName("mineBoss")
+	local leaveTimeLab = self._coopreateBossPanel:getChildByFullName("timePanel.times")
 	local inviteBossShow = self._cooperateBossSystem:checkInviteBossShow()
 	local mineBossShow = self._cooperateBossSystem:checkMineDefaultBossShow()
 
 	self._coopreateBossPanel:setVisible(false)
 	self._coopreateBossPanel:setLocalZOrder(20000)
+
+	local curTimes = self._cooperateBossSystem:getCooperateBoss():getBossFightTimes()
+
+	if curTimes then
+		local resetData = DataReader:getDataByNameIdAndKey("Reset", "CooperateBoss", "ResetSystem")
+
+		if curTimes.value <= 0 then
+			leaveTimeLab:setTextColor(cc.c3b(255, 117, 117))
+		else
+			leaveTimeLab:setTextColor(cc.c3b(255, 255, 255))
+		end
+
+		leaveTimeLab:setString(tostring(curTimes.value) .. "/" .. tostring(resetData.max))
+	end
 
 	if inviteBossShow and mineBossShow then
 		self._coopreateBossPanel:setVisible(true)

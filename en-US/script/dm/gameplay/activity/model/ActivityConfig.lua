@@ -28,6 +28,7 @@ require("dm.gameplay.activity.model.return.ActivityReturnLetter")
 require("dm.gameplay.activity.model.return.ActivityReturnCarnival")
 require("dm.gameplay.activity.model.ActivityBlockMapNewActivity")
 require("dm.gameplay.activity.model.ActivityDrawCardSp")
+require("dm.gameplay.activity.model.ActivityMail")
 
 ActivityShowTab = {
 	kInAll = 3,
@@ -94,7 +95,8 @@ ActivityModel = {
 	[ActivityType.KActivityBlockMapNew] = ActivityBlockMapNewActivity,
 	[ActivityType.KReturnCarnival] = ActivityReturnCarnival,
 	[ActivityType.kDRAWCARDSP] = ActivityDrawCardSp,
-	[ActivityType.kDRAWCARDUR] = BoardActivity
+	[ActivityType.kDRAWCARDUR] = BoardActivity,
+	[ActivityType.KActivityMail] = ActivityMail
 }
 ActivityUI = {
 	ACTIVITYBLOCKEGG = "ActivityBlockEggView",
@@ -169,7 +171,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityDeepSea] = "ActivityDeepSeaMainView",
 		[ActivityType_UI.KActivitySummerRe] = "ActivitySummerReMainView",
 		[ActivityType_UI.KActivityFireWorks] = "ActivityFireWorksMainView",
-		[ActivityType_UI.KActivityTerror] = "ActivityTerrorMainView"
+		[ActivityType_UI.KActivityTerror] = "ActivityTerrorMainView",
+		[ActivityType_UI.KActivityRiddle] = "ActivityRiddleMainView"
 	},
 	enterBlockMonsterShopView = {
 		[ActivityType_UI.kActivityBlockWsj] = "ActivityBlockMonsterShopView",
@@ -196,7 +199,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityDeepSea] = "ActivityMapNewView",
 		[ActivityType_UI.KActivitySummerRe] = "ActivitySagaSupportMapView",
 		[ActivityType_UI.KActivityFireWorks] = "ActivityMapNewView",
-		[ActivityType_UI.KActivityTerror] = "ActivityMapNewView"
+		[ActivityType_UI.KActivityTerror] = "ActivityMapNewView",
+		[ActivityType_UI.KActivityRiddle] = "ActivityMapNewView"
 	},
 	enterSagaSupportStageView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportStageWxhView",
@@ -228,7 +232,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityStoryBook] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivitySummerRe] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivityFireWorks] = "ActivityBlockTaskView",
-		[ActivityType_UI.KActivityTerror] = "ActivityBlockTaskView"
+		[ActivityType_UI.KActivityTerror] = "ActivityBlockTaskView",
+		[ActivityType_UI.KActivityRiddle] = "ActivityBlockTaskView"
 	},
 	enterSagaSupportRankRewardView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportRankRewardWxhView",
@@ -321,6 +326,9 @@ ActivityLogin14Config = {
 			cc.c4b(255, 255, 255, 255),
 			cc.c4b(130, 130, 130, 255)
 		}
+	},
+	EightDays_Riddle = {
+		resFile = "asset/ui/ActivityRiddleLogin14.csb"
 	}
 }
 ActivityMainMapTitleConfig = {
@@ -414,6 +422,18 @@ ActivityMainMapTitleConfig = {
 					color = cc.c4b(130, 130, 130, 255)
 				}
 			}
+		},
+		[ActivityType_UI.KActivityRiddle] = {
+			title_0 = {
+				{
+					ratio = 0.3,
+					color = cc.c4b(255, 255, 0, 255)
+				},
+				{
+					ratio = 0.7,
+					color = cc.c4b(255, 252, 208, 255)
+				}
+			}
 		}
 	},
 	anim = {
@@ -445,6 +465,10 @@ ActivityMainMapTitleConfig = {
 		[ActivityType_UI.KActivityFireWorks] = {
 			name = "eff_Z_hdjm_huohuadahuirukou",
 			position = cc.p(-137, 62)
+		},
+		[ActivityType_UI.KActivityRiddle] = {
+			name = "zhuyemianZ__zhentanduijuerukouzhuye",
+			position = cc.p(-151, 50)
 		}
 	}
 }

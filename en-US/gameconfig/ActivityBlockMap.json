@@ -1113,6 +1113,61 @@
         ],
         "Type": "NORMAL"
     },
+    "RiddleM01": {
+        "BGM": "Mus_Story_Detective_2",
+        "Background": "Riddle_Scene02",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_RiddleAM01_Name",
+        "StarBoxReward": "",
+        "SubPoint": [],
+        "SubSort": [
+            "RiddleSN01",
+            "RiddleSN02",
+            "RiddleSN03",
+            "RiddleSN04",
+            "RiddleSN05",
+            "RiddleSN06",
+            "RiddleSN07",
+            "RiddleSN08"
+        ],
+        "SubStoryPoint": [
+            "RiddleS01S01",
+            "RiddleS01S02",
+            "RiddleS01S03",
+            "RiddleS01S04"
+        ],
+        "Type": "NORMAL"
+    },
+    "RiddleM02": {
+        "BGM": "Mus_Story_Detective_2",
+        "Background": "Riddle_Scene03",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_RiddleAM02_Name",
+        "StarBoxReward": "",
+        "SubPoint": [],
+        "SubSort": [
+            "RiddleSE01",
+            "RiddleSE02",
+            "RiddleSE03",
+            "RiddleSE04",
+            "RiddleSE05",
+            "RiddleSE06",
+            "RiddleSE07",
+            "RiddleSE08",
+            "RiddleSE09",
+            "RiddleSE10",
+            "RiddleSE11"
+        ],
+        "SubStoryPoint": [
+            "RiddleS02S01",
+            "RiddleS02S02",
+            "RiddleS02S03",
+            "RiddleS02S04"
+        ],
+        "Type": "ELITE"
+    },
     "Snowflack_Map_E01": {
         "BGM": "Mus_Story_Mystery_2",
         "Background": "Bg_Copy_Snowflake_1",

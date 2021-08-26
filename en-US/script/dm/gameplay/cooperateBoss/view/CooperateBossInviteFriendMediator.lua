@@ -187,7 +187,9 @@ function CooperateBossInviteFriendMediator:initView()
 	self._bossTime = self._main:getChildByFullName("info.time")
 	self._bossStateText = self._main:getChildByFullName("info.text")
 	self._bossRole = self._main:getChildByFullName("role")
-	self._leaveTimesLab = self._main:getChildByFullName("leaveTimes")
+	self._leaveTimesLab = self._main:getChildByFullName("curLeaveTimes")
+	self._totalTimesLab = self._main:getChildByFullName("totalLeaveTimes")
+	self._titleTimesLab = self._main:getChildByFullName("leaveTimesTitle")
 	self._buyTimesBtn = self._main:getChildByFullName("buyTimesBtn")
 	self.roleInfo = self._main:getChildByFullName("roleInfo")
 	self._friendPanel = self._main:getChildByFullName("friendPanel")
@@ -742,6 +744,8 @@ function CooperateBossInviteFriendMediator:showFriendView()
 	self._friendPanel:setVisible(true)
 	self._bossRole:setVisible(false)
 	self._leaveTimesLab:setVisible(false)
+	self._titleTimesLab:setVisible(false)
+	self._totalTimesLab:setVisible(false)
 	self._buyTimesBtn:setVisible(false)
 	self.roleInfo:setVisible(false)
 	self._fightBtn:setVisible(false)
@@ -754,6 +758,8 @@ function CooperateBossInviteFriendMediator:hideFriendView()
 	self._friendPanel:setVisible(false)
 	self._bossRole:setVisible(true)
 	self._leaveTimesLab:setVisible(true)
+	self._titleTimesLab:setVisible(true)
+	self._totalTimesLab:setVisible(true)
 	self._buyTimesBtn:setVisible(true)
 	self.roleInfo:setVisible(true)
 	self._fightBtn:setVisible(true)
@@ -761,12 +767,16 @@ function CooperateBossInviteFriendMediator:hideFriendView()
 	if self._data.bossInfo and self._data.bossInfo.state == kCooperateBossEnemyState.kDead then
 		self._fightBtn:setVisible(false)
 		self._leaveTimesLab:setVisible(false)
+		self._totalTimesLab:setVisible(false)
+		self._titleTimesLab:setVisible(false)
 		self._buyTimesBtn:setVisible(false)
 	end
 
 	if self._data.bossInfo and self._data.bossInfo.state == kCooperateBossEnemyState.kEscaped then
 		self._fightBtn:setVisible(false)
 		self._leaveTimesLab:setVisible(false)
+		self._totalTimesLab:setVisible(false)
+		self._titleTimesLab:setVisible(false)
 		self._buyTimesBtn:setVisible(false)
 	end
 end
@@ -791,10 +801,17 @@ function CooperateBossInviteFriendMediator:setupBossState()
 	local curTimes = self._cooperateBossData:getBossFightTimes()
 	local resetData = DataReader:getDataByNameIdAndKey("Reset", "CooperateBoss", "ResetSystem")
 
-	self._leaveTimesLab:setString(Strings:get("CooperateBoss_Trigger_UI04", {
-		cur = curTimes.value,
-		total = resetData.max
-	}))
+	self._leaveTimesLab:setString(tostring(curTimes.value))
+
+	if curTimes.value <= 0 then
+		self._leaveTimesLab:setTextColor(cc.c3b(255, 117, 117))
+		self._totalTimesLab:setTextColor(cc.c3b(255, 117, 117))
+	else
+		self._leaveTimesLab:setTextColor(cc.c3b(255, 255, 255))
+		self._totalTimesLab:setTextColor(cc.c3b(255, 255, 255))
+	end
+
+	self._totalTimesLab:setString("/" .. tostring(resetData.max))
 	self._bossRole:removeAllChildren()
 
 	local roleModel = ConfigReader:getDataByNameIdAndKey("CooperateBossMain", self._data.bossInfo.confId, "RoleModel")
@@ -1348,10 +1365,17 @@ function CooperateBossInviteFriendMediator:refreshBuyTimes()
 	local curTimes = self._cooperateBossData:getBossFightTimes()
 	local resetData = DataReader:getDataByNameIdAndKey("Reset", "CooperateBoss", "ResetSystem")
 
-	self._leaveTimesLab:setString(Strings:get("CooperateBoss_Trigger_UI04", {
-		cur = curTimes.value,
-		total = resetData.max
-	}))
+	self._leaveTimesLab:setString(tostring(curTimes.value))
+
+	if curTimes.value <= 0 then
+		self._leaveTimesLab:setTextColor(cc.c3b(255, 117, 117))
+		self._totalTimesLab:setTextColor(cc.c3b(255, 117, 117))
+	else
+		self._leaveTimesLab:setTextColor(cc.c3b(255, 255, 255))
+		self._totalTimesLab:setTextColor(cc.c3b(255, 255, 255))
+	end
+
+	self._totalTimesLab:setString("/" .. tostring(resetData.max))
 end
 
 function CooperateBossInviteFriendMediator:refreshFriendView()

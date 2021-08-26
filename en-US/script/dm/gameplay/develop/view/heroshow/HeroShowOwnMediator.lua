@@ -424,6 +424,13 @@ function HeroShowOwnMediator:showDateToast(label)
 		return
 	end
 
+	local HideVoice = ConfigReader:getDataByNameIdAndKey("ConfigValue", "HideVoice", "content")
+	local isHide = table.indexof(HideVoice, self._heroData:getId())
+
+	if isHide then
+		return
+	end
+
 	if label then
 		local qipaoAnim = self._toastPanel:getChildByFullName("QiPaoAnim")
 

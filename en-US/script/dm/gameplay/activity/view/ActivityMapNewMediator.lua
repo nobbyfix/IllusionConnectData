@@ -527,7 +527,7 @@ function ActivityMapNewMediator:updataStageBtnImg()
 			local image = config.Image or "fireworks_btn_fbgq_pt.png"
 			local name = Strings:get(config.Part) or "NONE"
 
-			self._stageTypeBtn:loadTextures(image, image, image, ccui.TextureResType.plistType)
+			self._parttwoBtn:loadTextures(image, image, image, ccui.TextureResType.plistType)
 			self._parttwoBtnTxt:setString(Strings:get(name))
 		end
 	end
@@ -1148,6 +1148,7 @@ function ActivityMapNewMediator:onClickPlayStory(pointId, isCheck)
 				function delegate:willClose(popupMediator, data)
 					storyDirector:notifyWaiting("story_play_end")
 					outSelf:refreshStoryPoint(pointId)
+					outSelf._activity:checkVote()
 				end
 
 				local view = self:getInjector():getInstance("getRewardView")

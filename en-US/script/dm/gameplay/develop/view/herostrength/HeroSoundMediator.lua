@@ -435,6 +435,13 @@ function HeroSoundMediator:resetPlayAnim(node, show)
 end
 
 function HeroSoundMediator:showToast(data)
+	local HideVoice = ConfigReader:getDataByNameIdAndKey("ConfigValue", "HideVoice", "content")
+	local isHide = table.indexof(HideVoice, self._heroId)
+
+	if isHide then
+		return
+	end
+
 	self._toastPanel:setVisible(true)
 
 	local text = self._toastPanel:getChildByFullName("clipNode.text")

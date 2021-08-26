@@ -10109,6 +10109,19 @@
             "slot": "Hero_Proud_PDLa"
         }
     },
+    "StarSE_PDLa_Awake": {
+        "Desc": "StarSE_PDLa_Awake_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Unique_PDLa_Awaken",
+            "before": "Hero_Unique_PDLa_EX",
+            "slot": "Hero_Unique_PDLa"
+        }
+    },
     "StarSE_PGNNi_4": {
         "Desc": "StarSE_PGNNi_4_Desc",
         "EffectType": "CHANGESKILL",
@@ -10432,6 +10445,45 @@
             "after": "Hero_Proud_SLWan_EX",
             "before": "Hero_Proud_SLWan",
             "slot": "Hero_Proud_SLWan"
+        }
+    },
+    "StarSE_SP_KTSJKe_4": {
+        "Desc": "StarSE_SP_KTSJKe_4_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Unique_SP_KTSJKe_EX",
+            "before": "Hero_Unique_SP_KTSJKe",
+            "slot": "Hero_Unique_SP_KTSJKe"
+        }
+    },
+    "StarSE_SP_KTSJKe_5": {
+        "Desc": "StarSE_SP_KTSJKe_5_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_PBattle_SP_KTSJKe_EX",
+            "before": "Hero_PBattle_SP_KTSJKe",
+            "slot": "Hero_PBattle_SP_KTSJKe"
+        }
+    },
+    "StarSE_SP_KTSJKe_6": {
+        "Desc": "StarSE_SP_KTSJKe_6_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Proud_SP_KTSJKe_EX",
+            "before": "Hero_Proud_SP_KTSJKe",
+            "slot": "Hero_Proud_SP_KTSJKe"
         }
     },
     "StarSE_SP_PNCao_4": {
@@ -11043,6 +11095,45 @@
             "after": "Hero_Proud_XHMao_EX",
             "before": "Hero_Proud_XHMao",
             "slot": "Hero_Proud_XHMao"
+        }
+    },
+    "StarSE_XLDBLTe_4": {
+        "Desc": "StarSE_XLDBLTe_4_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Unique_XLDBLTe_EX",
+            "before": "Hero_Unique_XLDBLTe",
+            "slot": "Hero_Unique_XLDBLTe"
+        }
+    },
+    "StarSE_XLDBLTe_5": {
+        "Desc": "StarSE_XLDBLTe_5_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_PBattle_XLDBLTe_EX",
+            "before": "Hero_PBattle_XLDBLTe",
+            "slot": "Hero_PBattle_XLDBLTe"
+        }
+    },
+    "StarSE_XLDBLTe_6": {
+        "Desc": "StarSE_XLDBLTe_6_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Proud_XLDBLTe_EX",
+            "before": "Hero_Proud_XLDBLTe",
+            "slot": "Hero_Proud_XLDBLTe"
         }
     },
     "StarSE_XLai_3": {

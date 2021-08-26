@@ -130,6 +130,7 @@ function MasterLeadStageMediator:setupView(parentMedi, data)
 
 	self:initNodes()
 	self:initStageTouch()
+	self:setupClickEnvs()
 end
 
 function MasterLeadStageMediator:refreshView()
@@ -264,17 +265,20 @@ end
 
 function MasterLeadStageMediator:showSkillTip(skillData, index)
 	local skillNode = self._main:getChildByFullName("Node_Bottom.skillNode_" .. index)
+	local parentView = self._parentMediator:getView()
 
 	if not self._skillTipNode then
 		self._skillTipNode = MasterLeadStageSkillTip:createWidgetNode()
 
 		self._skillTipNode:setVisible(false)
-		self._skillTipNode:addTo(self:getView()):posite(200, 85)
+		self._skillTipNode:addTo(parentView):posite(200, 85)
 
 		self._skillShowWidget = self:autoManageObject(self:getInjector():injectInto(MasterLeadStageSkillTip:new(self._skillTipNode, skillData)))
 	end
 
-	self._skillTipNode:setPositionX(skillNode:getPositionX() + 100)
+	local targetPos = skillNode:getParent():convertToWorldSpace(cc.p(skillNode:getPosition()))
+
+	self._skillTipNode:setPositionX(parentView:convertToNodeSpace(targetPos).x + 50)
 	self._skillShowWidget:refreshInfo(skillData)
 
 	if self._skillTipNode:isVisible() then
@@ -866,4 +870,23 @@ function MasterLeadStageMediator:runChangeViewAction()
 
 	self._middleNode:runAction(sequence1)
 	parentView:runAction(sequence2)
+end
+
+function MasterLeadStageMediator:setupClickEnvs()
+	if GameConfigs.closeGuide then
+		return
+	end
+
+	local storyDirector = self:getInjector():getInstance(story.StoryDirector)
+
+	if self._leadStageBtn then
+		storyDirector:setClickEnv("MasterEmblemMediator.topemblemBg", self._leadStageBtn, function (sender, eventType)
+		end)
+	end
+
+	local sequence = cc.Sequence:create(cc.CallFunc:create(function ()
+		storyDirector:notifyWaiting("enter_MasterLeadStageMediator")
+	end))
+
+	self:getView():runAction(sequence)
 end

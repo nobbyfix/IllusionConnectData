@@ -20,6 +20,10 @@ local kBtnHandlers = {
 	["mainpanel.reviewBtn"] = {
 		clickAudio = "Se_Click_Common_1",
 		func = "onClickAwakenReplaceBtn"
+	},
+	["mainpanel.costPanel.btn_translate"] = {
+		clickAudio = "Se_Click_Common_1",
+		func = "onTranslateClicked"
 	}
 }
 local kHeroRarityAnim = {
@@ -48,6 +52,7 @@ local kBgAnimAndImage = {
 	[GalleryPartyType.kSSZS] = "asset/ui/gallery/party_icon_she.png",
 	[GalleryPartyType.kUNKNOWN] = "asset/ui/gallery/party_icon_unknown.png"
 }
+local Hero_GeneralFragmentLimit = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Hero_GeneralFragmentLimit", "content")
 local AWAKEN_STAR_ICON = "jx_img_star.png"
 
 function HeroStrengthAwakenMediator:initialize()
@@ -97,6 +102,8 @@ function HeroStrengthAwakenMediator:initNodes()
 	self._topinfo_node = self:getView():getChildByFullName("topinfo_node")
 
 	self._topinfo_node:setVisible(false)
+
+	self._translteBtn = self._costPanel:getChildByFullName("btn_translate")
 end
 
 function HeroStrengthAwakenMediator:enterWithData(data)
@@ -639,6 +646,18 @@ function HeroStrengthAwakenMediator:refreshStarUpCostPanel()
 				self:onClickItem()
 			end
 		end)
+
+		local canExchange = not table.indexof(Hero_GeneralFragmentLimit, self._heroId)
+
+		self._translteBtn:setVisible(canExchange)
+
+		local costNode1 = self._costPanel:getChildByFullName("costNode1")
+
+		if self._translteBtn:isVisible() then
+			costNode1:setPositionX(110)
+		else
+			costNode1:setPositionX(158)
+		end
 	end
 end
 
@@ -773,4 +792,58 @@ end
 
 function HeroStrengthAwakenMediator:onClickBack(sender, eventType)
 	self:dismiss()
+end
+
+function HeroStrengthAwakenMediator:onTranslateClicked()
+	local data = self:getIsHaveFragmentFlag()
+	local bagSystem = self._developSystem:getBagSystem()
+	local hasFragmentNum = bagSystem:getItemCount(data.id)
+
+	if hasFragmentNum <= 0 then
+		local heroPrototype = self._heroData:getHeroPrototype()
+		local param = {
+			needNum = 0,
+			isNeed = true,
+			hasNum = 0,
+			hasWipeTip = true,
+			itemId = data.id
+		}
+		local view = self:getInjector():getInstance("sourceView")
+
+		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+		}, param))
+
+		return
+	end
+
+	local debrisChangeTipView = self:getInjector():getInstance("HeroGeneralFragmentView")
+
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, debrisChangeTipView, {
+		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+	}, {
+		kind = 2,
+		heroId = self._heroId
+	}, nil))
+end
+
+function HeroStrengthAwakenMediator:getIsHaveFragmentFlag()
+	local data = nil
+	local quality = self._heroData:getRarity()
+	local info = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Hero_StarFragment", "content")
+
+	for k, v in pairs(info) do
+		if quality == tonumber(k) then
+			data = {
+				id = next(v),
+				num = v[next(v)]
+			}
+
+			break
+		end
+	end
+
+	assert(data, "no qualiy Hero_StarFragment ")
+
+	return data
 end

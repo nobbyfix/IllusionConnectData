@@ -71,7 +71,11 @@ function HeroInteractionViewMediator:enterWithData(data)
 	self:handAnim()
 	self:initBg()
 	self:initAnim()
-	self._talkPanel:setVisible(true)
+
+	local HideVoice = ConfigReader:getDataByNameIdAndKey("ConfigValue", "HideVoice", "content")
+	local isHide = table.indexof(HideVoice, self._heroId)
+
+	self._talkPanel:setVisible(not isHide)
 
 	local soundId = "Voice_" .. self._heroId .. "_49"
 	local trueSoundId = nil

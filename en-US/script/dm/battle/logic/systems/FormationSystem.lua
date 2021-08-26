@@ -740,6 +740,11 @@ function FormationSystem:clearOldResident(actor)
 				self:_kickUnit(oldResident)
 
 				if self._eventCenter then
+					self._eventCenter:dispatchEvent("UnitsWillLeave", {
+						oldResident
+					}, self:_groupUnitsByPlayer({
+						oldResident
+					}))
 					self._eventCenter:dispatchEvent("UnitsLeft", {
 						oldResident
 					}, self:_groupUnitsByPlayer({

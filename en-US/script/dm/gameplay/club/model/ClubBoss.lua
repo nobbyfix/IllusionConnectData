@@ -107,8 +107,6 @@ function ClubBoss:initialize()
 end
 
 function ClubBoss:sync(data, scoreData)
-	dump(data, "data >>>>>>>>>>>")
-
 	if data.open ~= nil then
 		self._open = data.open
 	end

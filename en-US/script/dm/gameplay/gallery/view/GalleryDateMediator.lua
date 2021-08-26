@@ -260,7 +260,10 @@ function GalleryDateMediator:initView()
 end
 
 function GalleryDateMediator:showDateToast(label, time, addLove, ignoreCallback)
-	if label then
+	local HideVoice = ConfigReader:getDataByNameIdAndKey("ConfigValue", "HideVoice", "content")
+	local isHide = table.indexof(HideVoice, self._heroId)
+
+	if label and not isHide then
 		local qipaoAnim = self._toastPanel:getChildByFullName("QiPaoAnim")
 
 		if not qipaoAnim then

@@ -863,6 +863,78 @@
         "Type": "Activity",
         "TypeId": "DrawCard_1UP_XHMao_Activity"
     },
+    "ActivityBanner171": {
+        "Bubble": "",
+        "EarlyShow": 7,
+        "Icon": "",
+        "Img": "drawcard_banner_MLYDi.png",
+        "Important": 0,
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_MLYDi",
+        "Sort": 999,
+        "Switch": "",
+        "Type": "Activity",
+        "TypeId": "DrawCard_1UP_MLYDi_Activity"
+    },
+    "ActivityBanner172": {
+        "Bubble": "",
+        "EarlyShow": "",
+        "Icon": "",
+        "Img": "drawcard_banner_FLYDe.png",
+        "Important": "",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_FLYDe_2",
+        "Sort": 999,
+        "Switch": "",
+        "Type": "Activity",
+        "TypeId": "DrawCard_1UP_FLYDe_2_Activity"
+    },
+    "ActivityBanner173": {
+        "Bubble": "",
+        "EarlyShow": 7,
+        "Icon": "",
+        "Img": "drawcard_banner_AMLBLTe.png",
+        "Important": 0,
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_AMLBLTe",
+        "Sort": 999,
+        "Switch": "",
+        "Type": "Activity",
+        "TypeId": "DrawCard_1UP_AMLBLTe_Activity"
+    },
+    "ActivityBanner174": {
+        "Bubble": "",
+        "EarlyShow": "",
+        "Icon": "",
+        "Img": "drawcard_banner_TLSi.png",
+        "Important": "",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_TLSi_2",
+        "Sort": 999,
+        "Switch": "",
+        "Type": "Activity",
+        "TypeId": "DrawCard_1UP_TLSi_2_Activity"
+    },
+    "ActivityBanner175": {
+        "Bubble": "",
+        "EarlyShow": "",
+        "Icon": "",
+        "Img": "drawcard_banner_SLWanLFEr.png",
+        "Important": 0,
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_SLWanLFEr",
+        "Sort": 999,
+        "Switch": "",
+        "Type": "Activity",
+        "TypeId": "DrawCard_SLWanLFEr_Activity"
+    },
+    "ActivityBanner176": {
+        "Bubble": "",
+        "EarlyShow": "",
+        "Icon": "",
+        "Img": "drawcard_banner_SLMenPDLa.png",
+        "Important": 0,
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_SLMenPDLa",
+        "Sort": 999,
+        "Switch": "",
+        "Type": "Activity",
+        "TypeId": "DrawCard_SLMenPDLa_Activity"
+    },
     "ActivityBanner18": {
         "Bubble": "",
         "EarlyShow": "",
@@ -1607,6 +1679,18 @@
         "Type": "Activity",
         "TypeId": "CooperateBoss_Exchange_20210825"
     },
+    "ActivityBannerCooperateBoss_20210908": {
+        "Bubble": "",
+        "EarlyShow": "",
+        "Icon": "",
+        "Img": "gongdou_img_banner.png",
+        "Important": "",
+        "Link": "view://ShopCoopExchangeView&activityId=CooperateBoss_Exchange_20210908",
+        "Sort": 999,
+        "Switch": "",
+        "Type": "Activity",
+        "TypeId": "CooperateBoss_Exchange_20210908"
+    },
     "ActivityBannerDeepSea": {
         "Bubble": "",
         "EarlyShow": "",
@@ -1726,6 +1810,30 @@
         "Switch": "",
         "Type": "Activity",
         "TypeId": "ActivityBlock_Purewhite"
+    },
+    "ActivityBannerRiddle": {
+        "Bubble": "",
+        "EarlyShow": "",
+        "Icon": "",
+        "Img": "riddle_txt_zjm_banner.png",
+        "Important": "",
+        "Link": "view://ActivityBlockView&activityId=ActivityBlock_Riddle",
+        "Sort": 999,
+        "Switch": "",
+        "Type": "Activity",
+        "TypeId": "ActivityBlock_Riddle"
+    },
+    "ActivityBannerRiddleMail": {
+        "Bubble": "",
+        "EarlyShow": "",
+        "Icon": "",
+        "Img": "activity_banner_mtyj.png",
+        "Important": "",
+        "Link": "view://ActivityMailView",
+        "Sort": 999,
+        "Switch": "",
+        "Type": "Activity",
+        "TypeId": "RiddlePreMail"
     },
     "ActivityBannerSnowflake": {
         "Bubble": "",
@@ -1911,7 +2019,7 @@
     },
     "ActivityBanner_SP_SSQXin": {
         "Bubble": [
-            "DrawCard_SP_SSQXin_Bubble"
+            "DrawCard_SP_PNCao_Bubble"
         ],
         "EarlyShow": "",
         "Icon": "main_rk_SP_SSQXin",

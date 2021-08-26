@@ -236,7 +236,7 @@ all.Skill_MLYDi_Unique = {
 			global.AssignRoles(_env, _env.target, "target")
 
 			for _, unit in global.__iter__(global.AllUnits(_env, -global.ONESELF(_env, _env.ACTOR))) do
-				if unit ~= _env.target then
+				if unit ~= _env.target and global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "MURDERER")) == 0 then
 					global.setRootVisible(_env, unit, false)
 				end
 			end
@@ -542,7 +542,7 @@ all.Skill_MLYDi_Passive = {
 					buff1,
 					buff2
 				}, 1, 0)
-				global.ApplyHPRecovery(_env, _env.ACTOR, global.UnitPropGetter(_env, "maxHp")(_env, _env.ACTOR))
+				global.ApplyHPRecovery(_env, _env.ACTOR, global.UnitPropGetter(_env, "maxHp")(_env, _env.ACTOR), true)
 
 				if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "Skill_MLYDi_Passive_Hp")) < 4 then
 					global.setRoleScale(_env, _env.ACTOR, 1 + global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "Skill_MLYDi_Passive_Hp")) * 0.04)
@@ -749,7 +749,7 @@ all.Skill_MLYDi_Unique_EX = {
 			global.AssignRoles(_env, _env.target, "target")
 
 			for _, unit in global.__iter__(global.AllUnits(_env, -global.ONESELF(_env, _env.ACTOR))) do
-				if unit ~= _env.target then
+				if unit ~= _env.target and global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "MURDERER")) == 0 then
 					global.setRootVisible(_env, unit, false)
 				end
 			end
@@ -1055,7 +1055,7 @@ all.Skill_MLYDi_Passive_EX = {
 					buff1,
 					buff2
 				}, 1, 0)
-				global.ApplyHPRecovery(_env, _env.ACTOR, global.UnitPropGetter(_env, "maxHp")(_env, _env.ACTOR))
+				global.ApplyHPRecovery(_env, _env.ACTOR, global.UnitPropGetter(_env, "maxHp")(_env, _env.ACTOR), true)
 
 				if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "Skill_MLYDi_Passive_Hp")) < 4 then
 					global.setRoleScale(_env, _env.ACTOR, 1 + global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "Skill_MLYDi_Passive_Hp")) * 0.04)

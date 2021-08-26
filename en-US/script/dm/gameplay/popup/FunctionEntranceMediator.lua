@@ -470,7 +470,14 @@ function FunctionEntranceMediator:createCooperateBossAnim()
 	petRaceCell:setVisible(true)
 
 	local descLabel = petRaceCell:getChildByFullName("text"):clone()
-	self._cooperateBossStateLabel = petRaceCell:getChildByFullName("text1"):clone()
+	local text1 = petRaceCell:getChildByFullName("text1"):clone()
+	local richText = ccui.RichText:createWithXML("", {})
+
+	richText:setAnchorPoint(text1:getAnchorPoint())
+	richText:setPosition(cc.p(text1:getPosition()))
+	richText:renderContent(200, 0, true)
+
+	self._cooperateBossStateLabel = richText
 	local timeLabel = petRaceCell:getChildByFullName("text2"):clone()
 
 	descLabel:setVisible(true)
@@ -486,8 +493,10 @@ function FunctionEntranceMediator:createCooperateBossAnim()
 	local endTime = TimeUtil:localDate("%Y.%m.%d", self._cooperateBossSystem:getCooperateBoss():getEndTime())
 
 	if kCooperateBossState.kPreHot == state then
-		self._cooperateBossStateLabel:setString(Strings:get("CooperateBoss_Entry_UI03"))
-		self._cooperateBossStateLabel:setTextColor(cc.c3b(249, 91, 91))
+		self._cooperateBossStateLabel:setString(Strings:get("Boss_Times_UI01", {
+			fontSize = 14,
+			fontName = TTF_FONT_FZYH_R
+		}))
 		timeLabel:setString(Strings:get("CooperateBoss_Entry_UI02", {
 			Start = startTime,
 			End = endTime
@@ -498,23 +507,35 @@ function FunctionEntranceMediator:createCooperateBossAnim()
 				return
 			end
 
-			local mineBossShow = self._cooperateBossSystem:checkMineDefaultBossShow()
+			local curTimes = self._cooperateBossSystem:getCooperateBoss():getBossFightTimes()
+			local resetData = DataReader:getDataByNameIdAndKey("Reset", "CooperateBoss", "ResetSystem")
 
-			self._cooperateBossStateLabel:setVisible(false)
-
-			if mineBossShow then
-				self._cooperateBossStateLabel:setVisible(true)
-				self._cooperateBossStateLabel:setString(Strings:get("CooperateBoss_Entry_UI05"))
-				self._cooperateBossStateLabel:setTextColor(cc.c3b(249, 217, 91))
-				self._cooperateBossStateLabel:setColor(cc.c3b(255, 255, 255))
+			if curTimes then
+				if curTimes.value <= 0 then
+					self._cooperateBossStateLabel:setString(Strings:get("CooperateBoss_Times_Red", {
+						fontSize = 14,
+						fontName = TTF_FONT_FZYH_R,
+						cur = curTimes.value,
+						total = resetData.max
+					}))
+				else
+					self._cooperateBossStateLabel:setString(Strings:get("CooperateBoss_Times_Orange", {
+						fontSize = 14,
+						fontName = TTF_FONT_FZYH_R,
+						cur = curTimes.value,
+						total = resetData.max
+					}))
+				end
 			end
 		end)
 		timeLabel:setString(Strings:get("CooperateBoss_Entry_UI04", {
 			EndTime = endTime
 		}))
 	elseif kCooperateBossState.kEnd == state then
-		self._cooperateBossStateLabel:setString(Strings:get("CooperateBoss_Entry_UI06"))
-		self._cooperateBossStateLabel:setTextColor(cc.c3b(249, 91, 91))
+		self._cooperateBossStateLabel:setString(Strings:get("Boss_Times_UI02", {
+			fontSize = 18,
+			fontName = TTF_FONT_FZYH_R
+		}))
 		timeLabel:setString(Strings:get("CooperateBoss_Entry_UI04", {
 			EndTime = endTime
 		}))
@@ -537,7 +558,7 @@ function FunctionEntranceMediator:createCooperateBossAnim()
 		descLabel:addTo(descPanel):posite(-70, 5)
 		self._cooperateBossStateLabel:addTo(descPanel):posite(-13, 37)
 		self._cooperateBossStateLabel:setName("stateLabel")
-		timeLabel:addTo(descPanel):posite(0, -26)
+		timeLabel:addTo(descPanel):posite(0, -36)
 		redPoint:addTo(descPanel):posite(80, -10)
 
 		petRaceCell.redPoint = redPoint
@@ -559,8 +580,10 @@ function FunctionEntranceMediator:refreshCooperateBoss()
 		local state = self._cooperateBossSystem:getcooperateBossState()
 
 		if kCooperateBossState.kPreHot == state then
-			self._cooperateBossStateLabel:setString(Strings:get("CooperateBoss_Entry_UI03"))
-			self._cooperateBossStateLabel:setTextColor(cc.c3b(249, 91, 91))
+			self._cooperateBossStateLabel:setString(Strings:get("Boss_Times_UI01", {
+				fontSize = 18,
+				fontName = TTF_FONT_FZYH_R
+			}))
 		elseif kCooperateBossState.kStart == state then
 			self._cooperateBossSystem:requestGetInviteInfo(function ()
 				self:dispatch(Event:new(EVENT_LOCAL_REFRESH_COOPERATE_STATE))
@@ -573,15 +596,27 @@ function FunctionEntranceMediator:refreshCooperateBoss()
 end
 
 function FunctionEntranceMediator:refreshCooperateBossStateLab()
-	local mineBossShow = self._cooperateBossSystem:checkMineDefaultBossShow()
+	self._cooperateBossStateLabel:setVisible(true)
 
-	self._cooperateBossStateLabel:setVisible(false)
+	local resetData = DataReader:getDataByNameIdAndKey("Reset", "CooperateBoss", "ResetSystem")
+	local curTimes = self._cooperateBossSystem:getCooperateBoss():getBossFightTimes()
 
-	if mineBossShow then
-		self._cooperateBossStateLabel:setVisible(true)
-		self._cooperateBossStateLabel:setString(Strings:get("CooperateBoss_Entry_UI05"))
-		self._cooperateBossStateLabel:setTextColor(cc.c3b(249, 217, 91))
-		self._cooperateBossStateLabel:setColor(cc.c3b(255, 255, 255))
+	if curTimes then
+		if curTimes.value <= 0 then
+			self._cooperateBossStateLabel:setString(Strings:get("CooperateBoss_Times_Red", {
+				fontSize = 18,
+				fontName = TTF_FONT_FZYH_R,
+				cur = curTimes.value,
+				total = resetData.max
+			}))
+		else
+			self._cooperateBossStateLabel:setString(Strings:get("CooperateBoss_Times_Orange", {
+				fontSize = 18,
+				fontName = TTF_FONT_FZYH_R,
+				cur = curTimes.value,
+				total = resetData.max
+			}))
+		end
 	end
 end
 

@@ -245,6 +245,9 @@
     "Target_SLWan": {
         "Function": "return GenInfo(EnemyAll(COL_OF(TARGET)),Red)"
     },
+    "Target_SP_KTSJKe": {
+        "Function": "return MainTarget()"
+    },
     "Target_SP_PNCao": {
         "Function": "return GenInfo(EnemyAll(),Red)"
     },
@@ -289,6 +292,9 @@
     },
     "Target_XHMao": {
         "Function": "return GenInfo(EnemyAll(COL_OF(TARGET)),Red)"
+    },
+    "Target_XLDBLTe": {
+        "Function": "return MainTarget()"
     },
     "Target_XLai": {
         "Function": "return GenInfo(Slice(SortBy(FriendUnits(),\"<\",getHpRatio),1,1),Green)+GenInfo(Slice(SortBy(EnemyUnits(PETS),\"<\",getHp),1,1),Red)"

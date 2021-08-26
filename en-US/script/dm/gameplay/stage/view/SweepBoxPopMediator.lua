@@ -61,6 +61,9 @@ local buttonPosXTable2 = {
 	447,
 	704
 }
+local buttonPosXTable3 = {
+	575
+}
 
 function SweepBoxPopMediator:enterWithData(data)
 	if data.normalType then
@@ -77,8 +80,15 @@ function SweepBoxPopMediator:enterWithData(data)
 		local fightBtn = self:getView():getChildByFullName("fight")
 
 		fightBtn:setVisible(false)
-		oneBtn:setPositionX(buttonPosXTable2[1])
-		tenBtn:setPositionX(buttonPosXTable2[2])
+
+		if data.challengeTimes == 1 then
+			tenBtn:setVisible(false)
+			oneBtn:setPositionX(buttonPosXTable3[1])
+		else
+			tenBtn:setVisible(true)
+			oneBtn:setPositionX(buttonPosXTable2[1])
+			tenBtn:setPositionX(buttonPosXTable2[2])
+		end
 
 		local title1 = self:getView():getChildByFullName("sweepBox.title_node.Text_1")
 		local title2 = self:getView():getChildByFullName("sweepBox.title_node.Text_2")

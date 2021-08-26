@@ -135,8 +135,16 @@
         ]
     },
     "AMLBLTe": {
-        "Reward": {},
-        "RewardNumShow": [],
+        "Reward": {
+            "1": 100,
+            "2": 30,
+            "3": 10
+        },
+        "RewardNumShow": [
+            3,
+            2,
+            1
+        ],
         "Tower_1_Weight": [
             0,
             0,
@@ -1372,8 +1380,16 @@
         ]
     },
     "MLYDi": {
-        "Reward": {},
-        "RewardNumShow": [],
+        "Reward": {
+            "1": 100,
+            "2": 30,
+            "3": 10
+        },
+        "RewardNumShow": [
+            3,
+            2,
+            1
+        ],
         "Tower_1_Weight": [
             0,
             0,
@@ -1499,16 +1515,8 @@
         ]
     },
     "MZu": {
-        "Reward": {
-            "1": 100,
-            "2": 30,
-            "3": 10
-        },
-        "RewardNumShow": [
-            3,
-            2,
-            1
-        ],
+        "Reward": {},
+        "RewardNumShow": [],
         "Tower_1_Weight": [
             0,
             0,
@@ -1887,6 +1895,25 @@
             2,
             1
         ],
+        "Tower_1_Weight": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "Tower_2_Weight": [
+            1.05,
+            0.3,
+            3.2
+        ]
+    },
+    "SP_KTSJKe": {
+        "Reward": {},
+        "RewardNumShow": [],
         "Tower_1_Weight": [
             0,
             0,
@@ -2282,6 +2309,33 @@
         ]
     },
     "XHMao": {
+        "Reward": {
+            "1": 100,
+            "2": 30,
+            "3": 10
+        },
+        "RewardNumShow": [
+            3,
+            2,
+            1
+        ],
+        "Tower_1_Weight": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "Tower_2_Weight": [
+            1.05,
+            0.3,
+            3.2
+        ]
+    },
+    "XLDBLTe": {
         "Reward": {
             "1": 100,
             "2": 30,

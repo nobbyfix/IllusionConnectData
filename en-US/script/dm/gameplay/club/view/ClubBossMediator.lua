@@ -120,6 +120,8 @@ function ClubBossMediator:enterWithData(data)
 
 		self._clubSystem:resetClubBossTabRed()
 	end
+
+	self:setupClickEnvs()
 end
 
 function ClubBossMediator:setViewType(viewType)
@@ -393,6 +395,14 @@ function ClubBossMediator:initNodes()
 	self._newsCellPanel = self._mainPanel:getChildByFullName("newsNode.newsCellPanel")
 
 	self._newsCellPanel:setVisible(false)
+
+	local guide_panel_1 = self:getView():getChildByFullName("main.guide_panel_1")
+	local guide_panel_2 = self:getView():getChildByFullName("main.guide_panel_2")
+	local guide_panel_3 = self:getView():getChildByFullName("main.guide_panel_3")
+
+	guide_panel_1:setVisible(false)
+	guide_panel_2:setVisible(false)
+	guide_panel_3:setVisible(false)
 end
 
 function ClubBossMediator:setupTopInfoWidget()
@@ -2049,4 +2059,47 @@ function ClubBossMediator:checkJoinToday()
 	result = isSameDay
 
 	return result
+end
+
+function ClubBossMediator:setupClickEnvs()
+	if GameConfigs.closeGuide then
+		return
+	end
+
+	local scriptNames = "guide_ClubBoss"
+	local guideSystem = self:getInjector():getInstance(GuideSystem)
+
+	if guideSystem:checkGuideSwitchOpen(scriptNames) then
+		local sequence = cc.Sequence:create(cc.CallFunc:create(function ()
+			local storyDirector = self:getInjector():getInstance(story.StoryDirector)
+			local guide_panel_1 = self:getView():getChildByFullName("main.guide_panel_1")
+			local guide_panel_2 = self:getView():getChildByFullName("main.guide_panel_2")
+			local guide_panel_3 = self:getView():getChildByFullName("main.guide_panel_3")
+
+			if guide_panel_1 then
+				storyDirector:setClickEnv("ClubBossMediator.guide_panel_1", guide_panel_1, nil)
+			end
+
+			if guide_panel_2 then
+				storyDirector:setClickEnv("ClubBossMediator.guide_panel_2", guide_panel_2, nil)
+			end
+
+			if guide_panel_3 then
+				storyDirector:setClickEnv("ClubBossMediator.guide_panel_3", guide_panel_3, nil)
+			end
+
+			local storyAgent = storyDirector:getStoryAgent()
+
+			storyAgent:setSkipCheckSave(true)
+
+			local guideAgent = storyDirector:getGuideAgent()
+			local guideSaved = guideAgent:isSaved(scriptNames)
+
+			if not guideSaved then
+				guideAgent:trigger(scriptNames, nil, )
+			end
+		end))
+
+		self:getView():runAction(sequence)
+	end
 end

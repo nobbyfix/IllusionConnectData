@@ -490,6 +490,13 @@ end
 
 function JudgeRuleFactory:unitOrSummonDiedReached(args, result)
 	local unitType = args.killtype
+	local targetEnum = {
+		All = "ALL",
+		SideA = kBattleSideA,
+		SideB = kBattleSideB
+	}
+	local targetSide = args.side or "SideB"
+	targetSide = targetEnum[targetSide]
 	local minimumDeaths = args and args.count or 1
 
 	if result == nil then
@@ -503,12 +510,16 @@ function JudgeRuleFactory:unitOrSummonDiedReached(args, result)
 			self._preDeaths = 0
 		end,
 		onUnitDied = function (self, deadUnit)
-			if deadUnit:getSide() == kBattleSideB then
+			if targetSide == "ALL" or deadUnit:getSide() == targetSide then
 				if unitType == "Summoned" then
 					if deadUnit._isSummoned then
 						self._deaths = self._deaths + 1
 					end
-				elseif not deadUnit._isSummoned then
+				elseif unitType == "Hero" then
+					if not deadUnit._isSummoned then
+						self._deaths = self._deaths + 1
+					end
+				elseif deadUnit:hasFlag(unitType) then
 					self._deaths = self._deaths + 1
 				end
 			end

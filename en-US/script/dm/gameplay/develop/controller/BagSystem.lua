@@ -1666,6 +1666,17 @@ function BagSystem:getAllComposeEntrys(composeStoneId, curComposeId)
 
 				if curComposeId and curComposeId == k then
 					haveCount = haveCount - 1
+				else
+					local ret = true
+					local currentTime = self._composeTimes[k]
+
+					if currentTime and currentTime >= 1 then
+						ret = false
+					end
+
+					if ret then
+						haveCount = haveCount - 1
+					end
 				end
 
 				if haveCount > 0 then

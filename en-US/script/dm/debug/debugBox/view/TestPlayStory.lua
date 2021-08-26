@@ -30,14 +30,15 @@ end
 
 function TestPlayStory:runGuideScript(guideName)
 	if guideName and string.len(guideName) > 3 then
-		self:dispatch(Event:new(EVT_POP_TO_TARGETVIEW, {
-			viewName = "homeView"
-		}))
-
 		local storyDirector = self:getInjector():getInstance(story.StoryDirector)
 		local storyAgent = storyDirector:getStoryAgent()
 
-		storyAgent:trigger(guideName, nil, )
+		storyAgent:trigger(guideName, nil, function ()
+			dump("runGuideScript >>>>>>>>")
+		end)
+		self:dispatch(Event:new(EVT_POP_TO_TARGETVIEW, {
+			viewName = "homeView"
+		}))
 
 		local debugBox = self:getInjector():getInstance("DebugBox")
 

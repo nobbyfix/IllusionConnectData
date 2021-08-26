@@ -54,6 +54,7 @@ function ClubMapViewMediator:enterWithData(data)
 	self:checkEnterLogic()
 	self:refreshRedPoint()
 	self:requestAuditData()
+	self:setupClickEnvs()
 end
 
 function ClubMapViewMediator:refreshClubBossRedPoint(data)
@@ -797,5 +798,17 @@ function ClubMapViewMediator:onClickTouchPanel(sender, eventType)
 		end
 
 		print("onClickTouchPanel")
+	end
+end
+
+function ClubMapViewMediator:setupClickEnvs()
+	local scriptNames = "guide_ClubPicGuide"
+	local storyDirector = self:getInjector():getInstance(story.StoryDirector)
+	local guideAgent = storyDirector:getGuideAgent()
+	local guideSaved = guideAgent:isSaved(scriptNames)
+
+	if not guideSaved then
+		RuleFactory:showRules(self, nil, "Group_GuidePic")
+		guideAgent:save(scriptNames)
 	end
 end

@@ -560,7 +560,7 @@ function MasterLeadStageDetailMediator:showSkillTip(skillData, index)
 		self._skillShowWidget = self:autoManageObject(self:getInjector():injectInto(MasterLeadStageSkillTip:new(self._skillTipNode, skillData)))
 	end
 
-	self._skillTipNode:setPosition(cc.p(self._boxPanel3:getParent():getPositionX() + 70 * index, 265))
+	self._skillTipNode:setPosition(cc.p(self._boxPanel3:getParent():getPositionX() + 70 * index - 60, 265))
 	self._skillShowWidget:refreshInfo(skillData)
 
 	if self._skillTipNode:isVisible() then

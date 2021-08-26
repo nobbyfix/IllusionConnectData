@@ -71,6 +71,10 @@ local timeLimitShopConfig = {
 	terror = {
 		BG = "jqtd_txt_xzldmm_di",
 		TimeOutLineColor = cc.c4b(106, 0, 24, 255)
+	},
+	riddle = {
+		BG = "jqtd_txt_zhyazl_di",
+		TimeOutLineColor = cc.c4b(105, 0, 106, 255)
 	}
 }
 local btnHandlers = {

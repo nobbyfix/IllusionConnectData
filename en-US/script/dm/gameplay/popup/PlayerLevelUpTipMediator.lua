@@ -190,15 +190,30 @@ function PlayerLevelUpTipMediator:onClickOK(sender, eventType)
 		if #guideNames > 0 then
 			if guideAgent:isGuiding() then
 				guideAgent:setStoryEnd(function ()
-					guideAgent:trigger(guideNames, nil, )
-					self:dispatch(Event:new(EVT_POP_TO_TARGETVIEW, "homeView"))
+					delayCallByTime(0.016666666666666666, function ()
+						guideAgent:trigger(guideNames, nil, )
+
+						local dispatcher = DmGame:getInstance()
+
+						dispatcher:dispatch(Event:new(EVT_POP_TO_TARGETVIEW, "homeView"))
+					end)
 				end)
 			else
 				guideAgent:trigger(guideNames, nil, )
-				self:dispatch(Event:new(EVT_POP_TO_TARGETVIEW, "homeView"))
-			end
 
-			return
+				local scene = self:getInjector():getInstance("BaseSceneMediator", "activeScene")
+				local topViewName = scene:getTopViewName()
+				local topView = scene:getTopView()
+
+				if topViewName == "homeView" and topView then
+					self:dispatch(Event:new(EVT_POP_TO_TARGETVIEW, "homeView"))
+					self:close()
+				else
+					self:dispatch(Event:new(EVT_POP_TO_TARGETVIEW, "homeView"))
+				end
+
+				return
+			end
 		end
 
 		self:close()

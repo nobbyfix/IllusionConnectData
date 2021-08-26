@@ -226,18 +226,3 @@ function GameIntroduceMediator:onClickRight()
 
 	self:scrollToCurIndex(self._curIndex + 1)
 end
-
-function GameIntroduceMediator:saveIntroduceAmount()
-	local cjson = require("cjson.safe")
-	local customDataSystem = self:getInjector():getInstance(CustomDataSystem)
-	local data = cjson.decode(customDataSystem:getValue(PrefixType.kGlobal, "GameIntroduce", "{}"))
-
-	if data[self._introduceKey] == nil then
-		data[self._introduceKey] = 0
-	end
-
-	data[self._introduceKey] = data[self._introduceKey] + 1
-	local dataStr = cjson.encode(data)
-
-	customDataSystem:setValue(PrefixType.kGlobal, "GameIntroduce", dataStr)
-end
