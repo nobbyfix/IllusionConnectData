@@ -1391,6 +1391,198 @@
         "Time": "",
         "Type": "STORY"
     },
+    "Memory_Act_Riddle_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Riddle_Map",
+                    "RiddleS01S01"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_riddle_1",
+        "Name": "RiddleS01S01_Name",
+        "Num": 690,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_404_01a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_Riddle_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Riddle_Map",
+                    "RiddleS01S02"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_riddle_1",
+        "Name": "RiddleS01S02_Name",
+        "Num": 691,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_404_02a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_Riddle_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Riddle_Map",
+                    "RiddleS01S03"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_riddle_1",
+        "Name": "RiddleS01S03_Name",
+        "Num": 692,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_404_03a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_Riddle_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Riddle_Map",
+                    "RiddleS01S04"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_riddle_1",
+        "Name": "RiddleS01S04_Name",
+        "Num": 693,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_404_04a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_Riddle_5": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Riddle_Map",
+                    "RiddleS02S01"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_riddle_2",
+        "Name": "RiddleS02S01_Name",
+        "Num": 694,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_404_05a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_Riddle_6": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Riddle_Map",
+                    "RiddleS02S02"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_riddle_2",
+        "Name": "RiddleS02S02_Name",
+        "Num": 695,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_404_06a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_Riddle_7": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Riddle_Map",
+                    "RiddleS02S03"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_riddle_2",
+        "Name": "RiddleS02S03_Name",
+        "Num": 696,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_404_07a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_Riddle_8": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Riddle_Map",
+                    "RiddleS02S04"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_riddle_2",
+        "Name": "RiddleS02S04_Name",
+        "Num": 697,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_404_08a",
+        "Time": "",
+        "Type": "STORY"
+    },
     "Memory_Act_Sunflower_1": {
         "Condition": [
             {

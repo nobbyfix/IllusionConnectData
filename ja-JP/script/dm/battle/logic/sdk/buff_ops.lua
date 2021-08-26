@@ -431,6 +431,10 @@ function exports.Curse(env)
 	return CurseEffect:new()
 end
 
+function exports.Offline(env)
+	return OfflineEffect:new()
+end
+
 function exports.Stealth(env, alpha)
 	return HolyHideEffect:new({
 		status = kBEStealth,

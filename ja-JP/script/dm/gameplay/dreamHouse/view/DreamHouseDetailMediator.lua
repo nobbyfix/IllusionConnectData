@@ -195,6 +195,11 @@ function DreamHouseDetailMediator:initWidget()
 			self:onClickPoint(sender, eventType)
 		end)
 	end
+
+	local ruleData = ConfigReader:getDataByNameIdAndKey("DreamHouseBattle", self._battleId, "SpecialRuleShow")
+	local ruleBtn = self._main:getChildByFullName("pointDetail.topInfo.funcBtn")
+
+	ruleBtn:setVisible(ruleData and #ruleData > 0)
 end
 
 function DreamHouseDetailMediator:initAnim()
@@ -637,8 +642,31 @@ function DreamHouseDetailMediator:refreshBattleInfo()
 	arrList:removeAllChildren()
 	arrList:setScrollBarEnabled(false)
 
-	local buffAdd = ConfigReader:getDataByNameIdAndKey("DreamHouseBattle", battleId, "BuffEffect")
 	local titleArray = ConfigReader:getDataByNameIdAndKey("ConfigValue", "HeroPartyName", "content")
+	local campCond = ConfigReader:getDataByNameIdAndKey("DreamHouseBattle", battleId, "Camp")
+
+	if campCond == nil then
+		campCond = {}
+	end
+
+	for i = 1, #campCond do
+		local key = campCond[i]
+		local cell = self._attrCell:clone()
+		local icon = cell:getChildByFullName("icon")
+		local preStr = Strings:get("DreamHouse_TeamLimit_UI01", {
+			team = Strings:get(titleArray[key])
+		})
+
+		icon:loadTexture(kPartyIcon[key])
+		icon:setScale(0.7)
+
+		local attackText = cell:getChildByFullName("desc")
+
+		attackText:setString(preStr)
+		arrList:pushBackCustomItem(cell)
+	end
+
+	local buffAdd = ConfigReader:getDataByNameIdAndKey("DreamHouseBattle", battleId, "BuffEffect")
 
 	for k, v in pairs(buffAdd) do
 		for key, value in pairs(v) do

@@ -839,6 +839,14 @@ function MasterMainMediator:setupClickEnvs()
 		end)
 	end
 
+	local leaderStageBtn = self._tabBtns[3]
+
+	if leaderStageBtn then
+		storyDirector:setClickEnv("MasterCultivateMediator.tabBtn_4", leaderStageBtn, function (sender, eventType)
+			self:onClickTab("tabClone", 3)
+		end)
+	end
+
 	local tabNum = #self._tabBtns
 	local auraLvUpBtn = self._tabBtns[tabNum]
 

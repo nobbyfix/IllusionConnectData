@@ -13,12 +13,16 @@ ActivityBlockMapNewActivity:has("_storySet", {
 ActivityBlockMapNewActivity:has("_mapList", {
 	is = "rw"
 })
+ActivityBlockMapNewActivity:has("_isVote", {
+	is = "rw"
+})
 
 function ActivityBlockMapNewActivity:initialize()
 	self._stagesMap = {}
 	self._storySet = {}
 	self._stagesMap = {}
 	self._mapList = {}
+	self._isVote = false
 end
 
 function ActivityBlockMapNewActivity:synchronize(data)
@@ -48,6 +52,10 @@ function ActivityBlockMapNewActivity:synchronize(data)
 		self:syncStageInfo(data.stageInfos)
 	elseif data.storySet then
 		self:initStoryInfo()
+	end
+
+	if data.isVote then
+		self._isVote = data.isVote
 	end
 end
 

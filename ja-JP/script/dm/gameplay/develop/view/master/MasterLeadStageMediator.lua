@@ -130,6 +130,7 @@ function MasterLeadStageMediator:setupView(parentMedi, data)
 
 	self:initNodes()
 	self:initStageTouch()
+	self:setupClickEnvs()
 end
 
 function MasterLeadStageMediator:refreshView()
@@ -866,4 +867,23 @@ function MasterLeadStageMediator:runChangeViewAction()
 
 	self._middleNode:runAction(sequence1)
 	parentView:runAction(sequence2)
+end
+
+function MasterLeadStageMediator:setupClickEnvs()
+	if GameConfigs.closeGuide then
+		return
+	end
+
+	local storyDirector = self:getInjector():getInstance(story.StoryDirector)
+
+	if self._leadStageBtn then
+		storyDirector:setClickEnv("MasterEmblemMediator.topemblemBg", self._leadStageBtn, function (sender, eventType)
+		end)
+	end
+
+	local sequence = cc.Sequence:create(cc.CallFunc:create(function ()
+		storyDirector:notifyWaiting("enter_MasterLeadStageMediator")
+	end))
+
+	self:getView():runAction(sequence)
 end

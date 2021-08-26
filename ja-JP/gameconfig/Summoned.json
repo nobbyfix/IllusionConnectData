@@ -278,6 +278,68 @@
         "Type": "Summoned",
         "UniqueSkill": ""
     },
+    "SummonedGlass1": {
+        "Cost": 2,
+        "CounterSkill": "",
+        "DeathSkill": "",
+        "DoubleSkill": "",
+        "Flags": [
+            "SUMMONED",
+            "Glass"
+        ],
+        "KillRage": 0,
+        "MasterRage": 0,
+        "NormalSkill": "Skill_Model_Enemy_Mirror_Normal",
+        "PassiveSkill": [],
+        "ProudSkill": "",
+        "RageBase": 0,
+        "RageRules": {
+            "a1": [
+                0,
+                0
+            ],
+            "a2": 0,
+            "a3": 0,
+            "a4": 170
+        },
+        "RoleModel": "Model_Enemy_Mirror_Red",
+        "Sex": 2,
+        "SkillRate": 0.0,
+        "SummonSurface": "",
+        "Type": "Summoned",
+        "UniqueSkill": "Skill_JZi1_Unique"
+    },
+    "SummonedGlass2": {
+        "Cost": 2,
+        "CounterSkill": "",
+        "DeathSkill": "",
+        "DoubleSkill": "",
+        "Flags": [
+            "SUMMONED",
+            "Glass"
+        ],
+        "KillRage": 0,
+        "MasterRage": 0,
+        "NormalSkill": "Skill_Model_Enemy_Mirror_Normal",
+        "PassiveSkill": [],
+        "ProudSkill": "",
+        "RageBase": 0,
+        "RageRules": {
+            "a1": [
+                0,
+                0
+            ],
+            "a2": 0,
+            "a3": 0,
+            "a4": 0
+        },
+        "RoleModel": "Model_Enemy_Mirror_Blue",
+        "Sex": 2,
+        "SkillRate": 0.0,
+        "SummonSurface": "",
+        "Type": "Summoned",
+        "UniqueSkill": ""
+    },
     "SummonedJNLong": {
         "Cost": 2,
         "CounterSkill": "",
@@ -741,6 +803,37 @@
         "Type": "Summoned",
         "UniqueSkill": ""
     },
+    "SummonedSP_KTSJKe": {
+        "Cost": 2,
+        "CounterSkill": "",
+        "DeathSkill": "",
+        "DoubleSkill": "",
+        "Flags": [
+            "SUMMONED",
+            "SP_KTSJKe_Wife"
+        ],
+        "KillRage": 0,
+        "MasterRage": 10,
+        "NormalSkill": "Skill_Summoned_SP_KTSJKe_Normal",
+        "PassiveSkill": [],
+        "ProudSkill": "",
+        "RageBase": 0,
+        "RageRules": {
+            "a1": [
+                0,
+                0
+            ],
+            "a2": 0,
+            "a3": 0,
+            "a4": 0
+        },
+        "RoleModel": "Model_SP_KTSJKe_Wife",
+        "Sex": "",
+        "SkillRate": 0.0,
+        "SummonSurface": "",
+        "Type": "Summoned",
+        "UniqueSkill": ""
+    },
     "SummonedSYAi": {
         "Cost": 2,
         "CounterSkill": "",
@@ -797,7 +890,9 @@
         "RoleModel": "Model_TLSi_Bird",
         "Sex": 2,
         "SkillRate": 0.0,
-        "SummonSurface": "",
+        "SummonSurface": [
+            "Model_TLSi_artist_Bird"
+        ],
         "Type": "Summoned",
         "UniqueSkill": ""
     },

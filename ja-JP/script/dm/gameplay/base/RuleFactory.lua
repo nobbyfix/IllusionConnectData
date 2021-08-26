@@ -1,27 +1,46 @@
 RuleFactory = RuleFactory or {}
 
 function RuleFactory:showRules(outSelf, rule, introduceKey)
-	local count = ConfigReader:getDataByNameIdAndKey("PicGuide", introduceKey, "ChangeInfo")
-	local curCount = self:getCount(outSelf, introduceKey)
+	if self:showPicGuide(outSelf, introduceKey) == false then
+		self:showTextGuide(outSelf, rule)
+	end
 
-	if curCount < count then
-		local view = outSelf:getInjector():getInstance("GameIntroduceView")
+	self:saveCount(outSelf, introduceKey)
+end
 
-		outSelf:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
-			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-		}, {
-			key = introduceKey
-		}))
-	else
-		local Rule = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Dream_Challenge_Rule", "content")
+function RuleFactory:showPicGuide(outSelf, key)
+	if key and key ~= "" then
+		local count = ConfigReader:getDataByNameIdAndKey("PicGuide", key, "ChangeInfo")
+		local curCount = self:getCount(outSelf, key)
+
+		if count and curCount < count or count == 9999 then
+			local view = outSelf:getInjector():getInstance("GameIntroduceView")
+
+			outSelf:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+				transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+			}, {
+				key = key
+			}))
+
+			return true
+		end
+	end
+
+	return false
+end
+
+function RuleFactory:showTextGuide(outSelf, rule)
+	if rule then
 		local view = outSelf:getInjector():getInstance("ExplorePointRule")
 
 		outSelf:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
 			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
 		}, rule))
+
+		return true
 	end
 
-	self:saveIntroduceAmount(outSelf, introduceKey)
+	return false
 end
 
 function RuleFactory:getCount(outself, key)
@@ -36,7 +55,7 @@ function RuleFactory:getCount(outself, key)
 	return data[key]
 end
 
-function RuleFactory:saveIntroduceAmount(outSelf, introduceKey)
+function RuleFactory:saveCount(outSelf, introduceKey)
 	local cjson = require("cjson.safe")
 	local customDataSystem = outSelf:getInjector():getInstance(CustomDataSystem)
 	local data = cjson.decode(customDataSystem:getValue(PrefixType.kGlobal, "GameIntroduce", "{}"))

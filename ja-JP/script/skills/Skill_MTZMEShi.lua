@@ -348,7 +348,7 @@ all.MTZMEShi_For_BackCard = {
 			entry = prototype.passive
 		})
 		passive = global["[duration]"](this, {
-			0
+			120
 		}, passive)
 		this.passive = global["[trigger_by]"](this, {
 			"UNIT_KICK"
@@ -378,7 +378,7 @@ all.MTZMEShi_For_BackCard = {
 
 		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
 		exec["@time"]({
-			0
+			100
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global

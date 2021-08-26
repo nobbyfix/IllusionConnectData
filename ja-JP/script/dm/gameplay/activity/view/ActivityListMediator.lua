@@ -16,6 +16,7 @@ function ActivityListMediator:onRegister()
 	super.onRegister(self)
 	self:mapEventListener(self:getEventDispatcher(), EVT_ACTIVITY_REDPOINT_REFRESH, self, self.refreshRedPoint)
 	self:mapEventListener(self:getEventDispatcher(), EVT_RESET_DONE, self, self.refreshView)
+	self:mapEventListener(self:getEventDispatcher(), EVT_ACTIVITY_MAIL_NEW, self, self.refreshRedPoint)
 end
 
 function ActivityListMediator:enterWithData(data)

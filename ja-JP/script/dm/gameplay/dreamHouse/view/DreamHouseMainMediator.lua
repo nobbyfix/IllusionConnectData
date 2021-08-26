@@ -789,13 +789,7 @@ function DreamHouseMainMediator:refreshView()
 
 	enterBtn:removeAllChildren()
 
-	local mc = nil
-
-	if mapData and not self._house:isMapRewardGet(mapId) then
-		mc = cc.MovieClip:create("xiangqingxunhuan_zhuxianguanka_UIjiaohudongxiao")
-	else
-		mc = cc.MovieClip:create("jinru_zhuxianguanka_UIjiaohudongxiao")
-	end
+	local mc = cc.MovieClip:create("jinru_zhuxianguanka_UIjiaohudongxiao")
 
 	mc:addCallbackAtFrame(30, function ()
 		mc:stop()
@@ -932,11 +926,13 @@ function DreamHouseMainMediator:initAnim()
 	end
 
 	anim:addCallbackAtFrame(28, function (cid, mc)
-		local cell = self._scrollView:getChildByTag(tostring(self._curIndex))
+		self:pointChoose(function ()
+			local cell = self._scrollView:getChildByTag(tostring(self._curIndex))
 
-		if cell and cell.playChoose then
-			cell.playChoose()
-		end
+			if cell and cell.playChoose then
+				cell.playChoose()
+			end
+		end)
 	end)
 end
 
@@ -1035,6 +1031,42 @@ function DreamHouseMainMediator:onPointChoose(idx)
 		end)
 	else
 		self:refreshView()
+	end
+end
+
+function DreamHouseMainMediator:pointChoose(callback)
+	local mapId = self._houseMaps[self._curIndex]
+	local mapData = self._houseSystem:getMapById(mapId)
+
+	if mapData and not mapData:isLock() and not self._house:isMapRewardGet(mapId) then
+		self._houseSystem:requestMapReward(mapId, function (response)
+			if response.resCode == GS_SUCCESS then
+				if DisposableObject:isDisposed(self) then
+					return
+				end
+
+				local rewards = response.data.rewards
+
+				if rewards then
+					local view = self:getInjector():getInstance("getRewardView")
+
+					self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+						maskOpacity = 0
+					}, {
+						title = Strings:get("DreamHouse_Main_UI27"),
+						title1 = Strings:get("DreamHouse_Main_EN"),
+						rewards = rewards
+					}))
+				end
+
+				self:refreshInfoUI(self._scrollView:getChildByTag(self._curIndex), self._curIndex)
+				self:refreshView()
+				callback()
+			end
+		end)
+	else
+		self:refreshView()
+		callback()
 	end
 end
 

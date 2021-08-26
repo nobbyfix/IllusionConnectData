@@ -419,7 +419,11 @@ function SkillCard:usedByPlayer(player, battleContext, cost, args)
 
 	local actionScheduler = battleContext:getObject("ActionScheduler")
 
-	return actionScheduler:exertSpecificSkill(actor, skill)
+	if args.extra then
+		return actionScheduler:exertExtraSkill(actor, skill)
+	else
+		return actionScheduler:exertSpecificSkill(actor, skill)
+	end
 end
 
 function SkillCard:dumpInformation()

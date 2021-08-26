@@ -148,6 +148,17 @@ function ActivityCommonMainMediator:onRegister()
 			end
 		end)
 	end
+
+	self._voteBtn = self._main:getChildByName("voteBtn")
+
+	if self._voteBtn then
+		self._voteBtn:setTouchEnabled(true)
+		self._voteBtn:addTouchEventListener(function (sender, eventType)
+			if eventType == ccui.TouchEventType.ended then
+				self:onClickVote()
+			end
+		end)
+	end
 end
 
 function ActivityCommonMainMediator:setTimerString(timeStr, timeTip, key)
@@ -387,6 +398,10 @@ function ActivityCommonMainMediator:initInfo()
 		local redPoint = self._loginBtn:getChildByName("redPoint")
 
 		redPoint:setVisible(self._loginActivity and self._loginActivity:hasRedPoint())
+	end
+
+	if self._voteBtn then
+		self._voteBtn:setVisible(self._activity:isVote())
 	end
 end
 
@@ -1009,4 +1024,8 @@ function ActivityCommonMainMediator:setStageView()
 			anim.runAction(self._stageAnim)
 		end
 	end
+end
+
+function ActivityCommonMainMediator:onClickVote()
+	self._activity:checkVote()
 end

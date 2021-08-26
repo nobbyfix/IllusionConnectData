@@ -443,7 +443,7 @@
         "StarsAttrEffect": "ExcellentHeroSkill_Stars"
     },
     "RTPKSeason_8": {
-        "AwakenAttrEffect": "",
+        "AwakenAttrEffect": "ExcellentHeroSkill_Awaken",
         "BGM": [
             "Mus_Battle_Danger_Boss",
             "",
@@ -454,17 +454,20 @@
         "ConfigLevelLimitID": "LevelLimit_RTPK",
         "ExcellentHero": [
             {
-                "Effect": "ExcellentHeroSkill_Attr_Big",
+                "Effect": "ExcellentHeroSkill_Attr_Small",
                 "Hero": [
-                    "CZheng",
-                    "BBLMa"
+                    "YXZChun",
+                    "AMLBLTe",
+                    "PDLa",
+                    "XLDBLTe",
+                    "HSheng"
                 ]
             }
         ],
         "RuleDesc": "RTPKSeason_8_Desc",
         "SeasonSkill": "",
         "SeasonSkillCondition": "",
-        "StarsAttrEffect": ""
+        "StarsAttrEffect": "ExcellentHeroSkill_Stars"
     },
     "RTPKSeason_9": {
         "AwakenAttrEffect": "",

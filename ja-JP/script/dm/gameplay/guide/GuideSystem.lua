@@ -24,6 +24,18 @@ function GuideSystem:checkLevelUpGuide()
 	return {}, ""
 end
 
+function GuideSystem:checkGuideSwitchOpen(scriptName)
+	local playerGuide = ConfigReader:getDataByNameIdAndKey("ConfigValue", "NewPlayerGuideSwitch", "content") or {}
+
+	for k, v in pairs(playerGuide) do
+		if tostring(scriptName) == k and v == 0 then
+			return true
+		end
+	end
+
+	return false
+end
+
 function GuideSystem:getRecruitHeroSta()
 	local heroSystem = self:getInjector():getInstance("DevelopSystem"):getHeroSystem()
 	local heroCount = heroSystem:getHeroCount()

@@ -41,14 +41,16 @@ function PassiveFunEffect:cancelEffect(target, buffObject)
 
 	target:getComponent("Skill"):removePassiveSkill(self._id)
 
-	for i, v in pairs(self._actionList) do
-		self._skillSystem:clearTriggersForActorAction(v.event, target, v.listener)
-	end
-
 	local timeTrigger = self._skillSystem:getTimeTrigger()
 
-	if timeTrigger then
-		timeTrigger:removeAction(target)
+	for i, v in pairs(self._actionList) do
+		if v.timer and timeTrigger then
+			timeTrigger:removeAction(target, v.listener)
+		end
+	end
+
+	for i, v in pairs(self._actionList) do
+		self._skillSystem:clearTriggersForActorAction(v.event, target, v.listener)
 	end
 
 	return true

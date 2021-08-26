@@ -503,3 +503,130 @@ function ActivityBlockActivity:subActivityIsOver(activityId)
 
 	return true
 end
+
+function ActivityBlockActivity:isVote()
+	local map = self:getBlockMapActivity()
+
+	if not map then
+		self._activitySystem:dispatch(ShowTipEvent({
+			tip = Strings:get("Error_12806")
+		}))
+
+		return false
+	end
+
+	local pointId = map:getActivityConfig().VoteUnlock
+	local point = map:getPointById(pointId)
+
+	if not point then
+		return false
+	end
+
+	local pass = point:isPass()
+
+	return pass
+end
+
+function ActivityBlockActivity:checkVote()
+	local isVote = self:isVote()
+
+	if not isVote then
+		return
+	end
+
+	local map = self:getBlockMapActivity()
+	local isVote = map:getIsVote()
+
+	if isVote then
+		self:showVoteResult()
+
+		return
+	end
+
+	self:showVoteAlert()
+end
+
+function ActivityBlockActivity:showVoteResult()
+	local map = self:getBlockMapActivity()
+
+	if not map then
+		self._activitySystem:dispatch(ShowTipEvent({
+			tip = Strings:get("Error_12806")
+		}))
+
+		return
+	end
+
+	local data = {
+		doActivityType = 109
+	}
+
+	self._activitySystem:requestDoChildActivity(self._activityId, map:getId(), data, function (response)
+		if response.data then
+			local view = self._activitySystem:getInjector():getInstance("ActivityRiddleVoteView")
+
+			self._activitySystem:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+				maskOpacity = 200
+			}, {
+				data = response.data
+			}))
+		end
+	end)
+end
+
+function ActivityBlockActivity:showVoteAlert()
+	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
+
+	local map = self:getBlockMapActivity()
+
+	if not map then
+		self._activitySystem:dispatch(ShowTipEvent({
+			tip = Strings:get("Error_12806")
+		}))
+
+		return
+	end
+
+	local function ok()
+		local data = {
+			doActivityType = 108
+		}
+
+		self._activitySystem:requestDoChildActivity(self._activityId, map:getId(), data, function (response)
+			if response.data then
+				self:showVoteResult()
+			end
+		end)
+	end
+
+	local outSelf = self
+	local delegate = {
+		willClose = function (self, popupMediator, data)
+			if data.response == "ok" then
+				ok()
+			elseif data.response == "cancel" then
+				ok()
+			elseif data.response == "close" then
+				-- Nothing
+			end
+		end
+	}
+	local data = {
+		title1 = "",
+		title = Strings:get("VoteTitle_Des"),
+		content = Strings:get("VoteContent_Des"),
+		sureBtn = {
+			text1 = "",
+			text = Strings:get("Vote_Des_2")
+		},
+		cancelBtn = {
+			text1 = "",
+			text = Strings:get("Vote_Des_1")
+		}
+	}
+	local view = self._activitySystem:getInjector():getInstance("AlertView")
+
+	self._activitySystem:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+	}, data, delegate))
+end

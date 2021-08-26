@@ -25,6 +25,10 @@ function BattleCardWidget:dispose()
 	super.dispose(self)
 end
 
+function BattleCardWidget:isExtraCard()
+	return false
+end
+
 function BattleCardWidget:initSubviews(view)
 	local cardNode = view:getChildByFullName("card_node")
 	self._cardNode = cardNode
@@ -178,6 +182,8 @@ function BattleCardWidget:reloadIconImage(imagePath)
 	if self._iconImageNode then
 		self._iconImageNode:loadTexture(imagePath)
 	end
+
+	self._iconRes = imagePath
 end
 
 function BattleCardWidget:updateCardInfo(info)
@@ -629,9 +635,17 @@ function ExtraHeroCardWidget:freshEnergyAnim(energy, remain)
 	super.freshEnergyAnim(self, energy, remain, "jinengpaitishi")
 end
 
+function ExtraHeroCardWidget:isExtraCard()
+	return true
+end
+
 function ExtraHeroCardWidget:setHeroModel(heroInfo)
 	super.setHeroModel(self, heroInfo)
 	self._rangePic:setVisible(false)
+end
+
+function ExtraHeroCardWidget:getRes()
+	return self._iconRes
 end
 
 function ExtraHeroCardWidget:createMaskNode()
@@ -746,6 +760,10 @@ function ExtraSkillCardWidget:getType()
 	return "skill"
 end
 
+function ExtraSkillCardWidget:isExtraCard()
+	return true
+end
+
 function ExtraSkillCardWidget:setPreviewMod()
 end
 
@@ -821,8 +839,41 @@ function ExtraSkillCardWidget:addCardAnim()
 	self._iconImageNode:center(icon:getContentSize())
 end
 
+function ExtraSkillCardWidget:simpleShow(isSimple)
+	self._cardEffectAnim:setVisible(not isSimple)
+	self._animBuffEffect:setVisible(not isSimple)
+	self._cardAnim:setVisible(not isSimple)
+
+	self:getView().isSimpleShow = isSimple
+
+	if isSimple then
+		self.disply = self._iconImageNode:clone()
+
+		self.disply:setVisible(true)
+		self.disply:setScale(1.4)
+		self.disply:addTo(self:getView()):center(self:getView():getContentSize())
+		self.disply:offset(20, 50)
+	elseif self.disply then
+		self.disply:removeFromParent()
+
+		self.disply = nil
+	end
+end
+
+function ExtraSkillCardWidget:restoreNormalState(originCardPosition)
+	super.restoreNormalState(self, originCardPosition)
+
+	if self:getView().isSimpleShow then
+		self:simpleShow(false)
+	end
+end
+
 function ExtraSkillCardWidget:freshEnergyAnim(energy, remain)
 	super.freshEnergyAnim(self, energy, remain, "jinengpaitishi")
+end
+
+function ExtraSkillCardWidget:getRes()
+	return self._iconRes
 end
 
 function ExtraSkillCardWidget:updateCardInfo(info)

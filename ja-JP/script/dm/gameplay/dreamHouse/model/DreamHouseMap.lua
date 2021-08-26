@@ -149,11 +149,21 @@ function DreamHouseMap:getLastPointName2()
 end
 
 function DreamHouseMap:getOpenPointIdx()
-	for i = 1, 3 do
-		local id = self._pointIds[i]
+	if self:isPass() then
+		for i = 1, 3 do
+			local id = self._pointIds[i]
 
-		if not self._points[id]:isPass() then
-			return math.min(i, 3)
+			if not self._points[id]:isPerfectPass() then
+				return i
+			end
+		end
+	else
+		for i = 1, 3 do
+			local id = self._pointIds[i]
+
+			if not self._points[id]:isPass() then
+				return i
+			end
 		end
 	end
 

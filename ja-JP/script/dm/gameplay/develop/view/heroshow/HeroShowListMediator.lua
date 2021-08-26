@@ -37,6 +37,19 @@ local kEquipTypeToImage = {
 	[HeroEquipType.kTops] = "img_yinghun_clothes",
 	[HeroEquipType.kShoes] = "img_yinghun_shoes"
 }
+local TargetOccupation = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Team_TypeOrder", "content")
+local SortExtendFunc = {
+	{
+		func = function (sortExtendType, hero)
+			return hero.rareity == 17 - sortExtendType
+		end
+	},
+	{
+		func = function (sortExtendType, hero)
+			return hero.type == TargetOccupation[sortExtendType - 5]
+		end
+	}
+}
 
 function HeroShowListMediator:initialize()
 	super.initialize(self)
@@ -58,6 +71,8 @@ function HeroShowListMediator:onRegister()
 end
 
 function HeroShowListMediator:enterWithData(data)
+	self._subSortType = {}
+
 	self._stageSystem:setSortType(1)
 	cc.UserDefault:getInstance():setBoolForKey(UserDefaultKey.kGetNewHeroRed, false)
 
@@ -241,6 +256,52 @@ function HeroShowListMediator:updateData()
 
 	for i = 1, #self._ownHeroList do
 		self._showList[#self._showList + 1] = self._ownHeroList[i]
+	end
+
+	if next(self._subSortType) and self._subSortType[1] ~= 1 then
+		local retList = {}
+		local sub1 = {}
+		local sub2 = {}
+
+		for i, v in ipairs(self._subSortType) do
+			if v ~= 1 and v <= 5 then
+				table.insert(sub1, v)
+			elseif v ~= 1 then
+				table.insert(sub2, v)
+			end
+		end
+
+		if next(sub1) then
+			for i, hero in pairs(self._showList) do
+				for i, sort in ipairs(sub1) do
+					if SortExtendFunc[1].func(sort, hero) then
+						table.insert(retList, hero)
+
+						break
+					end
+				end
+			end
+
+			self._showList = retList
+		else
+			retList = self._showList
+		end
+
+		local retList2 = {}
+
+		if next(sub2) then
+			for i, hero in pairs(retList) do
+				for i, sort in ipairs(sub2) do
+					if SortExtendFunc[2].func(sort, hero) then
+						table.insert(retList2, hero)
+
+						break
+					end
+				end
+			end
+
+			self._showList = retList2
+		end
 	end
 
 	local heroInfo = self._heroSystem:getHeroInfoById(self._chooseHeroId)
@@ -918,23 +979,30 @@ function HeroShowListMediator:resetSelectImg()
 	self._selectImage:addTo(self:getView())
 end
 
+local sortEnum = {
+	1,
+	7,
+	2,
+	3
+}
+
 function HeroShowListMediator:createSortView()
 	if self._main:getChildByFullName("SortPanel") then
 		return
 	end
 
-	local sortPanel = self._main:getChildByFullName("sortBtnPanel")
 	local sortType = self._stageSystem:getSortType()
 
 	local function callBack(data)
-		local sortStr = self._stageSystem:getSortTypeStr(data.sortType)
+		self._sortType:setString(data.sortStr)
+		self._stageSystem:setSortType(sortEnum[data.sortType])
 
-		self._sortType:setString(sortStr)
-		self._stageSystem:setSortType(data.sortType)
+		self._subSortType = data.subSortType
+
 		self:refreshSortView()
 	end
 
-	self._sortComponent = SortHeroListComponent:new({
+	self._sortComponent = SortHeroListNewComponent:new({
 		isHide = false,
 		sortType = sortType,
 		mediator = self,
@@ -944,7 +1012,7 @@ function HeroShowListMediator:createSortView()
 
 	self._sortType:setString(sortStr)
 	self._sortComponent:getRootNode():setVisible(false)
-	self._sortComponent:getRootNode():addTo(self._main):posite(sortPanel:getPositionX() + 30, 205)
+	self._sortComponent:getRootNode():addTo(self._main):posite(400, 148)
 	self._sortComponent:getRootNode():setName("SortPanel")
 end
 

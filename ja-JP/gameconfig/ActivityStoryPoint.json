@@ -3095,6 +3095,210 @@
         ],
         "StoryLink": "eventstory_knightlight_04a"
     },
+    "RiddleS01S01": {
+        "FirstReward": "RiddleS01S01_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -250
+        ],
+        "Map": "RiddleM01",
+        "Name": "RiddleS01S01_Name",
+        "NextStoryPoint": [
+            "RiddleS01S02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_404_01a"
+    },
+    "RiddleS01S02": {
+        "FirstReward": "RiddleS01S02_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "RiddleM01",
+        "Name": "RiddleS01S02_Name",
+        "NextStoryPoint": [
+            "RiddleS01S03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "RiddleSN02"
+        ],
+        "PreStoryPoint": [
+            "RiddleS01S01"
+        ],
+        "StoryLink": "eventstory_404_02a"
+    },
+    "RiddleS01S03": {
+        "FirstReward": "RiddleS01S03_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "RiddleM01",
+        "Name": "RiddleS01S03_Name",
+        "NextStoryPoint": [
+            "RiddleS01S04"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "RiddleSN04"
+        ],
+        "PreStoryPoint": [
+            "RiddleS01S02"
+        ],
+        "StoryLink": "eventstory_404_03a"
+    },
+    "RiddleS01S04": {
+        "FirstReward": "RiddleS01S04_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "RiddleM01",
+        "Name": "RiddleS01S04_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "RiddleSN06"
+        ],
+        "PreStoryPoint": [
+            "RiddleS01S03"
+        ],
+        "StoryLink": "eventstory_404_04a"
+    },
+    "RiddleS02S01": {
+        "FirstReward": "RiddleS01S01_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -250
+        ],
+        "Map": "RiddleM02",
+        "Name": "RiddleS02S01_Name",
+        "NextStoryPoint": [
+            "RiddleS02S02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_404_05a"
+    },
+    "RiddleS02S02": {
+        "FirstReward": "RiddleS01S02_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "RiddleM02",
+        "Name": "RiddleS02S02_Name",
+        "NextStoryPoint": [
+            "RiddleS02S03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "RiddleSE02"
+        ],
+        "PreStoryPoint": [
+            "RiddleS02S01"
+        ],
+        "StoryLink": "eventstory_404_06a"
+    },
+    "RiddleS02S03": {
+        "FirstReward": "RiddleS01S03_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "RiddleM02",
+        "Name": "RiddleS02S03_Name",
+        "NextStoryPoint": [
+            "RiddleS02S04"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "RiddleSE04"
+        ],
+        "PreStoryPoint": [
+            "RiddleS02S02"
+        ],
+        "StoryLink": "eventstory_404_07a"
+    },
+    "RiddleS02S04": {
+        "FirstReward": "RiddleS01S04_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "RiddleM02",
+        "Name": "RiddleS02S04_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "RiddleSE06"
+        ],
+        "PreStoryPoint": [
+            "RiddleS02S03"
+        ],
+        "StoryLink": "eventstory_404_08a"
+    },
     "StoryBookS01E01": {
         "FirstReward": "StoryBookS01E01_Reward",
         "Icon": "s_album_story_1",

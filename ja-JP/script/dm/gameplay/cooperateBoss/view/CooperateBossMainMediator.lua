@@ -110,7 +110,8 @@ function CooperateBossMainMediator:initView()
 	self._fightBtn = self._main:getChildByFullName("fightBtn")
 	self._talk = self._main:getChildByFullName("tablk")
 	self._leaveTimesPanel = self._main:getChildByFullName("leaveTimes")
-	self._leaveTimesLab = self._main:getChildByFullName("leaveTimes.text")
+	self._leaveTimesLab = self._main:getChildByFullName("leaveTimes.cur")
+	self._totalTimesLab = self._main:getChildByFullName("leaveTimes.total")
 	self._buyTimesBtn = self._main:getChildByFullName("buyTimesBtn")
 end
 
@@ -547,10 +548,17 @@ function CooperateBossMainMediator:setupBossModeShow(mineBoss)
 			local curTimes = self._cooperateBossData:getBossFightTimes()
 			local resetData = DataReader:getDataByNameIdAndKey("Reset", "CooperateBoss", "ResetSystem")
 
-			self._leaveTimesLab:setString(Strings:get("CooperateBoss_Trigger_UI04", {
-				cur = curTimes.value,
-				total = resetData.max
-			}))
+			self._leaveTimesLab:setString(tostring(curTimes.value))
+
+			if curTimes.value <= 0 then
+				self._leaveTimesLab:setTextColor(cc.c3b(255, 117, 117))
+				self._totalTimesLab:setTextColor(cc.c3b(255, 117, 117))
+			else
+				self._leaveTimesLab:setTextColor(cc.c3b(255, 255, 255))
+				self._totalTimesLab:setTextColor(cc.c3b(255, 255, 255))
+			end
+
+			self._totalTimesLab:setString("/" .. tostring(resetData.max))
 		else
 			bossId = ConfigReader:getDataByNameIdAndKey("ConfigValue", "CooperateBoss_MainBossShow", "content")
 			roleModel = IconFactory:getRoleModelByKey("HeroBase", bossId)
@@ -629,10 +637,17 @@ function CooperateBossMainMediator:setupBossModeShow(mineBoss)
 		local curTimes = self._cooperateBossData:getBossFightTimes()
 		local resetData = DataReader:getDataByNameIdAndKey("Reset", "CooperateBoss", "ResetSystem")
 
-		self._leaveTimesLab:setString(Strings:get("CooperateBoss_Trigger_UI04", {
-			cur = curTimes.value,
-			total = resetData.max
-		}))
+		self._leaveTimesLab:setString(tostring(curTimes.value))
+
+		if curTimes.value <= 0 then
+			self._leaveTimesLab:setTextColor(cc.c3b(255, 117, 117))
+			self._totalTimesLab:setTextColor(cc.c3b(255, 117, 117))
+		else
+			self._leaveTimesLab:setTextColor(cc.c3b(255, 255, 255))
+			self._totalTimesLab:setTextColor(cc.c3b(255, 255, 255))
+		end
+
+		self._totalTimesLab:setString("/" .. tostring(resetData.max))
 	else
 		bossId = ConfigReader:getDataByNameIdAndKey("ConfigValue", "CooperateBoss_MainBossShow", "content")
 		local roleModel = IconFactory:getRoleModelByKey("HeroBase", bossId)
@@ -920,10 +935,17 @@ function CooperateBossMainMediator:refreshBuyTimes()
 	local curTimes = self._cooperateBossData:getBossFightTimes()
 	local resetData = DataReader:getDataByNameIdAndKey("Reset", "CooperateBoss", "ResetSystem")
 
-	self._leaveTimesLab:setString(Strings:get("CooperateBoss_Trigger_UI04", {
-		cur = curTimes.value,
-		total = resetData.max
-	}))
+	self._leaveTimesLab:setString(tostring(curTimes.value))
+
+	if curTimes.value <= 0 then
+		self._leaveTimesLab:setTextColor(cc.c3b(255, 117, 117))
+		self._totalTimesLab:setTextColor(cc.c3b(255, 117, 117))
+	else
+		self._leaveTimesLab:setTextColor(cc.c3b(255, 255, 255))
+		self._totalTimesLab:setTextColor(cc.c3b(255, 255, 255))
+	end
+
+	self._totalTimesLab:setString("/" .. tostring(resetData.max))
 end
 
 function CooperateBossMainMediator:refreshView(data)

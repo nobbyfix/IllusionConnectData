@@ -1460,6 +1460,7 @@ function BattleUIMediator:updateCardArray(cards, remain, next)
 end
 
 function BattleUIMediator:updateExtraCardArray(cards, remain)
+	cards = cards or {}
 	local timeScale = self._viewContext:getTimeScale()
 	local count = 0
 

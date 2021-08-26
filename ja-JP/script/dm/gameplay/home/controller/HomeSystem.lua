@@ -512,7 +512,7 @@ function HomeSystem:getHomeBackgroundList()
 			if background[id] then
 				list[#list + 1] = v
 			end
-		else
+		elseif v.Unlook == 1 then
 			list[#list + 1] = v
 		end
 	end

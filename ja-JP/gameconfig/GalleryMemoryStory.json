@@ -386,6 +386,47 @@
         "UnlockDesc": "",
         "UnlockStory": ""
     },
+    "Memory_Act_Riddle": {
+        "ActiviType": "",
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Riddle_Map",
+                    "RiddleS01S01"
+                ]
+            }
+        ],
+        "Listpicture": "img_story_riddle_1",
+        "Name": "ActivityBlock_Riddle_Name",
+        "Num": 17,
+        "Story": [
+            {
+                "id": [
+                    "Memory_Act_Riddle_1",
+                    "Memory_Act_Riddle_2",
+                    "Memory_Act_Riddle_3",
+                    "Memory_Act_Riddle_4"
+                ],
+                "type": "NORMAL"
+            },
+            {
+                "id": [
+                    "Memory_Act_Riddle_5",
+                    "Memory_Act_Riddle_6",
+                    "Memory_Act_Riddle_7",
+                    "Memory_Act_Riddle_8"
+                ],
+                "type": "ELITE"
+            }
+        ],
+        "Type": "ACTIVILIST",
+        "UnlockDesc": "",
+        "UnlockStory": ""
+    },
     "Memory_Act_Sunflower": {
         "ActiviType": "",
         "Condition": "",

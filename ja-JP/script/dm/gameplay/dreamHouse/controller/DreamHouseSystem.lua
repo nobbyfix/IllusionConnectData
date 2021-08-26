@@ -414,29 +414,31 @@ function DreamHouseSystem:getMapById(id)
 end
 
 function DreamHouseSystem:checkIsShowRedPoint()
-	local mapIds = self:getHouseMaps()
+	if CommonUtils.GetSwitch("fn_train_dreamhouse") then
+		local mapIds = self:getHouseMaps()
 
-	for i = 1, #mapIds do
-		local mapId = mapIds[i]
-		local mapData = self:getMapById(mapId)
-		local pointIds = mapData:getPointIds()
+		for i = 1, #mapIds do
+			local mapId = mapIds[i]
+			local mapData = self:getMapById(mapId)
+			local pointIds = mapData:getPointIds()
 
-		for j = 1, #pointIds do
-			local pointId = pointIds[j]
-			local pointData = mapData:getPointById(pointId)
+			for j = 1, #pointIds do
+				local pointId = pointIds[j]
+				local pointData = mapData:getPointById(pointId)
 
-			if pointData:isHasRedPoint() then
-				return true
+				if pointData:isHasRedPoint() then
+					return true
+				end
 			end
 		end
-	end
 
-	for i = 1, #mapIds do
-		local mapId = mapIds[i]
-		local mapData = self:getMapById(mapId)
+		for i = 1, #mapIds do
+			local mapId = mapIds[i]
+			local mapData = self:getMapById(mapId)
 
-		if not mapData:isLock() and not self._dreamHouse:isMapRewardGet(mapId) then
-			return true
+			if not mapData:isLock() and not self._dreamHouse:isMapRewardGet(mapId) then
+				return true
+			end
 		end
 	end
 
@@ -568,7 +570,6 @@ end
 function DreamHouseSystem:updateHouse(callback)
 	local params = {}
 
-	dump("updateHouse >>>>>>")
 	self._service:updateHouse(params, true, callback)
 end
 

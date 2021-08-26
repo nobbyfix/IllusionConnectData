@@ -120,7 +120,8 @@
             "ALPo",
             "YSTLu",
             "YYing",
-            "FLYDe"
+            "FLYDe",
+            "MLYDi"
         ],
         "Party": "Curse",
         "PartyDesc": "Party_Curse_Desc",
@@ -135,6 +136,7 @@
             "DCJKang",
             "QTQCi",
             "HSYZhai",
+            "YXZChun",
             "YYing",
             "SYAi",
             "GYCZi",
@@ -304,7 +306,6 @@
             "TPGZhu",
             "ZZBBWei",
             "YLMGZhu",
-            "YLSBai",
             "BBLMa",
             "MTZMEShi",
             "LLan",
@@ -350,9 +351,13 @@
             "XHMao",
             "TLSi",
             "FLBDSi",
+            "YXZChun",
             "LFKLFTe",
             "WSLi",
-            "MYing"
+            "MYing",
+            "MLYDi",
+            "XLDBLTe",
+            "AMLBLTe"
         ],
         "Party": "SSR",
         "PartyDesc": "Party_SSR_Desc",
@@ -408,6 +413,7 @@
             "LYSi",
             "PDLa",
             "XHMao",
+            "YXZChun",
             "LFKLFTe"
         ],
         "Party": "Summon",
@@ -431,7 +437,9 @@
             "KEDGong",
             "LSLTe",
             "TLSi",
-            "FLBDSi"
+            "FLBDSi",
+            "XLDBLTe",
+            "AMLBLTe"
         ],
         "Party": "Support",
         "PartyDesc": "Party_Support_Desc",
@@ -441,7 +449,8 @@
     },
     "UNKNOWN": {
         "IncludeHero": [
-            "LFKLFTe"
+            "LFKLFTe",
+            "MLYDi"
         ],
         "Party": "UNKNOWN",
         "PartyDesc": "PartyDesc_UNKNOWN",
@@ -455,6 +464,8 @@
             "CLMan",
             "FTLEShi",
             "MLYTLSha",
+            "XLDBLTe",
+            "AMLBLTe",
             "MZGXiu",
             "SLWan",
             "FEMSi",

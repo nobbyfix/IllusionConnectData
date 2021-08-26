@@ -215,16 +215,16 @@ function BattleRoleTopBar:setHp(value)
 		end
 
 		if not self._hpLabel then
-			local label = ccui.Text:create("", CUSTOM_TTF_FONT_1, 20)
+			local label = ccui.Text:create("", CUSTOM_TTF_FONT_1, 15)
 
 			label:setColor(cc.c3b(0, 255, 0))
 			label:setAnchorPoint(cc.p(0.5, 0))
-			label:addTo(self._hpbar:getParent()):posite(self._hpbar:getContentSize().width / 2, 10)
+			label:addTo(self._hpbar:getParent()):posite(self._hpbar:getContentSize().width / 2 - 20, 10)
 
 			self._hpLabel = label
 		end
 
-		self._hpLabel:setString(formatCount(hp) .. "/" .. formatCount(maxHp))
+		self._hpLabel:setString("hp:" .. formatCount(hp) .. "/" .. formatCount(maxHp))
 	end
 end
 
@@ -237,7 +237,7 @@ function BattleRoleTopBar:setRp(value)
 	local rp = self._dataModel:getRp()
 
 	if not self._rpLabel then
-		local label = ccui.Text:create(" ", CUSTOM_TTF_FONT_1, 20)
+		local label = ccui.Text:create(" ", CUSTOM_TTF_FONT_1, 15)
 
 		label:setColor(cc.c3b(255, 0, 0))
 		label:setAnchorPoint(cc.p(0.5, 0.5))
@@ -247,7 +247,7 @@ function BattleRoleTopBar:setRp(value)
 	end
 
 	if DEBUG and DEBUG > 1 then
-		self._rpLabel:setString(rp)
+		self._rpLabel:setString("rp:" .. rp)
 	end
 end
 

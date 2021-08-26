@@ -110,8 +110,8 @@ function RTPKMainMediator:enterWithData(data)
 	self:setupTopInfoWidget()
 	self:mapEventListeners()
 	self:setupView()
-	self:showNewSeasonView()
 	self:refreshRedPoint()
+	self:setupClickEnvs()
 end
 
 function RTPKMainMediator:resumeWithData(data)
@@ -752,4 +752,48 @@ function RTPKMainMediator:matchFailTips()
 	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
 		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
 	}, data, delegate))
+end
+
+function RTPKMainMediator:setupClickEnvs()
+	if GameConfigs.closeGuide then
+		return
+	end
+
+	local scriptNames = "guide_RTPK"
+	local guideSystem = self:getInjector():getInstance(GuideSystem)
+
+	if guideSystem:checkGuideSwitchOpen(scriptNames) then
+		local sequence = cc.Sequence:create(cc.CallFunc:create(function ()
+			local storyDirector = self:getInjector():getInstance(story.StoryDirector)
+			local guide_panel_1 = self:getView():getChildByFullName("guide_panel_1")
+			local guide_panel_2 = self:getView():getChildByFullName("guide_panel_2")
+
+			if guide_panel_1 then
+				storyDirector:setClickEnv("RTPKMainMediator.guide_panel_1", guide_panel_1, nil)
+			end
+
+			if guide_panel_2 then
+				storyDirector:setClickEnv("RTPKMainMediator.guide_panel_2", guide_panel_2, nil)
+			end
+
+			local storyAgent = storyDirector:getStoryAgent()
+
+			storyAgent:setSkipCheckSave(true)
+
+			local guideAgent = storyDirector:getGuideAgent()
+			local guideSaved = guideAgent:isSaved(scriptNames)
+
+			if not guideSaved then
+				guideAgent:trigger(scriptNames, nil, function ()
+					self:showNewSeasonView()
+				end)
+			else
+				self:showNewSeasonView()
+			end
+		end))
+
+		self:getView():runAction(sequence)
+	else
+		self:showNewSeasonView()
+	end
 end

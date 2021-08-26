@@ -138,7 +138,7 @@ function exports.Expel(env, target, animation)
 end
 
 function exports.Kick(env, target, joinReferee)
-	joinReferee = joinReferee or true
+	joinReferee = joinReferee or false
 	local unit = excludeTarget(env, target, joinReferee)
 
 	if unit == nil then

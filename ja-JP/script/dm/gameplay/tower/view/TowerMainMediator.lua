@@ -28,6 +28,10 @@ local kBtnHandlers = {
 	["left_panel.btn_recruit"] = {
 		clickAudio = "Se_Click_Common_1",
 		func = "onClickRecruit"
+	},
+	infoBtn = {
+		clickAudio = "Se_Click_Common_1",
+		func = "onClickInfoBtn"
 	}
 }
 
@@ -50,6 +54,7 @@ end
 function TowerMainMediator:enterWithData()
 	self:refreshData()
 	self:refreshView()
+	self:setupClickEnvs()
 end
 
 function TowerMainMediator:resumeWithData()
@@ -91,6 +96,7 @@ function TowerMainMediator:initView()
 	self._recruitBtnText:setString(Strings:get("TowerRecruitText"))
 	self:addBeginMovieClipPanel()
 	self:setStyle()
+	self:getView():getChildByName("infoBtn"):setVisible(false)
 end
 
 function TowerMainMediator:setStyle()
@@ -405,4 +411,22 @@ function TowerMainMediator:onClickRecruit(sender, eventType)
 	}
 
 	recruitSystem:tryEnter(data)
+end
+
+function TowerMainMediator:onClickInfoBtn(sender, eventType)
+	RuleFactory:showRules(self, nil, "Mirror_GuidePic")
+end
+
+function TowerMainMediator:setupClickEnvs()
+	local scriptNames = "guide_TowerPicGuide"
+	local storyDirector = self:getInjector():getInstance(story.StoryDirector)
+	local guideAgent = storyDirector:getGuideAgent()
+	local guideSaved = guideAgent:isSaved(scriptNames)
+
+	if not guideSaved then
+		RuleFactory:showRules(self, nil, "Mirror_GuidePic")
+		guideAgent:save(scriptNames)
+	end
+
+	storyDirector:notifyWaiting("enter_TowerMain_view")
 end

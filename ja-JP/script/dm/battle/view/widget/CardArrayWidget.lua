@@ -85,6 +85,58 @@ end
 CardArrayWidget = class("CardArrayWidget", BattleWidget, _M)
 local kPreviewScale = 0.54
 
+function CardArrayWidget:FlyCard(endCall)
+	local collectObj = {}
+
+	for k, v in pairs(self._cardSlots) do
+		if v:getSlotType() == KSlotType.EXTRA and v:getCard() then
+			collectObj[#collectObj + 1] = v:getCard()
+		end
+	end
+
+	local scene = cc.Director:getInstance():getRunningScene()
+	local actionCnt = 0
+	local pos = {
+		{
+			cc.p(scene:getContentSize().width / 2, scene:getContentSize().height / 2)
+		},
+		{
+			cc.p(scene:getContentSize().width / 2 - 100, scene:getContentSize().height / 2),
+			cc.p(scene:getContentSize().width / 2 + 100, scene:getContentSize().height / 2)
+		}
+	}
+
+	for k, v in pairs(collectObj) do
+		local target = ccui.ImageView:create(v:getRes())
+
+		target:setScale(0.6)
+		scene:addChild(target)
+		target:setPosition(pos[#collectObj][k])
+
+		local descPos = v:getView():getParent():convertToWorldSpace(cc.p(v:getView():getPosition()))
+		local callback = cc.CallFunc:create(function ()
+			actionCnt = actionCnt - 1
+
+			if actionCnt <= 0 then
+				endCall()
+			end
+
+			target:removeFromParent()
+		end)
+
+		target:setOpacity(0)
+
+		local upmove = cc.MoveTo:create(0.2, cc.p(target:getPositionX(), target:getPositionY() + 50))
+		local up = cc.Spawn:create(upmove, cc.FadeTo:create(0.2, 255))
+		local spawn = cc.Spawn:create(cc.MoveTo:create(0.4, cc.p(descPos)), cc.ScaleTo:create(0.4, 0.3))
+		local sequence = cc.Sequence:create(cc.EaseSineIn:create(up), cc.DelayTime:create(0.5), cc.EaseSineOut:create(spawn), callback)
+
+		target:runAction(sequence)
+
+		actionCnt = actionCnt + 1
+	end
+end
+
 function CardArrayWidget:initialize(view)
 	super.initialize(self, view)
 	self:initSubviews(view)
@@ -104,7 +156,11 @@ function CardArrayWidget:clearAll()
 		self._cardSlots[i]:setCard(nil)
 	end
 
-	self._previewContainer:removeAllChildren()
+	for k, v in pairs(self._previewCards or {}) do
+		if not v:isExtraCard() then
+			v:getView():removeFromParent()
+		end
+	end
 
 	self._previewCards = nil
 
@@ -415,8 +471,14 @@ function CardArrayWidget:onTouchMoved(touch, event)
 
 			cardNode:setPosition(newPos)
 
-			if self._hittedSlot:getSlotType() == KSlotType.EXTRA and self._listener then
-				self._listener:dragExtraSkillMoved(self, self._hittedCard, pt)
+			if self._hittedSlot:getSlotType() == KSlotType.EXTRA then
+				if not cardNode.isSimpleShow then
+					self._hittedCard:simpleShow(true)
+				end
+
+				if self._listener then
+					self._listener:dragExtraSkillMoved(self, self._hittedCard, pt)
+				end
 			end
 		end
 	elseif cc.pGetLength(moved) > 10 and hittedCard:isEnergyEnough() then

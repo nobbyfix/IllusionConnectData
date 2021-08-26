@@ -226,7 +226,11 @@ function exports.MARKED(env, flag)
 end
 
 exports.PETS = MakeFilter(function (_, unit)
-	return unit:getFlagCheckers()["$HERO"](unit)
+	local flag = unit:getComponent("Flag")
+
+	if not flag:hasStatus(kBEOffline) then
+		return unit:getFlagCheckers()["$HERO"](unit)
+	end
 end)
 exports.MASTER = MakeFilter(function (_, unit)
 	return unit:getFlagCheckers()["$MASTER"](unit)
@@ -259,7 +263,16 @@ _G.filterArrayElements = filterArrayElements
 
 function exports.AllUnits(env, filter)
 	local actorSide = env["$actor"]:getSide()
-	local units = env.global["$BattleField"]:crossCollectUnits({}, actorSide)
+	local units_ = env.global["$BattleField"]:crossCollectUnits({}, actorSide)
+	local units = {}
+
+	for k, v in pairs(units_) do
+		local flag = v:getComponent("Flag")
+
+		if not flag:hasStatus(kBEOffline) then
+			units[#units + 1] = v
+		end
+	end
 
 	if filter == nil then
 		return units
@@ -270,7 +283,16 @@ end
 
 function exports.FriendUnits(env, filter)
 	local targetSide = env["$actor"]:getSide()
-	local units = env.global["$BattleField"]:collectUnits({}, targetSide)
+	local units_ = env.global["$BattleField"]:collectUnits({}, targetSide)
+	local units = {}
+
+	for k, v in pairs(units_) do
+		local flag = v:getComponent("Flag")
+
+		if not flag:hasStatus(kBEOffline) then
+			units[#units + 1] = v
+		end
+	end
 
 	if filter == nil then
 		return units
@@ -281,7 +303,16 @@ end
 
 function exports.FriendEntities(env, filter)
 	local targetSide = env["$actor"]:getSide()
-	local units = env.global["$BattleField"]:collectAllUnits({}, targetSide)
+	local units_ = env.global["$BattleField"]:collectAllUnits({}, targetSide)
+	local units = {}
+
+	for k, v in pairs(units_) do
+		local flag = v:getComponent("Flag")
+
+		if not flag:hasStatus(kBEOffline) then
+			units[#units + 1] = v
+		end
+	end
 
 	if filter == nil then
 		return units
@@ -292,7 +323,16 @@ end
 
 function exports.EnemyUnits(env, filter)
 	local targetSide = opposeBattleSide(env["$actor"]:getSide())
-	local units = env.global["$BattleField"]:collectUnits({}, targetSide)
+	local units_ = env.global["$BattleField"]:collectUnits({}, targetSide)
+	local units = {}
+
+	for k, v in pairs(units_) do
+		local flag = v:getComponent("Flag")
+
+		if not flag:hasStatus(kBEOffline) then
+			units[#units + 1] = v
+		end
+	end
 
 	if filter == nil then
 		return units
