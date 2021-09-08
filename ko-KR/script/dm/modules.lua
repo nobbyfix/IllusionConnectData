@@ -1915,6 +1915,21 @@ local modules = {
 							mediator = "ActivityBlockFudaiPreviewMeditor"
 						},
 						{
+							res = "asset/ui/ActivityPuzzleGame.csb",
+							name = "ActivityPuzzleGameView",
+							mediator = "ActivityPuzzleGameMediator"
+						},
+						{
+							res = "asset/ui/ActivityPuzzleGameTask.csb",
+							name = "ActivityPuzzleGameTaskView",
+							mediator = "ActivityPuzzleGameTaskMediator"
+						},
+						{
+							res = "asset/ui/ActivityFudaiPreview.csb",
+							name = "ActivityBlockFudaiPreview",
+							mediator = "ActivityBlockFudaiPreviewMeditor"
+						},
+						{
 							res = "asset/ui/ActivityBlockDetective.csb",
 							name = "ActivityBlockDetectiveView",
 							mediator = "ActivityBlockDectiveMediator"
@@ -3245,6 +3260,11 @@ local modules = {
 							mediator = "ShopSurfaceMediator"
 						},
 						{
+							res = "asset/ui/shopSurfaceNew.csb",
+							name = "ShopSurfaceNewView",
+							mediator = "ShopSurfaceNewMediator"
+						},
+						{
 							res = "asset/ui/shopPackageMain.csb",
 							name = "ShopResetView",
 							mediator = "ShopResetMediator"
@@ -3504,6 +3524,11 @@ local modules = {
 							res = "asset/ui/Layer_exploreFinish.csb",
 							name = "ExploreFinishView",
 							mediator = "ExploreFinishMediator"
+						},
+						{
+							res = "asset/ui/BlockSweepLayer.csb",
+							name = "ExploreSweepView",
+							mediator = "ExploreSweepMediator"
 						}
 					}
 				}

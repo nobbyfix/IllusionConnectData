@@ -111,6 +111,13 @@
         "Text": "URMap_TimeLimit_Source_Des",
         "URL": ""
     },
+    "CO_Decoration_15105_2_Resource": {
+        "Isturn": 0,
+        "ResourceText": "URSourceTag_TimeLimit",
+        "ResourceType": 6,
+        "Text": "URMap_TimeLimit_Source_Des",
+        "URL": ""
+    },
     "CO_Shoes_15001_Resource": {
         "Isturn": 0,
         "ResourceText": "URSourceTag_TimeLimit",
@@ -189,6 +196,13 @@
         "URL": ""
     },
     "CO_Shoes_15104_1_Resource": {
+        "Isturn": 0,
+        "ResourceText": "URSourceTag_TimeLimit",
+        "ResourceType": 6,
+        "Text": "URMap_TimeLimit_Source_Des",
+        "URL": ""
+    },
+    "CO_Shoes_15105_2_Resource": {
         "Isturn": 0,
         "ResourceText": "URSourceTag_TimeLimit",
         "ResourceType": 6,
@@ -307,6 +321,13 @@
         "Text": "URMap_TimeLimit_Source_Des",
         "URL": ""
     },
+    "CO_Tops_15105_2_Resource": {
+        "Isturn": 0,
+        "ResourceText": "URSourceTag_TimeLimit",
+        "ResourceType": 6,
+        "Text": "URMap_TimeLimit_Source_Des",
+        "URL": ""
+    },
     "CO_Weapon_15001_Resource": {
         "Isturn": 0,
         "ResourceText": "URSourceTag_TimeLimit",
@@ -392,6 +413,13 @@
         "URL": ""
     },
     "CO_Weapon_15104_1_Resource": {
+        "Isturn": 0,
+        "ResourceText": "URSourceTag_TimeLimit",
+        "ResourceType": 6,
+        "Text": "URMap_TimeLimit_Source_Des",
+        "URL": ""
+    },
+    "CO_Weapon_15105_2_Resource": {
         "Isturn": 0,
         "ResourceText": "URSourceTag_TimeLimit",
         "ResourceType": 6,
@@ -1609,6 +1637,13 @@
         "Text": "Source_HeroStory",
         "URL": "view://HeroStoryEnterView&viewType=push&heroId=LDu"
     },
+    "IHF_LEMHou_1": {
+        "Isturn": 0,
+        "ResourceText": "Source_Activity",
+        "ResourceType": 0,
+        "Text": "Source_Activity",
+        "URL": ""
+    },
     "IHF_LFEr_1": {
         "Isturn": 1,
         "ResourceText": "Resource_DrawCard",
@@ -2433,28 +2468,28 @@
         "ResourceText": "Resource_IHF_VillageCard_1",
         "ResourceType": 1,
         "Text": "Source_IHF_CLMan_VillageCard_1",
-        "URL": "view://shopView&viewType=push&shopId=Shop_Package"
+        "URL": "view://shopView&viewType=push&shopId=Shop_Timelimitedmall"
     },
     "IHF_VillageCard_2": {
         "Isturn": 1,
         "ResourceText": "Resource_IHF_VillageCard_2",
         "ResourceType": 1,
         "Text": "Source_IHF_CLMan_VillageCard_2",
-        "URL": "view://shopView&viewType=push&shopId=Shop_Package"
+        "URL": "view://shopView&viewType=push&shopId=Shop_Timelimitedmall"
     },
     "IHF_VillageCard_3": {
         "Isturn": 1,
         "ResourceText": "Resource_IHF_VillageCard_3",
         "ResourceType": 1,
         "Text": "Source_IHF_CLMan_VillageCard_3",
-        "URL": "view://shopView&viewType=push&shopId=Shop_Package"
+        "URL": "view://shopView&viewType=push&shopId=Shop_Timelimitedmall"
     },
     "IHF_VillageCard_4": {
         "Isturn": 1,
         "ResourceText": "Resource_IHF_VillageCard_4",
         "ResourceType": 1,
         "Text": "Source_IHF_CLMan_VillageCard_4",
-        "URL": "view://shopView&viewType=push&shopId=Shop_Package"
+        "URL": "view://shopView&viewType=push&shopId=Shop_Timelimitedmall"
     },
     "IHF_WEDe_1": {
         "Isturn": 1,
@@ -2497,6 +2532,13 @@
         "ResourceType": 4,
         "Text": "Source_HeroStory",
         "URL": "view://HeroStoryEnterView&viewType=push&heroId=WEDe&index=5"
+    },
+    "IHF_WLSTNCi_1": {
+        "Isturn": 0,
+        "ResourceText": "Source_Activity",
+        "ResourceType": 0,
+        "Text": "Source_Activity",
+        "URL": ""
     },
     "IHF_WSLi_1": {
         "Isturn": 0,
@@ -3273,7 +3315,7 @@
         "ResourceText": "Source_IM_ABClubAttrItem_2",
         "ResourceType": 0,
         "Text": "Source_IM_ABClubAttrItem_2_Desc",
-        "URL": "view://shopView&viewType=push&shopId=Shop_TimeLimit"
+        "URL": "view://shopView&viewType=push&shopId=Shop_Timelimitedmall&subid=Shop_TimeLimit"
     },
     "IM_ABSoreItem_1": {
         "Isturn": 0,
@@ -3462,7 +3504,7 @@
         "ResourceText": "Source_IM_WuXiuHuiClubAttrItem_2",
         "ResourceType": 0,
         "Text": "Source_IM_WuXiuHuiClubAttrItem_2_Desc",
-        "URL": "view://shopView&viewType=push&shopId=Shop_TimeLimit"
+        "URL": "view://shopView&viewType=push&shopId=Shop_Timelimitedmall&subid=Shop_TimeLimit"
     },
     "IM_WuXiuHuiSoreItem_1": {
         "Isturn": 0,
@@ -8924,6 +8966,13 @@
         "Text": "Source_IR_FemaleStamina_Desc",
         "URL": ""
     },
+    "IR_FemaleStamina_Re": {
+        "Isturn": 0,
+        "ResourceText": "Source_IR_FemaleStamina",
+        "ResourceType": 0,
+        "Text": "Source_IR_FemaleStamina_Desc",
+        "URL": ""
+    },
     "IR_FireStamina": {
         "Isturn": 0,
         "ResourceText": "Source_IR_FireStamina",
@@ -9069,7 +9118,7 @@
         "ResourceText": "Resource_ShangDian",
         "ResourceType": 1,
         "Text": "Source_IR_Surface_1",
-        "URL": "view://shopView&viewType=push&shopId=Shop_SurfacePackage"
+        "URL": "view://shopView&viewType=push&shopId=Shop_Surface"
     },
     "IR_TECH_1": {
         "Isturn": 1,

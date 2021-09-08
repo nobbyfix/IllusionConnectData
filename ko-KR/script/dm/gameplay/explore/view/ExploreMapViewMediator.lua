@@ -617,6 +617,8 @@ function ExploreMapViewMediator:removeObject(data)
 end
 
 function ExploreMapViewMediator:setupView()
+	self._quickView = self:getChildView("QuickBattle")
+	self._animNode = self:getChildView("QuickBattle.QuickBattleAnim")
 	self._panel_touch = self:getChildView("Panel_base.Panel_touch")
 	self._btnPanel = self:getChildView("Panel_base.btnPanel")
 	self._caseBtn = self._btnPanel:getChildByFullName("caseBtn")
@@ -671,6 +673,30 @@ function ExploreMapViewMediator:setupView()
 	self._scrollView:addChild(self._sceneEffectNode)
 	self:initRocker()
 	self:createDebugGrid()
+	self:createQuickBattelAnim()
+end
+
+function ExploreMapViewMediator:createQuickBattelAnim()
+	if not self._quickBattleAnim then
+		local anim = cc.MovieClip:create("dajia_zhujuedajia")
+
+		anim:addTo(self._animNode):posite(0, 0)
+
+		self._quickBattleAnim = anim
+	end
+
+	self._quickBattleAnim:stop()
+	self._quickView:setVisible(false)
+end
+
+function ExploreMapViewMediator:playQuickBattleAnim(callback)
+	self._quickView:setVisible(true)
+	self._quickBattleAnim:gotoAndPlay(0)
+	delayCallByTime(1500, function ()
+		callback()
+		self._quickBattleAnim:stop()
+		self._quickView:setVisible(false)
+	end)
 end
 
 function ExploreMapViewMediator:createDebugGrid()
@@ -1482,6 +1508,27 @@ function ExploreMapViewMediator:dealEventByType(obj, case, dealEndDialogue)
 				tempFunc()
 			end
 
+			local function enterQuickBattle()
+				local function tempFunc()
+					self._exploreSystem:requestGetBattleData(function (response)
+						if not response.data.data then
+							local str = string.format("isAuto:%s / caseId:%s / caseType:%s / objId:%s", tostring(isAuto), caseId, caseType, objId)
+
+							CommonUtils.uploadDataToBugly("ExploreCaseDebug", str)
+						end
+
+						self._exploreSystem:enterQuickBattle(caseFactor.mapbattlepoint, response.data.data, {
+							caseId = caseId,
+							objData = obj:getExploreObject()
+						})
+					end, {
+						objectId = objId
+					})
+				end
+
+				self:playQuickBattleAnim(tempFunc)
+			end
+
 			if not caseFactor.casefactor or self._autoPlay then
 				isAuto = true
 
@@ -1496,6 +1543,8 @@ function ExploreMapViewMediator:dealEventByType(obj, case, dealEndDialogue)
 					callback = function (chooseId)
 						if caseFactor.casefactor:getBattleOption() == chooseId then
 							enterBattle()
+						elseif caseFactor.casefactor:getQuickBattleOption() == chooseId then
+							enterQuickBattle()
 						else
 							obj.endTriggering = true
 

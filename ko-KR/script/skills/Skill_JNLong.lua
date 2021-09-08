@@ -228,6 +228,7 @@ all.Skill_JNLong_Unique = {
 			global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
 				timing = 0,
 				duration = 99,
+				display = "MaxHpUp",
 				tags = {
 					"STATUS",
 					"NUMERIC",
@@ -797,6 +798,7 @@ all.Skill_JNLong_Unique_EX = {
 			global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
 				timing = 0,
 				duration = 99,
+				display = "MaxHpUp",
 				tags = {
 					"STATUS",
 					"NUMERIC",

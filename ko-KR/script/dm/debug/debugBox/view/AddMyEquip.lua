@@ -57,3 +57,17 @@ function OneKeyAwake:initialize()
 		}
 	}
 end
+
+OneKeyBestEquip = class("OneKeyBestEquip", DebugViewTemplate, _M)
+
+function OneKeyBestEquip:initialize()
+	self._opType = 275
+	self._viewConfig = {
+		{
+			default = "",
+			name = "level",
+			title = "强化等级",
+			type = "Input"
+		}
+	}
+end

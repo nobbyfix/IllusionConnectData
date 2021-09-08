@@ -20,18 +20,19 @@ ShopMainMediator:has("_surfaceSystem", {
 
 local kNums = 4
 local kCellHeightTab = 50
-local kCellHeight = 480
+local kCellHeight = 495
 local kCellWidth = 934
 local kbackgroundPath = "asset/scene/sd_bg.jpg"
 local kShopView = {
 	[ShopSpecialId.kShopMall] = "ShopRechargeView",
 	[ShopSpecialId.kShopPackage] = "ShopPackageMainView",
 	[ShopSpecialId.kShopMonthcard] = "ShopMonthCardView",
-	[ShopSpecialId.kShopSurface] = "ShopSurfaceView",
+	[ShopSpecialId.kShopSurface] = "ShopSurfaceNewView",
 	[ShopSpecialId.kShopReset] = "ShopPackageMainView",
 	[ShopSpecialId.kShopRecommend] = "ShopRecommendView",
 	[ShopSpecialId.kShopSurfacePackage] = "ShopPackageMainView",
-	[ShopSpecialId.kShopTimeLimit] = "ShopPackageMainView"
+	[ShopSpecialId.kShopTimeLimit] = "ShopPackageMainView",
+	[ShopSpecialId.KShopTimelimitedmall] = "ShopPackageMainView"
 }
 
 function ShopMainMediator:initialize()
@@ -83,6 +84,7 @@ function ShopMainMediator:onRemove()
 end
 
 function ShopMainMediator:enterWithData(data)
+	dump(data, "data >>>>>>>>>>")
 	self:setupTopInfoWidget()
 	self:initMember()
 	self:initData(data)
@@ -104,6 +106,7 @@ function ShopMainMediator:enterWithData(data)
 end
 
 function ShopMainMediator:initData(data)
+	self._data = data
 	self._shopId = data and data.shopId or ShopSpecialId.kShopNormal
 	self._leftTabIndex = 1
 	self._rightTabIndex = data and data.rightTabIndex or 1
@@ -273,7 +276,6 @@ function ShopMainMediator:initMember()
 	self._leftTabPanel = self._view:getChildByName("leftTabPanel")
 	self._rightTabPanel = self._view:getChildByName("rightTabPanel")
 	self._scrollBarBg = self._mainPanel:getChildByFullName("scrollBarBg")
-	self._scrollBg = self._mainPanel:getChildByFullName("scrollBg")
 	self._tabClone = self._view:getChildByFullName("tabClone")
 
 	self._tabClone:setVisible(false)
@@ -314,16 +316,16 @@ function ShopMainMediator:adjustView()
 
 	self._scrollView:setScrollBarEnabled(true)
 	self._scrollView:setScrollBarAutoHideTime(9999)
-	self._scrollView:setScrollBarColor(cc.c3b(243, 220, 142))
+	self._scrollView:setScrollBarColor(cc.c3b(255, 255, 255))
 	self._scrollView:setScrollBarAutoHideEnabled(true)
 	self._scrollView:setScrollBarWidth(5)
 	self._scrollView:setScrollBarOpacity(255)
-	self._scrollView:setScrollBarPositionFromCorner(cc.p(10, 10))
+	self._scrollView:setScrollBarPositionFromCorner(cc.p(21, 20))
 
 	self._cellWidthTab = self._tabClone:getContentSize().width
 	self._cellWidthNormal = self._cellCloneNormal:getContentSize().width
 	self._cellHeightNormal = self._cellCloneNormal:getContentSize().height
-	self._cellHeightNormal = self._cellHeightNormal + 10
+	self._cellHeightNormal = self._cellHeightNormal + 8
 end
 
 function ShopMainMediator:refreshView()
@@ -332,7 +334,7 @@ function ShopMainMediator:refreshView()
 	local length = math.ceil(#self._curShopItems / kNums)
 
 	if self:getShopNormalId() == ShopSpecialId.kShopNormal then
-		local allHeight = math.max(kCellHeight, self._cellHeightNormal * length)
+		local allHeight = math.max(kCellHeight, self._cellHeightNormal * length - 8)
 
 		self._scrollView:setInnerContainerSize(cc.size(kCellWidth, allHeight))
 		self._scrollView:setInnerContainerPosition(cc.p(0, -(allHeight - kCellHeight)))
@@ -345,9 +347,9 @@ function ShopMainMediator:refreshView()
 			layout:setTag(i)
 			layout:setAnchorPoint(cc.p(0, 1))
 
-			local h = kCellHeight - self._cellHeightNormal * i
+			local h = allHeight - self._cellHeightNormal * (i - 1) + 8
 
-			layout:setPosition(cc.p(0, allHeight - self._cellHeightNormal * (i - 1)))
+			layout:setPosition(cc.p(0, h))
 			layout:setTouchEnabled(false)
 			self:createCell(layout, i)
 		end
@@ -378,7 +380,7 @@ function ShopMainMediator:createCell(cell, index)
 			cell:addChild(item:getView())
 			item:getView():setTag(i)
 
-			local x = (i - 1) * (self._cellWidthNormal + 23) + 12
+			local x = (i - 1) * (self._cellWidthNormal + 13)
 			local y = 0
 
 			item:getView():setPosition(x, y)
@@ -712,45 +714,44 @@ function ShopMainMediator:setScrollView(status)
 	self._scrollView:removeAllChildren()
 	self._scrollView:setVisible(status)
 	self._scrollBarBg:setVisible(status)
-	self._scrollBg:setVisible(status)
 end
 
 function ShopMainMediator:resetView()
-	if not self._viewCache[self._shopId] and kShopView[self._shopId] then
-		local view = self:getInjector():getInstance(kShopView[self._shopId])
-
-		if view then
-			view:addTo(self._mainPanel)
-			AdjustUtils.adjustLayoutUIByRootNode(view)
-			view:setPosition(0, 0)
-
-			local mediator = self:getMediatorMap():retrieveMediator(view)
-
-			if mediator then
-				view.mediator = mediator
-
-				mediator:setupView(self)
-			end
-
-			self._viewCache[self._shopId] = view
+	if self._shopId == ShopSpecialId.kShopSurface then
+		if self._enterData then
+			self:showSurfaceShop()
+		else
+			self._shopSystem:requestGetSurfaceShop()
 		end
-	end
+	elseif self._shopId == ShopSpecialId.KShopTimelimitedmall then
+		if self._enterData then
+			self:showPackageShop()
+		else
+			self._shopSystem:requestGetPackageShop()
+		end
+	else
+		if not self._viewCache[self._shopId] and kShopView[self._shopId] then
+			local view = self:getInjector():getInstance(kShopView[self._shopId])
 
-	for shopId, view in pairs(self._viewCache) do
-		if self._shopId == shopId then
-			if self._shopId == ShopSpecialId.kShopSurface then
-				if self._enterData then
-					self:showSurfaceShop()
-				else
-					self._shopSystem:requestGetSurfaceShop()
+			if view then
+				view:addTo(self._mainPanel)
+				AdjustUtils.adjustLayoutUIByRootNode(view)
+				view:setPosition(0, 0)
+
+				local mediator = self:getMediatorMap():retrieveMediator(view)
+
+				if mediator then
+					view.mediator = mediator
+
+					mediator:setupView(self)
 				end
-			elseif self._shopId == ShopSpecialId.kShopPackage or self._shopId == ShopSpecialId.kShopSurfacePackage or self._shopId == ShopSpecialId.kShopTimeLimit then
-				if self._enterData then
-					self:showPackageShop()
-				else
-					self._shopSystem:requestGetPackageShop()
-				end
-			else
+
+				self._viewCache[self._shopId] = view
+			end
+		end
+
+		for shopId, view in pairs(self._viewCache) do
+			if self._shopId == shopId then
 				view:setVisible(true)
 				view.mediator:refreshData({
 					shopId = self._shopId,
@@ -761,7 +762,11 @@ function ShopMainMediator:resetView()
 
 				self._enterData = nil
 			end
-		else
+		end
+	end
+
+	for shopId, view in pairs(self._viewCache) do
+		if shopId ~= self._shopId then
 			view.mediator:clearView()
 			view:setVisible(false)
 		end
@@ -791,8 +796,6 @@ function ShopMainMediator:showSurfaceShop()
 
 			if mediator then
 				view.mediator = mediator
-
-				mediator:setupView(self)
 			end
 
 			self._viewCache[shopId] = view
@@ -801,7 +804,7 @@ function ShopMainMediator:showSurfaceShop()
 
 	self._viewCache[shopId]:setVisible(true)
 	self._viewCache[shopId].mediator:refreshData()
-	self._viewCache[shopId].mediator:refreshView()
+	self._viewCache[shopId].mediator:setupView(self)
 
 	self._enterData = nil
 end
@@ -833,7 +836,10 @@ function ShopMainMediator:showPackageShop()
 	self._viewCache[shopId].mediator:refreshData({
 		shopId = self._shopId,
 		enterData = self._enterData,
-		parentMediator = self
+		parentMediator = self,
+		rightTabIndex = self._data.rightTabIndex,
+		subId = self._data.subid,
+		packageId = self._data.packageId
 	})
 	self._viewCache[shopId].mediator:refreshView()
 

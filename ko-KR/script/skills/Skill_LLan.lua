@@ -313,7 +313,7 @@ all.Skill_LLan_Passive = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			local reviveunit = global.Revive(_env, this.MaxHpRateFactor, 0, {
+			local reviveunit = global.Revive_Check(_env, _env.ACTOR, this.MaxHpRateFactor, 0, {
 				global.Random(_env, 1, 9)
 			})
 
@@ -775,7 +775,7 @@ all.Skill_LLan_Passive_EX = {
 				buffeft1
 			}, 1)
 
-			local reviveunit = global.Revive(_env, this.MaxHpRateFactor, 0, {
+			local reviveunit = global.Revive_Check(_env, _env.ACTOR, this.MaxHpRateFactor, 0, {
 				global.Random(_env, 1, 9)
 			})
 

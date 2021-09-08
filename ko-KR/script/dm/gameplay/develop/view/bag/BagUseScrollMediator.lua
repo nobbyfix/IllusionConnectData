@@ -59,6 +59,7 @@ function BagUseScrollMediator:onRegister()
 end
 
 function BagUseScrollMediator:enterWithData(data)
+	self._canClickBtn = true
 	self._curEntryId = data.curEntryId
 	self._curEntryIds = data.curEntryIds
 
@@ -836,6 +837,12 @@ function BagUseScrollMediator:onUseClicked()
 
 		self._bagSystem:requestScrollCompose(data, callback)
 	end
+
+	if not self._canClickBtn then
+		return
+	end
+
+	self._canClickBtn = false
 
 	self:shwoHeChenAnim(#self.materialTab, callBackSucc)
 end

@@ -113,7 +113,8 @@ DebugBoxMainIndex = {
 					"语音检测",
 					"一键装备",
 					"一键卸下装备",
-					"一键觉醒"
+					"一键觉醒",
+					"一键最佳装备"
 				}
 			},
 			{
@@ -199,8 +200,8 @@ DebugBoxMainIndex = {
 					"修改指定地图DP值",
 					"增加道具到大地图临时背包",
 					"开启debug模式",
-					"恢复玩家探索次数最大值",
-					"恢复大地图每日推荐次数",
+					"恢复探索次数最大值",
+					"恢复每日推荐次数",
 					"解锁所有探索地图",
 					"刷新一次性物件",
 					"修改移动速度",
@@ -459,6 +460,10 @@ DebugBoxMainIndex = {
 				"OneKeyAwake"
 			},
 			{
+				"一键最佳装备",
+				"OneKeyBestEquip"
+			},
+			{
 				"进入剧情编辑",
 				"StoryEditor"
 			},
@@ -707,11 +712,11 @@ DebugBoxMainIndex = {
 				"ExploreAddBagItem"
 			},
 			{
-				"恢复玩家探索次数最大值",
+				"恢复探索次数最大值",
 				"ExploreAddTimes"
 			},
 			{
-				"恢复大地图每日推荐次数",
+				"恢复每日推荐次数",
 				"ExploreResetDailyTimes"
 			},
 			{

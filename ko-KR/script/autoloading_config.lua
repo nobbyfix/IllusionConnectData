@@ -1336,6 +1336,11 @@ local mappings = {
 		name = "ActivitySunflowerMainMediator",
 		type = "@C"
 	},
+	ActivityPuzzleGameMediator = {
+		url = "dm.gameplay.activity.view.ActivityPuzzleGameMediator",
+		name = "ActivityPuzzleGameMediator",
+		type = "@C"
+	},
 	ActivitySagaSupportRankMediator = {
 		url = "dm.gameplay.activity.view.ActivitySagaSupportRankMediator",
 		name = "ActivitySagaSupportRankMediator",
@@ -1619,6 +1624,11 @@ local mappings = {
 	EightDayLoginMediator = {
 		url = "dm.gameplay.activity.view.EightDayLoginMediator",
 		name = "EightDayLoginMediator",
+		type = "@C"
+	},
+	ActivityPuzzleGameTaskMediator = {
+		url = "dm.gameplay.activity.view.ActivityPuzzleGameTaskMediator",
+		name = "ActivityPuzzleGameTaskMediator",
 		type = "@C"
 	},
 	ActivityTaskMonthCardMediator = {
@@ -1921,6 +1931,11 @@ local mappings = {
 		name = "ShopPackageMainMediator",
 		type = "@C"
 	},
+	ShopSurfaceNewMediator = {
+		url = "dm.gameplay.shop.view.ShopSurfaceNewMediator",
+		name = "ShopSurfaceNewMediator",
+		type = "@C"
+	},
 	ShopBuySurfaceMediator = {
 		url = "dm.gameplay.shop.view.ShopBuySurfaceMediator",
 		name = "ShopBuySurfaceMediator",
@@ -2119,6 +2134,11 @@ local mappings = {
 	ExploreMapCaseAlertMediator = {
 		url = "dm.gameplay.explore.view.ExploreMapCaseAlertMediator",
 		name = "ExploreMapCaseAlertMediator",
+		type = "@C"
+	},
+	ExploreSweepMediator = {
+		url = "dm.gameplay.explore.view.ExploreSweepMediator",
+		name = "ExploreSweepMediator",
 		type = "@C"
 	},
 	ExploreShopMediator = {

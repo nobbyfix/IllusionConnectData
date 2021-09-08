@@ -227,13 +227,15 @@ all.Skill_JDCZhang_Unique = {
 			local buffeft2 = global.MaxHpEffect(_env, maxHp * this.MaxHpRateFactor)
 
 			global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
-				duration = 99,
-				group = "Skill_JDCZhang_Unique",
 				timing = 0,
+				display = "MaxHpUp",
+				group = "Skill_JDCZhang_Unique",
+				duration = 99,
 				limit = 1,
 				tags = {
 					"NUMERIC",
 					"BUFF",
+					"MAXHPUP",
 					"DISPELLABLE",
 					"UNSTEALABLE"
 				}
@@ -812,13 +814,15 @@ all.Skill_JDCZhang_Unique_EX = {
 			local buffeft2 = global.MaxHpEffect(_env, maxHp * this.MaxHpRateFactor)
 
 			global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
-				duration = 99,
-				group = "Skill_JDCZhang_Unique_EX",
 				timing = 0,
+				display = "MaxHpUp",
+				group = "Skill_JDCZhang_Unique_EX",
+				duration = 99,
 				limit = 1,
 				tags = {
 					"NUMERIC",
 					"BUFF",
+					"MAXHPUP",
 					"DISPELLABLE",
 					"UNSTEALABLE"
 				}

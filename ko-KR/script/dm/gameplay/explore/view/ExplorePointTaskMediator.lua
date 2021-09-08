@@ -4,12 +4,7 @@ ExplorePointTaskMediator:has("_exploreSystem", {
 	is = "r"
 }):injectWith("ExploreSystem")
 
-local kBtnHandlers = {
-	["main.tipBtn"] = {
-		clickAudio = "Se_Click_Close_2",
-		func = "onClickTip"
-	}
-}
+local kBtnHandlers = {}
 
 function ExplorePointTaskMediator:initialize()
 	super.initialize(self)

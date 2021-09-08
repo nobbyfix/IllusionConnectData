@@ -419,6 +419,27 @@
         "StoryLink": "S11S01",
         "SurfaceId": "Surface_SDTZi_Awake"
     },
+    "SRen": {
+        "AnimSound": "Se_Effect_Awakening_SRen",
+        "Animation": "alna_Awaken",
+        "CutIn": [
+            -300,
+            100,
+            1
+        ],
+        "ModelId": "Model_SRen_Awake",
+        "Name": "SRen_Awake_Name",
+        "NameDesc": "SRen_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_SRen_UnAwake",
+        "Reward": "HeroAwaken_SRen",
+        "ShowHero": "SRen",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "SRen_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_SRen_Awake"
+    },
     "TPGZhu": {
         "AnimSound": "",
         "Animation": "FHYH_Awaken",

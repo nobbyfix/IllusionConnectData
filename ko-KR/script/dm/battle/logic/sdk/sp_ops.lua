@@ -241,8 +241,8 @@ function exports.TruthBubble(env, unit)
 	})
 end
 
-function exports.InheritCard(env, card, modelId)
-	if card and card:getType() == "hero" then
+function exports.InheritCard(env, card, modelId, ignorePassive, ignoreUnique)
+	if card and (card._unitType or card:getType() == "hero") then
 		local player = env["$actor"]:getOwner()
 		local _cardInfo = card:getCardInfo()
 		local cardSystem = env.global["$CardSystem"]
@@ -250,13 +250,30 @@ function exports.InheritCard(env, card, modelId)
 
 		if cardInfo.hero and cardInfo.hero.skills then
 			for k, v in pairs(cardInfo.hero.skills.passive or {}) do
-				if v.skillType and v.skillType == "Equip" then
-					table.remove(cardInfo.hero.skills.passive, k)
+				if ignorePassive or v.skillType and v.skillType == "Equip" then
+					cardInfo.hero.skills.passive[k] = nil
 				end
+			end
+
+			if cardInfo.hero.skills.unique and ignoreUnique then
+				cardInfo.hero.skills.unique = nil
 			end
 		end
 
-		cardInfo.hero.modelId = modelId
+		local passives_new = {}
+		local passvies = {}
+
+		for k, v in pairs(cardInfo.hero.skills.passive) do
+			passvies[#passvies + 1] = v
+		end
+
+		table.deepcopy(passvies, passives_new)
+
+		cardInfo.hero.skills.passive = passives_new
+
+		if modelId then
+			cardInfo.hero.modelId = modelId
+		end
 
 		if player:getCardState() == "skill" then
 			for i = 1, 4 do
@@ -646,4 +663,12 @@ function exports.ExertUniqueSkill(env, unit)
 
 	skillComp:setUniqueSkillRoutine(nil)
 	actionScheduler:exertUniqueSkill(unit, kBattleUniqueSkill, true)
+end
+
+function exports.ExertRegularSkill(env, unit)
+	local battleContext = env.global["$BattleContext"]
+	local actionScheduler = battleContext:getObject("ActionScheduler")
+	local regularAction = BattleRegularAction:new():withActor(unit)
+
+	actionScheduler:addUserActionAtFirst(regularAction)
 end

@@ -9108,6 +9108,45 @@
             "slot": "Hero_Unique_LDu"
         }
     },
+    "StarSE_LEMHou_4": {
+        "Desc": "StarSE_LEMHou_4_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Unique_LEMHou_EX",
+            "before": "Hero_Unique_LEMHou",
+            "slot": "Hero_Unique_LEMHou"
+        }
+    },
+    "StarSE_LEMHou_5": {
+        "Desc": "StarSE_LEMHou_5_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_PBattle_LEMHou_EX",
+            "before": "Hero_PBattle_LEMHou",
+            "slot": "Hero_PBattle_LEMHou"
+        }
+    },
+    "StarSE_LEMHou_6": {
+        "Desc": "StarSE_LEMHou_6_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Proud_LEMHou_EX",
+            "before": "Hero_Proud_LEMHou",
+            "slot": "Hero_Proud_LEMHou"
+        }
+    },
     "StarSE_LFEr_4": {
         "Desc": "StarSE_LFEr_4_Desc",
         "EffectType": "CHANGESKILL",
@@ -10486,6 +10525,19 @@
             "slot": "Hero_Proud_SRen"
         }
     },
+    "StarSE_SRen_Awake": {
+        "Desc": "StarSE_SRen_Awake_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Unique_SRen_Awaken",
+            "before": "Hero_Unique_SRen_EX",
+            "slot": "Hero_Unique_SRen"
+        }
+    },
     "StarSE_SSQXin_2": {
         "Desc": "StarSE_SSQXin_2_Desc",
         "EffectType": "CHANGESKILL",
@@ -10822,6 +10874,45 @@
             "after": "Hero_Proud_WEDe_EX",
             "before": "Hero_Proud_WEDe",
             "slot": "Hero_Proud_WEDe"
+        }
+    },
+    "StarSE_WLSTNCi_4": {
+        "Desc": "StarSE_WLSTNCi_4_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Unique_WLSTNCi_EX",
+            "before": "Hero_Unique_WLSTNCi",
+            "slot": "Hero_Unique_WLSTNCi"
+        }
+    },
+    "StarSE_WLSTNCi_5": {
+        "Desc": "StarSE_WLSTNCi_5_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_PBattle_WLSTNCi_EX",
+            "before": "Hero_PBattle_WLSTNCi",
+            "slot": "Hero_PBattle_WLSTNCi"
+        }
+    },
+    "StarSE_WLSTNCi_6": {
+        "Desc": "StarSE_WLSTNCi_6_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Proud_WLSTNCi_EX",
+            "before": "Hero_Proud_WLSTNCi",
+            "slot": "Hero_Proud_WLSTNCi"
         }
     },
     "StarSE_WSLi_4": {

@@ -3,7 +3,7 @@
         "BackGroundImg": "sd_tj_bg_shouchong",
         "ClientCondition": "",
         "Hide": 1,
-        "Link": "view://shopView&viewType=push&shopId=Shop_Package&packageId=PackageShop_1",
+        "Link": "view://shopView&viewType=push&shopId=Shop_Timelimitedmall&packageId=PackageShop_1",
         "PackageId": [
             "PackageShop_1"
         ],
@@ -48,13 +48,13 @@
         "TimeType": {
             "type": "unlimit"
         },
-        "Vanish": 0
+        "Vanish": 1
     },
     "ShopRecommend_TL_CZheng": {
         "BackGroundImg": "sd_tj_bg_ydyw",
         "ClientCondition": "",
         "Hide": 1,
-        "Link": "view://shopView&viewType=push&shopId=Shop_TimeLimit",
+        "Link": "view://shopView&viewType=push&shopId=Shop_Timelimitedmall&subid=Shop_TimeLimit",
         "PackageId": [
             "PackageShop_TL_CZheng_1",
             "PackageShop_TL_CZheng_2",
@@ -124,7 +124,7 @@
         "BackGroundImg": "sd_tj_bg_xdzg",
         "ClientCondition": "",
         "Hide": 1,
-        "Link": "view://shopView&viewType=push&shopId=Shop_TimeLimit",
+        "Link": "view://shopView&viewType=push&shopId=Shop_Timelimitedmall&subid=Shop_TimeLimit",
         "PackageId": [
             "PackageShop_TL_LLan_1",
             "PackageShop_TL_LLan_2",

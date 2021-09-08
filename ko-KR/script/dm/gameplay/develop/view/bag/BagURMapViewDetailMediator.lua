@@ -90,6 +90,8 @@ function BagURMapViewDetailMediator:setCurId()
 end
 
 function BagURMapViewDetailMediator:refreshView()
+	self._canClickBtn = true
+
 	self:setMaterialData()
 	self:setListView()
 	self:setMaterialView()
@@ -1105,6 +1107,12 @@ function BagURMapViewDetailMediator:onUseClicked()
 		self._bagSystem:requestScrollCompose(data, callback)
 	end
 
+	if not self._canClickBtn then
+		return
+	end
+
+	self._canClickBtn = false
+
 	self:shwoHeChenAnim(#self.materialTab, callBackSucc)
 end
 
@@ -1123,6 +1131,7 @@ function BagURMapViewDetailMediator:setPanelBottomView()
 	local showSkilPanel = self._panelBttom:getChildByFullName("Panel_64")
 	local text_desc = self._panelBttom:getChildByFullName("text_limit_0")
 
+	showSkilPanel:getChildByFullName("Text_79"):setString(Strings:get("Equip_ShowUI"))
 	showSkilPanel:setVisible(false)
 	text_desc:setVisible(false)
 

@@ -146,16 +146,18 @@ function DreamHouseTeamMediator:initData(data)
 	local recomandTeam = self._dreamSystem:getPointRecomandTeam(starCond)
 
 	for i = 1, #recomandTeam do
-		local isIn = false
+		if self._heroSystem:getHeroById(recomandTeam[i]) then
+			local isIn = false
 
-		for j = 1, #tmpTeam do
-			if tmpTeam[j] == recomandTeam[i] then
-				isIn = true
+			for j = 1, #tmpTeam do
+				if tmpTeam[j] == recomandTeam[i] then
+					isIn = true
+				end
 			end
-		end
 
-		if not isIn and not self._dreamSystem:checkHeroTired(self._mapId, self._pointId, recomandTeam[i]) then
-			table.insert(tmpTeam, recomandTeam[i])
+			if not isIn and not self._dreamSystem:checkHeroTired(self._mapId, self._pointId, recomandTeam[i]) then
+				table.insert(tmpTeam, recomandTeam[i])
+			end
 		end
 	end
 
@@ -199,7 +201,7 @@ function DreamHouseTeamMediator:initData(data)
 			local heroInfo = self._heroSystem:getHeroById(heroId)
 
 			for j = 1, #campCond do
-				if heroInfo:getParty() == campCond[j] then
+				if heroInfo and heroInfo:getParty() == campCond[j] then
 					table.insert(self._petList, heroId)
 				end
 			end
@@ -228,7 +230,7 @@ function DreamHouseTeamMediator:updateData()
 			local heroInfo = self._heroSystem:getHeroById(heroId)
 
 			for j = 1, #campCond do
-				if heroInfo:getParty() == campCond[j] then
+				if heroInfo and heroInfo:getParty() == campCond[j] then
 					table.insert(self._petList, heroId)
 				end
 			end
@@ -1370,7 +1372,7 @@ function DreamHouseTeamMediator:onClickOneKeyBreak()
 			local heroInfo = self._heroSystem:getHeroById(heroId)
 
 			for j = 1, #campCond do
-				if heroInfo:getParty() == campCond[j] then
+				if campCond and heroInfo:getParty() == campCond[j] then
 					table.insert(tmpHeros, heroId)
 				end
 			end

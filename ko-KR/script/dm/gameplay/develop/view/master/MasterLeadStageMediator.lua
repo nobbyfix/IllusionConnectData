@@ -252,7 +252,8 @@ function MasterLeadStageMediator:initSkill()
 				skillId = skillId,
 				masterData = self._masterData,
 				stageLevel = self._leadStageLevel,
-				mediator = self
+				mediator = self,
+				skillIndex = index
 			}
 
 			self:showSkillTip(skillData, index)

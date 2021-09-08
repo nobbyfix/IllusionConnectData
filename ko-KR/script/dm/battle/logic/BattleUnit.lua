@@ -300,6 +300,12 @@ function BattleUnit:hasFlag(flag)
 	return flagComp ~= nil and flagComp:hasFlag(flag)
 end
 
+function BattleUnit:hasStatus(status)
+	local flagComp = self:getComponent("Flag")
+
+	return flagComp ~= nil and flagComp:hasStatus(status)
+end
+
 function BattleUnit:isBoss()
 	if self._isBoss == nil then
 		self._isBoss = self:hasFlag("BOSS")

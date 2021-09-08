@@ -151,7 +151,7 @@ all.Sk_Master_SenLing_Action1 = {
 
 			if units[1] then
 				if global.MARKED(_env, "WARRIOR")(_env, units[1]) then
-					local reviveunit = global.ReviveByUnit(_env, units[1], this.HpFactor, 0, {
+					local reviveunit = global.Revive_Check(_env, _env.ACTOR, this.HpFactor, 0, {
 						2,
 						5,
 						1,
@@ -161,13 +161,13 @@ all.Sk_Master_SenLing_Action1 = {
 						7,
 						8,
 						9
-					})
+					}, units[1])
 
 					if reviveunit then
 						global.AddStatus(_env, reviveunit, "Sk_Master_SenLing_Action1")
 					end
 				else
-					local reviveunit = global.ReviveByUnit(_env, units[1], this.HpFactor, 0, {
+					local reviveunit = global.Revive_Check(_env, _env.ACTOR, this.HpFactor, 0, {
 						7,
 						8,
 						9,
@@ -177,7 +177,7 @@ all.Sk_Master_SenLing_Action1 = {
 						1,
 						3,
 						2
-					})
+					}, units[1])
 
 					if reviveunit then
 						global.AddStatus(_env, reviveunit, "Sk_Master_SenLing_Action1")
@@ -381,7 +381,7 @@ all.Sk_Master_SenLing_Action3 = {
 			local this = _env.this
 			local global = _env.global
 
-			for _, friendunit in global.__iter__(global.Slice(_env, global.SortBy(_env, global.FriendUnits(_env, global.PETS - global.SUMMONS - global.MARKED(_env, "DAGUN")), "<", global.UnitPropGetter(_env, "hpRatio")), 1, 1)) do
+			for _, friendunit in global.__iter__(global.Slice(_env, global.SortBy(_env, global.FriendUnits(_env, global.PETS - global.SUMMONS - global.MARKED(_env, "DAGUN") - global.HASSTATUS(_env, "CANNOT_BACK_TO_CARD")), "<", global.UnitPropGetter(_env, "hpRatio")), 1, 1)) do
 				local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, friendunit)
 				local card = global.BackToCard(_env, friendunit)
 

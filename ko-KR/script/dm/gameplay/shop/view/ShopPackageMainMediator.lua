@@ -18,10 +18,13 @@ ShopPackageMainMediator:has("_gameServerAgent", {
 ShopPackageMainMediator:has("_rechargeAndVipSystem", {
 	is = "r"
 }):injectWith("RechargeAndVipSystem")
+ShopPackageMainMediator:has("_systemKeeper", {
+	is = "r"
+}):injectWith("SystemKeeper")
 
 local kNums = 3
-local kCellHeight = 518
-local kCellWidth = 707
+local kCellHeight = 503
+local kCellWidth = 700
 local kCellHeightTab = 60
 local ItemTag = {
 	Hot = {
@@ -77,9 +80,36 @@ end
 
 function ShopPackageMainMediator:refreshData(data)
 	self._shopId = data.shopId or nil
-	self._rightTabIndex = data.rightTabIndex or 1
 
-	if self._shopId == ShopSpecialId.kShopReset then
+	self:createRightShopConfig()
+	self:initRightTabController()
+
+	self._rightTabIndex = data.rightTabIndex or 1
+	self._subId = data.subId or nil
+
+	if self._subId then
+		for i = 1, #self._shopTabList do
+			if self._shopTabList[i].shopId == self._subId then
+				self._rightTabIndex = i
+			end
+		end
+	end
+
+	self._packageId = data.packageId or nil
+
+	if self._packageId then
+		for i = 1, #self._shopTabList do
+			local items = self._shopSystem:getPackageList(self._shopTabList[i].shopId)
+
+			for j = 1, #items do
+				if items[j]:getId() == self._packageId then
+					self._rightTabIndex = i
+				end
+			end
+		end
+	end
+
+	if self._shopId == ShopSpecialId.kShopReset or self._shopId == ShopSpecialId.KShopTimelimitedmall then
 		self._shopId = self._shopTabList[self._rightTabIndex].shopId
 
 		self:setTabStatus()
@@ -96,26 +126,24 @@ function ShopPackageMainMediator:setData()
 end
 
 function ShopPackageMainMediator:initMember()
-	self._scrollBg = self:getView():getChildByFullName("scrollBg")
 	self._scrollBarBg = self:getView():getChildByFullName("scrollBarBg")
 	self._cellClone = self:getView():getChildByFullName("cellClone")
 
 	self._cellClone:setVisible(false)
 	self._cellClone:getChildByFullName("cell.rewardPanel"):setTouchEnabled(false)
 
-	self._scrollView = self:getView():getChildByName("scrollView")
+	self._scrollView = self:getView():getChildByFullName("base.scrollView")
 
 	self._scrollView:setScrollBarEnabled(true)
 	self._scrollView:setScrollBarAutoHideTime(9999)
-	self._scrollView:setScrollBarColor(cc.c3b(243, 220, 142))
+	self._scrollView:setScrollBarColor(cc.c3b(255, 255, 255))
 	self._scrollView:setScrollBarAutoHideEnabled(true)
 	self._scrollView:setScrollBarWidth(5)
 	self._scrollView:setScrollBarOpacity(255)
-	self._scrollView:setScrollBarPositionFromCorner(cc.p(10, 15))
+	self._scrollView:setScrollBarPositionFromCorner(cc.p(19, 0))
 
-	self._cellWidth = self._cellClone:getContentSize().width
-	self._cellHeight = self._cellClone:getContentSize().height
-	self._cellHeight = self._cellHeight + 7
+	self._cellWidth = self._cellClone:getContentSize().width + 15
+	self._cellHeight = self._cellClone:getContentSize().height + 10
 	self._talkRole = self:getView():getChildByName("talkPanel")
 
 	self._talkRole:addClickEventListener(function (sender)
@@ -153,19 +181,6 @@ function ShopPackageMainMediator:initMember()
 	self._refreshPanel:setVisible(false)
 
 	self._refreshTime = self._refreshPanel:getChildByFullName("refresh_time_text")
-
-	self:createRightShopConfig()
-	self:initRightTabController()
-
-	local _refundPanel = self:getView():getChildByFullName("talkPanel.refundPanel")
-
-	_refundPanel:addClickEventListener(function (sender)
-		self:onClickRefundBtn()
-	end)
-	self:adjustView()
-end
-
-function ShopPackageMainMediator:adjustView()
 end
 
 function ShopPackageMainMediator:clearView(refresh)
@@ -186,14 +201,13 @@ function ShopPackageMainMediator:refreshView()
 	self:setTalkView()
 	self:setMenuView()
 	self:setRefreshView()
-	self:setScrollPosition()
 
 	local length = math.ceil(#self._curShopItems / kNums)
 	local viewHeight = self._scrollView:getContentSize().height
 	local allHeight = math.max(viewHeight, self._cellHeight * length)
 
 	self._scrollView:setInnerContainerSize(cc.size(kCellWidth, allHeight))
-	self._scrollView:setInnerContainerPosition(cc.p(0, -(allHeight - kCellHeight)))
+	self._scrollView:setInnerContainerPosition(cc.p(0, -(allHeight - kCellHeight - 5)))
 
 	self._cells = {}
 
@@ -205,9 +219,9 @@ function ShopPackageMainMediator:refreshView()
 		layout:setTag(i)
 		layout:setAnchorPoint(cc.p(0, 1))
 
-		local h = kCellHeight - self._cellHeight * i
+		local h = allHeight - self._cellHeight * (i - 1) + 6
 
-		layout:setPosition(cc.p(0, allHeight - self._cellHeight * (i - 1)))
+		layout:setPosition(cc.p(0, h))
 		layout:setTouchEnabled(false)
 		self:createCell(layout, i)
 	end
@@ -275,7 +289,7 @@ function ShopPackageMainMediator:createCell(cell, index)
 
 			clonePanel:setVisible(true)
 			cell:addChild(clonePanel)
-			clonePanel:setPosition((i - 1) * (self._cellWidth + 12), 0)
+			clonePanel:setPosition((i - 1) * self._cellWidth, 0)
 			clonePanel:setTag(i)
 			self:setInfo(clonePanel, itemData, itemIndex)
 
@@ -340,19 +354,20 @@ function ShopPackageMainMediator:setInfo(panel, data, index)
 	if isFree == 1 then
 		moneyText:setString(Strings:get("Recruit_Free"))
 	elseif isFree == 2 then
+		moneyText:setString(tostring(data:getGameCoin().amount))
+
 		local goldIcon = IconFactory:createResourcePic({
 			id = data:getGameCoin().type
 		})
 
 		goldIcon:addTo(money_icon):center(money_icon:getContentSize()):offset(0, 0)
-		moneyText:setString(tostring(data:getGameCoin().amount))
+		money_icon:setPositionX(moneyText:getPositionX() - moneyText:getContentSize().width / 2 - 15)
 	else
 		local symbol, price = data:getPaySymbolAndPrice(data:getPayId())
 
 		moneyText:setString(symbol .. price)
 	end
 
-	moneyText:setFontSize(24)
 	iconLayout:removeAllChildren()
 	iconLayout:setAnchorPoint(cc.p(0.5, 0.5))
 
@@ -376,7 +391,7 @@ function ShopPackageMainMediator:setInfo(panel, data, index)
 
 	local rewardId = data:getItem()
 	local rewards = RewardSystem:getRewardsById(rewardId)
-	local offset = #rewards == 1 and 75 or #rewards == 2 and 45 or #rewards == 3 and 17 or #rewards == 4 and -2 or 0
+	local offset = #rewards == 1 and 80 or #rewards == 2 and 50 or #rewards == 3 and 22 or #rewards == 4 and 5 or 0
 	local scale = 0.4
 	local cellWidth = #rewards >= 4 and 48 or 53
 
@@ -391,7 +406,7 @@ function ShopPackageMainMediator:setInfo(panel, data, index)
 
 			rewardPanel:addChild(rewardIcon)
 			rewardIcon:setScaleNotCascade(scale)
-			rewardIcon:setPosition((i - 1) * cellWidth + offset, 8)
+			rewardIcon:setPosition((i - 1) * cellWidth + offset, 0)
 			rewardIcon:setAnchorPoint(0, 0)
 			IconFactory:bindClickHander(rewardIcon, IconTouchHandler:new(self._parentMediator), reward, {
 				touchDisappear = true,
@@ -415,7 +430,7 @@ function ShopPackageMainMediator:addRedPoint(panel, data)
 			if not redPoint then
 				redPoint = RedPoint:createDefaultNode()
 
-				redPoint:addTo(panel):posite(200, 240)
+				redPoint:addTo(panel):posite(195, 230)
 				redPoint:setLocalZOrder(99901)
 				redPoint:setName("redPoint" .. packageId)
 			end
@@ -431,11 +446,8 @@ function ShopPackageMainMediator:setDiscountImg(panel, data)
 		costOffTagPanel:setVisible(true)
 
 		local n = costOffTagPanel:getChildByName("number")
-		local n1 = costOffTagPanel:getChildByName("number1")
 
-		n:setString(tostring(costOff * 100))
-		n1:setString("%")
-		n1:setPositionX(n:getPositionX() + n:getContentSize().width)
+		n:setString(tostring(costOff * 100) .. "%")
 	else
 		costOffTagPanel:setVisible(false)
 	end
@@ -476,12 +488,6 @@ end
 
 function ShopPackageMainMediator:refreshPackageTime(panel, data)
 	local infoPanel = panel:getChildByFullName("info_panel")
-	local _times = panel:getChildByFullName("info_panel.times")
-	local _times1 = panel:getChildByFullName("info_panel.times1")
-
-	_times:setVisible(false)
-	_times1:setVisible(false)
-
 	local _duihuanText = panel:getChildByFullName("info_panel.duihuan_text")
 	local _mageMark = panel:getParent():getChildByFullName("ImageMark")
 
@@ -534,31 +540,17 @@ function ShopPackageMainMediator:isCurShop()
 		return true
 	end
 
-	return false
-end
-
-function ShopPackageMainMediator:setScrollPosition()
-	local offset = 23
-
-	if table.indexof(kShopResetTypeSort, self._shopId) then
-		self._scrollBg:setPositionY(5)
-		self._scrollBarBg:setPositionY(15)
-		self._scrollView:setPositionY(5)
-		self._talkRole:setPositionY(-offset)
-	else
-		self._scrollBg:setPositionY(5 + offset)
-		self._scrollBarBg:setPositionY(15 + offset)
-		self._scrollView:setPositionY(5 + offset)
-		self._talkRole:setPositionY(0)
+	if (shopId == ShopSpecialId.kShopPackage or shopId == ShopSpecialId.kShopTimeLimit) and self._parentMediator then
+		return true
 	end
+
+	return false
 end
 
 function ShopPackageMainMediator:onClickItem(data)
 	if data:getLeftCount() == 0 then
 		return
 	end
-
-	dump(data, "RRRRRRRRR")
 
 	local view = self:getInjector():getInstance("ShopBuyPackageView")
 
@@ -788,35 +780,86 @@ end
 function ShopPackageMainMediator:setMenuView()
 	if table.indexof(kShopResetTypeSort, self._shopId) then
 		self._tabBg:setVisible(true)
+	elseif self._shopId == ShopSpecialId.kShopPackage then
+		self._tabBg:setVisible(true)
+	elseif self._shopId == ShopSpecialId.kShopTimeLimit then
+		self._tabBg:setVisible(true)
 	else
 		self._tabBg:setVisible(false)
 	end
 end
 
 function ShopPackageMainMediator:createRightShopConfig()
-	self._shopTabList = {
-		{
+	self._shopTabList = {}
+
+	if self._shopId == ShopSpecialId.KShopTimelimitedmall then
+		local function setShopPackage()
+			local list = self._shopSystem:getPackageList(ShopSpecialId.kShopPackage)
+			local unlock, tips = self._systemKeeper:isUnlock(ShopUnlockId.kShopPackage)
+			local canShow = self._systemKeeper:canShow(ShopUnlockId.kShopPackage) and CommonUtils.GetSwitch("fn_shop_package")
+
+			if #list > 0 and canShow and unlock then
+				self._shopTabList[#self._shopTabList + 1] = {
+					shopId = ShopSpecialId.kShopPackage,
+					name = {
+						Strings:get("Unlock_Package_Shop"),
+						""
+					}
+				}
+			end
+		end
+
+		local function setShopTimeLimit()
+			local list = self._shopSystem:getPackageList(ShopSpecialId.kShopTimeLimit)
+			local unlock, tips = self._systemKeeper:isUnlock(ShopUnlockId.kShopTimeLimit)
+			local canShow = self._systemKeeper:canShow(ShopUnlockId.kShopTimeLimit) and CommonUtils.GetSwitch("fn_shop_timelimit")
+
+			if #list > 0 and canShow and unlock then
+				self._shopTabList[#self._shopTabList + 1] = {
+					shopId = ShopSpecialId.kShopTimeLimit,
+					name = {
+						Strings:get("Unlock_Shop_TimeLimit"),
+						""
+					}
+				}
+			end
+		end
+
+		local sortDay = DataReader:getDataByNameIdAndKey("ConfigValue", "NewPlayerPackage_Duration", "content")
+		local createTime = self._developSystem:getPlayer():getCreateTime()
+		local curTimeData = TimeUtil:timeByRemoteDate()
+		local sortData = sortDay * 24 * 60 * 60 + createTime / 1000
+
+		if curTimeData < sortData then
+			setShopPackage()
+			setShopTimeLimit()
+		else
+			setShopTimeLimit()
+			setShopPackage()
+		end
+	else
+		self._shopTabList[1] = {
 			shopId = kShopResetTypeSort[1],
 			name = {
 				Strings:get("Shop_Tab_Day"),
 				""
 			}
-		},
-		{
+		}
+		self._shopTabList[2] = {
 			shopId = kShopResetTypeSort[2],
 			name = {
 				Strings:get("Shop_Tab_Week"),
 				""
 			}
-		},
-		{
+		}
+		self._shopTabList[3] = {
 			shopId = kShopResetTypeSort[3],
 			name = {
 				Strings:get("Shop_Tab_Month"),
 				""
 			}
 		}
-	}
+	end
 end
 
 function ShopPackageMainMediator:initRightTabController()
@@ -828,6 +871,7 @@ function ShopPackageMainMediator:initRightTabController()
 	local viewWidth = self._scrollViewTab:getContentSize().width
 	local allWidth = math.max(viewWidth, self._cellWidthTab * length)
 
+	self._tabBg:setContentSize(cc.size(math.min(viewWidth, self._cellWidthTab * length) + 18, 46))
 	self._scrollViewTab:setInnerContainerSize(cc.size(allWidth, kCellHeightTab))
 	self._scrollViewTab:setInnerContainerPosition(cc.p(0, 2))
 

@@ -471,16 +471,6 @@ all.Skill_SP_KTSJKe_Passive = {
 		this.passive = global["[trigger_by]"](this, {
 			"UNIT_DIE"
 		}, passive)
-		local passive2 = __action(this, {
-			name = "passive2",
-			entry = prototype.passive2
-		})
-		passive2 = global["[duration]"](this, {
-			0
-		}, passive2)
-		this.passive2 = global["[trigger_by]"](this, {
-			"UNIT_ENTER"
-		}, passive2)
 
 		return this
 	end,
@@ -546,47 +536,6 @@ all.Skill_SP_KTSJKe_Passive = {
 						})
 					end
 				end
-			end
-		end)
-
-		return _env
-	end,
-	passive2 = function (_env, externs)
-		local this = _env.this
-		local global = _env.global
-		local exec = _env["$executor"]
-		_env.ACTOR = externs.ACTOR
-
-		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
-
-		_env.unit = externs.unit
-
-		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
-		exec["@time"]({
-			0
-		}, _env, function (_env)
-			local this = _env.this
-			local global = _env.global
-
-			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.INSTATUS(_env, "SummonedSP_KTSJKe")(_env, _env.unit) then
-				local buffeft1 = global.NumericEffect(_env, "+defrate", {
-					"+Normal",
-					"+Normal"
-				}, 0)
-
-				global.ApplyBuff(_env, _env.unit, {
-					timing = 0,
-					duration = 99,
-					display = "ShenYin",
-					tags = {
-						"STATUS",
-						"NUMERIC",
-						"UNDISPELLABLE",
-						"UNSTEALABLE"
-					}
-				}, {
-					buffeft1
-				})
 			end
 		end)
 
@@ -710,6 +659,16 @@ all.Skill_SP_KTSJKe_Wife_Normal = {
 		this.main = global["[duration]"](this, {
 			1300
 		}, main)
+		local passive = __action(this, {
+			name = "passive",
+			entry = prototype.passive
+		})
+		passive = global["[duration]"](this, {
+			0
+		}, passive)
+		this.passive = global["[trigger_by]"](this, {
+			"SELF:ENTER"
+		}, passive)
 
 		return this
 	end,
@@ -755,6 +714,40 @@ all.Skill_SP_KTSJKe_Wife_Normal = {
 			end
 
 			global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage)
+		end)
+
+		return _env
+	end,
+	passive = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local buffeft1 = global.NumericEffect(_env, "+defrate", {
+				"+Normal",
+				"+Normal"
+			}, 0)
+
+			global.ApplyBuff(_env, _env.ACTOR, {
+				timing = 0,
+				duration = 99,
+				display = "ShenYin",
+				tags = {
+					"STATUS",
+					"NUMERIC",
+					"UNDISPELLABLE",
+					"UNSTEALABLE"
+				}
+			}, {
+				buffeft1
+			})
 		end)
 
 		return _env
@@ -1201,16 +1194,6 @@ all.Skill_SP_KTSJKe_Passive_EX = {
 		this.passive2 = global["[trigger_by]"](this, {
 			"SELF:DIE"
 		}, passive2)
-		local passive3 = __action(this, {
-			name = "passive3",
-			entry = prototype.passive3
-		})
-		passive3 = global["[duration]"](this, {
-			0
-		}, passive3)
-		this.passive3 = global["[trigger_by]"](this, {
-			"UNIT_ENTER"
-		}, passive3)
 
 		return this
 	end,
@@ -1302,47 +1285,6 @@ all.Skill_SP_KTSJKe_Passive_EX = {
 				global.Kick(_env, wife[1])
 				global.ReviveByUnit(_env, _env.ACTOR, this.Factor, this.RpFactor, {
 					cellid
-				})
-			end
-		end)
-
-		return _env
-	end,
-	passive3 = function (_env, externs)
-		local this = _env.this
-		local global = _env.global
-		local exec = _env["$executor"]
-		_env.ACTOR = externs.ACTOR
-
-		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
-
-		_env.unit = externs.unit
-
-		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
-		exec["@time"]({
-			0
-		}, _env, function (_env)
-			local this = _env.this
-			local global = _env.global
-
-			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.INSTATUS(_env, "SummonedSP_KTSJKe")(_env, _env.unit) then
-				local buffeft1 = global.NumericEffect(_env, "+defrate", {
-					"+Normal",
-					"+Normal"
-				}, 0)
-
-				global.ApplyBuff(_env, _env.unit, {
-					timing = 0,
-					duration = 99,
-					display = "ShenYin",
-					tags = {
-						"STATUS",
-						"NUMERIC",
-						"UNDISPELLABLE",
-						"UNSTEALABLE"
-					}
-				}, {
-					buffeft1
 				})
 			end
 		end)

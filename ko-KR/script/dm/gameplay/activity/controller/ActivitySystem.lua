@@ -2099,3 +2099,93 @@ function ActivitySystem:tryEnterActivityMailView()
 		}))
 	end
 end
+
+function ActivitySystem:requestLightPuzzleOnePiece(activityId, pieceIndex, callback)
+	local param = {
+		doActivityType = 101
+	}
+
+	if pieceIndex ~= nil then
+		param.index = pieceIndex
+	else
+		return
+	end
+
+	self:requestDoActivity(activityId, param, function (response)
+		if response.resCode == GS_SUCCESS then
+			if callback then
+				callback(response)
+			end
+
+			self:dispatch(Event:new(EVT_PUZZLEGAME_REFRESH))
+		end
+	end)
+end
+
+function ActivitySystem:requestGetPuzzleReward(activityId, rewardType, callback)
+	local param = {
+		doActivityType = 102
+	}
+
+	if rewardType ~= nil then
+		param.type = rewardType
+	else
+		return
+	end
+
+	self:requestDoActivity(activityId, param, function (response)
+		if response.resCode == GS_SUCCESS then
+			if callback then
+				callback(response)
+			end
+
+			local rewards = response.data.rewards
+			local showRewards = {}
+
+			for i = 1, #rewards do
+				if rewards[i].type ~= RewardType.kGalleryMemory then
+					table.insert(showRewards, rewards[i])
+				end
+			end
+
+			local view = self:getInjector():getInstance("getRewardView")
+
+			self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+				maskOpacity = 0
+			}, {
+				rewards = showRewards
+			}))
+			self:dispatch(Event:new(EVT_PUZZLEGAME_REFRESH))
+		end
+	end)
+end
+
+function ActivitySystem:requestGetPuzzleTaskReward(activityId, taskId, callback)
+	local param = {
+		doActivityType = 103
+	}
+
+	if taskId ~= nil then
+		param.taskId = taskId
+	else
+		return
+	end
+
+	self:requestDoActivity(activityId, param, function (response)
+		if response.resCode == GS_SUCCESS then
+			if callback then
+				callback(response)
+			end
+
+			local rewards = response.data.reward
+			local view = self:getInjector():getInstance("getRewardView")
+
+			self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+				maskOpacity = 0
+			}, {
+				rewards = rewards
+			}))
+			self:dispatch(Event:new(EVT_PUZZLEGAME_TASK_REFRESH))
+		end
+	end)
+end

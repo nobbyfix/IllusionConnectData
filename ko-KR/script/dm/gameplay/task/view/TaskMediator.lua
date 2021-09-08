@@ -99,6 +99,7 @@ end
 function TaskMediator:resumeWithData()
 	self:setLayout(self._curViewType, true)
 	self._tabBtnWidget:refreshAllRedPoint()
+	self:setOneKeyGray()
 end
 
 function TaskMediator:updateViewByEvent()
@@ -116,6 +117,7 @@ function TaskMediator:updateView()
 	}
 
 	self._taskSystem:requestTaskList(params)
+	self:setOneKeyGray()
 end
 
 function TaskMediator:getFirstEnterTabType()
@@ -266,12 +268,32 @@ function TaskMediator:onClickTab(name, viewType)
 	self:dispatch(Event:new(EVT_REDPOINT_REFRESH))
 
 	self._refreshFirst = false
+
+	self:setOneKeyGray()
 end
 
 function TaskMediator:setOneKeyVisible()
 	local unlock, tips = self._systemKeeper:isUnlock("Daily_Task_Receive")
 
 	self._onkeyBtn:setVisible(unlock and (self._curViewType == kViewType.kDailyTask or self._curViewType == kViewType.kAchieveTask))
+end
+
+function TaskMediator:setOneKeyGray()
+	local gray = false
+
+	if self._curViewType == kViewType.kDailyTask then
+		if not self._taskSystem:hasRedPoint(self._taskSystem:getShowDailyTaskList()) then
+			gray = true
+		end
+	elseif self._curViewType == kViewType.kAchieveTask then
+		dump(self._taskSystem:hasAchieveRedPoint(), " FFFFFFFFF self._taskSystem:hasAchieveRedPoin")
+
+		if not self._taskSystem:hasAchieveRedPoint() then
+			gray = true
+		end
+	end
+
+	self._onkeyBtn:setGray(gray)
 end
 
 function TaskMediator:setLayout(viewType, hasAnim)
@@ -358,7 +380,9 @@ function TaskMediator:onClickOnekey()
 			return
 		end
 
-		self._taskSystem:requestOneKeyDailyTaskReward()
+		self._taskSystem:requestOneKeyDailyTaskReward(nil, function ()
+			self:setOneKeyGray()
+		end)
 	elseif self._curViewType == kViewType.kAchieveTask then
 		if not self._taskSystem:hasAchieveRedPoint() then
 			self:dispatch(ShowTipEvent({
@@ -368,7 +392,9 @@ function TaskMediator:onClickOnekey()
 			return
 		end
 
-		self._taskSystem:requestOneKeyAchievementReward()
+		self._taskSystem:requestOneKeyAchievementReward(nil, function ()
+			self:setOneKeyGray()
+		end)
 	end
 end
 

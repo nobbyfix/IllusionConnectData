@@ -1012,9 +1012,10 @@ end
 
 function LeadStageArenaTeamMediator:refreshCombatAndCost()
 	local effectScene = ConfigReader:getDataByNameIdAndKey("ConfigValue", "LeadStage_Effective", "content")
-	local isDouble = table.indexof("RTPK") > 0
+	local effectRate = ConfigReader:getDataByNameIdAndKey("ConfigValue", "LeadStage_Effective_Rate", "content")
+	local isDouble = table.indexof(effectScene, "RTPK") > 0
 	local leadConfig = self._masterSystem:getMasterCurLeadStageConfig(self._curMasterId)
-	local addPercent = leadConfig and leadConfig.LeadFightHero * (isDouble and 2 or 1) or 0
+	local addPercent = leadConfig and leadConfig.LeadFightHero * (isDouble and effectRate or 1) or 0
 	local totalCombat = 0
 	local totalCost = 0
 	local averageCost = 0
@@ -1090,9 +1091,9 @@ function LeadStageArenaTeamMediator:refreshCombatAndCost()
 			end
 		end)
 	else
-		slot11 = self._combatInfoBtn
+		slot12 = self._combatInfoBtn
 
-		slot11:setVisible(leadConfig ~= nil and addPercent > 0)
+		slot12:setVisible(leadConfig ~= nil and addPercent > 0)
 		self._combatInfoBtn:addTouchEventListener(function (sender, eventType)
 			self:onClickInfo(eventType, nil, isDouble)
 		end)

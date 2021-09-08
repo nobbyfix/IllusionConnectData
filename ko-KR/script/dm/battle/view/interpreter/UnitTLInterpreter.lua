@@ -88,6 +88,18 @@ function UnitTLInterpreter:syncMainViewMaster()
 	end
 end
 
+function UnitTLInterpreter:act_ChangeFlags(action, args)
+	local flags = args.flags
+
+	self._dataModel:setFlags(flags)
+end
+
+function UnitTLInterpreter:act_IsSummond(action, args)
+	local isSummoned = args.isSummoned
+
+	self._dataModel:setIsSummond(isSummoned)
+end
+
 function UnitTLInterpreter:act_SpawnUnit(action, args)
 	self._mainPlayerSide = self._context:getValue("IsTeamAView")
 	self._mainPlayerId = self._context:getValue("CurMainPlayerId")
@@ -1673,8 +1685,10 @@ end
 function UnitTLInterpreter:act_ShowAtkAndDef(action, args)
 	local atk = args.detail.atk or 0
 	local def = args.detail.def or 0
+	local hurtrate = args.detail.hurtrate or 0
+	local unhurtrate = args.detail.unhurtrate or 0
 
-	self._unit:showAtkAndDef(atk, def)
+	self._unit:showAtkAndDef(atk, def, hurtrate, unhurtrate)
 end
 
 function UnitTLInterpreter:act_SetRootVisible(action, args)

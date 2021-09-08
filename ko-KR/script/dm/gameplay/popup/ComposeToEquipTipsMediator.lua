@@ -164,6 +164,9 @@ end
 function ComposeToEquipTipsMediator:setEquip(equipId)
 	local equipPanel = self._main:getChildByName("equipPanel")
 	local iconBg = equipPanel:getChildByName("icon")
+
+	equipPanel:getChildByFullName("Text_79"):setString(Strings:get("Equip_ShowUI"))
+
 	local id = equipId
 	local data = {}
 	local config = ConfigReader:requireRecordById("HeroEquipBase", id)

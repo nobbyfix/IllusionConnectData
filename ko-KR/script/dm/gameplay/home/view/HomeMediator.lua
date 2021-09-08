@@ -1967,7 +1967,7 @@ function HomeMediator:viewTouchEvent(index)
 	if bannerType == ActivityBannerType.kPackageShop then
 		local model = animData.model
 		local view = self:getInjector():getInstance("ShopView")
-		local shopId = "Shop_Package"
+		local shopId = "Shop_Timelimitedmall"
 		local data = {
 			shopId = shopId
 		}
@@ -2226,7 +2226,7 @@ function HomeMediator:onRewardBtn(sender, type, model)
 	end
 
 	local view = self:getInjector():getInstance("ShopView")
-	local shopId = "Shop_Package"
+	local shopId = "Shop_Timelimitedmall"
 	local data = {
 		shopId = shopId
 	}
@@ -3245,8 +3245,9 @@ function HomeMediator:checkExtraRedPoint()
 		if canBuyPackage then
 			local function callFunc()
 				local view = self:getInjector():getInstance("ShopView")
-				local shopId = "Shop_Package"
+				local shopId = "Shop_Timelimitedmall"
 				local data = {
+					subid = "Shop_Package",
 					shopId = shopId
 				}
 
@@ -3257,7 +3258,7 @@ function HomeMediator:checkExtraRedPoint()
 				self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
 					transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
 				}, {
-					shopId = ShopSpecialId.kShopPackage,
+					shopId = ShopSpecialId.KShopTimelimitedmall,
 					item = model
 				}))
 			end

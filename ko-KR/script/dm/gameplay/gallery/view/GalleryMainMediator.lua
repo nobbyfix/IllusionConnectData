@@ -26,7 +26,7 @@ local kTabBtnsLock = {
 }
 local kTabSwitch = {
 	nil,
-	nil,
+	"fn_gallery_URMap",
 	"fn_gallery_legend",
 	"fn_gallery_huiyi",
 	"fn_gallery_zhaopian"

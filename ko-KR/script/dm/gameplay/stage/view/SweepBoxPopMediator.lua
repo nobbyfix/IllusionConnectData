@@ -133,6 +133,12 @@ function SweepBoxPopMediator:enterWithData(data)
 
 		bottomText:setString(Strings:get("Ten"))
 	end
+
+	if data and data.desc then
+		local contentTxt = self:getView():getChildByFullName("Text_1")
+
+		contentTxt:setString(Strings:get(data.desc))
+	end
 end
 
 function SweepBoxPopMediator:onRemove()

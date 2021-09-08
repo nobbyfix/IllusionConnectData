@@ -803,6 +803,8 @@ all.DaGunFootPassive = {
 			local global = _env.global
 
 			if global.FriendMaster(_env) then
+				global.setRootVisible(_env, global.FriendMaster(_env), true)
+
 				if global.INSTATUS(_env, "HasBothFeet")(_env, global.FriendMaster(_env)) then
 					global.SwitchActionTo(_env, "hurt1", "hurt1", global.FriendMaster(_env))
 				elseif global.INSTATUS(_env, "OnlyLeftFoot")(_env, global.FriendMaster(_env)) then

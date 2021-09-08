@@ -332,6 +332,10 @@ function ExploreBattleFinishMediator:initWinView()
 			isWidget = true
 		})
 
+		IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), rewardData, {
+			swallowTouches = true,
+			needDelay = true
+		})
 		icon:addTo(layout):center(layout:getContentSize())
 		rewardNode:pushBackCustomItem(layout)
 		icon:setScale(1)
@@ -385,7 +389,13 @@ end
 function ExploreBattleFinishMediator:onTouchMaskLayer()
 	if self._data.callBack then
 		AudioEngine:getInstance():playEffect("Se_Click_Close_1", false)
-		BattleLoader:popBattleView(self)
+
+		if self._data.quickbattle then
+			self:close()
+		else
+			BattleLoader:popBattleView(self)
+		end
+
 		self._data.callBack()
 	end
 end

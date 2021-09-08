@@ -431,22 +431,18 @@ function HomeSystem:getWonderfulActData()
 
 	for k, v in pairs(bannerConfig) do
 		if v.Important == ActivityBannerImportant.kIsImportant and v.Switch and CommonUtils.GetSwitch(v.Switch) then
-			table.insert(sortBanner, v)
+			if ActivityBannerType.kActivity == v.Type then
+				if self._activitySystem:isActivityOpen(v.TypeId) then
+					table.insert(sortBanner, v)
+				end
+			elseif ActivityBannerType.kCooperateBoss == v.Type and self._cooperateSystem:cooperateBossShow() then
+				table.insert(sortBanner, v)
+			end
 		end
 	end
 
-	table.sort(sortBanner, function (a, b)
-		return b.Sort < a.Sort
-	end)
-
-	for i = 1, #sortBanner do
-		if ActivityBannerType.kActivity == sortBanner[i].Type and self._activitySystem:isActivityOpen(sortBanner[i].TypeId) then
-			return sortBanner[i]
-		end
-
-		if ActivityBannerType.kCooperateBoss == sortBanner[i].Type and self._cooperateSystem:cooperateBossShow() then
-			return sortBanner[i]
-		end
+	if next(sortBanner) then
+		return sortBanner[math.random(1, #sortBanner)]
 	end
 
 	return nil

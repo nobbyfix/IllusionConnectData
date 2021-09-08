@@ -23,6 +23,8 @@ require("dm.gameplay.activity.model.MonsterShopActivity")
 require("dm.gameplay.activity.model.ActivityColorEggActivity")
 require("dm.gameplay.activity.model.ActivityTpurchase")
 require("dm.gameplay.activity.model.MiniGameActivity")
+require("dm.gameplay.activity.model.PuzzleGameActivity")
+require("dm.gameplay.cooperateBoss.model.CooperateBoss")
 require("dm.gameplay.activity.model.return.ActivityReturn")
 require("dm.gameplay.activity.model.return.ActivityReturnLetter")
 require("dm.gameplay.activity.model.return.ActivityReturnCarnival")
@@ -89,6 +91,7 @@ ActivityModel = {
 	[ActivityType.KMonsterShop] = MonsterShopActivity,
 	[ActivityType.KTPURCHASE] = ActivityTpurchase,
 	[ActivityType.KMiniGame] = MiniGameActivity,
+	[ActivityType.KPuzzleGame] = PuzzleGameActivity,
 	[ActivityType.KReturn] = ActivityReturn,
 	[ActivityType.KLetter] = ActivityReturnLetter,
 	[ActivityType.KReturnCarnival] = ActivityReturnCarnival,
@@ -135,7 +138,8 @@ ActivityUI = {
 	[ActivityType.KRechargeActivity] = "RechargeActivityView",
 	[ActivityType.KDrawCardFeedbackActivity] = "ActivityDrawCardFeedbackView",
 	[ActivityType.KColourEgg] = "TaskActivityView",
-	[ActivityType.KMonsterShop] = "ActivityBlockMonsterShopView"
+	[ActivityType.KMonsterShop] = "ActivityBlockMonsterShopView",
+	[ActivityType.KPuzzleGame] = "ActivityPuzzleGameView"
 }
 ActivityMark = {
 	kWonderful2 = "WONDERFUL2",
@@ -282,6 +286,13 @@ ActivityLogin14Config = {
 		}
 	},
 	EightDays_Female = {
+		resFile = "asset/ui/ActivityFemaleLogin14.csb",
+		textPattern = {
+			cc.c4b(255, 165, 218, 255),
+			cc.c4b(255, 239, 163, 255)
+		}
+	},
+	EightDays_Female_Re = {
 		resFile = "asset/ui/ActivityFemaleLogin14.csb",
 		textPattern = {
 			cc.c4b(255, 165, 218, 255),

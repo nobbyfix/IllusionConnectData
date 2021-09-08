@@ -229,6 +229,13 @@ function HeroShowNotOwnMediator:initView()
 
 	label1:setString(positions[1] or "")
 	label2:setString(positions[2] or "")
+	label2:setPositionX(label1:getPositionX() + label1:getContentSize().width + 18)
+
+	local p = rightPanel:getChildByFullName("nichePanel.nichePanel")
+
+	p:setScale9Enabled(true)
+	p:setCapInsets(cc.rect(100, 30, 1, 1))
+	p:setContentSize(cc.size(label1:getContentSize().width + label2:getContentSize().width + 110, 60))
 
 	self._effectCell = self:getView():getChildByName("effectCellClone")
 

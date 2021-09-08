@@ -79,6 +79,18 @@ local timeLimitShopConfig = {
 	riddle = {
 		BG = "jqtd_txt_zhyazl_di",
 		TimeOutLineColor = cc.c4b(105, 0, 106, 255)
+	},
+	Anniversary = {
+		BG = "jqtd_txt_ydzr_di",
+		TimeOutLineColor = cc.c4b(195, 73, 36, 255),
+		cell = {
+			cellPanel = "deepseaCell",
+			cellDi = {
+				"jqtd_img_ydzr_jldi.png",
+				"jqtd_img_ydzr_jldih.png"
+			},
+			nameColor = cc.c3b(250, 166, 149)
+		}
 	}
 }
 local btnHandlers = {

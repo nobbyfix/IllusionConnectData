@@ -234,15 +234,11 @@ function TabBtnWidget:refreshSelectBtn(selectTag)
 end
 
 function TabBtnWidget:_setTabNormalTextEffect(text)
-	text:enableOutline(cc.c4b(3, 1, 4, 51), 1)
 	text:setColor(cc.c3b(110, 108, 108))
-	text:enableShadow(cc.c4b(3, 1, 4, 25.5), cc.size(1, 0), 1)
 end
 
 function TabBtnWidget:_setTabPressTextEffect(text)
-	text:enableOutline(cc.c4b(3, 1, 4, 51), 1)
-	text:setColor(cc.c3b(101, 126, 32))
-	text:enableShadow(cc.c4b(3, 1, 4, 25.5), cc.size(1, 0), 1)
+	text:setColor(cc.c3b(156, 224, 3))
 end
 
 function TabBtnWidget:_bindBtnText(btn, config)
@@ -252,10 +248,10 @@ function TabBtnWidget:_bindBtnText(btn, config)
 		"common_btn_fy1.png",
 		"common_btn_fy2.png"
 	}
-	local fontName = config.fontName or TTF_FONT_FZYH_M
-	local fontSize = config.fontSize or 30
-	local fontColor = config.fontColor or nil
-	local fontColorSel = config.fontColorSel or nil
+	local fontName = config.fontName or CUSTOM_TTF_FONT_1
+	local fontSize = config.fontSize or 28
+	local fontColor = config.fontColor or cc.c4b(255, 255, 255, 255)
+	local fontColorSel = config.fontColorSel or cc.c4b(62, 62, 62, 255)
 	local unEnableOutline = config.unEnableOutline
 	local textOffsetx = config.textOffsetx or 5
 	local textOffsety = config.textOffsety or 18
@@ -269,7 +265,7 @@ function TabBtnWidget:_bindBtnText(btn, config)
 	end
 
 	if not unEnableOutline then
-		darkText:enableOutline(cc.c4b(3, 1, 4, 255), 1)
+		-- Nothing
 	end
 
 	darkText:setOverflow(cc.LabelOverflow.SHRINK)
@@ -291,7 +287,7 @@ function TabBtnWidget:_bindBtnText(btn, config)
 	lightText:setAnchorPoint(0.5, 0.5)
 
 	if not unEnableOutline then
-		lightText:enableOutline(cc.c4b(3, 1, 4, 255), 1)
+		-- Nothing
 	end
 
 	lightText:setOverflow(cc.LabelOverflow.SHRINK)
@@ -313,6 +309,8 @@ function TabBtnWidget:_bindBtnText(btn, config)
 
 	lightTextTranslate:setAnchorPoint(0.5, 0.5)
 	self:_setTabPressTextEffect(lightTextTranslate)
+	darkTextTranslate:setVisible(false)
+	lightTextTranslate:setVisible(false)
 
 	local btnNode = cc.Node:create()
 
