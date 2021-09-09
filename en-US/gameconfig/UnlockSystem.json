@@ -1487,10 +1487,12 @@
         "IsPlay": 0,
         "Link": "",
         "LongDesc": "Unlock_Elite_OnceRaid_Desc",
-        "Name": "Unlock_Elite_OnceRaid",
+        "Name": "Unlock_Package_Shop",
         "OutputDesc": "",
         "ResourcesBanner": [
             "IR_Gold",
+            "IR_Crystal",
+            "IR_Power",
             "IR_Diamond"
         ],
         "ShowCondition": {
@@ -1913,6 +1915,29 @@
         "Link": "",
         "LongDesc": "",
         "Name": "Unlock_Shop_TimeLimit",
+        "OutputDesc": "",
+        "ResourcesBanner": [
+            "IR_Gold",
+            "IR_Crystal",
+            "IR_Power",
+            "IR_Diamond"
+        ],
+        "ShowCondition": {
+            "LEVEL": 1
+        },
+        "Tip": "Unlock_Level_Tips",
+        "UnlockAnima": "",
+        "UnlockDesc": ""
+    },
+    "Shop_Timelimitedmall": {
+        "Condition": {
+            "LEVEL": 1
+        },
+        "Icon": "new_system_club.png",
+        "IsPlay": 0,
+        "Link": "",
+        "LongDesc": "",
+        "Name": "Unlock_Shop_Timelimitedmall",
         "OutputDesc": "",
         "ResourcesBanner": [
             "IR_Gold",

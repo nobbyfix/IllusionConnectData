@@ -184,8 +184,6 @@ function BattleLoader:pushBattleView(dispatcher, data, forceNoScene, isPvP)
 		cc.Director:getInstance():getTextureCache():disableAutoGC()
 
 		local textureCache = cc.Director:getInstance():getTextureCache()
-
-		print(textureCache:getCachedTextureInfo())
 	end
 
 	local injector = dispatcher:getInjector()

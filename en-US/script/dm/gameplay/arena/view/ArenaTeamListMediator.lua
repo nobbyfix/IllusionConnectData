@@ -348,9 +348,10 @@ function ArenaTeamListMediator:refreshView()
 		infoBg:getChildByFullName("averageLabel"):setString(average)
 
 		local effectScene = ConfigReader:getDataByNameIdAndKey("ConfigValue", "LeadStage_Effective", "content")
-		local isDouble = table.indexof("ARENA") > 0
+		local effectRate = ConfigReader:getDataByNameIdAndKey("ConfigValue", "LeadStage_Effective_Rate", "content")
+		local isDouble = table.indexof(effectScene, "ARENA") > 0
 		local leadConfig = self._masterSystem:getMasterCurLeadStageConfig(data:getMasterId())
-		local addPercent = leadConfig and leadConfig.LeadFightHero * (isDouble and 2 or 1) or 0
+		local addPercent = leadConfig and leadConfig.LeadFightHero * (isDouble and effectRate or 1) or 0
 		local totalCombat = 0
 
 		for k, v in pairs(data:getHeroes()) do
@@ -404,7 +405,7 @@ function ArenaTeamListMediator:refreshView()
 					fontName = TTF_FONT_FZYH_M,
 					leader = masterData:getName(),
 					stage = Strings:get(leadConfig.RomanNum) .. Strings:get(leadConfig.StageName),
-					percent = addPercent * 100 .. "%"
+					percent = math.ceil(addPercent * 100) .. "%"
 				})
 				local richText = ccui.RichText:createWithXML(desc, {})
 

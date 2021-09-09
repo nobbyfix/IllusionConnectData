@@ -161,6 +161,9 @@
     "Target_LEIMu": {
         "Function": "return MainTarget()"
     },
+    "Target_LEMHou": {
+        "Function": "return MainTarget()"
+    },
     "Target_LFEr": {
         "Function": "return MainTarget()+GenInfo(Slice(SortBy(FriendUnits(PETS),\"<\",getHpRatio),1,1),Green)"
     },
@@ -280,6 +283,9 @@
     },
     "Target_WEDe": {
         "Function": "return MainTarget()"
+    },
+    "Target_WLSTNCi": {
+        "Function": "return GenInfo(EnemyAll(),Red,true)"
     },
     "Target_WSLi": {
         "Function": "return MainTarget()"

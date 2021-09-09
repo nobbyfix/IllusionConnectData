@@ -529,17 +529,31 @@ all.Skill_MLYDi_Passive = {
 					duration = 99,
 					display = "AtkUp",
 					tags = {
-						"Skill_MLYDi_Passive_Hp",
+						"Skill_MLYDi_Passive_Atk",
 						"STATUS",
 						"NUMERIC",
 						"BUFF",
 						"ATKUP",
+						"DISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buff1
+				}, 1, 0)
+				global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
+					timing = 0,
+					duration = 99,
+					display = "MaxHpUp",
+					tags = {
+						"Skill_MLYDi_Passive_Hp",
+						"STATUS",
+						"NUMERIC",
+						"BUFF",
 						"MAXHPUP",
 						"DISPELLABLE",
 						"UNSTEALABLE"
 					}
 				}, {
-					buff1,
 					buff2
 				}, 1, 0)
 				global.ApplyHPRecovery(_env, _env.ACTOR, global.UnitPropGetter(_env, "maxHp")(_env, _env.ACTOR), true)
@@ -1042,17 +1056,31 @@ all.Skill_MLYDi_Passive_EX = {
 					duration = 99,
 					display = "AtkUp",
 					tags = {
-						"Skill_MLYDi_Passive_Hp",
+						"Skill_MLYDi_Passive_Atk",
 						"STATUS",
 						"NUMERIC",
 						"BUFF",
 						"ATKUP",
+						"DISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buff1
+				}, 1, 0)
+				global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
+					timing = 0,
+					duration = 99,
+					display = "MaxHpUp",
+					tags = {
+						"Skill_MLYDi_Passive_Hp",
+						"STATUS",
+						"NUMERIC",
+						"BUFF",
 						"MAXHPUP",
 						"DISPELLABLE",
 						"UNSTEALABLE"
 					}
 				}, {
-					buff1,
 					buff2
 				}, 1, 0)
 				global.ApplyHPRecovery(_env, _env.ACTOR, global.UnitPropGetter(_env, "maxHp")(_env, _env.ACTOR), true)

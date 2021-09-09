@@ -269,9 +269,10 @@ all.Skill_FLBDSi_Unique = {
 					buffeft1
 				}, 1, 0)
 				global.ApplyBuff_Buff(_env, _env.ACTOR, unit, {
-					duration = 99,
-					group = "Skill_FLBDSi_Unique_MaxHpRate",
 					timing = 0,
+					display = "MaxHpUp",
+					group = "Skill_FLBDSi_Unique_MaxHpRate",
+					duration = 99,
 					limit = 2,
 					tags = {
 						"Skill_FLBDSi_Unique",
@@ -314,9 +315,10 @@ all.Skill_FLBDSi_Unique = {
 					buffeft1
 				})
 				global.ApplyHeroCardBuff(_env, global.GetOwner(_env, _env.ACTOR), card, {
-					duration = 99,
-					group = "Skill_FLBDSi_Unique_MaxHpRate",
 					timing = 0,
+					display = "MaxHpUp",
+					group = "Skill_FLBDSi_Unique_MaxHpRate",
+					duration = 99,
 					limit = 2,
 					tags = {
 						"Skill_FLBDSi_Unique",
@@ -693,9 +695,10 @@ all.Skill_FLBDSi_Unique_EX = {
 					buffeft1
 				}, 1, 0)
 				global.ApplyBuff_Buff(_env, _env.ACTOR, unit, {
-					duration = 99,
-					group = "Skill_FLBDSi_Unique_MaxHpRate",
 					timing = 0,
+					display = "MaxHpUp",
+					group = "Skill_FLBDSi_Unique_MaxHpRate",
+					duration = 99,
 					limit = 2,
 					tags = {
 						"Skill_FLBDSi_Unique",
@@ -738,9 +741,10 @@ all.Skill_FLBDSi_Unique_EX = {
 					buffeft1
 				})
 				global.ApplyHeroCardBuff(_env, global.GetOwner(_env, _env.ACTOR), card, {
-					duration = 99,
-					group = "Skill_FLBDSi_Unique_MaxHpRate",
 					timing = 0,
+					display = "MaxHpUp",
+					group = "Skill_FLBDSi_Unique_MaxHpRate",
+					duration = 99,
 					limit = 2,
 					tags = {
 						"Skill_FLBDSi_Unique",

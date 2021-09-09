@@ -599,5 +599,140 @@ all.Skill_SRen_Passive_EX = {
 		return _env
 	end
 }
+all.Skill_SRen_Unique_Awaken = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.dmgFactor = externs.dmgFactor
+
+		if this.dmgFactor == nil then
+			this.dmgFactor = {
+				1,
+				3.6,
+				0
+			}
+		end
+
+		local main = __action(this, {
+			name = "main",
+			entry = prototype.main
+		})
+		main = global["[duration]"](this, {
+			3134
+		}, main)
+		this.main = global["[cut_in]"](this, {
+			"1#Hero_Unique_SRen"
+		}, main)
+
+		return this
+	end,
+	main = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.TARGET = externs.TARGET
+
+		assert(_env.TARGET ~= nil, "External variable `TARGET` is not provided.")
+
+		_env.units = nil
+		_env.num = nil
+
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			_env.units = global.EnemyUnits(_env)
+
+			for _, unit in global.__iter__(_env.units) do
+				global.RetainObject(_env, unit)
+			end
+
+			global.EnergyRestrain(_env, _env.ACTOR, _env.TARGET)
+		end)
+		exec["@time"]({
+			900
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.1, 80)
+			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.FixedPos(_env, 0, 0, 2), 100, "skill3"))
+			global.HarmTargetView(_env, _env.units)
+
+			for _, unit in global.__iter__(_env.units) do
+				global.AssignRoles(_env, unit, "target")
+			end
+		end)
+		exec["@time"]({
+			1533
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local atk = global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR) * 0.8
+
+			for _, unit in global.__iter__(global.FriendUnits(_env)) do
+				local debuffnum = global.min(_env, global.SelectBuffCount(_env, unit, global.BUFF_MARKED_ALL(_env, "DEBUFF", "DISPELLABLE")), 2)
+
+				global.DispelBuff(_env, unit, global.BUFF_MARKED_ALL(_env, "DEBUFF", "DISPELLABLE"), 2)
+
+				if debuffnum ~= 0 then
+					global.ApplyHPRecovery(_env, unit, atk * debuffnum)
+				end
+			end
+
+			for _, unit in global.__iter__(_env.units) do
+				_env.num = global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "UNDEAD"))
+
+				if _env.num > 1 then
+					global.DispelBuff(_env, unit, global.BUFF_MARKED_ALL(_env, "UNDEAD", "DISPELLABLE"), 2)
+					global.ApplyHPDamage(_env, unit, atk * 2)
+				end
+
+				if _env.num == 1 then
+					local buffnum = global.min(_env, global.SelectBuffCount(_env, unit, global.BUFF_MARKED_ALL(_env, "BUFF", "DISPELLABLE")), 1)
+
+					global.DispelBuff(_env, unit, global.BUFF_MARKED_ALL(_env, "UNDEAD", "DISPELLABLE"), 1)
+					global.DispelBuff(_env, unit, global.BUFF_MARKED_ALL(_env, "BUFF", "DISPELLABLE"), 1)
+					global.ApplyHPDamage(_env, unit, atk * (buffnum + 1))
+				end
+
+				if _env.num == 0 then
+					local buffnum = global.min(_env, global.SelectBuffCount(_env, unit, global.BUFF_MARKED_ALL(_env, "BUFF", "DISPELLABLE")), 2)
+
+					global.DispelBuff(_env, unit, global.BUFF_MARKED_ALL(_env, "BUFF", "DISPELLABLE"), 2)
+
+					if buffnum ~= 0 then
+						global.ApplyHPDamage(_env, unit, atk * buffnum)
+					end
+				end
+
+				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
+				global.ApplyRPEffect(_env, _env.ACTOR, unit)
+
+				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
+
+				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
+			end
+		end)
+		exec["@time"]({
+			3134
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.EnergyRestrainStop(_env, _env.ACTOR, _env.TARGET)
+		end)
+
+		return _env
+	end
+}
 
 return _M

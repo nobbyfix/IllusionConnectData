@@ -2,9 +2,9 @@
     "DH01N01M01": {
         "BattleDes": "DH01N01M01_BattleDes",
         "BattleFactor": [
-            26200,
-            26200,
-            26200
+            14500,
+            14500,
+            14500
         ],
         "BattleReward": "DH01N01M01_Reward",
         "BeforeBattle": "",
@@ -62,9 +62,9 @@
     "DH01N01M02": {
         "BattleDes": "DH01N01M02_BattleDes",
         "BattleFactor": [
-            26200,
-            26200,
-            26200
+            14500,
+            14500,
+            14500
         ],
         "BattleReward": "DH01N01M02_Reward",
         "BeforeBattle": "DH01N01M01",
@@ -111,9 +111,9 @@
     "DH01N01M03": {
         "BattleDes": "DH01N01M03_BattleDes",
         "BattleFactor": [
-            26200,
-            26200,
-            26200
+            14500,
+            14500,
+            14500
         ],
         "BattleReward": "DH01N01M03_Reward",
         "BeforeBattle": "DH01N01M02",
@@ -165,9 +165,9 @@
     "DH01N02M01": {
         "BattleDes": "DH01N02M01_BattleDes",
         "BattleFactor": [
-            26200,
-            26200,
-            26200
+            20960,
+            20960,
+            20960
         ],
         "BattleReward": "DH01N02M01_Reward",
         "BeforeBattle": "",
@@ -228,17 +228,20 @@
     "DH01N02M02": {
         "BattleDes": "DH01N02M02_BattleDes",
         "BattleFactor": [
-            26200,
-            26200,
-            26200
+            20960,
+            20960,
+            20960
         ],
         "BattleReward": "DH01N02M02_Reward",
         "BeforeBattle": "DH01N02M01",
         "BlockBattleConfig": "DH_BlockBattle_02",
         "BuffEffect": {
             "profession": {
-                "Defense": [
-                    "DH_UNHURTRATE"
+                "Aoe": [
+                    "DH_HURTRATE"
+                ],
+                "Attack": [
+                    "DH_HURTRATE"
                 ]
             }
         },
@@ -280,9 +283,9 @@
     "DH01N02M03": {
         "BattleDes": "DH01N02M03_BattleDes",
         "BattleFactor": [
-            26200,
-            26200,
-            26200
+            20960,
+            20960,
+            20960
         ],
         "BattleReward": "DH01N02M03_Reward",
         "BeforeBattle": "DH01N02M02",
@@ -332,9 +335,9 @@
     "DH01N02M04": {
         "BattleDes": "DH01N02M04_BattleDes",
         "BattleFactor": [
-            26200,
-            26200,
-            26200
+            20960,
+            20960,
+            20960
         ],
         "BattleReward": "DH01N02M04_Reward",
         "BeforeBattle": "DH01N02M03",
@@ -389,9 +392,9 @@
     "DH01N03M01": {
         "BattleDes": "DH01N03M01_BattleDes",
         "BattleFactor": [
-            26200,
-            26200,
-            26200
+            20960,
+            20960,
+            20960
         ],
         "BattleReward": "DH01N03M01_Reward",
         "BeforeBattle": "",
@@ -455,17 +458,20 @@
     "DH01N03M02": {
         "BattleDes": "DH01N03M02_BattleDes",
         "BattleFactor": [
-            26200,
-            26200,
-            26200
+            20960,
+            20960,
+            20960
         ],
         "BattleReward": "DH01N03M02_Reward",
         "BeforeBattle": "DH01N03M01",
         "BlockBattleConfig": "DH_BlockBattle_03",
         "BuffEffect": {
             "profession": {
-                "Defense": [
-                    "DH_UNHURTRATE"
+                "Aoe": [
+                    "DH_HURTRATE"
+                ],
+                "Attack": [
+                    "DH_HURTRATE"
                 ]
             }
         },
@@ -510,9 +516,9 @@
     "DH01N03M03": {
         "BattleDes": "DH01N03M03_BattleDes",
         "BattleFactor": [
-            26200,
-            26200,
-            26200
+            20960,
+            20960,
+            20960
         ],
         "BattleReward": "DH01N03M03_Reward",
         "BeforeBattle": "DH01N03M02",
@@ -565,9 +571,9 @@
     "DH01N03M04": {
         "BattleDes": "DH01N03M04_BattleDes",
         "BattleFactor": [
-            26200,
-            26200,
-            26200
+            20960,
+            20960,
+            20960
         ],
         "BattleReward": "DH01N03M04_Reward",
         "BeforeBattle": "DH01N03M03",
@@ -627,9 +633,9 @@
     "DH01N03M05": {
         "BattleDes": "DH01N03M05_BattleDes",
         "BattleFactor": [
-            26200,
-            26200,
-            26200
+            20960,
+            20960,
+            20960
         ],
         "BattleReward": "DH01N03M05_Reward",
         "BeforeBattle": "DH01N03M04",

@@ -134,28 +134,19 @@ function ShopRechargeMediator:setInfo(panel, data)
 	local iconLayout = panel:getChildByFullName("icon_layout")
 	local nameText = panel:getChildByFullName("goods_name")
 	local moneyLayout = panel:getChildByFullName("money_layout")
-	local moneyIcon = moneyLayout:getChildByFullName("money_icon")
 	local moneyText = moneyLayout:getChildByFullName("money")
 	local touchPanel = panel:getChildByFullName("touch_panel")
 
 	touchPanel:addTouchEventListener(function (sender, eventType)
 		self:onClickItem(sender, eventType, data)
 	end)
-
-	local moneySymbol = moneyLayout:getChildByFullName("moneySymbol")
-
 	iconLayout:removeAllChildren()
-	moneyIcon:removeAllChildren()
 	first:setVisible(false)
 	extra:setVisible(false)
 
 	local symbol, price = data:getPaySymbolAndPrice()
 
-	moneySymbol:setString(symbol)
-	moneyText:getVirtualRenderer():setOverflow(cc.LabelOverflow.SHRINK)
-	moneyText:getVirtualRenderer():setDimensions(195 - moneySymbol:getContentSize().width, 41)
-	moneyText:setPositionX(moneySymbol:getContentSize().width)
-	moneyText:setString(price)
+	moneyText:setString(symbol .. "" .. price)
 
 	local name = data:getName()
 

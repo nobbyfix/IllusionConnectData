@@ -245,6 +245,9 @@ end
 function exports.MarkSummoned(env, unit, isMarkSummon)
 	if unit then
 		unit:setIsSummoned(isMarkSummon)
+		env.global.RecordImmediately(env, unit:getId(), "IsSummond", {
+			isSummoned = isMarkSummon
+		})
 	end
 end
 

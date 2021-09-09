@@ -59,10 +59,12 @@ local kExtResponseMap = {
 		entry = ViewAreaEntry:new("BagView")
 	},
 	arenaView = {
+		switch = "fn_arena_normal",
 		instanceName = "ArenaSystem",
 		entry = ViewAreaEntry:new("arenaView")
 	},
 	ClubView = {
+		switch = "fn_guild",
 		instanceName = "ClubSystem",
 		funcName = "tryEnter",
 		entry = ViewAreaEntry:new("ClubView")
@@ -151,6 +153,7 @@ local kExtResponseMap = {
 		entry = ViewAreaEntry:new("ActivityBlockSummerView")
 	},
 	ExploreView = {
+		switch = "fn_train_explore",
 		instanceName = "ExploreSystem",
 		entry = ViewAreaEntry:new("ExploreView")
 	},
@@ -163,6 +166,7 @@ local kExtResponseMap = {
 		entry = ViewAreaEntry:new("RecruitView")
 	},
 	PetRaceView = {
+		switch = "fn_arena_pet_race",
 		instanceName = "PetRaceSystem",
 		funcName = "tryEnter",
 		entry = ViewAreaEntry:new("PetRaceView")
@@ -172,11 +176,13 @@ local kExtResponseMap = {
 		entry = ViewAreaEntry:new("TaskView")
 	},
 	StagePracticeEnterView = {
+		switch = "fn_train_practice",
 		instanceName = "StagePracticeSystem",
 		funcName = "tryEnter",
 		entry = ViewAreaEntry:new("StagePracticeEnterView")
 	},
 	SpStageMainView = {
+		switch = "fn_train_stage",
 		instanceName = "SpStageSystem",
 		funcName = "tryEnter",
 		entry = ViewAreaEntry:new("SpStageMainView")
@@ -230,11 +236,13 @@ local kExtResponseMap = {
 		entry = ViewAreaEntry:new("BuildingOverviewView")
 	},
 	CrusadeView = {
+		switch = "fn_train_crusade",
 		instanceName = "CrusadeSystem",
 		funcName = "tryEnter",
 		entry = ViewAreaEntry:new("CrusadeView")
 	},
 	TowerView = {
+		switch = "fn_train_tower",
 		instanceName = "TowerSystem",
 		funcName = "tryEnter",
 		entry = ViewAreaEntry:new("TowerView")
@@ -263,11 +271,13 @@ local kExtResponseMap = {
 		entry = ViewAreaEntry:new("ActivityBlockMusicView")
 	},
 	RTPKMainView = {
+		switch = "fn_arena_rtpk",
 		instanceName = "RTPKSystem",
 		funcName = "tryEnter",
 		entry = ViewAreaEntry:new("RTPKMainView")
 	},
 	LeadStageArenaMainView = {
+		switch = "fn_arena_leadStage",
 		instanceName = "LeadStageArenaSystem",
 		funcName = "tryEnter",
 		entry = ViewAreaEntry:new("LeadStageArenaMainView")
@@ -278,6 +288,7 @@ local kExtResponseMap = {
 		entry = ViewAreaEntry:new("ShopCoopExchangeView")
 	},
 	PassMainView = {
+		switch = "fn_pass",
 		instanceName = "PassSystem",
 		funcName = "tryEnter",
 		entry = ViewAreaEntry:new("PassMainView")
@@ -288,11 +299,13 @@ local kExtResponseMap = {
 		entry = ViewAreaEntry:new("ActivityListiew")
 	},
 	DartsView = {
+		switch = "fn_MiniGame_Darts",
 		instanceName = "MiniGameSystem",
 		funcName = "tryEnter",
 		entry = ViewAreaEntry:new("DartsView")
 	},
 	CooperateBossMainView = {
+		switch = "fn_arena_cooperate_boss",
 		instanceName = "CooperateBossSystem",
 		funcName = "enterCooperateBoss",
 		entry = ViewAreaEntry:new("CooperateBossMainView")
@@ -309,6 +322,7 @@ local kExtResponseMap = {
 		entry = ViewAreaEntry:new("ActivityTaskView")
 	},
 	DreamHouseMainView = {
+		switch = "fn_train_dreamhouse",
 		instanceName = "DreamHouseSystem",
 		funcName = "tryEnter",
 		entry = ViewAreaEntry:new("DreamHouseMainView")
@@ -345,6 +359,14 @@ function ViewAreaEntry:response(context, params)
 		local config = kExtResponseMap[self.viewName]
 
 		if config then
+			if config.switch and not CommonUtils.GetSwitch(config.switch) then
+				context:dispatch(ShowTipEvent({
+					tip = Strings:get("HEROS_UI14")
+				}))
+
+				return
+			end
+
 			local instance = context:getInjector():getInstance(config.instanceName)
 			local funcName = config.funcName or "tryEnter"
 

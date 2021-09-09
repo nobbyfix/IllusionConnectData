@@ -1035,9 +1035,10 @@ end
 
 function ArenaTeamMediator:refreshCombatAndCost()
 	local effectScene = ConfigReader:getDataByNameIdAndKey("ConfigValue", "LeadStage_Effective", "content")
-	local isDouble = table.indexof("ARENA") > 0
+	local effectRate = ConfigReader:getDataByNameIdAndKey("ConfigValue", "LeadStage_Effective_Rate", "content")
+	local isDouble = table.indexof(effectScene, "ARENA") > 0
 	local leadConfig = self._masterSystem:getMasterCurLeadStageConfig(self._curMasterId)
-	local addPercent = leadConfig and leadConfig.LeadFightHero * (isDouble and 2 or 1) or 0
+	local addPercent = leadConfig and leadConfig.LeadFightHero * (isDouble and effectRate or 1) or 0
 	local totalCombat = 0
 	local totalCost = 0
 	local averageCost = 0

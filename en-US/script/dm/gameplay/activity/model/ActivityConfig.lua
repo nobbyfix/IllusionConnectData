@@ -329,6 +329,13 @@ ActivityLogin14Config = {
 	},
 	EightDays_Riddle = {
 		resFile = "asset/ui/ActivityRiddleLogin14.csb"
+	},
+	EightDays_Female_Re = {
+		resFile = "asset/ui/ActivityFemaleLogin14.csb",
+		textPattern = {
+			cc.c4b(255, 165, 218, 255),
+			cc.c4b(255, 239, 163, 255)
+		}
 	}
 }
 ActivityMainMapTitleConfig = {

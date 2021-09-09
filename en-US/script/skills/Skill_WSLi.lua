@@ -266,6 +266,7 @@ all.Skill_WSLi_Unique = {
 				global.ApplyBuff(_env, _env.TARGET, {
 					timing = 0,
 					duration = 99,
+					display = "MaxHpDown",
 					tags = {
 						"DEBUFF",
 						"MAXHPDOWN",
@@ -284,28 +285,41 @@ all.Skill_WSLi_Unique = {
 					global.Serious_Injury(_env, _env.ACTOR, unit, this.Injury_Ratio, 20, 4)
 
 					local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
+					local buffeft = global.MaxHpEffect(_env, -damage.val)
 
 					if unit == _env.TARGET then
 						global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
+						global.ApplyBuff(_env, unit, {
+							timing = 0,
+							duration = 99,
+							display = "MaxHpDown",
+							tags = {
+								"DEBUFF",
+								"MAXHPDOWN",
+								"Skill_WSLi_Unique",
+								"UNDISPELLABLE",
+								"UNSTEALABLE"
+							}
+						}, {
+							buffeft
+						})
 					else
 						global.DelayCall(_env, 767, global.ApplyHPDamage_ResultCheck, _env.ACTOR, unit, damage)
+						global.DelayCall(_env, 770, global.ApplyBuff, unit, {
+							timing = 0,
+							duration = 99,
+							display = "MaxHpDown",
+							tags = {
+								"DEBUFF",
+								"MAXHPDOWN",
+								"Skill_WSLi_Unique",
+								"UNDISPELLABLE",
+								"UNSTEALABLE"
+							}
+						}, {
+							buffeft
+						})
 					end
-
-					local buffeft = global.MaxHpEffect(_env, -damage.val)
-
-					global.DelayCall(_env, 770, global.ApplyBuff, unit, {
-						timing = 0,
-						duration = 99,
-						tags = {
-							"DEBUFF",
-							"MAXHPDOWN",
-							"Skill_WSLi_Unique",
-							"UNDISPELLABLE",
-							"UNSTEALABLE"
-						}
-					}, {
-						buffeft
-					})
 				end
 			end
 		end)
@@ -850,6 +864,7 @@ all.Skill_WSLi_Unique_EX = {
 				global.ApplyBuff(_env, _env.TARGET, {
 					timing = 0,
 					duration = 99,
+					display = "MaxHpDown",
 					tags = {
 						"DEBUFF",
 						"MAXHPDOWN",
@@ -873,27 +888,41 @@ all.Skill_WSLi_Unique_EX = {
 						damage.val = damage.val * 2
 					end
 
-					if unit == _env.TARGET then
-						global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
-					else
-						global.DelayCall(_env, 767, global.ApplyHPDamage_ResultCheck, _env.ACTOR, unit, damage)
-					end
-
 					local buffeft = global.MaxHpEffect(_env, -damage.val)
 
-					global.DelayCall(_env, 770, global.ApplyBuff, unit, {
-						timing = 0,
-						duration = 99,
-						tags = {
-							"DEBUFF",
-							"MAXHPDOWN",
-							"Skill_WSLi_Unique",
-							"UNDISPELLABLE",
-							"UNSTEALABLE"
-						}
-					}, {
-						buffeft
-					})
+					if unit == _env.TARGET then
+						global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
+						global.ApplyBuff(_env, unit, {
+							timing = 0,
+							duration = 99,
+							display = "MaxHpDown",
+							tags = {
+								"DEBUFF",
+								"MAXHPDOWN",
+								"Skill_WSLi_Unique",
+								"UNDISPELLABLE",
+								"UNSTEALABLE"
+							}
+						}, {
+							buffeft
+						})
+					else
+						global.DelayCall(_env, 767, global.ApplyHPDamage_ResultCheck, _env.ACTOR, unit, damage)
+						global.DelayCall(_env, 770, global.ApplyBuff, unit, {
+							timing = 0,
+							duration = 99,
+							display = "MaxHpDown",
+							tags = {
+								"DEBUFF",
+								"MAXHPDOWN",
+								"Skill_WSLi_Unique",
+								"UNDISPELLABLE",
+								"UNSTEALABLE"
+							}
+						}, {
+							buffeft
+						})
+					end
 				end
 			end
 		end)

@@ -118,3 +118,9 @@ function ExploreService:updateAutoId(callback, params, blockUI)
 
 	self:sendRequest(request, blockUI)
 end
+
+function ExploreService:requestSwppePoint(params, blockUI, callback)
+	local request = self:newRequest(20220, params, callback)
+
+	self:sendRequest(request, blockUI)
+end

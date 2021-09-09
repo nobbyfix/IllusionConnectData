@@ -106,7 +106,10 @@ function CooperateBossFightMediator:initData(data)
 end
 
 function CooperateBossFightMediator:refreashView()
+	local text1 = self._main:getChildByFullName("BgBottom.text1")
+
 	self._bossName:setString(self._cooperateBossSystem:getBossName(self._configBossId))
+	self._bossName:setPositionX(text1:getContentSize().width + text1:getPositionX() + 20)
 	self._bossLevel:setPositionX(self._bossName:getContentSize().width + self._bossName:getPositionX() + 20)
 
 	local model = self._cooperatorBoss:getRoleModelId()

@@ -87,6 +87,16 @@ function exports.UnitPos(env, unit, x, y)
 	})
 end
 
+function exports.CellPos(env, cell, x, y)
+	local pos = cell:getPosition()
+
+	return Position({
+		pos.zone,
+		x or pos.x,
+		y or pos.y
+	})
+end
+
 function exports.FindEmptyCell(env, side, arr)
 	return env.global["$BattleField"]:findEmptyCellId(side, arr)
 end

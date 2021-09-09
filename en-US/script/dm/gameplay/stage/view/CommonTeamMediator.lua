@@ -364,14 +364,15 @@ function CommonTeamMediator:onClickInfo(eventType, fightTip, isDouble)
 	if eventType == ccui.TouchEventType.began then
 		fightInfoTip:removeAllChildren()
 
-		local addPer = isDouble and leadConfig.LeadFightHero * 2 or leadConfig.LeadFightHero
+		local effectRate = ConfigReader:getDataByNameIdAndKey("ConfigValue", "LeadStage_Effective_Rate", "content")
+		local addPer = isDouble and leadConfig.LeadFightHero * effectRate or leadConfig.LeadFightHero
 		local config = ConfigReader:getRecordById("MasterBase", self._curMasterId)
 		local desc = Strings:get("LeadStage_TeamCombatInfo", {
 			fontSize = 20,
 			fontName = TTF_FONT_FZYH_M,
 			leader = Strings:get(config.Name),
 			stage = Strings:get(leadConfig.RomanNum) .. Strings:get(leadConfig.StageName),
-			percent = addPer * 100 .. "%"
+			percent = math.ceil(addPer * 100) .. "%"
 		})
 		local richText = ccui.RichText:createWithXML(desc, {})
 

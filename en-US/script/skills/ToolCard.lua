@@ -344,10 +344,6 @@ all.ToolCard_QHDeng = {
 			})
 			local units = nil
 
-			global.print(_env, "-=isLeft:", _env.isLeft)
-			global.print(_env, "-=cellId:", _env.cellId)
-			global.print(_env, "-=GetCellByIdcellId", global.CELL_IN_POS(_env, _env.cellId))
-
 			if _env.isLeft then
 				units = global.FriendCells(_env, global.CELL_IN_POS(_env, _env.cellId))
 			else
@@ -356,7 +352,6 @@ all.ToolCard_QHDeng = {
 
 			if global.SelectBuffCount(_env, global.EnemyField(_env), global.BUFF_MARKED_ALL(_env, "BOSS_CHANGE")) > 0 then
 				if global.SelectTrapCount(_env, units[1], global.BUFF_MARKED(_env, "LIGHTON")) > 0 then
-					global.print(_env, "-=当前格子有打光，关闭")
 					global.Sound(_env, "Se_Skill_Light_2", 1)
 					global.DispelBuffTrap(_env, units[1], global.BUFF_MARKED(_env, "LIGHTON"))
 
@@ -394,11 +389,8 @@ all.ToolCard_QHDeng = {
 					if global.GetCellUnit(_env, units[1]) then
 						global.DispelBuff(_env, global.GetCellUnit(_env, units[1]), global.BUFF_MARKED_ALL(_env, "LIGHTSHADER"), 99)
 					end
-
-					global.print(_env, "-=当前格子无打光，开灯")
 				end
 			elseif global.SelectTrapCount(_env, units[1], global.BUFF_MARKED(_env, "LIGHTON")) > 0 then
-				global.print(_env, "-=当前格子有打光，关闭")
 				global.Sound(_env, "Se_Skill_Light_2", 1)
 				global.DispelBuffTrap(_env, units[1], global.BUFF_MARKED(_env, "LIGHTON"))
 
@@ -436,8 +428,6 @@ all.ToolCard_QHDeng = {
 				if global.GetCellUnit(_env, units[1]) then
 					global.DispelBuff(_env, global.GetCellUnit(_env, units[1]), global.BUFF_MARKED_ALL(_env, "LIGHTSHADER"), 99)
 				end
-
-				global.print(_env, "-=当前格子无打光，开灯")
 			end
 
 			global.RelocateExtraCard(_env, "skill", 8)

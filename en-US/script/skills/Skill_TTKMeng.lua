@@ -209,7 +209,7 @@ all.Skill_TTKMeng_Unique = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			local reviveunit = global.Revive(_env, this.HpRateFactor, this.RageFactor, {
+			local reviveunit = global.Revive_Check(_env, _env.ACTOR, this.HpRateFactor, this.RageFactor, {
 				2,
 				5,
 				1,
@@ -570,7 +570,7 @@ all.Skill_TTKMeng_Unique_EX = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			local reviveunit = global.Revive(_env, this.HpRateFactor, this.RageFactor, {
+			local reviveunit = global.Revive_Check(_env, _env.ACTOR, this.HpRateFactor, this.RageFactor, {
 				2,
 				5,
 				1,

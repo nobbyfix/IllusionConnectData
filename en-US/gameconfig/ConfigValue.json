@@ -4729,10 +4729,7 @@
     },
     "HideVoice": {
         "clz": "string[]",
-        "content": [
-            "SP_PNCao",
-            "SP_SSQXin"
-        ]
+        "content": []
     },
     "HomeBackground_Default": {
         "clz": "string",
@@ -6331,6 +6328,10 @@
         "clz": "int",
         "content": 3000
     },
+    "NewPlayerPackage_Duration": {
+        "clz": "",
+        "content": 30
+    },
     "NewPlayer_StageShowReward": {
         "clz": "dict",
         "content": {
@@ -6811,17 +6812,17 @@
         "clz": "dict",
         "content": [
             {
-                "URL": "view://shopView&viewType=push&shopId=Shop_TimeLimit",
+                "URL": "view://shopView&viewType=push&shopId=Shop_Timelimitedmall&subid=Shop_TimeLimit",
                 "bubble": "Newyear_Bubble01",
                 "hero": "Model_ZTXChang"
             },
             {
-                "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_PDLa",
+                "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_PDLa_1",
                 "bubble": "Newyear_PDLa_Bubble",
                 "hero": "Model_PDLa"
             },
             {
-                "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_NFEr",
+                "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_NFEr_1",
                 "bubble": "Newyear_AJYHou_Bubble",
                 "hero": "Model_NFEr"
             },
@@ -6841,12 +6842,12 @@
                 "hero": "Model_LCYShi_sd"
             },
             {
-                "URL": "view://shopView&viewType=push&shopId=Shop_TimeLimit",
+                "URL": "view://shopView&viewType=push&shopId=Shop_Timelimitedmall&subid=Shop_TimeLimit",
                 "bubble": "Newyear_Bubble05",
                 "hero": "Model_TPGZhu"
             },
             {
-                "URL": "view://shopView&viewType=push&shopId=Shop_TimeLimit",
+                "URL": "view://shopView&viewType=push&shopId=Shop_Timelimitedmall&subid=Shop_TimeLimit",
                 "bubble": "Newyear_Bubble05",
                 "hero": "Model_SDTZi"
             }
@@ -7961,13 +7962,17 @@
         "clz": "string[]",
         "content": [
             "Shop_Recommend",
-            "Shop_Package",
             "Shop_Reset",
+            "Shop_Timelimitedmall",
             "Shop_Monthcard",
-            "Shop_Mall",
-            "Shop_Normal",
-            "Shop_SurfacePackage",
             "Shop_Surface",
+            "Shop_Mall",
+            "Shop_Normal"
+        ]
+    },
+    "Shop_TimeLimit_Sort": {
+        "clz": "",
+        "content": [
             "Shop_TimeLimit"
         ]
     },
@@ -8916,6 +8921,139 @@
     "TacticsCard_Reload": {
         "clz": "int",
         "content": 2
+    },
+    "TansuoOneClickMonsterNum": {
+        "clz": "int",
+        "content": 16
+    },
+    "TansuoOneClickReward": {
+        "clz": "dict",
+        "content": {
+            "Alice_1": {
+                "normal": {
+                    "straight": "Alice_1_OnceClickReward_Normal1",
+                    "unStraight": "Alice_1_OnceClickReward_Normal2"
+                },
+                "recommend": {
+                    "straight": "Alice_1_OnceClickReward_Recommend1",
+                    "unStraight": "Alice_1_OnceClickReward_Recommend2"
+                }
+            },
+            "Alice_2": {
+                "normal": {
+                    "straight": "Alice_2_OnceClickReward_Normal1",
+                    "unStraight": "Alice_2_OnceClickReward_Normal2"
+                },
+                "recommend": {
+                    "straight": "Alice_2_OnceClickReward_Recommend1",
+                    "unStraight": "Alice_2_OnceClickReward_Recommend2"
+                }
+            },
+            "Alice_3": {
+                "normal": {
+                    "straight": "Alice_3_OnceClickReward_Normal1",
+                    "unStraight": "Alice_3_OnceClickReward_Normal2"
+                },
+                "recommend": {
+                    "straight": "Alice_3_OnceClickReward_Recommend1",
+                    "unStraight": "Alice_3_OnceClickReward_Recommend2"
+                }
+            },
+            "Alice_4": {
+                "normal": {
+                    "straight": "Alice_4_OnceClickReward_Normal1",
+                    "unStraight": "Alice_4_OnceClickReward_Normal2"
+                },
+                "recommend": {
+                    "straight": "Alice_4_OnceClickReward_Recommend1",
+                    "unStraight": "Alice_4_OnceClickReward_Recommend2"
+                }
+            },
+            "Egypt_1": {
+                "normal": {
+                    "straight": "Egypt_1_OnceClickReward_Normal1",
+                    "unStraight": "Egypt_1_OnceClickReward_Normal2"
+                },
+                "recommend": {
+                    "straight": "Egypt_1_OnceClickReward_Recommend1",
+                    "unStraight": "Egypt_1_OnceClickReward_Recommend2"
+                }
+            },
+            "Egypt_2": {
+                "normal": {
+                    "straight": "Egypt_2_OnceClickReward_Normal1",
+                    "unStraight": "Egypt_2_OnceClickReward_Normal2"
+                },
+                "recommend": {
+                    "straight": "Egypt_2_OnceClickReward_Recommend1",
+                    "unStraight": "Egypt_2_OnceClickReward_Recommend2"
+                }
+            },
+            "Egypt_3": {
+                "normal": {
+                    "straight": "Egypt_3_OnceClickReward_Normal1",
+                    "unStraight": "Egypt_3_OnceClickReward_Normal2"
+                },
+                "recommend": {
+                    "straight": "Egypt_3_OnceClickReward_Recommend1",
+                    "unStraight": "Egypt_3_OnceClickReward_Recommend2"
+                }
+            },
+            "Egypt_4": {
+                "normal": {
+                    "straight": "Egypt_4_OnceClickReward_Normal1",
+                    "unStraight": "Egypt_4_OnceClickReward_Normal2"
+                },
+                "recommend": {
+                    "straight": "Egypt_4_OnceClickReward_Recommend1",
+                    "unStraight": "Egypt_4_OnceClickReward_Recommend2"
+                }
+            },
+            "Japan_1": {
+                "normal": {
+                    "straight": "Japan_1_OnceClickReward_Normal1",
+                    "unStraight": "Japan_1_OnceClickReward_Normal2"
+                },
+                "recommend": {
+                    "straight": "Japan_1_OnceClickReward_Recommend1",
+                    "unStraight": "Japan_1_OnceClickReward_Recommend2"
+                }
+            },
+            "Japan_2": {
+                "normal": {
+                    "straight": "Japan_2_OnceClickReward_Normal1",
+                    "unStraight": "Japan_2_OnceClickReward_Normal2"
+                },
+                "recommend": {
+                    "straight": "Japan_2_OnceClickReward_Recommend1",
+                    "unStraight": "Japan_2_OnceClickReward_Recommend2"
+                }
+            },
+            "Japan_3": {
+                "normal": {
+                    "straight": "Japan_3_OnceClickReward_Normal1",
+                    "unStraight": "Japan_3_OnceClickReward_Normal2"
+                },
+                "recommend": {
+                    "straight": "Japan_3_OnceClickReward_Recommend1",
+                    "unStraight": "Japan_3_OnceClickReward_Recommend2"
+                }
+            },
+            "Japan_4": {
+                "normal": {
+                    "straight": "Japan_4_OnceClickReward_Normal1",
+                    "unStraight": "Japan_4_OnceClickReward_Normal2"
+                },
+                "recommend": {
+                    "straight": "Japan_4_OnceClickReward_Recommend1",
+                    "unStraight": "Japan_4_OnceClickReward_Recommend2"
+                }
+            }
+        }
+    },
+    "TansuoOneClickReward_Show": {
+        "clz": "string",
+        "content": "IR_Equip14"
     },
     "Task_BubbleChange_Time": {
         "clz": "int",

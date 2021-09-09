@@ -27,9 +27,9 @@ function TaskStageMediator:onRegister()
 
 	self._cellClone:setVisible(false)
 	self._taskCell:getChildByFullName("loadingBar"):setScale9Enabled(true)
-	self._taskCell:getChildByFullName("loadingBar"):setCapInsets(cc.rect(1, 1, 1, 1))
+	self._taskCell:getChildByFullName("loadingBar"):setCapInsets(cc.rect(60, 3, 1, 1))
 	self._cellClone:getChildByFullName("cell.loadingBar"):setScale9Enabled(true)
-	self._cellClone:getChildByFullName("cell.loadingBar"):setCapInsets(cc.rect(1, 1, 1, 1))
+	self._cellClone:getChildByFullName("cell.loadingBar"):setCapInsets(cc.rect(60, 3, 1, 1))
 
 	self._noTipsPanel = self._main:getChildByName("noTipsPanel")
 end
@@ -98,7 +98,7 @@ function TaskStageMediator:refreshView(hasAnim)
 		self._taskCell:getChildByName("btn_go"):setScale(1)
 		self._taskCell:getChildByName("btn_get"):setOpacity(255)
 		self._taskCell:getChildByName("btn_go"):setOpacity(255)
-		self._taskCell:getChildByName("descNode"):setPosition(cc.p(0, 0))
+		self._taskCell:getChildByName("descNode"):setPosition(cc.p(-4.27, 29.9))
 		self._tableView:stopScroll()
 		self._tableView:reloadData()
 	end
@@ -138,14 +138,13 @@ function TaskStageMediator:createTableView()
 			layout:addTo(cell):posite(0, 0)
 			layout:setAnchorPoint(cc.p(0, 0))
 			layout:setTag(123)
+			dump(idx, " FFF ")
 
-			for i = 1, 2 do
-				local sprite = self._cellClone:clone()
+			local sprite = self._cellClone:clone()
 
-				sprite:setPosition(2 + width / 2 * (i - 1), 0)
-				layout:addChild(sprite)
-				sprite:setTag(i)
-			end
+			sprite:setPosition(5, 0)
+			layout:addChild(sprite)
+			sprite:setTag(1)
 		end
 
 		local cell_Old = cell:getChildByTag(123)
@@ -157,7 +156,7 @@ function TaskStageMediator:createTableView()
 	end
 
 	local function numberOfCellsInTableView(table)
-		return math.ceil(#self._taskList / 2)
+		return #self._taskList
 	end
 
 	local tableView = cc.TableView:create(self._tablePanel:getContentSize())
@@ -175,90 +174,94 @@ function TaskStageMediator:createTableView()
 end
 
 function TaskStageMediator:createCell(cell, index)
-	for i = 1, 2 do
-		local panel = cell:getChildByTag(i)
-		local itemIndex = 2 * (index - 1) + i
-		local taskData = self._taskList[itemIndex]
+	local panel = cell:getChildByTag(1)
+	local itemIndex = index
+	local taskData = self._taskList[itemIndex]
 
-		if taskData then
-			panel:setVisible(true)
+	if taskData then
+		panel:setVisible(true)
 
-			panel = panel:getChildByFullName("cell")
-			local name = panel:getChildByName("name")
+		panel = panel:getChildByFullName("cell")
+		local name = panel:getChildByFullName("Panel_1.name")
 
-			name:setString(taskData:getName())
+		name:setString(taskData:getName())
 
-			local desc = panel:getChildByName("desc")
-			local conditionkeeper = self:getInjector():getInstance(Conditionkeeper)
-			local str = conditionkeeper:getConditionDesc(taskData:getCondition()[1])
+		local localLanguage = getCurrentLanguage()
 
-			desc:setString(str)
+		if localLanguage ~= GameLanguageType.CN then
+			name:setVisible(false)
+		end
 
-			local taskStatus = taskData:getStatus()
-			local btnGet = panel:getChildByName("btn_get")
+		local desc = panel:getChildByName("desc")
+		local conditionkeeper = self:getInjector():getInstance(Conditionkeeper)
+		local str = conditionkeeper:getConditionDesc(taskData:getCondition()[1])
 
-			btnGet:setVisible(taskStatus == TaskStatus.kFinishNotGet)
-			btnGet:addClickEventListener(function (sender, eventType)
-				self:onClickGetReward(taskData)
-			end)
+		desc:setString(str)
 
-			local btnGo = panel:getChildByName("btn_go")
+		local taskStatus = taskData:getStatus()
+		local btnGet = panel:getChildByName("btn_get")
 
-			btnGo:addClickEventListener(function ()
-				self:onClickGo(taskData)
-			end)
+		btnGet:setVisible(taskStatus == TaskStatus.kFinishNotGet)
+		btnGet:addClickEventListener(function (sender, eventType)
+			self:onClickGetReward(taskData)
+		end)
 
-			local canGo = taskData:getDestUrl() ~= nil and taskData:getDestUrl() ~= "" and taskStatus == TaskStatus.kUnfinish
+		local btnGo = panel:getChildByName("btn_go")
 
-			btnGo:setVisible(canGo)
+		btnGo:addClickEventListener(function ()
+			self:onClickGo(taskData)
+		end)
 
-			local taskValueList = taskData:getTaskValueList()
-			local progText = panel:getChildByName("count")
-			local loadingBar = panel:getChildByName("loadingBar")
-			local laodingBg = panel:getChildByName("laodingBg")
-			local show = taskData:isProgressTask() and taskStatus == TaskStatus.kUnfinish
+		local canGo = taskData:getDestUrl() ~= nil and taskData:getDestUrl() ~= "" and taskStatus == TaskStatus.kUnfinish
 
-			progText:setVisible(show)
-			laodingBg:setVisible(show)
-			loadingBar:setVisible(show)
+		btnGo:setVisible(canGo)
 
-			if progText:isVisible() then
-				progText:setString(taskValueList[1].currentValue .. "/" .. taskValueList[1].targetValue)
+		local taskValueList = taskData:getTaskValueList()
+		local progText = panel:getChildByName("count")
+		local loadingBar = panel:getChildByName("loadingBar")
+		local laodingBg = panel:getChildByName("laodingBg")
+		local show = taskData:isProgressTask() and taskStatus == TaskStatus.kUnfinish
 
-				local percent = taskValueList[1].currentValue / taskValueList[1].targetValue * 100
+		progText:setVisible(show)
+		laodingBg:setVisible(show)
+		loadingBar:setVisible(show)
 
-				loadingBar:setPercent(percent)
-			end
+		if progText:isVisible() then
+			progText:setString(taskValueList[1].currentValue .. "/" .. taskValueList[1].targetValue)
 
-			local rewardBg = panel:getChildByName("icon")
-			local rewards = taskData:getReward()
+			local percent = taskValueList[1].currentValue / taskValueList[1].targetValue * 100
 
-			rewardBg:removeAllChildren(true)
+			loadingBar:setPercent(percent)
+		end
 
-			local width = rewardBg:getContentSize().width
+		local rewardBg = panel:getChildByName("icon")
+		local rewards = taskData:getReward()
 
-			if rewards then
-				for i = 1, #rewards do
-					local reward = rewards[i]
+		rewardBg:removeAllChildren(true)
 
-					if reward then
-						local rewardIcon = IconFactory:createRewardIcon(reward, {
-							isWidget = true
-						})
+		local width = rewardBg:getContentSize().width
 
-						rewardBg:addChild(rewardIcon)
-						rewardIcon:setAnchorPoint(cc.p(1, 0.5))
-						rewardIcon:setPosition(cc.p(width - width * (i - 1), 34))
-						rewardIcon:setScaleNotCascade(0.55)
-						IconFactory:bindTouchHander(rewardIcon, IconTouchHandler:new(self._parentMediator), reward, {
-							needDelay = true
-						})
-					end
+		if rewards then
+			for i = 1, #rewards do
+				local reward = rewards[i]
+
+				if reward then
+					local rewardIcon = IconFactory:createRewardIcon(reward, {
+						isWidget = true
+					})
+
+					rewardBg:addChild(rewardIcon)
+					rewardIcon:setAnchorPoint(cc.p(1, 0.5))
+					rewardIcon:setPosition(cc.p(width - width * (i - 1), 32))
+					rewardIcon:setScaleNotCascade(0.55)
+					IconFactory:bindTouchHander(rewardIcon, IconTouchHandler:new(self._parentMediator), reward, {
+						needDelay = true
+					})
 				end
 			end
-		else
-			panel:setVisible(false)
 		end
+	else
+		panel:setVisible(false)
 	end
 end
 
@@ -269,9 +272,15 @@ function TaskStageMediator:refreshMainTask()
 		return
 	end
 
-	local name = self._taskCell:getChildByFullName("descNode.name")
+	local name = self._taskCell:getChildByFullName("descNode.Panel_1.name")
 
 	name:setString(self._mainTask:getName())
+
+	local localLanguage = getCurrentLanguage()
+
+	if localLanguage ~= GameLanguageType.CN then
+		name:setVisible(false)
+	end
 
 	local desc = self._taskCell:getChildByFullName("descNode.desc")
 	local conditionkeeper = self:getInjector():getInstance(Conditionkeeper)
@@ -320,7 +329,7 @@ function TaskStageMediator:refreshMainTask()
 
 	rewardBg:removeAllChildren(true)
 
-	local width = rewardBg:getContentSize().width + 15
+	local width = rewardBg:getContentSize().width + 6
 
 	if rewards then
 		for i = 1, #rewards do
@@ -336,7 +345,7 @@ function TaskStageMediator:refreshMainTask()
 				node:setPosition(cc.p(width * (i - 1), 2))
 				node:addChild(rewardIcon)
 				rewardIcon:setTag(123)
-				node:setScale(0.6)
+				node:setScale(0.58)
 
 				if rewardIcon.getAmountLabel then
 					local label = rewardIcon:getAmountLabel()
@@ -433,6 +442,19 @@ function TaskStageMediator:setBg(panel)
 	end
 
 	bgPanel:addTo(self._bgPanel)
+
+	local roleModelNode = self._main:getChildByName("roleModelNode")
+	local role = roleModelNode:getChildByName("role")
+
+	if not role then
+		local img, jsonPath = IconFactory:createRoleIconSprite({
+			id = "Model_ZTXChang",
+			useAnim = true,
+			iconType = "Bust4"
+		})
+
+		img:addTo(roleModelNode):posite(380, -80):setName("role")
+	end
 end
 
 function TaskStageMediator:onClickGetReward(data)
@@ -447,6 +469,7 @@ function TaskStageMediator:onClickGetReward(data)
 			end
 
 			self:resetTask()
+			self._parentMediator:setOneKeyGray()
 		end)
 	end
 end
@@ -498,7 +521,7 @@ function TaskStageMediator:runStartAction()
 	self._taskCell:getChildByName("btn_go"):setScale(1.2)
 	self._taskCell:getChildByName("btn_get"):setOpacity(0)
 	self._taskCell:getChildByName("btn_go"):setOpacity(0)
-	self._taskCell:getChildByName("descNode"):setPosition(cc.p(60, 0))
+	self._taskCell:getChildByName("descNode"):setPosition(cc.p(60, 29.9))
 
 	local children = self._taskCell:getChildByFullName("icon"):getChildren()
 
@@ -515,9 +538,9 @@ function TaskStageMediator:runStartAction()
 		})
 	end, 0.06666666666666667)
 	performWithDelay(self:getView(), function ()
-		local moveTo = cc.MoveTo:create(0.23333333333333334, cc.p(0, 0))
+		local moveTo = cc.MoveTo:create(0.23333333333333334, cc.p(-4.27, 29.9))
 
-		self._taskCell:getChildByName("descNode"):setPosition(cc.p(60, 0)):runAction(moveTo)
+		self._taskCell:getChildByName("descNode"):setPosition(cc.p(60, 29.9)):runAction(moveTo)
 
 		local delayTime = 0.16666666666666666
 

@@ -3451,7 +3451,7 @@ function all.ApplyHPRecovery_ResultCheck(_env, actor, target, heal)
 	local revive_one = global.SpecialPropGetter(_env, "revive_one")(_env, actor)
 
 	if revive_one and revive_one ~= 0 then
-		local reviveunit = global.ProbTest(_env, 0.2) and global.Revive(_env, 1, 0, {
+		local reviveunit = global.ProbTest(_env, 0.2) and global.Revive_Check(_env, actor, 1, 0, {
 			2,
 			5,
 			1,
@@ -3844,6 +3844,24 @@ function all.Serious_Injury(_env, actor, target, ratio, duration, timing)
 		buff1,
 		buff2
 	}, 1, 0)
+end
+
+function all.Revive_Check(_env, actor, hpRatio, anger, location, unit)
+	local this = _env.this
+	local global = _env.global
+	local reviveunit = nil
+
+	if unit then
+		reviveunit = global.ReviveByUnit(_env, unit, hpRatio, anger, location)
+	else
+		reviveunit = global.Revive(_env, hpRatio, anger, location)
+	end
+
+	if reviveunit and global.GetUnitCid(_env, actor) then
+		global.AddStatus(_env, reviveunit, global.GetUnitCid(_env, actor))
+	end
+
+	return reviveunit
 end
 
 return _M

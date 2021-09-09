@@ -508,6 +508,12 @@ function MasterEmblemMediator:refreshRightEmblemInfo(selectindex)
 	end
 end
 
+local AttToAttrPercentage = {
+	DEF = "DEF_RATE",
+	HP = "HP_RATE",
+	ATK = "ATK_RATE"
+}
+
 function MasterEmblemMediator:updateAttrInfo()
 	local curattr = {}
 	local nextattr = {}
@@ -516,6 +522,35 @@ function MasterEmblemMediator:updateAttrInfo()
 		curattr, nextattr = self._curSelectEmblem:getEmblemQualityGrowUpAttr()
 	else
 		curattr, nextattr = self._curSelectEmblem:getEmblemLevelGrowUpAttr()
+	end
+
+	local leadStageAllAttr = self._masterData:getLeadStageAllAttrByType()
+	local id, leadStageLv = self._masterSystem:getMasterLeadStatgeLevel(self._masterId)
+	local leadStageAttr = {}
+
+	for k, v in pairs(leadStageAllAttr) do
+		local config = ConfigReader:getRecordById("SkillAttrEffect", k)
+
+		for i = 1, #config.Value do
+			local attrNum = SkillAttribute:getAddNumByConfig(config, i, leadStageLv)
+			local attrType = SkillAttribute:getAddTypeByConfig(config, i)
+			leadStageAttr[attrType] = leadStageAttr[attrType] or 0
+			leadStageAttr[attrType] = leadStageAttr[attrType] + attrNum
+		end
+	end
+
+	for i, v in ipairs(curattr) do
+		if AttrBaseType[v.att] then
+			local add = leadStageAttr[AttToAttrPercentage[v.att]] or 0
+			curattr[i].value = math.floor(curattr[i].value * (1 + add))
+		end
+	end
+
+	for i, v in ipairs(nextattr) do
+		if AttrBaseType[v.att] then
+			local add = leadStageAttr[AttToAttrPercentage[v.att]] or 0
+			nextattr[i].value = math.floor(nextattr[i].value * (1 + add))
+		end
 	end
 
 	return curattr, nextattr

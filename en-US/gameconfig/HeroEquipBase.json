@@ -2182,6 +2182,47 @@
         ],
         "zoom": 0.6
     },
+    "Decoration_15105_2": {
+        "ATK": "",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "UR_Decoration_DEF_DH",
+        "Desc": "CO_Decoration_15105_2_Desc",
+        "ExclusiveHero": "",
+        "HP": "UR_Decoration_HP_DH",
+        "HeroEquip_Id": 930056,
+        "Icon": "ico_equip_alftaccess",
+        "Name": "Decoration_15105_2_Name",
+        "Position": "Decoration",
+        "Profession": [
+            "Defense",
+            "Cure"
+        ],
+        "ProfessionDesc": "",
+        "ProfessionType": 0,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "",
+        "Shine": "",
+        "Skill": "EquipSkill_Decoration_15105_2",
+        "Sort": 299020,
+        "StartEquipEndID": "Rareity15_DecorationStone2_8",
+        "StartEquipStarID": "Rareity15_DecorationStone2_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
     "Shoes_11001": {
         "ATK": "",
         "AttrEffect": "",
@@ -3854,6 +3895,46 @@
         "Sort": 299015,
         "StartEquipEndID": "Rareity15_Shoes1_8",
         "StartEquipStarID": "Rareity15_Shoes1_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
+    "Shoes_15105_2": {
+        "ATK": "",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "",
+        "Desc": "CO_Shoes_15105_2_Desc",
+        "ExclusiveHero": "",
+        "HP": "UR_Shoes_HP",
+        "HeroEquip_Id": 920049,
+        "Icon": "ico_equip_wldfshoes",
+        "Name": "Shoes_15105_2_Name",
+        "Position": "Shoes",
+        "Profession": [
+            "Defense"
+        ],
+        "ProfessionDesc": "",
+        "ProfessionType": 0,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "UR_Shoes_SPEED",
+        "Shine": "",
+        "Skill": "EquipSkill_Shoes_15105_2",
+        "Sort": 299019,
+        "StartEquipEndID": "Rareity15_Shoes2_8",
+        "StartEquipStarID": "Rareity15_Shoes2_1",
         "URUPSkillLV": [
             30,
             40,
@@ -5893,6 +5974,46 @@
         "Sort": 299014,
         "StartEquipEndID": "Rareity15_Top1_8",
         "StartEquipStarID": "Rareity15_Top1_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
+    "Tops_15105_2": {
+        "ATK": "",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "UR_Top_DEF",
+        "Desc": "CO_Tops_15105_2_Desc",
+        "ExclusiveHero": "",
+        "HP": "UR_Top_HP",
+        "HeroEquip_Id": 910054,
+        "Icon": "ico_equip_spldcloth",
+        "Name": "Tops_15105_2_Name",
+        "Position": "Tops",
+        "Profession": [
+            "Defense"
+        ],
+        "ProfessionDesc": "",
+        "ProfessionType": 0,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "",
+        "Shine": "",
+        "Skill": "EquipSkill_Tops_15105_2",
+        "Sort": 299018,
+        "StartEquipEndID": "Rareity15_Top2_8",
+        "StartEquipStarID": "Rareity15_Top2_1",
         "URUPSkillLV": [
             30,
             40,
@@ -8516,6 +8637,46 @@
         "Sort": 299013,
         "StartEquipEndID": "Rareity15_Weapon1_8",
         "StartEquipStarID": "Rareity15_Weapon1_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
+    "Weapon_15105_2": {
+        "ATK": "UR_Weapon_ATK",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "",
+        "Desc": "CO_Weapon_15105_2_Desc",
+        "ExclusiveHero": "",
+        "HP": "",
+        "HeroEquip_Id": 900079,
+        "Icon": "ico_equip_rgsdweapon",
+        "Name": "Weapon_15105_2_Name",
+        "Position": "Weapon",
+        "Profession": [
+            "YLSBai"
+        ],
+        "ProfessionDesc": "",
+        "ProfessionType": 1,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "",
+        "Shine": "",
+        "Skill": "EquipSkill_Weapon_15105_2",
+        "Sort": 299017,
+        "StartEquipEndID": "Rareity15_Weapon2_8",
+        "StartEquipStarID": "Rareity15_Weapon2_1",
         "URUPSkillLV": [
             30,
             40,

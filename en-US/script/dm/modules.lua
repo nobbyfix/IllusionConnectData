@@ -3242,6 +3242,11 @@ local modules = {
 							mediator = "ShopSurfaceMediator"
 						},
 						{
+							res = "asset/ui/shopSurfaceNew.csb",
+							name = "ShopSurfaceNewView",
+							mediator = "ShopSurfaceNewMediator"
+						},
+						{
 							res = "asset/ui/shopPackageMain.csb",
 							name = "ShopResetView",
 							mediator = "ShopResetMediator"
@@ -3496,6 +3501,11 @@ local modules = {
 							res = "asset/ui/Layer_exploreFinish.csb",
 							name = "ExploreFinishView",
 							mediator = "ExploreFinishMediator"
+						},
+						{
+							res = "asset/ui/BlockSweepLayer.csb",
+							name = "ExploreSweepView",
+							mediator = "ExploreSweepMediator"
 						}
 					}
 				}

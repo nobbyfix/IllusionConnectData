@@ -522,12 +522,13 @@ end
 
 function EffectCenter:setLeadStageEffect()
 	if self._effCenterData.managers.AttrEffectManager then
-		self._leadStageEffects = {}
 		local sceneAll = self._effCenterData.managers.AttrEffectManager.effects.SCENE_ALL
 
 		if not sceneAll then
 			return
 		end
+
+		self._leadStageEffects = {}
 
 		for id, effect in pairs(sceneAll) do
 			for k, v in pairs(effect) do

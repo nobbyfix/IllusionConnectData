@@ -14,6 +14,7 @@ function MasterLeadStageSkillTip:initialize(view, data)
 	self._masterData = data.masterData
 	self._leadStageLevel = data.stageLevel
 	self._mediator = data.mediator
+	self._skillIndex = data.skillIndex
 	self._configPro = PrototypeFactory:getInstance():getSkillPrototype(self._skillId)
 	self._config = self._configPro:getConfig()
 
@@ -46,6 +47,7 @@ function MasterLeadStageSkillTip:refreshInfo(data)
 	self._skillId = data.skillId
 	self._leadStageLevel = data.stageLevel
 	self._isShowCurLv = data.isShowCurLv
+	self._skillIndex = data.skillIndex
 	self._configPro = PrototypeFactory:getInstance():getSkillPrototype(self._skillId)
 	self._config = self._configPro:getConfig()
 	local stageData = self._masterData:getLeadStageData():getConfigInfo()
@@ -201,15 +203,11 @@ function MasterLeadStageSkillTip:createPanel(leadStageLevel, skillLevel, isLock,
 		if self._masterData:getLeadStageData():getSkillKind(self._skillId) == "Skill" then
 			showText = SkillPrototype:getSkillEffectDesc(self._skillId, skillLevel, {})
 		else
-			local skillProto = PrototypeFactory:getInstance():getSkillPrototype(self._skillId)
-
-			assert(skillProto, "Skill no " .. self._skillId)
-
 			local style = {
 				fontName = TTF_FONT_FZYH_M
 			}
-			local attrDescs = skillProto:getAttrDescs(skillLevel, style) or {}
-			showText = attrDescs[1]
+			local desc = SkillPrototype:getAttrEffectDesc(stageData[leadStageLevel].SkillName[self._skillIndex], skillLevel, style)
+			showText = desc
 		end
 
 		local lockStr = string.format(str, Strings:get("LeadStage_SkillLock", {
@@ -247,15 +245,11 @@ function MasterLeadStageSkillTip:createPanel(leadStageLevel, skillLevel, isLock,
 			if self._masterData:getLeadStageData():getSkillKind(self._skillId) == "Skill" then
 				showText = SkillPrototype:getSkillEffectDesc(self._skillId, skillLevel + i - 1, {})
 			else
-				local skillProto = PrototypeFactory:getInstance():getSkillPrototype(self._skillId)
-
-				assert(skillProto, "Skill no " .. self._skillId)
-
 				local style = {
 					fontName = TTF_FONT_FZYH_M
 				}
-				local attrDescs = skillProto:getAttrDescs(skillLevel + i - 1, style) or {}
-				showText = attrDescs[1]
+				local desc = SkillPrototype:getAttrEffectDesc(stageData[leadStageLevel].SkillName[self._skillIndex], skillLevel + i - 1, style)
+				showText = desc
 			end
 
 			if showText ~= "" then

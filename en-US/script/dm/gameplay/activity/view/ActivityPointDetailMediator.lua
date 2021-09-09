@@ -751,7 +751,7 @@ function ActivityPointDetailMediator:refreshCostView()
 		id = cost
 	})
 
-	icon:addTo(self._challengeBtn):setTag(1003):setPosition(cc.p(66.13, -14.18))
+	icon:addTo(self._challengeBtn):setTag(1003):setPosition(cc.p(66.13, -32))
 	costText:setString("X" .. amount)
 
 	self._curPower = self._bagSystem:getPowerByCurrencyId(cost)

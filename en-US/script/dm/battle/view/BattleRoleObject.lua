@@ -7679,13 +7679,13 @@ function BattleRoleObject:setHSVColor(hue, contrast, brightness, saturation)
 
 end
 
-function BattleRoleObject:showAtkAndDef(atk, def)
+function BattleRoleObject:showAtkAndDef(atk, def, hurtrate, unhurtrate)
 
 	-- Decompilation error in this vicinity:
 	--- BLOCK #0 1-3, warpins: 1 ---
 	--- END OF BLOCK #0 ---
 
-	slot3 = if not self._atkdefLabel then
+	slot5 = if not self._atkdefLabel then
 	JUMP TO BLOCK #1
 	else
 	JUMP TO BLOCK #2
@@ -7697,8 +7697,8 @@ function BattleRoleObject:showAtkAndDef(atk, def)
 	--- BLOCK #1 4-34, warpins: 1 ---
 	self._atkdefLabel = cc.Label:createWithTTF(weight, TTF_FONT_FZYH_M, 15)
 
-	self._atkdefLabel:addTo(self:getView()):offset(2, 200)
-	self._atkdefLabel:setColor(cc.c3b(0, 255, 0))
+	self._atkdefLabel:addTo(self:getView()):offset(2, 220)
+	self._atkdefLabel:setColor(cc.c3b(255, 0, 0))
 	--- END OF BLOCK #1 ---
 
 	FLOW; TARGET BLOCK #2
@@ -7706,11 +7706,13 @@ function BattleRoleObject:showAtkAndDef(atk, def)
 
 
 	-- Decompilation error in this vicinity:
-	--- BLOCK #2 35-53, warpins: 2 ---
+	--- BLOCK #2 35-71, warpins: 2 ---
 	self._atkdefLabel:setString("")
 
 	local desc = "atk:" .. atk .. "\n"
-	local desc = desc .. "def:" .. def
+	local desc = desc .. "def:" .. def .. "\n"
+	local desc = desc .. "hurtrate:" .. string.format("%0.2f", hurtrate) .. "\n"
+	local desc = desc .. "unhurtrate:" .. string.format("%0.2f", unhurtrate)
 
 	self._atkdefLabel:setString(desc)
 

@@ -343,6 +343,36 @@ function exports.GetSex(env, unit)
 	return unit:getSex()
 end
 
+function exports.ClearFlags(env, unit, flags)
+	if not unit then
+		return
+	end
+
+	local flag = unit:getComponent("Flag")
+	local result = flag:clearFlags(flags or {})
+
+	env.global.RecordImmediately(env, unit:getId(), "ChangeFlags", {
+		flags = flag:getFlags()
+	})
+
+	return result
+end
+
+function exports.AddFlags(env, unit, flags)
+	if not unit then
+		return
+	end
+
+	local flag = unit:getComponent("Flag")
+	local result = flag:setFlags(flags or {})
+
+	env.global.RecordImmediately(env, unit:getId(), "ChangeFlags", {
+		flags = flag:getFlags()
+	})
+
+	return result
+end
+
 function exports.GetAIPosition(env, side, card)
 	if not card then
 		return

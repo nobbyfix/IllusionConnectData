@@ -37,6 +37,7 @@ CurrencyIdKind = {
 	kAcitvityZuoHePower = "IR_ZuoHeAcitvityStamina",
 	kAcitvitySummerPower = "IR_SummerAcitvityStamina",
 	kActivityBakingPower = "IR_BakingStamina",
+	kActivityFemaleRePower = "IR_FemaleStamina_Re",
 	kActivityFirePower = "IR_FireStamina",
 	kAcitvityWxhPower = "IR_WuXiuHuiAcitvityStamina",
 	kPower = "IR_Power",
@@ -690,6 +691,15 @@ PowerConfigMap = {
 		func = "getPowerByCurrencyId",
 		configId = "AcitvityRiddleStamina_Reset",
 		tips = "ACTIVITY_Riddle_NOT_ENOUGH_1",
+		tableName = "Reset"
+	},
+	[CurrencyIdKind.kActivityFemaleRePower] = {
+		all = "Act_Female_Power_RecAll",
+		perMin = "Act_Female_Power_RecPerMin",
+		next = "Act_Female_Power_RecNext",
+		func = "getPowerByCurrencyId",
+		configId = "AcitvityFemaleStamina_Reset",
+		tips = "ACTIVITY_Female_NOT_ENOUGH_1",
 		tableName = "Reset"
 	},
 	TEST = {

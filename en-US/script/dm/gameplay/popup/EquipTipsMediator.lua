@@ -56,6 +56,8 @@ function EquipTipsMediator:onShowContent(event)
 end
 
 function EquipTipsMediator:setUi(data)
+	self._main:getChildByFullName("Text_79"):setString(Strings:get("Equip_ShowUI"))
+
 	local iconBg = self._main:getChildByName("icon")
 
 	if data.info and data.info.clipIndex then

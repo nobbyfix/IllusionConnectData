@@ -184,7 +184,6 @@ function ActivityTaskAchievementMediator:createCell(cell, index)
 
 		getVirtualRenderer:setAlignment(cc.TEXT_ALIGNMENT_LEFT, cc.TEXT_ALIGNMENT_CENTER)
 		getVirtualRenderer:setOverflow(cc.LabelOverflow.SHRINK)
-		getVirtualRenderer:setDimensions(430, 30)
 
 		if self._itemId then
 			local icon = IconFactory:createItemPic({

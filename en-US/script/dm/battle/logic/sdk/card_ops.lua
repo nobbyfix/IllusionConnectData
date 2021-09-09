@@ -29,6 +29,22 @@ function exports.clearHeroCardSeatRules(env, player, card, rules, dierules)
 	return cardSystem:clearHeroCardSeatRules(player, card, rules, dierules)
 end
 
+function exports.ClearCardFlags(env, card, flags)
+	if not card then
+		return
+	end
+
+	card:clearFlags(flags or {})
+end
+
+function exports.AddCardFlags(env, card, flags)
+	if not card then
+		return
+	end
+
+	card:addFlags(flags or {})
+end
+
 function exports.setEnterPauseTime(env, player, card, time)
 	local cardSystem = env.global["$CardSystem"]
 

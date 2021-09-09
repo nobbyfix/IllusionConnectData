@@ -941,7 +941,7 @@ function GalleryDateMediator:onShopBtnClicked()
 	local shopSystem = self:getInjector():getInstance("ShopSystem")
 
 	shopSystem:tryEnter({
-		shopId = "Shop_Normal"
+		shopId = "Shop1"
 	})
 end
 
