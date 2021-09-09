@@ -843,9 +843,10 @@ all.Skill_YLSBai_Passive_EX = {
 			local buffeft2 = global.DeathImmuneEffect(_env, 2)
 
 			global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
-				duration = 99,
-				group = "Skill_YLSBai_Passive_EX_Hp",
 				timing = 0,
+				display = "MaxHpUp",
+				group = "Skill_YLSBai_Passive_EX_Hp",
+				duration = 99,
 				limit = 1,
 				tags = {
 					"STATUS",

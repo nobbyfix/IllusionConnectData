@@ -500,15 +500,16 @@ function DreamHouseSystem:getTeamBuffStr(battleId)
 	local buffNum = 0
 
 	for k, v in pairs(buffAdd) do
-		buffNum = buffNum + 1
+		for key, value in pairs(v) do
+			buffNum = buffNum + 1
+		end
 	end
 
 	local i = 0
 
 	for k, v in pairs(buffAdd) do
-		i = i + 1
-
 		for key, value in pairs(v) do
+			i = i + 1
 			local preStr = ""
 
 			if k == "camp" then

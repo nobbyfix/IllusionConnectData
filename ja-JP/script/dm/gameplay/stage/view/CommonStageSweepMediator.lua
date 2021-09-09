@@ -404,6 +404,7 @@ function CommonStageSweepMediator:refreshSweepItemView(index, rewards, itemView)
 	local goldLabel = itemView:getChildByFullName("content.mMidLayout.mGoldLabel")
 	local rewardLayout = itemView:getChildByFullName("content.mDownLayout")
 
+	rewardLayout:setScrollBarEnabled(false)
 	fightTimesLabel:setString(Strings:get("CUSTOM_FIGHT_TIMES", {
 		times = index
 	}))

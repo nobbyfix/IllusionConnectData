@@ -2162,5 +2162,105 @@
         ],
         "StoryLink": "story20_4a",
         "UnlockBubble": ""
+    },
+    "S21S01": {
+        "FirstReward": "S21S01_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -448,
+            14
+        ],
+        "Map": "M21",
+        "Name": "BlockPoint_S21S01_Name",
+        "NextStoryPoint": [
+            "S21S02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "story21_1a",
+        "UnlockBubble": ""
+    },
+    "S21S02": {
+        "FirstReward": "S21S02_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -225,
+            106
+        ],
+        "Map": "M21",
+        "Name": "BlockPoint_S21S02_Name",
+        "NextStoryPoint": [
+            "S21S03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [
+            "S21S01"
+        ],
+        "StoryLink": "story21_2a",
+        "UnlockBubble": ""
+    },
+    "S21S03": {
+        "FirstReward": "S21S03_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -100,
+            -120
+        ],
+        "Map": "M21",
+        "Name": "BlockPoint_S21S03_Name",
+        "NextStoryPoint": [
+            "S21S04"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [
+            "S21S02"
+        ],
+        "StoryLink": "story21_3a",
+        "UnlockBubble": ""
+    },
+    "S21S04": {
+        "FirstReward": "S21S04_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -70,
+            100
+        ],
+        "Map": "M21",
+        "Name": "BlockPoint_S21S04_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [
+            "S21S03"
+        ],
+        "StoryLink": "story21_4a",
+        "UnlockBubble": ""
     }
 }

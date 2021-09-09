@@ -56,67 +56,17 @@ function TaskDailyMediator:onRegister()
 	self._cellPanel = self._main:getChildByName("cell")
 
 	self._cellPanel:setVisible(false)
-
-	local lineGradiantVec1 = {
-		{
-			ratio = 0.5,
-			color = cc.c4b(255, 255, 255, 255)
-		},
-		{
-			ratio = 1,
-			color = cc.c4b(129, 118, 113, 255)
-		}
-	}
-
-	self._livenessLabel:enablePattern(cc.LinearGradientPattern:create(lineGradiantVec1, {
-		x = 0,
-		y = -1
-	}))
 	self._cloneNode:getChildByFullName("btn_get"):setSwallowTouches(false)
 	self._cloneNode:getChildByFullName("btn_go"):setSwallowTouches(false)
 
 	self._progrLoading = self._proPanel:getChildByFullName("loadingbar")
 
 	self._progrLoading:setScale9Enabled(true)
-	self._progrLoading:setCapInsets(cc.rect(1, 1, 1, 1))
+	self._progrLoading:setCapInsets(cc.rect(60, 3, 1, 1))
 	self._cellPanel:getChildByFullName("cell.loadingBar"):setScale9Enabled(true)
 	self._cellPanel:getChildByFullName("cell.loadingBar"):setCapInsets(cc.rect(1, 1, 1, 1))
 	self._doneMark:getChildByFullName("text"):enableOutline(cc.c4b(244, 39, 39, 114.75), 1)
 	self:adjustView()
-
-	local liveness = self._dailyPanel:getChildByName("liveness")
-	local lineGradiantVec2 = {
-		{
-			ratio = 0.3,
-			color = cc.c4b(255, 248, 209, 255)
-		},
-		{
-			ratio = 0.7,
-			color = cc.c4b(186, 157, 57, 255)
-		}
-	}
-
-	liveness:enablePattern(cc.LinearGradientPattern:create(lineGradiantVec2, {
-		x = 1,
-		y = -2
-	}))
-
-	local txt = self._dailyPanel:getChildByName("text")
-	local lineGradiantVec2 = {
-		{
-			ratio = 0.3,
-			color = cc.c4b(255, 255, 255, 255)
-		},
-		{
-			ratio = 0.7,
-			color = cc.c4b(233, 220, 217, 255)
-		}
-	}
-
-	txt:enablePattern(cc.LinearGradientPattern:create(lineGradiantVec2, {
-		x = 0,
-		y = -1
-	}))
 end
 
 function TaskDailyMediator:adjustView()
@@ -359,13 +309,34 @@ function TaskDailyMediator:createCell(cell, index)
 			local taskStatus = taskData:getStatus()
 			local name = taskData:getName()
 			local localLanguage = getCurrentLanguage()
-			local titleText1 = panel:getChildByName("title_1")
-			local titleText2 = panel:getChildByName("title_2")
+			local titleText1 = panel:getChildByFullName("Panel_1.title_1")
+			local titleText2 = panel:getChildByFullName("Panel_1.title_2")
 
-			titleText1:setTextVerticalAlignment(cc.TEXT_ALIGNMENT_CENTER)
-			titleText1:setTextAreaSize(cc.size(140, 32))
-			titleText1:setString(name)
-			titleText2:setVisible(false)
+			if localLanguage ~= GameLanguageType.CN then
+				titleText1:setString(name)
+				titleText2:setVisible(false)
+			else
+				local nameLabel1 = ""
+				local nameLabel2 = ""
+				local length = utf8.len(name)
+
+				if length <= 4 then
+					nameLabel1 = name
+				else
+					for j = 1, length do
+						local num = utf8.sub(name, j, j)
+
+						if j > length - 4 then
+							nameLabel2 = nameLabel2 .. num
+						else
+							nameLabel1 = nameLabel1 .. num
+						end
+					end
+				end
+
+				titleText1:setString(nameLabel1)
+				titleText2:setString(nameLabel2)
+			end
 
 			local taskValueList = taskData:getTaskValueList()
 			local descText = panel:getChildByName("desc")
@@ -396,12 +367,12 @@ function TaskDailyMediator:createCell(cell, index)
 			if taskStatus == TaskStatus.kGet then
 				local mark = self._cloneNode:getChildByFullName("doneanim"):clone()
 
-				mark:addTo(panel):posite(378, 53)
+				mark:addTo(panel):posite(350, 43)
 				mark:setName("TodoMark")
 			elseif taskStatus == TaskStatus.kFinishNotGet then
 				local btnGet = self._cloneNode:getChildByFullName("btn_get"):clone()
 
-				btnGet:addTo(panel):posite(378, 39)
+				btnGet:addTo(panel):posite(348, 39)
 				btnGet:addClickEventListener(function ()
 					self:onClickGetReward(taskData)
 				end)
@@ -409,7 +380,7 @@ function TaskDailyMediator:createCell(cell, index)
 			elseif taskData:getDestUrl() ~= nil and taskData:getDestUrl() ~= "" and taskStatus == TaskStatus.kUnfinish then
 				local btnGo = self._cloneNode:getChildByFullName("btn_go"):clone()
 
-				btnGo:addTo(panel):posite(378, 39)
+				btnGo:addTo(panel):posite(348, 39)
 				btnGo:addClickEventListener(function ()
 					self:onClickGo(taskData)
 				end)
@@ -478,7 +449,13 @@ function TaskDailyMediator:onClickGetReward(data)
 	if data:getStatus() == TaskStatus.kFinishNotGet then
 		self._taskSystem:requestTaskReward({
 			taskId = data:getId()
-		})
+		}, function ()
+			if DisposableObject:isDisposed(self) then
+				return
+			end
+
+			self._parentMedi:setOneKeyGray()
+		end)
 	end
 end
 

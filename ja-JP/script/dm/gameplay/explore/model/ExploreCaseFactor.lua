@@ -51,6 +51,10 @@ function ExploreCaseFactor:getBattleOption()
 	return self._config.BattleOption
 end
 
+function ExploreCaseFactor:getQuickBattleOption()
+	return self._config.QuickBattleOption
+end
+
 function ExploreCaseFactor:getNeedItem()
 	return self._config.NeedItem
 end

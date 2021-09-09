@@ -3,7 +3,7 @@
         "BackGroundImg": "sd_tj_bg_shouchong",
         "ClientCondition": "",
         "Hide": 1,
-        "Link": "view://shopView&viewType=push&shopId=Shop_Package&packageId=PackageShop_1",
+        "Link": "view://shopView&viewType=push&shopId=Shop_Timelimitedmall&packageId=PackageShop_1",
         "PackageId": [
             "PackageShop_1"
         ],
@@ -48,7 +48,7 @@
         "TimeType": {
             "type": "unlimit"
         },
-        "Vanish": 0
+        "Vanish": 1
     },
     "ShopRecommend_4": {
         "BackGroundImg": "sd_tj_bg_xrzhlb",
@@ -71,7 +71,7 @@
         "BackGroundImg": "sd_tj_bg_ydyw",
         "ClientCondition": "",
         "Hide": 1,
-        "Link": "view://shopView&viewType=push&shopId=Shop_TimeLimit",
+        "Link": "view://shopView&viewType=push&shopId=Shop_Timelimitedmall&subid=Shop_TimeLimit",
         "PackageId": [
             "PackageShop_TL_CZheng_1",
             "PackageShop_TL_CZheng_2",
@@ -93,7 +93,7 @@
         "BackGroundImg": "sd_tj_bg_jidao",
         "ClientCondition": "",
         "Hide": 1,
-        "Link": "view://shopView&viewType=push&shopId=Shop_TimeLimit",
+        "Link": "view://shopView&viewType=push&shopId=Shop_Timelimitedmall&subid=Shop_TimeLimitedmall&subid=Shop_TimeLimit",
         "PackageId": [
             "PackageShop_TL_DCJKang_1",
             "PackageShop_TL_DCJKang_2",
@@ -117,7 +117,7 @@
         "BackGroundImg": "sd_tj_bg_xdzg",
         "ClientCondition": "",
         "Hide": 1,
-        "Link": "view://shopView&viewType=push&shopId=Shop_TimeLimit",
+        "Link": "view://shopView&viewType=push&shopId=Shop_Timelimitedmall&subid=Shop_TimeLimit",
         "PackageId": [
             "PackageShop_TL_LLan_1",
             "PackageShop_TL_LLan_2",
@@ -144,7 +144,7 @@
             ]
         },
         "Hide": 1,
-        "Link": "view://shopView&viewType=push&shopId=Shop_TimeLimit",
+        "Link": "view://shopView&viewType=push&shopId=Shop_Timelimitedmall&subid=Shop_TimeLimitedmall&subid=Shop_TimeLimit",
         "PackageId": [
             "PackageShop_TL_MLYTLSha_1",
             "PackageShop_TL_MLYTLSha_2",
@@ -173,7 +173,7 @@
             ]
         },
         "Hide": 1,
-        "Link": "view://shopView&viewType=push&shopId=Shop_TimeLimit",
+        "Link": "view://shopView&viewType=push&shopId=Shop_Timelimitedmall&subid=Shop_TimeLimitedmall&subid=Shop_TimeLimit",
         "PackageId": [
             "PackageShop_TL_SGHQShou_1",
             "PackageShop_TL_SGHQShou_2",
@@ -197,7 +197,7 @@
         "BackGroundImg": "sd_tj_bg_huakuidianxia",
         "ClientCondition": "",
         "Hide": 1,
-        "Link": "view://shopView&viewType=push&shopId=Shop_TimeLimit",
+        "Link": "view://shopView&viewType=push&shopId=Shop_Timelimitedmall&subid=Shop_TimeLimitedmall&subid=Shop_TimeLimit",
         "PackageId": [
             "PackageShop_TL_YXNMei_1",
             "PackageShop_TL_YXNMei_2",

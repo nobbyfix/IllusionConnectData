@@ -225,6 +225,22 @@ function exports.MARKED(env, flag)
 	end)
 end
 
+function exports.HASSTATUS(env, statu)
+	return MakeFilter(function (_, unit)
+		return unit:hasStatus(statu)
+	end)
+end
+
+function exports.HASBUFFTAG(env, filter)
+	local buffSystem = env.global["$BuffSystem"]
+
+	return MakeFilter(function (_, unit)
+		local buffs = buffSystem:selectBuffsOnTarget(unit, filter)
+
+		return #buffs > 0
+	end)
+end
+
 exports.PETS = MakeFilter(function (_, unit)
 	local flag = unit:getComponent("Flag")
 

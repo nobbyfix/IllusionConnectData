@@ -799,6 +799,46 @@
         "UnlookItem": "",
         "UseType": "lie"
     },
+    "KaiFuCake": {
+        "Amount": 1,
+        "BuildDesc": "Build_Decorate_Text",
+        "BuildingLevel": "KaiFuCake_Lv1",
+        "Condition": {
+            "Level": 1
+        },
+        "DefaultSurface": "VillageSurface_KaiFuCake_1",
+        "Desc": "KaiFuCake_ShortDesc",
+        "InitialPosition": [
+            [
+                0,
+                0
+            ]
+        ],
+        "IsMoved": 1,
+        "Name": "Name_KaiFuCake",
+        "ProspectShow": 0,
+        "Quality": 4,
+        "Room": "Room2",
+        "Sell": [
+            {
+                "amount": 180,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "Sort": 79,
+        "Space": [
+            2,
+            2
+        ],
+        "SurfaceList": [
+            "VillageSurface_KaiFuCake_1"
+        ],
+        "Turn": 1,
+        "UnlockDesc": "Unlock_KaiFuCake",
+        "Unlook": 1,
+        "UnlookItem": "",
+        "UseType": ""
+    },
     "KaiHeiFangZhuo": {
         "Amount": 1,
         "BuildDesc": "Build_Decorate_Text",

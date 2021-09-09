@@ -30,6 +30,7 @@ CurrencyIdKind = {
 	kEquip13 = "IR_Equip13",
 	kEquip14 = "IR_Equip14",
 	kDiamondDrawItem = "IM_DiamondDraw",
+	kActivityFemalePowerRe = "IR_FemaleStamina_Re",
 	kAcitvityHalloweenPower = "IR_HalloweenStamina",
 	kActivityPurewhite = "IR_PurewhiteStamina",
 	kActivitySunflowerPower = "IR_SunflowerStamina",
@@ -627,6 +628,15 @@ PowerConfigMap = {
 		tableName = "Reset"
 	},
 	[CurrencyIdKind.kActivityFemalePower] = {
+		all = "Act_Female_Power_RecAll",
+		perMin = "Act_Female_Power_RecPerMin",
+		next = "Act_Female_Power_RecNext",
+		func = "getPowerByCurrencyId",
+		configId = "AcitvityFemaleStamina_Reset",
+		tips = "ACTIVITY_Female_NOT_ENOUGH_1",
+		tableName = "Reset"
+	},
+	[CurrencyIdKind.kActivityFemalePowerRe] = {
 		all = "Act_Female_Power_RecAll",
 		perMin = "Act_Female_Power_RecPerMin",
 		next = "Act_Female_Power_RecNext",

@@ -243,7 +243,7 @@ all.Skill_XBKLDi_Unique = {
 
 			if units[num] then
 				if global.MARKED(_env, "WARRIOR")(_env, units[num]) then
-					local reviveunit = global.ReviveByUnit(_env, units[num], this.HpFactor, this.RpFactor, {
+					local reviveunit = global.Revive_Check(_env, _env.ACTOR, this.HpFactor, this.RpFactor, {
 						2,
 						5,
 						1,
@@ -253,13 +253,13 @@ all.Skill_XBKLDi_Unique = {
 						7,
 						8,
 						9
-					})
+					}, units[num])
 
 					if reviveunit then
 						global.AddStatus(_env, reviveunit, "Skill_XBKLDi_Unique")
 					end
 				else
-					local reviveunit = global.ReviveByUnit(_env, units[num], this.HpFactor, this.RpFactor, {
+					local reviveunit = global.Revive_Check(_env, _env.ACTOR, this.HpFactor, this.RpFactor, {
 						7,
 						8,
 						9,
@@ -269,7 +269,7 @@ all.Skill_XBKLDi_Unique = {
 						1,
 						3,
 						2
-					})
+					}, units[num])
 
 					if reviveunit then
 						global.AddStatus(_env, reviveunit, "Skill_XBKLDi_Unique")
@@ -541,7 +541,7 @@ all.Skill_XBKLDi_Unique_EX = {
 
 			if units[num] then
 				if global.MARKED(_env, "WARRIOR")(_env, units[num]) then
-					local reviveunit = global.ReviveByUnit(_env, units[num], this.HpFactor, this.RpFactor, {
+					local reviveunit = global.Revive_Check(_env, _env.ACTOR, this.HpFactor, this.RpFactor, {
 						2,
 						5,
 						1,
@@ -551,13 +551,13 @@ all.Skill_XBKLDi_Unique_EX = {
 						7,
 						8,
 						9
-					})
+					}, units[num])
 
 					if reviveunit then
 						global.AddStatus(_env, reviveunit, "Skill_XBKLDi_Unique")
 					end
 				else
-					local reviveunit = global.ReviveByUnit(_env, units[num], this.HpFactor, this.RpFactor, {
+					local reviveunit = global.Revive_Check(_env, _env.ACTOR, this.HpFactor, this.RpFactor, {
 						7,
 						8,
 						9,
@@ -567,7 +567,7 @@ all.Skill_XBKLDi_Unique_EX = {
 						1,
 						3,
 						2
-					})
+					}, units[num])
 
 					if reviveunit then
 						global.AddStatus(_env, reviveunit, "Skill_XBKLDi_Unique")

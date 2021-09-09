@@ -919,6 +919,39 @@
         "Unlook": 0,
         "VillageEffect": ""
     },
+    "VillageSurface_KaiFuCake_1": {
+        "BuildDeviation": [
+            0,
+            50
+        ],
+        "BuildInteractionType": "",
+        "Comfort": 0,
+        "Condition": {
+            "Level": 1
+        },
+        "DecorateBuilding": "KaiFuCake",
+        "Desc": "VillageSurface_KaiFuCake_1_Desc",
+        "Name": "VillageSurface_KaiFuCake_1_Name",
+        "PicScale": [
+            0.7,
+            1,
+            0.3
+        ],
+        "Price": [
+            {
+                "amount": 1000,
+                "type": "IR_Gold"
+            }
+        ],
+        "Resource": "pic_cake_smc",
+        "Response": "VillageBuild999",
+        "Sort": 99,
+        "SpecialEffectsPosition": "",
+        "SystemBuilding": "",
+        "UnlockDesc": "VillageSurface_KaiFuCake_1_UnlockDesc",
+        "Unlook": 0,
+        "VillageEffect": ""
+    },
     "VillageSurface_KaiHeiFangZhuo_1": {
         "BuildDeviation": [
             2,

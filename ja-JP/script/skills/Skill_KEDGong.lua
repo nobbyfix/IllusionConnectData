@@ -364,6 +364,7 @@ all.Skill_KEDGong_Passive = {
 				global.ApplyBuff(_env, _env.unit, {
 					timing = 0,
 					duration = 99,
+					display = "MaxHpDown",
 					tags = {
 						"Skill_KEDGong_Passive"
 					}

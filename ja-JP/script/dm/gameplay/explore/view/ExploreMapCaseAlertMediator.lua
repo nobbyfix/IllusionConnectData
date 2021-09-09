@@ -11,6 +11,10 @@ local kBtnHandlers = {
 	["main.backBtn"] = {
 		clickAudio = "Se_Click_Close_2",
 		func = "onClickClose"
+	},
+	["main.back"] = {
+		clickAudio = "Se_Click_Close_2",
+		func = "onClickClose"
 	}
 }
 local kRoleType = {
@@ -138,6 +142,7 @@ function ExploreMapCaseAlertMediator:initView()
 	GameStyle:setCommonOutlineEffect(self._typePanel1:getChildByFullName("clonePanel.node_1.progress"))
 	GameStyle:setCommonOutlineEffect(self._typePanel1:getChildByFullName("clonePanel.node_2.name"))
 	GameStyle:setCommonOutlineEffect(self._typePanel1:getChildByFullName("clonePanel.node_2.progress"))
+	self._main:getChildByName("back"):setVisible(false)
 end
 
 function ExploreMapCaseAlertMediator:updateView()
@@ -567,4 +572,7 @@ function ExploreMapCaseAlertMediator:onClickPanel(param)
 	end
 
 	self:close()
+end
+
+function ExploreMapCaseAlertMediator:onTouchMaskLayer()
 end

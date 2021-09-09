@@ -70,11 +70,12 @@ ShopSpecialId = {
 	kShopReset = "Shop_Reset",
 	KLuckyBag = "LuckyBag",
 	kShopNormal = "Shop_Normal",
-	kShopSurface = "Shop_Surface",
+	KShopTimelimitedmall = "Shop_Timelimitedmall",
 	kShopTimeLimit = "Shop_TimeLimit",
 	kShopMonthcard = "Shop_Monthcard",
 	kShopPackage = "Shop_Package",
-	kShopRecommend = "Shop_Recommend"
+	kShopRecommend = "Shop_Recommend",
+	kShopSurface = "Shop_Surface"
 }
 ShopDirectPackageType = {
 	ShopSpecialId.kShopPackage,
@@ -88,15 +89,16 @@ kShopResetTypeSort = {
 }
 ShopUnlockId = {
 	kShopMall = "Charge_System",
-	kShopMonthcard = "Shop_Monthcard",
-	kShopSurface = "Unlock_Shop_Surface",
 	kShopReset = "Shop_Reset",
+	kShopSurface = "Unlock_Shop_Surface",
 	kShop = "Shop_Unlock",
 	kShopNormal = "Shop_Unlock",
+	kShopTimelimitedmall = "Shop_Timelimitedmall",
+	kShopMonthcard = "Shop_Monthcard",
 	kShopSurfacePackage = "Shop_SurfacePackage",
-	kShopTimeLimit = "Shop_TimeLimit",
 	kShopPackage = "Package_Shop",
-	kShopRecommend = "Shop_Recommend"
+	kShopRecommend = "Shop_Recommend",
+	kShopTimeLimit = "Shop_TimeLimit"
 }
 ShopUnlockTip = {
 	kShopMall = "Unlock_Charge_System_Tips",
@@ -435,26 +437,6 @@ function ShopSystem:getLeftShowTabs()
 					unlockKey = ShopUnlockId.kShopMall
 				}
 			end
-		elseif shopId == ShopSpecialId.kShopPackage then
-			local list = self:getPackageList(shopId)
-			local unlock, tips = self._systemKeeper:isUnlock(ShopUnlockId.kShopPackage)
-			local canShow = self._systemKeeper:canShow(ShopUnlockId.kShopPackage) and CommonUtils.GetSwitch("fn_shop_package")
-
-			if #list > 0 and canShow and unlock then
-				local index = #showArr + 1
-				showArr[index] = {
-					shopId = shopId,
-					name = {
-						Strings:get("shop_UI28"),
-						""
-					},
-					unlockKey = ShopUnlockId.kShopPackage
-				}
-				showMap[shopId] = {
-					index = index,
-					unlockKey = ShopUnlockId.kShopPackage
-				}
-			end
 		elseif shopId == ShopSpecialId.kShopRecommend then
 			local unlock, tips = self._systemKeeper:isUnlock(ShopUnlockId.kShopRecommend)
 			local canShow = self._systemKeeper:canShow(ShopUnlockId.kShopRecommend) and CommonUtils.GetSwitch("fn_shop_recommend")
@@ -472,6 +454,27 @@ function ShopSystem:getLeftShowTabs()
 				showMap[shopId] = {
 					index = index,
 					unlockKey = ShopUnlockId.kShopRecommend
+				}
+			end
+		elseif shopId == ShopSpecialId.KShopTimelimitedmall then
+			local list1 = self:getPackageList(ShopSpecialId.kShopPackage)
+			local list2 = self:getPackageList(ShopSpecialId.kShopTimeLimit)
+			local unlock, tips = self._systemKeeper:isUnlock(ShopUnlockId.kShopTimelimitedmall)
+			local canShow = self._systemKeeper:canShow(ShopUnlockId.kShopTimelimitedmall) and CommonUtils.GetSwitch("fn_shop_timelimitedmall")
+
+			if (#list1 > 0 or #list2 > 0) and canShow and unlock then
+				local index = #showArr + 1
+				showArr[index] = {
+					shopId = shopId,
+					name = {
+						Strings:get("Unlock_Shop_Timelimitedmall"),
+						""
+					},
+					unlockKey = ShopUnlockId.kShopTimelimitedmall
+				}
+				showMap[shopId] = {
+					index = index,
+					unlockKey = ShopUnlockId.kShopTimelimitedmall
 				}
 			end
 		elseif shopId == ShopSpecialId.kShopReset then
@@ -549,26 +552,6 @@ function ShopSystem:getLeftShowTabs()
 				showMap[shopId] = {
 					index = index,
 					unlockKey = ShopUnlockId.kShopSurfacePackage
-				}
-			end
-		elseif shopId == ShopSpecialId.kShopTimeLimit then
-			local list = self:getPackageList(shopId)
-			local unlock, tips = self._systemKeeper:isUnlock(ShopUnlockId.kShopTimeLimit)
-			local canShow = self._systemKeeper:canShow(ShopUnlockId.kShopTimeLimit) and CommonUtils.GetSwitch("fn_shop_timelimit")
-
-			if #list > 0 and canShow and unlock then
-				local index = #showArr + 1
-				showArr[index] = {
-					shopId = shopId,
-					name = {
-						Strings:get("Shop_TimeLimit_Name"),
-						""
-					},
-					unlockKey = ShopUnlockId.kShopTimeLimit
-				}
-				showMap[shopId] = {
-					index = index,
-					unlockKey = ShopUnlockId.kShopTimeLimit
 				}
 			end
 		end

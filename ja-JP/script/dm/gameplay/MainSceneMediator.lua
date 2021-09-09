@@ -390,7 +390,7 @@ function MainSceneMediator:appDidEnterBackground()
 	display.removeUnusedSpriteFrames()
 
 	if DEBUG == 2 then
-		print("打印纹理情况  ", cc.Director:getInstance():getTextureCache():getCachedTextureInfo())
+		-- Nothing
 	end
 
 	DataReader:cleanCache()
@@ -448,7 +448,7 @@ function MainSceneMediator:releaseViewMemory(isRemoveAll)
 	display.removeUnusedSpriteFrames()
 
 	if DEBUG == 2 then
-		print("打印纹理情况  ", cc.Director:getInstance():getTextureCache():getCachedTextureInfo())
+		-- Nothing
 	end
 
 	print("释放内存")

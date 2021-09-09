@@ -1,6 +1,6 @@
-ExploreAddTimes = class("ClearExploreOrBlockSpTimes", DebugViewTemplate, _M)
+ClearExploreOrBlockSpTimes = class("ClearExploreOrBlockSpTimes", DebugViewTemplate, _M)
 
-function ExploreAddTimes:initialize()
+function ClearExploreOrBlockSpTimes:initialize()
 	self._opType = 294
 	self._viewConfig = {
 		{

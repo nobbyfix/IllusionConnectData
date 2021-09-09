@@ -120,6 +120,21 @@ function exports.ONESELF_CELL(env, who)
 	end)
 end
 
+function exports.DIAGONAL_CELL_OF(env, who)
+	if not who then
+		return nil
+	end
+
+	local pos = who:getPosition()
+
+	return MakeFilter(function (cell)
+		local sqt_x = math.pow(pos.x - cell:getPosition().x, 2)
+		local sqt_y = math.pow(pos.y - cell:getPosition().y, 2)
+
+		return sqt_x - sqt_y == 0
+	end)
+end
+
 function exports.AllCells(env, filter)
 	local battleField = env.global["$BattleField"]
 	local cells = battleField:collectCells({}, 1)
@@ -158,8 +173,8 @@ function exports.GetCell(env, unit)
 	return unit:getCell()
 end
 
-function exports.GetCellById(env, id)
-	return env.global["$BattleField"]:getCellById(id)
+function exports.GetCellById(env, id, side)
+	return env.global["$BattleField"]:getCellById(id, side)
 end
 
 function exports.GetCellId(env, unit)

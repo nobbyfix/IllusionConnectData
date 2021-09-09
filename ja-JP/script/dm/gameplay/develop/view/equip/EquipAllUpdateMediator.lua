@@ -635,6 +635,11 @@ function EquipAllUpdateMediator:refreshItemCost()
 end
 
 function EquipAllUpdateMediator:refreshEquipCost()
+	local tipdesc = self._starPanel:getChildByFullName("tipdesc")
+
+	tipdesc:setString(Strings:get("Equip_lvup_tip"))
+	tipdesc:setVisible(false)
+
 	local needCostControl = self._equipData:getEquipNeedControl()
 
 	if needCostControl == 1 then
@@ -828,6 +833,8 @@ function EquipAllUpdateMediator:refreshEquipCost()
 	needNum = self._equipData:getEquipStarExp()
 
 	if needNum > 0 then
+		tipdesc:setVisible(true)
+
 		local equipCost = self._starPanel:getChildByFullName("equipCost")
 		local panel = equipCost:getChildByFullName("costBg")
 		local iconpanel = panel:getChildByFullName("iconpanel")
@@ -839,6 +846,11 @@ function EquipAllUpdateMediator:refreshEquipCost()
 		debrisIcon:addTo(iconpanel):center(iconpanel:getContentSize())
 
 		local hasNum = self._equipSystem:getEquipStarUpItem().stiveNum
+
+		if hasNum == 0 then
+			hasNum = self._equipData:getOverflowStarExp()
+		end
+
 		self._equipEnough = needNum <= hasNum
 		local colorNum1 = self._equipEnough and 1 or 7
 		local enoughImg = panel:getChildByFullName("bg.enoughImg")

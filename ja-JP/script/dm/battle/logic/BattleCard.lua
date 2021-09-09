@@ -309,6 +309,32 @@ function HeroCard:hasFlag(flag)
 	return false
 end
 
+function HeroCard:addFlags(flags)
+	local data = self:getHeroData()
+
+	for k, v in pairs(flags) do
+		data.flags[#data.flags + 1] = v
+	end
+
+	return true
+end
+
+function HeroCard:clearFlags(flags)
+	local data = self:getHeroData()
+
+	for k, v in pairs(flags) do
+		for k_, v_ in pairs(data.flags) do
+			if v == v_ then
+				table.remove(data.flags, k_)
+
+				break
+			end
+		end
+	end
+
+	return true
+end
+
 function HeroCard:addTriggerBuff(triggerBuff)
 	self._triggerBuffs[#self._triggerBuffs + 1] = triggerBuff
 end

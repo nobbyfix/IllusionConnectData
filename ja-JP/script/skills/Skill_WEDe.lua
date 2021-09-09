@@ -454,6 +454,7 @@ all.Skill_WEDe_Passive_Key = {
 				global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
 					timing = 0,
 					duration = 99,
+					display = "MaxHpUp",
 					tags = {
 						"NUMERIC",
 						"STATUS",

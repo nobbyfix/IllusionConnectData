@@ -20,6 +20,10 @@ local kBtnHandlers = {
 		clickAudio = "Se_Click_Common_1",
 		func = "onClickEnter"
 	},
+	["main.leftPanel.quickBtn"] = {
+		clickAudio = "Se_Click_Common_1",
+		func = "onClickQuickBtn"
+	},
 	["main.leftPanel.strategyBtn"] = {
 		clickAudio = "Se_Click_Common_1",
 		func = "onClickStrategy"
@@ -63,6 +67,7 @@ function ExplorePointInfoMediator:initView()
 
 	self._heroInfoPanel:setVisible(false)
 
+	self._quickBtn = self._leftPanel:getChildByName("quickBtn")
 	self._autoBtn = self._leftPanel:getChildByName("autoBtn")
 
 	self._autoBtn:addClickEventListener(function ()
@@ -144,6 +149,7 @@ function ExplorePointInfoMediator:updateDailyRewardTimes()
 	local autoState = self._pointData:getAutoState()
 
 	self._autoBtn:getChildByFullName("lock"):setVisible(not canAuto)
+	self._quickBtn:setVisible(canAuto)
 
 	local color = cc.c3b(195, 195, 195)
 
@@ -195,6 +201,7 @@ end
 
 function ExplorePointInfoMediator:updateView()
 	self:initLeftPanel()
+	self:updateDailyRewardTimes()
 	self._leftPanel:getChildByFullName("enterBtn"):setGray(self._pointData:getLock())
 end
 
@@ -512,6 +519,78 @@ function ExplorePointInfoMediator:onClickEnter()
 	end
 
 	enterFunc()
+end
+
+function ExplorePointInfoMediator:onClickQuickBtn()
+	local times = math.min(self._exploreSystem:getEnterTimes(), 5)
+
+	if self._pointData:getLock() then
+		self:dispatch(ShowTipEvent({
+			tip = self._pointData:getLockTip()
+		}))
+
+		return
+	end
+
+	if times <= 0 then
+		self:dispatch(ShowTipEvent({
+			tip = Strings:get("Error_11307")
+		}))
+
+		return
+	end
+
+	local costPower = self._pointData:getNeedPower()
+
+	if self._developSystem:getEnergy() < costPower then
+		CurrencySystem:buyCurrencyByType(self, CurrencyType.kActionPoint)
+
+		return
+	end
+
+	local outSelf = self
+	local delegate = {
+		willClose = function (self, popupMediator, data)
+			if not data then
+				return
+			end
+
+			if data.returnValue == 1 then
+				outSelf:onClickEnter()
+			elseif data.returnValue == 2 then
+				outSelf:onClickWipeTimes(times)
+			elseif data.returnValue == 3 then
+				outSelf:onClickWipeTimes(1)
+			end
+		end
+	}
+	local data = {
+		normalType = 1,
+		desc = "BigMap_RewardFast_Text02",
+		stageType = StageType.kElite,
+		challengeTimes = times
+	}
+
+	AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, self:getInjector():getInstance("SweepBoxPopView"), {
+		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+	}, data, delegate))
+end
+
+function ExplorePointInfoMediator:onClickWipeTimes(times)
+	self._exploreSystem:requestSweepPoint(self._pointId, times, function (response)
+		local data = {
+			reward = response.data,
+			param = {
+				pointId = self._pointId,
+				wipeTimes = times
+			}
+		}
+
+		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, self:getInjector():getInstance("ExploreSweepView"), {
+			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+		}, data))
+	end)
 end
 
 function ExplorePointInfoMediator:onClickStrategy()

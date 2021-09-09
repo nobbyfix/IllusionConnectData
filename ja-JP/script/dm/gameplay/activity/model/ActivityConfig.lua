@@ -288,6 +288,13 @@ ActivityLogin14Config = {
 			cc.c4b(255, 239, 163, 255)
 		}
 	},
+	EightDays_Female_Re = {
+		resFile = "asset/ui/ActivityFemaleLogin14.csb",
+		textPattern = {
+			cc.c4b(255, 165, 218, 255),
+			cc.c4b(255, 239, 163, 255)
+		}
+	},
 	EightDays_StoryBook = {
 		resFile = "asset/ui/ActivityStoryBookLogin14.csb",
 		textPattern = {

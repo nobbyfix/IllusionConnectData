@@ -66,6 +66,7 @@ function TaskWeekMediator:initView()
 	local view = self:getView()
 	self._main = view:getChildByFullName("main")
 	self._totalNumTxt = self._main:getChildByFullName("totalNum")
+	self._totalNumTxt1 = self._main:getChildByFullName("totalNum_0")
 	self._totalText = self._main:getChildByFullName("text")
 	self._loadingBar_1 = self._main:getChildByFullName("Image_1.LoadingBar_1")
 	self._listView = self._main:getChildByFullName("listView")
@@ -75,15 +76,16 @@ function TaskWeekMediator:initView()
 	self._cellClone = self._main:getChildByFullName("cell")
 
 	self._cellClone:setVisible(false)
-	self._cellClone:getChildByFullName("title"):enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
 end
 
 function TaskWeekMediator:refreshView()
 	self._totalNum = self._taskListModel:getWeekLiveness()
 
-	self._totalNumTxt:setString(self._totalNum .. "/" .. self._maxNum)
+	self._totalNumTxt:setString(self._totalNum)
+	self._totalNumTxt1:setString("/" .. self._maxNum)
 	self._loadingBar_1:setPercent(self._totalNum / self._maxNum * 100)
 	self._listView:removeAllItems()
+	self._totalNumTxt:setPositionX(self._totalNumTxt1:getPositionX() - self._totalNumTxt1:getContentSize().width)
 	self._totalText:setPositionX(self._totalNumTxt:getPositionX() - self._totalNumTxt:getContentSize().width - 3)
 
 	for i = 1, #self._rewardList do
@@ -120,7 +122,7 @@ function TaskWeekMediator:addReward(data)
 
 	panel:setVisible(true)
 
-	local title = panel:getChildByFullName("title")
+	local title = panel:getChildByFullName("Panel_1.title")
 
 	title:setString(data.name)
 

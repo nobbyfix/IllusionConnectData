@@ -592,7 +592,7 @@ function ShopMonthCardMediator:openBuyView(data, view)
 	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
 		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
 	}, {
-		shopId = ShopSpecialId.kShopPackage,
+		shopId = ShopSpecialId.KShopTimelimitedmall,
 		item = data
 	}))
 end

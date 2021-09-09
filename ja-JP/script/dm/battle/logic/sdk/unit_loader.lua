@@ -28,6 +28,7 @@ local __getFunctions__ = {
 	[kAttrUnhurtRate] = numericAttrDumper,
 	[kAttrCureRate] = numericAttrDumper,
 	[kAttrBecuredRate] = numericAttrDumper,
+	[kAttrAbsorption] = numericAttrDumper,
 	[kAttrReflection] = numericAttrDumper,
 	[kAttrDoubleRate] = numericAttrDumper,
 	[kAttrCounterRate] = numericAttrDumper,
@@ -118,6 +119,7 @@ local __predefinedPropertySet__ = {
 		kAttrUnhurtRate,
 		kAttrCureRate,
 		kAttrBecuredRate,
+		kAttrAbsorption,
 		kAttrReflection,
 		kAttrDoubleRate,
 		kAttrCounterRate,
@@ -294,13 +296,17 @@ local function dumpUnitProperties(unit, propNames, dest, env)
 	local atkrate = attrComp:getAttribute(kAttrAttackRate):value()
 	local def = attrComp:getAttribute(kAttrDefense):value()
 	local defrate = attrComp:getAttribute(kAttrDefenseRate):value()
+	local hurtrate = attrComp:getAttribute(kAttrHurtRate):value()
+	local unhurtrate = attrComp:getAttribute(kAttrUnhurtRate):value()
 
 	if GameConfigs and GameConfigs.DumpUnitProperties then
 		env.global.RecordImmediately(env, unit:getId(), "ShowAtkAndDef", {
 			act = env["$id"],
 			detail = {
-				atk = atk * (1 + atkrate),
-				def = def * (1 + defrate)
+				atk = atk * (0 + atkrate),
+				def = def * (0 + defrate),
+				hurtrate = hurtrate,
+				unhurtrate = unhurtrate
 			}
 		})
 	end

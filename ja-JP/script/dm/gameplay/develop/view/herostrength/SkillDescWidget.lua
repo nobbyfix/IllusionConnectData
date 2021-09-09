@@ -205,8 +205,8 @@ function SkillDescWidget:refreshInfo(skill, role, isMaster)
 				Text_title:getVirtualRenderer():setDimensions(400, 38)
 			end
 
-			Image_line_1:setContentSize(cc.size(208 - Text_title:getContentSize().width / 2 - 5, 1.2))
-			Image_line_2:setContentSize(cc.size(208 - Text_title:getContentSize().width / 2 - 5, 1.2))
+			Image_line_1:setContentSize(cc.size(208 - Text_title:getContentSize().width / 2 - 5, 1.3))
+			Image_line_2:setContentSize(cc.size(208 - Text_title:getContentSize().width / 2 - 5, 1.3))
 
 			local newPanel = self:createEffectDescPanel(nextDes)
 

@@ -126,6 +126,8 @@ function FightStatisticPopMediator:processData()
 	self._allReceiveDamage = 0
 	self._allCure = 0
 
+	dump(self._playData.unitSummary, "self._playData.unitSummary", 4)
+
 	for k, v in pairs(self._playData.unitSummary) do
 		for _, id in ipairs(v.summoned) do
 			summonId[#summonId + 1] = id
@@ -134,6 +136,7 @@ function FightStatisticPopMediator:processData()
 
 	for k, v in pairs(self._playData.unitSummary) do
 		if not table.indexof(summonId, k) then
+			local uniqKey = v.cid .. v.model
 			local _tab = {
 				id = k,
 				dmg = v.damage or 0,
@@ -157,14 +160,16 @@ function FightStatisticPopMediator:processData()
 			_tab.receiveDamage = math.ceil(_tab.receiveDamage)
 			_tab.cure = math.ceil(_tab.cure)
 
-			if self._statistic_map[v.cid] then
-				self._statistic_map[v.cid].liveTime = self._statistic_map[v.cid].liveTime + _tab.liveTime
-				self._statistic_map[v.cid].dmg = self._statistic_map[v.cid].dmg + _tab.dmg
-				self._statistic_map[v.cid].receiveDamage = self._statistic_map[v.cid].receiveDamage + _tab.receiveDamage
-				self._statistic_map[v.cid].cure = self._statistic_map[v.cid].cure + _tab.cure
+			if self._statistic_map[uniqKey] then
+				self._statistic_map[uniqKey].liveTime = self._statistic_map[uniqKey].liveTime + _tab.liveTime
+				self._statistic_map[uniqKey].dmg = self._statistic_map[uniqKey].dmg + _tab.dmg
+				self._statistic_map[uniqKey].receiveDamage = self._statistic_map[uniqKey].receiveDamage + _tab.receiveDamage
+				self._statistic_map[uniqKey].cure = self._statistic_map[uniqKey].cure + _tab.cure
 			else
-				self._statistic_map[v.cid] = _tab
+				self._statistic_map[uniqKey] = _tab
 			end
+
+			self._statistic_map[uniqKey] = _tab
 		end
 	end
 
@@ -177,6 +182,8 @@ function FightStatisticPopMediator:processData()
 		self._allReceiveDamage = self._allReceiveDamage + v.receiveDamage
 		self._allCure = self._allCure + v.cure
 	end
+
+	dump(self._statistic, "self._statistic", 4)
 
 	self._sortType = sortType.dmage
 

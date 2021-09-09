@@ -1950,6 +1950,34 @@
         "UpgradeCostAnother": "",
         "UpgradeTime": 32400.0
     },
+    "KaiFuCake_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 21,
+        "DecorateBuilding": "KaiFuCake",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 210,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "UpgradeCostAnother": [
+            {
+                "amount": 140,
+                "type": "IR_Diamond"
+            }
+        ],
+        "UpgradeTime": 0.0
+    },
     "KaiHeiFangZhuo_Lv1": {
         "BuildCondition": "",
         "Comfort": 27,

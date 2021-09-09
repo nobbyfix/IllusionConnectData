@@ -520,7 +520,8 @@ function MasterLeadStageDetailMediator:refreshRightPanel()
 				masterData = self._masterData,
 				stageLevel = info.LeadStageLv,
 				mediator = self,
-				isShowCurLv = true
+				isShowCurLv = true,
+				skillIndex = i
 			}
 
 			self:showSkillTip(skillData, i)
