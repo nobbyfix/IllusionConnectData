@@ -177,6 +177,10 @@ function exports.GetCellById(env, id, side)
 	return env.global["$BattleField"]:getCellById(id, side)
 end
 
+function exports.getCellBySideAndNo(env, side, no)
+	return env.global["$BattleField"]:getCellBySideAndNo(side, no)
+end
+
 function exports.GetCellId(env, unit)
 	if not unit then
 		return nil

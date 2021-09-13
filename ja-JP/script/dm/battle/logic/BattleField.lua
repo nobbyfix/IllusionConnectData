@@ -174,8 +174,8 @@ function BattleField:createCells()
 	return cells
 end
 
-function BattleField:getCellById(cellNo, side)
-	return self._cells[makeCellId(side, cellNo)]
+function BattleField:getCellById(cellId)
+	return self._cells[cellId]
 end
 
 function BattleField:getCellBySideAndNo(side, cellNo)
