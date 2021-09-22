@@ -148,12 +148,10 @@ function ArenaRoleInfoMediator:initTeamInfo()
 	if master then
 		local roleModel = self._masterSystem:getMasterLeadStageModel(master[1], self._record:getLeadStageId() or "")
 		local info = {
-			stencil = 6,
-			iconType = "Bust5",
-			id = roleModel,
-			size = cc.size(426, 115)
+			frameId = "bustframe4_5",
+			id = roleModel
 		}
-		local masterIcon = IconFactory:createRoleIconSprite(info)
+		local masterIcon = IconFactory:createRoleIconSpriteNew(info)
 
 		masterIcon:setAnchorPoint(cc.p(0, 0))
 		masterIcon:setPosition(cc.p(0, 0))

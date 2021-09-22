@@ -60,9 +60,11 @@ function AudioNode:volumeTo(type, volumebegin, volumeend, targetTimes)
 
 	local function checkTimeFunc()
 		local function stop()
-			self["timer" .. type]:stop()
+			if self["timer" .. type] then
+				self["timer" .. type]:stop()
 
-			self["timer" .. type] = nil
+				self["timer" .. type] = nil
+			end
 		end
 
 		if dis > 0 then

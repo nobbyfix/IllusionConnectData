@@ -141,6 +141,7 @@ all.Skill_Enemy_MOGJiang_Skill = {
 					"STATUS",
 					"DEBUFF",
 					"BURNING",
+					"ABNORMAL",
 					"DISPELLABLE"
 				}
 			}, {

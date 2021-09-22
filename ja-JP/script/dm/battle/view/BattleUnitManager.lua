@@ -186,6 +186,10 @@ function BattleUnitManager:initialize()
 	self._ruleFuncs = {}
 end
 
+function BattleUnitManager:setBattleContext(battleContext)
+	self._battleContext = battleContext
+end
+
 function BattleUnitManager:dispose()
 	for k, unit in pairs(self._members) do
 		if unit then
@@ -912,6 +916,36 @@ function BattleUnitManager:createTargetEnvironment(env)
 
 			return boundary <= y and zone == rzone
 		end)
+	end
+
+	function env.HasBuff(tag)
+		local battleField = self._battleContext:getObject("BattleField")
+		local result = battleField:collectAllUnits({}, 1)
+		local result1 = battleField:collectAllUnits({}, -1)
+
+		for k, v in pairs(result1) do
+			result[#result + 1] = v
+		end
+
+		local rets = {}
+
+		for k, v in pairs(result) do
+			local buffSystem = self._battleContext:getObject("BuffSystem")
+			local _, cnt = buffSystem:selectBuffsOnTarget(v, MakeFilter(function (buff)
+				return buff:isMatched(tag)
+			end))
+
+			if cnt > 0 then
+				local id = v:getComponent("Position"):getCell():getId()
+				local ret = {
+					color = "Green",
+					id = id
+				}
+				rets[#rets + 1] = ret
+			end
+		end
+
+		return rets
 	end
 end
 

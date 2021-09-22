@@ -231,7 +231,7 @@ function GalleryAlbumShotsMediator:createTeamCell(cell, index)
 
 	sprite:setScale(0.5)
 
-	local heroImg = IconFactory:createRoleIconSprite({
+	local heroImg = IconFactory:createRoleIconSpriteNew({
 		id = id
 	})
 	heroImg = IconFactory:addStencilForIcon(heroImg, 1, cc.size(125, 138))
@@ -344,8 +344,8 @@ function GalleryAlbumShotsMediator:updateHeroes()
 
 	for id, value in pairs(self._idMap) do
 		if value.isAdd then
-			local img = IconFactory:createRoleIconSprite({
-				iconType = "Bust4",
+			local img = IconFactory:createRoleIconSpriteNew({
+				frameId = "bustframe9",
 				id = id
 			})
 

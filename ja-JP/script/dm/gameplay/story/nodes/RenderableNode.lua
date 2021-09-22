@@ -2901,7 +2901,7 @@ function MessageNode:createRoleImg(args)
 	local modelId = args.modelId
 	local modelScale = args.modelScale or 1
 	local modelOffset = args.modelOffset or cc.p(0, 0)
-	local img = IconFactory:createRoleIconSprite({
+	local img = IconFactory:createRoleIconSpriteNew({
 		iconType = 2,
 		id = modelId
 	})

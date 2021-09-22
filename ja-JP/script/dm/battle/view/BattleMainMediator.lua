@@ -481,10 +481,6 @@ function BattleMainMediator:enterWithData(data)
 	viewContext:setValue("battleSuppress", viewConfig.battleSuppress or {})
 	viewContext:setValue("unlockMasterSkill", viewConfig.unlockMasterSkill)
 
-	self._unitManager = BattleUnitManager:new()
-
-	viewContext:setValue("BattleUnitManager", self._unitManager)
-
 	local battleShowQueue = BattleShowQueue:new()
 
 	battleShowQueue:setViewContext(viewContext)
@@ -506,6 +502,10 @@ function BattleMainMediator:enterWithData(data)
 	self._battleDirector = logicInfo.director
 
 	assert(self._battleDirector ~= nil)
+
+	self._unitManager = BattleUnitManager:new()
+
+	viewContext:setValue("BattleUnitManager", self._unitManager)
 	viewContext:setValue("MainPlayerId", logicInfo.mainPlayerId)
 
 	local teams = logicInfo.teams or {}
@@ -579,6 +579,14 @@ function BattleMainMediator:enterWithData(data)
 		end
 	end)
 	self:getInjector():mapValue("Debug_BattleDump", nil)
+
+	local battleSimulator = self._battleDirector:getBattleSimulator()
+
+	if battleSimulator then
+		local battleContext = battleSimulator:getBattleContext()
+
+		self._unitManager:setBattleContext(battleContext)
+	end
 
 	local director = cc.Director:getInstance()
 

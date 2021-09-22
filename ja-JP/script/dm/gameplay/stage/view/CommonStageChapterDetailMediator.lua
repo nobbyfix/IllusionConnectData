@@ -1291,11 +1291,16 @@ function CommonStageChapterDetailMediator:onClickPlayStory(pointId)
 	local storyDirector = self:getInjector():getInstance(story.StoryDirector)
 	local stageSystem = self:getStageSystem()
 	local chapterConfig = stageSystem:getMapConfigByIndex(self._chapterIndex, self._stageType)
+	local storyLink = ConfigReader:getDataByNameIdAndKey("StoryPoint", pointId, "StoryLink")
+	local startTs = self:getInjector():getInstance(GameServerAgent):remoteTimeMillis()
 
 	local function endCallBack()
 		local storyPoint = stageSystem:getPointById(pointId)
+		local isFirst = 0
 
 		if not storyPoint:isPass() then
+			isFirst = 1
+
 			stageSystem:requestStoryPass(pointId, function (response)
 				local delegate = {}
 				local outSelf = self
@@ -1337,11 +1342,22 @@ function CommonStageChapterDetailMediator:onClickPlayStory(pointId)
 			end, true)
 		end
 
+		local endTs = self:getInjector():getInstance(GameServerAgent):remoteTimeMillis()
+
+		StatisticSystem:send({
+			point = "plot_end",
+			type = "plot_end",
+			op_type = "plot_stage",
+			stagetype = self._stageType,
+			plot_id = storyLink,
+			plot_name = storyPoint:getName(),
+			id_first = isFirst,
+			totaltime = endTs - startTs
+		})
 		AudioEngine:getInstance():playBackgroundMusic(chapterConfig.BGM)
 	end
 
 	local storyAgent = storyDirector:getStoryAgent()
-	local storyLink = ConfigReader:getDataByNameIdAndKey("StoryPoint", pointId, "StoryLink")
 
 	storyAgent:setSkipCheckSave(true)
 

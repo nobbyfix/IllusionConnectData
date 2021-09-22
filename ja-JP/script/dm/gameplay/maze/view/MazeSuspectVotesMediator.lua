@@ -67,8 +67,7 @@ function MazeSuspectVotesMediator:createSuspectList()
 		votes:setString(v .. "票")
 
 		local ids = ConfigReader:getDataByNameIdAndKey("PansLabSuspects", k, "Model")
-		local img = IconFactory:createRoleIconSprite({
-			clipType = 3,
+		local img = IconFactory:createRoleIconSpriteNew({
 			id = ids
 		})
 

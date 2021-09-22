@@ -124,6 +124,7 @@ all.FlameMonster_0408 = {
 							"STATUS",
 							"DEBUFF",
 							"BURNING",
+							"ABNORMAL",
 							"UNDISPELLABLE",
 							"UNSTEALABLE"
 						}

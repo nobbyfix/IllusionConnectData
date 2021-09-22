@@ -144,6 +144,7 @@ all.Skill_Enemy_YLDDBing_Proud = {
 						"STATUS",
 						"DEBUFF",
 						"DAZE",
+						"ABNORMAL",
 						"DISPELLABLE"
 					}
 				}, {

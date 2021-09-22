@@ -503,10 +503,10 @@ function scene_elitestory15_1a.actions.start_elitestory15_1a(_root, args)
 					modelId = "Model_MLYTLSha",
 					id = "MLYTLSha_speak",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.7,
 					position = {
 						x = 0,
-						y = -355,
+						y = -320,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -530,8 +530,8 @@ function scene_elitestory15_1a.actions.start_elitestory15_1a(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = -29,
-								y = 829
+								x = -34.5,
+								y = 1096
 							}
 						}
 					}
@@ -1234,7 +1234,7 @@ function scene_elitestory15_1a.actions.start_elitestory15_1a(_root, args)
 				actor = __getnode__(_root, "MLYTLSha_speak"),
 				args = function (_ctx)
 					return {
-						scale = 1.35,
+						scale = 0.9,
 						duration = 1.5
 					}
 				end
@@ -1247,10 +1247,10 @@ function scene_elitestory15_1a.actions.start_elitestory15_1a(_root, args)
 						duration = 1.5,
 						position = {
 							x = 0,
-							y = -355,
+							y = -320,
 							refpt = {
-								x = 0.5,
-								y = -0.5
+								x = 0.53,
+								y = -0.3
 							}
 						}
 					}

@@ -85,6 +85,36 @@ end
 function scene_SLMenDate01.actions.start_SLMenDate01(_root, args)
 	return sequential({
 		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 0.1
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "hideButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "skipButton"),
+			args = function (_ctx)
+				return {
+					date = true
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "reviewButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "autoPlayButton")
+		}),
+		act({
 			action = "activateNode",
 			actor = __getnode__(_root, "bg")
 		}),
@@ -123,11 +153,11 @@ function scene_SLMenDate01.actions.start_SLMenDate01(_root, args)
 					modelId = "Model_SLMen",
 					id = "SLMen_speak",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.65,
 					zorder = 2,
 					position = {
 						x = 0,
-						y = -285,
+						y = -250,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -140,8 +170,8 @@ function scene_SLMenDate01.actions.start_SLMenDate01(_root, args)
 							pathType = "STORY_FACE",
 							type = "Image",
 							image = "SLMen/SLMen_face_1.png",
-							scaleX = 0.97,
-							scaleY = 0.97,
+							scaleX = 1,
+							scaleY = 1,
 							layoutMode = 1,
 							zorder = 1,
 							visible = true,
@@ -151,8 +181,8 @@ function scene_SLMenDate01.actions.start_SLMenDate01(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = -35,
-								y = 740
+								x = -45.5,
+								y = 1156
 							}
 						}
 					}

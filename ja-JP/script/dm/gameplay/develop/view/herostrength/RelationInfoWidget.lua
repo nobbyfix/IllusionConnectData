@@ -151,7 +151,7 @@ function RelationInfoWidget:createHeroRelationPanel(heros, level)
 			clipType = 2,
 			id = roleModel
 		}
-		local heroImg = IconFactory:createRoleIconSprite(info)
+		local heroImg = IconFactory:createRoleIconSpriteNew(info)
 		heroImg = IconFactory:addStencilForIcon(heroImg, info.clipType, cc.size(120, 120))
 
 		heroImg:setScale(0.41)

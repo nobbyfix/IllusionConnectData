@@ -66,6 +66,36 @@ end
 function scene_MTZMEShiDate02.actions.start_MTZMEShiDate02(_root, args)
 	return sequential({
 		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 0.1
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "hideButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "skipButton"),
+			args = function (_ctx)
+				return {
+					date = true
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "reviewButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "autoPlayButton")
+		}),
+		act({
 			action = "activateNode",
 			actor = __getnode__(_root, "bg")
 		}),
@@ -96,11 +126,11 @@ function scene_MTZMEShiDate02.actions.start_MTZMEShiDate02(_root, args)
 						modelId = "Model_MTZMEShi",
 						id = "MTZMEShi",
 						rotationX = 0,
-						scale = 1,
+						scale = 0.75,
 						zorder = 20,
 						position = {
 							x = 0,
-							y = -400,
+							y = -390,
 							refpt = {
 								x = 0.5,
 								y = 0
@@ -113,8 +143,8 @@ function scene_MTZMEShiDate02.actions.start_MTZMEShiDate02(_root, args)
 								pathType = "STORY_FACE",
 								type = "Image",
 								image = "MTZMEShi/MTZMEShi_face_1.png",
-								scaleX = 1.16,
-								scaleY = 1.16,
+								scaleX = 1,
+								scaleY = 1,
 								layoutMode = 1,
 								zorder = 1100,
 								visible = true,
@@ -124,8 +154,8 @@ function scene_MTZMEShiDate02.actions.start_MTZMEShiDate02(_root, args)
 									y = 0.5
 								},
 								position = {
-									x = -5.5,
-									y = 874.2
+									x = -10.5,
+									y = 1081
 								}
 							}
 						}

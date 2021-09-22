@@ -876,6 +876,14 @@ function ExtraSkillCardWidget:getRes()
 	return self._iconRes
 end
 
+function ExtraSkillCardWidget:setCollesionRule(rule)
+	self._collesionRule = rule
+end
+
+function ExtraSkillCardWidget:getCollesionRule()
+	return self._collesionRule
+end
+
 function ExtraSkillCardWidget:updateCardInfo(info)
 	super.updateCardInfo(self, info)
 
@@ -903,5 +911,9 @@ function ExtraSkillCardWidget:updateCardInfo(info)
 		else
 			self._rangePic:setVisible(false)
 		end
+
+		local cardRange = config.CardRange
+
+		self:setCollesionRule(cardRange)
 	end
 end

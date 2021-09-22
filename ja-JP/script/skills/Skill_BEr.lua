@@ -366,7 +366,7 @@ all.Skill_BEr_Passive_Death = {
 				else
 					global.AddStatus(_env, global.FriendMaster(_env), "Skill_BEr_Passive_Death_SecondTime")
 
-					local card = global.BackToCard(_env, _env.ACTOR)
+					local card = global.BackToCard_ResultCheck(_env, _env.ACTOR, "card")
 
 					if card then
 						global.Kick(_env, _env.ACTOR)
@@ -869,7 +869,7 @@ all.Skill_BEr_Passive_Death_EX = {
 				else
 					global.AddStatus(_env, global.FriendMaster(_env), "Skill_BEr_Passive_Death_SecondTime")
 
-					local card = global.BackToCard(_env, _env.ACTOR)
+					local card = global.BackToCard_ResultCheck(_env, _env.ACTOR, "card")
 
 					if card then
 						global.Kick(_env, _env.ACTOR)

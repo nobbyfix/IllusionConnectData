@@ -407,7 +407,7 @@ function TaskListModel:clearDailyTaskData()
 end
 
 function TaskListModel:updateDelTasks(data)
-	data = data.player
+	data = data.taskCenter
 
 	if data == nil then
 		return

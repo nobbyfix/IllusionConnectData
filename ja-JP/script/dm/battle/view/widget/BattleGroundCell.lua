@@ -281,10 +281,15 @@ function BattleGroundCell:_setupView(data)
 
 	self._baseColorTrans = self._displayNode:getColorTransform()
 	self._trapNode = cc.Node:create():addTo(self._baseNode, 10)
+	self._lockShowAnim = cc.MovieClip:create("jinzhishangren_jinzhishangren")
+
+	self._lockShowAnim:addTo(self._baseNode):offset(6, 10)
+	self._lockShowAnim:setVisible(false)
+
 	self._lockShow = cc.Sprite:createWithSpriteFrameName(data.lockImage)
 
+	self._lockShow:addTo(self._baseNode):offset(0, 0)
 	self._lockShow:setVisible(false)
-	self._lockShow:addTo(self._baseNode)
 end
 
 function BattleGroundCell:setPreview(cellInfo)
@@ -336,10 +341,12 @@ end
 
 function BattleGroundCell:showBlock()
 	self._lockShow:setVisible(true)
+	self._lockShowAnim:setVisible(true)
 end
 
 function BattleGroundCell:hideBlock()
 	self._lockShow:setVisible(false)
+	self._lockShowAnim:setVisible(false)
 end
 
 function BattleGroundCell:showTarget(actId, isHeal)

@@ -457,7 +457,7 @@ function HeroShowListMediator:createTeamCell(cell, index)
 
 			heroPanel:removeAllChildren()
 
-			local heroImg = IconFactory:createRoleIconSprite({
+			local heroImg = IconFactory:createRoleIconSpriteNew({
 				id = heroData.roleModel
 			})
 
@@ -895,9 +895,9 @@ function HeroShowListMediator:initHeroInfo()
 
 		iconNode:removeAllChildren()
 
-		local img, path, spineani, picInfo = IconFactory:createRoleIconSprite({
+		local img, path, spineani, picInfo = IconFactory:createRoleIconSpriteNew({
 			useAnim = true,
-			iconType = "Bust4",
+			frameId = "bustframe9",
 			id = roleModel
 		})
 
@@ -909,6 +909,20 @@ function HeroShowListMediator:initHeroInfo()
 
 		self:refreshBg()
 	end
+
+	local redPoint = self._buttonTip:getChildByFullName("RedPoint")
+
+	if not redPoint then
+		redPoint = ccui.ImageView:create(IconFactory.redPointPath, 1)
+
+		redPoint:addTo(self._buttonTip):posite(0, 55)
+		redPoint:setName("RedPoint")
+	end
+
+	local surfaceSystem = self:getInjector():getInstance(SurfaceSystem)
+	local isRed = surfaceSystem:getRedPointByHeroId(self._chooseHeroId)
+
+	redPoint:setVisible(isRed)
 end
 
 function HeroShowListMediator:refreshView()
@@ -939,7 +953,14 @@ function HeroShowListMediator:refreshEquip()
 		return
 	end
 
-	local hasRed = self._heroSystem:hasRedPointByEquip(self._chooseHeroId)
+	local hasRed = true
+	local teamHeroes = self._heroSystem:getTeamHeroes()
+
+	if not teamHeroes[self._chooseHeroId] then
+		hasRed = false
+	end
+
+	hasRed = hasRed and self._heroSystem:hasRedPointByEquip(self._chooseHeroId)
 
 	self._strengthenNode:getChildByFullName("redPoint"):setVisible(hasRed)
 
@@ -1277,12 +1298,13 @@ function HeroShowListMediator:runResumeAnim()
 		roleModel = hero:getModel()
 	end
 
-	local img, path, spineani, picInfo = IconFactory:createRoleIconSprite({
+	local img, path, spineani, picInfo = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust4",
+		frameId = "bustframe9",
 		id = roleModel
 	})
 
+	img:setScale(1.15)
 	img:addTo(iconNode)
 	img:setPosition(cc.p(55, -143))
 
@@ -1422,12 +1444,13 @@ function HeroShowListMediator:runStartAnim()
 				roleModel = hero:getModel()
 			end
 
-			local img, path, spineani, picInfo = IconFactory:createRoleIconSprite({
+			local img, path, spineani, picInfo = IconFactory:createRoleIconSpriteNew({
 				useAnim = true,
-				iconType = "Bust4",
+				frameId = "bustframe9",
 				id = roleModel
 			})
 
+			img:setScale(1.15)
 			img:addTo(iconNode)
 			img:setPosition(cc.p(55, -143))
 

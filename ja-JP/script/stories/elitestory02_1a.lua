@@ -389,10 +389,10 @@ function scene_elitestory02_1a.actions.start_elitestory02_1a(_root, args)
 					modelId = "Model_XLai",
 					id = "XLai_speak",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.76,
 					position = {
 						x = 0,
-						y = -305,
+						y = -300,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -576,10 +576,10 @@ function scene_elitestory02_1a.actions.start_elitestory02_1a(_root, args)
 					modelId = "Model_WEDe",
 					id = "WEDe_speak",
 					rotationX = 0,
-					scale = 1.12,
+					scale = 0.65,
 					position = {
 						x = 0,
-						y = -410,
+						y = -430,
 						refpt = {
 							x = 1.5,
 							y = 0
@@ -625,7 +625,7 @@ function scene_elitestory02_1a.actions.start_elitestory02_1a(_root, args)
 					duration = 0,
 					position = {
 						x = 0,
-						y = -410,
+						y = -430,
 						refpt = {
 							x = 0.35,
 							y = 0
@@ -691,10 +691,10 @@ function scene_elitestory02_1a.actions.start_elitestory02_1a(_root, args)
 					modelId = "Model_YKDMLai",
 					id = "YKDMLai_speak",
 					rotationX = 0,
-					scale = 0.825,
+					scale = 0.7,
 					position = {
 						x = 0,
-						y = -178,
+						y = -290,
 						refpt = {
 							x = 1.5,
 							y = 0
@@ -740,7 +740,7 @@ function scene_elitestory02_1a.actions.start_elitestory02_1a(_root, args)
 					duration = 0,
 					position = {
 						x = 0,
-						y = -178,
+						y = -290,
 						refpt = {
 							x = 0.5,
 							y = 0

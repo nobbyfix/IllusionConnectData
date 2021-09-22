@@ -57,10 +57,10 @@ function scene_mapstory_Alice_4_boss_01.actions.start_mapstory_Alice_4_boss_01(_
 					modelId = "Model_YSuo",
 					id = "YSuo_speak",
 					rotationX = 0,
-					scale = 1.03,
+					scale = 0.7,
 					position = {
 						x = 0,
-						y = -635,
+						y = -750,
 						refpt = {
 							x = 0.85,
 							y = 0
@@ -84,8 +84,8 @@ function scene_mapstory_Alice_4_boss_01.actions.start_mapstory_Alice_4_boss_01(_
 								y = 0.5
 							},
 							position = {
-								x = -166,
-								y = 1064
+								x = -251,
+								y = 1658
 							}
 						}
 					}
@@ -150,10 +150,10 @@ function scene_mapstory_Alice_4_boss_01.actions.start_mapstory_Alice_4_boss_01(_
 					modelId = "Model_ATSheng",
 					id = "ATSheng_speak",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.6,
 					position = {
 						x = 0,
-						y = -250,
+						y = -230,
 						refpt = {
 							x = 0.3,
 							y = 0
@@ -177,8 +177,8 @@ function scene_mapstory_Alice_4_boss_01.actions.start_mapstory_Alice_4_boss_01(_
 								y = 0.5
 							},
 							position = {
-								x = -31,
-								y = 683
+								x = -38.5,
+								y = 958
 							}
 						}
 					}
@@ -243,10 +243,10 @@ function scene_mapstory_Alice_4_boss_01.actions.start_mapstory_Alice_4_boss_01(_
 					modelId = "Model_Story_CLMan",
 					id = "CLMan_speak",
 					rotationX = 0,
-					scale = 0.9,
+					scale = 0.63,
 					position = {
 						x = 0,
-						y = -295,
+						y = -300,
 						refpt = {
 							x = 0.3,
 							y = 0
@@ -270,8 +270,8 @@ function scene_mapstory_Alice_4_boss_01.actions.start_mapstory_Alice_4_boss_01(_
 								y = 0.5
 							},
 							position = {
-								x = 60.5,
-								y = 787
+								x = 77.5,
+								y = 1045.5
 							}
 						}
 					}

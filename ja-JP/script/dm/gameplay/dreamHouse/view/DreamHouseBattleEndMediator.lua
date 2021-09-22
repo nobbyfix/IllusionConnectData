@@ -6,6 +6,9 @@ DreamHouseBattleEndMediator:has("_dreamSystem", {
 DreamHouseBattleEndMediator:has("_developSystem", {
 	is = "r"
 }):injectWith("DevelopSystem")
+DreamHouseBattleEndMediator:has("_stageSystem", {
+	is = "r"
+}):injectWith("StageSystem")
 
 local kBtnHandlers = {
 	mTouchLayout = "onTouchLayout",
@@ -76,6 +79,18 @@ function DreamHouseBattleEndMediator:enterWithData(data)
 
 	self:initWidget()
 	self:refreshView()
+
+	local cjson = require("cjson.safe")
+	local customDataSystem = self:getInjector():getInstance(CustomDataSystem)
+	local data = customDataSystem:getValue(PrefixType.kGlobal, "DreamHouseTeamStates", "BattleSuccess")
+
+	if self._data.pass then
+		data = self._battleId .. "BattleSuccess"
+	else
+		data = self._battleId .. "BattleFailed"
+	end
+
+	customDataSystem:setValue(PrefixType.kGlobal, "DreamHouseTeamStates", data)
 end
 
 function DreamHouseBattleEndMediator:initWidget()
@@ -115,7 +130,7 @@ function DreamHouseBattleEndMediator:showHeroPanelAnim()
 	local mvpSpritePanel = anim:getChildByName("roleNode")
 
 	mvpSpritePanel:addChild(self._mvpSprite)
-	self._mvpSprite:setPosition(cc.p(50, -100))
+	self._mvpSprite:setPosition(cc.p(-200, -200))
 	anim:addCallbackAtFrame(45, function ()
 		anim:stop()
 	end)
@@ -190,9 +205,10 @@ function DreamHouseBattleEndMediator:showHeroPanel()
 		self:getView():getChildByFullName("content.btnStatistic"):setVisible(false)
 	end
 
-	local mvpSprite = IconFactory:createRoleIconSprite({
+	model = IconFactory:getSpMvpBattleEndMid(model)
+	local mvpSprite = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust9",
+		frameId = "bustframe17",
 		id = model
 	})
 
@@ -518,7 +534,7 @@ function DreamHouseBattleEndMediator:setHero(node, heroId)
 		awakenLevel = heroInfo:getAwakenStar()
 	}
 	info.id = info.roleModel
-	local heroImg = IconFactory:createRoleIconSprite(info)
+	local heroImg = IconFactory:createRoleIconSpriteNew(info)
 
 	heroImg:setScale(0.6)
 

@@ -183,14 +183,13 @@ function ExplorePointInfoMediator:initHeroIcon()
 		roleModel = hero:getModel()
 	end
 
-	local img = IconFactory:createRoleIconSprite({
+	local img = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust4",
+		frameId = "bustframe9",
 		id = roleModel
 	})
 
 	heroIcon:addChild(img)
-	img:setAnchorPoint(cc.p(0.5, 0.5))
 	img:setPosition(cc.p(90, -80))
 end
 
@@ -357,16 +356,10 @@ function ExplorePointInfoMediator:updateHeroInfo(heroId)
 
 	local roleModel = IconFactory:getRoleModelByKey("HeroBase", heroId)
 	local info = {
-		clipType = 1,
 		id = roleModel
 	}
-	local heroImg = IconFactory:createRoleIconSprite(info)
+	local heroImg = IconFactory:createRoleIconSpriteNew(info)
 
-	heroImg:setScale(0.6)
-
-	heroImg = IconFactory:addStencilForIcon(heroImg, info.clipType, cc.size(88, 90))
-
-	heroImg:setScale(0.86)
 	heroImg:addTo(heroPanel):center(heroPanel:getContentSize())
 
 	local name = self._heroInfoPanel:getChildByName("name")

@@ -122,6 +122,7 @@ end
 
 function GalleryMemoryListMediator:initData(data)
 	self._memoryType = data.type
+	self._title = data.title
 
 	if self._memoryType == GalleryMemoryType.STORY and data.storyType and data.storyId then
 		self._storyType = data.storyType
@@ -241,7 +242,7 @@ function GalleryMemoryListMediator:createTeamCell(cell, index)
 				panel:setTouchEnabled(true)
 				panel:setSwallowTouches(false)
 				panel:addTouchEventListener(function (sender, eventType)
-					self:onClickMemory(sender, eventType, data, ShowLineNum * (index - 1) + i)
+					self:onClickMemory(sender, eventType, data, ShowLineNum * (index - 1) + i, "NORMAL")
 				end)
 
 				local node = self._nodeClone:clone()
@@ -284,7 +285,7 @@ function GalleryMemoryListMediator:createTeamCell(cell, index)
 				panel:setTouchEnabled(true)
 				panel:setSwallowTouches(false)
 				panel:addTouchEventListener(function (sender, eventType)
-					self:onClickMemory(sender, eventType, data, ShowLineNum * (index2 - 1) + i)
+					self:onClickMemory(sender, eventType, data, ShowLineNum * (index2 - 1) + i, "ELITE")
 				end)
 
 				local node = self._nodeClone:clone()
@@ -318,7 +319,7 @@ function GalleryMemoryListMediator:createTeamCell(cell, index)
 	end
 end
 
-function GalleryMemoryListMediator:onClickMemory(sender, eventType, data, index)
+function GalleryMemoryListMediator:onClickMemory(sender, eventType, data, index, stageType)
 	if eventType == ccui.TouchEventType.began then
 		self._isReturn = true
 
@@ -357,7 +358,7 @@ function GalleryMemoryListMediator:onClickMemory(sender, eventType, data, index)
 				local maskImage = self:getView():getChildByName("maskImage")
 				local fade = cc.FadeIn:create(0.2)
 				local func = cc.CallFunc:create(function ()
-					self:onClickCallback(sender, data, index)
+					self:onClickCallback(sender, data, index, stageType)
 
 					self._isReturn = true
 
@@ -382,7 +383,7 @@ function GalleryMemoryListMediator:onClickMemory(sender, eventType, data, index)
 	end
 end
 
-function GalleryMemoryListMediator:onClickCallback(sender, data, index)
+function GalleryMemoryListMediator:onClickCallback(sender, data, inde, stageType)
 	if data:getType() == GalleryMemoryType.STORY then
 		local storyLink = data:getStoryLink()
 
@@ -391,21 +392,40 @@ function GalleryMemoryListMediator:onClickCallback(sender, data, index)
 			local storyAgent = storyDirector:getStoryAgent()
 
 			storyAgent:setSkipCheckSave(true)
+
+			local startTs = self:getInjector():getInstance(GameServerAgent):remoteTimeMillis()
+
 			storyAgent:trigger(storyLink, function ()
 			end, function ()
 				self._gallerySystem:setActivityStorySaveStatus(data:getId(), false)
 				self:refreshRedPoint(sender, data, false)
+
+				local endTs = self:getInjector():getInstance(GameServerAgent):remoteTimeMillis()
+
+				StatisticSystem:send({
+					type = "plot_end",
+					id_first = 0,
+					point = "plot_end",
+					op_type = self._storyType == "ACTIVILIST" and "plot_activity" or "plot_stage",
+					activityid = self._storyType == "ACTIVILIST" and self._title or nil,
+					stagetype = self._storyType == "STORYLIST" and stageType or nil,
+					plot_id = storyLink,
+					plot_name = data:getTitle(),
+					totaltime = endTs - startTs
+				})
 			end)
 		end
-	else
-		local view = self:getInjector():getInstance("GalleryMemoryInfoView")
 
-		self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
-			data = data,
-			listData = self._showList
-		}, nil))
-		self:refreshRedPoint(sender, data, false)
+		return
 	end
+
+	local view = self:getInjector():getInstance("GalleryMemoryInfoView")
+
+	self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
+		data = data,
+		listData = self._showList
+	}, nil))
+	self:refreshRedPoint(sender, data, false)
 end
 
 function GalleryMemoryListMediator:onClickBack()

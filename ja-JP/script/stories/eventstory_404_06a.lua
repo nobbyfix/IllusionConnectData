@@ -326,7 +326,7 @@ function scene_eventstory_404_06a.actions.start_eventstory_404_06a(_root, args)
 							x = 0,
 							y = -260,
 							refpt = {
-								x = 0.51,
+								x = 0.59,
 								y = 0
 							}
 						},
@@ -348,8 +348,8 @@ function scene_eventstory_404_06a.actions.start_eventstory_404_06a(_root, args)
 									y = 0.5
 								},
 								position = {
-									x = 49,
-									y = 908
+									x = -126.5,
+									y = 877
 								}
 							}
 						}
@@ -462,11 +462,11 @@ function scene_eventstory_404_06a.actions.start_eventstory_404_06a(_root, args)
 						modelId = "Model_Story_CLMan",
 						id = "CLMan",
 						rotationX = 0,
-						scale = 0.9,
+						scale = 0.63,
 						zorder = 50,
 						position = {
 							x = 0,
-							y = -280,
+							y = -250,
 							refpt = {
 								x = 0.47,
 								y = 0
@@ -490,8 +490,8 @@ function scene_eventstory_404_06a.actions.start_eventstory_404_06a(_root, args)
 									y = 0.5
 								},
 								position = {
-									x = 60.5,
-									y = 787
+									x = 77.5,
+									y = 1045.5
 								}
 							}
 						}
@@ -526,7 +526,7 @@ function scene_eventstory_404_06a.actions.start_eventstory_404_06a(_root, args)
 						duration = 0,
 						position = {
 							x = 0,
-							y = -280,
+							y = -250,
 							refpt = {
 								x = 0.27,
 								y = 0
@@ -713,7 +713,7 @@ function scene_eventstory_404_06a.actions.start_eventstory_404_06a(_root, args)
 						duration = 0,
 						position = {
 							x = 0,
-							y = -280,
+							y = -250,
 							refpt = {
 								x = 0.47,
 								y = 0
@@ -787,7 +787,7 @@ function scene_eventstory_404_06a.actions.start_eventstory_404_06a(_root, args)
 							x = 0,
 							y = -260,
 							refpt = {
-								x = 0.31,
+								x = 0.39,
 								y = 0
 							}
 						}
@@ -822,7 +822,7 @@ function scene_eventstory_404_06a.actions.start_eventstory_404_06a(_root, args)
 						duration = 0,
 						position = {
 							x = 0,
-							y = -280,
+							y = -250,
 							refpt = {
 								x = 0.27,
 								y = 0
@@ -1037,7 +1037,7 @@ function scene_eventstory_404_06a.actions.start_eventstory_404_06a(_root, args)
 							x = 0,
 							y = -260,
 							refpt = {
-								x = 0.51,
+								x = 0.59,
 								y = 0
 							}
 						}

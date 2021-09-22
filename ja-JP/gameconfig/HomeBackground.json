@@ -325,5 +325,30 @@
         "TimeFactor": "",
         "Tips": "Unlock_BG_Level",
         "Unlook": 1
+    },
+    "HomeBackground_Animal": {
+        "BGM": "Mus_Story_Animal_Main",
+        "BGPContraction": "anualshop_scene_main_animalpreview",
+        "Condition": {
+            "LEVEL": 1
+        },
+        "Cost": "",
+        "Information": {
+            "desc": "HomeBackground_Animal_Desc",
+            "img": "Activity_ExchangeBG_Animal",
+            "name": "HomeBackground_Animal_Name"
+        },
+        "Item": "HomeBackground_1_Item",
+        "Loop": {
+            "01:00:00": {
+                "BG": "Animal_Scene_Reward"
+            }
+        },
+        "Name": "HomeBackground_Animal_Name",
+        "Price": "",
+        "Sort": 12,
+        "TimeFactor": "",
+        "Tips": "Unlock_HomeBackground_Animal",
+        "Unlook": 1
     }
 }

@@ -57,10 +57,10 @@ function scene_mapstory_Japan_3_clue_02.actions.start_mapstory_Japan_3_clue_02(_
 					modelId = "Model_NXYYi",
 					id = "NXYYi_speak",
 					rotationX = 0,
-					scale = 1.15,
+					scale = 1,
 					position = {
 						x = 0,
-						y = -390,
+						y = -330,
 						refpt = {
 							x = 0.3,
 							y = 0

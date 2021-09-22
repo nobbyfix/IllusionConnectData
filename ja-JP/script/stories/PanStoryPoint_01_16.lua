@@ -101,10 +101,10 @@ function scene_PanStoryPoint_01_16.actions.start_PanStoryPoint_01_16(_root, args
 					modelId = "Model_WEDe",
 					id = "WEDe_speak",
 					rotationX = 0,
-					scale = 1.225,
+					scale = 0.65,
 					position = {
 						x = 0,
-						y = -460,
+						y = -430,
 						refpt = {
 							x = 0.4,
 							y = 0
@@ -260,12 +260,12 @@ function scene_PanStoryPoint_01_16.actions.start_PanStoryPoint_01_16b(_root, arg
 			args = function (_ctx)
 				return {
 					modelId = "Model_HSheng",
-					scale = 1.05,
+					scale = 0.75,
 					id = "HSheng_speak",
 					rotation = 0,
 					position = {
 						x = 0,
-						y = -330,
+						y = -260,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -743,7 +743,7 @@ function scene_PanStoryPoint_01_16.actions.start_clue_81(_root, args)
 					duration = 0,
 					position = {
 						x = 0,
-						y = -330,
+						y = -260,
 						refpt = {
 							x = 0.75,
 							y = 0

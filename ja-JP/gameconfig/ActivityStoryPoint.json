@@ -1969,6 +1969,210 @@
         ],
         "StoryLink": "eventstory_zuohe_05a"
     },
+    "AnimalS01S01": {
+        "FirstReward": "AnimalS01S01_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -250
+        ],
+        "Map": "AnimalM01",
+        "Name": "AnimalS01S01_Name",
+        "NextStoryPoint": [
+            "AnimalS01S02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_fightfor_01a"
+    },
+    "AnimalS01S02": {
+        "FirstReward": "AnimalS01S02_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "AnimalM01",
+        "Name": "AnimalS01S02_Name",
+        "NextStoryPoint": [
+            "AnimalS01S03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "AnimalSN02"
+        ],
+        "PreStoryPoint": [
+            "AnimalS01S01"
+        ],
+        "StoryLink": "eventstory_fightfor_02a"
+    },
+    "AnimalS01S03": {
+        "FirstReward": "AnimalS01S03_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "AnimalM01",
+        "Name": "AnimalS01S03_Name",
+        "NextStoryPoint": [
+            "AnimalS01S04"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "AnimalSN05"
+        ],
+        "PreStoryPoint": [
+            "AnimalS01S02"
+        ],
+        "StoryLink": "eventstory_fightfor_03a"
+    },
+    "AnimalS01S04": {
+        "FirstReward": "AnimalS01S04_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "AnimalM01",
+        "Name": "AnimalS01S04_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "AnimalSN07"
+        ],
+        "PreStoryPoint": [
+            "AnimalS01S03"
+        ],
+        "StoryLink": "eventstory_fightfor_04a"
+    },
+    "AnimalS02S01": {
+        "FirstReward": "AnimalS01S01_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "AnimalM02",
+        "Name": "AnimalS02S01_Name",
+        "NextStoryPoint": [
+            "AnimalS02S02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_fightfor_05a"
+    },
+    "AnimalS02S02": {
+        "FirstReward": "AnimalS01S02_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "AnimalM02",
+        "Name": "AnimalS02S02_Name",
+        "NextStoryPoint": [
+            "AnimalS02S03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "AnimalSE02"
+        ],
+        "PreStoryPoint": [
+            "AnimalS02S01"
+        ],
+        "StoryLink": "eventstory_fightfor_06a"
+    },
+    "AnimalS02S03": {
+        "FirstReward": "AnimalS01S03_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -250
+        ],
+        "Map": "AnimalM02",
+        "Name": "AnimalS02S03_Name",
+        "NextStoryPoint": [
+            "AnimalS02S04"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "AnimalSE05"
+        ],
+        "PreStoryPoint": [
+            "AnimalS02S02"
+        ],
+        "StoryLink": "eventstory_fightfor_07a"
+    },
+    "AnimalS02S04": {
+        "FirstReward": "AnimalS01S04_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "AnimalM02",
+        "Name": "AnimalS02S04_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "AnimalSE08"
+        ],
+        "PreStoryPoint": [
+            "AnimalS02S03"
+        ],
+        "StoryLink": "eventstory_fightfor_08a"
+    },
     "BakingS01S01": {
         "FirstReward": "BakingS01S01_Reward",
         "Icon": "s_album_story_1",

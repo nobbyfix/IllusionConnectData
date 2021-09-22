@@ -112,6 +112,36 @@ end
 function scene_BBLMaDate01.actions.start_BBLMaDate01(_root, args)
 	return sequential({
 		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 0.1
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "hideButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "skipButton"),
+			args = function (_ctx)
+				return {
+					date = true
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "reviewButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "autoPlayButton")
+		}),
+		act({
 			action = "activateNode",
 			actor = __getnode__(_root, "bg")
 		}),
@@ -150,11 +180,11 @@ function scene_BBLMaDate01.actions.start_BBLMaDate01(_root, args)
 					modelId = "Model_BBLMa",
 					id = "BBLMa_speak",
 					rotationX = 0,
-					scale = 1.155,
+					scale = 0.66,
 					zorder = 10,
 					position = {
 						x = 0,
-						y = -450,
+						y = -350,
 						refpt = {
 							x = 0.45,
 							y = 0
@@ -171,14 +201,14 @@ function scene_BBLMaDate01.actions.start_BBLMaDate01(_root, args)
 							zorder = 1100,
 							visible = true,
 							id = "BBLMa_face",
-							scale = 1.025,
+							scale = 1,
 							anchorPoint = {
 								x = 0.5,
 								y = 0.5
 							},
 							position = {
-								x = 90.3,
-								y = 779.5
+								x = 150.5,
+								y = 1123
 							}
 						}
 					}

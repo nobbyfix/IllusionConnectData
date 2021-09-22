@@ -135,9 +135,9 @@ function CarnivalMediator:initHeroPanel()
 	talkPanel:setLocalZOrder(2)
 
 	local activityConfig = self._model:getConfig().ActivityConfig
-	local heroSprite, _, spineani, picInfo = IconFactory:createRoleIconSprite({
+	local heroSprite, _, spineani, picInfo = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = 6,
+		frameId = "bustframe9",
 		id = activityConfig.ModelId
 	})
 	self._sharedSpine = spineani
@@ -850,14 +850,40 @@ function CarnivalMediator:onClickPlayStory()
 		local storyId = groupConfig.story
 		local storyDirector = self:getInjector():getInstance(story.StoryDirector)
 		local storyAgent = storyDirector:getStoryAgent()
+		local startTs = self:getInjector():getInstance(GameServerAgent):remoteTimeMillis()
 
-		storyAgent:play(storyId, nil, )
-	else
-		self:dispatch(ShowTipEvent({
-			duration = 0.2,
-			tip = Strings:get("Carnival_Story_Unlock")
-		}))
+		local function endCallback()
+			local customKey = self._model:getId() .. "_story"
+			local customData = self._customDataSystem:getValue(PrefixType.kGlobal, customKey)
+			local id_first = 0
+
+			if not customData then
+				id_first = 1
+			end
+
+			local endTs = self:getInjector():getInstance(GameServerAgent):remoteTimeMillis()
+
+			StatisticSystem:send({
+				op_type = "plot_activity",
+				point = "plot_end",
+				type = "plot_end",
+				activityid = self._model:getTitle(),
+				plot_id = storyId,
+				plot_name = Strings:get(group:getDesc()),
+				id_first = id_first,
+				totaltime = endTs - startTs
+			})
+		end
+
+		storyAgent:play(storyId, nil, endCallback)
+
+		return
 	end
+
+	self:dispatch(ShowTipEvent({
+		duration = 0.2,
+		tip = Strings:get("Carnival_Story_Unlock")
+	}))
 end
 
 function CarnivalMediator:onClickBack(sender, eventType)
@@ -874,7 +900,7 @@ function CarnivalMediator:getRewardIconAndAmount(rewardInfo, scale)
 			local config = ConfigReader:getRecordById("Surface", id)
 
 			if config and config.Id then
-				local icon = IconFactory:createRoleIconSprite({
+				local icon = IconFactory:createRoleIconSpriteNew({
 					id = config.Model
 				})
 

@@ -363,10 +363,10 @@ function scene_story03_3a.actions.start_story03_3a(_root, args)
 					modelId = "Model_XLai",
 					id = "XLai_speak",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.76,
 					position = {
 						x = 0,
-						y = -305,
+						y = -300,
 						refpt = {
 							x = 0.75,
 							y = 0
@@ -390,8 +390,8 @@ function scene_story03_3a.actions.start_story03_3a(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = 0,
-								y = 709.5
+								x = 0.5,
+								y = 899
 							}
 						}
 					}
@@ -451,10 +451,10 @@ function scene_story03_3a.actions.start_story03_3a(_root, args)
 					modelId = "Model_Story_CLMan",
 					id = "CLMan_speak",
 					rotationX = 0,
-					scale = 0.9,
+					scale = 0.63,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.25,
 							y = 0
@@ -478,8 +478,8 @@ function scene_story03_3a.actions.start_story03_3a(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = 60.5,
-								y = 787
+								x = 77.5,
+								y = 1045.5
 							}
 						}
 					}
@@ -988,10 +988,10 @@ function scene_story03_3a.actions.start_story03_3a(_root, args)
 					modelId = "Model_Story_FTLEShi",
 					id = "FTLEShi_speak",
 					rotationX = 0,
-					scale = 1.025,
+					scale = 0.6,
 					position = {
 						x = 0,
-						y = -510,
+						y = -280,
 						refpt = {
 							x = 0.15,
 							y = 0
@@ -1015,8 +1015,8 @@ function scene_story03_3a.actions.start_story03_3a(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = -16,
-								y = 1000
+								x = -41.5,
+								y = 1286.1
 							}
 						}
 					}
@@ -1186,10 +1186,10 @@ function scene_story03_3a.actions.start_story03_3a(_root, args)
 					modelId = "Model_YKDMLai",
 					id = "YKDMLai_speak",
 					rotationX = 0,
-					scale = 0.825,
+					scale = 0.7,
 					position = {
 						x = 0,
-						y = -178,
+						y = -290,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -1247,7 +1247,7 @@ function scene_story03_3a.actions.start_story03_3a(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -178,
+						y = -290,
 						refpt = {
 							x = 0.52,
 							y = 0
@@ -1264,7 +1264,7 @@ function scene_story03_3a.actions.start_story03_3a(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -178,
+						y = -290,
 						refpt = {
 							x = 0.48,
 							y = 0
@@ -1281,7 +1281,7 @@ function scene_story03_3a.actions.start_story03_3a(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -178,
+						y = -290,
 						refpt = {
 							x = 0.52,
 							y = 0
@@ -1298,7 +1298,7 @@ function scene_story03_3a.actions.start_story03_3a(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -178,
+						y = -290,
 						refpt = {
 							x = 0.48,
 							y = 0
@@ -1315,7 +1315,7 @@ function scene_story03_3a.actions.start_story03_3a(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -178,
+						y = -290,
 						refpt = {
 							x = 0.52,
 							y = 0
@@ -1332,7 +1332,7 @@ function scene_story03_3a.actions.start_story03_3a(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -178,
+						y = -290,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -1358,11 +1358,11 @@ function scene_story03_3a.actions.start_story03_3a(_root, args)
 					modelId = "Model_LDu",
 					id = "LDu_speak",
 					rotationX = 0,
-					scale = 1.075,
+					scale = 0.74,
 					zorder = 5,
 					position = {
 						x = 0,
-						y = -345,
+						y = -400,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -1386,8 +1386,8 @@ function scene_story03_3a.actions.start_story03_3a(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = 11.5,
-								y = 774.5
+								x = -30.5,
+								y = 1089
 							}
 						}
 					}
@@ -1618,7 +1618,7 @@ function scene_story03_3a.actions.start_story03_3a(_root, args)
 					duration = 0,
 					position = {
 						x = 0,
-						y = -305,
+						y = -300,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -1669,7 +1669,7 @@ function scene_story03_3a.actions.start_story03_3a(_root, args)
 					duration = 0.3,
 					position = {
 						x = 0,
-						y = -305,
+						y = -300,
 						refpt = {
 							x = 0.25,
 							y = 0
@@ -1697,7 +1697,7 @@ function scene_story03_3a.actions.start_story03_3a(_root, args)
 					duration = 0,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.75,
 							y = 0
@@ -1764,10 +1764,10 @@ function scene_story03_3a.actions.start_story03_3a(_root, args)
 					modelId = "Model_MLYTLSha",
 					id = "MLYTLSha_speak",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.7,
 					position = {
 						x = 0,
-						y = -355,
+						y = -320,
 						refpt = {
 							x = 0.75,
 							y = 0
@@ -1790,8 +1790,8 @@ function scene_story03_3a.actions.start_story03_3a(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = -29,
-								y = 829
+								x = -34.5,
+								y = 1096
 							}
 						}
 					}
@@ -1960,10 +1960,10 @@ function scene_story03_3a.actions.start_story03_3b(_root, args)
 					modelId = "Model_Story_ZTXChang",
 					id = "ZTXChang_speak",
 					rotationX = 0,
-					scale = 1.08,
+					scale = 0.6,
 					position = {
 						x = 0,
-						y = -368,
+						y = -270,
 						refpt = {
 							x = 0.35,
 							y = 0
@@ -1987,8 +1987,8 @@ function scene_story03_3a.actions.start_story03_3b(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = -50.8,
-								y = 789
+								x = -51.3,
+								y = 977.5
 							}
 						}
 					}
@@ -2234,10 +2234,10 @@ function scene_story03_3a.actions.start_story03_3d(_root, args)
 					modelId = "Model_Story_ZTXChang",
 					id = "ZTXChang_speak",
 					rotationX = 0,
-					scale = 1.08,
+					scale = 0.6,
 					position = {
 						x = 0,
-						y = -368,
+						y = -270,
 						refpt = {
 							x = 0.35,
 							y = 0
@@ -2261,8 +2261,8 @@ function scene_story03_3a.actions.start_story03_3d(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = -50.8,
-								y = 789
+								x = -51.3,
+								y = 977.5
 							}
 						}
 					}
@@ -2405,7 +2405,7 @@ function scene_story03_3a.actions.start_story03_3d(_root, args)
 					duration = 0,
 					position = {
 						x = 0,
-						y = -355,
+						y = -320,
 						refpt = {
 							x = 0.53,
 							y = 0
@@ -2587,7 +2587,7 @@ function scene_story03_3a.actions.start_story03_3d(_root, args)
 					duration = 0,
 					position = {
 						x = 0,
-						y = -510,
+						y = -280,
 						refpt = {
 							x = 0.75,
 							y = 0
@@ -2679,7 +2679,7 @@ function scene_story03_3a.actions.start_story03_3d(_root, args)
 					duration = 0,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -2727,7 +2727,7 @@ function scene_story03_3a.actions.start_story03_3d(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.5,
 							y = 0.05
@@ -2744,7 +2744,7 @@ function scene_story03_3a.actions.start_story03_3d(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -2761,7 +2761,7 @@ function scene_story03_3a.actions.start_story03_3d(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.5,
 							y = 0.05
@@ -2778,7 +2778,7 @@ function scene_story03_3a.actions.start_story03_3d(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -3188,7 +3188,7 @@ function scene_story03_3a.actions.start_story03_3d(_root, args)
 					duration = 0.5,
 					position = {
 						x = 0,
-						y = -510,
+						y = -280,
 						refpt = {
 							x = 1.5,
 							y = 0
@@ -3212,7 +3212,7 @@ function scene_story03_3a.actions.start_story03_3d(_root, args)
 					duration = 0.5,
 					position = {
 						x = 0,
-						y = -368,
+						y = -270,
 						refpt = {
 							x = 1.5,
 							y = 0
@@ -3229,7 +3229,7 @@ function scene_story03_3a.actions.start_story03_3d(_root, args)
 					duration = 0,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = -0.5,
 							y = 0
@@ -3255,7 +3255,7 @@ function scene_story03_3a.actions.start_story03_3d(_root, args)
 					duration = 0.5,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -3290,7 +3290,7 @@ function scene_story03_3a.actions.start_story03_3d(_root, args)
 						duration = 0.5,
 						position = {
 							x = 0,
-							y = -295,
+							y = -250,
 							refpt = {
 								x = 0.5,
 								y = -0.1
@@ -3326,7 +3326,7 @@ function scene_story03_3a.actions.start_story03_3d(_root, args)
 						duration = 0.5,
 						position = {
 							x = 0,
-							y = -295,
+							y = -250,
 							refpt = {
 								x = 0.5,
 								y = -0.2
@@ -3345,7 +3345,7 @@ function scene_story03_3a.actions.start_story03_3d(_root, args)
 						duration = 0.3,
 						position = {
 							x = 0,
-							y = -295,
+							y = -250,
 							refpt = {
 								x = -0.5,
 								y = -0.2

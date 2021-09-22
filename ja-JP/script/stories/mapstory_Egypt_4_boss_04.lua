@@ -68,10 +68,10 @@ function scene_mapstory_Egypt_4_boss_04.actions.start_mapstory_Egypt_4_boss_04(_
 					modelId = "Model_YLMGZhu",
 					id = "YLMGZhu_speak",
 					rotationX = 0,
-					scale = 1.4,
+					scale = 0.75,
 					position = {
 						x = 0,
-						y = -450,
+						y = -360,
 						refpt = {
 							x = 0.7,
 							y = 0
@@ -95,8 +95,8 @@ function scene_mapstory_Egypt_4_boss_04.actions.start_mapstory_Egypt_4_boss_04(_
 								y = 0.5
 							},
 							position = {
-								x = 73.5,
-								y = 691.5
+								x = 108.5,
+								y = 1021
 							}
 						}
 					}
@@ -182,10 +182,10 @@ function scene_mapstory_Egypt_4_boss_04.actions.start_mapstory_Egypt_4_boss_04(_
 					modelId = "Model_TTKMeng",
 					id = "TTKMeng_speak",
 					rotationX = 0,
-					scale = 1.05,
+					scale = 0.7,
 					position = {
 						x = 0,
-						y = -255,
+						y = -370,
 						refpt = {
 							x = 0.7,
 							y = 0
@@ -209,8 +209,8 @@ function scene_mapstory_Egypt_4_boss_04.actions.start_mapstory_Egypt_4_boss_04(_
 								y = 0.5
 							},
 							position = {
-								x = 14,
-								y = 615.5
+								x = 20,
+								y = 991
 							}
 						}
 					}
@@ -298,7 +298,7 @@ function scene_mapstory_Egypt_4_boss_04.actions.start_mapstory_Egypt_4_boss_04(_
 					duration = 0.5,
 					position = {
 						x = 0,
-						y = -255,
+						y = -370,
 						refpt = {
 							x = 1.5,
 							y = 0

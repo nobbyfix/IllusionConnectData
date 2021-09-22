@@ -147,14 +147,13 @@ function GetSurfaceMediator:showResult(data)
 			end)
 
 			local roleNode = heroAnim:getChildByName("roleNode")
-			local realImage = IconFactory:createRoleIconSprite({
+			local realImage = IconFactory:createRoleIconSpriteNew({
 				useAnim = true,
-				iconType = "Bust6",
+				frameId = "bustframe9",
 				id = surface:getModel()
 			})
 
-			realImage:setAnchorPoint(0.5, 0.5)
-			realImage:addTo(roleNode)
+			realImage:addTo(roleNode):posite(100, 70)
 			heroAnim:addTo(heroNode)
 			heroAnim:setPosition(cc.p(-10, -123))
 		end

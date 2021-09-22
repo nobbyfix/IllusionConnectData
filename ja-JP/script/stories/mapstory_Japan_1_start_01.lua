@@ -66,10 +66,10 @@ function scene_mapstory_Japan_1_start_01.actions.start_mapstory_Japan_1_start_01
 					modelId = "Model_Story_ZTXChang",
 					id = "ZTXChang_speak",
 					rotationX = 0,
-					scale = 1.08,
+					scale = 0.6,
 					position = {
 						x = 0,
-						y = -368,
+						y = -300,
 						refpt = {
 							x = 0.35,
 							y = 0
@@ -93,8 +93,8 @@ function scene_mapstory_Japan_1_start_01.actions.start_mapstory_Japan_1_start_01
 								y = 0.5
 							},
 							position = {
-								x = -50.8,
-								y = 789
+								x = -51.3,
+								y = 977.5
 							}
 						}
 					}
@@ -159,10 +159,10 @@ function scene_mapstory_Japan_1_start_01.actions.start_mapstory_Japan_1_start_01
 					modelId = "Model_ZTXCun",
 					id = "ZTXCun_speak",
 					rotationX = 0,
-					scale = 1.235,
+					scale = 0.7,
 					position = {
 						x = 0,
-						y = -400,
+						y = -360,
 						refpt = {
 							x = 0.1,
 							y = 0

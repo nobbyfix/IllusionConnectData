@@ -87,6 +87,36 @@ end
 function scene_KTSJKeDate03.actions.start_KTSJKeDate03(_root, args)
 	return sequential({
 		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 0.1
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "hideButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "skipButton"),
+			args = function (_ctx)
+				return {
+					date = true
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "reviewButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "autoPlayButton")
+		}),
+		act({
 			action = "activateNode",
 			actor = __getnode__(_root, "bg")
 		}),
@@ -125,13 +155,13 @@ function scene_KTSJKeDate03.actions.start_KTSJKeDate03(_root, args)
 					modelId = "Model_KTSJKe",
 					id = "KTSJKe_speak",
 					rotationX = 0,
-					scale = 1.035,
+					scale = 0.7,
 					zorder = 11,
 					position = {
 						x = 0,
-						y = -550,
+						y = -440,
 						refpt = {
-							x = 0.5,
+							x = 0.54,
 							y = 0
 						}
 					},
@@ -153,8 +183,8 @@ function scene_KTSJKeDate03.actions.start_KTSJKeDate03(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = -54.5,
-								y = 988.5
+								x = -68.5,
+								y = 1274
 							}
 						}
 					}

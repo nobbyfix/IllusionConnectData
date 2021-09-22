@@ -950,6 +950,18 @@
         "clz": "int",
         "content": 0
     },
+    "Bust_Battleend_Show": {
+        "clz": "string[]",
+        "content": [
+            "Model_SP_PNCao_NNuo"
+        ]
+    },
+    "Bust_Inbattle_Show": {
+        "clz": "string[]",
+        "content": [
+            "Model_SP_PNCao"
+        ]
+    },
     "BuyCrystal_Base": {
         "clz": "dict",
         "content": {
@@ -8554,6 +8566,40 @@
         "clz": "int",
         "content": 5
     },
+    "StageArena_RobotTeamNum": {
+        "clz": "array",
+        "content": [
+            {
+                "num": [
+                    1,
+                    4
+                ],
+                "stage": [
+                    0,
+                    2
+                ]
+            },
+            {
+                "num": [
+                    6,
+                    10
+                ],
+                "stage": [
+                    3,
+                    5
+                ]
+            },
+            {
+                "num": [
+                    10
+                ],
+                "stage": [
+                    6,
+                    8
+                ]
+            }
+        ]
+    },
     "StageArena_Robot_Job_Deviation": {
         "clz": "dict",
         "content": {
@@ -8859,7 +8905,8 @@
             },
             {
                 "Desc": [
-                    "EXPLORE_TITLE3_Rule1"
+                    "EXPLORE_TITLE3_Rule1",
+                    "EXPLORE_TITLE3_Rule2"
                 ],
                 "Title": "EXPLORE_TITLE3"
             }
@@ -9344,7 +9391,9 @@
             "AMLBLTe",
             "SP_KTSJKe",
             "WLSTNCi",
-            "LEMHou"
+            "LEMHou",
+            "XDE",
+            "HLa"
         ]
     },
     "Tower_1_GrowMaxValue": {
@@ -9609,6 +9658,46 @@
             "Type": 1
         }
     },
+    "TrapModel_ZFQi_1_1": {
+        "clz": "dict",
+        "content": {
+            "Effect": "diceng_lansekeji",
+            "EffectPos": 40,
+            "Loop": 1,
+            "Priority": null,
+            "Type": 1
+        }
+    },
+    "TrapModel_ZFQi_1_2": {
+        "clz": "dict",
+        "content": {
+            "Effect": "dicengbianse_lansekeji",
+            "EffectPos": 40,
+            "Loop": 0,
+            "Priority": null,
+            "Type": 1
+        }
+    },
+    "TrapModel_ZFQi_2_1": {
+        "clz": "dict",
+        "content": {
+            "Effect": "shangceng_lansekeji",
+            "EffectPos": 40,
+            "Loop": 1,
+            "Priority": null,
+            "Type": 1
+        }
+    },
+    "TrapModel_ZFQi_2_2": {
+        "clz": "dict",
+        "content": {
+            "Effect": "shangcengbianse_lansekeji",
+            "EffectPos": 40,
+            "Loop": 0,
+            "Priority": null,
+            "Type": 1
+        }
+    },
     "TrapModel_cheng_yumao": {
         "clz": "dict",
         "content": {
@@ -9643,6 +9732,7 @@
         "clz": "string[]",
         "content": [
             "spstage",
+            "dreamhouse",
             "explore",
             "tower",
             "dreamchallenge",
@@ -9985,5 +10075,16 @@
     "friend_add_reset_key": {
         "clz": "string",
         "content": "Friend_add"
+    },
+    "heroshow_limit": {
+        "clz": "int",
+        "content": 10
+    },
+    "surface_notred": {
+        "clz": "int[]",
+        "content": [
+            1,
+            5
+        ]
     }
 }

@@ -832,8 +832,6 @@ function BattleUIMediator:dragBegan(cardArray, activeCard, touchPoint)
 	end
 
 	self._activeCard = activeCard
-
-	self._battleGround:previewCellLocks()
 end
 
 function BattleUIMediator:dragMoved(cardArray, activeCard, touchPoint)
@@ -868,35 +866,58 @@ function BattleUIMediator:dragMoved(cardArray, activeCard, touchPoint)
 	end
 end
 
+function BattleUIMediator:dragExtraSkillBegan(cardArray, activeCard, touchPoint)
+	self._extraAreaTouch = nil
+	self._extraSkillParam = false
+	self._extraSkillZone = false
+
+	self:dragBegan(cardArray, activeCard, touchPoint)
+
+	local unitManager = self._viewContext:getValue("BattleUnitManager")
+	local result = unitManager:checkTargetPreview(activeCard:getCollesionRule(), -1)
+
+	self._battleGround:previewTargets(result, true)
+
+	self._extraAreaTouch = result
+end
+
+function BattleUIMediator:retsetAllCell(cellId)
+	for i = 1, 9 do
+		if cellId ~= i then
+			local targetCell = self._battleGround:getCellById(i)
+
+			targetCell:getDisplayNode():setScale(1)
+
+			local targetCell = self._battleGround:getCellById(0 - i)
+
+			targetCell:getDisplayNode():setScale(1)
+		end
+	end
+end
+
 function BattleUIMediator:dragExtraSkillMoved(cardArray, activeCard, touchPoint)
 	if self._battleGround then
-		local col, cellId = self._battleGround:checkTouchCollision(activeCard, touchPoint)
+		local col, cellId, isLeft = self._battleGround:checkTouchCollision(activeCard, touchPoint, self._extraAreaTouch)
 
 		if col then
 			if cellId ~= activeCard.tmpCellId then
 				activeCard.tmpCellId = cellId
-				local result = {}
+				self._extraSkillParam = {
+					col,
+					cellId,
+					isLeft
+				}
+				local targetCell = self._battleGround:getCellById(isLeft and cellId or 0 - cellId)
 
-				for i = 1, 9 do
-					result[i] = {
-						color = "Green",
-						id = i
-					}
-				end
-
-				for i = 1, 9 do
-					result[#result + 1] = {
-						color = "Green",
-						id = 0 - i
-					}
-				end
-
-				self._battleGround:previewTargets(result)
+				targetCell:getDisplayNode():runAction(cc.ScaleTo:create(0.2, 1.2))
+			else
+				self:retsetAllCell(cellId)
 			end
 		else
-			activeCard.tmpCellId = nil
+			self:retsetAllCell()
 
-			self._battleGround:resumePreviews()
+			self._extraSkillParam = nil
+			activeCard.tmpCellId = nil
 		end
 	end
 end
@@ -917,11 +938,10 @@ function BattleUIMediator:dragExtraSkillEnded(cardArray, activeCard, touchPoint)
 		self:hideHeroTip()
 		self._battleGround:resumeProfessionalRestraint()
 		self._battleGround:resumeCellLocks()
+		self:retsetAllCell()
 
 		while true do
-			local canPush, posIdx, isLeft = self._battleGround:checkCanPushHero(activeCard, touchPoint)
-
-			if not canPush then
+			if not self._extraSkillParam then
 				break
 			end
 
@@ -936,14 +956,17 @@ function BattleUIMediator:dragExtraSkillEnded(cardArray, activeCard, touchPoint)
 			end
 
 			self:applySkillCard(cardArray, activeCard, touchPoint, {
-				cellId = posIdx,
-				isLeft = isLeft
+				cellId = self._extraSkillParam[2],
+				isLeft = self._extraSkillParam[3]
 			})
 
 			return
 		end
 
 		activeCard:restoreNormalState(cc.p(0, 0))
+		self._battleGround:resumePreviews()
+
+		self._extraAreaTouch = nil
 	end
 end
 
@@ -963,7 +986,6 @@ function BattleUIMediator:dragEnded(cardArray, activeCard, touchPoint)
 	self:stopBulletTime()
 	self:hideHeroTip()
 	self._battleGround:resumeProfessionalRestraint()
-	self._battleGround:resumeCellLocks()
 
 	while true do
 		local canPush, posIdx = self._battleGround:checkCanPushHero(activeCard, touchPoint)
@@ -1011,8 +1033,6 @@ function BattleUIMediator:dragCancelled()
 		self:hideHeroTip()
 		self._battleGround:hideUnrealSpine()
 	end
-
-	self._battleGround:resumeCellLocks()
 
 	self._activeCard = nil
 end
@@ -1615,13 +1635,24 @@ function BattleUIMediator:showHeroTip(card, showType)
 		local rolePicId = ConfigReader:getDataByNameIdAndKey("RoleModel", info.model, "Bust15")
 
 		if rolePicId ~= nil and rolePicId ~= "" then
-			local portrait = IconFactory:createRoleIconSprite({
-				iconType = 17,
-				id = info.model
+			local mid = info.model
+			local configShow = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Bust_Inbattle_Show", "content") or {}
+
+			if table.indexof(configShow, info.model) then
+				local linkMid = ConfigReader:getDataByNameIdAndKey("RoleModel", info.model, "BattleShow")
+
+				if linkMid and linkMid ~= "" then
+					mid = linkMid
+				end
+			end
+
+			local portrait = IconFactory:createRoleIconSpriteNew({
+				frameId = "bustframe15",
+				id = mid
 			})
 
 			portrait:addTo(self._heroTipAimPic)
-			portrait:offset(0, -10)
+			portrait:offset(200, -110)
 		end
 	elseif self._prevHeroShowType ~= showType then
 		if self._prevHeroShowType == 1 and showType == 2 then

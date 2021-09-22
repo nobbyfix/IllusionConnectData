@@ -436,25 +436,19 @@ all.ToolCard_QHDeng = {
 		return _env
 	end
 }
-all.ToolCard_XCZi = {
+all.ToolCard_LZHua = {
 	__new__ = function (prototype, externs, global)
 		local __function = global.__skill_function__
 		local __action = global.__skill_action__
 		local this = global.__skill({
 			global = global
 		}, prototype, externs)
-		this.Cost = externs.Cost
-
-		if this.Cost == nil then
-			this.Cost = 0
-		end
-
 		local main = __action(this, {
 			name = "main",
 			entry = prototype.main
 		})
 		this.main = global["[duration]"](this, {
-			0
+			1500
 		}, main)
 
 		return this
@@ -475,7 +469,7 @@ all.ToolCard_XCZi = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			local units = nil
+			local units, selectUnit = nil
 
 			if _env.isLeft then
 				units = global.FriendCells(_env, global.CELL_IN_POS(_env, _env.cellId))
@@ -483,28 +477,238 @@ all.ToolCard_XCZi = {
 				units = global.EnemyCells(_env, global.CELL_IN_POS(_env, _env.cellId))
 			end
 
-			if global.GetCellUnit(_env, units[1]) then
-				if global.SelectBuffCount(_env, global.GetCellUnit(_env, units[1]), global.BUFF_MARKED(_env, "Jingzi")) <= 0 then
-					if global.INSTATUS(_env, "SummonedGlass1")(_env, global.GetCellUnit(_env, units[1])) or global.INSTATUS(_env, "SummonedGlass2")(_env, global.GetCellUnit(_env, units[1])) then
-						global.AddAnim(_env, {
-							loop = 1,
-							anim = "main_cameraf",
-							zOrder = "TopLayer",
-							pos = global.UnitPos(_env, global.GetCellUnit(_env, units[1]))
-						})
-						global.Sound(_env, "Se_Skill_Camera_Hit", 1)
-						global.Kick(_env, global.GetCellUnit(_env, units[1]), true)
-					else
-						global.ApplyEnergyRecovery(_env, global.GetOwner(_env, global.FriendField(_env)), this.Cost)
-					end
-				else
-					global.ApplyEnergyRecovery(_env, global.GetOwner(_env, global.FriendField(_env)), this.Cost)
-				end
-			else
-				global.ApplyEnergyRecovery(_env, global.GetOwner(_env, global.FriendField(_env)), this.Cost)
-			end
+			selectUnit = global.GetCellUnit(_env, units[1])
 
-			global.RelocateExtraCard(_env, "skill", this.Cost)
+			if selectUnit and global.MASTER(_env, selectUnit) == false then
+				local buff = global.SpecialNumericEffect(_env, "+Liangzi_buff", {
+					"?Normal"
+				}, 1)
+
+				global.ApplyBuff(_env, selectUnit, {
+					timing = 4,
+					duration = 9999,
+					tags = {
+						"UNDISPELLABLE",
+						"UNSTEALABLE",
+						"LIANGZIHUA_FLAG"
+					}
+				}, {
+					buff
+				})
+
+				if global.SelectBuffCount(_env, selectUnit, global.BUFF_MARKED_ALL(_env, "LIANGZIHUA")) == 0 then
+					global.Sound(_env, "Se_Alert_Normal_Egg", 1)
+
+					local buffeft1 = global.Mute(_env)
+
+					global.ApplyBuff(_env, selectUnit, {
+						timing = 4,
+						duration = 10,
+						tags = {
+							"UNDISPELLABLE",
+							"UNSTEALABLE",
+							"LIANGZIHUA"
+						}
+					}, {
+						buffeft1
+					})
+
+					local buffeft2 = global.Stealth(_env, 0.2)
+
+					global.ApplyBuff(_env, selectUnit, {
+						timing = 4,
+						duration = 10,
+						tags = {
+							"STATUS",
+							"NUMERIC",
+							"BUFF",
+							"UNDISPELLABLE",
+							"STEALTH",
+							"UNSTEALABLE",
+							"LIANGZIHUA"
+						}
+					}, {
+						buffeft2
+					})
+
+					local buffeft3 = global.Immune(_env)
+
+					global.ApplyBuff(_env, selectUnit, {
+						timing = 4,
+						duration = 10,
+						tags = {
+							"UNDISPELLABLE",
+							"UNSTEALABLE",
+							"Invisible_Immune",
+							"LIANGZIHUA"
+						}
+					}, {
+						buffeft3
+					})
+					global.DispelBuff(_env, selectUnit, global.BUFF_MARKED_ALL(_env, "RANGE_LZHua"), 99)
+				end
+
+				global.RelocateExtraCard(_env, "skill", 5)
+			else
+				global.RelocateExtraCard(_env, "skill", 5)
+			end
+		end)
+
+		return _env
+	end
+}
+all.Skill_LZHua_Passive = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		local passive1 = __action(this, {
+			name = "passive1",
+			entry = prototype.passive1
+		})
+		passive1 = global["[duration]"](this, {
+			0
+		}, passive1)
+		this.passive1 = global["[trigger_by]"](this, {
+			"UNIT_BUFF_ENDED"
+		}, passive1)
+		local passive2 = __action(this, {
+			name = "passive2",
+			entry = prototype.passive2
+		})
+		passive2 = global["[duration]"](this, {
+			0
+		}, passive2)
+		this.passive2 = global["[trigger_by]"](this, {
+			"UNIT_ENTER"
+		}, passive2)
+		local passive3 = __action(this, {
+			name = "passive3",
+			entry = prototype.passive3
+		})
+		passive3 = global["[duration]"](this, {
+			0
+		}, passive3)
+		this.passive3 = global["[trigger_by]"](this, {
+			"SELF:ENTER"
+		}, passive3)
+
+		return this
+	end,
+	passive1 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.SelectBuffCount(_env, _env.unit, global.BUFF_MARKED_ALL(_env, "LIANGZIHUA")) == 0 and global.SelectBuffCount(_env, _env.unit, global.BUFF_MARKED_ALL(_env, "LIANGZIHUA_FLAG")) > 0 then
+				global.ActivateSpecificTrigger(_env, _env.unit, "PRE_ENTER", {
+					isRevive = false
+				})
+				global.ActivateSpecificTrigger(_env, _env.unit, "ENTER", {
+					isRevive = false
+				})
+				global.ActivateGlobalTrigger(_env, _env.unit, "UNIT_ENTER", {
+					isRevive = false
+				})
+				global.ApplyRPRecovery(_env, _env.unit, 10000)
+				global.DispelBuff(_env, _env.unit, global.BUFF_MARKED_ALL(_env, "LIANGZIHUA_FLAG"), 99)
+				global.ApplyBuff(_env, global.selectUnit, {
+					timing = 4,
+					duration = 10,
+					tags = {
+						"UNDISPELLABLE",
+						"UNSTEALABLE",
+						"Invisible_Immune",
+						"LIANGZIHUA"
+					}
+				}, {
+					global.buffeft3
+				})
+			end
+		end)
+
+		return _env
+	end,
+	passive2 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local buffeft1 = global.SpecialNumericEffect(_env, "+Range", {
+				"?Normal"
+			}, 0)
+
+			if not global.MASTER(_env, _env.unit) then
+				global.ApplyBuff(_env, _env.unit, {
+					timing = 4,
+					duration = 99999,
+					tags = {
+						"RANGE_LZHua"
+					}
+				}, {
+					buffeft1
+				})
+			end
+		end)
+
+		return _env
+	end,
+	passive3 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.units = nil
+
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			_env.units = global.AllUnits(_env, global.PETS)
+			local buffeft1 = global.SpecialNumericEffect(_env, "+Range", {
+				"?Normal"
+			}, 0)
+
+			for _, unit in global.__iter__(_env.units) do
+				global.ApplyBuff(_env, unit, {
+					timing = 4,
+					duration = 99999,
+					tags = {
+						"RANGE_LZHua"
+					}
+				}, {
+					buffeft1
+				})
+			end
 		end)
 
 		return _env

@@ -816,6 +816,8 @@ function DartsMediator:dartsShotOver()
 		self._curLevel = self._curLevel + 1
 
 		if self._dartsSystem:getMaxLevel() < self._curLevel then
+			self._curLevel = self._dartsSystem:getMaxLevel()
+
 			self:passGame()
 		else
 			self:NextLevel()

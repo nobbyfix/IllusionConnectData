@@ -182,12 +182,10 @@ function ChangeTeamModelMediator:teamCellSetup(cell, data)
 	local masterData = self._masterSystem:getMasterById(data:getMasterId())
 	local roleModel = masterData:getModel()
 	local info = {
-		stencil = 6,
-		iconType = "Bust5",
-		id = roleModel,
-		size = cc.size(200, 120)
+		frameId = "bustframe4_9",
+		id = roleModel
 	}
-	local masterIcon = IconFactory:createRoleIconSprite(info)
+	local masterIcon = IconFactory:createRoleIconSpriteNew(info)
 
 	masterIcon:setAnchorPoint(cc.p(0, 0))
 	masterIcon:setPosition(cc.p(0, 0))
@@ -271,7 +269,7 @@ function ChangeTeamModelMediator:initTeamHero(node, info)
 		anim:offset(-5, 18)
 	end
 
-	local heroImg = IconFactory:createRoleIconSprite(info)
+	local heroImg = IconFactory:createRoleIconSpriteNew(info)
 
 	heroImg:setScale(0.68)
 

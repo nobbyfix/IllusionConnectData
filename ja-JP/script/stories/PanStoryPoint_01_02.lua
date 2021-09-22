@@ -310,12 +310,12 @@ function scene_PanStoryPoint_01_02.actions.start_PanStoryPoint_01_02b(_root, arg
 			args = function (_ctx)
 				return {
 					modelId = "Model_HSheng",
-					scale = 1.05,
+					scale = 0.75,
 					id = "HSheng_speak",
 					rotation = 0,
 					position = {
 						x = 0,
-						y = -330,
+						y = -260,
 						refpt = {
 							x = 0.75,
 							y = 0

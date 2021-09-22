@@ -85,6 +85,36 @@ end
 function scene_PNCaoDate02.actions.start_PNCaoDate02(_root, args)
 	return sequential({
 		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 0.1
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "hideButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "skipButton"),
+			args = function (_ctx)
+				return {
+					date = true
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "reviewButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "autoPlayButton")
+		}),
+		act({
 			action = "activateNode",
 			actor = __getnode__(_root, "bg")
 		}),
@@ -123,11 +153,11 @@ function scene_PNCaoDate02.actions.start_PNCaoDate02(_root, args)
 					modelId = "Model_PNCao",
 					id = "PNCao_speak",
 					rotationX = 0,
-					scale = 1.075,
+					scale = 0.7,
 					zorder = 11,
 					position = {
 						x = 0,
-						y = -245,
+						y = -420,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -144,14 +174,14 @@ function scene_PNCaoDate02.actions.start_PNCaoDate02(_root, args)
 							zorder = 1100,
 							visible = true,
 							id = "PNCao_face",
-							scale = 0.98,
+							scale = 1,
 							anchorPoint = {
 								x = 0.5,
 								y = 0.5
 							},
 							position = {
-								x = -9,
-								y = 635.5
+								x = -11.5,
+								y = 1097
 							}
 						},
 						{
@@ -162,7 +192,7 @@ function scene_PNCaoDate02.actions.start_PNCaoDate02(_root, args)
 							image = "PNCao/PNCao_face_8.png",
 							layoutMode = 1,
 							zorder = 1100,
-							visible = true,
+							visible = false,
 							id = "PNCao_muou",
 							scale = 0.98,
 							anchorPoint = {

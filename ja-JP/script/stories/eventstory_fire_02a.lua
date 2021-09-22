@@ -433,11 +433,11 @@ function scene_eventstory_fire_02a.actions.start_eventstory_fire_02a(_root, args
 					modelId = "Model_Story_ZTXChang",
 					id = "ZTXChang",
 					rotationX = 0,
-					scale = 0.98,
+					scale = 0.6,
 					zorder = 5,
 					position = {
 						x = 0,
-						y = -300,
+						y = -270,
 						refpt = {
 							x = 0.22,
 							y = 0
@@ -461,8 +461,8 @@ function scene_eventstory_fire_02a.actions.start_eventstory_fire_02a(_root, args
 								y = 0.5
 							},
 							position = {
-								x = -50.8,
-								y = 789
+								x = -51.3,
+								y = 977.5
 							}
 						}
 					}
@@ -659,11 +659,11 @@ function scene_eventstory_fire_02a.actions.start_eventstory_fire_02a(_root, args
 					modelId = "Model_Story_ZTXChang",
 					id = "ZTXChangHHH",
 					rotationX = 0,
-					scale = 0.98,
+					scale = 0.6,
 					zorder = 5,
 					position = {
 						x = 0,
-						y = -300,
+						y = -270,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -687,8 +687,8 @@ function scene_eventstory_fire_02a.actions.start_eventstory_fire_02a(_root, args
 								y = 0.5
 							},
 							position = {
-								x = -50.8,
-								y = 789
+								x = -51.3,
+								y = 977.5
 							}
 						}
 					}
@@ -713,11 +713,11 @@ function scene_eventstory_fire_02a.actions.start_eventstory_fire_02a(_root, args
 					modelId = "Model_XSMLi",
 					id = "XSMLi",
 					rotationX = 0,
-					scale = 0.65,
+					scale = 0.75,
 					zorder = 10,
 					position = {
 						x = 0,
-						y = -430,
+						y = -480,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -741,8 +741,8 @@ function scene_eventstory_fire_02a.actions.start_eventstory_fire_02a(_root, args
 								y = 0.5
 							},
 							position = {
-								x = -132,
-								y = 627
+								x = -342.5,
+								y = 1158
 							}
 						}
 					}
@@ -770,7 +770,7 @@ function scene_eventstory_fire_02a.actions.start_eventstory_fire_02a(_root, args
 					scale = 1,
 					position = {
 						x = 0,
-						y = -460,
+						y = -350,
 						refpt = {
 							x = 0.5,
 							y = 0

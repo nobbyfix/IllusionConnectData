@@ -556,8 +556,8 @@ function LoginActivityMediator:refreshRightView()
 	if activityConfig.showHero then
 		local heroPanel = self._main:getChildByName("heroPanel")
 		local roleModel = IconFactory:getRoleModelByKey("HeroBase", activityConfig.showHero)
-		local heroSprite = IconFactory:createRoleIconSprite({
-			iconType = 6,
+		local heroSprite = IconFactory:createRoleIconSpriteNew({
+			frameId = "bustframe9",
 			id = roleModel
 		})
 

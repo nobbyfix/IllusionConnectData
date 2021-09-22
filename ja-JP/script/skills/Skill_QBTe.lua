@@ -426,6 +426,7 @@ function all.LoveDaze(_env, unit1, unit2)
 			"STATUS",
 			"DEBUFF",
 			"DAZE",
+			"ABNORMAL",
 			"DISPELLABLE"
 		}
 	}, {
@@ -439,6 +440,7 @@ function all.LoveDaze(_env, unit1, unit2)
 			"STATUS",
 			"DEBUFF",
 			"DAZE",
+			"ABNORMAL",
 			"DISPELLABLE"
 		}
 	}, {

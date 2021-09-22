@@ -176,7 +176,7 @@ function GalleryLegendInfoMediator:initHeroView()
 			has = true
 		end
 
-		local portrait, _, spineani = IconFactory:createRoleIconSprite({
+		local portrait, _, spineani = IconFactory:createRoleIconSpriteNew({
 			iconType = "Portrait",
 			id = model
 		})

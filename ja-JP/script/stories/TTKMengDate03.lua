@@ -80,6 +80,36 @@ end
 function scene_TTKMengDate03.actions.start_TTKMengDate03(_root, args)
 	return sequential({
 		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 0.1
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "hideButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "skipButton"),
+			args = function (_ctx)
+				return {
+					date = true
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "reviewButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "autoPlayButton")
+		}),
+		act({
 			action = "activateNode",
 			actor = __getnode__(_root, "bg1")
 		}),
@@ -118,11 +148,11 @@ function scene_TTKMengDate03.actions.start_TTKMengDate03(_root, args)
 					modelId = "Model_TTKMeng",
 					id = "TTKMeng_speak",
 					rotationX = 0,
-					scale = 1.05,
+					scale = 0.7,
 					zorder = 4,
 					position = {
 						x = 0,
-						y = -255,
+						y = -370,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -146,8 +176,8 @@ function scene_TTKMengDate03.actions.start_TTKMengDate03(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = 13,
-								y = 615
+								x = 20,
+								y = 991
 							}
 						}
 					}
@@ -1658,7 +1688,7 @@ function scene_TTKMengDate03.actions.start_TTKMengDate03p(_root, args)
 					duration = 1.5,
 					position = {
 						x = 0,
-						y = -255,
+						y = -370,
 						refpt = {
 							x = 1.5,
 							y = 0

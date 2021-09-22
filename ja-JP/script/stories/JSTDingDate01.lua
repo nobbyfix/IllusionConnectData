@@ -105,6 +105,36 @@ end
 function scene_JSTDingDate01.actions.start_JSTDingDate01(_root, args)
 	return sequential({
 		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 0.1
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "hideButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "skipButton"),
+			args = function (_ctx)
+				return {
+					date = true
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "reviewButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "autoPlayButton")
+		}),
+		act({
 			action = "activateNode",
 			actor = __getnode__(_root, "bg")
 		}),
@@ -144,13 +174,13 @@ function scene_JSTDingDate01.actions.start_JSTDingDate01(_root, args)
 					modelId = "Model_JSTDing",
 					id = "JSTDing_speak",
 					rotationX = 0,
-					scale = 0.94,
+					scale = 0.77,
 					zorder = 2,
 					position = {
-						x = 350,
-						y = -213,
+						x = 0,
+						y = -350,
 						refpt = {
-							x = 0.25,
+							x = 0.55,
 							y = 0
 						}
 					},
@@ -172,8 +202,8 @@ function scene_JSTDingDate01.actions.start_JSTDingDate01(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = -76.7,
-								y = 732.5
+								x = -112,
+								y = 923
 							}
 						}
 					}

@@ -87,6 +87,36 @@ end
 function scene_MLYTLShaDate03.actions.start_MLYTLShaDate03(_root, args)
 	return sequential({
 		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 0.1
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "hideButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "skipButton"),
+			args = function (_ctx)
+				return {
+					date = true
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "reviewButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "autoPlayButton")
+		}),
+		act({
 			action = "activateNode",
 			actor = __getnode__(_root, "bg")
 		}),
@@ -125,11 +155,11 @@ function scene_MLYTLShaDate03.actions.start_MLYTLShaDate03(_root, args)
 					modelId = "Model_MLYTLSha",
 					id = "MLYTLSha_speak",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.7,
 					zorder = 2,
 					position = {
 						x = 0,
-						y = -355,
+						y = -320,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -153,8 +183,8 @@ function scene_MLYTLShaDate03.actions.start_MLYTLShaDate03(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = -29,
-								y = 829
+								x = -34.5,
+								y = 1096
 							}
 						}
 					}

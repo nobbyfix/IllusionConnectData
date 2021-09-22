@@ -395,7 +395,7 @@ function CommonTeamMediator:onClickInfo(eventType, fightTip, isDouble)
 end
 
 function CommonTeamMediator:initHero(node, info)
-	local heroImg = IconFactory:createRoleIconSprite({
+	local heroImg = IconFactory:createRoleIconSpriteNew({
 		id = info.roleModel
 	})
 
@@ -1160,7 +1160,7 @@ function CommonTeamMediator:runRemovePetAction(id)
 		local id = child.id
 		local heroInfo = self:getHeroInfoById(id)
 		heroInfo.id = heroInfo.roleModel
-		local heroImg = IconFactory:createRoleIconSprite(heroInfo)
+		local heroImg = IconFactory:createRoleIconSpriteNew(heroInfo)
 
 		heroImg:setScale(0.68)
 		heroImg:addTo(heroNode)
@@ -1352,7 +1352,7 @@ function CommonTeamMediator:runInsertPetAction(child, callback)
 		local id = child.id
 		local heroInfo = self:getHeroInfoById(id)
 		heroInfo.id = heroInfo.roleModel
-		local heroImg = IconFactory:createRoleIconSprite(heroInfo)
+		local heroImg = IconFactory:createRoleIconScreateRoleIconSpriteNewprite(heroInfo)
 
 		heroImg:setScale(0.68)
 		heroImg:addTo(heroNode)
@@ -1491,7 +1491,7 @@ function CommonTeamMediator:runInsertTeamAction(id)
 
 	local heroInfo = self:getHeroInfoById(id)
 	heroInfo.id = heroInfo.roleModel
-	local heroImg = IconFactory:createRoleIconSprite(heroInfo)
+	local heroImg = IconFactory:createRoleIconSpriteNew(heroInfo)
 
 	heroImg:addTo(heroNode)
 	heroImg:setScale(0.68)

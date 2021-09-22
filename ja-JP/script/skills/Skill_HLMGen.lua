@@ -237,6 +237,7 @@ all.Skill_HLMGen_Unique = {
 						"STATUS",
 						"DEBUFF",
 						"BURNING",
+						"ABNORMAL",
 						"DISPELLABLE"
 					}
 				}, {
@@ -501,6 +502,7 @@ all.Skill_HLMGen_Unique_EX = {
 						"STATUS",
 						"DEBUFF",
 						"BURNING",
+						"ABNORMAL",
 						"DISPELLABLE"
 					}
 				}, {

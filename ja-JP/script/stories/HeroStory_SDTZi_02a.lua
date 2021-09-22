@@ -155,10 +155,10 @@ function scene_HeroStory_SDTZi_02a.actions.start_HeroStory_SDTZi_02a(_root, args
 					modelId = "Model_DFQi",
 					id = "DFQi_speak",
 					rotationX = 0,
-					scale = 0.875,
+					scale = 0.7,
 					position = {
 						x = 0,
-						y = -235,
+						y = -250,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -174,7 +174,7 @@ function scene_HeroStory_SDTZi_02a.actions.start_HeroStory_SDTZi_02a(_root, args
 							scaleX = 1,
 							scaleY = 1,
 							layoutMode = 1,
-							zorder = -1,
+							zorder = 100,
 							visible = true,
 							id = "DFQi_face",
 							anchorPoint = {
@@ -182,8 +182,8 @@ function scene_HeroStory_SDTZi_02a.actions.start_HeroStory_SDTZi_02a(_root, args
 								y = 0.5
 							},
 							position = {
-								x = 9.5,
-								y = 688.5
+								x = 6.2,
+								y = 835
 							}
 						}
 					}
@@ -276,10 +276,10 @@ function scene_HeroStory_SDTZi_02a.actions.start_HeroStory_SDTZi_02a(_root, args
 					modelId = "Model_SDTZi",
 					id = "SDTZi_speak",
 					rotationX = 0,
-					scale = 1.145,
+					scale = 0.75,
 					position = {
 						x = 0,
-						y = -330,
+						y = -375,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -303,8 +303,8 @@ function scene_HeroStory_SDTZi_02a.actions.start_HeroStory_SDTZi_02a(_root, args
 								y = 0.5
 							},
 							position = {
-								x = -79,
-								y = 679.8
+								x = -112,
+								y = 1026
 							}
 						}
 					}
@@ -439,10 +439,10 @@ function scene_HeroStory_SDTZi_02a.actions.start_HeroStory_SDTZi_02a(_root, args
 					modelId = "Model_TPGZhu",
 					id = "TPGZhu_speak",
 					rotationX = 0,
-					scale = 0.925,
+					scale = 0.85,
 					position = {
 						x = 0,
-						y = -140,
+						y = -100,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -458,7 +458,7 @@ function scene_HeroStory_SDTZi_02a.actions.start_HeroStory_SDTZi_02a(_root, args
 							scaleX = 1,
 							scaleY = 1,
 							layoutMode = 1,
-							zorder = -1,
+							zorder = 1,
 							visible = true,
 							id = "TPGZhu_face",
 							anchorPoint = {
@@ -466,8 +466,8 @@ function scene_HeroStory_SDTZi_02a.actions.start_HeroStory_SDTZi_02a(_root, args
 								y = 0.5
 							},
 							position = {
-								x = 10.4,
-								y = 581
+								x = 13.9,
+								y = 592.2
 							}
 						}
 					}

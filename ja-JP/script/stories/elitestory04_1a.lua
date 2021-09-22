@@ -353,10 +353,10 @@ function scene_elitestory04_1a.actions.start_elitestory04_1a(_root, args)
 					modelId = "Model_MGNa",
 					id = "MGNa_speak",
 					rotationX = 0,
-					scale = 1.115,
+					scale = 0.7,
 					position = {
 						x = 0,
-						y = -375,
+						y = -440,
 						refpt = {
 							x = 0.65,
 							y = 0
@@ -380,8 +380,8 @@ function scene_elitestory04_1a.actions.start_elitestory04_1a(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = -214,
-								y = 748.5
+								x = -369.5,
+								y = 1262
 							}
 						}
 					}
@@ -564,11 +564,11 @@ function scene_elitestory04_1a.actions.start_elitestory04_1a(_root, args)
 					modelId = "Model_PNCao",
 					id = "PNCao_speak",
 					rotationX = 0,
-					scale = 1.075,
+					scale = 0.7,
 					zorder = 15,
 					position = {
 						x = 0,
-						y = -245,
+						y = -420,
 						refpt = {
 							x = 0.45,
 							y = 0
@@ -585,14 +585,14 @@ function scene_elitestory04_1a.actions.start_elitestory04_1a(_root, args)
 							zorder = 1100,
 							visible = true,
 							id = "PNCao_face",
-							scale = 0.98,
+							scale = 1,
 							anchorPoint = {
 								x = 0.5,
 								y = 0.5
 							},
 							position = {
-								x = -9,
-								y = 635.5
+								x = -11.5,
+								y = 1097
 							}
 						}
 					}
@@ -740,7 +740,7 @@ function scene_elitestory04_1a.actions.start_elitestory04_1a(_root, args)
 					duration = 0.3,
 					position = {
 						x = 0,
-						y = -375,
+						y = -440,
 						refpt = {
 							x = 0.65,
 							y = 0
@@ -768,7 +768,7 @@ function scene_elitestory04_1a.actions.start_elitestory04_1a(_root, args)
 					duration = 0,
 					position = {
 						x = 0,
-						y = -245,
+						y = -420,
 						refpt = {
 							x = 0.25,
 							y = 0
@@ -878,7 +878,7 @@ function scene_elitestory04_1a.actions.start_elitestory04_1a(_root, args)
 					duration = 0.3,
 					position = {
 						x = 0,
-						y = -375,
+						y = -440,
 						refpt = {
 							x = 1,
 							y = 0
@@ -904,7 +904,7 @@ function scene_elitestory04_1a.actions.start_elitestory04_1a(_root, args)
 					duration = 0.3,
 					position = {
 						x = 0,
-						y = -245,
+						y = -420,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -996,7 +996,7 @@ function scene_elitestory04_1a.actions.start_elitestory04_1a(_root, args)
 					duration = 0.3,
 					position = {
 						x = 0,
-						y = -245,
+						y = -420,
 						refpt = {
 							x = 0.5,
 							y = -0.1
@@ -1013,7 +1013,7 @@ function scene_elitestory04_1a.actions.start_elitestory04_1a(_root, args)
 					duration = 0.3,
 					position = {
 						x = 0,
-						y = -245,
+						y = -420,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -1048,7 +1048,7 @@ function scene_elitestory04_1a.actions.start_elitestory04_1a(_root, args)
 					duration = 0.8,
 					position = {
 						x = 0,
-						y = -245,
+						y = -420,
 						refpt = {
 							x = 1,
 							y = 0

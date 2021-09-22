@@ -113,6 +113,9 @@ function MasterLeaderSkillMediator:initNode()
 
 	self._listView:setScrollBarEnabled(false)
 	self._listView:setSwallowTouches(false)
+	self._leadSkillClone:setVisible(false)
+
+	self._infoLab = self._mainPanel:getChildByName("info")
 end
 
 function MasterLeaderSkillMediator:initData(data)
@@ -139,6 +142,12 @@ function MasterLeaderSkillMediator:initData(data)
 
 	if self._active == nil then
 		self._active = {}
+	end
+
+	self._isFromDream = false
+
+	if data.isFromDream then
+		self._isFromDream = true
 	end
 end
 
@@ -185,6 +194,8 @@ function MasterLeaderSkillMediator:refreshView()
 	else
 		self:createLeadStageSkillList()
 	end
+
+	self._infoLab:setVisible(self._isFromDream and self._curTabIdx == 1)
 end
 
 function MasterLeaderSkillMediator:createSkillList()
@@ -291,8 +302,8 @@ function MasterLeaderSkillMediator:refreshSkillCell(cell, index, isActive)
 	infoPanel:removeAllChildren()
 	infoPanel:setPositionX(150)
 
-	local isShowEff = isActive
-	local isShowGray = isActive or isActive == nil
+	local isShowEff = isActive or self._isFromDream and self._curTabIdx == 1
+	local isShowGray = isActive or isActive == nil or self._isFromDream and self._curTabIdx == 1
 
 	infoPanel:setLayoutType(ccui.LayoutType.VERTICAL)
 
@@ -427,18 +438,16 @@ end
 
 function MasterLeaderSkillMediator:createMasterStandRole()
 	local info = {
-		iconType = "Bust2",
+		frameId = "bustframe2_2",
 		id = self._ownMasterRoleModel or self._master:getModel()
 	}
 
 	self._rolePanel:removeAllChildren()
 
-	local rolePic = IconFactory:createRoleIconSprite(info)
+	local rolePic = IconFactory:createRoleIconSpriteNew(info)
 
 	if rolePic then
-		rolePic:addTo(self._rolePanel)
-		rolePic:setPosition(190, 0)
-		rolePic:setScale(0.75)
+		rolePic:addTo(self._rolePanel):center(self._rolePanel:getContentSize())
 	end
 end
 

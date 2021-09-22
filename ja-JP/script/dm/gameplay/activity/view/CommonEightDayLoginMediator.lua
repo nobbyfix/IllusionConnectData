@@ -115,8 +115,8 @@ function CommonEightDayLoginMediator:setupView()
 			modelId = heroId
 		end
 
-		local img = IconFactory:createRoleIconSprite({
-			iconType = "Bust4",
+		local img = IconFactory:createRoleIconSpriteNew({
+			frameId = "bustframe9",
 			id = modelId
 		})
 

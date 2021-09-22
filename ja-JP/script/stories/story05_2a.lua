@@ -265,10 +265,10 @@ function scene_story05_2a.actions.start_story05_2a(_root, args)
 					modelId = "Model_PNCao",
 					id = "PNCao_speak",
 					rotationX = 0,
-					scale = 1.075,
+					scale = 0.7,
 					position = {
 						x = 0,
-						y = -245,
+						y = -420,
 						refpt = {
 							x = 0.65,
 							y = 0
@@ -291,8 +291,8 @@ function scene_story05_2a.actions.start_story05_2a(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = -9,
-								y = 635.5
+								x = -11.5,
+								y = 1097
 							}
 						},
 						{
@@ -303,7 +303,7 @@ function scene_story05_2a.actions.start_story05_2a(_root, args)
 							image = "PNCao/PNCao_face_8.png",
 							layoutMode = 1,
 							zorder = 1100,
-							visible = true,
+							visible = false,
 							id = "PNCao_muou",
 							scale = 0.98,
 							anchorPoint = {
@@ -406,10 +406,10 @@ function scene_story05_2a.actions.start_story05_2a(_root, args)
 					modelId = "Model_Story_CLMan",
 					id = "CLMan_speak",
 					rotationX = 0,
-					scale = 0.9,
+					scale = 0.63,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.3,
 							y = 0
@@ -433,8 +433,8 @@ function scene_story05_2a.actions.start_story05_2a(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = 60.5,
-								y = 787
+								x = 77.5,
+								y = 1045.5
 							}
 						},
 						{
@@ -450,8 +450,8 @@ function scene_story05_2a.actions.start_story05_2a(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = 60.5,
-								y = 587
+								x = 77.5,
+								y = 1045.5
 							}
 						}
 					}
@@ -841,7 +841,7 @@ function scene_story05_2a.actions.start_story05_2a(_root, args)
 					duration = 0.4,
 					position = {
 						x = 0,
-						y = -245,
+						y = -420,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -868,7 +868,7 @@ function scene_story05_2a.actions.start_story05_2a(_root, args)
 					duration = 0.05,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.1,
 							y = 0
@@ -1016,7 +1016,7 @@ function scene_story05_2a.actions.start_story05_2a(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.55,
 							y = 0
@@ -1043,7 +1043,7 @@ function scene_story05_2a.actions.start_story05_2a(_root, args)
 					duration = 0.05,
 					position = {
 						x = 0,
-						y = -245,
+						y = -420,
 						refpt = {
 							x = 0.8,
 							y = 0
@@ -1076,7 +1076,7 @@ function scene_story05_2a.actions.start_story05_2a(_root, args)
 					duration = 0.5,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.45,
 							y = 0
@@ -1148,7 +1148,7 @@ function scene_story05_2a.actions.start_story05_2a(_root, args)
 					duration = 0.5,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -1349,7 +1349,7 @@ function scene_story05_2a.actions.start_story05_2a(_root, args)
 					duration = 0.3,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 1.5,
 							y = 0

@@ -154,9 +154,9 @@ function ShopCoopExchangeMediator:setupView()
 		standRole:setVisible(false)
 		rolePanel:setVisible(true)
 
-		local heroSprite = IconFactory:createRoleIconSprite({
+		local heroSprite = IconFactory:createRoleIconSpriteNew({
 			useAnim = true,
-			iconType = 6,
+			frameId = "bustframe9",
 			id = modelId
 		})
 

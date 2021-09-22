@@ -89,5 +89,10 @@ end
 
 function LeadStageArenaLoadingMediator:close()
 	self:dismiss()
-	self._delegate:enterRivalView()
+
+	if self._delegate:getLeadStageArenaSystem():getEnterErrorCode() == 1 then
+		return
+	end
+
+	self._delegate:enterRivalViewNoReq()
 end

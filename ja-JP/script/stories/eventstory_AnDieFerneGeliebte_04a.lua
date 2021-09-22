@@ -139,11 +139,11 @@ function scene_eventstory_AnDieFerneGeliebte_04a.actions.start_eventstory_AnDieF
 					modelId = "Model_Story_CLMan",
 					id = "CLMan",
 					rotationX = 0,
-					scale = 0.9,
+					scale = 0.63,
 					zorder = 20,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = -0.35,
 							y = 0
@@ -167,8 +167,8 @@ function scene_eventstory_AnDieFerneGeliebte_04a.actions.start_eventstory_AnDieF
 								y = 0.5
 							},
 							position = {
-								x = 60.5,
-								y = 787
+								x = 77.5,
+								y = 1045.5
 							}
 						}
 					}
@@ -194,11 +194,11 @@ function scene_eventstory_AnDieFerneGeliebte_04a.actions.start_eventstory_AnDieF
 					modelId = "Model_Story_ZTXChang",
 					id = "ZTXChang",
 					rotationX = 0,
-					scale = 0.98,
+					scale = 0.6,
 					zorder = 15,
 					position = {
 						x = 0,
-						y = -300,
+						y = -270,
 						refpt = {
 							x = -0.35,
 							y = 0
@@ -222,8 +222,8 @@ function scene_eventstory_AnDieFerneGeliebte_04a.actions.start_eventstory_AnDieF
 								y = 0.5
 							},
 							position = {
-								x = -52,
-								y = 792
+								x = -51.3,
+								y = 977.5
 							}
 						}
 					}
@@ -260,11 +260,11 @@ function scene_eventstory_AnDieFerneGeliebte_04a.actions.start_eventstory_AnDieF
 					modelId = "Model_Story_FTLEShi",
 					id = "FTLEShi",
 					rotationX = 0,
-					scale = 0.9,
+					scale = 0.6,
 					zorder = 10,
 					position = {
 						x = 0,
-						y = -400,
+						y = -280,
 						refpt = {
 							x = -0.35,
 							y = 0
@@ -288,8 +288,8 @@ function scene_eventstory_AnDieFerneGeliebte_04a.actions.start_eventstory_AnDieF
 								y = 0.5
 							},
 							position = {
-								x = -16,
-								y = 998
+								x = -41.5,
+								y = 1286.1
 							}
 						}
 					}
@@ -363,7 +363,7 @@ function scene_eventstory_AnDieFerneGeliebte_04a.actions.start_eventstory_AnDieF
 						duration = 0.6,
 						position = {
 							x = 0,
-							y = -400,
+							y = -280,
 							refpt = {
 								x = 0.65,
 								y = 0
@@ -380,7 +380,7 @@ function scene_eventstory_AnDieFerneGeliebte_04a.actions.start_eventstory_AnDieF
 						duration = 0.8,
 						position = {
 							x = 0,
-							y = -295,
+							y = -250,
 							refpt = {
 								x = 0.55,
 								y = 0
@@ -397,7 +397,7 @@ function scene_eventstory_AnDieFerneGeliebte_04a.actions.start_eventstory_AnDieF
 						duration = 1,
 						position = {
 							x = 0,
-							y = -300,
+							y = -270,
 							refpt = {
 								x = 0.2,
 								y = 0
@@ -428,7 +428,7 @@ function scene_eventstory_AnDieFerneGeliebte_04a.actions.start_eventstory_AnDieF
 							duration = 0,
 							position = {
 								x = 0,
-								y = -400,
+								y = -280,
 								refpt = {
 									x = 0.75,
 									y = 0
@@ -458,7 +458,7 @@ function scene_eventstory_AnDieFerneGeliebte_04a.actions.start_eventstory_AnDieF
 							duration = 0,
 							position = {
 								x = 0,
-								y = -295,
+								y = -250,
 								refpt = {
 									x = 0.45,
 									y = 0
@@ -884,7 +884,7 @@ function scene_eventstory_AnDieFerneGeliebte_04a.actions.start_eventstory_AnDieF
 							duration = 0,
 							position = {
 								x = 0,
-								y = -295,
+								y = -250,
 								refpt = {
 									x = 0.55,
 									y = 0
@@ -903,7 +903,7 @@ function scene_eventstory_AnDieFerneGeliebte_04a.actions.start_eventstory_AnDieF
 							duration = 0.2,
 							position = {
 								x = 0,
-								y = -295,
+								y = -250,
 								refpt = {
 									x = 0.55,
 									y = 0.15
@@ -920,7 +920,7 @@ function scene_eventstory_AnDieFerneGeliebte_04a.actions.start_eventstory_AnDieF
 							duration = 0.2,
 							position = {
 								x = 0,
-								y = -295,
+								y = -250,
 								refpt = {
 									x = 0.55,
 									y = 0
@@ -1081,7 +1081,7 @@ function scene_eventstory_AnDieFerneGeliebte_04a.actions.start_eventstory_AnDieF
 							duration = 0,
 							position = {
 								x = 0,
-								y = -400,
+								y = -280,
 								refpt = {
 									x = 0.65,
 									y = 0
@@ -1099,7 +1099,7 @@ function scene_eventstory_AnDieFerneGeliebte_04a.actions.start_eventstory_AnDieF
 						duration = 0.6,
 						position = {
 							x = 0,
-							y = -400,
+							y = -280,
 							refpt = {
 								x = 1.35,
 								y = 0
@@ -1116,7 +1116,7 @@ function scene_eventstory_AnDieFerneGeliebte_04a.actions.start_eventstory_AnDieF
 						duration = 0.8,
 						position = {
 							x = 0,
-							y = -295,
+							y = -250,
 							refpt = {
 								x = 1.35,
 								y = 0
@@ -1133,7 +1133,7 @@ function scene_eventstory_AnDieFerneGeliebte_04a.actions.start_eventstory_AnDieF
 						duration = 1,
 						position = {
 							x = 0,
-							y = -300,
+							y = -270,
 							refpt = {
 								x = 1.35,
 								y = 0

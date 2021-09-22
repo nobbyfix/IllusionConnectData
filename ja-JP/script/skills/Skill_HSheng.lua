@@ -272,6 +272,7 @@ all.Skill_HSheng_Unique = {
 						"STATUS",
 						"DEBUFF",
 						"DAZE",
+						"ABNORMAL",
 						"DISPELLABLE",
 						"HSheng_Unique"
 					}
@@ -298,6 +299,7 @@ all.Skill_HSheng_Unique = {
 								"STATUS",
 								"DEBUFF",
 								"DAZE",
+								"ABNORMAL",
 								"DISPELLABLE",
 								"HSheng_Unique"
 							}
@@ -742,6 +744,7 @@ all.Skill_HSheng_Unique_EX = {
 						"STATUS",
 						"DEBUFF",
 						"DAZE",
+						"ABNORMAL",
 						"DISPELLABLE",
 						"HSheng_Unique"
 					}
@@ -766,6 +769,7 @@ all.Skill_HSheng_Unique_EX = {
 								"STATUS",
 								"DEBUFF",
 								"DAZE",
+								"ABNORMAL",
 								"DISPELLABLE",
 								"HSheng_Unique"
 							}
@@ -1112,6 +1116,7 @@ all.Skill_HSheng_Unique_Awaken = {
 						"STATUS",
 						"DEBUFF",
 						"DAZE",
+						"ABNORMAL",
 						"DISPELLABLE",
 						"HSheng_Unique"
 					}
@@ -1134,6 +1139,7 @@ all.Skill_HSheng_Unique_Awaken = {
 						tags = {
 							"STATUS",
 							"MURDERER",
+							"ABNORMAL",
 							"Skill_HSheng_Unique_Awaken",
 							"UNDISPELLABLE",
 							"UNSTEALABLE"
@@ -1182,6 +1188,7 @@ all.Skill_HSheng_Unique_Awaken = {
 								"STATUS",
 								"DEBUFF",
 								"DAZE",
+								"ABNORMAL",
 								"DISPELLABLE",
 								"HSheng_Unique"
 							}

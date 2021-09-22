@@ -706,12 +706,25 @@ function ExploreStageMediator:initStoryPoint()
 		end
 
 		if not customData then
+			local startTs = self:getInjector():getInstance(GameServerAgent):remoteTimeMillis()
 			local storyDirector = self:getInjector():getInstance(story.StoryDirector)
 			local storyAgent = storyDirector:getStoryAgent()
 
 			storyAgent:setSkipCheckSave(true)
 			storyAgent:trigger(storyLink, nil, function ()
 				callback()
+
+				local endTs = self:getInjector():getInstance(GameServerAgent):remoteTimeMillis()
+
+				StatisticSystem:send({
+					op_type = "plot_world_map",
+					point = "plot_end",
+					type = "plot_end",
+					id_first = 1,
+					plot_id = storyLink,
+					plot_name = self._mapTypeObj:getBeforeStoryName(),
+					totaltime = endTs - startTs
+				})
 			end)
 			self._customDataSystem:setValue(PrefixType.kGlobal, customKey, "1")
 		else
@@ -737,7 +750,24 @@ function ExploreStageMediator:onClickStoryPoint()
 	local storyAgent = storyDirector:getStoryAgent()
 
 	storyAgent:setSkipCheckSave(true)
-	storyAgent:trigger(storyLink, nil)
+
+	local startTs = self:getInjector():getInstance(GameServerAgent):remoteTimeMillis()
+
+	local function endCallback()
+		local endTs = self:getInjector():getInstance(GameServerAgent):remoteTimeMillis()
+
+		StatisticSystem:send({
+			op_type = "plot_world_map",
+			point = "plot_end",
+			type = "plot_end",
+			id_first = 0,
+			plot_id = storyLink,
+			plot_name = self._mapTypeObj:getBeforeStoryName(),
+			totaltime = endTs - startTs
+		})
+	end
+
+	storyAgent:trigger(storyLink, nil, endCallback)
 end
 
 function ExploreStageMediator:runStartAction()

@@ -374,7 +374,7 @@ function FightStatisticPopMediator:createSmallIcon(heroId)
 	rootPanel:setTouchEnabled(false)
 	rootPanel:setSwallowTouches(false)
 
-	local heroImg = IconFactory:createRoleIconSprite({
+	local heroImg = IconFactory:createRoleIconSpriteNew({
 		id = _rawData.model
 	})
 

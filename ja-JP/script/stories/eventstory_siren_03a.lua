@@ -1824,11 +1824,11 @@ function scene_eventstory_siren_03a.actions.start_eventstory_siren_03a(_root, ar
 					modelId = "Model_BQDShe",
 					id = "BQDShe_speak",
 					rotationX = 0,
-					scale = 1.1,
+					scale = 0.7,
 					zorder = 4,
 					position = {
 						x = 0,
-						y = -250,
+						y = -370,
 						refpt = {
 							x = 0.7,
 							y = 0
@@ -1852,8 +1852,8 @@ function scene_eventstory_siren_03a.actions.start_eventstory_siren_03a(_root, ar
 								y = 0.5
 							},
 							position = {
-								x = 1,
-								y = 575
+								x = 0.5,
+								y = 1028.1
 							}
 						}
 					}

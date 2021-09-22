@@ -197,6 +197,7 @@ all.Sk_Master_BiLei_Action1 = {
 								"STATUS",
 								"DEBUFF",
 								"DAZE",
+								"ABNORMAL",
 								"DISPELLABLE"
 							}
 						}, {

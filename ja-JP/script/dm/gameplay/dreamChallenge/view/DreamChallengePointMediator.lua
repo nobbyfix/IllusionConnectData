@@ -520,7 +520,8 @@ function DreamChallengePointMediator:refreshBuffInfo()
 			needDelay = true
 		})
 
-		local heroImg = IconFactory:createRoleIconSprite({
+		local config = ConfigReader:getRecordById("HeroBase", heros[i])
+		local heroImg = IconFactory:createRoleIconSpriteNew({
 			id = config.RoleModel
 		})
 

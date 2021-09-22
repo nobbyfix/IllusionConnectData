@@ -248,6 +248,7 @@ all.Skill_SP_SSQXin_Unique = {
 							"STATUS",
 							"DEBUFF",
 							"FREEZE",
+							"ABNORMAL",
 							"DISPELLABLE"
 						}
 					}, {
@@ -412,6 +413,7 @@ all.Skill_SP_SSQXin_Passive = {
 						"STATUS",
 						"DEBUFF",
 						"FREEZE",
+						"ABNORMAL",
 						"DISPELLABLE"
 					}
 				}, {
@@ -468,6 +470,7 @@ all.Skill_SP_SSQXin_Passive = {
 						"STATUS",
 						"DEBUFF",
 						"FREEZE",
+						"ABNORMAL",
 						"DISPELLABLE"
 					}
 				}, {
@@ -568,6 +571,7 @@ all.Skill_SP_SSQXin_Proud_EX = {
 					"STATUS",
 					"DEBUFF",
 					"FREEZE",
+					"ABNORMAL",
 					"DISPELLABLE"
 				}
 			}, {
@@ -696,6 +700,7 @@ all.Skill_SP_SSQXin_Unique_EX = {
 							"STATUS",
 							"DEBUFF",
 							"FREEZE",
+							"ABNORMAL",
 							"DISPELLABLE"
 						}
 					}, {
@@ -877,6 +882,7 @@ all.Skill_SP_SSQXin_Passive_EX = {
 						"STATUS",
 						"DEBUFF",
 						"FREEZE",
+						"ABNORMAL",
 						"DISPELLABLE"
 					}
 				}, {
@@ -933,6 +939,7 @@ all.Skill_SP_SSQXin_Passive_EX = {
 						"STATUS",
 						"DEBUFF",
 						"FREEZE",
+						"ABNORMAL",
 						"DISPELLABLE"
 					}
 				}, {

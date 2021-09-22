@@ -481,6 +481,7 @@ all.Skill_MYing_Stage = {
 							"STATUS",
 							"DEBUFF",
 							"MUTE",
+							"ABNORMAL",
 							"DISPELLABLE"
 						}
 					}, {
@@ -571,6 +572,7 @@ all.Skill_MYing_Proud_EX = {
 					"STATUS",
 					"DEBUFF",
 					"MUTE",
+					"ABNORMAL",
 					"DISPELLABLE"
 				}
 			}, {

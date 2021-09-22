@@ -130,10 +130,10 @@ function scene_eventstory_zuohe_07a.actions.start_eventstory_zuohe_07a(_root, ar
 					modelId = "Model_MLYTLSha",
 					id = "MLYTLSha_speak",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.7,
 					position = {
 						x = 0,
-						y = -355,
+						y = -320,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -157,8 +157,8 @@ function scene_eventstory_zuohe_07a.actions.start_eventstory_zuohe_07a(_root, ar
 								y = 0.5
 							},
 							position = {
-								x = -29,
-								y = 829
+								x = -34.5,
+								y = 1096
 							}
 						}
 					}
@@ -214,11 +214,11 @@ function scene_eventstory_zuohe_07a.actions.start_eventstory_zuohe_07a(_root, ar
 					modelId = "Model_Story_YYing",
 					id = "YYing_speak",
 					rotationX = 0,
-					scale = 0.94,
+					scale = 0.8,
 					zorder = 12,
 					position = {
 						x = 0,
-						y = -400,
+						y = -360,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -242,8 +242,8 @@ function scene_eventstory_zuohe_07a.actions.start_eventstory_zuohe_07a(_root, ar
 								y = 0.5
 							},
 							position = {
-								x = 0,
-								y = 915
+								x = -2.7,
+								y = 914
 							}
 						}
 					}
@@ -426,7 +426,7 @@ function scene_eventstory_zuohe_07a.actions.start_eventstory_zuohe_07a(_root, ar
 					zorder = 4,
 					position = {
 						x = 0,
-						y = -400,
+						y = -475,
 						refpt = {
 							x = 0.25,
 							y = 0
@@ -450,8 +450,8 @@ function scene_eventstory_zuohe_07a.actions.start_eventstory_zuohe_07a(_root, ar
 								y = 0.5
 							},
 							position = {
-								x = 13,
-								y = 830
+								x = 18.4,
+								y = 835.5
 							}
 						}
 					}
@@ -511,7 +511,7 @@ function scene_eventstory_zuohe_07a.actions.start_eventstory_zuohe_07a(_root, ar
 					zorder = 8,
 					position = {
 						x = 0,
-						y = -370,
+						y = -500,
 						refpt = {
 							x = 0.8,
 							y = -0.05
@@ -535,8 +535,8 @@ function scene_eventstory_zuohe_07a.actions.start_eventstory_zuohe_07a(_root, ar
 								y = 0.5
 							},
 							position = {
-								x = -14,
-								y = 792
+								x = -13.3,
+								y = 795.2
 							}
 						}
 					}

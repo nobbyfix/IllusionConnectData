@@ -78,15 +78,9 @@ function BattleHeadWidget:setMasterIcon(modelId)
 	stencil:setVisible(true)
 	stencil:setPositionY(0)
 
-	local img = IconFactory:createRoleIconSprite({
-		iconType = IconFactory.IconTypeIndex.Bust10,
-		id = modelId,
-		stencil = stencil,
-		offset = {
-			-2,
-			-14
-		},
-		stencilFlip = not self._isLeft
+	local img = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe10",
+		id = modelId
 	})
 
 	img:setScaleX(self._isLeft and 1 or -1)

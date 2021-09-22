@@ -605,7 +605,7 @@ function EquipStarLevelMediator:createTeamCell(cell, index)
 					local heroInfo = {
 						id = IconFactory:getRoleModelByKey("HeroBase", heroId)
 					}
-					local headImgName = IconFactory:createRoleIconSprite(heroInfo)
+					local headImgName = IconFactory:createRoleIconSpriteNew(heroInfo)
 
 					headImgName:setScale(0.2)
 

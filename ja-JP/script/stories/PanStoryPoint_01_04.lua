@@ -129,10 +129,10 @@ function scene_PanStoryPoint_01_04.actions.start_PanStoryPoint_01_04(_root, args
 					modelId = "Model_SDTZi",
 					id = "SDTZi_speak",
 					rotationX = 0,
-					scale = 1.145,
+					scale = 0.75,
 					position = {
 						x = 0,
-						y = -330,
+						y = -375,
 						refpt = {
 							x = 0.6,
 							y = 0
@@ -156,8 +156,8 @@ function scene_PanStoryPoint_01_04.actions.start_PanStoryPoint_01_04(_root, args
 								y = 0.5
 							},
 							position = {
-								x = -79,
-								y = 679.8
+								x = -112,
+								y = 1026
 							}
 						}
 					}
@@ -619,12 +619,12 @@ function scene_PanStoryPoint_01_04.actions.start_clue_15(_root, args)
 			args = function (_ctx)
 				return {
 					modelId = "Model_HSheng",
-					scale = 1.05,
+					scale = 0.75,
 					id = "HSheng_speak",
 					rotation = 0,
 					position = {
 						x = 0,
-						y = -330,
+						y = -260,
 						refpt = {
 							x = 0.5,
 							y = 0

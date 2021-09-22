@@ -250,10 +250,10 @@ function scene_eventstory_dreamtower_06a.actions.start_eventstory_dreamtower_06a
 					modelId = "Model_MGNa",
 					id = "MGNa_speak",
 					rotationX = 0,
-					scale = 1.115,
+					scale = 0.7,
 					position = {
 						x = 0,
-						y = -375,
+						y = -440,
 						refpt = {
 							x = 0.65,
 							y = 0
@@ -277,8 +277,8 @@ function scene_eventstory_dreamtower_06a.actions.start_eventstory_dreamtower_06a
 								y = 0.5
 							},
 							position = {
-								x = -214,
-								y = 748.5
+								x = -369.5,
+								y = 1262
 							}
 						}
 					}
@@ -355,10 +355,10 @@ function scene_eventstory_dreamtower_06a.actions.start_eventstory_dreamtower_06a
 					modelId = "Model_SDTZi",
 					id = "SDTZi_speak",
 					rotationX = 0,
-					scale = 1.145,
+					scale = 0.75,
 					position = {
 						x = 0,
-						y = -330,
+						y = -375,
 						refpt = {
 							x = 1.5,
 							y = 0
@@ -382,8 +382,8 @@ function scene_eventstory_dreamtower_06a.actions.start_eventstory_dreamtower_06a
 								y = 0.5
 							},
 							position = {
-								x = -79,
-								y = 679.8
+								x = -112,
+								y = 1026
 							}
 						}
 					}
@@ -419,7 +419,7 @@ function scene_eventstory_dreamtower_06a.actions.start_eventstory_dreamtower_06a
 						duration = 0.75,
 						position = {
 							x = 0,
-							y = -375,
+							y = -440,
 							refpt = {
 								x = 0.425,
 								y = 0
@@ -436,7 +436,7 @@ function scene_eventstory_dreamtower_06a.actions.start_eventstory_dreamtower_06a
 						duration = 1.5,
 						position = {
 							x = 0,
-							y = -330,
+							y = -375,
 							refpt = {
 								x = 0.775,
 								y = 0
@@ -1070,11 +1070,11 @@ function scene_eventstory_dreamtower_06a.actions.start_eventstory_dreamtower_06a
 					modelId = "Model_ZTXChang_YYing",
 					id = "ZTXChang_speak",
 					rotationX = 0,
-					scale = 1.08,
+					scale = 1,
 					zorder = 5,
 					position = {
 						x = 0,
-						y = -410,
+						y = -340,
 						refpt = {
 							x = 0.75,
 							y = 0
@@ -1098,8 +1098,8 @@ function scene_eventstory_dreamtower_06a.actions.start_eventstory_dreamtower_06a
 								y = 0.5
 							},
 							position = {
-								x = -36,
-								y = 795
+								x = -35.1,
+								y = 786.2
 							}
 						}
 					}

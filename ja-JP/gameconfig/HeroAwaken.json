@@ -167,6 +167,27 @@
         "StoryLink": "S11S01",
         "SurfaceId": "Surface_JNLong_Awake"
     },
+    "KMLa": {
+        "AnimSound": "Se_Effect_Awakening_KMLa",
+        "Animation": "jmi_Awaken",
+        "CutIn": [
+            0,
+            0,
+            1
+        ],
+        "ModelId": "Model_KMLa_Awake",
+        "Name": "KMLa_Awake_Name",
+        "NameDesc": "KMLa_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_KMLa_UnAwake",
+        "Reward": "HeroAwaken_KMLa",
+        "ShowHero": "KMLa",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "KMLa_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_KMLa_Awake"
+    },
     "KTSJKe": {
         "AnimSound": "",
         "Animation": "KTSJKe_Awaken",

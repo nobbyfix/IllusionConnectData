@@ -394,13 +394,13 @@ function GetRewardMediator:showOneIcon(index)
 
 	anim:addCallbackAtFrame(frame[index], function ()
 		if rewardData.type == RewardType.kHero then
-			self:showNewHeroView(rewardData.code)
+			self:showNewHeroView(rewardData.code, function ()
+				if index < self:getCurShowRewardCount() then
+					index = index + 1
 
-			if index < self:getCurShowRewardCount() then
-				index = index + 1
-
-				self:showOneIcon(index)
-			end
+					self:showOneIcon(index)
+				end
+			end)
 		elseif rewardData.type == RewardType.kSurface then
 			self._allGetSurface[#self._allGetSurface + 1] = rewardData.code
 
@@ -409,6 +409,14 @@ function GetRewardMediator:showOneIcon(index)
 
 				self:showOneIcon(index)
 			end
+		elseif rewardData.type == RewardType.kItem and rewardData.heroId then
+			self:showNewHeroView(rewardData.heroId, function ()
+				if index < self:getCurShowRewardCount() then
+					index = index + 1
+
+					self:showOneIcon(index)
+				end
+			end, false, rewardData.amount)
 		elseif index < self:getCurShowRewardCount() then
 			index = index + 1
 
@@ -417,12 +425,25 @@ function GetRewardMediator:showOneIcon(index)
 	end)
 end
 
-function GetRewardMediator:showNewHeroView(heroId, callback)
+function GetRewardMediator:showNewHeroView(heroId, callback, newHero, fragmentCount)
+	if not self._showNewHeroCount then
+		self._showNewHeroCount = 0
+	end
+
+	local maxCount = ConfigReader:getDataByNameIdAndKey("ConfigValue", "heroshow_limit", "content")
+
+	if maxCount <= self._showNewHeroCount then
+		return
+	end
+
+	self._showNewHeroCount = self._showNewHeroCount + 1
 	local view = self:getInjector():getInstance("newHeroView")
 
 	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, nil, {
 		heroId = heroId,
-		callback = callback
+		callback = callback,
+		newHero = newHero,
+		fragmentCount = fragmentCount
 	}))
 end
 

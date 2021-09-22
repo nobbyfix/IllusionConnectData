@@ -229,6 +229,7 @@ all.Skill_MKLJLuo_Unique = {
 					"STATUS",
 					"DEBUFF",
 					"DAZE",
+					"ABNORMAL",
 					"DISPELLABLE"
 				}
 			}, {
@@ -565,6 +566,7 @@ all.Skill_MKLJLuo_Unique_EX = {
 					"STATUS",
 					"DEBUFF",
 					"DAZE",
+					"ABNORMAL",
 					"DISPELLABLE"
 				}
 			}, {

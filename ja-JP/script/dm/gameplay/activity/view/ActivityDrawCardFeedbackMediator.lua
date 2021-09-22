@@ -519,29 +519,14 @@ function ActivityDrawCardFeedbackMediator:setTimer()
 
 	local gameServerAgent = self:getInjector():getInstance("GameServerAgent")
 	local remoteTimestamp = gameServerAgent:remoteTimestamp()
-	local endMills = self._activity:getStartTime() / 1000
-	local activityConfig = self._activity:getActivityConfig()
-
-	if activityConfig.Delay ~= nil then
-		endMills = endMills + activityConfig.Delay
-	else
-		endMills = self._activity:getEndTime() / 1000
-	end
+	local endMills = self._activity:getEndTime() / 1000
 
 	self._refreshTime:setString(Strings:get("DrawCardFeedback_Actiity_8"))
 
 	if remoteTimestamp < endMills and not self._timer then
 		local function checkTimeFunc()
 			remoteTimestamp = gameServerAgent:remoteTimestamp()
-			local endMills = self._activity:getStartTime() / 1000
-			local activityConfig = self._activity:getActivityConfig()
-
-			if activityConfig.Delay ~= nil then
-				endMills = endMills + activityConfig.Delay
-			else
-				endMills = self._activity:getEndTime() / 1000
-			end
-
+			local endMills = self._activity:getEndTime() / 1000
 			local remainTime = endMills - remoteTimestamp
 
 			if math.floor(remainTime) <= 0 then
@@ -782,7 +767,7 @@ end
 
 function ActivityDrawCardFeedbackMediator:getPageByIndex(index)
 	local animData = self._animName[index]
-	local image = animData.bannerInfo.Img
+	local image = "asset/ui/mainScene/" .. animData.bannerInfo.Img
 	local pageView = self._urlFuncLayout:getChildByName("pageView")
 	local pageTipPanel = self._urlFuncLayout:getChildByName("pageTipPanel")
 	local layout = ccui.Layout:create()
@@ -792,7 +777,7 @@ function ActivityDrawCardFeedbackMediator:getPageByIndex(index)
 	layout:setPosition(cc.p(0, 0))
 	layout:setContentSize(pageView:getContentSize())
 
-	local image = ccui.ImageView:create(image, ccui.TextureResType.plistType)
+	local image = ccui.ImageView:create(image, ccui.TextureResType.localType)
 
 	image:setScale(0.7)
 	image:addTo(layout):center(layout:getContentSize())

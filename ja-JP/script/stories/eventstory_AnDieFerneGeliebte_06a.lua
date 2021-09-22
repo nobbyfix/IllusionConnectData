@@ -303,14 +303,14 @@ function scene_eventstory_AnDieFerneGeliebte_06a.actions.start_eventstory_AnDieF
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					modelId = "Model_Story_CLMan01",
+					modelId = "Model_CLMan_uniform",
 					id = "NiNa",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.7,
 					zorder = 20,
 					position = {
 						x = 0,
-						y = -330,
+						y = -300,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -345,14 +345,14 @@ function scene_eventstory_AnDieFerneGeliebte_06a.actions.start_eventstory_AnDieF
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					modelId = "Model_Story_ZTXChang01",
+					modelId = "Model_ZTXChang_uniform",
 					id = "XiaoYe",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.65,
 					zorder = 15,
 					position = {
 						x = 0,
-						y = -310,
+						y = -300,
 						refpt = {
 							x = 0.34,
 							y = 0
@@ -376,14 +376,14 @@ function scene_eventstory_AnDieFerneGeliebte_06a.actions.start_eventstory_AnDieF
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					modelId = "Model_Story_FTLEShi01",
+					modelId = "Model_FTLEShi_uniform",
 					id = "TuoLiYa",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.7,
 					zorder = 15,
 					position = {
 						x = 0,
-						y = -322,
+						y = -300,
 						refpt = {
 							x = 0.64,
 							y = 0
@@ -1028,11 +1028,11 @@ function scene_eventstory_AnDieFerneGeliebte_06a.actions.start_eventstory_AnDieF
 					modelId = "Model_Story_ZTXChang",
 					id = "ZTXChang",
 					rotationX = 0,
-					scale = 0.98,
+					scale = 0.6,
 					zorder = 15,
 					position = {
 						x = 0,
-						y = -300,
+						y = -270,
 						refpt = {
 							x = 0.4,
 							y = 0
@@ -1056,8 +1056,8 @@ function scene_eventstory_AnDieFerneGeliebte_06a.actions.start_eventstory_AnDieF
 								y = 0.5
 							},
 							position = {
-								x = -52,
-								y = 792
+								x = -51.3,
+								y = 977.5
 							}
 						}
 					}

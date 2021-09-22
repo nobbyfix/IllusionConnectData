@@ -182,7 +182,7 @@ function scene_HeroStory_KTSJKe_05aend.actions.start_HeroStory_KTSJKe_05aend(_ro
 					zorder = 14,
 					position = {
 						x = 0,
-						y = -295,
+						y = -300,
 						refpt = {
 							x = 0.25,
 							y = 0
@@ -206,8 +206,8 @@ function scene_HeroStory_KTSJKe_05aend.actions.start_HeroStory_KTSJKe_05aend(_ro
 								y = 0.5
 							},
 							position = {
-								x = 60.5,
-								y = 787
+								x = 77.5,
+								y = 1045.5
 							}
 						}
 					}
@@ -263,11 +263,11 @@ function scene_HeroStory_KTSJKe_05aend.actions.start_HeroStory_KTSJKe_05aend(_ro
 					modelId = "Model_Story_FTLEShi",
 					id = "FTLEShi_speak",
 					rotationX = 0,
-					scale = 1.025,
+					scale = 0.6,
 					zorder = 13,
 					position = {
 						x = 0,
-						y = -510,
+						y = -310,
 						refpt = {
 							x = 0.75,
 							y = 0
@@ -291,8 +291,8 @@ function scene_HeroStory_KTSJKe_05aend.actions.start_HeroStory_KTSJKe_05aend(_ro
 								y = 0.5
 							},
 							position = {
-								x = -16,
-								y = 1000
+								x = -41.5,
+								y = 1286.1
 							}
 						}
 					}
@@ -368,10 +368,10 @@ function scene_HeroStory_KTSJKe_05aend.actions.start_HeroStory_KTSJKe_05aend(_ro
 					modelId = "Model_KTSJKe",
 					id = "KTSJKe_speak",
 					rotationX = 0,
-					scale = 1.035,
+					scale = 0.7,
 					position = {
 						x = 0,
-						y = -550,
+						y = -440,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -395,8 +395,8 @@ function scene_HeroStory_KTSJKe_05aend.actions.start_HeroStory_KTSJKe_05aend(_ro
 								y = 0.5
 							},
 							position = {
-								x = -54.5,
-								y = 988.5
+								x = 47,
+								y = 733
 							}
 						}
 					}

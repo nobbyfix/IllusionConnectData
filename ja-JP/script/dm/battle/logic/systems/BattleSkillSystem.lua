@@ -83,6 +83,8 @@ function BattleSkillSystem:installBuiltinEnvironment()
 	globals.floor = toSkillAPIFunc(math.floor)
 	globals.ceil = toSkillAPIFunc(math.ceil)
 	globals.abs = toSkillAPIFunc(math.abs)
+	globals.sin = toSkillAPIFunc(math.sin)
+	globals.cos = toSkillAPIFunc(math.cos)
 	globals.random = math.random
 	globals.print = toSkillAPIFunc(_G.print)
 	globals.assert = toSkillAPIFunc(_G.assert)

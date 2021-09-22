@@ -174,11 +174,11 @@ function scene_DreamChallenge_5_dulandeer_02a.actions.start_DreamChallenge_5_dul
 					modelId = "Model_LLan",
 					id = "LLan",
 					rotationX = 0,
-					scale = 1.05,
+					scale = 0.72,
 					zorder = 20,
 					position = {
 						x = 0,
-						y = -345,
+						y = -390,
 						refpt = {
 							x = 0.4,
 							y = 0
@@ -202,8 +202,8 @@ function scene_DreamChallenge_5_dulandeer_02a.actions.start_DreamChallenge_5_dul
 								y = 0.5
 							},
 							position = {
-								x = -9.5,
-								y = 770.8
+								x = -23.5,
+								y = 1095
 							}
 						}
 					}
@@ -791,7 +791,7 @@ function scene_DreamChallenge_5_dulandeer_02a.actions.start_DreamChallenge_5_dul
 					duration = 0,
 					position = {
 						x = 0,
-						y = -345,
+						y = -390,
 						refpt = {
 							x = 0.3,
 							y = 0
@@ -1446,7 +1446,7 @@ function scene_DreamChallenge_5_dulandeer_02a.actions.start_DreamChallenge_5_dul
 				actor = __getnode__(_root, "LLan"),
 				args = function (_ctx)
 					return {
-						scale = 1.2,
+						scale = 0.76,
 						duration = 0.2
 					}
 				end
@@ -1459,7 +1459,7 @@ function scene_DreamChallenge_5_dulandeer_02a.actions.start_DreamChallenge_5_dul
 						duration = 0.2,
 						position = {
 							x = 0,
-							y = -345,
+							y = -390,
 							refpt = {
 								x = 0.5,
 								y = -0.1

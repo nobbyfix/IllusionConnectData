@@ -291,9 +291,10 @@ function ActivityStageFinishMediator:refreshHeroAndReward()
 		end
 	end
 
-	local mvpSprite = IconFactory:createRoleIconSprite({
+	model = IconFactory:getSpMvpBattleEndMid(model)
+	local mvpSprite = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust9",
+		frameId = "bustframe17",
 		id = model
 	})
 
@@ -458,7 +459,7 @@ function ActivityStageFinishMediator:showHeroPanelAnim()
 	local mvpSpritePanel = anim:getChildByName("roleNode")
 
 	mvpSpritePanel:addChild(self._mvpSprite)
-	self._mvpSprite:setPosition(cc.p(50, -100))
+	self._mvpSprite:setPosition(cc.p(-200, -200))
 	anim:addTo(bgPanel):center(bgPanel:getContentSize())
 	anim:gotoAndPlay(1)
 end
@@ -521,9 +522,10 @@ function ActivityStageFinishMediator:showHeroPanel()
 		model = self:getOwnMasterRoleModel(self:getOwnMasterId(self._data.pointId))
 	end
 
-	local mvpSprite = IconFactory:createRoleIconSprite({
+	model = IconFactory:getSpMvpBattleEndMid(model)
+	local mvpSprite = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust9",
+		frameId = "bustframe17",
 		id = model
 	})
 
@@ -790,7 +792,20 @@ function ActivityStageFinishMediator:showExpPanel()
 		})
 		local descText = self._conditionPanel:getChildByName("Text_desc")
 
-		descText:setString(desc)
+		descText:setString("")
+
+		desc = string.gsub(desc, "${fontName}", "asset/font/CustomFont_FZYH_M.TTF")
+		local richdesc = descText:getParent():getChildByName("richdesc")
+
+		if not richdesc then
+			richdesc = ccui.RichText:createWithXML("", {})
+
+			richdesc:setAnchorPoint(cc.p(0, 1))
+			richdesc:renderContent(300, 0, true)
+			richdesc:addTo(descText:getParent()):posite(descText:getPosition()):setName("richdesc")
+		end
+
+		richdesc:setString(desc)
 	end
 
 	self:initRewardPanel()

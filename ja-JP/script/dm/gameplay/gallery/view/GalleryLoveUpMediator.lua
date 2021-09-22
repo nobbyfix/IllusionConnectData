@@ -111,7 +111,7 @@ function GalleryLoveUpMediator:initSoundView(sound)
 			clipType = 3,
 			id = self._model
 		}
-		local icon = IconFactory:createRoleIconSprite(heroInfo)
+		local icon = IconFactory:createRoleIconSpriteNew(heroInfo)
 
 		icon:setScale(0.6)
 

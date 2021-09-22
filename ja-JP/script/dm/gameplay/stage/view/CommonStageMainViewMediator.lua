@@ -600,11 +600,16 @@ function CommonStageMainViewMediator:createTableView()
 	local tableView = cc.TableView:create(cc.size(self._winSize.width, self._winSize.height))
 	local hideNode = self._bottomSlider:getChildByName("hideNode")
 	local bg = self._bottomSlider:getChildByName("bg")
+	self._cellNumStageType = self._stageType
+	self._mapCount = self:getChapterIndex(true)
 
 	local function numberOfCells(view)
-		local mapCount = self:getChapterIndex(true)
+		if self._cellNumStageType ~= self._stageType then
+			self._mapCount = self:getChapterIndex(true)
+			self._cellNumStageType = self._stageType
+		end
 
-		return mapCount
+		return self._mapCount
 	end
 
 	local function cellTouched(table, cell)
@@ -1026,7 +1031,7 @@ function CommonStageMainViewMediator:setupCooperateBossShow()
 			bossLevel = cooperateBoss:getBossLevel()
 		}))
 
-		local heroSprite = IconFactory:createRoleIconSprite({
+		local heroSprite = IconFactory:createRoleIconSpriteNew({
 			id = cooperateBoss:getRoleModelId()
 		})
 
@@ -1125,11 +1130,9 @@ function CommonStageMainViewMediator:setupCooperateBossShow()
 
 			item:getChildByFullName("invitePanel.info"):setVisible(false)
 
-			local heroSprite = IconFactory:createRoleIconSprite({
-				stencil = 1,
-				iconType = "Bust13",
-				id = cooperateBoss:getRoleModelId(info.confId),
-				size = cc.size(145, 106)
+			local heroSprite = IconFactory:createRoleIconSpriteNew({
+				frameId = "bustframe13_2",
+				id = cooperateBoss:getRoleModelId(info.confId)
 			})
 
 			heroSprite:addTo(bossIcon):center(bossIcon:getContentSize())

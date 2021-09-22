@@ -119,9 +119,9 @@ function ActivityReturnLetterMediator:setupLetterContent()
 		surfaceId = hero:getSurfaceId()
 	end
 
-	local heroSprite, _, spineani, picInfo = IconFactory:createRoleIconSprite({
+	local heroSprite, _, spineani, picInfo = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = 6,
+		frameId = "bustframe9",
 		id = roleModel
 	})
 

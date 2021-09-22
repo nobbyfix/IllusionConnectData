@@ -1302,7 +1302,7 @@ function scene_eventstory_deepSea_05a.actions.start_eventstory_deepSea_05a(_root
 						modelId = "Model_ALPo",
 						id = "haizi",
 						rotationX = 0,
-						scale = 0.8,
+						scale = 0.58,
 						zorder = 100,
 						position = {
 							x = 0,
@@ -1773,11 +1773,11 @@ function scene_eventstory_deepSea_05a.actions.start_eventstory_deepSea_05a(_root
 						modelId = "Model_ALPo",
 						id = "ALPo",
 						rotationX = 0,
-						scale = 0.95,
+						scale = 0.63,
 						zorder = 90,
 						position = {
 							x = 0,
-							y = -330,
+							y = -300,
 							refpt = {
 								x = 0.3,
 								y = 0
@@ -1801,8 +1801,8 @@ function scene_eventstory_deepSea_05a.actions.start_eventstory_deepSea_05a(_root
 									y = 0.5
 								},
 								position = {
-									x = -1.65,
-									y = 781
+									x = 7,
+									y = 1020
 								}
 							}
 						}
@@ -2071,7 +2071,7 @@ function scene_eventstory_deepSea_05a.actions.start_eventstory_deepSea_05a(_root
 						duration = 0.1,
 						position = {
 							x = 0,
-							y = -330,
+							y = -300,
 							refpt = {
 								x = 0.4,
 								y = 0
@@ -2154,7 +2154,7 @@ function scene_eventstory_deepSea_05a.actions.start_eventstory_deepSea_05a(_root
 						duration = 0.1,
 						position = {
 							x = 0,
-							y = -330,
+							y = -300,
 							refpt = {
 								x = 0.3,
 								y = 0

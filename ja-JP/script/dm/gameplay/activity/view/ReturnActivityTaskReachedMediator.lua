@@ -410,8 +410,8 @@ function ReturnActivityTaskReachedMediator:refreshHeroShow()
 			if showHero and showHero.modelId then
 				heroPanel:removeAllChildren()
 
-				local heroSprite = IconFactory:createRoleIconSprite({
-					iconType = "Bust4",
+				local heroSprite = IconFactory:createRoleIconSpriteNew({
+					frameId = "bustframe9",
 					id = showHero.modelId,
 					useAnim = showHero.anim == "1" and true or false
 				})

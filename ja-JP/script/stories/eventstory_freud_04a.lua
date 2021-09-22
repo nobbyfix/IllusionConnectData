@@ -383,11 +383,11 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 						modelId = "Model_SLMen",
 						id = "SLMen",
 						rotationX = 0,
-						scale = 0.86,
+						scale = 0.65,
 						zorder = 30,
 						position = {
 							x = 35,
-							y = -100,
+							y = -250,
 							refpt = {
 								x = 0.5,
 								y = 0
@@ -400,8 +400,8 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 								pathType = "STORY_FACE",
 								type = "Image",
 								image = "SLMen/SLMen_face_5.png",
-								scaleX = 0.97,
-								scaleY = 0.97,
+								scaleX = 1,
+								scaleY = 1,
 								layoutMode = 1,
 								zorder = 1100,
 								visible = true,
@@ -411,8 +411,8 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 									y = 0.5
 								},
 								position = {
-									x = -35,
-									y = 740
+									x = -45.5,
+									y = 1156
 								}
 							}
 						}
@@ -539,11 +539,11 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 						modelId = "Model_LLan",
 						id = "LLan",
 						rotationX = 0,
-						scale = 1.05,
+						scale = 0.72,
 						zorder = 30,
 						position = {
 							x = 10,
-							y = -345,
+							y = -390,
 							refpt = {
 								x = -0.35,
 								y = 0
@@ -567,8 +567,8 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 									y = 0.5
 								},
 								position = {
-									x = -9.5,
-									y = 770.8
+									x = -23.5,
+									y = 1095
 								}
 							}
 						}
@@ -594,11 +594,11 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 						modelId = "Model_JNLong",
 						id = "JNLong",
 						rotationX = 0,
-						scale = 1.02,
+						scale = 0.65,
 						zorder = 30,
 						position = {
 							x = -177,
-							y = -335,
+							y = -330,
 							refpt = {
 								x = 1.5,
 								y = 0
@@ -622,8 +622,8 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 									y = 0.5
 								},
 								position = {
-									x = 177.5,
-									y = 806.5
+									x = 268.5,
+									y = 1184
 								}
 							}
 						}
@@ -669,7 +669,7 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 						duration = 0.2,
 						position = {
 							x = 10,
-							y = -345,
+							y = -390,
 							refpt = {
 								x = 0.4,
 								y = 0
@@ -686,7 +686,7 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 						duration = 0.2,
 						position = {
 							x = -177,
-							y = -335,
+							y = -330,
 							refpt = {
 								x = 0.6,
 								y = 0
@@ -723,7 +723,7 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 						duration = 0.3,
 						position = {
 							x = -177,
-							y = -335,
+							y = -330,
 							refpt = {
 								x = 0.5,
 								y = 0
@@ -741,7 +741,7 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 							duration = 0.3,
 							position = {
 								x = 10,
-								y = -345,
+								y = -390,
 								refpt = {
 									x = -0.1,
 									y = 0
@@ -759,7 +759,7 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 								duration = 0.1,
 								position = {
 									x = -177,
-									y = -335,
+									y = -330,
 									refpt = {
 										x = 0.6,
 										y = 0
@@ -776,7 +776,7 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 								duration = 0.2,
 								position = {
 									x = -177,
-									y = -335,
+									y = -330,
 									refpt = {
 										x = 0.65,
 										y = 0
@@ -827,7 +827,7 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 					duration = 0.4,
 					position = {
 						x = -177,
-						y = -335,
+						y = -330,
 						refpt = {
 							x = 1.35,
 							y = 0
@@ -861,7 +861,7 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 						duration = 0.3,
 						position = {
 							x = 10,
-							y = -345,
+							y = -390,
 							refpt = {
 								x = 0.5,
 								y = 0
@@ -934,11 +934,11 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 						modelId = "Model_XSMLi",
 						id = "XSMLi",
 						rotationX = 0,
-						scale = 1.05,
+						scale = 0.75,
 						zorder = 30,
 						position = {
 							x = 0,
-							y = -350,
+							y = -480,
 							refpt = {
 								x = 0.1,
 								y = 0
@@ -962,8 +962,8 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 									y = 0.5
 								},
 								position = {
-									x = -182.4,
-									y = 792.5
+									x = -342.5,
+									y = 1158
 								}
 							}
 						}
@@ -1000,11 +1000,11 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 						modelId = "Model_YLMGZhu",
 						id = "YLMGZhu",
 						rotationX = 0,
-						scale = 1,
+						scale = 0.75,
 						zorder = 30,
 						position = {
 							x = -73.4,
-							y = -220,
+							y = -360,
 							refpt = {
 								x = 0.7,
 								y = 0
@@ -1028,8 +1028,8 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 									y = 0.5
 								},
 								position = {
-									x = 73.4,
-									y = 691.6
+									x = 108.5,
+									y = 1021
 								}
 							}
 						}
@@ -1055,11 +1055,11 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 						modelId = "Model_TPGZhu",
 						id = "TPGZhu",
 						rotationX = 0,
-						scale = 0.98,
+						scale = 0.85,
 						zorder = 15,
 						position = {
 							x = -10,
-							y = -130,
+							y = -100,
 							refpt = {
 								x = 1.3,
 								y = -0.3
@@ -1083,8 +1083,8 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 									y = 0.5
 								},
 								position = {
-									x = 10,
-									y = 581
+									x = 13.9,
+									y = 592.2
 								}
 							}
 						}
@@ -1110,11 +1110,11 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 						modelId = "Model_SDTZi",
 						id = "SDTZi",
 						rotationX = 0,
-						scale = 1.07,
+						scale = 0.75,
 						zorder = 15,
 						position = {
 							x = 80,
-							y = -260,
+							y = -375,
 							refpt = {
 								x = -0.3,
 								y = -0.3
@@ -1138,8 +1138,8 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 									y = 0.5
 								},
 								position = {
-									x = -79.2,
-									y = 679.7
+									x = -112,
+									y = 1026
 								}
 							}
 						}
@@ -1294,7 +1294,7 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 							duration = 0.1,
 							position = {
 								x = 182,
-								y = -350,
+								y = -480,
 								refpt = {
 									x = 0.1,
 									y = -0.1
@@ -1311,7 +1311,7 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 							duration = 0.25,
 							position = {
 								x = 182,
-								y = -350,
+								y = -480,
 								refpt = {
 									x = -0.6,
 									y = 0.5
@@ -1330,7 +1330,7 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 							duration = 0.1,
 							position = {
 								x = -73.4,
-								y = -220,
+								y = -360,
 								refpt = {
 									x = 0.7,
 									y = -0.1
@@ -1346,8 +1346,8 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 						return {
 							duration = 0.25,
 							position = {
-								x = 182,
-								y = -350,
+								x = -73.4,
+								y = -360,
 								refpt = {
 									x = 1.6,
 									y = 0.5
@@ -1414,7 +1414,7 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 						duration = 0.4,
 						position = {
 							x = -10,
-							y = -130,
+							y = -100,
 							refpt = {
 								x = 0.7,
 								y = 0
@@ -1431,7 +1431,7 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 						duration = 0.4,
 						position = {
 							x = 80,
-							y = -260,
+							y = -375,
 							refpt = {
 								x = 0.2,
 								y = 0
@@ -1486,11 +1486,11 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 						modelId = "Model_BBLMa",
 						id = "BBLMa",
 						rotationX = 0,
-						scale = 1,
+						scale = 0.66,
 						zorder = 30,
 						position = {
 							x = -90,
-							y = -320,
+							y = -350,
 							refpt = {
 								x = 1,
 								y = 1
@@ -1503,8 +1503,8 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 								pathType = "STORY_FACE",
 								type = "Image",
 								image = "BBLMa/BBLMa_face_1.png",
-								scaleX = 1.03,
-								scaleY = 1.03,
+								scaleX = 1,
+								scaleY = 1,
 								layoutMode = 1,
 								zorder = 1100,
 								visible = true,
@@ -1514,8 +1514,8 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 									y = 0.5
 								},
 								position = {
-									x = 90.2,
-									y = 779.5
+									x = 150.5,
+									y = 1123
 								}
 							}
 						}
@@ -1541,11 +1541,11 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 						modelId = "Model_CZheng",
 						id = "CZheng",
 						rotationX = 0,
-						scale = 1,
+						scale = 0.7,
 						zorder = 35,
 						position = {
 							x = 80,
-							y = -320,
+							y = -430,
 							refpt = {
 								x = 0,
 								y = 1
@@ -1569,8 +1569,8 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 									y = 0.5
 								},
 								position = {
-									x = -81.8,
-									y = 776.6
+									x = -113,
+									y = 1182
 								}
 							}
 						}
@@ -1596,11 +1596,11 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 						modelId = "Model_BEr",
 						id = "BEr",
 						rotationX = 0,
-						scale = 1.08,
+						scale = 0.7,
 						zorder = 30,
 						position = {
 							x = -127,
-							y = -330,
+							y = -470,
 							refpt = {
 								x = 0.7,
 								y = 0
@@ -1759,7 +1759,7 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 							duration = 0.2,
 							position = {
 								x = -127,
-								y = -330,
+								y = -470,
 								refpt = {
 									x = 1,
 									y = 0.1
@@ -1776,7 +1776,7 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 							duration = 0.3,
 							position = {
 								x = -127,
-								y = -330,
+								y = -470,
 								refpt = {
 									x = 1.4,
 									y = 0
@@ -1888,7 +1888,7 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 							duration = 0.3,
 							position = {
 								x = -90,
-								y = -320,
+								y = -350,
 								refpt = {
 									x = 0.7,
 									y = -0.1
@@ -1905,7 +1905,7 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 							duration = 0.1,
 							position = {
 								x = -90,
-								y = -320,
+								y = -350,
 								refpt = {
 									x = 0.7,
 									y = 0
@@ -1924,7 +1924,7 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 							duration = 0.3,
 							position = {
 								x = 80,
-								y = -320,
+								y = -430,
 								refpt = {
 									x = 0.3,
 									y = 0.1
@@ -1941,7 +1941,7 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 							duration = 0.1,
 							position = {
 								x = 80,
-								y = -320,
+								y = -430,
 								refpt = {
 									x = 0.3,
 									y = 0
@@ -1969,7 +1969,7 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 							duration = 0.2,
 							position = {
 								x = 80,
-								y = -320,
+								y = -430,
 								refpt = {
 									x = 0.5,
 									y = 0
@@ -2030,7 +2030,7 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 						duration = 0.2,
 						position = {
 							x = 80,
-							y = -320,
+							y = -430,
 							refpt = {
 								x = 0.3,
 								y = 0
@@ -2311,11 +2311,11 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 						modelId = "Model_Story_CLMan",
 						id = "CLMan",
 						rotationX = 0,
-						scale = 0.9,
+						scale = 0.63,
 						zorder = 125,
 						position = {
 							x = 0,
-							y = -295,
+							y = -250,
 							refpt = {
 								x = 0.6,
 								y = 0
@@ -2339,8 +2339,8 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 									y = 0.5
 								},
 								position = {
-									x = 60.5,
-									y = 787
+									x = 77.5,
+									y = 1045.5
 								}
 							}
 						}
@@ -2366,11 +2366,11 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 						modelId = "Model_Story_ZTXChang",
 						id = "ZTXChang",
 						rotationX = 0,
-						scale = 0.98,
+						scale = 0.6,
 						zorder = 120,
 						position = {
 							x = 0,
-							y = -300,
+							y = -270,
 							refpt = {
 								x = 0.4,
 								y = 0
@@ -2394,8 +2394,8 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 									y = 0.5
 								},
 								position = {
-									x = -50.8,
-									y = 789
+									x = -51.3,
+									y = 977.5
 								}
 							}
 						}
@@ -2494,7 +2494,7 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 						duration = 0.2,
 						position = {
 							x = 0,
-							y = -300,
+							y = -270,
 							refpt = {
 								x = 0.3,
 								y = 0
@@ -2642,11 +2642,11 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 						modelId = "Model_MGNa",
 						id = "MGNa",
 						rotationX = 0,
-						scale = 1.02,
+						scale = 0.7,
 						zorder = 230,
 						position = {
 							x = 214,
-							y = -295,
+							y = -440,
 							refpt = {
 								x = 0.5,
 								y = 0
@@ -2670,8 +2670,8 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 									y = 0.5
 								},
 								position = {
-									x = -213.9,
-									y = 748.5
+									x = -369.5,
+									y = 1262
 								}
 							}
 						}
@@ -2698,7 +2698,7 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 							duration = 0.2,
 							position = {
 								x = 0,
-								y = -300,
+								y = -270,
 								refpt = {
 									x = 0.15,
 									y = 0
@@ -2715,7 +2715,7 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 							duration = 0.2,
 							position = {
 								x = 0,
-								y = -295,
+								y = -250,
 								refpt = {
 									x = 0.75,
 									y = 0
@@ -3643,7 +3643,7 @@ function scene_eventstory_freud_04a.actions.start_eventstory_freud_04a(_root, ar
 					duration = 0,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.8,
 							y = 0

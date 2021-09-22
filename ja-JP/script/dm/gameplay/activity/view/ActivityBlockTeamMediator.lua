@@ -940,7 +940,7 @@ function ActivityBlockTeamMediator:initTeamHero(node, info)
 
 	super.initTeamHero(self, node, info)
 
-	local heroImg = IconFactory:createRoleIconSprite({
+	local heroImg = IconFactory:createRoleIconSpriteNew({
 		id = info.roleModel
 	})
 
@@ -1250,11 +1250,9 @@ function ActivityBlockTeamMediator:refreshMasterInfo()
 
 	if ownMasterId then
 		local roleModel = self:getOwnMasterRoleModel(ownMasterId)
-		local sprite = IconFactory:createRoleIconSprite({
-			stencil = 6,
-			iconType = "Bust6",
-			id = roleModel,
-			size = cc.size(171.5, 274)
+		local sprite = IconFactory:createRoleIconSpriteNew({
+			frameId = "bustframe6_3",
+			id = roleModel
 		})
 
 		sprite:setAnchorPoint(cc.p(0, 0))

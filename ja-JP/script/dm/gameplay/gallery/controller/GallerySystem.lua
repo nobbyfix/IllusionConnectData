@@ -953,6 +953,12 @@ function GallerySystem:getActivityStoryRedPoint(storyId)
 end
 
 function GallerySystem:getActivityStorySaveStatus(storyId)
+	local unlock, tips = self:checkEnabled()
+
+	if not unlock then
+		return 0
+	end
+
 	return cc.UserDefault:getInstance():getIntegerForKey(self:getActivityStoryUserDefaultKey(storyId), 0)
 end
 
@@ -977,12 +983,18 @@ function GallerySystem:getActivityStoryUserDefaultKey(storyId)
 	return "ACTIVITY_STORY_REDPOINT_" .. storyId .. idStr[1]
 end
 
-function GallerySystem:getStoryIdByStoryLink(link)
+function GallerySystem:getStoryIdByStoryLink(link, pointId)
 	local data = ConfigReader:getDataTable("GalleryMemory")
 
 	for storyId, value in pairs(data) do
 		if value.StoryLink == link then
-			return storyId
+			if pointId then
+				if value.Condition[1].params[2] == pointId then
+					return storyId
+				end
+			else
+				return storyId
+			end
 		end
 	end
 

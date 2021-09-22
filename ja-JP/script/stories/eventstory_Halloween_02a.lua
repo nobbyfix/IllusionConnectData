@@ -203,11 +203,11 @@ function scene_eventstory_Halloween_02a.actions.start_eventstory_Halloween_02a(_
 					modelId = "Model_KMLa",
 					id = "KMLa_speak",
 					rotationX = 0,
-					scale = 0.94,
+					scale = 0.65,
 					zorder = 2,
 					position = {
 						x = 426,
-						y = -253,
+						y = -160,
 						refpt = {
 							x = 0.25,
 							y = 0
@@ -231,8 +231,8 @@ function scene_eventstory_Halloween_02a.actions.start_eventstory_Halloween_02a(_
 								y = 0.5
 							},
 							position = {
-								x = 39.9,
-								y = 629.75
+								x = 47,
+								y = 733
 							}
 						}
 					}
@@ -384,7 +384,7 @@ function scene_eventstory_Halloween_02a.actions.start_eventstory_Halloween_02a(_
 					duration = 0.2,
 					position = {
 						x = 426,
-						y = -233,
+						y = -140,
 						refpt = {
 							x = 0.25,
 							y = 0
@@ -412,7 +412,7 @@ function scene_eventstory_Halloween_02a.actions.start_eventstory_Halloween_02a(_
 					duration = 0.2,
 					position = {
 						x = 426,
-						y = -253,
+						y = -160,
 						refpt = {
 							x = 0.25,
 							y = 0
@@ -771,7 +771,7 @@ function scene_eventstory_Halloween_02a.actions.start_eventstory_Halloween_02a(_
 						duration = 0.2,
 						position = {
 							x = 446,
-							y = -273,
+							y = -180,
 							refpt = {
 								x = 0.25,
 								y = 0
@@ -800,7 +800,7 @@ function scene_eventstory_Halloween_02a.actions.start_eventstory_Halloween_02a(_
 						duration = 0.2,
 						position = {
 							x = 462,
-							y = -473,
+							y = -380,
 							refpt = {
 								x = 0.25,
 								y = 0
@@ -861,7 +861,7 @@ function scene_eventstory_Halloween_02a.actions.start_eventstory_Halloween_02a(_
 						duration = 3,
 						position = {
 							x = 426,
-							y = -253,
+							y = -160,
 							refpt = {
 								x = 0.25,
 								y = 0
@@ -1007,7 +1007,7 @@ function scene_eventstory_Halloween_02a.actions.start_eventstory_Halloween_02a(_
 					duration = 0.2,
 					position = {
 						x = 426,
-						y = -233,
+						y = -140,
 						refpt = {
 							x = 0.25,
 							y = 0
@@ -1109,7 +1109,7 @@ function scene_eventstory_Halloween_02a.actions.start_eventstory_Halloween_02a(_
 					duration = 0.2,
 					position = {
 						x = 426,
-						y = -253,
+						y = -160,
 						refpt = {
 							x = 0.25,
 							y = 0

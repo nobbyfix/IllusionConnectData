@@ -77,10 +77,10 @@ function scene_mapstory_Egypt_4_start_01.actions.start_mapstory_Egypt_4_start_01
 					modelId = "Model_Story_FTLEShi",
 					id = "FTLEShi_speak",
 					rotationX = 0,
-					scale = 1.025,
+					scale = 0.6,
 					position = {
 						x = 0,
-						y = -510,
+						y = -310,
 						refpt = {
 							x = 0.3,
 							y = 0
@@ -104,8 +104,8 @@ function scene_mapstory_Egypt_4_start_01.actions.start_mapstory_Egypt_4_start_01
 								y = 0.5
 							},
 							position = {
-								x = -16,
-								y = 998
+								x = -41.5,
+								y = 1286.1
 							}
 						}
 					}
@@ -189,10 +189,10 @@ function scene_mapstory_Egypt_4_start_01.actions.start_mapstory_Egypt_4_start_01
 					modelId = "Model_YMHTPu",
 					id = "YMHTPu_speak",
 					rotationX = 0,
-					scale = 1.2,
+					scale = 0.7,
 					position = {
 						x = 0,
-						y = -435,
+						y = -485,
 						refpt = {
 							x = 0.75,
 							y = 0
@@ -257,10 +257,10 @@ function scene_mapstory_Egypt_4_start_01.actions.start_mapstory_Egypt_4_start_01
 					modelId = "Model_HLDNan",
 					id = "HLDNan_speak",
 					rotationX = 0,
-					scale = 0.95,
+					scale = 0.65,
 					position = {
 						x = 0,
-						y = -260,
+						y = -340,
 						refpt = {
 							x = 0.3,
 							y = 0

@@ -179,15 +179,15 @@ function NewMasterMediator:showResult(data)
 			end)
 
 			local roleNode = heroAnim:getChildByName("roleNode")
-			local realImage = IconFactory:createRoleIconSprite({
+			local realImage = IconFactory:createRoleIconSpriteNew({
 				useAnim = true,
-				iconType = "Bust2",
+				frameId = "bustframe2_1",
 				id = masterConfig.RoleModel
 			})
 
 			realImage:setAnchorPoint(0.5, 0.5)
 			realImage:addTo(roleNode)
-			realImage:setPosition(cc.p(300, -200))
+			realImage:setPosition(cc.p(0, 160))
 			heroAnim:addTo(heroNode)
 			heroAnim:setPosition(cc.p(0, 0))
 		end

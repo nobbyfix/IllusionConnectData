@@ -150,8 +150,8 @@ function HeroShowNotOwnMediator:initView()
 
 	local rightPanel = self._main:getChildByFullName("rightPanel")
 	local heroIcon = self._main:getChildByFullName("heroView.heroIcon")
-	local img = IconFactory:createRoleIconSprite({
-		iconType = "Bust4",
+	local img = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe9",
 		id = self._modelId or self._heroInfoData.roleModel
 	})
 
@@ -229,13 +229,6 @@ function HeroShowNotOwnMediator:initView()
 
 	label1:setString(positions[1] or "")
 	label2:setString(positions[2] or "")
-	label2:setPositionX(label1:getPositionX() + label1:getContentSize().width + 18)
-
-	local p = rightPanel:getChildByFullName("nichePanel.nichePanel")
-
-	p:setScale9Enabled(true)
-	p:setCapInsets(cc.rect(100, 30, 1, 1))
-	p:setContentSize(cc.size(label1:getContentSize().width + label2:getContentSize().width + 110, 60))
 
 	self._effectCell = self:getView():getChildByName("effectCellClone")
 
@@ -294,7 +287,7 @@ function HeroShowNotOwnMediator:initView()
 				local info = {
 					id = self._heroInfoData.roleModel
 				}
-				local heroImg = IconFactory:createRoleIconSprite(info)
+				local heroImg = IconFactory:createRoleIconSpriteNew(info)
 
 				heroImg:addTo(head):center(head:getContentSize()):setScale(0.27):offset(-1, 0)
 			elseif self._attrAdds[i].type == StageAttrAddType.HERO_TYPE then
@@ -368,8 +361,8 @@ function HeroShowNotOwnMediator:refreshBaseInfo(refrshHero)
 
 		heroIcon:removeAllChildren()
 
-		local img = IconFactory:createRoleIconSprite({
-			iconType = "Bust4",
+		local img = IconFactory:createRoleIconSpriteNew({
+			frameId = "bustframe9",
 			id = self._modelId or self._heroInfoData.roleModel
 		})
 

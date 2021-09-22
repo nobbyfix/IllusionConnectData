@@ -1568,7 +1568,7 @@ function SettingMediator:isBindPhoneBtnShow()
 end
 
 function SettingMediator:isGameAnnounceShow()
-	return true
+	return false
 end
 
 function SettingMediator:isAccountCenterBtnShow()

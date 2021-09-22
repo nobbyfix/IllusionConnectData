@@ -357,6 +357,7 @@ all.Skill_SYAi_Unique = {
 							"STATUS",
 							"DEBUFF",
 							"DAZE",
+							"ABNORMAL",
 							"DISPELLABLE"
 						}
 					}, {
@@ -509,6 +510,7 @@ all.Skill_SYAi_Unique_EX = {
 							"STATUS",
 							"DEBUFF",
 							"DAZE",
+							"ABNORMAL",
 							"DISPELLABLE"
 						}
 					}, {

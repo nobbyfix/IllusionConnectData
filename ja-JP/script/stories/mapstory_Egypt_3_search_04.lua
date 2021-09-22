@@ -58,7 +58,7 @@ function scene_mapstory_Egypt_3_search_04.actions.start_mapstory_Egypt_3_search_
 					modelId = "Model_YMHTPu",
 					id = "YMHTPu_speak",
 					rotationX = 0,
-					scale = 1.2,
+					scale = 0.7,
 					position = {
 						x = 0,
 						y = -485,
@@ -126,11 +126,11 @@ function scene_mapstory_Egypt_3_search_04.actions.start_mapstory_Egypt_3_search_
 					modelId = "Model_Story_FTLEShi",
 					id = "FTLEShi_speak",
 					rotationX = 0,
-					scale = 1.025,
+					scale = 0.6,
 					zorder = 13,
 					position = {
 						x = 0,
-						y = -510,
+						y = -310,
 						refpt = {
 							x = 0.25,
 							y = 0
@@ -154,8 +154,8 @@ function scene_mapstory_Egypt_3_search_04.actions.start_mapstory_Egypt_3_search_
 								y = 0.5
 							},
 							position = {
-								x = -16,
-								y = 998
+								x = -41.5,
+								y = 1286.1
 							}
 						}
 					}
@@ -220,10 +220,10 @@ function scene_mapstory_Egypt_3_search_04.actions.start_mapstory_Egypt_3_search_
 					modelId = "Model_TLMi",
 					id = "TLMi_speak",
 					rotationX = 0,
-					scale = 1.15,
+					scale = 0.66,
 					position = {
 						x = 0,
-						y = -350,
+						y = -360,
 						refpt = {
 							x = 0.25,
 							y = 0
@@ -340,10 +340,10 @@ function scene_mapstory_Egypt_3_search_04.actions.start_mapstory_Egypt_3_search_
 					modelId = "Model_HLDNan",
 					id = "HLDNan_speak",
 					rotationX = 0,
-					scale = 0.95,
+					scale = 0.65,
 					position = {
 						x = 0,
-						y = -260,
+						y = -340,
 						refpt = {
 							x = 0.3,
 							y = 0

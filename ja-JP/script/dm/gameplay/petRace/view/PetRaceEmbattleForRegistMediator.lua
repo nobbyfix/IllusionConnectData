@@ -787,7 +787,7 @@ function PetRaceEmbattleForRegistMediator:initHero(node, info)
 
 	heroPanel:removeAllChildren()
 
-	local heroImg = IconFactory:createRoleIconSprite({
+	local heroImg = IconFactory:createRoleIconSpriteNew({
 		id = info.id
 	})
 

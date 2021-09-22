@@ -105,7 +105,8 @@ function ActivityFateEncountersMediator:refreshViewOnChoose()
 	self._heroName:setString(Strings:get(nameStr))
 	self._roldNode:removeAllChildren()
 
-	local heroSprite = IconFactory:createRoleIconSprite({
+	local heroSprite = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe9",
 		iconType = 6,
 		id = self._curModleId
 	})
@@ -119,11 +120,9 @@ function ActivityFateEncountersMediator:initRoleCell(node, modelId)
 
 	heroPanel:removeAllChildren()
 
-	local heroIcon = IconFactory:createRoleIconSprite({
-		stencil = 1,
-		iconType = "Bust5",
-		id = modelId,
-		size = cc.size(368, 446)
+	local heroIcon = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe4_8",
+		id = modelId
 	})
 
 	heroIcon:setScale(0.6)

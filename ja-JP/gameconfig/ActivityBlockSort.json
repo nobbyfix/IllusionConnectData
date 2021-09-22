@@ -1,4 +1,442 @@
 {
+    "AnimalSE01": {
+        "BlockPoint": [
+            "AnimalSE01M",
+            "AnimalSE01E"
+        ],
+        "HiddenStory": "",
+        "Map": "AnimalM02",
+        "Name": "BlockPoint_AnimalS09M_Name",
+        "NextPoint": [
+            "AnimalSE02"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "AnimalS02S01"
+        ],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2021-10-07 05:00:00"
+        }
+    },
+    "AnimalSE02": {
+        "BlockPoint": [
+            "AnimalSE02M",
+            "AnimalSE02E"
+        ],
+        "HiddenStory": "",
+        "Map": "AnimalM02",
+        "Name": "BlockPoint_AnimalS10M_Name",
+        "NextPoint": [
+            "AnimalSE03"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "AnimalSE01"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2021-10-07 05:00:00"
+        }
+    },
+    "AnimalSE03": {
+        "BlockPoint": [
+            "AnimalSE03M",
+            "AnimalSE03E"
+        ],
+        "HiddenStory": "",
+        "Map": "AnimalM02",
+        "Name": "BlockPoint_AnimalS11M_Name",
+        "NextPoint": [
+            "AnimalSE04"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "AnimalSE02"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "AnimalS02S02"
+        ],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2021-10-07 05:00:00"
+        }
+    },
+    "AnimalSE04": {
+        "BlockPoint": [
+            "AnimalSE04M",
+            "AnimalSE04E"
+        ],
+        "HiddenStory": "",
+        "Map": "AnimalM02",
+        "Name": "BlockPoint_AnimalS12M_Name",
+        "NextPoint": [
+            "AnimalSE05"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "AnimalSE03"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2021-10-07 05:00:00"
+        }
+    },
+    "AnimalSE05": {
+        "BlockPoint": [
+            "AnimalSE05M",
+            "AnimalSE05E"
+        ],
+        "HiddenStory": "",
+        "Map": "AnimalM02",
+        "Name": "BlockPoint_AnimalS13M_Name",
+        "NextPoint": [
+            "AnimalSE06"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "AnimalSE04"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2021-10-07 05:00:00"
+        }
+    },
+    "AnimalSE06": {
+        "BlockPoint": [
+            "AnimalSE06M",
+            "AnimalSE06E"
+        ],
+        "HiddenStory": "",
+        "Map": "AnimalM02",
+        "Name": "BlockPoint_AnimalS14M_Name",
+        "NextPoint": [
+            "AnimalSE07"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "AnimalSE05"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "AnimalS02S03"
+        ],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2021-10-07 05:00:00"
+        }
+    },
+    "AnimalSE07": {
+        "BlockPoint": [
+            "AnimalSE07M",
+            "AnimalSE07E"
+        ],
+        "HiddenStory": "",
+        "Map": "AnimalM02",
+        "Name": "BlockPoint_AnimalS15M_Name",
+        "NextPoint": [
+            "AnimalSE08"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "AnimalSE06"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2021-10-07 05:00:00"
+        }
+    },
+    "AnimalSE08": {
+        "BlockPoint": [
+            "AnimalSE08M",
+            "AnimalSE08E"
+        ],
+        "HiddenStory": "",
+        "Map": "AnimalM02",
+        "Name": "BlockPoint_AnimalS16M_Name",
+        "NextPoint": [
+            "AnimalSE09"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "AnimalSE07"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2021-10-07 05:00:00"
+        }
+    },
+    "AnimalSE09": {
+        "BlockPoint": [
+            "AnimalSH01M"
+        ],
+        "HiddenStory": "",
+        "Map": "AnimalM02",
+        "Name": "BlockPoint_AnimalS01H_Name",
+        "NextPoint": [
+            "AnimalSE10"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "AnimalSE08"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "HARD",
+        "UnlockCondition": {
+            "start": "2021-10-07 05:00:00"
+        }
+    },
+    "AnimalSE10": {
+        "BlockPoint": [
+            "AnimalSH02M"
+        ],
+        "HiddenStory": "",
+        "Map": "AnimalM02",
+        "Name": "BlockPoint_AnimalS02H_Name",
+        "NextPoint": [
+            "AnimalSE11"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "AnimalSE09"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "HARD",
+        "UnlockCondition": {
+            "start": "2021-10-07 05:00:00"
+        }
+    },
+    "AnimalSE11": {
+        "BlockPoint": [
+            "AnimalSH03M"
+        ],
+        "HiddenStory": "",
+        "Map": "AnimalM02",
+        "Name": "BlockPoint_AnimalS03H_Name",
+        "NextPoint": [],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "AnimalSE10"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "HARD",
+        "UnlockCondition": {
+            "start": "2021-10-07 05:00:00"
+        }
+    },
+    "AnimalSN01": {
+        "BlockPoint": [
+            "AnimalSN01M",
+            "AnimalSN01E"
+        ],
+        "HiddenStory": "",
+        "Map": "AnimalM01",
+        "Name": "BlockPoint_AnimalS01M_Name",
+        "NextPoint": [
+            "AnimalSN02"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2021-10-01 05:00:00"
+        }
+    },
+    "AnimalSN02": {
+        "BlockPoint": [
+            "AnimalSN02M",
+            "AnimalSN02E"
+        ],
+        "HiddenStory": "",
+        "Map": "AnimalM01",
+        "Name": "BlockPoint_AnimalS02M_Name",
+        "NextPoint": [
+            "AnimalSN03"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "AnimalSN01"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2021-10-01 05:00:00"
+        }
+    },
+    "AnimalSN03": {
+        "BlockPoint": [
+            "AnimalSN03M",
+            "AnimalSN03E"
+        ],
+        "HiddenStory": "",
+        "Map": "AnimalM01",
+        "Name": "BlockPoint_AnimalS03M_Name",
+        "NextPoint": [
+            "AnimalSN04"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "AnimalSN02"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "AnimalS01S02"
+        ],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2021-10-01 05:00:00"
+        }
+    },
+    "AnimalSN04": {
+        "BlockPoint": [
+            "AnimalSN04M",
+            "AnimalSN04E"
+        ],
+        "HiddenStory": "",
+        "Map": "AnimalM01",
+        "Name": "BlockPoint_AnimalS04M_Name",
+        "NextPoint": [
+            "AnimalSN05"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "AnimalSN03"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2021-10-01 05:00:00"
+        }
+    },
+    "AnimalSN05": {
+        "BlockPoint": [
+            "AnimalSN05M",
+            "AnimalSN05E"
+        ],
+        "HiddenStory": "",
+        "Map": "AnimalM01",
+        "Name": "BlockPoint_AnimalS05M_Name",
+        "NextPoint": [
+            "AnimalSN06"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "AnimalSN04"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2021-10-01 05:00:00"
+        }
+    },
+    "AnimalSN06": {
+        "BlockPoint": [
+            "AnimalSN06M",
+            "AnimalSN06E"
+        ],
+        "HiddenStory": "",
+        "Map": "AnimalM01",
+        "Name": "BlockPoint_AnimalS06M_Name",
+        "NextPoint": [
+            "AnimalSN07"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "AnimalSN05"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "AnimalS01S03"
+        ],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2021-10-01 05:00:00"
+        }
+    },
+    "AnimalSN07": {
+        "BlockPoint": [
+            "AnimalSN07M",
+            "AnimalSN07E"
+        ],
+        "HiddenStory": "",
+        "Map": "AnimalM01",
+        "Name": "BlockPoint_AnimalS07M_Name",
+        "NextPoint": [
+            "AnimalSN08"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "AnimalSN06"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2021-10-01 05:00:00"
+        }
+    },
+    "AnimalSN08": {
+        "BlockPoint": [
+            "AnimalSN08M",
+            "AnimalSN08E"
+        ],
+        "HiddenStory": "",
+        "Map": "AnimalM01",
+        "Name": "BlockPoint_AnimalS08M_Name",
+        "NextPoint": [],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "AnimalSN07"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "AnimalS01S04"
+        ],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2021-10-01 05:00:00"
+        }
+    },
     "CollapsedM01S01": {
         "BlockPoint": [
             "CollapsedM01S01",

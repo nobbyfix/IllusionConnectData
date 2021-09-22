@@ -237,7 +237,7 @@ function MasterUpstarAniMediator:playUpstarFlash(preData, data)
 
 	local panel = self._mainpanel:getChildByName("icon")
 	local roleModel = IconFactory:getRoleModelByKey("MasterBase", data.id)
-	local img = IconFactory:createRoleIconSprite({
+	local img = IconFactory:createRoleIconSpriteNew({
 		iconType = 2,
 		id = roleModel
 	})

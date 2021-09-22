@@ -405,15 +405,17 @@ end
 
 function HeroStrengthAwakenMediator:refreshAwakeRole()
 	local roleModel = self._heroAwakeFinished and self._heroData:getAwakenStarConfig().ModelId or self._heroData:getAwakenStarConfig().Portrait
-	local animType = self._heroAwakeFinished and "Bust4" or "Portrait"
-	local masterIcon = IconFactory:createRoleIconSprite({
+	local masterIcon = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe9",
 		id = roleModel,
-		iconType = animType,
 		useAnim = self._heroAwakeFinished
 	})
 
 	self._awakeRoleNode:removeAllChildren()
-	masterIcon:addTo(self._awakeRoleNode):setPosition(0, 0)
+
+	local posY = self._heroAwakeFinished and 0 or -100
+
+	masterIcon:addTo(self._awakeRoleNode):setPosition(0, posY)
 	self._main:getChildByFullName("infoPanel.BG"):setVisible(self._heroAwakeFinished)
 	self._awakeAreaRoleNode:removeAllChildren()
 	self._awakeRoleNode:setPositionY(320)
@@ -467,7 +469,7 @@ function HeroStrengthAwakenMediator:refreshAwakeRoleWithHeroId()
 	local awakenStarConfig = ConfigReader:getRecordById("HeroAwaken", self._heroId)
 	local roleModel = awakenStarConfig.Portrait
 	local animType = "Portrait"
-	local masterIcon = IconFactory:createRoleIconSprite({
+	local masterIcon = IconFactory:createRoleIconSpriteNew({
 		useAnim = false,
 		id = roleModel,
 		iconType = animType

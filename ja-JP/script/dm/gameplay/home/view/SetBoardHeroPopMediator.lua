@@ -147,11 +147,9 @@ function SetBoardHeroPopMediator:updateCell(cell, index)
 		if self._herosList[i] then
 			local posTag = i - begin + 1
 			local _heroCell = self._cloneCell:clone()
-			local heroImg = IconFactory:createRoleIconSprite({
-				stencil = 1,
-				iconType = "Bust7",
-				id = self._herosList[i].roleModel,
-				size = cc.size(245, 336)
+			local heroImg = IconFactory:createRoleIconSpriteNew({
+				frameId = "bustframe7_1",
+				id = self._herosList[i].roleModel
 			})
 
 			heroImg:setScale(0.44642857142857145)

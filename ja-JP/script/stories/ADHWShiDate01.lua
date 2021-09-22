@@ -85,6 +85,36 @@ end
 function scene_ADHWShiDate01.actions.start_ADHWShiDate01(_root, args)
 	return sequential({
 		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 0.1
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "hideButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "skipButton"),
+			args = function (_ctx)
+				return {
+					date = true
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "reviewButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "autoPlayButton")
+		}),
+		act({
 			action = "activateNode",
 			actor = __getnode__(_root, "bg")
 		}),
@@ -123,75 +153,11 @@ function scene_ADHWShiDate01.actions.start_ADHWShiDate01(_root, args)
 					modelId = "Model_ADHWShi",
 					id = "ADHWShi_speak",
 					rotationX = 0,
-					scale = 0.925,
-					zorder = 20000,
-					position = {
-						x = 0,
-						y = -220,
-						refpt = {
-							x = 1.55,
-							y = 0
-						}
-					},
-					children = {
-						{
-							resType = 0,
-							name = "ADHWShi_face",
-							pathType = "STORY_FACE",
-							type = "Image",
-							image = "ADHWShi/ADHWShi_face_3.png",
-							scaleX = 1,
-							scaleY = 1,
-							layoutMode = 1,
-							zorder = 1100,
-							visible = true,
-							id = "ADHWShi_face",
-							anchorPoint = {
-								x = 0.5,
-								y = 0.5
-							},
-							position = {
-								x = -112,
-								y = 668.3
-							}
-						}
-					}
-				}
-			end
-		}),
-		concurrent({
-			act({
-				action = "updateNode",
-				actor = __getnode__(_root, "ADHWShi_speak"),
-				args = function (_ctx)
-					return {
-						opacity = 0
-					}
-				end
-			}),
-			act({
-				action = "fadeIn",
-				actor = __getnode__(_root, "ADHWShi_speak"),
-				args = function (_ctx)
-					return {
-						duration = 0.2
-					}
-				end
-			})
-		}),
-		act({
-			action = "addPortrait",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					modelId = "Model_ADHWShi",
-					id = "ADHWShi_speak",
-					rotationX = 0,
-					scale = 0.94,
+					scale = 0.6,
 					zorder = 2,
 					position = {
 						x = 0,
-						y = -133,
+						y = -180,
 						refpt = {
 							x = 0.25,
 							y = 0
@@ -215,8 +181,8 @@ function scene_ADHWShiDate01.actions.start_ADHWShiDate01(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = 13.3,
-								y = 525.5
+								x = -147,
+								y = 865
 							}
 						}
 					}
@@ -466,7 +432,7 @@ function scene_ADHWShiDate01.actions.start_ADHWShiDate01d(_root, args)
 					duration = 2,
 					position = {
 						x = 0,
-						y = -133,
+						y = -180,
 						refpt = {
 							x = 1.05,
 							y = 0
@@ -569,7 +535,7 @@ function scene_ADHWShiDate01.actions.start_ADHWShiDate01e(_root, args)
 					duration = 2,
 					position = {
 						x = 0,
-						y = -133,
+						y = -180,
 						refpt = {
 							x = 1.1,
 							y = 0
@@ -759,7 +725,7 @@ function scene_ADHWShiDate01.actions.start_ADHWShiDate01g(_root, args)
 					duration = 2,
 					position = {
 						x = 0,
-						y = -133,
+						y = -180,
 						refpt = {
 							x = 0.9,
 							y = 0
@@ -1041,7 +1007,7 @@ function scene_ADHWShiDate01.actions.start_ADHWShiDate01i(_root, args)
 						duration = 0.5,
 						position = {
 							x = 0,
-							y = -183,
+							y = -180,
 							refpt = {
 								x = 0.25,
 								y = 0
@@ -1103,7 +1069,7 @@ function scene_ADHWShiDate01.actions.start_ADHWShiDate01j(_root, args)
 					duration = 0.8,
 					position = {
 						x = 0,
-						y = -183,
+						y = -180,
 						refpt = {
 							x = 0.55,
 							y = 0

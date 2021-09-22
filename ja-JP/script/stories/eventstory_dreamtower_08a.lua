@@ -307,10 +307,10 @@ function scene_eventstory_dreamtower_08a.actions.start_eventstory_dreamtower_08a
 					modelId = "Model_JNLong",
 					id = "JNLong_speak",
 					rotationX = 0,
-					scale = 1.1,
+					scale = 0.65,
 					position = {
 						x = 0,
-						y = -395,
+						y = -330,
 						refpt = {
 							x = 0.35,
 							y = 0
@@ -334,8 +334,8 @@ function scene_eventstory_dreamtower_08a.actions.start_eventstory_dreamtower_08a
 								y = 0.5
 							},
 							position = {
-								x = 177.5,
-								y = 806.4
+								x = 268.5,
+								y = 1184
 							}
 						}
 					}
@@ -350,11 +350,11 @@ function scene_eventstory_dreamtower_08a.actions.start_eventstory_dreamtower_08a
 					modelId = "Model_YLSBai",
 					id = "YLSBai_speak",
 					rotationX = 0,
-					scale = 0.9,
+					scale = 0.65,
 					zorder = 2,
 					position = {
 						x = 0,
-						y = -305,
+						y = -340,
 						refpt = {
 							x = 0.2,
 							y = 0
@@ -375,11 +375,11 @@ function scene_eventstory_dreamtower_08a.actions.start_eventstory_dreamtower_08a
 							id = "YLSBai_face",
 							anchorPoint = {
 								x = 0.5,
-								y = 0
+								y = 0.5
 							},
 							position = {
-								x = 68,
-								y = 800
+								x = 93,
+								y = 1185
 							}
 						}
 					}
@@ -394,10 +394,10 @@ function scene_eventstory_dreamtower_08a.actions.start_eventstory_dreamtower_08a
 					modelId = "Model_MLYTLSha",
 					id = "MLYTLSha_speak",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.7,
 					position = {
 						x = 0,
-						y = -355,
+						y = -320,
 						refpt = {
 							x = 0.8,
 							y = 0
@@ -421,8 +421,8 @@ function scene_eventstory_dreamtower_08a.actions.start_eventstory_dreamtower_08a
 								y = 0.5
 							},
 							position = {
-								x = -29,
-								y = 829
+								x = -34.5,
+								y = 1096
 							}
 						}
 					}
@@ -658,7 +658,7 @@ function scene_eventstory_dreamtower_08a.actions.start_eventstory_dreamtower_08a
 				actor = __getnode__(_root, "YLSBai_speak"),
 				args = function (_ctx)
 					return {
-						duration = 0.2
+						duration = 0
 					}
 				end
 			}),
@@ -667,7 +667,7 @@ function scene_eventstory_dreamtower_08a.actions.start_eventstory_dreamtower_08a
 				actor = __getnode__(_root, "MLYTLSha_speak"),
 				args = function (_ctx)
 					return {
-						duration = 0.2
+						duration = 0
 					}
 				end
 			}),
@@ -676,10 +676,17 @@ function scene_eventstory_dreamtower_08a.actions.start_eventstory_dreamtower_08a
 				actor = __getnode__(_root, "JNLong_speak"),
 				args = function (_ctx)
 					return {
-						duration = 0.2
+						duration = 0
 					}
 				end
 			})
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.2
+				}
+			end
 		}),
 		act({
 			action = "speak",
@@ -710,7 +717,7 @@ function scene_eventstory_dreamtower_08a.actions.start_eventstory_dreamtower_08a
 					duration = 0,
 					position = {
 						x = 0,
-						y = -355,
+						y = -320,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -727,7 +734,7 @@ function scene_eventstory_dreamtower_08a.actions.start_eventstory_dreamtower_08a
 					duration = 0,
 					position = {
 						x = 0,
-						y = -395,
+						y = -330,
 						refpt = {
 							x = 0.35,
 							y = 0
@@ -762,10 +769,17 @@ function scene_eventstory_dreamtower_08a.actions.start_eventstory_dreamtower_08a
 				actor = __getnode__(_root, "FTLEShi_speak"),
 				args = function (_ctx)
 					return {
-						duration = 0.2
+						duration = 0
 					}
 				end
 			})
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.2
+				}
+			end
 		}),
 		act({
 			action = "speak",
@@ -814,10 +828,17 @@ function scene_eventstory_dreamtower_08a.actions.start_eventstory_dreamtower_08a
 				actor = __getnode__(_root, "MLYTLSha_speak"),
 				args = function (_ctx)
 					return {
-						duration = 0.2
+						duration = 0
 					}
 				end
 			})
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.2
+				}
+			end
 		}),
 		act({
 			action = "speak",
@@ -848,7 +869,7 @@ function scene_eventstory_dreamtower_08a.actions.start_eventstory_dreamtower_08a
 					duration = 0,
 					position = {
 						x = 0,
-						y = -305,
+						y = -340,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -883,10 +904,17 @@ function scene_eventstory_dreamtower_08a.actions.start_eventstory_dreamtower_08a
 				actor = __getnode__(_root, "JNLong_speak"),
 				args = function (_ctx)
 					return {
-						duration = 0.2
+						duration = 0
 					}
 				end
 			})
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.2
+				}
+			end
 		}),
 		act({
 			action = "speak",
@@ -944,7 +972,7 @@ function scene_eventstory_dreamtower_08a.actions.start_eventstory_dreamtower_08a
 						duration = 0.25,
 						position = {
 							x = 0,
-							y = -305,
+							y = -340,
 							refpt = {
 								x = 0.75,
 								y = 0
@@ -1026,11 +1054,11 @@ function scene_eventstory_dreamtower_08a.actions.start_eventstory_dreamtower_08a
 					modelId = "Model_ZTXChang_YYing",
 					id = "ZTXChang_speak",
 					rotationX = 0,
-					scale = 1.08,
+					scale = 1,
 					zorder = 5,
 					position = {
 						x = 0,
-						y = -410,
+						y = -340,
 						refpt = {
 							x = 0.25,
 							y = 0
@@ -1054,8 +1082,8 @@ function scene_eventstory_dreamtower_08a.actions.start_eventstory_dreamtower_08a
 								y = 0.5
 							},
 							position = {
-								x = -36,
-								y = 795
+								x = -35.1,
+								y = 786.2
 							}
 						}
 					}
@@ -1086,10 +1114,17 @@ function scene_eventstory_dreamtower_08a.actions.start_eventstory_dreamtower_08a
 				actor = __getnode__(_root, "FTLEShi_speak"),
 				args = function (_ctx)
 					return {
-						duration = 0.25
+						duration = 0
 					}
 				end
 			})
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.2
+				}
+			end
 		}),
 		act({
 			action = "speak",
@@ -1120,10 +1155,10 @@ function scene_eventstory_dreamtower_08a.actions.start_eventstory_dreamtower_08a
 					modelId = "Model_SDTZi",
 					id = "SDTZi_speak",
 					rotationX = 0,
-					scale = 1.145,
+					scale = 0.75,
 					position = {
 						x = 0,
-						y = -330,
+						y = -375,
 						refpt = {
 							x = 0.25,
 							y = 0
@@ -1147,8 +1182,8 @@ function scene_eventstory_dreamtower_08a.actions.start_eventstory_dreamtower_08a
 								y = 0.5
 							},
 							position = {
-								x = -79,
-								y = 679.8
+								x = -112,
+								y = 1026
 							}
 						}
 					}
@@ -1179,10 +1214,17 @@ function scene_eventstory_dreamtower_08a.actions.start_eventstory_dreamtower_08a
 				actor = __getnode__(_root, "ZTXChang_speak"),
 				args = function (_ctx)
 					return {
-						duration = 0.25
+						duration = 0
 					}
 				end
 			})
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.2
+				}
+			end
 		}),
 		act({
 			action = "speak",
@@ -1231,10 +1273,17 @@ function scene_eventstory_dreamtower_08a.actions.start_eventstory_dreamtower_08a
 				actor = __getnode__(_root, "SDTZi_speak"),
 				args = function (_ctx)
 					return {
-						duration = 0.2
+						duration = 0
 					}
 				end
 			})
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.2
+				}
+			end
 		}),
 		act({
 			action = "speak",
@@ -1272,10 +1321,17 @@ function scene_eventstory_dreamtower_08a.actions.start_eventstory_dreamtower_08a
 				actor = __getnode__(_root, "YLSBai_speak"),
 				args = function (_ctx)
 					return {
-						duration = 0.2
+						duration = 0
 					}
 				end
 			})
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.2
+				}
+			end
 		}),
 		act({
 			action = "speak",
@@ -1304,7 +1360,7 @@ function scene_eventstory_dreamtower_08a.actions.start_eventstory_dreamtower_08a
 				actor = __getnode__(_root, "JNLong_speak"),
 				args = function (_ctx)
 					return {
-						duration = 0.2
+						duration = 0
 					}
 				end
 			}),
@@ -1326,6 +1382,13 @@ function scene_eventstory_dreamtower_08a.actions.start_eventstory_dreamtower_08a
 					}
 				end
 			})
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.2
+				}
+			end
 		}),
 		act({
 			action = "speak",
@@ -1550,7 +1613,7 @@ function scene_eventstory_dreamtower_08a.actions.start_eventstory_dreamtower_08a
 					duration = 0.5,
 					position = {
 						x = 0,
-						y = -305,
+						y = -340,
 						refpt = {
 							x = 0.45,
 							y = 0
@@ -1690,7 +1753,7 @@ function scene_eventstory_dreamtower_08a.actions.start_eventstory_dreamtower_08a
 					duration = 0.5,
 					position = {
 						x = 0,
-						y = -305,
+						y = -340,
 						refpt = {
 							x = 0.725,
 							y = 0
@@ -1728,7 +1791,7 @@ function scene_eventstory_dreamtower_08a.actions.start_eventstory_dreamtower_08a
 					duration = 0,
 					position = {
 						x = 0,
-						y = -395,
+						y = -330,
 						refpt = {
 							x = 0.6,
 							y = 0
@@ -1752,10 +1815,17 @@ function scene_eventstory_dreamtower_08a.actions.start_eventstory_dreamtower_08a
 				actor = __getnode__(_root, "YLSBai_speak"),
 				args = function (_ctx)
 					return {
-						duration = 0.2
+						duration = 0
 					}
 				end
 			})
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.2
+				}
+			end
 		}),
 		act({
 			action = "speak",
@@ -1790,7 +1860,7 @@ function scene_eventstory_dreamtower_08a.actions.start_eventstory_dreamtower_08a
 					duration = 0,
 					position = {
 						x = 0,
-						y = -305,
+						y = -340,
 						refpt = {
 							x = 0.25,
 							y = 0
@@ -1816,7 +1886,7 @@ function scene_eventstory_dreamtower_08a.actions.start_eventstory_dreamtower_08a
 				actor = __getnode__(_root, "FTLEShi_speak"),
 				args = function (_ctx)
 					return {
-						duration = 0.2
+						duration = 0
 					}
 				end
 			}),
@@ -1829,6 +1899,13 @@ function scene_eventstory_dreamtower_08a.actions.start_eventstory_dreamtower_08a
 					}
 				end
 			})
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.2
+				}
+			end
 		}),
 		act({
 			action = "speak",
@@ -1868,7 +1945,7 @@ function scene_eventstory_dreamtower_08a.actions.start_eventstory_dreamtower_08a
 				actor = __getnode__(_root, "JNLong_speak"),
 				args = function (_ctx)
 					return {
-						duration = 0.2
+						duration = 0
 					}
 				end
 			}),
@@ -1877,7 +1954,7 @@ function scene_eventstory_dreamtower_08a.actions.start_eventstory_dreamtower_08a
 				actor = __getnode__(_root, "YLSBai_speak"),
 				args = function (_ctx)
 					return {
-						duration = 0.2
+						duration = 0
 					}
 				end
 			}),
@@ -1890,6 +1967,13 @@ function scene_eventstory_dreamtower_08a.actions.start_eventstory_dreamtower_08a
 					}
 				end
 			})
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.2
+				}
+			end
 		}),
 		act({
 			action = "speak",
@@ -1920,7 +2004,7 @@ function scene_eventstory_dreamtower_08a.actions.start_eventstory_dreamtower_08a
 					duration = 0,
 					position = {
 						x = 0,
-						y = -305,
+						y = -340,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -1944,10 +2028,17 @@ function scene_eventstory_dreamtower_08a.actions.start_eventstory_dreamtower_08a
 				actor = __getnode__(_root, "MLYTLSha_speak"),
 				args = function (_ctx)
 					return {
-						duration = 0.2
+						duration = 0
 					}
 				end
 			})
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.2
+				}
+			end
 		}),
 		act({
 			action = "speak",
@@ -1995,7 +2086,7 @@ function scene_eventstory_dreamtower_08a.actions.start_eventstory_dreamtower_08a
 					duration = 0,
 					position = {
 						x = 0,
-						y = -355,
+						y = -320,
 						refpt = {
 							x = 0.75,
 							y = 0
@@ -2021,7 +2112,7 @@ function scene_eventstory_dreamtower_08a.actions.start_eventstory_dreamtower_08a
 				actor = __getnode__(_root, "YLSBai_speak"),
 				args = function (_ctx)
 					return {
-						duration = 0.2
+						duration = 0
 					}
 				end
 			}),
@@ -2034,6 +2125,13 @@ function scene_eventstory_dreamtower_08a.actions.start_eventstory_dreamtower_08a
 					}
 				end
 			})
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.2
+				}
+			end
 		}),
 		act({
 			action = "speak",
@@ -2218,7 +2316,7 @@ function scene_eventstory_dreamtower_08a.actions.start_eventstory_dreamtower_08a
 				actor = __getnode__(_root, "FTLEShi_speak"),
 				args = function (_ctx)
 					return {
-						duration = 0.2
+						duration = 0
 					}
 				end
 			}),
@@ -2227,10 +2325,17 @@ function scene_eventstory_dreamtower_08a.actions.start_eventstory_dreamtower_08a
 				actor = __getnode__(_root, "MLYTLSha_speak"),
 				args = function (_ctx)
 					return {
-						duration = 0.2
+						duration = 0
 					}
 				end
 			})
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.2
+				}
+			end
 		}),
 		act({
 			action = "speak",
@@ -2309,7 +2414,7 @@ function scene_eventstory_dreamtower_08a.actions.start_eventstory_dreamtower_08a
 						duration = 0.75,
 						position = {
 							x = 0,
-							y = -305,
+							y = -340,
 							refpt = {
 								x = 0.725,
 								y = 0

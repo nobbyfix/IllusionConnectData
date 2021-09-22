@@ -126,7 +126,7 @@ function TowerChallengeEndMediator:showHeroPanelAnim()
 	local mvpSpritePanel = anim:getChildByName("roleNode")
 
 	mvpSpritePanel:addChild(self._mvpSprite)
-	self._mvpSprite:setPosition(cc.p(50, -100))
+	self._mvpSprite:setPosition(cc.p(cc.p(-200, -200)))
 	anim:addTo(animNode):center(animNode:getContentSize())
 	anim:gotoAndPlay(1)
 
@@ -156,9 +156,10 @@ function TowerChallengeEndMediator:showHeroPanel()
 
 	local enemyMaster = ConfigReader:getDataByNameIdAndKey("TowerMaster", towerMasterId, "Master")
 	local model = ConfigReader:getDataByNameIdAndKey("EnemyMaster", enemyMaster, "RoleModel")
-	local mvpSprite = IconFactory:createRoleIconSprite({
+	model = IconFactory:getSpMvpBattleEndMid(model)
+	local mvpSprite = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust9",
+		frameId = "bustframe17",
 		id = model
 	})
 
@@ -324,7 +325,7 @@ end
 
 function TowerChallengeEndMediator:initHero(node, info)
 	info.id = info.roleModel
-	local heroImg = IconFactory:createRoleIconSprite(info)
+	local heroImg = IconFactory:createRoleIconSpriteNew(info)
 
 	heroImg:setScale(0.68)
 

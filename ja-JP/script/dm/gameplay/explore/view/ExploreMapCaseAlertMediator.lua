@@ -81,6 +81,7 @@ function ExploreMapCaseAlertMediator:enterWithData(data)
 	self._caseFactor = data.caseFactor
 	self._battleId = data.battleId or ""
 	self._callback = data.callback
+	self._caseType = data.caseType
 	self._btnParam = {}
 
 	self:initView()
@@ -142,7 +143,7 @@ function ExploreMapCaseAlertMediator:initView()
 	GameStyle:setCommonOutlineEffect(self._typePanel1:getChildByFullName("clonePanel.node_1.progress"))
 	GameStyle:setCommonOutlineEffect(self._typePanel1:getChildByFullName("clonePanel.node_2.name"))
 	GameStyle:setCommonOutlineEffect(self._typePanel1:getChildByFullName("clonePanel.node_2.progress"))
-	self._main:getChildByName("back"):setVisible(false)
+	self._main:getChildByFullName("back"):setVisible(self._caseType and self._caseType == "BATTLE")
 end
 
 function ExploreMapCaseAlertMediator:updateView()
@@ -416,7 +417,7 @@ function ExploreMapCaseAlertMediator:createImg(parent, pic)
 
 		node:setAnchorPoint(cc.p(0.5, 0.5))
 	elseif type == 5 then
-		node = IconFactory:createRoleIconSprite({
+		node = IconFactory:createRoleIconSpriteNew({
 			iconType = 2,
 			id = resName
 		})
@@ -513,6 +514,10 @@ function ExploreMapCaseAlertMediator:onClickBattleTip()
 end
 
 function ExploreMapCaseAlertMediator:onClickClose(sender, eventType)
+	if self._callback then
+		self._callback(ExploreCloseChooseId)
+	end
+
 	self:close()
 end
 

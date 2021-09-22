@@ -439,11 +439,11 @@ function scene_eventstory_freud_08a.actions.start_eventstory_freud_08a(_root, ar
 						modelId = "Model_Story_ZTXChang",
 						id = "ZTXChang",
 						rotationX = 0,
-						scale = 0.98,
+						scale = 0.6,
 						zorder = 110,
 						position = {
 							x = 50,
-							y = -300,
+							y = -270,
 							refpt = {
 								x = 0.4,
 								y = 0
@@ -467,8 +467,8 @@ function scene_eventstory_freud_08a.actions.start_eventstory_freud_08a(_root, ar
 									y = 0.5
 								},
 								position = {
-									x = -50.8,
-									y = 789
+									x = -51.3,
+									y = 977.5
 								}
 							}
 						}
@@ -751,7 +751,7 @@ function scene_eventstory_freud_08a.actions.start_freud08_theend(_root, args)
 					duration = 1,
 					position = {
 						x = 50,
-						y = -300,
+						y = -270,
 						refpt = {
 							x = 1.5,
 							y = 0
@@ -785,11 +785,11 @@ function scene_eventstory_freud_08a.actions.start_freud08_theend(_root, args)
 						modelId = "Model_MLYTLSha",
 						id = "MLYTLSha",
 						rotationX = 0,
-						scale = 1,
+						scale = 0.7,
 						zorder = 30,
 						position = {
 							x = 30,
-							y = -345,
+							y = -320,
 							refpt = {
 								x = 0.5,
 								y = 0
@@ -813,8 +813,8 @@ function scene_eventstory_freud_08a.actions.start_freud08_theend(_root, args)
 									y = 0.5
 								},
 								position = {
-									x = -29.5,
-									y = 827.8
+									x = -34.5,
+									y = 1096
 								}
 							}
 						}
@@ -1041,7 +1041,7 @@ function scene_eventstory_freud_08a.actions.start_freud08_theend(_root, args)
 						duration = 0.2,
 						position = {
 							x = 30,
-							y = -345,
+							y = -320,
 							refpt = {
 								x = 0.25,
 								y = 0
@@ -1231,7 +1231,7 @@ function scene_eventstory_freud_08a.actions.start_freud08_theend(_root, args)
 						duration = 0.15,
 						position = {
 							x = 30,
-							y = -345,
+							y = -320,
 							refpt = {
 								x = 0.4,
 								y = -0.1
@@ -1249,7 +1249,7 @@ function scene_eventstory_freud_08a.actions.start_freud08_theend(_root, args)
 							duration = 0.15,
 							position = {
 								x = 30,
-								y = -345,
+								y = -320,
 								refpt = {
 									x = 0.25,
 									y = 0

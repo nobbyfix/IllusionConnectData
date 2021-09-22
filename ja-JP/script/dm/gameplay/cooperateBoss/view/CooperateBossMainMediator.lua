@@ -214,11 +214,9 @@ function CooperateBossMainMediator:setupBossMapList()
 			bossLvText:setString("Lv." .. info.lv)
 			boss:getChildByFullName("invitePanel.info"):setVisible(false)
 
-			local heroSprite = IconFactory:createRoleIconSprite({
-				stencil = 1,
-				iconType = "Bust13",
-				id = self._cooperateBossData:getRoleModelId(info.confId),
-				size = cc.size(145, 106)
+			local heroSprite = IconFactory:createRoleIconSpriteNew({
+				frameId = "bustframe13_2",
+				id = self._cooperateBossData:getRoleModelId(info.confId)
 			})
 
 			heroSprite:addTo(bossIcon):center(bossIcon:getContentSize())
@@ -598,9 +596,9 @@ function CooperateBossMainMediator:setupBossModeShow(mineBoss)
 			self._leaveTimesPanel:setVisible(false)
 		end
 
-		local img, path, spineani, picInfo = IconFactory:createRoleIconSprite({
+		local img, path, spineani, picInfo = IconFactory:createRoleIconSpriteNew({
 			useAnim = true,
-			iconType = "Bust4",
+			frameId = "bustframe9",
 			id = roleModel
 		})
 
@@ -614,9 +612,9 @@ function CooperateBossMainMediator:setupBossModeShow(mineBoss)
 		bossId = mineBoss.confId
 		local bossConfig = ConfigReader:getRecordById("CooperateBossMain", mineBoss.confId)
 		local roleModel = bossConfig.RoleModel
-		local heroSprite, _, spineani, picInfo = IconFactory:createRoleIconSprite({
+		local heroSprite, _, spineani, picInfo = IconFactory:createRoleIconSpriteNew({
 			useAnim = true,
-			iconType = 6,
+			frameId = "bustframe9",
 			id = roleModel
 		})
 
@@ -658,9 +656,9 @@ function CooperateBossMainMediator:setupBossModeShow(mineBoss)
 			roleModel = hero:getModel()
 		end
 
-		local heroSprite, _, spineani, picInfo = IconFactory:createRoleIconSprite({
+		local heroSprite, _, spineani, picInfo = IconFactory:createRoleIconSpriteNew({
 			useAnim = true,
-			iconType = 6,
+			frameId = "bustframe9",
 			id = roleModel
 		})
 

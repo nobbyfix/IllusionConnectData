@@ -154,6 +154,7 @@ all.Skill_Enemy_XXZhe_Skill = {
 							"STATUS",
 							"DEBUFF",
 							"DAZE",
+							"ABNORMAL",
 							"DISPELLABLE"
 						}
 					}, {

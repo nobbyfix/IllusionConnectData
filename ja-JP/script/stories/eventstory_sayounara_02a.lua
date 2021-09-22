@@ -588,11 +588,11 @@ function scene_eventstory_sayounara_02a.actions.start_eventstory_sayounara_02a(_
 						modelId = "Model_SSQXin",
 						id = "SSQXin",
 						rotationX = 0,
-						scale = 1.11,
+						scale = 0.66,
 						zorder = 135,
 						position = {
 							x = 0,
-							y = -330,
+							y = -280,
 							refpt = {
 								x = 0.69,
 								y = 0
@@ -616,8 +616,8 @@ function scene_eventstory_sayounara_02a.actions.start_eventstory_sayounara_02a(_
 									y = 0.5
 								},
 								position = {
-									x = 25,
-									y = 678
+									x = 28.5,
+									y = 922
 								}
 							}
 						}
@@ -643,11 +643,11 @@ function scene_eventstory_sayounara_02a.actions.start_eventstory_sayounara_02a(_
 						modelId = "Model_WTXXuan",
 						id = "WTXXuan",
 						rotationX = 0,
-						scale = 0.915,
+						scale = 0.76,
 						zorder = 140,
 						position = {
 							x = 0,
-							y = -200,
+							y = -240,
 							refpt = {
 								x = 0.29,
 								y = 0
@@ -671,8 +671,8 @@ function scene_eventstory_sayounara_02a.actions.start_eventstory_sayounara_02a(_
 									y = 0.5
 								},
 								position = {
-									x = -31.9,
-									y = 650
+									x = -32.5,
+									y = 763
 								}
 							}
 						}
@@ -940,7 +940,7 @@ function scene_eventstory_sayounara_02a.actions.start_eventstory_sayounara_02a(_
 						duration = 0.6,
 						position = {
 							x = 0,
-							y = -200,
+							y = -240,
 							refpt = {
 								x = 1.3,
 								y = 0
@@ -967,7 +967,7 @@ function scene_eventstory_sayounara_02a.actions.start_eventstory_sayounara_02a(_
 							duration = 0.3,
 							position = {
 								x = 0,
-								y = -330,
+								y = -280,
 								refpt = {
 									x = 0.69,
 									y = 0
@@ -995,7 +995,7 @@ function scene_eventstory_sayounara_02a.actions.start_eventstory_sayounara_02a(_
 							duration = 0,
 							position = {
 								x = 0,
-								y = -330,
+								y = -280,
 								refpt = {
 									x = 0.71,
 									y = 0

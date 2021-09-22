@@ -20,6 +20,9 @@
     "Master": {
         "Function": "return GenInfo(EnemyUnits(MASTER),Red)"
     },
+    "RANGE_LZHua": {
+        "Function": "return HasBuff(\"RANGE_LZHua\")"
+    },
     "RandomEnemy": {
         "Function": "return GenInfo(EnemyAll(),Red,true)"
     },
@@ -118,6 +121,9 @@
     },
     "Target_HLMGen": {
         "Function": "return GenInfo(EnemyAll(COL_OF(TARGET)),Red)"
+    },
+    "Target_HLa": {
+        "Function": "return GenInfo(EnemyAll(),Red)"
     },
     "Target_HSYZhai": {
         "Function": "return MainTarget()"
@@ -286,6 +292,9 @@
     },
     "Target_XBKLDi": {
         "Function": ""
+    },
+    "Target_XDE": {
+        "Function": "return GenInfo(EnemyAll(COL_OF(TARGET)),Red)"
     },
     "Target_XHMao": {
         "Function": "return GenInfo(EnemyAll(COL_OF(TARGET)),Red)"

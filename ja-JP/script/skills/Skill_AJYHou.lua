@@ -249,6 +249,7 @@ all.Skill_AJYHou_Unique = {
 								"STATUS",
 								"DEBUFF",
 								"DAZE",
+								"ABNORMAL",
 								"DISPELLALBE"
 							}
 						}, {
@@ -315,6 +316,7 @@ all.Skill_AJYHou_Passive = {
 						"STATUS",
 						"DEBUFF",
 						"BURNING",
+						"ABNORMAL",
 						"DISPELLABLE"
 					}
 				}, {
@@ -501,6 +503,7 @@ all.Skill_AJYHou_Unique_EX = {
 								"STATUS",
 								"DEBUFF",
 								"DAZE",
+								"ABNORMAL",
 								"DISPELLALBE"
 							}
 						}, {
@@ -567,6 +570,7 @@ all.Skill_AJYHou_Passive_EX = {
 						"STATUS",
 						"DEBUFF",
 						"BURNING",
+						"ABNORMAL",
 						"DISPELLABLE"
 					}
 				}, {

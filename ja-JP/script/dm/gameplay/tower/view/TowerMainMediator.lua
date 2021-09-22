@@ -293,9 +293,9 @@ function TowerMainMediator:setRoleNode()
 	local roleModel = self._selectBaseData.Model
 
 	if roleModel then
-		local img = IconFactory:createRoleIconSprite({
+		local img = IconFactory:createRoleIconSpriteNew({
 			useAnim = true,
-			iconType = "Bust4",
+			frameId = "bustframe9",
 			id = roleModel
 		})
 

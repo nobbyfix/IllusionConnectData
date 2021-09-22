@@ -85,9 +85,9 @@ function ActivitySagaWinWxhMediator:initContent()
 	self._roleNode:removeAllChildren()
 
 	local modelId = hd.ModelId
-	local img, jsonPath = IconFactory:createRoleIconSprite({
+	local img, jsonPath = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust4",
+		frameId = "bustframe9",
 		id = modelId
 	})
 

@@ -322,9 +322,9 @@ function HeroSoundMediator:refreshHeroInfo()
 	self._heroPanelAnim:gotoAndPlay(0)
 	self._heroAnimPanel:removeAllChildren()
 
-	local img, jsonPath = IconFactory:createRoleIconSprite({
+	local img, jsonPath = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust4",
+		frameId = "bustframe9",
 		id = self._heroData:getModel()
 	})
 

@@ -376,26 +376,26 @@ all.Skill_HSYZhai_Passive = {
 					cardlocation = global.Random(_env, 1, 4)
 				end
 
-				local card = global.BackToWindow(_env, _env.ACTOR, cardlocation)
+				local card = global.BackToCard_ResultCheck(_env, _env.ACTOR, "window", cardlocation)
 
 				if card then
 					global.Kick(_env, _env.ACTOR)
+
+					local buff = global.NumericEffect(_env, "+defrate", {
+						"+Normal",
+						"+Normal"
+					}, 0)
+
+					global.ApplyBuff(_env, global.FriendField(_env), {
+						timing = 0,
+						duration = 99,
+						tags = {
+							"HSYZhai_Passive_Count"
+						}
+					}, {
+						buff
+					})
 				end
-
-				local buff = global.NumericEffect(_env, "+defrate", {
-					"+Normal",
-					"+Normal"
-				}, 0)
-
-				global.ApplyBuff(_env, global.FriendField(_env), {
-					timing = 0,
-					duration = 99,
-					tags = {
-						"HSYZhai_Passive_Count"
-					}
-				}, {
-					buff
-				})
 			end
 		end)
 
@@ -820,42 +820,42 @@ all.Skill_HSYZhai_Passive_EX = {
 					cardlocation = global.Random(_env, 1, 4)
 				end
 
-				local card = global.BackToWindow(_env, _env.ACTOR, cardlocation)
+				local card = global.BackToCard_ResultCheck(_env, _env.ACTOR, "window", cardlocation)
 
 				if card then
 					global.Kick(_env, _env.ACTOR)
+
+					local buff = global.NumericEffect(_env, "+defrate", {
+						"+Normal",
+						"+Normal"
+					}, 0)
+
+					global.ApplyBuff(_env, global.FriendField(_env), {
+						timing = 0,
+						duration = 99,
+						tags = {
+							"HSYZhai_Passive_Count"
+						}
+					}, {
+						buff
+					})
+
+					count = count + 1
+					local buffeft = global.NumericEffect(_env, "+atkrate", {
+						"+Normal",
+						"+Normal"
+					}, this.atkrate * count)
+
+					global.ApplyHeroCardBuff(_env, global.GetOwner(_env, _env.ACTOR), card, {
+						timing = 0,
+						duration = 99,
+						tags = {
+							"Skill_HSYZhai_Passive_EX"
+						}
+					}, {
+						buffeft
+					})
 				end
-
-				local buff = global.NumericEffect(_env, "+defrate", {
-					"+Normal",
-					"+Normal"
-				}, 0)
-
-				global.ApplyBuff(_env, global.FriendField(_env), {
-					timing = 0,
-					duration = 99,
-					tags = {
-						"HSYZhai_Passive_Count"
-					}
-				}, {
-					buff
-				})
-
-				count = count + 1
-				local buffeft = global.NumericEffect(_env, "+atkrate", {
-					"+Normal",
-					"+Normal"
-				}, this.atkrate * count)
-
-				global.ApplyHeroCardBuff(_env, global.GetOwner(_env, _env.ACTOR), card, {
-					timing = 0,
-					duration = 99,
-					tags = {
-						"Skill_HSYZhai_Passive_EX"
-					}
-				}, {
-					buffeft
-				})
 			end
 		end)
 

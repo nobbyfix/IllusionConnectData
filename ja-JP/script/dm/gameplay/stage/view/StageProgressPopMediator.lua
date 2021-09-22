@@ -40,9 +40,9 @@ function StageProgressPopMediator:enterWithData(data)
 	end
 
 	local heroModelId = self._stageInfo.Model
-	local heroImg = IconFactory:createRoleIconSprite({
+	local heroImg = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = 6,
+		frameId = "bustframe9",
 		id = heroModelId
 	})
 	local heroPanel = self._main:getChildByName("heroPanel")

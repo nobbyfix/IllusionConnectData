@@ -273,8 +273,8 @@ function ActivityBlockMonsterShopMediator:initLeftView()
 	local rolePicId = ConfigReader:getDataByNameIdAndKey("RoleModel", modelId, "Bust15")
 
 	if rolePicId ~= nil and rolePicId ~= "" then
-		local portrait = IconFactory:createRoleIconSprite({
-			iconType = "Bust15",
+		local portrait = IconFactory:createRoleIconSpriteNew({
+			frameId = "bustframe16",
 			id = modelId
 		})
 

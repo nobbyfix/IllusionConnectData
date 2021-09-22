@@ -353,11 +353,11 @@ function scene_eventstory_VanGogh_01a.actions.start_eventstory_VanGogh_01a(_root
 						modelId = "Model_YMHTPu",
 						id = "YMHTPu",
 						rotationX = 0,
-						scale = 1,
+						scale = 0.7,
 						zorder = 16,
 						position = {
 							x = 0,
-							y = -300,
+							y = -485,
 							refpt = {
 								x = 1.35,
 								y = 0
@@ -381,8 +381,8 @@ function scene_eventstory_VanGogh_01a.actions.start_eventstory_VanGogh_01a(_root
 									y = 0.5
 								},
 								position = {
-									x = -1.5,
-									y = 754.3
+									x = -5,
+									y = 1258
 								}
 							}
 						}
@@ -524,7 +524,7 @@ function scene_eventstory_VanGogh_01a.actions.start_eventstory_VanGogh_01a(_root
 						duration = 0.4,
 						position = {
 							x = 0,
-							y = -300,
+							y = -485,
 							refpt = {
 								x = 0.82,
 								y = 0
@@ -635,7 +635,7 @@ function scene_eventstory_VanGogh_01a.actions.start_eventstory_VanGogh_01a(_root
 						duration = 0.3,
 						position = {
 							x = 0,
-							y = -300,
+							y = -485,
 							refpt = {
 								x = 0.65,
 								y = 0
@@ -788,7 +788,7 @@ function scene_eventstory_VanGogh_01a.actions.start_eventstory_VanGogh_01a(_root
 							duration = 0.2,
 							position = {
 								x = 0,
-								y = -300,
+								y = -485,
 								refpt = {
 									x = 0.72,
 									y = 0
@@ -971,7 +971,7 @@ function scene_eventstory_VanGogh_01a.actions.start_eventstory_VanGogh_01a(_root
 							duration = 0.2,
 							position = {
 								x = 0,
-								y = -300,
+								y = -485,
 								refpt = {
 									x = 0.82,
 									y = 0

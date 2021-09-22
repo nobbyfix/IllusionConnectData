@@ -170,10 +170,10 @@ function scene_eventstory_MAC_03a.actions.start_eventstory_MAC_03a(_root, args)
 					modelId = "Model_TPGZhu",
 					id = "TPGZhu_speak",
 					rotationX = 0,
-					scale = 0.925,
+					scale = 0.85,
 					position = {
 						x = 0,
-						y = -140,
+						y = -100,
 						refpt = {
 							x = 0.75,
 							y = 0
@@ -197,8 +197,8 @@ function scene_eventstory_MAC_03a.actions.start_eventstory_MAC_03a(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = 10.4,
-								y = 581
+								x = 13.9,
+								y = 592.2
 							}
 						}
 					}
@@ -555,7 +555,7 @@ function scene_eventstory_MAC_03a.actions.start_eventstory_MAC_03a(_root, args)
 					duration = 0.75,
 					position = {
 						x = 0,
-						y = -310,
+						y = -210,
 						refpt = {
 							x = -0.5,
 							y = 0
@@ -793,7 +793,7 @@ function scene_eventstory_MAC_03a.actions.start_eventstory_MAC_03a(_root, args)
 						duration = 1,
 						position = {
 							x = 0,
-							y = -140,
+							y = -100,
 							refpt = {
 								x = 1.5,
 								y = 0

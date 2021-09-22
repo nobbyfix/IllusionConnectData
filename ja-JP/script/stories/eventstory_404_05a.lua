@@ -274,7 +274,7 @@ function scene_eventstory_404_05a.actions.start_eventstory_404_05a(_root, args)
 							x = 0,
 							y = -260,
 							refpt = {
-								x = 0.51,
+								x = 0.59,
 								y = 0
 							}
 						},
@@ -296,8 +296,8 @@ function scene_eventstory_404_05a.actions.start_eventstory_404_05a(_root, args)
 									y = 0.5
 								},
 								position = {
-									x = 49,
-									y = 908
+									x = -126.5,
+									y = 877
 								}
 							}
 						}
@@ -323,11 +323,11 @@ function scene_eventstory_404_05a.actions.start_eventstory_404_05a(_root, args)
 						modelId = "Model_Story_CLMan",
 						id = "CLMan",
 						rotationX = 0,
-						scale = 0.9,
+						scale = 0.63,
 						zorder = 50,
 						position = {
 							x = 0,
-							y = -280,
+							y = -250,
 							refpt = {
 								x = 0.47,
 								y = 0
@@ -351,8 +351,8 @@ function scene_eventstory_404_05a.actions.start_eventstory_404_05a(_root, args)
 									y = 0.5
 								},
 								position = {
-									x = 60.5,
-									y = 787
+									x = 77.5,
+									y = 1045.5
 								}
 							}
 						}
@@ -378,11 +378,11 @@ function scene_eventstory_404_05a.actions.start_eventstory_404_05a(_root, args)
 						modelId = "Model_XLai",
 						id = "XLai",
 						rotationX = 0,
-						scale = 1,
+						scale = 0.76,
 						zorder = 50,
 						position = {
 							x = 0,
-							y = -325,
+							y = -300,
 							refpt = {
 								x = 0.5,
 								y = 0
@@ -406,8 +406,8 @@ function scene_eventstory_404_05a.actions.start_eventstory_404_05a(_root, args)
 									y = 0.5
 								},
 								position = {
-									x = 0,
-									y = 709.5
+									x = 0.5,
+									y = 899
 								}
 							}
 						}
@@ -433,11 +433,11 @@ function scene_eventstory_404_05a.actions.start_eventstory_404_05a(_root, args)
 						modelId = "Model_Story_ZTXChang",
 						id = "ZTXChang",
 						rotationX = 0,
-						scale = 0.98,
+						scale = 0.6,
 						zorder = 45,
 						position = {
 							x = 0,
-							y = -300,
+							y = -270,
 							refpt = {
 								x = 0.56,
 								y = 0
@@ -461,8 +461,8 @@ function scene_eventstory_404_05a.actions.start_eventstory_404_05a(_root, args)
 									y = 0.5
 								},
 								position = {
-									x = -50.8,
-									y = 789
+									x = -51.3,
+									y = 977.5
 								}
 							}
 						}
@@ -488,11 +488,11 @@ function scene_eventstory_404_05a.actions.start_eventstory_404_05a(_root, args)
 						modelId = "Model_Story_FTLEShi",
 						id = "FTLEShi",
 						rotationX = 0,
-						scale = 0.9,
+						scale = 0.6,
 						zorder = 50,
 						position = {
 							x = 0,
-							y = -400,
+							y = -280,
 							refpt = {
 								x = 0.54,
 								y = 0
@@ -516,8 +516,8 @@ function scene_eventstory_404_05a.actions.start_eventstory_404_05a(_root, args)
 									y = 0.5
 								},
 								position = {
-									x = -16,
-									y = 998
+									x = -41.5,
+									y = 1286.1
 								}
 							}
 						}
@@ -554,7 +554,7 @@ function scene_eventstory_404_05a.actions.start_eventstory_404_05a(_root, args)
 							x = 0,
 							y = -260,
 							refpt = {
-								x = 0.31,
+								x = 0.39,
 								y = 0
 							}
 						}
@@ -721,7 +721,7 @@ function scene_eventstory_404_05a.actions.start_eventstory_404_05a(_root, args)
 						duration = 0,
 						position = {
 							x = 0,
-							y = -280,
+							y = -250,
 							refpt = {
 								x = 0.47,
 								y = 0
@@ -800,7 +800,7 @@ function scene_eventstory_404_05a.actions.start_eventstory_404_05a(_root, args)
 						duration = 0,
 						position = {
 							x = 0,
-							y = -300,
+							y = -270,
 							refpt = {
 								x = 0.36,
 								y = 0
@@ -826,7 +826,7 @@ function scene_eventstory_404_05a.actions.start_eventstory_404_05a(_root, args)
 						duration = 0,
 						position = {
 							x = 0,
-							y = -280,
+							y = -250,
 							refpt = {
 								x = 0.67,
 								y = 0
@@ -954,7 +954,7 @@ function scene_eventstory_404_05a.actions.start_eventstory_404_05a(_root, args)
 						duration = 0,
 						position = {
 							x = 0,
-							y = -400,
+							y = -280,
 							refpt = {
 								x = 0.54,
 								y = 0
@@ -1048,7 +1048,7 @@ function scene_eventstory_404_05a.actions.start_eventstory_404_05a(_root, args)
 						duration = 0,
 						position = {
 							x = 0,
-							y = -400,
+							y = -280,
 							refpt = {
 								x = 0.34,
 								y = 0
@@ -1290,7 +1290,7 @@ function scene_eventstory_404_05a.actions.start_eventstory_404_05a(_root, args)
 						duration = 0,
 						position = {
 							x = 0,
-							y = -280,
+							y = -250,
 							refpt = {
 								x = 0.47,
 								y = -0.2
@@ -1336,7 +1336,7 @@ function scene_eventstory_404_05a.actions.start_eventstory_404_05a(_root, args)
 						duration = 0,
 						position = {
 							x = 0,
-							y = -280,
+							y = -250,
 							refpt = {
 								x = 0.47,
 								y = 0
@@ -1565,7 +1565,7 @@ function scene_eventstory_404_05a.actions.start_eventstory_404_05a(_root, args)
 				actor = __getnode__(_root, "CLMan"),
 				args = function (_ctx)
 					return {
-						scale = 1,
+						scale = 0.7,
 						duration = 0.2
 					}
 				end
@@ -1578,7 +1578,7 @@ function scene_eventstory_404_05a.actions.start_eventstory_404_05a(_root, args)
 						duration = 0.2,
 						position = {
 							x = 0,
-							y = -280,
+							y = -250,
 							refpt = {
 								x = 0.47,
 								y = -0.1
@@ -1763,7 +1763,7 @@ function scene_eventstory_404_05a.actions.start_eventstory_404_05a(_root, args)
 							x = 0,
 							y = -260,
 							refpt = {
-								x = 0.31,
+								x = 0.39,
 								y = 0
 							}
 						}
@@ -1906,7 +1906,7 @@ function scene_eventstory_404_05a.actions.start_eventstory_404_05a(_root, args)
 				actor = __getnode__(_root, "CLMan"),
 				args = function (_ctx)
 					return {
-						scale = 0.9,
+						scale = 0.63,
 						duration = 0
 					}
 				end
@@ -1919,7 +1919,7 @@ function scene_eventstory_404_05a.actions.start_eventstory_404_05a(_root, args)
 						duration = 0,
 						position = {
 							x = 0,
-							y = -280,
+							y = -250,
 							refpt = {
 								x = 0,
 								y = 0
@@ -1991,7 +1991,7 @@ function scene_eventstory_404_05a.actions.start_eventstory_404_05a(_root, args)
 						duration = 0,
 						position = {
 							x = 0,
-							y = -280,
+							y = -250,
 							refpt = {
 								x = 0.53,
 								y = 0
@@ -2082,7 +2082,7 @@ function scene_eventstory_404_05a.actions.start_eventstory_404_05a(_root, args)
 					duration = 0.3,
 					position = {
 						x = 0,
-						y = -280,
+						y = -250,
 						refpt = {
 							x = 0.3,
 							y = 0
@@ -2110,7 +2110,7 @@ function scene_eventstory_404_05a.actions.start_eventstory_404_05a(_root, args)
 					duration = 0.3,
 					position = {
 						x = 0,
-						y = -280,
+						y = -250,
 						refpt = {
 							x = 0.53,
 							y = 0
@@ -2193,7 +2193,7 @@ function scene_eventstory_404_05a.actions.start_eventstory_404_05a(_root, args)
 						duration = 0,
 						position = {
 							x = 0,
-							y = -280,
+							y = -250,
 							refpt = {
 								x = 0.33,
 								y = 0
@@ -2219,7 +2219,7 @@ function scene_eventstory_404_05a.actions.start_eventstory_404_05a(_root, args)
 						duration = 0,
 						position = {
 							x = 0,
-							y = -400,
+							y = -280,
 							refpt = {
 								x = 0.34,
 								y = 0
@@ -2326,7 +2326,7 @@ function scene_eventstory_404_05a.actions.start_eventstory_404_05a(_root, args)
 							x = 0,
 							y = -260,
 							refpt = {
-								x = 0.51,
+								x = 0.59,
 								y = 0
 							}
 						}
@@ -2403,7 +2403,7 @@ function scene_eventstory_404_05a.actions.start_eventstory_404_05a(_root, args)
 						duration = 0,
 						position = {
 							x = 0,
-							y = -300,
+							y = -270,
 							refpt = {
 								x = 0.76,
 								y = 0
@@ -2431,7 +2431,7 @@ function scene_eventstory_404_05a.actions.start_eventstory_404_05a(_root, args)
 							x = 0,
 							y = -260,
 							refpt = {
-								x = 0.31,
+								x = 0.39,
 								y = 0
 							}
 						}
@@ -2502,7 +2502,7 @@ function scene_eventstory_404_05a.actions.start_eventstory_404_05a(_root, args)
 						duration = 0,
 						position = {
 							x = 0,
-							y = -325,
+							y = -300,
 							refpt = {
 								x = 0.5,
 								y = 0
@@ -2530,7 +2530,7 @@ function scene_eventstory_404_05a.actions.start_eventstory_404_05a(_root, args)
 						duration = 0,
 						position = {
 							x = 0,
-							y = -280,
+							y = -250,
 							refpt = {
 								x = 0.27,
 								y = 0
@@ -2617,7 +2617,7 @@ function scene_eventstory_404_05a.actions.start_eventstory_404_05a(_root, args)
 						duration = 0,
 						position = {
 							x = 0,
-							y = -325,
+							y = -300,
 							refpt = {
 								x = 0.7,
 								y = 0
@@ -2694,7 +2694,7 @@ function scene_eventstory_404_05a.actions.start_eventstory_404_05a(_root, args)
 						duration = 0,
 						position = {
 							x = 0,
-							y = -300,
+							y = -270,
 							refpt = {
 								x = 0.76,
 								y = 0
@@ -2848,7 +2848,7 @@ function scene_eventstory_404_05a.actions.start_eventstory_404_05a(_root, args)
 							x = 0,
 							y = -260,
 							refpt = {
-								x = 0.31,
+								x = 0.39,
 								y = 0
 							}
 						}

@@ -74,11 +74,11 @@ function scene_CooperateBoss_YLMGZhu_Escape.actions.action_CooperateBoss_YLMGZhu
 					modelId = "Model_YLMGZhu",
 					id = "YLMGZhu",
 					rotationX = 0,
-					scale = 1.09,
+					scale = 0.75,
 					zorder = 10,
 					position = {
 						x = 0,
-						y = -300,
+						y = -360,
 						refpt = {
 							x = 0.46,
 							y = 0
@@ -102,8 +102,8 @@ function scene_CooperateBoss_YLMGZhu_Escape.actions.action_CooperateBoss_YLMGZhu
 								y = 0.5
 							},
 							position = {
-								x = 73.3,
-								y = 691.5
+								x = 108.5,
+								y = 1021
 							}
 						}
 					}

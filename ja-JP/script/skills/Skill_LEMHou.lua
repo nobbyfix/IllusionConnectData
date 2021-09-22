@@ -325,7 +325,7 @@ all.Skill_LEMHou_Unique = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and _env.unit ~= _env.ACTOR and global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED_ALL(_env, "LEMHou_Battle", "UNDISPELLABLE", "UNSTEALABLE")) > 0 then
+			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and _env.unit ~= _env.ACTOR and global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED_ALL(_env, "LEMHou_Battle", "UNDISPELLABLE", "UNSTEALABLE")) > 0 and global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "FREEZE")) == 0 and global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "DAZE")) == 0 then
 				local buffeft2 = global.RageGainEffect(_env, "-", {
 					"+Normal",
 					"+Normal"
@@ -365,6 +365,19 @@ all.Skill_LEMHou_Passive = {
 		this.passive = global["[trigger_by]"](this, {
 			"UNIT_AFTER_UNIQUE"
 		}, passive)
+		local passive2 = __action(this, {
+			name = "passive2",
+			entry = prototype.passive2
+		})
+		passive2 = global["[duration]"](this, {
+			0
+		}, passive2)
+		passive2 = global["[trigger_by]"](this, {
+			"SELF:AFTER_ACTION"
+		}, passive2)
+		this.passive2 = global["[trigger_by]"](this, {
+			"SELF:DIE"
+		}, passive2)
 
 		return this
 	end,
@@ -385,7 +398,7 @@ all.Skill_LEMHou_Passive = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.GetSide(_env, _env.unit) ~= global.GetSide(_env, _env.ACTOR) then
+			if global.GetSide(_env, _env.unit) ~= global.GetSide(_env, _env.ACTOR) and global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "FREEZE")) == 0 and global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "DAZE")) == 0 then
 				local buffeft = global.Taunt(_env)
 
 				global.ApplyBuff(_env, _env.unit, {
@@ -417,8 +430,32 @@ all.Skill_LEMHou_Passive = {
 				}, {
 					buffeft2
 				})
-				global.ExertRegularSkill(_env, _env.ACTOR)
+
+				if _env.unit then
+					global.ExertRegularSkill(_env, _env.ACTOR)
+				end
+
 				global.DelayCall(_env, 105, global.DispelBuff, _env.unit, global.BUFF_MARKED_ALL(_env, "LEMHou_Passive", "UNDISPELLABLE", "UNSTEALABLE"), 99)
+			end
+		end)
+
+		return _env
+	end,
+	passive2 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			for _, unit in global.__iter__(global.EnemyUnits(_env)) do
+				global.DispelBuff(_env, unit, global.BUFF_MARKED_ALL(_env, "LEMHou_Passive", "UNDISPELLABLE", "UNSTEALABLE"), 99)
 			end
 		end)
 
@@ -698,7 +735,7 @@ all.Skill_LEMHou_Unique_EX = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and _env.unit ~= _env.ACTOR and global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED_ALL(_env, "LEMHou_Battle", "UNDISPELLABLE", "UNSTEALABLE")) > 0 then
+			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and _env.unit ~= _env.ACTOR and global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED_ALL(_env, "LEMHou_Battle", "UNDISPELLABLE", "UNSTEALABLE")) > 0 and global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "FREEZE")) == 0 and global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "DAZE")) == 0 then
 				local buffeft2 = global.RageGainEffect(_env, "-", {
 					"+Normal",
 					"+Normal"
@@ -744,6 +781,19 @@ all.Skill_LEMHou_Passive_EX = {
 		this.passive = global["[trigger_by]"](this, {
 			"UNIT_AFTER_UNIQUE"
 		}, passive)
+		local passive2 = __action(this, {
+			name = "passive2",
+			entry = prototype.passive2
+		})
+		passive2 = global["[duration]"](this, {
+			0
+		}, passive2)
+		passive2 = global["[trigger_by]"](this, {
+			"SELF:AFTER_ACTION"
+		}, passive2)
+		this.passive2 = global["[trigger_by]"](this, {
+			"SELF:DIE"
+		}, passive2)
 
 		return this
 	end,
@@ -764,7 +814,7 @@ all.Skill_LEMHou_Passive_EX = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.GetSide(_env, _env.unit) ~= global.GetSide(_env, _env.ACTOR) then
+			if global.GetSide(_env, _env.unit) ~= global.GetSide(_env, _env.ACTOR) and global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "FREEZE")) == 0 and global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "DAZE")) == 0 then
 				local buffeft = global.Taunt(_env)
 				local buff = global.RageGainEffect(_env, "-", {
 					"+Normal",
@@ -801,7 +851,32 @@ all.Skill_LEMHou_Passive_EX = {
 				}, {
 					buffeft2
 				})
-				global.ExertRegularSkill(_env, _env.ACTOR)
+
+				if _env.unit then
+					global.ExertRegularSkill(_env, _env.ACTOR)
+				end
+
+				global.DelayCall(_env, 105, global.DispelBuff, _env.unit, global.BUFF_MARKED_ALL(_env, "LEMHou_Passive", "UNDISPELLABLE", "UNSTEALABLE"), 99)
+			end
+		end)
+
+		return _env
+	end,
+	passive2 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			for _, unit in global.__iter__(global.EnemyUnits(_env)) do
+				global.DispelBuff(_env, unit, global.BUFF_MARKED_ALL(_env, "LEMHou_Passive", "UNDISPELLABLE", "UNSTEALABLE"), 99)
 			end
 		end)
 

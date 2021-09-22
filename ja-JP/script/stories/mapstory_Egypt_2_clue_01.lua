@@ -57,10 +57,10 @@ function scene_mapstory_Egypt_2_clue_01.actions.start_mapstory_Egypt_2_clue_01(_
 					modelId = "Model_YMHTPu",
 					id = "YMHTPu_speak",
 					rotationX = 0,
-					scale = 1.2,
+					scale = 0.7,
 					position = {
 						x = 0,
-						y = -435,
+						y = -485,
 						refpt = {
 							x = 0.3,
 							y = 0

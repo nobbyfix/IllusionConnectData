@@ -481,6 +481,26 @@ local modules = {
 							res = "asset/ui/HeroInteractionView.csb",
 							name = "HeroInteractionView",
 							mediator = "HeroInteractionViewMediator"
+						},
+						{
+							res = "asset/ui/DebugBustShow.csb",
+							name = "DebugBustShowView",
+							mediator = "DebugBustShowViewMediator"
+						},
+						{
+							res = "asset/ui/DebugBustShow2.csb",
+							name = "DebugBustShowView2",
+							mediator = "DebugBustShowViewMediator2"
+						},
+						{
+							res = "asset/ui/DebugBustShow2.csb",
+							name = "DebugBustShowView3",
+							mediator = "DebugBustShowViewMediator3"
+						},
+						{
+							res = "asset/ui/DebugBustShow2.csb",
+							name = "DebugBustUnAwake",
+							mediator = "DebugShowBustAniUnAwake"
 						}
 					}
 				}
@@ -2050,6 +2070,11 @@ local modules = {
 							res = "asset/ui/ActivityMail.csb",
 							name = "ActivityMailView",
 							mediator = "ActivityMailMediator"
+						},
+						{
+							res = "asset/ui/ActivityAnimalMain.csb",
+							name = "ActivityAnimalMainView",
+							mediator = "ActivityCommonMainMediator"
 						}
 					}
 				}

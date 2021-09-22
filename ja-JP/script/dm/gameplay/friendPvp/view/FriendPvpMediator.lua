@@ -402,8 +402,8 @@ function FriendPvpMediator:refreshHostInfo()
 	headIcon:removeAllChildren()
 
 	local headImg, oldIcon = IconFactory:createRactHeadImage({
-		id = hostInfo.headImage,
-		size = cc.size(152, 83)
+		frameId = "bustframe11_2",
+		id = hostInfo.headImage
 	})
 
 	oldIcon:offset(40, -10)
@@ -449,9 +449,10 @@ function FriendPvpMediator:refreshGuestInfo()
 
 	headIcon:removeAllChildren()
 	nameText:setString(guestInfo.nickName)
-	lvText:setString(Strings:get("Common_LV_Text") .. guestInfo.level)
+	lvText:setString("LV." .. guestInfo.level)
 
 	local headImg, oldIcon = IconFactory:createRactHeadImage({
+		frameId = "bustframe11_2",
 		id = guestInfo.headImage,
 		size = cc.size(152, 83)
 	})
@@ -522,10 +523,9 @@ function FriendPvpMediator:setupPlayerTeamInfo(info, playerIndex)
 
 	local masterSystem = self._developSystem:getMasterSystem()
 	local roleModel = masterSystem:getMasterLeadStageModel(info.master[1], info.leadStageId or "")
-	local masterIcon = IconFactory:createRoleIconSprite({
-		iconType = 7,
-		id = roleModel,
-		stencil = stencil
+	local masterIcon = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe11_3",
+		id = roleModel
 	})
 
 	masterIcon:setAnchorPoint(cc.p(0, 0))

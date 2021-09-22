@@ -307,7 +307,9 @@ all.Skill_YLMGZhu_Passive = {
 						"STATUS",
 						"DEBUFF",
 						"CURSE",
-						"DISPELLABLE"
+						"DISPELLABLE",
+						"POISON",
+						"ABNORMAL"
 					}
 				}, {
 					buffeft1,
@@ -711,8 +713,10 @@ all.Skill_YLMGZhu_Passive_EX = {
 					tags = {
 						"STATUS",
 						"DEBUFF",
-						"CURSE",
-						"DISPELLABLE"
+						"ABNORMAL",
+						"DISPELLABLE",
+						"POISON",
+						"ABNORMAL"
 					}
 				}, {
 					buffeft1,
@@ -750,8 +754,10 @@ all.Skill_YLMGZhu_Passive_EX = {
 					tags = {
 						"STATUS",
 						"DEBUFF",
-						"CURSE",
-						"DISPELLABLE"
+						"ABNORMAL",
+						"DISPELLABLE",
+						"POISON",
+						"ABNORMAL"
 					}
 				}, {
 					buffeft1,

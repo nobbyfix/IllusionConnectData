@@ -74,14 +74,15 @@ function SpStageFinishMediator:initWidgetInfo()
 	local unlockKey = kSpStageTeamAndPointType[self._data.spType].unlockType
 	local heroNode = anim:getChildByFullName("roleNode")
 	local roleModel = stageAccount[1]
-	local heroIcon = IconFactory:createRoleIconSprite({
+	roleModel = IconFactory:getSpMvpBattleEndMid(roleModel)
+	local heroIcon = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust9",
+		frameId = "bustframe17",
 		id = roleModel
 	})
 
 	heroIcon:setScale(0.8)
-	heroIcon:setPosition(cc.p(50, -100))
+	heroIcon:setPosition(cc.p(-250, -200))
 	heroNode:addChild(heroIcon)
 	anim:addCallbackAtFrame(9, function ()
 		bg:getChildByFullName("sloganPanel"):fadeIn({

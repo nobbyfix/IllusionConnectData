@@ -2544,11 +2544,11 @@ function scene_eventstory_deepSea_03a.actions.start_eventstory_deepSea_03a(_root
 						modelId = "Model_ALPo",
 						id = "ALPo",
 						rotationX = 0,
-						scale = 0.95,
+						scale = 0.63,
 						zorder = 100,
 						position = {
 							x = 0,
-							y = -330,
+							y = -300,
 							refpt = {
 								x = 0.5,
 								y = 0
@@ -2572,8 +2572,8 @@ function scene_eventstory_deepSea_03a.actions.start_eventstory_deepSea_03a(_root
 									y = 0.5
 								},
 								position = {
-									x = -1.65,
-									y = 781
+									x = 7,
+									y = 1020
 								}
 							}
 						}
@@ -2824,7 +2824,7 @@ function scene_eventstory_deepSea_03a.actions.start_eventstory_deepSea_03a(_root
 						duration = 0.2,
 						position = {
 							x = 0,
-							y = -330,
+							y = -300,
 							refpt = {
 								x = 0.25,
 								y = 0
@@ -3539,7 +3539,7 @@ function scene_eventstory_deepSea_03a.actions.start_eventstory_deepSea_03a(_root
 					duration = 0.4,
 					position = {
 						x = 0,
-						y = -330,
+						y = -300,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -3723,7 +3723,7 @@ function scene_eventstory_deepSea_03a.actions.start_eventstory_deepSea_03a(_root
 				actor = __getnode__(_root, "ALPo"),
 				args = function (_ctx)
 					return {
-						scale = 0.5,
+						scale = 0.35,
 						duration = 0.4
 					}
 				end
@@ -3736,7 +3736,7 @@ function scene_eventstory_deepSea_03a.actions.start_eventstory_deepSea_03a(_root
 						duration = 0.4,
 						position = {
 							x = 0,
-							y = -330,
+							y = -300,
 							refpt = {
 								x = 0.5,
 								y = 0.305
@@ -3776,7 +3776,7 @@ function scene_eventstory_deepSea_03a.actions.start_eventstory_deepSea_03a(_root
 			actor = __getnode__(_root, "ALPo"),
 			args = function (_ctx)
 				return {
-					scale = 0.95,
+					scale = 0.63,
 					duration = 0
 				}
 			end
@@ -3789,7 +3789,7 @@ function scene_eventstory_deepSea_03a.actions.start_eventstory_deepSea_03a(_root
 					duration = 0,
 					position = {
 						x = 0,
-						y = -330,
+						y = -300,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -4244,7 +4244,7 @@ function scene_eventstory_deepSea_03a.actions.start_eventstory_deepSea_03a(_root
 						duration = 0.3,
 						position = {
 							x = 0,
-							y = -330,
+							y = -300,
 							refpt = {
 								x = 1.3,
 								y = 0

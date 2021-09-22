@@ -123,9 +123,9 @@ function HeroStoryPointDetailMediator:setupView()
 	self._rolePanel:removeAllChildren()
 
 	local pointHead = pointConfig.PointHead
-	local heroSprite = IconFactory:createRoleIconSprite({
+	local heroSprite = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = 6,
+		frameId = "bustframe9",
 		id = pointHead
 	})
 
@@ -316,7 +316,7 @@ function HeroStoryPointDetailMediator:initTeamInfo()
 		bg:setPosition(cc.p(size.width / 2, size.height / 2))
 		bg:loadTexture("asset/heroRect/heroIconRect/kazu_bg_ka_bai_new.png")
 
-		local sprite = IconFactory:createRoleIconSprite({
+		local sprite = IconFactory:createRoleIconSpriteNew({
 			id = _modelIds[k]
 		})
 
