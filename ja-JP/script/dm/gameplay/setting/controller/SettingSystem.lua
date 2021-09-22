@@ -1365,16 +1365,27 @@ function SettingSystem:getRandomShowRoleAndBg()
 	table.remove(self._randomRolePool, random1)
 
 	if self._randomBgPool == nil or #self._randomBgPool == 0 then
+		local player = developSystem:getPlayer()
+		local background = player:getBackground()
 		local allBg = ConfigReader:getDataTable("HomeBackground")
 		self._randomBgPool = {}
 
 		for k, v in pairs(allBg) do
 			local bgId = v.Id
-			local unlockCondition = v.Condition
-			local isUnlock, argeNum = self:checkCondition(unlockCondition)
 
-			if isUnlock then
-				self._randomBgPool[#self._randomBgPool + 1] = bgId
+			if v.Unlook == 1 then
+				if v.Information then
+					if background[bgId] then
+						self._randomBgPool[#self._randomBgPool + 1] = bgId
+					end
+				else
+					local unlockCondition = v.Condition
+					local isUnlock, argeNum = self:checkCondition(unlockCondition)
+
+					if isUnlock then
+						self._randomBgPool[#self._randomBgPool + 1] = bgId
+					end
+				end
 			end
 		end
 	end

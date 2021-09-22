@@ -2096,7 +2096,7 @@ all.EquipSkill_Weapon_15106_3 = {
 				buffeft2
 			})
 
-			for _, unit in global.__iter__(global.FriendUnits(_env)) do
+			for _, unit in global.__iter__(global.FriendUnits(_env, global.PETS - global.SUMMONS)) do
 				if global.MASTER(_env, unit) == false then
 					local buffeft3 = global.SpecialNumericEffect(_env, "+BeCuredRage", {
 						"+Normal",
