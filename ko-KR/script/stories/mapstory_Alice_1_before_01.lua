@@ -188,10 +188,10 @@ function scene_mapstory_Alice_1_before_01.actions.start_mapstory_Alice_1_before_
 					modelId = "Model_Story_CLMan",
 					id = "CLMan_speak",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.63,
 					position = {
 						x = 0,
-						y = -325,
+						y = -300,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -215,8 +215,8 @@ function scene_mapstory_Alice_1_before_01.actions.start_mapstory_Alice_1_before_
 								y = 0.5
 							},
 							position = {
-								x = 60.5,
-								y = 787
+								x = 77.5,
+								y = 1045.5
 							}
 						}
 					}
@@ -240,10 +240,10 @@ function scene_mapstory_Alice_1_before_01.actions.start_mapstory_Alice_1_before_
 					modelId = "Model_XLai",
 					id = "XLai_speak",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.76,
 					position = {
 						x = 0,
-						y = -305,
+						y = -300,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -267,8 +267,8 @@ function scene_mapstory_Alice_1_before_01.actions.start_mapstory_Alice_1_before_
 								y = 0.5
 							},
 							position = {
-								x = 0,
-								y = 709.5
+								x = 0.5,
+								y = 899
 							}
 						}
 					}
@@ -292,10 +292,10 @@ function scene_mapstory_Alice_1_before_01.actions.start_mapstory_Alice_1_before_
 					modelId = "Model_MLYTLSha",
 					id = "MLYTLSha_speak",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.7,
 					position = {
 						x = 0,
-						y = -355,
+						y = -320,
 						refpt = {
 							x = 0.3,
 							y = 0
@@ -319,8 +319,8 @@ function scene_mapstory_Alice_1_before_01.actions.start_mapstory_Alice_1_before_
 								y = 0.5
 							},
 							position = {
-								x = -29,
-								y = 829
+								x = -34.5,
+								y = 1096
 							}
 						}
 					}
@@ -783,7 +783,7 @@ function scene_mapstory_Alice_1_before_01.actions.start_mapstory_Alice_1_before_
 					duration = 0.3,
 					position = {
 						x = 0,
-						y = -325,
+						y = -300,
 						refpt = {
 							x = 0.75,
 							y = 0
@@ -961,7 +961,7 @@ function scene_mapstory_Alice_1_before_01.actions.start_mapstory_Alice_1_before_
 					duration = 0.3,
 					position = {
 						x = 0,
-						y = -325,
+						y = -300,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -1067,7 +1067,7 @@ function scene_mapstory_Alice_1_before_01.actions.start_mapstory_Alice_1_before_
 					duration = 0.3,
 					position = {
 						x = 0,
-						y = -355,
+						y = -320,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -1441,7 +1441,7 @@ function scene_mapstory_Alice_1_before_01.actions.start_mapstory_Alice_1_before_
 					duration = 0.3,
 					position = {
 						x = 0,
-						y = -325,
+						y = -300,
 						refpt = {
 							x = 0.75,
 							y = 0
@@ -1458,7 +1458,7 @@ function scene_mapstory_Alice_1_before_01.actions.start_mapstory_Alice_1_before_
 					duration = 0.3,
 					position = {
 						x = 0,
-						y = -355,
+						y = -320,
 						refpt = {
 							x = 0.25,
 							y = 0
@@ -1627,7 +1627,7 @@ function scene_mapstory_Alice_1_before_01.actions.start_mapstory_Alice_1_before_
 					duration = 0.3,
 					position = {
 						x = 0,
-						y = -355,
+						y = -320,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -1694,7 +1694,7 @@ function scene_mapstory_Alice_1_before_01.actions.start_mapstory_Alice_1_before_
 					duration = 0.3,
 					position = {
 						x = 0,
-						y = -325,
+						y = -300,
 						refpt = {
 							x = 0.5,
 							y = 0

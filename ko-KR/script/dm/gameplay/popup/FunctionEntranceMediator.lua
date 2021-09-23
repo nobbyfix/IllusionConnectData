@@ -306,9 +306,16 @@ function FunctionEntranceMediator:initWidgetInfo(data)
 	end
 
 	local size = self._scrollView:getContentSize()
-	local width = math.max(size.width, endX + 200 + AdjustUtils.getAdjustX())
+	local cellX = endX + 200 + AdjustUtils.getAdjustX()
+	local width = math.max(size.width, cellX)
 
 	self._scrollView:setInnerContainerSize(cc.size(width, size.height))
+
+	if cellX < width then
+		local offsetX = width - cellX
+
+		self._scrollView:offset(offsetX * 0.5 - 50, 0)
+	end
 
 	local function onFrameEvent(frame)
 		if frame == nil then

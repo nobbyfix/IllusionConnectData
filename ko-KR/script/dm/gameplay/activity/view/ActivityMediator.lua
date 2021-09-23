@@ -20,6 +20,7 @@ function ActivityMediator:dispose()
 		self._checkCloseTimer = nil
 	end
 
+	self:stopTimer()
 	super.dispose(self)
 end
 
@@ -50,6 +51,7 @@ end
 function ActivityMediator:mapEventListeners()
 	self:mapEventListener(self:getEventDispatcher(), EVT_ACTIVITY_REFRESH, self, self.onActivityRefresh)
 	self:mapEventListener(self:getEventDispatcher(), EVT_ACTIVITY_REDPOINT_REFRESH, self, self.refreshRedPoint)
+	self:mapEventListener(self:getEventDispatcher(), EVT_BUY_ACTIVITY_PAY_SUCC, self, self.updateTabController)
 end
 
 function ActivityMediator:resumeWithData(data)
@@ -122,6 +124,7 @@ function ActivityMediator:updateTabController()
 		imageName = activity:getLeftBanner() .. ".png"
 		local btn = self._btnCell:clone()
 		btn.realTag = k
+		btn.activityId = activityId
 		local name1Text = btn:getChildByName("name1")
 		local name2Text = btn:getChildByName("name2")
 
@@ -135,6 +138,7 @@ function ActivityMediator:updateTabController()
 		btn.redPoint = redPoint
 
 		node:setPosition(100, 100)
+		self:setTimeRemain(btn)
 
 		if self._curTabType == k then
 			btn:getChildByName("select"):setVisible(true)
@@ -178,6 +182,99 @@ function ActivityMediator:setLocalZOrder()
 		local zo = self._curTabType == k and 999 or 999 - k
 
 		v:setLocalZOrder(zo)
+	end
+end
+
+function ActivityMediator:setTimeRemain(btn)
+	local timePanel = btn:getChildByName("Image_time")
+	local activityId = btn.activityId
+	local activity = self._activities[activityId]
+
+	if activity:getUI() == ActivityType.KTASKSTAGESTAR then
+		timePanel:setVisible(true)
+
+		local activity = self._activities[activityId]
+		local buy = activity:getPayStatus()
+		local deadline = activity:getDeadline()
+
+		if deadline or buy then
+			self:stopTimer()
+			timePanel:setVisible(false)
+		else
+			self:setTimer(activityId, timePanel)
+		end
+	else
+		timePanel:setVisible(false)
+	end
+end
+
+function ActivityMediator:setTimer(activityId, timePanel)
+	self:stopTimer()
+
+	local activity = self._activities[activityId]
+
+	if not activity then
+		timePanel:setVisible(false)
+
+		return
+	end
+
+	local activityConfig = activity:getActivityConfig()
+	local times = timePanel:getChildByFullName("times")
+	local gameServerAgent = self:getInjector():getInstance("GameServerAgent")
+	local remoteTimestamp = gameServerAgent:remoteTimestamp()
+	local startTime = activity:getStartTime() / 1000
+	local buyDays = activityConfig.buyDays
+	local endMills = startTime + tonumber(buyDays) * 24 * 60 * 60
+
+	if remoteTimestamp < endMills and not self._timer then
+		local function checkTimeFunc()
+			remoteTimestamp = gameServerAgent:remoteTimestamp()
+			local endMills = startTime + tonumber(buyDays) * 24 * 60 * 60
+
+			if endMills <= remoteTimestamp then
+				self:stopTimer()
+				timePanel:setVisible(false)
+
+				return
+			end
+
+			local str = ""
+			local fmtStr = "${d}:${H}:${M}:${S}"
+			local remainTime = endMills - remoteTimestamp
+			local timeStr = TimeUtil:formatTime(fmtStr, remainTime)
+			local parts = string.split(timeStr, ":", nil, true)
+			local timeTab = {
+				day = tonumber(parts[1]),
+				hour = tonumber(parts[2]),
+				min = tonumber(parts[3]),
+				sec = tonumber(parts[4])
+			}
+
+			if timeTab.day > 0 then
+				str = timeTab.day .. Strings:get("TimeUtil_Day") .. timeTab.hour .. Strings:get("TimeUtil_Hour")
+			elseif timeTab.hour > 0 then
+				str = timeTab.hour .. Strings:get("TimeUtil_Hour") .. timeTab.min .. Strings:get("TimeUtil_Min")
+			else
+				str = timeTab.min .. Strings:get("TimeUtil_Min") .. timeTab.sec .. Strings:get("TimeUtil_Sec")
+			end
+
+			times:setString(str)
+		end
+
+		checkTimeFunc()
+
+		self._timer = LuaScheduler:getInstance():schedule(checkTimeFunc, 1, false)
+	else
+		timePanel:setVisible(false)
+	end
+end
+
+function ActivityMediator:stopTimer()
+	if self._timer then
+		self._timer:stop()
+
+		self._timer = nil
 	end
 end
 

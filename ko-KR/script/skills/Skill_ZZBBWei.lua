@@ -485,6 +485,7 @@ all.Skill_ZZBBWei_Unique = {
 							"STATUS",
 							"DEBUFF",
 							"DAZE",
+							"ABNORMAL",
 							"DISPELLABLE"
 						}
 					}, {
@@ -780,6 +781,7 @@ all.Skill_ZZBBWei_Proud_EX = {
 						"STATUS",
 						"DEBUFF",
 						"DAZE",
+						"ABNORMAL",
 						"DISPELLABLE"
 					}
 				}, {
@@ -1011,6 +1013,7 @@ all.Skill_ZZBBWei_Unique_EX = {
 							"STATUS",
 							"DEBUFF",
 							"DAZE",
+							"ABNORMAL",
 							"DISPELLABLE"
 						}
 					}, {

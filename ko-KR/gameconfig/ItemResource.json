@@ -209,6 +209,20 @@
         "Text": "URMap_TimeLimit_Source_Des",
         "URL": ""
     },
+    "CO_Shoes_15106_3_Resource": {
+        "Isturn": 0,
+        "ResourceText": "URSourceTag_TimeLimit",
+        "ResourceType": 6,
+        "Text": "URMap_TimeLimit_Source_Des",
+        "URL": ""
+    },
+    "CO_Shoes_15107_1_Resource": {
+        "Isturn": 0,
+        "ResourceText": "URSourceTag_TimeLimit",
+        "ResourceType": 6,
+        "Text": "URMap_TimeLimit_Source_Des",
+        "URL": ""
+    },
     "CO_Tops_15001_Resource": {
         "Isturn": 0,
         "ResourceText": "URSourceTag_TimeLimit",
@@ -328,6 +342,20 @@
         "Text": "URMap_TimeLimit_Source_Des",
         "URL": ""
     },
+    "CO_Tops_15106_3_Resource": {
+        "Isturn": 0,
+        "ResourceText": "URSourceTag_TimeLimit",
+        "ResourceType": 6,
+        "Text": "URMap_TimeLimit_Source_Des",
+        "URL": ""
+    },
+    "CO_Tops_15107_1_Resource": {
+        "Isturn": 0,
+        "ResourceText": "URSourceTag_TimeLimit",
+        "ResourceType": 6,
+        "Text": "URMap_TimeLimit_Source_Des",
+        "URL": ""
+    },
     "CO_Weapon_15001_Resource": {
         "Isturn": 0,
         "ResourceText": "URSourceTag_TimeLimit",
@@ -420,6 +448,13 @@
         "URL": ""
     },
     "CO_Weapon_15105_2_Resource": {
+        "Isturn": 0,
+        "ResourceText": "URSourceTag_TimeLimit",
+        "ResourceType": 6,
+        "Text": "URMap_TimeLimit_Source_Des",
+        "URL": ""
+    },
+    "CO_Weapon_15106_3_Resource": {
         "Isturn": 0,
         "ResourceText": "URSourceTag_TimeLimit",
         "ResourceType": 6,
@@ -1384,6 +1419,13 @@
         "ResourceType": 4,
         "Text": "Source_HeroStory",
         "URL": "view://HeroStoryEnterView&viewType=push&heroId=HLMGen"
+    },
+    "IHF_HLa_1": {
+        "Isturn": 0,
+        "ResourceText": "Source_Activity",
+        "ResourceType": 0,
+        "Text": "Source_Activity",
+        "URL": ""
     },
     "IHF_HSYZhai_1": {
         "Isturn": 0,
@@ -2590,6 +2632,13 @@
         "URL": "view://HeroStoryEnterView&viewType=push&heroId=WTXXuan&index=5"
     },
     "IHF_XBKLDi_1": {
+        "Isturn": 0,
+        "ResourceText": "Source_Activity",
+        "ResourceType": 0,
+        "Text": "Source_Activity",
+        "URL": ""
+    },
+    "IHF_XDE_1": {
         "Isturn": 0,
         "ResourceText": "Source_Activity",
         "ResourceType": 0,
@@ -8833,6 +8882,13 @@
         "Text": "Source_IR_Activity_1",
         "URL": ""
     },
+    "IR_AnimalStamina": {
+        "Isturn": 0,
+        "ResourceText": "Source_IR_AnimalStamina",
+        "ResourceType": 0,
+        "Text": "Source_IR_AnimalStamina_Desc",
+        "URL": ""
+    },
     "IR_Arena_1": {
         "Isturn": 1,
         "ResourceText": "Resource_Arena",
@@ -9035,6 +9091,20 @@
         "ResourceType": 0,
         "Text": "Source_IR_MusicFestivalStamina_Desc",
         "URL": ""
+    },
+    "IR_NewArenaCoin": {
+        "Isturn": 0,
+        "ResourceText": "IR_NewArenaCoin_IBDesc1",
+        "ResourceType": 0,
+        "Text": "IR_NewArenaCoin_IBDesc2",
+        "URL": "view://LeadStageArenaMainView&viewType=push"
+    },
+    "IR_NewArenaCoin_1": {
+        "Isturn": 0,
+        "ResourceText": "IR_ArenaCoin_IBDesc1",
+        "ResourceType": 0,
+        "Text": "IR_ArenaCoin_IBDesc2",
+        "URL": "view://RTPKMainView"
     },
     "IR_PansLab": {
         "Isturn": 0,

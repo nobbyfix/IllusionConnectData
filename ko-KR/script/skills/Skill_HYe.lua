@@ -84,6 +84,7 @@ all.Skill_HYe_Normal = {
 					"STATUS",
 					"DEBUFF",
 					"BURNING",
+					"ABNORMAL",
 					"DISPELLABLE"
 				}
 			}, {
@@ -289,6 +290,7 @@ all.Skill_HYe_Unique = {
 						"STATUS",
 						"DEBUFF",
 						"BURNING",
+						"ABNORMAL",
 						"DISPELLABLE"
 					}
 				}, {
@@ -586,6 +588,7 @@ all.Skill_HYe_Unique_EX = {
 						"STATUS",
 						"DEBUFF",
 						"BURNING",
+						"ABNORMAL",
 						"DISPELLABLE"
 					}
 				}, {

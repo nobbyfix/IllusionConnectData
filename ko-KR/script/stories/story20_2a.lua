@@ -333,10 +333,10 @@ function scene_story20_2a.actions.start_story20_2a(_root, args)
 					modelId = "Model_JNLong",
 					id = "JNLong_speak",
 					rotationX = 0,
-					scale = 1.125,
+					scale = 0.65,
 					position = {
 						x = 0,
-						y = -395,
+						y = -330,
 						refpt = {
 							x = 0.55,
 							y = 0
@@ -360,8 +360,8 @@ function scene_story20_2a.actions.start_story20_2a(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = 177.5,
-								y = 806.4
+								x = 268.5,
+								y = 1184
 							}
 						}
 					}
@@ -932,7 +932,7 @@ function scene_story20_2a.actions.start_story20_2a(_root, args)
 					duration = 1,
 					position = {
 						x = 0,
-						y = -395,
+						y = -330,
 						refpt = {
 							x = 1.5,
 							y = 0
@@ -1032,7 +1032,7 @@ function scene_story20_2a.actions.start_story20_2a(_root, args)
 					duration = 0,
 					position = {
 						x = 0,
-						y = -395,
+						y = -330,
 						refpt = {
 							x = 0.35,
 							y = 0
@@ -1946,7 +1946,7 @@ function scene_story20_2a.actions.start_story20_2a(_root, args)
 					duration = 0.5,
 					position = {
 						x = 0,
-						y = -395,
+						y = -330,
 						refpt = {
 							x = 1.5,
 							y = 0
@@ -1963,11 +1963,11 @@ function scene_story20_2a.actions.start_story20_2a(_root, args)
 					modelId = "Model_Story_SGHQShou02",
 					id = "SGHQShou2_speak",
 					rotationX = 0,
-					scale = 1.3,
+					scale = 0.62,
 					zorder = 2,
 					position = {
 						x = 0,
-						y = -430,
+						y = -386,
 						refpt = {
 							x = 0.25,
 							y = 0
@@ -1990,8 +1990,8 @@ function scene_story20_2a.actions.start_story20_2a(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = 33.6,
-								y = 674.8
+								x = 64,
+								y = 1324
 							}
 						}
 					}
@@ -2006,11 +2006,11 @@ function scene_story20_2a.actions.start_story20_2a(_root, args)
 					modelId = "Model_Story_SGHQShou03",
 					id = "SGHQShou3_speak",
 					rotationX = 0,
-					scale = 1.23,
+					scale = 0.62,
 					zorder = 1,
 					position = {
 						x = 0,
-						y = -330,
+						y = -307,
 						refpt = {
 							x = 0.7,
 							y = 0
@@ -2033,8 +2033,8 @@ function scene_story20_2a.actions.start_story20_2a(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = 33.6,
-								y = 681.5
+								x = 69,
+								y = 1322
 							}
 						}
 					}
@@ -2170,7 +2170,7 @@ function scene_story20_2a.actions.start_story20_2a(_root, args)
 					duration = 1,
 					position = {
 						x = 0,
-						y = -395,
+						y = -330,
 						refpt = {
 							x = 0.35,
 							y = 0
@@ -2431,11 +2431,11 @@ function scene_story20_2a.actions.start_story20_2a(_root, args)
 					modelId = "Model_LLan",
 					id = "LLan_speak",
 					rotationX = 0,
-					scale = 1.205,
+					scale = 0.72,
 					zorder = 2,
 					position = {
 						x = 0,
-						y = -465,
+						y = -390,
 						refpt = {
 							x = -0.5,
 							y = 0
@@ -2459,8 +2459,8 @@ function scene_story20_2a.actions.start_story20_2a(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = -9,
-								y = 771
+								x = -23.5,
+								y = 1095
 							}
 						}
 					}
@@ -2496,7 +2496,7 @@ function scene_story20_2a.actions.start_story20_2a(_root, args)
 						duration = 1,
 						position = {
 							x = 0,
-							y = -465,
+							y = -390,
 							refpt = {
 								x = 0.275,
 								y = 0
@@ -2513,7 +2513,7 @@ function scene_story20_2a.actions.start_story20_2a(_root, args)
 						duration = 1,
 						position = {
 							x = 0,
-							y = -395,
+							y = -330,
 							refpt = {
 								x = 0.55,
 								y = 0

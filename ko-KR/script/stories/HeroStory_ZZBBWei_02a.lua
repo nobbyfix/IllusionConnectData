@@ -228,11 +228,11 @@ function scene_HeroStory_ZZBBWei_02a.actions.start_HeroStory_ZZBBWei_02a(_root, 
 					modelId = "Model_ZZBBWei",
 					id = "ZZBBWei_speak",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.68,
 					zorder = 12,
 					position = {
 						x = 0,
-						y = -130,
+						y = -100,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -255,8 +255,8 @@ function scene_HeroStory_ZZBBWei_02a.actions.start_HeroStory_ZZBBWei_02a(_root, 
 								y = 0.5
 							},
 							position = {
-								x = -19.9,
-								y = 601
+								x = 6.1,
+								y = 714.8
 							}
 						}
 					}

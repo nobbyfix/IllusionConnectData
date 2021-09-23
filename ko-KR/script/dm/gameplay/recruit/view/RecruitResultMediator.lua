@@ -51,7 +51,7 @@ function RecruitMainMediator:initResultView()
 		self._itemResult = itemResult:getChildByFullName("diamondResult")
 
 		self._itemResult:setSwallowTouches(false)
-		self._itemResult:getChildByFullName("touchLayer"):setVisible(false)
+		self._itemResult:getChildByFullName("touchLayer"):setVisible(true)
 
 		self._bg = self._itemResult:getChildByFullName("bg")
 		self._cloneNode = self._itemResult:getChildByFullName("cloneNode")
@@ -60,6 +60,9 @@ function RecruitMainMediator:initResultView()
 
 		self._itemPanel = self._itemResult:getChildByFullName("itemPanel")
 		self._btnsPanel = self._itemResult:getChildByFullName("buttons_panel")
+
+		self._btnsPanel:setLocalZOrder(100)
+
 		local rebuyBtn = self._itemResult:getChildByFullName("buttons_panel.rebuy_btn")
 		local sureBtn = self._itemResult:getChildByFullName("buttons_panel.sure_btn")
 		self._rebuyBtn = self:bindWidget(rebuyBtn, OneLevelViceButton, {
@@ -359,7 +362,8 @@ function RecruitMainMediator:showOneAnim()
 				local itemConfig = ConfigReader:getRecordById("ItemConfig", itemId)
 				data = {
 					newHero = false,
-					heroId = itemConfig.TargetId.id
+					heroId = itemConfig.TargetId.id,
+					fragmentCount = rewardData.amount
 				}
 			elseif recruitRewardType == RecruitRewardType.kHero then
 				local itemId = rewardData.code
@@ -409,7 +413,8 @@ function RecruitMainMediator:showOneAnim()
 				local itemConfig = ConfigReader:getRecordById("ItemConfig", itemId)
 				data = {
 					newHero = false,
-					heroId = itemConfig.TargetId.id
+					heroId = itemConfig.TargetId.id,
+					fragmentCount = rewardData.amount
 				}
 			elseif recruitRewardType == RecruitRewardType.kHero then
 				local itemId = rewardData.code
@@ -457,7 +462,8 @@ function RecruitMainMediator:showTenAnim()
 					data = {
 						newHero = false,
 						heroId = itemConfig.TargetId.id,
-						rarity = ConfigReader:getDataByNameIdAndKey("HeroBase", itemConfig.TargetId.id, "Rareity")
+						rarity = ConfigReader:getDataByNameIdAndKey("HeroBase", itemConfig.TargetId.id, "Rareity"),
+						fragmentCount = rewardData.amount
 					}
 				elseif recruitRewardType == RecruitRewardType.kHero then
 					local itemId = rewardData.code
@@ -535,7 +541,8 @@ function RecruitMainMediator:showTenAnim()
 					data = {
 						newHero = false,
 						heroId = itemConfig.TargetId.id,
-						rarity = ConfigReader:getDataByNameIdAndKey("HeroBase", itemConfig.TargetId.id, "Rareity")
+						rarity = ConfigReader:getDataByNameIdAndKey("HeroBase", itemConfig.TargetId.id, "Rareity"),
+						fragmentCount = rewardData.amount
 					}
 				elseif recruitRewardType == RecruitRewardType.kHero then
 					local itemId = rewardData.code
@@ -743,11 +750,9 @@ function RecruitMainMediator:createRewardHero(data, pos, adjustZoom, rewardData,
 	local roleModel = IconFactory:getRoleModelByKey("HeroBase", heroId)
 	local roleAnim = anim:getChildByFullName("roleAnim")
 	local roleNode = roleAnim:getChildByFullName("roleNode")
-	local realImage = IconFactory:createRoleIconSprite({
-		stencil = 1,
-		iconType = "Bust7",
-		id = roleModel,
-		size = cc.size(245, 336)
+	local realImage = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe7_1",
+		id = roleModel
 	})
 
 	realImage:addTo(roleNode)
@@ -897,7 +902,8 @@ function RecruitMainMediator:showNewHeroView(heroArr, animFrame)
 				heroId = id,
 				callback = callback,
 				newHero = newHero,
-				animFrame = animFrame
+				animFrame = animFrame,
+				fragmentCount = data.fragmentCount
 			}))
 		end
 	else

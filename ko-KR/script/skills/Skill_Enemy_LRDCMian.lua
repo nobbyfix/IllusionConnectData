@@ -149,6 +149,7 @@ all.Skill_Enemy_LRDCMian_Skill = {
 						"STATUS",
 						"DEBUFF",
 						"BURNING",
+						"ABNORMAL",
 						"DISPELLABLE"
 					}
 				}, {

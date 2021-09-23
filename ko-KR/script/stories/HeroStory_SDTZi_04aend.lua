@@ -159,11 +159,11 @@ function scene_HeroStory_SDTZi_04aend.actions.start_HeroStory_SDTZi_04aend(_root
 					modelId = "Model_XSMLi",
 					id = "XSMLi_speak",
 					rotationX = 0,
-					scale = 1.205,
+					scale = 0.75,
 					zorder = 10,
 					position = {
 						x = 0,
-						y = -505,
+						y = -480,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -187,8 +187,8 @@ function scene_HeroStory_SDTZi_04aend.actions.start_HeroStory_SDTZi_04aend(_root
 								y = 0.5
 							},
 							position = {
-								x = -182,
-								y = 792.5
+								x = -342.5,
+								y = 1158
 							}
 						}
 					}
@@ -274,10 +274,10 @@ function scene_HeroStory_SDTZi_04aend.actions.start_HeroStory_SDTZi_04aend(_root
 					modelId = "Model_SDTZi",
 					id = "SDTZi_speak",
 					rotationX = 0,
-					scale = 1.145,
+					scale = 0.75,
 					position = {
 						x = 0,
-						y = -330,
+						y = -375,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -301,8 +301,8 @@ function scene_HeroStory_SDTZi_04aend.actions.start_HeroStory_SDTZi_04aend(_root
 								y = 0.5
 							},
 							position = {
-								x = -79,
-								y = 679.8
+								x = -112,
+								y = 1026
 							}
 						}
 					}
@@ -530,7 +530,7 @@ function scene_HeroStory_SDTZi_04aend.actions.start_HeroStory_SDTZi_04aend(_root
 					duration = 0.5,
 					position = {
 						x = 0,
-						y = -450,
+						y = -480,
 						refpt = {
 							x = -0.5,
 							y = 0
@@ -597,7 +597,7 @@ function scene_HeroStory_SDTZi_04aend.actions.start_HeroStory_SDTZi_04aend(_root
 					duration = 0.3,
 					position = {
 						x = 0,
-						y = -330,
+						y = -375,
 						refpt = {
 							x = 0.75,
 							y = 0
@@ -614,11 +614,11 @@ function scene_HeroStory_SDTZi_04aend.actions.start_HeroStory_SDTZi_04aend(_root
 					modelId = "Model_LCYShi",
 					id = "LCYShi_speak",
 					rotationX = 0,
-					scale = 1.155,
+					scale = 0.68,
 					zorder = 10,
 					position = {
 						x = 0,
-						y = -350,
+						y = -380,
 						refpt = {
 							x = 0.25,
 							y = 0
@@ -642,8 +642,8 @@ function scene_HeroStory_SDTZi_04aend.actions.start_HeroStory_SDTZi_04aend(_root
 								y = 0.5
 							},
 							position = {
-								x = 49.4,
-								y = 746.2
+								x = 64.2,
+								y = 1144
 							}
 						}
 					}

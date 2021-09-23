@@ -192,11 +192,9 @@ function HeroStarBoxMediator:refreshView()
 			panel:removeAllChildren()
 
 			local roleModel = IconFactory:getRoleModelByKey("HeroBase", id)
-			local heroIcon = IconFactory:createRoleIconSprite({
-				stencil = 1,
-				iconType = "Bust5",
-				id = roleModel,
-				size = cc.size(340, 450)
+			local heroIcon = IconFactory:createRoleIconSpriteNew({
+				frameId = "bustframe4_7",
+				id = roleModel
 			})
 
 			heroIcon:addTo(panel):center(panel:getContentSize())
@@ -246,11 +244,9 @@ function HeroStarBoxMediator:refreshView()
 			panel:removeAllChildren()
 
 			local roleModel = IconFactory:getRoleModelByKey("HeroBase", id)
-			local heroIcon = IconFactory:createRoleIconSprite({
-				stencil = 1,
-				iconType = "Bust5",
-				id = roleModel,
-				size = cc.size(340, 450)
+			local heroIcon = IconFactory:createRoleIconSpriteNew({
+				frameId = "bustframe4_7",
+				id = roleModel
 			})
 
 			heroIcon:setScale(0.8)

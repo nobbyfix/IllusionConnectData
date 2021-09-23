@@ -1,6 +1,6 @@
 {
     "Alice_1_BossA1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 5238,
         "CheckDes": "",
         "CheckOption": "",
@@ -8,11 +8,12 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_MuOuHuaJiangA5",
+        "QuickBattleOption": "2",
         "Reward": "Alice_1_Boss1_Show",
         "Tag": "End",
         "Title": "Alice_1_BossA1_Name",
@@ -46,6 +47,7 @@
             "3"
         ],
         "Pic": "Alice_Yun_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_1_BuffA1_Name",
@@ -79,13 +81,14 @@
             "3"
         ],
         "Pic": "Alice_Yun_02",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_1_BuffB1_Name",
         "Type": "TYPE5"
     },
     "Alice_1_CaiDanBoss_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": "",
         "CheckDes": "",
         "CheckOption": "",
@@ -93,11 +96,12 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_MuOuHuaJiangA5",
+        "QuickBattleOption": "2",
         "Reward": "Alice_1_CaiDanBoss1_Show",
         "Tag": "End",
         "Title": "Alice_1_CaiDanBoss_Name",
@@ -117,6 +121,7 @@
         },
         "Order": "",
         "Pic": "Monster_MuOuHuaJiangA5",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_1_CaiDanBoss_Name",
@@ -154,6 +159,7 @@
             "4"
         ],
         "Pic": "Alice_CaiDanMuBei_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_1_CaiDanMuBei_Name",
@@ -173,6 +179,7 @@
         },
         "Order": "",
         "Pic": "Alice_ChaiJunMaoTanBan",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_1_ChaiJunMao_Name",
@@ -199,6 +206,7 @@
             "2"
         ],
         "Pic": "Alice_ChaiJunMaoTanBan",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_1_ChaiJunMao_Name",
@@ -218,13 +226,14 @@
         },
         "Order": "",
         "Pic": "Alice_SanYueTuLuoBo_02",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_1_HuLuoBo_Name",
         "Type": "TYPE1"
     },
     "Alice_1_JingYingA1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 3665,
         "CheckDes": "",
         "CheckOption": "",
@@ -232,18 +241,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_MuOuGongZhu5",
+        "QuickBattleOption": "2",
         "Reward": "Alice_1_JingYing1_Show",
         "Tag": "",
         "Title": "Alice_1_JingYingA1_Name",
         "Type": "TYPE3"
     },
     "Alice_1_JingYingB1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 4015,
         "CheckDes": "",
         "CheckOption": "",
@@ -251,11 +261,12 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_MuOuGongJiang5",
+        "QuickBattleOption": "2",
         "Reward": "Alice_1_JingYing2_Show",
         "Tag": "",
         "Title": "Alice_1_JingYingB1_Name",
@@ -285,6 +296,7 @@
             "2"
         ],
         "Pic": "Alice_MaoZi_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_1_MaoZi_Name",
@@ -307,6 +319,7 @@
             "2"
         ],
         "Pic": "Alice_QingWaTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_1_QingWa_Name",
@@ -340,6 +353,7 @@
             "3"
         ],
         "Pic": "Alice_QingWaTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_1_QingWa_Name",
@@ -377,6 +391,7 @@
             "4"
         ],
         "Pic": "Alice_QingWaTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_1_QingWa_Name",
@@ -410,6 +425,7 @@
             "3"
         ],
         "Pic": "Alice_SanYueTuMuPai_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_1_SanYueTuMuPai_Name",
@@ -442,6 +458,7 @@
             "3"
         ],
         "Pic": "Alice_SanYueTuLuoBoKengTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_1_LuoBoKeng_Name",
@@ -461,6 +478,7 @@
         },
         "Order": "",
         "Pic": "Alice_SanYueTuLuoBoKengTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_1_LuoBoKeng_Name",
@@ -480,6 +498,7 @@
         },
         "Order": "",
         "Pic": "Alice_TongHuaShuTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_1_TongHuaShu_Name",
@@ -499,6 +518,7 @@
         },
         "Order": "",
         "Pic": "Alice_TongHuaShuTanBan_02",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_1_TongHuaShu_Name",
@@ -518,6 +538,7 @@
         },
         "Order": "",
         "Pic": "Alice_TongHuaShuTanBan_03",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_1_TongHuaShu_Name",
@@ -537,6 +558,7 @@
         },
         "Order": "",
         "Pic": "Alice_TongHuaShuTanBan_04",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_1_TongHuaShu_Name",
@@ -556,6 +578,7 @@
         },
         "Order": "",
         "Pic": "Alice_TongHuaShuTanBan_05",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_1_TongHuaShu_Name",
@@ -575,13 +598,14 @@
         },
         "Order": "",
         "Pic": "Hero_HLDNan5",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_1_XiaoGongZhu_Name",
         "Type": "TYPE4"
     },
     "Alice_1_XiaoGuaiA1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 2232,
         "CheckDes": "",
         "CheckOption": "",
@@ -589,18 +613,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_MengYanKuiSi5",
+        "QuickBattleOption": "2",
         "Reward": "Alice_1_XiaoGuai1_Show",
         "Tag": "",
         "Title": "Alice_1_XiaoGuaiA1_Name",
         "Type": "TYPE3"
     },
     "Alice_1_XiaoGuaiB1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 2792,
         "CheckDes": "",
         "CheckOption": "",
@@ -608,18 +633,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_MuOuHuaJiang5",
+        "QuickBattleOption": "2",
         "Reward": "Alice_1_XiaoGuai2_Show",
         "Tag": "",
         "Title": "Alice_1_XiaoGuaiB1_Name",
         "Type": "TYPE3"
     },
     "Alice_2_BossA1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 12180,
         "CheckDes": "",
         "CheckOption": "",
@@ -627,11 +653,12 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_PuKeWangHou5",
+        "QuickBattleOption": "2",
         "Reward": "Alice_2_Boss1_Show",
         "Tag": "End",
         "Title": "Alice_2_BossA1_Name",
@@ -665,6 +692,7 @@
             "3"
         ],
         "Pic": "Alice_Yun_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_1_BuffA1_Name",
@@ -698,13 +726,14 @@
             "3"
         ],
         "Pic": "Alice_Yun_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_1_BuffA1_Name",
         "Type": "TYPE5"
     },
     "Alice_2_CaiDanBoss_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": "",
         "CheckDes": "",
         "CheckOption": "",
@@ -712,11 +741,12 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_YouLingNvPu5",
+        "QuickBattleOption": "2",
         "Reward": "Alice_2_CaiDanBoss1_Show",
         "Tag": "",
         "Title": "Alice_2_CaiDanBoss_Name",
@@ -746,6 +776,7 @@
             "2"
         ],
         "Pic": "Monster_YouLingNvPu5",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_2_CaiDanBoss_Name",
@@ -783,6 +814,7 @@
             "4"
         ],
         "Pic": "Alice_CaiDanMuBei_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_2_CaiDanMuBei_Name",
@@ -820,6 +852,7 @@
             "4"
         ],
         "Pic": "Alice_ChouXiaoYaTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_2_ChouXiaoYa_Name",
@@ -857,6 +890,7 @@
             "4"
         ],
         "Pic": "Alice_ChouXiaoYaTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_2_ChouXiaoYa_Name",
@@ -886,13 +920,14 @@
             "2"
         ],
         "Pic": "Alice_ChouXiaoYaTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_2_ChouXiaoYa_Name",
         "Type": "TYPE5"
     },
     "Alice_2_DaHuiLang_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": "",
         "CheckDes": "",
         "CheckOption": "",
@@ -900,11 +935,12 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_MengYanKuiSi5",
+        "QuickBattleOption": "2",
         "Reward": "Alice_2_CaiDanDaHuiLang_Show",
         "Tag": "",
         "Title": "Alice_2_DaHuiLang_Name",
@@ -938,13 +974,14 @@
             "3"
         ],
         "Pic": "Monster_MengYanKuiSi5",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_2_DaHuiLang_Name",
         "Type": "TYPE5"
     },
     "Alice_2_JingYingA1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 8525,
         "CheckDes": "",
         "CheckOption": "",
@@ -952,18 +989,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_HuiLu",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_PuKeQiShiJ5",
+        "QuickBattleOption": "2",
         "Reward": "Alice_2_JingYing1_Show",
         "Tag": "",
         "Title": "Alice_2_JingYingA1_Name",
         "Type": "TYPE3"
     },
     "Alice_2_JingYingA1_Battle2": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 8525,
         "CheckDes": "",
         "CheckOption": "",
@@ -971,11 +1009,12 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_PuKeQiShiJ5",
+        "QuickBattleOption": "2",
         "Reward": "Alice_2_JingYing1_Show",
         "Tag": "",
         "Title": "Alice_2_JingYingA1_Name",
@@ -995,13 +1034,14 @@
         },
         "Order": "",
         "Pic": "Monster_PuKeQiShiJ5",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_2_JingYingA1_Name",
         "Type": "TYPE4"
     },
     "Alice_2_JingYingB1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 9340,
         "CheckDes": "",
         "CheckOption": "",
@@ -1009,18 +1049,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_HuiLu",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_PuKeQiShiA5",
+        "QuickBattleOption": "2",
         "Reward": "Alice_2_JingYing2_Show",
         "Tag": "",
         "Title": "Alice_2_JingYingB1_Name",
         "Type": "TYPE3"
     },
     "Alice_2_JingYingB1_Battle2": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 9340,
         "CheckDes": "",
         "CheckOption": "",
@@ -1028,11 +1069,12 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_PuKeQiShiA5",
+        "QuickBattleOption": "2",
         "Reward": "Alice_2_JingYing2_Show",
         "Tag": "",
         "Title": "Alice_2_JingYingB1_Name",
@@ -1052,13 +1094,14 @@
         },
         "Order": "",
         "Pic": "Monster_PuKeQiShiA5",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_2_JingYingB1_Name",
         "Type": "TYPE4"
     },
     "Alice_2_NvWu_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": "",
         "CheckDes": "",
         "CheckOption": "",
@@ -1066,11 +1109,12 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_YouLingWuShi5",
+        "QuickBattleOption": "2",
         "Reward": "Alice_2_CaiDanNvWu_Show",
         "Tag": "",
         "Title": "Alice_2_NvWu_Name",
@@ -1090,6 +1134,7 @@
         },
         "Order": "",
         "Pic": "Alice_TangTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_2_Tang_Name",
@@ -1109,6 +1154,7 @@
         },
         "Order": "",
         "Pic": "Alice_TangTanBan_02",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_2_Tang_Name",
@@ -1128,6 +1174,7 @@
         },
         "Order": "",
         "Pic": "Alice_TangTanBan_03",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_2_Tang_Name",
@@ -1147,13 +1194,14 @@
         },
         "Order": "",
         "Pic": "Alice_TangTanBan_04",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_2_Tang_Name",
         "Type": "TYPE1"
     },
     "Alice_2_WaiPo_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": "",
         "CheckDes": "",
         "CheckOption": "",
@@ -1161,11 +1209,12 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_YouLingWuShi5",
+        "QuickBattleOption": "2",
         "Reward": "Alice_2_CaiDanWaiPo_Show",
         "Tag": "",
         "Title": "Alice_2_WaiPo_Name",
@@ -1185,6 +1234,7 @@
         },
         "Order": "",
         "Pic": "Monster_YouLingWuShi5",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_2_WaiPo_Name",
@@ -1218,6 +1268,7 @@
             "3"
         ],
         "Pic": "Monster_YouLingWuShi5",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_2_WaiPo_Name",
@@ -1237,13 +1288,14 @@
         },
         "Order": "",
         "Pic": "Hero_HLDNan5",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_1_XiaoGongZhu_Name",
         "Type": "TYPE4"
     },
     "Alice_2_XiaoGuaiA1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 5196,
         "CheckDes": "",
         "CheckOption": "",
@@ -1251,18 +1303,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_MuOuGongJiang5",
+        "QuickBattleOption": "2",
         "Reward": "Alice_2_XiaoGuai1_Show",
         "Tag": "",
         "Title": "Alice_2_XiaoGuaiA1_Name",
         "Type": "TYPE3"
     },
     "Alice_2_XiaoGuaiB1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 6496,
         "CheckDes": "",
         "CheckOption": "",
@@ -1270,11 +1323,12 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_MuOuHuaJiang5",
+        "QuickBattleOption": "2",
         "Reward": "Alice_2_XiaoGuai2_Show",
         "Tag": "",
         "Title": "Alice_2_XiaoGuaiB1_Name",
@@ -1308,6 +1362,7 @@
             "3"
         ],
         "Pic": "Hero_CLMan_XHMao5",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_2_XiaoHongMao_Name",
@@ -1327,13 +1382,14 @@
         },
         "Order": "",
         "Pic": "Monster_YouLingGuanJia1",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_2_ZhuBanZhe1_Name",
         "Type": "TYPE4"
     },
     "Alice_3_BoLiPingGuai_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": "",
         "CheckDes": "",
         "CheckOption": "",
@@ -1341,11 +1397,12 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_MengYanHuangYan5",
+        "QuickBattleOption": "2",
         "Reward": "Alice_3_BoLiPingGuai_show",
         "Tag": "",
         "Title": "Alice_3_BoLiPingGuai_Name",
@@ -1375,6 +1432,7 @@
             "2"
         ],
         "Pic": "Alice_BoLiPingTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_3_BoLiPing_Name",
@@ -1394,6 +1452,7 @@
         },
         "Order": "",
         "Pic": "Alice_BoLiPingTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_3_BoLiPing_Name",
@@ -1413,13 +1472,14 @@
         },
         "Order": "",
         "Pic": "Alice_BoLiPingTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_3_BoLiPing_Name",
         "Type": "TYPE4"
     },
     "Alice_3_BossA1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 18756,
         "CheckDes": "",
         "CheckOption": "",
@@ -1427,11 +1487,12 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_PuKeGuoWang5",
+        "QuickBattleOption": "2",
         "Reward": "Alice_3_Boss1_Show",
         "Tag": "End",
         "Title": "Alice_3_BossA1_Name",
@@ -1465,6 +1526,7 @@
             "3"
         ],
         "Pic": "Alice_Yun_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_1_BuffA1_Name",
@@ -1498,13 +1560,14 @@
             "3"
         ],
         "Pic": "Alice_Yun_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_1_BuffA1_Name",
         "Type": "TYPE5"
     },
     "Alice_3_CaiDanBoss_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": "",
         "CheckDes": "",
         "CheckOption": "",
@@ -1512,11 +1575,12 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_PuKeQiShiA_Red5",
+        "QuickBattleOption": "2",
         "Reward": "Alice_3_CaiDanBoss_show",
         "Tag": "",
         "Title": "Alice_3_CaiDanBoss_Name",
@@ -1546,6 +1610,7 @@
             "2"
         ],
         "Pic": "Monster_PuKeQiShiA_Red5",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_3_CaiDanBoss_Name",
@@ -1575,6 +1640,7 @@
             "2"
         ],
         "Pic": "Monster_PuKeQiShiA_Red5",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_3_CaiDanBoss_Name",
@@ -1612,6 +1678,7 @@
             "4"
         ],
         "Pic": "Alice_CaiDanMuBei_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_3_CaiDanMuBei_Name",
@@ -1631,6 +1698,7 @@
         },
         "Order": "",
         "Pic": "Alice_DaoCaoRenTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_3_DaoCaoRen_Name",
@@ -1664,6 +1732,7 @@
             "3"
         ],
         "Pic": "Alice_DaoCaoRenTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_3_DaoCaoRen_Name",
@@ -1683,6 +1752,7 @@
         },
         "Order": "",
         "Pic": "Alice_DaoCaoRenTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_3_DaoCaoRen_Name",
@@ -1702,13 +1772,14 @@
         },
         "Order": "",
         "Pic": "Alice_DaoCaoRenTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_3_DaoCaoRen_Name",
         "Type": "TYPE4"
     },
     "Alice_3_JingYingA1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 13130,
         "CheckDes": "",
         "CheckOption": "",
@@ -1716,18 +1787,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_PuKeQiShiJ_Green5",
+        "QuickBattleOption": "2",
         "Reward": "Alice_3_JingYing1_Show",
         "Tag": "",
         "Title": "Alice_3_JingYingA1_Name",
         "Type": "TYPE3"
     },
     "Alice_3_JingYingB1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 14380,
         "CheckDes": "",
         "CheckOption": "",
@@ -1735,11 +1807,12 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_PuKeQiShiA_Red5",
+        "QuickBattleOption": "2",
         "Reward": "Alice_3_JingYing2_Show",
         "Tag": "",
         "Title": "Alice_3_JingYingB1_Name",
@@ -1759,6 +1832,7 @@
         },
         "Order": "",
         "Pic": "Alice_NanGuaTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_3_NanGua_Name",
@@ -1778,6 +1852,7 @@
         },
         "Order": "",
         "Pic": "Alice_QiZiGuoWang_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_3_QiZiA1_Name",
@@ -1797,6 +1872,7 @@
         },
         "Order": "",
         "Pic": "Alice_QiZiMa_02",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_3_QiZiB1_Name",
@@ -1816,6 +1892,7 @@
         },
         "Order": "",
         "Pic": "Alice_SaoZhouTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_3_SaoZhou_Name",
@@ -1835,6 +1912,7 @@
         },
         "Order": "",
         "Pic": "Alice_ShuiJingXieTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_3_ShuiJingXie_Name",
@@ -1854,6 +1932,7 @@
         },
         "Order": "",
         "Pic": "Alice_TiePiRenTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_3_TiePiRen_Name",
@@ -1887,6 +1966,7 @@
             "3"
         ],
         "Pic": "Alice_TiePiRenTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_3_TiePiRen_Name",
@@ -1906,6 +1986,7 @@
         },
         "Order": "",
         "Pic": "Alice_TiePiRenTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_3_TiePiRen_Name",
@@ -1925,6 +2006,7 @@
         },
         "Order": "",
         "Pic": "Alice_TiePiRenTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_3_TiePiRen_Name",
@@ -1944,6 +2026,7 @@
         },
         "Order": "",
         "Pic": "Alice_XianNvBangTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_3_XianNvBang_Name",
@@ -1963,13 +2046,14 @@
         },
         "Order": "",
         "Pic": "Hero_HLDNan5",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_1_XiaoGongZhu_Name",
         "Type": "TYPE4"
     },
     "Alice_3_XiaoGuaiA1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 8004,
         "CheckDes": "",
         "CheckOption": "",
@@ -1977,18 +2061,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_PuKeQiShiJ5",
+        "QuickBattleOption": "2",
         "Reward": "Alice_3_XiaoGuai1_Show",
         "Tag": "",
         "Title": "Alice_3_XiaoGuaiA1_Name",
         "Type": "TYPE3"
     },
     "Alice_3_XiaoGuaiB1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 10004,
         "CheckDes": "",
         "CheckOption": "",
@@ -1996,11 +2081,12 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_PuKeQiShiA5",
+        "QuickBattleOption": "2",
         "Reward": "Alice_3_XiaoGuai2_Show",
         "Tag": "",
         "Title": "Alice_3_XiaoGuaiB1_Name",
@@ -2020,6 +2106,7 @@
         },
         "Order": "",
         "Pic": "Monster_MuOuHuaJiangA5",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_3_YuanYiShi_Name",
@@ -2049,6 +2136,7 @@
             "2"
         ],
         "Pic": "Monster_MuOuHuaJiangA5",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_3_YuanYiShi_Name",
@@ -2068,13 +2156,14 @@
         },
         "Order": "",
         "Pic": "Monster_MuOuHuaJiangA5",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_3_YuanYiShi_Name",
         "Type": "TYPE1"
     },
     "Alice_4_BossA1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 29673,
         "CheckDes": "",
         "CheckOption": "",
@@ -2082,11 +2171,12 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Hero_Ysuo5",
+        "QuickBattleOption": "2",
         "Reward": "Alice_4_Boss1_Show",
         "Tag": "End",
         "Title": "Alice_4_BossA1_Name",
@@ -2120,6 +2210,7 @@
             "3"
         ],
         "Pic": "Alice_Yun_02",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_1_BuffB1_Name",
@@ -2153,6 +2244,7 @@
             "3"
         ],
         "Pic": "Alice_Yun_02",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_1_BuffB1_Name",
@@ -2186,13 +2278,14 @@
             "3"
         ],
         "Pic": "Alice_Yun_02",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_1_BuffB1_Name",
         "Type": "TYPE5"
     },
     "Alice_4_CaiDanBaoXiangGuai_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": "",
         "CheckDes": "",
         "CheckOption": "",
@@ -2200,18 +2293,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_MengYanJiaoShi5",
+        "QuickBattleOption": "2",
         "Reward": "Alice_4_CaiDanBaoXiangGuai_show",
         "Tag": "",
         "Title": "Alice_4_CaiDanBaoXiangGuai_Name",
         "Type": "TYPE3"
     },
     "Alice_4_CaiDanBoss_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": "",
         "CheckDes": "",
         "CheckOption": "",
@@ -2219,11 +2313,12 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_PuKeWangHou_Red5",
+        "QuickBattleOption": "2",
         "Reward": "Alice_4_CaiDanBoss_show",
         "Tag": "",
         "Title": "Alice_4_CaiDanBoss_Name",
@@ -2243,6 +2338,7 @@
         },
         "Order": "",
         "Pic": "Monster_PuKeWangHou_Red5",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_4_CaiDanBoss_Name",
@@ -2280,6 +2376,7 @@
             "4"
         ],
         "Pic": "Monster_PuKeWangHou_Red5",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_4_CaiDanBoss_Name",
@@ -2309,6 +2406,7 @@
             "2"
         ],
         "Pic": "Monster_PuKeWangHou_Red5",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_4_CaiDanBoss_Name",
@@ -2346,6 +2444,7 @@
             "4"
         ],
         "Pic": "Alice_CaiDanMuBei_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_4_CaiDanMuBei_Name",
@@ -2365,6 +2464,7 @@
         },
         "Order": "",
         "Pic": "Alice_CaiDanPingGuoTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_4_CaiDanPingGuo_Name",
@@ -2384,6 +2484,7 @@
         },
         "Order": "",
         "Pic": "Alice_CaiDanPingGuoTanBan_02",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_4_CaiDanPingGuo_Name",
@@ -2403,6 +2504,7 @@
         },
         "Order": "",
         "Pic": "Alice_CaiDanPingGuoTanBan_03",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_4_CaiDanPingGuo_Name",
@@ -2422,6 +2524,7 @@
         },
         "Order": "",
         "Pic": "Alice_CaiDanPingGuoTanBan_04",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_4_CaiDanPingGuo_Name",
@@ -2441,13 +2544,14 @@
         },
         "Order": "",
         "Pic": "Alice_FangCheTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_4_FangChe_Name",
         "Type": "TYPE1"
     },
     "Alice_4_JingYingA1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 13188,
         "CheckDes": "",
         "CheckOption": "",
@@ -2455,18 +2559,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_YouLingWuShi5",
+        "QuickBattleOption": "2",
         "Reward": "Alice_4_JingYing1_Show",
         "Tag": "",
         "Title": "Alice_4_JingYingA1_Name",
         "Type": "TYPE3"
     },
     "Alice_4_JingYingB1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 18055,
         "CheckDes": "",
         "CheckOption": "",
@@ -2474,18 +2579,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_YouLingNvPu5",
+        "QuickBattleOption": "2",
         "Reward": "Alice_4_JingYing2_Show",
         "Tag": "",
         "Title": "Alice_4_JingYingB1_Name",
         "Type": "TYPE3"
     },
     "Alice_4_JingYingC1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 23550,
         "CheckDes": "",
         "CheckOption": "",
@@ -2493,11 +2599,12 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_YouLingGuanJia5",
+        "QuickBattleOption": "2",
         "Reward": "Alice_4_JingYing3_Show",
         "Tag": "",
         "Title": "Alice_4_JingYingC1_Name",
@@ -2517,6 +2624,7 @@
         },
         "Order": "",
         "Pic": "Alice_MoJingPingGuoTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_4_MoJingPingGuo_Name",
@@ -2536,6 +2644,7 @@
         },
         "Order": "",
         "Pic": "Alice_MoJingTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_4_MoJing_Name",
@@ -2565,6 +2674,7 @@
             "2"
         ],
         "Pic": "Alice_MoJingTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_4_MoJing_Name",
@@ -2584,6 +2694,7 @@
         },
         "Order": "",
         "Pic": "Alice_MoJingTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_4_MoJing_Name",
@@ -2613,6 +2724,7 @@
             "2"
         ],
         "Pic": "Alice_MoJingTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_4_MoJing_Name",
@@ -2632,6 +2744,7 @@
         },
         "Order": "",
         "Pic": "Monster_MuOuHuaJiangA5",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_4_PiNuoCao_Name",
@@ -2661,6 +2774,7 @@
             "2"
         ],
         "Pic": "Monster_MuOuHuaJiangA5",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_4_PiNuoCao_Name",
@@ -2690,6 +2804,7 @@
             "2"
         ],
         "Pic": "Monster_MuOuHuaJiangA5",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_4_PiNuoCao_Name",
@@ -2709,6 +2824,7 @@
         },
         "Order": "",
         "Pic": "Monster_MuOuHuaJiangA5",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_4_PiNuoCao_Name",
@@ -2728,6 +2844,7 @@
         },
         "Order": "",
         "Pic": "Monster_MuOuHuaJiangA5",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_4_PiNuoCao_Name",
@@ -2757,6 +2874,7 @@
             "2"
         ],
         "Pic": "Monster_MuOuHuaJiangA5",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_4_PiNuoCao_Name",
@@ -2786,6 +2904,7 @@
             "2"
         ],
         "Pic": "Monster_MuOuHuaJiangA5",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_4_PiNuoCao_Name",
@@ -2805,6 +2924,7 @@
         },
         "Order": "",
         "Pic": "Alice_TengWan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_4_TengWan1_Name",
@@ -2824,13 +2944,14 @@
         },
         "Order": "",
         "Pic": "Hero_HLDNan5",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_1_XiaoGongZhu_Name",
         "Type": "TYPE4"
     },
     "Alice_4_XiaoGuaiA1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 10048,
         "CheckDes": "",
         "CheckOption": "",
@@ -2838,18 +2959,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_MuOuGongJiang5",
+        "QuickBattleOption": "2",
         "Reward": "Alice_4_XiaoGuai1_Show",
         "Tag": "",
         "Title": "Alice_4_XiaoGuaiA1_Name",
         "Type": "TYPE3"
     },
     "Alice_4_XiaoGuaiB1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 12560,
         "CheckDes": "",
         "CheckOption": "",
@@ -2857,18 +2979,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_MuOuHuaJiang5",
+        "QuickBattleOption": "2",
         "Reward": "Alice_4_XiaoGuai2_Show",
         "Tag": "",
         "Title": "Alice_4_XiaoGuaiB1_Name",
         "Type": "TYPE3"
     },
     "Alice_4_XiaoGuaiC1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 13816,
         "CheckDes": "",
         "CheckOption": "",
@@ -2876,11 +2999,12 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_MuOuGongZhu5",
+        "QuickBattleOption": "2",
         "Reward": "Alice_4_XiaoGuai2_Show",
         "Tag": "",
         "Title": "Alice_4_XiaoGuaiC1_Name",
@@ -2900,6 +3024,7 @@
         },
         "Order": "",
         "Pic": "Alice_YinCangMenTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_4_YinCangMen_Name",
@@ -2919,6 +3044,7 @@
         },
         "Order": "",
         "Pic": "Alice_YinCangMenTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_4_YinCangMen_Name",
@@ -2938,6 +3064,7 @@
         },
         "Order": "",
         "Pic": "Alice_YinCangMenTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_4_YinCangMen_Name",
@@ -2957,6 +3084,7 @@
         },
         "Order": "",
         "Pic": "Alice_BaoShi_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_4_BaoShiZhu4_Name",
@@ -2976,6 +3104,7 @@
         },
         "Order": "",
         "Pic": "Alice_BaoShi_02",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_4_BaoShiZhu1_Name",
@@ -2995,6 +3124,7 @@
         },
         "Order": "",
         "Pic": "Alice_BaoShi_03",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_4_BaoShiZhu2_Name",
@@ -3014,6 +3144,7 @@
         },
         "Order": "",
         "Pic": "Alice_BaoShi_04",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_4_BaoShiZhu3_Name",
@@ -3033,6 +3164,7 @@
         },
         "Order": "",
         "Pic": "Alice_MoGuTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_MoGu_Name",
@@ -3052,6 +3184,7 @@
         },
         "Order": "",
         "Pic": "Alice_MoGuTanBan_02",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_MoGu_Name",
@@ -3071,6 +3204,7 @@
         },
         "Order": "",
         "Pic": "Alice_MoGuTanBan_03",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_MoGu_Name",
@@ -3090,6 +3224,7 @@
         },
         "Order": "",
         "Pic": "Alice_MoGuTanBan_04",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_MoGu_Name",
@@ -3109,6 +3244,7 @@
         },
         "Order": "",
         "Pic": "Alice_MoGuTanBan_05",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Alice_MoGu_Name",
@@ -3128,6 +3264,7 @@
         },
         "Order": "",
         "Pic": "China_Deng0",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "China_1_Deng1_Name",
@@ -3147,6 +3284,7 @@
         },
         "Order": "",
         "Pic": "China_DengHuo",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "China_1_Deng5_Name",
@@ -3166,6 +3304,7 @@
         },
         "Order": "",
         "Pic": "China_DengJin",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "China_1_Deng2_Name",
@@ -3185,6 +3324,7 @@
         },
         "Order": "",
         "Pic": "China_DengJin",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "China_1_Deng2_Name",
@@ -3204,6 +3344,7 @@
         },
         "Order": "",
         "Pic": "China_DengMu",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "China_1_Deng4_Name",
@@ -3223,6 +3364,7 @@
         },
         "Order": "",
         "Pic": "China_DengMu",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "China_1_Deng4_Name",
@@ -3242,6 +3384,7 @@
         },
         "Order": "",
         "Pic": "China_DengShui",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "China_1_Deng3_Name",
@@ -3261,6 +3404,7 @@
         },
         "Order": "",
         "Pic": "China_DengShui",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "China_1_Deng3_Name",
@@ -3280,6 +3424,7 @@
         },
         "Order": "",
         "Pic": "China_DengTu",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "China_1_Deng6_Name",
@@ -3299,6 +3444,7 @@
         },
         "Order": "",
         "Pic": "China_DengYang",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "China_1_Deng8_Name",
@@ -3318,6 +3464,7 @@
         },
         "Order": "",
         "Pic": "China_DengYin",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "China_1_Deng7_Name",
@@ -3351,6 +3498,7 @@
             "3"
         ],
         "Pic": "Explore_ShenTa_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Egypt_1_BUFF1_Name",
@@ -3384,13 +3532,14 @@
             "3"
         ],
         "Pic": "Explore_ShenTa_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Egypt_1_BUFF2_Name",
         "Type": "TYPE5"
     },
     "Egypt_1_Boss1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 78918,
         "CheckDes": "",
         "CheckOption": "",
@@ -3398,18 +3547,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_TaoPao",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Hero_NFDDi5",
+        "QuickBattleOption": "2",
         "Reward": "Egypt_1_Boss1_Show",
         "Tag": "End",
         "Title": "Egypt_1_Boss1_Name",
         "Type": "TYPE3"
     },
     "Egypt_1_JingYing1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 47350,
         "CheckDes": "",
         "CheckOption": "",
@@ -3417,18 +3567,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_TaoPao",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_YLMYao5",
+        "QuickBattleOption": "2",
         "Reward": "Egypt_1_JingYing1_Show",
         "Tag": "",
         "Title": "Egypt_1_JingYing1_Name",
         "Type": "TYPE3"
     },
     "Egypt_1_JingYing2_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 62232,
         "CheckDes": "",
         "CheckOption": "",
@@ -3436,11 +3587,12 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_TaoPao",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_HeiPiDun5",
+        "QuickBattleOption": "2",
         "Reward": "Egypt_1_JingYing2_Show",
         "Tag": "",
         "Title": "Egypt_1_JingYing2_Name",
@@ -3467,6 +3619,7 @@
             "2"
         ],
         "Pic": "LiHui_Hero_YMHTPu",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Egypt_1_MiYa1_Name",
@@ -3486,13 +3639,14 @@
         },
         "Order": "",
         "Pic": "Explore_TeShuZhiWu_03",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Egypt_1_WanDouSheShou1_Name",
         "Type": "TYPE4"
     },
     "Egypt_1_XiaoGuaiA1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 28860,
         "CheckDes": "",
         "CheckOption": "",
@@ -3500,18 +3654,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_TaoPao",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_KongShou_RedA5",
+        "QuickBattleOption": "2",
         "Reward": "Egypt_1_XiaoGuai1_Show",
         "Tag": "",
         "Title": "Egypt_1_XiaoGuaiA1_Name",
         "Type": "TYPE3"
     },
     "Egypt_1_XiaoGuaiB1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 28860,
         "CheckDes": "",
         "CheckOption": "",
@@ -3519,18 +3674,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_TaoPao",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_KongShou_RedA5",
+        "QuickBattleOption": "2",
         "Reward": "Egypt_1_XiaoGuai2_Show",
         "Tag": "",
         "Title": "Egypt_1_XiaoGuaiB1_Name",
         "Type": "TYPE3"
     },
     "Egypt_1_XiaoGuaiB2_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 28860,
         "CheckDes": "",
         "CheckOption": "",
@@ -3538,18 +3694,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_TaoPao",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_KongShou_RedA5",
+        "QuickBattleOption": "2",
         "Reward": "Egypt_1_XiaoGuai2_Show",
         "Tag": "",
         "Title": "Egypt_1_XiaoGuaiB2_Name",
         "Type": "TYPE3"
     },
     "Egypt_1_XiaoGuaiC1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 44095,
         "CheckDes": "",
         "CheckOption": "",
@@ -3557,18 +3714,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_TaoPao",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_KongShou_RedA5",
+        "QuickBattleOption": "2",
         "Reward": "Egypt_1_XiaoGuai1_Show",
         "Tag": "",
         "Title": "Egypt_1_XiaoGuaiC1_Name",
         "Type": "TYPE3"
     },
     "Egypt_1_XiaoGuaiC2_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 45095,
         "CheckDes": "",
         "CheckOption": "",
@@ -3576,11 +3734,12 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_TaoPao",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_HeiPiDun5",
+        "QuickBattleOption": "2",
         "Reward": "Egypt_1_XiaoGuai1_Show",
         "Tag": "",
         "Title": "Egypt_1_XiaoGuaiC2_Name",
@@ -3600,6 +3759,7 @@
         },
         "Order": "",
         "Pic": "Monster_KongShou_Green5",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Egypt_1_YouJun1_Name",
@@ -3633,6 +3793,7 @@
             "3"
         ],
         "Pic": "Explore_ShenTa_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Egypt_2_BUFF1_Name",
@@ -3666,13 +3827,14 @@
             "3"
         ],
         "Pic": "Explore_ShenTa_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Egypt_2_BUFF2_Name",
         "Type": "TYPE5"
     },
     "Egypt_2_Boss1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 103467,
         "CheckDes": "",
         "CheckOption": "",
@@ -3680,18 +3842,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_TaoPao",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Hero_KXuan5",
+        "QuickBattleOption": "2",
         "Reward": "Egypt_2_Boss1_Show",
         "Tag": "End",
         "Title": "Egypt_2_Boss1_Name",
         "Type": "TYPE3"
     },
     "Egypt_2_JingYing1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 81594,
         "CheckDes": "",
         "CheckOption": "",
@@ -3699,18 +3862,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_TaoPao",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_KongShou_RedA5",
+        "QuickBattleOption": "2",
         "Reward": "Egypt_2_JingYing1_Show",
         "Tag": "",
         "Title": "Egypt_2_JingYing1_Name",
         "Type": "TYPE3"
     },
     "Egypt_2_JingYing2_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 59125,
         "CheckDes": "",
         "CheckOption": "",
@@ -3718,18 +3882,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_TaoPao",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_YLMYao5",
+        "QuickBattleOption": "2",
         "Reward": "Egypt_2_JingYing1_Show",
         "Tag": "",
         "Title": "Egypt_2_JingYing2_Name",
         "Type": "TYPE3"
     },
     "Egypt_2_XiaoGuaiA1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 37840,
         "CheckDes": "",
         "CheckOption": "",
@@ -3737,18 +3902,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_TaoPao",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_KongShou_RedA5",
+        "QuickBattleOption": "2",
         "Reward": "Egypt_2_XiaoGuai1_Show",
         "Tag": "",
         "Title": "Egypt_2_XiaoGuaiA1_Name",
         "Type": "TYPE3"
     },
     "Egypt_2_XiaoGuaiB1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 37840,
         "CheckDes": "",
         "CheckOption": "",
@@ -3756,18 +3922,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_TaoPao",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_KongShou_RedA5",
+        "QuickBattleOption": "2",
         "Reward": "Egypt_2_XiaoGuai2_Show",
         "Tag": "",
         "Title": "Egypt_2_XiaoGuaiB1_Name",
         "Type": "TYPE3"
     },
     "Egypt_2_XiaoGuaiB2_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 37840,
         "CheckDes": "",
         "CheckOption": "",
@@ -3775,18 +3942,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_TaoPao",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_KongShou_RedA5",
+        "QuickBattleOption": "2",
         "Reward": "Egypt_2_XiaoGuai2_Show",
         "Tag": "",
         "Title": "Egypt_2_XiaoGuaiB2_Name",
         "Type": "TYPE3"
     },
     "Egypt_2_XiaoGuaiC1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 86912,
         "CheckDes": "",
         "CheckOption": "",
@@ -3794,11 +3962,12 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_TaoPao",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_YLMYao5",
+        "QuickBattleOption": "2",
         "Reward": "Egypt_2_XiaoGuai2_Show",
         "Tag": "",
         "Title": "Egypt_2_XiaoGuaiC1_Name",
@@ -3818,6 +3987,7 @@
         },
         "Order": "",
         "Pic": "Monster_KongShou_Green5",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Egypt_2_YouJun1_Name",
@@ -3851,6 +4021,7 @@
             "3"
         ],
         "Pic": "Explore_ShenTa_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Egypt_3_BUFF1_Name",
@@ -3884,13 +4055,14 @@
             "3"
         ],
         "Pic": "Explore_ShenTa_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Egypt_3_BUFF2_Name",
         "Type": "TYPE5"
     },
     "Egypt_3_Boss1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 139480,
         "CheckDes": "",
         "CheckOption": "",
@@ -3898,18 +4070,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_TaoPao",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_FaLaoWang5",
+        "QuickBattleOption": "2",
         "Reward": "Egypt_3_Boss1_Show",
         "Tag": "End",
         "Title": "Egypt_3_Boss1_Name",
         "Type": "TYPE3"
     },
     "Egypt_3_JingYing1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 87870,
         "CheckDes": "",
         "CheckOption": "",
@@ -3917,18 +4090,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_TaoPao",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Hero_YMHTPu5",
+        "QuickBattleOption": "2",
         "Reward": "Egypt_3_JingYing1_Show",
         "Tag": "",
         "Title": "Egypt_3_MiYa1_Name",
         "Type": "TYPE3"
     },
     "Egypt_3_JingYing2_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 112280,
         "CheckDes": "",
         "CheckOption": "",
@@ -3936,18 +4110,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_TaoPao",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_ChangMao_RedB5",
+        "QuickBattleOption": "2",
         "Reward": "Egypt_3_JingYing1_Show",
         "Tag": "",
         "Title": "Egypt_3_JingYing2_Name",
         "Type": "TYPE3"
     },
     "Egypt_3_XiaoGuaiA1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 55790,
         "CheckDes": "",
         "CheckOption": "",
@@ -3955,18 +4130,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_TaoPao",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_KongShou_RedA5",
+        "QuickBattleOption": "2",
         "Reward": "Egypt_3_XiaoGuai1_Show",
         "Tag": "",
         "Title": "Egypt_3_XiaoGuaiA1_Name",
         "Type": "TYPE3"
     },
     "Egypt_3_XiaoGuaiB1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 55790,
         "CheckDes": "",
         "CheckOption": "",
@@ -3974,18 +4150,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_TaoPao",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_KongShou_RedA5",
+        "QuickBattleOption": "2",
         "Reward": "Egypt_3_XiaoGuai2_Show",
         "Tag": "",
         "Title": "Egypt_3_XiaoGuaiB1_Name",
         "Type": "TYPE3"
     },
     "Egypt_3_XiaoGuaiB2_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 55790,
         "CheckDes": "",
         "CheckOption": "",
@@ -3993,11 +4170,12 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_TaoPao",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_KongShou_RedA5",
+        "QuickBattleOption": "2",
         "Reward": "Egypt_3_XiaoGuai2_Show",
         "Tag": "",
         "Title": "Egypt_3_XiaoGuaiB2_Name",
@@ -4017,6 +4195,7 @@
         },
         "Order": "",
         "Pic": "Monster_KongShou_Green5",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Egypt_3_YouJun1_Name",
@@ -4050,6 +4229,7 @@
             "3"
         ],
         "Pic": "Explore_ShenTa_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Egypt_4_BUFF1_Name",
@@ -4083,6 +4263,7 @@
             "3"
         ],
         "Pic": "Explore_ShenTa_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Egypt_4_BUFF2_Name",
@@ -4116,13 +4297,14 @@
             "3"
         ],
         "Pic": "Explore_ShenTa_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Egypt_4_BUFF3_Name",
         "Type": "TYPE5"
     },
     "Egypt_4_Boss1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 178976,
         "CheckDes": "",
         "CheckOption": "",
@@ -4130,18 +4312,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_TaoPao",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Hero_TTKMeng5",
+        "QuickBattleOption": "2",
         "Reward": "Egypt_4_Boss1_Show",
         "Tag": "End",
         "Title": "Egypt_4_Boss1_Name",
         "Type": "TYPE3"
     },
     "Egypt_4_JingYing1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 104406,
         "CheckDes": "",
         "CheckOption": "",
@@ -4149,18 +4332,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_TaoPao",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_ChangMao_RedB5",
+        "QuickBattleOption": "2",
         "Reward": "Egypt_4_JingYing1_Show",
         "Tag": "",
         "Title": "Egypt_4_JingYing1_Name",
         "Type": "TYPE3"
     },
     "Egypt_4_JingYing2_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 114348,
         "CheckDes": "",
         "CheckOption": "",
@@ -4168,18 +4352,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_TaoPao",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_YLMYao5",
+        "QuickBattleOption": "2",
         "Reward": "Egypt_4_JingYing1_Show",
         "Tag": "",
         "Title": "Egypt_4_JingYing2_Name",
         "Type": "TYPE3"
     },
     "Egypt_4_JingYing3_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 145005,
         "CheckDes": "",
         "CheckOption": "",
@@ -4187,18 +4372,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_TaoPao",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_HeiPiDaDao2",
+        "QuickBattleOption": "2",
         "Reward": "Egypt_4_JingYing1_Show",
         "Tag": "",
         "Title": "Egypt_4_JingYing3_Name",
         "Type": "TYPE3"
     },
     "Egypt_4_JingYingNB1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 39835,
         "CheckDes": "",
         "CheckOption": "",
@@ -4206,18 +4392,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_TaoPao",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_ChangMao_RedA5",
+        "QuickBattleOption": "2",
         "Reward": "Egypt_4_XiaoGuaiD1_Show",
         "Tag": "",
         "Title": "Egypt_4_JingYingNB1_Name",
         "Type": "TYPE3"
     },
     "Egypt_4_JingYingNB2_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 39835,
         "CheckDes": "",
         "CheckOption": "",
@@ -4225,11 +4412,12 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_TaoPao",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_YLMYao5",
+        "QuickBattleOption": "2",
         "Reward": "Egypt_4_XiaoGuaiD1_Show",
         "Tag": "",
         "Title": "Egypt_4_JingYingNB2_Name",
@@ -4259,6 +4447,7 @@
             "2"
         ],
         "Pic": "Explore_KaiGuan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Egypt_1_KaiGuan1_Name",
@@ -4278,13 +4467,14 @@
         },
         "Order": "",
         "Pic": "Explore_TeShuZhiWu_02",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Egypt_3_XiangRiKui1_Name",
         "Type": "TYPE4"
     },
     "Egypt_4_XiaoGuaiA1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 66290,
         "CheckDes": "",
         "CheckOption": "",
@@ -4292,18 +4482,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_TaoPao",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_KongShou_RedA5",
+        "QuickBattleOption": "2",
         "Reward": "Egypt_4_XiaoGuai1_Show",
         "Tag": "",
         "Title": "Egypt_4_XiaoGuaiA1_Name",
         "Type": "TYPE3"
     },
     "Egypt_4_XiaoGuaiB1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 66290,
         "CheckDes": "",
         "CheckOption": "",
@@ -4311,18 +4502,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_TaoPao",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_KongShou_RedA5",
+        "QuickBattleOption": "2",
         "Reward": "Egypt_4_XiaoGuai2_Show",
         "Tag": "",
         "Title": "Egypt_4_XiaoGuaiB1_Name",
         "Type": "TYPE3"
     },
     "Egypt_4_XiaoGuaiB2_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 66290,
         "CheckDes": "",
         "CheckOption": "",
@@ -4330,18 +4522,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_TaoPao",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_KongShou_RedA5",
+        "QuickBattleOption": "2",
         "Reward": "Egypt_4_XiaoGuai2_Show",
         "Tag": "",
         "Title": "Egypt_4_XiaoGuaiB2_Name",
         "Type": "TYPE3"
     },
     "Egypt_4_XiaoGuaiD1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 34777,
         "CheckDes": "",
         "CheckOption": "",
@@ -4349,11 +4542,12 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_TaoPao",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_KongShou_RedA5",
+        "QuickBattleOption": "2",
         "Reward": "Egypt_4_XiaoGuaiD1_Show",
         "Tag": "",
         "Title": "Egypt_4_XiaoGuaiD1_Name",
@@ -4391,6 +4585,7 @@
             "4"
         ],
         "Pic": "Explore_TeShuZhiWu_04",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Egypt_1_YingTao1_Name",
@@ -4410,13 +4605,14 @@
         },
         "Order": "",
         "Pic": "Monster_KongShou_Green5",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Egypt_4_YouJun1_Name",
         "Type": "TYPE1"
     },
     "Japan_1_BossA1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 32921,
         "CheckDes": "",
         "CheckOption": "",
@@ -4424,18 +4620,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_JingShiDa5",
+        "QuickBattleOption": "2",
         "Reward": "Japan_1_Boss1_Show",
         "Tag": "End",
         "Title": "Japan_1_BossA1_Name",
         "Type": "TYPE3"
     },
     "Japan_1_BossCaiDan1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": "",
         "CheckDes": "",
         "CheckOption": "",
@@ -4443,18 +4640,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Hero_SLMen5",
+        "QuickBattleOption": "2",
         "Reward": "Japan_1_BossCaiDan1_Show",
         "Tag": "",
         "Title": "Japan_1_BossCaiDan1_Name",
         "Type": "TYPE3"
     },
     "Japan_1_BossCaiDan2_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": "",
         "CheckDes": "",
         "CheckOption": "",
@@ -4462,18 +4660,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_YouLingNvPu5",
+        "QuickBattleOption": "2",
         "Reward": "Japan_1_BossCaiDan2_Show",
         "Tag": "",
         "Title": "Japan_1_BossCaiDan2_Name",
         "Type": "TYPE3"
     },
     "Japan_1_BossCaiDan3_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": "",
         "CheckDes": "",
         "CheckOption": "",
@@ -4481,18 +4680,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Hero_MasterQiangShou5",
+        "QuickBattleOption": "2",
         "Reward": "Japan_1_BossCaiDan3_Show",
         "Tag": "",
         "Title": "Japan_1_BossCaiDan3_Name",
         "Type": "TYPE3"
     },
     "Japan_1_BossCaiDan4_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": "",
         "CheckDes": "",
         "CheckOption": "",
@@ -4500,11 +4700,12 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_ChangMao_RedB5",
+        "QuickBattleOption": "2",
         "Reward": "Japan_1_BossCaiDan4_Show",
         "Tag": "",
         "Title": "Japan_1_BossCaiDan4_Name",
@@ -4538,13 +4739,14 @@
             "3"
         ],
         "Pic": "Japan_ShenXiang_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_1_BuffA1_Name",
         "Type": "TYPE5"
     },
     "Japan_1_CaiDanBoss_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": "",
         "CheckDes": "",
         "CheckOption": "",
@@ -4552,11 +4754,12 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Hero_YFZZhu5",
+        "QuickBattleOption": "2",
         "Reward": "Japan_1_CaiDanBoss_show",
         "Tag": "",
         "Title": "Japan_1_CaiDanBoss_Name",
@@ -4594,6 +4797,7 @@
             "4"
         ],
         "Pic": "Japan_GouHuoTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_1_CaiDanHuo_Name",
@@ -4613,6 +4817,7 @@
         },
         "Order": "",
         "Pic": "Japan_GouHuoTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_1_CaiDanHuo_Name",
@@ -4632,6 +4837,7 @@
         },
         "Order": "",
         "Pic": "Japan_LuoYeTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_1_CaiDanLuoYe_Name",
@@ -4651,6 +4857,7 @@
         },
         "Order": "",
         "Pic": "Japan_QianBaoTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_1_CaiDanQianBao_Name",
@@ -4670,6 +4877,7 @@
         },
         "Order": "",
         "Pic": "Japan_RenZheWuQiTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_1_CaiDanRenZheWuQi1_Name",
@@ -4689,6 +4897,7 @@
         },
         "Order": "",
         "Pic": "Japan_RenZheWuQiTanBan_02",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_1_CaiDanRenZheWuQi2_Name",
@@ -4708,6 +4917,7 @@
         },
         "Order": "",
         "Pic": "Japan_RenZheWuQiTanBan_03",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_1_CaiDanRenZheWuQi3_Name",
@@ -4727,13 +4937,14 @@
         },
         "Order": "",
         "Pic": "Japan_RenZheWuQiTanBan_04",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_1_CaiDanRenZheWuQi4_Name",
         "Type": "TYPE1"
     },
     "Japan_1_CaiDanRenZhe_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": "",
         "CheckDes": "",
         "CheckOption": "",
@@ -4741,11 +4952,12 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Hero_YFZZhu5",
+        "QuickBattleOption": "2",
         "Reward": "Japan_1_CaiDanRenZhe_show",
         "Tag": "",
         "Title": "Japan_1_CaiDanRenZhe_Name",
@@ -4765,6 +4977,7 @@
         },
         "Order": "",
         "Pic": "Japan_SaiQianXiangTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_1_CaiDanSaiQianXiang_Name",
@@ -4802,6 +5015,7 @@
             "4"
         ],
         "Pic": "Japan_SaiQianXiangTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_1_CaiDanSaiQianXiang_Name",
@@ -4821,6 +5035,7 @@
         },
         "Order": "",
         "Pic": "Japan_SaiQianXiangTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_1_CaiDanSaiQianXiang_Name",
@@ -4840,6 +5055,7 @@
         },
         "Order": "",
         "Pic": "Japan_SaiQianXiangTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_1_CaiDanSaiQianXiang_Name",
@@ -4859,6 +5075,7 @@
         },
         "Order": "",
         "Pic": "Japan_SaiQianXiangTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_1_CaiDanSaiQianXiang_Name",
@@ -4878,6 +5095,7 @@
         },
         "Order": "",
         "Pic": "Japan_SaiQianXiangTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_1_CaiDanSaiQianXiang_Name",
@@ -4897,6 +5115,7 @@
         },
         "Order": "",
         "Pic": "Japan_ShuYeTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_1_CaiDanShuYe_Name",
@@ -4934,6 +5153,7 @@
             "4"
         ],
         "Pic": "Japan_ShuZhuangTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_1_CaiDanShuZhuang_Name",
@@ -4953,6 +5173,7 @@
         },
         "Order": "",
         "Pic": "Japan_ShuZhuangTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_1_CaiDanShuZhuang_Name",
@@ -4982,6 +5203,7 @@
             "2"
         ],
         "Pic": "Japan_ShuZhuangTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_1_CaiDanShuZhuang_Name",
@@ -5001,6 +5223,7 @@
         },
         "Order": "",
         "Pic": "Japan_ShuZhuangTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_1_CaiDanShuZhuang_Name",
@@ -5020,6 +5243,7 @@
         },
         "Order": "",
         "Pic": "Japan_ShuZhuangTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_1_CaiDanShuZhuang_Name",
@@ -5049,6 +5273,7 @@
             "2"
         ],
         "Pic": "Japan_ShuZhuangTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_1_CaiDanShuZhuang_Name",
@@ -5068,6 +5293,7 @@
         },
         "Order": "",
         "Pic": "Japan_ShuZhuangTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_1_CaiDanShuZhuang_Name",
@@ -5087,6 +5313,7 @@
         },
         "Order": "",
         "Pic": "Japan_ShuZhuangTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_1_CaiDanShuZhuang_Name",
@@ -5106,6 +5333,7 @@
         },
         "Order": "",
         "Pic": "Japan_YaoDaoTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_1_CaiDanYaoDao_Name",
@@ -5143,6 +5371,7 @@
             "4"
         ],
         "Pic": "Japan_YaoDaoTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_1_CaiDanYaoDao_Name",
@@ -5162,13 +5391,14 @@
         },
         "Order": "",
         "Pic": "Japan_YaoDaoTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_1_CaiDanYaoDao_Name",
         "Type": "TYPE1"
     },
     "Japan_1_JingYingA1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 23700,
         "CheckDes": "",
         "CheckOption": "",
@@ -5176,18 +5406,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Hero_ZTXChang5",
+        "QuickBattleOption": "2",
         "Reward": "Japan_1_JingYing1_Show",
         "Tag": "",
         "Title": "Japan_1_JingYingA1_Name",
         "Type": "TYPE3"
     },
     "Japan_1_JingYingA2_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 23700,
         "CheckDes": "",
         "CheckOption": "",
@@ -5195,18 +5426,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_TaoPao",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Hero_CLMan5",
+        "QuickBattleOption": "2",
         "Reward": "Japan_1_JingYing1_Show",
         "Tag": "",
         "Title": "Japan_1_JingYingA2_Name",
         "Type": "TYPE3"
     },
     "Japan_1_JingYingA3_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 23700,
         "CheckDes": "",
         "CheckOption": "",
@@ -5214,18 +5446,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_TaoPao",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Hero_FTLEShi5",
+        "QuickBattleOption": "2",
         "Reward": "Japan_1_JingYing1_Show",
         "Tag": "",
         "Title": "Japan_1_JingYingA3_Name",
         "Type": "TYPE3"
     },
     "Japan_1_JingYingB1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 25956,
         "CheckDes": "",
         "CheckOption": "",
@@ -5233,18 +5466,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Hero_BBLMa5",
+        "QuickBattleOption": "2",
         "Reward": "Japan_1_JingYing2_Show",
         "Tag": "",
         "Title": "Japan_1_JingYingB1_Name",
         "Type": "TYPE3"
     },
     "Japan_1_JingYingCaiDan1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": "",
         "CheckDes": "",
         "CheckOption": "",
@@ -5252,18 +5486,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_PuKeQiShiA5",
+        "QuickBattleOption": "2",
         "Reward": "Japan_1_JingYingCaiDan1_Show",
         "Tag": "",
         "Title": "Japan_1_JingYingCaiDan1_Name",
         "Type": "TYPE3"
     },
     "Japan_1_JingYingCaiDan2_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": "",
         "CheckDes": "",
         "CheckOption": "",
@@ -5271,18 +5506,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_MengYanKuiSi5",
+        "QuickBattleOption": "2",
         "Reward": "Japan_1_JingYingCaiDan2_Show",
         "Tag": "",
         "Title": "Japan_1_JingYingCaiDan2_Name",
         "Type": "TYPE3"
     },
     "Japan_1_JingYingCaiDan3_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": "",
         "CheckDes": "",
         "CheckOption": "",
@@ -5290,18 +5526,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_HongGui5",
+        "QuickBattleOption": "2",
         "Reward": "Japan_1_JingYingCaiDan3_Show",
         "Tag": "",
         "Title": "Japan_1_JingYingCaiDan3_Name",
         "Type": "TYPE3"
     },
     "Japan_1_JingYingCaiDan4_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": "",
         "CheckDes": "",
         "CheckOption": "",
@@ -5309,18 +5546,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_YLMYao5",
+        "QuickBattleOption": "2",
         "Reward": "Japan_1_JingYingCaiDan4_Show",
         "Tag": "",
         "Title": "Japan_1_JingYingCaiDan4_Name",
         "Type": "TYPE3"
     },
     "Japan_1_JingYingCaiDan5_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": "",
         "CheckDes": "",
         "CheckOption": "",
@@ -5328,18 +5566,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_ZhaoCaiMao5",
+        "QuickBattleOption": "2",
         "Reward": "Japan_1_JingYingCaiDan5_Show",
         "Tag": "",
         "Title": "Japan_1_JingYingCaiDan5_Name",
         "Type": "TYPE3"
     },
     "Japan_1_XiaoGuaiA1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 12040,
         "CheckDes": "",
         "CheckOption": "",
@@ -5347,18 +5586,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_MengYanKuiSi5",
+        "QuickBattleOption": "2",
         "Reward": "Japan_1_XiaoGuai1_Show",
         "Tag": "",
         "Title": "Japan_1_XiaoGuaiA1_Name",
         "Type": "TYPE3"
     },
     "Japan_1_XiaoGuaiB1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 15048,
         "CheckDes": "",
         "CheckOption": "",
@@ -5366,18 +5606,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_MengYanHuangYan5",
+        "QuickBattleOption": "2",
         "Reward": "Japan_1_XiaoGuai2_Show",
         "Tag": "",
         "Title": "Japan_1_XiaoGuaiB1_Name",
         "Type": "TYPE3"
     },
     "Japan_2_BossA1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 41342,
         "CheckDes": "",
         "CheckOption": "",
@@ -5385,11 +5626,12 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Hero_NXYYi5",
+        "QuickBattleOption": "2",
         "Reward": "Japan_2_Boss1_Show",
         "Tag": "End",
         "Title": "Japan_2_BossA1_Name",
@@ -5423,13 +5665,14 @@
             "3"
         ],
         "Pic": "Japan_ShenXiang_04",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_2_BuffA1_Name",
         "Type": "TYPE5"
     },
     "Japan_2_CaiDanBoss_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": "",
         "CheckDes": "",
         "CheckOption": "",
@@ -5437,11 +5680,12 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Hero_BEr5",
+        "QuickBattleOption": "2",
         "Reward": "Japan_2_CaiDanBoss_show",
         "Tag": "",
         "Title": "Japan_2_CaiDanBoss_Name",
@@ -5461,6 +5705,7 @@
         },
         "Order": "",
         "Pic": "Japan_CaiDanFanTuanTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_2_CaiDanFanTuan_Name",
@@ -5480,6 +5725,7 @@
         },
         "Order": "",
         "Pic": "Japan_CaiDanFanTuanTanBan_02",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_2_CaiDanFanTuan_Name",
@@ -5499,6 +5745,7 @@
         },
         "Order": "",
         "Pic": "Japan_CaiDanFanTuanTanBan_03",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_2_CaiDanFanTuan_Name",
@@ -5532,6 +5779,7 @@
             "3"
         ],
         "Pic": "Japan_CaiDanZhenFa_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_2_CaiDanGouYu1_Name",
@@ -5565,6 +5813,7 @@
             "3"
         ],
         "Pic": "Japan_CaiDanZhenFa_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_2_CaiDanGouYu2_Name",
@@ -5598,6 +5847,7 @@
             "3"
         ],
         "Pic": "Japan_CaiDanZhenFa_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_2_CaiDanGouYu3_Name",
@@ -5617,6 +5867,7 @@
         },
         "Order": "",
         "Pic": "Japan_CaiDaGouYuHongTanBan",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_2_CaiDanGouYuHong_Name",
@@ -5636,6 +5887,7 @@
         },
         "Order": "",
         "Pic": "Japan_CaiDaGouYuHongTanBan",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_2_CaiDanGouYuHong_Name",
@@ -5655,6 +5907,7 @@
         },
         "Order": "",
         "Pic": "Japan_CaiDaGouYuHuangTanBan",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_2_CaiDanGouYuHuang_Name",
@@ -5674,6 +5927,7 @@
         },
         "Order": "",
         "Pic": "Japan_CaiDaGouYuHuangTanBan",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_2_CaiDanGouYuHuang_Name",
@@ -5693,6 +5947,7 @@
         },
         "Order": "",
         "Pic": "Japan_CaiDaGouYuLvTanBan",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_2_CaiDanGouYuQing_Name",
@@ -5712,6 +5967,7 @@
         },
         "Order": "",
         "Pic": "Japan_CaiDaGouYuLvTanBan",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_2_CaiDanGouYuQing_Name",
@@ -5731,6 +5987,7 @@
         },
         "Order": "",
         "Pic": "Monster_YouLingWuShi5",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_2_CaiDanMengPo_Name",
@@ -5768,6 +6025,7 @@
             "4"
         ],
         "Pic": "Monster_YouLingWuShi5",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_2_CaiDanMengPo_Name",
@@ -5805,6 +6063,7 @@
             "4"
         ],
         "Pic": "Monster_YouLingWuShi5",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_2_CaiDanMengPo_Name",
@@ -5824,6 +6083,7 @@
         },
         "Order": "",
         "Pic": "Japan_CaiDanMiJiTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_2_CaiDanMiJi1_Name",
@@ -5843,6 +6103,7 @@
         },
         "Order": "",
         "Pic": "Japan_CaiDanMiJiTanBan_02",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_2_CaiDanMiJi2_Name",
@@ -5862,6 +6123,7 @@
         },
         "Order": "",
         "Pic": "Japan_CaiDanMiJiTanBan_03",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_2_CaiDanMiJi3_Name",
@@ -5881,13 +6143,14 @@
         },
         "Order": "",
         "Pic": "Japan_CaiDanMiJiTanBan_04",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_2_CaiDanMiJi4_Name",
         "Type": "TYPE1"
     },
     "Japan_2_CaiDanMuXiangShaoNv_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": "",
         "CheckDes": "",
         "CheckOption": "",
@@ -5895,11 +6158,12 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Hero_ALSi_HeiHua5",
+        "QuickBattleOption": "2",
         "Reward": "Japan_2_CaiDanXiaoDouZi_show",
         "Tag": "",
         "Title": "Japan_2_CaiDanMuXiangShaoNv_Name",
@@ -5937,6 +6201,7 @@
             "4"
         ],
         "Pic": "Hero_ALSi_HeiHua5",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_2_CaiDanMuXiangShaoNv_Name",
@@ -5956,6 +6221,7 @@
         },
         "Order": "",
         "Pic": "Hero_ALSi_HeiHua5",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_2_CaiDanMuXiangShaoNv_Name",
@@ -5975,6 +6241,7 @@
         },
         "Order": "",
         "Pic": "Japan_CaiDanMuXiangTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_2_CaiDanMuXiang_Name",
@@ -5994,6 +6261,7 @@
         },
         "Order": "",
         "Pic": "Japan_YaoDaoTanBan_02",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_1_CaiDanYaoDao_Name",
@@ -6031,6 +6299,7 @@
             "4"
         ],
         "Pic": "Japan_YaoDaoTanBan_02",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_1_CaiDanYaoDao_Name",
@@ -6050,13 +6319,14 @@
         },
         "Order": "",
         "Pic": "Japan_CaiDanZhenFa_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_2_CaiDanZhenFa_Name",
         "Type": "TYPE1"
     },
     "Japan_2_JingYingA1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 29766,
         "CheckDes": "",
         "CheckOption": "",
@@ -6064,18 +6334,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Hero_YDZZong5",
+        "QuickBattleOption": "2",
         "Reward": "Japan_2_JingYing1_Show",
         "Tag": "",
         "Title": "Japan_2_JingYingA1_Name",
         "Type": "TYPE3"
     },
     "Japan_2_JingYingB1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 32604,
         "CheckDes": "",
         "CheckOption": "",
@@ -6083,18 +6354,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Hero_CZheng5",
+        "QuickBattleOption": "2",
         "Reward": "Japan_2_JingYing2_Show",
         "Tag": "",
         "Title": "Japan_2_JingYingB1_Name",
         "Type": "TYPE3"
     },
     "Japan_2_XiaoGuaiA1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 15120,
         "CheckDes": "",
         "CheckOption": "",
@@ -6102,18 +6374,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_LvGui5",
+        "QuickBattleOption": "2",
         "Reward": "Japan_2_XiaoGuai1_Show",
         "Tag": "",
         "Title": "Japan_2_XiaoGuaiA1_Name",
         "Type": "TYPE3"
     },
     "Japan_2_XiaoGuaiB1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 23625,
         "CheckDes": "",
         "CheckOption": "",
@@ -6121,18 +6394,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_HongGui5",
+        "QuickBattleOption": "2",
         "Reward": "Japan_2_XiaoGuai2_Show",
         "Tag": "",
         "Title": "Japan_2_XiaoGuaiB1_Name",
         "Type": "TYPE3"
     },
     "Japan_3_BossA1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 49497,
         "CheckDes": "",
         "CheckOption": "",
@@ -6140,18 +6414,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Hero_YBYa5",
+        "QuickBattleOption": "2",
         "Reward": "Japan_3_Boss1_Show",
         "Tag": "End",
         "Title": "Japan_3_BossA1_Name",
         "Type": "TYPE3"
     },
     "Japan_3_BossB1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 49497,
         "CheckDes": "",
         "CheckOption": "",
@@ -6159,11 +6434,12 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Hero_NXYYi5",
+        "QuickBattleOption": "2",
         "Reward": "Japan_3_Boss1_Show",
         "Tag": "End",
         "Title": "Japan_3_BossB1_Name",
@@ -6197,13 +6473,14 @@
             "3"
         ],
         "Pic": "Japan_ShenXiang_04",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_3_BuffA1_Name",
         "Type": "TYPE5"
     },
     "Japan_3_JingYingA1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 35640,
         "CheckDes": "",
         "CheckOption": "",
@@ -6211,18 +6488,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Hero_TPGZhu5",
+        "QuickBattleOption": "2",
         "Reward": "Japan_3_JingYing1_Show",
         "Tag": "",
         "Title": "Japan_3_JingYingA1_Name",
         "Type": "TYPE3"
     },
     "Japan_3_JingYingB1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 39036,
         "CheckDes": "",
         "CheckOption": "",
@@ -6230,18 +6508,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Hero_SDTZi5",
+        "QuickBattleOption": "2",
         "Reward": "Japan_3_JingYing2_Show",
         "Tag": "",
         "Title": "Japan_3_JingYingB1_Name",
         "Type": "TYPE3"
     },
     "Japan_3_XiaoGuaiA1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 22630,
         "CheckDes": "",
         "CheckOption": "",
@@ -6249,18 +6528,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_HeiPiJian5",
+        "QuickBattleOption": "2",
         "Reward": "Japan_3_XiaoGuai1_Show",
         "Tag": "",
         "Title": "Japan_3_XiaoGuaiA1_Name",
         "Type": "TYPE3"
     },
     "Japan_3_XiaoGuaiB1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 28285,
         "CheckDes": "",
         "CheckOption": "",
@@ -6268,18 +6548,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_HeiPiDun5",
+        "QuickBattleOption": "2",
         "Reward": "Japan_3_XiaoGuai2_Show",
         "Tag": "",
         "Title": "Japan_3_XiaoGuaiB1_Name",
         "Type": "TYPE3"
     },
     "Japan_4_BossA1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 67438,
         "CheckDes": "",
         "CheckOption": "",
@@ -6287,11 +6568,12 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Hero_YLMGZhu5",
+        "QuickBattleOption": "2",
         "Reward": "Japan_4_Boss1_Show",
         "Tag": "End",
         "Title": "Japan_4_BossA1_Name",
@@ -6325,13 +6607,14 @@
             "3"
         ],
         "Pic": "Japan_ShenXiang_04",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_4_BuffA1_Name",
         "Type": "TYPE5"
     },
     "Japan_4_JingYingA1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 44958,
         "CheckDes": "",
         "CheckOption": "",
@@ -6339,18 +6622,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Hero_LDu5",
+        "QuickBattleOption": "2",
         "Reward": "Japan_4_JingYing1_Show",
         "Tag": "",
         "Title": "Japan_4_JingYingA1_Name",
         "Type": "TYPE3"
     },
     "Japan_4_JingYingB1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 49236,
         "CheckDes": "",
         "CheckOption": "",
@@ -6358,18 +6642,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Hero_KTSJKe5",
+        "QuickBattleOption": "2",
         "Reward": "Japan_4_JingYing2_Show",
         "Tag": "",
         "Title": "Japan_4_JingYingB1_Name",
         "Type": "TYPE3"
     },
     "Japan_4_JingYingC1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 53520,
         "CheckDes": "",
         "CheckOption": "",
@@ -6377,18 +6662,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Hero_DDing5",
+        "QuickBattleOption": "2",
         "Reward": "Japan_4_JingYing3_Show",
         "Tag": "",
         "Title": "Japan_4_JingYingC1_Name",
         "Type": "TYPE3"
     },
     "Japan_4_XiaoGuaiA1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 28545,
         "CheckDes": "",
         "CheckOption": "",
@@ -6396,18 +6682,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_HeiPiDaDao5",
+        "QuickBattleOption": "2",
         "Reward": "Japan_4_XiaoGuai1_Show",
         "Tag": "",
         "Title": "Japan_4_XiaoGuaiA1_Name",
         "Type": "TYPE3"
     },
     "Japan_4_XiaoGuaiB1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 35680,
         "CheckDes": "",
         "CheckOption": "",
@@ -6415,18 +6702,19 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_HeiPiChangZhang5",
+        "QuickBattleOption": "2",
         "Reward": "Japan_4_XiaoGuai2_Show",
         "Tag": "",
         "Title": "Japan_4_XiaoGuaiB1_Name",
         "Type": "TYPE3"
     },
     "Japan_4_XiaoGuaiC1_Battle1": {
-        "BattleOption": "2",
+        "BattleOption": "1",
         "BpFactor": 39250,
         "CheckDes": "",
         "CheckOption": "",
@@ -6434,11 +6722,12 @@
         "NeedItem": "",
         "NeedNum": "",
         "Option": {
-            "1": "Map_ChoiceDesc_LiKai",
-            "2": "Map_ChoiceDesc_ZhanDou"
+            "1": "Map_ChoiceDesc_ZhanDou",
+            "2": "Map_ChoiceDesc_KuaiSuZhanDou"
         },
         "Order": "",
         "Pic": "Monster_HeiPiPiFeng5",
+        "QuickBattleOption": "2",
         "Reward": "Japan_4_XiaoGuai3_Show",
         "Tag": "",
         "Title": "Japan_4_XiaoGuaiC1_Name",
@@ -6458,6 +6747,7 @@
         },
         "Order": "",
         "Pic": "Japan_HunYuTanBan_01",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_CaiDanHunYu1_Name",
@@ -6477,6 +6767,7 @@
         },
         "Order": "",
         "Pic": "Japan_HunYuTanBan_02",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_CaiDanHunYu2_Name",
@@ -6496,6 +6787,7 @@
         },
         "Order": "",
         "Pic": "Japan_HunYuTanBan_03",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_CaiDanHunYu3_Name",
@@ -6515,6 +6807,7 @@
         },
         "Order": "",
         "Pic": "Japan_HunYuTanBan_04",
+        "QuickBattleOption": "",
         "Reward": "",
         "Tag": "",
         "Title": "Japan_CaiDanHunYu4_Name",

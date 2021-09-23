@@ -108,6 +108,7 @@ function DreamHouseSystem:enterDreamHouseTeam(mapId, pointId, battleId)
 		mapId = mapId,
 		pointId = pointId,
 		battleId = battleId,
+		stageType = StageTeamType.HOUSE,
 		team = self._developSystem:getSpTeamByType(StageTeamType.HOUSE)
 	}))
 end

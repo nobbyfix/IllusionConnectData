@@ -105,6 +105,7 @@ function CardArrayWidget:FlyCard(endCall)
 			cc.p(scene:getContentSize().width / 2 + 100, scene:getContentSize().height / 2)
 		}
 	}
+	self._flyingItemsArray = {}
 
 	for k, v in pairs(collectObj) do
 		local target = ccui.ImageView:create(v:getRes())
@@ -118,6 +119,8 @@ function CardArrayWidget:FlyCard(endCall)
 			actionCnt = actionCnt - 1
 
 			if actionCnt <= 0 then
+				self._flyingItemsArray[target] = nil
+
 				endCall()
 			end
 
@@ -134,6 +137,7 @@ function CardArrayWidget:FlyCard(endCall)
 		target:runAction(sequence)
 
 		actionCnt = actionCnt + 1
+		self._flyingItemsArray[target] = target
 	end
 end
 
@@ -146,6 +150,11 @@ end
 
 function CardArrayWidget:dispose()
 	self:unregisterTouchEvents()
+
+	for k, v in pairs(self._flyingItemsArray or {}) do
+		v:removeFromParent()
+	end
+
 	super.dispose(self)
 end
 
@@ -493,6 +502,8 @@ function CardArrayWidget:onTouchMoved(touch, event)
 
 		if self._listener and self._hittedCard:getType() == "hero" then
 			self._listener:dragBegan(self, self._hittedCard)
+		elseif self._hittedCard:getType() == "skill" and self._hittedSlot:getSlotType() == KSlotType.EXTRA then
+			self._listener:dragExtraSkillBegan(self, self._hittedCard)
 		end
 	end
 
@@ -522,7 +533,9 @@ function CardArrayWidget:onTouchEnded(touch, event)
 		local hittedCard = self._hittedCard
 		local cardNode = hittedCard:getView()
 
-		cardNode:getParent():setLocalZOrder(1)
+		if not tolua.isnull(cardNode) then
+			cardNode:getParent():setLocalZOrder(1)
+		end
 
 		if self._listener and hittedCard:getType() == "hero" then
 			self._listener:dragEnded(self, hittedCard, pt)

@@ -269,11 +269,9 @@ function RankBestMediator:updataCell(cell, data, index)
 					roleModel = ConfigReader:requireDataByNameIdAndKey("HeroBase", lb[1].board, "RoleModel")
 				end
 
-				local img, jsonPath = IconFactory:createRoleIconSprite({
-					stencil = 1,
-					iconType = "Bust5",
-					id = roleModel,
-					size = cc.size(368, 446)
+				local img, jsonPath = IconFactory:createRoleIconSpriteNew({
+					frameId = "bustframe4_8",
+					id = roleModel
 				})
 
 				img:addTo(roleNode):posite(-40, 210)

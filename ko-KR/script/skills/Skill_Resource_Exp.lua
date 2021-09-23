@@ -461,6 +461,7 @@ all.Skill_Resource_Exp_JSJJu_Skill = {
 							"STATUS",
 							"DEBUFF",
 							"DAZE",
+							"ABNORMAL",
 							"DISPELLABLE"
 						}
 					}, {

@@ -66,6 +66,36 @@ end
 function scene_BErDate03.actions.start_BErDate03(_root, args)
 	return sequential({
 		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 0.1
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "hideButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "skipButton"),
+			args = function (_ctx)
+				return {
+					date = true
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "reviewButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "autoPlayButton")
+		}),
+		act({
 			action = "activateNode",
 			actor = __getnode__(_root, "bg")
 		}),
@@ -104,11 +134,11 @@ function scene_BErDate03.actions.start_BErDate03(_root, args)
 					modelId = "Model_Story_BEr",
 					id = "BEr_speak",
 					rotationX = 0,
-					scale = 1.325,
+					scale = 0.7,
 					zorder = 2,
 					position = {
 						x = 0,
-						y = -580,
+						y = -470,
 						refpt = {
 							x = 0.375,
 							y = 0
@@ -132,8 +162,8 @@ function scene_BErDate03.actions.start_BErDate03(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = 127,
-								y = 850
+								x = 207,
+								y = 1406
 							}
 						}
 					}

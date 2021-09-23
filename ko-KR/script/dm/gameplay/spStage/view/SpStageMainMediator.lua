@@ -505,9 +505,9 @@ function SpStageMainMediator:refreshBg()
 
 	if roleImage then
 		local roleModel = IconFactory:getRoleModelByKey("HeroBase", roleImage)
-		local img = IconFactory:createRoleIconSprite({
+		local img = IconFactory:createRoleIconSpriteNew({
 			useAnim = true,
-			iconType = "Bust4",
+			frameId = "bustframe9",
 			id = roleModel
 		})
 

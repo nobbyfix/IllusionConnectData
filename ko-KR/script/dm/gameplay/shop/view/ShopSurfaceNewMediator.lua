@@ -194,9 +194,9 @@ function ShopSurfaceNewMediator:refreshRolePanel()
 	self._roleNode:removeAllChildren()
 
 	local roleModel = self._curSurface:getModel()
-	local img, jsonPath = IconFactory:createRoleIconSprite({
+	local img, jsonPath = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust4",
+		frameId = "bustframe9",
 		id = roleModel
 	})
 
@@ -304,11 +304,9 @@ function ShopSurfaceNewMediator:setInfo(panel, data, index)
 	nameText:setString(name)
 	iconLayout:removeAllChildren()
 
-	local heroImg = IconFactory:createRoleIconSprite({
-		stencil = 1,
-		iconType = "Bust7",
-		id = data:getModel(),
-		size = cc.size(245, 336)
+	local heroImg = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe7_2",
+		id = data:getModel()
 	})
 
 	heroImg:addTo(iconLayout):center(iconLayout:getContentSize())

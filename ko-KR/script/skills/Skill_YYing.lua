@@ -345,6 +345,7 @@ all.Skill_YYing_Unique = {
 							"STATUS",
 							"DEBUFF",
 							"MUTE",
+							"ABNORMAL",
 							"DISPELLABLE"
 						}
 					}, {
@@ -361,6 +362,7 @@ all.Skill_YYing_Unique = {
 							"STATUS",
 							"DEBUFF",
 							"DAZE",
+							"ABNORMAL",
 							"DISPELLABLE"
 						}
 					}, {
@@ -416,6 +418,7 @@ all.Skill_YYing_Unique = {
 						"STATUS",
 						"DEBUFF",
 						"BURNING",
+						"ABNORMAL",
 						"DISPELLABLE"
 					}
 				}, {
@@ -529,6 +532,7 @@ all.Skill_YYing_Unique_EX = {
 							"STATUS",
 							"DEBUFF",
 							"MUTE",
+							"ABNORMAL",
 							"DISPELLABLE"
 						}
 					}, {
@@ -545,6 +549,7 @@ all.Skill_YYing_Unique_EX = {
 							"STATUS",
 							"DEBUFF",
 							"DAZE",
+							"ABNORMAL",
 							"DISPELLABLE"
 						}
 					}, {
@@ -600,6 +605,7 @@ all.Skill_YYing_Unique_EX = {
 						"STATUS",
 						"DEBUFF",
 						"BURNING",
+						"ABNORMAL",
 						"DISPELLABLE"
 					}
 				}, {

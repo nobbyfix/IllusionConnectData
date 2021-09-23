@@ -138,7 +138,6 @@ function TaskStageMediator:createTableView()
 			layout:addTo(cell):posite(0, 0)
 			layout:setAnchorPoint(cc.p(0, 0))
 			layout:setTag(123)
-			dump(idx, " FFF ")
 
 			local sprite = self._cellClone:clone()
 
@@ -260,6 +259,8 @@ function TaskStageMediator:createCell(cell, index)
 end
 
 function TaskStageMediator:refreshMainTask()
+	self._taskCell:setVisible(true)
+
 	if not self._mainTask then
 		self._taskCell:setVisible(false)
 
@@ -435,10 +436,10 @@ function TaskStageMediator:setBg(panel)
 	local role = roleModelNode:getChildByName("role")
 
 	if not role then
-		local img, jsonPath = IconFactory:createRoleIconSprite({
+		local img, jsonPath = IconFactory:createRoleIconSpriteNew({
 			id = "Model_ZTXChang",
 			useAnim = true,
-			iconType = "Bust4"
+			frameId = "bustframe9"
 		})
 
 		img:addTo(roleModelNode):posite(380, -80):setName("role")

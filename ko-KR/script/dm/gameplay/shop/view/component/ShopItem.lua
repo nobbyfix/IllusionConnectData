@@ -233,11 +233,9 @@ end
 
 function ShopItem:refreshSurfaceIcon()
 	local config = self._data:getItemConfig()
-	local heroImg = IconFactory:createRoleIconSprite({
-		stencil = 1,
-		iconType = "Bust1",
-		id = config.Model,
-		size = cc.size(246, 206)
+	local heroImg = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe13_2",
+		id = config.Model
 	})
 
 	heroImg:addTo(self._iconLayout):center(self._iconLayout:getContentSize())

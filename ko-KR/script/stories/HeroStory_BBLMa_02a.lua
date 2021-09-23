@@ -233,11 +233,11 @@ function scene_HeroStory_BBLMa_02a.actions.start_HeroStory_BBLMa_02a(_root, args
 					modelId = "Model_BBLMa",
 					id = "BBLMa_speak",
 					rotationX = 0,
-					scale = 1.155,
+					scale = 0.66,
 					zorder = 10,
 					position = {
 						x = 0,
-						y = -450,
+						y = -350,
 						refpt = {
 							x = 0.45,
 							y = 0
@@ -254,14 +254,14 @@ function scene_HeroStory_BBLMa_02a.actions.start_HeroStory_BBLMa_02a(_root, args
 							zorder = 1100,
 							visible = true,
 							id = "BBLMa_face",
-							scale = 1.025,
+							scale = 1,
 							anchorPoint = {
 								x = 0.5,
 								y = 0.5
 							},
 							position = {
-								x = 90.3,
-								y = 779.5
+								x = 150.5,
+								y = 1123
 							}
 						}
 					}
@@ -337,11 +337,11 @@ function scene_HeroStory_BBLMa_02a.actions.start_HeroStory_BBLMa_02a(_root, args
 					modelId = "Model_XSMLi",
 					id = "XSMLi_speak",
 					rotationX = 0,
-					scale = 1.4,
+					scale = 0.75,
 					zorder = 12,
 					position = {
 						x = 0,
-						y = -705,
+						y = -480,
 						refpt = {
 							x = 0.65,
 							y = 0
@@ -365,8 +365,8 @@ function scene_HeroStory_BBLMa_02a.actions.start_HeroStory_BBLMa_02a(_root, args
 								y = 0.5
 							},
 							position = {
-								x = -182,
-								y = 792.5
+								x = -342.5,
+								y = 1158
 							}
 						}
 					}
@@ -439,7 +439,7 @@ function scene_HeroStory_BBLMa_02a.actions.start_HeroStory_BBLMa_02a(_root, args
 					duration = 0.3,
 					position = {
 						x = -200,
-						y = -705,
+						y = -480,
 						refpt = {
 							x = 0.65,
 							y = 0
@@ -588,7 +588,7 @@ function scene_HeroStory_BBLMa_02a.actions.start_HeroStory_BBLMa_02a(_root, args
 					duration = 0,
 					position = {
 						x = 0,
-						y = -450,
+						y = -350,
 						refpt = {
 							x = -0.3,
 							y = 0
@@ -614,7 +614,7 @@ function scene_HeroStory_BBLMa_02a.actions.start_HeroStory_BBLMa_02a(_root, args
 					duration = 0.5,
 					position = {
 						x = 0,
-						y = -450,
+						y = -350,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -1148,7 +1148,7 @@ function scene_HeroStory_BBLMa_02a.actions.start_HeroStory_BBLMa_02a(_root, args
 				return {
 					duration = 0.3,
 					position = {
-						y = -705,
+						y = -480,
 						x = -0,
 						refpt = {
 							x = 0.65,

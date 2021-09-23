@@ -60,9 +60,9 @@ function HeroStoryWinPopMediator:showExpPanel()
 	local heroId = self._data.MVPHeroId
 	local heroBaseInfo = ConfigReader:getRecordById("HeroBase", heroId)
 	local roleModel = IconFactory:getRoleModelByKey("HeroBase", heroId)
-	local mvpSprite = IconFactory:createRoleIconSprite({
+	local mvpSprite = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust9",
+		frameId = "bustframe17",
 		id = roleModel
 	})
 
@@ -90,7 +90,7 @@ function HeroStoryWinPopMediator:showExpPanel()
 	local mvpSpritePanel = anim:getChildByName("roleNode")
 
 	mvpSpritePanel:addChild(self._mvpSprite)
-	self._mvpSprite:setPosition(cc.p(50, -100))
+	self._mvpSprite:setPosition(cc.p(-200, -200))
 	anim:addCallbackAtFrame(45, function ()
 		anim:stop()
 	end)

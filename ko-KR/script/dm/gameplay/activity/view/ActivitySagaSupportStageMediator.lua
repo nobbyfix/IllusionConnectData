@@ -291,9 +291,9 @@ function ActivitySagaSupportStageMediator:updateMainView()
 
 	local hd = self._activity:getHeroDataById(self._heroId)
 	local modelId = hd.ModelId
-	local img, jsonPath = IconFactory:createRoleIconSprite({
+	local img, jsonPath = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust4",
+		frameId = "bustframe9",
 		id = modelId
 	})
 
@@ -430,9 +430,9 @@ function ActivitySagaSupportStageMediator:updateStageView()
 
 		local hd = self._activity:getHeroDataById(heroId)
 		local modelId = hd.ModelId
-		local img, jsonPath = IconFactory:createRoleIconSprite({
+		local img, jsonPath = IconFactory:createRoleIconSpriteNew({
 			useAnim = true,
-			iconType = "Bust4",
+			frameId = "bustframe9",
 			id = modelId
 		})
 

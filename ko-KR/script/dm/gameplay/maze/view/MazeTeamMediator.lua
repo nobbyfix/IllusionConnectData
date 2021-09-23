@@ -492,7 +492,7 @@ function MazeTeamMediator:onClickOnTeamPet(sender, eventType, oppoRecord, info)
 			replace:setPosition(0, 0)
 
 			info.id = info.roleModel
-			local img = IconFactory:createRoleIconSprite({
+			local img = IconFactory:createRoleIconSpriteNew({
 				iconType = 1,
 				id = info.roleModel
 			})
@@ -643,7 +643,7 @@ end
 
 function MazeTeamMediator:initHero(node, info)
 	info.id = info.roleModel
-	local heroImg = IconFactory:createRoleIconSprite(info)
+	local heroImg = IconFactory:createRoleIconSpriteNew(info)
 	local heroPanel = node:getChildByName("hero")
 
 	heroPanel:removeAllChildren()

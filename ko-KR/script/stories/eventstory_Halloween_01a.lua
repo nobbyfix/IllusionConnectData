@@ -1056,11 +1056,11 @@ function scene_eventstory_Halloween_01a.actions.start_eventstory_Halloween_01a(_
 					modelId = "Model_MTZMEShi",
 					id = "MTZMEShi_speak",
 					rotationX = 0,
-					scale = 0.9,
+					scale = 0.75,
 					zorder = 5,
 					position = {
 						x = 50,
-						y = -310,
+						y = -390,
 						refpt = {
 							x = 0.65,
 							y = 0
@@ -1073,8 +1073,8 @@ function scene_eventstory_Halloween_01a.actions.start_eventstory_Halloween_01a(_
 							pathType = "STORY_FACE",
 							type = "Image",
 							image = "MTZMEShi/MTZMEShi_face_1.png",
-							scaleX = 1.15,
-							scaleY = 1.15,
+							scaleX = 1,
+							scaleY = 1,
 							layoutMode = 1,
 							zorder = 1100,
 							visible = true,
@@ -1084,8 +1084,8 @@ function scene_eventstory_Halloween_01a.actions.start_eventstory_Halloween_01a(_
 								y = 0.5
 							},
 							position = {
-								x = -6,
-								y = 872.5
+								x = -10.5,
+								y = 1081
 							}
 						}
 					}

@@ -148,7 +148,7 @@ function ActivityStageUnFinishMediator:refreshView()
 
 	self:initSvpRole()
 	svpSpritePanel:addChild(self._svpSprite)
-	self._svpSprite:setPosition(cc.p(cc.p(50, -100)))
+	self._svpSprite:setPosition(cc.p(-200, -200))
 	anim:gotoAndPlay(1)
 
 	local action1 = cc.Sequence:create(cc.DelayTime:create(0.1), cc.FadeIn:create(0.1))
@@ -171,9 +171,10 @@ function ActivityStageUnFinishMediator:initSvpRole()
 		model = self:getOwnMasterRoleModel(self:getOwnMasterId(self._data.pointId))
 	end
 
-	local svpSprite = IconFactory:createRoleIconSprite({
+	model = IconFactory:getSpMvpBattleEndMid(model)
+	local svpSprite = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust9",
+		frameId = "bustframe17",
 		id = model
 	})
 

@@ -229,6 +229,17 @@ function HeroShowOwnMediator:initNodes()
 	self._buttonPanel:getChildByFullName("soundbtn.text"):setString(Strings:get("Hero_button_3"))
 	self._buttonPanel:getChildByFullName("storybtn.text"):setString(Strings:get("Hero_button_4"))
 	self._buttonPanel:getChildByFullName("bustbtn.text"):setString(Strings:get("Hero_button_5"))
+
+	local redPoint = self._surfaceBtn:getChildByFullName("RedPoint")
+
+	if not redPoint then
+		redPoint = ccui.ImageView:create(IconFactory.redPointPath1, 1)
+
+		redPoint:addTo(self._surfaceBtn):posite(45, 50)
+		redPoint:setName("RedPoint")
+		redPoint:setVisible(false)
+	end
+
 	self:setEffect()
 end
 
@@ -344,6 +355,11 @@ function HeroShowOwnMediator:refreshInfoPanel()
 			end
 		end
 	end
+
+	local redPoint = self._surfaceBtn:getChildByFullName("RedPoint")
+	local isRed = self._surfaceSystem:getRedPointByHeroId(self._heroData:getId())
+
+	redPoint:setVisible(isRed)
 end
 
 function HeroShowOwnMediator:refreshAttr()
@@ -915,9 +931,9 @@ function HeroShowOwnMediator:refreshHero()
 				return
 			end
 
-			local img, path, spineani, picInfo = IconFactory:createRoleIconSprite({
+			local img, path, spineani, picInfo = IconFactory:createRoleIconSpriteNew({
 				useAnim = true,
-				iconType = "Bust4",
+				frameId = "bustframe9",
 				id = self._heroData:getModel()
 			})
 

@@ -217,6 +217,7 @@ function all.ApplyStatusEffect(_env, actor, target)
 				"STATUS",
 				"DEBUFF",
 				"DAZE",
+				"ABNORMAL",
 				"DISPELLABLE"
 			}
 		}, {
@@ -237,6 +238,7 @@ function all.ApplyStatusEffect(_env, actor, target)
 				"STATUS",
 				"DEBUFF",
 				"MUTE",
+				"ABNORMAL",
 				"DISPELLABLE"
 			}
 		}, {
@@ -260,6 +262,7 @@ function all.ApplyStatusEffect(_env, actor, target)
 				"STATUS",
 				"DEBUFF",
 				"COLD",
+				"ABNORMAL",
 				"DISPELLABLE"
 			}
 		}, {
@@ -284,6 +287,7 @@ function all.ApplyStatusEffect(_env, actor, target)
 				"STATUS",
 				"DEBUFF",
 				"FREEZE",
+				"ABNORMAL",
 				"DISPELLABLE"
 			}
 		}, {
@@ -390,6 +394,7 @@ function all.ApplyRPEffect(_env, actor, target)
 				"STATUS",
 				"DEBUFF",
 				"DAZE",
+				"ABNORMAL",
 				"DISPELLABLE"
 			}
 		}, {
@@ -759,7 +764,7 @@ function all.EvalAOEDamage_FlagCheck(_env, actor, target, dmgFactor, passiveFact
 		"COLD",
 		"BURNING",
 		"POISON",
-		"PROVOKE",
+		"TAUNT",
 		"SHIELD"
 	}
 	local StatusPrename = {
@@ -1038,7 +1043,7 @@ function all.EvalRecovery_FlagCheck(_env, actor, target, healFactorRate, healFac
 		"COLD",
 		"BURNING",
 		"POISON",
-		"PROVOKE",
+		"TAUNT",
 		"SHIELD"
 	}
 	local StatusPrename = {
@@ -1151,6 +1156,7 @@ function all.ApplyBuff_Debuff(_env, actor, target, config, buffEffects, ratefact
 					"STATUS",
 					"DEBUFF",
 					"BURNING",
+					"ABNORMAL",
 					"DISPELLABLE"
 				}
 			}, {
@@ -1174,6 +1180,7 @@ function all.ApplyBuff_Debuff(_env, actor, target, config, buffEffects, ratefact
 					"STATUS",
 					"DEBUFF",
 					"POISON",
+					"ABNORMAL",
 					"DISPELLABLE"
 				}
 			}, {
@@ -1569,6 +1576,7 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 					"STATUS",
 					"DEBUFF",
 					"MUTE",
+					"ABNORMAL",
 					"DISPELLABLE"
 				}
 			}, {
@@ -2088,6 +2096,7 @@ function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimi
 					"STATUS",
 					"DEBUFF",
 					"MUTE",
+					"ABNORMAL",
 					"DISPELLABLE"
 				}
 			}, {
@@ -2108,6 +2117,7 @@ function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimi
 					"STATUS",
 					"DEBUFF",
 					"DAZE",
+					"ABNORMAL",
 					"DISPELLABLE"
 				}
 			}, {
@@ -2690,6 +2700,7 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 					"STATUS",
 					"DEBUFF",
 					"MUTE",
+					"ABNORMAL",
 					"DISPELLABLE"
 				}
 			}, {
@@ -3241,6 +3252,7 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 					"STATUS",
 					"DEBUFF",
 					"MUTE",
+					"ABNORMAL",
 					"DISPELLABLE"
 				}
 			}, {
@@ -3261,6 +3273,7 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 					"STATUS",
 					"DEBUFF",
 					"DAZE",
+					"ABNORMAL",
 					"DISPELLABLE"
 				}
 			}, {
@@ -3837,6 +3850,7 @@ function all.Serious_Injury(_env, actor, target, ratio, duration, timing)
 			"STATUS",
 			"DEBUFF",
 			"INJURY",
+			"ABNORMAL",
 			"DISPELLABLE",
 			"UNSTEALABLE"
 		}
@@ -3844,6 +3858,30 @@ function all.Serious_Injury(_env, actor, target, ratio, duration, timing)
 		buff1,
 		buff2
 	}, 1, 0)
+end
+
+function all.BackToCard_ResultCheck(_env, unit, cond, location)
+	local this = _env.this
+	local global = _env.global
+	local card = nil
+
+	if cond == "card" then
+		card = global.BackToCard(_env, unit)
+	elseif cond == "window" then
+		card = global.BackToWindow(_env, unit, location)
+	end
+
+	if card then
+		global.ActivateSpecificTrigger(_env, unit, "BACK_CARD", {
+			card = card
+		})
+		global.ActivateGlobalTrigger(_env, unit, "UNIT_BACK_CARD", {
+			unit = unit,
+			card = card
+		})
+
+		return card
+	end
 end
 
 function all.Revive_Check(_env, actor, hpRatio, anger, location, unit)

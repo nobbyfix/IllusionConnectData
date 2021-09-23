@@ -94,8 +94,9 @@ function StagePracticeLoseMediator:showLoseAni()
 	end
 
 	if model then
-		local mvpSprite = IconFactory:createRoleIconSprite({
-			iconType = "Bust9",
+		model = IconFactory:getSpMvpBattleEndMid(model)
+		local mvpSprite = IconFactory:createRoleIconSpriteNew({
+			frameId = "bustframe17",
 			id = model
 		})
 		self._mvpSprite = mvpSprite
@@ -116,7 +117,7 @@ function StagePracticeLoseMediator:showLoseAni()
 		end
 
 		mvpSpritePanel:addChild(self._mvpSprite)
-		self._mvpSprite:setPosition(50, -100)
+		self._mvpSprite:setPosition(cc.p(-200, -200))
 	end
 
 	anim:addCallbackAtFrame(45, function ()

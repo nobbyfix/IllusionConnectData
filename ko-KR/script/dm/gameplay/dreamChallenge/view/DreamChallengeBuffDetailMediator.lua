@@ -219,7 +219,8 @@ function DreamChallengeBuffDetailMediator:createAddInfo()
 		icon:loadTexture(iconName, ccui.TextureResType.localType)
 		icon:setContentSize(cc.size(88, 88))
 
-		local heroImg = IconFactory:createRoleIconSprite({
+		local config = ConfigReader:getRecordById("HeroBase", heros[i])
+		local heroImg = IconFactory:createRoleIconSpriteNew({
 			id = config.RoleModel
 		})
 
@@ -606,7 +607,7 @@ function DreamChallengeBuffDetailMediator:setHero(node, info)
 	local modelInfo = {
 		id = info.roleModel
 	}
-	local heroImg = IconFactory:createRoleIconSprite(modelInfo)
+	local heroImg = IconFactory:createRoleIconSpriteNew(modelInfo)
 
 	heroImg:setScale(0.68)
 

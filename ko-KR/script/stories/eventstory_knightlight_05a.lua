@@ -855,11 +855,11 @@ function scene_eventstory_knightlight_05a.actions.start_eventstory_knightlight_0
 						modelId = "Model_LCYShi",
 						id = "LCYShi",
 						rotationX = 0,
-						scale = 1.04,
+						scale = 0.65,
 						zorder = 30,
 						position = {
 							x = 0,
-							y = -318,
+							y = -380,
 							refpt = {
 								x = 0.23,
 								y = 0
@@ -888,11 +888,11 @@ function scene_eventstory_knightlight_05a.actions.start_eventstory_knightlight_0
 						modelId = "Model_YKDMLai",
 						id = "YKDMLai",
 						rotationX = 0,
-						scale = 0.94,
+						scale = 0.67,
 						zorder = 35,
 						position = {
 							x = 0,
-							y = -320,
+							y = -290,
 							refpt = {
 								x = 0.1,
 								y = 0
@@ -921,11 +921,11 @@ function scene_eventstory_knightlight_05a.actions.start_eventstory_knightlight_0
 						modelId = "Model_JSTDing",
 						id = "JSTDing",
 						rotationX = 0,
-						scale = 0.87,
+						scale = 0.74,
 						zorder = 35,
 						position = {
 							x = 0,
-							y = -315,
+							y = -350,
 							refpt = {
 								x = 0.46,
 								y = 0
@@ -954,11 +954,11 @@ function scene_eventstory_knightlight_05a.actions.start_eventstory_knightlight_0
 						modelId = "Model_SGHQShou",
 						id = "SGHQShou",
 						rotationX = 0,
-						scale = 1.2,
+						scale = 0.6,
 						zorder = 36,
 						position = {
 							x = 0,
-							y = -345,
+							y = -400,
 							refpt = {
 								x = 0.78,
 								y = 0
@@ -1246,7 +1246,7 @@ function scene_eventstory_knightlight_05a.actions.start_eventstory_knightlight_0
 			actor = __getnode__(_root, "SGHQShou"),
 			args = function (_ctx)
 				return {
-					scale = 1.1,
+					scale = 0.65,
 					duration = 0
 				}
 			end
@@ -1259,7 +1259,7 @@ function scene_eventstory_knightlight_05a.actions.start_eventstory_knightlight_0
 					duration = 0,
 					position = {
 						x = 0,
-						y = -340,
+						y = -400,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -1414,7 +1414,7 @@ function scene_eventstory_knightlight_05a.actions.start_eventstory_knightlight_0
 			actor = __getnode__(_root, "LCYShi"),
 			args = function (_ctx)
 				return {
-					scale = 1,
+					scale = 0.68,
 					duration = 0
 				}
 			end
@@ -1427,7 +1427,7 @@ function scene_eventstory_knightlight_05a.actions.start_eventstory_knightlight_0
 					duration = 0,
 					position = {
 						x = 0,
-						y = -295,
+						y = -380,
 						refpt = {
 							x = 0.46,
 							y = 0
@@ -1441,7 +1441,7 @@ function scene_eventstory_knightlight_05a.actions.start_eventstory_knightlight_0
 			actor = __getnode__(_root, "JSTDing"),
 			args = function (_ctx)
 				return {
-					scale = 0.93,
+					scale = 0.77,
 					duration = 0
 				}
 			end
@@ -1454,7 +1454,7 @@ function scene_eventstory_knightlight_05a.actions.start_eventstory_knightlight_0
 					duration = 0,
 					position = {
 						x = 0,
-						y = -290,
+						y = -350,
 						refpt = {
 							x = 0.82,
 							y = 0
@@ -1468,7 +1468,7 @@ function scene_eventstory_knightlight_05a.actions.start_eventstory_knightlight_0
 			actor = __getnode__(_root, "YKDMLai"),
 			args = function (_ctx)
 				return {
-					scale = 1,
+					scale = 0.7,
 					duration = 0
 				}
 			end
@@ -1481,7 +1481,7 @@ function scene_eventstory_knightlight_05a.actions.start_eventstory_knightlight_0
 					duration = 0,
 					position = {
 						x = 0,
-						y = -300,
+						y = -290,
 						refpt = {
 							x = 0.25,
 							y = 0
@@ -1564,7 +1564,7 @@ function scene_eventstory_knightlight_05a.actions.start_eventstory_knightlight_0
 						duration = 0.3,
 						position = {
 							x = 0,
-							y = -295,
+							y = -380,
 							refpt = {
 								x = 1.4,
 								y = 0
@@ -1581,7 +1581,7 @@ function scene_eventstory_knightlight_05a.actions.start_eventstory_knightlight_0
 						duration = 0.2,
 						position = {
 							x = 0,
-							y = -290,
+							y = -350,
 							refpt = {
 								x = 1.4,
 								y = 0
@@ -1598,7 +1598,7 @@ function scene_eventstory_knightlight_05a.actions.start_eventstory_knightlight_0
 						duration = 0.4,
 						position = {
 							x = 0,
-							y = -300,
+							y = -290,
 							refpt = {
 								x = 1.4,
 								y = 0

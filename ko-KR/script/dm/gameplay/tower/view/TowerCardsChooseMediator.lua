@@ -193,11 +193,9 @@ function TowerCardsChooseMediator:setupCardById(node, cardId)
 	local roleModel = IconFactory:getRoleModelByKey("HeroBase", cardId)
 	local roleAnim = anim:getChildByFullName("roleAnim")
 	local roleNode = roleAnim:getChildByFullName("roleNode")
-	local realImage = IconFactory:createRoleIconSprite({
-		stencil = 1,
-		iconType = "Bust7",
-		id = roleModel,
-		size = cc.size(245, 336)
+	local realImage = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe7_1",
+		id = roleModel
 	})
 
 	realImage:addTo(roleNode)

@@ -549,14 +549,14 @@ function scene_eventstory_deepSea_07a.actions.start_eventstory_deepSea_07a(_root
 						modelId = "Model_ALPo",
 						id = "zuitianshi",
 						rotationX = 0,
-						scale = 0.75,
+						scale = 0.68,
 						zorder = 100,
 						position = {
 							x = 0,
-							y = -330,
+							y = -300,
 							refpt = {
 								x = 0.8,
-								y = 0.4
+								y = 0.2
 							}
 						}
 					}
@@ -1408,7 +1408,7 @@ function scene_eventstory_deepSea_07a.actions.start_eventstory_deepSea_07a(_root
 							duration = 0.1,
 							position = {
 								x = 0,
-								y = -330,
+								y = -300,
 								refpt = {
 									x = 1.4,
 									y = 0.4
@@ -1752,11 +1752,11 @@ function scene_eventstory_deepSea_07a.actions.start_eventstory_deepSea_07a(_root
 						modelId = "Model_ALPo",
 						id = "ALPo",
 						rotationX = 0,
-						scale = 0.95,
+						scale = 0.63,
 						zorder = 90,
 						position = {
 							x = 0,
-							y = -330,
+							y = -300,
 							refpt = {
 								x = -0.3,
 								y = 0
@@ -1780,8 +1780,8 @@ function scene_eventstory_deepSea_07a.actions.start_eventstory_deepSea_07a(_root
 									y = 0.5
 								},
 								position = {
-									x = -1.65,
-									y = 781
+									x = 7,
+									y = 1020
 								}
 							}
 						}
@@ -1838,7 +1838,7 @@ function scene_eventstory_deepSea_07a.actions.start_eventstory_deepSea_07a(_root
 						duration = 0.6,
 						position = {
 							x = 0,
-							y = -330,
+							y = -300,
 							refpt = {
 								x = 0.75,
 								y = 0
@@ -1990,7 +1990,7 @@ function scene_eventstory_deepSea_07a.actions.start_eventstory_deepSea_07a(_root
 							duration = 0.2,
 							position = {
 								x = 0,
-								y = -330,
+								y = -300,
 								refpt = {
 									x = 0.8,
 									y = 0
@@ -2065,7 +2065,7 @@ function scene_eventstory_deepSea_07a.actions.start_eventstory_deepSea_07a(_root
 						duration = 0,
 						position = {
 							x = 0,
-							y = -330,
+							y = -300,
 							refpt = {
 								x = 0.7,
 								y = 0
@@ -2135,7 +2135,7 @@ function scene_eventstory_deepSea_07a.actions.start_eventstory_deepSea_07a(_root
 						duration = 0.15,
 						position = {
 							x = 0,
-							y = -330,
+							y = -300,
 							refpt = {
 								x = 0.75,
 								y = 0
@@ -2361,7 +2361,7 @@ function scene_eventstory_deepSea_07a.actions.start_eventstory_deepSea_07a(_root
 						duration = 0.15,
 						position = {
 							x = 0,
-							y = -330,
+							y = -300,
 							refpt = {
 								x = 0.75,
 								y = 0.1
@@ -2437,7 +2437,7 @@ function scene_eventstory_deepSea_07a.actions.start_eventstory_deepSea_07a(_root
 						duration = 0.15,
 						position = {
 							x = 0,
-							y = -330,
+							y = -300,
 							refpt = {
 								x = 0.75,
 								y = 0

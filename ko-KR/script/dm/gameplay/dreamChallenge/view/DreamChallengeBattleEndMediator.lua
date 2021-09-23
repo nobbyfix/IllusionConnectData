@@ -140,15 +140,16 @@ function DreamChallengeBattleEndMediator:refreshView()
 
 	if model then
 		local roleNode = anim:getChildByName("roleNode")
-		local mvpSprite = IconFactory:createRoleIconSprite({
+		model = IconFactory:getSpMvpBattleEndMid(model)
+		local mvpSprite = IconFactory:createRoleIconSpriteNew({
 			useAnim = true,
-			iconType = "Bust9",
+			frameId = "bustframe17",
 			id = model
 		})
 
 		mvpSprite:addTo(roleNode)
 		mvpSprite:setScale(0.8)
-		mvpSprite:setPosition(cc.p(50, -100))
+		mvpSprite:setPosition(cc.p(-200, -200))
 
 		local roleId = ConfigReader:getDataByNameIdAndKey("RoleModel", model, "Hero")
 		local heroMvpText = ""
@@ -223,7 +224,7 @@ end
 
 function DreamChallengeBattleEndMediator:setHero(node, info)
 	info.id = info.roleModel
-	local heroImg = IconFactory:createRoleIconSprite(info)
+	local heroImg = IconFactory:createRoleIconSpriteNew(info)
 
 	heroImg:setScale(0.68)
 

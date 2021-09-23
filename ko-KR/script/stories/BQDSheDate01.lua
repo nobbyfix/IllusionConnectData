@@ -87,8 +87,26 @@ end
 function scene_BQDSheDate01.actions.start_BQDSheDate01(_root, args)
 	return sequential({
 		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 0.1
+				}
+			end
+		}),
+		act({
 			action = "show",
-			actor = __getnode__(_root, "skipButton")
+			actor = __getnode__(_root, "hideButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "skipButton"),
+			args = function (_ctx)
+				return {
+					date = true
+				}
+			end
 		}),
 		act({
 			action = "show",
@@ -137,11 +155,11 @@ function scene_BQDSheDate01.actions.start_BQDSheDate01(_root, args)
 					modelId = "Model_BQDShe",
 					id = "BQDShe_speak",
 					rotationX = 0,
-					scale = 1.075,
+					scale = 0.7,
 					zorder = 2,
 					position = {
 						x = 0,
-						y = -235,
+						y = -370,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -162,11 +180,11 @@ function scene_BQDSheDate01.actions.start_BQDSheDate01(_root, args)
 							id = "BQDShe_face",
 							anchorPoint = {
 								x = 0.5,
-								y = 0
+								y = 0.5
 							},
 							position = {
-								x = 0,
-								y = 526
+								x = 0.5,
+								y = 1028.1
 							}
 						}
 					}
@@ -1688,7 +1706,7 @@ function scene_BQDSheDate01.actions.start_BQDSheDate01p(_root, args)
 					duration = 1,
 					position = {
 						x = 0,
-						y = -235,
+						y = -370,
 						refpt = {
 							x = -0.5,
 							y = 0

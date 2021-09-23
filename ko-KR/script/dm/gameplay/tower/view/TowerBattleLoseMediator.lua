@@ -73,7 +73,7 @@ function TowerBattleLoseMediator:refreshView()
 
 	self:initSvpRole()
 	svpSpritePanel:addChild(self._svpSprite)
-	self._svpSprite:setPosition(cc.p(cc.p(50, -100)))
+	self._svpSprite:setPosition(cc.p(cc.p(-200, -200)))
 	anim:gotoAndPlay(1)
 	self._tips:runAction(cc.FadeIn:create(0.6))
 end
@@ -157,9 +157,10 @@ function TowerBattleLoseMediator:initSvpRole()
 		end
 	end
 
-	local svpSprite = IconFactory:createRoleIconSprite({
+	model = IconFactory:getSpMvpBattleEndMid(model)
+	local svpSprite = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust9",
+		frameId = "bustframe17",
 		id = model
 	})
 

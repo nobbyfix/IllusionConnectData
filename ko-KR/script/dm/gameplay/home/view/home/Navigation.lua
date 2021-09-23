@@ -84,6 +84,7 @@ function Navigation:updataTopNode()
 		mDownNode:setVisible(false)
 	end
 
+	self._topNodes[#self._topNodes + 1] = self._topLayout:getChildByFullName("mAnnounceNode")
 	local mPassNode = self._topLayout:getChildByFullName("mPassNode")
 
 	if CommonUtils.GetSwitch("fn_pass") then

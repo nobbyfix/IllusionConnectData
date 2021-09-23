@@ -266,11 +266,11 @@ function scene_eventstory_fire_04a.actions.start_eventstory_fire_04a(_root, args
 					modelId = "Model_Story_ZTXChang",
 					id = "ZTXChang",
 					rotationX = 0,
-					scale = 0.98,
+					scale = 0.6,
 					zorder = 5,
 					position = {
 						x = 0,
-						y = -300,
+						y = -270,
 						refpt = {
 							x = 0.6,
 							y = 0
@@ -294,8 +294,8 @@ function scene_eventstory_fire_04a.actions.start_eventstory_fire_04a(_root, args
 								y = 0.5
 							},
 							position = {
-								x = -50.8,
-								y = 789
+								x = -51.3,
+								y = 977.5
 							}
 						}
 					}
@@ -805,7 +805,7 @@ function scene_eventstory_fire_04a.actions.start_eventstory_fire_04a(_root, args
 						duration = 0,
 						position = {
 							x = 0,
-							y = -300,
+							y = -270,
 							refpt = {
 								x = -0.2,
 								y = 0
@@ -888,7 +888,7 @@ function scene_eventstory_fire_04a.actions.start_eventstory_fire_04a(_root, args
 					duration = 0.5,
 					position = {
 						x = 0,
-						y = -300,
+						y = -270,
 						refpt = {
 							x = 0.24,
 							y = 0
@@ -1018,7 +1018,7 @@ function scene_eventstory_fire_04a.actions.start_eventstory_fire_04a(_root, args
 						duration = 0.5,
 						position = {
 							x = 0,
-							y = -300,
+							y = -270,
 							refpt = {
 								x = 1.3,
 								y = 0
@@ -1153,7 +1153,7 @@ function scene_eventstory_fire_04a.actions.start_eventstory_fire_04a(_root, args
 						duration = 0,
 						position = {
 							x = 0,
-							y = -300,
+							y = -270,
 							refpt = {
 								x = 0.22,
 								y = 0

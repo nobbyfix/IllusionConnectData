@@ -324,10 +324,10 @@ function scene_story04_1a.actions.start_story04_1a(_root, args)
 					modelId = "Model_Story_CLMan",
 					id = "CLMan_speak",
 					rotationX = 0,
-					scale = 0.9,
+					scale = 0.63,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = -0.5,
 							y = 0
@@ -351,8 +351,8 @@ function scene_story04_1a.actions.start_story04_1a(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = 60.5,
-								y = 787
+								x = 77.5,
+								y = 1045.5
 							}
 						}
 					}
@@ -398,7 +398,7 @@ function scene_story04_1a.actions.start_story04_1a(_root, args)
 					duration = 0.8,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.6,
 							y = 0
@@ -415,7 +415,7 @@ function scene_story04_1a.actions.start_story04_1a(_root, args)
 					duration = 0.2,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.65,
 							y = 0
@@ -432,7 +432,7 @@ function scene_story04_1a.actions.start_story04_1a(_root, args)
 					duration = 0.2,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.6,
 							y = 0
@@ -449,7 +449,7 @@ function scene_story04_1a.actions.start_story04_1a(_root, args)
 					duration = 0.2,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.65,
 							y = 0
@@ -466,7 +466,7 @@ function scene_story04_1a.actions.start_story04_1a(_root, args)
 					duration = 0.2,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.6,
 							y = 0
@@ -501,7 +501,7 @@ function scene_story04_1a.actions.start_story04_1a(_root, args)
 					duration = 0.4,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.45,
 							y = 0
@@ -518,7 +518,7 @@ function scene_story04_1a.actions.start_story04_1a(_root, args)
 					duration = 0.2,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.4,
 							y = 0
@@ -535,7 +535,7 @@ function scene_story04_1a.actions.start_story04_1a(_root, args)
 					duration = 0.2,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.45,
 							y = 0
@@ -552,7 +552,7 @@ function scene_story04_1a.actions.start_story04_1a(_root, args)
 					duration = 0.2,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.4,
 							y = 0
@@ -569,7 +569,7 @@ function scene_story04_1a.actions.start_story04_1a(_root, args)
 					duration = 0.2,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.45,
 							y = 0
@@ -629,7 +629,7 @@ function scene_story04_1a.actions.start_story04_1a(_root, args)
 					duration = 0.5,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.45,
 							y = -1
@@ -696,7 +696,7 @@ function scene_story04_1a.actions.start_story04_1a(_root, args)
 						duration = 0.3,
 						position = {
 							x = 0,
-							y = -295,
+							y = -250,
 							refpt = {
 								x = 0.45,
 								y = 0
@@ -745,7 +745,7 @@ function scene_story04_1a.actions.start_story04_1a(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.45,
 							y = 0.05
@@ -762,7 +762,7 @@ function scene_story04_1a.actions.start_story04_1a(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.45,
 							y = 0
@@ -779,7 +779,7 @@ function scene_story04_1a.actions.start_story04_1a(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.45,
 							y = 0.05
@@ -796,7 +796,7 @@ function scene_story04_1a.actions.start_story04_1a(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.45,
 							y = 0
@@ -875,7 +875,7 @@ function scene_story04_1a.actions.start_story04_1a(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.45,
 							y = 0.1
@@ -892,7 +892,7 @@ function scene_story04_1a.actions.start_story04_1a(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.45,
 							y = 0
@@ -916,7 +916,7 @@ function scene_story04_1a.actions.start_story04_1a(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.45,
 							y = -1
@@ -946,11 +946,11 @@ function scene_story04_1a.actions.start_story04_1a(_root, args)
 					modelId = "Model_Story_ZTXChang",
 					id = "ZTXChang_speak",
 					rotationX = 0,
-					scale = 1.08,
+					scale = 0.6,
 					zorder = 3,
 					position = {
 						x = 0,
-						y = -368,
+						y = -270,
 						refpt = {
 							x = -1,
 							y = 0
@@ -974,8 +974,8 @@ function scene_story04_1a.actions.start_story04_1a(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = -50.8,
-								y = 789
+								x = -51.3,
+								y = 977.5
 							}
 						}
 					}
@@ -1010,7 +1010,7 @@ function scene_story04_1a.actions.start_story04_1a(_root, args)
 					duration = 0.6,
 					position = {
 						x = 0,
-						y = -368,
+						y = -270,
 						refpt = {
 							x = 0.36,
 							y = 0
@@ -1027,11 +1027,11 @@ function scene_story04_1a.actions.start_story04_1a(_root, args)
 					modelId = "Model_Story_FTLEShi",
 					id = "FTLEShi_speak",
 					rotationX = 0,
-					scale = 1.025,
+					scale = 0.6,
 					zorder = 1,
 					position = {
 						x = 0,
-						y = -510,
+						y = -280,
 						refpt = {
 							x = 0.8,
 							y = 0
@@ -1055,8 +1055,8 @@ function scene_story04_1a.actions.start_story04_1a(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = -16,
-								y = 1000
+								x = -41.5,
+								y = 1286.1
 							}
 						}
 					}
@@ -1178,7 +1178,7 @@ function scene_story04_1a.actions.start_story04_1a(_root, args)
 					duration = 0.7,
 					position = {
 						x = 0,
-						y = -368,
+						y = -270,
 						refpt = {
 							x = 0.6,
 							y = 0
@@ -1290,7 +1290,7 @@ function scene_story04_1a.actions.start_story04_1b(_root, args)
 					duration = 0.6,
 					position = {
 						x = 0,
-						y = -368,
+						y = -270,
 						refpt = {
 							x = 0.36,
 							y = 0
@@ -1327,7 +1327,7 @@ function scene_story04_1a.actions.start_story04_1b(_root, args)
 					duration = 0.325,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.45,
 							y = 0
@@ -1344,7 +1344,7 @@ function scene_story04_1a.actions.start_story04_1b(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.45,
 							y = 0.05
@@ -1361,7 +1361,7 @@ function scene_story04_1a.actions.start_story04_1b(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.45,
 							y = 0
@@ -1403,7 +1403,7 @@ function scene_story04_1a.actions.start_story04_1b(_root, args)
 					duration = 0.65,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.75,
 							y = 0
@@ -1512,7 +1512,7 @@ function scene_story04_1a.actions.start_story04_1b(_root, args)
 					duration = 0.3,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.6,
 							y = 0.05
@@ -1529,7 +1529,7 @@ function scene_story04_1a.actions.start_story04_1b(_root, args)
 					duration = 0.3,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.6,
 							y = 0
@@ -1568,7 +1568,7 @@ function scene_story04_1a.actions.start_story04_1b(_root, args)
 					duration = 0.8,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 1.5,
 							y = 0
@@ -1629,7 +1629,7 @@ function scene_story04_1a.actions.start_story04_1b(_root, args)
 					duration = 0.325,
 					position = {
 						x = 0,
-						y = -368,
+						y = -270,
 						refpt = {
 							x = 0.6,
 							y = 0
@@ -1737,7 +1737,7 @@ function scene_story04_1a.actions.start_story04_1c(_root, args)
 					duration = 0.2,
 					position = {
 						x = 0,
-						y = -368,
+						y = -270,
 						refpt = {
 							x = 0.35,
 							y = 0
@@ -1926,7 +1926,7 @@ function scene_story04_1a.actions.start_story04_1c(_root, args)
 					duration = 0.4,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.45,
 							y = 0
@@ -1943,7 +1943,7 @@ function scene_story04_1a.actions.start_story04_1c(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.45,
 							y = 0.05
@@ -1960,7 +1960,7 @@ function scene_story04_1a.actions.start_story04_1c(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.45,
 							y = 0
@@ -1977,7 +1977,7 @@ function scene_story04_1a.actions.start_story04_1c(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.45,
 							y = 0.05
@@ -2026,7 +2026,7 @@ function scene_story04_1a.actions.start_story04_1c(_root, args)
 					duration = 0.2,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.7,
 							y = 0
@@ -2194,7 +2194,7 @@ function scene_story04_1a.actions.start_story04_1c(_root, args)
 					duration = 0.2,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 1,
 							y = 0
@@ -2252,7 +2252,7 @@ function scene_story04_1a.actions.start_story04_1c(_root, args)
 					duration = 0.4,
 					position = {
 						x = 0,
-						y = -368,
+						y = -270,
 						refpt = {
 							x = 1,
 							y = 0
@@ -2307,10 +2307,10 @@ function scene_story04_1a.actions.start_story04_1d(_root, args)
 					modelId = "Model_MLYTLSha",
 					id = "MLYTLSha_speak",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.7,
 					position = {
 						x = 0,
-						y = -355,
+						y = -320,
 						refpt = {
 							x = 1.5,
 							y = 0
@@ -2354,8 +2354,8 @@ function scene_story04_1a.actions.start_story04_1d(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = -29,
-								y = 829
+								x = -34.5,
+								y = 1096
 							}
 						}
 					}
@@ -2401,7 +2401,7 @@ function scene_story04_1a.actions.start_story04_1d(_root, args)
 					duration = 1.3,
 					position = {
 						x = 0,
-						y = -355,
+						y = -320,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -2481,7 +2481,7 @@ function scene_story04_1a.actions.start_story04_1d(_root, args)
 					duration = 0,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = -1,
 							y = 0
@@ -2518,7 +2518,7 @@ function scene_story04_1a.actions.start_story04_1d(_root, args)
 					duration = 0.5,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.4,
 							y = 0
@@ -2540,7 +2540,7 @@ function scene_story04_1a.actions.start_story04_1d(_root, args)
 						duration = 2,
 						position = {
 							x = 0,
-							y = -355,
+							y = -320,
 							refpt = {
 								x = 3,
 								y = 3
@@ -2597,7 +2597,7 @@ function scene_story04_1a.actions.start_story04_1d(_root, args)
 						duration = 0.2,
 						position = {
 							x = 0,
-							y = -295,
+							y = -250,
 							refpt = {
 								x = 0.35,
 								y = 0
@@ -2669,7 +2669,7 @@ function scene_story04_1a.actions.start_story04_1d(_root, args)
 					duration = 0.2,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.35,
 							y = 0.1
@@ -2686,7 +2686,7 @@ function scene_story04_1a.actions.start_story04_1d(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.35,
 							y = 0
@@ -2732,7 +2732,7 @@ function scene_story04_1a.actions.start_story04_1d(_root, args)
 				actor = __getnode__(_root, "MLYTLSha_speak"),
 				args = function (_ctx)
 					return {
-						scale = 1,
+						scale = 0.7,
 						duration = 0
 					}
 				end
@@ -2745,7 +2745,7 @@ function scene_story04_1a.actions.start_story04_1d(_root, args)
 						duration = 0,
 						position = {
 							x = 0,
-							y = -355,
+							y = -320,
 							refpt = {
 								x = 0.5,
 								y = -1
@@ -2781,7 +2781,7 @@ function scene_story04_1a.actions.start_story04_1d(_root, args)
 					duration = 1.5,
 					position = {
 						x = 0,
-						y = -355,
+						y = -320,
 						refpt = {
 							x = 0.5,
 							y = -0.05
@@ -2823,7 +2823,7 @@ function scene_story04_1a.actions.start_story04_1d(_root, args)
 					duration = 0.8,
 					position = {
 						x = 0,
-						y = -355,
+						y = -320,
 						refpt = {
 							x = 0.5,
 							y = -0.1
@@ -2860,7 +2860,7 @@ function scene_story04_1a.actions.start_story04_1d(_root, args)
 					duration = 0.5,
 					position = {
 						x = 0,
-						y = -368,
+						y = -270,
 						refpt = {
 							x = 0.35,
 							y = 0
@@ -2907,10 +2907,10 @@ function scene_story04_1a.actions.start_story04_1d(_root, args)
 					modelId = "Model_ATSheng",
 					id = "ATSheng_speak",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.6,
 					position = {
 						x = 0,
-						y = -240,
+						y = -230,
 						refpt = {
 							x = 1.1,
 							y = 0
@@ -2934,8 +2934,8 @@ function scene_story04_1a.actions.start_story04_1d(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = -31,
-								y = 683
+								x = -38.5,
+								y = 958
 							}
 						}
 					}
@@ -2980,7 +2980,7 @@ function scene_story04_1a.actions.start_story04_1d(_root, args)
 						duration = 0.5,
 						position = {
 							x = 0,
-							y = -240,
+							y = -230,
 							refpt = {
 								x = 0.75,
 								y = 0
@@ -3139,7 +3139,7 @@ function scene_story04_1a.actions.start_story04_1d(_root, args)
 						duration = 0.4,
 						position = {
 							x = 0,
-							y = -240,
+							y = -230,
 							refpt = {
 								x = 0.5,
 								y = 0
@@ -3154,7 +3154,7 @@ function scene_story04_1a.actions.start_story04_1d(_root, args)
 			actor = __getnode__(_root, "ATSheng_speak"),
 			args = function (_ctx)
 				return {
-					scale = 1.1,
+					scale = 0.75,
 					duration = 0.5
 				}
 			end
@@ -3164,7 +3164,7 @@ function scene_story04_1a.actions.start_story04_1d(_root, args)
 			actor = __getnode__(_root, "ATSheng_speak"),
 			args = function (_ctx)
 				return {
-					scale = 1,
+					scale = 0.6,
 					duration = 0.6
 				}
 			end
@@ -3181,7 +3181,7 @@ function scene_story04_1a.actions.start_story04_1d(_root, args)
 			actor = __getnode__(_root, "ATSheng_speak"),
 			args = function (_ctx)
 				return {
-					duration = 0.3
+					duration = 0
 				}
 			end
 		}),
@@ -3274,7 +3274,7 @@ function scene_story04_1a.actions.start_story04_1d(_root, args)
 						duration = 0,
 						position = {
 							x = 0,
-							y = -355,
+							y = -320,
 							refpt = {
 								x = 0.8,
 								y = 0
@@ -3361,7 +3361,7 @@ function scene_story04_1a.actions.start_story04_1d(_root, args)
 					duration = 0,
 					position = {
 						x = 0,
-						y = -240,
+						y = -230,
 						refpt = {
 							x = 0.8,
 							y = 0
@@ -3517,7 +3517,7 @@ function scene_story04_1a.actions.start_story04_1d(_root, args)
 					duration = 0.5,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.2,
 							y = 0
@@ -3563,7 +3563,7 @@ function scene_story04_1a.actions.start_story04_1d(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.2,
 							y = 0.05
@@ -3580,7 +3580,7 @@ function scene_story04_1a.actions.start_story04_1d(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.2,
 							y = 0
@@ -3597,7 +3597,7 @@ function scene_story04_1a.actions.start_story04_1d(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.2,
 							y = 0.05
@@ -3614,7 +3614,7 @@ function scene_story04_1a.actions.start_story04_1d(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.2,
 							y = 0

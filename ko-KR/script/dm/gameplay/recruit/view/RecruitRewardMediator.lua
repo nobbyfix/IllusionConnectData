@@ -155,9 +155,9 @@ function RecruitRewardMediator:initView(init)
 
 		local hero = self._data:getRoleDetail()[1].hero
 		local roleModel = IconFactory:getRoleModelByKey("HeroBase", hero)
-		local heroSprite = IconFactory:createRoleIconSprite({
+		local heroSprite = IconFactory:createRoleIconSpriteNew({
 			useAnim = true,
-			iconType = "Bust4",
+			frameId = "bustframe9",
 			id = roleModel
 		})
 

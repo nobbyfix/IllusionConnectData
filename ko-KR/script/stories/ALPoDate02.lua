@@ -87,6 +87,36 @@ end
 function scene_ALPoDate02.actions.start_ALPoDate02(_root, args)
 	return sequential({
 		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 0.1
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "hideButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "skipButton"),
+			args = function (_ctx)
+				return {
+					date = true
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "reviewButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "autoPlayButton")
+		}),
+		act({
 			action = "activateNode",
 			actor = __getnode__(_root, "bg")
 		}),
@@ -125,11 +155,11 @@ function scene_ALPoDate02.actions.start_ALPoDate02(_root, args)
 					modelId = "Model_ALPo",
 					id = "ALPo_speak",
 					rotationX = 0,
-					scale = 1.03,
+					scale = 0.63,
 					zorder = 2,
 					position = {
 						x = 0,
-						y = -330,
+						y = -300,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -153,8 +183,8 @@ function scene_ALPoDate02.actions.start_ALPoDate02(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = -1.5,
-								y = 781
+								x = 7,
+								y = 1020
 							}
 						}
 					}
@@ -492,7 +522,7 @@ function scene_ALPoDate02.actions.start_ALPoDate02e(_root, args)
 	})
 end
 
-function scene_ALPoDate02.actions.start_ALPoDate02e(_root, args)
+function scene_ALPoDate02.actions.start_ALPoDate02f(_root, args)
 	return sequential({
 		act({
 			action = "changeTexture",

@@ -552,7 +552,7 @@ all.Skill_SP_KTSJKe_Passive_Key = {
 		this.MaxHpRateFactor = externs.MaxHpRateFactor
 
 		if this.MaxHpRateFactor == nil then
-			this.MaxHpRateFactor = 0.3
+			this.MaxHpRateFactor = 0.2
 		end
 
 		local passive1 = __action(this, {
@@ -598,7 +598,7 @@ all.Skill_SP_KTSJKe_Passive_Key = {
 			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.SUMMONS(_env, _env.unit) then
 				local buffeft1 = global.SpecialNumericEffect(_env, "+sp_hexi_special_atk", {
 					"?Normal"
-				}, 2)
+				}, 1.8)
 				local buffeft2 = global.SpecialNumericEffect(_env, "+sp_hexi_special_maxhp", {
 					"?Normal"
 				}, this.MaxHpRateFactor)
@@ -709,8 +709,6 @@ all.Skill_SP_KTSJKe_Wife_Normal = {
 
 			if global.SpecialPropGetter(_env, "SP_KTSJKe_Ex")(_env, _env.ACTOR) > 0 then
 				global.DispelBuff(_env, _env.TARGET, global.BUFF_MARKED_ALL(_env, "IMMUNE", "DISPELLABLE"), 99)
-
-				damage.val = damage.val + global.min(_env, global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR) * 2, global.UnitPropGetter(_env, "maxHp")(_env, _env.TARGET) * global.SpecialPropGetter(_env, "SP_KTSJKe_Wife_HpDamage")(_env, _env.ACTOR))
 			end
 
 			global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage)
@@ -773,7 +771,7 @@ all.Skill_SP_KTSJKe_Proud_EX = {
 		this.HpFactor = externs.HpFactor
 
 		if this.HpFactor == nil then
-			this.HpFactor = 0.3
+			this.HpFactor = 0.2
 		end
 
 		local main = __action(this, {
@@ -822,7 +820,10 @@ all.Skill_SP_KTSJKe_Proud_EX = {
 			global.ApplyRPEffect(_env, _env.ACTOR, _env.TARGET)
 
 			local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, this.dmgFactor)
-			damage.val = damage.val + global.min(_env, global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR) * 2, global.UnitPropGetter(_env, "maxHp")(_env, _env.TARGET) * this.HpFactor)
+
+			if global.PETS - global.SUMMONS(_env, _env.TARGET) then
+				damage.val = damage.val + global.min(_env, global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR) * 1.8, global.UnitPropGetter(_env, "maxHp")(_env, _env.TARGET) * this.HpFactor)
+			end
 
 			global.ApplyHPMultiDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, {
 				0,

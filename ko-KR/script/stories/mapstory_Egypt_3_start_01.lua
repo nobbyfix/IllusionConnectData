@@ -66,10 +66,10 @@ function scene_mapstory_Egypt_3_start_01.actions.start_mapstory_Egypt_3_start_01
 					modelId = "Model_HLDNan",
 					id = "HLDNan_speak",
 					rotationX = 0,
-					scale = 0.95,
+					scale = 0.65,
 					position = {
 						x = 0,
-						y = -260,
+						y = -340,
 						refpt = {
 							x = 0.3,
 							y = 0
@@ -157,10 +157,10 @@ function scene_mapstory_Egypt_3_start_01.actions.start_mapstory_Egypt_3_start_01
 					modelId = "Model_TLMi",
 					id = "TLMi_speak",
 					rotationX = 0,
-					scale = 1.15,
+					scale = 0.66,
 					position = {
 						x = 0,
-						y = -350,
+						y = -360,
 						refpt = {
 							x = 0.25,
 							y = 0

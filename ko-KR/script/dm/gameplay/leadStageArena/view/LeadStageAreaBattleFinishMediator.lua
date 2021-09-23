@@ -383,12 +383,10 @@ function LeadStageAreaBattleFinishMediator:initRoleShow(item, itemdata)
 
 	local clip = item:getChildByName("clip")
 	local masterSystem = self._developSystem:getMasterSystem()
-	local roleModel = masterSystem:getMasterLeadStageModel(itemdata.masterId, "")
-	local sprite = IconFactory:createRoleIconSprite({
-		stencil = 6,
-		iconType = "Bust6",
-		id = roleModel,
-		size = cc.size(190, 269)
+	local roleModel = masterSystem:getMasterLeadStageModel(itemdata.masterId, itemdata.leadId or "")
+	local sprite = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe6_1",
+		id = roleModel
 	})
 	local heroIcon = clip:getChildByName("icon_1")
 
@@ -396,12 +394,10 @@ function LeadStageAreaBattleFinishMediator:initRoleShow(item, itemdata)
 	sprite:center(heroIcon:getContentSize())
 	sprite:offset(0, -50)
 
-	local roleModel = masterSystem:getMasterLeadStageModel(itemdata.rivalMasterId, "")
-	local sprite = IconFactory:createRoleIconSprite({
-		stencil = 6,
-		iconType = "Bust6",
-		id = roleModel,
-		size = cc.size(190, 269)
+	local roleModel = masterSystem:getMasterLeadStageModel(itemdata.rivalMasterId, itemdata.rivalLeadId or "")
+	local sprite = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe6_1",
+		id = roleModel
 	})
 	local heroIcon = clip:getChildByName("icon_2")
 

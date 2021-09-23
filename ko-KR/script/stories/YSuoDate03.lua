@@ -87,6 +87,36 @@ end
 function scene_YSuoDate03.actions.start_YSuoDate03(_root, args)
 	return sequential({
 		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 0.1
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "hideButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "skipButton"),
+			args = function (_ctx)
+				return {
+					date = true
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "reviewButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "autoPlayButton")
+		}),
+		act({
 			action = "activateNode",
 			actor = __getnode__(_root, "bg3")
 		}),
@@ -125,11 +155,11 @@ function scene_YSuoDate03.actions.start_YSuoDate03(_root, args)
 					modelId = "Model_YSuo",
 					id = "YSuo_speak",
 					rotationX = 0,
-					scale = 1.03,
+					scale = 0.7,
 					zorder = 2,
 					position = {
 						x = 0,
-						y = -635,
+						y = -750,
 						refpt = {
 							x = 0.65,
 							y = 0
@@ -153,8 +183,8 @@ function scene_YSuoDate03.actions.start_YSuoDate03(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = -161.5,
-								y = 1068.5
+								x = -251,
+								y = 1658
 							}
 						}
 					}
@@ -728,7 +758,7 @@ function scene_YSuoDate03.actions.start_YSuoDate03g(_root, args)
 					duration = 0.5,
 					position = {
 						x = 0,
-						y = -635,
+						y = -750,
 						refpt = {
 							x = 0.3,
 							y = 0

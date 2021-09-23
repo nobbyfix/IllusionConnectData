@@ -107,8 +107,8 @@ function CommonEightDayLoginMediator:setupView()
 
 	if heroId then
 		local config = ConfigReader:getRecordById("HeroBase", heroId)
-		local img = IconFactory:createRoleIconSprite({
-			iconType = "Bust4",
+		local img = IconFactory:createRoleIconSpriteNew({
+			frameId = "bustframe9",
 			id = config.RoleModel
 		})
 

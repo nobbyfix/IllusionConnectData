@@ -714,7 +714,7 @@ end
 
 function StagePracticeTeamMediator:initHero(node, info)
 	info.id = info.roleModel
-	local heroImg = IconFactory:createRoleIconSprite(info)
+	local heroImg = IconFactory:createRoleIconSpriteNew(info)
 
 	heroImg:setScale(0.68)
 
@@ -878,7 +878,7 @@ end
 function StagePracticeTeamMediator:initTeamHero(node, info)
 	info.heroBaseId = info.id
 	info.id = info.roleModel
-	local heroImg = IconFactory:createRoleIconSprite(info)
+	local heroImg = IconFactory:createRoleIconSpriteNew(info)
 
 	heroImg:setScale(0.68)
 
@@ -1040,11 +1040,9 @@ function StagePracticeTeamMediator:refreshMasterInfo()
 	self._masterImage:removeAllChildren()
 
 	local roleModel = IconFactory:getRoleModelByKey("MasterBase", self._curMasterId)
-	local sprite = IconFactory:createRoleIconSprite({
-		stencil = 6,
-		iconType = "Bust6",
-		id = roleModel,
-		size = cc.size(171.5, 274)
+	local sprite = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe6_3",
+		id = roleModel
 	})
 
 	sprite:setAnchorPoint(cc.p(0, 0))
@@ -1127,11 +1125,9 @@ function StagePracticeTeamMediator:refreshEnemyMasterInfo()
 	self._masterImage:removeAllChildren()
 
 	local roleModel = IconFactory:getRoleModelByKey("MasterBase", self._curMasterId)
-	local sprite = IconFactory:createRoleIconSprite({
-		stencil = 6,
-		iconType = "Bust6",
-		id = roleModel,
-		size = cc.size(560, 274)
+	local sprite = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe6_3",
+		id = roleModel
 	})
 
 	sprite:setAnchorPoint(cc.p(0, 0))
@@ -1400,7 +1396,7 @@ function StagePracticeTeamMediator:runRemovePetAction(id)
 		local id = node.id
 		local heroInfo = self:getHeroInfoById(id)
 		heroInfo.id = heroInfo.roleModel
-		local heroImg = IconFactory:createRoleIconSprite(heroInfo)
+		local heroImg = IconFactory:createRoleIconSpriteNew(heroInfo)
 
 		heroImg:setScale(0.68)
 		heroImg:addTo(heroNode)
@@ -1546,7 +1542,7 @@ function StagePracticeTeamMediator:runInsertTeamAction(id)
 
 	local heroInfo = self:getHeroInfoById(id)
 	heroInfo.id = heroInfo.roleModel
-	local heroImg = IconFactory:createRoleIconSprite(heroInfo)
+	local heroImg = IconFactory:createRoleIconSpriteNew(heroInfo)
 
 	heroImg:addTo(heroNode)
 	heroImg:setScale(0.68)

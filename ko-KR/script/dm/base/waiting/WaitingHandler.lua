@@ -210,6 +210,10 @@ function GameServerWaitingHandler:onWaitingEvent(type, handler, data)
 			self:showWaiting(WaitingStyle.kTipInfo, {
 				tip = Strings:get("WAITING_REBOOT"),
 				onTouch = function ()
+					StatisticSystem:send({
+						point = "restart_prompt",
+						type = "restart_prompt"
+					})
 					self:hideWaiting()
 
 					if handler then

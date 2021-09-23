@@ -133,10 +133,10 @@ function scene_HeroStory_SDTZi_02aend.actions.start_HeroStory_SDTZi_02aend(_root
 					modelId = "Model_SDTZi",
 					id = "SDTZi_speak",
 					rotationX = 0,
-					scale = 1.145,
+					scale = 0.75,
 					position = {
 						x = 0,
-						y = -330,
+						y = -375,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -160,8 +160,8 @@ function scene_HeroStory_SDTZi_02aend.actions.start_HeroStory_SDTZi_02aend(_root
 								y = 0.5
 							},
 							position = {
-								x = -79,
-								y = 679.8
+								x = -112,
+								y = 1026
 							}
 						}
 					}
@@ -233,10 +233,10 @@ function scene_HeroStory_SDTZi_02aend.actions.start_HeroStory_SDTZi_02aend(_root
 					modelId = "Model_LFEr",
 					id = "LFEr_speak",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.72,
 					position = {
 						x = 0,
-						y = -290,
+						y = -330,
 						refpt = {
 							x = 0.3,
 							y = 0
@@ -260,8 +260,8 @@ function scene_HeroStory_SDTZi_02aend.actions.start_HeroStory_SDTZi_02aend(_root
 								y = 0.5
 							},
 							position = {
-								x = -15.5,
-								y = 700.5
+								x = -30.5,
+								y = 999
 							}
 						}
 					}
@@ -386,10 +386,10 @@ function scene_HeroStory_SDTZi_02aend.actions.start_HeroStory_SDTZi_02aend(_root
 					modelId = "Model_TPGZhu",
 					id = "TPGZhu_speak",
 					rotationX = 0,
-					scale = 0.925,
+					scale = 0.85,
 					position = {
 						x = 0,
-						y = -140,
+						y = -100,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -405,7 +405,7 @@ function scene_HeroStory_SDTZi_02aend.actions.start_HeroStory_SDTZi_02aend(_root
 							scaleX = 1,
 							scaleY = 1,
 							layoutMode = 1,
-							zorder = -1,
+							zorder = 1,
 							visible = true,
 							id = "TPGZhu_face",
 							anchorPoint = {
@@ -413,8 +413,8 @@ function scene_HeroStory_SDTZi_02aend.actions.start_HeroStory_SDTZi_02aend(_root
 								y = 0.5
 							},
 							position = {
-								x = 10.4,
-								y = 581
+								x = 13.9,
+								y = 592.2
 							}
 						}
 					}
@@ -491,7 +491,7 @@ function scene_HeroStory_SDTZi_02aend.actions.start_HeroStory_SDTZi_02aend(_root
 					duration = 0,
 					position = {
 						x = 0,
-						y = -330,
+						y = -375,
 						refpt = {
 							x = 0.2,
 							y = 0
@@ -519,7 +519,7 @@ function scene_HeroStory_SDTZi_02aend.actions.start_HeroStory_SDTZi_02aend(_root
 					duration = 0.3,
 					position = {
 						x = 0,
-						y = -140,
+						y = -100,
 						refpt = {
 							x = 0.725,
 							y = 0
@@ -752,7 +752,7 @@ function scene_HeroStory_SDTZi_02aend.actions.start_HeroStory_SDTZi_02aend(_root
 					duration = 0,
 					position = {
 						x = 0,
-						y = -330,
+						y = -375,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -769,7 +769,7 @@ function scene_HeroStory_SDTZi_02aend.actions.start_HeroStory_SDTZi_02aend(_root
 					duration = 0,
 					position = {
 						x = 0,
-						y = -140,
+						y = -100,
 						refpt = {
 							x = 0.5,
 							y = 0

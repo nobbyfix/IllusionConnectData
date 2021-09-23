@@ -922,8 +922,16 @@ function LeadStageArenaSystem:requestSpeedUp(callback, blockUI)
 	end, blockUI)
 end
 
+function LeadStageArenaSystem:getEnterErrorCode()
+	return self._enterErrorCode
+end
+
 function LeadStageArenaSystem:requestEnter(callback, blockUI)
+	self._enterErrorCode = 1
+
 	self._leadStageArenaService:requestEnter({}, function (response)
+		self._enterErrorCode = response.resCode
+
 		if response.resCode == GS_SUCCESS then
 			self._leadStageArena:synchronize({
 				rival = response.data
@@ -953,7 +961,6 @@ function LeadStageArenaSystem:requestCheers(param, callback, blockUI)
 end
 
 function LeadStageArenaSystem:requestLineUp(param, callback, blockUI)
-	dump(param, "=================param requestLineUp")
 	self._leadStageArenaService:requestLineUp({
 		teams = param
 	}, function (response)

@@ -144,6 +144,7 @@ function HeroStarLevelMediator:initData(data)
 
 			local itemData = {
 				eatCount = 0,
+				heroId = id,
 				itemId = itemId,
 				exp = exp,
 				rarity = tonumber(rarity),
@@ -151,6 +152,24 @@ function HeroStarLevelMediator:initData(data)
 			}
 
 			table.insert(self._rarityItem[rarity], itemData)
+		end
+	end
+
+	local Hero_WivesTeam = ConfigReader:getRecordById("ConfigValue", "Hero_WivesTeam").content
+
+	local function sortFunc(v)
+		table.sort(v, function (a, b)
+			if table.indexof(Hero_WivesTeam, a.heroId) then
+				return false
+			elseif table.indexof(Hero_WivesTeam, b.heroId) then
+				return true
+			end
+		end)
+	end
+
+	for k, v in pairs(self._rarityItem) do
+		if tonumber(k) == 12 or tonumber(k) == 13 then
+			sortFunc(v)
 		end
 	end
 
@@ -564,6 +583,8 @@ function HeroStarLevelMediator:getQuickItems()
 		end
 	end
 
+	local Hero_WivesTeam = ConfigReader:getRecordById("ConfigValue", "Hero_WivesTeam").content
+
 	for i = 1, #self._rarityItems do
 		if self._needNum <= self._curExp then
 			return
@@ -580,29 +601,33 @@ function HeroStarLevelMediator:getQuickItems()
 					return
 				end
 
+				local rarity = items[index].rarity
+				local ret = (rarity == 12 or rarity == 13) and table.indexof(Hero_WivesTeam, items[index].heroId)
 				local itemId = items[index].itemId
 
 				if not self._selfItem or self._selfItem.itemId ~= itemId then
-					local exp = items[index].exp
-					local allCount = items[index].allCount
-					local eatCount = items[index].eatCount
+					if not ret then
+						local exp = items[index].exp
+						local allCount = items[index].allCount
+						local eatCount = items[index].eatCount
 
-					for jj = eatCount + 1, allCount do
-						if self._needNum <= self._curExp then
-							return
-						end
+						for jj = eatCount + 1, allCount do
+							if self._needNum <= self._curExp then
+								return
+							end
 
-						self._rarityItems[i].items[index].eatCount = self._rarityItems[i].items[index].eatCount + 1
-						self._curExp = self._curExp + exp
+							self._rarityItems[i].items[index].eatCount = self._rarityItems[i].items[index].eatCount + 1
+							self._curExp = self._curExp + exp
 
-						if not self._consumeTemp[itemId] then
-							self._consumeTemp[itemId] = {
-								eatCount = self._rarityItems[i].items[index].eatCount,
-								exp = exp,
-								rarity = self._rarityItems[i].items[index].rarity
-							}
-						else
-							self._consumeTemp[itemId].eatCount = self._rarityItems[i].items[index].eatCount
+							if not self._consumeTemp[itemId] then
+								self._consumeTemp[itemId] = {
+									eatCount = self._rarityItems[i].items[index].eatCount,
+									exp = exp,
+									rarity = self._rarityItems[i].items[index].rarity
+								}
+							else
+								self._consumeTemp[itemId].eatCount = self._rarityItems[i].items[index].eatCount
+							end
 						end
 					end
 				elseif self._selfItem.itemId == itemId then

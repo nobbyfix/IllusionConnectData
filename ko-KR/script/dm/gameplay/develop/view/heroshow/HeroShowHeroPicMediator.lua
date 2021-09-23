@@ -81,9 +81,9 @@ function HeroShowHeroPicMediator:addShare()
 			self._backBtn:setVisible(false)
 			self._heroSprite:setVisible(false)
 
-			self._heroSpriteTemp = IconFactory:createRoleIconSprite({
+			self._heroSpriteTemp = IconFactory:createRoleIconSpriteNew({
 				useAnim = false,
-				iconType = "Bust6",
+				frameId = "bustframe6_5",
 				id = self._model
 			})
 
@@ -113,9 +113,9 @@ function HeroShowHeroPicMediator:addShare()
 			self._backBtn1:setVisible(false)
 			self._heroSprite:setVisible(false)
 
-			self._heroSpriteTemp = IconFactory:createRoleIconSprite({
+			self._heroSpriteTemp = IconFactory:createRoleIconSpriteNew({
 				useAnim = false,
-				iconType = "Bust6",
+				frameId = "bustframe6_5",
 				id = self._model
 			})
 
@@ -344,9 +344,9 @@ function HeroShowHeroPicMediator:setClimateScene(node)
 end
 
 function HeroShowHeroPicMediator:initHeroView()
-	local heroSprite, _, spineani, picInfo = IconFactory:createRoleIconSprite({
+	local heroSprite, _, spineani, picInfo = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust6",
+		frameId = "bustframe9",
 		id = self._model
 	})
 

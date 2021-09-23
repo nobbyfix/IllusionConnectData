@@ -104,12 +104,10 @@ function ArenaRoleInfoCell:RefreshRoleInfo(data)
 	local id = playerInfo:getShowHero()
 	local roleModel = IconFactory:getRoleModelByKey("HeroBase", id)
 	local info = {
-		stencil = 1,
-		iconType = "Bust13",
-		id = roleModel,
-		size = cc.size(185, 132)
+		frameId = "bustframe13_1",
+		id = roleModel
 	}
-	local realImgRole = IconFactory:createRoleIconSprite(info)
+	local realImgRole = IconFactory:createRoleIconSpriteNew(info)
 
 	realImgRole:addTo(self._roleNode):center(self._roleNode:getContentSize())
 	self._bg:setGray(false)

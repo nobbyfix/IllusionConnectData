@@ -76,9 +76,9 @@ function ActivityExchangeMediator:setupView()
 
 	if modelId and modelId ~= "no" then
 		local roleModel = activityConfig.ModelId
-		local heroSprite = IconFactory:createRoleIconSprite({
+		local heroSprite = IconFactory:createRoleIconSpriteNew({
 			useAnim = true,
-			iconType = "Bust4",
+			frameId = "bustframe9",
 			id = roleModel
 		})
 

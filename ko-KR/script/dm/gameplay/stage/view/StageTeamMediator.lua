@@ -1170,7 +1170,7 @@ function StageTeamMediator:initTeamHero(node, info)
 	super.initTeamHero(self, node, info)
 
 	info.id = info.roleModel
-	local heroImg = IconFactory:createRoleIconSprite(info)
+	local heroImg = IconFactory:createRoleIconSpriteNew(info)
 
 	heroImg:setScale(0.68)
 

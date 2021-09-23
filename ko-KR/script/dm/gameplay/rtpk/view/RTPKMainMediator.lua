@@ -221,9 +221,9 @@ function RTPKMainMediator:setBackGround()
 	local defaultHeroId = ConfigReader:getDataByNameIdAndKey("ConfigValue", "RTPK_DefaultShowHero", "content")
 	local heroId = self._rtpk:getSeasonShowModel() or defaultHeroId
 	local modelId = IconFactory:getRoleModelByKey("HeroBase", heroId)
-	local role = IconFactory:createRoleIconSprite({
+	local role = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust4",
+		frameId = "bustframe9",
 		id = modelId
 	})
 
@@ -388,7 +388,9 @@ function RTPKMainMediator:refreshMatchStatus()
 	if needChangeIcon then
 		iconImg:removeAllChildren()
 
-		local icon = IconFactory:createRTPKGradeIcon(gradeData.Id, true)
+		local icon = IconFactory:createRTPKGradeIcon(gradeData.Id, {
+			useAnim = true
+		})
 
 		icon:addTo(iconImg):center(iconImg:getContentSize()):offset(7, 22)
 
@@ -463,19 +465,23 @@ function RTPKMainMediator:setSeasonRule()
 		end
 
 		local config = ConfigReader:getRecordById("HeroBase", data.hero)
-		local heroImg = IconFactory:createRoleIconSprite({
+		local heroImg = IconFactory:createRoleIconSpriteNew({
 			id = config.RoleModel
 		})
 
-		heroImg:addTo(cell):center(cell:getContentSize()):offset(1.5, 9.5)
+		heroImg:addTo(cell):center(cell:getContentSize()):offset(1.5, 2)
 		heroImg:setName("iconHero")
-		heroImg:setScale(0.22)
+		heroImg:setScale(0.28)
 
 		local attackText = cell:getChildByFullName("attackText")
 
 		attackText:setString(data.desc)
 		attackText:setVisible(false)
-		setDescLable(cell, data.desc, attackText)
+		cell:getChildByName("Panel_7"):setLocalZOrder(5)
+
+		local text = cell:getChildByName("Text_1")
+
+		text:setLocalZOrder(15)
 		cell:setTouchEnabled(true)
 
 		local function func()

@@ -351,6 +351,7 @@ all.Skill_FEMSi_Passive = {
 					tags = {
 						"STATUS",
 						"MURDERER",
+						"ABNORMAL",
 						"Skill_FEMSi_Passive",
 						"UNDISPELLABLE",
 						"UNSTEALABLE"
@@ -400,6 +401,7 @@ all.Skill_FEMSi_Passive = {
 					tags = {
 						"STATUS",
 						"MURDERER",
+						"ABNORMAL",
 						"Skill_FEMSi_Passive",
 						"UNDISPELLABLE",
 						"UNSTEALABLE"
@@ -441,6 +443,7 @@ all.Skill_FEMSi_Passive = {
 						tags = {
 							"STATUS",
 							"MURDERER",
+							"ABNORMAL",
 							"Skill_FEMSi_Passive",
 							"UNDISPELLABLE",
 							"UNSTEALABLE"
@@ -761,6 +764,7 @@ all.Skill_FEMSi_Passive_EX = {
 					tags = {
 						"STATUS",
 						"MURDERER",
+						"ABNORMAL",
 						"Skill_FEMSi_Passive",
 						"UNDISPELLABLE",
 						"UNSTEALABLE"
@@ -810,6 +814,7 @@ all.Skill_FEMSi_Passive_EX = {
 					tags = {
 						"STATUS",
 						"MURDERER",
+						"ABNORMAL",
 						"Skill_FEMSi_Passive",
 						"UNDISPELLABLE",
 						"UNSTEALABLE"
@@ -851,6 +856,7 @@ all.Skill_FEMSi_Passive_EX = {
 						tags = {
 							"STATUS",
 							"MURDERER",
+							"ABNORMAL",
 							"Skill_FEMSi_Passive",
 							"UNDISPELLABLE",
 							"UNSTEALABLE"

@@ -153,7 +153,7 @@ function MasterEnterMediator:updateMasterPiece(mastermodel)
 				name = "head",
 				id = mastermodel:getModel()
 			}
-			local icon = IconFactory:createRoleIconSprite(info)
+			local icon = IconFactory:createRoleIconSpriteNew(info)
 
 			icon:setAnchorPoint(cc.p(0.5, 0.5))
 			suipian:removeAllChildren()

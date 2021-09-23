@@ -69,6 +69,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_AhalloweenStageStarSum_Desc"
     },
+    "Condi_AnimalExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_Animal_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_AnimalExchangeAchieve_Desc"
+    },
     "Condi_ArenaCurStreakWin": {
         "AchieveType1": "REACH",
         "AchieveType2": "",

@@ -140,10 +140,10 @@ function scene_PanStoryPoint_01_15.actions.start_PanStoryPoint_01_15(_root, args
 					modelId = "Model_TPGZhu",
 					id = "TPGZhu_speak",
 					rotationX = 0,
-					scale = 0.925,
+					scale = 0.85,
 					position = {
 						x = 0,
-						y = -140,
+						y = -100,
 						refpt = {
 							x = 0.525,
 							y = 0
@@ -167,8 +167,8 @@ function scene_PanStoryPoint_01_15.actions.start_PanStoryPoint_01_15(_root, args
 								y = 0.5
 							},
 							position = {
-								x = 10.4,
-								y = 581
+								x = 13.9,
+								y = 592.2
 							}
 						}
 					}

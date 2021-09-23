@@ -512,7 +512,7 @@ function ClubBossMediator:addBottomAnimation()
 
 	if oneHero ~= nil then
 		local config = ConfigReader:getRecordById("HeroBase", oneHero)
-		local heroImg = IconFactory:createRoleIconSprite({
+		local heroImg = IconFactory:createRoleIconSpriteNew({
 			id = config.RoleModel
 		})
 
@@ -574,7 +574,7 @@ function ClubBossMediator:addBottomAnimation()
 
 		if oneHero ~= nil then
 			local config = ConfigReader:getRecordById("HeroBase", oneHero)
-			local heroImg = IconFactory:createRoleIconSprite({
+			local heroImg = IconFactory:createRoleIconSpriteNew({
 				id = config.RoleModel
 			})
 
@@ -637,7 +637,7 @@ function ClubBossMediator:addBottomAnimation()
 
 		if oneHero ~= nil then
 			local config = ConfigReader:getRecordById("HeroBase", oneHero)
-			local heroImg = IconFactory:createRoleIconSprite({
+			local heroImg = IconFactory:createRoleIconSpriteNew({
 				id = config.RoleModel
 			})
 
@@ -688,7 +688,7 @@ function ClubBossMediator:addBottomAnimation()
 
 		if oneHero ~= nil then
 			local config = ConfigReader:getRecordById("HeroBase", oneHero)
-			local heroImg = IconFactory:createRoleIconSprite({
+			local heroImg = IconFactory:createRoleIconSpriteNew({
 				id = config.RoleModel
 			})
 
@@ -751,7 +751,7 @@ function ClubBossMediator:addBottomAnimation()
 
 		if oneHero ~= nil then
 			local config = ConfigReader:getRecordById("HeroBase", oneHero)
-			local heroImg = IconFactory:createRoleIconSprite({
+			local heroImg = IconFactory:createRoleIconSpriteNew({
 				id = config.RoleModel
 			})
 
@@ -999,9 +999,9 @@ function ClubBossMediator:doSomeChangeUI(isEnter)
 
 				self._heroAnim = anim
 				local heroBaseNode1 = anim:getChildByName("heroBaseNode1")
-				local modelSprite = IconFactory:createRoleIconSprite({
+				local modelSprite = IconFactory:createRoleIconSpriteNew({
 					useAnim = true,
-					iconType = "Bust4",
+					frameId = "bustframe9",
 					id = currentBlockConfig.PointHead
 				})
 
@@ -1011,9 +1011,9 @@ function ClubBossMediator:doSomeChangeUI(isEnter)
 				anim:gotoAndStop(45)
 				anim:addCallbackAtFrame(52, function ()
 					local heroMiddleNode1 = anim:getChildByName("heroMiddleNode1")
-					local modelSprite1 = IconFactory:createRoleIconSprite({
+					local modelSprite1 = IconFactory:createRoleIconSpriteNew({
 						useAnim = true,
-						iconType = "Bust4",
+						frameId = "bustframe9",
 						id = currentBlockConfig.PointHead
 					})
 
@@ -1022,9 +1022,9 @@ function ClubBossMediator:doSomeChangeUI(isEnter)
 					heroMiddleNode1:addChild(modelSprite1)
 
 					local heroMiddleNode2 = anim:getChildByName("heroMiddleNode2")
-					local modelSprite2 = IconFactory:createRoleIconSprite({
+					local modelSprite2 = IconFactory:createRoleIconSpriteNew({
 						useAnim = true,
-						iconType = "Bust4",
+						frameId = "bustframe9",
 						id = currentBlockConfig.PointHead
 					})
 
@@ -1044,9 +1044,9 @@ function ClubBossMediator:doSomeChangeUI(isEnter)
 
 					if pointHead then
 						local heroBaseNode2 = anim:getChildByName("heroBaseNode2")
-						local modelSprite1 = IconFactory:createRoleIconSprite({
+						local modelSprite1 = IconFactory:createRoleIconSpriteNew({
 							useAnim = true,
-							iconType = "Bust4",
+							frameId = "bustframe9",
 							id = pointHead
 						})
 

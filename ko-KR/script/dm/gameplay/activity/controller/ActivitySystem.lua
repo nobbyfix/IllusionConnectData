@@ -972,13 +972,14 @@ function ActivitySystem:hasRedPointForActivitySummer(activityId)
 	return true
 end
 
-function ActivitySystem:isActivityOpen(activityId)
+function ActivitySystem:isActivityOpen(activityId, startTime)
 	local activity = self:getActivityById(activityId)
 
 	if activity then
 		local curTime = self._gameServerAgent:remoteTimeMillis()
+		local startTime = startTime or activity:getStartTime()
 
-		if curTime < activity:getStartTime() or activity:getEndTime() < curTime then
+		if curTime < startTime or activity:getEndTime() < curTime then
 			return false
 		end
 
@@ -1329,6 +1330,26 @@ function ActivitySystem:getActivityCalendarList()
 
 				if activity and activity:getConfig().Enable ~= 0 then
 					isOpen = activity:getIsTodayOpen()
+
+					if isOpen then
+						local mills = nil
+						local bannerTime = v.BannerTime
+
+						if bannerTime then
+							local start = bannerTime.start[1]
+							local _, _, y, mon, d, h, m, s = string.find(start, "(%d+)-(%d+)-(%d+) (%d+):(%d+):(%d+)")
+							mills = TimeUtil:timeByRemoteDate({
+								year = y,
+								month = mon,
+								day = d,
+								hour = h,
+								min = m,
+								sec = s
+							})
+							mills = mills * 1000
+							isOpen = self:isActivityOpen(v.TypeId, mills)
+						end
+					end
 				end
 			end
 
@@ -1697,11 +1718,24 @@ function ActivitySystem:tryEnterComplexMainView(ui)
 	if activity then
 		AudioEngine:getInstance():playEffect("Se_Click_Open_1", false)
 		self:requestAllActicities(true, function ()
-			local view = self:getInjector():getInstance(ActivityComplexUI.tryEnterComplexMainView[ui])
+			local function enter(rewards)
+				local view = self:getInjector():getInstance(ActivityComplexUI.tryEnterComplexMainView[ui])
 
-			self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
-				activityId = activity:getId()
-			}))
+				self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
+					activityId = activity:getId(),
+					rewards = rewards
+				}))
+			end
+
+			local startStory = activity:getActivityConfig().StartStory
+
+			if startStory and startStory.mapId and startStory.pointId then
+				self:onClickPlayStory(activity, startStory.mapId, startStory.pointId, function (rewards)
+					enter(rewards)
+				end)
+			else
+				enter()
+			end
 		end)
 	end
 end
@@ -2188,4 +2222,37 @@ function ActivitySystem:requestGetPuzzleTaskReward(activityId, taskId, callback)
 			self:dispatch(Event:new(EVT_PUZZLEGAME_TASK_REFRESH))
 		end
 	end)
+end
+
+function ActivitySystem:onClickPlayStory(activity, subActivityId, pointId, callback)
+	local storyPoint = activity:getBlockMapActivity(subActivityId):getPointById(pointId)
+
+	if not storyPoint:isPass() then
+		local storyLink = ConfigReader:getDataByNameIdAndKey("ActivityStoryPoint", pointId, "StoryLink")
+		local storyDirector = self:getInjector():getInstance(story.StoryDirector)
+
+		local function endCallBack()
+			self:requestDoChildActivity(activity:getId(), subActivityId, {
+				doActivityType = 106,
+				pointId = pointId
+			}, function (response)
+				local gallerySystem = DmGame:getInstance()._injector:getInstance("GallerySystem")
+
+				gallerySystem:setActivityStorySaveStatus(gallerySystem:getStoryIdByStoryLink(storyLink, pointId), true)
+				storyDirector:notifyWaiting("story_play_end")
+				callback(response.data.reward)
+			end)
+		end
+
+		local storyAgent = storyDirector:getStoryAgent()
+
+		storyAgent:setSkipCheckSave(true)
+		storyAgent:trigger(storyLink, function ()
+			AudioEngine:getInstance():stopBackgroundMusic()
+		end, endCallBack)
+
+		return
+	end
+
+	callback()
 end

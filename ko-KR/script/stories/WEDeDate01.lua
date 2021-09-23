@@ -87,6 +87,36 @@ end
 function scene_WEDeDate01.actions.start_WEDeDate01(_root, args)
 	return sequential({
 		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 0.1
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "hideButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "skipButton"),
+			args = function (_ctx)
+				return {
+					date = true
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "reviewButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "autoPlayButton")
+		}),
+		act({
 			action = "activateNode",
 			actor = __getnode__(_root, "bg")
 		}),
@@ -125,11 +155,11 @@ function scene_WEDeDate01.actions.start_WEDeDate01(_root, args)
 					modelId = "Model_WEDe",
 					id = "WEDe_speak",
 					rotationX = 0,
-					scale = 1.225,
+					scale = 0.65,
 					zorder = 3,
 					position = {
 						x = 0,
-						y = -460,
+						y = -430,
 						refpt = {
 							x = 0.4,
 							y = 0
@@ -153,8 +183,8 @@ function scene_WEDeDate01.actions.start_WEDeDate01(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = 124,
-								y = 788
+								x = 190.5,
+								y = 1380
 							}
 						}
 					}

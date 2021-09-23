@@ -83,7 +83,7 @@ end
 function BattleScreenEffectLayer:setupView()
 end
 
-function BattleScreenEffectLayer:pushPortraitEffect(portrait, model, skillDesc, right, isAwakenEffect, awakePortrait, offsetId)
+function BattleScreenEffectLayer:pushPortraitEffect(portrait, model, skillDesc, right, isAwakenEffect, awakePortrait, offsetId, isCutin)
 	local params = {
 		portrait = portrait,
 		desc = skillDesc,
@@ -91,7 +91,8 @@ function BattleScreenEffectLayer:pushPortraitEffect(portrait, model, skillDesc, 
 		key = model,
 		isAwakenEffect = isAwakenEffect,
 		awakePortrait = awakePortrait,
-		offsetId = offsetId
+		offsetId = offsetId,
+		isCutin = isCutin
 	}
 	local listLength = #self._portraitList
 
@@ -123,6 +124,7 @@ function BattleScreenEffectLayer:showPortraitEffect()
 	local key = params.key
 	local flag = params.key
 	local offsetId = params.offsetId
+	local isCutin = params.isCutin
 	local isAwakenEffect = params.isAwakenEffect
 	local animName = isAwakenEffect and awakenAnimMap[key] or animMap[key]
 
@@ -170,7 +172,16 @@ function BattleScreenEffectLayer:showPortraitEffect()
 			text:addTo(textNode)
 		else
 			local portraitNode = portraitAnim:getChildByFullName("model.image")
-			local portrait = ccui.ImageView:create("asset/heros/" .. modelId .. ".png", ccui.TextureResType.localType)
+			local portrait = nil
+
+			if isCutin then
+				portrait = ccui.ImageView:create("asset/heros/" .. modelId .. ".png", ccui.TextureResType.localType)
+			else
+				portrait = IconFactory:createRoleIconSpriteNew({
+					frameId = "bustframe21",
+					id = modelId
+				})
+			end
 
 			portrait:addTo(portraitNode):offset(128, 22)
 
@@ -186,7 +197,16 @@ function BattleScreenEffectLayer:showPortraitEffect()
 		local portraitNode = portraitAnim:getChildByFullName("model")
 		local portraitNode1 = portraitAnim:getChildByFullName("model_shine")
 		local portraitNode2 = portraitAnim:getChildByFullName("model_shine2")
-		local portrait = ccui.ImageView:create("asset/heros/" .. modelId .. ".png", ccui.TextureResType.localType)
+		local portrait = nil
+
+		if isCutin then
+			portrait = ccui.ImageView:create("asset/heros/" .. modelId .. ".png", ccui.TextureResType.localType)
+		else
+			portrait = IconFactory:createRoleIconSpriteNew({
+				frameId = "bustframe21",
+				id = modelId
+			})
+		end
 
 		portrait:addTo(portraitNode):offset(128, 22)
 		portrait:clone():addTo(portraitNode1):offset(128, 22)

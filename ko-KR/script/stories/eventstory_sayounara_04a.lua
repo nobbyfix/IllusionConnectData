@@ -3536,11 +3536,11 @@ function scene_eventstory_sayounara_04a.actions.start_eventstory_sayounara_04a(_
 						modelId = "Model_SSQXin",
 						id = "SSQXin",
 						rotationX = 0,
-						scale = 1.11,
+						scale = 0.66,
 						zorder = 13500,
 						position = {
 							x = 0,
-							y = -330,
+							y = -280,
 							refpt = {
 								x = 0.51,
 								y = 0
@@ -3564,8 +3564,8 @@ function scene_eventstory_sayounara_04a.actions.start_eventstory_sayounara_04a(_
 									y = 0.5
 								},
 								position = {
-									x = 25,
-									y = 678
+									x = 28.5,
+									y = 922
 								}
 							}
 						}

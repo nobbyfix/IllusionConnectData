@@ -174,14 +174,13 @@ function HeroBaseShowView:refreshHeroType(stopChange)
 	stencil:setAnchorPoint(cc.p(0, 0))
 	stencil:setPosition(cc.p(0, 0))
 
-	local img = IconFactory:createRoleIconSprite({
-		iconType = "Bust3",
-		id = self._heroData:getModel(),
-		stencil = stencil
+	local img = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe3",
+		id = self._heroData:getModel()
 	})
 
 	panel:addChild(img)
-	img:setPosition(cc.p(-49, 2))
+	img:setPosition(cc.p(-50, 2))
 	img:setSaturation(-23)
 	img:setOpacity(204)
 	self._heroPanel:getChildByFullName("HeroAnim"):gotoAndPlay(0)

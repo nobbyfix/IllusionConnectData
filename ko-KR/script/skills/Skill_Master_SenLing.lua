@@ -383,7 +383,7 @@ all.Sk_Master_SenLing_Action3 = {
 
 			for _, friendunit in global.__iter__(global.Slice(_env, global.SortBy(_env, global.FriendUnits(_env, global.PETS - global.SUMMONS - global.MARKED(_env, "DAGUN") - global.HASSTATUS(_env, "CANNOT_BACK_TO_CARD")), "<", global.UnitPropGetter(_env, "hpRatio")), 1, 1)) do
 				local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, friendunit)
-				local card = global.BackToCard(_env, friendunit)
+				local card = global.BackToCard_ResultCheck(_env, friendunit, "card")
 
 				if card then
 					global.Kick(_env, friendunit)

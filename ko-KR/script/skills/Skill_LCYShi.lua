@@ -767,6 +767,7 @@ all.Skill_LCYShi_Unique_Awken = {
 					"STATUS",
 					"DEBUFF",
 					"DAZE",
+					"ABNORMAL",
 					"DISPELLABLE",
 					"LCYShi_Unique"
 				}

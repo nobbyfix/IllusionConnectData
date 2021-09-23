@@ -271,9 +271,24 @@ local mappings = {
 		name = "ClubTextMediator",
 		type = "@C"
 	},
+	DebugBustShowViewMediator2 = {
+		url = "dm.gameplay.home.view.DebugBustShowViewMediator2",
+		name = "DebugBustShowViewMediator2",
+		type = "@C"
+	},
+	DebugBustShowViewMediator3 = {
+		url = "dm.gameplay.home.view.DebugBustShowViewMediator3",
+		name = "DebugBustShowViewMediator3",
+		type = "@C"
+	},
 	HomeMediator = {
 		url = "dm.gameplay.home.view.HomeMediator",
 		name = "HomeMediator",
+		type = "@C"
+	},
+	DebugShowBustAniUnAwake = {
+		url = "dm.gameplay.home.view.DebugShowBustAniUnAwake",
+		name = "DebugShowBustAniUnAwake",
 		type = "@C"
 	},
 	SetHomeBgPopMediator = {
@@ -294,6 +309,11 @@ local mappings = {
 	SetBoardHeroPopMediator = {
 		url = "dm.gameplay.home.view.SetBoardHeroPopMediator",
 		name = "SetBoardHeroPopMediator",
+		type = "@C"
+	},
+	DebugBustShowViewMediator = {
+		url = "dm.gameplay.home.view.DebugBustShowViewMediator",
+		name = "DebugBustShowViewMediator",
 		type = "@C"
 	},
 	EVT_RECRUIT_SUCC = {

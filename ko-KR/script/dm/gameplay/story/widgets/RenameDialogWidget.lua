@@ -195,12 +195,12 @@ function RenameDialogWidget:initRoleAnim()
 
 		panel:removeAllChildren()
 
-		local role = IconFactory:createRoleIconSprite({
+		local role = IconFactory:createRoleIconSpriteNew({
 			id = "Model_Master_XueZhan",
-			iconType = "Bust2"
+			frameId = "bustframe2_1"
 		})
 
-		role:addTo(panel):posite(60, -130)
+		role:addTo(panel):posite(-500, -300)
 		role:setScale(0.9)
 		role:setSaturation(0)
 	end

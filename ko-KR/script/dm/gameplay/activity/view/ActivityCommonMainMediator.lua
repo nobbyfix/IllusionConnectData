@@ -227,6 +227,27 @@ function ActivityCommonMainMediator:enterWithData(data)
 	self:initData()
 	self:initView()
 	self:setStageView()
+	self:showStoryReward(data.rewards)
+end
+
+function ActivityCommonMainMediator:showStoryReward(rewards)
+	if not rewards then
+		return
+	end
+
+	local delegate = {}
+	local outSelf = self
+
+	function delegate:willClose(popupMediator, data)
+	end
+
+	local view = self:getInjector():getInstance("getRewardView")
+
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+		maskOpacity = 0
+	}, {
+		rewards = rewards
+	}, delegate))
 end
 
 function ActivityCommonMainMediator:resumeWithData()
@@ -573,9 +594,9 @@ function ActivityCommonMainMediator:updateRolePanel()
 
 	self._roleNode:removeAllChildren()
 
-	local img, jsonPath = IconFactory:createRoleIconSprite({
+	local img, jsonPath = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust4",
+		frameId = "bustframe9",
 		id = model
 	})
 

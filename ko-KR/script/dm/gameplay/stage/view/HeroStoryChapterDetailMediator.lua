@@ -141,9 +141,9 @@ function HeroStoryChapterDetailMediator:initWeight()
 		roleModel = hero:getModel()
 	end
 
-	local heroSprite = IconFactory:createRoleIconSprite({
+	local heroSprite = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = 6,
+		frameId = "bustframe9",
 		id = roleModel
 	})
 

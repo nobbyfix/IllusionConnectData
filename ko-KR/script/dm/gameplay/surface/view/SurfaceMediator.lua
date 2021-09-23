@@ -51,6 +51,7 @@ function SurfaceMediator:onRegister()
 
 	self:mapEventListener(self:getEventDispatcher(), EVT_SURFACE_SELECT_SUCC, self, self.refreshWithSelect)
 	self:mapEventListener(self:getEventDispatcher(), EVT_SURFACE_BUY_SUCC, self, self.refreshWithBuy)
+	self:mapEventListener(self:getEventDispatcher(), EVT_SURFACE_REFRESH_REDPOINT, self, self.refreshRedPoint)
 end
 
 function SurfaceMediator:enterWithData(data)
@@ -124,6 +125,10 @@ function SurfaceMediator:refreshWithBuy(event)
 
 	self:updateSurfaceNode()
 	self:updateBtnState()
+end
+
+function SurfaceMediator:refreshRedPoint()
+	self:updateSurfaceNode()
 end
 
 function SurfaceMediator:updateData()
@@ -281,11 +286,9 @@ function SurfaceMediator:createSurfaceNode()
 		heroPanel:removeAllChildren()
 
 		local roleModel = surface:getModel()
-		local img, jsonPath = IconFactory:createRoleIconSprite({
-			stencil = 1,
-			iconType = "Bust7",
-			id = roleModel,
-			size = cc.size(245, 336)
+		local img, jsonPath = IconFactory:createRoleIconSpriteNew({
+			frameId = "bustframe7_1",
+			id = roleModel
 		})
 
 		img:addTo(heroPanel):center(heroPanel:getContentSize())
@@ -317,6 +320,20 @@ function SurfaceMediator:createSurfaceNode()
 
 			anim:addTo(awakeAnim, 1):setPosition(-300, 50)
 		end
+
+		local redPoint = surfaceNode:getChildByFullName("RedPoint")
+
+		if not redPoint then
+			redPoint = ccui.ImageView:create(IconFactory.redPointPath1, 1)
+
+			redPoint:addTo(surfaceNode):posite(175, 280)
+			redPoint:setName("RedPoint")
+			redPoint:setVisible(false)
+		end
+
+		local isRed = self._surfaceSystem:getRedPointByHeroIdAndSur(self._roleId, surface:getId())
+
+		redPoint:setVisible(isRed)
 
 		self._cellNode[i] = surfaceNode
 		self._cellNode[i].position = {
@@ -372,6 +389,11 @@ function SurfaceMediator:updateSurfaceNode()
 		local usingPanel = surfaceNode:getChildByFullName("usingPanel")
 
 		usingPanel:setVisible(surfaceId == surface:getId())
+
+		local redPoint = surfaceNode:getChildByFullName("RedPoint")
+		local isRed = self._surfaceSystem:getRedPointByHeroIdAndSur(self._roleId, surface:getId())
+
+		redPoint:setVisible(isRed)
 	end
 end
 
@@ -379,8 +401,8 @@ function SurfaceMediator:updateSurfaceInfo()
 	self._roleNode:removeAllChildren()
 
 	local roleModel = self._curSurface:getModel()
-	local img, jsonPath = IconFactory:createRoleIconSprite({
-		iconType = "Bust4",
+	local img, jsonPath = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe9",
 		id = roleModel
 	})
 

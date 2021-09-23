@@ -1855,11 +1855,11 @@ function scene_eventstory_knightlight_08a.actions.start_eventstory_knightlight_0
 						modelId = "Model_FGao",
 						id = "DMSe",
 						rotationX = 0,
-						scale = 0.78,
+						scale = 0.8,
 						zorder = 100,
 						position = {
 							x = 0,
-							y = -500,
+							y = -550,
 							refpt = {
 								x = 0.53,
 								y = 0
@@ -1884,7 +1884,7 @@ function scene_eventstory_knightlight_08a.actions.start_eventstory_knightlight_0
 								},
 								position = {
 									x = 46.5,
-									y = 1241.8
+									y = 1243
 								}
 							}
 						}

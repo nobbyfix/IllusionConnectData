@@ -155,10 +155,10 @@ function scene_HeroStory_SDTZi_05a.actions.start_HeroStory_SDTZi_05a(_root, args
 					modelId = "Model_SDTZi",
 					id = "SDTZi_speak",
 					rotationX = 0,
-					scale = 1.145,
+					scale = 0.75,
 					position = {
 						x = 0,
-						y = -330,
+						y = -375,
 						refpt = {
 							x = 0.6,
 							y = 0
@@ -182,8 +182,8 @@ function scene_HeroStory_SDTZi_05a.actions.start_HeroStory_SDTZi_05a(_root, args
 								y = 0.5
 							},
 							position = {
-								x = -79,
-								y = 679.8
+								x = -112,
+								y = 1026
 							}
 						}
 					}
@@ -406,10 +406,10 @@ function scene_HeroStory_SDTZi_05a.actions.start_HeroStory_SDTZi_05a(_root, args
 					modelId = "Model_LFEr",
 					id = "LFEr_speak",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.72,
 					position = {
 						x = 0,
-						y = -290,
+						y = -330,
 						refpt = {
 							x = 0.3,
 							y = 0
@@ -433,8 +433,8 @@ function scene_HeroStory_SDTZi_05a.actions.start_HeroStory_SDTZi_05a(_root, args
 								y = 0.5
 							},
 							position = {
-								x = -15.5,
-								y = 700.5
+								x = -30.5,
+								y = 999
 							}
 						}
 					}
@@ -612,10 +612,10 @@ function scene_HeroStory_SDTZi_05a.actions.start_HeroStory_SDTZi_05a(_root, args
 					modelId = "Model_CZheng",
 					id = "CZheng_speak",
 					rotationX = 0,
-					scale = 1.2,
+					scale = 0.7,
 					position = {
 						x = 0,
-						y = -445,
+						y = -430,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -639,8 +639,8 @@ function scene_HeroStory_SDTZi_05a.actions.start_HeroStory_SDTZi_05a(_root, args
 								y = 0.5
 							},
 							position = {
-								x = 71,
-								y = 757.5
+								x = -113,
+								y = 1182
 							}
 						}
 					}
@@ -744,10 +744,10 @@ function scene_HeroStory_SDTZi_05a.actions.start_HeroStory_SDTZi_05a(_root, args
 					modelId = "Model_ALPo",
 					id = "ALPo_speak",
 					rotationX = 0,
-					scale = 1.03,
+					scale = 0.63,
 					position = {
 						x = 0,
-						y = -330,
+						y = -300,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -771,8 +771,8 @@ function scene_HeroStory_SDTZi_05a.actions.start_HeroStory_SDTZi_05a(_root, args
 								y = 0.5
 							},
 							position = {
-								x = -1.5,
-								y = 781
+								x = 7,
+								y = 1020
 							}
 						}
 					}
@@ -837,10 +837,10 @@ function scene_HeroStory_SDTZi_05a.actions.start_HeroStory_SDTZi_05a(_root, args
 					modelId = "Model_YSuo",
 					id = "YSuo_speak",
 					rotationX = 0,
-					scale = 1.03,
+					scale = 0.7,
 					position = {
 						x = 0,
-						y = -635,
+						y = -750,
 						refpt = {
 							x = 0.65,
 							y = 0
@@ -864,8 +864,8 @@ function scene_HeroStory_SDTZi_05a.actions.start_HeroStory_SDTZi_05a(_root, args
 								y = 0.5
 							},
 							position = {
-								x = -166,
-								y = 1064
+								x = -251,
+								y = 1658
 							}
 						}
 					}

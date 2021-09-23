@@ -267,7 +267,9 @@ function RTPKRankViewMediator:addRankPanel(cell, index)
 
 		roleGradeIcon:removeAllChildren()
 
-		local icon = IconFactory:createRTPKGradeIcon(info.Id)
+		local icon = IconFactory:createRTPKGradeIcon(info.Id, {
+			hideName = true
+		})
 
 		icon:setScale(0.25)
 		icon:addTo(roleGradeIcon):offset(25, 25)
@@ -491,7 +493,9 @@ function RTPKRankViewMediator:refreshMyselfInfo()
 
 		roleGradeIcon:removeAllChildren()
 
-		local icon = IconFactory:createRTPKGradeIcon(info.Id)
+		local icon = IconFactory:createRTPKGradeIcon(info.Id, {
+			hideName = true
+		})
 
 		icon:setScale(0.25)
 		icon:addTo(roleGradeIcon):offset(25, 35)

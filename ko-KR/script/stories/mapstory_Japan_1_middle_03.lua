@@ -88,10 +88,10 @@ function scene_mapstory_Japan_1_middle_03.actions.start_mapstory_Japan_1_middle_
 					modelId = "Model_ZTXCun",
 					id = "ZTXCun_speak",
 					rotationX = 0,
-					scale = 1.235,
+					scale = 0.7,
 					position = {
 						x = 0,
-						y = -400,
+						y = -360,
 						refpt = {
 							x = 0.1,
 							y = 0

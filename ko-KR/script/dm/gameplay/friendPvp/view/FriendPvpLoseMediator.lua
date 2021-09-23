@@ -70,7 +70,7 @@ function FriendPvpLoseMediator:refreshView()
 	self._title:runAction(cc.FadeIn:create(0.75))
 	self:initSvpRole()
 	svpSpritePanel:addChild(self._svpSprite)
-	self._svpSprite:setPosition(cc.p(cc.p(50, -100)))
+	self._svpSprite:setPosition(cc.p(-200, -200))
 	anim:gotoAndPlay(1)
 
 	local posX1, posY1 = self._skillBtn:getPosition()
@@ -147,9 +147,10 @@ function FriendPvpLoseMediator:initSvpRole()
 		end
 	end
 
-	local svpSprite = IconFactory:createRoleIconSprite({
+	model = IconFactory:getSpMvpBattleEndMid(model)
+	local svpSprite = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust9",
+		frameId = "bustframe17",
 		id = model
 	})
 	self._svpSprite = svpSprite

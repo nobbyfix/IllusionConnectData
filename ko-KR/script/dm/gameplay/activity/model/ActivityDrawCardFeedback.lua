@@ -139,7 +139,7 @@ function ActivityDrawCardFeedback:initExtraRewardList()
 			oneReward.score = extraScore + v_1
 			oneReward.oneLevelScore = v_1
 
-			if extraScore < self._allScore and self._allScore <= oneReward.score then
+			if extraScore <= self._allScore and self._allScore < oneReward.score then
 				oneReward.currentBar = true
 				oneReward.per_Score = self._allScore - extraScore
 			end

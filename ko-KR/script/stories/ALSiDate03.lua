@@ -85,6 +85,36 @@ end
 function scene_ALSiDate03.actions.start_ALSiDate03(_root, args)
 	return sequential({
 		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 0.1
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "hideButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "skipButton"),
+			args = function (_ctx)
+				return {
+					date = true
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "reviewButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "autoPlayButton")
+		}),
+		act({
 			action = "activateNode",
 			actor = __getnode__(_root, "bg1")
 		}),
@@ -123,11 +153,11 @@ function scene_ALSiDate03.actions.start_ALSiDate03(_root, args)
 					modelId = "Model_ALSi",
 					id = "ALSi_speak",
 					rotationX = 0,
-					scale = 0.94,
+					scale = 0.57,
 					zorder = 2,
 					position = {
 						x = 0,
-						y = -133,
+						y = -175,
 						refpt = {
 							x = -0.5,
 							y = 0
@@ -151,8 +181,8 @@ function scene_ALSiDate03.actions.start_ALSiDate03(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = 13.3,
-								y = 525.5
+								x = 19.5,
+								y = 806.9
 							}
 						}
 					}
@@ -186,7 +216,7 @@ function scene_ALSiDate03.actions.start_ALSiDate03(_root, args)
 						duration = 1.25,
 						position = {
 							x = 0,
-							y = -133,
+							y = -175,
 							refpt = {
 								x = 0.5,
 								y = 0
@@ -1670,7 +1700,7 @@ function scene_ALSiDate03.actions.start_ALSiDate03p(_root, args)
 						duration = 3,
 						position = {
 							x = 0,
-							y = -133,
+							y = -175,
 							refpt = {
 								x = 1.5,
 								y = 0

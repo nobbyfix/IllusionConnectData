@@ -1412,6 +1412,12 @@ function HeroSystem:getTeamHeroes()
 end
 
 function HeroSystem:hasRedPointInStrengthen(heroId, teamHeroes)
+	local surfaceSystem = self:getInjector():getInstance(SurfaceSystem)
+
+	if surfaceSystem:getRedPointByHeroId(heroId) then
+		return true
+	end
+
 	teamHeroes = teamHeroes or self:getTeamHeroes()
 
 	if not teamHeroes[heroId] then
@@ -1448,6 +1454,12 @@ function HeroSystem:checkIsShowRedPoint()
 		if self:hasRedPointInStrengthen(id) then
 			return true
 		end
+	end
+
+	local surfaceSystem = self:getInjector():getInstance(SurfaceSystem)
+
+	if surfaceSystem:checkIsShowRedPoint() then
+		return true
 	end
 
 	return false

@@ -133,11 +133,11 @@ function scene_HeroStory_ZZBBWei_05a.actions.start_HeroStory_ZZBBWei_05a(_root, 
 					modelId = "Model_Story_SGHQShou02",
 					id = "SGHQShou2_speak",
 					rotationX = 0,
-					scale = 1.3,
+					scale = 0.62,
 					zorder = 12,
 					position = {
 						x = 0,
-						y = -430,
+						y = -386,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -160,8 +160,8 @@ function scene_HeroStory_ZZBBWei_05a.actions.start_HeroStory_ZZBBWei_05a(_root, 
 								y = 0.5
 							},
 							position = {
-								x = 33.6,
-								y = 674.8
+								x = 64,
+								y = 1324
 							}
 						}
 					}
@@ -226,11 +226,11 @@ function scene_HeroStory_ZZBBWei_05a.actions.start_HeroStory_ZZBBWei_05a(_root, 
 					modelId = "Model_TPGZhu",
 					id = "TPGZhu_speak",
 					rotationX = 0,
-					scale = 0.925,
+					scale = 0.85,
 					zorder = 11,
 					position = {
 						x = 0,
-						y = -140,
+						y = -100,
 						refpt = {
 							x = 0.725,
 							y = 0
@@ -254,8 +254,8 @@ function scene_HeroStory_ZZBBWei_05a.actions.start_HeroStory_ZZBBWei_05a(_root, 
 								y = 0.5
 							},
 							position = {
-								x = 10.4,
-								y = 581
+								x = 13.9,
+								y = 592.2
 							}
 						}
 					}
@@ -320,11 +320,11 @@ function scene_HeroStory_ZZBBWei_05a.actions.start_HeroStory_ZZBBWei_05a(_root, 
 					modelId = "Model_ZZBBWei",
 					id = "ZZBBWei_speak",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.68,
 					zorder = 13,
 					position = {
 						x = 0,
-						y = -130,
+						y = -100,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -347,8 +347,8 @@ function scene_HeroStory_ZZBBWei_05a.actions.start_HeroStory_ZZBBWei_05a(_root, 
 								y = 0.5
 							},
 							position = {
-								x = -19.9,
-								y = 601
+								x = 6.1,
+								y = 714.8
 							}
 						}
 					}
@@ -404,7 +404,7 @@ function scene_HeroStory_ZZBBWei_05a.actions.start_HeroStory_ZZBBWei_05a(_root, 
 					duration = 0.3,
 					position = {
 						x = 0,
-						y = -130,
+						y = -100,
 						refpt = {
 							x = 0.75,
 							y = 0
@@ -421,7 +421,7 @@ function scene_HeroStory_ZZBBWei_05a.actions.start_HeroStory_ZZBBWei_05a(_root, 
 					duration = 0,
 					position = {
 						x = 0,
-						y = -430,
+						y = -386,
 						refpt = {
 							x = 0.25,
 							y = 0

@@ -650,11 +650,11 @@ function scene_eventstory_easterday_03a.actions.start_eventstory_easterday_03a(_
 					modelId = "Model_Story_FTLEShi",
 					id = "FTLEShi_speak",
 					rotationX = 0,
-					scale = 1.025,
+					scale = 0.6,
 					zorder = 3,
 					position = {
 						x = 0,
-						y = -510,
+						y = -280,
 						refpt = {
 							x = 0.75,
 							y = 0
@@ -678,8 +678,8 @@ function scene_eventstory_easterday_03a.actions.start_eventstory_easterday_03a(_
 								y = 0.5
 							},
 							position = {
-								x = -16,
-								y = 998
+								x = -41.5,
+								y = 1286.1
 							}
 						}
 					}
@@ -735,11 +735,11 @@ function scene_eventstory_easterday_03a.actions.start_eventstory_easterday_03a(_
 					modelId = "Model_Story_CLMan",
 					id = "CLMan_speak",
 					rotationX = 0,
-					scale = 0.9,
+					scale = 0.63,
 					zorder = 5,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.225,
 							y = 0
@@ -763,8 +763,8 @@ function scene_eventstory_easterday_03a.actions.start_eventstory_easterday_03a(_
 								y = 0.5
 							},
 							position = {
-								x = 60.5,
-								y = 787
+								x = 77.5,
+								y = 1045.5
 							}
 						}
 					}
@@ -820,11 +820,11 @@ function scene_eventstory_easterday_03a.actions.start_eventstory_easterday_03a(_
 					modelId = "Model_Story_ZTXChang",
 					id = "ZTXChang_speak",
 					rotationX = 0,
-					scale = 1.08,
+					scale = 0.6,
 					zorder = 4,
 					position = {
 						x = 0,
-						y = -368,
+						y = -270,
 						refpt = {
 							x = 0.55,
 							y = 0
@@ -848,8 +848,8 @@ function scene_eventstory_easterday_03a.actions.start_eventstory_easterday_03a(_
 								y = 0.5
 							},
 							position = {
-								x = -50.8,
-								y = 789
+								x = -51.3,
+								y = 977.5
 							}
 						}
 					}
@@ -1287,7 +1287,7 @@ function scene_eventstory_easterday_03a.actions.start_eventstory_easterday_03a(_
 					duration = 0.25,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -1313,7 +1313,7 @@ function scene_eventstory_easterday_03a.actions.start_eventstory_easterday_03a(_
 					duration = 0.25,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.5,
 							y = 0.1
@@ -1330,7 +1330,7 @@ function scene_eventstory_easterday_03a.actions.start_eventstory_easterday_03a(_
 					duration = 0.25,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -1347,7 +1347,7 @@ function scene_eventstory_easterday_03a.actions.start_eventstory_easterday_03a(_
 					duration = 0.25,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.5,
 							y = 0.1
@@ -1364,7 +1364,7 @@ function scene_eventstory_easterday_03a.actions.start_eventstory_easterday_03a(_
 					duration = 0.25,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -1603,7 +1603,7 @@ function scene_eventstory_easterday_03a.actions.start_eventstory_easterday_03a(_
 						duration = 1,
 						position = {
 							x = 0,
-							y = -295,
+							y = -250,
 							refpt = {
 								x = 0.225,
 								y = 0

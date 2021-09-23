@@ -247,6 +247,7 @@ all.Skill_YLMNYi_Unique = {
 						"STATUS",
 						"DEBUFF",
 						"POISON",
+						"ABNORMAL",
 						"DISPELLABLE"
 					}
 				}, {
@@ -261,6 +262,7 @@ all.Skill_YLMNYi_Unique = {
 						"STATUS",
 						"DEBUFF",
 						"POISON",
+						"ABNORMAL",
 						"DISPELLABLE"
 					}
 				}, {
@@ -275,6 +277,7 @@ all.Skill_YLMNYi_Unique = {
 						"STATUS",
 						"DEBUFF",
 						"POISON",
+						"ABNORMAL",
 						"DISPELLABLE"
 					}
 				}, {
@@ -289,6 +292,7 @@ all.Skill_YLMNYi_Unique = {
 						"STATUS",
 						"DEBUFF",
 						"POISON",
+						"ABNORMAL",
 						"DISPELLABLE"
 					}
 				}, {
@@ -303,6 +307,7 @@ all.Skill_YLMNYi_Unique = {
 						"STATUS",
 						"DEBUFF",
 						"POISON",
+						"ABNORMAL",
 						"DISPELLABLE"
 					}
 				}, {
@@ -565,6 +570,7 @@ all.Skill_YSuo_Normal_Explore_1_4 = {
 					"STATUS",
 					"DEBUFF",
 					"POISON",
+					"ABNORMAL",
 					"DISPELLABLE"
 				}
 			}, {
@@ -579,6 +585,7 @@ all.Skill_YSuo_Normal_Explore_1_4 = {
 					"STATUS",
 					"DEBUFF",
 					"POISON",
+					"ABNORMAL",
 					"DISPELLABLE"
 				}
 			}, {
@@ -593,6 +600,7 @@ all.Skill_YSuo_Normal_Explore_1_4 = {
 					"STATUS",
 					"DEBUFF",
 					"POISON",
+					"ABNORMAL",
 					"DISPELLABLE"
 				}
 			}, {
@@ -703,6 +711,7 @@ all.Skill_YSuo_Unique_Explore_1_4 = {
 						"STATUS",
 						"DEBUFF",
 						"POISON",
+						"ABNORMAL",
 						"DISPELLABLE"
 					}
 				}, {
@@ -717,6 +726,7 @@ all.Skill_YSuo_Unique_Explore_1_4 = {
 						"STATUS",
 						"DEBUFF",
 						"POISON",
+						"ABNORMAL",
 						"DISPELLABLE"
 					}
 				}, {
@@ -731,6 +741,7 @@ all.Skill_YSuo_Unique_Explore_1_4 = {
 						"STATUS",
 						"DEBUFF",
 						"POISON",
+						"ABNORMAL",
 						"DISPELLABLE"
 					}
 				}, {
@@ -745,6 +756,7 @@ all.Skill_YSuo_Unique_Explore_1_4 = {
 						"STATUS",
 						"DEBUFF",
 						"POISON",
+						"ABNORMAL",
 						"DISPELLABLE"
 					}
 				}, {
@@ -759,6 +771,7 @@ all.Skill_YSuo_Unique_Explore_1_4 = {
 						"STATUS",
 						"DEBUFF",
 						"POISON",
+						"ABNORMAL",
 						"DISPELLABLE"
 					}
 				}, {

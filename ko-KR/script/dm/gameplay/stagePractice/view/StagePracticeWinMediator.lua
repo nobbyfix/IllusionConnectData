@@ -102,9 +102,10 @@ function StagePracticeWinMediator:showWinAni()
 		end
 	end
 
-	local mvpSprite = IconFactory:createRoleIconSprite({
+	model = IconFactory:getSpMvpBattleEndMid(model)
+	local mvpSprite = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust9",
+		frameId = "bustframe17",
 		id = model
 	})
 	self._mvpSprite = mvpSprite
@@ -128,7 +129,7 @@ function StagePracticeWinMediator:showWinAni()
 	local titleText = anim:getChildByName("titleTexts")
 
 	mvpSpritePanel:addChild(self._mvpSprite)
-	self._mvpSprite:setPosition(50, -100)
+	self._mvpSprite:setPosition(cc.p(-200, -200))
 	anim:addCallbackAtFrame(19, function ()
 		self._title:changeParent(titleText)
 		self._title:setLocalZOrder(-1)

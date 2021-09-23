@@ -109,8 +109,8 @@ function GalleryAlbumInfoMediator:initView()
 	local heroes = self._photoData.heroes
 
 	for id, value in pairs(heroes) do
-		local img = IconFactory:createRoleIconSprite({
-			iconType = "Bust4",
+		local img = IconFactory:createRoleIconSpriteNew({
+			frameId = "bustframe9",
 			id = id
 		})
 

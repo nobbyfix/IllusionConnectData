@@ -1354,11 +1354,11 @@ function scene_elitestory12_1a.actions.start_elitestory12_1a(_root, args)
 					modelId = "Model_ZZBBWei",
 					id = "ZZBBWei_speak",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.68,
 					zorder = 20,
 					position = {
 						x = 0,
-						y = -130,
+						y = -100,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -1475,7 +1475,7 @@ function scene_elitestory12_1a.actions.start_elitestory12_1a(_root, args)
 						duration = 0.15,
 						position = {
 							x = 0,
-							y = -130,
+							y = -100,
 							refpt = {
 								x = 0.5,
 								y = -0.1
@@ -1514,7 +1514,7 @@ function scene_elitestory12_1a.actions.start_elitestory12_1a(_root, args)
 						duration = 0.15,
 						position = {
 							x = 0,
-							y = -130,
+							y = -100,
 							refpt = {
 								x = 0.5,
 								y = 0
@@ -1552,7 +1552,7 @@ function scene_elitestory12_1a.actions.start_elitestory12_1a(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -130,
+						y = -100,
 						refpt = {
 							x = 0.55,
 							y = 0
@@ -1943,7 +1943,7 @@ function scene_elitestory12_1a.actions.start_elitestory12_1a(_root, args)
 					duration = 0,
 					position = {
 						x = 0,
-						y = -130,
+						y = -100,
 						refpt = {
 							x = 0.5,
 							y = 0

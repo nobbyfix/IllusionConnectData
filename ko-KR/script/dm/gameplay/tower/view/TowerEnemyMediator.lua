@@ -58,15 +58,14 @@ function TowerEnemyMediator:initContent()
 
 	local roleNode = self:getView():getChildByFullName("main.roleClone.Panel_role_image")
 	local info = {
-		stencil = 1,
-		iconType = "Bust7",
-		id = self._enemyMasterRoleModel,
-		size = cc.size(222, 336)
+		frameId = "bustframe7_1",
+		id = self._enemyMasterRoleModel
 	}
-	local masterIcon = IconFactory:createRoleIconSprite(info)
+	local masterIcon = IconFactory:createRoleIconSpriteNew(info)
 
 	masterIcon:setAnchorPoint(cc.p(0.5, 0.5))
 	masterIcon:addTo(roleNode):center(roleNode:getContentSize()):offset(10, -50)
+	masterIcon:setScale(0.9)
 	self:refreshPetNode()
 	self:initLockIcons()
 end
@@ -147,7 +146,7 @@ end
 function TowerEnemyMediator:initTeamHero(node, info)
 	local heroId = info.id
 	info.id = info.roleModel
-	local heroImg = IconFactory:createRoleIconSprite(info)
+	local heroImg = IconFactory:createRoleIconSpriteNew(info)
 
 	heroImg:setScale(0.68)
 

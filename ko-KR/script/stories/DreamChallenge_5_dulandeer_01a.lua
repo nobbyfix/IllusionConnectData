@@ -211,11 +211,11 @@ function scene_DreamChallenge_5_dulandeer_01a.actions.start_DreamChallenge_5_dul
 					modelId = "Model_LLan",
 					id = "LLan",
 					rotationX = 0,
-					scale = 1.05,
+					scale = 0.72,
 					zorder = 20,
 					position = {
 						x = 0,
-						y = -345,
+						y = -390,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -239,8 +239,8 @@ function scene_DreamChallenge_5_dulandeer_01a.actions.start_DreamChallenge_5_dul
 								y = 0.5
 							},
 							position = {
-								x = -9.5,
-								y = 770.8
+								x = -23.5,
+								y = 1095
 							}
 						}
 					}
@@ -306,11 +306,11 @@ function scene_DreamChallenge_5_dulandeer_01a.actions.start_DreamChallenge_5_dul
 					modelId = "Model_JNLong",
 					id = "JNLong",
 					rotationX = 0,
-					scale = 1.02,
+					scale = 0.65,
 					zorder = 15,
 					position = {
 						x = -160,
-						y = -335,
+						y = -330,
 						refpt = {
 							x = 0.7,
 							y = 0
@@ -334,8 +334,8 @@ function scene_DreamChallenge_5_dulandeer_01a.actions.start_DreamChallenge_5_dul
 								y = 0.5
 							},
 							position = {
-								x = 177.5,
-								y = 806.5
+								x = 268.5,
+								y = 1184
 							}
 						}
 					}
@@ -436,7 +436,7 @@ function scene_DreamChallenge_5_dulandeer_01a.actions.start_DreamChallenge_5_dul
 					duration = 0,
 					position = {
 						x = 0,
-						y = -345,
+						y = -390,
 						refpt = {
 							x = 0.3,
 							y = 0
@@ -681,7 +681,7 @@ function scene_DreamChallenge_5_dulandeer_01a.actions.start_DreamChallenge_5_dul
 					duration = 0,
 					position = {
 						x = 0,
-						y = -345,
+						y = -390,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -1194,7 +1194,7 @@ function scene_DreamChallenge_5_dulandeer_01a.actions.start_DreamChallenge_5_dul
 						duration = 0,
 						position = {
 							x = 0,
-							y = -345,
+							y = -390,
 							refpt = {
 								x = 0.3,
 								y = 0
@@ -1907,7 +1907,7 @@ function scene_DreamChallenge_5_dulandeer_01a.actions.start_DreamChallenge_5_dul
 						duration = 0,
 						position = {
 							x = 0,
-							y = -345,
+							y = -390,
 							refpt = {
 								x = 0.5,
 								y = 0
@@ -1980,7 +1980,7 @@ function scene_DreamChallenge_5_dulandeer_01a.actions.start_DreamChallenge_5_dul
 					duration = 0.4,
 					position = {
 						x = 0,
-						y = -345,
+						y = -390,
 						refpt = {
 							x = 1.35,
 							y = 0

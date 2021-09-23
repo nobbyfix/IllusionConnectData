@@ -127,11 +127,9 @@ function ArenaTeamListMediator:createMaster(data)
 	local masterSystem = developSystem:getMasterSystem()
 	local masterData = masterSystem:getMasterById(data:getMasterId())
 	local roleModel = masterData:getModel()
-	local sprite = IconFactory:createRoleIconSprite({
-		stencil = 6,
-		iconType = "Bust6",
-		id = roleModel,
-		size = cc.size(190, 269)
+	local sprite = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe6_1",
+		id = roleModel
 	})
 
 	return sprite

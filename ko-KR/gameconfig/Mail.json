@@ -220,6 +220,19 @@
         "TopStatus": 0,
         "Type": "USER"
     },
+    "Mail_Activity_Reward_Points": {
+        "Content": "Mail_Reward_Points_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Sender",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_Reward_Points_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
     "Mail_AdvanceDrawCard": {
         "Content": "Mail_AdvanceDrawCard_Content",
         "ExpireAfterRead": 72000,
@@ -231,6 +244,32 @@
         "SubType": 1,
         "Title": "Mail_AdvanceDrawCard_Name",
         "TopStatus": 1,
+        "Type": "USER"
+    },
+    "Mail_Animal_AchieveMentTask_Activity": {
+        "Content": "Mail_Animal_AchieveMentTask_Activity_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_Animal_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_Animal_AchieveMentTask_Activity_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
+    "Mail_Animal_DailyTask_Activity": {
+        "Content": "Mail_Animal_DailyTask_Activity_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_Animal_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_Animal_DailyTask_Activity_Title",
+        "TopStatus": 0,
         "Type": "USER"
     },
     "Mail_AntiAdvertisement_A": {
@@ -607,6 +646,19 @@
         "Reward": "",
         "SubType": 1,
         "Title": "Mail_EightDays_20201209_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
+    "Mail_EightDays_Animal": {
+        "Content": "Mail_EightDays_Animal_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_Animal_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_EightDays_Animal_Title",
         "TopStatus": 0,
         "Type": "USER"
     },

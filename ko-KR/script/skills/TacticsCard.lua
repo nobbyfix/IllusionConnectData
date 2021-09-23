@@ -165,6 +165,7 @@ all.TacticsCard_Freeze_Multi = {
 							"STATUS",
 							"DEBUFF",
 							"FREEZE",
+							"ABNORMAL",
 							"DISPELLABLE"
 						}
 					}, {
@@ -238,6 +239,7 @@ all.TacticsCard_Freeze_Single = {
 							"STATUS",
 							"DEBUFF",
 							"FREEZE",
+							"ABNORMAL",
 							"DISPELLABLE"
 						}
 					}, {
@@ -1059,7 +1061,9 @@ all.TacticsCard_PeriodDamage_Multi = {
 						"STATUS",
 						"DEBUFF",
 						"POISON_TACTICSCARD",
-						"DISPELLABLE"
+						"DISPELLABLE",
+						"POISON",
+						"ABNORMAL"
 					}
 				}, {
 					buffeft1
@@ -1116,7 +1120,9 @@ all.TacticsCard_PeriodDamage_Single = {
 						"STATUS",
 						"DEBUFF",
 						"POISON_TACTICSCARD",
-						"DISPELLABLE"
+						"DISPELLABLE",
+						"POISON",
+						"ABNORMAL"
 					}
 				}, {
 					buffeft1
@@ -1228,6 +1234,7 @@ all.TacticsCard_Mute_Multi = {
 							"STATUS",
 							"DEBUFF",
 							"MUTE",
+							"ABNORMAL",
 							"DISPELLABLE"
 						}
 					}, {
@@ -1284,6 +1291,7 @@ all.TacticsCard_Mute_Single = {
 							"STATUS",
 							"DEBUFF",
 							"MUTE",
+							"ABNORMAL",
 							"DISPELLABLE"
 						}
 					}, {

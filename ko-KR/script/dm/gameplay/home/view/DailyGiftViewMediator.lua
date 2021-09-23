@@ -72,9 +72,9 @@ function DailyGiftViewMediator:initHeroAnim(heroId)
 
 	local heroPanel = self._main:getChildByName("hero")
 	local roleModelId = ConfigReader:getDataByNameIdAndKey("HeroBase", heroId, "RoleModel")
-	local heroBust = IconFactory:createRoleIconSprite({
+	local heroBust = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = 6,
+		frameId = "bustframe9",
 		id = roleModelId
 	})
 

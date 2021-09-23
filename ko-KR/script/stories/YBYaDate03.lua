@@ -66,6 +66,36 @@ end
 function scene_YBYaDate03.actions.start_YBYaDate03(_root, args)
 	return sequential({
 		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 0.1
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "hideButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "skipButton"),
+			args = function (_ctx)
+				return {
+					date = true
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "reviewButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "autoPlayButton")
+		}),
+		act({
 			action = "activateNode",
 			actor = __getnode__(_root, "bg")
 		}),
@@ -96,11 +126,11 @@ function scene_YBYaDate03.actions.start_YBYaDate03(_root, args)
 						modelId = "Model_YBYa",
 						id = "YBYa",
 						rotationX = 0,
-						scale = 1,
+						scale = 0.75,
 						zorder = 40,
 						position = {
 							x = 0,
-							y = -310,
+							y = -440,
 							refpt = {
 								x = 0.5,
 								y = 0
@@ -124,8 +154,8 @@ function scene_YBYaDate03.actions.start_YBYaDate03(_root, args)
 									y = 0.5
 								},
 								position = {
-									x = 2.8,
-									y = 794
+									x = -2.5,
+									y = 1137
 								}
 							}
 						}

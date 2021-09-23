@@ -1049,6 +1049,76 @@
         },
         "Times": 1
     },
+    "CO_Shoes_15106_3": {
+        "ComposePosition": "Shoes",
+        "Currency": {
+            "amount": 2000000,
+            "id": "IR_Gold",
+            "type": "Item"
+        },
+        "Item1": {
+            "amount": 1,
+            "id": "CO_ShoesStone_3",
+            "type": "Item"
+        },
+        "Item2": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Shoes"
+        },
+        "Item3": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Shoes"
+        },
+        "Item4": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Shoes"
+        },
+        "Item5": "",
+        "Reward": "Shoes_15106_3",
+        "Show": {
+            "id": "Shoes_15106_3",
+            "type": "Equip"
+        },
+        "Times": 1
+    },
+    "CO_Shoes_15107_1": {
+        "ComposePosition": "Shoes",
+        "Currency": {
+            "amount": 2000000,
+            "id": "IR_Gold",
+            "type": "Item"
+        },
+        "Item1": {
+            "amount": 1,
+            "id": "CO_ShoesStone_1",
+            "type": "Item"
+        },
+        "Item2": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Shoes"
+        },
+        "Item3": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Shoes"
+        },
+        "Item4": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Shoes"
+        },
+        "Item5": "",
+        "Reward": "Shoes_15107_1",
+        "Show": {
+            "id": "Shoes_15107_1",
+            "type": "Equip"
+        },
+        "Times": 1
+    },
     "CO_Tops_15001": {
         "ComposePosition": "Tops",
         "Currency": {
@@ -1644,6 +1714,76 @@
         },
         "Times": 1
     },
+    "CO_Tops_15106_3": {
+        "ComposePosition": "Tops",
+        "Currency": {
+            "amount": 2000000,
+            "id": "IR_Gold",
+            "type": "Item"
+        },
+        "Item1": {
+            "amount": 1,
+            "id": "CO_TopsStone_3",
+            "type": "Item"
+        },
+        "Item2": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Tops"
+        },
+        "Item3": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Tops"
+        },
+        "Item4": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Tops"
+        },
+        "Item5": "",
+        "Reward": "Tops_15106_3",
+        "Show": {
+            "id": "Tops_15106_3",
+            "type": "Equip"
+        },
+        "Times": 1
+    },
+    "CO_Tops_15107_1": {
+        "ComposePosition": "Tops",
+        "Currency": {
+            "amount": 2000000,
+            "id": "IR_Gold",
+            "type": "Item"
+        },
+        "Item1": {
+            "amount": 1,
+            "id": "CO_TopsStone_1",
+            "type": "Item"
+        },
+        "Item2": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Tops"
+        },
+        "Item3": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Tops"
+        },
+        "Item4": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Tops"
+        },
+        "Item5": "",
+        "Reward": "Tops_15107_1",
+        "Show": {
+            "id": "Tops_15107_1",
+            "type": "Equip"
+        },
+        "Times": 1
+    },
     "CO_Weapon_15001": {
         "ComposePosition": "Weapon",
         "Currency": {
@@ -2130,6 +2270,41 @@
         "Reward": "Weapon_15105_2",
         "Show": {
             "id": "Weapon_15105_2",
+            "type": "Equip"
+        },
+        "Times": 1
+    },
+    "CO_Weapon_15106_3": {
+        "ComposePosition": "Weapon",
+        "Currency": {
+            "amount": 2000000,
+            "id": "IR_Gold",
+            "type": "Item"
+        },
+        "Item1": {
+            "amount": 1,
+            "id": "CO_WeaponStone_3",
+            "type": "Item"
+        },
+        "Item2": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Weapon"
+        },
+        "Item3": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Weapon"
+        },
+        "Item4": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Weapon"
+        },
+        "Item5": "",
+        "Reward": "Weapon_15106_3",
+        "Show": {
+            "id": "Weapon_15106_3",
             "type": "Equip"
         },
         "Times": 1

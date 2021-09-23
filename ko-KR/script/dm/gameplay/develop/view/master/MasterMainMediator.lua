@@ -529,7 +529,7 @@ function MasterMainMediator:createCell(cell, index)
 
 	icon:removeAllChildren()
 
-	local image = IconFactory:createRoleIconSprite({
+	local image = IconFactory:createRoleIconSpriteNew({
 		iconType = "MasterHeadWide",
 		id = master:getModel()
 	})

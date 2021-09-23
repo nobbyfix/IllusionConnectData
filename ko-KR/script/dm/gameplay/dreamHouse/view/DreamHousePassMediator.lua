@@ -56,12 +56,14 @@ function DreamHousePassMediator:initWidget()
 	self._name:setOpacity(0)
 
 	self._leftBtn = self._main:getChildByName("nextBtn")
-
-	self._leftBtn:setOpacity(0)
-
 	self._rightBtn = self._main:getChildByName("closeBtn")
 
-	self._rightBtn:setOpacity(0)
+	self._main:getChildByName("mask"):addTouchEventListener(function (sender, eventType)
+		if eventType == ccui.TouchEventType.ended then
+			AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
+			self:onClickClose()
+		end
+	end)
 end
 
 function DreamHousePassMediator:refreshView()
@@ -69,16 +71,8 @@ function DreamHousePassMediator:refreshView()
 	local pointName = Strings:get(ConfigReader:getDataByNameIdAndKey("DreamHousePoint", self._pointId, "Name"))
 
 	self._name:setString(mapName .. "-" .. pointName)
-
-	local nextPointId = Strings:get(ConfigReader:getDataByNameIdAndKey("DreamHousePoint", self._pointId, "NextPoint"))
-
-	self._leftBtn:setVisible(true)
-	self._rightBtn:setPositionX(720)
-
-	if nextPointId == nil or nextPointId == "" then
-		self._leftBtn:setVisible(false)
-		self._rightBtn:setPositionX(570)
-	end
+	self._leftBtn:setVisible(false)
+	self._rightBtn:setVisible(false)
 end
 
 function DreamHousePassMediator:initAnim()
@@ -106,24 +100,6 @@ function DreamHousePassMediator:initAnim()
 		local action = cc.Sequence:create(spawn, scaleTo2)
 
 		self._name:runAction(action)
-	end)
-	anim:addCallbackAtFrame(20, function (cid, mc)
-		local fadeIn = cc.FadeIn:create(0.07)
-		local scaleTo1 = cc.ScaleTo:create(0.07, 0.9)
-		local spawn = cc.Spawn:create(fadeIn, scaleTo1)
-		local scaleTo2 = cc.ScaleTo:create(0.07, 0.8)
-		local action = cc.Sequence:create(spawn, scaleTo2)
-
-		self._leftBtn:runAction(action)
-	end)
-	anim:addCallbackAtFrame(23, function (cid, mc)
-		local fadeIn = cc.FadeIn:create(0.07)
-		local scaleTo1 = cc.ScaleTo:create(0.07, 0.9)
-		local spawn = cc.Spawn:create(fadeIn, scaleTo1)
-		local scaleTo2 = cc.ScaleTo:create(0.07, 0.8)
-		local action = cc.Sequence:create(spawn, scaleTo2)
-
-		self._rightBtn:runAction(action)
 	end)
 end
 

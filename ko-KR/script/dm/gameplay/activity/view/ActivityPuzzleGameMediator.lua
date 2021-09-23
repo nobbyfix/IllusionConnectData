@@ -330,9 +330,9 @@ end
 
 function ActivityPuzzleGameMediator:doRoleAndWorldLogic()
 	local roleModel = "Model_" .. self._activity:getRoleModel()
-	local heroSprite, _, spineani, picInfo = IconFactory:createRoleIconSprite({
+	local heroSprite, _, spineani, picInfo = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = 2,
+		frameId = "bustframe9",
 		id = roleModel
 	})
 

@@ -65,6 +65,8 @@ local function genSign(params)
 end
 
 function StatisticSystem:send(content)
+	dump(content, "content-____")
+
 	if GameConfigs.closeClientStatistic then
 		return
 	end

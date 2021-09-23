@@ -109,12 +109,10 @@ function GalleryPartnerPastMediator:initView()
 		roleModel = hero:getModel()
 	end
 
-	local heroIcon = IconFactory:createRoleIconSprite({
+	local heroIcon = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust5",
-		stencil = 1,
-		id = roleModel,
-		size = cc.size(368, 446)
+		frameId = "bustframe4_8",
+		id = roleModel
 	})
 
 	heroIcon:addTo(self._heroPanel):center(self._heroPanel:getContentSize())

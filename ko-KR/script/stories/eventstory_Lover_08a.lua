@@ -415,11 +415,11 @@ function scene_eventstory_Lover_08a.actions.start_eventstory_Lover_08a(_root, ar
 						modelId = "Model_MLYTLSha",
 						id = "MLYTLSha",
 						rotationX = 0,
-						scale = 1,
+						scale = 0.7,
 						zorder = 30,
 						position = {
 							x = 0,
-							y = -345,
+							y = -320,
 							refpt = {
 								x = 0.53,
 								y = 0
@@ -443,8 +443,8 @@ function scene_eventstory_Lover_08a.actions.start_eventstory_Lover_08a(_root, ar
 									y = 0.5
 								},
 								position = {
-									x = -29.5,
-									y = 827.8
+									x = -34.5,
+									y = 1096
 								}
 							}
 						}
@@ -470,11 +470,11 @@ function scene_eventstory_Lover_08a.actions.start_eventstory_Lover_08a(_root, ar
 						modelId = "Model_Story_ZTXChang",
 						id = "ZTXChang",
 						rotationX = 0,
-						scale = 0.98,
+						scale = 0.6,
 						zorder = 35,
 						position = {
 							x = 0,
-							y = -300,
+							y = -270,
 							refpt = {
 								x = 0.57,
 								y = 0
@@ -498,8 +498,8 @@ function scene_eventstory_Lover_08a.actions.start_eventstory_Lover_08a(_root, ar
 									y = 0.5
 								},
 								position = {
-									x = -52,
-									y = 792
+									x = -51.3,
+									y = 977.5
 								}
 							}
 						}
@@ -525,11 +525,11 @@ function scene_eventstory_Lover_08a.actions.start_eventstory_Lover_08a(_root, ar
 						modelId = "Model_Story_CLMan",
 						id = "CLMan",
 						rotationX = 0,
-						scale = 0.9,
+						scale = 0.63,
 						zorder = 125,
 						position = {
 							x = 0,
-							y = -295,
+							y = -250,
 							refpt = {
 								x = 0.46,
 								y = 0
@@ -553,8 +553,8 @@ function scene_eventstory_Lover_08a.actions.start_eventstory_Lover_08a(_root, ar
 									y = 0.5
 								},
 								position = {
-									x = 60.5,
-									y = 787
+									x = 77.5,
+									y = 1045.5
 								}
 							}
 						}
@@ -580,11 +580,11 @@ function scene_eventstory_Lover_08a.actions.start_eventstory_Lover_08a(_root, ar
 						modelId = "Model_XLai",
 						id = "XLai",
 						rotationX = 0,
-						scale = 1,
+						scale = 0.76,
 						zorder = 130,
 						position = {
 							x = 0,
-							y = -315,
+							y = -300,
 							refpt = {
 								x = 0.5,
 								y = 0
@@ -608,8 +608,8 @@ function scene_eventstory_Lover_08a.actions.start_eventstory_Lover_08a(_root, ar
 									y = 0.5
 								},
 								position = {
-									x = 0,
-									y = 709.5
+									x = 0.5,
+									y = 899
 								}
 							}
 						}
@@ -1203,7 +1203,7 @@ function scene_eventstory_Lover_08a.actions.start_eventstory_Lover_08a(_root, ar
 					duration = 0,
 					position = {
 						x = 0,
-						y = -315,
+						y = -300,
 						refpt = {
 							x = 0.25,
 							y = 0
@@ -1220,7 +1220,7 @@ function scene_eventstory_Lover_08a.actions.start_eventstory_Lover_08a(_root, ar
 					duration = 0,
 					position = {
 						x = 0,
-						y = -300,
+						y = -250,
 						refpt = {
 							x = 0.66,
 							y = 0
@@ -1616,7 +1616,7 @@ function scene_eventstory_Lover_08a.actions.start_eventstory_Lover_08a(_root, ar
 						duration = 0,
 						position = {
 							x = 0,
-							y = -295,
+							y = -250,
 							refpt = {
 								x = 0.46,
 								y = 0
@@ -1635,7 +1635,7 @@ function scene_eventstory_Lover_08a.actions.start_eventstory_Lover_08a(_root, ar
 						duration = 0.2,
 						position = {
 							x = 0,
-							y = -295,
+							y = -250,
 							refpt = {
 								x = 0.46,
 								y = -0.25
@@ -1649,7 +1649,7 @@ function scene_eventstory_Lover_08a.actions.start_eventstory_Lover_08a(_root, ar
 				actor = __getnode__(_root, "CLMan"),
 				args = function (_ctx)
 					return {
-						scale = 1.2,
+						scale = 0.7,
 						duration = 0.2
 					}
 				end
@@ -1740,7 +1740,7 @@ function scene_eventstory_Lover_08a.actions.start_eventstory_Lover_08a(_root, ar
 				actor = __getnode__(_root, "CLMan"),
 				args = function (_ctx)
 					return {
-						scale = 0.9,
+						scale = 0.63,
 						duration = 0.15
 					}
 				end
@@ -1753,7 +1753,7 @@ function scene_eventstory_Lover_08a.actions.start_eventstory_Lover_08a(_root, ar
 						duration = 0.15,
 						position = {
 							x = 0,
-							y = -295,
+							y = -250,
 							refpt = {
 								x = 0.46,
 								y = 0
@@ -1896,7 +1896,7 @@ function scene_eventstory_Lover_08a.actions.start_eventstory_Lover_08a(_root, ar
 				actor = __getnode__(_root, "CLMan"),
 				args = function (_ctx)
 					return {
-						scale = 0.9,
+						scale = 0.63,
 						duration = 0
 					}
 				end
@@ -2017,7 +2017,7 @@ function scene_eventstory_Lover_08a.actions.start_eventstory_Lover_08a(_root, ar
 						duration = 0.2,
 						position = {
 							x = 0,
-							y = -295,
+							y = -250,
 							refpt = {
 								x = 0.66,
 								y = 0
@@ -2534,7 +2534,7 @@ function scene_eventstory_Lover_08a.actions.start_eventstory_Lover_08a(_root, ar
 					duration = 0,
 					position = {
 						x = 0,
-						y = -315,
+						y = -300,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -2636,7 +2636,7 @@ function scene_eventstory_Lover_08a.actions.start_eventstory_Lover_08a(_root, ar
 						duration = 0,
 						position = {
 							x = 0,
-							y = -315,
+							y = -300,
 							refpt = {
 								x = 0.25,
 								y = 0

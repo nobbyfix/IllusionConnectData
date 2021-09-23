@@ -107,9 +107,9 @@ function ClubNewTechnologyMediator:createHeroPanel()
 	end
 
 	local heroPanel = self._mainPanel:getChildByName("heroPanel")
-	local modelSprite = IconFactory:createRoleIconSprite({
+	local modelSprite = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust4",
+		frameId = "bustframe9",
 		id = modelId
 	})
 

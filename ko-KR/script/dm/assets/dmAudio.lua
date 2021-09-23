@@ -175,10 +175,14 @@ function dmAudio.play(configId, param, listener, type)
 	}
 
 	if record.Param and record.Param ~= "" and param then
-		local tmpl = TextTemplate:new(record.Param)
-		local formatText = tmpl:stringify(param)
 		uriStrArr[4] = "&"
-		uriStrArr[5] = formatText
+		local tempArr = {}
+
+		for k, v in pairs(record.Param) do
+			tempArr[#tempArr + 1] = k .. "=" .. v
+		end
+
+		uriStrArr[5] = table.concat(tempArr, "&")
 	end
 
 	local uri = table.concat(uriStrArr, "")
@@ -194,12 +198,13 @@ function dmAudio.play(configId, param, listener, type)
 	local audioPlayer = AudioPlayer[type]
 	local acbHn = dmAudio.loadAcbFile(record.PkgName)
 	local audioPlayback = nil
+	local blockIndex = 0
 
-	if not record.BlockIndex or record.BlockIndex == "" then
-		record.BlockIndex = 0
+	if record.Param and record.Param.blockIndex then
+		blockIndex = record.Param.blockIndex
 	end
 
-	audioPlayback = audioPlayer:playCueByNameFromBlock(acbHn, record.CueName, record.BlockIndex)
+	audioPlayback = audioPlayer:playCueByNameFromBlock(acbHn, record.CueName, blockIndex)
 
 	if audioPlayback then
 		if type == AudioType.Music then

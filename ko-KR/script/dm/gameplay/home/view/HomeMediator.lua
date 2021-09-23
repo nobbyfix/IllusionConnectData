@@ -1726,8 +1726,8 @@ function HomeMediator:setBoardHeroSprite()
 		surfaceId = hero:getSurfaceId()
 	end
 
-	local heroSprite, _, spineani, picInfo = IconFactory:createRoleIconSprite({
-		iconType = 6,
+	local heroSprite, _, spineani, picInfo = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe9",
 		id = roleModel,
 		useAnim = self._settingModel:getRoleDynamic()
 	})
@@ -2178,6 +2178,31 @@ function HomeMediator:onPassBtn(sender, type)
 	end
 
 	self._passSystem:showMainPassView()
+end
+
+function HomeMediator:onClickGameAnnounce(sender, type)
+	if type ~= ccui.TouchEventType.ended then
+		return
+	end
+
+	if CommonUtils.GetSwitch("fn_announce_check_in") then
+		local view = self:getInjector():getInstance("serverAnnounceViewNew")
+		local delegate = {
+			willClose = function (self, popupMediator, data)
+				popupMediator:resetData()
+			end
+		}
+
+		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+		}, {
+			isDeductTime = 0
+		}, delegate))
+	else
+		self:dispatch(ShowTipEvent({
+			tip = Strings:get("HeroStory_Team_UI1")
+		}))
+	end
 end
 
 function HomeMediator:onRechargeBtn(sender, type)
@@ -2962,6 +2987,14 @@ function HomeMediator:refreshRedPoint()
 	end
 
 	self:checkExtraRedPoint()
+
+	for _, v in pairs(self._btns) do
+		local _redPointNode = v.redPoint1
+
+		if _redPointNode then
+			_redPointNode:refresh()
+		end
+	end
 end
 
 function HomeMediator:passiveRefreshRedPoint(event)
@@ -3579,12 +3612,22 @@ function HomeMediator:setComplexActivityEntry()
 			imgpos = cc.p(58, 7)
 		},
 		[ActivityType_UI.KActivityRiddle] = {
-			animZorder = 1,
 			img = "riddle_btn_zjm_rukou.png",
+			animZorder = 1,
 			anim = "rukouZ__zhentanduijuerukouzhuye",
 			imgZorder = 2,
 			aimpos = cc.p(-80, 135),
-			imgpos = cc.p(55, 9)
+			imgpos = cc.p(55, 9),
+			redpos = cc.p(123, 47)
+		},
+		[ActivityType_UI.KActivityAnimal] = {
+			img = "animal_btn_zjm_rukou.png",
+			animZorder = 1,
+			anim = "rukou_xinyuanyimiaochangjing",
+			imgZorder = 2,
+			aimpos = cc.p(-90, 145),
+			imgpos = cc.p(60, 20),
+			redpos = cc.p(115, 51)
 		}
 	}
 	local extraActBtn = self._rightFuncLayout:getChildByFullName("extraActBtn")
@@ -3598,6 +3641,7 @@ function HomeMediator:setComplexActivityEntry()
 	local redPoint = blockBtn:getChildByName("redPoint")
 
 	redPoint:setLocalZOrder(999)
+	redPoint:setVisible(false)
 
 	local bs = blockBtn:getContentSize()
 	local count = 0
@@ -3683,8 +3727,20 @@ function HomeMediator:setComplexActivityEntry()
 			if self._btns[ui]:isVisible() then
 				local redFunc = cfg.redPointFuncx or self._activitySystem.hasRedPointForActivity
 
-				self._btns[ui]:getChildByName("redPoint"):setVisible(redFunc(self._activitySystem, activityId))
 				extraActBtn:setVisible(true)
+
+				local function redPointCal()
+					return redFunc(self._activitySystem, activityId)
+				end
+
+				if not self._btns[ui].redPoint1 then
+					local node = RedPoint:createDefaultNode()
+					local redPoint1 = RedPoint:new(node, self._btns[ui], redPointCal)
+					self._btns[ui].redPoint1 = redPoint1
+
+					node:setPosition(cfg.redpos or cc.p(79, 83)):setScale(0.8)
+					node:setLocalZOrder(999)
+				end
 			end
 
 			self._btns[ui]:setPositionX(blockBtn:getPositionX() - count * (bs.width + 20))

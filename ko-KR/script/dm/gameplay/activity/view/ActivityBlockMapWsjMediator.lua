@@ -982,11 +982,16 @@ end
 function ActivityBlockMapWsjMediator:onClickPlayStory(pointId, isCheck)
 	local storyDirector = self:getInjector():getInstance(story.StoryDirector)
 	local chapterInfo = self._model:getMapByIndex(self._mapIndex, self._stageType)
+	local startTs = self:getInjector():getInstance(GameServerAgent):remoteTimeMillis()
+	local storyLink = ConfigReader:getDataByNameIdAndKey("ActivityStoryPoint", pointId, "StoryLink")
 
 	local function endCallBack()
 		local storyPoint = chapterInfo:getStoryPointById(pointId)
+		local isFirst = 0
 
 		if not storyPoint:isPass() then
+			isFirst = 1
+
 			self._activitySystem:requestDoChildActivity(self._activity:getId(), self._model:getId(), {
 				doActivityType = 106,
 				pointId = pointId
@@ -1018,10 +1023,22 @@ function ActivityBlockMapWsjMediator:onClickPlayStory(pointId, isCheck)
 				end
 			end)
 		end
+
+		local endTs = self:getInjector():getInstance(GameServerAgent):remoteTimeMillis()
+
+		StatisticSystem:send({
+			op_type = "plot_activity",
+			point = "plot_end",
+			type = "plot_end",
+			activityid = self._activity:getTitle(),
+			plot_id = storyLink,
+			plot_name = storyPoint:getName(),
+			id_first = isFirst,
+			totaltime = endTs - startTs
+		})
 	end
 
 	local storyAgent = storyDirector:getStoryAgent()
-	local storyLink = ConfigReader:getDataByNameIdAndKey("ActivityStoryPoint", pointId, "StoryLink")
 
 	storyAgent:setSkipCheckSave(not isCheck)
 	storyAgent:trigger(storyLink, nil, endCallBack)

@@ -129,13 +129,14 @@ function HeroStrengthAwakenDetailMediator:initNodes()
 	GameStyle:setCostNodeEffect(self._costPanel:getChildByFullName("costNode3"))
 
 	local roleModel = self._heroData:getAwakenStarConfig().Portrait
-	local masterIcon = IconFactory:createRoleIconSprite({
-		iconType = "Portrait",
+	local masterIcon = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe18",
 		id = roleModel
 	})
 
 	self._awakeRoleNode:removeAllChildren()
-	masterIcon:addTo(self._awakeRoleNode):center(self._awakeRoleNode:getContentSize()):offset(150, 50)
+	masterIcon:addTo(self._awakeRoleNode)
+	masterIcon:setPosition(cc.p(0, 200))
 	masterIcon:setRotation(15.5)
 end
 

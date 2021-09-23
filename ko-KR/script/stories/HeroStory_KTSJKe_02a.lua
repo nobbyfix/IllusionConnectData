@@ -157,11 +157,11 @@ function scene_HeroStory_KTSJKe_02a.actions.start_HeroStory_KTSJKe_02a(_root, ar
 					modelId = "Model_LCYShi",
 					id = "LCYShi_speak",
 					rotationX = 0,
-					scale = 1.155,
+					scale = 0.68,
 					zorder = 10,
 					position = {
 						x = 0,
-						y = -350,
+						y = -380,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -185,8 +185,8 @@ function scene_HeroStory_KTSJKe_02a.actions.start_HeroStory_KTSJKe_02a(_root, ar
 								y = 0.5
 							},
 							position = {
-								x = 49.4,
-								y = 746.2
+								x = 64.2,
+								y = 1144
 							}
 						}
 					}
@@ -251,10 +251,10 @@ function scene_HeroStory_KTSJKe_02a.actions.start_HeroStory_KTSJKe_02a(_root, ar
 					modelId = "Model_YKDMLai",
 					id = "YKDMLai_speak",
 					rotationX = 0,
-					scale = 1.025,
+					scale = 0.7,
 					position = {
 						x = 0,
-						y = -230,
+						y = -290,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -333,7 +333,7 @@ function scene_HeroStory_KTSJKe_02a.actions.start_HeroStory_KTSJKe_02a(_root, ar
 					duration = 0.3,
 					position = {
 						x = 0,
-						y = -230,
+						y = -290,
 						refpt = {
 							x = 0.25,
 							y = 0
@@ -350,10 +350,10 @@ function scene_HeroStory_KTSJKe_02a.actions.start_HeroStory_KTSJKe_02a(_root, ar
 					modelId = "Model_JSTDing",
 					id = "JSTDing_speak",
 					rotationX = 0,
-					scale = 0.925,
+					scale = 0.77,
 					position = {
 						x = 0,
-						y = -210,
+						y = -350,
 						refpt = {
 							x = 0.75,
 							y = 0

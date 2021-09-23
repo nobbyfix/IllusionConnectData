@@ -710,6 +710,7 @@ all.Skill_JDCZhang_Proud_EX = {
 						"STATUS",
 						"DEBUFF",
 						"DAZE",
+						"ABNORMAL",
 						"DISPELLABLE"
 					}
 				}, {

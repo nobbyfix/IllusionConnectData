@@ -143,6 +143,7 @@ all.Skill_BDFen_Proud = {
 					"STATUS",
 					"DEBUFF",
 					"DAZE",
+					"ABNORMAL",
 					"DISPELLALBE"
 				}
 			}, {
@@ -484,6 +485,7 @@ all.Skill_BDFen_Proud_EX = {
 					"STATUS",
 					"DEBUFF",
 					"DAZE",
+					"ABNORMAL",
 					"DISPELLALBE"
 				}
 			}, {
